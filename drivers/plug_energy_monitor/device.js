@@ -295,27 +295,30 @@ class EnergyMonitorPlugDevice extends HybridPlugBase {
       if (elecCluster?.on) {
         // Power
         if (zclAttrs.power) {
+          const pDiv = this.zclEnergyDivisors.power;
           elecCluster.on('attr.activePower', (value) => {
-            const power = value / (zclAttrs.power.divisor || 1);
-            this.log(`[ENERGY-ZCL] Power: ${power}W`);
+            const power = value / pDiv;
+            this.log(`[ENERGY-ZCL] Power: ${power}W (raw=${value} div=${pDiv})`);
             this.setCapabilityValue('measure_power', parseFloat(Math.max(0, power))).catch(() => { });
           });
         }
 
         // Voltage
         if (zclAttrs.voltage) {
+          const vDiv = this.zclEnergyDivisors.voltage;
           elecCluster.on('attr.rmsVoltage', (value) => {
-            const voltage = value / (zclAttrs.voltage.divisor || 1);
-            this.log(`[ENERGY-ZCL] Voltage: ${voltage}V`);
+            const voltage = value / vDiv;
+            this.log(`[ENERGY-ZCL] Voltage: ${voltage}V (raw=${value} div=${vDiv})`);
             this.setCapabilityValue('measure_voltage', parseFloat(voltage)).catch(() => { });
           });
         }
 
         // Current
         if (zclAttrs.current) {
+          const cDiv = this.zclEnergyDivisors.current;
           elecCluster.on('attr.rmsCurrent', (value) => {
-            const current = value / (zclAttrs.current.divisor || 1);
-            this.log(`[ENERGY-ZCL] Current: ${current}A`);
+            const current = value / cDiv;
+            this.log(`[ENERGY-ZCL] Current: ${current}A (raw=${value} div=${cDiv})`);
             this.setCapabilityValue('measure_current', parseFloat(current)).catch(() => { });
           });
         }
@@ -326,18 +329,32 @@ class EnergyMonitorPlugDevice extends HybridPlugBase {
       this.log(`[ENERGY] ⚠️ Electrical cluster error: ${e.message}`);
     }
 
-    // Metering Cluster (0x0702)
+    // Metering Cluster (0x0702) — event + poll fallback
     try {
-      const meterCluster = ep1.clusters?.metering;
-      if (meterCluster?.on && zclAttrs.energy) {
-        meterCluster.on('attr.currentSummDelivered', (value) => {
-          // Value is usually a 48-bit integer, take lower 32 bits
-          const rawValue = typeof value === 'object' ? value[0] || 0 : value;
-          const energy = rawValue / (zclAttrs.energy.divisor || 1);
-          this.log(`[ENERGY-ZCL] Energy: ${energy}kWh`);
-          this.setCapabilityValue('meter_power', parseFloat(energy)).catch(() => { });
-        });
-        this.log('[ENERGY] ✅ ZCL Metering configured');
+      const mc = ep1.clusters?.metering || ep1.clusters?.seMetering;
+      const eDiv = zclAttrs.energy?.divisor || 100;
+      const parseE = (v) => (typeof v === 'object' ? v[0] || 0 : v) / eDiv;
+      if (mc && zclAttrs.energy) {
+        if (mc.on) {
+          mc.on('attr.currentSummDelivered', (v) => {
+            const e = parseE(v);
+            this.log(`[ENERGY-ZCL] Energy: ${e}kWh`);
+            this.setCapabilityValue('meter_power', parseFloat(e)).catch(() => {});
+          });
+        }
+        // v5.11.26: Poll metering — many TS011F don't auto-report energy
+        if (mc.readAttributes) {
+          this._meterPoll = this.homey.setInterval(async () => {
+            try {
+              const a = await mc.readAttributes(['currentSummDelivered']).catch(() => null);
+              if (a?.currentSummDelivered !== undefined) {
+                const e = parseE(a.currentSummDelivered);
+                await this.setCapabilityValue('meter_power', parseFloat(e)).catch(() => {});
+              }
+            } catch (_) {}
+          }, 60000);
+        }
+        this.log('[ENERGY] ✅ ZCL Metering configured (poll=60s)');
       }
     } catch (e) {
       this.log(`[ENERGY] ⚠️ Metering cluster error: ${e.message}`);
