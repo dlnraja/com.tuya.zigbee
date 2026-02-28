@@ -114,12 +114,14 @@ jobs:
       - name: "2. GitHub Issues & PRs Manager"
         id: github_mgr
         continue-on-error: true
-        timeout-minutes: 15
+        timeout-minutes: 30
         env:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
           STALE_DAYS: "30"
           MAX_ITEMS: "100"
           REPOS: "dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee"
+          GEMINI_MAX_TIER: "1"
+          RATE_LIMIT_SLEEP: "5000"
         run: node .github/scripts/github-issue-manager.js
 
       # ===== 3. GITHUB: Upstream Triage (JohanBendz + forks) =====
@@ -135,6 +137,7 @@ jobs:
           FP_COUNT: ${{ steps.stats.outputs.fps }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
           SCAN_FORKS: "true"
+          GEMINI_MAX_TIER: "1"
         run: node .github/scripts/triage-upstream-enhanced.js
 
       # ===== 3b. GITHUB: Comprehensive scan (forks+PRs+issues) =====
