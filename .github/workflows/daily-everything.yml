@@ -499,6 +499,7 @@ jobs:
           echo "|---|------|--------|" >> $GITHUB_STEP_SUMMARY
           echo "| 1 | Forum Scan + Respond | ${{ steps.forum_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 2 | GitHub Issues & PRs | ${{ steps.github_mgr.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          if [ -f .github/state/issue-manager-report.json ]; then echo "| 2b | Bug Investigations | $(node -p 'require(\"./.github/state/issue-manager-report.json\").bugInvestigations||0') found |" >> $GITHUB_STEP_SUMMARY; fi
           echo "| 3 | Upstream Triage | ${{ steps.upstream.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 3b | Comprehensive GH Scan | ${{ steps.comp_gh_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 3c | PR/Issue FP Scan | ${{ steps.pr_issue_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
