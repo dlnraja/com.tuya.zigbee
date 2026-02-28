@@ -81,12 +81,15 @@ async function classifyIssue(issue,fpResults){
 }
 
 // Generate personalized AI response (with variants + bugs)
-async function generateResponse(issue,fpResults,classification,variants,bugs,imageCtx,bodyLinks){
+async function generateResponse(issue,fpResults,classification,variants,bugs,imageCtx,bodyLinks,repo){
   const ctx={appVersion:appVer,totalFPs:fps.size,driverCount:fs.readdirSync(path.join(__dirname,'..','..','drivers')).length,
     installUrl:'https://homey.app/a/com.dlnraja.tuya.zigbee/test/',
     forumUrl:'https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352',
     devTools:'https://tools.developer.homey.app',githubUrl:'https://github.com/dlnraja/com.tuya.zigbee'};
-  const prompt='You are the developer of Universal Tuya Zigbee (v'+appVer+', '+ctx.driverCount+' drivers, '+fps.size+'+ FPs). Write a GitHub comment responding to this issue. Be helpful and concise — write like a real person, not a bot. Use GitHub markdown. If device is supported, say which driver to pair as and link the test version. If not supported, ask for a device interview from developer tools. If bug, acknowledge it and explain status. If Z2M/ZHA variants or known bugs exist, mention them naturally. If a sensor has missing readings (fertilizer, EC, VOC, formaldehyde, conductivity), explain that we need app logs showing DP numbers (Settings > Apps > Tuya > View Log) to map the unknown data points. NEVER say "bot" or "automated". NEVER add a signature footer or version line at the end. Just end naturally.\\nContext: '+JSON.stringify(ctx);
+  const isUpstream=repo&&repo!==OWN;
+  let prompt='You are the developer of Universal Tuya Zigbee (v'+appVer+', '+ctx.driverCount+' drivers, '+fps.size+'+ FPs). Write a GitHub comment responding to this issue. Be helpful and concise — write like a real person, not a bot. Use GitHub markdown. If device is supported, say which driver to pair as and link the test version. If not supported, ask for a device interview from developer tools. If bug, acknowledge it and explain status. If Z2M/ZHA variants or known bugs exist, mention them naturally. If a sensor has missing readings (fertilizer, EC, VOC, formaldehyde, conductivity), explain that we need app logs showing DP numbers (Settings > Apps > Tuya > View Log) to map the unknown data points. NEVER say "bot" or "automated". NEVER add a signature footer or version line at the end. Just end naturally.';
+  if(isUpstream)prompt+='\nCRITICAL: This issue is on the JohanBendz/com.tuya.zigbee upstream repo. You MUST clearly redirect the user to our actively maintained fork at [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee). Explain this fork has '+ctx.driverCount+' drivers and '+fps.size+'+ fingerprints, far more than upstream. ALWAYS include the test install link: '+ctx.installUrl+' and community forum: '+ctx.forumUrl+'. Tell the user to install, then remove and re-pair their device. Report any issues on the forum thread or the dlnraja GitHub repo.';
+  prompt+='\\nContext: '+JSON.stringify(ctx);
   let text='Issue: '+issue.title+'\nBy: @'+(issue.user?.login||'?')+'\nBody: '+(issue.body||'').slice(0,2000)+'\nFP results: '+JSON.stringify(fpResults)+'\nClassification: '+JSON.stringify(classification)+'\nVariants from Z2M/ZHA/Blakadder: '+JSON.stringify(variants||[])+'\nAssociated bugs: '+JSON.stringify(bugs||[]);
   if(imageCtx)text+='\nImage analysis: '+imageCtx;
   if(bodyLinks&&bodyLinks.length)text+='\nExternal refs: '+bodyLinks.join(', ');
@@ -160,7 +163,7 @@ async function processIssue(repo,issue,state,report,extData){
 
   // Respond if not already responded
   if(!hasBot){
-    const response=await generateResponse(issue,fpResults,classification,variants,bugs,imageCtx,bodyLinks);
+    const response=await generateResponse(issue,fpResults,classification,variants,bugs,imageCtx,bodyLinks,repo);
     if(response){
       const posted=await ghPost('/repos/'+repo+'/issues/'+issue.number+'/comments',{body:response});
       if(posted){
@@ -182,7 +185,9 @@ async function processIssue(repo,issue,state,report,extData){
     const age=daysSince(issue.updated_at);
     if(age>=STALE_DAYS||classification.type==='resolved'||classification.type==='duplicate'){
       const reason=classification.closeReason||'Auto-closed: '+(age>=STALE_DAYS?'inactive >'+STALE_DAYS+' days':classification.type);
-      await ghPost('/repos/'+repo+'/issues/'+issue.number+'/comments',{body:TAG+'\n'+reason+'\n\nFeel free to reopen if this is still relevant.'});
+      let closeBody=TAG+'\n'+reason+'\n\nFeel free to reopen if this is still relevant.';
+      if(repo!==OWN)closeBody+='\n\n---\n👉 This device is maintained in the **[Universal Tuya Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee)** (v'+appVer+', '+fps.size+'+ FPs).\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n**Forum:** https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352';
+      await ghPost('/repos/'+repo+'/issues/'+issue.number+'/comments',{body:closeBody});
       const ok=await ghPatch('/repos/'+repo+'/issues/'+issue.number,{state:'closed',state_reason:'not_planned'});
       if(ok){state.closed.push(key);report.closed++;console.log('    CLOSED:',reason)}
       else console.log('    CLOSE FAILED (no write access?):',reason);
@@ -227,10 +232,24 @@ async function processPR(repo,pr,state,report,extData){
   const hasBot=comments&&comments.some(c=>(c.body||'').includes(TAG));
 
   if(!hasBot){
-    let msg=TAG+'\nThanks for the PR!\n\n';
-    if(fpResults.filter(f=>f.supported).length)msg+='Already in v'+appVer+':\n'+fpResults.filter(f=>f.supported).map(f=>'- `'+f.fp+'` → **'+f.drivers.join(', ')+'**').join('\n')+'\n\n';
-    if(newFPs.length)msg+='New — will integrate:\n'+newFPs.map(fp=>'- `'+fp+'`').join('\n')+'\n\n';
-    msg+='[Test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · [Forum](https://community.homey.app/t/140352)';
+    const isUp=repo!==OWN;
+    let msg=TAG+'\n';
+    if(isUp){
+      msg+='Hi! 👋 Thanks for this contribution.\n\n';
+      msg+='These fingerprints have been **integrated into [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee)** — the actively maintained Universal Tuya Zigbee fork (v'+appVer+', '+fps.size+'+ fingerprints).\n\n';
+    }else{
+      msg+='Thanks for the PR!\n\n';
+    }
+    if(fpResults.filter(f=>f.supported).length)msg+='**Already supported** in v'+appVer+':\n'+fpResults.filter(f=>f.supported).map(f=>'- `'+f.fp+'` → **'+f.drivers.join(', ')+'**').join('\n')+'\n\n';
+    if(newFPs.length)msg+='**New** — will integrate:\n'+newFPs.map(fp=>'- `'+fp+'`').join('\n')+'\n\n';
+    if(isUp){
+      msg+='**Install the test version:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n';
+      msg+='After installing, remove and re-pair your device so it picks up the correct driver.\n\n';
+      msg+='**Community forum:** https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352\n';
+      msg+='For future device requests or bug reports, please use the [dlnraja repo](https://github.com/dlnraja/com.tuya.zigbee/issues) or the forum thread.';
+    }else{
+      msg+='[Test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · [Forum](https://community.homey.app/t/140352)';
+    }
     await ghPost('/repos/'+repo+'/issues/'+pr.number+'/comments',{body:msg});
     report.responded++;
     console.log('    Responded to PR');
@@ -238,7 +257,8 @@ async function processPR(repo,pr,state,report,extData){
 
   // Close old PRs on JohanBendz that are fully supported
   if(repo!==OWN&&pr.state==='open'&&allFPs.length&&!newFPs.length&&daysSince(pr.updated_at)>14){
-    await ghPost('/repos/'+repo+'/issues/'+pr.number+'/comments',{body:TAG+'\nAll FPs in this PR are already in v'+appVer+' — closing as resolved. Thanks!'});
+    let prCloseMsg=TAG+'\nAll FPs in this PR are already in v'+appVer+' — closing as resolved. Thanks!\n\n---\n👉 This device is maintained in the **[Universal Tuya Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee)** (v'+appVer+', '+fps.size+'+ FPs).\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n**Forum:** https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352';
+    await ghPost('/repos/'+repo+'/issues/'+pr.number+'/comments',{body:prCloseMsg});
     const ok=await ghPatch('/repos/'+repo+'/pulls/'+pr.number,{state:'closed'});
     if(ok){state.closed.push(key);report.closed++;console.log('    CLOSED PR (all FPs supported)')}
     else console.log('    PR CLOSE FAILED (no perms)');
