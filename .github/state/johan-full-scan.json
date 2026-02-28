@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-02-28T08:55:31.082Z",
+  "timestamp": "2026-02-28T14:54:50.371Z",
   "issues": {
     "total": 1162,
     "withFPs": 925,
@@ -78,8 +78,8 @@
       }
     ],
     "categories": {
-      "device_request": 870,
       "bug": 82,
+      "device_request": 870,
       "other": 189,
       "feature": 21
     }
@@ -610,6 +610,12 @@
   ],
   "allMentionedFPs": [
     {
+      "fp": "_TZE200_8ygsuhe1",
+      "source": "issue#1229",
+      "state": "open",
+      "isNew": false
+    },
+    {
       "fp": "_TZ3210_xzhnra8x",
       "source": "issue#1348",
       "state": "open",
@@ -624,12 +630,6 @@
     {
       "fp": "_TZE284_9ern5sfh",
       "source": "issue#1328",
-      "state": "open",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_8ygsuhe1",
-      "source": "issue#1229",
       "state": "open",
       "isNew": false
     },
@@ -7186,6 +7186,21 @@
       "isNew": false
     },
     {
+      "fp": "_TZE200_8ygsuhe1",
+      "source": "comment#1229",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_8ygsuhe1",
+      "source": "comment#1229",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_8ygsuhe1",
+      "source": "comment#1229",
+      "isNew": false
+    },
+    {
       "fp": "_TZ3210_xzhnra8x",
       "source": "comment#1348",
       "isNew": false
@@ -7228,21 +7243,6 @@
     {
       "fp": "_TZE284_9ern5sfh",
       "source": "comment#1328",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_8ygsuhe1",
-      "source": "comment#1229",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_8ygsuhe1",
-      "source": "comment#1229",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_8ygsuhe1",
-      "source": "comment#1229",
       "isNew": false
     },
     {
@@ -7836,8 +7836,8 @@
     "totalUniqueNewFPs": 5,
     "totalContributors": 94,
     "categories": {
-      "device_request": 870,
       "bug": 82,
+      "device_request": 870,
       "other": 189,
       "feature": 21
     }

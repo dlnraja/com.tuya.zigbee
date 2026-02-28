@@ -1,8 +1,26 @@
 {
-  "timestamp": "2026-02-28T08:46:02.523Z",
+  "timestamp": "2026-02-28T14:45:53.734Z",
   "appVersion": "5.11.26",
   "findings": {
     "issues": [
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 137,
+        "title": "Plug Energy Monitor, wrong voltage",
+        "user": "Lalla80111",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3210_w0qqde0g",
+            "drivers": [
+              "plug_energy_monitor"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/137",
+        "state": "closed",
+        "imageAnalysis": null
+      },
       {
         "repo": "dlnraja/com.tuya.zigbee",
         "number": 110,
@@ -36,6 +54,24 @@
       },
       {
         "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1229,
+        "title": "Smart Airbox no data",
+        "user": "eeckelaertyannick",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE200_8ygsuhe1",
+            "drivers": [
+              "climate_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1229",
+        "state": "open",
+        "imageAnalysis": "```json\n{\n  \"device_name\": \"Smart Air Detection Box Keuken\",\n  \"device_category\": \"Air Quality Monitor\",\n  \"fingerprints\": ["
+      },
+      {
+        "repo": "JohanBendz/com.tuya.zigbee",
         "number": 1348,
         "title": "Device Request - [Device name] - [manufacturerName] / [modelId]",
         "user": "electronickPL",
@@ -51,86 +87,6 @@
         "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1348",
         "state": "open",
         "imageAnalysis": null
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 1142,
-        "title": "Device Request - Wenzhi Smart Human Presence Sensor & Relay  - _TZE204_clrdrnya / WZ-235-ZB-RL TS0601",
-        "user": "dmz-86",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZE204_clrdrnya",
-            "drivers": [
-              "motion_sensor_radar_mmwave"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1142",
-        "state": "open",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 1328,
-        "title": "Device Request - [RSH-HS03] - _TZE284_9ern5sfh | TS0601",
-        "user": "AGabriel",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZE284_9ern5sfh",
-            "drivers": [
-              "climate_sensor"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1328",
-        "state": "open",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 1229,
-        "title": "Smart Airbox no data",
-        "user": "eeckelaertyannick",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZE200_8ygsuhe1",
-            "drivers": [
-              "climate_sensor"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1229",
-        "state": "open",
-        "imageAnalysis": "```json\n{\n  \"device_name\": \"Smart Air Detection Box Keuken\",\n  \"device_category_inferred\": \"Air Quality Monitor / Smart Sensor\","
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 963,
-        "title": "Device Request - Aubess Tuya 1-gang ZigBee 3.0 Mini Smart Switch - _TZ3000_fdxihpp7 / TS0001",
-        "user": "erlandjack",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3000_fdxihpp7",
-            "drivers": [
-              "climate_sensor",
-              "plug_energy_monitor"
-            ]
-          },
-          {
-            "fp": "_TZ3000_skueekg3",
-            "drivers": [
-              "climate_sensor",
-              "switch_1gang"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/963",
-        "state": "open",
-        "imageAnalysis": "NULL"
       }
     ],
     "prs": [
@@ -285,5 +241,5 @@
     "newFPs": [],
     "forkFPs": []
   },
-  "aiSummary": "Hello everyone,\n\nHere's a concise update on the recent GitHub activity for the Universal Tuya Zigbee app (com.dlnraja.tuya.zigbee), summarizing new device requests, supported fingerprints, and potential integrations.\n\n### GitHub Activity Summary\n\nWe've processed several issues and pull requests across both the main `dlnraja/com.tuya.zig"
+  "aiSummary": "Here's a summary of recent Universal Tuya Zigbee activity from GitHub, for Homey forum topic #140352:\n\n### New Device Requests & Issues\n\n*   **Smart Airbox (Air Quality Monitor)**: Issue #1229 (JohanBendz repo) reports \"_TZE200_8ygsuhe1\" (climate_sensor) is not providing data. This indicates a need for further DP analysis or a specific driver variant for this \"Smart Air Detection Box\".\n*   **Plug Energy Monitor Voltage Issue**: Issue #137 (dlnraja repo) highlights incorrect voltage readings for \"_TZ3210_w0qqde0g\" (plug_energy_monitor), suggesting a potential DP divisor or mapping correction is needed.\n*   **Existing Supported Devices**: Several issues involved fingerprints already supported by the `plug_energy_monitor` driver: `_TZ3210_w0qqde0g`, `_TZ3000_w0qqde0g`, `_TZ3210_xzhnra8x`, and `_TZ3000_gjnozsaz` (also `button_emergency_sos`).\n\n### Fingerprints from Forks to Integrate\n\nThe following fingerprints from open PRs in the `JohanBendz/com.tuya.zigbee` fork are candidates for integration:\n\n*   `_TZ3000_gjrubzje` (PR #1219)\n*   `_TZE204_dapwryy7` (PR #1218)\n*   `_TZE204_bjzrowv2` (PR #1195, #1194)\n*   `_TZE204_lawxy9e2`, `_TZE204_nklqjk62` (Garage Door Controller, Fan - PR #1210)\n*   `_TZE200_pay2byax`, `_TZ3000_mrpevh8p` (PR #1253)\n*   `_TZE200_y8jijhba` (Radar & Illuminance Sensor - PR #1292)\n\n### Pull Requests with Useful Changes\n\n*   **Merged: Tuya/Bseed Touch Dimmer Driver**: PR #111 (dlnraja repo) successfully added a separate driver for `_TZE200_3p5ydos3` and `_TZE204_n9ctkb6j`, improving support for these dimmer types. PR #106 also ensured case-insensitive ID matching for `_TZE204_n9ctkb6j`.\n*   **BSEED ZCL-Only Support**: PR #118 and #116 (dlnraja repo) introduced support for `_TZ3000_ysdv91bk` and `_TZ3000_blhvsaqf` respectively, focusing on Bseed ZCL-only devices with physical button detection. These are crucial for addressing the Bseed group toggle bug and ensuring proper physical/virtual button differentiation.\n*   **HOBEIAN Radar Sensor Fixes**: PR #125 (dlnraja repo) addresses IAS motion conflicts, battery reporting, and DP corrections for `_TZE200_rhgsbacq`. This"
 }
