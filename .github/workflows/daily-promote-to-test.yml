@@ -31,6 +31,14 @@ jobs:
           node-version: '22'
       - run: npm ci --prefer-offline --no-audit || npm install
 
+      # When triggered by a publish workflow, wait for Athom to process the draft
+      - name: Wait for Athom draft processing
+        if: github.event_name == 'workflow_run'
+        run: |
+          echo "Triggered by workflow_run — waiting 120s for Athom to process draft..."
+          sleep 120
+          echo "Done waiting"
+
       # Tier 1: Browser automation (Puppeteer) — the ONLY reliable method
       # Athom has no public API for draft→test, only the web UI works.
       - name: "Install Puppeteer"
@@ -75,6 +83,12 @@ jobs:
           path: screenshots/
           retention-days: 7
           if-no-files-found: ignore
+
+      - name: Verify test version
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/verify-test-version.js
 
       - name: Summary
         if: always()
