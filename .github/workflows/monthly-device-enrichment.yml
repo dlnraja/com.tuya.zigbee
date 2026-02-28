@@ -92,6 +92,18 @@ jobs:
           FORK_DEPTH: "3"
         run: node .github/scripts/scan-forks-recursive.js
 
+      - name: 🌡️ Sensor Capability Gap Check
+        continue-on-error: true
+        run: |
+          echo "### Sensor Capability Gaps" >> $GITHUB_STEP_SUMMARY
+          for d in drivers/soil_sensor drivers/air_quality drivers/temp_hum_sensor; do
+            [ -d "$d" ] || continue
+            NAME=$(basename "$d")
+            CAPS=$(node -p "JSON.parse(require('fs').readFileSync('$d/driver.compose.json')).capabilities?.length||0" 2>/dev/null || echo 0)
+            FPS=$(node -p "JSON.parse(require('fs').readFileSync('$d/driver.compose.json')).zigbee?.manufacturerName?.length||0" 2>/dev/null || echo 0)
+            echo "- $NAME: $CAPS caps, $FPS FPs" >> $GITHUB_STEP_SUMMARY
+          done
+
       - name: 📊 Generate enrichment report
         run: |
           mkdir -p reports

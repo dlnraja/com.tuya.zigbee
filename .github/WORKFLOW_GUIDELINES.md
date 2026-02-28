@@ -206,3 +206,28 @@ env:
 | dependabot-auto-merge | on PR | auto-merge deps | GH_PAT |
 
 See `.github/SECRETS.md` for full secret reference.
+
+---
+
+## H. Sensor DP Discovery
+
+New sensor variants (soil+fertilizer, air+VOC) may have unknown DPs.
+1. Check fingerprint in `driver.compose.json`
+2. Standard DPs work (soil: DP3/5/14/15)
+3. Unknown DPs logged by `_handleDP()` — ask user for logs
+4. Create capability in `.homeycompose/capabilities/`
+5. Add DP mapping in `device.js`
+
+### Known Pending: `_TZE284_hdml1aav` fertilizer/EC DP (unknown)
+
+---
+
+## I. Auto-Reopen Guard (v5.12.x)
+
+`auto-reopen-on-comment.yml` skips reopening when:
+- Commenter is `dlnraja`, `github-actions[bot]`, or `dependabot[bot]`
+- Comment < 5 chars, issue closed < 2min ago, or "thank you" patterns
+
+**BUG FIXED:** dlnraja commenting on closed issues (to confirm resolution)
+triggered the auto-reopen bot → infinite close/reopen loop.
+Fix: added `dlnraja` to both the `if:` condition AND the `SKIP_USERS` array.

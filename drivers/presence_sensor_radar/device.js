@@ -810,6 +810,12 @@ const SENSOR_CONFIGS = {
       104: { cap: null, setting: 'temperature_calibration', min: -20, max: 20 },  // ÷10 → -2.0 to +2.0°C
       105: { cap: null, setting: 'humidity_calibration', min: -30, max: 30 },
       107: { cap: null, setting: 'indicator' },
+      // v5.11.26: _TZ3000_8bxrzyxz diag 5a38ea0b - unknown DPs now mapped
+      113: { cap: null, internal: 'radar_scene' },             // scene mode enum
+      119: { cap: null, internal: 'radar_breathing' },         // breathing detection bool
+      122: { cap: null, internal: 'radar_energy' },            // radar signal energy (0-1000, changes with presence)
+      123: { cap: null, internal: 'radar_static_energy' },     // static energy uint32
+      124: { cap: null, internal: 'radar_self_test' },         // self-test result bool
     }
   },
 
@@ -2955,7 +2961,12 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       const divisor = dpMap[dpId].divisor || 1;
       const multiplier = dpMap[dpId].multiplier || 1;
       // v5.5.987: Peter #1265 - Support multiplier for humidity (9% → 90%)
-      const humidity = Math.round((rawHumid / divisor) * multiplier);
+      // v5.11.26: Auto-fix out-of-range - some variants report ×10 (700=70%)
+      // while others report ÷10 (9=90%), so multiplier:10 doesn't work for all
+      let humidity = Math.round((rawHumid / divisor) * multiplier);
+      if (humidity > 100 && rawHumid > 100) {
+        humidity = Math.round(rawHumid / 10);
+      }
       if (humidity >= 0 && humidity <= 100) {
         this.log(`[RADAR] 💧 DP${dpId} → humidity = ${humidity}% (raw: ${rawHumid}, ÷${divisor}, ×${multiplier})`);
         this.setCapabilityValue('measure_humidity', humidity).catch(() => { });
