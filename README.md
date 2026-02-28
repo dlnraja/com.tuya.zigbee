@@ -99,7 +99,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.26** | Added support for a new Tuya 2-gang switch (_TZ3000_itgngnqz). Improved messaging for users migrating from the old Jo... |
+| **v5.11.26** | v5.11.26:  |
 | **v5.11.25** | v5.11.25: Fixed voltage divisor in driver #137 â€” readings were off by a factor of 10 on some plug variants., Dashboar... |
 | **v5.11.24** | v5.11.24: Fixed a workflow trigger race condition. Forum scanner now covers 12 topics. Better diagnostics tracking be... |
 | **v5.11.23** | v5.11.23: Switched post-forum-update to fetchWithRetry (fixes random post failures). RawClusterFallback for non-Tuya-... |
