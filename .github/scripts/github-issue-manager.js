@@ -18,6 +18,7 @@ const TAG='<!-- tuya-issue-manager -->';
 const OWNER_USERS=new Set(['dlnraja','github-actions[bot]','dependabot[bot]','tuya-triage-bot']);
 const{fetchWithRetry}=require('./retry-helper');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const RATE_SLEEP=parseInt(process.env.RATE_LIMIT_SLEEP||'4000');
 let appVer='?';try{appVer=JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')).version}catch{}
 const fps=loadFingerprints();
 const hdrs=t=>({Accept:'application/vnd.github+json','User-Agent':'tuya-bot',...(t?{Authorization:'Bearer '+t}:{})});
@@ -177,7 +178,7 @@ async function processIssue(repo,issue,state,report,extData){
         await crossPostGH(repo,issue.number,issue.title,report);
       }
     }
-    await sleep(2000);
+    await sleep(RATE_SLEEP);
   }
 
   // Close stale/resolved issues
@@ -280,7 +281,7 @@ async function processPR(repo,pr,state,report,extData){
   }
 
   markProcessed(state,repo,'PR'+pr.number);
-  await sleep(1000);
+  await sleep(Math.max(RATE_SLEEP-1000,2000));
 }
 
 // Update project docs based on findings
@@ -348,11 +349,15 @@ async function main(){
     const realIssues=allIssues.filter(i=>!i.pull_request);
     console.log('Issues found:',realIssues.length,'(processing up to',MAX_ITEMS+')');
 
+    let batchCount=0;
     for(const iss of realIssues.slice(0,MAX_ITEMS)){
       await processIssue(repo,iss,state,report,extData);
       report.issuesProcessed++;
+      batchCount++;
+      // Extra pause every 10 items to stay within RPM limits
+      if(batchCount%10===0){console.log('  [Rate] Pausing after',batchCount,'items...');await sleep(15000)}
     }
-    await sleep(2000);
+    await sleep(5000);
 
     // Fetch ALL open PRs (paginated)
     let allPRs=[];
@@ -375,11 +380,14 @@ async function main(){
     }
     console.log('PRs found:',allPRs.length,'(processing up to',Math.min(allPRs.length,MAX_ITEMS)+')');
 
+    let prBatch=0;
     for(const pr of allPRs.slice(0,MAX_ITEMS)){
       await processPR(repo,pr,state,report,extData);
       report.prsProcessed++;
+      prBatch++;
+      if(prBatch%10===0){console.log('  [Rate] Pausing after',prBatch,'PRs...');await sleep(15000)}
     }
-    await sleep(2000);
+    await sleep(5000);
   }
 
   // Update project docs

@@ -74,6 +74,7 @@ jobs:
           DRIVER_COUNT: ${{ needs.stats.outputs.drivers }}
           FP_COUNT: ${{ needs.stats.outputs.fps }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          GEMINI_MAX_TIER: "1"
         run: node .github/scripts/triage-run.js
 
   triage-dlnraja:
@@ -96,6 +97,7 @@ jobs:
           DRIVER_COUNT: ${{ needs.stats.outputs.drivers }}
           FP_COUNT: ${{ needs.stats.outputs.fps }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          GEMINI_MAX_TIER: "2"
         run: node .github/scripts/triage-run.js
 
   scan-forks:

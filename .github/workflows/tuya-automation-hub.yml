@@ -102,6 +102,7 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           DRY_RUN: ${{ inputs.dry_run || 'true' }}
+          GEMINI_MAX_TIER: "1"
         run: node .github/scripts/github-scanner.js
       - name: Commit state
         if: always()
@@ -137,6 +138,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_MAX_TIER: "1"
         run: node .github/scripts/enrichment-scanner.js
       - name: Scan Public APIs (davemachado/public-api)
         continue-on-error: true
