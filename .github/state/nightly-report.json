@@ -1,22 +1,11 @@
 {
-  "timestamp": "2026-02-28T08:46:53.871Z",
+  "timestamp": "2026-02-28T14:46:11.447Z",
   "appVersion": "5.11.26",
-  "forum": 1,
+  "forum": 0,
   "github": 0,
-  "diagnostics": 9,
+  "diagnostics": 8,
   "diagNewFPs": 0,
   "diagCritical": 0,
-  "forumDetails": [
-    {
-      "topic": 140352,
-      "post": 1551,
-      "user": "OH2TH",
-      "fps": [
-        "dlnraja"
-      ],
-      "reply": "**Fingerprint check** (v5.11.26):\n✅ Supported: `dlnraja` → **generic_diy**\n",
-      "model": "template"
-    }
-  ],
+  "forumDetails": [],
   "githubDetails": []
 }

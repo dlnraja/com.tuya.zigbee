@@ -1,5 +1,5 @@
 {
-  "date": "2026-02-28T08:45:20.400Z",
+  "date": "2026-02-28T14:45:16.790Z",
   "local": {
     "drivers": 143,
     "fps": 4181
@@ -20722,8 +20722,11 @@
         "state": "closed",
         "user": "Lalla80111",
         "labels": [
+          "bug",
           "device-request",
-          "already-supported"
+          "reopened-by-user",
+          "plug",
+          "energy_monitor"
         ],
         "fps": [
           "_TZ3210_w0qqde0g"
@@ -21179,7 +21182,9 @@
         "user": "Pollepa",
         "labels": [
           "device-request",
-          "reopened-by-user"
+          "device_request",
+          "reopened-by-user",
+          "supported_device"
         ],
         "fps": [
           "_TZ3210_w0qqde0g"
