@@ -1,6 +1,6 @@
 /**
  * AI Helper - Multi-provider with project rules injection
- * Chain: Gemini → GitHub Models → OpenAI → Groq → IBM Granite (HF) → Mistral → OpenRouter → ApiFreeLLM
+ * Chain (FREE ONLY): Gemini → GitHub Models → Groq → IBM Granite (HF) → OpenRouter → Cerebras → Together → ApiFreeLLM
  */
 const fs=require('fs'),path=require('path');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -76,19 +76,7 @@ async function callAI(text,sysPrompt,opts={}){
       }catch(e){console.log('  GitHub Models '+model+' error:',e.message);cbFail('gh-'+model,60000)}
     }
   }
-  // Fallback to OpenAI
-  const oaiKey=process.env.OPENAI_API_KEY;
-  if(oaiKey){
-    console.log('  Falling back to OpenAI...');
-    try{
-      const r=await fetchT('https://api.openai.com/v1/chat/completions',{
-        method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+oaiKey},
-        body:JSON.stringify({model:'gpt-4o-mini',messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],
-          max_tokens:maxTokens,temperature:0.2})});
-      if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'gpt-4o-mini'}}
-      if(r.status===429){console.log('  OpenAI 429, skipping');} else{const e=await r.text().catch(()=>'');console.log('  OpenAI failed:',r.status,e.substring(0,150))}
-    }catch(e){console.log('  OpenAI error:',e.message)}
-  }
+  // OpenAI REMOVED — costs money ($0.15/1M tokens). Use only free providers.
   // Fallback to Groq (free, fast inference)
   const groqKey=process.env.GROQ_API_KEY;
   if(groqKey){
@@ -113,18 +101,7 @@ async function callAI(text,sysPrompt,opts={}){
       else{const e=await r.text().catch(()=>'');console.log('  Granite failed:',r.status,e.substring(0,150))}
     }catch(e){console.log('  Granite error:',e.message)}
   }
-  // Fallback to Mistral (free experiment plan)
-  const mistralKey=process.env.MISTRAL_API_KEY;
-  if(mistralKey){
-    console.log('  Falling back to Mistral...');
-    try{
-      const r=await fetchT('https://api.mistral.ai/v1/chat/completions',{
-        method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+mistralKey},
-        body:JSON.stringify({model:'mistral-small-latest',messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],max_tokens:maxTokens,temperature:0.2})});
-      if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'mistral-small'}}
-      else console.log('  Mistral failed:',r.status);
-    }catch(e){console.log('  Mistral error:',e.message)}
-  }
+  // Mistral REMOVED — free experiment plan can expire, then charges.
   // Fallback to OpenRouter (free models)
   const orKey=process.env.OPENROUTER_API_KEY;
   if(orKey){
@@ -204,17 +181,7 @@ async function analyzeImage(imageUrl,prompt){
     }catch{cbFail('gemini-v-'+vm,60000)}}
     }
   }
-  // OpenAI Vision fallback
-  const oaiKey=process.env.OPENAI_API_KEY;
-  if(oaiKey){
-    try{
-      const r=await fetchT('https://api.openai.com/v1/chat/completions',{
-        method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+oaiKey},
-        body:JSON.stringify({model:'gpt-4o-mini',messages:[{role:'user',content:[{type:'text',text:prompt},{type:'image_url',image_url:{url:imageUrl}}]}],
-          max_tokens:1024})});
-      if(r.ok){const d=await r.json();return d.choices?.[0]?.message?.content?.trim()||null}
-    }catch{}
-  }
+  // OpenAI Vision REMOVED — costs money. Use Gemini Vision + GitHub Models Vision only.
   // GitHub Models Vision fallback
   const ght=process.env.GH_PAT||process.env.GITHUB_TOKEN;
   if(ght&&cbOk('gh-vision')){
