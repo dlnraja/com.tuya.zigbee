@@ -27,7 +27,7 @@ function loadForumIntel(){
 const strip=h=>(h||'').replace(/<br\s*\/?>/gi,'\n').replace(/<\/p>/gi,'\n').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").trim();
 const exImgs=h=>{const u=[];const re=/<img[^>]+src="([^"]+)"/gi;let m;while((m=re.exec(h||''))!==null)u.push(m[1]);return u};
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-const{callAI,callAIEnsemble,analyzeImage,getAIBudget,textSimilarity}=require('./ai-helper');
+const{callAI,callAIEnsemble,analyzeImage,getAIBudget,textSimilarity,isDuplicateContent,MAX_POST_SIZE}=require('./ai-helper');
 
 function buildIndex(){
   const{mfrIdx,pidIdx,allMfrs,allPids}=buildFullIndex(DDIR);
@@ -272,19 +272,22 @@ async function main(){
       let ok=false;
       // Check if last post in topic is already from dlnraja — EDIT instead of new post
       const lastOwn=await getLastOwnPost(tid);
-      // Dedup: skip if new reply is too similar to existing post content
-      if(lastOwn&&textSimilarity(reply,lastOwn.raw)>SIMILARITY_THRESHOLD){console.log('  ⏭ Reply too similar to existing post ('+Math.round(textSimilarity(reply,lastOwn.raw)*100)+'%), skipping');state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
+      // Per-section dedup: skip if ANY section of existing post already covers this reply
+      if(lastOwn&&isDuplicateContent(reply,lastOwn.raw,0.45)){console.log('  ⏭ Reply duplicate of existing section, skipping');state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
+      // Size cap: don't keep growing post forever — create new post instead
+      const editTarget=(lastOwn&&lastOwn.raw.length<=MAX_POST_SIZE)?lastOwn:null;
+      if(lastOwn&&!editTarget)console.log('  Post '+lastOwn.raw.length+'ch > '+MAX_POST_SIZE+', will create new');
       for(let i=0;i<3;i++){
         try{
           if(auth.type==='session')await refreshCsrf(auth);
-          if(lastOwn){
+          if(editTarget){
             // EDIT existing post: append new content with separator
             // Strip duplicate footers from old content before merging
-            const cleanOld=lastOwn.raw.replace(/\n*As always,?\s*remove and re-?pair[^\n]*/gi,'').trimEnd();
+            const cleanOld=editTarget.raw.replace(/\n*As always,?\s*remove and re-?pair[^\n]*/gi,'').trimEnd();
             const merged=cleanOld+'\n\n---\n\n'+reply;
-            const r=await editPost(lastOwn.id,merged,auth);
-            console.log('  Edited #'+lastOwn.postNumber+' (appended '+reply.length+'ch)');
-            summary.push({t:tid,u:uList,a:'edited',id:lastOwn.id});logReply(state,tid,lastOwn.id);totalR++;ok=true;break;
+            const r=await editPost(editTarget.id,merged,auth);
+            console.log('  Edited #'+editTarget.postNumber+' (appended '+reply.length+'ch)');
+            summary.push({t:tid,u:uList,a:'edited',id:editTarget.id});logReply(state,tid,editTarget.id);totalR++;ok=true;break;
           }else{
             const r=await postReply(tid,lastP.post_number,reply,auth);
             console.log('  Posted:',r.id);summary.push({t:tid,u:uList,a:'replied',id:r.id});logReply(state,tid,r.id);totalR++;ok=true;await sleep(DELAY);break;

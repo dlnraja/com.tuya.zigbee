@@ -25,8 +25,36 @@ function _rtOk(t){const n=Date.now(),td=new Date().toISOString().slice(0,10);if(
 async function _rtWait(t){const id=t[0],rpm=t[3];const n=Date.now();if(n-_rt.mt>60000){_rt.m={};_rt.mt=n}const used=_rt.m[id]||0;if(used>=rpm-1){const wait=60000-(n-_rt.mt)+500;if(wait>0){console.log('  [RPM] '+id+' at '+used+'/'+rpm+' — waiting '+Math.round(wait/1000)+'s');await sleep(wait);_rt.m={};_rt.mt=Date.now()}}}
 // Budget summary for end-of-run logging
 function _rtBudget(){const lines=[];for(const t of GTIERS){const d=_rt.d[t[0]]||0;const pct=Math.round(d/t[4]*100);lines.push(t[0]+': '+d+'/'+t[4]+' ('+pct+'%)')}const oai=_rt.d['openai']||0;if(oai||process.env.OPENAI_API_KEY)lines.push('openai: '+oai+'/200 ('+Math.round(oai/200*100)+'%)');const mi=_rt.d['mistral']||0;if(mi||process.env.MISTRAL_API_KEY)lines.push('mistral: '+mi+'/30 ('+Math.round(mi/30*100)+'%)');return lines.join(' | ')}
-function _estCx(text,sys,o){if(o.complexity!==undefined){const m={trivial:0,low:1,medium:2,high:3};return typeof o.complexity==='string'?(m[o.complexity]??1):o.complexity}const len=(text||'').length+(sys||'').length;const mt=o.maxTokens||2048;const lc=((text||'')+' '+(sys||'')).toLowerCase();if(mt>1500||len>6000)return 3;if(mt>768||len>3000||lc.includes('write a github comment'))return 2;if(mt>256||len>1000)return 1;return 0}
-function _pickModels(cx){const cap=parseInt(process.env.GEMINI_MAX_TIER)||3;return GTIERS.filter(t=>t[2]<=cap&&_rtOk(t)&&cbOk('gemini-'+t[1])).sort((a,b)=>{const da=Math.abs(a[2]-cx),db=Math.abs(b[2]-cx);return da!==db?da-db:a[2]-b[2]})}
+// Task classification: detects WHAT kind of work + HOW complex
+// Returns {cx: 0-3, type: 'classify'|'generate'|'analyze'|'merge'|'lookup'}
+function classifyTask(text,sys,o){
+  if(o.complexity!==undefined){const m={trivial:0,low:1,medium:2,high:3};const cx=typeof o.complexity==='string'?(m[o.complexity]??1):o.complexity;return{cx,type:o.taskType||'generate'}}
+  const len=(text||'').length+(sys||'').length;const mt=o.maxTokens||2048;
+  const lc=((text||'')+' '+(sys||'')).toLowerCase();
+  // Detect task type from content
+  let type='generate';
+  if(/classify|return.*json|triage|categorize|label/i.test(lc))type='classify';
+  else if(/merge|synthesize|combine.*opinion|consolidate/i.test(lc))type='merge';
+  else if(/analyze|investigate|debug|diagnose|root.?cause|find.*bug/i.test(lc))type='analyze';
+  else if(/fingerprint|lookup|check.*support|find.*driver/i.test(lc))type='lookup';
+  // Complexity scoring
+  let cx=1;
+  if(type==='classify'||type==='lookup'||type==='merge')cx=Math.min(mt>768?2:1,1);
+  else if(type==='analyze')cx=mt>1500||len>6000?3:2;
+  else{if(mt>1500||len>6000)cx=3;else if(mt>768||len>3000)cx=2;else if(mt>256||len>1000)cx=1;else cx=0}
+  return{cx,type};
+}
+// Gemini model selection: match complexity + task type
+function _pickModels(cx,taskType){
+  const cap=parseInt(process.env.GEMINI_MAX_TIER)||3;
+  let pool=GTIERS.filter(t=>t[2]<=cap&&_rtOk(t)&&cbOk('gemini-'+t[1]));
+  // For analyze tasks, prefer higher-tier models; for classify/merge, prefer fast
+  if(taskType==='analyze')pool=pool.filter(t=>t[2]>=Math.min(cx,2)).concat(pool);
+  else if(taskType==='classify'||taskType==='merge'||taskType==='lookup')pool=pool.filter(t=>t[2]<=1).concat(pool);
+  // Deduplicate preserving order
+  const seen=new Set();pool=pool.filter(t=>{if(seen.has(t[0]))return false;seen.add(t[0]);return true});
+  return pool.sort((a,b)=>{const da=Math.abs(a[2]-cx),db=Math.abs(b[2]-cx);return da!==db?da-db:a[2]-b[2]});
+}
 
 async function callAI(text,sysPrompt,opts={}){
   const maxTokens=opts.maxTokens||2048;
@@ -36,8 +64,8 @@ async function callAI(text,sysPrompt,opts={}){
   // Smart Gemini routing by complexity
   const gemKey=process.env.GOOGLE_API_KEY;
   if(gemKey){
-    _rtLoad();const cx=_estCx(text,sysPrompt,opts);const tiers=_pickModels(cx);
-    if(tiers.length)console.log('  [AI] cx='+cx+' try=['+tiers.map(t=>t[0]).join(',')+']');
+    _rtLoad();const task=classifyTask(text,sysPrompt,opts);const cx=task.cx;const tiers=_pickModels(cx,task.type);
+    if(tiers.length)console.log('  [AI] task='+task.type+' cx='+cx+' try=['+tiers.map(t=>t[0]).join(',')+']');
     for(const tier of tiers){
       const model=tier[1];
       await _rtWait(tier);
@@ -246,12 +274,25 @@ async function fetchImageBase64(url){
 }
 
 function textSimilarity(a,b){if(!a||!b)return 0;const wa=new Set(a.toLowerCase().split(/\s+/)),wb=new Set(b.toLowerCase().split(/\s+/));let i=0;for(const w of wa)if(wb.has(w))i++;return i/Math.max(1,(wa.size+wb.size-i))}
+// Per-section dedup: check new text against EACH --- section of existing post
+function isDuplicateContent(newText,existingPost,threshold){
+  threshold=threshold||0.5;if(!newText||!existingPost)return false;
+  // Check whole post
+  if(textSimilarity(newText,existingPost)>threshold)return true;
+  // Check each section separated by ---
+  const sections=existingPost.split(/\n---+\n/).filter(s=>s.trim().length>30);
+  for(const sec of sections){if(textSimilarity(newText,sec)>threshold)return true}
+  return false;
+}
+const MAX_POST_SIZE=3000;
 
 async function callAIEnsemble(text,sysPrompt,opts={}){
-  const{qc,provs}=require('./ai-ensemble');
-  const ps=provs().slice(0,3);
+  const{qc,pickForTask}=require('./ai-ensemble');
+  const task=classifyTask(text,sysPrompt,opts);
+  if(task.type==='classify'||task.type==='lookup'||task.type==='merge')return callAI(text,sysPrompt,opts);
+  const ps=pickForTask(task.type,task.cx>=3?3:2);
   if(ps.length<2)return callAI(text,sysPrompt,opts);
-  console.log('  [Ens] '+ps.join(','));
+  console.log('  [Ens] task='+task.type+' '+ps.join(','));
   const sys=PROJECT_RULES+(ARCHITECTURE_SUMMARY?'\n---\n'+ARCHITECTURE_SUMMARY:'')+'\n\n'+sysPrompt;
   const mt=Math.min(opts.maxTokens||2048,1500);
   const res=await Promise.allSettled(ps.map(p=>qc(p,text,sys,mt)));
@@ -263,4 +304,4 @@ async function callAIEnsemble(text,sysPrompt,opts={}){
   return m||{text:ans[0].t,model:'ens-'+ans[0].p};
 }
 
-module.exports={callAI,callAIEnsemble,analyzeImage,sleep,localFallback,getAIBudget:_rtBudget,textSimilarity};
+module.exports={callAI,callAIEnsemble,analyzeImage,sleep,localFallback,getAIBudget:_rtBudget,textSimilarity,isDuplicateContent,MAX_POST_SIZE};
