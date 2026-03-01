@@ -254,7 +254,7 @@ async function postToForum(topicId,content,auth){
 async function main(){
   const dryRun=process.env.DRY_RUN!=='false';
   const repos=['dlnraja/com.tuya.zigbee','JohanBendz/com.tuya.zigbee'];
-  const forumTopics=[140352,26439];
+  const forumTopics=[140352];
   let appVersion='unknown';
   try{appVersion=JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')).version}catch{}
   const state=loadState();

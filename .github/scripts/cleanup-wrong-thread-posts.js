@@ -6,7 +6,7 @@ const envFile=path.join(__dirname,'..','..', '.env');
 if(fs.existsSync(envFile)){for(const l of fs.readFileSync(envFile,'utf8').split('\n')){const m=l.match(/^\s*([A-Z_]+)\s*=\s*(.+)\s*$/);if(m&&m[2]&&!m[2].startsWith('#'))process.env[m[1]]=m[2];}}
 const{getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry,sleep}=require('./retry-helper');
-const TOPICS=[26439,146735,89271];
+const TOPICS=[140352];
 const USER='dlnraja';
 const DRY=process.env.DRY_RUN!=='false';
 const EDIT_SPACING=60000;
