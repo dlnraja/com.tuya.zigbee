@@ -7,6 +7,9 @@ const{textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost}=require('.
 const TID=140352;
 const SUM=process.env.GITHUB_STEP_SUMMARY||'/dev/null';
 const STATE_FILE=path.join(__dirname,'..','state','forum-update-state.json');
+const CD_FILE=path.join(__dirname,'..','state','forum-post-cooldown.json');
+function checkGlobalCooldown(){try{const j=JSON.parse(fs.readFileSync(CD_FILE,'utf8'));if(j.t&&Date.now()-j.t<1800000){console.log('Global cooldown: last post '+Math.round((Date.now()-j.t)/60000)+'m ago');return false}}catch{}return true}
+function setGlobalCooldown(){try{fs.mkdirSync(path.dirname(CD_FILE),{recursive:true});fs.writeFileSync(CD_FILE,JSON.stringify({t:Date.now(),iso:new Date().toISOString(),src:'post-forum-update'}))}catch{}}
 const strip=h=>(h||'').replace(/<[^>]+>/g,'').trim();
 function loadState(){try{return JSON.parse(fs.readFileSync(STATE_FILE,'utf8'))}catch{return{}}}
 function saveState(s){fs.mkdirSync(path.dirname(STATE_FILE),{recursive:true});fs.writeFileSync(STATE_FILE,JSON.stringify(s,null,2)+'\n')}
@@ -104,6 +107,8 @@ async function main(){
   const stats=gatherStats();
   const raw=buildForumPost(ver,cl,stats,url);
   console.log('Update content ('+raw.length+'ch):\n'+raw.substring(0,200));
+  // Global cooldown check (shared with forum-responder.js)
+  if(!checkGlobalCooldown()&&!process.env.FORCE_POST){console.log('Skipping (global cooldown)');fs.appendFileSync(SUM,'Forum: skipped (global cooldown)\n');return}
   try{
     if(auth.type==='session')await refreshCsrf(auth);
     const lastOwn=await getLastOwnPost(TID);
@@ -117,6 +122,7 @@ async function main(){
       await postReply(TID,raw,auth);
       console.log('Posted new reply (no existing dlnraja post found)');
     }
+    setGlobalCooldown();
     state.lastVersion=ver;state.lastPosted=new Date().toISOString();
     saveState(state);
     fs.appendFileSync(SUM,'Forum: posted v'+ver+' update'+(lastOwn?' (edited #'+lastOwn.postNumber+')':' (new reply)')+'\n');
