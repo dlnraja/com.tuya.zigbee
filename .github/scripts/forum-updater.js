@@ -5,7 +5,7 @@
 const fs=require('fs'),path=require('path');
 const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
-const{textSimilarity}=require('./ai-helper');
+const{textSimilarity,isDuplicateContent,MAX_POST_SIZE}=require('./ai-helper');
 const TOPIC=140352;
 const strip=h=>(h||'').replace(/<[^>]+>/g,'').trim();
 
@@ -63,7 +63,7 @@ async function main(){
 
   if(!Object.keys(reports).length){console.log('No scanner reports found, nothing to post');return}
 
-  const sysPrompt='You are Dylan, French dev of Universal Tuya Zigbee (v'+appVersion+'). Write a short casual scan update for the forum. Plain text, no ## headers, no tables, no emoji walls. Short sentences, say "I" naturally. Keep under 200 words. NO bot references, NO signature, NO footer links.';
+  const sysPrompt='You are Dylan, French dev of Universal Tuya Zigbee (v'+appVersion+'). Write a short casual scan update for the forum. Plain text, no ## headers, no tables, no emoji walls. Short sentences, say "I" naturally. Keep under 150 words. NO bot references, NO signature, NO footer links. NEVER repeat "remove and re-pair" — that phrase is added automatically. Each update must be UNIQUE — vary your opening, wording, and structure every time.';
   const aiRes=await callAI(JSON.stringify(reports,null,2),sysPrompt);
   const aiPost=aiRes?aiRes.text:null;
 
@@ -86,14 +86,15 @@ async function main(){
     if(auth&&auth.type==='session')auth=await refreshCsrf(auth);
     if(!auth){console.error('::warning::No forum auth available');process.exit(0)}
     const lastOwn=await getLastOwnPost();
-    // Dedup: skip if content is too similar to existing post
-    if(lastOwn&&textSimilarity(content,lastOwn.raw)>0.6){console.log('Content too similar to existing post ('+Math.round(textSimilarity(content,lastOwn.raw)*100)+'%), skipping');return}
-    if(lastOwn){
-      // Strip duplicate footers from old content so boilerplate appears only once
-      const cleanOld=lastOwn.raw.replace(/\n*As always,?\s*remove and re-?pair[^\n]*/gi,'').trimEnd();
+    // Per-section dedup: skip if ANY section already covers this content
+    if(lastOwn&&isDuplicateContent(content,lastOwn.raw,0.45)){console.log('Content duplicate of existing section, skipping');return}
+    // Size cap: don't keep growing post forever
+    const editTarget=(lastOwn&&lastOwn.raw.length<=MAX_POST_SIZE)?lastOwn:null;
+    if(editTarget){
+      const cleanOld=editTarget.raw.replace(/\n*As always,?\s*remove and re-?pair[^\n]*/gi,'').trimEnd();
       const merged=cleanOld+'\n\n---\n\n'+content;
-      await editPost(lastOwn.id,merged,auth);
-      console.log('Edited #'+lastOwn.postNumber);
+      await editPost(editTarget.id,merged,auth);
+      console.log('Edited #'+editTarget.postNumber);
     }else{
       const result=await postToForum(content,auth);
       console.log('Posted id:',result.id);

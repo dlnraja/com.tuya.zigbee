@@ -1,28 +1,40 @@
 'use strict';
-const{PROJECT_RULES,ARCHITECTURE_SUMMARY}=require('./project-rules');
 const ft=(u,o,ms)=>{ms=ms||25000;const c=new AbortController();const t=setTimeout(()=>c.abort(),ms);return fetch(u,{...o,signal:c.signal}).finally(()=>clearTimeout(t))};
 const hd=k=>({'Content-Type':'application/json','Authorization':'Bearer '+k});
-
-function provs(){
-  const p=[];
-  if(process.env.GROQ_API_KEY)p.push('groq');
-  if(process.env.GH_PAT||process.env.GITHUB_TOKEN)p.push('github');
-  if(process.env.OPENROUTER_API_KEY)p.push('openrouter');
-  if(process.env.CEREBRAS_API_KEY)p.push('cerebras');
-  return p;
+// Provider profiles: strengths per task type (0=bad,3=best), arch for diversity
+const P={
+  groq:{k:'GROQ_API_KEY',url:'https://api.groq.com/openai/v1/chat/completions',m:'llama-3.3-70b-versatile',arch:'llama70b',sl:8000,tl:12000,s:{analyze:3,generate:3,classify:2,merge:2,lookup:1}},
+  github:{k:'_GH',url:'https://models.inference.ai.azure.com/chat/completions',m:'gpt-4o-mini',arch:'gpt',sl:5000,tl:12000,s:{classify:3,generate:3,analyze:2,merge:2,lookup:2}},
+  cerebras:{k:'CEREBRAS_API_KEY',url:'https://api.cerebras.ai/v1/chat/completions',m:'llama-3.3-70b',arch:'llama70b-cb',sl:6000,tl:10000,s:{analyze:3,generate:2,classify:2,merge:3,lookup:1}},
+  openrouter:{k:'OPENROUTER_API_KEY',url:'https://openrouter.ai/api/v1/chat/completions',m:'meta-llama/llama-3.3-8b-instruct:free',arch:'llama8b',sl:6000,tl:10000,s:{classify:2,lookup:2,merge:2,generate:1,analyze:1}},
+};
+function _gk(p){if(p.k==='_GH')return process.env.GH_PAT||process.env.GITHUB_TOKEN;return process.env[p.k]}
+// Get available providers sorted by strength for a task type
+function provs(taskType){
+  const tt=taskType||'generate';
+  return Object.entries(P).filter(([,v])=>_gk(v)).sort((a,b)=>(b[1].s[tt]||0)-(a[1].s[tt]||0)).map(([k])=>k);
+}
+// Pick diverse providers: avoid same architecture, prefer high-strength
+function pickForTask(taskType,count){
+  const tt=taskType||'generate';const avail=provs(tt);
+  if(avail.length<=count)return avail;
+  const picked=[];const archs=new Set();
+  for(const name of avail){if(picked.length>=count)break;const pr=P[name];if(archs.has(pr.arch)&&picked.length>0)continue;picked.push(name);archs.add(pr.arch)}
+  while(picked.length<count&&picked.length<avail.length){const next=avail.find(n=>!picked.includes(n));if(next)picked.push(next);else break}
+  return picked;
 }
 
-async function qc(p,t,s,mx){
-  const b=(m,sy,tx)=>JSON.stringify({model:m,messages:[{role:'system',content:sy},{role:'user',content:tx}],max_tokens:mx,temperature:0.3});
+// Profile-driven quick call: uses P profiles for model/url/limits
+async function qc(name,t,s,mx){
+  const pr=P[name];if(!pr)return null;
+  const key=_gk(pr);if(!key)return null;
+  const body=JSON.stringify({model:pr.m,messages:[{role:'system',content:s.slice(0,pr.sl)},{role:'user',content:t.slice(0,pr.tl)}],max_tokens:mx,temperature:0.3});
   try{
-    let r;
-    if(p==='groq')r=await ft('https://api.groq.com/openai/v1/chat/completions',{method:'POST',headers:hd(process.env.GROQ_API_KEY),body:b('llama-3.3-70b-versatile',s.slice(0,8000),t.slice(0,12000))});
-    else if(p==='github')r=await ft('https://models.inference.ai.azure.com/chat/completions',{method:'POST',headers:hd(process.env.GH_PAT||process.env.GITHUB_TOKEN),body:b('gpt-4o-mini',s.slice(0,5000),t.slice(0,12000))});
-    else if(p==='openrouter')r=await ft('https://openrouter.ai/api/v1/chat/completions',{method:'POST',headers:hd(process.env.OPENROUTER_API_KEY),body:b('meta-llama/llama-3.3-8b-instruct:free',s.slice(0,6000),t.slice(0,10000))});
-    else if(p==='cerebras')r=await ft('https://api.cerebras.ai/v1/chat/completions',{method:'POST',headers:hd(process.env.CEREBRAS_API_KEY),body:b('llama-3.3-70b',s.slice(0,6000),t.slice(0,10000))});
+    const r=await ft(pr.url,{method:'POST',headers:hd(key),body});
     if(r&&r.ok){const d=await r.json();return d.choices?.[0]?.message?.content?.trim()||null}
-  }catch(e){console.log('  [Ens] '+p+':',e.message)}
+    if(r)console.log('  [Ens] '+name+': HTTP '+r.status);
+  }catch(e){console.log('  [Ens] '+name+':',e.message)}
   return null;
 }
 
-module.exports={qc,provs,ft,hd};
+module.exports={qc,provs,pickForTask,ft,hd,P};
