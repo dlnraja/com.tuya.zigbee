@@ -2,9 +2,12 @@
 'use strict';
 const{getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
+const fs=require('fs'),path=require('path');
 const{callAI,textSimilarity}=require('./ai-helper');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const TID=140352,MY='dlnraja',DRY=process.env.DRY_RUN==='true';
+const CD_FILE=path.join(__dirname,'..','state','forum-post-cooldown.json');
+function setGlobalCooldown(){try{fs.mkdirSync(path.dirname(CD_FILE),{recursive:true});fs.writeFileSync(CD_FILE,JSON.stringify({t:Date.now(),iso:new Date().toISOString(),src:'merge-last-posts'}))}catch{}}
 const strip=h=>(h||'').replace(/<[^>]+>/g,'').trim();
 function getH(a,j){const h=a.type==='apikey'?{'User-Api-Key':a.key}:{'X-CSRF-Token':a.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(a.cookies)};if(j)h['Content-Type']='application/json';return h}
 
@@ -60,6 +63,7 @@ const keep=mine[mine.length-1];
 const er=await fetchWithRetry(FORUM+'/posts/'+keep.id,{method:'PUT',headers:getH(auth,true),body:JSON.stringify({post:{raw:final}})},{retries:3,label:'edit'});
 if(!er.ok)throw new Error('Edit failed:'+er.status);
 console.log('Edited post #'+keep.post_number+' with merged content');
+setGlobalCooldown();
 if(mine.length>1){
   await sleep(5000);
   for(const p of mine.slice(0,-1)){

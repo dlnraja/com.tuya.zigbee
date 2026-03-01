@@ -66,6 +66,16 @@ function logReply(state,tid,postId){
 function hasRecentOwnReply(posts){
   return posts.some(p=>p.username==='dlnraja');
 }
+// v5.12.x: Cross-check global cooldown file (shared with post-forum-update.js and forum-updater.js)
+function checkGlobalCooldown(){
+  try{const f=path.join(SD,'forum-post-cooldown.json');const j=JSON.parse(fs.readFileSync(f,'utf8'));
+    if(j.t&&Date.now()-j.t<1800000){console.log('  ⏳ Global cooldown: last post '+Math.round((Date.now()-j.t)/60000)+'m ago');return false}}
+  catch{}return true;
+}
+function setGlobalCooldown(){
+  try{const f=path.join(SD,'forum-post-cooldown.json');fs.mkdirSync(SD,{recursive:true});
+    fs.writeFileSync(f,JSON.stringify({t:Date.now(),iso:new Date().toISOString(),src:'forum-responder'}))}catch{}
+}
 
 function getHeaders(auth,json){
   const h=auth.type==='apikey'?{'User-Api-Key':auth.key}
@@ -102,15 +112,16 @@ async function getLastOwnPost(tid){
     const highest=d.highest_post_number;
     if(!highest)return null;
     // Fetch last few posts
-    const from=Math.max(1,highest-5);
+    const from=Math.max(1,highest-15);
     const r2=await fetchWithRetry(FORUM+'/t/'+tid+'/'+from+'.json',{},{retries:2,label:'lastOwnPosts'});
     if(!r2.ok)return null;
     const posts=(await r2.json()).post_stream?.posts||[];
-    // Check if the VERY LAST post is from dlnraja
+    // Find the most recent dlnraja post (not necessarily the very last)
     const sorted=posts.sort((a,b)=>b.post_number-a.post_number);
-    if(sorted[0]?.username==='dlnraja'){
-      return{id:sorted[0].id,postNumber:sorted[0].post_number,
-        raw:sorted[0].raw||strip(sorted[0].cooked||'')};
+    const own=sorted.find(p=>p.username==='dlnraja');
+    if(own){
+      return{id:own.id,postNumber:own.post_number,
+        raw:own.raw||strip(own.cooked||''),isLast:sorted[0]?.id===own.id};
     }
     return null;
   }catch{return null}
@@ -247,8 +258,10 @@ async function main(){
     }
     console.log('  Device:',devPosts.length,'/',fr.posts.length);
     if(!devPosts.length){state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
-    // Anti-spam: skip if we already replied recently
+    // Anti-spam: skip if we already replied recently (per-topic cooldown)
     if(!checkCooldown(state,tid)){state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
+    // Anti-spam: skip if global cooldown active (shared with post-forum-update.js)
+    if(!checkGlobalCooldown()){state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
     // Anti-spam: skip if our own reply already exists in the fetched batch
     if(hasRecentOwnReply(fr.posts)){console.log('  ⏳ Already replied in this batch, skipping');state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
     // Phase 2: ONE batched reply
@@ -282,10 +295,10 @@ async function main(){
           if(editTarget&&mergeResult){
             const r=await editPost(editTarget.id,mergeResult.content,auth);
             console.log('  Edited #'+editTarget.postNumber+' ('+mergeResult.reason+')');
-            summary.push({t:tid,u:uList,a:'edited',id:editTarget.id});logReply(state,tid,editTarget.id);totalR++;ok=true;break;
+            summary.push({t:tid,u:uList,a:'edited',id:editTarget.id});logReply(state,tid,editTarget.id);setGlobalCooldown();totalR++;ok=true;break;
           }else{
             const r=await postReply(tid,lastP.post_number,reply,auth);
-            console.log('  Posted:',r.id);summary.push({t:tid,u:uList,a:'replied',id:r.id});logReply(state,tid,r.id);totalR++;ok=true;await sleep(DELAY);break;
+            console.log('  Posted:',r.id);summary.push({t:tid,u:uList,a:'replied',id:r.id});logReply(state,tid,r.id);setGlobalCooldown();totalR++;ok=true;await sleep(DELAY);break;
           }
         }catch(e){
           console.warn('  Try'+(i+1)+':',e.message);
