@@ -607,3 +607,23 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 ---
 
 *Auto-generated on 2026-02-28 from v5.11.26 — 5,361+ fingerprints across 143 drivers*
+
+
+## Auto-discovered from GitHub (2026-03-01)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZ3000_iktiy8ue | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZ3000_cziew6eu | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE204_d2zfgtij | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE284_d2zfgtij | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE200_d2zfgtij | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE204_wjk6rurm | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE284_wjk6rurm | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE200_wjk6rurm | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE204_s4sa1mcx | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE284_s4sa1mcx | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE200_s4sa1mcx | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE204_x8diwkqb | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE284_x8diwkqb | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE200_x8diwkqb | dlnraja/com.tuya.zigbee#142 | feature |
