@@ -5,7 +5,7 @@
 const fs=require('fs'),path=require('path');
 const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
-const{textSimilarity,isDuplicateContent,MAX_POST_SIZE}=require('./ai-helper');
+const{textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost}=require('./ai-helper');
 const TOPIC=140352;
 const strip=h=>(h||'').replace(/<[^>]+>/g,'').trim();
 
@@ -86,15 +86,12 @@ async function main(){
     if(auth&&auth.type==='session')auth=await refreshCsrf(auth);
     if(!auth){console.error('::warning::No forum auth available');process.exit(0)}
     const lastOwn=await getLastOwnPost();
-    // Per-section dedup: skip if ANY section already covers this content
-    if(lastOwn&&isDuplicateContent(content,lastOwn.raw,0.45)){console.log('Content duplicate of existing section, skipping');return}
-    // Size cap: don't keep growing post forever
-    const editTarget=(lastOwn&&lastOwn.raw.length<=MAX_POST_SIZE)?lastOwn:null;
-    if(editTarget){
-      const cleanOld=editTarget.raw.replace(/\n*As always,?\s*remove and re-?pair[^\n]*/gi,'').trimEnd();
-      const merged=cleanOld+'\n\n---\n\n'+content;
-      await editPost(editTarget.id,merged,auth);
-      console.log('Edited #'+editTarget.postNumber);
+    if(lastOwn){
+      const m=smartMergePost(lastOwn.raw,content);
+      console.log('SmartMerge:',m.reason);
+      if(m.action==='skip'){console.log('Skipping ('+m.reason+')');return}
+      await editPost(lastOwn.id,m.content,auth);
+      console.log('Edited #'+lastOwn.postNumber+' ('+m.reason+')');
     }else{
       const result=await postToForum(content,auth);
       console.log('Posted id:',result.id);

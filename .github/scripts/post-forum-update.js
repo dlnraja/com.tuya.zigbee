@@ -3,7 +3,7 @@
 const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
 const{getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
-const{textSimilarity,isDuplicateContent,MAX_POST_SIZE}=require('./ai-helper');
+const{textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost}=require('./ai-helper');
 const TID=140352;
 const SUM=process.env.GITHUB_STEP_SUMMARY||'/dev/null';
 const STATE_FILE=path.join(__dirname,'..','state','forum-update-state.json');
@@ -109,18 +109,15 @@ async function main(){
   try{
     if(auth.type==='session')await refreshCsrf(auth);
     const lastOwn=await getLastOwnPost(TID);
-    // Per-section dedup: skip if ANY section already covers this content
-    if(lastOwn&&isDuplicateContent(raw,lastOwn.raw,0.45)){console.log('Update duplicate of existing section, skipping');fs.appendFileSync(SUM,'Forum: skipped (duplicate section)\n');return}
-    // Size cap: don't keep growing post forever
-    const editTarget=(lastOwn&&lastOwn.raw.length<=MAX_POST_SIZE)?lastOwn:null;
-    if(editTarget){
-      const cleanOld=editTarget.raw.replace(/\n*As always,?\s*remove and re-?pair[^\n]*/gi,'').trimEnd();
-      const merged=cleanOld+'\n\n---\n\n'+raw;
-      await editPost(editTarget.id,merged,auth);
-      console.log('Edited post #'+editTarget.postNumber+' (appended '+raw.length+'ch)');
+    if(lastOwn){
+      const m=smartMergePost(lastOwn.raw,raw);
+      console.log('SmartMerge:',m.reason);
+      if(m.action==='skip'){console.log('Skipping ('+m.reason+')');fs.appendFileSync(SUM,'Forum: skipped ('+m.reason+')\n');return}
+      await editPost(lastOwn.id,m.content,auth);
+      console.log('Edited post #'+lastOwn.postNumber+' ('+m.reason+')');
     }else{
       await postReply(TID,raw,auth);
-      console.log('Posted new reply');
+      console.log('Posted new reply (no existing dlnraja post found)');
     }
     state.lastVersion=ver;state.lastPosted=new Date().toISOString();
     saveState(state);
