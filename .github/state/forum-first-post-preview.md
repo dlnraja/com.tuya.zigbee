@@ -10,7 +10,7 @@ Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehens
 
 ## What's New (v5.11.26)
 
-Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs)., Internal cleanup across several workflow scripts.
+Universal Tuya Zigbee app v5.11.26: Improved forum anti-spam features, added new device fingerprints, and fixed energy monitoring bugs.
 
 ## Supported Devices
 
