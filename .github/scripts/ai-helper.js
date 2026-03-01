@@ -1,12 +1,12 @@
 /**
  * AI Helper - Multi-provider with project rules injection
- * Chain (FREE TIERS): Gemini → GitHub Models → OpenAI(free) → Groq → Granite → Mistral(free) → OpenRouter → Cerebras → Together → ApiFreeLLM
+ * Chain (FREE TIERS): Gemini → DeepSeek → GitHub Models → OpenAI(free) → Groq → Granite → Mistral(free) → OpenRouter → Cerebras → Together → ApiFreeLLM
  */
 const fs=require('fs'),path=require('path');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const{PROJECT_RULES,ARCHITECTURE_SUMMARY}=require('./project-rules');
 // Smart model routing: [id, model, complexity(0-3), rpm, rpd]
-const GTIERS=[['pro25','gemini-2.5-pro',3,5,100],['flash25','gemini-2.5-flash',2,10,250],['flash20','gemini-2.0-flash',1,15,1500],['lite20','gemini-2.0-flash-lite',0,30,1500]];
+const GTIERS=[['pro25','gemini-2.5-pro-preview-05-06',3,5,100],['flash25','gemini-2.5-flash-preview-05-20',2,10,250],['flash20','gemini-2.0-flash',1,15,1500],['lite20','gemini-2.0-flash-lite',0,30,1500]];
 
 // Circuit breaker: skip providers down recently
 const _cb={};
@@ -24,7 +24,7 @@ function _rtOk(t){const n=Date.now(),td=new Date().toISOString().slice(0,10);if(
 // RPM enforcement: wait if at limit instead of skipping
 async function _rtWait(t){const id=t[0],rpm=t[3];const n=Date.now();if(n-_rt.mt>60000){_rt.m={};_rt.mt=n}const used=_rt.m[id]||0;if(used>=rpm-1){const wait=60000-(n-_rt.mt)+500;if(wait>0){console.log('  [RPM] '+id+' at '+used+'/'+rpm+' — waiting '+Math.round(wait/1000)+'s');await sleep(wait);_rt.m={};_rt.mt=Date.now()}}}
 // Budget summary for end-of-run logging
-function _rtBudget(){const lines=[];for(const t of GTIERS){const d=_rt.d[t[0]]||0;const pct=Math.round(d/t[4]*100);lines.push(t[0]+': '+d+'/'+t[4]+' ('+pct+'%)')}const oai=_rt.d['openai']||0;if(oai||process.env.OPENAI_API_KEY)lines.push('openai: '+oai+'/200 ('+Math.round(oai/200*100)+'%)');const mi=_rt.d['mistral']||0;if(mi||process.env.MISTRAL_API_KEY)lines.push('mistral: '+mi+'/30 ('+Math.round(mi/30*100)+'%)');return lines.join(' | ')}
+function _rtBudget(){const lines=[];for(const t of GTIERS){const d=_rt.d[t[0]]||0;const pct=Math.round(d/t[4]*100);lines.push(t[0]+': '+d+'/'+t[4]+' ('+pct+'%)')}const ds=_rt.d['ds']||0;if(ds||process.env.DEEPSEEK_API_KEY)lines.push('deepseek: '+ds+'/500 ('+Math.round(ds/500*100)+'%)');const oai=_rt.d['openai']||0;if(oai||process.env.OPENAI_API_KEY)lines.push('openai: '+oai+'/200 ('+Math.round(oai/200*100)+'%)');const mi=_rt.d['mistral']||0;if(mi||process.env.MISTRAL_API_KEY)lines.push('mistral: '+mi+'/30 ('+Math.round(mi/30*100)+'%)');return lines.join(' | ')}
 // Task classification: detects WHAT kind of work + HOW complex
 // Returns {cx: 0-3, type: 'classify'|'generate'|'analyze'|'merge'|'lookup'}
 function classifyTask(text,sys,o){
@@ -84,6 +84,18 @@ async function callAI(text,sysPrompt,opts={}){
       }
     }
   }
+  // DeepSeek FREE: chat(V3)+reasoner(R1) — great reasoning/code
+  const dsKey=process.env.DEEPSEEK_API_KEY;
+  if(dsKey&&cbOk('deepseek')){const dsU=_rt.d['ds']||0;if(dsU<500){
+    const tk=classifyTask(text,sysPrompt,opts);const dsM=tk.cx>=3?'deepseek-reasoner':'deepseek-chat';
+    console.log('  Trying DeepSeek ('+dsM+')...');try{
+      const r=await fetchT('https://api.deepseek.com/chat/completions',{method:'POST',
+        headers:{'Content-Type':'application/json','Authorization':'Bearer '+dsKey},
+        body:JSON.stringify({model:dsM,messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],max_tokens:maxTokens,temperature:0.2})},45000);
+      if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t){_rtTrack('ds');return{text:t.trim(),model:dsM}}}
+      else if(r.status===429)cbFail('deepseek',120000);
+    }catch(e){console.log('  DeepSeek err:',e.message);cbFail('deepseek',60000)}
+  }}
   // GitHub Models (free via GITHUB_TOKEN - models.inference.ai.azure.com)
   const ghToken=process.env.GH_PAT||process.env.GITHUB_TOKEN;
   if(ghToken){
@@ -232,7 +244,7 @@ async function analyzeImage(imageUrl,prompt){
   // Gemini Vision
   const gemKey=process.env.GOOGLE_API_KEY;
   if(gemKey){
-    const vModels=['gemini-2.5-flash','gemini-2.0-flash'];
+    const vModels=['gemini-2.5-flash-preview-05-20','gemini-2.5-pro-preview-05-06','gemini-2.0-flash'];
     for(const vm of vModels){if(!cbOk('gemini-v-'+vm))continue;
     for(let i=0;i<2;i++){if(i)await sleep(backoff(i));try{
       const r=await fetchT('https://generativelanguage.googleapis.com/v1beta/models/'+vm+':generateContent?key='+gemKey,{

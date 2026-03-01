@@ -3,6 +3,7 @@ const ft=(u,o,ms)=>{ms=ms||25000;const c=new AbortController();const t=setTimeou
 const hd=k=>({'Content-Type':'application/json','Authorization':'Bearer '+k});
 // Provider profiles: strengths per task type (0=bad,3=best), arch for diversity
 const P={
+  deepseek:{k:'DEEPSEEK_API_KEY',url:'https://api.deepseek.com/chat/completions',m:'deepseek-chat',arch:'deepseek',sl:12000,tl:24000,s:{analyze:3,generate:3,classify:2,merge:3,lookup:2}},
   groq:{k:'GROQ_API_KEY',url:'https://api.groq.com/openai/v1/chat/completions',m:'llama-3.3-70b-versatile',arch:'llama70b',sl:8000,tl:12000,s:{analyze:3,generate:3,classify:2,merge:2,lookup:1}},
   github:{k:'_GH',url:'https://models.inference.ai.azure.com/chat/completions',m:'gpt-4o-mini',arch:'gpt',sl:5000,tl:12000,s:{classify:3,generate:3,analyze:2,merge:2,lookup:2}},
   cerebras:{k:'CEREBRAS_API_KEY',url:'https://api.cerebras.ai/v1/chat/completions',m:'llama-3.3-70b',arch:'llama70b-cb',sl:6000,tl:10000,s:{analyze:3,generate:2,classify:2,merge:3,lookup:1}},
