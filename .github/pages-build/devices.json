@@ -2160,7 +2160,6 @@
       "_TZE284_sonkaxrd",
       "_TZE284_tbgecldg",
       "_TZE284_tdhnhhiy",
-      "_TZE284_tgeqdjgk",
       "_TZE284_tuhfx7tf",
       "_TZE284_tzreobvu",
       "_TZE284_uab532m0",
@@ -2740,7 +2739,6 @@
       "_TZe284_s5vuaadg",
       "_TZe284_sgabhwa6",
       "_TZe284_tbgecldg",
-      "_TZe284_tgeqdjgk",
       "_TZe284_tuhfx7tf",
       "_TZe284_tzreobvu",
       "_TZe284_upagmta9",
@@ -2770,7 +2768,8 @@
       "_TYZB01_zqvwka4k",
       "_TZe200_iba1ckek",
       "_TZe200_jfw0a4aa",
-      "_TZe200_wzk0x7fq"
+      "_TZe200_wzk0x7fq",
+      "_TZe284_tgeqdjgk"
     ],
     "pids": [
       "TS0201",
@@ -2802,7 +2801,7 @@
       "measure_battery"
     ],
     "proto": "EF00",
-    "fpCount": 1578
+    "fpCount": 1577
   },
   {
     "id": "co_sensor",
@@ -6015,7 +6014,8 @@
       "_TZ3000_xabckq1v",
       "_TZ3000_zgyzgdua",
       "_TZE200_zqtiam9d",
-      "_TZE204_zqtiam9d"
+      "_TZE204_zqtiam9d",
+      "_TZE284_tgeqdjgk"
     ],
     "pids": [
       "TS0601",
@@ -6030,7 +6030,7 @@
       "measure_battery"
     ],
     "proto": "ZCL",
-    "fpCount": 8
+    "fpCount": 9
   },
   {
     "id": "scene_switch_6",
@@ -6087,17 +6087,11 @@
       "_TZ3000_hv9cqcci",
       "_TZE204_5sbebbzs",
       "_TZE204_hcxvyxa5",
-      "_TZE204_q76rtoa9",
-      "_TYZB01_fbo1dpof",
-      "_TYZB01_8scntis1",
-      "_TZ3000_c2yscrj8",
-      "_TYZB01_ynsiasng",
-      "_TYZB01_0wcfvptl"
+      "_TZE204_q76rtoa9"
     ],
     "pids": [
       "TS0216",
       "TS0219",
-      "TS0224",
       "TS0601"
     ],
     "caps": [
@@ -6107,7 +6101,7 @@
       "onoff"
     ],
     "proto": "EF00",
-    "fpCount": 33
+    "fpCount": 28
   },
   {
     "id": "bulb_dimmable",

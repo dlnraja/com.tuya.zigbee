@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-01T08:55:46.381Z",
+  "timestamp": "2026-03-01T20:40:22.174Z",
   "username": "dlnraja",
   "summary": {
     "postCount": 558,
@@ -50,7 +50,7 @@
       "id": 140352,
       "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
       "posts": 1521,
-      "views": 13740,
+      "views": 13763,
       "lastPosted": "2026-02-28T21:25:50.086Z",
       "slug": "app-pro-universal-tuya-zigbee-device-app-test"
     }
@@ -61,7 +61,7 @@
       "topicId": 140352,
       "postNum": 1558,
       "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "GitHub #93 — Device Request: Moes TRV from Aliexpress \nFPs: _TZE204_qyr2m29i | Variants: _TZE204_guvc7pdy, _TZE204_1fuxihti, _TZE204_57hjqelq, _TZE204_vvvtcehj, _TZE204_m1wl5fvq \nView issue \n\nv5.11.26 is up on the test channel. \nv5.11.26: \n143 drivers, 5,368+ fingerprints so far. \nAs always, remove &hellip;",
+      "excerpt": "Hey everyone, \nQuick note — I’ve deactivated all the automated YML workflows that were posting and replying on other community threads. From now on, everything stays on this thread only. Sorry about the noise on the other topics, that’s done. \nv5.11.27 is up on the test channel with various fixes (v&hellip;",
       "createdAt": "2026-02-28T21:25:50.086Z",
       "username": "dlnraja"
     },
@@ -2760,22 +2760,6 @@
   "pms": [],
   "notifications": [
     {
-      "type": 6,
-      "topicId": 151867,
-      "postNum": 1,
-      "data": {
-        "topic_title": "Post hidden by community flags",
-        "original_post_id": 715624,
-        "original_post_type": 1,
-        "original_username": "system",
-        "revision_number": null,
-        "display_username": "system",
-        "display_name": "system"
-      },
-      "read": false,
-      "createdAt": "2026-03-01T08:36:31.650Z"
-    },
-    {
       "type": 11,
       "topicId": 151778,
       "postNum": 2,
@@ -2806,6 +2790,22 @@
       },
       "read": false,
       "createdAt": "2026-02-27T20:15:44.264Z"
+    },
+    {
+      "type": 6,
+      "topicId": 151867,
+      "postNum": 1,
+      "data": {
+        "topic_title": "Post hidden by community flags",
+        "original_post_id": 715624,
+        "original_post_type": 1,
+        "original_username": "system",
+        "revision_number": null,
+        "display_username": "system",
+        "display_name": "system"
+      },
+      "read": true,
+      "createdAt": "2026-03-01T08:36:31.650Z"
     },
     {
       "type": 2,
@@ -4172,7 +4172,7 @@
         {
           "num": 1,
           "user": "dlnraja",
-          "text": "Universal Tuya Zigbee v5.11.26\n\n143 drivers · 5368+ fingerprints · Updated 2026-03-01\n\n\nLocal-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.\n\nInstall\nStable: Homey App Store · Test: Test Channel · Source: GitHub\n\nWhat’s New (v5.11.26)\nUniversal Tuya Zigbee app v5.11.26: Improved forum anti-spam features, added new device fingerprints, and fixed energy monitoring bugs.\n\nSupported Devices\n\n\n\n\nCategory\nDrivers\nFPs\n\n\n\n\n Socket\n31\n776\n\n\n Light\n18\n576\n\n\n Sensor\n42\n2578\n\n\n Thermostat\n7\n502\n\n\n Windowcoverings\n3\n276\n\n\n Lock\n4\n26\n\n\n Fan\n9\n46\n\n\n Doorbell\n2\n10\n\n\n Remote\n2\n37\n\n\n Button\n2\n9\n\n\n Heater\n4\n19\n\n\n Garagedoor\n2\n8\n\n\n Other\n14\n505\n\n\n\nDevice Finder — search by fingerprint\n\nFeatures\n\nTuya DP protocol (0xEF00/TS0601) + Standard ZCL clusters\nPhysical button detection · Virtual buttons · LED backlight control\nEnergy monitoring (W/V/A) · Air quality sensors (CO₂/VOC/PM2.5/HCHO)\nCovers & curtains with tilt · TRVs · Dimmers · IR blasters\nAuto-configured settings · Diagnostic reports\n\nChangelog\nPrevious versions\nv5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs)., Internal cleanup across several workflow scripts.\n\nv5.11.24: Fixed a workflow trigger race condition. Forum scanner now covers 12 topics. Better diagnostics tracking between runs.\n\nv5.11.23: Switched post-forum-update to fetchWithRetry (fixes random post failures). RawClusterFallback for non-Tuya-DP devices. Forum deduplication so the same post doesn’t get answered twice.\n\nv5.11.22: 8 new fingerprints from JohanBendz scan. Device Finder tool. Forum auth now handles 404/401 gracefully.\n\n\nReport a Bug\nOpen a GitHub Issue — please include your _TZxxxx fingerprint and TSxxxx model ID.\n\n Support the Project\nThis app is free and open-source. If it’s useful to you, a small donation helps keep it going:\n\nPayPal: paypal.me/dlnraja · Revolut: revolut.me/dylanoul\n\n\nLast updated 2026-03-01 — Source on GitHub",
+          "text": "Universal Tuya Zigbee v5.11.27\n\n143 drivers · 5368+ fingerprints · Updated 2026-03-01\n\n\nLocal-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.\n\nInstall\nStable: Homey App Store · Test: Test Channel · Source: GitHub\n\nWhat’s New (v5.11.27)\nFixed forum duplication issues and improved AI ensemble routing for better task classification.\n\nSupported Devices\n\n\n\n\nCategory\nDrivers\nFPs\n\n\n\n\n Socket\n31\n776\n\n\n Light\n18\n576\n\n\n Sensor\n42\n2578\n\n\n Thermostat\n7\n502\n\n\n Windowcoverings\n3\n276\n\n\n Lock\n4\n26\n\n\n Fan\n9\n46\n\n\n Doorbell\n2\n10\n\n\n Remote\n2\n37\n\n\n Button\n2\n9\n\n\n Heater\n4\n19\n\n\n Garagedoor\n2\n8\n\n\n Other\n14\n505\n\n\n\nDevice Finder — search by fingerprint\n\nFeatures\n\nTuya DP protocol (0xEF00/TS0601) + Standard ZCL clusters\nPhysical button detection · Virtual buttons · LED backlight control\nEnergy monitoring (W/V/A) · Air quality sensors (CO₂/VOC/PM2.5/HCHO)\nCovers & curtains with tilt · TRVs · Dimmers · IR blasters\nAuto-configured settings · Diagnostic reports\n\nChangelog\nPrevious versions\nv5.11.26: Fixed forum duplication issues and improved AI ensemble routing for better task classification.\n\nv5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs)., Internal cleanup across several workflow scripts.\n\nv5.11.24: Fixed a workflow trigger race condition. Forum scanner now covers 12 topics. Better diagnostics tracking between runs.\n\nv5.11.23: Switched post-forum-update to fetchWithRetry (fixes random post failures). RawClusterFallback for non-Tuya-DP devices. Forum deduplication so the same post doesn’t get answered twice.\n\n\nReport a Bug\nOpen a GitHub Issue — please include your _TZxxxx fingerprint and TSxxxx model ID.\n\n Support the Project\nThis app is free and open-source. If it’s useful to you, a small donation helps keep it going:\n\nPayPal: paypal.me/dlnraja · Revolut: revolut.me/dylanoul\n\n\nLast updated 2026-03-01 — Source on GitHub",
           "date": "2025-07-25T01:07:08.539Z",
           "replyTo": null
         },
@@ -14812,7 +14812,7 @@
         {
           "num": 1558,
           "user": "dlnraja",
-          "text": "GitHub #93 — Device Request: Moes TRV from Aliexpress\n\nFPs: _TZE204_qyr2m29i | Variants: _TZE204_guvc7pdy, _TZE204_1fuxihti, _TZE204_57hjqelq, _TZE204_vvvtcehj, _TZE204_m1wl5fvq\n\nView issue\n\n\nv5.11.26 is up on the test channel.\n\nv5.11.26:\n\n143 drivers, 5,368+ fingerprints so far.\n\nAs always, remove and re-pair if something acts up after updating.",
+          "text": "Hey everyone,\n\nQuick note — I’ve deactivated all the automated YML workflows that were posting and replying on other community threads. From now on, everything stays on this thread only. Sorry about the noise on the other topics, that’s done.\n\nv5.11.27 is up on the test channel with various fixes (voltage divisor, dashboard fallback, 17 new fingerprints).\n\nAs always, remove and re-pair if something acts up after updating.",
           "date": "2026-02-28T21:25:50.086Z",
           "replyTo": 1557
         }
@@ -66601,12 +66601,6 @@
   ],
   "deviceInfo": {
     "allFPs": [
-      "_TZE204_qyr2m29i",
-      "_TZE204_guvc7pdy",
-      "_TZE204_1fuxihti",
-      "_TZE204_57hjqelq",
-      "_TZE204_vvvtcehj",
-      "_TZE204_m1wl5fvq",
       "_TZ3000_itgngnqz",
       "_TZE284_hdml1aav",
       "_TZ3000_itb0omhv",
@@ -67135,6 +67129,7 @@
       "_TZE200_pw7mji0l",
       "_TZE200_68nvbio9",
       "_TZE200_bjzrowv2",
+      "_TZE204_1fuxihti",
       "_TZE200_axgvo9jh",
       "_TZE200_gaj531w3",
       "_TZE200_yia0p3tr",
@@ -67320,12 +67315,6 @@
       "_TZE200_r731zlxk"
     ],
     "supported": [
-      "_TZE204_qyr2m29i",
-      "_TZE204_guvc7pdy",
-      "_TZE204_1fuxihti",
-      "_TZE204_57hjqelq",
-      "_TZE204_vvvtcehj",
-      "_TZE204_m1wl5fvq",
       "_TZ3000_itgngnqz",
       "_TZE284_hdml1aav",
       "_TZ3000_itb0omhv",
@@ -67842,6 +67831,7 @@
       "_TZE200_pw7mji0l",
       "_TZE200_68nvbio9",
       "_TZE200_bjzrowv2",
+      "_TZE204_1fuxihti",
       "_TZE200_axgvo9jh",
       "_TZE200_gaj531w3",
       "_TZE200_yia0p3tr",
@@ -68041,5 +68031,5 @@
       "_TZ3210_leyz4rju"
     ]
   },
-  "aiAnalysis": "The forum activity highlights critical issues and ongoing device support needs for the Universal Tuya Zigbee app.\n\n1.  **Key User Requests:**\n    *   **Urgent Bot Management:** Users are"
+  "aiAnalysis": "**Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer**\n\n1. **Key User Requests:**\n   - Users are requesting support for a variety of devices, particularly those that are currently unsupported. There is a notable interest in improving compatibility and functionality for existing devices.\n   - Users have expressed the need for updates to fix issues with device installations, particularly with contact sensors and moisture sensors.\n\n2. **Devices People Need:**\n   - A significant number of users are inquiring about compatibility with specific unsupported devices, including various models identified by their unique identifiers (e.g., _TZ3000_zgyzgd, _TZE204_ztqnh5c).\n   - There is a mention of a new moisture sensor that can measure fertilizer levels, indicating a demand for more advanced sensor capabilities.\n\n3. **Issues to Fix:**\n   - Users have reported problems with device recognition and installation, particularly with contact sensors that are installing in reverse.\n   - The automated bot activity has caused confusion, leading to the deletion of multiple posts. This needs to be addressed to streamline communication.\n\n4. **Action Items:**\n   - Prioritize adding support for the listed unsupported devices to enhance user satisfaction and broaden the app's compatibility.\n   - Investigate and resolve the installation issues with contact sensors and ensure that the moisture sensor is properly integrated.\n   - Disable or modify the automated bot to prevent unnecessary post deletions and improve user interaction on the forum.\n   - Regularly update users on progress regarding device compatibility and app updates to maintain engagement and transparency."
 }
