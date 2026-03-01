@@ -5,11 +5,11 @@
 
 [![Version](https://img.shields.io/badge/version-v5.11.26-blue)]()
 [![Drivers](https://img.shields.io/badge/drivers-143-brightgreen)]()
-[![Fingerprints](https://img.shields.io/badge/fingerprints-5,361+-green)]()
+[![Fingerprints](https://img.shields.io/badge/fingerprints-5,368+-green)]()
 [![Users Tracked](https://img.shields.io/badge/users%20tracked-33+-purple)]()
-[![Last Updated](https://img.shields.io/badge/updated-2026-02-28-lightgrey)]()
+[![Last Updated](https://img.shields.io/badge/updated-2026-03-01-lightgrey)]()
 
-> **v5.11.26** | **5,361+ fingerprints** | **143 drivers** | **1,810 flow cards** | Updated 2026-02-28
+> **v5.11.26** | **5,368+ fingerprints** | **143 drivers** | **1,810 flow cards** | Updated 2026-03-01
 
 ---
 
@@ -177,10 +177,18 @@
 
 <!-- NIGHTLY_START — Preserved from nightly-processor.js -->
 
+## Nightly Auto-Scan (2026-03-01)
+| User | Fingerprint(s) | Source | Date |
+|------|---------------|--------|------|
+| NicolasYDDER | `HOBEIAN` | JohanBendz/com.tuya.zigbee#1332 | Auto-scanned 2026-03-01 |
+
+
+
 ## Nightly Auto-Scan (2026-02-28)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | OH2TH | `dlnraja` | Forum #140352 post #1551 | Auto-scanned 2026-02-28 |
+
 
 
 
@@ -197,12 +205,14 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-26)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | JJ10 | `_TZE200_crq3r3la`, `_TZE200_gkfbdvyx` | Forum #140352 post #1481 | Auto-scanned 2026-02-26 |
 | 7Hills | `_TZE204_clrdrnya` | Forum #140352 post #1482 | Auto-scanned 2026-02-26 |
 | dmz-86 | `_TZE204_clrdrnya` | JohanBendz/com.tuya.zigbee#1142 | Auto-scanned 2026-02-26 |
+
 
 
 
@@ -234,11 +244,13 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-24)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | FrankP | `_TZ3000_itb0omhv` | Forum #140352 post #1477 | Auto-scanned 2026-02-24 |
 | Domingoso | `_TZE200_xlppj4f5` | dlnraja/com.tuya.zigbee#135 | Auto-scanned 2026-02-24 |
+
 
 
 
@@ -283,10 +295,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-22)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Slawek_Pe | `_TZ3210_xzhnra8x` | Forum #140352 post #1467 | Auto-scanned 2026-02-22 |
+
 
 
 
@@ -306,6 +320,7 @@
 |------|---------------|--------|------|
 | ManuelKugler | `_TZE284_aao3yzhs` | Forum #140352 post #1465 | Auto-scanned 2026-02-21 |
 | eeckelaertyannick | `_TZE200_8ygsuhe1` | JohanBendz/com.tuya.zigbee#1229 | Auto-scanned 2026-02-21 |
+
 
 
 
@@ -386,6 +401,9 @@
 
 <!-- NIGHTLY_END -->
 
+
+<!-- NIGHTLY_END -->
+
 ---
 
 ## Auto-Discovered Fingerprints
@@ -409,6 +427,7 @@
 | _TZ3210_iymfxdis | dlnraja/com.tuya.zigbee#133 | device_request |
 | _TZ3002_xkxgfxsg | dlnraja/com.tuya.zigbee#133 | device_request |
 | _TZ3002_tlsvxhxc | dlnraja/com.tuya.zigbee#133 | device_request |
+
 
 
 
@@ -453,6 +472,7 @@
 
 
 <!-- AUTODISCOVERED_END -->
+
 
 
 
@@ -540,6 +560,28 @@
 
 <!-- AUTODISCOVERED_END -->
 
+
+## Auto-discovered from GitHub (2026-03-01)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZ3000_iktiy8ue | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZ3000_cziew6eu | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE204_d2zfgtij | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE284_d2zfgtij | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE200_d2zfgtij | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE204_wjk6rurm | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE284_wjk6rurm | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE200_wjk6rurm | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE204_s4sa1mcx | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE284_s4sa1mcx | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE200_s4sa1mcx | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE204_x8diwkqb | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE284_x8diwkqb | dlnraja/com.tuya.zigbee#142 | feature |
+| _TZE200_x8diwkqb | dlnraja/com.tuya.zigbee#142 | feature |
+
+<!-- AUTODISCOVERED_END -->
+
 ---
 
 ## Decision Reference (Avoid Repeating Mistakes)
@@ -566,9 +608,9 @@ _No patterns detected yet — run pattern-detector.js_
 
 ## Interview Repository
 
-- **Total interviews recovered**: 95
-- **Unique fingerprints**: 84
-- **Sources**: {"github":73,"forum":22,"gmail":0,"forum-pm":0}
+- **Total interviews recovered**: 102
+- **Unique fingerprints**: 92
+- **Sources**: {"github":78,"forum":24,"gmail":0,"forum-pm":0}
 
 ---
 
@@ -606,24 +648,4 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 
 ---
 
-*Auto-generated on 2026-02-28 from v5.11.26 — 5,361+ fingerprints across 143 drivers*
-
-
-## Auto-discovered from GitHub (2026-03-01)
-
-| Fingerprint | Source | Type |
-|---|---|---|
-| _TZ3000_iktiy8ue | dlnraja/com.tuya.zigbee#142 | feature |
-| _TZ3000_cziew6eu | dlnraja/com.tuya.zigbee#142 | feature |
-| _TZE204_d2zfgtij | dlnraja/com.tuya.zigbee#142 | feature |
-| _TZE284_d2zfgtij | dlnraja/com.tuya.zigbee#142 | feature |
-| _TZE200_d2zfgtij | dlnraja/com.tuya.zigbee#142 | feature |
-| _TZE204_wjk6rurm | dlnraja/com.tuya.zigbee#142 | feature |
-| _TZE284_wjk6rurm | dlnraja/com.tuya.zigbee#142 | feature |
-| _TZE200_wjk6rurm | dlnraja/com.tuya.zigbee#142 | feature |
-| _TZE204_s4sa1mcx | dlnraja/com.tuya.zigbee#142 | feature |
-| _TZE284_s4sa1mcx | dlnraja/com.tuya.zigbee#142 | feature |
-| _TZE200_s4sa1mcx | dlnraja/com.tuya.zigbee#142 | feature |
-| _TZE204_x8diwkqb | dlnraja/com.tuya.zigbee#142 | feature |
-| _TZE284_x8diwkqb | dlnraja/com.tuya.zigbee#142 | feature |
-| _TZE200_x8diwkqb | dlnraja/com.tuya.zigbee#142 | feature |
+*Auto-generated on 2026-03-01 from v5.11.26 — 5,368+ fingerprints across 143 drivers*
