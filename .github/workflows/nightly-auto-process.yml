@@ -117,19 +117,7 @@ jobs:
         timeout-minutes: 5
         run: node .github/scripts/forum-intel-processor.js || true
 
-      - name: Forum Responder (T140352 only, anti-spam)
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 10
-        env:
-          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
-          REPLY_TOPICS: "140352"
-        run: node .github/scripts/forum-responder.js
+      # Forum replies delegated to forum-auto-responder.yml (4x/day, dedicated workflow)
 
       - name: Forum Spam Scan
         if: always()

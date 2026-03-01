@@ -94,8 +94,8 @@ jobs:
             echo "Cleanup already done"
           fi
 
-      # ===== 1. FORUM: Scan + Intel + Respond (ONE reply on T140352 only) =====
-      - name: "1. Forum Scan + Intel + Respond"
+      # ===== 1. FORUM: Scan + Intel (replies handled by forum-auto-responder.yml) =====
+      - name: "1. Forum Scan + Intel (no replies)"
         id: forum_scan
         continue-on-error: true
         timeout-minutes: 10
@@ -107,8 +107,7 @@ jobs:
           node .github/scripts/scan-forum.js || true
           echo "=== Forum Intel Processor (auto-add FPs, detect issues) ==="
           node .github/scripts/forum-intel-processor.js || true
-          echo "=== Forum Respond (T140352 only, anti-spam) ==="
-          node .github/scripts/forum-responder.js || true
+          echo "=== Forum replies delegated to forum-auto-responder.yml ==="
 
       - name: "Sleep 30s between AI steps"
         run: sleep 30
