@@ -7,6 +7,8 @@ const P={
   github:{k:'_GH',url:'https://models.inference.ai.azure.com/chat/completions',m:'gpt-4o-mini',arch:'gpt',sl:5000,tl:12000,s:{classify:3,generate:3,analyze:2,merge:2,lookup:2}},
   cerebras:{k:'CEREBRAS_API_KEY',url:'https://api.cerebras.ai/v1/chat/completions',m:'llama-3.3-70b',arch:'llama70b-cb',sl:6000,tl:10000,s:{analyze:3,generate:2,classify:2,merge:3,lookup:1}},
   openrouter:{k:'OPENROUTER_API_KEY',url:'https://openrouter.ai/api/v1/chat/completions',m:'meta-llama/llama-3.3-8b-instruct:free',arch:'llama8b',sl:6000,tl:10000,s:{classify:2,lookup:2,merge:2,generate:1,analyze:1}},
+  mistral:{k:'MISTRAL_API_KEY',url:'https://api.mistral.ai/v1/chat/completions',m:'mistral-small-latest',arch:'mistral',sl:6000,tl:10000,s:{analyze:2,generate:2,classify:3,merge:2,lookup:2}},
+  together:{k:'TOGETHER_API_KEY',url:'https://api.together.xyz/v1/chat/completions',m:'meta-llama/Llama-3.3-70B-Instruct-Turbo',arch:'llama70b-tg',sl:6000,tl:10000,s:{analyze:2,generate:3,classify:2,merge:2,lookup:1}},
 };
 function _gk(p){if(p.k==='_GH')return process.env.GH_PAT||process.env.GITHUB_TOKEN;return process.env[p.k]}
 // Get available providers sorted by strength for a task type
