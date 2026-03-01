@@ -23,13 +23,14 @@ function getStats(){
 }
 
 function getChangelog(ver){
+  const useful=s=>s&&s.replace(/^v[\d.]+:\s*/,'').trim().length>5;
   try{
     const cl=JSON.parse(fs.readFileSync(path.join(ROOT,'.homeychangelog.json'),'utf8'));
-    if(cl[ver]&&cl[ver].en)return cl[ver].en;
+    if(cl[ver]&&useful(cl[ver].en))return cl[ver].en;
     const k=Object.keys(cl).sort((a,b)=>b.localeCompare(a,undefined,{numeric:true}));
-    for(const v of k.slice(0,3)){if(cl[v]&&cl[v].en)return'v'+v+': '+cl[v].en;}
+    for(const v of k.slice(0,3)){if(cl[v]&&useful(cl[v].en))return cl[v].en;}
   }catch{}
-  return'See GitHub for details';
+  return null;
 }
 
 function getRecentGitHub(){
@@ -49,86 +50,71 @@ function getRecentGitHub(){
   }catch{return null;}
 }
 
-function getDriverList(){
+function getDriverSummary(){
   const ddir=path.join(ROOT,'drivers');
   const drivers=fs.readdirSync(ddir).filter(d=>fs.existsSync(path.join(ddir,d,'driver.compose.json')));
-  const groups={};
+  const cats={};
   for(const d of drivers){
-    try{
-      const r=JSON.parse(fs.readFileSync(path.join(ddir,d,'driver.compose.json'),'utf8'));
-      const cls=r.class||'other';
-      const n=r.name?.en||d;
-      const fp=(r.zigbee?.manufacturerName||[]).length;
-      if(!groups[cls])groups[cls]=[];
-      groups[cls].push({id:d,name:n,fp});
+    try{const r=JSON.parse(fs.readFileSync(path.join(ddir,d,'driver.compose.json'),'utf8'));
+      const c=r.class||'other';if(!cats[c])cats[c]={n:0,fp:0};cats[c].n++;cats[c].fp+=(r.zigbee?.manufacturerName||[]).length;
     }catch{}
   }
-  return groups;
+  return cats;
+}
+function getChangelogHistory(count){
+  try{const cl=JSON.parse(fs.readFileSync(path.join(ROOT,'.homeychangelog.json'),'utf8'));
+    return Object.keys(cl).sort((a,b)=>b.localeCompare(a,undefined,{numeric:true})).slice(0,count||5).map(v=>({v,t:(cl[v]?.en||'')})).filter(e=>e.t.length>10);
+  }catch{return[]}
 }
 
 function buildPost(stats,changelog,ghSummary){
   const date=new Date().toISOString().split('T')[0];
-  const groups=getDriverList();
-  const classIcons={
-    socket:'🔌',light:'💡',sensor:'📡',thermostat:'🌡️',
-    windowcoverings:'🪟',lock:'🔐',fan:'🌀',speaker:'🔊',
-    doorbell:'🔔',remote:'🎮',button:'🔘',other:'📦',
-    homealarm:'🚨',kettle:'☕',heater:'🔥',vacuumcleaner:'🤖',
-    garagedoor:'🚗',curtain:'🪟'
-  };
-
+  const cats=getDriverSummary();
+  const hist=getChangelogHistory(5);
+  const ico={socket:'🔌',light:'💡',sensor:'📡',thermostat:'🌡️',windowcoverings:'🪟',lock:'🔐',fan:'🌀',doorbell:'🔔',remote:'🎮',button:'🔘',other:'📦',homealarm:'🚨',heater:'🔥',garagedoor:'🚗'};
+  const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
   let md='';
-  md+='# 🏠 Universal Tuya Zigbee App v'+stats.version+'\n\n';
-  md+='> **Last auto-update:** '+date+' | **Drivers:** '+stats.drivers+' | **Fingerprints:** '+stats.fps+'\n\n';
-  md+='The most comprehensive Tuya Zigbee app for Homey — supporting **'+stats.drivers+' device types** with **'+stats.fps+'+ manufacturer fingerprints**.\n\n';
-
-  md+='## 📦 Install\n\n';
-  md+='- **Stable:** [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/)\n';
-  md+='- **Test (latest):** [Test Channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)\n';
-  md+='- **Source:** [GitHub](https://github.com/dlnraja/com.tuya.zigbee)\n\n';
-
-  md+='## 🆕 Latest Changes (v'+stats.version+')\n\n';
+  md+='# Universal Tuya Zigbee v'+stats.version+'\n\n';
+  md+='> **'+stats.drivers+' drivers** | **'+stats.fps+'+ fingerprints** | Updated '+date+'\n\n';
+  md+='The most comprehensive Tuya Zigbee app for Homey Pro.\n\n';
+  md+='## Install\n\n';
+  md+='**Stable:** [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/) · **Test:** [Test Channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · **Source:** [GitHub](https://github.com/dlnraja/com.tuya.zigbee)\n\n';
+  md+='## Latest (v'+stats.version+')\n\n';
   md+=changelog+'\n\n';
 
-  if(ghSummary){
-    md+='## 📊 GitHub Activity\n\n';
-    md+=ghSummary+'\n\n';
+  if(ghSummary){md+='## GitHub Activity\n\n'+ghSummary+'\n\n';}
+
+  md+='## Supported Devices\n\n';
+  const ord=['socket','light','sensor','thermostat','windowcoverings','lock','fan','doorbell','remote','button','homealarm','heater','garagedoor','other'];
+  const all=[...new Set([...ord,...Object.keys(cats)])];
+  md+='| Category | Drivers | FPs |\n|---|---|---|\n';
+  for(const c of all){if(!cats[c])continue;md+='| '+(ico[c]||'📦')+' '+cap(c)+' | '+cats[c].n+' | '+cats[c].fp+' |\n';}
+  md+='\n[Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) — search by fingerprint\n';
+
+  md+='\n## Features\n\n';
+  md+='- **Tuya DP** (0xEF00/TS0601) + **Standard ZCL** (TS0001–TS0504, TS011F)\n';
+  md+='- BSEED/Zemismart ZCL-only · Physical button detection · Virtual buttons\n';
+  md+='- Energy monitoring (W/V/A) · Air quality (CO2/VOC/PM2.5/HCHO) · Cover/curtain with tilt\n';
+  md+='- LED backlight control · Diagnostic reports · Auto-configured settings\n\n';
+
+  // Changelog history (collapsible) — skip current version explicitly
+  const prevHist=hist.filter(h=>h.v!==stats.version);
+  if(prevHist.length){
+    md+='## Changelog\n\n';
+    md+='<details><summary>Previous versions</summary>\n\n';
+    for(const h of prevHist)md+='**v'+h.v+':** '+h.t.replace(/^v[\d.]+:\s*/,'')+'\n\n';
+    md+='</details>\n\n';
   }
 
-  md+='## 📋 Supported Device Types\n\n';
-  const order=['socket','light','sensor','thermostat','windowcoverings','lock','fan','speaker','doorbell','remote','button','homealarm','heater','kettle','vacuumcleaner','other'];
-  const sorted=[...new Set([...order,...Object.keys(groups)])];
-  for(const cls of sorted){
-    if(!groups[cls])continue;
-    const ico=classIcons[cls]||'📦';
-    const items=groups[cls].sort((a,b)=>a.name.localeCompare(b.name));
-    md+='### '+ico+' '+cls.charAt(0).toUpperCase()+cls.slice(1)+' ('+items.length+' drivers)\n';
-    md+='| Driver | Fingerprints |\n|---|---|\n';
-    for(const it of items) md+='| '+it.name+' | '+it.fp+' |\n';
-    md+='\n';
-  }
+  md+='## Report Issues\n\n';
+  md+='[GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues/new) — include `_TZxxxx` fingerprint + `TSxxxx` model\n\n';
 
-  md+='## 🔧 Features\n\n';
-  md+='- **Tuya DP Protocol** — Full support for cluster 0xEF00 devices (TS0601)\n';
-  md+='- **Standard ZCL** — TS0001-TS0008, TS011F, TS0201-TS0207, etc.\n';
-  md+='- **BSEED/Zemismart ZCL-only mode** — PacketNinja technique for multi-gang switches\n';
-  md+='- **Physical button detection** — Flow triggers for wall switch presses\n';
-  md+='- **Virtual buttons** — Remote toggle any gang from flows\n';
-  md+='- **Energy monitoring** — Power, voltage, current for smart plugs\n';
-  md+='- **Air quality sensors** — CO2, VOC, PM2.5, formaldehyde, temp, humidity\n';
-  md+='- **Cover/curtain motors** — Position control with tilt support\n';
-  md+='- **LED backlight control** — Off / Normal / Inverted modes\n\n';
+  md+='## Support the Project\n\n';
+  md+='If this app is useful to you, consider a small donation:\n';
+  md+='- **PayPal:** [paypal.me/dlnraja](https://paypal.me/dlnraja)\n';
+  md+='- **Revolut:** [revolut.me/dlnraja](https://revolut.me/dlnraja)\n\n';
 
-  md+='## 🐛 Report Issues\n\n';
-  md+='- [GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues/new)\n';
-  md+='- Include your device fingerprint (`_TZxxxx_xxxxx`) and Zigbee model ID (`TSxxxx`)\n';
-  md+='- Use Homey Developer Tools > Zigbee to find your device info\n\n';
-
-  md+='## 🌐 Device Finder\n\n';
-  md+='Check if your device is supported: [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/)\n\n';
-
-  md+='---\n';
-  md+='*Auto-updated by Universal Tuya Zigbee bot on '+date+'*\n';
+  md+='---\n*Auto-updated '+date+'*\n';
   return md;
 }
 
@@ -165,9 +151,12 @@ async function main(){
   const stats=getStats();
   console.log('Stats: v'+stats.version+', '+stats.drivers+' drivers, '+stats.fps+' FPs');
 
-  const changelog=getChangelog(stats.version);
-  const ghSummary=getRecentGitHub();
+  const changelog=getChangelog(stats.version)||'Bug fixes and improvements. See [GitHub](https://github.com/dlnraja/com.tuya.zigbee) for details.';
+  const ghSummary=getRecentGitHub()||null;
   const content=buildPost(stats,changelog,ghSummary);
+  // Always save preview for debugging
+  const prev=path.join(ROOT,'.github','state','forum-first-post-preview.md');
+  try{fs.writeFileSync(prev,content);}catch{}
   console.log('Generated post:',content.length,'chars');
 
   if(DRY){
@@ -175,8 +164,6 @@ async function main(){
     console.log('--- CONTENT PREVIEW (first 500 chars) ---');
     console.log(content.slice(0,500));
     console.log('--- END PREVIEW ---');
-    const prev=path.join(ROOT,'.github','state','forum-first-post-preview.md');
-    fs.writeFileSync(prev,content);
     console.log('Full preview saved to:',prev);
     return;
   }
