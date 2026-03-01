@@ -24,7 +24,7 @@ jobs:
     name: Validate & Auto-Publish to Test
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
@@ -36,11 +36,11 @@ jobs:
       - run: npm ci --prefer-offline --no-audit || npm install
 
       - name: App info
-        id: info
+        id: pre_info
         run: |
           V=$(node -p "require('./app.json').version")
           echo "version=$V" >> $GITHUB_OUTPUT
-          echo "App v$V"
+          echo "Current v$V"
 
       - name: Generate AI Changelog
         continue-on-error: true
@@ -50,11 +50,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           node .github/scripts/generate-ai-changelog.js || echo "AI changelog skipped"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add CHANGELOG.md README.md .homeychangelog.json
-          git diff --cached --quiet || git commit -m "docs: AI changelog update [skip ci]"
-          git push || true
+          echo "Changelog files updated (committed at end of workflow)"
 
       - name: Extract Changelog
         id: cl
@@ -63,6 +59,20 @@ jobs:
           VER=$(node -p "require('./app.json').version")
           CL=$(node -e "const r=JSON.parse(require('child_process').execSync('node .github/scripts/extract-changelog.js '+process.argv[1],{encoding:'utf8'}).trim());process.stdout.write(r.homeyText)" "$VER" 2>/dev/null || echo "v${VER}: Bug fixes and improvements")
           echo "text=$CL" >> $GITHUB_OUTPUT
+
+      - name: Auto bump patch version
+        id: bump
+        uses: athombv/github-action-homey-app-version@v1
+        with:
+          version: patch
+          changelog: ${{ steps.cl.outputs.text }}
+
+      - name: Bumped version
+        id: info
+        run: |
+          V=$(node -p "require('./app.json').version")
+          echo "version=$V" >> $GITHUB_OUTPUT
+          echo "Bumped to v$V (was ${{ steps.pre_info.outputs.version }})"
 
       - name: Validate
         uses: athombv/github-action-homey-app-validate@v1
@@ -172,6 +182,18 @@ jobs:
           APP_VERSION: ${{ steps.info.outputs.version }}
           CHANGELOG: ${{ steps.cl.outputs.text }}
         run: node .github/scripts/post-forum-update.js
+
+      - name: Commit & Push
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
+          git diff --cached --quiet || git commit -m "v${{ steps.info.outputs.version }}: ${D} drivers, ${F} FPs — auto-publish [skip ci]"
+          git pull --rebase origin master || true
+          git push || true
 
       - name: Summary
         if: always()
