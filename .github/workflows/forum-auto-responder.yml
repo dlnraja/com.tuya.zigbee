@@ -12,7 +12,7 @@ on:
       topics:
         description: 'Forum topic IDs (comma-separated)'
         type: string
-        default: '140352,26439,146735,89271,54018'
+        default: '140352'
 
 permissions:
   contents: write
@@ -60,7 +60,7 @@ jobs:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
-          FORUM_TOPICS: ${{ inputs.topics || '140352,26439,146735,89271,54018' }}
+          FORUM_TOPICS: ${{ inputs.topics || '140352' }}
           REPLY_TOPICS: '140352'
         run: node .github/scripts/forum-responder.js
 

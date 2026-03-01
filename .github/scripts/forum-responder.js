@@ -28,6 +28,15 @@ const strip=h=>(h||'').replace(/<br\s*\/?>/gi,'\n').replace(/<\/p>/gi,'\n').repl
 const exImgs=h=>{const u=[];const re=/<img[^>]+src="([^"]+)"/gi;let m;while((m=re.exec(h||''))!==null)u.push(m[1]);return u};
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const{callAI,callAIEnsemble,analyzeImage,getAIBudget,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost}=require('./ai-helper');
+function cleanReply(r){
+  if(!r)return r;
+  r=r.replace(/^---+$/gm,'');
+  r=r.replace(/GitHub\s*#\d+\s*[—–-]\s*[^\n]*/gi,'');
+  r=r.replace(/\[#\d+\]\([^)]*github[^)]*\)\s*[^\n]*/gi,'');
+  r=r.replace(/Open (?:PRs?|issues?):?\s*[^\n]*/gi,'');
+  r=r.replace(/\n{3,}/g,'\n\n');
+  return r.trim();
+}
 
 function buildIndex(){
   const{mfrIdx,pidIdx,allMfrs,allPids}=buildFullIndex(DDIR);
@@ -217,7 +226,7 @@ async function batchAI(postInfos,ver){
 
 async function main(){
   let dry=process.env.DRY_RUN==='true';
-  const tids=(process.env.FORUM_TOPICS||'140352,26439,146735,89271,54018,12758,85498').split(',').map(Number);
+  const tids=(process.env.FORUM_TOPICS||'140352').split(',').map(Number);
   // IMPORTANT: Only reply on OUR OWN thread (140352). Never post on other people's threads!
   const replyTids=new Set((process.env.REPLY_TOPICS||'140352').split(',').map(Number));
   let ver='?';try{ver=JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')).version}catch{}
@@ -266,7 +275,7 @@ async function main(){
     if(hasRecentOwnReply(fr.posts)){console.log('  ⏳ Already replied in this batch, skipping');state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
     // Phase 2: ONE batched reply
     let reply=null;
-    try{reply=await batchAI(devPosts,ver)}catch(e){console.error('AI:',e.message)}
+    try{reply=await batchAI(devPosts,ver);if(reply)reply=cleanReply(reply)}catch(e){console.error('AI:',e.message)}
     if(!reply){state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
     // Phase 2b: Quality gate — validate reply against driver DB before posting
     const allOrigText=devPosts.map(d=>d.text).join(' ');
