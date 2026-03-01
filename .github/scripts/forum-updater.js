@@ -86,7 +86,9 @@ async function main(){
     if(!auth){console.error('::warning::No forum auth available');process.exit(0)}
     const lastOwn=await getLastOwnPost();
     if(lastOwn){
-      const merged=lastOwn.raw+'\n\n---\n\n'+content;
+      // Strip duplicate footers from old content so boilerplate appears only once
+      const cleanOld=lastOwn.raw.replace(/\n*As always,?\s*remove and re-?pair[^\n]*/gi,'').trimEnd();
+      const merged=cleanOld+'\n\n---\n\n'+content;
       await editPost(lastOwn.id,merged,auth);
       console.log('Edited #'+lastOwn.postNumber);
     }else{
