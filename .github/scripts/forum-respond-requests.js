@@ -16,7 +16,7 @@ const BOT_TAG='dlnraja';
 const DRY=process.env.DRY_RUN==='true';
 const S=process.env.GITHUB_STEP_SUMMARY||'/dev/null';
 const LF=process.env.LAST_RESPOND_FILE||'/tmp/last_forum_respond.txt';
-const SCAN_TOPICS=[140352];
+const SCAN_TOPICS=[140352,26439,146735,89271,54018];
 const REPLY_TOPIC=parseInt(process.env.REPLY_TOPIC||'140352',10);
 const APP='https://homey.app/a/com.dlnraja.tuya.zigbee/test/';
 

@@ -4,10 +4,13 @@ const fs=require('fs'),path=require('path');
 const {loadFingerprints,findDriver,extractMfrFromText}=require('./load-fingerprints');
 const{fetchWithRetry}=require('./retry-helper');
 
-// Seed topics (always scanned)
+// Seed topics (READ-ONLY scanning — this script never posts, only gathers intel)
 const SEED_TOPICS=[
   140352,  // dlnraja: [APP][Pro] Universal TUYA Zigbee Device App - test
-  // ALL OTHER THREADS DISABLED — no bot activity on other people's threads
+  26439,   // JohanBendz: [APP][Pro] Tuya Zigbee App
+  146735,  // [APP] Tuya - Smart Life. Smart Living
+  89271,   // Zigbee device compatibility
+  54018,   // Generic Zigbee devices
 ];
 
 // Search terms to discover ALL related topics across the entire forum
