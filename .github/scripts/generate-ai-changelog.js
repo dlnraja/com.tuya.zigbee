@@ -80,7 +80,7 @@ async function generateChangelog(ctx){
     '}';
 
   const sysPrompt='You write changelogs for a Homey Zigbee app. Write like a real developer — short, specific, no corporate fluff. Say what actually changed. NEVER use filler like "enhance overall performance", "improve stability", "streamline", "optimize". Just state the fix or feature plainly. Focus on user-visible changes. Never invent features not in the commits.';
-  const ai=await callAI(prompt,sysPrompt,{maxTokens:2048,complexity:'high'});
+  const ai=await callAI(prompt,sysPrompt,{maxTokens:2048});
   if(!ai)return null;
   try{const j=ai.text.match(/\{[\s\S]*\}/);return j?JSON.parse(j[0]):null;}
   catch(e){console.warn('AI parse error:',e.message);return null;}

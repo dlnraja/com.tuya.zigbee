@@ -48,8 +48,6 @@ jobs:
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
-          GEMINI_MAX_TIER: "2"
-          RATE_LIMIT_SLEEP: "5000"
         run: node .github/scripts/monthly-comprehensive.js
 
       # ===== DRAFT → TEST (Puppeteer + API fallback) =====

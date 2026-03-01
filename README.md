@@ -24,8 +24,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Method | Link |
 |--------|------|
-| **Homey App Store** | [Install from Homey App Store](https://homey.app/a/com.tuya.zigbee/) |
-| **Test Version** | [Install Test Version](https://homey.app/a/com.tuya.zigbee/test/) |
+| **Homey App Store** | [Install from Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/) |
+| **Test Version** | [Install Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) |
 | **GitHub Releases** | [View Releases](https://github.com/dlnraja/com.tuya.zigbee/releases) |
 
 ---
