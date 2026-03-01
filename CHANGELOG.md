@@ -6,7 +6,24 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.26] - 2026-02-28
+## [5.11.27] - 2026-03-01
+
+### Bug Fixes
+- Restricted bot activity to T140352 only.
+- Fixed missing functions in AI helper.
+- Removed 3 duplicate forum-posting sources.
+- Reduced bot spam by disabling cross-posting and implementing a 12-hour cooldown.
+
+### New Features
+- Added Kimi/Moonshot provider to AI ensemble.
+- Introduced DeepSeek and Gemini 2.5 preview models, expanding intelligence to 16 sources.
+- Improved ensemble routing with task-specific team sizes and skipped ensemble for vision tasks.
+
+### CI/CD
+- Auto-published with 143 drivers and 3062 fingerprints.
+---
+
+ [5.11.26] - 2026-02-28
 
 v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs)., Internal cleanup across several workflow scripts.
 ---
