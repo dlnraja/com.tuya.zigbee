@@ -104,11 +104,14 @@ jobs:
               const f=path.join('drivers',d,'driver.compose.json');
               if(!fs.existsSync(f))continue;
               const j=JSON.parse(fs.readFileSync(f,'utf8'));
-              const z=j.zigbee||[];
-              for(const e of z){
-                const key=e.manufacturerName+'|'+e.productId;
-                if(!map.has(key))map.set(key,[]);
-                map.get(key).push(d);
+              const z=j.zigbee;
+              if(!z||!z.manufacturerName||!z.productId)continue;
+              for(const mfr of z.manufacturerName){
+                for(const pid of z.productId){
+                  const key=mfr+'|'+pid;
+                  if(!map.has(key))map.set(key,[]);
+                  map.get(key).push(d);
+                }
               }
             }
             let col=0;

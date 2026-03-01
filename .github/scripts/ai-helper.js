@@ -1,6 +1,6 @@
 /**
  * AI Helper - Multi-provider with project rules injection
- * Chain (FREE ONLY): Gemini → GitHub Models → Groq → IBM Granite (HF) → OpenRouter → Cerebras → Together → ApiFreeLLM
+ * Chain (FREE TIERS): Gemini → GitHub Models → OpenAI(free) → Groq → Granite → Mistral(free) → OpenRouter → Cerebras → Together → ApiFreeLLM
  */
 const fs=require('fs'),path=require('path');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -24,7 +24,7 @@ function _rtOk(t){const n=Date.now(),td=new Date().toISOString().slice(0,10);if(
 // RPM enforcement: wait if at limit instead of skipping
 async function _rtWait(t){const id=t[0],rpm=t[3];const n=Date.now();if(n-_rt.mt>60000){_rt.m={};_rt.mt=n}const used=_rt.m[id]||0;if(used>=rpm-1){const wait=60000-(n-_rt.mt)+500;if(wait>0){console.log('  [RPM] '+id+' at '+used+'/'+rpm+' — waiting '+Math.round(wait/1000)+'s');await sleep(wait);_rt.m={};_rt.mt=Date.now()}}}
 // Budget summary for end-of-run logging
-function _rtBudget(){const lines=[];for(const t of GTIERS){const d=_rt.d[t[0]]||0;const pct=Math.round(d/t[4]*100);lines.push(t[0]+': '+d+'/'+t[4]+' ('+pct+'%)')}return lines.join(' | ')}
+function _rtBudget(){const lines=[];for(const t of GTIERS){const d=_rt.d[t[0]]||0;const pct=Math.round(d/t[4]*100);lines.push(t[0]+': '+d+'/'+t[4]+' ('+pct+'%)')}const oai=_rt.d['openai']||0;if(oai||process.env.OPENAI_API_KEY)lines.push('openai: '+oai+'/200 ('+Math.round(oai/200*100)+'%)');const mi=_rt.d['mistral']||0;if(mi||process.env.MISTRAL_API_KEY)lines.push('mistral: '+mi+'/30 ('+Math.round(mi/30*100)+'%)');return lines.join(' | ')}
 function _estCx(text,sys,o){if(o.complexity!==undefined){const m={trivial:0,low:1,medium:2,high:3};return typeof o.complexity==='string'?(m[o.complexity]??1):o.complexity}const len=(text||'').length+(sys||'').length;const mt=o.maxTokens||2048;const lc=((text||'')+' '+(sys||'')).toLowerCase();if(mt>1500||len>6000)return 3;if(mt>768||len>3000||lc.includes('write a github comment'))return 2;if(mt>256||len>1000)return 1;return 0}
 function _pickModels(cx){const cap=parseInt(process.env.GEMINI_MAX_TIER)||3;return GTIERS.filter(t=>t[2]<=cap&&_rtOk(t)&&cbOk('gemini-'+t[1])).sort((a,b)=>{const da=Math.abs(a[2]-cx),db=Math.abs(b[2]-cx);return da!==db?da-db:a[2]-b[2]})}
 
@@ -76,7 +76,24 @@ async function callAI(text,sysPrompt,opts={}){
       }catch(e){console.log('  GitHub Models '+model+' error:',e.message);cbFail('gh-'+model,60000)}
     }
   }
-  // OpenAI REMOVED — costs money ($0.15/1M tokens). Use only free providers.
+  // OpenAI FREE TIER: gpt-3.5-turbo — 3 RPM, 200 RPD, 40K TPM, cap tokens to 500
+  const oaiKey=process.env.OPENAI_API_KEY;
+  if(oaiKey&&cbOk('openai')){
+    const oaiRpd=200,oaiRpm=3,oaiMax=Math.min(maxTokens,500);
+    const oaiUsed=_rt.d['openai']||0,oaiMin=_rt.m['openai']||0;
+    if(oaiUsed<oaiRpd&&oaiMin<oaiRpm){
+      console.log('  Trying OpenAI free (gpt-3.5-turbo, '+oaiUsed+'/'+oaiRpd+' daily)...');
+      try{
+        const r=await fetchT('https://api.openai.com/v1/chat/completions',{
+          method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+oaiKey},
+          body:JSON.stringify({model:'gpt-3.5-turbo',messages:[{role:'system',content:fullSysPrompt.substring(0,4000)},{role:'user',content:text.substring(0,8000)}],max_tokens:oaiMax,temperature:0.2})});
+        if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t){_rtTrack('openai');return{text:t.trim(),model:'openai-gpt35-free'}}}
+        if(r.status===429){console.log('  OpenAI 429 rate limit');cbFail('openai',300000)}
+        else if(r.status===402||r.status===403){console.log('  OpenAI free tier exhausted');cbFail('openai',3600000)}
+        else{const e=await r.text().catch(()=>'');console.log('  OpenAI failed:',r.status,e.substring(0,150))}
+      }catch(e){console.log('  OpenAI error:',e.message);cbFail('openai',120000)}
+    }else console.log('  OpenAI free limit ('+oaiUsed+'/'+oaiRpd+' daily, '+oaiMin+'/'+oaiRpm+' rpm)');
+  }
   // Fallback to Groq (free, fast inference)
   const groqKey=process.env.GROQ_API_KEY;
   if(groqKey){
@@ -101,7 +118,24 @@ async function callAI(text,sysPrompt,opts={}){
       else{const e=await r.text().catch(()=>'');console.log('  Granite failed:',r.status,e.substring(0,150))}
     }catch(e){console.log('  Granite error:',e.message)}
   }
-  // Mistral REMOVED — free experiment plan can expire, then charges.
+  // Mistral FREE TIER: open-mistral-nemo — 1 RPM, 30 RPD, cap tokens to 500
+  const miKey=process.env.MISTRAL_API_KEY;
+  if(miKey&&cbOk('mistral')){
+    const miRpd=30,miRpm=1,miMax=Math.min(maxTokens,500);
+    const miUsed=_rt.d['mistral']||0,miMin=_rt.m['mistral']||0;
+    if(miUsed<miRpd&&miMin<miRpm){
+      console.log('  Trying Mistral free (nemo, '+miUsed+'/'+miRpd+' daily)...');
+      try{
+        const r=await fetchT('https://api.mistral.ai/v1/chat/completions',{
+          method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+miKey},
+          body:JSON.stringify({model:'open-mistral-nemo',messages:[{role:'system',content:fullSysPrompt.substring(0,4000)},{role:'user',content:text.substring(0,8000)}],max_tokens:miMax,temperature:0.2})});
+        if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t){_rtTrack('mistral');return{text:t.trim(),model:'mistral-nemo-free'}}}
+        if(r.status===429){console.log('  Mistral 429 rate limit');cbFail('mistral',300000)}
+        else if(r.status===402||r.status===403){console.log('  Mistral free tier exhausted');cbFail('mistral',3600000)}
+        else{const e=await r.text().catch(()=>'');console.log('  Mistral failed:',r.status,e.substring(0,150))}
+      }catch(e){console.log('  Mistral error:',e.message);cbFail('mistral',120000)}
+    }else console.log('  Mistral free limit ('+miUsed+'/'+miRpd+' daily, '+miMin+'/'+miRpm+' rpm)');
+  }
   // Fallback to OpenRouter (free models)
   const orKey=process.env.OPENROUTER_API_KEY;
   if(orKey){
@@ -181,7 +215,17 @@ async function analyzeImage(imageUrl,prompt){
     }catch{cbFail('gemini-v-'+vm,60000)}}
     }
   }
-  // OpenAI Vision REMOVED — costs money. Use Gemini Vision + GitHub Models Vision only.
+  // OpenAI Vision FREE TIER (shares daily quota with text calls)
+  const oaiK=process.env.OPENAI_API_KEY;
+  if(oaiK&&cbOk('openai')&&(_rt.d['openai']||0)<200){
+    try{
+      const r=await fetchT('https://api.openai.com/v1/chat/completions',{
+        method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+oaiK},
+        body:JSON.stringify({model:'gpt-4o-mini',messages:[{role:'user',content:[{type:'text',text:prompt},{type:'image_url',image_url:{url:imageUrl}}]}],max_tokens:512})});
+      if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content?.trim();if(t){_rtTrack('openai');return t}}
+      else if(r.status===402||r.status===403)cbFail('openai',3600000);
+    }catch{cbFail('openai',120000)}
+  }
   // GitHub Models Vision fallback
   const ght=process.env.GH_PAT||process.env.GITHUB_TOKEN;
   if(ght&&cbOk('gh-vision')){
