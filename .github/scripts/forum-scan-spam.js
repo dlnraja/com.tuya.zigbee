@@ -21,7 +21,7 @@ if (fs.existsSync(envFile)) {
 const { getForumAuth, refreshCsrf, fmtCk, FORUM } = require('./forum-auth');
 
 const STATE_DIR = path.join(__dirname, '..', 'state');
-const TOPICS = [140352, 26439, 89271, 146735, 54018];
+const TOPICS = [140352];
 const USERNAME = 'dlnraja';
 const { fetchWithRetry, sleep } = require('./retry-helper');
 

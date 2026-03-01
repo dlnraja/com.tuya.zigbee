@@ -5,8 +5,6 @@
 const fs=require('fs'),path=require('path');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const{PROJECT_RULES,ARCHITECTURE_SUMMARY}=require('./project-rules');
-// Smart model routing: [id, model, complexity(0-3), rpm, rpd]
-const GTIERS=[['pro25','gemini-2.5-pro-preview-05-06',3,5,100],['flash25','gemini-2.5-flash-preview-05-20',2,10,250],['flash20','gemini-2.0-flash',1,15,1500],['lite20','gemini-2.0-flash-lite',0,30,1500]];
 
 // Circuit breaker: skip providers down recently
 const _cb={};
@@ -16,49 +14,21 @@ function cbFail(n,ms){_cb[n]={t:Date.now(),c:ms||300000};}
 function fetchT(url,opts,ms){ms=ms||30000;const ac=new AbortController();const tid=setTimeout(()=>ac.abort(),ms);opts=Object.assign({},opts,{signal:ac.signal});return fetch(url,opts).finally(()=>clearTimeout(tid));}
 // Backoff with jitter
 function backoff(attempt){return Math.min(2000*Math.pow(2,attempt)+Math.random()*1000,60000);}
-const _rt={m:{},d:{},mt:0,dd:''};const _rtF=path.join(__dirname,'..','state','ai-rate-state.json');
+const _rt={m:{},d:{},mt:0,dd:''};
+const _rtF=path.join(__dirname,'..','state','ai-rate-state.json');
 function _rtLoad(){try{const j=JSON.parse(fs.readFileSync(_rtF,'utf8'));const td=new Date().toISOString().slice(0,10);if(j.dd===td){_rt.d=j.d||{};_rt.dd=td}}catch{}}
 function _rtSave(){try{_rt.dd=new Date().toISOString().slice(0,10);fs.mkdirSync(path.dirname(_rtF),{recursive:true});fs.writeFileSync(_rtF,JSON.stringify(_rt))}catch{}}
 function _rtTrack(id){const n=Date.now(),td=new Date().toISOString().slice(0,10);if(n-_rt.mt>60000){_rt.m={};_rt.mt=n}if(_rt.dd!==td){_rt.d={};_rt.dd=td}_rt.m[id]=(_rt.m[id]||0)+1;_rt.d[id]=(_rt.d[id]||0)+1;_rtSave()}
-function _rtOk(t){const n=Date.now(),td=new Date().toISOString().slice(0,10);if(n-_rt.mt>60000)_rt.m={};if(_rt.dd!==td)_rt.d={};return(_rt.m[t[0]]||0)<t[3]-1&&(_rt.d[t[0]]||0)<Math.floor(t[4]*0.8)}
-// RPM enforcement: wait if at limit instead of skipping
-async function _rtWait(t){const id=t[0],rpm=t[3];const n=Date.now();if(n-_rt.mt>60000){_rt.m={};_rt.mt=n}const used=_rt.m[id]||0;if(used>=rpm-1){const wait=60000-(n-_rt.mt)+500;if(wait>0){console.log('  [RPM] '+id+' at '+used+'/'+rpm+' — waiting '+Math.round(wait/1000)+'s');await sleep(wait);_rt.m={};_rt.mt=Date.now()}}}
-// Budget summary for end-of-run logging
-function _rtBudget(){const lines=[];for(const t of GTIERS){const d=_rt.d[t[0]]||0;const pct=Math.round(d/t[4]*100);lines.push(t[0]+': '+d+'/'+t[4]+' ('+pct+'%)')}const ds=_rt.d['ds']||0;if(ds||process.env.DEEPSEEK_API_KEY)lines.push('deepseek: '+ds+'/500 ('+Math.round(ds/500*100)+'%)');const oai=_rt.d['openai']||0;if(oai||process.env.OPENAI_API_KEY)lines.push('openai: '+oai+'/200 ('+Math.round(oai/200*100)+'%)');const mi=_rt.d['mistral']||0;if(mi||process.env.MISTRAL_API_KEY)lines.push('mistral: '+mi+'/30 ('+Math.round(mi/30*100)+'%)');return lines.join(' | ')}
-// Task classification: detects WHAT kind of work + HOW complex
-// Returns {cx: 0-3, type: 'classify'|'generate'|'analyze'|'merge'|'lookup'|'code'|'vision'}
-function classifyTask(text,sys,o){
-  if(o.complexity!==undefined){const m={trivial:0,low:1,medium:2,high:3};const cx=typeof o.complexity==='string'?(m[o.complexity]??1):o.complexity;return{cx,type:o.taskType||'generate'}}
-  const len=(text||'').length+(sys||'').length;const mt=o.maxTokens||2048;
-  const lc=((text||'')+' '+(sys||'')).toLowerCase();
-  // Detect task type from content (most specific first)
-  let type='generate';
-  if(o.imageUrl||/image|screenshot|photo|picture|ocr/i.test(lc))type='vision';
-  else if(/write.*code|implement|refactor|fix.*code|device\.js|driver/i.test(lc))type='code';
-  else if(/classify|return.*json|triage|categorize|label/i.test(lc))type='classify';
-  else if(/merge|synthesize|combine.*opinion|consolidate/i.test(lc))type='merge';
-  else if(/analyze|investigate|debug|diagnose|root.?cause|find.*bug/i.test(lc))type='analyze';
-  else if(/fingerprint|lookup|check.*support|find.*driver/i.test(lc))type='lookup';
-  // Complexity scoring
-  let cx=1;
-  if(type==='classify'||type==='lookup'||type==='merge')cx=Math.min(mt>768?2:1,1);
-  else if(type==='vision')cx=2; // vision always needs tier 2+ (Flash/Pro)
-  else if(type==='code')cx=mt>1500||len>6000?3:2; // code = high quality needed
-  else if(type==='analyze')cx=mt>1500||len>6000?3:2;
-  else{if(mt>1500||len>6000)cx=3;else if(mt>768||len>3000)cx=2;else if(mt>256||len>1000)cx=1;else cx=0}
-  return{cx,type};
-}
-// Gemini model selection: match complexity + task type
-function _pickModels(cx,taskType){
-  const cap=parseInt(process.env.GEMINI_MAX_TIER)||3;
-  let pool=GTIERS.filter(t=>t[2]<=cap&&_rtOk(t)&&cbOk('gemini-'+t[1]));
-  // Route by task: analyze/code/vision→high tier, classify/merge→fast
-  if(taskType==='analyze'||taskType==='code')pool=pool.filter(t=>t[2]>=Math.min(cx,2)).concat(pool);
-  else if(taskType==='vision')pool=pool.filter(t=>t[2]>=1).concat(pool); // vision needs Flash+
-  else if(taskType==='classify'||taskType==='merge'||taskType==='lookup')pool=pool.filter(t=>t[2]<=1).concat(pool);
-  // Deduplicate preserving order
-  const seen=new Set();pool=pool.filter(t=>{if(seen.has(t[0]))return false;seen.add(t[0]);return true});
-  return pool.sort((a,b)=>{const da=Math.abs(a[2]-cx),db=Math.abs(b[2]-cx);return da!==db?da-db:a[2]-b[2]});
+function _rtBudget(){return'ds:'+(_rt.d['ds']||0)+' oai:'+(_rt.d['openai']||0)+' mi:'+(_rt.d['mistral']||0)}
+function classifyTask(t,s,o){
+  if(o&&o.complexity!==undefined){const m={trivial:0,low:1,medium:2,high:3};return{cx:typeof o.complexity==='string'?(m[o.complexity]??1):o.complexity,type:o.taskType||'generate'}}
+  const lc=((t||'')+' '+(s||'')).toLowerCase();let type='generate';
+  if(/write.*code|implement|device\.js|driver/i.test(lc))type='code';
+  else if(/classify|triage|categorize/i.test(lc))type='classify';
+  else if(/merge|synthesize|combine/i.test(lc))type='merge';
+  else if(/analyze|investigate|debug|diagnose/i.test(lc))type='analyze';
+  else if(/fingerprint|lookup|find.*driver/i.test(lc))type='lookup';
+  return{cx:type==='code'||type==='analyze'?2:1,type};
 }
 
 async function callAI(text,sysPrompt,opts={}){
@@ -66,14 +36,12 @@ async function callAI(text,sysPrompt,opts={}){
   // Inject project rules + architecture into system prompt
   const archContext=ARCHITECTURE_SUMMARY?'\n\n---\n'+ARCHITECTURE_SUMMARY:'';
   const fullSysPrompt=PROJECT_RULES+archContext+'\n\n'+sysPrompt;
-  // Smart Gemini routing by complexity
+  // Try Gemini first (free)
   const gemKey=process.env.GOOGLE_API_KEY;
   if(gemKey){
-    _rtLoad();const task=classifyTask(text,sysPrompt,opts);const cx=task.cx;const tiers=_pickModels(cx,task.type);
-    if(tiers.length)console.log('  [AI] task='+task.type+' cx='+cx+' try=['+tiers.map(t=>t[0]).join(',')+']');
-    for(const tier of tiers){
-      const model=tier[1];
-      await _rtWait(tier);
+    const models=['gemini-2.0-flash','gemini-2.0-flash-lite'];
+    for(const model of models){
+      if(!cbOk('gemini-'+model))continue;
       for(let retry=0;retry<3;retry++){
         if(retry>0)await sleep(backoff(retry));
         try{
@@ -81,7 +49,7 @@ async function callAI(text,sysPrompt,opts={}){
             method:'POST',headers:{'Content-Type':'application/json'},
             body:JSON.stringify({systemInstruction:{parts:[{text:fullSysPrompt}]},contents:[{parts:[{text}]}],
               generationConfig:{temperature:0.2,maxOutputTokens:maxTokens}})});
-          if(r.ok){const d=await r.json();const t=d.candidates?.[0]?.content?.parts?.[0]?.text;if(t){_rtTrack(tier[0]);return{text:t.trim(),model}}}
+          if(r.ok){const d=await r.json();const t=d.candidates?.[0]?.content?.parts?.[0]?.text;if(t)return{text:t.trim(),model}}
           if(r.status===429){console.log('  Gemini '+model+' 429, backoff...');if(retry>=2)cbFail('gemini-'+model,120000);continue}
           if(r.status>=500){cbFail('gemini-'+model,60000);break}
           break;
@@ -259,17 +227,14 @@ async function analyzeImage(imageUrl,prompt){
   let b64;try{b64=await fetchImageBase64(imageUrl)}catch(e){console.log('  Img fetch fail:',e.message);return null}
   // Gemini Vision
   const gemKey=process.env.GOOGLE_API_KEY;
-  if(gemKey){
-    const vModels=['gemini-2.5-flash-preview-05-20','gemini-2.5-pro-preview-05-06','gemini-2.0-flash'];
-    for(const vm of vModels){if(!cbOk('gemini-v-'+vm))continue;
+  if(gemKey&&cbOk('gemini-vision')){
     for(let i=0;i<2;i++){if(i)await sleep(backoff(i));try{
-      const r=await fetchT('https://generativelanguage.googleapis.com/v1beta/models/'+vm+':generateContent?key='+gemKey,{
+      const r=await fetchT('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+gemKey,{
         method:'POST',headers:{'Content-Type':'application/json'},
         body:JSON.stringify({contents:[{parts:[{text:prompt},{inlineData:{mimeType:'image/jpeg',data:b64}}]}],
           generationConfig:{temperature:0.2,maxOutputTokens:1024}})});
       if(r.ok){const d=await r.json();return d.candidates?.[0]?.content?.parts?.[0]?.text?.trim()||null}
-    }catch{cbFail('gemini-v-'+vm,60000)}}
-    }
+    }catch{}}
   }
   // OpenAI Vision FREE TIER (shares daily quota with text calls)
   const oaiK=process.env.OPENAI_API_KEY;
@@ -301,68 +266,25 @@ async function fetchImageBase64(url){
   const buf=await r.arrayBuffer();return Buffer.from(buf).toString('base64');
 }
 
-function textSimilarity(a,b){if(!a||!b)return 0;const wa=new Set(a.toLowerCase().split(/\s+/)),wb=new Set(b.toLowerCase().split(/\s+/));let i=0;for(const w of wa)if(wb.has(w))i++;return i/Math.max(1,(wa.size+wb.size-i))}
-// Per-section dedup: check new text against EACH --- section of existing post
-function isDuplicateContent(newText,existingPost,threshold){
-  threshold=threshold||0.5;if(!newText||!existingPost)return false;
-  // Check whole post
-  if(textSimilarity(newText,existingPost)>threshold)return true;
-  // Check each section separated by ---
-  const sections=existingPost.split(/\n---+\n/).filter(s=>s.trim().length>30);
-  for(const sec of sections){if(textSimilarity(newText,sec)>threshold)return true}
-  return false;
+function textSimilarity(a,b){
+  if(!a||!b)return 0;const bg=s=>{const g=new Set();for(let i=0;i<s.length-1;i++)g.add(s.slice(i,i+2).toLowerCase());return g};
+  const sa=bg(a),sb=bg(b);if(!sa.size||!sb.size)return 0;let c=0;for(const g of sa)if(sb.has(g))c++;return c/Math.max(sa.size,sb.size);
 }
-const MAX_POST_SIZE=3000;
-
-// v5.12.x: Smart merge — hardened: cooldown, higher threshold, per-section version dedup
-const _CDF=path.join(__dirname,'..','state','forum-post-cooldown.json');
-function _getCD(){try{return JSON.parse(fs.readFileSync(_CDF,'utf8'))}catch{return{}}}
-function _setCD(){try{fs.mkdirSync(path.dirname(_CDF),{recursive:true});fs.writeFileSync(_CDF,JSON.stringify({t:Date.now(),iso:new Date().toISOString()}))}catch{}}
-function smartMergePost(existingRaw,newContent,opts){
-  if(!existingRaw||!existingRaw.trim()){_setCD();return{action:'edit',content:newContent,reason:'empty'};}
-  if(!newContent||!newContent.trim())return{action:'skip',content:existingRaw,reason:'no new'};
-  // Cooldown: skip if edited <30min ago
-  if(!(opts||{}).force){const cd=_getCD();if(cd.t&&Date.now()-cd.t<1800000)return{action:'skip',content:existingRaw,reason:'cooldown ('+Math.round((Date.now()-cd.t)/60000)+'m ago)'};}
-  // Version dedup (per-section)
-  const nv=(newContent.match(/\bv?\d+\.\d+\.\d+\b/g)||[]).map(v=>v.replace(/^v/,''));
-  const ev=(existingRaw.match(/\bv?\d+\.\d+\.\d+\b/g)||[]).map(v=>v.replace(/^v/,''));
-  const allMentioned=nv.length>0&&nv.every(v=>ev.includes(v));
-  if(isDuplicateContent(newContent,existingRaw,0.40))return{action:'skip',content:existingRaw,reason:'duplicate'};
-  // Per-section: if ANY section already covers the same version with >35% similarity, skip
-  const secs=existingRaw.split(/\n---+\n/).filter(s=>s.trim().length>20);
-  for(const sec of secs){const sv=(sec.match(/\bv?\d+\.\d+\.\d+\b/g)||[]).map(v=>v.replace(/^v/,''));if(nv.length>0&&nv.every(v=>sv.includes(v))&&textSimilarity(newContent,sec)>0.35)return{action:'skip',content:existingRaw,reason:'section already covers version'};}
-  if(allMentioned&&textSimilarity(newContent,existingRaw)>0.2)return{action:'skip',content:existingRaw,reason:'version already covered'};
-  // Clean footers
-  const clean=existingRaw.replace(/\n*As always,?\s*remove and re-?pair[^\n]*/gi,'').trimEnd();
-  let merged=clean+'\n\n---\n\n'+newContent;
-  // Trim oldest sections if too long
-  if(merged.length>MAX_POST_SIZE){
-    const secs=merged.split(/\n---+\n/);
-    while(secs.length>1&&secs.join('\n\n---\n\n').length>MAX_POST_SIZE)secs.shift();
-    merged=secs.join('\n\n---\n\n');
-  }
-  _setCD();
-  return{action:'edit',content:merged,reason:'merged'};
+function isDuplicateContent(a,b,thr){return textSimilarity(a,b)>=(thr||0.40)}
+const MAX_POST_SIZE=28000;
+const _cdF=path.join(__dirname,'..','state','forum-post-cooldown.json');
+function _getCD(){try{return JSON.parse(fs.readFileSync(_cdF,'utf8'))}catch{return{}}}
+function _setCD(){try{fs.mkdirSync(path.dirname(_cdF),{recursive:true});fs.writeFileSync(_cdF,JSON.stringify({t:Date.now()}))}catch{}}
+function smartMergePost(existing,fresh,opts){
+  if(!existing||!existing.trim()){_setCD();return{action:'edit',content:fresh,reason:'empty'};}
+  if(!fresh||!fresh.trim())return{action:'skip',content:existing,reason:'no new'};
+  if(!(opts||{}).force){const cd=_getCD();if(cd.t&&Date.now()-cd.t<1800000)return{action:'skip',content:existing,reason:'cooldown'};}
+  if(isDuplicateContent(fresh,existing,0.40))return{action:'skip',content:existing,reason:'duplicate'};
+  let merged=fresh.replace(/^---+$/gm,'').replace(/\n{3,}/g,'\n\n').trim();
+  if(merged.length>MAX_POST_SIZE)merged=merged.slice(0,MAX_POST_SIZE);
+  _setCD();return{action:'edit',content:merged,reason:'replaced'};
 }
+function getAIBudget(){_rtLoad();return{used:_rt.d,budget:_rtBudget()}}
+async function callAIEnsemble(t,s,o){try{const{qc,pickForTask}=require('./ai-ensemble');const tk=classifyTask(t,s,o);const ps=pickForTask(tk.type,2);if(ps.length<2)return callAI(t,s,o);const mt=Math.min((o||{}).maxTokens||2048,1500);const res=await Promise.allSettled(ps.map(p=>qc(p,t,s,mt)));const ans=res.map((r,i)=>({p:ps[i],t:r.status==='fulfilled'?r.value:null})).filter(a=>a.t&&a.t.length>20);if(!ans.length)return callAI(t,s,o);if(ans.length===1)return{text:ans[0].t,model:'ens-'+ans[0].p};const mp='Synthesize into ONE answer (max 300w):\n\n'+ans.map(a=>'['+a.p+']:\n'+a.t).join('\n\n');const m=await callAI(mp,'Merge AI answers.',{maxTokens:mt,complexity:'low'});return m||{text:ans[0].t,model:'ens-'+ans[0].p}}catch(e){console.log('  Ensemble fallback:',e.message);return callAI(t,s,o)}}
 
-async function callAIEnsemble(text,sysPrompt,opts={}){
-  const{qc,pickForTask}=require('./ai-ensemble');
-  const task=classifyTask(text,sysPrompt,opts);
-  if(task.type==='classify'||task.type==='lookup'||task.type==='merge'||task.type==='vision')return callAI(text,sysPrompt,opts);
-  const cnt=(task.type==='code'||task.type==='analyze')?3:task.cx>=3?3:2;
-  const ps=pickForTask(task.type,cnt);
-  if(ps.length<2)return callAI(text,sysPrompt,opts);
-  console.log('  [Ens] task='+task.type+' cx='+task.cx+' team='+ps.join(','));
-  const sys=PROJECT_RULES+(ARCHITECTURE_SUMMARY?'\n---\n'+ARCHITECTURE_SUMMARY:'')+'\n\n'+sysPrompt;
-  const mt=Math.min(opts.maxTokens||2048,1500);
-  const res=await Promise.allSettled(ps.map(p=>qc(p,text,sys,mt)));
-  const ans=res.map((r,i)=>({p:ps[i],t:r.status==='fulfilled'?r.value:null})).filter(a=>a.t&&a.t.length>20);
-  if(!ans.length)return callAI(text,sysPrompt,opts);
-  if(ans.length===1)return{text:ans[0].t,model:'ens-'+ans[0].p};
-  const voice=task.type==='code'?'Pick the most correct code answer':'Dylan voice, max 300w';
-  const mp='Synthesize these '+ans.length+' opinions into ONE best answer ('+voice+'):\n\n'+ans.map((a,i)=>'['+a.p+']:\n'+a.t).join('\n---\n');
-  const m=await callAI(mp,'Merge AI answers.',{maxTokens:mt,complexity:'low'});
-  return m||{text:ans[0].t,model:'ens-'+ans[0].p};
-}
-
-module.exports={callAI,callAIEnsemble,analyzeImage,sleep,localFallback,getAIBudget:_rtBudget,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost};
+module.exports={callAI,callAIEnsemble,analyzeImage,sleep,localFallback,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost,getAIBudget,classifyTask};
