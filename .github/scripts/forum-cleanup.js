@@ -128,7 +128,7 @@ async function main(){
         if(await deletePost(p.id,auth)){delOk++;console.log('  ✓ Deleted')}
         else{delFail++;console.log('  ✗ Delete failed')}
       }catch(e){delFail++;console.log('  ✗ Error:',e.message)}
-      await sleep(90000);
+      await sleep(1500);
     }else{delOk++}
   }
 

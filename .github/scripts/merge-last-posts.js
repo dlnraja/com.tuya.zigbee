@@ -53,7 +53,7 @@ const cleaned=raws.map(r=>dedupSections(r.replace(/\n*As always,?\s*remove and r
 const combined=dedupSections(cleaned.join('\n\n---\n\n'));
 console.log('After dedup:',combined.length,'chars (was',raws.reduce((a,r)=>a+r.length,0)+')');
 // Humanize with AI
-const prompt='You are Dylan, a French dev of Universal Tuya Zigbee on Homey. Rewrite this into ONE short update. Remove duplicates, merge naturally. Write casual plain text — NO ## headers, NO tables, NO emoji walls, NO bullet-point lists. Short sentences, say "I" naturally. Max 300 words. NO bot references, NO signature, NO footer links.';
+const prompt='You are Dylan, dev of Universal Tuya Zigbee app on Homey. Rewrite this forum content into ONE cohesive update post. Remove duplicates, merge info naturally. Sound like a real person, casual but informative. Use Discourse markdown. Max 600 words. NO bot references, NO signature.';
 const ai=await callAI(combined,prompt,{maxTokens:2048,complexity:'medium'});
 const final=ai?ai.text:combined;
 console.log('Merged content:',final.length,'chars (model:',ai?.model||'none',')');
@@ -65,13 +65,13 @@ if(!er.ok)throw new Error('Edit failed:'+er.status);
 console.log('Edited post #'+keep.post_number+' with merged content');
 setGlobalCooldown();
 if(mine.length>1){
-  await sleep(5000);
-  for(const p of mine.slice(0,-1)){
-    const blank='*(merged into post #'+keep.post_number+')*';
-    await sleep(10000);
-    const br=await fetchWithRetry(FORUM+'/posts/'+p.id,{method:'PUT',headers:getH(auth,true),body:JSON.stringify({post:{raw:blank}})},{retries:3,label:'blank'+p.id});
-    console.log(br.ok?'Blanked #'+p.post_number:'Blank failed #'+p.post_number+': '+br.status);
-  }
+await sleep(5000);
+for(const p of mine.slice(0,-1)){
+  const blank='*(merged into post #'+keep.post_number+')*';
+  await sleep(10000);
+  const br=await fetchWithRetry(FORUM+'/posts/'+p.id,{method:'PUT',headers:getH(auth,true),body:JSON.stringify({post:{raw:blank}})},{retries:3,label:'blank'+p.id});
+  console.log(br.ok?'Blanked #'+p.post_number:'Blank failed #'+p.post_number+': '+br.status);
+}
 }
 console.log('Done! '+(mine.length>1?'Merged '+mine.length+' posts into':'Cleaned up')+' #'+keep.post_number);
 }
