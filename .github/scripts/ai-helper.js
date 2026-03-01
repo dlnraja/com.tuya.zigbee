@@ -245,4 +245,22 @@ async function fetchImageBase64(url){
   const buf=await r.arrayBuffer();return Buffer.from(buf).toString('base64');
 }
 
-module.exports={callAI,analyzeImage,sleep,localFallback,getAIBudget:_rtBudget};
+function textSimilarity(a,b){if(!a||!b)return 0;const wa=new Set(a.toLowerCase().split(/\s+/)),wb=new Set(b.toLowerCase().split(/\s+/));let i=0;for(const w of wa)if(wb.has(w))i++;return i/Math.max(1,(wa.size+wb.size-i))}
+
+async function callAIEnsemble(text,sysPrompt,opts={}){
+  const{qc,provs}=require('./ai-ensemble');
+  const ps=provs().slice(0,3);
+  if(ps.length<2)return callAI(text,sysPrompt,opts);
+  console.log('  [Ens] '+ps.join(','));
+  const sys=PROJECT_RULES+(ARCHITECTURE_SUMMARY?'\n---\n'+ARCHITECTURE_SUMMARY:'')+'\n\n'+sysPrompt;
+  const mt=Math.min(opts.maxTokens||2048,1500);
+  const res=await Promise.allSettled(ps.map(p=>qc(p,text,sys,mt)));
+  const ans=res.map((r,i)=>({p:ps[i],t:r.status==='fulfilled'?r.value:null})).filter(a=>a.t&&a.t.length>20);
+  if(!ans.length)return callAI(text,sysPrompt,opts);
+  if(ans.length===1)return{text:ans[0].t,model:'ens-'+ans[0].p};
+  const mp='Synthesize these '+ans.length+' opinions into ONE best answer (Dylan voice, max 300w):\n\n'+ans.map((a,i)=>'['+a.p+']:\n'+a.t).join('\n---\n');
+  const m=await callAI(mp,'Merge AI answers.',{maxTokens:mt,complexity:'low'});
+  return m||{text:ans[0].t,model:'ens-'+ans[0].p};
+}
+
+module.exports={callAI,callAIEnsemble,analyzeImage,sleep,localFallback,getAIBudget:_rtBudget,textSimilarity};
