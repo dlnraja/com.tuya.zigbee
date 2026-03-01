@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const fs=require('fs'),path=require('path');
-const{callAI,callAIEnsemble,analyzeImage,getAIBudget,textSimilarity,isDuplicateContent,MAX_POST_SIZE}=require('./ai-helper');
+const{callAI,callAIEnsemble,analyzeImage,getAIBudget,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost}=require('./ai-helper');
 const{loadFingerprints,findAllDrivers,extractMfrFromText}=require('./load-fingerprints');
 const{investigate:investigateBug}=require('./bug-investigator');
 const REPOS=(process.env.REPOS||'dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee').split(',').map(s=>s.trim());
@@ -48,14 +48,10 @@ async function crossPostForum(msg){
       }}
     }catch{}
     if(lastOwn){
-      // Per-section dedup: skip if ANY existing section already covers this content
-      if(isDuplicateContent(msg,lastOwn.raw,0.45)){console.log('    Forum cross-post skip: duplicate content detected');return}
-      // Size cap: don't keep growing the post forever
-      if(lastOwn.raw.length>MAX_POST_SIZE){console.log('    Forum cross-post skip: post already '+lastOwn.raw.length+'ch (max '+MAX_POST_SIZE+')');return}
-      const cleanOld=lastOwn.raw.replace(/\n*As always,?\s*remove and re-?pair[^\n]*/gi,'').trimEnd();
-      const merged=cleanOld+'\n\n---\n\n'+msg;
-      await fetchWithRetry(FORUM+'/posts/'+lastOwn.id,{method:'PUT',headers:gh(auth),body:JSON.stringify({post:{raw:merged}})},{retries:3,label:'forumEdit'});
-      console.log('    Cross-posted to forum (edited existing post)');
+      const m=smartMergePost(lastOwn.raw,msg);
+      if(m.action==='skip'){console.log('    Forum cross-post skip:',m.reason);return}
+      await fetchWithRetry(FORUM+'/posts/'+lastOwn.id,{method:'PUT',headers:gh(auth),body:JSON.stringify({post:{raw:m.content}})},{retries:3,label:'forumEdit'});
+      console.log('    Cross-posted to forum (edited,',m.reason+')');
     }else{
       await fetchWithRetry(FORUM+'/posts',{method:'POST',headers:gh(auth),body:JSON.stringify({topic_id:140352,raw:msg})},{retries:3,label:'forumCrossPost'});
       console.log('    Cross-posted to forum (new reply)');
