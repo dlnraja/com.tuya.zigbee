@@ -286,16 +286,24 @@ function isDuplicateContent(newText,existingPost,threshold){
 }
 const MAX_POST_SIZE=3000;
 
-// v5.12.0: Smart merge — ALWAYS edit last post, never create new. Dedup versions, trim if too long.
-function smartMergePost(existingRaw,newContent){
-  if(!existingRaw||!existingRaw.trim())return{action:'edit',content:newContent,reason:'empty'};
+// v5.12.x: Smart merge — hardened: cooldown, higher threshold, per-section version dedup
+const _CDF=path.join(__dirname,'..','state','forum-post-cooldown.json');
+function _getCD(){try{return JSON.parse(fs.readFileSync(_CDF,'utf8'))}catch{return{}}}
+function _setCD(){try{fs.mkdirSync(path.dirname(_CDF),{recursive:true});fs.writeFileSync(_CDF,JSON.stringify({t:Date.now(),iso:new Date().toISOString()}))}catch{}}
+function smartMergePost(existingRaw,newContent,opts){
+  if(!existingRaw||!existingRaw.trim()){_setCD();return{action:'edit',content:newContent,reason:'empty'};}
   if(!newContent||!newContent.trim())return{action:'skip',content:existingRaw,reason:'no new'};
-  // Version dedup
+  // Cooldown: skip if edited <30min ago
+  if(!(opts||{}).force){const cd=_getCD();if(cd.t&&Date.now()-cd.t<1800000)return{action:'skip',content:existingRaw,reason:'cooldown ('+Math.round((Date.now()-cd.t)/60000)+'m ago)'};}
+  // Version dedup (per-section)
   const nv=(newContent.match(/\bv?\d+\.\d+\.\d+\b/g)||[]).map(v=>v.replace(/^v/,''));
   const ev=(existingRaw.match(/\bv?\d+\.\d+\.\d+\b/g)||[]).map(v=>v.replace(/^v/,''));
   const allMentioned=nv.length>0&&nv.every(v=>ev.includes(v));
-  if(isDuplicateContent(newContent,existingRaw,0.45))return{action:'skip',content:existingRaw,reason:'duplicate'};
-  if(allMentioned&&textSimilarity(newContent,existingRaw)>0.25)return{action:'skip',content:existingRaw,reason:'version already covered'};
+  if(isDuplicateContent(newContent,existingRaw,0.55))return{action:'skip',content:existingRaw,reason:'duplicate'};
+  // Per-section: if ANY section already covers the same version with >35% similarity, skip
+  const secs=existingRaw.split(/\n---+\n/).filter(s=>s.trim().length>20);
+  for(const sec of secs){const sv=(sec.match(/\bv?\d+\.\d+\.\d+\b/g)||[]).map(v=>v.replace(/^v/,''));if(nv.length>0&&nv.every(v=>sv.includes(v))&&textSimilarity(newContent,sec)>0.35)return{action:'skip',content:existingRaw,reason:'section already covers version'};}
+  if(allMentioned&&textSimilarity(newContent,existingRaw)>0.2)return{action:'skip',content:existingRaw,reason:'version already covered'};
   // Clean footers
   const clean=existingRaw.replace(/\n*As always,?\s*remove and re-?pair[^\n]*/gi,'').trimEnd();
   let merged=clean+'\n\n---\n\n'+newContent;
@@ -305,6 +313,7 @@ function smartMergePost(existingRaw,newContent){
     while(secs.length>1&&secs.join('\n\n---\n\n').length>MAX_POST_SIZE)secs.shift();
     merged=secs.join('\n\n---\n\n');
   }
+  _setCD();
   return{action:'edit',content:merged,reason:'merged'};
 }
 
