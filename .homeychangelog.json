@@ -1,4 +1,7 @@
 {
+  "5.11.30": {
+    "en": "Universal Tuya Zigbee app v5.11.30: Re-enabled read-only forum intel, fixed driver misplacement, and updated 143 drivers with 3062 fingerprints."
+  },
   "5.11.29": {
     "en": "Universal Tuya Zigbee app v5.11.29: Cleanup of scripts and workflows."
   },
@@ -56,10 +59,7 @@
   "5.11.11": {
     "en": "v5.11.11: Fingerprint regression fixes — (1) Removed 5,450 case-duplicate mfrs across 113 drivers. (2) Fixed plug_smart vs plug_energy_monitor TS011F collision (82 overlapping mfrs removed). (3) Fixed BSEED switch_3gang vs wall_switch_3gang_1way collision. (4) Fixed Excellux PID collision across contact/motion/climate sensors (129 mfrs affected). (5) Fixed button_wireless_4 wrong PID TS0041 + 6 mfrs. Cross-driver collisions reduced from 200+ to 74 (all acceptable). See docs/REGRESSION_ANALYSIS_v5.11.md."
   },
-  "5.11.10": {
-    "en": "v5.11.10: Full Zigbee DB sync — crawled Z2M (365 files), ZHA (all quirks), Blakadder, deCONZ. +117 new fingerprints across 19 drivers: switch_1gang +20, bulb_rgbw +13, plug_smart +11, dimmer_wall_1gang +11, climate_sensor +11, radiator_valve +8, presence_sensor_radar +7, bulb_dimmable +5, switch_3gang +5, water_leak_sensor +5, lock_smart +4, switch_2gang +4, contact_sensor +2, switch_4gang +3, motion_sensor +3, energy_meter_3phase +2, ir_blaster +1, siren +1, water_valve_garden +1. New PIDs: TS000F, TS1002, FE-GU10-5W, SMD9300."
-  },
-  "5.11.30": {
-    "en": "v5.11.29: Removed one-shot fix-post-now script and workflow to streamline the development process., Updated workflow to improve maintenance and reduce complexity."
+  "5.11.31": {
+    "en": "v5.11.30: Re-enabled read-only forum intel for stealth scan., Fixed misplacement of driver _TZE284_tgeqdjgk., Auto-published 143 drivers with 3062 fingerprints., Updated scripts for forum response and scanning., Updated several screenshots for better clarity."
   }
 }

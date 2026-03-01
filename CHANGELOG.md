@@ -6,7 +6,21 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.29] - 2026-03-01
+## [5.11.30] - 2026-03-01
+
+### Bug Fixes
+- Re-enabled read-only forum intel for stealth scan.
+- Fixed misplacement of driver _TZE284_tgeqdjgk.
+
+### CI/CD
+- Auto-published 143 drivers with 3062 fingerprints.
+- Updated scripts for forum response and scanning.
+
+### Screenshots
+- Updated several screenshots for better clarity.
+---
+
+ [5.11.29] - 2026-03-01
 
 ### Bug Fixes
 - Removed one-shot fix-post-now script and workflow to streamline the development process.
