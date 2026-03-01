@@ -73,7 +73,7 @@ async function main() {
     if (r.ok) { console.log('  ✓ Cleaned'); return 'ok'; }
     if (r.status === 404) { console.log('  ○ Already gone'); return 'skip'; }
     console.log(`  ✗ Failed: ${r.status}`); return 'ok';
-  }, { spacing: 10000, label: 'cleanup-edit', maxRetries: 2, rateLimitPause: 120000 });
+  }, { spacing: 3000, label: 'cleanup-edit', maxRetries: 2, rateLimitPause: 60000 });
 
   console.log(`\n=== Done: ${result.ok} cleaned, ${result.skip} skipped, ${result.fail} failed ===`);
 }

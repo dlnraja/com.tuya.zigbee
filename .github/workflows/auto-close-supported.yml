@@ -50,7 +50,7 @@ jobs:
   process-all:
     name: "Process All Issues & PRs"
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
@@ -91,12 +91,7 @@ jobs:
           INCLUDE_CLOSED: ${{ inputs.include_closed || 'false' }}
           FORCE_REPROCESS: ${{ inputs.force_reprocess || 'false' }}
           REPOS: "dlnraja/com.tuya.zigbee"
-          GEMINI_MAX_TIER: "2"
-          RATE_LIMIT_SLEEP: "4000"
         run: node .github/scripts/github-issue-manager.js
-
-      - name: "Sleep 30s between repos"
-        run: sleep 30
 
       - name: "Process JohanBendz issues & PRs"
         id: upstream_repo
@@ -112,8 +107,6 @@ jobs:
           INCLUDE_CLOSED: ${{ inputs.include_closed || 'false' }}
           FORCE_REPROCESS: ${{ inputs.force_reprocess || 'false' }}
           REPOS: "JohanBendz/com.tuya.zigbee"
-          GEMINI_MAX_TIER: "1"
-          RATE_LIMIT_SLEEP: "5000"
         run: node .github/scripts/github-issue-manager.js
 
       - name: Commit state

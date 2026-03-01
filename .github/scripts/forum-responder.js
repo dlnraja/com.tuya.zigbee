@@ -34,6 +34,10 @@ function cleanReply(r){
   r=r.replace(/GitHub\s*#\d+\s*[—–-]\s*[^\n]*/gi,'');
   r=r.replace(/\[#\d+\]\([^)]*github[^)]*\)\s*[^\n]*/gi,'');
   r=r.replace(/Open (?:PRs?|issues?):?\s*[^\n]*/gi,'');
+  // Strip references to other forum topics/threads — never mention them in output
+  r=r.replace(/\bT\d{4,6}\b/g,(m)=>m==='T140352'?m:'');
+  r=r.replace(/community\.homey\.app\/t\/[^\s)\]]+/gi,'');
+  r=r.replace(/\b(?:topic|thread)\s*(?:#|ID)?\s*\d{4,6}\b/gi,(m)=>/140352/.test(m)?m:'');
   r=r.replace(/\n{3,}/g,'\n\n');
   return r.trim();
 }
