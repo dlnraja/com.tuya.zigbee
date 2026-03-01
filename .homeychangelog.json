@@ -1,4 +1,7 @@
 {
+  "5.11.31": {
+    "en": "Universal Tuya Zigbee app v5.11.31: Updated drivers and improved documentation."
+  },
   "5.11.30": {
     "en": "Universal Tuya Zigbee app v5.11.30: Re-enabled read-only forum intel, fixed driver misplacement, and updated 143 drivers with 3062 fingerprints."
   },
@@ -56,10 +59,7 @@
   "5.11.12": {
     "en": "v5.11.12: Critical case-sensitivity fix + WiFi bugs. (1) Fixed 5,004 lowercase manufacturer names (_tz3000_ -> _TZ3000_, _tyzb01_ -> _TYZB01_, _tyst11_ -> _TYST11_) — devices were not matching due to case-sensitive Homey matching (GH#124). (2) Fixed _TZE200_t1blo2bj misclassified as thermostat instead of siren. (3) WiFi: Fixed double DP listener in wifi_generic causing duplicate processing. (4) WiFi: Fixed memory leak on settings change (client not nulled after destroy). (5) WiFi: Fixed UDP discovery race condition (late device-found listener). (6) WiFi: Fixed manual pairing error callback in all 22 WiFi drivers."
   },
-  "5.11.11": {
-    "en": "v5.11.11: Fingerprint regression fixes — (1) Removed 5,450 case-duplicate mfrs across 113 drivers. (2) Fixed plug_smart vs plug_energy_monitor TS011F collision (82 overlapping mfrs removed). (3) Fixed BSEED switch_3gang vs wall_switch_3gang_1way collision. (4) Fixed Excellux PID collision across contact/motion/climate sensors (129 mfrs affected). (5) Fixed button_wireless_4 wrong PID TS0041 + 6 mfrs. Cross-driver collisions reduced from 200+ to 74 (all acceptable). See docs/REGRESSION_ANALYSIS_v5.11.md."
-  },
-  "5.11.31": {
-    "en": "v5.11.30: Re-enabled read-only forum intel for stealth scan., Fixed misplacement of driver _TZE284_tgeqdjgk., Auto-published 143 drivers with 3062 fingerprints., Updated scripts for forum response and scanning., Updated several screenshots for better clarity."
+  "5.11.32": {
+    "en": "v5.11.31: Fixed links in README., Redesigned forum post #1., Added diagnostic guides for better troubleshooting., Auto-published 143 drivers with 3062 fingerprints."
   }
 }
