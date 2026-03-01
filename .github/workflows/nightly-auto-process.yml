@@ -117,7 +117,7 @@ jobs:
         timeout-minutes: 5
         run: node .github/scripts/forum-intel-processor.js || true
 
-      # Forum replies delegated to forum-auto-responder.yml (4x/day, dedicated workflow)
+      # Forum replies delegated to forum-auto-responder.yml (2x/day, dedicated workflow)
 
       - name: Forum Spam Scan
         if: always()
