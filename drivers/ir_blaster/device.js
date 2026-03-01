@@ -688,61 +688,9 @@ class IrBlasterDevice extends ZigBeeDevice {
    * v5.5.356: Register enhanced flow card actions inspired by SDK patterns
    */
   registerFlowCardActions() {
-    this.log('Registering enhanced IR flow card actions...');
-
-    // Enhanced learn IR code action
-    const learnAction = this.homey.flow.getActionCard('ir_blaster_learn_code');
-    if (learnAction) {
-      learnAction.registerRunListener(async (args) => {
-        const { code_name, duration, protocol, frequency, category } = args;
-        this.log(`Flow: Learning IR code "${code_name}" - protocol: ${protocol}, duration: ${duration}s`);
-
-        try {
-          await this._enableAdvancedLearnMode(duration || 30, {
-            protocol: protocol || 'auto',
-            frequency: frequency || IR_FREQUENCIES.DEFAULT,
-            codeName: code_name,
-            category: category || 'uncategorized'
-          });
-
-          return true;
-        } catch (err) {
-          this.error('Enhanced flow learn action failed:', err);
-          return false;
-        }
-      });
-    }
-
-    // Enhanced send IR code action
-    const sendAction = this.homey.flow.getActionCard('ir_blaster_send_code');
-    if (sendAction) {
-      sendAction.registerRunListener(async (args) => {
-        const { ir_code, protocol, frequency, repeat } = args;
-        this.log(`Flow: Sending IR code "${ir_code}" with enhanced options`);
-
-        try {
-          // Check if it's a named code or direct base64
-          let codeToSend = ir_code;
-          if (this._learnedCodes[ir_code]) {
-            codeToSend = this._learnedCodes[ir_code];
-            this.log(`Using stored code for "${ir_code}"`);
-          }
-
-          await this.sendEnhancedIRCode(codeToSend, {
-            protocol: protocol,
-            frequency: frequency,
-            repeat: repeat || 1
-          });
-          return true;
-        } catch (err) {
-          this.error('Enhanced flow send action failed:', err);
-          return false;
-        }
-      });
-    }
-
-    // v5.5.361: Re-enabled flow cards - properly implemented in driver.js
-    this.log('IR Blaster flow cards ready (ir_send_by_category in driver.js)')
+    // v5.12: Flow cards are registered in driver.js to avoid double-registration
+    // device.js only logs readiness — all registerRunListener calls are in driver.js
+    this.log('IR Blaster flow cards ready (all registered in driver.js)');
   }
 
   /**
