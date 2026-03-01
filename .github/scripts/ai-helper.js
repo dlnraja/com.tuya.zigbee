@@ -348,10 +348,11 @@ function smartMergePost(existingRaw,newContent,opts){
 async function callAIEnsemble(text,sysPrompt,opts={}){
   const{qc,pickForTask}=require('./ai-ensemble');
   const task=classifyTask(text,sysPrompt,opts);
-  if(task.type==='classify'||task.type==='lookup'||task.type==='merge')return callAI(text,sysPrompt,opts);
-  const ps=pickForTask(task.type,task.cx>=3?3:2);
+  if(task.type==='classify'||task.type==='lookup'||task.type==='merge'||task.type==='vision')return callAI(text,sysPrompt,opts);
+  const cnt=(task.type==='code'||task.type==='analyze')?3:task.cx>=3?3:2;
+  const ps=pickForTask(task.type,cnt);
   if(ps.length<2)return callAI(text,sysPrompt,opts);
-  console.log('  [Ens] task='+task.type+' '+ps.join(','));
+  console.log('  [Ens] task='+task.type+' cx='+task.cx+' team='+ps.join(','));
   const sys=PROJECT_RULES+(ARCHITECTURE_SUMMARY?'\n---\n'+ARCHITECTURE_SUMMARY:'')+'\n\n'+sysPrompt;
   const mt=Math.min(opts.maxTokens||2048,1500);
   const res=await Promise.allSettled(ps.map(p=>qc(p,text,sys,mt)));
