@@ -81,7 +81,7 @@ async function main(){
     console.log('[DRY RUN] Would post:\n---\n'+content+'\n---');
   }else{
     console.log('Getting forum auth...');
-    const auth=await getForumAuth();
+    let auth=await getForumAuth();
     if(auth&&auth.type==='session')auth=await refreshCsrf(auth);
     if(!auth){console.error('::warning::No forum auth available');process.exit(0)}
     const lastOwn=await getLastOwnPost();
