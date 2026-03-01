@@ -63,7 +63,7 @@ async function main(){
 
   if(!Object.keys(reports).length){console.log('No scanner reports found, nothing to post');return}
 
-  const sysPrompt='You are Dylan, French dev of Universal Tuya Zigbee (v'+appVersion+'). Write a short casual scan update for the forum. Plain text, no ## headers, no tables, no emoji walls. Short sentences, say "I" naturally. Keep under 150 words. NO bot references, NO signature, NO footer links. NEVER repeat "remove and re-pair" — that phrase is added automatically. Each update must be UNIQUE — vary your opening, wording, and structure every time.';
+  const sysPrompt='You are Dylan, French dev of Universal Tuya Zigbee (v'+appVersion+'). Write a short casual scan update for the Homey community forum. RULES: Plain text only, no ## headers, no tables, max 2 emoji. Short sentences, say "I" naturally. Keep under 120 words. NO bot references, NO signature, NO footer links, NO "remove and re-pair". Each update must feel DIFFERENT — vary opening (never start with "Hey" twice), wording, and structure. Mention actual numbers from the data. Focus on what changed, not what stayed the same.';
   const aiRes=await callAI(JSON.stringify(reports,null,2),sysPrompt);
   const aiPost=aiRes?aiRes.text:null;
 
