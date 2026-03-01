@@ -1,4 +1,7 @@
 {
+  "5.11.28": {
+    "en": "Updated to v5.11.28 with 143 drivers and 3062 fingerprints. Includes script fixes for forum post editing."
+  },
   "5.11.27": {
     "en": "Universal Tuya Zigbee app v5.11.27: Added new AI providers and improved forum management."
   },
@@ -56,10 +59,7 @@
   "5.11.9": {
     "en": "v5.11.9: Live DB sync — Z2M+ZHA+deCONZ crawl. +2 water_leak_sensor (TS0207), +6 radiator_valve TRVs (_TYST11_)."
   },
-  "5.11.8": {
-    "en": "v5.11.8: Z2M fingerprint sync — Added 18 new device fingerprints. climate_sensor: +5 (_TZE204_3q3maeoo, _TZE204_6vwfjkcj, _TZE204_tuhfx7tf, _TZE284_q22avxbv, _TZE284_roujjevx). switch_4gang: +4 TS0726 (_TZ300A_ohjmifiz, _TZ300A_rncj86af, _TZ300A_vkflnsl0, _TZ300A_vqrs45nj). water_tank_monitor: +1 (_TZE284_mxujdmxo). plug_smart: +1 (_TZ3210_sgb0xhwn). JohanBendz forks crawled — no additional fingerprints found beyond upstream."
-  },
-  "5.11.28": {
-    "en": "v5.11.27: Restricted bot activity to T140352 only., Fixed missing functions in AI helper., Removed 3 duplicate forum-posting sources., Reduced bot spam by disabling cross-posting and implementing a 12-hour cooldown., Added Kimi/Moonshot provider to AI ensemble."
+  "5.11.29": {
+    "en": "v5.11.28: Fixed one-shot script and workflow for editing forum post #1558 with clean content., Auto-published version 5.11.28 with 143 drivers and 3062 fingerprints., Updated GitHub workflows to include the new script for forum post editing."
   }
 }

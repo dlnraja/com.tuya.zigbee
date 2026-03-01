@@ -6,7 +6,17 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.27] - 2026-03-01
+## [5.11.28] - 2026-03-01
+
+### Bug Fixes
+- Fixed one-shot script and workflow for editing forum post #1558 with clean content.
+
+### CI/CD
+- Auto-published version 5.11.28 with 143 drivers and 3062 fingerprints.
+- Updated GitHub workflows to include the new script for forum post editing.
+---
+
+ [5.11.27] - 2026-03-01
 
 ### Bug Fixes
 - Restricted bot activity to T140352 only.
