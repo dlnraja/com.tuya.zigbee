@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-01T09:04:47.227Z",
+  "timestamp": "2026-03-01T20:49:24.527Z",
   "issues": {
     "total": 1162,
     "withFPs": 925,
@@ -610,6 +610,12 @@
   ],
   "allMentionedFPs": [
     {
+      "fp": "_TZ3000_fdxihpp7",
+      "source": "issue#963",
+      "state": "open",
+      "isNew": false
+    },
+    {
       "fp": "_TZ3290_ot6ewjvmejq5ekhl",
       "source": "issue#1331",
       "state": "open",
@@ -648,12 +654,6 @@
     {
       "fp": "_TZE284_9ern5sfh",
       "source": "issue#1328",
-      "state": "open",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_fdxihpp7",
-      "source": "issue#963",
       "state": "open",
       "isNew": false
     },
@@ -7186,6 +7186,21 @@
       "isNew": false
     },
     {
+      "fp": "_TZ3000_skueekg3",
+      "source": "comment#963",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_skueekg3",
+      "source": "comment#963",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_skueekg3",
+      "source": "comment#963",
+      "isNew": false
+    },
+    {
       "fp": "_TZ3290_ot6ewjvmejq5ekhl",
       "source": "comment#1331",
       "isNew": false
@@ -7293,21 +7308,6 @@
     {
       "fp": "_TZE284_9ern5sfh",
       "source": "comment#1328",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_skueekg3",
-      "source": "comment#963",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_skueekg3",
-      "source": "comment#963",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_skueekg3",
-      "source": "comment#963",
       "isNew": false
     },
     {
