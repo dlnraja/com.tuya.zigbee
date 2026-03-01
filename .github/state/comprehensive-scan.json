@@ -1,12 +1,12 @@
 {
-  "date": "2026-02-28T09:03:05.161Z",
+  "date": "2026-03-01T09:19:36.911Z",
   "local": {
     "drivers": 143,
-    "fps": 4181
+    "fps": 4186
   },
   "forkScan": {
-    "filesScanned": 4721,
-    "newFPs": 142132
+    "filesScanned": 4723,
+    "newFPs": 142134
   },
   "upstream": {
     "prs": 0,
@@ -852806,6 +852806,18 @@
     {
       "mfr": "_TZ3000_*",
       "driver": "switch_wall_7gang",
+      "fork": "rsalinger/com.tuya.zigbee",
+      "branch": "master"
+    },
+    {
+      "mfr": "_TZ3000_*",
+      "driver": "switch_wall_8gang",
+      "fork": "rsalinger/com.tuya.zigbee",
+      "branch": "master"
+    },
+    {
+      "mfr": "lumi.ctrl_ln1",
+      "driver": "switch_wall_8gang_smart",
       "fork": "rsalinger/com.tuya.zigbee",
       "branch": "master"
     }

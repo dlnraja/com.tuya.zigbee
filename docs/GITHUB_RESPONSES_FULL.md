@@ -220,3 +220,7 @@
 - **JohanBendz/com.tuya.zigbee#1347** @azkysmarthome: `_TZE284_6ycgarab`, `_TZE200_u6x1zyv2`, `_TZE204_gkfb`, `_TZE204_dwcarsat`, `_TZE200_vrcfo4i0`, `_TZ3000_zutizvyk`, `HOBEIAN`, `test`, `_TZE204_gkfbdvyx` (gh-Mistral-small-2503)
 - **JohanBendz/com.tuya.zigbee#1344** @fjvs1467: `_TZ3000_bgsigers`, `test` (gh-Mistral-small-2503)
 - **JohanBendz/com.tuya.zigbee#1328** @AGabriel: `_TZE284_9ern5sfh`, `example`, `vision` (gh-Mistral-small-2503)
+
+
+## Nightly Auto-Responses (2026-03-01 v5.11.26)
+- **JohanBendz/com.tuya.zigbee#1332** @NicolasYDDER: `HOBEIAN` (gemini-2.5-flash)
