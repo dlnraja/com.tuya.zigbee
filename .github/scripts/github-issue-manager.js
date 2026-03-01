@@ -30,33 +30,10 @@ function loadForumData(){try{return JSON.parse(fs.readFileSync(path.join(__dirna
 function findVariants(fp,ext){if(!ext||!ext.allDevices)return[];const pfx=fp.substring(0,fp.lastIndexOf('_'));return ext.allDevices.filter(d=>d.fp.startsWith(pfx)&&d.fp!==fp).slice(0,10)}
 function findBugs(fp,ext){if(!ext||!ext.bugs)return[];return ext.bugs.filter(b=>b.fp===fp)}
 
-// Cross-post to forum (edit last own post if consecutive, otherwise new reply)
+// Cross-post to forum — DISABLED to stop spam (was causing 17+ edits to same post)
+// GitHub issues are tracked on GitHub; forum is for user discussion only.
 async function crossPostForum(msg){
-  try{const{getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');let auth=await getForumAuth();
-    if(auth&&auth.type==='session')auth=await refreshCsrf(auth);if(!auth)return;
-    const gh=a=>a.type==='apikey'?{'Content-Type':'application/json','User-Api-Key':a.key}:{'Content-Type':'application/json','X-CSRF-Token':a.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(a.cookies)};
-    if(DRY){console.log('[DRY] Forum post:',msg.slice(0,80));return}
-    // Check if last post is ours — edit instead of new post (anti-spam)
-    let lastOwn=null;
-    try{
-      const r=await fetchWithRetry(FORUM+'/t/140352.json',{},{retries:2,label:'lastOwn'});
-      if(r.ok){const d=await r.json();const hi=d.highest_post_number;if(hi){
-        const r2=await fetchWithRetry(FORUM+'/t/140352/'+Math.max(1,hi-3)+'.json',{},{retries:2,label:'lastOwnP'});
-        if(r2.ok){const posts=(await r2.json()).post_stream?.posts||[];const sorted=posts.sort((a,b)=>b.post_number-a.post_number);
-          if(sorted[0]?.username==='dlnraja')lastOwn={id:sorted[0].id,raw:(sorted[0].raw||'').replace(/<[^>]+>/g,'').trim()};
-        }
-      }}
-    }catch{}
-    if(lastOwn){
-      const m=smartMergePost(lastOwn.raw,msg);
-      if(m.action==='skip'){console.log('    Forum cross-post skip:',m.reason);return}
-      await fetchWithRetry(FORUM+'/posts/'+lastOwn.id,{method:'PUT',headers:gh(auth),body:JSON.stringify({post:{raw:m.content}})},{retries:3,label:'forumEdit'});
-      console.log('    Cross-posted to forum (edited,',m.reason+')');
-    }else{
-      await fetchWithRetry(FORUM+'/posts',{method:'POST',headers:gh(auth),body:JSON.stringify({topic_id:140352,raw:msg})},{retries:3,label:'forumCrossPost'});
-      console.log('    Cross-posted to forum (new reply)');
-    }
-  }catch(e){console.log('    Forum cross-post skip:',e.message)}
+  console.log('    [DISABLED] Forum cross-post skipped (anti-spam). Content:',msg.slice(0,100));
 }
 
 // Cross-post to other GitHub repo

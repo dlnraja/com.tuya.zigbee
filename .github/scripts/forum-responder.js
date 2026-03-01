@@ -3,7 +3,7 @@ const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
 const SKIP=['dlnraja','system','discobot'];
 const MAX_REPLIES_TOTAL=1,DELAY=30000;
-const REPLY_COOLDOWN_MS=14400000; // 4h min between replies to same topic
+const REPLY_COOLDOWN_MS=43200000; // 12h min between replies to same topic (runs 2x/day)
 const SIMILARITY_THRESHOLD=0.6; // block if reply >60% similar to recent post
 const STATE=path.join(__dirname,'..','state','forum-state.json');
 const DDIR=path.join(__dirname,'..','..','drivers');

@@ -70,14 +70,12 @@ function buildForumPost(ver,cl,stats,url){
   const hasBullets=items.length>1;
   const fmt=n=>typeof n==='number'?n.toLocaleString('en-US'):n;
   const lines=[];
-  lines.push('v'+ver+' is up on the [test channel]('+url+').');
+  lines.push('**v'+ver+'** is now on the [test channel]('+url+').');
   lines.push('');
-  if(hasBullets){lines.push('Changes:');for(const item of items)lines.push('- '+item)}
+  if(hasBullets){for(const item of items)lines.push('- '+item)}
   else lines.push(cl);
   lines.push('');
-  lines.push(fmt(stats.driverCount)+' drivers, '+fmt(stats.totalFp)+'+ fingerprints so far.');
-  lines.push('');
-  lines.push('As always, remove and re-pair if something acts up after updating.');
+  lines.push('_'+fmt(stats.driverCount)+' drivers | '+fmt(stats.totalFp)+'+ fingerprints_');
   return lines.join('\n');
 }
 
