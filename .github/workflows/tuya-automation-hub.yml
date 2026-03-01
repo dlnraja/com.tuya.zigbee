@@ -39,46 +39,8 @@ defaults:
     shell: bash
 
 jobs:
-  forum-responder:
-    name: Forum Responder
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    if: |
-      github.event_name == 'schedule' && github.event.schedule == '0 1,7,13,19 * * *' ||
-      github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'forum-only')
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - run: npm ci --prefer-offline --no-audit || npm install
-      - name: Run Forum Responder
-        continue-on-error: true
-        env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
-          FORUM_TOPICS: ${{ inputs.topics || '140352,26439,146735,89271,54018' }}
-          REPLY_TOPICS: '140352'
-          GEMINI_MAX_TIER: "1"
-        run: node .github/scripts/forum-responder.js
-      - name: Commit state
-        if: always()
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .github/state/
-          FILES=$(git diff --cached --name-only | wc -l)
-          VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
-          TOPICS=$(node -p "try{Object.keys(JSON.parse(require('fs').readFileSync('.github/state/forum-state.json')).topics).length}catch(e){0}")
-          git diff --cached --quiet || git commit -m "Forum responder v${VER}: scanned ${TOPICS} topics, ${FILES} file(s) updated [skip ci]"
-          git pull --rebase origin master || true
-          git push || true
+  # forum-responder: REMOVED — now handled exclusively by forum-auto-responder.yml (2x/day)
+  # This prevents triple-posting from hub + responder + sunday workflows
 
   github-scanner:
     name: GitHub Scanner
@@ -174,16 +136,9 @@ jobs:
         with:
           node-version: '22'
       - run: npm ci --prefer-offline --no-audit || npm install
-      - name: Post Forum Summary
-        continue-on-error: true
-        env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
-        run: node .github/scripts/forum-updater.js
+      # forum-updater.js REMOVED — duplicate forum poster (post-forum-update.js in publish.yml is the sole source)
+      - name: Forum Summary (skipped)
+        run: echo "Forum updates handled by post-forum-update.js on publish only"
 
       # ===== DRAFT → TEST (Puppeteer + API fallback) =====
       - name: Install Puppeteer

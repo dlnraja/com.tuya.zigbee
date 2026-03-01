@@ -354,25 +354,9 @@ async function main(){
     console.log('AI Summary (',aiSummary.model,'):',aiSummary.text.length,'chars');
     report.aiSummary=aiSummary.text;
 
-    // Post to forum (edit-instead-of-post if last message is ours)
-    if(!dryRun){
-      let auth=await getForumAuth();
-      if(auth&&auth.type==='session')auth=await refreshCsrf(auth);
-      if(auth){
-        const lastOwn=await getLastOwnPost(140352,auth);
-        if(lastOwn){
-          const{smartMergePost}=require('./ai-helper');
-          const m=smartMergePost(lastOwn.raw,aiSummary.text);
-          if(m.action==='skip'){console.log('SmartMerge skip:',m.reason)}
-          else{const edited=await editForumPost(lastOwn.id,m.content,auth);if(edited)console.log('Edited #'+lastOwn.postNumber+' ('+m.reason+')')}
-        }else{
-          const posted=await postToForum(140352,aiSummary.text,auth);
-          if(posted)console.log('Forum post id:',posted.id);
-        }
-      }
-    }else{
-      console.log('[DRY] Would post to forum:\n---\n'+aiSummary.text.substring(0,300)+'...\n---');
-    }
+    // Forum posting DISABLED — was a duplicate poster alongside post-forum-update.js and forum-updater.js
+    // AI summary is saved to report for reference only
+    console.log('[DISABLED] Forum post skipped (anti-spam). Summary saved to report.');
   }
 
   // Save everything
