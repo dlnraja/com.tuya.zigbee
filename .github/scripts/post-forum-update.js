@@ -110,7 +110,9 @@ async function main(){
     const lastOwn=await getLastOwnPost(TID);
     if(lastOwn){
       // EDIT existing post: append update with separator
-      const merged=lastOwn.raw+'\n\n---\n\n'+raw;
+      // Strip duplicate footers from old content so "remove and re-pair" appears only once (at end of new content)
+      const cleanOld=lastOwn.raw.replace(/\n*As always,?\s*remove and re-?pair[^\n]*/gi,'').trimEnd();
+      const merged=cleanOld+'\n\n---\n\n'+raw;
       await editPost(lastOwn.id,merged,auth);
       console.log('Edited post #'+lastOwn.postNumber+' (appended '+raw.length+'ch)');
     }else{
