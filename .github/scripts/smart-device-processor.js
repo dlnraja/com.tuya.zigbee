@@ -49,7 +49,7 @@ async function main(){
     const sys='Tuya Zigbee expert for Homey SDK3 v'+appVer+'. For each device return JSON: '+
       '[{deviceType,suggestedDriver,productId,dpMappings:[{dp,capability,type,divisor}],capabilities:[],quirks:[],confidence:0-100}]. NULL if insufficient data.';
     const input=batch.map(d=>({fp:d.fp,pids:[...d.pids],src:d.src.slice(0,3),dps:d.dps.slice(0,10),interviewHint:d.interviews[0]?.title||''}));
-    const res=await callAI(JSON.stringify(input),sys,{maxTokens:1500,complexity:'high'});
+    const res=await callAI(JSON.stringify(input),sys,{maxTokens:1500});
     if(!res){report.skipped.push(...batch.map(d=>d.fp));continue}
     console.log('  AI via',res.model);
     let analyses=null;
