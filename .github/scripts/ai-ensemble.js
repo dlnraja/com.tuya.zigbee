@@ -10,6 +10,7 @@ const P={
   openrouter:{k:'OPENROUTER_API_KEY',url:'https://openrouter.ai/api/v1/chat/completions',m:'meta-llama/llama-3.3-8b-instruct:free',arch:'llama8b',sl:6000,tl:10000,s:{classify:2,lookup:2,merge:2,generate:1,analyze:1}},
   mistral:{k:'MISTRAL_API_KEY',url:'https://api.mistral.ai/v1/chat/completions',m:'mistral-small-latest',arch:'mistral',sl:6000,tl:10000,s:{analyze:2,generate:2,classify:3,merge:2,lookup:2}},
   together:{k:'TOGETHER_API_KEY',url:'https://api.together.xyz/v1/chat/completions',m:'meta-llama/Llama-3.3-70B-Instruct-Turbo',arch:'llama70b-tg',sl:6000,tl:10000,s:{analyze:2,generate:3,classify:2,merge:2,lookup:1}},
+  kimi:{k:'KIMI_API_KEY',url:'https://api.moonshot.cn/v1/chat/completions',m:'moonshot-v1-8k',arch:'kimi',sl:6000,tl:6000,s:{analyze:2,generate:2,classify:2,merge:2,lookup:1}},
 };
 function _gk(p){if(p.k==='_GH')return process.env.GH_PAT||process.env.GITHUB_TOKEN;return process.env[p.k]}
 // Get available providers sorted by strength for a task type
