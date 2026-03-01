@@ -818,20 +818,12 @@ class IrBlasterDevice extends ZigBeeDevice {
       this._handleTransmitComplete(data);
     });
 
-    // v5.5.362: FORUM FIX - Handle IR code reception during learning
-    // When device receives IR signal, it sends doneReceiving with total length
-    // We must then request chunks to get the full code
+    // v5.12.0: Z2M Code05 — device confirms it's done sending learned code
+    // At this point all chunks are in _receiveBuffers — assemble as base64 + stop learning
     cluster.on('doneReceiving', async (data) => {
-      this.log('📥 IR code receive completed:', data);
+      this.log('[IR-RX] Code05 doneReceiving:', JSON.stringify(data));
       const seq = data.seq ?? data.sequenceNumber;
-      const totalLength = data.length ?? data.totalLength ?? 0;
-
-      if (totalLength > 0) {
-        await this._requestLearnedCodeChunks(cluster, seq, totalLength);
-      } else {
-        // Fallback: try reading attribute
-        this.readLastLearnedCode().catch(this.error);
-      }
+      await this._assembleAndFinishLearning(seq);
     });
 
     // v5.5.362: Handle incoming code data (device sending learned code chunks)
@@ -846,10 +838,12 @@ class IrBlasterDevice extends ZigBeeDevice {
       const seq = data.seq ?? data.sequenceNumber;
       const totalLength = data.length ?? data.totalLength ?? 0;
 
-      // Initialize receive buffer for this sequence
+      // v5.12.0: Z2M-compatible pre-allocated buffer for chunk assembly
       this._receiveBuffers[seq] = {
         totalLength,
         receivedLength: 0,
+        position: 0,
+        buf: Buffer.alloc(totalLength),
         chunks: [],
         startTime: Date.now()
       };
@@ -893,61 +887,10 @@ class IrBlasterDevice extends ZigBeeDevice {
     this.on('ir.doneReceiving', (d) => cluster.emit('doneReceiving', d));
   }
 
-  /**
-   * v5.5.362: FORUM FIX - Request learned code chunks from device
-   * Based on Zigbee2MQTT zosung protocol implementation
-   */
-  async _requestLearnedCodeChunks(cluster, sequenceNumber, totalLength) {
-    this.log(`📥 Requesting ${totalLength} bytes of IR code data, seq=${sequenceNumber}`);
-
-    // Initialize receive buffer
-    this._receiveBuffers[sequenceNumber] = {
-      totalLength,
-      receivedLength: 0,
-      chunks: [],
-      startTime: Date.now()
-    };
-
-    const CHUNK_SIZE = 0x32; // 50 bytes per chunk (standard Zosung protocol)
-    let position = 0;
-
-    try {
-      while (position < totalLength) {
-        const remainingLength = totalLength - position;
-        const requestLength = Math.min(CHUNK_SIZE, remainingLength);
-
-        this.log(`📤 Requesting chunk: pos=${position}, len=${requestLength}`);
-
-        // v5.9.14: Z2M field names
-        await cluster.codeDataRequest({
-          seq: sequenceNumber,
-          position,
-          maxlen: requestLength
-        });
-
-        // Wait for response (handled by codeDataResponse listener)
-        await new Promise(resolve => this.homey.setTimeout(resolve, 100));
-
-        const buffer = this._receiveBuffers[sequenceNumber];
-        if (buffer && buffer.receivedLength > position) {
-          position = buffer.receivedLength;
-        } else {
-          position += requestLength;
-        }
-
-        if (Date.now() - buffer.startTime > 10000) {
-          this.log('⚠️ Timeout requesting IR code chunks');
-          break;
-        }
-      }
-
-      // Assemble final code
-      await this._assembleReceivedCode(sequenceNumber);
-
-    } catch (err) {
-      this.error('Failed to request IR code chunks:', err);
-    }
-  }
+  // v5.12.0: _requestLearnedCodeChunks removed — learning is now fully event-driven
+  // Code00 handler sends ACK (Code01) + first Code02 request
+  // Code03 handler stores chunks + requests next or sends Code04
+  // Code05 handler assembles + stops learning
 
   /**
    * v5.5.362: Handle received code chunk during learning
@@ -956,14 +899,30 @@ class IrBlasterDevice extends ZigBeeDevice {
     const seq = data.seq ?? data.sequenceNumber;
     const position = data.position ?? 0;
     const chunkData = data.msgpart ?? data.data;
+    const expectedCrc = data.msgpartcrc;
 
     const buffer = this._receiveBuffers[seq];
     if (!buffer) {
-      this.log(`⚠️ Unexpected chunk for seq=${seq}, no buffer`);
+      this.log(`[IR-RX] ⚠️ Unexpected chunk for seq=${seq}, no buffer`);
       return;
     }
 
-    buffer.chunks.push({ position, data: chunkData });
+    // v5.12.0: Z2M CRC validation — calcArrayCrc = sum of byte values % 256
+    if (expectedCrc !== undefined && Buffer.isBuffer(chunkData)) {
+      const crc = Array.from(chunkData.values()).reduce((a, b) => a + b, 0) % 0x100;
+      if (crc !== expectedCrc) {
+        this.error(`[IR-RX] CRC mismatch: got ${crc}, expected ${expectedCrc}`);
+        return;
+      }
+    }
+
+    // v5.12.0: Z2M stores into pre-allocated buffer at position
+    if (buffer.buf && Buffer.isBuffer(chunkData)) {
+      chunkData.copy(buffer.buf, position);
+      buffer.position = position + chunkData.length;
+    } else {
+      buffer.chunks.push({ position, data: chunkData });
+    }
     buffer.receivedLength = Math.max(buffer.receivedLength, position + chunkData.length);
     this.log(`📥 Chunk: pos=${position}, len=${chunkData.length}, total=${buffer.receivedLength}/${buffer.totalLength}`);
 
@@ -987,64 +946,38 @@ class IrBlasterDevice extends ZigBeeDevice {
    * v5.5.362: Assemble received chunks into complete IR code
    */
   async _assembleReceivedCode(sequenceNumber) {
-    const buffer = this._receiveBuffers[sequenceNumber];
-    if (!buffer || buffer.chunks.length === 0) {
-      this.log('⚠️ No chunks to assemble');
-      return;
-    }
-
+    const rcv = this._receiveBuffers[sequenceNumber];
+    if (!rcv) { this.log('[IR-RX] No buffer'); return null; }
     try {
-      // Sort chunks by position
-      buffer.chunks.sort((a, b) => a.position - b.position);
-
-      // v5.9.14: Concatenate chunks — may be Buffer or string
-      let irCode;
-      const firstChunk = buffer.chunks[0]?.data;
-      if (Buffer.isBuffer(firstChunk)) {
-        const totalBuffer = Buffer.alloc(buffer.totalLength);
-        for (const chunk of buffer.chunks) {
-          if (Buffer.isBuffer(chunk.data)) {
-            chunk.data.copy(totalBuffer, chunk.position);
-          }
-        }
-        // Z2M learned codes arrive as JSON string in chunks
-        const asString = totalBuffer.toString('utf8');
-        try {
-          const parsed = JSON.parse(asString);
-          irCode = parsed.key_code || parsed.key1?.key_code || asString;
-        } catch {
-          irCode = totalBuffer.toString('base64');
-        }
-      } else {
-        // String chunks
-        const parts = buffer.chunks.map(c => c.data?.toString?.() || '');
-        const assembled = parts.join('');
-        try {
-          const parsed = JSON.parse(assembled);
-          irCode = parsed.key_code || parsed.key1?.key_code || assembled;
-        } catch {
-          irCode = assembled;
-        }
-      }
-
-      this.log(`✅ Assembled IR code: ${irCode.length} chars (${buffer.totalLength} bytes)`);
-      this.log(`📝 IR Code preview: ${irCode.substring(0, 100)}...`);
-
-      // Store and display the learned code
-      this._handleLearnedCode(irCode);
-
-      // Update capability immediately
-      if (this.hasCapability('ir_blaster_code_received')) {
-        await this.setCapabilityValue('ir_blaster_code_received', irCode).catch(() => { });
-        this.log('✅ Updated ir_code_received capability');
-      }
-
-      // Cleanup
+      const irCode = rcv.buf ? rcv.buf.toString('base64') : (() => {
+        rcv.chunks.sort((a, b) => a.position - b.position);
+        const b = Buffer.alloc(rcv.totalLength);
+        for (const c of rcv.chunks) { if (Buffer.isBuffer(c.data)) c.data.copy(b, c.position); }
+        return b.toString('base64');
+      })();
+      this.log(`[IR-RX] Assembled: ${irCode.length} chars`);
       delete this._receiveBuffers[sequenceNumber];
+      return irCode;
+    } catch (err) { this.error('Assemble failed:', err); return null; }
+  }
 
-    } catch (err) {
-      this.error('Failed to assemble IR code:', err);
+  /**
+   * v5.12.0: Z2M Code05 handler — assemble learned code + stop learning
+   */
+  async _assembleAndFinishLearning(seq) {
+    const irCode = await this._assembleReceivedCode(seq);
+    if (!irCode) return;
+    this.log(`[IR-RX] Learned IR code: ${irCode.substring(0, 80)}...`);
+    this._handleLearnedCode(irCode);
+    if (this.hasCapability('ir_blaster_code_received')) {
+      await this.setCapabilityValue('ir_blaster_code_received', irCode).catch(() => {});
     }
+    // Z2M: stop learning with {"study":1}
+    const ctrl = this._irControlCluster;
+    if (ctrl) {
+      try { await ctrl.IRLearn({ data: Buffer.from(JSON.stringify({ study: 1 })) }); } catch (e) { this.log('study:1 err:', e.message); }
+    }
+    await this._disableLearnMode();
   }
 
   // Handle Tuya IR datapoint
@@ -1299,11 +1232,16 @@ class IrBlasterDevice extends ZigBeeDevice {
     }
   }
 
-  // v5.5.361: Handle transmission complete
-  _handleTransmitComplete(data) {
+  // v5.12.0: Handle Code04 from device (sending complete) — respond with Code05 per Z2M
+  async _handleTransmitComplete(data) {
     const seq = data.seq ?? data.sequenceNumber;
+    // Z2M: send Code05 (doneReceiving) back to device
+    const cl = this._irTransmitCluster;
+    if (cl) {
+      try { await cl.doneReceiving({ seq, zero: 0 }); } catch (e) { this.log('Code05 err:', e.message); }
+    }
     if (seq === this._pendingIRSeq) {
-      this.log('IR transmission completed successfully');
+      this.log('[IR-TX] ✅ IR transmission completed successfully');
       this._irTransmitResolve?.();
     }
   }
