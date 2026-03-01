@@ -111,25 +111,17 @@ jobs:
           node .github/scripts/forum-intel-processor.js || true
           echo "=== Forum replies delegated to forum-auto-responder.yml ==="
 
-      - name: "Sleep 30s between AI steps"
-        run: sleep 30
-
       # ===== 2. GITHUB: Triage + Respond + Close =====
       - name: "2. GitHub Issues & PRs Manager"
         id: github_mgr
         continue-on-error: true
-        timeout-minutes: 30
+        timeout-minutes: 15
         env:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
           STALE_DAYS: "30"
           MAX_ITEMS: "100"
           REPOS: "dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee"
-          GEMINI_MAX_TIER: "1"
-          RATE_LIMIT_SLEEP: "5000"
         run: node .github/scripts/github-issue-manager.js
-
-      - name: "Sleep 30s before triage"
-        run: sleep 30
 
       # ===== 3. GITHUB: Upstream Triage (JohanBendz + forks) =====
       - name: "3. Upstream Triage"
@@ -144,7 +136,6 @@ jobs:
           FP_COUNT: ${{ steps.stats.outputs.fps }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
           SCAN_FORKS: "true"
-          GEMINI_MAX_TIER: "1"
         run: node .github/scripts/triage-upstream-enhanced.js
 
       # ===== 3b. GITHUB: Comprehensive scan (forks+PRs+issues) =====
@@ -161,9 +152,6 @@ jobs:
         timeout-minutes: 10
         run: node .github/scripts/scan-prs-issues.js
 
-      - name: "Sleep 20s before scanner"
-        run: sleep 20
-
       # ===== 4. GITHUB: Scanner (both repos, AI summary) =====
       - name: "4. GitHub Activity Scanner"
         id: gh_scanner
@@ -171,7 +159,6 @@ jobs:
         timeout-minutes: 10
         env:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
-          GEMINI_MAX_TIER: "1"
         run: node .github/scripts/github-scanner.js
 
       # ===== 5. GMAIL: Diagnostics (1x/day at 8AM run) =====
@@ -254,13 +241,6 @@ jobs:
         env:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/smart-device-processor.js
-
-      # ===== 9b3. Image Pipeline Audit =====
-      - name: "9b3. Image Pipeline Audit"
-        id: image_audit
-        continue-on-error: true
-        timeout-minutes: 5
-        run: node .github/scripts/image-pipeline.js --report
 
       # ===== 9c. Cross-Driver Gap Analysis =====
       - name: "9c. Cross-Driver Gap"
@@ -475,8 +455,18 @@ jobs:
           retention-days: 7
           if-no-files-found: ignore
 
-      # ===== 14. FORUM POST: DISABLED — only runs on actual publish (publish.yml / auto-publish-on-push.yml) =====
-      # Removed from daily to prevent spam. post-forum-update.js now has version dedup + edit-instead-of-post.
+      # ===== 14. FORUM POST: Update with latest version =====
+      - name: "14. Forum Update"
+        if: always()
+        continue-on-error: true
+        env:
+          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          APP_VERSION: ${{ steps.stats.outputs.version }}
+        run: |
+          # CHANGELOG env intentionally empty — post-forum-update.js reads from .homeychangelog.json
+          node .github/scripts/post-forum-update.js || true
 
       # ===== 14b. Deploy Device Finder (GitHub Pages) =====
       - name: "14b. Deploy Device Finder"
@@ -500,7 +490,6 @@ jobs:
           echo "|---|------|--------|" >> $GITHUB_STEP_SUMMARY
           echo "| 1 | Forum Scan + Respond | ${{ steps.forum_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 2 | GitHub Issues & PRs | ${{ steps.github_mgr.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          if [ -f .github/state/issue-manager-report.json ]; then echo "| 2b | Bug Investigations | $(node -p 'require(\"./.github/state/issue-manager-report.json\").bugInvestigations||0') found |" >> $GITHUB_STEP_SUMMARY; fi
           echo "| 3 | Upstream Triage | ${{ steps.upstream.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 3b | Comprehensive GH Scan | ${{ steps.comp_gh_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 3c | PR/Issue FP Scan | ${{ steps.pr_issue_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
@@ -517,7 +506,6 @@ jobs:
           echo "| 9c2 | FP Conflict Check | ${{ steps.fp_conflicts.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9d | Public APIs | ${{ steps.public_apis.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9b2 | Smart Device Processor | ${{ steps.smart_proc.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 9b3 | Image Pipeline Audit | ${{ steps.image_audit.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10 | AI Changelog | ${{ steps.ai_changelog.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10b | Fork Scanner | ${{ steps.fork_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10c | Device Finder | ${{ steps.dev_finder.outcome }} |" >> $GITHUB_STEP_SUMMARY

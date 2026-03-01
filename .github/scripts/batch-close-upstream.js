@@ -24,10 +24,6 @@ async function main(){
       const ep=it.pr?'pulls':'issues';
       if(DRY){console.log('[DRY] Would close #'+it.n+' ('+u+'): '+it.t);closed++}
       else{
-        // Post redirect comment before closing
-        const rMsg='All fingerprints in this '+( it.pr?'PR':'issue')+' are supported in the **[Universal Tuya Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee)**. Closing as resolved.\\n\\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\\n**Forum:** https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352';
-        gh('api -X POST "repos/'+REPO+'/issues/'+it.n+'/comments" -f body="'+rMsg.replace(/"/g,'\\"')+'" 2>&1');
-        await new Promise(r=>setTimeout(r,1000));
         const ok=gh('api -X PATCH "repos/'+REPO+'/'+ep+'/'+it.n+'" -f state=closed 2>&1');
         if(ok&&!ok.includes('403')){console.log('CLOSED #'+it.n+' ('+u+'): '+it.t);closed++}
         else{console.log('FAILED #'+it.n+' (403): '+it.t);skipped++}
