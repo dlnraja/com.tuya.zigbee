@@ -1,6 +1,6 @@
-# 🏠 Universal Tuya Zigbee v5.11.26
+# 🏠 Universal Tuya Zigbee v5.11.32
 
-> **143 drivers** · **5368+ fingerprints** · Updated 2026-03-01
+> **143 drivers** · **5362+ fingerprints** · Updated 2026-03-01
 
 Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.
 
@@ -8,9 +8,9 @@ Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehens
 
 **Stable:** [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/) · **Test:** [Test Channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · **Source:** [GitHub](https://github.com/dlnraja/com.tuya.zigbee)
 
-## What's New (v5.11.26)
+## What's New (v5.11.32)
 
-Universal Tuya Zigbee app v5.11.26: Improved forum anti-spam features, added new device fingerprints, and fixed energy monitoring bugs.
+Fixed links in README., Redesigned forum post #1., Added diagnostic guides for better troubleshooting., Auto-published 143 drivers with 3062 fingerprints.
 
 ## Supported Devices
 
@@ -18,7 +18,7 @@ Universal Tuya Zigbee app v5.11.26: Improved forum anti-spam features, added new
 |---|---|---|
 | 🔌 Socket | 31 | 776 |
 | 💡 Light | 18 | 576 |
-| 📡 Sensor | 42 | 2578 |
+| 📡 Sensor | 42 | 2577 |
 | 🌡️ Thermostat | 7 | 502 |
 | 🪟 Windowcoverings | 3 | 276 |
 | 🔐 Lock | 4 | 26 |
@@ -28,7 +28,7 @@ Universal Tuya Zigbee app v5.11.26: Improved forum anti-spam features, added new
 | 🔘 Button | 2 | 9 |
 | 🔥 Heater | 4 | 19 |
 | 🚗 Garagedoor | 2 | 8 |
-| 📦 Other | 14 | 505 |
+| 📦 Other | 14 | 500 |
 
 [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) — search by fingerprint
 
@@ -44,13 +44,13 @@ Universal Tuya Zigbee app v5.11.26: Improved forum anti-spam features, added new
 
 <details><summary>Previous versions</summary>
 
-**v5.11.25:** Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs)., Internal cleanup across several workflow scripts.
+**v5.11.31:** Universal Tuya Zigbee app v5.11.31: Updated drivers and improved documentation.
 
-**v5.11.24:** Fixed a workflow trigger race condition. Forum scanner now covers 12 topics. Better diagnostics tracking between runs.
+**v5.11.30:** Universal Tuya Zigbee app v5.11.30: Re-enabled read-only forum intel, fixed driver misplacement, and updated 143 drivers with 3062 fingerprints.
 
-**v5.11.23:** Switched post-forum-update to fetchWithRetry (fixes random post failures). RawClusterFallback for non-Tuya-DP devices. Forum deduplication so the same post doesn't get answered twice.
+**v5.11.29:** Universal Tuya Zigbee app v5.11.29: Cleanup of scripts and workflows.
 
-**v5.11.22:** 8 new fingerprints from JohanBendz scan. Device Finder tool. Forum auth now handles 404/401 gracefully.
+**v5.11.28:** Updated to v5.11.28 with 143 drivers and 3062 fingerprints. Includes script fixes for forum post editing.
 
 </details>
 

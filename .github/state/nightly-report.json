@@ -1,22 +1,11 @@
 {
-  "timestamp": "2026-03-01T08:55:43.113Z",
-  "appVersion": "5.11.26",
+  "timestamp": "2026-03-01T20:40:19.122Z",
+  "appVersion": "5.11.32",
   "forum": 0,
-  "github": 1,
+  "github": 0,
   "diagnostics": 8,
   "diagNewFPs": 0,
   "diagCritical": 0,
   "forumDetails": [],
-  "githubDetails": [
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1332,
-      "type": "pr",
-      "user": "NicolasYDDER",
-      "fps": [
-        "HOBEIAN"
-      ],
-      "model": "gemini-2.5-flash"
-    }
-  ]
+  "githubDetails": []
 }
