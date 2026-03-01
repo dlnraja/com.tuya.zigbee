@@ -1,55 +1,88 @@
 {
-  "timestamp": "2026-02-28T14:45:53.734Z",
+  "timestamp": "2026-03-01T08:54:10.855Z",
   "appVersion": "5.11.26",
   "findings": {
     "issues": [
       {
         "repo": "dlnraja/com.tuya.zigbee",
-        "number": 137,
-        "title": "Plug Energy Monitor, wrong voltage",
-        "user": "Lalla80111",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3210_w0qqde0g",
-            "drivers": [
-              "plug_energy_monitor"
-            ]
-          }
+        "number": 141,
+        "title": "[Auto] New Tuya devices found in zigbee2mqtt",
+        "user": "github-actions[bot]",
+        "newFPs": [
+          "_TZ3000_cziew6eu",
+          "_TZ3000_iktiy8ue",
+          "_TZE200_d2zfgtij",
+          "_TZE200_s4sa1mcx",
+          "_TZE200_wjk6rurm",
+          "_TZE200_x8diwkqb",
+          "_TZE204_d2zfgtij",
+          "_TZE204_s4sa1mcx",
+          "_TZE204_wjk6rurm",
+          "_TZE204_x8diwkqb",
+          "_TZE284_d2zfgtij",
+          "_TZE284_s4sa1mcx",
+          "_TZE284_wjk6rurm",
+          "_TZE284_x8diwkqb"
         ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/137",
-        "state": "closed",
+        "existingFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/141",
+        "state": "open",
         "imageAnalysis": null
       },
       {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 110,
-        "title": "unknown zigbee-device",
-        "user": "Pollepa",
-        "newFPs": [],
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1331,
+        "title": "Device Request - [UFO-R11] - [Moes] / [modelId]",
+        "user": "MF-ITuser",
+        "newFPs": [
+          "_TZ3290_ot6ewjvmej"
+        ],
         "existingFPs": [
           {
-            "fp": "_TZ3210_w0qqde0g",
+            "fp": "_TZ3290_ot6ewjvmejq5ekhl",
             "drivers": [
-              "plug_energy_monitor"
-            ]
-          },
-          {
-            "fp": "_TZ3000_w0qqde0g",
-            "drivers": [
-              "plug_energy_monitor"
-            ]
-          },
-          {
-            "fp": "_TZ3000_gjnozsaz",
-            "drivers": [
-              "button_emergency_sos",
-              "plug_energy_monitor"
+              "ir_blaster"
             ]
           }
         ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/110",
-        "state": "closed",
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1331",
+        "state": "open",
+        "imageAnalysis": "NULL"
+      },
+      {
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 867,
+        "title": "Device Request - [Temperature & Humidity sensor with backlight] - [Shenzhen One Nuoda Trading Co.] / [TH05Z]",
+        "user": "Peter-Celica",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE200_vvmbj46n",
+            "drivers": [
+              "thermostat_tuya_dp"
+            ]
+          }
+        ],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/867",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 591,
+        "title": "Device Request - SOS Emergency Button - _TZ3000_0dumfk2z/TS0215A",
+        "user": "edwinff",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_0dumfk2z",
+            "drivers": [
+              "button_emergency_sos"
+            ]
+          }
+        ],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/591",
+        "state": "open",
         "imageAnalysis": null
       },
       {
@@ -68,88 +101,70 @@
         ],
         "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1229",
         "state": "open",
-        "imageAnalysis": "```json\n{\n  \"device_name\": \"Smart Air Detection Box Keuken\",\n  \"device_category\": \"Air Quality Monitor\",\n  \"fingerprints\": ["
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 1348,
-        "title": "Device Request - [Device name] - [manufacturerName] / [modelId]",
-        "user": "electronickPL",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3210_xzhnra8x",
-            "drivers": [
-              "plug_energy_monitor"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1348",
-        "state": "open",
-        "imageAnalysis": null
+        "imageAnalysis": "```json\n{\n  \"device_name\": \"Smart Air Detection Box Keuken\",\n  \"device_category\": \"Air Quality Monitor\",\n  \"sensors\": [\n    {"
       }
     ],
     "prs": [
       {
         "repo": "dlnraja/com.tuya.zigbee",
-        "number": 125,
-        "title": "Fix HOBEIAN 10G radar sensor: IAS motion conflict, battery read, DP corrections",
-        "user": "michelhelsdingen",
+        "number": 10,
+        "title": "Update driver.compose.json",
+        "user": "Peter-Celica",
         "fps": [
-          "_TZE200_rhgsbacq"
+          "_TZ3000_mrpevh8p"
         ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/pull/125",
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/pull/10",
         "state": "closed",
         "merged": false
       },
       {
         "repo": "dlnraja/com.tuya.zigbee",
-        "number": 118,
-        "title": "support for _TZ3000_ysdv91bk",
-        "user": "packetninja",
+        "number": 45,
+        "title": "Update driver.compose.json",
+        "user": "vl14-dev",
         "fps": [
-          "_TZ3000_ysdv91bk"
+          "_TZE200_nv6nxo0c"
         ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/pull/118",
-        "state": "closed",
-        "merged": false
-      },
-      {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 116,
-        "title": "feat: Add support for Bseed 1-Gang Switch with physical button detection",
-        "user": "packetninja",
-        "fps": [
-          "_TZ3000_blhvsaqf"
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/pull/116",
-        "state": "closed",
-        "merged": false
-      },
-      {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 111,
-        "title": "Added separate driver for Tuya/Bseed touch dimmer",
-        "user": "packetninja",
-        "fps": [
-          "_TZE200_3p5ydos3",
-          "_TZE204_n9ctkb6j"
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/pull/111",
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/pull/45",
         "state": "closed",
         "merged": true
       },
       {
         "repo": "dlnraja/com.tuya.zigbee",
-        "number": 106,
-        "title": "Added _TZE204_n9ctkb6j, lower/upper case ID",
-        "user": "packetninja",
+        "number": 46,
+        "title": "Adding support of MOES/Tuya Zigbee AM25 Tubular Motor for motorized roller blinds and window shades (_TZE200_nv6nxo0c / TS0601)",
+        "user": "vl14-dev",
         "fps": [
-          "_TZE204_n9ctkb6j"
+          "_TZE200_nv6nxo0c"
         ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/pull/106",
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/pull/46",
         "state": "closed",
-        "merged": true
+        "merged": false
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 84,
+        "title": "Fix: Correctly identify soil sensor and resolve mmWave radar issues",
+        "user": "google-labs-jules[bot]",
+        "fps": [
+          "_TZE284_oitavov2"
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/pull/84",
+        "state": "closed",
+        "merged": false
+      },
+      {
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1253,
+        "title": "Added 3 new devices",
+        "user": "Peter-Celica",
+        "fps": [
+          "_TZE200_pay2byax",
+          "_TZ3000_mrpevh8p"
+        ],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1253",
+        "state": "open",
+        "merged": false
       },
       {
         "repo": "JohanBendz/com.tuya.zigbee",
@@ -202,19 +217,6 @@
       },
       {
         "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 1253,
-        "title": "Added 3 new devices",
-        "user": "Peter-Celica",
-        "fps": [
-          "_TZE200_pay2byax",
-          "_TZ3000_mrpevh8p"
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1253",
-        "state": "open",
-        "merged": false
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
         "number": 1292,
         "title": "Added radar&illuminance sensor",
         "user": "WJGvdVelden",
@@ -224,22 +226,10 @@
         "url": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1292",
         "state": "open",
         "merged": false
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 1194,
-        "title": "Add \"_TZE204_bjzrowv2\" - Update driver.compose.json",
-        "user": "YuriEstevan",
-        "fps": [
-          "_TZE204_bjzrowv2"
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1194",
-        "state": "open",
-        "merged": false
       }
     ],
     "newFPs": [],
     "forkFPs": []
   },
-  "aiSummary": "Here's a summary of recent Universal Tuya Zigbee activity from GitHub, for Homey forum topic #140352:\n\n### New Device Requests & Issues\n\n*   **Smart Airbox (Air Quality Monitor)**: Issue #1229 (JohanBendz repo) reports \"_TZE200_8ygsuhe1\" (climate_sensor) is not providing data. This indicates a need for further DP analysis or a specific driver variant for this \"Smart Air Detection Box\".\n*   **Plug Energy Monitor Voltage Issue**: Issue #137 (dlnraja repo) highlights incorrect voltage readings for \"_TZ3210_w0qqde0g\" (plug_energy_monitor), suggesting a potential DP divisor or mapping correction is needed.\n*   **Existing Supported Devices**: Several issues involved fingerprints already supported by the `plug_energy_monitor` driver: `_TZ3210_w0qqde0g`, `_TZ3000_w0qqde0g`, `_TZ3210_xzhnra8x`, and `_TZ3000_gjnozsaz` (also `button_emergency_sos`).\n\n### Fingerprints from Forks to Integrate\n\nThe following fingerprints from open PRs in the `JohanBendz/com.tuya.zigbee` fork are candidates for integration:\n\n*   `_TZ3000_gjrubzje` (PR #1219)\n*   `_TZE204_dapwryy7` (PR #1218)\n*   `_TZE204_bjzrowv2` (PR #1195, #1194)\n*   `_TZE204_lawxy9e2`, `_TZE204_nklqjk62` (Garage Door Controller, Fan - PR #1210)\n*   `_TZE200_pay2byax`, `_TZ3000_mrpevh8p` (PR #1253)\n*   `_TZE200_y8jijhba` (Radar & Illuminance Sensor - PR #1292)\n\n### Pull Requests with Useful Changes\n\n*   **Merged: Tuya/Bseed Touch Dimmer Driver**: PR #111 (dlnraja repo) successfully added a separate driver for `_TZE200_3p5ydos3` and `_TZE204_n9ctkb6j`, improving support for these dimmer types. PR #106 also ensured case-insensitive ID matching for `_TZE204_n9ctkb6j`.\n*   **BSEED ZCL-Only Support**: PR #118 and #116 (dlnraja repo) introduced support for `_TZ3000_ysdv91bk` and `_TZ3000_blhvsaqf` respectively, focusing on Bseed ZCL-only devices with physical button detection. These are crucial for addressing the Bseed group toggle bug and ensuring proper physical/virtual button differentiation.\n*   **HOBEIAN Radar Sensor Fixes**: PR #125 (dlnraja repo) addresses IAS motion conflicts, battery reporting, and DP corrections for `_TZE200_rhgsbacq`. This"
+  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests\nSeveral new device fingerprints (FPs) have been identified in the latest GitHub activity:\n\n1. **From dlnraja/com.tuya.zigbee**:\n   - **New FPs**:\n     - `_TZ3000_cziew6eu`\n     - `_TZ3000_iktiy8ue`\n     - `_TZE200_d2zfgtij`\n     - `_TZE200_s4sa1mcx`\n     - `_TZE200_wjk6rurm`\n     - `_TZE200_x8diwkqb`\n     - `_TZE204_d2zfgtij`\n     - `_TZE204_s4sa1mcx`\n     - `_TZE204_wjk6rurm`\n     - `_TZE204_x8diwkqb`\n     - `_TZE284_d2zfgtij`\n     - `_TZE284_s4sa1mcx`\n     - `_TZE284_wjk6rurm`\n     - `_TZE284_x8diwkqb`\n   - **Issue Link**: [New Tuya devices found in zigbee2mqtt](https://github.com/dlnraja/com.tuya.zigbee/issues/141)\n\n2. **From JohanBendz/com.tuya.zigbee**:\n   - **New FP**:\n     - `_TZ3290_ot6ewjvmej` (related to Moes UFO-R11)\n   - **Existing FP**: `_TZ3290_ot6ewjvmejq5ekhl` (used by `ir_blaster`)\n   - **Issue Link**: [Device Request - Moes UFO-R11](https://github.com/JohanBendz/com.tuya.zigbee/issues/1331)\n\n## Existing Fingerprints Supported\nThe following existing fingerprints have been noted in device requests:\n\n- `_TZE200_vvmbj46n` (for thermostat functionality)\n- `_TZ3000_0dumfk2z` (for SOS Emergency Button)\n- `_TZE200_8ygsuhe1` (for Smart Airbox)\n\n## Fork Fingerprints to Integrate\nCurrently, there are no new fingerprints from forks identified for integration.\n\n## Pull Requests with Useful Changes\nSeveral pull requests (PRs) have been submitted that may contain useful changes:\n\n1. **dlnraja/com.tuya.zigbee**:\n   - [PR #45](https://github.com/dlnraja/com.tuya.zigbee/pull/45): Update driver.compose.json (merged)\n   - [PR #46](https://github.com/dlnraja/com.tuya.zigbee/pull/46): Adding support for MOES/Tuya Zigbee AM25 Tubular Motor (not merged)\n   - [PR #84](https://github.com/dlnraja/com.tuya.zigbee/pull/84): Fix for soil sensor identification (not merged)\n\n2. **JohanBendz/com.tuya.zigbee**:\n   - [PR #1253](https://github.com/JohanBendz/com.tuya.zigbee/pull/1253): Added 3 new devices (open)\n   - [PR #1219](https://github.com/JohanBendz/com.tuya.zigbee/pull/1219): Update driver.compose.json (open)\n   - [PR #1210](https://github.com/JohanBendz/com.tuya.zigbee/pull/1210): Addition of Garage Door Controller and combined Fan drivers (open)\n\nThis summary captures the latest developments in the Universal Tuya Zigbee project, highlighting new device requests, existing support, and ongoing PRs that may enhance functionality. For further details, please refer to the respective GitHub links."
 }

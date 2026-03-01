@@ -1,8 +1,8 @@
 {
-  "date": "2026-02-28T14:45:16.790Z",
+  "date": "2026-03-01T08:52:53.173Z",
   "local": {
     "drivers": 143,
-    "fps": 4181
+    "fps": 4186
   },
   "JohanBendz/com.tuya.zigbee": {
     "prs": [
@@ -20550,6 +20550,118 @@
     ],
     "issues": [
       {
+        "number": 143,
+        "title": "[Alert] Gmail token EXPIRED",
+        "state": "open",
+        "user": "github-actions[bot]",
+        "labels": [
+          "bug",
+          "automation",
+          "urgent",
+          "security"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/143"
+      },
+      {
+        "number": 142,
+        "title": "[Auto] 14 new fingerprints from community (2026-03)",
+        "state": "open",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "community-sync",
+          "fingerprint",
+          "community",
+          "new-fingerprint"
+        ],
+        "fps": [
+          "_TZ3000_iktiy8ue",
+          "_TZ3000_cziew6eu",
+          "_TZE204_d2zfgtij",
+          "_TZE284_d2zfgtij",
+          "_TZE200_d2zfgtij",
+          "_TZE204_wjk6rurm",
+          "_TZE284_wjk6rurm",
+          "_TZE200_wjk6rurm",
+          "_TZE204_s4sa1mcx",
+          "_TZE284_s4sa1mcx",
+          "_TZE200_s4sa1mcx",
+          "_TZE204_x8diwkqb",
+          "_TZE284_x8diwkqb",
+          "_TZE200_x8diwkqb"
+        ],
+        "pids": [],
+        "newFPs": [
+          "_TZ3000_iktiy8ue",
+          "_TZ3000_cziew6eu",
+          "_TZE204_d2zfgtij",
+          "_TZE284_d2zfgtij",
+          "_TZE200_d2zfgtij",
+          "_TZE204_wjk6rurm",
+          "_TZE284_wjk6rurm",
+          "_TZE200_wjk6rurm",
+          "_TZE204_s4sa1mcx",
+          "_TZE284_s4sa1mcx",
+          "_TZE200_s4sa1mcx",
+          "_TZE204_x8diwkqb",
+          "_TZE284_x8diwkqb",
+          "_TZE200_x8diwkqb"
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/142"
+      },
+      {
+        "number": 141,
+        "title": "[Auto] New Tuya devices found in zigbee2mqtt",
+        "state": "open",
+        "user": "github-actions[bot]",
+        "labels": [
+          "enhancement",
+          "device-request",
+          "new-fingerprint",
+          "Tuya",
+          "auto-scan",
+          "device_support"
+        ],
+        "fps": [
+          "_TZ3000_cziew6eu",
+          "_TZ3000_iktiy8ue",
+          "_TZE200_d2zfgtij",
+          "_TZE200_s4sa1mcx",
+          "_TZE200_wjk6rurm",
+          "_TZE200_x8diwkqb",
+          "_TZE204_d2zfgtij",
+          "_TZE204_s4sa1mcx",
+          "_TZE204_wjk6rurm",
+          "_TZE204_x8diwkqb",
+          "_TZE284_d2zfgtij",
+          "_TZE284_s4sa1mcx",
+          "_TZE284_wjk6rurm",
+          "_TZE284_x8diwkqb"
+        ],
+        "pids": [],
+        "newFPs": [
+          "_TZ3000_cziew6eu",
+          "_TZ3000_iktiy8ue",
+          "_TZE200_d2zfgtij",
+          "_TZE200_s4sa1mcx",
+          "_TZE200_wjk6rurm",
+          "_TZE200_x8diwkqb",
+          "_TZE204_d2zfgtij",
+          "_TZE204_s4sa1mcx",
+          "_TZE204_wjk6rurm",
+          "_TZE204_x8diwkqb",
+          "_TZE284_d2zfgtij",
+          "_TZE284_s4sa1mcx",
+          "_TZE284_wjk6rurm",
+          "_TZE284_x8diwkqb"
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/141"
+      },
+      {
         "number": 140,
         "title": "[Auto] 736 new fingerprints from forks",
         "state": "closed",
@@ -20719,7 +20831,7 @@
       {
         "number": 137,
         "title": "Plug Energy Monitor, wrong voltage",
-        "state": "closed",
+        "state": "open",
         "user": "Lalla80111",
         "labels": [
           "bug",
@@ -20916,8 +21028,11 @@
         "state": "closed",
         "user": "MitchV94",
         "labels": [
+          "bug",
           "enhancement",
-          "device-request"
+          "device-request",
+          "curtain_motor",
+          "pairing_issue"
         ],
         "fps": [
           "_TZ3000_5iixzdo7"
@@ -20956,7 +21071,9 @@
         "state": "closed",
         "user": "Tauno20",
         "labels": [
-          "enhancement"
+          "bug",
+          "enhancement",
+          "driver improvement"
         ],
         "fps": [
           "_TZE204_e5m9c5hl"
@@ -20973,7 +21090,10 @@
         "state": "closed",
         "user": "azkysmarthome",
         "labels": [
-          "device-request"
+          "device-request",
+          "Tuya",
+          "device_request",
+          "sensor"
         ],
         "fps": [
           "_TZ3000_zutizvyk"
@@ -20992,7 +21112,8 @@
         "user": "Lalla80111",
         "labels": [
           "enhancement",
-          "device-request"
+          "device-request",
+          "device_request"
         ],
         "fps": [
           "_tz3000_fllyghyj",
@@ -21014,7 +21135,9 @@
         "user": "github-actions[bot]",
         "labels": [
           "enhancement",
-          "community-sync"
+          "community-sync",
+          "community",
+          "fingerprint_update"
         ],
         "fps": [
           "_TZ3000_vd43bbfq",
@@ -21074,8 +21197,10 @@
         "state": "closed",
         "user": "elgato7",
         "labels": [
+          "bug",
           "enhancement",
-          "device-request"
+          "device-request",
+          "curtain_motor"
         ],
         "fps": [
           "_TZE204_xu4a5rhj"
@@ -21092,8 +21217,12 @@
         "state": "closed",
         "user": "DAVID9SE",
         "labels": [
+          "bug",
           "enhancement",
-          "device-request"
+          "automation",
+          "device-request",
+          "button",
+          "AliExpress"
         ],
         "fps": [
           "_TZ3000_an5rjiwd"
@@ -21108,8 +21237,11 @@
         "state": "closed",
         "user": "elgato7",
         "labels": [
+          "bug",
           "enhancement",
-          "device-request"
+          "device-request",
+          "zigbee",
+          "curtain"
         ],
         "fps": [
           "_TZE204_xu4a5rhj"
@@ -21127,7 +21259,9 @@
         "user": "Lalla80111",
         "labels": [
           "enhancement",
-          "device-request"
+          "device-request",
+          "device_request",
+          "stale"
         ],
         "fps": [
           "_TZ3000_fllyghyj"
@@ -21145,7 +21279,9 @@
         "user": "Lalla80111",
         "labels": [
           "enhancement",
-          "device-request"
+          "device-request",
+          "device_request",
+          "zigbee"
         ],
         "fps": [
           "_TZ3000_b4awzgct"
@@ -21163,7 +21299,10 @@
         "user": "Ernst02507",
         "labels": [
           "enhancement",
-          "device-request"
+          "device-request",
+          "Tuya",
+          "device_request",
+          "zigbee"
         ],
         "fps": [
           "_TZ3000_gwkzibhs",
@@ -21183,6 +21322,7 @@
         "labels": [
           "device-request",
           "device_request",
+          "already-supported",
           "reopened-by-user",
           "supported_device"
         ],
@@ -21201,8 +21341,10 @@
         "state": "closed",
         "user": "eskilask-maker",
         "labels": [
+          "duplicate",
           "enhancement",
-          "device-request"
+          "device-request",
+          "device_request"
         ],
         "fps": [],
         "pids": [
@@ -21218,7 +21360,10 @@
         "user": "gfi63",
         "labels": [
           "enhancement",
-          "device-request"
+          "device-request",
+          "Tuya",
+          "device_request",
+          "air_quality_monitor"
         ],
         "fps": [
           "_TZE204_yvx5lh6k"
@@ -21236,7 +21381,10 @@
         "user": "eskilask-maker",
         "labels": [
           "enhancement",
-          "device-request"
+          "device-request",
+          "feature_request",
+          "zigbee",
+          "device"
         ],
         "fps": [],
         "pids": [
@@ -21252,7 +21400,9 @@
         "user": "pjmpessers",
         "labels": [
           "enhancement",
-          "device-request"
+          "device-request",
+          "device_request",
+          "zigbee"
         ],
         "fps": [
           "_TZ3000_ysdv91bk"
@@ -21270,7 +21420,9 @@
         "user": "pjmpessers",
         "labels": [
           "enhancement",
-          "device-request"
+          "device-request",
+          "device_request",
+          "zigbee"
         ],
         "fps": [
           "_TZ3000_blhvsaqf"
@@ -21288,7 +21440,10 @@
         "user": "pjmpessers",
         "labels": [
           "enhancement",
-          "device-request"
+          "device-request",
+          "zigbee",
+          "BSEED",
+          "wallswitch"
         ],
         "fps": [
           "_TZ3000_l9brjwau",
@@ -21308,7 +21463,10 @@
         "user": "pjmpessers",
         "labels": [
           "enhancement",
-          "device-request"
+          "device-request",
+          "zigbee",
+          "wall_switch",
+          "BSEED"
         ],
         "fps": [
           "_TZ3000_qkixdnon"
@@ -21325,8 +21483,12 @@
         "state": "closed",
         "user": "csmobiel",
         "labels": [
+          "bug",
           "enhancement",
-          "device-request"
+          "device-request",
+          "Tuya",
+          "zigbee",
+          "sensor"
         ],
         "fps": [
           "_TZE284_aa03yzhs"
@@ -21343,7 +21505,9 @@
         "state": "closed",
         "user": "fcarrozzo",
         "labels": [
-          "device-request"
+          "device-request",
+          "Sonoff",
+          "S60ZBTPF"
         ],
         "fps": [],
         "pids": [
@@ -21358,7 +21522,10 @@
         "state": "closed",
         "user": "DVMasters",
         "labels": [
-          "device-request"
+          "device-request",
+          "device",
+          "TS0043",
+          "LoraTap"
         ],
         "fps": [
           "_TZ3000_famkxci2"
@@ -21376,7 +21543,9 @@
         "state": "closed",
         "user": "NoroddH",
         "labels": [
-          "device-request"
+          "bug",
+          "device-request",
+          "presence_sensor"
         ],
         "fps": [],
         "pids": [
@@ -21391,8 +21560,12 @@
         "state": "closed",
         "user": "mjolink",
         "labels": [
+          "bug",
           "enhancement",
-          "device-request"
+          "device-request",
+          "Tuya",
+          "device_request",
+          "zigbee"
         ],
         "fps": [],
         "pids": [
@@ -21407,8 +21580,10 @@
         "state": "closed",
         "user": "JeffreyOtten1234",
         "labels": [
+          "bug",
           "enhancement",
-          "device-request"
+          "device-request",
+          "device_request"
         ],
         "fps": [
           "_TZ3000_xyz"
@@ -21425,6 +21600,7 @@
         "state": "closed",
         "user": "bartagergely",
         "labels": [
+          "documentation",
           "enhancement"
         ],
         "fps": [],
@@ -21439,7 +21615,10 @@
         "user": "Necka44",
         "labels": [
           "enhancement",
-          "device-request"
+          "device-request",
+          "device_request",
+          "zigbee",
+          "Moes_TRV"
         ],
         "fps": [
           "_TZE204_qyr2m29i"
@@ -21457,7 +21636,10 @@
         "user": "djfry134",
         "labels": [
           "enhancement",
-          "device-request"
+          "device-request",
+          "Tuya",
+          "device_request",
+          "HMJ-SC021"
         ],
         "fps": [
           "_TZ3000_b4awzgct"
@@ -21475,7 +21657,10 @@
         "state": "closed",
         "user": "snorro80",
         "labels": [
-          "device-request"
+          "device-request",
+          "zigbee",
+          "IR remote",
+          "ZS06"
         ],
         "fps": [
           "_TZ3290_7v1k4vufotpowp9z"
@@ -21493,7 +21678,11 @@
         "state": "closed",
         "user": "artisare",
         "labels": [
-          "enhancement"
+          "bug",
+          "enhancement",
+          "curtain_motor",
+          "thermostat",
+          "compilation"
         ],
         "fps": [],
         "pids": [],
@@ -21507,7 +21696,9 @@
         "user": "eskilask-maker",
         "labels": [
           "enhancement",
-          "device-request"
+          "device-request",
+          "device_request",
+          "zigbee"
         ],
         "fps": [
           "_TZE200_bh3n6gk8"
@@ -21524,8 +21715,10 @@
         "state": "closed",
         "user": "theunissendave",
         "labels": [
+          "bug",
           "enhancement",
-          "device-request"
+          "device-request",
+          "device_issue"
         ],
         "fps": [
           "_TZE200_e3oitdyu"
@@ -21543,7 +21736,9 @@
         "user": "Verectra",
         "labels": [
           "enhancement",
-          "device-request"
+          "device-request",
+          "device_request",
+          "presence_sensor"
         ],
         "fps": [
           "_TZE204_mtoaryre",
@@ -21562,8 +21757,11 @@
         "state": "closed",
         "user": "xSondreBx",
         "labels": [
+          "bug",
           "enhancement",
-          "device-request"
+          "device-request",
+          "zigbee",
+          "device_issue"
         ],
         "fps": [],
         "pids": [
@@ -21579,7 +21777,8 @@
         "user": "xSondreBx",
         "labels": [
           "enhancement",
-          "device-request"
+          "device-request",
+          "device_request"
         ],
         "fps": [],
         "pids": [
@@ -21596,8 +21795,12 @@
         "state": "closed",
         "user": "telenut",
         "labels": [
+          "bug",
           "enhancement",
-          "device-request"
+          "device-request",
+          "zigbee",
+          "temperature",
+          "humidity"
         ],
         "fps": [],
         "pids": [
@@ -21614,7 +21817,9 @@
         "labels": [
           "enhancement",
           "device-request",
-          "tuya-dp"
+          "tuya-dp",
+          "device_request",
+          "curtain_motor"
         ],
         "fps": [
           "_TZE200_uj3f4wr5"
@@ -21630,7 +21835,10 @@
         "title": "[DEVICE] TS0601_TZE200_9yapgbuv incorrectly defined as sound controller",
         "state": "closed",
         "user": "tknapstad",
-        "labels": [],
+        "labels": [
+          "bug",
+          "device"
+        ],
         "fps": [
           "_TZE200_9yapgbuv"
         ],
@@ -21647,7 +21855,11 @@
         "state": "closed",
         "user": "Haellos07",
         "labels": [
-          "enhancement"
+          "enhancement",
+          "device-request",
+          "device_request",
+          "zigbee",
+          "thermostat"
         ],
         "fps": [
           "_TZE200_hvaxb2tc"
@@ -21664,7 +21876,10 @@
         "state": "closed",
         "user": "jocke-sve-62",
         "labels": [
-          "enhancement"
+          "enhancement",
+          "device-request",
+          "request",
+          "device"
         ],
         "fps": [
           "_TZ3000_u3nv1jwk"
@@ -21681,7 +21896,12 @@
         "title": "[Device] ZG-204ZL",
         "state": "closed",
         "user": "Didiervu91",
-        "labels": [],
+        "labels": [
+          "device-request",
+          "device_request",
+          "HOBEIAN",
+          "ZG-204ZL"
+        ],
         "fps": [],
         "pids": [
           "TS0601"
@@ -21697,7 +21917,8 @@
         "labels": [
           "bug",
           "automation",
-          "priority-high"
+          "priority-high",
+          "workflow"
         ],
         "fps": [],
         "pids": [],
@@ -21712,7 +21933,8 @@
         "labels": [
           "bug",
           "automation",
-          "priority-high"
+          "priority-high",
+          "workflow"
         ],
         "fps": [],
         "pids": [],
@@ -21727,7 +21949,8 @@
         "labels": [
           "bug",
           "automation",
-          "priority-high"
+          "priority-high",
+          "workflow"
         ],
         "fps": [],
         "pids": [],
@@ -21742,7 +21965,8 @@
         "labels": [
           "bug",
           "automation",
-          "priority-high"
+          "priority-high",
+          "workflow"
         ],
         "fps": [],
         "pids": [],
@@ -21757,7 +21981,8 @@
         "labels": [
           "bug",
           "automation",
-          "priority-high"
+          "priority-high",
+          "workflow"
         ],
         "fps": [],
         "pids": [],
@@ -21772,7 +21997,8 @@
         "labels": [
           "bug",
           "automation",
-          "priority-high"
+          "priority-high",
+          "workflow"
         ],
         "fps": [],
         "pids": [],
@@ -21787,7 +22013,8 @@
         "labels": [
           "bug",
           "automation",
-          "priority-high"
+          "priority-high",
+          "workflow"
         ],
         "fps": [],
         "pids": [],
@@ -21802,7 +22029,8 @@
         "labels": [
           "bug",
           "automation",
-          "priority-high"
+          "priority-high",
+          "workflow"
         ],
         "fps": [],
         "pids": [],
@@ -21817,7 +22045,8 @@
         "labels": [
           "bug",
           "automation",
-          "priority-high"
+          "priority-high",
+          "workflow"
         ],
         "fps": [],
         "pids": [],
@@ -21832,7 +22061,8 @@
         "labels": [
           "bug",
           "automation",
-          "priority-high"
+          "priority-high",
+          "workflow"
         ],
         "fps": [],
         "pids": [],
@@ -21847,7 +22077,8 @@
         "labels": [
           "bug",
           "automation",
-          "priority-high"
+          "priority-high",
+          "workflow"
         ],
         "fps": [],
         "pids": [],
@@ -21862,7 +22093,8 @@
         "labels": [
           "bug",
           "automation",
-          "priority-high"
+          "priority-high",
+          "workflow"
         ],
         "fps": [],
         "pids": [],
@@ -21877,7 +22109,8 @@
         "labels": [
           "bug",
           "automation",
-          "priority-high"
+          "priority-high",
+          "workflow"
         ],
         "fps": [],
         "pids": [],
@@ -21892,7 +22125,8 @@
         "labels": [
           "bug",
           "automation",
-          "priority-high"
+          "priority-high",
+          "workflow"
         ],
         "fps": [],
         "pids": [],
@@ -21907,7 +22141,9 @@
         "labels": [
           "bug",
           "automation",
-          "priority-high"
+          "priority-high",
+          "stale",
+          "workflow"
         ],
         "fps": [],
         "pids": [],
@@ -21922,7 +22158,8 @@
         "labels": [
           "bug",
           "automation",
-          "priority-high"
+          "priority-high",
+          "workflow"
         ],
         "fps": [],
         "pids": [],
@@ -21937,7 +22174,8 @@
         "labels": [
           "bug",
           "automation",
-          "priority-high"
+          "priority-high",
+          "workflow"
         ],
         "fps": [],
         "pids": [],
@@ -21952,7 +22190,8 @@
         "labels": [
           "bug",
           "automation",
-          "priority-high"
+          "priority-high",
+          "workflow"
         ],
         "fps": [],
         "pids": [],
@@ -21967,7 +22206,8 @@
         "labels": [
           "bug",
           "automation",
-          "priority-high"
+          "priority-high",
+          "workflow"
         ],
         "fps": [],
         "pids": [],
@@ -22099,7 +22339,11 @@
         "title": "[DEVICE] TS011F Tuya zigbee Smart plug 20 Ampere _TZ3210_fgwhjm9j",
         "state": "closed",
         "user": "Rickert1993",
-        "labels": [],
+        "labels": [
+          "device-request",
+          "device_request",
+          "zigbee"
+        ],
         "fps": [
           "_TZ3210_fgwhjm9j"
         ],
@@ -22131,7 +22375,10 @@
         "labels": [
           "bug",
           "automated",
-          "publish-failure"
+          "publish-failure",
+          "Homey",
+          "publish",
+          "app_store"
         ],
         "fps": [],
         "pids": [],
@@ -22146,7 +22393,10 @@
         "labels": [
           "bug",
           "automated",
-          "publish-failure"
+          "publish-failure",
+          "error",
+          "publish",
+          "workflow"
         ],
         "fps": [],
         "pids": [],
@@ -22161,7 +22411,10 @@
         "labels": [
           "bug",
           "automated",
-          "publish-failure"
+          "publish-failure",
+          "Homey",
+          "publish",
+          "app_store"
         ],
         "fps": [],
         "pids": [],
@@ -22176,7 +22429,10 @@
         "labels": [
           "bug",
           "automated",
-          "publish-failure"
+          "publish-failure",
+          "automation",
+          "Homey",
+          "publish"
         ],
         "fps": [],
         "pids": [],
@@ -22190,7 +22446,8 @@
         "user": "github-actions[bot]",
         "labels": [
           "bug",
-          "automated-diagnostic"
+          "automated-diagnostic",
+          "health_check"
         ],
         "fps": [],
         "pids": [],
@@ -22203,7 +22460,9 @@
         "state": "closed",
         "user": "laborhexe0210",
         "labels": [
-          "enhancement"
+          "bug",
+          "enhancement",
+          "device"
         ],
         "fps": [
           "_TZ3000_1o6x1bl0",
@@ -22237,7 +22496,12 @@
         "state": "closed",
         "user": "gore-",
         "labels": [
-          "enhancement"
+          "enhancement",
+          "device-request",
+          "TS0601",
+          "request",
+          "device",
+          "MOES"
         ],
         "fps": [
           "_TZE284_rjxqso4a"
@@ -22254,7 +22518,10 @@
         "state": "closed",
         "user": "kircuvaloglu",
         "labels": [
-          "enhancement"
+          "enhancement",
+          "device-request",
+          "device_request",
+          "zigbee"
         ],
         "fps": [
           "_TZ3210_0zabbfa",
@@ -22272,7 +22539,9 @@
         "state": "closed",
         "user": "gfi63",
         "labels": [
-          "bug"
+          "bug",
+          "vibration_sensor",
+          "internal_error"
         ],
         "fps": [],
         "pids": [
@@ -22288,7 +22557,9 @@
         "state": "closed",
         "user": "kodalissri",
         "labels": [
-          "enhancement"
+          "bug",
+          "enhancement",
+          "device"
         ],
         "fps": [
           "_TZ3000_bgsigers"
@@ -22305,7 +22576,9 @@
         "state": "closed",
         "user": "askseb",
         "labels": [
-          "enhancement"
+          "bug",
+          "enhancement",
+          "device"
         ],
         "fps": [
           "_TZ3000_okohwwap"
@@ -22322,7 +22595,10 @@
         "state": "closed",
         "user": "askseb",
         "labels": [
-          "enhancement"
+          "bug",
+          "enhancement",
+          "device",
+          "TS0041"
         ],
         "fps": [
           "_TZ3000_yj6k7vfo"
@@ -22339,7 +22615,10 @@
         "state": "closed",
         "user": "kodalissri",
         "labels": [
-          "enhancement"
+          "enhancement",
+          "device-request",
+          "request",
+          "device"
         ],
         "fps": [
           "_TZE200_2aaelwxk",
@@ -22358,7 +22637,9 @@
         "state": "closed",
         "user": "kodalissri",
         "labels": [
-          "enhancement"
+          "bug",
+          "enhancement",
+          "device"
         ],
         "fps": [
           "_TZE200_uli8wasj",
@@ -22378,7 +22659,11 @@
         "state": "closed",
         "user": "gfi63",
         "labels": [
-          "enhancement"
+          "bug",
+          "enhancement",
+          "device",
+          "TS011F",
+          "Homey"
         ],
         "fps": [
           "_TZ3000_npg02xft"
@@ -22395,7 +22680,11 @@
         "state": "closed",
         "user": "gfi63",
         "labels": [
-          "enhancement"
+          "enhancement",
+          "device-request",
+          "device_request",
+          "TS0210",
+          "vibration_sensor"
         ],
         "fps": [
           "_TZ3000_lqpt3mvr"
@@ -22413,7 +22702,11 @@
         "state": "closed",
         "user": "GXA064",
         "labels": [
-          "enhancement"
+          "enhancement",
+          "device-request",
+          "device_request",
+          "Aqara",
+          "motion_sensor"
         ],
         "fps": [],
         "pids": [],
@@ -22426,7 +22719,9 @@
         "state": "closed",
         "user": "l-i-n-k",
         "labels": [
-          "bug"
+          "bug",
+          "settings",
+          "UI"
         ],
         "fps": [],
         "pids": [],
@@ -22439,7 +22734,12 @@
         "state": "closed",
         "user": "luuk0412-wq",
         "labels": [
-          "enhancement"
+          "enhancement",
+          "device-request",
+          "Tuya",
+          "device_request",
+          "temperature",
+          "humidity"
         ],
         "fps": [],
         "pids": [],
@@ -22452,7 +22752,10 @@
         "state": "closed",
         "user": "rsalinger",
         "labels": [
-          "enhancement"
+          "enhancement",
+          "device-request",
+          "device_request",
+          "smart_knob"
         ],
         "fps": [
           "_TZ3000_gwkzibhs"
@@ -22467,7 +22770,10 @@
         "state": "closed",
         "user": "MarceloSilvaLeite",
         "labels": [
-          "enhancement"
+          "enhancement",
+          "device-request",
+          "device_request",
+          "zigbee"
         ],
         "fps": [],
         "pids": [],
@@ -22480,7 +22786,10 @@
         "state": "closed",
         "user": "MarceloSilvaLeite",
         "labels": [
-          "enhancement"
+          "enhancement",
+          "device-request",
+          "device_request",
+          "high_priority"
         ],
         "fps": [
           "_TZ3218_t9ynfz4x"
@@ -22497,7 +22806,10 @@
         "state": "closed",
         "user": "MarceloSilvaLeite",
         "labels": [
-          "enhancement"
+          "enhancement",
+          "device-request",
+          "device_request",
+          "human_presence_detector"
         ],
         "fps": [
           "_TZ3218_awarhusb"
@@ -22591,7 +22903,10 @@
         "state": "closed",
         "user": "dlnraja",
         "labels": [
-          "bug"
+          "bug",
+          "git",
+          "push",
+          "error"
         ],
         "fps": [],
         "pids": [],
@@ -22603,7 +22918,10 @@
         "title": "Intégrer les évolutions de code pour les boutons 3 et 4 gangs",
         "state": "closed",
         "user": "dlnraja",
-        "labels": [],
+        "labels": [
+          "device_support",
+          "code_integration"
+        ],
         "fps": [],
         "pids": [],
         "newFPs": [],
@@ -22641,6 +22959,146 @@
         "mfr": "_tz3000_8bxrzyxz",
         "source": "PR #125",
         "title": "Fix HOBEIAN 10G radar sensor: IAS motion conflict, battery read, DP corrections"
+      },
+      {
+        "mfr": "_TZ3000_iktiy8ue",
+        "source": "Issue #142",
+        "title": "[Auto] 14 new fingerprints from community (2026-03)"
+      },
+      {
+        "mfr": "_TZ3000_cziew6eu",
+        "source": "Issue #142",
+        "title": "[Auto] 14 new fingerprints from community (2026-03)"
+      },
+      {
+        "mfr": "_TZE204_d2zfgtij",
+        "source": "Issue #142",
+        "title": "[Auto] 14 new fingerprints from community (2026-03)"
+      },
+      {
+        "mfr": "_TZE284_d2zfgtij",
+        "source": "Issue #142",
+        "title": "[Auto] 14 new fingerprints from community (2026-03)"
+      },
+      {
+        "mfr": "_TZE200_d2zfgtij",
+        "source": "Issue #142",
+        "title": "[Auto] 14 new fingerprints from community (2026-03)"
+      },
+      {
+        "mfr": "_TZE204_wjk6rurm",
+        "source": "Issue #142",
+        "title": "[Auto] 14 new fingerprints from community (2026-03)"
+      },
+      {
+        "mfr": "_TZE284_wjk6rurm",
+        "source": "Issue #142",
+        "title": "[Auto] 14 new fingerprints from community (2026-03)"
+      },
+      {
+        "mfr": "_TZE200_wjk6rurm",
+        "source": "Issue #142",
+        "title": "[Auto] 14 new fingerprints from community (2026-03)"
+      },
+      {
+        "mfr": "_TZE204_s4sa1mcx",
+        "source": "Issue #142",
+        "title": "[Auto] 14 new fingerprints from community (2026-03)"
+      },
+      {
+        "mfr": "_TZE284_s4sa1mcx",
+        "source": "Issue #142",
+        "title": "[Auto] 14 new fingerprints from community (2026-03)"
+      },
+      {
+        "mfr": "_TZE200_s4sa1mcx",
+        "source": "Issue #142",
+        "title": "[Auto] 14 new fingerprints from community (2026-03)"
+      },
+      {
+        "mfr": "_TZE204_x8diwkqb",
+        "source": "Issue #142",
+        "title": "[Auto] 14 new fingerprints from community (2026-03)"
+      },
+      {
+        "mfr": "_TZE284_x8diwkqb",
+        "source": "Issue #142",
+        "title": "[Auto] 14 new fingerprints from community (2026-03)"
+      },
+      {
+        "mfr": "_TZE200_x8diwkqb",
+        "source": "Issue #142",
+        "title": "[Auto] 14 new fingerprints from community (2026-03)"
+      },
+      {
+        "mfr": "_TZ3000_cziew6eu",
+        "source": "Issue #141",
+        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
+      },
+      {
+        "mfr": "_TZ3000_iktiy8ue",
+        "source": "Issue #141",
+        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
+      },
+      {
+        "mfr": "_TZE200_d2zfgtij",
+        "source": "Issue #141",
+        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
+      },
+      {
+        "mfr": "_TZE200_s4sa1mcx",
+        "source": "Issue #141",
+        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
+      },
+      {
+        "mfr": "_TZE200_wjk6rurm",
+        "source": "Issue #141",
+        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
+      },
+      {
+        "mfr": "_TZE200_x8diwkqb",
+        "source": "Issue #141",
+        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
+      },
+      {
+        "mfr": "_TZE204_d2zfgtij",
+        "source": "Issue #141",
+        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
+      },
+      {
+        "mfr": "_TZE204_s4sa1mcx",
+        "source": "Issue #141",
+        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
+      },
+      {
+        "mfr": "_TZE204_wjk6rurm",
+        "source": "Issue #141",
+        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
+      },
+      {
+        "mfr": "_TZE204_x8diwkqb",
+        "source": "Issue #141",
+        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
+      },
+      {
+        "mfr": "_TZE284_d2zfgtij",
+        "source": "Issue #141",
+        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
+      },
+      {
+        "mfr": "_TZE284_s4sa1mcx",
+        "source": "Issue #141",
+        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
+      },
+      {
+        "mfr": "_TZE284_wjk6rurm",
+        "source": "Issue #141",
+        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
+      },
+      {
+        "mfr": "_TZE284_x8diwkqb",
+        "source": "Issue #141",
+        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
       },
       {
         "mfr": "_TZ3000_zutizvykts0203",

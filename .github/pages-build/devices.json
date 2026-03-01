@@ -6057,7 +6057,7 @@
   },
   {
     "id": "siren",
-    "name": "Siren Siren",
+    "name": "Siren / Alarm",
     "class": "other",
     "mfrs": [
       "_TYST11_d0yu2xgi",
@@ -6085,11 +6085,19 @@
       "_TZ3000_fwfwifin",
       "_TZ3000_8r5u7wkh",
       "_TZ3000_hv9cqcci",
-      "_TZE204_5sbebbzs"
+      "_TZE204_5sbebbzs",
+      "_TZE204_hcxvyxa5",
+      "_TZE204_q76rtoa9",
+      "_TYZB01_fbo1dpof",
+      "_TYZB01_8scntis1",
+      "_TZ3000_c2yscrj8",
+      "_TYZB01_ynsiasng",
+      "_TYZB01_0wcfvptl"
     ],
     "pids": [
       "TS0216",
       "TS0219",
+      "TS0224",
       "TS0601"
     ],
     "caps": [
@@ -6099,7 +6107,7 @@
       "onoff"
     ],
     "proto": "EF00",
-    "fpCount": 26
+    "fpCount": 33
   },
   {
     "id": "bulb_dimmable",
