@@ -27,7 +27,7 @@ function loadForumIntel(){
 const strip=h=>(h||'').replace(/<br\s*\/?>/gi,'\n').replace(/<\/p>/gi,'\n').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").trim();
 const exImgs=h=>{const u=[];const re=/<img[^>]+src="([^"]+)"/gi;let m;while((m=re.exec(h||''))!==null)u.push(m[1]);return u};
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-const{callAI,analyzeImage,getAIBudget}=require('./ai-helper');
+const{callAI,callAIEnsemble,analyzeImage,getAIBudget,textSimilarity}=require('./ai-helper');
 
 function buildIndex(){
   const{mfrIdx,pidIdx,allMfrs,allPids}=buildFullIndex(DDIR);
@@ -65,13 +65,6 @@ function logReply(state,tid,postId){
 // Anti-spam: check if topic already has a recent dlnraja reply in fetched posts
 function hasRecentOwnReply(posts){
   return posts.some(p=>p.username==='dlnraja');
-}
-// Anti-spam: simple similarity check (Jaccard on words)
-function textSimilarity(a,b){
-  const wa=new Set((a||'').toLowerCase().split(/\s+/)),wb=new Set((b||'').toLowerCase().split(/\s+/));
-  if(!wa.size||!wb.size)return 0;
-  let inter=0;for(const w of wa)if(wb.has(w))inter++;
-  return inter/(wa.size+wb.size-inter);
 }
 
 function getHeaders(auth,json){
@@ -205,8 +198,9 @@ async function batchAI(postInfos,ver){
   ctx+='Just stop after that — no footer, no signature, no links dump.\n';
   ctx+='Reply or NULL if nothing device-related:';
 
-  const r=await callAI(ctx,sys,{maxTokens:2000});
-  if(r&&r.text.trim().toUpperCase()!=='NULL')return r.text.trim();
+  // Use ensemble (parallel multi-AI) for richer replies when available, fallback to single callAI
+  const r=await callAIEnsemble(ctx,sys,{maxTokens:2000}).catch(()=>null)||await callAI(ctx,sys,{maxTokens:2000});
+  if(r&&r.text.trim().toUpperCase()!=='NULL'){console.log('  AI model:',r.model);return r.text.trim()}
   return batchedFallback(postInfos,ver);
 }
 
@@ -278,6 +272,8 @@ async function main(){
       let ok=false;
       // Check if last post in topic is already from dlnraja — EDIT instead of new post
       const lastOwn=await getLastOwnPost(tid);
+      // Dedup: skip if new reply is too similar to existing post content
+      if(lastOwn&&textSimilarity(reply,lastOwn.raw)>SIMILARITY_THRESHOLD){console.log('  ⏭ Reply too similar to existing post ('+Math.round(textSimilarity(reply,lastOwn.raw)*100)+'%), skipping');state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
       for(let i=0;i<3;i++){
         try{
           if(auth.type==='session')await refreshCsrf(auth);

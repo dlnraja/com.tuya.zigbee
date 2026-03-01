@@ -3,6 +3,7 @@
 const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
 const{getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
+const{textSimilarity}=require('./ai-helper');
 const TID=140352;
 const SUM=process.env.GITHUB_STEP_SUMMARY||'/dev/null';
 const STATE_FILE=path.join(__dirname,'..','state','forum-update-state.json');
@@ -108,6 +109,8 @@ async function main(){
   try{
     if(auth.type==='session')await refreshCsrf(auth);
     const lastOwn=await getLastOwnPost(TID);
+    // Dedup: skip if content too similar to existing post
+    if(lastOwn&&textSimilarity(raw,lastOwn.raw)>0.6){console.log('Update too similar to existing post, skipping');fs.appendFileSync(SUM,'Forum: skipped (too similar)\n');return}
     if(lastOwn){
       // EDIT existing post: append update with separator
       // Strip duplicate footers from old content so "remove and re-pair" appears only once (at end of new content)
