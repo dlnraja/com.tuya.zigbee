@@ -6,7 +6,16 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.28] - 2026-03-01
+## [5.11.29] - 2026-03-01
+
+### Bug Fixes
+- Removed one-shot fix-post-now script and workflow to streamline the development process.
+
+### CI/CD
+- Updated workflow to improve maintenance and reduce complexity.
+---
+
+ [5.11.28] - 2026-03-01
 
 ### Bug Fixes
 - Fixed one-shot script and workflow for editing forum post #1558 with clean content.
