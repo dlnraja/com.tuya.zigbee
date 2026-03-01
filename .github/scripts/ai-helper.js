@@ -1,6 +1,6 @@
 /**
  * AI Helper - Multi-provider with project rules injection
- * Chain (FREE TIERS): Gemini → DeepSeek → GitHub Models → OpenAI(free) → Groq → Granite → Mistral(free) → OpenRouter → Cerebras → Together → ApiFreeLLM
+ * Chain (FREE TIERS): Gemini → DeepSeek → GitHub Models → OpenAI(free) → Groq → Granite → Mistral(free) → OpenRouter → Cerebras → Together → Kimi → ApiFreeLLM
  */
 const fs=require('fs'),path=require('path');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -26,20 +26,24 @@ async function _rtWait(t){const id=t[0],rpm=t[3];const n=Date.now();if(n-_rt.mt>
 // Budget summary for end-of-run logging
 function _rtBudget(){const lines=[];for(const t of GTIERS){const d=_rt.d[t[0]]||0;const pct=Math.round(d/t[4]*100);lines.push(t[0]+': '+d+'/'+t[4]+' ('+pct+'%)')}const ds=_rt.d['ds']||0;if(ds||process.env.DEEPSEEK_API_KEY)lines.push('deepseek: '+ds+'/500 ('+Math.round(ds/500*100)+'%)');const oai=_rt.d['openai']||0;if(oai||process.env.OPENAI_API_KEY)lines.push('openai: '+oai+'/200 ('+Math.round(oai/200*100)+'%)');const mi=_rt.d['mistral']||0;if(mi||process.env.MISTRAL_API_KEY)lines.push('mistral: '+mi+'/30 ('+Math.round(mi/30*100)+'%)');return lines.join(' | ')}
 // Task classification: detects WHAT kind of work + HOW complex
-// Returns {cx: 0-3, type: 'classify'|'generate'|'analyze'|'merge'|'lookup'}
+// Returns {cx: 0-3, type: 'classify'|'generate'|'analyze'|'merge'|'lookup'|'code'|'vision'}
 function classifyTask(text,sys,o){
   if(o.complexity!==undefined){const m={trivial:0,low:1,medium:2,high:3};const cx=typeof o.complexity==='string'?(m[o.complexity]??1):o.complexity;return{cx,type:o.taskType||'generate'}}
   const len=(text||'').length+(sys||'').length;const mt=o.maxTokens||2048;
   const lc=((text||'')+' '+(sys||'')).toLowerCase();
-  // Detect task type from content
+  // Detect task type from content (most specific first)
   let type='generate';
-  if(/classify|return.*json|triage|categorize|label/i.test(lc))type='classify';
+  if(o.imageUrl||/image|screenshot|photo|picture|ocr/i.test(lc))type='vision';
+  else if(/write.*code|implement|refactor|fix.*code|device\.js|driver/i.test(lc))type='code';
+  else if(/classify|return.*json|triage|categorize|label/i.test(lc))type='classify';
   else if(/merge|synthesize|combine.*opinion|consolidate/i.test(lc))type='merge';
   else if(/analyze|investigate|debug|diagnose|root.?cause|find.*bug/i.test(lc))type='analyze';
   else if(/fingerprint|lookup|check.*support|find.*driver/i.test(lc))type='lookup';
   // Complexity scoring
   let cx=1;
   if(type==='classify'||type==='lookup'||type==='merge')cx=Math.min(mt>768?2:1,1);
+  else if(type==='vision')cx=2; // vision always needs tier 2+ (Flash/Pro)
+  else if(type==='code')cx=mt>1500||len>6000?3:2; // code = high quality needed
   else if(type==='analyze')cx=mt>1500||len>6000?3:2;
   else{if(mt>1500||len>6000)cx=3;else if(mt>768||len>3000)cx=2;else if(mt>256||len>1000)cx=1;else cx=0}
   return{cx,type};
@@ -48,8 +52,9 @@ function classifyTask(text,sys,o){
 function _pickModels(cx,taskType){
   const cap=parseInt(process.env.GEMINI_MAX_TIER)||3;
   let pool=GTIERS.filter(t=>t[2]<=cap&&_rtOk(t)&&cbOk('gemini-'+t[1]));
-  // For analyze tasks, prefer higher-tier models; for classify/merge, prefer fast
-  if(taskType==='analyze')pool=pool.filter(t=>t[2]>=Math.min(cx,2)).concat(pool);
+  // Route by task: analyze/code/vision→high tier, classify/merge→fast
+  if(taskType==='analyze'||taskType==='code')pool=pool.filter(t=>t[2]>=Math.min(cx,2)).concat(pool);
+  else if(taskType==='vision')pool=pool.filter(t=>t[2]>=1).concat(pool); // vision needs Flash+
   else if(taskType==='classify'||taskType==='merge'||taskType==='lookup')pool=pool.filter(t=>t[2]<=1).concat(pool);
   // Deduplicate preserving order
   const seen=new Set();pool=pool.filter(t=>{if(seen.has(t[0]))return false;seen.add(t[0]);return true});
@@ -211,6 +216,17 @@ async function callAI(text,sysPrompt,opts={}){
       if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'together-llama70b'}}
       else{console.log('  Together failed:',r.status);cbFail('together',120000)}
     }catch(e){console.log('  Together error:',e.message);cbFail('together',60000)}
+  }
+  // Kimi (Moonshot) FREE: moonshot-v1-8k — good long-context reasoning
+  const kimiKey=process.env.KIMI_API_KEY;
+  if(kimiKey&&cbOk('kimi')){
+    console.log('  Trying Kimi (Moonshot)...');try{
+      const r=await fetchT('https://api.moonshot.cn/v1/chat/completions',{method:'POST',
+        headers:{'Content-Type':'application/json','Authorization':'Bearer '+kimiKey},
+        body:JSON.stringify({model:'moonshot-v1-8k',messages:[{role:'system',content:fullSysPrompt.substring(0,6000)},{role:'user',content:text.substring(0,6000)}],max_tokens:Math.min(maxTokens,1024),temperature:0.2})},30000);
+      if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'kimi-moonshot'}}
+      else{console.log('  Kimi failed:',r.status);if(r.status===429)cbFail('kimi',300000)}
+    }catch(e){console.log('  Kimi error:',e.message);cbFail('kimi',60000)}
   }
   // Fallback to ApiFreeLLM (free, unlimited)
   const aflKey=process.env.APIFREELLM_KEY;
