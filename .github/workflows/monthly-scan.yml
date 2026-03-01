@@ -44,7 +44,7 @@ jobs:
           echo "Scanning zigbee2mqtt for new Tuya devices..."
           curl -s https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/tuya.ts > /tmp/tuya.ts
           # Match both _TZ3000 and _TZE200/_TZE204/_TZE284 patterns
-          grep -oE "_TZ[A-Z0-9]{4}_[a-z0-9]{8}" /tmp/tuya.ts | sort -u > /tmp/z2m_ids.txt
+          grep -oE "_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}" /tmp/tuya.ts | sort -u > /tmp/z2m_ids.txt
           Z2M_COUNT=$(wc -l < /tmp/z2m_ids.txt)
           echo "Found $Z2M_COUNT manufacturer IDs in Z2M"
           echo "| Source | Count |" >> $GITHUB_STEP_SUMMARY
@@ -55,7 +55,7 @@ jobs:
         id: compare
         run: |
           echo "Comparing with existing manufacturerName entries..."
-          grep -ohE '"_TZ[^"]+"' drivers/*/driver.compose.json | tr -d '"' | sort -u > /tmp/current_ids.txt
+          grep -ohE '"_T[A-Z][A-Za-z0-9_]+"' drivers/*/driver.compose.json | tr -d '"' | sort -u > /tmp/current_ids.txt
           CURRENT_COUNT=$(wc -l < /tmp/current_ids.txt)
           comm -23 /tmp/z2m_ids.txt /tmp/current_ids.txt > /tmp/missing_ids.txt
           MISSING_COUNT=$(wc -l < /tmp/missing_ids.txt)
