@@ -4,9 +4,6 @@ on:
   push:
     branches: [master, main]
   workflow_dispatch:
-  workflow_run:
-    workflows: ["Nightly Auto-Process", "Sunday Master Automation", "Daily Everything Pipeline"]
-    types: [completed]
 
 permissions:
   contents: write
@@ -22,7 +19,7 @@ defaults:
 jobs:
   publish:
     name: Validate & Auto-Publish to Test
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
