@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const fs=require('fs'),path=require('path');
-const{callAI,analyzeImage,getAIBudget}=require('./ai-helper');
+const{callAI,callAIEnsemble,analyzeImage,getAIBudget,textSimilarity}=require('./ai-helper');
 const{loadFingerprints,findAllDrivers,extractMfrFromText}=require('./load-fingerprints');
 const{investigate:investigateBug}=require('./bug-investigator');
 const REPOS=(process.env.REPOS||'dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee').split(',').map(s=>s.trim());
@@ -48,6 +48,8 @@ async function crossPostForum(msg){
       }}
     }catch{}
     if(lastOwn){
+      // Dedup: skip if message is too similar to existing post
+      if(textSimilarity(msg,lastOwn.raw)>0.6){console.log('    Forum cross-post skip: too similar to existing post');return}
       const cleanOld=lastOwn.raw.replace(/\n*As always,?\s*remove and re-?pair[^\n]*/gi,'').trimEnd();
       const merged=cleanOld+'\n\n---\n\n'+msg;
       await fetchWithRetry(FORUM+'/posts/'+lastOwn.id,{method:'PUT',headers:gh(auth),body:JSON.stringify({post:{raw:merged}})},{retries:3,label:'forumEdit'});
@@ -114,7 +116,7 @@ async function generateResponse(issue,fpResults,classification,variants,bugs,ima
   if(bugFindings&&bugFindings.length)text+='\nBug investigation findings: '+JSON.stringify(bugFindings.map(b=>({fp:b.fp,driver:b.driver,findings:b.findings,divisors:b.divisors})));
   if(imageCtx)text+='\nImage analysis: '+imageCtx;
   if(bodyLinks&&bodyLinks.length)text+='\nExternal refs: '+bodyLinks.join(', ');
-  const ai=await callAI(text,prompt,{maxTokens:1024,complexity:'medium'});
+  const ai=await callAIEnsemble(text,prompt,{maxTokens:1024,complexity:'medium'}).catch(()=>null)||await callAI(text,prompt,{maxTokens:1024,complexity:'medium'});
   return ai?TAG+'\n'+ai.text:null;
 }
 

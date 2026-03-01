@@ -255,6 +255,11 @@ jobs:
           retention-days: 7
           if-no-files-found: ignore
 
+      - name: Update Architecture Reference
+        if: always()
+        continue-on-error: true
+        run: node .github/scripts/update-architecture.js
+
       - name: Commit state and docs
         if: always()
         run: |

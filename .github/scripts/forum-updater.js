@@ -5,6 +5,7 @@
 const fs=require('fs'),path=require('path');
 const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
+const{textSimilarity}=require('./ai-helper');
 const TOPIC=140352;
 const strip=h=>(h||'').replace(/<[^>]+>/g,'').trim();
 
@@ -85,6 +86,8 @@ async function main(){
     if(auth&&auth.type==='session')auth=await refreshCsrf(auth);
     if(!auth){console.error('::warning::No forum auth available');process.exit(0)}
     const lastOwn=await getLastOwnPost();
+    // Dedup: skip if content is too similar to existing post
+    if(lastOwn&&textSimilarity(content,lastOwn.raw)>0.6){console.log('Content too similar to existing post ('+Math.round(textSimilarity(content,lastOwn.raw)*100)+'%), skipping');return}
     if(lastOwn){
       // Strip duplicate footers from old content so boilerplate appears only once
       const cleanOld=lastOwn.raw.replace(/\n*As always,?\s*remove and re-?pair[^\n]*/gi,'').trimEnd();
