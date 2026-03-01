@@ -2,7 +2,7 @@ name: Forum Auto-Responder
 
 on:
   schedule:
-    - cron: '0 5,11,17,23 * * *'  # Offset from daily-everything (02,08,14,20)
+    - cron: '0 9,21 * * *'  # 2x/day only — reduced from 4x to avoid spam
   workflow_dispatch:
     inputs:
       dry_run:
