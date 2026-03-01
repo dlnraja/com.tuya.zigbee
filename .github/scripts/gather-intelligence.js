@@ -100,12 +100,45 @@ function gatherAll(){
     ctx.issueManager={responded:ism.responded||0,closed:ism.closed||0,labeled:ism.labeled||0,processed:ism.issuesProcessed||0};
   }
 
+  // 12. Gmail diagnostics (user device reports via email)
+  const gmail=rj('gmail-diagnostics-report.json');
+  if(gmail){
+    ctx.gmail={total:gmail.totalProcessed||0,newFPs:(gmail.newFingerprints||[]).slice(0,10),
+      issues:(gmail.issues||[]).slice(0,5).map(i=>({subject:i.subject,fp:i.fingerprint,issue:i.issue}))};
+  }
+
+  // 13. Device diagnostics (crash logs, pairing failures)
+  const diag=rj('device-diagnostics-report.json');
+  if(diag){
+    ctx.deviceDiag={total:diag.totalDevices||0,failures:diag.pairingFailures||0,
+      crashes:(diag.crashes||[]).slice(0,5),topIssues:(diag.topIssues||[]).slice(0,5)};
+  }
+
+  // 14. Image analysis results (screenshots, device photos)
+  const imgs=rj('image-analysis-report.json');
+  if(imgs){
+    ctx.images={total:imgs.totalAnalyzed||0,
+      findings:(imgs.findings||[]).slice(0,5).map(f=>({url:f.url,result:String(f.result||'').substring(0,150)}))};
+  }
+
+  // 15. Monthly comprehensive report (AI summary)
+  const monthly=rj('monthly-report.json');
+  if(monthly&&monthly.aiSummary){
+    ctx.monthlySummary=String(monthly.aiSummary).substring(0,500);
+  }
+
+  // 16. Forum PM scanner (private messages with device info)
+  const pms=rj('forum-pm-report.json');
+  if(pms){
+    ctx.forumPMs={total:pms.totalScanned||0,newFPs:(pms.newFingerprints||[]).slice(0,10)};
+  }
+
   return ctx;
 }
 
 /**
  * Format intelligence into a concise context string for the AI prompt.
- * Max ~2000 chars to fit within token limits.
+ * Max ~3000 chars — 16 sources cross-referenced.
  */
 function formatForAI(ctx){
   let s='## INTELLIGENCE CONTEXT (from automated scans)\n\n';
@@ -147,6 +180,29 @@ function formatForAI(ctx){
     const jSum=typeof ctx.johanBendz.summary==='string'?ctx.johanBendz.summary:JSON.stringify(ctx.johanBendz.summary||'').substring(0,200);
     const jFPs=(ctx.johanBendz.allNewFPs||[]).filter(f=>f.fp&&f.fp.length>6).map(f=>'`'+f.fp+'`').join(', ');
     if(jSum||jFPs)s+='### JohanBendz Fork\n'+(jFPs?'New FPs: '+jFPs+'\n':'')+(jSum&&typeof jSum==='string'&&jSum.length>5?jSum.substring(0,200)+'\n':'')+'\n';
+  }
+
+  if(ctx.gmail&&(ctx.gmail.total||ctx.gmail.newFPs?.length)){
+    s+='### Gmail Diagnostics: '+ctx.gmail.total+' emails processed\n';
+    if(ctx.gmail.newFPs?.length)s+='New FPs: '+ctx.gmail.newFPs.slice(0,6).map(f=>'`'+f+'`').join(', ')+'\n';
+    s+='\n';
+  }
+
+  if(ctx.deviceDiag&&(ctx.deviceDiag.total||ctx.deviceDiag.failures)){
+    s+='### Device Diag: '+ctx.deviceDiag.total+' devices, '+ctx.deviceDiag.failures+' failures\n';
+    if(ctx.deviceDiag.topIssues?.length)s+='Top: '+ctx.deviceDiag.topIssues.slice(0,3).map(i=>String(i.issue||i).substring(0,60)).join(' | ')+'\n';
+    s+='\n';
+  }
+
+  if(ctx.images&&ctx.images.total){
+    s+='### Image Analysis: '+ctx.images.total+' images scanned\n';
+    s+='\n';
+  }
+
+  if(ctx.forumPMs&&(ctx.forumPMs.total||ctx.forumPMs.newFPs?.length)){
+    s+='### Forum PMs: '+ctx.forumPMs.total+' scanned\n';
+    if(ctx.forumPMs.newFPs?.length)s+='New FPs: '+ctx.forumPMs.newFPs.slice(0,6).map(f=>'`'+f+'`').join(', ')+'\n';
+    s+='\n';
   }
 
   return s;
