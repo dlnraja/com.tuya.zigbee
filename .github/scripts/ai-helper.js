@@ -327,7 +327,7 @@ function smartMergePost(existingRaw,newContent,opts){
   const nv=(newContent.match(/\bv?\d+\.\d+\.\d+\b/g)||[]).map(v=>v.replace(/^v/,''));
   const ev=(existingRaw.match(/\bv?\d+\.\d+\.\d+\b/g)||[]).map(v=>v.replace(/^v/,''));
   const allMentioned=nv.length>0&&nv.every(v=>ev.includes(v));
-  if(isDuplicateContent(newContent,existingRaw,0.55))return{action:'skip',content:existingRaw,reason:'duplicate'};
+  if(isDuplicateContent(newContent,existingRaw,0.40))return{action:'skip',content:existingRaw,reason:'duplicate'};
   // Per-section: if ANY section already covers the same version with >35% similarity, skip
   const secs=existingRaw.split(/\n---+\n/).filter(s=>s.trim().length>20);
   for(const sec of secs){const sv=(sec.match(/\bv?\d+\.\d+\.\d+\b/g)||[]).map(v=>v.replace(/^v/,''));if(nv.length>0&&nv.every(v=>sv.includes(v))&&textSimilarity(newContent,sec)>0.35)return{action:'skip',content:existingRaw,reason:'section already covers version'};}
@@ -359,7 +359,8 @@ async function callAIEnsemble(text,sysPrompt,opts={}){
   const ans=res.map((r,i)=>({p:ps[i],t:r.status==='fulfilled'?r.value:null})).filter(a=>a.t&&a.t.length>20);
   if(!ans.length)return callAI(text,sysPrompt,opts);
   if(ans.length===1)return{text:ans[0].t,model:'ens-'+ans[0].p};
-  const mp='Synthesize these '+ans.length+' opinions into ONE best answer (Dylan voice, max 300w):\n\n'+ans.map((a,i)=>'['+a.p+']:\n'+a.t).join('\n---\n');
+  const voice=task.type==='code'?'Pick the most correct code answer':'Dylan voice, max 300w';
+  const mp='Synthesize these '+ans.length+' opinions into ONE best answer ('+voice+'):\n\n'+ans.map((a,i)=>'['+a.p+']:\n'+a.t).join('\n---\n');
   const m=await callAI(mp,'Merge AI answers.',{maxTokens:mt,complexity:'low'});
   return m||{text:ans[0].t,model:'ens-'+ans[0].p};
 }
