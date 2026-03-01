@@ -138,7 +138,7 @@ function batchedFallback(postInfos,ver){
     const fps=[...found.entries()];
     if(fps.length===1)m+=fps[0][0]+' is already in v'+ver+' under **'+fps[0][1][0]+'**. ';
     else{m+='these are already in v'+ver+': ';for(const[fp,d]of fps)m+=fp+' ('+d[0]+'), ';m=m.replace(/, $/,'. ')}
-    m+='Try removing and re-pairing — should pick it up.\n\n';
+    m+='\n\n';
   }
   if(miss.size){
     let extInfo='';
@@ -146,6 +146,7 @@ function batchedFallback(postInfos,ver){
     const mks=[...miss.keys()];
     m+=(mks.length===1?mks[0]+' isn\'t':mks.join(', ')+' aren\'t')+' in there yet'+extInfo+'. If you can grab a [device interview](https://tools.developer.homey.app/tools/zigbee) I\'ll get it sorted.\n\n';
   }
+  m+='As always, remove and re-pair if something acts up after updating.';
   return m;
 }
 
@@ -199,7 +200,9 @@ async function batchAI(postInfos,ver){
   }
   ctx+='\n---\nWrite ONE short reply as Dylan (max 300 words). Plain text, casual, no formatting walls.\n';
   ctx+='Answer directly. If missing sensor readings (fertilizer, EC, VOC), ask for app logs (Settings > Apps > Tuya > View Log) to map DPs.\n';
-  ctx+='Just stop when done — no footer, no signature, no links dump.\n';
+  ctx+='IMPORTANT: Do NOT repeat boilerplate per device. "remove and re-pair" advice must appear ONLY ONCE at the very end, never per-device.\n';
+  ctx+='Consolidate all devices in one paragraph, then end with a single "As always, remove and re-pair if something acts up after updating."\n';
+  ctx+='Just stop after that — no footer, no signature, no links dump.\n';
   ctx+='Reply or NULL if nothing device-related:';
 
   const r=await callAI(ctx,sys,{maxTokens:2000});
@@ -280,7 +283,9 @@ async function main(){
           if(auth.type==='session')await refreshCsrf(auth);
           if(lastOwn){
             // EDIT existing post: append new content with separator
-            const merged=lastOwn.raw+'\n\n---\n\n'+reply;
+            // Strip duplicate footers from old content before merging
+            const cleanOld=lastOwn.raw.replace(/\n*As always,?\s*remove and re-?pair[^\n]*/gi,'').trimEnd();
+            const merged=cleanOld+'\n\n---\n\n'+reply;
             const r=await editPost(lastOwn.id,merged,auth);
             console.log('  Edited #'+lastOwn.postNumber+' (appended '+reply.length+'ch)');
             summary.push({t:tid,u:uList,a:'edited',id:lastOwn.id});logReply(state,tid,lastOwn.id);totalR++;ok=true;break;
