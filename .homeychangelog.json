@@ -1,6 +1,6 @@
 {
   "5.11.26": {
-    "en": "v5.11.26: "
+    "en": "Fixed forum duplication issues and improved AI ensemble routing for better task classification."
   },
   "5.11.25": {
     "en": "v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs)., Internal cleanup across several workflow scripts."
@@ -58,5 +58,8 @@
   },
   "5.11.7": {
     "en": "v5.11.7: New driver — Wall Switch 4-Gang 1-Way (BSEED). Adds support for BSEED 4-gang ZCL glass touch switches (TS0004/TS0014). Sub-device architecture: each gang = separate Homey device card. Includes scene mode (auto/magic/both), LED indicator control, and physical button flow triggers for all 4 gangs."
+  },
+  "5.11.27": {
+    "en": "v5.11.26: "
   }
 }
