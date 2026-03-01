@@ -117,7 +117,7 @@ async function editPost(postId, newRaw) {
   return r.ok;
 }
 
-const SCAN_TOPICS=[140352,26439,146735,89271,54018,12758,85498];
+const SCAN_TOPICS=[140352];
 const BOT_USER='dlnraja';
 // sleep imported from retry-helper above
 
@@ -181,7 +181,7 @@ async function main() {
     console.log(`DEL ${p.num} (id=${p.id}): ${p.reason}`);
     if (await deletePost(p.id)) { console.log('  ✓ Deleted'); return 'ok'; }
     console.log('  ✗ Delete failed'); return 'ok';
-  }, { spacing: 90000, label: 'delete', maxRetries: 2, rateLimitPause: 300000 });
+  }, { spacing: 60000, label: 'delete', maxRetries: 2, rateLimitPause: 180000 });
 
   console.log('\n=== Done ===');
   console.log(`Edited: ${editResult.ok}/${TO_EDIT.length} | Deleted: ${delResult.ok}/${TO_DELETE.length}`);

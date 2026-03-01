@@ -7,17 +7,7 @@ const{fetchWithRetry}=require('./retry-helper');
 // Seed topics (always scanned)
 const SEED_TOPICS=[
   140352,  // dlnraja: [APP][Pro] Universal TUYA Zigbee Device App - test
-  26439,   // JohanBendz: [APP][Pro] Tuya Zigbee App
-  146735,  // [APP] Tuya - Smart Life. Smart Living
-  89271,   // [APP][Pro] Tuya Zigbee App - Device Request Archive
-  54018,   // Tuya WiFi devices
-  12758,   // Zigbee devices general
-  85498,   // Zigbee2MQTT vs native
-  7386,    // [APP] Tuya Cloud
-  93716,   // Zigbee pairing issues
-  4498,    // Zigbee range / mesh
-  145893,  // Smart home sensors general
-  82165,   // Zigbee 3.0 devices
+  // ALL OTHER THREADS DISABLED — no bot activity on other people's threads
 ];
 
 // Search terms to discover ALL related topics across the entire forum
