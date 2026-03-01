@@ -112,7 +112,7 @@ function buildPost(stats,changelog,ghSummary){
   md+='## Support the Project\n\n';
   md+='If this app is useful to you, consider a small donation:\n';
   md+='- **PayPal:** [paypal.me/dlnraja](https://paypal.me/dlnraja)\n';
-  md+='- **Revolut:** [revolut.me/dlnraja](https://revolut.me/dlnraja)\n\n';
+  md+='- **Revolut:** [revolut.me/dylanoul](https://revolut.me/dylanoul)\n\n';
 
   md+='---\n*Auto-updated '+date+'*\n';
   return md;
@@ -158,6 +158,8 @@ async function main(){
   const prev=path.join(ROOT,'.github','state','forum-first-post-preview.md');
   try{fs.writeFileSync(prev,content);}catch{}
   console.log('Generated post:',content.length,'chars');
+  // v5.12.0: Safeguard — compact format should be under 4000 chars
+  if(content.length>4000)console.warn('⚠️ First post is '+content.length+' chars — should be under 4000 (compact format)');
 
   if(DRY){
     console.log('[DRY RUN] Would update first post of topic',TOPIC);
