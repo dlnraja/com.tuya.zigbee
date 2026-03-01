@@ -286,6 +286,28 @@ function isDuplicateContent(newText,existingPost,threshold){
 }
 const MAX_POST_SIZE=3000;
 
+// v5.12.0: Smart merge — ALWAYS edit last post, never create new. Dedup versions, trim if too long.
+function smartMergePost(existingRaw,newContent){
+  if(!existingRaw||!existingRaw.trim())return{action:'edit',content:newContent,reason:'empty'};
+  if(!newContent||!newContent.trim())return{action:'skip',content:existingRaw,reason:'no new'};
+  // Version dedup
+  const nv=(newContent.match(/\bv?\d+\.\d+\.\d+\b/g)||[]).map(v=>v.replace(/^v/,''));
+  const ev=(existingRaw.match(/\bv?\d+\.\d+\.\d+\b/g)||[]).map(v=>v.replace(/^v/,''));
+  const allMentioned=nv.length>0&&nv.every(v=>ev.includes(v));
+  if(isDuplicateContent(newContent,existingRaw,0.45))return{action:'skip',content:existingRaw,reason:'duplicate'};
+  if(allMentioned&&textSimilarity(newContent,existingRaw)>0.25)return{action:'skip',content:existingRaw,reason:'version already covered'};
+  // Clean footers
+  const clean=existingRaw.replace(/\n*As always,?\s*remove and re-?pair[^\n]*/gi,'').trimEnd();
+  let merged=clean+'\n\n---\n\n'+newContent;
+  // Trim oldest sections if too long
+  if(merged.length>MAX_POST_SIZE){
+    const secs=merged.split(/\n---+\n/);
+    while(secs.length>1&&secs.join('\n\n---\n\n').length>MAX_POST_SIZE)secs.shift();
+    merged=secs.join('\n\n---\n\n');
+  }
+  return{action:'edit',content:merged,reason:'merged'};
+}
+
 async function callAIEnsemble(text,sysPrompt,opts={}){
   const{qc,pickForTask}=require('./ai-ensemble');
   const task=classifyTask(text,sysPrompt,opts);
@@ -304,4 +326,4 @@ async function callAIEnsemble(text,sysPrompt,opts={}){
   return m||{text:ans[0].t,model:'ens-'+ans[0].p};
 }
 
-module.exports={callAI,callAIEnsemble,analyzeImage,sleep,localFallback,getAIBudget:_rtBudget,textSimilarity,isDuplicateContent,MAX_POST_SIZE};
+module.exports={callAI,callAIEnsemble,analyzeImage,sleep,localFallback,getAIBudget:_rtBudget,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost};

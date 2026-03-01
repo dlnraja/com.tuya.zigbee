@@ -361,9 +361,10 @@ async function main(){
       if(auth){
         const lastOwn=await getLastOwnPost(140352,auth);
         if(lastOwn){
-          const merged=lastOwn.raw+'\n\n---\n\n'+aiSummary.text;
-          const edited=await editForumPost(lastOwn.id,merged,auth);
-          if(edited)console.log('Edited post #'+lastOwn.postNumber+' (appended monthly summary)');
+          const{smartMergePost}=require('./ai-helper');
+          const m=smartMergePost(lastOwn.raw,aiSummary.text);
+          if(m.action==='skip'){console.log('SmartMerge skip:',m.reason)}
+          else{const edited=await editForumPost(lastOwn.id,m.content,auth);if(edited)console.log('Edited #'+lastOwn.postNumber+' ('+m.reason+')')}
         }else{
           const posted=await postToForum(140352,aiSummary.text,auth);
           if(posted)console.log('Forum post id:',posted.id);
