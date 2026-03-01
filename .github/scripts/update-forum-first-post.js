@@ -74,28 +74,27 @@ function buildPost(stats,changelog,ghSummary){
   const ico={socket:'🔌',light:'💡',sensor:'📡',thermostat:'🌡️',windowcoverings:'🪟',lock:'🔐',fan:'🌀',doorbell:'🔔',remote:'🎮',button:'🔘',other:'📦',homealarm:'🚨',heater:'🔥',garagedoor:'🚗'};
   const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
   let md='';
-  md+='# Universal Tuya Zigbee v'+stats.version+'\n\n';
-  md+='> **'+stats.drivers+' drivers** | **'+stats.fps+'+ fingerprints** | Updated '+date+'\n\n';
-  md+='The most comprehensive Tuya Zigbee app for Homey Pro.\n\n';
+  md+='# 🏠 Universal Tuya Zigbee v'+stats.version+'\n\n';
+  md+='> **'+stats.drivers+' drivers** · **'+stats.fps+'+ fingerprints** · Updated '+date+'\n\n';
+  md+='Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.\n\n';
   md+='## Install\n\n';
   md+='**Stable:** [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/) · **Test:** [Test Channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · **Source:** [GitHub](https://github.com/dlnraja/com.tuya.zigbee)\n\n';
-  md+='## Latest (v'+stats.version+')\n\n';
-  md+=changelog+'\n\n';
-
-  if(ghSummary){md+='## GitHub Activity\n\n'+ghSummary+'\n\n';}
+  md+='## What\'s New (v'+stats.version+')\n\n';
+  md+=changelog.replace(/^v[\d.]+:\s*/,'')+'\n\n';
 
   md+='## Supported Devices\n\n';
   const ord=['socket','light','sensor','thermostat','windowcoverings','lock','fan','doorbell','remote','button','homealarm','heater','garagedoor','other'];
   const all=[...new Set([...ord,...Object.keys(cats)])];
   md+='| Category | Drivers | FPs |\n|---|---|---|\n';
-  for(const c of all){if(!cats[c])continue;md+='| '+(ico[c]||'📦')+' '+cap(c)+' | '+cats[c].n+' | '+cats[c].fp+' |\n';}
+  for(const c of all){if(!cats[c]||cats[c].fp<1)continue;md+='| '+(ico[c]||'📦')+' '+cap(c)+' | '+cats[c].n+' | '+cats[c].fp+' |\n';}
   md+='\n[Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) — search by fingerprint\n';
 
   md+='\n## Features\n\n';
-  md+='- **Tuya DP** (0xEF00/TS0601) + **Standard ZCL** (TS0001–TS0504, TS011F)\n';
-  md+='- BSEED/Zemismart ZCL-only · Physical button detection · Virtual buttons\n';
-  md+='- Energy monitoring (W/V/A) · Air quality (CO2/VOC/PM2.5/HCHO) · Cover/curtain with tilt\n';
-  md+='- LED backlight control · Diagnostic reports · Auto-configured settings\n\n';
+  md+='- **Tuya DP protocol** (0xEF00/TS0601) + **Standard ZCL** clusters\n';
+  md+='- Physical button detection · Virtual buttons · LED backlight control\n';
+  md+='- Energy monitoring (W/V/A) · Air quality sensors (CO₂/VOC/PM2.5/HCHO)\n';
+  md+='- Covers & curtains with tilt · TRVs · Dimmers · IR blasters\n';
+  md+='- Auto-configured settings · Diagnostic reports\n\n';
 
   // Changelog history (collapsible) — skip current version explicitly
   const prevHist=hist.filter(h=>h.v!==stats.version);
@@ -106,15 +105,14 @@ function buildPost(stats,changelog,ghSummary){
     md+='</details>\n\n';
   }
 
-  md+='## Report Issues\n\n';
-  md+='[GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues/new) — include `_TZxxxx` fingerprint + `TSxxxx` model\n\n';
+  md+='## Report a Bug\n\n';
+  md+='Open a [GitHub Issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new) — please include your `_TZxxxx` fingerprint and `TSxxxx` model ID.\n\n';
 
-  md+='## Support the Project\n\n';
-  md+='If this app is useful to you, consider a small donation:\n';
-  md+='- **PayPal:** [paypal.me/dlnraja](https://paypal.me/dlnraja)\n';
-  md+='- **Revolut:** [revolut.me/dylanoul](https://revolut.me/dylanoul)\n\n';
+  md+='## ☕ Support the Project\n\n';
+  md+='This app is free and open-source. If it\'s useful to you, a small donation helps keep it going:\n\n';
+  md+='**PayPal:** [paypal.me/dlnraja](https://paypal.me/dlnraja) · **Revolut:** [revolut.me/dylanoul](https://revolut.me/dylanoul)\n\n';
 
-  md+='---\n*Auto-updated '+date+'*\n';
+  md+='---\n*Last updated '+date+' — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*\n';
   return md;
 }
 
