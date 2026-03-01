@@ -5,7 +5,6 @@
 const fs=require('fs'),path=require('path');
 const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
-const{textSimilarity}=require('./ai-helper');
 const{textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost}=require('./ai-helper');
 const TOPIC=140352;
 

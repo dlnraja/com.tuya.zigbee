@@ -75,6 +75,15 @@ class UsbDongleTripleDevice extends ZigBeeDevice {
         const val = map[newSettings.indicator_mode] ?? 1;
         if (ep1?.clusters?.onOff) await ep1.clusters.onOff.writeAttributes({ tuyaBacklightSwitch: val });
       }
+      if (changedKeys.includes('switch_mode')) {
+        const map = { toggle: 0, state: 1, momentary: 2 };
+        const val = map[newSettings.switch_mode] ?? 0;
+        const e001 = ep1?.clusters?.tuyaE001 || ep1?.clusters?.[0xE001] || ep1?.clusters?.[57345];
+        if (e001) {
+          await e001.writeAttributes({ switchMode: val });
+          this.log('[USB_TRIPLE] Switch mode set to', newSettings.switch_mode, '(', val, ')');
+        }
+      }
     } catch (err) {
       this.error('[USB_TRIPLE] Failed to apply settings:', err.message);
     }

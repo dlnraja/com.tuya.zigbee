@@ -547,6 +547,18 @@
       }
     },
     {
+      "id": "power_on_behavior",
+      "type": "dropdown",
+      "label": { "en": "Power-On Behavior", "nl": "Gedrag bij inschakelen", "de": "Einschaltverhalten", "fr": "Comportement à la mise sous tension" },
+      "hint": { "en": "What happens when power is restored after an outage (DP14)", "nl": "Wat er gebeurt als de stroom terugkeert na een stroomstoring" },
+      "value": "memory",
+      "values": [
+        { "id": "off", "label": { "en": "Always Off", "nl": "Altijd Uit" } },
+        { "id": "on", "label": { "en": "Always On", "nl": "Altijd Aan" } },
+        { "id": "memory", "label": { "en": "Last State", "nl": "Laatste status" } }
+      ]
+    },
+    {
       "id": "enable_power_estimation",
       "type": "checkbox",
       "label": {

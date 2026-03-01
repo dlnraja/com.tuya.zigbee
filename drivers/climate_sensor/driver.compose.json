@@ -1859,6 +1859,56 @@
     {
       "type": "group",
       "label": {
+        "en": "🔔 Alarm Thresholds (E002)",
+        "fr": "🔔 Seuils d'alarme (E002)",
+        "nl": "🔔 Alarm drempels (E002)"
+      },
+      "children": [
+        {
+          "id": "alarm_temp_max",
+          "type": "number",
+          "label": { "en": "Max Temperature Alarm (°C)", "nl": "Max temperatuur alarm (°C)", "fr": "Alarme température max (°C)" },
+          "hint": { "en": "Device will trigger alarm when temperature exceeds this value (E002 cluster, not all devices support this)", "nl": "Apparaat activeert alarm wanneer de temperatuur deze waarde overschrijdt" },
+          "value": 40,
+          "min": -20,
+          "max": 60,
+          "step": 1
+        },
+        {
+          "id": "alarm_temp_min",
+          "type": "number",
+          "label": { "en": "Min Temperature Alarm (°C)", "nl": "Min temperatuur alarm (°C)", "fr": "Alarme température min (°C)" },
+          "hint": { "en": "Device will trigger alarm when temperature drops below this value", "nl": "Apparaat activeert alarm wanneer de temperatuur onder deze waarde daalt" },
+          "value": 0,
+          "min": -20,
+          "max": 60,
+          "step": 1
+        },
+        {
+          "id": "alarm_humidity_max",
+          "type": "number",
+          "label": { "en": "Max Humidity Alarm (%)", "nl": "Max luchtvochtigheid alarm (%)", "fr": "Alarme humidité max (%)" },
+          "hint": { "en": "Device will trigger alarm when humidity exceeds this value", "nl": "Apparaat activeert alarm wanneer de luchtvochtigheid deze waarde overschrijdt" },
+          "value": 80,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "id": "alarm_humidity_min",
+          "type": "number",
+          "label": { "en": "Min Humidity Alarm (%)", "nl": "Min luchtvochtigheid alarm (%)", "fr": "Alarme humidité min (%)" },
+          "hint": { "en": "Device will trigger alarm when humidity drops below this value", "nl": "Apparaat activeert alarm wanneer de luchtvochtigheid onder deze waarde daalt" },
+          "value": 20,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
         "en": "🧪 Debug (Expert)",
         "fr": "🧪 Debug (Expert)"
       },

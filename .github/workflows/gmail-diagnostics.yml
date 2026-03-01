@@ -47,16 +47,19 @@ jobs:
           git diff --staged --quiet || git commit -m "Gmail diagnostics v${VER} $(date -u +%Y-%m-%d): ${COUNT} emails analyzed [skip ci]"
           git pull --rebase origin master || true
           git push || true
-      - name: Auto-rotate refresh token if renewed
+      - name: Auto-rotate refresh token if renewed (requires GH_PAT)
         env:
-          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          TOKEN_FILE=".github/state/_new_refresh_token.txt"
-          if [ -f "$TOKEN_FILE" ]; then
-            echo "New refresh token detected - rotating GitHub secret..."
-            cat "$TOKEN_FILE" | gh secret set GMAIL_REFRESH_TOKEN
-            rm -f "$TOKEN_FILE"
-            echo "::notice::Gmail refresh token auto-rotated"
+          TF=".github/state/_new_refresh_token.txt"
+          if [ -f "$TF" ]; then
+            if [ -z "$GH_TOKEN" ]; then
+              echo "::error::GH_PAT not set - cannot rotate token"
+            else
+              gh secret set GMAIL_REFRESH_TOKEN < "$TF"
+              rm -f "$TF"
+              echo "::notice::Gmail token auto-rotated"
+            fi
           fi
       - name: Homey Device Diagnostics
         if: always()

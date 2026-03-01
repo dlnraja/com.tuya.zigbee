@@ -23,11 +23,13 @@ async function main(){
     health.checks.push({time:now,ok:false,err:res.status});
     health.lastFail=now;
     if(e.includes('invalid_grant')){
-      console.error('TOKEN EXPIRED! Re-generate via: https://developers.google.com/oauthplayground');
-      console.log('::error::Gmail refresh token EXPIRED. Go to OAuth Playground to get a new one.');
-      // Create alert file for workflow to create GitHub issue
+      console.error('=== TOKEN EXPIRED (Testing mode 7-day limit) ===');
+      console.error('PERMANENT FIX: Google Cloud Console > OAuth consent > PUBLISH APP');
+      console.error('  URL: https://console.cloud.google.com/apis/credentials/consent');
+      console.error('TEMP FIX: Regenerate at https://developers.google.com/oauthplayground');
+      console.log('::error::Gmail refresh token EXPIRED. Publish OAuth app to Production mode.');
       fs.writeFileSync(path.join(SD,'_token_expired_alert.txt'),
-        'Gmail refresh token expired at '+now+'. Re-generate via OAuth Playground.');
+        'Gmail refresh token expired at '+now+'.\n\nFIX: Google Cloud Console > OAuth consent screen > PUBLISH APP (Testing→Production).\nOR: Regenerate token at OAuth Playground and update GMAIL_REFRESH_TOKEN secret.');
     }
     fs.writeFileSync(HF,JSON.stringify(health,null,2));
     process.exit(0);
@@ -41,14 +43,16 @@ async function main(){
     const h=Math.round(j.refresh_token_expires_in/3600);
     health.refreshTokenExpiresH=h;
     health.refreshTokenExpiresAt=new Date(Date.now()+j.refresh_token_expires_in*1000).toISOString();
-    console.log('Testing mode: refresh token expires in',h+'h ('+health.refreshTokenExpiresAt+')');
-    if(h<48){
-      console.log('::warning::Gmail refresh token expires in '+h+'h! Create new token soon.');
+    console.log('⚠ TESTING MODE: refresh token expires in',h+'h ('+health.refreshTokenExpiresAt+')');
+    console.log('  To fix permanently: Google Cloud Console > OAuth consent > PUBLISH APP');
+    if(h<72){
+      console.log('::warning::Gmail refresh token expires in '+h+'h! Publish OAuth app or regenerate token.');
       fs.writeFileSync(path.join(SD,'_token_expiring_alert.txt'),
-        'Gmail token expires in '+h+'h at '+health.refreshTokenExpiresAt);
+        'Gmail token expires in '+h+'h at '+health.refreshTokenExpiresAt+
+        '. FIX: Google Cloud Console > OAuth consent > PUBLISH APP (Testing→Production).');
     }
   } else {
-    console.log('Production mode: refresh token does not expire');
+    console.log('✓ Production mode: refresh token does not expire');
     health.refreshTokenExpiresH=null;
   }
 

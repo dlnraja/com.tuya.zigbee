@@ -19,7 +19,7 @@ const _rtF=path.join(__dirname,'..','state','ai-rate-state.json');
 function _rtLoad(){try{const j=JSON.parse(fs.readFileSync(_rtF,'utf8'));const td=new Date().toISOString().slice(0,10);if(j.dd===td){_rt.d=j.d||{};_rt.dd=td}}catch{}}
 function _rtSave(){try{_rt.dd=new Date().toISOString().slice(0,10);fs.mkdirSync(path.dirname(_rtF),{recursive:true});fs.writeFileSync(_rtF,JSON.stringify(_rt))}catch{}}
 function _rtTrack(id){const n=Date.now(),td=new Date().toISOString().slice(0,10);if(n-_rt.mt>60000){_rt.m={};_rt.mt=n}if(_rt.dd!==td){_rt.d={};_rt.dd=td}_rt.m[id]=(_rt.m[id]||0)+1;_rt.d[id]=(_rt.d[id]||0)+1;_rtSave()}
-function _rtBudget(){return'ds:'+(_rt.d['ds']||0)+' oai:'+(_rt.d['openai']||0)+' mi:'+(_rt.d['mistral']||0)}
+function _rtBudget(){return'gem:'+(_rt.d['gemini']||0)+'/1400 ds:'+(_rt.d['ds']||0)+'/100 oai:'+(_rt.d['openai']||0)+'/200 mi:'+(_rt.d['mistral']||0)+'/30'}
 function classifyTask(t,s,o){
   if(o&&o.complexity!==undefined){const m={trivial:0,low:1,medium:2,high:3};return{cx:typeof o.complexity==='string'?(m[o.complexity]??1):o.complexity,type:o.taskType||'generate'}}
   const lc=((t||'')+' '+(s||'')).toLowerCase();let type='generate';
@@ -36,9 +36,13 @@ async function callAI(text,sysPrompt,opts={}){
   // Inject project rules + architecture into system prompt
   const archContext=ARCHITECTURE_SUMMARY?'\n\n---\n'+ARCHITECTURE_SUMMARY:'';
   const fullSysPrompt=PROJECT_RULES+archContext+'\n\n'+sysPrompt;
-  // Try Gemini first (free)
+  // Try Gemini first (free: 15 RPM, 1500 RPD — cap at 1400 for safety)
+  _rtLoad();
   const gemKey=process.env.GOOGLE_API_KEY;
   if(gemKey){
+    const gemUsed=_rt.d['gemini']||0;const gemRpd=1400;
+    if(gemUsed>=gemRpd){console.log('  Gemini daily cap ('+gemUsed+'/'+gemRpd+') — skipping to preserve free tier');}
+    else{
     const models=['gemini-2.0-flash','gemini-2.0-flash-lite'];
     for(const model of models){
       if(!cbOk('gemini-'+model))continue;
@@ -49,17 +53,18 @@ async function callAI(text,sysPrompt,opts={}){
             method:'POST',headers:{'Content-Type':'application/json'},
             body:JSON.stringify({systemInstruction:{parts:[{text:fullSysPrompt}]},contents:[{parts:[{text}]}],
               generationConfig:{temperature:0.2,maxOutputTokens:maxTokens}})});
-          if(r.ok){const d=await r.json();const t=d.candidates?.[0]?.content?.parts?.[0]?.text;if(t)return{text:t.trim(),model}}
+          if(r.ok){const d=await r.json();const t=d.candidates?.[0]?.content?.parts?.[0]?.text;if(t){_rtTrack('gemini');return{text:t.trim(),model}}}
           if(r.status===429){console.log('  Gemini '+model+' 429, backoff...');if(retry>=2)cbFail('gemini-'+model,120000);continue}
           if(r.status>=500){cbFail('gemini-'+model,60000);break}
           break;
         }catch(e){if(e.name==='AbortError')console.log('  Gemini '+model+' timeout');cbFail('gemini-'+model,60000);break}
       }
     }
+    } // end gemini daily cap else
   }
-  // DeepSeek FREE: chat(V3)+reasoner(R1) — great reasoning/code
+  // DeepSeek: free credits then pay-as-you-go — cap low to conserve
   const dsKey=process.env.DEEPSEEK_API_KEY;
-  if(dsKey&&cbOk('deepseek')){const dsU=_rt.d['ds']||0;if(dsU<500){
+  if(dsKey&&cbOk('deepseek')){const dsU=_rt.d['ds']||0;if(dsU<100){
     const tk=classifyTask(text,sysPrompt,opts);const dsM=tk.cx>=3?'deepseek-reasoner':'deepseek-chat';
     console.log('  Trying DeepSeek ('+dsM+')...');try{
       const r=await fetchT('https://api.deepseek.com/chat/completions',{method:'POST',
@@ -225,28 +230,20 @@ function localFallback(text){
 
 async function analyzeImage(imageUrl,prompt){
   let b64;try{b64=await fetchImageBase64(imageUrl)}catch(e){console.log('  Img fetch fail:',e.message);return null}
-  // Gemini Vision
+  // Gemini Vision (shares daily cap with text: 1400 RPD)
+  _rtLoad();
   const gemKey=process.env.GOOGLE_API_KEY;
-  if(gemKey&&cbOk('gemini-vision')){
+  if(gemKey&&cbOk('gemini-vision')&&(_rt.d['gemini']||0)<1400){
     for(let i=0;i<2;i++){if(i)await sleep(backoff(i));try{
       const r=await fetchT('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+gemKey,{
         method:'POST',headers:{'Content-Type':'application/json'},
         body:JSON.stringify({contents:[{parts:[{text:prompt},{inlineData:{mimeType:'image/jpeg',data:b64}}]}],
           generationConfig:{temperature:0.2,maxOutputTokens:1024}})});
-      if(r.ok){const d=await r.json();return d.candidates?.[0]?.content?.parts?.[0]?.text?.trim()||null}
+      if(r.ok){const d=await r.json();const vt=d.candidates?.[0]?.content?.parts?.[0]?.text?.trim();if(vt){_rtTrack('gemini');return vt}}
     }catch{}}
   }
-  // OpenAI Vision FREE TIER (shares daily quota with text calls)
-  const oaiK=process.env.OPENAI_API_KEY;
-  if(oaiK&&cbOk('openai')&&(_rt.d['openai']||0)<200){
-    try{
-      const r=await fetchT('https://api.openai.com/v1/chat/completions',{
-        method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+oaiK},
-        body:JSON.stringify({model:'gpt-4o-mini',messages:[{role:'user',content:[{type:'text',text:prompt},{type:'image_url',image_url:{url:imageUrl}}]}],max_tokens:512})});
-      if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content?.trim();if(t){_rtTrack('openai');return t}}
-      else if(r.status===402||r.status===403)cbFail('openai',3600000);
-    }catch{cbFail('openai',120000)}
-  }
+  // OpenAI Vision DISABLED — gpt-4o-mini is PAID, not free tier. Zero billing policy.
+  // If OpenAI adds a free vision model in the future, re-enable with daily cap.
   // GitHub Models Vision fallback
   const ght=process.env.GH_PAT||process.env.GITHUB_TOKEN;
   if(ght&&cbOk('gh-vision')){

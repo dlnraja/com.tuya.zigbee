@@ -1,38 +1,34 @@
-# :house: Universal Tuya Zigbee v{{VERSION}}
+# Universal Tuya Zigbee — v{{VERSION}}
 
-> **{{DRIVERS}} drivers** · **{{FINGERPRINTS}}+ fingerprints** · **{{FLOW_CARDS}} flow cards** · SDK3 · Updated {{DATE}}
-
-Local-first Zigbee control for **all** your Tuya devices on Homey Pro — no cloud, no internet needed.
+> **The largest Tuya Zigbee app for Homey Pro** — {{DRIVERS}} drivers, {{FINGERPRINTS}}+ fingerprints, {{FLOW_CARDS}} flow cards.
+> 100% local. No cloud. No internet needed. Updated {{DATE}}.
 
 ---
 
-## :inbox_tray: Install
+## :arrow_down: Install
 
 | | |
 |---|---|
-| :white_check_mark: **Stable** | [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/) |
-| :test_tube: **Test Channel** | [Install Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) |
-| :hammer_and_wrench: **Manual** | [GitHub Source](https://github.com/dlnraja/com.tuya.zigbee) |
-
-<details><summary>:wrench: Manual install from GitHub</summary>
-
-```
-git clone https://github.com/dlnraja/com.tuya.zigbee.git
-cd com.tuya.zigbee
-npm install
-homey app install
-```
-</details>
+| :green_circle: **Stable** | **[:inbox_tray: Install from App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/)** |
+| :orange_circle: **Test** | [:test_tube: Install Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) |
 
 > :bulb: The test channel gets updates first — new fingerprints and fixes land there before stable.
 
 ---
 
-## :sparkles: What's New (v{{VERSION}})
+## :mag: Device Finder
+
+### [:point_right: Check if your device is supported](https://dlnraja.github.io/com.tuya.zigbee/)
+
+Search by manufacturer name (`_TZ3000_...`) or model ID (`TS0001`, `TS0601`...).
+
+---
+
+## :sparkles: What's New — v{{VERSION}}
 
 {{CHANGELOG_LATEST}}
 
-<details><summary>:scroll: Previous versions</summary>
+<details><summary>Previous versions</summary>
 
 {{CHANGELOG_PREVIOUS}}
 
@@ -44,69 +40,43 @@ homey app install
 
 | Category | Examples |
 |---|---|
-| :electric_plug: **Switches** | 1–6 gang, dimmers, fan switches |
+| :electric_plug: **Switches** | 1–6 gang, dimmers, DIN rail |
 | :bulb: **Lights** | LED strips, bulbs, dimmers |
-| :satellite: **Sensors** | Motion, contact, temp, humidity, smoke, water, air quality, soil |
+| :satellite: **Sensors** | Motion, contact, temp, humidity, smoke, water, air quality |
 | :thermometer: **Climate** | Thermostats, TRVs, heaters |
 | :roller_coaster: **Covers** | Curtains, blinds, garage doors |
 | :joystick: **Remotes** | Scene switches, knobs, buttons |
 | :zap: **Energy** | Smart plugs with power monitoring |
 | :lock: **Security** | Locks, sirens, smoke/gas detectors |
 | :seedling: **Garden** | Irrigation, soil sensors |
-| :robot_face: **Presence** | Radar / mmWave sensors |
+| :robot_face: **Presence** | mmWave radar sensors |
 | :desktop_computer: **IR Blasters** | Infrared controllers |
-
-:mag: [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) — search by manufacturer name or model ID
 
 ---
 
 ## :gear: Key Features
 
-- :house: **100% local** — no cloud needed
-- :repeat: **Hybrid protocol** — Tuya DP + ZCL
-- :detective: **Auto-detection** — sets up capabilities automatically
-- :joystick: **Physical button detection** — flow triggers on wall press
-- :zap: **Energy monitoring** — power, voltage, current
-- :battery: **Smart battery** — voltage-based fallback
-- :lock: **Child lock & power-on behavior**
-- :performing_arts: **1,810+ flow cards** — EN/FR/NL/DE
+- **100% local** — no cloud, no internet
+- **Hybrid protocol** — Tuya DP + ZCL auto-detect
+- **Physical button detection** — wall press triggers
+- **Energy monitoring** — W, V, A, kWh
+- **Smart battery** — CR2032/AA/Li-ion curves
+- **{{FLOW_CARDS}} flow cards** — EN/FR/NL/DE
 
 ---
 
-## :bug: Report a Bug
+## :bug: Bug Report
 
-1. Note `zb_manufacturer_name` + `zb_model_id` from device settings
-2. Get a [Zigbee Interview](https://tools.developer.homey.app/tools/zigbee)
-3. [Open Bug Report](https://github.com/dlnraja/com.tuya.zigbee/issues/new?template=02_bug_report.yml)
+1. Note `zb_manufacturer_name` + `zb_model_id` from settings
+2. Run a [Zigbee Interview](https://tools.developer.homey.app/tools/zigbee)
+3. [:pencil2: Open Bug Report](https://github.com/dlnraja/com.tuya.zigbee/issues/new?template=02_bug_report.yml)
 
-<details><summary>:stethoscope: How to get diagnostic logs</summary>
-
-**From Developer Tools:**
-1. Go to [tools.developer.homey.app/tools/zigbee](https://tools.developer.homey.app/tools/zigbee)
-2. Select your device → click **Interview**
-3. Copy the JSON and paste in your bug report
-
-**From Homey App:**
-1. Open device → **Settings** (gear icon)
-2. Note `zb_manufacturer_name` and `zb_model_id`
-3. Screenshot and attach to your report
-</details>
-
----
-
-## :new: Request a New Device
+## :new: Request a Device
 
 1. Pair your device (may show as unknown)
-2. Note `zb_manufacturer_name` + `zb_model_id` from Settings
-3. Run [Zigbee Interview](https://tools.developer.homey.app/tools/zigbee)
-4. [Open Device Request](https://github.com/dlnraja/com.tuya.zigbee/issues/new?template=01_device_request.yml)
-
----
-
-## :handshake: Contribute
-
-Fork → branch → add fingerprints → `homey app install` → PR
-[GitHub](https://github.com/dlnraja/com.tuya.zigbee)
+2. Note `zb_manufacturer_name` + `zb_model_id`
+3. Run a [Zigbee Interview](https://tools.developer.homey.app/tools/zigbee)
+4. [:pencil2: Open Device Request](https://github.com/dlnraja/com.tuya.zigbee/issues/new?template=01_device_request.yml)
 
 ---
 
@@ -121,7 +91,9 @@ Fork → branch → add fingerprints → `homey app install` → PR
 
 ---
 
-## :heart: Support
+## :heart: Support the Project
+
+If this app is useful to you, consider buying me a coffee:
 
 | | |
 |---|---|
