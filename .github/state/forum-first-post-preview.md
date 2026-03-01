@@ -1,23 +1,16 @@
-# Universal Tuya Zigbee v5.11.26
+# 🏠 Universal Tuya Zigbee v5.11.26
 
-> **143 drivers** | **5368+ fingerprints** | Updated 2026-03-01
+> **143 drivers** · **5368+ fingerprints** · Updated 2026-03-01
 
-The most comprehensive Tuya Zigbee app for Homey Pro.
+Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.
 
 ## Install
 
 **Stable:** [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/) · **Test:** [Test Channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · **Source:** [GitHub](https://github.com/dlnraja/com.tuya.zigbee)
 
-## Latest (v5.11.26)
+## What's New (v5.11.26)
 
-v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs)., Internal cleanup across several workflow scripts.
-
-## GitHub Activity
-
-- **Issues scanned:** 1162
-- **PRs scanned:** 180
-- **Issues with FPs:** 925
-
+Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs)., Internal cleanup across several workflow scripts.
 
 ## Supported Devices
 
@@ -36,18 +29,16 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 | 🔥 Heater | 4 | 19 |
 | 🚗 Garagedoor | 2 | 8 |
 | 📦 Other | 14 | 505 |
-| 📦 Curtain | 1 | 0 |
-| 📦 Vacuumcleaner | 1 | 0 |
-| 📦 Speaker | 1 | 0 |
 
 [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) — search by fingerprint
 
 ## Features
 
-- **Tuya DP** (0xEF00/TS0601) + **Standard ZCL** (TS0001–TS0504, TS011F)
-- BSEED/Zemismart ZCL-only · Physical button detection · Virtual buttons
-- Energy monitoring (W/V/A) · Air quality (CO2/VOC/PM2.5/HCHO) · Cover/curtain with tilt
-- LED backlight control · Diagnostic reports · Auto-configured settings
+- **Tuya DP protocol** (0xEF00/TS0601) + **Standard ZCL** clusters
+- Physical button detection · Virtual buttons · LED backlight control
+- Energy monitoring (W/V/A) · Air quality sensors (CO₂/VOC/PM2.5/HCHO)
+- Covers & curtains with tilt · TRVs · Dimmers · IR blasters
+- Auto-configured settings · Diagnostic reports
 
 ## Changelog
 
@@ -63,15 +54,15 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 </details>
 
-## Report Issues
+## Report a Bug
 
-[GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues/new) — include `_TZxxxx` fingerprint + `TSxxxx` model
+Open a [GitHub Issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new) — please include your `_TZxxxx` fingerprint and `TSxxxx` model ID.
 
-## Support the Project
+## ☕ Support the Project
 
-If this app is useful to you, consider a small donation:
-- **PayPal:** [paypal.me/dlnraja](https://paypal.me/dlnraja)
-- **Revolut:** [revolut.me/dlnraja](https://revolut.me/dlnraja)
+This app is free and open-source. If it's useful to you, a small donation helps keep it going:
+
+**PayPal:** [paypal.me/dlnraja](https://paypal.me/dlnraja) · **Revolut:** [revolut.me/dylanoul](https://revolut.me/dylanoul)
 
 ---
-*Auto-updated 2026-03-01*
+*Last updated 2026-03-01 — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*
