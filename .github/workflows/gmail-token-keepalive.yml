@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   issues: write
 
 concurrency:
@@ -22,6 +22,8 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -32,26 +34,36 @@ jobs:
           GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
           GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
         run: node .github/scripts/gmail-token-keepalive.js
-      - name: Auto-rotate if new token
+      - name: Auto-rotate if new token (requires GH_PAT)
         env:
-          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          TOKEN_FILE=".github/state/_new_refresh_token.txt"
-          if [ -f "$TOKEN_FILE" ]; then
-            echo "Rotating refresh token..."
-            cat "$TOKEN_FILE" | gh secret set GMAIL_REFRESH_TOKEN
-            rm -f "$TOKEN_FILE"
-            echo "::notice::Gmail refresh token auto-rotated"
-          else
-            echo "Token still valid - no rotation needed"
+          TF=".github/state/_new_refresh_token.txt"
+          if [ -f "$TF" ]; then
+            if [ -z "$GH_TOKEN" ]; then
+              echo "::error::GH_PAT not set - cannot rotate token"
+            else
+              gh secret set GMAIL_REFRESH_TOKEN < "$TF"
+              rm -f "$TF"
+              echo "::notice::Gmail token auto-rotated"
+            fi
           fi
+      - name: Commit health state
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/state/gmail-token-health.json 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "Gmail keepalive $(date -u +%Y-%m-%d_%H:%M) [skip ci]"
+          git pull --rebase origin master || true
+          git push || true
       - name: Alert if token expired or expiring
         if: always()
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: |
           if [ -f ".github/state/_token_expired_alert.txt" ]; then
-            gh issue create --title "[Alert] Gmail token EXPIRED" \
+            gh issue create --title "[Alert] Gmail token EXPIRED — regenerate at OAuth Playground" \
               --body "$(cat .github/state/_token_expired_alert.txt)" \
               --label "automation" 2>/dev/null || true
             rm -f .github/state/_token_expired_alert.txt
