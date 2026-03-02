@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.38",
+  "version": "5.11.39",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -43702,7 +43702,14 @@
           "_TZE200_yvx5lh6k",
           "_TZE204_nnrfa68v",
           "_TZE284_8b9zpaav",
-          "_TZE284_it9utkro"
+          "_TZE284_it9utkro",
+          "_TZ3000_jr2atpww",
+          "_TZ3000_kqvb8qa8",
+          "_TZ3000_krajfo4p",
+          "_TZ3000_m7wtqkfw",
+          "_TZ3000_tx5b5gp3",
+          "_TZ3000_ya9ekqwp",
+          "_TZ3000_zhhcsbrz"
         ],
         "productId": [
           "TS0005",
@@ -56395,6 +56402,7 @@
           "_TZ3000_ltt60asa",
           "_TZ3000_mwd3c2at",
           "_TZ3000_tk3s5tyg",
+          "_TZ3400_tk3s5tyg",
           "_TZ3002_sal078g8",
           "_TZ3002_sfh0jtz0",
           "_TZ3290_8xzb2ghn",
@@ -61831,6 +61839,7 @@
           "_TZ3000_bep7ccew",
           "_TZ3000_bfn1w0mm",
           "_TZ3000_cehuw1lw",
+          "_TZN3000_cfnprab5",
           "_TZ3000_dd8wwzcy",
           "_TZ3000_dpo1ysak",
           "_TZ3000_ew3ldmgx",
@@ -77198,6 +77207,7 @@
           "_TZ3000_upgcbody",
           "_TZ3000_usvkzkyn",
           "_TZ3000_v1pdxuqq",
+          "_TZ3000_v8gtiaed",
           "_TZ3000_wuep9zng",
           "_TZ3000_ww9i3e0y",
           "_TZ3000_xr3htd96",
