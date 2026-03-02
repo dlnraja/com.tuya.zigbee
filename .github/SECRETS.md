@@ -75,17 +75,49 @@ Used by: homey-device-diagnostics.js (NEW)
 | dependabot-auto-merge.yml | GH_PAT, GITHUB_TOKEN |
 | monthly-enrichment.yml | HOMEY_PAT_API |
 
-## Gmail OAuth Setup
+## Gmail OAuth Setup (Complete Guide)
 
-1. Google Cloud Console > Create project
-2. Enable Gmail API
-3. Create OAuth client ID (Web app, redirect: https://developers.google.com/oauthplayground)
-4. Get refresh token via OAuth Playground
-5. Add secrets: GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN
-6. CRITICAL: Publish OAuth consent screen (Testing mode = 7-day token expiry)
+### Step 1: Google Cloud Console
+1. https://console.cloud.google.com/ > Create project "Tuya Diagnostics"
+2. APIs & Services > Library > Enable **Gmail API**
 
-Auto-renewal: gmail-token-keepalive.yml runs 3x/day (6h, 14h, 22h UTC).
-Testing mode: token expires every 7 days. Keepalive creates GitHub issue alert when expired.
+### Step 2: OAuth Consent Screen
+1. APIs & Services > OAuth consent screen > **External**
+2. App name: `Tuya Diagnostics`, add your email
+3. Scopes: `gmail.readonly`, `userinfo.email`
+4. Test users: add your Gmail
+5. **PUBLISH APP** (Testing→Production) to avoid 7-day token expiry
+
+### Step 3: Create OAuth Client
+1. Credentials > Create > OAuth 2.0 Client ID > **Web application**
+2. Redirect URI: `https://developers.google.com/oauthplayground`
+3. Copy **Client ID** + **Client Secret**
+
+### Step 4: OAuth Playground (get refresh token)
+1. Go to https://developers.google.com/oauthplayground
+2. Click gear ⚙️ top-right:
+   - ✅ **Use your own OAuth credentials** → paste Client ID + Secret
+   - ✅ **Auto-refresh the token before it expires**
+3. Left panel: Gmail API v1 > select `gmail.readonly`
+4. **Authorize APIs** → sign in → allow
+5. **Exchange authorization code for tokens**
+6. Copy the **Refresh Token**
+
+### Step 5: GitHub Secrets
+Add to repo Settings > Secrets > Actions:
+- `GMAIL_CLIENT_ID` = Client ID from Step 3
+- `GMAIL_CLIENT_SECRET` = Client Secret from Step 3
+- `GMAIL_REFRESH_TOKEN` = Refresh Token from Step 4
+
+### Auto-Rotation
+- keepalive.yml runs 3x/day (06h, 15h, 22h UTC)
+- If Google returns a new refresh token, it auto-updates the secret via `gh secret set`
+- Requires `GH_PAT` secret with `repo` scope
+
+### Troubleshooting
+- **400 invalid_grant**: Token expired. Redo Step 4 + update secret.
+- **Testing mode**: Token expires after 7 days. PUBLISH APP (Step 2.5).
+- **Production mode**: Token never expires. Keepalive keeps it warm.
 
 ## Discourse API Key Setup
 
