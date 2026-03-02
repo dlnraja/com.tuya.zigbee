@@ -449,9 +449,31 @@ jobs:
           AUTO_ADD: ${{ inputs.dry_run == 'true' && 'false' || 'true' }}
         run: node .github/scripts/fp-research-engine.js
 
+  variant-scanner:
+    name: "Variant Scanner (Variants + PIDs)"
+    needs: [fp-research]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: "Auto-discover variants + PIDs from Z2M/Blakadder/GitHub"
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/variant-scanner.js
+
   smart-processor:
     name: "Smart Device Processor (AI Brain)"
-    needs: [fp-research]
+    needs: [variant-scanner]
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 15
