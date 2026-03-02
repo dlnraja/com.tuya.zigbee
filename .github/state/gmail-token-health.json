@@ -1,8 +1,14 @@
 {
-  "checks": [],
+  "checks": [
+    {
+      "time": "2026-03-02T17:21:47.395Z",
+      "ok": false,
+      "err": 400
+    }
+  ],
   "lastOk": null,
-  "lastFail": null,
+  "lastFail": "2026-03-02T17:21:47.395Z",
   "_lastAlert_expired": null,
-  "consecutiveFails": 0,
+  "consecutiveFails": 1,
   "_note": "Reset 2026-03-02: new GMAIL_REFRESH_TOKEN set via gh secret"
 }
