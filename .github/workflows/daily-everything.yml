@@ -226,6 +226,15 @@ jobs:
         timeout-minutes: 10
         run: node .github/scripts/enrichment-scanner.js
 
+      # ===== 9a. EXTERNAL SYNC: Download Z2M/ZHA/deCONZ + run adapter pipeline =====
+      - name: "9a. External Sources Sync (Z2M/ZHA/deCONZ adapters)"
+        id: ext_sync
+        continue-on-error: true
+        timeout-minutes: 15
+        env:
+          DRY_RUN: ${{ inputs.dry_run == 'true' && 'true' || 'false' }}
+        run: node .github/scripts/sync-external-sources.js
+
       # ===== 9b. JOHANBENDZ: Full scanner =====
       - name: "9b. JohanBendz Full Scanner"
         id: johan_scan
@@ -541,6 +550,7 @@ jobs:
           echo "| 7c | Forum Private Messages | ${{ steps.forum_pm.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 8 | External Sources | ${{ steps.ext_sources.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9 | Enrichment | ${{ steps.enrichment.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 9a | External Sync (Z2M/ZHA/deCONZ) | ${{ steps.ext_sync.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9b | JohanBendz Scanner | ${{ steps.johan_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9c | Cross-Driver Gap | ${{ steps.cross_gap.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9c2 | FP Conflict Check | ${{ steps.fp_conflicts.outcome }} |" >> $GITHUB_STEP_SUMMARY
