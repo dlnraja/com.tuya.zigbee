@@ -1,4 +1,7 @@
 {
+  "5.11.49": {
+    "en": "Universal Tuya Zigbee app v5.11.49 adds a new remote dimmer driver and a GitHub Deep Search engine for enhanced fingerprint and converter searches."
+  },
   "5.11.48": {
     "en": "Added remote dimmer driver for Lidl HG06323 TS1001 and GitHub Deep Search engine for Zigbee projects."
   },
@@ -56,10 +59,7 @@
   "5.11.30": {
     "en": "Universal Tuya Zigbee app v5.11.30: Re-enabled read-only forum intel, fixed driver misplacement, and updated 143 drivers with 3062 fingerprints."
   },
-  "5.11.29": {
-    "en": "Universal Tuya Zigbee app v5.11.29: Cleanup of scripts and workflows."
-  },
-  "5.11.49": {
-    "en": "v5.11.48: Added remote dimmer driver for Lidl HG06323 TS1001 with full Zosung protocol support., Introduced GitHub Deep Search engine to search 20+ Zigbee projects for fingerprints, device profiles, and converters., Updated app to include 145 drivers and 4959 fingerprints., Auto-published version 5.11.48 with 145 drivers and 3093 fingerprints., Updated GitHub workflows for daily and weekly externa"
+  "5.11.50": {
+    "en": "v5.11.49: Added remote dimmer driver for Lidl HG06323 TS1001 with full Zosung protocol support., Introduced GitHub Deep Search engine to search 20+ Zigbee projects for fingerprints, data points, and converters., Fixed Gmail token rotation and reset health tracking., Auto-published version 5.11.49 with 145 drivers and 3093 fingerprints., Updated workflows for daily and weekly external syncs."
   }
 }
