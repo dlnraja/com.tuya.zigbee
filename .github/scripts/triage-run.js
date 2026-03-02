@@ -32,28 +32,28 @@ function postComment(num,body){
 }
 
 function buildSupportedMsg(found){
-  const lines=found.map(([m,d])=>{
+  const parts=found.map(([m,d])=>{
     const drivers=Array.isArray(d)?d:[d];
-    return `- \`${m}\` -> **${drivers.join('**, **')}**${drivers.length>1?' (multi-productId)':''}`;
-  }).join('\n');
-  return `Hi! This device is **already supported** in the [Universal Tuya Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee) v${VER} (${DRVC} drivers, ${FPC}+ fingerprints).\n\n${lines}\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\nAfter installing, delete and re-pair your device. If issues persist, share a diagnostic report ID on the [test forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352).`;
+    return '`'+m+'` → **'+drivers[0]+'**';
+  });
+  const fpList=parts.length===1?parts[0]:parts.join(', ');
+  return `Already in the [Universal Tuya Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee) v${VER}: ${fpList}.\n\nGrab it here: https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\nRemove and re-pair after installing. If something's off, drop a diagnostic report ID on the [forum thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352).`;
 }
 
 function buildUnsupportedMsg(missing){
-  return `Hi! The fingerprint(s) \`${missing.join('`, `')}\` are **not yet in our database**. We've logged them for the next release.\n\nTo speed up support, please provide:\n1. Device interview from https://tools.developer.homey.app\n2. Z2M/ZHA device page link\n3. Blakadder page (https://zigbee.blakadder.com)\n\n**Forum:** https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352`;
+  return `\`${missing.join('`, `')}\` ${missing.length===1?'isn\'t':'aren\'t'} in the database yet — logged for the next release.\n\nA [device interview](https://tools.developer.homey.app) would help speed things up. Z2M/ZHA pages or [Blakadder](https://zigbee.blakadder.com) links are useful too.\n\nProgress updates on the [forum thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352).`;
 }
 
 function buildPRMsg(found,missing){
-  let msg=`Hi! Thanks for this PR.\n\n`;
+  let msg='Thanks for this.\n\n';
   if(found.length){
-    msg+=`**Already in our fork** (v${VER}):\n`;
-    msg+=found.map(([m,d])=>`- \`${m}\` -> **${d}**`).join('\n')+'\n\n';
+    const items=found.map(([m,d])=>'`'+m+'` ('+d+')').join(', ');
+    msg+='Already in our fork v'+VER+': '+items+'.\n\n';
   }
   if(missing.length){
-    msg+=`**New fingerprints we will add:**\n`;
-    msg+=missing.map(m=>`- \`${m}\``).join('\n')+'\n\n';
+    msg+='New ones we\'ll pick up: `'+missing.join('`, `')+'`.\n\n';
   }
-  msg+=`Tracked in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee).`;
+  msg+='Tracked in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee).';
   return msg;
 }
 
@@ -77,7 +77,7 @@ for(const it of issues){
   if(found.length&&!missing.length) msg=buildSupportedMsg(found);
   else if(missing.length&&!found.length) msg=buildUnsupportedMsg(missing);
   else if(found.length&&missing.length){
-    msg=buildSupportedMsg(found)+`\n\n---\n**Not yet supported:** \`${missing.join('`, `')}\` - logged for next release.`;
+    msg=buildSupportedMsg(found)+`\n\n---\n\`${missing.join('\`, \`')}\` ${missing.length===1?'isn\'t':'aren\'t'} in there yet — logged for next release.`;
   }
   if(msg){postComment(it.number,msg);iCommented++;}
   // Auto-close if ALL FPs supported (only on own repo)

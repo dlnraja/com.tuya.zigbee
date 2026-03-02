@@ -1,13 +1,7 @@
-Hi! 👋
+`{{MFR_NAME}}` isn't in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) yet — logged it for the next release.
 
-This device fingerprint (`{{MFR_NAME}}`) is **not yet supported**. We've logged it for the next release of [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee).
+To speed things up, a [device interview](https://tools.developer.homey.app) after pairing would help a lot. If it's a sensor, app logs showing the DP numbers are useful too (Settings → Apps → Tuya → View Log).
 
-To help us add support faster, please provide:
-1. **Diagnostic report ID** (Settings → Homey → Send diagnostic report)
-2. **Zigbee2MQTT or ZHA device page link** (if available)
-3. **Blakadder page** (https://zigbee.blakadder.com)
-4. **Device interview** from https://tools.developer.homey.app after pairing
-5. For **sensors**: app logs showing DP numbers (Settings → Apps → Tuya → View Log)
+Any Z2M/ZHA device page or [Blakadder](https://zigbee.blakadder.com) link is a bonus.
 
-Track progress on the test forum:
-https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352
+Updates on the [forum thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352).

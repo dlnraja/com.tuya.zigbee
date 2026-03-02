@@ -102,16 +102,20 @@ function validateReply(replyText, originalPostText) {
       if (d) fuzzySupported.push({fp: match, from: original, drivers: d});
     }
     if (supported.length || fuzzySupported.length) {
-      corrected = '';
-      if (supported.length) {
-        corrected += 'Your device fingerprint(s) are **supported**:\n\n';
-        for (const s of supported) corrected += `- \`${s.fp}\` → **${s.drivers.join(', ')}**\n`;
+      const parts = [];
+      if (supported.length === 1) {
+        const s = supported[0];
+        parts.push(s.fp + ' is already in the app — pair it as **' + s.drivers[0] + '**.');
+      } else if (supported.length > 1) {
+        const items = supported.map(s => s.fp + ' (' + s.drivers[0] + ')');
+        parts.push('Those are already in the app: ' + items.join(', ') + '.');
       }
       if (fuzzySupported.length) {
-        corrected += '\n**Close matches found** (possible typo in fingerprint):\n';
-        for (const s of fuzzySupported) corrected += `- \`${s.from}\` → likely \`${s.fp}\` (**${s.drivers.join(', ')}**)\n`;
+        const items = fuzzySupported.map(s => s.from + ' looks like ' + s.fp + ' which is under ' + s.drivers[0]);
+        parts.push(items.join('; ') + ' — might be a typo in the fingerprint.');
       }
-      corrected += '\nPlease **remove and re-pair**, selecting the correct type.\n';
+      parts.push('Just remove and re-pair, make sure you pick the right device type.');
+      corrected = parts.join(' ');
     }
   }
 
