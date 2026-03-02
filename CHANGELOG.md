@@ -6,7 +6,21 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.41] - 2026-03-02
+## [5.11.42] - 2026-03-02
+
+### New Features
+- Implemented deep research for all open PRs/issues, enhancing variant and product ID discovery.
+- Added automation for discovering all variants and product IDs.
+
+### Improvements
+- Updated driver capabilities with the addition of the Zigbee IR Remote driver (Moes UFO-R11 / TS1201).
+
+### CI/CD
+- Auto-published version 5.11.42 with 144 drivers and 4943 fingerprints.
+- Various scripts updated for better issue management and enrichment scanning.
+---
+
+ [5.11.41] - 2026-03-02
 
 ### New Features
 - Added auto-discovery for all variants and product IDs in variant-scanner.js.
