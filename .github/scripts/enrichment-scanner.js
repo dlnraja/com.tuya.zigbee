@@ -73,11 +73,20 @@ async function scanBlakadder(){
   console.log('  Fetching Blakadder Zigbee DB...');
   const data=await fetchJSON('https://zigbee.blakadder.com/assets/js/zigbee.json');
   if(!data||!Array.isArray(data))return[];
-  const fps=[];
+  const fps=[];const richMap=new Map();
   for(const dev of data){
-    if(!dev.zigbeeModel||!dev.manufacturerName)continue;
-    if(dev.manufacturerName.startsWith('_T'))fps.push(dev.manufacturerName);
+    if(!dev.manufacturerName||!dev.manufacturerName.startsWith('_T'))continue;
+    const fp=dev.manufacturerName;
+    fps.push(fp);
+    if(!richMap.has(fp))richMap.set(fp,{fp,pid:dev.zigbeeModel,vendor:dev.manufacturer||dev.vendor,type:dev.category||dev.deviceType,name:dev.name,url:dev.url});
   }
+  // Cache rich data for research engine
+  try{const cf=path.join(__dirname,'..','state','blakadder-cache.json');
+    fs.mkdirSync(path.dirname(cf),{recursive:true});
+    fs.writeFileSync(cf,JSON.stringify({ts:Date.now(),devices:data})+'\n');
+    console.log('  Blakadder cache saved:',data.length,'devices');
+  }catch{}
+  scanBlakadder._richMap=richMap;
   return[...new Set(fps)];
 }
 
@@ -107,11 +116,15 @@ async function main(){
   allNew.push(...zhaNew);
   await sleep(2000);
 
-  // 3. Blakadder
+  // 3. Blakadder (with rich metadata: pid, vendor, type)
   const blakadder=await scanBlakadder();
   const blakNew=blakadder.filter(fp=>!idx.has(fp));
   console.log('Blakadder: found',blakadder.length,'fps,',blakNew.length,'new');
-  for(const fp of blakNew)allNew.push({fp,source:'blakadder'});
+  const richMap=scanBlakadder._richMap||new Map();
+  for(const fp of blakNew){
+    const rich=richMap.get(fp);
+    allNew.push({fp,source:'blakadder',pid:rich?.pid,vendor:rich?.vendor,deviceType:rich?.type,name:rich?.name,url:rich?.url});
+  }
 
   // 4. Gmail diagnostics (new fingerprints from user emails)
   try{const df=path.join(__dirname,'..','state','diagnostics-report.json');
