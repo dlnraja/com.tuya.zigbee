@@ -172,6 +172,18 @@
           }
         }
       ]
+    },
+    {
+      "id": "switch_mode",
+      "type": "dropdown",
+      "label": { "en": "External Switch Type", "nl": "Extern schakelaartype", "de": "Externer Schaltertyp", "fr": "Type d'interrupteur externe" },
+      "hint": { "en": "Type of external switch connected to this relay module", "nl": "Type externe schakelaar aangesloten op deze relaismodule" },
+      "value": "toggle",
+      "values": [
+        { "id": "toggle", "label": { "en": "Toggle", "nl": "Tuimelschakelaar" } },
+        { "id": "state", "label": { "en": "State (Rocker)", "nl": "Status (Wipschakelaar)" } },
+        { "id": "momentary", "label": { "en": "Momentary (Push Button)", "nl": "Pulsdrukknop" } }
+      ]
     }
   ]
 }

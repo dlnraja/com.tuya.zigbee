@@ -68,27 +68,16 @@ const TO_DELETE = [
 const TO_EDIT = [
   // T140352 #1488: Remove bot signature
   { id: 714499, num: '140352#1488', reason: 'Remove bot signature + merge FPs',
-    newRaw: 'These fingerprints are already supported in v5.11.25:\n\n' +
-      '- `_TZ3000_itb0omhv` → **switch_1gang**\n' +
-      '- `_TZ3000_u3nv1jwk` → **switch_4gang**\n' +
-      '- `_TZE200_crq3r3la`, `_TZE200_gkfbdvyx` → **thermostat_radiator**\n' +
-      '- `_TZE204_clrdrnya` → **thermostat_radiator**\n\n' +
-      'You\'ll need to remove and re-pair your device, making sure to select the correct device type during pairing.' },
+    newRaw: 'So _TZ3000_itb0omhv goes under switch_1gang, _TZ3000_u3nv1jwk is switch_4gang, and _TZE200_crq3r3la / _TZE200_gkfbdvyx / _TZE204_clrdrnya are all thermostat_radiator — all in v5.11.25 already. Just remove and re-pair, pick the right type when it asks.' },
   // T140352 #1516: Remove "my bot" mention
   { id: 714659, num: '140352#1516', reason: 'Remove bot mention',
-    newRaw: 'Sorry for the duplicate replies earlier — there was an issue with the automated system.\n' +
-      'I\'ll check your device manually.' },
+    newRaw: 'Sorry about the duplicate replies earlier, had a script glitch. I\'ll take a look at your device.' },
   // T146735 #182: Merge content from #183, #184 into one clean reply
   { id: 714607, num: '146735#182', reason: 'Merge 3 individual replies into 1',
-    newRaw: 'Hi,\n\nIt looks like some of the device fingerprints mentioned aren\'t in our driver database yet. ' +
-      'To help add support, could you please perform a [device interview](https://tools.developer.homey.app/tools/zigbee) ' +
-      'for each unrecognized device?\n\n' +
-      'Select your device under Zigbee and share the results here — this gives us the cluster and endpoint data ' +
-      'needed to create a proper driver.\n\n' +
-      'If you\'re seeing "unknown" after pairing, try removing the device and re-pairing it.' },
+    newRaw: 'Those fingerprints aren\'t in the app yet. If you can do a [device interview](https://tools.developer.homey.app/tools/zigbee) for each one and share the results here, I can get drivers set up. If it shows "unknown" after pairing, just remove and re-pair it.' },
   // T140352 #1300: Remove bot pattern
   { id: 704939, num: '140352#1300', reason: 'Contains bot pattern',
-    newRaw: 'This fingerprint is already supported. Please remove and re-pair the device to get the correct driver.' },
+    newRaw: 'That one\'s already in the app. Just remove and re-pair, should work fine.' },
 ];
 
 function getHeaders(auth, json) {

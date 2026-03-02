@@ -1527,6 +1527,49 @@ class ClimateSensorDevice extends HybridSensorBase {
     this.log('[CLIMATE] ✅ Cleanup complete');
   }
 
+  /**
+   * v5.11.30: Handle settings changes — write E002 alarm thresholds to device
+   */
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    if (super.onSettings) {
+      await super.onSettings({ oldSettings, newSettings, changedKeys });
+    }
+
+    const e002Keys = ['alarm_temp_max', 'alarm_temp_min', 'alarm_humidity_max', 'alarm_humidity_min'];
+    const hasE002Change = changedKeys.some(k => e002Keys.includes(k));
+    if (!hasE002Change) return;
+
+    try {
+      const ep = this._zclNode?.endpoints?.[1];
+      const cluster = ep?.clusters?.tuyaE002 || ep?.clusters?.[0xE002] || ep?.clusters?.[57346];
+      if (!cluster || typeof cluster.writeAttributes !== 'function') {
+        this.log('[E002] Cluster not available on this device — thresholds saved locally only');
+        return;
+      }
+
+      const attrs = {};
+      if (changedKeys.includes('alarm_temp_max')) {
+        attrs.alarmTemperatureMax = Math.round(newSettings.alarm_temp_max * 10);
+      }
+      if (changedKeys.includes('alarm_temp_min')) {
+        attrs.alarmTemperatureMin = Math.round(newSettings.alarm_temp_min * 10);
+      }
+      if (changedKeys.includes('alarm_humidity_max')) {
+        attrs.alarmHumidityMax = Math.round(newSettings.alarm_humidity_max);
+      }
+      if (changedKeys.includes('alarm_humidity_min')) {
+        attrs.alarmHumidityMin = Math.round(newSettings.alarm_humidity_min);
+      }
+
+      if (Object.keys(attrs).length > 0) {
+        await cluster.writeAttributes(attrs);
+        this.log(`[E002] Alarm thresholds written:`, JSON.stringify(attrs));
+      }
+    } catch (e) {
+      this.log(`[E002] Write alarm thresholds failed: ${e.message}`);
+    }
+  }
+
   async onDeleted() {
     this.log('[CLIMATE] Device deleted');
     await this.onUninit();

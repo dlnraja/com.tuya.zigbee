@@ -152,7 +152,8 @@ class EnergyMonitorPlugDevice extends HybridPlugBase {
 
   // v5.11.25: Override ZCL energy divisors for devices that report in actual units
   get zclEnergyDivisors() {
-    const mfr = this.getData()?.manufacturerName || '';
+    // v5.11.27: Use correct settings key (zb_manufacturer_name), fallback to getData()
+    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
     // _TZ3210_* variants report activePower in Watts, rmsVoltage in Volts (not deci-)
     // Fix #137: _TZ3210_w0qqde0g showed 23.5V instead of 235V (was using divisor 10)
     const directUnitMfrs = ['_TZ3210_xzhnra8x', '_TZ3210_w0qqde0g'];

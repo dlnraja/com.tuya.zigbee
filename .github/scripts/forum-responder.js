@@ -38,6 +38,10 @@ function cleanReply(r){
   r=r.replace(/\bT\d{4,6}\b/g,(m)=>m==='T140352'?m:'');
   r=r.replace(/community\.homey\.app\/t\/[^\s)\]]+/gi,'');
   r=r.replace(/\b(?:topic|thread)\s*(?:#|ID)?\s*\d{4,6}\b/gi,(m)=>/140352/.test(m)?m:'');
+  // Anti-flag: strip bot patterns that trigger Discourse spam filter
+  r=r.replace(/^(?:Hi|Hey|Hello)\s+@\w+[,!]?\s*\n*/i,'');
+  r=r.replace(/^#{1,3}\s+.+$/gm,'');
+  r=r.replace(/(?:Happy to help|Let me know|Feel free to)[.!]?\s*$/gi,'');
   r=r.replace(/\n{3,}/g,'\n\n');
   return r.trim();
 }
@@ -163,7 +167,7 @@ function batchedFallback(postInfos,ver){
     const mks=[...miss.keys()];
     m+=(mks.length===1?mks[0]+' isn\'t':mks.join(', ')+' aren\'t')+' in there yet'+extInfo+'. If you can grab a [device interview](https://tools.developer.homey.app/tools/zigbee) I\'ll get it sorted.\n\n';
   }
-  m+='As always, remove and re-pair if something acts up after updating.';
+  m+='If anything acts up after updating just remove and re-pair.';
   return m;
 }
 
@@ -175,10 +179,10 @@ async function batchAI(postInfos,ver){
   let intel='';
   try{const ctx=gatherAll();intel=formatForAI(ctx);console.log('Intel context:',intel.length,'chars')}catch(e){console.warn('Intel gather:',e.message)}
 
-  let ctx='Write ONE forum reply as Dylan, a French dev. Short casual sentences, plain text, no headers/tables/emoji walls.\n';
-  ctx+='Use @mentions. Skip thank-you posts. Say "I" naturally ("I\'ll check", "I added this").\n';
-  ctx+='Weave in intel naturally — don\'t list them mechanically. End naturally, no footer.\n';
-  ctx+='BANNED: "Hi @user,", "These fingerprints are supported", "Thank you for your feedback", any ## headers.\n\n';
+  let ctx='You\'re Dylan typing a quick forum reply between coding sessions. No markdown headers, no bullet lists, no tables. Plain casual text only.\n';
+  ctx+='Sound human: "yeah that one\'s in there", "I\'ll check", "oh nice, added that last week". @mention inline, never as greeting.\n';
+  ctx+='SPAM TRIGGERS (will get flagged): "Hi @user,", bullet lists, numbered steps, "Thank you for", "Please provide", ## headers, "Happy to help", "As always,".\n';
+  ctx+='Max 200 words. Vary your opening every time. End naturally, no footer/signature.\n\n';
 
   // Add intelligence context
   if(intel)ctx+=intel+'\n';
@@ -215,11 +219,10 @@ async function batchAI(postInfos,ver){
     if(Object.keys(pi.fpResults).length)ctx+='FP DB results: '+JSON.stringify(pi.fpResults)+'\n';
     if(pi.imgCtx)ctx+='Image analysis: '+pi.imgCtx+'\n';
   }
-  ctx+='\n---\nWrite ONE short reply as Dylan (max 300 words). Plain text, casual, no formatting walls.\n';
-  ctx+='Answer directly. If missing sensor readings (fertilizer, EC, VOC), ask for app logs (Settings > Apps > Tuya > View Log) to map DPs.\n';
-  ctx+='IMPORTANT: Do NOT repeat boilerplate per device. "remove and re-pair" advice must appear ONLY ONCE at the very end, never per-device.\n';
-  ctx+='Consolidate all devices in one paragraph, then end with a single "As always, remove and re-pair if something acts up after updating."\n';
-  ctx+='Just stop after that — no footer, no signature, no links dump.\n';
+  ctx+='\n---\nWrite ONE reply, max 200 words. Sound like a real person, not support.\n';
+  ctx+='If missing sensor readings, casually ask for app logs to see DPs.\n';
+  ctx+='Never repeat same advice per device. Mention re-pair at most once, casually.\n';
+  ctx+='Do NOT start with a greeting. Do NOT end with a signature. Just stop talking.\n';
   ctx+='Reply or NULL if nothing device-related:';
 
   // Use ensemble (parallel multi-AI) for richer replies when available, fallback to single callAI

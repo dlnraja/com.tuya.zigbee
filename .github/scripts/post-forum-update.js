@@ -70,16 +70,15 @@ function parseChangelog(cl){
 
 function buildForumPost(ver,cl,stats,url){
   const items=parseChangelog(cl);
-  const hasBullets=items.length>1;
   const fmt=n=>typeof n==='number'?n.toLocaleString('en-US'):n;
-  const lines=[];
-  lines.push('**v'+ver+'** is now on the [test channel]('+url+').');
-  lines.push('');
-  if(hasBullets){for(const item of items)lines.push('- '+item)}
-  else lines.push(cl);
-  lines.push('');
-  lines.push('_'+fmt(stats.driverCount)+' drivers | '+fmt(stats.totalFp)+'+ fingerprints_');
-  return lines.join('\n');
+  // Vary the opening to avoid repetitive bot-like posts
+  const openers=['Just pushed **v'+ver+'** to the [test channel]('+url+').','**v'+ver+'** is up on [test]('+url+').','New build out — **v'+ver+'** on [test]('+url+').','Dropped **v'+ver+'** on the [test channel]('+url+') just now.'];
+  const opener=openers[Math.floor(Math.random()*openers.length)];
+  let body=opener+'\n\n';
+  if(items.length>1){body+=items.join(', ')+'.\n\n'}
+  else if(cl)body+=cl+'\n\n';
+  body+=fmt(stats.driverCount)+' drivers, '+fmt(stats.totalFp)+'+ fingerprints now.';
+  return body;
 }
 
 async function main(){
