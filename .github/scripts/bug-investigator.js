@@ -32,6 +32,12 @@ function investigate(fp,text){
   if(t.match(/battery.*100|battery.*wrong/)&&c.dev.includes('mainsPowered'))f.push('MAINS-HAS-BATTERY');
   // Missing reporting config
   if(t.match(/not report|no update|stuck/)&&!c.dev.includes('configureReporting')&&!c.base.includes('configureReporting'))f.push('NO-ZCL-REPORTING');
+  // v5.11.27: getData().manufacturerName bug — should use getSetting('zb_manufacturer_name') first
+  if(c.dev.includes('getData()?.manufacturerName')&&!c.dev.includes("getSetting('zb_manufacturer_name')"))f.push('GETDATA-MFR-BUG:device uses getData() without getSetting fallback');
+  // v5.11.27: Wrong settings key (zb_modelId instead of zb_model_id)
+  if(c.dev.includes("zb_modelId")&&!c.dev.includes("zb_model_id"))f.push('WRONG-SETTINGS-KEY:zb_modelId should be zb_model_id');
+  // v5.11.27: isTuyaDP variable used but not declared in scope
+  if(c.dev.match(/\bisTuyaDP\b/)&&!c.dev.includes('const isTuyaDP')&&!c.dev.includes('let isTuyaDP'))f.push('ISTUYADP-SCOPE:variable used but not declared locally');
   // DP mapping mismatch
   const dpMatch=t.match(/dp\s*(\d+)/gi);
   if(dpMatch){
