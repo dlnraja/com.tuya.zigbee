@@ -6,6 +6,8 @@
  */
 const fs=require('fs'),path=require('path');
 const loadJ=f=>{try{return JSON.parse(fs.readFileSync(f,'utf8'))}catch{return null}};
+let _PM=null;
+function getPM(){if(_PM)return _PM;try{_PM=require('./fp-research-engine').PID_DRIVER_MAP}catch{_PM={}}return _PM}
 
 function buildIndex(DDIR){
   const mIdx=new Map(),pIdx=new Map(),meta=new Map();
@@ -94,8 +96,12 @@ function filterNew(devs,mIdx){
 }
 
 function suggestDriver(dev,pIdx,meta){
-  // 1. ProductId match
-  for(const pid of dev.pids){const drivers=pIdx.get(pid);if(drivers?.length)return{driver:drivers[0],method:'productId',pid}}
+  const PM=getPM();
+  // 1. ProductId match — local index first, then static PID map
+  for(const pid of dev.pids){
+    const drivers=pIdx.get(pid);if(drivers?.length)return{driver:drivers[0],method:'productId',pid};
+    if(PM[pid])return{driver:PM[pid],method:'pid-map',pid};
+  }
   // 2. DP pattern heuristic
   const dpNums=new Set(dev.dps.map(d=>typeof d==='object'?(d.dp||d.id||d):d).filter(x=>typeof x==='number'));
   // Cover: DP1(control)+DP2(position)+DP5(direction) or DP7
@@ -106,12 +112,18 @@ function suggestDriver(dev,pIdx,meta){
   if(dpNums.has(1)&&dpNums.has(2)&&!dpNums.has(5))return{driver:'switch_dimmer_1gang',method:'dp-dim'};
   // Sensor: DP18(temp)+DP19(humidity) or DP1(contact)
   if(dpNums.has(18)&&dpNums.has(19))return{driver:'climate_sensor',method:'dp-climate'};
+  // Siren: DP5(volume)+DP7(duration)+DP13(alarm) or DP104(alarm)+DP116(volume)
+  if((dpNums.has(5)&&dpNums.has(13))||(dpNums.has(104)&&dpNums.has(116)))return{driver:'siren',method:'dp-siren'};
+  // Air quality: DP2(co2)+DP18(temp)+DP19(humidity)+DP20(pm25)
+  if(dpNums.has(2)&&dpNums.has(18)&&dpNums.has(20))return{driver:'air_quality_comprehensive',method:'dp-airq'};
+  // Soil sensor: DP3(moisture)+DP5(temp)+DP15(battery)
+  if(dpNums.has(3)&&dpNums.has(5)&&dpNums.has(15)&&!dpNums.has(13))return{driver:'soil_sensor',method:'dp-soil'};
   // Valve
   if(dev.interviews?.some(i=>(i.title||'').toLowerCase().includes('valve')))return{driver:'valve_irrigation',method:'interview-valve'};
   // 3. Prefix heuristic
   const fp=dev.fp;
   if(fp.startsWith('_TZE200_')||fp.startsWith('_TZE204_')||fp.startsWith('_TZE284_'))return{driver:null,method:'tuya-dp-unknown'};
-  if(fp.startsWith('_TZ3000_')||fp.startsWith('_TYZB01_'))return{driver:'switch_1gang',method:'prefix-default'};
+  if(fp.startsWith('_TZ3000_')||fp.startsWith('_TYZB01_'))return{driver:null,method:'standard-unknown'};
   return{driver:null,method:'unknown'};
 }
 

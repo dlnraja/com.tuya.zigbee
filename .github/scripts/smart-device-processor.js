@@ -37,8 +37,28 @@ async function main(){
     }
   }
   console.log('Phase 1 (productId match):',report.added.length,'added');
+  // Phase 1.5: Research engine — Blakadder/Z2M/CompScan deep lookup (saves AI budget)
+  report.researched=[];
+  let eng=null;try{eng=require('./fp-research-engine')}catch{}
+  if(eng){
+    const phase1fps=new Set(report.added.map(a=>a.fp));
+    const researchable=sorted.filter(d=>!phase1fps.has(d.fp)).slice(0,30);
+    console.log('\n== Phase 1.5: Research Engine (',researchable.length,'FPs) ==');
+    const token=process.env.GH_PAT||process.env.GITHUB_TOKEN;
+    for(const dev of researchable){
+      try{
+        const r=await eng.researchFP(dev.fp,{token,index:{mIdx,pIdx,meta}});
+        if(r.driver&&r.confidence>=60&&meta.has(r.driver)){
+          if(!DRY){addFpToDriver(r.driver,dev.fp,r.pid||null,meta);added++}
+          report.researched.push({fp:dev.fp,driver:r.driver,pid:r.pid,confidence:r.confidence,method:r.method,vendor:r.vendor});
+          console.log('  +',dev.fp,'→',r.driver,'('+r.method+':'+r.confidence+'%)');
+        }
+      }catch(e){console.log('  [RESEARCH-ERR]',dev.fp,e.message)}
+    }
+    console.log('Phase 1.5 (research):',report.researched.length,'added');
+  }
   // Phase 2: AI batch analysis for remaining
-  const remaining=sorted.filter(d=>!report.added.find(a=>a.fp===d.fp));
+  const remaining=sorted.filter(d=>!report.added.find(a=>a.fp===d.fp)&&!report.researched.find(a=>a.fp===d.fp));
   const batches=[];
   for(let i=0;i<remaining.length;i+=8)batches.push(remaining.slice(i,i+8));
   console.log('\n== Phase 2: AI Analysis (',Math.min(batches.length,MAX_AI),'batches) ==');
@@ -69,6 +89,7 @@ async function main(){
   }
   console.log('\n== Results ==');
   console.log('Added (productId):',report.added.length);
+  console.log('Added (research):',report.researched.length);
   console.log('Added (AI):',report.aiAnalyzed.length);
   console.log('Skipped:',report.skipped.length);
   console.log('AI calls used:',aiUsed,'/',MAX_AI);
@@ -77,7 +98,7 @@ async function main(){
   if(process.env.GITHUB_STEP_SUMMARY){
     let md='## Smart Device Processor\n| Metric | Count |\n|---|---|\n';
     md+='| Sources collected | '+allDevs.size+' |\n| New unsupported | '+newDevs.size+' |\n';
-    md+='| Added (productId) | '+report.added.length+' |\n| Added (AI) | '+report.aiAnalyzed.length+' |\n';
+    md+='| Added (productId) | '+report.added.length+' |\n| Added (research) | '+report.researched.length+' |\n| Added (AI) | '+report.aiAnalyzed.length+' |\n';
     md+='| AI calls | '+aiUsed+'/'+MAX_AI+' |\n';
     if(report.aiAnalyzed.length){md+='\n### AI Implementations\n';for(const a of report.aiAnalyzed.slice(0,15))md+='- `'+a.fp+'` → **'+a.driver+'** ('+a.type+', '+a.confidence+'%)\n'}
     fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,md);

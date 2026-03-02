@@ -4,6 +4,8 @@ const fs=require('fs'),path=require('path');
 const{callAI,callAIEnsemble,analyzeImage,getAIBudget,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost}=require('./ai-helper');
 const{loadFingerprints,findAllDrivers,extractMfrFromText}=require('./load-fingerprints');
 const{investigate:investigateBug}=require('./bug-investigator');
+let _researchEngine=null;
+function getResearch(){if(_researchEngine)return _researchEngine;try{_researchEngine=require('./fp-research-engine')}catch{_researchEngine=null}return _researchEngine}
 const REPOS=(process.env.REPOS||'dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee').split(',').map(s=>s.trim());
 const OWN=REPOS[0];
 const DRY=process.env.DRY_RUN==='true';
@@ -78,7 +80,7 @@ async function classifyIssue(issue,fpResults){
 }
 
 // Generate personalized AI response (with variants + bugs)
-async function generateResponse(issue,fpResults,classification,variants,bugs,imageCtx,bodyLinks,repo,bugFindings){
+async function generateResponse(issue,fpResults,classification,variants,bugs,imageCtx,bodyLinks,repo,bugFindings,researchResults){
   const ctx={appVersion:appVer,totalFPs:fps.size,driverCount:fs.readdirSync(path.join(__dirname,'..','..','drivers')).length,
     installUrl:'https://homey.app/a/com.dlnraja.tuya.zigbee/test/',
     forumUrl:'https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352',
@@ -89,6 +91,7 @@ async function generateResponse(issue,fpResults,classification,variants,bugs,ima
   prompt+='\\nContext: '+JSON.stringify(ctx);
   let text='Issue: '+issue.title+'\nBy: @'+(issue.user?.login||'?')+'\nBody: '+(issue.body||'').slice(0,2000)+'\nFP results: '+JSON.stringify(fpResults)+'\nClassification: '+JSON.stringify(classification)+'\nVariants from Z2M/ZHA/Blakadder: '+JSON.stringify(variants||[])+'\nAssociated bugs: '+JSON.stringify(bugs||[]);
   if(bugFindings&&bugFindings.length)text+='\nBug investigation findings: '+JSON.stringify(bugFindings.map(b=>({fp:b.fp,driver:b.driver,findings:b.findings,divisors:b.divisors})));
+  if(researchResults&&researchResults.length)text+='\nFP Research results: '+JSON.stringify(researchResults.map(r=>({fp:r.fp,driver:r.driver,pid:r.pid,confidence:r.confidence,method:r.method,vendor:r.vendor,deviceType:r.deviceType})));
   if(imageCtx)text+='\nImage analysis: '+imageCtx;
   if(bodyLinks&&bodyLinks.length)text+='\nExternal refs: '+bodyLinks.join(', ');
   const ai=await callAIEnsemble(text,prompt,{maxTokens:1024,complexity:'medium'}).catch(()=>null)||await callAI(text,prompt,{maxTokens:1024,complexity:'medium'});
@@ -162,6 +165,19 @@ async function processIssue(repo,issue,state,report,extData){
     await sleep(RATE_SLEEP);return;
   }
 
+  // v5.11.28: Research engine — deep classify new FPs before AI (saves budget)
+  let researchResults=[];
+  if(newFPs.length){
+    const eng=getResearch();
+    if(eng){
+      for(const fp of newFPs.slice(0,5)){
+        try{const r=await eng.researchFP(fp,{token:TOKEN});researchResults.push(r);
+          if(r.driver&&r.confidence>=60)console.log('    [RESEARCH] '+fp+' => '+r.driver+' ('+r.confidence+'% '+r.method+')');
+        }catch(e){console.log('    [RESEARCH-ERR] '+fp+': '+e.message)}
+      }
+    }
+  }
+
   // Search variants and bugs from external sources
   const variants=[];const bugs=[];
   for(const fp of allFPs){
@@ -223,7 +239,7 @@ async function processIssue(repo,issue,state,report,extData){
 
   // Respond if not already responded
   if(!hasBot){
-    const response=await generateResponse(issue,fpResults,classification,variants,bugs,imageCtx,bodyLinks,repo,bugFindings);
+    const response=await generateResponse(issue,fpResults,classification,variants,bugs,imageCtx,bodyLinks,repo,bugFindings,researchResults);
     if(response){
       const posted=await ghPost('/repos/'+repo+'/issues/'+issue.number+'/comments',{body:response});
       if(posted){
