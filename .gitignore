@@ -164,3 +164,15 @@ scripts/sync/data/
 # Claude Code session files
 .claude/
 nul
+
+# External source cache (re-downloaded by sync workflow)
+.github/cache/z2m/
+.github/cache/zha/
+.github/cache/deconz/
+.github/cache/herdsman/
+
+# Security: credentials & tokens
+credentials.json
+token.json
+oauth2.keys.json
+client_secret*.json
