@@ -1,11 +1,48 @@
 {
-  "timestamp": "2026-03-01T20:40:19.122Z",
-  "appVersion": "5.11.32",
-  "forum": 0,
-  "github": 0,
+  "timestamp": "2026-03-02T13:51:24.010Z",
+  "appVersion": "5.11.46",
+  "forum": 2,
+  "github": 1,
   "diagnostics": 8,
   "diagNewFPs": 0,
   "diagCritical": 0,
-  "forumDetails": [],
-  "githubDetails": []
+  "forumDetails": [
+    {
+      "topic": 140352,
+      "post": 1559,
+      "user": "Nicolas",
+      "fps": [
+        "dlnraja"
+      ],
+      "reply": "It looks like you've raised a valid concern regarding the vibration sensor's capabilities. Based on the fingerprint lookup, the device is recognized, and it falls under the \"generic_diy\" driver. This ",
+      "model": "gh-gpt-4o-mini"
+    },
+    {
+      "topic": 140352,
+      "post": 1561,
+      "user": "Nicolas",
+      "fps": [],
+      "reply": "@Nicolas, thank you for your detailed report and the screenshot. Let's troubleshoot the issues you're experiencing with your vibration sensor.\n\n### Device Recognition\n\nFrom the image analysis, it appe",
+      "model": "gh-Mistral-small-2503"
+    }
+  ],
+  "githubDetails": [
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "number": 152,
+      "type": "pr",
+      "user": "github-actions[bot]",
+      "fps": [
+        "danfoss",
+        "legrand",
+        "sonoff",
+        "xiaomi",
+        "test",
+        "bosch",
+        "ikea",
+        "tuya"
+      ],
+      "model": "gh-Mistral-small-2503"
+    }
+  ]
 }

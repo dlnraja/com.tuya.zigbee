@@ -1,12 +1,12 @@
 {
-  "date": "2026-03-01T09:19:36.911Z",
+  "date": "2026-03-02T14:10:56.748Z",
   "local": {
-    "drivers": 143,
-    "fps": 4186
+    "drivers": 144,
+    "fps": 4214
   },
   "forkScan": {
-    "filesScanned": 4723,
-    "newFPs": 142134
+    "filesScanned": 4716,
+    "newFPs": 142093
   },
   "upstream": {
     "prs": 0,
@@ -20058,25 +20058,7 @@
       "branch": "master-validation"
     },
     {
-      "mfr": "_TZ3000_v8gtiaed",
-      "driver": "water_leak_detector_advanced_battery",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "master-validation"
-    },
-    {
-      "mfr": "_TZ3000_v8gtiaed",
-      "driver": "water_leak_detector_battery",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "master-validation"
-    },
-    {
       "mfr": "IKEA of Sweden",
-      "driver": "water_leak_sensor_battery",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "master-validation"
-    },
-    {
-      "mfr": "_TZ3000_v8gtiaed",
       "driver": "water_leak_sensor_battery",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "master-validation"
@@ -20203,12 +20185,6 @@
     },
     {
       "mfr": "TS0505B",
-      "driver": "wireless_switch_1gang_cr2032",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "master-validation"
-    },
-    {
-      "mfr": "_TZ3400_tk3s5tyg",
       "driver": "wireless_switch_1gang_cr2032",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "master-validation"
@@ -54798,48 +54774,6 @@
       "branch": "pr-johanbendz-v5.5.518"
     },
     {
-      "mfr": "_TZ3000_jr2atpww",
-      "driver": "air_quality_comprehensive",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "test-pr-handler-1762088084385"
-    },
-    {
-      "mfr": "_TZ3000_kqvb8qa8",
-      "driver": "air_quality_comprehensive",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "test-pr-handler-1762088084385"
-    },
-    {
-      "mfr": "_TZ3000_krajfo4p",
-      "driver": "air_quality_comprehensive",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "test-pr-handler-1762088084385"
-    },
-    {
-      "mfr": "_TZ3000_m7wtqkfw",
-      "driver": "air_quality_comprehensive",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "test-pr-handler-1762088084385"
-    },
-    {
-      "mfr": "_TZ3000_tx5b5gp3",
-      "driver": "air_quality_comprehensive",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "test-pr-handler-1762088084385"
-    },
-    {
-      "mfr": "_TZ3000_ya9ekqwp",
-      "driver": "air_quality_comprehensive",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "test-pr-handler-1762088084385"
-    },
-    {
-      "mfr": "_TZ3000_zhhcsbrz",
-      "driver": "air_quality_comprehensive",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "test-pr-handler-1762088084385"
-    },
-    {
       "mfr": "lumi.light.aqcn02",
       "driver": "bulb_dimmable",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -54920,12 +54854,6 @@
     {
       "mfr": "lumi.remote.b686opcn01",
       "driver": "button_remote_6",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "test-pr-handler-1762088084385"
-    },
-    {
-      "mfr": "_TZ3400_tk3s5tyg",
-      "driver": "button_wireless_1",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "test-pr-handler-1762088084385"
     },
@@ -328980,25 +328908,7 @@
       "branch": "master-validation"
     },
     {
-      "mfr": "_TZ3000_v8gtiaed",
-      "driver": "water_leak_detector_advanced_battery",
-      "fork": "michelhelsdingen/com.tuya.zigbee",
-      "branch": "master-validation"
-    },
-    {
-      "mfr": "_TZ3000_v8gtiaed",
-      "driver": "water_leak_detector_battery",
-      "fork": "michelhelsdingen/com.tuya.zigbee",
-      "branch": "master-validation"
-    },
-    {
       "mfr": "IKEA of Sweden",
-      "driver": "water_leak_sensor_battery",
-      "fork": "michelhelsdingen/com.tuya.zigbee",
-      "branch": "master-validation"
-    },
-    {
-      "mfr": "_TZ3000_v8gtiaed",
       "driver": "water_leak_sensor_battery",
       "fork": "michelhelsdingen/com.tuya.zigbee",
       "branch": "master-validation"
@@ -329125,12 +329035,6 @@
     },
     {
       "mfr": "TS0505B",
-      "driver": "wireless_switch_1gang_cr2032",
-      "fork": "michelhelsdingen/com.tuya.zigbee",
-      "branch": "master-validation"
-    },
-    {
-      "mfr": "_TZ3400_tk3s5tyg",
       "driver": "wireless_switch_1gang_cr2032",
       "fork": "michelhelsdingen/com.tuya.zigbee",
       "branch": "master-validation"
@@ -363720,48 +363624,6 @@
       "branch": "pr-johanbendz-v5.5.518"
     },
     {
-      "mfr": "_TZ3000_jr2atpww",
-      "driver": "air_quality_comprehensive",
-      "fork": "michelhelsdingen/com.tuya.zigbee",
-      "branch": "test-pr-handler-1762088084385"
-    },
-    {
-      "mfr": "_TZ3000_kqvb8qa8",
-      "driver": "air_quality_comprehensive",
-      "fork": "michelhelsdingen/com.tuya.zigbee",
-      "branch": "test-pr-handler-1762088084385"
-    },
-    {
-      "mfr": "_TZ3000_krajfo4p",
-      "driver": "air_quality_comprehensive",
-      "fork": "michelhelsdingen/com.tuya.zigbee",
-      "branch": "test-pr-handler-1762088084385"
-    },
-    {
-      "mfr": "_TZ3000_m7wtqkfw",
-      "driver": "air_quality_comprehensive",
-      "fork": "michelhelsdingen/com.tuya.zigbee",
-      "branch": "test-pr-handler-1762088084385"
-    },
-    {
-      "mfr": "_TZ3000_tx5b5gp3",
-      "driver": "air_quality_comprehensive",
-      "fork": "michelhelsdingen/com.tuya.zigbee",
-      "branch": "test-pr-handler-1762088084385"
-    },
-    {
-      "mfr": "_TZ3000_ya9ekqwp",
-      "driver": "air_quality_comprehensive",
-      "fork": "michelhelsdingen/com.tuya.zigbee",
-      "branch": "test-pr-handler-1762088084385"
-    },
-    {
-      "mfr": "_TZ3000_zhhcsbrz",
-      "driver": "air_quality_comprehensive",
-      "fork": "michelhelsdingen/com.tuya.zigbee",
-      "branch": "test-pr-handler-1762088084385"
-    },
-    {
       "mfr": "lumi.light.aqcn02",
       "driver": "bulb_dimmable",
       "fork": "michelhelsdingen/com.tuya.zigbee",
@@ -363842,12 +363704,6 @@
     {
       "mfr": "lumi.remote.b686opcn01",
       "driver": "button_remote_6",
-      "fork": "michelhelsdingen/com.tuya.zigbee",
-      "branch": "test-pr-handler-1762088084385"
-    },
-    {
-      "mfr": "_TZ3400_tk3s5tyg",
-      "driver": "button_wireless_1",
       "fork": "michelhelsdingen/com.tuya.zigbee",
       "branch": "test-pr-handler-1762088084385"
     },
@@ -852294,48 +852150,6 @@
       "branch": "master"
     },
     {
-      "mfr": "_TZ3000_jr2atpww",
-      "driver": "air_quality_comprehensive",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "_TZ3000_kqvb8qa8",
-      "driver": "air_quality_comprehensive",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "_TZ3000_krajfo4p",
-      "driver": "air_quality_comprehensive",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "_TZ3000_m7wtqkfw",
-      "driver": "air_quality_comprehensive",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "_TZ3000_tx5b5gp3",
-      "driver": "air_quality_comprehensive",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "_TZ3000_ya9ekqwp",
-      "driver": "air_quality_comprehensive",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "_TZ3000_zhhcsbrz",
-      "driver": "air_quality_comprehensive",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
       "mfr": "lumi.light.aqcn02",
       "driver": "bulb_dimmable",
       "fork": "rsalinger/com.tuya.zigbee",
@@ -852416,12 +852230,6 @@
     {
       "mfr": "lumi.remote.b686opcn01",
       "driver": "button_remote_6",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "_TZ3400_tk3s5tyg",
-      "driver": "button_wireless_1",
       "fork": "rsalinger/com.tuya.zigbee",
       "branch": "master"
     },
@@ -852764,60 +852572,6 @@
     {
       "mfr": "lumi.ctrl_ln1",
       "driver": "switch_wall_4gang",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "lumi.ctrl_ln1",
-      "driver": "switch_wall_4gang_basic",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "lumi.ctrl_ln1",
-      "driver": "switch_wall_4gang_smart",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "lumi.ctrl_ln1",
-      "driver": "switch_wall_5gang",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "lumi.ctrl_ln1",
-      "driver": "switch_wall_6gang",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "lumi.ctrl_ln1",
-      "driver": "switch_wall_6gang_basic",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "lumi.ctrl_ln1",
-      "driver": "switch_wall_6gang_smart",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "_TZ3000_*",
-      "driver": "switch_wall_7gang",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "_TZ3000_*",
-      "driver": "switch_wall_8gang",
-      "fork": "rsalinger/com.tuya.zigbee",
-      "branch": "master"
-    },
-    {
-      "mfr": "lumi.ctrl_ln1",
-      "driver": "switch_wall_8gang_smart",
       "fork": "rsalinger/com.tuya.zigbee",
       "branch": "master"
     }
