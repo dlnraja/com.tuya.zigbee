@@ -2,12 +2,51 @@
 'use strict';
 const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
+let eng=null;try{eng=require('./fp-research-engine')}catch{}
 const SD=path.join(__dirname,'..','state');
 const SF=path.join(SD,'diagnostics-state.json');
 const RF=path.join(SD,'diagnostics-report.json');
 const ROOT=path.join(__dirname,'..','..'),DD=path.join(ROOT,'drivers');
+const DRY=process.env.DRY_RUN==='true';
 const load=()=>{try{return JSON.parse(fs.readFileSync(SF,'utf8'))}catch{return{lastCheck:null,processed:[]}}};
 const save=s=>{fs.mkdirSync(SD,{recursive:true});fs.writeFileSync(SF,JSON.stringify(s,null,2))};
+
+// === PII Sanitization: strip personal info, keep ONLY device data ===
+function sanitize(text){
+  if(!text)return'';
+  let t=text;
+  // Strip email addresses
+  t=t.replace(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g,'[email]');
+  // Strip IP addresses
+  t=t.replace(/\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/g,'[ip]');
+  // Strip IPv6
+  t=t.replace(/([0-9a-fA-F]{1,4}:){2,7}[0-9a-fA-F]{1,4}/g,'[ipv6]');
+  // Strip phone numbers
+  t=t.replace(/\+?\d[\d\s\-().]{8,}\d/g,'[phone]');
+  // Strip MAC addresses (keep Zigbee IEEE but redact partial)
+  t=t.replace(/([0-9A-Fa-f]{2}[:-]){5}[0-9A-Fa-f]{2}/g,'[mac]');
+  // Strip file paths with usernames
+  t=t.replace(/\/(?:home|Users|user)\/[^\s/]+/gi,'[path]');
+  t=t.replace(/C:\\Users\\[^\s\\]+/gi,'[path]');
+  // Strip Homey IDs / tokens (long hex/base64 strings)
+  t=t.replace(/\b[a-f0-9]{32,}\b/gi,function(m){
+    // Keep if it looks like a Zigbee IEEE address (16 hex chars)
+    if(m.length===16)return m;return'[token]';
+  });
+  // Strip "Dear X" / "Hi X" / "Hello X" patterns
+  t=t.replace(/(?:dear|hi|hello|hey)\s+[A-Z][a-z]+/gi,'[greeting]');
+  // Strip signatures (--- onwards at end)
+  t=t.replace(/\n---+\n[\s\S]{0,500}$/,'');
+  return t;
+}
+function sanitizeFrom(from){
+  if(!from)return'unknown';
+  // Keep only domain, strip personal name and email user
+  if(from.includes('notifications@github.com'))return'github';
+  if(from.includes('community.homey.app'))return'forum';
+  if(from.includes('athom.com'))return'athom';
+  return'user';
+}
 
 // Extract Tuya fingerprints from text
 const exFP=t=>({
@@ -227,6 +266,40 @@ async function mkIssue(title,body){
   return null;
 }
 
+// === Deep research + auto-add FPs from emails ===
+function addToDriver(driver,fp,pid){
+  if(DRY){console.log('  [DRY] Would add',fp||'','pid:',pid||'','→',driver);return false}
+  const f=path.join(DD,driver,'driver.compose.json');
+  try{const d=JSON.parse(fs.readFileSync(f,'utf8'));let ch=false;
+    if(fp&&!d.zigbee.manufacturerName.includes(fp)){d.zigbee.manufacturerName.push(fp);d.zigbee.manufacturerName.sort();ch=true}
+    if(pid&&!d.zigbee.productId.includes(pid)){d.zigbee.productId.push(pid);d.zigbee.productId.sort();ch=true}
+    if(ch){fs.writeFileSync(f,JSON.stringify(d,null,2)+'\n');return true}
+  }catch(e){console.log('  [ADD-ERR]',e.message)}
+  return false;
+}
+
+async function researchAndImplement(allNewFPs,idx){
+  if(!eng)return{researched:0,added:0,details:[]};
+  const engIdx=eng.buildDriverIndex();
+  let researched=0,added=0;const details=[];
+  for(const fp of allNewFPs.slice(0,40)){
+    const r=await eng.researchFP(fp,{index:engIdx});
+    researched++;
+    if(!r.driver||r.confidence<50)continue;
+    const vars=eng.generateVariants(fp);
+    // Add main FP
+    if(addToDriver(r.driver,fp,r.pid||null)){added++;details.push({fp,driver:r.driver,pid:r.pid,confidence:r.confidence})}
+    // Add confirmed variants
+    for(const v of vars){
+      const vr=await eng.researchFP(v,{index:engIdx});
+      if(vr.driver===r.driver&&vr.confidence>=40){
+        if(addToDriver(r.driver,v,vr.pid||null)){added++;details.push({fp:v,driver:r.driver,pid:vr.pid,variant:true})}
+      }
+    }
+  }
+  return{researched,added,details};
+}
+
 async function main(){
   const tk=await getToken();
   if(!tk){console.log('No Gmail token - set GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN');process.exit(0)}
@@ -236,6 +309,7 @@ async function main(){
 
   console.log('Driver index:',idx.size,'fingerprints across',new Set([...idx.values()].flat()).size,'drivers');
   console.log('Searching emails after:',new Date(after*1000).toISOString());
+  const allNewFPs=new Set();
 
   for(const m of await searchAll(tk,after)){
     if(done.has(m.id))continue;
@@ -249,8 +323,15 @@ async function main(){
     const needsAI=d.fps.mfr.length>0||d.errs.length>0||(ghInfo&&ghInfo.isNew);
     const ai=needsAI?await aiAnalyze(d,em.subj,type,xref):null;
 
-    const entry={id:m.id,type,subj:em.subj,from:em.from,date:em.date,
-      fps:d.fps,errs:d.errs,devices:d.devNames,xref,ghInfo,ai,
+    // Track new FPs for deep research
+    for(const fp of d.fps.mfr){if(!idx.has(fp))allNewFPs.add(fp)}
+
+    // === SANITIZE: strip PII before storing ===
+    const safeFrom=sanitizeFrom(em.from);
+    const safeSubj=sanitize(em.subj);
+
+    const entry={id:m.id,type,subj:safeSubj,from:safeFrom,date:em.date,
+      fps:d.fps,errs:d.errs.map(e=>sanitize(e)),devices:d.devNames,xref,ghInfo,ai,
       homeyVersion:d.homeyVersion,appVersion:d.appVersion};
     res.push(entry);
     done.add(m.id);
@@ -258,31 +339,41 @@ async function main(){
 
     // Create GitHub issue for critical/high severity
     if(ai&&(ai.severity==='critical'||ai.severity==='high')){
-      const body='**Type:** '+type+'\n**From:** '+em.from+'\n**Subject:** '+em.subj+'\n\n'+
-        '**Fingerprints:** '+JSON.stringify(d.fps)+'\n**Errors:** '+JSON.stringify(d.errs)+'\n'+
+      const issBody='**Type:** '+type+'\n**From:** '+safeFrom+'\n\n'+
+        '**Fingerprints:** '+JSON.stringify(d.fps)+'\n**Errors:** '+JSON.stringify(d.errs.map(e=>sanitize(e)))+'\n'+
         '**Cross-ref:** '+(xref.length?xref.map(x=>x.fingerprint+(x.supported?' (supported: '+x.drivers.join(',')+')':' **NEW**')).join(', '):'none')+'\n\n'+
         '**AI Analysis:**\n- Severity: '+ai.severity+'\n- Summary: '+(ai.summary||'')+'\n- Root cause: '+(ai.rootCause||'')+'\n- Fix: '+(ai.fixSuggestion||'')+'\n- Needs new driver: '+(ai.needsNewDriver||false);
-      await mkIssue(em.subj,body);
+      await mkIssue(safeSubj,issBody);
     }
+  }
+
+  // Deep research new FPs from emails
+  const newFPList=[...allNewFPs];
+  let impl={researched:0,added:0,details:[]};
+  if(newFPList.length>0){
+    console.log('\n=== Deep Research: '+newFPList.length+' new FPs ===');
+    impl=await researchAndImplement(newFPList,idx);
+    console.log('Researched:',impl.researched,'Added:',impl.added);
   }
 
   st.lastCheck=new Date().toISOString();
   st.processed=[...done].slice(-500);
   save(st);
-  fs.writeFileSync(RF,JSON.stringify({timestamp:st.lastCheck,count:res.length,
-    byType:{forum_message:res.filter(r=>r.type==='forum_message').length,
-      homey_system:res.filter(r=>r.type==='homey_system').length,
-      interview:res.filter(r=>r.type==='interview').length,
-      diagnostic:res.filter(r=>r.type==='diagnostic').length,
-      bug_report:res.filter(r=>r.type==='bug_report').length,
-      github:res.filter(r=>r.type==='github').length,
-      changelog:res.filter(r=>r.type==='changelog').length,
-      device_issue:res.filter(r=>r.type==='device_issue').length,
-      general:res.filter(r=>r.type==='general').length},
-    newFingerprints:res.flatMap(r=>(r.xref||[]).filter(x=>!x.supported).map(x=>x.fingerprint)).filter((v,i,a)=>a.indexOf(v)===i),
-    diagnostics:res},null,2));
-  console.log('Done:',res.length,'emails processed');
+  const newFPs=res.flatMap(r=>(r.xref||[]).filter(x=>!x.supported).map(x=>x.fingerprint)).filter((v,i,a)=>a.indexOf(v)===i);
   const bt={};for(const r of res)bt[r.type]=(bt[r.type]||0)+1;
+  fs.writeFileSync(RF,JSON.stringify({timestamp:st.lastCheck,count:res.length,
+    byType:bt,newFingerprints:newFPs,deepResearch:impl,diagnostics:res},null,2));
+  console.log('Done:',res.length,'emails |',newFPs.length,'new FPs |',impl.added,'auto-added');
   console.log('By type:',JSON.stringify(bt));
+
+  // GitHub step summary
+  if(process.env.GITHUB_STEP_SUMMARY){
+    let sm='## Gmail Diagnostics\n| Metric | Count |\n|---|---|\n';
+    sm+='| Emails | '+res.length+' |\n| New FPs | '+newFPs.length+' |\n';
+    sm+='| Researched | '+impl.researched+' |\n| Auto-added | '+impl.added+' |\n';
+    if(newFPs.length)sm+='\n**New FPs:** '+newFPs.map(f=>'`'+f+'`').join(', ')+'\n';
+    if(impl.details.length)sm+='\n**Implemented:**\n'+impl.details.map(d=>'- `'+d.fp+'` -> '+d.driver).join('\n')+'\n';
+    fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,sm);
+  }
 }
 main().catch(e=>{console.error(e.message);process.exit(1)});
