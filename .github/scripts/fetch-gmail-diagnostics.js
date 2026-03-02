@@ -76,7 +76,8 @@ function trackToken(ok,err){const h=loadHealth();h.checks=(h.checks||[]).slice(-
 
 async function getToken(){
   const{GMAIL_CLIENT_ID:id,GMAIL_CLIENT_SECRET:s,GMAIL_REFRESH_TOKEN:r}=process.env;
-  if(!id||!s||!r){console.log('Gmail credentials missing: need GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN');return null;}
+  if(!id||!s||!r){console.log('Gmail credentials missing');return null;}
+  const hc=loadHealth();if(hc.daysLeft!==undefined)console.log('Token age:',hc.daysOld+'d | Left:',hc.daysLeft+'d');
   const res=await fetchWithRetry('https://oauth2.googleapis.com/token',{method:'POST',
     headers:{'Content-Type':'application/x-www-form-urlencoded'},
     body:'client_id='+id+'&client_secret='+s+'&refresh_token='+r+'&grant_type=refresh_token'},{retries:3,label:'gmailToken'});

@@ -19,6 +19,10 @@
   "lastOk": null,
   "lastFail": "2026-03-02T22:10:55.778Z",
   "_lastAlert_expired": null,
+  "_lastAlert_expiring_proactive": null,
   "consecutiveFails": 3,
-  "_note": "Reset 2026-03-02: new GMAIL_REFRESH_TOKEN set via gh secret"
+  "tokenSetDate": "2026-03-02T16:49:00.000Z",
+  "daysLeft": 7,
+  "expiryEstimate": "2026-03-09T16:49:00.000Z",
+  "_note": "Reset 2026-03-02: new GMAIL_REFRESH_TOKEN set via gh secret. Testing mode: 7-day expiry cycle."
 }
