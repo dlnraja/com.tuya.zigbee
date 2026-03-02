@@ -16,7 +16,12 @@ const DRY = process.env.DRY_RUN === 'true';
 const SUM = process.env.GITHUB_STEP_SUMMARY || null;
 
 const CLOUD_BASE = 'https://api.athom.com';
-const APPS_BASE = 'https://apps-api.athom.com/api/v1';
+// v5.11.27: Try multiple API base URLs (Athom has changed these before)
+const APPS_BASES = [
+  'https://apps-api.athom.com/api/v1',
+  'https://api.athom.com/api/manager/apps',
+  'https://apps-api.athom.com/api/v2',
+];
 
 if (!PAT) { console.error('HOMEY_PAT not set'); process.exit(0); }
 
@@ -47,23 +52,43 @@ async function getDelegationToken() {
   return null;
 }
 
-// List builds: GET /app/{appId}/build
+// v5.11.27: List builds — try multiple API base URLs
 async function getBuilds(token) {
   const h = { 'Authorization': 'Bearer ' + token, 'Accept': 'application/json' };
-  const r = await apiFetch(APPS_BASE + '/app/' + APP + '/build', 'GET', h);
-  if (r.ok && Array.isArray(r.data)) return r.data;
-  if (r.ok && r.data && Array.isArray(r.data.builds)) return r.data.builds;
-  if (r.ok && r.data && Array.isArray(r.data.data)) return r.data.data;
-  log('  getBuilds: ' + r.status + ' ' + JSON.stringify(r.data).slice(0, 300));
+  const paths = ['/app/' + APP + '/build', '/app/' + APP + '/builds', '/app/' + APP];
+  for (const base of APPS_BASES) {
+    for (const p of paths) {
+      const url = base + p;
+      log('  Trying: GET ' + url);
+      const r = await apiFetch(url, 'GET', h);
+      if (r.ok) {
+        const d = r.data;
+        if (Array.isArray(d)) { log('  Found ' + d.length + ' builds at ' + url); return { builds: d, base }; }
+        if (d?.builds && Array.isArray(d.builds)) { log('  Found ' + d.builds.length + ' builds'); return { builds: d.builds, base }; }
+        if (d?.data && Array.isArray(d.data)) { log('  Found ' + d.data.length + ' builds'); return { builds: d.data, base }; }
+        log('  OK but unexpected format: ' + JSON.stringify(d).slice(0, 200));
+      } else {
+        log('  ' + r.status + ': ' + JSON.stringify(r.data).slice(0, 150));
+      }
+    }
+  }
   return null;
 }
 
-// Promote: POST /app/{appId}/build/{buildId}/channel
-async function promoteBuild(token, buildId) {
+// v5.11.27: Promote — try multiple endpoints
+async function promoteBuild(token, buildId, apiBase) {
   const h = { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' };
-  const r = await apiFetch(APPS_BASE + '/app/' + APP + '/build/' + buildId + '/channel', 'POST', h, { channel: 'test' });
-  if (r.ok) { log('  Promoted build ' + buildId + ' to test'); return true; }
-  log('  promoteBuild ' + buildId + ': ' + r.status + ' ' + JSON.stringify(r.data).slice(0, 300));
+  const endpoints = [
+    { url: apiBase + '/app/' + APP + '/build/' + buildId + '/channel', body: { channel: 'test' } },
+    { url: apiBase + '/app/' + APP + '/build/' + buildId + '/publish', body: { channel: 'test' } },
+    { url: apiBase + '/app/' + APP + '/build/' + buildId, body: { channel: 'test' }, method: 'PUT' },
+  ];
+  for (const ep of endpoints) {
+    log('  Trying: ' + (ep.method || 'POST') + ' ' + ep.url);
+    const r = await apiFetch(ep.url, ep.method || 'POST', h, ep.body);
+    if (r.ok) { log('  ✓ Promoted build ' + buildId + ' to test'); return true; }
+    log('  ' + r.status + ': ' + JSON.stringify(r.data).slice(0, 200));
+  }
   return false;
 }
 
@@ -83,13 +108,28 @@ async function main() {
 
   // Step 2: List builds and find drafts
   log('\n### Step 2: List builds');
-  const builds = await getBuilds(token);
-  if (!builds) {
-    log('Could not list builds. Check PAT validity.');
-    process.exitCode = 1;
-    return;
+  const result = await getBuilds(token);
+  if (!result) {
+    // v5.11.27: Try again with raw PAT if delegation token was used
+    if (token !== PAT) {
+      log('  Retrying with raw PAT...');
+      const r2 = await getBuilds(PAT);
+      if (!r2) {
+        log('Could not list builds with any token. Check PAT validity.');
+        process.exitCode = 1;
+        return;
+      }
+      token = PAT;
+      Object.assign(result || {}, r2);
+    } else {
+      log('Could not list builds. Check PAT validity.');
+      process.exitCode = 1;
+      return;
+    }
   }
-  log('Found ' + builds.length + ' build(s)');
+  const builds = result.builds;
+  const apiBase = result.base;
+  log('Found ' + builds.length + ' build(s) via ' + apiBase);
   for (const b of builds.slice(0, 10)) {
     const id = b.id || b._id || 'unknown';
     const bv = b.version || 'unknown';
@@ -121,11 +161,15 @@ async function main() {
   for (const b of toPromote) {
     const bid = b.id || b._id;
     if (!bid) { log('  Skipping build with no id'); continue; }
-    let ok = await promoteBuild(token, bid);
+    let ok = await promoteBuild(token, bid, apiBase);
+    if (!ok && token !== PAT) {
+      log('  Retrying with raw PAT...');
+      ok = await promoteBuild(PAT, bid, apiBase);
+    }
     if (!ok) {
-      log('  Retrying in 10s...');
-      await new Promise(r => setTimeout(r, 10000));
-      ok = await promoteBuild(token, bid);
+      log('  Retrying after 5s...');
+      await new Promise(r => setTimeout(r, 5000));
+      ok = await promoteBuild(token, bid, apiBase);
     }
     if (ok) promoted++;
   }
