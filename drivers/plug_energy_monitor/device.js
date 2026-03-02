@@ -168,7 +168,7 @@ class EnergyMonitorPlugDevice extends HybridPlugBase {
    */
   _getEnergyConfig() {
     if (!this._energyConfig) {
-      const mfr = this.getData()?.manufacturerName || '';
+      const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
       this._energyConfig = getEnergyConfig(mfr);
     }
     return this._energyConfig;
@@ -221,7 +221,7 @@ class EnergyMonitorPlugDevice extends HybridPlugBase {
    */
   get dpMappings() {
     const config = this._getEnergyConfig();
-    const mfr = this.getData()?.manufacturerName || '';
+    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
 
     if (config.protocol === 'zcl') {
       // ZCL devices use cluster attributes, not DP mappings
@@ -260,7 +260,7 @@ class EnergyMonitorPlugDevice extends HybridPlugBase {
   }
 
   async onNodeInit({ zclNode }) {
-    const mfr = this.getData()?.manufacturerName || '';
+    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
     const config = this._getEnergyConfig();
 
     this.log(`[ENERGY] ═══════════════════════════════════════════════════════`);

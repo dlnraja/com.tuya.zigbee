@@ -198,13 +198,33 @@ async function aiAnalyze(diag,subj,type,xref){
   }catch{return null}
 }
 
-// Create GitHub issue for critical findings
+// v5.11.27: Dedup — check for existing open issue with similar title before creating
+let _openIssuesCache=null;
+async function getOpenIssues(tk){
+  if(_openIssuesCache)return _openIssuesCache;
+  try{
+    const r=await fetchWithRetry('https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues?state=open&per_page=100&labels=diagnostic,auto-detected',
+      {headers:{Authorization:'Bearer '+tk,Accept:'application/vnd.github+json'}},{retries:2,label:'ghIssList'});
+    _openIssuesCache=r.ok?await r.json():[];
+  }catch{_openIssuesCache=[];}
+  return _openIssuesCache;
+}
+
+// Create GitHub issue for critical findings (with dedup)
 async function mkIssue(title,body){
   const tk=process.env.GH_PAT||process.env.GITHUB_TOKEN;if(!tk)return null;
+  const shortTitle='[Diag] '+title.substring(0,80);
+  // Dedup: skip if similar open issue exists
+  const open=await getOpenIssues(tk);
+  const key=title.toLowerCase().replace(/[^a-z0-9]/g,'').substring(0,40);
+  if(open.some(i=>i.title.toLowerCase().replace(/[^a-z0-9]/g,'').substring(0,40)===key)){
+    console.log('  Skipping duplicate issue:',shortTitle.substring(0,50));return null;
+  }
   const r=await fetchWithRetry('https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues',{
     method:'POST',headers:{Authorization:'Bearer '+tk,Accept:'application/vnd.github+json','Content-Type':'application/json'},
-    body:JSON.stringify({title:'[Diag] '+title.substring(0,80),body,labels:['diagnostic','auto-detected']})},{retries:2,label:'ghIssue'});
-  return r.ok?r.json():null;
+    body:JSON.stringify({title:shortTitle,body,labels:['diagnostic','auto-detected']})},{retries:2,label:'ghIssue'});
+  if(r.ok){const j=await r.json();_openIssuesCache?.push(j);return j;}
+  return null;
 }
 
 async function main(){
