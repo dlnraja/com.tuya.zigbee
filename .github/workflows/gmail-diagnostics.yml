@@ -28,7 +28,19 @@ jobs:
         with:
           node-version: '22'
       - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Pre-check token health
+        id: token_check
+        run: |
+          HF=".github/state/gmail-token-health.json"
+          if [ -f "$HF" ]; then
+            FAILS=$(node -p "try{JSON.parse(require('fs').readFileSync('$HF','utf8')).consecutiveFails||0}catch{0}")
+            if [ "$FAILS" -ge 3 ]; then
+              echo "::warning::Gmail token has $FAILS consecutive failures — skipping fetch"
+              echo "skip=true" >> $GITHUB_OUTPUT
+            fi
+          fi
       - name: Fetch Gmail diagnostics + Gemini analysis
+        if: steps.token_check.outputs.skip != 'true'
         env:
           GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
           GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
