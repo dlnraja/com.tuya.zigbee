@@ -192,9 +192,11 @@ Homey Pro
 | **[Blakadder](https://zigbee.blakadder.com)** | Cross-checking rebranded Tuya devices |
 | **[ZHA / zigpy](https://github.com/zigpy/zha-device-handlers)** | Device signatures, custom quirks |
 | **[deCONZ](https://github.com/dresden-elektronik/deconz-rest-plugin)** | REST plugin device data |
+| **[kkossev / Hubitat](https://github.com/kkossev/Hubitat)** | Tuya DP research, mmWave radar profiles |
+| **[Tasmota](https://github.com/arendst/Tasmota)** | Tuya device research, DP documentation |
 | **[CSA](https://csa-iot.org)** | Zigbee 3.0 certified products |
 | **[Homey Community Forum](https://community.homey.app)** | User reports, device interviews |
-| **[JohanBendz Fork](https://github.com/JohanBendz/com.tuya.zigbee)** | Community contributions |
+| **[JohanBendz Fork](https://github.com/JohanBendz/com.tuya.zigbee)** | Original app & community contributions |
 
 ---
 
@@ -331,16 +333,26 @@ This app is developed in my free time, powered by passion and coffee!
 
 A massive thank you to everyone who makes this possible:
 
-- **[JohanBendz](https://github.com/JohanBendz/com.tuya.zigbee)** — Original Tuya Zigbee app, foundational architecture
-- **[Athom](https://athom.com)** — Homey platform & SDK3
-- **[Koenkk](https://github.com/Koenkk)** & contributors to **Zigbee2MQTT**
-- **[blakadder](https://github.com/blakadder)** and the Zigbee Device Compatibility Repository
-- **[zigpy](https://github.com/zigpy)** / **ZHA** / **[zha-device-handlers](https://github.com/zigpy/zha-device-handlers)** — Python quirks & signatures
-- **[dresden-elektronik](https://github.com/dresden-elektronik)** — deCONZ REST plugin & ConBee docs
-- **[CSA](https://csa-iot.org)** — Zigbee 3.0 specifications
-- **[Tasmota](https://github.com/arendst/Tasmota)** — Cross-platform Tuya device research
-- **Community contributors**: [@mayconbordin](https://github.com/mayconbordin), [@kodalissri](https://github.com/kodalissri), [@IsaacNZ2](https://github.com/IsaacNZ2), [@pkuijpers](https://github.com/pkuijpers), [@willarentz](https://github.com/willarentz)
-- All users on the **[Homey Community Forum](https://community.homey.app)** who share device logs, diagnostics, and fingerprints — you are the backbone of this project
+### Source Projects
+- **[JohanBendz](https://github.com/JohanBendz/com.tuya.zigbee)** — Original Tuya Zigbee Homey app. His architecture and fingerprint collection laid the foundation. Merci Johan!
+- **[Athom B.V.](https://athom.com)** — Homey platform, SDK3 & Zigbee stack
+- **[Koenkk / Zigbee2MQTT](https://github.com/Koenkk/zigbee2mqtt)** — The largest Zigbee device database, DP mappings & converters
+- **[blakadder](https://zigbee.blakadder.com)** — Zigbee Device Compatibility Repository for Tuya OEM cross-references
+- **[zigpy / ZHA](https://github.com/zigpy/zha-device-handlers)** — Python quirks, device signatures & Home Assistant integration
+- **[kkossev / Hubitat](https://github.com/kkossev/Hubitat)** — Tuya DP research, mmWave radar profiles, deviceProfileV4 mappings
+- **[dresden-elektronik / deCONZ](https://github.com/dresden-elektronik)** — ConBee hardware & REST plugin docs
+- **[Tasmota](https://github.com/arendst/Tasmota)** — Cross-platform Tuya device research & DP documentation
+- **[CSA](https://csa-iot.org)** — Zigbee 3.0 protocol specifications
+
+### GitHub Contributors
+[@mayconbordin](https://github.com/mayconbordin), [@kodalissri](https://github.com/kodalissri), [@IsaacNZ2](https://github.com/IsaacNZ2), [@pkuijpers](https://github.com/pkuijpers), [@willarentz](https://github.com/willarentz) — fingerprints & fork contributions
+
+### Homey Community Forum
+Lasse_K, Rudy_De_Vylder, Peter_van_Werkhoven, Karsten_Hille, FrankP, ManuelKugler, Nicolas, blutch32, PacketNinja — bug reports, diagnostics, testing & fixes that directly improved the app
+
+All users on the **[Homey Community Forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352)** who share device logs, diagnostics, and fingerprints — you are the backbone of this project
+
+> Full credits with all contributor fingerprints: [docs/CREDITS.md](./docs/CREDITS.md)
 
 ---
 
@@ -351,12 +363,14 @@ A massive thank you to everyone who makes this possible:
 | Project | License |
 |---------|---------|
 | Zigbee2MQTT | GPL-3.0 |
-| ZHA | Apache-2.0 |
+| ZHA / zigpy | Apache-2.0 |
 | Blakadder | MIT |
 | deCONZ | BSD-3-Clause |
+| kkossev/Hubitat | Apache-2.0 |
+| Tasmota | GPL-3.0 |
 
 ---
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-03-01*
+*Last updated: 2026-03-02*
