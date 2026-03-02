@@ -31,7 +31,9 @@ const PID_DRIVER_MAP={
   'TS0601':'generic_tuya','TS1201':'ir_remote',
   'TS130F':'curtain_motor','TS0302':'thermostat_tuya_dp',
   'TS0222':'illuminance_sensor','TS0225':'presence_sensor_radar',
-  'TS0726':'hvac_air_conditioner',
+  'TS0726':'switch_wall_6gang',
+  'TS0601_3phase':'energy_meter_3phase','TS0601_meter':'power_meter',
+  'TS0016':'switch_wall_6gang','TS0006':'switch_wall_6gang',
 };
 
 const PREFIX_TYPE={
@@ -174,6 +176,51 @@ async function searchZ2M(fp,token){
   }catch{return null}
 }
 
+// === Z2M RAW CONTEXT ANALYSIS (classify TS0601 sub-types) ===
+let _z2mRawCache=null;
+async function loadZ2MRaw(){
+  if(_z2mRawCache)return _z2mRawCache;
+  const cf=path.join(STATE,'z2m-tuya-raw.txt');
+  try{const st=fs.statSync(cf);if(Date.now()-st.mtimeMs<86400000){_z2mRawCache=fs.readFileSync(cf,'utf8');return _z2mRawCache}}catch{}
+  try{
+    const r=await fetchWithRetry('https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/tuya.ts',
+      {headers:{'User-Agent':'tuya-fp-research'}},{retries:2,label:'z2m-raw'});
+    if(r.ok){_z2mRawCache=await r.text();try{fs.mkdirSync(STATE,{recursive:true});fs.writeFileSync(cf,_z2mRawCache)}catch{}}
+  }catch{}
+  return _z2mRawCache||'';
+}
+
+// Device type keywords in Z2M context near fingerprint
+const Z2M_TYPE_KEYWORDS={
+  energy_meter_3phase:['voltage_l2','current_l2','power_l2','energy_l2','power_factor_b','energy_b','power_factor_c','energy_c','phase'],
+  power_meter:['ac_frequency','power_factor','device_locating','update_frequency','meter','energy','voltage','current'],
+  thermostat_tuya_dp:['local_temperature','heating_setpoint','running_state','thermostat','valve','system_mode','preset'],
+  radiator_valve:['local_temperature_calibration','comfort_temperature','eco_temperature','battery_low','window_detection'],
+  curtain_motor:['cover','position','motor','curtain','calibration','moving'],
+  motion_sensor:['occupancy','presence','motion','pir','fading_time','illuminance_lux'],
+  presence_sensor_radar:['presence','radar','target_distance','detection_delay','mmwave'],
+  soil_sensor:['soil_moisture','temperature'],
+  smoke_detector_advanced:['smoke','fault','tamper'],
+  siren:['alarm','melody','volume','duration'],
+  dimmer_wall_1gang:['brightness','dimmer','min_brightness','max_brightness'],
+};
+
+async function classifyByZ2MContext(fp){
+  const raw=await loadZ2MRaw();
+  if(!raw)return null;
+  const sfx=fp.replace(/^_T[A-Z][A-Za-z0-9]{3,5}_/,'');
+  const idx=raw.indexOf(sfx);
+  if(idx<0)return null;
+  const ctx=raw.substring(Math.max(0,idx-600),idx+400).toLowerCase();
+  let best=null,bestScore=0;
+  for(const[driver,keywords]of Object.entries(Z2M_TYPE_KEYWORDS)){
+    const score=keywords.reduce((s,kw)=>s+(ctx.includes(kw)?1:0),0);
+    if(score>bestScore){bestScore=score;best=driver}
+  }
+  if(bestScore>=2)return{driver:best,score:bestScore,source:'z2m-context'};
+  return null;
+}
+
 // === FALSE POSITIVE DETECTION ===
 function detectFalsePositive(fp,z2mResult,blakadderResult){
   // FP is false positive if:
@@ -239,6 +286,16 @@ async function researchFP(fp,opts={}){
     const drv=PID_DRIVER_MAP[result.pid];
     if(drv){result.driver=drv;result.method='pid-map';result.pidMatch=true}
     else if(idx.pIdx.has(result.pid)){result.driver=idx.pIdx.get(result.pid)[0];result.method='pid-index';result.pidMatch=true}
+  }
+
+  // 5b. Z2M raw context classification (resolves generic_tuya → specific driver)
+  if(!result.driver||result.driver==='generic_tuya'){
+    const z2mCtx=await classifyByZ2MContext(fp);
+    if(z2mCtx&&z2mCtx.driver){
+      result.driver=z2mCtx.driver;result.method='z2m-context';
+      result.sources.push('z2m-context');result.z2mContext=z2mCtx;
+      if(!result.pid)result.pid='TS0601';
+    }
   }
 
   // 6. False positive check
@@ -320,5 +377,5 @@ async function main(){
   }
 }
 
-module.exports={PID_DRIVER_MAP,PREFIX_TYPE,VARIANT_GROUPS,isValidFP,buildDriverIndex,classifyByPrefix,generateVariants,findMissingVariants,searchCompScan,searchBlakadder,searchZ2M,detectFalsePositive,scoreConfidence,researchFP,batchResearch};
+module.exports={PID_DRIVER_MAP,PREFIX_TYPE,VARIANT_GROUPS,isValidFP,buildDriverIndex,classifyByPrefix,generateVariants,findMissingVariants,searchCompScan,searchBlakadder,searchZ2M,classifyByZ2MContext,detectFalsePositive,scoreConfidence,researchFP,batchResearch};
 if(require.main===module)main().catch(e=>{console.error('Fatal:',e.message);process.exit(1)});
