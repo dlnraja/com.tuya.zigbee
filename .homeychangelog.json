@@ -1,4 +1,7 @@
 {
+  "5.11.41": {
+    "en": "Universal Tuya Zigbee app v5.11.41 adds auto-discovery for all variants and product IDs, includes 144 drivers and 4943 fingerprints."
+  },
   "5.11.40": {
     "en": "Universal Tuya Zigbee app v5.11.40 adds 3077 new fingerprints and introduces an IR Remote driver."
   },
@@ -56,10 +59,7 @@
   "5.11.22": {
     "en": "v5.11.22: 8 new fingerprints from JohanBendz scan. Device Finder tool. Forum auth now handles 404/401 gracefully."
   },
-  "5.11.21": {
-    "en": "v5.11.21: IR Blaster learning fix, energy divisors, soil moisture fix. (1) IR Blaster ZS06 manual cluster fallback for learning mode. (2) TS011F _TZ3210_xzhnra8x configurable ZCL energy divisors. (3) _TZ3000_dd8wwzcy added. (4) Soil sensor moisture fix in AdaptiveDataParser. (5) TuyaEF00Manager skip auto-convert for divisor:1 DPs."
-  },
-  "5.11.41": {
-    "en": "v5.11.40: Added Zigbee IR Remote driver for Moes UFO-R11 / TS1201., Codified fingerprint research intelligence into the automation pipeline., Enrichment process updated with 3077 fingerprints cross-referenced from Z2M/ZHA/forum., Total drivers increased to 144, with 4943 fingerprints now supported., Automated batch close/respond for state updates."
+  "5.11.42": {
+    "en": "v5.11.41: Added auto-discovery for all variants and product IDs in variant-scanner.js., Updated app.json to reflect 144 drivers and 4943 fingerprints., Enhanced the IR Remote driver with new capabilities for learned and sent codes., Automated publishing of drivers and fingerprints., Various script updates for issue management and enrichment scanning."
   }
 }
