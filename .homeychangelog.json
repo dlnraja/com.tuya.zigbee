@@ -1,4 +1,7 @@
 {
+  "5.11.39": {
+    "en": "Added support for Zigbee IR Remote (Moes UFO-R11 / TS1201) with new capabilities."
+  },
   "5.11.38": {
     "en": "Added 10 new fingerprints and improved auto-resolution for GitHub issues in v5.11.38."
   },
@@ -56,10 +59,7 @@
   "5.11.20": {
     "en": "See .homeychangelog.json for details"
   },
-  "5.11.19": {
-    "en": "v5.11.19: Soil sensor compound frame guards, curtain motor physical button fix, CI/CD overhaul with auto-publish."
-  },
-  "5.11.39": {
-    "en": "v5.11.38: Fixed draft to test promotion pipeline., Added 10 new fingerprints from internet research and comprehensive scan., Added 9 missing fingerprints from interviews and diagnostics scan., Enhanced auto-resolution process for GitHub issues., Conducted a comprehensive audit of getSetting workflow."
+  "5.11.40": {
+    "en": "v5.11.39: Added Zigbee IR Remote driver for Moes UFO-R11 / TS1201., Introduced capabilities for IR learned code and IR send code., Added new assets and functionality in the drivers/ir_remote directory, including:, 459 insertions across 7 files."
   }
 }
