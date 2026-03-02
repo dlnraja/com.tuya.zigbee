@@ -242,8 +242,17 @@ jobs:
           AUTO_ADD: ${{ inputs.dry_run == 'true' && 'false' || 'true' }}
         run: node .github/scripts/fp-research-engine.js
 
-      # ===== 9b3. SMART DEVICE PROCESSOR: AI cross-reference + complete implementation =====
-      - name: "9b3. Smart Device Processor (AI Brain)"
+      # ===== 9b3. VARIANT SCANNER: Auto-discover variants + PIDs =====
+      - name: "9b3. Variant Scanner (Variants + PIDs)"
+        id: variant_scan
+        continue-on-error: true
+        timeout-minutes: 15
+        env:
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/variant-scanner.js
+
+      # ===== 9b4. SMART DEVICE PROCESSOR: AI cross-reference + complete implementation =====
+      - name: "9b4. Smart Device Processor (AI Brain)"
         id: smart_proc
         continue-on-error: true
         timeout-minutes: 15

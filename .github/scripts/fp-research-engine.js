@@ -71,6 +71,31 @@ function classifyByPrefix(fp){
   return'unknown';
 }
 
+// === VARIANT GENERATION (prefix swap) ===
+const VARIANT_GROUPS=[
+  ['_TZE200_','_TZE204_','_TZE284_'],
+  ['_TZ3000_','_TZ3210_','_TZ3400_'],
+  ['_TYZB01_','_TYST11_'],
+];
+function generateVariants(fp){
+  if(!fp)return[];
+  const out=[];
+  for(const g of VARIANT_GROUPS){
+    const m=g.find(p=>fp.startsWith(p));
+    if(m){const sfx=fp.slice(m.length);for(const p of g)if(p!==m)out.push(p+sfx)}
+  }
+  return out;
+}
+function findMissingVariants(mIdx){
+  const miss=[];
+  for(const[fp,drivers]of mIdx){
+    for(const v of generateVariants(fp)){
+      if(!mIdx.has(v))miss.push({known:fp,variant:v,driver:drivers[0]});
+    }
+  }
+  return miss;
+}
+
 // === COMPREHENSIVE SCAN CORRELATION ===
 let _compScanCache=null;
 function searchCompScan(fp){
@@ -295,5 +320,5 @@ async function main(){
   }
 }
 
-module.exports={PID_DRIVER_MAP,PREFIX_TYPE,isValidFP,buildDriverIndex,classifyByPrefix,searchCompScan,searchBlakadder,searchZ2M,detectFalsePositive,scoreConfidence,researchFP,batchResearch};
+module.exports={PID_DRIVER_MAP,PREFIX_TYPE,VARIANT_GROUPS,isValidFP,buildDriverIndex,classifyByPrefix,generateVariants,findMissingVariants,searchCompScan,searchBlakadder,searchZ2M,detectFalsePositive,scoreConfidence,researchFP,batchResearch};
 if(require.main===module)main().catch(e=>{console.error('Fatal:',e.message);process.exit(1)});
