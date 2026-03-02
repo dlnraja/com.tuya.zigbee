@@ -18,7 +18,7 @@ class VibrationSensorDriver extends ZigBeeDriver {
       this.homey.flow.getConditionCard('vibration_sensor_is_vibrating')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          return args.device.getCapabilityValue('alarm_generic.vibration') === true;
+          return args.device.getCapabilityValue('alarm_vibration') === true;
         });
       this.log('[FLOW] ✅ vibration_sensor_is_vibrating');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
@@ -34,7 +34,27 @@ class VibrationSensorDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ vibration_sensor_battery_above');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Vibration sensor flow cards registered');
+    // CONDITION: Vibration active
+    try {
+      this.homey.flow.getConditionCard('vibration_sensor_vibration_active')
+        .registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('alarm_vibration') === true;
+        });
+      this.log('[FLOW] ✅ vibration_sensor_vibration_active');
+    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+
+    // CONDITION: Tamper active
+    try {
+      this.homey.flow.getConditionCard('vibration_sensor_tamper_active')
+        .registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('alarm_tamper') === true;
+        });
+      this.log('[FLOW] ✅ vibration_sensor_tamper_active');
+    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+
+    this.log('[FLOW] 🎉 Vibration sensor flow cards registered (v5.11.47)');
   }
 }
 
