@@ -332,6 +332,13 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/interview-recovery.js || true
 
+      # ===== 10h2. Collect & Aggregate Diagnostics =====
+      - name: "10h2. Collect Diagnostics"
+        id: collect_diag
+        continue-on-error: true
+        timeout-minutes: 10
+        run: node .github/scripts/collect-diagnostics.js
+
       # ===== 10i. Monthly Comprehensive (inline, 1x/day at 02:00) =====
       - name: "10i. Monthly Comprehensive Sync"
         id: monthly_comp
@@ -382,7 +389,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
+          git add -A diagnostics/ .github/state/ drivers/ lib/ docs/ 2>/dev/null || git add -A
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
           F=$(node -e "const g=require('path').join('.','drivers');const fs=require('fs');let c=0;for(const d of fs.readdirSync(g)){try{const j=JSON.parse(fs.readFileSync(g+'/'+d+'/driver.compose.json','utf8'));c+=(j.zigbee?.manufacturerName?.length||0)}catch{}}console.log(c)" 2>/dev/null || echo '?')

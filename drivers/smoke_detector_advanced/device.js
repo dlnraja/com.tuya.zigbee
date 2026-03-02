@@ -207,8 +207,8 @@ class SmokeDetectorAdvancedDevice extends HybridSensorBase {
     await super.onNodeInit({ zclNode });
 
     // v5.5.503: DIAGNOSTIC LOGGING for Martijn report
-    const mfr = this.getData()?.manufacturerName || this.getSetting('zb_manufacturer_name') || 'UNKNOWN';
-    const modelId = this.getData()?.modelId || 'UNKNOWN';
+    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || 'UNKNOWN';
+    const modelId = this.getSetting?.('zb_model_id') || this.getData()?.modelId || 'UNKNOWN';
     const deviceId = this.getData()?.id || 'UNKNOWN';
 
     this.log('[SMOKE-ADV] ════════════════════════════════════════════════════════════');

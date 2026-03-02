@@ -105,7 +105,7 @@ class Button1GangDevice extends ButtonDevice {
   async _setupEnhancedPhysicalButtonDetection(zclNode) {
     this.log('[BUTTON1-PHYSICAL] 🔧 Setting up enhanced physical button detection...');
 
-    const manufacturerName = this.getData()?.manufacturerName || '';
+    const manufacturerName = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
     this.log(`[BUTTON1-PHYSICAL] Manufacturer: ${manufacturerName}`);
 
     try {
@@ -575,8 +575,8 @@ class Button1GangDevice extends ButtonDevice {
    * - COMMAND mode: on/off/toggle for group control
    */
   async _setupOnOffBinding(zclNode) {
-    const manufacturerName = this.getData()?.manufacturerName || '';
-    const modelId = this.getData()?.productId || this.getData()?.modelId || '';
+    const manufacturerName = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
+    const modelId = this.getSetting?.('zb_model_id') || this.getData()?.productId || this.getData()?.modelId || '';
     
     // v5.8.39: UNIVERSAL for ALL 1-gang buttons (was HOBEIAN-only, caused TS0041 to miss presses)
     // Root cause: Button devices send onOff COMMANDS (client-to-server). These go to
@@ -809,8 +809,8 @@ class Button1GangDevice extends ButtonDevice {
       return;
     }
 
-    const modelId = this.getData()?.modelId || '';
-    const manufacturerName = this.getData()?.manufacturerName || '';
+    const modelId = this.getSetting?.('zb_model_id') || this.getData()?.modelId || '';
+    const manufacturerName = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
     
     // Only setup for TS004F Smart Knob devices
     const isSmartKnob = modelId.toUpperCase().includes('TS004F') || 
