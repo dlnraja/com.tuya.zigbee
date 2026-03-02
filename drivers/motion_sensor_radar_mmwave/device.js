@@ -81,7 +81,7 @@ class MotionSensorRadarDevice extends HybridSensorBase {
    */
   _getModelConfig() {
     if (!this._modelConfig) {
-      const mfr = this.getData()?.manufacturerName || '';
+      const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
       this._modelConfig = getModelConfig(mfr);
       this.log(`[MMWAVE] 🧠 Model config: ${this._modelConfig.type} for ${mfr}`);
     }
