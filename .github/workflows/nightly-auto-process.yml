@@ -170,6 +170,16 @@ jobs:
           RATE_LIMIT_SLEEP: "5000"
         run: node .github/scripts/github-issue-manager.js
 
+      - name: "Diagnostic Auto-Resolver (cross-ref diags → issues/PRs)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 15
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
+        run: node .github/scripts/diagnostic-auto-resolver.js
+
       - name: Auto-Learn Fingerprints
         if: always()
         continue-on-error: true
