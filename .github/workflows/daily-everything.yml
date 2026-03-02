@@ -299,6 +299,15 @@ jobs:
         timeout-minutes: 5
         run: node .github/scripts/scan-public-apis.js || true
 
+      # ===== 9e. GITHUB DEEP SEARCH: Search 20+ projects for FPs, DPs, converters =====
+      - name: "9e. GitHub Deep Search (20+ projects)"
+        id: gh_deep_search
+        continue-on-error: true
+        timeout-minutes: 15
+        env:
+          MAX_GH_CALLS: "120"
+        run: node .github/scripts/github-deep-search.js
+
       # ===== 10. AI CHANGELOG: Generate from all findings =====
       - name: "10. AI Changelog"
         id: ai_changelog
@@ -555,6 +564,7 @@ jobs:
           echo "| 9c | Cross-Driver Gap | ${{ steps.cross_gap.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9c2 | FP Conflict Check | ${{ steps.fp_conflicts.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9d | Public APIs | ${{ steps.public_apis.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 9e | GitHub Deep Search | ${{ steps.gh_deep_search.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9b2 | Smart Device Processor | ${{ steps.smart_proc.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10 | AI Changelog | ${{ steps.ai_changelog.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10b | Fork Scanner | ${{ steps.fork_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
