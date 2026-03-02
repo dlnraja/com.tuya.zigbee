@@ -6,7 +6,25 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.38] - 2026-03-02
+## [5.11.39] - 2026-03-02
+
+### New Features
+- Added Zigbee IR Remote driver for Moes UFO-R11 / TS1201.
+- Introduced capabilities for IR learned code and IR send code.
+
+### Files Changed
+- Added new assets and functionality in the drivers/ir_remote directory, including:
+  - learnmode.svg (182 lines added)
+  - device.js (77 lines added)
+  - driver.compose.json (101 lines added)
+  - driver.flow.compose.json (50 lines added)
+  - driver.js (27 lines added)
+
+### Total Changes
+- 459 insertions across 7 files.
+---
+
+ [5.11.38] - 2026-03-02
 
 ### Bug Fixes
 - Fixed draft to test promotion pipeline.
