@@ -1,4 +1,7 @@
 {
+  "5.11.37": {
+    "en": "Universal Tuya Zigbee app v5.11.37: Added 9 missing fingerprints, improved auto-resolution, and fixed promotion pipeline."
+  },
   "5.11.36": {
     "en": "Added 9 missing fingerprints and improved diagnostics scan functionality."
   },
@@ -56,10 +59,7 @@
   "5.11.18": {
     "en": "Auto-publish via GitHub Actions"
   },
-  "5.11.17": {
-    "en": "Auto-publish via GitHub Actions"
-  },
-  "5.11.37": {
-    "en": "v5.11.36: Fixed draft to test promotion pipeline issues., Added 9 missing fingerprints from device interviews., Improved diagnostics scan functionality., Auto-published updates for version 5.11.36 with 143 drivers and 3058 fingerprints."
+  "5.11.38": {
+    "en": "v5.11.37: Fixed draft to test promotion pipeline., Added 9 missing fingerprints from device interviews., Enhanced auto-resolution process for GitHub issues., Updated diagnostics collection scripts for better data handling., Auto-published version with 143 drivers and 3067 fingerprints."
   }
 }
