@@ -4,12 +4,21 @@ const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
 const SD=path.join(__dirname,'..','state');
 const HF=path.join(SD,'gmail-token-health.json');
+const TESTING_DAYS=7;
 
-// v5.11.27: Dedup — only create alert file if no recent alert (24h cooldown)
-function shouldAlert(health,key){
+function getTokenAge(h){
+  if(!h.tokenSetDate)return{daysOld:null,daysLeft:null,expiry:null};
+  const ms=Date.now()-new Date(h.tokenSetDate).getTime();
+  const old=Math.floor(ms/864e5);
+  return{daysOld:old,daysLeft:Math.max(0,TESTING_DAYS-old),
+    expiry:new Date(new Date(h.tokenSetDate).getTime()+TESTING_DAYS*864e5).toISOString()};
+}
+
+// v5.11.27: Dedup — only create alert file if no recent alert (cooldown)
+function shouldAlert(health,key,cooldownH){
   const last=health['_lastAlert_'+key];
   if(!last)return true;
-  return(Date.now()-new Date(last).getTime())>24*3600*1000;
+  return(Date.now()-new Date(last).getTime())>(cooldownH||24)*3600*1000;
 }
 function markAlerted(health,key){health['_lastAlert_'+key]=new Date().toISOString();}
 
@@ -39,7 +48,7 @@ async function main(){
       console.error('STEP 5: Copy Refresh Token > update GMAIL_REFRESH_TOKEN secret');
       console.error('PERMANENT: Publish OAuth app > https://console.cloud.google.com/apis/credentials/consent');
       console.log('::error::Gmail refresh token EXPIRED. Regenerate via OAuth Playground (see SECRETS.md).');
-      // v5.11.27: Only create alert file if 24h cooldown passed (prevents duplicate issues)
+      health.tokenSetDate=null;health.daysLeft=0;health.expiryEstimate=null;
       if(shouldAlert(health,'expired')){
         fs.writeFileSync(path.join(SD,'_token_expired_alert.txt'),
           'Gmail refresh token expired at '+now+'.\n\n## Regenerate Token\n1. Go to https://developers.google.com/oauthplayground\n2. Click gear ⚙️ > check **Use your own OAuth credentials** > paste Client ID + Secret\n3. Check **Auto-refresh the token before it expires**\n4. Select Gmail API v1 > `gmail.readonly` > Authorize > Exchange\n5. Copy Refresh Token > update `GMAIL_REFRESH_TOKEN` secret\n\n## Permanent Fix\nPublish OAuth app: https://console.cloud.google.com/apis/credentials/consent\nTesting→Production = token never expires.');
@@ -82,6 +91,7 @@ async function main(){
     console.log('New refresh token received! Saving for auto-rotation...');
     fs.writeFileSync(path.join(SD,'_new_refresh_token.txt'),j.refresh_token);
     health.lastTokenRotation=now;
+    health.tokenSetDate=now; // Reset 7-day countdown
   }
 
   // Verify token with lightweight Gmail API call
@@ -96,6 +106,18 @@ async function main(){
   health.consecutiveFails=0;
   health.checks=(health.checks||[]).concat({time:now,ok:true}).slice(-30);
   health.testingMode=!!j.refresh_token_expires_in;
+  if(!health.tokenSetDate)health.tokenSetDate=now;
+  const age=getTokenAge(health);
+  health.daysOld=age.daysOld;health.daysLeft=age.daysLeft;health.expiryEstimate=age.expiry;
+  if(age.daysLeft!==null)console.log('Token age:',age.daysOld+'d | Left:',age.daysLeft+'d | Expiry:',age.expiry);
+  if(age.daysLeft!==null&&age.daysLeft<=2&&age.daysLeft>0){
+    console.log('::warning::Gmail token expires in '+age.daysLeft+'d! Rotate now via OAuth Playground.');
+    if(shouldAlert(health,'expiring_proactive',12)){
+      const msg='Gmail token expires in '+age.daysLeft+'d (~'+age.expiry+').\n\nRotate: https://developers.google.com/oauthplayground\nSee SECRETS.md for full steps.\nThen: gh secret set GMAIL_REFRESH_TOKEN';
+      fs.writeFileSync(path.join(SD,'_token_expiring_alert.txt'),msg);
+      markAlerted(health,'expiring_proactive');
+    }
+  }
   fs.writeFileSync(HF,JSON.stringify(health,null,2));
   console.log('Health saved. Testing mode:',health.testingMode);
 }

@@ -109,15 +109,25 @@ Add to repo Settings > Secrets > Actions:
 - `GMAIL_CLIENT_SECRET` = Client Secret from Step 3
 - `GMAIL_REFRESH_TOKEN` = Refresh Token from Step 4
 
-### Auto-Rotation
-- keepalive.yml runs 3x/day (06h, 15h, 22h UTC)
-- If Google returns a new refresh token, it auto-updates the secret via `gh secret set`
-- Requires `GH_PAT` secret with `repo` scope
+### Auto-Rotation (Testing Mode — 7-day cycle)
+- Keepalive runs **4×/day** (05h, 11h, 17h, 23h UTC)
+- Tracks token age via `tokenSetDate` in health JSON
+- **Day 5**: Warning alert + GitHub issue
+- **Day 6**: Urgent alert + GitHub issue
+- **Day 7+**: `invalid_grant` → issue with rotation steps
+- Auto-rotates if Google returns new token (needs `GH_PAT`)
+
+### Quick Rotation
+1. https://developers.google.com/oauthplayground
+2. Gear ⚙️ > Use own credentials > paste ID+Secret
+3. ✅ Auto-refresh > Gmail API v1 > gmail.readonly
+4. Authorize > Exchange > copy Refresh Token
+5. `gh secret set GMAIL_REFRESH_TOKEN` (paste token)
 
 ### Troubleshooting
-- **400 invalid_grant**: Token expired. Redo Step 4 + update secret.
-- **Testing mode**: Token expires after 7 days. PUBLISH APP (Step 2.5).
-- **Production mode**: Token never expires. Keepalive keeps it warm.
+- **400/invalid_grant**: Token expired. Do Quick Rotation above.
+- **Testing mode**: 7-day expiry. Alerts fire at day 5+6.
+- **Production mode**: Token permanent (if app published).
 
 ## Discourse API Key Setup
 
