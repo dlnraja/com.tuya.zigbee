@@ -233,8 +233,17 @@ jobs:
         timeout-minutes: 10
         run: node .github/scripts/scan-johan-full.js
 
-      # ===== 9b2. SMART DEVICE PROCESSOR: AI cross-reference + complete implementation =====
-      - name: "9b2. Smart Device Processor (AI Brain)"
+      # ===== 9b2. FP RESEARCH ENGINE: Deep classify via Z2M/Blakadder/CompScan =====
+      - name: "9b2. FP Research Engine (Deep Classify)"
+        id: fp_research
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          AUTO_ADD: ${{ inputs.dry_run == 'true' && 'false' || 'true' }}
+        run: node .github/scripts/fp-research-engine.js
+
+      # ===== 9b3. SMART DEVICE PROCESSOR: AI cross-reference + complete implementation =====
+      - name: "9b3. Smart Device Processor (AI Brain)"
         id: smart_proc
         continue-on-error: true
         timeout-minutes: 15

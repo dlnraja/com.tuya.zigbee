@@ -427,9 +427,31 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: node .github/scripts/enrichment-scanner.js
 
+  fp-research:
+    name: "FP Research Engine (Deep Classify)"
+    needs: [enrichment, scan-forks, gmail-diagnostics, github-issue-manager, forum-activity]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: "Deep classify FPs via Z2M/Blakadder/CompScan"
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          AUTO_ADD: ${{ inputs.dry_run == 'true' && 'false' || 'true' }}
+        run: node .github/scripts/fp-research-engine.js
+
   smart-processor:
     name: "Smart Device Processor (AI Brain)"
-    needs: [enrichment, scan-forks, gmail-diagnostics, github-issue-manager, forum-activity]
+    needs: [fp-research]
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 15
