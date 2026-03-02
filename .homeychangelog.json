@@ -1,4 +1,7 @@
 {
+  "5.11.44": {
+    "en": "Universal Tuya Zigbee app v5.11.44 adds new features for fingerprint research and diagnostics, with 144 drivers and 4956 fingerprints."
+  },
   "5.11.43": {
     "en": "Universal Tuya Zigbee app v5.11.43 adds new drivers and enhances diagnostics with PII sanitization."
   },
@@ -56,10 +59,7 @@
   "5.11.25": {
     "en": "v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs)., Internal cleanup across several workflow scripts."
   },
-  "5.11.24": {
-    "en": "v5.11.24: Fixed a workflow trigger race condition. Forum scanner now covers 12 topics. Better diagnostics tracking between runs."
-  },
-  "5.11.44": {
-    "en": "v5.11.43: Added support for 144 drivers and 4943 fingerprints., Enhanced fetch-gmail-diagnostics with PII sanitization., Introduced issue-deep-researcher.js to scan all open PRs/issues and auto-implement findings., Implemented variant-scanner.js to auto-discover all variants and product IDs., Updated enrichment pipeline with codified FP research intelligence."
+  "5.11.45": {
+    "en": "v5.11.44: Resolved all open PR/issue fingerprints., Enhanced fingerprint research engine with Z2M context analysis., Improved Gmail diagnostics with PII sanitization and deep research., Implemented a new issue deep researcher to scan all open PRs/issues and variants., Added a variant scanner to auto-discover all variants and product IDs."
   }
 }
