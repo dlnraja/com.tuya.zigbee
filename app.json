@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.32",
+  "version": "5.11.33",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -51056,7 +51056,8 @@
           "_TYZB01_zqvwka4k",
           "_TZe200_iba1ckek",
           "_TZe200_jfw0a4aa",
-          "_TZe200_wzk0x7fq"
+          "_TZe200_wzk0x7fq",
+          "_TZe284_tgeqdjgk"
         ],
         "productId": [
           "TS0201",
@@ -67542,6 +67543,7 @@
           "_TZ3000_iaxvag8w",
           "_TZ3000_ibpqrvcy",
           "_TZ3000_it1hm1cr",
+          "_TZ3000_itb0omhv",
           "_TZ3000_iwhuhzdo",
           "_TZ3000_jcqs2mrv",
           "_TZ3000_jd4qb8ux",
@@ -68112,6 +68114,44 @@
             "en": "Display raw battery voltage in device settings",
             "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
           }
+        },
+        {
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-On Behavior",
+            "nl": "Gedrag bij inschakelen",
+            "de": "Einschaltverhalten",
+            "fr": "Comportement à la mise sous tension"
+          },
+          "hint": {
+            "en": "What happens when power is restored after an outage (DP14)",
+            "nl": "Wat er gebeurt als de stroom terugkeert na een stroomstoring"
+          },
+          "value": "memory",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Always Off",
+                "nl": "Altijd Uit"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "Always On",
+                "nl": "Altijd Aan"
+              }
+            },
+            {
+              "id": "memory",
+              "label": {
+                "en": "Last State",
+                "nl": "Laatste status"
+              }
+            }
+          ]
         },
         {
           "id": "enable_power_estimation",
