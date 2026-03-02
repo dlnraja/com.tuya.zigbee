@@ -471,9 +471,31 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/variant-scanner.js
 
+  deep-researcher:
+    name: "Issue Deep Researcher (PRs+Issues)"
+    needs: [variant-scanner]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: "Deep research ALL open PRs/issues variants+PIDs"
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/issue-deep-researcher.js
+
   smart-processor:
     name: "Smart Device Processor (AI Brain)"
-    needs: [variant-scanner]
+    needs: [deep-researcher]
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 15

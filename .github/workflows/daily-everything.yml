@@ -251,8 +251,17 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/variant-scanner.js
 
-      # ===== 9b4. SMART DEVICE PROCESSOR: AI cross-reference + complete implementation =====
-      - name: "9b4. Smart Device Processor (AI Brain)"
+      # ===== 9b4. ISSUE DEEP RESEARCHER: Scan PRs/issues, research ALL variants+PIDs =====
+      - name: "9b4. Issue Deep Researcher (PRs+Issues)"
+        id: deep_research
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/issue-deep-researcher.js
+
+      # ===== 9b5. SMART DEVICE PROCESSOR: AI cross-reference + complete implementation =====
+      - name: "9b5. Smart Device Processor (AI Brain)"
         id: smart_proc
         continue-on-error: true
         timeout-minutes: 15
