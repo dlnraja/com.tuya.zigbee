@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.33",
+  "version": "5.11.34",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -41664,6 +41664,110 @@
         }
       },
       {
+        "id": "wall_switch_1gang_1way_set_power_on_behavior",
+        "title": {
+          "en": "Set power-on behavior",
+          "nl": "Stel inschakelgedrag in",
+          "de": "Einschaltverhalten einstellen",
+          "fr": "Définir le comportement à la mise sous tension"
+        },
+        "titleFormatted": {
+          "en": "Set power-on behavior to [[mode]]",
+          "nl": "Stel inschakelgedrag in op [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_1gang_1way"
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_1gang_1way"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Always Off",
+                  "nl": "Altijd Uit"
+                }
+              },
+              {
+                "id": "on",
+                "label": {
+                  "en": "Always On",
+                  "nl": "Altijd Aan"
+                }
+              },
+              {
+                "id": "memory",
+                "label": {
+                  "en": "Last State",
+                  "nl": "Laatste status"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_1gang_1way_set_switch_mode",
+        "title": {
+          "en": "Set external switch type",
+          "nl": "Stel extern schakelaartype in",
+          "de": "Externen Schaltertyp einstellen",
+          "fr": "Définir le type d'interrupteur externe"
+        },
+        "titleFormatted": {
+          "en": "Set external switch type to [[mode]]",
+          "nl": "Stel extern schakelaartype in op [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_1gang_1way"
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_1gang_1way"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "toggle",
+                "label": {
+                  "en": "Toggle",
+                  "nl": "Tuimelschakelaar"
+                }
+              },
+              {
+                "id": "state",
+                "label": {
+                  "en": "State (Rocker)",
+                  "nl": "Status (Wipschakelaar)"
+                }
+              },
+              {
+                "id": "momentary",
+                "label": {
+                  "en": "Momentary (Push Button)",
+                  "nl": "Pulsdrukknop"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "wall_switch_1gang_1way_set_scene_mode",
         "title": {
           "en": "Set scene mode",
@@ -41754,6 +41858,110 @@
                 "label": {
                   "en": "On when Switch OFF",
                   "nl": "Aan bij UIT"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_2gang_1way_set_power_on_behavior",
+        "title": {
+          "en": "Set power-on behavior",
+          "nl": "Stel inschakelgedrag in",
+          "de": "Einschaltverhalten einstellen",
+          "fr": "Définir le comportement à la mise sous tension"
+        },
+        "titleFormatted": {
+          "en": "Set power-on behavior to [[mode]]",
+          "nl": "Stel inschakelgedrag in op [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Always Off",
+                  "nl": "Altijd Uit"
+                }
+              },
+              {
+                "id": "on",
+                "label": {
+                  "en": "Always On",
+                  "nl": "Altijd Aan"
+                }
+              },
+              {
+                "id": "memory",
+                "label": {
+                  "en": "Last State",
+                  "nl": "Laatste status"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_2gang_1way_set_switch_mode",
+        "title": {
+          "en": "Set external switch type",
+          "nl": "Stel extern schakelaartype in",
+          "de": "Externen Schaltertyp einstellen",
+          "fr": "Définir le type d'interrupteur externe"
+        },
+        "titleFormatted": {
+          "en": "Set external switch type to [[mode]]",
+          "nl": "Stel extern schakelaartype in op [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_2gang_1way"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "toggle",
+                "label": {
+                  "en": "Toggle",
+                  "nl": "Tuimelschakelaar"
+                }
+              },
+              {
+                "id": "state",
+                "label": {
+                  "en": "State (Rocker)",
+                  "nl": "Status (Wipschakelaar)"
+                }
+              },
+              {
+                "id": "momentary",
+                "label": {
+                  "en": "Momentary (Push Button)",
+                  "nl": "Pulsdrukknop"
                 }
               }
             ]
@@ -42005,6 +42213,110 @@
                 "label": {
                   "en": "On when Switch OFF",
                   "nl": "Aan bij UIT"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_set_power_on_behavior",
+        "title": {
+          "en": "Set power-on behavior",
+          "nl": "Stel inschakelgedrag in",
+          "de": "Einschaltverhalten einstellen",
+          "fr": "Définir le comportement à la mise sous tension"
+        },
+        "titleFormatted": {
+          "en": "Set power-on behavior to [[mode]]",
+          "nl": "Stel inschakelgedrag in op [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Always Off",
+                  "nl": "Altijd Uit"
+                }
+              },
+              {
+                "id": "on",
+                "label": {
+                  "en": "Always On",
+                  "nl": "Altijd Aan"
+                }
+              },
+              {
+                "id": "memory",
+                "label": {
+                  "en": "Last State",
+                  "nl": "Laatste status"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_3gang_1way_set_switch_mode",
+        "title": {
+          "en": "Set external switch type",
+          "nl": "Stel extern schakelaartype in",
+          "de": "Externen Schaltertyp einstellen",
+          "fr": "Définir le type d'interrupteur externe"
+        },
+        "titleFormatted": {
+          "en": "Set external switch type to [[mode]]",
+          "nl": "Stel extern schakelaartype in op [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_3gang_1way"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "toggle",
+                "label": {
+                  "en": "Toggle",
+                  "nl": "Tuimelschakelaar"
+                }
+              },
+              {
+                "id": "state",
+                "label": {
+                  "en": "State (Rocker)",
+                  "nl": "Status (Wipschakelaar)"
+                }
+              },
+              {
+                "id": "momentary",
+                "label": {
+                  "en": "Momentary (Push Button)",
+                  "nl": "Pulsdrukknop"
                 }
               }
             ]
@@ -42298,6 +42610,110 @@
                 "label": {
                   "en": "On when Switch OFF",
                   "nl": "Aan bij UIT"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_set_power_on_behavior",
+        "title": {
+          "en": "Set power-on behavior",
+          "nl": "Stel inschakelgedrag in",
+          "de": "Einschaltverhalten einstellen",
+          "fr": "Définir le comportement à la mise sous tension"
+        },
+        "titleFormatted": {
+          "en": "Set power-on behavior to [[mode]]",
+          "nl": "Stel inschakelgedrag in op [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "off",
+                "label": {
+                  "en": "Always Off",
+                  "nl": "Altijd Uit"
+                }
+              },
+              {
+                "id": "on",
+                "label": {
+                  "en": "Always On",
+                  "nl": "Altijd Aan"
+                }
+              },
+              {
+                "id": "memory",
+                "label": {
+                  "en": "Last State",
+                  "nl": "Laatste status"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "wall_switch_4gang_1way_set_switch_mode",
+        "title": {
+          "en": "Set external switch type",
+          "nl": "Stel extern schakelaartype in",
+          "de": "Externen Schaltertyp einstellen",
+          "fr": "Définir le type d'interrupteur externe"
+        },
+        "titleFormatted": {
+          "en": "Set external switch type to [[mode]]",
+          "nl": "Stel extern schakelaartype in op [[mode]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_4gang_1way"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "toggle",
+                "label": {
+                  "en": "Toggle",
+                  "nl": "Tuimelschakelaar"
+                }
+              },
+              {
+                "id": "state",
+                "label": {
+                  "en": "State (Rocker)",
+                  "nl": "Status (Wipschakelaar)"
+                }
+              },
+              {
+                "id": "momentary",
+                "label": {
+                  "en": "Momentary (Push Button)",
+                  "nl": "Pulsdrukknop"
                 }
               }
             ]
@@ -51314,6 +51730,84 @@
                   }
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "🔔 Alarm Thresholds (E002)",
+            "fr": "🔔 Seuils d'alarme (E002)",
+            "nl": "🔔 Alarm drempels (E002)"
+          },
+          "children": [
+            {
+              "id": "alarm_temp_max",
+              "type": "number",
+              "label": {
+                "en": "Max Temperature Alarm (°C)",
+                "nl": "Max temperatuur alarm (°C)",
+                "fr": "Alarme température max (°C)"
+              },
+              "hint": {
+                "en": "Device will trigger alarm when temperature exceeds this value (E002 cluster, not all devices support this)",
+                "nl": "Apparaat activeert alarm wanneer de temperatuur deze waarde overschrijdt"
+              },
+              "value": 40,
+              "min": -20,
+              "max": 60,
+              "step": 1
+            },
+            {
+              "id": "alarm_temp_min",
+              "type": "number",
+              "label": {
+                "en": "Min Temperature Alarm (°C)",
+                "nl": "Min temperatuur alarm (°C)",
+                "fr": "Alarme température min (°C)"
+              },
+              "hint": {
+                "en": "Device will trigger alarm when temperature drops below this value",
+                "nl": "Apparaat activeert alarm wanneer de temperatuur onder deze waarde daalt"
+              },
+              "value": 0,
+              "min": -20,
+              "max": 60,
+              "step": 1
+            },
+            {
+              "id": "alarm_humidity_max",
+              "type": "number",
+              "label": {
+                "en": "Max Humidity Alarm (%)",
+                "nl": "Max luchtvochtigheid alarm (%)",
+                "fr": "Alarme humidité max (%)"
+              },
+              "hint": {
+                "en": "Device will trigger alarm when humidity exceeds this value",
+                "nl": "Apparaat activeert alarm wanneer de luchtvochtigheid deze waarde overschrijdt"
+              },
+              "value": 80,
+              "min": 0,
+              "max": 100,
+              "step": 1
+            },
+            {
+              "id": "alarm_humidity_min",
+              "type": "number",
+              "label": {
+                "en": "Min Humidity Alarm (%)",
+                "nl": "Min luchtvochtigheid alarm (%)",
+                "fr": "Alarme humidité min (%)"
+              },
+              "hint": {
+                "en": "Device will trigger alarm when humidity drops below this value",
+                "nl": "Apparaat activeert alarm wanneer de luchtvochtigheid onder deze waarde daalt"
+              },
+              "value": 20,
+              "min": 0,
+              "max": 100,
+              "step": 1
             }
           ]
         },
@@ -61347,6 +61841,7 @@
           "_TZ3000_hyfvrar3",
           "_TZ3000_i8l0nqdu",
           "_TZ3000_ibefeicf",
+          "_TZ3000_iktiy8ue",
           "_TZ3000_iksasdbv",
           "_TZ3000_j1v25l17",
           "_TZ3000_jvzvulen",
@@ -68809,6 +69304,44 @@
           }
         },
         {
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-On Behavior",
+            "nl": "Gedrag bij inschakelen",
+            "de": "Einschaltverhalten",
+            "fr": "Comportement à la mise sous tension"
+          },
+          "hint": {
+            "en": "What happens when power is restored after an outage (DP14)",
+            "nl": "Wat er gebeurt als de stroom terugkeert na een stroomstoring"
+          },
+          "value": "memory",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Always Off",
+                "nl": "Altijd Uit"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "Always On",
+                "nl": "Altijd Aan"
+              }
+            },
+            {
+              "id": "memory",
+              "label": {
+                "en": "Last State",
+                "nl": "Laatste status"
+              }
+            }
+          ]
+        },
+        {
           "id": "enable_power_estimation",
           "type": "checkbox",
           "label": {
@@ -69442,6 +69975,44 @@
             "en": "Display raw battery voltage in device settings",
             "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
           }
+        },
+        {
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-On Behavior",
+            "nl": "Gedrag bij inschakelen",
+            "de": "Einschaltverhalten",
+            "fr": "Comportement à la mise sous tension"
+          },
+          "hint": {
+            "en": "What happens when power is restored after an outage (DP14)",
+            "nl": "Wat er gebeurt als de stroom terugkeert na een stroomstoring"
+          },
+          "value": "memory",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Always Off",
+                "nl": "Altijd Uit"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "Always On",
+                "nl": "Altijd Aan"
+              }
+            },
+            {
+              "id": "memory",
+              "label": {
+                "en": "Last State",
+                "nl": "Laatste status"
+              }
+            }
+          ]
         },
         {
           "id": "enable_power_estimation",
@@ -70101,6 +70672,44 @@
             "en": "Display raw battery voltage in device settings",
             "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
           }
+        },
+        {
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-On Behavior",
+            "nl": "Gedrag bij inschakelen",
+            "de": "Einschaltverhalten",
+            "fr": "Comportement à la mise sous tension"
+          },
+          "hint": {
+            "en": "What happens when power is restored after an outage (DP14)",
+            "nl": "Wat er gebeurt als de stroom terugkeert na een stroomstoring"
+          },
+          "value": "memory",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Always Off",
+                "nl": "Altijd Uit"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "Always On",
+                "nl": "Altijd Aan"
+              }
+            },
+            {
+              "id": "memory",
+              "label": {
+                "en": "Last State",
+                "nl": "Laatste status"
+              }
+            }
+          ]
         },
         {
           "id": "enable_power_estimation",
@@ -74201,6 +74810,44 @@
               }
             }
           ]
+        },
+        {
+          "id": "switch_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "External Switch Type",
+            "nl": "Extern schakelaartype",
+            "de": "Externer Schaltertyp",
+            "fr": "Type d'interrupteur externe"
+          },
+          "hint": {
+            "en": "Type of external switch connected to this relay module",
+            "nl": "Type externe schakelaar aangesloten op deze relaismodule"
+          },
+          "value": "toggle",
+          "values": [
+            {
+              "id": "toggle",
+              "label": {
+                "en": "Toggle",
+                "nl": "Tuimelschakelaar"
+              }
+            },
+            {
+              "id": "state",
+              "label": {
+                "en": "State (Rocker)",
+                "nl": "Status (Wipschakelaar)"
+              }
+            },
+            {
+              "id": "momentary",
+              "label": {
+                "en": "Momentary (Push Button)",
+                "nl": "Pulsdrukknop"
+              }
+            }
+          ]
         }
       ],
       "images": {
@@ -74386,6 +75033,44 @@
               "label": {
                 "en": "On when switch is off",
                 "fr": "Allume quand eteint"
+              }
+            }
+          ]
+        },
+        {
+          "id": "switch_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "External Switch Type",
+            "nl": "Extern schakelaartype",
+            "de": "Externer Schaltertyp",
+            "fr": "Type d'interrupteur externe"
+          },
+          "hint": {
+            "en": "Type of external switch connected to this relay module",
+            "nl": "Type externe schakelaar aangesloten op deze relaismodule"
+          },
+          "value": "toggle",
+          "values": [
+            {
+              "id": "toggle",
+              "label": {
+                "en": "Toggle",
+                "nl": "Tuimelschakelaar"
+              }
+            },
+            {
+              "id": "state",
+              "label": {
+                "en": "State (Rocker)",
+                "nl": "Status (Wipschakelaar)"
+              }
+            },
+            {
+              "id": "momentary",
+              "label": {
+                "en": "Momentary (Push Button)",
+                "nl": "Pulsdrukknop"
               }
             }
           ]
@@ -75657,6 +76342,100 @@
         {
           "type": "group",
           "label": {
+            "en": "Power-On Behavior",
+            "nl": "Gedrag bij inschakelen"
+          },
+          "children": [
+            {
+              "id": "power_on_behavior",
+              "type": "dropdown",
+              "label": {
+                "en": "Power-On Behavior",
+                "nl": "Gedrag bij inschakelen",
+                "de": "Einschaltverhalten",
+                "fr": "Comportement à la mise sous tension"
+              },
+              "hint": {
+                "en": "What happens when power is restored after an outage",
+                "nl": "Wat er gebeurt als de stroom terugkeert na een stroomstoring"
+              },
+              "value": "memory",
+              "values": [
+                {
+                  "id": "off",
+                  "label": {
+                    "en": "Always Off",
+                    "nl": "Altijd Uit"
+                  }
+                },
+                {
+                  "id": "on",
+                  "label": {
+                    "en": "Always On",
+                    "nl": "Altijd Aan"
+                  }
+                },
+                {
+                  "id": "memory",
+                  "label": {
+                    "en": "Last State",
+                    "nl": "Laatste status"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "External Switch Type",
+            "nl": "Extern schakelaartype"
+          },
+          "children": [
+            {
+              "id": "switch_mode",
+              "type": "dropdown",
+              "label": {
+                "en": "External Switch Type",
+                "nl": "Extern schakelaartype",
+                "de": "Externer Schaltertyp",
+                "fr": "Type d'interrupteur externe"
+              },
+              "hint": {
+                "en": "Type of external switch connected to this relay module",
+                "nl": "Type externe schakelaar aangesloten op deze relaismodule"
+              },
+              "value": "toggle",
+              "values": [
+                {
+                  "id": "toggle",
+                  "label": {
+                    "en": "Toggle",
+                    "nl": "Tuimelschakelaar"
+                  }
+                },
+                {
+                  "id": "state",
+                  "label": {
+                    "en": "State (Rocker)",
+                    "nl": "Status (Wipschakelaar)"
+                  }
+                },
+                {
+                  "id": "momentary",
+                  "label": {
+                    "en": "Momentary (Push Button)",
+                    "nl": "Pulsdrukknop"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
             "en": "🎭 Scene Mode",
             "nl": "🎭 Scènemodus"
           },
@@ -75847,6 +76626,100 @@
                   "label": {
                     "en": "On when Switch OFF",
                     "nl": "Aan bij UIT"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power-On Behavior",
+            "nl": "Gedrag bij inschakelen"
+          },
+          "children": [
+            {
+              "id": "power_on_behavior",
+              "type": "dropdown",
+              "label": {
+                "en": "Power-On Behavior",
+                "nl": "Gedrag bij inschakelen",
+                "de": "Einschaltverhalten",
+                "fr": "Comportement à la mise sous tension"
+              },
+              "hint": {
+                "en": "What happens when power is restored after an outage",
+                "nl": "Wat er gebeurt als de stroom terugkeert na een stroomstoring"
+              },
+              "value": "memory",
+              "values": [
+                {
+                  "id": "off",
+                  "label": {
+                    "en": "Always Off",
+                    "nl": "Altijd Uit"
+                  }
+                },
+                {
+                  "id": "on",
+                  "label": {
+                    "en": "Always On",
+                    "nl": "Altijd Aan"
+                  }
+                },
+                {
+                  "id": "memory",
+                  "label": {
+                    "en": "Last State",
+                    "nl": "Laatste status"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "External Switch Type",
+            "nl": "Extern schakelaartype"
+          },
+          "children": [
+            {
+              "id": "switch_mode",
+              "type": "dropdown",
+              "label": {
+                "en": "External Switch Type",
+                "nl": "Extern schakelaartype",
+                "de": "Externer Schaltertyp",
+                "fr": "Type d'interrupteur externe"
+              },
+              "hint": {
+                "en": "Type of external switch connected to this relay module",
+                "nl": "Type externe schakelaar aangesloten op deze relaismodule"
+              },
+              "value": "toggle",
+              "values": [
+                {
+                  "id": "toggle",
+                  "label": {
+                    "en": "Toggle",
+                    "nl": "Tuimelschakelaar"
+                  }
+                },
+                {
+                  "id": "state",
+                  "label": {
+                    "en": "State (Rocker)",
+                    "nl": "Status (Wipschakelaar)"
+                  }
+                },
+                {
+                  "id": "momentary",
+                  "label": {
+                    "en": "Momentary (Push Button)",
+                    "nl": "Pulsdrukknop"
                   }
                 }
               ]
@@ -76068,6 +76941,100 @@
                   "label": {
                     "en": "On when Switch OFF",
                     "nl": "Aan bij UIT"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power-On Behavior",
+            "nl": "Gedrag bij inschakelen"
+          },
+          "children": [
+            {
+              "id": "power_on_behavior",
+              "type": "dropdown",
+              "label": {
+                "en": "Power-On Behavior",
+                "nl": "Gedrag bij inschakelen",
+                "de": "Einschaltverhalten",
+                "fr": "Comportement à la mise sous tension"
+              },
+              "hint": {
+                "en": "What happens when power is restored after an outage",
+                "nl": "Wat er gebeurt als de stroom terugkeert na een stroomstoring"
+              },
+              "value": "memory",
+              "values": [
+                {
+                  "id": "off",
+                  "label": {
+                    "en": "Always Off",
+                    "nl": "Altijd Uit"
+                  }
+                },
+                {
+                  "id": "on",
+                  "label": {
+                    "en": "Always On",
+                    "nl": "Altijd Aan"
+                  }
+                },
+                {
+                  "id": "memory",
+                  "label": {
+                    "en": "Last State",
+                    "nl": "Laatste status"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "External Switch Type",
+            "nl": "Extern schakelaartype"
+          },
+          "children": [
+            {
+              "id": "switch_mode",
+              "type": "dropdown",
+              "label": {
+                "en": "External Switch Type",
+                "nl": "Extern schakelaartype",
+                "de": "Externer Schaltertyp",
+                "fr": "Type d'interrupteur externe"
+              },
+              "hint": {
+                "en": "Type of external switch connected to this relay module",
+                "nl": "Type externe schakelaar aangesloten op deze relaismodule"
+              },
+              "value": "toggle",
+              "values": [
+                {
+                  "id": "toggle",
+                  "label": {
+                    "en": "Toggle",
+                    "nl": "Tuimelschakelaar"
+                  }
+                },
+                {
+                  "id": "state",
+                  "label": {
+                    "en": "State (Rocker)",
+                    "nl": "Status (Wipschakelaar)"
+                  }
+                },
+                {
+                  "id": "momentary",
+                  "label": {
+                    "en": "Momentary (Push Button)",
+                    "nl": "Pulsdrukknop"
                   }
                 }
               ]
