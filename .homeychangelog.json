@@ -1,4 +1,7 @@
 {
+  "5.11.47": {
+    "en": "Added support for Lidl HG06323 TS1001 remote dimmer and enhanced ZCL cluster adapters."
+  },
   "5.11.46": {
     "en": "Added ZCL cluster adapters and converters for Z2M, ZHA, and deCONZ; enhanced security."
   },
@@ -56,10 +59,7 @@
   "5.11.28": {
     "en": "Updated to v5.11.28 with 143 drivers and 3062 fingerprints. Includes script fixes for forum post editing."
   },
-  "5.11.27": {
-    "en": "Universal Tuya Zigbee app v5.11.27: Added new AI providers and improved forum management."
-  },
-  "5.11.47": {
-    "en": "v5.11.46: Introduced ZCL cluster adapters for improved device compatibility., Added converters for Zigbee to MQTT (Z2M), Zigbee Home Automation (ZHA), and deCONZ., Implemented security hardening measures to enhance app safety., Updated GitHub workflows for daily and weekly external source synchronization., Modified sync-external-sources script to accommodate new changes."
+  "5.11.48": {
+    "en": "v5.11.47: Added remote dimmer driver for Lidl HG06323 TS1001 with full Zosung protocol support., Introduced ZCL cluster adapters and converters for Z2M, ZHA, and deCONZ., Implemented security hardening measures., Auto-published version 5.11.47 with 144 drivers and 3092 fingerprints., Updated 20 files including new drivers and adapter implementations."
   }
 }

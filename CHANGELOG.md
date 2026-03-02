@@ -6,7 +6,21 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.46] - 2026-03-02
+## [5.11.47] - 2026-03-02
+
+### New Features
+- Added remote dimmer driver for Lidl HG06323 TS1001 with full Zosung protocol support.
+- Introduced ZCL cluster adapters and converters for Z2M, ZHA, and deCONZ.
+- Implemented security hardening measures.
+
+### CI/CD
+- Auto-published version 5.11.47 with 144 drivers and 3092 fingerprints.
+
+### Files Changed
+- Updated 20 files including new drivers and adapter implementations.
+---
+
+ [5.11.46] - 2026-03-02
 
 ### New Features
 - Introduced ZCL cluster adapters for improved device compatibility.
