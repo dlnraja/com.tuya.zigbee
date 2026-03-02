@@ -1,8 +1,8 @@
 {
-  "date": "2026-03-01T20:38:54.648Z",
+  "date": "2026-03-02T13:46:59.534Z",
   "local": {
-    "drivers": 143,
-    "fps": 4180
+    "drivers": 144,
+    "fps": 4214
   },
   "JohanBendz/com.tuya.zigbee": {
     "prs": [
@@ -20267,6 +20267,17 @@
   "dlnraja/com.tuya.zigbee": {
     "prs": [
       {
+        "number": 152,
+        "title": "Weekly Fingerprint Sync (0 new lines)",
+        "state": "open",
+        "user": "github-actions[bot]",
+        "merged": false,
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/pull/152"
+      },
+      {
         "number": 134,
         "title": "Weekly Fingerprint Sync (7 new lines)",
         "state": "closed",
@@ -20550,9 +20561,141 @@
     ],
     "issues": [
       {
+        "number": 153,
+        "title": "[Alert] Gmail token EXPIRED — regenerate at OAuth Playground",
+        "state": "open",
+        "user": "dlnraja",
+        "labels": [
+          "bug",
+          "automation",
+          "Gmail",
+          "token",
+          "OAuth"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/153"
+      },
+      {
+        "number": 151,
+        "title": "[Info] SOS button IAS enrollment fails on init (sleepy device — expected)",
+        "state": "open",
+        "user": "dlnraja",
+        "labels": [
+          "bug",
+          "documentation",
+          "device-request",
+          "needs-info",
+          "info",
+          "sleepy_device",
+          "enrollment",
+          "diagnostic"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/151"
+      },
+      {
+        "number": 150,
+        "title": "[Feature] Soil sensor missing fertilizer/EC value (measure_ec capability)",
+        "state": "closed",
+        "user": "dlnraja",
+        "labels": [
+          "enhancement",
+          "already-supported"
+        ],
+        "fps": [
+          "_TZE284_hdml1aav"
+        ],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/150"
+      },
+      {
+        "number": 149,
+        "title": "[Bug] LCD Temp/Humidity sensor paired as thermostat (wrong driver)",
+        "state": "closed",
+        "user": "dlnraja",
+        "labels": [
+          "bug",
+          "already-supported"
+        ],
+        "fps": [],
+        "pids": [
+          "TS0601"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/149"
+      },
+      {
+        "number": 148,
+        "title": "[Bug] Contact sensor with luminance paired as mmWave radar (wrong driver match)",
+        "state": "open",
+        "user": "dlnraja",
+        "labels": [
+          "bug",
+          "device_issue",
+          "driver",
+          "contact_sensor",
+          "mmWave_radar",
+          "driver_issue"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/148"
+      },
+      {
+        "number": 147,
+        "title": "[Fingerprint] Add _TZ3000_itb0omhv to switch_1gang (TS0001)",
+        "state": "closed",
+        "user": "dlnraja",
+        "labels": [
+          "fingerprint",
+          "already-supported"
+        ],
+        "fps": [
+          "_TZ3000_itb0omhv"
+        ],
+        "pids": [
+          "TS0001",
+          "TS0041"
+        ],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/147"
+      },
+      {
+        "number": 146,
+        "title": "[Bug] isTuyaDP ReferenceError in IAS Zone enrollment verification",
+        "state": "closed",
+        "user": "dlnraja",
+        "labels": [
+          "bug"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/146"
+      },
+      {
+        "number": 145,
+        "title": "[Alert] Gmail token EXPIRED",
+        "state": "closed",
+        "user": "github-actions[bot]",
+        "labels": [
+          "automation"
+        ],
+        "fps": [],
+        "pids": [],
+        "newFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/145"
+      },
+      {
         "number": 144,
         "title": "[Alert] Gmail token EXPIRED",
-        "state": "open",
+        "state": "closed",
         "user": "github-actions[bot]",
         "labels": [
           "bug",
@@ -20568,7 +20711,7 @@
       {
         "number": 143,
         "title": "[Alert] Gmail token EXPIRED",
-        "state": "open",
+        "state": "closed",
         "user": "github-actions[bot]",
         "labels": [
           "bug",
@@ -20611,22 +20754,7 @@
           "_TZE200_x8diwkqb"
         ],
         "pids": [],
-        "newFPs": [
-          "_TZ3000_iktiy8ue",
-          "_TZ3000_cziew6eu",
-          "_TZE204_d2zfgtij",
-          "_TZE284_d2zfgtij",
-          "_TZE200_d2zfgtij",
-          "_TZE204_wjk6rurm",
-          "_TZE284_wjk6rurm",
-          "_TZE200_wjk6rurm",
-          "_TZE204_s4sa1mcx",
-          "_TZE284_s4sa1mcx",
-          "_TZE200_s4sa1mcx",
-          "_TZE204_x8diwkqb",
-          "_TZE284_x8diwkqb",
-          "_TZE200_x8diwkqb"
-        ],
+        "newFPs": [],
         "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/142"
       },
       {
@@ -20659,22 +20787,7 @@
           "_TZE284_x8diwkqb"
         ],
         "pids": [],
-        "newFPs": [
-          "_TZ3000_cziew6eu",
-          "_TZ3000_iktiy8ue",
-          "_TZE200_d2zfgtij",
-          "_TZE200_s4sa1mcx",
-          "_TZE200_wjk6rurm",
-          "_TZE200_x8diwkqb",
-          "_TZE204_d2zfgtij",
-          "_TZE204_s4sa1mcx",
-          "_TZE204_wjk6rurm",
-          "_TZE204_x8diwkqb",
-          "_TZE284_d2zfgtij",
-          "_TZE284_s4sa1mcx",
-          "_TZE284_wjk6rurm",
-          "_TZE284_x8diwkqb"
-        ],
+        "newFPs": [],
         "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/141"
       },
       {
@@ -21062,7 +21175,7 @@
       {
         "number": 128,
         "title": "Garagedoor controller",
-        "state": "open",
+        "state": "closed",
         "user": "Wuma68",
         "labels": [
           "enhancement",
@@ -22975,146 +23088,6 @@
         "mfr": "_tz3000_8bxrzyxz",
         "source": "PR #125",
         "title": "Fix HOBEIAN 10G radar sensor: IAS motion conflict, battery read, DP corrections"
-      },
-      {
-        "mfr": "_TZ3000_iktiy8ue",
-        "source": "Issue #142",
-        "title": "[Auto] 14 new fingerprints from community (2026-03)"
-      },
-      {
-        "mfr": "_TZ3000_cziew6eu",
-        "source": "Issue #142",
-        "title": "[Auto] 14 new fingerprints from community (2026-03)"
-      },
-      {
-        "mfr": "_TZE204_d2zfgtij",
-        "source": "Issue #142",
-        "title": "[Auto] 14 new fingerprints from community (2026-03)"
-      },
-      {
-        "mfr": "_TZE284_d2zfgtij",
-        "source": "Issue #142",
-        "title": "[Auto] 14 new fingerprints from community (2026-03)"
-      },
-      {
-        "mfr": "_TZE200_d2zfgtij",
-        "source": "Issue #142",
-        "title": "[Auto] 14 new fingerprints from community (2026-03)"
-      },
-      {
-        "mfr": "_TZE204_wjk6rurm",
-        "source": "Issue #142",
-        "title": "[Auto] 14 new fingerprints from community (2026-03)"
-      },
-      {
-        "mfr": "_TZE284_wjk6rurm",
-        "source": "Issue #142",
-        "title": "[Auto] 14 new fingerprints from community (2026-03)"
-      },
-      {
-        "mfr": "_TZE200_wjk6rurm",
-        "source": "Issue #142",
-        "title": "[Auto] 14 new fingerprints from community (2026-03)"
-      },
-      {
-        "mfr": "_TZE204_s4sa1mcx",
-        "source": "Issue #142",
-        "title": "[Auto] 14 new fingerprints from community (2026-03)"
-      },
-      {
-        "mfr": "_TZE284_s4sa1mcx",
-        "source": "Issue #142",
-        "title": "[Auto] 14 new fingerprints from community (2026-03)"
-      },
-      {
-        "mfr": "_TZE200_s4sa1mcx",
-        "source": "Issue #142",
-        "title": "[Auto] 14 new fingerprints from community (2026-03)"
-      },
-      {
-        "mfr": "_TZE204_x8diwkqb",
-        "source": "Issue #142",
-        "title": "[Auto] 14 new fingerprints from community (2026-03)"
-      },
-      {
-        "mfr": "_TZE284_x8diwkqb",
-        "source": "Issue #142",
-        "title": "[Auto] 14 new fingerprints from community (2026-03)"
-      },
-      {
-        "mfr": "_TZE200_x8diwkqb",
-        "source": "Issue #142",
-        "title": "[Auto] 14 new fingerprints from community (2026-03)"
-      },
-      {
-        "mfr": "_TZ3000_cziew6eu",
-        "source": "Issue #141",
-        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
-      },
-      {
-        "mfr": "_TZ3000_iktiy8ue",
-        "source": "Issue #141",
-        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
-      },
-      {
-        "mfr": "_TZE200_d2zfgtij",
-        "source": "Issue #141",
-        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
-      },
-      {
-        "mfr": "_TZE200_s4sa1mcx",
-        "source": "Issue #141",
-        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
-      },
-      {
-        "mfr": "_TZE200_wjk6rurm",
-        "source": "Issue #141",
-        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
-      },
-      {
-        "mfr": "_TZE200_x8diwkqb",
-        "source": "Issue #141",
-        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
-      },
-      {
-        "mfr": "_TZE204_d2zfgtij",
-        "source": "Issue #141",
-        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
-      },
-      {
-        "mfr": "_TZE204_s4sa1mcx",
-        "source": "Issue #141",
-        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
-      },
-      {
-        "mfr": "_TZE204_wjk6rurm",
-        "source": "Issue #141",
-        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
-      },
-      {
-        "mfr": "_TZE204_x8diwkqb",
-        "source": "Issue #141",
-        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
-      },
-      {
-        "mfr": "_TZE284_d2zfgtij",
-        "source": "Issue #141",
-        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
-      },
-      {
-        "mfr": "_TZE284_s4sa1mcx",
-        "source": "Issue #141",
-        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
-      },
-      {
-        "mfr": "_TZE284_wjk6rurm",
-        "source": "Issue #141",
-        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
-      },
-      {
-        "mfr": "_TZE284_x8diwkqb",
-        "source": "Issue #141",
-        "title": "[Auto] New Tuya devices found in zigbee2mqtt"
       },
       {
         "mfr": "_TZ3000_zutizvykts0203",

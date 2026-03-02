@@ -177,6 +177,13 @@
 
 <!-- NIGHTLY_START — Preserved from nightly-processor.js -->
 
+## Nightly Auto-Scan (2026-03-02)
+| User | Fingerprint(s) | Source | Date |
+|------|---------------|--------|------|
+| Nicolas | `dlnraja` | Forum #140352 post #1559 | Auto-scanned 2026-03-02 |
+| github-actions[bot] | `danfoss`, `legrand`, `sonoff`, `xiaomi`, `test`, `bosch`, `ikea`, `tuya` | dlnraja/com.tuya.zigbee#152 | Auto-scanned 2026-03-02 |
+
+
 ## Nightly Auto-Scan (2026-03-01)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
