@@ -1,11 +1,11 @@
 # Z2M Fingerprint Sync Report
 
-**Date:** 2026-02-19T22:53:04.242Z
+**Date:** 2026-03-02T06:17:20.951Z
 
 | Metric | Local | Z2M | Missing |
 |---|---|---|---|
-| Manufacturer Names | 3392 | 25 | 4 |
-| Product IDs | 500 | 1639 | 1479 |
+| Manufacturer Names | 4201 | 25 | 4 |
+| Product IDs | 508 | 1644 | 1478 |
 
 ## Missing Manufacturer Names
 
@@ -31,7 +31,6 @@
 | ZG-302Z1 | tuya | generic_diy |
 | ZG-302Z2 | tuya | generic_diy |
 | ZG-302Z3 | tuya | generic_diy |
-| TS0041A | tuya | generic_diy |
 | owvfni3\u0000 | tuya | generic_diy |
 | owvfni3 | tuya | generic_diy |
 | u1rkty3 | tuya | generic_diy |
@@ -45,26 +44,21 @@
 | gq8b1uv | tuya | generic_diy |
 | HY0017 | tuya | generic_diy |
 | 005f0c3b | tuya | generic_diy |
-| TS0026 | tuya | generic_diy |
 | HY0080 | tuya | generic_diy |
 | 6dfgetq | tuya | generic_diy |
 | E220-KR4N0Z0-HA | tuya | generic_diy |
 | JZ-ZB-004 | tuya | generic_diy |
 | ZG-106Z | tuya | generic_diy |
 | ZG-101ZD | tuya | generic_diy |
-| TS0052 | tuya | generic_diy |
 | ZG-205ZL | tuya | generic_diy |
 | ZG-227ZL | tuya | generic_diy |
 | ZG-225Z | tuya | generic_diy |
-| TS0224 | tuya | generic_diy |
 | TS030F | tuya | generic_diy |
 | SM0202 | tuya | generic_diy |
 | ZG-101Z | tuya | generic_diy |
-| TS0105 | tuya | generic_diy |
 | ZG-103Z | tuya | generic_diy |
 | ZG-302ZM | tuya | generic_diy |
 | ZG-302ZL | tuya | generic_diy |
-| TS0901 | tuya | generic_diy |
 | 5rta89nj | tuya | generic_diy |
 | ZG-305Z | tuya | generic_diy |
 | ZS-304Z | tuya | generic_diy |
@@ -95,6 +89,10 @@
 | MINI-ZB2GS | sonoff | generic_diy |
 | MINI-ZB2GS-L | sonoff | generic_diy |
 | MINI-ZBDIM | sonoff | generic_diy |
+| SWV-ZNE | sonoff | generic_diy |
+| SWV-ZFE | sonoff | generic_diy |
+| SWV-ZNU | sonoff | generic_diy |
+| SWV-ZFU | sonoff | generic_diy |
 | W564100 | schneider_electric | generic_diy |
 | PUCK/SHUTTER/1 | schneider_electric | generic_diy |
 | NHPB/SHUTTER/1 | schneider_electric | generic_diy |
@@ -120,6 +118,8 @@
 | NHPB/SWITCH/1 | schneider_electric | generic_diy |
 | U202SRY2KWZB | schneider_electric | generic_diy |
 | 1GANG/SHUTTER/1 | schneider_electric | generic_diy |
+| 1GANG/DIMMER/1 | schneider_electric | generic_diy |
+| 1GANG/DALI/1 | schneider_electric | generic_diy |
 
-*...and 1379 more*
+*...and 1378 more*
 

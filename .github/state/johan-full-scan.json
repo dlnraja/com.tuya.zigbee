@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-01T20:49:24.527Z",
+  "timestamp": "2026-03-02T06:17:21.002Z",
   "issues": {
     "total": 1162,
     "withFPs": 925,
@@ -16,7 +16,7 @@
           "TS0203"
         ],
         "user": "azkysmarthome",
-        "updated": "2026-02-27",
+        "updated": "2026-03-02",
         "labels": [
           "New Device"
         ]
@@ -38,20 +38,6 @@
         ]
       },
       {
-        "number": 287,
-        "title": "_TZN3000_cfnprab5 / TS011F",
-        "state": "closed",
-        "fps": [
-          "_TZN3000_cfnprab5"
-        ],
-        "pids": [
-          "TS011F"
-        ],
-        "user": "Grobaa",
-        "updated": "2024-09-02",
-        "labels": []
-      },
-      {
         "number": 349,
         "title": "New app (V0.2.14) update results in a not working zigbee watervalve (TS0001)",
         "state": "closed",
@@ -64,6 +50,17 @@
         "user": "pjmpessers",
         "updated": "2023-08-28",
         "labels": []
+      },
+      {
+        "number": 1329,
+        "title": "[comment] Device Request - [smart switch] - [zigbee tuya] / [TYZGTH1CH",
+        "state": "open",
+        "fps": [
+          "_TZ3000_xxxxx"
+        ],
+        "user": "dlnraja",
+        "updated": "2026-03-02",
+        "fromComment": true
       },
       {
         "number": 1331,
@@ -79,8 +76,8 @@
     ],
     "categories": {
       "device_request": 870,
-      "bug": 82,
       "other": 189,
+      "bug": 82,
       "feature": 21
     }
   },
@@ -581,21 +578,21 @@
       ]
     },
     {
-      "fp": "_TZN3000_cfnprab5",
-      "sources": [
-        "#287 (closed)"
-      ],
-      "users": [
-        "Grobaa"
-      ]
-    },
-    {
       "fp": "_TZ3000Z_iedbgyxt",
       "sources": [
         "#349 (closed)"
       ],
       "users": [
         "pjmpessers"
+      ]
+    },
+    {
+      "fp": "_TZ3000_xxxxx",
+      "sources": [
+        "comment#1329 (open)"
+      ],
+      "users": [
+        "dlnraja"
       ]
     },
     {
@@ -610,32 +607,20 @@
   ],
   "allMentionedFPs": [
     {
-      "fp": "_TZ3000_fdxihpp7",
-      "source": "issue#963",
+      "fp": "_TZ3218_7fiyo3kv",
+      "source": "issue#1329",
       "state": "open",
       "isNew": false
     },
     {
-      "fp": "_TZ3290_ot6ewjvmejq5ekhl",
-      "source": "issue#1331",
+      "fp": "_TZE284_81yrt3lo",
+      "source": "issue#1317",
       "state": "open",
       "isNew": false
     },
     {
-      "fp": "_TZE200_vvmbj46n",
-      "source": "issue#867",
-      "state": "open",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_0dumfk2z",
-      "source": "issue#591",
-      "state": "open",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_8ygsuhe1",
-      "source": "issue#1229",
+      "fp": "_TZ3000_cet6ch1r",
+      "source": "issue#1316",
       "state": "open",
       "isNew": false
     },
@@ -646,14 +631,8 @@
       "isNew": false
     },
     {
-      "fp": "_TZE204_clrdrnya",
-      "source": "issue#1142",
-      "state": "open",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_9ern5sfh",
-      "source": "issue#1328",
+      "fp": "_TZ3000_bgsigers",
+      "source": "issue#1318",
       "state": "open",
       "isNew": false
     },
@@ -694,6 +673,60 @@
       "isNew": false
     },
     {
+      "fp": "_TZ3000_zgyzgdua",
+      "source": "issue#1327",
+      "state": "open",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_9ern5sfh",
+      "source": "issue#1328",
+      "state": "open",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_hy6ncvmw",
+      "source": "issue#1320",
+      "state": "open",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_ghynnvos",
+      "source": "issue#1321",
+      "state": "open",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE204_gkfbdvyx",
+      "source": "issue#1322",
+      "state": "open",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3210_s8lvbbu",
+      "source": "issue#1325",
+      "state": "open",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3210_s8lvbbuc",
+      "source": "issue#1325",
+      "state": "open",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3210_4ux0ondb",
+      "source": "issue#1326",
+      "state": "open",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_aa03yzhs",
+      "source": "issue#1336",
+      "state": "open",
+      "isNew": false
+    },
+    {
       "fp": "_TZ3000_l9brjwau",
       "source": "issue#1337",
       "state": "open",
@@ -730,26 +763,56 @@
       "isNew": false
     },
     {
+      "fp": "_TZ3000_bgsigers",
+      "source": "issue#1344",
+      "state": "open",
+      "isNew": false
+    },
+    {
       "fp": "_TZE284_xnbkhhdr",
       "source": "issue#1345",
       "state": "open",
       "isNew": false
     },
     {
+      "fp": "_TZ3000_fdxihpp7",
+      "source": "issue#963",
+      "state": "open",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3290_ot6ewjvmejq5ekhl",
+      "source": "issue#1331",
+      "state": "open",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_vvmbj46n",
+      "source": "issue#867",
+      "state": "open",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_0dumfk2z",
+      "source": "issue#591",
+      "state": "open",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_8ygsuhe1",
+      "source": "issue#1229",
+      "state": "open",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE204_clrdrnya",
+      "source": "issue#1142",
+      "state": "open",
+      "isNew": false
+    },
+    {
       "fp": "_TYZB01_zqvwka4k",
       "source": "issue#1340",
-      "state": "open",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_aa03yzhs",
-      "source": "issue#1336",
-      "state": "open",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_bgsigers",
-      "source": "issue#1344",
       "state": "open",
       "isNew": false
     },
@@ -769,12 +832,6 @@
       "fp": "_TZE200_dq8bu0pt",
       "source": "issue#1297",
       "state": "closed",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_zgyzgdua",
-      "source": "issue#1327",
-      "state": "open",
       "isNew": false
     },
     {
@@ -1126,44 +1183,8 @@
       "isNew": false
     },
     {
-      "fp": "_TZ3000_cet6ch1r",
-      "source": "issue#1316",
-      "state": "open",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_81yrt3lo",
-      "source": "issue#1317",
-      "state": "open",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_bgsigers",
-      "source": "issue#1318",
-      "state": "open",
-      "isNew": false
-    },
-    {
       "fp": "_TZE200_amp6tsvy",
       "source": "issue#1319",
-      "state": "open",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_hy6ncvmw",
-      "source": "issue#1320",
-      "state": "open",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_ghynnvos",
-      "source": "issue#1321",
-      "state": "open",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE204_gkfbdvyx",
-      "source": "issue#1322",
       "state": "open",
       "isNew": false
     },
@@ -1176,30 +1197,6 @@
     {
       "fp": "_TZ3000_lf56vpxj",
       "source": "issue#1324",
-      "state": "open",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3210_s8lvbbu",
-      "source": "issue#1325",
-      "state": "open",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3210_s8lvbbuc",
-      "source": "issue#1325",
-      "state": "open",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3210_4ux0ondb",
-      "source": "issue#1326",
-      "state": "open",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3218_7fiyo3kv",
-      "source": "issue#1329",
       "state": "open",
       "isNew": false
     },
@@ -5125,7 +5122,7 @@
       "fp": "_TZN3000_cfnprab5",
       "source": "issue#287",
       "state": "closed",
-      "isNew": true
+      "isNew": false
     },
     {
       "fp": "_TZ3000_46t1rvdu",
@@ -7186,6 +7183,766 @@
       "isNew": false
     },
     {
+      "fp": "_TZ3218_7fiyo3kv",
+      "source": "comment#1329",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3218_7fiyo3kv",
+      "source": "comment#1329",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3218_7fiyo3kv",
+      "source": "comment#1329",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3218_7fiyo3kv",
+      "source": "comment#1329",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_xxxxx",
+      "source": "comment#1329",
+      "isNew": true
+    },
+    {
+      "fp": "_TZ3218_7fiyo3kv",
+      "source": "comment#1329",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_81yrt3lo",
+      "source": "comment#1317",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_81yrt3lo",
+      "source": "comment#1317",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_81yrt3lo",
+      "source": "comment#1317",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_cet6ch1r",
+      "source": "comment#1316",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_cet6ch1r",
+      "source": "comment#1316",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3210_xzhnra8x",
+      "source": "comment#1348",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3210_xzhnra8x",
+      "source": "comment#1348",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3210_xzhnra8x",
+      "source": "comment#1348",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3210_xzhnra8x",
+      "source": "comment#1348",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_bgsigers",
+      "source": "comment#1318",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_bgsigers",
+      "source": "comment#1318",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_bgsigers",
+      "source": "comment#1318",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_bgsigers",
+      "source": "comment#1318",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_6ycgarab",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_u6x1zyv2",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE204_gkfbdvyx",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE204_dwcarsat",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_vrcfo4i0",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_zutizvyk",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_6ycgarab",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_u6x1zyv2",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE204_dwcarsat",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_vrcfo4i0",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_zutizvyk",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_6ycgarab",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_u6x1zyv2",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE204_dwcarsat",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_vrcfo4i0",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_zutizvyk",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_6ycgarab",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_u6x1zyv2",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE204_gkfbdvyx",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE204_dwcarsat",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_vrcfo4i0",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_zutizvyk",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_6ycgarab",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_u6x1zyv2",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE204_dwcarsat",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_vrcfo4i0",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_zutizvyk",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE204_gkfbdvyx",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_6ycgarab",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_u6x1zyv2",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE204_gkfbdvyx",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE204_dwcarsat",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_vrcfo4i0",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_zutizvyk",
+      "source": "comment#1347",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_zgyzgdua",
+      "source": "comment#1327",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_zgyzgdua",
+      "source": "comment#1327",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_zgyzgdua",
+      "source": "comment#1327",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_zgyzgdua",
+      "source": "comment#1327",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_zgyzgdua",
+      "source": "comment#1327",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_zgyzgdua",
+      "source": "comment#1327",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_zgyzgdua",
+      "source": "comment#1327",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_zgyzgdua",
+      "source": "comment#1327",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_zgyzgdua",
+      "source": "comment#1327",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_zgyzgdua",
+      "source": "comment#1327",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_9ern5sfh",
+      "source": "comment#1328",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_9ern5sfh",
+      "source": "comment#1328",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_9ern5sfh",
+      "source": "comment#1328",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_9ern5sfh",
+      "source": "comment#1328",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_9ern5sfh",
+      "source": "comment#1328",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_9ern5sfh",
+      "source": "comment#1328",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_hy6ncvmw",
+      "source": "comment#1320",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_hy6ncvmw",
+      "source": "comment#1320",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_hy6ncvmw",
+      "source": "comment#1320",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_hy6ncvmw",
+      "source": "comment#1320",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_ghynnvos",
+      "source": "comment#1321",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_ghynnvos",
+      "source": "comment#1321",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_ghynnvos",
+      "source": "comment#1321",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_ghynnvos",
+      "source": "comment#1321",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE204_gkfbdvyx",
+      "source": "comment#1322",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE204_gkfbdvyx",
+      "source": "comment#1322",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE204_gkfbdvyx",
+      "source": "comment#1322",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE204_gkfbdvyx",
+      "source": "comment#1322",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE204_gkfbdvyx",
+      "source": "comment#1322",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3210_s8lvbbu",
+      "source": "comment#1325",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3210_s8lvbbu",
+      "source": "comment#1325",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3210_s8lvbbuc",
+      "source": "comment#1325",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3210_s8lvbbu",
+      "source": "comment#1325",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3210_s8lvbbuc",
+      "source": "comment#1325",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3210_s8lvbbu",
+      "source": "comment#1325",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3210_4ux0ondb",
+      "source": "comment#1326",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3210_4ux0ondb",
+      "source": "comment#1326",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3210_4ux0ondb",
+      "source": "comment#1326",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3210_4ux0ondb",
+      "source": "comment#1326",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_aa03yzhs",
+      "source": "comment#1336",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_aa03yzhs",
+      "source": "comment#1336",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_aao3yzhs",
+      "source": "comment#1336",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_aa03yzhs",
+      "source": "comment#1336",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_l9brjwau",
+      "source": "comment#1337",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_l9brjwau",
+      "source": "comment#1337",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_l9brjwau",
+      "source": "comment#1337",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_l9brjwau",
+      "source": "comment#1337",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_qkixdnon",
+      "source": "comment#1337",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_l9brjwau",
+      "source": "comment#1337",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_qkixdnon",
+      "source": "comment#1337",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_l9brjwau",
+      "source": "comment#1337",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_l9brjwau",
+      "source": "comment#1337",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_l9brjwau",
+      "source": "comment#1337",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_qkixdnon",
+      "source": "comment#1338",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_qkixdnon",
+      "source": "comment#1338",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_qkixdnon",
+      "source": "comment#1338",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_qkixdnon",
+      "source": "comment#1338",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_qkixdnon",
+      "source": "comment#1338",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_qkixdnon",
+      "source": "comment#1338",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_qkixdnon",
+      "source": "comment#1338",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_blhvsaqf",
+      "source": "comment#1339",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_blhvsaqf",
+      "source": "comment#1339",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_blhvsaqf",
+      "source": "comment#1339",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_blhvsaqf",
+      "source": "comment#1339",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_blhvsaqf",
+      "source": "comment#1339",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_blhvsaqf",
+      "source": "comment#1339",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_blhvsaqf",
+      "source": "comment#1339",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_blhvsaqf",
+      "source": "comment#1339",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_aao3yzhs",
+      "source": "comment#1341",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_aao3yzhs",
+      "source": "comment#1341",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_aao3yzhs",
+      "source": "comment#1341",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_aao3yzhs",
+      "source": "comment#1341",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_aao3yzhs",
+      "source": "comment#1341",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_rhgsbacq",
+      "source": "comment#1343",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_rhgsbacq",
+      "source": "comment#1343",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_rhgsbacq",
+      "source": "comment#1343",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_rhgsbacq",
+      "source": "comment#1343",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_rhgsbacq",
+      "source": "comment#1343",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_rhgsbacq",
+      "source": "comment#1343",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_rhgsbacq",
+      "source": "comment#1343",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE200_rhgsbacq",
+      "source": "comment#1343",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_bgsigers",
+      "source": "comment#1344",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_bgsigers",
+      "source": "comment#1344",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_bgsigers",
+      "source": "comment#1344",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_bgsigers",
+      "source": "comment#1344",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_bgsigers",
+      "source": "comment#1344",
+      "isNew": false
+    },
+    {
+      "fp": "_TZ3000_bgsigers",
+      "source": "comment#1344",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_xnbkhhdr",
+      "source": "comment#1345",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_xnbkhhdr",
+      "source": "comment#1345",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_xnbkhhdr",
+      "source": "comment#1345",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_xnbkhhdr",
+      "source": "comment#1345",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_xnbkhhdr",
+      "source": "comment#1345",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_xnbkhhdr",
+      "source": "comment#1345",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_xnbkhhdr",
+      "source": "comment#1345",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_xnbkhhdr",
+      "source": "comment#1345",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_xnbkhhdr",
+      "source": "comment#1345",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_xnbkhhdr",
+      "source": "comment#1345",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_xnbkhhdr",
+      "source": "comment#1345",
+      "isNew": false
+    },
+    {
+      "fp": "_TZE284_xnbkhhdr",
+      "source": "comment#1345",
+      "isNew": false
+    },
+    {
       "fp": "_TZ3000_skueekg3",
       "source": "comment#963",
       "isNew": false
@@ -7266,411 +8023,11 @@
       "isNew": false
     },
     {
-      "fp": "_TZ3210_xzhnra8x",
-      "source": "comment#1348",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3210_xzhnra8x",
-      "source": "comment#1348",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3210_xzhnra8x",
-      "source": "comment#1348",
-      "isNew": false
-    },
-    {
       "fp": "_TZE204_clrdrnya",
       "source": "comment#1142",
       "isNew": false
     },
     {
-      "fp": "_TZE284_9ern5sfh",
-      "source": "comment#1328",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_9ern5sfh",
-      "source": "comment#1328",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_9ern5sfh",
-      "source": "comment#1328",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_9ern5sfh",
-      "source": "comment#1328",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_9ern5sfh",
-      "source": "comment#1328",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_6ycgarab",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_u6x1zyv2",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE204_gkfbdvyx",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE204_dwcarsat",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_vrcfo4i0",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_zutizvyk",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_6ycgarab",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_u6x1zyv2",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE204_dwcarsat",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_vrcfo4i0",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_zutizvyk",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_6ycgarab",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_u6x1zyv2",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE204_dwcarsat",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_vrcfo4i0",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_zutizvyk",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_6ycgarab",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_u6x1zyv2",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE204_gkfbdvyx",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE204_dwcarsat",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_vrcfo4i0",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_zutizvyk",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_6ycgarab",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_u6x1zyv2",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE204_dwcarsat",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_vrcfo4i0",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_zutizvyk",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE204_gkfbdvyx",
-      "source": "comment#1347",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_l9brjwau",
-      "source": "comment#1337",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_l9brjwau",
-      "source": "comment#1337",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_l9brjwau",
-      "source": "comment#1337",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_l9brjwau",
-      "source": "comment#1337",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_qkixdnon",
-      "source": "comment#1337",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_l9brjwau",
-      "source": "comment#1337",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_qkixdnon",
-      "source": "comment#1337",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_l9brjwau",
-      "source": "comment#1337",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_l9brjwau",
-      "source": "comment#1337",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_qkixdnon",
-      "source": "comment#1338",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_qkixdnon",
-      "source": "comment#1338",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_qkixdnon",
-      "source": "comment#1338",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_qkixdnon",
-      "source": "comment#1338",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_qkixdnon",
-      "source": "comment#1338",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_qkixdnon",
-      "source": "comment#1338",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_blhvsaqf",
-      "source": "comment#1339",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_blhvsaqf",
-      "source": "comment#1339",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_blhvsaqf",
-      "source": "comment#1339",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_blhvsaqf",
-      "source": "comment#1339",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_blhvsaqf",
-      "source": "comment#1339",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_blhvsaqf",
-      "source": "comment#1339",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_blhvsaqf",
-      "source": "comment#1339",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_aao3yzhs",
-      "source": "comment#1341",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_aao3yzhs",
-      "source": "comment#1341",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_aao3yzhs",
-      "source": "comment#1341",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_aao3yzhs",
-      "source": "comment#1341",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_rhgsbacq",
-      "source": "comment#1343",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_rhgsbacq",
-      "source": "comment#1343",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_rhgsbacq",
-      "source": "comment#1343",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_rhgsbacq",
-      "source": "comment#1343",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_rhgsbacq",
-      "source": "comment#1343",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_rhgsbacq",
-      "source": "comment#1343",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_rhgsbacq",
-      "source": "comment#1343",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_xnbkhhdr",
-      "source": "comment#1345",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_xnbkhhdr",
-      "source": "comment#1345",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_xnbkhhdr",
-      "source": "comment#1345",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_xnbkhhdr",
-      "source": "comment#1345",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_xnbkhhdr",
-      "source": "comment#1345",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_xnbkhhdr",
-      "source": "comment#1345",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_xnbkhhdr",
-      "source": "comment#1345",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_xnbkhhdr",
-      "source": "comment#1345",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_xnbkhhdr",
-      "source": "comment#1345",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_xnbkhhdr",
-      "source": "comment#1345",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_xnbkhhdr",
-      "source": "comment#1345",
-      "isNew": false
-    },
-    {
       "fp": "_TYZB01_zqvwka4k",
       "source": "comment#1340",
       "isNew": false
@@ -7683,146 +8040,6 @@
     {
       "fp": "_TYZB01_zqvwka4k",
       "source": "comment#1340",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_aa03yzhs",
-      "source": "comment#1336",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_aa03yzhs",
-      "source": "comment#1336",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_aao3yzhs",
-      "source": "comment#1336",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_bgsigers",
-      "source": "comment#1344",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_bgsigers",
-      "source": "comment#1344",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_bgsigers",
-      "source": "comment#1344",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_bgsigers",
-      "source": "comment#1344",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_bgsigers",
-      "source": "comment#1344",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_dq8bu0pt",
-      "source": "comment#1297",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_dq8bu0pt",
-      "source": "comment#1297",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_dq8bu0pt",
-      "source": "comment#1297",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_zgyzgdua",
-      "source": "comment#1327",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_zgyzgdua",
-      "source": "comment#1327",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_zgyzgdua",
-      "source": "comment#1327",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_zgyzgdua",
-      "source": "comment#1327",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_zgyzgdua",
-      "source": "comment#1327",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_zgyzgdua",
-      "source": "comment#1327",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_zgyzgdua",
-      "source": "comment#1327",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_zgyzgdua",
-      "source": "comment#1327",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_zgyzgdua",
-      "source": "comment#1327",
-      "isNew": false
-    },
-    {
-      "fp": "_TYZB01_4lwqwyqn",
-      "source": "comment#1330",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE204_8fffc3kb",
-      "source": "comment#1302",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE204_8fffc3kb",
-      "source": "comment#1302",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE204_8fffc3kb",
-      "source": "comment#1302",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_ww6drja5",
-      "source": "comment#1228",
-      "isNew": false
-    },
-    {
-      "fp": "_TZ3000_akqdg6g7",
-      "source": "comment#1232",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE284_aao3yzhs",
-      "source": "comment#1233",
-      "isNew": false
-    },
-    {
-      "fp": "_TZE200_wqashyqo",
-      "source": "comment#1234",
       "isNew": false
     }
   ],
@@ -7837,8 +8054,8 @@
     "totalContributors": 94,
     "categories": {
       "device_request": 870,
-      "bug": 82,
       "other": 189,
+      "bug": 82,
       "feature": 21
     }
   }
