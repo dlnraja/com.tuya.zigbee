@@ -408,6 +408,37 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/forum-cleanup-edit.js || true
 
+  diagnostic-resolver:
+    name: "Diagnostic Auto-Resolver"
+    needs: [gmail-diagnostics, device-diagnostics, github-issue-manager, scan-forum, comprehensive-scan]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: "Cross-ref all diags → auto-resolve issues/PRs"
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/diagnostic-auto-resolver.js
+      - name: Commit resolver changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/state/resolver-*.json
+          git diff --cached --quiet || git commit -m "diag-resolver: auto-resolve issues/PRs [skip ci]"
+          git pull --rebase origin master || true
+          git push || true
+
   enrichment:
     name: "Smart Enrichment (DP-aware)"
     needs: [scan-forum, external-sources, github-scanner]
@@ -657,7 +688,7 @@ jobs:
 
   summary:
     name: "Weekly Summary"
-    needs: [triage-johanbendz, triage-dlnraja, scan-forks, cross-driver-gaps, scan-forum, gmail-diagnostics, device-diagnostics, external-sources, github-scanner, github-issue-manager, forum-activity, johanbendz-full, comprehensive-scan, forum-cleanup, enrichment, smart-processor, generate-changelog, update-forum-thread, promote-to-test]
+    needs: [triage-johanbendz, triage-dlnraja, scan-forks, cross-driver-gaps, scan-forum, gmail-diagnostics, device-diagnostics, external-sources, github-scanner, github-issue-manager, forum-activity, johanbendz-full, comprehensive-scan, forum-cleanup, diagnostic-resolver, enrichment, smart-processor, generate-changelog, update-forum-thread, promote-to-test]
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -683,6 +714,7 @@ jobs:
           echo "- Forum first post: ${{ needs.update-forum-thread.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Comprehensive scan: ${{ needs.comprehensive-scan.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Forum cleanup: ${{ needs.forum-cleanup.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Diagnostic Resolver: ${{ needs.diagnostic-resolver.result }}**" >> $GITHUB_STEP_SUMMARY
           echo "- **Promote to Test: ${{ needs.promote-to-test.result }}**" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "[Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY
