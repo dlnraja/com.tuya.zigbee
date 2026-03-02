@@ -60,7 +60,7 @@ class Button2GangDevice extends ButtonDevice {
   }
 
   async _setupE000Detection(zclNode) {
-    const mfr = this.getData()?.manufacturerName || this.getSetting?.('zb_manufacturer_name') || '';
+    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
     this.log(`[BUTTON2-E000] 🔧 Setting up E000 detection (mfr: ${mfr || 'unknown'})`);
     this._e000Dedup = {};
 

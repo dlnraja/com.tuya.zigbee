@@ -95,9 +95,9 @@ class Button4GangDevice extends ButtonDevice {
       || this.getStoreValue?.('productId')
       || this.getSetting?.('zb_model_id')
       || '';
-    const manufacturerName = this.getData()?.manufacturerName 
+    const manufacturerName = this.getSetting?.('zb_manufacturer_name')
       || this.getStoreValue?.('manufacturerName')
-      || this.getSetting?.('zb_manufacturer_name')
+      || this.getData()?.manufacturerName
       || '';
 
     // Only TS004F needs mode switching (TS0044 doesn't have this issue)
@@ -302,7 +302,7 @@ class Button4GangDevice extends ButtonDevice {
     this.log('[BUTTON4-PHYSICAL] 🔧 Setting up enhanced physical button detection...');
     this.log('[BUTTON4-PHYSICAL] Research base: Z2M, ZHA, SmartThings, deCONZ patterns');
 
-    const manufacturerName = this.getData()?.manufacturerName || '';
+    const manufacturerName = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
     this.log(`[BUTTON4-PHYSICAL] Manufacturer: ${manufacturerName}`);
 
     try {
