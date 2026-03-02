@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-03-02T17:33:31.483Z",
+  "timestamp": "2026-03-02T20:38:25.908Z",
   "diagFPs": 0,
   "driverIdx": 4726,
   "supported": 0,
   "unsupported": 0,
   "newFPs": [],
   "dlnraja/com.tuya.zigbee": {
-    "issues": 6,
+    "issues": 0,
     "commented": 0,
     "closed": 0
   },
@@ -17,7 +17,7 @@
   },
   "JohanBendz/com.tuya.zigbee_prs": {
     "prs": 35,
-    "commented": 10
+    "commented": 1
   },
   "forumDrafts": 0
 }
