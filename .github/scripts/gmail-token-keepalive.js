@@ -5,6 +5,14 @@ const{fetchWithRetry}=require('./retry-helper');
 const SD=path.join(__dirname,'..','state');
 const HF=path.join(SD,'gmail-token-health.json');
 
+// v5.11.27: Dedup — only create alert file if no recent alert (24h cooldown)
+function shouldAlert(health,key){
+  const last=health['_lastAlert_'+key];
+  if(!last)return true;
+  return(Date.now()-new Date(last).getTime())>24*3600*1000;
+}
+function markAlerted(health,key){health['_lastAlert_'+key]=new Date().toISOString();}
+
 async function main(){
   const{GMAIL_CLIENT_ID:id,GMAIL_CLIENT_SECRET:s,GMAIL_REFRESH_TOKEN:r}=process.env;
   if(!id||!s||!r){console.log('Gmail creds missing');process.exit(0);}
@@ -23,12 +31,21 @@ async function main(){
     health.checks.push({time:now,ok:false,err:res.status});
     health.lastFail=now;
     if(e.includes('invalid_grant')){
-      console.error('TOKEN EXPIRED! Re-generate via: https://developers.google.com/oauthplayground');
-      console.log('::error::Gmail refresh token EXPIRED. Go to OAuth Playground to get a new one.');
-      // Create alert file for workflow to create GitHub issue
-      fs.writeFileSync(path.join(SD,'_token_expired_alert.txt'),
-        'Gmail refresh token expired at '+now+'. Re-generate via OAuth Playground.');
+      console.error('=== TOKEN EXPIRED (Testing mode 7-day limit) ===');
+      console.error('PERMANENT FIX: Google Cloud Console > OAuth consent > PUBLISH APP');
+      console.error('  URL: https://console.cloud.google.com/apis/credentials/consent');
+      console.error('TEMP FIX: Regenerate at https://developers.google.com/oauthplayground');
+      console.log('::error::Gmail refresh token EXPIRED. Publish OAuth app to Production mode.');
+      // v5.11.27: Only create alert file if 24h cooldown passed (prevents duplicate issues)
+      if(shouldAlert(health,'expired')){
+        fs.writeFileSync(path.join(SD,'_token_expired_alert.txt'),
+          'Gmail refresh token expired at '+now+'.\n\nFIX: Google Cloud Console > OAuth consent screen > PUBLISH APP (Testing→Production).\nOR: Regenerate token at OAuth Playground and update GMAIL_REFRESH_TOKEN secret.');
+        markAlerted(health,'expired');
+      } else {
+        console.log('Alert cooldown active — skipping duplicate alert file');
+      }
     }
+    health.consecutiveFails=(health.consecutiveFails||0)+1;
     fs.writeFileSync(HF,JSON.stringify(health,null,2));
     process.exit(0);
   }
@@ -41,14 +58,19 @@ async function main(){
     const h=Math.round(j.refresh_token_expires_in/3600);
     health.refreshTokenExpiresH=h;
     health.refreshTokenExpiresAt=new Date(Date.now()+j.refresh_token_expires_in*1000).toISOString();
-    console.log('Testing mode: refresh token expires in',h+'h ('+health.refreshTokenExpiresAt+')');
-    if(h<48){
-      console.log('::warning::Gmail refresh token expires in '+h+'h! Create new token soon.');
-      fs.writeFileSync(path.join(SD,'_token_expiring_alert.txt'),
-        'Gmail token expires in '+h+'h at '+health.refreshTokenExpiresAt);
+    console.log('⚠ TESTING MODE: refresh token expires in',h+'h ('+health.refreshTokenExpiresAt+')');
+    console.log('  To fix permanently: Google Cloud Console > OAuth consent > PUBLISH APP');
+    if(h<72){
+      console.log('::warning::Gmail refresh token expires in '+h+'h! Publish OAuth app or regenerate token.');
+      if(shouldAlert(health,'expiring')){
+        fs.writeFileSync(path.join(SD,'_token_expiring_alert.txt'),
+          'Gmail token expires in '+h+'h at '+health.refreshTokenExpiresAt+
+          '. FIX: Google Cloud Console > OAuth consent > PUBLISH APP (Testing→Production).');
+        markAlerted(health,'expiring');
+      }
     }
   } else {
-    console.log('Production mode: refresh token does not expire');
+    console.log('✓ Production mode: refresh token does not expire');
     health.refreshTokenExpiresH=null;
   }
 
@@ -68,6 +90,7 @@ async function main(){
   }catch(e){console.warn('Gmail verify error:',e.message);}
 
   health.lastOk=now;
+  health.consecutiveFails=0;
   health.checks=(health.checks||[]).concat({time:now,ok:true}).slice(-30);
   health.testingMode=!!j.refresh_token_expires_in;
   fs.writeFileSync(HF,JSON.stringify(health,null,2));

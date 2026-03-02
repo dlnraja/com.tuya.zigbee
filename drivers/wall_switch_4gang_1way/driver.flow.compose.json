@@ -98,6 +98,32 @@
       ]
     },
     {
+      "id": "wall_switch_4gang_1way_set_power_on_behavior",
+      "title": { "en": "Set power-on behavior", "nl": "Stel inschakelgedrag in", "de": "Einschaltverhalten einstellen", "fr": "Définir le comportement à la mise sous tension" },
+      "titleFormatted": { "en": "Set power-on behavior to [[mode]]", "nl": "Stel inschakelgedrag in op [[mode]]" },
+      "args": [
+        { "type": "device", "name": "device", "filter": "driver_id=wall_switch_4gang_1way" },
+        { "name": "mode", "type": "dropdown", "values": [
+            { "id": "off", "label": { "en": "Always Off", "nl": "Altijd Uit" } },
+            { "id": "on", "label": { "en": "Always On", "nl": "Altijd Aan" } },
+            { "id": "memory", "label": { "en": "Last State", "nl": "Laatste status" } }
+        ]}
+      ]
+    },
+    {
+      "id": "wall_switch_4gang_1way_set_switch_mode",
+      "title": { "en": "Set external switch type", "nl": "Stel extern schakelaartype in", "de": "Externen Schaltertyp einstellen", "fr": "Définir le type d'interrupteur externe" },
+      "titleFormatted": { "en": "Set external switch type to [[mode]]", "nl": "Stel extern schakelaartype in op [[mode]]" },
+      "args": [
+        { "type": "device", "name": "device", "filter": "driver_id=wall_switch_4gang_1way" },
+        { "name": "mode", "type": "dropdown", "values": [
+            { "id": "toggle", "label": { "en": "Toggle", "nl": "Tuimelschakelaar" } },
+            { "id": "state", "label": { "en": "State (Rocker)", "nl": "Status (Wipschakelaar)" } },
+            { "id": "momentary", "label": { "en": "Momentary (Push Button)", "nl": "Pulsdrukknop" } }
+        ]}
+      ]
+    },
+    {
       "id": "wall_switch_4gang_1way_set_scene_mode",
       "title": { "en": "Set scene mode", "nl": "Stel scènemodus in" },
       "titleFormatted": { "en": "[[device]] set scene mode to [[mode]]", "nl": "[[device]] stel scènemodus in op [[mode]]" },
