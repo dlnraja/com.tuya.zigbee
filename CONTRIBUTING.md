@@ -54,3 +54,15 @@ const isPhysical = !this._zclState.pending[ep];
 | 14 | Power-on behavior |
 | 15 | Backlight mode |
 | 101 | Child lock |
+
+## Credits & Community
+
+This app builds on work from many open-source projects and contributors:
+- **[JohanBendz](https://github.com/JohanBendz/com.tuya.zigbee)** — Original app
+- **[Zigbee2MQTT](https://www.zigbee2mqtt.io)** — DP mappings & device DB
+- **[ZHA / zigpy](https://github.com/zigpy/zha-device-handlers)** — Quirks & signatures
+- **[kkossev / Hubitat](https://github.com/kkossev/Hubitat)** — Tuya DP research
+- **[Blakadder](https://zigbee.blakadder.com)** — Device cross-reference
+- **[Homey Community Forum](https://community.homey.app/t/140352)** — Bug reports & testing
+
+Full credits: [docs/CREDITS.md](./docs/CREDITS.md)
