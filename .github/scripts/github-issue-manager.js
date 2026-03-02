@@ -95,6 +95,26 @@ async function generateResponse(issue,fpResults,classification,variants,bugs,ima
   return ai?TAG+'\n'+ai.text:null;
 }
 
+// v5.11.27: Fast-path — detect empty-template issues (no actual device data)
+function isEmptyTemplate(issue){
+  const t=(issue.title||'');
+  return(t.includes('[Device name]')&&t.includes('[manufacturerName]'))||(t.includes('[manufacturerName]')&&t.includes('[modelId]')&&!/_T[A-Z]/.test(issue.body||''));
+}
+
+// v5.11.27: Fast-path resolution for fully-supported device requests (saves AI budget)
+function buildFastResponse(issue,fpResults,repo,allSupported){
+  const isUp=repo&&repo!==OWN;
+  let msg=TAG+'\n';
+  if(allSupported&&fpResults.length){
+    const driverList=fpResults.map(f=>'`'+f.fp+'` → **'+f.drivers.join(', ')+'**').join(', ');
+    msg+='Already supported in v'+appVer+': '+driverList+'.\n\n';
+    msg+='Install the latest test version: https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.';
+    if(isUp)msg+='\n\nForum: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352';
+    return msg;
+  }
+  return null;
+}
+
 // Process a single issue
 async function processIssue(repo,issue,state,report,extData){
   const key=repo+'#'+issue.number;
@@ -104,6 +124,18 @@ async function processIssue(repo,issue,state,report,extData){
   const mfrs=extractMfrFromText(text);
   const allFPs=[...new Set([...foundFPs,...mfrs.filter(m=>m.startsWith('_T'))])];
 
+  // v5.11.27: Fast-path for empty template issues
+  if(isEmptyTemplate(issue)){
+    console.log('  #'+issue.number+' [EMPTY TEMPLATE] '+issue.title?.slice(0,60));
+    const comments=await ghGet('/repos/'+repo+'/issues/'+issue.number+'/comments?per_page=5');
+    const hasBot=comments&&comments.some(c=>(c.body||'').includes(TAG));
+    if(!hasBot){
+      await ghPost('/repos/'+repo+'/issues/'+issue.number+'/comments',{body:TAG+'\nThis issue was opened with an empty template (no device fingerprint provided). Please reopen with the actual device details from a Homey Developer Tools interview: https://tools.developer.homey.app'});
+      report.responded++;
+    }
+    markProcessed(state,repo,issue.number);return;
+  }
+
   // Check which are supported
   const fpResults=allFPs.map(fp=>{
     const drivers=findAllDrivers(fp);
@@ -112,6 +144,24 @@ async function processIssue(repo,issue,state,report,extData){
   const newFPs=fpResults.filter(f=>!f.supported).map(f=>f.fp);
   const existingFPs=fpResults.filter(f=>f.supported);
 
+  // v5.11.27: Fast-path for fully-supported device requests (skip AI, save budget)
+  if(allFPs.length>0&&newFPs.length===0){
+    const comments=await ghGet('/repos/'+repo+'/issues/'+issue.number+'/comments?per_page=10');
+    const hasBot=comments&&comments.some(c=>(c.body||'').includes(TAG)||c.user?.login==='dlnraja');
+    if(!hasBot){
+      const fast=buildFastResponse(issue,fpResults,repo,true);
+      if(fast){
+        await ghPost('/repos/'+repo+'/issues/'+issue.number+'/comments',{body:fast});
+        report.responded++;
+        console.log('  #'+issue.number+' [FAST-SUPPORTED] '+allFPs.join(',')+' → '+existingFPs.map(f=>f.drivers[0]).join(','));
+      }
+    }else{
+      console.log('  #'+issue.number+' [ALREADY TRIAGED] '+allFPs.join(','));
+    }
+    markProcessed(state,repo,issue.number);
+    await sleep(RATE_SLEEP);return;
+  }
+
   // Search variants and bugs from external sources
   const variants=[];const bugs=[];
   for(const fp of allFPs){
@@ -119,7 +169,7 @@ async function processIssue(repo,issue,state,report,extData){
     const b=findBugs(fp,extData);if(b.length){bugs.push(...b);console.log('    Bugs for '+fp+': '+b.length)}
   }
 
-  // Classify with AI
+  // Classify with AI (only for issues that need it — new FPs or bugs)
   const classification=await classifyIssue(issue,fpResults);
   if(!classification){console.log('  Skip #'+issue.number+' (AI classify failed)');return}
   console.log('  #'+issue.number+' ['+classification.type+'/'+classification.priority+'] '+issue.title?.slice(0,60));
