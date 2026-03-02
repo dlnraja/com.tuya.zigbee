@@ -102,6 +102,23 @@ jobs:
           git pull --rebase origin master || true
           git push || true
 
+      - name: "Diagnostic Auto-Resolver (cross-ref → issues/PRs)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/diagnostic-auto-resolver.js
+
+      - name: Commit resolver state
+        if: always()
+        run: |
+          git add .github/state/resolver-*.json 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "diag-resolver: auto-resolve from gmail pipeline [skip ci]"
+          git pull --rebase origin master || true
+          git push || true
+
       - name: Upload diagnostics
         if: always()
         uses: actions/upload-artifact@v4
