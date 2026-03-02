@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.39",
+  "version": "5.11.40",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -9353,6 +9353,30 @@
           "nl": "Uitgezet",
           "de": "Ausgeschaltet"
         }
+      },
+      {
+        "id": "ir_remote_code_learned",
+        "title": {
+          "en": "An IR code was learned",
+          "fr": "Un code IR a été appris"
+        },
+        "tokens": [
+          {
+            "name": "ir_code",
+            "type": "string",
+            "title": {
+              "en": "IR Code",
+              "fr": "Code IR"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_remote"
+          }
+        ]
       },
       {
         "id": "lcdtemphumidsensor_temp_changed",
@@ -33640,6 +33664,45 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=ir_blaster"
+          }
+        ]
+      },
+      {
+        "id": "ir_remote_send_code",
+        "title": {
+          "en": "Send an IR code",
+          "fr": "Envoyer un code IR"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_remote"
+          },
+          {
+            "name": "ir_code",
+            "type": "text",
+            "title": {
+              "en": "IR Code (base64)",
+              "fr": "Code IR (base64)"
+            },
+            "placeholder": {
+              "en": "Paste the learned IR code here"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ir_remote_start_learning",
+        "title": {
+          "en": "Start learning an IR code",
+          "fr": "Commencer l'apprentissage d'un code IR"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ir_remote"
           }
         ]
       },
@@ -58629,6 +58692,108 @@
     },
     {
       "name": {
+        "en": "Zigbee IR Remote (Moes/Tuya)",
+        "fr": "Télécommande IR Zigbee (Moes/Tuya)",
+        "nl": "Zigbee IR Afstandsbediening (Moes/Tuya)",
+        "de": "Zigbee IR Fernbedienung (Moes/Tuya)"
+      },
+      "class": "remote",
+      "capabilities": [
+        "button.learn_ir",
+        "ir_learned_code",
+        "ir_send_code",
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {
+        "button.learn_ir": {
+          "title": {
+            "en": "Learn IR Code",
+            "fr": "Apprendre Code IR"
+          }
+        }
+      },
+      "energy": {
+        "batteries": [
+          "CR2450",
+          "CR2032",
+          "AAA"
+        ],
+        "approximation": {
+          "usageConstant": 0.3
+        }
+      },
+      "subDevices": [],
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3290_7v1k4vufotpowp9z",
+          "_TZ3290_acv1iuslxi3shaaj",
+          "_TZ3290_j37rooaxrcdcqo5n",
+          "_TZ3290_ot6ewjvmejq5ekhl",
+          "_TZ3290_u9xac5rv",
+          "_TZ3290_xjpbcxn92aaxvmlz"
+        ],
+        "productId": [
+          "TS1201"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              4,
+              5,
+              6,
+              57348,
+              60672
+            ],
+            "bindings": [
+              10,
+              25
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/ir_remote/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+          }
+        }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Info",
+            "fr": "Infos Appareil"
+          },
+          "children": [
+            {
+              "id": "zb_manufacturer_name",
+              "type": "label",
+              "label": {
+                "en": "Manufacturer",
+                "fr": "Fabricant"
+              },
+              "value": ""
+            },
+            {
+              "id": "zb_model_id",
+              "type": "label",
+              "label": {
+                "en": "Model ID",
+                "fr": "ID Modèle"
+              },
+              "value": ""
+            }
+          ]
+        }
+      ],
+      "id": "ir_remote"
+    },
+    {
+      "name": {
         "en": "LCD Temperature & Humidity Sensor",
         "fr": "Capteur de Température et Humidité LCD",
         "nl": "LCD Temp/Vocht Sensor",
@@ -81803,6 +81968,28 @@
       "setable": true,
       "uiComponent": "toggle",
       "insights": true
+    },
+    "ir_learned_code": {
+      "type": "string",
+      "title": {
+        "en": "Learned IR Code",
+        "fr": "Code IR Appris"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/ir_code.svg"
+    },
+    "ir_send_code": {
+      "type": "string",
+      "title": {
+        "en": "Send IR Code",
+        "fr": "Envoyer Code IR"
+      },
+      "getable": false,
+      "setable": true,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/ir_code.svg"
     },
     "measure_formaldehyde": {
       "type": "number",
