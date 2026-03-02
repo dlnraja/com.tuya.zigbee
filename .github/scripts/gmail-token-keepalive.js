@@ -31,15 +31,18 @@ async function main(){
     health.checks.push({time:now,ok:false,err:res.status});
     health.lastFail=now;
     if(e.includes('invalid_grant')){
-      console.error('=== TOKEN EXPIRED (Testing mode 7-day limit) ===');
-      console.error('PERMANENT FIX: Google Cloud Console > OAuth consent > PUBLISH APP');
-      console.error('  URL: https://console.cloud.google.com/apis/credentials/consent');
-      console.error('TEMP FIX: Regenerate at https://developers.google.com/oauthplayground');
-      console.log('::error::Gmail refresh token EXPIRED. Publish OAuth app to Production mode.');
+      console.error('=== TOKEN EXPIRED ===');
+      console.error('STEP 1: Go to https://developers.google.com/oauthplayground');
+      console.error('STEP 2: Click gear icon > check "Use your own OAuth credentials"');
+      console.error('STEP 3: Paste Client ID + Secret > check "Auto-refresh the token"');
+      console.error('STEP 4: Select Gmail API v1 > gmail.readonly > Authorize > Exchange');
+      console.error('STEP 5: Copy Refresh Token > update GMAIL_REFRESH_TOKEN secret');
+      console.error('PERMANENT: Publish OAuth app > https://console.cloud.google.com/apis/credentials/consent');
+      console.log('::error::Gmail refresh token EXPIRED. Regenerate via OAuth Playground (see SECRETS.md).');
       // v5.11.27: Only create alert file if 24h cooldown passed (prevents duplicate issues)
       if(shouldAlert(health,'expired')){
         fs.writeFileSync(path.join(SD,'_token_expired_alert.txt'),
-          'Gmail refresh token expired at '+now+'.\n\nFIX: Google Cloud Console > OAuth consent screen > PUBLISH APP (Testing→Production).\nOR: Regenerate token at OAuth Playground and update GMAIL_REFRESH_TOKEN secret.');
+          'Gmail refresh token expired at '+now+'.\n\n## Regenerate Token\n1. Go to https://developers.google.com/oauthplayground\n2. Click gear ⚙️ > check **Use your own OAuth credentials** > paste Client ID + Secret\n3. Check **Auto-refresh the token before it expires**\n4. Select Gmail API v1 > `gmail.readonly` > Authorize > Exchange\n5. Copy Refresh Token > update `GMAIL_REFRESH_TOKEN` secret\n\n## Permanent Fix\nPublish OAuth app: https://console.cloud.google.com/apis/credentials/consent\nTesting→Production = token never expires.');
         markAlerted(health,'expired');
       } else {
         console.log('Alert cooldown active — skipping duplicate alert file');
