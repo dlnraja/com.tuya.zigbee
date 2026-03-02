@@ -6,7 +6,26 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.39] - 2026-03-02
+## [5.11.40] - 2026-03-02
+
+### New Features
+- Added Zigbee IR Remote driver for Moes UFO-R11 / TS1201.
+
+### Improvements
+- Codified fingerprint research intelligence into the automation pipeline.
+- Enrichment process updated with 3077 fingerprints cross-referenced from Z2M/ZHA/forum.
+- Total drivers increased to 144, with 4943 fingerprints now supported.
+
+### CI/CD
+- Automated batch close/respond for state updates.
+- Triaged issues and PRs from contributors.
+- Auto-published new driver and fingerprints.
+
+### Files Changed
+- Significant updates to enrichment scripts and state management files.
+---
+
+ [5.11.39] - 2026-03-02
 
 ### New Features
 - Added Zigbee IR Remote driver for Moes UFO-R11 / TS1201.
