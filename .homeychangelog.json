@@ -1,4 +1,7 @@
 {
+  "5.11.52": {
+    "en": "Universal Tuya Zigbee app v5.11.52: Added remote dimmer driver, fixed vibration sensor triggers, and improved Gmail token handling."
+  },
   "5.11.51": {
     "en": "Fixes for vibration sensor triggers and adds remote dimmer driver. 145 drivers, 4959 fingerprints."
   },
@@ -56,10 +59,7 @@
   "5.11.33": {
     "en": "Universal Tuya Zigbee app v5.11.33: Added diagnostics infrastructure and bug fixes, updated 143 drivers with 3057 fingerprints."
   },
-  "5.11.32": {
-    "en": "Fixed ReferenceError in IAS verification and added support for _TZ3000_itb0omhv."
-  },
-  "5.11.52": {
-    "en": "v5.11.51: Fixed vibration sensor triggers for alarm_vibration, temperature, and flow (Forum #1559/#1561)., Added remote_dimmer driver (Lidl HG06323 TS1001) with full Zosung protocol support., Implemented GitHub Deep Search engine to search 20+ Zigbee projects for fingerprints, data points, and converters., Auto-published 145 drivers and 4959 fingerprints., Enhanced Gmail diagnostics and auto-resol"
+  "5.11.53": {
+    "en": "v5.11.52: Fixed vibration sensor triggers for alarm_vibration, temperature, and flow (Forum #1559/#1561)., Added remote_dimmer driver for Lidl HG06323 TS1001 with full Zosung protocol support., Implemented GitHub Deep Search engine to search over 20 Zigbee projects for fingerprints, devices, and converters., Hardened Gmail token rotation for Testing mode with a 7-day cycle., Updated auto-publish f"
   }
 }
