@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-02-19T22:53:04.242Z",
+  "timestamp": "2026-03-02T06:17:20.951Z",
   "localStats": {
-    "manufacturerNames": 3392,
-    "productIds": 500
+    "manufacturerNames": 4201,
+    "productIds": 508
   },
   "z2mStats": {
     "manufacturerNames": 25,
-    "productIds": 1639
+    "productIds": 1644
   },
   "missingManufacturerNames": [
     {
@@ -87,11 +87,6 @@
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "TS0041A",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
       "value": "owvfni3\\u0000",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
@@ -157,11 +152,6 @@
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "TS0026",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
       "value": "HY0080",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
@@ -192,11 +182,6 @@
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "TS0052",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
       "value": "ZG-205ZL",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
@@ -208,11 +193,6 @@
     },
     {
       "value": "ZG-225Z",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "TS0224",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
     },
@@ -232,11 +212,6 @@
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "TS0105",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
       "value": "ZG-103Z",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
@@ -248,11 +223,6 @@
     },
     {
       "value": "ZG-302ZL",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "TS0901",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
     },
@@ -403,6 +373,26 @@
     },
     {
       "value": "MINI-ZBDIM",
+      "source": "sonoff",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "SWV-ZNE",
+      "source": "sonoff",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "SWV-ZFE",
+      "source": "sonoff",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "SWV-ZNU",
+      "source": "sonoff",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "SWV-ZFU",
       "source": "sonoff",
       "suggestedDriver": "generic_diy"
     },
@@ -2418,6 +2408,11 @@
     },
     {
       "value": "lumi.ctrl_86plug.aq1",
+      "source": "lumi",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "lumi.plug.acn005",
       "source": "lumi",
       "suggestedDriver": "generic_diy"
     },
