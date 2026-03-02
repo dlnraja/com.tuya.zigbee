@@ -1,6 +1,6 @@
 {
   "5.11.32": {
-    "en": "Updated Universal Tuya Zigbee app to v5.11.32 with 143 drivers and 3057 fingerprints."
+    "en": "Fixed ReferenceError in IAS verification and added support for _TZ3000_itb0omhv."
   },
   "5.11.31": {
     "en": "Universal Tuya Zigbee app v5.11.31: Updated drivers and improved documentation."
@@ -58,5 +58,8 @@
   },
   "5.11.13": {
     "en": "v5.11.13: Fix presence_sensor_radar log spam (~52K lines/day). (1) Same-value dedup for lux — skip when value unchanged (was logging 0→0 every 5s). (2) Fix lux change calc when currentLux=0: was always returning 100% change, bypassing smoothing filter. (3) Throttle 'static mapping' log to first occurrence per DP. (4) Remove verbose per-event [RADAR-BATTERY] log from Tuya DP listener. Diagnostic report: hcaron@synchrone.fr v5.11.5."
+  },
+  "5.11.33": {
+    "en": "v5.11.32: Fixed issues with fingerprint recognition for several devices., Added 8 new device interviews to the database., Updated app.json to reflect the current number of drivers and fingerprints., Auto-published version v5.11.32 with 143 drivers and 3057 fingerprints."
   }
 }
