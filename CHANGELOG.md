@@ -6,7 +6,21 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.47] - 2026-03-02
+## [5.11.48] - 2026-03-02
+
+### New Features
+- Added remote dimmer driver for Lidl HG06323 TS1001 with full Zosung protocol support.
+- Introduced GitHub Deep Search engine to search 20+ Zigbee projects for fingerprints, device profiles, and converters.
+
+### Improvements
+- Updated app to include 145 drivers and 4959 fingerprints.
+
+### CI/CD
+- Auto-published version 5.11.48 with 145 drivers and 3093 fingerprints.
+- Updated GitHub workflows for daily and weekly external source synchronization.
+---
+
+ [5.11.47] - 2026-03-02
 
 ### New Features
 - Added remote dimmer driver for Lidl HG06323 TS1001 with full Zosung protocol support.
