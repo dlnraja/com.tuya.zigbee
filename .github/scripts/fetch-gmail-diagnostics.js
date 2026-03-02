@@ -68,15 +68,22 @@ function buildIndex(){
   return idx;
 }
 
-// Gmail OAuth token refresh
+// Gmail OAuth token refresh + health tracking
+const HF=path.join(SD,'gmail-token-health.json');
+function loadHealth(){try{return JSON.parse(fs.readFileSync(HF,'utf8'))}catch{return{checks:[],consecutiveFails:0}}}
+function saveHealth(h){fs.mkdirSync(SD,{recursive:true});fs.writeFileSync(HF,JSON.stringify(h,null,2))}
+function trackToken(ok,err){const h=loadHealth();h.checks=(h.checks||[]).slice(-9);h.checks.push({time:new Date().toISOString(),ok,err:err||null});if(ok){h.lastOk=new Date().toISOString();h.consecutiveFails=0}else{h.lastFail=new Date().toISOString();h.consecutiveFails=(h.consecutiveFails||0)+1}saveHealth(h)}
+
 async function getToken(){
   const{GMAIL_CLIENT_ID:id,GMAIL_CLIENT_SECRET:s,GMAIL_REFRESH_TOKEN:r}=process.env;
   if(!id||!s||!r){console.log('Gmail credentials missing: need GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN');return null;}
   const res=await fetchWithRetry('https://oauth2.googleapis.com/token',{method:'POST',
     headers:{'Content-Type':'application/x-www-form-urlencoded'},
     body:'client_id='+id+'&client_secret='+s+'&refresh_token='+r+'&grant_type=refresh_token'},{retries:3,label:'gmailToken'});
-  if(!res.ok){const e=await res.text();console.error('Token refresh failed:',res.status,e);if(e.includes('invalid_grant')){console.error('=== TOKEN EXPIRED (Testing mode 7-day limit) ===');console.error('PERMANENT FIX: Google Cloud Console > OAuth consent > PUBLISH APP');console.error('TEMP FIX: Regenerate at https://developers.google.com/oauthplayground');console.log('::error::Gmail token expired. Publish OAuth app to Production or regenerate.');}return null;}
+  if(!res.ok){const e=await res.text();console.error('Token refresh failed:',res.status,e);trackToken(false,res.status);if(e.includes('invalid_grant')){console.error('=== TOKEN EXPIRED (Testing mode 7-day limit) ===');console.error('PERMANENT FIX: Google Cloud Console > OAuth consent > PUBLISH APP');console.error('TEMP FIX: Regenerate at https://developers.google.com/oauthplayground');console.log('::error::Gmail token expired. Publish OAuth app to Production or regenerate.');}return null;}
   const j=await res.json();
+  trackToken(true);
+  console.log('Gmail token refreshed OK');
   if(j.refresh_token_expires_in)console.log('Refresh token expires in '+Math.round(j.refresh_token_expires_in/3600)+'h (Testing mode)');
   if(j.refresh_token){console.log('New refresh token received - writing for auto-rotation');fs.writeFileSync(path.join(SD,'_new_refresh_token.txt'),j.refresh_token);}
   return j.access_token;
