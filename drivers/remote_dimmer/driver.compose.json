@@ -1,0 +1,59 @@
+{
+  "name": {
+    "en": "Remote Control Dimmer (Lidl/Tuya)",
+    "fr": "Télécommande Variateur (Lidl/Tuya)",
+    "nl": "Afstandsbediening Dimmer (Lidl/Tuya)",
+    "de": "Fernbedienung Dimmer (Lidl/Tuya)"
+  },
+  "class": "remote",
+  "capabilities": [
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "energy": {
+    "batteries": ["CR2450", "CR2032"]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TYZB01_bngwdjsr"
+    ],
+    "productId": [
+      "TS1001"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [0, 1, 3, 4, 4096],
+        "bindings": [6, 8, 5]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/remote_dimmer/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes rapidly.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'au clignotement rapide de la LED.",
+        "nl": "Houd de koppelknop 5 seconden ingedrukt tot de LED snel knippert.",
+        "de": "Halten Sie die Kopplungstaste 5 Sekunden lang gedrückt, bis die LED schnell blinkt."
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": { "en": "Device Info", "fr": "Infos Appareil" },
+      "children": [
+        {
+          "id": "zb_manufacturer_name",
+          "type": "label",
+          "label": { "en": "Manufacturer", "fr": "Fabricant" },
+          "value": ""
+        },
+        {
+          "id": "zb_model_id",
+          "type": "label",
+          "label": { "en": "Model ID", "fr": "ID Modèle" },
+          "value": ""
+        }
+      ]
+    }
+  ]
+}
