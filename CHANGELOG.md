@@ -6,7 +6,23 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.44] - 2026-03-02
+## [5.11.45] - 2026-03-02
+
+### Bug Fixes
+- Fixed Gmail token recovery process.
+
+### New Features
+- Resolved all open PR/issue fingerprints.
+- Enhanced the fingerprint research engine with Z2M context analysis.
+- Improved Gmail diagnostics with PII sanitization and deep research capabilities.
+- Introduced issue-deep-researcher.js to scan all open PRs/issues and auto-implement findings.
+- Added variant-scanner.js for auto-discovery of all variants and product IDs.
+
+### CI/CD
+- Auto-published version 5.11.45 with 144 drivers and 3090 fingerprints.
+---
+
+ [5.11.44] - 2026-03-02
 
 ### New Features
 - Resolved all open PR/issue fingerprints.
