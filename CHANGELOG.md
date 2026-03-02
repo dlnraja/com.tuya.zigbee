@@ -6,7 +6,25 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.37] - 2026-03-02
+## [5.11.38] - 2026-03-02
+
+### Bug Fixes
+- Fixed draft to test promotion pipeline.
+
+### New Features
+- Added 10 new fingerprints from internet research and comprehensive scan.
+- Added 9 missing fingerprints from interviews and diagnostics scan.
+
+### Improvements
+- Enhanced auto-resolution process for GitHub issues.
+- Conducted a comprehensive audit of getSetting workflow.
+
+### CI/CD
+- Updated auto-publish scripts for better efficiency.
+- Improved diagnostics collection scripts.
+---
+
+ [5.11.37] - 2026-03-02
 
 ### Bug Fixes
 - Fixed draft to test promotion pipeline.
