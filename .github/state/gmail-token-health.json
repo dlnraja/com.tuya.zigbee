@@ -4,11 +4,16 @@
       "time": "2026-03-02T17:21:47.395Z",
       "ok": false,
       "err": 400
+    },
+    {
+      "time": "2026-03-02T20:38:20.503Z",
+      "ok": false,
+      "err": 401
     }
   ],
   "lastOk": null,
-  "lastFail": "2026-03-02T17:21:47.395Z",
+  "lastFail": "2026-03-02T20:38:20.503Z",
   "_lastAlert_expired": null,
-  "consecutiveFails": 1,
+  "consecutiveFails": 2,
   "_note": "Reset 2026-03-02: new GMAIL_REFRESH_TOKEN set via gh secret"
 }
