@@ -1,4 +1,7 @@
 {
+  "5.11.46": {
+    "en": "Added ZCL cluster adapters and converters for Z2M, ZHA, and deCONZ; enhanced security."
+  },
   "5.11.45": {
     "en": "Universal Tuya Zigbee app v5.11.45: Fixed Gmail token recovery, resolved open PRs/issues, and enhanced diagnostics."
   },
@@ -56,10 +59,7 @@
   "5.11.27": {
     "en": "Universal Tuya Zigbee app v5.11.27: Added new AI providers and improved forum management."
   },
-  "5.11.26": {
-    "en": "Fixed forum duplication issues and improved AI ensemble routing for better task classification."
-  },
-  "5.11.46": {
-    "en": "v5.11.45: Fixed Gmail token recovery process., Resolved all open PR/issue fingerprints., Enhanced the fingerprint research engine with Z2M context analysis., Improved Gmail diagnostics with PII sanitization and deep research capabilities., Introduced issue-deep-researcher.js to scan all open PRs/issues and auto-implement findings."
+  "5.11.47": {
+    "en": "v5.11.46: Introduced ZCL cluster adapters for improved device compatibility., Added converters for Zigbee to MQTT (Z2M), Zigbee Home Automation (ZHA), and deCONZ., Implemented security hardening measures to enhance app safety., Updated GitHub workflows for daily and weekly external source synchronization., Modified sync-external-sources script to accommodate new changes."
   }
 }
