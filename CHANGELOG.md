@@ -6,7 +6,24 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.45] - 2026-03-02
+## [5.11.46] - 2026-03-02
+
+### New Features
+- Introduced ZCL cluster adapters for improved device compatibility.
+- Added converters for Zigbee to MQTT (Z2M), Zigbee Home Automation (ZHA), and deCONZ.
+
+### Security
+- Implemented security hardening measures to enhance app safety.
+
+### CI/CD
+- Updated GitHub workflows for daily and weekly external source synchronization.
+- Modified sync-external-sources script to accommodate new changes.
+
+### Code Changes
+- Significant code additions across multiple adapter files to support new features and security enhancements.
+---
+
+ [5.11.45] - 2026-03-02
 
 ### Bug Fixes
 - Fixed Gmail token recovery process.
