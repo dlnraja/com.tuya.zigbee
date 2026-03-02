@@ -1,7 +1,25 @@
 # Credits & Contributors
 
 > Auto-generated from fork scanning and PR analysis.
-> Last updated: 2026-02-26
+> Last updated: 2026-03-02
+
+## Acknowledgments / Remerciements
+
+This project is built with love and gratitude for the entire Zigbee open-source ecosystem.
+
+**Special thanks to / Remerciements spéciaux à :**
+
+- **[JohanBendz](https://github.com/JohanBendz/com.tuya.zigbee)** — Creator of the original Tuya Zigbee Homey app. His driver architecture, fingerprint collection, and community stewardship laid the groundwork for everything here.
+- **[Athom B.V.](https://athom.com)** — For building the Homey platform, SDK3, and the Zigbee stack that makes local smart home control a reality.
+- **[Koenkk](https://github.com/Koenkk)** — Zigbee2MQTT creator. The largest open-source Zigbee device database, essential for DP mappings and converter references.
+- **[blakadder](https://zigbee.blakadder.com)** — Zigbee Device Compatibility Repository. The best resource for cross-referencing Tuya OEM rebrands.
+- **[zigpy / ZHA team](https://github.com/zigpy)** — Python-based Zigbee stack with quirks and device signatures.
+- **[dresden-elektronik](https://github.com/dresden-elektronik)** — deCONZ REST plugin and ConBee hardware/firmware documentation.
+- **[CSA (Connectivity Standards Alliance)](https://csa-iot.org)** — Zigbee 3.0 protocol specifications.
+- **[Tasmota community](https://github.com/arendst/Tasmota)** — Cross-platform Tuya device research and DP documentation.
+- **The Homey Community Forum** — Every user who shares device interviews, diagnostic logs, and fingerprints makes this app better for everyone.
+
+---
 
 | Contributor | Fingerprints | PRs | Source |
 |------------|-------------|-----|--------|

@@ -329,12 +329,18 @@ This app is developed in my free time, powered by passion and coffee!
 
 ## Credits & Thanks
 
-A massive thank you to the maintainers and contributors of:
-- **[Koenkk](https://github.com/Koenkk)** and all contributors to **Zigbee2MQTT**
+A massive thank you to everyone who makes this possible:
+
+- **[JohanBendz](https://github.com/JohanBendz/com.tuya.zigbee)** — Original Tuya Zigbee app, foundational architecture
+- **[Athom](https://athom.com)** — Homey platform & SDK3
+- **[Koenkk](https://github.com/Koenkk)** & contributors to **Zigbee2MQTT**
 - **[blakadder](https://github.com/blakadder)** and the Zigbee Device Compatibility Repository
-- The **zigpy / ZHA / zha-device-handlers** maintainers
-- The **CSA (Connectivity Standards Alliance)** for the Zigbee specifications
-- All developers and testers who share device logs, diagnostics, and fingerprints
+- **[zigpy](https://github.com/zigpy)** / **ZHA** / **[zha-device-handlers](https://github.com/zigpy/zha-device-handlers)** — Python quirks & signatures
+- **[dresden-elektronik](https://github.com/dresden-elektronik)** — deCONZ REST plugin & ConBee docs
+- **[CSA](https://csa-iot.org)** — Zigbee 3.0 specifications
+- **[Tasmota](https://github.com/arendst/Tasmota)** — Cross-platform Tuya device research
+- **Community contributors**: [@mayconbordin](https://github.com/mayconbordin), [@kodalissri](https://github.com/kodalissri), [@IsaacNZ2](https://github.com/IsaacNZ2), [@pkuijpers](https://github.com/pkuijpers), [@willarentz](https://github.com/willarentz)
+- All users on the **[Homey Community Forum](https://community.homey.app)** who share device logs, diagnostics, and fingerprints — you are the backbone of this project
 
 ---
 
