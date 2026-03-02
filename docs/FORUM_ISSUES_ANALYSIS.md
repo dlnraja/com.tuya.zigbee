@@ -434,3 +434,8 @@ All 12 fingerprints from 20 open issues **already supported** in v5.11.19:
 
 ## Nightly Forum Scan (2026-02-28 v5.11.26)
 - **Topic 140352 #1551** @OH2TH: `dlnraja` (template)
+
+
+## Nightly Forum Scan (2026-03-02 v5.11.46)
+- **Topic 140352 #1559** @Nicolas: `dlnraja` (gh-gpt-4o-mini)
+- **Topic 140352 #1561** @Nicolas: no FPs (gh-Mistral-small-2503)
