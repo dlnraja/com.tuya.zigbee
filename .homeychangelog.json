@@ -1,4 +1,7 @@
 {
+  "5.11.35": {
+    "en": "Updated Universal Tuya Zigbee app to v5.11.35 with 143 drivers and 4918 fingerprints."
+  },
   "5.11.34": {
     "en": "Updated to v5.11.34 with comprehensive getSetting audit and workflow improvements."
   },
@@ -56,10 +59,7 @@
   "5.11.16": {
     "en": "Auto-publish via GitHub Actions"
   },
-  "5.11.15": {
-    "en": "Auto-publish via GitHub Actions"
-  },
-  "5.11.35": {
-    "en": "v5.11.34: Conducted a comprehensive audit of getSetting functionality., Improved diagnostics infrastructure., Added 143 drivers and 4918 fingerprints., Implemented auto-publish feature for streamlined updates., Enhanced workflow processes related to diagnostics collection and forum updates."
+  "5.11.36": {
+    "en": "v5.11.35: Fixed draft to test promotion pipeline., Auto-published 143 drivers and 3058 fingerprints., Updated diagnostics infrastructure and improved workflow for better efficiency., Conducted a comprehensive audit of getSetting functionality."
   }
 }
