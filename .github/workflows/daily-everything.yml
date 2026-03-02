@@ -428,15 +428,28 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
-      # ===== 13. DRAFT → TEST (Puppeteer browser automation) =====
-      # Athom has no public API for draft→test. Only the web UI works.
-      - name: "13a. Install Puppeteer"
+      # ===== 13. DRAFT → TEST =====
+      # v5.11.27: API method is PRIMARY (more reliable than Puppeteer)
+      # Puppeteer is FALLBACK only (SPA loading issues on CI)
+      - name: "13a. Promote via API (primary)"
         if: always()
+        id: promote_api
         continue-on-error: true
-        run: npm install puppeteer --no-save
+        timeout-minutes: 3
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/auto-publish-draft.js
 
-      - name: "13b. Promote via Browser (Puppeteer)"
-        if: always()
+      - name: "13b. Install Puppeteer (fallback)"
+        if: always() && steps.promote_api.outcome != 'success'
+        continue-on-error: true
+        run: |
+          rm -rf node_modules/@puppeteer/browsers 2>/dev/null || true
+          npm install puppeteer --no-save --force 2>&1 || true
+
+      - name: "13c. Promote via Browser (Puppeteer fallback)"
+        if: always() && steps.promote_api.outcome != 'success'
         id: promote_node
         continue-on-error: true
         timeout-minutes: 5
@@ -445,13 +458,6 @@ jobs:
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/auto-promote-puppeteer.js
-
-      - name: "13c. Promote via API (fallback)"
-        if: always() && steps.promote_node.outcome != 'success'
-        continue-on-error: true
-        env:
-          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-        run: node .github/scripts/auto-publish-draft.js
 
       - name: "13d. Upload promote screenshots"
         if: always()
