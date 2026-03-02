@@ -4,10 +4,15 @@
       "time": "2026-03-02T06:25:13.614Z",
       "ok": false,
       "err": 400
+    },
+    {
+      "time": "2026-03-02T08:57:23.096Z",
+      "ok": false,
+      "err": 401
     }
   ],
   "lastOk": null,
-  "lastFail": "2026-03-02T06:25:13.614Z",
+  "lastFail": "2026-03-02T08:57:23.096Z",
   "_lastAlert_expired": "2026-03-02T06:25:13.621Z",
-  "consecutiveFails": 1
+  "consecutiveFails": 2
 }
