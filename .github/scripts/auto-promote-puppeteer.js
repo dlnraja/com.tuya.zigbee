@@ -132,6 +132,7 @@ async function main() {
       log(`Manage: https://tools.developer.homey.app/apps/app/${APP_ID}`);
     } else {
       log('\nManual: https://tools.developer.homey.app/apps/app/' + APP_ID + '/versions');
+      process.exitCode = 1;
     }
   } finally {
     await browser.close();
@@ -227,17 +228,36 @@ async function doLogin(page) {
 async function findAndPromote(page) {
   // Wait for SPA content to render (tools.developer.homey.app is a React SPA)
   log('  Waiting for SPA content to load...');
-  let text = '';
+
+  // Force re-navigate to versions URL (SPA may not route after login redirect)
+  if (!page.url().includes('/versions')) {
+    log('  Re-navigating to versions URL...');
+    await page.goto(VERSIONS_URL, { waitUntil: 'networkidle0', timeout: 30000 }).catch(() => {});
+    await new Promise(r => setTimeout(r, 5000));
+  }
+
+  // If content is sparse, try clicking "My Apps" to trigger SPA routing
+  let text = await page.evaluate(() => document.body?.innerText || '');
+  if (text.length < 400) {
+    log('  Sparse content (' + text.length + ' chars), trying My Apps link...');
+    await page.evaluate(() => {
+      const a = [...document.querySelectorAll('a')].find(l => /my apps/i.test(l.textContent));
+      if (a) a.click();
+    });
+    await new Promise(r => setTimeout(r, 3000));
+    await page.goto(VERSIONS_URL, { waitUntil: 'networkidle0', timeout: 30000 }).catch(() => {});
+    await new Promise(r => setTimeout(r, 5000));
+  }
+
   let hasDraft = false;
-  for (let attempt = 0; attempt < 10; attempt++) {
+  for (let attempt = 0; attempt < 15; attempt++) {
     await new Promise(r => setTimeout(r, 2000));
     text = await page.evaluate(() => document.body?.innerText || '');
     hasDraft = text.toLowerCase().includes('draft');
     const hasVersion = /\d+\.\d+\.\d+/.test(text);
-    const hasContent = text.length > 300;
-    log(`  Poll ${attempt+1}/10: ${text.length} chars, hasVersion=${hasVersion}, hasDraft=${hasDraft}`);
+    const hasContent = text.length > 400;
+    log(`  Poll ${attempt+1}/15: ${text.length} chars, hasVersion=${hasVersion}, hasDraft=${hasDraft}`);
     if (hasContent && (hasVersion || hasDraft)) break;
-    // Try triggering React hydration by scrolling
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
   }
 
