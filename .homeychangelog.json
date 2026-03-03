@@ -1,4 +1,7 @@
 {
+  "5.11.71": {
+    "en": "Universal Tuya Zigbee app v5.11.71: Improved error logging for IMAP and updated diagnostics."
+  },
   "5.11.70": {
     "en": "Fixed IMAP credential handling and updated app with 145 drivers and 3093 fingerprints."
   },
@@ -56,10 +59,7 @@
   "5.11.52": {
     "en": "Universal Tuya Zigbee app v5.11.52: Added remote dimmer driver, fixed vibration sensor triggers, and improved Gmail token handling."
   },
-  "5.11.51": {
-    "en": "Fixes for vibration sensor triggers and adds remote dimmer driver. 145 drivers, 4959 fingerprints."
-  },
-  "5.11.71": {
-    "en": "v5.11.70: Fixed: pre-check now accepts HOMEY_PASSWORD as IMAP fallback credential., v5.11.70: 145 drivers, 3093 fingerprints — auto-publish [skip ci]."
+  "5.11.72": {
+    "en": "v5.11.71: Improved error logging for IMAP with mailbox fallback options (INBOX/All Mail/FR)., Updated Gmail diagnostics to analyze 0 emails in this version., Auto-resolve feature added for Gmail diagnostics pipeline., Total drivers: 145, Total fingerprints: 3093"
   }
 }
