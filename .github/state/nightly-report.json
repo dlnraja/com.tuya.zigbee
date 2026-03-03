@@ -1,57 +1,11 @@
 {
-  "timestamp": "2026-03-03T03:42:09.140Z",
-  "appVersion": "5.11.57",
-  "forum": 4,
+  "timestamp": "2026-03-03T14:13:23.832Z",
+  "appVersion": "5.11.75",
+  "forum": 0,
   "github": 0,
-  "diagnostics": 8,
+  "diagnostics": 2,
   "diagNewFPs": 0,
   "diagCritical": 0,
-  "forumDetails": [
-    {
-      "topic": 140352,
-      "post": 1563,
-      "user": "Nicolas",
-      "fps": [
-        "dlnraja"
-      ],
-      "reply": "Hi @Nicolas,\n\nThank you for reaching out and for providing the detailed fingerprint lookup. Let's address your question about the generic alarm for the vibration device.\n\n### Fingerprint Analysis\n\nFro",
-      "model": "gh-Mistral-small-2503"
-    },
-    {
-      "topic": 140352,
-      "post": 1566,
-      "user": "Peter_van_Werkhoven",
-      "fps": [
-        "_TZE200_vvmbj46n",
-        "development"
-      ],
-      "reply": "Hi Peter,\n\nThank you for reaching out and providing the details about your LCD Temperature and Humidity sensor. I appreciate your patience.\n\n### Device Identification\nThe fingerprint for your device `",
-      "model": "gh-Mistral-small-2503"
-    },
-    {
-      "topic": 140352,
-      "post": 1567,
-      "user": "Peter_van_Werkhoven",
-      "fps": [
-        "_TZE200_pay2byax",
-        "_TZ3000_0dumfk2z",
-        "HOBEIAN"
-      ],
-      "reply": "Hi Peter,\n\nThank you for your message and for your continued support. I appreciate your patience as I work through the integration of new devices.\n\n### Contact Sensor with Luminance (_TZE200_pay2byax,",
-      "model": "gh-Mistral-small-2503"
-    },
-    {
-      "topic": 140352,
-      "post": 1568,
-      "user": "Peter_van_Werkhoven",
-      "fps": [
-        "_TZE200_pay2byax",
-        "_TZ3000_mrpevh8p",
-        "test"
-      ],
-      "reply": "Hi Peter,\n\nThank you for your detailed feedback and for testing the new devices. Let's address your points one by one:\n\n### _TZE200_pay2byax Sensor\nThe fingerprint for the _TZE200_pay2byax sensor indi",
-      "model": "gh-Mistral-small-2503"
-    }
-  ],
+  "forumDetails": [],
   "githubDetails": []
 }
