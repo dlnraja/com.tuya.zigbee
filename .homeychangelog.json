@@ -1,4 +1,7 @@
 {
+  "5.11.74": {
+    "en": "Universal Tuya Zigbee app v5.11.74: Fixed IMAP fetch issue, updated drivers and fingerprints."
+  },
   "5.11.73": {
     "en": "Universal Tuya Zigbee app v5.11.73: Fixed IMAP fetch issue and updated fingerprints."
   },
@@ -56,10 +59,7 @@
   "5.11.55": {
     "en": "Universal Tuya Zigbee app v5.11.55 adds a new remote dimmer driver and improves vibration sensor functionality."
   },
-  "5.11.54": {
-    "en": "Universal Tuya Zigbee app v5.11.54: Added remote dimmer driver, fixed vibration sensor triggers, and updated scripts."
-  },
-  "5.11.74": {
-    "en": "v5.11.73: Fixed IMAP fetch to use sequence range string instead of UID array., Updated to 145 drivers and 3093 fingerprints., Screenshots updated to reflect recent changes., Auto-publish triggered for version 5.11.73."
+  "5.11.75": {
+    "en": "v5.11.74: Fixed IMAP: envelope-only fetch to prevent out-of-memory (OOM) crashes., Updated to 145 drivers and 3093 fingerprints., Screenshots updated for better clarity., Auto-published version v5.11.74."
   }
 }
