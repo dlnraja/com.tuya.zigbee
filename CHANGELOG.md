@@ -6,7 +6,23 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.56] - 2026-03-03
+## [5.11.58] - 2026-03-03
+
+### Bug Fixes
+- Fixed summary table issues.
+
+### New Features
+- Implemented periodic Gmail diagnostics with token pre-check and auto-rotation.
+- Added daily and nightly Gmail diagnostics, running twice a day.
+
+### Improvements
+- Gitignored large state files to reduce clutter.
+
+### CI/CD
+- Updated workflows for Gmail diagnostics and token keepalive.
+---
+
+ [5.11.56] - 2026-03-03
 
 ### Bug Fixes
 - Fixed vibration sensor triggers for alarm_vibration, temperature, and flow (Forum #1559/#1561).

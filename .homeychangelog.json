@@ -1,6 +1,9 @@
 {
   "5.11.58": {
-    "en": "Automation hardening: Gmail diagnostics now periodic (2x/day), token auto-rotation in all pipelines, gitignored large state files (-147K lines), fixed daily summary table. 145 drivers, 5406 fingerprints."
+    "en": "Automation hardening with Gmail diagnostics and token auto-rotation."
+  },
+  "5.11.57": {
+    "en": "v5.11.56: Fixed vibration sensor triggers for alarm_vibration, temperature, and flow (Forum #1559/#1561)., Added remote_dimmer driver for Lidl HG06323 TS1001 with full IR remote support., Implemented GitHub Deep Search engine to search over 20 Zigbee projects for fingerprints, data points, and converters., Reset Gmail token health with a new refresh token set for 2026-03-02., Updated auto-publishi"
   },
   "5.11.56": {
     "en": "Universal Tuya Zigbee app v5.11.56: Added remote dimmer driver, fixed vibration sensor triggers, and reset Gmail token health."
@@ -56,13 +59,7 @@
   "5.11.39": {
     "en": "Added support for Zigbee IR Remote (Moes UFO-R11 / TS1201) with new capabilities."
   },
-  "5.11.38": {
-    "en": "Added 10 new fingerprints and improved auto-resolution for GitHub issues in v5.11.38."
-  },
-  "5.11.37": {
-    "en": "Universal Tuya Zigbee app v5.11.37: Added 9 missing fingerprints, improved auto-resolution, and fixed promotion pipeline."
-  },
-  "5.11.57": {
-    "en": "v5.11.56: Fixed vibration sensor triggers for alarm_vibration, temperature, and flow (Forum #1559/#1561)., Added remote_dimmer driver for Lidl HG06323 TS1001 with full IR remote support., Implemented GitHub Deep Search engine to search over 20 Zigbee projects for fingerprints, data points, and converters., Reset Gmail token health with a new refresh token set for 2026-03-02., Updated auto-publishi"
+  "5.11.59": {
+    "en": "v5.11.58: Fixed summary table issues., Implemented periodic Gmail diagnostics with token pre-check and auto-rotation., Added daily and nightly Gmail diagnostics, running twice a day., Gitignored large state files to reduce clutter., Updated workflows for Gmail diagnostics and token keepalive."
   }
 }
