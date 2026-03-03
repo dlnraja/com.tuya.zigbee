@@ -1,4 +1,7 @@
 {
+  "5.11.58": {
+    "en": "Automation hardening: Gmail diagnostics now periodic (2x/day), token auto-rotation in all pipelines, gitignored large state files (-147K lines), fixed daily summary table. 145 drivers, 5406 fingerprints."
+  },
   "5.11.56": {
     "en": "Universal Tuya Zigbee app v5.11.56: Added remote dimmer driver, fixed vibration sensor triggers, and reset Gmail token health."
   },
