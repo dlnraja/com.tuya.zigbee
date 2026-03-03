@@ -1,4 +1,7 @@
 {
+  "5.11.77": {
+    "en": "Universal Tuya Zigbee app v5.11.77: Added session API fallback, updated drivers and fingerprints."
+  },
   "5.11.76": {
     "en": "Universal Tuya Zigbee app v5.11.76: Fixed auto-promote failure handling and updated drivers."
   },
@@ -56,10 +59,7 @@
   "5.11.58": {
     "en": "Automation hardening with Gmail diagnostics and token auto-rotation."
   },
-  "5.11.57": {
-    "en": "v5.11.56: Fixed vibration sensor triggers for alarm_vibration, temperature, and flow (Forum #1559/#1561)., Added remote_dimmer driver for Lidl HG06323 TS1001 with full IR remote support., Implemented GitHub Deep Search engine to search over 20 Zigbee projects for fingerprints, data points, and converters., Reset Gmail token health with a new refresh token set for 2026-03-02., Updated auto-publishi"
-  },
-  "5.11.77": {
-    "en": "v5.11.76: Fixed auto-promote to exit with code 1 on failure, enabling Tier 2 fallback., Updated app with 145 drivers and 3093 fingerprints., Auto-publish changes with [skip ci] tag., Updated screenshots for better clarity and resolution."
+  "5.11.78": {
+    "en": "v5.11.77: Added session API fallback to bypass SPA rendering., Updated to 145 drivers and 3093 fingerprints., Removed obsolete diagnostics reports and states, reducing file size significantly., Auto-publish adjustments made for smoother release process."
   }
 }

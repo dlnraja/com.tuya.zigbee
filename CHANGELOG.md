@@ -6,7 +6,20 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.76] - 2026-03-03
+## [5.11.77] - 2026-03-03
+
+### New Features
+- Added session API fallback to bypass SPA rendering.
+
+### Changes
+- Updated to 145 drivers and 3093 fingerprints.
+- Removed obsolete diagnostics reports and states, reducing file size significantly.
+
+### CI/CD
+- Auto-publish adjustments made for smoother release process.
+---
+
+ [5.11.76] - 2026-03-03
 
 ### Bug Fixes
 - Fixed auto-promote to exit with code 1 on failure, enabling Tier 2 fallback.
