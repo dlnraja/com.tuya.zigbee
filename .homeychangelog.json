@@ -1,4 +1,7 @@
 {
+  "5.11.86": {
+    "en": "Universal Tuya Zigbee app v5.11.86 adds new AI features and updates driver fingerprints."
+  },
   "5.11.85": {
     "en": "Fixed garage door driver issues and improved OAuth authentication process."
   },
@@ -56,10 +59,7 @@
   "5.11.67": {
     "en": "Universal Tuya Zigbee app v5.11.67: Added fallback for Gmail address, auto-published 145 drivers with 3093 fingerprints."
   },
-  "5.11.66": {
-    "en": "Universal Tuya Zigbee app v5.11.66 adds IMAP fallback for Gmail diagnostics and updates diagnostics scripts."
-  },
-  "5.11.86": {
-    "en": "v5.11.85: Rewrote garage door driver to resolve issues and fixed fingerprint collisions (issues #128, #137)., Updated auto-promote-oauth.js for password grant and Athom API SDK compatibility., Added delegation token step for apps API authentication., Analyzed 0 emails for Gmail diagnostics in this release., Updated diagnostics report and state files."
+  "5.11.87": {
+    "en": "v5.11.86: Introduced Master AI Battle Orchestrator v1.0 with multi-AI ensemble and 6-phase pipeline., Updated app to include 145 drivers and 4952 fingerprints., Auto-published 3093 fingerprints., Updated forum responder to version 5.11.86, scanned 5 topics and updated state., Various updates to GitHub workflows and scripts for better automation."
   }
 }
