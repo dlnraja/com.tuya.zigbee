@@ -1,4 +1,7 @@
 {
+  "5.11.60": {
+    "en": "Universal Tuya Zigbee app v5.11.60: Fixed validation for remote dimmer and IR remote publishing."
+  },
   "5.11.59": {
     "en": "Universal Tuya Zigbee app v5.11.59 fixes IR remote publish validation and updates images."
   },
@@ -56,10 +59,7 @@
   "5.11.41": {
     "en": "Universal Tuya Zigbee app v5.11.41 adds auto-discovery for all variants and product IDs, includes 144 drivers and 4943 fingerprints."
   },
-  "5.11.40": {
-    "en": "Universal Tuya Zigbee app v5.11.40 adds 3077 new fingerprints and introduces an IR Remote driver."
-  },
-  "5.11.60": {
-    "en": "v5.11.59: Fixed IR remote publish validation by removing reserved `zb_` settings and adding required images., Updated to 145 drivers and 3093 fingerprints., Removed large state files from the repository to streamline the project., Updated Gmail diagnostics to include periodic checks and token auto-rotation., Adjusted workflows for Gmail diagnostics and token keepalive."
+  "5.11.61": {
+    "en": "v5.11.60: Fixed remote dimmer publish validation by removing reserved `zb_` settings., Fixed IR remote publish validation by removing reserved `zb_` settings and adding required images., Updated app version to v5.11.60 with 145 drivers and 3093 fingerprints. Auto-published changes."
   }
 }
