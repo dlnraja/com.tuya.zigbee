@@ -64,6 +64,28 @@ jobs:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/homey-device-diagnostics.js
 
+      - name: Gmail Token Pre-check
+        if: always()
+        continue-on-error: true
+        env:
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+        run: node .github/scripts/gmail-token-keepalive.js
+
+      - name: Gmail Token Auto-rotate
+        if: always()
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          TF=".github/state/_new_refresh_token.txt"
+          if [ -f "$TF" ] && [ -n "$GH_TOKEN" ]; then
+            gh secret set GMAIL_REFRESH_TOKEN < "$TF"
+            rm -f "$TF"
+            echo "::notice::Gmail token auto-rotated in nightly"
+          fi
+
       - name: Gmail Diagnostics
         if: always()
         continue-on-error: true
