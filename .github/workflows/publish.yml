@@ -187,24 +187,22 @@ jobs:
           DRY_RUN: 'false'
         run: node .github/scripts/auto-promote-puppeteer.js
 
-      - name: "Tier 2: Promote via API (fallback)"
+      - name: "Tier 2: Promote via OAuth (headless)"
         if: steps.pat.outputs.ok == 'true' && steps.promote_puppeteer.outcome != 'success'
-        id: promote_api
+        id: promote_oauth
+        continue-on-error: true
+        timeout-minutes: 3
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: node .github/scripts/auto-promote-oauth.js
+
+      - name: "Tier 3: Promote via API (PAT fallback)"
+        if: steps.pat.outputs.ok == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_oauth.outcome != 'success'
         continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/auto-publish-draft.js
-
-      - name: "Tier 3: Verify retry (Puppeteer)"
-        if: steps.pat.outputs.ok == 'true' && steps.promote_puppeteer.outcome != 'success' && steps.promote_api.outcome != 'success'
-        continue-on-error: true
-        timeout-minutes: 5
-        env:
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-        run: |
-          sleep 30
-          node .github/scripts/auto-promote-puppeteer.js
 
       - name: Upload promote screenshots
         if: always()
