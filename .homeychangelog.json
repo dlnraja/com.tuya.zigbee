@@ -1,4 +1,7 @@
 {
+  "5.11.84": {
+    "en": "Universal Tuya Zigbee app v5.11.84 adds delegation token step for API auth and updates drivers and fingerprints."
+  },
   "5.11.83": {
     "en": "Universal Tuya Zigbee app v5.11.83 adds client_secret for OAuth token exchange and updates drivers and fingerprints."
   },
@@ -56,10 +59,7 @@
   "5.11.65": {
     "en": "Fixed driver assignment for _TZE200_vvmbj46n and updated app to v5.11.65 with 145 drivers and 3093 fingerprints."
   },
-  "5.11.64": {
-    "en": "Fixed driver issues for _TZE200_pay2byax and improved data sanitization."
-  },
-  "5.11.84": {
-    "en": "v5.11.83: Added `client_secret` to OAuth token exchange process., Updated to 145 drivers and 3093 fingerprints., Auto-published version 5.11.83."
+  "5.11.85": {
+    "en": "v5.11.84: Added delegation token step for apps API authentication., Updated to 145 drivers and 3093 fingerprints., Auto-published version 5.11.84."
   }
 }
