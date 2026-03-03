@@ -20,24 +20,26 @@ async function main() {
   const sc = lr.headers.getSetCookie?.() || [];
   const ck = sc.map(c=>c.split(';')[0]).join('; ');
   log('Cookies: '+sc.length);
-  let tk = null;
-  try { const b=await lr.json(); tk=b.token||b.access_token||null; log('Login keys: '+Object.keys(b).join(',')); } catch { log('Not JSON'); }
-  if (!tk) {
-    log('Step 2: OAuth');
-    const u=AUTH+'/oauth2/authorise?client_id='+CID+'&redirect_uri='+encodeURIComponent(REDIR)+'&response_type=code&scopes=apps';
-    const ar=await fetch(u,{headers:{Cookie:ck},redirect:'manual'});
-    const loc=ar.headers.get('location')||'';
-    log('Auth: '+ar.status+' loc='+loc.slice(0,120));
-    let code=null; try{code=new URL(loc,REDIR).searchParams.get('code')}catch{}
-    if(!code){log('No code');process.exit(1)}
-    log('Code: '+code.slice(0,10)+'...');
-    log('Step 3: Token');
-    const tr=await fetch(AUTH+'/oauth2/token',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'client_id='+CID+'&grant_type=authorization_code&code='+code+'&redirect_uri='+encodeURIComponent(REDIR)});
-    log('Token: '+tr.status);
-    const tj=await tr.json(); tk=tj.access_token;
-    if(tk) log('Got token: '+tk.length+'c'); else log('Token keys: '+Object.keys(tj).join(','));
-  }
-  if(!tk){log('No token');process.exit(1)}
+  let sessionTk = null;
+  try { const b=await lr.json(); sessionTk=b.token||null; log('Login keys: '+Object.keys(b).join(',')); } catch { log('Not JSON'); }
+  log('Step 2: OAuth Authorize');
+  const authHeaders = {};
+  if (ck) authHeaders['Cookie'] = ck;
+  if (sessionTk) authHeaders['Authorization'] = 'Bearer ' + sessionTk;
+  const u=AUTH+'/oauth2/authorise?client_id='+CID+'&redirect_uri='+encodeURIComponent(REDIR)+'&response_type=code&scopes=apps';
+  const ar=await fetch(u,{headers:authHeaders,redirect:'manual'});
+  const loc=ar.headers.get('location')||'';
+  log('Auth: '+ar.status+' loc='+loc.slice(0,120));
+  let code=null; try{code=new URL(loc,REDIR).searchParams.get('code')}catch{}
+  if(!code){log('No code in redirect');process.exit(1)}
+  log('Code: '+code.slice(0,10)+'...');
+  log('Step 3: Token Exchange');
+  const tr=await fetch(AUTH+'/oauth2/token',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'client_id='+CID+'&grant_type=authorization_code&code='+code+'&redirect_uri='+encodeURIComponent(REDIR)});
+  log('Token exchange: '+tr.status);
+  const tj=await tr.json();
+  const tk=tj.access_token;
+  if(tk) log('Access token: '+tk.length+'c'); else log('Token resp keys: '+Object.keys(tj).join(','));
+  if(!tk){log('No access token');process.exit(1)}
   log('Step 4: Builds');
   const hd={Authorization:'Bearer '+tk,Accept:'application/json'};
   let builds=null;
