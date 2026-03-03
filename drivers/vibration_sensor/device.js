@@ -33,6 +33,7 @@ class VibrationSensorDevice extends HybridSensorBase {
       this.log('[VIBRATION] Migrated alarm_generic.vibration → alarm_vibration');
     }
     await this.removeCapability('alarm_motion').catch(() => {});
+    await this.removeCapability('alarm_generic').catch(() => {});
     if (!this.hasCapability('alarm_vibration')) await this.addCapability('alarm_vibration').catch(() => {});
     if (!this.hasCapability('measure_temperature')) await this.addCapability('measure_temperature').catch(() => {});
 
