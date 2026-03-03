@@ -1,4 +1,7 @@
 {
+  "5.11.64": {
+    "en": "Fixed driver issues for _TZE200_pay2byax and improved data sanitization."
+  },
   "5.11.63": {
     "en": "Universal Tuya Zigbee app v5.11.63 fixes flow card titles and adds missing icons for IR capabilities."
   },
@@ -56,10 +59,7 @@
   "5.11.45": {
     "en": "Universal Tuya Zigbee app v5.11.45: Fixed Gmail token recovery, resolved open PRs/issues, and enhanced diagnostics."
   },
-  "5.11.44": {
-    "en": "Universal Tuya Zigbee app v5.11.44 adds new features for fingerprint research and diagnostics, with 144 drivers and 4956 fingerprints."
-  },
-  "5.11.64": {
-    "en": "v5.11.63: Fixed missing [[device]] in flow card titleFormatted for publish validation., Added missing ir_code.svg icon for IR capabilities in publish., Fixed publish validation for remote_dimmer by adding required images and removing reserved zb_ settings., Fixed publish validation for ir_remote by removing reserved zb_ settings and adding required images., Auto-published version v5.11.63 with 145"
+  "5.11.65": {
+    "en": "v5.11.64: Fixed _TZE200_pay2byax driver: moved to contact_sensor and removed from radar, radiator, thermostat, climate, motion, and vibration sensor., Improved data sanitization order to prevent PII leaks: MAC before IPv6, token before phone., Updated forum state and Gmail diagnostics for v5.11.64., Enhanced algorithms for productId enrichment in Gmail and fixed cron conflict., 145 drivers and 309"
   }
 }
