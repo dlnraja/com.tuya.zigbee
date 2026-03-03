@@ -161,18 +161,38 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/github-scanner.js
 
-      # ===== 5. GMAIL: Diagnostics (1x/day at 8AM run) =====
-      - name: "5. Gmail Diagnostics"
+      # ===== 5. GMAIL: Token pre-check + Diagnostics (2x/day at 8AM+20PM) =====
+      - name: "5a. Gmail Token Pre-check"
+        id: gmail_token
+        continue-on-error: true
+        timeout-minutes: 3
+        env:
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+        run: |
+          HOUR=$(date -u +%H)
+          if [ "$HOUR" = "08" ] || [ "$HOUR" = "20" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            node .github/scripts/gmail-token-keepalive.js || true
+            TF=".github/state/_new_refresh_token.txt"
+            if [ -f "$TF" ] && [ -n "$GH_PAT" ]; then
+              gh secret set GMAIL_REFRESH_TOKEN < "$TF"
+              rm -f "$TF"
+              echo "::notice::Gmail token auto-rotated"
+            fi
+          fi
+
+      - name: "5b. Gmail Diagnostics"
         id: gmail
         continue-on-error: true
         timeout-minutes: 10
         run: |
           HOUR=$(date -u +%H)
-          if [ "$HOUR" = "08" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          if [ "$HOUR" = "08" ] || [ "$HOUR" = "20" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "=== Running Gmail Diagnostics ==="
             node .github/scripts/fetch-gmail-diagnostics.js || true
           else
-            echo "Skipping Gmail (only runs at 08:00 UTC)"
+            echo "Skipping Gmail (only runs at 08:00+20:00 UTC)"
           fi
 
       # ===== 6. NIGHTLY: Scan forum+GitHub data (no replies — forum-responder handles that) =====
@@ -552,7 +572,8 @@ jobs:
           echo "| 3b | Comprehensive GH Scan | ${{ steps.comp_gh_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 3c | PR/Issue FP Scan | ${{ steps.pr_issue_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 4 | GitHub Scanner | ${{ steps.gh_scanner.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 5 | Gmail Diagnostics | ${{ steps.gmail.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 5a | Gmail Token Pre-check | ${{ steps.gmail_token.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 5b | Gmail Diagnostics | ${{ steps.gmail.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 6 | Nightly Processor | ${{ steps.nightly.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 7 | Forum Activity | ${{ steps.forum_activity.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 7b | Forum First Post | ${{ steps.forum_first_post.outcome }} |" >> $GITHUB_STEP_SUMMARY
