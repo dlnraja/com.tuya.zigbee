@@ -6,7 +6,21 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.67] - 2026-03-03
+## [5.11.68] - 2026-03-03
+
+### Bug Fixes
+- Completed IMAP fallback in all YAML files for keepalive alerts.
+
+### Improvements
+- Updated app to include 145 drivers and 3093 fingerprints.
+
+### CI/CD
+- Updated SECRETS.md with new configurations.
+- Modified Gmail token keepalive script and workflow for better functionality.
+- Adjusted .homeychangelog.json for consistency with new changes.
+---
+
+ [5.11.67] - 2026-03-03
 
 ### Bug Fixes
 - Reused HOMEY_EMAIL as fallback for Gmail address when using the same account.
