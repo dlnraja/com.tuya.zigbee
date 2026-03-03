@@ -6,7 +6,16 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.69] - 2026-03-03
+## [5.11.70] - 2026-03-03
+
+### Bug Fixes
+- Fixed: pre-check now accepts HOMEY_PASSWORD as IMAP fallback credential.
+
+### CI/CD
+- v5.11.70: 145 drivers, 3093 fingerprints — auto-publish [skip ci].
+---
+
+ [5.11.69] - 2026-03-03
 
 ### Bug Fixes
 - Added `HOMEY_PASSWORD` as a last-resort fallback for Gmail IMAP authentication.
