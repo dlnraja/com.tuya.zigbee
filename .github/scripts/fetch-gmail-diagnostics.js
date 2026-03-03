@@ -56,15 +56,17 @@ const exFP=t=>({
 
 // Build fingerprint->driver index from drivers/
 function buildIndex(){
-  const idx=new Map();
+  const idx=new Map(),pidx=new Map();
   if(!fs.existsSync(DD))return idx;
   for(const d of fs.readdirSync(DD)){
     const f=path.join(DD,d,'driver.compose.json');
     if(!fs.existsSync(f))continue;
-    const c=fs.readFileSync(f,'utf8');
-    for(const m of(c.match(/"_T[A-Za-z0-9_]+"/g)||[]))
-    {const k=m.replace(/"/g,'');if(!idx.has(k))idx.set(k,[]);if(!idx.get(k).includes(d))idx.get(k).push(d)}
+    try{const j=JSON.parse(fs.readFileSync(f,'utf8'));
+      for(const m of(j.zigbee?.manufacturerName||[])){if(!idx.has(m))idx.set(m,[]);if(!idx.get(m).includes(d))idx.get(m).push(d)}
+      for(const p of(j.zigbee?.productId||[])){if(!pidx.has(p))pidx.set(p,[]);if(!pidx.get(p).includes(d))pidx.get(p).push(d)}
+    }catch{}
   }
+  idx.pidx=pidx;
   return idx;
 }
 
@@ -197,10 +199,14 @@ function parse(t){
 
 // Cross-reference fingerprints with driver index
 function crossRef(diag,idx){
-  const matches=[];
+  const matches=[],pidx=idx.pidx||new Map();
   for(const mfr of diag.fps.mfr){
     const drivers=idx.get(mfr)||[];
-    matches.push({fingerprint:mfr,supported:drivers.length>0,drivers});
+    matches.push({fingerprint:mfr,type:'mfr',supported:drivers.length>0,drivers});
+  }
+  for(const pid of diag.fps.pid){
+    const drivers=pidx.get(pid)||[];
+    matches.push({fingerprint:pid,type:'pid',supported:drivers.length>0,drivers});
   }
   return matches;
 }
@@ -225,7 +231,7 @@ async function aiAnalyze(diag,subj,type,xref){
   if(_aiCalls>1)await delay(4000);
   const prompt='Analyze this Homey Zigbee email (type: '+type+').\n'+
     'Subject: '+subj+'\n'+
-    'Fingerprints found: '+JSON.stringify(diag.fps)+'\n'+
+    'Fingerprints (mfr+pid pairs): '+JSON.stringify(diag.fps)+'\n'+
     'Errors: '+JSON.stringify(diag.errs)+'\n'+
     'Device names: '+JSON.stringify(diag.devNames)+'\n'+
     'Cross-ref: '+JSON.stringify(xref)+'\n'+
@@ -315,7 +321,8 @@ async function main(){
   const after=st.lastCheck?Math.floor(new Date(st.lastCheck).getTime()/1000):Math.floor(Date.now()/1000)-86400*7;
   const done=new Set(st.processed||[]);
 
-  console.log('Driver index:',idx.size,'fingerprints across',new Set([...idx.values()].flat()).size,'drivers');
+  const pidx=idx.pidx||new Map();
+  console.log('Driver index:',idx.size,'mfrs +',pidx.size,'pids across',new Set([...idx.values(),...pidx.values()].flat()).size,'drivers');
   console.log('Searching emails after:',new Date(after*1000).toISOString());
   const allNewFPs=new Set();
 
@@ -331,8 +338,9 @@ async function main(){
     const needsAI=d.fps.mfr.length>0||d.errs.length>0||(ghInfo&&ghInfo.isNew);
     const ai=needsAI?await aiAnalyze(d,em.subj,type,xref):null;
 
-    // Track new FPs for deep research
+    // Track new FPs for deep research (mfr + pid)
     for(const fp of d.fps.mfr){if(!idx.has(fp))allNewFPs.add(fp)}
+    for(const p of d.fps.pid){if(!pidx.has(p))allNewFPs.add(p)}
 
     // === SANITIZE: strip PII before storing ===
     const safeFrom=sanitizeFrom(em.from);
