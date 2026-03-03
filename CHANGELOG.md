@@ -6,7 +6,20 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.66] - 2026-03-03
+## [5.11.67] - 2026-03-03
+
+### Bug Fixes
+- Reused HOMEY_EMAIL as fallback for Gmail address when using the same account.
+
+### New Features
+- Auto-published 145 drivers with a total of 3093 fingerprints.
+
+### CI/CD
+- Updated Gmail keepalive script.
+- Adjusted various GitHub workflows for improved functionality.
+---
+
+ [5.11.66] - 2026-03-03
 
 ### Bug Fixes
 - Added IMAP fallback for Gmail diagnostics (permanent, no 7-day expiry).
