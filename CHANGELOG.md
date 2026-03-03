@@ -6,7 +6,19 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.80] - 2026-03-03
+## [5.11.81] - 2026-03-03
+
+### Bug Fixes
+- Fixed OAuth redirect chain handling (301→api.athom.com→code).
+
+### Improvements
+- Updated app metadata: 145 drivers, 3093 fingerprints.
+
+### CI/CD
+- Auto-published version v5.11.81.
+---
+
+ [5.11.80] - 2026-03-03
 
 ### Bug Fixes
 - Fixed OAuth flow to use session token for the authorization step, ensuring proper handling of the OAuth process.
