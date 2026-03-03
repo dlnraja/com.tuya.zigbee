@@ -51,6 +51,19 @@ async function main() {
     const page = await browser.newPage();
     page.setDefaultTimeout(30000);
 
+    // Intercept network to capture OAuth token
+    const captured = { token: null, apiUrls: [] };
+    page.on('response', async (res) => {
+      try {
+        const u = res.url();
+        if (u.includes('/oauth2/token') || u.includes('/oauth/token')) {
+          const j = await res.json().catch(() => null);
+          if (j?.access_token) { captured.token = j.access_token; log('  [NET] OAuth token captured'); }
+        }
+        if (u.includes('apps-api') || u.includes('/api/')) captured.apiUrls.push(u);
+      } catch {}
+    });
+
     // Step 1: Go to versions page (will redirect to login)
     log('\n### Step 1: Navigate');
     await page.goto(VERSIONS_URL, { waitUntil: 'networkidle2' });
@@ -125,7 +138,9 @@ async function main() {
 
     // Step 3: Find and click promote
     log('\n### Step 3: Find draft & promote');
-    const result = await findAndPromote(page);
+    log('  [NET] Captured API URLs: ' + captured.apiUrls.length);
+    if (captured.token) log('  [NET] Has OAuth token: yes');
+    const result = await findAndPromote(page, captured);
     await snap(page, '07-final');
 
     if (result) {
@@ -226,10 +241,10 @@ async function doLogin(page) {
   log('  Final login URL: ' + page.url());
 }
 
-async function findAndPromote(page) {
+async function findAndPromote(page, captured) {
   // Strategy A: Use browser session API (bypasses SPA rendering)
   try {
-    const apiRes = await promoteViaBrowserSession(page, log, DRY);
+    const apiRes = await promoteViaBrowserSession(page, log, DRY, captured?.token);
     if (apiRes === true) return true;
     log('  Session API: ' + (apiRes || 'no result') + ', falling back to SPA...');
   } catch (e) { log('  Session API error: ' + e.message); }
