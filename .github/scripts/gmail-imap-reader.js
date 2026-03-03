@@ -20,8 +20,8 @@ async function readViaIMAP(opts={}){
       const uids=await c.search({since:new Date(since)},{uid:true});
       const batch=uids.slice(-(opts.maxResults||200));
       console.log('[IMAP]',uids.length,'total,',batch.length,'fetching');
-      for await(const m of c.fetch(batch,{envelope:true,bodyParts:['text']})){
-        const body=(m.bodyParts?.get('text')||Buffer.alloc(0)).toString('utf8');
+      for await(const m of c.fetch(batch,{uid:true,envelope:true,source:true})){
+        const body=(m.source||Buffer.alloc(0)).toString('utf8').substring(0,10000);
         out.push({id:'imap_'+m.uid,subj:m.envelope?.subject||'',from:m.envelope?.from?.[0]?.address||'',date:m.envelope?.date?.toISOString()||'',body,labels:[]});
       }
     }finally{lock.release()}
