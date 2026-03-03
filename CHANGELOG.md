@@ -6,7 +6,22 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.73] - 2026-03-03
+## [5.11.74] - 2026-03-03
+
+### Bug Fixes
+- Fixed IMAP: envelope-only fetch to prevent out-of-memory (OOM) crashes.
+
+### New Features
+- Updated to 145 drivers and 3093 fingerprints.
+
+### Improvements
+- Screenshots updated for better clarity.
+
+### CI/CD
+- Auto-published version v5.11.74.
+---
+
+ [5.11.73] - 2026-03-03
 
 ### Bug Fixes
 - Fixed IMAP fetch to use sequence range string instead of UID array.
