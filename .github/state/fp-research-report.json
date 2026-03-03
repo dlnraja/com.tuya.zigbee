@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-02T14:01:32.931Z",
+  "timestamp": "2026-03-03T03:54:26.212Z",
   "total": 50,
   "resolved": 47,
   "unknown": 3,
@@ -20,19 +20,6 @@
       }
     },
     {
-      "fp": "_TZ3000_imdfhhud",
-      "valid": true,
-      "prefix": "standard",
-      "driver": "contact_sensor",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
       "fp": "_TZ3210_amleyeej",
       "valid": true,
       "prefix": "standard",
@@ -45,19 +32,6 @@
         "isFP": false,
         "reason": "unknown_not_false"
       }
-    },
-    {
-      "fp": "_TZ3000_mnlsbthu",
-      "valid": true,
-      "prefix": "standard",
-      "driver": "climate_sensor",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
     },
     {
       "fp": "_TZB000_yqjaollc",
@@ -647,6 +621,32 @@
     },
     {
       "fp": "_TZE200_fdtjuw7u",
+      "valid": true,
+      "prefix": "tuya_dp",
+      "driver": "curtain_motor",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZE200_zpzndjez",
+      "valid": true,
+      "prefix": "tuya_dp",
+      "driver": "curtain_motor",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZE200_wmcdj3aq",
       "valid": true,
       "prefix": "tuya_dp",
       "driver": "curtain_motor",
