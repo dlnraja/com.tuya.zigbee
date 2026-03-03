@@ -17,19 +17,24 @@ async function readViaIMAP(opts={}){
     if(!lock){await c.logout();return null}
     const out=[];
     try{
-      const seqs=await c.search({since:new Date(since)});
-      const max=opts.maxResults||50;
-      const start=Math.max(1,seqs.length-max+1);
-      const range=start+':*';
-      console.log('[IMAP]',seqs.length,'msgs since',since,'range',range);
-      for await(const m of c.fetch(range,{envelope:true})){
-        try{
-          const subj=m.envelope?.subject||'';
-          const from=m.envelope?.from?.[0]?.address||'';
-          const date=m.envelope?.date?.toISOString()||'';
-          const uid=m.uid||m.seq||out.length+1;
-          out.push({id:'imap_'+uid,subj,from,date,body:subj,labels:[]});
-        }catch(fe){console.log('[IMAP] skip msg:',fe.message)}
+      const kws=['tuya','zigbee','homey','_TZE','_TZ3','TS0','diagnostic'];
+      const senders=['community.homey.app','athom.com','notifications@github.com'];
+      const seqSet=new Set();
+      for(const kw of kws){try{(await c.search({since:new Date(since),subject:kw})).forEach(s=>seqSet.add(s))}catch{}}
+      for(const fr of senders){try{(await c.search({since:new Date(since),from:fr})).forEach(s=>seqSet.add(s))}catch{}}
+      const seqs=[...seqSet].sort((a,b)=>b-a).slice(0,30);
+      console.log('[IMAP]',seqSet.size,'relevant msgs, fetching',seqs.length);
+      if(seqs.length>0){
+        const range=seqs.join(',');
+        for await(const m of c.fetch(range,{envelope:true})){
+          try{
+            const subj=m.envelope?.subject||'';
+            const from=m.envelope?.from?.[0]?.address||'';
+            const date=m.envelope?.date?.toISOString()||'';
+            const uid=m.uid||m.seq||out.length+1;
+            out.push({id:'imap_'+uid,subj,from,date,body:subj,labels:[]});
+          }catch(fe){console.log('[IMAP] skip:',fe.message)}
+        }
       }
       console.log('[IMAP] fetched',out.length);
     }finally{lock.release()}
