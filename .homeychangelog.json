@@ -1,4 +1,7 @@
 {
+  "5.11.85": {
+    "en": "Fixed garage door driver issues and improved OAuth authentication process."
+  },
   "5.11.84": {
     "en": "Universal Tuya Zigbee app v5.11.84 adds delegation token step for API auth and updates drivers and fingerprints."
   },
@@ -56,10 +59,7 @@
   "5.11.66": {
     "en": "Universal Tuya Zigbee app v5.11.66 adds IMAP fallback for Gmail diagnostics and updates diagnostics scripts."
   },
-  "5.11.65": {
-    "en": "Fixed driver assignment for _TZE200_vvmbj46n and updated app to v5.11.65 with 145 drivers and 3093 fingerprints."
-  },
-  "5.11.85": {
-    "en": "v5.11.84: Added delegation token step for apps API authentication., Updated to 145 drivers and 3093 fingerprints., Auto-published version 5.11.84."
+  "5.11.86": {
+    "en": "v5.11.85: Rewrote garage door driver to resolve issues and fixed fingerprint collisions (issues #128, #137)., Updated auto-promote-oauth.js for password grant and Athom API SDK compatibility., Added delegation token step for apps API authentication., Analyzed 0 emails for Gmail diagnostics in this release., Updated diagnostics report and state files."
   }
 }
