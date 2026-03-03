@@ -1,6 +1,6 @@
-# 🏠 Universal Tuya Zigbee v5.11.46
+# 🏠 Universal Tuya Zigbee v5.11.57
 
-> **144 drivers** · **5403+ fingerprints** · Updated 2026-03-02
+> **145 drivers** · **5406+ fingerprints** · Updated 2026-03-03
 
 Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.
 
@@ -8,9 +8,9 @@ Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehens
 
 **Stable:** [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/) · **Test:** [Test Channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · **Source:** [GitHub](https://github.com/dlnraja/com.tuya.zigbee)
 
-## What's New (v5.11.46)
+## What's New (v5.11.57)
 
-Fixed Gmail token recovery process., Resolved all open PR/issue fingerprints., Enhanced the fingerprint research engine with Z2M context analysis., Improved Gmail diagnostics with PII sanitization and deep research capabilities., Introduced issue-deep-researcher.js to scan all open PRs/issues and auto-implement findings.
+Fixed vibration sensor triggers for alarm_vibration, temperature, and flow (Forum #1559/#1561)., Added remote_dimmer driver for Lidl HG06323 TS1001 with full IR remote support., Implemented GitHub Deep Search engine to search over 20 Zigbee projects for fingerprints, data points, and converters., Reset Gmail token health with a new refresh token set for 2026-03-02., Updated auto-publishi
 
 ## Supported Devices
 
@@ -18,13 +18,13 @@ Fixed Gmail token recovery process., Resolved all open PR/issue fingerprints., E
 |---|---|---|
 | 🔌 Socket | 31 | 782 |
 | 💡 Light | 18 | 577 |
-| 📡 Sensor | 42 | 2605 |
+| 📡 Sensor | 42 | 2607 |
 | 🌡️ Thermostat | 7 | 502 |
 | 🪟 Windowcoverings | 3 | 276 |
 | 🔐 Lock | 4 | 26 |
 | 🌀 Fan | 9 | 46 |
 | 🔔 Doorbell | 2 | 10 |
-| 🎮 Remote | 3 | 43 |
+| 🎮 Remote | 4 | 44 |
 | 🔘 Button | 2 | 9 |
 | 🔥 Heater | 4 | 19 |
 | 🚗 Garagedoor | 2 | 8 |
@@ -44,13 +44,13 @@ Fixed Gmail token recovery process., Resolved all open PR/issue fingerprints., E
 
 <details><summary>Previous versions</summary>
 
-**v5.11.45:** Universal Tuya Zigbee app v5.11.45: Fixed Gmail token recovery, resolved open PRs/issues, and enhanced diagnostics.
+**v5.11.56:** Universal Tuya Zigbee app v5.11.56: Added remote dimmer driver, fixed vibration sensor triggers, and reset Gmail token health.
 
-**v5.11.44:** Universal Tuya Zigbee app v5.11.44 adds new features for fingerprint research and diagnostics, with 144 drivers and 4956 fingerprints.
+**v5.11.55:** Universal Tuya Zigbee app v5.11.55 adds a new remote dimmer driver and improves vibration sensor functionality.
 
-**v5.11.43:** Universal Tuya Zigbee app v5.11.43 adds new drivers and enhances diagnostics with PII sanitization.
+**v5.11.54:** Universal Tuya Zigbee app v5.11.54: Added remote dimmer driver, fixed vibration sensor triggers, and updated scripts.
 
-**v5.11.42:** Universal Tuya Zigbee app v5.11.42 adds new automation for variant discovery and enhances driver capabilities with 144 drivers and 4943 fingerprints.
+**v5.11.53:** Universal Tuya Zigbee app v5.11.53 adds a new remote dimmer driver and improves Gmail token management.
 
 </details>
 
@@ -65,4 +65,4 @@ This app is free and open-source. If it's useful to you, a small donation helps 
 **PayPal:** [paypal.me/dlnraja](https://paypal.me/dlnraja) · **Revolut:** [revolut.me/dylanoul](https://revolut.me/dylanoul)
 
 ---
-*Last updated 2026-03-02 — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*
+*Last updated 2026-03-03 — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*

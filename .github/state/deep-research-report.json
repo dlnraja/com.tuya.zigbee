@@ -1,10 +1,10 @@
 {
-  "ts": "2026-03-02T14:12:52.801Z",
+  "ts": "2026-03-03T04:05:28.276Z",
   "ghCalls": 120,
-  "totalFPs": 106,
+  "totalFPs": 97,
   "newFPs": 3,
   "researched": 1,
-  "implemented": 3,
+  "implemented": 0,
   "results": [
     {
       "fp": "_TZE204_gkfb",
@@ -16,11 +16,7 @@
       ],
       "discoveredPIDs": [],
       "variants": 2,
-      "actions": [
-        "added_pid:TS0203",
-        "added_variant:_TZE200_gkfb",
-        "added_variant:_TZE284_gkfb"
-      ],
+      "actions": [],
       "sources": [
         "JohanBendz/com.tuya.zigbee#1347 (issue)"
       ]
