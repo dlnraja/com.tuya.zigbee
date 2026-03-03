@@ -12,9 +12,11 @@
 | GITHUB_TOKEN | GitHub (auto) | Current repo only. Cannot access other repos (#46566) |
 | GOOGLE_API_KEY | Google Gemini | AI analysis, vision (images), code gen, translation, long context |
 | OPENAI_API_KEY | OpenAI | GPT-4o fallback, embeddings, PR review |
-| GMAIL_CLIENT_ID | Gmail OAuth | Read diagnostic emails |
-| GMAIL_CLIENT_SECRET | Gmail OAuth | Read diagnostic emails |
-| GMAIL_REFRESH_TOKEN | Gmail OAuth | Auto-renewed daily by keepalive workflow |
+| GMAIL_CLIENT_ID | Gmail OAuth | Read diagnostic emails (expires 7d in Testing mode) |
+| GMAIL_CLIENT_SECRET | Gmail OAuth | Read diagnostic emails (expires 7d in Testing mode) |
+| GMAIL_REFRESH_TOKEN | Gmail OAuth | Auto-renewed daily by keepalive (but expires 7d in Testing) |
+| GMAIL_EMAIL | Gmail IMAP | Gmail address for IMAP fallback (permanent, never expires) |
+| GMAIL_APP_PASSWORD | Gmail IMAP | App Password for IMAP fallback (permanent, never expires) |
 | DISCOURSE_API_KEY | Homey Forum | Discourse User API key for forum posting (preferred over session login) |
 
 ## Not Yet Configured (optional)
@@ -125,9 +127,34 @@ Add to repo Settings > Secrets > Actions:
 5. `gh secret set GMAIL_REFRESH_TOKEN` (paste token)
 
 ### Troubleshooting
-- **400/invalid_grant**: Token expired. Do Quick Rotation above.
+- **400/invalid_grant**: Token expired. Do Quick Rotation above, OR set up IMAP fallback (permanent).
 - **Testing mode**: 7-day expiry. Alerts fire at day 5+6.
 - **Production mode**: Token permanent (if app published).
+
+## Gmail IMAP Fallback (Permanent — No Expiry)
+
+OAuth tokens expire every 7 days in Testing mode. IMAP with App Password **never expires**.
+
+### Setup (30 seconds, one-time)
+1. Go to https://myaccount.google.com/apppasswords
+2. Select app: **Mail**, device: **Other** → name it `Tuya Diagnostics`
+3. Click **Generate** → copy the 16-character password
+4. Add GitHub secrets:
+   ```
+   gh secret set GMAIL_EMAIL        # your Gmail address
+   gh secret set GMAIL_APP_PASSWORD  # the 16-char app password
+   ```
+
+### How it works
+- `fetch-gmail-diagnostics.js` tries OAuth first (fast, full search)
+- If OAuth fails (`invalid_grant`), automatically falls back to IMAP
+- IMAP reads emails via `imap.gmail.com:993` with App Password
+- Same pipeline: sanitize → parse → cross-ref → AI analyze → issues
+- **No keepalive needed** — App Password is permanent
+
+### Prerequisites
+- 2-Factor Authentication must be enabled on the Google account
+- If you don't see App Passwords: enable 2FA first at https://myaccount.google.com/signinoptions/two-step-verification
 
 ## Discourse API Key Setup
 

@@ -3,6 +3,7 @@
 const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
 let eng=null;try{eng=require('./fp-research-engine')}catch{}
+let imap=null;try{imap=require('./gmail-imap-reader')}catch{}
 const SD=path.join(__dirname,'..','state');
 const SF=path.join(SD,'diagnostics-state.json');
 const RF=path.join(SD,'diagnostics-report.json');
@@ -315,7 +316,13 @@ async function researchAndImplement(allNewFPs,idx){
 
 async function main(){
   const tk=await getToken();
-  if(!tk){console.log('No Gmail token - set GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN');process.exit(0)}
+  let imapEmails=null;
+  if(!tk){
+    console.log('OAuth unavailable — trying IMAP fallback...');
+    if(imap)imapEmails=await imap.readViaIMAP();
+    if(!imapEmails){console.log('No Gmail access. Set GMAIL_APP_PASSWORD for permanent IMAP fallback (see SECRETS.md)');process.exit(0)}
+    console.log('IMAP fallback active:',imapEmails.length,'emails');
+  }
   const st=load(),idx=buildIndex(),res=[];
   const after=st.lastCheck?Math.floor(new Date(st.lastCheck).getTime()/1000):Math.floor(Date.now()/1000)-86400*7;
   const done=new Set(st.processed||[]);
@@ -325,9 +332,11 @@ async function main(){
   console.log('Searching emails after:',new Date(after*1000).toISOString());
   const allNewFPs=new Set();
 
-  for(const m of await searchAll(tk,after)){
+  // Use IMAP emails directly or fetch via OAuth API
+  const emailList=imapEmails||await searchAll(tk,after);
+  for(const m of emailList){
     if(done.has(m.id))continue;
-    const em=await getEmail(tk,m.id);if(!em)continue;
+    const em=imapEmails?m:await getEmail(tk,m.id);if(!em)continue;
     const type=classify(em);
     const d=parse(em.body);
     const xref=crossRef(d,idx);
