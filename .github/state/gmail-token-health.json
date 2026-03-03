@@ -1,12 +1,18 @@
 {
-  "checks": [],
+  "checks": [
+    {
+      "time": "2026-03-03T05:24:55.461Z",
+      "ok": false,
+      "err": 400
+    }
+  ],
   "lastOk": null,
-  "lastFail": "2026-03-02T23:07:32.090Z",
-  "_lastAlert_expired": null,
+  "lastFail": "2026-03-03T05:24:55.461Z",
+  "_lastAlert_expired": "2026-03-03T05:24:55.468Z",
   "_lastAlert_expiring_proactive": null,
-  "consecutiveFails": 0,
-  "tokenSetDate": "2026-03-02T17:42:00.000Z",
-  "daysLeft": 7,
-  "expiryEstimate": "2026-03-09T17:42:00.000Z",
+  "consecutiveFails": 1,
+  "tokenSetDate": null,
+  "daysLeft": 0,
+  "expiryEstimate": null,
   "_note": "Reset 2026-03-02 18:42 CET: new GMAIL_REFRESH_TOKEN from OAuth Playground. Testing mode: expires ~2026-03-09."
 }
