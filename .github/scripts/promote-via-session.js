@@ -1,56 +1,48 @@
 #!/usr/bin/env node
 'use strict';
-/**
- * promote-via-session.js — After Puppeteer login, use browser session to promote draft via API.
- * Called from auto-promote-puppeteer.js as fallback when SPA doesn't render.
- */
-const APP_ID = 'com.dlnraja.tuya.zigbee';
+const APP = 'com.dlnraja.tuya.zigbee';
+const BASE = 'https://apps-api.athom.com/api/v1';
 
-async function promoteViaBrowserSession(page, log, dry) {
-  log('  [Session API] Fetching builds via browser session...');
-  const r = await page.evaluate(async (appId) => {
-    const urls = [
-      `https://apps-api.athom.com/api/v1/app/${appId}/build`,
-      `/api/app/${appId}/build`,
-    ];
-    for (const u of urls) {
-      try {
-        const res = await fetch(u, {credentials:'include'});
-        if (res.ok) return {url:u, data: await res.json()};
-      } catch {}
-    }
-    return null;
-  }, APP_ID);
-
-  if (!r) { log('  [Session API] No working endpoint'); return false; }
-  log('  [Session API] Builds from: ' + r.url);
-
-  const builds = Array.isArray(r.data) ? r.data : (r.data?.builds || []);
-  const draft = builds.find(b => /draft/i.test(b.channel || b.status || ''));
-  if (!draft) {
-    log('  [Session API] No draft (' + builds.length + ' builds)');
-    return 'no-draft';
+async function promoteViaBrowserSession(page, log, dry, capturedToken) {
+  log('  [SessAPI] Extracting auth...');
+  const cookies = await page.cookies();
+  const ck = cookies.map(c => c.name+'='+c.value).join('; ');
+  log('  [SessAPI] Cookies: ' + cookies.length);
+  let tk = capturedToken || null;
+  if (!tk) {
+    tk = await page.evaluate(() => {
+      try { for (const s of [localStorage,sessionStorage])
+        for (let i=0;i<s.length;i++) {
+          const k=s.key(i),v=s.getItem(k);
+          if(/token|access|bearer/i.test(k)&&v) return v;
+        }
+      } catch{} return null;
+    });
   }
-  log('  [Session API] Draft: ' + (draft.id || draft.version));
-  if (dry) { log('  DRY RUN'); return false; }
-
-  const pid = draft.id || draft._id;
-  const eps = [
-    {m:'PUT', u:`https://apps-api.athom.com/api/v1/app/${APP_ID}/build/${pid}`, b:{channel:'test'}},
-    {m:'POST', u:`https://apps-api.athom.com/api/v1/app/${APP_ID}/build/${pid}/publish`, b:{channel:'test'}},
-  ];
-  for (const ep of eps) {
-    const pr = await page.evaluate(async (ep) => {
-      try {
-        const r = await fetch(ep.u, {method:ep.m, credentials:'include',
-          headers:{'Content-Type':'application/json'}, body:JSON.stringify(ep.b)});
-        return {ok:r.ok, status:r.status};
-      } catch(e) { return {ok:false, error:e.message}; }
-    }, ep);
-    log(`  [Session API] ${ep.m} → ${pr.status||pr.error}`);
-    if (pr.ok) { log('  [Session API] Promoted to test!'); return true; }
+  if (tk) log('  [SessAPI] Token: '+tk.length+' chars');
+  const h = {'Cookie':ck,'Accept':'application/json'};
+  if (tk) h['Authorization']='Bearer '+tk;
+  let builds=null;
+  for (const ep of ['build','builds']) {
+    try {
+      const r=await fetch(`${BASE}/app/${APP}/${ep}`,{headers:h});
+      log('  [SessAPI] GET '+ep+' → '+r.status);
+      if(r.ok){const d=await r.json();builds=Array.isArray(d)?d:(d.builds||null);if(builds)break;}
+    } catch(e){log('  [SessAPI] '+e.message);}
+  }
+  if(!builds){log('  [SessAPI] No builds');return false;}
+  const draft=builds.find(b=>/draft/i.test(b.channel||b.status||''));
+  if(!draft) return 'no-draft';
+  log('  [SessAPI] Draft: '+(draft.id||draft.version));
+  if(dry) return false;
+  const pid=draft.id||draft._id;
+  for(const [m,u] of [['PUT',`${BASE}/app/${APP}/build/${pid}`],['POST',`${BASE}/app/${APP}/build/${pid}/publish`]]){
+    try{
+      const r=await fetch(u,{method:m,headers:{...h,'Content-Type':'application/json'},body:JSON.stringify({channel:'test'})});
+      log('  [SessAPI] '+m+' → '+r.status);
+      if(r.ok){log('  [SessAPI] Promoted!');return true;}
+    }catch{}
   }
   return false;
 }
-
-module.exports = { promoteViaBrowserSession };
+module.exports={promoteViaBrowserSession};
