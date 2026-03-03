@@ -17,22 +17,21 @@ function sanitize(text){
   let t=text;
   // Strip email addresses
   t=t.replace(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g,'[email]');
+  // Strip MAC addresses BEFORE IPv6 (IPv6 regex eats MACs)
+  t=t.replace(/([0-9A-Fa-f]{2}[:-]){5}[0-9A-Fa-f]{2}/g,'[mac]');
   // Strip IP addresses
   t=t.replace(/\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/g,'[ip]');
   // Strip IPv6
   t=t.replace(/([0-9a-fA-F]{1,4}:){2,7}[0-9a-fA-F]{1,4}/g,'[ipv6]');
+  // Strip Homey IDs / tokens BEFORE phone (phone regex breaks long hex)
+  t=t.replace(/\b[a-f0-9]{32,}\b/gi,function(m){
+    if(m.length===16)return m;return'[token]';
+  });
   // Strip phone numbers
   t=t.replace(/\+?\d[\d\s\-().]{8,}\d/g,'[phone]');
-  // Strip MAC addresses (keep Zigbee IEEE but redact partial)
-  t=t.replace(/([0-9A-Fa-f]{2}[:-]){5}[0-9A-Fa-f]{2}/g,'[mac]');
   // Strip file paths with usernames
   t=t.replace(/\/(?:home|Users|user)\/[^\s/]+/gi,'[path]');
   t=t.replace(/C:\\Users\\[^\s\\]+/gi,'[path]');
-  // Strip Homey IDs / tokens (long hex/base64 strings)
-  t=t.replace(/\b[a-f0-9]{32,}\b/gi,function(m){
-    // Keep if it looks like a Zigbee IEEE address (16 hex chars)
-    if(m.length===16)return m;return'[token]';
-  });
   // Strip "Dear X" / "Hi X" / "Hello X" patterns
   t=t.replace(/(?:dear|hi|hello|hey)\s+[A-Z][a-z]+/gi,'[greeting]');
   // Strip signatures (--- onwards at end)
