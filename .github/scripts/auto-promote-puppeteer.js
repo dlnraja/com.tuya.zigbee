@@ -8,6 +8,7 @@
  */
 'use strict';
 const fs = require('fs'), path = require('path');
+const { promoteViaBrowserSession } = require('./promote-via-session');
 const APP_ID = 'com.dlnraja.tuya.zigbee';
 const VERSIONS_URL = `https://tools.developer.homey.app/apps/app/${APP_ID}/versions`;
 const EMAIL = process.env.HOMEY_EMAIL;
@@ -226,7 +227,14 @@ async function doLogin(page) {
 }
 
 async function findAndPromote(page) {
-  // Wait for SPA content to render (tools.developer.homey.app is a React SPA)
+  // Strategy A: Use browser session API (bypasses SPA rendering)
+  try {
+    const apiRes = await promoteViaBrowserSession(page, log, DRY);
+    if (apiRes === true) return true;
+    log('  Session API: ' + (apiRes || 'no result') + ', falling back to SPA...');
+  } catch (e) { log('  Session API error: ' + e.message); }
+
+  // Strategy B: SPA content rendering
   log('  Waiting for SPA content to load...');
 
   // Force re-navigate to versions URL (SPA may not route after login redirect)
