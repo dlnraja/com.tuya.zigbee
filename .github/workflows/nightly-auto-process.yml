@@ -133,7 +133,12 @@ jobs:
         if: always()
         continue-on-error: true
         timeout-minutes: 5
-        run: node .github/scripts/image-pipeline.js --report
+        run: |
+          if [ -f ".github/scripts/image-pipeline.js" ]; then
+            node .github/scripts/image-pipeline.js --report
+          else
+            echo "image-pipeline.js not yet created — skipping"
+          fi
 
       - name: Forum Intel Processor (scan-only, no reply)
         if: always()
