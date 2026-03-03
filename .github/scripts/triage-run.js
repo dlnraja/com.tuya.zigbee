@@ -8,7 +8,7 @@ const path=require('path');
 
 const DRY=process.env.DRY_RUN==='true';
 const REPO=process.env.TARGET_REPO||'JohanBendz/com.tuya.zigbee';
-const CAN_CLOSE=REPO.startsWith('dlnraja/');
+const CAN_CLOSE=REPO.startsWith('dlnraja/')||!!process.env.GH_PAT;
 const VER=process.env.APP_VERSION||'latest';
 const DRVC=process.env.DRIVER_COUNT||'138';
 const FPC=process.env.FP_COUNT||'5579';
@@ -68,7 +68,17 @@ const issues=JSON.parse(gh(`issue list -R ${REPO} -s open -L 50 --json number,ti
 let iTriaged=0,iCommented=0,iClosed=0;
 for(const it of issues){
   await sleep(400); // Rate-limit: 0.4s between API calls
-  if(wasTriaged(it.number)){iTriaged++;continue;}
+  const alreadyTriaged=wasTriaged(it.number);
+  if(alreadyTriaged){
+    iTriaged++;
+    // v5.11.47: Stale sweep — close already-triaged items where all FPs are supported
+    const mfrs2=extractMfrFromText(`${it.title||''} ${it.body||''}`);
+    const allSupp2=mfrs2.length>0&&mfrs2.every(m=>fps.has(m));
+    if(allSupp2&&!DRY&&CAN_CLOSE){
+      try{gh(`issue close ${it.number} -R ${REPO} -r "completed" -c "All fingerprints supported in v${VER}. Closing as resolved."`);iClosed++;console.log(`  [SWEEP] Closed #${it.number}`);}catch{}
+    }
+    continue;
+  }
   const mfrs=extractMfrFromText(`${it.title||''} ${it.body||''}`);
   if(!mfrs.length)continue;
   const found=mfrs.filter(m=>fps.has(m)).map(m=>[m,findAllDrivers(m)]);
@@ -91,7 +101,17 @@ const prs=JSON.parse(gh(`pr list -R ${REPO} -s open -L 30 --json number,title,bo
 let pTriaged=0,pCommented=0,pClosed=0;
 for(const pr of prs){
   await sleep(400); // Rate-limit: 0.4s between API calls
-  if(wasTriaged(pr.number)){pTriaged++;continue;}
+  const alreadyTriaged2=wasTriaged(pr.number);
+  if(alreadyTriaged2){
+    pTriaged++;
+    // v5.11.47: Stale sweep — close already-triaged PRs where all FPs supported
+    const mfrs3=extractMfrFromText(`${pr.title||''} ${pr.body||''}`);
+    const allSupp3=mfrs3.length>0&&mfrs3.every(m=>fps.has(m));
+    if(allSupp3&&!DRY&&CAN_CLOSE){
+      try{gh(`pr close ${pr.number} -R ${REPO} -c "All fingerprints integrated in v${VER}. Thanks!"`);pClosed++;console.log(`  [SWEEP] Closed PR #${pr.number}`);}catch{}
+    }
+    continue;
+  }
   const mfrs=extractMfrFromText(`${pr.title||''} ${pr.body||''}`);
   if(!mfrs.length)continue;
   const found=mfrs.filter(m=>fps.has(m)).map(m=>[m,findAllDrivers(m)]);

@@ -359,6 +359,60 @@ async function processPR(repo,pr,state,report,extData){
   await sleep(Math.max(RATE_SLEEP-1000,2000));
 }
 
+// v5.11.47: Stale Sweep — re-check open items already processed for closing (no AI needed)
+async function staleSweep(repo,items,isPR,state,report){
+  let swept=0;
+  for(const item of items){
+    if(item.state!=='open')continue;
+    const key=repo+'#'+(isPR?'PR':'')+item.number;
+    if(state.closed.includes(key))continue;
+    const age=daysSince(item.updated_at);
+    const text=(item.title||'')+' '+(item.body||'');
+    const allFPs=extractFP(text);
+    const allSupp=allFPs.length>0&&allFPs.every(fp=>findAllDrivers(fp).length>0);
+    const isUpstream=repo!==OWN;
+
+    // Check if we already commented
+    const comments=await ghGet('/repos/'+repo+'/issues/'+item.number+'/comments?per_page=10');
+    const hasBot=comments&&comments.some(c=>(c.body||'').includes(TAG));
+    if(!hasBot)continue; // Only sweep items we already responded to
+
+    let shouldClose=false;let reason='';
+
+    // Rule 1: All FPs supported + we responded + >7 days (own) or >3 days (upstream)
+    if(allSupp&&hasBot){
+      const threshold=isUpstream?3:7;
+      if(age>=threshold){shouldClose=true;reason='All FPs supported in v'+appVer+', responded '+age+'d ago'}
+    }
+    // Rule 2: Stale >30 days on own repo, >14 days on upstream
+    if(!shouldClose&&age>=(isUpstream?14:STALE_DAYS)&&hasBot){
+      shouldClose=true;reason='Inactive >'+age+'d, already triaged';
+    }
+    // Rule 3: Last comment from owner/bot with closing language
+    if(!shouldClose&&comments&&comments.length){
+      const last=comments[comments.length-1];
+      const lu=last?.user?.login||'';
+      const lb=(last?.body||'').toLowerCase();
+      if(OWNER_USERS.has(lu)&&(lb.includes('closing')||lb.includes('already supported')||lb.includes('install test')||lb.includes('resolved'))){
+        shouldClose=true;reason='Owner/bot last comment indicates resolved';
+      }
+    }
+
+    if(shouldClose){
+      if(DRY){console.log('  [DRY-SWEEP] Would close',key,':',reason);swept++;continue}
+      const closeBody=TAG+'\n'+reason+'.\n\nFeel free to reopen if still relevant.'+(isUpstream?'\n\n---\n👉 Maintained in **[Universal Tuya Zigbee](https://github.com/dlnraja/com.tuya.zigbee)** (v'+appVer+', '+fps.size+'+ FPs)\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/':'');
+      await ghPost('/repos/'+repo+'/issues/'+item.number+'/comments',{body:closeBody});
+      const endpoint=isPR?'/repos/'+repo+'/pulls/'+item.number:'/repos/'+repo+'/issues/'+item.number;
+      const patchBody=isPR?{state:'closed'}:{state:'closed',state_reason:'completed'};
+      const ok=await ghPatch(endpoint,patchBody);
+      if(ok){state.closed.push(key);report.closed++;swept++;console.log('  [SWEEP] CLOSED',key,':',reason)}
+      else console.log('  [SWEEP] CLOSE FAILED',key,'(no perms?)');
+      await sleep(RATE_SLEEP);
+    }
+  }
+  return swept;
+}
+
 // Update project docs based on findings
 async function updateProjectDocs(report){
   if(!report.newFingerprints.length&&!report.responded)return;
@@ -463,6 +517,12 @@ async function main(){
       if(prBatch%10===0){console.log('  [Rate] Pausing after',prBatch,'PRs...');await sleep(15000)}
     }
     await sleep(5000);
+
+    // v5.11.47: Stale Sweep — close open items we already responded to
+    console.log('\n  == Stale Sweep: '+repo+' ==');
+    const issueSweep=await staleSweep(repo,realIssues,false,state,report);
+    const prSweep=await staleSweep(repo,allPRs,true,state,report);
+    console.log('  Sweep closed:',issueSweep,'issues,',prSweep,'PRs');
   }
 
   // Update project docs
@@ -484,9 +544,10 @@ async function main(){
   console.log('PRs processed:',report.prsProcessed);
   console.log('Skipped (already done):',report.skipped);
   console.log('Responded:',report.responded);
-  console.log('Closed:',report.closed);
+  console.log('Closed (total):',report.closed);
   console.log('New FPs found:',report.newFingerprints.length);
   console.log('Bug investigations:',(report.bugInvestigations||0));
+  console.log('State: processed='+state.processed.length+', closed='+state.closed.length);
   try{console.log('AI Budget:',getAIBudget())}catch{}
 
   if(process.env.GITHUB_STEP_SUMMARY){
