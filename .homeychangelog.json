@@ -1,4 +1,7 @@
 {
+  "5.11.63": {
+    "en": "Universal Tuya Zigbee app v5.11.63 fixes flow card titles and adds missing icons for IR capabilities."
+  },
   "5.11.62": {
     "en": "Universal Tuya Zigbee app v5.11.62: Added missing IR icon, fixed validation for remote dimmer and IR remote."
   },
@@ -56,10 +59,7 @@
   "5.11.44": {
     "en": "Universal Tuya Zigbee app v5.11.44 adds new features for fingerprint research and diagnostics, with 144 drivers and 4956 fingerprints."
   },
-  "5.11.43": {
-    "en": "Universal Tuya Zigbee app v5.11.43 adds new drivers and enhances diagnostics with PII sanitization."
-  },
-  "5.11.63": {
-    "en": "v5.11.62: Added missing `ir_code.svg` icon for IR capabilities., Fixed validation for `remote_dimmer` publish: added required images., Fixed validation for `ir_remote` publish: removed reserved `zb_` settings and added required images., Auto-published version v5.11.62 with 145 drivers and 3093 fingerprints., Periodic Gmail diagnostics and token auto-rotation implemented."
+  "5.11.64": {
+    "en": "v5.11.63: Fixed missing [[device]] in flow card titleFormatted for publish validation., Added missing ir_code.svg icon for IR capabilities in publish., Fixed publish validation for remote_dimmer by adding required images and removing reserved zb_ settings., Fixed publish validation for ir_remote by removing reserved zb_ settings and adding required images., Auto-published version v5.11.63 with 145"
   }
 }
