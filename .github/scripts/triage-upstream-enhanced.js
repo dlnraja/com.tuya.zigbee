@@ -7,7 +7,7 @@ let investigateBug;try{investigateBug=require('./bug-investigator').investigate}
 const fs=require('fs'),path=require('path'),os=require('os');
 const DRY=process.env.DRY_RUN==='true';
 const REPO=process.env.TARGET_REPO||'JohanBendz/com.tuya.zigbee';
-const CAN_CLOSE=REPO.startsWith('dlnraja/')||!!process.env.GH_PAT;
+const CAN_CLOSE=REPO.startsWith('dlnraja/');
 if(!CAN_CLOSE)console.log('NOTE: Close disabled for upstream repo '+REPO);
 const VER=process.env.APP_VERSION||'latest';
 const DRVC=process.env.DRIVER_COUNT||'138';
