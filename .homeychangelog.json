@@ -1,4 +1,7 @@
 {
+  "5.11.68": {
+    "en": "Universal Tuya Zigbee app v5.11.68: Added IMAP fallback for keepalive alerts and updated 145 drivers with 3093 fingerprints."
+  },
   "5.11.67": {
     "en": "Universal Tuya Zigbee app v5.11.67: Added fallback for Gmail address, auto-published 145 drivers with 3093 fingerprints."
   },
@@ -56,10 +59,7 @@
   "5.11.49": {
     "en": "Universal Tuya Zigbee app v5.11.49 adds a new remote dimmer driver and a GitHub Deep Search engine for enhanced fingerprint and converter searches."
   },
-  "5.11.48": {
-    "en": "Added remote dimmer driver for Lidl HG06323 TS1001 and GitHub Deep Search engine for Zigbee projects."
-  },
-  "5.11.68": {
-    "en": "v5.11.67: Reused HOMEY_EMAIL as fallback for Gmail address when using the same account., Auto-published 145 drivers with a total of 3093 fingerprints., Updated Gmail keepalive script., Adjusted various GitHub workflows for improved functionality."
+  "5.11.69": {
+    "en": "v5.11.68: Completed IMAP fallback in all YAML files for keepalive alerts., Updated app to include 145 drivers and 3093 fingerprints., Updated SECRETS.md with new configurations., Modified Gmail token keepalive script and workflow for better functionality., Adjusted .homeychangelog.json for consistency with new changes."
   }
 }
