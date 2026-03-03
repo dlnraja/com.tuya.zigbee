@@ -6,7 +6,25 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.70] - 2026-03-03
+## [5.11.71] - 2026-03-03
+
+### Bug Fixes
+- Improved error logging for IMAP with mailbox fallback options (INBOX/All Mail/FR).
+
+### Diagnostics
+- Updated Gmail diagnostics to analyze 0 emails in this version.
+- Auto-resolve feature added for Gmail diagnostics pipeline.
+
+### Drivers and Fingerprints
+- Total drivers: 145
+- Total fingerprints: 3093
+- Auto-publish feature implemented for fingerprints.
+
+### CI/CD
+- Various files updated for better functionality and error handling.
+---
+
+ [5.11.70] - 2026-03-03
 
 ### Bug Fixes
 - Fixed: pre-check now accepts HOMEY_PASSWORD as IMAP fallback credential.
