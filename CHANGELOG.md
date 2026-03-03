@@ -6,7 +6,22 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.74] - 2026-03-03
+## [5.11.75] - 2026-03-03
+
+### New Features
+- Added keyword and sender filtered search for IMAP emails, limiting results to 30 relevant emails.
+
+### Improvements
+- Updated app to include 145 drivers and 3093 fingerprints.
+
+### Bug Fixes
+- Various minor fixes and adjustments in the codebase.
+
+### CI/CD
+- Auto-published version 5.11.75 without triggering CI.
+---
+
+ [5.11.74] - 2026-03-03
 
 ### Bug Fixes
 - Fixed IMAP: envelope-only fetch to prevent out-of-memory (OOM) crashes.
