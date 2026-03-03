@@ -1,8 +1,8 @@
 {
-  "date": "2026-03-02T13:46:59.534Z",
+  "date": "2026-03-03T03:39:46.086Z",
   "local": {
-    "drivers": 144,
-    "fps": 4214
+    "drivers": 145,
+    "fps": 4217
   },
   "JohanBendz/com.tuya.zigbee": {
     "prs": [
@@ -20269,7 +20269,7 @@
       {
         "number": 152,
         "title": "Weekly Fingerprint Sync (0 new lines)",
-        "state": "open",
+        "state": "closed",
         "user": "github-actions[bot]",
         "merged": false,
         "fps": [],
@@ -20563,7 +20563,7 @@
       {
         "number": 153,
         "title": "[Alert] Gmail token EXPIRED — regenerate at OAuth Playground",
-        "state": "open",
+        "state": "closed",
         "user": "dlnraja",
         "labels": [
           "bug",
@@ -20580,7 +20580,7 @@
       {
         "number": 151,
         "title": "[Info] SOS button IAS enrollment fails on init (sleepy device — expected)",
-        "state": "open",
+        "state": "closed",
         "user": "dlnraja",
         "labels": [
           "bug",
@@ -20632,7 +20632,7 @@
       {
         "number": 148,
         "title": "[Bug] Contact sensor with luminance paired as mmWave radar (wrong driver match)",
-        "state": "open",
+        "state": "closed",
         "user": "dlnraja",
         "labels": [
           "bug",
@@ -20727,7 +20727,7 @@
       {
         "number": 142,
         "title": "[Auto] 14 new fingerprints from community (2026-03)",
-        "state": "open",
+        "state": "closed",
         "user": "github-actions[bot]",
         "labels": [
           "enhancement",
@@ -20760,7 +20760,7 @@
       {
         "number": 141,
         "title": "[Auto] New Tuya devices found in zigbee2mqtt",
-        "state": "open",
+        "state": "closed",
         "user": "github-actions[bot]",
         "labels": [
           "enhancement",
@@ -20960,7 +20960,7 @@
       {
         "number": 137,
         "title": "Plug Energy Monitor, wrong voltage",
-        "state": "open",
+        "state": "closed",
         "user": "Lalla80111",
         "labels": [
           "bug",
