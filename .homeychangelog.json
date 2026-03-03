@@ -1,4 +1,7 @@
 {
+  "5.11.72": {
+    "en": "Universal Tuya Zigbee app v5.11.72: Fixed IMAP fetch issue and updated drivers and fingerprints."
+  },
   "5.11.71": {
     "en": "Universal Tuya Zigbee app v5.11.71: Improved error logging for IMAP and updated diagnostics."
   },
@@ -56,10 +59,7 @@
   "5.11.53": {
     "en": "Universal Tuya Zigbee app v5.11.53 adds a new remote dimmer driver and improves Gmail token management."
   },
-  "5.11.52": {
-    "en": "Universal Tuya Zigbee app v5.11.52: Added remote dimmer driver, fixed vibration sensor triggers, and improved Gmail token handling."
-  },
-  "5.11.72": {
-    "en": "v5.11.71: Improved error logging for IMAP with mailbox fallback options (INBOX/All Mail/FR)., Updated Gmail diagnostics to analyze 0 emails in this version., Auto-resolve feature added for Gmail diagnostics pipeline., Total drivers: 145, Total fingerprints: 3093"
+  "5.11.73": {
+    "en": "v5.11.72: Fixed IMAP fetch: added `uid:true` and used source instead of bodyParts., Auto-published version 5.11.72 with 145 drivers and 3093 fingerprints., Updated screenshots for better clarity., Minor updates to scripts and configuration files."
   }
 }
