@@ -6,7 +6,30 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.78] - 2026-03-03
+## [5.11.79] - 2026-03-03
+
+### New Features
+- Added headless OAuth support (Tier 2) - no Puppeteer needed.
+
+### Improvements
+- Updated app to include 145 drivers and 3093 fingerprints.
+
+### CI/CD
+- Adjusted auto-publish workflow for improved efficiency.
+- Updated scripts for OAuth promotion.
+
+### Files Changed
+- .github/scripts/auto-promote-oauth.js: Added headless OAuth functionality.
+- .github/workflows/auto-publish-on-push.yml: Minor adjustments for workflow.
+- .github/workflows/publish.yml: Minor adjustments for workflow.
+- .homeychangelog.json: Updated changelog entries.
+- .homeycompose/app.json: Minor updates.
+- CHANGELOG.md: Added new version details.
+- app.json: Minor updates.
+- Updated screenshot files for better clarity.
+---
+
+ [5.11.78] - 2026-03-03
 
 ### Bug Fixes
 - Fixed session API v2 to support server-side fetch with cookies and OAuth token interception.
