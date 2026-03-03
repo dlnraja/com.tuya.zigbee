@@ -36,8 +36,13 @@ jobs:
           if [ -f "$HF" ]; then
             FAILS=$(node -p "try{JSON.parse(require('fs').readFileSync('$HF','utf8')).consecutiveFails||0}catch{0}")
             if [ "$FAILS" -ge 3 ]; then
-              echo "::warning::Gmail token has $FAILS consecutive failures — skipping fetch"
-              echo "skip=true" >> $GITHUB_OUTPUT
+              echo "::warning::Gmail OAuth token has $FAILS consecutive failures"
+              if [ -z "${{ secrets.GMAIL_APP_PASSWORD }}" ]; then
+                echo "::warning::No IMAP fallback configured — skipping fetch (set GMAIL_APP_PASSWORD)"
+                echo "skip=true" >> $GITHUB_OUTPUT
+              else
+                echo "::notice::IMAP fallback available — continuing despite OAuth failures"
+              fi
             fi
           fi
       - name: Fetch Gmail diagnostics + Gemini analysis
@@ -46,6 +51,8 @@ jobs:
           GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
           GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
           GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_PAT: ${{ secrets.GH_PAT }}

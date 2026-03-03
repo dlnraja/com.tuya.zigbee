@@ -46,8 +46,10 @@ async function main(){
       console.error('STEP 3: Paste Client ID + Secret > check "Auto-refresh the token"');
       console.error('STEP 4: Select Gmail API v1 > gmail.readonly > Authorize > Exchange');
       console.error('STEP 5: Copy Refresh Token > update GMAIL_REFRESH_TOKEN secret');
-      console.error('PERMANENT: Publish OAuth app > https://console.cloud.google.com/apis/credentials/consent');
-      console.log('::error::Gmail refresh token EXPIRED. Regenerate via OAuth Playground (see SECRETS.md).');
+      console.error('PERMANENT FIX: Set GMAIL_EMAIL + GMAIL_APP_PASSWORD for IMAP fallback (never expires)');
+      console.error('  → https://myaccount.google.com/apppasswords → gh secret set GMAIL_APP_PASSWORD');
+      console.error('ALT: Regenerate OAuth via OAuth Playground (expires again in 7d)');
+      console.log('::error::Gmail refresh token EXPIRED. Set up IMAP fallback (GMAIL_APP_PASSWORD) — see SECRETS.md.');
       health.tokenSetDate=null;health.daysLeft=0;health.expiryEstimate=null;
       if(shouldAlert(health,'expired')){
         fs.writeFileSync(path.join(SD,'_token_expired_alert.txt'),
