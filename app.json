@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.63",
+  "version": "5.11.64",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -41883,8 +41883,8 @@
           "fr": "Définir le comportement à la mise sous tension"
         },
         "titleFormatted": {
-          "en": "Set power-on behavior to [[mode]]",
-          "nl": "Stel inschakelgedrag in op [[mode]]"
+          "en": "[[device]] Set power-on behavior to [[mode]]",
+          "nl": "[[device]] Stel inschakelgedrag in op [[mode]]"
         },
         "args": [
           {
@@ -41935,8 +41935,8 @@
           "fr": "Définir le type d'interrupteur externe"
         },
         "titleFormatted": {
-          "en": "Set external switch type to [[mode]]",
-          "nl": "Stel extern schakelaartype in op [[mode]]"
+          "en": "[[device]] Set external switch type to [[mode]]",
+          "nl": "[[device]] Stel extern schakelaartype in op [[mode]]"
         },
         "args": [
           {
@@ -42084,8 +42084,8 @@
           "fr": "Définir le comportement à la mise sous tension"
         },
         "titleFormatted": {
-          "en": "Set power-on behavior to [[mode]]",
-          "nl": "Stel inschakelgedrag in op [[mode]]"
+          "en": "[[device]] Set power-on behavior to [[mode]]",
+          "nl": "[[device]] Stel inschakelgedrag in op [[mode]]"
         },
         "args": [
           {
@@ -42136,8 +42136,8 @@
           "fr": "Définir le type d'interrupteur externe"
         },
         "titleFormatted": {
-          "en": "Set external switch type to [[mode]]",
-          "nl": "Stel extern schakelaartype in op [[mode]]"
+          "en": "[[device]] Set external switch type to [[mode]]",
+          "nl": "[[device]] Stel extern schakelaartype in op [[mode]]"
         },
         "args": [
           {
@@ -42439,8 +42439,8 @@
           "fr": "Définir le comportement à la mise sous tension"
         },
         "titleFormatted": {
-          "en": "Set power-on behavior to [[mode]]",
-          "nl": "Stel inschakelgedrag in op [[mode]]"
+          "en": "[[device]] Set power-on behavior to [[mode]]",
+          "nl": "[[device]] Stel inschakelgedrag in op [[mode]]"
         },
         "args": [
           {
@@ -42491,8 +42491,8 @@
           "fr": "Définir le type d'interrupteur externe"
         },
         "titleFormatted": {
-          "en": "Set external switch type to [[mode]]",
-          "nl": "Stel extern schakelaartype in op [[mode]]"
+          "en": "[[device]] Set external switch type to [[mode]]",
+          "nl": "[[device]] Stel extern schakelaartype in op [[mode]]"
         },
         "args": [
           {
@@ -42836,8 +42836,8 @@
           "fr": "Définir le comportement à la mise sous tension"
         },
         "titleFormatted": {
-          "en": "Set power-on behavior to [[mode]]",
-          "nl": "Stel inschakelgedrag in op [[mode]]"
+          "en": "[[device]] Set power-on behavior to [[mode]]",
+          "nl": "[[device]] Stel inschakelgedrag in op [[mode]]"
         },
         "args": [
           {
@@ -42888,8 +42888,8 @@
           "fr": "Définir le type d'interrupteur externe"
         },
         "titleFormatted": {
-          "en": "Set external switch type to [[mode]]",
-          "nl": "Stel extern schakelaartype in op [[mode]]"
+          "en": "[[device]] Set external switch type to [[mode]]",
+          "nl": "[[device]] Stel extern schakelaartype in op [[mode]]"
         },
         "args": [
           {
