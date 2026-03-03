@@ -9,13 +9,18 @@
       "time": "2026-03-03T06:46:28.201Z",
       "ok": false,
       "err": 400
+    },
+    {
+      "time": "2026-03-03T08:35:45.422Z",
+      "ok": false,
+      "err": 400
     }
   ],
   "lastOk": null,
-  "lastFail": "2026-03-03T06:46:28.201Z",
+  "lastFail": "2026-03-03T08:35:45.422Z",
   "_lastAlert_expired": "2026-03-03T05:24:55.468Z",
   "_lastAlert_expiring_proactive": null,
-  "consecutiveFails": 2,
+  "consecutiveFails": 3,
   "tokenSetDate": null,
   "daysLeft": 0,
   "expiryEstimate": null,
