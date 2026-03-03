@@ -580,9 +580,49 @@ jobs:
           git pull --rebase origin master || true
           git push || true
 
+  ai-battle:
+    name: "Master AI Battle Orchestrator"
+    needs: [smart-processor, scan-forks, gmail-diagnostics, enrichment]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: "Run AI Battle (multi-AI + all sources)"
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          MAX_GH_CALLS: "100"
+        run: node .github/scripts/master-ai-battle.js
+      - name: Commit AI battle changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A drivers/ .github/state/
+          git diff --cached --quiet || git commit -m "ai-battle: variant discovery + auto-implement [skip ci]"
+          git pull --rebase origin master || true
+          git push || true
+
   generate-changelog:
     name: "AI Changelog Generation"
-    needs: [scan-forum, gmail-diagnostics, device-diagnostics, enrichment, smart-processor]
+    needs: [scan-forum, gmail-diagnostics, device-diagnostics, enrichment, smart-processor, ai-battle]
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 10
