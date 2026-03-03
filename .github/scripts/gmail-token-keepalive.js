@@ -53,7 +53,7 @@ async function main(){
       health.tokenSetDate=null;health.daysLeft=0;health.expiryEstimate=null;
       if(shouldAlert(health,'expired')){
         fs.writeFileSync(path.join(SD,'_token_expired_alert.txt'),
-          'Gmail refresh token expired at '+now+'.\n\n## Regenerate Token\n1. Go to https://developers.google.com/oauthplayground\n2. Click gear ⚙️ > check **Use your own OAuth credentials** > paste Client ID + Secret\n3. Check **Auto-refresh the token before it expires**\n4. Select Gmail API v1 > `gmail.readonly` > Authorize > Exchange\n5. Copy Refresh Token > update `GMAIL_REFRESH_TOKEN` secret\n\n## Permanent Fix\nPublish OAuth app: https://console.cloud.google.com/apis/credentials/consent\nTesting→Production = token never expires.');
+          'Gmail OAuth refresh token expired at '+now+'.\n\n## ✅ Permanent Fix: IMAP Fallback (recommended)\n1. Go to https://myaccount.google.com/apppasswords\n2. Create App Password for **Mail** → copy 16-char password\n3. `gh secret set GMAIL_APP_PASSWORD` → paste password\n4. HOMEY_EMAIL is reused as Gmail address automatically\n5. **Done!** IMAP fallback never expires.\n\n## Alt: Regenerate OAuth Token (expires again in 7 days)\n1. Go to https://developers.google.com/oauthplayground\n2. Gear ⚙️ > Use own credentials > paste Client ID + Secret\n3. Gmail API v1 > `gmail.readonly` > Authorize > Exchange\n4. Copy Refresh Token > `gh secret set GMAIL_REFRESH_TOKEN`');
         markAlerted(health,'expired');
       } else {
         console.log('Alert cooldown active — skipping duplicate alert file');
@@ -73,13 +73,13 @@ async function main(){
     health.refreshTokenExpiresH=h;
     health.refreshTokenExpiresAt=new Date(Date.now()+j.refresh_token_expires_in*1000).toISOString();
     console.log('⚠ TESTING MODE: refresh token expires in',h+'h ('+health.refreshTokenExpiresAt+')');
-    console.log('  To fix permanently: Google Cloud Console > OAuth consent > PUBLISH APP');
+    console.log('  Permanent fix: set GMAIL_APP_PASSWORD for IMAP fallback (never expires)');
     if(h<72){
-      console.log('::warning::Gmail refresh token expires in '+h+'h! Publish OAuth app or regenerate token.');
+      console.log('::warning::Gmail refresh token expires in '+h+'h! Set GMAIL_APP_PASSWORD for permanent IMAP fallback.');
       if(shouldAlert(health,'expiring')){
         fs.writeFileSync(path.join(SD,'_token_expiring_alert.txt'),
-          'Gmail token expires in '+h+'h at '+health.refreshTokenExpiresAt+
-          '. FIX: Google Cloud Console > OAuth consent > PUBLISH APP (Testing→Production).');
+          'Gmail OAuth token expires in '+h+'h at '+health.refreshTokenExpiresAt+
+          '.\n\nPermanent fix: `gh secret set GMAIL_APP_PASSWORD` (Google App Password from https://myaccount.google.com/apppasswords). HOMEY_EMAIL reused as Gmail address. See SECRETS.md.');
         markAlerted(health,'expiring');
       }
     }
@@ -113,9 +113,9 @@ async function main(){
   health.daysOld=age.daysOld;health.daysLeft=age.daysLeft;health.expiryEstimate=age.expiry;
   if(age.daysLeft!==null)console.log('Token age:',age.daysOld+'d | Left:',age.daysLeft+'d | Expiry:',age.expiry);
   if(age.daysLeft!==null&&age.daysLeft<=2&&age.daysLeft>0){
-    console.log('::warning::Gmail token expires in '+age.daysLeft+'d! Rotate now via OAuth Playground.');
+    console.log('::warning::Gmail token expires in '+age.daysLeft+'d! Set GMAIL_APP_PASSWORD for permanent IMAP fallback.');
     if(shouldAlert(health,'expiring_proactive',12)){
-      const msg='Gmail token expires in '+age.daysLeft+'d (~'+age.expiry+').\n\nRotate: https://developers.google.com/oauthplayground\nSee SECRETS.md for full steps.\nThen: gh secret set GMAIL_REFRESH_TOKEN';
+      const msg='Gmail OAuth token expires in '+age.daysLeft+'d (~'+age.expiry+').\n\nPermanent fix: `gh secret set GMAIL_APP_PASSWORD` (from https://myaccount.google.com/apppasswords). HOMEY_EMAIL reused as Gmail address.\n\nAlt: Rotate OAuth via https://developers.google.com/oauthplayground → `gh secret set GMAIL_REFRESH_TOKEN`';
       fs.writeFileSync(path.join(SD,'_token_expiring_alert.txt'),msg);
       markAlerted(health,'expiring_proactive');
     }
