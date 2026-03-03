@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-03-03T20:03:21.645Z",
+  "dryRun": true,
+  "sources": {
+    "external": 1607,
+    "github": 8,
+    "forks": 0,
+    "johan": 0,
+    "gmail": 0,
+    "forum": 0,
+    "diagnostics": 0,
+    "deepSearch": 0
+  },
+  "variants": {
+    "confirmed": 0,
+    "details": []
+  },
+  "classified": {
+    "total": 0,
+    "byMethod": {},
+    "details": []
+  },
+  "implemented": {
+    "added": 0,
+    "skipped": 0
+  },
+  "ghApiCalls": 0
+}
