@@ -1,4 +1,7 @@
 {
+  "5.11.81": {
+    "en": "Fixed OAuth redirect handling and updated app metadata for v5.11.81."
+  },
   "5.11.80": {
     "en": "Updated OAuth flow to use session token for authorization. 145 drivers and 3093 fingerprints supported."
   },
@@ -56,10 +59,7 @@
   "5.11.62": {
     "en": "Universal Tuya Zigbee app v5.11.62: Added missing IR icon, fixed validation for remote dimmer and IR remote."
   },
-  "5.11.61": {
-    "en": "Universal Tuya Zigbee app v5.11.61 fixes validation issues for remote dimmer and IR remote drivers."
-  },
-  "5.11.81": {
-    "en": "v5.11.80: Fixed OAuth flow to use session token for the authorization step, ensuring proper handling of the OAuth process., Added support for 145 drivers and 3093 fingerprints in this release., Auto-publish feature updated to reflect the new driver and fingerprint counts., Updated scripts for auto-promotion of OAuth changes."
+  "5.11.82": {
+    "en": "v5.11.81: Fixed OAuth redirect chain handling (301→api.athom.com→code)., Updated app metadata: 145 drivers, 3093 fingerprints., Auto-published version v5.11.81."
   }
 }
