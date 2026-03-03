@@ -69,33 +69,9 @@
       }
     }
   },
-  "settings": [
-    {
-      "type": "group",
-      "label": {
-        "en": "Device Info",
-        "fr": "Infos Appareil"
-      },
-      "children": [
-        {
-          "id": "zb_manufacturer_name",
-          "type": "label",
-          "label": {
-            "en": "Manufacturer",
-            "fr": "Fabricant"
-          },
-          "value": ""
-        },
-        {
-          "id": "zb_model_id",
-          "type": "label",
-          "label": {
-            "en": "Model ID",
-            "fr": "ID Modèle"
-          },
-          "value": ""
-        }
-      ]
-    }
-  ]
+  "images": {
+    "large": "/drivers/ir_remote/assets/images/large.png",
+    "small": "/drivers/ir_remote/assets/images/small.png",
+    "xlarge": "/drivers/ir_remote/assets/images/xlarge.png"
+  }
 }
