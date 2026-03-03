@@ -40,11 +40,19 @@ async function main() {
   if(!code){log('No code after redirect chain');process.exit(1)}
   log('Code: '+code.slice(0,10)+'...');
   log('Step 3: Token Exchange');
-  const tr=await fetch(AUTH+'/oauth2/token',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'client_id='+CID+'&grant_type=authorization_code&code='+code+'&redirect_uri='+encodeURIComponent(REDIR)});
-  log('Token exchange: '+tr.status);
-  const tj=await tr.json();
-  const tk=tj.access_token;
-  if(tk) log('Access token: '+tk.length+'c'); else log('Token resp keys: '+Object.keys(tj).join(','));
+  let tk=null;
+  const tbody='client_id='+CID+'&grant_type=authorization_code&code='+code+'&redirect_uri='+encodeURIComponent(REDIR);
+  for(const base of [AUTH,'https://api.athom.com']){
+    const ep=base+'/oauth2/token';
+    try{
+      const tr=await fetch(ep,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:tbody});
+      const txt=await tr.text();
+      log('  '+base.split('//')[1]+': '+tr.status+' → '+txt.slice(0,200));
+      try{const j=JSON.parse(txt);tk=j.access_token}catch{}
+      if(tk)break;
+    }catch(e){log('  '+base+': '+e.message)}
+  }
+  if(tk) log('Access token: '+tk.length+'c');
   if(!tk){log('No access token');process.exit(1)}
   log('Step 4: Builds');
   const hd={Authorization:'Bearer '+tk,Accept:'application/json'};
