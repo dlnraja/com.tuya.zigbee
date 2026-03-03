@@ -37,11 +37,11 @@ jobs:
             FAILS=$(node -p "try{JSON.parse(require('fs').readFileSync('$HF','utf8')).consecutiveFails||0}catch{0}")
             if [ "$FAILS" -ge 3 ]; then
               echo "::warning::Gmail OAuth token has $FAILS consecutive failures"
-              if [ -z "${{ secrets.GMAIL_APP_PASSWORD }}" ]; then
-                echo "::warning::No IMAP fallback configured — skipping fetch (set GMAIL_APP_PASSWORD)"
+              if [ -z "${{ secrets.GMAIL_APP_PASSWORD }}" ] && [ -z "${{ secrets.HOMEY_PASSWORD }}" ]; then
+                echo "::warning::No IMAP fallback configured — skipping fetch (set GMAIL_APP_PASSWORD or HOMEY_PASSWORD)"
                 echo "skip=true" >> $GITHUB_OUTPUT
               else
-                echo "::notice::IMAP fallback available — continuing despite OAuth failures"
+                echo "::notice::IMAP fallback available (GMAIL_APP_PASSWORD or HOMEY_PASSWORD) — continuing"
               fi
             fi
           fi
