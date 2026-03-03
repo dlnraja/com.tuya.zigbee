@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-03-02T13:51:26.972Z",
+  "timestamp": "2026-03-03T03:42:11.999Z",
   "username": "dlnraja",
   "summary": {
-    "postCount": 550,
+    "postCount": 559,
     "topicCount": 1,
     "likes": 66,
     "likesReceived": 191,
@@ -10,7 +10,7 @@
       {
         "id": 140352,
         "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "posts": 1515
+        "posts": 1522
       },
       {
         "id": 26439,
@@ -49,13 +49,76 @@
     {
       "id": 140352,
       "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "posts": 1515,
-      "views": 13796,
-      "lastPosted": "2026-03-02T09:41:20.217Z",
+      "posts": 1522,
+      "views": 13823,
+      "lastPosted": "2026-03-02T21:37:02.869Z",
       "slug": "app-pro-universal-tuya-zigbee-device-app-test"
     }
   ],
   "activity": [
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1569,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Dropped v5.11.50 on the test channel just now. \nUniversal Tuya Zigbee app v5.11.50 adds a new remote dimmer driver and improves diagnostics with auto-resolve features. \n145 drivers, 5,406+ fingerprints now.",
+      "createdAt": "2026-03-02T21:37:02.869Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1568,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Hi Dylan, \nThe sensor _TZE200_pay2byax \nis not a MWave radar motion sensor but a Door/Window contact sensor with Luminance as I showed you in the former email. \nAnd I’ve added the _TZ3000_mrpevh8p Smart button from the other Tuya ZigBee app to yours and that’s working fine as Single, Double and Long&hellip;",
+      "createdAt": "2026-03-02T19:27:58.172Z",
+      "username": "Peter_van_Werkhoven"
+    },
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1567,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Hi Dylan also send you this one, \nYou’re a busy man with an unlimited new device’s I see, I just updated to version 5.11.26 and tried to integrate my contact sensor with Luminance  _TZE200_pay2byax, _TZ3000 from Johan Bentz issue #1253 which you mentioned in your mail to me into your app but it adds&hellip;",
+      "createdAt": "2026-03-02T19:23:10.950Z",
+      "username": "Peter_van_Werkhoven"
+    },
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1566,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Hi Dylan I don’t know if you received my answer on your emails from Johan Bentz his development @ GitHub, \nSo here my problem with the device again. \nThis LCD Temperature and Humidity sensor _TZE200_vvmbj46n is been added as a Tuya DP Thermostat see screenshots. \nDiagnostic code: 0c64851e-3c0a-48a5-&hellip;",
+      "createdAt": "2026-03-02T19:12:04.123Z",
+      "username": "Peter_van_Werkhoven"
+    },
+    {
+      "type": 6,
+      "topicId": 140352,
+      "postNum": 1565,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "Is that what you need? \nbc9907cf-28f3-46e5-8fa6-c92f5cc9d844",
+      "createdAt": "2026-03-02T18:47:30.663Z",
+      "username": "Nicolas"
+    },
+    {
+      "type": 5,
+      "topicId": 140352,
+      "postNum": 1564,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "I need more informations could you please send me more diag log",
+      "createdAt": "2026-03-02T18:31:00.447Z",
+      "username": "dlnraja"
+    },
+    {
+      "type": 7,
+      "topicId": 140352,
+      "postNum": 1563,
+      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+      "excerpt": "@dlnraja \nCould the problem of generic alarm for vibration device be because vibration capabilities is alarm_generic.vibration ? I have found an alarm_vibration capabilities too in others scripts.",
+      "createdAt": "2026-03-02T16:23:24.077Z",
+      "username": "Nicolas"
+    },
     {
       "type": 5,
       "topicId": 140352,
@@ -2692,73 +2755,26 @@
       "excerpt": "Hello Dylan. \nSadly all BSEED wall switches still seen as unknown zigbee device on V5.5.932. \nad00e674-dbdc-47cd-bd56-8638fbe3f12c \nBest regards: Pieter.",
       "createdAt": "2026-01-28T16:22:56.494Z",
       "username": "Pieter_Pessers"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1260,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Unfortunately no success yet. \nDuring generic installation this error message occurs: \n[image] \nIf I install the Tuya DP thermostat I can set the TARGET temp without an error message, but the temp is not transferred to the device. \nHowever, no actual temperature is displayed. If other settings are m&hellip;",
-      "createdAt": "2026-01-28T16:15:16.588Z",
-      "username": "ManuelKugler"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1259,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Hi, could you fix the gas sensor _TZE204_chbyv06. Now it detects but doesn’t work correctly..",
-      "createdAt": "2026-01-28T15:31:34.122Z",
-      "username": "Vitalii"
-    },
-    {
-      "type": 2,
-      "topicId": 140352,
-      "postNum": 713,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "hi everyone! v5.5.265 is now available with fixes: \n@Vitalii - Your gas detector (_TZE204_chbyv06x) will now be correctly detected. Please: \n\nUpdate the app\nRemove and re-pair the device\n\n@ManuelKugler - Your TS0041 button (_TZ3000_yj6k7vfo) should now pair correctly as a button, not climate sensor. &hellip;",
-      "createdAt": "2026-01-28T15:25:36.959Z",
-      "username": "Vitalii"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1258,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Thank you, Attilla. \nThat is great. I will let you know if it works. I will wait untill Dylan included the LED control.",
-      "createdAt": "2026-01-28T14:58:38.880Z",
-      "username": "Pieter_Pessers"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1257,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "I made another PR (or rather updated an existing one): \n\nRenaming of the drivers as explained above)\nAdded the led control\n\n@Pieter_Pessers Seems that other people have experienced issues with the led control due to their firmware. For my versions it doesn’t work, but I left the code in in case it w&hellip;",
-      "createdAt": "2026-01-28T14:15:33.124Z",
-      "username": "Attilla"
-    },
-    {
-      "type": 6,
-      "topicId": 140352,
-      "postNum": 1256,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "Hi Dylan all of a sudden Temperature and Humidity figures now but invalid outside Temperature is about 6⁰C en Humidity 88% \nAnd Battery level shows only in Insights but shouldn’t be 100% anymore. \nDiagnostic code: fb042598-ef9f-4552-94cf-f4eb23db067b \n [1000021406] \n[1000021407] \n[1000021408] \n[1000&hellip;",
-      "createdAt": "2026-01-28T12:23:12.770Z",
-      "username": "Peter_van_Werkhoven"
-    },
-    {
-      "type": 5,
-      "topicId": 140352,
-      "postNum": 1255,
-      "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "excerpt": "yes you can do an new pr  feel free , it’s verry apreciate your support. \ni have checked the sugestion but : \nNaming: He suggests wall_switch_1gang_1way vs module_switch_1gang - but we already have a similar structure but i will improve the light / led /bacllight regonition \nThank you for the excell&hellip;",
-      "createdAt": "2026-01-28T09:54:54.304Z",
-      "username": "dlnraja"
     }
   ],
   "pms": [],
   "notifications": [
+    {
+      "type": 2,
+      "topicId": 140352,
+      "postNum": 1565,
+      "data": {
+        "topic_title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
+        "original_post_id": 716362,
+        "original_post_type": 1,
+        "original_username": "Peter_van_Werkhoven",
+        "revision_number": null,
+        "display_username": "4 replies",
+        "display_name": "Nicolas"
+      },
+      "read": false,
+      "createdAt": "2026-03-02T19:27:58.179Z"
+    },
     {
       "type": 11,
       "topicId": 151778,
@@ -2792,12 +2808,12 @@
       "createdAt": "2026-02-27T20:15:44.264Z"
     },
     {
-      "type": 2,
+      "type": 1,
       "topicId": 140352,
-      "postNum": 1561,
+      "postNum": 1563,
       "data": {
         "topic_title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "original_post_id": 716023,
+        "original_post_id": 716269,
         "original_post_type": 1,
         "original_username": "Nicolas",
         "revision_number": null,
@@ -2805,7 +2821,7 @@
         "display_name": "Nicolas"
       },
       "read": true,
-      "createdAt": "2026-03-02T08:23:50.622Z"
+      "createdAt": "2026-03-02T16:23:24.160Z"
     },
     {
       "type": 1,
@@ -3702,22 +3718,6 @@
       },
       "read": true,
       "createdAt": "2026-01-31T19:53:54.244Z"
-    },
-    {
-      "type": 5,
-      "topicId": 140352,
-      "postNum": 1310,
-      "data": {
-        "topic_title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "original_post_id": 705082,
-        "original_post_type": 1,
-        "original_username": "ManuelKugler",
-        "revision_number": null,
-        "display_username": "ManuelKugler",
-        "display_name": "Dylan Rajasekaram"
-      },
-      "read": true,
-      "createdAt": "2026-01-31T19:09:20.376Z"
     }
   ],
   "bookmarks": [],
@@ -4172,7 +4172,7 @@
         {
           "num": 1,
           "user": "dlnraja",
-          "text": "Universal Tuya Zigbee v5.11.44\n\n144 drivers · 5403+ fingerprints · Updated 2026-03-02\n\n\nLocal-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.\n\nInstall\nStable: Homey App Store · Test: Test Channel · Source: GitHub\n\nWhat’s New (v5.11.44)\nAdded support for 144 drivers and 4943 fingerprints., Enhanced fetch-gmail-diagnostics with PII sanitization., Introduced issue-deep-researcher.js to scan all open PRs/issues and auto-implement findings., Implemented variant-scanner.js to auto-discover all variants and product IDs., Updated enrichment pipeline with codified FP research intelligence.\n\nSupported Devices\n\n\n\n\nCategory\nDrivers\nFPs\n\n\n\n\n Socket\n31\n782\n\n\n Light\n18\n577\n\n\n Sensor\n42\n2605\n\n\n Thermostat\n7\n502\n\n\n Windowcoverings\n3\n276\n\n\n Lock\n4\n26\n\n\n Fan\n9\n46\n\n\n Doorbell\n2\n10\n\n\n Remote\n3\n43\n\n\n Button\n2\n9\n\n\n Heater\n4\n19\n\n\n Garagedoor\n2\n8\n\n\n Other\n14\n500\n\n\n\nDevice Finder — search by fingerprint\n\nFeatures\n\nTuya DP protocol (0xEF00/TS0601) + Standard ZCL clusters\nPhysical button detection · Virtual buttons · LED backlight control\nEnergy monitoring (W/V/A) · Air quality sensors (CO₂/VOC/PM2.5/HCHO)\nCovers & curtains with tilt · TRVs · Dimmers · IR blasters\nAuto-configured settings · Diagnostic reports\n\nChangelog\nPrevious versions\nv5.11.43: Universal Tuya Zigbee app v5.11.43 adds new drivers and enhances diagnostics with PII sanitization.\n\nv5.11.42: Universal Tuya Zigbee app v5.11.42 adds new automation for variant discovery and enhances driver capabilities with 144 drivers and 4943 fingerprints.\n\nv5.11.41: Universal Tuya Zigbee app v5.11.41 adds auto-discovery for all variants and product IDs, includes 144 drivers and 4943 fingerprints.\n\nv5.11.40: Universal Tuya Zigbee app v5.11.40 adds 3077 new fingerprints and introduces an IR Remote driver.\n\n\nReport a Bug\nOpen a GitHub Issue — please include your _TZxxxx fingerprint and TSxxxx model ID.\n\n Support the Project\nThis app is free and open-source. If it’s useful to you, a small donation helps keep it going:\n\nPayPal: paypal.me/dlnraja · Revolut: revolut.me/dylanoul\n\n\nLast updated 2026-03-02 — Source on GitHub",
+          "text": "Universal Tuya Zigbee v5.11.50\n\n145 drivers · 5406+ fingerprints · Updated 2026-03-02\n\n\nLocal-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.\n\nInstall\nStable: Homey App Store · Test: Test Channel · Source: GitHub\n\nWhat’s New (v5.11.50)\nAdded remote dimmer driver for Lidl HG06323 TS1001 with full Zosung protocol support., Introduced GitHub Deep Search engine to search 20+ Zigbee projects for fingerprints, data points, and converters., Fixed Gmail token rotation and reset health tracking., Auto-published version 5.11.49 with 145 drivers and 3093 fingerprints., Updated workflows for daily and weekly external syncs.\n\nSupported Devices\n\n\n\n\nCategory\nDrivers\nFPs\n\n\n\n\n Socket\n31\n782\n\n\n Light\n18\n577\n\n\n Sensor\n42\n2607\n\n\n Thermostat\n7\n502\n\n\n Windowcoverings\n3\n276\n\n\n Lock\n4\n26\n\n\n Fan\n9\n46\n\n\n Doorbell\n2\n10\n\n\n Remote\n4\n44\n\n\n Button\n2\n9\n\n\n Heater\n4\n19\n\n\n Garagedoor\n2\n8\n\n\n Other\n14\n500\n\n\n\nDevice Finder — search by fingerprint\n\nFeatures\n\nTuya DP protocol (0xEF00/TS0601) + Standard ZCL clusters\nPhysical button detection · Virtual buttons · LED backlight control\nEnergy monitoring (W/V/A) · Air quality sensors (CO₂/VOC/PM2.5/HCHO)\nCovers & curtains with tilt · TRVs · Dimmers · IR blasters\nAuto-configured settings · Diagnostic reports\n\nChangelog\nPrevious versions\nv5.11.49: Universal Tuya Zigbee app v5.11.49 adds a new remote dimmer driver and a GitHub Deep Search engine for enhanced fingerprint and converter searches.\n\nv5.11.48: Added remote dimmer driver for Lidl HG06323 TS1001 and GitHub Deep Search engine for Zigbee projects.\n\nv5.11.47: Added support for Lidl HG06323 TS1001 remote dimmer and enhanced ZCL cluster adapters.\n\nv5.11.46: Added ZCL cluster adapters and converters for Z2M, ZHA, and deCONZ; enhanced security.\n\n\nReport a Bug\nOpen a GitHub Issue — please include your _TZxxxx fingerprint and TSxxxx model ID.\n\n Support the Project\nThis app is free and open-source. If it’s useful to you, a small donation helps keep it going:\n\nPayPal: paypal.me/dlnraja · Revolut: revolut.me/dylanoul\n\n\nLast updated 2026-03-02 — Source on GitHub",
           "date": "2025-07-25T01:07:08.539Z",
           "replyTo": null
         },
@@ -14772,6 +14772,55 @@
           "user": "dlnraja",
           "text": "Dropped v5.11.44 on the test channel just now.\n\nUniversal Tuya Zigbee app v5.11.44 adds new features for fingerprint research and improves driver capabilities, including a new IR remote driver.\n\n144 drivers, 5,405+ fingerprints now.",
           "date": "2026-03-02T09:41:20.217Z",
+          "replyTo": null
+        },
+        {
+          "num": 1563,
+          "user": "Nicolas",
+          "text": "@dlnraja\n\nCould the problem of generic alarm for vibration device be because vibration capabilities is alarm_generic.vibration ? I have found an alarm_vibration capabilities too in others scripts.",
+          "date": "2026-03-02T16:23:23.936Z",
+          "replyTo": null
+        },
+        {
+          "num": 1564,
+          "user": "dlnraja",
+          "text": "I need more informations could you please send me more diag log",
+          "date": "2026-03-02T18:31:00.447Z",
+          "replyTo": 1559
+        },
+        {
+          "num": 1565,
+          "user": "Nicolas",
+          "text": "Is that what you need?\n\nbc9907cf-28f3-46e5-8fa6-c92f5cc9d844",
+          "date": "2026-03-02T18:47:30.523Z",
+          "replyTo": 1564
+        },
+        {
+          "num": 1566,
+          "user": "Peter_van_Werkhoven",
+          "text": "Hi Dylan I don’t know if you received my answer on your emails from Johan Bentz his development @ GitHub,\n\nSo here my problem with the device again.\n\nThis LCD Temperature and Humidity sensor _TZE200_vvmbj46n is been added as a Tuya DP Thermostat see screenshots.\n\nDiagnostic code: 0c64851e-3c0a-48a5-b9ff-5c652209a0e5\n\n10000235641220×2712 68.3 KB\n\n10000235651220×2712 103 KB\n\n10000235661220×2712 68.6 KB\n\n10000235671220×2712 59.4 KB\n\n10000235681220×2712 206 KB\n\n10000235691220×2712 212 KB\n\nThanks and best regards,\n\nPeter van Werkhoven",
+          "date": "2026-03-02T19:12:04.015Z",
+          "replyTo": null
+        },
+        {
+          "num": 1567,
+          "user": "Peter_van_Werkhoven",
+          "text": "Hi Dylan also send you this one,\n\nYou’re a busy man with an unlimited new device’s I see, I just updated to version 5.11.26 and tried to integrate my contact sensor with Luminance  _TZE200_pay2byax, _TZ3000 from Johan Bentz issue #1253 which you mentioned in your mail to me into your app but it adds as a MWave radar motion detector instead of a contact sensor.\n\nSee attached screenshots:\n\nDiagnostic code: 4937c244-8b0c-49fb-ab95-d7858270869e\n\n10000235591220×2712 217 KB\n\n10000235601220×2712 103 KB\n\n10000235611220×2712 198 KB\n\n10000235621220×2712 205 KB\n\nBTW the SOS button _TZ3000_0dumfk2z TS0215A don’t work anymore and can’t get it to repair either  no response on pressing the SOS button, only battery reading oké. The HOBEIAN Motion, Luminance, Temperature and Humidity sensor is still working fine.\n\nThanks for all your great work again, your the best \n\nGreetz and good luck,\n\nPeter van Werkhoven",
+          "date": "2026-03-02T19:23:10.729Z",
+          "replyTo": null
+        },
+        {
+          "num": 1568,
+          "user": "Peter_van_Werkhoven",
+          "text": "Hi Dylan,\n\nThe sensor _TZE200_pay2byax\n\nis not a MWave radar motion sensor but a Door/Window contact sensor with Luminance as I showed you in the former email.\n\nAnd I’ve added the _TZ3000_mrpevh8p Smart button from the other Tuya ZigBee app to yours and that’s working fine as Single, Double and Long press \n\nAnd like I told you in my first reply to you the SOS button is not responding in the latest app version 5.11.26\n\nDiagnostic code: a08fa4f7-7386-4850-974f-3116222bf0b7\n\nBest regards,\n\nPeter van Werkhoven",
+          "date": "2026-03-02T19:27:58.046Z",
+          "replyTo": null
+        },
+        {
+          "num": 1569,
+          "user": "dlnraja",
+          "text": "Dropped v5.11.50 on the test channel just now.\n\nUniversal Tuya Zigbee app v5.11.50 adds a new remote dimmer driver and improves diagnostics with auto-resolve features.\n\n145 drivers, 5,406+ fingerprints now.",
+          "date": "2026-03-02T21:37:02.869Z",
           "replyTo": null
         }
       ],
@@ -66559,6 +66608,9 @@
   ],
   "deviceInfo": {
     "allFPs": [
+      "_TZE200_pay2byax",
+      "_TZ3000_mrpevh8p",
+      "_TZE200_vvmbj46n",
       "_TZ3000_itgngnqz",
       "_TZE284_hdml1aav",
       "_TZ3000_itb0omhv",
@@ -66568,7 +66620,6 @@
       "_TZE200_gkfbdvyx",
       "_TZE204_clrdrnya",
       "_TZ3210_xzhnra8x",
-      "_TZ3000_mrpevh8p",
       "_TZE204_ztqnh5cg",
       "_TZ3000_zgyzgdua",
       "_TZ3000_tzvbimpq",
@@ -66586,9 +66637,6 @@
       "_TZ3000_996rpfy6",
       "_TZ3000_ysdv91bk",
       "_TZ3000_blhvsaqf",
-      "_TZE204_chbyv06",
-      "_TZE204_chbyv06x",
-      "_TZ3000_yj6k7vfo",
       "_TZ3210_dwytrmda",
       "_TZ3210_ol1uhvza",
       "_TZ3000_4fjiwweb",
@@ -66651,6 +66699,9 @@
       "_TZ3000_7ysdnebc",
       "_TZE284_n4ttsck2",
       "_TZB210_ngnt8kni",
+      "_TZE204_chbyv06",
+      "_TZE204_chbyv06x",
+      "_TZ3000_yj6k7vfo",
       "_TZE200_icka1clh",
       "_TZE204_gkfbdvyx",
       "_TZE284_iadro9bf",
@@ -66721,7 +66772,6 @@
       "_TZ3000_itnrsufe",
       "_TZ3000_bjawzodf",
       "_TZ3210_ncw88jfq",
-      "_TZE200_vvmbj46n",
       "_TZE204_upagmta9",
       "_TZE200_cirvgep4",
       "_TZE200_bq5c8xfe",
@@ -67240,7 +67290,6 @@
       "_TZ3000_9evm3otq",
       "_TZ3000_4o16jdca",
       "_TZ3000_ajkq2isy",
-      "_TZE200_pay2byax",
       "_TZE204_cjbofhxw",
       "_TZ3000_irrmjcgi",
       "_TZ3000_mg4dy6z6",
@@ -67273,6 +67322,9 @@
       "_TZE200_r731zlxk"
     ],
     "supported": [
+      "_TZE200_pay2byax",
+      "_TZ3000_mrpevh8p",
+      "_TZE200_vvmbj46n",
       "_TZ3000_itgngnqz",
       "_TZE284_hdml1aav",
       "_TZ3000_itb0omhv",
@@ -67282,7 +67334,6 @@
       "_TZE200_gkfbdvyx",
       "_TZE204_clrdrnya",
       "_TZ3210_xzhnra8x",
-      "_TZ3000_mrpevh8p",
       "_TZE204_ztqnh5cg",
       "_TZ3000_zgyzgdua",
       "_TZ3000_tzvbimpq",
@@ -67298,9 +67349,6 @@
       "_TZ3000_996rpfy6",
       "_TZ3000_ysdv91bk",
       "_TZ3000_blhvsaqf",
-      "_TZE204_chbyv06",
-      "_TZE204_chbyv06x",
-      "_TZ3000_yj6k7vfo",
       "_TZ3210_dwytrmda",
       "_TZ3210_ol1uhvza",
       "_TZ3000_4fjiwweb",
@@ -67358,6 +67406,9 @@
       "_TZ3000_7ysdnebc",
       "_TZE284_n4ttsck2",
       "_TZB210_ngnt8kni",
+      "_TZE204_chbyv06",
+      "_TZE204_chbyv06x",
+      "_TZ3000_yj6k7vfo",
       "_TZE200_icka1clh",
       "_TZE204_gkfbdvyx",
       "_TZE284_iadro9bf",
@@ -67426,7 +67477,6 @@
       "_TZ3000_itnrsufe",
       "_TZ3000_bjawzodf",
       "_TZ3210_ncw88jfq",
-      "_TZE200_vvmbj46n",
       "_TZE204_upagmta9",
       "_TZE200_cirvgep4",
       "_TZE200_bq5c8xfe",
@@ -67875,6 +67925,7 @@
       "_TZE284_tgeqdjgk",
       "_TZE200_ckud7u2l",
       "_TYST11_d0yu2xgi",
+      "_TYZB01_bngwdjsr",
       "_TZ3000_adkvzooy",
       "_TZE200_nkjintbl",
       "_TZE200_dfxkcots",
@@ -67935,7 +67986,6 @@
       "_TZ3000_9evm3otq",
       "_TZ3000_4o16jdca",
       "_TZ3000_ajkq2isy",
-      "_TZE200_pay2byax",
       "_TZE204_cjbofhxw",
       "_TZ3000_irrmjcgi",
       "_TZ3000_mg4dy6z6",
@@ -67981,7 +68031,6 @@
       "_TZ3000_dfgbtub",
       "_TZ3000_dfgbub0",
       "_TZxxxx_xxxxx",
-      "_TYZB01_bngwdjsr",
       "_TZ3000_tvuarska",
       "_TZ3000_xabckqv1",
       "_TZE200_6qoazbre",
@@ -67989,5 +68038,5 @@
       "_TZ3000_ksw8qtm"
     ]
   },
-  "aiAnalysis": "**Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer**\n\n1. **Key User Requests:**\n   - Users are requesting support for additional devices, particularly vibration sensors and temperature sensors.\n   - There is a desire for improved functionality and bug fixes related to device installation and configuration.\n\n2. **Devices People Need:**\n   - Users have expressed interest in supporting the following unsupported device fingerprints:\n     - _TZ3000_zgyzgd\n     - _TZE204_ztqnh5c\n     - _TZ3000_ztc6ggyl\n     - _TZ3000_akwixq9i\n     - _TZE200_6qoazbre\n   - Specific mention of a need for better integration of contact sensors and smart sockets.\n\n3. **Issues to Fix:**\n   - Users report issues with device installation, particularly with contact sensors being installed in reverse.\n   - There are ongoing concerns about the performance of the app, including bugs related to fingerprint recognition and device compatibility.\n\n4. **Action Items:**\n   - Prioritize adding support for the listed unsupported device fingerprints in the next app update.\n   - Address the installation issues with contact sensors and ensure proper functionality for vibration and temperature sensors.\n   - Consider user feedback regarding the automated bot that generates posts, as it has led to confusion and post deletions.\n   - Continue to monitor user feedback on recent updates and be proactive in resolving any reported bugs or performance issues.\n\nBy focusing on these actionable insights, the maintainer can enhance user satisfaction and improve the overall functionality of the Universal Tuya Zigbee app."
+  "aiAnalysis": "**Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer**\n\n1. **Key User Requests:**\n   - Users are asking for support for various unsupported device fingerprints, indicating a demand for broader compatibility.\n   - There are requests for more diagnostic logs and information regarding device functionality, particularly for motion and vibration sensors.\n\n2. **Devices People Need:**\n   - Users are specifically mentioning unsupported devices such as:\n     - _TZ3000_zgyzgd\n     - _TZE204_ztqnh5c\n     - _TZ3000_akwixq9i\n   - There is a notable interest in adding support for MWave radar motion sensors and vibration sensors.\n\n3. **Issues to Fix:**\n   - Users report issues with generic alarms for vibration devices and contact sensors that install but function incorrectly (e.g., reversed states).\n   - There are ongoing discussions about the accuracy of device identification and functionality, suggesting a need for better device recognition.\n\n4. **Action Items:**\n   - Prioritize adding support for the listed unsupported device fingerprints to enhance user satisfaction and app functionality.\n   - Investigate and resolve the issues related to vibration sensors and contact sensors, ensuring they operate as intended.\n   - Consider creating a feedback loop for users to report device issues and request support, potentially through a dedicated thread or form.\n   - Regularly update the community on progress with device compatibility and fixes to maintain engagement and transparency."
 }

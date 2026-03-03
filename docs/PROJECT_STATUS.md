@@ -1,15 +1,15 @@
 # Project Status
 
-> Auto-generated on 2026-03-01
+> Auto-generated on 2026-03-03
 
 ## Overview
 
 | Metric | Value |
 |--------|-------|
-| Version | v5.11.32 |
-| Drivers | 143 |
-| Fingerprints | 5,363 |
-| Last Updated | 2026-03-01 |
+| Version | v5.11.57 |
+| Drivers | 145 |
+| Fingerprints | 5,406 |
+| Last Updated | 2026-03-03 |
 
 ## Drivers by Category
 
@@ -22,12 +22,12 @@
 | fan | 9 |
 | thermostat | 7 |
 | lock | 4 |
+| remote | 4 |
 | heater | 4 |
 | windowcoverings | 3 |
 | button | 2 |
 | doorbell | 2 |
 | garagedoor | 2 |
-| remote | 2 |
 | curtain | 1 |
 | vacuumcleaner | 1 |
 | speaker | 1 |

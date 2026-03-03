@@ -1,48 +1,57 @@
 {
-  "timestamp": "2026-03-02T13:51:24.010Z",
-  "appVersion": "5.11.46",
-  "forum": 2,
-  "github": 1,
+  "timestamp": "2026-03-03T03:42:09.140Z",
+  "appVersion": "5.11.57",
+  "forum": 4,
+  "github": 0,
   "diagnostics": 8,
   "diagNewFPs": 0,
   "diagCritical": 0,
   "forumDetails": [
     {
       "topic": 140352,
-      "post": 1559,
+      "post": 1563,
       "user": "Nicolas",
       "fps": [
         "dlnraja"
       ],
-      "reply": "It looks like you've raised a valid concern regarding the vibration sensor's capabilities. Based on the fingerprint lookup, the device is recognized, and it falls under the \"generic_diy\" driver. This ",
-      "model": "gh-gpt-4o-mini"
+      "reply": "Hi @Nicolas,\n\nThank you for reaching out and for providing the detailed fingerprint lookup. Let's address your question about the generic alarm for the vibration device.\n\n### Fingerprint Analysis\n\nFro",
+      "model": "gh-Mistral-small-2503"
     },
     {
       "topic": 140352,
-      "post": 1561,
-      "user": "Nicolas",
-      "fps": [],
-      "reply": "@Nicolas, thank you for your detailed report and the screenshot. Let's troubleshoot the issues you're experiencing with your vibration sensor.\n\n### Device Recognition\n\nFrom the image analysis, it appe",
+      "post": 1566,
+      "user": "Peter_van_Werkhoven",
+      "fps": [
+        "_TZE200_vvmbj46n",
+        "development"
+      ],
+      "reply": "Hi Peter,\n\nThank you for reaching out and providing the details about your LCD Temperature and Humidity sensor. I appreciate your patience.\n\n### Device Identification\nThe fingerprint for your device `",
+      "model": "gh-Mistral-small-2503"
+    },
+    {
+      "topic": 140352,
+      "post": 1567,
+      "user": "Peter_van_Werkhoven",
+      "fps": [
+        "_TZE200_pay2byax",
+        "_TZ3000_0dumfk2z",
+        "HOBEIAN"
+      ],
+      "reply": "Hi Peter,\n\nThank you for your message and for your continued support. I appreciate your patience as I work through the integration of new devices.\n\n### Contact Sensor with Luminance (_TZE200_pay2byax,",
+      "model": "gh-Mistral-small-2503"
+    },
+    {
+      "topic": 140352,
+      "post": 1568,
+      "user": "Peter_van_Werkhoven",
+      "fps": [
+        "_TZE200_pay2byax",
+        "_TZ3000_mrpevh8p",
+        "test"
+      ],
+      "reply": "Hi Peter,\n\nThank you for your detailed feedback and for testing the new devices. Let's address your points one by one:\n\n### _TZE200_pay2byax Sensor\nThe fingerprint for the _TZE200_pay2byax sensor indi",
       "model": "gh-Mistral-small-2503"
     }
   ],
-  "githubDetails": [
-    {
-      "repo": "dlnraja/com.tuya.zigbee",
-      "number": 152,
-      "type": "pr",
-      "user": "github-actions[bot]",
-      "fps": [
-        "danfoss",
-        "legrand",
-        "sonoff",
-        "xiaomi",
-        "test",
-        "bosch",
-        "ikea",
-        "tuya"
-      ],
-      "model": "gh-Mistral-small-2503"
-    }
-  ]
+  "githubDetails": []
 }

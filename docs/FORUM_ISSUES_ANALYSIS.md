@@ -439,3 +439,10 @@ All 12 fingerprints from 20 open issues **already supported** in v5.11.19:
 ## Nightly Forum Scan (2026-03-02 v5.11.46)
 - **Topic 140352 #1559** @Nicolas: `dlnraja` (gh-gpt-4o-mini)
 - **Topic 140352 #1561** @Nicolas: no FPs (gh-Mistral-small-2503)
+
+
+## Nightly Forum Scan (2026-03-03 v5.11.57)
+- **Topic 140352 #1563** @Nicolas: `dlnraja` (gh-Mistral-small-2503)
+- **Topic 140352 #1566** @Peter_van_Werkhoven: `_TZE200_vvmbj46n`, `development` (gh-Mistral-small-2503)
+- **Topic 140352 #1567** @Peter_van_Werkhoven: `_TZE200_pay2byax`, `_TZ3000_0dumfk2z`, `HOBEIAN` (gh-Mistral-small-2503)
+- **Topic 140352 #1568** @Peter_van_Werkhoven: `_TZE200_pay2byax`, `_TZ3000_mrpevh8p`, `test` (gh-Mistral-small-2503)

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-02T14:00:30.113Z",
+  "timestamp": "2026-03-03T03:53:37.410Z",
   "issues": {
     "total": 1162,
     "withFPs": 925,
@@ -17,22 +17,6 @@
         ],
         "user": "azkysmarthome",
         "updated": "2026-03-02",
-        "labels": [
-          "New Device"
-        ]
-      },
-      {
-        "number": 30,
-        "title": "LIDL - Starter kit remote (on/off, brightness) - paired as Zigbee basic. Manuf I",
-        "state": "open",
-        "fps": [
-          "_TYZB01_bngwdjsr"
-        ],
-        "pids": [
-          "TS1001"
-        ],
-        "user": "JohanBendz",
-        "updated": "2024-09-23",
         "labels": [
           "New Device"
         ]
@@ -566,15 +550,6 @@
       ],
       "users": [
         "azkysmarthome"
-      ]
-    },
-    {
-      "fp": "_TYZB01_bngwdjsr",
-      "sources": [
-        "#30 (open)"
-      ],
-      "users": [
-        "JohanBendz"
       ]
     },
     {
@@ -3838,7 +3813,7 @@
       "fp": "_TYZB01_bngwdjsr",
       "source": "issue#30",
       "state": "open",
-      "isNew": true
+      "isNew": false
     },
     {
       "fp": "_TZE200_p0gzbqct",
@@ -8048,9 +8023,9 @@
     "totalPRs": 180,
     "issuesWithFPs": 925,
     "prsWithFPs": 87,
-    "newFPsFromIssues": 5,
+    "newFPsFromIssues": 4,
     "newFPsFromPRs": 0,
-    "totalUniqueNewFPs": 5,
+    "totalUniqueNewFPs": 4,
     "totalContributors": 94,
     "categories": {
       "device_request": 870,
