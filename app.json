@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.61",
+  "version": "5.11.62",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -65986,6 +65986,11 @@
             "de": "Halten Sie die Kopplungstaste 5 Sekunden lang gedrückt, bis die LED schnell blinkt."
           }
         }
+      },
+      "images": {
+        "large": "/drivers/remote_dimmer/assets/images/large.png",
+        "small": "/drivers/remote_dimmer/assets/images/small.png",
+        "xlarge": "/drivers/remote_dimmer/assets/images/xlarge.png"
       },
       "id": "remote_dimmer"
     },
