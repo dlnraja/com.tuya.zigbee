@@ -6,7 +6,23 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.58] - 2026-03-03
+## [5.11.59] - 2026-03-03
+
+### Bug Fixes
+- Fixed IR remote publish validation by removing reserved `zb_` settings and adding required images.
+
+### New Features
+- Updated to 145 drivers and 3093 fingerprints.
+
+### Improvements
+- Removed large state files from the repository to streamline the project.
+- Updated Gmail diagnostics to include periodic checks and token auto-rotation.
+
+### CI/CD
+- Adjusted workflows for Gmail diagnostics and token keepalive.
+---
+
+ [5.11.58] - 2026-03-03
 
 ### Bug Fixes
 - Fixed summary table issues.

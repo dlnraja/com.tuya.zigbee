@@ -1,4 +1,7 @@
 {
+  "5.11.59": {
+    "en": "Universal Tuya Zigbee app v5.11.59 fixes IR remote publish validation and updates images."
+  },
   "5.11.58": {
     "en": "Automation hardening with Gmail diagnostics and token auto-rotation."
   },
@@ -56,10 +59,7 @@
   "5.11.40": {
     "en": "Universal Tuya Zigbee app v5.11.40 adds 3077 new fingerprints and introduces an IR Remote driver."
   },
-  "5.11.39": {
-    "en": "Added support for Zigbee IR Remote (Moes UFO-R11 / TS1201) with new capabilities."
-  },
-  "5.11.59": {
-    "en": "v5.11.58: Fixed summary table issues., Implemented periodic Gmail diagnostics with token pre-check and auto-rotation., Added daily and nightly Gmail diagnostics, running twice a day., Gitignored large state files to reduce clutter., Updated workflows for Gmail diagnostics and token keepalive."
+  "5.11.60": {
+    "en": "v5.11.59: Fixed IR remote publish validation by removing reserved `zb_` settings and adding required images., Updated to 145 drivers and 3093 fingerprints., Removed large state files from the repository to streamline the project., Updated Gmail diagnostics to include periodic checks and token auto-rotation., Adjusted workflows for Gmail diagnostics and token keepalive."
   }
 }
