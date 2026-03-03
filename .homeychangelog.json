@@ -1,4 +1,7 @@
 {
+  "5.11.66": {
+    "en": "Universal Tuya Zigbee app v5.11.66 adds IMAP fallback for Gmail diagnostics and updates diagnostics scripts."
+  },
   "5.11.65": {
     "en": "Fixed driver assignment for _TZE200_vvmbj46n and updated app to v5.11.65 with 145 drivers and 3093 fingerprints."
   },
@@ -56,10 +59,7 @@
   "5.11.47": {
     "en": "Added support for Lidl HG06323 TS1001 remote dimmer and enhanced ZCL cluster adapters."
   },
-  "5.11.46": {
-    "en": "Added ZCL cluster adapters and converters for Z2M, ZHA, and deCONZ; enhanced security."
-  },
-  "5.11.66": {
-    "en": "v5.11.65: Fixed incorrect driver assignment for _TZE200_vvmbj46n: removed from thermostat, retained in climate_sensor., Updated to version 5.11.65: 145 drivers, 3093 fingerprints. Auto-published changes."
+  "5.11.67": {
+    "en": "v5.11.66: Added IMAP fallback for Gmail diagnostics (permanent, no 7-day expiry)., Updated diagnostics scripts for better functionality., Auto-published with 145 drivers and 3093 fingerprints., Updated diagnostics summary and workflow files."
   }
 }

@@ -6,7 +6,20 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.65] - 2026-03-03
+## [5.11.66] - 2026-03-03
+
+### Bug Fixes
+- Added IMAP fallback for Gmail diagnostics (permanent, no 7-day expiry).
+
+### Improvements
+- Updated diagnostics scripts for better functionality.
+
+### CI/CD
+- Auto-published with 145 drivers and 3093 fingerprints.
+- Updated diagnostics summary and workflow files.
+---
+
+ [5.11.65] - 2026-03-03
 
 ### Bug Fixes
 - Fixed incorrect driver assignment for _TZE200_vvmbj46n: removed from thermostat, retained in climate_sensor.
