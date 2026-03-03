@@ -17,13 +17,20 @@ async function readViaIMAP(opts={}){
     if(!lock){await c.logout();return null}
     const out=[];
     try{
-      const uids=await c.search({since:new Date(since)},{uid:true});
-      const batch=uids.slice(-(opts.maxResults||200));
-      console.log('[IMAP]',uids.length,'total,',batch.length,'fetching');
-      for await(const m of c.fetch(batch,{uid:true,envelope:true,source:true})){
+      const seqs=await c.search({since:new Date(since)});
+      const max=opts.maxResults||200;
+      const start=Math.max(1,seqs.length-max+1);
+      const range=start+':*';
+      console.log('[IMAP]',seqs.length,'msgs since',since,'fetching range',range);
+      let cnt=0;
+      for await(const m of c.fetch(range,{envelope:true,source:true})){
+        cnt++;
         const body=(m.source||Buffer.alloc(0)).toString('utf8').substring(0,10000);
-        out.push({id:'imap_'+m.uid,subj:m.envelope?.subject||'',from:m.envelope?.from?.[0]?.address||'',date:m.envelope?.date?.toISOString()||'',body,labels:[]});
+        const uid=m.uid||m.seq||cnt;
+        out.push({id:'imap_'+uid,subj:m.envelope?.subject||'',from:m.envelope?.from?.[0]?.address||'',date:m.envelope?.date?.toISOString()||'',body,labels:[]});
+        if(cnt>=max)break;
       }
+      console.log('[IMAP] fetched',cnt,'messages');
     }finally{lock.release()}
     await c.logout();console.log('[IMAP] OK:',out.length);return out;
   }catch(err){console.error('[IMAP] ERROR:',err.message,err.code||'');try{await c.logout()}catch{};return null}
