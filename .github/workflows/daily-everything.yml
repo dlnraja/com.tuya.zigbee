@@ -449,6 +449,16 @@ jobs:
         timeout-minutes: 5
         run: node .github/scripts/generate-user-expectations.js
 
+      # ===== 10n. MASTER AI BATTLE: Multi-AI orchestrator combining ALL sources =====
+      - name: "10n. Master AI Battle Orchestrator"
+        id: ai_battle
+        continue-on-error: true
+        timeout-minutes: 20
+        env:
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          MAX_GH_CALLS: "100"
+        run: node .github/scripts/master-ai-battle.js
+
       # ===== 11. COMMIT: All state + docs + changelogs =====
       - name: "11. Commit all changes"
         id: commit
@@ -606,6 +616,7 @@ jobs:
           echo "| 10k | Pattern Detector | ${{ steps.patterns.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 0 | Forum Cleanup | ${{ steps.forum_cleanup.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10l | Reply Self-Audit | ${{ steps.bot_audit.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 10n | AI Battle Orchestrator | ${{ steps.ai_battle.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 11 | Commit | ${{ steps.commit.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 12 | Validate + Publish | ${{ steps.pub.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 13a | Promote API | ${{ steps.promote_api.outcome }} |" >> $GITHUB_STEP_SUMMARY
@@ -615,7 +626,7 @@ jobs:
           echo "| 10b3 | Forum Spam Scan | ${{ steps.spam_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10b4 | Forum Cleanup Edit | ${{ steps.forum_cleanup_edit.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Total: 33 automation steps** | [Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee) | [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/)" >> $GITHUB_STEP_SUMMARY
+          echo "**Total: 34 automation steps** | [Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee) | [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/)" >> $GITHUB_STEP_SUMMARY
 
       - name: Upload reports
         uses: actions/upload-artifact@v4
