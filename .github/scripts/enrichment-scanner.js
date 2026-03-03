@@ -17,7 +17,10 @@ function buildIndex(){
   for(const d of fs.readdirSync(DDIR)){
     const f=path.join(DDIR,d,'driver.compose.json');
     if(!fs.existsSync(f))continue;
-    for(const m of(fs.readFileSync(f,'utf8').match(/"_T[A-Za-z0-9_]+"/g)||[]))idx.add(m.replace(/"/g,''));
+    try{const j=JSON.parse(fs.readFileSync(f,'utf8'));
+      for(const m of(j.zigbee?.manufacturerName||[]))idx.add(m);
+      for(const p of(j.zigbee?.productId||[]))idx.add('pid:'+p);
+    }catch{}
   }
   return idx;
 }
@@ -183,6 +186,7 @@ async function main(){
       '2. Suggest existing Homey driver to add fingerprint to\n'+
       '3. If DPs available: map each DP to Homey capability (e.g. DP1→onoff, DP2→measure_temperature/10, DP3→target_temperature)\n'+
       '4. Note any quirks, inversions, or special handling needed\n'+
+      'Known bugs to watch: double-division (if dpMappings has divisor, skip auto-convert), humidity>100%=divide raw by 10, mains-powered devices must NOT have measure_battery.\n'+
       'Output markdown table: | FP | Type | Driver | DPs→Capabilities | Quirks |';
     const input=uniqueNew.slice(0,25).map(f=>({fp:f.fp,source:f.source,dps:f.dps||[],caps:f.caps||[]}));
     const aiRes=await callAI(JSON.stringify(input,null,2),sysPrompt,{maxTokens:1500});
