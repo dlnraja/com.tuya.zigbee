@@ -6,6 +6,7 @@ const E = process.env.HOMEY_EMAIL, P = process.env.HOMEY_PASSWORD;
 const DRY = process.env.DRY_RUN === 'true';
 const SUM = process.env.GITHUB_STEP_SUMMARY;
 const CID = 'REDACTED_ATHOM_CLIENT_ID';
+const CSC = 'REDACTED_ATHOM_CLIENT_SECRET';
 const REDIR = 'https://tools.developer.homey.app';
 const AUTH = 'https://accounts.athom.com';
 const API = 'https://apps-api.athom.com/api/v1';
@@ -41,7 +42,7 @@ async function main() {
   log('Code: '+code.slice(0,10)+'...');
   log('Step 3: Token Exchange');
   let tk=null;
-  const tbody='client_id='+CID+'&grant_type=authorization_code&code='+code+'&redirect_uri='+encodeURIComponent(REDIR);
+  const tbody='client_id='+CID+'&client_secret='+CSC+'&grant_type=authorization_code&code='+code+'&redirect_uri='+encodeURIComponent(REDIR);
   for(const base of [AUTH,'https://api.athom.com']){
     const ep=base+'/oauth2/token';
     try{
