@@ -27,11 +27,17 @@ async function main() {
   if (ck) authHeaders['Cookie'] = ck;
   if (sessionTk) authHeaders['Authorization'] = 'Bearer ' + sessionTk;
   const u=AUTH+'/oauth2/authorise?client_id='+CID+'&redirect_uri='+encodeURIComponent(REDIR)+'&response_type=code&scopes=apps';
-  const ar=await fetch(u,{headers:authHeaders,redirect:'manual'});
-  const loc=ar.headers.get('location')||'';
-  log('Auth: '+ar.status+' loc='+loc.slice(0,120));
-  let code=null; try{code=new URL(loc,REDIR).searchParams.get('code')}catch{}
-  if(!code){log('No code in redirect');process.exit(1)}
+  let code=null;
+  let nextUrl=u;
+  for(let i=0;i<5&&!code;i++){
+    const ar=await fetch(nextUrl,{headers:authHeaders,redirect:'manual'});
+    const loc=ar.headers.get('location')||'';
+    log('  Hop '+(i+1)+': '+ar.status+' → '+loc.slice(0,150));
+    if(!loc){const body=await ar.text().catch(()=>'');log('  Body: '+body.slice(0,200));break}
+    try{code=new URL(loc,REDIR).searchParams.get('code')}catch{}
+    if(!code) nextUrl=loc;
+  }
+  if(!code){log('No code after redirect chain');process.exit(1)}
   log('Code: '+code.slice(0,10)+'...');
   log('Step 3: Token Exchange');
   const tr=await fetch(AUTH+'/oauth2/token',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'client_id='+CID+'&grant_type=authorization_code&code='+code+'&redirect_uri='+encodeURIComponent(REDIR)});
