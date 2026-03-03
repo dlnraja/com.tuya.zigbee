@@ -64,7 +64,13 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: |
           if [ -f ".github/state/_token_expired_alert.txt" ]; then
-            gh issue create --title "[Alert] Gmail token EXPIRED — regenerate at OAuth Playground" \
+            TITLE="[Alert] Gmail OAuth token EXPIRED"
+            if [ -n "${{ secrets.GMAIL_APP_PASSWORD }}" ]; then
+              TITLE="$TITLE — IMAP fallback active"
+            else
+              TITLE="$TITLE — set GMAIL_APP_PASSWORD for permanent IMAP fallback"
+            fi
+            gh issue create --title "$TITLE" \
               --body "$(cat .github/state/_token_expired_alert.txt)" \
               --label "automation" 2>/dev/null || true
             rm -f .github/state/_token_expired_alert.txt
