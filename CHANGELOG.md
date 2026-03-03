@@ -6,7 +6,24 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.54] - 2026-03-03
+## [5.11.55] - 2026-03-03
+
+### Bug Fixes
+- Fixed vibration sensor triggers for alarm_vibration, temperature, and flow.
+
+### New Features
+- Added remote_dimmer driver (Lidl HG06323 TS1001) with full Zosung protocol support.
+- Implemented GitHub Deep Search engine to search over 20 Zigbee projects for fingerprints, devices, and converters.
+
+### CI/CD
+- Restricted closing of issues to the dlnraja repository only; forks are now read-only sources.
+- Auto-published updates with 145 drivers and 3093 fingerprints.
+
+### Acknowledgments
+- Added comprehensive credits and acknowledgments for contributors and projects.
+---
+
+ [5.11.54] - 2026-03-03
 
 ### Bug Fixes
 - Fixed vibration sensor triggers: alarm_vibration, temperature, and flow triggers (Forum #1559/#1561).
