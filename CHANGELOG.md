@@ -6,7 +6,21 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.63] - 2026-03-03
+## [5.11.64] - 2026-03-03
+
+### Bug Fixes
+- Fixed _TZE200_pay2byax driver: moved to contact_sensor and removed from radar, radiator, thermostat, climate, motion, and vibration sensor.
+- Improved data sanitization order to prevent PII leaks: MAC before IPv6, token before phone.
+
+### CI/CD
+- Updated forum state and Gmail diagnostics for v5.11.64.
+- Enhanced algorithms for productId enrichment in Gmail and fixed cron conflict.
+
+### Drivers
+- 145 drivers and 3093 fingerprints in this release.
+---
+
+ [5.11.63] - 2026-03-03
 
 ### Bug Fixes
 - Fixed missing [[device]] in flow card titleFormatted for publish validation.
