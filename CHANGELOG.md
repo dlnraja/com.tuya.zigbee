@@ -6,7 +6,16 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.64] - 2026-03-03
+## [5.11.65] - 2026-03-03
+
+### Bug Fixes
+- Fixed incorrect driver assignment for _TZE200_vvmbj46n: removed from thermostat, retained in climate_sensor.
+
+### CI/CD
+- Updated to version 5.11.65: 145 drivers, 3093 fingerprints. Auto-published changes.
+---
+
+ [5.11.64] - 2026-03-03
 
 ### Bug Fixes
 - Fixed _TZE200_pay2byax driver: moved to contact_sensor and removed from radar, radiator, thermostat, climate, motion, and vibration sensor.
