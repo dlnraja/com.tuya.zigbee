@@ -3,6 +3,7 @@ on:
   schedule:
     - cron: '0 5,11,17,23 * * *'  # 4x/day — critical for Testing mode 7-day cycle
   workflow_dispatch:
+  workflow_call:
 
 permissions:
   contents: write

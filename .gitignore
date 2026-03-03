@@ -160,6 +160,12 @@ scripts/sync/data/
 
 # Large auto-generated state files (too big for git)
 .github/state/comprehensive-scan.json
+.github/state/forum-activity-data.json
+.github/state/pr-issue-scan.json
+.github/state/johan-full-scan.json
+.github/state/new-fork-fps.json
+.github/state/spam-scan-results.json
+.github/state/external-sources-data.json
 
 # Claude Code session files
 .claude/

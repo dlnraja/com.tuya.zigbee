@@ -565,7 +565,10 @@ jobs:
           echo "| 9c2 | FP Conflict Check | ${{ steps.fp_conflicts.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9d | Public APIs | ${{ steps.public_apis.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9e | GitHub Deep Search | ${{ steps.gh_deep_search.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 9b2 | Smart Device Processor | ${{ steps.smart_proc.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 9b2 | FP Research Engine | ${{ steps.fp_research.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 9b3 | Variant Scanner | ${{ steps.variant_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 9b4 | Issue Deep Researcher | ${{ steps.deep_research.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 9b5 | Smart Device Processor | ${{ steps.smart_proc.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10 | AI Changelog | ${{ steps.ai_changelog.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10b | Fork Scanner | ${{ steps.fork_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10c | Device Finder | ${{ steps.dev_finder.outcome }} |" >> $GITHUB_STEP_SUMMARY
@@ -574,6 +577,7 @@ jobs:
           echo "| 10f | User Expectations | ${{ steps.gen_expectations.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10g | Homey Diagnostics | ${{ steps.homey_diag.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10h | Interview Recovery | ${{ steps.interview_recovery.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 10h2 | Collect Diagnostics | ${{ steps.collect_diag.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10i | Monthly Comprehensive | ${{ steps.monthly_comp.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10j | Auto-Learn FPs | ${{ steps.auto_learn.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10k | Pattern Detector | ${{ steps.patterns.outcome }} |" >> $GITHUB_STEP_SUMMARY
@@ -581,7 +585,8 @@ jobs:
           echo "| 10l | Reply Self-Audit | ${{ steps.bot_audit.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 11 | Commit | ${{ steps.commit.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 12 | Validate + Publish | ${{ steps.pub.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 13 | Promote to Test | ${{ steps.promote_node.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 13a | Promote API | ${{ steps.promote_api.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 13c | Promote Puppeteer | ${{ steps.promote_node.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 14 | Forum Update | — |" >> $GITHUB_STEP_SUMMARY
           echo "| 10b2 | Implement Fork FPs | ${{ steps.impl_fork_fps.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10b3 | Forum Spam Scan | ${{ steps.spam_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
