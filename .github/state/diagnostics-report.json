@@ -1,8 +1,11 @@
 {
-  "timestamp": "2026-03-03T14:13:00.435Z",
-  "count": 2,
+  "timestamp": "2026-03-03T18:49:08.338Z",
+  "count": 30,
   "byType": {
-    "general": 2
+    "general": 19,
+    "diagnostic": 2,
+    "github": 7,
+    "device_issue": 2
   },
   "newFingerprints": [],
   "deepResearch": {
@@ -12,11 +15,11 @@
   },
   "diagnostics": [
     {
-      "id": "imap_498655",
+      "id": "imap_498662",
       "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #1997 has been created",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
       "from": "user",
-      "date": "2026-03-03T13:34:55.000Z",
+      "date": "2026-03-03T14:18:59.000Z",
       "fps": {
         "mfr": [],
         "pid": []
@@ -30,11 +33,11 @@
       "appVersion": null
     },
     {
-      "id": "imap_498656",
+      "id": "imap_498669",
       "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #1999 has been created",
       "from": "user",
-      "date": "2026-03-03T13:35:06.000Z",
+      "date": "2026-03-03T14:55:13.000Z",
       "fps": {
         "mfr": [],
         "pid": []
@@ -43,6 +46,570 @@
       "devices": [],
       "xref": [],
       "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498670",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "user",
+      "date": "2026-03-03T14:55:25.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498677",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2000 has been created",
+      "from": "user",
+      "date": "2026-03-03T15:31:07.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498678",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "user",
+      "date": "2026-03-03T15:31:19.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498680",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2001 has been created",
+      "from": "user",
+      "date": "2026-03-03T15:44:08.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498681",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "user",
+      "date": "2026-03-03T15:44:20.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498688",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2002 has been created",
+      "from": "user",
+      "date": "2026-03-03T16:11:29.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498689",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "user",
+      "date": "2026-03-03T16:11:41.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498693",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2003 has been created",
+      "from": "user",
+      "date": "2026-03-03T16:25:12.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498695",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "user",
+      "date": "2026-03-03T16:25:23.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498698",
+      "type": "diagnostic",
+      "subj": "Vous participez à CZ 65 - ISO 27001 à ISO 42001 - Diagnostic en LIVE",
+      "from": "user",
+      "date": "2026-03-03T15:12:22.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498701",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2004 has been created",
+      "from": "user",
+      "date": "2026-03-03T16:39:19.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498702",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "user",
+      "date": "2026-03-03T16:39:31.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498703",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] unknown zigbee-device (Issue #110)",
+      "from": "github",
+      "date": "2026-03-03T16:39:33.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "110",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498704",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] unknown zigbee-device (Issue #110)",
+      "from": "github",
+      "date": "2026-03-03T16:40:49.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "110",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498705",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] unknown zigbee-device (Issue #110)",
+      "from": "github",
+      "date": "2026-03-03T16:44:30.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "110",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498706",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2005 has been created",
+      "from": "user",
+      "date": "2026-03-03T16:50:35.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498707",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "user",
+      "date": "2026-03-03T16:50:47.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498709",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2006 has been created",
+      "from": "user",
+      "date": "2026-03-03T17:01:27.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498710",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "user",
+      "date": "2026-03-03T17:01:39.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498717",
+      "type": "diagnostic",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "user",
+      "date": "2026-03-03T17:32:17.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498718",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2007 has been created",
+      "from": "user",
+      "date": "2026-03-03T17:34:05.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498719",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "user",
+      "date": "2026-03-03T17:34:18.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498723",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "user",
+      "date": "2026-03-03T17:47:42.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "App"
+      ],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498731",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "user",
+      "date": "2026-03-03T18:33:05.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "App"
+      ],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498736",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] Plug Energy Monitor, wrong voltage (Issue #137)",
+      "from": "github",
+      "date": "2026-03-03T18:48:50.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "137",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498737",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] Plug Energy Monitor, wrong voltage (Issue #137)",
+      "from": "github",
+      "date": "2026-03-03T18:48:54.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "137",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498738",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] unknown zigbee-device (Issue #110)",
+      "from": "github",
+      "date": "2026-03-03T18:48:58.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "110",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_498739",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] unknown zigbee-device (Issue #110)",
+      "from": "github",
+      "date": "2026-03-03T18:48:59.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "110",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false
+      },
       "ai": null,
       "homeyVersion": null,
       "appVersion": null
