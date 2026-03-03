@@ -197,7 +197,7 @@ env:
 | stale | daily | mark+close inactive | GITHUB_TOKEN |
 | publish | manual | Homey publish | HOMEY_PAT |
 | auto-publish-on-push | on workflow complete | publish+promote | HOMEY_PAT |
-| gmail-token-keepalive | 3x/day (6,15,22 UTC) | token refresh | GMAIL_* |
+| gmail-token-keepalive | 4x/day (5,11,17,23 UTC) | token refresh | GMAIL_* |
 | deploy-pages | on push + daily | Device Finder | GITHUB_TOKEN |
 | tuya-automation-hub | 4x/day (1,7,13,19) + Mon/Thu | forum+github | ALL |
 | forum-auto-responder | 4x/day (5,11,17,23) | forum respond | DISCOURSE_API_KEY |
