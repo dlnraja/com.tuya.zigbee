@@ -1,4 +1,7 @@
 {
+  "5.11.83": {
+    "en": "Universal Tuya Zigbee app v5.11.83 adds client_secret for OAuth token exchange and updates drivers and fingerprints."
+  },
   "5.11.82": {
     "en": "Universal Tuya Zigbee app v5.11.82: Added support for multiple token endpoints and improved error logging."
   },
@@ -56,10 +59,7 @@
   "5.11.64": {
     "en": "Fixed driver issues for _TZE200_pay2byax and improved data sanitization."
   },
-  "5.11.63": {
-    "en": "Universal Tuya Zigbee app v5.11.63 fixes flow card titles and adds missing icons for IR capabilities."
-  },
-  "5.11.83": {
-    "en": "v5.11.82: Implemented support for multiple token endpoints., Added logging for error body on HTTP 400 responses., Updated to 145 drivers and 3093 fingerprints., Auto-published version 5.11.82."
+  "5.11.84": {
+    "en": "v5.11.83: Added `client_secret` to OAuth token exchange process., Updated to 145 drivers and 3093 fingerprints., Auto-published version 5.11.83."
   }
 }

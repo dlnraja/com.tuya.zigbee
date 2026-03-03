@@ -6,7 +6,19 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.82] - 2026-03-03
+## [5.11.83] - 2026-03-03
+
+### Bug Fixes
+- Added `client_secret` to OAuth token exchange process.
+
+### New Features
+- Updated to 145 drivers and 3093 fingerprints.
+
+### CI/CD
+- Auto-published version 5.11.83.
+---
+
+ [5.11.82] - 2026-03-03
 
 ### Bug Fixes
 - Implemented support for multiple token endpoints.
