@@ -6,7 +6,22 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.84] - 2026-03-03
+## [5.11.85] - 2026-03-03
+
+### Bug Fixes
+- Rewrote garage door driver to resolve issues and fixed fingerprint collisions (issues #128, #137).
+- Updated auto-promote-oauth.js for password grant and Athom API SDK compatibility.
+- Added delegation token step for apps API authentication.
+
+### Diagnostics
+- Analyzed 0 emails for Gmail diagnostics in this release.
+- Updated diagnostics report and state files.
+
+### CI/CD
+- Auto-published version 5.11.85 with 145 drivers and 4952 fingerprints.
+---
+
+ [5.11.84] - 2026-03-03
 
 ### Bug Fixes
 - Added delegation token step for apps API authentication.
