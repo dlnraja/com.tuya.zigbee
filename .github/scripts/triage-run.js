@@ -8,7 +8,7 @@ const path=require('path');
 
 const DRY=process.env.DRY_RUN==='true';
 const REPO=process.env.TARGET_REPO||'JohanBendz/com.tuya.zigbee';
-const CAN_CLOSE=REPO.startsWith('dlnraja/')||!!process.env.GH_PAT;
+const CAN_CLOSE=REPO.startsWith('dlnraja/');
 const VER=process.env.APP_VERSION||'latest';
 const DRVC=process.env.DRIVER_COUNT||'138';
 const FPC=process.env.FP_COUNT||'5579';

@@ -256,13 +256,12 @@ async function processIssue(repo,issue,state,report,extData){
     await sleep(RATE_SLEEP);
   }
 
-  // Close stale/resolved issues
-  if(classification.shouldClose&&issue.state==='open'){
+  // Close stale/resolved issues (OWN repo only — forks are read-only sources)
+  if(repo===OWN&&classification.shouldClose&&issue.state==='open'){
     const age=daysSince(issue.updated_at);
     if(age>=STALE_DAYS||classification.type==='resolved'||classification.type==='duplicate'){
       const reason=classification.closeReason||'Auto-closed: '+(age>=STALE_DAYS?'inactive >'+STALE_DAYS+' days':classification.type);
       let closeBody=TAG+'\n'+reason+'\n\nFeel free to reopen if this is still relevant.';
-      if(repo!==OWN)closeBody+='\n\n---\n👉 This device is maintained in the **[Universal Tuya Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee)** (v'+appVer+', '+fps.size+'+ FPs).\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n**Forum:** https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352';
       await ghPost('/repos/'+repo+'/issues/'+issue.number+'/comments',{body:closeBody});
       const ok=await ghPatch('/repos/'+repo+'/issues/'+issue.number,{state:'closed',state_reason:'not_planned'});
       if(ok){state.closed.push(key);report.closed++;console.log('    CLOSED:',reason)}
@@ -270,8 +269,8 @@ async function processIssue(repo,issue,state,report,extData){
     }
   }
 
-  // v5.11.26: Auto-close if last comment is from owner/bots (already triaged)
-  if(issue.state==='open'&&!state.closed.includes(key)&&comments&&Array.isArray(comments)&&comments.length){
+  // v5.11.26: Auto-close if last comment is from owner/bots (OWN repo only)
+  if(repo===OWN&&issue.state==='open'&&!state.closed.includes(key)&&comments&&Array.isArray(comments)&&comments.length){
     const last=comments[comments.length-1];
     const lastUser=last?.user?.login||'';
     const lastBody=(last?.body||'').toLowerCase();
@@ -331,17 +330,11 @@ async function processPR(repo,pr,state,report,extData){
     console.log('    Responded to PR');
   }
 
-  // Close old PRs on JohanBendz that are fully supported
-  if(repo!==OWN&&pr.state==='open'&&allFPs.length&&!newFPs.length&&daysSince(pr.updated_at)>14){
-    let prCloseMsg=TAG+'\nAll FPs in this PR are already in v'+appVer+' — closing as resolved. Thanks!\n\n---\n👉 This device is maintained in the **[Universal Tuya Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee)** (v'+appVer+', '+fps.size+'+ FPs).\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n**Forum:** https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352';
-    await ghPost('/repos/'+repo+'/issues/'+pr.number+'/comments',{body:prCloseMsg});
-    const ok=await ghPatch('/repos/'+repo+'/pulls/'+pr.number,{state:'closed'});
-    if(ok){state.closed.push(key);report.closed++;console.log('    CLOSED PR (all FPs supported)')}
-    else console.log('    PR CLOSE FAILED (no perms)');
-  }
+  // Upstream PRs: respond only, never close (read-only source)
+  // Closing is handled by staleSweep on OWN repo only
 
-  // v5.11.26: Auto-close PR if last comment is from owner/bots
-  if(pr.state==='open'&&!state.closed.includes(key)&&comments&&Array.isArray(comments)&&comments.length){
+  // v5.11.26: Auto-close PR if last comment is from owner/bots (OWN repo only)
+  if(repo===OWN&&pr.state==='open'&&!state.closed.includes(key)&&comments&&Array.isArray(comments)&&comments.length){
     const last=comments[comments.length-1];
     const lastUser=last?.user?.login||'';
     const lastBody=(last?.body||'').toLowerCase();
@@ -360,7 +353,9 @@ async function processPR(repo,pr,state,report,extData){
 }
 
 // v5.11.47: Stale Sweep — re-check open items already processed for closing (no AI needed)
+// IMPORTANT: Only close on OWN repo (dlnraja). Forks/upstream are read-only sources.
 async function staleSweep(repo,items,isPR,state,report){
+  if(repo!==OWN){console.log('  [SWEEP] Skip '+repo+' (read-only source, no closing)');return 0}
   let swept=0;
   for(const item of items){
     if(item.state!=='open')continue;
@@ -370,7 +365,6 @@ async function staleSweep(repo,items,isPR,state,report){
     const text=(item.title||'')+' '+(item.body||'');
     const allFPs=extractFP(text);
     const allSupp=allFPs.length>0&&allFPs.every(fp=>findAllDrivers(fp).length>0);
-    const isUpstream=repo!==OWN;
 
     // Check if we already commented
     const comments=await ghGet('/repos/'+repo+'/issues/'+item.number+'/comments?per_page=10');
@@ -379,13 +373,12 @@ async function staleSweep(repo,items,isPR,state,report){
 
     let shouldClose=false;let reason='';
 
-    // Rule 1: All FPs supported + we responded + >7 days (own) or >3 days (upstream)
-    if(allSupp&&hasBot){
-      const threshold=isUpstream?3:7;
-      if(age>=threshold){shouldClose=true;reason='All FPs supported in v'+appVer+', responded '+age+'d ago'}
+    // Rule 1: All FPs supported + we responded + >7 days
+    if(allSupp&&hasBot&&age>=7){
+      shouldClose=true;reason='All FPs supported in v'+appVer+', responded '+age+'d ago';
     }
-    // Rule 2: Stale >30 days on own repo, >14 days on upstream
-    if(!shouldClose&&age>=(isUpstream?14:STALE_DAYS)&&hasBot){
+    // Rule 2: Stale >30 days + already triaged
+    if(!shouldClose&&age>=STALE_DAYS&&hasBot){
       shouldClose=true;reason='Inactive >'+age+'d, already triaged';
     }
     // Rule 3: Last comment from owner/bot with closing language
@@ -400,7 +393,7 @@ async function staleSweep(repo,items,isPR,state,report){
 
     if(shouldClose){
       if(DRY){console.log('  [DRY-SWEEP] Would close',key,':',reason);swept++;continue}
-      const closeBody=TAG+'\n'+reason+'.\n\nFeel free to reopen if still relevant.'+(isUpstream?'\n\n---\n👉 Maintained in **[Universal Tuya Zigbee](https://github.com/dlnraja/com.tuya.zigbee)** (v'+appVer+', '+fps.size+'+ FPs)\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/':'');
+      const closeBody=TAG+'\n'+reason+'.\n\nFeel free to reopen if still relevant.';
       await ghPost('/repos/'+repo+'/issues/'+item.number+'/comments',{body:closeBody});
       const endpoint=isPR?'/repos/'+repo+'/pulls/'+item.number:'/repos/'+repo+'/issues/'+item.number;
       const patchBody=isPR?{state:'closed'}:{state:'closed',state_reason:'completed'};
