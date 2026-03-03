@@ -55,13 +55,28 @@ async function main() {
   }
   if(tk) log('Access token: '+tk.length+'c');
   if(!tk){log('No access token');process.exit(1)}
-  log('Step 4: Builds');
-  const hd={Authorization:'Bearer '+tk,Accept:'application/json'};
+  log('Step 3b: Delegation Token');
+  let dtk=null;
+  for(const ep of ['/delegation/token','/oauth2/delegation']){
+    try{
+      const r=await fetch('https://api.athom.com'+ep,{method:'POST',headers:{Authorization:'Bearer '+tk,'Content-Type':'application/json'},body:JSON.stringify({audience:'apps'})});
+      const t=await r.text();
+      log('  '+ep+': '+r.status+' '+t.slice(0,200));
+      if(r.ok){try{const j=JSON.parse(t);dtk=j.token||j.access_token||j}catch{dtk=t.replace(/"/g,'')}}
+      if(dtk&&typeof dtk==='string'&&dtk.length>10)break; else dtk=null;
+    }catch(e){log('  '+ep+': '+e.message)}
+  }
+  if(dtk) log('Delegation: '+dtk.length+'c');
+  const apiTk=dtk||tk;
+  log('Step 4: Builds (token='+apiTk.length+'c)');
+  const hd={Authorization:'Bearer '+apiTk,Accept:'application/json'};
   let builds=null;
-  for(const ep of ['/app/'+APP+'/build','/app/'+APP+'/builds','/app/'+APP]){
-    const r=await fetch(API+ep,{headers:hd});
-    log('GET '+ep.split('/').pop()+': '+r.status);
-    if(r.ok){const d=await r.json();builds=Array.isArray(d)?d:(d.builds||d.versions||null);if(builds)break}
+  for(const u of [API+'/app/'+APP+'/build',API+'/app/'+APP+'/builds',API+'/app/'+APP]){
+    try{
+      const r=await fetch(u,{headers:hd});
+      log('GET '+u.replace(/https:\/\/[^/]+/,'')+': '+r.status);
+      if(r.ok){const d=await r.json();builds=Array.isArray(d)?d:(d.builds||d.versions||null);if(builds)break}
+    }catch(e){log('ERR '+e.message)}
   }
   if(!builds){log('No builds');process.exit(1)}
   log('Builds: '+builds.length);
