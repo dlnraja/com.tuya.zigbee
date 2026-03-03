@@ -6,7 +6,19 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.77] - 2026-03-03
+## [5.11.78] - 2026-03-03
+
+### Bug Fixes
+- Fixed session API v2 to support server-side fetch with cookies and OAuth token interception.
+
+### Improvements
+- Updated auto-publish process to reflect current driver and fingerprint counts: 145 drivers, 3093 fingerprints.
+
+### CI/CD
+- Adjusted scripts for auto-promotion and session management.
+---
+
+ [5.11.77] - 2026-03-03
 
 ### New Features
 - Added session API fallback to bypass SPA rendering.

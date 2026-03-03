@@ -1,4 +1,7 @@
 {
+  "5.11.78": {
+    "en": "Universal Tuya Zigbee app v5.11.78: Fixed session API v2 and updated auto-publish process."
+  },
   "5.11.77": {
     "en": "Universal Tuya Zigbee app v5.11.77: Added session API fallback, updated drivers and fingerprints."
   },
@@ -56,10 +59,7 @@
   "5.11.59": {
     "en": "Universal Tuya Zigbee app v5.11.59 fixes IR remote publish validation and updates images."
   },
-  "5.11.58": {
-    "en": "Automation hardening with Gmail diagnostics and token auto-rotation."
-  },
-  "5.11.78": {
-    "en": "v5.11.77: Added session API fallback to bypass SPA rendering., Updated to 145 drivers and 3093 fingerprints., Removed obsolete diagnostics reports and states, reducing file size significantly., Auto-publish adjustments made for smoother release process."
+  "5.11.79": {
+    "en": "v5.11.78: Fixed session API v2 to support server-side fetch with cookies and OAuth token interception., Updated auto-publish process to reflect current driver and fingerprint counts: 145 drivers, 3093 fingerprints., Adjusted scripts for auto-promotion and session management."
   }
 }
