@@ -1,4 +1,7 @@
 {
+  "5.11.76": {
+    "en": "Universal Tuya Zigbee app v5.11.76: Fixed auto-promote failure handling and updated drivers."
+  },
   "5.11.75": {
     "en": "Universal Tuya Zigbee app v5.11.75 adds filtered search for IMAP emails and updates drivers and fingerprints."
   },
@@ -56,10 +59,7 @@
   "5.11.57": {
     "en": "v5.11.56: Fixed vibration sensor triggers for alarm_vibration, temperature, and flow (Forum #1559/#1561)., Added remote_dimmer driver for Lidl HG06323 TS1001 with full IR remote support., Implemented GitHub Deep Search engine to search over 20 Zigbee projects for fingerprints, data points, and converters., Reset Gmail token health with a new refresh token set for 2026-03-02., Updated auto-publishi"
   },
-  "5.11.56": {
-    "en": "Universal Tuya Zigbee app v5.11.56: Added remote dimmer driver, fixed vibration sensor triggers, and reset Gmail token health."
-  },
-  "5.11.76": {
-    "en": "v5.11.75: Added keyword and sender filtered search for IMAP emails, limiting results to 30 relevant emails., Updated app to include 145 drivers and 3093 fingerprints., Various minor fixes and adjustments in the codebase., Auto-published version 5.11.75 without triggering CI."
+  "5.11.77": {
+    "en": "v5.11.76: Fixed auto-promote to exit with code 1 on failure, enabling Tier 2 fallback., Updated app with 145 drivers and 3093 fingerprints., Auto-publish changes with [skip ci] tag., Updated screenshots for better clarity and resolution."
   }
 }
