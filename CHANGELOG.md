@@ -6,7 +6,20 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.61] - 2026-03-03
+## [5.11.62] - 2026-03-03
+
+### Bug Fixes
+- Added missing `ir_code.svg` icon for IR capabilities.
+- Fixed validation for `remote_dimmer` publish: added required images.
+- Fixed validation for `ir_remote` publish: removed reserved `zb_` settings and added required images.
+
+### CI/CD
+- Auto-published version v5.11.62 with 145 drivers and 3093 fingerprints.
+- Periodic Gmail diagnostics and token auto-rotation implemented.
+- Removed outdated state files from GitHub workflows.
+---
+
+ [5.11.61] - 2026-03-03
 
 ### Bug Fixes
 - Fixed remote dimmer publish validation by adding required images.
