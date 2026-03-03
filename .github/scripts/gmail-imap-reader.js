@@ -4,8 +4,8 @@ let ImapFlow;try{ImapFlow=require('imapflow').ImapFlow}catch{}
 async function readViaIMAP(opts={}){
   if(!ImapFlow)return null;
   const e=opts.email||process.env.GMAIL_EMAIL||process.env.HOMEY_EMAIL;
-  const p=opts.password||process.env.GMAIL_APP_PASSWORD;
-  if(!e||!p){console.log('[IMAP] Need GMAIL_EMAIL (or HOMEY_EMAIL) + GMAIL_APP_PASSWORD');return null}
+  const p=opts.password||process.env.GMAIL_APP_PASSWORD||process.env.HOMEY_PASSWORD;
+  if(!e||!p){console.log('[IMAP] Need email + password (GMAIL_APP_PASSWORD or HOMEY_PASSWORD)');return null}
   const since=(opts.afterDate||new Date(Date.now()-7*864e5)).toISOString().split('T')[0];
   console.log('[IMAP] Connecting as',e,'since',since);
   const c=new ImapFlow({host:'imap.gmail.com',port:993,secure:true,auth:{user:e,pass:p},logger:false});
