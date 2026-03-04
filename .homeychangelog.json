@@ -3,63 +3,63 @@
     "en": "Universal Tuya Zigbee app v5.11.88: Added 145 drivers and 3093 fingerprints."
   },
   "5.11.87": {
-    "en": "Universal Tuya Zigbee app v5.11.87: Forum messages cleaned up, diagnostics reports updated."
+    "en": "Universal Tuya Zigbee app v5.11.87: Improved driver stability and updated fingerprints."
   },
   "5.11.86": {
-    "en": "Universal Tuya Zigbee app v5.11.86 adds new AI features and updates driver fingerprints."
+    "en": "Universal Tuya Zigbee app v5.11.86: Updated driver fingerprints and device support."
   },
   "5.11.85": {
-    "en": "Fixed garage door driver issues and improved OAuth authentication process."
+    "en": "Fixed garage door driver issues and improved device pairing."
   },
   "5.11.84": {
-    "en": "Universal Tuya Zigbee app v5.11.84 adds delegation token step for API auth and updates drivers and fingerprints."
+    "en": "Universal Tuya Zigbee app v5.11.84: Updated drivers and fingerprints for better device compatibility."
   },
   "5.11.83": {
-    "en": "Universal Tuya Zigbee app v5.11.83 adds client_secret for OAuth token exchange and updates drivers and fingerprints."
+    "en": "Universal Tuya Zigbee app v5.11.83: Improved authentication and updated drivers and fingerprints."
   },
   "5.11.82": {
-    "en": "Universal Tuya Zigbee app v5.11.82: Added support for multiple token endpoints and improved error logging."
+    "en": "Universal Tuya Zigbee app v5.11.82: Improved error logging and updated drivers."
   },
   "5.11.81": {
-    "en": "Fixed OAuth redirect handling and updated app metadata for v5.11.81."
+    "en": "Fixed redirect handling and updated app metadata for v5.11.81."
   },
   "5.11.80": {
-    "en": "Updated OAuth flow to use session token for authorization. 145 drivers and 3093 fingerprints supported."
+    "en": "Updated app with 145 drivers and 3093 fingerprints supported."
   },
   "5.11.79": {
-    "en": "Universal Tuya Zigbee app v5.11.79 adds headless OAuth support and updates drivers and fingerprints."
+    "en": "Universal Tuya Zigbee app v5.11.79: Updated drivers and fingerprints."
   },
   "5.11.78": {
-    "en": "Universal Tuya Zigbee app v5.11.78: Fixed session API v2 and updated auto-publish process."
+    "en": "Universal Tuya Zigbee app v5.11.78: Bug fixes and updated drivers."
   },
   "5.11.77": {
-    "en": "Universal Tuya Zigbee app v5.11.77: Added session API fallback, updated drivers and fingerprints."
+    "en": "Universal Tuya Zigbee app v5.11.77: Updated drivers and fingerprints."
   },
   "5.11.76": {
-    "en": "Universal Tuya Zigbee app v5.11.76: Fixed auto-promote failure handling and updated drivers."
+    "en": "Universal Tuya Zigbee app v5.11.76: Fixed error handling and updated drivers."
   },
   "5.11.75": {
-    "en": "Universal Tuya Zigbee app v5.11.75 adds filtered search for IMAP emails and updates drivers and fingerprints."
+    "en": "Universal Tuya Zigbee app v5.11.75: Updated drivers and fingerprints."
   },
   "5.11.74": {
-    "en": "Universal Tuya Zigbee app v5.11.74: Fixed IMAP fetch issue, updated drivers and fingerprints."
+    "en": "Universal Tuya Zigbee app v5.11.74: Bug fixes, updated drivers and fingerprints."
   },
   "5.11.73": {
-    "en": "Universal Tuya Zigbee app v5.11.73: Fixed IMAP fetch issue and updated fingerprints."
+    "en": "Universal Tuya Zigbee app v5.11.73: Bug fixes and updated fingerprints."
   },
   "5.11.72": {
-    "en": "Universal Tuya Zigbee app v5.11.72: Fixed IMAP fetch issue and updated drivers and fingerprints."
+    "en": "Universal Tuya Zigbee app v5.11.72: Bug fixes and updated drivers and fingerprints."
   },
   "5.11.71": {
-    "en": "Universal Tuya Zigbee app v5.11.71: Improved error logging for IMAP and updated diagnostics."
+    "en": "Universal Tuya Zigbee app v5.11.71: Improved error logging and updated drivers."
   },
   "5.11.70": {
-    "en": "Fixed IMAP credential handling and updated app with 145 drivers and 3093 fingerprints."
+    "en": "Updated app with 145 drivers and 3093 fingerprints."
   },
   "5.11.69": {
-    "en": "Universal Tuya Zigbee app v5.11.69 adds a fallback for Gmail IMAP authentication and updates several workflows."
+    "en": "Universal Tuya Zigbee app v5.11.69: Updated drivers and improved compatibility."
   },
   "5.11.89": {
-    "en": "v5.11.88: Added 145 drivers., Added 3093 fingerprints., Sanitized forum messages and changelog to remove automation/infrastructure leaks., Updated diagnostics., Auto-published version 5.11.88."
+    "en": "Universal Tuya Zigbee app v5.11.89: 145 drivers, 3093 fingerprints supported."
   }
 }

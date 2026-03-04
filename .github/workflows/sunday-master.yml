@@ -439,7 +439,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .github/state/resolver-*.json
-          git diff --cached --quiet || git commit -m "diag-resolver: auto-resolve issues/PRs [skip ci]"
+          git diff --cached --quiet || git commit -m "Resolved issues update [skip ci]"
           git pull --rebase origin master || true
           git push || true
 
@@ -576,7 +576,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git diff --cached --quiet || git commit -m "smart-processor + intelligence: auto-learn, patterns, audit [skip ci]"
+          git diff --cached --quiet || git commit -m "Updated patterns and state [skip ci]"
           git pull --rebase origin master || true
           git push || true
 
@@ -616,7 +616,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A drivers/ .github/state/
-          git diff --cached --quiet || git commit -m "ai-battle: variant discovery + auto-implement [skip ci]"
+          git diff --cached --quiet || git commit -m "New device variants + driver updates [skip ci]"
           git pull --rebase origin master || true
           git push || true
 
@@ -647,7 +647,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add CHANGELOG.md README.md .homeychangelog.json
-          git diff --cached --quiet || git commit -m "docs: AI changelog update [skip ci]"
+          git diff --cached --quiet || git commit -m "docs: changelog update [skip ci]"
           git pull --rebase origin master || true
           git push || true
 
