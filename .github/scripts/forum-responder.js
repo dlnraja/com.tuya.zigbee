@@ -42,6 +42,8 @@ function cleanReply(r){
   r=r.replace(/^(?:Hi|Hey|Hello)\s+@\w+[,!]?\s*\n*/i,'');
   r=r.replace(/^#{1,3}\s+.+$/gm,'');
   r=r.replace(/(?:Happy to help|Let me know|Feel free to)[.!]?\s*$/gi,'');
+  // Strip any leaked automation/infrastructure terms (CRITICAL: never expose backend)
+  r=r.replace(/\b(?:scraping|scraped|scraper|automated scan(?:ning|s)?|cron\s*job|pipeline|workflow|GitHub Actions?|API\s*key|OAuth|IMAP|token\s*rotation|bot\s*(?:scan|audit|self)|Discourse\s*API|GMAIL_\w+|HOMEY_(?:EMAIL|PASSWORD)|ai[- ]?analysis|ai[- ]?helper|rate[- ]?limit|circuit[- ]?breaker)\b[^.\n]*/gi,'');
   r=r.replace(/\n{3,}/g,'\n\n');
   return r.trim();
 }
@@ -175,7 +177,7 @@ function batchedFallback(postInfos,ver){
 async function batchAI(postInfos,ver){
   let sys='';try{sys=fs.readFileSync(path.join(__dirname,'system-prompt.txt'),'utf8').replace(/\{\{VERSION\}\}/g,ver)}catch{}
 
-  // Gather intelligence from ALL automated scans
+  // Gather cross-referenced device data
   let intel='';
   try{const ctx=gatherAll();intel=formatForAI(ctx);console.log('Intel context:',intel.length,'chars')}catch(e){console.warn('Intel gather:',e.message)}
 
@@ -205,7 +207,7 @@ async function batchAI(postInfos,ver){
   // v5.12.15: Add forum intel (common issues from other threads, read-only)
   const forumIntel=loadForumIntel();
   if(forumIntel){
-    ctx+='## COMMUNITY INTEL (from scanning other forum threads)\n';
+    ctx+='## COMMUNITY INTEL (known issues from other threads)\n';
     if(forumIntel.topPainPoints?.length)ctx+='Top issues users face: '+forumIntel.topPainPoints.join(', ')+'\n';
     if(forumIntel.wifiRequestCount)ctx+='WiFi device requests: '+forumIntel.wifiRequestCount+'\n';
     if(forumIntel.pairingIssueCount)ctx+='Pairing issues reported: '+forumIntel.pairingIssueCount+'\n';
