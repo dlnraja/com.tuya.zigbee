@@ -1,4 +1,7 @@
 {
+  "5.11.87": {
+    "en": "Universal Tuya Zigbee app v5.11.87: Forum messages cleaned up, diagnostics reports updated."
+  },
   "5.11.86": {
     "en": "Universal Tuya Zigbee app v5.11.86 adds new AI features and updates driver fingerprints."
   },
@@ -56,10 +59,7 @@
   "5.11.68": {
     "en": "Universal Tuya Zigbee app v5.11.68: Added IMAP fallback for keepalive alerts and updated 145 drivers with 3093 fingerprints."
   },
-  "5.11.67": {
-    "en": "Universal Tuya Zigbee app v5.11.67: Added fallback for Gmail address, auto-published 145 drivers with 3093 fingerprints."
-  },
-  "5.11.87": {
-    "en": "v5.11.86: Introduced Master AI Battle Orchestrator v1.0 with multi-AI ensemble and 6-phase pipeline., Updated app to include 145 drivers and 4952 fingerprints., Auto-published 3093 fingerprints., Updated forum responder to version 5.11.86, scanned 5 topics and updated state., Various updates to GitHub workflows and scripts for better automation."
+  "5.11.88": {
+    "en": "v5.11.87: Cleaned up forum messages by removing scraping/bot/API/password references., Updated GitHub workflows to include shell:bash in 3 workflows., Upgraded weekly-external-sync to Node 22., Improved daily summary order and Gmail notifications., Updated diagnostics reports and state files, including comprehensive and enrichment reports."
   }
 }

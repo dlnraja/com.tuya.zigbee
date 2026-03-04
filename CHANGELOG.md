@@ -6,7 +6,20 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.86] - 2026-03-03
+## [5.11.87] - 2026-03-04
+
+### Bug Fixes
+- Cleaned up forum messages by removing scraping/bot/API/password references.
+
+### CI/CD
+- Updated GitHub workflows to include shell:bash in 3 workflows.
+- Upgraded weekly-external-sync to Node 22.
+- Improved daily summary order and Gmail notifications.
+- Updated diagnostics reports and state files, including comprehensive and enrichment reports.
+- Adjusted auto-resolve functionality in Gmail diagnostics pipeline.
+---
+
+ [5.11.86] - 2026-03-03
 
 ### New Features
 - Introduced Master AI Battle Orchestrator v1.0 with multi-AI ensemble and 6-phase pipeline.
