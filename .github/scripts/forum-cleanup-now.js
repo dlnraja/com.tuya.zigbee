@@ -62,6 +62,13 @@ const TO_DELETE = [
   { id: 714648, num: '140352#1514', reason: 'Wrong HOBEIAN reply' },
   { id: 714563, num: '140352#1493', reason: 'Duplicate update post' },
   { id: 714780, num: '140352#1522', reason: '3rd duplicate update' },
+
+  // T140352: Infra-leaking posts (no useful driver content)
+  { id: 716594, num: '140352#1574', reason: 'Leaks IMAP/Gmail/Auto-publish' },
+  { id: 716630, num: '140352#1576', reason: 'Leaks IMAP/OOM/envelope-only' },
+  { id: 716654, num: '140352#1578', reason: 'Leaks session API/SPA rendering' },
+  { id: 716945, num: '140352#1585', reason: 'Only stat counts, no content' },
+  { id: 717087, num: '140352#1589', reason: 'Leaks scan-forum/upstream-triage' },
 ];
 
 // ===== POSTS TO EDIT (remove bot signatures, clean up) =====
@@ -78,6 +85,20 @@ const TO_EDIT = [
   // T140352 #1300: Remove bot pattern
   { id: 704939, num: '140352#1300', reason: 'Contains bot pattern',
     newRaw: 'That one\'s already in the app. Just remove and re-pair, should work fine.' },
+
+  // T140352: Remove stat counts + infra terms from version update posts
+  { id: 715560, num: '140352#1558', reason: 'Remove stat counts',
+    newRaw: '**v5.11.32** is now on the [test channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/).\n\nBug fixes and device improvements.' },
+  { id: 715947, num: '140352#1560', reason: 'Remove Auto-publish/stats',
+    newRaw: '**v5.11.33** is now on the [test channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/).\n\nFixed fingerprint recognition for several devices.' },
+  { id: 716060, num: '140352#1562', reason: 'Remove stats/fingerprint research',
+    newRaw: 'Dropped **v5.11.44** on the [test channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) just now.\n\nAdded a new IR remote driver and improved some existing drivers.' },
+  { id: 716435, num: '140352#1569', reason: 'Remove diagnostics/stats',
+    newRaw: 'Dropped **v5.11.50** on the [test channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) just now.\n\nAdded a new remote dimmer driver.' },
+  { id: 716567, num: '140352#1572', reason: 'Remove Gmail/PII/forum state',
+    newRaw: 'Just pushed **v5.11.65** to the [test channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/).\n\nFixed _TZE200_pay2byax — moved to contact_sensor driver where it belongs.' },
+  { id: 716818, num: '140352#1581', reason: 'Remove stat counts',
+    newRaw: 'Just pushed **v5.11.86** to the [test channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/).\n\nRewrote garage door driver to fix some issues (#128, #137).' },
 ];
 
 function getHeaders(auth, json) {
