@@ -1,11 +1,31 @@
 {
-  "timestamp": "2026-03-03T14:13:23.832Z",
-  "appVersion": "5.11.75",
-  "forum": 0,
+  "timestamp": "2026-03-04T03:36:34.709Z",
+  "appVersion": "5.11.87",
+  "forum": 2,
   "github": 0,
-  "diagnostics": 2,
+  "diagnostics": 30,
   "diagNewFPs": 0,
   "diagCritical": 0,
-  "forumDetails": [],
+  "forumDetails": [
+    {
+      "topic": 140352,
+      "post": 1579,
+      "user": "Hartmut_Dunker",
+      "fps": [
+        "_TZ3002_pzao9ls1",
+        "dlnraja"
+      ],
+      "reply": "Hi Hartmut,\n\nThank you for your detailed report regarding the TS0726 switch (_TZ3002_pzao9ls1). Based on the fingerprint analysis, your device is recognized, and it supports the following drivers:\n\n- ",
+      "model": "gh-gpt-4o-mini"
+    },
+    {
+      "topic": 140352,
+      "post": 1580,
+      "user": "Peter_Kawa",
+      "fps": [],
+      "reply": "Based on the fingerprint lookup, it appears that your device is recognized as a generic type with support for the `bulb_rgbw` driver. This means that your device should be compatible with the RGBW bul",
+      "model": "gh-gpt-4o-mini"
+    }
+  ],
   "githubDetails": []
 }
