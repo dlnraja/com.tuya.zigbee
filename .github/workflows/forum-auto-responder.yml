@@ -72,6 +72,6 @@ jobs:
           git add .github/state/forum-state.json
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           TOPICS=$(node -p "try{Object.keys(JSON.parse(require('fs').readFileSync('.github/state/forum-state.json')).topics).length}catch(e){0}")
-          git diff --cached --quiet || git commit -m "Forum responder v${VER}: scanned ${TOPICS} topics, state updated [skip ci]"
+          git diff --cached --quiet || git commit -m "v${VER}: forum state updated [skip ci]"
           git pull --rebase origin master || true
           git push || echo "Nothing to push"

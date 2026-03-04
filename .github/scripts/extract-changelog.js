@@ -30,5 +30,6 @@ function fromGit(){
   }catch{}return null;
 }
 const r=fromMd()||fromJson()||fromGit()||{md:'Bug fixes and improvements',oneLiner:'v'+ver+': Bug fixes and improvements'};
-const homey=(r.oneLiner||r.md).substring(0,400);
+function san(t){return t.replace(/\b(?:Auto-publish\w*|OAuth|IMAP|Gmail|AI\s*(?:Battle|features)|pipeline|workflow|cron|scraping|sanitiz\w+\s+\w+|infrastructure|diagnostics?\s*report|forum\s*(?:responder|message)|session\s*API|token\s*\w+|delegation|client_secret)[^.,]*/gi,'').replace(/,\s*,/g,',').replace(/\.\s*\./g,'.').replace(/^\s*[,.]/,'').replace(/\s{2,}/g,' ').trim();}
+const homey=san((r.oneLiner||r.md).substring(0,400));
 console.log(JSON.stringify({homeyText:homey,markdownText:r.md,oneLiner:r.oneLiner}));
