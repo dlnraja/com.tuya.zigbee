@@ -15,6 +15,10 @@ concurrency:
   group: forum-merge
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   merge:
     runs-on: ubuntu-latest
