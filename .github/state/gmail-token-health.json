@@ -1,16 +1,6 @@
 {
   "checks": [
     {
-      "time": "2026-03-03T12:42:45.307Z",
-      "ok": false,
-      "err": 400
-    },
-    {
-      "time": "2026-03-03T12:53:37.095Z",
-      "ok": false,
-      "err": 400
-    },
-    {
       "time": "2026-03-03T13:31:32.948Z",
       "ok": false,
       "err": 400
@@ -49,13 +39,23 @@
       "time": "2026-03-04T06:45:54.010Z",
       "ok": false,
       "err": 400
+    },
+    {
+      "time": "2026-03-04T08:08:17.055Z",
+      "ok": false,
+      "err": 400
+    },
+    {
+      "time": "2026-03-04T08:08:17.340Z",
+      "ok": false,
+      "err": 400
     }
   ],
   "lastOk": null,
-  "lastFail": "2026-03-04T06:45:54.010Z",
-  "_lastAlert_expired": "2026-03-03T05:24:55.468Z",
+  "lastFail": "2026-03-04T08:08:17.341Z",
+  "_lastAlert_expired": "2026-03-04T08:08:17.062Z",
   "_lastAlert_expiring_proactive": null,
-  "consecutiveFails": 17,
+  "consecutiveFails": 19,
   "tokenSetDate": null,
   "daysLeft": 0,
   "expiryEstimate": null,
