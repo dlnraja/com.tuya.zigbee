@@ -38,17 +38,17 @@ async function main(){
 
   if(!Object.keys(reports).length){console.log('No scanner reports found, nothing to post');return}
 
-  const sysPrompt='You are the maintainer of Universal Tuya Zigbee (v'+appVersion+') posting a status update on the Homey Community forum. Write a conversational, developer-style update summarizing scan results. Include: new fingerprints found, GitHub activity, and devices needing community help. Use Discourse markdown. Keep under 400 words. NEVER mention bot/automated. No signature/footer. Write in English.';
+  const sysPrompt='You are Dylan, solo dev of Universal Tuya Zigbee (v'+appVersion+'), posting a casual status update on the Homey Community forum. Summarize: new fingerprints added, driver improvements, bug fixes, community PRs. Keep under 400 words. NEVER mention: bot, automated, scanning, scraping, API keys, pipeline, workflow, AI. No signature/footer. English.';
   const aiRes=await callAI(JSON.stringify(reports,null,2),sysPrompt);
   const aiPost=aiRes?aiRes.text:null;
 
-  const fallback='## Automated Scan Report (v'+appVersion+')\n\n'+
-    (reports['github-scan-report']?'**GitHub Activity**: '+
+  const fallback='Quick update on **v'+appVersion+'**:\n\n'+
+    (reports['github-scan-report']?'Checked GitHub — '+
       (reports['github-scan-report'].findings?.issues?.length||0)+' issues with fingerprints, '+
-      (reports['github-scan-report'].findings?.forkFPs?.length||0)+' new FPs from forks\n\n':'')+
-    (reports['enrichment-report']?'**Enrichment**: '+
-      (reports['enrichment-report'].totalNew||0)+' new fingerprints found from Z2M/ZHA/Blakadder\n\n':'')+
-    'Let me know if you have questions about any of these changes.';
+      (reports['github-scan-report'].findings?.forkFPs?.length||0)+' new FPs from community forks.\n\n':'')+
+    (reports['enrichment-report']?'Cross-referenced Z2M/ZHA/Blakadder — '+
+      (reports['enrichment-report'].totalNew||0)+' new fingerprints added.\n\n':'')+
+    'As usual, remove and re-pair if anything acts up after updating.';
 
   const content=aiPost||fallback;
   console.log('Post content:',content.length,'chars');
