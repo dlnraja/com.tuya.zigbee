@@ -33,6 +33,18 @@
       }
     }
   ],
-  "conditions": [],
-  "actions": []
+  "conditions": [
+    {
+      "id": "power_meter_power_above",
+      "title": { "en": "Power !{{is|is not}} above" },
+      "titleFormatted": { "en": "Power !{{is|is not}} above [[power]] W" },
+      "args": [{ "name": "power", "type": "number", "min": 0, "max": 10000, "step": 10 }]
+    }
+  ],
+  "actions": [
+    {
+      "id": "power_meter_reset_meter",
+      "title": { "en": "Reset energy meter" }
+    }
+  ]
 }
