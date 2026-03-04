@@ -140,6 +140,8 @@ jobs:
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          ATHOM_CLIENT_ID: ${{ secrets.ATHOM_CLIENT_ID }}
+          ATHOM_CLIENT_SECRET: ${{ secrets.ATHOM_CLIENT_SECRET }}
         run: node .github/scripts/auto-promote-oauth.js
 
       - name: "Tier 3: Promote via API (PAT fallback)"
