@@ -2,7 +2,6 @@ name: Tuya Automation Hub
 
 on:
   schedule:
-    - cron: '0 1,7,13,19 * * *'  # Offset from daily-everything (02,08,14,20)
     - cron: '0 4 * * 1,4'  # Mon/Thu deep scan
   workflow_dispatch:
     inputs:
