@@ -258,7 +258,21 @@ jobs:
           DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
         run: node .github/scripts/auto-promote-puppeteer.js
 
-      - name: "Tier 2: Promote via API (fallback)"
+      - name: "Tier 2: Promote via OAuth"
+        id: oauth
+        if: always() && steps.puppeteer.outcome != 'success'
+        continue-on-error: true
+        timeout-minutes: 3
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          ATHOM_CLIENT_ID: ${{ secrets.ATHOM_CLIENT_ID }}
+          ATHOM_CLIENT_SECRET: ${{ secrets.ATHOM_CLIENT_SECRET }}
+        run: |
+          npm install athom-api --no-save 2>/dev/null || true
+          node .github/scripts/auto-promote-oauth.js
+
+      - name: "Tier 3: Promote via API (PAT)"
         id: api
         if: always() && steps.puppeteer.outcome != 'success'
         continue-on-error: true
@@ -266,8 +280,8 @@ jobs:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/auto-publish-draft.js
 
-      - name: "Tier 3: Verify retry (Puppeteer)"
-        if: always() && steps.puppeteer.outcome != 'success' && steps.api.outcome != 'success'
+      - name: "Tier 4: Verify retry (Puppeteer)"
+        if: always() && steps.puppeteer.outcome != 'success' && steps.oauth.outcome != 'success' && steps.api.outcome != 'success'
         continue-on-error: true
         timeout-minutes: 5
         env:

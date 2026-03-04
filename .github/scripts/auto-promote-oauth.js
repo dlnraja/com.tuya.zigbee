@@ -24,8 +24,19 @@ async function main() {
   log('Token: ' + tk.length + 'c');
   const dtk = await getDelegation(tk);
   log('Delegation: ' + (dtk ? dtk.length + 'c' : 'none'));
-  const apiTk = dtk || tk;
-  await promoteWithSdk(apiTk);
+  const tokens = dtk ? [dtk, tk] : [tk];
+  let lastErr;
+  for (const t of tokens) {
+    try {
+      log('Trying token: ' + t.length + 'c' + (t === tk ? ' (raw)' : ' (deleg)'));
+      await promoteWithSdk(t);
+      return;
+    } catch (e) {
+      log('  Token failed: ' + e.message);
+      lastErr = e;
+    }
+  }
+  throw lastErr || new Error('All tokens failed');
 }
 async function pwGrant() {
   log('Step 1a: Password grant');
@@ -61,12 +72,16 @@ async function authCodeFlow() {
 }
 async function getDelegation(tk) {
   log('Step 2: Delegation token');
-  try {
-    const r=await fetch(APIB+'/delegation/token',{method:'POST',headers:{Authorization:'Bearer '+tk,'Content-Type':'application/json'},body:JSON.stringify({audience:'apps'})});
-    const txt=await r.text(); log('  delegation: '+r.status+' len='+txt.length);
-    if(!r.ok) return null;
-    try{const j=JSON.parse(txt);return j.token||j.access_token||(typeof j==='string'?j:null)}catch{return txt.replace(/"/g,'')}
-  } catch(e){log('  delegation err: '+e.message);return null}
+  for (const aud of ['apps','apps-api','homey-apps','homey']) {
+    try {
+      const r=await fetch(APIB+'/delegation/token',{method:'POST',headers:{Authorization:'Bearer '+tk,'Content-Type':'application/json'},body:JSON.stringify({audience:aud})});
+      const txt=await r.text(); log('  deleg('+aud+'): '+r.status+' len='+txt.length);
+      if(!r.ok) continue;
+      let dtk; try{const j=JSON.parse(txt);dtk=j.token||j.access_token||(typeof j==='string'?j:null)}catch{dtk=txt.replace(/"/g,'')}
+      if(dtk) return dtk;
+    } catch(e){log('  deleg('+aud+') err: '+e.message)}
+  }
+  return null;
 }
 async function promoteWithSdk(apiTk) {
   log('Step 3: Get builds');
@@ -85,18 +100,20 @@ async function promoteWithSdk(apiTk) {
 }
 async function promoteRaw(apiTk) {
   const hd={Authorization:'Bearer '+apiTk,Accept:'application/json'};
-  const base='https://apps-api.athom.com/api/v1';
-  const r=await fetch(base+'/app/'+APP+'/build',{headers:hd});
-  log('  Raw builds: '+r.status);
-  if(!r.ok){log('  '+await r.text().catch(()=>''));process.exit(1)}
+  const urls=['https://apps-api.athom.com/api/v1/app/'+APP+'/build','https://apps-api.athom.com/api/v1/app/'+APP+'/builds','https://apps-api.athom.com/api/v1/app/'+APP];
+  let r,ok=false;
+  for(const u of urls){r=await fetch(u,{headers:hd});log('  GET '+u+' → '+r.status);if(r.ok){ok=true;break}}
+  if(!ok){const t=await r.text().catch(()=>'');log('  '+t);throw new Error('builds '+r.status+': '+t)}
   const d=await r.json();
   const arr=Array.isArray(d)?d:(d.builds||[]);
   const draft=arr.find(b=>/draft/i.test(b.channel||''));
   if(!draft){log('  No draft');process.exit(0)}
   const pid=draft.id||draft._id;
+  const base=r.url.substring(0,r.url.indexOf('/app/'));
   const pr=await fetch(base+'/app/'+APP+'/build/'+pid+'/channel',{
     method:'PUT',headers:{...hd,'Content-Type':'application/json'},
     body:JSON.stringify({channel:'test'})});
   log('  Promote: '+pr.status);
-  if(!pr.ok) process.exit(1);
+  if(!pr.ok) throw new Error('promote '+pr.status);
+  log('  Promoted!');
 }
