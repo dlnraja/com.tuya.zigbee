@@ -23,7 +23,7 @@ async function promoteViaBrowserSession(page, log, dry, capturedToken) {
   const h = {'Cookie':ck,'Accept':'application/json'};
   if (tk) h['Authorization']='Bearer '+tk;
   let builds=null;
-  for (const ep of ['build','builds']) {
+  for (const ep of ['build','builds','']) {
     try {
       const r=await fetch(`${BASE}/app/${APP}/${ep}`,{headers:h});
       log('  [SessAPI] GET '+ep+' → '+r.status);

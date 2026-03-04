@@ -526,15 +526,30 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/auto-publish-draft.js
 
-      - name: "13b. Install Puppeteer (fallback)"
+      - name: "13b. Promote via OAuth"
         if: always() && steps.promote_api.outcome != 'success'
+        id: promote_oauth
+        continue-on-error: true
+        timeout-minutes: 3
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          ATHOM_CLIENT_ID: ${{ secrets.ATHOM_CLIENT_ID }}
+          ATHOM_CLIENT_SECRET: ${{ secrets.ATHOM_CLIENT_SECRET }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: |
+          npm install athom-api --no-save 2>/dev/null || true
+          node .github/scripts/auto-promote-oauth.js
+
+      - name: "13c. Install Puppeteer (fallback)"
+        if: always() && steps.promote_api.outcome != 'success' && steps.promote_oauth.outcome != 'success'
         continue-on-error: true
         run: |
           rm -rf node_modules/@puppeteer/browsers 2>/dev/null || true
           npm install puppeteer --no-save --force 2>&1 || true
 
-      - name: "13c. Promote via Browser (Puppeteer fallback)"
-        if: always() && steps.promote_api.outcome != 'success'
+      - name: "13d. Promote via Browser (Puppeteer fallback)"
+        if: always() && steps.promote_api.outcome != 'success' && steps.promote_oauth.outcome != 'success'
         id: promote_node
         continue-on-error: true
         timeout-minutes: 5
@@ -544,7 +559,7 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/auto-promote-puppeteer.js
 
-      - name: "13d. Upload promote screenshots"
+      - name: "13e. Upload promote screenshots"
         if: always()
         uses: actions/upload-artifact@v4
         with:
