@@ -51,16 +51,27 @@ async function main() {
     const page = await browser.newPage();
     page.setDefaultTimeout(30000);
 
-    // Intercept network to capture OAuth token
-    const captured = { token: null, apiUrls: [] };
+    // Intercept network to capture OAuth token from both requests and responses
+    const captured = { token: null, apiUrls: [], reqHeaders: {} };
+    page.on('request', (req) => {
+      try {
+        const u = req.url();
+        const auth = req.headers()['authorization'] || '';
+        if (auth && u.includes('apps-api')) {
+          captured.token = auth.replace(/^Bearer\s+/i, '');
+          captured.reqHeaders = req.headers();
+          log('  [NET] Auth header captured from request to: ' + u.split('?')[0]);
+        }
+        if (u.includes('apps-api') || u.includes('/api/')) captured.apiUrls.push(u);
+      } catch {}
+    });
     page.on('response', async (res) => {
       try {
         const u = res.url();
         if (u.includes('/oauth2/token') || u.includes('/oauth/token')) {
           const j = await res.json().catch(() => null);
-          if (j?.access_token) { captured.token = j.access_token; log('  [NET] OAuth token captured'); }
+          if (j?.access_token && !captured.token) { captured.token = j.access_token; log('  [NET] OAuth token from response'); }
         }
-        if (u.includes('apps-api') || u.includes('/api/')) captured.apiUrls.push(u);
       } catch {}
     });
 
