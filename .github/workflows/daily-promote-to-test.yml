@@ -2,9 +2,13 @@ name: Daily Draft to Test
 on:
   schedule:
     - cron: '45 3 * * *'
+    - cron: '15 6 * * *'
     - cron: '45 9 * * *'
+    - cron: '15 12 * * *'
     - cron: '30 15 * * *'
+    - cron: '15 18 * * *'
     - cron: '30 21 * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch:
   workflow_run:
     workflows: [Auto Publish, Auto-Publish on Push, Daily Everything Pipeline]
@@ -21,7 +25,7 @@ defaults:
 jobs:
   promote:
     name: Promote draft to test
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion != 'failure'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
