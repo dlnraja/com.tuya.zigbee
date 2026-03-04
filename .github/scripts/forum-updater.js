@@ -41,16 +41,13 @@ async function main(){
 
   if(!Object.keys(reports).length){console.log('No scanner reports found, nothing to post');return}
 
-  const sysPrompt='You are Dylan, dev of a Tuya Zigbee fork for Homey (v'+appVersion+'). Write a 2-3 sentence casual update. No headers, no emoji, no tables, no lists. NEVER say: bot, automated, scan, scrape, API, pipeline, workflow, AI. English only.';
+  const sysPrompt='You are Dylan, dev of a Tuya Zigbee fork for Homey (v'+appVersion+'). Write a 2-3 sentence casual update. No headers, no emoji, no tables, no lists. NEVER say: bot, automated, scan, scrape, API, pipeline, workflow, AI. NEVER include exact counts or stats (no "X fingerprints added", "Y issues found", "Z emails processed"). Keep it vague and human ("picked up some new devices", "fixed a few things"). English only.';
   const aiRes=await callAI(JSON.stringify(reports,null,2),sysPrompt);
   const aiPost=aiRes?aiRes.text:null;
 
   const fallback='Quick update on **v'+appVersion+'**:\n\n'+
-    (reports['github-scan-report']?'Checked GitHub — '+
-      (reports['github-scan-report'].findings?.issues?.length||0)+' issues with fingerprints, '+
-      (reports['github-scan-report'].findings?.forkFPs?.length||0)+' new FPs from community forks.\n\n':'')+
-    (reports['enrichment-report']?'Cross-referenced Z2M/ZHA/Blakadder — '+
-      (reports['enrichment-report'].totalNew||0)+' new fingerprints added.\n\n':'')+
+    (reports['github-scan-report']?'Went through some GitHub reports and community contributions — picked up a few new device fingerprints along the way.\n\n':'')+
+    (reports['enrichment-report']?'Also cross-referenced a few external sources for new devices.\n\n':'')+
     'As usual, remove and re-pair if anything acts up after updating.';
 
   const content=aiPost||fallback;
