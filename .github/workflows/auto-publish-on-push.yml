@@ -110,6 +110,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
       # ===== DRAFT → TEST (Puppeteer + API fallback) =====
+      - name: Wait for Athom draft processing
+        if: steps.pub.outcome == 'success'
+        run: |
+          echo "Waiting 120s for Athom to process draft build..."
+          sleep 120
+
       - name: Install Puppeteer
         if: steps.check_pat.outputs.has_pat == 'true'
         continue-on-error: true

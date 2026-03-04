@@ -506,6 +506,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
       # ===== 13. DRAFT → TEST =====
+      # v5.11.80: Wait for Athom to process draft before promoting
+      - name: "13. Wait for Athom draft processing"
+        if: steps.pub.outcome == 'success'
+        run: |
+          echo "Waiting 120s for Athom to process draft build..."
+          sleep 120
+          echo "Done waiting"
+
       # v5.11.27: API method is PRIMARY (more reliable than Puppeteer)
       # Puppeteer is FALLBACK only (SPA loading issues on CI)
       - name: "13a. Promote via API (primary)"
