@@ -141,12 +141,12 @@ function gatherAll(){
  * Max ~3000 chars — 16 sources cross-referenced.
  */
 function formatForAI(ctx){
-  let s='## INTELLIGENCE CONTEXT (from automated scans)\n\n';
+  let s='## INTELLIGENCE CONTEXT (cross-referenced device data)\n\n';
 
   if(ctx.externalSources){
     const e=ctx.externalSources;
     s+='### External DBs (Z2M/ZHA/deCONZ)\n';
-    s+='Scanned: '+e.total+' devices | Supported: '+e.supported+' | New: '+e.unsupported+'\n';
+    s+='Known: '+e.total+' devices | Supported: '+e.supported+' | New: '+e.unsupported+'\n';
     if(e.topUnsupported?.length)s+='Top new: '+e.topUnsupported.map(u=>'`'+u.fp+'` ('+u.src.join(',')+')').join(', ')+'\n';
     s+='\n';
   }
@@ -165,7 +165,7 @@ function formatForAI(ctx){
   }
 
   if(ctx.forumActivity){
-    s+='### Forum: '+ctx.forumActivity.totalFPs+' FPs scanned, '+ctx.forumActivity.activity+' activities\n';
+    s+='### Forum: '+ctx.forumActivity.totalFPs+' FPs tracked, '+ctx.forumActivity.activity+' activities\n';
     if(ctx.forumActivity.unsupportedFPs?.length)s+='Unsupported: '+ctx.forumActivity.unsupportedFPs.slice(0,6).map(f=>'`'+f+'`').join(', ')+'\n';
     s+='\n';
   }
@@ -183,24 +183,24 @@ function formatForAI(ctx){
   }
 
   if(ctx.gmail&&(ctx.gmail.total||ctx.gmail.newFPs?.length)){
-    s+='### Gmail Diagnostics: '+ctx.gmail.total+' emails processed\n';
+    s+='### User Reports: '+ctx.gmail.total+' device reports received\n';
     if(ctx.gmail.newFPs?.length)s+='New FPs: '+ctx.gmail.newFPs.slice(0,6).map(f=>'`'+f+'`').join(', ')+'\n';
     s+='\n';
   }
 
   if(ctx.deviceDiag&&(ctx.deviceDiag.total||ctx.deviceDiag.failures)){
-    s+='### Device Diag: '+ctx.deviceDiag.total+' devices, '+ctx.deviceDiag.failures+' failures\n';
+    s+='### Device Status: '+ctx.deviceDiag.total+' devices, '+ctx.deviceDiag.failures+' failures\n';
     if(ctx.deviceDiag.topIssues?.length)s+='Top: '+ctx.deviceDiag.topIssues.slice(0,3).map(i=>String(i.issue||i).substring(0,60)).join(' | ')+'\n';
     s+='\n';
   }
 
   if(ctx.images&&ctx.images.total){
-    s+='### Image Analysis: '+ctx.images.total+' images scanned\n';
+    s+='### Image Context: '+ctx.images.total+' images reviewed\n';
     s+='\n';
   }
 
   if(ctx.forumPMs&&(ctx.forumPMs.total||ctx.forumPMs.newFPs?.length)){
-    s+='### Forum PMs: '+ctx.forumPMs.total+' scanned\n';
+    s+='### Forum PMs: '+ctx.forumPMs.total+' reviewed\n';
     if(ctx.forumPMs.newFPs?.length)s+='New FPs: '+ctx.forumPMs.newFPs.slice(0,6).map(f=>'`'+f+'`').join(', ')+'\n';
     s+='\n';
   }

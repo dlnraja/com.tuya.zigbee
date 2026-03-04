@@ -6,11 +6,11 @@ const{fetchWithRetry}=require('./retry-helper');
 
 const reply=`Hi @Lasse_K,
 
-Apologies for the confusing bot reply — your **HOBEIAN ZG-102Z** is indeed recognized and pairs correctly as a **Contact Sensor**. The productId \`ZG-102Z\` was already in our database all along!
+Apologies for the confusing reply earlier — your **HOBEIAN ZG-102Z** is indeed recognized and pairs correctly as a **Contact Sensor**. The productId \`ZG-102Z\` was already in our database all along!
 
-### Why the bot said "not found"
+### Why I said "not found"
 
-Our bot's fingerprint scanner was using a regex that **only matches Tuya-style names** (patterns like \`_TZ3000_xxxx\` and \`TS0203\`). Your device's manufacturer name \`HOBEIAN\` and model \`ZG-102Z\` don't match those patterns, so the bot literally couldn't see them — even though they were already in the driver. We've now fixed the scanner to detect **all** manufacturer names and product IDs, not just Tuya ones.
+I was checking fingerprints with a regex that **only matches Tuya-style names** (patterns like \`_TZ3000_xxxx\` and \`TS0203\`). Your device's manufacturer name \`HOBEIAN\` and model \`ZG-102Z\` don't match those patterns, so I missed them — even though they were already in the driver. I've now fixed the lookup to detect **all** manufacturer names and product IDs, not just Tuya ones.
 
 ### The Real Issue: Inverted Open/Closed
 
@@ -21,7 +21,7 @@ Your device reports IAS Zone alarm status **inverted** compared to the ZCL stand
 We have just:
 1. Re-added \`HOBEIAN\` to the **auto-inversion list** (both IAS Zone path and DP path)
 2. Added \`HOBEIAN\` to the contact_sensor **manufacturer fingerprint list** for explicit matching
-3. Fixed the bot's fingerprint scanner to detect non-Tuya device names
+3. Fixed the fingerprint lookup to detect non-Tuya device names
 
 ### What You Need To Do
 
