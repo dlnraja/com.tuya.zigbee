@@ -148,8 +148,29 @@ async function main() {
   const toPromote = verDrafts.length > 0 ? verDrafts : drafts;
 
   if (!toPromote.length) {
-    log('\nNo draft builds to promote. All builds already have a channel.');
-    return;
+    // v5.11.80: Retry — Athom may still be processing the draft
+    for (let retry = 1; retry <= 3; retry++) {
+      log('\nNo draft builds yet. Retry ' + retry + '/3 — waiting 60s for Athom...');
+      await new Promise(r => setTimeout(r, 60000));
+      const r2 = await getBuilds(token);
+      if (r2) {
+        const d2 = r2.builds.filter(b => {
+          const ch = String(b.channel || b.status || '').toLowerCase();
+          return ch === 'draft' || ch === '' || ch === 'none';
+        });
+        const vd2 = d2.filter(b => b.version === ver);
+        const tp2 = vd2.length > 0 ? vd2 : d2;
+        if (tp2.length) {
+          toPromote.push(...tp2);
+          log('Found ' + tp2.length + ' draft build(s) after retry ' + retry);
+          break;
+        }
+      }
+    }
+    if (!toPromote.length) {
+      log('\nNo draft builds to promote after retries. All builds already have a channel.');
+      return;
+    }
   }
   log('\n' + toPromote.length + ' draft build(s) to promote');
 
