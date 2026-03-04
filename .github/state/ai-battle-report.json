@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-03-03T20:03:21.645Z",
-  "dryRun": true,
+  "timestamp": "2026-03-04T15:51:41.293Z",
+  "dryRun": false,
   "sources": {
     "external": 1607,
-    "github": 8,
+    "github": 7,
     "forks": 0,
-    "johan": 0,
+    "johan": 5,
     "gmail": 0,
     "forum": 0,
     "diagnostics": 0,
@@ -16,13 +16,89 @@
     "details": []
   },
   "classified": {
-    "total": 0,
-    "byMethod": {},
-    "details": []
+    "total": 8,
+    "byMethod": {
+      "ai-single": 8
+    },
+    "details": [
+      {
+        "fp": "_TS004F_smart",
+        "driver": "switch_1gang",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "external"
+        ]
+      },
+      {
+        "fp": "_TZ3210_amleyeej",
+        "driver": "button_wireless_1",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "external"
+        ]
+      },
+      {
+        "fp": "_TZB000_yqjaollc",
+        "driver": "plug_energy_monitor",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "external"
+        ]
+      },
+      {
+        "fp": "_TZE204_gkfb",
+        "driver": "motion_sensor",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TZE200_vvmbj46n",
+        "driver": "contact_sensor",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TZ3000Z_iedbgyxt",
+        "driver": "switch_2gang",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TZ3000_xxxxx",
+        "driver": "switch_3gang",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TZ3290_ot6ewjvmej",
+        "driver": "smoke_detector_advanced",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      }
+    ]
   },
   "implemented": {
     "added": 0,
     "skipped": 0
   },
-  "ghApiCalls": 0
+  "ghApiCalls": 100,
+  "aiSummary": "{\n  \"summary\": {\n    \"total_sources_scanned\": 1619,\n    \"confirmed_variants\": 0,\n    \"new_fingerprints_classified\": 8\n  },\n  \"top_patterns\": {\n    \"timestamp\": \"2026-03-04T15:41:31.447Z\",\n    \"detections\": {\n      \"inversion\": 0,\n      \"battery\": 0,\n      \"double_div\": 0,\n      \"pairing\": 0,\n      \"unknown\": 0,\n      \"flow_dup\": 0,\n      \"no_response\": 0\n    }\n  }\n}"
 }

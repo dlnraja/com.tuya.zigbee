@@ -1,42 +1,14 @@
 {
-  "timestamp": "2026-03-04T03:48:48.009Z",
-  "total": 3,
+  "timestamp": "2026-03-04T15:10:29.448Z",
+  "total": 1,
   "resolved": 0,
-  "unknown": 3,
+  "unknown": 1,
   "falsePositives": 0,
   "results": [
     {
-      "fp": "_TS004F_smart",
+      "fp": "_TZE200_vvmbj46n",
       "valid": true,
-      "prefix": "unknown",
-      "driver": null,
-      "pid": null,
-      "confidence": 0,
-      "sources": [],
-      "method": null,
-      "falsePositive": {
-        "isFP": false,
-        "reason": "unknown_not_false"
-      }
-    },
-    {
-      "fp": "_TZ3210_amleyeej",
-      "valid": true,
-      "prefix": "standard",
-      "driver": null,
-      "pid": null,
-      "confidence": 0,
-      "sources": [],
-      "method": null,
-      "falsePositive": {
-        "isFP": false,
-        "reason": "unknown_not_false"
-      }
-    },
-    {
-      "fp": "_TZB000_yqjaollc",
-      "valid": true,
-      "prefix": "standard",
+      "prefix": "tuya_dp",
       "driver": null,
       "pid": null,
       "confidence": 0,
