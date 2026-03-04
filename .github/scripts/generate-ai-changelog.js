@@ -2,6 +2,7 @@
 'use strict';
 const fs=require('fs'),path=require('path'),{execSync}=require('child_process');
 const{callAI}=require('./ai-helper');
+const{sanitize}=require('./sanitize-forum');
 const ROOT=path.join(__dirname,'..','..'),DDIR=path.join(ROOT,'drivers');
 const SD=path.join(__dirname,'..','state');
 const SUM=process.env.GITHUB_STEP_SUMMARY||'/dev/null';
@@ -90,7 +91,7 @@ async function generateChangelog(ctx){
 function templateChangelog(ctx){
   try{const {execSync:ex}=require('child_process');
     const r=JSON.parse(ex('node '+path.join(__dirname,'extract-changelog.js')+' '+ctx.version,{cwd:ROOT,encoding:'utf8'}).trim());
-    if(r.homeyText&&!r.homeyText.includes('Bug fixes'))return{homeyChangelog:r.homeyText,changelogMd:r.markdownText,readmeUpdate:r.oneLiner.substring(0,100),appDescription:'Control your Tuya Zigbee devices locally! '+ctx.driverCount+' drivers, '+(ctx.fpCount||'5500+')+' fingerprints.'};
+    if(r.homeyText&&!r.homeyText.includes('Bug fixes'))return{homeyChangelog:sanitize(r.homeyText),changelogMd:r.markdownText,readmeUpdate:r.oneLiner.substring(0,100),appDescription:'Control your Tuya Zigbee devices locally with broad device support.'};
   }catch{}
   const fixes=ctx.commits.filter(c=>/fix|bug|crash|error/i.test(c.msg));
   const feats=ctx.commits.filter(c=>/feat|add|new|support/i.test(c.msg));
@@ -108,7 +109,7 @@ function templateChangelog(ctx){
     homeyChangelog:'v'+ctx.version+': '+summary.substring(0,380),
     changelogMd:md||'- Minor fixes and internal cleanup\n',
     readmeUpdate:summary.substring(0,100)||'Bug fixes and maintenance',
-    appDescription:'Control your Tuya Zigbee + WiFi devices locally! '+ctx.driverCount+' drivers, '+(ctx.fpCount||'5500+')+' fingerprints, 1,457+ flow cards.'
+    appDescription:'Control your Tuya Zigbee + WiFi devices locally with broad device support.'
   };
 }
 
@@ -116,7 +117,7 @@ function templateChangelog(ctx){
 function updateHomeyChangelog(version,text){
   const f=path.join(ROOT,'.homeychangelog.json');
   let cl={};try{cl=JSON.parse(fs.readFileSync(f,'utf8'))}catch{}
-  text=text.replace(/\b(?:Auto-publish\w*|OAuth|IMAP|Gmail|AI\s*Battle|pipeline|workflow|cron|scraping|sanitiz\w+\s+\w+|infrastructure|forum\s*responder|session\s*API|token\s*exchange|delegation|client_secret)[^.,]*/gi,'').replace(/,\s*,/g,',').replace(/\.\s*\./g,'.').replace(/^\s*[,.]/,'').replace(/\s{2,}/g,' ').trim();
+  text=sanitize(text);
   cl[version]={en:text.substring(0,400)};
   // Keep last 20 versions, sorted newest first
   const sorted=Object.keys(cl).sort((a,b)=>b.localeCompare(a,undefined,{numeric:true})).slice(0,20);

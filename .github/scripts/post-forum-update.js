@@ -4,6 +4,7 @@ const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
 const{getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost}=require('./ai-helper');
+const{sanitize}=require('./sanitize-forum');
 const TID=140352;
 const SUM=process.env.GITHUB_STEP_SUMMARY||'/dev/null';
 const STATE_FILE=path.join(__dirname,'..','state','forum-update-state.json');
@@ -61,9 +62,7 @@ function gatherStats(){
   return{driverCount,totalFp,flowCards};
 }
 function cleanChangelog(t){
-  if(!t)return t;
-  const bad=/AI\s*(?:Battle|features|changelog)|multi-AI|pipeline|Auto-publish\w*|OAuth|client_secret|delegation\s*token|API\s*(?:auth|key)|token\s*(?:exchange|endpoint)|GitHub\s*(?:state|Actions?)|automation|infrastructure|cron|scraping|sanitiz\w+\s+\w+|forum\s*(?:responder|message)|bot\s*self|workflow|IMAP|Gmail|session\s*API|diagnostics?\s*report/gi;
-  return t.replace(bad,'').replace(/,\s*,/g,',').replace(/,\s*\./g,'.').replace(/\.\s*\./g,'.').replace(/^\s*,\s*/,'').trim();
+  return sanitize(t);
 }
 function parseChangelog(cl){
   cl=cleanChangelog(cl);

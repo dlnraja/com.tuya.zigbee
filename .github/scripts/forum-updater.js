@@ -6,6 +6,7 @@ const fs=require('fs'),path=require('path');
 const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
 const{textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost}=require('./ai-helper');
+const{sanitize}=require('./sanitize-forum');
 const TOPIC=140352;
 
 async function postToForum(content,auth){
@@ -50,7 +51,7 @@ async function main(){
     (reports['enrichment-report']?'Also cross-referenced a few external sources for new devices.\n\n':'')+
     'As usual, remove and re-pair if anything acts up after updating.';
 
-  const content=aiPost||fallback;
+  const content=sanitize(aiPost||fallback);
   console.log('Post content:',content.length,'chars');
 
   if(dryRun){
