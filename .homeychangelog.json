@@ -1,4 +1,7 @@
 {
+  "5.11.88": {
+    "en": "Universal Tuya Zigbee app v5.11.88: Added 145 drivers and 3093 fingerprints."
+  },
   "5.11.87": {
     "en": "Universal Tuya Zigbee app v5.11.87: Forum messages cleaned up, diagnostics reports updated."
   },
@@ -56,10 +59,7 @@
   "5.11.69": {
     "en": "Universal Tuya Zigbee app v5.11.69 adds a fallback for Gmail IMAP authentication and updates several workflows."
   },
-  "5.11.68": {
-    "en": "Universal Tuya Zigbee app v5.11.68: Added IMAP fallback for keepalive alerts and updated 145 drivers with 3093 fingerprints."
-  },
-  "5.11.88": {
-    "en": "v5.11.87: Cleaned up forum messages by removing scraping/bot/API/password references., Updated GitHub workflows to include shell:bash in 3 workflows., Upgraded weekly-external-sync to Node 22., Improved daily summary order and Gmail notifications., Updated diagnostics reports and state files, including comprehensive and enrichment reports."
+  "5.11.89": {
+    "en": "v5.11.88: Added 145 drivers., Added 3093 fingerprints., Sanitized forum messages and changelog to remove automation/infrastructure leaks., Updated diagnostics., Auto-published version 5.11.88."
   }
 }
