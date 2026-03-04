@@ -17,22 +17,26 @@ async function readViaIMAP(opts={}){
     if(!lock){await c.logout();return null}
     const out=[];
     try{
-      const kws=['tuya','zigbee','homey','_TZE','_TZ3','TS0','diagnostic'];
-      const senders=['community.homey.app','athom.com','notifications@github.com'];
+      const kws=['tuya','zigbee','homey','_TZE','_TZ3','TS0','diagnostic','fingerprint','device report'];
+      const senders=['community.homey.app','athom.com','notifications@github.com','dylan.rajasekaram@gmail.com','noreply@homey.app'];
       const seqSet=new Set();
       for(const kw of kws){try{(await c.search({since:new Date(since),subject:kw})).forEach(s=>seqSet.add(s))}catch{}}
       for(const fr of senders){try{(await c.search({since:new Date(since),from:fr})).forEach(s=>seqSet.add(s))}catch{}}
-      const seqs=[...seqSet].sort((a,b)=>b-a).slice(0,30);
+      // Also search body text for key Tuya patterns (catches forwarded/redirected emails)
+      for(const bk of ['_TZE200','_TZE204','_TZE284','_TZ3000','TS0601','diagnostic report','Homey']){try{(await c.search({since:new Date(since),body:bk})).forEach(s=>seqSet.add(s))}catch{}}
+      const seqs=[...seqSet].sort((a,b)=>b-a).slice(0,50);
       console.log('[IMAP]',seqSet.size,'relevant msgs, fetching',seqs.length);
       if(seqs.length>0){
         const range=seqs.join(',');
-        for await(const m of c.fetch(range,{envelope:true})){
+        for await(const m of c.fetch(range,{envelope:true,source:true})){
           try{
             const subj=m.envelope?.subject||'';
             const from=m.envelope?.from?.[0]?.address||'';
             const date=m.envelope?.date?.toISOString()||'';
             const uid=m.uid||m.seq||out.length+1;
-            out.push({id:'imap_'+uid,subj,from,date,body:subj,labels:[]});
+            let body=subj;
+            if(m.source){try{const raw=m.source.toString('utf8');const parts=raw.split(/\r?\n\r?\n/);if(parts.length>1)body=parts.slice(1).join('\n').substring(0,8000)}catch{}}
+            out.push({id:'imap_'+uid,subj,from,date,body,labels:[]});
           }catch(fe){console.log('[IMAP] skip:',fe.message)}
         }
       }

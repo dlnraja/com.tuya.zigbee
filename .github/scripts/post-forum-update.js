@@ -83,7 +83,7 @@ function buildForumPost(ver,cl,stats,url){
   let body=opener+'\n\n';
   if(items.length>1){body+=items.join(', ')+'.\n\n'}
   else if(cl)body+=cl+'\n\n';
-  body+=fmt(stats.driverCount)+' drivers, '+fmt(stats.totalFp)+'+ fingerprints now.';
+  body+='Covers a huge range of Tuya devices at this point.';
   return body;
 }
 
