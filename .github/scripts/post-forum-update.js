@@ -62,7 +62,7 @@ function gatherStats(){
 }
 function cleanChangelog(t){
   if(!t)return t;
-  const bad=/AI Battle|multi-AI|pipeline|Auto-published|OAuth|client_secret|delegation token|API auth|token exchange|GitHub state|GitHub Actions|automation|cron|scraping|forum responder|bot self|AI features|workflow/gi;
+  const bad=/AI\s*(?:Battle|features|changelog)|multi-AI|pipeline|Auto-publish\w*|OAuth|client_secret|delegation\s*token|API\s*(?:auth|key)|token\s*(?:exchange|endpoint)|GitHub\s*(?:state|Actions?)|automation|infrastructure|cron|scraping|sanitiz\w+\s+\w+|forum\s*(?:responder|message)|bot\s*self|workflow|IMAP|Gmail|session\s*API|diagnostics?\s*report/gi;
   return t.replace(bad,'').replace(/,\s*,/g,',').replace(/,\s*\./g,'.').replace(/\.\s*\./g,'.').replace(/^\s*,\s*/,'').trim();
 }
 function parseChangelog(cl){

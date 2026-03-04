@@ -75,7 +75,7 @@ jobs:
           git add .github/state/
           FILES=$(git diff --cached --name-only | wc -l)
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
-          git diff --cached --quiet || git commit -m "GitHub scanner v${VER}: triaged issues/PRs from dlnraja+JohanBendz, ${FILES} file(s) [skip ci]"
+          git diff --cached --quiet || git commit -m "v${VER}: processed issues/PRs, ${FILES} file(s) [skip ci]"
           git pull --rebase origin master || true
           git push || true
 
