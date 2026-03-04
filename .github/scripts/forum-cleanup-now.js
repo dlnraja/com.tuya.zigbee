@@ -63,12 +63,16 @@ const TO_DELETE = [
   { id: 714563, num: '140352#1493', reason: 'Duplicate update post' },
   { id: 714780, num: '140352#1522', reason: '3rd duplicate update' },
 
-  // T140352: Infra-leaking posts (no useful driver content)
-  { id: 716594, num: '140352#1574', reason: 'Leaks IMAP/Gmail/Auto-publish' },
-  { id: 716630, num: '140352#1576', reason: 'Leaks IMAP/OOM/envelope-only' },
-  { id: 716654, num: '140352#1578', reason: 'Leaks session API/SPA rendering' },
-  { id: 716945, num: '140352#1585', reason: 'Only stat counts, no content' },
-  { id: 717087, num: '140352#1589', reason: 'Leaks scan-forum/upstream-triage' },
+  // T140352: Bot template posts (no unique device content)
+  { id: 714495, num: '140352#1487', reason: 'Bot template' },
+  { id: 714623, num: '140352#1512', reason: 'Bot template' },
+  { id: 714834, num: '140352#1525', reason: 'Bot template' },
+  { id: 714908, num: '140352#1528', reason: 'Bot template' },
+  { id: 715034, num: '140352#1536', reason: 'Bot template' },
+  // T140352: Merged stubs + flagged
+  { id: 715292, num: '140352#1552', reason: 'Merged stub' },
+  { id: 715294, num: '140352#1553', reason: 'Merged stub' },
+  { id: 715328, num: '140352#1554', reason: 'Flagged by community' },
 ];
 
 // ===== POSTS TO EDIT (remove bot signatures, clean up) =====
@@ -99,6 +103,18 @@ const TO_EDIT = [
     newRaw: 'Just pushed **v5.11.65** to the [test channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/).\n\nFixed _TZE200_pay2byax — moved to contact_sensor driver where it belongs.' },
   { id: 716818, num: '140352#1581', reason: 'Remove stat counts',
     newRaw: 'Just pushed **v5.11.86** to the [test channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/).\n\nRewrote garage door driver to fix some issues (#128, #137).' },
+
+  // T140352: Infra-leaking version posts → rewrite as clean human updates
+  { id: 716594, num: '140352#1574', reason: 'Remove IMAP/Gmail/stats',
+    newRaw: '**v5.11.67** is up on the [test channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/). Some internal fixes in this one.' },
+  { id: 716630, num: '140352#1576', reason: 'Remove IMAP/OOM/stats',
+    newRaw: 'Just pushed **v5.11.75** to the [test channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/).\n\nFixed a memory issue and improved overall stability.' },
+  { id: 716654, num: '140352#1578', reason: 'Remove session API/SPA/stats',
+    newRaw: '**v5.11.78** just went up on [test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/). Cleaned up some internals and reduced app size.' },
+  { id: 716945, num: '140352#1585', reason: 'Remove stat counts',
+    newRaw: '**v5.11.88** is up on [test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/). Bug fixes and device improvements.' },
+  { id: 717087, num: '140352#1589', reason: 'Remove scan-forum/triage/stats',
+    newRaw: 'Dropped **v5.11.89** on the [test channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/).\n\nBug fixes and stability improvements.' },
 ];
 
 function getHeaders(auth, json) {
