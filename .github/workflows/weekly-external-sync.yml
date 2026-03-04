@@ -15,8 +15,15 @@ concurrency:
   group: external-sync
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
+permissions:
+  contents: write
+
 env:
-  NODE_VERSION: '18'
+  NODE_VERSION: '22'
 
 jobs:
   sync-external-sources:
