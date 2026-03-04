@@ -57,18 +57,33 @@ jobs:
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
         run: node .github/scripts/auto-promote-puppeteer.js
 
-      # Tier 2: API attempt (usually fails — Athom has no public promote endpoint)
-      - name: "Tier 2: Promote via API (fallback)"
-        id: api
+      # Tier 2: OAuth password grant (gets real access token)
+      - name: "Tier 2: Promote via OAuth"
+        id: oauth
         if: steps.puppeteer.outcome != 'success'
+        continue-on-error: true
+        timeout-minutes: 3
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          ATHOM_CLIENT_ID: ${{ secrets.ATHOM_CLIENT_ID }}
+          ATHOM_CLIENT_SECRET: ${{ secrets.ATHOM_CLIENT_SECRET }}
+        run: |
+          npm install athom-api --no-save 2>/dev/null || true
+          node .github/scripts/auto-promote-oauth.js
+
+      # Tier 3: API attempt with PAT
+      - name: "Tier 3: Promote via API (PAT)"
+        id: api
+        if: steps.puppeteer.outcome != 'success' && steps.oauth.outcome != 'success'
         continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/auto-publish-draft.js
 
-      # Tier 3: Retry Puppeteer after 30s
-      - name: "Tier 3: Verify retry (Puppeteer)"
-        if: steps.puppeteer.outcome != 'success' && steps.api.outcome != 'success'
+      # Tier 4: Retry Puppeteer after 30s
+      - name: "Tier 4: Verify retry (Puppeteer)"
+        if: steps.puppeteer.outcome != 'success' && steps.oauth.outcome != 'success' && steps.api.outcome != 'success'
         continue-on-error: true
         timeout-minutes: 5
         env:
@@ -99,6 +114,6 @@ jobs:
         run: |
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           echo "## Draft to Test" >> $GITHUB_STEP_SUMMARY
-          echo "v$VER | Puppeteer=${{ steps.puppeteer.outcome }} | API=${{ steps.api.outcome }}" >> $GITHUB_STEP_SUMMARY
+          echo "v$VER | Puppeteer=${{ steps.puppeteer.outcome }} | OAuth=${{ steps.oauth.outcome }} | API=${{ steps.api.outcome }}" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "[Test link](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee/versions)" >> $GITHUB_STEP_SUMMARY
