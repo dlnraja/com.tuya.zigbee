@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-04T04:06:59.197Z",
+  "timestamp": "2026-03-04T15:29:19.576Z",
   "stats": {
     "ghCalls": 63,
     "codeResults": 171,
@@ -11,7 +11,7 @@
     "unsupported": 38,
     "withDPs": 0,
     "withIssues": 0,
-    "duration": 386
+    "duration": 402
   },
   "topUnsupported": [
     {
@@ -58,7 +58,7 @@
       "codeRefCount": 11,
       "confidence": 200,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/a82f3b1111fd31d2f5edb563aa2ace63d363e0b7/src/devices/bseed.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/d4c0ceecb94fcd1cae4b569b5b61dcbd8db5602a/src/devices/bseed.ts"
     },
     {
       "fp": "_TZE200_5uodvhgc",
@@ -157,7 +157,7 @@
       "codeRefCount": 6,
       "confidence": 115,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/a82f3b1111fd31d2f5edb563aa2ace63d363e0b7/src/devices/evanell.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/d4c0ceecb94fcd1cae4b569b5b61dcbd8db5602a/src/devices/evanell.ts"
     },
     {
       "fp": "_TZE200_swhwv3k3",
@@ -243,7 +243,7 @@
       "codeRefCount": 4,
       "confidence": 70,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/a82f3b1111fd31d2f5edb563aa2ace63d363e0b7/src/devices/engo.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/d4c0ceecb94fcd1cae4b569b5b61dcbd8db5602a/src/devices/engo.ts"
     },
     {
       "fp": "_TZE204_bdblidq3",
@@ -263,7 +263,7 @@
       "codeRefCount": 3,
       "confidence": 55,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/a82f3b1111fd31d2f5edb563aa2ace63d363e0b7/src/devices/bseed.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/d4c0ceecb94fcd1cae4b569b5b61dcbd8db5602a/src/devices/bseed.ts"
     },
     {
       "fp": "_TZE200_bdblidq3",
@@ -283,7 +283,7 @@
       "codeRefCount": 3,
       "confidence": 55,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/a82f3b1111fd31d2f5edb563aa2ace63d363e0b7/src/devices/bseed.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/d4c0ceecb94fcd1cae4b569b5b61dcbd8db5602a/src/devices/bseed.ts"
     },
     {
       "fp": "_TZE200_lrznf59v",
@@ -303,7 +303,7 @@
       "codeRefCount": 3,
       "confidence": 55,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/a82f3b1111fd31d2f5edb563aa2ace63d363e0b7/src/devices/siterwell.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/d4c0ceecb94fcd1cae4b569b5b61dcbd8db5602a/src/devices/siterwell.ts"
     },
     {
       "fp": "_TZE204_e5hpkc6d",
@@ -439,7 +439,7 @@
       "codeRefCount": 2,
       "confidence": 35,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/a82f3b1111fd31d2f5edb563aa2ace63d363e0b7/src/devices/box.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/d4c0ceecb94fcd1cae4b569b5b61dcbd8db5602a/src/devices/box.ts"
     },
     {
       "fp": "_TZE200_o7vduidq",
@@ -458,7 +458,7 @@
       "codeRefCount": 2,
       "confidence": 35,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/a82f3b1111fd31d2f5edb563aa2ace63d363e0b7/src/devices/box.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/d4c0ceecb94fcd1cae4b569b5b61dcbd8db5602a/src/devices/box.ts"
     },
     {
       "fp": "_TZE200_rxypyjkw",
@@ -477,7 +477,7 @@
       "codeRefCount": 2,
       "confidence": 35,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/a82f3b1111fd31d2f5edb563aa2ace63d363e0b7/src/devices/evanell.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/d4c0ceecb94fcd1cae4b569b5b61dcbd8db5602a/src/devices/evanell.ts"
     },
     {
       "fp": "_TZE200_test",
@@ -533,7 +533,7 @@
       "codeRefCount": 2,
       "confidence": 35,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/a82f3b1111fd31d2f5edb563aa2ace63d363e0b7/src/devices/mazda.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/d4c0ceecb94fcd1cae4b569b5b61dcbd8db5602a/src/devices/mazda.ts"
     },
     {
       "fp": "_TZE204_k6rdmisz",
@@ -551,7 +551,7 @@
       "codeRefCount": 2,
       "confidence": 35,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/a82f3b1111fd31d2f5edb563aa2ace63d363e0b7/src/devices/mazda.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/d4c0ceecb94fcd1cae4b569b5b61dcbd8db5602a/src/devices/mazda.ts"
     },
     {
       "fp": "_TZE200_zaabefnt",
@@ -569,7 +569,7 @@
       "codeRefCount": 1,
       "confidence": 30,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/a82f3b1111fd31d2f5edb563aa2ace63d363e0b7/src/devices/engo.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/d4c0ceecb94fcd1cae4b569b5b61dcbd8db5602a/src/devices/engo.ts"
     },
     {
       "fp": "_TZE204_uc0iv1hb",
@@ -587,7 +587,7 @@
       "codeRefCount": 1,
       "confidence": 30,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/a82f3b1111fd31d2f5edb563aa2ace63d363e0b7/src/devices/spacetronik.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/d4c0ceecb94fcd1cae4b569b5b61dcbd8db5602a/src/devices/spacetronik.ts"
     },
     {
       "fp": "_TZE204_r7brscr6",
@@ -605,7 +605,7 @@
       "codeRefCount": 1,
       "confidence": 30,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/a82f3b1111fd31d2f5edb563aa2ace63d363e0b7/src/devices/tech.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/d4c0ceecb94fcd1cae4b569b5b61dcbd8db5602a/src/devices/tech.ts"
     },
     {
       "fp": "_TZE204_djurk6p5",
@@ -623,7 +623,7 @@
       "codeRefCount": 1,
       "confidence": 30,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/a82f3b1111fd31d2f5edb563aa2ace63d363e0b7/src/devices/engo.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/d4c0ceecb94fcd1cae4b569b5b61dcbd8db5602a/src/devices/engo.ts"
     },
     {
       "fp": "_TZE284_hcs66axl",
@@ -641,7 +641,7 @@
       "codeRefCount": 1,
       "confidence": 30,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/a82f3b1111fd31d2f5edb563aa2ace63d363e0b7/src/devices/nedis.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/d4c0ceecb94fcd1cae4b569b5b61dcbd8db5602a/src/devices/nedis.ts"
     },
     {
       "fp": "_TZE284_hbjwgkdh",
@@ -659,7 +659,7 @@
       "codeRefCount": 1,
       "confidence": 30,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/a82f3b1111fd31d2f5edb563aa2ace63d363e0b7/src/devices/xenon.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/d4c0ceecb94fcd1cae4b569b5b61dcbd8db5602a/src/devices/xenon.ts"
     },
     {
       "fp": "_TZE200_dtzziy1e",
@@ -711,7 +711,7 @@
       "codeRefCount": 2,
       "confidence": 25,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/a82f3b1111fd31d2f5edb563aa2ace63d363e0b7/src/devices/iotperfect.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/d4c0ceecb94fcd1cae4b569b5b61dcbd8db5602a/src/devices/iotperfect.ts"
     },
     {
       "fp": "_TZE200_7rghpoxo",
@@ -759,7 +759,7 @@
       "codeRefCount": 1,
       "confidence": 20,
       "topIssue": null,
-      "topCode": "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/214ae193b7767caa7fbbf576f63c84c5a6ab3b57/devices/tuya/_TZE200_TS0601_4in1_temp_hum_lux_presence.json"
+      "topCode": "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/4d374ea6da85cb43da38024197f7e998020b9c46/devices/tuya/_TZE200_TS0601_4in1_temp_hum_lux_presence.json"
     }
   ],
   "bugsInSupported": [],
@@ -783,5 +783,5 @@
       "topics": []
     }
   ],
-  "aiPlan": "Here's a summary of unsupported device profiles (FPs) and new repositories for Tuya Zigbee integration, including suggested drivers and capability mappings.\n\n### Unsupported Device Profiles (FPs)\n\n| FP                     | PIDs         | Suggested Driver                          | DP → Capability Mapping | Repositories                                                                                     | Confidence |\n|-----------------------|--------------|------------------------------------------|-------------------------|--------------------------------------------------------------------------------------------------|------------|\n| _TZE200_wt9agwf3      | TS0601       | Koenkk/zigbee-herdsman-converters       | N/A                     | wintechis/legacy-integration-wot, Koenkk/zigbee-herdsman-converters, blakadder/zigbee        | 200        |\n| _TS0601_cover         | TS0601       | Koenkk/zigbee-herdsman-converters       | N/A                     | Koenkk/zigbee-herdsman-converters, Koenkk/zigbee2mqtt.io, itavero/homebridge-z2m            | 200        |\n| _TZE200_5uodvhgc      | TS0601, TS011F | Koenkk/zigbee-herdsman-converters     | N/A                     | wintechis/legacy-integration-wot, kvazis/training, Koenkk/zigbee-herdsman-converters         | 175        |\n| _TZE200_6qoazbre      | TS0601, TS0004, TS0201, TS011F | Koenkk/zigbee-herdsman-converters | N/A                     | wintechis/legacy-integration-wot, Koenkk/zigbee-herdsman-converters, slsys/Gateway           | 145        |\n| _TZE200_fcooykb4      | TS0601, TS0004, TS0201, TS011F | Koenkk/zigbee-herdsman-converters | N/A                     | wintechis/legacy-integration-wot, Koenkk/zigbee-herdsman-converters, slsys/Gateway           | 145        |\n| _TZE200_dmfguuli      | TS0601       | Koenkk/zigbee-herdsman-converters       | N/A                     | Koenkk/zigbee-herdsman-converters, blakadder/zigbee, dotnetpro100888/Koenkk-zigbee-herdsman-converters | 115        |\n| _TZE200_swhwv3k3      | TS0601       | Koenkk/zigbee-herdsman-converters       | N/A                     | wintechis/legacy-integration-wot, Koenkk/zigbee-herdsman-converters, dotnetpro100888/Koenkk-zigbee-herdsman-converters | 95         |\n| _TZ3000_go9rahj5      | TS0003, TS0002, TS011F, TS0004 | Mariano-Github/Smartthings-DTH | N/A                     | Mariano-Github/Smartthings-DTH, ChristianH21220/SmartThings_Public                             | 80         |\n| _TZE200_e5hpkc6d      | TS0601       | Koenkk/zigbee-herdsman-converters       | N/A                     | wintechis/legacy-integration-wot, Koenkk/zigbee-herdsman-converters, zigpy/zha               | 75         |\n| _TZE200_oahqgdig      | TS0601, TS0001 | Koenkk/zigbee-herdsman-converters     | N/A                     | Koenkk/zigbee-herdsman-converters, lsroka76/Z2S_Library                                      | 70         |\n| _TZE204_bdblidq3      | TS0601       | Koenkk/zigbee-herdsman-converters       | N/A                     | Koenkk/zigbee-herdsman-converters, hardycheng-github/smarthome-blog                          | 55         |\n| _TZE200_bdblidq3      | TS0601       | Koenkk/zigbee-herdsman-converters       | N/A                     | Koenkk/zigbee-herdsman-converters, hardycheng-github/smarthome-blog                          | 55         |\n| _TZE200_lrznf59v      | TS0601       | Koenkk/zigbee-herdsman-converters       | N/A                     | Koenkk/zigbee-herdsman-converters, zigpy/zha-device-handlers                                  | 55         |\n| _TZE204_e5hpkc6d      | TS0601       | Koenkk/zigbee-herdsman-converters       | N/A                     | wintechis/legacy-integration-wot, Koenkk/zigbee-herdsman-converters                          | 55         |\n| _TZ3000_xxxxxxxx      | TS004F, TS0044 | kkossev/Hubitat                        | N/A                     | kkossev/Hubitat                                                                                 | 55         |\n\n### New Repositories\n\n| Repository Name                          | Stars | Description                                        | Value for Integration |\n|------------------------------------------|-------|----------------------------------------------------|-----------------------|\n| kodalissri/com.MyZigbee.Devices         | 0     | Homey App for Tuya Devices                        | Potentially valuable for Homey users looking for Tuya integration. |\n| oskarirauta/homey-owon-driver           | 0     | OWON THS317-ET ZigBee Driver (non-tuya version)  | Limited value unless expanded to support Tuya devices. |\n\nThis table provides a clear overview of unsupported device"
+  "aiPlan": "Here's a summary of the unsupported device profiles (FPs) and new repositories for Tuya Zigbee integration, along with suggested drivers and capability mappings.\n\n### Unsupported Device Profiles\n\n| FP                     | PIDs         | Suggested Driver                          | DP → Capability Map | Repositories                                                                 | Issues | Confidence |\n|-----------------------|--------------|------------------------------------------|---------------------|-----------------------------------------------------------------------------|--------|------------|\n| _TZE200_wt9agwf3      | TS0601       | Koenkk/zigbee-herdsman-converters       | N/A                 | wintechis/legacy-integration-wot, Koenkk/zigbee-herdsman-converters, blakadder/zigbee | 0      | 200        |\n| _TS0601_cover         | TS0601       | Koenkk/zigbee-herdsman-converters       | N/A                 | Koenkk/zigbee-herdsman-converters, Koenkk/zigbee2mqtt.io, itavero/homebridge-z2m | 0      | 200        |\n| _TZE200_5uodvhgc      | TS0601, TS011F | Koenkk/zigbee-herdsman-converters     | N/A                 | wintechis/legacy-integration-wot, kvazis/training, Koenkk/zigbee-herdsman-converters | 0      | 175        |\n| _TZE200_6qoazbre      | TS0601, TS0004, TS0201, TS011F | Koenkk/zigbee-herdsman-converters | N/A                 | wintechis/legacy-integration-wot, Koenkk/zigbee-herdsman-converters, slsys/Gateway | 0      | 145        |\n| _TZE200_fcooykb4      | TS0601, TS0004, TS0201, TS011F | Koenkk/zigbee-herdsman-converters | N/A                 | wintechis/legacy-integration-wot, Koenkk/zigbee-herdsman-converters, slsys/Gateway | 0      | 145        |\n| _TZE200_dmfguuli      | TS0601       | Koenkk/zigbee-herdsman-converters       | N/A                 | Koenkk/zigbee-herdsman-converters, blakadder/zigbee, dotnetpro100888/Koenkk-zigbee-herdsman-converters | 0      | 115        |\n| _TZE200_swhwv3k3      | TS0601       | Koenkk/zigbee-herdsman-converters       | N/A                 | wintechis/legacy-integration-wot, Koenkk/zigbee-herdsman-converters, dotnetpro100888/Koenkk-zigbee-herdsman-converters | 0      | 95         |\n| _TZ3000_go9rahj5      | TS0003, TS0002, TS011F, TS0004 | Mariano-Github/Smartthings-DTH | N/A                 | Mariano-Github/Smartthings-DTH, ChristianH21220/SmartThings_Public         | 0      | 80         |\n| _TZE200_e5hpkc6d      | TS0601       | Koenkk/zigbee-herdsman-converters       | N/A                 | wintechis/legacy-integration-wot, Koenkk/zigbee-herdsman-converters, zigpy/zha | 0      | 75         |\n| _TZE200_oahqgdig      | TS0601, TS0001 | Koenkk/zigbee-herdsman-converters     | N/A                 | Koenkk/zigbee-herdsman-converters, lsroka76/Z2S_Library                   | 0      | 70         |\n| _TZE204_bdblidq3      | TS0601       | Koenkk/zigbee-herdsman-converters       | N/A                 | Koenkk/zigbee-herdsman-converters, hardycheng-github/smarthome-blog       | 0      | 55         |\n| _TZE200_bdblidq3      | TS0601       | Koenkk/zigbee-herdsman-converters       | N/A                 | Koenkk/zigbee-herdsman-converters, hardycheng-github/smarthome-blog       | 0      | 55         |\n| _TZE200_lrznf59v      | TS0601       | Koenkk/zigbee-herdsman-converters       | N/A                 | Koenkk/zigbee-herdsman-converters, zigpy/zha-device-handlers               | 0      | 55         |\n| _TZE204_e5hpkc6d      | TS0601       | Koenkk/zigbee-herdsman-converters       | N/A                 | wintechis/legacy-integration-wot, Koenkk/zigbee-herdsman-converters       | 0      | 55         |\n| _TZ3000_xxxxxxxx      | TS004F, TS0044 | kkossev/Hubitat                        | N/A                 | kkossev/Hubitat                                                            | 0      | 55         |\n\n### New Repositories\n\n| Repository Name                       | Stars | Description                                      | Value for Integration |\n|---------------------------------------|-------|--------------------------------------------------|-----------------------|\n| kodalissri/com.MyZigbee.Devices      | 0     | Homey App for Tuya Devices                       | Moderate              |\n| oskarirauta/homey-owon-driver"
 }
