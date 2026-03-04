@@ -1,12 +1,12 @@
 {
-  "date": "2026-03-03T04:00:59.075Z",
+  "date": "2026-03-04T03:54:01.068Z",
   "local": {
     "drivers": 145,
-    "fps": 4217
+    "fps": 4213
   },
   "forkScan": {
     "filesScanned": 4716,
-    "newFPs": 142092
+    "newFPs": 142155
   },
   "upstream": {
     "prs": 0,
@@ -96,6 +96,12 @@
       "branch": "SDK3"
     },
     {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "temphumidsensor4",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
       "mfr": "TUYATEC-O6SNCwd6",
       "driver": "wall_switch_2_gang",
       "fork": "pkuijpers/com.tuya.zigbee",
@@ -186,6 +192,12 @@
       "branch": "pr-tuya-fixes"
     },
     {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "temphumidsensor4",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "pr-tuya-fixes"
+    },
+    {
       "mfr": "TUYATEC-O6SNCwd6",
       "driver": "wall_switch_2_gang",
       "fork": "pkuijpers/com.tuya.zigbee",
@@ -272,6 +284,12 @@
     {
       "mfr": "TUYATEC-qun7vq14",
       "driver": "temphumidsensor2",
+      "fork": "bmalkow/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "temphumidsensor4",
       "fork": "bmalkow/com.tuya.zigbee",
       "branch": "SDK3"
     },
@@ -390,6 +408,12 @@
       "branch": "main"
     },
     {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "temphumidsensor4",
+      "fork": "baschte/de.baschte.tuya.zigbee",
+      "branch": "main"
+    },
+    {
       "mfr": "TUYATEC-O6SNCwd6",
       "driver": "wall_switch_2_gang",
       "fork": "baschte/de.baschte.tuya.zigbee",
@@ -480,6 +504,12 @@
       "branch": "SDK3"
     },
     {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "temphumidsensor4",
+      "fork": "tomkusz/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
       "mfr": "TUYATEC-O6SNCwd6",
       "driver": "wall_switch_2_gang",
       "fork": "tomkusz/com.tuya.zigbee",
@@ -566,6 +596,12 @@
     {
       "mfr": "TUYATEC-qun7vq14",
       "driver": "temphumidsensor2",
+      "fork": "Mmaaikel/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "temphumidsensor4",
       "fork": "Mmaaikel/com.tuya.zigbee",
       "branch": "SDK3"
     },
@@ -668,6 +704,12 @@
     {
       "mfr": "TUYATEC-qun7vq14",
       "driver": "temphumidsensor2",
+      "fork": "hendriksenremco/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "temphumidsensor4",
       "fork": "hendriksenremco/com.tuya.zigbee",
       "branch": "SDK3"
     },
@@ -774,6 +816,12 @@
       "branch": "SDK3"
     },
     {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "temphumidsensor4",
+      "fork": "sebastianbrand01/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
       "mfr": "TUYATEC-O6SNCwd6",
       "driver": "wall_switch_2_gang",
       "fork": "sebastianbrand01/com.tuya.zigbee",
@@ -860,6 +908,12 @@
     {
       "mfr": "TUYATEC-qun7vq14",
       "driver": "temphumidsensor2",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "temphumidsensor4",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "SDK3"
     },
@@ -2574,6 +2628,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "_TZE204_wfxuhoea",
+      "driver": "garage_door",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "gd-dc-001",
       "driver": "garage_door",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -4038,6 +4098,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "soil_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "coolo",
       "driver": "soil_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -4704,6 +4770,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "thermostat_tuya_dp",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "beca",
       "driver": "thermostat_tuya_dp",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -5304,6 +5376,12 @@
       "branch": "SDK3"
     },
     {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "temphumidsensor4",
+      "fork": "SietzeM/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
       "mfr": "TUYATEC-O6SNCwd6",
       "driver": "wall_switch_2_gang",
       "fork": "SietzeM/com.tuya.zigbee",
@@ -5394,6 +5472,12 @@
       "branch": "SDK3"
     },
     {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "temphumidsensor4",
+      "fork": "theswim/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
       "mfr": "TUYATEC-O6SNCwd6",
       "driver": "wall_switch_2_gang",
       "fork": "theswim/com.tuya.zigbee",
@@ -5484,6 +5568,12 @@
       "branch": "SDK3"
     },
     {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "temphumidsensor4",
+      "fork": "willarentz/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
       "mfr": "TUYATEC-O6SNCwd6",
       "driver": "wall_switch_2_gang",
       "fork": "willarentz/com.tuya.zigbee",
@@ -5574,6 +5664,12 @@
       "branch": "SDK3"
     },
     {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "temphumidsensor4",
+      "fork": "kindberg95/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
       "mfr": "TUYATEC-O6SNCwd6",
       "driver": "wall_switch_2_gang",
       "fork": "kindberg95/com.tuya.zigbee",
@@ -5596,6 +5692,12 @@
       "driver": "temphumidsensor",
       "fork": "Peter-Celica/com.tuya.zigbee",
       "branch": "SDK3-test"
+    },
+    {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "lcdtemphumidsensor_3",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "SDK3"
     },
     {
       "mfr": "LELLKI",
@@ -5772,6 +5874,12 @@
       "branch": "patch-1"
     },
     {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "temphumidsensor4",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-1"
+    },
+    {
       "mfr": "TUYATEC-O6SNCwd6",
       "driver": "wall_switch_2_gang",
       "fork": "Peter-Celica/com.tuya.zigbee",
@@ -5862,6 +5970,12 @@
       "branch": "patch-2"
     },
     {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "temphumidsensor4",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-2"
+    },
+    {
       "mfr": "TUYATEC-O6SNCwd6",
       "driver": "wall_switch_2_gang",
       "fork": "Peter-Celica/com.tuya.zigbee",
@@ -5952,6 +6066,12 @@
       "branch": "patch-3"
     },
     {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "temphumidsensor4",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-3"
+    },
+    {
       "mfr": "TUYATEC-O6SNCwd6",
       "driver": "wall_switch_2_gang",
       "fork": "Peter-Celica/com.tuya.zigbee",
@@ -6042,6 +6162,12 @@
       "branch": "patch-4"
     },
     {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "temphumidsensor4",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-4"
+    },
+    {
       "mfr": "TUYATEC-O6SNCwd6",
       "driver": "wall_switch_2_gang",
       "fork": "Peter-Celica/com.tuya.zigbee",
@@ -6132,6 +6258,12 @@
       "branch": "patch-5"
     },
     {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "temphumidsensor4",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-5"
+    },
+    {
       "mfr": "TUYATEC-O6SNCwd6",
       "driver": "wall_switch_2_gang",
       "fork": "Peter-Celica/com.tuya.zigbee",
@@ -6218,6 +6350,12 @@
     {
       "mfr": "TUYATEC-qun7vq14",
       "driver": "temphumidsensor2",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-6"
+    },
+    {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "temphumidsensor4",
       "fork": "Peter-Celica/com.tuya.zigbee",
       "branch": "patch-6"
     },
@@ -6238,6 +6376,54 @@
       "driver": "temphumidsensor",
       "fork": "Peter-Celica/com.tuya.zigbee",
       "branch": "sdk-3"
+    },
+    {
+      "mfr": "_TZe200_nklqjk62",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "auto/weekly-fingerprint-sync"
+    },
+    {
+      "mfr": "_TZe200_pay2byax",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "auto/weekly-fingerprint-sync"
+    },
+    {
+      "mfr": "_TZE204_wfxuhoea",
+      "driver": "garage_door",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "auto/weekly-fingerprint-sync"
+    },
+    {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "thermostat_tuya_dp",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "auto/weekly-fingerprint-sync"
+    },
+    {
+      "mfr": "_TZE204_wfxuhoea",
+      "driver": "garage_door",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "cascade/traite-tout-lesto-do-et-automaztise-ad3c60"
+    },
+    {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "thermostat_tuya_dp",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "cascade/traite-tout-lesto-do-et-automaztise-ad3c60"
+    },
+    {
+      "mfr": "_TZE204_wfxuhoea",
+      "driver": "garage_door",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "cascade/traite-tout-lesto-do-et-automaztise-b4f522"
+    },
+    {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "thermostat_tuya_dp",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "cascade/traite-tout-lesto-do-et-automaztise-b4f522"
     },
     {
       "mfr": "_tz3210_rkgngb5o",
@@ -6271,6 +6457,24 @@
     },
     {
       "mfr": "ClimaxTechnology",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "feat/add-woodupp-create-led"
+    },
+    {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "feat/add-woodupp-create-led"
+    },
+    {
+      "mfr": "_TZe200_nklqjk62",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "feat/add-woodupp-create-led"
+    },
+    {
+      "mfr": "_TZe200_pay2byax",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "feat/add-woodupp-create-led"
@@ -11586,6 +11790,18 @@
       "branch": "feat/add-woodupp-create-led"
     },
     {
+      "mfr": "_TZe200_nklqjk62",
+      "driver": "soil_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "feat/add-woodupp-create-led"
+    },
+    {
+      "mfr": "_TZe200_pay2byax",
+      "driver": "soil_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "feat/add-woodupp-create-led"
+    },
+    {
       "mfr": "_tz3000_0ausfos0",
       "driver": "switch_1gang",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -14030,6 +14246,18 @@
     {
       "mfr": "ClimaxTechnology",
       "driver": "water_leak_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "feat/add-woodupp-create-led"
+    },
+    {
+      "mfr": "_TZe200_nklqjk62",
+      "driver": "weather_station_outdoor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "feat/add-woodupp-create-led"
+    },
+    {
+      "mfr": "_TZe200_pay2byax",
+      "driver": "weather_station_outdoor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "feat/add-woodupp-create-led"
     },
@@ -44076,6 +44304,12 @@
       "branch": "pr-johanbendz-v5.5.518"
     },
     {
+      "mfr": "_TZE204_wfxuhoea",
+      "driver": "garage_door",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "pr-johanbendz-v5.5.518"
+    },
+    {
       "mfr": "Tuya",
       "driver": "garage_door",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -53539,6 +53773,12 @@
     },
     {
       "mfr": "_tze200_viy9ihs7",
+      "driver": "thermostat_tuya_dp",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "pr-johanbendz-v5.5.518"
+    },
+    {
+      "mfr": "_TZE200_vvmbj46n",
       "driver": "thermostat_tuya_dp",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "pr-johanbendz-v5.5.518"
@@ -55218,6 +55458,24 @@
       "branch": "feat/add-woodupp-create-led"
     },
     {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "climate_sensor",
+      "fork": "michelhelsdingen/com.tuya.zigbee",
+      "branch": "feat/add-woodupp-create-led"
+    },
+    {
+      "mfr": "_TZe200_nklqjk62",
+      "driver": "climate_sensor",
+      "fork": "michelhelsdingen/com.tuya.zigbee",
+      "branch": "feat/add-woodupp-create-led"
+    },
+    {
+      "mfr": "_TZe200_pay2byax",
+      "driver": "climate_sensor",
+      "fork": "michelhelsdingen/com.tuya.zigbee",
+      "branch": "feat/add-woodupp-create-led"
+    },
+    {
       "mfr": "_tz1800_ladpngdx",
       "driver": "climate_sensor",
       "fork": "michelhelsdingen/com.tuya.zigbee",
@@ -60528,6 +60786,18 @@
       "branch": "feat/add-woodupp-create-led"
     },
     {
+      "mfr": "_TZe200_nklqjk62",
+      "driver": "soil_sensor",
+      "fork": "michelhelsdingen/com.tuya.zigbee",
+      "branch": "feat/add-woodupp-create-led"
+    },
+    {
+      "mfr": "_TZe200_pay2byax",
+      "driver": "soil_sensor",
+      "fork": "michelhelsdingen/com.tuya.zigbee",
+      "branch": "feat/add-woodupp-create-led"
+    },
+    {
       "mfr": "_tz3000_0ausfos0",
       "driver": "switch_1gang",
       "fork": "michelhelsdingen/com.tuya.zigbee",
@@ -62972,6 +63242,18 @@
     {
       "mfr": "ClimaxTechnology",
       "driver": "water_leak_sensor",
+      "fork": "michelhelsdingen/com.tuya.zigbee",
+      "branch": "feat/add-woodupp-create-led"
+    },
+    {
+      "mfr": "_TZe200_nklqjk62",
+      "driver": "weather_station_outdoor",
+      "fork": "michelhelsdingen/com.tuya.zigbee",
+      "branch": "feat/add-woodupp-create-led"
+    },
+    {
+      "mfr": "_TZe200_pay2byax",
+      "driver": "weather_station_outdoor",
       "fork": "michelhelsdingen/com.tuya.zigbee",
       "branch": "feat/add-woodupp-create-led"
     },
@@ -110245,6 +110527,12 @@
     },
     {
       "mfr": "_tze204_wfxuhoea",
+      "driver": "garage_door",
+      "fork": "michelhelsdingen/com.tuya.zigbee",
+      "branch": "fix/hobeian-10g-sensor-values"
+    },
+    {
+      "mfr": "_TZE204_wfxuhoea",
       "driver": "garage_door",
       "fork": "michelhelsdingen/com.tuya.zigbee",
       "branch": "fix/hobeian-10g-sensor-values"
@@ -159780,6 +160068,12 @@
       "branch": "fix/hobeian-10g-sensor-values"
     },
     {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "soil_sensor",
+      "fork": "michelhelsdingen/com.tuya.zigbee",
+      "branch": "fix/hobeian-10g-sensor-values"
+    },
+    {
       "mfr": "_tze200_wqashyqo",
       "driver": "soil_sensor",
       "fork": "michelhelsdingen/com.tuya.zigbee",
@@ -181255,6 +181549,12 @@
     },
     {
       "mfr": "_tze200_vvmbj46n",
+      "driver": "thermostat_tuya_dp",
+      "fork": "michelhelsdingen/com.tuya.zigbee",
+      "branch": "fix/hobeian-10g-sensor-values"
+    },
+    {
+      "mfr": "_TZE200_vvmbj46n",
       "driver": "thermostat_tuya_dp",
       "fork": "michelhelsdingen/com.tuya.zigbee",
       "branch": "fix/hobeian-10g-sensor-values"
@@ -240204,6 +240504,12 @@
       "branch": "master"
     },
     {
+      "mfr": "_TZE204_wfxuhoea",
+      "driver": "garage_door",
+      "fork": "michelhelsdingen/com.tuya.zigbee",
+      "branch": "master"
+    },
+    {
       "mfr": "3REALITY",
       "driver": "garage_door",
       "fork": "michelhelsdingen/com.tuya.zigbee",
@@ -289734,6 +290040,12 @@
       "branch": "master"
     },
     {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "soil_sensor",
+      "fork": "michelhelsdingen/com.tuya.zigbee",
+      "branch": "master"
+    },
+    {
       "mfr": "_tze200_wqashyqo",
       "driver": "soil_sensor",
       "fork": "michelhelsdingen/com.tuya.zigbee",
@@ -311209,6 +311521,12 @@
     },
     {
       "mfr": "_tze200_vvmbj46n",
+      "driver": "thermostat_tuya_dp",
+      "fork": "michelhelsdingen/com.tuya.zigbee",
+      "branch": "master"
+    },
+    {
+      "mfr": "_TZE200_vvmbj46n",
       "driver": "thermostat_tuya_dp",
       "fork": "michelhelsdingen/com.tuya.zigbee",
       "branch": "master"
@@ -352926,6 +353244,12 @@
       "branch": "pr-johanbendz-v5.5.518"
     },
     {
+      "mfr": "_TZE204_wfxuhoea",
+      "driver": "garage_door",
+      "fork": "michelhelsdingen/com.tuya.zigbee",
+      "branch": "pr-johanbendz-v5.5.518"
+    },
+    {
       "mfr": "Tuya",
       "driver": "garage_door",
       "fork": "michelhelsdingen/com.tuya.zigbee",
@@ -362389,6 +362713,12 @@
     },
     {
       "mfr": "_tze200_viy9ihs7",
+      "driver": "thermostat_tuya_dp",
+      "fork": "michelhelsdingen/com.tuya.zigbee",
+      "branch": "pr-johanbendz-v5.5.518"
+    },
+    {
+      "mfr": "_TZE200_vvmbj46n",
       "driver": "thermostat_tuya_dp",
       "fork": "michelhelsdingen/com.tuya.zigbee",
       "branch": "pr-johanbendz-v5.5.518"
@@ -423164,6 +423494,12 @@
     {
       "mfr": "Monoprice",
       "driver": "formaldehyde_sensor",
+      "fork": "packetninja/com.tuya.zigbee",
+      "branch": "enhancement/backlight-control-methods"
+    },
+    {
+      "mfr": "_TZE204_wfxuhoea",
+      "driver": "garage_door",
       "fork": "packetninja/com.tuya.zigbee",
       "branch": "enhancement/backlight-control-methods"
     },
@@ -504894,6 +505230,12 @@
       "branch": "enhancement/backlight-control-methods"
     },
     {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "thermostat_tuya_dp",
+      "fork": "packetninja/com.tuya.zigbee",
+      "branch": "enhancement/backlight-control-methods"
+    },
+    {
       "mfr": "_tze200_vvmbj46n",
       "driver": "thermostat_tuya_dp",
       "fork": "packetninja/com.tuya.zigbee",
@@ -578048,6 +578390,12 @@
     {
       "mfr": "Monoprice",
       "driver": "formaldehyde_sensor",
+      "fork": "packetninja/com.tuya.zigbee",
+      "branch": "master"
+    },
+    {
+      "mfr": "_TZE204_wfxuhoea",
+      "driver": "garage_door",
       "fork": "packetninja/com.tuya.zigbee",
       "branch": "master"
     },
@@ -659629,6 +659977,12 @@
     },
     {
       "mfr": "_tze200_viy9ihs7",
+      "driver": "thermostat_tuya_dp",
+      "fork": "packetninja/com.tuya.zigbee",
+      "branch": "master"
+    },
+    {
+      "mfr": "_TZE200_vvmbj46n",
       "driver": "thermostat_tuya_dp",
       "fork": "packetninja/com.tuya.zigbee",
       "branch": "master"
@@ -732468,6 +732822,12 @@
       "branch": "pr/flexible-hybrid-wall-switch"
     },
     {
+      "mfr": "_TZE204_wfxuhoea",
+      "driver": "garage_door",
+      "fork": "packetninja/com.tuya.zigbee",
+      "branch": "pr/flexible-hybrid-wall-switch"
+    },
+    {
       "mfr": "Eurotronic",
       "driver": "garage_door",
       "fork": "packetninja/com.tuya.zigbee",
@@ -814158,6 +814518,12 @@
       "branch": "pr/flexible-hybrid-wall-switch"
     },
     {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "thermostat_tuya_dp",
+      "fork": "packetninja/com.tuya.zigbee",
+      "branch": "pr/flexible-hybrid-wall-switch"
+    },
+    {
       "mfr": "_tze200_vvmbj46n",
       "driver": "thermostat_tuya_dp",
       "fork": "packetninja/com.tuya.zigbee",
@@ -830335,6 +830701,12 @@
     },
     {
       "mfr": "_TZE204_UXLLNYWP",
+      "driver": "climate_sensor",
+      "fork": "vgs14/com.tuya.zigbee",
+      "branch": "master"
+    },
+    {
+      "mfr": "_TZE204_wfxuhoea",
       "driver": "climate_sensor",
       "fork": "vgs14/com.tuya.zigbee",
       "branch": "master"
@@ -847106,6 +847478,12 @@
     {
       "mfr": "_tze284_n4ttsck2",
       "driver": "smoke_detector_advanced",
+      "fork": "vgs14/com.tuya.zigbee",
+      "branch": "master"
+    },
+    {
+      "mfr": "_TZE200_vvmbj46n",
+      "driver": "soil_sensor",
       "fork": "vgs14/com.tuya.zigbee",
       "branch": "master"
     },
