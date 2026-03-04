@@ -1,4 +1,4 @@
-# 🏠 Universal Tuya Zigbee v5.11.87
+# 🏠 Universal Tuya Zigbee v5.11.89
 
 > **145 drivers** · **5399+ fingerprints** · Updated 2026-03-04
 
@@ -8,9 +8,9 @@ Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehens
 
 **Stable:** [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/) · **Test:** [Test Channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · **Source:** [GitHub](https://github.com/dlnraja/com.tuya.zigbee)
 
-## What's New (v5.11.87)
+## What's New (v5.11.89)
 
-Introduced Master AI Battle Orchestrator v1.0 with multi-AI ensemble and 6-phase pipeline., Updated app to include 145 drivers and 4952 fingerprints., Auto-published 3093 fingerprints., Updated forum responder to version 5.11.86, scanned 5 topics and updated state., Various updates to GitHub workflows and scripts for better automation.
+Universal Tuya Zigbee app v5.11.89: 145 drivers, 3093 fingerprints supported.
 
 ## Supported Devices
 
@@ -44,13 +44,13 @@ Introduced Master AI Battle Orchestrator v1.0 with multi-AI ensemble and 6-phase
 
 <details><summary>Previous versions</summary>
 
-**v5.11.86:** Universal Tuya Zigbee app v5.11.86 adds new AI features and updates driver fingerprints.
+**v5.11.88:** Universal Tuya Zigbee app v5.11.88: Added 145 drivers and 3093 fingerprints.
 
-**v5.11.85:** Fixed garage door driver issues and improved OAuth authentication process.
+**v5.11.87:** Universal Tuya Zigbee app v5.11.87: Improved driver stability and updated fingerprints.
 
-**v5.11.84:** Universal Tuya Zigbee app v5.11.84 adds delegation token step for API auth and updates drivers and fingerprints.
+**v5.11.86:** Universal Tuya Zigbee app v5.11.86: Updated driver fingerprints and device support.
 
-**v5.11.83:** Universal Tuya Zigbee app v5.11.83 adds client_secret for OAuth token exchange and updates drivers and fingerprints.
+**v5.11.85:** Fixed garage door driver issues and improved device pairing.
 
 </details>
 

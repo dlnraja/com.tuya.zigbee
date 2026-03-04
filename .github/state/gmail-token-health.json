@@ -1,21 +1,6 @@
 {
   "checks": [
     {
-      "time": "2026-03-03T13:31:32.948Z",
-      "ok": false,
-      "err": 400
-    },
-    {
-      "time": "2026-03-03T14:12:54.636Z",
-      "ok": false,
-      "err": 400
-    },
-    {
-      "time": "2026-03-03T14:12:55.003Z",
-      "ok": false,
-      "err": 400
-    },
-    {
       "time": "2026-03-03T17:18:35.995Z",
       "ok": false,
       "err": 400
@@ -54,13 +39,23 @@
       "time": "2026-03-04T11:12:04.830Z",
       "ok": false,
       "err": 400
+    },
+    {
+      "time": "2026-03-04T14:56:54.885Z",
+      "ok": false,
+      "err": 400
+    },
+    {
+      "time": "2026-03-04T14:56:55.266Z",
+      "ok": false,
+      "err": 400
     }
   ],
   "lastOk": null,
-  "lastFail": "2026-03-04T11:12:04.830Z",
+  "lastFail": "2026-03-04T14:56:55.266Z",
   "_lastAlert_expired": "2026-03-04T08:08:17.062Z",
   "_lastAlert_expiring_proactive": null,
-  "consecutiveFails": 20,
+  "consecutiveFails": 22,
   "tokenSetDate": null,
   "daysLeft": 0,
   "expiryEstimate": null,
