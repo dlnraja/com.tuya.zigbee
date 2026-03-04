@@ -182,3 +182,9 @@ credentials.json
 token.json
 oauth2.keys.json
 client_secret*.json
+
+# Security: token/secret files in state directory
+.github/state/_new_refresh_token*
+.github/state/_token_*
+.github/state/*secret*
+.github/state/*credential*

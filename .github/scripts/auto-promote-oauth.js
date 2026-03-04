@@ -4,8 +4,8 @@ const fs = require('fs');
 const APP = 'com.dlnraja.tuya.zigbee';
 const E = process.env.HOMEY_EMAIL, P = process.env.HOMEY_PASSWORD;
 const SUM = process.env.GITHUB_STEP_SUMMARY;
-const CID = '598d85a330e1bb0c0d75b8eb';
-const CSC = 'ba93fc861b204732607169fb29c2708f1da7e17f';
+const CID = process.env.ATHOM_CLIENT_ID;
+const CSC = process.env.ATHOM_CLIENT_SECRET;
 const REDIR = 'https://tools.developer.homey.app';
 const AUTH = 'https://accounts.athom.com';
 const APIB = 'https://api.athom.com';
@@ -17,6 +17,7 @@ main().catch(e => { log('FATAL: ' + e.message); process.exit(1); });
 async function main() {
   log('## Promote Draft->Test (v3)');
   if (!E || !P) { log('Need HOMEY_EMAIL + HOMEY_PASSWORD'); process.exit(1); }
+  if (!CID || !CSC) { log('Need ATHOM_CLIENT_ID + ATHOM_CLIENT_SECRET'); process.exit(1); }
   let tk = await pwGrant();
   if (!tk) tk = await authCodeFlow();
   if (!tk) { log('No access token'); process.exit(1); }
