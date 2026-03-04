@@ -18,6 +18,8 @@
 | GMAIL_EMAIL | Gmail IMAP | Gmail address for IMAP fallback (permanent, never expires) |
 | GMAIL_APP_PASSWORD | Gmail IMAP | App Password for IMAP fallback (permanent, never expires) |
 | DISCOURSE_API_KEY | Homey Forum | Discourse User API key for forum posting (preferred over session login) |
+| ATHOM_CLIENT_ID | Athom OAuth | OAuth client ID for headless promotion (from Athom Developer Tools SPA) |
+| ATHOM_CLIENT_SECRET | Athom OAuth | OAuth client secret for headless promotion (from Athom Developer Tools SPA) |
 
 ## Not Yet Configured (optional)
 
