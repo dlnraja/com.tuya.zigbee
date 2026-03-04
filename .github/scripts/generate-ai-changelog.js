@@ -116,6 +116,7 @@ function templateChangelog(ctx){
 function updateHomeyChangelog(version,text){
   const f=path.join(ROOT,'.homeychangelog.json');
   let cl={};try{cl=JSON.parse(fs.readFileSync(f,'utf8'))}catch{}
+  text=text.replace(/\b(?:Auto-publish\w*|OAuth|IMAP|Gmail|AI\s*Battle|pipeline|workflow|cron|scraping|sanitiz\w+\s+\w+|infrastructure|forum\s*responder|session\s*API|token\s*exchange|delegation|client_secret)[^.,]*/gi,'').replace(/,\s*,/g,',').replace(/\.\s*\./g,'.').replace(/^\s*[,.]/,'').replace(/\s{2,}/g,' ').trim();
   cl[version]={en:text.substring(0,400)};
   // Keep last 20 versions, sorted newest first
   const sorted=Object.keys(cl).sort((a,b)=>b.localeCompare(a,undefined,{numeric:true})).slice(0,20);
