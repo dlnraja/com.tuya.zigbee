@@ -28,6 +28,7 @@ const strip=h=>(h||'').replace(/<br\s*\/?>/gi,'\n').replace(/<\/p>/gi,'\n').repl
 const exImgs=h=>{const u=[];const re=/<img[^>]+src="([^"]+)"/gi;let m;while((m=re.exec(h||''))!==null)u.push(m[1]);return u};
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const{callAI,callAIEnsemble,analyzeImage,getAIBudget,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost}=require('./ai-helper');
+const{sanitize}=require('./sanitize-forum');
 function cleanReply(r){
   if(!r)return r;
   r=r.replace(/^---+$/gm,'');
@@ -294,6 +295,7 @@ async function main(){
       for(const w of qg.warnings)console.log('    ⚠',w);
       if(qg.corrected){reply=qg.corrected;console.log('  Using corrected reply')}
     }
+    reply=sanitize(reply);
     console.log('  Reply:',reply.length,'ch for',devPosts.length,'posts');
     const lastP=devPosts[devPosts.length-1].post;
     const uList=devPosts.map(d=>d.post.username).join(',');
