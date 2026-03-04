@@ -498,7 +498,7 @@ jobs:
         with:
           tag_name: v${{ steps.stats.outputs.version }}
           name: v${{ steps.stats.outputs.version }}
-          body: "Daily auto-update v${{ steps.stats.outputs.version }} — ${{ steps.stats.outputs.drivers }} drivers, ${{ steps.stats.outputs.fps }} fingerprints"
+          body: "Daily update v${{ steps.stats.outputs.version }} — improvements and new device support"
           draft: false
           prerelease: false
           make_latest: true

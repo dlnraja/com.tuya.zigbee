@@ -33,7 +33,7 @@ function post(n,body){
 function supportedMsg(found){
   const lines=found.map(([m,d])=>`| \`${m}\` | **${[].concat(d).join(', ')}** |`).join('\n');
   return [
-    `Hi! This device is **already supported** in [Universal Tuya Zigbee](${GH}) **v${VER}** (${DRVC} drivers, ${FPC}+ fingerprints).`,
+    `Hi! This device is **already supported** in [Universal Tuya Zigbee](${GH}) **v${VER}**.`,
     '',
     '| Fingerprint | Driver(s) |',
     '|---|---|',
@@ -81,7 +81,7 @@ function prMsg(found,missing){
   }
   msg+=[
     '### :inbox_tray: Install our fork',
-    `- **[Homey App Store](${APP})** (${DRVC} drivers, ${FPC}+ fingerprints)`,
+    `- **[Homey App Store](${APP})**`,
     `- **[Forum](${FORUM})** | **[GitHub](${GH})**`,
     '',
     '> :bulb: For faster integration, please also open a PR/issue at',
