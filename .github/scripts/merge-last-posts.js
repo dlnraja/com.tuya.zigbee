@@ -4,6 +4,7 @@ const{getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
 const fs=require('fs'),path=require('path');
 const{callAI,textSimilarity}=require('./ai-helper');
+const{sanitize}=require('./sanitize-forum');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const TID=140352,MY='dlnraja',DRY=process.env.DRY_RUN==='true';
 const CD_FILE=path.join(__dirname,'..','state','forum-post-cooldown.json');
@@ -55,7 +56,7 @@ console.log('After dedup:',combined.length,'chars (was',raws.reduce((a,r)=>a+r.l
 // Humanize with AI
 const prompt='You\'re Dylan, solo dev of Universal Tuya Zigbee on Homey. Rewrite this into ONE short forum post. Sound like a real person typing between coding sessions — casual, short sentences, no corporate tone. ABSOLUTELY NO: "Hi @user," greetings, bullet lists with arrows, ## headers, numbered steps, "Happy to help", "Feel free to", "As always,", "Please provide". Just talk naturally. Max 300 words. End naturally, no signature.';
 const ai=await callAI(combined,prompt,{maxTokens:2048,complexity:'medium'});
-const final=ai?ai.text:combined;
+const final=sanitize(ai?ai.text:combined);
 console.log('Merged content:',final.length,'chars (model:',ai?.model||'none',')');
 if(DRY){console.log('[DRY]\n'+final);return}
 // Edit the LAST post with merged content
