@@ -46,6 +46,9 @@ const BASE='https://community.homey.app';
 const SUMMARY=process.env.GITHUB_STEP_SUMMARY||(process.platform==='win32'?'NUL':'/dev/null');
 const LAST_FILE=process.env.LAST_POST_FILE||'/tmp/last_forum_post.txt';
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const START_TIME=Date.now();
+const MAX_RUNTIME_MS=20*60*1000; // 20 min max — exit gracefully before workflow timeout
+function timeLeft(){return MAX_RUNTIME_MS-(Date.now()-START_TIME);}
 
 async function get(url){
   const r=await fetchWithRetry(url,{headers:{Accept:'application/json'}},{retries:2,label:'forumGet'});
@@ -84,6 +87,7 @@ async function scan(){
   let topicsScanned=0;
 
   for(const TOPIC_ID of allTopics){
+    if(timeLeft()<60000){console.log('Time guard: '+topicsScanned+'/'+allTopics.length+' topics scanned, saving partial results');break;}
     try{
       const data=await get(BASE+'/t/'+TOPIC_ID+'/posts.json?post_number=999999');
       const stream=data.post_stream||{};
