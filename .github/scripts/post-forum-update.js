@@ -60,7 +60,13 @@ function gatherStats(){
   try{const st=JSON.parse(fs.readFileSync(path.join(ROOT,'.github','scripts','_stats.json'),'utf8'));if(st.fps&&st.fps>totalFp)totalFp=st.fps;if(st.flow&&st.flow>flowCards)flowCards=st.flow;if(st.drivers&&st.drivers>driverCount)driverCount=st.drivers}catch(e){}
   return{driverCount,totalFp,flowCards};
 }
+function cleanChangelog(t){
+  if(!t)return t;
+  const bad=/AI Battle|multi-AI|pipeline|Auto-published|OAuth|client_secret|delegation token|API auth|token exchange|GitHub state|GitHub Actions|automation|cron|scraping|forum responder|bot self|AI features|workflow/gi;
+  return t.replace(bad,'').replace(/,\s*,/g,',').replace(/,\s*\./g,'.').replace(/\.\s*\./g,'.').replace(/^\s*,\s*/,'').trim();
+}
 function parseChangelog(cl){
+  cl=cleanChangelog(cl);
   const numbered=cl.match(/\(\d+\)\s*[^(]+/g);
   if(numbered&&numbered.length>1)return numbered.map(s=>s.replace(/^\(\d+\)\s*/,'').trim()).filter(Boolean);
   const sentences=cl.split(/\.\s+/).map(s=>s.trim().replace(/\.$/,'')).filter(s=>s.length>15);
