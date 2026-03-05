@@ -37,7 +37,8 @@ async function promoteViaBrowserSession(page, log, dry, capturedToken) {
   if(last) log('  [SessAPI] bLast: id='+last.id+' state='+last.state+' v='+last.version);
   const drafts=builds.filter(b=>/draft/i.test(b.channel||b.status||b.state||''));
   if(!drafts.length) return 'no-draft';
-  const draft=drafts[drafts.length-1];
+  drafts.sort((a,b)=>(b.id||0)-(a.id||0));
+  const draft=drafts[0];
   log('  [SessAPI] Draft: id='+draft.id+' v='+draft.version+' ('+drafts.length+' drafts)');
   if(dry) return false;
   const pid=draft.id||draft._id;

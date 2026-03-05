@@ -344,7 +344,7 @@ async function findAndPromote(page, captured) {
 
   if (clicked) {
     log(`  ${clicked}`);
-    await new Promise(r => setTimeout(r, 3000));
+    await new Promise(r => setTimeout(r, 10000));
     await snap(page, '06-after-click');
 
     // On submission page: dump info for debugging
@@ -363,29 +363,14 @@ async function findAndPromote(page, captured) {
     elList.forEach(s => log('    EL: ' + s));
     await snap(page, '06b-submission');
 
-    // Try to find and click Release to Test / Test button / channel dropdown
+    // Look for "Publish to Test" button (the actual Homey dev tools button)
     const promoted = await page.evaluate(() => {
-      // Look for "Release to test" or "Test" button
       const btns = [...document.querySelectorAll('button, a, [role="button"]')];
+      const keywords = ['publish to test', 'release to test', 'promote to test'];
       for (const b of btns) {
         const t = (b.textContent || '').trim().toLowerCase();
-        if (t.includes('release to test') || t === 'test' || t.includes('promote')) {
-          b.click(); return 'Clicked: ' + b.textContent.trim();
-        }
-      }
-      // Try MUI select/dropdown for channel
-      const selects = [...document.querySelectorAll('select, [role="listbox"], [class*="Select"]')];
-      for (const sel of selects) {
-        if (sel.tagName === 'SELECT') {
-          const opt = [...sel.options].find(o => o.value === 'test');
-          if (opt) { sel.value = 'test'; sel.dispatchEvent(new Event('change', {bubbles:true})); return 'Selected test'; }
-        } else { sel.click(); return 'Clicked dropdown'; }
-      }
-      // Confirm/Yes/OK
-      for (const b of btns) {
-        const t = (b.textContent || '').trim().toLowerCase();
-        if (t === 'confirm' || t === 'yes' || t === 'ok' || t === 'release' || t === 'submit') {
-          b.click(); return 'Confirmed: ' + b.textContent.trim();
+        for (const kw of keywords) {
+          if (t.includes(kw)) { b.click(); return 'Clicked: ' + b.textContent.trim(); }
         }
       }
       return null;
