@@ -36,7 +36,7 @@ async function promoteViaBrowserSession(page, log, dry, capturedToken) {
   log('  [SessAPI] Draft: '+(draft.id||draft.version));
   if(dry) return false;
   const pid=draft.id||draft._id;
-  for(const [m,u] of [['PUT',`${BASE}/app/${APP}/build/${pid}`],['POST',`${BASE}/app/${APP}/build/${pid}/publish`]]){
+  for(const [m,u] of [['PUT',`${BASE}/app/${APP}/build/${pid}/channel`],['PUT',`${BASE}/app/${APP}/build/${pid}`],['POST',`${BASE}/app/${APP}/build/${pid}/publish`]]){
     try{
       const r=await fetch(u,{method:m,headers:{...h,'Content-Type':'application/json'},body:JSON.stringify({channel:'test'})});
       log('  [SessAPI] '+m+' → '+r.status);
