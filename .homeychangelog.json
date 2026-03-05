@@ -1,4 +1,7 @@
 {
+  "5.11.90": {
+    "en": "Universal Tuya Zigbee app v5.11.90: Added ."
+  },
   "5.11.89": {
     "en": "Universal Tuya Zigbee app v5.11.89 adds 2 new fingerprints, fixes TS0726 virtual button regression, and enriches flow cards for 9 drivers."
   },
@@ -56,10 +59,7 @@
   "5.11.71": {
     "en": "Universal Tuya Zigbee app v5.11.71: Improved error logging and updated drivers."
   },
-  "5.11.70": {
-    "en": "Updated app with improved device support."
-  },
-  "5.11.90": {
-    "en": "v5.11.89: Fixed TS0726 virtual button regression., Added 2 new fingerprints from community forks., Enriched flow cards for 9 drivers with new conditions, actions, and registrations., Total drivers: 145, Total fingerprints: 5399"
+  "5.11.91": {
+    "en": "v5.11.90: Fixed issue with Puppeteer capturing ., Added 145 new drivers., Increased total fingerprints to 4955., Updated screenshots for better clarity., Minor adjustments to auto-promotion scripts."
   }
 }
