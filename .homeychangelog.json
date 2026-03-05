@@ -1,4 +1,7 @@
 {
+  "5.11.93": {
+    "en": "Universal Tuya Zigbee app v5.11.93: Added ."
+  },
   "5.11.92": {
     "en": "Universal Tuya Zigbee app v5.11.92 adds new drivers and fingerprints, improving device compatibility."
   },
@@ -56,10 +59,7 @@
   "5.11.74": {
     "en": "Universal Tuya Zigbee app v5.11.74: Bug fixes, updated drivers and fingerprints."
   },
-  "5.11.73": {
-    "en": "Universal Tuya Zigbee app v5.11.73: Bug fixes and updated fingerprints."
-  },
-  "5.11.93": {
-    "en": "v5.11.92: Fixed issue with AthomCloudAPI strategy, ensuring all ., Added 145 drivers, bringing the total to 145 drivers., Updated fingerprints to 3093, enhancing device recognition capabilities., Updated various files for better performance and maintenance., Adjusted scripts for better automation in deployment processes."
+  "5.11.94": {
+    "en": "v5.11.93: Added 145 new drivers., Added 3093 new fingerprints., Fixed issues related to the /channel endpoint variant in the ."
   }
 }
