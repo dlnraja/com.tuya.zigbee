@@ -253,15 +253,8 @@ async function doLogin(page) {
 }
 
 async function findAndPromote(page, captured) {
-  // Strategy A: Use browser session API (bypasses SPA rendering)
-  try {
-    const apiRes = await promoteViaBrowserSession(page, log, DRY, captured?.token);
-    if (apiRes === true) return true;
-    log('  Session API: ' + (apiRes || 'no result') + ', falling back to SPA...');
-  } catch (e) { log('  Session API error: ' + e.message); }
-
-  // Strategy B: SPA content rendering
-  log('  Waiting for SPA content to load...');
+  // First trigger SPA API calls to capture auth token
+  log('  Triggering SPA to capture auth token...');
 
   // Force re-navigate to versions URL (SPA may not route after login redirect)
   if (!page.url().includes('/versions')) {
@@ -282,6 +275,15 @@ async function findAndPromote(page, captured) {
     await page.goto(VERSIONS_URL, { waitUntil: 'networkidle0', timeout: 30000 }).catch(() => {});
     await new Promise(r => setTimeout(r, 5000));
   }
+
+  // Now try session API with captured token (token should be captured from SPA requests above)
+  log('  [NET] Captured API URLs: ' + captured.apiUrls.length);
+  if (captured.token) log('  [NET] Has captured token: ' + captured.token.length + 'c');
+  try {
+    const apiRes = await promoteViaBrowserSession(page, log, DRY, captured?.token);
+    if (apiRes === true) return true;
+    log('  Session API: ' + (apiRes || 'no result') + ', falling back to SPA polling...');
+  } catch (e) { log('  Session API error: ' + e.message); }
 
   let hasDraft = false;
   for (let attempt = 0; attempt < 15; attempt++) {
