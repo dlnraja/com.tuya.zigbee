@@ -6,7 +6,17 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.92] - 2026-03-05
+## [5.11.93] - 2026-03-05
+
+### New Features
+- Added 145 new drivers.
+- Added 3093 new fingerprints.
+
+### Bug Fixes
+- Fixed issues related to the /channel endpoint variant in the session API.
+---
+
+ [5.11.92] - 2026-03-05
 
 ### Bug Fixes
 - Fixed issue with AthomCloudAPI strategy, ensuring all delegation audiences are tried.
