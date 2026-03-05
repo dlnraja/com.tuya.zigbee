@@ -109,12 +109,13 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
-      - name: Run fork scan
+      - name: Deep fork integration + legacy scan
         id: fork_scan
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: |
-          node .github/scripts/scan-forks-recursive.js
+          node .github/scripts/deep-fork-integrator.js
+          node .github/scripts/scan-forks-recursive.js || true
           if [ -s /tmp/new_fork_fps.json ]; then
             echo "has_new_fps=true" >> $GITHUB_OUTPUT
           fi
@@ -143,7 +144,7 @@ jobs:
             await github.rest.issues.create({
               owner:context.repo.owner,repo:context.repo.repo,
               title:dupTitle,
-              body:`## New fingerprints\n| FP | Fork | Driver |\n|---|---|---|\n${rows}`,
+              body:`## New fingerprints\n| FP | Fork | Driver |\n|---|---|---|\n${rows}\n\n_See .github/state/fork-new-drivers.json and fork-dp-finds.json for full deep integration report._`,
               labels:['enhancement','auto-scan']
             });
 
@@ -741,7 +742,7 @@ jobs:
           echo "## Sunday Automation Complete" >> $GITHUB_STEP_SUMMARY
           echo "- JohanBendz triage: ${{ needs.triage-johanbendz.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- dlnraja triage: ${{ needs.triage-dlnraja.result }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Fork scan: ${{ needs.scan-forks.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Deep Fork Integration: ${{ needs.scan-forks.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Cross-driver gaps: ${{ needs.cross-driver-gaps.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Forum scan: ${{ needs.scan-forum.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Forum respond: handled by forum-auto-responder.yml" >> $GITHUB_STEP_SUMMARY

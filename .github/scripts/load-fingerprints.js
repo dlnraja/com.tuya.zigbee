@@ -173,4 +173,32 @@ function fuzzyMatchFPs(extractedFPs, knownSet) {
   return results;
 }
 
-module.exports = { loadFingerprints, findDriver, findAllDrivers, extractMfrFromText, buildFullIndex, extractAllFP, fuzzyMatchFPs, NON_TUYA_KNOWN, NON_TS_PIDS };
+
+function resolveFingerprint(mfr, pid, dir) {
+  dir = dir || path.join(__dirname, '..', '..', 'drivers');
+  if (!mfr || !pid) return findDriver(mfr || pid);
+  const ml = mfr.toLowerCase(), pl = pid.toLowerCase();
+  for (const d of fs.readdirSync(dir)) {
+    const f2 = path.join(dir, d, 'driver.compose.json');
+    if (!fs.existsSync(f2)) continue;
+    try {
+      const data = JSON.parse(fs.readFileSync(f2, 'utf8'));
+      const ms = (data.zigbee?.manufacturerName || []).map(s => s.toLowerCase());
+      const ps = (data.zigbee?.productId || []).map(s => s.toLowerCase());
+      if (ms.includes(ml) && ps.includes(pl)) return d;
+    } catch {}
+  }
+  return null;
+}
+
+function getMultiDriverContext(dir) {
+  dir = dir || path.join(__dirname, '..', '..', 'drivers');
+  const { mfrIdx } = buildFullIndex(dir);
+  const multi = [];
+  for (const [mfr, drivers] of mfrIdx) {
+    if (drivers.length > 1) multi.push({ mfr, drivers });
+  }
+  return multi;
+}
+
+module.exports = { loadFingerprints, findDriver, findAllDrivers, extractMfrFromText, buildFullIndex, extractAllFP, fuzzyMatchFPs, NON_TUYA_KNOWN, NON_TS_PIDS, resolveFingerprint, getMultiDriverContext };

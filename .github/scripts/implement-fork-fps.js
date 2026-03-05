@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-// v5.12.0: Implement all new fingerprints from fork scans into driver.compose.json files
+// v5.12.1: Implement new fingerprints + productIds from fork scans
 const fs = require('fs');
 const path = require('path');
 
@@ -41,8 +41,9 @@ function isValidFP(mfr) {
 function main() {
   console.log('=== Implement Fork FPs v5.12.0 ===');
   
-  // Build current index
+  // Build current index (mfrs + pids)
   const allMfrs = new Set();
+  const allPids = new Set();
   const driverFiles = {};
   const dirs = fs.readdirSync(DDIR).filter(d => 
     fs.existsSync(path.join(DDIR, d, 'driver.compose.json'))
@@ -52,8 +53,9 @@ function main() {
     const f = JSON.parse(fs.readFileSync(fp, 'utf8'));
     driverFiles[d] = { path: fp, data: f };
     for (const m of (f.zigbee?.manufacturerName || [])) allMfrs.add(m);
+    for (const p of (f.zigbee?.productId || [])) allPids.add(p);
   }
-  console.log(`Local: ${dirs.length} drivers, ${allMfrs.size} FPs`);
+  console.log(`Local: ${dirs.length} drivers, ${allMfrs.size} FPs, ${allPids.size} PIDs`);
   
   // Load fork FPs
   const forkFPs = JSON.parse(fs.readFileSync(FORK_FPS, 'utf8'));
@@ -98,7 +100,27 @@ function main() {
     }
   }
   
-  console.log(`\n=== Done: +${totalAdded} FPs added across ${Object.keys(toAdd).length} drivers ===`);
+  // Also integrate productIds from fork data
+  let totalPids = 0;
+  for (const [, info] of Object.entries(forkFPs)) {
+    if (!info.pids || !info.pids.length) continue;
+    let drv = info.driver;
+    if (DRIVER_MAP[drv] === null) continue;
+    if (DRIVER_MAP[drv]) drv = DRIVER_MAP[drv];
+    const df = driverFiles[drv];
+    if (!df || !df.data.zigbee) continue;
+    if (!df.data.zigbee.productId) df.data.zigbee.productId = [];
+    const ex = new Set(df.data.zigbee.productId);
+    for (const pid of info.pids) {
+      if (pid && pid.length >= 4 && !ex.has(pid)) {
+        df.data.zigbee.productId.push(pid);
+        ex.add(pid); totalPids++;
+      }
+    }
+    if (totalPids > 0) fs.writeFileSync(df.path, JSON.stringify(df.data, null, 2) + '\n');
+  }
+  if (totalPids) console.log(`PIDs added: ${totalPids}`);
+  console.log(`\n=== Done: +${totalAdded} FPs, +${totalPids} PIDs ===`);
   
   // Recount
   let newTotal = 0;

@@ -10,7 +10,7 @@ const DDIR=path.join(__dirname,'..','..','drivers');
 const SD=path.join(__dirname,'..','state');
 const loadState=()=>{try{return JSON.parse(fs.readFileSync(STATE,'utf8'))}catch{return{topics:{},replyLog:[]}}};
 const saveState=s=>{fs.mkdirSync(path.dirname(STATE),{recursive:true});fs.writeFileSync(STATE,JSON.stringify(s,null,2)+'\n')};
-const{buildFullIndex,extractAllFP}=require('./load-fingerprints');
+const{buildFullIndex,extractAllFP,resolveFingerprint,getMultiDriverContext}=require('./load-fingerprints');
 const{validateReply}=require('./reply-quality-gate');
 const{gatherAll,formatForAI}=require('./gather-intelligence');
 
@@ -45,6 +45,7 @@ function cleanReply(r){
   r=r.replace(/(?:Happy to help|Let me know|Feel free to)[.!]?\s*$/gi,'');
   // Strip any leaked automation/infrastructure terms (CRITICAL: never expose backend)
   r=r.replace(/\b(?:scraping|scraped|scraper|automated scan(?:ning|s)?|cron\s*job|pipeline|workflow|GitHub Actions?|API\s*key|OAuth|IMAP|token\s*rotation|bot\s*(?:scan|audit|self)|Discourse\s*API|GMAIL_\w+|HOMEY_(?:EMAIL|PASSWORD)|ai[- ]?analysis|ai[- ]?helper|rate[- ]?limit|circuit[- ]?breaker)\b[^.\n]*/gi,'');
+  r=r.replace(/\b(?:SPA|single[- ]page|ensemble|LLM|GPT|language model|auto[- ]?respond|deep[- ]?fork|fork.integrat\w*|algorithm|NLP|neural|machine.learning)\b[^.\n]*/gi,'');
   r=r.replace(/\n{3,}/g,'\n\n');
   return r.trim();
 }
@@ -160,17 +161,17 @@ function batchedFallback(postInfos,ver){
   let m=users.map(u=>'@'+u).join(' ')+' ';
   if(found.size){
     const fps=[...found.entries()];
-    if(fps.length===1)m+=fps[0][0]+' is already in v'+ver+' under **'+fps[0][1][0]+'**. ';
-    else{m+='these are already in v'+ver+': ';for(const[fp,d]of fps)m+=fp+' ('+d[0]+'), ';m=m.replace(/, $/,'. ')}
+    if(fps.length===1){const drv=fps[0][1];m+='yep '+fps[0][0]+' is in there, pair it as **'+drv[0]+'**'+(drv.length>1?' (or '+drv.slice(1).join(', ')+' depending on the model)':'')+'. ';}
+    else{m+='those are all in the app already: ';for(const[fp,d]of fps)m+=fp+' → '+d[0]+', ';m=m.replace(/, $/,'. ')}
     m+='\n\n';
   }
   if(miss.size){
     let extInfo='';
     try{const ctx=gatherAll();const extFPs=new Set((ctx.externalSources?.topUnsupported||[]).map(u=>u.fp));const inExt=[...miss.keys()].filter(k=>extFPs.has(k));if(inExt.length)extInfo=' — I see '+(inExt.length===1?'it':'them')+' in Z2M/ZHA so shouldn\'t be hard to add'}catch{}
     const mks=[...miss.keys()];
-    m+=(mks.length===1?mks[0]+' isn\'t':mks.join(', ')+' aren\'t')+' in there yet'+extInfo+'. If you can grab a [device interview](https://tools.developer.homey.app/tools/zigbee) I\'ll get it sorted.\n\n';
+    m+=(mks.length===1?mks[0]+' isn\'t':mks.join(', ')+' aren\'t')+' in the app yet'+extInfo+'. Can you run a [device interview](https://tools.developer.homey.app/tools/zigbee) and share the result? I\'ll have a look.\n\n';
   }
-  m+='If anything acts up after updating just remove and re-pair.';
+  m+='If it acts weird after updating, remove and re-pair — that usually fixes it.';
   return m;
 }
 
@@ -182,8 +183,9 @@ async function batchAI(postInfos,ver){
   let intel='';
   try{const ctx=gatherAll();intel=formatForAI(ctx);console.log('Intel context:',intel.length,'chars')}catch(e){console.warn('Intel gather:',e.message)}
 
-  let ctx='You\'re Dylan typing a quick forum reply between coding sessions. No markdown headers, no bullet lists, no tables. Plain casual text only.\n';
-  ctx+='Sound human: "yeah that one\'s in there", "I\'ll check", "oh nice, added that last week". @mention inline, never as greeting.\n';
+  let ctx='You ARE Dylan, the dev. You\'re typing a quick reply on your own forum thread between coding sessions. Plain casual text, no markdown headers, no bullet lists, no tables.\n';
+  ctx+='Sound like a real person: "yeah that one\'s in there", "I\'ll check", "oh nice, added that last week". @mention inline, never as greeting.\n';
+  ctx+='NEVER mention: AI, bot, automation, SPA, algorithm, pipeline, scan, scraping, API, token, workflow, machine learning, LLM, ensemble, data query, GitHub Actions. You are a HUMAN developer who "checked", "looked into it", "cross-referenced".\n';
   ctx+='SPAM TRIGGERS (will get flagged): "Hi @user,", bullet lists, numbered steps, "Thank you for", "Please provide", ## headers, "Happy to help", "As always,".\n';
   ctx+='Max 200 words. Vary your opening every time. End naturally, no footer/signature.\n\n';
 
@@ -214,6 +216,12 @@ async function batchAI(postInfos,ver){
     if(forumIntel.pairingIssueCount)ctx+='Pairing issues reported: '+forumIntel.pairingIssueCount+'\n';
     ctx+='\n';
   }
+
+  // v5.11.99: Multi-driver awareness context
+  ctx+='## MULTI-DRIVER RULES\n';
+  ctx+='Same manufacturerName CAN appear in multiple drivers — this is normal.\n';
+  ctx+='Fingerprint = manufacturerName + productId COMBINED. Ask for productId (TS0001/TS0002/etc) if user only shares manufacturerName.\n';
+  ctx+='If user says "works after X minutes": fixed in latest version — dataQuery sent on init now. Tell them to update app and re-pair.\n\n';
 
   // Add user posts
   ctx+='## NEW FORUM POSTS\n\n';
