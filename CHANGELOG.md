@@ -6,7 +6,23 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.89] - 2026-03-04
+## [5.11.90] - 2026-03-05
+
+### Bug Fixes
+- Fixed issue with Puppeteer capturing token before session API.
+
+### New Features
+- Added 145 new drivers.
+- Increased total fingerprints to 4955.
+
+### Improvements
+- Updated screenshots for better clarity.
+
+### CI/CD
+- Minor adjustments to auto-promotion scripts.
+---
+
+ [5.11.89] - 2026-03-04
 
 ### Bug Fixes
 - Fixed TS0726 virtual button regression.
