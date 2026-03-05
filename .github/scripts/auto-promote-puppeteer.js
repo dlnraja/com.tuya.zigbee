@@ -10,7 +10,8 @@
 const fs = require('fs'), path = require('path');
 const { promoteViaBrowserSession } = require('./promote-via-session');
 const APP_ID = 'com.dlnraja.tuya.zigbee';
-const VERSIONS_URL = `https://tools.developer.homey.app/apps/app/${APP_ID}/versions`;
+const BASE = 'https://tools.developer.homey.app';
+const VERSIONS_URL = `${BASE}/apps/app/${APP_ID}/versions`;
 const EMAIL = process.env.HOMEY_EMAIL;
 const PASSWORD = process.env.HOMEY_PASSWORD;
 const DRY = process.env.DRY_RUN === 'true';
@@ -75,9 +76,9 @@ async function main() {
       } catch {}
     });
 
-    // Step 1: Go to versions page (will redirect to login)
-    log('\n### Step 1: Navigate');
-    await page.goto(VERSIONS_URL, { waitUntil: 'networkidle2' });
+    // Step 1: Go to HOME page (not deep URL — SPA needs step-by-step navigation)
+    log('\n### Step 1: Navigate to home');
+    await page.goto(BASE, { waitUntil: 'networkidle2' });
     await snap(page, '01-initial');
     log(`  URL: ${page.url()}`);
 
@@ -134,23 +135,26 @@ async function main() {
         await snap(page, '04b-still-on-accounts');
       }
 
-      // Navigate to versions after login
-      if (!page.url().includes('versions')) {
-        log('  Navigating to versions page...');
-        await page.goto(VERSIONS_URL, { waitUntil: 'networkidle2' });
+      // Go to home so SPA hydrates properly
+      if (!page.url().includes('tools.developer.homey.app')) {
+        await page.goto(BASE, { waitUntil: 'networkidle2' });
       }
     } else {
       log('  Already logged in');
     }
 
-    await new Promise(r => setTimeout(r, 3000));
-    await snap(page, '05-versions');
-    log(`  Versions URL: ${page.url()}`);
+    await new Promise(r => setTimeout(r, 2000));
+    log(`  Current URL: ${page.url()}`);
 
-    // Step 3: Find and click promote
-    log('\n### Step 3: Find draft & promote');
+    // Step 3: Click "My Apps" in sidebar (SPA navigation)
+    log('\n### Step 3: Navigate via SPA');
+    await navigateToVersions(page);
+    await snap(page, '05-versions');
+
+    // Step 4: Find and promote
+    log('\n### Step 4: Find draft & promote');
     log('  [NET] Captured API URLs: ' + captured.apiUrls.length);
-    if (captured.token) log('  [NET] Has OAuth token: yes');
+    if (captured.token) log('  [NET] Has token: ' + captured.token.length + 'c');
     const result = await findAndPromote(page, captured);
     await snap(page, '07-final');
 
@@ -253,32 +257,28 @@ async function doLogin(page) {
 }
 
 async function findAndPromote(page, captured) {
-  // First trigger SPA API calls to capture auth token
-  log('  Triggering SPA to capture auth token...');
-
-  // Force re-navigate to versions URL (SPA may not route after login redirect)
-  if (!page.url().includes('/versions')) {
-    log('  Re-navigating to versions URL...');
-    await page.goto(VERSIONS_URL, { waitUntil: 'networkidle0', timeout: 30000 }).catch(() => {});
-    await new Promise(r => setTimeout(r, 5000));
+  // Navigate via SPA clicks: My Apps -> App -> Versions
+  await spaNav(page);
+  async function spaNav(p) {
+    log('  3a: My Apps');
+    await p.evaluate(()=>{const l=document.querySelector('a[href="/apps"]');if(l)l.click();});
+    await new Promise(r=>setTimeout(r,4000));
+    await snap(p,'05a-apps');
+    log('  3b: App');
+    const ok=await p.evaluate(id=>{const a=[...document.querySelectorAll('a')].find(l=>l.href&&l.href.includes(id));if(a){a.click();return true;}return false;},APP_ID);
+    if(!ok) await p.goto(BASE+'/apps/app/'+APP_ID,{waitUntil:'networkidle2'});
+    await new Promise(r=>setTimeout(r,4000));
+    await snap(p,'05b-app');
+    log('  3c: Versions');
+    await p.evaluate(()=>{const a=[...document.querySelectorAll('a,button,[role="tab"]')].find(e=>/version/i.test(e.textContent));if(a)a.click();});
+    await new Promise(r=>setTimeout(r,4000));
+    await snap(p,'05c-ver');
   }
 
-  // If content is sparse, try clicking "My Apps" to trigger SPA routing
+  // Try session API with captured token
+  if (captured.token) log('  Token: ' + captured.token.length + 'c');
   let text = await page.evaluate(() => document.body?.innerText || '');
-  if (text.length < 400) {
-    log('  Sparse content (' + text.length + ' chars), trying My Apps link...');
-    await page.evaluate(() => {
-      const a = [...document.querySelectorAll('a')].find(l => /my apps/i.test(l.textContent));
-      if (a) a.click();
-    });
-    await new Promise(r => setTimeout(r, 3000));
-    await page.goto(VERSIONS_URL, { waitUntil: 'networkidle0', timeout: 30000 }).catch(() => {});
-    await new Promise(r => setTimeout(r, 5000));
-  }
-
-  // Now try session API with captured token (token should be captured from SPA requests above)
-  log('  [NET] Captured API URLs: ' + captured.apiUrls.length);
-  if (captured.token) log('  [NET] Has captured token: ' + captured.token.length + 'c');
+  log('  Page: ' + text.length + 'c, URL: ' + page.url());
   try {
     const apiRes = await promoteViaBrowserSession(page, log, DRY, captured?.token);
     if (apiRes === true) return true;
