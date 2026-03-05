@@ -6,7 +6,23 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.91] - 2026-03-05
+## [5.11.92] - 2026-03-05
+
+### Bug Fixes
+- Fixed issue with AthomCloudAPI strategy, ensuring all delegation audiences are tried.
+
+### New Features
+- Added 145 drivers, bringing the total to 145 drivers.
+- Updated fingerprints to 3093, enhancing device recognition capabilities.
+
+### Improvements
+- Updated various files for better performance and maintenance.
+
+### CI/CD
+- Adjusted scripts for better automation in deployment processes.
+---
+
+ [5.11.91] - 2026-03-05
 
 ### Bug Fixes
 - Fixed implicit OAuth flow to retrieve JWT as done in SPA.
