@@ -6,7 +6,17 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.95] - 2026-03-05
+## [5.11.96] - 2026-03-05
+
+### Bug Fixes
+- Fixed draft detection by adding `b.state`.
+
+### Improvements
+- Updated 145 drivers and 4955 fingerprints.
+- Updated various screenshots for better clarity and accuracy.
+---
+
+ [5.11.95] - 2026-03-05
 
 ### Bug Fixes
 - Removed undefined `navigateToVersions` call from main().
