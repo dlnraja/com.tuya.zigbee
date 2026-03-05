@@ -103,13 +103,15 @@ function validateReply(replyText, originalPostText) {
     }
     if (supported.length || fuzzySupported.length) {
       const parts = [];
+      const hasMultiDriver = supported.some(s => s.drivers.length > 1);
       if (supported.length === 1) {
         const s = supported[0];
-        parts.push(s.fp + ' is already in the app — pair it as **' + s.drivers[0] + '**.');
+        parts.push(s.fp + ' is already in the app — pair it as **' + s.drivers[0] + '**' + (s.drivers.length > 1 ? ' (or ' + s.drivers.slice(1).join(', ') + ' depending on productId)' : '') + '.');
       } else if (supported.length > 1) {
-        const items = supported.map(s => s.fp + ' (' + s.drivers[0] + ')');
+        const items = supported.map(s => s.fp + ' (' + s.drivers.join('/') + ')');
         parts.push('Those are already in the app: ' + items.join(', ') + '.');
       }
+      if (hasMultiDriver) parts.push('The correct driver depends on the productId (TS0001, TS0002, etc).');
       if (fuzzySupported.length) {
         const items = fuzzySupported.map(s => s.from + ' looks like ' + s.fp + ' which is under ' + s.drivers[0]);
         parts.push(items.join('; ') + ' — might be a typo in the fingerprint.');

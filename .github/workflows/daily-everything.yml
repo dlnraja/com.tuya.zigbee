@@ -79,10 +79,12 @@ jobs:
           V=$(node -p "require('./app.json').version")
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
           F=$(node -e "const g=require('path').join('.','drivers');const fs=require('fs');let c=0;for(const d of fs.readdirSync(g)){try{const j=JSON.parse(fs.readFileSync(g+'/'+d+'/driver.compose.json','utf8'));c+=(j.zigbee?.manufacturerName?.length||0)}catch{}}console.log(c)" 2>/dev/null || grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l)
+          MD=$(node -e "const g=require('path').join('.','drivers');const fs=require('fs');const m=new Map();for(const d of fs.readdirSync(g)){try{const j=JSON.parse(fs.readFileSync(g+'/'+d+'/driver.compose.json','utf8'));for(const n of(j.zigbee?.manufacturerName||[])){if(!m.has(n))m.set(n,[]);m.get(n).push(d)}}catch{}}let c=0;for(const[,v]of m)if(v.length>1)c++;console.log(c)" 2>/dev/null || echo 0)
           echo "version=$V" >> $GITHUB_OUTPUT
           echo "drivers=$D" >> $GITHUB_OUTPUT
           echo "fps=$F" >> $GITHUB_OUTPUT
-          echo "App v$V | $D drivers | $F FPs"
+          echo "multi_driver=$MD" >> $GITHUB_OUTPUT
+          echo "App v$V | $D drivers | $F FPs | $MD multi-driver mfrs"
 
       # ===== 0. ONE-TIME: Delete duplicate/spam forum posts =====
       - name: "0. Forum Cleanup (one-time)"
@@ -337,19 +339,24 @@ jobs:
         timeout-minutes: 10
         run: node .github/scripts/generate-ai-changelog.js
 
-      - name: "10b. Recursive Fork Scanner"
+      - name: "10b. Deep Fork Integrator"
         id: fork_scan
         continue-on-error: true
-        timeout-minutes: 10
+        timeout-minutes: 15
         env:
           FORK_DEPTH: "3"
-        run: node .github/scripts/scan-forks-recursive.js
+        run: node .github/scripts/deep-fork-integrator.js
 
-      - name: "10b2. Implement Fork FPs"
+      - name: "10b2. Legacy Fork FPs (fallback)"
         id: impl_fork_fps
         continue-on-error: true
         timeout-minutes: 5
-        run: node .github/scripts/implement-fork-fps.js
+        run: |
+          if [ -f .github/state/new-fork-fps.json ]; then
+            node .github/scripts/implement-fork-fps.js
+          else
+            echo "No new-fork-fps.json — deep integrator handled it"
+          fi
 
       - name: "10b3. Forum Spam Scan"
         id: spam_scan
@@ -597,7 +604,7 @@ jobs:
         if: always()
         run: |
           echo "## 🚀 Daily Everything Pipeline — MEGA" >> $GITHUB_STEP_SUMMARY
-          echo "**App:** v${{ steps.stats.outputs.version }} | ${{ steps.stats.outputs.drivers }} drivers | ${{ steps.stats.outputs.fps }} FPs" >> $GITHUB_STEP_SUMMARY
+          echo "**App:** v${{ steps.stats.outputs.version }} | ${{ steps.stats.outputs.drivers }} drivers | ${{ steps.stats.outputs.fps }} FPs | ${{ steps.stats.outputs.multi_driver }} multi-driver mfrs" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| # | Step | Status |" >> $GITHUB_STEP_SUMMARY
           echo "|---|------|--------|" >> $GITHUB_STEP_SUMMARY
@@ -627,8 +634,8 @@ jobs:
           echo "| 9d | Public APIs | ${{ steps.public_apis.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9e | GitHub Deep Search | ${{ steps.gh_deep_search.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10 | AI Changelog | ${{ steps.ai_changelog.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 10b | Fork Scanner | ${{ steps.fork_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 10b2 | Implement Fork FPs | ${{ steps.impl_fork_fps.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 10b | Deep Fork Integrator | ${{ steps.fork_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 10b2 | Legacy Fork FPs | ${{ steps.impl_fork_fps.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10b3 | Forum Spam Scan | ${{ steps.spam_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10b4 | Forum Cleanup Edit | ${{ steps.forum_cleanup_edit.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10c | Device Finder | ${{ steps.dev_finder.outcome }} |" >> $GITHUB_STEP_SUMMARY
