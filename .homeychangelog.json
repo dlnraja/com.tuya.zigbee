@@ -1,4 +1,7 @@
 {
+  "5.11.91": {
+    "en": "Universal Tuya Zigbee app v5.11.91 adds new drivers and fingerprints, improving device compatibility."
+  },
   "5.11.90": {
     "en": "Universal Tuya Zigbee app v5.11.90: Added ."
   },
@@ -56,10 +59,7 @@
   "5.11.72": {
     "en": "Universal Tuya Zigbee app v5.11.72: Bug fixes and updated drivers and fingerprints."
   },
-  "5.11.71": {
-    "en": "Universal Tuya Zigbee app v5.11.71: Improved error logging and updated drivers."
-  },
-  "5.11.91": {
-    "en": "v5.11.90: Fixed issue with Puppeteer capturing ., Added 145 new drivers., Increased total fingerprints to 4955., Updated screenshots for better clarity., Minor adjustments to auto-promotion scripts."
+  "5.11.92": {
+    "en": "v5.11.91: Fixed implicit ., Added 145 drivers, bringing the total to 145 drivers., Added 3093 fingerprints, increasing the total to 4955 fingerprints., Updated screenshots for better clarity., Minor updates to scripts and configuration files."
   }
 }

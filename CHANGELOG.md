@@ -6,7 +6,23 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.90] - 2026-03-05
+## [5.11.91] - 2026-03-05
+
+### Bug Fixes
+- Fixed implicit OAuth flow to retrieve JWT as done in SPA.
+
+### New Features
+- Added 145 drivers, bringing the total to 145 drivers.
+- Added 3093 fingerprints, increasing the total to 4955 fingerprints.
+
+### Improvements
+- Updated screenshots for better clarity.
+
+### CI/CD
+- Minor updates to scripts and configuration files.
+---
+
+ [5.11.90] - 2026-03-05
 
 ### Bug Fixes
 - Fixed issue with Puppeteer capturing token before session API.
