@@ -27,12 +27,20 @@ async function main() {
   const tokens = dtk ? [dtk, tk] : [tk];
   let lastErr;
   for (const t of tokens) {
+    const label = t === tk ? 'raw' : 'deleg';
     try {
-      log('Trying token: ' + t.length + 'c' + (t === tk ? ' (raw)' : ' (deleg)'));
+      log('Trying SDK: ' + t.length + 'c (' + label + ')');
       await promoteWithSdk(t);
       return;
     } catch (e) {
-      log('  Token failed: ' + e.message);
+      log('  SDK failed: ' + e.message);
+    }
+    try {
+      log('Trying raw fetch: ' + t.length + 'c (' + label + ')');
+      await promoteRaw(t);
+      return;
+    } catch (e) {
+      log('  Raw failed: ' + e.message);
       lastErr = e;
     }
   }
@@ -66,9 +74,15 @@ async function authCodeFlow() {
   for(let i=0;i<5&&!code;i++){const r=await fetch(next,{headers:ah,redirect:'manual'});const loc=r.headers.get('location')||'';log('  Hop '+(i+1)+': '+r.status);if(!loc)break;try{code=new URL(loc,REDIR).searchParams.get('code')}catch{}if(!code)next=loc}
   if(!code){log('  No auth code');return null}
   const tbody='client_id='+CID+'&client_secret='+CSC+'&grant_type=authorization_code&code='+code+'&redirect_uri='+encodeURIComponent(REDIR);
-  const tr=await fetch(APIB+'/oauth2/token',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:tbody});
-  const tj=await tr.json(); log('  Exchange: '+tr.status);
-  return tj.access_token||null;
+  const tokenUrls=[APIB+'/oauth2/token',AUTH+'/oauth2/token','https://apps-api.athom.com/oauth2/token'];
+  for(const tu of tokenUrls){
+    try{
+      const tr=await fetch(tu,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:tbody});
+      const tj=await tr.json(); log('  Exchange('+tu.split('//')[1].split('/')[0]+'): '+tr.status);
+      if(tj.access_token) return tj.access_token;
+    }catch(e){log('  Exchange err: '+e.message)}
+  }
+  return null;
 }
 async function getDelegation(tk) {
   log('Step 2: Delegation token');
@@ -102,7 +116,7 @@ async function promoteRaw(apiTk) {
   const hd={Authorization:'Bearer '+apiTk,Accept:'application/json'};
   const urls=['https://apps-api.athom.com/api/v1/app/'+APP+'/build','https://apps-api.athom.com/api/v1/app/'+APP+'/builds','https://apps-api.athom.com/api/v1/app/'+APP];
   let r,ok=false;
-  for(const u of urls){r=await fetch(u,{headers:hd});log('  GET '+u+' → '+r.status);if(r.ok){ok=true;break}}
+  for(const u of urls){r=await fetch(u,{headers:hd});const st=r.status;log('  GET '+u.split(APP)[1]+' → '+st);if(st===401){const t=await r.text().catch(()=>'');log('    401: '+t.slice(0,200))}if(r.ok){ok=true;break}}
   if(!ok){const t=await r.text().catch(()=>'');log('  '+t);throw new Error('builds '+r.status+': '+t)}
   const d=await r.json();
   const arr=Array.isArray(d)?d:(d.builds||[]);
