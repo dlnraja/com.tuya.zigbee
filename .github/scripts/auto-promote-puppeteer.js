@@ -347,10 +347,20 @@ async function findAndPromote(page, captured) {
     await new Promise(r => setTimeout(r, 3000));
     await snap(page, '06-after-click');
 
-    // On submission page: look for Release/Test/channel controls
+    // On submission page: dump info for debugging
     log('  Submission page: ' + page.url());
-    const subText = await page.evaluate(() => document.body?.innerText || '');
-    log('  Sub page: ' + subText.length + 'c');
+    const subHtml = await page.evaluate(() => document.documentElement.outerHTML);
+    log('  Sub page: ' + subHtml.length + 'c');
+    const sDir = process.env.GITHUB_WORKSPACE
+      ? path.join(process.env.GITHUB_WORKSPACE, 'screenshots')
+      : path.join(__dirname, '..', '..', 'screenshots');
+    fs.mkdirSync(sDir, { recursive: true });
+    fs.writeFileSync(path.join(sDir, 'submission-dump.html'), subHtml);
+    const elList = await page.evaluate(() => {
+      return [...document.querySelectorAll('button,a,[role="button"],[role="tab"],select')].slice(0,40)
+        .map(e => `<${e.tagName} role=${e.getAttribute('role')} class="${(e.className||'').toString().slice(0,40)}"> ${(e.textContent||'').trim().slice(0,50)}`);
+    });
+    elList.forEach(s => log('    EL: ' + s));
     await snap(page, '06b-submission');
 
     // Try to find and click Release to Test / Test button / channel dropdown
