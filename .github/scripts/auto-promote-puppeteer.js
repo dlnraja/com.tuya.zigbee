@@ -146,15 +146,8 @@ async function main() {
     await new Promise(r => setTimeout(r, 2000));
     log(`  Current URL: ${page.url()}`);
 
-    // Step 3: Click "My Apps" in sidebar (SPA navigation)
-    log('\n### Step 3: Navigate via SPA');
-    await navigateToVersions(page);
-    await snap(page, '05-versions');
-
-    // Step 4: Find and promote
-    log('\n### Step 4: Find draft & promote');
-    log('  [NET] Captured API URLs: ' + captured.apiUrls.length);
-    if (captured.token) log('  [NET] Has token: ' + captured.token.length + 'c');
+    // Step 3: Find and promote (includes SPA navigation)
+    log('\n### Step 3: Find draft & promote');
     const result = await findAndPromote(page, captured);
     await snap(page, '07-final');
 
