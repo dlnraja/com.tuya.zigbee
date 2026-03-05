@@ -23,12 +23,17 @@ async function main() {
   if (!tk) tk = await authCodeFlow();
   if (!tk) { log('No access token'); process.exit(1); }
   log('Token: ' + tk.length + 'c');
-  const dtk = await getDelegation(tk);
-  log('Delegation: ' + (dtk ? dtk.length + 'c' : 'none'));
-  const tokens = dtk ? [dtk, tk] : [tk];
+  // Strategy 1: AthomCloudAPI (handles delegation like the SPA)
+  try {
+    log('CloudAPI strategy');
+    await promoteViaCloudApi(tk);
+    return;
+  } catch (e) { log('  CloudAPI: ' + e.message); }
+  const delegTokens = await getAllDelegations(tk);
+  log('Delegations: ' + delegTokens.length + ' tokens');
+  const tokens = [...delegTokens.map(d => ({tk: d.token, label: 'deleg:'+d.aud})), {tk, label: 'raw'}];
   let lastErr;
-  for (const t of tokens) {
-    const label = t === tk ? 'raw' : 'deleg';
+  for (const {tk: t, label} of tokens) {
     try {
       log('Trying SDK: ' + t.length + 'c (' + label + ')');
       await promoteWithSdk(t);
@@ -37,7 +42,7 @@ async function main() {
       log('  SDK failed: ' + e.message);
     }
     try {
-      log('Trying raw fetch: ' + t.length + 'c (' + label + ')');
+      log('Trying raw: ' + t.length + 'c (' + label + ')');
       await promoteRaw(t);
       return;
     } catch (e) {
@@ -110,18 +115,39 @@ async function authCodeFlow() {
   }
   return null;
 }
-async function getDelegation(tk) {
-  log('Step 2: Delegation token');
-  for (const aud of ['apps','apps-api','homey-apps','homey']) {
+async function getAllDelegations(tk) {
+  log('Step 2: Delegation tokens (all audiences)');
+  const results = [];
+  for (const aud of ['apps','apps-api','https://apps-api.athom.com','apps-api.athom.com','homey-apps','homey']) {
     try {
       const r=await fetch(APIB+'/delegation/token',{method:'POST',headers:{Authorization:'Bearer '+tk,'Content-Type':'application/json'},body:JSON.stringify({audience:aud})});
       const txt=await r.text(); log('  deleg('+aud+'): '+r.status+' len='+txt.length);
       if(!r.ok) continue;
       let dtk; try{const j=JSON.parse(txt);dtk=j.token||j.access_token||(typeof j==='string'?j:null)}catch{dtk=txt.replace(/"/g,'')}
-      if(dtk) return dtk;
+      if(dtk) results.push({token: dtk, aud});
     } catch(e){log('  deleg('+aud+') err: '+e.message)}
   }
-  return null;
+  return results;
+}
+async function promoteViaCloudApi(rawToken) {
+  const {AthomCloudAPI, AthomAppsAPI} = require('athom-api');
+  const cloud = new AthomCloudAPI({clientId: CID, clientSecret: CSC});
+  cloud.setToken(rawToken);
+  for (const aud of ['homey','apps','apps-api']) {
+    try {
+      const dtk = await cloud.createDelegationToken({audience: aud});
+      const token = dtk?.token || dtk;
+      if (!token) continue;
+      log('  CloudAPI deleg('+aud+'): '+String(token).length+'c');
+      const api = new AthomAppsAPI({token});
+      const builds = await api.getBuilds({appId:APP});
+      const draft = builds.find(b=>/draft/i.test(b.channel||''));
+      if(!draft){log('  No draft');process.exit(0)}
+      await api.updateBuildChannel({appId:APP,buildId:draft.id||draft._id,channel:'test'});
+      log('  Promoted via CloudAPI!'); return;
+    } catch(e){log('  CloudAPI('+aud+'): '+e.message)}
+  }
+  throw new Error('CloudAPI: all audiences failed');
 }
 async function promoteWithSdk(apiTk) {
   log('Step 3: Get builds');
