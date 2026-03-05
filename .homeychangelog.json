@@ -1,4 +1,7 @@
 {
+  "5.11.96": {
+    "en": "Universal Tuya Zigbee app v5.11.96: Fixed draft detection and updated screenshots."
+  },
   "5.11.95": {
     "en": "Universal Tuya Zigbee app v5.11.95: Fixed navigation issue and updated drivers and fingerprints."
   },
@@ -56,10 +59,7 @@
   "5.11.77": {
     "en": "Universal Tuya Zigbee app v5.11.77: Updated drivers and fingerprints."
   },
-  "5.11.76": {
-    "en": "Universal Tuya Zigbee app v5.11.76: Fixed error handling and updated drivers."
-  },
-  "5.11.96": {
-    "en": "v5.11.95: Removed undefined `navigateToVersions` call from main()., Updated to 145 drivers and 3093 fingerprints., No user-visible improvements in this release., No changes related to CI/CD."
+  "5.11.97": {
+    "en": "v5.11.96: Fixed draft detection by adding `b.state`., Updated 145 drivers and 4955 fingerprints., Updated various screenshots for better clarity and accuracy."
   }
 }
