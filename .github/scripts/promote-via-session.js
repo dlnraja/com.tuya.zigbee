@@ -33,17 +33,30 @@ async function promoteViaBrowserSession(page, log, dry, capturedToken) {
   if(!builds){log('  [SessAPI] No builds');return false;}
   log('  [SessAPI] '+builds.length+' builds, first: '+JSON.stringify(Object.keys(builds[0]||{})));
   if(builds[0]) log('  [SessAPI] b0: ch='+builds[0].channel+' st='+builds[0].status+' state='+builds[0].state);
-  const draft=builds.find(b=>/draft/i.test(b.channel||b.status||b.state||''));
-  if(!draft) return 'no-draft';
-  log('  [SessAPI] Draft: '+(draft.id||draft.version));
+  const last=builds[builds.length-1];
+  if(last) log('  [SessAPI] bLast: id='+last.id+' state='+last.state+' v='+last.version);
+  const drafts=builds.filter(b=>/draft/i.test(b.channel||b.status||b.state||''));
+  if(!drafts.length) return 'no-draft';
+  const draft=drafts[drafts.length-1];
+  log('  [SessAPI] Draft: id='+draft.id+' v='+draft.version+' ('+drafts.length+' drafts)');
   if(dry) return false;
   const pid=draft.id||draft._id;
-  for(const [m,u] of [['PUT',`${BASE}/app/${APP}/build/${pid}/channel`],['PUT',`${BASE}/app/${APP}/build/${pid}`],['POST',`${BASE}/app/${APP}/build/${pid}/publish`]]){
-    try{
-      const r=await fetch(u,{method:m,headers:{...h,'Content-Type':'application/json'},body:JSON.stringify({channel:'test'})});
-      log('  [SessAPI] '+m+' → '+r.status);
-      if(r.ok){log('  [SessAPI] Promoted!');return true;}
-    }catch{}
+  log('  [SessAPI] Using build id='+pid);
+  const bodies=[{channel:'test'},{state:'test'},{channel:'test',state:'test'}];
+  const eps=[
+    ['PUT',`${BASE}/app/${APP}/build/${pid}`],
+    ['PUT',`${BASE}/app/${APP}/build/${pid}/channel`],
+    ['POST',`${BASE}/app/${APP}/build/${pid}/publish`],
+  ];
+  for(const body of bodies){
+    for(const [m,u] of eps){
+      try{
+        const r=await fetch(u,{method:m,headers:{...h,'Content-Type':'application/json'},body:JSON.stringify(body)});
+        const txt=r.ok?'':(' '+((await r.text().catch(()=>''))+'').slice(0,120));
+        log('  [SessAPI] '+m+' '+u.split('/build/')[1]+' body='+JSON.stringify(body)+' → '+r.status+txt);
+        if(r.ok){log('  [SessAPI] Promoted!');return true;}
+      }catch(e){log('  [SessAPI] err: '+e.message);}
+    }
   }
   return false;
 }
