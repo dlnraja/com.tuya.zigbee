@@ -31,7 +31,9 @@ async function promoteViaBrowserSession(page, log, dry, capturedToken) {
     } catch(e){log('  [SessAPI] '+e.message);}
   }
   if(!builds){log('  [SessAPI] No builds');return false;}
-  const draft=builds.find(b=>/draft/i.test(b.channel||b.status||''));
+  log('  [SessAPI] '+builds.length+' builds, first: '+JSON.stringify(Object.keys(builds[0]||{})));
+  if(builds[0]) log('  [SessAPI] b0: ch='+builds[0].channel+' st='+builds[0].status+' state='+builds[0].state);
+  const draft=builds.find(b=>/draft/i.test(b.channel||b.status||b.state||''));
   if(!draft) return 'no-draft';
   log('  [SessAPI] Draft: '+(draft.id||draft.version));
   if(dry) return false;
