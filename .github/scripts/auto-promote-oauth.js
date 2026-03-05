@@ -19,6 +19,7 @@ async function main() {
   if (!E || !P) { log('Need HOMEY_EMAIL + HOMEY_PASSWORD'); process.exit(1); }
   if (!CID || !CSC) { log('Need ATHOM_CLIENT_ID + ATHOM_CLIENT_SECRET'); process.exit(1); }
   let tk = await pwGrant();
+  if (!tk) tk = await implicitFlow();
   if (!tk) tk = await authCodeFlow();
   if (!tk) { log('No access token'); process.exit(1); }
   log('Token: ' + tk.length + 'c');
@@ -63,8 +64,33 @@ async function pwGrant() {
   } catch (e) { log('  PW error: ' + e.message); }
   return null;
 }
+async function implicitFlow() {
+  log('Step 1b: Implicit flow (response_type=token)');
+  try {
+    const lr = await fetch(AUTH+'/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:E,password:P}),redirect:'manual'});
+    const b = await lr.json(); log('  Login: '+lr.status);
+    const sc=lr.headers.getSetCookie?.()||[]; const ck=sc.map(c=>c.split(';')[0]).join('; ');
+    const ah={}; if(ck)ah.Cookie=ck; if(b.token)ah.Authorization='Bearer '+b.token;
+    const au=AUTH+'/oauth2/authorise?client_id='+CID+'&redirect_uri='+encodeURIComponent(REDIR)+'&response_type=token&scopes=apps';
+    let token=null,next=au;
+    for(let i=0;i<5&&!token;i++){
+      const r=await fetch(next,{headers:ah,redirect:'manual'});
+      const loc=r.headers.get('location')||'';
+      log('  Hop '+(i+1)+': '+r.status+' loc='+(loc?loc.substring(0,80)+'...':'none'));
+      if(!loc) break;
+      // Token may be in URL fragment (#access_token=...) or query (?access_token=...)
+      const hashIdx=loc.indexOf('#');
+      if(hashIdx>=0){const frag=new URLSearchParams(loc.substring(hashIdx+1));token=frag.get('access_token')}
+      if(!token){try{token=new URL(loc,REDIR).searchParams.get('access_token')}catch{}}
+      if(!token) next=loc;
+    }
+    if(token){log('  Implicit token: '+token.length+'c');return token;}
+    log('  No implicit token');
+  } catch(e){log('  Implicit err: '+e.message)}
+  return null;
+}
 async function authCodeFlow() {
-  log('Step 1b: Auth code flow');
+  log('Step 1c: Auth code flow');
   const lr = await fetch(AUTH+'/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:E,password:P}),redirect:'manual'});
   const b = await lr.json(); log('  Login: '+lr.status);
   const sc=lr.headers.getSetCookie?.()||[]; const ck=sc.map(c=>c.split(';')[0]).join('; ');
