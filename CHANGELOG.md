@@ -6,7 +6,22 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.94] - 2026-03-05
+## [5.11.95] - 2026-03-05
+
+### Bug Fixes
+- Removed undefined `navigateToVersions` call from main().
+
+### New Features
+- Updated to 145 drivers and 3093 fingerprints.
+
+### Improvements
+- No user-visible improvements in this release.
+
+### CI/CD
+- No changes related to CI/CD.
+---
+
+ [5.11.94] - 2026-03-05
 
 ### New Features
 - Added 145 drivers.
