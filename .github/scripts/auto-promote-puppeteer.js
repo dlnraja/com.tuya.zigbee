@@ -317,36 +317,26 @@ async function findAndPromote(page, captured) {
 
   if (DRY) { log('  DRY RUN - not clicking'); return false; }
 
-  // Strategy 1: Look for "Release to Test" / "Promote" / "Test" button near draft
-  const promoteSel = [
-    'button:has-text("Release to Test")', 'button:has-text("Test")',
-    'button:has-text("Promote")', 'a:has-text("Release to Test")',
-    '[data-channel="test"]', '[data-action="promote"]',
-  ];
-
-  // Use page.evaluate to find clickable elements with promote-related text
+  // Strategy 1: Click "SUBMISSION >" link next to first draft build row
+  log('  Strategy 1: Find SUBMISSION link for draft');
   const clicked = await page.evaluate(() => {
-    const keywords = ['release to test', 'promote to test', 'test', 'promote'];
-    // Check buttons
-    const btns = [...document.querySelectorAll('button, a, [role="button"]')];
-    for (const kw of keywords) {
-      for (const b of btns) {
-        const t = (b.textContent || '').trim().toLowerCase();
-        if (t === kw || t.includes('release to test') || t.includes('promote to test')) {
-          b.click();
-          return `Clicked: "${b.textContent.trim()}"`;
-        }
+    const rows = [...document.querySelectorAll('tr')];
+    for (const row of rows) {
+      if (!/draft/i.test(row.textContent)) continue;
+      const link = row.querySelector('a');
+      if (link && /submission/i.test(link.textContent)) {
+        link.click();
+        return 'SUBMISSION link in draft row: ' + link.href;
       }
+      const anyLink = [...row.querySelectorAll('a')].find(a => a.href);
+      if (anyLink) { anyLink.click(); return 'Link in draft row: ' + anyLink.href; }
     }
-    // Check for dropdown/select with "test" option
-    const selects = [...document.querySelectorAll('select')];
-    for (const sel of selects) {
-      const opts = [...sel.options];
-      const testOpt = opts.find(o => o.value === 'test' || o.textContent.toLowerCase().includes('test'));
-      if (testOpt) {
-        sel.value = testOpt.value;
-        sel.dispatchEvent(new Event('change', {bubbles: true}));
-        return `Selected: "${testOpt.textContent.trim()}"`;
+    // Fallback: any "release to test" or "promote" button
+    const btns = [...document.querySelectorAll('button, a, [role="button"]')];
+    for (const b of btns) {
+      const t = (b.textContent || '').trim().toLowerCase();
+      if (t.includes('release to test') || t.includes('promote to test')) {
+        b.click(); return 'Button: ' + b.textContent.trim();
       }
     }
     return null;
@@ -357,21 +347,43 @@ async function findAndPromote(page, captured) {
     await new Promise(r => setTimeout(r, 3000));
     await snap(page, '06-after-click');
 
-    // Confirm dialog if present
-    const confirmed = await page.evaluate(() => {
+    // On submission page: look for Release/Test/channel controls
+    log('  Submission page: ' + page.url());
+    const subText = await page.evaluate(() => document.body?.innerText || '');
+    log('  Sub page: ' + subText.length + 'c');
+    await snap(page, '06b-submission');
+
+    // Try to find and click Release to Test / Test button / channel dropdown
+    const promoted = await page.evaluate(() => {
+      // Look for "Release to test" or "Test" button
       const btns = [...document.querySelectorAll('button, a, [role="button"]')];
       for (const b of btns) {
         const t = (b.textContent || '').trim().toLowerCase();
-        if (t === 'confirm' || t === 'yes' || t === 'ok' || t === 'release') {
-          b.click();
-          return `Confirmed: "${b.textContent.trim()}"`;
+        if (t.includes('release to test') || t === 'test' || t.includes('promote')) {
+          b.click(); return 'Clicked: ' + b.textContent.trim();
+        }
+      }
+      // Try MUI select/dropdown for channel
+      const selects = [...document.querySelectorAll('select, [role="listbox"], [class*="Select"]')];
+      for (const sel of selects) {
+        if (sel.tagName === 'SELECT') {
+          const opt = [...sel.options].find(o => o.value === 'test');
+          if (opt) { sel.value = 'test'; sel.dispatchEvent(new Event('change', {bubbles:true})); return 'Selected test'; }
+        } else { sel.click(); return 'Clicked dropdown'; }
+      }
+      // Confirm/Yes/OK
+      for (const b of btns) {
+        const t = (b.textContent || '').trim().toLowerCase();
+        if (t === 'confirm' || t === 'yes' || t === 'ok' || t === 'release' || t === 'submit') {
+          b.click(); return 'Confirmed: ' + b.textContent.trim();
         }
       }
       return null;
     });
-    if (confirmed) {
-      log(`  ${confirmed}`);
+    if (promoted) {
+      log('  ' + promoted);
       await new Promise(r => setTimeout(r, 3000));
+      await snap(page, '06c-after-promote');
     }
     return true;
   }
