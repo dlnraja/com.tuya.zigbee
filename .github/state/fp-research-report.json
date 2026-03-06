@@ -1,23 +1,22 @@
 {
-  "timestamp": "2026-03-04T15:10:29.448Z",
+  "timestamp": "2026-03-06T15:19:16.446Z",
   "total": 1,
-  "resolved": 0,
-  "unknown": 1,
+  "resolved": 1,
+  "unknown": 0,
   "falsePositives": 0,
   "results": [
     {
       "fp": "_TZE200_vvmbj46n",
       "valid": true,
       "prefix": "tuya_dp",
-      "driver": null,
+      "driver": "lcdtemphumidsensor",
       "pid": null,
-      "confidence": 0,
-      "sources": [],
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
       "method": null,
-      "falsePositive": {
-        "isFP": false,
-        "reason": "unknown_not_false"
-      }
+      "driverExists": true
     }
   ]
 }

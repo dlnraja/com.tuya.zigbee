@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-03-04T14:56:54.638Z",
-  "appVersion": "5.11.89",
+  "timestamp": "2026-03-06T14:55:01.000Z",
+  "appVersion": "5.11.101",
   "findings": {
     "issues": [
       {
@@ -24,7 +24,126 @@
           }
         ],
         "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/137",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 97,
+        "title": "[DEVICE] Presence Sensor Radar:   zb_product_id    \"TS0225\" - zb_manufacturer_name     \"_TZ321C_fkzihaxe8\" - Wenzhi cant get any value.",
+        "user": "NoroddH",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ321C_fkzihaxe8",
+            "drivers": [
+              "presence_sensor_radar"
+            ]
+          },
+          {
+            "fp": "_TZ321C_fkzihax8",
+            "drivers": [
+              "presence_sensor_radar"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/97",
         "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1270,
+        "title": "Device Request - Human presence sensor - Wenzhou Wenzhi Automation  [ _TZ321C_fkzihax8 ] / Zigbee 5.8G Radar [ TS0225 ]",
+        "user": "NoroddH",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ321C_fkzihax8",
+            "drivers": [
+              "presence_sensor_radar"
+            ]
+          }
+        ],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1270",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1331,
+        "title": "Device Request - [UFO-R11] - [Moes] / [modelId]",
+        "user": "MF-ITuser",
+        "newFPs": [
+          "_TZ3290_ot6ewjvmej"
+        ],
+        "existingFPs": [
+          {
+            "fp": "_TZ3290_ot6ewjvmejq5ekhl",
+            "drivers": [
+              "ir_blaster",
+              "ir_remote"
+            ]
+          }
+        ],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1331",
+        "state": "open",
+        "imageAnalysis": "```json\n{\n  \"tuya_fingerprints\": {\n    \"gateway\": {\n      \"type\": \"Wired\",\n      \"compatibility\": [\n        \"Tuya ZigBee wired hub\",\n        \"Tuya wired multi-mode hub\"\n      ]\n    },\n    \"wireless_hub\": {\n      \"status\": \"Not supported\"\n    },\n    \"control_methods\": [\n      \"App Control\",\n      \"Voice Control\"\n    ]\n  }\n}\n```"
+      },
+      {
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1142,
+        "title": "Device Request - Wenzhi Smart Human Presence Sensor & Relay  - _TZE204_clrdrnya / WZ-235-ZB-RL TS0601",
+        "user": "dmz-86",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE204_clrdrnya",
+            "drivers": [
+              "motion_sensor_radar_mmwave"
+            ]
+          }
+        ],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1142",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 869,
+        "title": "Device Request - [Fingerbot Plus] - [_TZ3210_j4pdtz9v] / [TS0001]",
+        "user": "AntondK88",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3210_j4pdtz9v",
+            "drivers": [
+              "curtain_motor",
+              "fingerbot"
+            ]
+          }
+        ],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/869",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1349,
+        "title": "​[Device Request] Add support for TS004F Smart Knob Dimmer (_TZ3000_402vrq2i) - [Device name] - [manufacturerName] / [modelId]",
+        "user": "ndb961",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_402vrq2i",
+            "drivers": [
+              "button_wireless_4",
+              "climate_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1349",
+        "state": "open",
         "imageAnalysis": null
       },
       {
@@ -83,6 +202,19 @@
         ],
         "url": "https://github.com/dlnraja/com.tuya.zigbee/pull/46",
         "state": "closed",
+        "merged": false
+      },
+      {
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1350,
+        "title": "added TS110E driver for",
+        "user": "PiTRiS87",
+        "fps": [
+          "_TZ3210_ngqk6jia",
+          "_TZ3210_weaqkhab"
+        ],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1350",
+        "state": "open",
         "merged": false
       },
       {
@@ -146,22 +278,10 @@
         "url": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1210",
         "state": "open",
         "merged": false
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 1292,
-        "title": "Added radar&illuminance sensor",
-        "user": "WJGvdVelden",
-        "fps": [
-          "_TZE200_y8jijhba"
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/pull/1292",
-        "state": "open",
-        "merged": false
       }
     ],
     "newFPs": [],
     "forkFPs": []
   },
-  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests\n1. **Smart Switch (TYZGTH1CH-D1RF)**\n   - **User:** rpre\n   - **New Fingerprint:** `_TZ3000_xxxxx`\n   - **Existing Fingerprints:** \n     - `_TZ3218_7fiyo3kv` (Drivers: `switch_temp_sensor`)\n   - **Issue Link:** [View Issue](https://github.com/JohanBendz/com.tuya.zigbee/issues/1329)\n\n## Existing Fingerprints Supported\n1. **Plug Energy Monitor**\n   - Fingerprints:\n     - `_TZ3210_w0qqde0g` (Drivers: `plug_energy_monitor`)\n     - `_TZ3210_xzhnra8x` (Drivers: `plug_energy_monitor`)\n   - **Issue Link:** [View Issue](https://github.com/dlnraja/com.tuya.zigbee/issues/137)\n\n## Fingerprints from Forks to Integrate\n- No new fingerprints from forks were identified in the current analysis.\n\n## Pull Requests with Useful Changes\n1. **PR #45** - Update driver.compose.json\n   - **User:** vl14-dev\n   - **Fingerprint:** `_TZE200_nv6nxo0c`\n   - **Status:** Merged\n   - **Link:** [View PR](https://github.com/dlnraja/com.tuya.zigbee/pull/45)\n\n2. **PR #46** - Adding support for MOES/Tuya Zigbee AM25 Tubular Motor\n   - **User:** vl14-dev\n   - **Fingerprint:** `_TZE200_nv6nxo0c`\n   - **Status:** Closed, not merged\n   - **Link:** [View PR](https://github.com/dlnraja/com.tuya.zigbee/pull/46)\n\n3. **PR #1253** - Added 3 new devices\n   - **User:** Peter-Celica\n   - **Fingerprints:** \n     - `_TZE200_pay2byax`\n     - `_TZ3000_mrpevh8p`\n   - **Status:** Open\n   - **Link:** [View PR](https://github.com/JohanBendz/com.tuya.zigbee/pull/1253)\n\n4. **PR #1219** - Update driver.compose.json\n   - **User:** Melectro1\n   - **Fingerprint:** `_TZ3000_gjrubzje`\n   - **Status:** Open\n   - **Link:** [View PR](https://github.com/JohanBendz/com.tuya.zigbee/pull/1219)\n\n5. **PR #1218** - Update driver.compose.json\n   - **User:** Melectro1\n   - **Fingerprint:** `_TZE204_dapwryy7`\n   - **Status:** Open\n   - **Link:** [View PR](https://github.com/JohanBendz/com.tuya.zigbee/pull/1218)\n\n6. **PR #1195** - Add `_TZE204_bjzrowv2` - Update app.json\n   - **User:** YuriEstevan\n   - **Fingerprint:** `_TZE204_bjzrowv2`\n   - **Status:** Open\n   - **Link:** [View PR](https://github.com/JohanBendz/com.tuya.zigbee/pull/1195)\n\n7. **PR #1210** - Addition of Garage Door Controller and combined Fan drivers\n   - **User:** TKGHill\n   - **Fingerprints:** \n     - `_TZE204_lawxy9e2`\n     - `_TZE204_nklqjk62`\n   - **Status:** Open\n   - **Link:** [View PR](https://github.com/JohanBendz/com.tuya.zigbee/pull/1210)\n\n8. **PR #1292** - Added radar & illuminance sensor\n   - **User:** WJGvdVelden\n   - **Fingerprint:** `_TZE200_y8jijhba`\n   - **Status:** Open\n   - **Link:** [View PR](https://github.com/JohanBendz/com.tuya.zigbee/pull/1292)\n\nThis summary encapsulates the latest developments in the Universal Tuya Zigbee project, highlighting new device requests, existing support, and ongoing contributions through pull requests."
+  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests\n1. **Human Presence Sensor**  \n   - **Fingerprint**: `_TZ321C_fkzihax8`  \n   - **Issue**: [Device Request - Human presence sensor - Wenzhou Wenzhi Automation](https://github.com/JohanBendz/com.tuya.zigbee/issues/1270)  \n   - **Status**: Open  \n\n2. **UFO-R11**  \n   - **Fingerprint**: `_TZ3290_ot6ewjvmej`  \n   - **Issue**: [Device Request - UFO-R11](https://github.com/JohanBendz/com.tuya.zigbee/issues/1331)  \n   - **Status**: Open  \n\n3. **Wenzhi Smart Human Presence Sensor & Relay**  \n   - **Fingerprint**: `_TZE204_clrdrnya`  \n   - **Issue**: [Device Request - Wenzhi Smart Human Presence Sensor & Relay](https://github.com/JohanBendz/com.tuya.zigbee/issues/1142)  \n   - **Status**: Open  \n\n4. **Fingerbot Plus**  \n   - **Fingerprint**: `_TZ3210_j4pdtz9v`  \n   - **Issue**: [Device Request - Fingerbot Plus](https://github.com/JohanBendz/com.tuya.zigbee/issues/869)  \n   - **Status**: Open  \n\n5. **Smart Knob Dimmer**  \n   - **Fingerprint**: `_TZ3000_402vrq2i`  \n   - **Issue**: [Device Request - Smart Knob Dimmer](https://github.com/JohanBendz/com.tuya.zigbee/issues/1349)  \n   - **Status**: Open  \n\n6. **Smart Switch**  \n   - **Fingerprint**: `_TZ3000_xxxxx`  \n   - **Issue**: [Device Request - Smart Switch](https://github.com/JohanBendz/com.tuya.zigbee/issues/1329)  \n   - **Status**: Open  \n\n## Existing Fingerprints Supported\n- **Plug Energy Monitor**:  \n  - `_TZ3210_w0qqde0g`  \n  - `_TZ3210_xzhnra8x`  \n\n- **Presence Sensor Radar**:  \n  - `_TZ321C_fkzihaxe8`  \n  - `_TZ321C_fkzihax8`  \n\n- **IR Blaster/Remote**:  \n  - `_TZ3290_ot6ewjvmejq5ekhl`  \n\n- **Motion Sensor Radar**:  \n  - `_TZE204_clrdrnya`  \n\n- **Curtain Motor/Fingerbot**:  \n  - `_TZ3210_j4pdtz9v`  \n\n- **Button Wireless 4/Climate Sensor**:  \n  - `_TZ3000_402vrq2i`  \n\n- **Switch Temp Sensor**:  \n  - `_TZ3218_7fiyo3kv`  \n\n## Fingerprints from Forks to Integrate\n- No new fingerprints from forks have been identified for integration.\n\n## Pull Requests with Useful Changes\n1. **PR #1350**: [Added TS110E driver](https://github.com/JohanBendz/com.tuya.zigbee/pull/1350)  \n   - **Fingerprints**: `_TZ3210_ngqk6jia`, `_TZ3210_weaqkhab`  \n   - **Status**: Open  \n\n2. **PR #1253**: [Added 3 new devices](https://github.com/JohanBendz/com.tuya.zigbee/pull/1253)  \n   - **Fingerprints**: `_TZE200_pay2byax`, `_TZ3000_mrpevh8p`  \n   - **Status**: Open  \n\n3. **PR #1219**: [Update driver.compose.json](https://github.com/JohanBendz/com.tuya.zigbee/pull/1219)  \n   - **Fingerprint**: `_TZ3000_gjrubzje`  \n   - **Status**: Open  \n\n4. **PR #1218**: [Update driver.compose.json](https://github.com/JohanBendz/com.tuya.zigbee/pull/1218)  \n   - **Fingerprint**: `_TZE204_dapwryy7`  \n   - **Status**: Open  \n\n5. **PR #1195**: [Add _TZE204_bjzrowv2](https://github.com/JohanBendz/com.tuya.zigbee/pull/1195)  \n   - **Fingerprint**: `_TZE204_bjzrowv2`  \n   - **Status**: Open  \n\n6. **PR #1210**: [Addition of Garage Door Controller](https://github.com/JohanBendz/com.tuya.zigbee/pull/1210)  \n   - **Fingerprints**: `_TZE204_lawxy9e2`, `_TZE204_nklqjk62`  \n   - **Status**: Open  \n\nThis summary encapsulates the latest developments in the Universal Tuya Zigbee repository, focusing on device requests, existing support, and ongoing contributions."
 }
