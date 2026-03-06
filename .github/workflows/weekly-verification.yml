@@ -1,0 +1,111 @@
+# Full Fork Verification - Mid-Week Autonomous Run
+# Runs Wednesday at 07:00 UTC + Sunday via sunday-master.yml
+# Covers: FPs, PIDs, capabilities, clusters, flow cards, DP mappings
+# Scans: JohanBendz upstream + ALL descendant forks + ascending parents + PRs/issues
+
+name: "Weekly Fork Verification"
+
+on:
+  schedule:
+    - cron: '0 7 * * 3'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (no file changes)"
+        type: boolean
+        default: false
+      fork_depth:
+        description: "Max fork recursion depth"
+        type: string
+        default: '3'
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: weekly-verification
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  verify:
+    name: "Full Fork Verification"
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: "Full fork verification (clusters+flows+DPs+caps+FPs)"
+        id: verify
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          FORK_DEPTH: ${{ inputs.fork_depth || '3' }}
+        run: |
+          node .github/scripts/full-fork-verifier.js
+          if [ -s /tmp/new_fork_fps.json ]; then
+            echo "has_new_fps=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create issue for new findings
+        if: steps.verify.outputs.has_new_fps == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs=require('fs');
+            // Read verification report
+            let report='No detailed report';
+            try{report=fs.readFileSync('.github/state/full-verify-report.json','utf8')}catch{}
+            // Read new FPs
+            let fps={};
+            try{fps=JSON.parse(fs.readFileSync('/tmp/new_fork_fps.json','utf8'))}catch{}
+            const entries=Object.entries(fps);
+            if(!entries.length)return;
+            const {data:existing}=await github.rest.issues.listForRepo({
+              owner:context.repo.owner,repo:context.repo.repo,
+              state:'open',labels:'auto-scan',per_page:10
+            });
+            const title=`[Verify] ${entries.length} new fingerprints found`;
+            if(existing.some(i=>i.title===title)){console.log('Issue exists');return;}
+            const rows=entries.slice(0,50).map(([fp,info])=>
+              `| \`${fp}\` | ${info.fork||'?'} | ${info.driver||'?'} |`
+            ).join('\n');
+            // Read gap reports
+            let gaps='';
+            for(const f of['verify-cap-gaps','verify-cluster-gaps','verify-flow-gaps','verify-dp-gaps']){
+              try{const d=JSON.parse(fs.readFileSync('.github/state/'+f+'.json','utf8'));
+                if(d.length)gaps+='\n**'+f+':** '+d.length+' gaps found';
+              }catch{}
+            }
+            await github.rest.issues.create({
+              owner:context.repo.owner,repo:context.repo.repo,
+              title,
+              body:'## New Fingerprints\n| FP | Fork | Driver |\n|---|---|---|\n'+rows+'\n\n'+gaps+'\n\n_Full report: .github/state/full-verify-report.json_',
+              labels:['enhancement','auto-scan']
+            });
+
+      - name: Commit integrated changes
+        if: inputs.dry_run != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A drivers/ .github/state/
+          git diff --cached --quiet || git commit -m "auto: fork verification integration [skip ci]"
+          git pull --rebase origin master || true
+          git push || true

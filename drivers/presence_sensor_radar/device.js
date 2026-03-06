@@ -1421,13 +1421,14 @@ const SENSOR_CONFIGS = {
   // TYPE H2: LeapMMW 5.8G mmWave Radar (_TZ321C_fkzihaxe8 with 'e', _TZ321C_4slreunp)
   // v5.5.526: CORRECTED - Only devices WITH 'e' are mmWave radar with Tuya DPs
   // _TZ321C_fkzihaxe8 (with 'e') = mmWave radar using Tuya DPs
-  // _TZ321C_fkzihax8 (without 'e') = Pure IAS Zone PIR -> MOVED to motion_sensor driver
+  // _TZ321C_fkzihax8 (without 'e') = ALSO radar (NoroddH #97 confirmed on Tuya gw)
   // Source: Z2M #23853, #23913 - Uses IAS Zone (1280) for occupancy + Tuya DPs for radar
   // MAINS POWERED (Router), NOT battery!
   // ─────────────────────────────────────────────────────────────────────────────
   'LEAPMW_5G8_RADAR': {
     sensors: [
-      '_TZ321C_fkzihaxe8', // LeapMMW mmWave radar (WITH 'e' = Tuya DP support)
+      '_TZ321C_fkzihaxe8', // LeapMMW mmWave radar
+      '_TZ321C_fkzihax8',  // v5.11.99: NoroddH #97 confirmed radar on Tuya gateway
       '_TZ321C_4slreunp',  // LeapMMW MTD095-ZB variant
     ],
     battery: false,         // MAINS POWERED - Router device

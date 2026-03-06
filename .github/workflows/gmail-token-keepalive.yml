@@ -1,7 +1,8 @@
 name: Gmail Token Keepalive
+# v5.11.99: IMAP is now primary — OAuth keepalive disabled (manual only)
 on:
-  schedule:
-    - cron: '0 5,11,17,23 * * *'  # 4x/day — critical for Testing mode 7-day cycle
+  # schedule disabled — IMAP-primary mode, no OAuth token needed
+  # - cron: '0 5,11,17,23 * * *'
   workflow_dispatch:
   workflow_call:
 

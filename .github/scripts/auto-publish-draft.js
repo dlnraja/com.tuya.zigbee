@@ -23,7 +23,7 @@ const APPS_BASES = [
   'https://apps-api.athom.com/api/v2',
 ];
 
-if (!PAT) { console.error('HOMEY_PAT not set'); process.exit(0); }
+if (!PAT) { console.error('HOMEY_PAT not set'); process.exit(1); }
 
 function log(t) { console.log(t); if (SUM) try { fs.appendFileSync(SUM, t + '\n'); } catch {} }
 
@@ -45,7 +45,7 @@ async function getDelegationToken() {
   const h = { 'Authorization': 'Bearer ' + PAT, 'Content-Type': 'application/json' };
   const r = await apiFetch(CLOUD_BASE + '/delegation/token', 'POST', h, { audience: 'apps' });
   if (r.ok && r.data && r.data.token) {
-    log('  Delegation token obtained (' + r.data.token.length + ' chars)');
+    log('  Delegation token obtained');
     return r.data.token;
   }
   log('  Delegation failed: ' + r.status + ' ' + JSON.stringify(r.data).slice(0, 300));
@@ -96,7 +96,7 @@ async function main() {
   const ver = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '..', 'app.json'), 'utf8')).version;
   log('## Auto-Publish Draft -> Test');
   log('App: ' + APP + ' | Version: v' + ver + ' | DRY=' + DRY);
-  log('PAT: ' + PAT.slice(0, 8) + '...(' + PAT.length + ' chars)');
+  log('PAT: present (' + PAT.length + ' chars)');
 
   // Step 1: Get delegation token
   log('\n### Step 1: Authentication');
@@ -108,19 +108,18 @@ async function main() {
 
   // Step 2: List builds and find drafts
   log('\n### Step 2: List builds');
-  const result = await getBuilds(token);
+  let result = await getBuilds(token);
   if (!result) {
     // v5.11.27: Try again with raw PAT if delegation token was used
     if (token !== PAT) {
       log('  Retrying with raw PAT...');
-      const r2 = await getBuilds(PAT);
-      if (!r2) {
+      result = await getBuilds(PAT);
+      if (!result) {
         log('Could not list builds with any token. Check PAT validity.');
         process.exitCode = 1;
         return;
       }
       token = PAT;
-      Object.assign(result || {}, r2);
     } else {
       log('Could not list builds. Check PAT validity.');
       process.exitCode = 1;
@@ -142,6 +141,9 @@ async function main() {
     const ch = String(b.channel || b.status || '').toLowerCase();
     return ch === 'draft' || ch === '' || ch === 'none';
   });
+
+  // Sort by id desc to get latest first (Athom API returns unsorted)
+  drafts.sort((a, b) => (b.id || 0) - (a.id || 0));
 
   // Prefer builds matching current app.json version
   const verDrafts = drafts.filter(b => b.version === ver);

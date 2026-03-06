@@ -71,7 +71,8 @@ async function main(){
           const report={id:anonId(d.id),name:d.name,mfr,model,driver:drv,
             online:!!d.available,
             caps:d.capabilitiesObj?Object.keys(d.capabilitiesObj).sort():[],
-            warning:d.warning||null,matched:idx.has(mfr)};
+            warning:d.warning||null,matched:idx.has(mfr),
+            drivers:idx.get(mfr)||[],multiDriver:(idx.get(mfr)||[]).length>1};
           saveJ(path.join(RD,anonId(d.id)+'.json'),report);
           if(!idx.has(mfr)&&mfr) summary.unmatchedFPs.push({fp:mfr,model,name:d.name,source:'live_api'});
         }

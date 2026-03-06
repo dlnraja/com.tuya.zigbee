@@ -315,13 +315,18 @@ async function researchAndImplement(allNewFPs,idx){
 }
 
 async function main(){
-  const tk=await getToken();
-  let imapEmails=null;
-  if(!tk){
-    console.log('OAuth unavailable — trying IMAP fallback...');
-    if(imap)imapEmails=await imap.readViaIMAP();
-    if(!imapEmails){console.log('No Gmail access. Set GMAIL_APP_PASSWORD for permanent IMAP fallback (see SECRETS.md)');process.exit(0)}
-    console.log('IMAP fallback active:',imapEmails.length,'emails');
+  // v5.11.99: IMAP-primary — no OAuth token expiry issues
+  let imapEmails=null,tk=null;
+  const hasIMAP=!!(process.env.GMAIL_APP_PASSWORD||process.env.HOMEY_PASSWORD);
+  if(imap&&hasIMAP){
+    console.log('IMAP-primary mode');
+    imapEmails=await imap.readViaIMAP();
+    if(imapEmails)console.log('IMAP OK:',imapEmails.length,'emails');
+  }
+  if(!imapEmails){
+    console.log('IMAP unavailable — trying OAuth fallback...');
+    tk=await getToken();
+    if(!tk){console.log('No email access. Set GMAIL_APP_PASSWORD for IMAP (see SECRETS.md)');process.exit(0)}
   }
   const st=load(),idx=buildIndex(),res=[];
   const after=st.lastCheck?Math.floor(new Date(st.lastCheck).getTime()/1000):Math.floor(Date.now()/1000)-86400*7;

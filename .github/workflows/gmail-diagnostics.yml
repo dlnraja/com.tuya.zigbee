@@ -29,32 +29,16 @@ jobs:
         with:
           node-version: '22'
       - run: npm ci --prefer-offline --no-audit || npm install
-      - name: Pre-check token health
-        id: token_check
-        run: |
-          HF=".github/state/gmail-token-health.json"
-          if [ -f "$HF" ]; then
-            FAILS=$(node -p "try{JSON.parse(require('fs').readFileSync('$HF','utf8')).consecutiveFails||0}catch{0}")
-            if [ "$FAILS" -ge 3 ]; then
-              echo "::warning::Gmail OAuth token has $FAILS consecutive failures"
-              if [ -z "${{ secrets.GMAIL_APP_PASSWORD }}" ] && [ -z "${{ secrets.HOMEY_PASSWORD }}" ]; then
-                echo "::warning::No IMAP fallback configured — skipping fetch (set GMAIL_APP_PASSWORD or HOMEY_PASSWORD)"
-                echo "skip=true" >> $GITHUB_OUTPUT
-              else
-                echo "::notice::IMAP fallback available (GMAIL_APP_PASSWORD or HOMEY_PASSWORD) — continuing"
-              fi
-            fi
-          fi
-      - name: Fetch Gmail diagnostics + Gemini analysis
-        if: steps.token_check.outputs.skip != 'true'
+      # v5.11.99: IMAP-primary — no OAuth token health checks needed
+      - name: Fetch diagnostics via IMAP (+ OAuth fallback)
         env:
-          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
-          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
-          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_PAT: ${{ secrets.GH_PAT }}
