@@ -64,11 +64,11 @@ jobs:
       HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
       HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
@@ -486,7 +486,7 @@ jobs:
       - name: "12. Validate"
         if: always()
         continue-on-error: true
-        uses: athombv/github-action-homey-app-validate@v1
+        uses: athombv/github-action-homey-app-validate@002b7273c2b86032cb20d9bf25a67c8daca13f2c # v1
         with:
           level: publish
 
@@ -494,14 +494,14 @@ jobs:
         if: steps.commit.outcome == 'success'
         continue-on-error: true
         id: pub
-        uses: athombv/github-action-homey-app-publish@v1
+        uses: athombv/github-action-homey-app-publish@48be66b7f2f870c22b6117d7bb84dfa06c4fc309 # v1
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 
       - name: "12c. Create GitHub Release"
         if: steps.commit.outcome == 'success'
         continue-on-error: true
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2
         with:
           tag_name: v${{ steps.stats.outputs.version }}
           name: v${{ steps.stats.outputs.version }}
@@ -568,7 +568,7 @@ jobs:
 
       - name: "13e. Upload promote screenshots"
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: daily-promote-screenshots
           path: screenshots/
@@ -660,7 +660,7 @@ jobs:
           echo "**Total: 34 automation steps** | [Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee) | [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/)" >> $GITHUB_STEP_SUMMARY
 
       - name: Upload reports
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always()
         with:
           name: daily-reports-${{ github.run_number }}

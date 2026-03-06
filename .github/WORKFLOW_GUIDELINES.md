@@ -181,7 +181,7 @@ env:
 
 ---
 
-## G. Workflow Inventory (32 workflows)
+## G. Workflow Inventory (38 workflows)
 
 | Workflow | Schedule | Steps | Key Secrets |
 |----------|----------|-------|-------------|
@@ -200,12 +200,17 @@ env:
 | gmail-token-keepalive | 4x/day (5,11,17,23 UTC) | token refresh | GMAIL_* |
 | deploy-pages | on push + daily | Device Finder | GITHUB_TOKEN |
 | tuya-automation-hub | 4x/day (1,7,13,19) + Mon/Thu | forum+github | ALL |
-| forum-auto-responder | 4x/day (5,11,17,23) | forum respond | DISCOURSE_API_KEY |
+| forum-auto-responder | 2x/day (9,21 UTC) | forum respond | DISCOURSE_API_KEY |
 | cleanup-wrong-threads | manual | cleanup bot posts | DISCOURSE_API_KEY |
 | code-quality | Wed 03:00 + on push | quality checks | — |
 | dependabot-auto-merge | on PR | auto-merge deps | GH_PAT |
 
+19 additional workflows listed in `.github/workflows/` directory.
+
 See `.github/SECRETS.md` for full secret reference.
+
+### Supply-Chain Security
+All 109 action refs pinned to SHA hashes (Mar 2026). Format: `action@SHA # vN`
 
 ---
 

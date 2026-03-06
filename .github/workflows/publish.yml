@@ -29,14 +29,14 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: "22"
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Athom Validate
-        uses: athombv/github-action-homey-app-validate@v1
+        uses: athombv/github-action-homey-app-validate@002b7273c2b86032cb20d9bf25a67c8daca13f2c # v1
         with:
           level: publish
 
@@ -45,11 +45,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: "22"
           cache: npm
@@ -100,7 +100,7 @@ jobs:
       - name: Bump
         if: steps.pat.outputs.ok == 'true'
         id: bump
-        uses: athombv/github-action-homey-app-version@v1
+        uses: athombv/github-action-homey-app-version@986685b4903efabc9531248b2fdc9734223ff9f3 # v1
         with:
           version: ${{ inputs.version || 'patch' }}
           changelog: ${{ steps.cl.outputs.text }}
@@ -153,14 +153,14 @@ jobs:
       - name: Publish
         if: steps.pat.outputs.ok == 'true'
         id: pub
-        uses: athombv/github-action-homey-app-publish@v1
+        uses: athombv/github-action-homey-app-publish@48be66b7f2f870c22b6117d7bb84dfa06c4fc309 # v1
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 
       - name: Create GitHub Release
         if: steps.pat.outputs.ok == 'true'
         continue-on-error: true
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2
         with:
           tag_name: v${{ steps.bump.outputs.version }}
           name: v${{ steps.bump.outputs.version }}
@@ -214,7 +214,7 @@ jobs:
 
       - name: Upload promote screenshots
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: publish-promote-screenshots
           path: screenshots/

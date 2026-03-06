@@ -28,6 +28,10 @@ on:
           - verified
         default: publish
 
+permissions:
+  contents: read
+  pull-requests: read
+
 concurrency:
   group: validate-${{ github.ref }}
   cancel-in-progress: true
@@ -47,10 +51,10 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: 📥 Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
 
       - name: 📦 Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
@@ -120,7 +124,7 @@ jobs:
           "
 
       - name: 🔍 Validate (Athom Official)
-        uses: athombv/github-action-homey-app-validate@v1
+        uses: athombv/github-action-homey-app-validate@002b7273c2b86032cb20d9bf25a67c8daca13f2c # v1
         with:
           level: ${{ inputs.level || 'publish' }}
 

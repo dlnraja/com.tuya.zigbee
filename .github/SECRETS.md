@@ -1,7 +1,7 @@
 # GitHub Secrets Reference
 
-> **⚠️ SECURITY**: Athom OAuth creds (`598d85a3...`) + login screenshots exist in git history.
-> Rotate the Athom OAuth credentials, then run: `bfg --replace-text passwords.txt && git reflog expire --expire=now --all && git gc --prune=now --aggressive && git push --force`
+> **✅ SECURITY**: Athom OAuth creds purged from git history (Mar 2026, git-filter-repo).
+> Login screenshots also purged. Credentials must be rotated in Athom Developer Portal.
 
 ## Configured Secrets
 
