@@ -228,3 +228,7 @@
 
 ## Nightly Auto-Responses (2026-03-02 v5.11.46)
 - **dlnraja/com.tuya.zigbee#152** @github-actions[bot]: `danfoss`, `legrand`, `sonoff`, `xiaomi`, `test`, `bosch`, `ikea`, `tuya` (gh-Mistral-small-2503)
+
+
+## Nightly Auto-Responses (2026-03-06 v5.11.101)
+- **JohanBendz/com.tuya.zigbee#1350** @PiTRiS87: `_TZ3210_ngqk6jia`, `_TZ3210_weaqkhab` (gh-Mistral-small-2503)

@@ -1,9 +1,137 @@
 {
-  "timestamp": "2026-03-06T10:28:41.961Z",
+  "timestamp": "2026-03-06T15:56:06.393Z",
   "devices": [],
-  "unmatchedFPs": [],
-  "errors": [],
+  "unmatchedFPs": [
+    {
+      "fp": "_TZE200_d2zfg",
+      "source": "gmail",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [Auto] 14 new fingerprints fro"
+    },
+    {
+      "fp": "_TZE200_wjk6r",
+      "source": "gmail",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [Auto] New Tuya devices found "
+    }
+  ],
+  "errors": [
+    {
+      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe=",
+      "source": "gmail"
+    },
+    {
+      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-=",
+      "source": "gmail"
+    },
+    {
+      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-=",
+      "source": "gmail"
+    },
+    {
+      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe=",
+      "source": "gmail"
+    },
+    {
+      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe=",
+      "source": "gmail"
+    },
+    {
+      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe=",
+      "source": "gmail"
+    },
+    {
+      "err": "-text=3D\"Failed to lo=",
+      "source": "gmail"
+    },
+    {
+      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-=",
+      "source": "gmail"
+    },
+    {
+      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-=",
+      "source": "gmail"
+    },
+    {
+      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-=",
+      "source": "gmail"
+    },
+    {
+      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-=",
+      "source": "gmail"
+    },
+    {
+      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe=",
+      "source": "gmail"
+    },
+    {
+      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe=",
+      "source": "gmail"
+    },
+    {
+      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-=",
+      "source": "gmail"
+    },
+    {
+      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe=",
+      "source": "gmail"
+    },
+    {
+      "err": "Could not get device by id",
+      "source": "gmail"
+    },
+    {
+      "err": "is not solved. also, when I run the code locally from VSC on docker I get the fo",
+      "source": "gmail"
+    },
+    {
+      "err": "[err] [ManagerDrivers] [Driver:fingerbot] Error Initializing Device: Error: Cann",
+      "source": "gmail"
+    },
+    {
+      "err": "Could not get device by id<br>",
+      "source": "gmail"
+    },
+    {
+      "err": "is not solved. also, when I run the code locally from VSC on do=",
+      "source": "gmail"
+    },
+    {
+      "err": "Initializing Device: Erro=",
+      "source": "gmail"
+    },
+    {
+      "err": "find module '../../lib/tuya/TuyaZigbeeDevice'",
+      "source": "gmail"
+    },
+    {
+      "err": "find module '../../lib/tuya/TuyaZigbeeDevice'<br>",
+      "source": "gmail"
+    },
+    {
+      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-=",
+      "source": "gmail"
+    },
+    {
+      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe=",
+      "source": "gmail"
+    },
+    {
+      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe=",
+      "source": "gmail"
+    },
+    {
+      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe=",
+      "source": "gmail"
+    },
+    {
+      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe=",
+      "source": "gmail"
+    },
+    {
+      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-=",
+      "source": "gmail"
+    }
+  ],
   "sources": {
-    "gmail": 9
+    "gmail": 200
   }
 }
