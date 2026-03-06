@@ -6,7 +6,26 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.98] - 2026-03-06
+## [5.11.99] - 2026-03-06
+
+### Bug Fixes
+- Regenerated all 145 driver images from SVG icons.
+- Fixed detection of the latest draft.
+- Improved draft detection by adding state checks.
+- Fixed clicking on the SUBMISSION link.
+- Resolved issues with the 'Publish to Test' button detection.
+
+### New Features
+- None in this release.
+
+### Improvements
+- None in this release.
+
+### CI/CD
+- None in this release.
+---
+
+ [5.11.98] - 2026-03-06
 
 ### Bug Fixes
 - Fixed IAS issues.

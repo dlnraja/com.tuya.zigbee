@@ -1,6 +1,6 @@
 {
   "5.11.99": {
-    "en": "v5.11.98: Fixed IAS issues., Improved detection of the latest draft., Fixed detection of the 'Publish to Test' button., Resolved issues with ., 145 drivers and 4976 fingerprints supported."
+    "en": "Universal Tuya Zigbee app v5.11.99: Regenerated driver images and fixed various draft detection issues."
   },
   "5.11.98": {
     "en": "Universal Tuya Zigbee app v5.11.98 fixes IAS issues and improves draft detection."
@@ -58,5 +58,8 @@
   },
   "5.11.80": {
     "en": "Updated app with improved device support and bug fixes."
+  },
+  "5.11.100": {
+    "en": "v5.11.99: Regenerated all 145 driver images from SVG icons., Fixed detection of the latest draft., Improved draft detection by adding state checks., Fixed clicking on the SUBMISSION link., Resolved issues with the 'Publish to Test' button detection."
   }
 }
