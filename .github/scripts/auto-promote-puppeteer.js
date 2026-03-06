@@ -18,6 +18,13 @@ const DRY = process.env.DRY_RUN === 'true';
 const SUM = process.env.GITHUB_STEP_SUMMARY || null;
 
 function log(m) { console.log(m); if (SUM) try { fs.appendFileSync(SUM, m+'\n'); } catch {} }
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+async function waitReady(page, label, ms = 6000) {
+  await sleep(ms);
+  try { await page.waitForNetworkIdle({ idleTime: 1500, timeout: 10000 }); } catch {}
+  const len = await page.evaluate(() => document.body?.innerText?.length || 0);
+  log('  [wait] ' + label + ': ready (' + len + ' chars)');
+}
 
 async function snap(page, name) {
   const dir = process.env.GITHUB_WORKSPACE
@@ -85,6 +92,7 @@ async function main() {
     // Step 1: Go to HOME page (not deep URL — SPA needs step-by-step navigation)
     log('\n### Step 1: Navigate to home');
     await page.goto(BASE, { waitUntil: 'networkidle2' });
+    await waitReady(page, 'home-page', 5000);
     await snap(page, '01-initial');
     log(`  URL: ${page.url()}`);
 
@@ -117,13 +125,14 @@ async function main() {
         log(`  Clicked: ${clicked}`);
         // Wait for navigation to accounts.athom.com
         await page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 15000 }).catch(() => {});
-        await new Promise(r => setTimeout(r, 2000));
+        await waitReady(page, 'after-login-click', 4000);
         await snap(page, '02-after-login-click');
         log(`  Now at: ${page.url()}`);
       }
 
       // Now we should be on accounts.athom.com — fill credentials
       await doLogin(page);
+      await waitReady(page, 'post-login', 5000);
       await snap(page, '04-post-login');
       log(`  Post-login URL: ${page.url()}`);
 
@@ -144,12 +153,13 @@ async function main() {
       // Go to home so SPA hydrates properly
       if (!page.url().includes('tools.developer.homey.app')) {
         await page.goto(BASE, { waitUntil: 'networkidle2' });
+        await waitReady(page, 'home-after-login', 5000);
       }
     } else {
       log('  Already logged in');
     }
 
-    await new Promise(r => setTimeout(r, 2000));
+    await waitReady(page, 'pre-navigate', 3000);
     log(`  Current URL: ${page.url()}`);
 
     // Step 3: Find and promote (includes SPA navigation)
@@ -174,7 +184,7 @@ async function doLogin(page) {
   await snap(page, '02b-login-page');
 
   // Wait for page to fully render (accounts.athom.com is also an SPA)
-  await new Promise(r => setTimeout(r, 3000));
+  await waitReady(page, 'login-page-render', 5000);
 
   // Find email field with extended selectors
   const eSel = ['input[type="email"]','input[name="email"]','input[name="username"]','#email',
@@ -219,7 +229,7 @@ async function doLogin(page) {
     const submitBtn = await page.$('button[type="submit"]');
     if (submitBtn) await submitBtn.click(); else await page.keyboard.press('Enter');
     await page.waitForNavigation({waitUntil:'networkidle2',timeout:10000}).catch(()=>{});
-    await new Promise(r => setTimeout(r, 3000));
+    await waitReady(page, 'after-email-submit', 5000);
     await snap(page, '02d-after-email-submit');
     for (const s of ['input[type="password"]','input[name="password"]','input[autocomplete="current-password"]']) {
       try { pf = await page.waitForSelector(s, {visible:true,timeout:8000}); if(pf) break; } catch {}
@@ -242,7 +252,7 @@ async function doLogin(page) {
   try {
     await page.waitForNavigation({waitUntil:'networkidle2',timeout:30000});
   } catch { log('  Navigation timeout (may still be loading)'); }
-  await new Promise(r => setTimeout(r, 3000));
+  await waitReady(page, 'post-login-redirect', 5000);
 
   // Sometimes there's a second redirect (OAuth callback)
   if (page.url().includes('accounts.athom.com')) {
@@ -250,7 +260,7 @@ async function doLogin(page) {
     try {
       await page.waitForNavigation({waitUntil:'networkidle2',timeout:15000});
     } catch {}
-    await new Promise(r => setTimeout(r, 2000));
+    await waitReady(page, 'oauth-callback', 4000);
   }
   log('  Final login URL: ' + page.url());
 }
@@ -261,16 +271,16 @@ async function findAndPromote(page, captured) {
   async function spaNav(p) {
     log('  3a: My Apps');
     await p.evaluate(()=>{const l=document.querySelector('a[href="/apps"]');if(l)l.click();});
-    await new Promise(r=>setTimeout(r,4000));
+    await waitReady(p, 'my-apps-page', 8000);
     await snap(p,'05a-apps');
     log('  3b: App');
     const ok=await p.evaluate(id=>{const a=[...document.querySelectorAll('a')].find(l=>l.href&&l.href.includes(id));if(a){a.click();return true;}return false;},APP_ID);
     if(!ok) await p.goto(BASE+'/apps/app/'+APP_ID,{waitUntil:'networkidle2'});
-    await new Promise(r=>setTimeout(r,4000));
+    await waitReady(p, 'app-page', 8000);
     await snap(p,'05b-app');
     log('  3c: Versions');
     await p.evaluate(()=>{const a=[...document.querySelectorAll('a,button,[role="tab"]')].find(e=>/version/i.test(e.textContent));if(a)a.click();});
-    await new Promise(r=>setTimeout(r,4000));
+    await waitReady(p, 'versions-page', 8000);
     await snap(p,'05c-ver');
   }
 
@@ -304,7 +314,7 @@ async function findAndPromote(page, captured) {
     // Fallback: try direct deep-link to versions page
     log('  SPA nav didn\'t find drafts, trying deep-link to versions...');
     await page.goto(VERSIONS_URL, { waitUntil: 'networkidle2' });
-    await new Promise(r => setTimeout(r, 5000));
+    await waitReady(page, 'deep-link-versions', 8000);
     text = await page.evaluate(() => document.body?.innerText || '');
     hasDraft = text.toLowerCase().includes('draft');
     log('  Deep-link: ' + text.length + 'c, hasDraft=' + hasDraft);
@@ -361,7 +371,7 @@ async function findAndPromote(page, captured) {
 
   if (clicked) {
     log(`  ${clicked}`);
-    await new Promise(r => setTimeout(r, 10000));
+    await waitReady(page, 'submission-page', 12000);
     await snap(page, '06-after-click');
 
     // On submission page: dump info for debugging
@@ -394,7 +404,7 @@ async function findAndPromote(page, captured) {
     });
     if (promoted) {
       log('  ' + promoted);
-      await new Promise(r => setTimeout(r, 2000));
+      await waitReady(page, 'after-publish-click', 5000);
       // Handle MUI confirmation modal
       const ok = await page.evaluate(() => {
         const dlg = document.querySelector('[role="dialog"],.MuiDialog-root');
@@ -408,7 +418,7 @@ async function findAndPromote(page, captured) {
         return null;
       });
       if (ok) log('  Confirmed modal: ' + ok);
-      await new Promise(r => setTimeout(r, 3000));
+      await waitReady(page, 'after-modal-confirm', 6000);
       await snap(page, '06c-after-promote');
       return true;
     }
@@ -432,7 +442,7 @@ async function findAndPromote(page, captured) {
 
   if (rowClicked) {
     log('  Clicked draft row');
-    await new Promise(r => setTimeout(r, 3000));
+    await waitReady(page, 'after-row-click', 6000);
     await snap(page, '06-after-row-click');
 
     // Now look for promote button in expanded/modal view
@@ -456,7 +466,7 @@ async function findAndPromote(page, captured) {
     });
     if (btn2) {
       log(`  ${btn2}`);
-      await new Promise(r => setTimeout(r, 2000));
+      await waitReady(page, 'strategy2-after-btn', 5000);
       // Handle MUI confirmation modal
       const ok2 = await page.evaluate(() => {
         const dlg = document.querySelector('[role="dialog"],.MuiDialog-root');
@@ -470,7 +480,7 @@ async function findAndPromote(page, captured) {
         return null;
       });
       if (ok2) log('  Confirmed modal: ' + ok2);
-      await new Promise(r => setTimeout(r, 3000));
+      await waitReady(page, 'strategy2-modal-confirm', 6000);
       await snap(page, '06e-strategy2-done');
       return true;
     }
