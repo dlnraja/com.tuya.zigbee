@@ -1,6 +1,9 @@
 {
   "5.11.99": {
-    "en": "Fixed energy monitor voltage/watt showing 1/10th of actual values on _TZ3210_w0qqde0g plugs (GH#137). Fixed BSEED TS0726 4-gang switch all buttons toggling together — moved to correct ZCL per-endpoint driver. Fixed _TZ321C_fkzihax8 5.8G radar sensor not reporting values — moved to presence_sensor_radar driver (NoroddH #97). Contact sensor IAS Zone conflict fix (Lasse_K). Switched email diagnostics to IMAP-primary (no more OAuth token expiry issues)."
+    "en": "v5.11.98: Fixed IAS issues., Improved detection of the latest draft., Fixed detection of the 'Publish to Test' button., Resolved issues with ., 145 drivers and 4976 fingerprints supported."
+  },
+  "5.11.98": {
+    "en": "Universal Tuya Zigbee app v5.11.98 fixes IAS issues and improves draft detection."
   },
   "5.11.97": {
     "en": "Fixed draft detection logic and improved build pipeline."
@@ -55,14 +58,5 @@
   },
   "5.11.80": {
     "en": "Updated app with improved device support and bug fixes."
-  },
-  "5.11.79": {
-    "en": "Universal Tuya Zigbee app v5.11.79: Updated drivers and fingerprints."
-  },
-  "5.11.78": {
-    "en": "Universal Tuya Zigbee app v5.11.78: Bug fixes and updated drivers."
-  },
-  "5.11.98": {
-    "en": "Fixed contact sensor not reporting (IAS Zone conflict fix). Added 20 new fingerprints for valves, dimmers, TRVs, covers and switches. Fixed driver images to meet SDK guidelines. Security improvements."
   }
 }
