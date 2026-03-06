@@ -6,7 +6,19 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.97] - 2026-03-05
+## [5.11.98] - 2026-03-06
+
+### Bug Fixes
+- Fixed IAS issues.
+- Improved detection of the latest draft.
+- Fixed detection of the 'Publish to Test' button.
+- Resolved issues with session API debugging and submission page elements.
+
+### Device Support
+- 145 drivers and 4976 fingerprints supported.
+---
+
+ [5.11.97] - 2026-03-05
 
 ### Bug Fixes
 - Fixed latest draft detection.
