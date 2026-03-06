@@ -19,7 +19,7 @@ async function promoteViaBrowserSession(page, log, dry, capturedToken) {
       } catch{} return null;
     });
   }
-  if (tk) log('  [SessAPI] Token: '+tk.length+' chars');
+  if (tk) log('  [SessAPI] Token: present');
   const h = {'Cookie':ck,'Accept':'application/json'};
   if (tk) h['Authorization']='Bearer '+tk;
   let builds=null;

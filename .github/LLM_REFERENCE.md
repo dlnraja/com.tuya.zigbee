@@ -27,3 +27,11 @@
 
 ## ZCL-Only Manufacturers
 `_TZ3000_blhvsaqf`, `_TZ3000_l9brjwau`, `_TZ3000_qkixdnon`
+
+## Multi-Driver Fingerprints
+- Same mfr CAN be in multiple drivers (mfr+productId = match)
+- Never remove mfr from driver just because it's in another
+
+## Immediate Data (v5.11.99)
+- dataQuery cmd 0x03 with seq on init
+- Retry: 2s→10s→30s→60s

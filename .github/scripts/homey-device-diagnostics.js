@@ -9,7 +9,7 @@ const STATE=path.join(__dirname,'..','state');
 const REPORT=path.join(STATE,'homey-device-report.json');
 const DDIR=path.join(__dirname,'..','..','drivers');
 const APP='com.dlnraja.tuya.zigbee';
-if(!TOKENS.length){console.log('HOMEY_PAT_API/HOMEY_PAT not set - skip');process.exit(0);}
+if(!TOKENS.length){console.log('HOMEY_PAT_API/HOMEY_PAT not set - skip');process.exit(1);}
 function log(t){console.log(t);if(SUM)fs.appendFileSync(SUM,t+'\n');}
 async function api(url){
   const r=await fetchWithRetry(url,{headers:{'Authorization':'Bearer '+PAT}},{retries:3,label:'homeyAPI'});
@@ -32,7 +32,7 @@ async function main(){
   let me=null;
   for(const t of TOKENS){
     PAT=t;
-    try{me=await api('https://api.athom.com/user/me');log('Auth OK (token '+t.slice(0,8)+'...)');break;}catch(e){log('Token '+t.slice(0,8)+'... failed: '+e.message);}
+    try{me=await api('https://api.athom.com/user/me');log('Auth OK (token ****)');break;}catch(e){log('Token **** failed: '+e.message);}
   }
   if(!me){log('::error::All tokens failed for api.athom.com');process.exit(0);}
   log('User: '+(me.firstname||'')+' '+(me.lastname||''));

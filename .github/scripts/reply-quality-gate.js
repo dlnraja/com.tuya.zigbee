@@ -87,6 +87,13 @@ function validateReply(replyText, originalPostText) {
     }
   } catch {}
 
+  // 5b. Detect internal tech / robotic patterns that leak backend
+  const bannedTerms = /\b(?:AI|LLM|GPT|bot|auto[- ]?respond|automation|pipeline|workflow|cron|GitHub Actions?|SPA|single[- ]page|data[- ]?query|algorithm|ensemble|machine.learning|neural|NLP|scraping|fork.integrat|language.model|artificial.intelligence|Discourse API|API key|OAuth|IMAP|token.rotation)\b/gi;
+  const leaks = replyText.match(bannedTerms) || [];
+  for (const leak of [...new Set(leaks.map(l => l.toLowerCase()))]) {
+    warnings.push(`LEAK: Reply contains banned internal term "${leak}" — will be stripped`);
+  }
+
   // 6. Auto-correct if warnings found
   if (warnings.length) {
     const supported = [];
@@ -103,13 +110,15 @@ function validateReply(replyText, originalPostText) {
     }
     if (supported.length || fuzzySupported.length) {
       const parts = [];
+      const hasMultiDriver = supported.some(s => s.drivers.length > 1);
       if (supported.length === 1) {
         const s = supported[0];
-        parts.push(s.fp + ' is already in the app — pair it as **' + s.drivers[0] + '**.');
+        parts.push(s.fp + ' is already in the app — pair it as **' + s.drivers[0] + '**' + (s.drivers.length > 1 ? ' (or ' + s.drivers.slice(1).join(', ') + ' depending on productId)' : '') + '.');
       } else if (supported.length > 1) {
-        const items = supported.map(s => s.fp + ' (' + s.drivers[0] + ')');
+        const items = supported.map(s => s.fp + ' (' + s.drivers.join('/') + ')');
         parts.push('Those are already in the app: ' + items.join(', ') + '.');
       }
+      if (hasMultiDriver) parts.push('The correct driver depends on the productId (TS0001, TS0002, etc).');
       if (fuzzySupported.length) {
         const items = fuzzySupported.map(s => s.from + ' looks like ' + s.fp + ' which is under ' + s.drivers[0]);
         parts.push(items.join('; ') + ' — might be a typo in the fingerprint.');

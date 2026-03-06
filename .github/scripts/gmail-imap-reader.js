@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 'use strict';
+// v5.11.99: PRIMARY email reader via IMAP (replaces Gmail OAuth)
 let ImapFlow;try{ImapFlow=require('imapflow').ImapFlow}catch{}
 const MBS=['INBOX','[Gmail]/All Mail','[Gmail]/Tous les messages'];
 async function readViaIMAP(opts={}){
@@ -24,7 +25,7 @@ async function readViaIMAP(opts={}){
       for(const fr of senders){try{(await c.search({since:new Date(since),from:fr})).forEach(s=>seqSet.add(s))}catch{}}
       // Also search body text for key Tuya patterns (catches forwarded/redirected emails)
       for(const bk of ['_TZE200','_TZE204','_TZE284','_TZ3000','TS0601','diagnostic report','Homey']){try{(await c.search({since:new Date(since),body:bk})).forEach(s=>seqSet.add(s))}catch{}}
-      const seqs=[...seqSet].sort((a,b)=>b-a).slice(0,50);
+      const seqs=[...seqSet].sort((a,b)=>b-a).slice(0,opts.maxResults||200);
       console.log('[IMAP]',seqSet.size,'relevant msgs, fetching',seqs.length);
       if(seqs.length>0){
         const range=seqs.join(',');

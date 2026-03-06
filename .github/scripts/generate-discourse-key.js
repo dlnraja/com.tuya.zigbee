@@ -21,8 +21,9 @@ var srv = http.createServer(function(q, r) {
   try {
     var dec = crypto.privateDecrypt({ key: pair.privateKey, padding: crypto.constants.RSA_PKCS1_PADDING }, Buffer.from(p, 'base64'));
     var j = JSON.parse(dec.toString());
-    console.log('\nSUCCESS - API Key: ' + j.key);
-    console.log('Add as DISCOURSE_API_KEY: https://github.com/dlnraja/com.tuya.zigbee/settings/secrets/actions/new');
+    console.log('\nSUCCESS - API Key obtained (' + j.key.length + ' chars)');
+    console.log('Run: gh secret set DISCOURSE_API_KEY -R dlnraja/com.tuya.zigbee');
+    console.log('Then paste the key when prompted (not logged for security).');
     r.end('<h1>Done</h1><p>Key in terminal.</p>');
   } catch (e) { console.error(e.message); r.end('error'); }
   setTimeout(function() { process.exit(0); }, 2000);

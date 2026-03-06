@@ -31,7 +31,7 @@ async function main() {
   if (!EMAIL || !PASSWORD) {
     log('## Auto-Promote (Puppeteer)');
     log('HOMEY_EMAIL and HOMEY_PASSWORD required. Skipping.');
-    process.exit(0);
+    process.exit(1);
   }
   let puppeteer;
   try { puppeteer = require('puppeteer'); } catch {
@@ -51,6 +51,12 @@ async function main() {
   try {
     const page = await browser.newPage();
     page.setDefaultTimeout(30000);
+
+    // Auto-accept browser confirmation dialogs (e.g. "Are you sure you want to publish?")
+    page.on('dialog', async (dialog) => {
+      log('  [DIALOG] ' + dialog.type() + ': ' + dialog.message());
+      await dialog.accept();
+    });
 
     // Intercept network to capture OAuth token from both requests and responses
     const captured = { token: null, apiUrls: [], reqHeaders: {} };
@@ -269,7 +275,7 @@ async function findAndPromote(page, captured) {
   }
 
   // Try session API with captured token
-  if (captured.token) log('  Token: ' + captured.token.length + 'c');
+  if (captured.token) log('  Token: captured');
   let text = await page.evaluate(() => document.body?.innerText || '');
   log('  Page: ' + text.length + 'c, URL: ' + page.url());
   try {
@@ -293,6 +299,17 @@ async function findAndPromote(page, captured) {
   // Log page content snippet for debugging
   const snippet = text.replace(/\s+/g, ' ').substring(0, 500);
   log(`  Page snippet: "${snippet}"`);
+
+  if (!hasDraft) {
+    // Fallback: try direct deep-link to versions page
+    log('  SPA nav didn\'t find drafts, trying deep-link to versions...');
+    await page.goto(VERSIONS_URL, { waitUntil: 'networkidle2' });
+    await new Promise(r => setTimeout(r, 5000));
+    text = await page.evaluate(() => document.body?.innerText || '');
+    hasDraft = text.toLowerCase().includes('draft');
+    log('  Deep-link: ' + text.length + 'c, hasDraft=' + hasDraft);
+    await snap(page, '05d-deeplink');
+  }
 
   if (!hasDraft) {
     // Check if page has "test" or "live" but no "draft" — means no draft available
@@ -377,10 +394,27 @@ async function findAndPromote(page, captured) {
     });
     if (promoted) {
       log('  ' + promoted);
+      await new Promise(r => setTimeout(r, 2000));
+      // Handle MUI confirmation modal
+      const ok = await page.evaluate(() => {
+        const dlg = document.querySelector('[role="dialog"],.MuiDialog-root');
+        if (!dlg) return null;
+        for (const b of dlg.querySelectorAll('button')) {
+          const t = (b.textContent||'').trim().toLowerCase();
+          if (['ok','yes','confirm','publish','accept'].some(k=>t.includes(k))) { b.click(); return t; }
+        }
+        const pri = dlg.querySelector('.MuiButton-containedPrimary');
+        if (pri) { pri.click(); return 'primary'; }
+        return null;
+      });
+      if (ok) log('  Confirmed modal: ' + ok);
       await new Promise(r => setTimeout(r, 3000));
       await snap(page, '06c-after-promote');
+      return true;
     }
-    return true;
+    log('  SUBMISSION page loaded but "Publish to Test" button not found');
+    await snap(page, '06c-no-promote-btn');
+    // Fall through to strategy 2
   }
 
   // Strategy 2: Click on the draft row first, then look for promote
@@ -404,18 +438,40 @@ async function findAndPromote(page, captured) {
     // Now look for promote button in expanded/modal view
     const btn2 = await page.evaluate(() => {
       const btns = [...document.querySelectorAll('button, a, [role="button"]')];
+      const keywords = ['publish to test', 'release to test', 'promote to test', 'publish to testing'];
       for (const b of btns) {
         const t = (b.textContent || '').trim().toLowerCase();
-        if (t.includes('test') || t.includes('promote') || t.includes('release')) {
-          b.click();
-          return `Clicked: "${b.textContent.trim()}"`;
+        for (const kw of keywords) {
+          if (t.includes(kw)) { b.click(); return `Clicked: "${b.textContent.trim()}"`; }
+        }
+      }
+      // Fallback: MUI primary contained button (Athom uses Material UI)
+      for (const b of btns) {
+        const cls = (b.className || '').toString();
+        if (cls.includes('MuiButton-containedPrimary')) {
+          b.click(); return `Clicked MUI primary: "${(b.textContent||'').trim()}"`;
         }
       }
       return null;
     });
     if (btn2) {
       log(`  ${btn2}`);
+      await new Promise(r => setTimeout(r, 2000));
+      // Handle MUI confirmation modal
+      const ok2 = await page.evaluate(() => {
+        const dlg = document.querySelector('[role="dialog"],.MuiDialog-root');
+        if (!dlg) return null;
+        for (const b of dlg.querySelectorAll('button')) {
+          const t = (b.textContent||'').trim().toLowerCase();
+          if (['ok','yes','confirm','publish','accept'].some(k=>t.includes(k))) { b.click(); return t; }
+        }
+        const pri = dlg.querySelector('.MuiButton-containedPrimary');
+        if (pri) { pri.click(); return 'primary'; }
+        return null;
+      });
+      if (ok2) log('  Confirmed modal: ' + ok2);
       await new Promise(r => setTimeout(r, 3000));
+      await snap(page, '06e-strategy2-done');
       return true;
     }
   }

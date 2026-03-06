@@ -1,5 +1,8 @@
 # GitHub Secrets Reference
 
+> **⚠️ SECURITY**: Athom OAuth creds (`598d85a3...`) + login screenshots exist in git history.
+> Rotate the Athom OAuth credentials, then run: `bfg --replace-text passwords.txt && git reflog expire --expire=now --all && git gc --prune=now --aggressive && git push --force`
+
 ## Configured Secrets
 
 | Secret | Provider | Capabilities |
@@ -133,9 +136,9 @@ Add to repo Settings > Secrets > Actions:
 - **Testing mode**: 7-day expiry. Alerts fire at day 5+6.
 - **Production mode**: Token permanent (if app published).
 
-## Gmail IMAP Fallback (Permanent — No Expiry)
+## Gmail IMAP (PRIMARY — v5.11.99)
 
-OAuth tokens expire every 7 days in Testing mode. IMAP with App Password **never expires**.
+IMAP with App Password is now the **primary** email method. OAuth is optional fallback only.
 
 ### Setup (30 seconds, one-time)
 1. Go to https://myaccount.google.com/apppasswords
@@ -148,11 +151,12 @@ OAuth tokens expire every 7 days in Testing mode. IMAP with App Password **never
    ```
 
 ### How it works
-- `fetch-gmail-diagnostics.js` tries OAuth first (fast, full search)
-- If OAuth fails (`invalid_grant`), automatically falls back to IMAP
+- `fetch-gmail-diagnostics.js` uses IMAP first (permanent, no expiry)
+- Only falls back to OAuth if IMAP credentials are missing
 - IMAP reads emails via `imap.gmail.com:993` with App Password
 - Same pipeline: sanitize → parse → cross-ref → AI analyze → issues
 - **No keepalive needed** — App Password is permanent
+- Token keepalive workflow schedule **disabled** (manual only)
 
 ### Prerequisites
 - 2-Factor Authentication must be enabled on the Google account

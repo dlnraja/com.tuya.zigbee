@@ -1,7 +1,8 @@
 'use strict';
 
 const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
-const IASZoneManager = require('../../lib/managers/IASZoneManager');
+// v5.11.99: IASZoneManager removed — HybridSensorBase handles IAS enrollment+inversion
+// v5.12.0: FIX Lasse_K #802 — IEEEAddressManager (7 methods) for CIE write + warn hybrid devices
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // v5.5.793: VALIDATION CONSTANTS - Centralized thresholds for data validation
@@ -184,15 +185,7 @@ class ContactSensorDevice extends HybridSensorBase {
     // Parent handles EVERYTHING: Tuya DP, ZCL, IAS Zone, battery
     await super.onNodeInit({ zclNode });
 
-    // v5.8.28: CRITICAL FIX - IAS Zone enrollment (Lasse_K forum 'inactivated' fix)
-    try {
-      const iasManager = new IASZoneManager(this);
-      await iasManager.enrollIASZone();
-    } catch (e) {
-      this.log(`[CONTACT] ⚠️ IAS enrollment error (non-critical): ${e.message}`);
-    }
-
-    this.log('[CONTACT] v5.5.344 - DPs: 1,2,3,4,5,15,101 | ZCL: IAS,PWR,EF00');
+    this.log('[CONTACT] v5.11.99 - DPs: 1,2,3,4,5,15,101 | ZCL: IAS,PWR,EF00');
     this.log(`[CONTACT] ✅ Ready (debounce: ${this._debounceMs}ms, invert: ${this._invertContact}, problematic: ${this._isProblematicSensor})`);
   }
 

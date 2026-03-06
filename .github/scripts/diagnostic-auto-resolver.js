@@ -74,12 +74,14 @@ async function fetchOpen(repo,type){
   _cache[k]=items;return items;
 }
 // Build resolution comment for an issue/PR where all FPs are supported
-function buildComment(fpResults,isPR){
+function buildComment(fpResults,isPR,isDelay){
   const drvList=fpResults.map(f=>'`'+f.fp+'` -> **'+f.drivers.join(', ')+'**').join('\n- ');
   return TAG+'\n### Auto-resolved by Diagnostic Resolver\n\n'+
     'All fingerprints in this '+(isPR?'PR':'issue')+' are already supported in **Universal Tuya Zigbee v'+appVer+'**:\n- '+drvList+'\n\n'+
     '**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n'+
     'Remove and re-pair your device after installing.\n\n'+
+    (fpResults.some(f=>f.drivers.length>1)?'> Note: Some fingerprints map to multiple drivers — the correct driver is determined by the **productId** (e.g. TS0001, TS0002).\n\n':'')+
+    (isDelay?'> **Delay fix (v5.11.99+):** Devices now send dataQuery immediately on init. Update and re-pair to fix.\n\n':'')+
     'Forum: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352';
 }
 
@@ -105,6 +107,8 @@ async function processIssues(repo,idx,state,report){
     const fps=exFP(text);
     const pids=exPID(text);
     if(!fps.length&&!pids.length)continue;
+    // v5.11.99: Detect delay complaints
+    const isDelay=/after\s+\d+\s*min|few\s+minutes?\s+later|takes?\s+\d+\s*min|not\s+report|no\s+data|works?\s+after/i.test(text);
     // Check support status
     const results=fps.map(fp=>({fp,drivers:idx.get(fp)||[],supported:(idx.get(fp)||[]).length>0}));
     const allSupported=results.length>0&&results.every(r=>r.supported);
@@ -114,8 +118,8 @@ async function processIssues(repo,idx,state,report){
     if(comments&&comments.some(c=>(c.body||'').includes(TAG)||(c.body||'').includes('<!-- tuya-issue-manager -->')))
       {state.commented.push(key);continue}
     // Post comment
-    const body=buildComment(results,false);
-    console.log('  #'+iss.number+' [RESOLVE] '+fps.join(',')+' -> '+results.map(r=>r.drivers[0]).join(','));
+    const body=buildComment(results,false,isDelay);
+    console.log('  #'+iss.number+' [RESOLVE] '+fps.join(',')+' -> '+results.map(r=>r.drivers[0]).join(',')+(isDelay?' [DELAY]':''));
     await ghPost('/repos/'+repo+'/issues/'+iss.number+'/comments',{body});
     commented++;
     // Auto-close on own repo if device_request with all supported

@@ -90,7 +90,9 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           FORK_DEPTH: "3"
-        run: node .github/scripts/scan-forks-recursive.js
+        run: |
+          node .github/scripts/deep-fork-integrator.js
+          node .github/scripts/scan-forks-recursive.js || true
 
       - name: 🌡️ Sensor Capability Gap Check
         continue-on-error: true

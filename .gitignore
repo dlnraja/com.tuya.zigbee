@@ -188,3 +188,20 @@ client_secret*.json
 .github/state/_token_*
 .github/state/*secret*
 .github/state/*credential*
+
+# Security: screenshots may contain credentials (login pages, etc.)
+screenshots/
+screenshots-debug/
+promote-screenshots/
+push-promote-screenshots/
+
+# Security: HTML page dumps may contain session tokens
+page-dump.html
+
+# Security: additional sensitive patterns
+*.p12
+*.pfx
+*.keystore
+.netrc
+.npmrc
+!.npmrc.example

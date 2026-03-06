@@ -22,7 +22,7 @@ async function main() {
   if (!tk) tk = await implicitFlow();
   if (!tk) tk = await authCodeFlow();
   if (!tk) { log('No access token'); process.exit(1); }
-  log('Token: ' + tk.length + 'c');
+  log('Token: present');
   // Strategy 1: AthomCloudAPI (handles delegation like the SPA)
   try {
     log('CloudAPI strategy');
@@ -35,14 +35,14 @@ async function main() {
   let lastErr;
   for (const {tk: t, label} of tokens) {
     try {
-      log('Trying SDK: ' + t.length + 'c (' + label + ')');
+      log('  Trying SDK (' + label + ')');
       await promoteWithSdk(t);
       return;
     } catch (e) {
       log('  SDK failed: ' + e.message);
     }
     try {
-      log('Trying raw: ' + t.length + 'c (' + label + ')');
+      log('  Trying raw (' + label + ')');
       await promoteRaw(t);
       return;
     } catch (e) {
@@ -89,7 +89,7 @@ async function implicitFlow() {
       if(!token){try{token=new URL(loc,REDIR).searchParams.get('access_token')}catch{}}
       if(!token) next=loc;
     }
-    if(token){log('  Implicit token: '+token.length+'c');return token;}
+    if(token){log('  Implicit token: obtained');return token;}
     log('  No implicit token');
   } catch(e){log('  Implicit err: '+e.message)}
   return null;
@@ -138,7 +138,7 @@ async function promoteViaCloudApi(rawToken) {
       const dtk = await cloud.createDelegationToken({audience: aud});
       const token = dtk?.token || dtk;
       if (!token) continue;
-      log('  CloudAPI deleg('+aud+'): '+String(token).length+'c');
+      log('  CloudAPI deleg('+aud+'): obtained');
       const api = new AthomAppsAPI({token});
       const builds = await api.getBuilds({appId:APP});
       const draft = builds.find(b=>/draft/i.test(b.channel||''));

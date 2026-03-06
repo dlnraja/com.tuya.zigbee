@@ -18,7 +18,7 @@ function getSecrets(){
   try{return execSync(`gh secret list -R ${REPO}`,{encoding:'utf8',stdio:['pipe','pipe','pipe']}).split('\n').map(l=>l.split(/\s/)[0]).filter(Boolean)}catch{return[]}
 }
 function setSec(n,v){
-  try{execSync(`gh secret set ${n} -R ${REPO} --body "${v}"`,{stdio:'pipe'});return true}catch{return false}
+  try{execSync(`gh secret set ${n} -R ${REPO}`,{stdio:'pipe',input:v,encoding:'utf8'});return true}catch{return false}
 }
 
 async function discourseKey(browser){
@@ -58,7 +58,7 @@ async function main(){
   if(!ex.includes('DISCOURSE_API_KEY')){
     console.log('\n--- Discourse API Key ---');
     const k=await discourseKey(browser);
-    if(k){got.DISCOURSE_API_KEY=k;console.log('  Got: '+k.substring(0,8)+'...')}
+    if(k){got.DISCOURSE_API_KEY=k;console.log('  Got: ****')}
   }
   for(const p of PROVS){
     if(ex.includes(p.name)){console.log(`\n--- ${p.name} --- exists`);continue}
