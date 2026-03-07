@@ -1,47 +1,33 @@
 {
-  "timestamp": "2026-03-07T03:44:40.028Z",
+  "timestamp": "2026-03-07T14:59:14.397Z",
   "total": 2,
   "resolved": 0,
-  "unknown": 0,
+  "unknown": 2,
   "falsePositives": 0,
   "results": [
     {
-      "fp": "_TZE200_d2zfg",
+      "fp": "_TZ3210_jic09i9a",
       "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "power_meter",
-      "pid": "TS0601",
+      "prefix": "standard",
+      "driver": null,
+      "pid": null,
       "confidence": 0,
-      "sources": [
-        "z2m-context"
-      ],
-      "method": "z2m-context",
-      "z2mContext": {
-        "driver": "power_meter",
-        "score": 5,
-        "source": "z2m-context"
-      },
+      "sources": [],
+      "method": null,
       "falsePositive": {
         "isFP": false,
         "reason": "unknown_not_false"
       }
     },
     {
-      "fp": "_TZE200_wjk6r",
+      "fp": "_TZ3210_ogx8u9it",
       "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "power_meter",
-      "pid": "TS0601",
+      "prefix": "standard",
+      "driver": null,
+      "pid": null,
       "confidence": 0,
-      "sources": [
-        "z2m-context"
-      ],
-      "method": "z2m-context",
-      "z2mContext": {
-        "driver": "power_meter",
-        "score": 6,
-        "source": "z2m-context"
-      },
+      "sources": [],
+      "method": null,
       "falsePositive": {
         "isFP": false,
         "reason": "unknown_not_false"
