@@ -1,23 +1,10 @@
 {
-  "timestamp": "2026-03-06T19:24:07.806Z",
-  "diagFPs": 2,
+  "timestamp": "2026-03-07T07:11:51.519Z",
+  "diagFPs": 0,
   "driverIdx": 4740,
   "supported": 0,
-  "unsupported": 2,
-  "newFPs": [
-    {
-      "fp": "_TZ3210_jic09i9a",
-      "source": "gmail",
-      "date": "2026-03-06T18:23:45.000Z",
-      "type": "device_issue"
-    },
-    {
-      "fp": "_TZ3210_ogx8u9it",
-      "source": "gmail",
-      "date": "2026-03-06T18:23:45.000Z",
-      "type": "device_issue"
-    }
-  ],
+  "unsupported": 0,
+  "newFPs": [],
   "dlnraja/com.tuya.zigbee": {
     "issues": 2,
     "commented": 0,
@@ -30,7 +17,7 @@
   },
   "JohanBendz/com.tuya.zigbee_prs": {
     "prs": 36,
-    "commented": 1
+    "commented": 0
   },
   "forumDrafts": 0
 }
