@@ -1,137 +1,25 @@
 {
-  "timestamp": "2026-03-06T15:56:06.393Z",
+  "timestamp": "2026-03-07T04:20:34.911Z",
   "devices": [],
   "unmatchedFPs": [
     {
-      "fp": "_TZE200_d2zfg",
+      "fp": "_TZ3210_jic09i9a",
       "source": "gmail",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] [Auto] 14 new fingerprints fro"
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zig"
     },
     {
-      "fp": "_TZE200_wjk6r",
+      "fp": "_TZ3210_ogx8u9it",
       "source": "gmail",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] [Auto] New Tuya devices found "
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zig"
     }
   ],
   "errors": [
     {
       "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe=",
       "source": "gmail"
-    },
-    {
-      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-=",
-      "source": "gmail"
-    },
-    {
-      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-=",
-      "source": "gmail"
-    },
-    {
-      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe=",
-      "source": "gmail"
-    },
-    {
-      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe=",
-      "source": "gmail"
-    },
-    {
-      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe=",
-      "source": "gmail"
-    },
-    {
-      "err": "-text=3D\"Failed to lo=",
-      "source": "gmail"
-    },
-    {
-      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-=",
-      "source": "gmail"
-    },
-    {
-      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-=",
-      "source": "gmail"
-    },
-    {
-      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-=",
-      "source": "gmail"
-    },
-    {
-      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-=",
-      "source": "gmail"
-    },
-    {
-      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe=",
-      "source": "gmail"
-    },
-    {
-      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe=",
-      "source": "gmail"
-    },
-    {
-      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-=",
-      "source": "gmail"
-    },
-    {
-      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe=",
-      "source": "gmail"
-    },
-    {
-      "err": "Could not get device by id",
-      "source": "gmail"
-    },
-    {
-      "err": "is not solved. also, when I run the code locally from VSC on docker I get the fo",
-      "source": "gmail"
-    },
-    {
-      "err": "[err] [ManagerDrivers] [Driver:fingerbot] Error Initializing Device: Error: Cann",
-      "source": "gmail"
-    },
-    {
-      "err": "Could not get device by id<br>",
-      "source": "gmail"
-    },
-    {
-      "err": "is not solved. also, when I run the code locally from VSC on do=",
-      "source": "gmail"
-    },
-    {
-      "err": "Initializing Device: Erro=",
-      "source": "gmail"
-    },
-    {
-      "err": "find module '../../lib/tuya/TuyaZigbeeDevice'",
-      "source": "gmail"
-    },
-    {
-      "err": "find module '../../lib/tuya/TuyaZigbeeDevice'<br>",
-      "source": "gmail"
-    },
-    {
-      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-=",
-      "source": "gmail"
-    },
-    {
-      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe=",
-      "source": "gmail"
-    },
-    {
-      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe=",
-      "source": "gmail"
-    },
-    {
-      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe=",
-      "source": "gmail"
-    },
-    {
-      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe=",
-      "source": "gmail"
-    },
-    {
-      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-=",
-      "source": "gmail"
     }
   ],
   "sources": {
-    "gmail": 200
+    "gmail": 9
   }
 }

@@ -1,12 +1,12 @@
 {
-  "date": "2026-03-06T15:27:41.537Z",
+  "date": "2026-03-07T04:03:06.858Z",
   "local": {
     "drivers": 145,
     "fps": 4231
   },
   "forkScan": {
-    "filesScanned": 4633,
-    "newFPs": 168425
+    "filesScanned": 4638,
+    "newFPs": 168549
   },
   "upstream": {
     "prs": 0,
@@ -14,7 +14,7 @@
   },
   "own": {
     "prs": 0,
-    "issues": 0
+    "issues": 54
   },
   "newFPsFromForks": [
     {
@@ -1010566,12 +1010566,2037 @@
       "driver": "plug_smart",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tz3000_8bxrzyxz",
+      "driver": "pool_pump",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tz3000_qystbcjg",
+      "driver": "pool_pump",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_k6jhsr0q",
+      "driver": "pool_pump",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_ruavtjnq",
+      "driver": "pool_pump",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_k6jhsr0q",
+      "driver": "pool_pump",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_ruavtjnq",
+      "driver": "pool_pump",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tz3000_qeuvnohg",
+      "driver": "power_clamp_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_81yrt3lo",
+      "driver": "power_clamp_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_bkkmqmyo",
+      "driver": "power_clamp_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_byzdayie",
+      "driver": "power_clamp_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_d0ypnbvn",
+      "driver": "power_clamp_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_nslr42tt",
+      "driver": "power_clamp_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_sur36rju",
+      "driver": "power_clamp_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_v9hkz2yn",
+      "driver": "power_clamp_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_81yrt3lo",
+      "driver": "power_clamp_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_bkkmqmyo",
+      "driver": "power_clamp_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_cjbofhxw",
+      "driver": "power_clamp_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_d0ypnbvn",
+      "driver": "power_clamp_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_nslr42tt",
+      "driver": "power_clamp_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_sur36rju",
+      "driver": "power_clamp_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_v9hkz2yn",
+      "driver": "power_clamp_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze284_81yrt3lo",
+      "driver": "power_clamp_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze284_byzdayie",
+      "driver": "power_clamp_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze284_cjbofhxw",
+      "driver": "power_clamp_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tz3000_8bxrzyxz",
+      "driver": "power_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tz3000_byfdwktr",
+      "driver": "power_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tz3000_vsn4qal7",
+      "driver": "power_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_81yrt3lo",
+      "driver": "power_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_dtzziy1e",
+      "driver": "presence_sensor_ceiling",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_ijxvkhd0",
+      "driver": "presence_sensor_ceiling",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_qasjif9e",
+      "driver": "presence_sensor_ceiling",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_sbyx0lm6",
+      "driver": "presence_sensor_ceiling",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_sxm7l9xa",
+      "driver": "presence_sensor_ceiling",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_uxllnywp",
+      "driver": "presence_sensor_ceiling",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_yensya2c",
+      "driver": "presence_sensor_ceiling",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze284_4qznlkbu",
+      "driver": "presence_sensor_ceiling",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze284_fwondbzy",
+      "driver": "presence_sensor_ceiling",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tz3000_8bxrzyxz",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tz3000_aigddb2b",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tz3000_ky0fq4ho",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tz3210_fkzihax8",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tz321c_4slreunp",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tz321c_fkzihaxe8",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_1ibpyhdc",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_2aaelwxk",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_3towulqd",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_7gclukjs",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_bh3n6gk8",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_crq3r3la",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_f1pvdgoh",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_ges7h5mj",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_gkfbdvyx",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_hl0ss9oa",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_hyhl5y36",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_ikvncluo",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_kb5noeto",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_laokfqwu",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_nbkshs6k",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_pnyz5qpy",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_ppuj1vem",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_qasjif9e",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_qomxlryd",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_rhgsbacq",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_sfiy8puu",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_sgfmfpiy",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_tyffvoij",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_xpq2rber",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_y4mdop0b",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_y8jijhba",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_ya4ft0w4",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_ybwa4x5a",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_ztc6ggyl",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze200_ztqnh5cg",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_7gclukjs",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_auin8mzr",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_bvfld3xc",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_bmdsp6bs",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_ges7h5mj",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_gkfbdvyx",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_hl0ss9oa",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_holel4dk",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_iaeejhvf",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_ijxvkhd0",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_ikvncluo",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_jva8ink8",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_kyhbrfyl",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_laokfqwu",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_e5m9c5hl",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_lyetpprm",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_mrf6vtua",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_mtoaryre",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_nbkshs6k",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_no6qtgtl",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_pnyz5qpy",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_qasjif9e",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_qomxlryd",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_r0jdjrvi",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_rhgsbacq",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_sfiy5tfs",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_sfiy8puu",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_sgfmfpiy",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_sxm7l9xa",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_wukb7rhc",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_xpq2rber",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_ya4ft0w4",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_ybwa4x5a",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_ztc6ggyl",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze204_ztqnh5cg",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze284_4qznlkbu",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze284_ar5przmw",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze284_debczeci",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze284_iadro9bf",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze284_ijxvkhd0",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze284_n5q2t8na",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze284_o9ofysmo",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze284_ozf4e02o",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze284_qasjif9e",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze284_rlytpmij",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze284_sxm7l9xa",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze284_xc3vwx5a",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze284_xsm7l9xa",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze284_yjjdcqsq",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze284_yrwmnya3",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
+    },
+    {
+      "mfr": "_tze284_ztc6ggyl",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "7a3eabd3"
     }
   ],
   "newFPsFromPRs": [],
-  "newFPsFromIssues": [],
+  "newFPsFromIssues": [
+    {
+      "mfr": "_TZ3000_zutizvykts0203",
+      "source": "Issue #140",
+      "title": "[Auto] 736 new fingerprints from forks",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/140"
+    },
+    {
+      "mfr": "_TZ3000_zutizvykts0203",
+      "source": "Issue #138",
+      "title": "[Auto] 736 new fingerprints from forks",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/138"
+    },
+    {
+      "mfr": "_tz3000_fllyghyj",
+      "source": "Issue #124",
+      "title": "TZ uppercase for wireless button and temp.sensor",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/124"
+    },
+    {
+      "mfr": "_tz3000_b4awzgct",
+      "source": "Issue #124",
+      "title": "TZ uppercase for wireless button and temp.sensor",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/124"
+    }
+  ],
   "allUpstreamPRs": [],
   "allUpstreamIssues": [],
   "allOwnPRs": [],
-  "allOwnIssues": []
+  "allOwnIssues": [
+    {
+      "number": 150,
+      "title": "[Feature] Soil sensor missing fertilizer/EC value (measure_ec capability)",
+      "state": "closed",
+      "user": "dlnraja",
+      "fps": [
+        "_TZE284_hdml1aav"
+      ],
+      "pids": [],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/150",
+      "labels": [
+        "enhancement",
+        "already-supported"
+      ]
+    },
+    {
+      "number": 149,
+      "title": "[Bug] LCD Temp/Humidity sensor paired as thermostat (wrong driver)",
+      "state": "closed",
+      "user": "dlnraja",
+      "fps": [],
+      "pids": [
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/149",
+      "labels": [
+        "bug",
+        "already-supported"
+      ]
+    },
+    {
+      "number": 147,
+      "title": "[Fingerprint] Add _TZ3000_itb0omhv to switch_1gang (TS0001)",
+      "state": "closed",
+      "user": "dlnraja",
+      "fps": [
+        "_TZ3000_itb0omhv"
+      ],
+      "pids": [
+        "TS0001",
+        "TS0041"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/147",
+      "labels": [
+        "fingerprint",
+        "already-supported"
+      ]
+    },
+    {
+      "number": 142,
+      "title": "[Auto] 14 new fingerprints from community (2026-03)",
+      "state": "closed",
+      "user": "github-actions[bot]",
+      "fps": [
+        "_TZ3000_iktiy8ue",
+        "_TZ3000_cziew6eu",
+        "_TZE204_d2zfgtij",
+        "_TZE284_d2zfgtij",
+        "_TZE200_d2zfgtij",
+        "_TZE204_wjk6rurm",
+        "_TZE284_wjk6rurm",
+        "_TZE200_wjk6rurm",
+        "_TZE204_s4sa1mcx",
+        "_TZE284_s4sa1mcx",
+        "_TZE200_s4sa1mcx",
+        "_TZE204_x8diwkqb",
+        "_TZE284_x8diwkqb",
+        "_TZE200_x8diwkqb"
+      ],
+      "pids": [],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/142",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "community-sync",
+        "fingerprint",
+        "community",
+        "new-fingerprint"
+      ]
+    },
+    {
+      "number": 141,
+      "title": "[Auto] New Tuya devices found in zigbee2mqtt",
+      "state": "closed",
+      "user": "github-actions[bot]",
+      "fps": [
+        "_TZ3000_cziew6eu",
+        "_TZ3000_iktiy8ue",
+        "_TZE200_d2zfgtij",
+        "_TZE200_s4sa1mcx",
+        "_TZE200_wjk6rurm",
+        "_TZE200_x8diwkqb",
+        "_TZE204_d2zfgtij",
+        "_TZE204_s4sa1mcx",
+        "_TZE204_wjk6rurm",
+        "_TZE204_x8diwkqb",
+        "_TZE284_d2zfgtij",
+        "_TZE284_s4sa1mcx",
+        "_TZE284_wjk6rurm",
+        "_TZE284_x8diwkqb"
+      ],
+      "pids": [],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/141",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "new-fingerprint",
+        "Tuya",
+        "auto-scan",
+        "device_support"
+      ]
+    },
+    {
+      "number": 140,
+      "title": "[Auto] 736 new fingerprints from forks",
+      "state": "closed",
+      "user": "github-actions[bot]",
+      "fps": [
+        "_TZ3000_ww6drja5ts011f",
+        "_TZ3000_zutizvykts0203",
+        "_TZ3000_vjhcxjqb",
+        "_TZ3000_otwpdq1d",
+        "_TZe200_01fvxamo",
+        "_TZe200_0hg58wyk",
+        "_TZe200_0j5jma9b",
+        "_TZe200_0u3bj3rc",
+        "_TZe200_1agwnems",
+        "_TZe200_1drr8tab",
+        "_TZe200_1ibpyhdc",
+        "_TZe200_2aaelwxk",
+        "_TZe200_2atgpdho",
+        "_TZe200_2ekuz3dz",
+        "_TZe200_2hf7x9n3",
+        "_TZe200_2imwyigp",
+        "_TZe200_2m38mh6k",
+        "_TZe200_2pddnnrk",
+        "_TZe200_2se8efxh",
+        "_TZe200_2vfxweng",
+        "_TZe200_3ejwxpmu",
+        "_TZe200_3p5ydos3",
+        "_TZe200_3t91nb6k",
+        "_TZe200_3towulqd",
+        "_TZe200_3xfjp0ag",
+        "_TZe200_44af8vyi",
+        "_TZe200_4eeyebrt",
+        "_TZe200_579lguh2",
+        "_TZe200_5d3vhjro",
+        "_TZe200_6wi2mope",
+        "_TZe200_78ioiaml",
+        "_TZe200_7bztmfm1",
+        "_TZe200_7deq70b8",
+        "_TZe200_7fqkphoq",
+        "_TZe200_7sjncirf",
+        "_TZe200_86nbew0j",
+        "_TZe200_8eazvzo6",
+        "_TZe200_8ply8mjj",
+        "_TZe200_8thwkzxl",
+        "_TZe200_8whxpsiw",
+        "_TZe200_8ygsuhe1",
+        "_TZe200_9cqcpkgb",
+        "_TZe200_9i9dt8is",
+        "_TZe200_9p5xmj5r",
+        "_TZe200_9sfg7gm0",
+        "_TZe200_9yapgbuv",
+        "_TZe200_a4bpgplm",
+        "_TZe200_a8sdabtg",
+        "_TZe200_a8z0g46u"
+      ],
+      "pids": [
+        "ts0203"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/140",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "fingerprint",
+        "new-fingerprint",
+        "auto-scan",
+        "new",
+        "update"
+      ]
+    },
+    {
+      "number": 138,
+      "title": "[Auto] 736 new fingerprints from forks",
+      "state": "closed",
+      "user": "github-actions[bot]",
+      "fps": [
+        "_TZ3000_ww6drja5ts011f",
+        "_TZ3000_zutizvykts0203",
+        "_TZ3000_vjhcxjqb",
+        "_TZ3000_otwpdq1d",
+        "_TZe200_01fvxamo",
+        "_TZe200_0hg58wyk",
+        "_TZe200_0j5jma9b",
+        "_TZe200_0u3bj3rc",
+        "_TZe200_1agwnems",
+        "_TZe200_1drr8tab",
+        "_TZe200_1ibpyhdc",
+        "_TZe200_2aaelwxk",
+        "_TZe200_2atgpdho",
+        "_TZe200_2ekuz3dz",
+        "_TZe200_2hf7x9n3",
+        "_TZe200_2imwyigp",
+        "_TZe200_2m38mh6k",
+        "_TZe200_2pddnnrk",
+        "_TZe200_2se8efxh",
+        "_TZe200_2vfxweng",
+        "_TZe200_3ejwxpmu",
+        "_TZe200_3p5ydos3",
+        "_TZe200_3t91nb6k",
+        "_TZe200_3towulqd",
+        "_TZe200_3xfjp0ag",
+        "_TZe200_44af8vyi",
+        "_TZe200_4eeyebrt",
+        "_TZe200_579lguh2",
+        "_TZe200_5d3vhjro",
+        "_TZe200_6wi2mope",
+        "_TZe200_78ioiaml",
+        "_TZe200_7bztmfm1",
+        "_TZe200_7deq70b8",
+        "_TZe200_7fqkphoq",
+        "_TZe200_7sjncirf",
+        "_TZe200_86nbew0j",
+        "_TZe200_8eazvzo6",
+        "_TZe200_8ply8mjj",
+        "_TZe200_8thwkzxl",
+        "_TZe200_8whxpsiw",
+        "_TZe200_8ygsuhe1",
+        "_TZe200_9cqcpkgb",
+        "_TZe200_9i9dt8is",
+        "_TZe200_9p5xmj5r",
+        "_TZe200_9sfg7gm0",
+        "_TZe200_9yapgbuv",
+        "_TZe200_a4bpgplm",
+        "_TZe200_a8sdabtg",
+        "_TZe200_a8z0g46u"
+      ],
+      "pids": [
+        "ts0203"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/138",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "fingerprint",
+        "new-fingerprint",
+        "device_request",
+        "auto-scan",
+        "new",
+        "request",
+        "update"
+      ]
+    },
+    {
+      "number": 137,
+      "title": "Plug Energy Monitor, wrong voltage",
+      "state": "closed",
+      "user": "Lalla80111",
+      "fps": [
+        "_TZ3210_w0qqde0g"
+      ],
+      "pids": [],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/137",
+      "labels": [
+        "bug",
+        "device-request",
+        "reopened-by-user",
+        "plug",
+        "energy_monitor"
+      ]
+    },
+    {
+      "number": 136,
+      "title": "[Auto] 17 new fingerprints from community (2026-02)",
+      "state": "closed",
+      "user": "github-actions[bot]",
+      "fps": [
+        "_TZE200_jt50ea5d",
+        "_TZ3210_jaap6jeb",
+        "_TZE284_g1enhdsi",
+        "_TZ3000_qamj2vnn",
+        "_TZ3000_tw4ztbp4",
+        "_TZ3000_avotanj3",
+        "_TZ3290_7v1k4vuf",
+        "_TZ3290_rlkmy85q",
+        "_TZ3290_jxvzqatw",
+        "_TZ3290_lypnqvle",
+        "_TZ3290_nba3knps",
+        "_TZ3290_yac64inu",
+        "_TZE204_2jnoy8dj",
+        "_TZ3210_iymfxdis",
+        "_TZ3002_xkxgfxsg",
+        "_TZ3002_tlsvxhxc",
+        "_TZE200_seq9cm6u"
+      ],
+      "pids": [],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/136",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "community-sync",
+        "fingerprint",
+        "community",
+        "sync",
+        "new-fingerprint"
+      ]
+    },
+    {
+      "number": 135,
+      "title": "Device Request - _TZE200_xlppj4f5- TS0601 - Immax Neo smart water timer",
+      "state": "closed",
+      "user": "Domingoso",
+      "fps": [
+        "_TZE200_xlppj4f5"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/135",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "device_request",
+        "TS0601",
+        "Immax",
+        "reopened-by-user"
+      ]
+    },
+    {
+      "number": 133,
+      "title": "[Auto] 14 new fingerprints from community (2026-02)",
+      "state": "closed",
+      "user": "github-actions[bot]",
+      "fps": [
+        "_TZE284_g1enhdsi",
+        "_TZ3000_f2bw0b6k",
+        "_TZ3000_qamj2vnn",
+        "_TZ3000_avotanj3",
+        "_TZ3290_7v1k4vuf",
+        "_TZ3290_rlkmy85q",
+        "_TZ3290_jxvzqatw",
+        "_TZ3290_lypnqvle",
+        "_TZ3290_nba3knps",
+        "_TZ3290_yac64inu",
+        "_TZE204_2jnoy8dj",
+        "_TZ3210_iymfxdis",
+        "_TZ3002_xkxgfxsg",
+        "_TZ3002_tlsvxhxc"
+      ],
+      "pids": [],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/133",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "community-sync",
+        "fingerprint",
+        "community",
+        "sync",
+        "new-fingerprint"
+      ]
+    },
+    {
+      "number": 132,
+      "title": "Forum Triage: Posts #1442-#1461 (Feb 18-20, 2026)",
+      "state": "closed",
+      "user": "dlnraja",
+      "fps": [
+        "_TZ3000_tzvbimpq",
+        "_TZ3000_zgyzgdua",
+        "_TZE204_9mjy74mp",
+        "_TZ3002_pzao9ls1"
+      ],
+      "pids": [
+        "TS0042",
+        "TS0041",
+        "TS0601",
+        "TS0726"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/132",
+      "labels": [
+        "device-request",
+        "triage",
+        "forum",
+        "forum_triage",
+        "device_request"
+      ]
+    },
+    {
+      "number": 131,
+      "title": "[Triage] Forum #1448-#1454 + GitHub activity Feb 2025",
+      "state": "closed",
+      "user": "dlnraja",
+      "fps": [
+        "_TZ3002_pzao9ls1",
+        "_TZ3000_5iixzdo7",
+        "_TZE204_nklqjk62",
+        "_TZ3210_xzhnra8x",
+        "_TZE284_6ycgarab",
+        "_TZE200_u6x1zyv2",
+        "_TZE204_gkfbdvyx",
+        "_TZE204_dwcarsat",
+        "_TZ3000_zutizvyk",
+        "_TZE284_xnbkhhdr",
+        "_TZE200_rhgsbacq",
+        "_TZE284_aao3yzhs",
+        "_TZE284_aa03yzhs"
+      ],
+      "pids": [
+        "TS0726",
+        "TS0601",
+        "TS0203"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/131",
+      "labels": [
+        "triage",
+        "forum"
+      ]
+    },
+    {
+      "number": 130,
+      "title": "[Forum] Responses for posts #1443-#1447",
+      "state": "closed",
+      "user": "dlnraja",
+      "fps": [
+        "_TZ3000_tzvbimpq",
+        "_TZ3000_zgyzgdua",
+        "_TZ3000_ja5osu5g"
+      ],
+      "pids": [
+        "TS0042",
+        "TS0041"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/130",
+      "labels": [
+        "device-request",
+        "forum-post",
+        "forum",
+        "responses"
+      ]
+    },
+    {
+      "number": 129,
+      "title": "Curtain Motor Switch TS130F_TZ3000_5iixzdo7",
+      "state": "closed",
+      "user": "MitchV94",
+      "fps": [
+        "_TZ3000_5iixzdo7"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/129",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "curtain_motor",
+        "pairing_issue"
+      ]
+    },
+    {
+      "number": 128,
+      "title": "Garagedoor controller",
+      "state": "closed",
+      "user": "Wuma68",
+      "fps": [
+        "_TZE204_nklqjk62"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/128",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "garage_door",
+        "Tuya",
+        "feature_request",
+        "reopened-by-user"
+      ]
+    },
+    {
+      "number": 127,
+      "title": "Presence Sensor (Radar) _TZE204_e5m9c5hl not working correctly",
+      "state": "closed",
+      "user": "Tauno20",
+      "fps": [
+        "_TZE204_e5m9c5hl"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/127",
+      "labels": [
+        "bug",
+        "enhancement",
+        "driver improvement"
+      ]
+    },
+    {
+      "number": 126,
+      "title": "Tuya Door/Window Sensor (Black model)",
+      "state": "closed",
+      "user": "azkysmarthome",
+      "fps": [
+        "_TZ3000_zutizvyk"
+      ],
+      "pids": [
+        "TS0203",
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/126",
+      "labels": [
+        "device-request",
+        "Tuya",
+        "device_request",
+        "sensor"
+      ]
+    },
+    {
+      "number": 124,
+      "title": "TZ uppercase for wireless button and temp.sensor",
+      "state": "closed",
+      "user": "Lalla80111",
+      "fps": [
+        "_tz3000_fllyghyj",
+        "_TZ3000_fllyghyj",
+        "_tz3000_b4awzgct",
+        "_TZ3000_b4awzgct"
+      ],
+      "pids": [],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/124",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "device_request"
+      ]
+    },
+    {
+      "number": 123,
+      "title": "[Auto] 46 new fingerprints from community (2026-02)",
+      "state": "closed",
+      "user": "github-actions[bot]",
+      "fps": [
+        "_TZ3000_vd43bbfq",
+        "_TZ3000_1dd0d5yi",
+        "_TZ3000_ke7pzj5d",
+        "_TZ3000_fccpjz5z",
+        "_TZ3000_4uuaja4a",
+        "_TZ3000_zirycpws",
+        "_TZ3000_femsaaua",
+        "_TZ3000_e3vhyirx",
+        "_TZ3000_jwv3cwak",
+        "_TZ3210_dwytrmda",
+        "_TZ3000_eg7awg6a",
+        "_TZ3000_eafaa66e",
+        "_TZ3000_j1xl73iw",
+        "_TZ3000_l6iqph4f",
+        "_TZE200_5zbp6j0u",
+        "_TZE200_bjzrowv2",
+        "_TZE200_4vobcgd3",
+        "_TZE200_pk0sfzvr",
+        "_TZE200_fdtjuw7u",
+        "_TZE204_1fuxihti",
+        "_TZE200_axgvo9jh",
+        "_TZE200_gaj531w3",
+        "_TZE200_nw1r9hp6",
+        "_TZE200_9p5xmj5r",
+        "_TZ3210_invesber",
+        "_TZ3210_zdrhqmo0",
+        "_TZ3000_lqmvrwa2",
+        "_TZ3210_ncw88jfq",
+        "_TZ3000_isw9u95y",
+        "_TZ3000_yupc0pb7",
+        "_TZ3000_qrldbmfn",
+        "_TZ3000_996rpfy6",
+        "_TZ3000_2mbfxlzr",
+        "_TZ3000_n2egfsli",
+        "_TZ3000_8yhypbo7",
+        "_TZ3000_4ugnzsli",
+        "_TZ3000_udyjylt7",
+        "_TZ3000_v7chgqso",
+        "_TZ3000_timx9ivq",
+        "_TZ3000_rid8lzvo",
+        "_TZ3000_t3vvhrmh",
+        "_TZ3000_26fmupbb",
+        "_TZ3000_osu834un",
+        "_TZE284_vuwtqx0t",
+        "_TZE200_vuwtqx0t",
+        "_TZE284_ajlu4cud"
+      ],
+      "pids": [],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/123",
+      "labels": [
+        "enhancement",
+        "community-sync",
+        "community",
+        "fingerprint_update"
+      ]
+    },
+    {
+      "number": 122,
+      "title": "Longsam mini m3 curtain motor",
+      "state": "closed",
+      "user": "elgato7",
+      "fps": [
+        "_TZE204_xu4a5rhj"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/122",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "curtain_motor"
+      ]
+    },
+    {
+      "number": 121,
+      "title": "_TZ3000_an5rjiwd - not working",
+      "state": "closed",
+      "user": "DAVID9SE",
+      "fps": [
+        "_TZ3000_an5rjiwd"
+      ],
+      "pids": [],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/121",
+      "labels": [
+        "bug",
+        "enhancement",
+        "automation",
+        "device-request",
+        "button",
+        "AliExpress"
+      ]
+    },
+    {
+      "number": 117,
+      "title": "Longsam mini m3 Smart Curtain",
+      "state": "closed",
+      "user": "elgato7",
+      "fps": [
+        "_TZE204_xu4a5rhj"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/117",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "zigbee",
+        "curtain"
+      ]
+    },
+    {
+      "number": 115,
+      "title": "Temperature & Humidity Sensor",
+      "state": "closed",
+      "user": "Lalla80111",
+      "fps": [
+        "_TZ3000_fllyghyj"
+      ],
+      "pids": [
+        "TS0201"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/115",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "device_request",
+        "stale"
+      ]
+    },
+    {
+      "number": 114,
+      "title": "Smart Button",
+      "state": "closed",
+      "user": "Lalla80111",
+      "fps": [
+        "_TZ3000_b4awzgct"
+      ],
+      "pids": [
+        "TS0041"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/114",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "device_request",
+        "zigbee"
+      ]
+    },
+    {
+      "number": 113,
+      "title": "Request for New Zigbee Device - Smart KNobe Scene Switch (Remote Dimmer)",
+      "state": "closed",
+      "user": "Ernst02507",
+      "fps": [
+        "_TZ3000_gwkzibhs",
+        "_TZ3000_xyz"
+      ],
+      "pids": [
+        "TS0202"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/113",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "Tuya",
+        "device_request",
+        "zigbee"
+      ]
+    },
+    {
+      "number": 110,
+      "title": "unknown zigbee-device",
+      "state": "closed",
+      "user": "Pollepa",
+      "fps": [
+        "_TZ3210_w0qqde0g"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/110",
+      "labels": [
+        "device-request",
+        "device_request",
+        "reopened-by-user",
+        "supported_device"
+      ]
+    },
+    {
+      "number": 109,
+      "title": "Request #107 - continuation",
+      "state": "closed",
+      "user": "eskilask-maker",
+      "fps": [],
+      "pids": [
+        "TS0201"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/109",
+      "labels": [
+        "duplicate",
+        "enhancement",
+        "device-request",
+        "device_request"
+      ]
+    },
+    {
+      "number": 108,
+      "title": "Request for a Tuya air quality monitor",
+      "state": "closed",
+      "user": "gfi63",
+      "fps": [
+        "_TZE204_yvx5lh6k"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/108",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "Tuya",
+        "device_request",
+        "air_quality_monitor"
+      ]
+    },
+    {
+      "number": 107,
+      "title": "Climate Sensor (Temp & Humidity) from AliExpress",
+      "state": "closed",
+      "user": "eskilask-maker",
+      "fps": [],
+      "pids": [
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/107",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "feature_request",
+        "zigbee",
+        "device"
+      ]
+    },
+    {
+      "number": 105,
+      "title": "BSEED 1 button wall switch zigbee with neutral. _TZ3000_ysdv91bk TS0001",
+      "state": "closed",
+      "user": "pjmpessers",
+      "fps": [
+        "_TZ3000_ysdv91bk"
+      ],
+      "pids": [
+        "TS0001"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/105",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "device_request",
+        "zigbee"
+      ]
+    },
+    {
+      "number": 104,
+      "title": "BSEED 1 button wall switch zigbee with neutral. _TZ3000_blhvsaqf TS0001",
+      "state": "closed",
+      "user": "pjmpessers",
+      "fps": [
+        "_TZ3000_blhvsaqf"
+      ],
+      "pids": [
+        "TS0001"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/104",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "device_request",
+        "zigbee"
+      ]
+    },
+    {
+      "number": 103,
+      "title": "BSEED 2 button wallswitch zigbee with neutral _TZ3000_l9brjwau TS0003",
+      "state": "closed",
+      "user": "pjmpessers",
+      "fps": [
+        "_TZ3000_l9brjwau",
+        "_TZ3000_qkixdnon"
+      ],
+      "pids": [
+        "TS0003",
+        "TS0002"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/103",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "zigbee",
+        "BSEED",
+        "wallswitch"
+      ]
+    },
+    {
+      "number": 102,
+      "title": "BSEED 3 button wall switch zigbee with neutral _TZ3000_qkixdnon TS0003",
+      "state": "closed",
+      "user": "pjmpessers",
+      "fps": [
+        "_TZ3000_qkixdnon"
+      ],
+      "pids": [
+        "TS0003"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/102",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "zigbee",
+        "wall_switch",
+        "BSEED"
+      ]
+    },
+    {
+      "number": 101,
+      "title": "[Device] Tuya Zigbee TS0601 Soil Moisture / Temperature Sensor (_TZE284_aa03yzhs)",
+      "state": "closed",
+      "user": "csmobiel",
+      "fps": [
+        "_TZE284_aa03yzhs"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/101",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "Tuya",
+        "zigbee",
+        "sensor"
+      ]
+    },
+    {
+      "number": 99,
+      "title": "[Device] Sonoff S60ZBTPF",
+      "state": "closed",
+      "user": "fcarrozzo",
+      "fps": [],
+      "pids": [
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/99",
+      "labels": [
+        "device-request",
+        "Sonoff",
+        "S60ZBTPF"
+      ]
+    },
+    {
+      "number": 98,
+      "title": "[Device] TS0043 LoraTap 3 Button Remote",
+      "state": "closed",
+      "user": "DVMasters",
+      "fps": [
+        "_TZ3000_famkxci2"
+      ],
+      "pids": [
+        "TS0043",
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/98",
+      "labels": [
+        "device-request",
+        "device",
+        "TS0043",
+        "LoraTap"
+      ]
+    },
+    {
+      "number": 97,
+      "title": "[DEVICE] Presence Sensor Radar:   zb_product_id    \"TS0225\" - zb_manufacturer_name     \"_TZ321C_fkzihaxe8\" - Wenzhi cant get any value.",
+      "state": "closed",
+      "user": "NoroddH",
+      "fps": [],
+      "pids": [
+        "TS0225"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/97",
+      "labels": [
+        "bug",
+        "device-request",
+        "already-supported",
+        "reopened-by-user",
+        "presence_sensor"
+      ]
+    },
+    {
+      "number": 96,
+      "title": "Can't add Tuya Zigbee smoke detector (model PG-S11Z)",
+      "state": "closed",
+      "user": "mjolink",
+      "fps": [],
+      "pids": [
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/96",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "Tuya",
+        "device_request",
+        "zigbee"
+      ]
+    },
+    {
+      "number": 95,
+      "title": "[DEVICE] HOBEIAN ZG-227Z Temperature sensor",
+      "state": "closed",
+      "user": "JeffreyOtten1234",
+      "fps": [
+        "_TZ3000_xyz"
+      ],
+      "pids": [
+        "TS0202"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/95",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "device_request"
+      ]
+    },
+    {
+      "number": 93,
+      "title": "Device Request: Moes TRV from Aliexpress",
+      "state": "closed",
+      "user": "Necka44",
+      "fps": [
+        "_TZE204_qyr2m29i"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/93",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "device_request",
+        "zigbee",
+        "Moes_TRV"
+      ]
+    },
+    {
+      "number": 92,
+      "title": "Device request - Tuya smart button HMJ-SC021",
+      "state": "closed",
+      "user": "djfry134",
+      "fps": [
+        "_TZ3000_b4awzgct"
+      ],
+      "pids": [
+        "TS0041",
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/92",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "Tuya",
+        "device_request",
+        "HMJ-SC021"
+      ]
+    },
+    {
+      "number": 91,
+      "title": "[Device] Zigbee IR remote controle (ZS06)",
+      "state": "closed",
+      "user": "snorro80",
+      "fps": [
+        "_TZ3290_7v1k4vufotpowp9z"
+      ],
+      "pids": [
+        "TS1201",
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/91",
+      "labels": [
+        "device-request",
+        "zigbee",
+        "IR remote",
+        "ZS06"
+      ]
+    },
+    {
+      "number": 89,
+      "title": "Support Request – eWeLink Mini PIR Sensor (CK-TLSR8656-SS5-01)",
+      "state": "closed",
+      "user": "eskilask-maker",
+      "fps": [
+        "_TZE200_bh3n6gk8"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/89",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "device_request",
+        "zigbee"
+      ]
+    },
+    {
+      "number": 88,
+      "title": "Bug - Incorrect driver assigned to device - 2 gang dimmer module x climate sensor",
+      "state": "closed",
+      "user": "theunissendave",
+      "fps": [
+        "_TZE200_e3oitdyu"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/88",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "device_issue"
+      ]
+    },
+    {
+      "number": 87,
+      "title": "Device Request - Presence Sensor Radar - _TZE204_mtoaryre / TS0601",
+      "state": "closed",
+      "user": "Verectra",
+      "fps": [
+        "_TZE204_mtoaryre",
+        "_TZ3000_xyz"
+      ],
+      "pids": [
+        "TS0601",
+        "TS0202"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/87",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "device_request",
+        "presence_sensor"
+      ]
+    },
+    {
+      "number": 83,
+      "title": "WoodUpp / Tuya 24V LED Driver",
+      "state": "closed",
+      "user": "xSondreBx",
+      "fps": [],
+      "pids": [
+        "TS0501"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/83",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "zigbee",
+        "device_issue"
+      ]
+    },
+    {
+      "number": 82,
+      "title": "Add support for TS0501B / _TZB210_ngnt8kni (Tuya 24V LED Driver)",
+      "state": "closed",
+      "user": "xSondreBx",
+      "fps": [],
+      "pids": [
+        "TS0501",
+        "TS0601",
+        "ts0501"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/82",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "device_request"
+      ]
+    },
+    {
+      "number": 80,
+      "title": "Tuya Zigbee Temperature Humidity Sensor with LCD Screen ZTH05Z",
+      "state": "closed",
+      "user": "telenut",
+      "fps": [],
+      "pids": [
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/80",
+      "labels": [
+        "bug",
+        "enhancement",
+        "device-request",
+        "zigbee",
+        "temperature",
+        "humidity"
+      ]
+    },
+    {
+      "number": 79,
+      "title": "Device Request - Curtain motor - Tuya / _TZE200_uj3f4wr5",
+      "state": "closed",
+      "user": "Patrickske1",
+      "fps": [
+        "_TZE200_uj3f4wr5"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/79",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "tuya-dp",
+        "device_request",
+        "curtain_motor"
+      ]
+    },
+    {
+      "number": 78,
+      "title": "[DEVICE] TS0601_TZE200_9yapgbuv incorrectly defined as sound controller",
+      "state": "closed",
+      "user": "tknapstad",
+      "fps": [
+        "_TZE200_9yapgbuv"
+      ],
+      "pids": [
+        "TS0601",
+        "TS0011"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/78",
+      "labels": [
+        "bug",
+        "device"
+      ]
+    },
+    {
+      "number": 77,
+      "title": "[DEVICE] Thermostat Radiator Valve",
+      "state": "closed",
+      "user": "Haellos07",
+      "fps": [
+        "_TZE200_hvaxb2tc"
+      ],
+      "pids": [
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/77",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "device_request",
+        "zigbee",
+        "thermostat"
+      ]
+    },
+    {
+      "number": 76,
+      "title": "[DEVICE] 4 button touch remote (TS0044 / _TZ3000_u3nv1jwk)",
+      "state": "closed",
+      "user": "jocke-sve-62",
+      "fps": [
+        "_TZ3000_u3nv1jwk"
+      ],
+      "pids": [
+        "TS0044",
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/76",
+      "labels": [
+        "enhancement",
+        "device-request",
+        "request",
+        "device"
+      ]
+    },
+    {
+      "number": 75,
+      "title": "[Device] ZG-204ZL",
+      "state": "closed",
+      "user": "Didiervu91",
+      "fps": [],
+      "pids": [
+        "TS0601"
+      ],
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/75",
+      "labels": [
+        "device-request",
+        "device_request",
+        "HOBEIAN",
+        "ZG-204ZL"
+      ]
+    }
+  ]
 }

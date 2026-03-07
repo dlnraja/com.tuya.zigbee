@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-03-06T15:06:59.003Z",
+  "timestamp": "2026-03-07T03:31:50.947Z",
   "username": "dlnraja",
   "topicCount": 1,
   "activityCount": 300,
   "pmCount": 0,
-  "refCount": 63,
+  "refCount": 64,
   "bookmarkCount": 0,
   "fullThreads": 30,
-  "totalFPs": 712,
+  "totalFPs": 714,
   "unsupportedFPs": [
     "_TZ3000_zgyzgd",
     "_TZE204_ztqnh5c",
@@ -18,6 +18,8 @@
     "_TZ3000_zzzz",
     "_TZ3000_xxxxx",
     "_TZE200_xxxxx",
+    "_TZ3210_jic09i9a",
+    "_TZ3210_ogx8u9it",
     "_TZ3000_cehuw1l2",
     "_TZ3000_dfgbtub",
     "_TZ3000_dfgbub0",
@@ -27,5 +29,5 @@
     "_TZ3000_amdymr7",
     "_TZ3000_ksw8qtm"
   ],
-  "aiAnalysis": "**Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer**\n\n1. **Key User Requests:**\n   - Users are seeking improved functionality and compatibility with various devices, particularly those that are currently unsupported.\n   - There is a demand for more frequent updates and bug fixes, as users report issues with device installations and functionalities.\n\n2. **Devices People Need:**\n   - Users are requesting support for specific unsupported devices, including models such as \"_TZ3000_zgyzgd,\" \"_TZE204_ztqnh5c,\" and others listed in the unsupported devices section.\n   - There is a notable interest in contact sensors and their proper functionality, as users report issues with devices like the SNZB-03.\n\n3. **Issues to Fix:**\n   - Users have reported that some devices install successfully but do not function as expected, particularly contact sensors that fail to respond to magnetic movements.\n   - The need for improved driver support is evident, as users mention the addition of new drivers but still encounter issues with existing devices.\n\n4. **Action Items:**\n   - Prioritize adding support for the most requested unsupported devices to enhance user satisfaction and broaden compatibility.\n   - Focus on resolving the functionality issues with contact sensors and other problematic devices, ensuring that they operate as intended.\n   - Increase communication regarding updates and fixes, possibly by establishing a regular update schedule or providing more detailed release notes to keep users informed of changes and improvements."
+  "aiAnalysis": "**Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer**\n\n1. **Key User Requests:**\n   - Users are requesting support for specific devices, including a Tuya Zigbee IR Remote control and a 3-gang Wall Switch (HOBEIAN ZG-302Z).\n   - There is a need for improved functionality for devices that are currently unresponsive, with users reporting issues even after re-adding devices.\n\n2. **Devices People Need:**\n   - Specific requests include support for the Tuya Zigbee IR Remote control and HOBEIAN ZG-302Z Wall Switch.\n   - Users are also facing issues with various unsupported devices, as indicated by the list of unsupported firmware profiles (FPs).\n\n3. **Issues to Fix:**\n   - Many users are experiencing connectivity issues with their devices, leading to requests for troubleshooting and support.\n   - The app version (5.11.101) appears to still have unresolved issues, as users report no changes in device functionality after updates.\n\n4. **Action Items:**\n   - Prioritize adding support for the requested devices (Tuya Zigbee IR Remote control and HOBEIAN ZG-302Z).\n   - Investigate and address the connectivity issues reported by users, possibly through a dedicated troubleshooting guide or update.\n   - Review and resolve issues related to unsupported firmware profiles to expand device compatibility.\n   - Consider releasing more frequent updates or patches to address user-reported problems and enhance overall app performance. \n\nBy focusing on these actionable insights, the maintainer can improve user satisfaction and expand the app's functionality."
 }
