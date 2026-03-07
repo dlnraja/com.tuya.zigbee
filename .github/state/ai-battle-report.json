@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-03-06T16:06:17.723Z",
+  "timestamp": "2026-03-07T04:30:45.009Z",
   "dryRun": false,
   "sources": {
     "external": 1607,
-    "github": 13,
+    "github": 7,
     "forks": 0,
     "johan": 4,
     "gmail": 0,
@@ -91,5 +91,5 @@
     "skipped": 0
   },
   "ghApiCalls": 100,
-  "aiSummary": "{\n  \"summary\": {\n    \"total_sources_scanned\": 1624,\n    \"confirmed_variants\": 0,\n    \"new_fingerprints_classified\": 7\n  }\n}"
+  "aiSummary": "{\n  \"summary\": {\n    \"total_sources_scanned\": 1618,\n    \"confirmed_variants\": 0,\n    \"new_fingerprints_classified\": 7\n  }\n}"
 }

@@ -1,47 +1,44 @@
 {
-  "timestamp": "2026-03-06T15:06:55.775Z",
+  "timestamp": "2026-03-07T03:31:48.183Z",
   "appVersion": "5.11.101",
-  "forum": 2,
-  "github": 1,
+  "forum": 3,
+  "github": 0,
   "diagnostics": 9,
-  "diagNewFPs": 0,
+  "diagNewFPs": 2,
   "diagCritical": 0,
   "forumDetails": [
     {
       "topic": 140352,
-      "post": 1594,
-      "user": "DomLAJO",
+      "post": 1604,
+      "user": "Olivier_VE",
       "fps": [
-        "eWeLink",
-        "vision"
+        "HOBEIAN"
       ],
-      "reply": "Based on the device interview results for the **SNZB-03** from **eWeLink**, we can analyze the clusters and suggest appropriate drivers.\n\n### Device Analysis\nThe device has the following relevant clus",
+      "reply": "It looks like we have found a fingerprint for the HOBEIAN manufacturer, which indicates that there is support for multiple drivers, including `contact_sensor`, `presence_sensor_radar`, and `vibration_",
       "model": "gh-gpt-4o-mini"
     },
     {
       "topic": 140352,
-      "post": 1603,
-      "user": "Peter_van_Werkhoven",
+      "post": 1606,
+      "user": "FinnKje",
       "fps": [
-        "_TZ3000_0dumfk2z",
-        "_TZE200_vvmbj46n",
-        "_TZE200_pay2byax"
+        "_TZ3210_jic09i9a",
+        "_TZ3210_ogx8u9it",
+        "zigbee2mqtt"
       ],
-      "reply": "Hi Peter,\n\nThank you for your patience and for providing the details about your devices. I've looked into the issues you've reported and here's what I found:\n\n1. **SOS Button (_TZ3000_0dumfk2z)**:\n   ",
+      "reply": "Based on the information provided, it appears that your Tuya Zigbee IR Remote control (TS1201) is recognized in the context of Zigbee2MQTT, which indicates that there is existing support for this devi",
+      "model": "gh-gpt-4o-mini"
+    },
+    {
+      "topic": 140352,
+      "post": 1607,
+      "user": "blutch32",
+      "fps": [
+        "dlnraja"
+      ],
+      "reply": "Hi @blutch32,\n\nThank you for reaching out and for providing the details. I'm sorry to hear that you're experiencing issues with your devices.\n\nBased on the information provided, it seems that the devi",
       "model": "gh-Mistral-small-2503"
     }
   ],
-  "githubDetails": [
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1350,
-      "type": "pr",
-      "user": "PiTRiS87",
-      "fps": [
-        "_TZ3210_ngqk6jia",
-        "_TZ3210_weaqkhab"
-      ],
-      "model": "gh-Mistral-small-2503"
-    }
-  ]
+  "githubDetails": []
 }

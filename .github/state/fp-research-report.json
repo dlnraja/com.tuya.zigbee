@@ -1,22 +1,51 @@
 {
-  "timestamp": "2026-03-06T15:19:16.446Z",
-  "total": 1,
-  "resolved": 1,
+  "timestamp": "2026-03-07T03:44:40.028Z",
+  "total": 2,
+  "resolved": 0,
   "unknown": 0,
   "falsePositives": 0,
   "results": [
     {
-      "fp": "_TZE200_vvmbj46n",
+      "fp": "_TZE200_d2zfg",
       "valid": true,
       "prefix": "tuya_dp",
-      "driver": "lcdtemphumidsensor",
-      "pid": null,
-      "confidence": 100,
+      "driver": "power_meter",
+      "pid": "TS0601",
+      "confidence": 0,
       "sources": [
-        "local"
+        "z2m-context"
       ],
-      "method": null,
-      "driverExists": true
+      "method": "z2m-context",
+      "z2mContext": {
+        "driver": "power_meter",
+        "score": 5,
+        "source": "z2m-context"
+      },
+      "falsePositive": {
+        "isFP": false,
+        "reason": "unknown_not_false"
+      }
+    },
+    {
+      "fp": "_TZE200_wjk6r",
+      "valid": true,
+      "prefix": "tuya_dp",
+      "driver": "power_meter",
+      "pid": "TS0601",
+      "confidence": 0,
+      "sources": [
+        "z2m-context"
+      ],
+      "method": "z2m-context",
+      "z2mContext": {
+        "driver": "power_meter",
+        "score": 6,
+        "source": "z2m-context"
+      },
+      "falsePositive": {
+        "isFP": false,
+        "reason": "unknown_not_false"
+      }
     }
   ]
 }
