@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-03-08T04:38:07.959Z",
+  "timestamp": "2026-03-08T08:07:33.970Z",
   "dryRun": false,
   "sources": {
     "external": 1607,
     "github": 9,
     "forks": 0,
-    "johan": 4,
+    "johan": 0,
     "gmail": 0,
     "forum": 0,
     "diagnostics": 0,
@@ -16,9 +16,9 @@
     "details": []
   },
   "classified": {
-    "total": 7,
+    "total": 3,
     "byMethod": {
-      "ai-single": 7
+      "ai-single": 3
     },
     "details": [
       {
@@ -32,7 +32,7 @@
       },
       {
         "fp": "_TZ3210_amleyeej",
-        "driver": "button_wireless_1",
+        "driver": "motion_sensor",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -47,42 +47,6 @@
         "sources": [
           "external"
         ]
-      },
-      {
-        "fp": "_TZE204_gkfb",
-        "driver": "motion_sensor",
-        "method": "ai-single",
-        "pids": [],
-        "sources": [
-          "johan"
-        ]
-      },
-      {
-        "fp": "_TZ3000Z_iedbgyxt",
-        "driver": "switch_2gang",
-        "method": "ai-single",
-        "pids": [],
-        "sources": [
-          "johan"
-        ]
-      },
-      {
-        "fp": "_TZ3290_ot6ewjvmej",
-        "driver": "switch_3gang",
-        "method": "ai-single",
-        "pids": [],
-        "sources": [
-          "johan"
-        ]
-      },
-      {
-        "fp": "_TZ3000_xxxxx",
-        "driver": "switch_4gang",
-        "method": "ai-single",
-        "pids": [],
-        "sources": [
-          "johan"
-        ]
       }
     ]
   },
@@ -91,5 +55,5 @@
     "skipped": 0
   },
   "ghApiCalls": 100,
-  "aiSummary": "```json\n{\n  \"summary\": {\n    \"total_sources_scanned\": 1620,\n    \"confirmed_variants\": 0,\n    \"new_fingerprints_classified\": 7\n  }\n}\n```"
+  "aiSummary": "```json\n{\n  \"summary\": {\n    \"total_sources_scanned\": 1616,\n    \"confirmed_variants\": 0,\n    \"new_fingerprints_classified\": 3\n  }\n}\n```"
 }
