@@ -1,93 +1,12 @@
 {
-  "timestamp": "2026-03-07T19:08:35.576Z",
-  "count": 3,
-  "byType": {
-    "github": 2,
-    "diagnostic": 1
-  },
+  "timestamp": "2026-03-08T07:14:02.158Z",
+  "count": 0,
+  "byType": {},
   "newFingerprints": [],
   "deepResearch": {
     "researched": 0,
     "added": 0,
     "details": []
   },
-  "diagnostics": [
-    {
-      "id": "imap_499509",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Smart Airbox no data (Issue #1229)",
-      "from": "github",
-      "date": "2026-03-07T17:37:50.000Z",
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1229",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    },
-    {
-      "id": "imap_499510",
-      "type": "diagnostic",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
-      "from": "user",
-      "date": "2026-03-07T18:04:12.000Z",
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [
-        "ir_remote",
-        "1394d6ab-8895-4941-bb5d-7e2759",
-        "2026-03-07T17"
-      ],
-      "xref": [],
-      "ghInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    },
-    {
-      "id": "imap_499511",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - [UFO-R11] - [Moes] / [modelId] (Issue #1331)",
-      "from": "github",
-      "date": "2026-03-07T18:14:49.000Z",
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [
-        "has",
-        "works"
-      ],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1331",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    }
-  ]
+  "diagnostics": []
 }
