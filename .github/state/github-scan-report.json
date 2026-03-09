@@ -1,29 +1,260 @@
 {
-  "timestamp": "2026-03-08T03:39:48.811Z",
+  "timestamp": "2026-03-09T04:40:11.391Z",
   "appVersion": "5.11.101",
   "findings": {
     "issues": [
       {
         "repo": "dlnraja/com.tuya.zigbee",
-        "number": 137,
-        "title": "Plug Energy Monitor, wrong voltage",
-        "user": "Lalla80111",
+        "number": 156,
+        "title": "[Auto] 115 new fingerprints from forks",
+        "user": "github-actions[bot]",
         "newFPs": [],
         "existingFPs": [
           {
-            "fp": "_TZ3210_w0qqde0g",
+            "fp": "_TZ2000_a476raq2",
             "drivers": [
-              "plug_energy_monitor"
+              "climate_sensor"
             ]
           },
           {
-            "fp": "_TZ3210_xzhnra8x",
+            "fp": "_TZ2000_xogb73am",
             "drivers": [
-              "plug_energy_monitor"
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ2000_avdnvykf",
+            "drivers": [
+              "air_quality_comprehensive"
+            ]
+          },
+          {
+            "fp": "_TZ2000_hjsgdkfl",
+            "drivers": [
+              "air_quality_comprehensive"
+            ]
+          },
+          {
+            "fp": "_TYZB01_xph99wvr",
+            "drivers": [
+              "switch_1gang"
+            ]
+          },
+          {
+            "fp": "_TZ3000_a33rw7ou",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_6zvw8ham",
+            "drivers": [
+              "bulb_rgb"
+            ]
+          },
+          {
+            "fp": "_TZ3000_au2o5e6q",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_cqlnswn0",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_rusu2vzb",
+            "drivers": [
+              "climate_sensor",
+              "contact_sensor",
+              "motion_sensor",
+              "water_leak_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_yd2e749y",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_ywagc4rj",
+            "drivers": [
+              "climate_sensor",
+              "contact_sensor",
+              "motion_sensor",
+              "water_leak_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_itnrsufe",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_bjawzodf",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3210_ncw88jfq",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_keabpigv",
+            "drivers": [
+              "led_strip_rgbw"
+            ]
+          },
+          {
+            "fp": "_TZ3000_12sxjap4",
+            "drivers": [
+              "led_strip_rgbw"
+            ]
+          },
+          {
+            "fp": "_TZ3000_hlijwsai",
+            "drivers": [
+              "led_strip_rgbw"
+            ]
+          },
+          {
+            "fp": "_TZ3000_zmy1waw6",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_m9af2l6g",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_ji4araar",
+            "drivers": [
+              "din_rail_switch",
+              "smart_breaker"
+            ]
+          },
+          {
+            "fp": "_TZ3000_qmi1cfuq",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_npzfdcof",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_tqlv4ug4",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_rmjr4ufz",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_mx3vgyea",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_4js9lo5d",
+            "drivers": [
+              "switch_1gang"
+            ]
+          },
+          {
+            "fp": "_TZ3000_fisb3ajo",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_bvrlqyj7",
+            "drivers": [
+              "curtain_motor",
+              "radiator_valve",
+              "thermostat_tuya_dp"
+            ]
+          },
+          {
+            "fp": "_TZ3000_jl7qyupf",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_7ed9cqgi",
+            "drivers": [
+              "dimmer_wall_1gang"
+            ]
+          },
+          {
+            "fp": "_TZ3000_llfaquvp",
+            "drivers": [
+              "switch_1gang"
+            ]
+          },
+          {
+            "fp": "_TZ3000_lmlsduws",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_qaa59zqd",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_ruxexjfz",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_i8jfiezr",
+            "drivers": [
+              "switch_1gang"
+            ]
+          },
+          {
+            "fp": "_TZ3000_bguser20",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_8ybe88nf",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_fie1dpkm",
+            "drivers": [
+              "climate_sensor"
             ]
           }
         ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/137",
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/156",
         "state": "closed",
         "imageAnalysis": null
       },
@@ -46,43 +277,7 @@
         ],
         "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1331",
         "state": "open",
-        "imageAnalysis": "```json\n{\n  \"TuyaFingerprints\": [\n    \"Tuya Wired Version Gateway is Required\",\n    \"smart IR remote\",\n    \"Tuya ZigBee wired hub\",\n    \"Tuya wired multi-mode hub\",\n    \"App Control\",\n    \"Voice Control\",\n    \"Wireless hub not supported\",\n    \"Wired hub supported\"\n  ]\n}\n```"
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 1229,
-        "title": "Smart Airbox no data",
-        "user": "eeckelaertyannick",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZE200_8ygsuhe1",
-            "drivers": [
-              "climate_sensor"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1229",
-        "state": "open",
-        "imageAnalysis": "NULL"
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 1270,
-        "title": "Device Request - Human presence sensor - Wenzhou Wenzhi Automation  [ _TZ321C_fkzihax8 ] / Zigbee 5.8G Radar [ TS0225 ]",
-        "user": "NoroddH",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ321C_fkzihax8",
-            "drivers": [
-              "presence_sensor_radar"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1270",
-        "state": "open",
-        "imageAnalysis": null
+        "imageAnalysis": "```json\n{\n  \"Tuya_fingerprints\": {\n    \"Required_Gateway\": \"Tuya Wired Version Gateway\",\n    \"Compatibility\": [\n      \"Tuya ZigBee wired hub\",\n      \"Tuya wired multi-mode hub\"\n    ],\n    \"Wireless_Support\": \"No wireless version functional\",\n    \"Control_Methods\": [\n      \"App Control\",\n      \"Voice Control\"\n    ],\n    \"Supported_Hub\": {\n      \"Wired\": \"Supported\",\n      \"Wireless\": \"Not Supported\"\n    }\n  }\n}\n```"
       }
     ],
     "prs": [
@@ -201,5 +396,5 @@
     "newFPs": [],
     "forkFPs": []
   },
-  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests Found\n\n1. **UFO-R11 Device Request** ([#1331](https://github.com/JohanBendz/com.tuya.zigbee/issues/1331))\n   - **Fingerprint**: `_TZ3290_ot6ewjvmej`\n   - **Description**: Device request for a Moes device with the model ID `_TZ3290_ot6ewjvmej`. The device is described as a smart IR remote requiring a Tuya Wired Version Gateway.\n\n## Fingerprints Already Supported\n\n1. **Plug Energy Monitor** ([#137](https://github.com/dlnraja/com.tuya.zigbee/issues/137))\n   - **Fingerprints**: `_TZ3210_w0qqde0g`, `_TZ3210_xzhnra8x`\n   - **Drivers**: `plug_energy_monitor`\n   - **Issue**: Reported wrong voltage readings.\n\n2. **Smart Airbox** ([#1229](https://github.com/JohanBendz/com.tuya.zigbee/issues/1229))\n   - **Fingerprint**: `_TZE200_8ygsuhe1`\n   - **Drivers**: `climate_sensor`\n   - **Issue**: Device not providing data.\n\n3. **Human Presence Sensor** ([#1270](https://github.com/JohanBendz/com.tuya.zigbee/issues/1270))\n   - **Fingerprint**: `_TZ321C_fkzihax8`\n   - **Drivers**: `presence_sensor_radar`\n   - **Issue**: Device request for a human presence sensor with the model ID `_TZ321C_fkzihax8`.\n\n## Fingerprints from Forks to Integrate\n\nNo new fingerprints were found in forks that need integration.\n\n## PRs with Useful Changes\n\n1. **Update driver.compose.json** ([#45](https://github.com/dlnraja/com.tuya.zigbee/pull/45))\n   - **Fingerprint**: `_TZE200_nv6nxo0c`\n   - **Status**: Merged\n   - **Description**: Update to `driver.compose.json` for the fingerprint `_TZE200_nv6nxo0c`.\n\n2. **Adding support of MOES/Tuya Zigbee AM25 Tubular Motor** ([#46](https://github.com/dlnraja/com.tuya.zigbee/pull/46))\n   - **Fingerprint**: `_TZE200_nv6nxo0c`\n   - **Status**: Not merged\n   - **Description**: Adds support for the MOES/Tuya Zigbee AM25 Tubular Motor for motorized roller blinds and window shades.\n\n3. **Added TS110E driver** ([#1350](https://github.com/JohanBendz/com.tuya.zigbee/pull/1350))\n   - **Fingerprints**: `_TZ3210_ngqk6jia`, `_TZ3210_weaqkhab`\n   - **Status**: Open\n   - **Description**: Adds support for TS110E driver.\n\n4. **Added 3 new devices** ([#1253](https://github.com/JohanBendz/com.tuya.zigbee/pull/1253))\n   - **Fingerprints**: `_TZE200_pay2byax`, `_TZ3000_mrpevh8p`\n   - **Status**: Open\n   - **Description**: Adds support for three new devices.\n\n5. **Update driver.compose.json** ([#1219](https://github.com/JohanBendz/com.tuya.zigbee/pull/1219))\n   - **Fingerprint**: `_TZ3000_gjrubzje`\n   - **Status**: Open\n   - **Description**: Update to `driver.compose.json` for the fingerprint `_TZ3000_gjrubzje`.\n\n6. **Update driver.compose.json** ([#1218](https://github.com/JohanBendz/com.tuya.zigbee/pull/1218))\n   - **Fingerprint**: `_TZE204_dapwryy7`\n   - **Status**: Open\n   - **Description**: Update to `driver.compose.json` for the fingerprint `_TZE204_dapwryy7`.\n\n7. **Add \"_TZE204_bjzrowv2\"** ([#1195](https://github.com/JohanBendz/com.tuya.zigbee/pull/1195))\n   - **Fingerprint**: `_TZE204_bjzrowv2`\n   - **Status**: Open\n   - **Description**: Adds support for the fingerprint `_TZE204_bjzrowv2` and updates `app.json`.\n\n8. **Addition of Garage Door Controller and combined Fan on/off, fan speed, Light on/off drivers** ([#1210](https://github.com/JohanBendz/com.tuya.zigbee/pull/1210))\n   - **Fingerprints**: `_TZE204_lawxy9e2`, `_TZE204_nklqjk62`\n   - **Status**: Open\n   - **Description**: Adds support for Garage Door Controller and combined Fan on/off, fan speed, Light on/off drivers.\n\nThis summary provides a concise overview of the recent GitHub activity for the Universal Tuya Zigbee project, highlighting new device requests, supported fingerprints, and useful PRs."
+  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests\n1. **UFO-R11 (Moes)**  \n   - **Fingerprint**: `_TZ3290_ot6ewjvmej`  \n   - **Existing Fingerprint**: `_TZ3290_ot6ewjvmejq5ekhl`  \n   - **Drivers**: `ir_blaster`, `ir_remote`  \n   - **Issue Link**: [Device Request #1331](https://github.com/JohanBendz/com.tuya.zigbee/issues/1331)  \n\n## Supported Fingerprints\nThe following fingerprints are already supported in the main repository:\n- **Climate Sensors**:\n  - `_TZ2000_a476raq2`\n  - `_TZ2000_xogb73am`\n  - `_TZ3000_a33rw7ou`\n  - `_TZ3000_au2o5e6q`\n  - `_TZ3000_cqlnswn0`\n  - `_TZ3000_rusu2vzb`\n  - `_TZ3000_ywagc4rj`\n  - `_TZ3000_itnrsufe`\n  - `_TZ3000_bjawzodf`\n  - `_TZ3210_ncw88jfq`\n  - `_TZ3000_qmi1cfuq`\n  - `_TZ3000_npzfdcof`\n  - `_TZ3000_tqlv4ug4`\n  - `_TZ3000_rmjr4ufz`\n  - `_TZ3000_mx3vgyea`\n  - `_TZ3000_fisb3ajo`\n  - `_TZ3000_jl7qyupf`\n  - `_TZ3000_lmlsduws`\n  - `_TZ3000_qaa59zqd`\n  - `_TZ3000_ruxexjfz`\n  - `_TZ3000_bguser20`\n  - `_TZ3000_8ybe88nf`\n  - `_TZ3000_fie1dpkm`\n\n- **Other Devices**:\n  - `_TYZB01_xph99wvr` (switch_1gang)\n  - `_TZ3000_6zvw8ham` (bulb_rgb)\n  - `_TZ3000_keabpigv` (led_strip_rgbw)\n  - `_TZ3000_12sxjap4` (led_strip_rgbw)\n  - `_TZ3000_hlijwsai` (led_strip_rgbw)\n  - `_TZ3000_bvrlqyj7` (curtain_motor, radiator_valve, thermostat_tuya_dp)\n  - `_TZ3000_7ed9cqgi` (dimmer_wall_1gang)\n  - `_TZ3000_4js9lo5d` (switch_1gang)\n  - `_TZ3000_i8jfiezr` (switch_1gang)\n  - `_TZ3000_llfaquvp` (switch_1gang)\n  - `_TZ3000_fie1dpkm` (climate_sensor)\n\n## Fingerprints from Forks to Integrate\nNo new fingerprints from forks have been identified for integration at this time.\n\n## Pull Requests with Useful Changes\n1. **[PR #10](https://github.com/dlnraja/com.tuya.zigbee/pull/10)** - Update driver.compose.json (Peter-Celica) - Not merged.\n2. **[PR #45](https://github.com/dlnraja/com.tuya.zigbee/pull/45)** - Update driver.compose.json (vl14-dev) - Merged.\n3. **[PR #46](https://github.com/dlnraja/com.tuya.zigbee/pull/46)** - Adding support for MOES/Tuya Zigbee AM25 Tubular Motor (vl14-dev) - Not merged.\n4. **[PR #1350](https://github.com/JohanBendz/com.tuya.zigbee/pull/1350)** - Added TS110E driver (PiTRiS87) - Open.\n5. **[PR #1253](https://github.com/JohanBendz/com.tuya.zigbee/pull/1253)** - Added 3 new devices (Peter-Celica) - Open.\n6. **[PR #1219](https://github.com/JohanBendz/com.tuya.zigbee/pull/1219)** - Update driver.compose.json (Melectro1) - Open.\n7. **[PR #1218](https://github.com/JohanBendz/com.tuya.zigbee/pull/1218)** - Update driver.compose.json (Melectro1) - Open.\n8. **[PR #1195](https://github.com/JohanBendz/com.tuya.zigbee/pull/1195)** - Add `_TZE204_bjzrowv2` - Update app.json (YuriEstevan) - Open.\n9. **[PR #1210](https://github.com/JohanBendz/com.tuya.zigbee/pull/1210)** - Addition of Garage Door Controller and combined Fan drivers (TKGHill) - Open.\n\nFor further details, please refer to the respective links provided."
 }
