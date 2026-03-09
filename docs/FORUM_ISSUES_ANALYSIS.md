@@ -462,3 +462,12 @@ All 12 fingerprints from 20 open issues **already supported** in v5.11.19:
 - **Topic 140352 #1604** @Olivier_VE: `HOBEIAN` (gh-gpt-4o-mini)
 - **Topic 140352 #1606** @FinnKje: `_TZ3210_jic09i9a`, `_TZ3210_ogx8u9it`, `zigbee2mqtt` (gh-gpt-4o-mini)
 - **Topic 140352 #1607** @blutch32: `dlnraja` (gh-Mistral-small-2503)
+
+
+## Nightly Forum Scan (2026-03-09 v5.11.101)
+- **Topic 140352 #1610** @ManuelKugler: `_TZE200_u6x1zyv2` (gh-gpt-4o-mini)
+- **Topic 140352 #1611** @ManuelKugler: `_TZE284_hdml1aav`, `vision` (gh-gpt-4o-mini)
+- **Topic 140352 #1613** @DomLAJO: `dlnraja` (gh-gpt-4o-mini)
+- **Topic 140352 #1615** @DomLAJO: `_TZE200_gjldowol`, `zigbee2mqtt` (gh-gpt-4o-mini)
+- **Topic 140352 #1618** @Ronald_Bok: `test` (gh-gpt-4o-mini)
+- **Topic 140352 #1619** @Jocke_Wallen: `thread` (gh-gpt-4o-mini)

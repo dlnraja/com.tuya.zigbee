@@ -1,6 +1,6 @@
 # 🏠 Universal Tuya Zigbee v5.11.101
 
-> **145 drivers** · **5423+ fingerprints** · Updated 2026-03-08
+> **145 drivers** · **5423+ fingerprints** · Updated 2026-03-09
 
 Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.
 
@@ -10,7 +10,7 @@ Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehens
 
 ## What's New (v5.11.101)
 
-Added 145 new drivers., Updated fingerprint database to include 3109 fingerprints., No specific bug fixes reported in this release., Updated forum state for better tracking of community activity.
+Universal Tuya Zigbee app v5.11.101 adds 4976 fingerprints and 145 drivers, with multiple file updates.
 
 ## Supported Devices
 
@@ -65,4 +65,4 @@ This app is free and open-source. If it's useful to you, a small donation helps 
 **PayPal:** [paypal.me/dlnraja](https://paypal.me/dlnraja) · **Revolut:** [revolut.me/dylanoul](https://revolut.me/dylanoul)
 
 ---
-*Last updated 2026-03-08 — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*
+*Last updated 2026-03-09 — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*

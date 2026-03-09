@@ -7,15 +7,15 @@
 [![Drivers](https://img.shields.io/badge/drivers-145-brightgreen)]()
 [![Fingerprints](https://img.shields.io/badge/fingerprints-5,423+-green)]()
 [![Users Tracked](https://img.shields.io/badge/users%20tracked-33+-purple)]()
-[![Last Updated](https://img.shields.io/badge/updated-2026-03-08-lightgrey)]()
+[![Last Updated](https://img.shields.io/badge/updated-2026-03-09-lightgrey)]()
 
-> **v5.11.101** | **5,423+ fingerprints** | **145 drivers** | **1,857 flow cards** | Updated 2026-03-08
+> **v5.11.101** | **5,423+ fingerprints** | **145 drivers** | **1,857 flow cards** | Updated 2026-03-09
 
 ---
 
 ## Fingerprint Verification
 
-**Verified**: 79 fingerprints from user reports found in drivers
+**Verified**: 81 fingerprints from user reports found in drivers
 **Missing** (2): `_TZ3210_jic09i9a`, `_TZ3210_ogx8u9it`
 
 ---
@@ -160,7 +160,7 @@
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.101** | Updated to v5.11.101 with . |
+| **v5.11.101** | Universal Tuya Zigbee app v5.11.101 adds new device variants and updates 145 drivers with 5423 fi... |
 | **v5.11.100** | Universal Tuya Zigbee app v5.11.100 adds . |
 | **v5.11.99** | Universal Tuya Zigbee app v5.11.99: Regenerated driver images and fixed various draft detection i... |
 | **v5.11.98** | Universal Tuya Zigbee app v5.11.98 fixes IAS issues and improves draft detection. |
@@ -177,12 +177,26 @@
 
 <!-- NIGHTLY_START — Preserved from nightly-processor.js -->
 
+## Nightly Auto-Scan (2026-03-09)
+| User | Fingerprint(s) | Source | Date |
+|------|---------------|--------|------|
+| ManuelKugler | `_TZE200_u6x1zyv2` | Forum #140352 post #1610 | Auto-scanned 2026-03-09 |
+| ManuelKugler | `_TZE284_hdml1aav`, `vision` | Forum #140352 post #1611 | Auto-scanned 2026-03-09 |
+| DomLAJO | `dlnraja` | Forum #140352 post #1613 | Auto-scanned 2026-03-09 |
+| DomLAJO | `_TZE200_gjldowol`, `zigbee2mqtt` | Forum #140352 post #1615 | Auto-scanned 2026-03-09 |
+| Ronald_Bok | `test` | Forum #140352 post #1618 | Auto-scanned 2026-03-09 |
+| Jocke_Wallen | `thread` | Forum #140352 post #1619 | Auto-scanned 2026-03-09 |
+| github-actions[bot] | `danfoss`, `legrand`, `sonoff`, `xiaomi`, `test`, `bosch`, `ikea`, `tuya` | dlnraja/com.tuya.zigbee#157 | Auto-scanned 2026-03-09 |
+
+
+
 ## Nightly Auto-Scan (2026-03-07)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Olivier_VE | `HOBEIAN` | Forum #140352 post #1604 | Auto-scanned 2026-03-07 |
 | FinnKje | `_TZ3210_jic09i9a`, `_TZ3210_ogx8u9it`, `zigbee2mqtt` | Forum #140352 post #1606 | Auto-scanned 2026-03-07 |
 | blutch32 | `dlnraja` | Forum #140352 post #1607 | Auto-scanned 2026-03-07 |
+
 
 
 
@@ -200,10 +214,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-03-04)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Hartmut_Dunker | `_TZ3002_pzao9ls1`, `dlnraja` | Forum #140352 post #1579 | Auto-scanned 2026-03-04 |
+
 
 
 
@@ -228,11 +244,13 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-03-02)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Nicolas | `dlnraja` | Forum #140352 post #1559 | Auto-scanned 2026-03-02 |
 | github-actions[bot] | `danfoss`, `legrand`, `sonoff`, `xiaomi`, `test`, `bosch`, `ikea`, `tuya` | dlnraja/com.tuya.zigbee#152 | Auto-scanned 2026-03-02 |
+
 
 
 
@@ -257,10 +275,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-28)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | OH2TH | `dlnraja` | Forum #140352 post #1551 | Auto-scanned 2026-02-28 |
+
 
 
 
@@ -295,12 +315,14 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-26)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | JJ10 | `_TZE200_crq3r3la`, `_TZE200_gkfbdvyx` | Forum #140352 post #1481 | Auto-scanned 2026-02-26 |
 | 7Hills | `_TZE204_clrdrnya` | Forum #140352 post #1482 | Auto-scanned 2026-02-26 |
 | dmz-86 | `_TZE204_clrdrnya` | JohanBendz/com.tuya.zigbee#1142 | Auto-scanned 2026-02-26 |
+
 
 
 
@@ -350,11 +372,13 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-24)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | FrankP | `_TZ3000_itb0omhv` | Forum #140352 post #1477 | Auto-scanned 2026-02-24 |
 | Domingoso | `_TZE200_xlppj4f5` | dlnraja/com.tuya.zigbee#135 | Auto-scanned 2026-02-24 |
+
 
 
 
@@ -417,10 +441,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-22)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Slawek_Pe | `_TZ3210_xzhnra8x` | Forum #140352 post #1467 | Auto-scanned 2026-02-22 |
+
 
 
 
@@ -449,6 +475,7 @@
 |------|---------------|--------|------|
 | ManuelKugler | `_TZE284_aao3yzhs` | Forum #140352 post #1465 | Auto-scanned 2026-02-21 |
 | eeckelaertyannick | `_TZE200_8ygsuhe1` | JohanBendz/com.tuya.zigbee#1229 | Auto-scanned 2026-02-21 |
+
 
 
 
@@ -565,6 +592,9 @@
 
 <!-- NIGHTLY_END -->
 
+
+<!-- NIGHTLY_END -->
+
 ---
 
 ## Auto-Discovered Fingerprints
@@ -588,6 +618,7 @@
 | _TZ3210_iymfxdis | dlnraja/com.tuya.zigbee#133 | device_request |
 | _TZ3002_xkxgfxsg | dlnraja/com.tuya.zigbee#133 | device_request |
 | _TZ3002_tlsvxhxc | dlnraja/com.tuya.zigbee#133 | device_request |
+
 
 
 
@@ -641,6 +672,7 @@
 
 
 <!-- AUTODISCOVERED_END -->
+
 
 
 
@@ -746,6 +778,7 @@
 
 
 
+
 ## Auto-discovered from GitHub (2026-03-01)
 
 | Fingerprint | Source | Type |
@@ -764,6 +797,9 @@
 | _TZE204_x8diwkqb | dlnraja/com.tuya.zigbee#142 | feature |
 | _TZE284_x8diwkqb | dlnraja/com.tuya.zigbee#142 | feature |
 | _TZE200_x8diwkqb | dlnraja/com.tuya.zigbee#142 | feature |
+
+<!-- AUTODISCOVERED_END -->
+
 
 <!-- AUTODISCOVERED_END -->
 
@@ -817,17 +853,17 @@ _No patterns detected yet — run pattern-detector.js_
 
 ## Interview Repository
 
-- **Total interviews recovered**: 122
-- **Unique fingerprints**: 104
-- **Sources**: {"github":91,"forum":31,"gmail":0,"forum-pm":0}
+- **Total interviews recovered**: 126
+- **Unique fingerprints**: 107
+- **Sources**: {"github":95,"forum":31,"gmail":0,"forum-pm":0}
 
 ---
 
 ## Forum Activity Tracking
 
 - **Topics monitored**: 5
-- **Recent replies**: 1
-- **Last reply**: 2026-03-07T09:05:31.074Z
+- **Recent replies**: 2
+- **Last reply**: 2026-03-08T21:03:42.303Z
 
 ---
 
@@ -857,4 +893,4 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 
 ---
 
-*Auto-generated on 2026-03-08 from v5.11.101 — 5,423+ fingerprints across 145 drivers*
+*Auto-generated on 2026-03-09 from v5.11.101 — 5,423+ fingerprints across 145 drivers*

@@ -1,11 +1,92 @@
 {
-  "timestamp": "2026-03-08T03:40:05.472Z",
+  "timestamp": "2026-03-09T15:04:43.839Z",
   "appVersion": "5.11.101",
-  "forum": 0,
-  "github": 0,
-  "diagnostics": 3,
+  "forum": 6,
+  "github": 1,
+  "diagnostics": 2,
   "diagNewFPs": 0,
   "diagCritical": 0,
-  "forumDetails": [],
-  "githubDetails": []
+  "forumDetails": [
+    {
+      "topic": 140352,
+      "post": 1610,
+      "user": "ManuelKugler",
+      "fps": [
+        "_TZE200_u6x1zyv2"
+      ],
+      "reply": "It looks like your rain sensor (_TZE200_u6x1zyv2) is encountering an issue with IAS Zone enrollment. This can happen if the device is not properly connected or if there are communication issues.\n\n### ",
+      "model": "gh-gpt-4o-mini"
+    },
+    {
+      "topic": 140352,
+      "post": 1611,
+      "user": "ManuelKugler",
+      "fps": [
+        "_TZE284_hdml1aav",
+        "vision"
+      ],
+      "reply": "Based on the fingerprint lookup for the device model **TS0601** from manufacturer **_TZE284_hdml1aav**, it appears that the device is recognized and has been associated with the **soil_sensor** driver",
+      "model": "gh-gpt-4o-mini"
+    },
+    {
+      "topic": 140352,
+      "post": 1613,
+      "user": "DomLAJO",
+      "fps": [
+        "dlnraja"
+      ],
+      "reply": "The SNZB-03 is indeed supported, and I found fingerprints for it. Based on the information available, there are two potential drivers that can be used: `generic_diy` and `motion_sensor`. \n\nIf your dev",
+      "model": "gh-gpt-4o-mini"
+    },
+    {
+      "topic": 140352,
+      "post": 1615,
+      "user": "DomLAJO",
+      "fps": [
+        "_TZE200_gjldowol",
+        "zigbee2mqtt"
+      ],
+      "reply": "Based on the information provided about the Tuya PIR Motion Sensor ZM-35H-Q, here’s a detailed analysis:\n\n### Fingerprint Lookup\nThe device has been identified with the following fingerprints:\n- **_TZ",
+      "model": "gh-gpt-4o-mini"
+    },
+    {
+      "topic": 140352,
+      "post": 1618,
+      "user": "Ronald_Bok",
+      "fps": [
+        "test"
+      ],
+      "reply": "It looks like you've found a fingerprint for your Soil Humidity Sensors, which indicates that they are recognized as a custom Zigbee device. The driver associated with your sensors is `diy_custom_zigb",
+      "model": "gh-gpt-4o-mini"
+    },
+    {
+      "topic": 140352,
+      "post": 1619,
+      "user": "Jocke_Wallen",
+      "fps": [
+        "thread"
+      ],
+      "reply": "Based on the fingerprint lookup, it appears that your device is supported and can be managed using the `generic_tuya` driver. This driver is designed to handle a variety of Tuya Zigbee devices, ensuri",
+      "model": "gh-gpt-4o-mini"
+    }
+  ],
+  "githubDetails": [
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "number": 157,
+      "type": "pr",
+      "user": "github-actions[bot]",
+      "fps": [
+        "danfoss",
+        "legrand",
+        "sonoff",
+        "xiaomi",
+        "test",
+        "bosch",
+        "ikea",
+        "tuya"
+      ],
+      "model": "gh-gpt-4o-mini"
+    }
+  ]
 }
