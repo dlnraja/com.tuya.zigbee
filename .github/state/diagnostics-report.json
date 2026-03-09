@@ -1,10 +1,8 @@
 {
-  "timestamp": "2026-03-08T19:19:54.282Z",
-  "count": 6,
+  "timestamp": "2026-03-09T07:27:03.777Z",
+  "count": 2,
   "byType": {
-    "diagnostic": 2,
-    "device_issue": 2,
-    "bug_report": 2
+    "github": 2
   },
   "newFingerprints": [],
   "deepResearch": {
@@ -14,308 +12,55 @@
   },
   "diagnostics": [
     {
-      "id": "imap_499567",
-      "type": "diagnostic",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
-      "from": "user",
-      "date": "2026-03-08T09:45:25.000Z",
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [
-        "soil_sensor",
-        "309a0ac2-3682-4b70-b252-e68ed0",
-        "309a0ac2-3682-4b70-b252-e68e"
-      ],
-      "xref": [],
-      "ghInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    },
-    {
-      "id": "imap_499568",
-      "type": "diagnostic",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
-      "from": "user",
-      "date": "2026-03-08T09:47:15.000Z",
+      "id": "imap_499651",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] Weekly Fingerprint Sync (0 new lines) (PR #157)",
+      "from": "github",
+      "date": "2026-03-09T06:20:57.000Z",
       "fps": {
         "mfr": [],
         "pid": []
       },
       "errs": [
-        "IAS Zone enrollment incomplete. ="
-      ],
-      "devices": [
-        "soil_sensor",
-        "dd5a0237-2585-4fe6-ad3b-99d356",
-        "dd5a0237-2585-4fe6-ad3b-99d35"
-      ],
-      "xref": [],
-      "ghInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    },
-    {
-      "id": "imap_499570",
-      "type": "device_issue",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "user",
-      "date": "2026-03-08T09:55:47.000Z",
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    },
-    {
-      "id": "imap_499571",
-      "type": "bug_report",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "user",
-      "date": "2026-03-08T09:59:20.000Z",
-      "fps": {
-        "mfr": [
-          "_TZE200_u6x1zyv2"
-        ],
-        "pid": [
-          "TS0601"
-        ]
-      },
-      "errs": [
-        "message for rain sensor:",
-        "message for rain sensor:</p>"
+        "-text=3D\"Failed to lo="
       ],
       "devices": [],
-      "xref": [
-        {
-          "fingerprint": "_TZE200_u6x1zyv2",
-          "type": "mfr",
-          "supported": true,
-          "drivers": [
-            "climate_sensor",
-            "rain_sensor"
-          ]
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "157",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
         },
-        {
-          "fingerprint": "TS0601",
-          "type": "pid",
-          "supported": true,
-          "drivers": [
-            "air_purifier",
-            "air_quality_co2",
-            "air_quality_comprehensive",
-            "button_emergency_sos",
-            "button_wireless_6",
-            "ceiling_fan",
-            "climate_sensor",
-            "co_sensor",
-            "contact_sensor",
-            "curtain_motor",
-            "curtain_motor_tilt",
-            "dimmer_3gang",
-            "dimmer_dual_channel",
-            "dimmer_wall_1gang",
-            "din_rail_meter",
-            "din_rail_switch",
-            "door_controller",
-            "doorbell",
-            "energy_meter_3phase",
-            "fan_controller",
-            "fingerprint_lock",
-            "formaldehyde_sensor",
-            "garage_door",
-            "gas_detector",
-            "gas_sensor",
-            "humidifier",
-            "hvac_air_conditioner",
-            "hvac_dehumidifier",
-            "ir_blaster",
-            "lock_smart",
-            "motion_sensor",
-            "motion_sensor_radar_mmwave",
-            "pet_feeder",
-            "plug_energy_monitor",
-            "plug_smart",
-            "pool_pump",
-            "power_clamp_meter",
-            "power_meter",
-            "presence_sensor_ceiling",
-            "presence_sensor_radar",
-            "radiator_controller",
-            "radiator_valve",
-            "rain_sensor",
-            "scene_switch_4",
-            "shutter_roller_controller",
-            "siren",
-            "smart_breaker",
-            "smart_heater",
-            "smart_heater_controller",
-            "smart_rcbo",
-            "smoke_detector_advanced",
-            "soil_sensor",
-            "switch_1gang",
-            "switch_2gang",
-            "switch_3gang",
-            "switch_4gang",
-            "switch_dimmer_1gang",
-            "switch_wall_5gang",
-            "switch_wall_6gang",
-            "switch_wall_8gang",
-            "thermostat_4ch",
-            "thermostat_tuya_dp",
-            "universal_fallback",
-            "usb_outlet_advanced",
-            "valve_irrigation",
-            "valve_single",
-            "vibration_sensor",
-            "water_leak_sensor",
-            "water_tank_monitor",
-            "water_valve_smart",
-            "weather_station_outdoor"
-          ]
-        }
-      ],
-      "ghInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    },
-    {
-      "id": "imap_499576",
-      "type": "device_issue",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "user",
-      "date": "2026-03-08T10:17:38.000Z",
-      "fps": {
-        "mfr": [
-          "_TZE284_hdml1aav"
-        ],
-        "pid": [
-          "TS0601"
-        ]
+        "isNew": false
       },
-      "errs": [],
-      "devices": [],
-      "xref": [
-        {
-          "fingerprint": "_TZE284_hdml1aav",
-          "type": "mfr",
-          "supported": true,
-          "drivers": [
-            "soil_sensor"
-          ]
-        },
-        {
-          "fingerprint": "TS0601",
-          "type": "pid",
-          "supported": true,
-          "drivers": [
-            "air_purifier",
-            "air_quality_co2",
-            "air_quality_comprehensive",
-            "button_emergency_sos",
-            "button_wireless_6",
-            "ceiling_fan",
-            "climate_sensor",
-            "co_sensor",
-            "contact_sensor",
-            "curtain_motor",
-            "curtain_motor_tilt",
-            "dimmer_3gang",
-            "dimmer_dual_channel",
-            "dimmer_wall_1gang",
-            "din_rail_meter",
-            "din_rail_switch",
-            "door_controller",
-            "doorbell",
-            "energy_meter_3phase",
-            "fan_controller",
-            "fingerprint_lock",
-            "formaldehyde_sensor",
-            "garage_door",
-            "gas_detector",
-            "gas_sensor",
-            "humidifier",
-            "hvac_air_conditioner",
-            "hvac_dehumidifier",
-            "ir_blaster",
-            "lock_smart",
-            "motion_sensor",
-            "motion_sensor_radar_mmwave",
-            "pet_feeder",
-            "plug_energy_monitor",
-            "plug_smart",
-            "pool_pump",
-            "power_clamp_meter",
-            "power_meter",
-            "presence_sensor_ceiling",
-            "presence_sensor_radar",
-            "radiator_controller",
-            "radiator_valve",
-            "rain_sensor",
-            "scene_switch_4",
-            "shutter_roller_controller",
-            "siren",
-            "smart_breaker",
-            "smart_heater",
-            "smart_heater_controller",
-            "smart_rcbo",
-            "smoke_detector_advanced",
-            "soil_sensor",
-            "switch_1gang",
-            "switch_2gang",
-            "switch_3gang",
-            "switch_4gang",
-            "switch_dimmer_1gang",
-            "switch_wall_5gang",
-            "switch_wall_6gang",
-            "switch_wall_8gang",
-            "thermostat_4ch",
-            "thermostat_tuya_dp",
-            "universal_fallback",
-            "usb_outlet_advanced",
-            "valve_irrigation",
-            "valve_single",
-            "vibration_sensor",
-            "water_leak_sensor",
-            "water_tank_monitor",
-            "water_valve_smart",
-            "weather_station_outdoor"
-          ]
-        }
-      ],
-      "ghInfo": null,
       "ai": null,
       "homeyVersion": null,
       "appVersion": null
     },
     {
-      "id": "imap_499607",
-      "type": "bug_report",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "user",
-      "date": "2026-03-08T13:24:59.000Z",
+      "id": "imap_499652",
+      "type": "github",
+      "subj": "[dlnraja/com.tuya.zigbee] Weekly Fingerprint Sync (0 new lines) (PR #157)",
+      "from": "github",
+      "date": "2026-03-09T06:20:57.000Z",
       "fps": {
         "mfr": [],
         "pid": []
       },
-      "errs": [
-        "on contact sensor for me !",
-        "on contact sensor for me !</p></div>"
-      ],
+      "errs": [],
       "devices": [],
       "xref": [],
-      "ghInfo": null,
+      "ghInfo": {
+        "issueNum": "157",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false
+      },
       "ai": null,
       "homeyVersion": null,
       "appVersion": null
