@@ -1,25 +1,18 @@
 {
-  "timestamp": "2026-03-10T18:32:12.320Z",
-  "diagFPs": 2,
-  "driverIdx": 4740,
-  "supported": 1,
-  "unsupported": 1,
-  "newFPs": [
-    {
-      "fp": "_TZ3000_22ugzkme",
-      "source": "gmail",
-      "date": "2026-03-10T12:41:45.000Z",
-      "type": "device_issue"
-    }
-  ],
+  "timestamp": "2026-03-10T19:22:14.203Z",
+  "diagFPs": 0,
+  "driverIdx": 4810,
+  "supported": 0,
+  "unsupported": 0,
+  "newFPs": [],
   "dlnraja/com.tuya.zigbee": {
-    "issues": 4,
+    "issues": 3,
     "commented": 0,
     "closed": 0
   },
   "JohanBendz/com.tuya.zigbee": {
     "issues": 150,
-    "commented": 0,
+    "commented": 1,
     "closed": 0
   },
   "JohanBendz/com.tuya.zigbee_prs": {
