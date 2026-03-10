@@ -1,13 +1,400 @@
 {
-  "timestamp": "2026-03-10T18:32:12.242Z",
-  "suggestions": [],
+  "timestamp": "2026-03-07T12:53:48.513Z",
+  "suggestions": [
+    {
+      "pattern": "False Battery Alert / Missing Battery",
+      "id": "battery",
+      "count": 25,
+      "priority": "high",
+      "topFPs": [
+        [
+          "vision",
+          20
+        ],
+        [
+          "TS0601",
+          11
+        ],
+        [
+          "router",
+          5
+        ],
+        [
+          "test",
+          4
+        ],
+        [
+          "lumi",
+          3
+        ],
+        [
+          "TS0202",
+          3
+        ],
+        [
+          "example",
+          3
+        ],
+        [
+          "generic",
+          3
+        ],
+        [
+          "_TZ3000_b4awzgct",
+          2
+        ],
+        [
+          "TS0041",
+          2
+        ]
+      ],
+      "fix": "Set `get mainsPowered() { return true; }` and remove measure_battery in onNodeInit",
+      "files": [
+        "drivers/{driver}/device.js"
+      ]
+    },
+    {
+      "pattern": "Pairing Failure",
+      "id": "pairing",
+      "count": 7,
+      "priority": "high",
+      "topFPs": [
+        [
+          "vision",
+          4
+        ],
+        [
+          "TS0601",
+          3
+        ],
+        [
+          "example",
+          3
+        ],
+        [
+          "generic",
+          3
+        ],
+        [
+          "_TZ3000_o4mkahkc",
+          2
+        ],
+        [
+          "test",
+          2
+        ],
+        [
+          "_TZ3000_o4mkahk",
+          2
+        ],
+        [
+          "TS0202",
+          2
+        ],
+        [
+          "_TZE204_yvx5lh6k",
+          1
+        ],
+        [
+          "_TZ3000_gwkzibhs",
+          1
+        ]
+      ],
+      "fix": "Check driver.compose.json fingerprints, verify manufacturerName + productId",
+      "files": [
+        "drivers/{driver}/driver.compose.json"
+      ]
+    },
+    {
+      "pattern": "Device Shows Unknown",
+      "id": "unknown",
+      "count": 5,
+      "priority": "high",
+      "topFPs": [
+        [
+          "TS0601",
+          3
+        ],
+        [
+          "_TZE284_aa03yzhs",
+          2
+        ],
+        [
+          "test",
+          2
+        ],
+        [
+          "tuya",
+          2
+        ],
+        [
+          "generic",
+          2
+        ],
+        [
+          "vision",
+          2
+        ],
+        [
+          "_TZE200_3p5ydos3",
+          1
+        ],
+        [
+          "_TZE204_n9ctkb6j",
+          1
+        ],
+        [
+          "_TZ3000_gwkzibhs",
+          1
+        ],
+        [
+          "_TZ3000_g",
+          1
+        ]
+      ],
+      "fix": "Check settings keys: zb_model_id (not zb_modelId), zb_manufacturer_name (not zb_manufacturerName)",
+      "files": [
+        "drivers/{driver}/device.js"
+      ]
+    },
+    {
+      "pattern": "Ring/Alarm Wrong",
+      "id": "ring_value",
+      "count": 5,
+      "priority": "high",
+      "topFPs": [
+        [
+          "vision",
+          5
+        ],
+        [
+          "TS011F",
+          3
+        ],
+        [
+          "_TZ3000_j1v25l17",
+          2
+        ],
+        [
+          "_TZE204_clrdrnya",
+          1
+        ],
+        [
+          "router",
+          1
+        ],
+        [
+          "lumi",
+          1
+        ],
+        [
+          "TS0601",
+          1
+        ],
+        [
+          "_TZ3000_gjnozsaz",
+          1
+        ],
+        [
+          "_TZ3000_g",
+          1
+        ],
+        [
+          "_TZ3210_ol1uhvza",
+          1
+        ]
+      ],
+      "fix": "Check alarm DP map",
+      "files": []
+    },
+    {
+      "pattern": "Device Not Responding",
+      "id": "no_response",
+      "count": 3,
+      "priority": "medium",
+      "topFPs": [
+        [
+          "vision",
+          3
+        ],
+        [
+          "_TZ3210_w0qqde0g",
+          1
+        ],
+        [
+          "TS011F",
+          1
+        ],
+        [
+          "_TZ3000_zutizvyk",
+          1
+        ],
+        [
+          "test",
+          1
+        ],
+        [
+          "TS0203",
+          1
+        ],
+        [
+          "TS0601",
+          1
+        ],
+        [
+          "_TZ3000_wkai4ga5",
+          1
+        ],
+        [
+          "TS0044",
+          1
+        ]
+      ],
+      "fix": "Check Zigbee mesh, device routing, and cluster bindings",
+      "files": []
+    },
+    {
+      "pattern": "Double Division (wrong sensor values)",
+      "id": "double_div",
+      "count": 2,
+      "priority": "medium",
+      "topFPs": [
+        [
+          "vision",
+          2
+        ],
+        [
+          "TS0601",
+          2
+        ],
+        [
+          "_TZE204_qyr2m29i",
+          1
+        ],
+        [
+          "test",
+          1
+        ],
+        [
+          "tuya",
+          1
+        ],
+        [
+          "_TZE204_clrdrnya",
+          1
+        ],
+        [
+          "router",
+          1
+        ],
+        [
+          "lumi",
+          1
+        ]
+      ],
+      "fix": "Check TuyaEF00Manager.js:1912 — skip auto-convert when dpMappings has divisor !== 1",
+      "files": [
+        "lib/tuya/TuyaEF00Manager.js"
+      ]
+    },
+    {
+      "pattern": "Inverted Sensor State",
+      "id": "inversion",
+      "count": 1,
+      "priority": "low",
+      "topFPs": [
+        [
+          "_TZE200_wfxuhoea",
+          1
+        ],
+        [
+          "deconz",
+          1
+        ],
+        [
+          "vision",
+          1
+        ],
+        [
+          "tuya",
+          1
+        ],
+        [
+          "TS0601",
+          1
+        ]
+      ],
+      "fix": "Add manufacturerName to invertedByDefault in HybridSensorBase.js + device.js",
+      "files": [
+        "lib/devices/HybridSensorBase.js",
+        "drivers/{driver}/device.js"
+      ]
+    },
+    {
+      "pattern": "Wrong Voltage",
+      "id": "voltage_wrong",
+      "count": 1,
+      "priority": "low",
+      "topFPs": [
+        [
+          "_TZ3000_xr3htd96",
+          1
+        ],
+        [
+          "vision",
+          1
+        ],
+        [
+          "TS0201",
+          1
+        ]
+      ],
+      "fix": "Check voltage divisor",
+      "files": []
+    },
+    {
+      "pattern": "Wrong Energy",
+      "id": "energy_wrong",
+      "count": 1,
+      "priority": "low",
+      "topFPs": [
+        [
+          "_TZE204_clrdrnya",
+          1
+        ],
+        [
+          "router",
+          1
+        ],
+        [
+          "vision",
+          1
+        ],
+        [
+          "lumi",
+          1
+        ],
+        [
+          "TS0601",
+          1
+        ]
+      ],
+      "fix": "Check energy divisor",
+      "files": []
+    }
+  ],
   "detections": {
-    "inversion": 0,
-    "battery": 0,
-    "double_div": 0,
-    "pairing": 0,
-    "unknown": 0,
+    "inversion": 1,
+    "battery": 25,
+    "double_div": 2,
+    "pairing": 7,
+    "unknown": 5,
     "flow_dup": 0,
-    "no_response": 0
+    "no_response": 3,
+    "voltage_wrong": 1,
+    "no_temperature": 0,
+    "ring_value": 5,
+    "energy_wrong": 1,
+    "sensor_zero": 0
   }
 }

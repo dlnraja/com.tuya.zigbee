@@ -7,6 +7,7 @@
  */
 const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
+const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const DDIR=path.join(__dirname,'..','..','drivers');
 const STATE=path.join(__dirname,'..','state');
@@ -47,7 +48,7 @@ function isValidFP(fp){
   if(!fp||typeof fp!=='string')return false;
   if(fp.includes('xxxxxxxx')||fp.length>25)return false;
   if(/ts\d{4}/i.test(fp.slice(10)))return false;
-  return/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}$/.test(fp);
+  return isValidTuyaFP(fp);
 }
 
 function buildDriverIndex(){

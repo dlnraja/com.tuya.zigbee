@@ -53,7 +53,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
 
   /** Capabilities for soil sensors - v5.5.330 Hobeian */
   get sensorCapabilities() {
-    return ['measure_humidity.soil', 'measure_temperature', 'measure_humidity', 'measure_luminance', 'measure_battery', 'alarm_water'];
+    return ['measure_humidity.soil', 'measure_temperature', 'measure_humidity', 'measure_luminance', 'measure_battery', 'alarm_water','measure_ec'];
   }
 
   /**
@@ -154,10 +154,11 @@ class SoilSensorDevice extends TuyaHybridDevice {
       // FALLBACK DPs for other soil sensor variants
       // ═══════════════════════════════════════════════════════════════════
       1: { capability: 'measure_temperature', divisor: 10 },  // Some variants
-      4: { capability: 'measure_battery', divisor: 1 },       // Alternative battery DP
+      4: { capability: 'measure_ec', divisor: 1 },             // EC/fertilizer (GitHub #150 _TZE284_hdml1aav)
       // v5.9.22: Z2M #28270 - DP101=ambient_humidity for _TZE284_o9ofysmo/_TZE284_xc3vwx5a
       // HOBEIAN ZG-303Z uses DP109 for air humidity instead
       101: { capability: 'measure_humidity', divisor: 1 },
+      106: { capability: 'measure_ec', divisor: 1 },  // Alternate EC DP for advanced soil sensors
       105: { capability: 'measure_humidity.soil', divisor: 1, transform: (v) => v > 100 ? v / 10 : v },
     };
   }

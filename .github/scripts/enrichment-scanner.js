@@ -6,6 +6,7 @@ const fs=require('fs'),path=require('path');
 const DDIR=path.join(__dirname,'..','..','drivers');
 const STATE=path.join(__dirname,'..','state','enrichment-state.json');
 const{fetchWithRetry}=require('./retry-helper');
+const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 
 function loadState(){try{return JSON.parse(fs.readFileSync(STATE,'utf8'))}catch{return{lastRun:null,knownNew:[]}}}
@@ -36,7 +37,9 @@ async function scanZ2MDevices(){
   if(!data)return[];
   // Z2M exposes devices via their repo - parse Tuya fingerprints
   const raw=typeof data==='string'?data:JSON.stringify(data);
-  const fps=[...new Set((raw.match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[]))];
+  const a=_vFP(raw);
+  const b=(raw.match(/\b(SONOFF|eWeLink)\b/g)||[]);
+  const fps=[...new Set([...a,...b])];
   return fps;
 }
 
@@ -50,7 +53,8 @@ async function scanZ2MIssues(token){
   const d=await r.json();
   const fps=[];
   for(const iss of(d.items||[])){
-    const found=[...new Set(((iss.title||'')+' '+(iss.body||'')).match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[])];
+    const txt=(iss.title||'')+' '+(iss.body||'');
+    const found=_vFPB(txt);
     if(found.length)fps.push(...found.map(fp=>({fp,source:'z2m-issue',issue:iss.number,title:iss.title?.substring(0,80),url:iss.html_url})));
   }
   return fps;
@@ -66,7 +70,8 @@ async function scanZHAIssues(token){
   const d=await r.json();
   const fps=[];
   for(const iss of(d.items||[])){
-    const found=[...new Set(((iss.title||'')+' '+(iss.body||'')).match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[])];
+    const txt=(iss.title||'')+' '+(iss.body||'');
+    const found=_vFPB(txt);
     if(found.length)fps.push(...found.map(fp=>({fp,source:'zha-issue',issue:iss.number,title:iss.title?.substring(0,80),url:iss.html_url})));
   }
   return fps;
@@ -78,7 +83,7 @@ async function scanBlakadder(){
   if(!data||!Array.isArray(data))return[];
   const fps=[];const richMap=new Map();
   for(const dev of data){
-    if(!dev.manufacturerName||!dev.manufacturerName.startsWith('_T'))continue;
+    if(!dev.manufacturerName||(!dev.manufacturerName.startsWith('_T')&&!/^(SONOFF|eWeLink|EWELINK)$/i.test(dev.manufacturerName)))continue;
     const fp=dev.manufacturerName;
     fps.push(fp);
     if(!richMap.has(fp))richMap.set(fp,{fp,pid:dev.zigbeeModel,vendor:dev.manufacturer||dev.vendor,type:dev.category||dev.deviceType,name:dev.name,url:dev.url});
@@ -150,7 +155,7 @@ async function main(){
     if(fs.existsSync(di)){const iv=JSON.parse(fs.readFileSync(di,'utf8'));
       const arr=Array.isArray(iv)?iv:Object.values(iv);let ic=0;
       for(const d of arr){const fp=d.manufacturerName||d.mfr;
-        if(fp&&fp.startsWith('_T')&&!idx.has(fp)){allNew.push({fp,source:'interview',pid:d.productId||d.pid});ic++;}}
+        if(fp&&(fp.startsWith('_T')||/^(SONOFF|eWeLink)$/i.test(fp))&&!idx.has(fp)){allNew.push({fp,source:'interview',pid:d.productId||d.pid});ic++;}}
       console.log('Device interviews:',ic,'new FPs');
     }}catch(e){console.log('Interview skip:',e.message)}
 

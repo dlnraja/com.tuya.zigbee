@@ -23,7 +23,16 @@
       "ZBMINIL2",
       "BASICZBR3",
       "S31ZB",
-      "S26R2ZB"
+      "S26R2ZB",
+      "01MINIZB",
+      "ZBMINIR2",
+      "ZBM5-1C-120",
+      "ZBMINIR",
+      "ZBMINIL2-R2",
+      "ZBMINIR2-R2",
+      "ZG-301Z",
+      "ZG-302Z1",
+      "TS0101"
     ],
     "endpoints": {
       "1": {
@@ -47,40 +56,26 @@
       }
     },
     "manufacturerName": [
-      "_TYZB01_1xktopx6",
       "_TYZB01_4mdqxxnn",
-      "_TYZB01_4qw4rl1u",
       "_TYZB01_7yidyqxd",
-      "_TYZB01_821siati",
       "_TYZB01_aneiicmq",
-      "_TYZB01_cbiezpds",
       "_TYZB01_digziiav",
       "_TYZB01_dr6sduka",
-      "_TYZB01_ftdkanlj",
       "_TYZB01_gr6rozze",
-      "_TYZB01_hlla45kx",
       "_TYZB01_ijihzffk",
-      "_TYZB01_kvwjujy9",
       "_TYZB01_m6ec2pgj",
-      "_TYZB01_mtunwanm",
       "_TYZB01_ncutbjdi",
       "_TYZB01_phjeraqq",
       "_TYZB01_qeqvmvti",
-      "_TYZB01_qezuin6k",
       "_TYZB01_rifa0wlb",
       "_TYZB01_sbpc1zrb",
       "_TYZB01_seqwasot",
-      "_TYZB01_sqmd19i1",
-      "_TYZB01_ttvdudvx",
-      "_TYZB01_u9kkqh5o",
       "_TYZB01_uqkphoed",
       "_TYZB01_v8gtiaed",
-      "_TYZB01_wqcac7lo",
       "_TYZB01_xfpdrwvc",
       "_TYZB01_xph99wvr",
       "_TYZB01_yr95mpib",
       "_TYZB01_z2umiwvq",
-      "_TYZB01_zqvwka4k",
       "_TYZB01_zsl6z0pw",
       "_TYZB02_keyjqthh",
       "_TZ3000_0ausfos0",
@@ -125,7 +120,6 @@
       "_TZ3000_cdamjqm9",
       "_TZ3000_cipibmnp",
       "_TZ3000_cmcjbqup",
-      "_TZ3000_czuyt8lz",
       "_TZ3000_d16y6col",
       "_TZ3000_dku2cfsc",
       "_TZ3000_dov0a3p1",
@@ -136,10 +130,8 @@
       "_TZ3000_ew31dmgx",
       "_TZ3000_f8tmviy0",
       "_TZ3000_fjt5218m",
-      "_TZ3000_fvh3pjaz",
       "_TZ3000_g",
       "_TZ3000_gbm10jnj",
-      "_TZ3000_gdsvhfao",
       "_TZ3000_ghi789",
       "_TZ3000_gidy6sjs",
       "_TZ3000_gtdswg8k",
@@ -187,7 +179,6 @@
       "_TZ3000_nta0gb8h",
       "_TZ3000_nz98vdvj",
       "_TZ3000_oaq83gqc",
-      "_TZ3000_odzoiovu",
       "_TZ3000_oex7egmt",
       "_TZ3000_oikiyf3b",
       "_TZ3000_oz4zgdny",
@@ -203,7 +194,6 @@
       "_TZ3000_ptjcjise",
       "_TZ3000_q68478x7",
       "_TZ3000_qewo8dlz",
-      "_TZ3000_qgwcxxws",
       "_TZ3000_qh6qjuan",
       "_TZ3000_qspxxfqf",
       "_TZ3000_r0pmi2p3",
@@ -221,12 +211,10 @@
       "_TZ3000_svoqrno4",
       "_TZ3000_syoxtjf0",
       "_TZ3000_t8hzpgnd",
-      "_TZ3000_tgddllx4",
       "_TZ3000_thhxrept",
       "_TZ3000_tk3s5tya",
       "_TZ3000_tkusjmue",
       "_TZ3000_tqlv4ez4",
-      "_TZ3000_trdx8uxs",
       "_TZ3000_ts004f",
       "_TZ3000_txpirhfq",
       "_TZ3000_txpitre5",
@@ -253,7 +241,6 @@
       "_TZ3000_yl3zuyaw",
       "_TZ3000_yw5tvzsk",
       "_TZ3000_zfmxvprs",
-      "_TZ3000_zmy4lslw",
       "_TZ3000_zw7yf6yk",
       "_TZ3002_6ahhkwyh",
       "_TZ3002_vaq2bfcu",
@@ -278,8 +265,6 @@
       "_TZE284_n9ctkb6j",
       "_TZE284_pgxndxp4",
       "_TZ3000_qamj2vnn",
-      "_TZ3000_tw4ztbp4",
-      "_TZ3002_xkxgfxsg",
       "_TZe200_0nauxa0p",
       "_TZe200_9cxuhakf",
       "_TZe200_abatw3kj",
@@ -311,7 +296,111 @@
       "_TZ3000_skueekg3",
       "_TZ3000_go9rahj5",
       "_TZ3000_oysiif07",
-      "_TZ3000_7hp93xpr"
+      "_TZ3000_7hp93xpr",
+      "_TZE200_lhpnrfmy",
+      "_TZE200_ojtqawav",
+      "_TZE204_gbagoilo",
+      "_TZE204_ojtqawav",
+      "_TZE284_xnwxmj8z",
+      "_TZ3000_hktqahrq",
+      "_TZ3000_q6a3tepg",
+      "_TZ3000_npzfdcof",
+      "_TZ3000_5ng23zjs",
+      "_TZ3000_rmjr4ufz",
+      "_TZ3000_v7gnj3ad",
+      "_TZ3000_3a9beq8a",
+      "_TZ3000_ark8nv4y",
+      "_TZ3000_mx3vgyea",
+      "_TZ3000_fdxihpp7",
+      "_TZ3000_qsp2pwtf",
+      "_TZ3000_kycczpw8",
+      "_TZ3000_bhcpnvud",
+      "_TZ3000_i9oy2rdq",
+      "_TZ3000_m9af2l6g",
+      "_TZ3000_aghwaexm",
+      "_TZ3000_mkmb4sms",
+      "_TZ3000_n6fqajob",
+      "_TZ3000_olo5jhjk",
+      "_TYZB01_4vgantdz",
+      "_TYZB01_reyozfcg",
+      "_TZ3000_aetquff4",
+      "_TZ3000_hkyordpv",
+      "_TZ3000_j8dbnrgx",
+      "_TZ3000_ts6nmrse",
+      "_TZ3002_fdxihpp7",
+      "_TZ3000_0ghwhypc",
+      "_TZ3000_4rbqgcuv",
+      "_TZ3000_65ajyxua",
+      "_TZ3000_8n7lqbm0",
+      "_TZ3000_afgzktgb",
+      "_TZ3000_bmqxalil",
+      "_TZ3000_cpozgbrx",
+      "_TZ3000_ctftgjwb",
+      "_TZ3000_drc9tuqb",
+      "_TZ3000_g8n1n7lg",
+      "_TZ3000_g92baclx",
+      "_TZ3000_gbshwgag",
+      "_TZ3000_gjrubzje",
+      "_TZ3000_hzlsaltw",
+      "_TZ3000_ikuxinvo",
+      "_TZ3000_jsfzkftc",
+      "_TZ3000_ma3mhpx2",
+      "_TZ3000_mkhkxx1p",
+      "_TZ3000_myaaknbq",
+      "_TZ3000_q8r0bbvy",
+      "_TZ3000_qnejhcsu",
+      "_TZ3000_qorepo2x",
+      "_TZ3000_qvmiyxuk",
+      "_TZ3000_tqlv4ug4",
+      "_TZ3000_tygpxwqa",
+      "_TZ3000_udl7uyd2",
+      "_TZ3000_veu2v775",
+      "_TZ3000_w1tcofu8",
+      "_TZ3000_wijoqjk1",
+      "_TZ3210_fhx7lk3d",
+      "_TZE21C_dohbhb5k",
+      "_TZ3000_m8f3z8ju",
+      "_TZ3218_hdc8bbha",
+      "_TZ3218_ya5d6wth",
+      "_TZ3000_l8fsgo6p",
+      "_TZ3000_qmi1cfuq",
+      "_TZ3000_uaa34g7v",
+      "_TZ3000_5ucujjts",
+      "_TZ3000_h3noz0a5",
+      "_TZ3000_h8ngtlxy",
+      "_TZ3000_o4cjetlm",
+      "_TZ3000_w0ypwa1f",
+      "_TZ3210_cm9mbpr1",
+      "_TZ3210_7vgttna6",
+      "_TZ3210_a04acm9s",
+      "_TZ3210_tfxwxklq",
+      "_TZ3000_xkap8wtb",
+      "_TZ3000_hdc8bbha",
+      "_TZ3000_ji4araar",
+      "_TZ3000_kqvb5akv",
+      "_TZ3000_xfxpoxe0",
+      "_TZ3000_abjodzas",
+      "_TZ3218_7fiyo3kv",
+      "_TZ3000_mw1pqqqt",
+      "_TYZB01_4tlksk8a",
+      "_TZ3000_iedbgyxt",
+      "_TYZB01_ymcdbl3u",
+      "_TZ3000_1adss9de",
+      "_TZ3000_qaabwu5c",
+      "_TZ3000_qlai3277",
+      "_TZ3000_x3ewpzyr",
+      "_TZ3000_x8mbwtsz",
+      "_TZ3000_iktiy8ue",
+      "_TZ3000_tgddllx4",
+      "_TZ3000_n0lphcok",
+      "_TZ3000_wn65ixz9",
+      "_TZ3000_gdsvhfao",
+      "_TZ3000_trdx8uxs",
+      "_TZ3000_gzvniqjb",
+      "_TZ3210_2dfy6tol",
+      "_TZ3000_tw4ztbp4",
+      "_TZ3000_qq9ahj6z",
+      "_TZ3000_pgq7ormg"
     ]
   },
   "images": {
@@ -737,13 +826,39 @@
     {
       "id": "power_on_behavior",
       "type": "dropdown",
-      "label": { "en": "Power-On Behavior", "nl": "Gedrag bij inschakelen", "de": "Einschaltverhalten", "fr": "Comportement à la mise sous tension" },
-      "hint": { "en": "What happens when power is restored after an outage (DP14)", "nl": "Wat er gebeurt als de stroom terugkeert na een stroomstoring" },
+      "label": {
+        "en": "Power-On Behavior",
+        "nl": "Gedrag bij inschakelen",
+        "de": "Einschaltverhalten",
+        "fr": "Comportement à la mise sous tension"
+      },
+      "hint": {
+        "en": "What happens when power is restored after an outage (DP14)",
+        "nl": "Wat er gebeurt als de stroom terugkeert na een stroomstoring"
+      },
       "value": "memory",
       "values": [
-        { "id": "off", "label": { "en": "Always Off", "nl": "Altijd Uit" } },
-        { "id": "on", "label": { "en": "Always On", "nl": "Altijd Aan" } },
-        { "id": "memory", "label": { "en": "Last State", "nl": "Laatste status" } }
+        {
+          "id": "off",
+          "label": {
+            "en": "Always Off",
+            "nl": "Altijd Uit"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "Always On",
+            "nl": "Altijd Aan"
+          }
+        },
+        {
+          "id": "memory",
+          "label": {
+            "en": "Last State",
+            "nl": "Laatste status"
+          }
+        }
       ]
     },
     {
@@ -757,6 +872,112 @@
       "hint": {
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+      }
+    },
+    {
+      "id": "sonoff_network_led",
+      "type": "dropdown",
+      "label": {
+        "en": "Network LED (SONOFF)"
+      },
+      "value": "on",
+      "values": [
+        {
+          "id": "on",
+          "label": {
+            "en": "On"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "Off"
+          }
+        }
+      ],
+      "hint": {
+        "en": "SONOFF network indicator LED"
+      }
+    },
+    {
+      "id": "sonoff_turbo_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Turbo Mode (SONOFF)"
+      },
+      "value": "off",
+      "values": [
+        {
+          "id": "on",
+          "label": {
+            "en": "On"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "Off"
+          }
+        }
+      ],
+      "hint": {
+        "en": "SONOFF radio power boost"
+      }
+    },
+    {
+      "id": "sonoff_detach_relay",
+      "type": "dropdown",
+      "label": {
+        "en": "Detach Relay (SONOFF)"
+      },
+      "value": "off",
+      "values": [
+        {
+          "id": "on",
+          "label": {
+            "en": "On"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "Off"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Decouple button from relay"
+      }
+    },
+    {
+      "id": "sonoff_external_trigger",
+      "type": "dropdown",
+      "label": {
+        "en": "External Trigger (SONOFF)"
+      },
+      "value": "edge",
+      "values": [
+        {
+          "id": "edge",
+          "label": {
+            "en": "Edge"
+          }
+        },
+        {
+          "id": "pulse",
+          "label": {
+            "en": "Pulse"
+          }
+        },
+        {
+          "id": "following",
+          "label": {
+            "en": "Following"
+          }
+        }
+      ],
+      "hint": {
+        "en": "External switch trigger mode"
       }
     }
   ],

@@ -10,6 +10,9 @@
     "measure_co2",
     "measure_temperature",
     "measure_humidity",
+    "measure_pm25",
+    "measure_voc",
+    "measure_formaldehyde",
     "alarm_generic",
     "measure_battery"
   ],
@@ -22,10 +25,30 @@
       },
       "units": "ppm"
     },
+    "measure_pm25": {
+      "title": {
+        "en": "PM2.5",
+        "fr": "PM2.5"
+      },
+      "units": "µg/m³"
+    },
+    "measure_voc": {
+      "title": {
+        "en": "VOC",
+        "fr": "COV"
+      }
+    },
+    "measure_formaldehyde": {
+      "title": {
+        "en": "Formaldehyde (HCHO)",
+        "fr": "Formaldéhyde (HCHO)"
+      },
+      "units": "mg/m³"
+    },
     "alarm_generic": {
       "title": {
-        "en": "CO2 Alert",
-        "fr": "Alerte CO2"
+        "en": "Air Quality Alert",
+        "fr": "Alerte Qualité Air"
       }
     }
   },
@@ -46,7 +69,8 @@
       "_TZE200_ywagc4rj",
       "_TZE204_a8sdabtg",
       "_TZE204_ywagc4rj",
-      "_TZE204_zl1kmjqx"
+      "_TZE204_zl1kmjqx",
+      "_TZE200_c2fmom5z"
     ],
     "productId": [
       "TS0601_co2",
@@ -143,6 +167,32 @@
           "min": -30,
           "max": 30,
           "step": 1
+        }
+      ]
+    },
+    {
+      "id": "sensor_precision",
+      "type": "dropdown",
+      "label": {
+        "en": "Decimal Precision",
+        "fr": "Précision"
+      },
+      "value": "1",
+      "hint": {
+        "en": "Decimals for temperature/humidity values"
+      },
+      "values": [
+        {
+          "id": "1",
+          "label": {
+            "en": "1 decimal (20.5°C)"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "2 decimals (20.53°C)"
+          }
         }
       ]
     }

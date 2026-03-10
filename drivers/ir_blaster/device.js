@@ -9,6 +9,7 @@ const ZosungIRTransmitCluster = require('../../lib/clusters/ZosungIRTransmitClus
 // v5.9.14: BoundClusters to receive device-to-coordinator commands
 const ZosungIRTransmitBoundCluster = require('../../lib/clusters/ZosungIRTransmitBoundCluster');
 const ZosungIRControlBoundCluster = require('../../lib/clusters/ZosungIRControlBoundCluster');
+const irBlasterInit = require('./irBlasterInit');
 
 // IR Blaster cluster IDs
 const ZOSUNG_IR_CONTROL_CLUSTER_ID = 0xE004;    // 57348 - ZosungIRControl
@@ -96,8 +97,7 @@ class IrBlasterDevice extends ZigBeeDevice {
     this._zclNode = zclNode;
 
     // Get device info
-    const { manufacturerName, modelId } = this.getSettings() || {};
-    this.log(`Manufacturer: ${manufacturerName}, Model: ${modelId}`);
+    await irBlasterInit.init(this);
 
     // v5.5.356: Setup enhanced IR clusters first
     await this._setupAdvancedIRClusters(zclNode);

@@ -6,6 +6,7 @@
 // Auto-integrates safe changes without confirmation
 const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
+const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
 const ROOT=path.join(__dirname,'..','..');
 const DDIR=path.join(ROOT,'drivers');
 const SD=path.join(__dirname,'..','state');
@@ -249,7 +250,7 @@ async function scanPRsDeep(repos,local,results){
     }
     console.log('  PRs: '+prs.length);
     for(const pr of prs){
-      const fps=(pr.title+' '+(pr.body||'')).match(/_T[A-Z][A-Za-z0-9]{2,5}_[a-z0-9]{4,16}/g)||[];
+      const fps=_vFP(pr.title+' '+(pr.body||''));
       const newFPs=fps.filter(fp=>!local.mfrs.has(fp)&&isValidFP(fp));
       if(!newFPs.length)continue;
       // Try to get files changed in this PR for driver context

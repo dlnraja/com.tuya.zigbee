@@ -29,8 +29,10 @@ const saveState=s=>{fs.mkdirSync(path.dirname(STATE),{recursive:true});fs.writeF
 const strip=h=>(h||'').replace(/<[^>]*>/g,' ').replace(/&\w+;/g,' ').replace(/\s+/g,' ').trim();
 
 const{buildFullIndex,extractAllFP}=require('./load-fingerprints');
+const{analyzeScreenshot,analyzeMultipleScreenshots,formatForAIContext}=require('./screenshot-analyzer');
+const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
 
-const exFP_old=t=>({mfr:[...new Set((t||'').match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[])],pid:[...new Set((t||'').match(/\bTS[0-9]{4}[A-Z]?\b/g)||[])]});
+const exFP_old=t=>({mfr:_vFP(t),pid:_vPID(t)});
 
 const exImgs=h=>{const u=[];const re=/<img[^>]+src="([^"]+)"/gi;let m;while((m=re.exec(h||''))!==null)u.push(m[1]);return u};
 
@@ -186,7 +188,7 @@ async function processForumPosts(state,idx,pidx,auth,appVersion,dryRun){
 
         const imgUrl=imgs[0].startsWith('/')?FORUM+imgs[0]:imgs[0];
 
-        imageAnalysis=await analyzeImage(imgUrl,'Extract Tuya fingerprints (_TZxxxx_xxx, TSxxxx), device type, error messages, or relevant info from this image. Return JSON {fingerprints:[], deviceType:"", info:""} or NULL.');
+        const sa=await analyzeScreenshot(imgUrl,strip(post.cooked));imageAnalysis=sa?formatForAIContext(sa):null;if(sa?.parsed?.fingerprints)for(const f of sa.parsed.fingerprints)if(!fps.mfr.includes(f))fps.mfr.push(f);
 
         if(imageAnalysis)console.log('      Image: '+imageAnalysis.substring(0,120));
 
@@ -887,4 +889,5 @@ async function main(){
 
 
 main().catch(e=>{console.error('Fatal:',e.message);process.exit(1)});
+
 

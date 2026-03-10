@@ -35,21 +35,23 @@
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_abaplimj",
-      "_TZ3000_abjodzas",
       "_TZ3000_awvmkayh",
       "_TZ3000_k1msavlx",
-      "_TZ3000_zrm3oxsh",
       "_TZ3210_p68kms0l",
       "_TZ3210_tgvtvdoc",
       "_TZE200_u6x1zyv2",
       "_TZE204_u6x1zyv2",
       "_TZE284_iilebqoo",
-      "_TZ3000_otwpdq1d"
+      "_TZ3000_otwpdq1d",
+      "_TZE200_jsaqgakf",
+      "_TZE200_2pddnnrk"
     ],
     "productId": [
       "TS0207_rain",
       "TS0601",
-      "TS0207"
+      "TS0207",
+      "ZG-223Z",
+      "ZG-222Z"
     ],
     "endpoints": {
       "1": {

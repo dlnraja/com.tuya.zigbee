@@ -47,18 +47,17 @@ async function downloadZ2M() {
   ensureDir(dir);
 
   // Main Tuya converter file (TypeScript)
-  const urls = [
-    'https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/tuya.ts',
-    'https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/tuya.js'
+  const mainFiles = [
+    { url: 'https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/tuya.ts', name: 'tuya.ts' },
+    { url: 'https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/sonoff.ts', name: 'sonoff.ts' }
   ];
-  for (const url of urls) {
-    const src = await fetchText(url);
+  for (const f of mainFiles) {
+    const src = await fetchText(f.url);
     if (src) {
-      const ext = url.endsWith('.ts') ? 'ts' : 'js';
-      fs.writeFileSync(path.join(dir, 'tuya.' + ext), src);
-      console.log('  Saved tuya.' + ext + ' (' + Math.round(src.length / 1024) + 'KB)');
-      break;
+      fs.writeFileSync(path.join(dir, f.name), src);
+      console.log('  Saved ' + f.name + ' (' + Math.round(src.length / 1024) + 'KB)');
     }
+    await sleep(500);
   }
 
   // Also grab other relevant converter files
@@ -101,9 +100,9 @@ async function downloadZHA() {
   const tree = await fetchJSON('https://api.github.com/repos/zigpy/zha-device-handlers/git/trees/dev?recursive=1', hdrs(TOKEN));
   if (tree && tree.tree) {
     const tuyaFiles = tree.tree
-      .filter(f => f.path.startsWith('zhaquirks/tuya/') && f.path.endsWith('.py') && !f.path.endsWith('__init__.py'))
-      .slice(0, 60);
-    console.log('  Found ' + tuyaFiles.length + ' Tuya quirk files');
+      .filter(f => (f.path.startsWith('zhaquirks/tuya/') || f.path.startsWith('zhaquirks/sonoff/')) && f.path.endsWith('.py') && !f.path.endsWith('__init__.py'))
+      .slice(0, 80);
+    console.log('  Found ' + tuyaFiles.length + ' Tuya + SONOFF quirk files');
 
     for (const f of tuyaFiles) {
       const src = await fetchText('https://raw.githubusercontent.com/zigpy/zha-device-handlers/dev/' + f.path);
@@ -131,9 +130,9 @@ async function downloadDeCONZ() {
   if (!tree || !tree.tree) return false;
 
   const jsonFiles = tree.tree
-    .filter(f => f.path.startsWith('devices/') && f.path.endsWith('.json') && /tuya|_T[A-Z]/i.test(f.path))
-    .slice(0, 80);
-  console.log('  Found ' + jsonFiles.length + ' Tuya device files');
+    .filter(f => f.path.startsWith('devices/') && f.path.endsWith('.json') && /tuya|_T[A-Z]|sonoff|ewelink|SNZB/i.test(f.path))
+    .slice(0, 100);
+  console.log('  Found ' + jsonFiles.length + ' Tuya + SONOFF device files');
 
   for (const f of jsonFiles) {
     const src = await fetchText('https://raw.githubusercontent.com/dresden-elektronik/deconz-rest-plugin/master/' + f.path);

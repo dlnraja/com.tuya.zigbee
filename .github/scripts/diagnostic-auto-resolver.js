@@ -2,6 +2,8 @@
 'use strict';
 const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
+let _profileDetector=null;
+function getProfileDetector(){if(_profileDetector)return _profileDetector;try{_profileDetector=require('./user-profile-detector')}catch{_profileDetector=null}return _profileDetector}
 const SD=path.join(__dirname,'..','state');
 const DD=path.join(__dirname,'..','..','drivers');
 const DRY=process.env.DRY_RUN==='true';
@@ -13,13 +15,23 @@ const TAG='<!-- diag-resolver -->';
 const SF=path.join(SD,'resolver-state.json');
 const RF=path.join(SD,'resolver-report.json');
 let appVer='?';try{appVer=require('../../app.json').version}catch{}
+const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const hdrs=t=>({Accept:'application/vnd.github+json','User-Agent':'tuya-resolver',...(t?{Authorization:'Bearer '+t}:{})});
 const loadJ=f=>{try{return JSON.parse(fs.readFileSync(f,'utf8'))}catch{return null}};
 const loadSt=()=>loadJ(SF)||{resolved:[],commented:[],lastRun:null};
 const saveSt=s=>{fs.mkdirSync(SD,{recursive:true});fs.writeFileSync(SF,JSON.stringify(s,null,2))};
-const exFP=t=>[...new Set((t||'').match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[])];
+const exFP=_vFP;
 const exPID=t=>[...new Set((t||'').match(/\bTS[0-9]{4}[A-Z]?\b/g)||[])];
+const SYM=[
+{id:'volt',rx:/voltage.*(wrong|high|2\d{3})/i,fix:'Voltage divisor fixed — update+re-pair'},
+{id:'temp',rx:/temp.*(null|missing|stuck)/i,fix:'DP mapping fixed — update+re-pair'},
+{id:'ring',rx:/ring.*(wrong|value)|alarm.*(wrong|stuck)/i,fix:'Alarm DP updated — re-pair'},
+{id:'energy',rx:/power.*(wrong|crazy)|kwh.*(wrong)/i,fix:'Energy divisor fixed — re-pair'},
+{id:'zero',rx:/stuck.*(0|zero)/i,fix:'Remove+re-pair device'},
+{id:'invert',rx:/invert|reversed|wrong.*(open|closed)/i,fix:'Check Invert in device settings'},
+];
+const detectSym=t=>SYM.filter(s=>s.rx.test(t||''));
 function buildIdx(){
   const idx=new Map();if(!fs.existsSync(DD))return idx;
   for(const d of fs.readdirSync(DD)){
@@ -74,14 +86,18 @@ async function fetchOpen(repo,type){
   _cache[k]=items;return items;
 }
 // Build resolution comment for an issue/PR where all FPs are supported
-function buildComment(fpResults,isPR,isDelay){
+function buildComment(fpResults,isPR,isDelay,syms=[],issueUser=''){
+  const pd=getProfileDetector();
+  let profileNote='';
+  if(pd&&issueUser){try{const det=pd.detectFromGitHub(issueUser,'');if(det.isReturning&&det.pending)profileNote='\n> **Your pending issue:** '+det.pending.note+'\n'}catch{}}
   const drvList=fpResults.map(f=>'`'+f.fp+'` -> **'+f.drivers.join(', ')+'**').join('\n- ');
-  return TAG+'\n### Auto-resolved by Diagnostic Resolver\n\n'+
+  return TAG+'\n### Auto-resolved by Diagnostic Resolver\n\n'+profileNote+
     'All fingerprints in this '+(isPR?'PR':'issue')+' are already supported in **Universal Tuya Zigbee v'+appVer+'**:\n- '+drvList+'\n\n'+
     '**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n'+
     'Remove and re-pair your device after installing.\n\n'+
     (fpResults.some(f=>f.drivers.length>1)?'> Note: Some fingerprints map to multiple drivers — the correct driver is determined by the **productId** (e.g. TS0001, TS0002).\n\n':'')+
     (isDelay?'> **Delay fix (v5.11.99+):** Devices now send dataQuery immediately on init. Update and re-pair to fix.\n\n':'')+
+    (syms.length?'\n**Detected issues:**\n'+syms.map(s=>'- '+s.fix).join('\n')+'\n\n':'')+
     'Forum: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352';
 }
 
@@ -107,7 +123,8 @@ async function processIssues(repo,idx,state,report){
     const fps=exFP(text);
     const pids=exPID(text);
     if(!fps.length&&!pids.length)continue;
-    // v5.11.99: Detect delay complaints
+    // v5.12.x: Detect symptoms + delay complaints
+    const syms=detectSym(text);
     const isDelay=/after\s+\d+\s*min|few\s+minutes?\s+later|takes?\s+\d+\s*min|not\s+report|no\s+data|works?\s+after/i.test(text);
     // Check support status
     const results=fps.map(fp=>({fp,drivers:idx.get(fp)||[],supported:(idx.get(fp)||[]).length>0}));
@@ -118,8 +135,8 @@ async function processIssues(repo,idx,state,report){
     if(comments&&comments.some(c=>(c.body||'').includes(TAG)||(c.body||'').includes('<!-- tuya-issue-manager -->')))
       {state.commented.push(key);continue}
     // Post comment
-    const body=buildComment(results,false,isDelay);
-    console.log('  #'+iss.number+' [RESOLVE] '+fps.join(',')+' -> '+results.map(r=>r.drivers[0]).join(',')+(isDelay?' [DELAY]':''));
+    const body=buildComment(results,false,isDelay,syms,iss.user?.login||'');
+    console.log('  #'+iss.number+' [RESOLVE] '+fps.join(',')+' -> '+results.map(r=>r.drivers[0]).join(',')+(isDelay?' [DELAY]':'')+(syms.length?' [SYM:'+syms.map(s=>s.id).join(',')+']':''));
     await ghPost('/repos/'+repo+'/issues/'+iss.number+'/comments',{body});
     commented++;
     // Auto-close on own repo if device_request with all supported

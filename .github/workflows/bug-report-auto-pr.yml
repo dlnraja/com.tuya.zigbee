@@ -18,6 +18,9 @@ concurrency:
   group: bug-pr-${{ github.event.issue.number || inputs.issue_number }}
   cancel-in-progress: true
 
+env:
+  NODE_VERSION: "22"
+
 defaults:
   run:
     shell: bash
@@ -38,7 +41,7 @@ jobs:
 
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: "22"
+          node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
 
       - name: Process Bug Report

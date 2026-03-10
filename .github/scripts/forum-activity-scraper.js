@@ -13,6 +13,7 @@ const{getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{callAI}=require('./ai-helper');
 const{loadFingerprints,extractMfrFromText}=require('./load-fingerprints');
 const{fetchWithRetry}=require('./retry-helper');
+const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
 
 const USERNAME=process.env.FORUM_USERNAME||'dlnraja';
 const STATE_F=path.join(__dirname,'..','state','forum-activity-state.json');
@@ -20,7 +21,7 @@ const REPORT_F=path.join(__dirname,'..','state','forum-activity-report.json');
 const DATA_F=path.join(__dirname,'..','state','forum-activity-data.json');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const strip=h=>(h||'').replace(/<br\s*\/?>/gi,'\n').replace(/<\/p>/gi,'\n').replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").trim();
-const extractFP=t=>[...new Set((t||'').match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[])];
+const extractFP=_vFP;
 let appVer='?';try{appVer=JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')).version}catch{}
 const fps=loadFingerprints();
 

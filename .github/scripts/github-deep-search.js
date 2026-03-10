@@ -22,6 +22,7 @@ const fs = require('fs');
 const path = require('path');
 const { fetchWithRetry } = require('./retry-helper');
 const { callAI } = require('./ai-helper');
+const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
 
 const ROOT = path.join(__dirname, '..', '..');
 const STATE = path.join(__dirname, '..', 'state');
@@ -31,7 +32,7 @@ const DDIR = path.join(ROOT, 'drivers');
 const TOKEN = process.env.GH_PAT || process.env.GITHUB_TOKEN;
 const GH = 'https://api.github.com';
 const sleep = ms => new Promise(r => setTimeout(r, ms));
-const FP_RE = /_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g;
+// FP_RE replaced by fp-validator
 const PID_RE = /\bTS[0-9A-Fa-f]{3,5}[A-Z]?\b/gi;
 const DP_RE = /(?:dp|DP|datapoint)[:\s=]*(\d{1,3})/gi;
 let ghCalls = 0;
@@ -188,7 +189,7 @@ async function searchCodeForFPs() {
     for (const item of data.items) {
       const fragments = (item.text_matches || []).map(m => m.fragment).join('\n');
       const allText = (item.name || '') + ' ' + fragments;
-      const fps = [...new Set(allText.match(FP_RE) || [])];
+      const fps = _vFP(allText);
       const pids = [...new Set((allText.match(PID_RE) || []).map(p => p.toUpperCase()))];
       const dps = [...new Set((allText.match(DP_RE) || []).map(m => parseInt(m.match(/\d+/)?.[0])).filter(n => n > 0 && n < 256))];
       if (fps.length) {
@@ -244,7 +245,7 @@ async function searchIssuesForDevices() {
     if (!data?.items) continue;
     for (const item of data.items) {
       const text = (item.title || '') + ' ' + (item.body || '').slice(0, 3000);
-      const fps = [...new Set(text.match(FP_RE) || [])];
+      const fps = _vFP(text);
       const pids = [...new Set((text.match(PID_RE) || []).map(p => p.toUpperCase()))];
       const dps = [...new Set((text.match(DP_RE) || []).map(m => parseInt(m.match(/\d+/)?.[0])).filter(n => n > 0 && n < 256))];
       if (fps.length) {

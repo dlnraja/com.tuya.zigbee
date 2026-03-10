@@ -238,7 +238,7 @@ async function analyzeImage(imageUrl,prompt){
       const r=await fetchT('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+gemKey,{
         method:'POST',headers:{'Content-Type':'application/json'},
         body:JSON.stringify({contents:[{parts:[{text:prompt},{inlineData:{mimeType:'image/jpeg',data:b64}}]}],
-          generationConfig:{temperature:0.2,maxOutputTokens:1024}})});
+          generationConfig:{temperature:0.2,maxOutputTokens:2048}})});
       if(r.ok){const d=await r.json();const vt=d.candidates?.[0]?.content?.parts?.[0]?.text?.trim();if(vt){_rtTrack('gemini');return vt}}
     }catch{}}
   }
@@ -250,7 +250,7 @@ async function analyzeImage(imageUrl,prompt){
     try{
       const r=await fetchT('https://models.inference.ai.azure.com/chat/completions',{
         method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+ght},
-        body:JSON.stringify({model:'gpt-4o-mini',messages:[{role:'user',content:[{type:'text',text:prompt},{type:'image_url',image_url:{url:imageUrl}}]}],max_tokens:1024})});
+        body:JSON.stringify({model:'gpt-4o-mini',messages:[{role:'user',content:[{type:'text',text:prompt},{type:'image_url',image_url:{url:imageUrl}}]}],max_tokens:2048})});
       if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content?.trim();if(t)return t}
       else cbFail('gh-vision',120000);
     }catch{cbFail('gh-vision',60000)}
@@ -285,3 +285,5 @@ function getAIBudget(){_rtLoad();return{used:_rt.d,budget:_rtBudget()}}
 async function callAIEnsemble(t,s,o){try{const{qc,pickForTask}=require('./ai-ensemble');const tk=classifyTask(t,s,o);const ps=pickForTask(tk.type,2);if(ps.length<2)return callAI(t,s,o);const mt=Math.min((o||{}).maxTokens||2048,1500);const res=await Promise.allSettled(ps.map(p=>qc(p,t,s,mt)));const ans=res.map((r,i)=>({p:ps[i],t:r.status==='fulfilled'?r.value:null})).filter(a=>a.t&&a.t.length>20);if(!ans.length)return callAI(t,s,o);if(ans.length===1)return{text:ans[0].t,model:'ens-'+ans[0].p};const mp='Synthesize into ONE answer (max 300w):\n\n'+ans.map(a=>'['+a.p+']:\n'+a.t).join('\n\n');const m=await callAI(mp,'Merge AI answers.',{maxTokens:mt,complexity:'low'});return m||{text:ans[0].t,model:'ens-'+ans[0].p}}catch(e){console.log('  Ensemble fallback:',e.message);return callAI(t,s,o)}}
 
 module.exports={callAI,callAIEnsemble,analyzeImage,sleep,localFallback,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost,getAIBudget,classifyTask};
+
+

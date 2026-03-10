@@ -856,9 +856,84 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     */
     // END v5.8.20: Disabled invalid flow card registrations
 
+    // v5.12.2: Register universal flow cards
+    this._registerUniversalFlowCards();
+
     } catch (err) {
-      // v5.5.556: Log to stdout only, not stderr
       this.log('⚠️ Error registering OTA flow cards:', err.message);
+    }
+  }
+
+  _registerUniversalFlowCards() {
+    try {
+      // TRIGGER: Any DP changed
+      this.homey.flow.getDeviceTriggerCard('tuya_dp_changed').registerRunListener(async (args, state) => true);
+
+      // TRIGGER: Bitmap changed
+      this.homey.flow.getDeviceTriggerCard('tuya_bitmap_changed').registerRunListener(async (args, state) => {
+        return !args.dp || args.dp === 0 || state.dp_number === args.dp;
+      });
+
+      // TRIGGER: Raw received
+      this.homey.flow.getDeviceTriggerCard('tuya_raw_received').registerRunListener(async (args, state) => {
+        return !args.dp || args.dp === 0 || state.dp_number === args.dp;
+      });
+
+      // TRIGGER: Cluster event
+      this.homey.flow.getDeviceTriggerCard('tuya_cluster_received').registerRunListener(async (args, state) => true);
+
+      // TRIGGER: DP received (existing card, ensure registered)
+      this.homey.flow.getDeviceTriggerCard('tuya_dp_received').registerRunListener(async (args, state) => {
+        return !args.dp || args.dp === 0 || state.dp === args.dp;
+      });
+
+      // TRIGGER: Threshold crossed
+      this.homey.flow.getDeviceTriggerCard('tuya_dp_threshold_crossed').registerRunListener(async (args, state) => {
+        return state.dp === args.dp;
+      });
+
+      // ACTION: Send typed DP
+      this.homey.flow.getActionCard('tuya_dp_send_typed').registerRunListener(async (args) => {
+        const dev = args.device;
+        if (dev._universalBridge) {
+          let val = args.value;
+          if (args.dp_type === 'bool') val = val === 'true' || val === '1';
+          else if (['value','enum','bitmap'].includes(args.dp_type)) val = parseInt(val, 10);
+          return dev._universalBridge.sendDP(args.dp, val, args.dp_type);
+        }
+        return false;
+      });
+
+      // ACTION: Send DP (existing simple card)
+      this.homey.flow.getActionCard('tuya_dp_send').registerRunListener(async (args) => {
+        const dev = args.device;
+        if (dev._universalBridge) {
+          return dev._universalBridge.sendDP(args.dp, args.value, 'value');
+        }
+        return false;
+      });
+
+      // CONDITION: DP type is
+      this.homey.flow.getConditionCard('tuya_dp_type_is').registerRunListener(async (args) => {
+        const dev = args.device;
+        const bridge = dev._universalBridge;
+        if (!bridge) return false;
+        const hist = bridge.getDPHistory();
+        return hist[args.dp] !== undefined;
+      });
+
+      // CONDITION: DP equals
+      this.homey.flow.getConditionCard('tuya_dp_equals').registerRunListener(async (args) => {
+        const dev = args.device;
+        const bridge = dev._universalBridge;
+        if (!bridge) return false;
+        const hist = bridge.getDPHistory();
+        return String(hist[args.dp]) === String(args.value);
+      });
+
+      this.log('✅ v5.12.2: Universal flow cards registered (10 cards)');
+    } catch (e) {
+      this.log('⚠️ Universal flow cards error: ' + e.message);
     }
   }
 
@@ -1104,3 +1179,4 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 }
 
 module.exports = UniversalTuyaZigbeeApp;
+

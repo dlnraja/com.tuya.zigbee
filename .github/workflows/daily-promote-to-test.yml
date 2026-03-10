@@ -1,14 +1,10 @@
 name: Daily Draft to Test
 on:
   schedule:
-    - cron: '45 3 * * *'
-    - cron: '15 6 * * *'
-    - cron: '45 9 * * *'
-    - cron: '15 12 * * *'
-    - cron: '30 15 * * *'
-    - cron: '15 18 * * *'
-    - cron: '30 21 * * *'
-    - cron: '0 0 * * *'
+    - cron: '45 3 * * *'   # After daily-everything 02:00 publish
+    - cron: '45 9 * * *'   # Morning check
+    - cron: '30 15 * * *'  # After daily-everything 14:00 publish
+    - cron: '30 21 * * *'  # Evening check
   workflow_dispatch:
   workflow_run:
     workflows: [Auto Publish, Auto-Publish on Push, Daily Everything Pipeline]
@@ -18,6 +14,9 @@ permissions:
 concurrency:
   group: promote-to-test
   cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
 defaults:
   run:
     shell: bash
@@ -32,7 +31,7 @@ jobs:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: '22'
+          node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
 
       # When triggered by a publish workflow, wait for Athom to process the draft

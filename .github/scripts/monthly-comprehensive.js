@@ -5,8 +5,10 @@
  */
 const fs=require('fs'),path=require('path');
 const{callAI,analyzeImage,sleep}=require('./ai-helper');
+const{analyzeScreenshot,formatForAIContext}=require('./screenshot-analyzer');
 const{getForumAuth,refreshCsrf,fmtCk}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
+const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
 const DDIR=path.join(__dirname,'..','..','drivers');
 const STATE=path.join(__dirname,'..','state','monthly-state.json');
 const GH='https://api.github.com';
@@ -30,7 +32,7 @@ function buildIndex(){
   return{idx,pidx};
 }
 
-const extractFP=t=>[...new Set((t||'').match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[])];
+const extractFP=_vFP;
 const extractPID=t=>[...new Set((t||'').match(/\bTS[0-9]{4}[A-Z]?\b/g)||[])];
 
 async function ghFetch(url){
@@ -333,8 +335,8 @@ async function main(){
         forumImages+=imgs.length;
         // Analyze first image per post with AI vision
         if(imgs[0]&&!dryRun){
-          const analysis=await analyzeImage(imgs[0],'Extract any Tuya device fingerprints (manufacturerName like _TZxxxx_xxx, productId like TSxxxx) from this screenshot. Also identify the device type. Return JSON or NULL if not relevant.');
-          if(analysis)console.log('    Image analysis:',analysis.substring(0,100));
+          const sa=await analyzeScreenshot(imgs[0],'forum post device');
+          if(sa){console.log('    Screenshot:',JSON.stringify(sa.parsed||{}).substring(0,120));if(sa.parsed?.fingerprints)for(const f of sa.parsed.fingerprints)forumFingerprints++}
         }
       }
     }
@@ -386,3 +388,4 @@ async function main(){
 }
 
 main().catch(e=>{console.error('Fatal:',e.message);process.exit(1)});
+

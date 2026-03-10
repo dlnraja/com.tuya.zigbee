@@ -28,11 +28,12 @@ class LCDTempHumidSensorDevice extends HybridSensorBase {
       1: { capability: 'measure_temperature', divisor: 10 },
       18: { capability: 'measure_temperature', divisor: 10 },
 
-      // Humidity
-      2: { capability: 'measure_humidity', divisor: 1 },
+      // Humidity (÷10 for TZE200 variants like _TZE200_vvmbj46n)
+      2: { capability: 'measure_humidity', divisor: 10 },
 
-      // Battery (x2 multiplier for half-reporting devices)
-      4: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(v * 2, 100) },
+      // Battery
+      4: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(Math.max(v, 0), 100) },
+      15: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(Math.max(v, 0), 100) },
     };
   }
 

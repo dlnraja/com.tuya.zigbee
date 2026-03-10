@@ -12,6 +12,9 @@ concurrency:
   group: publish
   cancel-in-progress: true
 
+env:
+  NODE_VERSION: "22"
+
 defaults:
   run:
     shell: bash
@@ -29,7 +32,7 @@ jobs:
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: "22"
+          node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
 
       - name: App info
@@ -174,6 +177,13 @@ jobs:
           APP_VERSION: ${{ steps.info.outputs.version }}
           CHANGELOG: ${{ steps.cl.outputs.text }}
         run: node .github/scripts/post-forum-update.js
+
+      - name: Regenerate README & Docs with fresh stats
+        if: always()
+        continue-on-error: true
+        run: |
+          node .github/scripts/auto-update-docs.js || true
+          node .github/scripts/generate-readme.js || true
 
       - name: Commit & Push
         if: always()

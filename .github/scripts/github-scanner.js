@@ -4,7 +4,9 @@
  * Uses Gemini AI for analysis, posts findings to forum + GitHub
  */
 const fs=require('fs'),path=require('path');
+const{analyzeScreenshot,formatForAIContext}=require('./screenshot-analyzer');
 const{fetchWithRetry}=require('./retry-helper');
+const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
 const STATE=path.join(__dirname,'..','state','github-state.json');
 const DDIR=path.join(__dirname,'..','..','drivers');
 const GH='https://api.github.com';
@@ -26,7 +28,7 @@ function buildIndex(){
   return idx;
 }
 
-const extractFP=t=>([...new Set((t||'').match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[])]);
+const extractFP=_vFP;
 const extractImgs=t=>{const u=[];const re=/!\[[^\]]*\]\(([^)]+)\)/g;let m;while((m=re.exec(t||''))!==null)u.push(m[1]);return u};
 
 async function ghFetch(url,token){
@@ -101,7 +103,7 @@ async function main(){
       // Analyze images in issue body
       const imgs=extractImgs(iss.body||'');
       let imgCtx=null;
-      if(imgs.length){try{imgCtx=await analyzeImage(imgs[0],'Extract Tuya fingerprints from image. JSON or NULL.')}catch{}}
+      if(imgs.length){try{const sa=await analyzeScreenshot(imgs[0],'github issue');imgCtx=sa?formatForAIContext(sa):null;if(sa?.parsed?.fingerprints)for(const f of sa.parsed.fingerprints)if(!fps.includes(f))fps.push(f)}catch{}}
       if(newOnes.length||existing.length){
         findings.issues.push({repo,number:iss.number,title:iss.title,user:iss.user?.login,
           newFPs:newOnes,existingFPs:existing.map(fp=>({fp,drivers:idx.get(fp)})),
@@ -181,3 +183,4 @@ async function main(){
 }
 
 main().catch(e=>{console.error('Fatal:',e.message);process.exit(1)});
+

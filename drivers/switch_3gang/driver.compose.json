@@ -17,7 +17,8 @@
       "TS0013",
       "TS0003_power",
       "TS0003_switch_module",
-      "TS0601"
+      "TS0601",
+      "ZG-302Z3"
     ],
     "endpoints": {
       "1": {
@@ -55,67 +56,20 @@
     "manufacturerName": [
       "_TYZB01_4lwqwyqn",
       "_TYZB01_b8cr31hp",
-      "_TYZB01_digziiav",
       "_TYZB01_mqel1whf",
       "_TYZB01_xiuox57i",
-      "_TYZB01_zsl6z0pw",
       "_TZ3000_34zbimxh",
-      "_TZ3000_46t1rvdu",
       "_TZ3000_4o16jdca",
-      "_TZ3000_adkvzooy",
-      "_TZ3000_b9vanmes",
       "_TZ3000_c0wbnbbf",
       "_TZ3000_cahkwezx",
-      "_TZ3000_czuyt8lz",
       "_TZ3000_ecgiiid3",
-      "_TZ3000_dku2cfsc",
-      "_TZ3000_fvh3pjaz",
-      "_TZ3000_hauznfgh",
-      "_TZ3000_hbdzfqjl",
-      "_TZ3000_hjhbbyxt",
-      "_TZ3000_i3k4zrp0",
-      "_TZ3000_ibpqrvcy",
-      "_TZ3000_iwhuhzdo",
-      "_TZ3000_jd4qb8ux",
-      "_TZ3000_jihobqcz",
-      "_TZ3000_keabpigb",
-      "_TZ3000_ktxqiyra",
-      "_TZ3000_kybmsyjz",
-      "_TZ3000_lupfd8zu",
       "_TZ3000_lvhy15ix",
       "_TZ3000_ly9apzky",
-      "_TZ3000_mtmtljo4",
-      "_TZ3000_nahxzcpz",
       "_TZ3000_nhhklsxw",
-      "_TZ3000_njintbl6",
-      "_TZ3000_nz98vdvj",
-      "_TZ3000_odzoiovu",
-      "_TZ3000_oz4zgdny",
-      "_TZ3000_pccqzgdc",
-      "_TZ3000_pmz6mjyu",
-      "_TZ3000_ptjcjise",
-      "_TZ3000_qgwcxxws",
-      "_TZ3000_qspxxfqf",
-      "_TZ3000_r0pmi2p3",
-      "_TZ3000_rae2pvwy",
-      "_TZ3000_rco7azbz",
-      "_TZ3000_rfctjdxr",
-      "_TZ3000_rxisxokz",
-      "_TZ3000_sfc7y1t8",
-      "_TZ3000_sjpl9eg3",
-      "_TZ3000_skueezt3",
-      "_TZ3000_sskgpxfo",
       "_TZ3000_tbfw3xj0",
-      "_TZ3000_tkusjmue",
-      "_TZ3000_tqlv4ez4",
-      "_TZ3000_txpirhfq",
       "_TZ3000_udtmrasg",
       "_TZ3000_vjhcxjeb",
-      "_TZ3000_wkr3jqmr",
       "_TZ3000_wqfdvxen",
-      "_TZ3000_zmy4lslw",
-      "_TZ3002_6ahhkwyh",
-      "_TZ3002_vaq2bfcu",
       "_TZE204_e1hutaaj",
       "_TZE284_c8ipbljq",
       "_TZ3000_khtlvdfc",
@@ -123,11 +77,47 @@
       "_TZ33000_d9yfgzur",
       "_TZ3000_pmsxmttq",
       "_TZ3000_0q5fjqgw",
-      "_TZ3000_avotanj3",
       "_TZ3000_snq47izk",
-      "_TZ3000_go9rahj5",
-      "_TZ3000_oysiif07",
-      "_TZ3000_7hp93xpr"
+      "_TZE200_kyfqmmyl",
+      "_TZE200_2hf7x9n3",
+      "_TZE200_bynnczcb",
+      "_TZE200_atpwqgml",
+      "_TZE204_atpwqgml",
+      "_TZ3000_66fekqhh",
+      "_TZ3000_aknpkt02",
+      "_TZ3000_aracgljk",
+      "_TZ3000_bvij6kod",
+      "_TZ3000_dyzkbcip",
+      "_TZ3000_empogkya",
+      "_TZ3000_eqsair32",
+      "_TZ3000_fawk5xjv",
+      "_TZ3000_g9chy2ib",
+      "_TZ3000_hbic3ka3",
+      "_TZ3000_ju82pu2b",
+      "_TZ3000_lsunm46z",
+      "_TZ3000_lubfc1t5",
+      "_TZ3000_mhhxxjrs",
+      "_TZ3000_mzcp0of6",
+      "_TZ3000_nnwehhst",
+      "_TZ3000_ok0ggpk7",
+      "_TZ3000_ouwfc1qj",
+      "_TZ3000_pf7swkqp",
+      "_TZ3000_rhkfbfcv",
+      "_TZ3000_uilitwsy",
+      "_TZ3000_v4l4b0lp",
+      "_TZ3000_vsasbzkf",
+      "_TZ3000_nwidmc4n",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_pfc7i3kt",
+      "_TYZB01_u9kkqh5o",
+      "_TZ3000_iv4eq7eh",
+      "_TZ3000_785olaiq",
+      "_TZ3000_avky2mvc",
+      "_TZ3000_pv4puuxi",
+      "_TZ3000_qxcnwv26",
+      "_TZ3000_sznawwyw",
+      "_TZ3000_ypgri8yz",
+      "_TZ3000_avotanj3"
     ]
   },
   "images": {
@@ -553,13 +543,39 @@
     {
       "id": "power_on_behavior",
       "type": "dropdown",
-      "label": { "en": "Power-On Behavior", "nl": "Gedrag bij inschakelen", "de": "Einschaltverhalten", "fr": "Comportement à la mise sous tension" },
-      "hint": { "en": "What happens when power is restored after an outage (DP14)", "nl": "Wat er gebeurt als de stroom terugkeert na een stroomstoring" },
+      "label": {
+        "en": "Power-On Behavior",
+        "nl": "Gedrag bij inschakelen",
+        "de": "Einschaltverhalten",
+        "fr": "Comportement à la mise sous tension"
+      },
+      "hint": {
+        "en": "What happens when power is restored after an outage (DP14)",
+        "nl": "Wat er gebeurt als de stroom terugkeert na een stroomstoring"
+      },
       "value": "memory",
       "values": [
-        { "id": "off", "label": { "en": "Always Off", "nl": "Altijd Uit" } },
-        { "id": "on", "label": { "en": "Always On", "nl": "Altijd Aan" } },
-        { "id": "memory", "label": { "en": "Last State", "nl": "Laatste status" } }
+        {
+          "id": "off",
+          "label": {
+            "en": "Always Off",
+            "nl": "Altijd Uit"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "Always On",
+            "nl": "Altijd Aan"
+          }
+        },
+        {
+          "id": "memory",
+          "label": {
+            "en": "Last State",
+            "nl": "Laatste status"
+          }
+        }
       ]
     },
     {

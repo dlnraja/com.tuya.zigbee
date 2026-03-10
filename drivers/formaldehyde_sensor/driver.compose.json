@@ -26,8 +26,7 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_mce9kjpm",
-      "_TZE200_ryfmq5rl"
+      "_TZE200_mce9kjpm"
     ],
     "productId": [
       "TS0601_hcho",
@@ -58,6 +57,32 @@
       "min": 100,
       "max": 2000,
       "units": "ppb"
+    },
+    {
+      "id": "sensor_precision",
+      "type": "dropdown",
+      "label": {
+        "en": "Decimal Precision",
+        "fr": "Précision"
+      },
+      "value": "1",
+      "hint": {
+        "en": "Decimals for temperature/humidity values"
+      },
+      "values": [
+        {
+          "id": "1",
+          "label": {
+            "en": "1 decimal (20.5°C)"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "2 decimals (20.53°C)"
+          }
+        }
+      ]
     }
   ],
   "images": {

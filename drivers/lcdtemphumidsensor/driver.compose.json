@@ -21,16 +21,15 @@
   "zigbee": {
     "manufacturerName": [
       "_TYZB01_a476raq2",
-      "_TYZB01_cbiezpds",
       "_TYZB01_ftdkanlj",
       "_TYZB01_hjsgdkfl",
       "_TYZB01_iuepbmpv",
       "_TYZB01_kvwjujy9",
-      "_TZE200_a8sdabtg",
       "_TZE200_vvmbj46n"
     ],
     "productId": [
-      "TS0601_lcd"
+      "TS0601_lcd",
+      "TS0601"
     ],
     "endpoints": {
       "1": {
@@ -58,5 +57,33 @@
   ],
   "connectivity": [
     "zigbee"
+  ],
+  "settings": [
+    {
+      "id": "sensor_precision",
+      "type": "dropdown",
+      "label": {
+        "en": "Decimal Precision",
+        "fr": "Précision"
+      },
+      "value": "1",
+      "hint": {
+        "en": "Decimals for temperature/humidity values"
+      },
+      "values": [
+        {
+          "id": "1",
+          "label": {
+            "en": "1 decimal (20.5°C)"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "2 decimals (20.53°C)"
+          }
+        }
+      ]
+    }
   ]
 }

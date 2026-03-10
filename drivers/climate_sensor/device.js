@@ -9,6 +9,7 @@ const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
 const TuyaRtcDetector = require('../../lib/TuyaRtcDetector');
 const { syncDeviceTimeTuya } = require('../../lib/tuya/TuyaTimeSync');
 const { ClimateInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
+const { setupSonoffSensor, handleSonoffSensorSettings } = require('../../lib/mixins/SonoffSensorMixin');
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // v5.5.793: VALIDATION CONSTANTS - Centralized thresholds for data validation
@@ -638,8 +639,9 @@ class ClimateSensorDevice extends HybridSensorBase {
     // v5.5.188: Read ZCL attributes immediately (battery, temp, humidity)
     // ═══════════════════════════════════════════════════════════════════════
     await this._readZCLAttributesNow(zclNode);
+    await setupSonoffSensor(this, zclNode);
 
-    this.log('[CLIMATE] ✅ Climate sensor ready - INTELLIGENT v5.5.207 + FORCED LCD SYNC');
+    this.log('[CLIMATE] ✅ Climate sensor ready - INTELLIGENT v5.11.106 + SONOFF cal');
     this.log('[CLIMATE] ════════════════════════════════════════════════════════════');
     this.log('[CLIMATE] ⚠️ BATTERY DEVICE - This is a sleepy sensor!');
     this.log('[CLIMATE] ⚠️ First data may take 10-60 minutes after pairing');

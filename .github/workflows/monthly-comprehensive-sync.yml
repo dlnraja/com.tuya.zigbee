@@ -19,6 +19,9 @@ concurrency:
   group: monthly-sync
   cancel-in-progress: false
 
+env:
+  NODE_VERSION: "22"
+
 defaults:
   run:
     shell: bash
@@ -34,7 +37,7 @@ jobs:
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: '22'
+          node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
 
       - name: Run Monthly Comprehensive Scanner
@@ -77,7 +80,7 @@ jobs:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/homey-device-diagnostics.js
 
-      - name: "Smart Device Scanner (10 sources, fp|pid composite key)"
+      - name: "Smart Device Scanner (11 sources, fp|pid composite key)"
         continue-on-error: true
         timeout-minutes: 15
         env:
@@ -162,6 +165,10 @@ jobs:
         timeout-minutes: 5
         run: node .github/scripts/pattern-detector.js
 
+      - name: "Resolution Summary"
+        continue-on-error: true
+        run: node .github/scripts/resolution-summary.js
+
       - name: Commit state and reports
         if: always()
         run: |
@@ -170,7 +177,7 @@ jobs:
           git add .github/state/
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
-          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
+          F=$(grep -rohE '"(_T[A-Za-z0-9_]+|SONOFF|eWeLink|SNZB-[0-9A-Z]+|ZBMINI[A-Z0-9-]*|S[346]1ZB[A-Z]*|BASICZBR[0-9]*|TRVZB|SWV-[A-Z]+)"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
           git diff --cached --quiet || git commit -m "Monthly sync v${VER} $(date +%Y-%m): ${D} drivers, ${F} FPs [skip ci]"
           git pull --rebase origin master || true
           git push || true

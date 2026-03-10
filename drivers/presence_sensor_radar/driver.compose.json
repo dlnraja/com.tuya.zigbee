@@ -9,6 +9,9 @@
   "capabilities": [
     "alarm_motion",
     "measure_luminance",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_human",
     "measure_battery",
     "measure_luminance.distance"
   ],
@@ -30,15 +33,12 @@
     "manufacturerName": [
       "HOBEIAN",
       "Hobeian",
-      "_TZ3000_8bxrzyxz",
       "_TZ3000_aigddb2b",
-      "_TZ3000_ky0fq4ho",
       "_TZ3210_fkzihax8",
       "_TZ3218_ewrxirng",
       "_TZ321C_4slreunp",
       "_TZ321C_fkzihax8",
       "_TZ321C_fkzihaxe8",
-      "_TZE200_1ibpyhdc",
       "_TZE200_2aaelwxk",
       "_TZE200_3towulqd",
       "_TZE200_7gclukjs",
@@ -52,7 +52,6 @@
       "_TZE200_hyhl5y36",
       "_TZE200_ikvncluo",
       "_TZE200_juzago6i",
-      "_TZE200_kb5noeto",
       "_TZE200_laokfqwu",
       "_TZE200_nbkshs6k",
       "_TZE200_pnyz5qpy",
@@ -83,7 +82,6 @@
       "_TZE204_hyt4iucb",
       "_TZE204_iaeejhvf",
       "_TZE204_ijxvkhd0",
-      "_TZE204_ikvncluo",
       "_TZE204_jva8ink8",
       "_TZE204_kyhbrfyl",
       "_TZE204_laokfqwu",
@@ -95,7 +93,6 @@
       "_TZE204_pnyz5qpy",
       "_TZE204_qasjif9e",
       "_TZE204_qomxlryd",
-      "_TZE204_r0jdjrvi",
       "_TZE204_rhgsbacq",
       "_TZE204_sbkgeilo",
       "_TZE204_sfiy5tfs",
@@ -133,7 +130,13 @@
       "_TZE284_xsm7l9xa",
       "_TZE284_yrwmnya3",
       "_TZE284_ztc6ggyl",
-      "hobeian"
+      "hobeian",
+      "ZGAF-205L",
+      "_TZE200_cq8lu23i",
+      "_TZE200_4pm4pekt",
+      "_TZE200_p9zbdqgs",
+      "_TZE200_sgpeacqp",
+      "_TZE284_fwondbzy"
     ],
     "productId": [
       "CK-BL702-MWS-01",
@@ -149,8 +152,13 @@
       "ZG-204ZM",
       "ZG-204ZV",
       "ZG-205Z",
-      "ZG-227Z",
-      "ZP-301Z"
+      "ZP-301Z",
+      "SNZB-06P",
+      "ZG-204ZE",
+      "ZG-204ZQ",
+      "ZG-205ZL",
+      "ZG-302ZL",
+      "ZG-302ZM"
     ],
     "learnmode": {
       "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",

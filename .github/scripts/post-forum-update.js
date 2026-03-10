@@ -24,12 +24,13 @@ async function getLastOwnPost(tid){
     const r=await fetchWithRetry(FORUM+'/t/'+tid+'.json',{},{retries:2,label:'lastOwn'});
     if(!r.ok)return null;
     const d=await r.json();const highest=d.highest_post_number;if(!highest)return null;
-    const from=Math.max(1,highest-5);
+    const from=Math.max(1,highest-15);
     const r2=await fetchWithRetry(FORUM+'/t/'+tid+'/'+from+'.json',{},{retries:2,label:'lastOwnPosts'});
     if(!r2.ok)return null;
     const posts=(await r2.json()).post_stream?.posts||[];
     const sorted=posts.sort((a,b)=>b.post_number-a.post_number);
-    if(sorted[0]?.username==='dlnraja')return{id:sorted[0].id,postNumber:sorted[0].post_number,raw:sorted[0].raw||strip(sorted[0].cooked||'')};
+    const own=sorted.find(p=>p.username==='dlnraja');
+    if(own)return{id:own.id,postNumber:own.post_number,raw:own.raw||strip(own.cooked||'')};
     return null;
   }catch{return null}
 }
@@ -116,6 +117,8 @@ async function main(){
   try{
     if(auth.type==='session')await refreshCsrf(auth);
     const lastOwn=await getLastOwnPost(TID);
+    // v5.12.1: Content-level version dedup — skip if existing post already mentions this version
+    if(lastOwn&&lastOwn.raw&&lastOwn.raw.includes('v'+ver)){console.log('Post already contains v'+ver+', skipping');fs.appendFileSync(SUM,'Forum: skipped (v'+ver+' already in post)\n');state.lastVersion=ver;saveState(state);return}
     if(lastOwn){
       const m=smartMergePost(lastOwn.raw,raw);
       console.log('SmartMerge:',m.reason);

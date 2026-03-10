@@ -2,6 +2,7 @@
 
 const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
 const { getDeviceConfig, transformDpValue, ENERGY_CONFIGS } = require('../../lib/configs/IntelligentDeviceConfig');
+const { setupSonoffEnergy } = require('../../lib/mixins/SonoffEnergyMixin');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -278,6 +279,7 @@ class EnergyMonitorPlugDevice extends HybridPlugBase {
       await this._setupZclEnergy(zclNode, config);
     }
 
+    await setupSonoffEnergy(this, zclNode);
     this.log('[ENERGY] ✅ Energy monitor plug ready');
   }
 

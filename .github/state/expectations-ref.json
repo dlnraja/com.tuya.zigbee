@@ -45,6 +45,24 @@
       "driver": "motion_sensor_radar_mmwave (RELAY)",
       "wrongDriver": "N/A",
       "reason": "230V mains-powered, no battery/temp/humidity. RELAY config removes wrong caps + adds onoff relay."
+    },
+    {
+      "device": "Garage Door _TZE200_wfxuhoea TS0601",
+      "driver": "garage_door",
+      "wrongDriver": "radiator_valve, thermostat_tuya_dp",
+      "reason": "TS0601 collision — moved to garage_door"
+    },
+    {
+      "device": "Nedis Smoke TS0205 _TYZB01_wqcac7lo",
+      "driver": "smoke_detector_advanced",
+      "wrongDriver": "switch_1gang",
+      "reason": "IAS Zone smoke detector, not a switch"
+    },
+    {
+      "device": "MOES TS0222 _TYZB01_ftdkanlj",
+      "driver": "lcdtemphumidsensor",
+      "wrongDriver": "switch_1gang",
+      "reason": "Temp/humidity/lux sensor, removed from switch_1gang"
     }
   ],
   "userProfiles": [
@@ -301,6 +319,24 @@
       "device": "`_TZE200_3p5ydos3` dimmer",
       "status": "NEEDS DIAG",
       "note": "Dimmer errors on control. T89271#660. Need diag log."
+    },
+    {
+      "user": "Tor_Martin_Aspholm",
+      "device": "`_TZE200_wfxuhoea` TS0601 garage",
+      "status": "FIXED v5.12.1",
+      "note": "Moved to garage_door. T89271#627"
+    },
+    {
+      "user": "Mark_smoke",
+      "device": "`_TYZB01_wqcac7lo` TS0205",
+      "status": "FIXED v5.12.1",
+      "note": "Added to smoke_detector_advanced. T89271#637"
+    },
+    {
+      "user": "Bjorn_L",
+      "device": "`_TYZB01_ftdkanlj` TS0222",
+      "status": "FIXED v5.12.1",
+      "note": "Removed from switch_1gang. T89271#622"
     }
   ],
   "patterns": [],

@@ -2,6 +2,7 @@
 'use strict';
 const fs=require('fs'),path=require('path');
 const{fetchWithRetry,sleep,setThrottle}=require('./retry-helper');
+const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
 const ROOT=path.join(__dirname,'..','..');
 const DDIR=path.join(ROOT,'drivers');
 const SD=path.join(__dirname,'..','state');
@@ -232,7 +233,7 @@ async function scanPRsDeep(repos,local,res){
     console.log('  PRs: '+prs.length);
     for(const pr of prs){
       const text=(pr.title||'')+' '+(pr.body||'');
-      const fps=(text.match(/_T[A-Z][A-Za-z0-9]{2,5}_[a-z0-9]{4,16}/g)||[]).filter(isVFP);
+      const fps=_vFP(text);
       const newFPs=fps.filter(fp=>!local.mfrs.has(fp));
       if(!newFPs.length)continue;
       await sleep(300);
@@ -257,7 +258,7 @@ async function scanPRsDeep(repos,local,res){
     }
     for(const issue of issues){
       const text=(issue.title||'')+' '+(issue.body||'');
-      const fps=(text.match(/_T[A-Z][A-Za-z0-9]{2,5}_[a-z0-9]{4,16}/g)||[]).filter(isVFP);
+      const fps=_vFP(text);
       const newFPs=fps.filter(fp=>!local.mfrs.has(fp));
       if(newFPs.length){
         res.issueFinds.push({repo,number:issue.number,state:issue.state,user:issue.user?.login,

@@ -16,6 +16,7 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 let ens,fpEng;
 try{ens=require('./ai-ensemble')}catch{ens=null}
 try{fpEng=require('./fp-research-engine')}catch{fpEng=null}
+const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
 const TOKEN=process.env.GH_PAT||process.env.GITHUB_TOKEN;
 const ghH=()=>{const h={Accept:'application/vnd.github+json','User-Agent':'tuya-ai-battle'};if(TOKEN)h.Authorization='Bearer '+TOKEN;return h};
 
@@ -241,7 +242,7 @@ function phase2_newFPs(intel,idx){
   const addNew=(fp,pid,src)=>{
     if(!fp||typeof fp!=='string')return;
     fp=fp.trim();if(mIdx.has(fp))return;
-    if(!/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}$/.test(fp))return;
+    if(!isValidTuyaFP(fp))return;
     if(!newFPs.has(fp))newFPs.set(fp,{fp,pids:new Set(),sources:new Set()});
     const e=newFPs.get(fp);if(pid)e.pids.add(pid);e.sources.add(src);
   };
@@ -418,7 +419,7 @@ async function phase6_webSearch(idx){
       const name=item.name||'';const repo=item.repository?.full_name||'';
       // Extract FPs from file path/name context
       const textH=(item.text_matches||[]).map(t=>t.fragment||'').join(' ');
-      const fps=(textH.match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[]);
+      const fps=_vFP(textH);
       const pids=(textH.match(/\bTS[0-9]{4}[A-Z]?\b/g)||[]);
       for(const fp of fps){
         if(!idx.mIdx.has(fp)){findings.push({fp,pids,repo,file:name,src:'gh-code-search'})}}
@@ -433,7 +434,7 @@ async function phase6_webSearch(idx){
     if(!res||!res.items)continue;
     for(const item of res.items){
       const body=(item.title||'')+' '+(item.body||'').slice(0,3000);
-      const fps=(body.match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[]);
+      const fps=_vFP(body);
       const pids=(body.match(/\bTS[0-9]{4}[A-Z]?\b/g)||[]);
       for(const fp of fps){
         if(!idx.mIdx.has(fp)){findings.push({fp,pids,repo:item.repository_url||'',src:'gh-issue-search'})}}

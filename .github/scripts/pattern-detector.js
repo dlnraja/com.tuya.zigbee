@@ -38,6 +38,21 @@ const PATTERNS=[
    regex:/not respond|no response|offline|unavailable|unreachable|lost connection/i,
    fixHint:'Check Zigbee mesh, device routing, and cluster bindings',
    files:[]},
+  {id:'voltage_wrong',name:'Wrong Voltage',
+   regex:/voltage.*(wrong|high|2\d{3})|2300\s*V/i,
+   fixHint:'Check voltage divisor',files:[]},
+  {id:'no_temperature',name:'No Temperature',
+   regex:/temp.*(null|missing|stuck|0\.0)/i,
+   fixHint:'Check DP18 divisor',files:[]},
+  {id:'ring_value',name:'Ring/Alarm Wrong',
+   regex:/ring.*(wrong|value)|alarm.*(wrong|stuck)/i,
+   fixHint:'Check alarm DP map',files:[]},
+  {id:'energy_wrong',name:'Wrong Energy',
+   regex:/power.*(wrong|crazy)|kwh.*(wrong|huge)/i,
+   fixHint:'Check energy divisor',files:[]},
+  {id:'sensor_zero',name:'Sensor Stuck Zero',
+   regex:/stuck.*(0|zero)|always.*zero/i,
+   fixHint:'Re-pair device',files:[]},
 ];
 
 function loadForumData(){
@@ -67,6 +82,12 @@ function loadForumData(){
       else if(data.mentions)posts.push(...data.mentions);
     }catch{}
   }
+  // Load interview excerpts
+  const intDir=path.join(STATE_DIR,'interviews');
+  try{if(fs.existsSync(intDir))for(const f of fs.readdirSync(intDir).filter(f=>f.endsWith('.json'))){try{const d=JSON.parse(fs.readFileSync(path.join(intDir,f),'utf8'));if(d.excerpt&&d.user!=='dlnraja')posts.push({text:d.excerpt,user:d.user,date:d.date,topic_id:d.topicId})}catch{}}}catch{}
+  // Load diagnostics
+  const diagFile=path.join(STATE_DIR,'diagnostics-report.json');
+  try{if(fs.existsSync(diagFile)){const d=JSON.parse(fs.readFileSync(diagFile,'utf8'));for(const e of(d.diagnostics||[]))if(e.subj)posts.push({text:e.subj+' '+(e.errs||[]).join(' '),user:'email',date:e.date})}}catch{}
   return posts;
 }
 

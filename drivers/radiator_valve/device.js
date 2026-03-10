@@ -2,6 +2,7 @@
 const HybridThermostatBase = require('../../lib/devices/HybridThermostatBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const setupSonoffTRVZB = require('../../lib/mixins/SonoffTRVZBMixin');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -115,12 +116,15 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridT
     // Register onoff/mode listeners (parent only handles target_temperature)
     this._setupTRVListeners();
 
+    // v5.11.105: SONOFF TRVZB ZCL features (child_lock, open_window, frost_protection, valve)
+    await this._setupSonoffTRVZB(zclNode);
+
     // v5.6.0: Initialize bidirectional button support
     await this.initPhysicalButtonDetection(zclNode);
     await this.initVirtualButtons();
     this._setupTRVVirtualActions();
 
-    this.log(`[TRV] v5.6.0 ✅ Ready (${profile} profile) with bidirectional buttons`);
+    this.log(`[TRV] v5.11.105 ✅ Ready (${profile} profile) with bidirectional buttons`);
   }
 
   /**
@@ -211,6 +215,15 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridT
     if (tuya?.datapoint) {
       this.log(`[TRV] Sending DP${dp} = ${value} (${type})`);
       await tuya.datapoint({ dp, value, type });
+    }
+  }
+
+  async _setupSonoffTRVZB(zclNode) {
+    try {
+      const isSonoff = await setupSonoffTRVZB(this, zclNode);
+      if (isSonoff) this.log('[TRV] SONOFF TRVZB features enabled');
+    } catch (e) {
+      this.log('[TRV] SONOFF setup skipped:', e.message);
     }
   }
 }
