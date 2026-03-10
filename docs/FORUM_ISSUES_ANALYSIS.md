@@ -471,3 +471,7 @@ All 12 fingerprints from 20 open issues **already supported** in v5.11.19:
 - **Topic 140352 #1615** @DomLAJO: `_TZE200_gjldowol`, `zigbee2mqtt` (gh-gpt-4o-mini)
 - **Topic 140352 #1618** @Ronald_Bok: `test` (gh-gpt-4o-mini)
 - **Topic 140352 #1619** @Jocke_Wallen: `thread` (gh-gpt-4o-mini)
+
+
+## Nightly Forum Scan (2026-03-10 v5.11.101)
+- **Topic 140352 #1624** @Peter_van_Werkhoven: `development` (template)
