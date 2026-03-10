@@ -230,9 +230,6 @@ jobs:
       - name: Run Gmail diagnostics
         continue-on-error: true
         env:
-          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
-          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
-          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
@@ -260,7 +257,7 @@ jobs:
         run: node .github/scripts/homey-device-diagnostics.js
 
   external-sources:
-    name: "Smart Device Scanner (10 sources)"
+    name: "Smart Device Scanner (11 sources)"
     needs: stats
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -270,7 +267,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
-      - name: "10-source scan (Z2M+ZHA+Blakadder+deCONZ+Hubitat+SmartThings+HA Forum+Local)"
+      - name: "11-source scan (Z2M+ZHA+Blakadder+deCONZ+Hubitat+HOMEd+SmartThings+HA Forum+Local)"
         continue-on-error: true
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
@@ -429,19 +426,29 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
-      - name: "Cross-ref all diags → auto-resolve issues/PRs"
+      - name: "Pattern Detector (feed resolver)"
+        continue-on-error: true
+        run: node .github/scripts/pattern-detector.js
+      - name: "Cross-ref all diags+patterns → auto-resolve issues/PRs"
         continue-on-error: true
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/diagnostic-auto-resolver.js
+      - name: "Resolution Summary"
+        continue-on-error: true
+        run: node .github/scripts/resolution-summary.js
+      - name: "Pipeline Health Check"
+        continue-on-error: true
+        run: node .github/scripts/pipeline-health.js
       - name: Commit resolver changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .github/state/resolver-*.json
-          git diff --cached --quiet || git commit -m "Resolved issues update [skip ci]"
+          for f in .github/state/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null || { echo "::warning::Bad JSON: $f"; git checkout -- "$f" 2>/dev/null; }; done
+          git add .github/state/ 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "Resolved issues + patterns update [skip ci]"
           git pull --rebase origin master || true
           git push || true
 
@@ -551,10 +558,7 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          # Optional AI fallbacks (GROQ, HF, MISTRAL, DEEPSEEK) — see .github/SECRETS.md
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/smart-device-processor.js
       - name: "Auto-Learn Fingerprints"
@@ -565,18 +569,22 @@ jobs:
         continue-on-error: true
         timeout-minutes: 5
         run: node .github/scripts/pattern-detector.js
+      - name: "Resolution Summary"
+        continue-on-error: true
+        run: node .github/scripts/resolution-summary.js
       - name: "Reply Self-Audit"
         continue-on-error: true
         timeout-minutes: 10
         env:
           DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
-          DISCOURSE_API_USERNAME: ${{ secrets.DISCOURSE_API_USERNAME || 'dlnraja' }}
-          DISCOURSE_URL: ${{ secrets.DISCOURSE_URL || 'https://community.homey.app' }}
+          DISCOURSE_API_USERNAME: 'dlnraja'
+          DISCOURSE_URL: 'https://community.homey.app'
         run: node .github/scripts/bot-self-audit.js
       - name: Commit smart processor + intelligence changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for f in .github/state/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null || { echo "::warning::Bad JSON: $f"; git checkout -- "$f" 2>/dev/null; }; done
           git add -A
           git diff --cached --quiet || git commit -m "Updated patterns and state [skip ci]"
           git pull --rebase origin master || true
@@ -603,13 +611,8 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
-          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
-          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
+          # Optional AI fallbacks (GROQ, DEEPSEEK, MISTRAL, CEREBRAS, TOGETHER, OPENROUTER, KIMI)
+          # Not yet configured — see .github/SECRETS.md
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
           MAX_GH_CALLS: "100"
         run: node .github/scripts/master-ai-battle.js
@@ -617,6 +620,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for f in .github/state/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null || { echo "::warning::Bad JSON: $f"; git checkout -- "$f" 2>/dev/null; }; done
           git add -A drivers/ .github/state/
           git diff --cached --quiet || git commit -m "New device variants + driver updates [skip ci]"
           git pull --rebase origin master || true
@@ -740,7 +744,10 @@ jobs:
     timeout-minutes: 5
     steps:
       - run: |
-          echo "## Sunday Automation Complete" >> $GITHUB_STEP_SUMMARY
+          FAILS=0
+          for R in "${{ needs.triage-johanbendz.result }}" "${{ needs.triage-dlnraja.result }}" "${{ needs.scan-forks.result }}" "${{ needs.scan-forum.result }}" "${{ needs.gmail-diagnostics.result }}" "${{ needs.device-diagnostics.result }}" "${{ needs.smart-processor.result }}" "${{ needs.diagnostic-resolver.result }}" "${{ needs.promote-to-test.result }}"; do [ "$R" = "failure" ] && FAILS=$((FAILS+1)); done
+          if [ "$FAILS" -eq 0 ]; then STATUS="All Healthy"; else STATUS="$FAILS failure(s)"; fi
+          echo "## Sunday Automation Complete — $STATUS" >> $GITHUB_STEP_SUMMARY
           echo "- JohanBendz triage: ${{ needs.triage-johanbendz.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- dlnraja triage: ${{ needs.triage-dlnraja.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Full Fork Verification: ${{ needs.scan-forks.result }}" >> $GITHUB_STEP_SUMMARY

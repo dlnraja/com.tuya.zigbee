@@ -2,7 +2,7 @@ name: Nightly Auto-Process
 
 on:
   schedule:
-    - cron: '30 3 * * *'  # 3:30 UTC — after daily-everything 02:00 run
+    - cron: '30 5 * * *'  # 5:30 UTC — safe gap after daily-everything 02:00 (120min timeout)
   workflow_dispatch:
     inputs:
       dry_run:
@@ -18,6 +18,9 @@ permissions:
 concurrency:
   group: nightly-process
   cancel-in-progress: false
+
+env:
+  NODE_VERSION: "22"
 
 defaults:
   run:
@@ -35,7 +38,7 @@ jobs:
 
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: '22'
+          node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
 
       - name: Run Nightly Processor
@@ -45,9 +48,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          # Optional AI fallbacks (MISTRAL, DEEPSEEK, GROQ) — see .github/SECRETS.md
           DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
@@ -64,35 +65,11 @@ jobs:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/homey-device-diagnostics.js
 
-      - name: Gmail Token Pre-check
-        if: always()
-        continue-on-error: true
-        env:
-          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
-          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
-          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
-        run: node .github/scripts/gmail-token-keepalive.js
-
-      - name: Gmail Token Auto-rotate
-        if: always()
-        continue-on-error: true
-        env:
-          GH_TOKEN: ${{ secrets.GH_PAT }}
-        run: |
-          TF=".github/state/_new_refresh_token.txt"
-          if [ -f "$TF" ] && [ -n "$GH_TOKEN" ]; then
-            gh secret set GMAIL_REFRESH_TOKEN < "$TF"
-            rm -f "$TF"
-            echo "::notice::Gmail token auto-rotated in nightly"
-          fi
 
       - name: Gmail Diagnostics
         if: always()
         continue-on-error: true
         env:
-          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
-          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
-          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
@@ -101,7 +78,7 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: node .github/scripts/fetch-gmail-diagnostics.js
 
-      - name: "Smart Device Scanner (10 sources, fp|pid composite key)"
+      - name: "Smart Device Scanner (11 sources, fp|pid composite key)"
         if: always()
         continue-on-error: true
         timeout-minutes: 15
@@ -133,16 +110,16 @@ jobs:
           GEMINI_MAX_TIER: "1"
         run: node .github/scripts/enrichment-scanner.js
 
-      - name: Image Pipeline Audit
+      - name: Screenshot Analysis Pipeline
         if: always()
         continue-on-error: true
         timeout-minutes: 5
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          if [ -f ".github/scripts/image-pipeline.js" ]; then
-            node .github/scripts/image-pipeline.js --report
-          else
-            echo "image-pipeline.js not yet created — skipping"
-          fi
+          echo "Screenshot analyzer module: $(node -e "const s=require('./.github/scripts/screenshot-analyzer');console.log(Object.keys(s).join(', '))")"
+          echo "Deep analysis prompts: $(node -e "const{PROMPTS}=require('./.github/scripts/screenshot-analyzer');console.log(Object.keys(PROMPTS).length+' prompt types: '+Object.keys(PROMPTS).join(', '))")"
 
       - name: Forum Intel Processor (scan-only, no reply)
         if: always()
@@ -168,7 +145,7 @@ jobs:
         timeout-minutes: 15
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
-        run: node .github/scripts/comprehensive-github-scan.js
+        run: node .github/scripts/retry-runner.js .github/scripts/comprehensive-github-scan.js --retries 2 --delay 10000
 
       - name: PR/Issue Fingerprint Scan
         if: always()
@@ -176,7 +153,13 @@ jobs:
         timeout-minutes: 10
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
-        run: node .github/scripts/scan-prs-issues.js
+        run: node .github/scripts/retry-runner.js .github/scripts/scan-prs-issues.js --retries 2 --delay 8000
+
+      - name: "Cross-Reference Intelligence"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 2
+        run: node .github/scripts/cross-ref-intelligence.js
 
       - name: Sleep 30s before Issue Manager
         if: always()
@@ -201,6 +184,24 @@ jobs:
           RATE_LIMIT_SLEEP: "5000"
         run: node .github/scripts/github-issue-manager.js
 
+      - name: Auto-Learn Fingerprints
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 3
+        run: node .github/scripts/auto-learn-fingerprints.js
+
+      - name: FP Collision Check
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 2
+        run: node .github/scripts/fp-collision-check.js
+
+      - name: Pattern Detector
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node .github/scripts/pattern-detector.js
+
       - name: "Diagnostic Auto-Resolver (cross-ref diags → issues/PRs)"
         if: always()
         continue-on-error: true
@@ -211,17 +212,10 @@ jobs:
           DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
         run: node .github/scripts/diagnostic-auto-resolver.js
 
-      - name: Auto-Learn Fingerprints
+      - name: "Resolution Summary (symptom intelligence)"
         if: always()
         continue-on-error: true
-        timeout-minutes: 3
-        run: node .github/scripts/auto-learn-fingerprints.js
-
-      - name: Pattern Detector
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 5
-        run: node .github/scripts/pattern-detector.js
+        run: node .github/scripts/resolution-summary.js
 
       - name: Reply Self-Audit
         if: always()
@@ -305,12 +299,19 @@ jobs:
         continue-on-error: true
         run: node .github/scripts/update-architecture.js
 
+      - name: "Pipeline Health Check"
+        if: always()
+        continue-on-error: true
+        run: node .github/scripts/pipeline-health.js
+
       - name: Commit state and docs
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .github/state/ docs/ CHANGELOG.md README.md .homeychangelog.json
+          # Validate JSON state files before commit
+          for f in .github/state/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null || { echo "::warning::Invalid JSON: $f"; git checkout -- "$f" 2>/dev/null; }; done
+          git add .github/state/ docs/ drivers/ lib/ CHANGELOG.md README.md .homeychangelog.json
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           FILES=$(git diff --cached --name-only | wc -l)
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
@@ -334,3 +335,4 @@ jobs:
           name: homey-device-report
           path: .github/state/homey-device-report.json
           retention-days: 30
+

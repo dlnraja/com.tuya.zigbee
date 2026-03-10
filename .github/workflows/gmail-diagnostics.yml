@@ -1,7 +1,7 @@
 name: Gmail Diagnostics Auto-Analysis
 on:
   schedule:
-    - cron: '0 7 * * *'    # Morning sweep (before daily-everything 08:00)
+    - cron: '0 7 * * *'    # Morning sweep (standalone, daily-everything runs at 02:00+14:00)
     - cron: '0 19 * * *'   # Evening sweep (catch afternoon emails)
   workflow_dispatch:
 
@@ -12,6 +12,9 @@ permissions:
 concurrency:
   group: gmail-diagnostics
   cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
 
 defaults:
   run:
@@ -27,18 +30,15 @@ jobs:
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: '22'
+          node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
-      # v5.11.99: IMAP-primary — no OAuth token health checks needed
-      - name: Fetch diagnostics via IMAP (+ OAuth fallback)
+      # v5.12.6: IMAP-only — OAuth removed
+      - name: Fetch diagnostics via IMAP
         env:
           GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
-          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
-          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_PAT: ${{ secrets.GH_PAT }}
@@ -53,19 +53,6 @@ jobs:
           git diff --staged --quiet || git commit -m "Diagnostics update $(date -u +%Y-%m-%d) [skip ci]"
           git pull --rebase origin master || true
           git push || true
-      - name: Auto-rotate refresh token if renewed (requires GH_PAT)
-        env:
-          GH_TOKEN: ${{ secrets.GH_PAT }}
-        run: |
-          TF=".github/state/_new_refresh_token.txt"
-          if [ -f "$TF" ]; then
-            if [ -z "$GH_TOKEN" ]; then
-              echo "::error::GH_PAT not set - cannot rotate token"
-            else
-              gh secret set GMAIL_REFRESH_TOKEN < "$TF"
-              rm -f "$TF"
-              echo "::notice::Gmail token auto-rotated"
-            fi
           fi
       - name: Homey Device Diagnostics
         if: always()
@@ -96,7 +83,13 @@ jobs:
           git pull --rebase origin master || true
           git push || true
 
-      - name: "Diagnostic Auto-Resolver (cross-ref → issues/PRs)"
+      - name: "Pattern Detector (feed resolver)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node .github/scripts/pattern-detector.js
+
+      - name: "Diagnostic Auto-Resolver (cross-ref diags+patterns → issues/PRs)"
         if: always()
         continue-on-error: true
         timeout-minutes: 10
@@ -105,11 +98,16 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node .github/scripts/diagnostic-auto-resolver.js
 
+      - name: "Resolution Summary"
+        if: always()
+        continue-on-error: true
+        run: node .github/scripts/resolution-summary.js
+
       - name: Commit resolver state
         if: always()
         run: |
-          git add .github/state/resolver-*.json 2>/dev/null || true
-          git diff --staged --quiet || git commit -m "Resolved issues update [skip ci]"
+          git add .github/state/resolver-*.json .github/state/pattern-*.json 2>/dev/null || true
+          git diff --staged --quiet || git commit -m "Resolved issues + patterns update [skip ci]"
           git pull --rebase origin master || true
           git push || true
 

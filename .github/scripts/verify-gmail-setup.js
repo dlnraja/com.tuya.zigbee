@@ -1,23 +1,39 @@
 #!/usr/bin/env node
 'use strict';
+// v5.12.6: IMAP verifier — OAuth removed
 async function main(){
-  const{GMAIL_CLIENT_ID:cid,GMAIL_CLIENT_SECRET:cs,GMAIL_REFRESH_TOKEN:rt}=process.env;
-  console.log('=== Gmail OAuth Verifier ===');
-  if(!cid||!cs||!rt){console.log('MISSING secrets. See SECRETS.md');process.exit(1)}
-  const r=await fetch('https://oauth2.googleapis.com/token',{method:'POST',
-    headers:{'Content-Type':'application/x-www-form-urlencoded'},
-    body:'client_id='+cid+'&client_secret='+cs+'&refresh_token='+rt+'&grant_type=refresh_token'});
-  if(!r.ok){const e=await r.text();console.log('FAIL:',r.status,e);
-    console.log('\nRegenerate at https://developers.google.com/oauthplayground');
-    console.log('Scope: gmail.readonly | Check: own credentials + auto-refresh');
-    process.exit(1)}
-  const j=await r.json();
-  console.log('Token OK, expires in',j.expires_in+'s');
-  if(j.refresh_token_expires_in)console.log('WARNING: Testing mode! Publish app.');
-  else console.log('Production mode: token permanent');
-  const v=await fetch('https://gmail.googleapis.com/gmail/v1/users/me/profile',
-    {headers:{Authorization:'Bearer '+j.access_token}});
-  if(v.ok){const p=await v.json();console.log('Gmail:',p.emailAddress,p.messagesTotal+'msgs')}
-  else console.log('Gmail API fail:',v.status);
+  const e=process.env.GMAIL_EMAIL||process.env.HOMEY_EMAIL;
+  const p=process.env.GMAIL_APP_PASSWORD||process.env.HOMEY_PASSWORD;
+  console.log('=== Gmail IMAP Verifier ===');
+  if(!e||!p){
+    console.log('MISSING: GMAIL_EMAIL + GMAIL_APP_PASSWORD');
+    console.log('Setup:');
+    console.log('  1. https://myaccount.google.com/apppasswords');
+    console.log('  2. Generate App Password for Mail');
+    console.log('  3. gh secret set GMAIL_EMAIL');
+    console.log('  4. gh secret set GMAIL_APP_PASSWORD');
+    process.exit(1);
+  }
+  let imap;
+  try{imap=require('./gmail-imap-reader')}catch(err){
+    console.log('FAIL: gmail-imap-reader not loadable:',err.message);
+    console.log('Run: npm install imapflow');
+    process.exit(1);
+  }
+  console.log('Connecting as',e,'...');
+  const emails=await imap.readViaIMAP({maxResults:5});
+  if(!emails){
+    console.log('FAIL: IMAP returned null — check credentials or 2FA');
+    console.log('  App Password: https://myaccount.google.com/apppasswords');
+    console.log('  2FA required: https://myaccount.google.com/signinoptions/two-step-verification');
+    process.exit(1);
+  }
+  console.log('OK: IMAP connected, fetched',emails.length,'emails');
+  if(emails.length>0){
+    console.log('Latest:',emails[0].subj?.substring(0,80));
+    console.log('From:',emails[0].from);
+    console.log('Date:',emails[0].date);
+  }
+  console.log('\nIMAP is working. No token expiry — permanent.');
 }
 main().catch(e=>{console.error(e.message);process.exit(1)});

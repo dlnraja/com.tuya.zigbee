@@ -1,8 +1,8 @@
-name: Gmail Token Keepalive
-# v5.11.99: IMAP is now primary — OAuth keepalive disabled (manual only)
+name: Gmail IMAP Health Check
+# v5.12.6: IMAP-only — OAuth keepalive replaced by IMAP health check
 on:
-  # schedule disabled — IMAP-primary mode, no OAuth token needed
-  # - cron: '0 5,11,17,23 * * *'
+  schedule:
+    - cron: '0 8 * * 1'  # Weekly Monday 08:00 UTC
   workflow_dispatch:
   workflow_call:
 
@@ -14,12 +14,15 @@ concurrency:
   group: gmail-keepalive
   cancel-in-progress: true
 
+env:
+  NODE_VERSION: "22"
+
 defaults:
   run:
     shell: bash
 
 jobs:
-  keepalive:
+  imap-health:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -28,55 +31,32 @@ jobs:
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: '22'
+          node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
-      - name: Refresh Gmail token
+      - name: IMAP health check
         env:
-          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
-          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
-          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
         run: node .github/scripts/gmail-token-keepalive.js
-      - name: Auto-rotate if new token (requires GH_PAT)
-        env:
-          GH_TOKEN: ${{ secrets.GH_PAT }}
-        run: |
-          TF=".github/state/_new_refresh_token.txt"
-          if [ -f "$TF" ]; then
-            if [ -z "$GH_TOKEN" ]; then
-              echo "::error::GH_PAT not set - cannot rotate token"
-            else
-              gh secret set GMAIL_REFRESH_TOKEN < "$TF"
-              rm -f "$TF"
-              echo "::notice::Gmail token auto-rotated"
-            fi
-          fi
       - name: Commit health state
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .github/state/gmail-token-health.json 2>/dev/null || true
-          git diff --staged --quiet || git commit -m "State update $(date -u +%Y-%m-%d_%H:%M) [skip ci]"
+          git diff --staged --quiet || git commit -m "IMAP health $(date -u +%Y-%m-%d) [skip ci]"
           git pull --rebase origin master || true
           git push || true
-      - name: Alert if token expired or expiring
+      - name: Alert if IMAP failing
         if: always()
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: |
-          if [ -f ".github/state/_token_expired_alert.txt" ]; then
-            TITLE="[Alert] Gmail OAuth token EXPIRED"
-            if [ -n "${{ secrets.GMAIL_APP_PASSWORD }}" ]; then
-              TITLE="$TITLE — IMAP fallback active"
-            else
-              TITLE="$TITLE — set GMAIL_APP_PASSWORD for permanent IMAP fallback"
-            fi
-            gh issue create --title "$TITLE" \
-              --body "$(cat .github/state/_token_expired_alert.txt)" \
+          if [ -f ".github/state/_imap_alert.txt" ]; then
+            gh issue create --title "[Alert] IMAP connection failing" \
+              --body "$(cat .github/state/_imap_alert.txt)" \
               --label "automation" 2>/dev/null || true
-            rm -f .github/state/_token_expired_alert.txt
-          fi
-          if [ -f ".github/state/_token_expiring_alert.txt" ]; then
-            echo "::warning::$(cat .github/state/_token_expiring_alert.txt)"
-            rm -f .github/state/_token_expiring_alert.txt
+            rm -f .github/state/_imap_alert.txt
           fi
