@@ -1,7 +1,13 @@
 {
   "mode": "imap",
-  "checks": [],
-  "lastOk": null,
+  "lastOk": "2026-03-10T19:19:57.850Z",
   "consecutiveFails": 0,
-  "emailsFetched": 0
+  "emailsFetched": 200,
+  "checks": [
+    {
+      "time": "2026-03-10T19:19:57.850Z",
+      "ok": true,
+      "mode": "imap"
+    }
+  ]
 }
