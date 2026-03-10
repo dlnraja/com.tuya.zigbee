@@ -1,8 +1,99 @@
 {
-  "timestamp": "2026-03-10T03:36:08.745Z",
+  "timestamp": "2026-03-10T14:59:37.118Z",
   "appVersion": "5.11.101",
   "findings": {
     "issues": [
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 135,
+        "title": "Device Request - _TZE200_xlppj4f5- TS0601 - Immax Neo smart water timer",
+        "user": "Domingoso",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE200_xlppj4f5",
+            "drivers": [
+              "valve_irrigation"
+            ]
+          },
+          {
+            "fp": "_TZ3210_0jxeoadc",
+            "drivers": [
+              "valve_irrigation"
+            ]
+          },
+          {
+            "fp": "_TZE200_5zbp6j0u",
+            "drivers": [
+              "curtain_motor"
+            ]
+          },
+          {
+            "fp": "_TZE200_nkoabg8w",
+            "drivers": [
+              "curtain_motor",
+              "curtain_motor_tilt"
+            ]
+          },
+          {
+            "fp": "_TZE200_xuzcvlku",
+            "drivers": [
+              "curtain_motor",
+              "curtain_motor_tilt"
+            ]
+          },
+          {
+            "fp": "_TZE200_4vobcgd3",
+            "drivers": [
+              "curtain_motor"
+            ]
+          },
+          {
+            "fp": "_TZE200_nogaemzt",
+            "drivers": [
+              "curtain_motor",
+              "curtain_motor_tilt"
+            ]
+          },
+          {
+            "fp": "_TZE200_r0jdjrvi",
+            "drivers": [
+              "curtain_motor",
+              "curtain_motor_tilt"
+            ]
+          },
+          {
+            "fp": "_TZE200_pk0sfzvr",
+            "drivers": [
+              "curtain_motor"
+            ]
+          },
+          {
+            "fp": "_TZE200_fdtjuw7u",
+            "drivers": [
+              "curtain_motor"
+            ]
+          },
+          {
+            "fp": "_TZE200_zpzndjez",
+            "drivers": [
+              "curtain_motor",
+              "curtain_motor_tilt"
+            ]
+          },
+          {
+            "fp": "_TZE200_wmcdj3aq",
+            "drivers": [
+              "curtain_motor",
+              "curtain_motor_tilt",
+              "shutter_roller_controller"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/135",
+        "state": "open",
+        "imageAnalysis": null
+      },
       {
         "repo": "dlnraja/com.tuya.zigbee",
         "number": 156,
@@ -275,270 +366,6 @@
         "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/814",
         "state": "closed",
         "imageAnalysis": null
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 693,
-        "title": "Device Request - Zigbee PIR Motion Sensor - _TZ3000_y56pgpgs / TS0202",
-        "user": "treebeard8",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3000_y56pgpgs",
-            "drivers": [
-              "motion_sensor"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/693",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 787,
-        "title": "Device Request - Tuya PIR motion sensor - _TZ3000_mg4dy6z6 / TS0202",
-        "user": "mijdrecht",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3000_mg4dy6z6",
-            "drivers": [
-              "motion_sensor"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/787",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 620,
-        "title": "Device Request - Smart PIR Motion Sensor - _TZ3000_bsvqrxru/TS0202",
-        "user": "edwinff",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3000_bsvqrxru",
-            "drivers": [
-              "motion_sensor"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/620",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 484,
-        "title": "Device Request - [Motion sensor] - [_TZ3000_mg4dy6z6] / [TS0202]",
-        "user": "Rickert1993",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3000_mg4dy6z6",
-            "drivers": [
-              "motion_sensor"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/484",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 982,
-        "title": "Device Request - [PIR Sensor] - [MiBoxer] / [PIR1-ZB]",
-        "user": "sschot",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3040_wqmtjsyk",
-            "drivers": [
-              "motion_sensor"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/982",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 1308,
-        "title": "Device Request - [Device name] - [manufacturerName] / [modelId]",
-        "user": "dvollebregt",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3040_wqmtjsyk",
-            "drivers": [
-              "motion_sensor"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1308",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 1243,
-        "title": "Device Request – Motion Sensor – _TZ3000_o4mkahkc / TS0202",
-        "user": "Noud027027",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3000_o4mkahkc",
-            "drivers": [
-              "climate_sensor",
-              "contact_sensor",
-              "motion_sensor"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1243",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 1242,
-        "title": "Device Request - [Device name] - [manufacturerName] / [modelId]",
-        "user": "Noud027027",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3000_o4mkahkc",
-            "drivers": [
-              "climate_sensor",
-              "contact_sensor",
-              "motion_sensor"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1242",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 1193,
-        "title": "Device Request - PIR Sensor PIR1-ZB - MiBoxer, Mi-Light, LIGHTEU / TS0202",
-        "user": "rockybeachradio",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3040_wqmtjsyk",
-            "drivers": [
-              "motion_sensor"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1193",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 1154,
-        "title": "Device Request - Tuya Motion Sensor (2x AAA battery) - TZ3000_c8ozah8n / TS0202",
-        "user": "rpm1986",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3000_c8ozah8n",
-            "drivers": [
-              "motion_sensor"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1154",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 1139,
-        "title": "Device Request - Tuya Zigbee PIR Bewegingssensor",
-        "user": "Benzo66",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3000_o4mkahkc",
-            "drivers": [
-              "climate_sensor",
-              "contact_sensor",
-              "motion_sensor"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1139",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 1130,
-        "title": "Device Request - PIR Sensor - Tuya / TS0202_TZ3000_o4mkahkc",
-        "user": "Maage-The-Magnificent",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3000_o4mkahkc",
-            "drivers": [
-              "climate_sensor",
-              "contact_sensor",
-              "motion_sensor"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1130",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 1324,
-        "title": "Device Request - [Device name] - [manufacturerName] / [modelId]",
-        "user": "keesg",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3000_lf56vpxj",
-            "drivers": [
-              "motion_sensor",
-              "vibration_sensor"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1324",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 1331,
-        "title": "Device Request - [UFO-R11] - [Moes] / [modelId]",
-        "user": "MF-ITuser",
-        "newFPs": [
-          "_TZ3290_ot6ewjvmej"
-        ],
-        "existingFPs": [
-          {
-            "fp": "_TZ3290_ot6ewjvmejq5ekhl",
-            "drivers": [
-              "ir_blaster",
-              "ir_remote"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1331",
-        "state": "open",
-        "imageAnalysis": "```json\n{\n  \"fingerprints\": [\n    \"Tuya Wired Version Gateway\",\n    \"Smart IR Remote\",\n    \"Tuya ZigBee wired hub\",\n    \"Tuya wired multi-mode hub\",\n    \"App Control\",\n    \"Voice Control\",\n    \"WiFi Router\",\n    \"Wired hub supported\",\n    \"Wireless hub not supported\"\n  ]\n}\n```"
       }
     ],
     "prs": [
@@ -656,5 +483,5 @@
     "newFPs": [],
     "forkFPs": []
   },
-  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests\nSeveral new device requests have been identified, primarily focusing on motion sensors. Here are the notable requests:\n\n1. **Moes Smart PIR Motion Sensor** - Model: _TYZB01_geepvxsy\n   - [Issue #814](https://github.com/JohanBendz/com.tuya.zigbee/issues/814)\n   \n2. **Zigbee PIR Motion Sensor** - Model: _TZ3000_y56pgpgs\n   - [Issue #693](https://github.com/JohanBendz/com.tuya.zigbee/issues/693)\n\n3. **Tuya PIR Motion Sensor** - Model: _TZ3000_mg4dy6z6\n   - [Issue #787](https://github.com/JohanBendz/com.tuya.zigbee/issues/787)\n\n4. **Smart PIR Motion Sensor** - Model: _TZ3000_bsvqrxru\n   - [Issue #620](https://github.com/JohanBendz/com.tuya.zigbee/issues/620)\n\n5. **MiBoxer PIR Sensor** - Model: _TZ3040_wqmtjsyk\n   - [Issue #982](https://github.com/JohanBendz/com.tuya.zigbee/issues/982)\n\n6. **Additional Requests** - Various models (_TZ3000_o4mkahkc, _TZ3000_c8ozah8n) for motion sensors have also been requested.\n\n## Fingerprints Already Supported\nThe following fingerprints are currently supported in the main repository:\n\n- **_TZ2000_a476raq2** - Climate Sensor\n- **_TZ2000_xogb73am** - Climate Sensor\n- **_TZ2000_avdnvykf** - Air Quality Comprehensive\n- **_TZ3000_rusu2vzb** - Multi-function Sensor (Climate, Contact, Motion, Water Leak)\n- **_TZ3000_ji4araar** - Din Rail Switch, Smart Breaker\n- **_TZ3000_bvrlqyj7** - Curtain Motor, Radiator Valve, Thermostat\n\n## Fingerprints from Forks to Integrate\nA recent automated update has identified **115 new fingerprints** from forks, which may include additional device support. Notable fingerprints include:\n\n- **_TZ3000_6zvw8ham** - RGB Bulb\n- **_TZ3000_keabpigv** - RGBW LED Strip\n- **_TZ3000_12sxjap4** - RGBW LED Strip\n\nThese fingerprints should be reviewed for potential integration into the main repository.\n\n## Pull Requests with Useful Changes\nSeveral pull requests (PRs) have been made that include useful changes, though specific PR details were not provided in the current data. It is recommended to review the latest PRs in the repository for enhancements and bug fixes that could improve device compatibility and functionality.\n\nFor ongoing updates and contributions, please refer to the [GitHub repository](https://github.com/dlnraja/com.tuya.zigbee) and consider participating in discussions or submitting your own device requests.\n\n---\n\nThis summary aims to keep the community informed about the latest developments in the Universal Tuya Zigbee project. Your contributions and feedback are invaluable for enhancing device support and functionality."
+  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests\n1. **Immax Neo Smart Water Timer**\n   - **Fingerprint**: `_TZE200_xlppj4f5`\n   - **Drivers**: `valve_irrigation`\n   - **Issue Link**: [#135](https://github.com/dlnraja/com.tuya.zigbee/issues/135)\n\n2. **ZigBee Smart PIR Motion Sensor**\n   - **Fingerprint**: `_TYZB01_geepvxsy`\n   - **Drivers**: `motion_sensor`\n   - **Issue Link**: [#814](https://github.com/JohanBendz/com.tuya.zigbee/issues/814)\n\n## Existing Fingerprints Supported\n- The following fingerprints are already supported with their respective drivers:\n  - `_TZE200_xlppj4f5`: `valve_irrigation`\n  - `_TZ3210_0jxeoadc`: `valve_irrigation`\n  - `_TZE200_5zbp6j0u`: `curtain_motor`\n  - `_TZE200_nkoabg8w`: `curtain_motor`, `curtain_motor_tilt`\n  - `_TZE200_xuzcvlku`: `curtain_motor`, `curtain_motor_tilt`\n  - `_TZE200_4vobcgd3`: `curtain_motor`\n  - `_TZE200_nogaemzt`: `curtain_motor`, `curtain_motor_tilt`\n  - `_TZE200_r0jdjrvi`: `curtain_motor`, `curtain_motor_tilt`\n  - `_TZE200_pk0sfzvr`: `curtain_motor`\n  - `_TZE200_fdtjuw7u`: `curtain_motor`\n  - `_TZE200_zpzndjez`: `curtain_motor`, `curtain_motor_tilt`\n  - `_TZE200_wmcdj3aq`: `curtain_motor`, `curtain_motor_tilt`, `shutter_roller_controller`\n  \n## New Fingerprints from Forks to Integrate\n- **115 new fingerprints** were identified from forks, including:\n  - `_TZ2000_a476raq2`: `climate_sensor`\n  - `_TZ3000_6zvw8ham`: `bulb_rgb`\n  - `_TZ3000_rusu2vzb`: `climate_sensor`, `contact_sensor`, `motion_sensor`, `water_leak_sensor`\n  - `_TZ3000_bvrlqyj7`: `curtain_motor`, `radiator_valve`, `thermostat_tuya_dp`\n- **Issue Link**: [#156](https://github.com/dlnraja/com.tuya.zigbee/issues/156)\n\n## Pull Requests with Useful Changes\n1. **PR #45**: Update driver.compose.json (Merged)\n   - **Fingerprint**: `_TZE200_nv6nxo0c`\n   - **User**: vl14-dev\n\n2. **PR #46**: Adding support for MOES/Tuya Zigbee AM25 Tubular Motor\n   - **Fingerprint**: `_TZE200_nv6nxo0c`\n   - **User**: vl14-dev\n\n3. **PR #1350**: Added TS110E driver\n   - **Fingerprints**: `_TZ3210_ngqk6jia`, `_TZ3210_weaqkhab`\n   - **User**: PiTRiS87 (Open)\n\n4. **PR #1253**: Added 3 new devices\n   - **Fingerprints**: `_TZE200_pay2byax`, `_TZ3000_mrpevh8p`\n   - **User**: Peter-Celica (Open)\n\n5. **PR #1195**: Add `_TZE204_bjzrowv2` - Update app.json\n   - **User**: YuriEstevan (Open)\n\nFor further details, please refer to the respective issue and pull request links. Your contributions and feedback are welcome to enhance the device support in the Universal Tuya Zigbee integration!"
 }

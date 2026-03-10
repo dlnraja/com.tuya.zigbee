@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-03-10T04:36:56.950Z",
+  "timestamp": "2026-03-10T16:09:17.668Z",
   "dryRun": false,
   "sources": {
     "external": 1607,
     "github": 6,
     "forks": 0,
-    "johan": 4,
+    "johan": 1,
     "gmail": 0,
     "forum": 0,
     "diagnostics": 0,
@@ -16,9 +16,9 @@
     "details": []
   },
   "classified": {
-    "total": 7,
+    "total": 4,
     "byMethod": {
-      "ai-single": 7
+      "ai-single": 4
     },
     "details": [
       {
@@ -56,33 +56,6 @@
         "sources": [
           "johan"
         ]
-      },
-      {
-        "fp": "_TZ3000Z_iedbgyxt",
-        "driver": "switch_2gang",
-        "method": "ai-single",
-        "pids": [],
-        "sources": [
-          "johan"
-        ]
-      },
-      {
-        "fp": "_TZ3290_ot6ewjvmej",
-        "driver": "switch_3gang",
-        "method": "ai-single",
-        "pids": [],
-        "sources": [
-          "johan"
-        ]
-      },
-      {
-        "fp": "_TZ3000_xxxxx",
-        "driver": "switch_4gang",
-        "method": "ai-single",
-        "pids": [],
-        "sources": [
-          "johan"
-        ]
       }
     ]
   },
@@ -91,5 +64,5 @@
     "skipped": 0
   },
   "ghApiCalls": 100,
-  "aiSummary": "{\n  \"summary\": {\n    \"total_sources_scanned\": 1617,\n    \"confirmed_variants\": 0,\n    \"new_fingerprints_classified\": 7\n  }\n}"
+  "aiSummary": "```json\n{\n  \"summary\": {\n    \"total_sources_scanned\": 1614,\n    \"confirmed_variants\": 0,\n    \"new_fingerprints_classified\": 4\n  }\n}\n```"
 }

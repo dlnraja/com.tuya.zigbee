@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-10T03:37:00.378Z",
+  "timestamp": "2026-03-10T15:10:40.073Z",
   "appVersion": "5.11.101",
   "forum": 1,
   "github": 0,
@@ -9,13 +9,13 @@
   "forumDetails": [
     {
       "topic": 140352,
-      "post": 1624,
-      "user": "Peter_van_Werkhoven",
+      "post": 1625,
+      "user": "Chris_M",
       "fps": [
-        "development"
+        "_TZ3000_22ugzkme"
       ],
-      "reply": "**Fingerprint check** (v5.11.101):\n✅ Supported: `development` → **diy_custom_zigbee**\n",
-      "model": "template"
+      "reply": "It looks like we have a fingerprint match for your device, the TS0041, which is recognized as a valid product ID. The available drivers for this device are `button_wireless_1` and `universal_fallback`",
+      "model": "gh-gpt-4o-mini"
     }
   ],
   "githubDetails": []
