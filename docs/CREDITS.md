@@ -15,6 +15,7 @@ This project would not exist without the open-source Zigbee ecosystem and the pa
 - **[zigpy / ZHA](https://github.com/zigpy/zha-device-handlers)** — Python quirks & signatures
 - **[kkossev / Hubitat](https://github.com/kkossev/Hubitat)** — Tuya DP research, mmWave profiles
 - **[dresden-elektronik / deCONZ](https://github.com/dresden-elektronik)** — ConBee & REST plugin
+- **[HOMEd Zigbee / u236](https://github.com/u236/homed-service-zigbee)** — Tuya device library, DP mappings (Russian Zigbee community)
 - **[Tasmota](https://github.com/arendst/Tasmota)** — Tuya device research
 - **[CSA](https://csa-iot.org)** — Zigbee 3.0 specs
 

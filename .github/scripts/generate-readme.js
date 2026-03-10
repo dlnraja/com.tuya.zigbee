@@ -89,6 +89,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
+| **App Version** | v${app.version} |
 | **Device Fingerprints** | ${fmt(totalFp)}+ |
 | **Unique Product IDs** | ${pidSet.size} |
 | **Drivers** | ${dirs.length} (${zigbee} Zigbee + ${wifi} WiFi) |

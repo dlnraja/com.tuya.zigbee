@@ -109,7 +109,7 @@ function findConflicts(drivers) {
   for (const [name, d] of drivers) {
     for (const m of d.mfrs) {
       for (const p of d.pids) {
-        const key = m + '|' + p;
+        const key = m.toLowerCase() + '|' + p;
         if (!exactMap.has(key)) exactMap.set(key, []);
         exactMap.get(key).push(name);
       }
@@ -117,9 +117,10 @@ function findConflicts(drivers) {
   }
   const conflicts = [];
   for (const [key, drvs] of exactMap) {
-    if (drvs.length > 1) {
+    const unique = [...new Set(drvs)];
+    if (unique.length > 1) {
       const [mfr, pid] = key.split('|');
-      conflicts.push({ mfr, pid, drivers: drvs });
+      conflicts.push({ mfr, pid, drivers: unique });
     }
   }
   return conflicts;
@@ -166,7 +167,20 @@ function resolveConflict(conflict, drivers) {
     return removals;
   }
 
-  // Rule 3: Same category — can't auto-resolve without external data
+  // Rule 3: Same-category radar — presence_sensor_radar wins
+  if (uniqueCats.size === 1 && categories[0].cat === 'radar') {
+    const pri = ['presence_sensor_radar', 'presence_sensor_ceiling'];
+    const winner = drvNames.find(d => pri.includes(d));
+    if (winner) {
+      for (const loser of drvNames.filter(d => d !== winner)) {
+        const planned = removalCounts.get(loser) || 0;
+        const lc = drivers.get(loser)?.mfrs?.size || 0;
+        if (lc - planned - 1 < 3) continue;
+        removals.push({ driver: loser, mfr, reason: `radar: ${winner} primary` });
+        removalCounts.set(loser, planned + 1);
+      }
+    }
+  }
   return removals;
 }
 
@@ -190,8 +204,18 @@ function main() {
     }
     console.log(`\nTotal: ${conflicts.length} conflicts in ${groups.size} groups`);
 
-    // Save report
-    const report = { timestamp: new Date().toISOString(), total: conflicts.length, groups: groups.size };
+    // Save report with full details for CI visibility
+    const groupDetails = {};
+    for (const [pair, items] of groups) {
+      groupDetails[pair] = items.map(i => ({ mfr: i.mfr, pid: i.pid }));
+    }
+    const report = {
+      timestamp: new Date().toISOString(),
+      total: conflicts.length,
+      groups: groups.size,
+      caseInsensitive: true,
+      details: groupDetails,
+    };
     const reportPath = path.join(__dirname, '..', '..', '.github', 'state', 'fingerprint-conflicts.json');
     try {
       fs.mkdirSync(path.dirname(reportPath), { recursive: true });

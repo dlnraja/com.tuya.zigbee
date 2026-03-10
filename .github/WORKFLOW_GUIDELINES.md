@@ -227,7 +227,19 @@ New sensor variants (soil+fertilizer, air+VOC) may have unknown DPs.
 
 ---
 
-## I. Auto-Reopen Guard (v5.12.x)
+## I. SONOFF/eWeLink Mixins (v5.11.107)
+
+| Mixin | File | Features |
+|-------|------|----------|
+| EwelinkMixin | `lib/mixins/SonoffEwelinkMixin.js` | LED, turbo, detach, trigger, delayed power-on |
+| SensorMixin | `lib/mixins/SonoffSensorMixin.js` | Tamper, temp/hum calibration |
+| EnergyMixin | `lib/mixins/SonoffEnergyMixin.js` | Current, voltage, power (0xFC11) |
+
+Safe auto-add PIDs: `SNZB-*`, `ZBMINI*`, `S31ZB`, `S[46]0ZBT*`, `BASICZBR*`, `TRVZB`, `SWV-*`, `ZBM5-*`
+
+---
+
+## J. Auto-Reopen Guard (v5.12.x)
 
 `auto-reopen-on-comment.yml` skips reopening when:
 - Commenter is `dlnraja`, `github-actions[bot]`, or `dependabot[bot]`

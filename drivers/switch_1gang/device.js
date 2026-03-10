@@ -2,6 +2,7 @@
 const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const { setupSonoffEwelink, handleSonoffEwlSettings } = require('../../lib/mixins/SonoffEwelinkMixin');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -41,7 +42,14 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
     await super.onNodeInit({ zclNode });
     await this.initPhysicalButtonDetection(zclNode);
     await this.initVirtualButtons();
-    this.log('[SWITCH-1G] v5.8.95 - Bidirectional physical+virtual button detection ready');
+    await setupSonoffEwelink(this, zclNode);
+    this.log('[SWITCH-1G] v5.11.106 - Bidirectional physical+virtual button detection ready');
+  }
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    await super.onSettings({ oldSettings, newSettings, changedKeys });
+    for (var k of changedKeys) {
+      await handleSonoffEwlSettings(this, k, newSettings[k]);
+    }
   }
 }
 

@@ -1,6 +1,6 @@
-# Weekly Fingerprint Sync - v5.9.0
+# Weekly Fingerprint Sync - v5.11.107
 # Fetches latest fingerprints from Z2M/ZHA, compares with local drivers,
-# auto-adds safe Tuya _T* patterns, and creates PR for review.
+# auto-adds safe Tuya _T* and SONOFF/eWeLink patterns, and creates PR for review.
 # Runs every Monday at 06:00 UTC.
 # Forum sources: 140352 (dlnraja), 26439 (JohanBendz), 146735 (Tuya Smart Life), 89271 (Device Archive)
 
@@ -58,7 +58,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node .github/scripts/scan-johan-full.js
 
-      # Step 2: Auto-add safe Tuya patterns
+      # Step 2: Auto-add safe Tuya + SONOFF/eWeLink patterns
       - name: Auto-add safe fingerprints
         if: inputs.dry_run != true
         run: node scripts/automation/auto-add-fingerprints.js
@@ -101,7 +101,7 @@ jobs:
         uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Weekly FP sync $(date +%Y-%m-%d): auto-added safe Tuya patterns from Z2M/ZHA"
+          commit-message: "Weekly FP sync $(date +%Y-%m-%d): auto-added safe Tuya + SONOFF patterns from Z2M/ZHA"
           title: "Weekly Fingerprint Sync (${{ steps.changes.outputs.lines_added }} new lines)"
           body: |
             ## Automated Weekly Fingerprint Sync
@@ -110,11 +110,12 @@ jobs:
 
             ### What changed
             - Fetched latest fingerprints from Z2M (tuya, sonoff, danfoss, schneider, legrand, bosch, ikea, xiaomi)
-            - Auto-added safe Tuya _T* manufacturer patterns to appropriate drivers
+            - Auto-added safe Tuya _T* and SONOFF/eWeLink (SNZB-*, ZBMINI*, S31ZB, TRVZB, SWV-*) patterns to appropriate drivers
             - All JSON validated
 
             ### Reports
             See data/community-sync/sync-report.md for full details.
+            See .github/state/johan-full-scan.json for Johan code pattern analysis.
             See data/community-sync/missing-fingerprints.json for non-Tuya items needing manual review.
 
             ### Review checklist

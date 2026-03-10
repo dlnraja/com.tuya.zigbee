@@ -2,6 +2,14 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
+// v5.11.102: Import IEEEAddressManager for proper CIE address enrollment
+let IEEEAddressManager = null;
+try {
+  IEEEAddressManager = require('../../lib/managers/IEEEAddressManager');
+} catch (e) {
+  console.log('[SOS] IEEEAddressManager import skipped:', e.message);
+}
+
 // v5.5.145: Import IAS ACE cluster and BoundCluster for TS0215A SOS button
 // The BoundCluster receives commandEmergency from the device
 let IasAceBoundCluster = null;
@@ -646,9 +654,10 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
 
     // v5.5.107: Write CIE Address FIRST (required for some devices)
     try {
-      const ieeeAddress = this.homey.zigbee?.ieeeAddress || '0x00124b0000000000';
+      const ieeeAddress = await this._getCoordinatorIeee();
       this.log('[SOS] Writing CIE Address:', ieeeAddress);
-      await iasZone.writeAttributes({ iasCieAddr: ieeeAddress }).catch(() => { });
+      await iasZone.writeAttributes({ iasCIEAddress: ieeeAddress }).catch(() => { });
+      await iasZone.writeAttributes({ iasCieAddress: ieeeAddress }).catch(() => { });
     } catch (e) {
       this.log('[SOS] CIE address write (normal if not supported):', e.message);
     }
@@ -768,6 +777,8 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       if (!iasZone) return;
 
       this.log('[SOS] 🔄 Device awake - attempting enrollment...');
+      const ieee = await this._getCoordinatorIeee();
+      if (ieee) await iasZone.writeAttributes({ iasCIEAddress: ieee }).catch(() => { });
       await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 10 });
       this.log('[SOS] ✅ Enrollment successful (device was awake)');
       this._enrollmentPending = false;
@@ -1101,6 +1112,38 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     await this._readBatteryNow();
 
     this.log('[SOS] 🔋 ════════════════════════════════════════');
+  }
+
+  /**
+   * v5.11.102: Get coordinator IEEE address using IEEEAddressManager
+   * Falls back to multiple methods if manager unavailable
+   */
+  async _getCoordinatorIeee() {
+    if (IEEEAddressManager) {
+      try {
+        if (!this._ieeeManager) this._ieeeManager = new IEEEAddressManager(this);
+        const ieee = await this._ieeeManager.getCoordinatorIeeeAddress();
+        if (ieee) {
+          this.log('[SOS] Coordinator IEEE via manager:', ieee);
+          return ieee;
+        }
+      } catch (e) {
+        this.log('[SOS] IEEEAddressManager error:', e.message);
+      }
+    }
+    // Direct fallbacks
+    const direct = this.homey?.zigbee?.ieeeAddress || this.homey?.zigbee?.address || this.driver?.homey?.zigbee?.ieeeAddress;
+    if (direct) return direct;
+    // Read existing CIE from device
+    try {
+      const ias = this.zclNode?.endpoints?.[1]?.clusters?.iasZone;
+      if (ias?.readAttributes) {
+        const attrs = await ias.readAttributes(['iasCIEAddress']);
+        if (attrs?.iasCIEAddress) return attrs.iasCIEAddress;
+      }
+    } catch (e) { /* ignore */ }
+    this.log('[SOS] Could not determine coordinator IEEE');
+    return null;
   }
 
   async onUninit() {

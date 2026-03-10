@@ -34,17 +34,21 @@
       "_TZ3000_dkgxjjn1",
       "_TZ3000_hswqnljz",
       "_TZ3000_jd3u8dkz",
-      "_TZ3000_nwidmc4n",
       "_TZ3000_tqlv4uj4",
       "_TZ3000_vmpbygs5",
-      "_TZ3000_xfxpoxe0"
+      "SONOFF",
+      "eWeLink"
     ],
     "productId": [
       "ZBMINI",
       "ZBMINI-L",
       "ZBMINIL2",
       "ZBMINIR2",
-      "01MINIZB"
+      "01MINIZB",
+      "ZBM5-1C-120",
+      "ZBMINIR",
+      "ZBMINIL2-R2",
+      "ZBMINIR2-R2"
     ],
     "endpoints": {
       "1": {
@@ -326,6 +330,112 @@
       "hint": {
         "en": "Sync device time with Homey",
         "fr": "Synchroniser l'heure du device avec Homey"
+      }
+    },
+    {
+      "id": "sonoff_network_led",
+      "type": "dropdown",
+      "label": {
+        "en": "Network LED (SONOFF)"
+      },
+      "value": "on",
+      "values": [
+        {
+          "id": "on",
+          "label": {
+            "en": "On"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "Off"
+          }
+        }
+      ],
+      "hint": {
+        "en": "SONOFF network indicator LED"
+      }
+    },
+    {
+      "id": "sonoff_turbo_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Turbo Mode (SONOFF)"
+      },
+      "value": "off",
+      "values": [
+        {
+          "id": "on",
+          "label": {
+            "en": "On"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "Off"
+          }
+        }
+      ],
+      "hint": {
+        "en": "SONOFF radio power boost"
+      }
+    },
+    {
+      "id": "sonoff_detach_relay",
+      "type": "dropdown",
+      "label": {
+        "en": "Detach Relay (SONOFF)"
+      },
+      "value": "off",
+      "values": [
+        {
+          "id": "on",
+          "label": {
+            "en": "On"
+          }
+        },
+        {
+          "id": "off",
+          "label": {
+            "en": "Off"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Decouple button from relay"
+      }
+    },
+    {
+      "id": "sonoff_external_trigger",
+      "type": "dropdown",
+      "label": {
+        "en": "External Trigger (SONOFF)"
+      },
+      "value": "edge",
+      "values": [
+        {
+          "id": "edge",
+          "label": {
+            "en": "Edge"
+          }
+        },
+        {
+          "id": "pulse",
+          "label": {
+            "en": "Pulse"
+          }
+        },
+        {
+          "id": "following",
+          "label": {
+            "en": "Following"
+          }
+        }
+      ],
+      "hint": {
+        "en": "External switch trigger mode"
       }
     }
   ],

@@ -13,6 +13,8 @@ const saveState=s=>{fs.mkdirSync(path.dirname(STATE),{recursive:true});fs.writeF
 const{buildFullIndex,extractAllFP,resolveFingerprint,getMultiDriverContext}=require('./load-fingerprints');
 const{validateReply}=require('./reply-quality-gate');
 const{gatherAll,formatForAI}=require('./gather-intelligence');
+let _pd=null;function getPD(){if(_pd)return _pd;try{_pd=require('./user-profile-detector')}catch{_pd=null}return _pd}
+const{fetchThreadContext,formatThreadContext}=require('./thread-context');
 
 // v5.11.29: Load expectations reference for decision-making
 function loadExpectationsRef(){
@@ -28,6 +30,7 @@ const strip=h=>(h||'').replace(/<br\s*\/?>/gi,'\n').replace(/<\/p>/gi,'\n').repl
 const exImgs=h=>{const u=[];const re=/<img[^>]+src="([^"]+)"/gi;let m;while((m=re.exec(h||''))!==null)u.push(m[1]);return u};
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const{callAI,callAIEnsemble,analyzeImage,getAIBudget,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost}=require('./ai-helper');
+const{analyzeScreenshot,analyzeMultipleScreenshots,formatForAIContext,generateDriverRecommendations}=require('./screenshot-analyzer');
 const{sanitize}=require('./sanitize-forum');
 function cleanReply(r){
   if(!r)return r;
@@ -176,7 +179,7 @@ function batchedFallback(postInfos,ver){
 }
 
 // v5.11.28: Batched AI — ALL posts + full intelligence → ONE rich reply
-async function batchAI(postInfos,ver){
+async function batchAI(postInfos,ver,threadCtx){
   let sys='';try{sys=fs.readFileSync(path.join(__dirname,'system-prompt.txt'),'utf8').replace(/\{\{VERSION\}\}/g,ver)}catch{}
 
   // Gather cross-referenced device data
@@ -221,16 +224,24 @@ async function batchAI(postInfos,ver){
   ctx+='## MULTI-DRIVER RULES\n';
   ctx+='Same manufacturerName CAN appear in multiple drivers — this is normal.\n';
   ctx+='Fingerprint = manufacturerName + productId COMBINED. Ask for productId (TS0001/TS0002/etc) if user only shares manufacturerName.\n';
-  ctx+='If user says "works after X minutes": fixed in latest version — dataQuery sent on init now. Tell them to update app and re-pair.\n\n';
+  ctx+='If user says "works after X minutes": fixed in latest — update+re-pair.\n';
+  ctx+='## VALUE ISSUES\n';
+  ctx+='Voltage 2300V=divisor bug,fixed. Temp 0/null=re-pair. Ring/alarm stuck=re-pair. Energy huge=divisor fixed. Sensor zero=re-pair. Double-div temp 0.2=fixed v5.11.15. Soil fertilizer=ask app logs for DPs. Battery 0% on mains=known,fixed.\n\n';
+
+  // v5.12.2: Thread context
+  const tcF=formatThreadContext(threadCtx);
+  if(tcF){ctx+=tcF;console.log('  ThreadCtx:',threadCtx.length,'posts')}
 
   // Add user posts
   ctx+='## NEW FORUM POSTS\n\n';
   for(const pi of postInfos){
     ctx+='---\n#'+pi.post.post_number+' @'+pi.post.username+':\n'+pi.text+'\n';
+    const pd=getPD();if(pd){try{const d=pd.detectFromForum(pi.post.username,pi.text);ctx+='Profile: '+d.profile+(d.pending?' | Pending: '+d.pending.note:'')+'\n'}catch{}}
     if(Object.keys(pi.fpResults).length)ctx+='FP DB results: '+JSON.stringify(pi.fpResults)+'\n';
     if(pi.imgCtx)ctx+='Image analysis: '+pi.imgCtx+'\n';
   }
-  ctx+='\n---\nWrite ONE reply, max 200 words. Sound like a real person, not support.\n';
+  ctx+='\n---\nWrite ONE reply addressing the NEW posts above. Sound like a real person, not support. Max 200 words.\n';
+  ctx+='READ the PREVIOUS CONVERSATION section carefully. Do NOT repeat advice you already gave. Reference what you said before naturally ("like I mentioned", "so following up on that"). If a user re-asked something you addressed, point them back briefly.\n';
   ctx+='If missing sensor readings, casually ask for app logs to see DPs.\n';
   ctx+='Never repeat same advice per device. Mention re-pair at most once, casually.\n';
   ctx+='Do NOT start with a greeting. Do NOT end with a signature. Just stop talking.\n';
@@ -280,7 +291,7 @@ async function main(){
       for(const pid of fp.pid){const d=pidx.get(pid)||[];fpR[pid]={found:d.length>0,drivers:d,type:'productId'}}
       let imgCtx=null;
       const imgs=exImgs(p.cooked);
-      if(imgs.length){try{imgCtx=await analyzeImage(imgs[0].startsWith('/')?FORUM+imgs[0]:imgs[0],'Extract Tuya fingerprints. JSON or NULL.')}catch{}}
+      if(imgs.length){try{const fullUrls=imgs.map(u=>u.startsWith('/')?FORUM+u:u);const sa=await analyzeMultipleScreenshots(fullUrls,text);imgCtx=sa?formatForAIContext(sa):null;if(sa?.fingerprints?.length)for(const f of sa.fingerprints){if(!fp.mfr.includes(f))fp.mfr.push(f)}}catch(e){console.log('  Screenshot analysis err:',e.message)}}
       devPosts.push({post:p,text,fp,fpResults:fpR,imgCtx});
     }
     console.log('  Device:',devPosts.length,'/',fr.posts.length);
@@ -291,9 +302,12 @@ async function main(){
     if(!checkGlobalCooldown()){state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
     // Anti-spam: skip if our own reply already exists in the fetched batch
     if(hasRecentOwnReply(fr.posts)){console.log('  ⏳ Already replied in this batch, skipping');state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
-    // Phase 2: ONE batched reply
+    // Phase 2: Fetch thread context then ONE batched reply
+    const firstNew=devPosts[0]?.post?.post_number||last+1;
+    const threadCtx=await fetchThreadContext(tid,firstNew);
+    if(threadCtx.length)console.log('  Thread context:',threadCtx.length,'posts (from #'+(threadCtx[0]?.num||'?')+')');
     let reply=null;
-    try{reply=await batchAI(devPosts,ver);if(reply)reply=cleanReply(reply)}catch(e){console.error('AI:',e.message)}
+    try{reply=await batchAI(devPosts,ver,threadCtx);if(reply)reply=cleanReply(reply)}catch(e){console.error('AI:',e.message)}
     if(!reply){state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
     // Phase 2b: Quality gate — validate reply against driver DB before posting
     const allOrigText=devPosts.map(d=>d.text).join(' ');
@@ -349,3 +363,7 @@ async function main(){
   }
 }
 main().catch(e=>{console.error('Fatal:',e.message);process.exit(1)});
+
+
+
+

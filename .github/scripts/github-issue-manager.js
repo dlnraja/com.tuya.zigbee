@@ -2,8 +2,10 @@
 'use strict';
 const fs=require('fs'),path=require('path');
 const{callAI,callAIEnsemble,analyzeImage,getAIBudget,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost}=require('./ai-helper');
+const{analyzeScreenshot,analyzeMultipleScreenshots,formatForAIContext}=require('./screenshot-analyzer');
 const{loadFingerprints,findAllDrivers,extractMfrFromText}=require('./load-fingerprints');
 const{investigate:investigateBug}=require('./bug-investigator');
+const{detectFromGitHub,buildPromptContext,getResponseHints}=require('./user-profile-detector');
 let _researchEngine=null;
 function getResearch(){if(_researchEngine)return _researchEngine;try{_researchEngine=require('./fp-research-engine')}catch{_researchEngine=null}return _researchEngine}
 const REPOS=(process.env.REPOS||'dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee').split(',').map(s=>s.trim());
@@ -20,6 +22,7 @@ const REPORT_F=path.join(__dirname,'..','state','issue-manager-report.json');
 const TAG='<!-- tuya-issue-manager -->';
 const OWNER_USERS=new Set(['dlnraja','github-actions[bot]','dependabot[bot]','tuya-triage-bot']);
 const{fetchWithRetry}=require('./retry-helper');
+const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const RATE_SLEEP=parseInt(process.env.RATE_LIMIT_SLEEP||'4000');
 let appVer='?';try{appVer=JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')).version}catch{}
@@ -63,7 +66,7 @@ async function ghPatch(ep,body){
   try{const r=await fetchWithRetry(GH+ep,{method:'PATCH',headers:hdrs(TOKEN),body:JSON.stringify(body)},{retries:3,label:'ghPatch'});return r.ok}catch{return false}
 }
 
-function extractFP(t){return[...new Set((t||'').match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[])]}
+function extractFP(t){return _vFP(t);}
 function extractImages(t){const u=[];const re=/!\[[^\]]*\]\(([^)]+)\)/g;let m;while((m=re.exec(t||''))!==null)u.push(m[1]);return u}
 function extractLinks(t){return(t||'').match(/https?:\/\/[^\s)>"]+/g)||[]}
 function daysSince(d){return Math.floor((Date.now()-new Date(d).getTime())/86400000)}
@@ -88,7 +91,8 @@ async function generateResponse(issue,fpResults,classification,variants,bugs,ima
   const isUpstream=repo&&repo!==OWN;
   let prompt='You are Dylan, French dev of Universal Tuya Zigbee (v'+appVer+'). Write a short GitHub comment. Casual tone, say "I" naturally ("I added", "I\'ll check"). If device supported, say which driver. If not, ask for device interview. If bug, acknowledge and explain. If missing sensor readings (fertilizer, EC, VOC, formaldehyde), ask for app logs showing DP numbers. Max 200 words. NO bot/automated/AI/scanning/pipeline/workflow references, NO signature footer, NO version line at end, NO exact driver/FP counts. Just stop when done.';
   if(isUpstream)prompt+='\nCRITICAL: This issue is on the JohanBendz/com.tuya.zigbee upstream repo. You MUST clearly redirect the user to our actively maintained fork at [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee). Explain this fork supports way more devices than upstream. ALWAYS include the test install link: '+ctx.installUrl+' and community forum: '+ctx.forumUrl+'. Tell the user to install, then remove and re-pair their device. Report any issues on the forum thread or the dlnraja GitHub repo.';
-  prompt+='\\nContext: '+JSON.stringify(ctx);
+  let profileCtx='';try{const det=detectFromGitHub(issue.user?.login||'',issue.body||'');profileCtx=buildPromptContext(det)}catch{}
+  prompt+='\\n'+profileCtx+'Context: '+JSON.stringify(ctx);
   let text='Issue: '+issue.title+'\nBy: @'+(issue.user?.login||'?')+'\nBody: '+(issue.body||'').slice(0,2000)+'\nFP results: '+JSON.stringify(fpResults)+'\nClassification: '+JSON.stringify(classification)+'\nVariants from Z2M/ZHA/Blakadder: '+JSON.stringify(variants||[])+'\nAssociated bugs: '+JSON.stringify(bugs||[]);
   if(bugFindings&&bugFindings.length)text+='\nBug investigation findings: '+JSON.stringify(bugFindings.map(b=>({fp:b.fp,driver:b.driver,findings:b.findings,divisors:b.divisors})));
   if(researchResults&&researchResults.length)text+='\nFP Research results: '+JSON.stringify(researchResults.map(r=>({fp:r.fp,driver:r.driver,pid:r.pid,confidence:r.confidence,method:r.method,vendor:r.vendor,deviceType:r.deviceType})));
@@ -104,12 +108,14 @@ function isEmptyTemplate(issue){
   return(t.includes('[Device name]')&&t.includes('[manufacturerName]'))||(t.includes('[manufacturerName]')&&t.includes('[modelId]')&&!/_T[A-Z]/.test(issue.body||''));
 }
 
-// v5.11.27: Fast-path resolution for fully-supported device requests (saves AI budget)
+// v5.12.x: Fast-path with user profile awareness
 function buildFastResponse(issue,fpResults,repo,allSupported){
   const isUp=repo&&repo!==OWN;
+  let det;try{det=detectFromGitHub(issue.user?.login||'',issue.body||'')}catch{det={profile:'end-user'}}
   let msg=TAG+'\n';
   if(allSupported&&fpResults.length){
     const driverList=fpResults.map(f=>'`'+f.fp+'` → **'+f.drivers.join(', ')+'**').join(', ');
+    if(det.isReturning&&det.pending)msg+='Update: '+det.pending.note+'\n\n';
     msg+='Already supported in v'+appVer+': '+driverList+'.\n\n';
     msg+='Install the latest test version: https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.';
     if(isUp)msg+='\n\nForum: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352';
@@ -223,7 +229,7 @@ async function processIssue(repo,issue,state,report,extData){
   let imageCtx='';
   if(bodyImgs.length){
     console.log('    Images:',bodyImgs.length);
-    const ia=await analyzeImage(bodyImgs[0],'Extract Tuya fingerprints, device type, clusters from this image. Return JSON or NULL.');
+    const sa=await analyzeScreenshot(bodyImgs[0],'github issue device');const ia=sa?formatForAIContext(sa):null;
     if(ia){imageCtx=ia;console.log('    Image:',ia.substring(0,80))}
   }
   // Analyze external links
@@ -234,7 +240,7 @@ async function processIssue(repo,issue,state,report,extData){
   if(comments&&Array.isArray(comments))for(const c of comments){
     if((c.body||'').includes(TAG))continue;
     for(const fp of extractFP(c.body||''))if(!allFPs.includes(fp)){allFPs.push(fp);const d=findAllDrivers(fp);fpResults.push({fp,supported:d.length>0,drivers:d})}
-    if(!imageCtx){const ci=extractImages(c.body||'');if(ci.length){imageCtx=await analyzeImage(ci[0],'Extract Tuya fingerprints from image. JSON or NULL.')||''}}
+    if(!imageCtx){const ci=extractImages(c.body||'');if(ci.length){const sa2=await analyzeScreenshot(ci[0],'github comment');imageCtx=sa2?formatForAIContext(sa2):''}}
   }
 
   // Respond if not already responded
@@ -557,3 +563,4 @@ async function main(){
 }
 
 main().catch(e=>{console.error('Fatal:',e.message);process.exit(1)});
+

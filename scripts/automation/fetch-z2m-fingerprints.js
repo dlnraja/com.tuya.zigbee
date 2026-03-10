@@ -111,9 +111,15 @@ function inferDriver(mfr, pid) {
   if (/^SNZB-02/.test(p)) return 'climate_sensor';
   if (/^SNZB-03/.test(p)) return 'motion_sensor';
   if (/^SNZB-04/.test(p)) return 'contact_sensor';
-  if (/^SNZB-06/.test(p)) return 'plug_energy_monitor';
-  if (/^(S26R2ZB|S40|SA-0|Z111PL|ZBMINI|BASICZBR3)/.test(p)) return 'plug_energy_monitor';
+  if (/^SNZB-05/.test(p)) return 'water_leak_sensor';
+  if (/^SNZB-06/.test(p)) return 'presence_sensor_radar';
+  if (/^(ZBMINI|ZBMINIR|ZBMINIL|BASICZBR|S31ZB|S26R2ZB|01MINI|ZBM5)/.test(p)) return 'switch_1gang';
+  if (/^(S40ZB|S60ZB)/.test(p)) return 'plug_energy_monitor';
+  if (/^(ZBMINI-DIM|ZBMINID)/.test(p)) return 'dimmer_wall_1gang';
   if (/^ZBCurtain/.test(p)) return 'curtain_motor';
+  if (/^TRVZB/.test(p)) return 'radiator_valve';
+  if (/^SWV/.test(p)) return 'water_valve_smart';
+  if (/^MG1/.test(p)) return 'presence_sensor_radar';
 
   // Non-Tuya Danfoss
   if (/^(eTRV|TRV00|eT093)/.test(p)) return 'generic_diy';

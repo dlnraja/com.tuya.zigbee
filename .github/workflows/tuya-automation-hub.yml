@@ -33,6 +33,9 @@ concurrency:
   group: tuya-automation
   cancel-in-progress: true
 
+env:
+  NODE_VERSION: "22"
+
 defaults:
   run:
     shell: bash
@@ -54,7 +57,7 @@ jobs:
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: '22'
+          node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Run GitHub Scanner
         continue-on-error: true
@@ -91,7 +94,7 @@ jobs:
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: '22'
+          node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Run Enrichment Scanner
         continue-on-error: true
@@ -133,7 +136,7 @@ jobs:
       - run: git pull origin master || true
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: '22'
+          node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
       # forum-updater.js REMOVED — duplicate forum poster (post-forum-update.js in publish.yml is the sole source)
       - name: Forum Summary (skipped)

@@ -1,6 +1,7 @@
 'use strict';
 
 const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const { setupSonoffSensor, handleSonoffSensorSettings } = require('../../lib/mixins/SonoffSensorMixin');
 // v5.11.99: IASZoneManager removed — HybridSensorBase handles IAS enrollment+inversion
 // v5.12.0: FIX Lasse_K #802 — IEEEAddressManager (7 methods) for CIE write + warn hybrid devices
 
@@ -122,6 +123,8 @@ class ContactSensorDevice extends HybridSensorBase {
       9: { capability: null, setting: 'sensitivity' },
       // Report interval (some models)
       10: { capability: null, setting: 'report_interval' },
+      // v5.11.102: Luminance (lux) for _TZE200_pay2byax ZG-102ZL variant
+      101: { capability: 'measure_luminance', divisor: 1 },
     };
   }
 
@@ -161,8 +164,8 @@ class ContactSensorDevice extends HybridSensorBase {
     // These sensors report closed=alarm, open=no alarm (inverted from standard)
     // v5.5.908: Added _TZ3000_996rpfy6 (blutch32 forum #1011 - always shows "no")
     const invertedByDefault = [
-      // v5.11.26: RE-ADDED HOBEIAN — Lasse_K forum #1513/#1515 confirms ZG-102Z IAS alarm1 inverted
-      'HOBEIAN',
+      // v5.12.1: REMOVED HOBEIAN — Lasse_K #1592 'always ja': standard TS0203 IAS bit0=1=open maps directly to alarm_contact=true, no inversion needed
+      // 'HOBEIAN',  // DO NOT INVERT — causes stuck alarm_contact=true when closed
       '_TZ3000_26fmupbb',  // Known inverted
       '_TZ3000_n2egfsli',  // Known inverted
       '_TZ3000_oxslv1c9',  // Known inverted
@@ -185,7 +188,8 @@ class ContactSensorDevice extends HybridSensorBase {
     // Parent handles EVERYTHING: Tuya DP, ZCL, IAS Zone, battery
     await super.onNodeInit({ zclNode });
 
-    this.log('[CONTACT] v5.11.99 - DPs: 1,2,3,4,5,15,101 | ZCL: IAS,PWR,EF00');
+    await setupSonoffSensor(this, zclNode);
+    this.log('[CONTACT] v5.11.106 - DPs: 1,2,3,4,5,15,101 | ZCL: IAS,PWR,EF00 | SONOFF: tamper');
     this.log(`[CONTACT] ✅ Ready (debounce: ${this._debounceMs}ms, invert: ${this._invertContact}, problematic: ${this._isProblematicSensor})`);
   }
 

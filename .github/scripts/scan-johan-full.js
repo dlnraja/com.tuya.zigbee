@@ -2,6 +2,7 @@
 'use strict';
 const fs=require('fs'),path=require('path'),{execSync}=require('child_process');
 const{sleep}=require('./retry-helper');
+const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
 const ROOT=path.join(__dirname,'..','..');
 const REPO='JohanBendz/com.tuya.zigbee';
 const OWN='dlnraja/com.tuya.zigbee';
@@ -22,7 +23,7 @@ function loadOurFPs(){
   return fps;
 }
 
-function extractFP(text){return[...new Set((text||'').match(/_T[A-Z][A-Za-z0-9]{2,5}_[a-z0-9]{4,16}/g)||[])];}
+function extractFP(text){return _vFP(text);}
 function extractPID(text){return[...new Set((text||'').match(/\bTS[0-9]{3,4}[A-Z]?\b/g)||[])];}
 
 function gh(cmd){
@@ -129,6 +130,83 @@ async function main(){
     }catch{}
   }
 
+  // === SCAN BRANCHES FOR CODE FPs (v5.11.108) ===
+  console.log("\n=== Scanning Johan branches for code fingerprints ===");
+  report.branches={scanned:[],codeFPs:[]};
+  try{
+    const brRaw=gh('api "/repos/'+REPO+'/branches?per_page=30"');
+    const brs=brRaw?JSON.parse(brRaw):[];
+    for(const br of brs.slice(0,10)){
+      await sleep(600);
+      try{
+        const dRaw=gh('api "/repos/'+REPO+'/contents/drivers?ref='+br.name+'"');
+        if(!dRaw)continue;
+        const dirs=JSON.parse(dRaw).filter(d=>d.type==="dir");
+        report.branches.scanned.push({name:br.name,drivers:dirs.length});
+        for(const dir of dirs){
+          await sleep(300);
+          try{
+            const cRaw=gh('api "/repos/'+REPO+'/contents/drivers/'+dir.name+'/driver.compose.json?ref='+br.name+'" --jq .content');
+            if(!cRaw)continue;
+            const dec=Buffer.from(cRaw.trim(),"base64").toString("utf8");
+            const dj=JSON.parse(dec);
+            const mfrs=(dj.zigbee?.manufacturerName||[]).filter(m=>!ourFPs.has(m)&&m.startsWith("_T"));
+            if(mfrs.length){
+              report.branches.codeFPs.push({branch:br.name,driver:dir.name,fps:mfrs});
+              mfrs.forEach(fp=>{report.allMentionedFPs.push({fp,source:"branch:"+br.name+"/"+dir.name,isNew:true})});
+            }
+          }catch{}
+        }
+      }catch{}
+    }
+    console.log("  Branches scanned: "+report.branches.scanned.length);
+    console.log("  New FPs from code: "+report.branches.codeFPs.reduce((a,b)=>a+b.fps.length,0));
+  }catch(e){console.log("  Branch scan error: "+e.message);}
+
+  // === SCAN DEVICE.JS CODE PATTERNS (v5.11.109) ===
+  console.log("\n=== Scanning Johan device.js code patterns ===");
+  report.codePatterns={newDrivers:[],dpPatterns:[],apiChanges:[]};
+  try{
+    const sdkBranch="SDK3";
+    await sleep(600);
+    const dRaw2=gh('api "/repos/'+REPO+'/contents/drivers?ref='+sdkBranch+'"');
+    if(dRaw2){
+      const dirs2=JSON.parse(dRaw2).filter(d=>d.type==="dir");
+      // Check for new drivers not in our codebase
+      const ourDrivers=new Set(fs.readdirSync(path.join(ROOT,"drivers")));
+      for(const dir of dirs2){
+        if(!ourDrivers.has(dir.name)){
+          report.codePatterns.newDrivers.push(dir.name);
+        }
+      }
+      // Sample device.js files for DP patterns (max 15 to stay within rate limits)
+      const sample=dirs2.slice(0,15);
+      for(const dir of sample){
+        await sleep(400);
+        try{
+          const djRaw=gh('api "/repos/'+REPO+'/contents/drivers/'+dir.name+'/device.js?ref='+sdkBranch+'" --jq .content');
+          if(!djRaw)continue;
+          const src=Buffer.from(djRaw.trim(),"base64").toString("utf8");
+          // Detect DP usage patterns
+          const dpMatches=src.match(/writeBool|writeData32|writeEnum|writeRaw|writeString/g)||[];
+          const tuyaCluster=src.includes("TuyaSpecificCluster")||src.includes("clusters.tuya");
+          const readAttrs=(src.match(/readAttributes\s*\(/g)||[]).length;
+          const arrayStyle=(src.match(/readAttributes\s*\(\s*\[/g)||[]).length;
+          if(dpMatches.length||tuyaCluster){
+            report.codePatterns.dpPatterns.push({driver:dir.name,dpMethods:[...new Set(dpMatches)],tuyaCluster,readAttrsCalls:readAttrs,arrayStyleCalls:arrayStyle});
+          }
+          // Detect readAttributes API migration (array vs varargs)
+          if(readAttrs>0&&arrayStyle<readAttrs){
+            report.codePatterns.apiChanges.push({driver:dir.name,total:readAttrs,arrayStyle,legacy:readAttrs-arrayStyle});
+          }
+        }catch{}
+      }
+    }
+    console.log("  New drivers not in our codebase: "+report.codePatterns.newDrivers.length);
+    console.log("  Drivers with DP patterns: "+report.codePatterns.dpPatterns.length);
+    console.log("  Drivers with legacy readAttributes: "+report.codePatterns.apiChanges.length);
+  }catch(e){console.log("  Code pattern scan error: "+e.message);}
+
   // === DEDUPLICATE AND SUMMARIZE ===
   const allNew=new Map();
   [...report.issues.newFPs,...report.prs.newFPs].forEach(item=>{
@@ -148,6 +226,11 @@ async function main(){
     newFPsFromPRs:report.prs.newFPs.length,
     totalUniqueNewFPs:allNew.size,
     totalContributors:Object.keys(report.prs.contributors).length,
+    branchesScanned:(report.branches?.scanned||[]).length,
+    newDriversInJohan:(report.codePatterns?.newDrivers||[]).length,
+    driversWithDPPatterns:(report.codePatterns?.dpPatterns||[]).length,
+    legacyReadAttributes:(report.codePatterns?.apiChanges||[]).length,
+    newFPsFromBranches:(report.branches?.codeFPs||[]).reduce((a,b)=>a+b.fps.length,0),
     categories:report.issues.categories
   };
 
@@ -158,7 +241,10 @@ async function main(){
   console.log('========================================');
   console.log('Issues: '+allIssues.length+' ('+report.issues.withFPs+' with FPs)');
   console.log('PRs: '+allPRs.length+' ('+report.prs.withFPs+' with FPs)');
+  console.log('Branches: '+(report.branches?.scanned||[]).length);
   console.log('New FPs not in our DB: '+allNew.size);
+  console.log('New Johan drivers: '+(report.codePatterns?.newDrivers||[]).length);
+  if((report.codePatterns?.newDrivers||[]).length) console.log('  -> '+report.codePatterns.newDrivers.join(', '));
   console.log('Contributors: '+Object.keys(report.prs.contributors).length);
   console.log('Categories:', JSON.stringify(report.issues.categories));
   console.log('\nTop new fingerprints:');

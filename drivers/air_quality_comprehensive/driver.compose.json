@@ -44,10 +44,9 @@
       "_TZ2000_hjsgdkfl",
       "_TZ3000_0ht8dnxj",
       "_TZ3000_8gs8h2e4",
+      "_TZE200_8ygsuhe1",
       "_TZE200_dwcarsat",
       "_TZE200_nnrfa68v",
-      "_TZE200_ryfmq5rl",
-      "_TZE200_yvx5lh6k",
       "_TZE204_nnrfa68v",
       "_TZE284_8b9zpaav",
       "_TZE284_it9utkro",
@@ -307,6 +306,32 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
+    },
+    {
+      "id": "sensor_precision",
+      "type": "dropdown",
+      "label": {
+        "en": "Decimal Precision",
+        "fr": "Précision"
+      },
+      "value": "1",
+      "hint": {
+        "en": "Decimals for temperature/humidity values"
+      },
+      "values": [
+        {
+          "id": "1",
+          "label": {
+            "en": "1 decimal (20.5°C)"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "2 decimals (20.53°C)"
+          }
+        }
+      ]
     }
   ],
   "images": {

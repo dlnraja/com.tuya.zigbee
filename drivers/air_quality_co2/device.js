@@ -58,7 +58,15 @@ class AirQualityCO2Device extends HybridSensorBase {
     });
     this._batteryInference = new BatteryInference(this);
 
-    this.log('[CO2] v5.5.317 INTELLIGENT INFERENCE - DPs: 1,2,14,15,18,19,21-23');
+    // v5.12.2: Ensure VOC/HCHO/PM2.5 capabilities exist for devices that report them
+    for (const cap of ['measure_pm25', 'measure_voc', 'measure_formaldehyde']) {
+      if (!this.hasCapability(cap)) {
+        await this.addCapability(cap).catch(() => {});
+        this.log('[CO2] Added ' + cap);
+      }
+    }
+
+    this.log('[CO2] v5.5.317 INTELLIGENT INFERENCE - DPs: 1,2,14,15,18,19,20-22');
 
     // Setup ZCL temp/humidity (specific to air quality sensors)
     await this._setupAirQualityZCL(zclNode);
@@ -101,14 +109,15 @@ class AirQualityCO2Device extends HybridSensorBase {
     try {
       const temp = ep1.clusters?.msTemperatureMeasurement;
       if (temp?.on) {
-        temp.on('attr.measuredValue', (v) => this.setCapabilityValue('measure_temperature', parseFloat(v) / 100).catch(() => { }));
+        temp.on('attr.measuredValue', (v) => { const t=parseFloat(v)/100; if(t>=-40&&t<=80) this.setCapabilityValue('measure_temperature',t).catch(()=>{}); else this.log('[CO2] ZCL temp rejected:',t); });
       }
       const hum = ep1.clusters?.msRelativeHumidity;
       if (hum?.on) {
-        hum.on('attr.measuredValue', (v) => this.setCapabilityValue('measure_humidity', parseFloat(v) / 100).catch(() => { }));
+        hum.on('attr.measuredValue', (v) => { const h=parseFloat(v)/100; if(h>=0&&h<=100) this.setCapabilityValue('measure_humidity',h).catch(()=>{}); else this.log('[CO2] ZCL hum rejected:',h); });
       }
     } catch (e) { /* ignore */ }
   }
 }
 
 module.exports = AirQualityCO2Device;
+

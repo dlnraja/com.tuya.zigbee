@@ -46,7 +46,6 @@
       "_TZ3000_ysdv91bk",
       "_TZ3000_hafsqare",
       "_TZ3000_e98krvvk",
-      "_TZ3000_iedbgyxt",
       "_TZ3000_xk5udnd6",
       "_TZ3000_bseed",
       "_TZ3000_z1uezkpi"
@@ -140,13 +139,39 @@
         {
           "id": "power_on_behavior",
           "type": "dropdown",
-          "label": { "en": "Power-On Behavior", "nl": "Gedrag bij inschakelen", "de": "Einschaltverhalten", "fr": "Comportement à la mise sous tension" },
-          "hint": { "en": "What happens when power is restored after an outage", "nl": "Wat er gebeurt als de stroom terugkeert na een stroomstoring" },
+          "label": {
+            "en": "Power-On Behavior",
+            "nl": "Gedrag bij inschakelen",
+            "de": "Einschaltverhalten",
+            "fr": "Comportement à la mise sous tension"
+          },
+          "hint": {
+            "en": "What happens when power is restored after an outage",
+            "nl": "Wat er gebeurt als de stroom terugkeert na een stroomstoring"
+          },
           "value": "memory",
           "values": [
-            { "id": "off", "label": { "en": "Always Off", "nl": "Altijd Uit" } },
-            { "id": "on", "label": { "en": "Always On", "nl": "Altijd Aan" } },
-            { "id": "memory", "label": { "en": "Last State", "nl": "Laatste status" } }
+            {
+              "id": "off",
+              "label": {
+                "en": "Always Off",
+                "nl": "Altijd Uit"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "Always On",
+                "nl": "Altijd Aan"
+              }
+            },
+            {
+              "id": "memory",
+              "label": {
+                "en": "Last State",
+                "nl": "Laatste status"
+              }
+            }
           ]
         }
       ]
@@ -161,13 +186,39 @@
         {
           "id": "switch_mode",
           "type": "dropdown",
-          "label": { "en": "External Switch Type", "nl": "Extern schakelaartype", "de": "Externer Schaltertyp", "fr": "Type d'interrupteur externe" },
-          "hint": { "en": "Type of external switch connected to this relay module", "nl": "Type externe schakelaar aangesloten op deze relaismodule" },
+          "label": {
+            "en": "External Switch Type",
+            "nl": "Extern schakelaartype",
+            "de": "Externer Schaltertyp",
+            "fr": "Type d'interrupteur externe"
+          },
+          "hint": {
+            "en": "Type of external switch connected to this relay module",
+            "nl": "Type externe schakelaar aangesloten op deze relaismodule"
+          },
           "value": "toggle",
           "values": [
-            { "id": "toggle", "label": { "en": "Toggle", "nl": "Tuimelschakelaar" } },
-            { "id": "state", "label": { "en": "State (Rocker)", "nl": "Status (Wipschakelaar)" } },
-            { "id": "momentary", "label": { "en": "Momentary (Push Button)", "nl": "Pulsdrukknop" } }
+            {
+              "id": "toggle",
+              "label": {
+                "en": "Toggle",
+                "nl": "Tuimelschakelaar"
+              }
+            },
+            {
+              "id": "state",
+              "label": {
+                "en": "State (Rocker)",
+                "nl": "Status (Wipschakelaar)"
+              }
+            },
+            {
+              "id": "momentary",
+              "label": {
+                "en": "Momentary (Push Button)",
+                "nl": "Pulsdrukknop"
+              }
+            }
           ]
         }
       ]

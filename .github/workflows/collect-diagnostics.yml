@@ -12,6 +12,9 @@ concurrency:
   group: collect-diagnostics
   cancel-in-progress: true
 
+env:
+  NODE_VERSION: "22"
+
 defaults:
   run:
     shell: bash
@@ -26,7 +29,7 @@ jobs:
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          node-version: '22'
+          node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
 
       - name: Collect diagnostics from all sources
@@ -45,6 +48,17 @@ jobs:
           git diff --staged --quiet || git commit -m "Diagnostics update $(date -u +%Y-%m-%d) [skip ci]"
           git pull --rebase origin master || true
           git push || true
+
+      - name: "Pattern Detector (analyze collected diagnostics)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node .github/scripts/pattern-detector.js
+
+      - name: "Resolution Summary"
+        if: always()
+        continue-on-error: true
+        run: node .github/scripts/resolution-summary.js
 
       - name: Upload diagnostics artifact
         if: always()

@@ -9,6 +9,7 @@
 const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
 const eng=require('./fp-research-engine');
+const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const STATE=path.join(__dirname,'..','state');
 const loadJ=f=>{try{return JSON.parse(fs.readFileSync(f,'utf8'))}catch{return null}};
@@ -30,11 +31,11 @@ async function ghGet(ep){
 }
 
 // === Extract FPs + PIDs from text ===
-const FP_RE=/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g;
+// FP_RE replaced by fp-validator
 const PID_RE=/\bTS[0-9]{4}[A-Z]?\b/g;
 function extractFromText(text){
   if(!text)return{fps:[],pids:[]};
-  const fps=[...new Set((text.match(FP_RE)||[]).filter(f=>eng.isValidFP(f)))];
+  const fps=[...new Set((_vFP(text)).filter(f=>eng.isValidFP(f)))];
   const pids=[...new Set(text.match(PID_RE)||[])];
   return{fps,pids};
 }

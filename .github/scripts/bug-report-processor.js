@@ -4,6 +4,7 @@ const fs=require('fs'),path=require('path');
 const{callAI}=require('./ai-helper');
 const{loadFingerprints,findAllDrivers}=require('./load-fingerprints');
 const{fetchWithRetry}=require('./retry-helper');
+const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
 const ROOT=path.join(__dirname,'..','..');
 const DDIR=path.join(ROOT,'drivers');
 const GH='https://api.github.com';
@@ -17,7 +18,7 @@ async function ghGet(ep){
   return r.ok?r.json():null;
 }
 
-function extractFP(t){return[...new Set((t||'').match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[])];}
+function extractFP(t){return _vFP(t);}
 function extractPID(t){return[...new Set((t||'').match(/\bTS[0-9]{4}[A-Z]?\b/g)||[])];}
 
 async function main(){

@@ -112,7 +112,7 @@ jobs:
               if(!z||!z.manufacturerName||!z.productId)continue;
               for(const mfr of z.manufacturerName){
                 for(const pid of z.productId){
-                  const key=mfr+'|'+pid;
+                  const key=mfr.toLowerCase()+'|'+pid;
                   if(!map.has(key))map.set(key,[]);
                   map.get(key).push(d);
                 }

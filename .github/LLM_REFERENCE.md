@@ -32,6 +32,13 @@
 - Same mfr CAN be in multiple drivers (mfr+productId = match)
 - Never remove mfr from driver just because it's in another
 
+## SONOFF/eWeLink Mixins (v5.11.107)
+- Cluster 0xFC11, manufacturer code 0x1286
+- `SonoffEwelinkMixin.js` → switch features (LED, turbo, detach, trigger)
+- `SonoffSensorMixin.js` → tamper, temp/hum calibration
+- `SonoffEnergyMixin.js` → current/voltage/power (attrs 0x7004-0x7006)
+- Safe PIDs: SNZB-*, ZBMINI*, S31ZB, S[46]0ZBT*, BASICZBR*, TRVZB, SWV-*
+
 ## Immediate Data (v5.11.99)
 - dataQuery cmd 0x03 with seq on init
 - Retry: 2s→10s→30s→60s

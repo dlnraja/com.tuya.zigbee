@@ -7,6 +7,7 @@
  * - Blakadder new devices DB
  * - deCONZ device DB
  * - Hubitat community drivers
+ * - HOMEd Tuya device library (u236, Russian Zigbee community)
  * - For each device: search for ALL variants, associated bugs
  * - Cross-references everything with our fingerprint DB
  */
@@ -14,6 +15,8 @@ const fs=require('fs'),path=require('path');
 const{callAI}=require('./ai-helper');
 const{loadFingerprints,findAllDrivers,extractMfrFromText}=require('./load-fingerprints');
 const{fetchWithRetry}=require('./retry-helper');
+const{scanHOMEd}=require('./scan-homed');
+const{extractFP:_extractFPValid,extractFPWithBrands:_extractFPBrands,extractPID:_extractPIDValid}=require('./fp-validator');
 
 const GH='https://api.github.com';
 const TOKEN=process.env.GH_PAT||process.env.GITHUB_TOKEN;
@@ -21,8 +24,8 @@ const STATE_F=path.join(__dirname,'..','state','external-sources-state.json');
 const REPORT_F=path.join(__dirname,'..','state','external-sources-report.json');
 const DATA_F=path.join(__dirname,'..','state','external-sources-data.json');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-const extractFP=t=>[...new Set((t||'').match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g)||[])];
-const extractPID=t=>[...new Set((t||'').match(/\bTS[0-9A-Fa-f]{3,5}\b/g||[]).map(m=>m.toUpperCase()))];
+const extractFP=_extractFPBrands;
+const extractPID=_extractPIDValid;
 const extractDPs=t=>[...new Set((t||'').match(/(?:dp|DP|datapoint|dataPoints)[:\s=]*(\d{1,3})/gi||[]).map(m=>parseInt(m.match(/\d+/)?.[0])).filter(n=>n>0&&n<256))];
 const extractCaps=t=>[...new Set((t||'').match(/e\.(binary|numeric|enum|text)\(['"]([^'"]+)/g||[]).map(m=>{const p=m.match(/\(['"]([^'"]+)/);return p?p[1]:null}).filter(Boolean))];
 const extractBugSignals=t=>/bug|fix|wrong|incorrect|broken|not.work|invert|reverse|swap/i.test(t||'');
@@ -47,6 +50,7 @@ async function scanZ2MConverters(){
   const urls=[
     'https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/tuya.ts',
     'https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/tuya.js',
+    'https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/sonoff.ts',
   ];
   for(const url of urls){
     const src=await fetchText(url);
@@ -73,8 +77,7 @@ async function scanZ2MConverters(){
       const pids=extractPID(ctx);
       devices.push({fp,pid:pids[0]||null,source:'z2m-converter',dps,caps});
     }
-    console.log('  Parsed',devices.length,'device entries,',devices.filter(d=>d.dps?.length).length,'with DPs');
-    break;
+    console.log('  Parsed',devices.length,'device entries from',url.split('/').pop(),',',devices.filter(d=>d.dps?.length).length,'with DPs');
   }
   return devices;
 }
@@ -83,7 +86,7 @@ async function scanZ2MConverters(){
 async function scanZ2MIssuesPRs(){
   console.log('== Z2M Issues & PRs ==');
   const results=[];
-  const queries=['repo:Koenkk/zigbee2mqtt+_TZE+state:open','repo:Koenkk/zigbee2mqtt+tuya+state:open','repo:Koenkk/zigbee-herdsman-converters+tuya+state:open','repo:Koenkk/zigbee-herdsman-converters+_TZE+state:open'];
+  const queries=['repo:Koenkk/zigbee2mqtt+_TZE+state:open','repo:Koenkk/zigbee2mqtt+tuya+state:open','repo:Koenkk/zigbee-herdsman-converters+tuya+state:open','repo:Koenkk/zigbee-herdsman-converters+_TZE+state:open','repo:Koenkk/zigbee-herdsman-converters+SNZB+state:open','repo:Koenkk/zigbee2mqtt+sonoff+state:open'];
   for(const q of queries){
     const d=await fetchJSON(GH+'/search/issues?q='+encodeURIComponent(q)+'&per_page=30&sort=created&order=desc',hdrs(TOKEN));
     if(!d||!d.items)continue;
@@ -116,7 +119,7 @@ async function scanZHAQuirks(){
   // Also scan individual quirk files — extract DPs, clusters, code
   const tree=await fetchJSON(GH+'/repos/zigpy/zha-device-handlers/git/trees/dev?recursive=1',hdrs(TOKEN));
   if(tree?.tree){
-    const tuyaFiles=tree.tree.filter(f=>f.path.startsWith('zhaquirks/tuya/')&&f.path.endsWith('.py')).slice(0,35);
+    const tuyaFiles=tree.tree.filter(f=>(f.path.startsWith('zhaquirks/tuya/')||f.path.startsWith('zhaquirks/sonoff/'))&&f.path.endsWith('.py')).slice(0,50);
     for(const f of tuyaFiles){
       const content=await fetchText('https://raw.githubusercontent.com/zigpy/zha-device-handlers/dev/'+f.path);
       if(!content)continue;
@@ -158,7 +161,7 @@ async function scanBlakadder(){
   if(!data||!Array.isArray(data))return[];
   const devices=[];
   for(const dev of data){
-    if(!dev.manufacturerName||!dev.manufacturerName.startsWith('_T'))continue;
+    if(!dev.manufacturerName||(!dev.manufacturerName.startsWith('_T')&&!/^(SONOFF|eWeLink|EWELINK)$/i.test(dev.manufacturerName)))continue;
     devices.push({fp:dev.manufacturerName,pid:dev.zigbeeModel||null,model:dev.model,vendor:dev.vendor,zigbeeModel:dev.zigbeeModel,
       category:dev.category,image:dev.image,source:'blakadder'});
   }
@@ -172,7 +175,7 @@ async function scanDeCONZ(){
   const devices=[];
   const tree=await fetchJSON(GH+'/repos/dresden-elektronik/deconz-rest-plugin/git/trees/master?recursive=1',hdrs(TOKEN));
   if(!tree?.tree)return devices;
-  const jsonFiles=tree.tree.filter(f=>f.path.startsWith('devices/tuya')&&f.path.endsWith('.json')).slice(0,50);
+  const jsonFiles=tree.tree.filter(f=>(f.path.startsWith('devices/tuya')||f.path.startsWith('devices/sonoff')||f.path.startsWith('devices/ewelink'))&&f.path.endsWith('.json')).slice(0,80);
   for(const f of jsonFiles){
     const content=await fetchText('https://raw.githubusercontent.com/dresden-elektronik/deconz-rest-plugin/master/'+f.path);
     if(!content)continue;
@@ -313,6 +316,7 @@ async function main(){
   const deconz=await scanDeCONZ();allDevices.push(...deconz);await sleep(1000);
   const hubitat=await scanHubitat();allDevices.push(...hubitat);await sleep(1000);
   const smartthings=await scanSmartThings();allDevices.push(...smartthings);await sleep(1000);
+  const homed=await scanHOMEd();allDevices.push(...homed);await sleep(1000);
   const haForum=await scanHAForum();allDevices.push(...haForum);await sleep(1000);
   const local=scanLocalDrivers();allDevices.push(...local);
 
@@ -365,17 +369,17 @@ async function main(){
   fs.writeFileSync(FUNC_F,JSON.stringify({ts:data.timestamp,total:uniqueFPs.length,withDPs:withDPs.length,gaps:gapDevs.length,
     profiles:uniqueFPs.filter(d=>d.dps.length||d.bugs.length).slice(0,200).map(d=>({fp:d.fp,pid:d.pid,dps:d.dps,caps:d.caps.slice(0,10),src:d.sources,bugs:d.bugs.length,drv:d.localDriver,lDPs:d.localDPs})),
     aiPlan:ai?.text},null,2)+'\n');
-  const sc={z2mConv:z2mConv.length,z2mIss:z2mIssues.length,zha:zhaQuirks.length,zhaIss:zhaIssues.length,blak:blakadder.length,dec:deconz.length,hub:hubitat.length,st:smartthings.length,ha:haForum.length,loc:local.length};
+  const sc={z2mConv:z2mConv.length,z2mIss:z2mIssues.length,zha:zhaQuirks.length,zhaIss:zhaIssues.length,blak:blakadder.length,dec:deconz.length,hub:hubitat.length,st:smartthings.length,homed:homed.length,ha:haForum.length,loc:local.length};
   const report={timestamp:data.timestamp,totalExternal:uniqueFPs.length,supported:supported.length,unsupported:unsupported.length,
     withDPs:withDPs.length,gapsInSupported:gapDevs.length,variantCount:variants.size,bugCount:bugs.length,sources:sc,
     topUnsupported:unsupported.slice(0,30).map(d=>({fp:d.fp,pid:d.pid,dps:d.dps,sources:d.sources})),aiPlan:ai?.text};
   fs.writeFileSync(REPORT_F,JSON.stringify(report,null,2)+'\n');
   saveState({lastRun:new Date().toISOString(),knownDevices:Object.fromEntries(uniqueFPs.slice(0,200).map(d=>[d.fp,d.sources[0]]))});
 
-  console.log('\n=== Done (10 sources) ===');
+  console.log('\n=== Done (11 sources) ===');
   console.log('With DPs:',withDPs.length,'| Gaps in supported:',gapDevs.length);
   if(process.env.GITHUB_STEP_SUMMARY){
-    let md='## 10-Source Device Functionality Scanner\n| Source | FPs | With DPs |\n|---|---|---|\n';
+    let md='## 11-Source Device Functionality Scanner\n| Source | FPs | With DPs |\n|---|---|---|\n';
     md+='| Z2M Converters | '+z2mConv.length+' | '+z2mConv.filter(d=>d.dps?.length).length+' |\n';
     md+='| Z2M Issues/PRs | '+z2mIssues.length+' | '+z2mIssues.filter(d=>d.dps?.length).length+' |\n';
     md+='| ZHA Quirks | '+zhaQuirks.length+' | '+zhaQuirks.filter(d=>d.dps?.length).length+' |\n';
@@ -383,6 +387,7 @@ async function main(){
     md+='| Blakadder | '+blakadder.length+' | — |\n| deCONZ | '+deconz.length+' | — |\n';
     md+='| Hubitat | '+hubitat.length+' | '+hubitat.filter(d=>d.dps?.length).length+' |\n';
     md+='| SmartThings | '+smartthings.length+' | '+smartthings.filter(d=>d.dps?.length).length+' |\n';
+    md+='| HOMEd | '+homed.length+' | '+homed.filter(d=>d.dps?.length).length+' |\n';
     md+='| HA Forum | '+haForum.length+' | '+haForum.filter(d=>d.dps?.length).length+' |\n';
     md+='| Local Drivers | '+local.length+' | '+local.filter(d=>d.dps?.length).length+' |\n';
     md+='| **Total unique** | **'+uniqueFPs.length+'** | **'+withDPs.length+'** |\n';
