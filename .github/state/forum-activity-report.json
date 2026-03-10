@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-10T03:37:04.054Z",
+  "timestamp": "2026-03-10T15:10:43.110Z",
   "username": "dlnraja",
   "topicCount": 1,
   "activityCount": 300,
@@ -7,8 +7,9 @@
   "refCount": 64,
   "bookmarkCount": 0,
   "fullThreads": 30,
-  "totalFPs": 716,
+  "totalFPs": 717,
   "unsupportedFPs": [
+    "_TZ3000_22ugzkme",
     "_TZ3000_zgyzgd",
     "_TZE204_ztqnh5c",
     "_TZ3000_ztc6ggyl",
@@ -29,5 +30,5 @@
     "_TZ3000_amdymr7",
     "_TZ3000_ksw8qtm"
   ],
-  "aiAnalysis": "**Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer**\n\n1. **Key User Requests:**\n   - Users are seeking support for specific devices, particularly soil humidity sensors and the SNZB-03 model.\n   - There is a desire for clearer installation instructions and updates on app stability and compatibility.\n\n2. **Devices People Need:**\n   - Users have mentioned a need for support with various unsupported devices, including:\n     - Soil Humidity Sensors\n     - SNZB-03\n     - Several models with identifiers like _TZ3000 and _TZE200, indicating a broad range of Zigbee devices that are currently not functioning with the app.\n\n3. **Issues to Fix:**\n   - A significant number of devices (listed under unsupportedFPs) are not compatible with the app, which is a major concern for users.\n   - Users have expressed frustration over potential regressions or lack of updates, suggesting that some may revert to the original project if issues persist.\n\n4. **Action Items:**\n   - Prioritize adding support for the unsupported devices mentioned, particularly the soil humidity sensors and SNZB-03.\n   - Improve communication regarding installation processes and app updates to enhance user experience.\n   - Monitor user feedback closely to identify any recurring issues or requests that may need immediate attention.\n   - Consider engaging with users who have expressed concerns about app stability to gather more detailed feedback for future updates. \n\nThis summary highlights actionable insights that can help improve user satisfaction and app functionality."
+  "aiAnalysis": "**Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer**\n\n1. **Key User Requests:**\n   - Users are actively seeking support for adding various devices, particularly the 1-gang switch (_TZ3000_22ugzkme) and soil humidity sensors.\n   - There is a demand for improved compatibility and functionality of the app, with users expressing concerns about reverting to the original project if issues persist.\n\n2. **Devices People Need:**\n   - Specific devices mentioned include:\n     - 1-gang switch (_TZ3000_22ugzkme)\n     - Soil Humidity Sensors\n     - SNZB-03 sensor\n   - Users are also requesting support for multiple unsupported device IDs listed in the forum.\n\n3. **Issues to Fix:**\n   - A significant number of unsupported device IDs (e.g., _TZ3000_zgyzgd, _TZE204_ztqnh5c) indicate compatibility issues that need addressing.\n   - Users have expressed frustration over the app's performance and reliability, suggesting a need for bug fixes and updates.\n\n4. **Action Items:**\n   - Prioritize adding support for the most requested devices, particularly the 1-gang switch and soil humidity sensors.\n   - Investigate and resolve compatibility issues with the unsupported device IDs listed.\n   - Consider user feedback on app performance to implement necessary improvements and updates.\n   - Engage with the community to keep them informed about progress and gather further insights on their needs. \n\nBy focusing on these actionable insights, the maintainer can enhance user satisfaction and app functionality."
 }
