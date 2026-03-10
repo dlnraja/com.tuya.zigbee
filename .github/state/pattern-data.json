@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-07T12:53:48.513Z",
+  "timestamp": "2026-03-10T19:22:14.127Z",
   "suggestions": [
     {
       "pattern": "False Battery Alert / Missing Battery",
@@ -24,7 +24,7 @@
           4
         ],
         [
-          "lumi",
+          "example",
           3
         ],
         [
@@ -32,19 +32,19 @@
           3
         ],
         [
-          "example",
-          3
-        ],
-        [
           "generic",
           3
         ],
         [
-          "_TZ3000_b4awzgct",
+          "lumi",
+          3
+        ],
+        [
+          "_TZ3000_o4mkahkc",
           2
         ],
         [
-          "TS0041",
+          "_TZ3000_o4mkahk",
           2
         ]
       ],
@@ -64,15 +64,15 @@
           4
         ],
         [
-          "TS0601",
-          3
-        ],
-        [
           "example",
           3
         ],
         [
           "generic",
+          3
+        ],
+        [
+          "TS0601",
           3
         ],
         [
@@ -92,11 +92,11 @@
           2
         ],
         [
-          "_TZE204_yvx5lh6k",
+          "_TZE204_ahwvlkpy",
           1
         ],
         [
-          "_TZ3000_gwkzibhs",
+          "tube",
           1
         ]
       ],
@@ -136,19 +136,19 @@
           2
         ],
         [
+          "dlnraja",
+          1
+        ],
+        [
+          "example",
+          1
+        ],
+        [
           "_TZE200_3p5ydos3",
           1
         ],
         [
           "_TZE204_n9ctkb6j",
-          1
-        ],
-        [
-          "_TZ3000_gwkzibhs",
-          1
-        ],
-        [
-          "_TZ3000_g",
           1
         ]
       ],
@@ -210,12 +210,20 @@
     {
       "pattern": "Device Not Responding",
       "id": "no_response",
-      "count": 3,
+      "count": 4,
       "priority": "medium",
       "topFPs": [
         [
           "vision",
           3
+        ],
+        [
+          "test",
+          2
+        ],
+        [
+          "TS0601",
+          2
         ],
         [
           "_TZ3210_w0qqde0g",
@@ -230,23 +238,19 @@
           1
         ],
         [
-          "test",
-          1
-        ],
-        [
           "TS0203",
           1
         ],
         [
-          "TS0601",
+          "HOBEIAN",
           1
         ],
         [
-          "_TZ3000_wkai4ga5",
+          "ZG-204Z",
           1
         ],
         [
-          "TS0044",
+          "ZG-204ZL",
           1
         ]
       ],
@@ -390,7 +394,7 @@
     "pairing": 7,
     "unknown": 5,
     "flow_dup": 0,
-    "no_response": 3,
+    "no_response": 4,
     "voltage_wrong": 1,
     "no_temperature": 0,
     "ring_value": 5,
