@@ -53,7 +53,6 @@ jobs:
           git diff --staged --quiet || git commit -m "Diagnostics update $(date -u +%Y-%m-%d) [skip ci]"
           git pull --rebase origin master || true
           git push || true
-          fi
       - name: Homey Device Diagnostics
         if: always()
         continue-on-error: true
