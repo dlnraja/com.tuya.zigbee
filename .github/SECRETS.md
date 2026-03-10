@@ -15,11 +15,11 @@
 | GITHUB_TOKEN | GitHub (auto) | Current repo only. Cannot access other repos (#46566) |
 | GOOGLE_API_KEY | Google Gemini | AI analysis, vision (images), code gen, translation, long context |
 | OPENAI_API_KEY | OpenAI | GPT-4o fallback, embeddings, PR review |
-| GMAIL_CLIENT_ID | Gmail OAuth | Read diagnostic emails (expires 7d in Testing mode) |
-| GMAIL_CLIENT_SECRET | Gmail OAuth | Read diagnostic emails (expires 7d in Testing mode) |
-| GMAIL_REFRESH_TOKEN | Gmail OAuth | Auto-renewed daily by keepalive (but expires 7d in Testing) |
-| GMAIL_EMAIL | Gmail IMAP | Gmail address for IMAP fallback (permanent, never expires) |
-| GMAIL_APP_PASSWORD | Gmail IMAP | App Password for IMAP fallback (permanent, never expires) |
+| GMAIL_CLIENT_ID | Gmail OAuth | **LEGACY** — removed v5.12.6, use IMAP instead |
+| GMAIL_CLIENT_SECRET | Gmail OAuth | **LEGACY** — removed v5.12.6, use IMAP instead |
+| GMAIL_REFRESH_TOKEN | Gmail OAuth | **LEGACY** — removed v5.12.6, use IMAP instead |
+| GMAIL_EMAIL | Gmail IMAP | **REQUIRED** — Gmail address for IMAP (permanent, never expires) |
+| GMAIL_APP_PASSWORD | Gmail IMAP | **REQUIRED** — App Password for IMAP (permanent, never expires) |
 | DISCOURSE_API_KEY | Homey Forum | Discourse User API key for forum posting (preferred over session login) |
 | ATHOM_CLIENT_ID | Athom OAuth | OAuth client ID for headless promotion (from Athom Developer Tools SPA) |
 | ATHOM_CLIENT_SECRET | Athom OAuth | OAuth client secret for headless promotion (from Athom Developer Tools SPA) |
@@ -71,8 +71,8 @@ Used by: homey-device-diagnostics.js (NEW)
 | tuya-automation-hub.yml | GH_PAT, GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD, DISCOURSE_API_KEY |
 | upstream-auto-triage.yml | GH_PAT, GOOGLE_API_KEY |
 | forum-auto-responder.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD, DISCOURSE_API_KEY |
-| gmail-diagnostics.yml | GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN, GMAIL_EMAIL, GMAIL_APP_PASSWORD, HOMEY_EMAIL, GOOGLE_API_KEY, GH_PAT |
-| gmail-token-keepalive.yml | GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN, GMAIL_APP_PASSWORD, GH_PAT |
+| gmail-diagnostics.yml | GMAIL_EMAIL, GMAIL_APP_PASSWORD, HOMEY_EMAIL, GOOGLE_API_KEY, GH_PAT |
+| gmail-token-keepalive.yml | GMAIL_EMAIL, GMAIL_APP_PASSWORD, HOMEY_EMAIL, GH_PAT |
 | monthly-comprehensive-sync.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_PAT, HOMEY_PAT_API, GH_PAT |
 | weekly-fingerprint-sync.yml | GITHUB_TOKEN |
 | daily-everything.yml | GH_PAT, GOOGLE_API_KEY, HOMEY_PAT, HOMEY_EMAIL, HOMEY_PASSWORD, DISCOURSE_API_KEY, GMAIL_*, GMAIL_APP_PASSWORD |
@@ -82,63 +82,15 @@ Used by: homey-device-diagnostics.js (NEW)
 | dependabot-auto-merge.yml | GH_PAT, GITHUB_TOKEN |
 | monthly-enrichment.yml | HOMEY_PAT_API |
 
-## Gmail OAuth Setup (Complete Guide)
+## Gmail OAuth (DEPRECATED v5.12.6)
 
-### Step 1: Google Cloud Console
-1. https://console.cloud.google.com/ > Create project "Tuya Diagnostics"
-2. APIs & Services > Library > Enable **Gmail API**
+> **OAuth has been fully removed.** All email access now uses IMAP with App Password.
+> The secrets GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, and GMAIL_REFRESH_TOKEN can be deleted from GitHub.
+> The keepalive workflow now runs weekly IMAP health checks instead of OAuth token refresh.
 
-### Step 2: OAuth Consent Screen
-1. APIs & Services > OAuth consent screen > **External**
-2. App name: `Tuya Diagnostics`, add your email
-3. Scopes: `gmail.readonly`, `userinfo.email`
-4. Test users: add your Gmail
-5. **PUBLISH APP** (Testing→Production) to avoid 7-day token expiry
+## Gmail IMAP (v5.12.6 — sole method)
 
-### Step 3: Create OAuth Client
-1. Credentials > Create > OAuth 2.0 Client ID > **Web application**
-2. Redirect URI: `https://developers.google.com/oauthplayground`
-3. Copy **Client ID** + **Client Secret**
-
-### Step 4: OAuth Playground (get refresh token)
-1. Go to https://developers.google.com/oauthplayground
-2. Click gear ⚙️ top-right:
-   - ✅ **Use your own OAuth credentials** → paste Client ID + Secret
-   - ✅ **Auto-refresh the token before it expires**
-3. Left panel: Gmail API v1 > select `gmail.readonly`
-4. **Authorize APIs** → sign in → allow
-5. **Exchange authorization code for tokens**
-6. Copy the **Refresh Token**
-
-### Step 5: GitHub Secrets
-Add to repo Settings > Secrets > Actions:
-- `GMAIL_CLIENT_ID` = Client ID from Step 3
-- `GMAIL_CLIENT_SECRET` = Client Secret from Step 3
-- `GMAIL_REFRESH_TOKEN` = Refresh Token from Step 4
-
-### Auto-Rotation (Testing Mode — 7-day cycle)
-- Keepalive runs **4×/day** (05h, 11h, 17h, 23h UTC)
-- Tracks token age via `tokenSetDate` in health JSON
-- **Day 5**: Warning alert + GitHub issue
-- **Day 6**: Urgent alert + GitHub issue
-- **Day 7+**: `invalid_grant` → issue with rotation steps
-- Auto-rotates if Google returns new token (needs `GH_PAT`)
-
-### Quick Rotation
-1. https://developers.google.com/oauthplayground
-2. Gear ⚙️ > Use own credentials > paste ID+Secret
-3. ✅ Auto-refresh > Gmail API v1 > gmail.readonly
-4. Authorize > Exchange > copy Refresh Token
-5. `gh secret set GMAIL_REFRESH_TOKEN` (paste token)
-
-### Troubleshooting
-- **400/invalid_grant**: Token expired. Do Quick Rotation above, OR set up IMAP fallback (permanent).
-- **Testing mode**: 7-day expiry. Alerts fire at day 5+6.
-- **Production mode**: Token permanent (if app published).
-
-## Gmail IMAP (PRIMARY — v5.11.99)
-
-IMAP with App Password is now the **primary** email method. OAuth is optional fallback only.
+IMAP with App Password is the **only** email method. OAuth has been completely removed.
 
 ### Setup (30 seconds, one-time)
 1. Go to https://myaccount.google.com/apppasswords
@@ -152,11 +104,11 @@ IMAP with App Password is now the **primary** email method. OAuth is optional fa
 
 ### How it works
 - `fetch-gmail-diagnostics.js` uses IMAP first (permanent, no expiry)
-- Only falls back to OAuth if IMAP credentials are missing
+- No OAuth dependency — permanent, no token expiry
 - IMAP reads emails via `imap.gmail.com:993` with App Password
 - Same pipeline: sanitize → parse → cross-ref → AI analyze → issues
 - **No keepalive needed** — App Password is permanent
-- Token keepalive workflow schedule **disabled** (manual only)
+- IMAP health check runs weekly (Monday 08:00 UTC)
 
 ### Prerequisites
 - 2-Factor Authentication must be enabled on the Google account

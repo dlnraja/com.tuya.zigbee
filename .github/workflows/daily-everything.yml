@@ -2,10 +2,8 @@ name: "Daily Everything Pipeline"
 
 on:
   schedule:
-    - cron: '0 2 * * *'
-    - cron: '0 8 * * *'
-    - cron: '0 14 * * *'
-    - cron: '0 20 * * *'
+    - cron: '0 2 * * *'    # Full overnight scan
+    - cron: '0 14 * * *'   # Afternoon catch-up scan
   workflow_dispatch:
     inputs:
       dry_run:
@@ -35,18 +33,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 120
     env:
-      # === AI providers (all FREE TIER — guards in ai-helper.js enforce limits) ===
+      # === AI providers (configured) ===
       GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-      HF_TOKEN: ${{ secrets.HF_TOKEN }}
-      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
-      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-      CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
-      TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
-      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-      KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
-      APIFREELLM_KEY: ${{ secrets.APIFREELLM_KEY }}
+      # Optional AI fallbacks (GROQ, HF, MISTRAL, CEREBRAS, TOGETHER, OPENROUTER, DEEPSEEK, KIMI, APIFREELLM)
+      # Not yet configured — see .github/SECRETS.md to enable
       # === GitHub ===
       GH_PAT: ${{ secrets.GH_PAT }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -54,10 +45,7 @@ jobs:
       DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
       HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
       HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-      # === Gmail (OAuth + IMAP fallback) ===
-      GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
-      GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
-      GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+      # === Gmail (IMAP) ===
       GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
       GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
       # === Homey ===
@@ -147,14 +135,14 @@ jobs:
         id: comp_gh_scan
         continue-on-error: true
         timeout-minutes: 15
-        run: node .github/scripts/comprehensive-github-scan.js
+        run: node .github/scripts/retry-runner.js .github/scripts/comprehensive-github-scan.js --retries 2 --delay 10000
 
       # ===== 3c. GITHUB: PR/Issue FP Scan =====
       - name: "3c. PR/Issue Fingerprint Scan"
         id: pr_issue_scan
         continue-on-error: true
         timeout-minutes: 10
-        run: node .github/scripts/scan-prs-issues.js
+        run: node .github/scripts/retry-runner.js .github/scripts/scan-prs-issues.js --retries 2 --delay 8000
 
       # ===== 4. GITHUB: Scanner (both repos, AI summary) =====
       - name: "4. GitHub Activity Scanner"
@@ -166,26 +154,20 @@ jobs:
         run: node .github/scripts/github-scanner.js
 
       # ===== 5. GMAIL: Token pre-check + Diagnostics (2x/day at 8AM+20PM) =====
-      - name: "5a. Gmail Token Pre-check"
+      - name: "5a. IMAP Health Check"
         id: gmail_token
         continue-on-error: true
         timeout-minutes: 3
         env:
-          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
-          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
-          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
         run: |
           HOUR=$(date -u +%H)
           if [ "$HOUR" = "08" ] || [ "$HOUR" = "14" ] || [ "$HOUR" = "20" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             node .github/scripts/gmail-token-keepalive.js || true
-            TF=".github/state/_new_refresh_token.txt"
-            if [ -f "$TF" ] && [ -n "$GH_PAT" ]; then
-              gh secret set GMAIL_REFRESH_TOKEN < "$TF"
-              rm -f "$TF"
-              echo "::notice::Gmail token auto-rotated"
-            fi
           fi
-
       - name: "5b. Gmail Diagnostics"
         id: gmail
         continue-on-error: true
@@ -236,8 +218,8 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: node .github/scripts/forum-pm-scanner.js || true
 
-      # ===== 8. SMART DEVICE SCAN: 10-source (Z2M+ZHA+Blakadder+deCONZ+Hubitat+SmartThings+HA Forum+Local) =====
-      - name: "8. Smart Device Functionality Scanner (10 sources)"
+      # ===== 8. SMART DEVICE SCAN: 11-source (Z2M+ZHA+Blakadder+deCONZ+Hubitat+HOMEd+SmartThings+HA Forum+Local) =====
+      - name: "8. Smart Device Functionality Scanner (11 sources)"
         id: ext_sources
         continue-on-error: true
         timeout-minutes: 15
@@ -314,7 +296,12 @@ jobs:
         id: fp_conflicts
         continue-on-error: true
         timeout-minutes: 5
-        run: node scripts/automation/fix-fingerprint-conflicts.js --report-only
+        run: |
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            node scripts/automation/fix-fingerprint-conflicts.js --report-only
+          else
+            node scripts/automation/fix-fingerprint-conflicts.js --auto-fix || node scripts/automation/fix-fingerprint-conflicts.js --report-only
+          fi
 
       # ===== 9d. Scan Public APIs (Z2M/ZHA/Blakadder live) =====
       - name: "9d. Scan Public APIs"
@@ -434,12 +421,32 @@ jobs:
         timeout-minutes: 3
         run: node .github/scripts/auto-learn-fingerprints.js
 
+      # ===== 10j2. FP COLLISION CHECK: Detect mfr+pid collisions =====
+      - name: "10j2. FP Collision Check"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 2
+        run: node .github/scripts/fp-collision-check.js
+
       # ===== 10k. PATTERN DETECTOR: Recurring issue detection =====
       - name: "10k. Pattern Detector"
         id: patterns
         continue-on-error: true
         timeout-minutes: 5
         run: node .github/scripts/pattern-detector.js
+
+      # ===== 10k2. RESOLUTION SUMMARY: Symptom intelligence from pattern data =====
+      - name: "10k2. Resolution Summary"
+        id: resolution
+        continue-on-error: true
+        run: node .github/scripts/resolution-summary.js
+
+      # ===== 10k3. CROSS-REF: Correlate all sources =====
+      - name: "10k3. Cross-Reference Intelligence"
+        id: cross_ref
+        continue-on-error: true
+        timeout-minutes: 2
+        run: node .github/scripts/cross-ref-intelligence.js
 
       # ===== 10l. REPLY SELF-AUDIT: Validate past replies =====
       - name: "10l. Reply Self-Audit"
@@ -466,6 +473,13 @@ jobs:
           MAX_GH_CALLS: "100"
         run: node .github/scripts/master-ai-battle.js
 
+      # ===== 10o. PIPELINE HEALTH CHECK =====
+      - name: "10o. Pipeline Health Check"
+        id: health
+        if: always()
+        continue-on-error: true
+        run: node .github/scripts/pipeline-health.js
+
       # ===== 11. COMMIT: All state + docs + changelogs =====
       - name: "11. Commit all changes"
         id: commit
@@ -473,6 +487,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for f in .github/state/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null || { echo "::warning::Bad JSON: $f"; git checkout -- "$f" 2>/dev/null; }; done
           git add -A diagnostics/ .github/state/ drivers/ lib/ docs/ 2>/dev/null || git add -A
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
@@ -647,6 +662,7 @@ jobs:
           echo "| 10i | Monthly Comprehensive | ${{ steps.monthly_comp.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10j | Auto-Learn FPs | ${{ steps.auto_learn.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10k | Pattern Detector | ${{ steps.patterns.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 10k3 | Cross-Ref Intelligence | ${{ steps.cross_ref.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10l | Reply Self-Audit | ${{ steps.bot_audit.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10m | User Expectations | ${{ steps.gen_expectations.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10n | AI Battle Orchestrator | ${{ steps.ai_battle.outcome }} |" >> $GITHUB_STEP_SUMMARY
