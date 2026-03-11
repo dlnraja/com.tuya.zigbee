@@ -1,6 +1,6 @@
 {
   "5.11.103": {
-    "en": "Universal Tuya Zigbee app v5.11.103 includes state update improvements and maintains ."
+    "en": "Added local control for Tuya WiFi devices with SmartLife QR authentication and UDP discovery."
   },
   "5.11.102": {
     "en": "Universal Tuya Zigbee app v5.11.102 adds new device variants and updates 145 drivers with 4032 fingerprints."
@@ -58,5 +58,8 @@
   },
   "5.11.84": {
     "en": "Universal Tuya Zigbee app v5.11.84: Updated drivers and fingerprints for better device compatibility."
+  },
+  "5.11.104": {
+    "en": "v5.11.103: Improved batch state update handling for devices., None, None, None"
   }
 }
