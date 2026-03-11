@@ -5,7 +5,8 @@ let ImapFlow;try{ImapFlow=require('imapflow').ImapFlow}catch{}
 const MBS=['INBOX','[Gmail]/All Mail','[Gmail]/Tous les messages'];
 
 async function tryConnect(user,pass){
-  const c=new ImapFlow({host:'imap.gmail.com',port:993,secure:true,auth:{user,pass},logger:false});
+  const c=new ImapFlow({host:'imap.gmail.com',port:993,secure:true,auth:{user,pass},logger:false,socketTimeout:120000});
+  c.on('error',err=>console.log('[IMAP] Socket event:',err.message));
   await c.connect();
   return c;
 }
@@ -59,7 +60,7 @@ async function readViaIMAP(opts={}){
       }
       console.log('[IMAP] fetched',out.length);
     }finally{lock.release()}
-    await c.logout();console.log('[IMAP] OK:',out.length);return out;
-  }catch(err){console.error('[IMAP] ERROR:',err.message,err.code||'',err.responseText||'');try{await c.logout()}catch{};return null}
+    await c.logout();try{c.close()}catch{};console.log('[IMAP] OK:',out.length);return out;
+  }catch(err){console.error('[IMAP] ERROR:',err.message,err.code||'',err.responseText||'');try{await c.logout()}catch{};try{c.close()}catch{};return null}
 }
 module.exports={readViaIMAP};
