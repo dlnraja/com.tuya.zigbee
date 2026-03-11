@@ -384,6 +384,23 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: node .github/scripts/scan-prs-issues.js
 
+  ecosystem-scan:
+    name: "Tuya Ecosystem Scanner"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: "Scan Tuya ecosystem repos (Drenso, jurgenheine, heszegi, rebtor, forks)"
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/scan-tuya-ecosystem.js
+
   forum-cleanup:
     name: "Forum Spam Scan + Cleanup"
     needs: stats
@@ -738,7 +755,7 @@ jobs:
 
   summary:
     name: "Weekly Summary"
-    needs: [triage-johanbendz, triage-dlnraja, scan-forks, cross-driver-gaps, scan-forum, gmail-diagnostics, device-diagnostics, external-sources, github-scanner, github-issue-manager, forum-activity, johanbendz-full, comprehensive-scan, forum-cleanup, diagnostic-resolver, enrichment, smart-processor, generate-changelog, update-forum-thread, promote-to-test]
+    needs: [triage-johanbendz, triage-dlnraja, scan-forks, cross-driver-gaps, scan-forum, gmail-diagnostics, device-diagnostics, external-sources, github-scanner, github-issue-manager, forum-activity, johanbendz-full, comprehensive-scan, ecosystem-scan, forum-cleanup, diagnostic-resolver, enrichment, smart-processor, generate-changelog, update-forum-thread, promote-to-test]
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -766,6 +783,7 @@ jobs:
           echo "- JohanBendz full: ${{ needs.johanbendz-full.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Forum first post: ${{ needs.update-forum-thread.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Comprehensive scan: ${{ needs.comprehensive-scan.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Ecosystem scan: ${{ needs.ecosystem-scan.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Forum cleanup: ${{ needs.forum-cleanup.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Diagnostic Resolver: ${{ needs.diagnostic-resolver.result }}**" >> $GITHUB_STEP_SUMMARY
           echo "- **Promote to Test: ${{ needs.promote-to-test.result }}**" >> $GITHUB_STEP_SUMMARY
