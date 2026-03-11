@@ -45,5 +45,12 @@
     {
       "repo": "Drenso/ewelink-api-next"
     }
-  ]
+  ],
+  "drenso_pr_patterns": {
+    "fan_speed": "1-6 integer values instead of 0-100 percentage",
+    "humidity_value": "Alternative DP for humidity in climate sensors",
+    "vividstorm_screen": "Window coverings with lock_up/lock_down caps",
+    "air_purifier": "filter_life_percentage capability",
+    "updated": "2026-03-11T12:18:12.408Z"
+  }
 }
