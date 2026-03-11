@@ -2,14 +2,14 @@
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-5,455+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Drivers](https://img.shields.io/badge/drivers-155-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,491+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Drivers](https://img.shields.io/badge/drivers-145-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Flow Cards](https://img.shields.io/badge/flow%20cards-1,857-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
-A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **155 drivers** and **5,455+ device fingerprints**.
+A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **145 drivers** and **4,491+ device fingerprints**.
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -34,52 +34,52 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.103 |
-| **Device Fingerprints** | 5,455+ |
-| **Unique Product IDs** | 518 |
-| **Drivers** | 155 (118 Zigbee + 37 WiFi) |
+| **App Version** | v5.11.102 |
+| **Device Fingerprints** | 4,491+ |
+| **Unique Product IDs** | 547 |
+| **Drivers** | 145 (118 Zigbee + 27 WiFi) |
 | **Flow Cards** | 1,857 |
-| **Unique Capabilities** | 117 |
-| **SVG Icons** | 284 |
+| **Unique Capabilities** | 116 |
+| **SVG Icons** | 274 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-03-08 |
+| **Last Updated** | 2026-03-11 |
 
 ### Top 20 Drivers by Fingerprint Count
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 1,579 |
-| 2 | `radiator_valve` | 284 |
-| 3 | `switch_1gang` | 267 |
-| 4 | `generic_tuya` | 263 |
-| 5 | `curtain_motor` | 244 |
-| 6 | `thermostat_tuya_dp` | 183 |
-| 7 | `dimmer_wall_1gang` | 159 |
-| 8 | `contact_sensor` | 155 |
-| 9 | `motion_sensor` | 136 |
-| 10 | `bulb_rgb` | 115 |
-| 11 | `plug_energy_monitor` | 110 |
-| 12 | `presence_sensor_radar` | 107 |
-| 13 | `switch_2gang` | 107 |
-| 14 | `diy_custom_zigbee` | 103 |
-| 15 | `water_leak_sensor` | 90 |
-| 16 | `bulb_rgbw` | 81 |
-| 17 | `switch_3gang` | 75 |
-| 18 | `switch_4gang` | 74 |
-| 19 | `bulb_dimmable` | 52 |
-| 20 | `bulb_tunable_white` | 49 |
+| 1 | `climate_sensor` | 1,277 |
+| 2 | `switch_1gang` | 345 |
+| 3 | `generic_tuya` | 260 |
+| 4 | `radiator_valve` | 206 |
+| 5 | `plug_energy_monitor` | 147 |
+| 6 | `dimmer_wall_1gang` | 132 |
+| 7 | `curtain_motor` | 129 |
+| 8 | `bulb_rgbw` | 118 |
+| 9 | `presence_sensor_radar` | 106 |
+| 10 | `diy_custom_zigbee` | 103 |
+| 11 | `motion_sensor` | 98 |
+| 12 | `contact_sensor` | 97 |
+| 13 | `switch_2gang` | 91 |
+| 14 | `thermostat_tuya_dp` | 82 |
+| 15 | `switch_4gang` | 76 |
+| 16 | `switch_3gang` | 64 |
+| 17 | `water_leak_sensor` | 60 |
+| 18 | `bulb_rgb` | 48 |
+| 19 | `bulb_tunable_white` | 46 |
+| 20 | `universal_fallback` | 46 |
 
 ### Drivers by Device Class
 
 | Class | Count |
 |-------|-------|
 | sensor | 42 |
-| socket | 37 |
-| light | 21 |
+| socket | 31 |
+| light | 18 |
 | other | 14 |
-| fan | 10 |
+| fan | 9 |
 | thermostat | 7 |
 | lock | 4 |
 | remote | 4 |
@@ -100,10 +100,9 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.103** | v5.11.103: Full eWeLink/SONOFF WiFi local LAN support - 10 new drivers: Switch (BASIC/MINI/RF/SV/R4), 2-Channel (DUAL... |
-| **v5.11.102** | v5.11.102: Fixed SOS button CIE enrollment (IEEEAddressManager). Fixed LCD sensor _TZE200_vvmbj46n detection + humidi... |
-| **v5.11.101** | v5.11.101: Full eWeLink/SONOFF support (49 fingerprints across 17 drivers: ZBMINI, SNZB-01/02/03/04/05/06P, TRVZB, S2... |
-| **v5.11.100** | v5.11.99: Regenerated all 145 driver images from SVG icons., Fixed detection of the latest draft., Improved draft det... |
+| **v5.11.102** | v5.11.101: Resolved various issues affecting device functionality., Added support for 5423 fingerprints across 145 dr... |
+| **v5.11.101** | Universal Tuya Zigbee app v5.11.101 adds new device variants, updates 145 drivers, and enhances fingerprint database ... |
+| **v5.11.100** | Universal Tuya Zigbee app v5.11.100 adds . |
 | **v5.11.99** | Universal Tuya Zigbee app v5.11.99: Regenerated driver images and fixed various draft detection issues. |
 | **v5.11.98** | Universal Tuya Zigbee app v5.11.98 fixes IAS issues and improves draft detection. |
 | **v5.11.97** | Fixed draft detection logic and improved build pipeline. |
@@ -115,6 +114,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **v5.11.91** | Universal Tuya Zigbee app v5.11.91 adds new drivers and fingerprints, improving device compatibility. |
 | **v5.11.90** | Security hardening and added 20 new device fingerprints. |
 | **v5.11.89** | Universal Tuya Zigbee app v5.11.89 adds 2 new fingerprints, fixes TS0726 virtual button regression, and enriches flow... |
+| **v5.11.88** | Universal Tuya Zigbee app v5.11.88: Bug fixes and device improvements. |
 
 <!-- CHANGELOG_END -->
 
@@ -180,7 +180,7 @@ Homey Pro
        │    └─ Per-fingerprint: DP mappings, quirks, timing
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
-       └─ 155 Drivers ─ 5,455+ fingerprints
+       └─ 145 Drivers ─ 4,491+ fingerprints
 ```
 
 ---
@@ -195,8 +195,6 @@ Homey Pro
 | **[deCONZ](https://github.com/dresden-elektronik/deconz-rest-plugin)** | REST plugin device data |
 | **[CSA](https://csa-iot.org)** | Zigbee 3.0 certified products |
 | **[Homey Community Forum](https://community.homey.app)** | User reports, device interviews |
-| **[HOMEd Zigbee](https://github.com/u236/homed-service-zigbee)** | Tuya device library, DP mappings (Russian community) |
-| **[kkossev / Hubitat](https://github.com/kkossev/Hubitat)** | Tuya DP research, mmWave radar profiles |
 | **[JohanBendz Fork](https://github.com/JohanBendz/com.tuya.zigbee)** | Community contributions |
 
 ---
@@ -335,8 +333,6 @@ This app is developed in my free time, powered by passion and coffee!
 A massive thank you to the maintainers and contributors of:
 - **[Koenkk](https://github.com/Koenkk)** and all contributors to **Zigbee2MQTT**
 - **[blakadder](https://github.com/blakadder)** and the Zigbee Device Compatibility Repository
-- **[u236](https://github.com/u236)** and the **HOMEd Zigbee** project (Russian Zigbee community)
-- **[kkossev](https://github.com/kkossev)** and the **Hubitat** Tuya drivers
 - The **zigpy / ZHA / zha-device-handlers** maintainers
 - The **CSA (Connectivity Standards Alliance)** for the Zigbee specifications
 - All developers and testers who share device logs, diagnostics, and fingerprints
@@ -358,4 +354,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-03-06*
+*Last updated: 2026-03-11*

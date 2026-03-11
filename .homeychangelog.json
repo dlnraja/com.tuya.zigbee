@@ -1,6 +1,6 @@
 {
   "5.11.101": {
-    "en": "Universal Tuya Zigbee app v5.11.101 adds 4976 fingerprints and 145 drivers, with multiple file updates."
+    "en": "Universal Tuya Zigbee app v5.11.101 adds new device variants, updates 145 drivers, and enhances fingerprint database to 5423."
   },
   "5.11.100": {
     "en": "Universal Tuya Zigbee app v5.11.100 adds ."
@@ -58,5 +58,8 @@
   },
   "5.11.82": {
     "en": "Universal Tuya Zigbee app v5.11.82: Improved error logging and updated drivers."
+  },
+  "5.11.102": {
+    "en": "v5.11.101: Resolved various issues affecting device functionality., Added support for 5423 fingerprints across 145 drivers., Updated ., Updated forum state to reflect recent activity., Batch updates to state files completed."
   }
 }
