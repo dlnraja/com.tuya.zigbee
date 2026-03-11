@@ -950,3 +950,11 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 ---
 
 *Auto-generated on 2026-03-10 from v5.11.101 — 5,423+ fingerprints across 145 drivers*
+
+
+## Auto-discovered from GitHub (2026-03-11)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZ3000_402vrq2i | dlnraja/com.tuya.zigbee#158 | device_request |
+| _TZE200_rxq4iti9 | dlnraja/com.tuya.zigbee#158 | device_request |
