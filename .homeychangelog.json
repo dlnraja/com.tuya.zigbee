@@ -1,4 +1,7 @@
 {
+  "5.11.105": {
+    "en": "Added TuyaZigbeeBridge for improved driver pairing and control, updated diagnostics."
+  },
   "5.11.104": {
     "en": "Added support for Zigbee sub-device control via Tuya gateway and updated drivers and fingerprints."
   },
@@ -56,10 +59,7 @@
   "5.11.86": {
     "en": "Universal Tuya Zigbee app v5.11.86: Updated driver fingerprints and device support."
   },
-  "5.11.85": {
-    "en": "Fixed garage door driver issues and improved device pairing."
-  },
-  "5.11.105": {
-    "en": "v5.11.104: Added `TuyaZigbeeBridge.js` for Zigbee sub-device control via Tuya gateway., Total drivers: 145, Total fingerprints: 3146, Enhanced local control for Tuya WiFi devices, including SmartLife QR authentication and UDP discovery., Various updates to local device handling and driver functionality."
+  "5.11.106": {
+    "en": "v5.11.105: Integrated TuyaZigbeeBridge into the driver pairing flow., Added TuyaZigbeeBridge.js for Zigbee sub-device control via Tuya gateway., Resolved various issues related to device patterns., Updated ., Added 2 new fingerprints: _TZ3000_402vrq2i, _TZE200_rxq4iti9."
   }
 }
