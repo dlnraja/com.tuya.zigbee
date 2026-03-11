@@ -6,7 +6,23 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.103] - 2026-03-11
+## [5.11.104] - 2026-03-11
+
+### New Features
+- Added `TuyaZigbeeBridge.js` for Zigbee sub-device control via Tuya gateway.
+
+### Drivers and Fingerprints
+- Total drivers: 145
+- Total fingerprints: 3146
+
+### Improvements
+- Enhanced local control for Tuya WiFi devices, including SmartLife QR authentication and UDP discovery.
+
+### Bug Fixes
+- Various updates to local device handling and driver functionality.
+---
+
+ [5.11.103] - 2026-03-11
 
 ### Bug Fixes
 - Improved batch state update handling for devices.

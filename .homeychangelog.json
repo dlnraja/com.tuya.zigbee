@@ -1,4 +1,7 @@
 {
+  "5.11.104": {
+    "en": "Added support for Zigbee sub-device control via Tuya gateway and updated drivers and fingerprints."
+  },
   "5.11.103": {
     "en": "Added local control for Tuya WiFi devices with SmartLife QR authentication and UDP discovery."
   },
@@ -56,10 +59,7 @@
   "5.11.85": {
     "en": "Fixed garage door driver issues and improved device pairing."
   },
-  "5.11.84": {
-    "en": "Universal Tuya Zigbee app v5.11.84: Updated drivers and fingerprints for better device compatibility."
-  },
-  "5.11.104": {
-    "en": "v5.11.103: Improved batch state update handling for devices., None, None, None"
+  "5.11.105": {
+    "en": "v5.11.104: Added `TuyaZigbeeBridge.js` for Zigbee sub-device control via Tuya gateway., Total drivers: 145, Total fingerprints: 3146, Enhanced local control for Tuya WiFi devices, including SmartLife QR authentication and UDP discovery., Various updates to local device handling and driver functionality."
   }
 }
