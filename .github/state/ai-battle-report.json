@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-03-10T16:09:17.668Z",
+  "timestamp": "2026-03-11T15:58:58.378Z",
   "dryRun": false,
   "sources": {
     "external": 1607,
-    "github": 6,
+    "github": 7,
     "forks": 0,
-    "johan": 1,
+    "johan": 0,
     "gmail": 0,
     "forum": 0,
     "diagnostics": 0,
@@ -16,53 +16,14 @@
     "details": []
   },
   "classified": {
-    "total": 4,
-    "byMethod": {
-      "ai-single": 4
-    },
-    "details": [
-      {
-        "fp": "_TS004F_smart",
-        "driver": "switch_1gang",
-        "method": "ai-single",
-        "pids": [],
-        "sources": [
-          "external"
-        ]
-      },
-      {
-        "fp": "_TZ3210_amleyeej",
-        "driver": "button_wireless_1",
-        "method": "ai-single",
-        "pids": [],
-        "sources": [
-          "external"
-        ]
-      },
-      {
-        "fp": "_TZB000_yqjaollc",
-        "driver": "plug_energy_monitor",
-        "method": "ai-single",
-        "pids": [],
-        "sources": [
-          "external"
-        ]
-      },
-      {
-        "fp": "_TZE204_gkfb",
-        "driver": "motion_sensor",
-        "method": "ai-single",
-        "pids": [],
-        "sources": [
-          "johan"
-        ]
-      }
-    ]
+    "total": 0,
+    "byMethod": {},
+    "details": []
   },
   "implemented": {
     "added": 0,
     "skipped": 0
   },
   "ghApiCalls": 100,
-  "aiSummary": "```json\n{\n  \"summary\": {\n    \"total_sources_scanned\": 1614,\n    \"confirmed_variants\": 0,\n    \"new_fingerprints_classified\": 4\n  }\n}\n```"
+  "aiSummary": "```json\n{\n  \"summary\": {\n    \"total_sources_scanned\": 1614,\n    \"confirmed_variants\": 0,\n    \"top_patterns\": [\n      {\n        \"pattern\": \"False Battery Alert / Missing Battery\",\n        \"count\": 25,\n        \"fix\": \"Set `get mainsPowered() { return true; }` and remove measure_battery in onNodeInit\"\n      },\n      {\n        \"pattern\": \"Pairing Failure\",\n        \"count\": 7\n      }\n    ]\n  }\n}\n```"
 }
