@@ -1,8 +1,9 @@
 # Universal Tuya Zigbee - Architecture Reference
 
 > **App**: `com.dlnraja.tuya.zigbee` | **SDK**: Homey SDK3 | **Entry**: `app.js`
-> **143+ drivers** | **5413+ fingerprints** | Zigbee + WiFi
-> **143+ drivers** | **5413+ fingerprints** | Zigbee + WiFi
+> **145+ drivers** | **4547+ fingerprints** | Zigbee + WiFi
+> **145+ drivers** | **4547+ fingerprints** | Zigbee + WiFi
+> **145+ drivers** | **4547+ fingerprints** | Zigbee + WiFi
 
 ---
 
