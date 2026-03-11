@@ -133,6 +133,10 @@ function gatherAll(){
     ctx.forumPMs={total:pms.totalScanned||0,newFPs:(pms.newFingerprints||[]).slice(0,10)};
   }
 
+  // 17. Ecosystem scan
+  const eco=rj("ecosystem-scan-report.json");
+  if(eco){ctx.ecosystem={repos:Object.keys(eco.repos||{}).length,fps:(eco.allFPs||[]).slice(0,15),unsup:(eco.crossRef||[]).filter(x=>!x.supported).map(x=>x.fp).slice(0,10)}}
+
   return ctx;
 }
 
@@ -203,6 +207,13 @@ function formatForAI(ctx){
     s+='### Forum PMs: '+ctx.forumPMs.total+' reviewed\n';
     if(ctx.forumPMs.newFPs?.length)s+='New FPs: '+ctx.forumPMs.newFPs.slice(0,6).map(f=>'`'+f+'`').join(', ')+'\n';
     s+='\n';
+  }
+
+  if(ctx.ecosystem){
+    s+="### Ecosystem: "+ctx.ecosystem.repos+" repos scanned\n";
+    if(ctx.ecosystem.fps&&ctx.ecosystem.fps.length)s+="FPs: "+ctx.ecosystem.fps.slice(0,8).map(f=>"`"+f+"`").join(", ")+"\n";
+    if(ctx.ecosystem.unsup&&ctx.ecosystem.unsup.length)s+="Unsupported: "+ctx.ecosystem.unsup.slice(0,6).map(f=>"`"+f+"`").join(", ")+"\n";
+    s+="\n";
   }
 
   return s;
