@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.106 |
+| **App Version** | v5.11.107 |
 | **Device Fingerprints** | 4,624+ |
 | **Unique Product IDs** | 550 |
 | **Drivers** | 145 (118 Zigbee + 27 WiFi) |
@@ -100,7 +100,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.106** | v5.11.105: Integrated TuyaZigbeeBridge into the driver pairing flow., Added TuyaZigbeeBridge.js for Zigbee sub-device... |
+| **v5.11.107** | v5.11.106: Updated forum state., Added 3 new fingerprints: [_TZ3000_402vrq2i, _TZE200_rxq4iti9]., Updated ., Updated ... |
+| **v5.11.106** | Universal Tuya Zigbee app v5.11.106 adds new device fingerprints and updates diagnostics. |
 | **v5.11.105** | Added TuyaZigbeeBridge for improved driver pairing and control, updated diagnostics. |
 | **v5.11.104** | Added support for Zigbee sub-device control via Tuya gateway and updated drivers and fingerprints. |
 | **v5.11.103** | Added local control for Tuya WiFi devices with SmartLife QR authentication and UDP discovery. |
@@ -114,7 +115,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.95** | Universal Tuya Zigbee app v5.11.95: Fixed navigation issue and updated drivers and fingerprints. |
 | **v5.11.94** | Improved device compatibility and updated fingerprints. |
 | **v5.11.93** | Added new device fingerprints and driver improvements. |
-| **v5.11.92** | Universal Tuya Zigbee app v5.11.92 adds new drivers and fingerprints, improving device compatibility. |
 
 <!-- CHANGELOG_END -->
 

@@ -1,4 +1,7 @@
 {
+  "5.11.106": {
+    "en": "Universal Tuya Zigbee app v5.11.106 adds new device fingerprints and updates diagnostics."
+  },
   "5.11.105": {
     "en": "Added TuyaZigbeeBridge for improved driver pairing and control, updated diagnostics."
   },
@@ -56,10 +59,7 @@
   "5.11.87": {
     "en": "Universal Tuya Zigbee app v5.11.87: Improved driver stability and updated fingerprints."
   },
-  "5.11.86": {
-    "en": "Universal Tuya Zigbee app v5.11.86: Updated driver fingerprints and device support."
-  },
-  "5.11.106": {
-    "en": "v5.11.105: Integrated TuyaZigbeeBridge into the driver pairing flow., Added TuyaZigbeeBridge.js for Zigbee sub-device control via Tuya gateway., Resolved various issues related to device patterns., Updated ., Added 2 new fingerprints: _TZ3000_402vrq2i, _TZE200_rxq4iti9."
+  "5.11.107": {
+    "en": "v5.11.106: Updated forum state., Added 3 new fingerprints: [_TZ3000_402vrq2i, _TZE200_rxq4iti9]., Updated ., Updated README with Zigbee bridge section and component details., No significant changes."
   }
 }
