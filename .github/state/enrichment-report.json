@@ -1,7 +1,24 @@
 {
-  "timestamp": "2026-03-11T05:59:08.212Z",
-  "totalNew": 0,
-  "withDPs": 0,
-  "newFingerprints": [],
-  "aiPlan": null
+  "timestamp": "2026-03-11T15:13:54.579Z",
+  "dryRun": false,
+  "stats": {
+    "z2m": 1,
+    "zha": 34,
+    "deconz": 13,
+    "hubitat": 0,
+    "total": 26
+  },
+  "crossRef": {
+    "total": 26,
+    "supported": 26,
+    "unsupported": 0
+  },
+  "enrichments": {
+    "proposed": 0,
+    "applied": 0,
+    "skipped": 0
+  },
+  "topUnsupported": [],
+  "appliedDetails": [],
+  "skippedDetails": []
 }

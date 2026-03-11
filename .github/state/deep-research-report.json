@@ -1,24 +1,30 @@
 {
-  "ts": "2026-03-10T15:33:56.148Z",
+  "ts": "2026-03-11T15:25:27.490Z",
   "ghCalls": 120,
-  "totalFPs": 106,
-  "newFPs": 3,
+  "totalFPs": 138,
+  "newFPs": 4,
   "researched": 1,
-  "implemented": 0,
+  "implemented": 2,
   "results": [
     {
-      "fp": "_TZE204_gkfb",
-      "driver": "presence_sensor_radar",
+      "fp": "_TZ3000_402vrq2i",
+      "driver": "energy_meter_3phase",
       "confidence": 0,
-      "pidsFromIssue": [
-        "TS0601",
-        "TS0203"
+      "pidsFromIssue": [],
+      "discoveredPIDs": [
+        {
+          "pid": "TS0601",
+          "src": "z2m-context"
+        }
       ],
-      "discoveredPIDs": [],
       "variants": 2,
-      "actions": [],
+      "actions": [
+        "added_variant:_TZ3210_402vrq2i",
+        "added_variant:_TZ3400_402vrq2i"
+      ],
       "sources": [
-        "JohanBendz/com.tuya.zigbee#1347 (issue)"
+        "dlnraja/com.tuya.zigbee#158 (issue)",
+        "JohanBendz/com.tuya.zigbee#1349 (issue)"
       ]
     }
   ]

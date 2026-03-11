@@ -1,8 +1,8 @@
 {
-  "version": "5.11.101",
-  "date": "2026-03-10",
+  "version": "5.11.103",
+  "date": "2026-03-11",
   "drivers": 145,
-  "fingerprints": 5423,
+  "fingerprints": 4624,
   "decisions": [
     {
       "device": "USB Zigbee Dongle (USB-powered relay)",
@@ -45,24 +45,6 @@
       "driver": "motion_sensor_radar_mmwave (RELAY)",
       "wrongDriver": "N/A",
       "reason": "230V mains-powered, no battery/temp/humidity. RELAY config removes wrong caps + adds onoff relay."
-    },
-    {
-      "device": "Garage Door _TZE200_wfxuhoea TS0601",
-      "driver": "garage_door",
-      "wrongDriver": "radiator_valve, thermostat_tuya_dp",
-      "reason": "TS0601 collision — moved to garage_door"
-    },
-    {
-      "device": "Nedis Smoke TS0205 _TYZB01_wqcac7lo",
-      "driver": "smoke_detector_advanced",
-      "wrongDriver": "switch_1gang",
-      "reason": "IAS Zone smoke detector, not a switch"
-    },
-    {
-      "device": "MOES TS0222 _TYZB01_ftdkanlj",
-      "driver": "lcdtemphumidsensor",
-      "wrongDriver": "switch_1gang",
-      "reason": "Temp/humidity/lux sensor, removed from switch_1gang"
     }
   ],
   "userProfiles": [
@@ -319,27 +301,64 @@
       "device": "`_TZE200_3p5ydos3` dimmer",
       "status": "NEEDS DIAG",
       "note": "Dimmer errors on control. T89271#660. Need diag log."
-    },
-    {
-      "user": "Tor_Martin_Aspholm",
-      "device": "`_TZE200_wfxuhoea` TS0601 garage",
-      "status": "FIXED v5.12.1",
-      "note": "Moved to garage_door. T89271#627"
-    },
-    {
-      "user": "Mark_smoke",
-      "device": "`_TYZB01_wqcac7lo` TS0205",
-      "status": "FIXED v5.12.1",
-      "note": "Added to smoke_detector_advanced. T89271#637"
-    },
-    {
-      "user": "Bjorn_L",
-      "device": "`_TYZB01_ftdkanlj` TS0222",
-      "status": "FIXED v5.12.1",
-      "note": "Removed from switch_1gang. T89271#622"
     }
   ],
-  "patterns": [],
+  "patterns": [
+    {
+      "id": "battery",
+      "pattern": "False Battery Alert / Missing Battery",
+      "count": 25,
+      "priority": "high"
+    },
+    {
+      "id": "pairing",
+      "pattern": "Pairing Failure",
+      "count": 7,
+      "priority": "high"
+    },
+    {
+      "id": "unknown",
+      "pattern": "Device Shows Unknown",
+      "count": 5,
+      "priority": "high"
+    },
+    {
+      "id": "ring_value",
+      "pattern": "Ring/Alarm Wrong",
+      "count": 5,
+      "priority": "high"
+    },
+    {
+      "id": "no_response",
+      "pattern": "Device Not Responding",
+      "count": 4,
+      "priority": "medium"
+    },
+    {
+      "id": "double_div",
+      "pattern": "Double Division (wrong sensor values)",
+      "count": 2,
+      "priority": "medium"
+    },
+    {
+      "id": "inversion",
+      "pattern": "Inverted Sensor State",
+      "count": 1,
+      "priority": "low"
+    },
+    {
+      "id": "voltage_wrong",
+      "pattern": "Wrong Voltage",
+      "count": 1,
+      "priority": "low"
+    },
+    {
+      "id": "energy_wrong",
+      "pattern": "Wrong Energy",
+      "count": 1,
+      "priority": "low"
+    }
+  ],
   "interviews": {
     "total": 139,
     "fps": 113

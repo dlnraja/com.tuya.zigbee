@@ -1,31 +1,36 @@
 {
-  "timestamp": "2026-03-10T15:41:44.431Z",
+  "timestamp": "2026-03-11T15:31:29.953Z",
   "stats": {
-    "ghCalls": 63,
-    "codeResults": 171,
+    "ghCalls": 54,
+    "codeResults": 170,
     "issueResults": 0,
-    "targetedResults": 53,
+    "targetedResults": 72,
     "newRepos": 2,
-    "totalFPs": 301,
-    "supported": 279,
-    "unsupported": 22,
+    "totalFPs": 298,
+    "supported": 287,
+    "unsupported": 11,
     "withDPs": 0,
     "withIssues": 0,
-    "duration": 419
+    "duration": 312
   },
   "topUnsupported": [
     {
-      "fp": "_TS0601_cover",
+      "fp": "_TZ3000_abrsvsou",
       "pids": [
+        "TS004F",
+        "TS0044",
+        "TS0215A",
+        "TS0041",
+        "TS0001",
         "TS0601"
       ],
       "dps": [],
       "repos": [
-        "wintechis/legacy-integration-wot",
-        "Koenkk/zigbee-herdsman-converters",
-        "Koenkk/zigbee2mqtt.io",
-        "itavero/homebridge-z2m",
-        "hardycheng-github/smarthome-blog"
+        "kkossev/Hubitat",
+        "zigpy/zha-device-handlers",
+        "JohanBendz/com.tuya.zigbee",
+        "dresden-elektronik/deconz-rest-plugin",
+        "TheUnlimited64/tuya_smart_knob_blueprint"
       ],
       "sources": [
         "code_search",
@@ -33,21 +38,22 @@
       ],
       "issueCount": 0,
       "codeRefCount": 12,
-      "confidence": 205,
+      "confidence": 270,
       "topIssue": null,
-      "topCode": "https://github.com/wintechis/legacy-integration-wot/blob/7326261472b882b98296a082d96e2d0fcf446759/evaluation/effectiveness-evaluation/zigbee-herdsmann-analysis/zigbee-herdsman-converters/src/devices/bseed.ts"
+      "topCode": "https://github.com/kkossev/Hubitat/blob/bdc05e1311859d58d6f7be62ea3c2b80a4c9d241/Drivers/Zigbee%20Button%20Dimmer/Zigbee_Button_Dimmer.groovy"
     },
     {
-      "fp": "_TZ3000_xxxxxxxx",
+      "fp": "_TZE204_aoclfnxz",
       "pids": [
-        "TS004F",
-        "TS0044",
         "TS0601"
       ],
       "dps": [],
       "repos": [
-        "kkossev/Hubitat",
-        "romasku/tuya-zigbee-switch"
+        "wintechis/legacy-integration-wot",
+        "Luligu/matterbridge-zigbee2mqtt",
+        "slacky1965/tuya_thermostat_zrd",
+        "skyne/zigbee-ota-index-merger",
+        "Koenkk/zigbee-herdsman-converters"
       ],
       "sources": [
         "code_search",
@@ -55,9 +61,103 @@
       ],
       "issueCount": 0,
       "codeRefCount": 15,
-      "confidence": 135,
+      "confidence": 265,
       "topIssue": null,
-      "topCode": "https://github.com/kkossev/Hubitat/blob/bdc05e1311859d58d6f7be62ea3c2b80a4c9d241/Drivers/Zigbee%20Button%20Dimmer/Zigbee_Button_Dimmer.groovy"
+      "topCode": "https://github.com/wintechis/legacy-integration-wot/blob/7326261472b882b98296a082d96e2d0fcf446759/evaluation/effectiveness-evaluation/zigbee-herdsmann-analysis/zigbee-herdsman-converters/src/devices/moes.ts"
+    },
+    {
+      "fp": "_TZE200_aoclfnxz",
+      "pids": [
+        "TS0601",
+        "TS0505B",
+        "TS004F"
+      ],
+      "dps": [],
+      "repos": [
+        "wintechis/legacy-integration-wot",
+        "KiwiHC16/Abeille",
+        "dresden-elektronik/deconz-rest-plugin",
+        "blakadder/zigbee",
+        "Koenkk/zigbee-herdsman-converters"
+      ],
+      "sources": [
+        "code_search",
+        "targeted_search"
+      ],
+      "issueCount": 0,
+      "codeRefCount": 11,
+      "confidence": 250,
+      "topIssue": null,
+      "topCode": "https://github.com/wintechis/legacy-integration-wot/blob/7326261472b882b98296a082d96e2d0fcf446759/evaluation/effectiveness-evaluation/zigbee-herdsmann-analysis/zigbee-herdsman-converters/src/devices/moes.ts"
+    },
+    {
+      "fp": "_TZE200_c88teujp",
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "repos": [
+        "wintechis/legacy-integration-wot",
+        "dresden-elektronik/deconz-rest-plugin",
+        "Koenkk/zigbee-herdsman-converters",
+        "blakadder/zigbee",
+        "jacekk015/zha_quirks"
+      ],
+      "sources": [
+        "code_search",
+        "targeted_search"
+      ],
+      "issueCount": 0,
+      "codeRefCount": 11,
+      "confidence": 230,
+      "topIssue": null,
+      "topCode": "https://github.com/wintechis/legacy-integration-wot/blob/7326261472b882b98296a082d96e2d0fcf446759/evaluation/effectiveness-evaluation/zigbee-herdsmann-analysis/zigbee-herdsman-converters/src/devices/saswell.ts"
+    },
+    {
+      "fp": "_TZE200_sh1btabb",
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "repos": [
+        "wintechis/legacy-integration-wot",
+        "arendst/Tasmota",
+        "Koenkk/zigbee-herdsman-converters",
+        "blakadder/zigbee",
+        "zigpy/zha-device-handlers"
+      ],
+      "sources": [
+        "code_search",
+        "targeted_search"
+      ],
+      "issueCount": 0,
+      "codeRefCount": 11,
+      "confidence": 215,
+      "topIssue": null,
+      "topCode": "https://github.com/wintechis/legacy-integration-wot/blob/7326261472b882b98296a082d96e2d0fcf446759/evaluation/effectiveness-evaluation/zigbee-herdsmann-analysis/zigbee-herdsman-converters/src/devices/giex.ts"
+    },
+    {
+      "fp": "_TZE200_p3dbf6qs",
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "repos": [
+        "sychu/avatto_me167_TZE200_p3dbf6qs",
+        "jacekk015/zha_quirks",
+        "KiwiHC16/Abeille",
+        "zigpy/zha-device-handlers",
+        "dresden-elektronik/deconz-rest-plugin"
+      ],
+      "sources": [
+        "code_search",
+        "targeted_search"
+      ],
+      "issueCount": 0,
+      "codeRefCount": 11,
+      "confidence": 215,
+      "topIssue": null,
+      "topCode": "https://github.com/sychu/avatto_me167_TZE200_p3dbf6qs/blob/1ccbca29247db59d254d5b23f5c49c6f6e08b245/avatto_me167.js"
     },
     {
       "fp": "_TZE200_dtzziy1e",
@@ -80,42 +180,6 @@
       "topCode": "https://github.com/wzwenzhi/Wenzhi-ZigBee2mqtt/blob/58e82c1d78faaa585cc0308d7c49545d3391d423/mtg035_radar_240701.js"
     },
     {
-      "fp": "_TZE200_7rghpoxo",
-      "pids": [],
-      "dps": [],
-      "repos": [
-        "slacky1965/tuya_thermostat_zrd",
-        "skyne/zigbee-ota-index-merger"
-      ],
-      "sources": [
-        "code_search",
-        "targeted_search"
-      ],
-      "issueCount": 0,
-      "codeRefCount": 7,
-      "confidence": 65,
-      "topIssue": null,
-      "topCode": "https://github.com/slacky1965/tuya_thermostat_zrd/blob/5d87a87e018e03d1c64bec41b7fb77ddf9ba505e/zigbee2mqtt/convertors/tuya_thermostat_orig.js"
-    },
-    {
-      "fp": "_TZE204_7rghpoxo",
-      "pids": [],
-      "dps": [],
-      "repos": [
-        "slacky1965/tuya_thermostat_zrd",
-        "skyne/zigbee-ota-index-merger"
-      ],
-      "sources": [
-        "code_search",
-        "targeted_search"
-      ],
-      "issueCount": 0,
-      "codeRefCount": 7,
-      "confidence": 65,
-      "topIssue": null,
-      "topCode": "https://github.com/slacky1965/tuya_thermostat_zrd/blob/5d87a87e018e03d1c64bec41b7fb77ddf9ba505e/zigbee2mqtt/convertors/tuya_thermostat_orig.js"
-    },
-    {
       "fp": "_TYZB01_pbgpvhgx",
       "pids": [
         "TS0210",
@@ -136,42 +200,24 @@
       "topCode": "https://github.com/kkossev/Hubitat/blob/bdc05e1311859d58d6f7be62ea3c2b80a4c9d241/Drivers/Tuya%20ZigBee%20Vibration%20Sensor/Tuya%20ZigBee%20Vibration%20Sensor.groovy"
     },
     {
-      "fp": "_TZE284_v5xjyphj",
+      "fp": "_TZ3000_srldgdxz",
       "pids": [
-        "TS0601"
+        "TS0001",
+        "TS0049"
       ],
       "dps": [],
       "repos": [
-        "Koenkk/zigbee-herdsman-converters"
+        "kkossev/Hubitat"
       ],
       "sources": [
         "code_search",
         "targeted_search"
       ],
       "issueCount": 0,
-      "codeRefCount": 4,
+      "codeRefCount": 2,
       "confidence": 45,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/e8c865be639a55bb97c249ba77b92c2ea93a15dc/src/devices/iotperfect.ts"
-    },
-    {
-      "fp": "_TZE284_k6rdmisz",
-      "pids": [
-        "TS0601"
-      ],
-      "dps": [],
-      "repos": [
-        "Koenkk/zigbee-herdsman-converters"
-      ],
-      "sources": [
-        "code_search",
-        "targeted_search"
-      ],
-      "issueCount": 0,
-      "codeRefCount": 3,
-      "confidence": 40,
-      "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/e8c865be639a55bb97c249ba77b92c2ea93a15dc/src/devices/mazda.ts"
+      "topCode": "https://github.com/kkossev/Hubitat/blob/bdc05e1311859d58d6f7be62ea3c2b80a4c9d241/Drivers/Tuya%20Zigbee%20Valve/Tuya%20Zigbee%20Valve.groovy"
     },
     {
       "fp": "_TZE200_yltivvzb",
@@ -210,232 +256,6 @@
       "confidence": 40,
       "topIssue": null,
       "topCode": "https://github.com/kkossev/Hubitat/blob/bdc05e1311859d58d6f7be62ea3c2b80a4c9d241/Drivers/Tuya%20Zigbee%20Valve/Tuya%20Zigbee%20Valve.groovy"
-    },
-    {
-      "fp": "_TZ3000_srldgdxz",
-      "pids": [
-        "TS0001",
-        "TS0049"
-      ],
-      "dps": [],
-      "repos": [
-        "kkossev/Hubitat"
-      ],
-      "sources": [
-        "code_search"
-      ],
-      "issueCount": 0,
-      "codeRefCount": 1,
-      "confidence": 40,
-      "topIssue": null,
-      "topCode": "https://github.com/kkossev/Hubitat/blob/bdc05e1311859d58d6f7be62ea3c2b80a4c9d241/Drivers/Tuya%20Zigbee%20Valve/Tuya%20Zigbee%20Valve.groovy"
-    },
-    {
-      "fp": "_TZE200_lhpnrfmy",
-      "pids": [
-        "TS0601"
-      ],
-      "dps": [],
-      "repos": [
-        "Koenkk/zigbee-herdsman-converters"
-      ],
-      "sources": [
-        "code_search",
-        "targeted_search"
-      ],
-      "issueCount": 0,
-      "codeRefCount": 2,
-      "confidence": 35,
-      "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/e8c865be639a55bb97c249ba77b92c2ea93a15dc/src/devices/box.ts"
-    },
-    {
-      "fp": "_TZE200_o7vduidq",
-      "pids": [
-        "TS0601"
-      ],
-      "dps": [],
-      "repos": [
-        "Koenkk/zigbee-herdsman-converters"
-      ],
-      "sources": [
-        "code_search",
-        "targeted_search"
-      ],
-      "issueCount": 0,
-      "codeRefCount": 2,
-      "confidence": 35,
-      "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/e8c865be639a55bb97c249ba77b92c2ea93a15dc/src/devices/box.ts"
-    },
-    {
-      "fp": "_TZE200_test",
-      "pids": [
-        "TS0601"
-      ],
-      "dps": [],
-      "repos": [
-        "skyne/zigbee-ota-index-merger"
-      ],
-      "sources": [
-        "code_search",
-        "targeted_search"
-      ],
-      "issueCount": 0,
-      "codeRefCount": 2,
-      "confidence": 35,
-      "topIssue": null,
-      "topCode": "https://github.com/skyne/zigbee-ota-index-merger/blob/675524e04124cd3e4f7e758957bbe7ac8a5e6adb/src/lib/indexMerge.test.ts"
-    },
-    {
-      "fp": "_TZE204_xxxxxx",
-      "pids": [
-        "TS0601"
-      ],
-      "dps": [],
-      "repos": [
-        "Luligu/matterbridge-zigbee2mqtt"
-      ],
-      "sources": [
-        "code_search",
-        "targeted_search"
-      ],
-      "issueCount": 0,
-      "codeRefCount": 2,
-      "confidence": 35,
-      "topIssue": null,
-      "topCode": "https://github.com/Luligu/matterbridge-zigbee2mqtt/blob/638a21401e2d9919e897a3cc18a46b81bbe62550/src/entity.test.ts"
-    },
-    {
-      "fp": "_TZE204_uc0iv1hb",
-      "pids": [
-        "TS0601"
-      ],
-      "dps": [],
-      "repos": [
-        "Koenkk/zigbee-herdsman-converters"
-      ],
-      "sources": [
-        "code_search",
-        "targeted_search"
-      ],
-      "issueCount": 0,
-      "codeRefCount": 2,
-      "confidence": 35,
-      "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/e8c865be639a55bb97c249ba77b92c2ea93a15dc/src/devices/spacetronik.ts"
-    },
-    {
-      "fp": "_TZE204_r7brscr6",
-      "pids": [
-        "TS0601"
-      ],
-      "dps": [],
-      "repos": [
-        "Koenkk/zigbee-herdsman-converters"
-      ],
-      "sources": [
-        "code_search",
-        "targeted_search"
-      ],
-      "issueCount": 0,
-      "codeRefCount": 2,
-      "confidence": 35,
-      "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/e8c865be639a55bb97c249ba77b92c2ea93a15dc/src/devices/tech.ts"
-    },
-    {
-      "fp": "_TZE204_k6rdmisz",
-      "pids": [
-        "TS0601"
-      ],
-      "dps": [],
-      "repos": [
-        "Koenkk/zigbee-herdsman-converters"
-      ],
-      "sources": [
-        "code_search"
-      ],
-      "issueCount": 0,
-      "codeRefCount": 2,
-      "confidence": 35,
-      "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/e8c865be639a55bb97c249ba77b92c2ea93a15dc/src/devices/mazda.ts"
-    },
-    {
-      "fp": "_TZE204_djurk6p5",
-      "pids": [
-        "TS0601"
-      ],
-      "dps": [],
-      "repos": [
-        "Koenkk/zigbee-herdsman-converters"
-      ],
-      "sources": [
-        "code_search",
-        "targeted_search"
-      ],
-      "issueCount": 0,
-      "codeRefCount": 2,
-      "confidence": 35,
-      "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/e8c865be639a55bb97c249ba77b92c2ea93a15dc/src/devices/engo.ts"
-    },
-    {
-      "fp": "_TZE284_hcs66axl",
-      "pids": [
-        "TS0601"
-      ],
-      "dps": [],
-      "repos": [
-        "Koenkk/zigbee-herdsman-converters"
-      ],
-      "sources": [
-        "code_search",
-        "targeted_search"
-      ],
-      "issueCount": 0,
-      "codeRefCount": 2,
-      "confidence": 35,
-      "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/e8c865be639a55bb97c249ba77b92c2ea93a15dc/src/devices/nedis.ts"
-    },
-    {
-      "fp": "_TZE284_hbjwgkdh",
-      "pids": [
-        "TS0601"
-      ],
-      "dps": [],
-      "repos": [
-        "Koenkk/zigbee-herdsman-converters"
-      ],
-      "sources": [
-        "code_search",
-        "targeted_search"
-      ],
-      "issueCount": 0,
-      "codeRefCount": 2,
-      "confidence": 35,
-      "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/e8c865be639a55bb97c249ba77b92c2ea93a15dc/src/devices/xenon.ts"
-    },
-    {
-      "fp": "_TS0601_humidity",
-      "pids": [
-        "TS0601"
-      ],
-      "dps": [],
-      "repos": [
-        "dresden-elektronik/deconz-rest-plugin"
-      ],
-      "sources": [
-        "code_search"
-      ],
-      "issueCount": 0,
-      "codeRefCount": 1,
-      "confidence": 30,
-      "topIssue": null,
-      "topCode": "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/06b8276c55807137fb2cdfed5eeaaaa47b1e715a/devices/tuya/_TZE284_TS0601_humidity_temperature_with_probe.json"
     }
   ],
   "bugsInSupported": [],
@@ -459,5 +279,5 @@
       "topics": []
     }
   ],
-  "aiPlan": "### Unsupported Tuya Zigbee Fingerprints\n\n| FP                  | PIDs                | Suggested Driver                          | DP→Capability Map                                                                 | Repos                                                                                     | Confidence |\n|---------------------|---------------------|-------------------------------------------|-------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|------------|\n| `_TS0601_cover`     | `TS0601`            | `zigbee-herdsman-converters`             | N/A                                                                                 | `wintechis/legacy-integration-wot`, `Koenkk/zigbee-herdsman-converters`, `zigbee2mqtt.io` | 205        |\n| `_TZ3000_xxxxxxxx`  | `TS004F`, `TS0044`, `TS0601` | `zigbee-herdsman-converters`             | N/A                                                                                 | `kkossev/Hubitat`, `romasku/tuya-zigbee-switch`                                         | 135        |\n| `_TZE200_dtzziy1e`  | `TS0601`            | `zigbee-herdsman-converters`             | N/A                                                                                 | `wzwenzhi/Wenzhi-ZigBee2mqtt`, `kkossev/Hubitat`                                         | 80         |\n| `_TZE200_7rghpoxo`  |                     | `tuya_thermostat_zrd`                    | N/A                                                                                 | `slacky1965/tuya_thermostat_zrd`, `skyne/zigbee-ota-index-merger`                       | 65         |\n| `_TZE204_7rghpoxo`  |                     | `tuya_thermostat_zrd`                    | N/A                                                                                 | `slacky1965/tuya_thermostat_zrd`, `skyne/zigbee-ota-index-merger`                       | 65         |\n| `_TYZB01_pbgpvhgx`  | `TS0210`, `TS0601`  | `zigbee-herdsman-converters`             | N/A                                                                                 | `kkossev/Hubitat`                                                                         | 50         |\n| `_TZE284_v5xjyphj`  | `TS0601`            | `zigbee-herdsman-converters`             | N/A                                                                                 | `Koenkk/zigbee-herdsman-converters`                                                     | 45         |\n| `_TZE284_k6rdmisz`  | `TS0601`            | `zigbee-herdsman-converters`             | N/A                                                                                 | `Koenkk/zigbee-herdsman-converters`                                                     | 40         |\n| `_TZE200_yltivvzb`  | `TS0601`            | `zigbee-herdsman-converters`             | N/A                                                                                 | `nikzori/gidrolock_guides`                                                             | 40         |\n| `_TZ3000_hwnphliv`  | `TS0001`, `TS0049`  | `zigbee-herdsman-converters`             | N/A                                                                                 | `kkossev/Hubitat`                                                                         | 40         |\n| `_TZ3000_srldgdxz`  | `TS0001`, `TS0049`  | `zigbee-herdsman-converters`             | N/A                                                                                 | `kkossev/Hubitat`                                                                         | 40         |\n| `_TZE200_lhpnrfmy`  | `TS0601`            | `zigbee-herdsman-converters`             | N/A                                                                                 | `Koenkk/zigbee-herdsman-converters`                                                     | 35         |\n| `_TZE200_o7vduidq`  | `TS0601`            | `zigbee-herdsman-converters`             | N/A                                                                                 | `Koenkk/zigbee-herdsman-converters`                                                     | 35         |\n| `_TZE200_test`      | `TS0601`            | `zigbee-herdsman-converters`             | N/A                                                                                 | `skyne/zigbee-ota-index-merger`                                                           | 35         |\n| `_TZE204_xxxxxx`    | `TS0601`            | `zigbee-herdsman-converters`             | N/A                                                                                 | `Luligu/matterbridge-zigbee2mqtt`                                                       | 35         |\n\n### New Repositories Assessment\n\n| Repository                          | Stars | Description                                 | Value for Integration                                                                 |\n|-------------------------------------|-------|---------------------------------------------|-------------------------------------------------------------------------------------|\n| `kodalissri/com.MyZigbee.Devices`   | 0     | Homey App for Tuya Devices                 | High. Provides a dedicated app for Tuya devices, potentially integrating various Tuya Zigbee devices seamlessly. |\n| `oskarirauta/homey-owon-driver`     | 0     | OWON THS317-ET ZigBee Driver (non-tuya)"
+  "aiPlan": "Here's a summary of unsupported firmware profiles (FPs) along with suggested drivers and capability mappings for the Tuya Zigbee devices. Additionally, I've assessed the value of new repositories for integration.\n\n| Firmware Profile (FP)      | Product IDs (PIDs)                     | Suggested Driver(s)                             | DP → Capability Map | Repositories                                                                 | Issues | Code References | Confidence |\n|-----------------------------|----------------------------------------|------------------------------------------------|---------------------|-----------------------------------------------------------------------------|--------|----------------|------------|\n| _TZ3000_abrsvsou           | TS004F, TS0044, TS0215A, TS0041, TS0001, TS0601 | zigpy/zha-device-handlers                      | TBD                 | kkossev/Hubitat, zigpy/zha-device-handlers, JohanBendz/com.tuya.zigbee    | 0      | 12             | 270        |\n| _TZE204_aoclfnxz           | TS0601                                 | zigpy/zha-device-handlers                      | TBD                 | wintechis/legacy-integration-wot, Luligu/matterbridge-zigbee2mqtt, slacky1965/tuya_thermostat_zrd | 0      | 15             | 265        |\n| _TZE200_aoclfnxz           | TS0601, TS0505B, TS004F                | zigpy/zha-device-handlers                      | TBD                 | wintechis/legacy-integration-wot, KiwiHC16/Abeille, dresden-elektronik/deconz-rest-plugin | 0      | 11             | 250        |\n| _TZE200_c88teujp           | TS0601                                 | zigpy/zha-device-handlers                      | TBD                 | wintechis/legacy-integration-wot, dresden-elektronik/deconz-rest-plugin, Koenkk/zigbee-herdsman-converters | 0      | 11             | 230        |\n| _TZE200_sh1btabb           | TS0601                                 | zigpy/zha-device-handlers                      | TBD                 | wintechis/legacy-integration-wot, arendst/Tasmota, Koenkk/zigbee-herdsman-converters | 0      | 11             | 215        |\n| _TZE200_p3dbf6qs           | TS0601                                 | zigpy/zha-device-handlers                      | TBD                 | sychu/avatto_me167_TZE200_p3dbf6qs, jacekk015/zha_quirks, KiwiHC16/Abeille | 0      | 11             | 215        |\n| _TZE200_dtzziy1e           | TS0601                                 | zigpy/zha-device-handlers                      | TBD                 | wzwenzhi/Wenzhi-ZigBee2mqtt, kkossev/Hubitat                             | 0      | 8              | 80         |\n| _TYZB01_pbgpvhgx           | TS0210, TS0601                         | zigpy/zha-device-handlers                      | TBD                 | kkossev/Hubitat                                                          | 0      | 3              | 50         |\n| _TZ3000_srldgdxz           | TS0001, TS0049                         | zigpy/zha-device-handlers                      | TBD                 | kkossev/Hubitat                                                          | 0      | 2              | 45         |\n| _TZE200_yltivvzb           | TS0601                                 | zigpy/zha-device-handlers                      | TBD                 | nikzori/gidrolock_guides                                                 | 0      | 3              | 40         |\n| _TZ3000_hwnphliv           | TS0001, TS0049                         | zigpy/zha-device-handlers                      | TBD                 | kkossev/Hubitat                                                          | 0      | 1              | 40         |\n\n### New Repositories Assessment\n\n| Repository Name                          | Stars | Description                                           | Value for Integration |\n|------------------------------------------|-------|-----------------------------------------------------|-----------------------|\n| kodalissri/com.MyZigbee.Devices         | 0     | Homey App for Tuya Devices                          | Low                   |\n| oskarirauta/homey-owon-driver           | 0     | OWON THS317-ET ZigBee Driver (non-tuya version)    | Medium                |\n\n**Summary**: The unsupported FPs indicate a need for integration efforts, particularly with the suggested drivers. The new repositories have potential, but their current lack of stars suggests limited community engagement, which may affect their long-term viability. Prioritizing integration with higher confidence levels and established repositories is recommended."
 }
