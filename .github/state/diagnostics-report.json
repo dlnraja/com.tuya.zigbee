@@ -1,69 +1,12 @@
 {
-  "timestamp": "2026-03-10T19:22:06.963Z",
-  "count": 2,
-  "byType": {
-    "github": 2
-  },
+  "timestamp": "2026-03-11T03:46:52.597Z",
+  "count": 0,
+  "byType": {},
   "newFingerprints": [],
   "deepResearch": {
     "researched": 0,
     "added": 0,
     "details": []
   },
-  "diagnostics": [
-    {
-      "id": "imap_499996",
-      "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] Device Request - _TZE200_xlppj4f5- TS0601 - Immax Neo smart water timer (Issue #135)",
-      "from": "github",
-      "date": "2026-03-10T18:49:13.000Z",
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [
-        "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe="
-      ],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "135",
-        "action": "Closed",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    },
-    {
-      "id": "imap_499997",
-      "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] Device Request - _TZE200_xlppj4f5- TS0601 - Immax Neo smart water timer (Issue #135)",
-      "from": "github",
-      "date": "2026-03-10T18:49:15.000Z",
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "135",
-        "action": null,
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    }
-  ]
+  "diagnostics": []
 }
