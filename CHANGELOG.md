@@ -6,7 +6,24 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.104] - 2026-03-11
+## [5.11.105] - 2026-03-11
+
+### New Features
+- Integrated TuyaZigbeeBridge into the driver pairing flow.
+- Added TuyaZigbeeBridge.js for Zigbee sub-device control via Tuya gateway.
+
+### Bug Fixes
+- Resolved various issues related to device patterns.
+
+### Diagnostics
+- Updated diagnostics report with new data as of 2026-03-11.
+
+### Device Support
+- Added 2 new fingerprints: _TZ3000_402vrq2i, _TZE200_rxq4iti9.
+- Total drivers: 145, Total fingerprints: 4153.
+---
+
+ [5.11.104] - 2026-03-11
 
 ### New Features
 - Added `TuyaZigbeeBridge.js` for Zigbee sub-device control via Tuya gateway.
