@@ -92,7 +92,7 @@ for(const it of issues){
   if(msg){postComment(it.number,msg);iCommented++;}
   // Auto-close if ALL FPs supported (only on own repo)
   if(found.length&&!missing.length&&!DRY&&CAN_CLOSE){
-    try{gh(`issue close ${it.number} -R ${REPO} -r "not planned" -c "All fingerprints already supported in v${VER}."`);iClosed++;console.log(`  Closed #${it.number}`);}catch{}
+    try{gh(`issue edit ${it.number} -R ${REPO} --add-label "awaiting-verification"`);console.log(`  Verify-requested #${it.number}`);}catch{}
   }
 }
 
@@ -108,7 +108,7 @@ for(const pr of prs){
     const mfrs3=extractMfrFromText(`${pr.title||''} ${pr.body||''}`);
     const allSupp3=mfrs3.length>0&&mfrs3.every(m=>fps.has(m));
     if(allSupp3&&!DRY&&CAN_CLOSE){
-      try{gh(`pr close ${pr.number} -R ${REPO} -c "All fingerprints integrated in v${VER}. Thanks!"`);pClosed++;console.log(`  [SWEEP] Closed PR #${pr.number}`);}catch{}
+      try{gh(`pr edit ${pr.number} -R ${REPO} --add-label "awaiting-verification"`);console.log(`  [SWEEP] Verify-requested PR #${pr.number}`);}catch{}
     }
     continue;
   }
@@ -122,7 +122,7 @@ for(const pr of prs){
   }
   // Auto-close PR if ALL FPs supported (only on own repo)
   if(found.length&&!missing.length&&!DRY&&CAN_CLOSE){
-    try{gh(`pr close ${pr.number} -R ${REPO} -c "All fingerprints already integrated in v${VER}."`);pClosed++;console.log(`  Closed PR #${pr.number}`);}catch{}
+    try{gh(`pr edit ${pr.number} -R ${REPO} --add-label "awaiting-verification"`);console.log(`  Verify-requested PR #${pr.number}`);}catch{}
   }
 }
 

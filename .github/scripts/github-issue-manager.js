@@ -20,6 +20,9 @@ const FORCE_REPROCESS=process.env.FORCE_REPROCESS==='true';
 const STATE_F=path.join(__dirname,'..','state','issue-manager-state.json');
 const REPORT_F=path.join(__dirname,'..','state','issue-manager-report.json');
 const TAG='<!-- tuya-issue-manager -->';
+const VERIFY_TAG='<!-- awaiting-verification -->';
+const VERIFY_LABEL='awaiting-verification';
+const VERIFY_DAYS=14;
 const OWNER_USERS=new Set(['dlnraja','github-actions[bot]','dependabot[bot]','tuya-triage-bot']);
 const{fetchWithRetry}=require('./retry-helper');
 const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
@@ -267,11 +270,10 @@ async function processIssue(repo,issue,state,report,extData){
     const age=daysSince(issue.updated_at);
     if(age>=STALE_DAYS||classification.type==='resolved'||classification.type==='duplicate'){
       const reason=classification.closeReason||'Auto-closed: '+(age>=STALE_DAYS?'inactive >'+STALE_DAYS+' days':classification.type);
-      let closeBody=TAG+'\n'+reason+'\n\nFeel free to reopen if this is still relevant.';
-      await ghPost('/repos/'+repo+'/issues/'+issue.number+'/comments',{body:closeBody});
-      const ok=await ghPatch('/repos/'+repo+'/issues/'+issue.number,{state:'closed',state_reason:'not_planned'});
-      if(ok){state.closed.push(key);report.closed++;console.log('    CLOSED:',reason)}
-      else console.log('    CLOSE FAILED (no write access?):',reason);
+      let verifyBody=TAG+'\n'+reason+'\n\n**Please confirm** this is resolved. If no reply in 14 days, this will be auto-closed.';
+      await ghPost('/repos/'+repo+'/issues/'+issue.number+'/comments',{body:verifyBody});
+      await ghPost('/repos/'+repo+'/issues/'+issue.number+'/labels',{labels:['awaiting-verification']});
+      console.log('    VERIFY-REQUESTED:',reason)
     }
   }
 
@@ -285,9 +287,8 @@ async function processIssue(repo,issue,state,report,extData){
     const hasClose=lastBody.includes('closing')||lastBody.includes('already supported')||lastBody.includes('install test')||lastBody.includes('all fp');
     if(isOwner&&(allSupp||hasClose)){
       const reason='Triaged by '+lastUser+(allSupp?' — all FPs supported in v'+appVer:' — addressed');
-      const ok=await ghPatch('/repos/'+repo+'/issues/'+issue.number,{state:'closed',state_reason:'completed'});
-      if(ok){state.closed.push(key);report.closed++;console.log('    AUTO-CLOSED (owner last):',reason)}
-      else console.log('    AUTO-CLOSE SKIP (no perms):',reason);
+      await ghPost('/repos/'+repo+'/issues/'+issue.number+'/labels',{labels:['awaiting-verification']});
+      console.log('    VERIFY-REQUESTED (owner):',reason)
     }
   }
 
@@ -348,9 +349,8 @@ async function processPR(repo,pr,state,report,extData){
     const allSupp=allFPs.length>0&&!newFPs.length;
     const hasClose=lastBody.includes('closing')||lastBody.includes('already supported')||lastBody.includes('already in v')||lastBody.includes('all fp');
     if(isOwner&&(allSupp||hasClose)){
-      const ok=await ghPatch('/repos/'+repo+'/pulls/'+pr.number,{state:'closed'});
-      if(ok){state.closed.push(key);report.closed++;console.log('    AUTO-CLOSED PR (owner last): '+lastUser)}
-      else console.log('    PR AUTO-CLOSE SKIP (no perms): '+lastUser);
+      await ghPost('/repos/'+repo+'/issues/'+pr.number+'/labels',{labels:['awaiting-verification']});
+      console.log('    PR VERIFY-REQUESTED:',lastUser)
     }
   }
 
@@ -379,21 +379,23 @@ async function staleSweep(repo,items,isPR,state,report){
 
     let shouldClose=false;let reason='';
 
-    // Rule 1: All FPs supported + we responded + >7 days
-    if(allSupp&&hasBot&&age>=7){
-      shouldClose=true;reason='All FPs supported in v'+appVer+', responded '+age+'d ago';
+    // Rule 1: All FPs supported + awaiting-verification label + >14 days
+    const hasVerifyLabel=item.labels&&item.labels.some(l=>(l.name||l)==='awaiting-verification');
+    if(allSupp&&hasBot&&hasVerifyLabel&&age>=14){
+      shouldClose=true;reason='All FPs supported, verification requested '+age+'d ago with no response';
     }
     // Rule 2: Stale >30 days + already triaged
-    if(!shouldClose&&age>=STALE_DAYS&&hasBot){
-      shouldClose=true;reason='Inactive >'+age+'d, already triaged';
+    if(!shouldClose&&age>=STALE_DAYS&&hasBot&&hasVerifyLabel){
+      shouldClose=true;reason='Inactive >'+age+'d, verification requested with no response';
     }
     // Rule 3: Last comment from owner/bot with closing language
     if(!shouldClose&&comments&&comments.length){
       const last=comments[comments.length-1];
       const lu=last?.user?.login||'';
       const lb=(last?.body||'').toLowerCase();
-      if(OWNER_USERS.has(lu)&&(lb.includes('closing')||lb.includes('already supported')||lb.includes('install test')||lb.includes('resolved'))){
-        shouldClose=true;reason='Owner/bot last comment indicates resolved';
+      const userOk=!OWNER_USERS.has(lu)&&(lb.includes('works')||lb.includes('confirmed')||lb.includes('fixed'));
+      if(userOk||(hasVerifyLabel&&OWNER_USERS.has(lu)&&lb.includes('closing'))){
+        shouldClose=true;reason=userOk?'User confirmed fix':'Owner closed after verification';
       }
     }
 
