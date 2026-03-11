@@ -6,7 +6,23 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.105] - 2026-03-11
+## [5.11.106] - 2026-03-11
+
+### Bug Fixes
+- Updated forum state.
+
+### New Features
+- Added 3 new fingerprints: [_TZ3000_402vrq2i, _TZE200_rxq4iti9].
+
+### Improvements
+- Updated diagnostics report with new data.
+- Updated README with Zigbee bridge section and component details.
+
+### CI/CD
+- No significant changes.
+---
+
+ [5.11.105] - 2026-03-11
 
 ### New Features
 - Integrated TuyaZigbeeBridge into the driver pairing flow.
