@@ -56,8 +56,12 @@ Manual entry ──────────────────────�
 | `TuyaDeviceDiscovery.js` | UDP LAN discovery on ports 6666/6667 |
 | `TuyaLocalDevice.js` | Base device class: tuyapi wrapper with reconnect + heartbeat |
 | `TuyaLocalDriver.js` | Pairing driver: 3 methods + cloud device list + LAN discovery |
+| `TuyaZigbeeBridge.js` | Zigbee gateway bridge: sub-device control via gateway TCP |
 | `TuyaCloudAPI.js` | Legacy Tuya Open API client (IoT Platform method) |
 | `TuyaCloudMQTT.js` | Real-time cloud MQTT updates (optional, AES-ECB/GCM) |
+
+## Zigbee Gateway Bridge
+Sub-devices controlled via gateway TCP using cid parameter.
 
 ## Protocol Support
 - **3.1** - Legacy unencrypted (very old devices)
