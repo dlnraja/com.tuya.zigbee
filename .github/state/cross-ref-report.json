@@ -1,0 +1,26 @@
+{
+  "ts": "2026-03-11T06:14:48.034Z",
+  "correlations": [],
+  "actionable": [
+    {
+      "user": "Cam",
+      "device": "`_TZ3000_5bpeda8u` TS0041",
+      "status": "NEEDS DIAG"
+    },
+    {
+      "user": "Freddyboy",
+      "device": "`_TZ3000_zgyzgdua` TS0044",
+      "status": "NEEDS DIAG"
+    },
+    {
+      "user": "Ricardo_Lenior",
+      "device": "Ceiling presence 230v",
+      "status": "NEEDS FP"
+    },
+    {
+      "user": "Ferenc_Szasz",
+      "device": "`_TZE200_3p5ydos3` dimmer",
+      "status": "NEEDS DIAG"
+    }
+  ]
+}

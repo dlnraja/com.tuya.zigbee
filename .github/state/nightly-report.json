@@ -1,22 +1,11 @@
 {
-  "timestamp": "2026-03-10T15:10:40.073Z",
-  "appVersion": "5.11.101",
-  "forum": 1,
+  "timestamp": "2026-03-11T05:48:25.612Z",
+  "appVersion": "5.11.103",
+  "forum": 0,
   "github": 0,
-  "diagnostics": 2,
+  "diagnostics": 0,
   "diagNewFPs": 0,
   "diagCritical": 0,
-  "forumDetails": [
-    {
-      "topic": 140352,
-      "post": 1625,
-      "user": "Chris_M",
-      "fps": [
-        "_TZ3000_22ugzkme"
-      ],
-      "reply": "It looks like we have a fingerprint match for your device, the TS0041, which is recognized as a valid product ID. The available drivers for this device are `button_wireless_1` and `universal_fallback`",
-      "model": "gh-gpt-4o-mini"
-    }
-  ],
+  "forumDetails": [],
   "githubDetails": []
 }
