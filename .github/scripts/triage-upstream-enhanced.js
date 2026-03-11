@@ -108,7 +108,7 @@ for(const it of issues){
     const mfrs2=extractMfrFromText(`${it.title||''} ${it.body||''}`);
     const allSupp=mfrs2.length>0&&mfrs2.every(m=>fps.has(m));
     if(allSupp&&!DRY&&CAN_CLOSE){
-      try{gh(`issue close ${it.number} -R ${REPO} -r "completed" -c "All fingerprints supported in v${VER}. Closing as resolved."`);iClosed++;console.log(`  [SWEEP] Closed #${it.number}`);}catch{}
+      try{gh(`issue close ${it.number} -R ${REPO} -r "completed" -c "All fingerprints supported in v${VER}. Closing as resolved."`);/* verify-only */;console.log(`  [SWEEP] Closed #${it.number}`);}catch{}
     }
     continue;
   }
@@ -132,7 +132,7 @@ for(const it of issues){
   if(msg){post(it.number,msg);iCommented++;}
   // Auto-close if ALL FPs supported (only on own repo)
   if(found.length&&!missing.length&&!DRY&&CAN_CLOSE){
-    try{gh(`issue close ${it.number} -R ${REPO} -r "not planned" -c "All FPs here are already in v${VER} — closing. Install the test version and re-pair if needed."`);iClosed++;console.log(`  Closed #${it.number} (all FPs supported)`);}catch(e){console.log(`  Close skip #${it.number}: ${e.message.slice(0,60)}`);}
+    try{gh(`issue edit ${it.number} -R ${REPO} --add-label "awaiting-verification" -c "All FPs here are already in v${VER} — closing. Install the test version and re-pair if needed."`);iClosed++;console.log(`  Closed #${it.number} (all FPs supported)`);}catch(e){console.log(`  Close skip #${it.number}: ${e.message.slice(0,60)}`);}
   }
 }
 
@@ -146,7 +146,7 @@ for(const pr of prs){
     const mfrs3=extractMfrFromText(`${pr.title||''} ${pr.body||''}`);
     const allSupp3=mfrs3.length>0&&mfrs3.every(m=>fps.has(m));
     if(allSupp3&&!DRY&&CAN_CLOSE){
-      try{gh(`pr close ${pr.number} -R ${REPO} -c "All fingerprints integrated in v${VER}. Thanks!"`);pClosed++;console.log(`  [SWEEP] Closed PR #${pr.number}`);}catch{}
+      try{gh(`pr edit ${pr.number} -R ${REPO} --add-label "awaiting-verification" && echo "labeled in v${VER}. Thanks!"`);console.log(`  [SWEEP] Verify-requested PR #${pr.number}`);}catch{}
     }
     continue;
   }
@@ -158,7 +158,7 @@ for(const pr of prs){
   if(found.length||missing.length){post(pr.number,prMsg(found,missing));pCommented++;}
   // Auto-close PR if ALL FPs supported (only on own repo)
   if(found.length&&!missing.length&&!DRY&&CAN_CLOSE){
-    try{gh(`pr close ${pr.number} -R ${REPO} -c "All FPs in this PR are already in v${VER} — closing as resolved. Thanks!"`);pClosed++;console.log(`  Closed PR #${pr.number} (all FPs supported)`);}catch(e){console.log(`  Close skip PR #${pr.number}: ${e.message.slice(0,60)}`);}
+    try{gh(`pr edit ${pr.number} -R ${REPO} --add-label "awaiting-verification" && echo "All FPs in this PR are already in v${VER} — closing as resolved. Thanks!"`);pClosed++;console.log(`  Closed PR #${pr.number} (all FPs supported)`);}catch(e){console.log(`  Close skip PR #${pr.number}: ${e.message.slice(0,60)}`);}
   }
 }
 

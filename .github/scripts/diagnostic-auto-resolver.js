@@ -141,9 +141,9 @@ async function processIssues(repo,idx,state,report){
     commented++;
     // Auto-close on own repo if device_request with all supported
     if(repo===OWN){
-      await ghPatch('/repos/'+repo+'/issues/'+iss.number,{state:'closed',state_reason:'completed'});
-      state.resolved.push(key);closed++;
-      console.log('    -> Closed');
+      await ghPost('/repos/'+repo+'/issues/'+iss.number+'/labels',{labels:['awaiting-verification']});
+      state.commented.push(key);
+      console.log('    -> Verification requested');
     }else{
       state.commented.push(key);
     }
