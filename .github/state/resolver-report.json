@@ -1,23 +1,10 @@
 {
-  "timestamp": "2026-03-11T19:27:29.343Z",
-  "diagFPs": 48,
-  "driverIdx": 4818,
-  "supported": 46,
-  "unsupported": 2,
-  "newFPs": [
-    {
-      "fp": "_TZ3000_402vrq2i",
-      "source": "gmail",
-      "date": "2026-03-11T18:49:00.000Z",
-      "type": "github"
-    },
-    {
-      "fp": "_TZE200_rxq4iti9",
-      "source": "gmail",
-      "date": "2026-03-11T18:49:00.000Z",
-      "type": "github"
-    }
-  ],
+  "timestamp": "2026-03-12T06:18:19.752Z",
+  "diagFPs": 0,
+  "driverIdx": 4820,
+  "supported": 0,
+  "unsupported": 0,
+  "newFPs": [],
   "dlnraja/com.tuya.zigbee": {
     "issues": 2,
     "commented": 0,
