@@ -202,6 +202,7 @@ env:
 | tuya-automation-hub | 4x/day (1,7,13,19) + Mon/Thu | forum+github | ALL |
 | forum-auto-responder | 2x/day (9,21 UTC) | forum respond | DISCOURSE_API_KEY |
 | cleanup-wrong-threads | manual | cleanup bot posts | DISCOURSE_API_KEY |
+| johan-sdk3-sync | Wed 05:00 | SDK3 FP+DP sync | GITHUB_TOKEN |
 | code-quality | Wed 03:00 + on push | quality checks | — |
 | dependabot-auto-merge | on PR | auto-merge deps | GH_PAT |
 

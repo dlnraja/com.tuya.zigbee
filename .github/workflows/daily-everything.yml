@@ -248,6 +248,12 @@ jobs:
         timeout-minutes: 10
         run: node .github/scripts/scan-johan-full.js
 
+      - name: "9b1b. Johan SDK3 Auto-Sync"
+        id: johan_sync
+        continue-on-error: true
+        timeout-minutes: 10
+        run: node .github/scripts/sync-johan-sdk3.js
+
       # ===== 9b2. FP RESEARCH ENGINE: Deep classify via Z2M/Blakadder/CompScan =====
       - name: "9b2. FP Research Engine (Deep Classify)"
         id: fp_research

@@ -1,0 +1,112 @@
+# Johan SDK3 Auto-Sync — v1.0.0
+# Clones JohanBendz SDK3 branch, compares FPs + DPs with ours,
+# auto-adds safe missing FPs, detects DP gaps, creates PR.
+# Runs weekly (Wed 05:00 UTC) + manual trigger.
+
+name: "Johan SDK3 Auto-Sync"
+
+on:
+  schedule:
+    - cron: '0 5 * * 3'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (no PR created)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: johan-sdk3-sync
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  sync:
+    name: "Sync Johan SDK3"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: Run SDK3 sync
+        id: sync
+        run: node .github/scripts/sync-johan-sdk3.js
+
+      - name: Validate JSON
+        if: steps.sync.outputs.has_changes == 'true'
+        run: |
+          echo "Validating driver.compose.json files..."
+          FAIL=0
+          for f in drivers/*/driver.compose.json; do
+            if ! node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))"; then
+              echo "FAIL: $f"
+              FAIL=1
+            fi
+          done
+          if [ "$FAIL" = "1" ]; then echo "JSON validation failed!"; exit 1; fi
+          echo "All JSON valid."
+
+      - name: Create Pull Request
+        if: steps.sync.outputs.has_changes == 'true' && inputs.dry_run != true
+        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "auto: sync Johan SDK3 FPs (${{ steps.sync.outputs.added }} added) [skip ci]"
+          title: "Johan SDK3 Sync — ${{ steps.sync.outputs.added }} FPs added, ${{ steps.sync.outputs.gaps }} DP gaps"
+          body: |
+            ## Automated Johan SDK3 Sync
+
+            ### Fingerprints
+            - **Added**: ${{ steps.sync.outputs.added }} new FPs auto-matched to existing drivers
+            - **DP gaps**: ${{ steps.sync.outputs.gaps }} drivers with missing Tuya DP mappings
+            - **New Johan drivers**: ${{ steps.sync.outputs.new_drivers }} (not in our codebase)
+
+            ### Report
+            See `.github/state/johan-sdk3-sync.json` for full details.
+
+            ### Review checklist
+            - [ ] Verify new FPs are in the correct drivers
+            - [ ] Check DP gaps — may need manual device.js edits
+            - [ ] Validate with `npx homey app validate`
+          branch: auto/johan-sdk3-sync
+          labels: fingerprints,automated,upstream
+          delete-branch: true
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Johan SDK3 Sync Results" >> "$GITHUB_STEP_SUMMARY"
+          echo "- FPs added: ${{ steps.sync.outputs.added || '0' }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- DP gaps: ${{ steps.sync.outputs.gaps || '0' }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- New drivers: ${{ steps.sync.outputs.new_drivers || '0' }}" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f .github/state/johan-sdk3-sync.json ]; then
+            echo '```json' >> "$GITHUB_STEP_SUMMARY"
+            cat .github/state/johan-sdk3-sync.json | node -e "d=require('fs').readFileSync('/dev/stdin','utf8');try{console.log(JSON.stringify(JSON.parse(d).summary,null,2))}catch{console.log(d)}" >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: johan-sdk3-sync-report
+          path: .github/state/johan-sdk3-sync.json
+          retention-days: 30
