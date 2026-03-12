@@ -6,7 +6,22 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.108] - 2026-03-12
+## [5.11.109] - 2026-03-12
+
+### Bug Fixes
+- Implemented batch close/respond state update for improved device responsiveness.
+
+### New Features
+- No new features added in this release.
+
+### Improvements
+- No additional improvements made in this release.
+
+### CI/CD
+- No changes to CI/CD processes.
+---
+
+ [5.11.108] - 2026-03-12
 
 ### New Features
 - Integrated JohanBendz SDK3 improvements, adding LELLKI fingerprint and rain sensor data points.
