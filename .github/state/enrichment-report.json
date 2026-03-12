@@ -1,24 +1,16 @@
 {
-  "timestamp": "2026-03-11T15:13:54.579Z",
-  "dryRun": false,
-  "stats": {
-    "z2m": 1,
-    "zha": 34,
-    "deconz": 13,
-    "hubitat": 0,
-    "total": 26
-  },
-  "crossRef": {
-    "total": 26,
-    "supported": 26,
-    "unsupported": 0
-  },
-  "enrichments": {
-    "proposed": 0,
-    "applied": 0,
-    "skipped": 0
-  },
-  "topUnsupported": [],
-  "appliedDetails": [],
-  "skippedDetails": []
+  "timestamp": "2026-03-12T04:37:40.829Z",
+  "totalNew": 2,
+  "withDPs": 0,
+  "newFingerprints": [
+    {
+      "fp": "_TZ3000_402vrq2i",
+      "source": "gmail-diag"
+    },
+    {
+      "fp": "_TZE200_rxq4iti9",
+      "source": "gmail-diag"
+    }
+  ],
+  "aiPlan": "Here’s the classification and mapping for the provided devices:\n\n| FP                | Type   | Driver                | DPs→Capabilities | Quirks |\n|-------------------|--------|-----------------------|-------------------|--------|\n| _TZ3000_402vrq2i  | Unknown| Generic Zigbee Device  | None              | None   |\n| _TZE200_rxq4iti9  | Unknown| Generic Zigbee Device  | None              | None   |\n\n### Notes:\n- Both devices do not have any DPs (data points) available, which means there are no capabilities to map at this time.\n- The type is classified as \"Unknown\" since there is no information available to determine the specific function of the devices.\n- It is recommended to monitor these devices for any future updates or additional data points that may become available."
 }
