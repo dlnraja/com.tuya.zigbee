@@ -1,9 +1,8 @@
 {
-  "timestamp": "2026-03-12T07:23:27.315Z",
-  "count": 3,
+  "timestamp": "2026-03-12T19:23:36.001Z",
+  "count": 2,
   "byType": {
-    "diagnostic": 1,
-    "github": 2
+    "device_issue": 2
   },
   "newFingerprints": [],
   "deepResearch": {
@@ -13,29 +12,18 @@
   },
   "diagnostics": [
     {
-      "id": "imap_500203",
-      "type": "diagnostic",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "id": "imap_500314",
+      "type": "device_issue",
+      "subj": "Python for Homey apps, battery levels, and ELTAKO",
       "from": "homey_system",
-      "date": "2026-03-12T06:41:42.000Z",
+      "date": "2026-03-12T16:50:35.000Z",
       "fps": {
         "mfr": [],
         "pid": []
       },
       "errs": [],
       "devices": [
-        "The",
-        "stage",
-        "and",
-        "universal_fallback",
-        "initialized",
-        "valve_single",
-        "valve_irrigation",
-        "vibration_sensor",
-        "wall_dimmer_1gang_1way",
-        "has",
-        "wall_switch_1gang_1way",
-        "wall_switch_1gang_1"
+        "batteries"
       ],
       "xref": [],
       "ghInfo": null,
@@ -44,55 +32,46 @@
       "appVersion": null
     },
     {
-      "id": "imap_500205",
-      "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] [Verify] 136 new fingerprints found (Issue #159)",
-      "from": "github",
-      "date": "2026-03-12T06:48:54.000Z",
+      "id": "imap_500354",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "user",
+      "date": "2026-03-12T19:06:59.000Z",
       "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [
-        "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-pe="
-      ],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "159",
-        "action": "Closed",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    },
-    {
-      "id": "imap_500206",
-      "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] [Verify] 136 new fingerprints found (Issue #159)",
-      "from": "github",
-      "date": "2026-03-12T06:48:55.000Z",
-      "fps": {
-        "mfr": [],
-        "pid": []
+        "mfr": [
+          "_TZ3000_wzmuk9ai"
+        ],
+        "pid": [
+          "TS011F"
+        ]
       },
       "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "159",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
+      "devices": [
+        "and"
+      ],
+      "xref": [
+        {
+          "fingerprint": "_TZ3000_wzmuk9ai",
+          "type": "mfr",
+          "supported": true,
+          "drivers": [
+            "climate_sensor"
+          ]
         },
-        "isNew": false
-      },
+        {
+          "fingerprint": "TS011F",
+          "type": "pid",
+          "supported": true,
+          "drivers": [
+            "plug_energy_monitor",
+            "plug_smart",
+            "switch_1gang",
+            "switch_2gang",
+            "universal_fallback"
+          ]
+        }
+      ],
+      "ghInfo": null,
       "ai": null,
       "homeyVersion": null,
       "appVersion": null
