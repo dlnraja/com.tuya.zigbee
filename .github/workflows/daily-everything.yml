@@ -254,6 +254,20 @@ jobs:
         timeout-minutes: 10
         run: node .github/scripts/sync-johan-sdk3.js
 
+      # ===== 9b1c. AUTO-SCAFFOLD: Create missing drivers from Johan templates =====
+      - name: "9b1c. Auto-Scaffold Missing Drivers"
+        id: auto_scaffold
+        continue-on-error: true
+        timeout-minutes: 10
+        run: node .github/scripts/auto-driver-scaffold.js
+
+      # ===== 9b1d. DRIVER CONFLICT AUDIT: Detect PID/MFR conflicts =====
+      - name: "9b1d. Driver Conflict Audit"
+        id: driver_audit
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node .github/scripts/driver-conflict-audit.js
+
       # ===== 9b2. FP RESEARCH ENGINE: Deep classify via Z2M/Blakadder/CompScan =====
       - name: "9b2. FP Research Engine (Deep Classify)"
         id: fp_research
@@ -646,6 +660,8 @@ jobs:
           echo "| 9 | Enrichment | ${{ steps.enrichment.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9a | External Sync (Z2M/ZHA/deCONZ) | ${{ steps.ext_sync.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9b | JohanBendz Scanner | ${{ steps.johan_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 9b1c | Auto-Scaffold Drivers | ${{ steps.auto_scaffold.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 9b1d | Driver Conflict Audit | ${{ steps.driver_audit.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9b2 | FP Research Engine | ${{ steps.fp_research.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9b3 | Variant Scanner | ${{ steps.variant_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9b4 | Issue Deep Researcher | ${{ steps.deep_research.outcome }} |" >> $GITHUB_STEP_SUMMARY

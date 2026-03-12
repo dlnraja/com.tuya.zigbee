@@ -181,7 +181,7 @@ env:
 
 ---
 
-## G. Workflow Inventory (38 workflows)
+## G. Workflow Inventory (39 workflows)
 
 | Workflow | Schedule | Steps | Key Secrets |
 |----------|----------|-------|-------------|
@@ -202,7 +202,8 @@ env:
 | tuya-automation-hub | 4x/day (1,7,13,19) + Mon/Thu | forum+github | ALL |
 | forum-auto-responder | 2x/day (9,21 UTC) | forum respond | DISCOURSE_API_KEY |
 | cleanup-wrong-threads | manual | cleanup bot posts | DISCOURSE_API_KEY |
-| johan-sdk3-sync | Wed 05:00 | SDK3 FP+DP sync | GITHUB_TOKEN |
+| johan-sdk3-sync | Wed 05:00 | SDK3 FP+DP sync + scaffold + audit | GITHUB_TOKEN |
+| driver-maintenance | Fri 04:00 | Auto-scaffold + conflict audit + PR | GH_PAT |
 | code-quality | Wed 03:00 + on push | quality checks | — |
 | dependabot-auto-merge | on PR | auto-merge deps | GH_PAT |
 

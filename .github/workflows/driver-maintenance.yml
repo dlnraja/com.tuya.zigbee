@@ -1,0 +1,146 @@
+# Driver Maintenance — v1.0.0
+# Auto-scaffold missing drivers, detect conflicts, create PRs.
+# Runs weekly (Fri 04:00 UTC) + manual trigger.
+
+name: "Driver Maintenance"
+
+on:
+  schedule:
+    - cron: '0 4 * * 5'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (no PR created)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: driver-maintenance
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  maintain:
+    name: "Driver Scaffold + Audit"
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: Auto-scaffold missing drivers
+        id: scaffold
+        run: node .github/scripts/auto-driver-scaffold.js
+
+      - name: Driver conflict audit
+        id: audit
+        run: node .github/scripts/driver-conflict-audit.js
+
+      - name: Validate JSON
+        run: |
+          echo "Validating all driver.compose.json..."
+          FAIL=0
+          for f in drivers/*/driver.compose.json; do
+            if ! node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null; then
+              echo "FAIL: $f"
+              FAIL=1
+            fi
+          done
+          if [ "$FAIL" = "1" ]; then echo "JSON validation failed!"; exit 1; fi
+          echo "All JSON valid."
+
+      - name: Validate device.js syntax
+        continue-on-error: true
+        run: |
+          FAIL=0
+          for f in drivers/*/device.js; do
+            if ! node --check "$f" 2>/dev/null; then
+              echo "SYNTAX ERROR: $f"
+              FAIL=1
+            fi
+          done
+          echo "Device.js syntax check done (failures=$FAIL)"
+
+      - name: Create Pull Request
+        if: steps.scaffold.outputs.has_changes == 'true' && inputs.dry_run != true
+        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          commit-message: "auto: scaffold ${{ steps.scaffold.outputs.scaffolded }} drivers, add ${{ steps.scaffold.outputs.fps_added }} FPs [skip ci]"
+          title: "Driver Maintenance — ${{ steps.scaffold.outputs.scaffolded }} scaffolded, ${{ steps.audit.outputs.high_conflicts }} conflicts"
+          body: |
+            ## Automated Driver Maintenance
+
+            ### Auto-Scaffold Results
+            - **Scaffolded**: ${{ steps.scaffold.outputs.scaffolded || '0' }} new drivers created from Johan SDK3
+            - **FPs added**: ${{ steps.scaffold.outputs.fps_added || '0' }} uncovered FPs added to existing drivers
+            - **Cross-class conflicts**: ${{ steps.scaffold.outputs.conflicts || '0' }}
+
+            ### Conflict Audit
+            - **High severity PID conflicts**: ${{ steps.audit.outputs.high_conflicts || '0' }}
+            - **MFR+PID duplicates (real risk)**: ${{ steps.audit.outputs.mfr_conflicts || '0' }}
+            - **Orphan drivers**: ${{ steps.audit.outputs.orphans || '0' }}
+            - **Split suggestions**: ${{ steps.audit.outputs.split_suggestions || '0' }}
+
+            ### Reports
+            - `driver-scaffold-report.json` — full scaffold details
+            - `driver-conflict-audit.json` — full conflict analysis
+
+            ### Review checklist
+            - [ ] Review scaffolded drivers — add DP mappings to device.js
+            - [ ] Review high-severity conflicts — consider splitting drivers
+            - [ ] Validate with `npx homey app validate`
+          branch: auto/driver-maintenance
+          labels: drivers,automated,maintenance
+          delete-branch: true
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Driver Maintenance Results" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Metric | Value |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|--------|-------|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Scaffolded | ${{ steps.scaffold.outputs.scaffolded || '0' }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| FPs added | ${{ steps.scaffold.outputs.fps_added || '0' }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Cross-class conflicts | ${{ steps.scaffold.outputs.conflicts || '0' }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| High severity | ${{ steps.audit.outputs.high_conflicts || '0' }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| MFR conflicts | ${{ steps.audit.outputs.mfr_conflicts || '0' }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Orphans | ${{ steps.audit.outputs.orphans || '0' }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Split suggestions | ${{ steps.audit.outputs.split_suggestions || '0' }} |" >> "$GITHUB_STEP_SUMMARY"
+          if [ -f .github/state/driver-scaffold-report.json ]; then
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "### Scaffold Report" >> "$GITHUB_STEP_SUMMARY"
+            echo '```json' >> "$GITHUB_STEP_SUMMARY"
+            node -e "d=JSON.parse(require('fs').readFileSync('.github/state/driver-scaffold-report.json','utf8'));console.log(JSON.stringify(d.summary,null,2))" >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: driver-maintenance-${{ github.run_number }}
+          path: |
+            .github/state/driver-scaffold-report.json
+            .github/state/driver-conflict-audit.json
+          retention-days: 30

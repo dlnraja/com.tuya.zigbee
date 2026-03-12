@@ -50,6 +50,16 @@ jobs:
         id: sync
         run: node .github/scripts/sync-johan-sdk3.js
 
+
+      - name: Auto-scaffold missing drivers
+        id: scaffold
+        continue-on-error: true
+        run: node .github/scripts/auto-driver-scaffold.js
+
+      - name: Driver conflict audit
+        id: audit
+        continue-on-error: true
+        run: node .github/scripts/driver-conflict-audit.js
       - name: Validate JSON
         if: steps.sync.outputs.has_changes == 'true'
         run: |
@@ -65,7 +75,7 @@ jobs:
           echo "All JSON valid."
 
       - name: Create Pull Request
-        if: steps.sync.outputs.has_changes == 'true' && inputs.dry_run != true
+        if: (steps.sync.outputs.has_changes == 'true' || steps.scaffold.outputs.has_changes == 'true') && inputs.dry_run != true
         uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -79,12 +89,24 @@ jobs:
             - **DP gaps**: ${{ steps.sync.outputs.gaps }} drivers with missing Tuya DP mappings
             - **New Johan drivers**: ${{ steps.sync.outputs.new_drivers }} (not in our codebase)
 
+            ### Auto-Scaffold
+            - **Scaffolded**: ${{ steps.scaffold.outputs.scaffolded || '0' }} new drivers created
+            - **FPs added**: ${{ steps.scaffold.outputs.fps_added || '0' }} uncovered FPs added to existing drivers
+            - **Conflicts**: ${{ steps.scaffold.outputs.conflicts || '0' }} cross-class PID conflicts
+
+            ### Conflict Audit
+            - **High severity**: ${{ steps.audit.outputs.high_conflicts || '0' }} cross-class PID conflicts
+            - **MFR conflicts**: ${{ steps.audit.outputs.mfr_conflicts || '0' }} real risk duplicates
+            - **Split suggestions**: ${{ steps.audit.outputs.split_suggestions || '0' }}
+
             ### Report
-            See `.github/state/johan-sdk3-sync.json` for full details.
+            See `.github/state/johan-sdk3-sync.json`, `driver-scaffold-report.json`, `driver-conflict-audit.json`
 
             ### Review checklist
             - [ ] Verify new FPs are in the correct drivers
+            - [ ] Review scaffolded drivers (need device.js DP mappings)
             - [ ] Check DP gaps — may need manual device.js edits
+            - [ ] Review conflict audit — split drivers if needed
             - [ ] Validate with `npx homey app validate`
           branch: auto/johan-sdk3-sync
           labels: fingerprints,automated,upstream
@@ -97,6 +119,10 @@ jobs:
           echo "- FPs added: ${{ steps.sync.outputs.added || '0' }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- DP gaps: ${{ steps.sync.outputs.gaps || '0' }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- New drivers: ${{ steps.sync.outputs.new_drivers || '0' }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Scaffolded: ${{ steps.scaffold.outputs.scaffolded || '0' }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- FPs added (scaffold): ${{ steps.scaffold.outputs.fps_added || '0' }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- High conflicts: ${{ steps.audit.outputs.high_conflicts || '0' }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Split suggestions: ${{ steps.audit.outputs.split_suggestions || '0' }}" >> "$GITHUB_STEP_SUMMARY"
           if [ -f .github/state/johan-sdk3-sync.json ]; then
             echo '```json' >> "$GITHUB_STEP_SUMMARY"
             cat .github/state/johan-sdk3-sync.json | node -e "d=require('fs').readFileSync('/dev/stdin','utf8');try{console.log(JSON.stringify(JSON.parse(d).summary,null,2))}catch{console.log(d)}" >> "$GITHUB_STEP_SUMMARY"
@@ -108,5 +134,8 @@ jobs:
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: johan-sdk3-sync-report
-          path: .github/state/johan-sdk3-sync.json
+          path: |
+            .github/state/johan-sdk3-sync.json
+            .github/state/driver-scaffold-report.json
+            .github/state/driver-conflict-audit.json
           retention-days: 30
