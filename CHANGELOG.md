@@ -6,7 +6,22 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.106] - 2026-03-11
+## [5.11.107] - 2026-03-12
+
+### New Features
+- Integrated JohanBendz SDK3 improvements.
+- Added support for rain sensor device parameters.
+
+### Bug Fixes
+- Fixed issues related to fingerprint scanning.
+
+### Drivers and Fingerprints
+- Total drivers: 145
+- Total fingerprints: 4153
+- New fingerprints added: ["_TZ3000_402vrq2i", "_TZE200_rxq4iti9"]
+---
+
+ [5.11.106] - 2026-03-11
 
 ### Bug Fixes
 - Updated forum state.
