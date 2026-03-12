@@ -84,8 +84,129 @@ function extractDPMappings(src){
   return {switchCases:dps,dpMappings:dpObj};
 }
 
+/**
+ * Step 6: Compare Johan lib/ files with ours
+ * Detects new cluster definitions, helper functions, and DP constant files
+ */
+function compareLibFiles(report){
+  console.log('Step 6: Comparing lib/ files...');
+  report.libAnalysis={newClusters:[],newHelpers:[],dpConstantDiffs:[]};
+
+  const johanLib=path.join(TMP,'lib');
+  const ourLib=path.join(ROOT,'lib');
+  if(!fs.existsSync(johanLib))return;
+
+  const johanFiles=fs.readdirSync(johanLib).filter(f=>f.endsWith('.js'));
+
+  for(const f of johanFiles){
+    const johanPath=path.join(johanLib,f);
+    const src=fs.readFileSync(johanPath,'utf8');
+
+    // Detect cluster definitions
+    if(f.includes('Cluster')){
+      const idMatch=src.match(/static\s+get\s+ID\s*\(\)\s*\{\s*return\s+(\d+)/);
+      const nameMatch=src.match(/static\s+get\s+NAME\s*\(\)\s*\{\s*return\s+['"](\w+)['"]/);
+      const clusterInfo={
+        file:f,
+        id:idMatch?parseInt(idMatch[1]):null,
+        name:nameMatch?nameMatch[1]:null,
+        extendsCluster:null
+      };
+
+      // Check if extends a standard cluster
+      const extendsMatch=src.match(/class\s+\w+\s+extends\s+(\w+)/);
+      if(extendsMatch)clusterInfo.extendsCluster=extendsMatch[1];
+
+      // Extract attributes
+      const attrNames=[];
+      const attrRe=/(\w+)\s*:\s*\{\s*id\s*:\s*(0x[\da-fA-F]+|\d+)/g;
+      let am;while((am=attrRe.exec(src))!==null)attrNames.push({name:am[1],id:am[2]});
+      clusterInfo.attributes=attrNames;
+
+      // Extract commands
+      const cmdNames=[];
+      const cmdRe=/(\w+)\s*:\s*\{\s*id\s*:\s*(\d+|0x[\da-fA-F]+)\s*,\s*args/g;
+      let cm;while((cm=cmdRe.exec(src))!==null)cmdNames.push({name:cm[1],id:cm[2]});
+      clusterInfo.commands=cmdNames;
+
+      // Check if we have equivalent
+      const ourClusterDir=path.join(ourLib,'clusters');
+      const ourFiles=fs.existsSync(ourClusterDir)?fs.readdirSync(ourClusterDir):[];
+      clusterInfo.existsInOurs=ourFiles.some(of=>of.toLowerCase().includes(f.replace('.js','').toLowerCase()))
+        ||ourFiles.some(of=>{
+          try{
+            const oSrc=fs.readFileSync(path.join(ourClusterDir,of),'utf8');
+            return clusterInfo.id&&oSrc.includes(String(clusterInfo.id));
+          }catch{return false;}
+        });
+
+      report.libAnalysis.newClusters.push(clusterInfo);
+      const status=clusterInfo.existsInOurs?'EXISTS':'MISSING';
+      console.log('  Cluster: '+f+' ('+status+') id='+clusterInfo.id+' attrs='+attrNames.length+' cmds='+cmdNames.length);
+    }
+
+    // Detect helper/utility files
+    if(f.includes('Helper')||f.includes('DataPoint')){
+      const exports=[];
+      const expRe=/(\w+)\s*[,:]\s*(?:function|\(|=>)/g;
+      let em;while((em=expRe.exec(src))!==null){
+        if(!['if','for','while','switch','catch','require','module'].includes(em[1]))
+          exports.push(em[1]);
+      }
+      report.libAnalysis.newHelpers.push({file:f,exports:[...new Set(exports)]});
+      console.log('  Helper: '+f+' exports: '+[...new Set(exports)].slice(0,5).join(', ')+(exports.length>5?'...':''));
+    }
+  }
+
+  // Compare TuyaDataPoints.js constants with our dpMappings
+  const dpFile=path.join(johanLib,'TuyaDataPoints.js');
+  if(fs.existsSync(dpFile)){
+    const dpSrc=fs.readFileSync(dpFile,'utf8');
+    const constBlocks=dpSrc.match(/const\s+(\w+)\s*=\s*\{[^}]+\}/gs)||[];
+    console.log('  Johan TuyaDataPoints.js: '+constBlocks.length+' DP definition blocks');
+    report.libAnalysis.dpConstantBlocks=constBlocks.length;
+  }
+}
+
+/**
+ * Step 7: Analyze device.js code patterns
+ * Detects dimmer auto-on/off, readAttributes calls, error handling patterns
+ */
+function analyzeDevicePatterns(report){
+  console.log('Step 7: Analyzing device.js patterns...');
+  report.patternAnalysis={readAttributesCalls:0,dimAutoOnOff:0,tuyaListenerPattern:0,errorHandling:0};
+
+  const johanDriverDir=path.join(TMP,'drivers');
+  if(!fs.existsSync(johanDriverDir))return;
+
+  for(const d of fs.readdirSync(johanDriverDir)){
+    const devFile=path.join(johanDriverDir,d,'device.js');
+    if(!fs.existsSync(devFile))continue;
+    try{
+      const src=fs.readFileSync(devFile,'utf8');
+
+      // Pattern: readAttributes on init
+      if(src.includes('readAttributes'))report.patternAnalysis.readAttributesCalls++;
+
+      // Pattern: dimmer auto-on when brightness > 0
+      if(src.includes('brightness > 0')&&src.includes('turning on'))report.patternAnalysis.dimAutoOnOff++;
+
+      // Pattern: tuya.on('reporting') + tuya.on('response')
+      if(src.includes(".on('reporting'")&&src.includes(".on('response'"))report.patternAnalysis.tuyaListenerPattern++;
+
+      // Pattern: try/catch error handling in DP processing
+      if(src.includes('catch (err)')&&src.includes('processDatapoint'))report.patternAnalysis.errorHandling++;
+    }catch{}
+  }
+
+  console.log('  readAttributes on init: '+report.patternAnalysis.readAttributesCalls+' devices');
+  console.log('  Dimmer auto-on/off: '+report.patternAnalysis.dimAutoOnOff+' devices');
+  console.log('  Tuya reporting+response listeners: '+report.patternAnalysis.tuyaListenerPattern+' devices');
+  console.log('  Error handling in DP processing: '+report.patternAnalysis.errorHandling+' devices');
+}
+
 async function main(){
-  console.log('=== Johan SDK3 Auto-Sync ===\n');
+  console.log('=== Johan SDK3 Deep Auto-Sync v2 ===\n');
   const report={timestamp:new Date().toISOString(),added:[],skipped:[],dpGaps:[],errors:[]};
 
   // Step 1: Clone/update Johan SDK3
@@ -165,12 +286,21 @@ async function main(){
     }
   }
 
-  // Step 6: Save report
+  // Step 6: Compare lib/ files (NEW v2)
+  compareLibFiles(report);
+
+  // Step 7: Analyze device.js patterns (NEW v2)
+  analyzeDevicePatterns(report);
+
+  // Step 8: Save report
   report.summary={
     totalJohanFPs:johanFPs.size,totalOurFPs:ourFPs.size,
     missingFPs:missing.length,addedFPs:report.added.length,
     skippedFPs:report.skipped.length,dpGaps:report.dpGaps.length,
-    newDrivers:report.newDrivers.length
+    newDrivers:report.newDrivers.length,
+    libClusters:report.libAnalysis?.newClusters?.length||0,
+    libHelpers:report.libAnalysis?.newHelpers?.length||0,
+    patterns:report.patternAnalysis||{}
   };
   fs.writeFileSync(REPORT,JSON.stringify(report,null,2));
   console.log('\n=== Summary ===');
@@ -183,6 +313,7 @@ async function main(){
     out.write('added='+report.added.length+'\n');
     out.write('gaps='+report.dpGaps.length+'\n');
     out.write('new_drivers='+report.newDrivers.length+'\n');
+    out.write('lib_clusters='+report.summary.libClusters+'\n');
     out.write('has_changes='+(report.added.length>0?'true':'false')+'\n');
     out.end();
   }

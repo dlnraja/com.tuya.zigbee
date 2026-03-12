@@ -254,6 +254,25 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCo
       const openTime = this.getSetting('open_time') || 0;
       const closeTime = this.getSetting('close_time') || 0;
       const reverse = this.getSetting('reverse_direction') || false;
+      const { protocol } = this._detectProtocol?.() || {};
+
+      // v5.12.5: ZCL curtains (TS130F) use TuyaWindowCoveringCluster attributes (Johan SDK3)
+      if (protocol === 'ZCL') {
+        const wcCluster = this.zclNode?.endpoints?.[1]?.clusters?.windowCovering;
+        if (wcCluster?.writeAttributes) {
+          if (reverse) {
+            await wcCluster.writeAttributes({ motorReversal: reverse ? 'On' : 'Off' }).catch(e =>
+              this.log('[CURTAIN] ZCL motorReversal:', e.message));
+          }
+          if (openTime > 0 || closeTime > 0) {
+            const calTime = Math.max(openTime, closeTime);
+            await wcCluster.writeAttributes({ calibrationTime: calTime }).catch(e =>
+              this.log('[CURTAIN] ZCL calibrationTime:', e.message));
+          }
+          this.log('[CURTAIN] ZCL calibration settings applied');
+          return;
+        }
+      }
 
       if (openTime > 0) {
         this.log(`[CURTAIN] Setting open_time: ${openTime}s`);

@@ -205,6 +205,33 @@ async function main(){
     console.log("  New drivers not in our codebase: "+report.codePatterns.newDrivers.length);
     console.log("  Drivers with DP patterns: "+report.codePatterns.dpPatterns.length);
     console.log("  Drivers with legacy readAttributes: "+report.codePatterns.apiChanges.length);
+
+    // Scan lib/ for cluster definitions (NEW v5.12.5)
+    report.codePatterns.libClusters=[];
+    try{
+      await sleep(600);
+      const libRaw=gh('api "/repos/'+REPO+'/contents/lib?ref='+sdkBranch+'"');
+      if(libRaw){
+        const libFiles=JSON.parse(libRaw).filter(f=>f.name.endsWith('.js'));
+        for(const lf of libFiles.filter(f=>f.name.includes('Cluster')||f.name.includes('Helper')||f.name.includes('DataPoint'))){
+          await sleep(400);
+          try{
+            const lfRaw=gh('api "/repos/'+REPO+'/contents/lib/'+lf.name+'?ref='+sdkBranch+'" --jq .content');
+            if(!lfRaw)continue;
+            const src=Buffer.from(lfRaw.trim(),'base64').toString('utf8');
+            const idMatch=src.match(/static\\s+get\\s+ID\\s*\\(\\)\\s*\\{\\s*return\\s+(\\d+)/);
+            const extendsMatch=src.match(/class\\s+\\w+\\s+extends\\s+(\\w+)/);
+            report.codePatterns.libClusters.push({
+              file:lf.name,
+              clusterId:idMatch?parseInt(idMatch[1]):null,
+              extends:extendsMatch?extendsMatch[1]:null,
+              size:lf.size
+            });
+          }catch{}
+        }
+        console.log('  Johan lib/ cluster/helper files: '+report.codePatterns.libClusters.length);
+      }
+    }catch(e2){console.log('  lib/ scan error: '+e2.message);}
   }catch(e){console.log("  Code pattern scan error: "+e.message);}
 
   // === DEDUPLICATE AND SUMMARIZE ===
