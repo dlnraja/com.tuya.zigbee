@@ -1,4 +1,7 @@
 {
+  "5.11.108": {
+    "en": "Universal Tuya Zigbee app v5.11.108 adds new device fingerprints and integrates SDK3 improvements for enhanced device support."
+  },
   "5.11.107": {
     "en": "Added support for new rain sensor device and improved fingerprint scanning with JohanBendz SDK3."
   },
@@ -56,10 +59,7 @@
   "5.11.89": {
     "en": "Universal Tuya Zigbee app v5.11.89 adds 2 new fingerprints, fixes TS0726 virtual button regression, and enriches flow cards for 9 drivers."
   },
-  "5.11.88": {
-    "en": "Universal Tuya Zigbee app v5.11.88: Bug fixes and device improvements."
-  },
-  "5.11.108": {
-    "en": "v5.11.107: Integrated JohanBendz SDK3 improvements., Added support for rain sensor device parameters., Fixed issues related to fingerprint scanning., Total drivers: 145, Total fingerprints: 4153"
+  "5.11.109": {
+    "en": "v5.11.108: Integrated JohanBendz SDK3 improvements, adding LELLKI fingerprint and rain sensor data points., Resolved issues related to device pairing and scanning., Added 8 new device fingerprints: [_TZ3000_402vrq2i, _TZE200_rxq4iti9]., Updated ., Automated integration with Johan SDK3 for improved development ."
   }
 }
