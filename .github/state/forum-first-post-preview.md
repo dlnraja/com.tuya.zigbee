@@ -1,6 +1,6 @@
-# 🏠 Universal Tuya Zigbee v5.11.103
+# 🏠 Universal Tuya Zigbee v5.11.110
 
-> **145 drivers** · **4627+ fingerprints** · Updated 2026-03-11
+> **145 drivers** · **4625+ fingerprints** · Updated 2026-03-12
 
 Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.
 
@@ -8,15 +8,15 @@ Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehens
 
 **Stable:** [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/) · **Test:** [Test Channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · **Source:** [GitHub](https://github.com/dlnraja/com.tuya.zigbee)
 
-## What's New (v5.11.103)
+## What's New (v5.11.110)
 
-Universal Tuya Zigbee app v5.11.103 includes state update improvements and maintains .
+Implemented batch close/respond state update for improved device responsiveness., No new features added in this release., No additional improvements made in this release., No changes to CI/CD processes.
 
 ## Supported Devices
 
 | Category | Drivers | FPs |
 |---|---|---|
-| 🔌 Socket | 31 | 916 |
+| 🔌 Socket | 31 | 917 |
 | 💡 Light | 18 | 442 |
 | 📡 Sensor | 42 | 2138 |
 | 🌡️ Thermostat | 7 | 326 |
@@ -28,7 +28,7 @@ Universal Tuya Zigbee app v5.11.103 includes state update improvements and maint
 | 🔘 Button | 2 | 9 |
 | 🔥 Heater | 4 | 12 |
 | 🚗 Garagedoor | 2 | 8 |
-| 📦 Other | 14 | 496 |
+| 📦 Other | 14 | 493 |
 
 [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) — search by fingerprint
 
@@ -44,13 +44,13 @@ Universal Tuya Zigbee app v5.11.103 includes state update improvements and maint
 
 <details><summary>Previous versions</summary>
 
-**v5.11.102:** Universal Tuya Zigbee app v5.11.102 adds new device variants and updates 145 drivers with 4032 fingerprints.
+**v5.11.109:** Updated Universal Tuya Zigbee app to v5.11.109 with new drivers and fingerprints.
 
-**v5.11.101:** Universal Tuya Zigbee app v5.11.101 adds new device variants, updates 145 drivers, and enhances fingerprint database to 5423.
+**v5.11.108:** Universal Tuya Zigbee app v5.11.108 adds new device fingerprints and integrates SDK3 improvements for enhanced device support.
 
-**v5.11.100:** Universal Tuya Zigbee app v5.11.100 adds .
+**v5.11.107:** Added support for new rain sensor device and improved fingerprint scanning with JohanBendz SDK3.
 
-**v5.11.99:** Universal Tuya Zigbee app v5.11.99: Regenerated driver images and fixed various draft detection issues.
+**v5.11.106:** Universal Tuya Zigbee app v5.11.106 adds new device fingerprints and updates diagnostics.
 
 </details>
 
@@ -65,4 +65,4 @@ This app is free and open-source. If it's useful to you, a small donation helps 
 **PayPal:** [paypal.me/dlnraja](https://paypal.me/dlnraja) · **Revolut:** [revolut.me/dylanoul](https://revolut.me/dylanoul)
 
 ---
-*Last updated 2026-03-11 — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*
+*Last updated 2026-03-12 — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*

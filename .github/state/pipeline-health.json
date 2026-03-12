@@ -20,10 +20,17 @@
       "stale": 0,
       "missing": 0,
       "alerts": 0
+    },
+    {
+      "ts": "2026-03-12T15:57:40.461Z",
+      "wf": "Daily Everything Pipeline",
+      "stale": 0,
+      "missing": 0,
+      "alerts": 0
     }
   ],
   "alerts": [],
-  "lastRun": "2026-03-12T06:23:25.871Z",
+  "lastRun": "2026-03-12T15:57:40.461Z",
   "fileHealth": {
     "nightly-state.json": {
       "ok": true,
@@ -32,8 +39,8 @@
     },
     "diagnostics-state.json": {
       "ok": true,
-      "ageH": 1,
-      "size": 9017
+      "ageH": 2,
+      "size": 9074
     },
     "pattern-data.json": {
       "ok": true,
@@ -42,12 +49,12 @@
     },
     "resolver-state.json": {
       "ok": true,
-      "ageH": 0,
+      "ageH": 2,
       "size": 5835
     },
     "issue-manager-state.json": {
       "ok": true,
-      "ageH": 0,
+      "ageH": 1,
       "size": 14922
     },
     "github-state.json": {

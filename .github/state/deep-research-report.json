@@ -1,10 +1,10 @@
 {
-  "ts": "2026-03-11T15:25:27.490Z",
+  "ts": "2026-03-12T15:25:20.945Z",
   "ghCalls": 120,
-  "totalFPs": 138,
-  "newFPs": 4,
+  "totalFPs": 95,
+  "newFPs": 3,
   "researched": 1,
-  "implemented": 2,
+  "implemented": 0,
   "results": [
     {
       "fp": "_TZ3000_402vrq2i",
@@ -18,10 +18,7 @@
         }
       ],
       "variants": 2,
-      "actions": [
-        "added_variant:_TZ3210_402vrq2i",
-        "added_variant:_TZ3400_402vrq2i"
-      ],
+      "actions": [],
       "sources": [
         "dlnraja/com.tuya.zigbee#158 (issue)",
         "JohanBendz/com.tuya.zigbee#1349 (issue)"

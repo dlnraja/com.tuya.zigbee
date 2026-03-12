@@ -1,23 +1,22 @@
 {
-  "timestamp": "2026-03-11T15:13:59.565Z",
+  "timestamp": "2026-03-12T15:13:51.176Z",
   "total": 1,
-  "resolved": 0,
-  "unknown": 1,
+  "resolved": 1,
+  "unknown": 0,
   "falsePositives": 0,
   "results": [
     {
-      "fp": "_TZ3000_22ugzkme",
+      "fp": "_TZ3000_4fjiwweb",
       "valid": true,
       "prefix": "standard",
-      "driver": null,
+      "driver": "button_wireless_4",
       "pid": null,
-      "confidence": 0,
-      "sources": [],
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
       "method": null,
-      "falsePositive": {
-        "isFP": false,
-        "reason": "unknown_not_false"
-      }
+      "driverExists": true
     }
   ]
 }
