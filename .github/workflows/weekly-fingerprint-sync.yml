@@ -58,6 +58,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node .github/scripts/scan-johan-full.js
 
+      - name: Johan SDK3 Auto-Sync (FPs + DPs)
+        continue-on-error: true
+        run: node .github/scripts/sync-johan-sdk3.js
+
       # Step 2: Auto-add safe Tuya + SONOFF/eWeLink patterns
       - name: Auto-add safe fingerprints
         if: inputs.dry_run != true
