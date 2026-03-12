@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-03-11T15:00:45.281Z",
-  "appVersion": "5.11.103",
+  "timestamp": "2026-03-12T04:37:48.201Z",
+  "appVersion": "5.11.109",
   "findings": {
     "issues": [
       {
@@ -352,96 +352,6 @@
         "imageAnalysis": null
       },
       {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 135,
-        "title": "Device Request - _TZE200_xlppj4f5- TS0601 - Immax Neo smart water timer",
-        "user": "Domingoso",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZE200_xlppj4f5",
-            "drivers": [
-              "valve_irrigation"
-            ]
-          },
-          {
-            "fp": "_TZ3210_0jxeoadc",
-            "drivers": [
-              "valve_irrigation"
-            ]
-          },
-          {
-            "fp": "_TZE200_5zbp6j0u",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE200_nkoabg8w",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_xuzcvlku",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_4vobcgd3",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE200_nogaemzt",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_r0jdjrvi",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_pk0sfzvr",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE200_fdtjuw7u",
-            "drivers": [
-              "curtain_motor"
-            ]
-          },
-          {
-            "fp": "_TZE200_zpzndjez",
-            "drivers": [
-              "curtain_motor",
-              "curtain_motor_tilt"
-            ]
-          },
-          {
-            "fp": "_TZE200_wmcdj3aq",
-            "drivers": [
-              "curtain_motor",
-              "shutter_roller_controller"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/135",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
         "repo": "JohanBendz/com.tuya.zigbee",
         "number": 814,
         "title": "Device Request - ZigBee Smart PIR Motion Sensor Human Sensor - Moes / ZSS-X-PIRL-C-MS / _TYZB01_geepvxsy",
@@ -575,5 +485,5 @@
     "newFPs": [],
     "forkFPs": []
   },
-  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests\n1. **_TZE200_xlppj4f5** - TS0601 - Immax Neo smart water timer\n   - [Issue #135](https://github.com/dlnraja/com.tuya.zigbee/issues/135) (Closed)\n2. **_TYZB01_geepvxsy** - ZigBee Smart PIR Motion Sensor\n   - [Issue #814](https://github.com/JohanBendz/com.tuya.zigbee/issues/814) (Closed)\n\n## New Fingerprints Found\n- **From Upstream:**\n  - **_TZ3000_402vrq2i**\n  - **_TZE200_rxq4iti9**\n  - [Issue #158](https://github.com/dlnraja/com.tuya.zigbee/issues/158) (Open)\n\n- **136 New Fingerprints Verified:**\n  - Existing fingerprints include:\n    - **_TZ2000_a476raq2** (Drivers: climate_sensor, lcdtemphumidsensor)\n    - **_TZE200_nkoabg8w** (Drivers: curtain_motor, curtain_motor_tilt)\n    - **_TZ3000_6zvw8ham** (Drivers: bulb_rgb, contact_sensor)\n    - [Issue #159](https://github.com/dlnraja/com.tuya.zigbee/issues/159) (Open)\n\n## Existing Fingerprints Supported\n- Notable existing fingerprints include:\n  - **_TZE200_nkoabg8w** - curtain_motor, curtain_motor_tilt\n  - **_TZ3000_402jjyro** - climate_sensor, contact_sensor\n  - **_TYZB01_xph99wvr** - contact_sensor, switch_1gang\n\n## Pull Requests with Useful Changes\n1. **PR #10** - Update driver.compose.json\n   - [Link](https://github.com/dlnraja/com.tuya.zigbee/pull/10) (Closed, not merged)\n   \n2. **PR #45** - Update driver.compose.json\n   - [Link](https://github.com/dlnraja/com.tuya.zigbee/pull/45) (Closed, merged)\n   \n3. **PR #46** - Adding support for MOES/Tuya Zigbee AM25 Tubular Motor\n   - [Link](https://github.com/dlnraja/com.tuya.zigbee/pull/46) (Closed, not merged)\n\n4. **PR #1166** - Add support for Tuya PIR sensor TS0202\n   - [Link](https://github.com/JohanBendz/com.tuya.zigbee/pull/1166) (Closed, not merged)\n\n5. **PR #1350** - Added TS110E driver\n   - [Link](https://github.com/JohanBendz/com.tuya.zigbee/pull/1350) (Open)\n\nThis summary encapsulates the latest developments in the Universal Tuya Zigbee repository, highlighting new device requests, fingerprints, and significant pull requests. For further details, please refer to the linked issues and pull requests."
+  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests\n1. **ZigBee Smart PIR Motion Sensor**  \n   - **Fingerprint:** `_TYZB01_geepvxsy`  \n   - **Driver:** `motion_sensor`  \n   - **Status:** Closed  \n   - **Link:** [Issue #814](https://github.com/JohanBendz/com.tuya.zigbee/issues/814)\n\n## New Fingerprints Found\n### From Upstream\n- **New Fingerprints:**\n  - `_TZ3000_402vrq2i`\n  - `_TZE200_rxq4iti9`  \n  - **Link:** [Issue #158](https://github.com/dlnraja/com.tuya.zigbee/issues/158)\n\n### Verified Existing Fingerprints\n- **Total Existing Fingerprints Found:** 136\n- **Notable Fingerprints:**\n  - `_TZ2000_a476raq2` - Drivers: `climate_sensor`, `lcdtemphumidsensor`\n  - `_TZE200_nkoabg8w` - Drivers: `curtain_motor`, `curtain_motor_tilt`\n  - `_TZ3000_6zvw8ham` - Drivers: `bulb_rgb`, `contact_sensor`\n  - **Link:** [Issue #159](https://github.com/dlnraja/com.tuya.zigbee/issues/159)\n\n## Fingerprints from Forks to Integrate\n- No new fingerprints from forks were identified in the current analysis.\n\n## Pull Requests with Useful Changes\n1. **PR #10** - Update driver.compose.json  \n   - **Fingerprint:** `_TZ3000_mrpevh8p`  \n   - **Status:** Closed  \n   - **Link:** [PR #10](https://github.com/dlnraja/com.tuya.zigbee/pull/10)\n\n2. **PR #45** - Update driver.compose.json  \n   - **Fingerprint:** `_TZE200_nv6nxo0c`  \n   - **Status:** Merged  \n   - **Link:** [PR #45](https://github.com/dlnraja/com.tuya.zigbee/pull/45)\n\n3. **PR #46** - Adding support for MOES/Tuya Zigbee AM25 Tubular Motor  \n   - **Fingerprint:** `_TZE200_nv6nxo0c`  \n   - **Status:** Closed  \n   - **Link:** [PR #46](https://github.com/dlnraja/com.tuya.zigbee/pull/46)\n\n4. **PR #1166** - Add support for Tuya PIR sensor TS0202  \n   - **Fingerprint:** `_TZ3000_c8ozah8n`  \n   - **Status:** Closed  \n   - **Link:** [PR #1166](https://github.com/JohanBendz/com.tuya.zigbee/pull/1166)\n\n5. **PR #1350** - Added TS110E driver  \n   - **Fingerprints:** `_TZ3210_ngqk6jia`, `_TZ3210_weaqkhab`  \n   - **Status:** Open  \n   - **Link:** [PR #1350](https://github.com/JohanBendz/com.tuya.zigbee/pull/1350)\n\n6. **PR #1253** - Added 3 new devices  \n   - **Fingerprints:** `_TZE200_pay2byax`, `_TZ3000_mrpevh8p`  \n   - **Status:** Open  \n   - **Link:** [PR #1253](https://github.com/JohanBendz/com.tuya.zigbee/pull/1253)\n\n7. **PR #1219** - Update driver.compose.json  \n   - **Fingerprint:** `_TZ3000_gjrubzje`  \n   - **Status:** Open  \n   - **Link:** [PR #1219](https://github.com/JohanBendz/com.tuya.zigbee/pull/1219)\n\n8. **PR #1218** - Update driver.compose.json  \n   - **Fingerprint:** `_TZE204_dapwryy7`  \n   - **Status:** Open  \n   - **Link:** [PR #1218](https://github.com/JohanBendz/com.tuya.zigbee/pull/1218)\n\n9. **PR #1195** - Add `_TZE204_bjzrowv2`  \n   - **Status:** Open  \n   - **Link:** [PR #1195](https://github.com/JohanBendz/com.tuya.zigbee/pull/1195)\n\n---\n\nThis summary encapsulates the latest developments in the Universal Tuya Zigbee project, highlighting new device requests, fingerprints, and significant pull requests. For further details, please refer to the provided links."
 }
