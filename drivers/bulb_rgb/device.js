@@ -147,6 +147,8 @@ class RGBBulbDevice extends HybridLightBase {
   }
 
   async _sendHSV() {
+    // v5.12.5: Enable RGB mode via ZCL (Johan SDK3 pattern)
+    await this._tryTuyaRgbMode?.(1)?.catch(() => {});
     const h = Math.round((this.getCapabilityValue('light_hue') || 0) * 360);
     const s = Math.round((this.getCapabilityValue('light_saturation') || 1) * 1000);
     const v = Math.round((this.getCapabilityValue('dim') || 1) * 1000);
