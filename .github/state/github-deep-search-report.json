@@ -1,95 +1,19 @@
 {
-  "timestamp": "2026-03-11T15:31:29.953Z",
+  "timestamp": "2026-03-12T15:30:08.953Z",
   "stats": {
-    "ghCalls": 54,
-    "codeResults": 170,
+    "ghCalls": 51,
+    "codeResults": 140,
     "issueResults": 0,
-    "targetedResults": 72,
+    "targetedResults": 43,
     "newRepos": 2,
-    "totalFPs": 298,
-    "supported": 287,
-    "unsupported": 11,
+    "totalFPs": 262,
+    "supported": 254,
+    "unsupported": 8,
     "withDPs": 0,
     "withIssues": 0,
-    "duration": 312
+    "duration": 270
   },
   "topUnsupported": [
-    {
-      "fp": "_TZ3000_abrsvsou",
-      "pids": [
-        "TS004F",
-        "TS0044",
-        "TS0215A",
-        "TS0041",
-        "TS0001",
-        "TS0601"
-      ],
-      "dps": [],
-      "repos": [
-        "kkossev/Hubitat",
-        "zigpy/zha-device-handlers",
-        "JohanBendz/com.tuya.zigbee",
-        "dresden-elektronik/deconz-rest-plugin",
-        "TheUnlimited64/tuya_smart_knob_blueprint"
-      ],
-      "sources": [
-        "code_search",
-        "targeted_search"
-      ],
-      "issueCount": 0,
-      "codeRefCount": 12,
-      "confidence": 270,
-      "topIssue": null,
-      "topCode": "https://github.com/kkossev/Hubitat/blob/bdc05e1311859d58d6f7be62ea3c2b80a4c9d241/Drivers/Zigbee%20Button%20Dimmer/Zigbee_Button_Dimmer.groovy"
-    },
-    {
-      "fp": "_TZE204_aoclfnxz",
-      "pids": [
-        "TS0601"
-      ],
-      "dps": [],
-      "repos": [
-        "wintechis/legacy-integration-wot",
-        "Luligu/matterbridge-zigbee2mqtt",
-        "slacky1965/tuya_thermostat_zrd",
-        "skyne/zigbee-ota-index-merger",
-        "Koenkk/zigbee-herdsman-converters"
-      ],
-      "sources": [
-        "code_search",
-        "targeted_search"
-      ],
-      "issueCount": 0,
-      "codeRefCount": 15,
-      "confidence": 265,
-      "topIssue": null,
-      "topCode": "https://github.com/wintechis/legacy-integration-wot/blob/7326261472b882b98296a082d96e2d0fcf446759/evaluation/effectiveness-evaluation/zigbee-herdsmann-analysis/zigbee-herdsman-converters/src/devices/moes.ts"
-    },
-    {
-      "fp": "_TZE200_aoclfnxz",
-      "pids": [
-        "TS0601",
-        "TS0505B",
-        "TS004F"
-      ],
-      "dps": [],
-      "repos": [
-        "wintechis/legacy-integration-wot",
-        "KiwiHC16/Abeille",
-        "dresden-elektronik/deconz-rest-plugin",
-        "blakadder/zigbee",
-        "Koenkk/zigbee-herdsman-converters"
-      ],
-      "sources": [
-        "code_search",
-        "targeted_search"
-      ],
-      "issueCount": 0,
-      "codeRefCount": 11,
-      "confidence": 250,
-      "topIssue": null,
-      "topCode": "https://github.com/wintechis/legacy-integration-wot/blob/7326261472b882b98296a082d96e2d0fcf446759/evaluation/effectiveness-evaluation/zigbee-herdsmann-analysis/zigbee-herdsman-converters/src/devices/moes.ts"
-    },
     {
       "fp": "_TZE200_c88teujp",
       "pids": [
@@ -200,6 +124,26 @@
       "topCode": "https://github.com/kkossev/Hubitat/blob/bdc05e1311859d58d6f7be62ea3c2b80a4c9d241/Drivers/Tuya%20ZigBee%20Vibration%20Sensor/Tuya%20ZigBee%20Vibration%20Sensor.groovy"
     },
     {
+      "fp": "_TZ3000_hwnphliv",
+      "pids": [
+        "TS0001",
+        "TS0049"
+      ],
+      "dps": [],
+      "repos": [
+        "kkossev/Hubitat"
+      ],
+      "sources": [
+        "code_search",
+        "targeted_search"
+      ],
+      "issueCount": 0,
+      "codeRefCount": 2,
+      "confidence": 45,
+      "topIssue": null,
+      "topCode": "https://github.com/kkossev/Hubitat/blob/bdc05e1311859d58d6f7be62ea3c2b80a4c9d241/Drivers/Tuya%20Zigbee%20Valve/Tuya%20Zigbee%20Valve.groovy"
+    },
+    {
       "fp": "_TZ3000_srldgdxz",
       "pids": [
         "TS0001",
@@ -237,25 +181,6 @@
       "confidence": 40,
       "topIssue": null,
       "topCode": "https://github.com/nikzori/gidrolock_guides/blob/1f06d5c1599af0c25e0ba277c0a7fc260de26997/Winner%20Zigbee/win.basic.js"
-    },
-    {
-      "fp": "_TZ3000_hwnphliv",
-      "pids": [
-        "TS0001",
-        "TS0049"
-      ],
-      "dps": [],
-      "repos": [
-        "kkossev/Hubitat"
-      ],
-      "sources": [
-        "code_search"
-      ],
-      "issueCount": 0,
-      "codeRefCount": 1,
-      "confidence": 40,
-      "topIssue": null,
-      "topCode": "https://github.com/kkossev/Hubitat/blob/bdc05e1311859d58d6f7be62ea3c2b80a4c9d241/Drivers/Tuya%20Zigbee%20Valve/Tuya%20Zigbee%20Valve.groovy"
     }
   ],
   "bugsInSupported": [],
@@ -279,5 +204,5 @@
       "topics": []
     }
   ],
-  "aiPlan": "Here's a summary of unsupported firmware profiles (FPs) along with suggested drivers and capability mappings for the Tuya Zigbee devices. Additionally, I've assessed the value of new repositories for integration.\n\n| Firmware Profile (FP)      | Product IDs (PIDs)                     | Suggested Driver(s)                             | DP → Capability Map | Repositories                                                                 | Issues | Code References | Confidence |\n|-----------------------------|----------------------------------------|------------------------------------------------|---------------------|-----------------------------------------------------------------------------|--------|----------------|------------|\n| _TZ3000_abrsvsou           | TS004F, TS0044, TS0215A, TS0041, TS0001, TS0601 | zigpy/zha-device-handlers                      | TBD                 | kkossev/Hubitat, zigpy/zha-device-handlers, JohanBendz/com.tuya.zigbee    | 0      | 12             | 270        |\n| _TZE204_aoclfnxz           | TS0601                                 | zigpy/zha-device-handlers                      | TBD                 | wintechis/legacy-integration-wot, Luligu/matterbridge-zigbee2mqtt, slacky1965/tuya_thermostat_zrd | 0      | 15             | 265        |\n| _TZE200_aoclfnxz           | TS0601, TS0505B, TS004F                | zigpy/zha-device-handlers                      | TBD                 | wintechis/legacy-integration-wot, KiwiHC16/Abeille, dresden-elektronik/deconz-rest-plugin | 0      | 11             | 250        |\n| _TZE200_c88teujp           | TS0601                                 | zigpy/zha-device-handlers                      | TBD                 | wintechis/legacy-integration-wot, dresden-elektronik/deconz-rest-plugin, Koenkk/zigbee-herdsman-converters | 0      | 11             | 230        |\n| _TZE200_sh1btabb           | TS0601                                 | zigpy/zha-device-handlers                      | TBD                 | wintechis/legacy-integration-wot, arendst/Tasmota, Koenkk/zigbee-herdsman-converters | 0      | 11             | 215        |\n| _TZE200_p3dbf6qs           | TS0601                                 | zigpy/zha-device-handlers                      | TBD                 | sychu/avatto_me167_TZE200_p3dbf6qs, jacekk015/zha_quirks, KiwiHC16/Abeille | 0      | 11             | 215        |\n| _TZE200_dtzziy1e           | TS0601                                 | zigpy/zha-device-handlers                      | TBD                 | wzwenzhi/Wenzhi-ZigBee2mqtt, kkossev/Hubitat                             | 0      | 8              | 80         |\n| _TYZB01_pbgpvhgx           | TS0210, TS0601                         | zigpy/zha-device-handlers                      | TBD                 | kkossev/Hubitat                                                          | 0      | 3              | 50         |\n| _TZ3000_srldgdxz           | TS0001, TS0049                         | zigpy/zha-device-handlers                      | TBD                 | kkossev/Hubitat                                                          | 0      | 2              | 45         |\n| _TZE200_yltivvzb           | TS0601                                 | zigpy/zha-device-handlers                      | TBD                 | nikzori/gidrolock_guides                                                 | 0      | 3              | 40         |\n| _TZ3000_hwnphliv           | TS0001, TS0049                         | zigpy/zha-device-handlers                      | TBD                 | kkossev/Hubitat                                                          | 0      | 1              | 40         |\n\n### New Repositories Assessment\n\n| Repository Name                          | Stars | Description                                           | Value for Integration |\n|------------------------------------------|-------|-----------------------------------------------------|-----------------------|\n| kodalissri/com.MyZigbee.Devices         | 0     | Homey App for Tuya Devices                          | Low                   |\n| oskarirauta/homey-owon-driver           | 0     | OWON THS317-ET ZigBee Driver (non-tuya version)    | Medium                |\n\n**Summary**: The unsupported FPs indicate a need for integration efforts, particularly with the suggested drivers. The new repositories have potential, but their current lack of stars suggests limited community engagement, which may affect their long-term viability. Prioritizing integration with higher confidence levels and established repositories is recommended."
+  "aiPlan": "Here’s a summary of the unsupported firmware profiles (FPs) and new repositories for Tuya Zigbee integration, along with suggested drivers and capability mappings.\n\n### Unsupported Firmware Profiles\n\n| FP                   | PIDs        | Suggested Driver                      | DP → Capability Map | Repositories                                                                 | Issues | Code Refs | Confidence |\n|----------------------|-------------|--------------------------------------|----------------------|-----------------------------------------------------------------------------|--------|-----------|------------|\n| _TZE200_c88teujp     | TS0601      | Tuya Zigbee Driver                   | N/A                  | wintechis/legacy-integration-wot, dresden-elektronik/deconz-rest-plugin, Koenkk/zigbee-herdsman-converters | 0      | 11        | 230        |\n| _TZE200_sh1btabb     | TS0601      | Tuya Zigbee Driver                   | N/A                  | wintechis/legacy-integration-wot, arendst/Tasmota, Koenkk/zigbee-herdsman-converters | 0      | 11        | 215        |\n| _TZE200_p3dbf6qs     | TS0601      | Tuya Zigbee Driver                   | N/A                  | sychu/avatto_me167_TZE200_p3dbf6qs, jacekk015/zha_quirks, KiwiHC16/Abeille | 0      | 11        | 215        |\n| _TZE200_dtzziy1e     | TS0601      | Tuya Zigbee Driver                   | N/A                  | wzwenzhi/Wenzhi-ZigBee2mqtt, kkossev/Hubitat                             | 0      | 8         | 80         |\n| _TYZB01_pbgpvhgx     | TS0210, TS0601 | Tuya Zigbee Driver               | N/A                  | kkossev/Hubitat                                                           | 0      | 3         | 50         |\n| _TZ3000_hwnphliv     | TS0001, TS0049 | Tuya Zigbee Driver               | N/A                  | kkossev/Hubitat                                                           | 0      | 2         | 45         |\n| _TZ3000_srldgdxz     | TS0001, TS0049 | Tuya Zigbee Driver               | N/A                  | kkossev/Hubitat                                                           | 0      | 2         | 45         |\n| _TZE200_yltivvzb     | TS0601      | Tuya Zigbee Driver                   | N/A                  | nikzori/gidrolock_guides                                                  | 0      | 3         | 40         |\n\n### New Repositories\n\n| Repository Name                          | Stars | Description                                           | Value for Integration |\n|------------------------------------------|-------|-----------------------------------------------------|-----------------------|\n| kodalissri/com.MyZigbee.Devices         | 0     | Homey App for Tuya Devices                          | Moderate              |\n| oskarirauta/homey-owon-driver           | 0     | OWON THS317-ET ZigBee Driver (non-tuya version) for Homey | Low                   |\n\n### Assessment of New Repositories\n\n1. **kodalissri/com.MyZigbee.Devices**: This repository could be valuable for integrating various Tuya devices into the Homey ecosystem. Given the increasing popularity of Homey, this integration could enhance user experience and expand the device compatibility range.\n\n2. **oskarirauta/homey-owon-driver**: This repository focuses on a specific non-Tuya device. While it may not directly enhance Tuya integration, it could be useful for users looking for Zigbee solutions beyond Tuya, but its value for Tuya integration is low.\n\n### Conclusion\n\nThe unsupported FPs indicate a need for dedicated drivers to enhance compatibility with existing systems. The new repositories show potential for expanding device integration, particularly in the Homey ecosystem, though their immediate value may vary. Further development and community support will be essential for maximizing integration capabilities."
 }
