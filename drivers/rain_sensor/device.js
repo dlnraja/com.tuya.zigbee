@@ -19,7 +19,9 @@ class RainSensorDevice extends HybridSensorBase {
     return {
       1: { capability: 'alarm_water', transform: (v) => v === 1 || v === true }, // Rain detected
       4: { capability: 'measure_battery', divisor: 1 },
-      15: { capability: 'measure_battery', divisor: 1 }
+      15: { capability: 'measure_battery', divisor: 1 },
+      101: { capability: 'measure_luminance', divisor: 1 },
+      105: { capability: 'measure_voltage.rain', divisor: 1000 }
     };
   }
 

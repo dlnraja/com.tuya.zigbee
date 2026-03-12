@@ -150,7 +150,7 @@ async function main(){
             if(!cRaw)continue;
             const dec=Buffer.from(cRaw.trim(),"base64").toString("utf8");
             const dj=JSON.parse(dec);
-            const mfrs=(dj.zigbee?.manufacturerName||[]).filter(m=>!ourFPs.has(m)&&m.startsWith("_T"));
+            const mfrs=(dj.zigbee?.manufacturerName||[]).filter(m=>!ourFPs.has(m)&&(m.startsWith("_T")||/^[A-Z]{2,}/.test(m)));
             if(mfrs.length){
               report.branches.codeFPs.push({branch:br.name,driver:dir.name,fps:mfrs});
               mfrs.forEach(fp=>{report.allMentionedFPs.push({fp,source:"branch:"+br.name+"/"+dir.name,isNew:true})});
@@ -179,8 +179,8 @@ async function main(){
           report.codePatterns.newDrivers.push(dir.name);
         }
       }
-      // Sample device.js files for DP patterns (max 15 to stay within rate limits)
-      const sample=dirs2.slice(0,15);
+      // Sample device.js files for DP patterns (max 30 for better SDK3 coverage)
+      const sample=dirs2.slice(0,30);
       for(const dir of sample){
         await sleep(400);
         try{
