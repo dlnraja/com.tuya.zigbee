@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.108 |
+| **App Version** | v5.11.109 |
 | **Device Fingerprints** | 4,625+ |
 | **Unique Product IDs** | 551 |
 | **Drivers** | 145 (118 Zigbee + 27 WiFi) |
@@ -100,7 +100,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.108** | v5.11.107: Integrated JohanBendz SDK3 improvements., Added support for rain sensor device parameters., Fixed issues r... |
+| **v5.11.109** | v5.11.108: Integrated JohanBendz SDK3 improvements, adding LELLKI fingerprint and rain sensor data points., Resolved ... |
+| **v5.11.108** | Universal Tuya Zigbee app v5.11.108 adds new device fingerprints and integrates SDK3 improvements for enhanced device... |
 | **v5.11.107** | Added support for new rain sensor device and improved fingerprint scanning with JohanBendz SDK3. |
 | **v5.11.106** | Universal Tuya Zigbee app v5.11.106 adds new device fingerprints and updates diagnostics. |
 | **v5.11.105** | Added TuyaZigbeeBridge for improved driver pairing and control, updated diagnostics. |
@@ -114,7 +115,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.97** | Fixed draft detection logic and improved build pipeline. |
 | **v5.11.96** | Universal Tuya Zigbee app v5.11.96: Fixed draft detection and updated screenshots. |
 | **v5.11.95** | Universal Tuya Zigbee app v5.11.95: Fixed navigation issue and updated drivers and fingerprints. |
-| **v5.11.94** | Improved device compatibility and updated fingerprints. |
 
 <!-- CHANGELOG_END -->
 

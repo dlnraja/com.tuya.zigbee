@@ -6,7 +6,23 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.107] - 2026-03-12
+## [5.11.108] - 2026-03-12
+
+### New Features
+- Integrated JohanBendz SDK3 improvements, adding LELLKI fingerprint and rain sensor data points.
+
+### Bug Fixes
+- Resolved issues related to device pairing and scanning.
+
+### Improvements
+- Added 8 new device fingerprints: [_TZ3000_402vrq2i, _TZE200_rxq4iti9].
+- Updated diagnostics report for better troubleshooting.
+
+### CI/CD
+- Automated integration with Johan SDK3 for improved development workflow.
+---
+
+ [5.11.107] - 2026-03-12
 
 ### New Features
 - Integrated JohanBendz SDK3 improvements.
