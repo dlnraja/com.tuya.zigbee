@@ -6,28 +6,28 @@
 
 | Metric | Value |
 |--------|-------|
-| Version | v5.11.110 |
-| Drivers | 159 |
-| Fingerprints | 4,697 |
+| Version | v5.11.113 |
+| Drivers | 187 |
+| Fingerprints | 4,731 |
 | Last Updated | 2026-03-13 |
 
 ## Drivers by Category
 
 | Category | Count |
 |----------|-------|
-| sensor | 42 |
-| socket | 31 |
-| light | 18 |
+| socket | 47 |
+| sensor | 44 |
+| light | 21 |
 | remote | 17 |
-| other | 14 |
-| fan | 9 |
-| thermostat | 7 |
+| other | 15 |
+| thermostat | 11 |
+| fan | 10 |
 | lock | 4 |
 | heater | 4 |
 | windowcoverings | 3 |
+| garagedoor | 3 |
 | button | 2 |
 | doorbell | 2 |
-| garagedoor | 2 |
 | curtain | 2 |
 | vacuumcleaner | 1 |
 | speaker | 1 |
