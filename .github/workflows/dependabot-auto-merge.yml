@@ -48,21 +48,21 @@ jobs:
 
       - name: Auto-approve patch/minor updates
         if: (steps.meta.outputs.update-type == 'version-update:semver-patch' || steps.meta.outputs.update-type == 'version-update:semver-minor') && steps.validate.outputs.valid == 'true'
-        run: gh pr review --approve "$PR_URL"
+        run: gh pr review -R dlnraja/com.tuya.zigbee --approve "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
       - name: Auto-merge patch/minor updates
         if: (steps.meta.outputs.update-type == 'version-update:semver-patch' || steps.meta.outputs.update-type == 'version-update:semver-minor') && steps.validate.outputs.valid == 'true'
-        run: gh pr merge --auto --squash "$PR_URL"
+        run: gh pr merge -R dlnraja/com.tuya.zigbee --auto --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
       - name: Label major updates for review
         if: steps.meta.outputs.update-type == 'version-update:semver-major'
-        run: gh pr edit "$PR_URL" --add-label "major-update,needs-review"
+        run: gh pr edit -R dlnraja/com.tuya.zigbee "$PR_URL" --add-label "major-update,needs-review"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

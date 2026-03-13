@@ -66,7 +66,7 @@ jobs:
           git diff --cached --quiet && echo "No changes" && exit 0
           git commit -m "fix: auto-fix for #${ISSUE} — ${{ steps.bug.outputs.summary }}"
           git push origin "$BRANCH"
-          gh pr create \
+          gh pr create -R dlnraja/com.tuya.zigbee \
             --title "fix: #${ISSUE} — ${{ steps.bug.outputs.summary }}" \
             --body "Auto-generated fix for #${ISSUE}\n\n${{ steps.bug.outputs.details }}\n\nCloses #${ISSUE}" \
             --base master \
