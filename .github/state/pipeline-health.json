@@ -27,10 +27,17 @@
       "stale": 0,
       "missing": 0,
       "alerts": 0
+    },
+    {
+      "ts": "2026-03-13T04:32:29.834Z",
+      "wf": "Daily Everything Pipeline",
+      "stale": 0,
+      "missing": 0,
+      "alerts": 0
     }
   ],
   "alerts": [],
-  "lastRun": "2026-03-12T15:57:40.461Z",
+  "lastRun": "2026-03-13T04:32:29.834Z",
   "fileHealth": {
     "nightly-state.json": {
       "ok": true,
@@ -40,7 +47,7 @@
     "diagnostics-state.json": {
       "ok": true,
       "ageH": 2,
-      "size": 9074
+      "size": 9112
     },
     "pattern-data.json": {
       "ok": true,
