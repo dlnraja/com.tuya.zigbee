@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-13T03:37:51.865Z",
+  "timestamp": "2026-03-13T05:50:56.396Z",
   "username": "dlnraja",
   "topicCount": 1,
   "activityCount": 300,
@@ -24,5 +24,5 @@
     "_TZ3000_amdymr7",
     "_TZ3000_ksw8qtm"
   ],
-  "aiAnalysis": "### Summary of Homey Community Forum Activity for Universal Tuya Zigbee App\n\n1. **Key User Requests:**\n   - Users are requesting support for specific devices, particularly the 1-gang switch (_TZ3000_22ugzkme) and soil humidity sensors.\n   - There is a desire for improved compatibility and functionality for unsupported devices listed in the forum.\n\n2. **Devices People Need:**\n   - Users are specifically mentioning the following unsupported devices:\n     - _TZ3000_22ugzkme (1-gang switch)\n     - Soil Humidity Sensors (specific model not mentioned)\n     - Other devices with IDs such as _TZ3000_zgyzgd, _TZE204_ztqnh5c, etc.\n\n3. **Issues to Fix:**\n   - Several users are encountering issues adding unsupported devices to the app.\n   - There is a need for clearer communication regarding device compatibility and updates on which devices are being worked on.\n\n4. **Action Items:**\n   - Prioritize adding support for the most requested devices, especially the 1-gang switch and soil humidity sensors.\n   - Create a dedicated thread or update section for users to track the status of unsupported devices and their integration progress.\n   - Engage with users who have reported issues to gather more detailed feedback and ensure their concerns are addressed in future updates.\n   - Consider implementing a feedback mechanism to allow users to vote on which devices they want prioritized for support. \n\nBy focusing on these actionable insights, the maintainer can enhance user satisfaction and improve the app's functionality."
+  "aiAnalysis": "Fingerprints found: `_TZ3000_22ugzkme`, `_TZ3000_zgyzgd`, `_TZE204_ztqnh5c`, `_TZ3000_ztc6ggyl`, `_TZ3000_akwixq9i`, `_TZ3000_hiqrjkxx`, `_TZ3000_cehuw1l2`, `_TZ3000_dfgbtub`, `_TZ3000_dfgbub0`, `_TZE200_b6wax7g0`, `_TZ3000_tvuarska`, `_TZE200_c88teujp`, `_TZ3000_amdymr7`, `_TZ3000_ksw8qtm`\nProduct IDs: `TS0041`"
 }
