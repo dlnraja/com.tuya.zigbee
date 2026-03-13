@@ -100,7 +100,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.110** | Universal Tuya Zigbee app v5.11.110 adds , with updated driver images and diagnostics. |
+| **v5.11.110** | Universal Tuya Zigbee app v5.11.110 adds , with improved diagnostics. |
 | **v5.11.109** | Updated Universal Tuya Zigbee app to v5.11.109 with new drivers and fingerprints. |
 | **v5.11.108** | Universal Tuya Zigbee app v5.11.108 adds new device fingerprints and integrates SDK3 improvements for enhanced device... |
 | **v5.11.107** | Added support for new rain sensor device and improved fingerprint scanning with JohanBendz SDK3. |
