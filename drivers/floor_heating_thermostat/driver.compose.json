@@ -1,0 +1,93 @@
+{
+  "name": {
+    "en": "Floor Heating Thermostat",
+    "fr": "Thermostat de Chauffage au Sol",
+    "nl": "Vloerverwarming Thermostaat",
+    "de": "Fussbodenheizung Thermostat"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature",
+    "measure_temperature.floor",
+    "thermostat_mode",
+    "onoff"
+  ],
+  "capabilitiesOptions": {
+    "target_temperature": {
+      "min": 5,
+      "max": 45,
+      "step": 0.5
+    },
+    "measure_temperature.floor": {
+      "title": {
+        "en": "Floor Temperature",
+        "fr": "Température Sol"
+      }
+    },
+    "thermostat_mode": {
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Schedule"
+          }
+        },
+        {
+          "id": "heat",
+          "title": {
+            "en": "Manual"
+          }
+        },
+        {
+          "id": "off",
+          "title": {
+            "en": "Off"
+          }
+        }
+      ]
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_aoclfnxz",
+      "_TZE200_2ekuz3dz",
+      "_TZE200_g9a3awaj",
+      "_TZE200_ulyn7b1o",
+      "_TZE200_rufdtfyv",
+      "_TZE204_aoclfnxz"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          61184
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/floor_heating_thermostat/assets/images/small.png",
+    "large": "drivers/floor_heating_thermostat/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "approximation": {
+      "usageConstant": 2
+    }
+  }
+}

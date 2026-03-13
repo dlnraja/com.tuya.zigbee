@@ -1,0 +1,17 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Weight",
+    "nl": "Gewicht",
+    "de": "Gewicht",
+    "fr": "Poids"
+  },
+  "units": {
+    "en": "g"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "decimals": 0,
+  "insights": true
+}

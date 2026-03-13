@@ -1,0 +1,31 @@
+{
+  "id": "tuya_dp_send_typed",
+  "title": {
+    "en": "Send typed Tuya DP",
+    "fr": "Envoyer DP Tuya typé"
+  },
+  "titleFormatted": {
+    "en": "Send DP [[dp]] ([[dp_type]]) = [[value]] to [[device]]",
+    "fr": "Envoyer DP [[dp]] ([[dp_type]]) = [[value]] à [[device]]"
+  },
+  "hint": {
+    "en": "Send a Tuya DP with explicit type (bool/value/enum/string/raw/bitmap)",
+    "fr": "Envoie un DP Tuya avec type explicite"
+  },
+  "args": [
+    { "type": "device", "name": "device", "filter": "capabilities=tuya_dp_value|onoff" },
+    { "name": "dp", "type": "number", "title": { "en": "DP Number" }, "min": 1, "max": 255 },
+    {
+      "name": "dp_type", "type": "dropdown", "title": { "en": "DP Type" },
+      "values": [
+        { "id": "bool", "label": { "en": "Bool (true/false)" } },
+        { "id": "value", "label": { "en": "Value (integer)" } },
+        { "id": "enum", "label": { "en": "Enum (0-255)" } },
+        { "id": "string", "label": { "en": "String (text)" } },
+        { "id": "raw", "label": { "en": "Raw (hex bytes)" } },
+        { "id": "bitmap", "label": { "en": "Bitmap (bitmask)" } }
+      ]
+    },
+    { "name": "value", "type": "text", "title": { "en": "Value" } }
+  ]
+}

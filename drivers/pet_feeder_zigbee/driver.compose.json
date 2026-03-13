@@ -1,0 +1,77 @@
+{
+  "name": {
+    "en": "Pet Feeder (Zigbee)",
+    "fr": "Distributeur de Nourriture (Zigbee)",
+    "nl": "Huisdier Voeder (Zigbee)",
+    "de": "Futterspender (Zigbee)"
+  },
+  "class": "other",
+  "capabilities": [
+    "button",
+    "measure_weight",
+    "alarm_generic"
+  ],
+  "capabilitiesOptions": {
+    "button": {
+      "title": {
+        "en": "Feed Now",
+        "fr": "Nourrir Maintenant"
+      }
+    },
+    "measure_weight": {
+      "title": {
+        "en": "Food Level",
+        "fr": "Niveau de Nourriture"
+      },
+      "units": {
+        "en": "g"
+      }
+    },
+    "alarm_generic": {
+      "title": {
+        "en": "Food Empty",
+        "fr": "Nourriture Vide"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_sh1btabb",
+      "_TZE200_b8o5vk1c",
+      "_TZE200_aqi3n6a3",
+      "_TZE204_sh1btabb"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          61184
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/pet_feeder_zigbee/assets/images/small.png",
+    "large": "drivers/pet_feeder_zigbee/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "approximation": {
+      "usageConstant": 3
+    }
+  }
+}

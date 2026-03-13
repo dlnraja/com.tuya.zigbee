@@ -1,0 +1,17 @@
+{
+  "type": "number",
+  "title": {
+    "en": "CO",
+    "nl": "CO",
+    "de": "CO",
+    "fr": "CO"
+  },
+  "units": {
+    "en": "ppm"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "decimals": 0,
+  "insights": true
+}
