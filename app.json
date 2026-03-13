@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.110",
+  "version": "5.11.113",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -161,6 +161,159 @@
         ]
       },
       {
+        "id": "tuya_bitmap_changed",
+        "title": {
+          "en": "Tuya bitmap DP changed",
+          "fr": "Bitmap Tuya changé"
+        },
+        "titleFormatted": {
+          "en": "Bitmap DP [[dp]] changed on [[device]]",
+          "fr": "Bitmap DP [[dp]] changé sur [[device]]"
+        },
+        "hint": {
+          "en": "Triggers when a bitmap (type 5) DP changes. Bitmap is a bitmask of active flags.",
+          "fr": "Se déclenche quand un DP bitmap (type 5) change."
+        },
+        "tokens": [
+          {
+            "name": "dp_number",
+            "type": "number",
+            "title": {
+              "en": "DP Number"
+            },
+            "example": 14
+          },
+          {
+            "name": "bitmap",
+            "type": "number",
+            "title": {
+              "en": "Bitmap value"
+            },
+            "example": 255
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=tuya_dp_bitmap|onoff"
+          },
+          {
+            "name": "dp",
+            "type": "number",
+            "title": {
+              "en": "DP Number (0=any)"
+            },
+            "min": 0,
+            "max": 255
+          }
+        ]
+      },
+      {
+        "id": "tuya_cluster_received",
+        "title": {
+          "en": "Zigbee cluster event received",
+          "fr": "Événement cluster Zigbee reçu"
+        },
+        "titleFormatted": {
+          "en": "Cluster event received on [[device]]",
+          "fr": "Événement cluster reçu sur [[device]]"
+        },
+        "hint": {
+          "en": "Triggers when a manufacturer cluster frame is received (0xE000-0xFFFF).",
+          "fr": "Se déclenche quand une trame cluster fabricant est reçue."
+        },
+        "tokens": [
+          {
+            "name": "cluster_id",
+            "type": "string",
+            "title": {
+              "en": "Cluster ID"
+            },
+            "example": "0xE001"
+          },
+          {
+            "name": "command_id",
+            "type": "number",
+            "title": {
+              "en": "Command ID"
+            },
+            "example": 0
+          },
+          {
+            "name": "data_hex",
+            "type": "string",
+            "title": {
+              "en": "Data (hex)"
+            },
+            "example": "d03001"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=tuya_cluster_event|onoff"
+          }
+        ]
+      },
+      {
+        "id": "tuya_dp_changed",
+        "title": {
+          "en": "Any Tuya DP changed",
+          "fr": "Tout DP Tuya changé"
+        },
+        "titleFormatted": {
+          "en": "DP changed on [[device]]",
+          "fr": "DP changé sur [[device]]"
+        },
+        "hint": {
+          "en": "Triggers when ANY DP value changes. Includes DP type info (raw/bool/value/string/enum/bitmap).",
+          "fr": "Se déclenche quand N'IMPORTE QUEL DP change. Inclut le type."
+        },
+        "tokens": [
+          {
+            "name": "dp_number",
+            "type": "number",
+            "title": {
+              "en": "DP Number"
+            },
+            "example": 1
+          },
+          {
+            "name": "dp_value",
+            "type": "string",
+            "title": {
+              "en": "Value (string)"
+            },
+            "example": "true"
+          },
+          {
+            "name": "dp_type",
+            "type": "string",
+            "title": {
+              "en": "DP Type"
+            },
+            "example": "bool"
+          },
+          {
+            "name": "dp_numeric",
+            "type": "number",
+            "title": {
+              "en": "Numeric value"
+            },
+            "example": 1
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=tuya_dp_value|onoff"
+          }
+        ]
+      },
+      {
         "id": "tuya_dp_received",
         "title": {
           "en": "Tuya Data Point received",
@@ -295,6 +448,55 @@
               "en": "Threshold Value",
               "fr": "Valeur seuil"
             }
+          }
+        ]
+      },
+      {
+        "id": "tuya_raw_received",
+        "title": {
+          "en": "Tuya raw DP received",
+          "fr": "DP Tuya brut reçu"
+        },
+        "titleFormatted": {
+          "en": "Raw DP [[dp]] received on [[device]]",
+          "fr": "DP brut [[dp]] reçu sur [[device]]"
+        },
+        "hint": {
+          "en": "Triggers when a raw (type 0) DP is received. Data is provided as hex string.",
+          "fr": "Se déclenche quand un DP brut (type 0) est reçu. Données en hex."
+        },
+        "tokens": [
+          {
+            "name": "dp_number",
+            "type": "number",
+            "title": {
+              "en": "DP Number"
+            },
+            "example": 1
+          },
+          {
+            "name": "raw_hex",
+            "type": "string",
+            "title": {
+              "en": "Raw data (hex)"
+            },
+            "example": "0102ff"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=tuya_dp_raw|onoff"
+          },
+          {
+            "name": "dp",
+            "type": "number",
+            "title": {
+              "en": "DP Number (0=any)"
+            },
+            "min": 0,
+            "max": 255
           }
         ]
       },
@@ -24468,6 +24670,78 @@
         ]
       },
       {
+        "id": "tuya_dp_type_is",
+        "title": {
+          "en": "DP type is...",
+          "fr": "Type DP est..."
+        },
+        "titleFormatted": {
+          "en": "DP [[dp]] on [[device]] is type [[dp_type]]",
+          "fr": "DP [[dp]] de [[device]] est type [[dp_type]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=tuya_dp_value|onoff"
+          },
+          {
+            "name": "dp",
+            "type": "number",
+            "title": {
+              "en": "DP Number"
+            },
+            "min": 1,
+            "max": 255
+          },
+          {
+            "name": "dp_type",
+            "type": "dropdown",
+            "title": {
+              "en": "Expected Type"
+            },
+            "values": [
+              {
+                "id": "raw",
+                "label": {
+                  "en": "Raw"
+                }
+              },
+              {
+                "id": "bool",
+                "label": {
+                  "en": "Bool"
+                }
+              },
+              {
+                "id": "value",
+                "label": {
+                  "en": "Value"
+                }
+              },
+              {
+                "id": "string",
+                "label": {
+                  "en": "String"
+                }
+              },
+              {
+                "id": "enum",
+                "label": {
+                  "en": "Enum"
+                }
+              },
+              {
+                "id": "bitmap",
+                "label": {
+                  "en": "Bitmap"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "air_purifier_is_on",
         "title": {
           "en": "Is !{{on|off}}",
@@ -30083,6 +30357,89 @@
             "title": {
               "en": "Value",
               "fr": "Valeur"
+            }
+          }
+        ]
+      },
+      {
+        "id": "tuya_dp_send_typed",
+        "title": {
+          "en": "Send typed Tuya DP",
+          "fr": "Envoyer DP Tuya typé"
+        },
+        "titleFormatted": {
+          "en": "Send DP [[dp]] ([[dp_type]]) = [[value]] to [[device]]",
+          "fr": "Envoyer DP [[dp]] ([[dp_type]]) = [[value]] à [[device]]"
+        },
+        "hint": {
+          "en": "Send a Tuya DP with explicit type (bool/value/enum/string/raw/bitmap)",
+          "fr": "Envoie un DP Tuya avec type explicite"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=tuya_dp_value|onoff"
+          },
+          {
+            "name": "dp",
+            "type": "number",
+            "title": {
+              "en": "DP Number"
+            },
+            "min": 1,
+            "max": 255
+          },
+          {
+            "name": "dp_type",
+            "type": "dropdown",
+            "title": {
+              "en": "DP Type"
+            },
+            "values": [
+              {
+                "id": "bool",
+                "label": {
+                  "en": "Bool (true/false)"
+                }
+              },
+              {
+                "id": "value",
+                "label": {
+                  "en": "Value (integer)"
+                }
+              },
+              {
+                "id": "enum",
+                "label": {
+                  "en": "Enum (0-255)"
+                }
+              },
+              {
+                "id": "string",
+                "label": {
+                  "en": "String (text)"
+                }
+              },
+              {
+                "id": "raw",
+                "label": {
+                  "en": "Raw (hex bytes)"
+                }
+              },
+              {
+                "id": "bitmap",
+                "label": {
+                  "en": "Bitmap (bitmask)"
+                }
+              }
+            ]
+          },
+          {
+            "name": "value",
+            "type": "text",
+            "title": {
+              "en": "Value"
             }
           }
         ]
@@ -44218,7 +44575,12 @@
           "_TZE200_7bztmfm1",
           "_TZE200_qpn5q17m",
           "_TZE204_7bztmfm1",
-          "_TZE204_qpn5q17m"
+          "_TZE204_qpn5q17m",
+          "_TZE200_kly8gjlz",
+          "_TZE20X_xxxxxxxx",
+          "_TZE200_aoclfnxz",
+          "_TZE204_aoclfnxz",
+          "_TZE200_2ekuz3dz"
         ],
         "productId": [
           "TS0601_air_purifier",
@@ -49031,7 +49393,10 @@
           "_TZ3290_yyax9ajf",
           "_TZ3000_jcspr0tp",
           "SONOFF",
-          "eWeLink"
+          "eWeLink",
+          "_TZ3000_abrsvsou",
+          "_TZ3000_4fjiwweb",
+          "_TZ3000_qja6nq5z"
         ],
         "productId": [
           "TS0044",
@@ -51983,7 +52348,8 @@
           "TUYATEC-ojmxeikg",
           "TUYATEC-ojmxeikq",
           "TUYATEC-1g3tawnp",
-          "TUYATEC-v3uxbuxy"
+          "TUYATEC-v3uxbuxy",
+          "TUYATEC-qun7vq14"
         ],
         "productId": [
           "TS0201",
@@ -56255,6 +56621,100 @@
     },
     {
       "name": {
+        "en": "Floor Heating Thermostat",
+        "fr": "Thermostat de Chauffage au Sol",
+        "nl": "Vloerverwarming Thermostaat",
+        "de": "Fussbodenheizung Thermostat"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "measure_temperature.floor",
+        "thermostat_mode",
+        "onoff"
+      ],
+      "capabilitiesOptions": {
+        "target_temperature": {
+          "min": 5,
+          "max": 45,
+          "step": 0.5
+        },
+        "measure_temperature.floor": {
+          "title": {
+            "en": "Floor Temperature",
+            "fr": "Température Sol"
+          }
+        },
+        "thermostat_mode": {
+          "values": [
+            {
+              "id": "auto",
+              "title": {
+                "en": "Schedule"
+              }
+            },
+            {
+              "id": "heat",
+              "title": {
+                "en": "Manual"
+              }
+            },
+            {
+              "id": "off",
+              "title": {
+                "en": "Off"
+              }
+            }
+          ]
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_aoclfnxz",
+          "_TZE200_2ekuz3dz",
+          "_TZE200_g9a3awaj",
+          "_TZE200_ulyn7b1o",
+          "_TZE200_rufdtfyv",
+          "_TZE204_aoclfnxz"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              61184
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/floor_heating_thermostat/assets/images/small.png",
+        "large": "drivers/floor_heating_thermostat/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 2
+        }
+      },
+      "id": "floor_heating_thermostat"
+    },
+    {
+      "name": {
         "en": "Zigbee Formaldehyde/VOC Sensor",
         "fr": "Capteur formaldéhyde/VOC Zigbee",
         "nl": "Formaldehyde Sensor",
@@ -56426,6 +56886,77 @@
         "zigbee"
       ],
       "id": "garage_door"
+    },
+    {
+      "name": {
+        "en": "Garage Door Opener",
+        "fr": "Ouvre-porte de Garage",
+        "nl": "Garagedeur Opener",
+        "de": "Garagentorantrieb"
+      },
+      "class": "garagedoor",
+      "capabilities": [
+        "garagedoor_closed",
+        "alarm_contact"
+      ],
+      "capabilitiesOptions": {
+        "garagedoor_closed": {
+          "title": {
+            "en": "Garage Door",
+            "fr": "Porte de Garage"
+          }
+        },
+        "alarm_contact": {
+          "title": {
+            "en": "Door Sensor",
+            "fr": "Capteur de Porte"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_5uer6sww",
+          "_TZE608_c75zqghm",
+          "_TZE608_fmemczv1",
+          "_TZE608_xkr8gep3",
+          "_TZE608_lapuuoke"
+        ],
+        "productId": [
+          "TS0601",
+          "TS0603"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              61184
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/garage_door_opener/assets/images/small.png",
+        "large": "drivers/garage_door_opener/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 1
+        }
+      },
+      "id": "garage_door_opener"
     },
     {
       "name": {
@@ -57990,6 +58521,80 @@
       "id": "generic_tuya"
     },
     {
+      "id": "handheld_remote_4_buttons",
+      "name": {
+        "en": "4 Button Remote"
+      },
+      "class": "remote",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilities": [
+        "button"
+      ],
+      "images": {
+        "large": "/drivers/handheld_remote_4_buttons/assets/images/large.png",
+        "small": "/drivers/handheld_remote_4_buttons/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_u3nv1jwk"
+        ],
+        "productId": [
+          "TS0044"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "2": {
+            "clusters": [
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "3": {
+            "clusters": [
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "4": {
+            "clusters": [
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/handheld_remote_4_buttons/assets/icon.svg",
+          "instruction": {
+            "en": "Press the top button for aprox 10 seconds (Zigbee logo will start blinking)."
+          }
+        }
+      }
+    },
+    {
       "name": {
         "en": "Smart Humidifier",
         "fr": "Humidificateur Connecté",
@@ -58475,6 +59080,97 @@
         }
       ],
       "id": "hvac_air_conditioner"
+    },
+    {
+      "name": {
+        "en": "HVAC Controller",
+        "fr": "Contrôleur HVAC",
+        "nl": "HVAC Controller",
+        "de": "HVAC Steuerung"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "onoff",
+        "target_temperature",
+        "measure_temperature",
+        "thermostat_mode"
+      ],
+      "capabilitiesOptions": {
+        "target_temperature": {
+          "min": 16,
+          "max": 30,
+          "step": 0.5
+        },
+        "thermostat_mode": {
+          "values": [
+            {
+              "id": "auto",
+              "title": {
+                "en": "Auto"
+              }
+            },
+            {
+              "id": "cool",
+              "title": {
+                "en": "Cool"
+              }
+            },
+            {
+              "id": "heat",
+              "title": {
+                "en": "Heat"
+              }
+            },
+            {
+              "id": "off",
+              "title": {
+                "en": "Off"
+              }
+            }
+          ]
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_r32ctezx",
+          "_TZE204_r32ctezx",
+          "_TZE200_cfczgbss",
+          "_TZE284_cfczgbss"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              61184
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/hvac_controller/assets/images/small.png",
+        "large": "drivers/hvac_controller/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 5
+        }
+      },
+      "id": "hvac_controller"
     },
     {
       "name": {
@@ -60399,6 +61095,68 @@
     },
     {
       "name": {
+        "en": "Outdoor Light Sensor",
+        "fr": "Capteur de Luminosité Extérieur",
+        "nl": "Buitenlicht Sensor",
+        "de": "Außen Lichtsensor"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_luminance",
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {
+        "measure_luminance": {
+          "title": {
+            "en": "Luminance",
+            "fr": "Luminosité"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3210_snzbbgvi"
+        ],
+        "productId": [
+          "TS0601",
+          "TS0222"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1024,
+              61184
+            ],
+            "bindings": [
+              1,
+              1024
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/light_sensor_outdoor/assets/images/small.png",
+        "large": "drivers/light_sensor_outdoor/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2450",
+          "AAA"
+        ]
+      },
+      "id": "light_sensor_outdoor"
+    },
+    {
+      "name": {
         "en": "Lock Smart",
         "fr": "Lock Smart",
         "nl": "Smart Slot",
@@ -62317,6 +63075,84 @@
         "zigbee"
       ],
       "id": "pet_feeder"
+    },
+    {
+      "name": {
+        "en": "Pet Feeder (Zigbee)",
+        "fr": "Distributeur de Nourriture (Zigbee)",
+        "nl": "Huisdier Voeder (Zigbee)",
+        "de": "Futterspender (Zigbee)"
+      },
+      "class": "other",
+      "capabilities": [
+        "button",
+        "measure_weight",
+        "alarm_generic"
+      ],
+      "capabilitiesOptions": {
+        "button": {
+          "title": {
+            "en": "Feed Now",
+            "fr": "Nourrir Maintenant"
+          }
+        },
+        "measure_weight": {
+          "title": {
+            "en": "Food Level",
+            "fr": "Niveau de Nourriture"
+          },
+          "units": {
+            "en": "g"
+          }
+        },
+        "alarm_generic": {
+          "title": {
+            "en": "Food Empty",
+            "fr": "Nourriture Vide"
+          }
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_sh1btabb",
+          "_TZE200_b8o5vk1c",
+          "_TZE200_aqi3n6a3",
+          "_TZE204_sh1btabb"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              61184
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/pet_feeder_zigbee/assets/images/small.png",
+        "large": "drivers/pet_feeder_zigbee/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 3
+        }
+      },
+      "id": "pet_feeder_zigbee"
     },
     {
       "name": {
@@ -67370,6 +68206,56 @@
       "id": "smart_breaker"
     },
     {
+      "id": "smart_button_switch",
+      "name": {
+        "en": "Smart Button Switch"
+      },
+      "class": "remote",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilities": [],
+      "images": {
+        "large": "/drivers/smart_button_switch/assets/images/large.png",
+        "small": "/drivers/smart_button_switch/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_fa9mlvja",
+          "_TZ3000_yj6k7vfo",
+          "_TZ3000_qgwcxxws"
+        ],
+        "productId": [
+          "TS0041"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/smart_button_switch/assets/icon.svg",
+          "instruction": {
+            "en": "Press the button for aprox 10 seconds (the LED should start blinking)."
+          }
+        }
+      }
+    },
+    {
       "name": {
         "en": "Smart Heater",
         "fr": "Chauffage Connecté",
@@ -67643,6 +68529,89 @@
     },
     {
       "name": {
+        "en": "Smart Knob",
+        "fr": "Bouton Rotatif Intelligent",
+        "nl": "Slimme Draaiknop",
+        "de": "Smart Drehknopf"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "button",
+        "dim",
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {
+        "button": {
+          "title": {
+            "en": "Button Press",
+            "fr": "Appui Bouton"
+          },
+          "getable": false,
+          "setable": false
+        },
+        "dim": {
+          "title": {
+            "en": "Rotation Level",
+            "fr": "Niveau Rotation"
+          },
+          "min": 0,
+          "max": 1,
+          "step": 0.01
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_4fjiwweb",
+          "_TZ3000_uri7ber7",
+          "_TZ3000_ixla93vd",
+          "_TZ3000_qja6nq5z",
+          "_TZ3000_abrsvsou",
+          "_TZ3000_g9g2xnch",
+          "_TZ3000_r0o2dahu",
+          "_TZ3000_402vrq2i"
+        ],
+        "productId": [
+          "TS004F",
+          "ERS-10TZBVK-AA"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              6,
+              8,
+              4096
+            ],
+            "bindings": [
+              1,
+              6,
+              8,
+              4096
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/smart_knob/assets/images/small.png",
+        "large": "drivers/smart_knob/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "id": "smart_knob"
+    },
+    {
+      "name": {
         "en": "Smart Knob / Scene Switch",
         "fr": "Bouton Rotatif Intelligent",
         "nl": "Slimme Draaiknop",
@@ -67773,6 +68742,160 @@
       "id": "smart_knob_rotary"
     },
     {
+      "id": "smart_knob_switch",
+      "name": {
+        "en": "Smart Knob Switch",
+        "sv": "Smart knappdimmer"
+      },
+      "class": "remote",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilities": [
+        "dim"
+      ],
+      "images": {
+        "large": "/drivers/smart_knob_switch/assets/images/large.png",
+        "small": "/drivers/smart_knob_switch/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_abrsvsou",
+          "_TZ3000_4fjiwweb",
+          "_TZ3000_qja6nq5z",
+          "_TZ3000_ixla93vd",
+          "_TZ3000_uri7ongn"
+        ],
+        "productId": [
+          "TS004F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              4,
+              6,
+              4096
+            ],
+            "bindings": [
+              3,
+              4,
+              5,
+              6,
+              8,
+              10,
+              25,
+              4096
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/smart_knob_switch/assets/icon.svg",
+          "instruction": {
+            "en": "Press the side button for aprox 10 seconds (LED should start blinking).",
+            "sv": "Håll ned sidoknappen ca 10 sekunder (LED-lampan ska börja blinka)."
+          }
+        }
+      }
+    },
+    {
+      "name": {
+        "en": "Smart LCD Thermostat",
+        "fr": "Thermostat LCD Intelligent",
+        "nl": "Slim LCD Thermostaat",
+        "de": "Smart LCD Thermostat"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "measure_humidity",
+        "thermostat_mode"
+      ],
+      "capabilitiesOptions": {
+        "target_temperature": {
+          "min": 5,
+          "max": 35,
+          "step": 0.5
+        },
+        "thermostat_mode": {
+          "values": [
+            {
+              "id": "auto",
+              "title": {
+                "en": "Schedule"
+              }
+            },
+            {
+              "id": "heat",
+              "title": {
+                "en": "Manual"
+              }
+            },
+            {
+              "id": "off",
+              "title": {
+                "en": "Off"
+              }
+            }
+          ]
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_b6wax7g0",
+          "_TZE200_p3dbf6qs",
+          "_TZE200_rxq4iti9",
+          "_TZE200_kly8gjlz",
+          "_TZE200_c88teujp",
+          "_TZE204_p3dbf6qs"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              61184
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/smart_lcd_thermostat/assets/images/small.png",
+        "large": "drivers/smart_lcd_thermostat/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "energy": {
+        "approximation": {
+          "usageConstant": 1
+        }
+      },
+      "id": "smart_lcd_thermostat"
+    },
+    {
       "name": {
         "en": "Smart RCBO",
         "fr": "Disjoncteur Différentiel Connecté",
@@ -67830,6 +68953,170 @@
         ]
       },
       "id": "smart_rcbo"
+    },
+    {
+      "id": "smart_remote_1_button",
+      "name": {
+        "en": "1 button Smart Remote Controller"
+      },
+      "class": "remote",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilities": [
+        "measure_battery"
+      ],
+      "images": {
+        "large": "/drivers/smart_remote_1_button/assets/images/large.png",
+        "small": "/drivers/smart_remote_1_button/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_kjfzuycl",
+          "_TZ3000_rco1yzb1",
+          "_TZ3000_yirp2pgd"
+        ],
+        "productId": [
+          "TS004F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              4,
+              6,
+              4096,
+              57345
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/smart_remote_1_button/assets/icon.svg",
+          "instruction": {
+            "en": "Press the reset button for aprox 10 seconds (the LED should start blinking)."
+          }
+        }
+      }
+    },
+    {
+      "id": "smart_remote_1_button_2",
+      "name": {
+        "en": "1 button Smart Remote Controller"
+      },
+      "class": "remote",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilities": [],
+      "images": {
+        "large": "/drivers/smart_remote_1_button_2/assets/images/large.png",
+        "small": "/drivers/smart_remote_1_button_2/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_ja5osu5g"
+        ],
+        "productId": [
+          "TS004F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              4,
+              6,
+              4096,
+              57345
+            ],
+            "bindings": [
+              1,
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/smart_remote_1_button_2/assets/icon.svg",
+          "instruction": {
+            "en": "Press the reset button for aprox 10 seconds (the LED should start blinking)."
+          }
+        }
+      }
+    },
+    {
+      "id": "smart_remote_4_buttons",
+      "name": {
+        "en": "4 button Smart Remote Controller"
+      },
+      "class": "remote",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilities": [],
+      "images": {
+        "large": "/drivers/smart_remote_4_buttons/assets/images/large.png",
+        "small": "/drivers/smart_remote_4_buttons/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_fsiepnrh",
+          "_TYZB01_qm6djpta",
+          "_TZ3000_p6ju8myv",
+          "_TZ3000_eo3dttwe"
+        ],
+        "productId": [
+          "TS0215A"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1280,
+              1281
+            ],
+            "bindings": [
+              1281
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/smart_remote_4_buttons/assets/icon.svg",
+          "instruction": {
+            "en": "Push a pin gently into the reset hole on the backside of the unit for aprox 10 seconds until the led on the front blinks rapidly."
+          }
+        }
+      }
     },
     {
       "name": {
@@ -76583,6 +77870,68 @@
       "id": "vibration_sensor"
     },
     {
+      "id": "wall_curtain_switch",
+      "name": {
+        "en": "Wall mounted Curtain Switch"
+      },
+      "class": "curtain",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilities": [
+        "windowcoverings_set",
+        "windowcoverings_state"
+      ],
+      "images": {
+        "large": "/drivers/wall_curtain_switch/assets/images/large.png",
+        "small": "/drivers/wall_curtain_switch/assets/images/small.png"
+      },
+      "energy": {
+        "approximation": {
+          "usageOn": 0,
+          "usageOff": 0
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_dph3rpss",
+          "_TZ3000_8kzqqzu4",
+          "_TZ3000_ltiqubue",
+          "_TZ3000_dbpmpco1",
+          "_TZ3000_fvhunhxb",
+          "_TZ3000_ctbafvhm",
+          "_TZ3000_qqdbccb3",
+          "_TZ3000_wptayaqr",
+          "_TZ3000_qa8s8vca"
+        ],
+        "productId": [
+          "TS130F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              258
+            ],
+            "bindings": [
+              258
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/wall_curtain_switch/assets/icon.svg",
+          "instruction": {
+            "en": "Power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping) or press the Pause-button 5sec until Open-button blinks."
+          }
+        }
+      }
+    },
+    {
       "name": {
         "en": "Wall Dimmer 1-Gang 1-Way",
         "nl": "Muurschakelaar Dimmer 1-Gang 1-Weg",
@@ -76793,6 +78142,487 @@
         }
       ],
       "id": "wall_dimmer_1gang_1way"
+    },
+    {
+      "id": "wall_remote_1_gang",
+      "name": {
+        "en": "1 Gang Wall Remote"
+      },
+      "class": "remote",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilities": [],
+      "images": {
+        "large": "/drivers/wall_remote_1_gang/assets/images/large.png",
+        "small": "/drivers/wall_remote_1_gang/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TYZB02_keyjqthh",
+          "_TZ3000_tk3s5tyg",
+          "_TZ3000_fkp5zyho",
+          "_TZ3000_axpdxqgu",
+          "_TZ3000_peszejy7",
+          "_TZ3000_pzui3skt",
+          "_TZ3000_f97vq5mn",
+          "_TZ3000_fa9mlvja",
+          "_TZ3000_itb0omhv",
+          "_TZ3000_8rppvwda",
+          "_TZ3000_4upl1fcj",
+          "_TZ3000_q68478x7"
+        ],
+        "productId": [
+          "TS0041"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/wall_remote_1_gang/assets/icon.svg",
+          "instruction": {
+            "en": "Press the button for aprox 10 seconds (the LED should start blinking)."
+          }
+        }
+      }
+    },
+    {
+      "id": "wall_remote_2_gang",
+      "name": {
+        "en": "2 Gang Wall Remote"
+      },
+      "class": "remote",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilities": [],
+      "images": {
+        "large": "/drivers/wall_remote_2_gang/assets/images/large.png",
+        "small": "/drivers/wall_remote_2_gang/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_owgcnkrh",
+          "_TYZB02_keyjhapk",
+          "_TZ3000_oikiyf3b",
+          "_TZ3000_dfgbtub0",
+          "_TZ3000_h1c2eamp",
+          "_TZ3400_keyjhapk",
+          "_TZ3000_5e235jpa",
+          "_TZ3000_fkvaniuu"
+        ],
+        "productId": [
+          "TS0042"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "2": {
+            "clusters": [
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/wall_remote_2_gang/assets/icon.svg",
+          "instruction": {
+            "en": "Press the left button for aprox 10 seconds (the LED should start blinking). A tile for each button will be created. "
+          }
+        }
+      }
+    },
+    {
+      "id": "wall_remote_3_gang",
+      "name": {
+        "en": "3 Gang Wall Remote"
+      },
+      "class": "remote",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilities": [],
+      "images": {
+        "large": "/drivers/wall_remote_3_gang/assets/images/large.png",
+        "small": "/drivers/wall_remote_3_gang/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_a7ouggvs",
+          "_TYZB02_key8kk7r",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_rrjr1q0u",
+          "_TZ3000_w8jwkczz",
+          "_TZ3000_gbm10jnj",
+          "_TZ3000_yw5tvzsk",
+          "_TZ3000_sj7jbgks"
+        ],
+        "productId": [
+          "TS0043"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "2": {
+            "clusters": [
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "3": {
+            "clusters": [
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/wall_remote_3_gang/assets/icon.svg",
+          "instruction": {
+            "en": "Press the left button for aprox 10 seconds (the LED should start blinking)."
+          }
+        }
+      }
+    },
+    {
+      "id": "wall_remote_4_gang",
+      "name": {
+        "en": "4 Gang Wall Remote"
+      },
+      "class": "remote",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilities": [],
+      "images": {
+        "large": "/drivers/wall_remote_4_gang/assets/images/large.png",
+        "small": "/drivers/wall_remote_4_gang/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_ufhtxr59",
+          "_TZ3000_ee8nrt2l",
+          "_TZ3000_a4xycprs"
+        ],
+        "productId": [
+          "TS0044"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "2": {
+            "clusters": [
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "3": {
+            "clusters": [
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "4": {
+            "clusters": [
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/wall_remote_4_gang/assets/icon.svg",
+          "instruction": {
+            "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
+          }
+        }
+      }
+    },
+    {
+      "id": "wall_remote_4_gang_2",
+      "name": {
+        "en": "4 Gang Wall Remote"
+      },
+      "class": "remote",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilities": [],
+      "images": {
+        "large": "/drivers/wall_remote_4_gang_2/assets/images/large.png",
+        "small": "/drivers/wall_remote_4_gang_2/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_xabckq1v"
+        ],
+        "productId": [
+          "TS004F"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/wall_remote_4_gang_2/assets/icon.svg",
+          "instruction": {
+            "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
+          }
+        }
+      }
+    },
+    {
+      "id": "wall_remote_4_gang_3",
+      "name": {
+        "en": "4 Gang Wall Remote"
+      },
+      "class": "remote",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilities": [],
+      "images": {
+        "large": "/drivers/wall_remote_4_gang_3/assets/images/large.png",
+        "small": "/drivers/wall_remote_4_gang_3/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_wkai4ga5",
+          "_TZ3000_uaa99arv",
+          "_TZ3000_jcspr0tp"
+        ],
+        "productId": [
+          "TS0044"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "2": {
+            "clusters": [
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "3": {
+            "clusters": [
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "4": {
+            "clusters": [
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/wall_remote_4_gang_3/assets/icon.svg",
+          "instruction": {
+            "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
+          }
+        }
+      }
+    },
+    {
+      "id": "wall_remote_6_gang",
+      "name": {
+        "en": "6 Gang Wall Remote"
+      },
+      "class": "remote",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilities": [],
+      "images": {
+        "large": "/drivers/wall_remote_6_gang/assets/images/large.png",
+        "small": "/drivers/wall_remote_6_gang/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "CR2032"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZ3000_iszegwpd"
+        ],
+        "productId": [
+          "TS0046"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "2": {
+            "clusters": [
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "3": {
+            "clusters": [
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "4": {
+            "clusters": [
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "5": {
+            "clusters": [
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "6": {
+            "clusters": [
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/wall_remote_6_gang/assets/icon.svg",
+          "instruction": {
+            "en": "Press pair button for aprox 10 seconds."
+          }
+        }
+      }
     },
     {
       "name": {
@@ -79824,6 +81654,942 @@
     },
     {
       "name": {
+        "en": "eWeLink Bulb (SONOFF B02/B05)"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_temperature"
+      ],
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "eWeLink LAN"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "api_key",
+              "type": "text",
+              "label": {
+                "en": "API Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "encrypt",
+              "type": "checkbox",
+              "label": {
+                "en": "Encrypted"
+              },
+              "value": true
+            }
+          ]
+        }
+      ],
+      "images": {
+        "small": "drivers/wifi_ewelink_bulb/assets/images/small.png",
+        "large": "drivers/wifi_ewelink_bulb/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "discovery": "ewelink_mdns",
+      "id": "wifi_ewelink_bulb"
+    },
+    {
+      "name": {
+        "en": "eWeLink Dimmer (SONOFF D1)"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "eWeLink LAN"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "api_key",
+              "type": "text",
+              "label": {
+                "en": "API Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "encrypt",
+              "type": "checkbox",
+              "label": {
+                "en": "Encrypted"
+              },
+              "value": true
+            }
+          ]
+        }
+      ],
+      "images": {
+        "small": "drivers/wifi_ewelink_dimmer/assets/images/small.png",
+        "large": "drivers/wifi_ewelink_dimmer/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "discovery": "ewelink_mdns",
+      "id": "wifi_ewelink_dimmer"
+    },
+    {
+      "name": {
+        "en": "eWeLink Fan Controller (SONOFF iFan)"
+      },
+      "class": "fan",
+      "capabilities": [
+        "onoff",
+        "onoff.2",
+        "dim"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Fan"
+          }
+        },
+        "onoff.2": {
+          "title": {
+            "en": "Light"
+          }
+        },
+        "dim": {
+          "title": {
+            "en": "Fan Speed"
+          }
+        }
+      },
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "eWeLink LAN"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "api_key",
+              "type": "text",
+              "label": {
+                "en": "API Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "encrypt",
+              "type": "checkbox",
+              "label": {
+                "en": "Encrypted"
+              },
+              "value": true
+            }
+          ]
+        }
+      ],
+      "images": {
+        "small": "drivers/wifi_ewelink_fan/assets/images/small.png",
+        "large": "drivers/wifi_ewelink_fan/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "discovery": "ewelink_mdns",
+      "id": "wifi_ewelink_fan"
+    },
+    {
+      "name": {
+        "en": "eWeLink LED Strip (SONOFF L1/L2)"
+      },
+      "class": "light",
+      "capabilities": [
+        "onoff",
+        "dim"
+      ],
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "eWeLink LAN"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "api_key",
+              "type": "text",
+              "label": {
+                "en": "API Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "encrypt",
+              "type": "checkbox",
+              "label": {
+                "en": "Encrypted"
+              },
+              "value": true
+            }
+          ]
+        }
+      ],
+      "images": {
+        "small": "drivers/wifi_ewelink_led/assets/images/small.png",
+        "large": "drivers/wifi_ewelink_led/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "discovery": "ewelink_mdns",
+      "id": "wifi_ewelink_led"
+    },
+    {
+      "name": {
+        "en": "eWeLink Plug (SONOFF)"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "eWeLink LAN"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "api_key",
+              "type": "text",
+              "label": {
+                "en": "API Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "encrypt",
+              "type": "checkbox",
+              "label": {
+                "en": "Encrypted"
+              },
+              "value": true
+            }
+          ]
+        }
+      ],
+      "images": {
+        "small": "drivers/wifi_ewelink_plug/assets/images/small.png",
+        "large": "drivers/wifi_ewelink_plug/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "discovery": "ewelink_mdns",
+      "id": "wifi_ewelink_plug"
+    },
+    {
+      "name": {
+        "en": "eWeLink Power Monitor (SONOFF)"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "eWeLink LAN"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "api_key",
+              "type": "text",
+              "label": {
+                "en": "API Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "encrypt",
+              "type": "checkbox",
+              "label": {
+                "en": "Encrypted"
+              },
+              "value": true
+            }
+          ]
+        }
+      ],
+      "images": {
+        "small": "drivers/wifi_ewelink_pow/assets/images/small.png",
+        "large": "drivers/wifi_ewelink_pow/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "discovery": "ewelink_mdns",
+      "id": "wifi_ewelink_pow"
+    },
+    {
+      "name": {
+        "en": "eWeLink Switch (SONOFF)"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "eWeLink LAN"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "api_key",
+              "type": "text",
+              "label": {
+                "en": "API Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "encrypt",
+              "type": "checkbox",
+              "label": {
+                "en": "Encrypted"
+              },
+              "value": true
+            }
+          ]
+        }
+      ],
+      "images": {
+        "small": "drivers/wifi_ewelink_switch/assets/images/small.png",
+        "large": "drivers/wifi_ewelink_switch/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "discovery": "ewelink_mdns",
+      "id": "wifi_ewelink_switch"
+    },
+    {
+      "name": {
+        "en": "eWeLink Switch 2-Channel (SONOFF)"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.2"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Channel 1"
+          }
+        },
+        "onoff.2": {
+          "title": {
+            "en": "Channel 2"
+          }
+        }
+      },
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "eWeLink LAN"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "api_key",
+              "type": "text",
+              "label": {
+                "en": "API Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "encrypt",
+              "type": "checkbox",
+              "label": {
+                "en": "Encrypted"
+              },
+              "value": true
+            }
+          ]
+        }
+      ],
+      "images": {
+        "small": "drivers/wifi_ewelink_switch_2ch/assets/images/small.png",
+        "large": "drivers/wifi_ewelink_switch_2ch/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "discovery": "ewelink_mdns",
+      "id": "wifi_ewelink_switch_2ch"
+    },
+    {
+      "name": {
+        "en": "eWeLink Switch 4-Channel (SONOFF)"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.2",
+        "onoff.3",
+        "onoff.4"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Channel 1"
+          }
+        },
+        "onoff.2": {
+          "title": {
+            "en": "Channel 2"
+          }
+        },
+        "onoff.3": {
+          "title": {
+            "en": "Channel 3"
+          }
+        },
+        "onoff.4": {
+          "title": {
+            "en": "Channel 4"
+          }
+        }
+      },
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "eWeLink LAN"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "api_key",
+              "type": "text",
+              "label": {
+                "en": "API Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "encrypt",
+              "type": "checkbox",
+              "label": {
+                "en": "Encrypted"
+              },
+              "value": true
+            }
+          ]
+        }
+      ],
+      "images": {
+        "small": "drivers/wifi_ewelink_switch_4ch/assets/images/small.png",
+        "large": "drivers/wifi_ewelink_switch_4ch/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "discovery": "ewelink_mdns",
+      "id": "wifi_ewelink_switch_4ch"
+    },
+    {
+      "name": {
+        "en": "eWeLink TH Sensor Switch (SONOFF)"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "eWeLink LAN"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "api_key",
+              "type": "text",
+              "label": {
+                "en": "API Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "encrypt",
+              "type": "checkbox",
+              "label": {
+                "en": "Encrypted"
+              },
+              "value": true
+            }
+          ]
+        }
+      ],
+      "images": {
+        "small": "drivers/wifi_ewelink_th/assets/images/small.png",
+        "large": "drivers/wifi_ewelink_th/assets/images/large.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "discovery": "ewelink_mdns",
+      "id": "wifi_ewelink_th"
+    },
+    {
+      "name": {
         "en": "WiFi Fan (Tuya Local)"
       },
       "class": "fan",
@@ -81517,6 +84283,1018 @@
       "id": "wifi_siren"
     },
     {
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "eWeLink LAN"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "api_key",
+              "type": "text",
+              "label": {
+                "en": "API Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "encrypt",
+              "type": "checkbox",
+              "label": {
+                "en": "Encrypted"
+              },
+              "value": true
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "discovery": "ewelink_mdns",
+      "name": {
+        "en": "SONOFF BASIC R4"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "small": "drivers/wifi_sonoff_basicr4/assets/images/small.png",
+        "large": "drivers/wifi_sonoff_basicr4/assets/images/large.png"
+      },
+      "id": "wifi_sonoff_basicr4"
+    },
+    {
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "eWeLink LAN"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "api_key",
+              "type": "text",
+              "label": {
+                "en": "API Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "encrypt",
+              "type": "checkbox",
+              "label": {
+                "en": "Encrypted"
+              },
+              "value": true
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "discovery": "ewelink_mdns",
+      "name": {
+        "en": "SONOFF DUAL R3"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.2",
+        "measure_power",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Channel 1"
+          }
+        },
+        "onoff.2": {
+          "title": {
+            "en": "Channel 2"
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/wifi_sonoff_dualr3/assets/images/small.png",
+        "large": "drivers/wifi_sonoff_dualr3/assets/images/large.png"
+      },
+      "id": "wifi_sonoff_dualr3"
+    },
+    {
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "eWeLink LAN"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "api_key",
+              "type": "text",
+              "label": {
+                "en": "API Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "encrypt",
+              "type": "checkbox",
+              "label": {
+                "en": "Encrypted"
+              },
+              "value": true
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "discovery": "ewelink_mdns",
+      "name": {
+        "en": "SONOFF Micro USB"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "small": "drivers/wifi_sonoff_micro/assets/images/small.png",
+        "large": "drivers/wifi_sonoff_micro/assets/images/large.png"
+      },
+      "id": "wifi_sonoff_micro"
+    },
+    {
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "eWeLink LAN"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "api_key",
+              "type": "text",
+              "label": {
+                "en": "API Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "encrypt",
+              "type": "checkbox",
+              "label": {
+                "en": "Encrypted"
+              },
+              "value": true
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "discovery": "ewelink_mdns",
+      "name": {
+        "en": "SONOFF MINI R3"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "small": "drivers/wifi_sonoff_minir3/assets/images/small.png",
+        "large": "drivers/wifi_sonoff_minir3/assets/images/large.png"
+      },
+      "id": "wifi_sonoff_minir3"
+    },
+    {
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "eWeLink LAN"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "api_key",
+              "type": "text",
+              "label": {
+                "en": "API Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "encrypt",
+              "type": "checkbox",
+              "label": {
+                "en": "Encrypted"
+              },
+              "value": true
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "discovery": "ewelink_mdns",
+      "name": {
+        "en": "SONOFF MINI R4 / R4M"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "small": "drivers/wifi_sonoff_minir4/assets/images/small.png",
+        "large": "drivers/wifi_sonoff_minir4/assets/images/large.png"
+      },
+      "id": "wifi_sonoff_minir4"
+    },
+    {
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "eWeLink LAN"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "api_key",
+              "type": "text",
+              "label": {
+                "en": "API Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "encrypt",
+              "type": "checkbox",
+              "label": {
+                "en": "Encrypted"
+              },
+              "value": true
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "discovery": "ewelink_mdns",
+      "name": {
+        "en": "SONOFF POW Elite / POWR320D"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "measure_voltage",
+        "measure_current",
+        "meter_power"
+      ],
+      "images": {
+        "small": "drivers/wifi_sonoff_pow_elite/assets/images/small.png",
+        "large": "drivers/wifi_sonoff_pow_elite/assets/images/large.png"
+      },
+      "id": "wifi_sonoff_pow_elite"
+    },
+    {
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "eWeLink LAN"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "api_key",
+              "type": "text",
+              "label": {
+                "en": "API Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "encrypt",
+              "type": "checkbox",
+              "label": {
+                "en": "Encrypted"
+              },
+              "value": true
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "discovery": "ewelink_mdns",
+      "name": {
+        "en": "SONOFF S-MATE2 Extreme"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "small": "drivers/wifi_sonoff_smate2/assets/images/small.png",
+        "large": "drivers/wifi_sonoff_smate2/assets/images/large.png"
+      },
+      "id": "wifi_sonoff_smate2"
+    },
+    {
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "eWeLink LAN"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "api_key",
+              "type": "text",
+              "label": {
+                "en": "API Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "encrypt",
+              "type": "checkbox",
+              "label": {
+                "en": "Encrypted"
+              },
+              "value": true
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "discovery": "ewelink_mdns",
+      "name": {
+        "en": "SONOFF THR316D / THR320D"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "onoff",
+        "measure_temperature",
+        "measure_humidity",
+        "target_temperature"
+      ],
+      "images": {
+        "small": "drivers/wifi_sonoff_thr316d/assets/images/small.png",
+        "large": "drivers/wifi_sonoff_thr316d/assets/images/large.png"
+      },
+      "id": "wifi_sonoff_thr316d"
+    },
+    {
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "eWeLink LAN"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "api_key",
+              "type": "text",
+              "label": {
+                "en": "API Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "encrypt",
+              "type": "checkbox",
+              "label": {
+                "en": "Encrypted"
+              },
+              "value": true
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "discovery": "ewelink_mdns",
+      "name": {
+        "en": "SONOFF TX Touch 1-Gang"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff"
+      ],
+      "images": {
+        "small": "drivers/wifi_sonoff_tx_1ch/assets/images/small.png",
+        "large": "drivers/wifi_sonoff_tx_1ch/assets/images/large.png"
+      },
+      "id": "wifi_sonoff_tx_1ch"
+    },
+    {
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "eWeLink LAN"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "api_key",
+              "type": "text",
+              "label": {
+                "en": "API Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "encrypt",
+              "type": "checkbox",
+              "label": {
+                "en": "Encrypted"
+              },
+              "value": true
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "discovery": "ewelink_mdns",
+      "name": {
+        "en": "SONOFF TX Touch 2-Gang"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.2"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Gang 1"
+          }
+        },
+        "onoff.2": {
+          "title": {
+            "en": "Gang 2"
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/wifi_sonoff_tx_2ch/assets/images/small.png",
+        "large": "drivers/wifi_sonoff_tx_2ch/assets/images/large.png"
+      },
+      "id": "wifi_sonoff_tx_2ch"
+    },
+    {
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "eWeLink LAN"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "api_key",
+              "type": "text",
+              "label": {
+                "en": "API Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "encrypt",
+              "type": "checkbox",
+              "label": {
+                "en": "Encrypted"
+              },
+              "value": true
+            }
+          ]
+        }
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "discovery": "ewelink_mdns",
+      "name": {
+        "en": "SONOFF TX Touch 3-Gang"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.2",
+        "onoff.3"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Gang 1"
+          }
+        },
+        "onoff.2": {
+          "title": {
+            "en": "Gang 2"
+          }
+        },
+        "onoff.3": {
+          "title": {
+            "en": "Gang 3"
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/wifi_sonoff_tx_3ch/assets/images/small.png",
+        "large": "drivers/wifi_sonoff_tx_3ch/assets/images/large.png"
+      },
+      "id": "wifi_sonoff_tx_3ch"
+    },
+    {
       "name": {
         "en": "WiFi Switch (Tuya Local)"
       },
@@ -82315,6 +86093,46 @@
     }
   ],
   "capabilities": {
+    "alarm_gas": {
+      "type": "boolean",
+      "title": {
+        "en": "Gas Alarm",
+        "nl": "Gasalarm",
+        "de": "Gasalarm",
+        "fr": "Alarme gaz"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Gas detected"
+      },
+      "insightsTitleFalse": {
+        "en": "No gas detected"
+      }
+    },
+    "alarm_human": {
+      "type": "boolean",
+      "title": {
+        "en": "Human Presence",
+        "nl": "Menselijke aanwezigheid",
+        "de": "Menschliche Anwesenheit",
+        "fr": "Présence humaine"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "uiQuickAction": false,
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Presence detected"
+      },
+      "insightsTitleFalse": {
+        "en": "No presence"
+      }
+    },
     "alarm_tank_full": {
       "type": "boolean",
       "title": {
@@ -82591,6 +86409,42 @@
       "uiComponent": "sensor",
       "icon": "/assets/icons/ir_code.svg"
     },
+    "measure_co": {
+      "type": "number",
+      "title": {
+        "en": "CO",
+        "nl": "CO",
+        "de": "CO",
+        "fr": "CO"
+      },
+      "units": {
+        "en": "ppm"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "decimals": 0,
+      "insights": true
+    },
+    "measure_ec": {
+      "type": "number",
+      "title": {
+        "en": "Electrical Conductivity",
+        "nl": "Elektrische geleidbaarheid",
+        "de": "Elektrische Leitfähigkeit",
+        "fr": "Conductivité électrique"
+      },
+      "units": {
+        "en": "µS/cm"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "decimals": 0,
+      "insights": true,
+      "min": 0,
+      "max": 20000
+    },
     "measure_formaldehyde": {
       "type": "number",
       "title": {
@@ -82602,6 +86456,23 @@
       "getable": true,
       "setable": false,
       "uiComponent": "sensor",
+      "insights": true
+    },
+    "measure_pm10": {
+      "type": "number",
+      "title": {
+        "en": "PM10",
+        "nl": "PM10",
+        "de": "PM10",
+        "fr": "PM10"
+      },
+      "units": {
+        "en": "µg/m³"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "decimals": 0,
       "insights": true
     },
     "measure_pm25": {
@@ -82690,6 +86561,97 @@
       "min": 0,
       "max": 100
     },
+    "measure_weight": {
+      "type": "number",
+      "title": {
+        "en": "Weight",
+        "nl": "Gewicht",
+        "de": "Gewicht",
+        "fr": "Poids"
+      },
+      "units": {
+        "en": "g"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "decimals": 0,
+      "insights": true
+    },
+    "target_humidity": {
+      "type": "number",
+      "title": {
+        "en": "Target Humidity",
+        "nl": "Doelluchtvochtigheid",
+        "de": "Ziel-Luftfeuchtigkeit",
+        "fr": "Humidité cible"
+      },
+      "units": {
+        "en": "%"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "thermostat",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "decimals": 0
+    },
+    "tuya_cluster_event": {
+      "type": "string",
+      "title": {
+        "en": "Cluster Event",
+        "fr": "Événement Cluster"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": null,
+      "insights": false
+    },
+    "tuya_dp_bitmap": {
+      "type": "number",
+      "title": {
+        "en": "Tuya DP Bitmap",
+        "fr": "Tuya DP Bitmap"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": null,
+      "insights": false
+    },
+    "tuya_dp_raw": {
+      "type": "string",
+      "title": {
+        "en": "Tuya DP Raw",
+        "fr": "Tuya DP Brut"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": null,
+      "insights": false
+    },
+    "tuya_dp_string": {
+      "type": "string",
+      "title": {
+        "en": "Tuya DP String",
+        "fr": "Tuya DP Texte"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": null,
+      "insights": false
+    },
+    "tuya_dp_value": {
+      "type": "number",
+      "title": {
+        "en": "Tuya DP Value",
+        "fr": "Tuya DP Valeur"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": null,
+      "insights": true
+    },
     "wifi_heater_mode": {
       "type": "enum",
       "title": {
@@ -82731,6 +86693,16 @@
         }
       ],
       "insights": true
+    }
+  },
+  "discovery": {
+    "ewelink_mdns": {
+      "type": "mdns-sd",
+      "mdns-sd": {
+        "name": "ewelink",
+        "protocol": "tcp"
+      },
+      "id": "{{txt.id}}"
     }
   }
 }

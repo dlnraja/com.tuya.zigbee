@@ -1,6 +1,6 @@
 {
   "5.11.110": {
-    "en": "Universal Tuya Zigbee app v5.11.110 adds , with improved diagnostics."
+    "en": "Universal Tuya Zigbee app v5.11.110 adds 28 new drivers and 1,105 new fingerprints, improving device compatibility."
   },
   "5.11.109": {
     "en": "Updated Universal Tuya Zigbee app to v5.11.109 with new drivers and fingerprints."
@@ -58,5 +58,8 @@
   },
   "5.11.91": {
     "en": "Universal Tuya Zigbee app v5.11.91 adds new drivers and fingerprints, improving device compatibility."
+  },
+  "5.11.113": {
+    "en": "v5.11.110: Implemented batch close/respond state update for improved performance., None, None, None"
   }
 }
