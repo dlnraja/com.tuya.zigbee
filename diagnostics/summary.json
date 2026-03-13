@@ -1,9 +1,14 @@
 {
-  "timestamp": "2026-03-13T04:22:32.527Z",
+  "timestamp": "2026-03-13T10:28:57.334Z",
   "devices": [],
   "unmatchedFPs": [],
-  "errors": [],
+  "errors": [
+    {
+      "err": "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-=",
+      "source": "gmail"
+    }
+  ],
   "sources": {
-    "gmail": 2
+    "gmail": 5
   }
 }
