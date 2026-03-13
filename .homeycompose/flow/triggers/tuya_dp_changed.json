@@ -1,0 +1,24 @@
+{
+  "id": "tuya_dp_changed",
+  "title": {
+    "en": "Any Tuya DP changed",
+    "fr": "Tout DP Tuya changé"
+  },
+  "titleFormatted": {
+    "en": "DP changed on [[device]]",
+    "fr": "DP changé sur [[device]]"
+  },
+  "hint": {
+    "en": "Triggers when ANY DP value changes. Includes DP type info (raw/bool/value/string/enum/bitmap).",
+    "fr": "Se déclenche quand N'IMPORTE QUEL DP change. Inclut le type."
+  },
+  "tokens": [
+    { "name": "dp_number", "type": "number", "title": { "en": "DP Number" }, "example": 1 },
+    { "name": "dp_value", "type": "string", "title": { "en": "Value (string)" }, "example": "true" },
+    { "name": "dp_type", "type": "string", "title": { "en": "DP Type" }, "example": "bool" },
+    { "name": "dp_numeric", "type": "number", "title": { "en": "Numeric value" }, "example": 1 }
+  ],
+  "args": [
+    { "type": "device", "name": "device", "filter": "capabilities=tuya_dp_value|onoff" }
+  ]
+}

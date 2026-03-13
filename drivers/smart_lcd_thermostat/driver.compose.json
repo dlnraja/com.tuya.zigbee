@@ -1,0 +1,86 @@
+{
+  "name": {
+    "en": "Smart LCD Thermostat",
+    "fr": "Thermostat LCD Intelligent",
+    "nl": "Slim LCD Thermostaat",
+    "de": "Smart LCD Thermostat"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature",
+    "measure_humidity",
+    "thermostat_mode"
+  ],
+  "capabilitiesOptions": {
+    "target_temperature": {
+      "min": 5,
+      "max": 35,
+      "step": 0.5
+    },
+    "thermostat_mode": {
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Schedule"
+          }
+        },
+        {
+          "id": "heat",
+          "title": {
+            "en": "Manual"
+          }
+        },
+        {
+          "id": "off",
+          "title": {
+            "en": "Off"
+          }
+        }
+      ]
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_b6wax7g0",
+      "_TZE200_p3dbf6qs",
+      "_TZE200_rxq4iti9",
+      "_TZE200_kly8gjlz",
+      "_TZE200_c88teujp",
+      "_TZE204_p3dbf6qs"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          61184
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/smart_lcd_thermostat/assets/images/small.png",
+    "large": "drivers/smart_lcd_thermostat/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "approximation": {
+      "usageConstant": 1
+    }
+  }
+}

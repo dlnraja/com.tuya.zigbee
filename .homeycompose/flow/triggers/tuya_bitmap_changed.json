@@ -1,0 +1,23 @@
+{
+  "id": "tuya_bitmap_changed",
+  "title": {
+    "en": "Tuya bitmap DP changed",
+    "fr": "Bitmap Tuya changé"
+  },
+  "titleFormatted": {
+    "en": "Bitmap DP [[dp]] changed on [[device]]",
+    "fr": "Bitmap DP [[dp]] changé sur [[device]]"
+  },
+  "hint": {
+    "en": "Triggers when a bitmap (type 5) DP changes. Bitmap is a bitmask of active flags.",
+    "fr": "Se déclenche quand un DP bitmap (type 5) change."
+  },
+  "tokens": [
+    { "name": "dp_number", "type": "number", "title": { "en": "DP Number" }, "example": 14 },
+    { "name": "bitmap", "type": "number", "title": { "en": "Bitmap value" }, "example": 255 }
+  ],
+  "args": [
+    { "type": "device", "name": "device", "filter": "capabilities=tuya_dp_bitmap|onoff" },
+    { "name": "dp", "type": "number", "title": { "en": "DP Number (0=any)" }, "min": 0, "max": 255 }
+  ]
+}

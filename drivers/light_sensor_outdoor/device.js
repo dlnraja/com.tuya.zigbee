@@ -1,0 +1,43 @@
+'use strict';
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+
+/**
+ * Outdoor Light Sensor
+ * Combines ZCL illuminance + Tuya DP for solar-powered outdoor sensors
+ */
+class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
+  async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
+    const ep1 = zclNode?.endpoints?.[1];
+
+    // Standard illuminance measurement cluster (0x0400)
+    const illum = ep1?.clusters?.illuminanceMeasurement || ep1?.clusters?.[1024];
+    if (illum?.on) {
+      illum.on('attr.measuredValue', (val) => {
+        const lux = Math.pow(10, (val - 1) / 10000);
+        this.setCapabilityValue('measure_luminance', Math.round(lux)).catch(() => {});
+      });
+    }
+
+    // Tuya DP fallback
+    if (this._tuyaEF00Manager) {
+      this._tuyaEF00Manager.dpMappings = {
+        1: { capability: 'measure_luminance', divisor: 1 },
+        4: { capability: 'measure_battery', divisor: 1 },
+      };
+    }
+
+    // Battery via power configuration
+    const power = ep1?.clusters?.powerConfiguration || ep1?.clusters?.[1];
+    if (power?.on) {
+      power.on('attr.batteryPercentageRemaining', (val) => {
+        const pct = Math.min(100, Math.round(val / 2));
+        this.setCapabilityValue('measure_battery', pct).catch(() => {});
+      });
+    }
+
+    this.log('[LIGHT-OUT] \u2705 Ready');
+  }
+}
+module.exports = LightSensorOutdoorDevice;
