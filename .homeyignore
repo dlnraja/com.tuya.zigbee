@@ -1,156 +1,136 @@
-# 🛡️ HOMEYIGNORE OPTIMISÉ - Version sécurisée et intelligente
-# Généré automatiquement - NE PAS ÉDITER MANUELLEMENT
-# Script: optimize-homeyignore.js
-# Date: 2025-12-22T14:41:03.187Z
+# HOMEYIGNORE - Clean App Package
+# Only runtime files go to Homey. Everything else excluded.
 
-# === SÉCURITÉ CRITIQUE ===
-# GitHub Actions et workflows (CRITIQUE - ne jamais inclure dans l'app)
+# === CI/CD & Dev Infrastructure ===
 .github/
 .githooks/
 .git/
-
-# Scripts développement et sécurité (CRITIQUE)
+.windsurf/
+.vscode/
+.idea/
+.vs/
 scripts/
-project-data/
+tools/
 docs/
 references/
 backup/
+project-data/
+data/
+diagnostics/
+reports/
+logs/
+.archive/
 
-# === OPTIMISATION BUILD ===
-# Cache et dépendances
-node_modules/
-.npm/
-.nyc_output/
-*.log
-*.tmp
-npm-debug.log*
-
-# IDE et éditeurs
-.vscode/
-.idea/
-*.sublime-*
-.vs/
-
-# Tests et développement
-test/
-tests/
-spec/
-*.test.js
-*.spec.js
+# === Dev config files ===
+.cascade
+.windsurfrules
+.cursorrules
+.nycrc
+.prettierrc
+.prettierrc.*
+.prettierignore
+.eslintrc.*
+eslint.config.js
 jest.config.js
 karma.conf.js
-
-# Build et distribution (CRITIQUE)
-.homeybuild/
-build/
-dist/
-out/
-target/
-
-# === FICHIERS TEMPORAIRES ===
-# Archives
-*.zip
-*.tar.gz
-*.rar
-*.7z
-backup-*
-
-# OS spécifiques
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# Configuration développement
+babel.config.js
+webpack.config.js
+rollup.config.js
+vite.config.js
 .env
 .env.*
 config.local.js
 secrets.json
 
-# Documentation développement
-README.dev.md
-CONTRIBUTING.md
-CHANGELOG.dev.md
-TODO.md
+# === Root junk files ===
+_cmp.js
+nul
+post_log.txt
+tmp_validate_log.txt
+README.txt
 
-# Scripts système
+# === Build/cache/deps ===
+node_modules/
+.npm/
+.nyc_output/
+.homeybuild/
+build/
+dist/
+out/
+target/
+temp/
+tmp/
+package-lock.json
+
+# === Large lib/data files (dev-only, not imported at runtime) ===
+lib/data/categorized_devices.json
+lib/data/enrichment_data.json
+lib/data/fingerprints_raw.json
+lib/data/fingerprint_map.json
+lib/data/generated_fingerprints.json
+lib/data/model_manufacturer_map.json
+lib/data/new_fingerprints.js
+lib/data/new_fingerprints.json
+lib/data/smart_fingerprints.js
+lib/data/z2m_devices.json
+lib/data/z2m_devices_full.json
+# NOTE: lib/data/SourceCredits.js IS runtime - do NOT exclude
+
+# === Dev-only engine (not imported by any runtime code) ===
+lib/tuya-dp-engine/
+
+# === Documentation (not needed at runtime) ===
+**/*.md
+*.md
+CHANGELOG.md
+CONTRIBUTING.md
+LICENSE
+
+# === File types not needed ===
 *.ps1
 *.cmd
 *.bat
-
-# Configuration linting/formatting
-eslint.config.js
-.eslintrc.*
-.prettierrc.*
-babel.config.js
-webpack.config.js
-rollup.config.js
-vite.config.js
-
-# Fichiers temporaires
+*.csv
+**/*.csv
+*.log
+*.tmp
+*.zip
+*.tar.gz
+*.rar
+*.7z
 *.bak
 *.old
 *.orig
-*~
 *.swp
 *.swo
-temp/
-tmp/
-
-# Logs et reporting
-reports/
-logs/
-
-# Large audit files
-MANUFACTURER_IDS_AUDIT.json
-**/MANUFACTURER_IDS_AUDIT.json
-
-# Archive folder
-.archive/
-
-# NOTE: large.png and xlarge.png are REQUIRED for App Store publishing
-# Do NOT exclude them - Homey App Store guidelines require:
-# - small.png (75x75) - required
-# - large.png (500x500) - required  
-# - xlarge.png (1000x1000) - optional but recommended
-
-# Learnmode SVGs (optional, reduces payload significantly)
-**/learnmode.svg
-
-# Large data files not needed at runtime
-lib/data/new_fingerprints.json
-**/new_fingerprints.json
-package-lock.json
-CHANGELOG.md
-
-# Backup folders
-backup/
-
-# Markdown files (not needed at runtime)
-**/*.md
-*.md
-
-# Backup files
+*~
+backup-*
 **/*.backup*
 **/*.bak
 
-# Tools folder (development only)
-tools/
+# === OS files ===
+.DS_Store
+Thumbs.db
+desktop.ini
 
-# Large data files
-lib/data/new_fingerprints.js
-lib/data/smart_fingerprints.js
+# === Test files ===
+test/
+tests/
+spec/
+*.test.js
+*.spec.js
 
-# CSV files (development only)
-*.csv
-**/*.csv
-
-# Cascade/AI files
-.cascade
-.windsurfrules
-.cursorrules
-
-# Documentation and reports
-docs/reports/
+# === Audit files ===
+MANUFACTURER_IDS_AUDIT.json
+**/MANUFACTURER_IDS_AUDIT.json
 *.analysis.json
 
-# Note: .homeychangelog.json is REQUIRED for app store - do not exclude
+# === Learnmode SVGs (optional, reduces payload) ===
+**/learnmode.svg
+
+# === KEEP these (required for App Store): ===
+# .homeychangelog.json - required
+# drivers/*/assets/images/small.png (75x75) - required
+# drivers/*/assets/images/large.png (500x500) - required
+# drivers/*/assets/images/xlarge.png (1000x1000) - recommended
+# drivers/*/assets/icon.svg - required
