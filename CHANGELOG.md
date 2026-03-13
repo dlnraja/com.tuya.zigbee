@@ -6,7 +6,22 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.110] - 2026-03-13
+## [5.11.113] - 2026-03-13
+
+### Bug Fixes
+- Fixed cancel-in-progress issue on scheduled workflows.
+
+### New Features
+- Added 8 new device fingerprints, bringing the total to 4258.
+
+### Improvements
+- Updated app.json with the latest driver and fingerprint counts.
+
+### CI/CD
+- Minor updates to GitHub workflows and scripts.
+---
+
+ [5.11.110] - 2026-03-13
 
 ### Bug Fixes
 - Implemented batch close/respond state update for improved performance.
