@@ -55,7 +55,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: |
           if [ -f ".github/state/_imap_alert.txt" ]; then
-            gh issue create --title "[Alert] IMAP connection failing" \
+            gh issue create -R dlnraja/com.tuya.zigbee --title "[Alert] IMAP connection failing" \
               --body "$(cat .github/state/_imap_alert.txt)" \
               --label "automation" 2>/dev/null || true
             rm -f .github/state/_imap_alert.txt
