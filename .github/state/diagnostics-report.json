@@ -1,12 +1,193 @@
 {
-  "timestamp": "2026-03-13T05:49:02.758Z",
-  "count": 0,
-  "byType": {},
+  "timestamp": "2026-03-13T07:31:38.278Z",
+  "count": 5,
+  "byType": {
+    "github": 5
+  },
   "newFingerprints": [],
   "deepResearch": {
     "researched": 0,
     "added": 0,
     "details": []
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "id": "imap_500382",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] Presence Sensor Radar:   zb_product_id    \"TS0225\" - zb_manufacturer_name     \"_TZ321C_fkzihaxe8\" - Wenz[greeting] get any value. (Issue #97)",
+      "from": "github",
+      "date": "2026-03-13T06:12:38.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "97",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_500383",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] Presence Sensor Radar:   zb_product_id    \"TS0225\" - zb_manufacturer_name     \"_TZ321C_fkzihaxe8\" - Wenz[greeting] get any value. (Issue #97)",
+      "from": "github",
+      "date": "2026-03-13T06:12:46.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "-text=3D\"Failed to load title\" data-id=3D\"[phone]\" data-="
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "97",
+        "action": "opened",
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": true
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_500384",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] Presence Sensor Radar:   zb_product_id    \"TS0225\" - zb_manufacturer_name     \"_TZ321C_fkzihaxe8\" - Wenz[greeting] get any value. (Issue #97)",
+      "from": "github",
+      "date": "2026-03-13T06:12:49.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "Interview",
+        "settings"
+      ],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "97",
+        "action": "opened",
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": true
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_500385",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] Presence Sensor Radar:   zb_product_id    \"TS0225\" - zb_manufacturer_name     \"_TZ321C_fkzihaxe8\" - Wenz[greeting] get any value. (Issue #97)",
+      "from": "github",
+      "date": "2026-03-13T06:16:54.000Z",
+      "fps": {
+        "mfr": [
+          "_TZ321C_fkzihax8"
+        ],
+        "pid": [
+          "TS0225"
+        ]
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [
+        {
+          "fingerprint": "_TZ321C_fkzihax8",
+          "type": "mfr",
+          "supported": true,
+          "drivers": [
+            "presence_sensor_radar"
+          ]
+        },
+        {
+          "fingerprint": "TS0225",
+          "type": "pid",
+          "supported": true,
+          "drivers": [
+            "gas_sensor",
+            "motion_sensor",
+            "presence_sensor_radar",
+            "universal_fallback"
+          ]
+        }
+      ],
+      "ghInfo": {
+        "issueNum": "97",
+        "action": null,
+        "fps": {
+          "mfr": [
+            "_TZ321C_fkzihax8"
+          ],
+          "pid": [
+            "TS0225"
+          ]
+        },
+        "isNew": false
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_500392",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] Presence Sensor Radar:   zb_product_id    \"TS0225\" - zb_manufacturer_name     \"_TZ321C_fkzihaxe8\" - Wenz[greeting] get any value. (Issue #97)",
+      "from": "github",
+      "date": "2026-03-13T06:48:50.000Z",
+      "fps": {
+        "mfr": [
+          "_TZ321C_fkzihaxe8"
+        ],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "settings"
+      ],
+      "xref": [
+        {
+          "fingerprint": "_TZ321C_fkzihaxe8",
+          "type": "mfr",
+          "supported": true,
+          "drivers": [
+            "presence_sensor_radar"
+          ]
+        }
+      ],
+      "ghInfo": {
+        "issueNum": "97",
+        "action": null,
+        "fps": {
+          "mfr": [
+            "_TZ321C_fkzihaxe8"
+          ],
+          "pid": []
+        },
+        "isNew": false
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    }
+  ]
 }
