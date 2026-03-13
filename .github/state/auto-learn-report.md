@@ -2,9 +2,9 @@
 
 | Metric | Count |
 |---|---|
-| Drivers scanned | 145 |
-| Total manufacturers | 4634 |
-| Total productIds | 785 |
+| Drivers scanned | 159 |
+| Total manufacturers | 4697 |
+| Total productIds | 799 |
 | Tuya _T* mfrs | 3834 |
 | Non-Tuya mfrs | 348 |
 | TS* pids | 82 |
