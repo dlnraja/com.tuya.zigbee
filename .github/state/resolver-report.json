@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-03-13T06:18:20.782Z",
-  "diagFPs": 0,
+  "timestamp": "2026-03-13T07:31:43.662Z",
+  "diagFPs": 2,
   "driverIdx": 4829,
-  "supported": 0,
+  "supported": 2,
   "unsupported": 0,
   "newFPs": [],
   "dlnraja/com.tuya.zigbee": {
     "issues": 2,
-    "commented": 1,
+    "commented": 0,
     "closed": 0
   },
   "JohanBendz/com.tuya.zigbee": {
