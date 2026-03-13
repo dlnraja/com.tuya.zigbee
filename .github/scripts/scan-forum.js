@@ -13,33 +13,14 @@ const SEED_TOPICS=[
   54018,   // Generic Zigbee devices
 ];
 
-// Search terms to discover ALL related topics across the entire forum
-// Covers: Tuya Zigbee, Tuya WiFi, Tuya Smart Life, generic Zigbee, device types
+// High-value search terms (consolidated from 42 to 12 to avoid Discourse rate limits)
 const SEARCH_TERMS=[
-  // Core Tuya terms
-  'tuya zigbee','tuya wifi','tuya smart life','tuya cloud',
-  'tuya device request','tuya fingerprint','tuya app homey',
-  'universal tuya','tuya unknown device','tuya not pairing',
-  // Tuya WiFi specific
-  'tuya wifi switch','tuya wifi plug','tuya wifi thermostat',
-  'smart life wifi','smart life app homey','tuya local control',
-  // Zigbee generic
-  'zigbee device','zigbee pairing','zigbee interview','zigbee unknown',
-  'zigbee switch','zigbee sensor','zigbee thermostat','zigbee dimmer',
-  'zigbee cover','zigbee blind','zigbee curtain','zigbee valve',
-  'zigbee button','zigbee remote','zigbee plug','zigbee light',
-  'zigbee lock','zigbee siren','zigbee garage','zigbee fan',
-  // Manufacturer fingerprints
-  '_TZE200','_TZE204','_TZE284','_TZ3000','_TZ3210','_TZ3002',
-  'TS0601','TS0001','TS0002','TS0003','TS0004','TS011F','TS0044',
-  'TS0215A','TS0043','TS0601 interview',
-  // Brands & models
-  'BSEED zigbee','Zemismart','Moes zigbee','AVATTO','Lonsonho',
-  'HOBEIAN','Lidl zigbee','Silvercrest zigbee','eWeLink zigbee',
-  // Problem patterns
-  'unknown zigbee device homey','device not recognized','manufacturerName',
-  'zigbee re-pair','zigbee mesh problem','zigbee interview homey',
-  'homey pro zigbee','zigbee2mqtt homey',
+  'tuya zigbee homey','tuya wifi smart life homey',
+  'universal tuya device','zigbee unknown device homey',
+  '_TZE200 _TZE204','_TZ3000 TS0601',
+  'zigbee interview fingerprint','zigbee pairing not working homey',
+  'BSEED Zemismart Moes zigbee','eWeLink sonoff zigbee homey',
+  'tuya device request','zigbee sensor thermostat cover',
 ];
 
 const BASE='https://community.homey.app';
@@ -52,7 +33,7 @@ function timeLeft(){return MAX_RUNTIME_MS-(Date.now()-START_TIME);}
 
 async function get(url){
   const r=await fetchWithRetry(url,{headers:{Accept:'application/json'}},{retries:2,label:'forumGet'});
-  if(!r.ok)throw new Error('HTTP '+r.status+': '+url);
+  if(!r.ok){const body=await r.text().catch(()=>'');throw new Error('HTTP '+r.status+': '+body.slice(0,80));}
   return r.json();
 }
 
@@ -66,10 +47,11 @@ async function discoverTopics(){
       const r=await get(url);
       for(const t of(r.topics||[]))found.add(t.id);
       for(const p of(r.posts||[]))if(p.topic_id)found.add(p.topic_id);
-      await sleep(500); // rate limit
+      await sleep(1200); // Discourse rate limit (avoid 429)
     }catch(e){console.warn('Search "'+term+'" failed:',e.message);}
   }
   console.log('Discovered '+found.size+' unique topics ('+SEED_TOPICS.length+' seed + '+(found.size-SEED_TOPICS.length)+' from search)');
+  if(found.size<=SEED_TOPICS.length)console.warn('Discovery added 0 new topics — using seed topics only');
   return[...found];
 }
 
@@ -127,7 +109,7 @@ async function scan(){
       }
       if(posts.length){const mx=Math.max(...posts.map(p=>p.id));if(mx>lastId)lastId=mx;}
       if(topicsScanned%10===0)await sleep(300); // rate limit
-    }catch(e){/* skip topic errors silently */}
+    }catch(e){console.warn('Topic '+TOPIC_ID+' error:',e.message);}
   }
 
   // Aggregate issue categories

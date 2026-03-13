@@ -18,7 +18,7 @@ permissions:
 
 concurrency:
   group: daily-everything
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 defaults:
   run:

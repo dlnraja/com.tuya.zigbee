@@ -9,7 +9,7 @@ permissions:
 
 concurrency:
   group: monthly-api-discovery
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 defaults:
   run:
