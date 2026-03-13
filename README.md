@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.114 |
+| **App Version** | v5.11.115 |
 | **Device Fingerprints** | 4,731+ |
 | **Unique Product IDs** | 552 |
 | **Drivers** | 187 (139 Zigbee + 48 WiFi) |
@@ -100,7 +100,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.114** | v5.11.113: Fixed cancel-in-progress issue on scheduled ., Added 8 new device fingerprints, bringing the total to 4258... |
+| **v5.11.115** | v5.11.114: Added HOMEd cross-reference automation script., Introduced auto-replace-images automation script., Total d... |
+| **v5.11.114** | Universal Tuya Zigbee app v5.11.114 adds new  scripts and updates drivers and fingerprints. |
 | **v5.11.113** | Universal Tuya Zigbee app v5.11.113: Added 8 new device fingerprints, total 4258 fingerprints. |
 | **v5.11.110** | Universal Tuya Zigbee app v5.11.110 adds 28 new drivers and 1,105 new fingerprints, improving device compatibility. |
 | **v5.11.109** | Updated Universal Tuya Zigbee app to v5.11.109 with new drivers and fingerprints. |
@@ -114,7 +115,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.101** | Universal Tuya Zigbee app v5.11.101 adds new device variants, updates 145 drivers, and enhances fingerprint database ... |
 | **v5.11.100** | Universal Tuya Zigbee app v5.11.100 adds . |
 | **v5.11.99** | Universal Tuya Zigbee app v5.11.99: Regenerated driver images and fixed various draft detection issues. |
-| **v5.11.98** | Universal Tuya Zigbee app v5.11.98 fixes IAS issues and improves draft detection. |
 
 <!-- CHANGELOG_END -->
 
