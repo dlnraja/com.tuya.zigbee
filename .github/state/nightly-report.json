@@ -1,23 +1,11 @@
 {
-  "timestamp": "2026-03-13T03:37:48.706Z",
+  "timestamp": "2026-03-13T05:48:47.954Z",
   "appVersion": "5.11.110",
-  "forum": 1,
+  "forum": 0,
   "github": 0,
   "diagnostics": 2,
   "diagNewFPs": 0,
   "diagCritical": 0,
-  "forumDetails": [
-    {
-      "topic": 140352,
-      "post": 1626,
-      "user": "ManuelKugler",
-      "fps": [
-        "_TZ3000_wzmuk9ai",
-        "router"
-      ],
-      "reply": "Based on the fingerprint information for your device, the model ID `TS011F` is recognized and has several associated drivers, including `plug_energy_monitor`, which is specifically designed for smart ",
-      "model": "gh-gpt-4o-mini"
-    }
-  ],
+  "forumDetails": [],
   "githubDetails": []
 }

@@ -44,7 +44,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-03-12 |
+| **Last Updated** | 2026-03-13 |
 
 ### Top 20 Drivers by Fingerprint Count
 
