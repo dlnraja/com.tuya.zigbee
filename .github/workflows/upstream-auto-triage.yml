@@ -125,9 +125,52 @@ jobs:
           SCAN_FORKS: "false"
         run: node .github/scripts/triage-upstream-enhanced.js
 
+  scan-forum:
+    name: "Scan Forum"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - uses: actions/cache@a7833574556fa59680c1b7cb190c1735db73ebf0 # v4
+        with:
+          path: /tmp/last_forum_post.txt
+          key: forum-${{ github.run_number }}
+          restore-keys: forum-
+      - name: Scan forum for new device requests
+        id: forum_scan
+        continue-on-error: true
+        env:
+          LAST_POST_FILE: /tmp/last_forum_post.txt
+        run: |
+          node .github/scripts/scan-forum.js
+          if [ -s /tmp/forum_issues.json ]; then
+            echo "has_issues=true" >> $GITHUB_OUTPUT
+          fi
+      - name: Create issue for forum requests
+        if: steps.forum_scan.outputs.has_issues == 'true'
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7
+        with:
+          script: |
+            const fs=require('fs');
+            const issues=JSON.parse(fs.readFileSync('/tmp/forum_issues.json','utf8'));
+            if(!issues.length)return;
+            const rows=issues.map(i=>
+              `| ${i.user} | ${i.date} | [#${i.postNum}](https://community.homey.app/t/${i.topicId}/${i.postNum}) | \`${i.missing.join('`,`')}\` |`).join('\n');
+            await github.rest.issues.create({
+              owner:context.repo.owner,repo:context.repo.repo,
+              title:`[Forum] ${issues.length} device request(s)`,
+              body:`## Forum device requests\n\n| User | Date | Post | Missing FPs |\n|---|---|---|---|\n${rows}`,
+              labels:['enhancement','forum-request']
+            });
+
   summary:
     name: "Summary"
-    needs: [triage-upstream, triage-dlnraja]
+    needs: [triage-upstream, triage-dlnraja, scan-forum]
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -136,3 +179,4 @@ jobs:
           echo "## Upstream Auto-Triage Complete" >> "$GITHUB_STEP_SUMMARY"
           echo "- JohanBendz: ${{ needs.triage-upstream.result }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- dlnraja: ${{ needs.triage-dlnraja.result }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Forum: ${{ needs.scan-forum.result }}" >> "$GITHUB_STEP_SUMMARY"

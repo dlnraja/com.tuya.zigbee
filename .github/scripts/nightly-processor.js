@@ -2,7 +2,7 @@ const fs=require('fs'),path=require('path');
 
 const{callAI,analyzeImage,sleep}=require('./ai-helper');
 
-// Forum auth removed (Discourse disabled)
+const{getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 
 const{fetchWithRetry}=require('./retry-helper');
 
@@ -10,7 +10,7 @@ const GH='https://api.github.com';
 
 const REPOS=['dlnraja/com.tuya.zigbee','JohanBendz/com.tuya.zigbee'];
 
-const TOPICS=[];
+const TOPICS=[140352,26439,146735,89271,54018,12758,85498,7386,93716,4498,145893,82165];
 
 const SKIP=['dlnraja','system','discobot'];
 
@@ -726,9 +726,13 @@ async function main(){
 
   console.log('\n== 1. Forum Processing ==');
 
-  let auth=null; // Forum disabled
+  let auth=null;
 
-  const forumResults=[]; // Forum disabled
+  if(!dryRun)auth=await getForumAuth();
+
+    if(auth&&auth.type==='session')auth=await refreshCsrf(auth);
+
+  const forumResults=await processForumPosts(state,idx,pidx,auth,appVersion,dryRun);
 
   console.log('Forum: '+forumResults.length+' replies');
 

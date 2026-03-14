@@ -2,7 +2,8 @@
 # v5.8.12 - Updated 2026-02-04
 # Automatically sources fingerprints from community projects
 # ENRICHMENT ONLY - Never overwrites base code, only adds complementary data
-# Sources: JohanBendz fork, Zigbee2MQTT, ZHA, GitHub Issues/PRs
+# Sources: JohanBendz fork, Zigbee2MQTT, ZHA, GitHub Issues/PRs, Homey Community Forums
+# Forum threads: 140352 (dlnraja test), 26439 (JohanBendz main), 146735 (Tuya Smart Life), 89271 (Device Request Archive)
 
 name: 🌐 Monthly Community Sync
 
@@ -115,6 +116,6 @@ jobs:
           git add data/community-sync/*.json || true
           NEW=$(node -p "try{JSON.parse(require('fs').readFileSync('data/community-sync/new-fingerprints.json')).length}catch(e){0}")
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
-          git diff --staged --quiet || git commit -m "Community sync v${VER} $(date +%Y-%m): ${NEW} new FPs from Z2M/ZHA/JohanBendz [skip ci]"
+          git diff --staged --quiet || git commit -m "Community sync v${VER} $(date +%Y-%m): ${NEW} new FPs from Z2M/ZHA/forum/JohanBendz [skip ci]"
           git pull --rebase origin master || true
           git push || true

@@ -144,6 +144,13 @@ jobs:
           REPOS: "dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee"
         run: node .github/scripts/github-issue-manager.js
 
+      - name: Forum Spam Scan
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: node .github/scripts/forum-scan-spam.js
 
       - name: Auto-Learn Fingerprints
         continue-on-error: true

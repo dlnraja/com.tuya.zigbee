@@ -41,6 +41,7 @@ jobs:
       # === GitHub ===
       GH_PAT: ${{ secrets.GH_PAT }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # === Forum ===
       HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
       HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
       # === Gmail (IMAP) ===
@@ -72,7 +73,34 @@ jobs:
           echo "multi_driver=$MD" >> $GITHUB_OUTPUT
           echo "App v$V | $D drivers | $F FPs | $MD multi-driver mfrs"
 
+      # ===== 0. ONE-TIME: Delete duplicate/spam forum posts =====
+      - name: "0. Forum Cleanup (one-time)"
+        id: forum_cleanup
+        continue-on-error: true
+        timeout-minutes: 3
+        run: |
+          if [ ! -f .github/state/cleanup-done.flag ]; then
+            echo "=== Deleting 17 duplicate/spam posts ==="
+            node .github/scripts/forum-cleanup.js || true
+            mkdir -p .github/state && touch .github/state/cleanup-done.flag
+          else
+            echo "Cleanup already done"
+          fi
 
+      # ===== 1. FORUM: Scan + Intel (replies handled by forum-auto-responder.yml) =====
+      - name: "1. Forum Scan + Intel (no replies)"
+        id: forum_scan
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          REPLY_TOPICS: "140352"
+        run: |
+          echo "=== Forum Scan (all threads, read-only intel) ==="
+          node .github/scripts/scan-forum.js || true
+          echo "=== Forum Intel Processor (auto-add FPs, detect issues) ==="
+          node .github/scripts/forum-intel-processor.js || true
+          echo "=== Forum replies delegated to forum-auto-responder.yml ==="
 
       # ===== 2. GITHUB: Triage + Respond + Close =====
       - name: "2. GitHub Issues & PRs Manager"
@@ -152,7 +180,7 @@ jobs:
             echo "Skipping Gmail (only runs at 08:00+14:00+20:00 UTC)"
           fi
 
-      # ===== 6. NIGHTLY: Scan GitHub data =====
+      # ===== 6. NIGHTLY: Scan forum+GitHub data (no replies — forum-responder handles that) =====
       - name: "6. Nightly Processor (scan-only)"
         id: nightly
         continue-on-error: true
@@ -161,8 +189,33 @@ jobs:
           DRY_RUN: 'true'
         run: node .github/scripts/nightly-processor.js
 
+      # ===== 7. FORUM ACTIVITY: Scrape ALL account activity =====
+      - name: "7. Forum Activity Scraper"
+        id: forum_activity
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          FORUM_USERNAME: dlnraja
+        run: node .github/scripts/forum-activity-scraper.js
 
+      # ===== 7b. FORUM: Update First Post with Changelogs =====
+      - name: "7b. Forum First Post Update"
+        id: forum_first_post
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/update-forum-first-post.js
 
+      # ===== 7c. FORUM: Private Messages (inbox scan) =====
+      - name: "7c. Forum Private Messages"
+        id: forum_pm
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          FORUM_USERNAME: dlnraja
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/forum-pm-scanner.js || true
 
       # ===== 8. SMART DEVICE SCAN: 11-source (Z2M+ZHA+Blakadder+deCONZ+Hubitat+HOMEd+SmartThings+HA Forum+Local) =====
       - name: "8. Smart Device Functionality Scanner (11 sources)"
@@ -311,7 +364,19 @@ jobs:
             echo "No new-fork-fps.json — deep integrator handled it"
           fi
 
+      - name: "10b3. Forum Spam Scan"
+        id: spam_scan
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node .github/scripts/forum-scan-spam.js
 
+      - name: "10b4. Forum Cleanup (edit-based)"
+        id: forum_cleanup_edit
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/forum-cleanup-edit.js || true
 
       - name: "10c. Device Finder"
         id: dev_finder
@@ -544,6 +609,17 @@ jobs:
           retention-days: 7
           if-no-files-found: ignore
 
+      # ===== 14. FORUM POST: Update with latest version =====
+      - name: "14. Forum Update"
+        if: always()
+        continue-on-error: true
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          APP_VERSION: ${{ steps.stats.outputs.version }}
+        run: |
+          # CHANGELOG env intentionally empty — post-forum-update.js reads from .homeychangelog.json
+          node .github/scripts/post-forum-update.js || true
 
       # ===== 14b. Deploy Device Finder (GitHub Pages) =====
       - name: "14b. Deploy Device Finder"
@@ -565,6 +641,8 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| # | Step | Status |" >> $GITHUB_STEP_SUMMARY
           echo "|---|------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| 0 | Forum Cleanup | ${{ steps.forum_cleanup.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 1 | Forum Scan + Respond | ${{ steps.forum_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 2 | GitHub Issues & PRs | ${{ steps.github_mgr.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 3 | Upstream Triage | ${{ steps.upstream.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 3b | Comprehensive GH Scan | ${{ steps.comp_gh_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
@@ -573,6 +651,9 @@ jobs:
           echo "| 5a | Gmail Token Pre-check | ${{ steps.gmail_token.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 5b | Gmail Diagnostics | ${{ steps.gmail.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 6 | Nightly Processor | ${{ steps.nightly.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 7 | Forum Activity | ${{ steps.forum_activity.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 7b | Forum First Post | ${{ steps.forum_first_post.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 7c | Forum Private Messages | ${{ steps.forum_pm.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 8 | External Sources | ${{ steps.ext_sources.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9 | Enrichment | ${{ steps.enrichment.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9a | External Sync (Z2M/ZHA/deCONZ) | ${{ steps.ext_sync.outcome }} |" >> $GITHUB_STEP_SUMMARY
@@ -590,6 +671,8 @@ jobs:
           echo "| 10 | AI Changelog | ${{ steps.ai_changelog.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10b | Deep Fork Integrator | ${{ steps.fork_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10b2 | Legacy Fork FPs | ${{ steps.impl_fork_fps.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 10b3 | Forum Spam Scan | ${{ steps.spam_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 10b4 | Forum Cleanup Edit | ${{ steps.forum_cleanup_edit.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10c | Device Finder | ${{ steps.dev_finder.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10d | Auto Docs | ${{ steps.auto_docs.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10e | README | ${{ steps.gen_readme.outcome }} |" >> $GITHUB_STEP_SUMMARY
@@ -607,6 +690,7 @@ jobs:
           echo "| 12 | Validate + Publish | ${{ steps.pub.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 13a | Promote API | ${{ steps.promote_api.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 13c | Promote Puppeteer | ${{ steps.promote_node.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 14 | Forum Update | — |" >> $GITHUB_STEP_SUMMARY
           echo "| 14b | Deploy Device Finder | — |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Total: 34 automation steps** | [Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee) | [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/)" >> $GITHUB_STEP_SUMMARY
