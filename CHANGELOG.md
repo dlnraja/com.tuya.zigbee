@@ -6,7 +6,22 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.115] - 2026-03-14
+## [5.11.116] - 2026-03-14
+
+### Bug Fixes
+- Implemented batch close/respond state update for devices.
+
+### New Features
+- None in this release.
+
+### Improvements
+- None in this release.
+
+### CI/CD
+- No changes.
+---
+
+ [5.11.115] - 2026-03-14
 
 ### Bug Fixes
 - Fixed various driver bugs.
