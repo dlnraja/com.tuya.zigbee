@@ -9,17 +9,16 @@ const{validateReply}=require('./reply-quality-gate');
 const{fetchWithRetry}=require('./retry-helper');
 const DDIR=path.join(__dirname,'..','..','drivers');
 const STATE_DIR=path.join(__dirname,'..','state');
-const FORUM=''; // Discourse disabled
+const FORUM=process.env.DISCOURSE_URL||'https://community.homey.app';
 
 async function fetchBotReplies(topicIds){
-  const apiKey=process.env.DISCOURSE_API_KEY;
+  const apiKey=process.env.HOMEY_EMAIL;
   const apiUser=process.env.DISCOURSE_API_USERNAME||'dlnraja';
   const replies=[];
   const hiddenPosts=[];
   const consecutivePosts=[];
   const botSignaturePosts=[];
-  // Discourse disabled - always use cached data
-return{replies:loadCachedReplies(),hiddenPosts:[],consecutivePosts:[],botSignaturePosts:[]};
+  if(!apiKey){console.log('No HOMEY_EMAIL, using cached data');return{replies:loadCachedReplies(),hiddenPosts:[],consecutivePosts:[],botSignaturePosts:[]};}
 
   for(const tid of topicIds){
     try{

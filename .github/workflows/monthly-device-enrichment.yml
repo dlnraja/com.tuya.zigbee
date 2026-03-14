@@ -28,7 +28,7 @@ env:
 
 jobs:
   scrape-and-enrich:
-    name: 🔍 Scrape Sources & Enrich
+    name: 🔍 Scrape Forums & Enrich
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
@@ -162,6 +162,6 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "---" >> $GITHUB_STEP_SUMMARY
           echo "### 🎯 Next Steps" >> $GITHUB_STEP_SUMMARY
-          echo "1. Review GitHub issues for new device requests" >> $GITHUB_STEP_SUMMARY
+          echo "1. Review forum posts for new device requests" >> $GITHUB_STEP_SUMMARY
           echo "2. Check Zigbee2MQTT for new Tuya converters" >> $GITHUB_STEP_SUMMARY
           echo "3. Update manufacturer database if needed" >> $GITHUB_STEP_SUMMARY

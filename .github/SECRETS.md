@@ -9,8 +9,8 @@
 |--------|----------|-------------|
 | HOMEY_PAT | Athom App Store | Publish app, get versions, auto-publish draft to test |
 | HOMEY_PAT_API | Homey Cloud API | List devices, get Zigbee mesh, device diagnostics, interviews, flows, insights, crash logs |
-| HOMEY_EMAIL | Homey Account | OAuth promote, Puppeteer login |
-| HOMEY_PASSWORD | Homey Account | OAuth promote, Puppeteer login |
+| HOMEY_EMAIL | Homey Account | Forum SSO login + OAuth promote |
+| HOMEY_PASSWORD | Homey Account | Forum SSO login + OAuth promote |
 | GH_PAT | GitHub | Cross-repo: forks, triage JohanBendz, issue comments. Scopes: repo, read:org |
 | GITHUB_TOKEN | GitHub (auto) | Current repo only. Cannot access other repos (#46566) |
 | GOOGLE_API_KEY | Google Gemini | AI analysis, vision (images), code gen, translation, long context |
@@ -20,7 +20,6 @@
 | GMAIL_REFRESH_TOKEN | Gmail OAuth | **LEGACY** — removed v5.12.6, use IMAP instead |
 | GMAIL_EMAIL | Gmail IMAP | **REQUIRED** — Gmail address for IMAP (permanent, never expires) |
 | GMAIL_APP_PASSWORD | Gmail IMAP | **REQUIRED** — App Password for IMAP (permanent, never expires) |
-
 | ATHOM_CLIENT_ID | Athom OAuth | OAuth client ID for headless promotion (from Athom Developer Tools SPA) |
 | ATHOM_CLIENT_SECRET | Athom OAuth | OAuth client secret for headless promotion (from Athom Developer Tools SPA) |
 
@@ -70,6 +69,7 @@ Used by: homey-device-diagnostics.js (NEW)
 | sunday-master.yml | GH_PAT, GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_PAT, HOMEY_PAT_API, HOMEY_EMAIL, HOMEY_PASSWORD, GMAIL_*, GMAIL_APP_PASSWORD |
 | tuya-automation-hub.yml | GH_PAT, GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD |
 | upstream-auto-triage.yml | GH_PAT, GOOGLE_API_KEY |
+| forum-auto-responder.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD |
 | gmail-diagnostics.yml | GMAIL_EMAIL, GMAIL_APP_PASSWORD, HOMEY_EMAIL, GOOGLE_API_KEY, GH_PAT |
 | gmail-token-keepalive.yml | GMAIL_EMAIL, GMAIL_APP_PASSWORD, HOMEY_EMAIL, GH_PAT |
 | monthly-comprehensive-sync.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_PAT, HOMEY_PAT_API, GH_PAT |
@@ -113,13 +113,18 @@ IMAP with App Password is the **only** email method. OAuth has been completely r
 - 2-Factor Authentication must be enabled on the Google account
 - If you don't see App Passwords: enable 2FA first at https://myaccount.google.com/signinoptions/two-step-verification
 
+## Forum Auth (Session SSO)
+
+Forum uses HOMEY_EMAIL + HOMEY_PASSWORD for Athom SSO login (no API key needed).
+All forum scripts authenticate via `forum-auth.js` → `getForumAuth()` → session cookies + CSRF.
+
 
 ## Priority Setup Order
 
 1. HOMEY_PAT — publishing
 2. HOMEY_PAT_API — real device diagnostics
 3. GOOGLE_API_KEY — AI analysis (most workflows)
-4. HOMEY_EMAIL + HOMEY_PASSWORD — OAuth promote
+4. HOMEY_EMAIL + HOMEY_PASSWORD — forum
 5. GH_PAT — cross-repo (scopes: repo, read:org)
 6. Gmail secrets — diagnostic pipeline
 7. OPENAI_API_KEY — GPT fallback

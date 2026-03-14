@@ -87,6 +87,16 @@ jobs:
           GEMINI_MAX_TIER: "1"
         run: node .github/scripts/external-sources-scanner.js
 
+      - name: Forum Activity Scraper
+        if: always()
+        continue-on-error: true
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          FORUM_USERNAME: dlnraja
+        run: node .github/scripts/forum-activity-scraper.js
 
       - name: "Smart Enrichment (DP-aware, fp|pid profiles)"
         if: always()
@@ -109,8 +119,22 @@ jobs:
           echo "Screenshot analyzer module: $(node -e "const s=require('./.github/scripts/screenshot-analyzer');console.log(Object.keys(s).join(', '))")"
           echo "Deep analysis prompts: $(node -e "const{PROMPTS}=require('./.github/scripts/screenshot-analyzer');console.log(Object.keys(PROMPTS).length+' prompt types: '+Object.keys(PROMPTS).join(', '))")"
 
+      - name: Forum Intel Processor (scan-only, no reply)
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node .github/scripts/forum-intel-processor.js || true
 
+      # Forum replies delegated to forum-auto-responder.yml (2x/day, dedicated workflow)
 
+      - name: Forum Spam Scan
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: node .github/scripts/forum-scan-spam.js
 
       - name: Comprehensive GitHub Scan
         if: always()
@@ -189,6 +213,12 @@ jobs:
         continue-on-error: true
         run: node .github/scripts/resolution-summary.js
 
+      - name: Reply Self-Audit
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+        run: node .github/scripts/bot-self-audit.js
 
       - name: Generate AI Changelog
         if: always()

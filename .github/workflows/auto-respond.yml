@@ -44,7 +44,7 @@ jobs:
             const fs = require('fs');
             const path = require('path');
             const APP = 'https://homey.app/a/com.dlnraja.tuya.zigbee/test/';
-            // Forum link removed (Discourse disabled)
+            const FORUM = 'https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352';
             const DEV = 'https://tools.developer.homey.app';
             const TAG = '<!-- tuya-triage-bot -->';
 
@@ -152,7 +152,7 @@ jobs:
             if (isDelayIssue) {
               msg += `**Delay fix (v5.11.99+):** Devices now send a dataQuery immediately on init instead of waiting. Update the app to the latest test version and re-pair the device.\n\n`;
             }
-            msg += `[Test version](${APP}) · [Developer Tools](${DEV})`;
+            msg += `[Test version](${APP}) · [Forum thread](${FORUM}) · [Developer Tools](${DEV})`;
 
             // Post or update comment
             if (existingBot && action !== 'opened') {
