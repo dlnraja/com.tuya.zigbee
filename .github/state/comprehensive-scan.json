@@ -1,12 +1,12 @@
 {
-  "date": "2026-03-13T03:44:58.022Z",
+  "date": "2026-03-14T14:43:13.637Z",
   "local": {
-    "drivers": 159,
-    "fps": 4278
+    "drivers": 187,
+    "fps": 4304
   },
   "forkScan": {
-    "filesScanned": 3051,
-    "newFPs": 28062
+    "filesScanned": 3080,
+    "newFPs": 27894
   },
   "upstream": {
     "prs": 0,
@@ -390,12 +390,6 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
-      "mfr": "_TZ3000_uri7ber7",
-      "driver": "button_wireless_1",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
       "mfr": "_tz3290_rlkmy85q4pzoxobl",
       "driver": "button_wireless_1",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -511,12 +505,6 @@
     },
     {
       "mfr": "_tyzb01_qm6djpta",
-      "driver": "button_wireless_4",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
-      "mfr": "_TZ3000_402vrq2i",
       "driver": "button_wireless_4",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -661,24 +649,6 @@
     },
     {
       "mfr": "_tyst11_wv90ladg",
-      "driver": "climate_sensor",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
-      "mfr": "_TZ3000_402vrq2i",
-      "driver": "climate_sensor",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
-      "mfr": "_TZ3000_g9g2xnch",
-      "driver": "climate_sensor",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
-      "mfr": "_TZ3000_r0o2dahu",
       "driver": "climate_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -1742,18 +1712,6 @@
     {
       "mfr": "ts0216",
       "driver": "doorbell",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
-      "mfr": "_TZE200_r32ctezx",
-      "driver": "fan_controller",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
-      "mfr": "_TZE204_r32ctezx",
-      "driver": "fan_controller",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
     },
@@ -3018,54 +2976,6 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
-      "mfr": "_TZE200_b6wax7g0",
-      "driver": "radiator_valve",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
-      "mfr": "_TZE200_c88teujp",
-      "driver": "radiator_valve",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
-      "mfr": "_TZE200_g9a3awaj",
-      "driver": "radiator_valve",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
-      "mfr": "_TZE200_p3dbf6qs",
-      "driver": "radiator_valve",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
-      "mfr": "_TZE200_rufdtfyv",
-      "driver": "radiator_valve",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
-      "mfr": "_TZE200_rxq4iti9",
-      "driver": "radiator_valve",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
-      "mfr": "_TZE200_sh1btabb",
-      "driver": "radiator_valve",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
-      "mfr": "_TZE204_sh1btabb",
-      "driver": "radiator_valve",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
       "mfr": "bth-ra",
       "driver": "radiator_valve",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -3954,12 +3864,6 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
-      "mfr": "_TZE204_r32ctezx",
-      "driver": "switch_wall_8gang",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
       "mfr": "tuyatec-prhs1rsd",
       "driver": "temphumidsensor",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -3973,42 +3877,6 @@
     },
     {
       "mfr": "014g2461",
-      "driver": "thermostat_tuya_dp",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
-      "mfr": "_TZE200_b6wax7g0",
-      "driver": "thermostat_tuya_dp",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
-      "mfr": "_TZE200_c88teujp",
-      "driver": "thermostat_tuya_dp",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
-      "mfr": "_TZE200_g9a3awaj",
-      "driver": "thermostat_tuya_dp",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
-      "mfr": "_TZE200_p3dbf6qs",
-      "driver": "thermostat_tuya_dp",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
-      "mfr": "_TZE200_rufdtfyv",
-      "driver": "thermostat_tuya_dp",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
-      "mfr": "_TZE200_sh1btabb",
       "driver": "thermostat_tuya_dp",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -4200,12 +4068,6 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
-      "mfr": "_TZE200_sh1btabb",
-      "driver": "valve_irrigation",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
       "mfr": "_tyzb01_4tlksk8a",
       "driver": "valve_single",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -4213,12 +4075,6 @@
     },
     {
       "mfr": "_tyzb01_ymcdbl3u",
-      "driver": "valve_single",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
-      "mfr": "_TZE200_sh1btabb",
       "driver": "valve_single",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -4524,12 +4380,6 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
-      "mfr": "_TZE200_sh1btabb",
-      "driver": "water_valve_smart",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
       "mfr": "swv-bsp",
       "driver": "water_valve_smart",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -4554,60 +4404,6 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
-      "mfr": "_TZ3000_uri7ber7",
-      "driver": "button_wireless_1",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZ3000_402vrq2i",
-      "driver": "button_wireless_4",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZ3000_402vrq2i",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZ3000_g9g2xnch",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZ3000_r0o2dahu",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZE608_c75zqghm",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZE608_fmemczv1",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZE608_lapuuoke",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZE608_xkr8gep3",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
       "mfr": "_TZe200_8ygsuhe1",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -4626,66 +4422,6 @@
       "branch": "0b299e7e"
     },
     {
-      "mfr": "_TZE200_r32ctezx",
-      "driver": "fan_controller",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZE204_r32ctezx",
-      "driver": "fan_controller",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZE200_g9a3awaj",
-      "driver": "radiator_controller",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZE200_b6wax7g0",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZE200_c88teujp",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZE200_g9a3awaj",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZE200_p3dbf6qs",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZE200_rufdtfyv",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZE200_rxq4iti9",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZE204_sh1btabb",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
       "mfr": "tuyatec-prhs1rsd",
       "driver": "temphumidsensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -4694,54 +4430,6 @@
     {
       "mfr": "tuyatec-yg5dcbfu",
       "driver": "temphumidsensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZE200_b6wax7g0",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZE200_c88teujp",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZE200_g9a3awaj",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZE200_p3dbf6qs",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZE200_rufdtfyv",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZE200_sh1btabb",
-      "driver": "valve_irrigation",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZE200_sh1btabb",
-      "driver": "valve_single",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
-      "mfr": "_TZE200_sh1btabb",
-      "driver": "water_valve_smart",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0b299e7e"
     },
@@ -6960,12 +6648,6 @@
       "branch": "0ed2d556"
     },
     {
-      "mfr": "_TZ3000_uri7ber7",
-      "driver": "button_wireless_1",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
       "mfr": "_tz3000_uri7oadn",
       "driver": "button_wireless_1",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -7177,12 +6859,6 @@
     },
     {
       "mfr": "_tz3000_402vrq2i",
-      "driver": "button_wireless_4",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
-      "mfr": "_TZ3000_402vrq2i",
       "driver": "button_wireless_4",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0ed2d556"
@@ -7705,12 +7381,6 @@
     },
     {
       "mfr": "_tz3000_402vrq2i",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
-      "mfr": "_TZ3000_402vrq2i",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0ed2d556"
@@ -8413,12 +8083,6 @@
     },
     {
       "mfr": "_tz3000_g9g2xnch",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
-      "mfr": "_TZ3000_g9g2xnch",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0ed2d556"
@@ -9445,12 +9109,6 @@
     },
     {
       "mfr": "_tz3000_r0o2dahu",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
-      "mfr": "_TZ3000_r0o2dahu",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0ed2d556"
@@ -20022,12 +19680,6 @@
       "branch": "0ed2d556"
     },
     {
-      "mfr": "_TZE200_r32ctezx",
-      "driver": "fan_controller",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
       "mfr": "_tze204_a5zyjdpn",
       "driver": "fan_controller",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -20059,12 +19711,6 @@
     },
     {
       "mfr": "_tze204_r32ctezx",
-      "driver": "fan_controller",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
-      "mfr": "_TZE204_r32ctezx",
       "driver": "fan_controller",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0ed2d556"
@@ -26568,12 +26214,6 @@
       "branch": "0ed2d556"
     },
     {
-      "mfr": "_TZE200_g9a3awaj",
-      "driver": "radiator_controller",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
       "mfr": "_tz3000_8ykqfsyq",
       "driver": "radiator_valve",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -27132,12 +26772,6 @@
       "branch": "0ed2d556"
     },
     {
-      "mfr": "_TZE200_b6wax7g0",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
       "mfr": "_tze200_b8x72kmy",
       "driver": "radiator_valve",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -27163,12 +26797,6 @@
     },
     {
       "mfr": "_tze200_c88teujp",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
-      "mfr": "_TZE200_c88teujp",
       "driver": "radiator_valve",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0ed2d556"
@@ -27283,12 +26911,6 @@
     },
     {
       "mfr": "_tze200_g9a3awaj",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
-      "mfr": "_TZE200_g9a3awaj",
       "driver": "radiator_valve",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0ed2d556"
@@ -27450,12 +27072,6 @@
       "branch": "0ed2d556"
     },
     {
-      "mfr": "_TZE200_p3dbf6qs",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
       "mfr": "_tze200_pay2byax",
       "driver": "radiator_valve",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -27516,12 +27132,6 @@
       "branch": "0ed2d556"
     },
     {
-      "mfr": "_TZE200_rufdtfyv",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
       "mfr": "_tze200_rv6iuyxb",
       "driver": "radiator_valve",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -27540,12 +27150,6 @@
       "branch": "0ed2d556"
     },
     {
-      "mfr": "_TZE200_rxq4iti9",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
       "mfr": "_tze200_sgpeacqp",
       "driver": "radiator_valve",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -27553,12 +27157,6 @@
     },
     {
       "mfr": "_tze200_sh1btabb",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
-      "mfr": "_TZE200_sh1btabb",
       "driver": "radiator_valve",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0ed2d556"
@@ -27799,12 +27397,6 @@
     },
     {
       "mfr": "_tze204_sh1btabb",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
-      "mfr": "_TZE204_sh1btabb",
       "driver": "radiator_valve",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0ed2d556"
@@ -35082,12 +34674,6 @@
       "branch": "0ed2d556"
     },
     {
-      "mfr": "_TZE204_r32ctezx",
-      "driver": "switch_wall_8gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
       "mfr": "_tze204_ws8g8u0b",
       "driver": "switch_wall_8gang",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -35730,12 +35316,6 @@
       "branch": "0ed2d556"
     },
     {
-      "mfr": "_TZE200_b6wax7g0",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
       "mfr": "_tze200_b8x72kmy",
       "driver": "thermostat_tuya_dp",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -35767,12 +35347,6 @@
     },
     {
       "mfr": "_tze200_c88teujp",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
-      "mfr": "_TZE200_c88teujp",
       "driver": "thermostat_tuya_dp",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0ed2d556"
@@ -35863,12 +35437,6 @@
     },
     {
       "mfr": "_tze200_g9a3awaj",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
-      "mfr": "_TZE200_g9a3awaj",
       "driver": "thermostat_tuya_dp",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0ed2d556"
@@ -35988,12 +35556,6 @@
       "branch": "0ed2d556"
     },
     {
-      "mfr": "_TZE200_p3dbf6qs",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
       "mfr": "_tze200_pay2byax",
       "driver": "thermostat_tuya_dp",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -36048,12 +35610,6 @@
       "branch": "0ed2d556"
     },
     {
-      "mfr": "_TZE200_rufdtfyv",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
       "mfr": "_tze200_s8gkrkxk",
       "driver": "thermostat_tuya_dp",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -36061,12 +35617,6 @@
     },
     {
       "mfr": "_tze200_sh1btabb",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
-      "mfr": "_TZE200_sh1btabb",
       "driver": "thermostat_tuya_dp",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0ed2d556"
@@ -36816,12 +36366,6 @@
       "branch": "0ed2d556"
     },
     {
-      "mfr": "_TZE200_sh1btabb",
-      "driver": "valve_irrigation",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
       "mfr": "_tze200_yxcgyjf1",
       "driver": "valve_irrigation",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -36949,12 +36493,6 @@
     },
     {
       "mfr": "_tze200_sh1btabb",
-      "driver": "valve_single",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
-      "mfr": "_TZE200_sh1btabb",
       "driver": "valve_single",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0ed2d556"
@@ -37717,12 +37255,6 @@
     },
     {
       "mfr": "_tze200_sh1btabb",
-      "driver": "water_valve_smart",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
-      "mfr": "_TZE200_sh1btabb",
       "driver": "water_valve_smart",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0ed2d556"
@@ -48666,12 +48198,6 @@
       "branch": "2b12a20b"
     },
     {
-      "mfr": "_TZ3000_uri7ber7",
-      "driver": "button_wireless_1",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
       "mfr": "_tz3000_uri7oadn",
       "driver": "button_wireless_1",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -51883,12 +51409,6 @@
     },
     {
       "mfr": "_tz3000_402vrq2i",
-      "driver": "button_wireless_4",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
-      "mfr": "_TZ3000_402vrq2i",
       "driver": "button_wireless_4",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -56136,12 +55656,6 @@
       "branch": "2b12a20b"
     },
     {
-      "mfr": "_TZ3000_402vrq2i",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
       "mfr": "_tz3000_4rbqgcuv",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -56839,12 +56353,6 @@
     },
     {
       "mfr": "_tz3000_g9g2xnch",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
-      "mfr": "_TZ3000_g9g2xnch",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -57871,12 +57379,6 @@
     },
     {
       "mfr": "_tz3000_r0o2dahu",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
-      "mfr": "_TZ3000_r0o2dahu",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -82152,12 +81654,6 @@
       "branch": "2b12a20b"
     },
     {
-      "mfr": "_TZE200_r32ctezx",
-      "driver": "fan_controller",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
       "mfr": "_tze204_a5zyjdpn",
       "driver": "fan_controller",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -82189,12 +81685,6 @@
     },
     {
       "mfr": "_tze204_r32ctezx",
-      "driver": "fan_controller",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
-      "mfr": "_TZE204_r32ctezx",
       "driver": "fan_controller",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -119736,12 +119226,6 @@
       "branch": "2b12a20b"
     },
     {
-      "mfr": "_TZE200_b6wax7g0",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
       "mfr": "_tze200_b8x72kmy",
       "driver": "radiator_valve",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -119767,12 +119251,6 @@
     },
     {
       "mfr": "_tze200_c88teujp",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
-      "mfr": "_TZE200_c88teujp",
       "driver": "radiator_valve",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -119887,12 +119365,6 @@
     },
     {
       "mfr": "_tze200_g9a3awaj",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
-      "mfr": "_TZE200_g9a3awaj",
       "driver": "radiator_valve",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -120054,12 +119526,6 @@
       "branch": "2b12a20b"
     },
     {
-      "mfr": "_TZE200_p3dbf6qs",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
       "mfr": "_tze200_pay2byax",
       "driver": "radiator_valve",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -120120,12 +119586,6 @@
       "branch": "2b12a20b"
     },
     {
-      "mfr": "_TZE200_rufdtfyv",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
       "mfr": "_tze200_rv6iuyxb",
       "driver": "radiator_valve",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -120144,12 +119604,6 @@
       "branch": "2b12a20b"
     },
     {
-      "mfr": "_TZE200_rxq4iti9",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
       "mfr": "_tze200_sgpeacqp",
       "driver": "radiator_valve",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -120157,12 +119611,6 @@
     },
     {
       "mfr": "_tze200_sh1btabb",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
-      "mfr": "_TZE200_sh1btabb",
       "driver": "radiator_valve",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -120403,12 +119851,6 @@
     },
     {
       "mfr": "_tze204_sh1btabb",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
-      "mfr": "_TZE204_sh1btabb",
       "driver": "radiator_valve",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -151536,12 +150978,6 @@
       "branch": "2b12a20b"
     },
     {
-      "mfr": "_TZE204_r32ctezx",
-      "driver": "switch_wall_8gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
       "mfr": "_tze204_ws8g8u0b",
       "driver": "switch_wall_8gang",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -155880,12 +155316,6 @@
       "branch": "2b12a20b"
     },
     {
-      "mfr": "_TZE200_b6wax7g0",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
       "mfr": "_tze200_b8x72kmy",
       "driver": "thermostat_tuya_dp",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -155917,12 +155347,6 @@
     },
     {
       "mfr": "_tze200_c88teujp",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
-      "mfr": "_TZE200_c88teujp",
       "driver": "thermostat_tuya_dp",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -156013,12 +155437,6 @@
     },
     {
       "mfr": "_tze200_g9a3awaj",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
-      "mfr": "_TZE200_g9a3awaj",
       "driver": "thermostat_tuya_dp",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -156138,12 +155556,6 @@
       "branch": "2b12a20b"
     },
     {
-      "mfr": "_TZE200_p3dbf6qs",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
       "mfr": "_tze200_pay2byax",
       "driver": "thermostat_tuya_dp",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -156198,12 +155610,6 @@
       "branch": "2b12a20b"
     },
     {
-      "mfr": "_TZE200_rufdtfyv",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
       "mfr": "_tze200_s8gkrkxk",
       "driver": "thermostat_tuya_dp",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -156211,12 +155617,6 @@
     },
     {
       "mfr": "_tze200_sh1btabb",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
-      "mfr": "_TZE200_sh1btabb",
       "driver": "thermostat_tuya_dp",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -159894,12 +159294,6 @@
       "branch": "2b12a20b"
     },
     {
-      "mfr": "_TZE200_sh1btabb",
-      "driver": "valve_irrigation",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
       "mfr": "_tze200_yxcgyjf1",
       "driver": "valve_irrigation",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -160951,12 +160345,6 @@
     },
     {
       "mfr": "_tze200_sh1btabb",
-      "driver": "valve_single",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
-      "mfr": "_TZE200_sh1btabb",
       "driver": "valve_single",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -165930,12 +165318,6 @@
       "branch": "2b12a20b"
     },
     {
-      "mfr": "_TZE200_sh1btabb",
-      "driver": "water_valve_smart",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
       "mfr": "_tze200_vrjkcam9",
       "driver": "water_valve_smart",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -167940,60 +167322,6 @@
       "branch": "2b12a20b"
     },
     {
-      "mfr": "_TZ3000_uri7ber7",
-      "driver": "button_wireless_1",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZ3000_402vrq2i",
-      "driver": "button_wireless_4",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZ3000_402vrq2i",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZ3000_g9g2xnch",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZ3000_r0o2dahu",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZE608_c75zqghm",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZE608_fmemczv1",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZE608_lapuuoke",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZE608_xkr8gep3",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
       "mfr": "_TZe200_8ygsuhe1",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -168012,66 +167340,6 @@
       "branch": "3a27024d"
     },
     {
-      "mfr": "_TZE200_r32ctezx",
-      "driver": "fan_controller",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZE204_r32ctezx",
-      "driver": "fan_controller",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZE200_g9a3awaj",
-      "driver": "radiator_controller",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZE200_b6wax7g0",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZE200_c88teujp",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZE200_g9a3awaj",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZE200_p3dbf6qs",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZE200_rufdtfyv",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZE200_rxq4iti9",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZE204_sh1btabb",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
       "mfr": "tuyatec-prhs1rsd",
       "driver": "temphumidsensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -168084,168 +167352,6 @@
       "branch": "3a27024d"
     },
     {
-      "mfr": "_TZE200_b6wax7g0",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZE200_c88teujp",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZE200_g9a3awaj",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZE200_p3dbf6qs",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZE200_rufdtfyv",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZE200_sh1btabb",
-      "driver": "valve_irrigation",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZE200_sh1btabb",
-      "driver": "valve_single",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZE200_sh1btabb",
-      "driver": "water_valve_smart",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZ3000_uri7ber7",
-      "driver": "button_wireless_1",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZ3000_402vrq2i",
-      "driver": "button_wireless_4",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZ3000_402vrq2i",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZ3000_g9g2xnch",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZ3000_r0o2dahu",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE608_c75zqghm",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE608_fmemczv1",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE608_lapuuoke",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE608_xkr8gep3",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE200_r32ctezx",
-      "driver": "fan_controller",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE204_r32ctezx",
-      "driver": "fan_controller",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE200_g9a3awaj",
-      "driver": "radiator_controller",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE200_b6wax7g0",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE200_c88teujp",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE200_g9a3awaj",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE200_p3dbf6qs",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE200_rufdtfyv",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE200_rxq4iti9",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE204_sh1btabb",
-      "driver": "radiator_valve",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
       "mfr": "tuyatec-prhs1rsd",
       "driver": "temphumidsensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -168256,108 +167362,6 @@
       "driver": "temphumidsensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE200_b6wax7g0",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE200_c88teujp",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE200_g9a3awaj",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE200_p3dbf6qs",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE200_rufdtfyv",
-      "driver": "thermostat_tuya_dp",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE200_sh1btabb",
-      "driver": "valve_irrigation",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE200_sh1btabb",
-      "driver": "valve_single",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE200_sh1btabb",
-      "driver": "water_valve_smart",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZ3000_uri7ber7",
-      "driver": "button_wireless_1",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZ3000_402vrq2i",
-      "driver": "button_wireless_4",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZ3000_402vrq2i",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZ3000_g9g2xnch",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZ3000_r0o2dahu",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZE608_c75zqghm",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZE608_fmemczv1",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZE608_lapuuoke",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZE608_xkr8gep3",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
     },
     {
       "mfr": "_TZe200_8ygsuhe1",
@@ -168374,18 +167378,6 @@
     {
       "mfr": "_TZe200_pay2byax",
       "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZE200_r32ctezx",
-      "driver": "fan_controller",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZE204_r32ctezx",
-      "driver": "fan_controller",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "3b940038"
     }

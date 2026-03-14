@@ -1,10 +1,11 @@
 {
-  "timestamp": "2026-03-13T03:49:51.340Z",
+  "timestamp": "2026-03-14T14:43:25.042Z",
   "pidConflicts": [
     {
       "pid": "TS004F",
       "drivers": [
         "button_wireless_4",
+        "smart_knob",
         "smart_knob_rotary",
         "smart_knob_switch",
         "smart_remote_1_button",
@@ -199,6 +200,19 @@
       "severity": "low"
     },
     {
+      "pid": "TS0222",
+      "drivers": [
+        "climate_sensor",
+        "illuminance_sensor",
+        "light_sensor_outdoor"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
       "pid": "TY0201",
       "drivers": [
         "climate_sensor",
@@ -260,6 +274,19 @@
       ],
       "classes": [
         "socket"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "ERS-10TZBVK-AA",
+      "drivers": [
+        "scene_switch_4",
+        "smart_knob",
+        "smart_knob_rotary"
+      ],
+      "classes": [
+        "sensor"
       ],
       "crossClass": false,
       "severity": "low"
@@ -390,18 +417,6 @@
       ],
       "crossClass": true,
       "severity": "high"
-    },
-    {
-      "pid": "TS0222",
-      "drivers": [
-        "climate_sensor",
-        "illuminance_sensor"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false,
-      "severity": "low"
     },
     {
       "pid": "ZG-227Z",
@@ -733,18 +748,6 @@
       "severity": "low"
     },
     {
-      "pid": "ERS-10TZBVK-AA",
-      "drivers": [
-        "scene_switch_4",
-        "smart_knob_rotary"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false,
-      "severity": "low"
-    },
-    {
       "pid": "TS0011",
       "drivers": [
         "switch_1gang",
@@ -807,6 +810,50 @@
     }
   ],
   "mfrConflicts": [
+    {
+      "mfr": "_TZE200_kly8gjlz",
+      "drivers": [
+        "air_purifier",
+        "smart_lcd_thermostat"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TZE200_aoclfnxz",
+      "drivers": [
+        "air_purifier",
+        "floor_heating_thermostat"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TZE204_aoclfnxz",
+      "drivers": [
+        "air_purifier",
+        "floor_heating_thermostat"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TZE200_2ekuz3dz",
+      "drivers": [
+        "air_purifier",
+        "floor_heating_thermostat"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
     {
       "mfr": "_TZ2000_avdnvykf",
       "drivers": [
@@ -1115,6 +1162,7 @@
       "mfr": "_TZ3000_abrsvsou",
       "drivers": [
         "button_wireless_4",
+        "smart_knob",
         "smart_knob_switch"
       ],
       "sharedPids": [
@@ -1126,6 +1174,7 @@
       "mfr": "_TZ3000_4fjiwweb",
       "drivers": [
         "button_wireless_4",
+        "smart_knob",
         "smart_knob_switch"
       ],
       "sharedPids": [
@@ -1137,6 +1186,7 @@
       "mfr": "_TZ3000_qja6nq5z",
       "drivers": [
         "button_wireless_4",
+        "smart_knob",
         "smart_knob_switch"
       ],
       "sharedPids": [
@@ -2430,6 +2480,46 @@
       "reason": "no_fingerprints"
     },
     {
+      "driver": "wifi_ewelink_bulb",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_dimmer",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_fan",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_led",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_plug",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_pow",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_switch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_switch_2ch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_switch_4ch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_th",
+      "reason": "no_fingerprints"
+    },
+    {
       "driver": "wifi_fan",
       "reason": "no_fingerprints"
     },
@@ -2486,6 +2576,50 @@
       "reason": "no_fingerprints"
     },
     {
+      "driver": "wifi_sonoff_basicr4",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_dualr3",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_micro",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_minir3",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_minir4",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_pow_elite",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_smate2",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_thr316d",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_tx_1ch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_tx_2ch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_tx_3ch",
+      "reason": "no_fingerprints"
+    },
+    {
       "driver": "wifi_switch",
       "reason": "no_fingerprints"
     },
@@ -2516,6 +2650,7 @@
       "splitBy": {
         "sensor": [
           "button_wireless_4",
+          "smart_knob",
           "smart_knob_rotary"
         ],
         "remote": [
@@ -2796,11 +2931,11 @@
     }
   ],
   "summary": {
-    "totalDrivers": 159,
+    "totalDrivers": 187,
     "pidConflicts": 62,
     "highSeverity": 21,
-    "mfrConflicts": 135,
-    "orphans": 27,
+    "mfrConflicts": 139,
+    "orphans": 48,
     "splitSuggestions": 21
   }
 }

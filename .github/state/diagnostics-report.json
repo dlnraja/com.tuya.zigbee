@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-03-14T07:18:54.018Z",
-  "count": 1,
+  "timestamp": "2026-03-14T14:38:38.356Z",
+  "count": 4,
   "byType": {
-    "github": 1
+    "device_issue": 4
   },
   "newFingerprints": [],
   "deepResearch": {
@@ -12,42 +12,73 @@
   },
   "diagnostics": [
     {
-      "id": "imap_500587",
-      "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] Presence Sensor Radar:   zb_product_id    \"TS0225\" - zb_manufacturer_name     \"_TZ321C_fkzihaxe8\" - Wenz[greeting] get any value. (Issue #97)",
-      "from": "github",
-      "date": "2026-03-14T06:48:12.000Z",
+      "id": "imap_500618",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "user",
+      "date": "2026-03-14T09:40:27.000Z",
       "fps": {
-        "mfr": [
-          "_TZ321C_fkzihaxe8"
-        ],
+        "mfr": [],
         "pid": []
       },
       "errs": [],
-      "devices": [
-        "settings"
-      ],
-      "xref": [
-        {
-          "fingerprint": "_TZ321C_fkzihaxe8",
-          "type": "mfr",
-          "supported": true,
-          "drivers": [
-            "presence_sensor_radar"
-          ]
-        }
-      ],
-      "ghInfo": {
-        "issueNum": "97",
-        "action": null,
-        "fps": {
-          "mfr": [
-            "_TZ321C_fkzihaxe8"
-          ],
-          "pid": []
-        },
-        "isNew": false
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_500650",
+      "type": "device_issue",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2036 has been created",
+      "from": "homey_system",
+      "date": "2026-03-14T13:18:04.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
       },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_500651",
+      "type": "device_issue",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "homey_system",
+      "date": "2026-03-14T13:18:20.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_500652",
+      "type": "device_issue",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2036 is now testing",
+      "from": "homey_system",
+      "date": "2026-03-14T13:21:47.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
       "ai": null,
       "homeyVersion": null,
       "appVersion": null

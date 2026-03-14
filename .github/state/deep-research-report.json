@@ -1,27 +1,23 @@
 {
-  "ts": "2026-03-13T04:00:47.191Z",
+  "ts": "2026-03-14T14:54:18.446Z",
   "ghCalls": 120,
-  "totalFPs": 95,
-  "newFPs": 3,
+  "totalFPs": 96,
+  "newFPs": 1,
   "researched": 1,
   "implemented": 0,
   "results": [
     {
-      "fp": "_TZ3000_402vrq2i",
-      "driver": "energy_meter_3phase",
-      "confidence": 0,
-      "pidsFromIssue": [],
-      "discoveredPIDs": [
-        {
-          "pid": "TS0601",
-          "src": "z2m-context"
-        }
+      "fp": "_TZ3290_ot6ewjvmej",
+      "driver": "ir_remote",
+      "confidence": 25,
+      "pidsFromIssue": [
+        "TS1201"
       ],
-      "variants": 2,
+      "discoveredPIDs": [],
+      "variants": 0,
       "actions": [],
       "sources": [
-        "dlnraja/com.tuya.zigbee#158 (issue)",
-        "JohanBendz/com.tuya.zigbee#1349 (issue)"
+        "JohanBendz/com.tuya.zigbee#1331 (issue)"
       ]
     }
   ]
