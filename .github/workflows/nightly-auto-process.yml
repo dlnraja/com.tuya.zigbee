@@ -217,7 +217,6 @@ jobs:
         if: always()
         continue-on-error: true
         timeout-minutes: 10
-        env:
         run: node .github/scripts/bot-self-audit.js
 
       - name: Generate AI Changelog

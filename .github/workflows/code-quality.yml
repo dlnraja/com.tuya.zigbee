@@ -27,6 +27,9 @@ defaults:
   run:
     shell: bash
 
+env:
+  NODE_VERSION: "22"
+
 jobs:
   quality:
     name: 🔧 Quality Checks
@@ -34,6 +37,11 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: 🔍 Check Common Bugs
         run: |
@@ -86,6 +94,34 @@ jobs:
               && echo "✅ $d DP OK" >> $GITHUB_STEP_SUMMARY \
               || echo "⚠️ $d no DP" >> $GITHUB_STEP_SUMMARY
           done
+
+      - name: 🔍 JSON Validation
+        run: |
+          echo "### JSON Validation" >> $GITHUB_STEP_SUMMARY
+          FAIL=0
+          for f in drivers/*/driver.compose.json; do
+            if ! node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null; then
+              echo "❌ Invalid JSON: $f" >> $GITHUB_STEP_SUMMARY
+              FAIL=1
+            fi
+          done
+          [ $FAIL -eq 0 ] && echo "✅ All driver JSON valid" >> $GITHUB_STEP_SUMMARY
+
+      - name: 🔍 Dead Code Detection
+        run: |
+          echo "### Dead Code" >> $GITHUB_STEP_SUMMARY
+          DEAD=0
+          for f in lib/*.js; do
+            NAME=$(basename "$f" .js)
+            if grep -q '@deprecated' "$f" 2>/dev/null; then
+              REFS=$(grep -rl "$NAME" lib/ drivers/ --include='*.js' 2>/dev/null | grep -v "$f" | wc -l || true)
+              if [ "$REFS" -eq 0 ]; then
+                echo "⚠️ Deprecated + unused: $f" >> $GITHUB_STEP_SUMMARY
+                DEAD=$((DEAD+1))
+              fi
+            fi
+          done
+          [ $DEAD -eq 0 ] && echo "✅ No dead code found" >> $GITHUB_STEP_SUMMARY || echo "$DEAD deprecated file(s) can be removed" >> $GITHUB_STEP_SUMMARY
 
       - name: 📊 Stats
         run: |
