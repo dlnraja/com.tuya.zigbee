@@ -1,11 +1,20 @@
 {
-  "timestamp": "2026-03-13T05:48:47.954Z",
-  "appVersion": "5.11.110",
-  "forum": 0,
+  "timestamp": "2026-03-14T05:48:56.537Z",
+  "appVersion": "5.11.116",
+  "forum": 1,
   "github": 0,
-  "diagnostics": 2,
+  "diagnostics": 5,
   "diagNewFPs": 0,
   "diagCritical": 0,
-  "forumDetails": [],
+  "forumDetails": [
+    {
+      "topic": 140352,
+      "post": 1629,
+      "user": "Bjorn_Snijders",
+      "fps": [],
+      "reply": "It looks like you've successfully connected the TS004F smart knob, but you're experiencing issues with the button presses and rotary functions not being registered in Homey. Let's troubleshoot this st",
+      "model": "gh-gpt-4o-mini"
+    }
+  ],
   "githubDetails": []
 }

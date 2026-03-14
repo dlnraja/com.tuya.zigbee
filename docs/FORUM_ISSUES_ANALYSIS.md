@@ -479,3 +479,7 @@ All 12 fingerprints from 20 open issues **already supported** in v5.11.19:
 
 ## Nightly Forum Scan (2026-03-13 v5.11.110)
 - **Topic 140352 #1626** @ManuelKugler: `_TZ3000_wzmuk9ai`, `router` (gh-gpt-4o-mini)
+
+
+## Nightly Forum Scan (2026-03-14 v5.11.116)
+- **Topic 140352 #1629** @Bjorn_Snijders: no FPs (gh-gpt-4o-mini)
