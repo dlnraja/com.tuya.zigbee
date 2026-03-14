@@ -167,16 +167,6 @@ jobs:
           retention-days: 7
           if-no-files-found: ignore
 
-      - name: Post to Forum
-        if: steps.check_pat.outputs.has_pat == 'true'
-        continue-on-error: true
-        env:
-          DISCOURSE_API_KEY: ${{ secrets.DISCOURSE_API_KEY }}
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          APP_VERSION: ${{ steps.info.outputs.version }}
-          CHANGELOG: ${{ steps.cl.outputs.text }}
-        run: node .github/scripts/post-forum-update.js
 
       - name: Regenerate README & Docs with fresh stats
         if: always()

@@ -1,7 +1,6 @@
 # Monthly Enrichment Pipeline - Universal Tuya Zigbee
-# Runs monthly to scan forums, analyze PRs, validate drivers, and generate reports
+# Runs monthly to analyze PRs, validate drivers, and generate reports
 # ENRICHMENT ONLY - Never removes existing functionality
-# Forum sources: 140352 (dlnraja), 26439 (JohanBendz), 146735 (Tuya Smart Life), 89271 (Device Archive)
 
 name: Monthly Enrichment Pipeline
 

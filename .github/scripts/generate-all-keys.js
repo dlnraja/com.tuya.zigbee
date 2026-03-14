@@ -21,32 +21,7 @@ function setSec(n,v){
   try{execSync(`gh secret set ${n} -R ${REPO}`,{stdio:'pipe',input:v,encoding:'utf8'});return true}catch{return false}
 }
 
-async function discourseKey(browser){
-  const PORT=9876;
-  const pair=crypto.generateKeyPairSync('rsa',{modulusLength:2048,publicKeyEncoding:{type:'pkcs1',format:'pem'},privateKeyEncoding:{type:'pkcs1',format:'pem'}});
-  const cid=crypto.randomBytes(16).toString('hex');
-  const redir='http://localhost:'+PORT+'/cb';
-  const url='https://community.homey.app/user-api-key/new?application_name=Universal+Tuya+Zigbee+Bot&client_id='+cid+'&scopes=write,read&public_key='+encodeURIComponent(pair.publicKey)+'&nonce='+cid+'&auth_redirect='+encodeURIComponent(redir);
-  return new Promise(resolve=>{
-    const srv=http.createServer((req,res)=>{
-      if(!req.url.includes('/cb')){res.end('wait');return}
-      const p=new URL(req.url,'http://localhost:'+PORT).searchParams.get('payload');
-      if(!p){res.end('no payload');return}
-      try{
-        const dec=crypto.privateDecrypt({key:pair.privateKey,padding:crypto.constants.RSA_PKCS1_PADDING},Buffer.from(p,'base64'));
-        const j=JSON.parse(dec.toString());
-        res.end('<h1>Done</h1>');srv.close();resolve(j.key);
-      }catch{res.end('err');srv.close();resolve(null)}
-    });
-    srv.listen(PORT,async()=>{
-      console.log('  Callback server on :'+PORT);
-      const pg=await browser.newPage();
-      await pg.goto(url,{waitUntil:'networkidle2',timeout:60000}).catch(()=>{});
-      console.log('  >> Login & click Authorize <<');
-    });
-    setTimeout(()=>{try{srv.close()}catch{}resolve(null)},180000);
-  });
-}
+// discourseKey removed (Discourse disabled)
 
 async function main(){
   console.log('\n=== API Key Generator ===\n');
@@ -55,11 +30,7 @@ async function main(){
   const puppeteer=require('puppeteer');
   const browser=await puppeteer.launch({headless:false,defaultViewport:{width:1280,height:900}});
   const got={};
-  if(!ex.includes('DISCOURSE_API_KEY')){
-    console.log('\n--- Discourse API Key ---');
-    const k=await discourseKey(browser);
-    if(k){got.DISCOURSE_API_KEY=k;console.log('  Got: ****')}
-  }
+  // DISCOURSE_API_KEY removed
   for(const p of PROVS){
     if(ex.includes(p.name)){console.log(`\n--- ${p.name} --- exists`);continue}
     console.log(`\n--- ${p.name} ---`);

@@ -9,7 +9,7 @@ const{validateReply}=require('./reply-quality-gate');
 const{fetchWithRetry}=require('./retry-helper');
 const DDIR=path.join(__dirname,'..','..','drivers');
 const STATE_DIR=path.join(__dirname,'..','state');
-const FORUM=process.env.DISCOURSE_URL||'https://community.homey.app';
+const FORUM=''; // Discourse disabled
 
 async function fetchBotReplies(topicIds){
   const apiKey=process.env.DISCOURSE_API_KEY;
@@ -18,7 +18,8 @@ async function fetchBotReplies(topicIds){
   const hiddenPosts=[];
   const consecutivePosts=[];
   const botSignaturePosts=[];
-  if(!apiKey){console.log('No DISCOURSE_API_KEY, using cached data');return{replies:loadCachedReplies(),hiddenPosts:[],consecutivePosts:[],botSignaturePosts:[]};}
+  // Discourse disabled - always use cached data
+return{replies:loadCachedReplies(),hiddenPosts:[],consecutivePosts:[],botSignaturePosts:[]};
 
   for(const tid of topicIds){
     try{
