@@ -9,12 +9,14 @@ class TuyatecTempHumidSensorDriver extends ZigBeeDriver {
     this.log('  TUYATEC-branded sensors                                 ');
     this.log('═══════════════════════════════════════════════════════════');
     this._registeredIeeeAddresses = new Set();
+    try {
     this.homey.flow.getDeviceConditionCard('temphumidsensor_temp_above').registerRunListener(async (args) => {
       return (args.device.getCapabilityValue('measure_temperature') || 0) > args.temperature;
     });
     this.homey.flow.getDeviceConditionCard('temphumidsensor_humidity_above').registerRunListener(async (args) => {
       return (args.device.getCapabilityValue('measure_humidity') || 0) > args.humidity;
     });
+    } catch (e) { this.log('Flow cards unavailable:', e.message); }
   }
 
   async onPairListDevices(devices) {

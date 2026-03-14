@@ -1050,40 +1050,12 @@ class IrBlasterDevice extends ZigBeeDevice {
     if (!zclNode?.endpoints?.[1]) return;
 
     const irControlCluster = this._irControlCluster;
-    if (irControlCluster && IR_PROTOCOLS[protocol.toUpperCase()]) {
-      try {
-        await irControlCluster.IRProtocolSet({
-          protocol: IR_PROTOCOLS[protocol.toUpperCase()],
-          frequency: IR_FREQUENCIES.DEFAULT
-        });
-        this.log(`IR protocol set to: ${protocol}`);
-      } catch (err) {
-        this.error('Failed to set IR protocol:', err);
-      }
-    }
+    this.log(`IR protocol hint: ${protocol} (IRProtocolSet disabled - struct incompatible)`);
   }
 
   // Set carrier frequency
   async _setCarrierFrequency(frequency) {
-    if (frequency < IR_FREQUENCIES.MIN || frequency > IR_FREQUENCIES.MAX) {
-      throw new Error(`Invalid frequency: ${frequency}. Must be between ${IR_FREQUENCIES.MIN} and ${IR_FREQUENCIES.MAX}`);
-    }
-
-    const zclNode = this._zclNode;
-    if (!zclNode?.endpoints?.[1]) return;
-
-    const irControlCluster = this._irControlCluster;
-    if (irControlCluster) {
-      try {
-        await irControlCluster.IRProtocolSet({
-          protocol: IR_PROTOCOLS.UNKNOWN,
-          frequency: frequency
-        });
-        this.log(`Carrier frequency set to: ${frequency}Hz`);
-      } catch (err) {
-        this.error('Failed to set carrier frequency:', err);
-      }
-    }
+    this.log(`Carrier frequency hint: ${frequency}Hz (IRProtocolSet disabled - struct incompatible)`);
   }
 
   // Analyze IR protocol from code
