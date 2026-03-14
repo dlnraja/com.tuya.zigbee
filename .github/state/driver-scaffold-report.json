@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-13T03:49:51.260Z",
+  "timestamp": "2026-03-14T14:43:24.961Z",
   "conflicts": [
     {
       "pid": "TS0501B",
@@ -168,6 +168,7 @@
       "pid": "TS004F",
       "drivers": [
         "button_wireless_4",
+        "smart_knob",
         "smart_knob_rotary",
         "smart_knob_switch",
         "smart_remote_1_button",
@@ -210,7 +211,8 @@
       "pid": "TS0222",
       "drivers": [
         "climate_sensor",
-        "illuminance_sensor"
+        "illuminance_sensor",
+        "light_sensor_outdoor"
       ],
       "classes": [
         "sensor"
@@ -642,6 +644,7 @@
       "pid": "ERS-10TZBVK-AA",
       "drivers": [
         "scene_switch_4",
+        "smart_knob",
         "smart_knob_rotary"
       ],
       "classes": [
@@ -749,7 +752,7 @@
   "scaffolded": [],
   "errors": [],
   "summary": {
-    "ourDrivers": 159,
+    "ourDrivers": 187,
     "johanDrivers": 113,
     "pidConflicts": 62,
     "crossClassConflicts": 21,
