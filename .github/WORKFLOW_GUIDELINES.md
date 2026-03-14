@@ -34,8 +34,8 @@ defaults:
 
 ### Every job running scripts MUST have:
 ```yaml
-- uses: actions/checkout@v4
-- uses: actions/setup-node@v4
+- uses: actions/checkout@v5
+- uses: actions/setup-node@v5
   with:
     node-version: '22'
 - run: npm ci --prefer-offline --no-audit || npm install
@@ -212,7 +212,7 @@ env:
 See `.github/SECRETS.md` for full secret reference.
 
 ### Supply-Chain Security
-All 109 action refs pinned to SHA hashes (Mar 2026). Format: `action@SHA # vN`
+All action refs pinned to SHA hashes (Mar 2026). Format: `action@SHA # vN`. Updated to Node.js 24: checkout v5, setup-node v5, upload-artifact v5, cache v5, github-script v7.0.1
 
 ---
 

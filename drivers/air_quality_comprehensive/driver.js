@@ -6,6 +6,7 @@ class TuyaComprehensiveAirMonitorDriver extends ZigBeeDriver {
 
   async onInit() {
     this.log('TuyaComprehensiveAirMonitorDriver initialized');
+    try {
     this.homey.flow.getDeviceConditionCard('air_quality_comprehensive_co2_above').registerRunListener(async (args) => {
       return (args.device.getCapabilityValue('measure_co2') || 0) > args.co2;
     });
@@ -15,6 +16,7 @@ class TuyaComprehensiveAirMonitorDriver extends ZigBeeDriver {
     this.homey.flow.getDeviceConditionCard('air_quality_comprehensive_humidity_above').registerRunListener(async (args) => {
       return (args.device.getCapabilityValue('measure_humidity') || 0) > args.humidity;
     });
+    } catch (e) { this.log('Flow cards unavailable:', e.message); }
   }
 }
 

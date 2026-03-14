@@ -5,6 +5,7 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
 class UsbDongleTripleDriver extends ZigBeeDriver {
   async onInit() {
     this.log('USB Dongle Triple Driver initialized');
+    try {
     this.homey.flow.getDeviceTriggerCard('usb_dongle_triple_turned_on');
     this.homey.flow.getDeviceTriggerCard('usb_dongle_triple_turned_off');
     this.homey.flow.getDeviceTriggerCard('usb_dongle_triple_power_changed');
@@ -26,6 +27,7 @@ class UsbDongleTripleDriver extends ZigBeeDriver {
         if (d.hasCapability(cap)) await d.triggerCapabilityListener(cap, false);
       }
     });
+    } catch (e) { this.log('Flow cards unavailable:', e.message); }
   }
 }
 

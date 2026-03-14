@@ -1,5 +1,5 @@
 {
-  "triggers": [],
-  "conditions": [],
-  "actions": []
+  "triggers": [{"id":"pet_feeder_fed","title":"Pet was fed"},{"id":"pet_feeder_food_low","title":"Food level is low"}],
+  "conditions": [{"id":"pet_feeder_food_ok","title":"Food level is OK"}],
+  "actions": [{"id":"pet_feeder_feed_now","title":"Feed now"}]
 }

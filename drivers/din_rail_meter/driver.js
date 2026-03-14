@@ -8,7 +8,7 @@ class DinRailMeterDriver extends Driver {
     this._registerFlowCards();
   }
 
-  _registerFlowCards() {
+  _registerFlowCards() { try {
     this.powerChangedTrigger = this.homey.flow.getDeviceTriggerCard('din_rail_meter_power_changed');
     this.voltageChangedTrigger = this.homey.flow.getDeviceTriggerCard('din_rail_meter_voltage_changed');
     this.currentChangedTrigger = this.homey.flow.getDeviceTriggerCard('din_rail_meter_current_changed');
@@ -19,6 +19,7 @@ class DinRailMeterDriver extends Driver {
     this.homey.flow.getDeviceActionCard('din_rail_meter_reset_meter').registerRunListener(async (args) => {
       await args.device.setCapabilityValue('meter_power', 0);
     });
+    } catch (e) { this.log('Flow cards unavailable:', e.message); }
   }
 }
 

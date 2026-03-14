@@ -9,7 +9,7 @@ class EnergyMeter3phaseDriver extends ZigBeeDriver {
     this._registerFlowCards();
   }
 
-  _registerFlowCards() {
+  _registerFlowCards() { try {
     this.powerChangedTrigger = this.homey.flow.getDeviceTriggerCard('energy_meter_3phase_power_changed');
     this.voltageChangedTrigger = this.homey.flow.getDeviceTriggerCard('energy_meter_3phase_voltage_changed');
     this.currentChangedTrigger = this.homey.flow.getDeviceTriggerCard('energy_meter_3phase_current_changed');
@@ -20,6 +20,7 @@ class EnergyMeter3phaseDriver extends ZigBeeDriver {
     this.homey.flow.getDeviceActionCard('energy_meter_3phase_reset_meter').registerRunListener(async (args) => {
       await args.device.setCapabilityValue('meter_power', 0);
     });
+    } catch (e) { this.log('Flow cards unavailable:', e.message); }
   }
 
 }
