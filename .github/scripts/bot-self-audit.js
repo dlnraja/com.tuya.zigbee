@@ -7,23 +7,24 @@ const fs=require('fs'),path=require('path');
 const{buildFullIndex,extractAllFP}=require('./load-fingerprints');
 const{validateReply}=require('./reply-quality-gate');
 const{fetchWithRetry}=require('./retry-helper');
+const{getForumAuth,fmtCk}=require('./forum-auth');
 const DDIR=path.join(__dirname,'..','..','drivers');
 const STATE_DIR=path.join(__dirname,'..','state');
 const FORUM=process.env.DISCOURSE_URL||'https://community.homey.app';
 
 async function fetchBotReplies(topicIds){
-  const apiKey=process.env.HOMEY_EMAIL;
-  const apiUser=process.env.DISCOURSE_API_USERNAME||'dlnraja';
+  const auth=await getForumAuth();
   const replies=[];
   const hiddenPosts=[];
   const consecutivePosts=[];
   const botSignaturePosts=[];
-  if(!apiKey){console.log('No HOMEY_EMAIL, using cached data');return{replies:loadCachedReplies(),hiddenPosts:[],consecutivePosts:[],botSignaturePosts:[]};}
+  if(!auth){console.log('No forum auth, using cached data');return{replies:loadCachedReplies(),hiddenPosts:[],consecutivePosts:[],botSignaturePosts:[]};}
+  const hdrs=auth.type==='session'?{'X-CSRF-Token':auth.csrf,Cookie:fmtCk(auth.cookies)}:{};
 
   for(const tid of topicIds){
     try{
       const r=await fetchWithRetry(FORUM+'/t/'+tid+'.json?print=true',{
-        headers:{'Api-Key':apiKey,'Api-Username':apiUser}},{retries:2,label:'audit'});
+        headers:hdrs},{retries:2,label:'audit'});
       if(!r.ok)continue;
       const data=await r.json();
       const posts=data.post_stream?.posts||[];
