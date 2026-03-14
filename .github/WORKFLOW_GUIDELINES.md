@@ -11,7 +11,8 @@
 | `HOMEY_PAT` | Publish, draft→test | https://tools.developer.homey.app/me |
 | `GH_PAT` | Cross-repo (forks, triage) | GitHub Settings → Tokens (scopes: repo, read:org) |
 | `GOOGLE_API_KEY` | AI analysis (Gemini) | https://aistudio.google.com/apikey |
-| `DISCOURSE_API_KEY` | Forum posting | `node .github/scripts/generate-discourse-key.js` |
+| `GMAIL_EMAIL` | Gmail diagnostics (IMAP) | Gmail account |
+| `GMAIL_APP_PASSWORD` | Gmail diagnostics (IMAP) | Gmail App Password |
 
 ### Rules
 1. **NEVER hardcode tokens** in YML or JS
@@ -83,11 +84,7 @@ Use `id: my_step` (snake_case). Reference: `steps.my_step.outcome`.
 No PowerShell syntax. Use `${VAR}` not `$env:VAR`.
 All workflows have `defaults: run: shell: bash` to enforce this.
 
-### 6. DISCOURSE_API_KEY lint warnings
-False positive — secret exists but linter doesn't know. Safe to ignore.
-
-### 7. Discourse CSRF
-After `getForumAuth()`, ALWAYS call `refreshCsrf()` or all POST/PUT/DELETE get 403 BAD CSRF.
+### 6. After `getForumAuth()`, ALWAYS call `refreshCsrf()` or all POST/PUT/DELETE get 403 BAD CSRF.
 
 ### 8. Discourse DELETE rate limit
 ~2/min. Use EDIT to replace spam content instead (no rate limit on edits).
@@ -199,9 +196,7 @@ env:
 | auto-publish-on-push | on workflow complete | publish+promote | HOMEY_PAT |
 | gmail-token-keepalive | 4x/day (5,11,17,23 UTC) | token refresh | GMAIL_* |
 | deploy-pages | on push + daily | Device Finder | GITHUB_TOKEN |
-| tuya-automation-hub | 4x/day (1,7,13,19) + Mon/Thu | forum+github | ALL |
-| forum-auto-responder | 2x/day (9,21 UTC) | forum respond | DISCOURSE_API_KEY |
-| cleanup-wrong-threads | manual | cleanup bot posts | DISCOURSE_API_KEY |
+| tuya-automation-hub | 4x/day (1,7,13,19) + Mon/Thu | github | ALL |
 | johan-sdk3-sync | Wed 05:00 | SDK3 FP+DP sync + scaffold + audit | GITHUB_TOKEN |
 | driver-maintenance | Fri 04:00 | Auto-scaffold + conflict audit + PR | GH_PAT |
 | code-quality | Wed 03:00 + on push | quality checks | — |

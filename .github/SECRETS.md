@@ -9,8 +9,8 @@
 |--------|----------|-------------|
 | HOMEY_PAT | Athom App Store | Publish app, get versions, auto-publish draft to test |
 | HOMEY_PAT_API | Homey Cloud API | List devices, get Zigbee mesh, device diagnostics, interviews, flows, insights, crash logs |
-| HOMEY_EMAIL | Homey Forum | Forum login for Discourse API |
-| HOMEY_PASSWORD | Homey Forum | Forum login for Discourse API |
+| HOMEY_EMAIL | Homey Account | OAuth promote, Puppeteer login |
+| HOMEY_PASSWORD | Homey Account | OAuth promote, Puppeteer login |
 | GH_PAT | GitHub | Cross-repo: forks, triage JohanBendz, issue comments. Scopes: repo, read:org |
 | GITHUB_TOKEN | GitHub (auto) | Current repo only. Cannot access other repos (#46566) |
 | GOOGLE_API_KEY | Google Gemini | AI analysis, vision (images), code gen, translation, long context |
@@ -20,7 +20,7 @@
 | GMAIL_REFRESH_TOKEN | Gmail OAuth | **LEGACY** — removed v5.12.6, use IMAP instead |
 | GMAIL_EMAIL | Gmail IMAP | **REQUIRED** — Gmail address for IMAP (permanent, never expires) |
 | GMAIL_APP_PASSWORD | Gmail IMAP | **REQUIRED** — App Password for IMAP (permanent, never expires) |
-| DISCOURSE_API_KEY | Homey Forum | Discourse User API key for forum posting (preferred over session login) |
+
 | ATHOM_CLIENT_ID | Athom OAuth | OAuth client ID for headless promotion (from Athom Developer Tools SPA) |
 | ATHOM_CLIENT_SECRET | Athom OAuth | OAuth client secret for headless promotion (from Athom Developer Tools SPA) |
 
@@ -64,18 +64,17 @@ Used by: homey-device-diagnostics.js (NEW)
 
 | Workflow | Secrets Used |
 |----------|-------------|
-| publish.yml | HOMEY_PAT, GOOGLE_API_KEY, GH_PAT, DISCOURSE_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD |
-| auto-publish-on-push.yml | HOMEY_PAT, GOOGLE_API_KEY, GH_PAT, DISCOURSE_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD |
-| nightly-auto-process.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_PAT, HOMEY_PAT_API, HOMEY_EMAIL, HOMEY_PASSWORD, GH_PAT, DISCOURSE_API_KEY, GMAIL_*, GMAIL_APP_PASSWORD |
-| sunday-master.yml | GH_PAT, GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_PAT, HOMEY_PAT_API, HOMEY_EMAIL, HOMEY_PASSWORD, DISCOURSE_API_KEY, GMAIL_*, GMAIL_APP_PASSWORD |
-| tuya-automation-hub.yml | GH_PAT, GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD, DISCOURSE_API_KEY |
+| publish.yml | HOMEY_PAT, GOOGLE_API_KEY, GH_PAT, HOMEY_EMAIL, HOMEY_PASSWORD |
+| auto-publish-on-push.yml | HOMEY_PAT, GOOGLE_API_KEY, GH_PAT, HOMEY_EMAIL, HOMEY_PASSWORD |
+| nightly-auto-process.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_PAT, HOMEY_PAT_API, HOMEY_EMAIL, HOMEY_PASSWORD, GH_PAT, GMAIL_*, GMAIL_APP_PASSWORD |
+| sunday-master.yml | GH_PAT, GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_PAT, HOMEY_PAT_API, HOMEY_EMAIL, HOMEY_PASSWORD, GMAIL_*, GMAIL_APP_PASSWORD |
+| tuya-automation-hub.yml | GH_PAT, GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD |
 | upstream-auto-triage.yml | GH_PAT, GOOGLE_API_KEY |
-| forum-auto-responder.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_EMAIL, HOMEY_PASSWORD, DISCOURSE_API_KEY |
 | gmail-diagnostics.yml | GMAIL_EMAIL, GMAIL_APP_PASSWORD, HOMEY_EMAIL, GOOGLE_API_KEY, GH_PAT |
 | gmail-token-keepalive.yml | GMAIL_EMAIL, GMAIL_APP_PASSWORD, HOMEY_EMAIL, GH_PAT |
 | monthly-comprehensive-sync.yml | GOOGLE_API_KEY, OPENAI_API_KEY, HOMEY_PAT, HOMEY_PAT_API, GH_PAT |
 | weekly-fingerprint-sync.yml | GITHUB_TOKEN |
-| daily-everything.yml | GH_PAT, GOOGLE_API_KEY, HOMEY_PAT, HOMEY_EMAIL, HOMEY_PASSWORD, DISCOURSE_API_KEY, GMAIL_*, GMAIL_APP_PASSWORD |
+| daily-everything.yml | GH_PAT, GOOGLE_API_KEY, HOMEY_PAT, HOMEY_EMAIL, HOMEY_PASSWORD, GMAIL_*, GMAIL_APP_PASSWORD |
 | github-auto-manage.yml | GH_PAT, GOOGLE_API_KEY, HOMEY_PAT |
 | validate.yml | GITHUB_TOKEN |
 | code-quality.yml | GITHUB_TOKEN |
@@ -114,21 +113,13 @@ IMAP with App Password is the **only** email method. OAuth has been completely r
 - 2-Factor Authentication must be enabled on the Google account
 - If you don't see App Passwords: enable 2FA first at https://myaccount.google.com/signinoptions/two-step-verification
 
-## Discourse API Key Setup
-
-1. Run: `node .github/scripts/generate-discourse-key.js`
-2. This opens a browser to `community.homey.app` to authorize a User API Key
-3. After authorizing, the script captures the key and prints it
-4. Add it as GitHub secret: `DISCOURSE_API_KEY`
-5. This key is preferred over session login (HOMEY_EMAIL/PASSWORD) — no 403 errors
-6. All forum scripts gracefully fall back: API key → session login → scan-only mode
 
 ## Priority Setup Order
 
 1. HOMEY_PAT — publishing
 2. HOMEY_PAT_API — real device diagnostics
 3. GOOGLE_API_KEY — AI analysis (most workflows)
-4. HOMEY_EMAIL + HOMEY_PASSWORD — forum
+4. HOMEY_EMAIL + HOMEY_PASSWORD — OAuth promote
 5. GH_PAT — cross-repo (scopes: repo, read:org)
 6. Gmail secrets — diagnostic pipeline
 7. OPENAI_API_KEY — GPT fallback

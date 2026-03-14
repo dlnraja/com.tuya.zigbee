@@ -6,13 +6,13 @@
 const fs=require('fs'),path=require('path');
 const{callAI,analyzeImage,sleep}=require('./ai-helper');
 const{analyzeScreenshot,formatForAIContext}=require('./screenshot-analyzer');
-const{getForumAuth,refreshCsrf,fmtCk}=require('./forum-auth');
+// Forum auth removed (Discourse disabled)
 const{fetchWithRetry}=require('./retry-helper');
 const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
 const DDIR=path.join(__dirname,'..','..','drivers');
 const STATE=path.join(__dirname,'..','state','monthly-state.json');
 const GH='https://api.github.com';
-const FORUM='https://community.homey.app';
+const FORUM=''; // Discourse disabled
 
 function loadState(){try{return JSON.parse(fs.readFileSync(STATE,'utf8'))}catch{return{lastRun:null,processedIssues:[],processedPRs:[],processedForkFPs:[]}}}
 function saveState(s){fs.mkdirSync(path.dirname(STATE),{recursive:true});fs.writeFileSync(STATE,JSON.stringify(s,null,2)+'\n')}
@@ -256,7 +256,7 @@ async function postToForum(topicId,content,auth){
 async function main(){
   const dryRun=process.env.DRY_RUN!=='false';
   const repos=['dlnraja/com.tuya.zigbee','JohanBendz/com.tuya.zigbee'];
-  const forumTopics=[140352];
+  const forumTopics=[]; // Discourse disabled
   let appVersion='unknown';
   try{appVersion=JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')).version}catch{}
   const state=loadState();

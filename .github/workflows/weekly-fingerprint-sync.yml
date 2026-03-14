@@ -2,7 +2,6 @@
 # Fetches latest fingerprints from Z2M/ZHA, compares with local drivers,
 # auto-adds safe Tuya _T* and SONOFF/eWeLink patterns, and creates PR for review.
 # Runs every Monday at 06:00 UTC.
-# Forum sources: 140352 (dlnraja), 26439 (JohanBendz), 146735 (Tuya Smart Life), 89271 (Device Archive)
 
 name: "Weekly Fingerprint Sync"
 
