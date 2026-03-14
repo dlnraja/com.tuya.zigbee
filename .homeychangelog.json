@@ -1,4 +1,7 @@
 {
+  "5.11.117": {
+    "en": "Universal Tuya Zigbee app v5.11.117: Restored forum integration and updated drivers and fingerprints."
+  },
   "5.11.116": {
     "en": "Universal Tuya Zigbee app v5.11.116 includes a batch state update feature for improved device management."
   },
@@ -56,10 +59,7 @@
   "5.11.96": {
     "en": "Universal Tuya Zigbee app v5.11.96: Fixed draft detection and updated screenshots."
   },
-  "5.11.95": {
-    "en": "Universal Tuya Zigbee app v5.11.95: Fixed navigation issue and updated drivers and fingerprints."
-  },
-  "5.11.117": {
-    "en": "v5.11.116: Implemented batch close/respond state update for devices., None in this release., None in this release., No changes."
+  "5.11.118": {
+    "en": "v5.11.117: Restored forum integration with session authentication, removing the DISCOURSE_API_KEY dependency., Updated to 187 drivers and 4731 fingerprints, with 32 files modified to support these changes., None."
   }
 }

@@ -6,7 +6,19 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.116] - 2026-03-14
+## [5.11.117] - 2026-03-14
+
+### Bug Fixes
+- Restored forum integration with session authentication, removing the DISCOURSE_API_KEY dependency.
+
+### New Features
+- Updated to 187 drivers and 4731 fingerprints, with 32 files modified to support these changes.
+
+### Improvements
+- None.
+---
+
+ [5.11.116] - 2026-03-14
 
 ### Bug Fixes
 - Implemented batch close/respond state update for devices.
