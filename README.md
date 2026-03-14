@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Fingerprints](https://img.shields.io/badge/fingerprints-4,731+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-187-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Flow Cards](https://img.shields.io/badge/flow%20cards-1,863-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Flow Cards](https://img.shields.io/badge/flow%20cards-1,867-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
@@ -15,7 +15,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 - **Local-only** â€” everything runs on your Homey, nothing goes to the cloud
 - **Hybrid mode** â€” auto-detects whether a device speaks Tuya DP or standard ZCL
 - **Smart battery** â€” voltage-based fallback when devices don't report percentage
-- **1,863+ flow cards** â€” triggers, conditions & actions in EN, FR, NL, DE
+- **1,867+ flow cards** â€” triggers, conditions & actions in EN, FR, NL, DE
 - **SDK3** â€” built on the latest Homey platform
 
 ---
@@ -34,17 +34,17 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.115 |
+| **App Version** | v5.11.116 |
 | **Device Fingerprints** | 4,731+ |
 | **Unique Product IDs** | 552 |
 | **Drivers** | 187 (139 Zigbee + 48 WiFi) |
-| **Flow Cards** | 1,863 |
+| **Flow Cards** | 1,867 |
 | **Unique Capabilities** | 121 |
 | **SVG Icons** | 316 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-03-13 |
+| **Last Updated** | 2026-03-14 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -100,7 +100,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.115** | v5.11.114: Added HOMEd cross-reference automation script., Introduced auto-replace-images automation script., Total d... |
+| **v5.11.116** | v5.11.115: Fixed various driver bugs., Updated to 187 drivers and 3169 fingerprints., Updated forum state. |
+| **v5.11.115** | Universal Tuya Zigbee app v5.11.115 fixes driver bugs and updates device fingerprints. |
 | **v5.11.114** | Universal Tuya Zigbee app v5.11.114 adds new  scripts and updates drivers and fingerprints. |
 | **v5.11.113** | Universal Tuya Zigbee app v5.11.113: Added 8 new device fingerprints, total 4258 fingerprints. |
 | **v5.11.110** | Universal Tuya Zigbee app v5.11.110 adds 28 new drivers and 1,105 new fingerprints, improving device compatibility. |
@@ -114,7 +115,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.102** | Universal Tuya Zigbee app v5.11.102 adds new device variants and updates 145 drivers with 4032 fingerprints. |
 | **v5.11.101** | Universal Tuya Zigbee app v5.11.101 adds new device variants, updates 145 drivers, and enhances fingerprint database ... |
 | **v5.11.100** | Universal Tuya Zigbee app v5.11.100 adds . |
-| **v5.11.99** | Universal Tuya Zigbee app v5.11.99: Regenerated driver images and fixed various draft detection issues. |
 
 <!-- CHANGELOG_END -->
 
@@ -354,4 +354,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-03-13*
+*Last updated: 2026-03-14*
