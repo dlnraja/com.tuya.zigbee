@@ -6,7 +6,22 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.117] - 2026-03-14
+## [5.11.118] - 2026-03-14
+
+### New Features
+- Added WiFi Camera driver (Tuya IPC) with local control and RTSP/snapshot streaming.
+
+### Bug Fixes
+- No bug fixes in this release.
+
+### Improvements
+- No improvements in this release.
+
+### CI/CD
+- No changes in CI/CD processes.
+---
+
+ [5.11.117] - 2026-03-14
 
 ### Bug Fixes
 - Restored forum integration with session authentication, removing the DISCOURSE_API_KEY dependency.

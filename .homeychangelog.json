@@ -1,4 +1,7 @@
 {
+  "5.11.118": {
+    "en": "Added WiFi Camera driver (Tuya IPC) with local control and RTSP/snapshot streaming support."
+  },
   "5.11.117": {
     "en": "Universal Tuya Zigbee app v5.11.117: Restored forum integration and updated drivers and fingerprints."
   },
@@ -56,10 +59,7 @@
   "5.11.97": {
     "en": "Fixed draft detection logic and improved build pipeline."
   },
-  "5.11.96": {
-    "en": "Universal Tuya Zigbee app v5.11.96: Fixed draft detection and updated screenshots."
-  },
-  "5.11.118": {
-    "en": "v5.11.117: Restored forum integration with session authentication, removing the DISCOURSE_API_KEY dependency., Updated to 187 drivers and 4731 fingerprints, with 32 files modified to support these changes., None."
+  "5.11.119": {
+    "en": "v5.11.118: Added WiFi Camera driver (Tuya IPC) with local control and RTSP/snapshot streaming., No bug fixes in this release., No improvements in this release., No changes in CI/CD processes."
   }
 }

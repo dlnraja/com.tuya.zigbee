@@ -6,8 +6,8 @@
 
 | Metric | Value |
 |--------|-------|
-| Version | v5.11.118 |
-| Drivers | 187 |
+| Version | v5.11.119 |
+| Drivers | 188 |
 | Fingerprints | 4,731 |
 | Last Updated | 2026-03-14 |
 
@@ -29,6 +29,7 @@
 | button | 2 |
 | doorbell | 2 |
 | curtain | 2 |
+| camera | 1 |
 | vacuumcleaner | 1 |
 | speaker | 1 |
 
