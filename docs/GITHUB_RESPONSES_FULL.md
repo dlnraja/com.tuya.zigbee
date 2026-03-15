@@ -236,3 +236,7 @@
 
 ## Nightly Auto-Responses (2026-03-09 v5.11.101)
 - **dlnraja/com.tuya.zigbee#157** @github-actions[bot]: `danfoss`, `legrand`, `sonoff`, `xiaomi`, `test`, `bosch`, `ikea`, `tuya` (gh-gpt-4o-mini)
+
+
+## Nightly Auto-Responses (2026-03-15 v5.11.119)
+- **JohanBendz/com.tuya.zigbee#1351** @cristianoisaac: `_TZE284_bquwrqh1`, `smartthings`, `vision`, `lumi`, `tuya` (gh-gpt-4o-mini)
