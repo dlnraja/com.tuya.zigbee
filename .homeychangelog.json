@@ -1,6 +1,6 @@
 {
   "5.11.119": {
-    "en": "Universal Tuya Zigbee app v5.11.119 adds , improving device compatibility."
+    "en": "Universal Tuya Zigbee app v5.11.119 adds new device variants and updates drivers, now with ."
   },
   "5.11.118": {
     "en": "Added WiFi Camera driver (Tuya IPC) with local control and RTSP/snapshot streaming support."
@@ -58,5 +58,8 @@
   },
   "5.11.98": {
     "en": "Universal Tuya Zigbee app v5.11.98 fixes IAS issues and improves draft detection."
+  },
+  "5.11.120": {
+    "en": "v5.11.119: Addressed issues with state updates for better accuracy., No new features added in this release., No improvements made in this release., Batch close/respond state update implemented."
   }
 }
