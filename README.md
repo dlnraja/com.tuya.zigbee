@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.119 |
+| **App Version** | v5.11.120 |
 | **Device Fingerprints** | 4,731+ |
 | **Unique Product IDs** | 552 |
 | **Drivers** | 188 (139 Zigbee + 49 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.119** | v5.11.118: Added WiFi Camera driver (Tuya IPC) with local control and RTSP/snapshot streaming., No bug fixes in this ... |
+| **v5.11.120** | v5.11.119: Addressed issues with state updates for better accuracy., No new features added in this release., No impro... |
+| **v5.11.119** | Universal Tuya Zigbee app v5.11.119 adds new device variants and updates drivers, now with . |
 | **v5.11.118** | Added WiFi Camera driver (Tuya IPC) with local control and RTSP/snapshot streaming support. |
 | **v5.11.117** | Universal Tuya Zigbee app v5.11.117: Restored forum integration and updated drivers and fingerprints. |
 | **v5.11.116** | Universal Tuya Zigbee app v5.11.116 includes a batch state update feature for improved device management. |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.106** | Universal Tuya Zigbee app v5.11.106 adds new device fingerprints and updates diagnostics. |
 | **v5.11.105** | Added TuyaZigbeeBridge for improved driver pairing and control, updated diagnostics. |
 | **v5.11.104** | Added support for Zigbee sub-device control via Tuya gateway and updated drivers and fingerprints. |
-| **v5.11.103** | Added local control for Tuya WiFi devices with SmartLife QR authentication and UDP discovery. |
 
 <!-- CHANGELOG_END -->
 
@@ -355,4 +355,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-03-14*
+*Last updated: 2026-03-15*
