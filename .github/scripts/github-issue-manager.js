@@ -111,8 +111,10 @@ function isEmptyTemplate(issue){
   return(t.includes('[Device name]')&&t.includes('[manufacturerName]'))||(t.includes('[manufacturerName]')&&t.includes('[modelId]')&&!/_T[A-Z]/.test(issue.body||''));
 }
 
+function hasUserSymptoms(b){if(!b)return false;const l=b.toLowerCase();return/doesn.?t.*work|stuck|wrong.*value|shows?.*(0|zero|wrong)|bug|error|issue|problem|broken|not.*updating|after.*(update|install)|missing.*capability|interview|diagnostic/.test(l);}
+
 // v5.12.x: Fast-path with user profile awareness
-function buildFastResponse(issue,fpResults,repo,allSupported){
+function buildFastResponse(issue,fpResults,repo,allSupported){if(hasUserSymptoms(issue.body||issue.title))return null;
   const isUp=repo&&repo!==OWN;
   let det;try{det=detectFromGitHub(issue.user?.login||'',issue.body||'')}catch{det={profile:'end-user'}}
   let msg=TAG+'\n';
@@ -157,7 +159,7 @@ async function processIssue(repo,issue,state,report,extData){
   const existingFPs=fpResults.filter(f=>f.supported);
 
   // v5.11.27: Fast-path for fully-supported device requests (skip AI, save budget)
-  if(allFPs.length>0&&newFPs.length===0){
+  if(allFPs.length>0&&newFPs.length===0&&!hasUserSymptoms(text)){
     const comments=await ghGet('/repos/'+repo+'/issues/'+issue.number+'/comments?per_page=10');
     const hasBot=comments&&comments.some(c=>(c.body||'').includes(TAG)||c.user?.login==='dlnraja');
     if(!hasBot){
