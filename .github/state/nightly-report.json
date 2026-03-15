@@ -1,27 +1,22 @@
 {
-  "timestamp": "2026-03-15T03:45:00.617Z",
+  "timestamp": "2026-03-15T05:56:34.728Z",
   "appVersion": "5.11.119",
-  "forum": 0,
-  "github": 1,
+  "forum": 1,
+  "github": 0,
   "diagnostics": 4,
   "diagNewFPs": 0,
   "diagCritical": 0,
-  "forumDetails": [],
-  "githubDetails": [
+  "forumDetails": [
     {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1351,
-      "user": "cristianoisaac",
+      "topic": 140352,
+      "post": 1633,
+      "user": "Jeff_James",
       "fps": [
-        "_TZE284_bquwrqh1",
-        "smartthings",
-        "vision",
-        "lumi",
-        "tuya"
+        "Zbeacon"
       ],
-      "title": "Device Request - [PIR Motion Brightness] - [_TZE284_bquwrqh1] / [TS0601]",
-      "response": "### Device Support Analysis for TS0601\n\n#### Fingerprint Support\nThe device with manufacturer ID `_TZE284_bquwrqh1` is indeed supported. The driver that handles this device is `presence_sensor_radar`. This driver is specifically designed for motion sensors that utilize radar technology.\n\n#### Pairin",
+      "reply": "It looks like the DS01 contact sensor from Zbeacon is indeed supported by the Universal Tuya Zigbee app. Based on the fingerprints found, the appropriate driver for your device is the `contact_sensor`",
       "model": "gh-gpt-4o-mini"
     }
-  ]
+  ],
+  "githubDetails": []
 }
