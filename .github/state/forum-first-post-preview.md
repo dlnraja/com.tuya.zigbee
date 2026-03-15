@@ -1,6 +1,6 @@
-# 🏠 Universal Tuya Zigbee v5.11.110
+# 🏠 Universal Tuya Zigbee v5.11.119
 
-> **159 drivers** · **4697+ fingerprints** · Updated 2026-03-13
+> **188 drivers** · **4731+ fingerprints** · Updated 2026-03-15
 
 Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.
 
@@ -8,27 +8,27 @@ Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehens
 
 **Stable:** [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/) · **Test:** [Test Channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · **Source:** [GitHub](https://github.com/dlnraja/com.tuya.zigbee)
 
-## What's New (v5.11.110)
+## What's New (v5.11.119)
 
-Implemented batch close/respond state update for improved device responsiveness., No new features added in this release., No additional improvements made in this release., No changes to CI/CD processes.
+Added WiFi Camera driver (Tuya IPC) with local control and RTSP/snapshot streaming., No bug fixes in this release., No improvements in this release., No changes in CI/CD processes.
 
 ## Supported Devices
 
 | Category | Drivers | FPs |
 |---|---|---|
-| 🔌 Socket | 31 | 917 |
-| 💡 Light | 18 | 442 |
-| 📡 Sensor | 42 | 2142 |
-| 🌡️ Thermostat | 7 | 326 |
+| 🔌 Socket | 47 | 917 |
+| 💡 Light | 21 | 442 |
+| 📡 Sensor | 44 | 2151 |
+| 🌡️ Thermostat | 11 | 342 |
 | 🪟 Windowcoverings | 3 | 175 |
 | 🔐 Lock | 4 | 22 |
-| 🌀 Fan | 9 | 42 |
+| 🌀 Fan | 10 | 42 |
 | 🔔 Doorbell | 2 | 8 |
 | 🎮 Remote | 17 | 92 |
 | 🔘 Button | 2 | 9 |
 | 🔥 Heater | 4 | 12 |
-| 🚗 Garagedoor | 2 | 8 |
-| 📦 Other | 14 | 493 |
+| 🚗 Garagedoor | 3 | 13 |
+| 📦 Other | 15 | 497 |
 | 📦 Curtain | 2 | 9 |
 
 [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) — search by fingerprint
@@ -45,13 +45,13 @@ Implemented batch close/respond state update for improved device responsiveness.
 
 <details><summary>Previous versions</summary>
 
-**v5.11.109:** Updated Universal Tuya Zigbee app to v5.11.109 with new drivers and fingerprints.
+**v5.11.118:** Added WiFi Camera driver (Tuya IPC) with local control and RTSP/snapshot streaming support.
 
-**v5.11.108:** Universal Tuya Zigbee app v5.11.108 adds new device fingerprints and integrates SDK3 improvements for enhanced device support.
+**v5.11.117:** Universal Tuya Zigbee app v5.11.117: Restored forum integration and updated drivers and fingerprints.
 
-**v5.11.107:** Added support for new rain sensor device and improved fingerprint scanning with JohanBendz SDK3.
+**v5.11.116:** Universal Tuya Zigbee app v5.11.116 includes a batch state update feature for improved device management.
 
-**v5.11.106:** Universal Tuya Zigbee app v5.11.106 adds new device fingerprints and updates diagnostics.
+**v5.11.115:** Universal Tuya Zigbee app v5.11.115 fixes driver bugs and updates device fingerprints.
 
 </details>
 
@@ -66,4 +66,4 @@ This app is free and open-source. If it's useful to you, a small donation helps 
 **PayPal:** [paypal.me/dlnraja](https://paypal.me/dlnraja) · **Revolut:** [revolut.me/dylanoul](https://revolut.me/dylanoul)
 
 ---
-*Last updated 2026-03-13 — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*
+*Last updated 2026-03-15 — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*

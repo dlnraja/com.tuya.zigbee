@@ -71,7 +71,7 @@ card.registerRunListener(this._safeDeviceHandler(async (args) => {
 | Version | v5.11.119 |
 | Drivers | 188 |
 | Fingerprints | 4,731 |
-| Last Updated | 2026-03-14 |
+| Last Updated | 2026-03-15 |
 
 
 ## How to Add a Device

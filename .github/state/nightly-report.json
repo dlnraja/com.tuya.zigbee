@@ -1,11 +1,27 @@
 {
-  "timestamp": "2026-03-14T14:40:24.303Z",
-  "appVersion": "5.11.117",
+  "timestamp": "2026-03-15T03:45:00.617Z",
+  "appVersion": "5.11.119",
   "forum": 0,
-  "github": 0,
+  "github": 1,
   "diagnostics": 4,
   "diagNewFPs": 0,
   "diagCritical": 0,
   "forumDetails": [],
-  "githubDetails": []
+  "githubDetails": [
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1351,
+      "user": "cristianoisaac",
+      "fps": [
+        "_TZE284_bquwrqh1",
+        "smartthings",
+        "vision",
+        "lumi",
+        "tuya"
+      ],
+      "title": "Device Request - [PIR Motion Brightness] - [_TZE284_bquwrqh1] / [TS0601]",
+      "response": "### Device Support Analysis for TS0601\n\n#### Fingerprint Support\nThe device with manufacturer ID `_TZE284_bquwrqh1` is indeed supported. The driver that handles this device is `presence_sensor_radar`. This driver is specifically designed for motion sensors that utilize radar technology.\n\n#### Pairin",
+      "model": "gh-gpt-4o-mini"
+    }
+  ]
 }

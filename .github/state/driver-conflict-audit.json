@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-14T14:43:25.042Z",
+  "timestamp": "2026-03-15T03:57:02.956Z",
   "pidConflicts": [
     {
       "pid": "TS004F",
@@ -2460,6 +2460,10 @@
       "reason": "no_fingerprints"
     },
     {
+      "driver": "wifi_camera",
+      "reason": "no_fingerprints"
+    },
+    {
       "driver": "wifi_cover",
       "reason": "no_fingerprints"
     },
@@ -2931,11 +2935,11 @@
     }
   ],
   "summary": {
-    "totalDrivers": 187,
+    "totalDrivers": 188,
     "pidConflicts": 62,
     "highSeverity": 21,
     "mfrConflicts": 139,
-    "orphans": 48,
+    "orphans": 49,
     "splitSuggestions": 21
   }
 }
