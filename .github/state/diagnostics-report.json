@@ -1,12 +1,95 @@
 {
-  "timestamp": "2026-03-15T05:56:46.778Z",
-  "count": 0,
-  "byType": {},
+  "timestamp": "2026-03-15T07:25:53.146Z",
+  "count": 2,
+  "byType": {
+    "github": 2
+  },
   "newFingerprints": [],
   "deepResearch": {
     "researched": 0,
     "added": 0,
     "details": []
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "id": "imap_500694",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] Presence Sensor Radar:   zb_product_id    \"TS0225\" - zb_manufacturer_name     \"_TZ321C_fkzihaxe8\" - Wenz[greeting] get any value. (Issue #97)",
+      "from": "github",
+      "date": "2026-03-15T06:49:27.000Z",
+      "fps": {
+        "mfr": [
+          "_TZ321C_fkzihaxe8"
+        ],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "settings"
+      ],
+      "xref": [
+        {
+          "fingerprint": "_TZ321C_fkzihaxe8",
+          "type": "mfr",
+          "supported": true,
+          "drivers": [
+            "presence_sensor_radar"
+          ]
+        }
+      ],
+      "ghInfo": {
+        "issueNum": "97",
+        "action": null,
+        "fps": {
+          "mfr": [
+            "_TZ321C_fkzihaxe8"
+          ],
+          "pid": []
+        },
+        "isNew": false
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_500700",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] Presence Sensor Radar:   zb_product_id    \"TS0225\" - zb_manufacturer_name     \"_TZ321C_fkzihaxe8\" - Wenz[greeting] get any value. (Issue #97)",
+      "from": "github",
+      "date": "2026-03-15T07:20:52.000Z",
+      "fps": {
+        "mfr": [
+          "_TZ321C_fkzihaxe8"
+        ],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [
+        {
+          "fingerprint": "_TZ321C_fkzihaxe8",
+          "type": "mfr",
+          "supported": true,
+          "drivers": [
+            "presence_sensor_radar"
+          ]
+        }
+      ],
+      "ghInfo": {
+        "issueNum": "97",
+        "action": null,
+        "fps": {
+          "mfr": [
+            "_TZ321C_fkzihaxe8"
+          ],
+          "pid": []
+        },
+        "isNew": false
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    }
+  ]
 }
