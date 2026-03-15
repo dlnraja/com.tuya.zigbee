@@ -30,6 +30,8 @@ function post(n,body){
   catch(e){console.log(`Skip comment ${REPO}#${n}: ${e.message.slice(0,80)}`);}
 }
 
+function hasUserSymptoms(b){if(!b)return false;const l=b.toLowerCase();return/doesn.?t.*work|stuck|wrong.*value|shows?.*(0|zero|wrong)|bug|error|issue|problem|broken|not.*updating|after.*(update|install)|missing.*capability|interview|diagnostic/.test(l);}
+
 function supportedMsg(found){
   const lines=found.map(([m,d])=>`| \`${m}\` | **${[].concat(d).join(', ')}** |`).join('\n');
   return [

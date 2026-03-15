@@ -151,8 +151,10 @@ async function getLastOwnPost(tid){
   }catch{return null}
 }
 
+function hasUserSymptoms(b){if(!b)return false;const l=b.toLowerCase();return/doesn.?t.*work|stuck|wrong.*value|shows?.*(0|zero|wrong)|bug|error|issue|problem|broken|not.*updating|after.*(update|install)|missing.*capability|interview|diagnostic/.test(l);}
+
 // v5.11.28: Batched fallback — merge FP results + intelligence into ONE reply
-function batchedFallback(postInfos,ver){
+function batchedFallback(postInfos,ver){const allText=postInfos.map(p=>p.text).join();if(hasUserSymptoms(allText))return null;
   const found=new Map(),miss=new Map(),fuzzyInfo=new Map();
   for(const pi of postInfos)for(const[fp,v]of Object.entries(pi.fpResults)){
     if(fp.startsWith('_')&&!fp.startsWith('_T'))continue;
