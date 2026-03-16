@@ -6,7 +6,23 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.121] - 2026-03-16
+## [5.11.122] - 2026-03-16
+
+### Bug Fixes
+- Fixed issue where TZE lux values were incorrectly clamped from 2000 to 10000. Real values ranged from 2177 to 2444.
+
+### New Features
+- No new features added in this release.
+
+### Improvements
+- No improvements made in this release.
+
+### CI/CD
+- Processed issues and pull requests for this release.
+- Cross-referenced 3169 fingerprints with Z2M/ZHA/forum data.
+---
+
+ [5.11.121] - 2026-03-16
 
 ### Bug Fixes
 - Fixed issue with LEAPMW DP109/119 where distance was silently dropped.
