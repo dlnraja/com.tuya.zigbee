@@ -903,8 +903,12 @@ class IrBlasterDevice extends ZigBeeDevice {
   async _handleReceivedCodeChunk(data) {
     const seq = data.seq ?? data.sequenceNumber;
     const position = data.position ?? 0;
-    const chunkData = data.msgpart ?? data.data;
-    const expectedCrc = data.msgpartcrc;
+    let chunkData = data.msgpart ?? data.data;
+    let expectedCrc = data.msgpartcrc;
+    if (expectedCrc === undefined && Buffer.isBuffer(chunkData) && chunkData.length > 1) {
+      expectedCrc = chunkData[chunkData.length - 1];
+      chunkData = chunkData.slice(0, -1);
+    }
 
     const buffer = this._receiveBuffers[seq];
     if (!buffer) {
@@ -1199,8 +1203,7 @@ class IrBlasterDevice extends ZigBeeDevice {
           zero: 0,
           seq: seq,
           position: position,
-          msgpart: msgpart,
-          msgpartcrc: crc
+          msgpart: Buffer.concat([msgpart, Buffer.from([crc])])
         });
       } catch (err) {
         this.error('Failed to send code data response:', err);
