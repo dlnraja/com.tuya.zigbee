@@ -6,7 +6,20 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.119] - 2026-03-15
+## [5.11.120] - 2026-03-16
+
+### Bug Fixes
+- Fixed issue where LEAPMW DP109/119 distance was silently dropped.
+
+### New Features
+- Added new device variants and updated drivers.
+
+### Device Support
+- Total drivers: 188
+- Total fingerprints: 4258
+---
+
+ [5.11.119] - 2026-03-15
 
 ### Bug Fixes
 - Addressed issues with state updates for better accuracy.
