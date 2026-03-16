@@ -658,8 +658,7 @@ const SENSOR_CONFIGS = {
       '_TZE204_iaeejhvf',
       '_TZE204_ikvncluo', '_TZE204_jva8ink8',
       '_TZE204_lyetpprm', '_TZE204_no6qtgtl',
-      // v5.5.363: GitHub Issue #97 - NoroddH Wenzhi TS0225 radar
-      '_TZ3210_fkzihaxe8',
+      // v5.12: REMOVED _TZ3210_fkzihaxe8 - ghost (correct: _TZ321C_ in LEAPMW_5G8_RADAR)
     ],
     battery: false,
     noTemperature: true,    // v5.5.372: Forum fix - radar sensors have NO temp
@@ -2999,6 +2998,18 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         } else {
           // Suppress spam - don't log to reduce noise
         }
+      }
+      return;
+    }
+
+    // v5.12: Fix #97 generic distance handler
+    if (dpMap[dpId] && dpMap[dpId].cap === 'measure_luminance.distance') {
+      const rawDist = this._parseBufferValue(data.value || data.data);
+      const divisor = dpMap[dpId].divisor || 100;
+      const dist = Math.round((rawDist / divisor) * 100) / 100;
+      if (dist >= 0 && dist <= 20) {
+        this.log('[RADAR] 📏 DP' + dpId + ' distance=' + dist + 'm (raw:' + rawDist + ')');
+        this.setCapabilityValue('measure_luminance.distance', dist).catch(() => {});
       }
       return;
     }
