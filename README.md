@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.123 |
+| **App Version** | v5.11.124 |
 | **Device Fingerprints** | 4,731+ |
 | **Unique Product IDs** | 552 |
 | **Drivers** | 188 (139 Zigbee + 49 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.123** | v5.11.122: Fixed issue where TZE lux values were incorrectly clamped from 2000 to 10000. Real values ranged from 2177... |
+| **v5.11.124** | v5.11.123: No bug fixes reported in this release., No new features added in this release., No improvements made in th... |
+| **v5.11.123** | Universal Tuya Zigbee app v5.11.123: Fixed IR blaster sequence mismatch and adjusted TZE lux clamp value. |
 | **v5.11.122** | Universal Tuya Zigbee app v5.11.122: Fixed lux clamp issue and updated fingerprints. |
 | **v5.11.121** | Universal Tuya Zigbee app v5.11.121 adds new device variants and fixes issues with LEAPMW DP109/119 distance reporting. |
 | **v5.11.120** | Universal Tuya Zigbee app v5.11.120 adds new device variants and fixes distance drop issue for radar sensors. |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.110** | Universal Tuya Zigbee app v5.11.110 adds 28 new drivers and 1,105 new fingerprints, improving device compatibility. |
 | **v5.11.109** | Updated Universal Tuya Zigbee app to v5.11.109 with new drivers and fingerprints. |
 | **v5.11.108** | Universal Tuya Zigbee app v5.11.108 adds new device fingerprints and integrates SDK3 improvements for enhanced device... |
-| **v5.11.107** | Added support for new rain sensor device and improved fingerprint scanning with JohanBendz SDK3. |
 
 <!-- CHANGELOG_END -->
 
