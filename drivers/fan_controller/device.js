@@ -42,8 +42,8 @@ class FanControllerDevice extends ZigBeeDevice {
     // Safe flow card getter to prevent crashes on missing cards
     const safeGetCard = (type, id) => {
       try {
-        if (type === 'action') return this.homey.flow.getDeviceActionCard(id);
-        if (type === 'condition') return this.homey.flow.getDeviceConditionCard(id);
+        if (type === 'action') return this.homey.flow.getActionCard(id);
+        if (type === 'condition') return this.homey.flow.getConditionCard(id);
       } catch (e) {
         this.log(`[FLOW] Card '${id}' not available: ${e.message}`);
       }

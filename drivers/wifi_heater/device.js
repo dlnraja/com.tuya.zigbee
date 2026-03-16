@@ -18,10 +18,10 @@ class WiFiHeaterDevice extends TuyaLocalDevice {
   }
   _setupFlows() {
     const cf = this.homey.flow;
-    cf.getDeviceConditionCard('wifi_heater_is_heating').registerRunListener(async () => this.getCapabilityValue('onoff') === true);
-    cf.getDeviceConditionCard('wifi_heater_mode_is').registerRunListener(async (a) => this.getCapabilityValue('wifi_heater_mode') === a.mode);
-    cf.getDeviceActionCard('wifi_heater_set_mode').registerRunListener(async (a) => { await this._client.setDP('4', ({ manual: 0, program: 1, eco: 2 })[a.mode] || 0); });
-    cf.getDeviceActionCard('wifi_heater_set_temperature').registerRunListener(async (a) => { await this._client.setDP('2', Math.round(a.temperature)); });
+    cf.getConditionCard('wifi_heater_is_heating').registerRunListener(async () => this.getCapabilityValue('onoff') === true);
+    cf.getConditionCard('wifi_heater_mode_is').registerRunListener(async (a) => this.getCapabilityValue('wifi_heater_mode') === a.mode);
+    cf.getActionCard('wifi_heater_set_mode').registerRunListener(async (a) => { await this._client.setDP('4', ({ manual: 0, program: 1, eco: 2 })[a.mode] || 0); });
+    cf.getActionCard('wifi_heater_set_temperature').registerRunListener(async (a) => { await this._client.setDP('2', Math.round(a.temperature)); });
   }
   _fireFlowTriggers(changes) {
     const cf = this.homey.flow;

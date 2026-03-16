@@ -807,6 +807,11 @@ class IrBlasterDevice extends ZigBeeDevice {
   _setupTransmitProtocol(cluster) {
     cluster.on('startTransmitAck', (data) => {
       this.log('Transmit ACK received:', data);
+      const ackSeq = data.seq ?? data.sequenceNumber;
+      if (this._pendingIRSeq !== undefined && ackSeq !== undefined && ackSeq !== this._pendingIRSeq) {
+        this.log(`[IR-TX] Syncing seq from ACK: ${this._pendingIRSeq} -> ${ackSeq}`);
+        this._pendingIRSeq = ackSeq;
+      }
     });
 
     cluster.on('codeDataRequest', (data) => {
@@ -1176,8 +1181,8 @@ class IrBlasterDevice extends ZigBeeDevice {
     const maxlen = data.maxlen ?? data.maxLength ?? 0x32;
 
     if (seq !== this._pendingIRSeq) {
-      this.error(`Unexpected seq: expected ${this._pendingIRSeq}, got ${seq}`);
-      return;
+      this.log(`[IR-TX] Seq mismatch: expected ${this._pendingIRSeq}, got ${seq} - syncing`);
+      this._pendingIRSeq = seq;
     }
 
     const part = this._pendingIRMessage.substring(position, position + maxlen);
