@@ -1,12 +1,173 @@
 {
-  "timestamp": "2026-03-16T06:04:17.224Z",
-  "count": 0,
-  "byType": {},
+  "timestamp": "2026-03-16T07:38:54.923Z",
+  "count": 4,
+  "byType": {
+    "github": 4
+  },
   "newFingerprints": [],
   "deepResearch": {
     "researched": 0,
     "added": 0,
     "details": []
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "id": "imap_500812",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] Weekly Fingerprint Sync (8 new lines) (PR #160)",
+      "from": "github",
+      "date": "2026-03-16T06:33:57.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "-text=3D\"Failed to lo="
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "160",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_500813",
+      "type": "github",
+      "subj": "[dlnraja/com.tuya.zigbee] Weekly Fingerprint Sync (8 new lines) (PR #160)",
+      "from": "github",
+      "date": "2026-03-16T06:33:57.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": [
+          "ZBMINI",
+          "S31ZB",
+          "TRVZB"
+        ]
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [
+        {
+          "fingerprint": "ZBMINI",
+          "type": "pid",
+          "supported": true,
+          "drivers": [
+            "generic_diy",
+            "module_mini_switch",
+            "switch_1gang"
+          ]
+        },
+        {
+          "fingerprint": "S31ZB",
+          "type": "pid",
+          "supported": true,
+          "drivers": [
+            "generic_diy",
+            "plug_energy_monitor",
+            "switch_1gang"
+          ]
+        },
+        {
+          "fingerprint": "TRVZB",
+          "type": "pid",
+          "supported": true,
+          "drivers": [
+            "radiator_valve"
+          ]
+        }
+      ],
+      "ghInfo": {
+        "issueNum": "160",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": [
+            "ZBMINI",
+            "S31ZB",
+            "TRVZB"
+          ]
+        },
+        "isNew": false
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_500817",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] Presence Sensor Radar:   zb_product_id    \"TS0225\" - zb_manufacturer_name     \"_TZ321C_fkzihaxe8\" - Wenz[greeting] get any value. (Issue #97)",
+      "from": "github",
+      "date": "2026-03-16T06:58:35.000Z",
+      "fps": {
+        "mfr": [
+          "_TZ321C_fkzihaxe8"
+        ],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "settings"
+      ],
+      "xref": [
+        {
+          "fingerprint": "_TZ321C_fkzihaxe8",
+          "type": "mfr",
+          "supported": true,
+          "drivers": [
+            "presence_sensor_radar"
+          ]
+        }
+      ],
+      "ghInfo": {
+        "issueNum": "97",
+        "action": null,
+        "fps": {
+          "mfr": [
+            "_TZ321C_fkzihaxe8"
+          ],
+          "pid": []
+        },
+        "isNew": false
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    },
+    {
+      "id": "imap_500818",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] Weekly Fingerprint Sync (8 new lines) (PR #160)",
+      "from": "github",
+      "date": "2026-03-16T06:58:36.000Z",
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "160",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null
+    }
+  ]
 }
