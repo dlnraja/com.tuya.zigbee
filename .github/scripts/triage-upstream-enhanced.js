@@ -109,7 +109,7 @@ for(const it of issues){
     // v5.11.47: Stale sweep — close already-triaged issues where all FPs supported
     const mfrs2=extractMfrFromText(`${it.title||''} ${it.body||''}`);
     const allSupp=mfrs2.length>0&&mfrs2.every(m=>fps.has(m));
-    if(allSupp&&!DRY&&CAN_CLOSE){
+    if(allSupp&&!DRY&&CAN_CLOSE&&!hasUserSymptoms(it.body)){
       try{gh(`issue close ${it.number} -R ${REPO} -r "completed" -c "All fingerprints supported in v${VER}. Closing as resolved."`);/* verify-only */;console.log(`  [SWEEP] Closed #${it.number}`);}catch{}
     }
     continue;
@@ -128,12 +128,12 @@ for(const it of issues){
     }
   }
   let msg='';
-  if(found.length&&!missing.length) msg=supportedMsg(found)+bugInfo;
+  if(found.length&&!missing.length){if(hasUserSymptoms(it.body)){console.log('[SYMPTOM] #'+it.number+': skipping generic reply');continue;}msg=supportedMsg(found)+bugInfo;}
   else if(missing.length&&!found.length) msg=unsupportedMsg(missing);
   else if(found.length&&missing.length) msg=supportedMsg(found)+bugInfo+'\n\n---\n\n'+unsupportedMsg(missing);
   if(msg){post(it.number,msg);iCommented++;}
   // Auto-close if ALL FPs supported (only on own repo)
-  if(found.length&&!missing.length&&!DRY&&CAN_CLOSE){
+  if(found.length&&!missing.length&&!DRY&&CAN_CLOSE&&!hasUserSymptoms(it.body)){
     try{gh(`issue edit ${it.number} -R ${REPO} --add-label "awaiting-verification" -c "All FPs here are already in v${VER} — closing. Install the test version and re-pair if needed."`);iClosed++;console.log(`  Closed #${it.number} (all FPs supported)`);}catch(e){console.log(`  Close skip #${it.number}: ${e.message.slice(0,60)}`);}
   }
 }
