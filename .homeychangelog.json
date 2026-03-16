@@ -1,6 +1,6 @@
 {
   "5.11.123": {
-    "en": "Updated Universal Tuya Zigbee app to v5.11.123 with ."
+    "en": "Universal Tuya Zigbee app v5.11.123: Fixed IR blaster sequence mismatch and adjusted TZE lux clamp value."
   },
   "5.11.122": {
     "en": "Universal Tuya Zigbee app v5.11.122: Fixed lux clamp issue and updated fingerprints."
@@ -58,5 +58,8 @@
   },
   "5.11.102": {
     "en": "Universal Tuya Zigbee app v5.11.102 adds new device variants and updates 145 drivers with 4032 fingerprints."
+  },
+  "5.11.124": {
+    "en": "v5.11.123: No bug fixes reported in this release., No new features added in this release., No improvements made in this release., No changes in CI/CD processes."
   }
 }
