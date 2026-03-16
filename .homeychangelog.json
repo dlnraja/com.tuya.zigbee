@@ -1,4 +1,7 @@
 {
+  "5.11.122": {
+    "en": "Universal Tuya Zigbee app v5.11.122: Fixed lux clamp issue and updated fingerprints."
+  },
   "5.11.121": {
     "en": "Universal Tuya Zigbee app v5.11.121 adds new device variants and fixes issues with LEAPMW DP109/119 distance reporting."
   },
@@ -56,10 +59,7 @@
   "5.11.101": {
     "en": "Universal Tuya Zigbee app v5.11.101 adds new device variants, updates 145 drivers, and enhances fingerprint database to 5423."
   },
-  "5.11.100": {
-    "en": "Universal Tuya Zigbee app v5.11.100 adds ."
-  },
-  "5.11.122": {
-    "en": "v5.11.121: Fixed issue with LEAPMW DP109/119 where distance was silently dropped., Integrated hasUserSymptoms() into decision logic to reduce spam responses., Added new device variants and updated drivers., Updated diagnostics and resolved various issues., No relevant changes."
+  "5.11.123": {
+    "en": "v5.11.122: Fixed issue where TZE lux values were incorrectly clamped from 2000 to 10000. Real values ranged from 2177 to 2444., No new features added in this release., No improvements made in this release., Processed issues and pull requests for this release., Cross-referenced 3169 fingerprints with Z2M/ZHA/forum data."
   }
 }
