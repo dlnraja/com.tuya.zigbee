@@ -6,7 +6,24 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.123] - 2026-03-16
+## [5.11.124] - 2026-03-16
+
+### Bug Fixes
+- Fixed IR blaster Z2M protocol field sizes, resolving learning issues.
+- Corrected SDK3 flow card methods and IR blaster sequence mismatch.
+- Increased TZE lux clamp from 2000 to 10000 to accommodate real values (2177-2444).
+
+### New Features
+- None in this release.
+
+### Improvements
+- None in this release.
+
+### CI/CD
+- Diagnostics updated for 2026-03-16.
+---
+
+ [5.11.123] - 2026-03-16
 
 ### Bug Fixes
 - No bug fixes reported in this release.
