@@ -1,11 +1,42 @@
 {
-  "timestamp": "2026-03-16T06:04:05.180Z",
-  "appVersion": "5.11.123",
-  "forum": 0,
-  "github": 0,
-  "diagnostics": 3,
+  "timestamp": "2026-03-16T15:05:52.555Z",
+  "appVersion": "5.11.125",
+  "forum": 1,
+  "github": 1,
+  "diagnostics": 4,
   "diagNewFPs": 0,
   "diagCritical": 0,
-  "forumDetails": [],
-  "githubDetails": []
+  "forumDetails": [
+    {
+      "topic": 140352,
+      "post": 1637,
+      "user": "Peter_van_Werkhoven",
+      "fps": [
+        "_TZE200_pay2byax"
+      ],
+      "reply": "Hi Peter,\n\nThank you for your detailed report regarding the _TZE200_pay2byax sensor. Based on the fingerprint lookup, this device is recognized and is supported as a \"contact_sensor\" driver.\n\n### Open",
+      "model": "gh-gpt-4o-mini"
+    }
+  ],
+  "githubDetails": [
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "number": 160,
+      "type": "pr",
+      "user": "github-actions[bot]",
+      "fps": [
+        "SONOFF",
+        "danfoss",
+        "eWeLink",
+        "legrand",
+        "sonoff",
+        "xiaomi",
+        "test",
+        "bosch",
+        "ikea",
+        "tuya"
+      ],
+      "model": "gh-gpt-4o-mini"
+    }
+  ]
 }
