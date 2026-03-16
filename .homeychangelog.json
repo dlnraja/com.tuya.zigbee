@@ -1,4 +1,7 @@
 {
+  "5.11.124": {
+    "en": "Universal Tuya Zigbee app v5.11.124 fixes IR blaster learning issues and updates driver and fingerprint counts."
+  },
   "5.11.123": {
     "en": "Universal Tuya Zigbee app v5.11.123: Fixed IR blaster sequence mismatch and adjusted TZE lux clamp value."
   },
@@ -56,10 +59,7 @@
   "5.11.103": {
     "en": "Added local control for Tuya WiFi devices with SmartLife QR authentication and UDP discovery."
   },
-  "5.11.102": {
-    "en": "Universal Tuya Zigbee app v5.11.102 adds new device variants and updates 145 drivers with 4032 fingerprints."
-  },
-  "5.11.124": {
-    "en": "v5.11.123: No bug fixes reported in this release., No new features added in this release., No improvements made in this release., No changes in CI/CD processes."
+  "5.11.125": {
+    "en": "v5.11.124: Fixed IR blaster Z2M protocol field sizes, resolving learning issues., Corrected SDK3 flow card methods and IR blaster sequence mismatch., Increased TZE lux clamp from 2000 to 10000 to accommodate real values (2177-2444)., None in this release., None in this release."
   }
 }
