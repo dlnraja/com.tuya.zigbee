@@ -1,22 +1,11 @@
 {
-  "timestamp": "2026-03-15T05:56:34.728Z",
-  "appVersion": "5.11.119",
-  "forum": 1,
+  "timestamp": "2026-03-16T06:04:05.180Z",
+  "appVersion": "5.11.123",
+  "forum": 0,
   "github": 0,
-  "diagnostics": 4,
+  "diagnostics": 3,
   "diagNewFPs": 0,
   "diagCritical": 0,
-  "forumDetails": [
-    {
-      "topic": 140352,
-      "post": 1633,
-      "user": "Jeff_James",
-      "fps": [
-        "Zbeacon"
-      ],
-      "reply": "It looks like the DS01 contact sensor from Zbeacon is indeed supported by the Universal Tuya Zigbee app. Based on the fingerprints found, the appropriate driver for your device is the `contact_sensor`",
-      "model": "gh-gpt-4o-mini"
-    }
-  ],
+  "forumDetails": [],
   "githubDetails": []
 }

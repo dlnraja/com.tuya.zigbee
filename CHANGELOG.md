@@ -6,7 +6,22 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.122] - 2026-03-16
+## [5.11.123] - 2026-03-16
+
+### Bug Fixes
+- No bug fixes reported in this release.
+
+### New Features
+- No new features added in this release.
+
+### Improvements
+- No improvements made in this release.
+
+### CI/CD
+- No changes in CI/CD processes.
+---
+
+ [5.11.122] - 2026-03-16
 
 ### Bug Fixes
 - Fixed issue where TZE lux values were incorrectly clamped from 2000 to 10000. Real values ranged from 2177 to 2444.

@@ -69,10 +69,17 @@
       "stale": 0,
       "missing": 0,
       "alerts": 0
+    },
+    {
+      "ts": "2026-03-16T06:38:22.190Z",
+      "wf": "Nightly Auto-Process",
+      "stale": 0,
+      "missing": 0,
+      "alerts": 0
     }
   ],
   "alerts": [],
-  "lastRun": "2026-03-15T06:30:41.014Z",
+  "lastRun": "2026-03-16T06:38:22.190Z",
   "fileHealth": {
     "nightly-state.json": {
       "ok": true,
@@ -82,7 +89,7 @@
     "diagnostics-state.json": {
       "ok": true,
       "ageH": 1,
-      "size": 9986
+      "size": 10081
     },
     "pattern-data.json": {
       "ok": true,
