@@ -6,7 +6,23 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.120] - 2026-03-16
+## [5.11.121] - 2026-03-16
+
+### Bug Fixes
+- Fixed issue with LEAPMW DP109/119 where distance was silently dropped.
+- Integrated hasUserSymptoms() into decision logic to reduce spam responses.
+
+### New Features
+- Added new device variants and updated drivers.
+
+### Improvements
+- Updated diagnostics and resolved various issues.
+
+### CI/CD
+- No relevant changes.
+---
+
+ [5.11.120] - 2026-03-16
 
 ### Bug Fixes
 - Fixed issue where LEAPMW DP109/119 distance was silently dropped.
