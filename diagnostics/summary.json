@@ -1,9 +1,14 @@
 {
-  "timestamp": "2026-03-15T10:28:00.130Z",
+  "timestamp": "2026-03-16T10:37:44.348Z",
   "devices": [],
   "unmatchedFPs": [],
-  "errors": [],
+  "errors": [
+    {
+      "err": "-text=3D\"Failed to lo=",
+      "source": "gmail"
+    }
+  ],
   "sources": {
-    "gmail": 2
+    "gmail": 4
   }
 }
