@@ -1,4 +1,7 @@
 {
+  "5.11.120": {
+    "en": "Universal Tuya Zigbee app v5.11.120 adds new device variants and fixes distance drop issue for radar sensors."
+  },
   "5.11.119": {
     "en": "Universal Tuya Zigbee app v5.11.119 adds new device variants and updates drivers, now with ."
   },
@@ -56,10 +59,7 @@
   "5.11.99": {
     "en": "Universal Tuya Zigbee app v5.11.99: Regenerated driver images and fixed various draft detection issues."
   },
-  "5.11.98": {
-    "en": "Universal Tuya Zigbee app v5.11.98 fixes IAS issues and improves draft detection."
-  },
-  "5.11.120": {
-    "en": "v5.11.119: Addressed issues with state updates for better accuracy., No new features added in this release., No improvements made in this release., Batch close/respond state update implemented."
+  "5.11.121": {
+    "en": "v5.11.120: Fixed issue where LEAPMW DP109/119 distance was silently dropped., Added new device variants and updated drivers., Total drivers: 188, Total fingerprints: 4258"
   }
 }

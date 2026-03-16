@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.120 |
+| **App Version** | v5.11.121 |
 | **Device Fingerprints** | 4,731+ |
 | **Unique Product IDs** | 552 |
 | **Drivers** | 188 (139 Zigbee + 49 WiFi) |
@@ -44,7 +44,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-03-15 |
+| **Last Updated** | 2026-03-16 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.120** | v5.11.119: Addressed issues with state updates for better accuracy., No new features added in this release., No impro... |
+| **v5.11.121** | v5.11.120: Fixed issue where LEAPMW DP109/119 distance was silently dropped., Added new device variants and updated d... |
+| **v5.11.120** | Universal Tuya Zigbee app v5.11.120 adds new device variants and fixes distance drop issue for radar sensors. |
 | **v5.11.119** | Universal Tuya Zigbee app v5.11.119 adds new device variants and updates drivers, now with . |
 | **v5.11.118** | Added WiFi Camera driver (Tuya IPC) with local control and RTSP/snapshot streaming support. |
 | **v5.11.117** | Universal Tuya Zigbee app v5.11.117: Restored forum integration and updated drivers and fingerprints. |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.107** | Added support for new rain sensor device and improved fingerprint scanning with JohanBendz SDK3. |
 | **v5.11.106** | Universal Tuya Zigbee app v5.11.106 adds new device fingerprints and updates diagnostics. |
 | **v5.11.105** | Added TuyaZigbeeBridge for improved driver pairing and control, updated diagnostics. |
-| **v5.11.104** | Added support for Zigbee sub-device control via Tuya gateway and updated drivers and fingerprints. |
 
 <!-- CHANGELOG_END -->
 
@@ -355,4 +355,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-03-15*
+*Last updated: 2026-03-16*
