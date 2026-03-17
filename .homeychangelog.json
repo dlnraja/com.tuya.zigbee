@@ -1,4 +1,7 @@
 {
+  "5.11.127": {
+    "en": "Universal Tuya Zigbee app v5.11.127: Fixed SDK v2 flow card issues, improved device setup, and updated fingerprints."
+  },
   "5.11.126": {
     "en": "Universal Tuya Zigbee app v5.11.126: Fixed critical DP setup issue, updated device fingerprints, and improved driver categorization."
   },
@@ -56,10 +59,7 @@
   "5.11.106": {
     "en": "Universal Tuya Zigbee app v5.11.106 adds new device fingerprints and updates diagnostics."
   },
-  "5.11.105": {
-    "en": "Added TuyaZigbeeBridge for improved driver pairing and control, updated diagnostics."
-  },
-  "5.11.127": {
-    "en": "v5.11.126: Fix #97: Reordered DP setup before magic packet and added forced polling., Fix #1351: Moved _TZE284_bquwrqh1 from presence_sensor_radar to motion_sensor., Added new fingerprints: _TZ3000_22ugzkme (TS0041 button), _TZ3000_wzmuk9ai (TS011F plug), and PR#160 (ZBM5/SWV variants)., Updated driver count to 188 and fingerprints to 4260., No changes."
+  "5.11.128": {
+    "en": "v5.11.127: Removed SDK v2 flow card code from 8 drivers for SDK v3 compatibility., Fixed issue #97: Reordered DP setup before magic packet and added forced polling., Fixed issue #1351: Moved _TZE284_bquwrqh1 from presence_sensor_radar to motion_sensor., Added 2 new fingerprints: _TZ3000_22ugzkme (TS0041 button), _TZ3000_wzmuk9ai (TS011F plug)., Updated ."
   }
 }

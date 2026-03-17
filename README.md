@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.127 |
+| **App Version** | v5.11.128 |
 | **Device Fingerprints** | 4,733+ |
 | **Unique Product IDs** | 558 |
 | **Drivers** | 188 (139 Zigbee + 49 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.127** | v5.11.126: Fix #97: Reordered DP setup before magic packet and added forced polling., Fix #1351: Moved _TZE284_bquwrq... |
+| **v5.11.128** | v5.11.127: Removed SDK v2 flow card code from 8 drivers for SDK v3 compatibility., Fixed issue #97: Reordered DP setu... |
+| **v5.11.127** | Universal Tuya Zigbee app v5.11.127: Fixed SDK v2 flow card issues, improved device setup, and updated fingerprints. |
 | **v5.11.126** | Universal Tuya Zigbee app v5.11.126: Fixed critical DP setup issue, updated device fingerprints, and improved driver ... |
 | **v5.11.125** | Fixed radar sensor classification and added new device fingerprints for Tuya Zigbee. |
 | **v5.11.124** | Universal Tuya Zigbee app v5.11.124 fixes IR blaster learning issues and updates driver and fingerprint counts. |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.116** | Universal Tuya Zigbee app v5.11.116 includes a batch state update feature for improved device management. |
 | **v5.11.115** | Universal Tuya Zigbee app v5.11.115 fixes driver bugs and updates device fingerprints. |
 | **v5.11.114** | Universal Tuya Zigbee app v5.11.114 adds new  scripts and updates drivers and fingerprints. |
-| **v5.11.113** | Universal Tuya Zigbee app v5.11.113: Added 8 new device fingerprints, total 4258 fingerprints. |
 
 <!-- CHANGELOG_END -->
 
