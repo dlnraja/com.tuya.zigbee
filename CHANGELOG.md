@@ -6,7 +6,25 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.130] - 2026-03-17
+## [5.11.131] - 2026-03-17
+
+### Bug Fixes
+- Fixed pairing issue for switch_1gang by adding TS4100 productId.
+- Moved device _TZE284_bquwrqh1 from presence_sensor_radar to motion_sensor.
+
+### New Features
+- Added 4260 fingerprints and 188 drivers to support more devices.
+- Enhanced multi-protocol bug detection system for improved diagnostics.
+
+### Improvements
+- Comprehensive bug knowledge base added with multi-protocol patterns.
+
+### CI/CD
+- Forum state updated.
+- Diagnostics report updated for 2026-03-17.
+---
+
+ [5.11.130] - 2026-03-17
 
 ### Bug Fixes
 - Fixed pairing issue for switch_1gang by adding TS4100 productId.
