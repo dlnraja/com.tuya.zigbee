@@ -2,7 +2,7 @@
 'use strict';
 // v5.12.0: Forum cleanup via EDIT (avoids Discourse delete rate limits)
 // Replaces spam content with clean placeholder instead of deleting
-const fs = require('fs');
+const fs=require('fs');
 const path = require('path');
 
 // Auto-load .env

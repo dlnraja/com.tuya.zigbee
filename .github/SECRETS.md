@@ -9,8 +9,10 @@
 |--------|----------|-------------|
 | HOMEY_PAT | Athom App Store | Publish app, get versions, auto-publish draft to test |
 | HOMEY_PAT_API | Homey Cloud API | List devices, get Zigbee mesh, device diagnostics, interviews, flows, insights, crash logs |
-| HOMEY_EMAIL | Homey Account | Forum SSO login + OAuth promote |
-| HOMEY_PASSWORD | Homey Account | Forum SSO login + OAuth promote |
+| DISCOURSE_API_KEY | Discourse | **PRIORITY** Forum auth (admin API key, no CSRF/session) |
+| DISCOURSE_USERNAME | Discourse | Username for API key (default: dlnraja) |
+| HOMEY_EMAIL | Homey Account | Forum SSO login fallback + OAuth promote |
+| HOMEY_PASSWORD | Homey Account | Forum SSO login fallback + OAuth promote |
 | GH_PAT | GitHub | Cross-repo: forks, triage JohanBendz, issue comments. Scopes: repo, read:org |
 | GITHUB_TOKEN | GitHub (auto) | Current repo only. Cannot access other repos (#46566) |
 | GOOGLE_API_KEY | Google Gemini | AI analysis, vision (images), code gen, translation, long context |

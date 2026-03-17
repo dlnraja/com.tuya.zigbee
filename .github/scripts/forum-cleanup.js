@@ -2,7 +2,7 @@
 'use strict';
 // v5.11.29: Comprehensive forum cleanup — delete spam, edit bot signatures, merge consecutive posts
 // Run with: HOMEY_EMAIL=x HOMEY_PASSWORD=y node .github/scripts/forum-cleanup.js
-const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
+const {getForumAuth,refreshCsrf,authHeaders,fmtCk,FORUM}=require('./forum-auth');
 const {fetchWithRetry}=require('./retry-helper');
 
 const DRY=process.env.DRY_RUN==='true';
@@ -69,13 +69,7 @@ const TO_EDIT=[
      'If you\'re seeing "unknown" after pairing, try removing the device and re-pairing it.'},
 ];
 
-function getHeaders(auth,json){
-  const h=auth.type==='apikey'
-    ?{'User-Api-Key':auth.key}
-    :{'X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
-  if(json)h['Content-Type']='application/json';
-  return h;
-}
+const getHeaders=authHeaders;
 
 async function deletePost(postId,auth){
   const r=await fetchWithRetry(FORUM+'/posts/'+postId,{
