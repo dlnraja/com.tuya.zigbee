@@ -6,7 +6,23 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.125] - 2026-03-17
+## [5.11.126] - 2026-03-17
+
+### Bug Fixes
+- Fix #97: Reordered DP setup before magic packet and added forced polling.
+- Fix #1351: Moved _TZE284_bquwrqh1 from presence_sensor_radar to motion_sensor.
+
+### New Features
+- Added new fingerprints: _TZ3000_22ugzkme (TS0041 button), _TZ3000_wzmuk9ai (TS011F plug), and PR#160 (ZBM5/SWV variants).
+
+### Improvements
+- Updated driver count to 188 and fingerprints to 4260.
+
+### CI/CD
+- No changes.
+---
+
+ [5.11.125] - 2026-03-17
 
 ### Bug Fixes
 - Moved `_TZE284_bquwrqh1` from `presence_sensor_radar` to `motion_sensor` to correct sensor classification.
