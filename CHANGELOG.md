@@ -6,7 +6,27 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.127] - 2026-03-17
+## [5.11.128] - 2026-03-17
+
+### Bug Fixes
+- Added TS4100 productId to switch_1gang for _TZ3000_itb0omhv pairing fix.
+- Removed SDK v2 flow card code from 8 drivers for SDK v3 compatibility.
+- Fixed issue #97: Reordered DP setup before magic packet and added forced polling.
+- Fixed issue #1351: Moved _TZE284_bquwrqh1 from presence_sensor_radar to motion_sensor.
+
+### New Features
+- Added 188 drivers and 4260 fingerprints.
+- Added forum fingerprints: _TZ3000_22ugzkme (TS0041 button), _TZ3000_wzmuk9ai (TS011F plug), PR#160 (ZBM5/SWV variants).
+
+### Diagnostics
+- Updated diagnostics report for March 17, 2026.
+- Added radar diagnostic auto-healing automation.
+
+### CI/CD
+- Diagnostics run on each version release.
+---
+
+ [5.11.127] - 2026-03-17
 
 ### Bug Fixes
 - Removed SDK v2 flow card code from 8 drivers for SDK v3 compatibility.

@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.128",
+  "version": "5.11.129",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -69970,6 +69970,7 @@
           "ZG-302Z1",
           "TS0101",
           "TS0003",
+          "TS4100",
           "TS011F",
           "ZBM5-2C-120",
           "ZBM5-3C-120"
