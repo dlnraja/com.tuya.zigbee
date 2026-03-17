@@ -1,111 +1,12 @@
 {
-  "timestamp": "2026-03-16T19:31:59.422Z",
-  "count": 3,
-  "byType": {
-    "device_issue": 1,
-    "diagnostic": 1,
-    "github": 1
-  },
+  "timestamp": "2026-03-17T07:25:28.802Z",
+  "count": 0,
+  "byType": {},
   "newFingerprints": [],
   "deepResearch": {
     "researched": 0,
     "added": 0,
     "details": []
   },
-  "diagnostics": [
-    {
-      "id": "imap_500881",
-      "type": "device_issue",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "user",
-      "date": "2026-03-16T12:30:26.000Z",
-      "fps": {
-        "mfr": [
-          "_TZE200_pay2byax"
-        ],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [
-        {
-          "fingerprint": "_TZE200_pay2byax",
-          "type": "mfr",
-          "supported": true,
-          "drivers": [
-            "contact_sensor"
-          ]
-        }
-      ],
-      "ghInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    },
-    {
-      "id": "imap_500892",
-      "type": "diagnostic",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
-      "from": "homey_system",
-      "date": "2026-03-16T13:54:46.000Z",
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [
-        "button_emergency_sos",
-        "de4af721-cd10-45b4-a9d1-32407b",
-        "button_emergency_so",
-        "de4af721-cd10-45b4-a",
-        "ANNOUNCE"
-      ],
-      "xref": [],
-      "ghInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    },
-    {
-      "id": "imap_500936",
-      "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] Presence Sensor Radar:   zb_product_id    \"TS0225\" - zb_manufacturer_name     \"_TZ321C_fkzihaxe8\" - Wenz[greeting] get any value. (Issue #97)",
-      "from": "github",
-      "date": "2026-03-16T18:50:14.000Z",
-      "fps": {
-        "mfr": [
-          "_TZ321C_fkzihaxe8"
-        ],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [
-        "settings"
-      ],
-      "xref": [
-        {
-          "fingerprint": "_TZ321C_fkzihaxe8",
-          "type": "mfr",
-          "supported": true,
-          "drivers": [
-            "presence_sensor_radar"
-          ]
-        }
-      ],
-      "ghInfo": {
-        "issueNum": "97",
-        "action": null,
-        "fps": {
-          "mfr": [
-            "_TZ321C_fkzihaxe8"
-          ],
-          "pid": []
-        },
-        "isNew": false
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    }
-  ]
+  "diagnostics": []
 }
