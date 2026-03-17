@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.129 |
+| **App Version** | v5.11.130 |
 | **Device Fingerprints** | 4,733+ |
 | **Unique Product IDs** | 559 |
 | **Drivers** | 188 (139 Zigbee + 49 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.129** | v5.11.128: Added TS4100 productId to switch_1gang for _TZ3000_itb0omhv pairing fix., Removed SDK v2 flow card code fr... |
+| **v5.11.130** | v5.11.129: Added TS4100 productId to switch_1gang for _TZ3000_itb0omhv pairing fix., Removed SDK v2 flow card code fr... |
+| **v5.11.129** | Universal Tuya Zigbee app v5.11.129 adds new device support and critical fixes for improved compatibility. |
 | **v5.11.128** | Universal Tuya Zigbee app v5.11.128 adds new device support and critical fixes for SDK compatibility. |
 | **v5.11.127** | Universal Tuya Zigbee app v5.11.127: Fixed SDK v2 flow card issues, improved device setup, and updated fingerprints. |
 | **v5.11.126** | Universal Tuya Zigbee app v5.11.126: Fixed critical DP setup issue, updated device fingerprints, and improved driver ... |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.118** | Added WiFi Camera driver (Tuya IPC) with local control and RTSP/snapshot streaming support. |
 | **v5.11.117** | Universal Tuya Zigbee app v5.11.117: Restored forum integration and updated drivers and fingerprints. |
 | **v5.11.116** | Universal Tuya Zigbee app v5.11.116 includes a batch state update feature for improved device management. |
-| **v5.11.115** | Universal Tuya Zigbee app v5.11.115 fixes driver bugs and updates device fingerprints. |
 
 <!-- CHANGELOG_END -->
 
