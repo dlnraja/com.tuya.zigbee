@@ -2,7 +2,7 @@
 'use strict';
 const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
-const{getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
+const{getForumAuth,refreshCsrf,authHeaders,fmtCk,FORUM}=require('./forum-auth');
 const{textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost}=require('./ai-helper');
 const{sanitize}=require('./sanitize-forum');
 const TID=140352;
@@ -14,10 +14,7 @@ function setGlobalCooldown(){try{fs.mkdirSync(path.dirname(CD_FILE),{recursive:t
 const strip=h=>(h||'').replace(/<[^>]+>/g,'').trim();
 function loadState(){try{return JSON.parse(fs.readFileSync(STATE_FILE,'utf8'))}catch{return{}}}
 function saveState(s){fs.mkdirSync(path.dirname(STATE_FILE),{recursive:true});fs.writeFileSync(STATE_FILE,JSON.stringify(s,null,2)+'\n')}
-function getHeaders(auth,json){
-  const h=auth.type==='apikey'?{'User-Api-Key':auth.key}:{'X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
-  if(json)h['Content-Type']='application/json';return h;
-}
+const getHeaders=authHeaders;
 
 async function getLastOwnPost(tid){
   try{

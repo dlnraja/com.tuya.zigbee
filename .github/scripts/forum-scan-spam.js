@@ -5,7 +5,7 @@
 // Run: HOMEY_EMAIL=xxx HOMEY_PASSWORD=yyy node .github/scripts/forum-scan-spam.js
 // Or:  HOMEY_EMAIL=x HOMEY_PASSWORD=y node .github/scripts/forum-scan-spam.js
 
-const fs = require('fs');
+const fs=require('fs');
 const path = require('path');
 
 // Auto-load .env from project root

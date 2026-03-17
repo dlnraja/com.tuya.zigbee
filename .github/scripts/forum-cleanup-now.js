@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 // v5.12.0: Immediate forum cleanup — delete hidden/spam posts, edit bot signatures
-const fs = require('fs');
+const fs=require('fs');
 const path = require('path');
 
 // Auto-load .env

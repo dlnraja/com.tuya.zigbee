@@ -4,7 +4,7 @@
  * v5.12.1: Fixed dedup to fetch LAST 15 posts (not first page)
  */
 const fs=require('fs'),path=require('path');
-const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
+const {getForumAuth,refreshCsrf,authHeaders,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
 const{textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost}=require('./ai-helper');
 const{sanitize}=require('./sanitize-forum');
@@ -12,13 +12,7 @@ const{fetchThreadContext,formatThreadContext}=require('./thread-context');
 const TOPIC=140352;
 const strip=h=>(h||'').replace(/<[^>]+>/g,'').trim();
 
-async function getHeaders(auth,json){
-  const h=auth.type==='apikey'
-    ?{'User-Api-Key':auth.key}
-    :{'X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
-  if(json)h['Content-Type']='application/json';
-  return h;
-}
+const getHeaders=authHeaders;
 
 async function postToForum(content,auth){
   if(TOPIC!==140352){console.error('BLOCKED: refusing to post on T'+TOPIC);return{}}
