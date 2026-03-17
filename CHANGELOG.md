@@ -6,7 +6,25 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.124] - 2026-03-16
+## [5.11.125] - 2026-03-17
+
+### Bug Fixes
+- Moved `_TZE284_bquwrqh1` from `presence_sensor_radar` to `motion_sensor` to correct sensor classification.
+
+### New Features
+- Added new fingerprints:
+  - `_TZ3000_22ugzkme` for TS0041 button.
+  - `_TZ3000_wzmuk9ai` for TS011F plug.
+  - Fingerprints for ZBM5/SWV variants.
+
+### Improvements
+- Conducted a comprehensive diagnostic analysis and resolved various issues.
+
+### CI/CD
+- Updated forum state.
+---
+
+ [5.11.124] - 2026-03-16
 
 ### Bug Fixes
 - Fixed IR blaster Z2M protocol field sizes, resolving learning issues.
