@@ -1,4 +1,7 @@
 {
+  "5.11.130": {
+    "en": "Universal Tuya Zigbee app v5.11.130: Added new device fingerprints, fixed critical SDK compatibility issues, and improved bug detection."
+  },
   "5.11.129": {
     "en": "Universal Tuya Zigbee app v5.11.129 adds new device support and critical fixes for improved compatibility."
   },
@@ -56,10 +59,7 @@
   "5.11.109": {
     "en": "Updated Universal Tuya Zigbee app to v5.11.109 with new drivers and fingerprints."
   },
-  "5.11.108": {
-    "en": "Universal Tuya Zigbee app v5.11.108 adds new device fingerprints and integrates SDK3 improvements for enhanced device support."
-  },
-  "5.11.130": {
-    "en": "v5.11.129: Added TS4100 productId to switch_1gang for _TZ3000_itb0omhv pairing fix., Removed SDK v2 flow card code from 8 drivers for SDK v3 compatibility., Fixed issue with DP setup order before magic packet, added forced polling., Moved _TZE284_bquwrqh1 from presence_sensor_radar to motion_sensor., Added 188 drivers and 4260 fingerprints to the app."
+  "5.11.131": {
+    "en": "v5.11.130: Fixed pairing issue for switch_1gang by adding TS4100 productId., Removed SDK v2 flow card code from 8 drivers for SDK v3 compatibility., Added new fingerprints: _TZ3000_22ugzkme (TS0041 button), _TZ3000_wzmuk9ai (TS011F plug), and ZBM5/SWV variants., Enhanced multi-protocol bug detection system., Added comprehensive bug knowledge base with multi-protocol patterns."
   }
 }
