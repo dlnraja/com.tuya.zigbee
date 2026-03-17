@@ -1,4 +1,7 @@
 {
+  "5.11.125": {
+    "en": "Fixed radar sensor classification and added new device fingerprints for Tuya Zigbee."
+  },
   "5.11.124": {
     "en": "Universal Tuya Zigbee app v5.11.124 fixes IR blaster learning issues and updates driver and fingerprint counts."
   },
@@ -56,10 +59,7 @@
   "5.11.104": {
     "en": "Added support for Zigbee sub-device control via Tuya gateway and updated drivers and fingerprints."
   },
-  "5.11.103": {
-    "en": "Added local control for Tuya WiFi devices with SmartLife QR authentication and UDP discovery."
-  },
-  "5.11.125": {
-    "en": "v5.11.124: Fixed IR blaster Z2M protocol field sizes, resolving learning issues., Corrected SDK3 flow card methods and IR blaster sequence mismatch., Increased TZE lux clamp from 2000 to 10000 to accommodate real values (2177-2444)., None in this release., None in this release."
+  "5.11.126": {
+    "en": "v5.11.125: Moved `_TZE284_bquwrqh1` from `presence_sensor_radar` to `motion_sensor` to correct sensor classification., Added new fingerprints:, Conducted a comprehensive diagnostic analysis and resolved various issues., Updated forum state."
   }
 }

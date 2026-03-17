@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.125",
+  "version": "5.11.126",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -48284,7 +48284,8 @@
           "eWeLink",
           "_TZ3000_6km7djcm",
           "_TYZB01_1xktopx6",
-          "_TYZB01_4qw4rl1u"
+          "_TYZB01_4qw4rl1u",
+          "_TZ3000_22ugzkme"
         ],
         "productId": [
           "TS0041",
@@ -62212,6 +62213,7 @@
           "_TZE284_0zse7xqg",
           "_TZE284_mrf6vtua",
           "_TZE284_tre6haif",
+          "_TZE284_bquwrqh1",
           "tuyatec-53o41joc",
           "tuyatec-b5g40alm",
           "tuyatec-bd5faf9p",
@@ -63427,6 +63429,7 @@
           "_TZ3000_wamqdr3f",
           "_TZ3000_ww6drja5",
           "_TZ3000_wxtp7c5y",
+          "_TZ3000_wzmuk9ai",
           "_TZ3000_y4ona9me",
           "_TZ3000_ynmowqk2",
           "_TZ3000_zloso4jk",
@@ -65353,7 +65356,6 @@
           "_TZE284_4qznlkbu",
           "_TZE284_9ovska9w",
           "_TZE284_ar5przmw",
-          "_TZE284_bquwrqh1",
           "_TZE284_chcnj5st",
           "_TZE284_debczeci",
           "_TZE284_gkfb",
@@ -69968,7 +69970,9 @@
           "ZG-302Z1",
           "TS0101",
           "TS0003",
-          "TS011F"
+          "TS011F",
+          "ZBM5-2C-120",
+          "ZBM5-3C-120"
         ],
         "endpoints": {
           "1": {
@@ -80637,7 +80641,11 @@
         "productId": [
           "TS0601_watervalve",
           "TS0601",
-          "SWV-ZN"
+          "SWV-ZN",
+          "SWV-ZNE",
+          "SWV-ZFE",
+          "SWV-ZNU",
+          "SWV-ZFU"
         ]
       },
       "settings": [
