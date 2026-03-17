@@ -2389,15 +2389,19 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     await super.onNodeInit({ zclNode });
     await this._setupZclClusters(zclNode);
 
-    // v5.5.518: Send Tuya magic packet for devices that need it (LeapMMW 5.8G hybrid)
+    // v5.5.270: CRITICAL FIX - Setup Tuya DP listeners for mains-powered sensors too!
+    // This was missing and caused presence not to work on TZE284 devices
+    await this._setupTuyaDPListeners(zclNode);
+
+// v5.5.518: Send Tuya magic packet for devices that need it (LeapMMW 5.8G hybrid)
     // These devices don't show cluster 61184 in interview but still use Tuya DPs
     if (config.needsMagicPacket) {
       await this._sendTuyaMagicPacket(zclNode);
     }
 
-    // v5.5.270: CRITICAL FIX - Setup Tuya DP listeners for mains-powered sensors too!
-    // This was missing and caused presence not to work on TZE284 devices
-    await this._setupTuyaDPListeners(zclNode);
+    await new Promise(r => setTimeout(r, 3000));
+      this.log('[RADAR] Force DP poll after magic packet');
+      await this._requestDPRefresh(zclNode);
 
     // v5.5.325: RONNY #782 - Force remove battery for mains-powered sensors
     // noBatteryCapability flag ensures battery is NEVER shown for these devices
@@ -4227,3 +4231,4 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 }
 
 module.exports = PresenceSensorRadarDevice;
+
