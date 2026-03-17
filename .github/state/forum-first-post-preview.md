@@ -1,6 +1,6 @@
-# 🏠 Universal Tuya Zigbee v5.11.125
+# 🏠 Universal Tuya Zigbee v5.11.132
 
-> **188 drivers** · **4731+ fingerprints** · Updated 2026-03-16
+> **188 drivers** · **4733+ fingerprints** · Updated 2026-03-17
 
 Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.
 
@@ -8,17 +8,17 @@ Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehens
 
 **Stable:** [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/) · **Test:** [Test Channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · **Source:** [GitHub](https://github.com/dlnraja/com.tuya.zigbee)
 
-## What's New (v5.11.125)
+## What's New (v5.11.132)
 
-Fixed IR blaster Z2M protocol field sizes, resolving learning issues., Corrected SDK3 flow card methods and IR blaster sequence mismatch., Increased TZE lux clamp from 2000 to 10000 to accommodate real values (2177-2444)., None in this release., None in this release.
+Fixed pairing issue for switch_1gang by adding TS4100 productId., Moved device _TZE284_bquwrqh1 from presence_sensor_radar to motion_sensor., Added 4260 fingerprints and 188 drivers to support more devices., Enhanced multi-protocol bug detection system for improved diagnostics., Comprehensive bug knowledge base added with multi-protocol patterns.
 
 ## Supported Devices
 
 | Category | Drivers | FPs |
 |---|---|---|
-| 🔌 Socket | 47 | 917 |
+| 🔌 Socket | 47 | 918 |
 | 💡 Light | 21 | 442 |
-| 📡 Sensor | 44 | 2151 |
+| 📡 Sensor | 44 | 2152 |
 | 🌡️ Thermostat | 11 | 342 |
 | 🪟 Windowcoverings | 3 | 175 |
 | 🔐 Lock | 4 | 22 |
@@ -45,13 +45,13 @@ Fixed IR blaster Z2M protocol field sizes, resolving learning issues., Corrected
 
 <details><summary>Previous versions</summary>
 
-**v5.11.124:** Universal Tuya Zigbee app v5.11.124 fixes IR blaster learning issues and updates driver and fingerprint counts.
+**v5.11.131:** Universal Tuya Zigbee app v5.11.131 adds new device fingerprints and enhances multi-protocol bug detection.
 
-**v5.11.123:** Universal Tuya Zigbee app v5.11.123: Fixed IR blaster sequence mismatch and adjusted TZE lux clamp value.
+**v5.11.130:** Universal Tuya Zigbee app v5.11.130: Added new device fingerprints, fixed critical SDK compatibility issues, and improved bug detection.
 
-**v5.11.122:** Universal Tuya Zigbee app v5.11.122: Fixed lux clamp issue and updated fingerprints.
+**v5.11.129:** Universal Tuya Zigbee app v5.11.129 adds new device support and critical fixes for improved compatibility.
 
-**v5.11.121:** Universal Tuya Zigbee app v5.11.121 adds new device variants and fixes issues with LEAPMW DP109/119 distance reporting.
+**v5.11.128:** Universal Tuya Zigbee app v5.11.128 adds new device support and critical fixes for SDK compatibility.
 
 </details>
 
@@ -66,4 +66,4 @@ This app is free and open-source. If it's useful to you, a small donation helps 
 **PayPal:** [paypal.me/dlnraja](https://paypal.me/dlnraja) · **Revolut:** [revolut.me/dylanoul](https://revolut.me/dylanoul)
 
 ---
-*Last updated 2026-03-16 — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*
+*Last updated 2026-03-17 — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*
