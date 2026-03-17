@@ -1,4 +1,7 @@
 {
+  "5.11.126": {
+    "en": "Universal Tuya Zigbee app v5.11.126: Fixed critical DP setup issue, updated device fingerprints, and improved driver categorization."
+  },
   "5.11.125": {
     "en": "Fixed radar sensor classification and added new device fingerprints for Tuya Zigbee."
   },
@@ -56,10 +59,7 @@
   "5.11.105": {
     "en": "Added TuyaZigbeeBridge for improved driver pairing and control, updated diagnostics."
   },
-  "5.11.104": {
-    "en": "Added support for Zigbee sub-device control via Tuya gateway and updated drivers and fingerprints."
-  },
-  "5.11.126": {
-    "en": "v5.11.125: Moved `_TZE284_bquwrqh1` from `presence_sensor_radar` to `motion_sensor` to correct sensor classification., Added new fingerprints:, Conducted a comprehensive diagnostic analysis and resolved various issues., Updated forum state."
+  "5.11.127": {
+    "en": "v5.11.126: Fix #97: Reordered DP setup before magic packet and added forced polling., Fix #1351: Moved _TZE284_bquwrqh1 from presence_sensor_radar to motion_sensor., Added new fingerprints: _TZ3000_22ugzkme (TS0041 button), _TZ3000_wzmuk9ai (TS011F plug), and PR#160 (ZBM5/SWV variants)., Updated driver count to 188 and fingerprints to 4260., No changes."
   }
 }
