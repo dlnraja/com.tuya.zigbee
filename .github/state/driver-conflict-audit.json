@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-16T15:17:58.530Z",
+  "timestamp": "2026-03-17T15:22:17.835Z",
   "pidConflicts": [
     {
       "pid": "TS004F",
@@ -1373,6 +1373,17 @@
         "TS0201",
         "TS0601",
         "TY0201"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TZ3000_wzmuk9ai",
+      "drivers": [
+        "climate_sensor",
+        "plug_energy_monitor"
+      ],
+      "sharedPids": [
+        "TS0601"
       ],
       "risk": "high"
     },
@@ -2938,7 +2949,7 @@
     "totalDrivers": 188,
     "pidConflicts": 62,
     "highSeverity": 21,
-    "mfrConflicts": 139,
+    "mfrConflicts": 140,
     "orphans": 49,
     "splitSuggestions": 21
   }

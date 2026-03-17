@@ -1,42 +1,22 @@
 {
-  "timestamp": "2026-03-16T15:05:52.555Z",
-  "appVersion": "5.11.125",
+  "timestamp": "2026-03-17T15:10:08.541Z",
+  "appVersion": "5.11.132",
   "forum": 1,
-  "github": 1,
-  "diagnostics": 4,
+  "github": 0,
+  "diagnostics": 0,
   "diagNewFPs": 0,
   "diagCritical": 0,
   "forumDetails": [
     {
       "topic": 140352,
-      "post": 1637,
+      "post": 1638,
       "user": "Peter_van_Werkhoven",
       "fps": [
-        "_TZE200_pay2byax"
+        "_TZE200_vvmbj46n"
       ],
-      "reply": "Hi Peter,\n\nThank you for your detailed report regarding the _TZE200_pay2byax sensor. Based on the fingerprint lookup, this device is recognized and is supported as a \"contact_sensor\" driver.\n\n### Open",
+      "reply": "Hi Peter,\n\nThank you for your message and concern! I'm doing well, and I appreciate your patience.\n\nRegarding your LCD Temperature Humidity sensor (_TZE200_vvmbj46n), I see that it has been identified",
       "model": "gh-gpt-4o-mini"
     }
   ],
-  "githubDetails": [
-    {
-      "repo": "dlnraja/com.tuya.zigbee",
-      "number": 160,
-      "type": "pr",
-      "user": "github-actions[bot]",
-      "fps": [
-        "SONOFF",
-        "danfoss",
-        "eWeLink",
-        "legrand",
-        "sonoff",
-        "xiaomi",
-        "test",
-        "bosch",
-        "ikea",
-        "tuya"
-      ],
-      "model": "gh-gpt-4o-mini"
-    }
-  ]
+  "githubDetails": []
 }
