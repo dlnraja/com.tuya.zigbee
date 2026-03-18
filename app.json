@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.132",
+  "version": "5.11.133",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -47526,8 +47526,8 @@
         "learnmode": {
           "image": "/drivers/button_emergency_sos/assets/learnmode.svg",
           "instruction": {
-            "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+            "en": "Press and hold the SOS button for 5 seconds. KEEP PRESSING the button every 10 seconds during pairing to prevent device sleep and enrollment timeout.",
+            "fr": "Appuyez et maintenez le bouton SOS pendant 5 secondes. CONTINUEZ à appuyer toutes les 10 secondes pendant l appairage pour éviter la mise en veille."
           }
         }
       },
@@ -53075,7 +53075,8 @@
       "capabilities": [
         "alarm_contact",
         "measure_battery",
-        "alarm_tamper"
+        "alarm_tamper",
+        "measure_luminance"
       ],
       "energy": {
         "batteries": [
