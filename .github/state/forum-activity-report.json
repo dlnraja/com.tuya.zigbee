@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-17T15:10:11.790Z",
+  "timestamp": "2026-03-18T03:38:37.930Z",
   "username": "dlnraja",
   "topicCount": 1,
   "activityCount": 300,
@@ -7,7 +7,7 @@
   "refCount": 64,
   "bookmarkCount": 0,
   "fullThreads": 30,
-  "totalFPs": 714,
+  "totalFPs": 715,
   "unsupportedFPs": [
     "_TZ3000_zgyzgd",
     "_TZE204_ztqnh5c",
@@ -21,5 +21,5 @@
     "_TZ3000_amdymr7",
     "_TZ3000_ksw8qtm"
   ],
-  "aiAnalysis": "**Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer**\n\n1. **Key User Requests:**\n   - Users are seeking updates and fixes for various Zigbee devices that are currently unsupported or malfunctioning.\n   - There is a recurring request for improved installation processes and troubleshooting guidance for users facing issues with device pairing.\n\n2. **Devices People Need:**\n   - Users have specifically mentioned the following unsupported devices: \n     - _TZ3000_zgyzgd\n     - _TZE204_ztqnh5c\n     - _TZ3000_ztc6ggyl\n     - _TZ3000_akwixq9i\n     - _TZ3000_hiqrjkxx\n     - _TZ3000_cehuw1l2\n     - _TZ3000_dfgbtub\n     - _TZ3000_dfgbub0\n     - _TZ3000_tvuarska\n     - _TZ3000_amdymr7\n     - _TZ3000_ksw8qtm\n   - Additionally, users are requesting support for contact sensors and smart knobs, like the _TZ3000_gwkzibhs (TS004F).\n\n3. **Issues to Fix:**\n   - Persistent issues with contact sensors being recognized as \"unknown\" and failing to install.\n   - Users report that certain versions of the app do not support specific devices, indicating a need for better compatibility.\n   - Installation failures and errors during the app installation process from GitHub.\n\n4. **Action Items:**\n   - Prioritize adding support for the listed unsupported devices, particularly the contact sensors and smart knobs.\n   - Investigate and resolve the installation issues reported by users, ensuring a smoother onboarding experience.\n   - Provide clearer documentation or troubleshooting steps for users encountering pairing issues.\n   - Engage with the community to gather feedback on recent updates and maintain communication regarding ongoing development efforts."
+  "aiAnalysis": "**Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer**\n\n1. **Key User Requests:**\n   - Users are seeking updates on device compatibility and installation issues, particularly for specific sensors and switches.\n   - There is a demand for improved support and communication from the maintainer, as users express concern over the lack of responses.\n\n2. **Devices People Need:**\n   - Users are requesting support for various devices, including:\n     - Contact sensors (_TZE200_pay2byax, _TZ3000_gwkzibhs)\n     - Soil fertilizer level sensors\n     - Smart knobs (_TZ3000_22ugzkme)\n     - Other unspecified Zigbee devices that are currently unsupported.\n\n3. **Issues to Fix:**\n   - Many users report installation failures and devices being recognized as \"unknown\" or unsupported.\n   - Specific firmware versions (e.g., 5.11.115, 5.11.118) are mentioned in relation to persistent issues with contact sensors.\n   - A list of unsupported device fingerprints indicates a need for broader compatibility.\n\n4. **Action Items:**\n   - Prioritize addressing the installation issues and compatibility for the listed devices, particularly those frequently mentioned by users.\n   - Increase communication frequency with the community to provide updates on ongoing issues and device support.\n   - Consider releasing a patch or update that addresses the most common problems reported in the forum.\n   - Engage with users to gather more detailed feedback on specific devices to enhance support and compatibility in future versions."
 }
