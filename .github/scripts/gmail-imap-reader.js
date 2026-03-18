@@ -53,7 +53,7 @@ async function readViaIMAP(opts={}){
             const date=m.envelope?.date?.toISOString()||'';
             const uid=m.uid||m.seq||out.length+1;
             let body=subj;
-            if(m.source){try{const raw=m.source.toString('utf8');const parts=raw.split(/\r?\n\r?\n/);if(parts.length>1)body=parts.slice(1).join('\n').substring(0,8000)}catch{}}
+            if(m.source){try{const raw=m.source.toString('utf8');const parts=raw.split(/\r?\n\r?\n/);if(parts.length>1)body=parts.slice(1).join('\n').replace(/<[^>]+>/g,' ').substring(0,8000)}catch{}}
             out.push({id:'imap_'+uid,subj,from,date,body,labels:[]});
           }catch(fe){console.log('[IMAP] skip:',fe.message)}
         }
