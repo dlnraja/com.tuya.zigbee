@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.132 |
+| **App Version** | v5.11.133 |
 | **Device Fingerprints** | 4,733+ |
 | **Unique Product IDs** | 559 |
 | **Drivers** | 188 (139 Zigbee + 49 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.132** | v5.11.131: Fixed pairing issue for switch_1gang by adding TS4100 productId., Moved device _TZE284_bquwrqh1 from prese... |
+| **v5.11.133** | v5.11.132: Implemented batch close/respond state update for improved device management., No new features added in thi... |
+| **v5.11.132** | Updated Universal Tuya Zigbee app with batch state update feature. |
 | **v5.11.131** | Universal Tuya Zigbee app v5.11.131 adds new device fingerprints and enhances multi-protocol bug detection. |
 | **v5.11.130** | Universal Tuya Zigbee app v5.11.130: Added new device fingerprints, fixed critical SDK compatibility issues, and impr... |
 | **v5.11.129** | Universal Tuya Zigbee app v5.11.129 adds new device support and critical fixes for improved compatibility. |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.121** | Universal Tuya Zigbee app v5.11.121 adds new device variants and fixes issues with LEAPMW DP109/119 distance reporting. |
 | **v5.11.120** | Universal Tuya Zigbee app v5.11.120 adds new device variants and fixes distance drop issue for radar sensors. |
 | **v5.11.119** | Universal Tuya Zigbee app v5.11.119 adds new device variants and updates drivers, now with . |
-| **v5.11.118** | Added WiFi Camera driver (Tuya IPC) with local control and RTSP/snapshot streaming support. |
 
 <!-- CHANGELOG_END -->
 
@@ -355,4 +355,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-03-17*
+*Last updated: 2026-03-18*
