@@ -68,17 +68,7 @@ class ContactSensorDevice extends HybridSensorBase {
         },
         debounce: 500 // v5.5.343: 500ms debounce to prevent rapid toggling
       },
-      // Alternative contact DP - DP 101
-      // v5.5.531: Same inversion logic
-      101: {
-        capability: 'alarm_contact',
-        transform: (v) => {
-          if (typeof v === 'boolean') return !v;
-          return v === 0 || v === 'open';
-        },
-        debounce: 500
-      },
-
+      // v5.12.2: DP 101 now mapped to measure_luminance only (line 128)
       // ═══════════════════════════════════════════════════════════════════
       // BATTERY (multiple DPs depending on model)
       // ═══════════════════════════════════════════════════════════════════
@@ -162,7 +152,8 @@ class ContactSensorDevice extends HybridSensorBase {
     // v5.5.713: Expanded list of sensors that report inverted by default
     // v5.5.776: REMOVED HOBEIAN - Lasse_K forum Jan 2026 confirms ZG-102Z works correctly WITHOUT inversion
     // These sensors report closed=alarm, open=no alarm (inverted from standard)
-    // v5.5.908: Added _TZ3000_996rpfy6 (blutch32 forum #1011 - always shows "no")
+    // v5.5.908: Added _TZ3000_996rpfy6 (blutch32 forum - always shows no)
+    // v5.12.2: Added _TZE200_pay2byax (ZG-102ZL reversed contact)
     const invertedByDefault = [
       // v5.12.1: REMOVED HOBEIAN — Lasse_K #1592 'always ja': standard TS0203 IAS bit0=1=open maps directly to alarm_contact=true, no inversion needed
       // 'HOBEIAN',  // DO NOT INVERT — causes stuck alarm_contact=true when closed
@@ -174,6 +165,7 @@ class ContactSensorDevice extends HybridSensorBase {
       '_TZ3000_bzxloft2',  // Known inverted (forum reports)
       '_TZ3000_yxqnffam',  // Known inverted (forum reports)
       '_TZ3000_996rpfy6',  // v5.5.908: blutch32 forum - TS0203 always "no" fix
+      '_TZE200_pay2byax',  // v5.12.2: ZG-102ZL reversed
     ].some(id => mfr.toLowerCase().includes(id.toLowerCase()));
     if (invertedByDefault && !this.getSetting('invert_contact')) {
       this._invertContact = true;
