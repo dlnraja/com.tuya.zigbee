@@ -10,7 +10,7 @@ Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehens
 
 ## What's New (v5.11.132)
 
-Fixed pairing issue for switch_1gang by adding TS4100 productId., Moved device _TZE284_bquwrqh1 from presence_sensor_radar to motion_sensor., Added 4260 fingerprints and 188 drivers to support more devices., Enhanced multi-protocol bug detection system for improved diagnostics., Comprehensive bug knowledge base added with multi-protocol patterns.
+Updated Universal Tuya Zigbee app with batch state update feature.
 
 ## Supported Devices
 
