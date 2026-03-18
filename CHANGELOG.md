@@ -6,7 +6,22 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.131] - 2026-03-17
+## [5.11.132] - 2026-03-18
+
+### Bug Fixes
+- Implemented batch close/respond state update for improved device management.
+
+### New Features
+- No new features added in this release.
+
+### Improvements
+- No improvements made in this release.
+
+### CI/CD
+- No changes in CI/CD processes.
+---
+
+ [5.11.131] - 2026-03-17
 
 ### Bug Fixes
 - Fixed pairing issue for switch_1gang by adding TS4100 productId.

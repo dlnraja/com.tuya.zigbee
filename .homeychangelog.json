@@ -1,4 +1,7 @@
 {
+  "5.11.132": {
+    "en": "Updated Universal Tuya Zigbee app with batch state update feature."
+  },
   "5.11.131": {
     "en": "Universal Tuya Zigbee app v5.11.131 adds new device fingerprints and enhances multi-protocol bug detection."
   },
@@ -55,11 +58,5 @@
   },
   "5.11.113": {
     "en": "Universal Tuya Zigbee app v5.11.113: Added 8 new device fingerprints, total 4258 fingerprints."
-  },
-  "5.11.110": {
-    "en": "Universal Tuya Zigbee app v5.11.110 adds 28 new drivers and 1,105 new fingerprints, improving device compatibility."
-  },
-  "5.11.132": {
-    "en": "v5.11.131: Fixed pairing issue for switch_1gang by adding TS4100 productId., Moved device _TZE284_bquwrqh1 from presence_sensor_radar to motion_sensor., Added 4260 fingerprints and 188 drivers to support more devices., Enhanced multi-protocol bug detection system for improved diagnostics., Comprehensive bug knowledge base added with multi-protocol patterns."
   }
 }
