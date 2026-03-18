@@ -75,12 +75,12 @@ async function generateChangelog(ctx){
     '\nOUTPUT FORMAT (return ONLY valid JSON, no markdown):\n'+
     '{\n'+
     '  "homeyChangelog": "One-line summary for Homey App Store (max 400 chars, plain text, no markdown)",\n'+
-    '  "changelogMd": "Markdown changelog section with ### headers (Bug Fixes, New Features, Improvements, CI/CD). Use bullet points. Be specific about what changed. Max 500 words.",\n'+
+    '  "changelogMd": "Markdown changelog section with ### headers (Bug Fixes, New Features, Improvements). Use bullet points. Be specific about what changed. Max 500 words.",\n'+
     '  "readmeUpdate": "One-line for README table (max 100 chars)",\n'+
     '  "appDescription": "Updated app.json description in English (max 200 chars, include driver/FP counts)"\n'+
     '}';
 
-  const sysPrompt='You write changelogs for a Homey Zigbee app. Write like a real developer — short, specific, no corporate fluff. Say what actually changed. NEVER use filler like "enhance overall performance", "improve stability", "streamline", "optimize". Just state the fix or feature plainly. Focus on user-visible changes only (drivers, fingerprints, bug fixes, new devices). NEVER mention: AI, bot, automation, pipeline, workflow, IMAP, OAuth, GitHub Actions, scanning, scraping, tokens, cron, API keys, forum responder, or any backend infrastructure. Skip commits about those topics entirely. Never invent features not in the commits.';
+  const sysPrompt='You write changelogs for a Homey Zigbee app. Write like a real developer — short, specific, no corporate fluff. Say what actually changed. NEVER use filler like "enhance overall performance", "improve stability", "streamline", "optimize". Just state the fix or feature plainly. Focus on user-visible changes only (drivers, fingerprints, bug fixes, new devices). NEVER mention: AI, bot, automation, CI/CD, Diagnostics, workflows, state files, infrastructure, pipeline, workflow, IMAP, OAuth, GitHub Actions, scanning, scraping, tokens, cron, API keys, forum responder, or any backend infrastructure. Skip commits about those topics entirely. Never invent features not in the commits.';
   const ai=await callAI(prompt,sysPrompt,{maxTokens:2048});
   if(!ai)return null;
   try{const j=ai.text.match(/\{[\s\S]*\}/);return j?JSON.parse(j[0]):null;}
@@ -101,8 +101,7 @@ function templateChangelog(ctx){
   let md='';
   if(feats.length){md+='### New Features\n';for(const c of feats)md+='- '+c.msg+'\n';md+='\n';}
   if(fixes.length){md+='### Bug Fixes\n';for(const c of fixes)md+='- '+c.msg+'\n';md+='\n';}
-  if(ci.length){md+='### CI/CD\n';for(const c of ci)md+='- '+c.msg+'\n';md+='\n';}
-  if(other.length){md+='### Other\n';for(const c of other)md+='- '+c.msg+'\n';md+='\n';}
+  if(ci.length){md+='  if(other.length){md+='### Other\n';for(const c of other)md+='- '+c.msg+'\n';md+='\n';}
 
   const summary=ctx.commits.slice(0,3).map(c=>c.msg.substring(0,80)).join('. ');
   return{

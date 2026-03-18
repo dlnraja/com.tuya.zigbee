@@ -52,8 +52,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Enhanced multi-protocol bug detection system.
 - Added comprehensive bug knowledge base with multi-protocol patterns.
 
-### CI/CD
-- Diagnostics updated for version release.
 ---
 
  [5.11.129] - 2026-03-17
@@ -81,12 +79,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Added 188 drivers and 4260 fingerprints.
 - Added forum fingerprints: _TZ3000_22ugzkme (TS0041 button), _TZ3000_wzmuk9ai (TS011F plug), PR#160 (ZBM5/SWV variants).
 
-### Diagnostics
-- Updated diagnostics report for March 17, 2026.
-- Added radar diagnostic auto-healing automation.
-
-### CI/CD
-- Diagnostics run on each version release.
 ---
 
  [5.11.127] - 2026-03-17
@@ -98,9 +90,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ### New Features
 - Added 2 new fingerprints: _TZ3000_22ugzkme (TS0041 button), _TZ3000_wzmuk9ai (TS011F plug).
-
-### Diagnostics
-- Updated diagnostics report and state files.
 
 ### Drivers
 - Total drivers: 188
@@ -119,8 +108,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Updated driver count to 188 and fingerprints to 4260.
 
-### CI/CD
-- No changes.
 ---
 
  [5.11.125] - 2026-03-17
@@ -137,8 +124,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Conducted a comprehensive diagnostic analysis and resolved various issues.
 
-### CI/CD
-- Updated forum state.
 ---
 
  [5.11.124] - 2026-03-16
@@ -154,8 +139,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - None in this release.
 
-### CI/CD
-- Diagnostics updated for 2026-03-16.
 ---
 
  [5.11.123] - 2026-03-16
@@ -169,8 +152,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - No improvements made in this release.
 
-### CI/CD
-- No changes in CI/CD processes.
 ---
 
  [5.11.122] - 2026-03-16
@@ -184,9 +165,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - No improvements made in this release.
 
-### CI/CD
-- Processed issues and pull requests for this release.
-- Cross-referenced 3169 fingerprints with Z2M/ZHA/forum data.
 ---
 
  [5.11.121] - 2026-03-16
@@ -201,8 +179,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Updated diagnostics and resolved various issues.
 
-### CI/CD
-- No relevant changes.
 ---
 
  [5.11.120] - 2026-03-16
@@ -229,8 +205,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - No improvements made in this release.
 
-### CI/CD
-- Batch close/respond state update implemented.
 ---
 
  [5.11.118] - 2026-03-14
@@ -244,8 +218,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - No improvements in this release.
 
-### CI/CD
-- No changes in CI/CD processes.
 ---
 
  [5.11.117] - 2026-03-14
@@ -271,8 +243,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - None in this release.
 
-### CI/CD
-- No changes.
 ---
 
  [5.11.115] - 2026-03-14
@@ -283,8 +253,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### New Features
 - Updated to 187 drivers and 3169 fingerprints.
 
-### CI/CD
-- Updated forum state.
 ---
 
  [5.11.114] - 2026-03-13
@@ -312,8 +280,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Updated app.json with the latest driver and fingerprint counts.
 
-### CI/CD
-- Minor updates to GitHub workflows and scripts.
 ---
 
  [5.11.110] - 2026-03-13
@@ -327,8 +293,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - None
 
-### CI/CD
-- None
 ---
 
  [5.11.109] - 2026-03-12
@@ -342,8 +306,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - No additional improvements made in this release.
 
-### CI/CD
-- No changes to CI/CD processes.
 ---
 
  [5.11.108] - 2026-03-12
@@ -358,8 +320,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Added 8 new device fingerprints: [_TZ3000_402vrq2i, _TZE200_rxq4iti9].
 - Updated diagnostics report for better troubleshooting.
 
-### CI/CD
-- Automated integration with Johan SDK3 for improved development workflow.
 ---
 
  [5.11.107] - 2026-03-12
@@ -389,8 +349,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Updated diagnostics report with new data.
 - Updated README with Zigbee bridge section and component details.
 
-### CI/CD
-- No significant changes.
 ---
 
  [5.11.105] - 2026-03-11
@@ -401,9 +359,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ### Bug Fixes
 - Resolved various issues related to device patterns.
-
-### Diagnostics
-- Updated diagnostics report with new data as of 2026-03-11.
 
 ### Device Support
 - Added 2 new fingerprints: _TZ3000_402vrq2i, _TZE200_rxq4iti9.
@@ -437,8 +392,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - None
 
-### CI/CD
-- None
 ---
 
  [5.11.102] - 2026-03-11
@@ -452,8 +405,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Updated 145 drivers and 4032 fingerprints for better compatibility and performance.
 
-### CI/CD
-- No significant changes.
 ---
 
  [5.11.101] - 2026-03-08
@@ -468,8 +419,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Updated diagnostics reports for better tracking of device performance.
 - Updated forum state to reflect recent activity.
 
-### CI/CD
-- Batch updates to state files completed.
 ---
 
  [5.11.100] - 2026-03-06
@@ -481,8 +430,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Bug Fixes
 - No specific bug fixes reported in this release.
 
-### CI/CD
-- Updated forum state for better tracking of community activity.
 ---
 
  [5.11.99] - 2026-03-06
@@ -500,8 +447,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - None in this release.
 
-### CI/CD
-- None in this release.
 ---
 
  [5.11.98] - 2026-03-06
@@ -529,8 +474,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Updated screenshots for better clarity and accuracy.
 
-### CI/CD
-- Minor updates to automation scripts.
 ---
 
  [5.11.96] - 2026-03-05
@@ -554,8 +497,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - No user-visible improvements in this release.
 
-### CI/CD
-- No changes related to CI/CD.
 ---
 
  [5.11.94] - 2026-03-05
@@ -570,8 +511,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Updated screenshots for better clarity.
 
-### CI/CD
-- Minor adjustments in scripts and configuration files.
 ---
 
  [5.11.93] - 2026-03-05
@@ -596,8 +535,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Updated various files for better performance and maintenance.
 
-### CI/CD
-- Adjusted scripts for better automation in deployment processes.
 ---
 
  [5.11.91] - 2026-03-05
@@ -612,8 +549,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Updated screenshots for better clarity.
 
-### CI/CD
-- Minor updates to scripts and configuration files.
 ---
 
  [5.11.90] - 2026-03-05
@@ -628,8 +563,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Updated screenshots for better clarity.
 
-### CI/CD
-- Minor adjustments to auto-promotion scripts.
 ---
 
  [5.11.89] - 2026-03-04
@@ -658,8 +591,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Updated diagnostics.
 
-### CI/CD
-- Auto-published version 5.11.88.
 ---
 
  [5.11.87] - 2026-03-04
@@ -667,12 +598,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Bug Fixes
 - Cleaned up forum messages by removing scraping/bot/API/password references.
 
-### CI/CD
-- Updated GitHub workflows to include shell:bash in 3 workflows.
-- Upgraded weekly-external-sync to Node 22.
-- Improved daily summary order and Gmail notifications.
-- Updated diagnostics reports and state files, including comprehensive and enrichment reports.
-- Adjusted auto-resolve functionality in Gmail diagnostics pipeline.
 ---
 
  [5.11.86] - 2026-03-03
@@ -684,9 +609,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Updated app to include 145 drivers and 4952 fingerprints.
 - Auto-published 3093 fingerprints.
 
-### CI/CD
-- Updated forum responder to version 5.11.86, scanned 5 topics and updated state.
-- Various updates to GitHub workflows and scripts for better automation.
 ---
 
  [5.11.85] - 2026-03-03
@@ -696,12 +618,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Updated auto-promote-oauth.js for password grant and Athom API SDK compatibility.
 - Added delegation token step for apps API authentication.
 
-### Diagnostics
-- Analyzed 0 emails for Gmail diagnostics in this release.
-- Updated diagnostics report and state files.
-
-### CI/CD
-- Auto-published version 5.11.85 with 145 drivers and 4952 fingerprints.
 ---
 
  [5.11.84] - 2026-03-03
@@ -712,8 +628,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Updated to 145 drivers and 3093 fingerprints.
 
-### CI/CD
-- Auto-published version 5.11.84.
 ---
 
  [5.11.83] - 2026-03-03
@@ -724,8 +638,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### New Features
 - Updated to 145 drivers and 3093 fingerprints.
 
-### CI/CD
-- Auto-published version 5.11.83.
 ---
 
  [5.11.82] - 2026-03-03
@@ -737,8 +649,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### New Features
 - Updated to 145 drivers and 3093 fingerprints.
 
-### CI/CD
-- Auto-published version 5.11.82.
 ---
 
  [5.11.81] - 2026-03-03
@@ -749,8 +659,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Updated app metadata: 145 drivers, 3093 fingerprints.
 
-### CI/CD
-- Auto-published version v5.11.81.
 ---
 
  [5.11.80] - 2026-03-03
@@ -764,8 +672,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Auto-publish feature updated to reflect the new driver and fingerprint counts.
 
-### CI/CD
-- Updated scripts for auto-promotion of OAuth changes.
 ---
 
  [5.11.79] - 2026-03-03
@@ -776,19 +682,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Updated app to include 145 drivers and 3093 fingerprints.
 
-### CI/CD
-- Adjusted auto-publish workflow for improved efficiency.
-- Updated scripts for OAuth promotion.
-
-### Files Changed
-- .github/scripts/auto-promote-oauth.js: Added headless OAuth functionality.
-- .github/workflows/auto-publish-on-push.yml: Minor adjustments for workflow.
-- .github/workflows/publish.yml: Minor adjustments for workflow.
-- .homeychangelog.json: Updated changelog entries.
-- .homeycompose/app.json: Minor updates.
-- CHANGELOG.md: Added new version details.
-- app.json: Minor updates.
-- Updated screenshot files for better clarity.
 ---
 
  [5.11.78] - 2026-03-03
@@ -799,8 +692,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Updated auto-publish process to reflect current driver and fingerprint counts: 145 drivers, 3093 fingerprints.
 
-### CI/CD
-- Adjusted scripts for auto-promotion and session management.
 ---
 
  [5.11.77] - 2026-03-03
@@ -812,8 +703,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Updated to 145 drivers and 3093 fingerprints.
 - Removed obsolete diagnostics reports and states, reducing file size significantly.
 
-### CI/CD
-- Auto-publish adjustments made for smoother release process.
 ---
 
  [5.11.76] - 2026-03-03
@@ -824,11 +713,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### New Features
 - Updated app with 145 drivers and 3093 fingerprints.
 
-### CI/CD
-- Auto-publish changes with [skip ci] tag.
-
-### Screenshots
-- Updated screenshots for better clarity and resolution.
 ---
 
  [5.11.75] - 2026-03-03
@@ -842,8 +726,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Bug Fixes
 - Various minor fixes and adjustments in the codebase.
 
-### CI/CD
-- Auto-published version 5.11.75 without triggering CI.
 ---
 
  [5.11.74] - 2026-03-03
@@ -857,8 +739,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Screenshots updated for better clarity.
 
-### CI/CD
-- Auto-published version v5.11.74.
 ---
 
  [5.11.73] - 2026-03-03
@@ -872,8 +752,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Screenshots updated to reflect recent changes.
 
-### CI/CD
-- Auto-publish triggered for version 5.11.73.
 ---
 
  [5.11.72] - 2026-03-03
@@ -887,8 +765,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Updated screenshots for better clarity.
 
-### CI/CD
-- Minor updates to scripts and configuration files.
 ---
 
  [5.11.71] - 2026-03-03
@@ -896,17 +772,11 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Bug Fixes
 - Improved error logging for IMAP with mailbox fallback options (INBOX/All Mail/FR).
 
-### Diagnostics
-- Updated Gmail diagnostics to analyze 0 emails in this version.
-- Auto-resolve feature added for Gmail diagnostics pipeline.
-
 ### Drivers and Fingerprints
 - Total drivers: 145
 - Total fingerprints: 3093
 - Auto-publish feature implemented for fingerprints.
 
-### CI/CD
-- Various files updated for better functionality and error handling.
 ---
 
  [5.11.70] - 2026-03-03
@@ -914,8 +784,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Bug Fixes
 - Fixed: pre-check now accepts HOMEY_PASSWORD as IMAP fallback credential.
 
-### CI/CD
-- v5.11.70: 145 drivers, 3093 fingerprints — auto-publish [skip ci].
 ---
 
  [5.11.69] - 2026-03-03
@@ -923,13 +791,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Bug Fixes
 - Added `HOMEY_PASSWORD` as a last-resort fallback for Gmail IMAP authentication.
 
-### CI/CD
-- Updated Gmail diagnostics workflow to include new email checks.
-- Adjusted nightly auto-process and Sunday master workflows for better integration.
-
-### App Details
-- Total drivers: 145
-- Total fingerprints: 3093
 ---
 
  [5.11.68] - 2026-03-03
@@ -940,10 +801,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Updated app to include 145 drivers and 3093 fingerprints.
 
-### CI/CD
-- Updated SECRETS.md with new configurations.
-- Modified Gmail token keepalive script and workflow for better functionality.
-- Adjusted .homeychangelog.json for consistency with new changes.
 ---
 
  [5.11.67] - 2026-03-03
@@ -954,9 +811,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### New Features
 - Auto-published 145 drivers with a total of 3093 fingerprints.
 
-### CI/CD
-- Updated Gmail keepalive script.
-- Adjusted various GitHub workflows for improved functionality.
 ---
 
  [5.11.66] - 2026-03-03
@@ -967,9 +821,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Updated diagnostics scripts for better functionality.
 
-### CI/CD
-- Auto-published with 145 drivers and 3093 fingerprints.
-- Updated diagnostics summary and workflow files.
 ---
 
  [5.11.65] - 2026-03-03
@@ -977,8 +828,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Bug Fixes
 - Fixed incorrect driver assignment for _TZE200_vvmbj46n: removed from thermostat, retained in climate_sensor.
 
-### CI/CD
-- Updated to version 5.11.65: 145 drivers, 3093 fingerprints. Auto-published changes.
 ---
 
  [5.11.64] - 2026-03-03
@@ -987,12 +836,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Fixed _TZE200_pay2byax driver: moved to contact_sensor and removed from radar, radiator, thermostat, climate, motion, and vibration sensor.
 - Improved data sanitization order to prevent PII leaks: MAC before IPv6, token before phone.
 
-### CI/CD
-- Updated forum state and Gmail diagnostics for v5.11.64.
-- Enhanced algorithms for productId enrichment in Gmail and fixed cron conflict.
-
-### Drivers
-- 145 drivers and 3093 fingerprints in this release.
 ---
 
  [5.11.63] - 2026-03-03
@@ -1003,8 +846,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Fixed publish validation for remote_dimmer by adding required images and removing reserved zb_ settings.
 - Fixed publish validation for ir_remote by removing reserved zb_ settings and adding required images.
 
-### CI/CD
-- Auto-published version v5.11.63 with 145 drivers and 3093 fingerprints.
 ---
 
  [5.11.62] - 2026-03-03
@@ -1014,10 +855,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Fixed validation for `remote_dimmer` publish: added required images.
 - Fixed validation for `ir_remote` publish: removed reserved `zb_` settings and added required images.
 
-### CI/CD
-- Auto-published version v5.11.62 with 145 drivers and 3093 fingerprints.
-- Periodic Gmail diagnostics and token auto-rotation implemented.
-- Removed outdated state files from GitHub workflows.
 ---
 
  [5.11.61] - 2026-03-03
@@ -1027,8 +864,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Fixed remote dimmer publish validation by removing reserved zb_ settings.
 - Fixed IR remote publish validation by removing reserved zb_ settings and adding required images.
 
-### CI/CD
-- Updated auto-publish settings for version v5.11.61 with 145 drivers and 3093 fingerprints.
 ---
 
  [5.11.60] - 2026-03-03
@@ -1037,8 +872,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Fixed remote dimmer publish validation by removing reserved `zb_` settings.
 - Fixed IR remote publish validation by removing reserved `zb_` settings and adding required images.
 
-### CI/CD
-- Updated app version to v5.11.60 with 145 drivers and 3093 fingerprints. Auto-published changes.
 ---
 
  [5.11.59] - 2026-03-03
@@ -1053,8 +886,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Removed large state files from the repository to streamline the project.
 - Updated Gmail diagnostics to include periodic checks and token auto-rotation.
 
-### CI/CD
-- Adjusted workflows for Gmail diagnostics and token keepalive.
 ---
 
  [5.11.58] - 2026-03-03
@@ -1069,8 +900,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Gitignored large state files to reduce clutter.
 
-### CI/CD
-- Updated workflows for Gmail diagnostics and token keepalive.
 ---
 
  [5.11.56] - 2026-03-03
@@ -1082,10 +911,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Added remote_dimmer driver for Lidl HG06323 TS1001 with full IR remote support.
 - Implemented GitHub Deep Search engine to search over 20 Zigbee projects for fingerprints, data points, and converters.
 
-### CI/CD
-- Reset Gmail token health with a new refresh token set for 2026-03-02.
-- Updated auto-publishing process for versioning consistency.
-- Enhanced scripts for Gmail diagnostics and external source synchronization.
 ---
 
  [5.11.55] - 2026-03-03
@@ -1097,12 +922,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Added remote_dimmer driver (Lidl HG06323 TS1001) with full Zosung protocol support.
 - Implemented GitHub Deep Search engine to search over 20 Zigbee projects for fingerprints, devices, and converters.
 
-### CI/CD
-- Restricted closing of issues to the dlnraja repository only; forks are now read-only sources.
-- Auto-published updates with 145 drivers and 3093 fingerprints.
-
-### Acknowledgments
-- Added comprehensive credits and acknowledgments for contributors and projects.
 ---
 
  [5.11.54] - 2026-03-03
@@ -1114,12 +933,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Added remote dimmer driver (Lidl HG06323 TS1001) with full IR remote support.
 - Implemented GitHub Deep Search engine to search 20+ Zigbee projects for fingerprints, data points, and converters.
 
-### CI/CD
-- Updated triage scripts to include stale sweep for issue management.
-- Auto-published 145 drivers and 3093 fingerprints.
-
-### Documentation
-- Enhanced credits and acknowledgments in documentation.
 ---
 
  [5.11.53] - 2026-03-02
@@ -1135,8 +948,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Enhanced Gmail token rotation and health tracking.
 - Updated credits and acknowledgments in documentation.
 
-### CI/CD
-- Auto-published 145 drivers and 3093 fingerprints.
 ---
 
  [5.11.52] - 2026-03-02
@@ -1148,10 +959,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Added remote_dimmer driver for Lidl HG06323 TS1001 with full Zosung protocol support.
 - Implemented GitHub Deep Search engine to search over 20 Zigbee projects for fingerprints, devices, and converters.
 
-### CI/CD
-- Hardened Gmail token rotation for Testing mode with a 7-day cycle.
-- Updated auto-publish for 145 drivers and 3093 fingerprints.
-- Enhanced diagnostics and state management for Gmail token health and resolver reports.
 ---
 
  [5.11.51] - 2026-03-02
@@ -1163,10 +970,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Added remote_dimmer driver (Lidl HG06323 TS1001) with full Zosung protocol support.
 - Implemented GitHub Deep Search engine to search 20+ Zigbee projects for fingerprints, data points, and converters.
 
-### CI/CD
-- Auto-published 145 drivers and 4959 fingerprints.
-- Enhanced Gmail diagnostics and auto-resolver functionality.
-- Updated forum and Gmail state management scripts.
 ---
 
  [5.11.50] - 2026-03-02
@@ -1178,10 +981,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Bug Fixes
 - Fixed Gmail token rotation issue and reset health tracking.
 
-### CI/CD
-- Enhanced credits and acknowledgments in documentation.
-- Auto-published app version with 145 drivers and 3093 fingerprints.
-- Updated Gmail diagnostics workflow and external source synchronization scripts.
 ---
 
  [5.11.49] - 2026-03-02
@@ -1193,9 +992,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Bug Fixes
 - Fixed Gmail token rotation and reset health tracking.
 
-### CI/CD
-- Auto-published version 5.11.49 with 145 drivers and 3093 fingerprints.
-- Updated workflows for daily and weekly external syncs.
 ---
 
  [5.11.48] - 2026-03-02
@@ -1207,9 +1003,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Updated app to include 145 drivers and 4959 fingerprints.
 
-### CI/CD
-- Auto-published version 5.11.48 with 145 drivers and 3093 fingerprints.
-- Updated GitHub workflows for daily and weekly external source synchronization.
 ---
 
  [5.11.47] - 2026-03-02
@@ -1219,11 +1012,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Introduced ZCL cluster adapters and converters for Z2M, ZHA, and deCONZ.
 - Implemented security hardening measures.
 
-### CI/CD
-- Auto-published version 5.11.47 with 144 drivers and 3092 fingerprints.
-
-### Files Changed
-- Updated 20 files including new drivers and adapter implementations.
 ---
 
  [5.11.46] - 2026-03-02
@@ -1235,12 +1023,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Security
 - Implemented security hardening measures to enhance app safety.
 
-### CI/CD
-- Updated GitHub workflows for daily and weekly external source synchronization.
-- Modified sync-external-sources script to accommodate new changes.
-
-### Code Changes
-- Significant code additions across multiple adapter files to support new features and security enhancements.
 ---
 
  [5.11.45] - 2026-03-02
@@ -1255,8 +1037,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Introduced issue-deep-researcher.js to scan all open PRs/issues and auto-implement findings.
 - Added variant-scanner.js for auto-discovery of all variants and product IDs.
 
-### CI/CD
-- Auto-published version 5.11.45 with 144 drivers and 3090 fingerprints.
 ---
 
  [5.11.44] - 2026-03-02
@@ -1271,8 +1051,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Bug Fixes
 - Various updates to scripts for better functionality and performance.
 
-### CI/CD
-- Auto-published version 5.11.44 with 144 drivers and 4956 fingerprints.
 ---
 
  [5.11.43] - 2026-03-02
@@ -1287,9 +1065,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Updated enrichment pipeline with codified FP research intelligence.
 - Gmail keepalive functionality updated.
 
-### CI/CD
-- Auto-published version 5.11.43 with no manual intervention required.
-- Various scripts updated for better automation and state management.
 ---
 
  [5.11.42] - 2026-03-02
@@ -1301,9 +1076,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Updated driver capabilities with the addition of the Zigbee IR Remote driver (Moes UFO-R11 / TS1201).
 
-### CI/CD
-- Auto-published version 5.11.42 with 144 drivers and 4943 fingerprints.
-- Various scripts updated for better issue management and enrichment scanning.
 ---
 
  [5.11.41] - 2026-03-02
@@ -1315,9 +1087,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Updated app.json to reflect 144 drivers and 4943 fingerprints.
 - Enhanced the IR Remote driver with new capabilities for learned and sent codes.
 
-### CI/CD
-- Automated publishing of drivers and fingerprints.
-- Various script updates for issue management and enrichment scanning.
 ---
 
  [5.11.40] - 2026-03-02
@@ -1330,13 +1099,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Enrichment process updated with 3077 fingerprints cross-referenced from Z2M/ZHA/forum.
 - Total drivers increased to 144, with 4943 fingerprints now supported.
 
-### CI/CD
-- Automated batch close/respond for state updates.
-- Triaged issues and PRs from contributors.
-- Auto-published new driver and fingerprints.
-
-### Files Changed
-- Significant updates to enrichment scripts and state management files.
 ---
 
  [5.11.39] - 2026-03-02
@@ -1370,9 +1132,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Enhanced auto-resolution process for GitHub issues.
 - Conducted a comprehensive audit of getSetting workflow.
 
-### CI/CD
-- Updated auto-publish scripts for better efficiency.
-- Improved diagnostics collection scripts.
 ---
 
  [5.11.37] - 2026-03-02
@@ -1387,8 +1146,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Enhanced auto-resolution process for GitHub issues.
 - Updated diagnostics collection scripts for better data handling.
 
-### CI/CD
-- Auto-published version with 143 drivers and 3067 fingerprints.
 ---
 
  [5.11.36] - 2026-03-02
@@ -1400,8 +1157,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Added 9 missing fingerprints from device interviews.
 - Improved diagnostics scan functionality.
 
-### CI/CD
-- Auto-published updates for version 5.11.36 with 143 drivers and 3058 fingerprints.
 ---
 
  [5.11.35] - 2026-03-02
@@ -1409,12 +1164,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Bug Fixes
 - Fixed draft to test promotion pipeline.
 
-### CI/CD
-- Auto-published 143 drivers and 3058 fingerprints.
-- Updated diagnostics infrastructure and improved workflow for better efficiency.
-
-### Other Changes
-- Conducted a comprehensive audit of getSetting functionality.
 ---
 
  [5.11.34] - 2026-03-02
@@ -1430,8 +1179,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Enhanced workflow processes related to diagnostics collection and forum updates.
 
-### CI/CD
-- Updated GitHub workflows for diagnostics and forum management.
 ---
 
  [5.11.33] - 2026-03-02
@@ -1443,9 +1190,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### New Features
 - Updated 143 drivers, now supporting a total of 4918 fingerprints.
 
-### CI/CD
-- Auto-publish updates to streamline release process.
-- Updated GitHub workflows for diagnostics collection and forum management.
 ---
 
  [5.11.32] - 2026-03-01
@@ -1459,8 +1203,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Updated app.json to reflect the current number of drivers and fingerprints.
 
-### CI/CD
-- Auto-published version v5.11.32 with 143 drivers and 3057 fingerprints.
 ---
 
  [5.11.31] - 2026-03-01
@@ -1472,8 +1214,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Redesigned forum post #1.
 - Added diagnostic guides for better troubleshooting.
 
-### CI/CD
-- Auto-published 143 drivers with 3062 fingerprints.
 ---
 
  [5.11.30] - 2026-03-01
@@ -1482,12 +1222,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Re-enabled read-only forum intel for stealth scan.
 - Fixed misplacement of driver _TZE284_tgeqdjgk.
 
-### CI/CD
-- Auto-published 143 drivers with 3062 fingerprints.
-- Updated scripts for forum response and scanning.
-
-### Screenshots
-- Updated several screenshots for better clarity.
 ---
 
  [5.11.29] - 2026-03-01
@@ -1495,8 +1229,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Bug Fixes
 - Removed one-shot fix-post-now script and workflow to streamline the development process.
 
-### CI/CD
-- Updated workflow to improve maintenance and reduce complexity.
 ---
 
  [5.11.28] - 2026-03-01
@@ -1504,9 +1236,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Bug Fixes
 - Fixed one-shot script and workflow for editing forum post #1558 with clean content.
 
-### CI/CD
-- Auto-published version 5.11.28 with 143 drivers and 3062 fingerprints.
-- Updated GitHub workflows to include the new script for forum post editing.
 ---
 
  [5.11.27] - 2026-03-01
@@ -1522,8 +1251,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Introduced DeepSeek and Gemini 2.5 preview models, expanding intelligence to 16 sources.
 - Improved ensemble routing with task-specific team sizes and skipped ensemble for vision tasks.
 
-### CI/CD
-- Auto-published with 143 drivers and 3062 fingerprints.
 ---
 
  [5.11.26] - 2026-02-28
@@ -1602,9 +1329,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.11.18] - 2026-02-20
 
-### CI/CD
-- Auto-publish via GitHub Actions pipeline integration.
-
 ---
 
 ## [5.11.17] - 2026-02-20
@@ -1618,9 +1342,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 ---
 
 ## [5.11.16] - 2026-02-19
-
-### CI/CD
-- Auto-publish via GitHub Actions pipeline.
 
 ---
 
