@@ -1,111 +1,48 @@
 # Diagnostics Cross-Reference (auto-generated)
-# Generated: 2026-03-19T06:09:45.953Z
-# Emails processed: 14
+# Generated: 2026-03-19T15:02:31.946Z
+# Emails processed: 4
 
 fingerprints:
-  _TZ3000_wzmuk9ai:
+  _TZ3000_7y90pany:
     priority: NaN
     supported: true
     protocol: unknown
-    conflict: true  # Same FP in multiple drivers!
-    drivers: [climate_sensor, plug_energy_monitor]
-    mentions: 1
-    source_types: [device_issue]
-    reporters: [M.K.]
-    action: "Verify productId mapping - ensure correct driver match"
-    sources:
-      - type: device_issue
-        date: 2026-03-12T19:06:59.000Z
-  TS011F:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [plug_energy_monitor, plug_smart, switch_1gang, switch_2gang, universal_fallback]
-    mentions: 1
-    source_types: [device_issue]
-    reporters: [M.K.]
-    sources:
-      - type: device_issue
-        date: 2026-03-12T19:06:59.000Z
-  _TZ321C_fkzihax8:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [presence_sensor_radar]
-    mentions: 1
+    drivers: [climate_sensor]
+    mentions: 2
     source_types: [github]
-    reporters: [NoroddH]
+    reporters: [johnx1971, github-actions[bot]]
     sources:
       - type: github
-        date: 2026-03-13T06:16:54.000Z
-  TS0225:
+        date: 2026-03-19T12:17:07.000Z
+      - type: github
+        date: 2026-03-19T12:17:18.000Z
+  TS0601:
     priority: NaN
     supported: true
     protocol: unknown
-    drivers: [gas_sensor, motion_sensor, presence_sensor_radar, universal_fallback]
-    mentions: 1
+    drivers: [air_purifier, air_quality_co2, air_quality_comprehensive, button_emergency_sos, button_wireless_6, ceiling_fan, climate_sensor, co_sensor, contact_sensor, curtain_motor, curtain_motor_tilt, dimmer_3gang, dimmer_dual_channel, dimmer_wall_1gang, din_rail_meter, din_rail_switch, door_controller, doorbell, energy_meter_3phase, fan_controller, fingerprint_lock, floor_heating_thermostat, formaldehyde_sensor, garage_door, garage_door_opener, gas_detector, gas_sensor, humidifier, hvac_air_conditioner, hvac_controller, hvac_dehumidifier, ir_blaster, lcdtemphumidsensor, light_sensor_outdoor, lock_smart, motion_sensor, motion_sensor_radar_mmwave, pet_feeder, pet_feeder_zigbee, plug_energy_monitor, plug_smart, pool_pump, power_clamp_meter, power_meter, presence_sensor_ceiling, presence_sensor_radar, radiator_controller, radiator_valve, rain_sensor, scene_switch_4, shutter_roller_controller, siren, smart_breaker, smart_heater, smart_heater_controller, smart_lcd_thermostat, smart_rcbo, smoke_detector_advanced, soil_sensor, switch_1gang, switch_2gang, switch_3gang, switch_4gang, switch_dimmer_1gang, switch_wall_5gang, switch_wall_6gang, switch_wall_8gang, thermostat_4ch, thermostat_tuya_dp, universal_fallback, usb_outlet_advanced, valve_irrigation, valve_single, vibration_sensor, water_leak_sensor, water_tank_monitor, water_valve_smart, weather_station_outdoor]
+    mentions: 2
     source_types: [github]
-    reporters: [NoroddH]
+    reporters: [johnx1971, github-actions[bot]]
     sources:
       - type: github
-        date: 2026-03-13T06:16:54.000Z
-  _TZ321C_fkzihaxe8:
-    priority: NaN
-    supported: true
-    protocol: hybrid
-    drivers: [presence_sensor_radar]
-    requires: [DP_listeners, magic_packet, IAS_enrollment]
-    mentions: 1
-    source_types: [github]
-    reporters: [github-actions[bot]]
-    sources:
+        date: 2026-03-19T12:17:07.000Z
       - type: github
-        date: 2026-03-13T06:48:50.000Z
+        date: 2026-03-19T12:17:18.000Z
 
 users:
-  github-actions[bot]:
-    activity_score: 14
-    emails: 5
-    fingerprints: [_TZ321C_fkzihaxe8]
-    types: [github]
-    latest: 2026-03-13T06:48:50.000Z
-  NoroddH:
+  johnx1971:
     activity_score: 8
     emails: 2
-    fingerprints: [_TZ321C_fkzihax8]
+    fingerprints: [_TZ3000_7y90pany]
     types: [github]
-    latest: 2026-03-13T06:16:54.000Z
-  M.K.:
-    activity_score: 6
-    emails: 1
-    fingerprints: [_TZ3000_wzmuk9ai]
-    types: [device_issue]
-    latest: 2026-03-12T19:06:59.000Z
-  H.B.:
-    activity_score: 5
+    latest: 2026-03-19T12:17:07.000Z
+  github-actions[bot]:
+    activity_score: 8
     emails: 2
-    types: [device_issue]
-    latest: 2026-03-13T09:59:28.000Z
-  Homey:
-    activity_score: 3
-    emails: 1
-    types: [device_issue]
-    latest: 2026-03-12T16:50:35.000Z
-
-error_patterns:
-  - count: 1
-    error: "this.homey.flow.getDeviceConditionCard is not a function"
-  - count: 1
-    error: "Initializing Driver air_quality_comprehensive: TypeError: this.homey.flow.getDev"
-  - count: 1
-    error: "Initializing Driver din_rail_meter: TypeError: this.homey.flow.getDeviceConditio"
-  - count: 1
-    error: "Initializing Driver energy_meter_3phase: TypeError: this.homey.flow.getDeviceCon"
-  - count: 1
-    error: "Initializing Driver lcdtemphumidsensor: TypeError: this.homey.flow.getDeviceCond"
-  - count: 1
-    error: "Not Found: Device with ID 749b13e8-f3a4-4dcd-8b83-53d192f72b33"
+    fingerprints: [_TZ3000_7y90pany]
+    types: [github]
+    latest: 2026-03-19T12:17:19.000Z
 
 protocol_distribution:
-  unknown: 4
-  hybrid: 1
+  unknown: 2
