@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.135 |
+| **App Version** | v5.11.136 |
 | **Device Fingerprints** | 4,732+ |
 | **Unique Product IDs** | 559 |
 | **Drivers** | 188 (139 Zigbee + 49 WiFi) |
@@ -101,6 +101,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
+| **v5.11.136** | v5.11.132: Implemented batch close/respond state update for improved device management., No new features added in thi... |
 | **v5.11.135** | v5.11.132: Implemented batch close/respond state update for improved device management., No new features added in thi... |
 | **v5.11.134** | v5.11.132: Implemented batch close/respond state update for improved device management., No new features added in thi... |
 | **v5.11.133** | v5.11.132: Implemented batch close/respond state update for improved device management., No new features added in thi... |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.124** | Universal Tuya Zigbee app v5.11.124 fixes IR blaster learning issues and updates driver and fingerprint counts. |
 | **v5.11.123** | Universal Tuya Zigbee app v5.11.123: Fixed IR blaster sequence mismatch and adjusted TZE lux clamp value. |
 | **v5.11.122** | Universal Tuya Zigbee app v5.11.122: Fixed lux clamp issue and updated fingerprints. |
-| **v5.11.121** | Universal Tuya Zigbee app v5.11.121 adds new device variants and fixes issues with LEAPMW DP109/119 distance reporting. |
 
 <!-- CHANGELOG_END -->
 
