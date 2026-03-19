@@ -1,6 +1,6 @@
-# 🏠 Universal Tuya Zigbee v5.11.132
+# 🏠 Universal Tuya Zigbee v5.11.138
 
-> **188 drivers** · **4733+ fingerprints** · Updated 2026-03-18
+> **188 drivers** · **4732+ fingerprints** · Updated 2026-03-19
 
 Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.
 
@@ -8,17 +8,17 @@ Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehens
 
 **Stable:** [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/) · **Test:** [Test Channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · **Source:** [GitHub](https://github.com/dlnraja/com.tuya.zigbee)
 
-## What's New (v5.11.132)
+## What's New (v5.11.138)
 
-Updated Universal Tuya Zigbee app with batch state update feature.
+Implemented batch close/respond state update for improved device management., No new features added in this release., No improvements made in this release., No changes in CI/CD processes.
 
 ## Supported Devices
 
 | Category | Drivers | FPs |
 |---|---|---|
-| 🔌 Socket | 47 | 918 |
+| 🔌 Socket | 47 | 919 |
 | 💡 Light | 21 | 442 |
-| 📡 Sensor | 44 | 2152 |
+| 📡 Sensor | 44 | 2150 |
 | 🌡️ Thermostat | 11 | 342 |
 | 🪟 Windowcoverings | 3 | 175 |
 | 🔐 Lock | 4 | 22 |
@@ -45,13 +45,13 @@ Updated Universal Tuya Zigbee app with batch state update feature.
 
 <details><summary>Previous versions</summary>
 
-**v5.11.131:** Universal Tuya Zigbee app v5.11.131 adds new device fingerprints and enhances multi-protocol bug detection.
+**v5.11.137:** Implemented batch close/respond state update for improved device management., No new features added in this release., No improvements made in this release., No changes in CI/CD processes.
 
-**v5.11.130:** Universal Tuya Zigbee app v5.11.130: Added new device fingerprints, fixed critical SDK compatibility issues, and improved bug detection.
+**v5.11.136:** Implemented batch close/respond state update for improved device management., No new features added in this release., No improvements made in this release., No changes in CI/CD processes.
 
-**v5.11.129:** Universal Tuya Zigbee app v5.11.129 adds new device support and critical fixes for improved compatibility.
+**v5.11.135:** Implemented batch close/respond state update for improved device management., No new features added in this release., No improvements made in this release., No changes in CI/CD processes.
 
-**v5.11.128:** Universal Tuya Zigbee app v5.11.128 adds new device support and critical fixes for SDK compatibility.
+**v5.11.134:** Implemented batch close/respond state update for improved device management., No new features added in this release., No improvements made in this release., No changes in CI/CD processes.
 
 </details>
 
@@ -66,4 +66,4 @@ This app is free and open-source. If it's useful to you, a small donation helps 
 **PayPal:** [paypal.me/dlnraja](https://paypal.me/dlnraja) · **Revolut:** [revolut.me/dylanoul](https://revolut.me/dylanoul)
 
 ---
-*Last updated 2026-03-18 — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*
+*Last updated 2026-03-19 — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*
