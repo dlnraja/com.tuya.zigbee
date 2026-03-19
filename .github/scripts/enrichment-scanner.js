@@ -159,13 +159,49 @@ async function main(){
       console.log('Device interviews:',ic,'new FPs');
     }}catch(e){console.log('Interview skip:',e.message)}
 
-  // Deduplicate
+  // v5.13.1: Smart dedup - merge metadata from all sources per FP
   const deduped=new Map();
   for(const item of allNew){
-    if(!deduped.has(item.fp))deduped.set(item.fp,item);
+    if(!deduped.has(item.fp)){
+      deduped.set(item.fp,{...item,sources:[item.source],allPids:item.pid?[item.pid]:[],reporters:item.user?[item.user]:[]});
+    }else{
+      const ex=deduped.get(item.fp);
+      if(!ex.sources.includes(item.source))ex.sources.push(item.source);
+      if(item.pid&&!ex.allPids.includes(item.pid))ex.allPids.push(item.pid);
+      if(item.user&&!ex.reporters.includes(item.user))ex.reporters.push(item.user);
+      if(!ex.pid&&item.pid)ex.pid=item.pid;
+      if(!ex.vendor&&item.vendor)ex.vendor=item.vendor;
+      if(!ex.deviceType&&item.deviceType)ex.deviceType=item.deviceType;
+      if(!ex.name&&item.name)ex.name=item.name;
+      if(!ex.url&&item.url)ex.url=item.url;
+      if(item.dps&&!ex.dps)ex.dps=item.dps;
+      if(item.title&&!ex.title)ex.title=item.title;
+    }
   }
   const uniqueNew=[...deduped.values()];
+  // v5.13.1: Priority sort - more sources + has PID + has DPs = higher
+  uniqueNew.sort((a,b)=>{
+    const sa=(a.sources?.length||0)*3+(a.pid?5:0)+(a.dps?.length?4:0)+(a.vendor?2:0);
+    const sb=(b.sources?.length||0)*3+(b.pid?5:0)+(b.dps?.length?4:0)+(b.vendor?2:0);
+    return sb-sa;
+  });
   console.log('\nTotal unique NEW fingerprints:',uniqueNew.length);
+
+  // v5.13.1: Load YAML cross-ref for priority boost
+  try{const yf=path.join(__dirname,'..','state','diagnostics-crossref.yml');
+    if(fs.existsSync(yf)){const yml=fs.readFileSync(yf,'utf8');
+      const lines=yml.split('\n');
+      for(let i=0;i<lines.length;i++){
+        const fpM=lines[i].match(/^  (_T\S+):$/);if(!fpM)continue;
+        const fp=fpM[1];const item=deduped.get(fp);if(!item)continue;
+        for(let j=i+1;j<Math.min(i+15,lines.length);j++){
+          const pm=lines[j].match(/priority:\s*(\d+)/);if(pm){item.diagPriority=parseInt(pm[1]);break;}
+          if(/^  \S/.test(lines[j]))break;
+        }
+        if(!item.sources.includes('email-diag'))item.sources.push('email-diag');
+      }
+      console.log('YAML cross-ref loaded for priority boost');
+    }}catch(e){console.log('YAML cross-ref skip:',e.message)}
 
   // 4. Load device functionality profiles (DPs, caps, quirks from 10 sources)
   let funcData=null;
@@ -193,15 +229,26 @@ async function main(){
       '4. Note any quirks, inversions, or special handling needed\n'+
       'Known bugs to watch: double-division (if dpMappings has divisor, skip auto-convert), humidity>100%=divide raw by 10, mains-powered devices must NOT have measure_battery.\n'+
       'Output markdown table: | FP | Type | Driver | DPs→Capabilities | Quirks |';
-    const input=uniqueNew.slice(0,25).map(f=>({fp:f.fp,source:f.source,dps:f.dps||[],caps:f.caps||[]}));
+    const input=uniqueNew.slice(0,25).map(f=>({
+      fp:f.fp,sources:f.sources||[f.source],pid:f.pid||null,
+      vendor:f.vendor||null,deviceType:f.deviceType||null,name:f.name||null,
+      dps:f.dps||[],caps:f.caps||[],
+      diagPriority:f.diagPriority||0,reporters:f.reporters?.length||0
+    }));
     const aiRes=await callAI(JSON.stringify(input,null,2),sysPrompt,{maxTokens:1500});
     aiPlan=aiRes?aiRes.text:null;
     if(aiPlan)console.log('Smart AI plan:',aiPlan.length,'chars (with',withDPs.length,'DP-enriched devices)');
   }
 
   // 6. Save report
+  // v5.13.1: Richer report with source breakdown and priority
+  const srcBreakdown={};
+  for(const f of uniqueNew){for(const s of(f.sources||[f.source])){srcBreakdown[s]=(srcBreakdown[s]||0)+1}}
   const report={timestamp:new Date().toISOString(),totalNew:uniqueNew.length,
     withDPs:uniqueNew.filter(f=>f.dps?.length).length,
+    withPid:uniqueNew.filter(f=>f.pid).length,
+    multiSource:uniqueNew.filter(f=>f.sources?.length>1).length,
+    sourceBreakdown:srcBreakdown,
     newFingerprints:uniqueNew.slice(0,50),aiPlan};
   const reportPath=path.join(__dirname,'..','state','enrichment-report.json');
   fs.writeFileSync(reportPath,JSON.stringify(report,null,2)+'\n');

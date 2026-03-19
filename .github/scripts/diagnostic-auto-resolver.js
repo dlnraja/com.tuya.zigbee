@@ -68,6 +68,28 @@ try{const r=await fetchWithRetry(GH+ep,{method:"PATCH",headers:{...hdrs(TOKEN),"
 }
 function collectDiagFPs(){
 const all=new Map();
+// v5.13.1: Load YAML cross-ref for priority data
+const ymlPath=path.join(SD,"diagnostics-crossref.yml");
+let yamlPriorities=null;
+try{if(fs.existsSync(ymlPath)){const yml=fs.readFileSync(ymlPath,"utf8");
+  yamlPriorities=new Map();
+  const fpLines=yml.split('\n');
+  for(let i=0;i<fpLines.length;i++){
+    const fpM=fpLines[i].match(/^  (_T\S+):$/);
+    if(!fpM)continue;
+    const fp=fpM[1];let pri=null;
+    for(let j=i+1;j<Math.min(i+10,fpLines.length);j++){
+      const pm=fpLines[j].match(/priority:\s*(\d+)/);
+      if(pm){pri=parseInt(pm[1]);break;}
+      if(/^  \S/.test(fpLines[j]))break;
+    }
+    if(fp&&pri)yamlPriorities.set(fp,pri);
+  }
+  // Legacy compat
+  {const fp=null;const pri=null;
+    if(fp&&pri)yamlPriorities.set(fp,parseInt(pri));}
+  console.log("Loaded YAML priorities for",yamlPriorities.size,"fingerprints");
+}}catch(e){console.log("YAML cross-ref skip:",e.message)}
 const gd=loadJ(path.join(SD,"diagnostics-report.json"));
 if(gd&&gd.diagnostics){for(const d of gd.diagnostics){for(const fp of(d.fps&&d.fps.mfr||[]))all.set(fp,{source:"gmail",date:d.date,type:d.type,protocol:detectProtocol(d.stderr||d.stdout||"",d.driver)})}}
 const hd=loadJ(path.join(SD,"homey-device-report.json"));
@@ -107,7 +129,8 @@ protocolNote+
 (fpResults.some(f=>f.drivers.length>1)?"> Note: Some fingerprints map to multiple drivers — the correct driver is determined by the **productId** (e.g. TS0001, TS0002).\n\n":"")+
 (isDelay?"> **Delay fix (v5.11.99+):** Devices now send dataQuery immediately on init. Update and re-pair to fix.\n\n":"")+
 (syms.length?"\n**Detected issues:**\n"+syms.map(s=>"- "+s.fix).join("\n")+"\n\n":"")+
-"**Troubleshooting:** https://github.com/"+OWN+"/wiki/Troubleshooting\n";
+"**Troubleshooting:** https://github.com/"+OWN+"/wiki/Troubleshooting\n\n"+
+(fpResults.some(f=>f.protocol)?"> **Detected protocols:** "+fpResults.map(f=>f.protocol||"unknown").filter((v,i,a)=>a.indexOf(v)===i).join(", ")+"\n":"");
 }
 async function main(){
 console.log("Diagnostic Auto-Resolver (Enhanced Multi-Protocol) v"+appVer);
@@ -121,6 +144,9 @@ if(st.commented.includes(iss.id))continue;
 const txt=iss.title+" "+iss.body;
 const fps=exFP(txt);const pids=exPID(txt);
 if(!fps.length&&!pids.length)continue;
+// v5.13.1: Correlate mfr+pid pairs for smarter resolution
+const fpPidPairs=[];
+for(const fp of fps){for(const pid of pids){fpPidPairs.push({mfr:fp,pid});}}
 const proto=detectProtocol(txt,null);
 report.protocols[proto]=(report.protocols[proto]||0)+1;
 const resolution=KB.getResolution(txt);
@@ -130,7 +156,14 @@ const comment=TAG+"\n### "+resolution.fix+"\n\n"+(resolution.action?"**Action:**
 await ghPost("/repos/"+repo+"/issues/"+iss.number+"/comments",{body:comment});
 st.commented.push(iss.id);report.commented++;
 }
-const results=fps.map(fp=>({fp,drivers:idx.get(fp)||[]})).filter(r=>r.drivers.length);
+const results=fps.map(fp=>{
+const drivers=idx.get(fp)||[];
+const proto=detectProtocol(txt,drivers[0]||null);
+// v5.13.1: KB validation for known conflicts
+let kbWarn=null;
+for(const pid of pids){const v=KB.validateFingerprint(fp,pid,drivers[0]);if(v.warnings.length)kbWarn=v.warnings;}
+return{fp,drivers,protocol:proto,kbWarnings:kbWarn};
+}).filter(r=>r.drivers.length);
 if(results.length===fps.length&&results.every(r=>r.drivers.length)){
 const syms=detectSym(txt);
 const cmt=buildComment(results,false,txt.includes("delay"),syms,iss.user?.login||"",proto);
@@ -140,6 +173,9 @@ st.commented.push(iss.id);report.commented++;
 report.processed++;
 }
 }
+// v5.13.1: Enrich report with protocol stats and KB matches
+report.fpPidPairs=report.fpPidPairs||[];
+report.kbMatches=report.kbMatches||0;
 saveSt({...st,lastRun:new Date().toISOString()});
 fs.writeFileSync(RF,JSON.stringify(report,null,2));
 console.log("Report:",report);

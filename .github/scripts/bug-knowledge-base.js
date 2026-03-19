@@ -16,7 +16,9 @@ PROTOCOL_PATTERNS:[
 {protocol:"tuya_dp",rx:/cluster.*61184|0xef00|Tuya DP|_TZE[0-9]{3}_/i,drivers:["air_quality","thermostat","curtain","dimmer","pet_feeder"]},
 {protocol:"zcl_only",rx:/ZCL.*onOff|genOnOff|cluster.*6\b|BSEED|_TZ3000_(l9brjwau|blhvsaqf|ysdv91bk|hafsqare|e98krvvk|iedbgyxt)/i,drivers:["switch_1gang","switch_2gang","switch_3gang","wall_remote"]},
 {protocol:"hybrid",rx:/IAS.*Tuya|Tuya.*IAS|AUTO-OPT|radar.*presence|LeapMMW|_TZ321C_fkzihaxe8/i,drivers:["presence_sensor_radar"],critical_timing:true},
-{protocol:"mains_powered",rx:/USB.*powered|mains.*powered|_TZE200_8ygsuhe1/i,remove_battery:true}
+{protocol:"mains_powered",rx:/USB.*powered|mains.*powered|_TZE200_8ygsuhe1/i,remove_battery:true},
+{protocol:"energy_monitor",rx:/measure_power|activePower|electricalMeasurement|rmsVoltage|rmsCurrent|TS011F/i,drivers:["plug_energy_monitor"],requires:["configureReporting","electricalMeasurement","metering"]},
+{protocol:"fingerbot",rx:/fingerbot|_TZ3210_dse8ogfy|button.push/i,drivers:["fingerbot"],requires:["tuya_cluster_61184","registerCapabilityListener"]}
 ],
 DRIVER_SPECIFIC:[
 {type:"switch",patterns:["physical_gang","virtual_button","backlight","power_on_behavior"],timing:["2000ms_app_command_timeout"],mixins:["PhysicalButtonMixin","VirtualButtonMixin","HybridSwitchBase"]},
@@ -41,6 +43,40 @@ FINGERPRINT_RULES:[
 ],
 getResolution(issue){for(const p of this.CRITICAL_PATTERNS){if(p.rx.test(issue))return p;}for(const b of this.COMMON_BUGS){if(issue.toLowerCase().includes(b.bug.toLowerCase()))return b;}return null;},
 detectProtocol(text,driver){const matches=this.PROTOCOL_PATTERNS.filter(p=>p.rx.test(text||"")).map(p=>p.protocol);if(matches.includes("hybrid"))return{type:"hybrid",critical_timing:true,requires:["DP_listeners","magic_packet","IAS_enrollment"]};if(matches.includes("tuya_dp")&&matches.includes("ias"))return{type:"hybrid",critical_timing:true};if(matches.includes("tuya_dp"))return{type:"tuya_dp",requires:["TuyaEF00Manager","dpMappings"]};if(matches.includes("ias"))return{type:"ias",requires:["IAS_enrollment","zone_listeners"]};if(matches.includes("zcl_only"))return{type:"zcl",requires:["standard_clusters"]};if(driver){for(const d of this.DRIVER_SPECIFIC){if(driver.includes(d.type))return{type:d.type,patterns:d.patterns,timing:d.timing,mixins:d.mixins};}}return{type:"unknown"};},
+// v5.13.1: Recent fixes for cross-referencing diagnostics
+RECENT_FIXES:[
+{version:"5.12.3",fixes:["_TZE200_vvmbj46n removed from climate_sensor","_TZE200_kb5noeto moved to presence_sensor_radar","fingerbot cluster 61184 added"]},
+{version:"5.12.4",fixes:["BSEED fps kept in wall_switch_4gang_1way","scene mode auto double-trigger fixed"]},
+{version:"5.12.5",fixes:["configureReporting for energy monitor power/current/voltage"]},
+{version:"5.13.0",fixes:["Full MIME email parsing","Pseudo extraction","YAML cross-ref output"]}
+],
 getDriverPatterns(driverType){return this.DRIVER_SPECIFIC.find(d=>d.type===driverType)||null;},
-validateFingerprint(mfr,pid,proposedDriver){const existing=this.FINGERPRINT_RULES;return{valid:true,warnings:[],action:null};}
+validateFingerprint(mfr,pid,proposedDriver){
+const warnings=[];let action=null;
+// Check BSEED ZCL-only fingerprints
+const bseed=this.FINGERPRINT_RULES.find(r=>r.fps);
+if(bseed&&bseed.fps.includes(mfr)){
+  if(proposedDriver&&!proposedDriver.includes('wall_switch')&&!proposedDriver.includes('switch_'))
+    warnings.push('BSEED ZCL-only FP '+mfr+' should be in switch/wall_switch driver');
+}
+// Check if mfr already exists in another driver with same pid
+const{extractFP}=require('./fp-validator');
+const DD=require('path').join(__dirname,'..','..','drivers');
+const fs2=require('fs');
+try{
+  for(const d of fs2.readdirSync(DD)){
+    if(d===proposedDriver)continue;
+    const f=require('path').join(DD,d,'driver.compose.json');
+    if(!fs2.existsSync(f))continue;
+    const j=JSON.parse(fs2.readFileSync(f,'utf8'));
+    const mfrs=j.zigbee?.manufacturerName||[];
+    const pids=j.zigbee?.productId||[];
+    if(mfrs.includes(mfr)&&pid&&pids.includes(pid))
+      warnings.push('CONFLICT: '+mfr+'+'+pid+' already in '+d+' - same mfr+pid in two drivers!');
+    else if(mfrs.includes(mfr))
+      action=action||'verify_productid';
+  }
+}catch{}
+return{valid:warnings.length===0,warnings,action};
+}
 };
