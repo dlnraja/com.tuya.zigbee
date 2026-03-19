@@ -21,19 +21,10 @@ class FingerbotDevice extends TuyaZigbeeDevice {
 
     this.log('Fingerbot device initialized');
 
-    // Register onoff capability for push action
-    this.registerCapability('onoff', TUYA_CLUSTER_ID, {
-      set: async (value) => {
-        this.log(`[Fingerbot] Push action: ${value ? 'ON' : 'OFF'}`);
-        await this.sendTuyaDP(DP_SWITCH, 'bool', value);
-      },
-      get: async () => {
-        return this.getCapabilityValue('onoff') || false;
-      },
-      report: async (value) => {
-        this.log(`[Fingerbot] State report: ${value}`);
-        return value;
-      }
+    // Register onoff capability listener (v5.12: fix #162 missing listener)
+    this.registerCapabilityListener('onoff', async (value) => {
+      this.log('[Fingerbot] Push action: ' + (value ? 'ON' : 'OFF'));
+      await this.sendTuyaDP(DP_SWITCH, 'bool', value);
     });
 
     // Register button.push capability
