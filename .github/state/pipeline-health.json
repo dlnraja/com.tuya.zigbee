@@ -111,20 +111,27 @@
       "stale": 0,
       "missing": 0,
       "alerts": 0
+    },
+    {
+      "ts": "2026-03-19T06:41:22.846Z",
+      "wf": "Nightly Auto-Process",
+      "stale": 0,
+      "missing": 0,
+      "alerts": 0
     }
   ],
   "alerts": [],
-  "lastRun": "2026-03-18T16:02:12.224Z",
+  "lastRun": "2026-03-19T06:41:22.846Z",
   "fileHealth": {
     "nightly-state.json": {
       "ok": true,
       "ageH": 1,
-      "size": 3520
+      "size": 3594
     },
     "diagnostics-state.json": {
       "ok": true,
       "ageH": 1,
-      "size": 10328
+      "size": 1396
     },
     "pattern-data.json": {
       "ok": true,
@@ -133,13 +140,13 @@
     },
     "resolver-state.json": {
       "ok": true,
-      "ageH": 1,
-      "size": 7972
+      "ageH": 0,
+      "size": 8004
     },
     "issue-manager-state.json": {
       "ok": true,
-      "ageH": 1,
-      "size": 15102
+      "ageH": 0,
+      "size": 15242
     },
     "github-state.json": {
       "ok": true,

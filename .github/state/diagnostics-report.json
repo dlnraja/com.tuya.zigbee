@@ -1,9 +1,11 @@
 {
-  "timestamp": "2026-03-18T06:06:18.810Z",
-  "count": 6,
+  "timestamp": "2026-03-19T06:09:45.953Z",
+  "count": 14,
   "byType": {
-    "diagnostic": 4,
-    "github": 2
+    "crash_report": 2,
+    "github": 7,
+    "device_issue": 4,
+    "general": 1
   },
   "newFingerprints": [],
   "deepResearch": {
@@ -13,139 +15,222 @@
   },
   "diagnostics": [
     {
-      "id": "imap_501028",
-      "type": "diagnostic",
+      "id": "imap_500203",
+      "type": "crash_report",
       "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
       "from": "homey_system",
-      "date": "2026-03-17T11:48:28.000Z",
+      "date": "2026-03-12T06:41:42.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
       "fps": {
-        "mfr": [
-          "_TZE200_vvmbj46n"
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "this.homey.flow.getDeviceConditionCard is not a function",
+        "Initializing Driver air_quality_comprehensive: TypeError: this.homey.flow.getDev",
+        "Initializing Driver din_rail_meter: TypeError: this.homey.flow.getDeviceConditio",
+        "Initializing Driver energy_meter_3phase: TypeError: this.homey.flow.getDeviceCon",
+        "Initializing Driver lcdtemphumidsensor: TypeError: this.homey.flow.getDeviceCond"
+      ],
+      "devices": [
+        "The",
+        "stage",
+        "and",
+        "universal_fallback",
+        "initialized",
+        "valve_single",
+        "valve_irrigation",
+        "vibration_sensor",
+        "wall_dimmer_1gang_1way",
+        "has",
+        "wall_switch_1gang_1way",
+        "wall_switch_2gang_1way",
+        "wall_switch_3gang_1way",
+        "water_tank_monitor",
+        "initializing",
+        "wall_switch_4gang_1way",
+        "water_leak_sensor",
+        "water_valve_garden",
+        "weather_station_outdoor",
+        "wifi_air_purifier",
+        "water_valve_smart",
+        "wifi_cover",
+        "wifi_air_quality",
+        "wifi_dehumidifier",
+        "wifi_dimmer",
+        "wifi_door_lock",
+        "wifi_doorbell",
+        "wifi_fan",
+        "wifi_garage_door",
+        "wifi_generic",
+        "wifi_heater",
+        "wifi_ir_remote",
+        "wifi_humidifier",
+        "wifi_led_strip",
+        "wifi_light",
+        "wifi_pet_feeder",
+        "wifi_plug",
+        "wifi_power_strip",
+        "wifi_robot_vacuum",
+        "wifi_sensor",
+        "wifi_siren",
+        "wifi_switch",
+        "wifi_switch_2gang",
+        "wifi_switch_3gang",
+        "wifi_switch_4gang",
+        "wifi_thermostat",
+        "wifi_water_valve",
+        "zigbee_repeater",
+        "air_quality_comprehensive",
+        "din_rail_meter",
+        "energy_meter_3phase",
+        "lcdtemphumidsensor"
+      ],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "TypeError: this.homey.flow.getDeviceConditionCard is not a function\r",
+          "Error Initializing Driver air_quality_comprehensive: TypeError: this.homey.flow.getDeviceConditionCard is not a function\r",
+          "TypeError: this.homey.flow.getDeviceConditionCard is not a function\r",
+          "Error Initializing Driver din_rail_meter: TypeError: this.homey.flow.getDeviceConditionCard is not a function\r",
+          "TypeError: this.homey.flow.getDeviceConditionCard is not a function\r"
         ],
-        "pid": [
-          "TS0601"
-        ]
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 16000,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_500205",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [Verify] 136 new fingerprints found (Issue #159)",
+      "from": "github",
+      "date": "2026-03-12T06:48:54.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "github-actions[bot]"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "159",
+        "action": "Closed",
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "Closed #159 as completed.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/159#event-23495872077\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/issue/159/issue_event/23495872077@github.com>\r\n"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 292,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_500206",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [Verify] 136 new fingerprints found (Issue #159)",
+      "from": "github",
+      "date": "2026-03-12T06:48:55.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "github-actions[bot]"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "159",
+        "action": "commented",
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "github-actions[bot] left a comment (dlnraja/com.tuya.zigbee#159)\r\n\r\nAll fingerprints supported in v5.11.109. Closing as resolved.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/159#issuecomment-4044397019\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/issues/159/4044397019@github.com>\r\n"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 390,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_500314",
+      "type": "device_issue",
+      "subj": "Python for Homey apps, battery levels, and ELTAKO",
+      "from": "homey_system",
+      "date": "2026-03-12T16:50:35.000Z",
+      "pseudo": {
+        "source": "forum",
+        "username": "Homey"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
       },
       "errs": [],
       "devices": [
-        "should",
-        "presence_sensor_radar",
-        "c9b2b7e9-eb08-4f41-b89c-1c4375",
-        "c9b2b7e9-eb08-4f41",
-        "c9b2b7e9-eb08-4f41-",
-        "presence_sensor_rad"
+        "batteries"
       ],
-      "xref": [
-        {
-          "fingerprint": "_TZE200_vvmbj46n",
-          "type": "mfr",
-          "supported": true,
-          "drivers": [
-            "lcdtemphumidsensor"
-          ]
-        },
-        {
-          "fingerprint": "TS0601",
-          "type": "pid",
-          "supported": true,
-          "drivers": [
-            "air_purifier",
-            "air_quality_co2",
-            "air_quality_comprehensive",
-            "button_emergency_sos",
-            "button_wireless_6",
-            "ceiling_fan",
-            "climate_sensor",
-            "co_sensor",
-            "contact_sensor",
-            "curtain_motor",
-            "curtain_motor_tilt",
-            "dimmer_3gang",
-            "dimmer_dual_channel",
-            "dimmer_wall_1gang",
-            "din_rail_meter",
-            "din_rail_switch",
-            "door_controller",
-            "doorbell",
-            "energy_meter_3phase",
-            "fan_controller",
-            "fingerprint_lock",
-            "floor_heating_thermostat",
-            "formaldehyde_sensor",
-            "garage_door",
-            "garage_door_opener",
-            "gas_detector",
-            "gas_sensor",
-            "humidifier",
-            "hvac_air_conditioner",
-            "hvac_controller",
-            "hvac_dehumidifier",
-            "ir_blaster",
-            "lcdtemphumidsensor",
-            "light_sensor_outdoor",
-            "lock_smart",
-            "motion_sensor",
-            "motion_sensor_radar_mmwave",
-            "pet_feeder",
-            "pet_feeder_zigbee",
-            "plug_energy_monitor",
-            "plug_smart",
-            "pool_pump",
-            "power_clamp_meter",
-            "power_meter",
-            "presence_sensor_ceiling",
-            "presence_sensor_radar",
-            "radiator_controller",
-            "radiator_valve",
-            "rain_sensor",
-            "scene_switch_4",
-            "shutter_roller_controller",
-            "siren",
-            "smart_breaker",
-            "smart_heater",
-            "smart_heater_controller",
-            "smart_lcd_thermostat",
-            "smart_rcbo",
-            "smoke_detector_advanced",
-            "soil_sensor",
-            "switch_1gang",
-            "switch_2gang",
-            "switch_3gang",
-            "switch_4gang",
-            "switch_dimmer_1gang",
-            "switch_wall_5gang",
-            "switch_wall_6gang",
-            "switch_wall_8gang",
-            "thermostat_4ch",
-            "thermostat_tuya_dp",
-            "universal_fallback",
-            "usb_outlet_advanced",
-            "valve_irrigation",
-            "valve_single",
-            "vibration_sensor",
-            "water_leak_sensor",
-            "water_tank_monitor",
-            "water_valve_smart",
-            "weather_station_outdoor"
-          ]
-        }
-      ],
+      "xref": [],
       "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
       "ai": null,
       "homeyVersion": null,
-      "appVersion": null
+      "appVersion": null,
+      "bodyLength": 4281,
+      "contentType": "text/plain"
     },
     {
-      "id": "imap_501029",
-      "type": "diagnostic",
+      "id": "imap_500354",
+      "type": "device_issue",
       "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
       "from": "user",
-      "date": "2026-03-17T12:00:29.000Z",
+      "date": "2026-03-12T19:06:59.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "M.K."
+      },
       "fps": {
         "mfr": [
-          "_TZE200_vvmbj46n"
+          "_TZ3000_wzmuk9ai"
         ],
-        "pid": []
+        "pid": [
+          "TS011F"
+        ]
       },
       "errs": [],
       "devices": [
@@ -153,152 +238,399 @@
       ],
       "xref": [
         {
-          "fingerprint": "_TZE200_vvmbj46n",
+          "fingerprint": "_TZ3000_wzmuk9ai",
           "type": "mfr",
           "supported": true,
           "drivers": [
-            "lcdtemphumidsensor"
-          ]
-        }
-      ],
-      "ghInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": "5.11.118"
-    },
-    {
-      "id": "imap_501036",
-      "type": "diagnostic",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
-      "from": "homey_system",
-      "date": "2026-03-17T13:04:21.000Z",
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [
-        "stdout",
-        "water_tank_monitor",
-        "water_valve_garden",
-        "water_valve_smart",
-        "weather_station_outdoor",
-        "wifi_air_purifier",
-        "init",
-        "initialized"
-      ],
-      "xref": [],
-      "ghInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null
-    },
-    {
-      "id": "imap_501061",
-      "type": "diagnostic",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
-      "from": "homey_system",
-      "date": "2026-03-17T15:39:40.000Z",
-      "fps": {
-        "mfr": [
-          "_TZ3002_pzao9ls1"
-        ],
-        "pid": [
-          "TS0726"
-        ]
-      },
-      "errs": [],
-      "devices": [
-        "wall_switch_4gang_1way",
-        "30cc82a6-c56e-41a9",
-        "30cc82a6-c56e-41a9-9959-6a797a",
-        "profile",
-        "wall_switch_4gang_1",
-        "30c"
-      ],
-      "xref": [
-        {
-          "fingerprint": "_TZ3002_pzao9ls1",
-          "type": "mfr",
-          "supported": true,
-          "drivers": [
-            "wall_switch_4gang_1way"
-          ]
+            "climate_sensor",
+            "plug_energy_monitor"
+          ],
+          "protocol": "unknown",
+          "requires": [],
+          "conflict": true
         },
         {
-          "fingerprint": "TS0726",
+          "fingerprint": "TS011F",
           "type": "pid",
           "supported": true,
           "drivers": [
-            "scene_switch_2",
-            "scene_switch_3",
-            "switch_4gang",
-            "switch_wall_6gang",
-            "wall_switch_4gang_1way"
-          ]
+            "plug_energy_monitor",
+            "plug_smart",
+            "switch_1gang",
+            "switch_2gang",
+            "universal_fallback"
+          ],
+          "multiDriver": true
         }
       ],
       "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
       "ai": null,
       "homeyVersion": null,
-      "appVersion": null
+      "appVersion": null,
+      "bodyLength": 3475,
+      "contentType": "text/plain"
     },
     {
-      "id": "imap_501112",
+      "id": "imap_500382",
       "type": "github",
-      "subj": "[dlnraja/com.tuya.zigbee] [fingerbot] Bug: (Issue #162)",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] Presence Sensor Radar:   zb_product_id    \"TS0225\" - zb_manufacturer_name     \"_TZ321C_fkzihaxe8\" - Wenz[greeting] get any value. (Issue #97)",
       "from": "github",
-      "date": "2026-03-17T19:54:36.000Z",
+      "date": "2026-03-13T06:12:38.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "NoroddH"
+      },
       "fps": {
         "mfr": [],
         "pid": []
       },
-      "errs": [
-        "\"Missing Capability Listener: button.push\" and \"Missing Capability Listener: ono"
-      ],
+      "errs": [],
       "devices": [],
       "xref": [],
       "ghInfo": {
-        "issueNum": "162",
+        "issueNum": "97",
         "action": null,
         "fps": {
           "mfr": [],
           "pid": []
         },
-        "isNew": false
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "NoroddH",
+        "bodyExcerpt": "NoroddH left a comment (dlnraja/com.tuya.zigbee#97)\r\n\r\nThe distance, luminance and presence are not showing any measurements at all so they are incorrect. (But the correct measurements items are showing in homey)\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/97#issuecomment-4053007612\r\nYou are receiving this because you modified the open/close state.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/issues/97/4053007612@github.com>\r\n"
       },
+      "forumInfo": null,
+      "crashInfo": null,
       "ai": null,
       "homeyVersion": null,
-      "appVersion": null
+      "appVersion": null,
+      "bodyLength": 491,
+      "contentType": "text/plain"
     },
     {
-      "id": "imap_501113",
+      "id": "imap_500383",
       "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - [Fingerbot Plus] - [_TZ3210_j4pdtz9v] / [TS0001] (Issue #869)",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] Presence Sensor Radar:   zb_product_id    \"TS0225\" - zb_manufacturer_name     \"_TZ321C_fkzihaxe8\" - Wenz[greeting] get any value. (Issue #97)",
       "from": "github",
-      "date": "2026-03-17T19:59:02.000Z",
+      "date": "2026-03-13T06:12:46.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "github-actions[bot]"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "97",
+        "action": "opened",
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": true,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "Reopened #97.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/97#event-23534572040\r\nYou are receiving this because you modified the open/close state.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/issue/97/issue_event/23534572040@github.com>\r\n"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 298,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_500384",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] Presence Sensor Radar:   zb_product_id    \"TS0225\" - zb_manufacturer_name     \"_TZ321C_fkzihaxe8\" - Wenz[greeting] get any value. (Issue #97)",
+      "from": "github",
+      "date": "2026-03-13T06:12:49.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "github-actions[bot]"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "Interview",
+        "settings"
+      ],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "97",
+        "action": "opened",
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": true,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "github-actions[bot] left a comment (dlnraja/com.tuya.zigbee#97)\r\n\r\n<!-- tuya-reopen-bot -->\r\nThis issue has been **automatically reopened** because @NoroddH posted a new comment.\r\nIt will be reviewed in the next automation cycle.\r\n\r\n> If your device is still not working, please share:\r\n> 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app)\r\n> 2. **Diagnostic Report ID** from device settings\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.co"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 701,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_500385",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] Presence Sensor Radar:   zb_product_id    \"TS0225\" - zb_manufacturer_name     \"_TZ321C_fkzihaxe8\" - Wenz[greeting] get any value. (Issue #97)",
+      "from": "github",
+      "date": "2026-03-13T06:16:54.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "NoroddH"
+      },
+      "fps": {
+        "mfr": [
+          "_TZ321C_fkzihax8"
+        ],
+        "pid": [
+          "TS0225"
+        ]
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [
+        {
+          "fingerprint": "_TZ321C_fkzihax8",
+          "type": "mfr",
+          "supported": true,
+          "drivers": [
+            "presence_sensor_radar"
+          ],
+          "protocol": "unknown",
+          "requires": []
+        },
+        {
+          "fingerprint": "TS0225",
+          "type": "pid",
+          "supported": true,
+          "drivers": [
+            "gas_sensor",
+            "motion_sensor",
+            "presence_sensor_radar",
+            "universal_fallback"
+          ],
+          "multiDriver": true
+        }
+      ],
+      "ghInfo": {
+        "issueNum": "97",
+        "action": null,
+        "fps": {
+          "mfr": [
+            "_TZ321C_fkzihax8"
+          ],
+          "pid": [
+            "TS0225"
+          ]
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "NoroddH",
+        "bodyExcerpt": "NoroddH left a comment (dlnraja/com.tuya.zigbee#97)\r\n\r\n\r\n  \"ids\": {\r\n    \"modelId\": \"TS0225\",\r\n    \"manufacturerName\": \"_TZ321C_fkzihax8\"\r\n  },\r\n  \"endpoints\": {\r\n    \"endpointDescriptors\": [\r\n      {\r\n        \"endpointId\": 1,\r\n        \"applicationProfileId\": 260,\r\n        \"applicationDeviceId\": 1026,\r\n        \"applicationDeviceVersion\": 0,\r\n        \"_reserved1\": 1,\r\n        \"inputClusters\": [\r\n          0,\r\n          4,\r\n          5,\r\n          1280\r\n        ],\r\n        \"outputClusters\": [\r\n   "
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 13452,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_500392",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] Presence Sensor Radar:   zb_product_id    \"TS0225\" - zb_manufacturer_name     \"_TZ321C_fkzihaxe8\" - Wenz[greeting] get any value. (Issue #97)",
+      "from": "github",
+      "date": "2026-03-13T06:48:50.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "github-actions[bot]"
+      },
+      "fps": {
+        "mfr": [
+          "_TZ321C_fkzihaxe8"
+        ],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "settings"
+      ],
+      "xref": [
+        {
+          "fingerprint": "_TZ321C_fkzihaxe8",
+          "type": "mfr",
+          "supported": true,
+          "drivers": [
+            "presence_sensor_radar"
+          ],
+          "protocol": "hybrid",
+          "requires": [
+            "DP_listeners",
+            "magic_packet",
+            "IAS_enrollment"
+          ]
+        }
+      ],
+      "ghInfo": {
+        "issueNum": "97",
+        "action": null,
+        "fps": {
+          "mfr": [
+            "_TZ321C_fkzihaxe8"
+          ],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "github-actions[bot] left a comment (dlnraja/com.tuya.zigbee#97)\r\n\r\n<!-- tuya-triage-bot -->\r\nHi! This device is **already supported** in [Universal Tuya Zigbee](https://github.com/dlnraja/com.tuya.zigbee) **v5.11.110**.\r\n\r\n| Fingerprint | Driver(s) |\r\n|---|---|\r\n| `_TZ321C_fkzihaxe8` | **presence_sensor_radar** |\r\n\r\n### :inbox_tray: Install\r\n- **[Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)**\r\n- After installing, **remove and re-pair** your device.\r\n\r\n### :beetle: Having i"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 1432,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_500406",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "user",
+      "date": "2026-03-13T07:54:25.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "H.B."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 484,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_500432",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "user",
+      "date": "2026-03-13T09:59:28.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "H.B."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 427,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_500456",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2030 has been created",
+      "from": "homey_system",
+      "date": "2026-03-13T11:50:09.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 508,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_501226",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has crashed",
+      "from": "homey_system",
+      "date": "2026-03-18T13:44:34.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
       "fps": {
         "mfr": [],
         "pid": []
       },
       "errs": [
-        "\"Missing Capability Listener: button.push\" and \"Missing Capability Listener: ono",
-        "\"Missing Capability Listener: button.pus="
+        "Not Found: Device with ID 749b13e8-f3a4-4dcd-8b83-53d192f72b33"
       ],
-      "devices": [],
+      "devices": [
+        "with"
+      ],
       "xref": [],
-      "ghInfo": {
-        "issueNum": "869",
-        "action": null,
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error: Not Found: Device with ID 749b13e8-f3a4-4dcd-8b83-53d192f72b33\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
       },
       "ai": null,
       "homeyVersion": null,
-      "appVersion": null
+      "appVersion": null,
+      "bodyLength": 1868,
+      "contentType": "text/html->text"
     }
   ]
 }

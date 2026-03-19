@@ -1,0 +1,111 @@
+# Diagnostics Cross-Reference (auto-generated)
+# Generated: 2026-03-19T06:09:45.953Z
+# Emails processed: 14
+
+fingerprints:
+  _TZ3000_wzmuk9ai:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    conflict: true  # Same FP in multiple drivers!
+    drivers: [climate_sensor, plug_energy_monitor]
+    mentions: 1
+    source_types: [device_issue]
+    reporters: [M.K.]
+    action: "Verify productId mapping - ensure correct driver match"
+    sources:
+      - type: device_issue
+        date: 2026-03-12T19:06:59.000Z
+  TS011F:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    drivers: [plug_energy_monitor, plug_smart, switch_1gang, switch_2gang, universal_fallback]
+    mentions: 1
+    source_types: [device_issue]
+    reporters: [M.K.]
+    sources:
+      - type: device_issue
+        date: 2026-03-12T19:06:59.000Z
+  _TZ321C_fkzihax8:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    drivers: [presence_sensor_radar]
+    mentions: 1
+    source_types: [github]
+    reporters: [NoroddH]
+    sources:
+      - type: github
+        date: 2026-03-13T06:16:54.000Z
+  TS0225:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    drivers: [gas_sensor, motion_sensor, presence_sensor_radar, universal_fallback]
+    mentions: 1
+    source_types: [github]
+    reporters: [NoroddH]
+    sources:
+      - type: github
+        date: 2026-03-13T06:16:54.000Z
+  _TZ321C_fkzihaxe8:
+    priority: NaN
+    supported: true
+    protocol: hybrid
+    drivers: [presence_sensor_radar]
+    requires: [DP_listeners, magic_packet, IAS_enrollment]
+    mentions: 1
+    source_types: [github]
+    reporters: [github-actions[bot]]
+    sources:
+      - type: github
+        date: 2026-03-13T06:48:50.000Z
+
+users:
+  github-actions[bot]:
+    activity_score: 14
+    emails: 5
+    fingerprints: [_TZ321C_fkzihaxe8]
+    types: [github]
+    latest: 2026-03-13T06:48:50.000Z
+  NoroddH:
+    activity_score: 8
+    emails: 2
+    fingerprints: [_TZ321C_fkzihax8]
+    types: [github]
+    latest: 2026-03-13T06:16:54.000Z
+  M.K.:
+    activity_score: 6
+    emails: 1
+    fingerprints: [_TZ3000_wzmuk9ai]
+    types: [device_issue]
+    latest: 2026-03-12T19:06:59.000Z
+  H.B.:
+    activity_score: 5
+    emails: 2
+    types: [device_issue]
+    latest: 2026-03-13T09:59:28.000Z
+  Homey:
+    activity_score: 3
+    emails: 1
+    types: [device_issue]
+    latest: 2026-03-12T16:50:35.000Z
+
+error_patterns:
+  - count: 1
+    error: "this.homey.flow.getDeviceConditionCard is not a function"
+  - count: 1
+    error: "Initializing Driver air_quality_comprehensive: TypeError: this.homey.flow.getDev"
+  - count: 1
+    error: "Initializing Driver din_rail_meter: TypeError: this.homey.flow.getDeviceConditio"
+  - count: 1
+    error: "Initializing Driver energy_meter_3phase: TypeError: this.homey.flow.getDeviceCon"
+  - count: 1
+    error: "Initializing Driver lcdtemphumidsensor: TypeError: this.homey.flow.getDeviceCond"
+  - count: 1
+    error: "Not Found: Device with ID 749b13e8-f3a4-4dcd-8b83-53d192f72b33"
+
+protocol_distribution:
+  unknown: 4
+  hybrid: 1
