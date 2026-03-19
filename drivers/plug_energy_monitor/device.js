@@ -326,6 +326,20 @@ class EnergyMonitorPlugDevice extends HybridPlugBase {
           });
         }
 
+        // v5.12.5: configureReporting to request device updates (fixes missing power/current)
+        if (zclAttrs.power && elecCluster.configureReporting) {
+          await elecCluster.configureReporting({ activePower: { minInterval: 10, maxInterval: 300, minChange: 1 } })
+            .catch(e => this.log('[ENERGY] Power reporting:', e.message));
+        }
+        if (zclAttrs.voltage && elecCluster.configureReporting) {
+          await elecCluster.configureReporting({ rmsVoltage: { minInterval: 60, maxInterval: 3600, minChange: 1 } })
+            .catch(e => this.log('[ENERGY] Voltage reporting:', e.message));
+        }
+        if (zclAttrs.current && elecCluster.configureReporting) {
+          await elecCluster.configureReporting({ rmsCurrent: { minInterval: 10, maxInterval: 300, minChange: 10 } })
+            .catch(e => this.log('[ENERGY] Current reporting:', e.message));
+        }
+
         this.log('[ENERGY] ✅ ZCL Electrical Measurement configured');
       }
     } catch (e) {
@@ -356,6 +370,11 @@ class EnergyMonitorPlugDevice extends HybridPlugBase {
               }
             } catch (_) {}
           }, 60000);
+        }
+        // v5.12.5: also try configureReporting for metering
+        if (mc.configureReporting) {
+          await mc.configureReporting({ currentSummDelivered: { minInterval: 60, maxInterval: 3600, minChange: 1 } })
+            .catch(e => this.log('[ENERGY] Metering reporting:', e.message));
         }
         this.log('[ENERGY] ✅ ZCL Metering configured (poll=60s)');
       }
