@@ -6,6 +6,7 @@ const{fetchWithRetry}=require('./retry-helper');
 let eng=null;try{eng=require('./fp-research-engine')}catch{}
 let imap=null;try{imap=require('./gmail-imap-reader')}catch(err){console.error('gmail-imap-reader load error:',err.message)}
 const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
+let KB=null;try{KB=require('./bug-knowledge-base')}catch{}
 const SD=path.join(__dirname,'..','state');
 const SF=path.join(SD,'diagnostics-state.json');
 const RF=path.join(SD,'diagnostics-report.json');
@@ -91,14 +92,24 @@ function classify(em){
 // Parse email for diagnostic data
 function parse(t){
   const fps=exFP(t),errs=[],devNames=[];
-  [/Error:?\s*(.{10,80})/gi,/TypeError:?\s*(.{10,60})/gi,/Cannot\s+(.{10,60})/gi,/FATAL:?\s*(.{10,80})/gi]
+  [/Error:?\s*(.{10,80})/gi,/TypeError:?\s*(.{10,60})/gi,/Cannot\s+(.{10,60})/gi,/FATAL:?\s*(.{10,80})/gi,
+   /Missing Capability Listener:?\s*(.{5,40})/gi,/Invalid Flow Card ID:?\s*(.{5,60})/gi,
+   /UNSUPPORTED_ATTRIBUTE:?\s*(.{5,40})/gi,/ZCL.*error:?\s*(.{10,60})/gi]
     .forEach(p=>{let m;while((m=p.exec(t)))errs.push(m[1].trim())});
   const dn=t.match(/(?:device|driver)[:\s]+["']?([a-z0-9_-]{3,30})["']?/gi)||[];
   dn.forEach(d=>{const m=d.match(/[:\s]+["']?([a-z0-9_-]{3,30})["']?$/i);if(m)devNames.push(m[1])});
   const rid=(t.match(/report.?id[:\s]+([a-f0-9-]{8,})/i)||[])[1]||null;
   const hv=(t.match(/homey.?(?:firmware|version|fw)[:\s]+([0-9.]{3,12})/i)||[])[1]||null;
   const av=(t.match(/(?:app|tuya).?version[:\s]+([0-9.]{3,12})/i)||[])[1]||null;
-  return{fps,errs:[...new Set(errs)].slice(0,15),devNames:[...new Set(devNames)],rid,homeyVersion:hv,appVersion:av};
+  // v5.13.1: KB pattern matching for known bugs
+  let kbMatch=null;
+  if(KB){const res=KB.getResolution(t);if(res)kbMatch={id:res.id,fix:res.fix,severity:res.severity||'medium'}}
+  // v5.13.1: Extract DPs, clusters, capabilities
+  const dps=(t.match(/\bDP\s*:?\s*(\d{1,3})\b/gi)||[]).map(d=>d.replace(/\D/g,''));
+  const clusters=(t.match(/\bcluster\s*:?\s*(0x[0-9a-f]{4}|\d{4,5})\b/gi)||[]).map(cl=>cl.replace(/cluster\s*:?\s*/i,''));
+  const caps=(t.match(/\b(onoff|dim|measure_power|measure_temperature|measure_humidity|measure_battery|meter_power|alarm_[a-z_]+|measure_[a-z_]+|button\.push)\b/g)||[]);
+  return{fps,errs:[...new Set(errs)].slice(0,15),devNames:[...new Set(devNames)],rid,homeyVersion:hv,appVersion:av,
+    kbMatch,dps:[...new Set(dps)],clusters:[...new Set(clusters)],caps:[...new Set(caps)]};
 }
 
 // Cross-reference fingerprints with driver index
@@ -106,13 +117,36 @@ function crossRef(diag,idx){
   const matches=[],pidx=idx.pidx||new Map();
   for(const mfr of diag.fps.mfr){
     const drivers=idx.get(mfr)||[];
-    matches.push({fingerprint:mfr,type:'mfr',supported:drivers.length>0,drivers});
+    const entry={fingerprint:mfr,type:'mfr',supported:drivers.length>0,drivers};
+    // v5.13.1: Protocol detection per FP
+    if(KB){const proto=KB.detectProtocol(mfr,'');entry.protocol=proto.type||'unknown';entry.requires=proto.requires||[]}
+    // v5.13.1: Multi-driver conflict detection
+    if(drivers.length>1)entry.conflict=true;
+    matches.push(entry);
   }
   for(const pid of diag.fps.pid){
     const drivers=pidx.get(pid)||[];
-    matches.push({fingerprint:pid,type:'pid',supported:drivers.length>0,drivers});
+    matches.push({fingerprint:pid,type:'pid',supported:drivers.length>0,drivers,multiDriver:drivers.length>1});
   }
   return matches;
+}
+
+// v5.13.1: Deep cross-reference across all data sources
+function deepCrossRef(diag,idx,allEntries){
+  const fpMentions=new Map();
+  for(const entry of allEntries){
+    for(const x of(entry.xref||[])){
+      if(!fpMentions.has(x.fingerprint))fpMentions.set(x.fingerprint,{count:0,sources:[],types:new Set(),pseudos:new Set()});
+      const m=fpMentions.get(x.fingerprint);
+      m.count++;m.sources.push(entry.from);m.types.add(entry.type);
+      if(entry.pseudo?.username)m.pseudos.add(entry.pseudo.username);
+    }
+  }
+  // Priority score: more mentions + more sources + unsupported = higher priority
+  for(const[fp,data] of fpMentions){
+    data.priority=data.count*2+data.types.size*3+data.pseudos.size+(data.sources.includes('github')?5:0);
+  }
+  return fpMentions;
 }
 
 // Parse GitHub notification emails
@@ -352,36 +386,70 @@ async function main(){
     yml+='# Generated: '+st.lastCheck+'\n';
     yml+='# Emails processed: '+res.length+'\n\n';
 
-    // Fingerprint cross-ref
+    // v5.13.1: Priority-ranked fingerprint cross-ref with protocol + KB + actions
     yml+='fingerprints:\n';
     const fpSeen=new Map();
     for(const r of res){
       for(const x of(r.xref||[])){
-        if(!fpSeen.has(x.fingerprint))fpSeen.set(x.fingerprint,{supported:x.supported,drivers:x.drivers,emails:[],pseudos:[]});
+        if(!fpSeen.has(x.fingerprint))fpSeen.set(x.fingerprint,{supported:x.supported,drivers:x.drivers,
+          protocol:x.protocol||'unknown',requires:x.requires||[],conflict:x.conflict||false,
+          emails:[],pseudos:[],types:new Set(),kbMatches:[]});
         const e=fpSeen.get(x.fingerprint);
         e.emails.push({type:r.type,date:r.date,subj:r.subj});
+        e.types.add(r.type);
         if(r.pseudo&&r.pseudo.username&&!e.pseudos.includes(r.pseudo.username))e.pseudos.push(r.pseudo.username);
+        if(r.kbMatch)e.kbMatches.push(r.kbMatch);
       }
     }
-    for(const[fp,data] of fpSeen){
+    // Compute priority score and sort
+    const fpRanked=[...fpSeen.entries()].map(([fp,data])=>{
+      let score=data.emails.length*2+data.types.size*3+data.pseudos.size*2;
+      if(!data.supported)score+=10;
+      if(data.conflict)score+=5;
+      if(data.types.has('github'))score+=5;
+      if(data.types.has('diagnostic'))score+=3;
+      if(data.kbMatches.length)score+=4;
+      data.priority=score;
+      return[fp,data];
+    }).sort((a,b)=>b[1].priority-a[1].priority);
+    for(const[fp,data] of fpRanked){
       yml+='  '+fp+':\n';
+      yml+='    priority: '+data.priority+'\n';
       yml+='    supported: '+data.supported+'\n';
+      yml+='    protocol: '+data.protocol+'\n';
+      if(data.conflict)yml+='    conflict: true  # Same FP in multiple drivers!\n';
       if(data.drivers.length)yml+='    drivers: ['+data.drivers.join(', ')+']\n';
+      if(data.requires.length)yml+='    requires: ['+data.requires.join(', ')+']\n';
       yml+='    mentions: '+data.emails.length+'\n';
+      yml+='    source_types: ['+[...data.types].join(', ')+']\n';
       if(data.pseudos.length)yml+='    reporters: ['+data.pseudos.join(', ')+']\n';
+      if(data.kbMatches.length){yml+='    known_fix: "'+data.kbMatches[0].fix.replace(/"/g,"'")+'"\n';yml+='    kb_severity: '+data.kbMatches[0].severity+'\n';}
+      // Actionable suggestion
+      if(!data.supported)yml+='    action: "Add to driver via enrichment-scanner or manual fingerprint addition"\n';
+      else if(data.conflict)yml+='    action: "Verify productId mapping - ensure correct driver match"\n';
+      else if(data.kbMatches.length)yml+='    action: "Apply known fix: '+data.kbMatches[0].fix.replace(/"/g,"'").substring(0,80)+'"\n';
       yml+='    sources:\n';
       for(const e of data.emails.slice(0,5)){yml+='      - type: '+e.type+'\n        date: '+(e.date||'unknown')+'\n'}
     }
 
-    // User cross-ref
+    // v5.13.1: User cross-ref with activity scoring
     yml+='\nusers:\n';
-    for(const[user,entries] of pseudoMap){
+    const userRanked=[...pseudoMap.entries()].map(([user,entries])=>{
+      const uFps=new Set();const uTypes=new Set();const uErrs=new Set();
+      entries.forEach(e=>{(e.fps?.mfr||[]).forEach(f=>uFps.add(f));uTypes.add(e.type)});
+      // Find errors from this user's emails
+      for(const r of res){if(r.pseudo?.username===user)(r.errs||[]).forEach(e=>uErrs.add(e))}
+      const score=entries.length*2+uFps.size*3+uTypes.size+(uErrs.size?2:0);
+      return[user,{entries,fps:uFps,types:uTypes,errs:uErrs,score}];
+    }).sort((a,b)=>b[1].score-a[1].score);
+    for(const[user,data] of userRanked){
       yml+='  '+user+':\n';
-      yml+='    emails: '+entries.length+'\n';
-      const uFps=new Set();
-      entries.forEach(e=>{(e.fps?.mfr||[]).forEach(f=>uFps.add(f))});
-      if(uFps.size)yml+='    fingerprints: ['+[...uFps].join(', ')+']\n';
-      yml+='    types: ['+[...new Set(entries.map(e=>e.type))].join(', ')+']\n';
+      yml+='    activity_score: '+data.score+'\n';
+      yml+='    emails: '+data.entries.length+'\n';
+      if(data.fps.size)yml+='    fingerprints: ['+[...data.fps].join(', ')+']\n';
+      yml+='    types: ['+[...data.types].join(', ')+']\n';
+      if(data.errs.size)yml+='    has_errors: true\n';
+      yml+='    latest: '+(data.entries[data.entries.length-1]?.date||'unknown')+'\n';
     }
 
     // Error patterns
@@ -392,6 +460,37 @@ async function main(){
       for(const[err,cnt] of[...errMap].sort((a,b)=>b[1]-a[1]).slice(0,20)){
         yml+='  - count: '+cnt+'\n    error: "'+err.replace(/"/g,"'")+'"\n';
       }
+    }
+
+    // v5.13.1: KB matches summary
+    const kbResults=res.filter(r=>r.kbMatch);
+    if(kbResults.length){
+      yml+='\nknown_bug_matches:\n';
+      const kbGroups=new Map();
+      for(const r of kbResults){
+        const id=r.kbMatch.id||'unknown';
+        if(!kbGroups.has(id))kbGroups.set(id,{fix:r.kbMatch.fix,severity:r.kbMatch.severity,count:0,fps:[]});
+        kbGroups.get(id).count++;
+        (r.fps?.mfr||[]).forEach(fp=>{if(!kbGroups.get(id).fps.includes(fp))kbGroups.get(id).fps.push(fp)});
+      }
+      for(const[id,data] of kbGroups){
+        yml+='  '+id+':\n';
+        yml+='    severity: '+data.severity+'\n';
+        yml+='    occurrences: '+data.count+'\n';
+        yml+='    fix: "'+data.fix.replace(/"/g,"'")+'"\n';
+        if(data.fps.length)yml+='    affected_fps: ['+data.fps.join(', ')+']\n';
+      }
+    }
+
+    // v5.13.1: Protocol distribution
+    const protoMap=new Map();
+    for(const[fp,data] of fpRanked){
+      const p=data.protocol||'unknown';
+      protoMap.set(p,(protoMap.get(p)||0)+1);
+    }
+    if(protoMap.size){
+      yml+='\nprotocol_distribution:\n';
+      for(const[proto,cnt] of protoMap){yml+='  '+proto+': '+cnt+'\n'}
     }
 
     // AI insights summary
