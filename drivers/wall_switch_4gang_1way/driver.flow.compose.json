@@ -159,6 +159,22 @@
           }
         }
       ]
+    },
+    {
+      "id": "wall_switch_4gang_1way_physical_on",
+      "title": {
+        "en": "Physical button ON",
+        "nl": "Fysieke knop AAN"
+      },
+      "args": []
+    },
+    {
+      "id": "wall_switch_4gang_1way_physical_off",
+      "title": {
+        "en": "Physical button OFF",
+        "nl": "Fysieke knop UIT"
+      },
+      "args": []
     }
   ],
   "actions": [
