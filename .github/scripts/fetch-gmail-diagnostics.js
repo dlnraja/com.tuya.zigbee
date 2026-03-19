@@ -38,6 +38,21 @@ function sanitizeFrom(from){
   return'user';
 }
 
+// v5.13.0: Extract safe pseudo (username without PII) from email metadata
+function extractSafePseudo(em){
+  const p=em.pseudo||{};
+  if(p.source==='github'&&p.username)return{source:'github',username:p.username};
+  if(p.source==='forum'&&p.username)return{source:'forum',username:p.username};
+  if(p.source==='homey_system')return{source:'homey_system',username:null};
+  // User emails: only keep first name initial + last name initial
+  if(p.displayName){
+    const parts=p.displayName.split(/\s+/);
+    if(parts.length>=2)return{source:'user',username:parts[0][0]+'.'+parts[parts.length-1][0]+'.'};
+    return{source:'user',username:parts[0].substring(0,3)+'...'};
+  }
+  return{source:p.source||'unknown',username:null};
+}
+
 // Extract Tuya fingerprints from text
 const exFP=t=>({mfr:_vFP(t),pid:_vPID(t)});
 
@@ -60,6 +75,8 @@ function buildIndex(){
 // Classify email type
 function classify(em){
   const t=(em.subj+' '+em.body).toLowerCase();
+  // v5.13.0: Use crashData if available
+  if(em.crashData&&em.crashData.stackTraces)return'crash_report';
   if(em.from.includes('notifications@github.com'))return'github';
   if(em.from.includes('community.homey.app'))return'forum_message';
   if(em.from.includes('athom.com'))return'homey_system';
@@ -102,9 +119,39 @@ function crossRef(diag,idx){
 function parseGitHub(em){
   const body=em.body||'';
   const issueNum=(em.subj.match(/#(\d+)/)||[])[1]||null;
-  const action=(body.match(/(?:opened|closed|commented|merged|pushed)/i)||[])[0]||null;
+  const action=(body.match(/(?:opened|closed|commented|merged|pushed|assigned|labeled)/i)||[])[0]||null;
   const fps=exFP(body);
-  return{issueNum,action,fps,isNew:!!action&&action.toLowerCase()==='opened'};
+  // v5.13.0: Extract more GitHub context
+  const repo=(em.subj.match(/([\w-]+\/[\w.-]+)/)||[])[1]||null;
+  const labels=(body.match(/label[s]?:\s*([^\n]+)/i)||[])[1]||null;
+  const author=em.pseudo?.username||null;
+  // Extract quoted issue body (first 500 chars of non-header content)
+  const bodyExcerpt=body.replace(/^[\s\S]*?(?:---\n|\n\n)/,'').substring(0,500);
+  return{issueNum,action,fps,isNew:!!action&&action.toLowerCase()==='opened',repo,labels,author,bodyExcerpt};
+}
+
+// v5.13.0: Parse forum notification emails
+function parseForum(em){
+  const body=em.body||'';
+  const topic=(em.subj.match(/(?:Re:\s*)?(.+)/)||[])[1]||em.subj;
+  const author=em.pseudo?.username||null;
+  const fps=exFP(body);
+  // Extract device mentions and quoted content
+  const quotedBlocks=(body.match(/>[^\n]+/g)||[]).map(q=>q.replace(/^>\s*/,'')).join(' ');
+  const fpsFromQuotes=exFP(quotedBlocks);
+  const allFps={mfr:[...new Set([...fps.mfr,...fpsFromQuotes.mfr])],pid:[...new Set([...fps.pid,...fpsFromQuotes.pid])]};
+  return{topic:topic.substring(0,120),author,fps:allFps,bodyExcerpt:body.substring(0,800)};
+}
+
+// v5.13.0: Parse Homey crash/system emails
+function parseCrash(em){
+  const body=em.body||'';
+  const cd=em.crashData||{};
+  const fps=exFP(body);
+  return{fps,stackTraces:cd.stackTraces||[],crashApp:cd.crashApp||null,
+    capabilities:cd.capabilities||[],clusters:cd.clusters||[],
+    datapoints:cd.datapoints||[],zone:cd.zone||null,
+    bodyExcerpt:body.substring(0,1000)};
 }
 
 // Rate limiter: 4s between Gemini calls (max 15 RPM), cap 10/run
@@ -112,7 +159,7 @@ let _aiCalls=0;const AI_MAX=10;
 const delay=ms=>new Promise(r=>setTimeout(r,ms));
 
 // Gemini AI analysis
-async function aiAnalyze(diag,subj,type,xref){
+async function aiAnalyze(diag,subj,type,xref,bodyExcerpt){
   const gk=process.env.GOOGLE_API_KEY;if(!gk)return null;
   if(++_aiCalls>AI_MAX){console.log('AI quota guard: skip ('+_aiCalls+'/'+AI_MAX+')');return null;}
   if(_aiCalls>1)await delay(4000);
@@ -123,7 +170,8 @@ async function aiAnalyze(diag,subj,type,xref){
     'Device names: '+JSON.stringify(diag.devNames)+'\n'+
     'Cross-ref: '+JSON.stringify(xref)+'\n'+
     'Homey version: '+(diag.homeyVersion||'unknown')+'\n'+
-    'App version: '+(diag.appVersion||'unknown')+'\n\n'+
+    'App version: '+(diag.appVersion||'unknown')+'\n'+
+    'Body excerpt: '+(bodyExcerpt||'(none)')+'\n\n'+
     'Return JSON: {severity:"critical"|"high"|"medium"|"low",summary:string,'+
     'deviceType:string,rootCause:string,fixSuggestion:string,needsNewDriver:boolean}';
   try{
@@ -223,28 +271,51 @@ async function main(){
   console.log('Driver index:',idx.size,'mfrs +',pidx.size,'pids across',new Set([...idx.values(),...pidx.values()].flat()).size,'drivers');
   const allNewFPs=new Set();
 
+  // v5.13.0: Pseudo tracking for cross-referencing
+  const pseudoMap=new Map(); // username -> [{type, subj, date, fps}]
+
   for(const em of emails){
     if(done.has(em.id))continue;
     const type=classify(em);
     const d=parse(em.body);
     const xref=crossRef(d,idx);
     const ghInfo=type==='github'?parseGitHub(em):null;
+    const forumInfo=type==='forum_message'?parseForum(em):null;
+    const crashInfo=(type==='crash_report'||type==='bug_report')?parseCrash(em):null;
 
-    const needsAI=d.fps.mfr.length>0||d.errs.length>0||(ghInfo&&ghInfo.isNew);
-    const ai=needsAI?await aiAnalyze(d,em.subj,type,xref):null;
+    // v5.13.0: Extract body excerpt for AI (sanitized, max 600 chars)
+    const bodyExcerpt=sanitize((em.body||'').substring(0,600));
+
+    const needsAI=d.fps.mfr.length>0||d.errs.length>0||(ghInfo&&ghInfo.isNew)||crashInfo;
+    const ai=needsAI?await aiAnalyze(d,em.subj,type,xref,bodyExcerpt):null;
 
     for(const fp of d.fps.mfr){if(!idx.has(fp))allNewFPs.add(fp)}
     for(const p of d.fps.pid){if(!pidx.has(p))allNewFPs.add(p)}
+    // v5.13.0: Also collect FPs from forum quotes and crash data
+    if(forumInfo){for(const fp of forumInfo.fps.mfr){if(!idx.has(fp))allNewFPs.add(fp)}}
 
     const safeFrom=sanitizeFrom(em.from);
     const safeSubj=sanitize(em.subj);
+    const safePseudo=extractSafePseudo(em);
+
+    // v5.13.0: Track pseudo across emails
+    if(safePseudo.username){
+      if(!pseudoMap.has(safePseudo.username))pseudoMap.set(safePseudo.username,[]);
+      pseudoMap.get(safePseudo.username).push({type,subj:safeSubj,date:em.date,fps:d.fps});
+    }
 
     const entry={id:em.id,type,subj:safeSubj,from:safeFrom,date:em.date,
-      fps:d.fps,errs:d.errs.map(e=>sanitize(e)),devices:d.devNames,xref,ghInfo,ai,
-      homeyVersion:d.homeyVersion,appVersion:d.appVersion};
+      pseudo:safePseudo,
+      fps:d.fps,errs:d.errs.map(e=>sanitize(e)),devices:d.devNames,xref,
+      ghInfo,forumInfo:forumInfo?{topic:forumInfo.topic,author:forumInfo.author,fps:forumInfo.fps}:null,
+      crashInfo:crashInfo?{stackTraces:(crashInfo.stackTraces||[]).map(s=>sanitize(s)),
+        crashApp:crashInfo.crashApp,capabilities:crashInfo.capabilities,clusters:crashInfo.clusters}:null,
+      ai,homeyVersion:d.homeyVersion,appVersion:d.appVersion,
+      bodyLength:em.bodyLength||0,contentType:em.contentType||'unknown'};
     res.push(entry);
     done.add(em.id);
-    console.log(' ['+type+'] '+em.subj.substring(0,60)+(d.fps.mfr.length?' FP:'+d.fps.mfr.join(','):''));
+    console.log(' ['+type+'] '+em.subj.substring(0,60)+(d.fps.mfr.length?' FP:'+d.fps.mfr.join(','):'')+
+      (safePseudo.username?' @'+safePseudo.username:''));
 
     if(ai&&(ai.severity==='critical'||ai.severity==='high')){
       const issBody='**Type:** '+type+'\n**From:** '+safeFrom+'\n\n'+
@@ -274,7 +345,72 @@ async function main(){
   console.log('Done:',res.length,'emails |',newFPs.length,'new FPs |',impl.added,'auto-added');
   console.log('By type:',JSON.stringify(bt));
 
-  if(process.env.GITHUB_STEP_SUMMARY){
+    // v5.13.0: YAML cross-reference output for deep diagnostics
+  const YF=path.join(SD,'diagnostics-crossref.yml');
+  try{
+    let yml='# Diagnostics Cross-Reference (auto-generated)\n';
+    yml+='# Generated: '+st.lastCheck+'\n';
+    yml+='# Emails processed: '+res.length+'\n\n';
+
+    // Fingerprint cross-ref
+    yml+='fingerprints:\n';
+    const fpSeen=new Map();
+    for(const r of res){
+      for(const x of(r.xref||[])){
+        if(!fpSeen.has(x.fingerprint))fpSeen.set(x.fingerprint,{supported:x.supported,drivers:x.drivers,emails:[],pseudos:[]});
+        const e=fpSeen.get(x.fingerprint);
+        e.emails.push({type:r.type,date:r.date,subj:r.subj});
+        if(r.pseudo&&r.pseudo.username&&!e.pseudos.includes(r.pseudo.username))e.pseudos.push(r.pseudo.username);
+      }
+    }
+    for(const[fp,data] of fpSeen){
+      yml+='  '+fp+':\n';
+      yml+='    supported: '+data.supported+'\n';
+      if(data.drivers.length)yml+='    drivers: ['+data.drivers.join(', ')+']\n';
+      yml+='    mentions: '+data.emails.length+'\n';
+      if(data.pseudos.length)yml+='    reporters: ['+data.pseudos.join(', ')+']\n';
+      yml+='    sources:\n';
+      for(const e of data.emails.slice(0,5)){yml+='      - type: '+e.type+'\n        date: '+(e.date||'unknown')+'\n'}
+    }
+
+    // User cross-ref
+    yml+='\nusers:\n';
+    for(const[user,entries] of pseudoMap){
+      yml+='  '+user+':\n';
+      yml+='    emails: '+entries.length+'\n';
+      const uFps=new Set();
+      entries.forEach(e=>{(e.fps?.mfr||[]).forEach(f=>uFps.add(f))});
+      if(uFps.size)yml+='    fingerprints: ['+[...uFps].join(', ')+']\n';
+      yml+='    types: ['+[...new Set(entries.map(e=>e.type))].join(', ')+']\n';
+    }
+
+    // Error patterns
+    const errMap=new Map();
+    for(const r of res){for(const e of(r.errs||[])){errMap.set(e,(errMap.get(e)||0)+1)}}
+    if(errMap.size){
+      yml+='\nerror_patterns:\n';
+      for(const[err,cnt] of[...errMap].sort((a,b)=>b[1]-a[1]).slice(0,20)){
+        yml+='  - count: '+cnt+'\n    error: "'+err.replace(/"/g,"'")+'"\n';
+      }
+    }
+
+    // AI insights summary
+    const aiResults=res.filter(r=>r.ai);
+    if(aiResults.length){
+      yml+='\nai_insights:\n';
+      for(const r of aiResults){
+        yml+='  - severity: '+(r.ai.severity||'unknown')+'\n';
+        yml+='    summary: "'+(r.ai.summary||'').replace(/"/g,"'")+'"\n';
+        if(r.ai.rootCause)yml+='    root_cause: "'+(r.ai.rootCause||'').replace(/"/g,"'")+'"\n';
+        if(r.ai.fixSuggestion)yml+='    fix: "'+(r.ai.fixSuggestion||'').replace(/"/g,"'")+'"\n';
+      }
+    }
+
+    fs.writeFileSync(YF,yml);
+    console.log('YAML cross-ref:',fpSeen.size,'fps,',pseudoMap.size,'users,',errMap.size,'error patterns');
+  }catch(ye){console.log('YAML output error:',ye.message)}
+
+if(process.env.GITHUB_STEP_SUMMARY){
     let sm='## Gmail Diagnostics (IMAP)\n| Metric | Count |\n|---|---|\n';
     sm+='| Emails | '+res.length+' |\n| New FPs | '+newFPs.length+' |\n';
     sm+='| Researched | '+impl.researched+' |\n| Auto-added | '+impl.added+' |\n';
