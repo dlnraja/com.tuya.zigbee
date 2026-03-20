@@ -125,10 +125,17 @@
       "stale": 0,
       "missing": 0,
       "alerts": 0
+    },
+    {
+      "ts": "2026-03-20T04:27:34.336Z",
+      "wf": "Daily Everything Pipeline",
+      "stale": 0,
+      "missing": 0,
+      "alerts": 0
     }
   ],
   "alerts": [],
-  "lastRun": "2026-03-19T15:58:51.791Z",
+  "lastRun": "2026-03-20T04:27:34.336Z",
   "fileHealth": {
     "nightly-state.json": {
       "ok": true,
@@ -147,7 +154,7 @@
     },
     "resolver-state.json": {
       "ok": true,
-      "ageH": 2,
+      "ageH": 1,
       "size": 8004
     },
     "issue-manager-state.json": {
