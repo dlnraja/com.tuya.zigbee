@@ -1,48 +1,27 @@
 # Diagnostics Cross-Reference (auto-generated)
-# Generated: 2026-03-19T15:02:31.946Z
-# Emails processed: 4
+# Generated: 2026-03-20T05:48:48.039Z
+# Emails processed: 5
 
 fingerprints:
-  _TZ3000_7y90pany:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [climate_sensor]
-    mentions: 2
-    source_types: [github]
-    reporters: [johnx1971, github-actions[bot]]
-    sources:
-      - type: github
-        date: 2026-03-19T12:17:07.000Z
-      - type: github
-        date: 2026-03-19T12:17:18.000Z
-  TS0601:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [air_purifier, air_quality_co2, air_quality_comprehensive, button_emergency_sos, button_wireless_6, ceiling_fan, climate_sensor, co_sensor, contact_sensor, curtain_motor, curtain_motor_tilt, dimmer_3gang, dimmer_dual_channel, dimmer_wall_1gang, din_rail_meter, din_rail_switch, door_controller, doorbell, energy_meter_3phase, fan_controller, fingerprint_lock, floor_heating_thermostat, formaldehyde_sensor, garage_door, garage_door_opener, gas_detector, gas_sensor, humidifier, hvac_air_conditioner, hvac_controller, hvac_dehumidifier, ir_blaster, lcdtemphumidsensor, light_sensor_outdoor, lock_smart, motion_sensor, motion_sensor_radar_mmwave, pet_feeder, pet_feeder_zigbee, plug_energy_monitor, plug_smart, pool_pump, power_clamp_meter, power_meter, presence_sensor_ceiling, presence_sensor_radar, radiator_controller, radiator_valve, rain_sensor, scene_switch_4, shutter_roller_controller, siren, smart_breaker, smart_heater, smart_heater_controller, smart_lcd_thermostat, smart_rcbo, smoke_detector_advanced, soil_sensor, switch_1gang, switch_2gang, switch_3gang, switch_4gang, switch_dimmer_1gang, switch_wall_5gang, switch_wall_6gang, switch_wall_8gang, thermostat_4ch, thermostat_tuya_dp, universal_fallback, usb_outlet_advanced, valve_irrigation, valve_single, vibration_sensor, water_leak_sensor, water_tank_monitor, water_valve_smart, weather_station_outdoor]
-    mentions: 2
-    source_types: [github]
-    reporters: [johnx1971, github-actions[bot]]
-    sources:
-      - type: github
-        date: 2026-03-19T12:17:07.000Z
-      - type: github
-        date: 2026-03-19T12:17:18.000Z
 
 users:
-  johnx1971:
-    activity_score: 8
-    emails: 2
-    fingerprints: [_TZ3000_7y90pany]
-    types: [github]
-    latest: 2026-03-19T12:17:07.000Z
-  github-actions[bot]:
-    activity_score: 8
-    emails: 2
-    fingerprints: [_TZ3000_7y90pany]
-    types: [github]
-    latest: 2026-03-19T12:17:19.000Z
-
-protocol_distribution:
-  unknown: 2
+  Vau...:
+    activity_score: 3
+    emails: 1
+    types: [interview]
+    latest: 2026-03-19T15:42:45.000Z
+  S.O.:
+    activity_score: 3
+    emails: 1
+    types: [diagnostic]
+    latest: 2026-03-19T15:43:25.000Z
+  homey:
+    activity_score: 3
+    emails: 1
+    types: [device_issue]
+    latest: 2026-03-19T16:29:48.000Z
+  R.B.:
+    activity_score: 3
+    emails: 1
+    types: [device_issue]
+    latest: 2026-03-19T17:41:14.000Z
