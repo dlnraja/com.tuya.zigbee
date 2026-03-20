@@ -1,8 +1,10 @@
 {
-  "timestamp": "2026-03-19T15:02:31.946Z",
-  "count": 4,
+  "timestamp": "2026-03-20T05:48:48.039Z",
+  "count": 5,
   "byType": {
-    "github": 4
+    "diagnostic": 2,
+    "interview": 1,
+    "device_issue": 2
   },
   "newFingerprints": [],
   "deepResearch": {
@@ -12,14 +14,48 @@
   },
   "diagnostics": [
     {
-      "id": "imap_501395",
-      "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] Device Request - Zigbee Light sensor ZG-106Z (Issue #165)",
-      "from": "github",
-      "date": "2026-03-19T12:17:05.000Z",
+      "id": "imap_501424",
+      "type": "diagnostic",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "homey_system",
+      "date": "2026-03-19T15:26:51.000Z",
       "pseudo": {
-        "source": "github",
-        "username": "johnx1971"
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "motion_sensor",
+        "7e446853-e1f3-4b5f-99e5-d417ea",
+        "94cbfd04-c6ec-46c8-854f-01bc2e",
+        "assumed",
+        "presence_sensor_radar",
+        "5a383307-1dee-4357-93f0-bd50bd",
+        "should"
+      ],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 15003,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_501427",
+      "type": "interview",
+      "subj": "Interview questions top accounting firms ask + A crash course on agentic AI",
+      "from": "user",
+      "date": "2026-03-19T15:42:45.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "Vau..."
       },
       "fps": {
         "mfr": [],
@@ -28,326 +64,24 @@
       "errs": [],
       "devices": [],
       "xref": [],
-      "ghInfo": {
-        "issueNum": "165",
-        "action": "Assigned",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "dlnraja/com.tuya.zigbee",
-        "labels": null,
-        "author": "johnx1971",
-        "bodyExcerpt": "Assigned #165 to @dlnraja.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/165#event-23715646666\r\nYou are receiving this because you were assigned.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/issue/165/issue_event/23715646666@github.com>\r\n"
-      },
+      "ghInfo": null,
       "forumInfo": null,
       "crashInfo": null,
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 297,
-      "contentType": "text/plain"
+      "bodyLength": 4270,
+      "contentType": "text/html->text"
     },
     {
-      "id": "imap_501396",
-      "type": "github",
-      "subj": "[dlnraja/com.tuya.zigbee] Device Request - Zigbee Light sensor ZG-106Z (Issue #165)",
-      "from": "github",
-      "date": "2026-03-19T12:17:07.000Z",
+      "id": "imap_501428",
+      "type": "diagnostic",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "user",
+      "date": "2026-03-19T15:43:25.000Z",
       "pseudo": {
-        "source": "github",
-        "username": "johnx1971"
-      },
-      "fps": {
-        "mfr": [
-          "_TZ3000_7y90pany"
-        ],
-        "pid": [
-          "TS0601"
-        ]
-      },
-      "errs": [],
-      "devices": [
-        "when"
-      ],
-      "xref": [
-        {
-          "fingerprint": "_TZ3000_7y90pany",
-          "type": "mfr",
-          "supported": true,
-          "drivers": [
-            "climate_sensor"
-          ],
-          "protocol": "unknown",
-          "requires": []
-        },
-        {
-          "fingerprint": "TS0601",
-          "type": "pid",
-          "supported": true,
-          "drivers": [
-            "air_purifier",
-            "air_quality_co2",
-            "air_quality_comprehensive",
-            "button_emergency_sos",
-            "button_wireless_6",
-            "ceiling_fan",
-            "climate_sensor",
-            "co_sensor",
-            "contact_sensor",
-            "curtain_motor",
-            "curtain_motor_tilt",
-            "dimmer_3gang",
-            "dimmer_dual_channel",
-            "dimmer_wall_1gang",
-            "din_rail_meter",
-            "din_rail_switch",
-            "door_controller",
-            "doorbell",
-            "energy_meter_3phase",
-            "fan_controller",
-            "fingerprint_lock",
-            "floor_heating_thermostat",
-            "formaldehyde_sensor",
-            "garage_door",
-            "garage_door_opener",
-            "gas_detector",
-            "gas_sensor",
-            "humidifier",
-            "hvac_air_conditioner",
-            "hvac_controller",
-            "hvac_dehumidifier",
-            "ir_blaster",
-            "lcdtemphumidsensor",
-            "light_sensor_outdoor",
-            "lock_smart",
-            "motion_sensor",
-            "motion_sensor_radar_mmwave",
-            "pet_feeder",
-            "pet_feeder_zigbee",
-            "plug_energy_monitor",
-            "plug_smart",
-            "pool_pump",
-            "power_clamp_meter",
-            "power_meter",
-            "presence_sensor_ceiling",
-            "presence_sensor_radar",
-            "radiator_controller",
-            "radiator_valve",
-            "rain_sensor",
-            "scene_switch_4",
-            "shutter_roller_controller",
-            "siren",
-            "smart_breaker",
-            "smart_heater",
-            "smart_heater_controller",
-            "smart_lcd_thermostat",
-            "smart_rcbo",
-            "smoke_detector_advanced",
-            "soil_sensor",
-            "switch_1gang",
-            "switch_2gang",
-            "switch_3gang",
-            "switch_4gang",
-            "switch_dimmer_1gang",
-            "switch_wall_5gang",
-            "switch_wall_6gang",
-            "switch_wall_8gang",
-            "thermostat_4ch",
-            "thermostat_tuya_dp",
-            "universal_fallback",
-            "usb_outlet_advanced",
-            "valve_irrigation",
-            "valve_single",
-            "vibration_sensor",
-            "water_leak_sensor",
-            "water_tank_monitor",
-            "water_valve_smart",
-            "weather_station_outdoor"
-          ],
-          "multiDriver": true
-        }
-      ],
-      "ghInfo": {
-        "issueNum": "165",
-        "action": "assigned",
-        "fps": {
-          "mfr": [
-            "_TZ3000_7y90pany"
-          ],
-          "pid": [
-            "TS0601"
-          ]
-        },
-        "isNew": false,
-        "repo": "dlnraja/com.tuya.zigbee",
-        "labels": null,
-        "author": "johnx1971",
-        "bodyExcerpt": "johnx1971 created an issue (dlnraja/com.tuya.zigbee#165)\r\n\r\n### Brand & Model\r\n\r\nZG-106Z\r\n\r\n### Where Purchased\r\n\r\nhttps://nl.aliexpress.com/item/1005011615798368.html?spm=a2g0o.order_list.order_list_main.21.714179d2NJnKdK&gatewayAdapt=glo2nld\r\n\r\n### Power Source\r\n\r\nBattery\r\n\r\n### Zigbee Fingerprint (MANDATORY)\r\n\r\n```yaml\r\nManufacturename: _TZ3000_7y90pany\r\nModelID: ZG-106Z\r\n```\r\n\r\n### TS0601 DP List (if applicable)\r\n\r\n```yaml\r\n\r\n```\r\n\r\n### Zigbee2MQTT Link\r\n\r\n_No response_\r\n\r\n### Home Assistant"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 1095,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_501397",
-      "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] Device Request - Zigbee Light sensor ZG-106Z (Issue #165)",
-      "from": "github",
-      "date": "2026-03-19T12:17:18.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "github-actions[bot]"
-      },
-      "fps": {
-        "mfr": [
-          "_TZ3000_7y90pany"
-        ],
-        "pid": [
-          "TS0601"
-        ]
-      },
-      "errs": [],
-      "devices": [
-        "types"
-      ],
-      "xref": [
-        {
-          "fingerprint": "_TZ3000_7y90pany",
-          "type": "mfr",
-          "supported": true,
-          "drivers": [
-            "climate_sensor"
-          ],
-          "protocol": "unknown",
-          "requires": []
-        },
-        {
-          "fingerprint": "TS0601",
-          "type": "pid",
-          "supported": true,
-          "drivers": [
-            "air_purifier",
-            "air_quality_co2",
-            "air_quality_comprehensive",
-            "button_emergency_sos",
-            "button_wireless_6",
-            "ceiling_fan",
-            "climate_sensor",
-            "co_sensor",
-            "contact_sensor",
-            "curtain_motor",
-            "curtain_motor_tilt",
-            "dimmer_3gang",
-            "dimmer_dual_channel",
-            "dimmer_wall_1gang",
-            "din_rail_meter",
-            "din_rail_switch",
-            "door_controller",
-            "doorbell",
-            "energy_meter_3phase",
-            "fan_controller",
-            "fingerprint_lock",
-            "floor_heating_thermostat",
-            "formaldehyde_sensor",
-            "garage_door",
-            "garage_door_opener",
-            "gas_detector",
-            "gas_sensor",
-            "humidifier",
-            "hvac_air_conditioner",
-            "hvac_controller",
-            "hvac_dehumidifier",
-            "ir_blaster",
-            "lcdtemphumidsensor",
-            "light_sensor_outdoor",
-            "lock_smart",
-            "motion_sensor",
-            "motion_sensor_radar_mmwave",
-            "pet_feeder",
-            "pet_feeder_zigbee",
-            "plug_energy_monitor",
-            "plug_smart",
-            "pool_pump",
-            "power_clamp_meter",
-            "power_meter",
-            "presence_sensor_ceiling",
-            "presence_sensor_radar",
-            "radiator_controller",
-            "radiator_valve",
-            "rain_sensor",
-            "scene_switch_4",
-            "shutter_roller_controller",
-            "siren",
-            "smart_breaker",
-            "smart_heater",
-            "smart_heater_controller",
-            "smart_lcd_thermostat",
-            "smart_rcbo",
-            "smoke_detector_advanced",
-            "soil_sensor",
-            "switch_1gang",
-            "switch_2gang",
-            "switch_3gang",
-            "switch_4gang",
-            "switch_dimmer_1gang",
-            "switch_wall_5gang",
-            "switch_wall_6gang",
-            "switch_wall_8gang",
-            "thermostat_4ch",
-            "thermostat_tuya_dp",
-            "universal_fallback",
-            "usb_outlet_advanced",
-            "valve_irrigation",
-            "valve_single",
-            "vibration_sensor",
-            "water_leak_sensor",
-            "water_tank_monitor",
-            "water_valve_smart",
-            "weather_station_outdoor"
-          ],
-          "multiDriver": true
-        }
-      ],
-      "ghInfo": {
-        "issueNum": "165",
-        "action": "assigned",
-        "fps": {
-          "mfr": [
-            "_TZ3000_7y90pany"
-          ],
-          "pid": [
-            "TS0601"
-          ]
-        },
-        "isNew": false,
-        "repo": "dlnraja/com.tuya.zigbee",
-        "labels": null,
-        "author": "github-actions[bot]",
-        "bodyExcerpt": "github-actions[bot] left a comment (dlnraja/com.tuya.zigbee#165)\r\n\r\n<!-- tuya-triage-bot -->\r\nThese are already supported in v5.11.138:\r\n\r\n- `_TZ3000_7y90pany` â **climate_sensor**\r\n- `TS0601` â **unknown**\r\n\r\nAll fingerprints are already supported â install the [test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/), remove the device, and re-pair it.\r\n\r\nThis app also has 49 WiFi device types with local LAN control (no cloud).\r\n\r\n[Test version](https://homey.app/a/com.dlnraja.tu"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 939,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_501399",
-      "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] Device Request - Zigbee Light sensor ZG-106Z (Issue #165)",
-      "from": "github",
-      "date": "2026-03-19T12:17:19.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "github-actions[bot]"
+        "source": "user",
+        "username": "S.O."
       },
       "fps": {
         "mfr": [],
@@ -356,25 +90,67 @@
       "errs": [],
       "devices": [],
       "xref": [],
-      "ghInfo": {
-        "issueNum": "165",
-        "action": "Closed",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "dlnraja/com.tuya.zigbee",
-        "labels": null,
-        "author": "github-actions[bot]",
-        "bodyExcerpt": "Closed #165 as completed.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/165#event-23715653163\r\nYou are receiving this because you were assigned.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/issue/165/issue_event/23715653163@github.com>\r\n"
-      },
+      "ghInfo": null,
       "forumInfo": null,
       "crashInfo": null,
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 296,
+      "bodyLength": 529,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_501439",
+      "type": "device_issue",
+      "subj": "Matter & Thread explained • World Water Day",
+      "from": "homey_system",
+      "date": "2026-03-19T16:29:48.000Z",
+      "pseudo": {
+        "source": "forum",
+        "username": "homey"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "you"
+      ],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 4111,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_501462",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "user",
+      "date": "2026-03-19T17:41:14.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "R.B."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 377,
       "contentType": "text/plain"
     }
   ]
