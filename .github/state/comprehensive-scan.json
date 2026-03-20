@@ -1,12 +1,12 @@
 {
-  "date": "2026-03-20T03:38:01.527Z",
+  "date": "2026-03-20T14:58:43.679Z",
   "local": {
     "drivers": 188,
     "fps": 4303
   },
   "forkScan": {
-    "filesScanned": 3112,
-    "newFPs": 27902
+    "filesScanned": 3085,
+    "newFPs": 27900
   },
   "upstream": {
     "prs": 0,
@@ -167414,18 +167414,6 @@
     {
       "mfr": "_TZe200_vvmbj46n",
       "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "tuyatec-prhs1rsd",
-      "driver": "temphumidsensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "tuyatec-yg5dcbfu",
-      "driver": "temphumidsensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "3b940038"
     }
