@@ -146,10 +146,17 @@
       "stale": 0,
       "missing": 0,
       "alerts": 0
+    },
+    {
+      "ts": "2026-03-21T04:23:54.835Z",
+      "wf": "Daily Everything Pipeline",
+      "stale": 0,
+      "missing": 0,
+      "alerts": 0
     }
   ],
   "alerts": [],
-  "lastRun": "2026-03-20T15:52:42.548Z",
+  "lastRun": "2026-03-21T04:23:54.835Z",
   "fileHealth": {
     "nightly-state.json": {
       "ok": true,

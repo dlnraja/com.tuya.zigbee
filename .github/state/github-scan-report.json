@@ -1,8 +1,44 @@
 {
-  "timestamp": "2026-03-20T14:53:06.539Z",
+  "timestamp": "2026-03-21T03:28:56.488Z",
   "appVersion": "5.11.138",
   "findings": {
     "issues": [
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 163,
+        "title": "[DEVICE] Motion Sensor",
+        "user": "late4marshmellow",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE200_kb5noeto",
+            "drivers": [
+              "presence_sensor_radar"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/163",
+        "state": "open",
+        "imageAnalysis": "[Screenshot Analysis]"
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 164,
+        "title": "[DEVICE]",
+        "user": "late4marshmellow",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_otvn3lne",
+            "drivers": [
+              "motion_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/164",
+        "state": "open",
+        "imageAnalysis": "[Screenshot Analysis]"
+      },
       {
         "repo": "dlnraja/com.tuya.zigbee",
         "number": 165,
@@ -156,5 +192,5 @@
     "newFPs": [],
     "forkFPs": []
   },
-  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests\n1. **Zigbee Light Sensor ZG-106Z**\n   - **User:** johnx1971\n   - **Existing Fingerprints:** \n     - `_TZ3000_7y90pany` (Drivers: climate_sensor)\n   - **Status:** Closed\n   - **Link:** [Issue #165](https://github.com/dlnraja/com.tuya.zigbee/issues/165)\n\n2. **Fingerbot Plus**\n   - **User:** AntondK88\n   - **Existing Fingerprints:** \n     - `_TZ3210_j4pdtz9v` (Drivers: curtain_motor, fingerbot)\n   - **Status:** Open\n   - **Link:** [Issue #869](https://github.com/JohanBendz/com.tuya.zigbee/issues/869)\n\n## Supported Fingerprints\n- **Existing Fingerprints:**\n  - `_TZ3000_7y90pany` (climate_sensor)\n  - `_TZ3210_j4pdtz9v` (curtain_motor, fingerbot)\n\n## Fingerprints from Forks to Integrate\n- No new fingerprints from forks were identified in the current analysis.\n\n## Pull Requests with Useful Changes\n1. **Update driver.compose.json**\n   - **Repo:** dlnraja/com.tuya.zigbee\n   - **PR #10** by Peter-Celica\n   - **Fingerprints:** `_TZ3000_mrpevh8p`\n   - **Status:** Closed, not merged\n   - **Link:** [PR #10](https://github.com/dlnraja/com.tuya.zigbee/pull/10)\n\n2. **Update driver.compose.json**\n   - **Repo:** dlnraja/com.tuya.zigbee\n   - **PR #45** by vl14-dev\n   - **Fingerprints:** `_TZE200_nv6nxo0c`\n   - **Status:** Closed, merged\n   - **Link:** [PR #45](https://github.com/dlnraja/com.tuya.zigbee/pull/45)\n\n3. **Adding support for MOES/Tuya Zigbee AM25 Tubular Motor**\n   - **Repo:** dlnraja/com.tuya.zigbee\n   - **PR #46** by vl14-dev\n   - **Fingerprints:** `_TZE200_nv6nxo0c`\n   - **Status:** Closed, not merged\n   - **Link:** [PR #46](https://github.com/dlnraja/com.tuya.zigbee/pull/46)\n\n4. **Add support for Tuya PIR sensor TS0202**\n   - **Repo:** JohanBendz/com.tuya.zigbee\n   - **PR #1166** by chernals\n   - **Fingerprints:** `_TZ3000_c8ozah8n`\n   - **Status:** Closed, not merged\n   - **Link:** [PR #1166](https://github.com/JohanBendz/com.tuya.zigbee/pull/1166)\n\n5. **Added TS110E driver**\n   - **Repo:** JohanBendz/com.tuya.zigbee\n   - **PR #1350** by PiTRiS87\n   - **Fingerprints:** `_TZ3210_ngqk6jia`, `_TZ3210_weaqkhab`\n   - **Status:** Open\n   - **Link:** [PR #1350](https://github.com/JohanBendz/com.tuya.zigbee/pull/1350)\n\n6. **Added 3 new devices**\n   - **Repo:** JohanBendz/com.tuya.zigbee\n   - **PR #1253** by Peter-Celica\n   - **Fingerprints:** `_TZE200_pay2byax`, `_TZ3000_mrpevh8p`\n   - **Status:** Open\n   - **Link:** [PR #1253](https://github.com/JohanBendz/com.tuya.zigbee/pull/1253)\n\n7. **Update driver.compose.json**\n   - **Repo:** JohanBendz/com.tuya.zigbee\n   - **PR #1219** by Melectro1\n   - **Fingerprints:** `_TZ3000_gjrubzje`\n   - **Status:** Open\n   - **Link:** [PR #1219](https://github.com/JohanBendz/com.tuya.zigbee/pull/1219)\n\n8. **Update driver.compose.json**\n   - **Repo:** JohanBendz/com.tuya.zigbee\n   - **PR #1218** by Melectro1\n   - **Fingerprints:** `_TZE204_dapwryy7`\n   - **Status:** Open\n   - **Link:** [PR #1218](https://github.com/JohanBendz/com.tuya.zigbee/pull/1218)\n\n9. **Add \"_TZE204_bjzrowv2\" - Update app.json**\n   - **Repo:** JohanBendz/com.tuya.zigbee\n   - **PR #1195** by YuriEstevan\n   - **Fingerprints:** `_TZE204_bjzrowv2`\n   - **Status:** Open\n   - **Link:** [PR #1195](https://github.com/JohanBendz/com.tuya.zigbee/pull/1195)\n\nThis summary encapsulates the latest developments in the Universal Tuya Zigbee GitHub repository, highlighting new device requests, supported fingerprints, and relevant pull requests."
+  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests\n1. **Motion Sensor**  \n   - **User:** late4marshmellow  \n   - **Existing Fingerprint:** `_TZE200_kb5noeto`  \n   - **Drivers:** presence_sensor_radar  \n   - **Issue Link:** [#163](https://github.com/dlnraja/com.tuya.zigbee/issues/163)  \n   - **State:** Open  \n\n2. **Device Request**  \n   - **User:** late4marshmellow  \n   - **Existing Fingerprint:** `_TZ3000_otvn3lne`  \n   - **Drivers:** motion_sensor  \n   - **Issue Link:** [#164](https://github.com/dlnraja/com.tuya.zigbee/issues/164)  \n   - **State:** Open  \n\n3. **Zigbee Light Sensor ZG-106Z**  \n   - **User:** johnx1971  \n   - **Existing Fingerprint:** `_TZ3000_7y90pany`  \n   - **Drivers:** climate_sensor  \n   - **Issue Link:** [#165](https://github.com/dlnraja/com.tuya.zigbee/issues/165)  \n   - **State:** Closed  \n\n4. **Fingerbot Plus**  \n   - **User:** AntondK88  \n   - **Existing Fingerprint:** `_TZ3210_j4pdtz9v`  \n   - **Drivers:** curtain_motor, fingerbot  \n   - **Issue Link:** [#869](https://github.com/JohanBendz/com.tuya.zigbee/issues/869)  \n   - **State:** Open  \n\n## Supported Fingerprints\n- **Existing Fingerprints:**\n  - `_TZE200_kb5noeto` (Motion Sensor)\n  - `_TZ3000_otvn3lne` (Device Request)\n  - `_TZ3000_7y90pany` (Zigbee Light Sensor)\n  - `_TZ3210_j4pdtz9v` (Fingerbot Plus)\n\n## Fingerprints from Forks to Integrate\n- No new fingerprints from forks were identified for integration in this period.\n\n## Pull Requests with Useful Changes\n1. **Update driver.compose.json**  \n   - **User:** Peter-Celica  \n   - **Fingerprints:** `_TZ3000_mrpevh8p`  \n   - **PR Link:** [#10](https://github.com/dlnraja/com.tuya.zigbee/pull/10)  \n   - **State:** Closed  \n\n2. **Update driver.compose.json**  \n   - **User:** vl14-dev  \n   - **Fingerprints:** `_TZE200_nv6nxo0c`  \n   - **PR Link:** [#45](https://github.com/dlnraja/com.tuya.zigbee/pull/45)  \n   - **State:** Merged  \n\n3. **Support for MOES/Tuya Zigbee AM25 Tubular Motor**  \n   - **User:** vl14-dev  \n   - **Fingerprints:** `_TZE200_nv6nxo0c`  \n   - **PR Link:** [#46](https://github.com/dlnraja/com.tuya.zigbee/pull/46)  \n   - **State:** Closed  \n\n4. **Support for Tuya PIR sensor TS0202**  \n   - **User:** chernals  \n   - **Fingerprints:** `_TZ3000_c8ozah8n`  \n   - **PR Link:** [#1166](https://github.com/JohanBendz/com.tuya.zigbee/pull/1166)  \n   - **State:** Closed  \n\n5. **Added TS110E Driver**  \n   - **User:** PiTRiS87  \n   - **Fingerprints:** `_TZ3210_ngqk6jia`, `_TZ3210_weaqkhab`  \n   - **PR Link:** [#1350](https://github.com/JohanBendz/com.tuya.zigbee/pull/1350)  \n   - **State:** Open  \n\n6. **Added 3 New Devices**  \n   - **User:** Peter-Celica  \n   - **Fingerprints:** `_TZE200_pay2byax`, `_TZ3000_mrpevh8p`  \n   - **PR Link:** [#1253](https://github.com/JohanBendz/com.tuya.zigbee/pull/1253)  \n   - **State:** Open  \n\n7. **Update driver.compose.json**  \n   - **User:** Melectro1  \n   - **Fingerprints:** `_TZ3000_gjrubzje`  \n   - **PR Link:** [#1219](https://github.com/JohanBendz/com.tuya.zigbee/pull/1219)  \n   - **State:** Open  \n\n8. **Update driver.compose.json**  \n   - **User:** Melectro1  \n   - **Fingerprints:** `_TZE204_dapwryy7`  \n   - **PR Link:** [#1218](https://github.com/JohanBendz/com.tuya.zigbee/pull/1218)  \n   - **State:** Open  \n\n9. **Add `_TZE204_bjzrowv2`**  \n   - **User:** YuriEstevan  \n   - **Fingerprints:** `_TZE204_bjzrowv2`  \n   - **PR Link:** [#1195](https://github.com/JohanBendz/com.tuya.zigbee/pull/1195)  \n   - **State:** Open  \n\nThis summary encapsulates the recent activity on the Universal Tuya Zigbee GitHub repository, highlighting new device requests, supported fingerprints, and relevant pull requests."
 }
