@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-21T03:29:22.719Z",
+  "timestamp": "2026-03-21T05:48:37.487Z",
   "username": "dlnraja",
   "topicCount": 1,
   "activityCount": 300,
@@ -21,5 +21,5 @@
     "_TZ3000_amdymr7",
     "_TZ3000_ksw8qtm"
   ],
-  "aiAnalysis": "**Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer**\n\n1. **Key User Requests:**\n   - Users are seeking support for various Tuya Zigbee devices that are not functioning correctly or are unsupported.\n   - There is a demand for improved installation processes, particularly for contact sensors and scene switches.\n   - Users express a desire for regular updates and communication from the maintainer regarding device compatibility and app performance.\n\n2. **Devices People Need:**\n   - Specific devices mentioned include:\n     - Soil Moisture Sensor\n     - Tuya Zigbee Scene Switch (4 buttons)\n     - Contact Sensors (multiple models)\n     - Smart Knob (_TZ3000_gwkzibhs)\n   - A list of unsupported device fingerprints indicates a need for compatibility with devices like _TZ3000_zgyzgd and others.\n\n3. **Issues to Fix:**\n   - Users report persistent issues with contact sensors being recognized as \"unknown Zigbee sensors.\"\n   - Problems with the installation of the app from GitHub and general connectivity issues with various devices.\n   - Specific versions (e.g., 5.11.115, 5.11.138) are mentioned in relation to these issues, indicating potential regression or bugs.\n\n4. **Action Items:**\n   - Prioritize adding support for the unsupported device fingerprints listed.\n   - Investigate and resolve the installation issues reported by users, particularly for contact sensors and scene switches.\n   - Increase communication frequency with the community to provide updates on device compatibility and app improvements.\n   - Consider implementing a feedback loop for users to report issues directly and track resolutions effectively. \n\nBy addressing these points, the maintainer can enhance user satisfaction and app performance."
+  "aiAnalysis": "Fingerprints found: `_TZ3000_zgyzgd`, `_TZE204_ztqnh5c`, `_TZ3000_ztc6ggyl`, `_TZ3000_akwixq9i`, `_TZ3000_hiqrjkxx`, `_TZ3000_cehuw1l2`, `_TZ3000_dfgbtub`, `_TZ3000_dfgbub0`, `_TZ3000_tvuarska`, `_TZ3000_amdymr7`, `_TZ3000_ksw8qtm`, `_TZE200_pay2byax`, `_TZ3000_gwkzibhs`"
 }
