@@ -1,12 +1,143 @@
 {
-  "timestamp": "2026-03-21T14:44:42.237Z",
-  "count": 0,
-  "byType": {},
+  "timestamp": "2026-03-22T05:51:16.795Z",
+  "count": 4,
+  "byType": {
+    "diagnostic": 2,
+    "device_issue": 2
+  },
   "newFingerprints": [],
   "deepResearch": {
     "researched": 0,
     "added": 0,
     "details": []
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "id": "imap_501788",
+      "type": "diagnostic",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "homey_system",
+      "date": "2026-03-21T20:37:58.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "get coordinator IEEE address",
+        "get Homey IEEE address for CIE write"
+      ],
+      "devices": [
+        "rain_sensor",
+        "f393b439-79e9-457b-ad61-342778",
+        "36ecdcf1-d718-4890-8e14-783a6e",
+        "responses",
+        "presence_sensor_radar",
+        "c94e0fba-d6c3-4d13-8932-37c9cc",
+        "soil_sensor",
+        "dd5a0237-2585-4fe6-ad3b-99d356",
+        "e2e54d3e-9ea8-48fa-95ce-e6289c",
+        "should",
+        "pres"
+      ],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 16000,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_501789",
+      "type": "diagnostic",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "homey_system",
+      "date": "2026-03-21T20:52:49.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "discover",
+        "soil_sensor",
+        "e2e54d3e-9ea8-48fa-95ce-e6289c",
+        "missing",
+        "dd5a0237-2585-4fe6-ad3b-99d356"
+      ],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 12616,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_501790",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "user",
+      "date": "2026-03-21T20:53:40.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "M.K."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 5472,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_501791",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "user",
+      "date": "2026-03-21T21:04:47.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "M.K."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "isn"
+      ],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 447,
+      "contentType": "text/plain"
+    }
+  ]
 }

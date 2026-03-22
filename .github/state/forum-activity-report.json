@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-22T03:38:11.044Z",
+  "timestamp": "2026-03-22T05:51:20.136Z",
   "username": "dlnraja",
   "topicCount": 1,
   "activityCount": 300,
@@ -21,5 +21,5 @@
     "_TZ3000_amdymr7",
     "_TZ3000_ksw8qtm"
   ],
-  "aiAnalysis": "**Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer**\n\n1. **Key User Requests:**\n   - Users are seeking improved compatibility and recognition of various devices, particularly soil moisture sensors and scene switches with multiple buttons.\n   - There is a demand for better support and communication regarding device issues and updates.\n\n2. **Devices People Need:**\n   - Specific devices mentioned include:\n     - Soil moisture sensors (noted as being recognized incorrectly).\n     - Tuya Zigbee scene switches (4-button models).\n     - Various unsupported devices identified by their model numbers (e.g., _TZ3000_zgyzgd, _TZE204_ztqnh5c).\n\n3. **Issues to Fix:**\n   - Many users report that certain devices are not recognized or are categorized incorrectly (e.g., soil moisture sensors showing as standard Zigbee).\n   - There are ongoing issues with installation failures and device pairing, particularly with the latest app version (5.11.138).\n\n4. **Action Items:**\n   - Investigate and resolve compatibility issues with the unsupported devices listed.\n   - Enhance the app's ability to recognize and categorize soil moisture sensors and scene switches accurately.\n   - Improve communication with users regarding device support and updates, possibly through regular announcements or a dedicated FAQ section.\n   - Consider user feedback for future app versions to prioritize fixes for the most commonly reported issues. \n\nBy addressing these insights, the maintainer can enhance user satisfaction and app performance."
+  "aiAnalysis": "Fingerprints found: `_TZ3000_zgyzgd`, `_TZE204_ztqnh5c`, `_TZ3000_ztc6ggyl`, `_TZ3000_akwixq9i`, `_TZ3000_hiqrjkxx`, `_TZ3000_cehuw1l2`, `_TZ3000_dfgbtub`, `_TZ3000_dfgbub0`, `_TZ3000_tvuarska`, `_TZ3000_amdymr7`, `_TZ3000_ksw8qtm`, `_TZE200_pay2byax`"
 }

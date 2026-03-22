@@ -1,7 +1,18 @@
 # Diagnostics Cross-Reference (auto-generated)
-# Generated: 2026-03-21T14:44:42.237Z
-# Emails processed: 0
+# Generated: 2026-03-22T05:51:16.795Z
+# Emails processed: 4
 
 fingerprints:
 
 users:
+  M.K.:
+    activity_score: 5
+    emails: 2
+    types: [device_issue]
+    latest: 2026-03-21T21:04:47.000Z
+
+error_patterns:
+  - count: 1
+    error: "get coordinator IEEE address"
+  - count: 1
+    error: "get Homey IEEE address for CIE write"
