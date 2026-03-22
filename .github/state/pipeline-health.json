@@ -181,19 +181,26 @@
       "stale": 0,
       "missing": 0,
       "alerts": 0
+    },
+    {
+      "ts": "2026-03-22T07:40:04.478Z",
+      "wf": "Sunday Master Automation",
+      "stale": 0,
+      "missing": 0,
+      "alerts": 0
     }
   ],
   "alerts": [],
-  "lastRun": "2026-03-22T06:23:00.381Z",
+  "lastRun": "2026-03-22T07:40:04.478Z",
   "fileHealth": {
     "nightly-state.json": {
       "ok": true,
-      "ageH": 1,
+      "ageH": 0,
       "size": 3594
     },
     "diagnostics-state.json": {
       "ok": true,
-      "ageH": 1,
+      "ageH": 0,
       "size": 1719
     },
     "pattern-data.json": {
@@ -213,7 +220,7 @@
     },
     "github-state.json": {
       "ok": true,
-      "ageH": 1,
+      "ageH": 0,
       "size": 1522
     }
   }
