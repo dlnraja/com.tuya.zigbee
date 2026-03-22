@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-03-21T14:46:50.587Z",
+  "timestamp": "2026-03-22T03:38:11.044Z",
   "username": "dlnraja",
   "topicCount": 1,
   "activityCount": 300,
   "pmCount": 0,
-  "refCount": 64,
+  "refCount": 65,
   "bookmarkCount": 0,
   "fullThreads": 30,
-  "totalFPs": 714,
+  "totalFPs": 703,
   "unsupportedFPs": [
     "_TZ3000_zgyzgd",
     "_TZE204_ztqnh5c",
@@ -21,5 +21,5 @@
     "_TZ3000_amdymr7",
     "_TZ3000_ksw8qtm"
   ],
-  "aiAnalysis": "**Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer**\n\n1. **Key User Requests:**\n   - Users are seeking improved compatibility and support for various Tuya Zigbee devices, particularly those that are currently unsupported.\n   - There is a demand for better installation processes and troubleshooting support for devices that fail to connect or are recognized as \"unknown.\"\n\n2. **Devices People Need:**\n   - Specific devices mentioned include soil moisture sensors, scene switches with multiple buttons, and various contact sensors. \n   - A list of unsupported device identifiers (e.g., _TZ3000_zgyzgd, _TZE204_ztqnh5c) indicates a need for support for these specific models.\n\n3. **Issues to Fix:**\n   - Users report persistent issues with certain sensors not being recognized or failing to install properly, especially with recent app versions.\n   - There are mentions of installation failures and devices being marked as unknown, suggesting bugs or compatibility issues that need addressing.\n\n4. **Action Items:**\n   - Prioritize adding support for the listed unsupported devices to enhance user satisfaction and broaden the app's compatibility.\n   - Investigate and resolve installation issues reported by users, particularly with contact sensors and soil moisture sensors.\n   - Consider improving documentation or user support for troubleshooting installation problems to assist users more effectively.\n   - Engage with the community to gather feedback on recent updates and identify any additional devices or features that users are requesting. \n\nBy focusing on these actionable insights, the maintainer can enhance user experience and expand the app's functionality."
+  "aiAnalysis": "**Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer**\n\n1. **Key User Requests:**\n   - Users are seeking improved compatibility and recognition of various devices, particularly soil moisture sensors and scene switches with multiple buttons.\n   - There is a demand for better support and communication regarding device issues and updates.\n\n2. **Devices People Need:**\n   - Specific devices mentioned include:\n     - Soil moisture sensors (noted as being recognized incorrectly).\n     - Tuya Zigbee scene switches (4-button models).\n     - Various unsupported devices identified by their model numbers (e.g., _TZ3000_zgyzgd, _TZE204_ztqnh5c).\n\n3. **Issues to Fix:**\n   - Many users report that certain devices are not recognized or are categorized incorrectly (e.g., soil moisture sensors showing as standard Zigbee).\n   - There are ongoing issues with installation failures and device pairing, particularly with the latest app version (5.11.138).\n\n4. **Action Items:**\n   - Investigate and resolve compatibility issues with the unsupported devices listed.\n   - Enhance the app's ability to recognize and categorize soil moisture sensors and scene switches accurately.\n   - Improve communication with users regarding device support and updates, possibly through regular announcements or a dedicated FAQ section.\n   - Consider user feedback for future app versions to prioritize fixes for the most commonly reported issues. \n\nBy addressing these insights, the maintainer can enhance user satisfaction and app performance."
 }

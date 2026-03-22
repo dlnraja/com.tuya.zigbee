@@ -1,11 +1,23 @@
 {
-  "timestamp": "2026-03-21T14:46:47.711Z",
+  "timestamp": "2026-03-22T03:38:08.078Z",
   "appVersion": "5.11.138",
-  "forum": 0,
+  "forum": 1,
   "github": 0,
   "diagnostics": 0,
   "diagNewFPs": 0,
   "diagCritical": 0,
-  "forumDetails": [],
+  "forumDetails": [
+    {
+      "topic": 140352,
+      "post": 1644,
+      "user": "ManuelKugler",
+      "fps": [
+        "HOBEIAN",
+        "vision"
+      ],
+      "reply": "Based on the information provided for the HOBEIAN ZG-303Z soil moisture sensor, we have identified the following:\n\n### Fingerprint Analysis\nThe device has been recognized with the following fingerprin",
+      "model": "gh-gpt-4o-mini"
+    }
+  ],
   "githubDetails": []
 }
