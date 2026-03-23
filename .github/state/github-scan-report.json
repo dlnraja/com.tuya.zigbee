@@ -1,8 +1,70 @@
 {
-  "timestamp": "2026-03-22T03:37:14.672Z",
+  "timestamp": "2026-03-23T04:48:43.261Z",
   "appVersion": "5.11.138",
   "findings": {
     "issues": [
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 167,
+        "title": "[Auto] 1 new fingerprint(s) from upstream",
+        "user": "github-actions[bot]",
+        "newFPs": [
+          "_TZ3000_kxaow5ki"
+        ],
+        "existingFPs": [],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/167",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 166,
+        "title": "[Auto] 3 new fingerprints from forks",
+        "user": "github-actions[bot]",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_mrpevh8p",
+            "drivers": [
+              "button_wireless_1"
+            ]
+          },
+          {
+            "fp": "_TZ3000_xr7itfxq",
+            "drivers": [
+              "button_wireless_2"
+            ]
+          },
+          {
+            "fp": "_TZ3000_zgyzgdua",
+            "drivers": [
+              "button_wireless_4",
+              "scene_switch_4"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/166",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 164,
+        "title": "[DEVICE]",
+        "user": "late4marshmellow",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_otvn3lne",
+            "drivers": [
+              "motion_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/164",
+        "state": "closed",
+        "imageAnalysis": "[Screenshot Analysis]"
+      },
       {
         "repo": "dlnraja/com.tuya.zigbee",
         "number": 163,
@@ -18,8 +80,565 @@
           }
         ],
         "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/163",
-        "state": "open",
+        "state": "closed",
         "imageAnalysis": "[Screenshot Analysis]"
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 121,
+        "title": "_TZ3000_an5rjiwd - not working",
+        "user": "DAVID9SE",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_an5rjiwd",
+            "drivers": [
+              "button_wireless_1"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/121",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 115,
+        "title": "Temperature & Humidity Sensor",
+        "user": "Lalla80111",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_fllyghyj",
+            "drivers": [
+              "climate_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/115",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 77,
+        "title": "[DEVICE] Thermostat Radiator Valve",
+        "user": "Haellos07",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE200_hvaxb2tc",
+            "drivers": [
+              "radiator_valve"
+            ]
+          },
+          {
+            "fp": "_TZE204_qyr2m29i",
+            "drivers": [
+              "radiator_valve"
+            ]
+          },
+          {
+            "fp": "_TZE204_ogx8u5z6",
+            "drivers": [
+              "thermostat_tuya_dp"
+            ]
+          },
+          {
+            "fp": "_TZE204_o9gyszw2",
+            "drivers": [
+              "climate_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/77",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 92,
+        "title": "Device request - Tuya smart button HMJ-SC021",
+        "user": "djfry134",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_b4awzgct",
+            "drivers": [
+              "button_wireless_1"
+            ]
+          },
+          {
+            "fp": "_TZ3000_ixla93vd",
+            "drivers": [
+              "smart_knob",
+              "smart_knob_switch",
+              "switch_wireless"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/92",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 91,
+        "title": "[Device] Zigbee IR remote controle (ZS06)",
+        "user": "snorro80",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3290_7v1k4vufotpowp9z",
+            "drivers": [
+              "ir_remote"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/91",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 93,
+        "title": "Device Request: Moes TRV from Aliexpress",
+        "user": "Necka44",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE204_qyr2m29i",
+            "drivers": [
+              "radiator_valve"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/93",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 88,
+        "title": "Bug - Incorrect driver assigned to device - 2 gang dimmer module x climate sensor",
+        "user": "theunissendave",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE200_e3oitdyu",
+            "drivers": [
+              "dimmer_dual_channel"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/88",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 87,
+        "title": "Device Request - Presence Sensor Radar - _TZE204_mtoaryre / TS0601",
+        "user": "Verectra",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE204_mtoaryre",
+            "drivers": [
+              "presence_sensor_radar"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/87",
+        "state": "closed",
+        "imageAnalysis": "[Screenshot Analysis]"
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 89,
+        "title": "Support Request – eWeLink Mini PIR Sensor (CK-TLSR8656-SS5-01)",
+        "user": "eskilask-maker",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE200_bh3n6gk8",
+            "drivers": [
+              "presence_sensor_radar"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/89",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 76,
+        "title": "[DEVICE] 4 button touch remote (TS0044 / _TZ3000_u3nv1jwk)",
+        "user": "jocke-sve-62",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_u3nv1jwk",
+            "drivers": [
+              "button_wireless_4",
+              "handheld_remote_4_buttons"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/76",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 78,
+        "title": "[DEVICE] TS0601_TZE200_9yapgbuv incorrectly defined as sound controller",
+        "user": "tknapstad",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE200_9yapgbuv",
+            "drivers": [
+              "climate_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/78",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 79,
+        "title": "Device Request - Curtain motor - Tuya / _TZE200_uj3f4wr5",
+        "user": "Patrickske1",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE200_uj3f4wr5",
+            "drivers": [
+              "curtain_motor"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/79",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 37,
+        "title": "[DEVICE] TS0201 _TZ3000_1o6x1bl0 Temperature and Humidity Sensor with buzzer and external sensor",
+        "user": "laborhexe0210",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_1o6x1bl0",
+            "drivers": [
+              "climate_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/37",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 19,
+        "title": "Device Request - Human Presence Detector mm wave radar - MOES Human Presence Sensor - _TZ3218_awarhusb / TS0225",
+        "user": "MarceloSilvaLeite",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3218_awarhusb",
+            "drivers": [
+              "motion_sensor_radar_mmwave"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/19",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 20,
+        "title": "Device Request - Human Presence Detector mm wave radar - MOES Human Presence Sensor - _TZ3218_t9ynfz4x / TS0225",
+        "user": "MarceloSilvaLeite",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3218_t9ynfz4x",
+            "drivers": [
+              "motion_sensor_radar_mmwave"
+            ]
+          },
+          {
+            "fp": "_TZ3218_awarhusb",
+            "drivers": [
+              "motion_sensor_radar_mmwave"
+            ]
+          },
+          {
+            "fp": "_TZE284_debczeci",
+            "drivers": [
+              "presence_sensor_radar"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/20",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 26,
+        "title": "[DEVICE] TS0210 vibration sensor",
+        "user": "gfi63",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_lqpt3mvr",
+            "drivers": [
+              "vibration_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/26",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 27,
+        "title": "[DEVICE] TS011F (not recognized by Homey)",
+        "user": "gfi63",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_npg02xft",
+            "drivers": [
+              "plug_energy_monitor"
+            ]
+          },
+          {
+            "fp": "_TZ3210_cehuw1lw",
+            "drivers": [
+              "plug_energy_monitor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_cphmq0q7",
+            "drivers": [
+              "radiator_valve"
+            ]
+          },
+          {
+            "fp": "_TZ3000_ew3ldmgx",
+            "drivers": [
+              "plug_energy_monitor"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/27",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 44,
+        "title": "[DEVICE] TS011F Tuya zigbee Smart plug 20 Ampere _TZ3210_fgwhjm9j",
+        "user": "Rickert1993",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3210_fgwhjm9j",
+            "drivers": [
+              "climate_sensor"
+            ]
+          },
+          {
+            "fp": "_TZ3210_cehuw1lw",
+            "drivers": [
+              "plug_energy_monitor"
+            ]
+          },
+          {
+            "fp": "_TZ3000_cphmq0q7",
+            "drivers": [
+              "radiator_valve"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/44",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 22,
+        "title": "Device Request - [Smart Knob] - [_TZ3000_gwkzibhs] / [TS004F]",
+        "user": "rsalinger",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_gwkzibhs",
+            "drivers": [
+              "smart_knob_rotary"
+            ]
+          },
+          {
+            "fp": "_TZ3000_4fjiwweb",
+            "drivers": [
+              "button_wireless_4",
+              "smart_knob",
+              "smart_knob_switch"
+            ]
+          },
+          {
+            "fp": "_TZ3000_ja5osu5g",
+            "drivers": [
+              "button_wireless_1",
+              "smart_remote_1_button_2"
+            ]
+          },
+          {
+            "fp": "_TZ3000_kjfzuycl",
+            "drivers": [
+              "smart_knob_rotary",
+              "smart_remote_1_button"
+            ]
+          },
+          {
+            "fp": "_TZ3000_qja6nq5z",
+            "drivers": [
+              "button_wireless_4",
+              "smart_knob",
+              "smart_knob_switch"
+            ]
+          },
+          {
+            "fp": "_TZ3000_ixla93vd",
+            "drivers": [
+              "smart_knob",
+              "smart_knob_switch",
+              "switch_wireless"
+            ]
+          },
+          {
+            "fp": "_TZ3000_uri7oadn",
+            "drivers": [
+              "button_wireless_1"
+            ]
+          },
+          {
+            "fp": "_TZ3000_abrsvsou",
+            "drivers": [
+              "button_wireless_4",
+              "smart_knob",
+              "smart_knob_switch"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/22",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 34,
+        "title": "Device Request Tuya Zigbee 3.0 Smart RGB COLOR LED Strip Controller - _TZ3210_0zabbfa / TS0503B",
+        "user": "kircuvaloglu",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3210_0zabbfa",
+            "drivers": [
+              "led_strip_rgbw"
+            ]
+          },
+          {
+            "fp": "_TZ3210_0zabbfax",
+            "drivers": [
+              "bulb_rgb",
+              "led_strip_rgbw"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/34",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 35,
+        "title": "[DEVICE] TS0601 MOES CO detector",
+        "user": "gore-",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE284_rjxqso4a",
+            "drivers": [
+              "climate_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/35",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 150,
+        "title": "[Feature] Soil sensor missing fertilizer/EC value (measure_ec capability)",
+        "user": "dlnraja",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE284_hdml1aav",
+            "drivers": [
+              "soil_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/150",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 147,
+        "title": "[Fingerprint] Add _TZ3000_itb0omhv to switch_1gang (TS0001)",
+        "user": "dlnraja",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_itb0omhv",
+            "drivers": [
+              "button_wireless_1",
+              "switch_1gang",
+              "wall_remote_1_gang"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/147",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1352,
+        "title": "Device Request: TS0041 1‑button wireless switch (_TZ3000_kxaow5ki)",
+        "user": "Brianhomey",
+        "newFPs": [
+          "_TZ3000_kxaow5ki"
+        ],
+        "existingFPs": [],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1352",
+        "state": "open",
+        "imageAnalysis": null
       },
       {
         "repo": "JohanBendz/com.tuya.zigbee",
@@ -156,5 +775,5 @@
     "newFPs": [],
     "forkFPs": []
   },
-  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests\n1. **Motion Sensor**  \n   - **Issue**: [#163](https://github.com/dlnraja/com.tuya.zigbee/issues/163)  \n   - **User**: late4marshmellow  \n   - **Existing Fingerprints**:  \n     - `_TZE200_kb5noeto` (Driver: presence_sensor_radar)  \n   - **State**: Open  \n\n2. **Fingerbot Plus**  \n   - **Issue**: [#869](https://github.com/JohanBendz/com.tuya.zigbee/issues/869)  \n   - **User**: AntondK88  \n   - **Existing Fingerprints**:  \n     - `_TZ3210_j4pdtz9v` (Drivers: curtain_motor, fingerbot)  \n   - **State**: Open  \n\n## Supported Fingerprints\n- **Existing Fingerprints**:\n  - `_TZE200_kb5noeto` (Motion Sensor)\n  - `_TZ3210_j4pdtz9v` (Fingerbot Plus)\n\n## Fingerprints from Forks to Integrate\n- No new fingerprints from forks were identified in the current analysis.\n\n## Pull Requests with Useful Changes\n1. **Update driver.compose.json**  \n   - **PR**: [#10](https://github.com/dlnraja/com.tuya.zigbee/pull/10)  \n   - **User**: Peter-Celica  \n   - **Fingerprints**: `_TZ3000_mrpevh8p`  \n   - **State**: Closed  \n\n2. **Update driver.compose.json**  \n   - **PR**: [#45](https://github.com/dlnraja/com.tuya.zigbee/pull/45)  \n   - **User**: vl14-dev  \n   - **Fingerprints**: `_TZE200_nv6nxo0c`  \n   - **State**: Merged  \n\n3. **Support for MOES/Tuya Zigbee AM25 Tubular Motor**  \n   - **PR**: [#46](https://github.com/dlnraja/com.tuya.zigbee/pull/46)  \n   - **User**: vl14-dev  \n   - **Fingerprints**: `_TZE200_nv6nxo0c`  \n   - **State**: Closed  \n\n4. **Support for Tuya PIR sensor TS0202**  \n   - **PR**: [#1166](https://github.com/JohanBendz/com.tuya.zigbee/pull/1166)  \n   - **User**: chernals  \n   - **Fingerprints**: `_TZ3000_c8ozah8n`  \n   - **State**: Closed  \n\n5. **Added TS110E Driver**  \n   - **PR**: [#1350](https://github.com/JohanBendz/com.tuya.zigbee/pull/1350)  \n   - **User**: PiTRiS87  \n   - **Fingerprints**: `_TZ3210_ngqk6jia`, `_TZ3210_weaqkhab`  \n   - **State**: Open  \n\n6. **Added 3 New Devices**  \n   - **PR**: [#1253](https://github.com/JohanBendz/com.tuya.zigbee/pull/1253)  \n   - **User**: Peter-Celica  \n   - **Fingerprints**: `_TZE200_pay2byax`, `_TZ3000_mrpevh8p`  \n   - **State**: Open  \n\n7. **Update driver.compose.json**  \n   - **PR**: [#1219](https://github.com/JohanBendz/com.tuya.zigbee/pull/1219)  \n   - **User**: Melectro1  \n   - **Fingerprints**: `_TZ3000_gjrubzje`  \n   - **State**: Open  \n\n8. **Update driver.compose.json**  \n   - **PR**: [#1218](https://github.com/JohanBendz/com.tuya.zigbee/pull/1218)  \n   - **User**: Melectro1  \n   - **Fingerprints**: `_TZE204_dapwryy7`  \n   - **State**: Open  \n\n9. **Add `_TZE204_bjzrowv2` - Update app.json**  \n   - **PR**: [#1195](https://github.com/JohanBendz/com.tuya.zigbee/pull/1195)  \n   - **User**: YuriEstevan  \n   - **Fingerprints**: `_TZE204_bjzrowv2`  \n   - **State**: Open  \n\nThis summary captures the latest developments in the Universal Tuya Zigbee repository, highlighting new device requests, supported fingerprints, and significant pull requests. For further details, please refer to the linked issues and pull requests."
+  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests\n- **New Fingerprint from Upstream**: \n  - `_TZ3000_kxaow5ki` (Issue [#167](https://github.com/dlnraja/com.tuya.zigbee/issues/167))\n\n- **New Fingerprints from Forks**: \n  - No new fingerprints reported in Issue [#166](https://github.com/dlnraja/com.tuya.zigbee/issues/166).\n\n## Existing Fingerprints Supported\n- **From Forks**:\n  - `_TZ3000_mrpevh8p` - Driver: `button_wireless_1`\n  - `_TZ3000_xr7itfxq` - Driver: `button_wireless_2`\n  - `_TZ3000_zgyzgdua` - Drivers: `button_wireless_4`, `scene_switch_4`\n\n- **Closed Issues with Existing Fingerprints**:\n  - `_TZ3000_otvn3lne` - Driver: `motion_sensor` (Issue [#164](https://github.com/dlnraja/com.tuya.zigbee/issues/164))\n  - `_TZE200_kb5noeto` - Driver: `presence_sensor_radar` (Issue [#163](https://github.com/dlnraja/com.tuya.zigbee/issues/163))\n  - `_TZ3000_an5rjiwd` - Driver: `button_wireless_1` (Issue [#121](https://github.com/dlnraja/com.tuya.zigbee/issues/121))\n  - `_TZ3000_fllyghyj` - Driver: `climate_sensor` (Issue [#115](https://github.com/dlnraja/com.tuya.zigbee/issues/115))\n  - `_TZE200_hvaxb2tc`, `_TZE204_qyr2m29i`, `_TZE204_ogx8u5z6`, `_TZE204_o9gyszw2` - Drivers: `radiator_valve`, `thermostat_tuya_dp`, `climate_sensor` (Issue [#77](https://github.com/dlnraja/com.tuya.zigbee/issues/77))\n\n## Fingerprints from Forks to Integrate\n- No new fingerprints from forks reported in the latest activity.\n\n## Pull Requests with Useful Changes\n- No specific PRs were highlighted in the recent issues. However, ongoing discussions and issues may lead to future PRs that enhance device support and functionality.\n\n## Summary\nThe recent GitHub activity for the Universal Tuya Zigbee integration shows a new fingerprint from upstream and several existing fingerprints that are supported. There are ongoing discussions regarding device requests, but no new fingerprints from forks have been identified for integration at this time. Keep an eye on the repository for updates and potential contributions from the community."
 }
