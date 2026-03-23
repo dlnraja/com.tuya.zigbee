@@ -1,17 +1,8 @@
 {
-  "timestamp": "2026-03-22T10:27:23.954Z",
+  "timestamp": "2026-03-23T10:35:43.986Z",
   "devices": [],
   "unmatchedFPs": [],
-  "errors": [
-    {
-      "err": "get coordinator IEEE address",
-      "source": "gmail"
-    },
-    {
-      "err": "get Homey IEEE address for CIE write",
-      "source": "gmail"
-    }
-  ],
+  "errors": [],
   "sources": {
     "gmail": 4
   }
