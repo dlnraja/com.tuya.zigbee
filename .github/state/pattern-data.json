@@ -1,19 +1,19 @@
 {
-  "timestamp": "2026-03-23T06:28:50.809Z",
+  "timestamp": "2026-03-23T15:48:02.386Z",
   "suggestions": [
     {
       "pattern": "False Battery Alert / Missing Battery",
       "id": "battery",
-      "count": 25,
+      "count": 27,
       "priority": "high",
       "topFPs": [
         [
           "vision",
-          20
+          21
         ],
         [
           "TS0601",
-          11
+          12
         ],
         [
           "router",
@@ -36,15 +36,15 @@
           3
         ],
         [
+          "TS0044",
+          3
+        ],
+        [
           "lumi",
           3
         ],
         [
           "_TZ3000_o4mkahkc",
-          2
-        ],
-        [
-          "_TZ3000_o4mkahk",
           2
         ]
       ],
@@ -389,7 +389,7 @@
   ],
   "detections": {
     "inversion": 1,
-    "battery": 25,
+    "battery": 27,
     "double_div": 2,
     "pairing": 7,
     "unknown": 5,

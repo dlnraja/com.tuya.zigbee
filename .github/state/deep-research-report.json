@@ -1,23 +1,24 @@
 {
-  "ts": "2026-03-22T04:01:06.116Z",
+  "ts": "2026-03-23T15:25:52.057Z",
   "ghCalls": 120,
-  "totalFPs": 94,
-  "newFPs": 1,
+  "totalFPs": 93,
+  "newFPs": 2,
   "researched": 1,
   "implemented": 0,
   "results": [
     {
-      "fp": "_TZ3290_ot6ewjvmej",
-      "driver": "ir_remote",
-      "confidence": 25,
+      "fp": "_TZ3000_kxaow5ki",
+      "driver": "button_wireless_1",
+      "confidence": 0,
       "pidsFromIssue": [
-        "TS1201"
+        "TS0041"
       ],
       "discoveredPIDs": [],
-      "variants": 0,
+      "variants": 2,
       "actions": [],
       "sources": [
-        "JohanBendz/com.tuya.zigbee#1331 (issue)"
+        "dlnraja/com.tuya.zigbee#167 (issue)",
+        "JohanBendz/com.tuya.zigbee#1352 (issue)"
       ]
     }
   ]

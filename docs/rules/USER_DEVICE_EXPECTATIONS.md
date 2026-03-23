@@ -7,16 +7,16 @@
 [![Drivers](https://img.shields.io/badge/drivers-188-brightgreen)]()
 [![Fingerprints](https://img.shields.io/badge/fingerprints-4,732+-green)]()
 [![Users Tracked](https://img.shields.io/badge/users%20tracked-33+-purple)]()
-[![Last Updated](https://img.shields.io/badge/updated-2026-03-22-lightgrey)]()
+[![Last Updated](https://img.shields.io/badge/updated-2026-03-23-lightgrey)]()
 
-> **v5.11.138** | **4,732+ fingerprints** | **188 drivers** | **1,874 flow cards** | Updated 2026-03-22
+> **v5.11.138** | **4,732+ fingerprints** | **188 drivers** | **1,874 flow cards** | Updated 2026-03-23
 
 ---
 
 ## Fingerprint Verification
 
 **Verified**: 85 fingerprints from user reports found in drivers
-**Missing**: 0 — all user-reported fingerprints are supported
+**Missing** (1): `_TZ3000_kxaow5ki`
 
 ---
 
@@ -183,6 +183,7 @@
 | Brianhomey | `_TZ3000_kxaow5ki` | JohanBendz/com.tuya.zigbee#1352 | Auto-scanned 2026-03-23 |
 
 
+
 ## Nightly Auto-Scan (2026-03-22)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
@@ -190,10 +191,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-03-17)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Peter_van_Werkhoven | `_TZE200_vvmbj46n` | Forum #140352 post #1638 | Auto-scanned 2026-03-17 |
+
 
 
 
@@ -222,10 +225,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-03-15)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | cristianoisaac | `_TZE284_bquwrqh1`, `smartthings`, `vision`, `lumi`, `tuya` | JohanBendz/com.tuya.zigbee#1351 | Auto-scanned 2026-03-15 |
+
 
 
 
@@ -258,10 +263,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-03-10)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Peter_van_Werkhoven | `development` | Forum #140352 post #1624 | Auto-scanned 2026-03-10 |
+
 
 
 
@@ -311,12 +318,14 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-03-07)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Olivier_VE | `HOBEIAN` | Forum #140352 post #1604 | Auto-scanned 2026-03-07 |
 | FinnKje | `_TZ3210_jic09i9a`, `_TZ3210_ogx8u9it`, `zigbee2mqtt` | Forum #140352 post #1606 | Auto-scanned 2026-03-07 |
 | blutch32 | `dlnraja` | Forum #140352 post #1607 | Auto-scanned 2026-03-07 |
+
 
 
 
@@ -370,10 +379,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-03-04)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Hartmut_Dunker | `_TZ3002_pzao9ls1`, `dlnraja` | Forum #140352 post #1579 | Auto-scanned 2026-03-04 |
+
 
 
 
@@ -434,11 +445,13 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-03-02)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Nicolas | `dlnraja` | Forum #140352 post #1559 | Auto-scanned 2026-03-02 |
 | github-actions[bot] | `danfoss`, `legrand`, `sonoff`, `xiaomi`, `test`, `bosch`, `ikea`, `tuya` | dlnraja/com.tuya.zigbee#152 | Auto-scanned 2026-03-02 |
+
 
 
 
@@ -499,10 +512,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-28)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | OH2TH | `dlnraja` | Forum #140352 post #1551 | Auto-scanned 2026-02-28 |
+
 
 
 
@@ -573,12 +588,14 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-26)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | JJ10 | `_TZE200_crq3r3la`, `_TZE200_gkfbdvyx` | Forum #140352 post #1481 | Auto-scanned 2026-02-26 |
 | 7Hills | `_TZE204_clrdrnya` | Forum #140352 post #1482 | Auto-scanned 2026-02-26 |
 | dmz-86 | `_TZE204_clrdrnya` | JohanBendz/com.tuya.zigbee#1142 | Auto-scanned 2026-02-26 |
+
 
 
 
@@ -664,11 +681,13 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-24)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | FrankP | `_TZ3000_itb0omhv` | Forum #140352 post #1477 | Auto-scanned 2026-02-24 |
 | Domingoso | `_TZE200_xlppj4f5` | dlnraja/com.tuya.zigbee#135 | Auto-scanned 2026-02-24 |
+
 
 
 
@@ -767,10 +786,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-22)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Slawek_Pe | `_TZ3210_xzhnra8x` | Forum #140352 post #1467 | Auto-scanned 2026-02-22 |
+
 
 
 
@@ -817,6 +838,7 @@
 |------|---------------|--------|------|
 | ManuelKugler | `_TZE284_aao3yzhs` | Forum #140352 post #1465 | Auto-scanned 2026-02-21 |
 | eeckelaertyannick | `_TZE200_8ygsuhe1` | JohanBendz/com.tuya.zigbee#1229 | Auto-scanned 2026-02-21 |
+
 
 
 
@@ -1005,6 +1027,9 @@
 
 <!-- NIGHTLY_END -->
 
+
+<!-- NIGHTLY_END -->
+
 ---
 
 ## Auto-Discovered Fingerprints
@@ -1028,6 +1053,7 @@
 | _TZ3210_iymfxdis | dlnraja/com.tuya.zigbee#133 | device_request |
 | _TZ3002_xkxgfxsg | dlnraja/com.tuya.zigbee#133 | device_request |
 | _TZ3002_tlsvxhxc | dlnraja/com.tuya.zigbee#133 | device_request |
+
 
 
 
@@ -1099,6 +1125,7 @@
 
 
 <!-- AUTODISCOVERED_END -->
+
 
 
 
@@ -1240,6 +1267,7 @@
 
 
 
+
 ## Auto-discovered from GitHub (2026-03-01)
 
 | Fingerprint | Source | Type |
@@ -1309,6 +1337,7 @@
 
 
 
+
 ## Auto-discovered from GitHub (2026-03-11)
 
 | Fingerprint | Source | Type |
@@ -1360,6 +1389,15 @@
 
 <!-- AUTODISCOVERED_END -->
 
+
+## Auto-discovered from GitHub (2026-03-22)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZ3000_kxaow5ki | JohanBendz/com.tuya.zigbee#1352 | device_request |
+
+<!-- AUTODISCOVERED_END -->
+
 ---
 
 ## Decision Reference (Avoid Repeating Mistakes)
@@ -1380,7 +1418,7 @@
 
 ## Recurring Patterns (Auto-detected)
 
-- **False Battery Alert / Missing Battery** (25 reports, high priority): Set `get mainsPowered() { return true; }` and remove measure_battery in onNodeInit
+- **False Battery Alert / Missing Battery** (27 reports, high priority): Set `get mainsPowered() { return true; }` and remove measure_battery in onNodeInit
 - **Pairing Failure** (7 reports, high priority): Check driver.compose.json fingerprints, verify manufacturerName + productId
 - **Device Shows Unknown** (5 reports, high priority): Check settings keys: zb_model_id (not zb_modelId), zb_manufacturer_name (not zb_manufacturerName)
 - **Ring/Alarm Wrong** (5 reports, high priority): Check alarm DP map
@@ -1394,9 +1432,9 @@
 
 ## Interview Repository
 
-- **Total interviews recovered**: 143
-- **Unique fingerprints**: 116
-- **Sources**: {"github":111,"forum":32,"gmail":0,"forum-pm":0}
+- **Total interviews recovered**: 153
+- **Unique fingerprints**: 123
+- **Sources**: {"github":121,"forum":32,"gmail":0,"forum-pm":0}
 
 ---
 
@@ -1434,11 +1472,4 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 
 ---
 
-*Auto-generated on 2026-03-22 from v5.11.138 — 4,732+ fingerprints across 188 drivers*
-
-
-## Auto-discovered from GitHub (2026-03-22)
-
-| Fingerprint | Source | Type |
-|---|---|---|
-| _TZ3000_kxaow5ki | JohanBendz/com.tuya.zigbee#1352 | device_request |
+*Auto-generated on 2026-03-23 from v5.11.138 — 4,732+ fingerprints across 188 drivers*
