@@ -1,19 +1,14 @@
 {
-  "timestamp": "2026-02-19T22:53:04.242Z",
+  "timestamp": "2026-03-23T06:22:42.190Z",
   "localStats": {
-    "manufacturerNames": 3392,
-    "productIds": 500
+    "manufacturerNames": 4303,
+    "productIds": 559
   },
   "z2mStats": {
     "manufacturerNames": 25,
-    "productIds": 1639
+    "productIds": 1656
   },
   "missingManufacturerNames": [
-    {
-      "value": "ZGAF-205L",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
     {
       "value": "ZG-204ZE",
       "source": "tuya",
@@ -33,11 +28,6 @@
   "missingProductIds": [
     {
       "value": "TS020C",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "ZG-301Z",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
     },
@@ -68,26 +58,6 @@
     },
     {
       "value": "kjintbl",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "ZG-302Z1",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "ZG-302Z2",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "ZG-302Z3",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "TS0041A",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
     },
@@ -137,11 +107,6 @@
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "RH3052",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
       "value": "gq8b1uv",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
@@ -153,11 +118,6 @@
     },
     {
       "value": "005f0c3b",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "TS0026",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
     },
@@ -177,51 +137,6 @@
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "JZ-ZB-004",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "ZG-106Z",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "ZG-101ZD",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "TS0052",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "ZG-205ZL",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "ZG-227ZL",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "ZG-225Z",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "TS0224",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "TS030F",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
       "value": "SM0202",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
@@ -232,52 +147,12 @@
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "TS0105",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "ZG-103Z",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "ZG-302ZM",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "ZG-302ZL",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "TS0901",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
       "value": "5rta89nj",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "ZG-305Z",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
       "value": "ZS-304Z",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "ZG-204ZE",
-      "source": "tuya",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "ZG-204ZQ",
       "source": "tuya",
       "suggestedDriver": "generic_diy"
     },
@@ -288,21 +163,6 @@
     },
     {
       "value": "Cuber ZLI Router",
-      "source": "sonoff",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "CK-TLSR8656-SS5-01(7003)",
-      "source": "sonoff",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "WB-01",
-      "source": "sonoff",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "CK-TLSR8656-SS5-01(7000)",
       "source": "sonoff",
       "suggestedDriver": "generic_diy"
     },
@@ -337,19 +197,9 @@
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "SNZB-05P",
-      "source": "sonoff",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "TRVZB",
-      "source": "sonoff",
-      "suggestedDriver": "generic_diy"
-    },
-    {
       "value": "SWV",
       "source": "sonoff",
-      "suggestedDriver": "generic_diy"
+      "suggestedDriver": "water_valve_smart"
     },
     {
       "value": "ZBMicro",
@@ -357,34 +207,19 @@
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "ZBM5-1C-120",
-      "source": "sonoff",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "ZBM5-2C-120",
-      "source": "sonoff",
-      "suggestedDriver": "generic_diy"
-    },
-    {
-      "value": "ZBM5-3C-120",
-      "source": "sonoff",
-      "suggestedDriver": "generic_diy"
-    },
-    {
       "value": "ZBM5-1C-80/86",
       "source": "sonoff",
-      "suggestedDriver": "generic_diy"
+      "suggestedDriver": "switch_1gang"
     },
     {
       "value": "ZBM5-2C-80/86",
       "source": "sonoff",
-      "suggestedDriver": "generic_diy"
+      "suggestedDriver": "switch_1gang"
     },
     {
       "value": "ZBM5-3C-80/86",
       "source": "sonoff",
-      "suggestedDriver": "generic_diy"
+      "suggestedDriver": "switch_1gang"
     },
     {
       "value": "MINI-ZBRBS",
@@ -778,6 +613,11 @@
     },
     {
       "value": "E8331SCN200ZB",
+      "source": "schneider_electric",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "UFH",
       "source": "schneider_electric",
       "suggestedDriver": "generic_diy"
     },
@@ -1862,6 +1702,11 @@
       "suggestedDriver": "generic_diy"
     },
     {
+      "value": "KAJPLATS E27 806lm 95mm smart WS",
+      "source": "ikea",
+      "suggestedDriver": "generic_diy"
+    },
+    {
       "value": "KAJPLATS E27 WS G60 clear 470lm",
       "source": "ikea",
       "suggestedDriver": "generic_diy"
@@ -1958,6 +1803,16 @@
     },
     {
       "value": "INSPELNING Smart plug",
+      "source": "ikea",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "GRILLPLATS Plug\\u0000",
+      "source": "ikea",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "GRILLPLATS Plug",
       "source": "ikea",
       "suggestedDriver": "generic_diy"
     },
@@ -2078,6 +1933,11 @@
     },
     {
       "value": "BADRING Water Leakage Sensor",
+      "source": "ikea",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "VARMBLIXT table/wall lamp",
       "source": "ikea",
       "suggestedDriver": "generic_diy"
     },
@@ -2418,6 +2278,11 @@
     },
     {
       "value": "lumi.ctrl_86plug.aq1",
+      "source": "lumi",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "lumi.plug.acn005",
       "source": "lumi",
       "suggestedDriver": "generic_diy"
     },
@@ -2858,6 +2723,11 @@
     },
     {
       "value": "lumi.switch.agl011",
+      "source": "lumi",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "lumi.switch.agl007",
       "source": "lumi",
       "suggestedDriver": "generic_diy"
     },
@@ -3673,6 +3543,16 @@
     },
     {
       "value": "929003785001_02",
+      "source": "philips",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "929003736701_01",
+      "source": "philips",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "929003736701_02",
       "source": "philips",
       "suggestedDriver": "generic_diy"
     },
@@ -6857,6 +6737,21 @@
       "suggestedDriver": "generic_diy"
     },
     {
+      "value": "929004611201",
+      "source": "philips",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "929003812601",
+      "source": "philips",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "929003812801",
+      "source": "philips",
+      "suggestedDriver": "generic_diy"
+    },
+    {
       "value": "LWE008",
       "source": "philips",
       "suggestedDriver": "generic_diy"
@@ -7207,11 +7102,6 @@
       "suggestedDriver": "generic_diy"
     },
     {
-      "value": "929003812801",
-      "source": "philips",
-      "suggestedDriver": "generic_diy"
-    },
-    {
       "value": "915005821901",
       "source": "philips",
       "suggestedDriver": "generic_diy"
@@ -7372,6 +7262,11 @@
       "suggestedDriver": "generic_diy"
     },
     {
+      "value": "929004610401",
+      "source": "philips",
+      "suggestedDriver": "generic_diy"
+    },
+    {
       "value": "929004610402",
       "source": "philips",
       "suggestedDriver": "generic_diy"
@@ -7423,6 +7318,11 @@
     },
     {
       "value": "929004277102",
+      "source": "philips",
+      "suggestedDriver": "generic_diy"
+    },
+    {
+      "value": "929004294903",
       "source": "philips",
       "suggestedDriver": "generic_diy"
     }
