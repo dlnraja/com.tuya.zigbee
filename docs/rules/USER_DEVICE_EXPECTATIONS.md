@@ -177,6 +177,12 @@
 
 <!-- NIGHTLY_START — Preserved from nightly-processor.js -->
 
+## Nightly Auto-Scan (2026-03-23)
+| User | Fingerprint(s) | Source | Date |
+|------|---------------|--------|------|
+| Brianhomey | `_TZ3000_kxaow5ki` | JohanBendz/com.tuya.zigbee#1352 | Auto-scanned 2026-03-23 |
+
+
 ## Nightly Auto-Scan (2026-03-22)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
