@@ -1,11 +1,23 @@
 {
-  "timestamp": "2026-03-22T05:48:52.317Z",
+  "timestamp": "2026-03-23T05:58:56.342Z",
   "appVersion": "5.11.138",
   "forum": 0,
-  "github": 0,
-  "diagnostics": 0,
+  "github": 1,
+  "diagnostics": 4,
   "diagNewFPs": 0,
   "diagCritical": 0,
   "forumDetails": [],
-  "githubDetails": []
+  "githubDetails": [
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1352,
+      "user": "Brianhomey",
+      "fps": [
+        "_TZ3000_kxaow5ki"
+      ],
+      "title": "Device Request: TS0041 1‑button wireless switch (_TZ3000_kxaow5ki)",
+      "response": "### Issue #1352 Response\n\nThank you for your request regarding the TS0041 1-button wireless switch (_TZ3000_kxaow5ki). Based on the fingerprint lookup, we can confirm that the device is supported with the following drivers available:\n\n- **button_wireless_1**\n- **smart_button_switch**\n- **universal_f",
+      "model": "gh-gpt-4o-mini"
+    }
+  ]
 }

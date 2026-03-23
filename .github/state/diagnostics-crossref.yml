@@ -1,18 +1,51 @@
 # Diagnostics Cross-Reference (auto-generated)
-# Generated: 2026-03-22T05:51:16.795Z
+# Generated: 2026-03-23T06:01:28.688Z
 # Emails processed: 4
 
 fingerprints:
+  _TZ3000_mrpevh8p:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    drivers: [button_wireless_1]
+    mentions: 1
+    source_types: [github]
+    reporters: [github-actions[bot]]
+    sources:
+      - type: github
+        date: 2026-03-22T18:46:40.000Z
+  _TZ3000_xr7itfxq:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    drivers: [button_wireless_2]
+    mentions: 1
+    source_types: [github]
+    reporters: [github-actions[bot]]
+    sources:
+      - type: github
+        date: 2026-03-22T18:46:40.000Z
+  _TZ3000_zgyzgdua:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    conflict: true  # Same FP in multiple drivers!
+    drivers: [button_wireless_4, scene_switch_4]
+    mentions: 1
+    source_types: [github]
+    reporters: [github-actions[bot]]
+    action: "Verify productId mapping - ensure correct driver match"
+    sources:
+      - type: github
+        date: 2026-03-22T18:46:40.000Z
 
 users:
-  M.K.:
-    activity_score: 5
-    emails: 2
-    types: [device_issue]
-    latest: 2026-03-21T21:04:47.000Z
+  github-actions[bot]:
+    activity_score: 18
+    emails: 4
+    fingerprints: [_TZ3000_mrpevh8p, _TZ3000_xr7itfxq, _TZ3000_zgyzgdua]
+    types: [github]
+    latest: 2026-03-22T18:46:40.000Z
 
-error_patterns:
-  - count: 1
-    error: "get coordinator IEEE address"
-  - count: 1
-    error: "get Homey IEEE address for CIE write"
+protocol_distribution:
+  unknown: 3

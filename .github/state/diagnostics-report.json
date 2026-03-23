@@ -1,9 +1,8 @@
 {
-  "timestamp": "2026-03-22T05:51:16.795Z",
+  "timestamp": "2026-03-23T06:01:28.688Z",
   "count": 4,
   "byType": {
-    "diagnostic": 2,
-    "device_issue": 2
+    "github": 4
   },
   "newFingerprints": [],
   "deepResearch": {
@@ -13,87 +12,14 @@
   },
   "diagnostics": [
     {
-      "id": "imap_501788",
-      "type": "diagnostic",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
-      "from": "homey_system",
-      "date": "2026-03-21T20:37:58.000Z",
+      "id": "imap_501810",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] (Issue #164)",
+      "from": "github",
+      "date": "2026-03-22T07:17:46.000Z",
       "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [
-        "get coordinator IEEE address",
-        "get Homey IEEE address for CIE write"
-      ],
-      "devices": [
-        "rain_sensor",
-        "f393b439-79e9-457b-ad61-342778",
-        "36ecdcf1-d718-4890-8e14-783a6e",
-        "responses",
-        "presence_sensor_radar",
-        "c94e0fba-d6c3-4d13-8932-37c9cc",
-        "soil_sensor",
-        "dd5a0237-2585-4fe6-ad3b-99d356",
-        "e2e54d3e-9ea8-48fa-95ce-e6289c",
-        "should",
-        "pres"
-      ],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 16000,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_501789",
-      "type": "diagnostic",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
-      "from": "homey_system",
-      "date": "2026-03-21T20:52:49.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [
-        "discover",
-        "soil_sensor",
-        "e2e54d3e-9ea8-48fa-95ce-e6289c",
-        "missing",
-        "dd5a0237-2585-4fe6-ad3b-99d356"
-      ],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 12616,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_501790",
-      "type": "device_issue",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "user",
-      "date": "2026-03-21T20:53:40.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "M.K."
+        "source": "github",
+        "username": "github-actions[bot]"
       },
       "fps": {
         "mfr": [],
@@ -102,41 +28,182 @@
       "errs": [],
       "devices": [],
       "xref": [],
-      "ghInfo": null,
+      "ghInfo": {
+        "issueNum": "164",
+        "action": "commented",
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "github-actions[bot] left a comment (dlnraja/com.tuya.zigbee#164)\r\n\r\nAll fingerprints supported in v5.11.138. Closing as resolved.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/164#issuecomment-4105713161\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/issues/164/4105713161@github.com>\r\n"
+      },
       "forumInfo": null,
       "crashInfo": null,
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 5472,
+      "bodyLength": 390,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_501791",
-      "type": "device_issue",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "user",
-      "date": "2026-03-21T21:04:47.000Z",
+      "id": "imap_501811",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] Motion Sensor (Issue #163)",
+      "from": "github",
+      "date": "2026-03-22T07:17:48.000Z",
       "pseudo": {
-        "source": "user",
-        "username": "M.K."
+        "source": "github",
+        "username": "github-actions[bot]"
       },
       "fps": {
         "mfr": [],
         "pid": []
       },
       "errs": [],
-      "devices": [
-        "isn"
-      ],
+      "devices": [],
       "xref": [],
-      "ghInfo": null,
+      "ghInfo": {
+        "issueNum": "163",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "github-actions[bot] left a comment (dlnraja/com.tuya.zigbee#163)\r\n\r\nAll fingerprints supported in v5.11.138. Closing as resolved.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/163#issuecomment-4105713211\r\nYou are receiving this because you were mentioned.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/issues/163/4105713211@github.com>\r\n"
+      },
       "forumInfo": null,
       "crashInfo": null,
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 447,
+      "bodyLength": 395,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_501812",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] Motion Sensor (Issue #163)",
+      "from": "github",
+      "date": "2026-03-22T07:17:48.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "github-actions[bot]"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "163",
+        "action": "Closed",
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "Closed #163 as completed.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/163#event-23788627731\r\nYou are receiving this because you were mentioned.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/issue/163/issue_event/23788627731@github.com>\r\n"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 297,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_501886",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [Auto] 3 new fingerprints from forks (Issue #166)",
+      "from": "github",
+      "date": "2026-03-22T18:46:40.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "github-actions[bot]"
+      },
+      "fps": {
+        "mfr": [
+          "_TZ3000_mrpevh8p",
+          "_TZ3000_xr7itfxq",
+          "_TZ3000_zgyzgdua"
+        ],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "settings"
+      ],
+      "xref": [
+        {
+          "fingerprint": "_TZ3000_mrpevh8p",
+          "type": "mfr",
+          "supported": true,
+          "drivers": [
+            "button_wireless_1"
+          ],
+          "protocol": "unknown",
+          "requires": []
+        },
+        {
+          "fingerprint": "_TZ3000_xr7itfxq",
+          "type": "mfr",
+          "supported": true,
+          "drivers": [
+            "button_wireless_2"
+          ],
+          "protocol": "unknown",
+          "requires": []
+        },
+        {
+          "fingerprint": "_TZ3000_zgyzgdua",
+          "type": "mfr",
+          "supported": true,
+          "drivers": [
+            "button_wireless_4",
+            "scene_switch_4"
+          ],
+          "protocol": "unknown",
+          "requires": [],
+          "conflict": true
+        }
+      ],
+      "ghInfo": {
+        "issueNum": "166",
+        "action": "commented",
+        "fps": {
+          "mfr": [
+            "_TZ3000_mrpevh8p",
+            "_TZ3000_xr7itfxq",
+            "_TZ3000_zgyzgdua"
+          ],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "github-actions[bot] left a comment (dlnraja/com.tuya.zigbee#166)\r\n\r\n<!-- tuya-triage-bot -->\r\nHi! This device is **already supported** in [Universal Tuya Zigbee](https://github.com/dlnraja/com.tuya.zigbee) **v5.11.138**.\r\n\r\n| Fingerprint | Driver(s) |\r\n|---|---|\r\n| `_TZ3000_mrpevh8p` | **button_wireless_1** |\r\n| `_TZ3000_xr7itfxq` | **button_wireless_2** |\r\n| `_TZ3000_zgyzgdua` | **button_wireless_4, scene_switch_4** |\r\n\r\n### :inbox_tray: Install\r\n- **[Homey App Store](https://homey.app/a/com.dl"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 1522,
       "contentType": "text/plain"
     }
   ]
