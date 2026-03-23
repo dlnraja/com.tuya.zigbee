@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-23T05:58:56.342Z",
+  "timestamp": "2026-03-23T15:02:29.427Z",
   "appVersion": "5.11.138",
   "forum": 0,
   "github": 1,
@@ -10,13 +10,15 @@
   "githubDetails": [
     {
       "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1352,
-      "user": "Brianhomey",
+      "number": 1353,
+      "user": "Ssssneak",
       "fps": [
-        "_TZ3000_kxaow5ki"
+        "_TZ3000_v4l4b0lp",
+        "example",
+        "router"
       ],
-      "title": "Device Request: TS0041 1‑button wireless switch (_TZ3000_kxaow5ki)",
-      "response": "### Issue #1352 Response\n\nThank you for your request regarding the TS0041 1-button wireless switch (_TZ3000_kxaow5ki). Based on the fingerprint lookup, we can confirm that the device is supported with the following drivers available:\n\n- **button_wireless_1**\n- **smart_button_switch**\n- **universal_f",
+      "title": "Device Request - Tuya 3-gang wall switch - _TZ3000_v4l4b0lp / TS0003",
+      "response": "### Issue #1353: Tuya 3-gang wall switch - _TZ3000_v4l4b0lp / TS0003\n\nThank you for providing the detailed device information and interview data for the Tuya 3-gang wall switch. Based on the provided data, here’s a comprehensive analysis:\n\n#### Fingerprint Support\nThe fingerprint lookup indicates th",
       "model": "gh-gpt-4o-mini"
     }
   ]
