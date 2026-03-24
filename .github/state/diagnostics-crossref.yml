@@ -1,51 +1,39 @@
 # Diagnostics Cross-Reference (auto-generated)
-# Generated: 2026-03-23T06:01:28.688Z
-# Emails processed: 4
+# Generated: 2026-03-24T05:57:00.164Z
+# Emails processed: 5
 
 fingerprints:
-  _TZ3000_mrpevh8p:
+  _TZ3000_kxaow5ki:
     priority: NaN
-    supported: true
+    supported: false
     protocol: unknown
-    drivers: [button_wireless_1]
     mentions: 1
     source_types: [github]
     reporters: [github-actions[bot]]
+    action: "Add to driver via enrichment-scanner or manual fingerprint addition"
     sources:
       - type: github
-        date: 2026-03-22T18:46:40.000Z
-  _TZ3000_xr7itfxq:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [button_wireless_2]
-    mentions: 1
-    source_types: [github]
-    reporters: [github-actions[bot]]
-    sources:
-      - type: github
-        date: 2026-03-22T18:46:40.000Z
-  _TZ3000_zgyzgdua:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    conflict: true  # Same FP in multiple drivers!
-    drivers: [button_wireless_4, scene_switch_4]
-    mentions: 1
-    source_types: [github]
-    reporters: [github-actions[bot]]
-    action: "Verify productId mapping - ensure correct driver match"
-    sources:
-      - type: github
-        date: 2026-03-22T18:46:40.000Z
+        date: 2026-03-23T06:53:29.000Z
 
 users:
   github-actions[bot]:
-    activity_score: 18
+    activity_score: 12
     emails: 4
-    fingerprints: [_TZ3000_mrpevh8p, _TZ3000_xr7itfxq, _TZ3000_zgyzgdua]
+    fingerprints: [_TZ3000_kxaow5ki]
     types: [github]
-    latest: 2026-03-22T18:46:40.000Z
+    latest: 2026-03-23T06:53:30.000Z
+  E.G.:
+    activity_score: 5
+    emails: 1
+    types: [device_issue]
+    has_errors: true
+    latest: 2026-03-23T18:33:40.000Z
+
+error_patterns:
+  - count: 1
+    error: "paired) needs only to be added to the 4 buttons wireless dri"
+  - count: 1
+    error: "be paired at all."
 
 protocol_distribution:
-  unknown: 3
+  unknown: 1
