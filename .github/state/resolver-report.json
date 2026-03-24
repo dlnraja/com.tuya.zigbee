@@ -1,10 +1,11 @@
 {
-  "timestamp": "2026-03-23T06:28:50.898Z",
+  "timestamp": "2026-03-24T06:24:51.788Z",
   "processed": 3,
   "commented": 1,
   "closed": 0,
   "protocols": {
-    "unknown": 3
+    "unknown": 2,
+    "zcl": 1
   },
   "errors": [],
   "fpPidPairs": [],
