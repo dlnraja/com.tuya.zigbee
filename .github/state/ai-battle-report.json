@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-03-23T15:58:23.656Z",
+  "timestamp": "2026-03-24T04:28:41.262Z",
   "dryRun": false,
   "sources": {
     "external": 1607,
-    "github": 8,
+    "github": 6,
     "forks": 0,
     "johan": 0,
     "gmail": 0,
@@ -25,5 +25,5 @@
     "skipped": 0
   },
   "ghApiCalls": 100,
-  "aiSummary": "```json\n{\n  \"summary\": {\n    \"total_sources_scanned\": 1615,\n    \"confirmed_variants\": 0,\n    \"top_patterns\": [\n      {\n        \"pattern\": \"False Battery Alert / Missing Battery\",\n        \"count\": 27,\n        \"priority\": \"high\"\n      },\n      {\n        \"pattern\": \"Pairing Failure\",\n        \"count\": 7,\n        \"priority\": \"high\"\n      }\n    ]\n  }\n}\n```"
+  "aiSummary": "```json\n{\n  \"summary\": {\n    \"total_sources_scanned\": 1613,\n    \"confirmed_variants\": 0,\n    \"new_fingerprints_classified\": 0,\n    \"top_patterns\": [\n      {\n        \"pattern\": \"False Battery Alert / Missing Battery\",\n        \"count\": 27,\n        \"priority\": \"high\",\n        \"fix\": \"Set `get mainsPowered() { return true; }` and remove measure_battery in onNodeInit\"\n      },\n      {\n        \"pattern\": \"Pairing Failure\",\n        \"count\": 7,\n        \"priority\": \"high\"\n      }\n    ]\n  }\n}\n```"
 }

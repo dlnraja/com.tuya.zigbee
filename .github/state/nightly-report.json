@@ -1,25 +1,22 @@
 {
-  "timestamp": "2026-03-23T15:02:29.427Z",
+  "timestamp": "2026-03-24T03:34:33.571Z",
   "appVersion": "5.11.138",
-  "forum": 0,
-  "github": 1,
+  "forum": 1,
+  "github": 0,
   "diagnostics": 4,
   "diagNewFPs": 0,
   "diagCritical": 0,
-  "forumDetails": [],
-  "githubDetails": [
+  "forumDetails": [
     {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1353,
-      "user": "Ssssneak",
+      "topic": 140352,
+      "post": 1646,
+      "user": "Eftychis_Georgilas",
       "fps": [
-        "_TZ3000_v4l4b0lp",
-        "example",
-        "router"
+        "test"
       ],
-      "title": "Device Request - Tuya 3-gang wall switch - _TZ3000_v4l4b0lp / TS0003",
-      "response": "### Issue #1353: Tuya 3-gang wall switch - _TZ3000_v4l4b0lp / TS0003\n\nThank you for providing the detailed device information and interview data for the Tuya 3-gang wall switch. Based on the provided data, here’s a comprehensive analysis:\n\n#### Fingerprint Support\nThe fingerprint lookup indicates th",
+      "reply": "It seems you've encountered several issues with your devices. Let's break down the problems and address them one by one.\n\n### 4 Gang Switch\nYou mentioned that the 4 gang switch is not pairing and that",
       "model": "gh-gpt-4o-mini"
     }
-  ]
+  ],
+  "githubDetails": []
 }
