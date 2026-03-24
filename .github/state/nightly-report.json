@@ -1,11 +1,42 @@
 {
-  "timestamp": "2026-03-24T05:50:54.673Z",
+  "timestamp": "2026-03-24T15:05:27.482Z",
   "appVersion": "5.11.138",
-  "forum": 0,
+  "forum": 3,
   "github": 0,
-  "diagnostics": 4,
-  "diagNewFPs": 0,
+  "diagnostics": 5,
+  "diagNewFPs": 1,
   "diagCritical": 0,
-  "forumDetails": [],
+  "forumDetails": [
+    {
+      "topic": 140352,
+      "post": 1647,
+      "user": "Meruem",
+      "fps": [
+        "dlnraja",
+        "test",
+        "tuya"
+      ],
+      "reply": "Yes, you are correct! The app does not appear in the Homey Apps section without the “Test” designation. The link you provided for the main app (https://homey.app/a/com.dlnraja.tuya.zigbee/) is current",
+      "model": "gh-gpt-4o-mini"
+    },
+    {
+      "topic": 140352,
+      "post": 1648,
+      "user": "smarthomesven",
+      "fps": [
+        "test"
+      ],
+      "reply": "It appears that your device has been identified with a fingerprint, and it is supported by the \"diy_custom_zigbee\" driver. This driver is typically used for devices that may not have a specific driver",
+      "model": "gh-gpt-4o-mini"
+    },
+    {
+      "topic": 140352,
+      "post": 1649,
+      "user": "Lasse_K",
+      "fps": [],
+      "reply": "It looks like the ZG-102Z contact sensor is indeed recognized in our fingerprint database, and it should be supported by the \"contact_sensor\" driver. Since you mentioned that it previously worked in v",
+      "model": "gh-gpt-4o-mini"
+    }
+  ],
   "githubDetails": []
 }

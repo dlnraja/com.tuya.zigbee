@@ -1,24 +1,24 @@
 {
-  "timestamp": "2026-03-24T06:06:08.916Z",
-  "totalNew": 1,
-  "withDPs": 0,
-  "withPid": 0,
-  "multiSource": 1,
-  "sourceBreakdown": {
-    "gmail-diag": 1,
-    "email-diag": 1
+  "timestamp": "2026-03-24T15:18:43.672Z",
+  "dryRun": false,
+  "stats": {
+    "z2m": 1,
+    "zha": 34,
+    "deconz": 13,
+    "hubitat": 0,
+    "total": 26
   },
-  "newFingerprints": [
-    {
-      "fp": "_TZ3000_kxaow5ki",
-      "source": "gmail-diag",
-      "sources": [
-        "gmail-diag",
-        "email-diag"
-      ],
-      "allPids": [],
-      "reporters": []
-    }
-  ],
-  "aiPlan": "Based on the provided fingerprint data, it appears that there are no specific device types, DPs (data points), or capabilities listed. Therefore, I cannot classify the device type, suggest an existing Homey driver, or map any DPs to Homey capabilities.\n\nHere’s the output in markdown table format:\n\n| FP                  | Type   | Driver | DPs→Capabilities | Quirks |\n|---------------------|--------|--------|-------------------|--------|\n| _TZ3000_kxaow5ki    | Unknown| None   | None              | None   |\n\n### Notes:\n- The device fingerprint does not provide enough information to classify the device or suggest a driver.\n- Please provide more details or check if there are any available DPs or capabilities for this device."
+  "crossRef": {
+    "total": 26,
+    "supported": 26,
+    "unsupported": 0
+  },
+  "enrichments": {
+    "proposed": 0,
+    "applied": 0,
+    "skipped": 0
+  },
+  "topUnsupported": [],
+  "appliedDetails": [],
+  "skippedDetails": []
 }

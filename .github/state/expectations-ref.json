@@ -307,13 +307,13 @@
     {
       "id": "battery",
       "pattern": "False Battery Alert / Missing Battery",
-      "count": 27,
+      "count": 28,
       "priority": "high"
     },
     {
       "id": "pairing",
       "pattern": "Pairing Failure",
-      "count": 7,
+      "count": 8,
       "priority": "high"
     },
     {
@@ -360,7 +360,7 @@
     }
   ],
   "interviews": {
-    "total": 153,
+    "total": 154,
     "fps": 123
   },
   "invertedMfrs": [
