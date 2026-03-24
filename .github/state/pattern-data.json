@@ -1,19 +1,19 @@
 {
-  "timestamp": "2026-03-24T06:24:51.703Z",
+  "timestamp": "2026-03-24T15:51:12.562Z",
   "suggestions": [
     {
       "pattern": "False Battery Alert / Missing Battery",
       "id": "battery",
-      "count": 27,
+      "count": 28,
       "priority": "high",
       "topFPs": [
         [
           "vision",
-          21
+          22
         ],
         [
           "TS0601",
-          12
+          13
         ],
         [
           "router",
@@ -56,11 +56,15 @@
     {
       "pattern": "Pairing Failure",
       "id": "pairing",
-      "count": 7,
+      "count": 8,
       "priority": "high",
       "topFPs": [
         [
           "vision",
+          5
+        ],
+        [
+          "TS0601",
           4
         ],
         [
@@ -69,10 +73,6 @@
         ],
         [
           "generic",
-          3
-        ],
-        [
-          "TS0601",
           3
         ],
         [
@@ -92,11 +92,11 @@
           2
         ],
         [
-          "_TZE204_ahwvlkpy",
-          1
+          "_TZE284_hdml1aav",
+          2
         ],
         [
-          "tube",
+          "_TZE204_ahwvlkpy",
           1
         ]
       ],
@@ -389,9 +389,9 @@
   ],
   "detections": {
     "inversion": 1,
-    "battery": 27,
+    "battery": 28,
     "double_div": 2,
-    "pairing": 7,
+    "pairing": 8,
     "unknown": 5,
     "flow_dup": 0,
     "no_response": 4,
