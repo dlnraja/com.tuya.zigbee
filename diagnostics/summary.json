@@ -1,9 +1,24 @@
 {
-  "timestamp": "2026-03-24T04:18:27.808Z",
+  "timestamp": "2026-03-24T10:35:19.055Z",
   "devices": [],
-  "unmatchedFPs": [],
-  "errors": [],
+  "unmatchedFPs": [
+    {
+      "fp": "_TZ3000_kxaow5ki",
+      "source": "gmail",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [Auto] 1 new fingerprint(s) fr"
+    }
+  ],
+  "errors": [
+    {
+      "err": "paired) needs only to be added to the 4 buttons wireless dri",
+      "source": "gmail"
+    },
+    {
+      "err": "be paired at all.",
+      "source": "gmail"
+    }
+  ],
   "sources": {
-    "gmail": 4
+    "gmail": 5
   }
 }
