@@ -1,6 +1,6 @@
 {
   "version": "5.11.138",
-  "date": "2026-03-24",
+  "date": "2026-03-25",
   "drivers": 188,
   "fingerprints": 4732,
   "decisions": [
@@ -307,7 +307,7 @@
     {
       "id": "battery",
       "pattern": "False Battery Alert / Missing Battery",
-      "count": 28,
+      "count": 29,
       "priority": "high"
     },
     {
@@ -360,8 +360,8 @@
     }
   ],
   "interviews": {
-    "total": 154,
-    "fps": 123
+    "total": 156,
+    "fps": 124
   },
   "invertedMfrs": [
     "_TZ3000_26fmupbb",

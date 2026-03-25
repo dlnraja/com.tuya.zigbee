@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-24T15:05:30.346Z",
+  "timestamp": "2026-03-25T03:39:11.761Z",
   "username": "dlnraja",
   "topicCount": 1,
   "activityCount": 300,
@@ -7,7 +7,7 @@
   "refCount": 65,
   "bookmarkCount": 0,
   "fullThreads": 30,
-  "totalFPs": 703,
+  "totalFPs": 705,
   "unsupportedFPs": [
     "_TZ3000_zgyzgd",
     "_TZE204_ztqnh5c",
@@ -21,5 +21,5 @@
     "_TZ3000_amdymr7",
     "_TZ3000_ksw8qtm"
   ],
-  "aiAnalysis": "**Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer**\n\n1. **Key User Requests:**\n   - Users are seeking better support for various Tuya Zigbee devices, particularly those that are currently unrecognized or labeled as \"unknown.\"\n   - There is a demand for improved installation processes and troubleshooting guidance for devices that fail to connect.\n\n2. **Devices People Need:**\n   - Specific devices mentioned include the Soil Moisture Sensor, Contact Sensor ZG-102Z, and a Tuya Zigbee Scene Switch with 4 buttons.\n   - Users have reported issues with multiple unsupported device identifiers, indicating a need for broader compatibility.\n\n3. **Issues to Fix:**\n   - Persistent problems with device recognition and installation, especially for the Soil Moisture Sensor and Contact Sensor ZG-102Z.\n   - Several users have expressed frustration over devices not appearing in the app store or being recognized in the Homey Apps environment.\n\n4. **Action Items:**\n   - Investigate and address the compatibility issues with the unsupported device identifiers listed, focusing on the most frequently mentioned devices.\n   - Enhance the app's installation process and provide clearer troubleshooting steps for users experiencing connection issues.\n   - Consider releasing a stable version of the app that includes fixes for the most reported problems to improve user experience and satisfaction.\n   - Engage with the community more actively to gather feedback and provide updates on ongoing issues and fixes."
+  "aiAnalysis": "**Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer**\n\n1. **Key User Requests:**\n   - Users are seeking support for adding various Zigbee devices, particularly those that are not recognized or show up as \"unknown.\"\n   - There is a demand for clarification on app compatibility with Homey Self-Hosted Servers.\n   - Users are requesting updates on the status of devices that have been previously reported as unsupported.\n\n2. **Devices People Need:**\n   - Specific devices mentioned include:\n     - Contact Sensor ZG-102Z\n     - Soil Moisture Sensors\n     - Tuya Zigbee Scene Switch with 4 buttons\n   - Several unsupported device identifiers were listed, indicating a need for broader device compatibility.\n\n3. **Issues to Fix:**\n   - Users report persistent issues with device recognition and installation failures.\n   - The app is not appearing in the Homey Apps Store, which may hinder user access.\n   - There are concerns regarding the functionality of the app in different server environments.\n\n4. **Action Items:**\n   - Investigate and address the compatibility issues for the unsupported devices listed.\n   - Provide updates or patches to improve device recognition and installation processes.\n   - Ensure the app is visible in the Homey Apps Store to facilitate user access.\n   - Consider creating a dedicated support thread for users to report device issues and track resolutions effectively.\n\nBy focusing on these actionable insights, the maintainer can enhance user satisfaction and app performance."
 }
