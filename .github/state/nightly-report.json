@@ -1,42 +1,73 @@
 {
-  "timestamp": "2026-03-24T15:05:27.482Z",
+  "timestamp": "2026-03-25T03:39:08.318Z",
   "appVersion": "5.11.138",
-  "forum": 3,
-  "github": 0,
+  "forum": 4,
+  "github": 1,
   "diagnostics": 5,
   "diagNewFPs": 1,
   "diagCritical": 0,
   "forumDetails": [
     {
       "topic": 140352,
-      "post": 1647,
+      "post": 1650,
       "user": "Meruem",
       "fps": [
+        "_TZE284_bquwrqh1",
         "dlnraja",
-        "test",
+        "ewelink",
         "tuya"
       ],
-      "reply": "Yes, you are correct! The app does not appear in the Homey Apps section without the “Test” designation. The link you provided for the main app (https://homey.app/a/com.dlnraja.tuya.zigbee/) is current",
+      "reply": "It appears that you're experiencing issues with adding Zigbee devices to your Homey Self-Hosted Server. Let's break down the information provided:\n\n### Device Support Status\n1. **_TZE284_bquwrqh1 (Mod",
       "model": "gh-gpt-4o-mini"
     },
     {
       "topic": 140352,
-      "post": 1648,
-      "user": "smarthomesven",
+      "post": 1651,
+      "user": "Meruem",
       "fps": [
-        "test"
+        "_TZE284_bquwrqh1",
+        "dlnraja",
+        "zstack",
+        "tuya"
       ],
-      "reply": "It appears that your device has been identified with a fingerprint, and it is supported by the \"diy_custom_zigbee\" driver. This driver is typically used for devices that may not have a specific driver",
+      "reply": "Based on the information provided, it appears that you are trying to add a device with the Manufacturer Name `_TZE284_bquwrqh1` and Model ID `TS0601`. The logs indicate that the device was successfull",
       "model": "gh-gpt-4o-mini"
     },
     {
       "topic": 140352,
-      "post": 1649,
-      "user": "Lasse_K",
-      "fps": [],
-      "reply": "It looks like the ZG-102Z contact sensor is indeed recognized in our fingerprint database, and it should be supported by the \"contact_sensor\" driver. Since you mentioned that it previously worked in v",
+      "post": 1652,
+      "user": "Wiosenna_26",
+      "fps": [
+        "_TZ3002_jn2x20tg",
+        "dlnraja"
+      ],
+      "reply": "It looks like you've encountered an issue with the BSEED Zigbee 1-Gang Touch Switch (Model ID: TS0726). Based on the fingerprint lookup, the manufacturer ID `_TZ3002_jn2x20tg` is currently associated ",
+      "model": "gh-gpt-4o-mini"
+    },
+    {
+      "topic": 140352,
+      "post": 1653,
+      "user": "Peter_Kawa",
+      "fps": [
+        "dlnraja"
+      ],
+      "reply": "Based on the information provided, it seems that the Homey Pro 2023/26 mini firmware v13.1.0-RC.x has indeed expanded support for more generic Zigbee devices, particularly sensors. \n\n### Fingerprint A",
       "model": "gh-gpt-4o-mini"
     }
   ],
-  "githubDetails": []
+  "githubDetails": [
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1354,
+      "user": "pemikalsen-sudo",
+      "fps": [
+        "_TZE284_8se38w3c",
+        "example",
+        "vision"
+      ],
+      "title": "Device Request - Temperature &humidity sensor with external probe - Shenzen New Green Energy Techologies Co ltd  /\t_TZE284_8se38w3c\tTS0601",
+      "response": "### Device Request - Temperature & Humidity Sensor with External Probe\n\n#### Device Information\n- **Model ID:** TS0601\n- **Manufacturer Name:** _TZE284_8se38w3c\n\n#### Fingerprint Support\nThe device has been identified in our fingerprint database. The following drivers are available for the model **T",
+      "model": "gh-gpt-4o-mini"
+    }
+  ]
 }

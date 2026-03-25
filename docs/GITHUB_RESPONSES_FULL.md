@@ -248,3 +248,7 @@
 
 ## Nightly Auto-Responses (2026-03-23 v5.11.138)
 - **JohanBendz/com.tuya.zigbee#1352** @Brianhomey: `_TZ3000_kxaow5ki` (gh-gpt-4o-mini)
+
+
+## Nightly Auto-Responses (2026-03-25 v5.11.138)
+- **JohanBendz/com.tuya.zigbee#1354** @pemikalsen-sudo: `_TZE284_8se38w3c`, `example`, `vision` (gh-gpt-4o-mini)
