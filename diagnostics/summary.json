@@ -1,24 +1,46 @@
 {
-  "timestamp": "2026-03-25T04:24:12.651Z",
+  "timestamp": "2026-03-25T10:34:06.742Z",
   "devices": [],
-  "unmatchedFPs": [
-    {
-      "fp": "_TZ3000_kxaow5ki",
-      "source": "gmail",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] [Auto] 1 new fingerprint(s) fr"
-    }
-  ],
+  "unmatchedFPs": [],
   "errors": [
     {
-      "err": "paired) needs only to be added to the 4 buttons wireless dri",
+      "err": ", but the https://homey.app/a/com.dlnraja.tuya.zigbee/test/ currently is working",
       "source": "gmail"
     },
     {
-      "err": "be paired at all.",
+      "err": "![image|233x500](upload://y4NtgGhLKDNjSqBiMmXu8EVUR8t.jpeg)",
+      "source": "gmail"
+    },
+    {
+      "err": "(got some information masked for security issues)",
+      "source": "gmail"
+    },
+    {
+      "err": "This operation was aborted`",
+      "source": "gmail"
+    },
+    {
+      "err": "endpointId=1 clusterId=1: Unexpected Bind Response (status: zdoInvalidEndpoint)`",
+      "source": "gmail"
+    },
+    {
+      "err": "failed to create binding (ep: 1, cl: 1) Unexpected Bind Response (status: zdoInv",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected Bind Response (status: zdoInvalidEndpoint)`",
+      "source": "gmail"
+    },
+    {
+      "err": "create_bindings_failed`",
+      "source": "gmail"
+    },
+    {
+      "err": "â**Unable to connect** Something went wrong while adding this device, please t",
       "source": "gmail"
     }
   ],
   "sources": {
-    "gmail": 5
+    "gmail": 6
   }
 }
