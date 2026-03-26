@@ -1,11 +1,9 @@
 {
-  "timestamp": "2026-03-25T06:02:15.204Z",
-  "count": 6,
+  "timestamp": "2026-03-26T06:13:29.786Z",
+  "count": 8,
   "byType": {
-    "bug_report": 3,
-    "device_issue": 1,
-    "crash_report": 1,
-    "changelog": 1
+    "github": 7,
+    "diagnostic": 1
   },
   "newFingerprints": [],
   "deepResearch": {
@@ -15,47 +13,14 @@
   },
   "diagnostics": [
     {
-      "id": "imap_502136",
-      "type": "bug_report",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "user",
-      "date": "2026-03-24T13:59:06.000Z",
+      "id": "imap_502226",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] Bug: TS0003 (_TZ3000_v4l4b0lp) - Sub-capability Flow cards (Gang 1/2/3) are completely unlinked (Issue #170)",
+      "from": "github",
+      "date": "2026-03-25T06:00:18.000Z",
       "pseudo": {
-        "source": "user",
-        "username": "C.I."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [
-        ", but the https://homey.app/a/com.dlnraja.tuya.zigbee/test/ currently is working"
-      ],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": {
-        "stackTraces": [],
-        "crashApp": "doesn",
-        "capabilities": [],
-        "clusters": []
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 675,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_502137",
-      "type": "device_issue",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "user",
-      "date": "2026-03-24T14:06:03.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "Sve..."
+        "source": "github",
+        "username": "Ssssneak"
       },
       "fps": {
         "mfr": [],
@@ -64,386 +29,182 @@
       "errs": [],
       "devices": [],
       "xref": [],
-      "ghInfo": null,
+      "ghInfo": {
+        "issueNum": "170",
+        "action": "Assigned",
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "Ssssneak",
+        "bodyExcerpt": "Assigned #170 to @dlnraja.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/170#event-23877678127\r\nYou are receiving this because you were assigned.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/issue/170/issue_event/23877678127@github.com>\r\n"
+      },
       "forumInfo": null,
       "crashInfo": null,
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 378,
+      "bodyLength": 297,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_502208",
-      "type": "bug_report",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "user",
-      "date": "2026-03-24T21:38:25.000Z",
+      "id": "imap_502227",
+      "type": "github",
+      "subj": "[dlnraja/com.tuya.zigbee] Bug: TS0003 (_TZ3000_v4l4b0lp) - Sub-capability Flow cards (Gang 1/2/3) are completely unlinked (Issue #170)",
+      "from": "github",
+      "date": "2026-03-25T06:00:19.000Z",
       "pseudo": {
-        "source": "user",
-        "username": "C.I."
+        "source": "github",
+        "username": "Ssssneak"
       },
       "fps": {
         "mfr": [
-          "_TZE284_bquwrqh1"
+          "_TZ3000_v4l4b0lp"
         ],
         "pid": [
-          "TS011F",
-          "TS0601"
+          "TS0003"
         ]
       },
       "errs": [],
-      "devices": [],
-      "xref": [
-        {
-          "fingerprint": "_TZE284_bquwrqh1",
-          "type": "mfr",
-          "supported": true,
-          "drivers": [
-            "motion_sensor"
-          ],
-          "protocol": "tuya_dp",
-          "requires": [
-            "TuyaEF00Manager",
-            "dpMappings"
-          ]
-        },
-        {
-          "fingerprint": "TS011F",
-          "type": "pid",
-          "supported": true,
-          "drivers": [
-            "plug_energy_monitor",
-            "plug_smart",
-            "switch_1gang",
-            "switch_2gang",
-            "universal_fallback"
-          ],
-          "multiDriver": true
-        },
-        {
-          "fingerprint": "TS0601",
-          "type": "pid",
-          "supported": true,
-          "drivers": [
-            "air_purifier",
-            "air_quality_co2",
-            "air_quality_comprehensive",
-            "button_emergency_sos",
-            "button_wireless_6",
-            "ceiling_fan",
-            "climate_sensor",
-            "co_sensor",
-            "contact_sensor",
-            "curtain_motor",
-            "curtain_motor_tilt",
-            "dimmer_3gang",
-            "dimmer_dual_channel",
-            "dimmer_wall_1gang",
-            "din_rail_meter",
-            "din_rail_switch",
-            "door_controller",
-            "doorbell",
-            "energy_meter_3phase",
-            "fan_controller",
-            "fingerprint_lock",
-            "floor_heating_thermostat",
-            "formaldehyde_sensor",
-            "garage_door",
-            "garage_door_opener",
-            "gas_detector",
-            "gas_sensor",
-            "humidifier",
-            "hvac_air_conditioner",
-            "hvac_controller",
-            "hvac_dehumidifier",
-            "ir_blaster",
-            "lcdtemphumidsensor",
-            "light_sensor_outdoor",
-            "lock_smart",
-            "motion_sensor",
-            "motion_sensor_radar_mmwave",
-            "pet_feeder",
-            "pet_feeder_zigbee",
-            "plug_energy_monitor",
-            "plug_smart",
-            "pool_pump",
-            "power_clamp_meter",
-            "power_meter",
-            "presence_sensor_ceiling",
-            "presence_sensor_radar",
-            "radiator_controller",
-            "radiator_valve",
-            "rain_sensor",
-            "scene_switch_4",
-            "shutter_roller_controller",
-            "siren",
-            "smart_breaker",
-            "smart_heater",
-            "smart_heater_controller",
-            "smart_lcd_thermostat",
-            "smart_rcbo",
-            "smoke_detector_advanced",
-            "soil_sensor",
-            "switch_1gang",
-            "switch_2gang",
-            "switch_3gang",
-            "switch_4gang",
-            "switch_dimmer_1gang",
-            "switch_wall_5gang",
-            "switch_wall_6gang",
-            "switch_wall_8gang",
-            "thermostat_4ch",
-            "thermostat_tuya_dp",
-            "universal_fallback",
-            "usb_outlet_advanced",
-            "valve_irrigation",
-            "valve_single",
-            "vibration_sensor",
-            "water_leak_sensor",
-            "water_tank_monitor",
-            "water_valve_smart",
-            "weather_station_outdoor"
-          ],
-          "multiDriver": true
-        }
-      ],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": {
-        "stackTraces": [],
-        "crashApp": "Android",
-        "capabilities": [],
-        "clusters": []
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 2418,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_502211",
-      "type": "crash_report",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "user",
-      "date": "2026-03-24T22:04:38.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "C.I."
-      },
-      "fps": {
-        "mfr": [
-          "_TZE284_bquwrqh1"
-        ],
-        "pid": [
-          "TS0601"
-        ]
-      },
-      "errs": [
-        "![image|233x500](upload://y4NtgGhLKDNjSqBiMmXu8EVUR8t.jpeg)",
-        "(got some information masked for security issues)",
-        "This operation was aborted`",
-        "endpointId=1 clusterId=1: Unexpected Bind Response (status: zdoInvalidEndpoint)`",
-        "failed to create binding (ep: 1, cl: 1) Unexpected Bind Response (status: zdoInv",
-        "Unexpected Bind Response (status: zdoInvalidEndpoint)`",
-        "create_bindings_failed`"
-      ],
       "devices": [
-        "announce",
-        "Presence"
+        "can",
+        "actually",
+        "improvement"
       ],
       "xref": [
         {
-          "fingerprint": "_TZE284_bquwrqh1",
+          "fingerprint": "_TZ3000_v4l4b0lp",
           "type": "mfr",
           "supported": true,
           "drivers": [
-            "motion_sensor"
-          ],
-          "protocol": "tuya_dp",
-          "requires": [
-            "TuyaEF00Manager",
-            "dpMappings"
-          ]
-        },
-        {
-          "fingerprint": "TS0601",
-          "type": "pid",
-          "supported": true,
-          "drivers": [
-            "air_purifier",
-            "air_quality_co2",
-            "air_quality_comprehensive",
-            "button_emergency_sos",
-            "button_wireless_6",
-            "ceiling_fan",
-            "climate_sensor",
-            "co_sensor",
-            "contact_sensor",
-            "curtain_motor",
-            "curtain_motor_tilt",
-            "dimmer_3gang",
-            "dimmer_dual_channel",
-            "dimmer_wall_1gang",
-            "din_rail_meter",
-            "din_rail_switch",
-            "door_controller",
-            "doorbell",
-            "energy_meter_3phase",
-            "fan_controller",
-            "fingerprint_lock",
-            "floor_heating_thermostat",
-            "formaldehyde_sensor",
-            "garage_door",
-            "garage_door_opener",
-            "gas_detector",
-            "gas_sensor",
-            "humidifier",
-            "hvac_air_conditioner",
-            "hvac_controller",
-            "hvac_dehumidifier",
-            "ir_blaster",
-            "lcdtemphumidsensor",
-            "light_sensor_outdoor",
-            "lock_smart",
-            "motion_sensor",
-            "motion_sensor_radar_mmwave",
-            "pet_feeder",
-            "pet_feeder_zigbee",
-            "plug_energy_monitor",
-            "plug_smart",
-            "pool_pump",
-            "power_clamp_meter",
-            "power_meter",
-            "presence_sensor_ceiling",
-            "presence_sensor_radar",
-            "radiator_controller",
-            "radiator_valve",
-            "rain_sensor",
-            "scene_switch_4",
-            "shutter_roller_controller",
-            "siren",
-            "smart_breaker",
-            "smart_heater",
-            "smart_heater_controller",
-            "smart_lcd_thermostat",
-            "smart_rcbo",
-            "smoke_detector_advanced",
-            "soil_sensor",
-            "switch_1gang",
-            "switch_2gang",
-            "switch_3gang",
-            "switch_4gang",
-            "switch_dimmer_1gang",
-            "switch_wall_5gang",
-            "switch_wall_6gang",
-            "switch_wall_8gang",
-            "thermostat_4ch",
-            "thermostat_tuya_dp",
-            "universal_fallback",
-            "usb_outlet_advanced",
-            "valve_irrigation",
-            "valve_single",
-            "vibration_sensor",
-            "water_leak_sensor",
-            "water_tank_monitor",
-            "water_valve_smart",
-            "weather_station_outdoor"
-          ],
-          "multiDriver": true
-        }
-      ],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": {
-        "stackTraces": [
-          "Error: failed to create binding (ep: 1, cl: 1) Unexpected Bind Response (status: zdoInvalidEndpoint)`\r",
-          "Error: Unexpected Bind Response (status: zdoInvalidEndpoint)`\r",
-          "Error: create_bindings_failed`\r"
-        ],
-        "crashApp": "com.dlnraja.tuya.zigbee",
-        "capabilities": [],
-        "clusters": []
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 8151,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_502212",
-      "type": "bug_report",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "user",
-      "date": "2026-03-24T23:10:45.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "V.B."
-      },
-      "fps": {
-        "mfr": [
-          "_TZ3002_jn2x20tg"
-        ],
-        "pid": [
-          "TS0726"
-        ]
-      },
-      "errs": [
-        "â**Unable to connect** Something went wrong while adding this device, please t"
-      ],
-      "devices": [
-        "Unknown"
-      ],
-      "xref": [
-        {
-          "fingerprint": "_TZ3002_jn2x20tg",
-          "type": "mfr",
-          "supported": true,
-          "drivers": [
-            "switch_4gang"
+            "switch_3gang"
           ],
           "protocol": "unknown",
           "requires": []
         },
         {
-          "fingerprint": "TS0726",
+          "fingerprint": "TS0003",
           "type": "pid",
           "supported": true,
           "drivers": [
-            "scene_switch_2",
-            "scene_switch_3",
-            "switch_4gang",
-            "switch_wall_6gang",
-            "wall_switch_4gang_1way"
+            "switch_1gang",
+            "switch_2gang",
+            "switch_3gang",
+            "universal_fallback",
+            "usb_dongle_triple",
+            "wall_switch_3gang_1way"
           ],
           "multiDriver": true
         }
       ],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": {
-        "stackTraces": [],
-        "crashApp": null,
-        "capabilities": [],
-        "clusters": []
+      "ghInfo": {
+        "issueNum": "170",
+        "action": "assigned",
+        "fps": {
+          "mfr": [
+            "_TZ3000_v4l4b0lp"
+          ],
+          "pid": [
+            "TS0003"
+          ]
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "Ssssneak",
+        "bodyExcerpt": "Ssssneak created an issue (dlnraja/com.tuya.zigbee#170)\r\n\r\n### What Feature / Enhancement?\r\n\r\n**Describe the bug:**\r\nThe 3-gang switch TS0003 (_TZ3000_v4l4b0lp) pairs successfully and shows 4 buttons (3 gangs + identify). \r\nToggling Gang 1, 2, and 3 from the Homey App UI works perfectly. \r\n\r\nHowever, Flow cards and state reporting for the specific gangs are broken:\r\n1. The generic \"Turn on/off\" Flow card works (it toggles endpoint 1).\r\n2. The specific Flow cards \"Turn on Gang 1\", \"Turn on Gang 2"
       },
+      "forumInfo": null,
+      "crashInfo": null,
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 867,
+      "bodyLength": 2287,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_502213",
-      "type": "changelog",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "user",
-      "date": "2026-03-24T23:18:12.000Z",
+      "id": "imap_502228",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] Bug: TS0003 (_TZ3000_v4l4b0lp) - Sub-capability Flow cards (Gang 1/2/3) are completely unlinked (Issue #170)",
+      "from": "github",
+      "date": "2026-03-25T06:00:34.000Z",
       "pseudo": {
-        "source": "user",
-        "username": "\ud83c.N."
+        "source": "github",
+        "username": "github-actions[bot]"
+      },
+      "fps": {
+        "mfr": [
+          "_TZ3000_v4l4b0lp"
+        ],
+        "pid": [
+          "TS0003"
+        ]
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [
+        {
+          "fingerprint": "_TZ3000_v4l4b0lp",
+          "type": "mfr",
+          "supported": true,
+          "drivers": [
+            "switch_3gang"
+          ],
+          "protocol": "unknown",
+          "requires": []
+        },
+        {
+          "fingerprint": "TS0003",
+          "type": "pid",
+          "supported": true,
+          "drivers": [
+            "switch_1gang",
+            "switch_2gang",
+            "switch_3gang",
+            "universal_fallback",
+            "usb_dongle_triple",
+            "wall_switch_3gang_1way"
+          ],
+          "multiDriver": true
+        }
+      ],
+      "ghInfo": {
+        "issueNum": "170",
+        "action": "assigned",
+        "fps": {
+          "mfr": [
+            "_TZ3000_v4l4b0lp"
+          ],
+          "pid": [
+            "TS0003"
+          ]
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "github-actions[bot] left a comment (dlnraja/com.tuya.zigbee#170)\r\n\r\n<!-- tuya-triage-bot -->\r\nThese are already supported in v5.11.138:\r\n\r\n- `_TZ3000_v4l4b0lp` â **switch_3gang**\r\n- `TS0003` â **unknown**\r\n\r\nAll fingerprints are already supported â install the [test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/), remove the device, and re-pair it.\r\n\r\n[Test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) Â· [Forum thread](https://community.homey.app/t/app-pro-univer"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 860,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_502229",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] Bug: TS0003 (_TZ3000_v4l4b0lp) - Sub-capability Flow cards (Gang 1/2/3) are completely unlinked (Issue #170)",
+      "from": "github",
+      "date": "2026-03-25T06:00:34.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "github-actions[bot]"
       },
       "fps": {
         "mfr": [],
@@ -452,14 +213,240 @@
       "errs": [],
       "devices": [],
       "xref": [],
+      "ghInfo": {
+        "issueNum": "170",
+        "action": "Closed",
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "Closed #170 as completed.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/170#event-23877684763\r\nYou are receiving this because you were assigned.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/issue/170/issue_event/23877684763@github.com>\r\n"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 296,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_502388",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] Bug: TS0003 (_TZ3000_v4l4b0lp) - Sub-capability Flow cards (Gang 1/2/3) are completely unlinked (Issue #170)",
+      "from": "github",
+      "date": "2026-03-25T20:05:23.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "Ssssneak"
+      },
+      "fps": {
+        "mfr": [
+          "_TZ3000_v4l4b0lp"
+        ],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [
+        {
+          "fingerprint": "_TZ3000_v4l4b0lp",
+          "type": "mfr",
+          "supported": true,
+          "drivers": [
+            "switch_3gang"
+          ],
+          "protocol": "unknown",
+          "requires": []
+        }
+      ],
+      "ghInfo": {
+        "issueNum": "170",
+        "action": "assigned",
+        "fps": {
+          "mfr": [
+            "_TZ3000_v4l4b0lp"
+          ],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "Ssssneak",
+        "bodyExcerpt": "Ssssneak left a comment (dlnraja/com.tuya.zigbee#170)\r\n\r\nHi, thanks for the update! \r\nI installed v5.11.138 and re-paired the device. I have a precise bug report regarding the Flow cards for this specific fingerprint (_TZ3000_v4l4b0lp).\r\n\r\n1. App UI Control: Works perfectly for all 3 gangs.\r\n2. Flow Triggers (WHEN \"Physical gang 1/2/3 ON\"): Work perfectly! The bindings are correct and Homey registers physical wall presses.\r\n3. Flow Actions (THEN \"Turn on/off gang 1/2/3\"): COMPLETELY BROKEN. The "
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 1107,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_502389",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] Bug: TS0003 (_TZ3000_v4l4b0lp) - Sub-capability Flow cards (Gang 1/2/3) are completely unlinked (Issue #170)",
+      "from": "github",
+      "date": "2026-03-25T20:05:33.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "github-actions[bot]"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "170",
+        "action": "opened",
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": true,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "Reopened #170.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/170#event-23905964039\r\nYou are receiving this because you were assigned.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/issue/170/issue_event/23905964039@github.com>\r\n"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 285,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_502390",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] Bug: TS0003 (_TZ3000_v4l4b0lp) - Sub-capability Flow cards (Gang 1/2/3) are completely unlinked (Issue #170)",
+      "from": "github",
+      "date": "2026-03-25T20:05:36.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "github-actions[bot]"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "Interview",
+        "settings"
+      ],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "170",
+        "action": "opened",
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": true,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "github-actions[bot] left a comment (dlnraja/com.tuya.zigbee#170)\r\n\r\n<!-- tuya-reopen-bot -->\r\nThis issue has been **automatically reopened** because @Ssssneak posted a new comment.\r\nIt will be reviewed in the next automation cycle.\r\n\r\n> If your device is still not working, please share:\r\n> 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app)\r\n> 2. **Diagnostic Report ID** from device settings\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github."
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 689,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_502391",
+      "type": "diagnostic",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "homey_system",
+      "date": "2026-03-25T20:19:03.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "water_tank_monitor",
+        "water_valve_garden",
+        "wifi_air_purifier",
+        "init",
+        "initialized",
+        "water_valve_smart",
+        "weather_station_outdoor",
+        "wifi_air_quality",
+        "wifi_dehumidifier",
+        "wifi_cover",
+        "wifi_dimmer",
+        "wifi_door_lock",
+        "wifi_doorbell",
+        "wifi_ewelink_bulb",
+        "wifi_ewelink_dimmer",
+        "wifi_ewelink_fan",
+        "wifi_ewelink_led",
+        "wifi_ewelink_plug",
+        "wifi_ewelink_pow",
+        "wifi_ewelink_switch",
+        "wifi_ewelink_switch_2ch",
+        "wifi_ewelink_switch_4ch",
+        "wifi_ewelink_th",
+        "wifi_garage_door",
+        "wifi_fan",
+        "wifi_generic",
+        "wifi_heater",
+        "wifi_humidifier",
+        "wifi_ir_remote",
+        "wifi_led_strip",
+        "wifi_pet_feeder",
+        "wifi_light",
+        "wifi_plug",
+        "wifi_power_strip",
+        "wifi_robot_vacuum",
+        "wifi_sensor",
+        "wifi_siren",
+        "wifi_sonoff_basicr4",
+        "wifi_sonoff_dualr3",
+        "wifi_sonoff_micro",
+        "wifi_sonoff_minir3",
+        "wifi_sonoff_minir4",
+        "wifi_sonoff_pow_elite",
+        "wifi_sonoff_smate2",
+        "wifi_sonoff_thr316d",
+        "wifi_sonoff_tx_1ch",
+        "wifi_sonoff_tx_2ch",
+        "wifi_sonoff_tx_3ch",
+        "wifi_switch",
+        "wifi_switch_2gang",
+        "wifi_switch_3gang",
+        "wifi_switch_4gang",
+        "wifi_thermostat",
+        "zigbee_repeater",
+        "wifi_water_valve"
+      ],
+      "xref": [],
       "ghInfo": null,
       "forumInfo": null,
       "crashInfo": null,
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 803,
-      "contentType": "text/plain"
+      "bodyLength": 11488,
+      "contentType": "text/html->text"
     }
   ]
 }
