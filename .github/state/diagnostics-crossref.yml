@@ -1,115 +1,50 @@
 # Diagnostics Cross-Reference (auto-generated)
-# Generated: 2026-03-25T06:02:15.204Z
-# Emails processed: 6
+# Generated: 2026-03-26T06:13:29.786Z
+# Emails processed: 8
 
 fingerprints:
-  _TZE284_bquwrqh1:
+  _TZ3000_v4l4b0lp:
     priority: NaN
     supported: true
-    protocol: tuya_dp
-    drivers: [motion_sensor]
-    requires: [TuyaEF00Manager, dpMappings]
+    protocol: unknown
+    drivers: [switch_3gang]
+    mentions: 3
+    source_types: [github]
+    reporters: [Ssssneak, github-actions[bot]]
+    sources:
+      - type: github
+        date: 2026-03-25T06:00:19.000Z
+      - type: github
+        date: 2026-03-25T06:00:34.000Z
+      - type: github
+        date: 2026-03-25T20:05:23.000Z
+  TS0003:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    drivers: [switch_1gang, switch_2gang, switch_3gang, universal_fallback, usb_dongle_triple, wall_switch_3gang_1way]
     mentions: 2
-    source_types: [bug_report, crash_report]
-    reporters: [C.I.]
+    source_types: [github]
+    reporters: [Ssssneak, github-actions[bot]]
     sources:
-      - type: bug_report
-        date: 2026-03-24T21:38:25.000Z
-      - type: crash_report
-        date: 2026-03-24T22:04:38.000Z
-  TS011F:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [plug_energy_monitor, plug_smart, switch_1gang, switch_2gang, universal_fallback]
-    mentions: 1
-    source_types: [bug_report]
-    reporters: [C.I.]
-    sources:
-      - type: bug_report
-        date: 2026-03-24T21:38:25.000Z
-  TS0601:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [air_purifier, air_quality_co2, air_quality_comprehensive, button_emergency_sos, button_wireless_6, ceiling_fan, climate_sensor, co_sensor, contact_sensor, curtain_motor, curtain_motor_tilt, dimmer_3gang, dimmer_dual_channel, dimmer_wall_1gang, din_rail_meter, din_rail_switch, door_controller, doorbell, energy_meter_3phase, fan_controller, fingerprint_lock, floor_heating_thermostat, formaldehyde_sensor, garage_door, garage_door_opener, gas_detector, gas_sensor, humidifier, hvac_air_conditioner, hvac_controller, hvac_dehumidifier, ir_blaster, lcdtemphumidsensor, light_sensor_outdoor, lock_smart, motion_sensor, motion_sensor_radar_mmwave, pet_feeder, pet_feeder_zigbee, plug_energy_monitor, plug_smart, pool_pump, power_clamp_meter, power_meter, presence_sensor_ceiling, presence_sensor_radar, radiator_controller, radiator_valve, rain_sensor, scene_switch_4, shutter_roller_controller, siren, smart_breaker, smart_heater, smart_heater_controller, smart_lcd_thermostat, smart_rcbo, smoke_detector_advanced, soil_sensor, switch_1gang, switch_2gang, switch_3gang, switch_4gang, switch_dimmer_1gang, switch_wall_5gang, switch_wall_6gang, switch_wall_8gang, thermostat_4ch, thermostat_tuya_dp, universal_fallback, usb_outlet_advanced, valve_irrigation, valve_single, vibration_sensor, water_leak_sensor, water_tank_monitor, water_valve_smart, weather_station_outdoor]
-    mentions: 2
-    source_types: [bug_report, crash_report]
-    reporters: [C.I.]
-    sources:
-      - type: bug_report
-        date: 2026-03-24T21:38:25.000Z
-      - type: crash_report
-        date: 2026-03-24T22:04:38.000Z
-  _TZ3002_jn2x20tg:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [switch_4gang]
-    mentions: 1
-    source_types: [bug_report]
-    reporters: [V.B.]
-    sources:
-      - type: bug_report
-        date: 2026-03-24T23:10:45.000Z
-  TS0726:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [scene_switch_2, scene_switch_3, switch_4gang, switch_wall_6gang, wall_switch_4gang_1way]
-    mentions: 1
-    source_types: [bug_report]
-    reporters: [V.B.]
-    sources:
-      - type: bug_report
-        date: 2026-03-24T23:10:45.000Z
+      - type: github
+        date: 2026-03-25T06:00:19.000Z
+      - type: github
+        date: 2026-03-25T06:00:34.000Z
 
 users:
-  C.I.:
-    activity_score: 13
+  github-actions[bot]:
+    activity_score: 12
+    emails: 4
+    fingerprints: [_TZ3000_v4l4b0lp]
+    types: [github]
+    latest: 2026-03-25T20:05:36.000Z
+  Ssssneak:
+    activity_score: 10
     emails: 3
-    fingerprints: [_TZE284_bquwrqh1]
-    types: [bug_report, crash_report]
-    has_errors: true
-    latest: 2026-03-24T22:04:38.000Z
-  V.B.:
-    activity_score: 8
-    emails: 1
-    fingerprints: [_TZ3002_jn2x20tg]
-    types: [bug_report]
-    has_errors: true
-    latest: 2026-03-24T23:10:45.000Z
-  Sve...:
-    activity_score: 3
-    emails: 1
-    types: [device_issue]
-    latest: 2026-03-24T14:06:03.000Z
-  �.N.:
-    activity_score: 3
-    emails: 1
-    types: [changelog]
-    latest: 2026-03-24T23:18:12.000Z
-
-error_patterns:
-  - count: 1
-    error: ", but the https://homey.app/a/com.dlnraja.tuya.zigbee/test/ currently is working"
-  - count: 1
-    error: "![image|233x500](upload://y4NtgGhLKDNjSqBiMmXu8EVUR8t.jpeg)"
-  - count: 1
-    error: "(got some information masked for security issues)"
-  - count: 1
-    error: "This operation was aborted`"
-  - count: 1
-    error: "endpointId=1 clusterId=1: Unexpected Bind Response (status: zdoInvalidEndpoint)`"
-  - count: 1
-    error: "failed to create binding (ep: 1, cl: 1) Unexpected Bind Response (status: zdoInv"
-  - count: 1
-    error: "Unexpected Bind Response (status: zdoInvalidEndpoint)`"
-  - count: 1
-    error: "create_bindings_failed`"
-  - count: 1
-    error: "â**Unable to connect** Something went wrong while adding this device, please t"
+    fingerprints: [_TZ3000_v4l4b0lp]
+    types: [github]
+    latest: 2026-03-25T20:05:23.000Z
 
 protocol_distribution:
-  tuya_dp: 1
-  unknown: 4
+  unknown: 2
