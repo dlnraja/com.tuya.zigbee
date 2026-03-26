@@ -510,3 +510,7 @@ All 12 fingerprints from 20 open issues **already supported** in v5.11.19:
 - **Topic 140352 #1651** @Meruem: `_TZE284_bquwrqh1`, `dlnraja`, `zstack`, `tuya` (gh-gpt-4o-mini)
 - **Topic 140352 #1652** @Wiosenna_26: `_TZ3002_jn2x20tg`, `dlnraja` (gh-gpt-4o-mini)
 - **Topic 140352 #1653** @Peter_Kawa: `dlnraja` (gh-gpt-4o-mini)
+
+
+## Nightly Forum Scan (2026-03-26 v5.11.138)
+- **Topic 140352 #1655** @Ronald_Bok: `_TZE284_oitavov2`, `test` (gh-gpt-4o-mini)
