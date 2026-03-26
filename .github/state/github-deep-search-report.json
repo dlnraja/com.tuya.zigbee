@@ -1,19 +1,41 @@
 {
-  "timestamp": "2026-03-25T15:32:03.771Z",
+  "timestamp": "2026-03-26T04:07:35.866Z",
   "stats": {
-    "ghCalls": 45,
+    "ghCalls": 46,
     "codeResults": 140,
     "issueResults": 0,
-    "targetedResults": 9,
+    "targetedResults": 13,
     "newRepos": 3,
-    "totalFPs": 234,
-    "supported": 232,
-    "unsupported": 2,
+    "totalFPs": 239,
+    "supported": 236,
+    "unsupported": 3,
     "withDPs": 0,
     "withIssues": 0,
-    "duration": 243
+    "duration": 234
   },
   "topUnsupported": [
+    {
+      "fp": "_TS0601_humidity",
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "repos": [
+        "dresden-elektronik/deconz-rest-plugin",
+        "rokozeit/kindle-ha-dashboard",
+        "deconz-community/ddf",
+        "willkennedy78/home-assistant"
+      ],
+      "sources": [
+        "code_search",
+        "targeted_search"
+      ],
+      "issueCount": 0,
+      "codeRefCount": 5,
+      "confidence": 95,
+      "topIssue": null,
+      "topCode": "https://github.com/dresden-elektronik/deconz-rest-plugin/blob/f8f0fc4ef85b67176e5a3fe444f89f7dffde087c/devices/tuya/_TZE284_TS0601_humidity_temperature_with_probe.json"
+    },
     {
       "fp": "_TZE200_dtzziy1e",
       "pids": [
@@ -84,5 +106,5 @@
       "topics": []
     }
   ],
-  "aiPlan": "Here’s a summary of the unsupported firmware profiles (FPs) and new repositories for Tuya Zigbee integration, along with suggested drivers and capability mappings.\n\n### Unsupported Firmware Profiles\n\n| FP                   | PIDs    | Suggested Driver | DP → Capability Map | Repositories                                   | Issues | Code Refs | Confidence |\n|----------------------|---------|------------------|----------------------|------------------------------------------------|--------|-----------|------------|\n| _TZE200_dtzziy1e     | TS0601  | Zigbee Switch Driver | N/A                  | wzwenzhi/Wenzhi-ZigBee2mqtt, kkossev/Hubitat | 0      | 8         | 80%        |\n| _TZE200_yltivvzb     | TS0601  | Zigbee Sensor Driver | N/A                  | nikzori/gidrolock_guides                       | 0      | 3         | 40%        |\n\n### New Repositories\n\n| Repository Name                          | Stars | Description                                           | Value for Integration |\n|------------------------------------------|-------|------------------------------------------------------|-----------------------|\n| gpmachado/com.gpm.homesuite             | 0     | Homey app for Zigbee/Tuya devices — switches, sensors, plugs and more | High - Broad support for various devices. |\n| kodalissri/com.MyZigbee.Devices         | 0     | Homey App for Tuya Devices                           | Medium - Focused on Tuya, potential for specific integrations. |\n| oskarirauta/homey-owon-driver           | 0     | OWON THS317-ET ZigBee Driver (non-tuya version)     | Low - Non-Tuya, limited relevance for Tuya integration. |\n\n### Analysis\n\n1. **Unsupported Firmware Profiles**:\n   - The two unsupported FPs are both based on the TS0601 PID, indicating they may share similar functionalities. The suggested drivers are based on common Zigbee device types (switches and sensors).\n   - The confidence levels suggest that while the first FP has a higher chance of successful integration (80%), the second one has a lower confidence (40%), indicating potential challenges in integration.\n\n2. **New Repositories**:\n   - The repositories listed are primarily focused on Homey applications for Zigbee and Tuya devices. The first two repositories have high potential for integration due to their broad focus on various devices, which could help in supporting the unsupported FPs.\n   - The last repository is less relevant as it focuses on a non-Tuya device, which may not contribute to the integration of unsupported Tuya devices.\n\n### Recommendations\n- **For Unsupported FPs**: Engage with the maintainers of the suggested drivers to explore potential integration paths. The repositories with higher confidence should be prioritized for collaboration.\n- **For New Repositories**: Monitor the development of the first two repositories as they may evolve to support more Tuya devices, enhancing overall integration capabilities. The third repository may be less relevant unless it expands its focus to include Tuya devices. \n\nThis structured approach will help in assessing the integration landscape for Tuya Zigbee devices effectively."
+  "aiPlan": "Here’s a summary of the unsupported firmware profiles (FP) along with suggested drivers and capability mappings, as well as an assessment of new repositories for integration.\n\n### Unsupported Firmware Profiles\n\n| Firmware Profile (FP)         | Product IDs (PIDs) | Suggested Driver            | DP → Capability Map | Repositories                                                                 | Issues | Confidence |\n|-------------------------------|---------------------|-----------------------------|----------------------|-----------------------------------------------------------------------------|--------|------------|\n| _TS0601_humidity              | TS0601              | Zigbee Humidity Sensor      | DP1 → humidity        | dresden-elektronik/deconz-rest-plugin, rokozeit/kindle-ha-dashboard, deconz-community/ddf | 0      | 95         |\n| _TZE200_dtzziy1e              | TS0601              | Zigbee Temperature Sensor    | DP1 → temperature     | wzwenzhi/Wenzhi-ZigBee2mqtt, kkossev/Hubitat                             | 0      | 80         |\n| _TZE200_yltivvzb              | TS0601              | Zigbee Multi-Sensor        | DP1 → humidity, DP2 → temperature | nikzori/gidrolock_guides                                                  | 0      | 40         |\n\n### New Repositories Assessment\n\n| Repository Name                          | Stars | Description                                                                                   | Value for Integration |\n|------------------------------------------|-------|-----------------------------------------------------------------------------------------------|-----------------------|\n| gpmachado/com.gpm.homesuite             | 0     | Homey app for Zigbee/Tuya devices — switches, sensors, plugs and more                       | High - Broad support for various devices could enhance compatibility. |\n| kodalissri/com.MyZigbee.Devices         | 0     | Homey App for Tuya Devices                                                                    | Medium - Focused on Tuya devices, potential for integration but needs evaluation. |\n| oskarirauta/homey-owon-driver           | 0     | OWON THS317-ET ZigBee Driver (non-tuya version) for Homey                                   | Low - Specific to non-Tuya devices, limited relevance for Tuya integration. |\n\n### Summary\n\nThe unsupported firmware profiles indicate a need for specific drivers to facilitate integration with existing platforms. The suggested drivers aim to map the device properties (DPs) to capabilities effectively, enhancing the usability of these devices within smart home ecosystems.\n\nThe new repositories present varying levels of integration potential. The first two repositories show promise for broader device support, while the third is more niche and may not contribute significantly to Tuya device integration. Further exploration of the first two repositories could yield valuable contributions to the Tuya Zigbee ecosystem."
 }

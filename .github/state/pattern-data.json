@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-25T15:48:47.031Z",
+  "timestamp": "2026-03-26T04:24:49.266Z",
   "suggestions": [
     {
       "pattern": "False Battery Alert / Missing Battery",
       "id": "battery",
-      "count": 29,
+      "count": 30,
       "priority": "high",
       "topFPs": [
         [
           "vision",
-          23
+          24
         ],
         [
           "TS0601",
@@ -17,7 +17,7 @@
         ],
         [
           "router",
-          5
+          6
         ],
         [
           "test",
@@ -389,7 +389,7 @@
   ],
   "detections": {
     "inversion": 1,
-    "battery": 29,
+    "battery": 30,
     "double_div": 2,
     "pairing": 8,
     "unknown": 5,
