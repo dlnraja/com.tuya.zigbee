@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-27T03:39:50.773Z",
+  "timestamp": "2026-03-27T06:02:35.355Z",
   "username": "dlnraja",
   "topicCount": 1,
   "activityCount": 300,
@@ -21,5 +21,5 @@
     "_TZ3000_amdymr7",
     "_TZ3000_ksw8qtm"
   ],
-  "aiAnalysis": "**Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer**\n\n1. **Key User Requests:**\n   - Users are seeking clarification on device compatibility, particularly regarding the app's functionality on Homey Self-Hosted Servers.\n   - There is a demand for improved support and recognition of various Zigbee devices, especially soil moisture sensors and contact sensors.\n\n2. **Devices People Need:**\n   - Users are specifically requesting support for the following devices:\n     - Soil moisture sensors (e.g., _TZE284_oitavov2, _TZE284_bquwrq)\n     - Contact sensors (e.g., ZG-102Z)\n   - A list of unsupported device fingerprints indicates a need for broader device compatibility.\n\n3. **Issues to Fix:**\n   - Several users report that certain devices are not being recognized or are showing up as \"unknown.\"\n   - There are mentions of installation issues with specific devices, indicating potential bugs or compatibility problems that need addressing.\n\n4. **Action Items:**\n   - Investigate and resolve the compatibility issues with the unsupported device fingerprints listed.\n   - Provide clearer documentation or updates regarding the app's performance on Homey Self-Hosted Servers.\n   - Engage with users to gather more detailed feedback on specific devices that are problematic, and prioritize fixes based on user demand.\n   - Consider a communication strategy to keep users informed about ongoing developments and fixes related to device support."
+  "aiAnalysis": "Fingerprints found: `_TZ3000_zgyzgd`, `_TZE204_ztqnh5c`, `_TZ3000_ztc6ggyl`, `_TZ3000_akwixq9i`, `_TZ3000_hiqrjkxx`, `_TZ3000_cehuw1l2`, `_TZ3000_dfgbtub`, `_TZ3000_dfgbub0`, `_TZ3000_tvuarska`, `_TZ3000_amdymr7`, `_TZ3000_ksw8qtm`, `_TZE284_bquwrq`"
 }
