@@ -1,23 +1,11 @@
 {
-  "timestamp": "2026-03-26T15:10:35.119Z",
+  "timestamp": "2026-03-27T03:39:47.757Z",
   "appVersion": "5.11.138",
-  "forum": 1,
+  "forum": 0,
   "github": 0,
   "diagnostics": 8,
   "diagNewFPs": 0,
   "diagCritical": 0,
-  "forumDetails": [
-    {
-      "topic": 140352,
-      "post": 1655,
-      "user": "Ronald_Bok",
-      "fps": [
-        "_TZE284_oitavov2",
-        "test"
-      ],
-      "reply": "It looks like you're experiencing issues adding the new Soil Moisture Sensor (_TZE284_oitavov2 | TS0601) to your Homey setup. Since you already have several of these devices working correctly, let's t",
-      "model": "gh-gpt-4o-mini"
-    }
-  ],
+  "forumDetails": [],
   "githubDetails": []
 }
