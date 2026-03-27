@@ -185,6 +185,7 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-03-25)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
@@ -193,6 +194,7 @@
 | Wiosenna_26 | `_TZ3002_jn2x20tg`, `dlnraja` | Forum #140352 post #1652 | Auto-scanned 2026-03-25 |
 | Peter_Kawa | `dlnraja` | Forum #140352 post #1653 | Auto-scanned 2026-03-25 |
 | pemikalsen-sudo | `_TZE284_8se38w3c`, `example`, `vision` | JohanBendz/com.tuya.zigbee#1354 | Auto-scanned 2026-03-25 |
+
 
 
 
@@ -213,10 +215,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-03-23)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Brianhomey | `_TZ3000_kxaow5ki` | JohanBendz/com.tuya.zigbee#1352 | Auto-scanned 2026-03-23 |
+
 
 
 
@@ -242,10 +246,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-03-17)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Peter_van_Werkhoven | `_TZE200_vvmbj46n` | Forum #140352 post #1638 | Auto-scanned 2026-03-17 |
+
 
 
 
@@ -290,10 +296,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-03-15)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | cristianoisaac | `_TZE284_bquwrqh1`, `smartthings`, `vision`, `lumi`, `tuya` | JohanBendz/com.tuya.zigbee#1351 | Auto-scanned 2026-03-15 |
+
 
 
 
@@ -342,10 +350,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-03-10)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Peter_van_Werkhoven | `development` | Forum #140352 post #1624 | Auto-scanned 2026-03-10 |
+
 
 
 
@@ -411,12 +421,14 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-03-07)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Olivier_VE | `HOBEIAN` | Forum #140352 post #1604 | Auto-scanned 2026-03-07 |
 | FinnKje | `_TZ3210_jic09i9a`, `_TZ3210_ogx8u9it`, `zigbee2mqtt` | Forum #140352 post #1606 | Auto-scanned 2026-03-07 |
 | blutch32 | `dlnraja` | Forum #140352 post #1607 | Auto-scanned 2026-03-07 |
+
 
 
 
@@ -486,10 +498,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-03-04)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Hartmut_Dunker | `_TZ3002_pzao9ls1`, `dlnraja` | Forum #140352 post #1579 | Auto-scanned 2026-03-04 |
+
 
 
 
@@ -566,11 +580,13 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-03-02)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Nicolas | `dlnraja` | Forum #140352 post #1559 | Auto-scanned 2026-03-02 |
 | github-actions[bot] | `danfoss`, `legrand`, `sonoff`, `xiaomi`, `test`, `bosch`, `ikea`, `tuya` | dlnraja/com.tuya.zigbee#152 | Auto-scanned 2026-03-02 |
+
 
 
 
@@ -647,10 +663,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-28)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | OH2TH | `dlnraja` | Forum #140352 post #1551 | Auto-scanned 2026-02-28 |
+
 
 
 
@@ -737,12 +755,14 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-26)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | JJ10 | `_TZE200_crq3r3la`, `_TZE200_gkfbdvyx` | Forum #140352 post #1481 | Auto-scanned 2026-02-26 |
 | 7Hills | `_TZE204_clrdrnya` | Forum #140352 post #1482 | Auto-scanned 2026-02-26 |
 | dmz-86 | `_TZE204_clrdrnya` | JohanBendz/com.tuya.zigbee#1142 | Auto-scanned 2026-02-26 |
+
 
 
 
@@ -844,11 +864,13 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-24)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | FrankP | `_TZ3000_itb0omhv` | Forum #140352 post #1477 | Auto-scanned 2026-02-24 |
 | Domingoso | `_TZE200_xlppj4f5` | dlnraja/com.tuya.zigbee#135 | Auto-scanned 2026-02-24 |
+
 
 
 
@@ -963,10 +985,12 @@
 
 
 
+
 ## Nightly Auto-Scan (2026-02-22)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
 | Slawek_Pe | `_TZ3210_xzhnra8x` | Forum #140352 post #1467 | Auto-scanned 2026-02-22 |
+
 
 
 
@@ -1021,6 +1045,7 @@
 |------|---------------|--------|------|
 | ManuelKugler | `_TZE284_aao3yzhs` | Forum #140352 post #1465 | Auto-scanned 2026-02-21 |
 | eeckelaertyannick | `_TZE200_8ygsuhe1` | JohanBendz/com.tuya.zigbee#1229 | Auto-scanned 2026-02-21 |
+
 
 
 
@@ -1241,6 +1266,9 @@
 
 <!-- NIGHTLY_END -->
 
+
+<!-- NIGHTLY_END -->
+
 ---
 
 ## Auto-Discovered Fingerprints
@@ -1264,6 +1292,7 @@
 | _TZ3210_iymfxdis | dlnraja/com.tuya.zigbee#133 | device_request |
 | _TZ3002_xkxgfxsg | dlnraja/com.tuya.zigbee#133 | device_request |
 | _TZ3002_tlsvxhxc | dlnraja/com.tuya.zigbee#133 | device_request |
+
 
 
 
@@ -1343,6 +1372,7 @@
 
 
 <!-- AUTODISCOVERED_END -->
+
 
 
 
@@ -1500,6 +1530,7 @@
 
 
 
+
 ## Auto-discovered from GitHub (2026-03-01)
 
 | Fingerprint | Source | Type |
@@ -1553,6 +1584,7 @@
 
 
 <!-- AUTODISCOVERED_END -->
+
 
 
 
@@ -1636,11 +1668,15 @@
 
 
 
+
 ## Auto-discovered from GitHub (2026-03-22)
 
 | Fingerprint | Source | Type |
 |---|---|---|
 | _TZ3000_kxaow5ki | JohanBendz/com.tuya.zigbee#1352 | device_request |
+
+<!-- AUTODISCOVERED_END -->
+
 
 <!-- AUTODISCOVERED_END -->
 
