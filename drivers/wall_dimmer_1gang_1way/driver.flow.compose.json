@@ -10,11 +10,7 @@
         "en": "Triggered when the switch is turned on using the physical button",
         "nl": "Geactiveerd wanneer de schakelaar wordt aangezet met de fysieke knop"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on (physical button)",
-        "nl": "Aangezet (fysieke knop)"
-      }
+      "args": []
     },
     {
       "id": "wall_dimmer_1gang_1way_turned_off",
@@ -26,11 +22,7 @@
         "en": "Triggered when the switch is turned off using the physical button",
         "nl": "Geactiveerd wanneer de schakelaar wordt uitgezet met de fysieke knop"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off (physical button)",
-        "nl": "Uitgezet (fysieke knop)"
-      }
+      "args": []
     },
     {
       "id": "wall_dimmer_1gang_1way_brightness_increased",
@@ -53,11 +45,7 @@
           "example": 0.5
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Brightness increased (physical button)",
-        "nl": "Helderheid verhoogd (fysieke knop)"
-      }
+      "args": []
     },
     {
       "id": "wall_dimmer_1gang_1way_brightness_decreased",
@@ -80,11 +68,7 @@
           "example": 0.5
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Brightness decreased (physical button)",
-        "nl": "Helderheid verlaagd (fysieke knop)"
-      }
+      "args": []
     }
   ],
   "actions": [

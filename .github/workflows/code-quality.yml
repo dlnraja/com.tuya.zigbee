@@ -201,3 +201,6 @@ jobs:
           echo "| Drivers | $DRIVERS |" >> $GITHUB_STEP_SUMMARY
           echo "| Manufacturer IDs | $MFRS |" >> $GITHUB_STEP_SUMMARY
           echo "| Flow Cards | $FLOWCARDS |" >> $GITHUB_STEP_SUMMARY
+
+      - name: 👮 Enforce Windsurf Rules
+        run: node .github/scripts/enforce-rules.js
