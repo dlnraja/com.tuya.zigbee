@@ -16,6 +16,12 @@ class LCDTempHumidSensorDevice extends HybridSensorBase {
   /** Battery powered */
   get mainsPowered() { return false; }
 
+  /** v5.12.3: Fast init for _TZE200_* TS0601 variants (battery sleepy devices) */
+  get fastInitMode() {
+    const mfr = this.getSetting?.('zb_manufacturer_name') || '';
+    return mfr.toUpperCase().startsWith('_TZE');
+  }
+
   /** Capabilities for LCD temp/humidity sensors */
   get sensorCapabilities() {
     return ['measure_temperature', 'measure_humidity', 'measure_battery'];
@@ -32,6 +38,8 @@ class LCDTempHumidSensorDevice extends HybridSensorBase {
       2: { capability: 'measure_humidity', divisor: 10 },
 
       // Battery
+      // v5.12.3: DP3 battery enum for _TZE200_vvmbj46n (TH05Z: 0=low, 1=medium, 2=high)
+      3: { capability: 'measure_battery', divisor: 1, transform: (v) => v === 0 ? 10 : v === 1 ? 50 : v >= 2 ? 100 : Math.min(Math.max(v, 0), 100) },
       4: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(Math.max(v, 0), 100) },
       15: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(Math.max(v, 0), 100) },
     };

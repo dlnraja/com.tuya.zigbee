@@ -103,7 +103,8 @@
   ],
   "images": {
     "small": "drivers/wifi_thermostat/assets/images/small.png",
-    "large": "drivers/wifi_thermostat/assets/images/large.png"
+    "large": "drivers/wifi_thermostat/assets/images/large.png",
+    "xlarge": "drivers/wifi_thermostat/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

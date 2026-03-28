@@ -87,6 +87,8 @@
       "_TZE284_mrf6vtua",
       "_TZE284_tre6haif",
       "_TZE284_bquwrqh1",
+      "_TZE200_kb5noeto",
+      "_TZE204_kb5noeto",
       "tuyatec-53o41joc",
       "tuyatec-b5g40alm",
       "tuyatec-bd5faf9p",
@@ -125,7 +127,8 @@
       "_TZ3000_mcxw5ehu",
       "_TZ3000_msl6wxk9",
       "_TZ3000_lf56vpxj",
-      "Zbeacon"
+      "Zbeacon",
+      "_TZE200_gjldowol"
     ],
     "productId": [
       "TS0202",
@@ -167,7 +170,6 @@
           61184
         ],
         "bindings": [
-          1,
           1280,
           1030
         ]
@@ -517,7 +519,8 @@
   ],
   "images": {
     "small": "drivers/motion_sensor/assets/images/small.png",
-    "large": "drivers/motion_sensor/assets/images/large.png"
+    "large": "drivers/motion_sensor/assets/images/large.png",
+    "xlarge": "drivers/motion_sensor/assets/images/xlarge.png"
   },
   "platforms": [
     "local"
@@ -545,4 +548,3 @@
     }
   ]
 }
-

@@ -18,7 +18,7 @@ if(CHECK){
 }else{
   if(!fs.existsSync(img))fs.mkdirSync(img,{recursive:true});
   try{const b=fs.readFileSync(svg);
-  for(const{n,s}of S)await sharp(b).resize(s,s,{fit:'contain',background:BG}).flatten({background:BG}).png({compressionLevel:9}).toFile(path.join(img,n));
+  for(const{n,s}of S)await sharp(b).resize(s,s,{fit:'contain',background:BG}).png({compressionLevel:9}).toFile(path.join(img,n));
   ok++;
   }catch(e){er++;console.log('ERR '+d+': '+e.message);}
 }}

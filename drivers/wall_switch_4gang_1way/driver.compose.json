@@ -21,7 +21,8 @@
   ],
   "images": {
     "small": "drivers/wall_switch_4gang_1way/assets/images/small.png",
-    "large": "drivers/wall_switch_4gang_1way/assets/images/large.png"
+    "large": "drivers/wall_switch_4gang_1way/assets/images/large.png",
+    "xlarge": "drivers/wall_switch_4gang_1way/assets/images/xlarge.png"
   },
   "devices": {
     "secondSwitch": {
@@ -69,19 +70,10 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_qkixdnon",
-      "_TZ3000_xk5udnd6",
-      "_TZ3000_bseed",
       "_TZ3002_pzao9ls1",
-      "_TZ3002_vaq2bfcu",
-      "_TZ3000_blhvsaqf",
-      "_TZ3000_ysdv91bk",
-      "_TZ3000_hafsqare",
-      "_TZ3000_e98krvvk"
+      "_TZ3002_vaq2bfcu"
     ],
     "productId": [
-      "TS0004",
-      "TS0014",
       "TS0726"
     ],
     "endpoints": {

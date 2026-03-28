@@ -80,7 +80,7 @@ function buildForumPost(ver,cl,stats,url){
   let body=opener+'\n\n';
   if(items.length>1){body+=items.join(', ')+'.\n\n'}
   else if(cl)body+=cl+'\n\n';
-  body+='Covers a huge range of Tuya devices at this point.';
+  body+='Covers a huge range of Tuya devices at this point.\n<!-- bot-update -->';
   return body;
 }
 
@@ -117,11 +117,16 @@ async function main(){
     // v5.12.1: Content-level version dedup — skip if existing post already mentions this version
     if(lastOwn&&lastOwn.raw&&lastOwn.raw.includes('v'+ver)){console.log('Post already contains v'+ver+', skipping');fs.appendFileSync(SUM,'Forum: skipped (v'+ver+' already in post)\n');state.lastVersion=ver;saveState(state);return}
     if(lastOwn){
-      const m=smartMergePost(lastOwn.raw,raw);
-      console.log('SmartMerge:',m.reason);
-      if(m.action==='skip'){console.log('Skipping ('+m.reason+')');fs.appendFileSync(SUM,'Forum: skipped ('+m.reason+')\n');return}
-      await editPost(lastOwn.id,m.content,auth);
-      console.log('Edited post #'+lastOwn.postNumber+' ('+m.reason+')');
+      if(!lastOwn.raw.includes('<!-- bot-update -->') && !lastOwn.raw.includes('<!-- bot-')) {
+        console.log('Last dlnraja post appears to be manual. Creating new reply instead of editing.');
+        await postReply(TID,raw,auth);
+      } else {
+        const m=smartMergePost(lastOwn.raw,raw);
+        console.log('SmartMerge:',m.reason);
+        if(m.action==='skip'){console.log('Skipping ('+m.reason+')');fs.appendFileSync(SUM,'Forum: skipped ('+m.reason+')\n');return}
+        await editPost(lastOwn.id,m.content,auth);
+        console.log('Edited post #'+lastOwn.postNumber+' ('+m.reason+')');
+      }
     }else{
       await postReply(TID,raw,auth);
       console.log('Posted new reply (no existing dlnraja post found)');

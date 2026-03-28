@@ -1,18 +1,19 @@
 'use strict';
 
-const{ZigBeeDevice}=require('homey-zigbeedriver');
+const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
-class SmartRemote1ButtonDevice extends ZigBeeDevice{
-  async onNodeInit({zclNode}){
-    this.log('[SMART_REMOTE_1_BUTTON] init');
-    // Gang 1
-    if(zclNode.endpoints[1]&&zclNode.endpoints[1].clusters){
-      const ep1=zclNode.endpoints[1].clusters;
-      if(ep1.scenes){ep1.scenes.on('recall',(gId,sId)=>{this.log('[SMART_REMOTE_1_BUTTON] g1 scene:',gId,sId);});}
-      if(ep1.onOff){ep1.onOff.on('attr.onOff',(v)=>{this.log('[SMART_REMOTE_1_BUTTON] g1 onOff:',v);});}
-    }
+/**
+ * Smart Remote 1 Button - TS004F
+ * 1-button battery remote using ZCL scenes/onOff clusters
+ * v5.12.0: Converted from log-only stub to full ButtonDevice
+ */
+class SmartRemote1ButtonDevice extends ButtonDevice {
+  async onNodeInit({ zclNode }) {
+    this.buttonCount = 1;
+    this.log('[SMART_REMOTE_1_BUTTON] v5.12.0 init - 1 button');
+    await super.onNodeInit({ zclNode }).catch(err => this.error('[SMART_REMOTE_1_BUTTON] init err:', err.message));
     this.log('[SMART_REMOTE_1_BUTTON] ready');
   }
 }
 
-module.exports=SmartRemote1ButtonDevice;
+module.exports = SmartRemote1ButtonDevice;

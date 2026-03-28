@@ -73,7 +73,10 @@
           "example": 0.75
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness increased - physical"
+      }
     },
     {
       "id": "switch_dimmer_1gang_brightness_decreased",
@@ -90,7 +93,10 @@
           "example": 0.25
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness decreased - physical"
+      }
     }
   ],
   "conditions": [

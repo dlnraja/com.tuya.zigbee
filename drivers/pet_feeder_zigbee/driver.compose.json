@@ -61,7 +61,8 @@
   },
   "images": {
     "small": "drivers/pet_feeder_zigbee/assets/images/small.png",
-    "large": "drivers/pet_feeder_zigbee/assets/images/large.png"
+    "large": "drivers/pet_feeder_zigbee/assets/images/large.png",
+    "xlarge": "drivers/pet_feeder_zigbee/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

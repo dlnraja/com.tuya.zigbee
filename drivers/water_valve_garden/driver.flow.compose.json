@@ -3,42 +3,77 @@
     {
       "id": "water_valve_garden_opened",
       "highlight": true,
-      "title": { "en": "Valve opened" },
-      "args": []
+      "title": {
+        "en": "Valve opened"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Valve opened"
+      }
     },
     {
       "id": "water_valve_garden_closed",
-      "title": { "en": "Valve closed" },
-      "args": []
+      "title": {
+        "en": "Valve closed"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Valve closed"
+      }
     },
     {
       "id": "water_valve_garden_battery_low",
-      "title": { "en": "Battery is low" },
-      "args": []
+      "title": {
+        "en": "Battery is low"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery is low"
+      }
     }
   ],
   "conditions": [
     {
       "id": "water_valve_garden_is_open",
-      "title": { "en": "Valve !{{is|is not}} open" },
-      "args": []
+      "title": {
+        "en": "Valve !{{is|is not}} open"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Valve !{{is|is not}} open"
+      }
     }
   ],
   "actions": [
     {
       "id": "water_valve_garden_open",
-      "title": { "en": "Open valve" },
-      "args": []
+      "title": {
+        "en": "Open valve"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Open valve"
+      }
     },
     {
       "id": "water_valve_garden_close",
-      "title": { "en": "Close valve" },
-      "args": []
+      "title": {
+        "en": "Close valve"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Close valve"
+      }
     },
     {
       "id": "water_valve_garden_toggle",
-      "title": { "en": "Toggle valve" },
-      "args": []
+      "title": {
+        "en": "Toggle valve"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle valve"
+      }
     }
   ]
 }

@@ -24,21 +24,23 @@ function loadFingerprints() {
 
 function findDriver(fp) {
   const driversDir = path.join(__dirname, '..', '..', 'drivers');
+  const fpL = (fp || '').toLowerCase();
   for (const d of fs.readdirSync(driversDir)) {
     const cf = path.join(driversDir, d, 'driver.compose.json');
     if (!fs.existsSync(cf)) continue;
-    if (fs.readFileSync(cf, 'utf8').includes(`"${fp}"`)) return d;
+    if (fs.readFileSync(cf, 'utf8').toLowerCase().includes(`"${fpL}"`)) return d;
   }
   return null;
 }
 
 function findAllDrivers(fp) {
   const driversDir = path.join(__dirname, '..', '..', 'drivers');
+  const fpL = (fp || '').toLowerCase();
   const result = [];
   for (const d of fs.readdirSync(driversDir)) {
     const cf = path.join(driversDir, d, 'driver.compose.json');
     if (!fs.existsSync(cf)) continue;
-    if (fs.readFileSync(cf, 'utf8').includes(`"${fp}"`)) result.push(d);
+    if (fs.readFileSync(cf, 'utf8').toLowerCase().includes(`"${fpL}"`)) result.push(d);
   }
   return result;
 }
@@ -152,6 +154,13 @@ function fuzzyMatchFPs(extractedFPs, knownSet) {
   for (const fp of extractedFPs) {
     if (knownSet.has(fp)) continue;
     if (fp.length < 10) continue;
+    
+    // Ignore suspicious concatenations (e.g. _TZ3000_zutizvykts0203)
+    const fpL = fp.toLowerCase();
+    if (fpL.includes('ts0') && fp.length > 18) continue;
+    if (/ts\d{4}/i.test(fpL.slice(-6))) continue;
+    if ((fp.match(/_/g)||[]).length > 2) continue;
+
     // 1. Prefix match: FP is start of a known FP (truncated in forum text)
     const prefixCands = known.filter(k => k.startsWith(fp) && k.length - fp.length <= 4);
     if (prefixCands.length === 1) { results.push({original: fp, match: prefixCands[0]}); continue; }

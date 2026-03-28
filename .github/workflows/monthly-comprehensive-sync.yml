@@ -157,6 +157,24 @@ jobs:
         timeout-minutes: 3
         run: node .github/scripts/auto-learn-fingerprints.js
 
+
+      - name: Community Sync
+        continue-on-error: true
+        timeout-minutes: 10
+        run: |
+          node scripts/community-sync/sync-all.js || true
+          node scripts/community-sync/generate-report.js >> $GITHUB_STEP_SUMMARY || true
+
+      - name: Cross-Driver Gap Analysis
+        continue-on-error: true
+        run: node .github/scripts/cross-driver-gap.js
+
+      - name: AI Changelog
+        continue-on-error: true
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: node .github/scripts/generate-ai-changelog.js
+
       - name: Pattern Detector
         continue-on-error: true
         timeout-minutes: 5
@@ -186,3 +204,4 @@ jobs:
           name: monthly-report
           path: .github/state/monthly-report.json
           retention-days: 90
+

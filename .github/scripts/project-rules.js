@@ -26,6 +26,11 @@ try {
 const PROJECT_RULES = [
 '## Universal Tuya Zigbee - Project Rules for AI',
 '',
+'### REFERENCE DOCUMENTATION (CRITICAL)',
+'- Homey SDK Docs: apps.developer.homey.app (MUST consult for SDK, capabilities, flows, and pairing rules)',
+'- Internal Rules: docs/rules/DEVELOPMENT_RULES.md, docs/rules/CRITICAL_MISTAKES.md',
+'- Tuya Specs: docs/devices/* (for TS0601 DP definitions)',
+'',
 '### IDENTITY',
 '- App: com.dlnraja.tuya.zigbee | SDK3 | Repo: dlnraja/com.tuya.zigbee',
 '- Forum: topics 140352 (dlnraja), 26439 (JohanBendz)',

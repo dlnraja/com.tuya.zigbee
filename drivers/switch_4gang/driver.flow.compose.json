@@ -495,6 +495,94 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       }
+    },
+    {
+      "id": "switch_4gang_gang1_scene",
+      "title": {
+        "en": "Gang 1 scene triggered"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 1 scene triggered"
+      }
+    },
+    {
+      "id": "switch_4gang_gang2_scene",
+      "title": {
+        "en": "Gang 2 scene triggered"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 2 scene triggered"
+      }
+    },
+    {
+      "id": "switch_4gang_gang3_scene",
+      "title": {
+        "en": "Gang 3 scene triggered"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 3 scene triggered"
+      }
+    },
+    {
+      "id": "switch_4gang_gang4_scene",
+      "title": {
+        "en": "Gang 4 scene triggered"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 4 scene triggered"
+      }
     }
   ],
   "conditions": [
@@ -710,33 +798,75 @@
     },
     {
       "id": "switch_4gang_toggle_gang1",
-      "title": { "en": "Toggle gang 1", "nl": "Gang 1 wisselen" },
-      "args": []
+      "title": {
+        "en": "Toggle gang 1",
+        "nl": "Gang 1 wisselen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle gang 1",
+        "nl": "Gang 1 wisselen"
+      }
     },
     {
       "id": "switch_4gang_toggle_gang2",
-      "title": { "en": "Toggle gang 2", "nl": "Gang 2 wisselen" },
-      "args": []
+      "title": {
+        "en": "Toggle gang 2",
+        "nl": "Gang 2 wisselen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle gang 2",
+        "nl": "Gang 2 wisselen"
+      }
     },
     {
       "id": "switch_4gang_toggle_gang3",
-      "title": { "en": "Toggle gang 3", "nl": "Gang 3 wisselen" },
-      "args": []
+      "title": {
+        "en": "Toggle gang 3",
+        "nl": "Gang 3 wisselen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle gang 3",
+        "nl": "Gang 3 wisselen"
+      }
     },
     {
       "id": "switch_4gang_toggle_gang4",
-      "title": { "en": "Toggle gang 4", "nl": "Gang 4 wisselen" },
-      "args": []
+      "title": {
+        "en": "Toggle gang 4",
+        "nl": "Gang 4 wisselen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle gang 4",
+        "nl": "Gang 4 wisselen"
+      }
     },
     {
       "id": "switch_4gang_turn_on_all",
-      "title": { "en": "Turn on all gangs", "nl": "Alle gangs aanzetten" },
-      "args": []
+      "title": {
+        "en": "Turn on all gangs",
+        "nl": "Alle gangs aanzetten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on all gangs",
+        "nl": "Alle gangs aanzetten"
+      }
     },
     {
       "id": "switch_4gang_turn_off_all",
-      "title": { "en": "Turn off all gangs", "nl": "Alle gangs uitzetten" },
-      "args": []
+      "title": {
+        "en": "Turn off all gangs",
+        "nl": "Alle gangs uitzetten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off all gangs",
+        "nl": "Alle gangs uitzetten"
+      }
     },
     {
       "id": "switch_4gang_set_backlight",
@@ -912,6 +1042,42 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       }
+    },
+    {
+      "id": "switch_4gang_set_scene_mode",
+      "title": {
+        "en": "Set scene mode",
+        "fr": "Definir le mode scene"
+      },
+      "titleFormatted": {
+        "en": "Set scene mode to [[mode]]"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto (Normal + flows)"
+              }
+            },
+            {
+              "id": "magic",
+              "label": {
+                "en": "Magic (Scene only)"
+              }
+            },
+            {
+              "id": "both",
+              "label": {
+                "en": "Both (Load + scene)"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

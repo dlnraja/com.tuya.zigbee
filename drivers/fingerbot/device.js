@@ -17,33 +17,46 @@ const DP_TOUCH = 107;       // Touch detection
 class FingerbotDevice extends TuyaZigbeeDevice {
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    this.log('Fingerbot device initialized');
-
-    // Register onoff capability listener (v5.12: fix #162 missing listener)
+    // v5.12.3: Register capability listeners BEFORE super to prevent #162
+    // TuyaZigbeeDevice.onNodeInit() can crash (heavy init), blocking listener registration
     this.registerCapabilityListener('onoff', async (value) => {
       this.log('[Fingerbot] Push action: ' + (value ? 'ON' : 'OFF'));
       await this.sendTuyaDP(DP_SWITCH, 'bool', value);
     });
 
-    // Register button.push capability
     if (this.hasCapability('button.push')) {
       this.registerCapabilityListener('button.push', async () => {
         this.log('[Fingerbot] Manual push triggered');
         await this.sendTuyaDP(DP_SWITCH, 'bool', true);
-        // Auto-reset after delay
         setTimeout(async () => {
           await this.setCapabilityValue('onoff', false).catch(this.error);
         }, 1000);
       });
     }
 
+    // v5.12.3: Wrap super in try/catch (same pattern as ButtonDevice)
+    try {
+      await super.onNodeInit({ zclNode });
+    } catch (err) {
+      this.log('[Fingerbot] Base init error (non-critical):', err.message);
+    }
+
+    this.log('Fingerbot device initialized');
+
     // Listen for Tuya DP reports
     this.registerTuyaDPListener();
 
     // Apply settings on init
     await this.applySettings();
+  }
+
+  // v5.13.3: Push action for flow cards (#162)
+  async triggerPush() {
+    await this.sendTuyaDP(DP_SWITCH, 'bool', true);
+    await this.setCapabilityValue('onoff', true).catch(this.error);
+    setTimeout(async () => {
+      await this.setCapabilityValue('onoff', false).catch(this.error);
+    }, 1000);
   }
 
   registerTuyaDPListener() {
@@ -53,17 +66,21 @@ class FingerbotDevice extends TuyaZigbeeDevice {
       return;
     }
 
-    const tuyaCluster = node.endpoints[1].clusters[TUYA_CLUSTER_ID];
+    const ep = node.endpoints[1];
+    const tuyaCluster = ep.clusters[TUYA_CLUSTER_ID]
+      || ep.clusters['tuya'] || ep.clusters['61184']
+      || ep.clusters.tuya || ep.clusters.manuSpecificTuya;
     if (!tuyaCluster) {
       this.log('[Fingerbot] Tuya cluster EF00 not available');
       return;
     }
 
-    tuyaCluster.on('response', (frame) => {
-      this.handleTuyaDPReport(frame);
-    });
+    // v5.12.11: Listen for ALL event types (#162 battery fix)
+    for (const evt of ['response', 'dataReport', 'dataResponse']) {
+      tuyaCluster.on(evt, (frame) => this.handleTuyaDPReport(frame));
+    }
 
-    this.log('[Fingerbot] Tuya DP listener registered');
+    this.log('[Fingerbot] Tuya DP listener registered (3 events)');
   }
 
   handleTuyaDPReport(frame) {
@@ -81,12 +98,21 @@ class FingerbotDevice extends TuyaZigbeeDevice {
       this.log(`[Fingerbot] DP ${dp} = ${value} (type ${type})`);
 
       switch (dp) {
-        case DP_SWITCH:
-          this.setCapabilityValue('onoff', !!value).catch(this.error);
+        case DP_SWITCH: {
+          const ns = !!value, ps = this.getCapabilityValue('onoff');
+          this.setCapabilityValue('onoff', ns).catch(this.error);
+          if (ns !== ps) {
+            const cid = ns ? 'fingerbot_turned_on' : 'fingerbot_turned_off';
+            this.homey.flow.getDeviceTriggerCard(cid).trigger(this, {}, {}).catch(this.error);
+          }
+          if (ns) this.homey.flow.getDeviceTriggerCard('fingerbot_button_pressed').trigger(this, {}, {}).catch(this.error);
           break;
+        }
         case DP_BATTERY:
           if (this.hasCapability('measure_battery')) {
-            this.setCapabilityValue('measure_battery', value).catch(this.error);
+            const batt = Math.max(0, Math.min(100, value));
+            this.setCapabilityValue('measure_battery', batt).catch(this.error);
+            if (batt < 10) this.homey.flow.getDeviceTriggerCard('fingerbot_battery_low').trigger(this, {}, {}).catch(this.error);
           }
           break;
         case DP_TOUCH:
@@ -128,7 +154,10 @@ class FingerbotDevice extends TuyaZigbeeDevice {
       return;
     }
 
-    const tuyaCluster = node.endpoints[1].clusters[TUYA_CLUSTER_ID];
+    const ep1 = node.endpoints[1];
+    const tuyaCluster = ep1.clusters[TUYA_CLUSTER_ID]
+      || ep1.clusters['tuya'] || ep1.clusters['61184']
+      || ep1.clusters.tuya || ep1.clusters.manuSpecificTuya;
     if (!tuyaCluster) {
       this.error('[Fingerbot] Cannot send DP: no Tuya cluster');
       return;

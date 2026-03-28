@@ -103,7 +103,8 @@
   ],
   "images": {
     "small": "drivers/wifi_switch_4gang/assets/images/small.png",
-    "large": "drivers/wifi_switch_4gang/assets/images/large.png"
+    "large": "drivers/wifi_switch_4gang/assets/images/large.png",
+    "xlarge": "drivers/wifi_switch_4gang/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

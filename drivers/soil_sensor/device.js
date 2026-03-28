@@ -226,7 +226,12 @@ class SoilSensorDevice extends TuyaHybridDevice {
   }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
+    // v5.12.3: Wrap super in try/catch for battery device timeout
+    try {
+      await super.onNodeInit({ zclNode });
+    } catch (err) {
+      this.log('[SOIL] Base init error:', err.message);
+    }
 
     this.log('[SOIL] ════════════════════════════════════════════════════════════');
     this.log(`[SOIL] Soil Sensor ${getAppVersionPrefixed()} INTELLIGENT INFERENCE`);
@@ -353,9 +358,9 @@ class SoilSensorDevice extends TuyaHybridDevice {
     let parsedValue = value;
     if (Buffer.isBuffer(value)) {
       if (value.length === 4) {
-        parsedValue = value.readUInt32BE(0);
+        parsedValue = value.readInt32BE(0);
       } else if (value.length === 2) {
-        parsedValue = value.readUInt16BE(0);
+        parsedValue = value.readInt16BE(0);
       } else if (value.length === 1) {
         parsedValue = value.readUInt8(0);
       }

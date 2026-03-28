@@ -119,21 +119,69 @@
     },
     {
       "id": "curtain_motor_physical_on",
-      "title": { "en": "Physically opened", "fr": "Ouvert physiquement" },
-      "tokens": [{ "name": "gang", "type": "number", "title": { "en": "Gang" }, "example": 1 }],
-      "args": []
+      "title": {
+        "en": "Physically opened",
+        "fr": "Ouvert physiquement"
+      },
+      "tokens": [
+        {
+          "name": "gang",
+          "type": "number",
+          "title": {
+            "en": "Gang"
+          },
+          "example": 1
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Physically opened",
+        "fr": "Ouvert physiquement"
+      }
     },
     {
       "id": "curtain_motor_physical_off",
-      "title": { "en": "Physically closed", "fr": "Fermé physiquement" },
-      "tokens": [{ "name": "gang", "type": "number", "title": { "en": "Gang" }, "example": 1 }],
-      "args": []
+      "title": {
+        "en": "Physically closed",
+        "fr": "Fermé physiquement"
+      },
+      "tokens": [
+        {
+          "name": "gang",
+          "type": "number",
+          "title": {
+            "en": "Gang"
+          },
+          "example": 1
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Physically closed",
+        "fr": "Fermé physiquement"
+      }
     },
     {
       "id": "curtain_motor_physical_single",
-      "title": { "en": "Button pressed (physical)", "fr": "Bouton pressé (physique)" },
-      "tokens": [{ "name": "gang", "type": "number", "title": { "en": "Gang" }, "example": 1 }],
-      "args": []
+      "title": {
+        "en": "Physically pressed",
+        "fr": "Pressé physiquement"
+      },
+      "tokens": [
+        {
+          "name": "gang",
+          "type": "number",
+          "title": {
+            "en": "Gang"
+          },
+          "example": 1
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Physically pressed",
+        "fr": "Pressé physiquement"
+      }
     },
     {
       "id": "curtain_motor_lux_changed",

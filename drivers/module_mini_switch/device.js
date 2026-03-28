@@ -1,8 +1,9 @@
 'use strict';
 const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { setupSonoffEwelink, handleSonoffEwlSettings } = require('../../lib/mixins/SonoffEwelinkMixin');
 
-class ModuleMiniSwitchDevice extends HybridSwitchBase {
+class ModuleMiniSwitchDevice extends PhysicalButtonMixin(HybridSwitchBase) {
   get gangCount() { return 1; }
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });

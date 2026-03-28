@@ -459,7 +459,8 @@
   ],
   "images": {
     "small": "drivers/dimmer_wall_1gang/assets/images/small.png",
-    "large": "drivers/dimmer_wall_1gang/assets/images/large.png"
+    "large": "drivers/dimmer_wall_1gang/assets/images/large.png",
+    "xlarge": "drivers/dimmer_wall_1gang/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

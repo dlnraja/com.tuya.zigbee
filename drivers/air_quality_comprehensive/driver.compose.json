@@ -336,7 +336,8 @@
   ],
   "images": {
     "small": "drivers/air_quality_comprehensive/assets/images/small.png",
-    "large": "drivers/air_quality_comprehensive/assets/images/large.png"
+    "large": "drivers/air_quality_comprehensive/assets/images/large.png",
+    "xlarge": "drivers/air_quality_comprehensive/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

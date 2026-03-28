@@ -22,6 +22,13 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
 
   get gangCount() { return 1; }
 
+  get sceneMode() { return this.getSetting('scene_mode') || 'auto'; }
+
+  async setSceneMode(mode) {
+    this.log('[SCENE] Setting scene mode to:', mode);
+    await this.setSettings({ scene_mode: mode }).catch(() => {});
+  }
+
   /**
    * EXTEND parent dpMappings with energy monitoring DPs
    */

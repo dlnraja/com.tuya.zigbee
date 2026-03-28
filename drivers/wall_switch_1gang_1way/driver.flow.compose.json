@@ -50,12 +50,20 @@
             "en": "on"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Scene triggered",
+        "nl": "Scène geactiveerd"
+      }
     },
     {
       "id": "wall_switch_1gang_1way_physical_on",
       "args": [],
       "title": {
+        "nl": "Fysiek AAN",
+        "en": "Physical ON"
+      },
+      "titleFormatted": {
         "nl": "Fysiek AAN",
         "en": "Physical ON"
       }
@@ -66,6 +74,10 @@
       "title": {
         "nl": "Fysiek UIT",
         "en": "Physical OFF"
+      },
+      "titleFormatted": {
+        "nl": "Fysiek UIT",
+        "en": "Physical OFF"
       }
     },
     {
@@ -74,12 +86,20 @@
       "title": {
         "nl": "Enkele druk",
         "en": "Single press"
+      },
+      "titleFormatted": {
+        "nl": "Enkele druk",
+        "en": "Single press"
       }
     },
     {
       "id": "wall_switch_1gang_1way_physical_double",
       "args": [],
       "title": {
+        "nl": "Dubbele druk",
+        "en": "Double press"
+      },
+      "titleFormatted": {
         "nl": "Dubbele druk",
         "en": "Double press"
       }
@@ -99,7 +119,11 @@
           },
           "type": "number"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "nl": "Lange druk",
+        "en": "Long press"
+      }
     },
     {
       "id": "wall_switch_1gang_1way_physical_triple",
@@ -116,7 +140,11 @@
           },
           "type": "number"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "nl": "Drievoudige druk",
+        "en": "Triple press"
+      }
     }
   ],
   "actions": [

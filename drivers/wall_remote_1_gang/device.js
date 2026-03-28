@@ -1,18 +1,19 @@
 'use strict';
 
-const{ZigBeeDevice}=require('homey-zigbeedriver');
+const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
-class WallRemote1GangDevice extends ZigBeeDevice{
-  async onNodeInit({zclNode}){
-    this.log('[WALL_REMOTE_1_GANG] init');
-    // Gang 1
-    if(zclNode.endpoints[1]&&zclNode.endpoints[1].clusters){
-      const ep1=zclNode.endpoints[1].clusters;
-      if(ep1.scenes){ep1.scenes.on('recall',(gId,sId)=>{this.log('[WALL_REMOTE_1_GANG] g1 scene:',gId,sId);});}
-      if(ep1.onOff){ep1.onOff.on('attr.onOff',(v)=>{this.log('[WALL_REMOTE_1_GANG] g1 onOff:',v);});}
-    }
+/**
+ * Wall Remote 1 Gang - TS0041
+ * 1-button battery wall remote using ZCL scenes/onOff clusters
+ * v5.12.0: Converted from log-only stub to full ButtonDevice
+ */
+class WallRemote1GangDevice extends ButtonDevice {
+  async onNodeInit({ zclNode }) {
+    this.buttonCount = 1;
+    this.log('[WALL_REMOTE_1_GANG] v5.12.0 init - 1 button');
+    await super.onNodeInit({ zclNode }).catch(err => this.error('[WALL_REMOTE_1_GANG] init err:', err.message));
     this.log('[WALL_REMOTE_1_GANG] ready');
   }
 }
 
-module.exports=WallRemote1GangDevice;
+module.exports = WallRemote1GangDevice;

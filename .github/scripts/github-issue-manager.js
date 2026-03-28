@@ -3,7 +3,7 @@
 const fs=require('fs'),path=require('path');
 const{callAI,callAIEnsemble,analyzeImage,getAIBudget,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost}=require('./ai-helper');
 const{analyzeScreenshot,analyzeMultipleScreenshots,formatForAIContext}=require('./screenshot-analyzer');
-const{loadFingerprints,findAllDrivers,extractMfrFromText}=require('./load-fingerprints');
+const{loadFingerprints,findAllDrivers,extractMfrFromText,extractAllFP,resolveFingerprint,buildFullIndex}=require('./load-fingerprints');
 const{investigate:investigateBug}=require('./bug-investigator');
 const{detectFromGitHub,buildPromptContext,getResponseHints}=require('./user-profile-detector');
 let _researchEngine=null;
@@ -25,7 +25,7 @@ const VERIFY_LABEL='awaiting-verification';
 const VERIFY_DAYS=14;
 const OWNER_USERS=new Set(['dlnraja','github-actions[bot]','dependabot[bot]','tuya-triage-bot']);
 const{fetchWithRetry}=require('./retry-helper');
-const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
+const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP,isConcatenatedFP}=require('./fp-validator');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const RATE_SLEEP=parseInt(process.env.RATE_LIMIT_SLEEP||'4000');
 let appVer='?';try{appVer=JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')).version}catch{}
@@ -78,7 +78,7 @@ function markProcessed(state,repo,num){if(!state.processed.includes(repo+'#'+num
 
 // Classify issue with AI
 async function classifyIssue(issue,fpResults){
-  const prompt='Classify this GitHub issue for a Zigbee device app. Return ONLY a JSON object: {"type":"device_request|bug_report|feature|question|duplicate|stale|resolved","priority":"high|medium|low","shouldClose":true/false,"closeReason":"string or null","labels":["label1"],"summary":"one line"}';
+  const prompt='Classify this GitHub issue for a Zigbee device app. RULE: What a user reports is absolute truth — never contradict their observations, investigate instead. If user says device does not work, classify as bug_report even if FP is supported. Return ONLY a JSON object: {"type":"device_request|bug_report|feature|question|duplicate|stale|resolved","priority":"high|medium|low","shouldClose":true/false,"closeReason":"string or null","labels":["label1"],"summary":"one line"}';
   const text='Issue #'+issue.number+' by @'+(issue.user?.login||'?')+':\nTitle: '+issue.title+'\nBody: '+(issue.body||'').slice(0,1500)+'\nFingerprints: '+JSON.stringify(fpResults)+'\nDays since update: '+daysSince(issue.updated_at)+'\nState: '+issue.state;
   const ai=await callAI(text,prompt,{maxTokens:512,complexity:'low'});
   if(!ai)return null;
@@ -90,9 +90,10 @@ async function generateResponse(issue,fpResults,classification,variants,bugs,ima
   const ctx={appVersion:appVer,
     installUrl:'https://homey.app/a/com.dlnraja.tuya.zigbee/test/',
     forumUrl:'https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352',
-    devTools:'https://tools.developer.homey.app',githubUrl:'https://github.com/dlnraja/com.tuya.zigbee'};
+    devTools:'https://tools.developer.homey.app',githubUrl:'https://github.com/dlnraja/com.tuya.zigbee',
+    referenceDocs: ['docs/rules/DEVELOPMENT_RULES.md', 'docs/rules/CRITICAL_MISTAKES.md', 'https://apps.developer.homey.app/']};
   const isUpstream=repo&&repo!==OWN;
-  let prompt='You are Dylan, French dev of Universal Tuya Zigbee (v'+appVer+'). Write a short GitHub comment. Casual tone, say "I" naturally ("I added", "I\'ll check"). If device supported, say which driver. If not, ask for device interview. If bug, acknowledge and explain. If missing sensor readings (fertilizer, EC, VOC, formaldehyde), ask for app logs showing DP numbers. Max 200 words. NO bot/automated/AI/scanning/pipeline/workflow references, NO signature footer, NO version line at end, NO exact driver/FP counts. Just stop when done.';
+  let prompt='You are Dylan, French dev of Universal Tuya Zigbee (v'+appVer+'). Write a short GitHub comment. Casual tone, say "I" naturally ("I added", "I\'ll check"). ABSOLUTE RULE: What a user reports is truth — never contradict their observations, always investigate. Consult Homey SDK docs (apps.developer.homey.app) and local docs/rules/* files for accurate technical advice. If device supported, say which driver. If not, ask for device interview. If bug, acknowledge and explain what you\'ll fix based on SDK guidelines. If missing sensor readings (fertilizer, EC, VOC, formaldehyde), ask for app logs showing DP numbers. Max 200 words. NO bot/automated/AI/scanning/pipeline/workflow references, NO signature footer, NO version line at end, NO exact driver/FP counts. Just stop when done.';
   if(isUpstream)prompt+='\nCRITICAL: This issue is on the JohanBendz/com.tuya.zigbee upstream repo. You MUST clearly redirect the user to our actively maintained fork at [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee). Explain this fork supports way more devices than upstream. ALWAYS include the test install link: '+ctx.installUrl+' and community forum: '+ctx.forumUrl+'. Tell the user to install, then remove and re-pair their device. Report any issues on the forum thread or the dlnraja GitHub repo.';
   let profileCtx='';try{const det=detectFromGitHub(issue.user?.login||'',issue.body||'');profileCtx=buildPromptContext(det)}catch{}
   prompt+='\\n'+profileCtx+'Context: '+JSON.stringify(ctx);
@@ -121,8 +122,9 @@ function buildFastResponse(issue,fpResults,repo,allSupported){if(hasUserSymptoms
   if(allSupported&&fpResults.length){
     const driverList=fpResults.map(f=>'`'+f.fp+'` → **'+f.drivers.join(', ')+'**').join(', ');
     if(det.isReturning&&det.pending)msg+='Update: '+det.pending.note+'\n\n';
-    msg+='Already supported in v'+appVer+': '+driverList+'.\n\n';
-    msg+='Install the latest test version: https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.';
+    msg+='Fingerprint(s) found in v'+appVer+': '+driverList+'.\n\n';
+    msg+='Install the latest test version: https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n';
+    msg+='**If the device still shows as unknown or doesn\'t work**, share a diagnostic report ID and a Developer Tools interview — we will investigate and fix it.';
     if(isUp)msg+='\n\nForum: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352';
     return msg;
   }
@@ -134,11 +136,56 @@ async function processIssue(repo,issue,state,report,extData){
   const key=repo+'#'+issue.number;
   if(wasProcessed(state,repo,issue.number)){report.skipped++;return}
   const text=(issue.title||'')+' '+(issue.body||'');
-  const foundFPs=extractFP(text);
-  const mfrs=extractMfrFromText(text);
-  const allFPs=[...new Set([...foundFPs,...mfrs.filter(m=>m.startsWith('_T'))])];
 
-  // v5.11.27: Fast-path for empty template issues
+  // Load index to cross-reference ALL known FPs
+  const {allMfrs, allPids} = buildFullIndex();
+  
+  // Extract both Manufacturer Names and Product IDs
+  const {mfr: foundMfrs, pid: foundPids} = extractAllFP(text, allMfrs, allPids);
+  
+  // Also keep old extraction for backward compatibility and loose matches
+  const legacyMfrs=extractMfrFromText(text);
+  const allMfrsList=[...new Set([...foundMfrs,...legacyMfrs.filter(m=>m.startsWith('_T'))])];
+  const allPidsList=[...new Set(foundPids)];
+
+  // Detect corrupted concatenated fingerprints (e.g. _TZ3000_zutizvykts0203)
+  const corruptedFPs = allMfrsList.filter(m => isConcatenatedFP(m));
+  if(corruptedFPs.length){
+    console.log(`  [WARNING] Corrupted concatenation detected in issue text: ${corruptedFPs.join(', ')}`);
+  }
+
+  // Check which are supported using COMBINATION logic
+  const fpResults = [];
+  const foundPairs = new Set();
+  
+  if (allMfrsList.length && allPidsList.length) {
+    // We have both: cross-reference them
+    for (const m of allMfrsList) {
+      for (const p of allPidsList) {
+        if (corruptedFPs.includes(m)) continue; // skip corrupted
+        const driver = resolveFingerprint(m, p);
+        if (driver) {
+          fpResults.push({fp: `${m} + ${p}`, supported: true, drivers: [driver]});
+          foundPairs.add(m);
+        } else {
+          // If the combination isn't found, but the MFR exists in some driver, record it as unsupported combo
+          const mfrDrivers = findAllDrivers(m);
+          fpResults.push({fp: `${m} + ${p}`, supported: false, drivers: mfrDrivers});
+        }
+      }
+    }
+  } else {
+    // Only have one or the other, fall back to individual checking (less accurate)
+    for (const fp of allMfrsList) {
+      if (corruptedFPs.includes(fp)) continue;
+      const drivers = findAllDrivers(fp);
+      fpResults.push({fp, supported: drivers.length>0, drivers});
+    }
+  }
+
+  const allFPs = allMfrsList.filter(f => !corruptedFPs.includes(f));
+  const newFPs=fpResults.filter(f=>!f.supported).map(f=>f.fp);
+  const existingFPs=fpResults.filter(f=>f.supported);
   if(isEmptyTemplate(issue)){
     console.log('  #'+issue.number+' [EMPTY TEMPLATE] '+issue.title?.slice(0,60));
     const comments=await ghGet('/repos/'+repo+'/issues/'+issue.number+'/comments?per_page=5');
@@ -149,14 +196,6 @@ async function processIssue(repo,issue,state,report,extData){
     }
     markProcessed(state,repo,issue.number);return;
   }
-
-  // Check which are supported
-  const fpResults=allFPs.map(fp=>{
-    const drivers=findAllDrivers(fp);
-    return{fp,supported:drivers.length>0,drivers};
-  });
-  const newFPs=fpResults.filter(f=>!f.supported).map(f=>f.fp);
-  const existingFPs=fpResults.filter(f=>f.supported);
 
   // v5.11.27: Fast-path for fully-supported device requests (skip AI, save budget)
   if(allFPs.length>0&&newFPs.length===0&&!hasUserSymptoms(text)){
@@ -244,7 +283,10 @@ async function processIssue(repo,issue,state,report,extData){
   const hasBot=comments&&comments.some(c=>(c.body||'').includes(TAG)||c.user?.login==='dlnraja');
   if(comments&&Array.isArray(comments))for(const c of comments){
     if((c.body||'').includes(TAG))continue;
-    for(const fp of extractFP(c.body||''))if(!allFPs.includes(fp)){allFPs.push(fp);const d=findAllDrivers(fp);fpResults.push({fp,supported:d.length>0,drivers:d})}
+    const commentMfrs=extractFP(c.body||'');const commentPids=_vPID(c.body||'');
+    for(const fp of commentMfrs){if(!allFPs.includes(fp))allFPs.push(fp);
+      if(commentPids.length){for(const p of commentPids){const dr=resolveFingerprint(fp,p);if(dr){fpResults.push({fp:`${fp} + ${p}`,supported:true,drivers:[dr]})}else{const d=findAllDrivers(fp);fpResults.push({fp:`${fp} + ${p}`,supported:false,drivers:d})}}}
+      else{const d=findAllDrivers(fp);fpResults.push({fp,supported:d.length>0,drivers:d})}}
     if(!imageCtx){const ci=extractImages(c.body||'');if(ci.length){const sa2=await analyzeScreenshot(ci[0],'github comment');imageCtx=sa2?formatForAIContext(sa2):''}}
   }
 
@@ -268,7 +310,7 @@ async function processIssue(repo,issue,state,report,extData){
   }
 
   // Close stale/resolved issues (OWN repo only — forks are read-only sources)
-  if(repo===OWN&&classification.shouldClose&&issue.state==='open'){
+  if(repo===OWN&&classification.shouldClose&&issue.state==='open'&&classification.type!=='bug_report'){
     const age=daysSince(issue.updated_at);
     if(age>=STALE_DAYS||classification.type==='resolved'||classification.type==='duplicate'){
       const reason=classification.closeReason||'Auto-closed: '+(age>=STALE_DAYS?'inactive >'+STALE_DAYS+' days':classification.type);
@@ -286,9 +328,10 @@ async function processIssue(repo,issue,state,report,extData){
     const lastBody=(last?.body||'').toLowerCase();
     const isOwner=OWNER_USERS.has(lastUser);
     const allSupp=allFPs.length>0&&!newFPs.length;
-    const hasClose=lastBody.includes('closing')||lastBody.includes('already supported')||lastBody.includes('install test')||lastBody.includes('all fp');
-    if(isOwner&&(allSupp||hasClose)){
-      const reason='Triaged by '+lastUser+(allSupp?' — all FPs supported in v'+appVer:' — addressed');
+    const isBugIssue=classification&&classification.type==='bug_report';
+    const hasClose=lastBody.includes('closing')||lastBody.includes('fingerprint')||lastBody.includes('install test')||lastBody.includes('all fp');
+    if(isOwner&&((!isBugIssue&&allSupp)||hasClose)){
+      const reason='Triaged by '+lastUser+(allSupp?' — all FPs found in v'+appVer:' — addressed');
       await ghPost('/repos/'+repo+'/issues/'+issue.number+'/labels',{labels:['awaiting-verification']});
       console.log('    VERIFY-REQUESTED (owner):',reason)
     }
@@ -302,10 +345,21 @@ async function processPR(repo,pr,state,report,extData){
   const key=repo+'#PR'+pr.number;
   if(wasProcessed(state,repo,'PR'+pr.number))return;
   const text=(pr.title||'')+' '+(pr.body||'');
-  const allFPs=extractFP(text);
-  if(!allFPs.length&&!text.toLowerCase().match(/fix|bug|feature|driver|sensor|switch/))return;
+  const {allMfrs: idxMfrs, allPids: idxPids} = buildFullIndex();
+  const {mfr: prMfrs, pid: prPids} = extractAllFP(text, idxMfrs, idxPids);
+  const allFPs=[...prMfrs];
+  if(!allFPs.length&&!prPids.length&&!text.toLowerCase().match(/fix|bug|feature|driver|sensor|switch/))return;
 
-  const fpResults=allFPs.map(fp=>({fp,supported:findAllDrivers(fp).length>0,drivers:findAllDrivers(fp)}));
+  const fpResults=[];
+  if(prMfrs.length&&prPids.length){
+    for(const m of prMfrs){for(const p of prPids){
+      const dr=resolveFingerprint(m,p);
+      if(dr)fpResults.push({fp:`${m} + ${p}`,supported:true,drivers:[dr]});
+      else{const d=findAllDrivers(m);fpResults.push({fp:`${m} + ${p}`,supported:false,drivers:d})}
+    }}
+  }else{
+    for(const fp of allFPs){const d=findAllDrivers(fp);fpResults.push({fp,supported:d.length>0,drivers:d})}
+  }
   const newFPs=fpResults.filter(f=>!f.supported).map(f=>f.fp);
 
   console.log('  PR#'+pr.number+' ['+pr.state+'] '+pr.title?.slice(0,60)+' FPs:'+allFPs.length);
@@ -324,7 +378,7 @@ async function processPR(repo,pr,state,report,extData){
     }else{
       msg+='Thanks for the PR!\n\n';
     }
-    if(fpResults.filter(f=>f.supported).length)msg+='**Already supported** in v'+appVer+':\n'+fpResults.filter(f=>f.supported).map(f=>'- `'+f.fp+'` → **'+f.drivers.join(', ')+'**').join('\n')+'\n\n';
+    if(fpResults.filter(f=>f.supported).length)msg+='**Fingerprint(s) found** in v'+appVer+':\n'+fpResults.filter(f=>f.supported).map(f=>'- `'+f.fp+'` → **'+f.drivers.join(', ')+'**').join('\n')+'\n\n';
     if(newFPs.length)msg+='**New** — will integrate:\n'+newFPs.map(fp=>'- `'+fp+'`').join('\n')+'\n\n';
     if(isUp){
       msg+='**Install the test version:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n';
@@ -349,7 +403,7 @@ async function processPR(repo,pr,state,report,extData){
     const lastBody=(last?.body||'').toLowerCase();
     const isOwner=OWNER_USERS.has(lastUser);
     const allSupp=allFPs.length>0&&!newFPs.length;
-    const hasClose=lastBody.includes('closing')||lastBody.includes('already supported')||lastBody.includes('already in v')||lastBody.includes('all fp');
+    const hasClose=lastBody.includes('closing')||lastBody.includes('fingerprint')||lastBody.includes('found in v')||lastBody.includes('all fp');
     if(isOwner&&(allSupp||hasClose)){
       await ghPost('/repos/'+repo+'/issues/'+pr.number+'/labels',{labels:['awaiting-verification']});
       console.log('    PR VERIFY-REQUESTED:',lastUser)
@@ -371,8 +425,12 @@ async function staleSweep(repo,items,isPR,state,report){
     if(state.closed.includes(key))continue;
     const age=daysSince(item.updated_at);
     const text=(item.title||'')+' '+(item.body||'');
-    const allFPs=extractFP(text);
-    const allSupp=allFPs.length>0&&allFPs.every(fp=>findAllDrivers(fp).length>0);
+    const {allMfrs:swMfrs,allPids:swPids}=buildFullIndex();
+    const {mfr:sMfrs,pid:sPids}=extractAllFP(text,swMfrs,swPids);
+    const allFPs=[...sMfrs];
+    let allSupp=false;
+    if(sMfrs.length&&sPids.length){allSupp=sMfrs.every(m=>sPids.some(p=>resolveFingerprint(m,p)))}
+    else if(allFPs.length){allSupp=allFPs.every(fp=>findAllDrivers(fp).length>0)}
 
     // Check if we already commented
     const comments=await ghGet('/repos/'+repo+'/issues/'+item.number+'/comments?per_page=10');
@@ -382,8 +440,11 @@ async function staleSweep(repo,items,isPR,state,report){
     let shouldClose=false;let reason='';
 
     // Rule 1: All FPs supported + awaiting-verification label + >14 days
+    // v5.11.137: Skip for bug reports — FP supported != bug fixed
     const hasVerifyLabel=item.labels&&item.labels.some(l=>(l.name||l)==='awaiting-verification');
-    if(allSupp&&hasBot&&hasVerifyLabel&&age>=14){
+    const hasBugLabel=item.labels&&item.labels.some(l=>/bug|broken|fix|error/i.test(l.name||l));
+    const titleHintsBug=/bug|broken|not work|crash|error|fail|wrong|issue/i.test(item.title||'');
+    if(allSupp&&hasBot&&hasVerifyLabel&&age>=14&&!hasBugLabel&&!titleHintsBug){
       shouldClose=true;reason='All FPs supported, verification requested '+age+'d ago with no response';
     }
     // Rule 2: Stale >30 days + already triaged

@@ -81,7 +81,11 @@ const LEARNING_STATES = {
  */
 class IrBlasterDevice extends ZigBeeDevice {
 
+  get mainsPowered() { return true; }
+
   async onNodeInit({ zclNode }) {
+    // v5.13.3: IR blasters are USB-powered, remove battery cap
+    await this.removeCapability('measure_battery').catch(() => {});
     this.log('IR Blaster initializing...');
 
     // v5.5.356: Initialize enhanced IR storage system

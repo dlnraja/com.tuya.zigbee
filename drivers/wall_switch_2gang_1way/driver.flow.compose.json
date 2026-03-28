@@ -6,7 +6,11 @@
         "en": "Turned on",
         "nl": "Aangezet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "nl": "Aangezet"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_turned_off",
@@ -14,7 +18,11 @@
         "en": "Turned off",
         "nl": "Uitgezet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "nl": "Uitgezet"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_physical_gang1_on",
@@ -22,7 +30,11 @@
         "en": "Gang 1 physical ON",
         "nl": "Gang 1 fysiek AAN"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 1 physical ON",
+        "nl": "Gang 1 fysiek AAN"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_physical_gang1_off",
@@ -30,7 +42,11 @@
         "en": "Gang 1 physical OFF",
         "nl": "Gang 1 fysiek UIT"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 1 physical OFF",
+        "nl": "Gang 1 fysiek UIT"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_physical_gang2_on",
@@ -38,7 +54,11 @@
         "en": "Gang 2 physical ON",
         "nl": "Gang 2 fysiek AAN"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 2 physical ON",
+        "nl": "Gang 2 fysiek AAN"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_physical_gang2_off",
@@ -46,7 +66,11 @@
         "en": "Gang 2 physical OFF",
         "nl": "Gang 2 fysiek UIT"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 2 physical OFF",
+        "nl": "Gang 2 fysiek UIT"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_gang1_scene",
@@ -66,7 +90,11 @@
             "en": "on"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Gang 1 scene triggered",
+        "nl": "Gang 1 scène geactiveerd"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_gang2_scene",
@@ -86,7 +114,11 @@
             "en": "on"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Gang 2 scene triggered",
+        "nl": "Gang 2 scène geactiveerd"
+      }
     }
   ],
   "actions": [
@@ -277,7 +309,11 @@
         "en": "Turn on",
         "nl": "Aanzetten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "nl": "Aanzetten"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_turn_off",
@@ -285,7 +321,11 @@
         "en": "Turn off",
         "nl": "Uitzetten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "nl": "Uitzetten"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_toggle",
@@ -293,7 +333,11 @@
         "en": "Toggle",
         "nl": "Wisselen"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "nl": "Wisselen"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_turn_on_gang1",
@@ -301,7 +345,11 @@
         "en": "Turn on gang 1",
         "nl": "Gang 1 aanzetten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on gang 1",
+        "nl": "Gang 1 aanzetten"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_turn_off_gang1",
@@ -309,7 +357,11 @@
         "en": "Turn off gang 1",
         "nl": "Gang 1 uitzetten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off gang 1",
+        "nl": "Gang 1 uitzetten"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_toggle_gang1",
@@ -317,7 +369,11 @@
         "en": "Toggle gang 1",
         "nl": "Gang 1 wisselen"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle gang 1",
+        "nl": "Gang 1 wisselen"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_turn_on_gang2",
@@ -325,7 +381,11 @@
         "en": "Turn on gang 2",
         "nl": "Gang 2 aanzetten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on gang 2",
+        "nl": "Gang 2 aanzetten"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_turn_off_gang2",
@@ -333,7 +393,11 @@
         "en": "Turn off gang 2",
         "nl": "Gang 2 uitzetten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off gang 2",
+        "nl": "Gang 2 uitzetten"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_toggle_gang2",
@@ -341,7 +405,11 @@
         "en": "Toggle gang 2",
         "nl": "Gang 2 wisselen"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle gang 2",
+        "nl": "Gang 2 wisselen"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_turn_on_all",
@@ -349,7 +417,11 @@
         "en": "Turn on all gangs",
         "nl": "Alle gangs aanzetten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on all gangs",
+        "nl": "Alle gangs aanzetten"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_turn_off_all",
@@ -357,7 +429,11 @@
         "en": "Turn off all gangs",
         "nl": "Alle gangs uitzetten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off all gangs",
+        "nl": "Alle gangs uitzetten"
+      }
     }
   ],
   "conditions": [
@@ -367,7 +443,11 @@
         "en": "Is !{{on|off}}",
         "nl": "Is !{{aan|uit}}"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Is !{{on|off}}",
+        "nl": "Is !{{aan|uit}}"
+      }
     }
   ]
 }

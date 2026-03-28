@@ -120,7 +120,18 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
         });
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 3-Gang switch flow cards registered (v5.12.0)');
+    // v5.12.5: Scene mode action
+    try {
+      this.homey.flow.getActionCard('switch_3gang_set_scene_mode')
+        .registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.setSceneMode(args.mode);
+          return true;
+        });
+      this.log('[FLOW] \u2705 switch_3gang_set_scene_mode');
+    } catch (err) { this.log('[FLOW] \u26A0\uFE0F ' + err.message); }
+
+    this.log('[FLOW] 3-Gang switch flow cards registered (v5.12.0)');
   }
 }
 

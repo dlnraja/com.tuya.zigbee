@@ -190,7 +190,9 @@ async function batchAI(postInfos,ver,threadCtx){
 
   let ctx='You ARE Dylan, the dev. You\'re typing a quick reply on your own forum thread between coding sessions. Plain casual text, no markdown headers, no bullet lists, no tables.\n';
   ctx+='Sound like a real person: "yeah that one\'s in there", "I\'ll check", "oh nice, added that last week". @mention inline, never as greeting.\n';
-  ctx+='NEVER mention: AI, bot, automation, SPA, algorithm, pipeline, scan, scraping, API, token, workflow, machine learning, LLM, ensemble, data query, GitHub Actions. You are a HUMAN developer who "checked", "looked into it", "cross-referenced".\n';
+  ctx+='CRITICAL RULE 1: ONLY talk about driver enrichments, new fingerprints, new devices, and bug fixes that directly affect users.\n';
+  ctx+='CRITICAL RULE 2: NEVER mention internal improvements, optimizations, CI/CD, GitHub, bots, AI, workflows, scanning, infrastructure, or refactoring. If someone asks about these, or if you did a fix related to them, remain COMPLETELY SILENT about them. \n';
+  ctx+='CRITICAL RULE 3: Read the thread context. If I (dlnraja) have manually posted a reply recently, YOU MUST take my manual comment into account. Do NOT contradict me or override what I said.\n';
   ctx+='SPAM TRIGGERS (will get flagged): "Hi @user,", bullet lists, numbered steps, "Thank you for", "Please provide", ## headers, "Happy to help", "As always,".\n';
   ctx+='Max 200 words. Vary your opening every time. End naturally, no footer/signature.\n\n';
 
@@ -261,7 +263,7 @@ async function main(){
   // IMPORTANT: Only reply on OUR OWN thread (140352). Never post on other people's threads!
   const replyTids=new Set((process.env.REPLY_TOPICS||'140352').split(',').map(Number));
   let ver='?';try{ver=JSON.parse(fs.readFileSync(path.join(__dirname,'..','..','app.json'),'utf8')).version}catch{}
-  console.log('=== Forum Responder v5.11.29 (edit-or-reply, anti-spam) ===');
+  console.log('=== Forum Responder v'+ver+' (edit-or-reply, anti-spam) ===');
   console.log(dry?'DRY':'LIVE','| v'+ver);
   const{idx,pidx,allMfrs,allPids}=buildIndex();
   console.log('Index:',idx.size,'mfrs,',pidx.size,'pids');
@@ -331,8 +333,31 @@ async function main(){
       const lastOwn=await getLastOwnPost(tid);
       // v5.12.0: smartMergePost handles dedup + size cap + trim
       let mergeResult=null;
-      if(lastOwn){mergeResult=smartMergePost(lastOwn.raw,reply);if(mergeResult.action==='skip'){console.log('  ⏭ SmartMerge skip:',mergeResult.reason);state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}}
-      const editTarget=lastOwn?lastOwn:null;
+      if(lastOwn){
+        // Do not merge into manual owner posts. Check if it lacks a bot marker.
+        // The bot doesn't explicitly inject a marker here, but we can assume if the post 
+        // doesn't have an AI footprint or if it's explicitly manual, we should skip edit.
+        // Actually, we can check for common bot-generated phrases or just add a marker.
+        // Better yet: only edit if the last post contains our typical AI footprint 
+        // or if we decide to append a hidden tag.
+        // For now, if we detect the post is manual, we'll force a new reply.
+        // Let's rely on smartMergePost but bypass it if it's manual.
+        // Actually, let's just make sure we append a hidden bot tag to our AI replies.
+      }
+      reply += '\n<!-- bot-reply -->';
+      
+      if(lastOwn && lastOwn.raw.includes('<!-- bot-reply -->')){
+        mergeResult=smartMergePost(lastOwn.raw,reply);
+        if(mergeResult.action==='skip'){
+          console.log('  ⏭ SmartMerge skip:',mergeResult.reason);
+          state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};
+          continue
+        }
+      } else if (lastOwn) {
+        console.log('  Last post is manual. Skipping merge, will post new reply.');
+      }
+      
+      const editTarget=(lastOwn && lastOwn.raw.includes('<!-- bot-reply -->'))?lastOwn:null;
       for(let i=0;i<3;i++){
         try{
           if(auth.type==='session')await refreshCsrf(auth);

@@ -51,7 +51,7 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
           const pgid = `wall_switch_4gang_1way_physical_gang${gn}_` + (value ? 'on' : 'off');
           this.homey.flow.getDeviceTriggerCard(pgid).trigger(this, {}, {}).catch(() => {});
         }
-        if (isPhys && (mode === 'magic' || mode === 'both')) {
+        if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
           this.homey.flow.getDeviceTriggerCard(`wall_switch_4gang_1way_gang${gn}_scene`)
             .trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
         }
@@ -63,7 +63,12 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
       this._zclState.pending = true;
       clearTimeout(this._zclState.timeout);
       this._zclState.timeout = setTimeout(() => { this._zclState.pending = false; }, 2000);
-      await onOff[value ? 'setOn' : 'setOff']();
+      // v5.13.2: Use writeAttributes for per-EP control (Z2M #27167, ZHA #2443)
+      if (typeof onOff.writeAttributes === 'function') {
+        await onOff.writeAttributes({ onOff: value ? true : false });
+      } else {
+        await onOff[value ? 'setOn' : 'setOff']();
+      }
       return true;
     });
 
@@ -104,7 +109,7 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
       const mode = this.sceneMode;
       const isPhys = !this._appCommandPending?.gang1;
       // v5.12.4: Removed 'auto' physical gang trigger - PhysicalButtonMixin handles it (fixes BSEED double-trigger)
-      if (isPhys && (mode === 'magic' || mode === 'both')) {
+      if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
         this.homey.flow.getDeviceTriggerCard('wall_switch_4gang_1way_gang1_scene')
           .trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
         this.log(`[SCENE] Gang 1 scene: ${value ? 'on' : 'off'}`);

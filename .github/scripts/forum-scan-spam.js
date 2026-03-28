@@ -31,8 +31,8 @@ const BOT_PATTERNS = [
   /Bot Universal Tuya/i,
   /Install test version\s*$/i,
   /Universal Tuya Zigbee v\d+\.\d+\.\d+/i,
-  /already supported in.*v\d+/i,
-  /fingerprint.*already.*supported/i,
+  /fingerprint.*found in.*v\d+/i,
+  /fingerprint.*mapped/i,
   /re-pair.*device/i,
 ];
 

@@ -10,7 +10,6 @@
 .idea/
 .vs/
 scripts/
-tools/
 docs/
 references/
 backup/
@@ -42,12 +41,11 @@ vite.config.js
 config.local.js
 secrets.json
 
-# === Root junk files ===
-_cmp.js
-nul
-post_log.txt
-tmp_validate_log.txt
-README.txt
+# === Root junk files (catch-all) ===
+_*.js
+_*.py
+*.txt
+!drivers/**/*.txt
 
 # === Build/cache/deps ===
 node_modules/

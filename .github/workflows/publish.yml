@@ -108,6 +108,10 @@ jobs:
           version: ${{ inputs.version || 'patch' }}
           changelog: ${{ steps.cl.outputs.text }}
 
+      - name: Sync package.json version
+        if: steps.pat.outputs.ok == 'true'
+        run: node -e "const f=require('fs'),a=require('./app.json'),p=JSON.parse(f.readFileSync('package.json','utf8'));p.version=a.version;f.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n');console.log('Synced package.json to v'+a.version);"
+
       - name: Update Changelogs for New Version
         if: steps.pat.outputs.ok == 'true'
         continue-on-error: true

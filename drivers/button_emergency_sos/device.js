@@ -223,6 +223,14 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       this.log(`[SOS] 🆘 Tuya DP13 button action: ${action} (value: ${value})`);
       this._handleAlarm({ source: 'tuya-dp13', dp, value, action });
 
+      // v5.12.0: Trigger specific press type flow cards
+      if (value === 1) {
+        try { this.homey.flow.getDeviceTriggerCard('button_emergency_sos_double_pressed').trigger(this, {}, {}).catch(() => {}); } catch(e) {}
+      } else if (value === 2) {
+        try { this.homey.flow.getDeviceTriggerCard('button_emergency_sos_long_pressed').trigger(this, {}, {}).catch(() => {}); } catch(e) {}
+      }
+
+
       // Read battery when device is awake
       this.homey.setTimeout(() => this._readBatteryNow(), 200);
       return;
@@ -1298,3 +1306,5 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
 }
 
 module.exports = SosEmergencyButtonDevice;
+
+

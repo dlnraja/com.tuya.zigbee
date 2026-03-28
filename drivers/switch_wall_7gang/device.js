@@ -15,6 +15,13 @@ const ZCL_ONLY_MANUFACTURERS_7G = [
 class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
   get gangCount() { return 7; }
 
+  get sceneMode() { return this.getSetting('scene_mode') || 'auto'; }
+
+  async setSceneMode(mode) {
+    this.log('[SCENE] Setting scene mode to:', mode);
+    await this.setSettings({ scene_mode: mode }).catch(() => {});
+  }
+
   get isZclOnlyDevice() {
     const mfr = this.getSetting?.('zb_manufacturer_name') ||
                 this.getStoreValue?.('manufacturerName') || '';
@@ -76,11 +83,21 @@ class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
         if (this._zclState.lastState[epNum] !== value) {
           this._zclState.lastState[epNum] = value;
           this.setCapabilityValue(capName, value).catch(() => {});
-          if (isPhysical) {
+                    // v5.12.5: Scene mode support
+          const mode = this.sceneMode;
+          if (mode === 'magic') {
+            this.setCapabilityValue(capName, !value).catch(() => {});
+          }
+          if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_wall_7gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
             this.homey.flow.getDeviceTriggerCard(flowId)
               .trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
-            this.log(`[SWITCH-7G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+            this.log(`[SWITCH-7G] Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+          }
+          if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
+            this.homey.flow.getDeviceTriggerCard(`switch_wall_7gang_gang${epNum}_scene`)
+              .trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+            this.log(`[SWITCH-7G] Scene G${epNum} ${value ? 'on' : 'off'}`);
           }
         }
       });

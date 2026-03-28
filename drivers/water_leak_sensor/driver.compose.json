@@ -78,18 +78,10 @@
       "_TZ3000_upgcbody",
       "_TYZB01_sqmd19i1",
       "_TYZB01_ttvdudvx",
-      "_TZ3000_gszjt2xx",
       "_TZ3000_kxlmv9ag",
-      "_TZ3000_m0vaazab",
-      "_TZ3000_misw04hq",
       "_TZ3000_r80pzsb9",
       "_TZ3000_shopg9ss",
-      "_TZ3000_ufttklsz",
-      "_TZ3000_wlquqiiz",
       "_TZ3000_wmlc9p9z",
-      "_TZ3000_nlsszmzl",
-      "_TZ3000_nkkl7uzv",
-      "_TZ3000_5k5vh43t",
       "_TZ3000_sgpbz53b",
       "eWeLink"
     ],
@@ -113,8 +105,7 @@
       "TS0601",
       "SQ510A",
       "SNZB-05P",
-      "CK-TLSR8656-SS5-01(7019)",
-      "RH3001"
+      "CK-TLSR8656-SS5-01(7019)"
     ],
     "endpoints": {
       "1": {
@@ -380,7 +371,8 @@
   ],
   "images": {
     "small": "drivers/water_leak_sensor/assets/images/small.png",
-    "large": "drivers/water_leak_sensor/assets/images/large.png"
+    "large": "drivers/water_leak_sensor/assets/images/large.png",
+    "xlarge": "drivers/water_leak_sensor/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

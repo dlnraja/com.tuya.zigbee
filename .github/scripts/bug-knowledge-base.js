@@ -48,7 +48,12 @@ RECENT_FIXES:[
 {version:"5.12.3",fixes:["_TZE200_vvmbj46n removed from climate_sensor","_TZE200_kb5noeto moved to presence_sensor_radar","fingerbot cluster 61184 added"]},
 {version:"5.12.4",fixes:["BSEED fps kept in wall_switch_4gang_1way","scene mode auto double-trigger fixed"]},
 {version:"5.12.5",fixes:["configureReporting for energy monitor power/current/voltage"]},
-{version:"5.13.0",fixes:["Full MIME email parsing","Pseudo extraction","YAML cross-ref output"]}
+{version:"5.13.0",fixes:["Full MIME email parsing","Pseudo extraction","YAML cross-ref output"]},
+{version:"5.13.2",fixes:["wall_switch_4gang_1way writeAttributes fix","case-corrected _TZe200→_TZE200 FPs verified","IR learn 5s guard confirmed","soil measure_humidity.soil implemented","cross-ref-intelligence enhanced with multi-source correlation"]},
+{version:"5.13.3",fixes:["fingerbot flow cards registered in driver.js + triggers from device.js DP reports (#162)","16 drivers patched with missing flow card action/condition registerRunListener","ir_blaster/ir_remote: mainsPowered=true + removeCapability(measure_battery)","nightly YML: Flow Card Handler Audit + Mains-Powered Battery Check steps","weekly YML: duplicate FP+PID combo check step added"]},
+{version:"5.13.4",fixes:["_TZ3002_vaq2bfcu removed from switch_1gang (BSEED 4gang)","3 SOS FPs removed from smart_remote_4_buttons","_TZ3000_osu834un removed from vibration_sensor (Z2M: contact)","_TZ3000_gbm10jnj/_TZ3002_6ahhkwyh removed from switch_1gang (scene switches)","_TZ3210_j4pdtz9v removed from curtain_motor (Z2M: fingerbot plus)","3 fingerbot FPs moved from switch_1gang to fingerbot driver","_TZE204_ztqnh5cg/_TZE204_clrdrnya removed from generic_tuya","_TZE204_dcnsggvz removed from climate_sensor (Z2M: dimmer)","55 specific device FPs cleaned from generic_tuya (had dedicated drivers)","final: 188 drivers, 4352 FPs, 170 cross-driver conflicts, 4 unresolvable"]},
+{version:"5.13.5",fixes:["smart_scene_panel driver created","soil FPs moved from radar to soil_sensor","_TZE284_8se38w3c moved from radiator_valve to climate_sensor","misplaced-fp-detector.js added to nightly"]},
+{version:"5.11.137",fixes:["switch_3gang driver.js syntax error fixed (broken string literal killed all flow cards, #170)","HOBEIAN added to climate_sensor for ZG-303Z temp/humidity","issue-manager: bug_report protected from auto-close on FP support","findDriver/findAllDrivers now case-insensitive","generate-ai-changelog.js template syntax error fixed","changelog entries 5.11.133-137 replaced with real descriptions","user-truth-absolute rule added to AI classification+response prompts"]}
 ],
 getDriverPatterns(driverType){return this.DRIVER_SPECIFIC.find(d=>d.type===driverType)||null;},
 validateFingerprint(mfr,pid,proposedDriver){

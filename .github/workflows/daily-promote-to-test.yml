@@ -2,9 +2,7 @@ name: Daily Draft to Test
 on:
   schedule:
     - cron: '45 3 * * *'   # After daily-everything 02:00 publish
-    - cron: '45 9 * * *'   # Morning check
     - cron: '30 15 * * *'  # After daily-everything 14:00 publish
-    - cron: '30 21 * * *'  # Evening check
   workflow_dispatch:
   workflow_run:
     workflows: [Auto Publish, Auto-Publish on Push, Daily Everything Pipeline]

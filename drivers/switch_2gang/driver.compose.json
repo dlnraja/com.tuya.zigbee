@@ -22,7 +22,8 @@
       "TS011F",
       "ZG-305Z",
       "TS0003",
-      "TS0013"
+      "TS0013",
+      "TS0726"
     ],
     "learnmode": {
       "image": "/drivers/switch_2gang/assets/learnmode.svg",
@@ -123,10 +124,9 @@
       "_TZ3000_kpatq5pq",
       "_TZ3000_ljhbw1c9",
       "_TYZB01_zsl6z0pw",
-      "_TZ3000_4js9lo5d",
-      "_TZ3000_pmz6mjyu",
       "_TYZB01_digziiav",
-      "_TZ3000_llfaquvp"
+      "_TZ3000_l9brjwau",
+      "_TZ3002_ovsw7u2p"
     ],
     "endpoints": {
       "1": {
@@ -150,7 +150,8 @@
   },
   "images": {
     "small": "drivers/switch_2gang/assets/images/small.png",
-    "large": "drivers/switch_2gang/assets/images/large.png"
+    "large": "drivers/switch_2gang/assets/images/large.png",
+    "xlarge": "drivers/switch_2gang/assets/images/xlarge.png"
   },
   "settings": [
     {
@@ -618,6 +619,38 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
+    },
+    {
+      "id": "scene_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Scene Mode",
+        "fr": "Mode Scene"
+      },
+      "hint": {
+        "en": "Auto=normal+triggers, Magic=scene-only, Both=load+scene"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto (Normal + flows)"
+          }
+        },
+        {
+          "id": "magic",
+          "label": {
+            "en": "Magic (Scene only)"
+          }
+        },
+        {
+          "id": "both",
+          "label": {
+            "en": "Both (Load + scene)"
+          }
+        }
+      ]
     }
   ],
   "name": {

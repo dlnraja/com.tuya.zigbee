@@ -1217,6 +1217,7 @@ const SENSOR_CONFIGS = {
     hasIlluminance: true,   // Via ZCL cluster 1024, NOT Tuya DP106!
     noTemperature: true,    // v5.8.43: PR#125 michelhelsdingen - NO temperature sensor on this device
     noHumidity: true,       // v5.8.43: PR#125 michelhelsdingen - NO humidity sensor on this device
+    noIasMotion: true,      // v5.12.7: 4x4_Pete PIR+Radar fix - DP1/DP101 (radar) is authoritative; IAS Zone (PIR) sends conflicting false clears when person is stationary
     writableDPs: [2, 3, 4, 102, 103, 104, 105, 107, 108, 109, 110, 111, 122, 123],
     dpMap: {
       // ═══════════════════════════════════════════════════════════════════
@@ -3647,9 +3648,8 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         }
       };
 
-      if (iasZone.onZoneEnrollRequest) {
-        iasZone.onZoneEnrollRequest = enrollHandler;
-      }
+      // v5.12.3: Always assign handler (SDK3 pattern) - fixes #97 NoroddH radar
+      iasZone.onZoneEnrollRequest = enrollHandler;
       if (iasZone.on) {
         iasZone.on('zoneEnrollRequest', enrollHandler);
       }

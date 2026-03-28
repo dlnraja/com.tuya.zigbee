@@ -106,7 +106,8 @@
   },
   "images": {
     "small": "drivers/switch_wall_6gang/assets/images/small.png",
-    "large": "drivers/switch_wall_6gang/assets/images/large.png"
+    "large": "drivers/switch_wall_6gang/assets/images/large.png",
+    "xlarge": "drivers/switch_wall_6gang/assets/images/xlarge.png"
   },
   "platforms": [
     "local"
@@ -542,6 +543,38 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
+    },
+    {
+      "id": "scene_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Scene Mode",
+        "fr": "Mode Scene"
+      },
+      "hint": {
+        "en": "Auto=normal+triggers, Magic=scene-only, Both=load+scene"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto (Normal + flows)"
+          }
+        },
+        {
+          "id": "magic",
+          "label": {
+            "en": "Magic (Scene only)"
+          }
+        },
+        {
+          "id": "both",
+          "label": {
+            "en": "Both (Load + scene)"
+          }
+        }
+      ]
     }
   ],
   "pair": [

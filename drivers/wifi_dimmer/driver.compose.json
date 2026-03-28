@@ -101,7 +101,8 @@
   ],
   "images": {
     "small": "drivers/wifi_dimmer/assets/images/small.png",
-    "large": "drivers/wifi_dimmer/assets/images/large.png"
+    "large": "drivers/wifi_dimmer/assets/images/large.png",
+    "xlarge": "drivers/wifi_dimmer/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

@@ -123,6 +123,18 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ switch_wall_5gang_turn_off_all');
     } catch (err) { this.log(`[FLOW] ⚠️ turn_off_all: ${err.message}`); }
 
+    
+    // v5.12.5: Scene mode action
+    try {
+      this.homey.flow.getActionCard('switch_wall_5gang_set_scene_mode')
+        .registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.setSceneMode(args.mode);
+          return true;
+        });
+      this.log('[FLOW] \u2705 switch_wall_5gang_set_scene_mode');
+    } catch (err) { this.log('[FLOW] ' + err.message); }
+
     this.log('[FLOW] 🎉 All 5-gang switch flow cards registered (v5.5.930)');
   }
 }

@@ -6,6 +6,9 @@
     "de": "Fernbedienung Dimmer (Lidl/Tuya)"
   },
   "class": "remote",
+  "connectivity": [
+    "zigbee"
+  ],
   "capabilities": [
     "measure_battery",
     "alarm_battery"
@@ -50,8 +53,8 @@
     }
   },
   "images": {
-    "large": "/drivers/remote_dimmer/assets/images/large.png",
-    "small": "/drivers/remote_dimmer/assets/images/small.png",
-    "xlarge": "/drivers/remote_dimmer/assets/images/xlarge.png"
+    "large": "drivers/remote_dimmer/assets/images/large.png",
+    "small": "drivers/remote_dimmer/assets/images/small.png",
+    "xlarge": "drivers/remote_dimmer/assets/images/xlarge.png"
   }
 }

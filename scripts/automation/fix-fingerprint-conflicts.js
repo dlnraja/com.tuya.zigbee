@@ -15,10 +15,11 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const { DRIVERS_DIR, STATE_DIR, writeDriverJson } = require('../lib/drivers');
 
 const DRY_RUN = process.argv.includes('--dry-run');
 const REPORT_ONLY = process.argv.includes('--report-only');
-const DDIR = path.join(__dirname, '..', '..', 'drivers');
+const DDIR = DRIVERS_DIR;
 
 // Device category mapping for conflict resolution priority
 const CATEGORY = {
@@ -72,6 +73,29 @@ const CATEGORY = {
   scene_switch_4: 'scene', smart_knob_rotary: 'scene',
   water_tank_monitor: 'monitor', usb_outlet_advanced: 'plug',
   usb_dongle_dual_repeater: 'repeater', zigbee_repeater: 'repeater',
+  // Added v5.12.0: missing categories
+  wall_switch_4gang_1way: 'switch', wall_curtain_switch: 'cover',
+  lcdtemphumidsensor: 'sensor', temphumidsensor: 'sensor',
+  formaldehyde_sensor: 'sensor', air_quality_comprehensive: 'sensor',
+  air_quality_co2: 'sensor', smart_lcd_thermostat: 'thermostat',
+  floor_heating_thermostat: 'thermostat', hvac_controller: 'thermostat',
+  thermostat_4ch: 'thermostat', door_controller: 'cover',
+  garage_door_opener: 'cover', smart_knob: 'button', smart_knob_switch: 'button',
+  button_wireless_6: 'button', button_wireless_8: 'button',
+  scene_switch_1: 'scene', scene_switch_2: 'scene', scene_switch_3: 'scene',
+  scene_switch_6: 'scene', wall_remote_1_gang: 'button',
+  wall_remote_2_gang: 'button', wall_remote_3_gang: 'button',
+  wall_remote_4_gang: 'button', wall_remote_4_gang_2: 'button',
+  wall_remote_4_gang_3: 'button', wall_remote_6_gang: 'button',
+  smart_remote_1_button: 'button', smart_remote_1_button_2: 'button',
+  smart_remote_4_buttons: 'button', handheld_remote_4_buttons: 'button',
+  smart_button_switch: 'button', bulb_rgb: 'light', bulb_rgbw: 'light',
+  bulb_tunable_white: 'light', bulb_white: 'light',
+  led_strip: 'light', led_strip_advanced: 'light', led_strip_rgbw: 'light',
+  led_controller_cct: 'light', led_controller_rgb: 'light',
+  module_mini_switch: 'switch', generic_tuya: 'diy', universal_fallback: 'diy',
+  siren: 'safety', doorbell: 'safety', lock_smart: 'lock',
+  pet_feeder_zigbee: 'pet', water_valve_garden: 'valve',
 };
 
 // Specialization score: higher = more specialized, wins conflicts
@@ -138,6 +162,59 @@ function resolveConflict(conflict, drivers) {
     removals.push({ driver: 'generic_diy', mfr, reason: 'diy_custom_zigbee takes priority' });
     return removals;
   }
+
+  // Rule 1.5: climate_sensor is a catch-all — loses to ANY specialized driver
+  // climate_sensor has TS0601 which matches almost everything via cartesian product
+  if (drvNames.includes('climate_sensor') && drvNames.length === 2) {
+    const other = drvNames.find(d => d !== 'climate_sensor');
+    const otherCat = drivers.get(other)?.category || 'unknown';
+    // climate_sensor loses to everything except diy/unknown
+    if (otherCat !== 'diy' && otherCat !== 'unknown') {
+      const planned = removalCounts.get('climate_sensor') || 0;
+      const csCount = drivers.get('climate_sensor')?.mfrs?.size || 0;
+      if (csCount - planned - 1 >= 3) {
+        removals.push({ driver: 'climate_sensor', mfr, reason: 'climate_sensor catch-all loses to ' + otherCat + '(' + other + ')' });
+        removalCounts.set('climate_sensor', planned + 1);
+        return removals;
+      }
+    }
+  }
+
+  // Rule 1.6: Same-gang switch variants (switch_Xgang vs wall_switch_Xgang_1way)
+  // These are legitimate overlaps — same device, different wiring. Keep both.
+  const switchPairs = [
+    ['switch_1gang', 'wall_switch_1gang_1way'],
+    ['switch_2gang', 'wall_switch_2gang_1way'],
+    ['switch_3gang', 'wall_switch_3gang_1way'],
+    ['switch_4gang', 'wall_switch_4gang_1way'],
+  ];
+  for (const [a, b] of switchPairs) {
+    if (drvNames.includes(a) && drvNames.includes(b) && drvNames.length === 2) {
+      return []; // intentional overlap, no action
+    }
+  }
+
+  // Rule 1.7: Button wireless vs wall remote (same gang count = intentional overlap)
+  const buttonPairs = [
+    ['button_wireless_1', 'wall_remote_1_gang'],
+    ['button_wireless_2', 'wall_remote_2_gang'],
+    ['button_wireless_3', 'wall_remote_3_gang'],
+    ['button_wireless_4', 'wall_remote_4_gang'],
+    ['button_wireless_4', 'wall_remote_4_gang_3'],
+  ];
+  for (const [a, b] of buttonPairs) {
+    if (drvNames.includes(a) && drvNames.includes(b) && drvNames.length === 2) {
+      return []; // intentional overlap for button remotes
+    }
+  }
+
+  // Rule 1.8: bulb_rgb vs bulb_rgbw — keep both (intentional feature overlap)
+  if (drvNames.includes('bulb_rgb') && drvNames.includes('bulb_rgbw') && drvNames.length === 2) {
+    return []; // intentional overlap
+  }
+
+  // Rule 1.9: temphumidsensor vs lcdtemphumidsensor — climate_sensor loses to both
+  // But between themselves, keep both (LCD vs non-LCD variant)
 
   // Rule 2: Cross-category conflicts — most specialized wins
   const categories = drvNames.map(d => ({
@@ -253,7 +330,7 @@ function main() {
 
     const mfrsToRemove = new Set(mfrRemovals.keys());
     const currentMfrs = d.config.zigbee?.manufacturerName || [];
-    const newMfrs = currentMfrs.filter(m => !mfrsToRemove.has(m));
+    const newMfrs = currentMfrs.filter(m => !mfrsToRemove.has(m.toLowerCase()));
     const removed = currentMfrs.length - newMfrs.length;
 
     if (removed === 0) continue;
@@ -299,3 +376,8 @@ function main() {
 }
 
 main();
+
+
+
+
+

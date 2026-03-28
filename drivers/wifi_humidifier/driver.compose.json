@@ -103,7 +103,8 @@
   ],
   "images": {
     "small": "drivers/wifi_humidifier/assets/images/small.png",
-    "large": "drivers/wifi_humidifier/assets/images/large.png"
+    "large": "drivers/wifi_humidifier/assets/images/large.png",
+    "xlarge": "drivers/wifi_humidifier/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

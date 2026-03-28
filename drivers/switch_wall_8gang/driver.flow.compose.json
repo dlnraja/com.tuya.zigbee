@@ -927,6 +927,182 @@
         "en": "Gang 8 long press (physical)",
         "fr": "Gang 8 appui long (physique)"
       }
+    },
+    {
+      "id": "switch_wall_8gang_gang1_scene",
+      "title": {
+        "en": "Gang 1 scene triggered"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 1 scene triggered"
+      }
+    },
+    {
+      "id": "switch_wall_8gang_gang2_scene",
+      "title": {
+        "en": "Gang 2 scene triggered"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 2 scene triggered"
+      }
+    },
+    {
+      "id": "switch_wall_8gang_gang3_scene",
+      "title": {
+        "en": "Gang 3 scene triggered"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 3 scene triggered"
+      }
+    },
+    {
+      "id": "switch_wall_8gang_gang4_scene",
+      "title": {
+        "en": "Gang 4 scene triggered"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 4 scene triggered"
+      }
+    },
+    {
+      "id": "switch_wall_8gang_gang5_scene",
+      "title": {
+        "en": "Gang 5 scene triggered"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 5 scene triggered"
+      }
+    },
+    {
+      "id": "switch_wall_8gang_gang6_scene",
+      "title": {
+        "en": "Gang 6 scene triggered"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 6 scene triggered"
+      }
+    },
+    {
+      "id": "switch_wall_8gang_gang7_scene",
+      "title": {
+        "en": "Gang 7 scene triggered"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 7 scene triggered"
+      }
+    },
+    {
+      "id": "switch_wall_8gang_gang8_scene",
+      "title": {
+        "en": "Gang 8 scene triggered"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 8 scene triggered"
+      }
     }
   ],
   "conditions": [
@@ -1707,6 +1883,41 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       }
+    },
+    {
+      "id": "switch_wall_8gang_set_scene_mode",
+      "title": {
+        "en": "Set scene mode"
+      },
+      "titleFormatted": {
+        "en": "Set scene mode to [[mode]]"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto (Normal + flows)"
+              }
+            },
+            {
+              "id": "magic",
+              "label": {
+                "en": "Magic (Scene only)"
+              }
+            },
+            {
+              "id": "both",
+              "label": {
+                "en": "Both (Load + scene)"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

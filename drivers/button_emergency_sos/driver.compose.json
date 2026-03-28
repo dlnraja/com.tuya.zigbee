@@ -401,7 +401,8 @@
   ],
   "images": {
     "small": "drivers/button_emergency_sos/assets/images/small.png",
-    "large": "drivers/button_emergency_sos/assets/images/large.png"
+    "large": "drivers/button_emergency_sos/assets/images/large.png",
+    "xlarge": "drivers/button_emergency_sos/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

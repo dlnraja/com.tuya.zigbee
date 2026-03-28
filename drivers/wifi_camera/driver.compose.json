@@ -1,85 +1,289 @@
 {
-  "name": { "en": "WiFi Camera (Tuya Local)" },
+  "name": {
+    "en": "WiFi Camera (Tuya Local)"
+  },
   "class": "camera",
-  "capabilities": ["alarm_motion", "onoff"],
+  "capabilities": [
+    "alarm_motion",
+    "onoff"
+  ],
   "capabilitiesOptions": {
-    "onoff": { "title": { "en": "Privacy Mode" }, "setOnDim": false },
-    "alarm_motion": { "title": { "en": "Motion Detected" } }
+    "onoff": {
+      "title": {
+        "en": "Privacy Mode"
+      },
+      "setOnDim": false
+    },
+    "alarm_motion": {
+      "title": {
+        "en": "Motion Detected"
+      }
+    }
   },
   "pair": [
-    { "id": "configure", "navigation": { "next": "list_devices" } },
-    { "id": "list_devices", "template": "list_devices", "navigation": { "prev": "configure" } },
-    { "id": "add_devices", "template": "add_devices" }
+    {
+      "id": "configure",
+      "navigation": {
+        "next": "list_devices"
+      }
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "prev": "configure"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
   ],
-  "repair": [{ "id": "configure" }],
+  "repair": [
+    {
+      "id": "configure"
+    }
+  ],
   "settings": [
     {
       "type": "group",
-      "label": { "en": "Tuya Local" },
+      "label": {
+        "en": "Tuya Local"
+      },
       "children": [
-        { "id": "device_id", "type": "text", "label": { "en": "Device ID" }, "value": "" },
-        { "id": "local_key", "type": "text", "label": { "en": "Local Key" }, "value": "" },
-        { "id": "ip", "type": "text", "label": { "en": "IP Address" }, "value": "" },
         {
-          "id": "protocol_version", "type": "dropdown", "label": { "en": "Protocol" }, "value": "3.4",
+          "id": "device_id",
+          "type": "text",
+          "label": {
+            "en": "Device ID"
+          },
+          "value": ""
+        },
+        {
+          "id": "local_key",
+          "type": "text",
+          "label": {
+            "en": "Local Key"
+          },
+          "value": ""
+        },
+        {
+          "id": "ip",
+          "type": "text",
+          "label": {
+            "en": "IP Address"
+          },
+          "value": ""
+        },
+        {
+          "id": "protocol_version",
+          "type": "dropdown",
+          "label": {
+            "en": "Protocol"
+          },
+          "value": "3.4",
           "values": [
-            { "id": "3.3", "label": { "en": "3.3" } },
-            { "id": "3.4", "label": { "en": "3.4" } },
-            { "id": "3.5", "label": { "en": "3.5" } }
+            {
+              "id": "3.3",
+              "label": {
+                "en": "3.3"
+              }
+            },
+            {
+              "id": "3.4",
+              "label": {
+                "en": "3.4"
+              }
+            },
+            {
+              "id": "3.5",
+              "label": {
+                "en": "3.5"
+              }
+            }
           ]
         }
       ]
     },
     {
       "type": "group",
-      "label": { "en": "Camera Stream" },
+      "label": {
+        "en": "Camera Stream"
+      },
       "children": [
         {
-          "id": "stream_method", "type": "dropdown", "label": { "en": "Stream Method" }, "value": "cloud_rtsp",
+          "id": "stream_method",
+          "type": "dropdown",
+          "label": {
+            "en": "Stream Method"
+          },
+          "value": "cloud_rtsp",
           "values": [
-            { "id": "cloud_rtsp", "label": { "en": "Tuya Cloud RTSP (auto)" } },
-            { "id": "lan_rtsp", "label": { "en": "Direct LAN RTSP" } },
-            { "id": "snapshot_only", "label": { "en": "Snapshot Only" } }
+            {
+              "id": "cloud_rtsp",
+              "label": {
+                "en": "Tuya Cloud RTSP (auto)"
+              }
+            },
+            {
+              "id": "lan_rtsp",
+              "label": {
+                "en": "Direct LAN RTSP"
+              }
+            },
+            {
+              "id": "snapshot_only",
+              "label": {
+                "en": "Snapshot Only"
+              }
+            }
           ]
         },
-        { "id": "rtsp_url", "type": "text", "label": { "en": "RTSP URL (LAN mode)" }, "value": "", "hint": { "en": "rtsp://user:pass@192.168.x.x:554/stream1" } },
         {
-          "id": "night_vision", "type": "dropdown", "label": { "en": "Night Vision" }, "value": "0",
+          "id": "rtsp_url",
+          "type": "text",
+          "label": {
+            "en": "RTSP URL (LAN mode)"
+          },
+          "value": "",
+          "hint": {
+            "en": "rtsp://user:pass@192.168.x.x:554/stream1"
+          }
+        },
+        {
+          "id": "night_vision",
+          "type": "dropdown",
+          "label": {
+            "en": "Night Vision"
+          },
+          "value": "0",
           "values": [
-            { "id": "0", "label": { "en": "Auto" } },
-            { "id": "1", "label": { "en": "Off" } },
-            { "id": "2", "label": { "en": "On" } }
+            {
+              "id": "0",
+              "label": {
+                "en": "Auto"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Off"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "On"
+              }
+            }
           ]
         },
         {
-          "id": "motion_sensitivity", "type": "dropdown", "label": { "en": "Motion Sensitivity" }, "value": "1",
+          "id": "motion_sensitivity",
+          "type": "dropdown",
+          "label": {
+            "en": "Motion Sensitivity"
+          },
+          "value": "1",
           "values": [
-            { "id": "0", "label": { "en": "Low" } },
-            { "id": "1", "label": { "en": "Medium" } },
-            { "id": "2", "label": { "en": "High" } }
+            {
+              "id": "0",
+              "label": {
+                "en": "Low"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Medium"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "High"
+              }
+            }
           ]
         },
-        { "id": "motion_detection", "type": "checkbox", "label": { "en": "Motion Detection" }, "value": true }
+        {
+          "id": "motion_detection",
+          "type": "checkbox",
+          "label": {
+            "en": "Motion Detection"
+          },
+          "value": true
+        }
       ]
     },
     {
       "type": "group",
-      "label": { "en": "Tuya Cloud (for RTSP)" },
+      "label": {
+        "en": "Tuya Cloud (for RTSP)"
+      },
       "children": [
-        { "id": "tuya_access_id", "type": "text", "label": { "en": "Access ID" }, "value": "" },
-        { "id": "tuya_access_key", "type": "password", "label": { "en": "Access Secret" }, "value": "" },
         {
-          "id": "tuya_region", "type": "dropdown", "label": { "en": "Region" }, "value": "eu",
+          "id": "tuya_access_id",
+          "type": "text",
+          "label": {
+            "en": "Access ID"
+          },
+          "value": ""
+        },
+        {
+          "id": "tuya_access_key",
+          "type": "password",
+          "label": {
+            "en": "Access Secret"
+          },
+          "value": ""
+        },
+        {
+          "id": "tuya_region",
+          "type": "dropdown",
+          "label": {
+            "en": "Region"
+          },
+          "value": "eu",
           "values": [
-            { "id": "us", "label": { "en": "US" } },
-            { "id": "eu", "label": { "en": "EU" } },
-            { "id": "cn", "label": { "en": "China" } },
-            { "id": "in", "label": { "en": "India" } }
+            {
+              "id": "us",
+              "label": {
+                "en": "US"
+              }
+            },
+            {
+              "id": "eu",
+              "label": {
+                "en": "EU"
+              }
+            },
+            {
+              "id": "cn",
+              "label": {
+                "en": "China"
+              }
+            },
+            {
+              "id": "in",
+              "label": {
+                "en": "India"
+              }
+            }
           ]
         }
       ]
     }
   ],
-  "platforms": ["local"],
-  "connectivity": ["lan"]
+  "images": {
+    "small": "drivers/wifi_camera/assets/images/small.png",
+    "large": "drivers/wifi_camera/assets/images/large.png",
+    "xlarge": "drivers/wifi_camera/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "lan"
+  ]
 }

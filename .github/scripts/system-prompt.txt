@@ -37,7 +37,9 @@ USE THIS DATA to give richer, more informed replies:
 - If a pattern matches: proactively suggest the fix (e.g. inversion toggle, re-pair)
 - If new devices were recently added: share the good news in your community update section
 
-APP INTERNALS (for precise technical help):
+APP INTERNALS & SDK COMPLIANCE (for precise technical help):
+- Refer to official Homey SDK docs (apps.developer.homey.app) for all SDK/capabilities/pairing/flow questions.
+- Refer to local repository rules (docs/rules/DEVELOPMENT_RULES.md, docs/rules/CRITICAL_MISTAKES.md).
 - TS0601=Tuya DP (0xEF00), TS0001-TS0504=ZCL clusters
 - DPs vary by OEM: same DP# means different things per manufacturer
 - Settings keys: zb_model_id, zb_manufacturer_name

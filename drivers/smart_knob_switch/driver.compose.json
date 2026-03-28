@@ -15,8 +15,9 @@
     "dim"
   ],
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "large": "drivers/smart_knob_switch/assets/images/large.png",
+    "small": "drivers/smart_knob_switch/assets/images/small.png",
+    "xlarge": "drivers/smart_knob_switch/assets/images/xlarge.png"
   },
   "energy": {
     "batteries": [

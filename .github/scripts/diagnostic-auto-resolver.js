@@ -85,9 +85,7 @@ try{if(fs.existsSync(ymlPath)){const yml=fs.readFileSync(ymlPath,"utf8");
     }
     if(fp&&pri)yamlPriorities.set(fp,pri);
   }
-  // Legacy compat
-  {const fp=null;const pri=null;
-    if(fp&&pri)yamlPriorities.set(fp,parseInt(pri));}
+  // Legacy compat removed (dead code cleanup)
   console.log("Loaded YAML priorities for",yamlPriorities.size,"fingerprints");
 }}catch(e){console.log("YAML cross-ref skip:",e.message)}
 const gd=loadJ(path.join(SD,"diagnostics-report.json"));
@@ -122,12 +120,12 @@ if(protocol==="hybrid")protocolNote="\n> **Protocol:** Hybrid device (IAS Zone +
 else if(protocol==="tuya_dp")protocolNote="\n> **Protocol:** Tuya DP (cluster 0xEF00). Ensure DP listeners active.\n";
 else if(protocol==="ias")protocolNote="\n> **Protocol:** IAS Zone. Enrollment and zone listeners required.\n";
 return TAG+"\n### Auto-resolved by Diagnostic Resolver\n\n"+profileNote+
-"All fingerprints in this "+(isPR?"PR":"issue")+" are already supported in **Universal Tuya Zigbee v"+appVer+"**:\n- "+drvList+"\n\n"+
+"All fingerprints in this "+(isPR?"PR":"issue")+" found in **Universal Tuya Zigbee v"+appVer+"**:\n- "+drvList+"\n\n"+
 "**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n"+
 "Remove and re-pair your device after installing.\n\n"+
 protocolNote+
 (fpResults.some(f=>f.drivers.length>1)?"> Note: Some fingerprints map to multiple drivers — the correct driver is determined by the **productId** (e.g. TS0001, TS0002).\n\n":"")+
-(isDelay?"> **Delay fix (v5.11.99+):** Devices now send dataQuery immediately on init. Update and re-pair to fix.\n\n":"")+
+(isDelay?"> **Delay fix (v"+appVer+"+):** Devices now send dataQuery immediately on init. Update and re-pair to fix.\n\n":"")+
 (syms.length?"\n**Detected issues:**\n"+syms.map(s=>"- "+s.fix).join("\n")+"\n\n":"")+
 "**Troubleshooting:** https://github.com/"+OWN+"/wiki/Troubleshooting\n\n"+
 (fpResults.some(f=>f.protocol)?"> **Detected protocols:** "+fpResults.map(f=>f.protocol||"unknown").filter((v,i,a)=>a.indexOf(v)===i).join(", ")+"\n":"");
@@ -154,7 +152,7 @@ if(resolution){
 console.log("KB match:",resolution.id,"for issue",iss.number);
 const comment=TAG+"\n### "+resolution.fix+"\n\n"+(resolution.action?"**Action:** "+resolution.action+"\n\n":"")+"**Version:** v"+appVer+"\n";
 await ghPost("/repos/"+repo+"/issues/"+iss.number+"/comments",{body:comment});
-st.commented.push(iss.id);report.commented++;
+st.commented.push(iss.id);report.commented++;continue;
 }
 const results=fps.map(fp=>{
 const drivers=idx.get(fp)||[];

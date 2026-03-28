@@ -28,6 +28,13 @@ const ZCL_ONLY_MANUFACTURERS_2G = [
 class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
   get gangCount() { return 2; }
 
+  get sceneMode() { return this.getSetting('scene_mode') || 'auto'; }
+
+  async setSceneMode(mode) {
+    this.log('[SCENE] Setting scene mode to:', mode);
+    await this.setSettings({ scene_mode: mode }).catch(() => {});
+  }
+
   get isZclOnlyDevice() {
     const mfr = this.getSetting?.('zb_manufacturer_name') ||
                 this.getStoreValue?.('zb_manufacturer_name') ||
@@ -376,12 +383,22 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           this._zclState.lastState[epNum] = value;
           this.setCapabilityValue(capName, value).catch(() => {});
           
-          if (isPhysical) {
+          // v5.12.5: Scene mode support
+          const mode = this.sceneMode;
+          if (mode === 'magic') {
+            this.setCapabilityValue(capName, !value).catch(() => {});
+          }
+          if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_2gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
             this.homey.flow.getDeviceTriggerCard(flowId)
               .trigger(this, { gang: epNum, state: value }, {})
               .catch(() => {});
             this.log(`[BSEED-2G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+          }
+          if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
+            this.homey.flow.getDeviceTriggerCard(`switch_2gang_gang${epNum}_scene`)
+              .trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+            this.log(`[BSEED-2G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
           }
         }
       });

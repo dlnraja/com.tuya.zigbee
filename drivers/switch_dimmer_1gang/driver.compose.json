@@ -28,12 +28,14 @@
   ],
   "images": {
     "small": "drivers/switch_dimmer_1gang/assets/images/small.png",
-    "large": "drivers/switch_dimmer_1gang/assets/images/large.png"
+    "large": "drivers/switch_dimmer_1gang/assets/images/large.png",
+    "xlarge": "drivers/switch_dimmer_1gang/assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [
       "_TZE204_3z6hca0q",
-      "_TZE284_4ar89tr1"
+      "_TZE284_4ar89tr1",
+      "_TZE204_dcnsggvz"
     ],
     "productId": [
       "TS0601"

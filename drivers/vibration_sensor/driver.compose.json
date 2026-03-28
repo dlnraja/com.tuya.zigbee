@@ -32,7 +32,6 @@
       "_TZ3000_fbjnwzko",
       "_TZ3000_fkxmywjv",
       "_TZ3000_lqpt3mvr",
-      "_TZ3000_osu834un",
       "_TZ3000_rcfwrslt",
       "_TZ3000_wqwdoqib",
       "_TZE200_cscppkxz",
@@ -71,7 +70,8 @@
   },
   "images": {
     "small": "drivers/vibration_sensor/assets/images/small.png",
-    "large": "drivers/vibration_sensor/assets/images/large.png"
+    "large": "drivers/vibration_sensor/assets/images/large.png",
+    "xlarge": "drivers/vibration_sensor/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

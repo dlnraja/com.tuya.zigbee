@@ -31,10 +31,7 @@
       "_TZb210_rkgngb5o",
       "_TZe200_0hb4rdnp",
       "_TZe200_4mh6tyyo",
-      "_TZe200_a0syesf5",
-      "_TZe200_gne0e6mk",
-      "_TZe200_la2c2uo9",
-      "_TZe200_ykgar0ow"
+      "_TZe200_gne0e6mk"
     ],
     "productId": [
       "TS1101",
@@ -86,7 +83,8 @@
   },
   "images": {
     "large": "drivers/dimmer_dual_channel/assets/images/large.png",
-    "small": "drivers/dimmer_dual_channel/assets/images/small.png"
+    "small": "drivers/dimmer_dual_channel/assets/images/small.png",
+    "xlarge": "drivers/dimmer_dual_channel/assets/images/xlarge.png"
   },
   "energy": {
     "approximation": {

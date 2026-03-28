@@ -135,7 +135,11 @@ jobs:
           [ $MISS -gt 0 ] && echo "::warning::$MISS missing driver images — will fail publish validation"
           echo "$MISS missing image(s)"
 
-      - name: 🔍 Validate (Athom Official)
+      - name: 🔍 Validate (npx primary)
+        run: npx homey app validate --level ${{ inputs.level || 'publish' }}
+
+      - name: 🔍 Validate (Athom Docker)
+        continue-on-error: true
         uses: athombv/github-action-homey-app-validate@002b7273c2b86032cb20d9bf25a67c8daca13f2c # v1
         with:
           level: ${{ inputs.level || 'publish' }}

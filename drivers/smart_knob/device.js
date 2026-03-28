@@ -1,14 +1,19 @@
 'use strict';
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap');
 
 /**
  * Smart Knob - TS004F
  * Rotary knob/dimmer remote with button press
  * Uses standard ZCL onOff + levelControl clusters
+ * v5.12.0: Added flow card triggers for button press and rotation
+ * v5.12.12: Added double/long press via Scenes cluster + dedup
  */
 class SmartKnobDevice extends TuyaZigbeeDevice {
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
+    this._lastPressTime = 0;
+    this._lastPressType = null;
 
     const ep1 = zclNode?.endpoints?.[1];
     if (!ep1) {
@@ -16,19 +21,25 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
       return;
     }
 
-    // Listen for button press via onOff cluster
+    // v5.12.12: Scenes cluster for press types (TS004F: 0=single, 1=double, 2=long)
+    const scenes = ep1.clusters?.scenes || ep1.clusters?.[5];
+    if (scenes?.on) {
+      const handleScene = (p) => {
+        const id = p?.sceneId ?? p?.sceneid ?? p?.scene ?? 0;
+        this._triggerKnobPress(resolvePressType(id, 'KNOB-SCENE'));
+      };
+      scenes.on('recall', handleScene);
+      scenes.on('recallScene', handleScene);
+      this.log('[KNOB] ✅ Scenes cluster listeners (double/long press)');
+    }
+
+    // OnOff cluster — fallback single press (skip if Scenes already fired)
     const onOff = ep1.clusters?.onOff || ep1.clusters?.[6];
     if (onOff?.on) {
-      onOff.on('commandToggle', () => {
-        this.setCapabilityValue('button', true).catch(() => {});
-        this.log('[KNOB] Button pressed');
-      });
-      onOff.on('commandOn', () => {
-        this.setCapabilityValue('button', true).catch(() => {});
-      });
-      onOff.on('commandOff', () => {
-        this.setCapabilityValue('button', true).catch(() => {});
-      });
+      const handlePress = () => this._triggerKnobPress('single');
+      onOff.on('commandToggle', handlePress);
+      onOff.on('commandOn', handlePress);
+      onOff.on('commandOff', handlePress);
     }
 
     // Listen for rotation via levelControl cluster
@@ -36,19 +47,30 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
     if (level?.on) {
       level.on('commandMoveToLevel', ({ level: lvl }) => {
         const dim = Math.max(0, Math.min(1, lvl / 254));
+        const pct = Math.round(dim * 100);
         this.setCapabilityValue('dim', dim).catch(() => {});
-        this.log('[KNOB] Level:', Math.round(dim * 100) + '%');
+        this.log('[KNOB] Level:', pct + '%');
+        this.homey.flow.getDeviceTriggerCard('smart_knob_level_changed')
+          .trigger(this, { level: pct }, {}).catch(() => {});
       });
       level.on('commandMove', ({ moveMode, rate }) => {
         const direction = moveMode === 0 ? 'up' : 'down';
         this.log('[KNOB] Move ' + direction + ' rate:' + rate);
+        this.homey.flow.getDeviceTriggerCard('smart_knob_rotated')
+          .trigger(this, { direction, level: this.getCapabilityValue('dim') ? Math.round(this.getCapabilityValue('dim') * 100) : 0 }, {}).catch(() => {});
       });
       level.on('commandStep', ({ stepMode, stepSize }) => {
         const curDim = this.getCapabilityValue('dim') || 0;
         const step = (stepSize / 254) * (stepMode === 0 ? 1 : -1);
         const newDim = Math.max(0, Math.min(1, curDim + step));
+        const pct = Math.round(newDim * 100);
         this.setCapabilityValue('dim', newDim).catch(() => {});
-        this.log('[KNOB] Step to:', Math.round(newDim * 100) + '%');
+        this.log('[KNOB] Step to:', pct + '%');
+        const direction = stepMode === 0 ? 'up' : 'down';
+        this.homey.flow.getDeviceTriggerCard('smart_knob_rotated')
+          .trigger(this, { direction, level: pct }, {}).catch(() => {});
+        this.homey.flow.getDeviceTriggerCard('smart_knob_level_changed')
+          .trigger(this, { level: pct }, {}).catch(() => {});
       });
     }
 
@@ -61,7 +83,22 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
       });
     }
 
-    this.log('[KNOB] \u2705 Ready');
+    this.log('[KNOB] ✅ Ready (single/double/long)');
+  }
+
+  _triggerKnobPress(pressType) {
+    const now = Date.now();
+    if (now - this._lastPressTime < 300 && this._lastPressType === pressType) return;
+    this._lastPressTime = now;
+    this._lastPressType = pressType;
+    this.setCapabilityValue('button', true).catch(() => {});
+    this.log(`[KNOB] 🔘 ${pressType.toUpperCase()} press`);
+    this.homey.flow.getDeviceTriggerCard('smart_knob_button_pressed')
+      .trigger(this, { press_type: pressType }, {}).catch(() => {});
+    const card = { single: 'smart_knob_single_press', double: 'smart_knob_double_press', long: 'smart_knob_long_press' }[pressType];
+    if (card) {
+      this.homey.flow.getDeviceTriggerCard(card).trigger(this, {}, {}).catch(() => {});
+    }
   }
 }
 module.exports = SmartKnobDevice;

@@ -126,7 +126,7 @@ jobs:
                 const drivers = driverMap.get(m) || ['unknown'];
                 return `- \`${m}\` → **${drivers.join('**, **')}**`;
               }).join('\n');
-              msg += `These are already supported in v${version}:\n\n${lines}\n\n`;
+              msg += `Fingerprint(s) found in v${version}:\n\n${lines}\n\n`;
             }
 
             if (missing.length) {
@@ -136,11 +136,12 @@ jobs:
 
             if (isPR) {
               msg += `Thanks for this PR! The fingerprints have been tracked and `;
-              msg += allSupported ? `are already integrated.\n\n` : `will be reviewed.\n\n`;
+              msg += allSupported ? `have been mapped to drivers.\n\n` : `will be reviewed.\n\n`;
             }
 
             if (allSupported) {
-              msg += `All fingerprints are already supported — install the [test version](${APP}), remove the device, and re-pair it.\n\n`;
+              msg += `Install the [test version](${APP}), **remove the device, and re-pair** so it picks up the correct driver.\n\n`;
+              msg += `**If the device still shows as unknown or doesn't work**, please share a diagnostic report ID and a [Developer Tools interview](${DEV}) — we will investigate and fix it.\n\n`;
             }
 
             if (isWiFi) {
@@ -150,7 +151,7 @@ jobs:
               msg += `For missing sensor readings (fertilizer, EC, VOC, etc.): please share **app logs** (Settings → Apps → Tuya → View Log) showing DP numbers — this helps us map unknown data points.\n\n`;
             }
             if (isDelayIssue) {
-              msg += `**Delay fix (v5.11.99+):** Devices now send a dataQuery immediately on init instead of waiting. Update the app to the latest test version and re-pair the device.\n\n`;
+              msg += `**Delay fix (v${version}+):** Devices now send a dataQuery immediately on init instead of waiting. Update the app to the latest test version and re-pair the device.\n\n`;
             }
             msg += `[Test version](${APP}) · [Forum thread](${FORUM}) · [Developer Tools](${DEV})`;
 
@@ -172,8 +173,6 @@ jobs:
             // Labels
             const labels = [];
             if (missing.length) labels.push('new-device');
-            if (allSupported) labels.push('already-supported');
-            if (isPR) labels.push('pr-fingerprints');
             if (labels.length) {
               await github.rest.issues.addLabels({
                 owner: context.repo.owner, repo: context.repo.repo,
@@ -181,21 +180,11 @@ jobs:
               });
             }
 
-            // Auto-close if ALL fingerprints are already supported
-            if (allSupported && isIssue && allMfrs.length > 0) {
-              console.log(`All ${found.length} FPs supported — auto-closing #${num}`);
-              await github.rest.issues.update({
-                owner: context.repo.owner, repo: context.repo.repo,
-                issue_number: num, state: 'closed', state_reason: 'completed'
-              });
-            }
-            // Auto-close PR if all FPs supported (comment only, don't merge)
-            if (allSupported && isPR && allMfrs.length > 0) {
-              console.log(`All ${found.length} FPs in PR supported — closing PR #${num}`);
-              await github.rest.pulls.update({
-                owner: context.repo.owner, repo: context.repo.repo,
-                pull_number: num, state: 'closed'
-              });
+            // v5.11.140: NEVER auto-close issues or PRs
+            // User-truth-absolute: if user reports a problem, the FP might be in wrong driver
+            // or the device might have a bug. Always let user verify first.
+            if (allSupported && allMfrs.length > 0) {
+              console.log(`#${num}: ${found.length} FPs found in drivers — awaiting user verification (no auto-close)`);
             }
 
             console.log(`#${num}: ${found.length} found, ${missing.length} missing, action=${action}`);

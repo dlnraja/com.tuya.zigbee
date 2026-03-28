@@ -181,6 +181,50 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       }
+    },
+    {
+      "id": "switch_2gang_gang1_scene",
+      "title": {
+        "en": "Gang 1 scene triggered"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 1 scene triggered"
+      }
+    },
+    {
+      "id": "switch_2gang_gang2_scene",
+      "title": {
+        "en": "Gang 2 scene triggered"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 2 scene triggered"
+      }
     }
   ],
   "conditions": [
@@ -483,6 +527,41 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       }
+    },
+    {
+      "id": "switch_2gang_set_scene_mode",
+      "title": {
+        "en": "Set scene mode"
+      },
+      "titleFormatted": {
+        "en": "Set scene mode to [[mode]]"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto (Normal + flows)"
+              }
+            },
+            {
+              "id": "magic",
+              "label": {
+                "en": "Magic (Scene only)"
+              }
+            },
+            {
+              "id": "both",
+              "label": {
+                "en": "Both (Load + scene)"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

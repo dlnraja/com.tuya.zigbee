@@ -207,7 +207,8 @@
   },
   "images": {
     "small": "drivers/power_meter/assets/images/small.png",
-    "large": "drivers/power_meter/assets/images/large.png"
+    "large": "drivers/power_meter/assets/images/large.png",
+    "xlarge": "drivers/power_meter/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

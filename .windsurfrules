@@ -211,3 +211,25 @@ Device matches if manufacturerName IN list AND productId IN list.
 - Condition driver-level: `getDeviceConditionCard()`
 - Condition app-level: `getConditionCard()`
 - NO `[[device]]` in titleFormatted for triggers
+
+## GITHUB ISSUES / PR HANDLING
+- NEVER auto-close issues or PRs until fully resolved and deeply verified
+- NEVER dismiss or disaffirm user reports without thorough investigation
+- Always research device capabilities from product sheets, manufacturer specs, Z2M, ZHA, Blakadder
+- Cross-reference manufacturerName, productId, DPs, ZCL clusters, capabilities with real sources
+- A device that "compiles" is NOT the same as a device that "works correctly"
+
+## DRIVER MATCHING (v5.11.138 audit)
+- Homey SDK: EXACT string match on driver.compose.json fingerprints
+- universal_fallback: 0 conflicts with specific drivers (verified)
+- PermissiveMatchingEngine.js: DEAD CODE, not imported anywhere
+- package.json version must sync with app.json (GitHub Actions do this)
+
+## SCENE SWITCH AUDIT (Z2M cross-reference)
+- _TZ3000_ prefix = ZCL devices, report TS004x productIds, use cluster 57344 (0xE000)
+- _TZE200_/_TZE204_ prefix = Tuya DP devices, report TS0601, use cluster 61184 (0xEF00)
+- Real productId mapping: TS0041=1btn, TS0042=2btn, TS0043=3btn, TS0044=4btn, TS0046=6btn
+- 3 driver families: button_wireless (ZCL primary), wall_remote (ZCL dup), scene_switch (DP only)
+- DO NOT add TS004x to scene_switch (conflicts with button_wireless)
+- FIXED: _TZ3000_bi6lpsew removed from scene_switch_6 (TS0043, wrong driver)
+- FIXED: All scene switches got cluster 57344 (0xE000) for E000 detection
