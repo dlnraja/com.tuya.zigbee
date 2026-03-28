@@ -38,7 +38,11 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
-      - name: Athom Validate
+      - name: Validate (npx)
+        run: npx homey app validate --level publish
+
+      - name: Athom Validate (Docker)
+        continue-on-error: true
         uses: athombv/github-action-homey-app-validate@002b7273c2b86032cb20d9bf25a67c8daca13f2c # v1
         with:
           level: publish
