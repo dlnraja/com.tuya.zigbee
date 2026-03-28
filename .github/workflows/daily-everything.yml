@@ -95,6 +95,8 @@ jobs:
         env:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
           REPLY_TOPICS: "140352"
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           echo "=== Forum Scan (all threads, read-only intel) ==="
           node .github/scripts/scan-forum.js || true

@@ -5,6 +5,29 @@
 const fs = require('fs');
 const path = require('path');
 
+// Load .windsurfrules + docs/rules/*.md for comprehensive AI context
+let LOADED_RULES = '';
+try {
+  const rulesDir = path.join(__dirname, '../../docs/rules');
+  const wsRulesPath = path.join(__dirname, '../../.windsurfrules');
+  const parts = [];
+  // Load .windsurfrules (primary condensed rules)
+  if (fs.existsSync(wsRulesPath)) {
+    const ws = fs.readFileSync(wsRulesPath, 'utf8');
+    // Take first 3000 chars (critical bugs, patterns, DP protocol, fingerprint rules)
+    parts.push('### .windsurfrules (condensed)\n' + ws.substring(0, 3000));
+  }
+  // Load docs/rules/*.md
+  if (fs.existsSync(rulesDir)) {
+    for (const f of fs.readdirSync(rulesDir).filter(f => f.endsWith('.md'))) {
+      const content = fs.readFileSync(path.join(rulesDir, f), 'utf8');
+      // Cap each file at 2000 chars to stay within token budgets
+      parts.push('### ' + f + '\n' + content.substring(0, 2000));
+    }
+  }
+  LOADED_RULES = parts.join('\n\n');
+} catch (e) { /* Rules not available in CI - that's OK */ }
+
 // Load architecture doc (truncated to key sections for token efficiency)
 let ARCHITECTURE_SUMMARY = '';
 try {
@@ -85,4 +108,4 @@ const PROJECT_RULES = [
 '- Issues: https://github.com/dlnraja/com.tuya.zigbee/issues',
 ].join('\n');
 
-module.exports = { PROJECT_RULES, ARCHITECTURE_SUMMARY };
+module.exports = { PROJECT_RULES, ARCHITECTURE_SUMMARY, LOADED_RULES };

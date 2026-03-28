@@ -123,6 +123,9 @@ jobs:
         if: always()
         continue-on-error: true
         timeout-minutes: 5
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: node .github/scripts/forum-intel-processor.js || true
 
       # Forum replies delegated to forum-auto-responder.yml (2x/day, dedicated workflow)
