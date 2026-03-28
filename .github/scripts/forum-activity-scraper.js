@@ -177,7 +177,16 @@ function extractAllDeviceInfo(data){
   const allFPs=[...new Set([...foundFPs,...mfrs.filter(m=>m.startsWith('_T'))])];
   const supported=allFPs.filter(fp=>fps.has(fp));
   const unsupported=allFPs.filter(fp=>!fps.has(fp));
-  return{allFPs,supported,unsupported};
+  const userDevices={};
+  for(const t of(data.fullThreads||[]))for(const p of(t.posts||[])){
+    const u=p.user||'anon',pf=extractFP(p.text||'');
+    if(pf.length){if(!userDevices[u])userDevices[u]={fps:[],posts:0,ctx:[]};
+      pf.forEach(f=>{if(!userDevices[u].fps.includes(f))userDevices[u].fps.push(f)});
+      userDevices[u].posts++;
+      if(userDevices[u].ctx.length<3)userDevices[u].ctx.push((p.text||'').substring(0,200));
+    }
+  }
+  return{allFPs,supported,unsupported,userDevices};
 }
 
 async function main(){
@@ -227,8 +236,11 @@ async function main(){
   console.log('\n== AI Analysis ==');
   const aiInput={username:USERNAME,appVersion:appVer,summary:data.summary,topicCount:data.topics?.length,activityCount:data.activity?.length,
     pmCount:data.pms?.length,refCount:data.references?.length,bookmarkCount:data.bookmarks?.length,
-    unsupportedFPs:data.deviceInfo.unsupported.slice(0,20),recentActivity:(data.activity||[]).slice(0,15).map(a=>a.title+' ('+a.excerpt?.slice(0,80)+')')};
-  const aiPrompt='Analyze this Homey community forum activity for the Universal Tuya Zigbee app maintainer. Summarize: 1) Key user requests, 2) Devices people need, 3) Issues to fix, 4) Action items. Max 300 words. Focus on actionable insights.';
+    unsupportedFPs:data.deviceInfo.unsupported.slice(0,20),
+    userDevices:Object.fromEntries(Object.entries(data.deviceInfo.userDevices||{}).slice(0,10).map(([u,d])=>[u,{fps:d.fps.slice(0,5),posts:d.posts}])),
+    threadExcerpts:(data.fullThreads||[]).slice(0,5).map(t=>({title:t.title,posts:t.posts?.length,first:(t.posts?.[0]?.text||'').substring(0,150)})),
+    recentActivity:(data.activity||[]).slice(0,15).map(a=>a.title+' ('+a.excerpt?.slice(0,80)+')')};
+  const aiPrompt='Analyze this Homey forum data for the Universal Tuya Zigbee app. For each unsupported fingerprint: identify device type (switch/sensor/TRV/cover/dimmer/etc), likely productId (TS0001-TS0601), suggested driver, and any DPs/clusters mentioned in thread context. Group by user to show their device history. Output: 1) Per-device analysis with driver suggestion, 2) Per-user request summary, 3) Top issues to fix, 4) Priority action items. Use project rules for driver matching logic. Max 500 words.';
   const ai=await callAI(JSON.stringify(aiInput,null,2),aiPrompt,{maxTokens:1024});
   data.aiAnalysis=ai?ai.text:null;
   if(data.aiAnalysis)console.log('  AI analysis:',data.aiAnalysis.length,'chars');

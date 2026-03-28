@@ -4,7 +4,7 @@
  */
 const fs=require('fs'),path=require('path');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-const{PROJECT_RULES,ARCHITECTURE_SUMMARY}=require('./project-rules');
+const{PROJECT_RULES,ARCHITECTURE_SUMMARY,LOADED_RULES}=require('./project-rules');
 
 // Circuit breaker: skip providers down recently
 const _cb={};
@@ -33,9 +33,10 @@ function classifyTask(t,s,o){
 
 async function callAI(text,sysPrompt,opts={}){
   const maxTokens=opts.maxTokens||2048;
-  // Inject project rules + architecture into system prompt
+  // Inject project rules + loaded rules + architecture into system prompt
   const archContext=ARCHITECTURE_SUMMARY?'\n\n---\n'+ARCHITECTURE_SUMMARY:'';
-  const fullSysPrompt=PROJECT_RULES+archContext+'\n\n'+sysPrompt;
+  const rulesContext=LOADED_RULES?'\n\n---\n'+LOADED_RULES:'';
+  const fullSysPrompt=PROJECT_RULES+archContext+rulesContext+'\n\n'+sysPrompt;
   // Try Gemini first (free: 15 RPM, 1500 RPD — cap at 1400 for safety)
   _rtLoad();
   const gemKey=process.env.GOOGLE_API_KEY;
