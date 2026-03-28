@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-28T03:35:22.059Z",
+  "timestamp": "2026-03-28T05:57:22.588Z",
   "username": "dlnraja",
   "topicCount": 1,
   "activityCount": 300,
@@ -21,5 +21,5 @@
     "_TZ3000_amdymr7",
     "_TZ3000_ksw8qtm"
   ],
-  "aiAnalysis": "**Summary of Homey Community Forum Activity for Universal Tuya Zigbee App Maintainer**\n\n1. **Key User Requests:**\n   - Users are seeking improved support for a variety of devices, particularly soil moisture sensors and contact sensors.\n   - There is a demand for a comprehensive list of devices that the app currently supports natively.\n   - Users are inquiring about compatibility with Homey Self-Hosted Server.\n\n2. **Devices People Need:**\n   - Specific models mentioned include:\n     - Soil moisture sensors (various models)\n     - Contact Sensor ZG-102Z\n   - Users have reported issues with multiple unsupported device identifiers, indicating a need for broader device compatibility.\n\n3. **Issues to Fix:**\n   - Several users reported that certain devices are not recognized or are showing up as \"unknown.\"\n   - The app version 5.11.138 has been mentioned, but users are experiencing installation issues with specific devices.\n   - There is confusion regarding the visibility of the test app in the Homey Apps store.\n\n4. **Action Items:**\n   - Compile and publish an updated list of supported devices, including those that are currently unsupported.\n   - Investigate and resolve the recognition issues for the Soil Moisture Sensor and Contact Sensor ZG-102Z.\n   - Clarify the app's compatibility with Homey Self-Hosted Server and communicate this information to users.\n   - Consider user feedback on the visibility of the test app and explore ways to improve its accessibility in the Homey Apps store. \n\nBy addressing these points, the maintainer can enhance user satisfaction and expand the app's functionality."
+  "aiAnalysis": "Fingerprints found: `_TZ3000_zgyzgd`, `_TZE204_ztqnh5c`, `_TZ3000_ztc6ggyl`, `_TZ3000_akwixq9i`, `_TZ3000_hiqrjkxx`, `_TZ3000_cehuw1l2`, `_TZ3000_dfgbtub`, `_TZ3000_dfgbub0`, `_TZ3000_tvuarska`, `_TZ3000_amdymr7`, `_TZ3000_ksw8qtm`, `_TZE284_bquwrq`"
 }
