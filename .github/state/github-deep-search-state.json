@@ -1,17 +1,17 @@
 {
-  "lastRun": "2026-03-27T15:29:08.169Z",
-  "runs": 34,
+  "lastRun": "2026-03-28T04:02:31.979Z",
+  "runs": 35,
   "lastStats": {
-    "ghCalls": 46,
+    "ghCalls": 45,
     "codeResults": 140,
     "issueResults": 0,
-    "targetedResults": 11,
+    "targetedResults": 9,
     "newRepos": 3,
-    "totalFPs": 240,
-    "supported": 237,
-    "unsupported": 3,
+    "totalFPs": 228,
+    "supported": 226,
+    "unsupported": 2,
     "withDPs": 0,
     "withIssues": 0,
-    "duration": 237
+    "duration": 228
   }
 }
