@@ -43,6 +43,18 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
+      - name: 🔍 Validate Homey App (publish)
+        id: homey_validate
+        run: |
+          if npx homey app validate --level publish 2>&1; then
+            echo "result=✅ Passed" >> $GITHUB_OUTPUT
+            echo "✅ Homey app validate passed" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "result=❌ Failed" >> $GITHUB_OUTPUT
+            echo "❌ homey app validate --level publish FAILED" >> $GITHUB_STEP_SUMMARY
+            exit 1
+          fi
+
       - name: 🔍 Check Common Bugs
         run: |
           echo "## 🔍 Code Quality" >> $GITHUB_STEP_SUMMARY
@@ -86,6 +98,16 @@ jobs:
           DUP=$(grep -rohE '"_T[^"]+"' drivers/*/driver.compose.json 2>/dev/null | sort | uniq -d | wc -l || true)
           [ "$DUP" -gt 0 ] && echo "⚠️ $DUP duplicate fingerprints across drivers" >> $GITHUB_STEP_SUMMARY || echo "✅ No duplicate FPs" >> $GITHUB_STEP_SUMMARY
 
+      - name: 🔄 Critical Guards
+        run: |
+          echo "### Guards" >> $GITHUB_STEP_SUMMARY
+          grep -q '_inConfigureAttrReportingLegacy' lib/zigbee/ZigbeeHelpers.js 2>/dev/null && echo "✅ Recursion guard" >> $GITHUB_STEP_SUMMARY || echo "❌ Recursion guard missing" >> $GITHUB_STEP_SUMMARY
+
+      - name: 🖼️ Driver Images
+        run: |
+          echo "### Images" >> $GITHUB_STEP_SUMMARY
+          for d in drivers/*/; do DR=$(basename "$d"); for S in small large xlarge; do [ ! -f "$d/assets/images/$S.png" ] && echo "❌ $DR: $S.png" >> $GITHUB_STEP_SUMMARY; done; done
+
       - name: 🌡️ Sensor Checks
         run: |
           echo "### Sensor Checks" >> $GITHUB_STEP_SUMMARY
@@ -107,7 +129,42 @@ jobs:
           done
           [ $FAIL -eq 0 ] && echo "✅ All driver JSON valid" >> $GITHUB_STEP_SUMMARY
 
-      - name: 🔍 Dead Code Detection
+      - name: � Mains-Powered Battery Check
+        run: |
+          echo "### Mains-Powered Battery Check" >> $GITHUB_STEP_SUMMARY
+          ISSUES=0
+          for d in drivers/*/device.js; do
+            DRIVER=$(basename "$(dirname "$d")")
+            if grep -q "mainsPowered" "$d" 2>/dev/null; then
+              IS_MAINS=$(node -e "const c=require('fs').readFileSync('$d','utf8');const m=c.match(/get mainsPowered\(\)\s*\{\s*return (true|false)/);console.log(m?m[1]:'unknown')" 2>/dev/null || true)
+              if [ "$IS_MAINS" = "true" ]; then
+                HAS_REMOVE=$(grep -c "removeCapability.*measure_battery" "$d" 2>/dev/null || true)
+                DC="drivers/$DRIVER/driver.compose.json"
+                HAS_BATT=$(node -e "try{const c=JSON.parse(require('fs').readFileSync('$DC','utf8'));console.log((c.capabilities||[]).includes('measure_battery'))}catch{console.log(false)}" 2>/dev/null || true)
+                if [ "$HAS_BATT" = "true" ] && [ "$HAS_REMOVE" = "0" ]; then
+                  echo "❌ $DRIVER: mains-powered but has measure_battery without removeCapability" >> $GITHUB_STEP_SUMMARY
+                  ISSUES=$((ISSUES+1))
+                fi
+              fi
+            fi
+          done
+          [ $ISSUES -eq 0 ] && echo "✅ All mains devices OK" >> $GITHUB_STEP_SUMMARY
+
+      - name: 🔑 Empty Fingerprint Check
+        run: |
+          echo "### Empty Fingerprint Check" >> $GITHUB_STEP_SUMMARY
+          EMPTY=0
+          for f in drivers/*/driver.compose.json; do
+            DRIVER=$(basename "$(dirname "$f")")
+            RESULT=$(node -e "const c=JSON.parse(require('fs').readFileSync('$f','utf8'));const z=c.zigbee;if(z&&(!z.manufacturerName||!z.manufacturerName.length||!z.productId||!z.productId.length))console.log('EMPTY')" 2>/dev/null || true)
+            if [ "$RESULT" = "EMPTY" ]; then
+              echo "⚠️ $DRIVER: empty manufacturerName or productId" >> $GITHUB_STEP_SUMMARY
+              EMPTY=$((EMPTY+1))
+            fi
+          done
+          [ $EMPTY -eq 0 ] && echo "✅ All drivers have fingerprints" >> $GITHUB_STEP_SUMMARY
+
+      - name: �🔍 Dead Code Detection
         run: |
           echo "### Dead Code" >> $GITHUB_STEP_SUMMARY
           DEAD=0
@@ -123,7 +180,16 @@ jobs:
           done
           [ $DEAD -eq 0 ] && echo "✅ No dead code found" >> $GITHUB_STEP_SUMMARY || echo "$DEAD deprecated file(s) can be removed" >> $GITHUB_STEP_SUMMARY
 
-      - name: 📊 Stats
+      - name: � SDK Compliance
+        run: |
+          echo "### SDK Compliance" >> $GITHUB_STEP_SUMMARY
+          PAREN=$(node -e "const fs=require('fs'),p=require('path');let c=0;for(const d of fs.readdirSync('drivers')){const f=p.join('drivers',d,'driver.flow.compose.json');if(!fs.existsSync(f))continue;const j=JSON.parse(fs.readFileSync(f,'utf8'));for(const t of['triggers','conditions','actions'])for(const cd of(j[t]||[]))if((cd.title?.en||'').includes('('))c++;}console.log(c)")
+          [ "$PAREN" -gt 0 ] && echo "❌ $PAREN flow titles with parentheses" >> $GITHUB_STEP_SUMMARY || echo "✅ No parentheses in titles" >> $GITHUB_STEP_SUMMARY
+          NOTF=$(node -e "const fs=require('fs'),p=require('path');let c=0;for(const d of fs.readdirSync('drivers')){const f=p.join('drivers',d,'driver.flow.compose.json');if(!fs.existsSync(f))continue;const j=JSON.parse(fs.readFileSync(f,'utf8'));for(const t of['triggers','conditions','actions'])for(const cd of(j[t]||[]))if(!cd.titleFormatted&&cd.title)c++;}console.log(c)")
+          [ "$NOTF" -gt 0 ] && echo "⚠️ $NOTF cards missing titleFormatted" >> $GITHUB_STEP_SUMMARY || echo "✅ All cards have titleFormatted" >> $GITHUB_STEP_SUMMARY
+          [ -f README.txt ] && echo "✅ README.txt present" >> $GITHUB_STEP_SUMMARY || echo "⚠️ Missing README.txt" >> $GITHUB_STEP_SUMMARY
+
+      - name: �📊 Stats
         run: |
           DRIVERS=$(ls -d drivers/*/ 2>/dev/null | wc -l)
           MFRS=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
