@@ -242,6 +242,28 @@ jobs:
           }
           "
 
+      - name: "DP Divisor Audit"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 2
+        run: |
+          node -e "
+          const fs=require('fs'),p=require('path');
+          let issues=0;
+          for(const dir of fs.readdirSync('drivers')){
+            const df=p.join('drivers',dir,'device.js');
+            if(!fs.existsSync(df))continue;
+            const c=fs.readFileSync(df,'utf8');
+            const m=c.match(/divisor\s*:\s*(\d+)/g)||[];
+            const hasDivisor=m.some(x=>!x.includes(':1')&&!x.includes(': 1'));
+            if(hasDivisor&&!c.includes('_dynamicDpMappings')){
+              console.log('::warning::'+dir+': has divisor in dpMappings - verify no double-division');
+              issues++;
+            }
+          }
+          console.log('DP divisor audit: '+issues+' driver(s) to review');
+          "
+
       - name: "Misplaced FP Detector"
         if: always()
         continue-on-error: true
