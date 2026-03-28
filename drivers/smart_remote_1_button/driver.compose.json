@@ -14,8 +14,9 @@
     "measure_battery"
   ],
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "large": "drivers/smart_remote_1_button/assets/images/large.png",
+    "small": "drivers/smart_remote_1_button/assets/images/small.png",
+    "xlarge": "drivers/smart_remote_1_button/assets/images/xlarge.png"
   },
   "energy": {
     "batteries": [

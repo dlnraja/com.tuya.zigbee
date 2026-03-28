@@ -37,7 +37,8 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 // ZCL-Only manufacturers (no Tuya DP)
 const ZCL_ONLY_MANUFACTURERS_4G = [
   '_TZ3002_pzao9ls1', '_TZ3002_vaq2bfcu', '_TZ3000_blhvsaqf',
-  '_TZ3000_ysdv91bk', '_TZ3000_hafsqare', '_TZ3000_e98krvvk'
+  '_TZ3000_ysdv91bk', '_TZ3000_hafsqare', '_TZ3000_e98krvvk',
+  '_TZ3000_qkixdnon', '_TZ3000_xk5udnd6', '_TZ3000_bseed'
 ];
 
 // v5.8.92: Manufacturers whose firmware broadcasts ZCL to ALL endpoints
@@ -52,6 +53,13 @@ const BaseClass = typeof HybridSwitchBase === 'function'
 
 class Switch4GangDevice extends BaseClass {
   get gangCount() { return 4; }
+
+  get sceneMode() { return this.getSetting('scene_mode') || 'auto'; }
+
+  async setSceneMode(mode) {
+    this.log('[SCENE] Setting scene mode to:', mode);
+    await this.setSettings({ scene_mode: mode }).catch(() => {});
+  }
 
   get isZclOnlyDevice() {
     const mfr = this.getSetting?.('zb_manufacturer_name') ||
@@ -269,15 +277,30 @@ class Switch4GangDevice extends BaseClass {
         this._zclState.lastState[gangNum] = value;
         this.setCapabilityValue(capName, value).catch(() => {});
 
-        if (isPhysical) {
+        // v5.12.5: Scene mode support (ported from wall_switch_4gang_1way)
+        const mode = this.sceneMode;
+        if (mode === 'magic') {
+          // Magic mode: don't update capability, only fire scene trigger
+          // Revert the capability change made above
+          this.setCapabilityValue(capName, !value).catch(() => {});
+        }
+
+        if (isPhysical && (mode === 'auto' || mode === 'both')) {
           const flowId = `switch_4gang_physical_gang${gangNum}_${value ? 'on' : 'off'}`;
           this.homey.flow.getDeviceTriggerCard(flowId)
             .trigger(this, { gang: gangNum, state: value }, {})
             .catch(() => {});
           this.log(`[BSEED-4G] 🔘 Physical G${gangNum} ${value ? 'ON' : 'OFF'}`);
         }
+
+        if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
+          this.homey.flow.getDeviceTriggerCard(`switch_4gang_gang${gangNum}_scene`)
+            .trigger(this, { action: value ? 'on' : 'off' }, {})
+            .catch(() => {});
+          this.log(`[BSEED-4G] 🎬 Scene G${gangNum} ${value ? 'on' : 'off'}`);
+        }
       });
-      this.log(`[BSEED-4G] EP${epNum} ZCL onOff + physical detection registered`);
+      this.log(`[BSEED-4G] EP${epNum} ZCL onOff + physical + scene detection registered`);
     };
 
     // Setup listeners for all endpoints
@@ -332,12 +355,25 @@ class Switch4GangDevice extends BaseClass {
       this._zclState.lastState[dpId] = boolVal;
       this.setCapabilityValue(capName, boolVal).catch(() => {});
 
-      if (isPhysical) {
+      // v5.12.5: Scene mode support (Tuya DP path)
+      const mode = this.sceneMode;
+      if (mode === 'magic') {
+        this.setCapabilityValue(capName, !boolVal).catch(() => {});
+      }
+
+      if (isPhysical && (mode === 'auto' || mode === 'both')) {
         const flowId = `switch_4gang_physical_gang${dpId}_${boolVal ? 'on' : 'off'}`;
         this.homey.flow.getDeviceTriggerCard(flowId)
           .trigger(this, { gang: dpId, state: boolVal }, {})
           .catch(() => {});
         this.log(`[BSEED-4G] 🔘 Physical G${dpId} ${boolVal ? 'ON' : 'OFF'} (via Tuya DP)`);
+      }
+
+      if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
+        this.homey.flow.getDeviceTriggerCard(`switch_4gang_gang${dpId}_scene`)
+          .trigger(this, { action: boolVal ? 'on' : 'off' }, {})
+          .catch(() => {});
+        this.log(`[BSEED-4G] 🎬 Scene G${dpId} ${boolVal ? 'on' : 'off'} (via Tuya DP)`);
       }
     };
 

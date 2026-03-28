@@ -1,6 +1,6 @@
-# :house: Universal Tuya Zigbee v5.11.30
+# :house: Universal Tuya Zigbee v5.11.138
 
-> **143 drivers** · **5,362+ fingerprints** · **1,803 flow cards** · SDK3 · Updated 2026-03-01
+> **188+ drivers** · **4,700+ fingerprints** · SDK3 · Updated 2026-03-25
 
 Local-first Zigbee control for **all** your Tuya devices on Homey Pro — no cloud, no internet needed.
 
@@ -28,7 +28,7 @@ homey app install
 
 ---
 
-## :sparkles: What's New (v5.11.30)
+## :sparkles: What's New (v5.11.138)
 
 v5.11.29: Removed one-shot fix-post-now script and workflow to streamline the development process., Updated workflow to improve maintenance and reduce complexity.
 

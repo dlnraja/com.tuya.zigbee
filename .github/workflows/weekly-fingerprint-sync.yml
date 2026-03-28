@@ -85,6 +85,49 @@ jobs:
           if [ "$FAIL" = "1" ]; then echo "JSON validation failed!"; exit 1; fi
           echo "All JSON valid."
 
+      # Step 3.5: Homey app publish-level validation
+      - name: Validate Homey App (publish)
+        run: npx homey app validate --level publish
+
+      # Step 3.5a: Case-consistency check (_TZe200 vs _TZE200)
+      - name: Check FP case consistency
+        run: |
+          echo "Checking for case-inconsistent FPs..."
+          BAD=$(grep -rohE '"_TZ[a-z][0-9]{3}_[^"]*"' drivers/*/driver.compose.json || true)
+          if [ -n "$BAD" ]; then echo "::warning::Case-inconsistent FPs found: $BAD"; fi
+
+      # Step 3.5b: Duplicate FP+PID check
+      - name: Check duplicate FP+PID combos
+        run: |
+          node -e "
+          const fs=require('fs'),p=require('path');
+          const map={};
+          for(const d of fs.readdirSync('drivers')){
+            const f=p.join('drivers',d,'driver.compose.json');
+            if(!fs.existsSync(f))continue;
+            try{const j=JSON.parse(fs.readFileSync(f,'utf8'));
+            const ms=j.zigbee?.manufacturerName||[];
+            const ps=j.zigbee?.productId||[];
+            for(const m of ms)for(const pid of ps){
+              const k=m+'|'+pid;
+              if(!map[k])map[k]=[];
+              map[k].push(d);
+            }}catch{}
+          }
+          let dupes=0;
+          for(const[k,ds] of Object.entries(map)){
+            if(ds.length>1){console.log('::warning::Duplicate '+k+' in: '+ds.join(', '));dupes++}
+          }
+          console.log('Duplicate combos: '+dupes);
+          "
+
+      # Step 3.5c: Detect and auto-fix fingerprint conflicts
+      - name: Fix fingerprint conflicts
+        run: |
+          echo "Running fingerprint conflict resolver..."
+          node scripts/automation/fix-fingerprint-conflicts.js
+          echo "Conflict resolution complete."
+
       # Step 4: Check for changes
       - name: Check changes
         id: changes
@@ -139,3 +182,4 @@ jobs:
           name: fingerprint-sync-report
           path: data/community-sync/
           retention-days: 30
+

@@ -26,6 +26,7 @@ class FormaldehydeSensorDevice extends HybridSensorBase {
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
+    await this.removeCapability('measure_battery').catch(() => {});
     this.log('[FORMALDEHYDE] ✅ Formaldehyde sensor ready');
   }
 }

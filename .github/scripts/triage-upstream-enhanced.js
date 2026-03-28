@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const{execSync}=require('child_process');
-const{loadFingerprints,findAllDrivers,extractMfrFromText}=require('./load-fingerprints');
+const{loadFingerprints,findAllDrivers,extractMfrFromText,extractAllFP,buildFullIndex,resolveFingerprint}=require('./load-fingerprints');
 const{sleep}=require('./retry-helper');
 let investigateBug;try{investigateBug=require('./bug-investigator').investigate}catch{investigateBug=()=>null}
 const fs=require('fs'),path=require('path'),os=require('os');
@@ -35,7 +35,7 @@ function hasUserSymptoms(b){if(!b)return false;const l=b.toLowerCase();return/do
 function supportedMsg(found){
   const lines=found.map(([m,d])=>`| \`${m}\` | **${[].concat(d).join(', ')}** |`).join('\n');
   return [
-    `Hi! This device is **already supported** in [Universal Tuya Zigbee](${GH}) **v${VER}**.`,
+    `Hi! Fingerprint(s) found in [Universal Tuya Zigbee](${GH}) **v${VER}**.`,
     '',
     '| Fingerprint | Driver(s) |',
     '|---|---|',
@@ -114,10 +114,16 @@ for(const it of issues){
     }
     continue;
   }
-  const mfrs=extractMfrFromText(`${it.title||''} ${it.body||''}`);
-  if(!mfrs.length)continue;
-  const found=mfrs.filter(m=>fps.has(m)).map(m=>[m,findAllDrivers(m)]);
-  const missing=mfrs.filter(m=>!fps.has(m));
+  const itTxt2=`${it.title||''} ${it.body||''}`;
+  const {allMfrs:iM2,allPids:iP2}=buildFullIndex();
+  const {mfr:eM2,pid:eP2}=extractAllFP(itTxt2,iM2,iP2);
+  if(!eM2.length)continue;
+  const found=[],missing=[];
+  for(const m of eM2){let hit=false;
+    if(eP2.length){for(const p of eP2){const dr=resolveFingerprint(m,p);if(dr){found.push([`${m}+${p}`,[dr]]);hit=true;break;}}}
+    if(!hit){const d=findAllDrivers(m);if(d.length){found.push([m,d]);hit=true;}}
+    if(!hit)missing.push(m);
+  }
   missing.forEach(m=>newFps.push({fp:m,source:`${REPO}#${it.number}`,type:'issue'}));
   // v5.11.26: Bug investigation for supported FPs with bug-like keywords
   let bugInfo='';
@@ -152,10 +158,16 @@ for(const pr of prs){
     }
     continue;
   }
-  const mfrs=extractMfrFromText(`${pr.title||''} ${pr.body||''}`);
-  if(!mfrs.length)continue;
-  const found=mfrs.filter(m=>fps.has(m)).map(m=>[m,findAllDrivers(m)]);
-  const missing=mfrs.filter(m=>!fps.has(m));
+  const prTxt2=`${pr.title||''} ${pr.body||''}`;
+  const {allMfrs:pM2,allPids:pP2}=buildFullIndex();
+  const {mfr:peM2,pid:peP2}=extractAllFP(prTxt2,pM2,pP2);
+  if(!peM2.length)continue;
+  const found=[],missing=[];
+  for(const m of peM2){let hit=false;
+    if(peP2.length){for(const p of peP2){const dr=resolveFingerprint(m,p);if(dr){found.push([`${m}+${p}`,[dr]]);hit=true;break;}}}
+    if(!hit){const d=findAllDrivers(m);if(d.length){found.push([m,d]);hit=true;}}
+    if(!hit)missing.push(m);
+  }
   missing.forEach(m=>newFps.push({fp:m,source:`${REPO}#${pr.number}`,type:'pr'}));
   if(found.length||missing.length){post(pr.number,prMsg(found,missing));pCommented++;}
   // Auto-close PR if ALL FPs supported (only on own repo)
@@ -199,6 +211,7 @@ if(SCAN_FORKS){
 
 // Save new FPs for downstream
 if(newFps.length){
+  const triageMessage = fs.readFileSync('triage-message.md', 'utf8');
   fs.writeFileSync('/tmp/upstream_new_fps.json',JSON.stringify(newFps,null,2));
 }
 

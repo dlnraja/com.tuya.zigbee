@@ -83,6 +83,7 @@
       "_TZ3000_yj6k7vfo",
       "_TZ3210_amleyeej",
       "_TZ3000_itb0omhv",
+      "_TZ3000_kxaow5ki",
       "SONOFF",
       "eWeLink",
       "_TZ3000_6km7djcm",
@@ -159,7 +160,8 @@
   },
   "images": {
     "small": "drivers/button_wireless_1/assets/images/small.png",
-    "large": "drivers/button_wireless_1/assets/images/large.png"
+    "large": "drivers/button_wireless_1/assets/images/large.png",
+    "xlarge": "drivers/button_wireless_1/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

@@ -1,1 +1,112 @@
-{"name":{"en":"eWeLink Switch 4-Channel (SONOFF)"},"class":"socket","capabilities":["onoff","onoff.2","onoff.3","onoff.4"],"capabilitiesOptions":{"onoff":{"title":{"en":"Channel 1"}},"onoff.2":{"title":{"en":"Channel 2"}},"onoff.3":{"title":{"en":"Channel 3"}},"onoff.4":{"title":{"en":"Channel 4"}}},"pair":[{"id":"configure","navigation":{"next":"list_devices"}},{"id":"list_devices","template":"list_devices","navigation":{"prev":"configure"}},{"id":"add_devices","template":"add_devices"}],"repair":[{"id":"configure"}],"settings":[{"type":"group","label":{"en":"eWeLink LAN"},"children":[{"id":"device_id","type":"text","label":{"en":"Device ID"},"value":""},{"id":"api_key","type":"text","label":{"en":"API Key"},"value":""},{"id":"ip","type":"text","label":{"en":"IP Address"},"value":""},{"id":"encrypt","type":"checkbox","label":{"en":"Encrypted"},"value":true}]}],"images":{"small":"drivers/wifi_ewelink_switch_4ch/assets/images/small.png","large":"drivers/wifi_ewelink_switch_4ch/assets/images/large.png"},"platforms":["local"],"connectivity":["lan"],"discovery":"ewelink_mdns"}
+{
+  "name": {
+    "en": "eWeLink Switch 4-Channel (SONOFF)"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "onoff.2",
+    "onoff.3",
+    "onoff.4"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Channel 1"
+      }
+    },
+    "onoff.2": {
+      "title": {
+        "en": "Channel 2"
+      }
+    },
+    "onoff.3": {
+      "title": {
+        "en": "Channel 3"
+      }
+    },
+    "onoff.4": {
+      "title": {
+        "en": "Channel 4"
+      }
+    }
+  },
+  "pair": [
+    {
+      "id": "configure",
+      "navigation": {
+        "next": "list_devices"
+      }
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "prev": "configure"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "repair": [
+    {
+      "id": "configure"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "eWeLink LAN"
+      },
+      "children": [
+        {
+          "id": "device_id",
+          "type": "text",
+          "label": {
+            "en": "Device ID"
+          },
+          "value": ""
+        },
+        {
+          "id": "api_key",
+          "type": "text",
+          "label": {
+            "en": "API Key"
+          },
+          "value": ""
+        },
+        {
+          "id": "ip",
+          "type": "text",
+          "label": {
+            "en": "IP Address"
+          },
+          "value": ""
+        },
+        {
+          "id": "encrypt",
+          "type": "checkbox",
+          "label": {
+            "en": "Encrypted"
+          },
+          "value": true
+        }
+      ]
+    }
+  ],
+  "images": {
+    "small": "drivers/wifi_ewelink_switch_4ch/assets/images/small.png",
+    "large": "drivers/wifi_ewelink_switch_4ch/assets/images/large.png",
+    "xlarge": "drivers/wifi_ewelink_switch_4ch/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "lan"
+  ],
+  "discovery": "ewelink_mdns"
+}

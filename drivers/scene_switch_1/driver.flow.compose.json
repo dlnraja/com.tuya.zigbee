@@ -92,6 +92,66 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       }
+    },
+    {
+      "id": "scene_switch_1_button_1gang_button_1_pressed",
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton appuye"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button pressed",
+        "fr": "Bouton appuye"
+      }
+    },
+    {
+      "id": "scene_switch_1_button_1gang_button_1_double",
+      "title": {
+        "en": "Button double-pressed",
+        "fr": "Bouton double-appui"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button double-pressed",
+        "fr": "Bouton double-appui"
+      }
+    },
+    {
+      "id": "scene_switch_1_button_1gang_button_1_long",
+      "title": {
+        "en": "Button long-pressed",
+        "fr": "Bouton appui long"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button long-pressed",
+        "fr": "Bouton appui long"
+      }
+    },
+    {
+      "id": "scene_switch_1_button_1gang_button_1_triple",
+      "title": {
+        "en": "Button triple-pressed",
+        "fr": "Bouton triple-appui"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button triple-pressed",
+        "fr": "Bouton triple-appui"
+      }
+    },
+    {
+      "id": "scene_switch_1_button_1gang_button_1_release",
+      "title": {
+        "en": "Button released",
+        "fr": "Bouton relache"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button released",
+        "fr": "Bouton relache"
+      }
     }
   ]
 }

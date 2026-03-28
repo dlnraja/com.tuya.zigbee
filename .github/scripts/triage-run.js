@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 const {execSync}=require('child_process');
-const {loadFingerprints,findDriver,findAllDrivers,extractMfrFromText}=require('./load-fingerprints');
+const {loadFingerprints,findDriver,findAllDrivers,extractMfrFromText,extractAllFP,buildFullIndex,resolveFingerprint}=require('./load-fingerprints');
 const {sleep}=require('./retry-helper');
 const fs=require('fs');
 const path=require('path');
@@ -79,10 +79,16 @@ for(const it of issues){
     }
     continue;
   }
-  const mfrs=extractMfrFromText(`${it.title||''} ${it.body||''}`);
-  if(!mfrs.length)continue;
-  const found=mfrs.filter(m=>fps.has(m)).map(m=>[m,findAllDrivers(m)]);
-  const missing=mfrs.filter(m=>!fps.has(m));
+  const itTxt=`${it.title||''} ${it.body||''}`;
+  const {allMfrs:iM,allPids:iP}=buildFullIndex();
+  const {mfr:eM,pid:eP}=extractAllFP(itTxt,iM,iP);
+  if(!eM.length)continue;
+  const found=[],missing=[];
+  for(const m of eM){let hit=false;
+    if(eP.length){for(const p of eP){const dr=resolveFingerprint(m,p);if(dr){found.push([`${m}+${p}`,[dr]]);hit=true;break;}}}
+    if(!hit){const d=findAllDrivers(m);if(d.length){found.push([m,d]);hit=true;}}
+    if(!hit)missing.push(m);
+  }
   let msg='';
   if(found.length&&!missing.length) msg=buildSupportedMsg(found);
   else if(missing.length&&!found.length) msg=buildUnsupportedMsg(missing);
@@ -112,10 +118,16 @@ for(const pr of prs){
     }
     continue;
   }
-  const mfrs=extractMfrFromText(`${pr.title||''} ${pr.body||''}`);
-  if(!mfrs.length)continue;
-  const found=mfrs.filter(m=>fps.has(m)).map(m=>[m,findAllDrivers(m)]);
-  const missing=mfrs.filter(m=>!fps.has(m));
+  const prTxt=`${pr.title||''} ${pr.body||''}`;
+  const {allMfrs:pM,allPids:pP}=buildFullIndex();
+  const {mfr:peM,pid:peP}=extractAllFP(prTxt,pM,pP);
+  if(!peM.length)continue;
+  const found=[],missing=[];
+  for(const m of peM){let hit=false;
+    if(peP.length){for(const p of peP){const dr=resolveFingerprint(m,p);if(dr){found.push([`${m}+${p}`,[dr]]);hit=true;break;}}}
+    if(!hit){const d=findAllDrivers(m);if(d.length){found.push([m,d]);hit=true;}}
+    if(!hit)missing.push(m);
+  }
   if(found.length||missing.length){
     postComment(pr.number,buildPRMsg(found,missing));
     pCommented++;

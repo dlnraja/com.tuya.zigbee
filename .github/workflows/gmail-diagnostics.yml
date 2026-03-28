@@ -86,7 +86,13 @@ jobs:
           git pull --rebase origin master || true
           git push || true
 
-      - name: "Protocol Pattern Detection (Multi-Protocol)"`n      if: always()`n      continue-on-error: true`n      timeout-minutes: 5`n      run: node .github/scripts/protocol-pattern-detector.js`n`n      - name: "Pattern Detector (feed resolver)"
+      - name: "Protocol Pattern Detection (Multi-Protocol)"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node .github/scripts/protocol-pattern-detector.js
+
+      - name: "Pattern Detector (feed resolver)"
         if: always()
         continue-on-error: true
         timeout-minutes: 5

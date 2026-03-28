@@ -34,6 +34,9 @@
       "_TZ3210_232nryqh",
       "_TZ3210_dse8ogfy",
       "_TZ3210_j4pdtz9v",
+      "_TZ3210_7vgttna6",
+      "_TZ3210_a04acm9s",
+      "_TZ3210_cm9mbpr1",
       "_TZ3210_okbss9dy"
     ],
     "productId": [
@@ -155,7 +158,8 @@
   ],
   "images": {
     "small": "drivers/fingerbot/assets/images/small.png",
-    "large": "drivers/fingerbot/assets/images/large.png"
+    "large": "drivers/fingerbot/assets/images/large.png",
+    "xlarge": "drivers/fingerbot/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

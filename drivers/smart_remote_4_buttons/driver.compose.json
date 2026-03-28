@@ -12,8 +12,9 @@
   ],
   "capabilities": [],
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "large": "drivers/smart_remote_4_buttons/assets/images/large.png",
+    "small": "drivers/smart_remote_4_buttons/assets/images/small.png",
+    "xlarge": "drivers/smart_remote_4_buttons/assets/images/xlarge.png"
   },
   "energy": {
     "batteries": [
@@ -22,10 +23,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_fsiepnrh",
-      "_TYZB01_qm6djpta",
-      "_TZ3000_p6ju8myv",
-      "_TZ3000_eo3dttwe"
+      "_TYZB01_qm6djpta"
     ],
     "productId": [
       "TS0215A"

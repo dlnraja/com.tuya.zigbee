@@ -115,6 +115,18 @@ class SwitchWall8gangDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ turn_off_all');
     } catch (err) { this.log(`[FLOW] ⚠️ turn_off_all: ${err.message}`); }
 
+    
+    // v5.12.5: Scene mode action
+    try {
+      this.homey.flow.getActionCard('switch_wall_8gang_set_scene_mode')
+        .registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.setSceneMode(args.mode);
+          return true;
+        });
+      this.log('[FLOW] \u2705 switch_wall_8gang_set_scene_mode');
+    } catch (err) { this.log('[FLOW] ' + err.message); }
+
     this.log('[FLOW] 🎉 All 8-gang switch flow cards registered (v5.5.930)');
   }
 }

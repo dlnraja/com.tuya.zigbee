@@ -34,7 +34,11 @@ try { Cluster.addCluster(ZosungIRControlCluster); } catch (e) {}
  */
 class IRRemoteDevice extends ZigBeeDevice {
 
+  get mainsPowered() { return true; }
+
   async onNodeInit({ zclNode }) {
+    // v5.13.3: IR remotes are USB-powered, remove battery cap
+    await this.removeCapability('measure_battery').catch(() => {});
     this.log('[IR] Init Zigbee IR Remote — Zosung protocol');
     this._seq = 0;
     this._pendingSend = null;   // { msg: string, seq: number, resolve, reject }

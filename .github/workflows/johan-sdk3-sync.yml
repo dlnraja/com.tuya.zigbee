@@ -74,6 +74,9 @@ jobs:
           if [ "$FAIL" = "1" ]; then echo "JSON validation failed!"; exit 1; fi
           echo "All JSON valid."
 
+      - name: Validate Homey App (publish)
+        run: npx homey app validate --level publish
+
       - name: Create Pull Request
         if: (steps.sync.outputs.has_changes == 'true' || steps.scaffold.outputs.has_changes == 'true') && inputs.dry_run != true
         uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6

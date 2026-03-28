@@ -1,4 +1,4 @@
-This device is already supported in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) — v{{VERSION}} ({{DRIVERS}} drivers, {{FP_COUNT}}+ fingerprints).
+Fingerprint(s) found in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) — v{{VERSION}} ({{DRIVERS}} drivers, {{FP_COUNT}}+ fingerprints).
 
 Grab the latest test version here: https://homey.app/a/com.dlnraja.tuya.zigbee/test/
 

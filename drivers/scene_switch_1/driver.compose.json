@@ -36,6 +36,7 @@
           3,
           6,
           4096,
+          57344,
           61184
         ],
         "bindings": [
@@ -48,7 +49,8 @@
   },
   "images": {
     "small": "drivers/scene_switch_1/assets/images/small.png",
-    "large": "drivers/scene_switch_1/assets/images/large.png"
+    "large": "drivers/scene_switch_1/assets/images/large.png",
+    "xlarge": "drivers/scene_switch_1/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

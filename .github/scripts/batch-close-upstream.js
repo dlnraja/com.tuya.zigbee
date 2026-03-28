@@ -4,7 +4,7 @@ const{execSync}=require('child_process');
 const DRY=process.argv.includes('--dry-run');
 const REPO='JohanBendz/com.tuya.zigbee';
 const OWNERS=new Set(['dlnraja','github-actions[bot]','dependabot[bot]','tuya-triage-bot']);
-const KEYS=['closing','already supported','install test','all fp','already in v'];
+const KEYS=['closing','fingerprint','install test','all fp','found in v'];
 function gh(c){try{return execSync('gh '+c,{encoding:'utf8',maxBuffer:10*1024*1024}).trim()}catch{return null}}
 async function main(){
   console.log('=== Batch Close Upstream ('+(DRY?'DRY':'LIVE')+') ===');

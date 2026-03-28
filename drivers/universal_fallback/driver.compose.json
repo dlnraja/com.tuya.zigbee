@@ -141,7 +141,8 @@
   },
   "images": {
     "small": "drivers/universal_fallback/assets/images/small.png",
-    "large": "drivers/universal_fallback/assets/images/large.png"
+    "large": "drivers/universal_fallback/assets/images/large.png",
+    "xlarge": "drivers/universal_fallback/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

@@ -6,6 +6,9 @@
     "de": "Zigbee IR Fernbedienung (Moes/Tuya)"
   },
   "class": "remote",
+  "connectivity": [
+    "zigbee"
+  ],
   "capabilities": [
     "button.learn_ir",
     "ir_learned_code",
@@ -70,8 +73,8 @@
     }
   },
   "images": {
-    "large": "/drivers/ir_remote/assets/images/large.png",
-    "small": "/drivers/ir_remote/assets/images/small.png",
-    "xlarge": "/drivers/ir_remote/assets/images/xlarge.png"
+    "large": "drivers/ir_remote/assets/images/large.png",
+    "small": "drivers/ir_remote/assets/images/small.png",
+    "xlarge": "drivers/ir_remote/assets/images/xlarge.png"
   }
 }

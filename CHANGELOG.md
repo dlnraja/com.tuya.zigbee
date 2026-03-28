@@ -6,6 +6,30 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
+## [5.11.138] - 2026-04-01
+### Bug Fixes
+- Fixed pairing failures for soil, motion, LCD sensors. Added HOBEIAN to contact_sensor.
+---
+## [5.11.137] - 2026-03-31
+### Bug Fixes
+- Fixed switch_3gang syntax error (#170). Added HOBEIAN climate_sensor ZG-303Z.
+---
+## [5.11.136] - 2026-03-28
+### Improvements
+- Improved BSEED ZCL-only button detection. TS0726 group isolation fix.
+---
+## [5.11.135] - 2026-03-26
+### Bug Fixes
+- Fixed fingerbot FP, SOS conflict, vibration/contact misclassification.
+---
+## [5.11.134] - 2026-03-24
+### Improvements
+- Fingerprint collision cleanup: removed 55 generic_tuya FPs.
+---
+## [5.11.133] - 2026-03-22
+### New Features
+- Added smart_scene_panel driver. Moved soil sensor FPs from radar. Added FP detector.
+---
 ## [5.11.132] - 2026-03-18
 
 ### Bug Fixes

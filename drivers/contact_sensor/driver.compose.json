@@ -112,8 +112,6 @@
       "TUYATEC-0l6xaqmi",
       "Immax",
       "Visonic",
-      "zbeacon",
-      "Zbeacon",
       "_TZE284_u8ouaqsz",
       "_TZ3000_pjb1ua0m",
       "_TZ3210_jowhpxop",
@@ -131,7 +129,9 @@
       "_TZ3000_osu834un",
       "_TZ3000_cqlnswn0",
       "eWeLink",
-      "_TZE200_n8dljorx"
+      "_TZE200_n8dljorx",
+      "Zbeacon",
+      "HOBEIAN"
     ],
     "productId": [
       "TS0203",
@@ -452,7 +452,8 @@
   ],
   "images": {
     "small": "drivers/contact_sensor/assets/images/small.png",
-    "large": "drivers/contact_sensor/assets/images/large.png"
+    "large": "drivers/contact_sensor/assets/images/large.png",
+    "xlarge": "drivers/contact_sensor/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

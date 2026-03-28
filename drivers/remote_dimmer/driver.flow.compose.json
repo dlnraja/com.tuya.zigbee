@@ -5,6 +5,10 @@
       "title": {
         "en": "ON button pressed",
         "fr": "Bouton ON appuyé"
+      },
+      "titleFormatted": {
+        "en": "ON button pressed",
+        "fr": "Bouton ON appuyé"
       }
     },
     {
@@ -12,11 +16,19 @@
       "title": {
         "en": "OFF button pressed",
         "fr": "Bouton OFF appuyé"
+      },
+      "titleFormatted": {
+        "en": "OFF button pressed",
+        "fr": "Bouton OFF appuyé"
       }
     },
     {
       "id": "remote_dimmer_button_toggle",
       "title": {
+        "en": "Toggle button pressed",
+        "fr": "Bouton Toggle appuyé"
+      },
+      "titleFormatted": {
         "en": "Toggle button pressed",
         "fr": "Bouton Toggle appuyé"
       }
@@ -31,9 +43,15 @@
         {
           "name": "step_size",
           "type": "number",
-          "title": { "en": "Step size" }
+          "title": {
+            "en": "Step size"
+          }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Brightness up pressed",
+        "fr": "Luminosité + appuyé"
+      }
     },
     {
       "id": "remote_dimmer_brightness_down",
@@ -45,13 +63,23 @@
         {
           "name": "step_size",
           "type": "number",
-          "title": { "en": "Step size" }
+          "title": {
+            "en": "Step size"
+          }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Brightness down pressed",
+        "fr": "Luminosité - appuyé"
+      }
     },
     {
       "id": "remote_dimmer_brightness_stop",
       "title": {
+        "en": "Brightness adjustment stopped",
+        "fr": "Ajustement luminosité arrêté"
+      },
+      "titleFormatted": {
         "en": "Brightness adjustment stopped",
         "fr": "Ajustement luminosité arrêté"
       }
@@ -66,9 +94,15 @@
         {
           "name": "level",
           "type": "number",
-          "title": { "en": "Level (%)" }
+          "title": {
+            "en": "Level (%)"
+          }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Brightness level set",
+        "fr": "Niveau de luminosité défini"
+      }
     },
     {
       "id": "remote_dimmer_scene",
@@ -80,9 +114,15 @@
         {
           "name": "scene_id",
           "type": "number",
-          "title": { "en": "Scene ID" }
+          "title": {
+            "en": "Scene ID"
+          }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Scene button pressed",
+        "fr": "Bouton scène appuyé"
+      }
     }
   ]
 }

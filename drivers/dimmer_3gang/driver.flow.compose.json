@@ -69,12 +69,18 @@
       "args": [],
       "title": {
         "en": "Gang 1 on - physical"
+      },
+      "titleFormatted": {
+        "en": "Gang 1 on - physical"
       }
     },
     {
       "id": "dimmer_3gang_physical_gang1_off",
       "args": [],
       "title": {
+        "en": "Gang 1 off - physical"
+      },
+      "titleFormatted": {
         "en": "Gang 1 off - physical"
       }
     },
@@ -93,7 +99,10 @@
           },
           "type": "number"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Gang 1 brightness up - physical"
+      }
     },
     {
       "id": "dimmer_3gang_physical_gang1_brightness_decreased",
@@ -110,12 +119,18 @@
           },
           "type": "number"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Gang 1 brightness down - physical"
+      }
     },
     {
       "id": "dimmer_3gang_physical_gang2_on",
       "args": [],
       "title": {
+        "en": "Gang 2 on - physical"
+      },
+      "titleFormatted": {
         "en": "Gang 2 on - physical"
       }
     },
@@ -123,6 +138,9 @@
       "id": "dimmer_3gang_physical_gang2_off",
       "args": [],
       "title": {
+        "en": "Gang 2 off - physical"
+      },
+      "titleFormatted": {
         "en": "Gang 2 off - physical"
       }
     },
@@ -141,7 +159,10 @@
           },
           "type": "number"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Gang 2 brightness up - physical"
+      }
     },
     {
       "id": "dimmer_3gang_physical_gang2_brightness_decreased",
@@ -158,12 +179,18 @@
           },
           "type": "number"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Gang 2 brightness down - physical"
+      }
     },
     {
       "id": "dimmer_3gang_physical_gang3_on",
       "args": [],
       "title": {
+        "en": "Gang 3 on - physical"
+      },
+      "titleFormatted": {
         "en": "Gang 3 on - physical"
       }
     },
@@ -171,6 +198,9 @@
       "id": "dimmer_3gang_physical_gang3_off",
       "args": [],
       "title": {
+        "en": "Gang 3 off - physical"
+      },
+      "titleFormatted": {
         "en": "Gang 3 off - physical"
       }
     },
@@ -189,7 +219,10 @@
           },
           "type": "number"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Gang 3 brightness up - physical"
+      }
     },
     {
       "id": "dimmer_3gang_physical_gang3_brightness_decreased",
@@ -206,7 +239,10 @@
           },
           "type": "number"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Gang 3 brightness down - physical"
+      }
     },
     {
       "id": "dimmer_3gang_turned_on",

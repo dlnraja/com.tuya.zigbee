@@ -116,16 +116,13 @@
       "_TZE284_iadro9bf",
       "_TZE284_ijxvkhd0",
       "_TZE284_n5q2t8na",
-      "_TZE284_o9ofysmo",
       "_TZE284_ozf4e02o",
       "_TZE284_pzm3wab5",
       "_TZE284_qasjif9e",
-      "_TZE284_rlytpmij",
       "_TZE284_sxm7l9xa",
       "_TZE284_twybxdzl",
       "_TZE284_vceqncho",
       "_TZE284_who1jxwd",
-      "_TZE284_xc3vwx5a",
       "_TZE284_xsm7l9xa",
       "_TZE284_yrwmnya3",
       "_TZE284_ztc6ggyl",
@@ -135,8 +132,7 @@
       "_TZE200_4pm4pekt",
       "_TZE200_p9zbdqgs",
       "_TZE200_sgpeacqp",
-      "_TZE284_fwondbzy",
-      "_TZE200_kb5noeto"
+      "_TZE284_fwondbzy"
     ],
     "productId": [
       "CK-BL702-MWS-01",
@@ -691,7 +687,8 @@
   ],
   "images": {
     "small": "drivers/presence_sensor_radar/assets/images/small.png",
-    "large": "drivers/presence_sensor_radar/assets/images/large.png"
+    "large": "drivers/presence_sensor_radar/assets/images/large.png",
+    "xlarge": "drivers/presence_sensor_radar/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

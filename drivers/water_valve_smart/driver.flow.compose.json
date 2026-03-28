@@ -6,14 +6,20 @@
       "title": {
         "en": "Valve opened"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Valve opened"
+      }
     },
     {
       "id": "water_valve_smart_closed",
       "title": {
         "en": "Valve closed"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Valve closed"
+      }
     },
     {
       "id": "water_valve_smart_leak_detected",
@@ -21,14 +27,20 @@
       "title": {
         "en": "Water leak detected!"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Water leak detected!"
+      }
     },
     {
       "id": "water_valve_smart_leak_cleared",
       "title": {
         "en": "Water leak cleared"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Water leak cleared"
+      }
     },
     {
       "id": "water_valve_smart_temperature_changed",
@@ -55,14 +67,20 @@
       "title": {
         "en": "Frost warning"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Frost warning"
+      }
     },
     {
       "id": "water_valve_smart_battery_low",
       "title": {
         "en": "Battery is low"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery is low"
+      }
     },
     {
       "id": "water_valve_smart_water_consumed",
@@ -90,14 +108,20 @@
       "title": {
         "en": "Valve !{{is|is not}} open"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Valve !{{is|is not}} open"
+      }
     },
     {
       "id": "water_valve_smart_leak_is_detected",
       "title": {
         "en": "Water leak !{{is|is not}} detected"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Water leak !{{is|is not}} detected"
+      }
     },
     {
       "id": "water_valve_smart_temperature_above",
@@ -121,7 +145,10 @@
       "title": {
         "en": "Water !{{is|is not}} detected"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Water !{{is|is not}} detected"
+      }
     }
   ],
   "actions": [
@@ -130,21 +157,30 @@
       "title": {
         "en": "Open valve"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Open valve"
+      }
     },
     {
       "id": "water_valve_smart_close",
       "title": {
         "en": "Close valve"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Close valve"
+      }
     },
     {
       "id": "water_valve_smart_toggle",
       "title": {
         "en": "Toggle valve"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle valve"
+      }
     }
   ]
 }

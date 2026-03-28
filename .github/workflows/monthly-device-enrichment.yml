@@ -3,7 +3,7 @@ name: 📅 Monthly Device Enrichment
 on:
   schedule:
     # Run on 1st of every month at 5 AM UTC (staggered from monthly-enrichment at 3AM)
-    - cron: '0 5 1 * *'
+    - # cron disabled — consolidated into monthly-comprehensive-sync
   workflow_dispatch:
     inputs:
       dry_run:
@@ -165,3 +165,5 @@ jobs:
           echo "1. Review forum posts for new device requests" >> $GITHUB_STEP_SUMMARY
           echo "2. Check Zigbee2MQTT for new Tuya converters" >> $GITHUB_STEP_SUMMARY
           echo "3. Update manufacturer database if needed" >> $GITHUB_STEP_SUMMARY
+
+

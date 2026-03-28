@@ -304,11 +304,44 @@
           "value": false
         }
       ]
+    },
+    {
+      "id": "scene_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Scene Mode",
+        "fr": "Mode Scene"
+      },
+      "hint": {
+        "en": "Auto=normal+triggers, Magic=scene-only, Both=load+scene"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto (Normal + flows)"
+          }
+        },
+        {
+          "id": "magic",
+          "label": {
+            "en": "Magic (Scene only)"
+          }
+        },
+        {
+          "id": "both",
+          "label": {
+            "en": "Both (Load + scene)"
+          }
+        }
+      ]
     }
   ],
   "images": {
     "small": "drivers/switch_wall_8gang/assets/images/small.png",
-    "large": "drivers/switch_wall_8gang/assets/images/large.png"
+    "large": "drivers/switch_wall_8gang/assets/images/large.png",
+    "xlarge": "drivers/switch_wall_8gang/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

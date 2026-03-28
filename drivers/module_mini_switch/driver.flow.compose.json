@@ -66,6 +66,30 @@
       }
     },
     {
+      "id": "module_mini_switch_physical_on",
+      "title": {
+        "en": "Physical button turned on",
+        "fr": "Bouton physique allumé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical button turned on",
+        "fr": "Bouton physique allumé"
+      }
+    },
+    {
+      "id": "module_mini_switch_physical_off",
+      "title": {
+        "en": "Physical button turned off",
+        "fr": "Bouton physique éteint"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical button turned off",
+        "fr": "Bouton physique éteint"
+      }
+    },
+    {
       "id": "module_mini_switch_power_changed",
       "title": {
         "en": "Power changed",

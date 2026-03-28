@@ -167,9 +167,12 @@ class ContactSensorDevice extends HybridSensorBase {
       '_TZ3000_996rpfy6',  // v5.5.908: blutch32 forum - TS0203 always "no" fix
       '_TZE200_pay2byax',  // v5.12.2: ZG-102ZL reversed
     ].some(id => mfr.toLowerCase().includes(id.toLowerCase()));
-    if (invertedByDefault && !this.getSetting('invert_contact')) {
-      this._invertContact = true;
-      this.log(`[CONTACT] ⚠️ Sensor ${mfr} inverted by default`);
+    // v5.12.3: XOR — default inversion + user invert cancel each other out
+    this._invertedByDefault = invertedByDefault;
+    if (invertedByDefault) {
+      this._invertContact = !(userInvert || userReverse);
+      this._userExplicitInvert = false;
+      this.log(`[CONTACT] Sensor ${mfr} invertedByDefault=true userInvert=${userInvert} => _invertContact=${this._invertContact}`);
     }
 
     if (this._isProblematicSensor) {
@@ -193,8 +196,13 @@ class ContactSensorDevice extends HybridSensorBase {
     if (changedKeys.includes('invert_contact') || changedKeys.includes('reverse_alarm')) {
       const inv = changedKeys.includes('invert_contact') ? newSettings.invert_contact : (this.getSetting('invert_contact') || false);
       const rev = changedKeys.includes('reverse_alarm') ? newSettings.reverse_alarm : (this.getSetting('reverse_alarm') || false);
-      this._invertContact = inv || rev;
-      this._userExplicitInvert = this._invertContact;
+      if (this._invertedByDefault) {
+        this._invertContact = !(inv || rev);
+        this._userExplicitInvert = false;
+      } else {
+        this._invertContact = inv || rev;
+        this._userExplicitInvert = this._invertContact;
+      }
       this.log(`[CONTACT] Invert setting changed to: ${this._invertContact} (invert=${inv}, reverse=${rev})`);
       // Toggle current displayed state — use super to bypass invert override
       const current = this.getCapabilityValue('alarm_contact');
@@ -205,9 +213,17 @@ class ContactSensorDevice extends HybridSensorBase {
         // Reset confirmedValue to match new capability state, otherwise the
         // setCapabilityValue override's duplicate filter blocks next IAS event
         if (this._contactState) {
-          this._contactState.confirmedValue = newValue;
-          this._contactState.lastValue = newValue;
-          this._contactState.lastChangeTime = Date.now();
+          if (this._invertedByDefault) {
+            // v5.12.4: For invertedByDefault devices, clear confirmedValue so next DP
+            // event always passes duplicate filter — avoids stuck state when user
+            // toggles invert (XOR cancels default, raw values become wrong)
+            this._contactState.confirmedValue = null;
+            this._contactState.lastValue = null;
+          } else {
+            this._contactState.confirmedValue = newValue;
+            this._contactState.lastValue = newValue;
+            this._contactState.lastChangeTime = Date.now();
+          }
         }
       }
     }

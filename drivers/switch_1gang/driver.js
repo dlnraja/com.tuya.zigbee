@@ -90,7 +90,19 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ switch_1gang_set_backlight_brightness');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 1-Gang switch flow cards registered (v5.5.930)');
+    this.log('[FLOW] 🎉 
+    // v5.12.5: Scene mode action
+    try {
+      this.homey.flow.getActionCard('switch_1gang_set_scene_mode')
+        .registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.setSceneMode(args.mode);
+          return true;
+        });
+      this.log('[FLOW] \u2705 switch_1gang_set_scene_mode');
+    } catch (err) { this.log('[FLOW] \u26A0\uFE0F ' + err.message); }
+
+    1-Gang switch flow cards registered (v5.5.930)');
   }
 }
 

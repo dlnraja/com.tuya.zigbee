@@ -30,4 +30,9 @@ function extractPID(text){
   const b=(text||'').match(/\b(SNZB-\d{2}\w*|ZBMINI\w*|S[346]1ZB\w*|BASICZBR\d*|TRVZB)\b/g)||[];
   return[...new Set([...a,...b])];
 }
-module.exports={isValidTuyaFP,extractFP,extractFPWithBrands,extractPID};
+
+// v5.12.6: Interview structure validation
+function isValidMfrFormat(s){return /^_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{6,16}$/.test(s||"");}
+function isValidPidFormat(s){return /^TS[0-9]{4}[A-Z]?$/.test(s||"")||/^[A-Z0-9_-]{3,30}$/.test(s||"");}
+function isConcatenatedFP(s){return (s||"").length>20 && /ts0/i.test(s);}
+module.exports={isValidTuyaFP,extractFP,extractFPWithBrands,extractPID,isValidMfrFormat,isValidPidFormat,isConcatenatedFP};

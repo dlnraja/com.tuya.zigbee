@@ -48,7 +48,8 @@
   ],
   "images": {
     "small": "drivers/curtain_motor/assets/images/small.png",
-    "large": "drivers/curtain_motor/assets/images/large.png"
+    "large": "drivers/curtain_motor/assets/images/large.png",
+    "xlarge": "drivers/curtain_motor/assets/images/xlarge.png"
   },
   "zigbee": {
     "manufacturerName": [
@@ -80,7 +81,6 @@
       "_TZ3000_yruungrl",
       "_TZ3000_zirycpws",
       "_TZ3210_dwytrmda",
-      "_TZ3210_j4pdtz9v",
       "_TZ3210_ol1uhvza",
       "_TZ3210_sxtfesc6",
       "_TZ3210_xbpt8ewc",
@@ -181,21 +181,8 @@
       "_TZE200_qoy0ekbd",
       "_TZE200_znbl8dj5",
       "_TZ3000_cet6ch1r",
-      "_TZE200_nkoabg8w",
-      "_TZE200_xuzcvlku",
-      "_TZE200_nogaemzt",
-      "_TZE200_r0jdjrvi",
-      "_TZE200_zpzndjez",
       "_TZE200_wmcdj3aq",
-      "_TZE200_cowvfni3",
-      "_TZE200_rddyvrci",
-      "_TZE200_nueqqe6k",
-      "_TZE200_xaabybja",
-      "_TZE200_rmymn92d",
-      "_TZE200_3i3exuay",
-      "_TZE200_zah67ekd",
-      "_TZE200_hsgrhjpf",
-      "_TZE200_68nvbio9"
+      "_TZE200_cowvfni3"
     ],
     "productId": [
       "TS0302",

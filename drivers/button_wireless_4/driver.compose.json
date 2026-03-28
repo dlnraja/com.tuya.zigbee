@@ -111,10 +111,7 @@
       "_TZ3290_yyax9ajf",
       "_TZ3000_jcspr0tp",
       "SONOFF",
-      "eWeLink",
-      "_TZ3000_abrsvsou",
-      "_TZ3000_4fjiwweb",
-      "_TZ3000_qja6nq5z"
+      "eWeLink"
     ],
     "productId": [
       "TS0044",
@@ -196,7 +193,8 @@
   },
   "images": {
     "small": "drivers/button_wireless_4/assets/images/small.png",
-    "large": "drivers/button_wireless_4/assets/images/large.png"
+    "large": "drivers/button_wireless_4/assets/images/large.png",
+    "xlarge": "drivers/button_wireless_4/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

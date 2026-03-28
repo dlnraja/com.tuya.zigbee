@@ -103,7 +103,8 @@
   ],
   "images": {
     "small": "drivers/wifi_sensor/assets/images/small.png",
-    "large": "drivers/wifi_sensor/assets/images/large.png"
+    "large": "drivers/wifi_sensor/assets/images/large.png",
+    "xlarge": "drivers/wifi_sensor/assets/images/xlarge.png"
   },
   "platforms": [
     "local"
@@ -112,6 +113,8 @@
     "lan"
   ],
   "energy": {
-    "batteries": ["INTERNAL"]
+    "batteries": [
+      "INTERNAL"
+    ]
   }
 }

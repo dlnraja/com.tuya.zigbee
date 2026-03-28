@@ -104,7 +104,8 @@
   ],
   "images": {
     "small": "drivers/wifi_siren/assets/images/small.png",
-    "large": "drivers/wifi_siren/assets/images/large.png"
+    "large": "drivers/wifi_siren/assets/images/large.png",
+    "xlarge": "drivers/wifi_siren/assets/images/xlarge.png"
   },
   "platforms": [
     "local"
@@ -113,6 +114,8 @@
     "lan"
   ],
   "energy": {
-    "batteries": ["INTERNAL"]
+    "batteries": [
+      "INTERNAL"
+    ]
   }
 }

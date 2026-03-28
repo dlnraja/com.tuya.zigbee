@@ -1,7 +1,31 @@
 {
   "triggers": [
-    { "id": "wifi_dehumidifier_water_full", "title": { "en": "Water tank is full" } },
-    { "id": "wifi_dehumidifier_turned_on", "title": { "en": "Dehumidifier turned on" } },
-    { "id": "wifi_dehumidifier_turned_off", "title": { "en": "Dehumidifier turned off" } }
+    {
+      "id": "wifi_dehumidifier_water_full",
+      "title": {
+        "en": "Water tank is full"
+      },
+      "titleFormatted": {
+        "en": "Water tank is full"
+      }
+    },
+    {
+      "id": "wifi_dehumidifier_turned_on",
+      "title": {
+        "en": "Dehumidifier turned on"
+      },
+      "titleFormatted": {
+        "en": "Dehumidifier turned on"
+      }
+    },
+    {
+      "id": "wifi_dehumidifier_turned_off",
+      "title": {
+        "en": "Dehumidifier turned off"
+      },
+      "titleFormatted": {
+        "en": "Dehumidifier turned off"
+      }
+    }
   ]
 }

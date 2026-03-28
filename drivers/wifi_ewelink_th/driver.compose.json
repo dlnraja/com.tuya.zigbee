@@ -1,1 +1,89 @@
-{"name":{"en":"eWeLink TH Sensor Switch (SONOFF)"},"class":"socket","capabilities":["onoff","measure_temperature","measure_humidity"],"pair":[{"id":"configure","navigation":{"next":"list_devices"}},{"id":"list_devices","template":"list_devices","navigation":{"prev":"configure"}},{"id":"add_devices","template":"add_devices"}],"repair":[{"id":"configure"}],"settings":[{"type":"group","label":{"en":"eWeLink LAN"},"children":[{"id":"device_id","type":"text","label":{"en":"Device ID"},"value":""},{"id":"api_key","type":"text","label":{"en":"API Key"},"value":""},{"id":"ip","type":"text","label":{"en":"IP Address"},"value":""},{"id":"encrypt","type":"checkbox","label":{"en":"Encrypted"},"value":true}]}],"images":{"small":"drivers/wifi_ewelink_th/assets/images/small.png","large":"drivers/wifi_ewelink_th/assets/images/large.png"},"platforms":["local"],"connectivity":["lan"],"discovery":"ewelink_mdns"}
+{
+  "name": {
+    "en": "eWeLink TH Sensor Switch (SONOFF)"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "pair": [
+    {
+      "id": "configure",
+      "navigation": {
+        "next": "list_devices"
+      }
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "prev": "configure"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "repair": [
+    {
+      "id": "configure"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "eWeLink LAN"
+      },
+      "children": [
+        {
+          "id": "device_id",
+          "type": "text",
+          "label": {
+            "en": "Device ID"
+          },
+          "value": ""
+        },
+        {
+          "id": "api_key",
+          "type": "text",
+          "label": {
+            "en": "API Key"
+          },
+          "value": ""
+        },
+        {
+          "id": "ip",
+          "type": "text",
+          "label": {
+            "en": "IP Address"
+          },
+          "value": ""
+        },
+        {
+          "id": "encrypt",
+          "type": "checkbox",
+          "label": {
+            "en": "Encrypted"
+          },
+          "value": true
+        }
+      ]
+    }
+  ],
+  "images": {
+    "small": "drivers/wifi_ewelink_th/assets/images/small.png",
+    "large": "drivers/wifi_ewelink_th/assets/images/large.png",
+    "xlarge": "drivers/wifi_ewelink_th/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "lan"
+  ],
+  "discovery": "ewelink_mdns"
+}

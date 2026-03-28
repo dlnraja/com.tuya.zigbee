@@ -104,7 +104,8 @@
   ],
   "images": {
     "small": "drivers/wifi_plug/assets/images/small.png",
-    "large": "drivers/wifi_plug/assets/images/large.png"
+    "large": "drivers/wifi_plug/assets/images/large.png",
+    "xlarge": "drivers/wifi_plug/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

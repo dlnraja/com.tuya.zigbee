@@ -119,7 +119,6 @@
       "_TZ3002_aewsvjcu",
       "_TZ3002_gdwja9a7",
       "_TZ3002_iedhxgyi",
-      "_TZ3002_jn2x20tg",
       "_TZ3002_kq3kqwjt",
       "_TZ3002_m3pafcnk",
       "_TZ3002_phu8ygaw",
@@ -144,12 +143,17 @@
       "_TZ3000_imaccztn",
       "_TZ3000_etufnltx",
       "_TZ3000_liygxtcq",
-      "LELLKI"
+      "LELLKI",
+      "_TZ3000_qkixdnon",
+      "_TZ3000_xk5udnd6",
+      "_TZ3002_9eavto1k",
+      "_TZ3000_z6zplt0y"
     ]
   },
   "images": {
     "small": "drivers/switch_4gang/assets/images/small.png",
-    "large": "drivers/switch_4gang/assets/images/large.png"
+    "large": "drivers/switch_4gang/assets/images/large.png",
+    "xlarge": "drivers/switch_4gang/assets/images/xlarge.png"
   },
   "settings": [
     {
@@ -601,6 +605,38 @@
           "label": {
             "en": "Last State",
             "nl": "Laatste status"
+          }
+        }
+      ]
+    },
+    {
+      "id": "scene_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Scene Mode",
+        "fr": "Mode Scene"
+      },
+      "hint": {
+        "en": "Auto=normal+triggers, Magic=scene-only, Both=load+scene"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto (Normal + flows)"
+          }
+        },
+        {
+          "id": "magic",
+          "label": {
+            "en": "Magic (Scene only)"
+          }
+        },
+        {
+          "id": "both",
+          "label": {
+            "en": "Both (Load + scene)"
           }
         }
       ]

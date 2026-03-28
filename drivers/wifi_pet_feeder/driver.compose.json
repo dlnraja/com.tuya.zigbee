@@ -101,7 +101,8 @@
   ],
   "images": {
     "small": "drivers/wifi_pet_feeder/assets/images/small.png",
-    "large": "drivers/wifi_pet_feeder/assets/images/large.png"
+    "large": "drivers/wifi_pet_feeder/assets/images/large.png",
+    "xlarge": "drivers/wifi_pet_feeder/assets/images/xlarge.png"
   },
   "platforms": [
     "local"
@@ -110,6 +111,8 @@
     "lan"
   ],
   "energy": {
-    "batteries": ["INTERNAL"]
+    "batteries": [
+      "INTERNAL"
+    ]
   }
 }

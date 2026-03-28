@@ -198,6 +198,56 @@ jobs:
         timeout-minutes: 5
         run: node .github/scripts/pattern-detector.js
 
+      - name: "Flow Card Handler Audit"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 2
+        run: |
+          echo "Checking for unregistered flow card handlers..."
+          node -e "
+          const fs=require('fs'),p=require('path'),d='drivers';let miss=0;
+          for(const dir of fs.readdirSync(d)){
+            const ff=p.join(d,dir,'driver.flow.compose.json');
+            const df=p.join(d,dir,'driver.js');
+            if(!fs.existsSync(ff))continue;
+            try{
+              const flow=JSON.parse(fs.readFileSync(ff,'utf8'));
+              const drv=fs.readFileSync(df,'utf8');
+              const acts=(flow.actions||[]).length;
+              const hasReg=drv.includes('registerRunListener')||drv.includes('_registerFlowCards');
+              if(!hasReg&&acts>0){console.log('::warning::'+dir+': '+acts+' flow actions with no handler');miss++}
+            }catch{}
+          }
+          console.log('Flow audit: '+miss+' drivers missing handlers');
+          "
+
+      - name: "Mains-Powered Battery Cap Check"
+        if: always()
+        continue-on-error: true
+        run: |
+          node -e "
+          const fs=require('fs'),p=require('path'),d='drivers';
+          for(const dir of fs.readdirSync(d)){
+            const df=p.join(d,dir,'device.js');
+            if(!fs.existsSync(df))continue;
+            const c=fs.readFileSync(df,'utf8');
+            if(c.includes('mainsPowered')&&c.includes('return true')){
+              const dc=p.join(d,dir,'driver.compose.json');
+              if(!fs.existsSync(dc))continue;
+              const j=JSON.parse(fs.readFileSync(dc,'utf8'));
+              if((j.capabilities||[]).includes('measure_battery')&&!c.includes('removeCapability')){
+                console.log('::warning::'+dir+': mainsPowered but has measure_battery without removal');
+              }
+            }
+          }
+          "
+
+      - name: "Misplaced FP Detector"
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 2
+        run: node .github/scripts/misplaced-fp-detector.js
+
       - name: "Diagnostic Auto-Resolver (cross-ref diags → issues/PRs)"
         if: always()
         continue-on-error: true

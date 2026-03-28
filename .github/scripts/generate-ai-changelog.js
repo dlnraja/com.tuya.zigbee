@@ -80,7 +80,7 @@ async function generateChangelog(ctx){
     '  "appDescription": "Updated app.json description in English (max 200 chars, include driver/FP counts)"\n'+
     '}';
 
-  const sysPrompt='You write changelogs for a Homey Zigbee app. Write like a real developer — short, specific, no corporate fluff. Say what actually changed. NEVER use filler like "enhance overall performance", "improve stability", "streamline", "optimize". Just state the fix or feature plainly. Focus on user-visible changes only (drivers, fingerprints, bug fixes, new devices). NEVER mention: AI, bot, automation, CI/CD, Diagnostics, workflows, state files, infrastructure, pipeline, workflow, IMAP, OAuth, GitHub Actions, scanning, scraping, tokens, cron, API keys, forum responder, or any backend infrastructure. Skip commits about those topics entirely. Never invent features not in the commits.';
+  const sysPrompt='You write changelogs for a Homey Zigbee app. Write like a real developer — short, specific, no corporate fluff. Say what actually changed. \nCRITICAL RULES:\n1. ONLY mention driver enrichments (new fingerprints, new devices, capabilities added) and bug fixes directly affecting users.\n2. EVERYTHING ELSE MUST REMAIN SILENT. NEVER mention: internal improvements, optimizations, CI/CD, GitHub, bots, AI, workflows, scanning, infrastructure, or refactoring.\n3. Skip any commits that are not explicitly about a driver, fingerprint, or device fix.\n4. Do not use filler words.';
   const ai=await callAI(prompt,sysPrompt,{maxTokens:2048});
   if(!ai)return null;
   try{const j=ai.text.match(/\{[\s\S]*\}/);return j?JSON.parse(j[0]):null;}
@@ -93,17 +93,15 @@ function templateChangelog(ctx){
     const r=JSON.parse(ex('node '+path.join(__dirname,'extract-changelog.js')+' '+ctx.version,{cwd:ROOT,encoding:'utf8'}).trim());
     if(r.homeyText&&!r.homeyText.includes('Bug fixes'))return{homeyChangelog:sanitize(r.homeyText),changelogMd:r.markdownText,readmeUpdate:r.oneLiner.substring(0,100),appDescription:'Control your Tuya Zigbee devices locally with broad device support.'};
   }catch{}
-  const fixes=ctx.commits.filter(c=>/fix|bug|crash|error/i.test(c.msg));
-  const feats=ctx.commits.filter(c=>/feat|add|new|support/i.test(c.msg));
-  const ci=ctx.commits.filter(c=>/ci|workflow|yml|action|deploy/i.test(c.msg));
-  const other=ctx.commits.filter(c=>!fixes.includes(c)&&!feats.includes(c)&&!ci.includes(c));
+  const fixes=ctx.commits.filter(c=>/fix|bug|crash|error/i.test(c.msg)&&!/ci|workflow|yml|action|deploy|github/i.test(c.msg));
+  const feats=ctx.commits.filter(c=>/feat|add|new|support/i.test(c.msg)&&!/ci|workflow|yml|action|deploy|github/i.test(c.msg));
 
   let md='';
   if(feats.length){md+='### New Features\n';for(const c of feats)md+='- '+c.msg+'\n';md+='\n';}
   if(fixes.length){md+='### Bug Fixes\n';for(const c of fixes)md+='- '+c.msg+'\n';md+='\n';}
-  if(ci.length){md+='  if(other.length){md+='### Other\n';for(const c of other)md+='- '+c.msg+'\n';md+='\n';}
 
-  const summary=ctx.commits.slice(0,3).map(c=>c.msg.substring(0,80)).join('. ');
+  const validCommits=[...feats,...fixes];
+  const summary=validCommits.length?validCommits.slice(0,3).map(c=>c.msg.substring(0,80)).join('. '):'Minor fixes and internal cleanup';
   return{
     homeyChangelog:'v'+ctx.version+': '+summary.substring(0,380),
     changelogMd:md||'- Minor fixes and internal cleanup\n',

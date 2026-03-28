@@ -31,6 +31,7 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
+      "_TZE200_dtzziy1e",
       "_TZE204_dtzziy1e",
       "_TZE204_sbyx0lm6",
       "_TZE204_uxllnywp",
@@ -251,7 +252,8 @@
   ],
   "images": {
     "small": "drivers/presence_sensor_ceiling/assets/images/small.png",
-    "large": "drivers/presence_sensor_ceiling/assets/images/large.png"
+    "large": "drivers/presence_sensor_ceiling/assets/images/large.png",
+    "xlarge": "drivers/presence_sensor_ceiling/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

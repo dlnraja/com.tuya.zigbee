@@ -236,7 +236,7 @@ class ClimateSensorDevice extends HybridSensorBase {
       14: { capability: null, setting: 'temp_alarm_status' },   // 0=cancel, 1=lower, 2=upper
       15: { capability: null, setting: 'humidity_alarm_status' }, // 0=cancel, 1=lower, 2=upper
       17: { capability: null, setting: 'temp_report_interval' },  // 1-120 minutes
-      18: { capability: null, setting: 'humidity_report_interval' }, // 1-120 minutes (DP18)
+      // v5.12.11: DP18 NOT mapped here - already mapped as measure_temperature above (line 186)
       19: { capability: null, setting: 'temp_sensitivity', divisor: 10 },  // 0.3-1.0°C
       20: { capability: null, setting: 'humidity_sensitivity' }, // 3-10%
 

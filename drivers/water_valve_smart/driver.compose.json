@@ -46,6 +46,7 @@
     "manufacturerName": [
       "_TZ3000_yz38gdra",
       "_TZE200_vuwtqx0t",
+      "_TZE200_yltivvzb",
       "_TZE204_wt66haax",
       "_TZE284_vuwtqx0t",
       "_TZE284_wt66haax"
@@ -303,7 +304,8 @@
   ],
   "images": {
     "small": "drivers/water_valve_smart/assets/images/small.png",
-    "large": "drivers/water_valve_smart/assets/images/large.png"
+    "large": "drivers/water_valve_smart/assets/images/large.png",
+    "xlarge": "drivers/water_valve_smart/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

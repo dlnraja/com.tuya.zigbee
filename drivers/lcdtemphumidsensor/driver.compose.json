@@ -28,14 +28,10 @@
       "_TZE200_vvmbj46n",
       "_TZ2000_a476raq2",
       "_TZ2000_xogb73am",
-      "_TZ2000_avdnvykf",
-      "_TZ2000_hjsgdkfl",
       "_TZ3000_rusu2vzb",
       "_TZ3000_yd2e749y",
-      "_TZ3000_ywagc4rj",
       "_TZ3000_itnrsufe",
       "_TZ3000_bjawzodf",
-      "_TZ3210_ncw88jfq",
       "_TZ3000_bgsigers"
     ],
     "productId": [
@@ -48,13 +44,11 @@
       "1": {
         "clusters": [
           0,
-          1,
           1026,
           1029,
           61184
         ],
         "bindings": [
-          1,
           1026,
           1029
         ]
@@ -63,7 +57,8 @@
   },
   "images": {
     "small": "drivers/lcdtemphumidsensor/assets/images/small.png",
-    "large": "drivers/lcdtemphumidsensor/assets/images/large.png"
+    "large": "drivers/lcdtemphumidsensor/assets/images/large.png",
+    "xlarge": "drivers/lcdtemphumidsensor/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

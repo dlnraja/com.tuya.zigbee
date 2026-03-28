@@ -86,9 +86,12 @@
       "_TZE284_myd45weu",
       "_TZE284_npj9bug3",
       "_TZE284_oitavov2",
+      "_TZE284_o9ofysmo",
       "_TZE284_sgabhwa6",
       "_TZE284_hdml1aav",
-      "A89G12C"
+      "_TZE284_xc3vwx5a",
+      "A89G12C",
+      "HOBEIAN"
     ],
     "productId": [
       "ZG-303Z",
@@ -108,7 +111,6 @@
           61184
         ],
         "bindings": [
-          1,
           1026,
           1029
         ]
@@ -265,7 +267,8 @@
   ],
   "images": {
     "small": "drivers/soil_sensor/assets/images/small.png",
-    "large": "drivers/soil_sensor/assets/images/large.png"
+    "large": "drivers/soil_sensor/assets/images/large.png",
+    "xlarge": "drivers/soil_sensor/assets/images/xlarge.png"
   },
   "platforms": [
     "local"

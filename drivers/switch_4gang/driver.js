@@ -180,7 +180,20 @@ class Switch4GangDriver extends ZigBeeDriver {
           }));
       } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
 
-      this.log('4-Gang Switch Driver v5.12.0 ✅ Flow cards registered');
+      // v5.12.5: Scene mode triggers + action (ported from wall_switch_4gang_1way)
+      for (const g of [1, 2, 3, 4]) {
+        try { this.homey.flow.getDeviceTriggerCard(`switch_4gang_gang${g}_scene`); } catch (e) { this.log(`[FLOW] scene G${g}: ${e.message}`); }
+      }
+
+      try {
+        this.homey.flow.getActionCard('switch_4gang_set_scene_mode')
+          .registerRunListener(this._safeAction(async (args) => {
+            await args.device.setSceneMode(args.mode);
+          }));
+        this.log('[FLOW] ✅ switch_4gang_set_scene_mode');
+      } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
+
+      this.log('4-Gang Switch Driver v5.12.5 ✅ Flow cards registered');
     } catch (err) {
       this.error('4-Gang Switch Driver flow card registration failed:', err.message);
     }

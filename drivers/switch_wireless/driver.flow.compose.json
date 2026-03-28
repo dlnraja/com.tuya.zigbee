@@ -18,6 +18,80 @@
       }
     },
     {
+      "id": "switch_wireless_onoff_false",
+      "title": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      }
+    },
+    {
+      "id": "switch_wireless_button_pressed",
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé"
+      },
+      "tokens": [
+        {
+          "name": "press_type",
+          "type": "string",
+          "title": {
+            "en": "Press type"
+          },
+          "example": "single"
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé"
+      }
+    },
+    {
+      "id": "switch_wireless_single_press",
+      "title": {
+        "en": "Single press",
+        "fr": "Appui simple"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Single press",
+        "fr": "Appui simple"
+      }
+    },
+    {
+      "id": "switch_wireless_double_press",
+      "title": {
+        "en": "Double press",
+        "fr": "Double appui"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Double press",
+        "fr": "Double appui"
+      }
+    },
+    {
+      "id": "switch_wireless_long_press",
+      "title": {
+        "en": "Long press",
+        "fr": "Appui long"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Long press",
+        "fr": "Appui long"
+      }
+    },
+    {
       "id": "switch_wireless_battery_low",
       "title": {
         "en": "Battery low",

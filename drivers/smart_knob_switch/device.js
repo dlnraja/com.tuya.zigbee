@@ -1,18 +1,19 @@
 'use strict';
 
-const{ZigBeeDevice}=require('homey-zigbeedriver');
+const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
-class SmartKnobSwitchDevice extends ZigBeeDevice{
-  async onNodeInit({zclNode}){
-    this.log('[SMART_KNOB_SWITCH] init');
-    // Gang 1
-    if(zclNode.endpoints[1]&&zclNode.endpoints[1].clusters){
-      const ep1=zclNode.endpoints[1].clusters;
-      if(ep1.scenes){ep1.scenes.on('recall',(gId,sId)=>{this.log('[SMART_KNOB_SWITCH] g1 scene:',gId,sId);});}
-      if(ep1.onOff){ep1.onOff.on('attr.onOff',(v)=>{this.log('[SMART_KNOB_SWITCH] g1 onOff:',v);});}
-    }
+/**
+ * Smart Knob Switch - TS004F
+ * 1-button battery knob switch using ZCL scenes/onOff clusters
+ * v5.12.0: Converted from log-only stub to full ButtonDevice
+ */
+class SmartKnobSwitchDevice extends ButtonDevice {
+  async onNodeInit({ zclNode }) {
+    this.buttonCount = 1;
+    this.log('[SMART_KNOB_SWITCH] v5.12.0 init - 1 button');
+    await super.onNodeInit({ zclNode }).catch(err => this.error('[SMART_KNOB_SWITCH] init err:', err.message));
     this.log('[SMART_KNOB_SWITCH] ready');
   }
 }
 
-module.exports=SmartKnobSwitchDevice;
+module.exports = SmartKnobSwitchDevice;

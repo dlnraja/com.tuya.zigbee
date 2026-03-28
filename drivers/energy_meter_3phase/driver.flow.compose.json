@@ -34,35 +34,94 @@
     },
     {
       "id": "energy_meter_3phase_voltage_changed",
-      "title": { "en": "Voltage changed" },
-      "tokens": [{ "name": "voltage", "type": "number", "title": { "en": "V" }, "example": 230 }],
-      "args": []
+      "title": {
+        "en": "Voltage changed"
+      },
+      "tokens": [
+        {
+          "name": "voltage",
+          "type": "number",
+          "title": {
+            "en": "V"
+          },
+          "example": 230
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Voltage changed"
+      }
     },
     {
       "id": "energy_meter_3phase_current_changed",
-      "title": { "en": "Current changed" },
-      "tokens": [{ "name": "current", "type": "number", "title": { "en": "A" }, "example": 5 }],
-      "args": []
+      "title": {
+        "en": "Current changed"
+      },
+      "tokens": [
+        {
+          "name": "current",
+          "type": "number",
+          "title": {
+            "en": "A"
+          },
+          "example": 5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Current changed"
+      }
     },
     {
       "id": "energy_meter_3phase_energy_changed",
-      "title": { "en": "Energy changed" },
-      "tokens": [{ "name": "energy", "type": "number", "title": { "en": "kWh" }, "example": 10 }],
-      "args": []
+      "title": {
+        "en": "Energy changed"
+      },
+      "tokens": [
+        {
+          "name": "energy",
+          "type": "number",
+          "title": {
+            "en": "kWh"
+          },
+          "example": 10
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Energy changed"
+      }
     }
   ],
   "conditions": [
     {
       "id": "energy_meter_3phase_power_above",
-      "title": { "en": "Power !{{is|is not}} above" },
-      "titleFormatted": { "en": "Power !{{is|is not}} above [[power]] W" },
-      "args": [{ "name": "power", "type": "number", "min": 0, "max": 30000, "step": 50 }]
+      "title": {
+        "en": "Power !{{is|is not}} above"
+      },
+      "titleFormatted": {
+        "en": "Power !{{is|is not}} above [[power]] W"
+      },
+      "args": [
+        {
+          "name": "power",
+          "type": "number",
+          "min": 0,
+          "max": 30000,
+          "step": 50
+        }
+      ]
     }
   ],
   "actions": [
     {
       "id": "energy_meter_3phase_reset_meter",
-      "title": { "en": "Reset energy meter" }
+      "title": {
+        "en": "Reset energy meter"
+      },
+      "titleFormatted": {
+        "en": "Reset energy meter"
+      }
     }
   ]
 }

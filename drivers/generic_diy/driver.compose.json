@@ -9,7 +9,7 @@
   "images": {
     "small": "drivers/generic_diy/assets/images/small.png",
     "large": "drivers/generic_diy/assets/images/large.png",
-    "xlarge": "/drivers/generic_diy/assets/images/xlarge.png"
+    "xlarge": "drivers/generic_diy/assets/images/xlarge.png"
   },
   "capabilities": [],
   "energy": {
@@ -33,7 +33,6 @@
       " Legrand",
       "lumi router",
       "slzb",
-      "EWELINK",
       "sonoffzigbee",
       "Schneider Electric",
       "Schneider",

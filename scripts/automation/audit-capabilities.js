@@ -1,38 +1,22 @@
 /**
  * Capability Auditor - Checks all drivers for issues
+ * Run: node scripts/automation/audit-capabilities.js
  */
-const fs = require('fs');
-const path = require('path');
-const DRIVERS_DIR = path.join(__dirname, '../../drivers');
+const { loadAllDrivers } = require('../lib/drivers');
+const { createLogger } = require('../lib/logger');
 
-let errors = 0, warnings = 0;
+const { log, summary } = createLogger('Capability Audit');
+const drivers = loadAllDrivers();
 
-fs.readdirSync(DRIVERS_DIR).forEach(driver => {
-  const composePath = path.join(DRIVERS_DIR, driver, 'driver.compose.json');
-  if (!fs.existsSync(composePath)) return;
-  
-  try {
-    const data = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-    const caps = data.capabilities || [];
-    const opts = data.capabilitiesOptions || {};
-    
-    // Check subcapabilities
-    caps.filter(c => c.includes('.')).forEach(c => {
-      if (!opts[c]) {
-        console.log(`⚠️ [${driver}] Missing options: ${c}`);
-        warnings++;
-      }
-    });
-    
-    // Button check
-    if (driver.includes('button') && caps.includes('onoff')) {
-      console.log(`❌ [${driver}] Button has onoff`);
-      errors++;
-    }
-  } catch (e) {
-    console.log(`❌ [${driver}] JSON error: ${e.message}`);
-    errors++;
+for (const [name, d] of drivers) {
+  const caps = d.caps;
+  const opts = d.config.capabilitiesOptions || {};
+  caps.filter(c => c.includes('.')).forEach(c => {
+    if (!opts[c]) log('warn', name, 'Missing options: ' + c);
+  });
+  if (name.includes('button') && caps.includes('onoff')) {
+    log('error', name, 'Button has onoff');
   }
-});
+}
 
-console.log(`\n📊 ${errors} errors, ${warnings} warnings`);
+summary();
