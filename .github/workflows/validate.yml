@@ -123,6 +123,18 @@ jobs:
             console.log(col?col+' collision(s) found':'No fingerprint collisions');
           "
 
+      - name: 🖼️ Driver Images Pre-Check
+        run: |
+          MISS=0
+          for d in drivers/*/; do
+            DR=$(basename "$d")
+            for S in small large xlarge; do
+              [ ! -f "$d/assets/images/$S.png" ] && { echo "::error::$DR missing $S.png"; MISS=$((MISS+1)); }
+            done
+          done
+          [ $MISS -gt 0 ] && echo "::warning::$MISS missing driver images — will fail publish validation"
+          echo "$MISS missing image(s)"
+
       - name: 🔍 Validate (Athom Official)
         uses: athombv/github-action-homey-app-validate@002b7273c2b86032cb20d9bf25a67c8daca13f2c # v1
         with:
