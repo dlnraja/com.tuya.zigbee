@@ -106,7 +106,8 @@ jobs:
       - name: 🖼️ Driver Images
         run: |
           echo "### Images" >> $GITHUB_STEP_SUMMARY
-          for d in drivers/*/; do DR=$(basename "$d"); for S in small large xlarge; do [ ! -f "$d/assets/images/$S.png" ] && echo "❌ $DR: $S.png" >> $GITHUB_STEP_SUMMARY; done; done
+          for d in drivers/*/; do DR=$(basename "$d"); for S in small large xlarge; do if [ ! -f "$d/assets/images/$S.png" ]; then echo "❌ $DR: $S.png" >> $GITHUB_STEP_SUMMARY; fi; done; done
+          echo "✅ Image check done" >> $GITHUB_STEP_SUMMARY
 
       - name: 🌡️ Sensor Checks
         run: |
