@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-27T15:13:40.431Z",
+  "timestamp": "2026-03-28T03:47:27.085Z",
   "added": [],
   "skipped": [],
   "dpGaps": [],
@@ -271,7 +271,7 @@
         "attributes": [
           {
             "name": "datapoint",
-            "id": "0"
+            "id": "0x00"
           },
           {
             "name": "reporting",
@@ -282,11 +282,52 @@
             "id": "0x02"
           },
           {
+            "name": "dataQuery",
+            "id": "0x03"
+          },
+          {
+            "name": "dataReport",
+            "id": "0x05"
+          },
+          {
             "name": "reportingConfiguration",
             "id": "0x06"
+          },
+          {
+            "name": "mcuVersionRequest",
+            "id": "0x10"
+          },
+          {
+            "name": "mcuVersionResponse",
+            "id": "0x11"
+          },
+          {
+            "name": "timeSync",
+            "id": "0x24"
           }
         ],
-        "commands": [],
+        "commands": [
+          {
+            "name": "dataQuery",
+            "id": "0x03"
+          },
+          {
+            "name": "dataReport",
+            "id": "0x05"
+          },
+          {
+            "name": "mcuVersionRequest",
+            "id": "0x10"
+          },
+          {
+            "name": "mcuVersionResponse",
+            "id": "0x11"
+          },
+          {
+            "name": "timeSync",
+            "id": "0x24"
+          }
+        ],
         "existsInOurs": true
       },
       {
@@ -348,13 +389,13 @@
     "dpConstantBlocks": 25
   },
   "patternAnalysis": {
-    "readAttributesCalls": 47,
+    "readAttributesCalls": 48,
     "dimAutoOnOff": 3,
-    "tuyaListenerPattern": 4,
-    "errorHandling": 7
+    "tuyaListenerPattern": 6,
+    "errorHandling": 8
   },
   "summary": {
-    "totalJohanFPs": 609,
+    "totalJohanFPs": 636,
     "totalOurFPs": 4303,
     "missingFPs": 0,
     "addedFPs": 0,
@@ -364,10 +405,10 @@
     "libClusters": 10,
     "libHelpers": 2,
     "patterns": {
-      "readAttributesCalls": 47,
+      "readAttributesCalls": 48,
       "dimAutoOnOff": 3,
-      "tuyaListenerPattern": 4,
-      "errorHandling": 7
+      "tuyaListenerPattern": 6,
+      "errorHandling": 8
     }
   }
 }
