@@ -1,12 +1,249 @@
 {
-  "timestamp": "2026-03-27T14:59:20.380Z",
-  "count": 0,
-  "byType": {},
+  "timestamp": "2026-03-28T05:57:19.314Z",
+  "count": 3,
+  "byType": {
+    "github": 3
+  },
   "newFingerprints": [],
   "deepResearch": {
     "researched": 0,
     "added": 0,
     "details": []
   },
-  "diagnostics": []
+  "diagnostics": [
+    {
+      "id": "imap_502767",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] (Issue #164)",
+      "from": "github",
+      "date": "2026-03-27T23:23:50.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "late4marshmellow"
+      },
+      "fps": {
+        "mfr": [
+          "_TZ3000_otvn3lne"
+        ],
+        "pid": [
+          "TS0202",
+          "TS0601"
+        ]
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [
+        {
+          "fingerprint": "_TZ3000_otvn3lne",
+          "type": "mfr",
+          "supported": true,
+          "drivers": [
+            "motion_sensor"
+          ],
+          "protocol": "unknown",
+          "requires": []
+        },
+        {
+          "fingerprint": "TS0202",
+          "type": "pid",
+          "supported": true,
+          "drivers": [
+            "motion_sensor",
+            "universal_fallback"
+          ],
+          "multiDriver": true
+        },
+        {
+          "fingerprint": "TS0601",
+          "type": "pid",
+          "supported": true,
+          "drivers": [
+            "air_purifier",
+            "air_quality_co2",
+            "air_quality_comprehensive",
+            "button_emergency_sos",
+            "button_wireless_6",
+            "ceiling_fan",
+            "climate_sensor",
+            "co_sensor",
+            "contact_sensor",
+            "curtain_motor",
+            "curtain_motor_tilt",
+            "dimmer_3gang",
+            "dimmer_dual_channel",
+            "dimmer_wall_1gang",
+            "din_rail_meter",
+            "din_rail_switch",
+            "door_controller",
+            "doorbell",
+            "energy_meter_3phase",
+            "fan_controller",
+            "fingerprint_lock",
+            "floor_heating_thermostat",
+            "formaldehyde_sensor",
+            "garage_door",
+            "garage_door_opener",
+            "gas_detector",
+            "gas_sensor",
+            "humidifier",
+            "hvac_air_conditioner",
+            "hvac_controller",
+            "hvac_dehumidifier",
+            "ir_blaster",
+            "lcdtemphumidsensor",
+            "light_sensor_outdoor",
+            "lock_smart",
+            "motion_sensor",
+            "motion_sensor_radar_mmwave",
+            "pet_feeder",
+            "pet_feeder_zigbee",
+            "plug_energy_monitor",
+            "plug_smart",
+            "pool_pump",
+            "power_clamp_meter",
+            "power_meter",
+            "presence_sensor_ceiling",
+            "presence_sensor_radar",
+            "radiator_controller",
+            "radiator_valve",
+            "rain_sensor",
+            "scene_switch_4",
+            "shutter_roller_controller",
+            "siren",
+            "smart_breaker",
+            "smart_heater",
+            "smart_heater_controller",
+            "smart_lcd_thermostat",
+            "smart_rcbo",
+            "smoke_detector_advanced",
+            "soil_sensor",
+            "switch_1gang",
+            "switch_2gang",
+            "switch_3gang",
+            "switch_4gang",
+            "switch_dimmer_1gang",
+            "switch_wall_5gang",
+            "switch_wall_6gang",
+            "switch_wall_8gang",
+            "thermostat_4ch",
+            "thermostat_tuya_dp",
+            "universal_fallback",
+            "usb_outlet_advanced",
+            "valve_irrigation",
+            "valve_single",
+            "vibration_sensor",
+            "water_leak_sensor",
+            "water_tank_monitor",
+            "water_valve_smart",
+            "weather_station_outdoor"
+          ],
+          "multiDriver": true
+        }
+      ],
+      "ghInfo": {
+        "issueNum": "164",
+        "action": "commented",
+        "fps": {
+          "mfr": [
+            "_TZ3000_otvn3lne"
+          ],
+          "pid": [
+            "TS0202",
+            "TS0601"
+          ]
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "late4marshmellow",
+        "bodyExcerpt": "late4marshmellow left a comment (dlnraja/com.tuya.zigbee#164)\r\n\r\nHi! I think I found why pairing may fail for my sensor.\r\n\r\nMy device is:\r\n\r\n_TZ3000_otvn3lne\r\nTS0202\r\nIn the app, this fingerprint seems to appear in two different ways (TS0202 in one place, TS0601 in another).\r\nCould this mismatch cause Homey to pick the wrong path during pairing?\r\n\r\nCould you please check and align _TZ3000_otvn3lne to TS0202 for pairing?\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.c"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 684,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_502768",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] (Issue #164)",
+      "from": "github",
+      "date": "2026-03-27T23:24:00.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "github-actions[bot]"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "164",
+        "action": "opened",
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": true,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "Reopened #164.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/164#event-23987818423\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/issue/164/issue_event/23987818423@github.com>\r\n"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 281,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_502769",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [DEVICE] (Issue #164)",
+      "from": "github",
+      "date": "2026-03-27T23:24:02.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "github-actions[bot]"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "Interview",
+        "settings"
+      ],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "164",
+        "action": "opened",
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": true,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "github-actions[bot] left a comment (dlnraja/com.tuya.zigbee#164)\r\n\r\n<!-- tuya-reopen-bot -->\r\nThis issue has been **automatically reopened** because @late4marshmellow posted a new comment.\r\nIt will be reviewed in the next automation cycle.\r\n\r\n> If your device is still not working, please share:\r\n> 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app)\r\n> 2. **Diagnostic Report ID** from device settings\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps:/"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 693,
+      "contentType": "text/plain"
+    }
+  ]
 }
