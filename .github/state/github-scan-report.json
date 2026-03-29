@@ -1,8 +1,80 @@
 {
-  "timestamp": "2026-03-28T03:35:03.230Z",
+  "timestamp": "2026-03-29T01:54:42.615Z",
   "appVersion": "5.11.138",
   "findings": {
     "issues": [
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 170,
+        "title": "Bug: TS0003 (_TZ3000_v4l4b0lp) - Sub-capability Flow cards (Gang 1/2/3) are completely unlinked",
+        "user": "Ssssneak",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_v4l4b0lp",
+            "drivers": [
+              "switch_3gang"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/170",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 167,
+        "title": "[Auto] 1 new fingerprint(s) from upstream",
+        "user": "github-actions[bot]",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_kxaow5ki",
+            "drivers": [
+              "button_wireless_1"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/167",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 176,
+        "title": "[soil_sensor] Bug:",
+        "user": "haadeess",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE284_hdml1aav",
+            "drivers": [
+              "soil_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/176",
+        "state": "closed",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 178,
+        "title": "[soil_sensor] Bug: No Connetion possible \t_TZE284_oitavov2",
+        "user": "haadeess",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE284_oitavov2",
+            "drivers": [
+              "soil_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/178",
+        "state": "closed",
+        "imageAnalysis": null
+      },
       {
         "repo": "dlnraja/com.tuya.zigbee",
         "number": 164,
@@ -22,21 +94,21 @@
         "imageAnalysis": "[Screenshot Analysis]"
       },
       {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 172,
-        "title": "Unable to connect Something went wrong while adding this device, please try again",
-        "user": "ronaldbok",
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1355,
+        "title": "Device Request - Zigbee human presence sensor - Tuya / zy-zhps01-24g",
+        "user": "TeejooK",
         "newFPs": [],
         "existingFPs": [
           {
-            "fp": "_TZE284_oitavov2",
+            "fp": "_TZE204_bvfld3xc",
             "drivers": [
-              "soil_sensor"
+              "presence_sensor_radar"
             ]
           }
         ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/172",
-        "state": "closed",
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1355",
+        "state": "open",
         "imageAnalysis": null
       },
       {
@@ -49,7 +121,7 @@
           {
             "fp": "_TZE284_8se38w3c",
             "drivers": [
-              "radiator_valve"
+              "climate_sensor"
             ]
           }
         ],
@@ -173,5 +245,5 @@
     "newFPs": [],
     "forkFPs": []
   },
-  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests\n- **Issue #1354**: Request for a temperature & humidity sensor with external probe (_TZE284_8se38w3c) from Shenzen New Green Energy Technologies Co. Ltd.  \n  [View Issue](https://github.com/JohanBendz/com.tuya.zigbee/issues/1354)\n\n## Existing Fingerprints Supported\n- **Issue #164**: Motion sensor (_TZ3000_otvn3lne)  \n- **Issue #172**: Soil sensor (_TZE284_oitavov2) - Closed  \n  [View Issue](https://github.com/dlnraja/com.tuya.zigbee/issues/172)\n\n## Fingerprints from Forks to Integrate\n- No new fingerprints from forks identified in the current analysis.\n\n## Pull Requests with Useful Changes\n1. **PR #10**: Update driver.compose.json - _TZ3000_mrpevh8p (Closed, not merged)  \n   [View PR](https://github.com/dlnraja/com.tuya.zigbee/pull/10)\n\n2. **PR #45**: Update driver.compose.json - _TZE200_nv6nxo0c (Closed, merged)  \n   [View PR](https://github.com/dlnraja/com.tuya.zigbee/pull/45)\n\n3. **PR #46**: Adding support for MOES/Tuya Zigbee AM25 Tubular Motor (_TZE200_nv6nxo0c / TS0601) (Closed, not merged)  \n   [View PR](https://github.com/dlnraja/com.tuya.zigbee/pull/46)\n\n4. **PR #1350**: Added TS110E driver for _TZ3210_ngqk6jia and _TZ3210_weaqkhab (Open, not merged)  \n   [View PR](https://github.com/JohanBendz/com.tuya.zigbee/pull/1350)\n\n5. **PR #1166**: Add support for Tuya PIR sensor TS0202 (_TZ3000_c8ozah8n) (Closed, not merged)  \n   [View PR](https://github.com/JohanBendz/com.tuya.zigbee/pull/1166)\n\n6. **PR #1253**: Added 3 new devices - _TZE200_pay2byax and _TZ3000_mrpevh8p (Open, not merged)  \n   [View PR](https://github.com/JohanBendz/com.tuya.zigbee/pull/1253)\n\n7. **PR #1219**: Update driver.compose.json - _TZ3000_gjrubzje (Open, not merged)  \n   [View PR](https://github.com/JohanBendz/com.tuya.zigbee/pull/1219)\n\n8. **PR #1218**: Update driver.compose.json - _TZE204_dapwryy7 (Open, not merged)  \n   [View PR](https://github.com/JohanBendz/com.tuya.zigbee/pull/1218)\n\n9. **PR #1195**: Add _TZE204_bjzrowv2 - Update app.json (Open, not merged)  \n   [View PR](https://github.com/JohanBendz/com.tuya.zigbee/pull/1195)\n\n---\n\nThis summary captures the latest developments in the Universal Tuya Zigbee project, highlighting new device requests, existing device support, and relevant pull requests. For further details, please refer to the linked issues and pull requests."
+  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests\n1. **Zigbee Human Presence Sensor**  \n   - **Fingerprint:** `_TZE204_bvfld3xc`  \n   - **Driver:** `presence_sensor_radar`  \n   - **Issue:** [#1355](https://github.com/JohanBendz/com.tuya.zigbee/issues/1355)  \n   - **User:** TeejooK  \n\n2. **Temperature & Humidity Sensor with External Probe**  \n   - **Fingerprint:** `_TZE284_8se38w3c`  \n   - **Driver:** `climate_sensor`  \n   - **Issue:** [#1354](https://github.com/JohanBendz/com.tuya.zigbee/issues/1354)  \n   - **User:** pemikalsen-sudo  \n\n## Existing Fingerprints Supported\n- **_TZ3000_v4l4b0lp**  \n  - **Drivers:** `switch_3gang`  \n  - **Issue:** [#170](https://github.com/dlnraja/com.tuya.zigbee/issues/170)  \n\n- **_TZ3000_kxaow5ki**  \n  - **Drivers:** `button_wireless_1`  \n  - **Issue:** [#167](https://github.com/dlnraja/com.tuya.zigbee/issues/167)  \n\n- **_TZE284_hdml1aav**  \n  - **Drivers:** `soil_sensor`  \n  - **Issue:** [#176](https://github.com/dlnraja/com.tuya.zigbee/issues/176)  \n\n- **_TZE284_oitavov2**  \n  - **Drivers:** `soil_sensor`  \n  - **Issue:** [#178](https://github.com/dlnraja/com.tuya.zigbee/issues/178)  \n\n- **_TZ3000_otvn3lne**  \n  - **Drivers:** `motion_sensor`  \n  - **Issue:** [#164](https://github.com/dlnraja/com.tuya.zigbee/issues/164)  \n\n## Fingerprints from Forks to Integrate\n- **_TZE204_bvfld3xc**  \n  - **Drivers:** `presence_sensor_radar`  \n  - **Fork Issue:** [#1355](https://github.com/JohanBendz/com.tuya.zigbee/issues/1355)  \n\n- **_TZE284_8se38w3c**  \n  - **Drivers:** `climate_sensor`  \n  - **Fork Issue:** [#1354](https://github.com/JohanBendz/com.tuya.zigbee/issues/1354)  \n\n## Pull Requests with Useful Changes\n1. **Add Support for MOES/Tuya Zigbee AM25 Tubular Motor**  \n   - **Fingerprint:** `_TZE200_nv6nxo0c`  \n   - **PR:** [#46](https://github.com/dlnraja/com.tuya.zigbee/pull/46)  \n   - **User:** vl14-dev  \n   - **State:** Closed, not merged  \n\n2. **Add TS110E Driver**  \n   - **Fingerprints:** `_TZ3210_ngqk6jia`, `_TZ3210_weaqkhab`  \n   - **PR:** [#1350](https://github.com/JohanBendz/com.tuya.zigbee/pull/1350)  \n   - **User:** PiTRiS87  \n   - **State:** Open  \n\n3. **Add Support for Tuya PIR Sensor TS0202**  \n   - **Fingerprint:** `_TZ3000_c8ozah8n`  \n   - **PR:** [#1166](https://github.com/JohanBendz/com.tuya.zigbee/pull/1166)  \n   - **User:** chernals  \n   - **State:** Closed, not merged  \n\n4. **Add 3 New Devices**  \n   - **Fingerprints:** `_TZE200_pay2byax`, `_TZ3000_mrpevh8p`  \n   - **PR:** [#1253](https://github.com/JohanBendz/com.tuya.zigbee/pull/1253)  \n   - **User:** Peter-Celica  \n   - **State:** Open  \n\n5. **Update driver.compose.json**  \n   - **Fingerprint:** `_TZ3000_gjrubzje`  \n   - **PR:** [#1219](https://github.com/JohanBendz/com.tuya.zigbee/pull/1219)  \n   - **User:** Melectro1  \n   - **State:** Open  \n\nThis summary encapsulates the latest developments in the Universal Tuya Zigbee repository, highlighting new device requests, existing fingerprint support, and relevant pull requests for integration."
 }

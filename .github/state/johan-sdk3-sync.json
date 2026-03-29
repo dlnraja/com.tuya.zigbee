@@ -1,6 +1,40 @@
 {
-  "timestamp": "2026-03-28T03:47:27.085Z",
-  "added": [],
+  "timestamp": "2026-03-29T02:16:29.196Z",
+  "added": [
+    {
+      "fp": "zbeacon",
+      "driver": "contact_sensor",
+      "pids": [
+        "DS01"
+      ]
+    },
+    {
+      "fp": "TUYATEC-qun7vq14",
+      "driver": "climate_sensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-O6SNCwd6",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "TUYATEC-nzrrvgco",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    }
+  ],
   "skipped": [],
   "dpGaps": [],
   "errors": [],
@@ -396,9 +430,9 @@
   },
   "summary": {
     "totalJohanFPs": 636,
-    "totalOurFPs": 4303,
-    "missingFPs": 0,
-    "addedFPs": 0,
+    "totalOurFPs": 3993,
+    "missingFPs": 4,
+    "addedFPs": 4,
     "skippedFPs": 0,
     "dpGaps": 0,
     "newDrivers": 91,

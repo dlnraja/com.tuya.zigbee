@@ -1,6 +1,6 @@
 # 🏠 Universal Tuya Zigbee v5.11.138
 
-> **188 drivers** · **4732+ fingerprints** · Updated 2026-03-28
+> **188 drivers** · **4324+ fingerprints** · Updated 2026-03-29
 
 Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.
 
@@ -16,19 +16,19 @@ Implemented batch close/respond state update for improved device management., No
 
 | Category | Drivers | FPs |
 |---|---|---|
-| 🔌 Socket | 47 | 919 |
-| 💡 Light | 21 | 442 |
-| 📡 Sensor | 44 | 2150 |
-| 🌡️ Thermostat | 11 | 342 |
-| 🪟 Windowcoverings | 3 | 175 |
+| 🔌 Socket | 47 | 880 |
+| 💡 Light | 21 | 440 |
+| 📡 Sensor | 44 | 1854 |
+| 🌡️ Thermostat | 11 | 345 |
+| 🪟 Windowcoverings | 3 | 161 |
 | 🔐 Lock | 4 | 22 |
-| 🌀 Fan | 10 | 42 |
+| 🌀 Fan | 10 | 37 |
 | 🔔 Doorbell | 2 | 8 |
-| 🎮 Remote | 17 | 92 |
-| 🔘 Button | 2 | 9 |
+| 🎮 Remote | 17 | 89 |
+| 🔘 Button | 2 | 12 |
 | 🔥 Heater | 4 | 12 |
 | 🚗 Garagedoor | 3 | 13 |
-| 📦 Other | 15 | 497 |
+| 📦 Other | 15 | 442 |
 | 📦 Curtain | 2 | 9 |
 
 [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) — search by fingerprint
@@ -66,4 +66,4 @@ This app is free and open-source. If it's useful to you, a small donation helps 
 **PayPal:** [paypal.me/dlnraja](https://paypal.me/dlnraja) · **Revolut:** [revolut.me/dylanoul](https://revolut.me/dylanoul)
 
 ---
-*Last updated 2026-03-28 — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*
+*Last updated 2026-03-29 — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*

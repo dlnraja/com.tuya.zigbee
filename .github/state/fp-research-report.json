@@ -1,23 +1,22 @@
 {
-  "timestamp": "2026-03-28T03:47:29.825Z",
+  "timestamp": "2026-03-29T02:16:29.931Z",
   "total": 1,
-  "resolved": 0,
-  "unknown": 1,
+  "resolved": 1,
+  "unknown": 0,
   "falsePositives": 0,
   "results": [
     {
       "fp": "_TZ3000_kxaow5ki",
       "valid": true,
       "prefix": "standard",
-      "driver": null,
+      "driver": "button_wireless_1",
       "pid": null,
-      "confidence": 0,
-      "sources": [],
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
       "method": null,
-      "falsePositive": {
-        "isFP": false,
-        "reason": "unknown_not_false"
-      }
+      "driverExists": true
     }
   ]
 }

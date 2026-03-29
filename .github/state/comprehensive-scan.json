@@ -1,12 +1,12 @@
 {
-  "date": "2026-03-28T03:40:59.138Z",
+  "date": "2026-03-29T01:59:23.678Z",
   "local": {
     "drivers": 188,
-    "fps": 4303
+    "fps": 3993
   },
   "forkScan": {
-    "filesScanned": 3055,
-    "newFPs": 27900
+    "filesScanned": 3112,
+    "newFPs": 28964
   },
   "upstream": {
     "prs": 0,
@@ -17,6 +17,84 @@
     "issues": 0
   },
   "newFPsFromForks": [
+    {
+      "mfr": "zbeacon",
+      "driver": "doorwindowsensor_4",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-qun7vq14",
+      "driver": "temphumidsensor2",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-O6SNCwd6",
+      "driver": "wall_switch_2_gang",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-nzrrvgco",
+      "driver": "wall_switch_2_gang",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "zbeacon",
+      "driver": "doorwindowsensor_4",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "pr-tuya-fixes"
+    },
+    {
+      "mfr": "TUYATEC-qun7vq14",
+      "driver": "temphumidsensor2",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "pr-tuya-fixes"
+    },
+    {
+      "mfr": "TUYATEC-O6SNCwd6",
+      "driver": "wall_switch_2_gang",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "pr-tuya-fixes"
+    },
+    {
+      "mfr": "TUYATEC-nzrrvgco",
+      "driver": "wall_switch_2_gang",
+      "fork": "pkuijpers/com.tuya.zigbee",
+      "branch": "pr-tuya-fixes"
+    },
+    {
+      "mfr": "zbeacon",
+      "driver": "doorwindowsensor_4",
+      "fork": "bmalkow/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-qun7vq14",
+      "driver": "temphumidsensor2",
+      "fork": "bmalkow/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-O6SNCwd6",
+      "driver": "wall_switch_2_gang",
+      "fork": "bmalkow/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-nzrrvgco",
+      "driver": "wall_switch_2_gang",
+      "fork": "bmalkow/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "zbeacon",
+      "driver": "doorwindowsensor_4",
+      "fork": "baschte/de.baschte.tuya.zigbee",
+      "branch": "main"
+    },
     {
       "mfr": "L",
       "driver": "lumi-router",
@@ -40,6 +118,144 @@
       "driver": "lumi-router",
       "fork": "baschte/de.baschte.tuya.zigbee",
       "branch": "main"
+    },
+    {
+      "mfr": "TUYATEC-qun7vq14",
+      "driver": "temphumidsensor2",
+      "fork": "baschte/de.baschte.tuya.zigbee",
+      "branch": "main"
+    },
+    {
+      "mfr": "TUYATEC-O6SNCwd6",
+      "driver": "wall_switch_2_gang",
+      "fork": "baschte/de.baschte.tuya.zigbee",
+      "branch": "main"
+    },
+    {
+      "mfr": "TUYATEC-nzrrvgco",
+      "driver": "wall_switch_2_gang",
+      "fork": "baschte/de.baschte.tuya.zigbee",
+      "branch": "main"
+    },
+    {
+      "mfr": "zbeacon",
+      "driver": "doorwindowsensor_4",
+      "fork": "tomkusz/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-qun7vq14",
+      "driver": "temphumidsensor2",
+      "fork": "tomkusz/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-O6SNCwd6",
+      "driver": "wall_switch_2_gang",
+      "fork": "tomkusz/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-nzrrvgco",
+      "driver": "wall_switch_2_gang",
+      "fork": "tomkusz/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "zbeacon",
+      "driver": "doorwindowsensor_4",
+      "fork": "Mmaaikel/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-qun7vq14",
+      "driver": "temphumidsensor2",
+      "fork": "Mmaaikel/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-O6SNCwd6",
+      "driver": "wall_switch_2_gang",
+      "fork": "Mmaaikel/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-nzrrvgco",
+      "driver": "wall_switch_2_gang",
+      "fork": "Mmaaikel/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "zbeacon",
+      "driver": "doorwindowsensor_4",
+      "fork": "hendriksenremco/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-qun7vq14",
+      "driver": "temphumidsensor2",
+      "fork": "hendriksenremco/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-O6SNCwd6",
+      "driver": "wall_switch_2_gang",
+      "fork": "hendriksenremco/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-nzrrvgco",
+      "driver": "wall_switch_2_gang",
+      "fork": "hendriksenremco/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "zbeacon",
+      "driver": "doorwindowsensor_4",
+      "fork": "sebastianbrand01/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-qun7vq14",
+      "driver": "temphumidsensor2",
+      "fork": "sebastianbrand01/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-O6SNCwd6",
+      "driver": "wall_switch_2_gang",
+      "fork": "sebastianbrand01/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-nzrrvgco",
+      "driver": "wall_switch_2_gang",
+      "fork": "sebastianbrand01/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "zbeacon",
+      "driver": "doorwindowsensor_4",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-qun7vq14",
+      "driver": "temphumidsensor2",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-O6SNCwd6",
+      "driver": "wall_switch_2_gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-nzrrvgco",
+      "driver": "wall_switch_2_gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "SDK3"
     },
     {
       "mfr": "aaqs-s01",
@@ -720,6 +936,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "_TZE284_7zazvlyn",
+      "driver": "climate_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "_tze600_wxq8dpha",
       "driver": "climate_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -1098,6 +1320,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "zbeacon",
+      "driver": "climate_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "zbt-cctfilament-d0000",
       "driver": "climate_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -1393,6 +1621,12 @@
     },
     {
       "mfr": "wiszb-120",
+      "driver": "contact_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "zbeacon",
       "driver": "contact_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -2916,6 +3150,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "_TZE284_rlytpmij",
+      "driver": "presence_sensor_radar",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "snzb-06p",
       "driver": "presence_sensor_radar",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -4404,7 +4644,715 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "zbeacon",
+      "driver": "doorwindowsensor_4",
+      "fork": "SietzeM/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-qun7vq14",
+      "driver": "temphumidsensor2",
+      "fork": "SietzeM/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-O6SNCwd6",
+      "driver": "wall_switch_2_gang",
+      "fork": "SietzeM/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-nzrrvgco",
+      "driver": "wall_switch_2_gang",
+      "fork": "SietzeM/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "zbeacon",
+      "driver": "doorwindowsensor_4",
+      "fork": "theswim/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-qun7vq14",
+      "driver": "temphumidsensor2",
+      "fork": "theswim/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-O6SNCwd6",
+      "driver": "wall_switch_2_gang",
+      "fork": "theswim/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-nzrrvgco",
+      "driver": "wall_switch_2_gang",
+      "fork": "theswim/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "zbeacon",
+      "driver": "doorwindowsensor_4",
+      "fork": "willarentz/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-qun7vq14",
+      "driver": "temphumidsensor2",
+      "fork": "willarentz/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-O6SNCwd6",
+      "driver": "wall_switch_2_gang",
+      "fork": "willarentz/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-nzrrvgco",
+      "driver": "wall_switch_2_gang",
+      "fork": "willarentz/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "zbeacon",
+      "driver": "doorwindowsensor_4",
+      "fork": "kindberg95/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-qun7vq14",
+      "driver": "temphumidsensor2",
+      "fork": "kindberg95/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-O6SNCwd6",
+      "driver": "wall_switch_2_gang",
+      "fork": "kindberg95/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-nzrrvgco",
+      "driver": "wall_switch_2_gang",
+      "fork": "kindberg95/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "zbeacon",
+      "driver": "doorwindowsensor_4",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-qun7vq14",
+      "driver": "temphumidsensor2",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-O6SNCwd6",
+      "driver": "wall_switch_2_gang",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-nzrrvgco",
+      "driver": "wall_switch_2_gang",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "SDK3"
+    },
+    {
+      "mfr": "zbeacon",
+      "driver": "doorwindowsensor_4",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-1"
+    },
+    {
+      "mfr": "TUYATEC-qun7vq14",
+      "driver": "temphumidsensor2",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-1"
+    },
+    {
+      "mfr": "TUYATEC-O6SNCwd6",
+      "driver": "wall_switch_2_gang",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-1"
+    },
+    {
+      "mfr": "TUYATEC-nzrrvgco",
+      "driver": "wall_switch_2_gang",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-1"
+    },
+    {
+      "mfr": "zbeacon",
+      "driver": "doorwindowsensor_4",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-2"
+    },
+    {
+      "mfr": "TUYATEC-qun7vq14",
+      "driver": "temphumidsensor2",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-2"
+    },
+    {
+      "mfr": "TUYATEC-O6SNCwd6",
+      "driver": "wall_switch_2_gang",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-2"
+    },
+    {
+      "mfr": "TUYATEC-nzrrvgco",
+      "driver": "wall_switch_2_gang",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-2"
+    },
+    {
+      "mfr": "zbeacon",
+      "driver": "doorwindowsensor_4",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-3"
+    },
+    {
+      "mfr": "TUYATEC-qun7vq14",
+      "driver": "temphumidsensor2",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-3"
+    },
+    {
+      "mfr": "TUYATEC-O6SNCwd6",
+      "driver": "wall_switch_2_gang",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-3"
+    },
+    {
+      "mfr": "TUYATEC-nzrrvgco",
+      "driver": "wall_switch_2_gang",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-3"
+    },
+    {
+      "mfr": "zbeacon",
+      "driver": "doorwindowsensor_4",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-4"
+    },
+    {
+      "mfr": "TUYATEC-qun7vq14",
+      "driver": "temphumidsensor2",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-4"
+    },
+    {
+      "mfr": "TUYATEC-O6SNCwd6",
+      "driver": "wall_switch_2_gang",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-4"
+    },
+    {
+      "mfr": "TUYATEC-nzrrvgco",
+      "driver": "wall_switch_2_gang",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-4"
+    },
+    {
+      "mfr": "zbeacon",
+      "driver": "doorwindowsensor_4",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-5"
+    },
+    {
+      "mfr": "TUYATEC-qun7vq14",
+      "driver": "temphumidsensor2",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-5"
+    },
+    {
+      "mfr": "TUYATEC-O6SNCwd6",
+      "driver": "wall_switch_2_gang",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-5"
+    },
+    {
+      "mfr": "TUYATEC-nzrrvgco",
+      "driver": "wall_switch_2_gang",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-5"
+    },
+    {
+      "mfr": "zbeacon",
+      "driver": "doorwindowsensor_4",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-6"
+    },
+    {
+      "mfr": "TUYATEC-qun7vq14",
+      "driver": "temphumidsensor2",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-6"
+    },
+    {
+      "mfr": "TUYATEC-O6SNCwd6",
+      "driver": "wall_switch_2_gang",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-6"
+    },
+    {
+      "mfr": "TUYATEC-nzrrvgco",
+      "driver": "wall_switch_2_gang",
+      "fork": "Peter-Celica/com.tuya.zigbee",
+      "branch": "patch-6"
+    },
+    {
+      "mfr": "_TZE284_7zazvlyn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_0hg58wyk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_0j5jma9b",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_1agwnems",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_1ibpyhdc",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_2aaelwxk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_2atgpdho",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_2ekuz3dz",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_2hf7x9n3",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_2imwyigp",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_2m38mh6k",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_2pddnnrk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_2se8efxh",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_3p5ydos3",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_3t91nb6k",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_3towulqd",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_579lguh2",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_7bztmfm1",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_7sjncirf",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_8whxpsiw",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
       "mfr": "_TZe200_8ygsuhe1",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_9cqcpkgb",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_9i9dt8is",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_9p5xmj5r",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_9sfg7gm0",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_a4bpgplm",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_a8sdabtg",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_afycb3cg",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_ahpcyzth",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_aqnazj70",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_atpwqgml",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_auin8mzr",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_bfmfhxra",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_bh3n6gk8",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_bq5c8xfe",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_bynnczcb",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_byzdayie",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_c2fmom5z",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_ckud7u2l",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_cpmgn2cf",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_cqtamhh5",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_ctq0k47x",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_cwnjrr72",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_df04ghrb",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_dfxkcots",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_dq1mfjug",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_dwcarsat",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_e3oitdyu",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_eaac7dkw",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_ebwgzdqq",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_ewxhg6o9",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_fsb6zw01",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_fsow0qsk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_g9a3awaj",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_ga1maeof",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_gbagoilo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_ggev5fsl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_gjldowol",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_gkfbdvyx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_go3tvswy",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_gomuk3dc",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_gubdgai2",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_hggxgsjj",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_hkdl5fmv",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_holel4dk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_hue3yfsn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_husqqvux",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_iba1ckek",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_ikvncluo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_ip2akl4w",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_jfw0a4aa",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_ji1gn7rw",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_jsaqgakf",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_jva8ink8",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_k6jhsr0q",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0b299e7e"
@@ -4416,7 +5364,175 @@
       "branch": "0b299e7e"
     },
     {
+      "mfr": "_TZe200_kccdzaeo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_kds0pmmv",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_khzbklyh",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_kijxnb8q",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_kyfqmmyl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_kzm5w4iz",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_libht6ua",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_lllliz3p",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_llvwkkde",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_lnbfnyxd",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_lpwgshtl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_lsanae15",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_lu01t0zl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_lyetpprm",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_m9skfctm",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_mja3fuja",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_mp902om5",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_mudxchsu",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_myd45weu",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_n8dljorx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_nh9m9emk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_nkjintbl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
       "mfr": "_TZe200_nklqjk62",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_npj9bug3",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_nslr42tt",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_ntcy3xu1",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_ojtqawav",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_ojzhk75b",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_p9zbdqgs",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0b299e7e"
@@ -4428,8 +5544,1310 @@
       "branch": "0b299e7e"
     },
     {
+      "mfr": "_TZe200_ppuj1vem",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_pvvbommb",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_qoy0ekbd",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_qq9mpfhw",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_qzaing2g",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_r32ctezx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_rccxox8p",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_rhblgy0z",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_rhgsbacq",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_rks0sgb7",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_ryfmq5rl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_s7rsrtbg",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_sgpeacqp",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_sur6q7ko",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_swaamsoy",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_t5p1vj8r",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_tmszbtzq",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_toeldckg",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_ttcovulf",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_tyffvoij",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_u6x1zyv2",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_uebojraa",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_ugekduaj",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_v6ossqfy",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_v9hkz2yn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_ves1ycwx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_viy9ihs7",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_vucankjx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_vuwtqx0t",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
       "mfr": "_TZe200_vvmbj46n",
       "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_vzekyi4c",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_w4cryh2i",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_wbhaespm",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_wfxuhoea",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_whpb9yts",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_wqashyqo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_wukb7rhc",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_wunufsil",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_wvovwe9h",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_wzk0x7fq",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_xby0s3ta",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_xlnzk169",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_xpq2rzhq",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_xpvamyfz",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_y8jijhba",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_ya4ft0w4",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_yh7aoahi",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_yjryxpot",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_yojqa8xn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_yvx5lh6k",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_ywdxldoj",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_znbl8dj5",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_znlqjmih",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_ztc6ggyl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_2imwyigp",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_3regm3h6",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_3t91nb6k",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_7bztmfm1",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_7gclukjs",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_81yrt3lo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_9qhuzgo0",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_ac0fhfiq",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_atpwqgml",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_bmdsp6bs",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_chbyv06x",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_cjbofhxw",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_cvub6xbb",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_dcnsggvz",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_debczeci",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_dzuqwsyg",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_eekpf0ft",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_gbagoilo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_gkfbdvyx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_gomuk3dc",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_hcxvyxa5",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_iaeejhvf",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_ijxvkhd0",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_kyhbrfyl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_laokfqwu",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_lawxy9e2",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_loejka0i",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_lsanae15",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_lzriup1j",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_mtoaryre",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_mvtclclq",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_n9ctkb6j",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_nbkshs6k",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_no6qtgtl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_ntcy3xu1",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_ogx8u5z6",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_pcdmj88b",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_q9xty0ad",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_qasjif9e",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_r32ctezx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_rhblgy0z",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_sbyx0lm6",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_sxm7l9xa",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_ugekduaj",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_uxllnywp",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_v9hkz2yn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_ves1ycwx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_vevc4c6g",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_vjpaih9f",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_wbhaespm",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_wfxuhoea",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_wvovwe9h",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_xnbkhhdr",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_xsm7l9xa",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_xu4a5rhj",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_ya4ft0w4",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_yojqa8xn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_ztc6ggyl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe21c_dohbhb5k",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_2se8efxh",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_65gzcss7",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_6ycgarab",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_7zazvlyn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_81yrt3lo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_8zizsafo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_aao3yzhs",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_cjbofhxw",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_cvub6xbb",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_debczeci",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_eaet5qt5",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_fhvpaltk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_g2e6cpnw",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_gomuk3dc",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_gyzlwu5q",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_iadro9bf",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_libht6ua",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_loejka0i",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_myd45weu",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_o9ofysmo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_ogx8u5z6",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_oitavov2",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_pcdmj88b",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_rccxox8p",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_sgabhwa6",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_tgeqdjgk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_vuwtqx0t",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_xc3vwx5a",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_xnbkhhdr",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_xpvamyfz",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_znlqjmih",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "zbeacon",
+      "driver": "contact_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_a0syesf5",
+      "driver": "dimmer_dual_channel",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_la2c2uo9",
+      "driver": "dimmer_dual_channel",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_ykgar0ow",
+      "driver": "dimmer_dual_channel",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "EWELINK",
+      "driver": "generic_diy",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZ321c_4slreunp",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZ321c_fkzihax8",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZb000_42ha4rsc",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZb210_6eed09b9",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZb210_g01ie5wu",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZb210_lnnkh3f9",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZb210_rwy5hexp",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZb210_zmppwawa",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_0zaf1cr8",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_5nldle7w",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_68nvbi09",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_68nvbio9",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_9caxna4s",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_9vpe3fl1",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_axgvo9jh",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_bqcqqjpb",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_cf1sl3tj",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_clrdrnya",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_cpbo62rn",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_eegnwoyw",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_gaj531w3",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_icka1clh",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_jhkttplm",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_nw1r9hp6",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_p6vz3wzt",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_pw7mji0l",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_zah67ekd",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_zxxfv8wi",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_57hjqelq",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_clrdrnya",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_dtzziy1e",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_e5m9c5hl",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_fwondbzy",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_guvc7pdy",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_jktmrpoj",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_lbbg34rj",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_lh3arisb",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_nklqjk62",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_pfayrzcw",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_r0jdjrvi",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_vvvtcehj",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_ycke4deo",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_ztqnh5cg",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_zuq5xxib",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_0zaf1cr8",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_4qznlkbu",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_fwondbzy",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_iilebqoo",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_koxaopnk",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_nklqjk62",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_uqfph8ah",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe600_ogyg1y6b",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe608_c75zqghm",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe608_fmemczv1",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe608_lapuuoke",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe608_xkr8gep3",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZE284_rlytpmij",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_0nauxa0p",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_9cxuhakf",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_bkkmqmyo",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe200_tsxpl0d0",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_1v1dxkck",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_68utemio",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_bkkmqmyo",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_bxoo2swd",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_hlx9tnzb",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_zenj4lxv",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe204_znvwzxkq",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "_TZe284_znvwzxkq",
+      "driver": "switch_1gang",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0b299e7e"
     },
@@ -13338,6 +15756,12 @@
       "branch": "0ed2d556"
     },
     {
+      "mfr": "_TZE284_7zazvlyn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0ed2d556"
+    },
+    {
       "mfr": "_tze284_8zizsafo",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -20670,6 +23094,12 @@
       "branch": "0ed2d556"
     },
     {
+      "mfr": "EWELINK",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0ed2d556"
+    },
+    {
       "mfr": "FEIT",
       "driver": "generic_tuya",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -26185,6 +28615,12 @@
     },
     {
       "mfr": "_tze284_rlytpmij",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0ed2d556"
+    },
+    {
+      "mfr": "_TZE284_rlytpmij",
       "driver": "presence_sensor_radar",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0ed2d556"
@@ -36049,6 +38485,12 @@
     },
     {
       "mfr": "BW-",
+      "driver": "universal_fallback",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0ed2d556"
+    },
+    {
+      "mfr": "EWELINK",
       "driver": "universal_fallback",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0ed2d556"
@@ -51984,6 +54426,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "EWELINK",
+      "driver": "button_wireless_4",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "FEIT",
       "driver": "button_wireless_4",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -61608,6 +64056,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "_TZE284_7zazvlyn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "_tze284_8zizsafo",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -62874,6 +65328,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "EWELINK",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "FEIT",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -64021,6 +66481,12 @@
     },
     {
       "mfr": "YOOLAX",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "zbeacon",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -66804,6 +69270,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "EWELINK",
+      "driver": "contact_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "FEIT",
       "driver": "contact_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -67735,6 +70207,12 @@
     },
     {
       "mfr": "YOOLAX",
+      "driver": "contact_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "zbeacon",
       "driver": "contact_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -89268,6 +91746,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "EWELINK",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "FEIT",
       "driver": "generic_tuya",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -102876,6 +105360,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "EWELINK",
+      "driver": "module_mini_switch",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "FEIT",
       "driver": "module_mini_switch",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -105163,6 +107653,12 @@
     },
     {
       "mfr": "EUROTRONIC",
+      "driver": "motion_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "EWELINK",
       "driver": "motion_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -109453,6 +111949,12 @@
     },
     {
       "mfr": "EUROTRONIC",
+      "driver": "plug_energy_monitor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "EWELINK",
       "driver": "plug_energy_monitor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -116719,6 +119221,12 @@
     },
     {
       "mfr": "_tze284_rlytpmij",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "_TZE284_rlytpmij",
       "driver": "presence_sensor_radar",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -153144,6 +155652,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "EWELINK",
+      "driver": "temphumidsensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "FEIT",
       "driver": "temphumidsensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -157111,6 +159625,12 @@
     },
     {
       "mfr": "BW-",
+      "driver": "universal_fallback",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "EWELINK",
       "driver": "universal_fallback",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -163326,6 +165846,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "EWELINK",
+      "driver": "water_leak_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "FEIT",
       "driver": "water_leak_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -167334,7 +169860,439 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "_TZE284_7zazvlyn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_0hg58wyk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_0j5jma9b",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_1agwnems",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_1ibpyhdc",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_2aaelwxk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_2atgpdho",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_2ekuz3dz",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_2hf7x9n3",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_2imwyigp",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_2m38mh6k",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_2pddnnrk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_2se8efxh",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_3p5ydos3",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_3t91nb6k",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_3towulqd",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_579lguh2",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_7bztmfm1",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_7sjncirf",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_8whxpsiw",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
       "mfr": "_TZe200_8ygsuhe1",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_9cqcpkgb",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_9i9dt8is",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_9p5xmj5r",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_9sfg7gm0",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_a4bpgplm",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_a8sdabtg",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_afycb3cg",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_ahpcyzth",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_aqnazj70",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_atpwqgml",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_auin8mzr",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_bfmfhxra",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_bh3n6gk8",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_bq5c8xfe",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_bynnczcb",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_byzdayie",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_c2fmom5z",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_ckud7u2l",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_cpmgn2cf",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_cqtamhh5",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_ctq0k47x",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_cwnjrr72",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_df04ghrb",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_dfxkcots",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_dq1mfjug",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_dwcarsat",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_e3oitdyu",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_eaac7dkw",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_ebwgzdqq",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_ewxhg6o9",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_fsb6zw01",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_fsow0qsk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_g9a3awaj",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_ga1maeof",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_gbagoilo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_ggev5fsl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_gjldowol",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_gkfbdvyx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_go3tvswy",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_gomuk3dc",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_gubdgai2",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_hggxgsjj",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_hkdl5fmv",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_holel4dk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_hue3yfsn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_husqqvux",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_ikvncluo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_ip2akl4w",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_ji1gn7rw",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_jsaqgakf",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_jva8ink8",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_k6jhsr0q",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "3a27024d"
@@ -167346,7 +170304,175 @@
       "branch": "3a27024d"
     },
     {
+      "mfr": "_TZe200_kccdzaeo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_kds0pmmv",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_khzbklyh",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_kijxnb8q",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_kyfqmmyl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_kzm5w4iz",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_libht6ua",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_lllliz3p",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_llvwkkde",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_lnbfnyxd",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_lpwgshtl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_lsanae15",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_lu01t0zl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_lyetpprm",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_m9skfctm",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_mja3fuja",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_mp902om5",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_mudxchsu",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_myd45weu",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_n8dljorx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_nh9m9emk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_nkjintbl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
       "mfr": "_TZe200_nklqjk62",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_npj9bug3",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_nslr42tt",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_ntcy3xu1",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_ojtqawav",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_ojzhk75b",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_p9zbdqgs",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "3a27024d"
@@ -167358,8 +170484,1322 @@
       "branch": "3a27024d"
     },
     {
+      "mfr": "_TZe200_ppuj1vem",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_pvvbommb",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_qoy0ekbd",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_qq9mpfhw",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_qzaing2g",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_r32ctezx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_rccxox8p",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_rhblgy0z",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_rhgsbacq",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_rks0sgb7",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_ryfmq5rl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_s7rsrtbg",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_sgpeacqp",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_sur6q7ko",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_swaamsoy",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_t5p1vj8r",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_tmszbtzq",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_toeldckg",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_ttcovulf",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_tyffvoij",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_u6x1zyv2",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_uebojraa",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_ugekduaj",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_v6ossqfy",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_v9hkz2yn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_ves1ycwx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_viy9ihs7",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_vucankjx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_vuwtqx0t",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
       "mfr": "_TZe200_vvmbj46n",
       "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_vzekyi4c",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_w4cryh2i",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_wbhaespm",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_wfxuhoea",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_whpb9yts",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_wqashyqo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_wukb7rhc",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_wunufsil",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_wvovwe9h",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_xby0s3ta",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_xlnzk169",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_xpq2rzhq",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_xpvamyfz",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_y8jijhba",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_ya4ft0w4",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_yh7aoahi",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_yjryxpot",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_yojqa8xn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_yvx5lh6k",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_ywdxldoj",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_znbl8dj5",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_znlqjmih",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_ztc6ggyl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_2imwyigp",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_3regm3h6",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_3t91nb6k",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_7bztmfm1",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_7gclukjs",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_81yrt3lo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_9qhuzgo0",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_ac0fhfiq",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_atpwqgml",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_bmdsp6bs",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_chbyv06x",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_cjbofhxw",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_cvub6xbb",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_dcnsggvz",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_debczeci",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_dzuqwsyg",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_eekpf0ft",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_gbagoilo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_gkfbdvyx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_gomuk3dc",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_hcxvyxa5",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_iaeejhvf",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_ijxvkhd0",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_kyhbrfyl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_laokfqwu",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_lawxy9e2",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_loejka0i",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_lsanae15",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_lzriup1j",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_mtoaryre",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_mvtclclq",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_n9ctkb6j",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_nbkshs6k",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_no6qtgtl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_ntcy3xu1",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_ogx8u5z6",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_pcdmj88b",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_q9xty0ad",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_qasjif9e",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_r32ctezx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_rhblgy0z",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_sbyx0lm6",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_sxm7l9xa",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_ugekduaj",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_uxllnywp",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_v9hkz2yn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_ves1ycwx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_vevc4c6g",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_vjpaih9f",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_wbhaespm",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_wfxuhoea",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_wvovwe9h",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_xnbkhhdr",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_xsm7l9xa",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_xu4a5rhj",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_ya4ft0w4",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_yojqa8xn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_ztc6ggyl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe21c_dohbhb5k",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_2se8efxh",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_65gzcss7",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_6ycgarab",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_7zazvlyn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_81yrt3lo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_8zizsafo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_aao3yzhs",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_cjbofhxw",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_cvub6xbb",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_debczeci",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_eaet5qt5",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_fhvpaltk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_g2e6cpnw",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_gomuk3dc",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_gyzlwu5q",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_iadro9bf",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_libht6ua",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_loejka0i",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_myd45weu",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_o9ofysmo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_ogx8u5z6",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_oitavov2",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_pcdmj88b",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_rccxox8p",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_sgabhwa6",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_tgeqdjgk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_vuwtqx0t",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_xc3vwx5a",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_xnbkhhdr",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_xpvamyfz",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_znlqjmih",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_iba1ckek",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_jfw0a4aa",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_wzk0x7fq",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "zbeacon",
+      "driver": "contact_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_a0syesf5",
+      "driver": "dimmer_dual_channel",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_la2c2uo9",
+      "driver": "dimmer_dual_channel",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_ykgar0ow",
+      "driver": "dimmer_dual_channel",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "EWELINK",
+      "driver": "generic_diy",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZ321c_4slreunp",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZ321c_fkzihax8",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZb000_42ha4rsc",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZb210_6eed09b9",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZb210_g01ie5wu",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZb210_lnnkh3f9",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZb210_rwy5hexp",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZb210_zmppwawa",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_0zaf1cr8",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_5nldle7w",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_68nvbi09",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_68nvbio9",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_9caxna4s",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_9vpe3fl1",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_axgvo9jh",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_bqcqqjpb",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_cf1sl3tj",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_clrdrnya",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_cpbo62rn",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_eegnwoyw",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_gaj531w3",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_icka1clh",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_jhkttplm",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_nw1r9hp6",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_p6vz3wzt",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_pw7mji0l",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_zah67ekd",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_zxxfv8wi",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_57hjqelq",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_clrdrnya",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_dtzziy1e",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_e5m9c5hl",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_fwondbzy",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_guvc7pdy",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_jktmrpoj",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_lbbg34rj",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_lh3arisb",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_nklqjk62",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_pfayrzcw",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_r0jdjrvi",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_vvvtcehj",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_ycke4deo",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_ztqnh5cg",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_zuq5xxib",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_0zaf1cr8",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_4qznlkbu",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_fwondbzy",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_iilebqoo",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_koxaopnk",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_nklqjk62",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_uqfph8ah",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe600_ogyg1y6b",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe608_c75zqghm",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe608_fmemczv1",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe608_lapuuoke",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe608_xkr8gep3",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZE284_rlytpmij",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_0nauxa0p",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_9cxuhakf",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_bkkmqmyo",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe200_tsxpl0d0",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_1v1dxkck",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_68utemio",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_bkkmqmyo",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_bxoo2swd",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_hlx9tnzb",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_zenj4lxv",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe204_znvwzxkq",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "_TZe284_znvwzxkq",
+      "driver": "switch_1gang",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "3a27024d"
     },
@@ -167376,6 +171816,24 @@
       "branch": "3a27024d"
     },
     {
+      "mfr": "_TZE284_7zazvlyn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b4ed9ce"
+    },
+    {
+      "mfr": "EWELINK",
+      "driver": "generic_diy",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b4ed9ce"
+    },
+    {
+      "mfr": "_TZE284_rlytpmij",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b4ed9ce"
+    },
+    {
       "mfr": "tuyatec-prhs1rsd",
       "driver": "temphumidsensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -167388,7 +171846,451 @@
       "branch": "3b4ed9ce"
     },
     {
+      "mfr": "_TZE284_7zazvlyn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_0hg58wyk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_0j5jma9b",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_1agwnems",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_1ibpyhdc",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_2aaelwxk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_2atgpdho",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_2ekuz3dz",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_2hf7x9n3",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_2imwyigp",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_2m38mh6k",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_2pddnnrk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_2se8efxh",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_3p5ydos3",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_3t91nb6k",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_3towulqd",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_579lguh2",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_7bztmfm1",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_7sjncirf",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_8whxpsiw",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
       "mfr": "_TZe200_8ygsuhe1",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_9cqcpkgb",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_9i9dt8is",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_9p5xmj5r",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_9sfg7gm0",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_a4bpgplm",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_a8sdabtg",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_afycb3cg",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_ahpcyzth",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_aqnazj70",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_atpwqgml",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_auin8mzr",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_bfmfhxra",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_bh3n6gk8",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_bq5c8xfe",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_bynnczcb",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_byzdayie",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_c2fmom5z",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_ckud7u2l",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_cpmgn2cf",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_cqtamhh5",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_ctq0k47x",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_cwnjrr72",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_df04ghrb",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_dfxkcots",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_dq1mfjug",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_dwcarsat",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_e3oitdyu",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_eaac7dkw",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_ebwgzdqq",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_ewxhg6o9",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_fsb6zw01",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_fsow0qsk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_g9a3awaj",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_ga1maeof",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_gbagoilo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_ggev5fsl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_gjldowol",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_gkfbdvyx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_go3tvswy",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_gomuk3dc",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_gubdgai2",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_hggxgsjj",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_hkdl5fmv",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_holel4dk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_hue3yfsn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_husqqvux",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_iba1ckek",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_ikvncluo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_ip2akl4w",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_jfw0a4aa",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_ji1gn7rw",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_jsaqgakf",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_jva8ink8",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_k6jhsr0q",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "3b940038"
@@ -167400,7 +172302,175 @@
       "branch": "3b940038"
     },
     {
+      "mfr": "_TZe200_kccdzaeo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_kds0pmmv",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_khzbklyh",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_kijxnb8q",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_kyfqmmyl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_kzm5w4iz",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_libht6ua",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_lllliz3p",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_llvwkkde",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_lnbfnyxd",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_lpwgshtl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_lsanae15",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_lu01t0zl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_lyetpprm",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_m9skfctm",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_mja3fuja",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_mp902om5",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_mudxchsu",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_myd45weu",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_n8dljorx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_nh9m9emk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_nkjintbl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
       "mfr": "_TZe200_nklqjk62",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_npj9bug3",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_nslr42tt",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_ntcy3xu1",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_ojtqawav",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_ojzhk75b",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_p9zbdqgs",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "3b940038"
@@ -167412,8 +172482,1322 @@
       "branch": "3b940038"
     },
     {
+      "mfr": "_TZe200_ppuj1vem",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_pvvbommb",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_qoy0ekbd",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_qq9mpfhw",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_qzaing2g",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_r32ctezx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_rccxox8p",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_rhblgy0z",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_rhgsbacq",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_rks0sgb7",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_ryfmq5rl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_s7rsrtbg",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_sgpeacqp",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_sur6q7ko",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_swaamsoy",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_t5p1vj8r",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_tmszbtzq",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_toeldckg",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_ttcovulf",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_tyffvoij",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_u6x1zyv2",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_uebojraa",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_ugekduaj",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_v6ossqfy",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_v9hkz2yn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_ves1ycwx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_viy9ihs7",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_vucankjx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_vuwtqx0t",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
       "mfr": "_TZe200_vvmbj46n",
       "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_vzekyi4c",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_w4cryh2i",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_wbhaespm",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_wfxuhoea",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_whpb9yts",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_wqashyqo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_wukb7rhc",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_wunufsil",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_wvovwe9h",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_wzk0x7fq",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_xby0s3ta",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_xlnzk169",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_xpq2rzhq",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_xpvamyfz",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_y8jijhba",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_ya4ft0w4",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_yh7aoahi",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_yjryxpot",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_yojqa8xn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_yvx5lh6k",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_ywdxldoj",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_znbl8dj5",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_znlqjmih",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_ztc6ggyl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_2imwyigp",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_3regm3h6",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_3t91nb6k",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_7bztmfm1",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_7gclukjs",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_81yrt3lo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_9qhuzgo0",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_ac0fhfiq",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_atpwqgml",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_bmdsp6bs",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_chbyv06x",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_cjbofhxw",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_cvub6xbb",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_dcnsggvz",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_debczeci",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_dzuqwsyg",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_eekpf0ft",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_gbagoilo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_gkfbdvyx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_gomuk3dc",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_hcxvyxa5",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_iaeejhvf",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_ijxvkhd0",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_kyhbrfyl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_laokfqwu",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_lawxy9e2",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_loejka0i",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_lsanae15",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_lzriup1j",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_mtoaryre",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_mvtclclq",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_n9ctkb6j",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_nbkshs6k",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_no6qtgtl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_ntcy3xu1",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_ogx8u5z6",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_pcdmj88b",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_q9xty0ad",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_qasjif9e",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_r32ctezx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_rhblgy0z",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_sbyx0lm6",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_sxm7l9xa",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_ugekduaj",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_uxllnywp",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_v9hkz2yn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_ves1ycwx",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_vevc4c6g",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_vjpaih9f",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_wbhaespm",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_wfxuhoea",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_wvovwe9h",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_xnbkhhdr",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_xsm7l9xa",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_xu4a5rhj",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_ya4ft0w4",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_yojqa8xn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_ztc6ggyl",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe21c_dohbhb5k",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_2se8efxh",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_65gzcss7",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_6ycgarab",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_7zazvlyn",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_81yrt3lo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_8zizsafo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_aao3yzhs",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_cjbofhxw",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_cvub6xbb",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_debczeci",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_eaet5qt5",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_fhvpaltk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_g2e6cpnw",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_gomuk3dc",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_gyzlwu5q",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_iadro9bf",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_libht6ua",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_loejka0i",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_myd45weu",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_o9ofysmo",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_ogx8u5z6",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_oitavov2",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_pcdmj88b",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_rccxox8p",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_sgabhwa6",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_tgeqdjgk",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_vuwtqx0t",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_xc3vwx5a",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_xnbkhhdr",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_xpvamyfz",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_znlqjmih",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "zbeacon",
+      "driver": "contact_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_a0syesf5",
+      "driver": "dimmer_dual_channel",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_la2c2uo9",
+      "driver": "dimmer_dual_channel",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_ykgar0ow",
+      "driver": "dimmer_dual_channel",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "EWELINK",
+      "driver": "generic_diy",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZ321c_4slreunp",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZ321c_fkzihax8",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZb000_42ha4rsc",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZb210_6eed09b9",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZb210_g01ie5wu",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZb210_lnnkh3f9",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZb210_rwy5hexp",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZb210_zmppwawa",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_0zaf1cr8",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_5nldle7w",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_68nvbi09",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_68nvbio9",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_9caxna4s",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_9vpe3fl1",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_axgvo9jh",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_bqcqqjpb",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_cf1sl3tj",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_clrdrnya",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_cpbo62rn",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_eegnwoyw",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_gaj531w3",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_icka1clh",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_jhkttplm",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_nw1r9hp6",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_p6vz3wzt",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_pw7mji0l",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_zah67ekd",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_zxxfv8wi",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_57hjqelq",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_clrdrnya",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_dtzziy1e",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_e5m9c5hl",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_fwondbzy",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_guvc7pdy",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_jktmrpoj",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_lbbg34rj",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_lh3arisb",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_nklqjk62",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_pfayrzcw",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_r0jdjrvi",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_vvvtcehj",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_ycke4deo",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_ztqnh5cg",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_zuq5xxib",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_0zaf1cr8",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_4qznlkbu",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_fwondbzy",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_iilebqoo",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_koxaopnk",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_nklqjk62",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_uqfph8ah",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe600_ogyg1y6b",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe608_c75zqghm",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe608_fmemczv1",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe608_lapuuoke",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe608_xkr8gep3",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZE284_rlytpmij",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_0nauxa0p",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_9cxuhakf",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_bkkmqmyo",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe200_tsxpl0d0",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_1v1dxkck",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_68utemio",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_bkkmqmyo",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_bxoo2swd",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_hlx9tnzb",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_zenj4lxv",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe204_znvwzxkq",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "_TZe284_znvwzxkq",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "tuyatec-prhs1rsd",
+      "driver": "temphumidsensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3b940038"
+    },
+    {
+      "mfr": "tuyatec-yg5dcbfu",
+      "driver": "temphumidsensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "3b940038"
     }

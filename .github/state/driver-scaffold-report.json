@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-28T03:47:27.665Z",
+  "timestamp": "2026-03-29T02:16:29.780Z",
   "conflicts": [
     {
       "pid": "TS0501B",
@@ -131,6 +131,33 @@
       "classes": [
         "sensor",
         "remote",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "TS0002",
+      "drivers": [
+        "button_wireless_2",
+        "switch_2gang",
+        "usb_dongle_dual_repeater",
+        "wall_switch_2gang_1way"
+      ],
+      "classes": [
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "TS0012",
+      "drivers": [
+        "button_wireless_2",
+        "switch_2gang",
+        "wall_switch_2gang_1way"
+      ],
+      "classes": [
+        "sensor",
         "socket"
       ],
       "crossClass": true
@@ -293,17 +320,6 @@
       "drivers": [
         "contact_sensor",
         "presence_sensor_radar"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "RH3001",
-      "drivers": [
-        "contact_sensor",
-        "water_leak_sensor"
       ],
       "classes": [
         "sensor"
@@ -630,6 +646,8 @@
       "drivers": [
         "scene_switch_2",
         "scene_switch_3",
+        "switch_1gang",
+        "switch_2gang",
         "switch_4gang",
         "switch_wall_6gang",
         "wall_switch_4gang_1way"
@@ -666,34 +684,10 @@
     {
       "pid": "TS0003",
       "drivers": [
-        "switch_1gang",
         "switch_2gang",
         "switch_3gang",
         "usb_dongle_triple",
         "wall_switch_3gang_1way"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "TS0002",
-      "drivers": [
-        "switch_2gang",
-        "usb_dongle_dual_repeater",
-        "wall_switch_2gang_1way"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "TS0012",
-      "drivers": [
-        "switch_2gang",
-        "wall_switch_2gang_1way"
       ],
       "classes": [
         "socket"
@@ -706,28 +700,6 @@
         "switch_2gang",
         "switch_3gang",
         "wall_switch_3gang_1way"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "TS0004",
-      "drivers": [
-        "switch_4gang",
-        "wall_switch_4gang_1way"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "TS0014",
-      "drivers": [
-        "switch_4gang",
-        "wall_switch_4gang_1way"
       ],
       "classes": [
         "socket"
@@ -754,8 +726,8 @@
   "summary": {
     "ourDrivers": 188,
     "johanDrivers": 113,
-    "pidConflicts": 62,
-    "crossClassConflicts": 21,
+    "pidConflicts": 59,
+    "crossClassConflicts": 23,
     "uncoveredFPGroups": 0,
     "missingDriverTypes": 0,
     "scaffolded": 0,

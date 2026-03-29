@@ -1,8 +1,8 @@
 {
-  "version": "5.11.140",
-  "date": "2026-03-26",
+  "version": "5.11.138",
+  "date": "2026-03-29",
   "drivers": 188,
-  "fingerprints": 4746,
+  "fingerprints": 4328,
   "decisions": [
     {
       "device": "USB Zigbee Dongle (USB-powered relay)",
@@ -33,18 +33,6 @@
       "driver": "switch_Ngang",
       "wrongDriver": "N/A",
       "reason": "Check if device is ZCL-only or Tuya DP — use interview to determine protocol"
-    },
-    {
-      "device": "Bot response policy v5.11.140",
-      "driver": "N/A",
-      "wrongDriver": "N/A",
-      "reason": "NEVER say 'already supported'. Say 'Fingerprint(s) found'. NEVER auto-close issues. User-truth-absolute."
-    },
-    {
-      "device": "TS0201 ZCL sensors (_TZ3000_bgsigers)",
-      "driver": "lcdtemphumidsensor",
-      "wrongDriver": "N/A",
-      "reason": "HybridSensorBase humidity cluster name varies (relativeHumidity vs relativeHumidityMeasurement). Fixed in v5.11.139."
     },
     {
       "device": "Immax NEO Smart Water Timer (_TZE200_xlppj4f5)",
@@ -99,10 +87,10 @@
     {
       "name": "Pieter_Pessers",
       "devices": "BSEED 1/2/3-gang `_TZ3000_l9brjwau` `_TZ3000_blhvsaqf` `_TZ3000_qkixdnon`",
-      "status": "FIXED v5.11.140",
+      "status": "FIXED v5.5.970",
       "latestFix": {
-        "ver": "5.11.140",
-        "fix": "6 BSEED ZCL FPs added to switch_1gang/2gang/3gang (GH#1337/#1338/#1339)"
+        "ver": "5.5.970",
+        "fix": "Fingerprints added"
       }
     },
     {
@@ -245,14 +233,14 @@
     {
       "user": "FrankP",
       "device": "IR remote learning mode",
-      "status": "FIXED v5.11.16",
-      "note": "5s guard against premature onOff=false during learn mode (diag b6635c8c) — #1471"
+      "status": "NEW BUG",
+      "note": "Learning button turns off immediately (diag b6635c8c) — #1471"
     },
     {
       "user": "Peter_Kawa",
       "device": "Soil sensor capability",
-      "status": "IMPLEMENTED",
-      "note": "measure_humidity.soil with proper title 'Soil Moisture' + air humidity fallback. measure_ec for fertilizer. #1473"
+      "status": "ENHANCEMENT",
+      "note": "Change measure_humidity.soil → measure_moisture (standard cap) — #1473"
     },
     {
       "user": "7Hills",
@@ -319,13 +307,13 @@
     {
       "id": "battery",
       "pattern": "False Battery Alert / Missing Battery",
-      "count": 25,
+      "count": 30,
       "priority": "high"
     },
     {
       "id": "pairing",
       "pattern": "Pairing Failure",
-      "count": 7,
+      "count": 8,
       "priority": "high"
     },
     {
@@ -372,8 +360,8 @@
     }
   ],
   "interviews": {
-    "total": 141,
-    "fps": 114
+    "total": 160,
+    "fps": 126
   },
   "invertedMfrs": [
     "_TZ3000_26fmupbb",
