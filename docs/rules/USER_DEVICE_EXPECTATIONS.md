@@ -1878,3 +1878,11 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 ---
 
 *Auto-generated on 2026-03-29 from v5.11.138 — 4,328+ fingerprints across 188 drivers*
+
+
+## Auto-discovered from GitHub (2026-03-29)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| example + TS004F | JohanBendz/com.tuya.zigbee#1356 | bug_report |
+| vision + TS004F | JohanBendz/com.tuya.zigbee#1356 | bug_report |
