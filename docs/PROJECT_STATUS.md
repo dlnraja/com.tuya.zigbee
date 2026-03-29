@@ -8,7 +8,7 @@
 |--------|-------|
 | Version | v5.11.138 |
 | Drivers | 188 |
-| Fingerprints | 4,328 |
+| Fingerprints | 4,183 |
 | Last Updated | 2026-03-29 |
 
 ## Drivers by Category
@@ -16,10 +16,10 @@
 | Category | Count |
 |----------|-------|
 | socket | 47 |
-| sensor | 44 |
+| sensor | 43 |
 | light | 21 |
 | remote | 17 |
-| other | 15 |
+| other | 14 |
 | thermostat | 11 |
 | fan | 10 |
 | lock | 4 |
