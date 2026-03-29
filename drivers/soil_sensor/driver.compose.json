@@ -98,24 +98,7 @@
       "CS-201Z",
       "TS0601",
       "Arteco"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          1,
-          4,
-          5,
-          1026,
-          1029,
-          61184
-        ],
-        "bindings": [
-          1026,
-          1029
-        ]
-      }
-    }
+    ]
   },
   "settings": [
     {
@@ -276,4 +259,4 @@
   "connectivity": [
     "zigbee"
   ]
-}
+}\n
