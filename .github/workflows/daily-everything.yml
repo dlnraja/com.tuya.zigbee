@@ -179,7 +179,12 @@ jobs:
             echo "=== Running Gmail Diagnostics ==="
             node .github/scripts/fetch-gmail-diagnostics.js || true
           else
-            echo "Skipping Gmail (only runs at 08:00+14:00+20:00 UTC)"
+            # Also allow manual dispatch to run gmail diagnostics
+            if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+              node .github/scripts/fetch-gmail-diagnostics.js || true
+            else
+              echo "Skipping Gmail"
+            fi
           fi
 
       # ===== 6. NIGHTLY: Scan forum+GitHub data (no replies — forum-responder handles that) =====

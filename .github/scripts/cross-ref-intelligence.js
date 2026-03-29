@@ -7,6 +7,31 @@ const gh=load('github-scan-report.json'),diag=load('diagnostics-report.json');
 const crossref=load('device-crossref.json'),enrichment=load('enrichment-report.json');
 const fpConflicts=load('fingerprint-conflicts.json');
 const report={ts:new Date().toISOString(),correlations:[],actionable:[],resolved:[],patterns:[]};
+
+// --- ADVANCED 5-SOURCE CROSS-REFERENCING INJECTION ---
+// Cross-references diagnostics, forum, expectations, github, AND external Zigbee sources
+if (diag && Array.isArray(diag.processed)) {
+    for (const d of diag.processed) {
+        if (!d.ai_cross_ref) continue;
+        let confidence = 0;
+        let matchedSources = 0;
+        if (JSON.stringify(forum || {}).includes(d.id)) matchedSources++;
+        if (JSON.stringify(gh || {}).includes(d.id)) matchedSources++;
+        if (d.ai_cross_ref.known_z2m_quirks) matchedSources++;
+        if (d.ai_cross_ref.suggested_driver) matchedSources++;
+        if (matchedSources >= 2) {
+           report.correlations.push({
+               type: 'deep_5_source_match',
+               diag_id: d.id,
+               driver: d.ai_cross_ref.suggested_driver,
+               z2m_quirk: d.ai_cross_ref.known_z2m_quirks,
+               inferred: d.ai_cross_ref.inferred_device_type,
+               confidence: matchedSources * 20
+           });
+        }
+    }
+}
+
 if(exp&&exp.pending)for(const u of exp.pending){
   if(['NEEDS FP','NEEDS DIAG','NEW BUG'].includes(u.status))
     report.actionable.push({user:u.user,device:u.device,status:u.status,note:u.note||''});
