@@ -56,21 +56,7 @@
     ],
     "productId": [
       "TS0601"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          61184
-        ],
-        "bindings": [
-          6
-        ]
-      }
-    }
+    ]
   },
   "images": {
     "small": "drivers/hvac_controller/assets/images/small.png",

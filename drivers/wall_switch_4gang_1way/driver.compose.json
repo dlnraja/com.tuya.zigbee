@@ -76,46 +76,6 @@
     "productId": [
       "TS0726"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          57344,
-          57345
-        ]
-      },
-      "2": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6
-        ]
-      },
-      "3": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6
-        ]
-      },
-      "4": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6
-        ]
-      }
-    },
     "learnmode": {
       "instruction": {
         "en": "Press and hold the reset button for 5 seconds until the LED blinks, or toggle 3 times quickly.",

@@ -22,25 +22,7 @@
     "productId": [
       "TS0503",
       "TS0504"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          8,
-          768
-        ],
-        "bindings": [
-          6,
-          8,
-          768
-        ]
-      }
-    }
+    ]
   },
   "images": {
     "small": "drivers/led_controller_rgb/assets/images/small.png",

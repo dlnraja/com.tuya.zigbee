@@ -82,16 +82,7 @@
     "productId": [
       "TS0601",
       "TS0601_tank"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          61184
-        ],
-        "bindings": []
-      }
-    }
+    ]
   },
   "energy": {
     "batteries": [

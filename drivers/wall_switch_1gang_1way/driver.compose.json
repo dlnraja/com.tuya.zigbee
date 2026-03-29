@@ -40,22 +40,6 @@
       "TS0001",
       "TS0011"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          57344,
-          57345
-        ],
-        "bindings": [
-          6
-        ]
-      }
-    },
     "learnmode": {
       "instruction": {
         "en": "Press and hold the reset button for 5 seconds until the LED blinks, or toggle the switch on/off 3 times quickly.",

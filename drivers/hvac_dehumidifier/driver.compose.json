@@ -83,15 +83,6 @@
       "TS0601_dehum",
       "TS0601"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          61184
-        ],
-        "bindings": []
-      }
-    },
     "learnmode": {
       "image": "/drivers/hvac_dehumidifier/assets/learnmode.svg",
       "instruction": {

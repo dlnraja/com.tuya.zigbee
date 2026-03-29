@@ -159,24 +159,6 @@
       "SMD9300",
       "CK-BL702-AL-01(7009_Z102LG03-1)"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          8,
-          768
-        ],
-        "bindings": [
-          6,
-          8,
-          768
-        ]
-      }
-    },
     "learnmode": {
       "image": "/drivers/bulb_rgbw/assets/learnmode.svg",
       "instruction": {

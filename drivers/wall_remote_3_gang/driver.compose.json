@@ -35,33 +35,6 @@
     "productId": [
       "TS0043"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          6
-        ],
-        "bindings": [
-          6
-        ]
-      },
-      "2": {
-        "clusters": [
-          6
-        ],
-        "bindings": [
-          6
-        ]
-      },
-      "3": {
-        "clusters": [
-          6
-        ],
-        "bindings": [
-          6
-        ]
-      }
-    },
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {

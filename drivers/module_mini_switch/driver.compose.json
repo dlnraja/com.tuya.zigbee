@@ -50,21 +50,6 @@
       "ZBMINIL2-R2",
       "ZBMINIR2-R2"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          61184
-        ],
-        "bindings": [
-          6
-        ]
-      }
-    },
     "learnmode": {
       "image": "/drivers/module_mini_switch/assets/learnmode.svg",
       "instruction": {

@@ -30,16 +30,6 @@
     "productId": [
       "TS0601_gw"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          3,
-          61184
-        ],
-        "bindings": []
-      }
-    },
     "learnmode": {
       "image": "/drivers/gateway_zigbee_bridge/assets/learnmode.svg",
       "instruction": {

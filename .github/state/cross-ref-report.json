@@ -1,5 +1,5 @@
 {
-  "ts": "2026-03-29T06:52:28.511Z",
+  "ts": "2026-03-29T09:01:18.401Z",
   "correlations": [],
   "actionable": [
     {
@@ -31,6 +31,11 @@
       "device": "`_TZE200_3p5ydos3` dimmer",
       "status": "NEEDS DIAG",
       "note": "Dimmer errors on control. T89271#660. Need diag log."
+    },
+    {
+      "user": "JJ10",
+      "fp": "radar_TS0601",
+      "status": "DEFERRED"
     }
   ],
   "resolved": [],
@@ -74,23 +79,9 @@
     {
       "driver": "generic_diy",
       "actions": 7
-    },
-    {
-      "driver": "radiator_controller",
-      "actions": 4
-    },
-    {
-      "driver": "wifi_camera",
-      "actions": 3
-    },
-    {
-      "driver": "wifi_heater",
-      "actions": 2
     }
   ],
   "mainsBatteryIssues": [
-    "climate_sensor",
-    "smoke_detector_advanced",
-    "soil_sensor"
+    "climate_sensor"
   ]
 }

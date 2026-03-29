@@ -44,20 +44,6 @@
       "TRI-K1ZR",
       "EDM-1ZBA-EU"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          4,
-          5,
-          61184
-        ],
-        "bindings": [
-          25,
-          10
-        ]
-      }
-    },
     "learnmode": {
       "instruction": {
         "en": "Toggle the switch to start pairing.\n\nIf pairing does not automatically start, try resetting the device by holding the button for 10 seconds until the LED flashes rapidly.",
