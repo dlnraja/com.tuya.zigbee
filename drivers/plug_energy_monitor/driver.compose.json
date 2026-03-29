@@ -213,21 +213,6 @@
       "S40ZBTPG",
       "S60ZBTPF-R2"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          6,
-          1794,
-          2820
-        ],
-        "bindings": [
-          6,
-          1794,
-          2820
-        ]
-      }
-    },
     "learnmode": {
       "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
       "instruction": {

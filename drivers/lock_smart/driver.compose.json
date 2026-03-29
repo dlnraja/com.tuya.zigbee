@@ -39,15 +39,6 @@
       "TS0601_smartlock",
       "TS0601"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          61184
-        ],
-        "bindings": []
-      }
-    },
     "learnmode": {
       "image": "/drivers/lock_smart/assets/learnmode.svg",
       "instruction": {

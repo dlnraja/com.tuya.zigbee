@@ -52,21 +52,7 @@
       "TS0601",
       "ZG-103ZL",
       "ZG-103Z"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          1,
-          1280,
-          61184
-        ],
-        "bindings": [
-          1,
-          1280
-        ]
-      }
-    }
+    ]
   },
   "images": {
     "small": "drivers/vibration_sensor/assets/images/small.png",
