@@ -216,7 +216,7 @@ async function readViaIMAP(opts = {}) {
   if (ge && hp && !pairs.find(p => p[0] === ge && p[1] === hp)) pairs.push([ge, hp]);
   if (he && gp && !pairs.find(p => p[0] === he && p[1] === gp)) pairs.push([he, gp]);
   if (!pairs.length) { console.log('[IMAP] No credentials found'); return null }
-  const since = (opts.afterDate || new Date(Date.now() - 7 * 864e5)).toISOString().split('T')[0];
+  const since = (opts.afterDate || new Date(Date.now() - 30 * 864e5)).toISOString().split('T')[0];
   let c = null;
   for (const [u, p] of pairs) {
     console.log('[IMAP] Trying', u, 'since', since);
@@ -235,7 +235,7 @@ async function readViaIMAP(opts = {}) {
       const seqSet = new Set();
       for (const kw of kws) { try { (await c.search({ since: new Date(since), subject: kw })).forEach(s => seqSet.add(s)) } catch {} }
       for (const fr of senders) { try { (await c.search({ since: new Date(since), from: fr })).forEach(s => seqSet.add(s)) } catch {} }
-      for (const bk of ['_TZE200', '_TZE204', '_TZE284', '_TZ3000', 'TS0601', 'diagnostic report', 'Homey', 'crash log', 'device error']) {
+      for (const bk of ['_TZE200', '_TZE204', '_TZE284', '_TZ3000', 'TS0601', 'diagnostic report', 'Homey', 'crash log', 'device error', 'report id', 'diagnostic log', 'report', 'issue']) {
         try { (await c.search({ since: new Date(since), body: bk })).forEach(s => seqSet.add(s)) } catch {}
       }
       const seqs = [...seqSet].sort((a, b) => b - a).slice(0, opts.maxResults || 200);

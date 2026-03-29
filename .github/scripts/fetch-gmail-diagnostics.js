@@ -98,7 +98,7 @@ function parse(t){
     .forEach(p=>{let m;while((m=p.exec(t)))errs.push(m[1].trim())});
   const dn=t.match(/(?:device|driver)[:\s]+["']?([a-z0-9_-]{3,30})["']?/gi)||[];
   dn.forEach(d=>{const m=d.match(/[:\s]+["']?([a-z0-9_-]{3,30})["']?$/i);if(m)devNames.push(m[1])});
-  const rid=(t.match(/report.?id[:\s]+([a-f0-9-]{8,})/i)||[])[1]||null;
+  const rid=(t.match(/(?:report.?id[:\s]+)?([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})/i)||t.match(/report.?id[:\s]+([a-f0-9-]{8,})/i)||[])[1]||null;
   const hv=(t.match(/homey.?(?:firmware|version|fw)[:\s]+([0-9.]{3,12})/i)||[])[1]||null;
   const av=(t.match(/(?:app|tuya).?version[:\s]+([0-9.]{3,12})/i)||[])[1]||null;
   // v5.13.1: KB pattern matching for known bugs
