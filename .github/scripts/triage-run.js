@@ -63,13 +63,21 @@ const fps=loadFingerprints();
 console.log(`Loaded ${fps.size} fingerprints. Scanning ${REPO}...`);
 const summary=[];
 
+
+// v6.0: Detect dlnraja's own posts - don't auto-respond to owner
+function isOwnerPost(it) {
+  try {
+    const author = it.user?.login || '';
+    return author.toLowerCase() === 'dlnraja';
+  } catch { return false; }
+}
 // Issues
 const issues=JSON.parse(gh(`issue list -R ${REPO} -s open -L 50 --json number,title,body`));
 let iTriaged=0,iCommented=0,iClosed=0;
 for(const it of issues){
   await sleep(400); // Rate-limit: 0.4s between API calls
   const alreadyTriaged=wasTriaged(it.number);
-  if(alreadyTriaged){
+  if(alreadyTriaged||isOwnerPost(it)){
     iTriaged++;
     // v5.11.47: Stale sweep — close already-triaged items where all FPs are supported
     const mfrs2=extractMfrFromText(`${it.title||''} ${it.body||''}`);
@@ -108,7 +116,7 @@ let pTriaged=0,pCommented=0,pClosed=0;
 for(const pr of prs){
   await sleep(400); // Rate-limit: 0.4s between API calls
   const alreadyTriaged2=wasTriaged(pr.number);
-  if(alreadyTriaged2){
+  if(alreadyTriaged2||isOwnerPost(pr)){
     pTriaged++;
     // v5.11.47: Stale sweep — close already-triaged PRs where all FPs supported
     const mfrs3=extractMfrFromText(`${pr.title||''} ${pr.body||''}`);
