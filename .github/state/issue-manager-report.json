@@ -1,69 +1,12 @@
 {
-  "timestamp": "2026-03-29T01:31:58.466Z",
+  "timestamp": "2026-03-29T05:05:09.772Z",
   "appVersion": "5.11.138",
   "responded": 0,
   "closed": 0,
   "labeled": 0,
-  "issuesProcessed": 106,
-  "prsProcessed": 36,
-  "skipped": 104,
-  "newFingerprints": [
-    {
-      "fp": "vision + TS0601",
-      "source": "dlnraja/com.tuya.zigbee#177",
-      "type": "bug_report"
-    },
-    {
-      "fp": "vision + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#177",
-      "type": "bug_report"
-    },
-    {
-      "fp": "test + TS0601",
-      "source": "dlnraja/com.tuya.zigbee#177",
-      "type": "bug_report"
-    },
-    {
-      "fp": "test + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#177",
-      "type": "bug_report"
-    },
-    {
-      "fp": "_TZE204_bvfld3xc + generic",
-      "source": "JohanBendz/com.tuya.zigbee#1355",
-      "type": "device_request"
-    },
-    {
-      "fp": "example + TS0601",
-      "source": "JohanBendz/com.tuya.zigbee#1355",
-      "type": "device_request"
-    },
-    {
-      "fp": "example + generic",
-      "source": "JohanBendz/com.tuya.zigbee#1355",
-      "type": "device_request"
-    },
-    {
-      "fp": "router + TS0601",
-      "source": "JohanBendz/com.tuya.zigbee#1355",
-      "type": "device_request"
-    },
-    {
-      "fp": "router + generic",
-      "source": "JohanBendz/com.tuya.zigbee#1355",
-      "type": "device_request"
-    },
-    {
-      "fp": "vision + TS0601",
-      "source": "JohanBendz/com.tuya.zigbee#1355",
-      "type": "device_request"
-    },
-    {
-      "fp": "vision + generic",
-      "source": "JohanBendz/com.tuya.zigbee#1355",
-      "type": "device_request"
-    }
-  ],
-  "evolutionSummary": "In the recent project evolution, we identified 11 new feature proposals (FPs) through active GitHub issue and pull request management. Key discoveries include multiple device configurations such as \"vision + TS0601\" and \"vision + Arteco,\" both reported as bugs in issue #177. Additionally, device requests for \"_TZE204_bvfld3xc + generic\" and various configurations involving TS0601 were documented in issue #1355.\n\nThroughout this period, we processed a total of 106 issues and 36 pull requests, reflecting our commitment to addressing community feedback and enhancing device compatibility. While no issues were closed or responded to, the focus remains on resolving the reported bugs and fulfilling device requests.\n\nAction items moving forward include prioritizing the resolution of the identified bugs and implementing the requested device configurations to improve overall functionality and user experience. Continued engagement with the community will be essential to ensure that all concerns are addressed effectively.",
-  "bugInvestigations": 2
+  "issuesProcessed": 200,
+  "prsProcessed": 35,
+  "skipped": 200,
+  "newFingerprints": [],
+  "evolutionSummary": null
 }
