@@ -249,15 +249,6 @@
     "productId": [
       "TS0601_generic"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          61184
-        ],
-        "bindings": []
-      }
-    },
     "learnmode": {
       "image": "/drivers/generic_tuya/assets/learnmode.svg",
       "instruction": {

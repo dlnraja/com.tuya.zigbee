@@ -18,26 +18,7 @@
     ],
     "productId": [
       "TS0122"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          2820,
-          1794,
-          61184
-        ],
-        "bindings": [
-          6,
-          2820,
-          1794
-        ]
-      }
-    }
+    ]
   },
   "images": {
     "small": "drivers/switch_plug_2/assets/images/small.png",

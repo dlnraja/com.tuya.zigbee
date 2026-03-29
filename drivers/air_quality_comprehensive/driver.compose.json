@@ -63,18 +63,6 @@
       "TS0006",
       "TS0601"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          1,
-          61184
-        ],
-        "bindings": [
-          1
-        ]
-      }
-    },
     "learnmode": {
       "image": "/drivers/air_quality_comprehensive/assets/learnmode.svg",
       "instruction": {

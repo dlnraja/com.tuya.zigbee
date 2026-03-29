@@ -30,17 +30,6 @@
     "productId": [
       "TS0041"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          6
-        ],
-        "bindings": [
-          6
-        ]
-      }
-    },
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {

@@ -57,44 +57,6 @@
     "productId": [
       "TS0003"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          1794,
-          2820,
-          57344,
-          57345
-        ],
-        "bindings": [
-          6
-        ]
-      },
-      "2": {
-        "clusters": [
-          4,
-          5,
-          6
-        ],
-        "bindings": [
-          6
-        ]
-      },
-      "3": {
-        "clusters": [
-          4,
-          5,
-          6
-        ],
-        "bindings": [
-          6
-        ]
-      }
-    },
     "learnmode": {
       "instruction": {
         "en": "Press and hold the button for 5 seconds until the LED flashes rapidly.",

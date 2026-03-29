@@ -28,19 +28,6 @@
     "productId": [
       "TS0215A"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          1,
-          1280,
-          1281
-        ],
-        "bindings": [
-          1281
-        ]
-      }
-    },
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {

@@ -35,22 +35,7 @@
     "productId": [
       "TS0601",
       "TS0603"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          3,
-          4,
-          5,
-          6,
-          61184
-        ],
-        "bindings": [
-          6
-        ]
-      }
-    }
+    ]
   },
   "images": {
     "small": "drivers/garage_door_opener/assets/images/small.png",

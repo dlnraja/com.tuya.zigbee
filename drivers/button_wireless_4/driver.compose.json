@@ -131,64 +131,6 @@
         "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
         "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
       }
-    },
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          1,
-          5,
-          6,
-          18,
-          57344
-        ],
-        "bindings": [
-          1,
-          5,
-          6,
-          18,
-          57344
-        ]
-      },
-      "2": {
-        "clusters": [
-          0,
-          6,
-          18,
-          57344
-        ],
-        "bindings": [
-          6,
-          18,
-          57344
-        ]
-      },
-      "3": {
-        "clusters": [
-          0,
-          6,
-          18,
-          57344
-        ],
-        "bindings": [
-          6,
-          18,
-          57344
-        ]
-      },
-      "4": {
-        "clusters": [
-          0,
-          6,
-          18,
-          57344
-        ],
-        "bindings": [
-          6,
-          18,
-          57344
-        ]
-      }
     }
   },
   "images": {

@@ -57,23 +57,7 @@
       "ZG-227Z",
       "RH3052",
       "TS0201"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          1,
-          1026,
-          1029,
-          61184
-        ],
-        "bindings": [
-          1,
-          1026,
-          1029
-        ]
-      }
-    }
+    ]
   },
   "images": {
     "small": "drivers/temphumidsensor/assets/images/small.png",

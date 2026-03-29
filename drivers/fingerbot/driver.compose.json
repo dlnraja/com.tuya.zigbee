@@ -43,16 +43,6 @@
       "TS0001",
       "TS0001_fingerbot"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          6,
-          61184
-        ],
-        "bindings": []
-      }
-    },
     "learnmode": {
       "image": "/drivers/fingerbot/assets/learnmode.svg",
       "instruction": {

@@ -28,22 +28,7 @@
     "productId": [
       "TS0601_thermo4ch",
       "TS0601"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          1,
-          3,
-          513,
-          61184
-        ],
-        "bindings": [
-          1,
-          513
-        ]
-      }
-    }
+    ]
   },
   "images": {
     "small": "drivers/thermostat_4ch/assets/images/small.png",

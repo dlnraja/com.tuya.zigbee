@@ -24,15 +24,6 @@
     "productId": [
       "TS0207"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          3
-        ],
-        "bindings": []
-      }
-    },
     "learnmode": {
       "instruction": {
         "en": "Plug in the USB repeater and hold button 5s."
