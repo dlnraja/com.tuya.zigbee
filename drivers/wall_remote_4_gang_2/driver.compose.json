@@ -28,6 +28,20 @@
     "productId": [
       "TS004F"
     ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6,
+          8
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      }
+    },
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {

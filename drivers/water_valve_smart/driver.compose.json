@@ -51,6 +51,15 @@
       "_TZE284_vuwtqx0t",
       "_TZE284_wt66haax"
     ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ],
+        "bindings": []
+      }
+    },
     "learnmode": {
       "image": "/drivers/water_valve_smart/assets/learnmode.svg",
       "instruction": {

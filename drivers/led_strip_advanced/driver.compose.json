@@ -28,6 +28,24 @@
       "_TZ3000_oboryztc",
       "_TZ3210_iystcadi"
     ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
+        ],
+        "bindings": [
+          6,
+          8,
+          768
+        ]
+      }
+    },
     "learnmode": {
       "image": "/drivers/led_strip_advanced/assets/learnmode.svg",
       "instruction": {

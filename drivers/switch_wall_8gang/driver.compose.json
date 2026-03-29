@@ -82,7 +82,22 @@
     "productId": [
       "TS0601_8gang",
       "TS0601"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          61184
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    }
   },
   "settings": [
     {

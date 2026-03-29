@@ -79,6 +79,23 @@
       "TS0215",
       "TS0215A"
     ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1280,
+          1281,
+          61184
+        ],
+        "bindings": [
+          1,
+          1280,
+          1281,
+          61184
+        ]
+      }
+    },
     "learnmode": {
       "image": "/drivers/button_emergency_sos/assets/learnmode.svg",
       "instruction": {

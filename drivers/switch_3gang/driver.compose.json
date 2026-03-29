@@ -20,6 +20,33 @@
       "TS0601",
       "ZG-302Z3"
     ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "2": {
+        "clusters": [
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "3": {
+        "clusters": [
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
     "learnmode": {
       "image": "/drivers/switch_3gang/assets/learnmode.svg",
       "instruction": {

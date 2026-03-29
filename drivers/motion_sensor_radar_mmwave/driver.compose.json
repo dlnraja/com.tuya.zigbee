@@ -53,6 +53,23 @@
       "_TZE284_0wfzacel",
       "_TZE284_zy6wjm01"
     ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1024,
+          1280,
+          1030,
+          61184
+        ],
+        "bindings": [
+          1,
+          1280,
+          1030
+        ]
+      }
+    },
     "learnmode": {
       "image": "/drivers/motion_sensor_radar_mmwave/assets/learnmode.svg",
       "instruction": {

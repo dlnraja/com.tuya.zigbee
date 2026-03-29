@@ -107,6 +107,20 @@
       "SNZB-05P",
       "CK-TLSR8656-SS5-01(7019)"
     ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1280,
+          61184
+        ],
+        "bindings": [
+          1,
+          1280
+        ]
+      }
+    },
     "learnmode": {
       "image": "/drivers/water_leak_sensor/assets/learnmode.svg",
       "instruction": {

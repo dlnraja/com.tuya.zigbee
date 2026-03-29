@@ -46,6 +46,24 @@
     "productId": [
       "TS1201"
     ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6,
+          57348,
+          60672
+        ],
+        "bindings": [
+          10,
+          25
+        ]
+      }
+    },
     "learnmode": {
       "image": "/drivers/ir_remote/assets/learnmode.svg",
       "instruction": {
