@@ -13,7 +13,8 @@
     "measure_luminance",
     "measure_battery",
     "alarm_water",
-    "measure_ec"
+    "measure_ec",
+    "measure_conductivity"
   ],
   "capabilitiesOptions": {
     "measure_humidity.soil": {
@@ -46,6 +47,14 @@
         "fr": "Engrais (EC)",
         "nl": "Bemesting (EC)",
         "de": "Dünger (EC)"
+      }
+    },
+    "measure_conductivity": {
+      "title": {
+        "en": "Soil Fertility (EC)",
+        "fr": "Fertilité du Sol (EC)",
+        "nl": "Bodemvruchtbaarheid (EC)",
+        "de": "Bodenfruchtbarkeit (EC)"
       }
     }
   },
