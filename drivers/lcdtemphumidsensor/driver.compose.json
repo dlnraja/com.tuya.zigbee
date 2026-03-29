@@ -39,7 +39,21 @@
       "TS0601",
       "TS0201",
       "TY0201"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1026,
+          1029,
+          61184
+        ],
+        "bindings": [
+          1026,
+          1029
+        ]
+      }
+    }
   },
   "images": {
     "small": "drivers/lcdtemphumidsensor/assets/images/small.png",

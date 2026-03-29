@@ -36,7 +36,24 @@
     "productId": [
       "TS1101",
       "TS0601"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          61184
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      }
+    }
   },
   "capabilitiesOptions": {
     "onoff": {

@@ -27,6 +27,7 @@
     "manufacturerName": [
       "dln",
       "dln-diy",
+      "dlnraja",
       "efekta",
       "Legrand",
       " Legrand",
@@ -102,6 +103,14 @@
       "TS0105",
       "TS0901"
     ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0
+        ],
+        "bindings": []
+      }
+    },
     "learnmode": {
       "instruction": {
         "en": "Universal Zigbee Device (DIY + Standard ZCL)\n\n1. Put your device in pairing mode\n2. For Sonoff: Hold button 5+ seconds\n3. For ESP32/PTVO: Press boot button\n4. For Danfoss/Legrand/Schneider: Follow manufacturer pairing\n\nCapabilities auto-discovered from ZCL clusters.\n\nSupported: Sonoff, eWeLink, Danfoss, Legrand, Schneider, Bosch, Niko, ESP32, PTVO, CC2652, routers.",

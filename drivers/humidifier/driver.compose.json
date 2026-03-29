@@ -51,6 +51,15 @@
       "TS0601_humid",
       "TS0601"
     ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ],
+        "bindings": []
+      }
+    },
     "learnmode": {
       "instruction": {
         "en": "Press and hold the power button for 5 seconds until WiFi indicator blinks",

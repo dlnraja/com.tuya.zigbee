@@ -81,6 +81,24 @@
       "_TZ3210_mja6r5ix",
       "_TZ3000_q50zhdsc"
     ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
+        ],
+        "bindings": [
+          6,
+          8,
+          768
+        ]
+      }
+    },
     "learnmode": {
       "image": "/drivers/bulb_rgb/assets/learnmode.svg",
       "instruction": {

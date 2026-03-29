@@ -31,7 +31,19 @@
     "productId": [
       "TS0601_hcho",
       "TS0601"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          61184
+        ],
+        "bindings": [
+          1
+        ]
+      }
+    }
   },
   "settings": [
     {

@@ -57,6 +57,15 @@
       "TS0219",
       "TS0601"
     ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ],
+        "bindings": []
+      }
+    },
     "learnmode": {
       "image": "/drivers/siren/assets/learnmode.svg",
       "instruction": {

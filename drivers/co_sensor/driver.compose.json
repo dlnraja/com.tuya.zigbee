@@ -30,7 +30,21 @@
     "productId": [
       "TS0601_co",
       "TS0601"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1280,
+          61184
+        ],
+        "bindings": [
+          1,
+          1280
+        ]
+      }
+    }
   },
   "images": {
     "small": "drivers/co_sensor/assets/images/small.png",

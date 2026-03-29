@@ -31,6 +31,22 @@
     "productId": [
       "TS0501"
     ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      }
+    },
     "learnmode": {
       "image": "/drivers/bulb_white/assets/learnmode.svg",
       "instruction": {

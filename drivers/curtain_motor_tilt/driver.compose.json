@@ -47,7 +47,22 @@
     "productId": [
       "TS0601_curtain_tilt",
       "TS0601"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          258,
+          61184
+        ],
+        "bindings": [
+          258
+        ]
+      }
+    }
   },
   "images": {
     "small": "drivers/curtain_motor_tilt/assets/images/small.png",
