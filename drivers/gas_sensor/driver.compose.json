@@ -54,20 +54,6 @@
       "ZG-225Z",
       "TS0301"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          1,
-          1280,
-          61184
-        ],
-        "bindings": [
-          1,
-          1280
-        ]
-      }
-    },
     "learnmode": {
       "image": "/drivers/gas_sensor/assets/learnmode.svg",
       "instruction": {

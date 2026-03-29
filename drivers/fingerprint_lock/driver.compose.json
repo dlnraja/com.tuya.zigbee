@@ -39,15 +39,6 @@
       "TS0601_lock",
       "TS0601"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          61184
-        ],
-        "bindings": []
-      }
-    },
     "learnmode": {
       "instruction": {
         "en": "Follow the lock's pairing instructions (usually hold * + # for 5 seconds)",

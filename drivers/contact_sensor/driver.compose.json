@@ -162,20 +162,6 @@
       "DoorWindow-Sensor-ZB3.0",
       "MCT-340 E"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          1,
-          1280,
-          61184
-        ],
-        "bindings": [
-          1,
-          1280
-        ]
-      }
-    },
     "learnmode": {
       "image": "/drivers/contact_sensor/assets/learnmode.svg",
       "instruction": {
