@@ -143,14 +143,20 @@ class SoilSensorDevice extends TuyaHybridDevice {
       // _TZE284_sgabhwa6, _TZE284_oitavov2 variants
       // ═══════════════════════════════════════════════════════════════════
       // v5.9.22: Z2M #28270 - DP102=illuminance for _TZE284_o9ofysmo/_TZE284_xc3vwx5a
-      102: { capability: 'measure_luminance', divisor: 1 },
-      // v5.9.22: Z2M #28270 - DP103=humidity_calibration, DP104=report_interval (settings)
-      103: { capability: null, setting: 'humidity_calibration', min: -30, max: 30 },
-      104: { capability: null, setting: 'report_interval', min: 30, max: 1200 },
-      110: { capability: null, setting: 'soil_warning', min: 0, max: 100 }, // Z2M: soil water shortage threshold %
-      111: { capability: 'alarm_water', transform: (v) => v === 1 }, // Z2M: water_warning 0=none, 1=alarm
-
-      // ═══════════════════════════════════════════════════════════════════
+      
+        102: { capability: 'measure_luminance', divisor: 1 },
+        103: { capability: null, setting: 'report_interval', min: 30, max: 1200 },
+        104: { capability: null, setting: 'soil_calibration', min: -30, max: 30 },
+        105: { capability: null, setting: 'humidity_calibration', min: -30, max: 30 },
+        106: { capability: null, setting: 'illuminance_calibration', min: -1000, max: 1000 },
+        107: { capability: null, setting: 'temperature_calibration', min: -20, max: 20 },
+        110: { capability: null, setting: 'soil_warning', min: 0, max: 100 },
+        111: { capability: 'alarm_water', transform: (v) => v === 1 },
+        112: { capability: 'measure_conductivity', divisor: 1 }, // soil fertility uS/cm
+        113: { capability: null, setting: 'soil_fertility_calibration', min: -1000, max: 1000 },
+        114: { capability: null, setting: 'soil_fertility_warning_setting', min: 0, max: 5000 },
+        115: { capability: null, setting: 'soil_fertility_warning_v1', min: 0, max: 5000 },
+        // ═══════════════════════════════════════════════════════════════════
       // FALLBACK DPs for other soil sensor variants
       // ═══════════════════════════════════════════════════════════════════
       1: { capability: 'measure_temperature', divisor: 10 },  // Some variants
@@ -373,6 +379,22 @@ class SoilSensorDevice extends TuyaHybridDevice {
     // ═══════════════════════════════════════════════════════════════════════
 
     
+    
+    if (dp === 112) {
+      this.log('[SOIL] 🧪 SOIL FERTILITY DP112 = ' + parsedValue + ' μS/cm');
+      if (this.hasCapability('measure_conductivity')) {
+        this.setCapabilityValue('measure_conductivity', parseFloat(parsedValue)).catch(()=>{});
+      }
+      return;
+    }
+    
+    if (dp === 101) {
+      this.log('[SOIL] ☁️ AIR HUMIDITY DP101 = ' + parsedValue + '%');
+      if (this.hasCapability('measure_humidity')) {
+        this.setCapabilityValue('measure_humidity', parseFloat(parsedValue)).catch(()=>{});
+      }
+      return;
+    }
     if (dp === 109) {
       // v5.13.X: DP109 = Soil Moisture alternative (seen on A89G12C)
       let calibratedMoisture = parsedValue + (this._moistureCalibration || 0);
