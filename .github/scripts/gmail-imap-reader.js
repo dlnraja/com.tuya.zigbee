@@ -238,7 +238,7 @@ async function readViaIMAP(opts = {}) {
       for (const bk of ['_TZE200', '_TZE204', '_TZE284', '_TZ3000', 'TS0601', 'diagnostic report', 'Homey', 'crash log', 'device error', 'report id', 'diagnostic log', 'report', 'issue']) {
         try { (await c.search({ since: new Date(since), body: bk })).forEach(s => seqSet.add(s)) } catch {}
       }
-      const seqs = [...seqSet].sort((a, b) => b - a).slice(0, opts.maxResults || 200);
+      const seqs = [...seqSet].sort((a, b) => b - a).slice(0, opts.maxResults || 2000);
       console.log('[IMAP]', seqSet.size, 'relevant msgs, fetching', seqs.length);
       if (seqs.length > 0) {
         const range = seqs.join(',');
