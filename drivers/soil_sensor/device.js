@@ -372,6 +372,18 @@ class SoilSensorDevice extends TuyaHybridDevice {
     // This bypasses any potential issues in parent handler
     // ═══════════════════════════════════════════════════════════════════════
 
+    
+    if (dp === 109) {
+      // v5.13.X: DP109 = Soil Moisture alternative (seen on A89G12C)
+      let calibratedMoisture = parsedValue + (this._moistureCalibration || 0);
+      calibratedMoisture = Math.max(0, Math.min(100, calibratedMoisture));
+      this.log('[SOIL] 🌱 SOIL MOISTURE DP109 = ' + parsedValue + '% -> ' + calibratedMoisture + '%');
+      let cap = this.hasCapability('measure_humidity.soil') ? 'measure_humidity.soil' : 'measure_humidity';
+      if (this.hasCapability(cap)) {
+        this.setCapabilityValue(cap, parseFloat(calibratedMoisture)).catch(()=>{});
+      }
+      return;
+    }
     if (dp === 3) {
       // v5.11.18: Guard against compound frame mis-parse (peter_kawa report)
       // When compound frames arrive, first parse reads full buffer as single uint32
