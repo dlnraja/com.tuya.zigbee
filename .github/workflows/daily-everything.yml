@@ -31,7 +31,7 @@ jobs:
   everything:
     name: "MEGA Pipeline — 34 steps"
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 180
     env:
       # === AI providers (configured) ===
       GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
