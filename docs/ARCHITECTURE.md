@@ -1,25 +1,26 @@
 # Universal Tuya Zigbee - Architecture Reference
 
 > **App**: `com.dlnraja.tuya.zigbee` | **SDK**: Homey SDK3 | **Entry**: `app.js`
-> **188+ drivers** | **4794+ fingerprints** | Zigbee + WiFi
-> **188+ drivers** | **4794+ fingerprints** | Zigbee + WiFi
-> **188+ drivers** | **4794+ fingerprints** | Zigbee + WiFi
-> **188+ drivers** | **4794+ fingerprints** | Zigbee + WiFi
-> **188+ drivers** | **4794+ fingerprints** | Zigbee + WiFi
-> **188+ drivers** | **4794+ fingerprints** | Zigbee + WiFi
-> **188+ drivers** | **4794+ fingerprints** | Zigbee + WiFi
-> **188+ drivers** | **4794+ fingerprints** | Zigbee + WiFi
-> **188+ drivers** | **4794+ fingerprints** | Zigbee + WiFi
-> **188+ drivers** | **4794+ fingerprints** | Zigbee + WiFi
-> **188+ drivers** | **4794+ fingerprints** | Zigbee + WiFi
-> **188+ drivers** | **4794+ fingerprints** | Zigbee + WiFi
-> **188+ drivers** | **4794+ fingerprints** | Zigbee + WiFi
-> **188+ drivers** | **4794+ fingerprints** | Zigbee + WiFi
-> **188+ drivers** | **4794+ fingerprints** | Zigbee + WiFi
-> **188+ drivers** | **4794+ fingerprints** | Zigbee + WiFi
-> **188+ drivers** | **4794+ fingerprints** | Zigbee + WiFi
-> **188+ drivers** | **4794+ fingerprints** | Zigbee + WiFi
-> **188+ drivers** | **4794+ fingerprints** | Zigbee + WiFi
+> **188+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
+> **188+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
+> **188+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
+> **188+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
+> **188+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
+> **188+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
+> **188+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
+> **188+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
+> **188+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
+> **188+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
+> **188+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
+> **188+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
+> **188+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
+> **188+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
+> **188+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
+> **188+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
+> **188+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
+> **188+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
+> **188+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
+> **188+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
 
 ---
 
