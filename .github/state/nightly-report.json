@@ -1,98 +1,24 @@
 {
-  "timestamp": "2026-03-29T02:04:13.787Z",
+  "timestamp": "2026-03-29T06:00:43.756Z",
   "appVersion": "5.11.138",
-  "forum": 7,
-  "github": 1,
+  "forum": 1,
+  "github": 0,
   "diagnostics": 3,
   "diagNewFPs": 0,
   "diagCritical": 0,
   "forumDetails": [
     {
       "topic": 26439,
-      "post": 5406,
-      "user": "telenut",
+      "post": 5424,
+      "user": "Peter_Kawa",
       "fps": [
-        "test"
+        "_TZ3000_gjnozsaz",
+        "_TZ3000_g",
+        "zigbee2mqtt"
       ],
-      "reply": "It looks like you've found a fingerprint for a device in the test version of the Universal Tuya Zigbee app. The fingerprint indicates that the device is recognized as a manufacturer-specific type, and",
+      "reply": "It looks like you've provided some valuable insights regarding the _TZ3000_gjnozsaz measuring plugs and their performance with Zigbee2MQTT. Based on the fingerprint lookup, we can confirm the followin",
       "model": "gh-gpt-4o-mini"
-    },
-    {
-      "topic": 26439,
-      "post": 5407,
-      "user": "johan_bendz",
-      "fps": [
-        "development"
-      ],
-      "reply": "It’s great to hear from you, @johan_bendz! \n\n### Fingerprint Analysis\nThe fingerprint lookup indicates that a driver has been found for your device. The identified driver is **diy_custom_zigbee**, whi",
-      "model": "gh-gpt-4o-mini"
-    },
-    {
-      "topic": 26439,
-      "post": 5409,
-      "user": "SingKT",
-      "fps": [
-        "matter"
-      ],
-      "reply": "Thank you for your feedback regarding the device descriptions. It's important to have clear distinctions, especially when it comes to device inclusion and functionality.\n\nBased on the fingerprint look",
-      "model": "gh-gpt-4o-mini"
-    },
-    {
-      "topic": 26439,
-      "post": 5410,
-      "user": "Rudi_Hendrix",
-      "fps": [
-        "test"
-      ],
-      "reply": "It’s great to hear you’ve been working on your own version of the app and that your Zigbee network is running smoothly now!\n\nRegarding your concern about Tuya Zigbee devices potentially sending excess",
-      "model": "gh-gpt-4o-mini"
-    },
-    {
-      "topic": 26439,
-      "post": 5414,
-      "user": "Rudi_Hendrix",
-      "fps": [
-        "example"
-      ],
-      "reply": "It seems you've encountered some challenges with the TX and RX values for your Tuya-based devices, particularly after transitioning from experimental updates to the stable version. Let's break down th",
-      "model": "gh-gpt-4o-mini"
-    },
-    {
-      "topic": 26439,
-      "post": 5415,
-      "user": "ManuelKugler",
-      "fps": [
-        "_TZE284_oitavov2"
-      ],
-      "reply": "It looks like you have a couple of different soil moisture meters, and I can help clarify the situation.\n\n### Device Identification\nFrom the fingerprint lookup, your device `_TZE284_oitavov2` is recog",
-      "model": "gh-gpt-4o-mini"
-    },
-    {
-      "topic": 26439,
-      "post": 5420,
-      "user": "Peter_van_Werkhoven",
-      "fps": [
-        "_TZE200_vvmbj46n",
-        "vision"
-      ],
-      "reply": "Hi Peter,\n\nThank you for providing the detailed information about your LCD Temp Humidity sensor (_TZE200_vvmbj46n TS0601). Let's troubleshoot the issue with the battery readings.\n\n### Fingerprint Anal",
-      "model": "gh-Mistral-small-2503"
     }
   ],
-  "githubDetails": [
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1355,
-      "user": "TeejooK",
-      "fps": [
-        "_TZE204_bvfld3xc",
-        "example",
-        "router",
-        "vision"
-      ],
-      "title": "Device Request - Zigbee human presence sensor - Tuya / zy-zhps01-24g",
-      "response": "### Device Support Analysis\n\n#### Device Information\n- **Device Name:** Zigbee human presence sensor MmWave Radar Detection\n- **Device Model:** `zy-zhps01-24g`\n- **Device Description:** Zigbee human presence sensor\n- **Image:** [Device Image](https://ae-pic-a1.aliexpress-media.com/kf/S7e33a2e5f3ed48",
-      "model": "gh-Mistral-small-2503"
-    }
-  ]
+  "githubDetails": []
 }

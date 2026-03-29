@@ -1,5 +1,5 @@
 {
-  "ts": "2026-03-29T03:04:24.233Z",
+  "ts": "2026-03-29T06:52:28.511Z",
   "correlations": [],
   "actionable": [
     {
@@ -13,6 +13,12 @@
       "device": "`_TZ3000_zgyzgdua` TS0044",
       "status": "NEEDS DIAG",
       "note": "Update v5.11.25 + re-pair + diag"
+    },
+    {
+      "user": "FrankP",
+      "device": "IR remote learning mode",
+      "status": "NEW BUG",
+      "note": "Learning button turns off immediately (diag b6635c8c) — #1471"
     },
     {
       "user": "Ricardo_Lenior",
@@ -32,13 +38,13 @@
     {
       "id": "battery",
       "pattern": "False Battery Alert / Missing Battery",
-      "count": 25,
+      "count": 30,
       "priority": "high"
     },
     {
       "id": "pairing",
       "pattern": "Pairing Failure",
-      "count": 7,
+      "count": 8,
       "priority": "high"
     },
     {

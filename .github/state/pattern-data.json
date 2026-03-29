@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-03-29T03:04:24.161Z",
+  "timestamp": "2026-03-29T06:55:35.184Z",
   "suggestions": [
     {
       "pattern": "False Battery Alert / Missing Battery",
       "id": "battery",
-      "count": 30,
+      "count": 32,
       "priority": "high",
       "topFPs": [
         [
@@ -20,15 +20,19 @@
           6
         ],
         [
+          "TS0202",
+          5
+        ],
+        [
           "test",
           4
         ],
         [
-          "example",
-          3
+          "tuya",
+          4
         ],
         [
-          "TS0202",
+          "example",
           3
         ],
         [
@@ -42,10 +46,6 @@
         [
           "lumi",
           3
-        ],
-        [
-          "_TZ3000_o4mkahkc",
-          2
         ]
       ],
       "fix": "Set `get mainsPowered() { return true; }` and remove measure_battery in onNodeInit",
@@ -56,9 +56,17 @@
     {
       "pattern": "Pairing Failure",
       "id": "pairing",
-      "count": 8,
+      "count": 27,
       "priority": "high",
       "topFPs": [
+        [
+          "tuya",
+          20
+        ],
+        [
+          "dlnraja",
+          19
+        ],
         [
           "vision",
           5
@@ -90,14 +98,6 @@
         [
           "TS0202",
           2
-        ],
-        [
-          "_TZE284_hdml1aav",
-          2
-        ],
-        [
-          "_TZE204_ahwvlkpy",
-          1
         ]
       ],
       "fix": "Check driver.compose.json fingerprints, verify manufacturerName + productId",
@@ -158,6 +158,56 @@
       ]
     },
     {
+      "pattern": "Device Not Responding",
+      "id": "no_response",
+      "count": 5,
+      "priority": "high",
+      "topFPs": [
+        [
+          "vision",
+          3
+        ],
+        [
+          "test",
+          2
+        ],
+        [
+          "TS0601",
+          2
+        ],
+        [
+          "_TZ3210_w0qqde0g",
+          1
+        ],
+        [
+          "TS011F",
+          1
+        ],
+        [
+          "_TZ3000_zutizvyk",
+          1
+        ],
+        [
+          "TS0203",
+          1
+        ],
+        [
+          "HOBEIAN",
+          1
+        ],
+        [
+          "ZG-204Z",
+          1
+        ],
+        [
+          "ZG-204ZL",
+          1
+        ]
+      ],
+      "fix": "Check Zigbee mesh, device routing, and cluster bindings",
+      "files": []
+    },
+    {
       "pattern": "Ring/Alarm Wrong",
       "id": "ring_value",
       "count": 5,
@@ -208,67 +258,25 @@
       "files": []
     },
     {
-      "pattern": "Device Not Responding",
-      "id": "no_response",
+      "pattern": "Double Division (wrong sensor values)",
+      "id": "double_div",
       "count": 4,
       "priority": "medium",
       "topFPs": [
         [
-          "vision",
+          "tuya",
           3
         ],
         [
-          "test",
-          2
-        ],
-        [
-          "TS0601",
-          2
-        ],
-        [
-          "_TZ3210_w0qqde0g",
-          1
-        ],
-        [
-          "TS011F",
-          1
-        ],
-        [
-          "_TZ3000_zutizvyk",
-          1
-        ],
-        [
-          "TS0203",
-          1
-        ],
-        [
-          "HOBEIAN",
-          1
-        ],
-        [
-          "ZG-204Z",
-          1
-        ],
-        [
-          "ZG-204ZL",
-          1
-        ]
-      ],
-      "fix": "Check Zigbee mesh, device routing, and cluster bindings",
-      "files": []
-    },
-    {
-      "pattern": "Double Division (wrong sensor values)",
-      "id": "double_div",
-      "count": 2,
-      "priority": "medium",
-      "topFPs": [
-        [
           "vision",
           2
         ],
         [
           "TS0601",
+          2
+        ],
+        [
+          "dlnraja",
           2
         ],
         [
@@ -277,10 +285,6 @@
         ],
         [
           "test",
-          1
-        ],
-        [
-          "tuya",
           1
         ],
         [
@@ -389,12 +393,12 @@
   ],
   "detections": {
     "inversion": 1,
-    "battery": 30,
-    "double_div": 2,
-    "pairing": 8,
+    "battery": 32,
+    "double_div": 4,
+    "pairing": 27,
     "unknown": 5,
     "flow_dup": 0,
-    "no_response": 4,
+    "no_response": 5,
     "voltage_wrong": 1,
     "no_temperature": 0,
     "ring_value": 5,
