@@ -1,10 +1,9 @@
 {
-  "timestamp": "2026-03-28T19:15:16.850Z",
-  "count": 16,
+  "timestamp": "2026-03-29T02:01:54.369Z",
+  "count": 3,
   "byType": {
-    "diagnostic": 3,
-    "github": 10,
-    "general": 3
+    "diagnostic": 2,
+    "github": 1
   },
   "newFingerprints": [],
   "deepResearch": {
@@ -14,591 +13,141 @@
   },
   "diagnostics": [
     {
-      "id": "imap_502850",
+      "id": "imap_502900",
       "type": "diagnostic",
       "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
       "from": "homey_system",
-      "date": "2026-03-28T14:09:07.000Z",
+      "date": "2026-03-28T20:15:10.000Z",
       "pseudo": {
         "source": "homey_system",
         "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [
-        "soil_sensor",
-        "0cae3033-825b-4749-937b-4d04bb"
-      ],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 14316,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_502852",
-      "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] Soil Sensor with fertilizer level A89G12C (Issue #177)",
-      "from": "github",
-      "date": "2026-03-28T14:15:23.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "haadeess"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "177",
-        "action": "Assigned",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "dlnraja/com.tuya.zigbee",
-        "labels": null,
-        "author": "haadeess",
-        "bodyExcerpt": "Assigned #177 to @dlnraja.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/177#event-23998839295\r\nYou are receiving this because you were assigned.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/issue/177/issue_event/23998839295@github.com>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 297,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_502853",
-      "type": "github",
-      "subj": "[dlnraja/com.tuya.zigbee] Soil Sensor with fertilizer level A89G12C (Issue #177)",
-      "from": "github",
-      "date": "2026-03-28T14:15:24.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "haadeess"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": [
-          "TS0601"
-        ]
-      },
-      "errs": [],
-      "devices": [
-        "when"
-      ],
-      "xref": [
-        {
-          "fingerprint": "TS0601",
-          "type": "pid",
-          "supported": true,
-          "drivers": [
-            "air_purifier",
-            "air_quality_co2",
-            "air_quality_comprehensive",
-            "button_emergency_sos",
-            "button_wireless_6",
-            "ceiling_fan",
-            "climate_sensor",
-            "co_sensor",
-            "contact_sensor",
-            "curtain_motor",
-            "curtain_motor_tilt",
-            "dimmer_3gang",
-            "dimmer_dual_channel",
-            "dimmer_wall_1gang",
-            "din_rail_meter",
-            "din_rail_switch",
-            "door_controller",
-            "doorbell",
-            "energy_meter_3phase",
-            "fan_controller",
-            "fingerprint_lock",
-            "floor_heating_thermostat",
-            "formaldehyde_sensor",
-            "garage_door",
-            "garage_door_opener",
-            "gas_detector",
-            "gas_sensor",
-            "humidifier",
-            "hvac_air_conditioner",
-            "hvac_controller",
-            "hvac_dehumidifier",
-            "ir_blaster",
-            "lcdtemphumidsensor",
-            "light_sensor_outdoor",
-            "lock_smart",
-            "motion_sensor",
-            "motion_sensor_radar_mmwave",
-            "pet_feeder",
-            "pet_feeder_zigbee",
-            "plug_energy_monitor",
-            "plug_smart",
-            "pool_pump",
-            "power_clamp_meter",
-            "power_meter",
-            "presence_sensor_ceiling",
-            "presence_sensor_radar",
-            "radiator_controller",
-            "radiator_valve",
-            "rain_sensor",
-            "scene_switch_4",
-            "shutter_roller_controller",
-            "siren",
-            "smart_breaker",
-            "smart_heater",
-            "smart_heater_controller",
-            "smart_lcd_thermostat",
-            "smart_rcbo",
-            "smoke_detector_advanced",
-            "soil_sensor",
-            "switch_1gang",
-            "switch_2gang",
-            "switch_3gang",
-            "switch_4gang",
-            "switch_dimmer_1gang",
-            "switch_wall_5gang",
-            "switch_wall_6gang",
-            "switch_wall_8gang",
-            "thermostat_4ch",
-            "thermostat_tuya_dp",
-            "universal_fallback",
-            "usb_outlet_advanced",
-            "valve_irrigation",
-            "valve_single",
-            "vibration_sensor",
-            "water_leak_sensor",
-            "water_tank_monitor",
-            "water_valve_smart",
-            "weather_station_outdoor"
-          ],
-          "multiDriver": true
-        }
-      ],
-      "ghInfo": {
-        "issueNum": "177",
-        "action": "assigned",
-        "fps": {
-          "mfr": [],
-          "pid": [
-            "TS0601"
-          ]
-        },
-        "isNew": false,
-        "repo": "dlnraja/com.tuya.zigbee",
-        "labels": null,
-        "author": "haadeess",
-        "bodyExcerpt": "haadeess created an issue (dlnraja/com.tuya.zigbee#177)\r\n\r\n### Brand & Model\r\n\r\nA89G12C\r\n\r\nAliExpress\r\n\r\n_No response_\r\n\r\n### Power Source\r\n\r\nBattery\r\n\r\n### Zigbee Fingerprint (MANDATORY)\r\n\r\n```yaml\r\nArteco\r\nA89G12C\r\n\r\n  \"ids\": {\r\n    \"modelId\": \"Arteco\",\r\n    \"manufacturerName\": \"A89G12C\"\r\n  },\r\n  \"endpoints\": {\r\n    \"ieeeAddress\": \"a4:c1:38:3b:84:e0:0b:a5\",\r\n    \"networkAddress\": 63187,\r\n    \"modelId\": \"Arteco\",\r\n    \"manufacturerName\": \"A89G12C\",\r\n    \"endpointDescriptors\": [\r\n      {\r\n      "
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 7683,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_502854",
-      "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] Soil Sensor with fertilizer level A89G12C (Issue #177)",
-      "from": "github",
-      "date": "2026-03-28T14:15:46.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "github-actions[bot]"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": [
-          "TS0601"
-        ]
-      },
-      "errs": [],
-      "devices": [
-        "still",
-        "types"
-      ],
-      "xref": [
-        {
-          "fingerprint": "TS0601",
-          "type": "pid",
-          "supported": true,
-          "drivers": [
-            "air_purifier",
-            "air_quality_co2",
-            "air_quality_comprehensive",
-            "button_emergency_sos",
-            "button_wireless_6",
-            "ceiling_fan",
-            "climate_sensor",
-            "co_sensor",
-            "contact_sensor",
-            "curtain_motor",
-            "curtain_motor_tilt",
-            "dimmer_3gang",
-            "dimmer_dual_channel",
-            "dimmer_wall_1gang",
-            "din_rail_meter",
-            "din_rail_switch",
-            "door_controller",
-            "doorbell",
-            "energy_meter_3phase",
-            "fan_controller",
-            "fingerprint_lock",
-            "floor_heating_thermostat",
-            "formaldehyde_sensor",
-            "garage_door",
-            "garage_door_opener",
-            "gas_detector",
-            "gas_sensor",
-            "humidifier",
-            "hvac_air_conditioner",
-            "hvac_controller",
-            "hvac_dehumidifier",
-            "ir_blaster",
-            "lcdtemphumidsensor",
-            "light_sensor_outdoor",
-            "lock_smart",
-            "motion_sensor",
-            "motion_sensor_radar_mmwave",
-            "pet_feeder",
-            "pet_feeder_zigbee",
-            "plug_energy_monitor",
-            "plug_smart",
-            "pool_pump",
-            "power_clamp_meter",
-            "power_meter",
-            "presence_sensor_ceiling",
-            "presence_sensor_radar",
-            "radiator_controller",
-            "radiator_valve",
-            "rain_sensor",
-            "scene_switch_4",
-            "shutter_roller_controller",
-            "siren",
-            "smart_breaker",
-            "smart_heater",
-            "smart_heater_controller",
-            "smart_lcd_thermostat",
-            "smart_rcbo",
-            "smoke_detector_advanced",
-            "soil_sensor",
-            "switch_1gang",
-            "switch_2gang",
-            "switch_3gang",
-            "switch_4gang",
-            "switch_dimmer_1gang",
-            "switch_wall_5gang",
-            "switch_wall_6gang",
-            "switch_wall_8gang",
-            "thermostat_4ch",
-            "thermostat_tuya_dp",
-            "universal_fallback",
-            "usb_outlet_advanced",
-            "valve_irrigation",
-            "valve_single",
-            "vibration_sensor",
-            "water_leak_sensor",
-            "water_tank_monitor",
-            "water_valve_smart",
-            "weather_station_outdoor"
-          ],
-          "multiDriver": true
-        }
-      ],
-      "ghInfo": {
-        "issueNum": "177",
-        "action": "assigned",
-        "fps": {
-          "mfr": [],
-          "pid": [
-            "TS0601"
-          ]
-        },
-        "isNew": false,
-        "repo": "dlnraja/com.tuya.zigbee",
-        "labels": null,
-        "author": "github-actions[bot]",
-        "bodyExcerpt": "github-actions[bot] left a comment (dlnraja/com.tuya.zigbee#177)\r\n\r\n<!-- tuya-triage-bot -->\r\nFingerprint(s) found in v5.11.138:\r\n\r\n- `A89G12C` â **soil_sensor**\r\n- `TS0601` â **unknown**\r\n\r\nInstall the [test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/), **remove the device, and re-pair** so it picks up the correct driver.\r\n\r\n**If the device still shows as unknown or doesn't work**, please share a diagnostic report ID and a [Developer Tools interview](https://tools.developer.h"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 1304,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_502855",
-      "type": "diagnostic",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
-      "from": "homey_system",
-      "date": "2026-03-28T14:19:04.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [
-        "soil_sensor",
-        "e2e54d3e-9ea8-48fa-95ce-e6289c",
-        "missing"
-      ],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 12606,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_502863",
-      "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] Soil Sensor with fertilizer level A89G12C (Issue #177)",
-      "from": "github",
-      "date": "2026-03-28T15:00:33.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "haadeess"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [
-        ". If you need other values, please give me a brief explanation of how to access"
-      ],
-      "devices": [
-        "into"
-      ],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "177",
-        "action": "assigned",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "dlnraja/com.tuya.zigbee",
-        "labels": null,
-        "author": "haadeess",
-        "bodyExcerpt": "haadeess left a comment (dlnraja/com.tuya.zigbee#177)\r\n\r\nHi Dylan, I'm not entirely sure where to get this data. I couldn't find anything in Homey. So I integrated the device into the \"original\" Tuya app and only found these values ââon the developer platform. Seems like AliExpress ripped me off. Only temperature and humidity are available. However, when I try to connect it to Homey, I get a connection error. If you need other values, please give me a brief explanation of how to access the d"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 1345,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_502864",
-      "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] [soil_sensor] Bug: (Issue #176)",
-      "from": "github",
-      "date": "2026-03-28T15:10:25.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "haadeess"
       },
       "fps": {
         "mfr": [
-          "_TZE284_hdml1aav"
+          "_TZ3000_v4l4b0lp"
         ],
         "pid": [
-          "TS0601"
+          "TS0003"
         ]
       },
-      "errs": [],
-      "devices": [],
+      "errs": [
+        "switch_3gang_physical_gang2_single)",
+        "switch_3gang_physical_gang2_long_press)"
+      ],
+      "devices": [
+        "switch_3gang",
+        "9046b67f-79a8-43f5-a30d-b2e596",
+        "a6511811-3284-43a0-b44b-58022e",
+        "db721300-5b67-4f94-8197-acdcc7",
+        "f02f3c75-5865-46bf-9984-0d522b",
+        "8441e8cd-dc46-43ac-a686-57260b"
+      ],
       "xref": [
         {
-          "fingerprint": "_TZE284_hdml1aav",
+          "fingerprint": "_TZ3000_v4l4b0lp",
           "type": "mfr",
           "supported": true,
           "drivers": [
-            "soil_sensor"
+            "switch_3gang"
           ],
-          "protocol": "tuya_dp",
-          "requires": [
-            "TuyaEF00Manager",
-            "dpMappings"
-          ]
+          "protocol": "unknown",
+          "requires": []
         },
         {
-          "fingerprint": "TS0601",
+          "fingerprint": "TS0003",
           "type": "pid",
           "supported": true,
           "drivers": [
-            "air_purifier",
-            "air_quality_co2",
-            "air_quality_comprehensive",
-            "button_emergency_sos",
-            "button_wireless_6",
-            "ceiling_fan",
-            "climate_sensor",
-            "co_sensor",
-            "contact_sensor",
-            "curtain_motor",
-            "curtain_motor_tilt",
-            "dimmer_3gang",
-            "dimmer_dual_channel",
-            "dimmer_wall_1gang",
-            "din_rail_meter",
-            "din_rail_switch",
-            "door_controller",
-            "doorbell",
-            "energy_meter_3phase",
-            "fan_controller",
-            "fingerprint_lock",
-            "floor_heating_thermostat",
-            "formaldehyde_sensor",
-            "garage_door",
-            "garage_door_opener",
-            "gas_detector",
-            "gas_sensor",
-            "humidifier",
-            "hvac_air_conditioner",
-            "hvac_controller",
-            "hvac_dehumidifier",
-            "ir_blaster",
-            "lcdtemphumidsensor",
-            "light_sensor_outdoor",
-            "lock_smart",
-            "motion_sensor",
-            "motion_sensor_radar_mmwave",
-            "pet_feeder",
-            "pet_feeder_zigbee",
-            "plug_energy_monitor",
-            "plug_smart",
-            "pool_pump",
-            "power_clamp_meter",
-            "power_meter",
-            "presence_sensor_ceiling",
-            "presence_sensor_radar",
-            "radiator_controller",
-            "radiator_valve",
-            "rain_sensor",
-            "scene_switch_4",
-            "shutter_roller_controller",
-            "siren",
-            "smart_breaker",
-            "smart_heater",
-            "smart_heater_controller",
-            "smart_lcd_thermostat",
-            "smart_rcbo",
-            "smoke_detector_advanced",
-            "soil_sensor",
-            "switch_1gang",
             "switch_2gang",
             "switch_3gang",
-            "switch_4gang",
-            "switch_dimmer_1gang",
-            "switch_wall_5gang",
-            "switch_wall_6gang",
-            "switch_wall_8gang",
-            "thermostat_4ch",
-            "thermostat_tuya_dp",
             "universal_fallback",
-            "usb_outlet_advanced",
-            "valve_irrigation",
-            "valve_single",
-            "vibration_sensor",
-            "water_leak_sensor",
-            "water_tank_monitor",
-            "water_valve_smart",
-            "weather_station_outdoor"
+            "usb_dongle_triple",
+            "wall_switch_3gang_1way"
           ],
           "multiDriver": true
         }
       ],
-      "ghInfo": {
-        "issueNum": "176",
-        "action": "commented",
-        "fps": {
-          "mfr": [
-            "_TZE284_hdml1aav"
-          ],
-          "pid": [
-            "TS0601"
-          ]
-        },
-        "isNew": false,
-        "repo": "dlnraja/com.tuya.zigbee",
-        "labels": null,
-        "author": "haadeess",
-        "bodyExcerpt": "haadeess left a comment (dlnraja/com.tuya.zigbee#176)\r\n\r\nStill not working\r\n\r\n<img width=\"315\" height=\"604\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/e9760add-7fcb-4e7b-bb09-79c481dbde93\" />\r\n\r\n5bd357f8-8627-4872-a15a-54718dc9b223\r\n\r\n<img width=\"2158\" height=\"41\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/761f060d-680e-412b-a559-c5ec4a3fbdb0\" />\r\n\r\n\r\n  \"ids\": {\r\n    \"modelId\": \"TS0601\",\r\n    \"manufacturerName\": \"_TZE284_hdml1aav\"\r\n  },\r\n  \"endpoints\": {\r\n    \"i"
-      },
+      "ghInfo": null,
       "forumInfo": null,
       "crashInfo": null,
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 7851,
-      "contentType": "text/plain"
+      "bodyLength": 16000,
+      "contentType": "text/html->text"
     },
     {
-      "id": "imap_502865",
+      "id": "imap_502901",
       "type": "diagnostic",
       "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
       "from": "homey_system",
-      "date": "2026-03-28T15:10:49.000Z",
+      "date": "2026-03-28T20:19:25.000Z",
       "pseudo": {
         "source": "homey_system",
         "username": null
       },
       "fps": {
-        "mfr": [],
-        "pid": []
+        "mfr": [
+          "_TZ3000_v4l4b0lp"
+        ],
+        "pid": [
+          "TS0003"
+        ]
       },
-      "errs": [],
-      "devices": [
-        "soil_sensor",
-        "0cae3033-825b-4749-937b-4d04bb"
+      "errs": [
+        "switch_3gang_physical_gang2_single)",
+        "switch_3gang_physical_gang2_long_press)"
       ],
-      "xref": [],
+      "devices": [
+        "switch_3gang",
+        "f02f3c75-5865-46bf-9984-0d522b",
+        "db721300-5b67-4f94-8197-acdcc7",
+        "9046b67f-79a8-43f5-a30d-b2e596",
+        "a6511811-3284-43a0-b44b-58022e"
+      ],
+      "xref": [
+        {
+          "fingerprint": "_TZ3000_v4l4b0lp",
+          "type": "mfr",
+          "supported": true,
+          "drivers": [
+            "switch_3gang"
+          ],
+          "protocol": "unknown",
+          "requires": []
+        },
+        {
+          "fingerprint": "TS0003",
+          "type": "pid",
+          "supported": true,
+          "drivers": [
+            "switch_2gang",
+            "switch_3gang",
+            "universal_fallback",
+            "usb_dongle_triple",
+            "wall_switch_3gang_1way"
+          ],
+          "multiDriver": true
+        }
+      ],
       "ghInfo": null,
       "forumInfo": null,
       "crashInfo": null,
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 14245,
+      "bodyLength": 16000,
       "contentType": "text/html->text"
     },
     {
-      "id": "imap_502866",
+      "id": "imap_502902",
       "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] [soil_sensor] Bug: (Issue #176)",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] Bug: TS0003 (_TZ3000_v4l4b0lp) - Sub-capability Flow cards (Gang 1/2/3) are completely unlinked (Issue #170)",
       "from": "github",
-      "date": "2026-03-28T15:11:39.000Z",
+      "date": "2026-03-28T20:21:04.000Z",
       "pseudo": {
         "source": "github",
-        "username": "haadeess"
+        "username": "Ssssneak"
       },
       "fps": {
         "mfr": [],
@@ -608,8 +157,8 @@
       "devices": [],
       "xref": [],
       "ghInfo": {
-        "issueNum": "176",
-        "action": "commented",
+        "issueNum": "170",
+        "action": null,
         "fps": {
           "mfr": [],
           "pid": []
@@ -617,245 +166,15 @@
         "isNew": false,
         "repo": "dlnraja/com.tuya.zigbee",
         "labels": null,
-        "author": "haadeess",
-        "bodyExcerpt": "haadeess left a comment (dlnraja/com.tuya.zigbee#176)\r\n\r\nA brand new Diag:\r\n8e9ec914-dd33-4c7c-b08d-95d5963d9450\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/176#issuecomment-4148237520\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/issues/176/4148237520@github.com>\r\n"
+        "author": "Ssssneak",
+        "bodyExcerpt": "Ssssneak left a comment (dlnraja/com.tuya.zigbee#170)\r\n\r\nHi again, \r\n\r\nPlease use this new Diagnostics Report ID instead (the previous one had an error). \r\nI triggered the broken Flow cards (\"Turn on gang 2\" and \"Turn off gang 2\") again to generate fresh logs.\r\n\r\nThe correct Report ID is: 81ad938d-6d24-409b-b336-34e0aa655721\r\n\r\nLet me know if you can extract the required DP numbers from this one. Thanks!\r\n\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com"
       },
       "forumInfo": null,
       "crashInfo": null,
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 373,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_502870",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2038 has been created",
-      "from": "homey_system",
-      "date": "2026-03-28T15:50:06.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 508,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_502871",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
-      "from": "homey_system",
-      "date": "2026-03-28T15:50:20.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 564,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_502872",
-      "type": "general",
-      "subj": "[com.dlnraja.tuya.zigbee] Build #2038 is now testing",
-      "from": "homey_system",
-      "date": "2026-03-28T15:54:06.000Z",
-      "pseudo": {
-        "source": "homey_system",
-        "username": null
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 559,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_502886",
-      "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] [soil_sensor] Bug: No Connetion possible  _TZE284_oitavov2 (Issue #178)",
-      "from": "github",
-      "date": "2026-03-28T18:47:06.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "github-actions[bot]"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "178",
-        "action": "Closed",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "dlnraja/com.tuya.zigbee",
-        "labels": null,
-        "author": "github-actions[bot]",
-        "bodyExcerpt": "Closed #178 as completed.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/178#event-24001205288\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/issue/178/issue_event/24001205288@github.com>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 292,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_502887",
-      "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] [soil_sensor] Bug: No Connetion possible  _TZE284_oitavov2 (Issue #178)",
-      "from": "github",
-      "date": "2026-03-28T18:47:07.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "github-actions[bot]"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "178",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "dlnraja/com.tuya.zigbee",
-        "labels": null,
-        "author": "github-actions[bot]",
-        "bodyExcerpt": "github-actions[bot] left a comment (dlnraja/com.tuya.zigbee#178)\r\n\r\nAll fingerprints supported in v5.11.138. Closing as resolved.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/178#issuecomment-4148602228\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/issues/178/4148602228@github.com>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 390,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_502888",
-      "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] [soil_sensor] Bug: (Issue #176)",
-      "from": "github",
-      "date": "2026-03-28T18:47:08.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "github-actions[bot]"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "176",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "dlnraja/com.tuya.zigbee",
-        "labels": null,
-        "author": "github-actions[bot]",
-        "bodyExcerpt": "github-actions[bot] left a comment (dlnraja/com.tuya.zigbee#176)\r\n\r\nAll fingerprints supported in v5.11.138. Closing as resolved.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/176#issuecomment-4148602301\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/issues/176/4148602301@github.com>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 390,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_502889",
-      "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] [soil_sensor] Bug: (Issue #176)",
-      "from": "github",
-      "date": "2026-03-28T18:47:08.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "github-actions[bot]"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "176",
-        "action": "Closed",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "dlnraja/com.tuya.zigbee",
-        "labels": null,
-        "author": "github-actions[bot]",
-        "bodyExcerpt": "Closed #176 as completed.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/176#event-24001205576\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/issue/176/issue_event/24001205576@github.com>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 292,
+      "bodyLength": 675,
       "contentType": "text/plain"
     }
   ]

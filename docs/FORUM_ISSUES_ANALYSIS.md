@@ -514,3 +514,13 @@ All 12 fingerprints from 20 open issues **already supported** in v5.11.19:
 
 ## Nightly Forum Scan (2026-03-26 v5.11.138)
 - **Topic 140352 #1655** @Ronald_Bok: `_TZE284_oitavov2`, `test` (gh-gpt-4o-mini)
+
+
+## Nightly Forum Scan (2026-03-29 v5.11.138)
+- **Topic 26439 #5406** @telenut: `test` (gh-gpt-4o-mini)
+- **Topic 26439 #5407** @johan_bendz: `development` (gh-gpt-4o-mini)
+- **Topic 26439 #5409** @SingKT: `matter` (gh-gpt-4o-mini)
+- **Topic 26439 #5410** @Rudi_Hendrix: `test` (gh-gpt-4o-mini)
+- **Topic 26439 #5414** @Rudi_Hendrix: `example` (gh-gpt-4o-mini)
+- **Topic 26439 #5415** @ManuelKugler: `_TZE284_oitavov2` (gh-gpt-4o-mini)
+- **Topic 26439 #5420** @Peter_van_Werkhoven: `_TZE200_vvmbj46n`, `vision` (gh-Mistral-small-2503)

@@ -1,126 +1,90 @@
 {
-  "ts": "2026-03-25T07:25:41.770Z",
-  "correlations": [
-    {
-      "type": "PR_FPs_integrated",
-      "details": "All JohanBendz PR FPs verified in drivers"
-    },
-    {
-      "type": "forum_FPs_resolved",
-      "details": "3 truncated FPs matched existing, 2 truly niche/unknown"
-    }
-  ],
+  "ts": "2026-03-29T03:04:24.233Z",
+  "correlations": [],
   "actionable": [
     {
       "user": "Cam",
-      "device": "_TZ3000_5bpeda8u TS0041",
+      "device": "`_TZ3000_5bpeda8u` TS0041",
       "status": "NEEDS DIAG",
-      "note": "FP in button_wireless_1"
+      "note": "Update v5.11.25 + re-pair + diag"
     },
     {
       "user": "Freddyboy",
-      "device": "_TZ3000_zgyzgdua TS0044",
+      "device": "`_TZ3000_zgyzgdua` TS0044",
       "status": "NEEDS DIAG",
-      "note": "FP in button_wireless_4"
+      "note": "Update v5.11.25 + re-pair + diag"
     },
     {
       "user": "Ricardo_Lenior",
       "device": "Ceiling presence 230v",
-      "status": "NEEDS FP"
+      "status": "NEEDS FP",
+      "note": "Only has diag ID, no fingerprint"
     },
     {
       "user": "Ferenc_Szasz",
-      "device": "_TZE200_3p5ydos3 dimmer",
+      "device": "`_TZE200_3p5ydos3` dimmer",
       "status": "NEEDS DIAG",
-      "note": "FP in dimmer_wall_1gang"
+      "note": "Dimmer errors on control. T89271#660. Need diag log."
     }
   ],
-  "resolved": [
+  "resolved": [],
+  "patterns": [
     {
-      "issue": "_TZ3002_vaq2bfcu in switch_1gang",
-      "fix": "Removed - BSEED 4gang belongs in switch_4gang only"
+      "id": "battery",
+      "pattern": "False Battery Alert / Missing Battery",
+      "count": 25,
+      "priority": "high"
     },
     {
-      "issue": "3 SOS FPs in smart_remote_4_buttons",
-      "fix": "Removed _TZ3000_eo3dttwe/_fsiepnrh/_p6ju8myv - belong in button_emergency_sos"
+      "id": "pairing",
+      "pattern": "Pairing Failure",
+      "count": 7,
+      "priority": "high"
     },
     {
-      "issue": "_TZ3000_osu834un in vibration_sensor",
-      "fix": "Removed - Z2M confirms contact sensor"
+      "id": "unknown",
+      "pattern": "Device Shows Unknown",
+      "count": 5,
+      "priority": "high"
     },
     {
-      "issue": "_TZ3000_gbm10jnj/_TZ3002_6ahhkwyh in switch_1gang",
-      "fix": "Removed - Z2M confirms TS0726 scene switches"
+      "id": "ring_value",
+      "pattern": "Ring/Alarm Wrong",
+      "count": 5,
+      "priority": "high"
     },
     {
-      "issue": "_TZ3210_j4pdtz9v in curtain_motor",
-      "fix": "Removed - Z2M confirms Fingerbot Plus, not curtain motor"
-    },
-    {
-      "issue": "3 fingerbot FPs in switch_1gang",
-      "fix": "Moved _TZ3210_7vgttna6/_a04acm9s/_cm9mbpr1 to fingerbot driver"
-    },
-    {
-      "issue": "_TZE204_ztqnh5cg in generic_tuya",
-      "fix": "Removed - tlink presence sensor (FIXED v5.6.0)"
-    },
-    {
-      "issue": "_TZE204_clrdrnya in generic_tuya",
-      "fix": "Removed - 7Hills WZ-235-ZB-RL relay (FIXED v5.12.0)"
-    },
-    {
-      "issue": "55 specific FPs in generic_tuya",
-      "fix": "Batch-removed curtain/sensor/garage/smoke FPs that have dedicated drivers"
-    },
-    {
-      "issue": "_TZE204_dcnsggvz in climate_sensor",
-      "fix": "Removed - Z2M confirms 1-gang smart dimmer module"
-    },
-    {
-      "issue": "_TZE284_7zazvlyn in climate_sensor",
-      "fix": "Moved to new smart_scene_panel driver (4-switch+4-scene+radar)"
-    },
-    {
-      "issue": "_TZE284_rlytpmij in presence_sensor_radar",
-      "fix": "Moved to smart_scene_panel driver"
-    },
-    {
-      "issue": "_TZE284_o9ofysmo/_xc3vwx5a in presence_sensor_radar",
-      "fix": "Moved to soil_sensor - Z2M confirms soil/env sensors (DP3=moisture,DP5=temp)"
-    },
-    {
-      "issue": "_TZE284_8se38w3c in radiator_valve",
-      "fix": "Moved to climate_sensor - Z2M confirms temp/humidity sensor with probe"
-    },
-    {
-      "issue": "switch_3gang driver.js broken string literal (#170)",
-      "fix": "Syntax error on line 123 swallowed scene mode registration + closing log - all flow cards dead"
-    },
-    {
-      "issue": "HOBEIAN ZG-303Z not in climate_sensor",
-      "fix": "Added HOBEIAN/Hobeian/hobeian to climate_sensor manufacturerName"
-    },
-    {
-      "issue": "issue-manager auto-closing bug reports based on FP support",
-      "fix": "Added bug_report guard to 3 close paths (AI close, owner close, stale sweep Rule 1)"
-    },
-    {
-      "issue": "findDriver/findAllDrivers case-sensitive",
-      "fix": "Both functions now use .toLowerCase() for matching"
-    },
-    {
-      "issue": "generate-ai-changelog.js broken template function",
-      "fix": "Line 104 syntax error: CI section string swallowed Other section"
-    },
-    {
-      "issue": ".homeychangelog.json entries 5.11.133-137 identical garbage",
-      "fix": "Replaced with real descriptions of changes per version"
+      "id": "no_response",
+      "pattern": "Device Not Responding",
+      "count": 4,
+      "priority": "medium"
     }
   ],
-  "stats": {
-    "drivers": 189,
-    "totalFPs": 4356,
-    "crossDriverConflicts": 170,
-    "unexpectedConflicts": 4
-  }
+  "flowAudit": [
+    {
+      "driver": "fan_controller",
+      "actions": 7
+    },
+    {
+      "driver": "generic_diy",
+      "actions": 7
+    },
+    {
+      "driver": "radiator_controller",
+      "actions": 4
+    },
+    {
+      "driver": "wifi_camera",
+      "actions": 3
+    },
+    {
+      "driver": "wifi_heater",
+      "actions": 2
+    }
+  ],
+  "mainsBatteryIssues": [
+    "climate_sensor",
+    "smoke_detector_advanced",
+    "soil_sensor"
+  ]
 }
