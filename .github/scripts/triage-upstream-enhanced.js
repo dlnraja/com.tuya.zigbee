@@ -3,6 +3,7 @@
 const{execSync}=require('child_process');
 const{loadFingerprints,findAllDrivers,extractMfrFromText,extractAllFP,buildFullIndex,resolveFingerprint}=require('./load-fingerprints');
 const{sleep}=require('./retry-helper');
+const { analyzeAndRespond } = require('./intelligent-bug-detector.js');
 let investigateBug;try{investigateBug=require('./bug-investigator').investigate}catch{investigateBug=()=>null}
 const fs=require('fs'),path=require('path'),os=require('os');
 const DRY=process.env.DRY_RUN==='true';
