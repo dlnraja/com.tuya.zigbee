@@ -9,7 +9,6 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
  */
 class SmartLCDThermostatDevice extends TuyaZigbeeDevice {
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
 
     const MODE_MAP = { 0: 'auto', 1: 'heat', 2: 'off' };
     const MODE_MAP_REV = { 'auto': 0, 'heat': 1, 'off': 2 };
@@ -32,7 +31,9 @@ class SmartLCDThermostatDevice extends TuyaZigbeeDevice {
 
     this.registerCapabilityListener('thermostat_mode', async (value) => {
       this._markAppCommand?.();
-      if (this._tuyaEF00Manager) {
+      if 
+    await super.onNodeInit({ zclNode });
+(this._tuyaEF00Manager) {
         await this._tuyaEF00Manager.sendTuyaDP(1, 4, MODE_MAP_REV[value] ?? 0);
       }
     });

@@ -7,12 +7,13 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
     this.log('Air Purifier init...');
     this._lastOnoff = null;
     this._lastPm25 = null;
-    await super.onNodeInit({ zclNode });
     this.registerCapabilityListener('onoff', async (v) => {
       await this.sendTuyaCommand(DP.state, v, 'bool');
     });
     this.registerCapabilityListener('dim', async (v) => {
-      await this.sendTuyaCommand(DP.speed, Math.round(v * 100), 'value');
+      await this.sendTuyaCommand(DP.speed
+    await super.onNodeInit({ zclNode });
+, Math.round(v * 100), 'value');
     });
     this.log('Air Purifier ready');
   }

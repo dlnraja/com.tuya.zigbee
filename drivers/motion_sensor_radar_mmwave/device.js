@@ -185,8 +185,6 @@ class MotionSensorRadarDevice extends HybridSensorBase {  get mainsPowered() {
       }
     }
 
-    await super.onNodeInit({ zclNode });
-
     this.log('[MMWAVE] ✅ mmWave radar presence sensor ready');
     this.log('[MMWAVE] Model type:', config.type);
     this.log('[MMWAVE] Capabilities:', this.getCapabilities().join(', '));
@@ -194,7 +192,9 @@ class MotionSensorRadarDevice extends HybridSensorBase {  get mainsPowered() {
     // v5.12.0: Register onoff listener for RELAY models (DP108 = breaker_status)
     if (config.type === 'RELAY' && this.hasCapability('onoff')) {
       this.registerCapabilityListener('onoff', async (value) => {
-        this.log(`[MMWAVE] 🔌 Relay control: ${value ? 'ON' : 'OFF'} (DP108)`);
+        this.log(`[MMWAVE] 🔌 Relay contro
+    await super.onNodeInit({ zclNode });
+l: ${value ? 'ON' : 'OFF'} (DP108)`);
         const tuya = zclNode?.endpoints?.[1]?.clusters?.tuya;
         if (tuya?.datapoint) {
           await tuya.datapoint({ dp: 108, value: value ? 1 : 0, type: 'enum' });

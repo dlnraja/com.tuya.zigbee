@@ -8,7 +8,6 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
  */
 class PetFeederZigbeeDevice extends TuyaZigbeeDevice {
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
 
     if (this._tuyaEF00Manager) {
       this._tuyaEF00Manager.dpMappings = {
@@ -19,7 +18,9 @@ class PetFeederZigbeeDevice extends TuyaZigbeeDevice {
 
     this.registerCapabilityListener('button', async () => {
       this._markAppCommand?.();
-      if (this._tuyaEF00Manager) {
+      if 
+    await super.onNodeInit({ zclNode });
+(this._tuyaEF00Manager) {
         // DP4: manual feed (1 portion)
         await this._tuyaEF00Manager.sendTuyaDP(4, 2, 1);
       }

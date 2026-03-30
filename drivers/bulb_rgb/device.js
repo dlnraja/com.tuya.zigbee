@@ -87,7 +87,6 @@ class RGBBulbDevice extends HybridLightBase {
       this.log(`[RGB] ManufacturerName: ${this.getData()?.manufacturerName || 'unknown'}`);
 
       // Let parent initialize first (handles onoff, dim listeners)
-      await super.onNodeInit({ zclNode });
 
       this.log('[RGB] DPs: 1-7,21,24-26,101 | ZCL: 6,8,300,EF00');
 
@@ -147,7 +146,9 @@ class RGBBulbDevice extends HybridLightBase {
   }
 
   async _sendHSV() {
-    // v5.12.5: Enable RGB mode via ZCL (Johan SDK3 pattern)
+    // v5.1
+    await super.onNodeInit({ zclNode });
+2.5: Enable RGB mode via ZCL (Johan SDK3 pattern)
     await this._tryTuyaRgbMode?.(1)?.catch(() => {});
     const h = Math.round((this.getCapabilityValue('light_hue') || 0) * 360);
     const s = Math.round((this.getCapabilityValue('light_saturation') || 1) * 1000);

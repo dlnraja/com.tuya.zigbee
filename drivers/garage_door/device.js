@@ -3,10 +3,11 @@ const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDev
 class GarageDoorDevice extends TuyaSpecificClusterDevice {
   async onNodeInit({ zclNode }) {
     this.log('[GARAGE] initializing...');
-    await super.onNodeInit({ zclNode });
     if (this.hasCapability('garagedoor_closed')) {
       this.registerCapabilityListener('garagedoor_closed', async (value) => {
-        this.log('[GARAGE] Door ' + (value ? 'CLOSE' : 'OPEN'));
+        this.log('[GARAGE] Door ' + (valu
+    await super.onNodeInit({ zclNode });
+e ? 'CLOSE' : 'OPEN'));
         await this.sendTuyaCommand(1, true, 'bool');
       });
     }

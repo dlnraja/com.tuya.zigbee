@@ -64,7 +64,6 @@ class SirenDevice extends HybridPlugBase {
   }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
     this.log('[SIREN] v5.11.27 - DP13=alarm,DP5=vol,DP7=dur,DP21=melody | ZCL: IAS-WD,EF00');
 
     // Setup IAS WD cluster (parent doesn't have this)
@@ -73,7 +72,9 @@ class SirenDevice extends HybridPlugBase {
     // Register volume listener (send to BOTH standard DP5 + NEO DP116)
     if (this.hasCapability('volume_set')) {
       this.registerCapabilityListener('volume_set', async (v) => {
-        const volume = v < 0.4 ? 0 : (v < 0.7 ? 1 : 2);
+        const volume = v < 0.4 ? 0 : (v <
+    await super.onNodeInit({ zclNode });
+ 0.7 ? 1 : 2);
         try { await this._sendTuyaDP(5, volume, 'enum'); } catch (e) {}
         try { await this._sendTuyaDP(116, volume, 'enum'); } catch (e) {}
       });

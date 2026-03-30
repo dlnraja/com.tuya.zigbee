@@ -69,7 +69,6 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
       await this._initZclOnlyMode(zclNode);
       return;
     }
-    await super.onNodeInit({ zclNode });
     await this.initPhysicalButtonDetection?.(zclNode);
     await this.initVirtualButtons?.();
     this.log('[SWITCH-8G] v5.5.922 ✅ Ready (DP 1-6 + DP 101/102)');
@@ -96,7 +95,9 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
     for (const epNum of [1, 2, 3, 4, 5, 6, 7, 8]) {
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
       this.registerCapabilityListener(capName, async (value) => {
-        this._zclState.pending[epNum] = true;
+        this._zclState.pending[epNum] = t
+    await super.onNodeInit({ zclNode });
+rue;
         clearTimeout(this._zclState.timeout[epNum]);
         this._zclState.timeout[epNum] = setTimeout(() => {
           this._zclState.pending[epNum] = false;

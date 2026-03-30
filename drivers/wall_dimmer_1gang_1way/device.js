@@ -41,8 +41,6 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
     this.log('WallDimmer1Gang1Way onNodeInit STARTING');
     this.log('════════════════════════════════════════');
     
-    await super.onNodeInit({zclNode});
-    
     this.printNode();
 
     // v5.5.755: PR #112 (packetninja) - Track state for detecting physical button presses
@@ -77,7 +75,9 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
     });
     
     this.registerCapabilityListener('dim', async (value) => {
-      this.log('Dim capability changed to:', value, '(APP)');
+      this.log('Dim capability changed to:',
+    await super.onNodeInit({zclNode});
+ value, '(APP)');
       this._markAppCommand();  // v5.5.755: PR #112 - Mark as app command
       const brightness = Math.round(10 + (value * 990));
       this.log('Converted to Tuya brightness:', brightness);

@@ -23,8 +23,6 @@ class RadiatorValveZigbeeDevice extends HybridThermostatBase {
 
   async onNodeInit({ zclNode }) {
     this.log('[TRV-ZIGBEE] 🔥 Initializing comprehensive TRV driver...');
-    
-    await super.onNodeInit({ zclNode });
 
     // TRV-specific DP mappings
     this.dpMappings = {
@@ -69,7 +67,9 @@ class RadiatorValveZigbeeDevice extends HybridThermostatBase {
       this.registerCapabilityListener('child_lock', this.onChildLockChange.bind(this));
     }
 
-    this.log('[TRV-ZIGBEE] ✅ Comprehensive TRV initialized');
+    this.log('[TRV-ZIGBEE] ✅ Comprehens
+    await super.onNodeInit({ zclNode });
+ive TRV initialized');
   }
 
   async onTargetTemperatureChange(value) {
