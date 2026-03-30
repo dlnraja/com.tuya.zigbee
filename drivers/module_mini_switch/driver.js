@@ -57,7 +57,7 @@ class MiniSwitchDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ module_mini_switch_toggle');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Mini switch flow cards registered');
+    this.log('[FLOW]  Mini switch flow cards registered');
   }
 }
 

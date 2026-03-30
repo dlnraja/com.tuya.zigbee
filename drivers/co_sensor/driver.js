@@ -60,7 +60,7 @@ class CoSensorDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ co_sensor_test_alarm');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 CO sensor flow cards registered');
+    this.log('[FLOW]  CO sensor flow cards registered');
   }
 }
 

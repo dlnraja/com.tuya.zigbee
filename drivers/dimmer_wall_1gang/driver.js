@@ -80,7 +80,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ dimmer_wall_1gang_dimmer_1gang_set_dim_with_transition');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Dimmer 1-gang flow cards registered');
+    this.log('[FLOW]  Dimmer 1-gang flow cards registered');
   }
 }
 

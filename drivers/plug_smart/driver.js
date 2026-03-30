@@ -81,7 +81,7 @@ class PlugSmartDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ plug_smart_turn_off_delay');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Smart plug flow cards registered');
+    this.log('[FLOW]  Smart plug flow cards registered');
   }
 }
 

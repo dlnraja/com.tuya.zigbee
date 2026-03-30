@@ -102,7 +102,7 @@ class TuyaGasSensorTs0601Driver extends ZigBeeDriver {
       this.log(`[FLOW] ⚠️ ${err.message}`);
     }
 
-    this.log('[FLOW] 🎉 All gas sensor flow cards registered');
+    this.log('[FLOW]  All gas sensor flow cards registered');
   }
 }
 

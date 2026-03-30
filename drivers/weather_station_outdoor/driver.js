@@ -58,7 +58,7 @@ class WeatherStationOutdoorDriver extends Homey.Driver {
       this.log('[FLOW] ✅ weather_station_outdoor_pressure_falling');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Weather station flow cards registered');
+    this.log('[FLOW]  Weather station flow cards registered');
   }
 }
 

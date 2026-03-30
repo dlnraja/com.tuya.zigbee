@@ -186,7 +186,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
       this.log(`[FLOW] ⚠️ Could not register siren_set_melody: ${err.message}`);
     }
 
-    this.log('[FLOW] 🎉 All siren flow cards registered');
+    this.log('[FLOW]  All siren flow cards registered');
   }
 }
 

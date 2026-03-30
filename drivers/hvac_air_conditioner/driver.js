@@ -68,7 +68,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ hvac_air_conditioner_air_conditioner_hybrid_set_target_temperature');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 HVAC air conditioner flow cards registered');
+    this.log('[FLOW]  HVAC air conditioner flow cards registered');
   }
 }
 

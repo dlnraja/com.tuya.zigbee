@@ -77,7 +77,7 @@ class DoorControllerDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ door_controller_unlock');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Door controller flow cards registered');
+    this.log('[FLOW]  Door controller flow cards registered');
   }
 }
 

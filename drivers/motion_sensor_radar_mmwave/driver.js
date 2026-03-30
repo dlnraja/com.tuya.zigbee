@@ -128,7 +128,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ motion_sensor_radar_mmwave_set_detection_delay');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 mmWave radar motion sensor flow cards registered');
+    this.log('[FLOW]  mmWave radar motion sensor flow cards registered');
   }
 }
 

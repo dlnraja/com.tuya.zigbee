@@ -90,7 +90,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ plug_energy_monitor_reset_meter');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Energy monitor plug flow cards registered');
+    this.log('[FLOW]  Energy monitor plug flow cards registered');
   }
 }
 

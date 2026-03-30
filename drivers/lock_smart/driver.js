@@ -45,7 +45,7 @@ class LockSmartDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ lock_smart_unlock');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Smart lock flow cards registered');
+    this.log('[FLOW]  Smart lock flow cards registered');
   }
 }
 

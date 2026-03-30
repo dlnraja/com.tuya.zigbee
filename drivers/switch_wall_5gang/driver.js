@@ -135,7 +135,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       this.log('[FLOW] \u2705 switch_wall_5gang_set_scene_mode');
     } catch (err) { this.log('[FLOW] ' + err.message); }
 
-    this.log('[FLOW] 🎉 All 5-gang switch flow cards registered (v5.5.930)');
+    this.log('[FLOW]  All 5-gang switch flow cards registered (v5.5.930)');
   }
 }
 

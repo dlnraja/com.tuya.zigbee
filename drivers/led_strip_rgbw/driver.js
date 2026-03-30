@@ -57,7 +57,7 @@ class LedStripRgbwDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ led_strip_rgbw_led_strip_rgbw_toggle');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 LED strip RGBW flow cards registered');
+    this.log('[FLOW]  LED strip RGBW flow cards registered');
   }
 }
 

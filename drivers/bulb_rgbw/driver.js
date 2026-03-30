@@ -57,7 +57,7 @@ class BulbRgbwDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ bulb_rgbw_bulb_rgbw_toggle');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 RGBW bulb flow cards registered');
+    this.log('[FLOW]  RGBW bulb flow cards registered');
   }
 }
 

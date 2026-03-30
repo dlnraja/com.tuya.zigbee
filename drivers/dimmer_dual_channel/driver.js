@@ -103,7 +103,7 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ dimmer_dual_channel_dim_down');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Dimmer dual channel flow cards registered');
+    this.log('[FLOW]  Dimmer dual channel flow cards registered');
   }
 }
 

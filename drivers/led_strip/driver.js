@@ -57,7 +57,7 @@ class LedStripDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ led_strip_led_strip_toggle');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 LED strip flow cards registered');
+    this.log('[FLOW]  LED strip flow cards registered');
   }
 }
 

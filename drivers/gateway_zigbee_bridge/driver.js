@@ -45,7 +45,7 @@ class ZbbridgeDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ gateway_zigbee_bridge_disable_join');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Zigbee bridge flow cards registered');
+    this.log('[FLOW]  Zigbee bridge flow cards registered');
   }
 }
 

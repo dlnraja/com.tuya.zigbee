@@ -44,7 +44,7 @@ class GenericTuyaDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ generic_tuya_request_dp');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Generic Tuya flow cards registered');
+    this.log('[FLOW]  Generic Tuya flow cards registered');
   }
 
   /**

@@ -57,7 +57,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ hvac_dehumidifier_dehumidifier_hybrid_toggle');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 HVAC dehumidifier flow cards registered');
+    this.log('[FLOW]  HVAC dehumidifier flow cards registered');
   }
 }
 

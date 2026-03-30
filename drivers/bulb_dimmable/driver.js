@@ -68,7 +68,7 @@ class SmartBulbDimmerDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ bulb_dimmable_smart_bulb_dimmer_set_dim');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Dimmable bulb flow cards registered');
+    this.log('[FLOW]  Dimmable bulb flow cards registered');
   }
 }
 
