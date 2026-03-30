@@ -1,4 +1,7 @@
 {
+  "5.11.142": {
+    "en": "Universal Tuya Zigbee app v5.11.142 adds 3182 new fingerprints and supports 189 drivers."
+  },
   "5.11.140": {
     "en": "Universal Tuya Zigbee app v5.11.140 adds new device support and fixes pairing issues for specific models."
   },
@@ -56,10 +59,7 @@
   "5.11.121": {
     "en": "Universal Tuya Zigbee app v5.11.121 adds new device variants and fixes issues with LEAPMW DP109/119 distance reporting."
   },
-  "5.11.120": {
-    "en": "Universal Tuya Zigbee app v5.11.120 adds new device variants and fixes distance drop issue for radar sensors."
-  },
-  "5.11.142": {
-    "en": "v5.11.140: Fixed pairing failure for presence_sensor_radar with DP-only TS0601 devices., Removed strict cluster endpoints requirement to improve pairing for TS0601 models., Prevented universal_fallback from hijacking motion sensors., Added full Tuya DP mapping for A89G12C and ZS-300TF models., Enriched driver and fingerprint data, increasing total to 3862 fingerprints across 189 drivers."
+  "5.11.143": {
+    "en": "v5.11.142: Resolved issues related to device fingerprints and driver compatibility., Added 3182 new fingerprints for enhanced device support., Now supports a total of 189 drivers, improving overall device integration."
   }
 }
