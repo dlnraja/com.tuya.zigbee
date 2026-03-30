@@ -6,7 +6,16 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.142] - 2026-03-30
+## [5.11.143] - 2026-03-30
+
+### Bug Fixes
+- Fixed issue with 4 gang wall switch (_TZ3000_xabckq1v) that stopped working.
+
+### New Features
+- Added new fingerprints for devices: dlnraja, example, vision.
+---
+
+ [5.11.142] - 2026-03-30
 
 ### Bug Fixes
 - Resolved issues related to device fingerprints and driver compatibility.

@@ -1,4 +1,7 @@
 {
+  "5.11.143": {
+    "en": "Universal Tuya Zigbee app v5.11.143 adds new device fingerprints and fixes bugs affecting users."
+  },
   "5.11.142": {
     "en": "Universal Tuya Zigbee app v5.11.142 adds 3182 new fingerprints and supports 189 drivers."
   },
@@ -55,11 +58,5 @@
   },
   "5.11.122": {
     "en": "Universal Tuya Zigbee app v5.11.122: Fixed lux clamp issue and updated fingerprints."
-  },
-  "5.11.121": {
-    "en": "Universal Tuya Zigbee app v5.11.121 adds new device variants and fixes issues with LEAPMW DP109/119 distance reporting."
-  },
-  "5.11.143": {
-    "en": "v5.11.142: Resolved issues related to device fingerprints and driver compatibility., Added 3182 new fingerprints for enhanced device support., Now supports a total of 189 drivers, improving overall device integration."
   }
 }
