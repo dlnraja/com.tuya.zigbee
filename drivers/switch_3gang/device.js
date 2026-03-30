@@ -35,6 +35,17 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
   }
 
   async onNodeInit({ zclNode }) {
+    try {
+      // v6.0: Robust initialization with error recovery
+      try {
+        await super.onNodeInit({ zclNode });
+      } catch (superErr) {
+        this.error('[SWITCH-3G] ⚠️ Super init error (non-fatal):', superErr.message);
+        this.zclNode = zclNode;
+      }
+
+      // Continue with driver-specific setup
+      try {
     if (this.isZclOnlyDevice) {
       this.log('[SWITCH-3G] 🔵 ZCL-ONLY MODE (BSEED)');
       await this._initZclOnlyMode(zclNode);
@@ -44,6 +55,16 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
     await this.initPhysicalButtonDetection(zclNode);
     await this.initVirtualButtons();
     this.log('[SWITCH-3G] v5.5.919 - Physical button detection enabled');
+  } catch (setupErr) {
+        this.log('[SWITCH-3G] Setup warning:', setupErr.message);
+      }
+
+      this.log('[SWITCH-3G] ✅ v6.0 - Initialized with error recovery');
+    } catch (err) {
+      this.error('[SWITCH-3G] ❌ CRITICAL INIT ERROR:', err.message);
+      this.error('[SWITCH-3G] Stack:', err.stack);
+      this.setUnavailable('Driver initialization incomplete - try removing and re-pairing').catch(() => {});
+    }
   }
 
   /**
