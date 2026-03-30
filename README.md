@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.149 |
+| **App Version** | v5.11.150 |
 | **Device Fingerprints** | 4,350+ |
 | **Unique Product IDs** | 559 |
 | **Drivers** | 191 (142 Zigbee + 49 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.149** | v5.11.148: Fixed issue with 4 gang wall switch (_TZ3000_xabckq1v) that stopped working., Added support for new device... |
+| **v5.11.150** | v5.11.149: Resolved issues with 4 gang wall switch not functioning as reported by users., Added support for new devic... |
+| **v5.11.149** | Universal Tuya Zigbee app v5.11.149 adds new drivers and fingerprints, enhancing device compatibility. |
 | **v5.11.148** | Universal Tuya Zigbee app v5.11.148 adds new device fingerprints and fixes bugs for improved compatibility. |
 | **v5.11.147** | Universal Tuya Zigbee app v5.11.147 adds new device fingerprints and fixes issues for better performance. |
 | **v5.11.146** | Universal Tuya Zigbee app v5.11.146 adds new drivers and fixes initialization errors. |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.136** | v5.11.132: Implemented batch close/respond state update for improved device management., No new features added in thi... |
 | **v5.11.135** | v5.11.132: Implemented batch close/respond state update for improved device management., No new features added in thi... |
 | **v5.11.134** | v5.11.132: Implemented batch close/respond state update for improved device management., No new features added in thi... |
-| **v5.11.133** | v5.11.132: Implemented batch close/respond state update for improved device management., No new features added in thi... |
 
 <!-- CHANGELOG_END -->
 
