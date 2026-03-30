@@ -14,9 +14,7 @@ class CeilingFanDevice extends HybridLightBase {
   }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-    await this.removeCapability('measure_battery').catch(() => {});
-    this.log('[FAN] ✅ Ready');
+    await super.onNodeInit({ zclNode });this.log('[FAN] ✅ Ready');
   }
 }
 module.exports = CeilingFanDevice;

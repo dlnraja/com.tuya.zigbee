@@ -823,9 +823,7 @@ const SENSOR_CONFIGS = {
     sensors: [
       '_TZE200_0u3bj3rc', '_TZE200_mx6u6l4y', '_TZE200_v6ossqfy',
       // v5.5.281: Added from Z2M research (removed _TZE200_3towulqd - now in ZG_204ZL_PIR)
-      '_TZE200_1ibpyhdc', '_TZE204_1ibpyhdc',
-      // v5.5.509: Additional mains-powered ceiling sensors
-      '_TZE200_auin8mzr', '_TZE204_auin8mzr',
+      '_TZE200_1ibpyhdc', '_TZE204_1ibpyhdc',      '_TZE200_auin8mzr', '_TZE204_auin8mzr',
     ],
     battery: false,
     mainsPowered: true,           // v5.5.509: Force mains power detection
@@ -1279,8 +1277,7 @@ const SENSOR_CONFIGS = {
     ],
     modelId: 'ZG-227Z',  // v5.5.740: From PR #1306
     battery: true,              // v5.8.43: PR#125 michelhelsdingen - Device has battery (DP110)
-    mainsPowered: false,        // v5.8.43: PR#125 - Not mains-powered
-    noBatteryCapability: false,  // v5.8.43: PR#125 - Allow battery capability
+    mainsPowered: false,    noBatteryCapability: false,  // v5.8.43: PR#125 - Allow battery capability
     hasIlluminance: true,
     hasTemperature: true,   // v5.5.740: UNIQUE - this radar HAS temp sensor!
     hasHumidity: true,      // v5.5.740: UNIQUE - this radar HAS humidity sensor!
@@ -1405,8 +1402,7 @@ const SENSOR_CONFIGS = {
       '_TZ3000_ky0fq4ho',
       '_TZ3210_fkzihax8'
     ],
-    battery: false,         // v5.5.519: Mains powered PIR
-    useZcl: true,
+    battery: false,    useZcl: true,
     useIasZone: true,       // v5.5.519: IAS Zone ONLY for _TZ321C_fkzihax8
     hasIlluminance: true,   // v5.5.499: Has illuminance via Tuya DP103
     noTemperature: true,    // v5.5.372: PIR sensors have NO temp
@@ -2384,14 +2380,8 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       await this._setupZclClusters(zclNode);
       this.log('[RADAR] ✅ PIR sensor ready (ZCL mode)');
       return;
-    }
-
-    // Mains-powered radar sensors: full init
-    await super.onNodeInit({ zclNode });
-    await this._setupZclClusters(zclNode);
-
-    // v5.5.270: CRITICAL FIX - Setup Tuya DP listeners for mains-powered sensors too!
-    // This was missing and caused presence not to work on TZE284 devices
+    }    await super.onNodeInit({ zclNode });
+    await this._setupZclClusters(zclNode);    // This was missing and caused presence not to work on TZE284 devices
     await this._setupTuyaDPListeners(zclNode);
 
     // v5.5.518: Send Tuya magic packet for devices that need it (LeapMMW 5.8G hybrid)
@@ -2402,14 +2392,9 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
     await new Promise(r => setTimeout(r, 3000));
     this.log('[RADAR] Force DP poll after magic packet');
-    await this._requestDPRefresh(zclNode);
-
-    // v5.5.325: RONNY #782 - Force remove battery for mains-powered sensors
-    // noBatteryCapability flag ensures battery is NEVER shown for these devices
+    await this._requestDPRefresh(zclNode);    // noBatteryCapability flag ensures battery is NEVER shown for these devices
     if ((config.noBatteryCapability || config.mainsPowered || !config.battery) && this.hasCapability('measure_battery')) {
-      try {
-        await this.removeCapability('measure_battery');
-        this.log('[RADAR] 🔋 Removed measure_battery (mains-powered, no battery spam)');
+      try {this.log('[RADAR] 🔋 Removed measure_battery (mains-powered, no battery spam)');
       } catch (e) { /* ignore */ }
     }
 
@@ -2558,10 +2543,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         }
         this.log('[RADAR] ✅ Passive Tuya listener configured (all events)');
       }
-    } catch (e) { /* ignore */ }
-
-    // v5.8.30: Node-level command listener as fallback (same as mains-powered)
-    try {
+    } catch (e) { /* ignore */ }    try {
       if (zclNode?.on) {
         zclNode.on('command', (cmd) => {
           if (cmd.cluster === 61184 || cmd.cluster === 'tuya') {

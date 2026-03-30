@@ -106,9 +106,7 @@ class GasDetectorDevice extends HybridSensorBase {
   }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-    await this.removeCapability('measure_battery').catch(() => {});
-    this.log('[GAS-DETECTOR] v5.5.932 ✅ Ready');
+    await super.onNodeInit({ zclNode });this.log('[GAS-DETECTOR] v5.5.932 ✅ Ready');
     this.log('[GAS-DETECTOR] Manufacturer:', this.getSetting('zb_manufacturer_name') || 'unknown');
   }
 }

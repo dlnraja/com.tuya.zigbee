@@ -1,0 +1,21 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Temperature Calibration",
+    "fr": "Calibration Température"
+  },
+  "desc": {
+    "en": "Temperature offset for local sensor",
+    "fr": "Décalage de température pour le capteur local"
+  },
+  "units": {
+    "en": "°C"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "slider",
+  "min": -5,
+  "max": 5,
+  "step": 0.1,
+  "decimals": 1
+}
