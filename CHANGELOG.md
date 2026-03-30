@@ -6,7 +6,21 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.138] - 2026-04-01
+## [5.11.140] - 2026-03-30
+
+### Bug Fixes
+- Fixed pairing failure for presence_sensor_radar with DP-only TS0601 devices.
+- Removed strict cluster endpoints requirement to improve pairing for TS0601 models.
+- Prevented universal_fallback from hijacking motion sensors.
+
+### New Features
+- Added full Tuya DP mapping for A89G12C and ZS-300TF models.
+
+### Device Updates
+- Enriched driver and fingerprint data, increasing total to 3862 fingerprints across 189 drivers.
+---
+
+ [5.11.138] - 2026-04-01
 ### Bug Fixes
 - Fixed pairing failures for soil, motion, LCD sensors. Added HOBEIAN to contact_sensor.
 ---
