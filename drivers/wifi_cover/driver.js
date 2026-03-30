@@ -7,10 +7,10 @@ class WiFiCoverDriver extends TuyaLocalDriver {
     await super.onInit();
     this.log('[WIFI-COVER-DRV] Driver initialized');
     // v5.13.3: Flow card handlers
-    const r=(i,fn)=>{try{this.homey.flow.getActionCard(i).registerRunListener(fn)}catch(e){this.log('[Flow]',i,e.message)}};
-    r('wifi_cover_open',async({device})=>{await device.setCapabilityValue('windowcoverings_state','up');return true});
-    r('wifi_cover_close',async({device})=>{await device.setCapabilityValue('windowcoverings_state','down');return true});
-    r('wifi_cover_stop',async({device})=>{await device.setCapabilityValue('windowcoverings_state','idle');return true});
+    const r=(i,fn)=>{try{this.homey.flow.getActionCard(i).registerRunListener(fn);}catch(e){this.log('[Flow]',i,e.message);}};
+    r('wifi_cover_open',async({device})=>{await device.setCapabilityValue('windowcoverings_state','up');return true;});
+    r('wifi_cover_close',async({device})=>{await device.setCapabilityValue('windowcoverings_state','down');return true;});
+    r('wifi_cover_stop',async({device})=>{await device.setCapabilityValue('windowcoverings_state','idle');return true;});
   }
 }
 

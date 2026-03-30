@@ -312,7 +312,7 @@ class ContactSensorDevice extends HybridSensorBase {
             return; // Ignore this false state change completely
           }
 
-          this.log(`[CONTACT] 🔍 Problematic sensor: open→closed change - applying extended debounce`);
+          this.log('[CONTACT] 🔍 Problematic sensor: open→closed change - applying extended debounce');
 
           if (state.timer) {
             this.homey.clearTimeout(state.timer);

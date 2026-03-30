@@ -536,7 +536,7 @@ class Button4GangDevice extends ButtonDevice {
 
         // Also listen for 'report' and 'datapoint' events (different Tuya cluster implementations)
         tuyaCluster.on('report', async (data) => {
-          this.log(`[BUTTON4-TUYA-DP] 📡 Report event:`, data);
+          this.log('[BUTTON4-TUYA-DP] 📡 Report event:', data);
           // Process same as response
           const dp = data?.dp ?? data?.dataPointId ?? data?.dpId;
           const value = data?.data ?? data?.value ?? 0;
@@ -617,7 +617,7 @@ class Button4GangDevice extends ButtonDevice {
         this.log('[BUTTON4-E000] ℹ️ Unknown device - setting up E000 as universal fallback');
       }
       
-      this.log(`[BUTTON4-E000] 🔧 Setting up BoundCluster for cluster 0xE000 (57344)`);
+      this.log('[BUTTON4-E000] 🔧 Setting up BoundCluster for cluster 0xE000 (57344)');
       this.log(`[BUTTON4-E000] 📋 Manufacturer: ${manufacturerName || 'unknown'}, Product: ${productId || 'unknown'}`);
 
       // v5.5.758: Import TuyaE000BoundCluster for receiving button presses
@@ -817,7 +817,7 @@ class Button4GangDevice extends ButtonDevice {
           // Always call original handler
           return originalNodeHandleFrame(endpointId, clusterId, frame, meta);
         };
-        this.log(`[BUTTON4-NODE] ✅ zclNode.handleFrame hooked`);
+        this.log('[BUTTON4-NODE] ✅ zclNode.handleFrame hooked');
       }
       
       // v5.5.968: LEVEL 2 - Listen for 'message' event on zclNode (lower level)
@@ -825,12 +825,12 @@ class Button4GangDevice extends ButtonDevice {
         zclNode.on('message', (message) => {
           const clusterId = message?.clusterId;
           if (clusterId === 57344 || clusterId === 0xE000) {
-            this.log(`[BUTTON4-MSG] 📥 zclNode message cluster 57344:`, message);
+            this.log('[BUTTON4-MSG] 📥 zclNode message cluster 57344:', message);
             const ep = message?.endpointId || 1;
             this._handleRawE000Frame(ep, message);
           }
         });
-        this.log(`[BUTTON4-MSG] ✅ zclNode message listener registered`);
+        this.log('[BUTTON4-MSG] ✅ zclNode message listener registered');
       }
       
       for (let ep = 1; ep <= 4; ep++) {
@@ -1165,7 +1165,7 @@ class Button4GangDevice extends ButtonDevice {
           // v5.7.16: Use multi-capability listener pattern for reliability
           this.registerCapabilityListener(capId, async (value) => {
             this.log(`[BUTTON4-VIRTUAL] 🔘 Button ${buttonNum} VIRTUAL PRESS (value=${value})`);
-            this.log(`[BUTTON4-VIRTUAL] 📱 Triggered from Homey app or flow action`);
+            this.log('[BUTTON4-VIRTUAL] 📱 Triggered from Homey app or flow action');
             
             // Trigger flow cards
             await this.triggerButtonPress(buttonNum, 'single');

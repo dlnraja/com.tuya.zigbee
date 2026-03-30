@@ -51,20 +51,20 @@ class PoolPumpDevice extends ZigBeeDevice {
     this.log(`[DP${dp}] = ${value}`);
 
     switch (dp) {
-      case 1:
-      case 16:
-        this.setCapabilityValue('onoff', !!value).catch(this.error);
-        break;
-      case 18:
-        if (this.hasCapability('measure_power')) {
-          this.setCapabilityValue('measure_power', value).catch(this.error);
-        }
-        break;
-      case 101:
-        if (this.hasCapability('meter_power')) {
-          this.setCapabilityValue('meter_power', value / 100).catch(this.error);
-        }
-        break;
+    case 1:
+    case 16:
+      this.setCapabilityValue('onoff', !!value).catch(this.error);
+      break;
+    case 18:
+      if (this.hasCapability('measure_power')) {
+        this.setCapabilityValue('measure_power', value).catch(this.error);
+      }
+      break;
+    case 101:
+      if (this.hasCapability('meter_power')) {
+        this.setCapabilityValue('meter_power', value / 100).catch(this.error);
+      }
+      break;
     }
   }
 }

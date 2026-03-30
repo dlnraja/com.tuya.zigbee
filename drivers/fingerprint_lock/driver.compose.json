@@ -44,6 +44,17 @@
         "en": "Follow the lock's pairing instructions (usually hold * + # for 5 seconds)",
         "fr": "Suivez les instructions d'appairage de la serrure"
       }
+    },
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ],
+        "bindings": [
+          61184
+        ]
+      }
     }
   },
   "images": {

@@ -54,7 +54,16 @@
       "TS0601_irrigation",
       "TS0601",
       "TS0049"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": []
+      }
+    }
   },
   "images": {
     "small": "drivers/valve_irrigation/assets/images/small.png",

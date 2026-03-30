@@ -20,30 +20,30 @@ class WeatherStationOutdoorDevice extends HybridSensorBase {
 
     try {
       switch (capability) {
-        case 'measure_temperature':
-          this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_outdoor_temperature_changed')
-            .trigger(this, { temperature: value }, {}).catch(() => {});
-          break;
-        case 'measure_humidity':
-          this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_outdoor_humidity_changed')
-            .trigger(this, { humidity: value }, {}).catch(() => {});
-          break;
-        case 'measure_pressure': {
-          this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_pressure_changed')
-            .trigger(this, { pressure: value }, {}).catch(() => {});
-          // Track pressure trend for condition cards
-          if (prev != null && typeof prev === 'number') {
-            const trend = value > prev ? 'rising' : value < prev ? 'falling' : 'stable';
-            this.setStoreValue('pressure_trend', trend).catch(() => {});
-          }
-          break;
+      case 'measure_temperature':
+        this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_outdoor_temperature_changed')
+          .trigger(this, { temperature: value }, {}).catch(() => {});
+        break;
+      case 'measure_humidity':
+        this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_outdoor_humidity_changed')
+          .trigger(this, { humidity: value }, {}).catch(() => {});
+        break;
+      case 'measure_pressure': {
+        this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_pressure_changed')
+          .trigger(this, { pressure: value }, {}).catch(() => {});
+        // Track pressure trend for condition cards
+        if (prev != null && typeof prev === 'number') {
+          const trend = value > prev ? 'rising' : value < prev ? 'falling' : 'stable';
+          this.setStoreValue('pressure_trend', trend).catch(() => {});
         }
-        case 'measure_battery':
-          if (value <= 15 && (prev === undefined || prev === null || prev > 15)) {
-            this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_weather_battery_low')
-              .trigger(this, {}, {}).catch(() => {});
-          }
-          break;
+        break;
+      }
+      case 'measure_battery':
+        if (value <= 15 && (prev === undefined || prev === null || prev > 15)) {
+          this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_weather_battery_low')
+            .trigger(this, {}, {}).catch(() => {});
+        }
+        break;
       }
     } catch (e) { /* flow card may not exist */ }
   }

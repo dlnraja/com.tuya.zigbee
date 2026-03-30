@@ -235,29 +235,29 @@ class RadiatorControllerDevice extends ZigBeeDevice {
 
       // Simulation envoi signal selon voltage requis
       switch (modeConfig.voltage) {
-        case 0: // Confort - pas de signal
-          this.log('🏠 Mode Confort: Aucun signal (0V)');
-          break;
+      case 0: // Confort - pas de signal
+        this.log('🏠 Mode Confort: Aucun signal (0V)');
+        break;
 
-        case -230: // Éco - demi-alternance négative
-          this.log('🌱 Mode Éco: Signal 230V négatif');
-          await this._sendModulatedSignal('negative', duration);
-          break;
+      case -230: // Éco - demi-alternance négative
+        this.log('🌱 Mode Éco: Signal 230V négatif');
+        await this._sendModulatedSignal('negative', duration);
+        break;
 
-        case 230: // Hors-gel - demi-alternance positive
-          this.log('🧊 Mode Hors-Gel: Signal 230V positif');
-          await this._sendModulatedSignal('positive', duration);
-          break;
+      case 230: // Hors-gel - demi-alternance positive
+        this.log('🧊 Mode Hors-Gel: Signal 230V positif');
+        await this._sendModulatedSignal('positive', duration);
+        break;
 
-        case 'alternating': // Arrêt - signal alternatif
-          this.log('⛔ Mode Arrêt: Signal alternatif');
-          await this._sendModulatedSignal('alternating', duration);
-          break;
+      case 'alternating': // Arrêt - signal alternatif
+        this.log('⛔ Mode Arrêt: Signal alternatif');
+        await this._sendModulatedSignal('alternating', duration);
+        break;
 
-        case -115: // Confort-1/-2 - signal modulé
-          this.log(`🌡️ Mode ${signalType}: Signal modulé`);
-          await this._sendModulatedSignal('modulated', duration);
-          break;
+      case -115: // Confort-1/-2 - signal modulé
+        this.log(`🌡️ Mode ${signalType}: Signal modulé`);
+        await this._sendModulatedSignal('modulated', duration);
+        break;
       }
 
       // Trigger flow card
@@ -285,34 +285,34 @@ class RadiatorControllerDevice extends ZigBeeDevice {
     const diodeConfig = this.pilotWireConfig.diode;
 
     switch (type) {
-      case 'positive':
-        // Signal positif - activation directe
-        await this._pulseRelay(true, duration);
-        break;
+    case 'positive':
+      // Signal positif - activation directe
+      await this._pulseRelay(true, duration);
+      break;
 
-      case 'negative':
-        // Signal négatif - selon configuration diode
-        if (diodeConfig === 'dual_1n4007') {
-          await this._pulseRelay(false, duration);
-        } else {
-          await this._pulseRelay(true, duration); // Single diode
-        }
-        break;
+    case 'negative':
+      // Signal négatif - selon configuration diode
+      if (diodeConfig === 'dual_1n4007') {
+        await this._pulseRelay(false, duration);
+      } else {
+        await this._pulseRelay(true, duration); // Single diode
+      }
+      break;
 
-      case 'alternating':
-        // Signal alternatif - pulses alternés
-        const pulses = Math.floor(duration / 100);
-        for (let i = 0; i < pulses; i++) {
-          await this._pulseRelay(i % 2 === 0, 50);
-          await this._delay(50);
-        }
-        break;
+    case 'alternating':
+      // Signal alternatif - pulses alternés
+      const pulses = Math.floor(duration / 100);
+      for (let i = 0; i < pulses; i++) {
+        await this._pulseRelay(i % 2 === 0, 50);
+        await this._delay(50);
+      }
+      break;
 
-      case 'modulated':
-        // Signal modulé - pattern spécial
-        await this._pulseRelay(true, duration * 0.7);
-        await this._delay(duration * 0.3);
-        break;
+    case 'modulated':
+      // Signal modulé - pattern spécial
+      await this._pulseRelay(true, duration * 0.7);
+      await this._delay(duration * 0.3);
+      break;
     }
   }
 

@@ -264,12 +264,12 @@ class EnergyMonitorPlugDevice extends HybridPlugBase {
     const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
     const config = this._getEnergyConfig();
 
-    this.log(`[ENERGY] ═══════════════════════════════════════════════════════`);
-    this.log(`[ENERGY] v5.5.255 INTELLIGENT ENERGY MANAGEMENT`);
+    this.log('[ENERGY] ═══════════════════════════════════════════════════════');
+    this.log('[ENERGY] v5.5.255 INTELLIGENT ENERGY MANAGEMENT');
     this.log(`[ENERGY] ManufacturerName: ${mfr}`);
     this.log(`[ENERGY] Config: ${config.configName || 'TUYA_DP_STANDARD (default)'}`);
     this.log(`[ENERGY] Protocol: ${config.protocol || 'hybrid'}`);
-    this.log(`[ENERGY] ═══════════════════════════════════════════════════════`);
+    this.log('[ENERGY] ═══════════════════════════════════════════════════════');
 
     // Initialize base class
     await super.onNodeInit({ zclNode });

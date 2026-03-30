@@ -47,38 +47,38 @@ class WaterTankMonitorDevice extends HybridSensorBase {
 
     try {
       switch (dp) {
-        case 1: // liquid_state (enum: 0=normal, 1=low, 2=high)
-          await this._handleLiquidState(value);
-          break;
+      case 1: // liquid_state (enum: 0=normal, 1=low, 2=high)
+        await this._handleLiquidState(value);
+        break;
 
-        case 2: // liquid_depth (cm)
-          await this._handleLiquidDepth(value);
-          break;
+      case 2: // liquid_depth (cm)
+        await this._handleLiquidDepth(value);
+        break;
 
-        case 7: // max_set readback
-          this.log(`[LIQUID] Max alarm readback: ${value}%`);
-          break;
+      case 7: // max_set readback
+        this.log(`[LIQUID] Max alarm readback: ${value}%`);
+        break;
 
-        case 8: // min_set readback
-          this.log(`[LIQUID] Min alarm readback: ${value}%`);
-          break;
+      case 8: // min_set readback
+        this.log(`[LIQUID] Min alarm readback: ${value}%`);
+        break;
 
-        case 19: // installation_height readback (mm)
-          this.log(`[LIQUID] Installation height readback: ${value}mm`);
-          break;
+      case 19: // installation_height readback (mm)
+        this.log(`[LIQUID] Installation height readback: ${value}mm`);
+        break;
 
-        case 21: // liquid_depth_max readback (mm)
-          this.log(`[LIQUID] Depth max readback: ${value}mm`);
-          break;
+      case 21: // liquid_depth_max readback (mm)
+        this.log(`[LIQUID] Depth max readback: ${value}mm`);
+        break;
 
-        case 22: // liquid_level_percent (0-100)
-          await this._handleLiquidPercent(value);
-          break;
+      case 22: // liquid_level_percent (0-100)
+        await this._handleLiquidPercent(value);
+        break;
 
-        default:
-          this.log(`[LIQUID] Unknown DP${dp} = ${value}`);
-          await super._handleDP(dp, value);
-          break;
+      default:
+        this.log(`[LIQUID] Unknown DP${dp} = ${value}`);
+        await super._handleDP(dp, value);
+        break;
       }
     } catch (err) {
       this.error(`[LIQUID] Error handling DP${dp}:`, err.message);
@@ -151,22 +151,22 @@ class WaterTankMonitorDevice extends HybridSensorBase {
       try {
         const val = newSettings[key];
         switch (key) {
-          case 'installation_height': // DP19
-            if (this.tuyaEF00Manager) await this.tuyaEF00Manager.sendDP(19, val, 'value');
-            this.log(`[LIQUID] Sent DP19 installation_height = ${val}mm`);
-            break;
-          case 'liquid_depth_max': // DP21
-            if (this.tuyaEF00Manager) await this.tuyaEF00Manager.sendDP(21, val, 'value');
-            this.log(`[LIQUID] Sent DP21 liquid_depth_max = ${val}mm`);
-            break;
-          case 'max_set': // DP7
-            if (this.tuyaEF00Manager) await this.tuyaEF00Manager.sendDP(7, val, 'value');
-            this.log(`[LIQUID] Sent DP7 max_set = ${val}%`);
-            break;
-          case 'min_set': // DP8
-            if (this.tuyaEF00Manager) await this.tuyaEF00Manager.sendDP(8, val, 'value');
-            this.log(`[LIQUID] Sent DP8 min_set = ${val}%`);
-            break;
+        case 'installation_height': // DP19
+          if (this.tuyaEF00Manager) await this.tuyaEF00Manager.sendDP(19, val, 'value');
+          this.log(`[LIQUID] Sent DP19 installation_height = ${val}mm`);
+          break;
+        case 'liquid_depth_max': // DP21
+          if (this.tuyaEF00Manager) await this.tuyaEF00Manager.sendDP(21, val, 'value');
+          this.log(`[LIQUID] Sent DP21 liquid_depth_max = ${val}mm`);
+          break;
+        case 'max_set': // DP7
+          if (this.tuyaEF00Manager) await this.tuyaEF00Manager.sendDP(7, val, 'value');
+          this.log(`[LIQUID] Sent DP7 max_set = ${val}%`);
+          break;
+        case 'min_set': // DP8
+          if (this.tuyaEF00Manager) await this.tuyaEF00Manager.sendDP(8, val, 'value');
+          this.log(`[LIQUID] Sent DP8 min_set = ${val}%`);
+          break;
         }
       } catch (err) {
         this.error(`[LIQUID] Failed to send setting ${key}:`, err.message);

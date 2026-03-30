@@ -80,22 +80,22 @@ class Switch4GangDevice extends BaseClass {
 
       // Continue with driver-specific setup
       try {
-    if (this.isZclOnlyDevice) {
-      this.log('[SWITCH-4G] 🔵 ZCL-ONLY MODE (BSEED/Zemismart)');
-      await this._initZclOnlyMode(zclNode);
-      return;
-    }
+        if (this.isZclOnlyDevice) {
+          this.log('[SWITCH-4G] 🔵 ZCL-ONLY MODE (BSEED/Zemismart)');
+          await this._initZclOnlyMode(zclNode);
+          return;
+        }
 
-    await super.onNodeInit({ zclNode });
+        await super.onNodeInit({ zclNode });
 
-    // v5.5.896: Physical button detection (single/double/long/triple)
-    await this.initPhysicalButtonDetection?.(zclNode);
+        // v5.5.896: Physical button detection (single/double/long/triple)
+        await this.initPhysicalButtonDetection?.(zclNode);
 
-    // v5.5.412: Initialize virtual buttons
-    await this.initVirtualButtons?.();
+        // v5.5.412: Initialize virtual buttons
+        await this.initVirtualButtons?.();
 
-    this.log('[SWITCH-4G] v5.5.921 - Physical button detection enabled');
-  } catch (setupErr) {
+        this.log('[SWITCH-4G] v5.5.921 - Physical button detection enabled');
+      } catch (setupErr) {
         this.log('[SWITCH-4G] Setup warning:', setupErr.message);
       }
 
@@ -180,7 +180,7 @@ class Switch4GangDevice extends BaseClass {
         } else if (typeof tuyaCluster.sendData === 'function') {
           await tuyaCluster.sendData({ dp: dpId, value: value ? 1 : 0, dataType: 1 });
         } else {
-          this.log(`[BSEED-4G] ⚠️ No DP send method on Tuya cluster`);
+          this.log('[BSEED-4G] ⚠️ No DP send method on Tuya cluster');
           return false;
         }
         this.log(`[BSEED-4G] ✅ Tuya DP${dpId} = ${value} sent`);

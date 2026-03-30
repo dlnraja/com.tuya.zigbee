@@ -294,7 +294,7 @@ class Button1GangDevice extends ButtonDevice {
 
           // Ignore initial state report within first 3 seconds of init
           if (this._lastOnOffState === null && timeSinceInit < 3000) {
-            this.log(`[BUTTON1-ONOFF] ℹ️ Initial state stored (not triggering)`);
+            this.log('[BUTTON1-ONOFF] ℹ️ Initial state stored (not triggering)');
             this._lastOnOffState = value;
             this._lastOnOffTime = now;
             return;
@@ -302,7 +302,7 @@ class Button1GangDevice extends ButtonDevice {
 
           // Debounce rapid duplicates (<100ms)
           if (this._lastOnOffState === value && timeSinceLastEvent < 100) {
-            this.log(`[BUTTON1-ONOFF] ⏭️ Debounced duplicate`);
+            this.log('[BUTTON1-ONOFF] ⏭️ Debounced duplicate');
             return;
           }
 

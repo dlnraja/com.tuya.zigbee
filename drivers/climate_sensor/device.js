@@ -363,7 +363,7 @@ class ClimateSensorDevice extends HybridSensorBase {
             if (this._climateInference) {
               rawTemp = this._climateInference.validateTemperature(rawTemp);
               if (rawTemp === null) {
-                this.log(`[ZCL] ⚠️ Temperature rejected by inference engine`);
+                this.log('[ZCL] ⚠️ Temperature rejected by inference engine');
                 return;
               }
             }
@@ -388,12 +388,12 @@ class ClimateSensorDevice extends HybridSensorBase {
             if (this._climateInference) {
               rawHum = this._climateInference.validateHumidity(rawHum);
               if (rawHum === null) {
-                this.log(`[ZCL] ⚠️ Humidity rejected by inference engine`);
+                this.log('[ZCL] ⚠️ Humidity rejected by inference engine');
                 return;
               }
               // Check correlation between temp and humidity
               if (!this._climateInference.checkCorrelation()) {
-                this.log(`[ZCL] ⚠️ Temp/Humidity correlation suspicious - sensor may be faulty`);
+                this.log('[ZCL] ⚠️ Temp/Humidity correlation suspicious - sensor may be faulty');
               }
             }
             // v5.5.189: Apply calibration offset
@@ -1442,52 +1442,52 @@ class ClimateSensorDevice extends HybridSensorBase {
 
     // v5.5.190: Log with calibration info
     switch (dp) {
-      case 1: // Temperature (standard) ÷10
-        const temp1 = this._applyTempOffset(rawValue / 10);
-        this.log(`[CLIMATE-DP] DP1 temperature raw=${rawValue} → ${temp1}°C`);
-        break;
-      case 18: // Temperature (alt) ÷10
-      case 6: // Temperature (some _TZE204 models)
-        const tempAlt = this._applyTempOffset(rawValue / 10);
-        this.log(`[CLIMATE-DP] DP${dp} temperature_alt raw=${rawValue} → ${tempAlt}°C`);
-        break;
-      case 2: // Humidity (standard)
-        const hum2raw = rawValue > 100 ? Math.round(rawValue / 10) : rawValue;
-        const hum2 = this._applyHumOffset(hum2raw);
-        this.log(`[CLIMATE-DP] DP2 humidity raw=${rawValue} → ${hum2}%`);
-        break;
-      case 7: // Humidity (some _TZE204 models)
-      case 103: // Humidity (alt)
-        const humAltRaw = rawValue > 100 ? Math.round(rawValue / 10) : rawValue;
-        const humAlt = this._applyHumOffset(humAltRaw);
-        this.log(`[CLIMATE-DP] DP${dp} humidity_alt raw=${rawValue} → ${humAlt}%`);
-        break;
-      case 3: // Battery state enum (some _TZE200 devices)
-        let bat3 = rawValue;
-        if (rawValue === 0) bat3 = 10;      // low
-        else if (rawValue === 1) bat3 = 50; // medium
-        else if (rawValue === 2) bat3 = 100; // high
-        else bat3 = Math.min(rawValue * 2, 100);
-        this.log(`[CLIMATE-DP] DP3 battery_state raw=${rawValue} → ${bat3}% (enum: 0=low, 1=med, 2=high)`);
-        break;
-      case 4: // Battery (standard with ×2 multiplier)
-        const batConverted = Math.min(rawValue * 2, 100);
-        this.log(`[CLIMATE-DP] DP4 battery raw=${rawValue} → ${batConverted}% (×2 multiplier)`);
-        break;
-      case 5: // Illuminance (some models)
-        this.log(`[CLIMATE-DP] DP5 illuminance raw=${rawValue} lux`);
-        break;
-      case 9: // Temperature unit setting
-        this.log(`[CLIMATE-DP] DP9 temp_unit raw=${rawValue} (0=C, 1=F)`);
-        break;
-      case 101:
-      case 102: // Button press
-        this.log(`[CLIMATE-DP] DP${dp} button_press raw=${rawValue}`);
-        break;
-      default:
-        if (dp !== undefined) {
-          this.log(`[CLIMATE-DP] DP${dp} OTHER raw=${rawValue}`);
-        }
+    case 1: // Temperature (standard) ÷10
+      const temp1 = this._applyTempOffset(rawValue / 10);
+      this.log(`[CLIMATE-DP] DP1 temperature raw=${rawValue} → ${temp1}°C`);
+      break;
+    case 18: // Temperature (alt) ÷10
+    case 6: // Temperature (some _TZE204 models)
+      const tempAlt = this._applyTempOffset(rawValue / 10);
+      this.log(`[CLIMATE-DP] DP${dp} temperature_alt raw=${rawValue} → ${tempAlt}°C`);
+      break;
+    case 2: // Humidity (standard)
+      const hum2raw = rawValue > 100 ? Math.round(rawValue / 10) : rawValue;
+      const hum2 = this._applyHumOffset(hum2raw);
+      this.log(`[CLIMATE-DP] DP2 humidity raw=${rawValue} → ${hum2}%`);
+      break;
+    case 7: // Humidity (some _TZE204 models)
+    case 103: // Humidity (alt)
+      const humAltRaw = rawValue > 100 ? Math.round(rawValue / 10) : rawValue;
+      const humAlt = this._applyHumOffset(humAltRaw);
+      this.log(`[CLIMATE-DP] DP${dp} humidity_alt raw=${rawValue} → ${humAlt}%`);
+      break;
+    case 3: // Battery state enum (some _TZE200 devices)
+      let bat3 = rawValue;
+      if (rawValue === 0) bat3 = 10;      // low
+      else if (rawValue === 1) bat3 = 50; // medium
+      else if (rawValue === 2) bat3 = 100; // high
+      else bat3 = Math.min(rawValue * 2, 100);
+      this.log(`[CLIMATE-DP] DP3 battery_state raw=${rawValue} → ${bat3}% (enum: 0=low, 1=med, 2=high)`);
+      break;
+    case 4: // Battery (standard with ×2 multiplier)
+      const batConverted = Math.min(rawValue * 2, 100);
+      this.log(`[CLIMATE-DP] DP4 battery raw=${rawValue} → ${batConverted}% (×2 multiplier)`);
+      break;
+    case 5: // Illuminance (some models)
+      this.log(`[CLIMATE-DP] DP5 illuminance raw=${rawValue} lux`);
+      break;
+    case 9: // Temperature unit setting
+      this.log(`[CLIMATE-DP] DP9 temp_unit raw=${rawValue} (0=C, 1=F)`);
+      break;
+    case 101:
+    case 102: // Button press
+      this.log(`[CLIMATE-DP] DP${dp} button_press raw=${rawValue}`);
+      break;
+    default:
+      if (dp !== undefined) {
+        this.log(`[CLIMATE-DP] DP${dp} OTHER raw=${rawValue}`);
+      }
     }
 
     // Call parent handler to set capabilities
@@ -1565,7 +1565,7 @@ class ClimateSensorDevice extends HybridSensorBase {
 
       if (Object.keys(attrs).length > 0) {
         await cluster.writeAttributes(attrs);
-        this.log(`[E002] Alarm thresholds written:`, JSON.stringify(attrs));
+        this.log('[E002] Alarm thresholds written:', JSON.stringify(attrs));
       }
     } catch (e) {
       this.log(`[E002] Write alarm thresholds failed: ${e.message}`);

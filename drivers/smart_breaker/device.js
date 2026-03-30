@@ -71,42 +71,42 @@ class SmartBreakerDevice extends ZigBeeDevice {
     this.log(`[DP${dp}] = ${value}`);
 
     switch (dp) {
-      case 1: // On/Off
-      case 16:
-        this.setCapabilityValue('onoff', !!value).catch(this.error);
-        break;
+    case 1: // On/Off
+    case 16:
+      this.setCapabilityValue('onoff', !!value).catch(this.error);
+      break;
 
-      case 9: // Fault/Trip alarm
-      case 26:
-        if (this.hasCapability('alarm_generic')) {
-          this.setCapabilityValue('alarm_generic', !!value).catch(this.error);
-        }
-        break;
+    case 9: // Fault/Trip alarm
+    case 26:
+      if (this.hasCapability('alarm_generic')) {
+        this.setCapabilityValue('alarm_generic', !!value).catch(this.error);
+      }
+      break;
 
-      case 17: // Current (mA)
-      case 20:
-        if (this.hasCapability('measure_current')) {
-          this.setCapabilityValue('measure_current', value / 1000).catch(this.error);
-        }
-        break;
+    case 17: // Current (mA)
+    case 20:
+      if (this.hasCapability('measure_current')) {
+        this.setCapabilityValue('measure_current', value / 1000).catch(this.error);
+      }
+      break;
 
-      case 18: // Power (W)
-        if (this.hasCapability('measure_power')) {
-          this.setCapabilityValue('measure_power', value).catch(this.error);
-        }
-        break;
+    case 18: // Power (W)
+      if (this.hasCapability('measure_power')) {
+        this.setCapabilityValue('measure_power', value).catch(this.error);
+      }
+      break;
 
-      case 19: // Voltage (V * 10)
-        if (this.hasCapability('measure_voltage')) {
-          this.setCapabilityValue('measure_voltage', value / 10).catch(this.error);
-        }
-        break;
+    case 19: // Voltage (V * 10)
+      if (this.hasCapability('measure_voltage')) {
+        this.setCapabilityValue('measure_voltage', value / 10).catch(this.error);
+      }
+      break;
 
-      case 101: // Energy (kWh * 100)
-        if (this.hasCapability('meter_power')) {
-          this.setCapabilityValue('meter_power', value / 100).catch(this.error);
-        }
-        break;
+    case 101: // Energy (kWh * 100)
+      if (this.hasCapability('meter_power')) {
+        this.setCapabilityValue('meter_power', value / 100).catch(this.error);
+      }
+      break;
     }
   }
 }

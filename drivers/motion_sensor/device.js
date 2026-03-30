@@ -100,7 +100,7 @@ class MotionSensorDevice extends HybridSensorBase {
       // Source: Z2M GitHub #12364, Blakadder database
       'ZG204ZL_PIR_ONLY': {
         patterns: ['_TZE200_3towulqd', '_tze200_3towulqd', '_TZE204_3towulqd',
-                   '_TZE200_1ibpyhdc', '_tze200_1ibpyhdc', '_TZE200_bh3n6gk8'],
+          '_TZE200_1ibpyhdc', '_tze200_1ibpyhdc', '_TZE200_bh3n6gk8'],
         dp4: 'measure_battery',  // DP4 = battery, NOT temperature
         dp12: 'measure_luminance',
         isPirOnly: true,  // NO temp/humidity sensors
@@ -109,7 +109,7 @@ class MotionSensorDevice extends HybridSensorBase {
       // DP5=temp(÷10), DP6=humidity
       'FANTEM': {
         patterns: ['_TZE200_7hfcudw5', '_TZE200_myd45weu',
-                   '_TZE200_nlrfgpny', 'ZB003-X'],
+          '_TZE200_nlrfgpny', 'ZB003-X'],
         dp4: 'measure_battery',
         dp5: 'measure_temperature',
         dp6: 'measure_humidity',
@@ -135,7 +135,7 @@ class MotionSensorDevice extends HybridSensorBase {
       // DP4=distance, NOT battery or temp
       'ZG204ZM_RADAR': {
         patterns: ['_TZE200_2aaelwxk', '_tze200_2aaelwxk', '_TZE204_2aaelwxk',
-                   '_TZE200_kb5noeto', '_tze200_kb5noeto'],
+          '_TZE200_kb5noeto', '_tze200_kb5noeto'],
         dp4: 'internal_distance', // Not a standard capability
         dp102: 'internal_fading_time',
         isRadar: true,
@@ -258,7 +258,7 @@ class MotionSensorDevice extends HybridSensorBase {
       this._defaultProfileLogged = true;
     }
     return { name: 'DEFAULT', dp4: 'measure_battery', dp5: 'measure_temperature', 
-             dp6: 'measure_humidity', dp5_divisor: 10, dp6_divisor: 1 };
+      dp6: 'measure_humidity', dp5_divisor: 10, dp6_divisor: 1 };
   }
 
   /**

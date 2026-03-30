@@ -1167,15 +1167,15 @@ class IrBlasterDevice extends ZigBeeDevice {
   // Handle transmit frame for enhanced protocol
   _handleTransmitFrame(frame) {
     switch (frame.command) {
-      case CMD_START_TRANSMIT:
-        this.log('Transmit started:', frame.data);
-        break;
-      case CMD_CODE_DATA_REQUEST:
-        this.log('Code data requested:', frame.data);
-        break;
-      case CMD_DONE_SENDING:
-        this.log('Transmit completed');
-        break;
+    case CMD_START_TRANSMIT:
+      this.log('Transmit started:', frame.data);
+      break;
+    case CMD_CODE_DATA_REQUEST:
+      this.log('Code data requested:', frame.data);
+      break;
+    case CMD_DONE_SENDING:
+      this.log('Transmit completed');
+      break;
     }
   }
 
@@ -1283,7 +1283,7 @@ class IrBlasterDevice extends ZigBeeDevice {
   async sendEnhancedIRCode(code, options = {}) {
     const { protocol, frequency, repeat = 1 } = options;
 
-    this.log(`Sending enhanced IR code with options:`, { protocol, frequency, repeat });
+    this.log('Sending enhanced IR code with options:', { protocol, frequency, repeat });
 
     // Analyze code if not already done
     if (!this._protocolAnalysis[code]) {

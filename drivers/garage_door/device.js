@@ -18,29 +18,29 @@ class GarageDoorDevice extends TuyaSpecificClusterDevice {
     const value = data.data !== undefined ? data.data : data.value;
     this.log('[GARAGE] DP' + dp + ' = ' + value);
     switch (dp) {
-      case 1:
-        break;
-      case 2: {
-        const closed = value === 0 || value === false;
-        this.setCapabilityValue('garagedoor_closed', closed).catch(this.error);
-        if (this.hasCapability('alarm_contact')) {
-          this.setCapabilityValue('alarm_contact', !closed).catch(this.error);
-        }
-        break;
+    case 1:
+      break;
+    case 2: {
+      const closed = value === 0 || value === false;
+      this.setCapabilityValue('garagedoor_closed', closed).catch(this.error);
+      if (this.hasCapability('alarm_contact')) {
+        this.setCapabilityValue('alarm_contact', !closed).catch(this.error);
       }
-      case 3:
-        this.log('[GARAGE] Countdown: ' + value + 's');
-        break;
-      case 12: {
-        const open = value === 1 || value === true;
-        if (this.hasCapability('alarm_contact')) {
-          this.setCapabilityValue('alarm_contact', open).catch(this.error);
-        }
-        this.setCapabilityValue('garagedoor_closed', !open).catch(this.error);
-        break;
+      break;
+    }
+    case 3:
+      this.log('[GARAGE] Countdown: ' + value + 's');
+      break;
+    case 12: {
+      const open = value === 1 || value === true;
+      if (this.hasCapability('alarm_contact')) {
+        this.setCapabilityValue('alarm_contact', open).catch(this.error);
       }
-      default:
-        this.log('[GARAGE] Unknown DP' + dp + ' = ' + value);
+      this.setCapabilityValue('garagedoor_closed', !open).catch(this.error);
+      break;
+    }
+    default:
+      this.log('[GARAGE] Unknown DP' + dp + ' = ' + value);
     }
   }
 }

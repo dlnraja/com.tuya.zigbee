@@ -66,7 +66,16 @@
       "SWV-ZFE",
       "SWV-ZNU",
       "SWV-ZFU"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": []
+      }
+    }
   },
   "settings": [
     {

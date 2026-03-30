@@ -118,7 +118,7 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
         if (this._zclState.lastState[epNum] !== value) {
           this._zclState.lastState[epNum] = value;
           this.setCapabilityValue(capName, value).catch(() => {});
-                    // v5.12.5: Scene mode support
+          // v5.12.5: Scene mode support
           const mode = this.sceneMode;
           if (mode === 'magic') {
             this.setCapabilityValue(capName, !value).catch(() => {});

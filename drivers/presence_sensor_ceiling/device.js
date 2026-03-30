@@ -117,55 +117,55 @@ class CeilingPresenceSensorDevice extends ZigBeeDevice {
     this.log(`[CEILING] DP${dp} = ${JSON.stringify(value)}`);
 
     switch (dp) {
-      case TUYA_DP.PRESENCE:
-        // Presence detection
-        const presence = Boolean(value);
-        await this.setCapabilityValue('alarm_motion', presence).catch(this.error);
-        this.log(`[CEILING] Presence: ${presence}`);
+    case TUYA_DP.PRESENCE:
+      // Presence detection
+      const presence = Boolean(value);
+      await this.setCapabilityValue('alarm_motion', presence).catch(this.error);
+      this.log(`[CEILING] Presence: ${presence}`);
         
-        // Auto relay control if in auto mode
-        const relayMode = this.getSetting('relay_mode') || 'auto';
-        if (relayMode === 'auto') {
-          await this._handleAutoRelay(presence);
-        }
-        break;
+      // Auto relay control if in auto mode
+      const relayMode = this.getSetting('relay_mode') || 'auto';
+      if (relayMode === 'auto') {
+        await this._handleAutoRelay(presence);
+      }
+      break;
 
-      case TUYA_DP.RELAY:
-      case TUYA_DP.RELAY_ALT:
-        // Relay state
-        const relayState = Boolean(value);
-        await this.setCapabilityValue('onoff', relayState).catch(this.error);
-        this.log(`[CEILING] Relay: ${relayState}`);
-        break;
+    case TUYA_DP.RELAY:
+    case TUYA_DP.RELAY_ALT:
+      // Relay state
+      const relayState = Boolean(value);
+      await this.setCapabilityValue('onoff', relayState).catch(this.error);
+      this.log(`[CEILING] Relay: ${relayState}`);
+      break;
 
-      case TUYA_DP.ILLUMINANCE:
-        // Illuminance
-        let lux = typeof value === 'number' ? value : 0;
-        const luxOffset = this.getSetting('illuminance_calibration') || 0;
-        lux = Math.max(0, lux + luxOffset);
-        await this.setCapabilityValue('measure_luminance', lux).catch(this.error);
-        this.log(`[CEILING] Illuminance: ${lux} lux`);
-        break;
+    case TUYA_DP.ILLUMINANCE:
+      // Illuminance
+      let lux = typeof value === 'number' ? value : 0;
+      const luxOffset = this.getSetting('illuminance_calibration') || 0;
+      lux = Math.max(0, lux + luxOffset);
+      await this.setCapabilityValue('measure_luminance', lux).catch(this.error);
+      this.log(`[CEILING] Illuminance: ${lux} lux`);
+      break;
 
-      case TUYA_DP.TARGET_DISTANCE:
-        // Target distance
-        let distance = typeof value === 'number' ? value / 100 : 0; // Convert cm to m
-        if (this.hasCapability('measure_luminance.distance')) {
-          await this.setCapabilityValue('measure_luminance.distance', distance).catch(this.error);
-          this.log(`[CEILING] Distance: ${distance}m`);
-        }
-        break;
+    case TUYA_DP.TARGET_DISTANCE:
+      // Target distance
+      let distance = typeof value === 'number' ? value / 100 : 0; // Convert cm to m
+      if (this.hasCapability('measure_luminance.distance')) {
+        await this.setCapabilityValue('measure_luminance.distance', distance).catch(this.error);
+        this.log(`[CEILING] Distance: ${distance}m`);
+      }
+      break;
 
-      case TUYA_DP.SENSITIVITY:
-        this.log(`[CEILING] Sensitivity: ${value}`);
-        break;
+    case TUYA_DP.SENSITIVITY:
+      this.log(`[CEILING] Sensitivity: ${value}`);
+      break;
 
-      case TUYA_DP.FADING_TIME:
-        this.log(`[CEILING] Fading time: ${value}s`);
-        break;
+    case TUYA_DP.FADING_TIME:
+      this.log(`[CEILING] Fading time: ${value}s`);
+      break;
 
-      default:
-        this.log(`[CEILING] Unknown DP${dp}: ${JSON.stringify(value)}`);
+    default:
+      this.log(`[CEILING] Unknown DP${dp}: ${JSON.stringify(value)}`);
     }
   }
 
@@ -250,25 +250,25 @@ class CeilingPresenceSensorDevice extends ZigBeeDevice {
     for (const key of changedKeys) {
       try {
         switch (key) {
-          case 'radar_sensitivity':
-            await this._writeTuyaDP(TUYA_DP.SENSITIVITY, newSettings[key]);
-            break;
-          case 'minimum_range':
-            await this._writeTuyaDP(TUYA_DP.MINIMUM_RANGE, Math.round(newSettings[key] * 100));
-            break;
-          case 'maximum_range':
-            await this._writeTuyaDP(TUYA_DP.MAXIMUM_RANGE, Math.round(newSettings[key] * 100));
-            break;
-          case 'fading_time':
-            await this._writeTuyaDP(TUYA_DP.FADING_TIME, newSettings[key]);
-            break;
-          case 'relay_mode':
-            if (newSettings[key] === 'always_on') {
-              await this._setRelay(true);
-            } else if (newSettings[key] === 'always_off') {
-              await this._setRelay(false);
-            }
-            break;
+        case 'radar_sensitivity':
+          await this._writeTuyaDP(TUYA_DP.SENSITIVITY, newSettings[key]);
+          break;
+        case 'minimum_range':
+          await this._writeTuyaDP(TUYA_DP.MINIMUM_RANGE, Math.round(newSettings[key] * 100));
+          break;
+        case 'maximum_range':
+          await this._writeTuyaDP(TUYA_DP.MAXIMUM_RANGE, Math.round(newSettings[key] * 100));
+          break;
+        case 'fading_time':
+          await this._writeTuyaDP(TUYA_DP.FADING_TIME, newSettings[key]);
+          break;
+        case 'relay_mode':
+          if (newSettings[key] === 'always_on') {
+            await this._setRelay(true);
+          } else if (newSettings[key] === 'always_off') {
+            await this._setRelay(false);
+          }
+          break;
         }
       } catch (err) {
         this.error(`[CEILING] Failed to apply setting ${key}:`, err.message);

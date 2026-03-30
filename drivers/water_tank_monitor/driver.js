@@ -41,7 +41,7 @@ class WaterTankMonitorDriver extends Homey.Driver {
     } catch (err) { this.log(`[FLOW] state_is: ${err.message}`); }
 
     const triggers = [this.stateChangedTrigger, this.levelChangedTrigger,
-                      this.lowLevelTrigger, this.highLevelTrigger].filter(Boolean).length;
+      this.lowLevelTrigger, this.highLevelTrigger].filter(Boolean).length;
     this.log(`Liquid Level Sensor: ${triggers}/4 triggers + 2 conditions registered`);
   }
 
