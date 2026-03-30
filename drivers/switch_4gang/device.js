@@ -69,6 +69,17 @@ class Switch4GangDevice extends BaseClass {
   }
 
   async onNodeInit({ zclNode }) {
+    try {
+      // v6.0: Robust initialization with error recovery
+      try {
+        await super.onNodeInit({ zclNode });
+      } catch (superErr) {
+        this.error('[SWITCH-4G] ⚠️ Super init error (non-fatal):', superErr.message);
+        this.zclNode = zclNode;
+      }
+
+      // Continue with driver-specific setup
+      try {
     if (this.isZclOnlyDevice) {
       this.log('[SWITCH-4G] 🔵 ZCL-ONLY MODE (BSEED/Zemismart)');
       await this._initZclOnlyMode(zclNode);
@@ -84,6 +95,16 @@ class Switch4GangDevice extends BaseClass {
     await this.initVirtualButtons?.();
 
     this.log('[SWITCH-4G] v5.5.921 - Physical button detection enabled');
+  } catch (setupErr) {
+        this.log('[SWITCH-4G] Setup warning:', setupErr.message);
+      }
+
+      this.log('[SWITCH-4G] ✅ v6.0 - Initialized with error recovery');
+    } catch (err) {
+      this.error('[SWITCH-4G] ❌ CRITICAL INIT ERROR:', err.message);
+      this.error('[SWITCH-4G] Stack:', err.stack);
+      this.setUnavailable('Driver initialization incomplete - try removing and re-pairing').catch(() => {});
+    }
   }
 
   /**
