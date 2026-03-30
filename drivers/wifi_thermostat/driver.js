@@ -7,7 +7,7 @@ class WiFiThermostatDriver extends TuyaLocalDriver {
     await super.onInit();
     this.log('[WIFI-THERMOSTAT-DRV] Driver initialized');
     // v5.13.3: Flow card handlers
-    try{this.homey.flow.getActionCard('wifi_thermostat_set_temp').registerRunListener(async({device,...args})=>{if(args.temperature!==undefined)await device.setCapabilityValue('target_temperature',args.temperature);return true})}catch(e){this.log('[Flow]',e.message)}
+    try{this.homey.flow.getActionCard('wifi_thermostat_set_temp').registerRunListener(async({device,...args})=>{if(args.temperature!==undefined)await device.setCapabilityValue('target_temperature',args.temperature);return true;});}catch(e){this.log('[Flow]',e.message);}
   }
 }
 

@@ -108,51 +108,51 @@ class DinRailMeterDevice extends ZigBeeDevice {
     this.log(`[DP${dp}] Value: ${value}`);
 
     switch (dp) {
-      case 1: // Total energy consumed (kWh * 100)
-        const energy = value / 100;
-        this.log(`[DP1] Energy consumed: ${energy}kWh`);
-        this.setCapabilityValue('meter_power', energy).catch(this.error);
-        break;
+    case 1: // Total energy consumed (kWh * 100)
+      const energy = value / 100;
+      this.log(`[DP1] Energy consumed: ${energy}kWh`);
+      this.setCapabilityValue('meter_power', energy).catch(this.error);
+      break;
 
-      case 6: // Total energy exported (kWh * 100) - for bidirectional meters
-        if (this._bidirectional && this.hasCapability('meter_power.exported')) {
-          const exported = value / 100;
-          this.log(`[DP6] Energy exported: ${exported}kWh`);
-          this.setCapabilityValue('meter_power.exported', exported).catch(this.error);
-        }
-        break;
+    case 6: // Total energy exported (kWh * 100) - for bidirectional meters
+      if (this._bidirectional && this.hasCapability('meter_power.exported')) {
+        const exported = value / 100;
+        this.log(`[DP6] Energy exported: ${exported}kWh`);
+        this.setCapabilityValue('meter_power.exported', exported).catch(this.error);
+      }
+      break;
 
-      case 18: // Power (W)
-        const power = value * this._powerScale;
-        this.log(`[DP18] Power: ${power}W`);
-        this.setCapabilityValue('measure_power', power).catch(this.error);
-        break;
+    case 18: // Power (W)
+      const power = value * this._powerScale;
+      this.log(`[DP18] Power: ${power}W`);
+      this.setCapabilityValue('measure_power', power).catch(this.error);
+      break;
 
-      case 19: // Voltage (V * 10)
-        const voltage = value / 10;
-        this.log(`[DP19] Voltage: ${voltage}V`);
-        this.setCapabilityValue('measure_voltage', voltage).catch(this.error);
-        break;
+    case 19: // Voltage (V * 10)
+      const voltage = value / 10;
+      this.log(`[DP19] Voltage: ${voltage}V`);
+      this.setCapabilityValue('measure_voltage', voltage).catch(this.error);
+      break;
 
-      case 20: // Current (A * 1000)
-        const current = value / 1000;
-        this.log(`[DP20] Current: ${current}A`);
-        this.setCapabilityValue('measure_current', current).catch(this.error);
-        break;
+    case 20: // Current (A * 1000)
+      const current = value / 1000;
+      this.log(`[DP20] Current: ${current}A`);
+      this.setCapabilityValue('measure_current', current).catch(this.error);
+      break;
 
-      case 17: // Total current for some models
-        const totalCurrent = value / 1000;
-        this.log(`[DP17] Total current: ${totalCurrent}A`);
-        this.setCapabilityValue('measure_current', totalCurrent).catch(this.error);
-        break;
+    case 17: // Total current for some models
+      const totalCurrent = value / 1000;
+      this.log(`[DP17] Total current: ${totalCurrent}A`);
+      this.setCapabilityValue('measure_current', totalCurrent).catch(this.error);
+      break;
 
-      case 101: // Power factor (some models)
-        this.log(`[DP101] Power factor: ${value}%`);
-        break;
+    case 101: // Power factor (some models)
+      this.log(`[DP101] Power factor: ${value}%`);
+      break;
 
-      case 102: // Frequency (some models)
-        this.log(`[DP102] Frequency: ${value / 100}Hz`);
-        break;
+    case 102: // Frequency (some models)
+      this.log(`[DP102] Frequency: ${value / 100}Hz`);
+      break;
     }
   }
 

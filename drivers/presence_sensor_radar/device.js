@@ -197,7 +197,7 @@ class IntelligentPresenceInference {
     if (now - this.state.lastActivityTime > this.params.activityTimeoutMs) {
       // No activity for 60s = assume no presence
       if (this.state.inferredPresence) {
-        this.device?.log?.(`[INFERENCE] ⏰ Activity timeout - clearing presence`);
+        this.device?.log?.('[INFERENCE] ⏰ Activity timeout - clearing presence');
         this.state.inferredPresence = false;
         this.state.presenceConfidence = 80;
       }
@@ -591,36 +591,36 @@ class IntelligentDPAutoDiscovery {
 
     // Apply transforms based on type
     switch (info.inferredType) {
-      case 'presence_bool':
-        value = rawValue === 1 || rawValue === true;
-        break;
-      case 'presence_enum':
-        value = rawValue === 1 || rawValue === 2;
-        break;
-      case 'distance':
-        value = rawValue / (info.divisor || 100);
-        value = Math.round(value * 100) / 100;
-        break;
-      case 'lux_direct':
-        value = Math.max(0, Math.min(10000, rawValue));
-        break;
-      case 'battery':
-        value = Math.max(0, Math.min(100, rawValue));
-        break;
+    case 'presence_bool':
+      value = rawValue === 1 || rawValue === true;
+      break;
+    case 'presence_enum':
+      value = rawValue === 1 || rawValue === 2;
+      break;
+    case 'distance':
+      value = rawValue / (info.divisor || 100);
+      value = Math.round(value * 100) / 100;
+      break;
+    case 'lux_direct':
+      value = Math.max(0, Math.min(10000, rawValue));
+      break;
+    case 'battery':
+      value = Math.max(0, Math.min(100, rawValue));
+      break;
       // v5.5.929: OEM variant support for temp/humidity
-      case 'temperature':
-        value = rawValue / (info.divisor || 10);
-        value = Math.round(value * 10) / 10;
-        break;
-      case 'humidity':
-        // v5.7.7: Support both divisor AND multiplier (fixes HOBEIAN ZG-227Z)
-        if (info.multiplier) {
-          value = rawValue * info.multiplier;
-        } else {
-          value = rawValue / (info.divisor || 1);
-        }
-        value = Math.max(0, Math.min(100, value));
-        break;
+    case 'temperature':
+      value = rawValue / (info.divisor || 10);
+      value = Math.round(value * 10) / 10;
+      break;
+    case 'humidity':
+      // v5.7.7: Support both divisor AND multiplier (fixes HOBEIAN ZG-227Z)
+      if (info.multiplier) {
+        value = rawValue * info.multiplier;
+      } else {
+        value = rawValue / (info.divisor || 1);
+      }
+      value = Math.max(0, Math.min(100, value));
+      break;
     }
 
     return {
@@ -1541,25 +1541,25 @@ function getSensorConfig(manufacturerName, modelId = null) {
     
     if (validModelId) {
       if (modelId === 'ZG-204ZM') {
-        console.log(`[RADAR] 🔍 HOBEIAN ZG-204ZM matched → HOBEIAN_ZG204ZM config (HYBRID: ZCL + Tuya DP)`);
+        console.log('[RADAR] 🔍 HOBEIAN ZG-204ZM matched → HOBEIAN_ZG204ZM config (HYBRID: ZCL + Tuya DP)');
         return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };
       }
       // v5.5.841: HOBEIAN ZG-204ZV MULTISENSOR (Peter_van_Werkhoven diagnostic fix)
       // 5-in-1 sensor: motion, illuminance, temp, humidity, battery
       // DP mappings: DP1=motion, DP3=temp÷10, DP4=humidity, DP9=lux, DP10=battery
       if (modelId === 'ZG-204ZV') {
-        console.log(`[RADAR] 🔍 HOBEIAN ZG-204ZV matched → ZG_204ZV_MULTISENSOR config (5-in-1: motion+lux+temp+hum+battery)`);
+        console.log('[RADAR] 🔍 HOBEIAN ZG-204ZV matched → ZG_204ZV_MULTISENSOR config (5-in-1: motion+lux+temp+hum+battery)');
         return { ...SENSOR_CONFIGS.ZG_204ZV_MULTISENSOR, configName: 'ZG_204ZV_MULTISENSOR' };
       }
       // v5.5.740: HOBEIAN 10G multi-sensor from PR #1306
       if (modelId === 'ZG-227Z') {
-        console.log(`[RADAR] 🔍 HOBEIAN ZG-227Z matched → HOBEIAN_10G_MULTI config (radar + temp/humidity)`);
+        console.log('[RADAR] 🔍 HOBEIAN ZG-227Z matched → HOBEIAN_10G_MULTI config (radar + temp/humidity)');
         return { ...SENSOR_CONFIGS.HOBEIAN_10G_MULTI, configName: 'HOBEIAN_10G_MULTI' };
       }
       // v5.8.61: HOBEIAN ZG-204ZL PIR sensor (diag 25cbd6ae)
       // DP1=motion, DP4=battery, DP9=sensitivity, DP10=keep_time, DP12=lux
       if (modelId === 'ZG-204ZL') {
-        console.log(`[RADAR] 🔍 HOBEIAN ZG-204ZL matched → ZG_204ZL_PIR config (PIR + lux + battery)`);
+        console.log('[RADAR] 🔍 HOBEIAN ZG-204ZL matched → ZG_204ZL_PIR config (PIR + lux + battery)');
         return { ...SENSOR_CONFIGS.ZG_204ZL_PIR, configName: 'ZG_204ZL_PIR' };
       }
     }
@@ -1568,7 +1568,7 @@ function getSensorConfig(manufacturerName, modelId = null) {
     // because it has the most complete feature set (temp + humidity + illuminance + motion)
     // Users with ZG-204ZM (no temp/humidity) will simply see those values as null
     console.log(`[RADAR] 🔍 HOBEIAN with unknown modelId "${modelId}" → using HOBEIAN_10G_MULTI config (most complete)`);
-    console.log(`[RADAR] ℹ️ If wrong, device should be re-paired to get correct modelId`);
+    console.log('[RADAR] ℹ️ If wrong, device should be re-paired to get correct modelId');
     return { ...SENSOR_CONFIGS.HOBEIAN_10G_MULTI, configName: 'HOBEIAN_10G_MULTI_FALLBACK' };
   }
 
@@ -1614,42 +1614,42 @@ function transformPresence(value, type, invertPresence = false, configName = '')
   }
 
   switch (type) {
-    case 'presence_enum':
-      // 0=none, 1=motion, 2=stationary -> true if motion or stationary
-      result = value === 1 || value === 2;
-      break;
-    case 'presence_enum_gkfbdvyx':
-      // v5.5.325: RONNY #782 - Specific handler for _TZE204_gkfbdvyx
-      // ZHA confirmed: 0=none (false), 1=presence (true), 2=move (true)
-      // v5.8.12: RONNY FORUM - state=2 (move) causes random triggers, ignore it
-      if (value === 0) {
-        result = false;
-      } else if (value === 1) {
-        result = true;  // Confirmed presence
-      } else if (value === 2) {
-        // v5.8.12: IGNORE "move" state completely - it causes random false triggers
-        // This is radar noise from environmental interference (fans, curtains, etc)
-        console.log(`[PRESENCE-FIX] 🚫 gkfbdvyx: IGNORING move state (2) - radar noise`);
-        return null;  // Return null to skip this update entirely
-      } else {
-        console.log(`[PRESENCE-FIX] ⚠️ gkfbdvyx: unknown enum value ${value}`);
-        result = false;
-      }
-      break;
-    case 'presence_bool':
-      // v5.5.306: CRITICAL FIX - value=0 means NO presence, value=1 means presence
-      result = value === 1 || value === true || value === 'presence';
-      break;
-    case 'motion_state_enum':
-      // v5.5.328: ZG-204ZM motion state enum
-      // 0=none (no presence), 1=large, 2=medium, 3=small (all indicate presence)
-      result = value === 1 || value === 2 || value === 3;
-      break;
-    case 'presence_string':
-      result = value === 'motion' || value === 'stationary' || value === 'presence';
-      break;
-    default:
-      result = !!value;
+  case 'presence_enum':
+    // 0=none, 1=motion, 2=stationary -> true if motion or stationary
+    result = value === 1 || value === 2;
+    break;
+  case 'presence_enum_gkfbdvyx':
+    // v5.5.325: RONNY #782 - Specific handler for _TZE204_gkfbdvyx
+    // ZHA confirmed: 0=none (false), 1=presence (true), 2=move (true)
+    // v5.8.12: RONNY FORUM - state=2 (move) causes random triggers, ignore it
+    if (value === 0) {
+      result = false;
+    } else if (value === 1) {
+      result = true;  // Confirmed presence
+    } else if (value === 2) {
+      // v5.8.12: IGNORE "move" state completely - it causes random false triggers
+      // This is radar noise from environmental interference (fans, curtains, etc)
+      console.log('[PRESENCE-FIX] 🚫 gkfbdvyx: IGNORING move state (2) - radar noise');
+      return null;  // Return null to skip this update entirely
+    } else {
+      console.log(`[PRESENCE-FIX] ⚠️ gkfbdvyx: unknown enum value ${value}`);
+      result = false;
+    }
+    break;
+  case 'presence_bool':
+    // v5.5.306: CRITICAL FIX - value=0 means NO presence, value=1 means presence
+    result = value === 1 || value === true || value === 'presence';
+    break;
+  case 'motion_state_enum':
+    // v5.5.328: ZG-204ZM motion state enum
+    // 0=none (no presence), 1=large, 2=medium, 3=small (all indicate presence)
+    result = value === 1 || value === 2 || value === 3;
+    break;
+  case 'presence_string':
+    result = value === 'motion' || value === 'stationary' || value === 'presence';
+    break;
+  default:
+    result = !!value;
   }
 
   // v5.5.306: CRITICAL FIX - Reinforced presence inversion
@@ -1794,7 +1794,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
       lux = oscState.lockedValue;
     } else {
       // Lock expired
-      console.log(`[LUX] 🔓 LOCK EXPIRED after 2 minutes, returning to normal`);
+      console.log('[LUX] 🔓 LOCK EXPIRED after 2 minutes, returning to normal');
       oscState.locked = false;
       oscState.lockedValue = null;
     }
@@ -2254,8 +2254,8 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     const mfr = this._getManufacturerName();
     const config = this._getSensorConfig();
 
-    this.log(`[RADAR] ═══════════════════════════════════════════════════════════`);
-    this.log(`[RADAR] v5.5.315 INTELLIGENT PRESENCE INFERENCE`);
+    this.log('[RADAR] ═══════════════════════════════════════════════════════════');
+    this.log('[RADAR] v5.5.315 INTELLIGENT PRESENCE INFERENCE');
     this.log(`[RADAR] ManufacturerName: ${mfr}`);
     this.log(`[RADAR] Config: ${config.configName || 'ZY_M100_STANDARD (default)'}`);
     this.log(`[RADAR] Power: ${config.battery ? 'BATTERY (EndDevice)' : 'MAINS (Router)'}`);
@@ -2263,7 +2263,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     this.log(`[RADAR] Polling: ${config.needsPolling ? 'ENABLED (30s interval)' : 'DISABLED'}`);
     this.log(`[RADAR] DPs: ${Object.keys(config.dpMap || {}).join(', ') || 'ZCL only'}`);
     this.log(`[RADAR] 🧠 Intelligent Inference: ${config.useIntelligentInference ? 'ENABLED' : 'DISABLED'}`);
-    this.log(`[RADAR] ═══════════════════════════════════════════════════════════`);
+    this.log('[RADAR] ═══════════════════════════════════════════════════════════');
 
     // v5.5.268: Track received DPs for debugging
     this._receivedDPs = new Set();
@@ -2292,7 +2292,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     // v5.5.315: Initialize Intelligent Presence Inference Engine
     if (config.useIntelligentInference) {
       this._presenceInference = new IntelligentPresenceInference(this);
-      this.log(`[RADAR] 🧠 Inference engine initialized for presence=null workaround`);
+      this.log('[RADAR] 🧠 Inference engine initialized for presence=null workaround');
 
       // Try to get firmware version for firmware-specific handling
       this._detectFirmwareVersion(zclNode);
@@ -2394,15 +2394,15 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     // This was missing and caused presence not to work on TZE284 devices
     await this._setupTuyaDPListeners(zclNode);
 
-// v5.5.518: Send Tuya magic packet for devices that need it (LeapMMW 5.8G hybrid)
+    // v5.5.518: Send Tuya magic packet for devices that need it (LeapMMW 5.8G hybrid)
     // These devices don't show cluster 61184 in interview but still use Tuya DPs
     if (config.needsMagicPacket) {
       await this._sendTuyaMagicPacket(zclNode);
     }
 
     await new Promise(r => setTimeout(r, 3000));
-      this.log('[RADAR] Force DP poll after magic packet');
-      await this._requestDPRefresh(zclNode);
+    this.log('[RADAR] Force DP poll after magic packet');
+    await this._requestDPRefresh(zclNode);
 
     // v5.5.325: RONNY #782 - Force remove battery for mains-powered sensors
     // noBatteryCapability flag ensures battery is NEVER shown for these devices
@@ -3963,7 +3963,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         if (luxPollCounter >= 3) {
           luxPollCounter = 0;
           if (config.hasIlluminance !== false) {
-            this.log(`[RADAR] ☀️ Polling lux DPs...`);
+            this.log('[RADAR] ☀️ Polling lux DPs...');
             // Try common lux DPs: 12, 102, 103, 104, 106
             const luxDPs = [12, 102, 103, 104, 106];
             for (const dp of luxDPs) {

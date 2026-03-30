@@ -98,29 +98,29 @@ class FingerbotDevice extends TuyaZigbeeDevice {
       this.log(`[Fingerbot] DP ${dp} = ${value} (type ${type})`);
 
       switch (dp) {
-        case DP_SWITCH: {
-          const ns = !!value, ps = this.getCapabilityValue('onoff');
-          this.setCapabilityValue('onoff', ns).catch(this.error);
-          if (ns !== ps) {
-            const cid = ns ? 'fingerbot_turned_on' : 'fingerbot_turned_off';
-            this.homey.flow.getDeviceTriggerCard(cid).trigger(this, {}, {}).catch(this.error);
-          }
-          if (ns) this.homey.flow.getDeviceTriggerCard('fingerbot_button_pressed').trigger(this, {}, {}).catch(this.error);
-          break;
+      case DP_SWITCH: {
+        const ns = !!value, ps = this.getCapabilityValue('onoff');
+        this.setCapabilityValue('onoff', ns).catch(this.error);
+        if (ns !== ps) {
+          const cid = ns ? 'fingerbot_turned_on' : 'fingerbot_turned_off';
+          this.homey.flow.getDeviceTriggerCard(cid).trigger(this, {}, {}).catch(this.error);
         }
-        case DP_BATTERY:
-          if (this.hasCapability('measure_battery')) {
-            const batt = Math.max(0, Math.min(100, value));
-            this.setCapabilityValue('measure_battery', batt).catch(this.error);
-            if (batt < 10) this.homey.flow.getDeviceTriggerCard('fingerbot_battery_low').trigger(this, {}, {}).catch(this.error);
-          }
-          break;
-        case DP_TOUCH:
-          this.log(`[Fingerbot] Touch detected: ${value}`);
-          break;
-        case DP_MODE:
-          this.log(`[Fingerbot] Mode: ${['click', 'switch', 'program'][value] || value}`);
-          break;
+        if (ns) this.homey.flow.getDeviceTriggerCard('fingerbot_button_pressed').trigger(this, {}, {}).catch(this.error);
+        break;
+      }
+      case DP_BATTERY:
+        if (this.hasCapability('measure_battery')) {
+          const batt = Math.max(0, Math.min(100, value));
+          this.setCapabilityValue('measure_battery', batt).catch(this.error);
+          if (batt < 10) this.homey.flow.getDeviceTriggerCard('fingerbot_battery_low').trigger(this, {}, {}).catch(this.error);
+        }
+        break;
+      case DP_TOUCH:
+        this.log(`[Fingerbot] Touch detected: ${value}`);
+        break;
+      case DP_MODE:
+        this.log(`[Fingerbot] Mode: ${['click', 'switch', 'program'][value] || value}`);
+        break;
       }
 
       offset += 4 + len;
@@ -129,21 +129,21 @@ class FingerbotDevice extends TuyaZigbeeDevice {
 
   extractDPValue(data, offset, type, len) {
     switch (type) {
-      case 0x00: // Raw
-        return data.slice(offset, offset + len);
-      case 0x01: // Boolean
-        return data[offset] === 1;
-      case 0x02: // Value (4 bytes)
-        return (data[offset] << 24) | (data[offset + 1] << 16) | 
+    case 0x00: // Raw
+      return data.slice(offset, offset + len);
+    case 0x01: // Boolean
+      return data[offset] === 1;
+    case 0x02: // Value (4 bytes)
+      return (data[offset] << 24) | (data[offset + 1] << 16) | 
                (data[offset + 2] << 8) | data[offset + 3];
-      case 0x03: // String
-        return String.fromCharCode(...data.slice(offset, offset + len));
-      case 0x04: // Enum
-        return data[offset];
-      case 0x05: // Bitmap
-        return data.slice(offset, offset + len);
-      default:
-        return data.slice(offset, offset + len);
+    case 0x03: // String
+      return String.fromCharCode(...data.slice(offset, offset + len));
+    case 0x04: // Enum
+      return data[offset];
+    case 0x05: // Bitmap
+      return data.slice(offset, offset + len);
+    default:
+      return data.slice(offset, offset + len);
     }
   }
 
@@ -165,24 +165,24 @@ class FingerbotDevice extends TuyaZigbeeDevice {
 
     let payload;
     switch (type) {
-      case 'bool':
-        payload = Buffer.from([dp, 0x01, 0x00, 0x01, value ? 0x01 : 0x00]);
-        break;
-      case 'enum':
-        payload = Buffer.from([dp, 0x04, 0x00, 0x01, value]);
-        break;
-      case 'value':
-        payload = Buffer.from([
-          dp, 0x02, 0x00, 0x04,
-          (value >> 24) & 0xFF,
-          (value >> 16) & 0xFF,
-          (value >> 8) & 0xFF,
-          value & 0xFF
-        ]);
-        break;
-      default:
-        this.error(`[Fingerbot] Unknown DP type: ${type}`);
-        return;
+    case 'bool':
+      payload = Buffer.from([dp, 0x01, 0x00, 0x01, value ? 0x01 : 0x00]);
+      break;
+    case 'enum':
+      payload = Buffer.from([dp, 0x04, 0x00, 0x01, value]);
+      break;
+    case 'value':
+      payload = Buffer.from([
+        dp, 0x02, 0x00, 0x04,
+        (value >> 24) & 0xFF,
+        (value >> 16) & 0xFF,
+        (value >> 8) & 0xFF,
+        value & 0xFF
+      ]);
+      break;
+    default:
+      this.error(`[Fingerbot] Unknown DP type: ${type}`);
+      return;
     }
 
     try {
@@ -234,22 +234,22 @@ class FingerbotDevice extends TuyaZigbeeDevice {
     for (const key of changedKeys) {
       try {
         switch (key) {
-          case 'fingerbot_mode':
-            const modeValue = { click: 0, switch: 1, program: 2 }[newSettings.fingerbot_mode] || 0;
-            await this.sendTuyaDP(DP_MODE, 'enum', modeValue);
-            break;
-          case 'lower_limit':
-            await this.sendTuyaDP(DP_LOWER, 'value', newSettings.lower_limit);
-            break;
-          case 'upper_limit':
-            await this.sendTuyaDP(DP_UPPER, 'value', newSettings.upper_limit);
-            break;
-          case 'sustain_time':
-            await this.sendTuyaDP(DP_DELAY, 'value', newSettings.sustain_time);
-            break;
-          case 'reverse_direction':
-            await this.sendTuyaDP(DP_REVERSE, 'bool', newSettings.reverse_direction);
-            break;
+        case 'fingerbot_mode':
+          const modeValue = { click: 0, switch: 1, program: 2 }[newSettings.fingerbot_mode] || 0;
+          await this.sendTuyaDP(DP_MODE, 'enum', modeValue);
+          break;
+        case 'lower_limit':
+          await this.sendTuyaDP(DP_LOWER, 'value', newSettings.lower_limit);
+          break;
+        case 'upper_limit':
+          await this.sendTuyaDP(DP_UPPER, 'value', newSettings.upper_limit);
+          break;
+        case 'sustain_time':
+          await this.sendTuyaDP(DP_DELAY, 'value', newSettings.sustain_time);
+          break;
+        case 'reverse_direction':
+          await this.sendTuyaDP(DP_REVERSE, 'bool', newSettings.reverse_direction);
+          break;
         }
       } catch (err) {
         this.error(`[Fingerbot] Failed to apply setting ${key}:`, err.message);

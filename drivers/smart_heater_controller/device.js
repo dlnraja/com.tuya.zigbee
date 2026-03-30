@@ -116,46 +116,46 @@ class SmartHeaterControllerDevice extends HybridThermostatBase {
     this.log(`[HEATER] 📡 Received DP ${dp}: ${value}`);
 
     switch (dp) {
-      case 1: // Power on/off
-        await this._handlePowerState(value);
-        break;
+    case 1: // Power on/off
+      await this._handlePowerState(value);
+      break;
 
-      case 2: // Target temperature
-        await this._handleTargetTemperature(value);
-        break;
+    case 2: // Target temperature
+      await this._handleTargetTemperature(value);
+      break;
 
-      case 3: // Current temperature
-        await this._handleCurrentTemperature(value);
-        break;
+    case 3: // Current temperature
+      await this._handleCurrentTemperature(value);
+      break;
 
-      case 4: // Thermostat mode
-        await this._handleThermostatMode(value);
-        break;
+    case 4: // Thermostat mode
+      await this._handleThermostatMode(value);
+      break;
 
-      case 6: // Power consumption (W)
-        await this._handlePowerConsumption(value);
-        break;
+    case 6: // Power consumption (W)
+      await this._handlePowerConsumption(value);
+      break;
 
-      case 7: // Energy consumed (kWh)
-        await this._handleEnergyConsumption(value);
-        break;
+    case 7: // Energy consumed (kWh)
+      await this._handleEnergyConsumption(value);
+      break;
 
-      case 101: // Child lock status
-        await this._handleChildLockStatus(value);
-        break;
+    case 101: // Child lock status
+      await this._handleChildLockStatus(value);
+      break;
 
-      case 102: // Overheat protection triggered
-        await this._handleOverheatProtection(value);
-        break;
+    case 102: // Overheat protection triggered
+      await this._handleOverheatProtection(value);
+      break;
 
-      case 103: // Temperature calibration response
-        this.log(`[HEATER] 🌡️ Temperature calibration confirmed: ${value}°C`);
-        break;
+    case 103: // Temperature calibration response
+      this.log(`[HEATER] 🌡️ Temperature calibration confirmed: ${value}°C`);
+      break;
 
-      default:
-        // Pass to parent for standard DP handling
-        await super._handleDP(dp, value);
-        break;
+    default:
+      // Pass to parent for standard DP handling
+      await super._handleDP(dp, value);
+      break;
     }
   }
 

@@ -122,27 +122,27 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       
       if (buf && buf.length > 0) {
         switch (datatype) {
-          case 1: // Bool
-            value = buf[0] === 1;
-            break;
-          case 2: // Value (4-byte big-endian integer)
-            if (buf.length >= 4) {
-              value = buf.readUInt32BE(0);
-            } else if (buf.length === 2) {
-              value = buf.readUInt16BE(0);
-            } else {
-              value = buf[0];
-            }
-            break;
-          case 4: // Enum
+        case 1: // Bool
+          value = buf[0] === 1;
+          break;
+        case 2: // Value (4-byte big-endian integer)
+          if (buf.length >= 4) {
+            value = buf.readUInt32BE(0);
+          } else if (buf.length === 2) {
+            value = buf.readUInt16BE(0);
+          } else {
             value = buf[0];
-            break;
-          default:
-            // Try to parse as big-endian integer
-            if (buf.length === 4) value = buf.readUInt32BE(0);
-            else if (buf.length === 2) value = buf.readUInt16BE(0);
-            else if (buf.length === 1) value = buf[0];
-            else value = buf;
+          }
+          break;
+        case 4: // Enum
+          value = buf[0];
+          break;
+        default:
+          // Try to parse as big-endian integer
+          if (buf.length === 4) value = buf.readUInt32BE(0);
+          else if (buf.length === 2) value = buf.readUInt16BE(0);
+          else if (buf.length === 1) value = buf[0];
+          else value = buf;
         }
       } else if (typeof data === 'number') {
         value = data;
@@ -204,93 +204,93 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     // ═══════════════════════════════════════════════════════════════════
     if (profile === 'pj1203a') {
       switch (dp) {
-        case 101: // Power A (W ÷10)
-          const powerA = value / 10;
-          if (this.hasCapability('measure_power.phase1')) {
-            this.setCapabilityValue('measure_power.phase1', powerA).catch(this.error);
-          }
-          this._powerA = powerA;
-          this.log(`[PJ1203A] ⚡ Power A: ${powerA} W`);
-          this._updateTotalPowerPJ1203A();
-          break;
+      case 101: // Power A (W ÷10)
+        const powerA = value / 10;
+        if (this.hasCapability('measure_power.phase1')) {
+          this.setCapabilityValue('measure_power.phase1', powerA).catch(this.error);
+        }
+        this._powerA = powerA;
+        this.log(`[PJ1203A] ⚡ Power A: ${powerA} W`);
+        this._updateTotalPowerPJ1203A();
+        break;
 
-        case 102: // Power direction A (0=forward/consuming, 1=reverse/producing)
-          this._directionA = value;
-          this.log(`[PJ1203A] 🔄 Direction A: ${value === 0 ? 'consuming' : 'producing'}`);
-          break;
+      case 102: // Power direction A (0=forward/consuming, 1=reverse/producing)
+        this._directionA = value;
+        this.log(`[PJ1203A] 🔄 Direction A: ${value === 0 ? 'consuming' : 'producing'}`);
+        break;
 
-        case 104: // Power direction B
-          this._directionB = value;
-          this.log(`[PJ1203A] 🔄 Direction B: ${value === 0 ? 'consuming' : 'producing'}`);
-          break;
+      case 104: // Power direction B
+        this._directionB = value;
+        this.log(`[PJ1203A] 🔄 Direction B: ${value === 0 ? 'consuming' : 'producing'}`);
+        break;
 
-        case 105: // Power B (W ÷10)
-          const powerB = value / 10;
-          if (this.hasCapability('measure_power.phase2')) {
-            this.setCapabilityValue('measure_power.phase2', powerB).catch(this.error);
-          }
-          this._powerB = powerB;
-          this.log(`[PJ1203A] ⚡ Power B: ${powerB} W`);
-          this._updateTotalPowerPJ1203A();
-          break;
+      case 105: // Power B (W ÷10)
+        const powerB = value / 10;
+        if (this.hasCapability('measure_power.phase2')) {
+          this.setCapabilityValue('measure_power.phase2', powerB).catch(this.error);
+        }
+        this._powerB = powerB;
+        this.log(`[PJ1203A] ⚡ Power B: ${powerB} W`);
+        this._updateTotalPowerPJ1203A();
+        break;
 
-        case 106: // Energy forward A (kWh ÷100)
-          this._energyForwardA = value / 100;
-          this.log(`[PJ1203A] 📊 Energy Forward A: ${this._energyForwardA} kWh`);
-          this._updateTotalEnergy();
-          break;
+      case 106: // Energy forward A (kWh ÷100)
+        this._energyForwardA = value / 100;
+        this.log(`[PJ1203A] 📊 Energy Forward A: ${this._energyForwardA} kWh`);
+        this._updateTotalEnergy();
+        break;
 
-        case 107: // Energy reverse A (kWh ÷100) - produced/exported
-          this._energyReverseA = value / 100;
-          this.log(`[PJ1203A] 🔋 Energy Reverse A: ${this._energyReverseA} kWh`);
-          break;
+      case 107: // Energy reverse A (kWh ÷100) - produced/exported
+        this._energyReverseA = value / 100;
+        this.log(`[PJ1203A] 🔋 Energy Reverse A: ${this._energyReverseA} kWh`);
+        break;
 
-        case 108: // Energy forward B (kWh ÷100)
-          this._energyForwardB = value / 100;
-          this.log(`[PJ1203A] 📊 Energy Forward B: ${this._energyForwardB} kWh`);
-          this._updateTotalEnergy();
-          break;
+      case 108: // Energy forward B (kWh ÷100)
+        this._energyForwardB = value / 100;
+        this.log(`[PJ1203A] 📊 Energy Forward B: ${this._energyForwardB} kWh`);
+        this._updateTotalEnergy();
+        break;
 
-        case 109: // Energy reverse B (kWh ÷100) - produced/exported
-          this._energyReverseB = value / 100;
-          this.log(`[PJ1203A] 🔋 Energy Reverse B: ${this._energyReverseB} kWh`);
-          break;
+      case 109: // Energy reverse B (kWh ÷100) - produced/exported
+        this._energyReverseB = value / 100;
+        this.log(`[PJ1203A] 🔋 Energy Reverse B: ${this._energyReverseB} kWh`);
+        break;
 
-        case 110: // Power factor A (÷100)
-          this.log(`[PJ1203A] 📈 Power Factor A: ${value / 100}`);
-          break;
+      case 110: // Power factor A (÷100)
+        this.log(`[PJ1203A] 📈 Power Factor A: ${value / 100}`);
+        break;
 
-        case 111: // AC frequency (Hz ÷100)
-          this.log(`[PJ1203A] ⚡ AC Frequency: ${value / 100} Hz`);
-          break;
+      case 111: // AC frequency (Hz ÷100)
+        this.log(`[PJ1203A] ⚡ AC Frequency: ${value / 100} Hz`);
+        break;
 
-        case 112: // Voltage (V ÷10)
-          this.setCapabilityValue('measure_voltage', value / 10).catch(this.error);
-          this.log(`[PJ1203A] ⚡ Voltage: ${value / 10} V`);
-          break;
+      case 112: // Voltage (V ÷10)
+        this.setCapabilityValue('measure_voltage', value / 10).catch(this.error);
+        this.log(`[PJ1203A] ⚡ Voltage: ${value / 10} V`);
+        break;
 
-        case 113: // Current A (A ÷1000)
-          this.setCapabilityValue('measure_current', (value / 1000) * this._ctRatio).catch(this.error);
-          this.log(`[PJ1203A] ⚡ Current A: ${value / 1000} A`);
-          break;
+      case 113: // Current A (A ÷1000)
+        this.setCapabilityValue('measure_current', (value / 1000) * this._ctRatio).catch(this.error);
+        this.log(`[PJ1203A] ⚡ Current A: ${value / 1000} A`);
+        break;
 
-        case 114: // Current B (A ÷1000)
-          this.log(`[PJ1203A] ⚡ Current B: ${value / 1000} A`);
-          break;
+      case 114: // Current B (A ÷1000)
+        this.log(`[PJ1203A] ⚡ Current B: ${value / 1000} A`);
+        break;
 
-        case 115: // Power AB Total (W ÷10)
-          const totalPower = value / 10;
-          this.setCapabilityValue('measure_power', totalPower).catch(this.error);
-          this.log(`[PJ1203A] ⚡ Total Power: ${totalPower} W`);
-          break;
+      case 115: // Power AB Total (W ÷10)
+        const totalPower = value / 10;
+        this.setCapabilityValue('measure_power', totalPower).catch(this.error);
+        this.log(`[PJ1203A] ⚡ Total Power: ${totalPower} W`);
+        break;
 
-        case 121: // Power factor B (÷100)
-          this.log(`[PJ1203A] 📈 Power Factor B: ${value / 100}`);
-          break;
+      case 121: // Power factor B (÷100)
+        this.log(`[PJ1203A] 📈 Power Factor B: ${value / 100}`);
+        break;
 
-        case 129: // Update frequency (seconds)
-          this.log(`[PJ1203A] ⏱️ Update Frequency: ${value} s`);
-          break;
+      case 129: // Update frequency (seconds)
+        this.log(`[PJ1203A] ⏱️ Update Frequency: ${value} s`);
+        break;
       }
       return; // Exit after PJ-1203A handling
     }
@@ -300,95 +300,95 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     // Some devices report as 3-phase but send PJ-1203A DPs (mfr detection failed)
     // ═══════════════════════════════════════════════════════════════════
     switch (dp) {
-      case 1: // Total energy (kWh * 100)
-        this.setCapabilityValue('meter_power', value / 100).catch(this.error);
-        break;
+    case 1: // Total energy (kWh * 100)
+      this.setCapabilityValue('meter_power', value / 100).catch(this.error);
+      break;
 
-      case 16: // Phase 1 power (W)
-        if (this.hasCapability('measure_power.phase1')) {
-          this.setCapabilityValue('measure_power.phase1', value).catch(this.error);
-          this._updateTotalPower();
-        }
-        break;
-
-      case 17: // Phase 2 power (W)
-        if (this.hasCapability('measure_power.phase2')) {
-          this.setCapabilityValue('measure_power.phase2', value).catch(this.error);
-        }
+    case 16: // Phase 1 power (W)
+      if (this.hasCapability('measure_power.phase1')) {
+        this.setCapabilityValue('measure_power.phase1', value).catch(this.error);
         this._updateTotalPower();
-        break;
+      }
+      break;
 
-      case 18: // Phase 3 power (W)
-        if (this.hasCapability('measure_power.phase3')) {
-          this.setCapabilityValue('measure_power.phase3', value).catch(this.error);
-        }
-        this._updateTotalPower();
-        break;
+    case 17: // Phase 2 power (W)
+      if (this.hasCapability('measure_power.phase2')) {
+        this.setCapabilityValue('measure_power.phase2', value).catch(this.error);
+      }
+      this._updateTotalPower();
+      break;
 
-      case 19: // Voltage (V * 10)
-        this.setCapabilityValue('measure_voltage', value / 10).catch(this.error);
-        break;
+    case 18: // Phase 3 power (W)
+      if (this.hasCapability('measure_power.phase3')) {
+        this.setCapabilityValue('measure_power.phase3', value).catch(this.error);
+      }
+      this._updateTotalPower();
+      break;
 
-      case 20: // Current phase 1 (A * 1000)
-      case 21: // Current phase 2
-      case 22: // Current phase 3
-        this.setCapabilityValue('measure_current', (value / 1000) * this._ctRatio).catch(this.error);
-        break;
+    case 19: // Voltage (V * 10)
+      this.setCapabilityValue('measure_voltage', value / 10).catch(this.error);
+      break;
+
+    case 20: // Current phase 1 (A * 1000)
+    case 21: // Current phase 2
+    case 22: // Current phase 3
+      this.setCapabilityValue('measure_current', (value / 1000) * this._ctRatio).catch(this.error);
+      break;
 
       // v5.8.9: FALLBACK - Handle PJ-1203A DPs even when profile detection fails
-      case 101: // Total power (W) - 3phase OR Power A (W ÷10) - PJ-1203A
-        // Try PJ-1203A scaling first if value seems too high
-        const powerVal = value > 10000 ? value / 10 : value;
-        this.setCapabilityValue('measure_power', powerVal).catch(this.error);
-        this.log(`[FALLBACK] ⚡ Power: ${powerVal} W (raw: ${value})`);
-        break;
+    case 101: // Total power (W) - 3phase OR Power A (W ÷10) - PJ-1203A
+      // Try PJ-1203A scaling first if value seems too high
+      const powerVal = value > 10000 ? value / 10 : value;
+      this.setCapabilityValue('measure_power', powerVal).catch(this.error);
+      this.log(`[FALLBACK] ⚡ Power: ${powerVal} W (raw: ${value})`);
+      break;
 
-      case 102: // Total energy (kWh * 100) - 3phase OR Direction A - PJ-1203A
-        if (value <= 1) {
-          // PJ-1203A direction (0 or 1)
-          this.log(`[FALLBACK] 🔄 Direction A: ${value === 0 ? 'consuming' : 'producing'}`);
-        } else {
-          this.setCapabilityValue('meter_power', value / 100).catch(this.error);
-        }
-        break;
+    case 102: // Total energy (kWh * 100) - 3phase OR Direction A - PJ-1203A
+      if (value <= 1) {
+        // PJ-1203A direction (0 or 1)
+        this.log(`[FALLBACK] 🔄 Direction A: ${value === 0 ? 'consuming' : 'producing'}`);
+      } else {
+        this.setCapabilityValue('meter_power', value / 100).catch(this.error);
+      }
+      break;
 
-      case 104: // PJ-1203A Direction B
-        this.log(`[FALLBACK] 🔄 Direction B: ${value === 0 ? 'consuming' : 'producing'}`);
-        break;
+    case 104: // PJ-1203A Direction B
+      this.log(`[FALLBACK] 🔄 Direction B: ${value === 0 ? 'consuming' : 'producing'}`);
+      break;
 
-      case 105: // PJ-1203A Power B (W ÷10)
-        this.log(`[FALLBACK] ⚡ Power B: ${value / 10} W`);
-        break;
+    case 105: // PJ-1203A Power B (W ÷10)
+      this.log(`[FALLBACK] ⚡ Power B: ${value / 10} W`);
+      break;
 
-      case 111: // PJ-1203A AC Frequency (Hz ÷100)
-        this.log(`[FALLBACK] ⚡ AC Frequency: ${value / 100} Hz`);
-        break;
+    case 111: // PJ-1203A AC Frequency (Hz ÷100)
+      this.log(`[FALLBACK] ⚡ AC Frequency: ${value / 100} Hz`);
+      break;
 
-      case 112: // PJ-1203A Voltage (V ÷10)
-        this.setCapabilityValue('measure_voltage', value / 10).catch(this.error);
-        this.log(`[FALLBACK] ⚡ Voltage: ${value / 10} V`);
-        break;
+    case 112: // PJ-1203A Voltage (V ÷10)
+      this.setCapabilityValue('measure_voltage', value / 10).catch(this.error);
+      this.log(`[FALLBACK] ⚡ Voltage: ${value / 10} V`);
+      break;
 
-      case 113: // PJ-1203A Current A (A ÷1000)
-        this.setCapabilityValue('measure_current', (value / 1000) * this._ctRatio).catch(this.error);
-        this.log(`[FALLBACK] ⚡ Current A: ${value / 1000} A`);
-        break;
+    case 113: // PJ-1203A Current A (A ÷1000)
+      this.setCapabilityValue('measure_current', (value / 1000) * this._ctRatio).catch(this.error);
+      this.log(`[FALLBACK] ⚡ Current A: ${value / 1000} A`);
+      break;
 
-      case 114: // PJ-1203A Current B (A ÷1000)
-        this.log(`[FALLBACK] ⚡ Current B: ${value / 1000} A`);
-        break;
+    case 114: // PJ-1203A Current B (A ÷1000)
+      this.log(`[FALLBACK] ⚡ Current B: ${value / 1000} A`);
+      break;
 
-      case 115: // PJ-1203A Total Power (W ÷10)
-        this.setCapabilityValue('measure_power', value / 10).catch(this.error);
-        this.log(`[FALLBACK] ⚡ Total Power: ${value / 10} W`);
-        break;
+    case 115: // PJ-1203A Total Power (W ÷10)
+      this.setCapabilityValue('measure_power', value / 10).catch(this.error);
+      this.log(`[FALLBACK] ⚡ Total Power: ${value / 10} W`);
+      break;
 
-      case 121: // PJ-1203A Power Factor B
-        this.log(`[FALLBACK] 📈 Power Factor B: ${value / 100}`);
-        break;
+    case 121: // PJ-1203A Power Factor B
+      this.log(`[FALLBACK] 📈 Power Factor B: ${value / 100}`);
+      break;
 
-      default:
-        this.log(`[DP${dp}] Unhandled DP value: ${value}`);
+    default:
+      this.log(`[DP${dp}] Unhandled DP value: ${value}`);
     }
   }
 

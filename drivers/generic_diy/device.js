@@ -110,8 +110,8 @@ class GenericDIYDevice extends ZigBeeDevice {
 
   _triggerButton(button, pressType) {
     const flowId = pressType === BUTTON_PRESS.DOUBLE ? 'generic_diy_button_double_pressed' :
-                   pressType === BUTTON_PRESS.LONG ? 'generic_diy_button_long_pressed' :
-                   'generic_diy_button_pressed';
+      pressType === BUTTON_PRESS.LONG ? 'generic_diy_button_long_pressed' :
+        'generic_diy_button_pressed';
     this._triggerFlow(flowId, { button });
   }
 
@@ -328,20 +328,20 @@ class GenericDIYDevice extends ZigBeeDevice {
 
   async checkCondition(conditionId, args = {}) {
     switch (conditionId) {
-      case 'generic_diy_is_on':
-        return this.getCapabilityValue('onoff') === true;
-      case 'generic_diy_motion_active':
-        return this.getCapabilityValue('alarm_motion') === true;
-      case 'generic_diy_contact_open':
-        return this.getCapabilityValue('alarm_contact') === true;
-      case 'generic_diy_temperature_above':
-        return (this.getCapabilityValue('measure_temperature') || 0) > args.temperature;
-      case 'generic_diy_humidity_above':
-        return (this.getCapabilityValue('measure_humidity') || 0) > args.humidity;
-      case 'generic_diy_battery_below':
-        return (this.getCapabilityValue('measure_battery') || 100) < args.battery;
-      default:
-        return false;
+    case 'generic_diy_is_on':
+      return this.getCapabilityValue('onoff') === true;
+    case 'generic_diy_motion_active':
+      return this.getCapabilityValue('alarm_motion') === true;
+    case 'generic_diy_contact_open':
+      return this.getCapabilityValue('alarm_contact') === true;
+    case 'generic_diy_temperature_above':
+      return (this.getCapabilityValue('measure_temperature') || 0) > args.temperature;
+    case 'generic_diy_humidity_above':
+      return (this.getCapabilityValue('measure_humidity') || 0) > args.humidity;
+    case 'generic_diy_battery_below':
+      return (this.getCapabilityValue('measure_battery') || 100) < args.battery;
+    default:
+      return false;
     }
   }
 }

@@ -393,7 +393,16 @@
       "_TZe284_f5efvtbv",
       "_TZe284_lbhh5o6z",
       "_TZe284_tdhnhhiy"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": []
+      }
+    }
   },
   "images": {
     "small": "drivers/switch_1gang/assets/images/small.png",

@@ -226,15 +226,15 @@ class RGBBulbDevice extends HybridLightBase {
     for (const key of changedKeys) {
       try {
         switch (key) {
-          case 'power_on_behavior':
-            await this._setPowerOnBehavior(newSettings.power_on_behavior);
-            break;
-          case 'do_not_disturb':
-            await this._setDoNotDisturb(newSettings.do_not_disturb);
-            break;
-          case 'transition_time':
-            this._transitionTime = newSettings.transition_time;
-            break;
+        case 'power_on_behavior':
+          await this._setPowerOnBehavior(newSettings.power_on_behavior);
+          break;
+        case 'do_not_disturb':
+          await this._setDoNotDisturb(newSettings.do_not_disturb);
+          break;
+        case 'transition_time':
+          this._transitionTime = newSettings.transition_time;
+          break;
         }
       } catch (err) {
         this.error(`[RGB] Failed to apply setting ${key}:`, err.message);

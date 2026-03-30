@@ -57,15 +57,15 @@ class PetFeederDevice extends ZigBeeDevice {
     this.log(`[DP${dp}] = ${value}`);
 
     switch (dp) {
-      case 6: // Food level alarm
-        if (this.hasCapability('alarm_generic')) {
-          this.setCapabilityValue('alarm_generic', !!value).catch(this.error);
-        }
-        break;
+    case 6: // Food level alarm
+      if (this.hasCapability('alarm_generic')) {
+        this.setCapabilityValue('alarm_generic', !!value).catch(this.error);
+      }
+      break;
 
-      case 4: // Portion size
-        this.log(`Portion size: ${value}`);
-        break;
+    case 4: // Portion size
+      this.log(`Portion size: ${value}`);
+      break;
     }
   }
 }

@@ -232,20 +232,20 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
     this.log(`Tuya DP ${dp}: ${value}`);
 
     switch (dp) {
-      case DP_TEMPERATURE:
-        // Temperature is usually in 0.1°C units
-        const temp = typeof value === 'number' ? value / 10 : value;
-        this._setTemperature(temp);
-        break;
+    case DP_TEMPERATURE:
+      // Temperature is usually in 0.1°C units
+      const temp = typeof value === 'number' ? value / 10 : value;
+      this._setTemperature(temp);
+      break;
 
-      case DP_HUMIDITY:
-        // Humidity is usually in % units
-        const hum = typeof value === 'number' ? value : parseInt(value);
-        this._setHumidity(hum);
-        break;
+    case DP_HUMIDITY:
+      // Humidity is usually in % units
+      const hum = typeof value === 'number' ? value : parseInt(value);
+      this._setHumidity(hum);
+      break;
 
-      default:
-        this.log(`Unknown DP ${dp}: ${value}`);
+    default:
+      this.log(`Unknown DP ${dp}: ${value}`);
     }
   }
 

@@ -57,30 +57,30 @@ class HumidifierDevice extends ZigBeeDevice {
     this.log(`[DP${dp}] = ${value}`);
 
     switch (dp) {
-      case 1: // On/Off
-        this.setCapabilityValue('onoff', !!value).catch(this.error);
-        break;
+    case 1: // On/Off
+      this.setCapabilityValue('onoff', !!value).catch(this.error);
+      break;
 
-      case 2: // Target humidity
-        if (this.hasCapability('dim.humidity')) {
-          this.setCapabilityValue('dim.humidity', value).catch(this.error);
-        }
-        break;
+    case 2: // Target humidity
+      if (this.hasCapability('dim.humidity')) {
+        this.setCapabilityValue('dim.humidity', value).catch(this.error);
+      }
+      break;
 
-      case 3: // Current humidity
-        if (this.hasCapability('measure_humidity')) {
-          this.setCapabilityValue('measure_humidity', value).catch(this.error);
-        }
-        break;
+    case 3: // Current humidity
+      if (this.hasCapability('measure_humidity')) {
+        this.setCapabilityValue('measure_humidity', value).catch(this.error);
+      }
+      break;
 
-      case 5: // Mist level (0-3)
-        const dim = value / 3;
-        this.setCapabilityValue('dim', dim).catch(this.error);
-        break;
+    case 5: // Mist level (0-3)
+      const dim = value / 3;
+      this.setCapabilityValue('dim', dim).catch(this.error);
+      break;
 
-      case 12: // Water shortage
-        this.log(`Water shortage alarm: ${value}`);
-        break;
+    case 12: // Water shortage
+      this.log(`Water shortage alarm: ${value}`);
+      break;
     }
   }
 }

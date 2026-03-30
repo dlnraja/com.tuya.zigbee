@@ -156,28 +156,28 @@ class FanControllerDevice extends ZigBeeDevice {
     this.log(`[DP${dp}] = ${value}`);
 
     switch (dp) {
-      case 1: // On/Off
-        const wasOn = this.getCapabilityValue('onoff');
-        this.setCapabilityValue('onoff', !!value).catch(this.error);
-        // Trigger flow cards
-        if (!!value && !wasOn) {
-          this.homey.flow.getDeviceTriggerCard('fan_controller_turned_on').trigger(this).catch(this.error);
-        } else if (!value && wasOn) {
-          this.homey.flow.getDeviceTriggerCard('fan_controller_turned_off').trigger(this).catch(this.error);
-        }
-        break;
+    case 1: // On/Off
+      const wasOn = this.getCapabilityValue('onoff');
+      this.setCapabilityValue('onoff', !!value).catch(this.error);
+      // Trigger flow cards
+      if (!!value && !wasOn) {
+        this.homey.flow.getDeviceTriggerCard('fan_controller_turned_on').trigger(this).catch(this.error);
+      } else if (!value && wasOn) {
+        this.homey.flow.getDeviceTriggerCard('fan_controller_turned_off').trigger(this).catch(this.error);
+      }
+      break;
 
-      case 3: // Speed (0-4)
-        const dim = value / 4; // Convert to 0-1 range
-        this.setCapabilityValue('dim', dim).catch(this.error);
-        // Trigger speed changed flow card
-        this.homey.flow.getDeviceTriggerCard('fan_controller_speed_changed')
-          .trigger(this, { speed: Math.round(dim * 100) }).catch(this.error);
-        break;
+    case 3: // Speed (0-4)
+      const dim = value / 4; // Convert to 0-1 range
+      this.setCapabilityValue('dim', dim).catch(this.error);
+      // Trigger speed changed flow card
+      this.homey.flow.getDeviceTriggerCard('fan_controller_speed_changed')
+        .trigger(this, { speed: Math.round(dim * 100) }).catch(this.error);
+      break;
 
-      case 6: // Mode (some devices)
-        this.log(`Fan mode: ${value}`);
-        break;
+    case 6: // Mode (some devices)
+      this.log(`Fan mode: ${value}`);
+      break;
     }
   }
 }

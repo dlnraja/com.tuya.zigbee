@@ -144,19 +144,19 @@ class SoilSensorDevice extends TuyaHybridDevice {
       // ═══════════════════════════════════════════════════════════════════
       // v5.9.22: Z2M #28270 - DP102=illuminance for _TZE284_o9ofysmo/_TZE284_xc3vwx5a
       
-        102: { capability: 'measure_luminance', divisor: 1 },
-        103: { capability: null, setting: 'report_interval', min: 30, max: 1200 },
-        104: { capability: null, setting: 'soil_calibration', min: -30, max: 30 },
-        105: { capability: null, setting: 'humidity_calibration', min: -30, max: 30 },
-        106: { capability: null, setting: 'illuminance_calibration', min: -1000, max: 1000 },
-        107: { capability: null, setting: 'temperature_calibration', min: -20, max: 20 },
-        110: { capability: null, setting: 'soil_warning', min: 0, max: 100 },
-        111: { capability: 'alarm_water', transform: (v) => v === 1 },
-        112: { capability: 'measure_conductivity', divisor: 1 }, // soil fertility uS/cm
-        113: { capability: null, setting: 'soil_fertility_calibration', min: -1000, max: 1000 },
-        114: { capability: null, setting: 'soil_fertility_warning_setting', min: 0, max: 5000 },
-        115: { capability: null, setting: 'soil_fertility_warning_v1', min: 0, max: 5000 },
-        // ═══════════════════════════════════════════════════════════════════
+      102: { capability: 'measure_luminance', divisor: 1 },
+      103: { capability: null, setting: 'report_interval', min: 30, max: 1200 },
+      104: { capability: null, setting: 'soil_calibration', min: -30, max: 30 },
+      105: { capability: null, setting: 'humidity_calibration', min: -30, max: 30 },
+      106: { capability: null, setting: 'illuminance_calibration', min: -1000, max: 1000 },
+      107: { capability: null, setting: 'temperature_calibration', min: -20, max: 20 },
+      110: { capability: null, setting: 'soil_warning', min: 0, max: 100 },
+      111: { capability: 'alarm_water', transform: (v) => v === 1 },
+      112: { capability: 'measure_conductivity', divisor: 1 }, // soil fertility uS/cm
+      113: { capability: null, setting: 'soil_fertility_calibration', min: -1000, max: 1000 },
+      114: { capability: null, setting: 'soil_fertility_warning_setting', min: 0, max: 5000 },
+      115: { capability: null, setting: 'soil_fertility_warning_v1', min: 0, max: 5000 },
+      // ═══════════════════════════════════════════════════════════════════
       // FALLBACK DPs for other soil sensor variants
       // ═══════════════════════════════════════════════════════════════════
       1: { capability: 'measure_temperature', divisor: 10 },  // Some variants
@@ -287,28 +287,28 @@ class SoilSensorDevice extends TuyaHybridDevice {
       this.log(`[SOIL] Setting ${key}: ${oldSettings[key]} → ${newValue}`);
 
       switch (key) {
-        case 'temperature_calibration':
-          this._temperatureCalibration = newValue || 0;
-          break;
-        case 'humidity_calibration':
-          this._humidityCalibration = newValue || 0;
-          break;
-        case 'moisture_calibration':
-          this._moistureCalibration = newValue || 0;
-          break;
-        case 'soil_warning_threshold':
-          this._soilWarningThreshold = newValue || 30;
-          // Re-evaluate alarm_water based on current moisture
-          this._updateWaterAlarm();
-          break;
-        case 'temperature_unit':
-          this._temperatureUnit = newValue || 'celsius';
-          // Re-display temperature in new unit
-          const currentTemp = this.getCapabilityValue('measure_temperature');
-          if (currentTemp !== null) {
-            this.log(`[SOIL] Temperature unit changed, current: ${currentTemp}°C`);
-          }
-          break;
+      case 'temperature_calibration':
+        this._temperatureCalibration = newValue || 0;
+        break;
+      case 'humidity_calibration':
+        this._humidityCalibration = newValue || 0;
+        break;
+      case 'moisture_calibration':
+        this._moistureCalibration = newValue || 0;
+        break;
+      case 'soil_warning_threshold':
+        this._soilWarningThreshold = newValue || 30;
+        // Re-evaluate alarm_water based on current moisture
+        this._updateWaterAlarm();
+        break;
+      case 'temperature_unit':
+        this._temperatureUnit = newValue || 'celsius';
+        // Re-display temperature in new unit
+        const currentTemp = this.getCapabilityValue('measure_temperature');
+        if (currentTemp !== null) {
+          this.log(`[SOIL] Temperature unit changed, current: ${currentTemp}°C`);
+        }
+        break;
       }
     }
   }

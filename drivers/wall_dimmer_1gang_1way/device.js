@@ -105,55 +105,55 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
     for (const key of changedKeys) {
       try {
         switch (key) {
-          case 'min_brightness':
-            // Convert percentage (1-100) to Tuya range (10-1000)
-            const minBrightness = Math.round(10 + ((newSettings.min_brightness / 100) * 990));
-            this.log(`Setting min_brightness: ${newSettings.min_brightness}% → ${minBrightness}`);
-            await this.sendTuyaCommand(dataPoints.minBrightness, minBrightness, 'value');
-            break;
+        case 'min_brightness':
+          // Convert percentage (1-100) to Tuya range (10-1000)
+          const minBrightness = Math.round(10 + ((newSettings.min_brightness / 100) * 990));
+          this.log(`Setting min_brightness: ${newSettings.min_brightness}% → ${minBrightness}`);
+          await this.sendTuyaCommand(dataPoints.minBrightness, minBrightness, 'value');
+          break;
             
-          case 'power_on_behavior':
-            const powerOnValue = parseInt(newSettings.power_on_behavior, 10);
-            this.log(`Setting power_on_behavior: ${powerOnValue}`);
-            await this.sendTuyaCommand(dataPoints.powerOnBehavior, powerOnValue, 'enum');
-            break;
+        case 'power_on_behavior':
+          const powerOnValue = parseInt(newSettings.power_on_behavior, 10);
+          this.log(`Setting power_on_behavior: ${powerOnValue}`);
+          await this.sendTuyaCommand(dataPoints.powerOnBehavior, powerOnValue, 'enum');
+          break;
             
-          case 'light_type':
-            const lightTypeValue = parseInt(newSettings.light_type, 10);
-            this.log(`Setting light_type: ${lightTypeValue}`);
-            await this.sendTuyaCommand(dataPoints.lightType, lightTypeValue, 'enum');
-            break;
+        case 'light_type':
+          const lightTypeValue = parseInt(newSettings.light_type, 10);
+          this.log(`Setting light_type: ${lightTypeValue}`);
+          await this.sendTuyaCommand(dataPoints.lightType, lightTypeValue, 'enum');
+          break;
 
-          case 'backlight_mode':
-            const backlightValue = parseInt(newSettings.backlight_mode, 10);
-            this.log(`Setting backlight_mode: ${backlightValue} (0=off, 1=normal, 2=inverted)`);
+        case 'backlight_mode':
+          const backlightValue = parseInt(newSettings.backlight_mode, 10);
+          this.log(`Setting backlight_mode: ${backlightValue} (0=off, 1=normal, 2=inverted)`);
 
-            // Try alternative datapoints DP36+DP37 (from issue #26578)
-            if (backlightValue === 0) {
-              // Always off: Set DP36=0 (backlight disabled)
-              this.log('Trying DP36=0 (backlight off)');
-              await this.sendTuyaCommand(dataPoints.backlightSwitch, false, 'bool').catch(err =>
-                this.log('DP36 not supported:', err.message));
-            } else {
-              // Normal or inverted: Enable backlight (DP36=1) and set mode (DP37)
-              this.log('Trying DP36=1 (backlight on)');
-              await this.sendTuyaCommand(dataPoints.backlightSwitch, true, 'bool').catch(err =>
-                this.log('DP36 not supported:', err.message));
+          // Try alternative datapoints DP36+DP37 (from issue #26578)
+          if (backlightValue === 0) {
+            // Always off: Set DP36=0 (backlight disabled)
+            this.log('Trying DP36=0 (backlight off)');
+            await this.sendTuyaCommand(dataPoints.backlightSwitch, false, 'bool').catch(err =>
+              this.log('DP36 not supported:', err.message));
+          } else {
+            // Normal or inverted: Enable backlight (DP36=1) and set mode (DP37)
+            this.log('Trying DP36=1 (backlight on)');
+            await this.sendTuyaCommand(dataPoints.backlightSwitch, true, 'bool').catch(err =>
+              this.log('DP36 not supported:', err.message));
 
-              // DP37: 0=none, 1=relay/normal, 2=pos/inverted
-              const lightMode = backlightValue; // 1=normal(relay), 2=inverted(pos)
-              this.log(`Trying DP37=${lightMode} (light mode)`);
-              await this.sendTuyaCommand(dataPoints.backlightLightMode, lightMode, 'enum').catch(err =>
-                this.log('DP37 not supported:', err.message));
-            }
+            // DP37: 0=none, 1=relay/normal, 2=pos/inverted
+            const lightMode = backlightValue; // 1=normal(relay), 2=inverted(pos)
+            this.log(`Trying DP37=${lightMode} (light mode)`);
+            await this.sendTuyaCommand(dataPoints.backlightLightMode, lightMode, 'enum').catch(err =>
+              this.log('DP37 not supported:', err.message));
+          }
 
-            // Also try original DP15 as fallback
-            await this.sendTuyaCommand(dataPoints.backlightMode, backlightValue, 'enum').catch(err =>
-              this.log('DP15 failed (expected):', err.message));
-            break;
+          // Also try original DP15 as fallback
+          await this.sendTuyaCommand(dataPoints.backlightMode, backlightValue, 'enum').catch(err =>
+            this.log('DP15 failed (expected):', err.message));
+          break;
 
-          default:
-            this.log(`Unknown setting: ${key}`);
+        default:
+          this.log(`Unknown setting: ${key}`);
         }
       } catch (err) {
         this.error(`Failed to apply setting ${key}:`, err);
@@ -332,40 +332,40 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         throw new Error('Tuya cluster not available');
       }
 
-      this.log(`════════════════════════════════════════`);
+      this.log('════════════════════════════════════════');
       this.log(`Sending Tuya command: DP ${dp} = ${value} (${type})`);
-      this.log(`════════════════════════════════════════`);
+      this.log('════════════════════════════════════════');
 
       let dataBuffer;
       let datatype;
       
       switch (type) {
-        case 'bool':
-          dataBuffer = Buffer.alloc(1);
-          dataBuffer.writeUInt8(value ? 1 : 0, 0);
-          datatype = 1;
-          break;
+      case 'bool':
+        dataBuffer = Buffer.alloc(1);
+        dataBuffer.writeUInt8(value ? 1 : 0, 0);
+        datatype = 1;
+        break;
           
-        case 'value':
-          dataBuffer = Buffer.alloc(4);
-          dataBuffer.writeInt32BE(value, 0);
-          datatype = 2;
-          break;
+      case 'value':
+        dataBuffer = Buffer.alloc(4);
+        dataBuffer.writeInt32BE(value, 0);
+        datatype = 2;
+        break;
           
-        case 'enum':
-          dataBuffer = Buffer.alloc(1);
-          dataBuffer.writeUInt8(Number(value), 0);
-          datatype = 4;
-          break;
+      case 'enum':
+        dataBuffer = Buffer.alloc(1);
+        dataBuffer.writeUInt8(Number(value), 0);
+        datatype = 4;
+        break;
           
-        case 'string':
-          dataBuffer = Buffer.from(String(value), 'utf8');
-          datatype = 3;
-          break;
+      case 'string':
+        dataBuffer = Buffer.from(String(value), 'utf8');
+        datatype = 3;
+        break;
           
-        default:
-          dataBuffer = Buffer.from([value]);
-          datatype = 2;
+      default:
+        dataBuffer = Buffer.from([value]);
+        datatype = 2;
       }
 
       this.log('Data buffer:', dataBuffer);

@@ -46,16 +46,16 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
 
       // Continue with driver-specific setup
       try {
-    if (this.isZclOnlyDevice) {
-      this.log('[SWITCH-3G] 🔵 ZCL-ONLY MODE (BSEED)');
-      await this._initZclOnlyMode(zclNode);
-      return;
-    }
-    await super.onNodeInit({ zclNode });
-    await this.initPhysicalButtonDetection(zclNode);
-    await this.initVirtualButtons();
-    this.log('[SWITCH-3G] v5.5.919 - Physical button detection enabled');
-  } catch (setupErr) {
+        if (this.isZclOnlyDevice) {
+          this.log('[SWITCH-3G] 🔵 ZCL-ONLY MODE (BSEED)');
+          await this._initZclOnlyMode(zclNode);
+          return;
+        }
+        await super.onNodeInit({ zclNode });
+        await this.initPhysicalButtonDetection(zclNode);
+        await this.initVirtualButtons();
+        this.log('[SWITCH-3G] v5.5.919 - Physical button detection enabled');
+      } catch (setupErr) {
         this.log('[SWITCH-3G] Setup warning:', setupErr.message);
       }
 

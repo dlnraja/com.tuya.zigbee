@@ -1,0 +1,16 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Soil Fertility",
+    "nl": "Bodemvruchtbaarheid",
+    "de": "Bodenfruchtbarkeit",
+    "fr": "Fertilité du sol"
+  },
+  "units": {
+    "en": "µS/cm"
+  },
+  "decimals": 0,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor"
+}

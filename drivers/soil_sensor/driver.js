@@ -115,9 +115,9 @@ class SoilSensorDriver extends ZigBeeDriver {
     }
 
     const triggers = [this._moistureChangedTrigger, this._soilDryTrigger, this._soilWetTrigger,
-                      this._tempChangedTrigger, this._batteryLowTrigger].filter(Boolean).length;
+      this._tempChangedTrigger, this._batteryLowTrigger].filter(Boolean).length;
     const conditions = [moistureBelowCondition, moistureAboveCondition, tempAboveCondition, 
-                        needsWaterCondition, batteryAboveCondition].filter(Boolean).length;
+      needsWaterCondition, batteryAboveCondition].filter(Boolean).length;
     this.log(`Soil Sensor ✅ ${triggers} triggers + ${conditions} conditions registered`);
   }
 

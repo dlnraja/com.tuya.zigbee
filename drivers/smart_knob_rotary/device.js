@@ -352,18 +352,18 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     this.log('Multistate input action:', action);
 
     switch (action) {
-      case 0:
-      case 1:
-        this._triggerButtonPress('single');
-        break;
-      case 2:
-        this._triggerButtonPress('double');
-        break;
-      case 3:
-        this._triggerButtonPress('hold');
-        break;
-      default:
-        this.log('Unknown multistate action:', action);
+    case 0:
+    case 1:
+      this._triggerButtonPress('single');
+      break;
+    case 2:
+      this._triggerButtonPress('double');
+      break;
+    case 3:
+      this._triggerButtonPress('hold');
+      break;
+    default:
+      this.log('Unknown multistate action:', action);
     }
   }
 

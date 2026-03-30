@@ -60,7 +60,18 @@
     "productId": [
       "TS0204",
       "TS0601"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ],
+        "bindings": [
+          61184
+        ]
+      }
+    }
   },
   "settings": [
     {
