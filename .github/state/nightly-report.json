@@ -1,24 +1,64 @@
 {
-  "timestamp": "2026-03-29T06:00:43.756Z",
-  "appVersion": "5.11.138",
-  "forum": 1,
-  "github": 0,
-  "diagnostics": 3,
+  "timestamp": "2026-03-30T06:10:29.458Z",
+  "appVersion": "5.11.143",
+  "forum": 4,
+  "github": 1,
+  "diagnostics": 31,
   "diagNewFPs": 0,
   "diagCritical": 0,
   "forumDetails": [
     {
-      "topic": 26439,
-      "post": 5424,
-      "user": "Peter_Kawa",
+      "topic": 140352,
+      "post": 1657,
+      "user": "Lasse_K",
+      "fps": [],
+      "reply": "It looks like we have found the fingerprint for the ZG-102Z contact sensor, and it is indeed supported. The driver associated with this device is the `contact_sensor`. \n\nSince you mentioned that the d",
+      "model": "gh-gpt-4o-mini"
+    },
+    {
+      "topic": 140352,
+      "post": 1660,
+      "user": "Wiosenna_26",
       "fps": [
-        "_TZ3000_gjnozsaz",
-        "_TZ3000_g",
-        "zigbee2mqtt"
+        "dlnraja"
       ],
-      "reply": "It looks like you've provided some valuable insights regarding the _TZ3000_gjnozsaz measuring plugs and their performance with Zigbee2MQTT. Based on the fingerprint lookup, we can confirm the followin",
+      "reply": "It looks like you've successfully paired the BSEED Zigbee 1-Gang Touch Switch, but you're encountering an issue with the driver not being initialized. Based on the fingerprint lookup, the device is re",
+      "model": "gh-gpt-4o-mini"
+    },
+    {
+      "topic": 140352,
+      "post": 1661,
+      "user": "Rikjes",
+      "fps": [
+        "example"
+      ],
+      "reply": "It looks like you've encountered an issue with the TZ3000 switch modules after the latest update. Based on the fingerprint lookup, the device is recognized, but it is currently associated with the \"di",
+      "model": "gh-gpt-4o-mini"
+    },
+    {
+      "topic": 26439,
+      "post": 5426,
+      "user": "johan_bendz",
+      "fps": [
+        "test"
+      ],
+      "reply": "It looks like you've found a fingerprint for your device, and it's associated with the \"diy_custom_zigbee\" driver. This indicates that the device is recognized and should be supported, but there may b",
       "model": "gh-gpt-4o-mini"
     }
   ],
-  "githubDetails": []
+  "githubDetails": [
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1356,
+      "user": "steampunklolcat",
+      "fps": [
+        "_TZ3000_xabckq1v",
+        "example",
+        "vision"
+      ],
+      "title": "Bug report - 4 gang wall switch stopped working",
+      "response": "### Issue #1356: 4 Gang Wall Switch Stopped Working\n\nThank you for your detailed report regarding the Moes 4 gang wall switch (model TS004F) not functioning after the upgrade to version 0.2.75. Let's analyze the provided Zigbee interview data to understand the situation better.\n\n#### Device Overview",
+      "model": "gh-gpt-4o-mini"
+    }
+  ]
 }

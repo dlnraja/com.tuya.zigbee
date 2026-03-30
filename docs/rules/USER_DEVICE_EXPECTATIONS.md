@@ -177,6 +177,15 @@
 
 <!-- NIGHTLY_START — Preserved from nightly-processor.js -->
 
+## Nightly Auto-Scan (2026-03-30)
+| User | Fingerprint(s) | Source | Date |
+|------|---------------|--------|------|
+| Wiosenna_26 | `dlnraja` | Forum #140352 post #1660 | Auto-scanned 2026-03-30 |
+| Rikjes | `example` | Forum #140352 post #1661 | Auto-scanned 2026-03-30 |
+| johan_bendz | `test` | Forum #26439 post #5426 | Auto-scanned 2026-03-30 |
+| steampunklolcat | `_TZ3000_xabckq1v`, `example`, `vision` | JohanBendz/com.tuya.zigbee#1356 | Auto-scanned 2026-03-30 |
+
+
 ## Nightly Auto-Scan (2026-03-29)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
@@ -1886,3 +1895,30 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 |---|---|---|
 | example + TS004F | JohanBendz/com.tuya.zigbee#1356 | bug_report |
 | vision + TS004F | JohanBendz/com.tuya.zigbee#1356 | bug_report |
+
+
+## Auto-discovered from GitHub (2026-03-30)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| SONOFF + TRVZB | dlnraja/com.tuya.zigbee#PR181 | pr |
+| SONOFF + S31ZB | dlnraja/com.tuya.zigbee#PR181 | pr |
+| danfoss + TRVZB | dlnraja/com.tuya.zigbee#PR181 | pr |
+| eWeLink + TRVZB | dlnraja/com.tuya.zigbee#PR181 | pr |
+| eWeLink + S31ZB | dlnraja/com.tuya.zigbee#PR181 | pr |
+| legrand + TRVZB | dlnraja/com.tuya.zigbee#PR181 | pr |
+| sonoff + TRVZB | dlnraja/com.tuya.zigbee#PR181 | pr |
+| sonoff + S31ZB | dlnraja/com.tuya.zigbee#PR181 | pr |
+| xiaomi + TRVZB | dlnraja/com.tuya.zigbee#PR181 | pr |
+| xiaomi + S31ZB | dlnraja/com.tuya.zigbee#PR181 | pr |
+| xiaomi + ZBMINI | dlnraja/com.tuya.zigbee#PR181 | pr |
+| test + TRVZB | dlnraja/com.tuya.zigbee#PR181 | pr |
+| test + S31ZB | dlnraja/com.tuya.zigbee#PR181 | pr |
+| test + ZBMINI | dlnraja/com.tuya.zigbee#PR181 | pr |
+| bosch + TRVZB | dlnraja/com.tuya.zigbee#PR181 | pr |
+| ikea + TRVZB | dlnraja/com.tuya.zigbee#PR181 | pr |
+| ikea + S31ZB | dlnraja/com.tuya.zigbee#PR181 | pr |
+| ikea + ZBMINI | dlnraja/com.tuya.zigbee#PR181 | pr |
+| tuya + TRVZB | dlnraja/com.tuya.zigbee#PR181 | pr |
+| tuya + S31ZB | dlnraja/com.tuya.zigbee#PR181 | pr |
+| tuya + ZBMINI | dlnraja/com.tuya.zigbee#PR181 | pr |
