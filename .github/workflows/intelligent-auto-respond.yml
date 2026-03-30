@@ -1,0 +1,36 @@
+name: "Intelligent Auto-Respond to Issues"
+
+on:
+  issues:
+    types: [opened, reopened]
+  issue_comment:
+    types: [created]
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  intelligent-respond:
+    name: "Detect Bug Patterns & Auto-Respond"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      
+      - name: "Analyze Issue with Intelligent Detection"
+        id: analyze
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node .github/scripts/auto-respond-intelligent.js
+      
+      - name: "Summary"
+        if: always()
+        run: |
+          echo "✅ Intelligent auto-response workflow completed"

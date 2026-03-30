@@ -5,6 +5,7 @@ const {loadFingerprints,findDriver,findAllDrivers,extractMfrFromText,extractAllF
 const {sleep}=require('./retry-helper');
 const fs=require('fs');
 const path=require('path');
+const { analyzeAndRespond } = require('./intelligent-bug-detector.js');
 
 const DRY=process.env.DRY_RUN==='true';
 const REPO=process.env.TARGET_REPO||'JohanBendz/com.tuya.zigbee';
