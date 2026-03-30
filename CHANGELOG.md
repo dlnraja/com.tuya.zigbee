@@ -6,7 +6,17 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.145] - 2026-03-30
+## [5.11.146] - 2026-03-30
+
+### Bug Fixes
+- Fixed 'Missing Capability Listener' error during initialization.
+
+### Drivers
+- Total drivers: 191
+- Total fingerprints: 3185
+---
+
+ [5.11.145] - 2026-03-30
 
 ### Bug Fixes
 - Resolved syntax errors and missing methods in drivers affecting device functionality.

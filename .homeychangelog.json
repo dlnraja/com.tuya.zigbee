@@ -1,4 +1,7 @@
 {
+  "5.11.146": {
+    "en": "Universal Tuya Zigbee app v5.11.146 adds new drivers and fixes initialization errors."
+  },
   "5.11.145": {
     "en": "Universal Tuya Zigbee app v5.11.145 adds new device support and fixes critical driver issues."
   },
@@ -56,10 +59,7 @@
   "5.11.125": {
     "en": "Fixed radar sensor classification and added new device fingerprints for Tuya Zigbee."
   },
-  "5.11.124": {
-    "en": "Universal Tuya Zigbee app v5.11.124 fixes IR blaster learning issues and updates driver and fingerprint counts."
-  },
-  "5.11.146": {
-    "en": "v5.11.145: Resolved syntax errors and missing methods in drivers affecting device functionality., Added support for 191 drivers and 3880 fingerprints, enhancing compatibility with various Zigbee devices."
+  "5.11.147": {
+    "en": "v5.11.146: Fixed 'Missing Capability Listener' error during initialization., Total drivers: 191, Total fingerprints: 3185"
   }
 }
