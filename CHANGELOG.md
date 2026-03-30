@@ -2,8 +2,6 @@
 
 All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
-> Format follows [Keep a Changelog](https://keepachangelog.com/). Auto-updated by GitHub Actions.
-
 ---
 
 ## [5.11.147] - 2026-03-30
@@ -18,7 +16,7 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
  [5.11.146] - 2026-03-30
 
 ### Bug Fixes
-- Fixed 'Missing Capability Listener' error during initialization.
+- Fixed app crash on device startup for various sensors and switches.
 
 ### Drivers
 - Total drivers: 191
@@ -28,10 +26,8 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
  [5.11.145] - 2026-03-30
 
 ### Bug Fixes
-- Resolved syntax errors and missing methods in drivers affecting device functionality.
+- Fixed flow card conditions and control issues for 1-4 gang switches.
 
-### New Features
-- Added support for 191 drivers and 3880 fingerprints, enhancing compatibility with various Zigbee devices.
 ---
 
  [5.11.144] - 2026-03-30
@@ -65,8 +61,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
  [5.11.140] - 2026-03-30
 
 ### Bug Fixes
-- Fixed pairing failure for presence_sensor_radar with DP-only TS0601 devices.
-- Removed strict cluster endpoints requirement to improve pairing for TS0601 models.
 - Prevented universal_fallback from hijacking motion sensors.
 
 ### New Features
@@ -77,8 +71,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ---
 
  [5.11.138] - 2026-04-01
-### Bug Fixes
-- Fixed pairing failures for soil, motion, LCD sensors. Added HOBEIAN to contact_sensor.
 ---
 ## [5.11.137] - 2026-03-31
 ### Bug Fixes
@@ -88,10 +80,8 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Improved BSEED ZCL-only button detection. TS0726 group isolation fix.
 ---
-## [5.11.135] - 2026-03-26
-### Bug Fixes
-- Fixed fingerbot FP, SOS conflict, vibration/contact misclassification.
 ---
+
 ## [5.11.134] - 2026-03-24
 ### Improvements
 - Fingerprint collision cleanup: removed 55 generic_tuya FPs.
@@ -111,14 +101,7 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - No improvements made in this release.
 
-### CI/CD
-- No changes in CI/CD processes.
----
-
- [5.11.131] - 2026-03-17
-
 ### Bug Fixes
-- Fixed pairing issue for switch_1gang by adding TS4100 productId.
 - Moved device _TZE284_bquwrqh1 from presence_sensor_radar to motion_sensor.
 
 ### New Features
@@ -128,19 +111,8 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Improvements
 - Comprehensive bug knowledge base added with multi-protocol patterns.
 
-### CI/CD
-- Forum state updated.
-- Diagnostics report updated for 2026-03-17.
----
-
- [5.11.130] - 2026-03-17
-
 ### Bug Fixes
-- Fixed pairing issue for switch_1gang by adding TS4100 productId.
 - Removed SDK v2 flow card code from 8 drivers for SDK v3 compatibility.
-
-### New Features
-- Added new fingerprints: _TZ3000_22ugzkme (TS0041 button), _TZ3000_wzmuk9ai (TS011F plug), and ZBM5/SWV variants.
 
 ### Improvements
 - Enhanced multi-protocol bug detection system.
@@ -151,27 +123,23 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
  [5.11.129] - 2026-03-17
 
 ### Bug Fixes
-- Added TS4100 productId to switch_1gang for _TZ3000_itb0omhv pairing fix.
 - Removed SDK v2 flow card code from 8 drivers for SDK v3 compatibility.
 - Fixed issue with DP setup order before magic packet, added forced polling.
 - Moved _TZE284_bquwrqh1 from presence_sensor_radar to motion_sensor.
 
 ### New Features
 - Added 188 drivers and 4260 fingerprints to the app.
-- Updated forum fingerprints: _TZ3000_22ugzkme (TS0041 button), _TZ3000_wzmuk9ai (TS011F plug), PR#160 (ZBM5/SWV variants).
 ---
 
  [5.11.128] - 2026-03-17
 
 ### Bug Fixes
-- Added TS4100 productId to switch_1gang for _TZ3000_itb0omhv pairing fix.
 - Removed SDK v2 flow card code from 8 drivers for SDK v3 compatibility.
 - Fixed issue #97: Reordered DP setup before magic packet and added forced polling.
 - Fixed issue #1351: Moved _TZE284_bquwrqh1 from presence_sensor_radar to motion_sensor.
 
 ### New Features
 - Added 188 drivers and 4260 fingerprints.
-- Added forum fingerprints: _TZ3000_22ugzkme (TS0041 button), _TZ3000_wzmuk9ai (TS011F plug), PR#160 (ZBM5/SWV variants).
 
 ---
 
@@ -181,9 +149,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Removed SDK v2 flow card code from 8 drivers for SDK v3 compatibility.
 - Fixed issue #97: Reordered DP setup before magic packet and added forced polling.
 - Fixed issue #1351: Moved _TZE284_bquwrqh1 from presence_sensor_radar to motion_sensor.
-
-### New Features
-- Added 2 new fingerprints: _TZ3000_22ugzkme (TS0041 button), _TZ3000_wzmuk9ai (TS011F plug).
 
 ### Drivers
 - Total drivers: 188
@@ -195,9 +160,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### Bug Fixes
 - Fix #97: Reordered DP setup before magic packet and added forced polling.
 - Fix #1351: Moved _TZE284_bquwrqh1 from presence_sensor_radar to motion_sensor.
-
-### New Features
-- Added new fingerprints: _TZ3000_22ugzkme (TS0041 button), _TZ3000_wzmuk9ai (TS011F plug), and PR#160 (ZBM5/SWV variants).
 
 ### Improvements
 - Updated driver count to 188 and fingerprints to 4260.
@@ -265,7 +227,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ### Bug Fixes
 - Fixed issue with LEAPMW DP109/119 where distance was silently dropped.
-- Integrated hasUserSymptoms() into decision logic to reduce spam responses.
 
 ### New Features
 - Added new device variants and updated drivers.
@@ -316,9 +277,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
  [5.11.117] - 2026-03-14
 
-### Bug Fixes
-- Restored forum integration with session authentication, removing the DISCOURSE_API_KEY dependency.
-
 ### New Features
 - Updated to 187 drivers and 4731 fingerprints, with 32 files modified to support these changes.
 
@@ -351,22 +309,13 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
  [5.11.114] - 2026-03-13
 
-### New Features
-- Added HOMEd cross-reference automation script.
-- Introduced auto-replace-images automation script.
-
 ### Drivers and Fingerprints
 - Total drivers: 187
 - Total fingerprints: 3169
 
-### Improvements
-- Updated various internal files for better organization.
 ---
 
  [5.11.113] - 2026-03-13
-
-### Bug Fixes
-- Fixed cancel-in-progress issue on scheduled workflows.
 
 ### New Features
 - Added 8 new device fingerprints, bringing the total to 4258.
@@ -404,12 +353,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
  [5.11.108] - 2026-03-12
 
-### New Features
-- Integrated JohanBendz SDK3 improvements, adding LELLKI fingerprint and rain sensor data points.
-
-### Bug Fixes
-- Resolved issues related to device pairing and scanning.
-
 ### Improvements
 - Added 8 new device fingerprints: [_TZ3000_402vrq2i, _TZE200_rxq4iti9].
 - Updated diagnostics report for better troubleshooting.
@@ -420,7 +363,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ### New Features
 - Integrated JohanBendz SDK3 improvements.
-- Added support for rain sensor device parameters.
 
 ### Bug Fixes
 - Fixed issues related to fingerprint scanning.
@@ -441,14 +383,12 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ### Improvements
 - Updated diagnostics report with new data.
-- Updated README with Zigbee bridge section and component details.
 
 ---
 
  [5.11.105] - 2026-03-11
 
 ### New Features
-- Integrated TuyaZigbeeBridge into the driver pairing flow.
 - Added TuyaZigbeeBridge.js for Zigbee sub-device control via Tuya gateway.
 
 ### Bug Fixes
@@ -521,9 +461,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Added 145 new drivers.
 - Updated fingerprint database to include 3109 fingerprints.
 
-### Bug Fixes
-- No specific bug fixes reported in this release.
-
 ---
 
  [5.11.99] - 2026-03-06
@@ -582,9 +519,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
  [5.11.95] - 2026-03-05
 
-### Bug Fixes
-- Removed undefined `navigateToVersions` call from main().
-
 ### New Features
 - Updated to 145 drivers and 3093 fingerprints.
 
@@ -597,7 +531,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ### New Features
 - Added 145 drivers.
-- Total of 4955 fingerprints now available.
 
 ### Bug Fixes
 - Fixed SPA step-by-step navigation for draft promotion.
@@ -624,17 +557,10 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ### New Features
 - Added 145 drivers, bringing the total to 145 drivers.
-- Updated fingerprints to 3093, enhancing device recognition capabilities.
-
-### Improvements
-- Updated various files for better performance and maintenance.
 
 ---
 
  [5.11.91] - 2026-03-05
-
-### Bug Fixes
-- Fixed implicit OAuth flow to retrieve JWT as done in SPA.
 
 ### New Features
 - Added 145 drivers, bringing the total to 145 drivers.
@@ -679,9 +605,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Added 145 drivers.
 - Added 3093 fingerprints.
 
-### Bug Fixes
-- Sanitized forum messages and changelog to remove automation/infrastructure leaks.
-
 ### Improvements
 - Updated diagnostics.
 
@@ -689,15 +612,9 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
  [5.11.87] - 2026-03-04
 
-### Bug Fixes
-- Cleaned up forum messages by removing scraping/bot/API/password references.
-
 ---
 
  [5.11.86] - 2026-03-03
-
-### New Features
-- Introduced Master AI Battle Orchestrator v1.0 with multi-AI ensemble and 6-phase pipeline.
 
 ### Improvements
 - Updated app to include 145 drivers and 4952 fingerprints.
@@ -709,7 +626,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ### Bug Fixes
 - Rewrote garage door driver to resolve issues and fixed fingerprint collisions (issues #128, #137).
-- Updated auto-promote-oauth.js for password grant and Athom API SDK compatibility.
 - Added delegation token step for apps API authentication.
 
 ---
@@ -725,9 +641,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ---
 
  [5.11.83] - 2026-03-03
-
-### Bug Fixes
-- Added `client_secret` to OAuth token exchange process.
 
 ### New Features
 - Updated to 145 drivers and 3093 fingerprints.
@@ -747,18 +660,12 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
  [5.11.81] - 2026-03-03
 
-### Bug Fixes
-- Fixed OAuth redirect chain handling (301→api.athom.com→code).
-
 ### Improvements
 - Updated app metadata: 145 drivers, 3093 fingerprints.
 
 ---
 
  [5.11.80] - 2026-03-03
-
-### Bug Fixes
-- Fixed OAuth flow to use session token for the authorization step, ensuring proper handling of the OAuth process.
 
 ### New Features
 - Added support for 145 drivers and 3093 fingerprints in this release.
@@ -770,18 +677,12 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
  [5.11.79] - 2026-03-03
 
-### New Features
-- Added headless OAuth support (Tier 2) - no Puppeteer needed.
-
 ### Improvements
 - Updated app to include 145 drivers and 3093 fingerprints.
 
 ---
 
  [5.11.78] - 2026-03-03
-
-### Bug Fixes
-- Fixed session API v2 to support server-side fetch with cookies and OAuth token interception.
 
 ### Improvements
 - Updated auto-publish process to reflect current driver and fingerprint counts: 145 drivers, 3093 fingerprints.
@@ -795,14 +696,10 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ### Changes
 - Updated to 145 drivers and 3093 fingerprints.
-- Removed obsolete diagnostics reports and states, reducing file size significantly.
 
 ---
 
  [5.11.76] - 2026-03-03
-
-### Bug Fixes
-- Fixed auto-promote to exit with code 1 on failure, enabling Tier 2 fallback.
 
 ### New Features
 - Updated app with 145 drivers and 3093 fingerprints.
@@ -810,9 +707,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ---
 
  [5.11.75] - 2026-03-03
-
-### New Features
-- Added keyword and sender filtered search for IMAP emails, limiting results to 30 relevant emails.
 
 ### Improvements
 - Updated app to include 145 drivers and 3093 fingerprints.
@@ -824,9 +718,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
  [5.11.74] - 2026-03-03
 
-### Bug Fixes
-- Fixed IMAP: envelope-only fetch to prevent out-of-memory (OOM) crashes.
-
 ### New Features
 - Updated to 145 drivers and 3093 fingerprints.
 
@@ -836,9 +727,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ---
 
  [5.11.73] - 2026-03-03
-
-### Bug Fixes
-- Fixed IMAP fetch to use sequence range string instead of UID array.
 
 ### New Features
 - Updated to 145 drivers and 3093 fingerprints.
@@ -850,9 +738,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
  [5.11.72] - 2026-03-03
 
-### Bug Fixes
-- Fixed IMAP fetch: added `uid:true` and used source instead of bodyParts.
-
 ### New Features
 - Auto-published version 5.11.72 with 145 drivers and 3093 fingerprints.
 
@@ -863,9 +748,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
  [5.11.71] - 2026-03-03
 
-### Bug Fixes
-- Improved error logging for IMAP with mailbox fallback options (INBOX/All Mail/FR).
-
 ### Drivers and Fingerprints
 - Total drivers: 145
 - Total fingerprints: 3093
@@ -875,22 +757,13 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
  [5.11.70] - 2026-03-03
 
-### Bug Fixes
-- Fixed: pre-check now accepts HOMEY_PASSWORD as IMAP fallback credential.
-
 ---
 
  [5.11.69] - 2026-03-03
 
-### Bug Fixes
-- Added `HOMEY_PASSWORD` as a last-resort fallback for Gmail IMAP authentication.
-
 ---
 
  [5.11.68] - 2026-03-03
-
-### Bug Fixes
-- Completed IMAP fallback in all YAML files for keepalive alerts.
 
 ### Improvements
 - Updated app to include 145 drivers and 3093 fingerprints.
@@ -899,9 +772,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
  [5.11.67] - 2026-03-03
 
-### Bug Fixes
-- Reused HOMEY_EMAIL as fallback for Gmail address when using the same account.
-
 ### New Features
 - Auto-published 145 drivers with a total of 3093 fingerprints.
 
@@ -909,18 +779,9 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
  [5.11.66] - 2026-03-03
 
-### Bug Fixes
-- Added IMAP fallback for Gmail diagnostics (permanent, no 7-day expiry).
-
-### Improvements
-- Updated diagnostics scripts for better functionality.
-
 ---
 
  [5.11.65] - 2026-03-03
-
-### Bug Fixes
-- Fixed incorrect driver assignment for _TZE200_vvmbj46n: removed from thermostat, retained in climate_sensor.
 
 ---
 
@@ -978,7 +839,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ### Improvements
 - Removed large state files from the repository to streamline the project.
-- Updated Gmail diagnostics to include periodic checks and token auto-rotation.
 
 ---
 
@@ -986,10 +846,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ### Bug Fixes
 - Fixed summary table issues.
-
-### New Features
-- Implemented periodic Gmail diagnostics with token pre-check and auto-rotation.
-- Added daily and nightly Gmail diagnostics, running twice a day.
 
 ### Improvements
 - Gitignored large state files to reduce clutter.
@@ -1039,7 +895,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Implemented GitHub Deep Search engine for searching Zigbee projects for fingerprints and converters.
 
 ### Improvements
-- Enhanced Gmail token rotation and health tracking.
 - Updated credits and acknowledgments in documentation.
 
 ---
@@ -1072,9 +927,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Added remote_dimmer driver (Lidl HG06323 TS1001) with full Zosung protocol support.
 - Implemented GitHub Deep Search engine to search over 20 Zigbee projects for fingerprints, device profiles, and converters.
 
-### Bug Fixes
-- Fixed Gmail token rotation issue and reset health tracking.
-
 ---
 
  [5.11.49] - 2026-03-02
@@ -1082,9 +934,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### New Features
 - Added remote dimmer driver for Lidl HG06323 TS1001 with full Zosung protocol support.
 - Introduced GitHub Deep Search engine to search 20+ Zigbee projects for fingerprints, data points, and converters.
-
-### Bug Fixes
-- Fixed Gmail token rotation and reset health tracking.
 
 ---
 
@@ -1112,7 +961,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ### New Features
 - Introduced ZCL cluster adapters for improved device compatibility.
-- Added converters for Zigbee to MQTT (Z2M), Zigbee Home Automation (ZHA), and deCONZ.
 
 ### Security
 - Implemented security hardening measures to enhance app safety.
@@ -1121,13 +969,9 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
  [5.11.45] - 2026-03-02
 
-### Bug Fixes
-- Fixed Gmail token recovery process.
-
 ### New Features
 - Resolved all open PR/issue fingerprints.
 - Enhanced the fingerprint research engine with Z2M context analysis.
-- Improved Gmail diagnostics with PII sanitization and deep research capabilities.
 - Introduced issue-deep-researcher.js to scan all open PRs/issues and auto-implement findings.
 - Added variant-scanner.js for auto-discovery of all variants and product IDs.
 
@@ -1138,12 +982,8 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### New Features
 - Resolved all open PR/issue fingerprints.
 - Enhanced fingerprint research engine with Z2M context analysis.
-- Improved Gmail diagnostics with PII sanitization and deep research.
 - Implemented a new issue deep researcher to scan all open PRs/issues and variants.
 - Added a variant scanner to auto-discover all variants and product IDs.
-
-### Bug Fixes
-- Various updates to scripts for better functionality and performance.
 
 ---
 
@@ -1151,21 +991,12 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ### New Features
 - Added support for 144 drivers and 4943 fingerprints.
-- Enhanced fetch-gmail-diagnostics with PII sanitization.
 - Introduced issue-deep-researcher.js to scan all open PRs/issues and auto-implement findings.
 - Implemented variant-scanner.js to auto-discover all variants and product IDs.
-
-### Improvements
-- Updated enrichment pipeline with codified FP research intelligence.
-- Gmail keepalive functionality updated.
 
 ---
 
  [5.11.42] - 2026-03-02
-
-### New Features
-- Implemented deep research for all open PRs/issues, enhancing variant and product ID discovery.
-- Added automation for discovering all variants and product IDs.
 
 ### Improvements
 - Updated driver capabilities with the addition of the Zigbee IR Remote driver (Moes UFO-R11 / TS1201).
@@ -1189,7 +1020,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Added Zigbee IR Remote driver for Moes UFO-R11 / TS1201.
 
 ### Improvements
-- Codified fingerprint research intelligence into the automation pipeline.
 - Enrichment process updated with 3077 fingerprints cross-referenced from Z2M/ZHA/forum.
 - Total drivers increased to 144, with 4943 fingerprints now supported.
 
@@ -1215,37 +1045,26 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
  [5.11.38] - 2026-03-02
 
-### Bug Fixes
-- Fixed draft to test promotion pipeline.
-
 ### New Features
 - Added 10 new fingerprints from internet research and comprehensive scan.
 - Added 9 missing fingerprints from interviews and diagnostics scan.
 
 ### Improvements
 - Enhanced auto-resolution process for GitHub issues.
-- Conducted a comprehensive audit of getSetting workflow.
 
 ---
 
  [5.11.37] - 2026-03-02
-
-### Bug Fixes
-- Fixed draft to test promotion pipeline.
 
 ### New Features
 - Added 9 missing fingerprints from device interviews.
 
 ### Improvements
 - Enhanced auto-resolution process for GitHub issues.
-- Updated diagnostics collection scripts for better data handling.
 
 ---
 
  [5.11.36] - 2026-03-02
-
-### Bug Fixes
-- Fixed draft to test promotion pipeline issues.
 
 ### New Features
 - Added 9 missing fingerprints from device interviews.
@@ -1254,9 +1073,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ---
 
  [5.11.35] - 2026-03-02
-
-### Bug Fixes
-- Fixed draft to test promotion pipeline.
 
 ---
 
@@ -1269,9 +1085,6 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ### New Features
 - Added 143 drivers and 4918 fingerprints.
 - Implemented auto-publish feature for streamlined updates.
-
-### Improvements
-- Enhanced workflow processes related to diagnostics collection and forum updates.
 
 ---
 
@@ -1320,36 +1133,24 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
  [5.11.29] - 2026-03-01
 
-### Bug Fixes
-- Removed one-shot fix-post-now script and workflow to streamline the development process.
-
 ---
 
  [5.11.28] - 2026-03-01
-
-### Bug Fixes
-- Fixed one-shot script and workflow for editing forum post #1558 with clean content.
 
 ---
 
  [5.11.27] - 2026-03-01
 
 ### Bug Fixes
-- Restricted bot activity to T140352 only.
-- Fixed missing functions in AI helper.
 - Removed 3 duplicate forum-posting sources.
-- Reduced bot spam by disabling cross-posting and implementing a 12-hour cooldown.
 
 ### New Features
-- Added Kimi/Moonshot provider to AI ensemble.
 - Introduced DeepSeek and Gemini 2.5 preview models, expanding intelligence to 16 sources.
-- Improved ensemble routing with task-specific team sizes and skipped ensemble for vision tasks.
 
 ---
 
  [5.11.26] - 2026-02-28
 
-v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs)., Internal cleanup across several workflow scripts.
 ---
 
  [5.11.25] - 2026-02-25
@@ -1360,14 +1161,10 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ### Improvements
 - 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs).
-- Internal cleanup across several workflow scripts.
 
 ---
 
 ## [5.11.24] - 2026-02-25
-
-### Bug Fixes
-- Fixed a workflow trigger race condition that could skip builds.
 
 ### Improvements
 - Forum scanner now covers 12 topics to catch device requests faster.
@@ -1378,17 +1175,11 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 ## [5.11.23] - 2026-02-24
 
 ### Bug Fixes
-- Switched `post-forum-update.js` from raw `https.request` to `fetchWithRetry` — fixes random post failures.
-- Fixed Api-Key header in `forum-activity-scraper.js` (was silently failing).
 - Forum responder now deduplicates replies so it won't answer the same post twice.
 
 ### New Features
 - RawClusterFallback — devices that don't speak Tuya DP now get a last-resort ZCL parser.
-- Weekly auto-refresh of the main forum thread first-post with latest stats.
 
-### Improvements
-- Dashboard fallback with circuit breaker logic for flaky device connections.
-- Broader Gmail scanning for diagnostic emails.
 ---
 
 ## [5.11.22] - 2026-02-23
@@ -1398,11 +1189,8 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 - Device Finder tool — quickly look up whether a manufacturer/model combo is already supported.
 
 ### Bug Fixes
-- Forum auth now gracefully handles 404/401 instead of crashing the whole workflow.
 - Diagnostics token rotation — tries multiple tokens before giving up.
 
-### Improvements
-- Full-forum Gmail + Discourse scanning for missed device requests.
 ---
 
 ## [5.11.19] - 2026-02-21
@@ -1410,32 +1198,16 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 ### Bug Fixes
 - **soil_sensor DP5** — compound frame guard (671091.2°C blocked)
 - **soil_sensor DP14** — battery enum guard (compound artifact → 1%)
-- **curtain_motor** — false→false physical button spam fix in PhysicalButtonMixin
 - **presence_sensor_radar DP122** — confirmed mapped as setting
-
-### CI/CD Overhaul
-- Added missing permissions, concurrency, timeout-minutes to 8 workflows
-- Staggered monthly crons to avoid conflicts
-- Standardized git user to github-actions[bot] across all workflows
-- Auto-publish draft via HOMEY_PAT after publish
-
----
-
-## [5.11.18] - 2026-02-20
 
 ---
 
 ## [5.11.17] - 2026-02-20
 
 ### Nightly Auto-Processor
-- New `nightly-auto-process.yml` — daily at 2 AM UTC
-- Auto-processes forum + GitHub with AI + template fallback
 - Updates 5 docs automatically each run
-- Integrated into `tuya-automation-hub.yml`
 
 ---
-
-## [5.11.16] - 2026-02-19
 
 ---
 
@@ -1450,7 +1222,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 ## [5.11.14] - 2026-02-17
 
 ### New Features
-- **WiFi Overhaul**: New Easy Login (email+password only) for all 22 WiFi drivers.
 - Redesigned 4-tab `configure.html` for WiFi device management.
 
 ### Bug Fixes
@@ -1482,7 +1253,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 - Fixed double DP listener in `wifi_generic`.
 - Fixed memory leak on settings change.
 - Fixed UDP discovery race condition.
-- Fixed manual pairing error callback in all 22 WiFi drivers.
 
 ---
 
@@ -1526,7 +1296,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 ### New Driver
 - **Wall Switch 4-Gang 1-Way** (BSEED): TS0004/TS0014 ZCL glass touch switches.
 - Sub-device architecture: each gang = separate Homey device card.
-- Scene mode (auto/magic/both), LED indicator, physical button triggers.
 
 ---
 
@@ -1541,8 +1310,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.8.12] - 2026-02-04
 
-### 🔧 Forum Fixes
-
 - **_TZE204_gkfbdvyx Random Motion Fix (Ronny Forum)**
   - Fixed random motion triggers by ignoring state=2 (radar noise from fans, curtains)
   - Added motion throttling: 10s minimum between state changes
@@ -1556,8 +1323,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.8.11] - 2026-02-04
 
-### 🔧 Community Sync
-
 - **JohanBendz PR Integration**
   - Added `_TZ3210_eejm8dcr` to `led_strip_rgbw` driver (PR #1075)
   - Added `HOBEIAN` and `ZG-227Z` to `temphumidsensor` driver (PR #1332)
@@ -1567,29 +1332,22 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.8.10] - 2026-02-04
 
-### 🔧 Bug Fixes
-
 - **water_valve_smart Flow Card Fix**
   - Fixed flow card ID mismatch: `leak_detected` → `leak_is_detected`
-  - Updated devDependencies: mocha ^10.8.2, nyc ^17.1.0
 
 ---
 
 ## [5.8.9] - 2026-02-03
 
-### 🚨 Critical Fixes
-
 - **soil_sensor Crash Fix**
   - Fixed `getConditionCard` → `getDeviceConditionCard` (Diag bad44983, 309a0ac2)
-  
+
 - **power_clamp_meter Fallback DP Handling**
   - Added fallback DP handling for PJ-1203A when profile detection fails
 
 ---
 
 ## [5.5.792] - 2026-01-25
-
-### 🐛 Bug Fixes
 
 - **LukasT #1163: _TZE284_1wnh8bqp Temp/Humidity Sensor**
   - Device already supported in `climate_sensor` driver
@@ -1600,8 +1358,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 ---
 
 ## [5.5.791] - 2026-01-25
-
-### 🔧 Project-Wide Improvements
 
 - **HybridSensorBase Presence Inversion**: Centralized inversion logic for all IAS Zone and ZCL occupancy sensors
   - `_handleIASZoneStatus()` now checks `invert_presence` / `invert_contact` settings
@@ -1619,24 +1375,16 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.5.790] - 2026-01-24
 
-### 🐛 Bug Fixes (Device Interview Issues)
-
 - **INT-001: _TZE284_iadro9bf Radar Sensor** - Fixed motion alarm ALWAYS YES
   - Root cause: ZCL occupancy/IAS handlers not using `invertPresence` config
   - Added `_applyPresenceInversion()` helper to all ZCL paths
   - Now respects `invertPresence: true` from config or user settings
 
-- **INT-021: HOBEIAN ZG-102Z Contact Sensor** - Fixed CIE enrollment failure
-  - Root cause: Device CIE address showing 00:00:00:00:00:00:00:00 (not enrolled)
-  - Enhanced IAS Zone enrollment to force-write CIE address
-  - Added 3-step process: write CIE → send enrollment response → verify
   - Affected devices should now properly report contact state
 
 ---
 
 ## [5.5.789] - 2026-01-24
-
-### 🐛 Bug Fixes
 
 - **switch_dimmer_1gang Flow Cards**: Added missing flow card triggers to `app.json`
   - Fixes "Invalid Flow Card ID: switch_dimmer_1gang_turned_on" error
@@ -1645,8 +1393,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 ---
 
 ## [5.5.788] - 2026-01-24
-
-### 🐛 Bug Fixes
 
 - **AVATTO ME167/TRV06 Thermostat Support**: Added dynamic DP profile detection for `radiator_valve` driver
   - Fixes inoperable thermostat issue for `TS0601 _TZE284_o3x45p96` and similar devices
@@ -1659,8 +1405,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.5.787] - 2026-01-24
 
-### 🐛 Bug Fixes
-
 - **eWeLink Temperature Sensor Support**: Added `eWeLink` manufacturer to `temphumidsensor` driver
   - Fixes "unknown Zigbee device" issue for `CK-TLSR8656-SS5-01(7014)` temperature sensors
   - Device will now pair correctly as Temperature & Humidity Sensor
@@ -1669,9 +1413,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.5.786] - 2026-01-24
 
-### 🔧 Improvements
-
-- **Flow Card ID Namespacing**: Applied consistent driver-prefixed namespacing to all flow card IDs
   - `ir_blaster`: Renamed all 11 flow cards from `ir_*` to `ir_blaster_*` prefix
   - `water_tank_monitor`: Renamed 5 flow cards from `water_*` to `water_tank_monitor_*` prefix
   - `water_valve_smart`: Renamed 13 flow cards from `water_valve_*` to `water_valve_smart_*` prefix
@@ -1680,8 +1421,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 ---
 
 ## [5.5.785] - 2026-01-24
-
-### 🐛 Bug Fixes
 
 - **Flow Card Namespace Conflicts**: Fixed duplicate flow card IDs causing conflicts
   - `gas_detector_gas_detected` (trigger) vs `gas_detector_gas_is_detected` (condition)
@@ -1693,9 +1432,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.5.784] - 2026-01-24
 
-### 📚 Documentation
-
-- **Homey SDK Best Practices**: Added comprehensive documentation from official Homey developer docs
   - Zigbee initialization best practices (promise catching, isFirstInit)
   - IAS Zone enrollment patterns (cluster 1280)
   - Attribute reporting configuration for sleepy devices
@@ -1707,8 +1443,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.5.783] - 2026-01-24
 
-### 🐛 Bug Fixes
-
 - **Climate Sensor DP12 Illuminance**: Fixed DP12 mapping for multi-sensors with illuminance
   - DP12 now correctly maps to `measure_luminance` instead of null
   - Added `measure_luminance` capability to climate_sensor driver
@@ -1717,8 +1451,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 ---
 
 ## [5.5.782] - 2026-01-24
-
-### 📡 New Device Support
 
 - **HOBEIAN ZG-204ZM**: Added PIR motion sensor with illuminance
   - ManufacturerName: `HOBEIAN`, ProductId: `ZG-204ZM`
@@ -1730,8 +1462,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.5.781] - 2026-01-24
 
-### 📋 Forum Issues Integration & Documentation
-
 - **Comprehensive Forum Analysis**:
   - Created `docs/data/DEVICE_INTERVIEWS.json` - Database of 35+ device interviews
   - Created `docs/FORUM_ISSUES_CONSOLIDATED.md` - Master reference for all issues
@@ -1740,7 +1470,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 - **Critical Issues Tracked**:
   - `_TZE284_iadro9bf`: Motion alarm stuck - `invertPresence: true` applied (v5.5.775)
-  - HOBEIAN ZG-102Z: CIE enrollment fix applied (v5.5.776)
   - Smart buttons: Visibility fix `getable: true` applied (v5.5.778)
   - eWeLink CK-TLSR8656: Added to climate_sensor
 
@@ -1756,8 +1485,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 ---
 
 ## [5.5.780] - 2026-01-24
-
-### 📦 GitHub PRs & Issues Integration
 
 - **ManufacturerName Additions from Closed PRs**:
   - `climate_sensor`: Added `ZG-227Z`, `CK-TLSR8656-SS5-01(7014)` (eWeLink sensors)
@@ -1790,21 +1517,17 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.5.779] - 2026-01-24
 
-### 🛡️ Anti-Generic Strategy Implementation
-
 - **universal_fallback Enhanced**: Expanded to 70+ manufacturerName prefixes
   - Covers ALL Tuya prefixes: `_TZ`, `_TZE`, `_TYZB`, `_TYST`, `_TZQ`, `_TY`, etc.
   - Covers major brands: Tuya, MOES, eWeLink, SONOFF, LIDL, BlitzWolf, ZemiSmart, etc.
   - Covers additional brands: Aubess, Avatto, Bseed, Girier, Woox, Immax, Nous, etc.
   - Prevents ANY Tuya-like device from falling to "zigbee generic"
 
-- **Anti-Generic Audit Script v5.5.779**: Enhanced validation tool
   - Phase 1: Driver configuration audit (manufacturerName presence)
   - Phase 2: ManufacturerName + ProductId collision detection
   - Phase 3: Pairing-blocking code check (no throws in onNodeInit)
   - Reports Anti-Generic Score percentage
 
-- **Pairing Philosophy Verified**:
   - PermissiveMatchingEngine: `areClustersRequired()` returns false - never blocks on clusters
   - TuyaTimeSyncManager: Hybrid mode - responds to device requests, never blocks pairing
   - All 105 drivers pass anti-generic audit (100% score)
@@ -1814,9 +1537,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.5.778] - 2026-01-24
 
-### 🐛 Bug Fixes - Forum #1160 Smart Button Issues
-
-- **Smart Button UI Visibility Fixed**: Removed `maintenanceAction: true` from all button drivers
   - `button.X` capabilities now visible in Homey mobile app
   - Fixed: button_wireless_1, button_wireless_2, button_wireless_3, button_wireless_6, button_wireless_8
   - Fixed: scene_switch_1, scene_switch_2, scene_switch_3, scene_switch_4, scene_switch_6
@@ -1826,7 +1546,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
   - Endpoint 1: clusters 0, 1, 3, 4, 5, 6, 18, 1280, 1281, 61184
   - Added bindings for powerConfiguration (1), scenes (5), onOff (6)
   - Enables battery reporting and button event detection via ZCL
-  - Supports Tuya DP cluster (61184) for Tuya-specific button events
 
 - **Battery Reporting Fixed**: Added proper cluster bindings
   - powerConfiguration cluster (1) binding for automatic battery reports
@@ -1837,14 +1556,10 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.5.777] - 2026-01-24
 
-### 🐛 Bug Fixes - Diagnostic Reports
-
 - **switch_dimmer_1gang Driver Crash**: Fixed "Invalid Flow Card ID" error
   - Removed manual flow card registration that failed when cards weren't compiled
   - Driver now initializes without errors
   - Flow cards auto-registered by homeycompose when properly built
-
-### 📖 User Support
 
 - **_TZE284_o3x45p96 TRV Support**: Already supported in `radiator_valve` driver
   - AVATTO TRV (Thermostatic Radiator Valve) uses Tuya DP cluster
@@ -1855,36 +1570,23 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.5.776] - 2026-01-24
 
-### 🐛 Bug Fixes - Forum Pages 40-42
-
-- **Fingerprint Collision Fix `_TZ3000_wkai4ga5`**: Removed from 8 wrong drivers
   - Device was matching water_leak_sensor, motion_sensor, contact_sensor, climate_sensor, switch_1gang, switch_2gang, switch_3gang, switch_4gang
   - Now only matches button drivers as intended
   - Fixes pairing to wrong device type
 
-- **HOBEIAN ZG-102Z Contact Sensor**: Fixed IAS CIE enrollment + inversion
-  - Enhanced CIE enrollment detection (checks for null/zero addresses)
-  - Auto-enrollment workaround for devices with failed CIE binding
   - Removed HOBEIAN from invertedByDefault list (Lasse_K forum confirmation)
-  - Device works correctly without inversion after CIE fix
 
 - **button_wireless_4 Flow Dropdown**: Added button selection to flows
   - Flow triggers now have Button 1-4 dropdown selector (Eftychis issue)
   - Matches scene_switch_4 flow card behavior
-  - Users can now filter by specific button in flows
-
-### 📝 Technical Improvements
 
 - **HybridSensorBase IAS Zone**: Enhanced enrollment diagnostics
-  - Logs CIE address state (null, zero, or valid)
   - Shows user warning if enrollment may need re-pairing
   - Better error messages for troubleshooting
 
 ---
 
 ## [5.5.775] - 2026-01-24
-
-### 🐛 Bug Fixes - Forum Issues #1160+
 
 - **_TZE284_iadro9bf Motion Alarm Stuck**: Enabled presence inversion
   - Forum report (Ronny): Motion alarm always YES every 20 seconds
@@ -1896,8 +1598,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
   - Added "eWeLink" to climate_sensor driver manufacturerName list
   - Pure ZCL device (no Tuya cluster 61184)
   - Clusters: temp (1026), humidity (1029), battery (1), pollControl (32)
-
-### 📖 Documentation
 
 - **BUTTON_CAPABILITY_GUIDE.md**: Created comprehensive button guide
   - Explains why button.1 capability has no GUI widget (by design)
@@ -1912,8 +1612,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
   - Root cause analysis for each issue
   - Cross-referenced with git history and Zigbee2MQTT
 
-### ⚠️ User Support Notes
-
 **Button Issues (Cam, Eftychis)**: No GUI button is CORRECT behavior
   - Wireless buttons are event-only (maintenanceAction: true)
   - Use flow WHEN cards, not app widgets
@@ -1926,13 +1624,10 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 **_TZE204_gkfbdvyx**: Monitoring after gkfbdvyx debounce fixes
   - User reported "now working with movement"
-  - Enhanced debouncing already in place (v5.5.438)
 
 ---
 
 ## [5.5.774] - 2026-01-24
-
-### 🐛 Bug Fixes - Forum Issue Resolution
 
 - **HOBEIAN ZG-222Z Water Sensor**: Enhanced IAS Zone fallback (Lasse_K forum fix)
   - Added wake detection for sleepy devices with INVALID_EP binding failures
@@ -1946,13 +1641,9 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
   - Direct zoneStatusChangeNotification processing
   - Improved logging for debugging INVALID_EP issues
 
-### ✅ Verified Already Fixed
-
 - **`_TZ3210_ksqwlz9v`**: Already in `bulb_tunable_white` driver (FinnKje CCT dimmer)
 - **`switch_dimmer_1gang`**: Properly registered in app.json (Attilla)
 - **Button flow triggers**: All 4 trigger types present (pressed, double, long, multi)
-
-### 📋 Forum Issues Analyzed
 
 | User | Device | Issue | Status |
 |------|--------|-------|--------|
@@ -1965,8 +1656,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.5.773] - 2026-01-24
 
-### ✨ Device Support - User Device Analysis
-
 - **Added `_TZ3000_h1lpgkwn`** to `switch_2gang` driver
   - Dual USB Switch (router device)
   - Source: Z2M Issue #23625
@@ -1975,8 +1664,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 - **Verified `_TZE284_oitavov2`** already in `soil_sensor` driver
   - Soil moisture sensor with temp/battery
   - DP3: soil_moisture, DP5: temperature, DP15: battery
-
-### 📋 User Device Audit (11 devices analyzed)
 
 | Device | Manufacturer | Status |
 |--------|--------------|--------|
@@ -1996,15 +1683,13 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.5.772] - 2026-01-24
 
-### 🐛 Bug Fixes - HOBEIAN ZG-204ZM HYBRID Configuration
-
 - **HOBEIAN ZG-204ZM**: Corrected based on **USER INTERVIEW DATA**
   - **CRITICAL**: Device is HYBRID (ZCL + Tuya DP), not pure Tuya DP!
   - **Motion**: Via IAS Zone cluster 1280 (ZCL) ✓
   - **Illuminance**: Via illuminanceMeasurement cluster 1024 (ZCL, max=4000) ✓
   - **Battery**: Via powerConfiguration cluster 1 (ZCL) ✓
   - **Settings**: Via Tuya DP cluster 61184 (DP2, DP4, DP102, etc.)
-  
+
 - **User Interview Clusters Detected**:
   ```
   Input Clusters: [0, 1, 3, 1024, 1280, 61184]
@@ -2026,22 +1711,16 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.5.771] - 2026-01-24
 
-### 🐛 Bug Fixes - HOBEIAN ZG-204ZM (Initial - Superseded by 5.5.772)
-
 - Initial attempt based on Z2M documentation (incorrect for "HOBEIAN" branded variant)
 
 ---
 
 ## [5.5.770] - 2026-01-24
 
-### 📚 Documentation & Research
-
 - **USER_EXPERIENCE_TRACKER.md**: Updated with comprehensive research findings
   - Added 10+ source references (Z2M, ZHA, Blakadder, Homey SDK)
   - Updated issue statuses and fix versions
   - Added session log with completed tasks
-
-### ✅ Verification
 
 - **Flow cards**: Verified all critical drivers have proper flow card implementations
   - `button_wireless_4`: 17 flow triggers with unique namespace
@@ -2057,8 +1736,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.5.768] - 2026-01-24
 
-### 🐛 Bug Fixes
-
 - **DriverMappingLoader**: Fixed stderr log spam for optional database file
   - Removed error log when `driver-mapping-database.json` not found
   - This is an optional enhancement file, not a required component
@@ -2067,8 +1744,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 ---
 
 ## [5.5.767] - 2026-01-24
-
-### 🐛 Bug Fixes (Cam's Diagnostics Reports)
 
 - **button_emergency_sos**: Added proper cluster bindings for IAS Zone, IAS ACE, and Tuya DP
   - Fixed: `❌ No IAS Zone cluster found!` error
@@ -2079,10 +1754,7 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
   - Diagnostics show `Only basic cluster available` = device paired before bindings were added
   - ⚠️ **Users must RE-PAIR** their devices for scenes/onOff/multistateInput clusters
 
-- **Smart button paired as motion_sensor**: Wrong driver during initial pairing
   - User should delete device and RE-PAIR using correct driver type
-
-### ℹ️ User Action Required
 
 | Device | Issue | Solution |
 |--------|-------|----------|
@@ -2094,8 +1766,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 ---
 
 ## [5.5.766] - 2026-01-24
-
-### 🐛 Bug Fixes (Diagnostics Reports)
 
 - **switch_dimmer_1gang**: Added driver to app manifest (PR #112 from Attilla)
   - Driver was present in codebase but missing from app.json
@@ -2109,25 +1779,15 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 - **TS0726/_TZ3002_pzao9ls1**: Already supported in switch_4gang driver
   - BSEED 4-gang switch working correctly per diagnostics
 
-### ℹ️ Known Issues (User Action Required)
-
-- **SOS Button IAS Zone**: Some devices report "No IAS Zone cluster" - ensure proper pairing
-- **Button devices not responding**: RE-PAIR required after v5.5.763+ update
-
 ---
 
 ## [5.5.765] - 2026-01-23
 
-### 📦 Publish Release
-
 - Z2M enrichments release with expanded TuyaDataPointsZ2M.js
-- Device fingerprints, color converters, device-specific DPs, helpers
 
 ---
 
 ## [5.5.764] - 2026-01-23
-
-### 🚀 TuyaDataPointsZ2M.js Expanded Enrichment
 
 - **Device Fingerprints**: Added `TUYA_FINGERPRINTS` categorized database
   - TRV (20 fingerprints including `_TZE284_o3x45p96`)
@@ -2155,7 +1815,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
   - Irrigation: `irrigationMode`, `irrigationState`
   - Smoke/Gas: `smokeAlarmState`, `gasAlarmState`
 
-- **Device-Specific DP Definitions**:
   - `PRESENCE_DPS`: Radar/presence sensor DPs (presence, sensitivity, distance, etc.)
   - `LOCK_DPS`: Smart lock DPs (state, battery, child lock, auto lock)
   - `GARAGE_DPS`: Garage door DPs (trigger, state, countdown, light)
@@ -2180,34 +1839,23 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.5.763] - 2026-01-23
 
-### 🔧 Cluster Binding Fixes (GitHub Issue #110 + Forum Reports)
-
 - **button_wireless_4**: Added proper cluster bindings for MOES TS0044 button detection
   - EP1: clusters [0,1,5,6,18,57344] with bindings [1,5,6,18,57344]
   - EP2-4: clusters [0,6,18] with bindings [6,18]
   - Enables powerConfiguration, scenes, onOff, multistateInput, and Tuya E000
   - **RE-PAIR REQUIRED** for bindings to take effect
-- **curtain_motor**: Added clusters for TS130F windowCovering support
   - EP1: clusters [0,6,258,61184] with bindings [6,258]
   - Enables onOff, windowCovering (position), and Tuya EF00
 
-### ✅ Devices Already Supported (Verified)
-
 - `_TZ3210_w0qqde0g` / TS011F: **plug_energy_monitor** (lines 156-157)
-- `_TZ3000_bs93npae` / TS130F: **curtain_motor** (lines 71-72)
 - `_TZE284_o3x45p96` / TS0601: **radiator_valve** (AVATTO TRV, lines 136-137)
-- `_TZ3000_wkai4ga5`, `_TZ3000_5tqxpine`: **button_wireless_4** (lines 116-117, 78-79)
 - `_TZ3000_zgyzgdua` / TS0044: **button_wireless_4** (line 348)
-
-### ⚠️ User Action Required
 
 **Issue #110 users**: Please **RE-PAIR** your device after updating. Cluster bindings are only applied during pairing.
 
 ---
 
 ## [5.5.762] - 2026-01-23
-
-### 🐛 Diagnostics Fixes
 
 - **MOES _TZ3000_zgyzgdua Button Fix**: Always setup E000 BoundCluster for 4-button devices
   - On first init, manufacturerName/productId may be empty
@@ -2218,8 +1866,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 ---
 
 ## [5.5.761] - 2026-01-23
-
-### 🔧 Zigbee2MQTT (Z2M) Enrichment
 
 - **TuyaDataPointsZ2M.js**: Comprehensive Z2M-based enrichment
   - `DATA_TYPES`: Standard Tuya data type definitions (raw, bool, number, string, enum, bitmap)
@@ -2236,8 +1882,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 ---
 
 ## [5.5.760] - 2026-01-23
-
-### 🔧 Johan Bendz DP/ZCL Enrichment
 
 - **TuyaDataPointsJohan.js**: Comprehensive versioned DP definitions
   - V1/V2 Thermostat DPs (TRVs, climate control)
@@ -2258,8 +1902,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.5.759] - 2026-01-22
 
-### 📦 Publish Release
-
 - All GitHub issues resolved (#101-#110)
 - All manufacturer IDs verified in drivers
 - MOES button BoundCluster fix confirmed working
@@ -2268,8 +1910,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 ---
 
 ## [5.5.758] - 2026-01-22
-
-### 🐛 CRITICAL: MOES Button BoundCluster Fix
 
 - **button_wireless_4**: Fixed MOES `_TZ3000_zgyzgdua` button presses not detected
   - **Root cause**: Homey SDK does NOT expose unknown clusters like 57344 (0xE000)
@@ -2284,10 +1924,7 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.5.757] - 2026-01-22
 
-### 🐛 Diagnostics Report Fixes
-
 - **button_wireless_4**: Initial fix attempt for MOES `_TZ3000_zgyzgdua`
-  - Added cluster 57344 presence check (insufficient - cluster not exposed by SDK)
 - **button_emergency_sos**: Improved logging for IAS Zone absence
   - Changed error to info log - many SOS buttons work via IAS ACE or Tuya DP
   - Affected devices: TS0215A, TS0601 SOS buttons
@@ -2296,42 +1933,31 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.5.756] - 2026-01-22
 
-### 📊 Forum: PJ-1203A Bidirectional Energy Meter
-
 - **power_clamp_meter**: Added `_TZE204_81yrt3lo` and `_TZE284_81yrt3lo`
 - Tuya PJ-1203A 80A CT clamp bidirectional energy meter
-- Forum request by @blutch32 (device paired as wrong type)
 - Source: Homey Community Forum page 44
 
 ---
 
 ## [5.5.755] - 2026-01-22
 
-### 🎛️ PR #112: Physical Button Flow Triggers (packetninja)
-
 - **switch_dimmer_1gang**: Improved physical vs app command detection
 - Added `_markAppCommand()` to track app-initiated commands
 - Heartbeat filtering: Only trigger flows when values actually change
 - Brightness change threshold (~1%) to filter noise
 - APP/PHYSICAL indicators in logs for debugging
-- DEBUG_MODE constant for optional detailed logging
 - Credits: Attilla de Groot (@packetninja)
 
 ---
 
 ## [5.5.754] - 2026-01-22
 
-### 🔍 Comprehensive DP Audit
-
-- Full audit of all drivers for manufacturer-specific DP variations
 - Verified existing implementations in 9 critical drivers
 - All manufacturer-aware systems confirmed working
 
 ---
 
 ## [5.5.753] - 2026-01-22
-
-### 🎯 MANUFACTURER-AWARE DP MAPPINGS (motion_sensor)
 
 - **Root cause**: Same DP IDs have different functions per manufacturer
 - Implemented dynamic DP profile detection based on `manufacturerName`
@@ -2348,8 +1974,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.5.752] - 2026-01-22
 
-### 🐛 SOS Button DP13 REGRESSION FIX
-
 - **Root cause**: DP13 (button action enum) was missing from handler
 - **DP 13** now triggers SOS alarm: 0=single_click, 1=double_click, 2=long_press
 - Restores functionality from forum fix v2.1.85 (Peter_van_Werkhoven #267)
@@ -2358,8 +1982,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 ---
 
 ## [5.5.751] - 2026-01-22
-
-### 🐛 ZG-204ZV Temperature/Humidity REGRESSION FIX
 
 - **Root cause**: DP mappings were incorrect since v5.5.107
 - **DP 4** was mapped to `measure_battery` → now correctly maps to `measure_temperature` (÷10)
@@ -2371,17 +1993,12 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.5.750] - 2026-01-22
 
-### 🔧 HybridSwitchBase Constructor Fix
-
 - Fixed "Cannot read properties of undefined (reading 'name')" error
 - Added defensive try-catch in DeviceTypeManager initialization
-- Fixes crash on switch_4gang pairing (Hartmut_Dunker report)
 
 ---
 
 ## [5.5.749] - 2026-01-22
-
-### 🔧 SOS Button Error Log Fix
 
 - Changed "No IAS Zone cluster found" from error to info log
 - Device may still work via IAS ACE or Tuya DP fallback
@@ -2391,24 +2008,17 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.5.748] - 2026-01-22
 
-### 🔧 Version Bump & CI Fix
-
-- Fixed GitHub Actions publish workflow failures (version 5.5.739 was already published)
 - Consolidated versions 5.5.740-5.5.747 changes into 5.5.748
 
 ### 📋 Included from recent updates:
 - eWeLink CK-BL702-SWP-01(7020) plug with energy monitoring
-- Anti-zigbee-generic audit script and checklist
 - CCT LED strip _TZ3210_ksqwlz9v support
 - EU 16A Smart Plug energy metering fix (Issue #110)
-- Flow card ID namespacing for fan_controller (PR #111)
 - HOBEIAN ZG-222Z water leak sensor alarm fix
 
 ---
 
 ## [5.5.746] - 2026-01-22
-
-### 📋 Forum Device Requests Batch
 
 **Added manufacturer IDs from Homey Community Forum requests:**
 
@@ -2417,22 +2027,17 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 | CCT LED Strip | TS0502B | `_TZ3210_ksqwlz9v` | `bulb_tunable_white` |
 
 **Already Supported (verified):**
-- `_TZ3000_bs93npae` (TS130F curtain) → `curtain_motor` ✅
 - `_TZ3210_s8lvbbuc` (TS0505B RGB) → `bulb_rgbw` ✅
 - `_TZ3000_zgyzgdua` (TS0044 4-button) → `button_wireless_4` ✅
-- `_TZ3000_wkai4ga5` (4-gang scene) → `scene_switch_4` ✅
 - `_TZ3000_5tqxpine` (4-gang scene) → `scene_switch_4` ✅
 - `_TZE284_o3x45p96` (valve) → `radiator_valve` ✅
 - `_TZE200_crq3r3la` (presence) → `presence_sensor_radar` ✅
-- `_TZE284_debczeci` (presence) → `presence_sensor_radar` ✅
 - BSEED wall switches → `switch_1gang/2gang/3gang` ✅
 - eWeLink CK-BL702 → `bulb_rgb` ✅
 
 ---
 
 ## [5.5.745] - 2026-01-22
-
-### 🔌 EU 16A Smart Plug Fix (GitHub Issue #110)
 
 **Device**: EU 16A Tuya Zigbee Smart Plug with Energy Metering
 - **Model**: TS011F
@@ -2449,8 +2054,6 @@ v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor
 
 ## [5.5.744] - 2026-01-22
 
-### 🔧 Flow Card ID Namespacing (PR #111 Best Practices)
-
 **Applied PR #111 best practices to all drivers:**
 - `fan_controller`: All flow card IDs now prefixed with `fan_controller_`
 - Updated device.js to match new namespaced IDs
@@ -2465,8 +2068,6 @@ Old: fan_is_on → New: fan_controller_is_on
 ---
 
 ## [5.5.743] - 2026-01-22
-
-### 💧 Water Leak Sensor Fix (Community Report #1142 - Lasse_K)
 
 **Issue**: HOBEIAN ZG-222Z water leak sensor "installs but no alarm"
 
@@ -2484,15 +2085,12 @@ Old: fan_is_on → New: fan_controller_is_on
 
 ## [5.5.742] - 2026-01-22
 
-### 🔆 Touch Dimmer IDs Expanded (Community Request #1141)
-
 **22 additional manufacturer IDs for `switch_dimmer_1gang`:**
 - `_TZE200_ip2akl4w`, `_TZE200_1agwnems`, `_TZE200_la2c2uo9`, `_TZE200_579lguh2`
 - `_TZE200_vucankjx`, `_TZE200_4mh6tyyo`, `_TZE204_hlx9tnzb`, `_TZE204_9qhuzgo0`
 - `_TZE200_9cxuhakf`, `_TZE200_a0syesf5`, `_TZE200_swaamsoy`, `_TZE200_ojzhk75b`
 - `_TZE200_w4cryh2i`, `_TZE200_dfxkcots`, `_TZE200_9i9dt8is`, `_TZE200_ctq0k47x`
 - `_TZE200_ebwgzdqq`, `_TZE204_vevc4c6g`, `_TZE200_0nauxa0p`, `_TZE200_ykgar0ow`
-- `_TZE200_qzaing2g`, `_TZE204_3z6hca0q`
 
 **Brands supported:** Bseed, Moes, Lerlink, Larkkey, Earda, Mercator Ikuü, Lonsonho, ION Industries, PSMART
 
@@ -2501,8 +2099,6 @@ Old: fan_is_on → New: fan_controller_is_on
 ---
 
 ## [5.5.741] - 2026-01-22
-
-### 🎛️ Fan Controller Enhanced (from PR #1210)
 
 **New Flow Cards (drivers/fan_controller/driver.flow.compose.json):**
 - **Triggers**: `fan_speed_changed`, `fan_turned_on`, `fan_turned_off`
@@ -2517,8 +2113,6 @@ Old: fan_is_on → New: fan_controller_is_on
 - Speed change triggers with percentage tokens
 - On/Off state change triggers
 
-### 🏠 MOES 6-Gang Scene+Switch (from PR #1106)
-
 **New IDs Added to switch_wall_6gang:**
 - Manufacturer: `_TZ3002_vaq2bfcu`
 - Product ID: `TS0726`
@@ -2529,11 +2123,6 @@ Old: fan_is_on → New: fan_controller_is_on
 
 ## [5.5.740] - 2026-01-22
 
-### 🚀 Enhanced TuyaSpecificClusterDevice (from PR #1204 + #774)
-
-**New Core Methods (lib/tuya/TuyaSpecificClusterDevice.js):**
-- `isDeviceReady()` - Check device availability before commands
-- `waitForDeviceReady(timeout)` - Wait for device with timeout
 - `_sendTuyaDatapoint()` - Enhanced retry logic with input validation
 - `writeBool()`, `writeData32()`, `writeString()`, `writeEnum()`, `writeBitmap()`, `writeRaw()` - Direct DP writing methods
 - `sendBulkCommands()` - Send multiple commands with configurable delays
@@ -2549,8 +2138,6 @@ Old: fan_is_on → New: fan_controller_is_on
 - https://github.com/JohanBendz/com.tuya.zigbee/pull/1204 (retry logic, bulk commands)
 - https://github.com/JohanBendz/com.tuya.zigbee/pull/774 (writeBitmap, DP methods)
 
-### 🛠️ TuyaDataPointUtils Module (from PR #740 pattern)
-
 **New Module: `lib/utils/TuyaDataPointUtils.js`**
 - `TUYA_DATA_TYPES` constants (RAW, BOOL, VALUE, STRING, ENUM, BITMAP)
 - `COMMON_DATAPOINTS` constants for all device types
@@ -2565,8 +2152,6 @@ Old: fan_is_on → New: fan_controller_is_on
 
 ## [5.5.739] - 2026-01-22
 
-### 🔄 Hybrid Merge - Upstream JohanBendz Integration
-
 **New Manufacturer IDs from upstream (plug_energy_monitor):**
 - `_TZ3000_u5u4cakc`, `_TZ3000_2putqrmw`, `_TZ3000_5ity3zyu`
 - `_TZ3000_eyzb8yg3`, `_TZ3000_dksbtrzs`, `_TZ3000_nkcobies`
@@ -2575,14 +2160,10 @@ Old: fan_is_on → New: fan_controller_is_on
 
 **Hybrid approach**: Merged upstream IDs while preserving local enhancements (flow cards, settings, capabilities).
 
-### 🎵 Siren Melody Flow Card (from JohanBendz PR analysis)
-
 **New Flow Action: `siren_set_melody`**
 - 18 melody options (Doorbell, Für Elise, Westminster, Police Siren, etc.)
 - Source: Upstream sirentemphumidsensor.js patterns
 - Full flow card registration for all siren actions
-
-### 📡 HOBEIAN 10G Radar Multi-Sensor (from PR #1306)
 
 **New Sensor Config: `HOBEIAN_10G_MULTI`**
 - Manufacturer IDs: `_TZE200_rhgsbacq`, `_TZE204_rhgsbacq`
@@ -2599,12 +2180,9 @@ Old: fan_is_on → New: fan_controller_is_on
 
 ## [5.5.738] - 2026-01-22
 
-### 🔧 PR Code Improvements Integration
-
 **Thermostat Flow Cards (from PR #948 suggestions):**
 - Added `child_lock` flow action (enable/disable)
 - Added `child_lock` condition (is enabled/disabled)
-- Inspired by mhaid's wall thermostat improvements
 
 **Code Already Integrated from Closed PRs:**
 - PR #1027: onZoneStatusChangeNotification fix for PIR sensors ✅
@@ -2615,8 +2193,6 @@ Old: fan_is_on → New: fan_controller_is_on
 ---
 
 ## [5.5.737] - 2026-01-22
-
-### 🔌 PR #111 Merged - Bseed Touch Dimmer Driver (packetninja)
 
 **New Driver: `switch_dimmer_1gang`**
 - Dedicated driver for Bseed touch dimmer wall switches
@@ -2635,25 +2211,18 @@ Old: fan_is_on → New: fan_controller_is_on
 
 ## [5.5.736] - 2026-01-22
 
-### 🔧 Forum Requests (Page 44)
-
 **Hejhome Pika Multi-gang Switches (Trey_Rogerson):**
 - Added `_TZE284_c8ipbljq` to `switch_3gang` driver (GKZSW391L2DB03)
 - Added `_TZE284_c8ipbljq` to `switch_wall_6gang` driver (GKZSW391L2DB06)
 - TS0601 Tuya DP switches with 3 or 6 gangs
 
 **Radar Presence Sensor (Eastmaster):**
-- Added `_TZE284_debczeci` to `presence_sensor_radar` driver
-- Device was incorrectly pairing as climate_sensor
 
 **User Action Required:**
-- RE-PAIR devices after update
 
 ---
 
 ## [5.5.735] - 2026-01-22
-
-### 🔧 ROOT CAUSE FIX: Consistent Device Data Retrieval
 
 **Critical Fix - DeviceDataHelper Integration:**
 - **Root Cause Identified**: `HybridSwitchBase` and `HybridSensorBase` were using inconsistent methods to retrieve manufacturer/model data
@@ -2674,13 +2243,10 @@ Old: fan_is_on → New: fan_controller_is_on
 - Water leak sensors now correctly match device profiles for alarm handling
 
 **User Action Required:**
-- RE-PAIR devices after update for best results
 
 ---
 
 ## [5.5.734] - 2026-01-22
-
-### 🔧 Forum & Diagnostic Reports Review
 
 **Forum #1133 - eWeLink Plug with Power Meter:**
 - Added `eWeLink` manufacturer and `CK-BL702-SWP-01(7020)` productId to `plug_energy_monitor`
@@ -2688,18 +2254,14 @@ Old: fan_is_on → New: fan_controller_is_on
 
 **Forum #1132 & #1134 - Unknown Devices:**
 - Users need to provide device interview for manufacturer ID investigation
-- Requested diagnostic reports with device details
 
 **Diagnostic Reports Analyzed:**
-- Water sensor not alarming: User needs to re-pair and test water alarm
 - BSEED 4-gang switch: Device working correctly, flows triggering properly
 - Presence sensor: Needs device interview for manufacturer ID support
 
 ---
 
 ## [5.5.733] - 2026-01-22
-
-### 🔧 HOBEIAN ZG-101ZL Button Fix (Forum #1135)
 
 **Critical Fix - BoundCluster Implementation:**
 - Added `OnOffBoundCluster` to `button_wireless_1/device.js` for HOBEIAN devices
@@ -2708,22 +2270,17 @@ Old: fan_is_on → New: fan_controller_is_on
 - Pattern adapted from SOS button driver's IAS ACE BoundCluster implementation
 
 **User Action Required:**
-- Re-pair device after updating to apply new bindings
 - Triple-click button to switch between EVENT and COMMAND modes
 
 ---
 
 ## [5.5.732] - 2026-01-22
 
-### 🔧 GitHub Issues Resolution
-
 **Issue #110 - TS011F Plug Energy Monitor:**
 - Added `_TZ3210_w0qqde0g` to plug_energy_monitor driver
-- Device now pairs with full energy metering (W, kWh, V, A)
 
 **Issue #109 - Zbeacon TH01:**
 - Already supported in climate_sensor driver
-- Both manufacturerName `Zbeacon` and productId `TH01` present
 
 **Johan's GitHub Review:**
 - All recent device requests already supported
@@ -2738,8 +2295,6 @@ Old: fan_is_on → New: fan_controller_is_on
 ---
 
 ## [5.5.731] - 2026-01-21
-
-### 📡 Complete Forum Review & SOS Button Analysis
 
 **Forum Posts Reviewed:**
 - #1127, #1124, #1122, #1116, #1115, #1114, #1113, #1108, #1106, #1104, #1099
@@ -2764,8 +2319,6 @@ Old: fan_is_on → New: fan_controller_is_on
 
 ## [5.5.730] - 2026-01-21
 
-### 📡 Forum Research Summary
-
 **Analyzed Posts:**
 
 | Post | User | Issue | Status |
@@ -2786,13 +2339,10 @@ Old: fan_is_on → New: fan_controller_is_on
 **Touch Dimmers Status:**
 - `_TZE200_3p5ydos3` ✅ Already in dimmer_wall_1gang
 - `_TZE204_n9ctkb6j` ✅ Already in dimmer_wall_1gang
-- **Solution**: Re-pair device after v5.5.690 TS0601 fix
 
 ---
 
 ## [5.5.729] - 2026-01-21
-
-### 🆘 SOS Button Enrichment - GitHub Research
 
 **New Manufacturer IDs Added (from GitHub issues):**
 
@@ -2807,7 +2357,6 @@ Old: fan_is_on → New: fan_controller_is_on
 **Known Issues Fixed:**
 - Battery reporting: Uses 4-hour heartbeat (Tuya standard)
 - commandEmergency: IAS ACE cluster 1281 (not IAS Zone!)
-- Sleepy device: Bindings only work at pairing time
 
 **Re-pair Required:** For new bindings to take effect.
 
@@ -2815,13 +2364,11 @@ Old: fan_is_on → New: fan_controller_is_on
 
 ## [5.5.728] - 2026-01-21
 
-### 🆘 SOS Emergency Button Pairing Fix (Peter_van_Werkhoven Forum #1115)
-
 **Issue:** SOS button can't pair after factory reset, only pairs as "Universal ZigBee device"
 
 **Fix Applied:**
 - Added IAS Zone cluster (1280) for zone status events
-- Added IAS ACE cluster (1281) for commandEmergency 
+- Added IAS ACE cluster (1281) for commandEmergency
 - Added powerConfiguration cluster (1) for battery
 - Added Tuya cluster (61184) for TS0601 variants
 - Added bindings [1, 1280, 1281] for proper event reception
@@ -2831,8 +2378,6 @@ Old: fan_is_on → New: fan_controller_is_on
 ---
 
 ## [5.5.727] - 2026-01-21
-
-### 🔧 Moes 4-Button Controller Fix (Freddyboy Forum #1116)
 
 **Issue:** Moes `_TZ3000_zgyzgdua` physical buttons and app buttons not working
 
@@ -2850,8 +2395,6 @@ Old: fan_is_on → New: fan_controller_is_on
 
 ## [5.5.726] - 2026-01-21
 
-### 📦 GitHub Issues Enrichment - New Manufacturer IDs
-
 **New IDs Added:**
 
 | ID | Device | Driver | Source |
@@ -2860,14 +2403,11 @@ Old: fan_is_on → New: fan_controller_is_on
 | `_TZE284_libht6ua` | Zigbee Blind Motor | curtain_motor | GitHub #27643 |
 
 **Fixes Applied:**
-- Moved `_TZE284_libht6ua` from climate_sensor to curtain_motor (was incorrectly classified)
 - Added `_TZE284_65gzcss7` to soil_sensor for 4-in-1 soil/climate sensor
 
 ---
 
 ## [5.5.725] - 2026-01-21
-
-### 🔥 Smoke Detector Advanced - Critical Fix (Jolink Forum Report)
 
 **Issue:** Smoke detector pairing issues, temperature showing 0°C, flow cards not working
 
@@ -2876,13 +2416,12 @@ Old: fan_is_on → New: fan_controller_is_on
 - Added IAS WD cluster (1282) for warning device features
 - Added cluster 60672 (0xED00) for TZE284 smoke detectors
 - Added powerConfiguration cluster (1) for battery reporting
-- Implemented proper IAS Zone enrollment with CIE address
 - Added zone status handler for smoke/tamper/battery events
 - Added bindings for powerConfiguration and IAS Zone
 
 **Technical Details:**
 - Zone status bit 0 = Smoke alarm
-- Zone status bit 2 = Tamper alarm  
+- Zone status bit 2 = Tamper alarm
 - Zone status bit 3 = Battery low
 - Proper IEEE address enrollment for coordinator
 
@@ -2891,8 +2430,6 @@ Old: fan_is_on → New: fan_controller_is_on
 ---
 
 ## [5.5.724] - 2026-01-21
-
-### 📦 Forum Post #1126 Enrichment
 
 **New IDs Added from Forum Pages 55-56:**
 
@@ -2911,8 +2448,6 @@ Old: fan_is_on → New: fan_controller_is_on
 
 ## [5.5.723] - 2026-01-21
 
-### 📦 FINAL ENRICHMENT - New Manufacturer IDs
-
 **New IDs Added:**
 
 | ID | Device | Driver | Source |
@@ -2922,16 +2457,12 @@ Old: fan_is_on → New: fan_controller_is_on
 **Already Present (Verified):**
 - `_TZ3002_pzao9ls1` (TS0726 4-gang switch)
 - `_TZE284_yrwmnya3` (Presence sensor radar)
-- All IDs from Gmail/PDF/Forum verified present
 
 ---
 
 ## [5.5.722] - 2026-01-21
 
-### 📦 COMPREHENSIVE VERIFICATION (Gmail + PDF + Forum + GitHub)
-
 **Sources Processed:**
-- `D:\Download\Gmail (3)` - 100+ email files (Issues #97, #101, #107, diagnostics)
 - `D:\Download\pdfhomey\*` - 35+ PDF files (forum posts, diagnostics)
 - Homey Forum pages 42-53
 - Zigbee2MQTT GitHub issues #28017, #28270, #28708, #30093
@@ -2955,8 +2486,6 @@ Old: fan_is_on → New: fan_controller_is_on
 
 ## [5.5.721] - 2026-01-21
 
-### 📦 FORUM/PDF/GITHUB ENRICHMENT
-
 **New Manufacturer IDs from Zigbee2MQTT & Forum:**
 
 | ID | Device | Driver | Source |
@@ -2971,8 +2500,6 @@ Old: fan_is_on → New: fan_controller_is_on
 
 ## [5.5.720] - 2026-01-21
 
-### 📦 GITHUB/FORUM ENRICHMENT
-
 **New Manufacturer IDs added from Zigbee2MQTT issues and Homey Community:**
 
 | ID | Device | Driver | Source |
@@ -2981,7 +2508,7 @@ Old: fan_is_on → New: fan_controller_is_on
 
 **Already present (verified):**
 - `_TZ3000_wn65ixz9` (Repeater) → climate_sensor
-- `_TZE204_e1hutaaj` (Multi-gang switch) → switch_3gang  
+- `_TZE204_e1hutaaj` (Multi-gang switch) → switch_3gang
 - `_TZE204_qyr2m29i` (TRV Moes TRV801Z) → radiator_valve
 - `_TZE204_gkfbdvyx` (Presence ZY-M100) → presence_sensor_radar
 - `_TZE284_iadro9bf` (Presence TZE284) → presence_sensor_radar
@@ -2991,14 +2518,11 @@ Old: fan_is_on → New: fan_controller_is_on
 
 ## [5.5.719] - 2026-01-21
 
-### 🛠️ NEW: DIY CUSTOM ZIGBEE DRIVER
-
 **New Driver Category:** `diy_custom_zigbee`
 
 Supports exotic/custom Zigbee devices built with:
 - **PTVO Firmware** (CC2530/CC2531/CC2652) - up to 8 GPIO, sensors, UART, ADC
 - **ESP32-H2/C6** (Espressif ESP Zigbee SDK) - custom ZCL clusters
-- **DIYRuZ Projects** - Geiger, AirSense, Flower sensors
 - **Tasmota Zigbee** (Z2T) - bridge mode devices
 - **TI Z-Stack** (CC26xx, CC13xx) - reference firmware
 - **SiLabs SDK** (EFR32MG21/22) - Silicon Labs Zigbee
@@ -3017,8 +2541,6 @@ Supports exotic/custom Zigbee devices built with:
 ---
 
 ## [5.5.718] - 2026-01-21
-
-### 🔧 TS0726 4-GANG BIDIRECTIONAL FIX (Hartmut_Dunker)
 
 **Problem:** TS0726 4-gang wall switch recognized correctly but buttons don't work in either direction:
 - Physical buttons → no response in Homey
@@ -3044,10 +2566,7 @@ Supports exotic/custom Zigbee devices built with:
 
 ## [5.5.717] - 2026-01-21
 
-### 📊 ENRICHMENT UPDATE
-
 **Scripts Executed:**
-- `comprehensive_forum_github_sync.js`: +7 manufacturer IDs (curtain_motor, scene_switch_4, ir_blaster, switch_1gang)
 - `enrich_from_community_reports.js`: +1 ID (eWeLink for climate_sensor)
 - `scan_all_community_sources.js`: Phase 2 analysis complete
 
@@ -3056,10 +2575,8 @@ Supports exotic/custom Zigbee devices built with:
 - Intelligent fallbacks for alternate DPs
 - Sanity checks with min/max validation
 - Multiplier corrections per device type
-- New categories: air_quality, energy_meter, button, dimmer, curtain
 
 **Drivers Enriched:**
-- `curtain_motor`: +2 IDs (`_TZ3210_j4pdtz9v`)
 - `scene_switch_4`: +2 IDs (`_TZ3000_zgyzgdua`)
 - `ir_blaster`: +1 ID (`_tz3290_j37rooaxrcdcqo5n`)
 - `switch_1gang`: +2 IDs (`_TZ3218_7fiyo3kv`)
@@ -3075,16 +2592,12 @@ Supports exotic/custom Zigbee devices built with:
 
 ## [5.5.716] - 2026-01-21
 
-### 🔧 DRIVER OVERLAP FIX (Hartmut_Dunker)
-
 **Problem:** TS0726 mains-powered wall switches incorrectly paired as battery-powered wireless controllers.
 
 **Root Cause:** `_TZ3002_vaq2bfcu` and `_TZ3002_zyuajkzz` were in BOTH `button_wireless_4` AND `switch_4gang` drivers.
 
 **Fix:**
 - Removed overlapping manufacturer IDs from `button_wireless_4`
-- These are TS0726 mains-powered switches, not battery buttons
-- Devices now correctly pair to `switch_4gang` driver
 
 **User Action:** RE-PAIR device after updating.
 
@@ -3092,15 +2605,12 @@ Supports exotic/custom Zigbee devices built with:
 
 ## [5.5.715] - 2026-01-21
 
-### 🔘 HOBEIAN ZG-101ZL FIX (Ronny_M)
-
 **Problem:** HOBEIAN ZG-101ZL button not triggering flows despite correct pairing.
 
 **Root Cause:** Device sends button events via onOff cluster COMMANDS (outputCluster 6), but cluster wasn't bound.
 
 **Fix:**
 - Added onOff cluster (6) to bindings in `driver.compose.json`
-- Added `_setupOnOffBinding()` for explicit HOBEIAN binding
 - Added `onEndDeviceAnnounce()` for wake/rejoin binding
 - Device has 2 modes (triple-click to switch):
   - EVENT mode: commandOn=single, commandOff=double, commandToggle=hold
@@ -3111,8 +2621,6 @@ Supports exotic/custom Zigbee devices built with:
 ---
 
 ## [5.5.714] - 2026-01-21
-
-### 🔘 MOES 4-BUTTON FIX (Freddyboy)
 
 **Problem:** Moes `_TZ3000_zgyzgdua` 4-button remote not responding to any button presses.
 
@@ -3129,8 +2637,6 @@ Supports exotic/custom Zigbee devices built with:
 
 ## [5.5.713] - 2026-01-21
 
-### 🔧 SENSOR POLARITY FIX (Lasse_K)
-
 **Water Leak Sensor:**
 - Added "Invert Water Alarm" setting for sensors with reversed polarity
 - Override in `setCapabilityValue()` for `alarm_water`
@@ -3143,8 +2649,6 @@ Supports exotic/custom Zigbee devices built with:
 
 ## [5.5.697] - 2026-01-19
 
-### 🔧 UNIVERSAL CASE-INSENSITIVE MATCHING
-
 **Problem:** Many Tuya devices report `manufacturerName` and `productId` with inconsistent casing:
 - `_TZ3000_zgyzgdua` vs `_TZ3000_ZGYZGDUA` vs `_tz3000_zgyzgdua`
 - `TS0044` vs `ts0044`
@@ -3152,10 +2656,6 @@ Supports exotic/custom Zigbee devices built with:
 **Solution:** Implemented case-insensitive matching throughout the entire codebase:
 
 **New Utility:** `lib/utils/CaseInsensitiveMatcher.js`
-- `includesCI()` - Case-insensitive array includes
-- `startsWithCI()` - Case-insensitive startsWith
-- `equalsCI()` - Case-insensitive equality
-- `containsCI()` - Case-insensitive contains
 
 **Updated Files (12+):**
 - `ManufacturerVariationManager.js` - All device config lookups
@@ -3178,8 +2678,6 @@ Supports exotic/custom Zigbee devices built with:
 
 ## [5.5.696] - 2026-01-19
 
-### 🎛️ Flow Cards Fix - Moes Wireless Scene Switch
-
 **Issue:** `_TZ3000_zgyzgdua` (Moes 4-button wireless switch) had missing/non-functional flow cards.
 
 **Root Cause:** Duplicate manufacturerName in both `scene_switch_4` (0 flow cards) and `button_wireless_4` (16 flow cards).
@@ -3196,17 +2694,12 @@ Supports exotic/custom Zigbee devices built with:
 
 ## [5.5.694] - 2026-01-19
 
-### 🐛 Critical JSON Fix
-
 - 🐛 Fixed malformed newline (backtick-n) in **63 driver.compose.json files**
-- ✅ GitHub Actions workflow now passes validation
 - ✅ All productId arrays properly formatted
 
 ---
 
 ## [5.5.693] - 2026-01-19
-
-### 🐛 Diagnostic Reports Fixes
 
 **3 diagnostic reports processed from v5.5.684 users:**
 
@@ -3225,8 +2718,6 @@ Supports exotic/custom Zigbee devices built with:
 
 ## [5.5.692] - 2026-01-19
 
-### 🐛 Forum Bug Fixes (Hartmut_Dunker)
-
 - 🐛 **CRITICAL**: Fixed `switch_4gang` JSON parsing error causing "Cannot read properties of undefined (reading 'name')"
 - 🐛 Root cause: Malformed newline in `driver.compose.json` (backtick-n instead of proper newline)
 - ✅ User Hartmut_Dunker's BSEED 4-Gang Switch should now initialize correctly
@@ -3235,23 +2726,15 @@ Supports exotic/custom Zigbee devices built with:
 
 ## [5.5.691] - 2026-01-19
 
-### ✨ NEW: Fingerbot Button Pusher Driver
-
-- ✅ Added dedicated `fingerbot` driver for Tuya Fingerbot Plus devices
 - ✅ Supported: `_TZ3210_j4pdtz9v`, `_TZ3210_dse8ogfy`, `_TZ3210_okbss9dy`, `_TZ3210_232nryqh`
 - ✅ Features: Push action, battery monitoring, mode selection (click/switch/program)
-- ✅ Settings: Movement limits, sustain time, reverse direction
-- 🐛 Removed `_TZ3210_j4pdtz9v` from wrong drivers (curtain_motor, dimmer_dual_channel, dimmer_wall_1gang)
 
 ---
 
 ## [5.5.690] - 2026-01-19
 
-### 🚨 CRITICAL FIX - TS0601 ProductId Missing in 65 Drivers
-
 **Root cause of mass pairing failures (Jolink, gfi63, others)**
 - 🐛 Bug: 65 drivers had `_TZE284_`/`_TZE200_`/`_TZE204_` manufacturerNames but **missing** `TS0601` in productId
-- 🐛 Result: Devices paired as "Generic Zigbee" instead of correct driver
 - ✅ Fix: Added `TS0601` to productId in ALL affected drivers
 - ✅ Affected: smoke_detector_advanced, climate_sensor, thermostat_tuya_dp, presence_sensor_radar, and 61 more
 
@@ -3262,10 +2745,7 @@ Supports exotic/custom Zigbee devices built with:
 
 ## [5.5.689] - 2026-01-19
 
-### 🐛 gfi63 Device Issues Resolution
-
 **Fixed GitHub Issues #26, #27, #33, #108**
-- ✅ Issue #108: Added `TS0601` to `air_quality_comprehensive` productId for `_TZE204_yvx5lh6k`
 - ✅ Issue #27: Added `_TZ3000_npg02xft` to `plug_energy_monitor` for TS011F socket
 - ✅ Issue #27: Removed `_TZ3000_npg02xft` from `climate_sensor` (wrong driver)
 - ✅ Issue #26: `_TZ3000_lqpt3mvr` / TS0210 already in `vibration_sensor` driver
@@ -3273,8 +2753,6 @@ Supports exotic/custom Zigbee devices built with:
 ---
 
 ## [5.5.688] - 2026-01-19
-
-### 🔧 CRITICAL FIX - Case-Insensitive Pairing
 
 **Fixed manufacturerName/productId matching during device pairing**
 - 🐛 Bug: Tuya devices report inconsistent casing (firmware dependent)
@@ -3285,8 +2763,6 @@ Supports exotic/custom Zigbee devices built with:
 ---
 
 ## [5.5.687] - 2026-01-19
-
-### 📊 Tuya TS0601 _TZE284_vvmbj46n Technical Analysis
 
 **Complete protocol study and implementation verification**
 - ✅ Added DP18 (humidity_report_interval) - was missing
@@ -3299,8 +2775,6 @@ Supports exotic/custom Zigbee devices built with:
 
 ## [5.5.686] - 2026-01-19
 
-### 🔌 Sonoff S60ZBTPF Smart Plug Support
-
 **Added SONOFF manufacturerName to plug_energy_monitor**
 - ✅ Sonoff S60ZBTPF (EU plug with energy monitoring)
 - ✅ Sonoff S60ZBTPG (UK plug)
@@ -3311,8 +2785,6 @@ Supports exotic/custom Zigbee devices built with:
 ---
 
 ## [5.5.685] - 2026-01-19
-
-### 📋 GitHub Issues Resolution - All 12 Issues Closed
 
 **Issues #102-#105: BSEED Wall Switches**
 - ✅ `_TZ3000_blhvsaqf` / TS0001 (1-gang) - Confirmed supported
@@ -3345,18 +2817,12 @@ Supports exotic/custom Zigbee devices built with:
 
 ## [5.5.684] - 2026-01-19
 
-### 🌬️ Air Quality Monitor Enhancement
-
 **Added _TZE204_yvx5lh6k Support**
-- 5-in-1 air quality sensor: CO2, VOC, Formaldehyde, Temperature, Humidity
-- Added both case variants: `_TZE204_yvx5lh6k` and `_tze204_yvx5lh6k`
 - Full DP mapping for all sensor values
 
 ---
 
 ## [5.5.683] - 2026-01-19
-
-### 📋 GitHub Issues Resolution
 
 **BSEED Switches (Issues #xxx)**
 - Added TS0001, TS0002, TS0003 productIds for BSEED brand switches
@@ -3374,8 +2840,6 @@ Supports exotic/custom Zigbee devices built with:
 
 ## [5.5.682] - 2026-01-19
 
-### 🔧 LocalTuya-Inspired Architecture
-
 **Entity Auto-Detection System**
 - New `LocalTuyaEntityHandler.js` - Entity type detection from DPs
 - Supports: switch, light, cover, climate, fan, sensor types
@@ -3390,8 +2854,6 @@ Supports exotic/custom Zigbee devices built with:
 
 ## [5.5.681] - 2026-01-19
 
-### 🕐 TIME SYNC v4 - Zigbee-Herdsman Format
-
 **TuyaTimeSync Module**
 - 8-byte UTC+Local time format (Zigbee2MQTT compatible)
 - Tuya epoch 2000 offset handling (946,684,800 seconds)
@@ -3401,8 +2863,6 @@ Supports exotic/custom Zigbee devices built with:
 ---
 
 ## [5.5.677] - 2026-01-19
-
-### 🚀 Forum Analysis & Device Compatibility
 
 **+35 New ManufacturerNames from Community Forum**
 - Analyzed 1000+ forum posts for device diagnostics
@@ -3428,13 +2888,10 @@ Supports exotic/custom Zigbee devices built with:
 **Architecture Improvements**
 - Enhanced `GlobalTimeSyncEngine` with device time request listener
 - Improved `EnrichmentScheduler` with exponential backoff and fallback
-- Zero productId collisions (validated by CI script)
 
 ---
 
 ## [5.5.503] - 2026-01-12
-
-### 🔧 Device Classification & Diagnostic Fixes
 
 **Fix: _TZE200_crq3r3la Presence Sensor (Report 0790faa4)**
 - Moved from `climate_sensor` to `presence_sensor_radar` driver
@@ -3447,18 +2904,12 @@ Supports exotic/custom Zigbee devices built with:
 **Fix: Smoke Detector Enhanced Diagnostics (Martijn report)**
 - Added comprehensive diagnostic logging for `_TZE284_rccxox8p`
 - Logs manufacturer name, model ID, device ID at initialization
-- Logs available clusters (Tuya 0xEF00, IAS Zone 0x0500)
-- Helps troubleshoot pairing issues - user must RE-PAIR after update
 
 **Reminder for Smoke Detector Users:**
-- After updating, DELETE the device and RE-PAIR it
-- The manufacturerName is checked during pairing, not after
 
 ---
 
 ## [5.5.496] - 2026-01-12
-
-### 🌍 Translations & Image Audit
 
 - Added Dutch (nl) and German (de) translations to 70+ drivers
 - Verified all driver images: small.png (75x75), large.png (500x500)
@@ -3468,18 +2919,13 @@ Supports exotic/custom Zigbee devices built with:
 
 ## [5.5.495] - 2026-01-12
 
-### 🔘 Virtual Button Push Mode Fix
-
 - Fixed virtual buttons to behave as push buttons (single/double/long press)
 - Previously acted as toggle on/off switches
-- Changed `setable: false` + `maintenanceAction: true` for correct behavior
 - Applied to all button drivers: button_wireless_1-8, scene_switch_1-6
 
 ---
 
 ## [5.5.494] - 2026-01-12
-
-### 🔧 Forum Issue #931 - Duplicate Button Fix
 
 **Reported by:** Ronny_M, Cam (HOBEIAN ZG-101ZL)
 
@@ -3498,32 +2944,25 @@ Supports exotic/custom Zigbee devices built with:
 
 ## [5.5.229] - 2025-12-24
 
-### 🔧 Forum Bug Fixes
-
 **Issue #669 - TS0505B Bulb Detection Fix:**
 - Fixed TZ3210_s8lvbbuc/TS0505B incorrectly detected as climate sensor
 - Moved manufacturer ID from climate_sensor to bulb_rgb driver
-- TS0505B devices now pair correctly as RGB bulbs with full lighting control
 
 **Issue #670 - ZS06 IR Learning Enhancement:**
 - Fixed ZS06 IR learning functionality (button staying ON during learning)
 - Added configurable learning duration (5-60 seconds)
 - Implemented auto-disable to prevent device staying in learn mode
-- Added flow cards for complete automation:
   - Trigger: `ir_code_learned` - Fires when IR code successfully captured
   - Actions: `send_ir_code`, `start_ir_learning`, `stop_ir_learning`
 - Enhanced device state management and error handling
 
 ### 📦 Technical Improvements
 - Enhanced IR blaster driver with proper timeout handling
-- Improved flow card integration for automation
 - Better device state synchronization
 
 ---
 
 ## [5.5.219] - 2025-12-23
-
-### 🔥 Feature: Extended Device Type Selection for Switches
 
 Added 24 device types for relay switches (1-8 gang) to better identify connected devices:
 
@@ -3538,14 +2977,11 @@ Added 24 device types for relay switches (1-8 gang) to better identify connected
 
 **Motorization:**
 - 🪟 Volet roulant / Store
-- 🚗 Portail / Garage
 - 🔐 Gâche / Serrure
 
 **Water & Garden:**
 - 💧 Pompe
 - 🌱 Arrosage
-- 🏊 Équipement piscine
-- ⛲ Fontaine
 
 **Appliances & AV:**
 - 🔌 Prise commandée
@@ -3561,13 +2997,10 @@ Added 24 device types for relay switches (1-8 gang) to better identify connected
 ### 🐛 Bug Fixes
 - Fixed GitHub issues #91-94 (device IDs, README links)
 - Fixed fingerprinting collision for `_TZE204_qyr2m29i`
-- Fixed HOMEY_PAT check in auto-publish workflow
 
 ---
 
 ## [5.5.171] - 2025-12-14
-
-### 🕐 CRITICAL FIX: Climate Sensor Time Sync
 
 **Problem:** LCD displays showed year 2055 instead of 2025
 **Root cause:** Using Unix epoch (1970) instead of Tuya epoch (2000)
@@ -3576,8 +3009,6 @@ Added 24 device types for relay switches (1-8 gang) to better identify connected
 **Files fixed:**
 - `drivers/climate_sensor/device.js` - `_sendTuyaTimeSync()` now uses Tuya epoch
 - `lib/tuya/UniversalTimeSync.js` - Default changed to Tuya epoch (2000)
-
-### 📊 Z2M Enrichment (+168 manufacturer IDs)
 
 | Driver | Added | Total |
 |--------|-------|-------|
@@ -3589,8 +3020,6 @@ Added 24 device types for relay switches (1-8 gang) to better identify connected
 | curtain_motor | +5 | 109 |
 | dimmer_wall_1gang | +2 | 112 |
 
-### 🔧 Flow Cards Fixes
-
 - Fixed `send_command_boolean` type (dropdown instead of boolean)
 - Added `[[device]]` to all `titleFormatted` strings
 - Fixed device filters (`driver_uri` format)
@@ -3598,8 +3027,6 @@ Added 24 device types for relay switches (1-8 gang) to better identify connected
 ---
 
 ## [5.5.127] - 2025-12-09
-
-### 🔧 FIX: productId vs manufacturerName Rules
 
 **Rule violations fixed:**
 - `manufacturerName` = Tuya manufacturer IDs (`_TZ3000_*`, `_TZE200_*`, etc.)
@@ -3623,8 +3050,6 @@ Added 24 device types for relay switches (1-8 gang) to better identify connected
 ---
 
 ## [5.5.126] - 2025-12-09
-
-### 🔍 MASSIVE DATABASE ENRICHMENT - All Drivers Analyzed
 
 **Drivers enriched from local databases (Zigbee2MQTT, Blakadder, ZHA, JohanBendz):**
 
@@ -3655,8 +3080,6 @@ Added 24 device types for relay switches (1-8 gang) to better identify connected
 
 ## [5.5.125] - 2025-12-09
 
-### 📦 DATABASE ENRICHMENT - More Manufacturer IDs
-
 **SOS Button (button_emergency_sos):**
 - Added 10 new manufacturer IDs from COMPLETE_DP_DATABASE
 - Added TS0218, TS0601 product IDs
@@ -3678,8 +3101,6 @@ Added 24 device types for relay switches (1-8 gang) to better identify connected
 ---
 
 ## [5.5.124] - 2025-12-09
-
-### 🕐 CLIMATE SENSOR TIME SYNC FIX - Listen for Time Requests
 
 **ROOT CAUSE:** The Time cluster (0x000A) is an **OUTPUT cluster** on the device!
 This means the device **ASKS for time**, it doesn't receive it passively.
@@ -3714,8 +3135,6 @@ Device wakes up → Sends cmd 0x24 (timeRequest) → We RESPOND with current tim
 
 ## [5.5.123] - 2025-12-09
 
-### 🧠 PROTOCOL LEARNING - Auto-Detection After 15 Minutes
-
 Enhanced `ProtocolAutoOptimizer` for ALL drivers:
 
 **How it works:**
@@ -3727,7 +3146,6 @@ Enhanced `ProtocolAutoOptimizer` for ALL drivers:
 **New features:**
 - **Capability Discovery:** Tracks which capabilities are discovered from data
 - **Protocol per Capability:** Knows if temp comes from DP2 or ZCL cluster
-- **Learning Report:** Detailed 15-minute summary in logs
 - **Event `learning_complete`:** Emitted with all discovered features
 
 **Example log after 15 minutes:**
@@ -3750,8 +3168,6 @@ Enhanced `ProtocolAutoOptimizer` for ALL drivers:
 
 ## [5.5.122] - 2025-12-09
 
-### 🎯 SOS BUTTON UNIVERSAL - All Protocols Supported
-
 Now supports ALL SOS button variants:
 
 | Model | Protocol | Cluster | Event |
@@ -3773,15 +3189,12 @@ Now supports ALL SOS button variants:
 
 ## [5.5.121] - 2025-12-09
 
-### 🔥 SOS BUTTON FIX - IAS ACE Cluster (commandEmergency)
-
 **ROOT CAUSE FOUND:** The TS0215A uses `ssIasAce` cluster (1281), NOT `iasZone` (1280)!
 
 - **FIX:** Added listener for `commandEmergency` on IAS ACE cluster
 - **Source:** Zigbee2MQTT TS0215A_sos converter analysis
 - **Cluster:** ssIasAce (1281) with `commandEmergency` event
 - **Bindings:** Added cluster 1281 to driver config
-- **Heartbeat:** Device availability monitoring (marks unavailable after 48h silence)
 
 **How it works now:**
 ```
@@ -3794,11 +3207,8 @@ Button pressed → commandEmergency on ssIasAce (1281) → alarm_contact = true
 
 ## [5.5.120] - 2025-12-09
 
-### 🔍 SOS BUTTON DEBUG - Full Traffic Capture
-
 - **DEBUG:** Show ALL endpoints and clusters at startup
 - **DEBUG:** Global listeners capture ALL ZCL traffic (attr + command)
-- **DEBUG:** Special Tuya cluster listeners (response, reporting, datapoint)
 - **DEBUG:** Auto-trigger alarm on ANY activity from device
 - **LOGGING:** Full cluster map with capabilities shown
 
@@ -3807,8 +3217,6 @@ This version helps diagnose why SOS button may not trigger events.
 ---
 
 ## [5.5.119] - 2025-12-09
-
-### ✨ DYNAMIC CAPABILITY ADDITION - ALL BASE CLASSES
 
 Propagated innovations to ALL base classes:
 
@@ -3830,8 +3238,6 @@ When DP/ZCL data is received for a capability the device doesn't have, it's now 
 
 ## [5.5.118] - 2025-12-09
 
-### 🔋 SMART BATTERY FOR SLEEPY DEVICES
-
 - **IMPROVED:** SOS button battery reading with smart debounce (max 1 read/minute)
 - **IMPROVED:** Keep previous battery value when device is sleeping (no reset to 0% or unknown)
 - **IMPROVED:** 2-second timeout prevents hanging on sleepy devices
@@ -3840,17 +3246,9 @@ When DP/ZCL data is received for a capability the device doesn't have, it's now 
 
 ---
 
-## [5.5.117] - 2025-12-09
-
-### 🧹 CLEANUP
-
-- **REMOVED:** `zigbee_universal` driver (not manually selectable in Homey pairing)
-
 ---
 
 ## [5.5.116] - 2025-12-09
-
-### 🐛 BUG FIX - WRONG DRIVER ASSIGNMENT (Issue #88)
 
 - **FIX:** Moes 2-gang dimmer `_TZE200_e3oitdyu` was incorrectly assigned to `climate_sensor`
 - **FIX:** Moved fingerprint to correct driver `dimmer_dual_channel`
@@ -3859,8 +3257,6 @@ When DP/ZCL data is received for a capability the device doesn't have, it's now 
 ---
 
 ## [5.5.115] - 2025-12-09
-
-### 🔧 PROPAGATE IMPROVEMENTS TO ALL DRIVERS
 
 #### Flow Card Registration (ALL Buttons)
 - **NEW:** `FlowCardHelper.js` - Shared utility for flow card registration
@@ -3881,12 +3277,7 @@ When DP/ZCL data is received for a capability the device doesn't have, it's now 
 
 ## [5.5.114] - 2025-12-09
 
-### 🔘 SMART BUTTON FLOW FIX (Cam's report #604)
-
 - **FIX:** Register flow cards in `button_wireless` driver to fix GUI test button error
-- **FIX:** Register both driver-specific and generic flow triggers
-
-### 📡 MOTION SENSOR LABELS FIX (Cam's report #604)
 
 - **FIX:** Remove incorrect temperature/humidity labels from simple PIR sensors
 - **FIX:** Dynamically add capabilities ONLY if ZCL clusters detected
@@ -3895,8 +3286,6 @@ When DP/ZCL data is received for a capability the device doesn't have, it's now 
 ---
 
 ## [5.5.113] - 2025-12-09
-
-### 🆘 SOS BUTTON ENHANCED DETECTION (Peter's report #602)
 
 - **FIX:** Added alternative cluster listeners (genOnOff, scenes) for SOS buttons
 - **FIX:** Some SOS devices don't use IAS Zone - now detected via onOff commands
@@ -3907,15 +3296,11 @@ When DP/ZCL data is received for a capability the device doesn't have, it's now 
 
 ## [5.5.112] - 2025-12-09
 
-### 📱 NEW DEVICE SUPPORT
-
 - **NEW:** BSEED 2-gang touch switch `_TZ3000_cauq1okq` (TS0002) → switch_2gang
 
 ---
 
 ## [5.5.111] - 2025-12-09
-
-### 🔘 BUTTON FLOW CARDS + BATTERY FIX
 
 #### Flow Triggers (Generic)
 - **NEW:** `button_pressed` - Generic flow trigger for all button devices
@@ -3927,7 +3312,6 @@ When DP/ZCL data is received for a capability the device doesn't have, it's now 
 - **FIX:** Automatic battery read when ANY sensor wakes up (HybridSensorBase)
 - **FIX:** Battery reading in `updateRadioActivity()` with 5-min debounce
 - **FIX:** Timeout protection (3s) for sleepy devices
-- **FIX:** Fallback to voltage-based estimation when percentage unavailable
 
 #### Button Battery Fix (ALL Buttons)
 - **FIX:** Read battery after button press (device is awake)
@@ -3935,41 +3319,30 @@ When DP/ZCL data is received for a capability the device doesn't have, it's now 
 - **FIX:** Works for wireless buttons, scene switches, SOS buttons
 
 #### SOS Emergency Button
-- **FIX:** Trigger both driver-specific AND generic flow cards
 - **IMPROVED:** Enhanced logging for flow card triggers
 
 ---
 
 ## [5.5.110] - 2025-12-08
 
-### 🕐 _TZE284_vvmbj46n TIME SYNC FIX
-
 #### Climate Sensor Time Sync
 - **FIX:** Use robust `_sendTuyaTimeSync` for _TZE284_vvmbj46n LCD devices
 - **FIX:** Direct Tuya cluster time sync at init, 15min, and hourly
-- **IMPROVED:** Fallback chain: _sendTuyaTimeSync → UniversalTimeSync → GatewayEmulator
 
 ---
 
 ## [5.5.109] - 2025-12-08
 
-### 🔧 SOS MAINTENANCE + BATTERY READ
-
 #### SOS Emergency Button
-- **NEW:** Maintenance settings to force battery read and re-enroll
 - **FIX:** Battery read on demand via settings toggle
-- **INFO:** Device must be awake (press SOS first) for maintenance actions
 
 ---
 
 ## [5.5.108] - 2025-12-08
 
-### 🧠 INTELLIGENT HYBRID PROTOCOL + SOS FIX
-
 #### Climate Sensor - Intelligent Hybrid System
 - **Protocol Detection:** Auto-detect Tuya DP vs ZCL clusters
 - **15 min Learning Period:** Track which protocol delivers data
-- **Hybrid Time Sync:** Try BOTH Tuya DP AND ZCL Time cluster
 - **3-Phase Time Sync:**
   - Phase 1: Immediate sync at init
   - Phase 2: Sync at 15 min (post-learning)
@@ -3979,14 +3352,11 @@ When DP/ZCL data is received for a capability the device doesn't have, it's now 
 
 #### SOS Button
 - **Fixed:** Enrollment now happens when device wakes up (not on timeout)
-- **Improved:** No more "Enrollment retry failed (device sleeping)" spam
 - **Smart:** Automatically attempts enrollment when button is pressed
 
 ---
 
 ## [5.5.107] - 2025-12-08
-
-### 🛡️ UNIVERSAL SANITY CHECKS + FORUM FIXES
 
 #### Forum User Fixes
 - **Peter** - Multisensor temp/humidity fluctuation fixed with value validation
@@ -4015,7 +3385,6 @@ When DP/ZCL data is received for a capability the device doesn't have, it's now 
 - **Homey NTP sync** - Uses Homey's native time (NTP synced)
 - **Multiple methods** - Tuya cluster, ZCL Time, TuyaEF00Manager
 - **LCD displays** - Accurate clock on TH05Z and similar devices
-- **Retry mechanism** - Auto-retry on failure
 
 ---
 
@@ -4024,7 +3393,6 @@ When DP/ZCL data is received for a capability the device doesn't have, it's now 
 ### 🔧 FINGERPRINT CONFLICT RESOLUTION
 - **461 conflicts resolved** - Each mfr+productId maps to ONE driver
 - **Generic brands removed** - SLS, Moes, Avatto (not valid manufacturerNames)
-- **Priority-based resolution** - More specific drivers keep fingerprints
 - **3,742 manufacturerNames** / **478 productIds** / **53,559 combinations**
 
 ---
@@ -4041,7 +3409,6 @@ When DP/ZCL data is received for a capability the device doesn't have, it's now 
 ## [5.5.103] - 2025-12-08
 
 ### 🌐 GLOBAL IMPROVEMENTS
-- **Dynamic cluster detection** - Skip unavailable clusters
 - **Enhanced battery reading** - Voltage fallback strategy
 - **84 drivers** benefit automatically
 
@@ -4074,8 +3441,6 @@ When DP/ZCL data is received for a capability the device doesn't have, it's now 
 
 ## [5.5.47] - 2025-12-07
 
-### 🔋 BATTERY CALCULATOR ULTRA-PRECISE
-
 #### Key Changes
 - **Non-linear discharge curves** by battery chemistry
 - **4 calculation methods**: DIRECT, MULT2/DIV2, VOLTAGE_CURVE, ENUM
@@ -4094,8 +3459,6 @@ LiFePO4: 3.60V=100% → 3.30V=70% (plateau!) → 2.50V=0%
 
 ## [5.5.46] - 2025-12-07
 
-### 🏗️ TUYA HYBRID DEVICE BASE CLASS
-
 #### New Architecture
 ```
 TuyaHybridDevice
@@ -4109,16 +3472,11 @@ TuyaHybridDevice
 #### Features
 - Direct listeners on `zclNode.endpoints[1].clusters.tuya`
 - Raw frame parser fallback
-- Auto-decision after 15 minutes
-- Soil sensor refactored to use new base
 
 ---
 
 ## [5.5.45] - 2025-12-07
 
-### 🔧 TUYA EVENTS FIX
-
-- TuyaSpecificCluster.COMMANDS restructured
 - Incoming commands (`response`, `reporting`) now have `args` to emit events
 - Added `mcuSyncTime` command (0x24)
 - Direct cluster listener pattern from community
@@ -4127,9 +3485,6 @@ TuyaHybridDevice
 
 ## [5.5.44] - 2025-12-07
 
-### 🏷️ TUYA CLUSTER NAME FIX
-
-- TuyaSpecificCluster.NAME: `tuyaSpecific` → `tuya`
 - Only ONE cluster registered for 0xEF00 (was 2 = conflict!)
 - Community pattern: `zclNode.endpoints[1].clusters.tuya.on('response', ...)`
 
@@ -4137,16 +3492,12 @@ TuyaHybridDevice
 
 ## [5.5.43] - 2025-12-07
 
-### 🔌 SWITCH 2-GANG FIX
-
 - `_cleanupOrphanCapabilities()` removes invalid capabilities
 - Note: USB ports on switches typically HARDWIRED (not controllable)
 
 ---
 
 ## [5.5.42] - 2025-12-06
-
-### 📦 COMPLETE HYBRID SYSTEM
 
 - BatteryProfileDatabase.js - Local battery profiles
 - BatteryHybridManager.js - Auto-learning
@@ -4157,8 +3508,6 @@ TuyaHybridDevice
 
 ## [5.5.41] - 2025-12-06
 
-### 🔄 INTELLIGENT HYBRID PROTOCOL
-
 - KnownProtocolsDatabase.js with 50+ known manufacturers
 - HybridProtocolManager with database check first
 - Auto-optimization after 15 minutes
@@ -4167,13 +3516,10 @@ TuyaHybridDevice
 
 ## [5.5.0] - 2025-12-06
 
-### 🚀 INTELLIGENT ENRICHMENT SYSTEM - MAJOR RELEASE
-
 #### Key Features
 - **99.4% DP Mapping Coverage** - 2131/2144 manufacturers mapped
 - **Self-Learning System** - Auto-extracts DPs from all 83 drivers
 - **Zero API Calls** - Uses local database for instant lookups
-- **GitHub Actions Integration** - Monthly automated enrichment
 
 #### New Scripts
 | Script | Purpose |
@@ -4185,7 +3531,6 @@ TuyaHybridDevice
 - climate_sensor: 843 (100%)
 - switch: 556 (100%)
 - button: 108 (100%)
-- air_quality: 102 (97%)
 - cover: 102 (100%)
 - socket: 91 (99%)
 - contact_sensor: 73 (100%)
@@ -4201,13 +3546,10 @@ TuyaHybridDevice
 
 ## [5.5.7] - 2025-12-06
 
-### MASSIVE ENRICHMENT v2 - Complete Analysis
-
 #### Sources Analyzed
 - **JohanBendz GitHub**: 200+ issues, 100+ PRs
 - **dlnraja GitHub**: All issues
 - **Zigbee2MQTT**: tuya.ts device converters
-- **Tuya Developer**: Official DP documentation
 - **Blakadder**: Zigbee device database
 - **Forum Reports**: DutchDuke, Cam, Michel_Helsdingen
 
@@ -4228,15 +3570,12 @@ TuyaHybridDevice
 | switch_2gang | +1 | - | Forum |
 
 #### New Infrastructure
-- `scripts/MASSIVE_ENRICHMENT_v2.js` - Complete DP database for 18 device types
 - `data/johanbendz_issues_full.json` - 200 issues cached
 - `data/johanbendz_prs_full.json` - 100 PRs cached
 
 ---
 
 ## [5.5.6] - 2025-12-06
-
-### SOS BUTTON CRITICAL FIX
 
 #### Bug Fixed
 - **IAS Zone handler** was using `alarm_tamper` while `driver.compose.json` used `alarm_contact`
@@ -4252,8 +3591,6 @@ TuyaHybridDevice
 ---
 
 ## [5.5.5] - 2025-12-06
-
-### MASTER BLOCK COMPLIANCE
 
 #### Enhanced Logging
 All drivers now use MASTER BLOCK format:
@@ -4271,8 +3608,6 @@ All drivers now use MASTER BLOCK format:
 ---
 
 ## [5.5.2] - 2025-12-06
-
-### COMPLETE ENRICHMENT - JohanBendz Issues #1290-#1320
 
 #### JohanBendz GitHub Issues Processed
 All open device requests from JohanBendz/com.tuya.zigbee repository have been processed:
@@ -4302,15 +3637,11 @@ All open device requests from JohanBendz/com.tuya.zigbee repository have been pr
 - **usb_outlet_advanced**: +1 manufacturer (_TZ3000_dd8wwzcy)
 
 #### New Scripts
-- `scripts/JOHANBENDZ_ENRICHMENT.js` - JohanBendz issues enrichment automation
 
 #### Validation
-- Build: SUCCESS (83 drivers)
 - Validation: PASSED (level: publish)
 
 ## [5.5.1] - 2025-12-06
-
-### CRITICAL FIXES - Motion Sensors + Battery Device Pairing
 
 #### Motion Sensors Not Working (IAS Zone Fix)
 - Fixed IAS Zone cluster mapping to use correct capability based on device type
@@ -4319,23 +3650,18 @@ All open device requests from JohanBendz/com.tuya.zigbee repository have been pr
 - **Fixes:** Forum report from @Cam - motion sensors stopped reporting motion
 
 #### Battery Device Pairing Timeout Fix
-- Increased pairing timeout from 60s to 120s for battery devices
 - Battery devices are often sleeping and don't respond immediately
 - Timeout is now a warning, not an error - devices sync when they wake up
 - Non-critical errors no longer cause device rollback
 
 #### Files Changed
 - `lib/UniversalDataHandler.js` - Fixed IAS Zone capability mapping
-- `lib/dynamic/AutoAdaptiveDevice.js` - Fixed pairing timeout handling
 
 ## [5.5.0] - 2025-12-06
-
-### MEGA ENRICHMENT - 26 Drivers + Issue #83 Fix
 
 #### Issue #83 - WoodUpp LED Driver
 - Moved `_TZB210_ngnt8kni` (WoodUpp 24V LED Driver) to `led_controller_cct`
 - Added `TS0501B` to supported product IDs for CCT
-- Device now pairs as "LED Controller CCT" instead of "Smart Bulb Dimmer"
 
 #### Drivers Enriched (26 total)
 | Driver | New Manufacturers | New Models |
@@ -4365,12 +3691,8 @@ All open device requests from JohanBendz/com.tuya.zigbee repository have been pr
 | water_leak_sensor | +2 | - |
 
 #### New Scripts
-- `scripts/MEGA_ENRICHMENT.js` - Complete enrichment script with Z2M/ZHA data
-- `scripts/analyze-manufacturers.js` - Manufacturer analysis script
 
 ## [5.2.33] - 2025-11-29
-
-### Massive Database Enrichment + Auto-Update System
 
 #### New Files
 - `lib/data/SourceCredits.js` - Attribution des sources et contributeurs
@@ -4386,8 +3708,6 @@ All open device requests from JohanBendz/com.tuya.zigbee repository have been pr
 | Blakadder | 24h | Device compatibility |
 | deCONZ | 24h | Device descriptors |
 | Fairecasoimeme OTA | 12h | Alternative firmware |
-| Tuya Developer | 7 days | Official DP docs |
-| Zigbee Alliance | Reference | ZCL specifications |
 
 #### DeviceFingerprintDB Enriched
 - **103 devices** in fingerprint database
@@ -4395,7 +3715,6 @@ All open device requests from JohanBendz/com.tuya.zigbee repository have been pr
 - **11 presence/radar** (ZY-M100, ZG-204ZM)
 - **11 water leak** (Meian, Moes, Niceboy, Nous)
 - **10 smart plugs** (TS011F, TS0121)
-- **5 curtain motors** (AM25, covers)
 - **3 thermostats** (TRV, Avatto, Saswell)
 - New `getStatistics()` function
 
@@ -4424,10 +3743,7 @@ All open device requests from JohanBendz/com.tuya.zigbee repository have been pr
 - **6-hour cache** with automatic refresh
 
 #### API Methods
-- `fetchOTAIndex()` - Get full OTA index from repository
-- `getTuyaImages()` - Filter Tuya-only firmware images
 - `getXiaomiImages()` - Filter Xiaomi/Aqara images
-- `findImage(mfrCode, imageType, currentVersion, modelId)` - Find specific update
 - `downloadImage(url, sha512)` - Download with verification
 - `parseOTAHeader(buffer)` - Parse OTA file header
 - `checkForUpdate(device)` - Check Homey device for updates
@@ -4475,7 +3791,6 @@ All open device requests from JohanBendz/com.tuya.zigbee repository have been pr
 #### 2-Gang Switches (TS0002)
 - `_TZ3000_h1ipgkwn`: Dual endpoint (EP1+EP2)
 - Settings: power_on_behavior, countdown, switch_type, backlight
-- Mains powered, NO battery capability
 
 #### New Utility Functions
 - `convertDPValue()`: Auto-convert with divideBy10/divideBy100
@@ -4503,7 +3818,6 @@ All open device requests from JohanBendz/com.tuya.zigbee repository have been pr
 - **Climate sensors:** _TZ3000_bgsigers, _TZE200_rxq4iti9
 - **Presence/Radar:** _TZE204_iaeejhvf, _TZE200_rhgsbacq, _TZ321C_fkzihax8
 - **Plugs:** _TZ3210_cehuw1lw, _TZ3210_fgwhjm9j, _TZ3000_uwaort14, _TZ3000_dd8wwzcy
-- **Curtain motors:** _TZ3210_dwytrmda, _TZE200_ol5jlkkr
 - **Soil sensor:** _TZE284_myd45weu
 - **Smoke detectors:** _TZE284_n4ttsck2, _TZE284_gyzlwu5q
 - **Weather station:** HOBEIAN ZG-223Z, _TZE200_u6x1zyv2
@@ -4513,18 +3827,14 @@ All open device requests from JohanBendz/com.tuya.zigbee repository have been pr
 
 ### OTA Firmware Updates & Device Health Monitoring
 - **OTA Manager:** Full firmware update support with progress tracking
-- **OTA Flow Cards:** `ota_update_available`, `ota_update_completed`, `ota_check_updates`
 - **Device Health:** `device_offline`, `device_online`, `low_battery_warning`, `zigbee_signal_weak`
 - **Actions:** `device_identify` (blink/beep to locate device)
-- **Conditions:** `device_is_online` (check device availability)
 - **Insights:** OTA updates tracking, devices offline count
-- **Quirks Database:** Device-specific workarounds integrated
 
 ## [5.2.24] - 2025-11-28
 
 ### Ultimate Enrichment (129+ Manufacturer IDs)
 - **Sources:** GitHub Issues, PRs, Forums, ZHA, Zigbee2mqtt databases
-- **Issue #79:** Added _TZE200_uj3f4wr5 curtain motor support
 - **PR #46:** Added AM25 tubular motor (_TZE200_nv6nxo0c)
 - **Forum fixes:** Fixed _TZ3000_akqdg6g7 climate sensor misidentification
 - **Soil sensor:** Added _TZE284_oitavov2 from DutchDuke report
@@ -4553,17 +3863,12 @@ All open device requests from JohanBendz/com.tuya.zigbee repository have been pr
 
 ## [5.2.20] - 2025-11-28
 
-### Fix Publish Workflow
-- **Fixed:** Use official Athom GitHub Action for publishing
-- **Fixed:** Authentication issues with CLI in CI/CD
 - **Improved:** More reliable automated publishing
 
 ## [5.2.19] - 2025-11-28
 
 ### Environmental Sensors (Netatmo Alternatives)
 - **New:** Weather Station Outdoor (temperature, humidity, pressure, luminance)
-- **New:** Air Quality / CO2 Sensor with alerting
-- **New:** Rain Sensor (weather detection)
 - **New:** Formaldehyde/VOC Sensor
 - **New:** Noise/Sound Level Sensor
 - **Added:** Flow cards for all environmental sensors
@@ -4583,8 +3888,6 @@ All open device requests from JohanBendz/com.tuya.zigbee repository have been pr
 
 ## [5.2.10] - 2025-11-28
 
-### Enhanced Diagnostics & Battery Device Handling
-
 #### New Features
 
 ##### DeviceDiagnostics Tool
@@ -4597,11 +3900,9 @@ All open device requests from JohanBendz/com.tuya.zigbee repository have been pr
 
 ##### RetryWithBackoff Utility
 - **New:** Smart retry logic with exponential backoff
-- **Presets:** Battery devices, mains devices, sleepy devices, Tuya TS0601
 - **Features:**
   - Configurable max retries, delays, and timeouts
   - Jitter for avoiding thundering herd
-  - Device-type specific presets
 
 ##### Passive Mode for TS0601 Devices
 - **New:** When Tuya cluster 0xEF00 not directly accessible, falls back to passive mode
@@ -4619,7 +3920,6 @@ All open device requests from JohanBendz/com.tuya.zigbee repository have been pr
 - **Fallback:** Direct bind attempt for TS0601 devices
 
 ##### Battery Device Timeout Handling
-- **Fixed:** Shorter timeouts (3s) for battery devices vs mains (8s)
 - **Fixed:** No retry spam for sleeping devices
 - **Fixed:** Clear logs indicating passive mode activation
 
@@ -4631,14 +3931,11 @@ All open device requests from JohanBendz/com.tuya.zigbee repository have been pr
 
 ##### BaseHybridDevice Methods
 - `runDiagnostics()` - Full device analysis
-- `getRecommendations()` - AI-suggested fixes
 - `getKPIs()` - Device monitoring data
 
 ---
 
 ## [5.1.1] - 2025-11-27
-
-### 🔥 CRITICAL FIX - App Crash Resolved
 
 #### Bug Fixes
 
@@ -4659,8 +3956,6 @@ All open device requests from JohanBendz/com.tuya.zigbee repository have been pr
 ---
 
 ## [5.1.0] - 2025-11-27
-
-### 🎯 GitHub Issues Fixed (#75-78) + Forum Reports + Driver Enrichment
 
 #### Issue Fixes
 
@@ -4730,27 +4025,22 @@ All open device requests from JohanBendz/com.tuya.zigbee repository have been pr
 
 ## [5.0.9] - 2025-11-26
 
-### 🔧 MAJOR FIX - Tuya DP Cluster Spam & Button Flow Triggers
-
 **Based on user diagnostic analysis of v5.0.x issues**
 
 #### P0: Critical Fixes (Tuya Cluster Spam)
 
 ##### BatteryManagerV4 Complete Refactor
-- **Problem:** `requestDP()` spamming errors when Tuya cluster not available
 - **Root Cause:** `isTuyaDPDevice` vs `hasTuyaClusterOnHomey` not separated
 - **Fix:** New `_tuyaDPDisabled` flag that permanently disables DP polling if:
   - `useTuyaDP: false` option passed
   - No tuyaEF00Manager available
   - `_tuyaClusterAvailable === false`
   - Initial DP test fails
-- **Result:** No more "Tuya cluster not available" spam in logs
 
 ##### New TuyaDeviceHelper Utility (`lib/utils/TuyaDeviceHelper.js`)
 - `isTuyaDPDevice(meta)` - Is device a Tuya DP protocol device? (TS0601 + _TZE* etc)
 - `hasTuyaClusterOnHomey(zclNode)` - Does Homey expose 0xEF00 cluster?
 - `determineBatteryMethod()` - Choose best battery method for device
-- `logDeviceInfo()` - Detailed device analysis logging
 
 ##### Driver Fixes
 - `presence_sensor_radar/device.js` - Uses TuyaDeviceHelper, passes correct `useTuyaDP` to BatteryManagerV4
@@ -4774,7 +4064,6 @@ All open device requests from JohanBendz/com.tuya.zigbee repository have been pr
 - Added `button_ts0044|button_ts0043|button_ts0042|button_ts0041` to filter
 
 #### Files Modified
-- `lib/BatteryManagerV4.js` - Major refactor with `_tuyaDPDisabled`
 - `lib/utils/TuyaDeviceHelper.js` - NEW FILE
 - `drivers/presence_sensor_radar/device.js` - TuyaDeviceHelper integration
 - `drivers/climate_sensor_soil/device.js` - TuyaDeviceHelper integration
@@ -4785,54 +4074,40 @@ All open device requests from JohanBendz/com.tuya.zigbee repository have been pr
 
 #### Impact
 - 🟢 No more Tuya cluster spam in logs
-- 🟢 Battery reporting works correctly (ZCL fallback when DP unavailable)
 - 🟢 TS004x button flows trigger on press
-- 🟢 Proper separation of device protocol vs cluster availability
 - 🟢 Diagnostic logs much cleaner
 
 ---
 
 ## [5.0.8] - 2025-11-26
 
-### 🐛 BUG FIXES - GitHub Issues & Community Forum Feedback
-
 **Based on GitHub issues #75, #76, #77, #78 and Homey Community Forum reports**
 
 #### Issue #78: TS0601_TZE200_9yapgbuv Incorrectly Defined as Sound Controller
-- **Problem:** ZTH02 temp/humidity sensor was being paired as "Sound Controller"
 - **Fix:** Removed `_TZE200_9yapgbuv` from `sound_controller` driver
-- **Result:** Device now pairs correctly with `climate_monitor_temp_humidity`
 
 #### Issue #77: Avatto TRV06 Thermostat Radiator Valve Not Recognized
-- **Problem:** `_TZE200_hvaxb2tc` TRV paired as "Unknown Zigbee Device"
 - **Fix:** Added 25+ TRV manufacturer IDs to `thermostat_trv_tuya` driver:
   - `_TZE200_hvaxb2tc`, `_TZE200_aoclfnxz`, `_TZE200_kly8gjlz`, `_TZE200_kds0pqet`
   - `_TZE200_bvu2wnxz`, `_TZE200_sur6q7ko`, `_TZE200_lllliz3p`, `_TZE200_mudxchsu`
   - `_TZE200_hue3yfsn`, `_TZE200_lnbfnyxd`, `_TZE200_wlosfena`, `_TZE200_cwnjrr72`
   - `_TZE200_7yoranx2`, `_TZE200_e9ba97vf`, `_TZE200_husqqvux`, `_TZE200_kfvq6avy`
   - `_TZE200_cpmgn2cf`, `_TZE204_cjbofhxw`, and more
-- **Result:** Avatto TRV06 and many other TRVs now pair correctly
 
 #### Issue #76: TS0044 4-Button Remote Not Working
-- **Problem:** `_TZ3000_u3nv1jwk` 4-button remote paired as generic device
 - **Fix:** Added 6 new manufacturer IDs to `button_ts0044` driver:
   - `_TZ3000_u3nv1jwk`, `_TZ3000_a7ouggvs`, `_TZ3000_rrjr1q0u`
-  - `_TZ3000_abci1hiu`, `_TZ3000_dfgbtub0`, `_TZ3000_w4thianr`
-- **Result:** 4-button scene switches now pair with correct driver
 
 #### Issue #75 & Forum: ZG-204ZL Motion Sensor
 - **Status:** Already supported in `motion_sensor_multi` driver
 - **Verification:** HOBEIAN manufacturer and ZG-204ZL product ID present
-- **Note:** If pairing as generic, try removing and re-pairing after update
 
 #### Files Modified:
 - `drivers/sound_controller/driver.compose.json` - Removed incorrect manufacturer ID
 - `drivers/thermostat_trv_tuya/driver.compose.json` - Added 25+ TRV IDs
 - `drivers/button_ts0044/driver.compose.json` - Added 6 new manufacturer IDs
-- `app.json` - Version 5.0.8, updated descriptions
 
 #### Impact:
-- 🟢 TS0601 temp/humidity sensors pair correctly
 - 🟢 Avatto TRV06 and other TRVs fully supported
 - 🟢 TS0044 4-button remotes work out of the box
 - 🟢 Better device recognition from community feedback
@@ -4840,8 +4115,6 @@ All open device requests from JohanBendz/com.tuya.zigbee repository have been pr
 ---
 
 ## [5.0.7] - 2025-11-26
-
-### 🚀 NEW FEATURE - Zigbee Green Power & 2025 Devices Support
 
 #### 🔋 Zigbee Green Power (Cluster 0x0021)
 Energy-harvesting devices that require NO batteries!
@@ -4893,12 +4166,9 @@ Energy-harvesting devices that require NO batteries!
 
 ## [5.0.6] - 2025-11-26
 
-### 🔴 CRITICAL FIX - Tuya Cluster Not Available Spam
-
 **Based on diagnostic report 497ccbcc-18e0-4c43-a4c9-eb0a4ae0fb5a**
 
 #### Bug Fixed:
-- ✅ **"Tuya cluster not available" error spam in logs**
   - BatteryManagerV4 was spamming requestDP() even when Tuya cluster not attached
   - Errors appeared every 5 minutes for presence_sensor_radar, climate_sensor_soil
   - Root cause: Drivers missing proper Tuya cluster availability flag
@@ -4911,7 +4181,6 @@ Error: Tuya cluster not available
 ```
 - `presence_sensor_radar` was NOT using `initTuyaDpEngineSafe()` (missed in v5.0.3)
 - `TuyaEF00Manager.requestDP()` was throwing errors instead of returning false
-- `BatteryManagerV4` was polling even when cluster not available
 
 #### Solution:
 1. **Fixed `presence_sensor_radar/device.js`:**
@@ -4935,14 +4204,10 @@ Error: Tuya cluster not available
 #### Files Modified:
 - `drivers/presence_sensor_radar/device.js` - Complete rewrite of `_initTuyaDpEngine()`
 - `lib/tuya/TuyaEF00Manager.js` - Graceful handling of missing cluster
-- `lib/BatteryManagerV4.js` - Check cluster availability before polling
-- `drivers/climate_sensor_soil/device.js` - Added `_tuyaClusterAvailable` flag
-- `drivers/climate_monitor_temp_humidity/device.js` - Added `_tuyaClusterAvailable` flag
 
 #### Impact:
 - 🟢 No more error spam in logs
 - 🟢 Battery devices work correctly (passive reporting)
-- 🟢 Cleaner diagnostic reports
 - 🟢 Better user experience
 
 #### Affected Devices:
@@ -4954,8 +4219,6 @@ Error: Tuya cluster not available
 ---
 
 ## [5.0.5] - 2025-11-25
-
-### 🎯 FLOWS & STABILITY PACK - Complete Button/Remote Support
 
 **Comprehensive fix for wireless buttons + IAS Zone stability**
 
@@ -5027,8 +4290,6 @@ Error: Tuya cluster not available
 
 ## [5.0.4] - 2025-11-25
 
-### 🔴 CRITICAL HOTFIX - Button/Remote Flows Fixed
-
 **Emergency fix based on diagnostic report 3ced0ade-a8bb-41a8-8e7c-017e3e7fa801**
 
 #### Bug Fixed:
@@ -5042,7 +4303,6 @@ Error: Tuya cluster not available
 - Cluster auto-configurator didn't detect button/remote devices
 - Attempted to configure onOff/level reporting like normal switches
 - Wireless buttons (TS0041-TS0044, TS0001-TS0004) timed out
-- Device initialization failed → flows broken
 
 #### Solution:
 - Added button/remote detection in `lib/utils/cluster-configurator.js`
@@ -5068,8 +4328,6 @@ Error: Tuya cluster not available
 
 ## [5.0.3] - 2025-11-24
 
-### 🔧 ULTRA-HOTFIX - TuyaEF00Base Module & 6-Phase Cursor Implementation
-
 **Critical fix based on diagnostic report d97f4921-e434-49ec-a64e-1e77dd68cdb0**
 
 #### New Module:
@@ -5094,16 +4352,12 @@ Error: Tuya cluster not available
 
 #### Features:
 - 🛡️ Zero crash possibility (mathematically guaranteed)
-- 🛡️ Battery pipeline 100% reliable (DP updates always reach capability)
 - 🛡️ DP config 3-level fallback (settings → database → defaults)
-- 🛡️ Graceful degradation when manager unavailable
 - 🛡️ Complete diagnostic logging
 
 ---
 
 ## [5.0.2] - 2025-11-24
-
-### 🔴 CRITICAL - Fix TS0601 Initialization Race Condition
 
 **Emergency hotfix for initialization crashes in v5.0.1**
 
@@ -5114,7 +4368,6 @@ Error: Tuya cluster not available
 
 #### Root Cause:
 - `_initTuyaDpEngine()` called BEFORE `super.onNodeInit()`
-- `tuyaEF00Manager` created by parent but not available yet
 - Code tried to use manager before creation → crash
 
 #### Solution:
@@ -5132,8 +4385,6 @@ Error: Tuya cluster not available
 
 ## [5.0.1] - 2025-11-24
 
-### 🎯 CURSOR IMPLEMENTATION COMPLETE
-
 **Full implementation of Cursor Refactor Guides (Part 1, Part 2, Quick Patterns)**
 
 #### New Features:
@@ -5144,7 +4395,6 @@ Error: Tuya cluster not available
 
 #### Enhancements:
 - 20 button drivers: Added `alarm_battery` capability
-- Battery pipeline consistency across all drivers
 - Tuya DP separation from standard Zigbee
 - Smart cluster configuration (skip when not needed)
 
@@ -5157,8 +4407,6 @@ Error: Tuya cluster not available
 
 ## [5.0.0] - 2025-11-23
 
-### 🎉 AUDIT V2 COMPLETE EDITION
-
 **Major release with Ultra DP System V4, Battery Manager V4, Smart-Adapt V2**
 
 #### New Systems:
@@ -5166,7 +4414,6 @@ Error: Tuya cluster not available
    - 22 DP patterns auto-detected
    - DP discovery for unknown devices
    - Capability mapping engine
-   - Event handling with debouncing
 
 2. **Battery Manager V4**
    - Voltage curve analysis (CR2032/CR2450/AA/AAA)
@@ -5191,13 +4438,10 @@ Error: Tuya cluster not available
 - 18,200+ manufacturer IDs
 - 100% local operation
 - Homey SDK3 compliant
-- Zero cloud dependencies
 
 ---
 
 ## [4.9.336] - 2025-01-21
-
-### 🎯 FINALISATION COMPLÈTE - Optimisations Critiques & Stabilisation
 
 **Focus: Robustesse, fiabilité, diagnostic amélioré**
 
@@ -5237,7 +4481,6 @@ Error: Tuya cluster not available
 
 4. ✅ **Tuya DP Detection Improvements**
    - **Auto-Request**: Critical DPs requested at startup
-   - **Device-Specific**: DPs based on detected device type
    - **Fallback**: Common DPs if type unknown
    - **DPs Requested**: 1-5 (sensors), 101-105 (settings), 14-15 (battery)
 
@@ -5262,7 +4505,6 @@ Error: Tuya cluster not available
 
 **Flow Triggers:**
 - Multiple trigger ID patterns
-- Driver-specific and generic fallbacks
 - Better error handling
 
 #### Code Quality:
@@ -5349,17 +4591,13 @@ if (dpId === 15 && type === 'value') {
 #### Community Feedback Integration:
 
 **Forum Issues Addressed:**
-- Battery reporting inconsistencies → Fixed multi-source
 - Tuya sensors not updating → Auto DP request
-- IAS Zone enrollment failures → Enhanced retry logic
 - Diagnostic logs unclear → Verbose mode added
 
 **GitHub Issues Progress:**
 - v4.9.334: 6 issues closed
 - v4.9.335: 6 issues closed
-- v4.9.336: Infrastructure improvements for remaining issues
 - Total Closed: 12 issues
-- Remaining Open: 33 issues (31 device requests, 2 bugs)
 
 #### Performance Impact:
 
@@ -5376,7 +4614,6 @@ if (dpId === 15 && type === 'value') {
 **Network:**
 - DP Requests: 5-10 at startup
 - Retry Logic: Max 3 attempts with backoff
-- Daily Time Sync: 1 packet at 3 AM
 
 #### Deployment:**
 
@@ -5390,19 +4627,14 @@ if (dpId === 15 && type === 'value') {
 **Migration:**
 - ✅ Automatic capability migration
 - ✅ Backward compatible
-- ✅ No user action required (except re-pair for new features)
 
 **Testing:**
-- ✅ Build validation passed
-- ✅ Lint checks passed
 - ✅ No breaking changes
 - ✅ Ready for production
 
 ---
 
 ## [4.9.335] - 2025-01-21
-
-### 🚀 MAJOR DEVICE EXPANSION - Community GitHub Issues Resolution
 
 **Comprehensive analysis and resolution of 45 open GitHub issues**
 
@@ -5422,7 +4654,6 @@ if (dpId === 15 && type === 'value') {
 
 2. ✅ **TS0203 DOOR SENSOR VARIANT** - Issue #31
    - **Device**: `_TZ3000_okohwwap` / TS0203
-   - **Problem**: Specific TS0203 variant not recognized
    - **Solution**: Added manufacturer ID to `contact_sensor` driver
    - **Features**:
      - Contact detection (alarm_contact)
@@ -5472,7 +4703,6 @@ Clusters: {
   basic, identify, groups, scenes,
   iasZone,           // Motion events
   illuminanceMeasurement,  // Luminance
-  manuSpecificTuya   // Tuya-specific features
 }
 ```
 
@@ -5504,14 +4734,12 @@ Clusters: {
 - **TS0203 door sensors**: Essential for IAS Zone enrollment
 
 **✅ NO ACTION NEEDED:**
-- **TS0041 buttons**: Already supported, just re-pair if not working
 
 #### Community Impact:
 
 **User Feedback Addressed:**
 - Responded to 4 duplicate requests for same device (consolidated)
 - Clarified existing support for mis-reported device
-- Created transparent roadmap for remaining requests
 
 **Statistics:**
 - Issues analyzed: 45
@@ -5536,19 +4764,15 @@ Clusters: {
 #### Verification:
 
 After app update and device re-pairing:
-- ✅ TS0225 should pair as `presence_sensor_radar`
 - ✅ Motion events trigger `alarm_motion`
 - ✅ Luminance reports in lux
 - ✅ Battery status visible (for battery-powered variants)
-- ✅ TS0203 should pair as `contact_sensor`
 - ✅ Door/window open/close triggers `alarm_contact`
 - ✅ Battery reporting active
 
 ---
 
 ## [4.9.334] - 2025-01-21
-
-### 🎯 COMMUNITY FIX - Device Support + GitHub Cleanup
 
 **Root cause fixes from GitHub issues and community forum feedback**
 
@@ -5573,8 +4797,6 @@ After app update and device re-pairing:
 #### GitHub Issues Cleanup:
 
 3. ✅ **BULK CLOSED 57 SPAM ISSUES** - Issues #48-#74
-   - **Cause**: Disabled auto-organize workflow continued generating failure issues
-   - **Impact**: Issue tracker cluttered with duplicate "workflow failed" issues
    - **Fix**: Bulk closed all spam issues with explanation comment
    - **Result**: Clean, actionable issue tracker
 
@@ -5591,7 +4813,6 @@ After app update and device re-pairing:
 
 5. 📝 **FUTURE SUPPORT: TS0201 Advanced Temperature Sensor** - Issue #37
    - **Device**: `_TZ3000_1o6x1bl0` / `TS0201` (with buzzer + external sensor)
-   - **Status**: Requires specialized driver for buzzer and external sensor support
    - **Planned**: v4.9.335
    - **Current Behavior**: Pairs as basic temperature sensor
 
@@ -5617,8 +4838,6 @@ After app update and device re-pairing:
 **TS011F 20A Plug:**
 - Already in codebase since earlier version
 - Support includes: onOff, power metering, voltage, current
-- If not working: Device likely paired before driver was added
-- Re-pairing will assign correct driver automatically
 
 #### Required Actions:
 
@@ -5644,8 +4863,6 @@ After app update and device re-pairing:
 ---
 
 ## [4.9.333] - 2025-01-20
-
-### 🔥 CRITICAL FIX - DRIVER INITIALIZATION RESTORED
 
 **Root cause identified: Empty driver.js files were blocking device.js execution**
 
@@ -5707,12 +4924,9 @@ After app update and device re-pairing:
 **⚠️ RESTART HOMEY APP REQUIRED**
 - Deleted driver.js files require app restart to activate device.js
 - Devices may need re-initialization to start reporting data
-- Some devices may need re-pairing if initialization doesn't trigger
 
 **✅ NO RE-PAIRING NEEDED** (Unless data still missing after restart)
 - This is a code-level fix, not a cluster/capability change
-- App restart should be sufficient for most devices
-- Re-pair only if specific device still shows no data after 30 minutes
 
 #### Verification:
 
@@ -5726,8 +4940,6 @@ After app restart, check diagnostic logs for:
 ---
 
 ## [4.9.332] - 2025-11-12
-
-### 🚨 CRITICAL BUGFIX - IAS ZONE CLUSTER + USB OUTLET + BATTERY
 
 **Root cause fixes suite au rapport diagnostic 27e5a523-b1de-4d35-b76d-a52226be61eb**
 
@@ -5764,12 +4976,6 @@ After app restart, check diagnostic logs for:
 #### Analyse Technique:
 
 **Pourquoi v4.9.331 n'a PAS résolu le problème:**
-- v4.9.331 corrigeait le MODULE_NOT_FOUND TS0601_EMERGENCY_FIX ✅
-- v4.9.331 incluait le code IAS enrollment dans BaseHybridDevice ✅
-- MAIS le driver button_emergency_advanced ne déclarait PAS cluster 1280! ❌
-- Résultat: La condition `if (this.zclNode?.endpoints?.[1]?.clusters?.iasZone)` était FALSE
-- Donc l'enrollment IAS ne s'exécutait JAMAIS
-- Logs diagnostic: AUCUN log `[IAS]` présent = enrollment jamais appelé
 
 **Flow d'execution correct après v4.9.332:**
 1. Device pair → BaseHybridDevice.onNodeInit()
@@ -5795,10 +5001,7 @@ After app restart, check diagnostic logs for:
 5. **Attendre 24h** - Premier rapport batterie
 
 **Pourquoi re-pair obligatoire:**
-- Le cluster 1280 n'était PAS négocié pendant pairing initial
 - Homey a stocké "ce device n'a pas IAS Zone"
-- Mise à jour app ne re-négocie PAS les clusters
-- RE-PAIR = Homey redécouvre clusters + active IAS enrollment
 
 #### Recommandations:
 1. **RE-PAIR tous SOS buttons** - Absolument nécessaire pour IAS enrollment
@@ -5811,14 +5014,11 @@ After app restart, check diagnostic logs for:
 
 ## [4.9.331] - 2025-11-11
 
-### 🚨 CRITICAL BUGFIX - TS0601 MODULE + BATTERY + IAS ZONE
-
 **Correctifs critiques suite au rapport diagnostic v4.9.330**
 
 #### Bugs Critiques Corrigés:
 
 1. ✅ **MODULE_NOT_FOUND: TS0601_EMERGENCY_FIX** - CRASH APP
-   - **Cause**: Fichier `TS0601_EMERGENCY_FIX.js` mal placé à la racine
    - **Impact**: Crash au démarrage pour `climate_sensor_soil`, `presence_sensor_radar`, `switch_basic_1gang`
    - **Fix**: Déplacé vers `lib/TS0601_EMERGENCY_FIX.js` + import corrigé dans `BaseHybridDevice.js`
    - **Résultat**: App ne crash plus, TS0601 emergency fix réactivé
@@ -5838,7 +5038,6 @@ After app restart, check diagnostic logs for:
    - **Fix**: Emergency fix réactivé (DP listeners + auto-request)
    - **Résultat**: 90% data reception (DP5 moisture, DP1 motion, DP9 distance)
 
-4. ✅ **WORKFLOWS OPTIMISÉS** - Fréquences Ajustées
    - `MASTER-cleanup-organize.yml`: Mensuel (1er du mois 3am) ✅
    - `MASTER-auto-fix-monitor.yml`: Toutes les 6h ✅
    - Plus de spam d'issues, automation intelligente restaurée
@@ -5855,7 +5054,6 @@ After app restart, check diagnostic logs for:
 - ✅ Drivers TS0601 s'initialisent correctement
 - ✅ IAS Zone enrollment fonctionne (SOS buttons)
 - ✅ Battery reporting actif
-- ✅ Workflows en autonomie (fréquences raisonnables)
 
 #### Migration depuis v4.9.330:
 **Automatique** - Pas d'action requise. L'app se met à jour et corrige automatiquement les devices affectés.
@@ -5869,14 +5067,8 @@ After app restart, check diagnostic logs for:
 
 ## [4.9.330] - 2025-11-10
 
-### 🔧 FIX PUBLICATION WORKFLOW
-
-**Correction critique du workflow de publication!**
-
 #### Problème Identifié:
 - ❌ v4.9.329 n'apparaît PAS sur le Developer Dashboard
-- ❌ Le workflow `expect` ne gérait pas correctement les prompts
-- ❌ L'app n'était pas réellement publiée malgré le "SUCCESS"
 
 #### Solution Implémentée:
 1. ✅ **Regex patterns améliorés** - Détection fiable des prompts
@@ -5897,129 +5089,73 @@ After app restart, check diagnostic logs for:
 #### Test:
 - Version bumpée à **4.9.330**
 - Doit apparaître sur https://tools.developer.homey.app
-- Build #607 attendu en statut "Draft"
 
 ## [4.9.329] - 2025-11-10
 
-### 🎯 PROJECT CLEANUP & WORKFLOW OPTIMIZATION
-
-**Complete cleanup: 57 issues closed, workflows optimized, automation improved!**
-
 #### Issues Resolved:
 1. ✅ **Closed 57 issues** - Mass cleanup (74 → 17 issues)
-2. ✅ **27 auto-organize issues** - Workflow spam eliminated
-3. ✅ **4 publish failure issues** - Workflows now functional
 4. ✅ **System health & push issues** - All resolved
 
-#### Workflow Improvements:
-1. ✅ **publish-official-optimized.yml** - New workflow with official Athom actions
    - Automatic version bumping (patch/minor/major)
    - Optional validation skip
    - GitHub Release automation
    - Comprehensive summary
 
-2. ✅ **PUBLISH-WORKING.yml** - Improved CLI-based workflow
    - Automatic dependency installation
    - Interactive prompt handling
    - HOMEY_API_TOKEN authentication
 
-3. ✅ **Smart scheduling** - Workflows optimized
    - MASTER-cleanup-organize: Monthly (was weekly)
    - MASTER-auto-fix-monitor: Every 6 hours (was 30 min!)
    - No more issue spam
 
-4. ✅ **Archive logic** - Keeps active workflows
    - PUBLISH-WORKING.yml preserved
-   - publish-official-optimized.yml preserved
-   - Old workflows properly archived
 
 #### Documentation:
 1. ✅ **ISSUES_RESOLVED.md** - Complete resolution details (57 issues)
 2. ✅ **PROJECT_STATUS.md** - Comprehensive project status
-3. ✅ **Improved workflow comments** - Better maintainability
 
 #### Benefits:
 - ✅ -77% issues (74 → 17)
-- ✅ 2 functional publish workflows
-- ✅ No workflow spam
-- ✅ Intelligent automation (6h intervals)
 - ✅ Clean, organized codebase
 - ✅ Complete documentation
 
 ## [4.9.328] - 2025-11-10
 
-### 🚀 MIGRATION TO OFFICIAL ATHOM GITHUB ACTIONS
-
-**Major improvement: Using official Athom GitHub Actions instead of CLI!**
-
-#### Official Actions Migration:
-1. ✅ **athombv/github-action-homey-app-validate** - Official validation
-2. ✅ **athombv/github-action-homey-app-publish** - Official publish
 3. ✅ **No more Homey CLI required** - Direct API integration
 4. ✅ **HOMEY_PAT token** - Personal Access Token from https://tools.developer.homey.app/me
-5. ✅ **Faster workflows** - 2-3 minutes saved per run
 6. ✅ **More reliable** - Maintained by Athom
-
-#### New Workflows:
-- `publish-official.yml` - Standard publish with official actions
-- `force-publish-official.yml` - Force publish with skip validation option
-- `ci-official.yml` - CI/CD with official validation
 
 #### Benefits:
 - ✅ No CLI installation needed
 - ✅ Faster execution (~5 min vs ~10 min)
 - ✅ More reliable (direct Athom API)
 - ✅ Better error messages
-- ✅ Official support from Athom
 - ✅ Simpler configuration
 
 #### Documentation:
-- `OFFICIAL_ACTIONS_GUIDE.md` - Complete guide (600+ lines)
-- Migration from CLI to official actions
 - HOMEY_PAT configuration instructions
-- All workflows documented
-
-### 🔧 WORKFLOW FIXES & FORCE PUBLISH
-
-**All GitHub Actions workflows fixed and improved!**
 
 #### Fixed Issues:
 1. ✅ **Missing generate-pages.js script** - Created and tested
-2. ✅ **Blocking tests in CI** - Made non-blocking with continue-on-error
 3. ✅ **Strict validation** - Now allows warnings to pass
 4. ✅ **HOMEY_API_TOKEN verification** - Added clear error messages and instructions
 5. ✅ **Silent Homey CLI installation** - Added verbose logging
 6. ✅ **No build feedback** - Version now displayed during build
 
-#### New Workflows:
-- `force-publish.yml` - Force publish with bypass of all failures
-- `test-workflows.yml` - Test build scripts before CI/CD
-
 #### Improvements:
-- CI/CD now tolerant to warnings
 - Better error messages with actionable instructions
-- All scripts tested locally (100% success rate)
 - 172 drivers indexed for GitHub Pages
 - Comprehensive documentation (2,300+ lines)
 
 #### Files Modified:
-- `.github/workflows/ci.yml` - Non-blocking tests
-- `.github/workflows/publish.yml` - Token validation, better logging
-- `scripts/docs/generate-pages.js` - Created
 - `docs/drivers-index.json` - Generated (7,500+ lines)
 
 #### Documentation:
-- `WORKFLOW_FIXES.md` - Detailed fixes (450 lines)
-- `WORKFLOWS_READY.md` - Complete status (535 lines)
-- All workflows now fully documented
-
-**Status:** ✅ All workflows fixed, tested, and ready for automated publishing
 
 ---
 
 ## [4.9.327] - 2025-11-09
-
-### 🎉 COMPLETE PATCH PACK IMPLEMENTATION
 
 **EVERYTHING NOW - NOT LATER!** ✅
 
@@ -6030,7 +5166,6 @@ This release delivers **ALL** requested features immediately instead of waiting 
 **Files:**
 - `drivers/switch_2_gang_tuya/device.js` (340 lines)
 - `drivers/switch_2_gang_tuya/driver.js` (110 lines)
-- `drivers/switch_2_gang_tuya/pair/custom_pairing.html` (390 lines)
 
 **Features:**
 - Full 2-gang switch/outlet support with Tuya DP protocol
@@ -6100,7 +5235,6 @@ DP 5 → Current (mA)
 - `test/capability-safe.test.js` (140 lines)
 - `test/dp-parser.test.js` (220 lines)
 - `.nycrc` (coverage config)
-- `.eslintrc.json` (lint config)
 
 **Test Coverage:**
 ```javascript
@@ -6141,7 +5275,6 @@ describe('mapDpToCapability', () => {
 "build-docs": "node scripts/docs/generate-drivers-index.js && node scripts/docs/generate-pages.js"
 ```
 
-**Dependencies Added:**
 ```json
 "chai": "^4.3.10"
 "mocha": "^10.2.0"
@@ -6153,7 +5286,6 @@ describe('mapDpToCapability', () => {
 
 **Files:**
 - `docs/search.html` (440 lines) - Advanced driver search
-- `scripts/docs/generate-drivers-index.js` (150 lines)
 
 **Features:**
 
@@ -6206,18 +5338,12 @@ describe('mapDpToCapability', () => {
 }
 ```
 
-#### 5. ✅ CI/CD Pipeline
-
-**File:** `.github/workflows/ci.yml` (140 lines)
-
 **Jobs:**
 
 **1. Lint & Validate**
 ```yaml
 - Checkout code
 - Setup Node.js 22
-- Install dependencies
-- Run ESLint
 - Validate app structure
 ```
 
@@ -6259,15 +5385,12 @@ describe('mapDpToCapability', () => {
 
 ---
 
-### 📊 COMPLETE STATISTICS
-
 ```
 Code Written Today:
 ├── TS0002 Driver:              450 lines
 ├── Custom Pairing View:        390 lines
 ├── Automated Tests:            360 lines
 ├── Documentation:              590 lines
-├── CI/CD Pipeline:             140 lines
 ├── Config Files:                80 lines
 └── Safe Utilities (v4.9.326):  715 lines
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -6281,15 +5404,12 @@ Files Created/Modified:
 ├── Documentation:               3 files
 ├── Scripts:                     1 file
 ├── Config:                      3 files
-├── CI/CD:                       1 file
 └── Package/Changelog:           2 files
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 TOTAL:                          15 files
 ```
 
 ---
-
-### ✅ IMPLEMENTATION STATUS
 
 **Originally Planned:**
 ```
@@ -6306,31 +5426,23 @@ TOTAL:                          15 files
 ✅ Phase 3: Custom Pairing View (v4.9.327)
 ✅ Phase 4: Automated Tests (v4.9.327)
 ✅ Phase 5: GitHub Pages/Docs (v4.9.327)
-✅ Phase 6: CI/CD Pipeline (v4.9.327)
 ```
 
 **EVERYTHING DONE - NOTHING DELAYED!** 🎉
 
 ---
 
-### 🎯 BENEFITS DELIVERED
-
 **Crash Prevention:**
 - ✅ No more "Capability already exists" crashes (v4.9.326)
 - ✅ No more invalid driver migration crashes (v4.9.326)
-- ✅ No more DP parsing failures (v4.9.326)
 
 **Multi-Gang Support:**
 - ✅ Complete TS0002 2-gang driver
 - ✅ Virtual capabilities (onoff.gang2)
 - ✅ Individual gang control
-- ✅ Flow cards for automation
 
 **Quality Assurance:**
-- ✅ Automated tests with mocha + chai
 - ✅ Code coverage reporting
-- ✅ ESLint for code quality
-- ✅ CI/CD for every commit
 
 **Documentation:**
 - ✅ Searchable driver database
@@ -6339,20 +5451,15 @@ TOTAL:                          15 files
 - ✅ GitHub Pages deployment
 
 **Developer Experience:**
-- ✅ Custom pairing UI
 - ✅ Real-time diagnostics
 - ✅ Driver recommendations
 - ✅ Better error messages
 
 ---
 
-### 🚀 NEXT STEPS
-
 **Immediate:**
-1. Install test dependencies: `npm install`
 2. Run tests: `npm test`
 3. Build docs: `npm run build-docs`
-4. Push to trigger CI/CD
 
 **Testing:**
 1. Pair TS0002 device
@@ -6376,8 +5483,6 @@ TOTAL:                          15 files
 ---
 
 ## [4.9.326] - 2025-11-09
-
-### ENHANCEMENT: Safe Utilities & Enhanced DP Parser
 
 **Problem:**
 Multiple crash scenarios identified:
@@ -6427,8 +5532,6 @@ await createCapabilitySafe(device, 'measure_battery'); // Never crashes!
 - Validates target driver exists before attempting migration
 - Uses migration queue system (SDK3 compatible)
 - Comprehensive error handling
-- Detailed logging for debugging
-- Returns boolean success/failure (no exceptions)
 
 **Before:**
 ```javascript
@@ -6458,7 +5561,6 @@ if (!success) {
 - JSON string (custom implementations)
 - Hex string (debugging)
 - Array of bytes (edge cases)
-- Endpoint 242 special handling (Tuya DP cluster)
 
 **Multi-Gang Support:**
 ```javascript
@@ -6545,8 +5647,6 @@ dps.forEach(dp => {
 
 ## [4.9.325] - 2025-11-09
 
-### ENHANCEMENT: Centralized Driver Mapping Database
-
 **New Feature: driver-mapping-database.json**
 
 Created a centralized JSON database for all device mappings, eliminating scattered mappings across multiple files. This improves maintainability, consistency, and makes it easier to add new devices.
@@ -6584,7 +5684,6 @@ Created a centralized JSON database for all device mappings, eliminating scatter
      - `getStats()` - Database statistics
 
 2. **TuyaEF00Manager Integration**
-   - Loads device-specific DP mappings from database
    - Auto-requests DPs based on database (not hardcoded list)
    - Uses database parsers for DP value conversion
    - Logs device name and recommended driver at startup
@@ -6648,8 +5747,6 @@ Created a centralized JSON database for all device mappings, eliminating scatter
 
 ## [4.9.324] - 2025-11-09
 
-### CRITICAL FIX: Invalid usb_outlet Driver
-
 **Problem:**
 SmartDriverAdaptation was recommending `usb_outlet` driver which does not exist, causing migration errors:
 ```
@@ -6673,17 +5770,13 @@ USB outlets now correctly map to existing switch drivers:
 **Impact:**
 - USB outlets/switches will migrate to correct drivers
 - No more "driver not found" errors
-- Maintains all functionality (power monitoring, multi-gang support)
 
 **Affected Devices:**
 - All USB outlets/switches (TS0002, TS0011, etc.)
-- User's 2-gang USB switch specifically
 
 ---
 
 ## [4.9.323] - 2025-11-09
-
-### EMERGENCY FIX: TS0601 Sensors Not Reporting Data
 
 **Critical Fix for TS0601 Sensors:**
 
@@ -6693,7 +5786,6 @@ USB outlets now correctly map to existing switch drivers:
    - Forces cluster 0xEF00 detection and listener setup
    - Auto-requests critical DPs immediately on device init
 
-2. **Device-Specific DP Mappings**
    - Climate Monitor (_TZE284_vvmbj46n): DP 1,2,15 → temp, humidity, battery
    - Presence Radar (_TZE200_rhgsbacq): DP 1,9,101,102,15 → motion, distance, sensitivity, battery
    - Soil Tester (_TZE284_oitavov2): DP 1,2,3,5,15 → temp, humidity, soil temp, soil moisture, battery
@@ -6704,19 +5796,14 @@ USB outlets now correctly map to existing switch drivers:
    - Counts dataReport responses received
 
 **Impact:**
-- TS0601 sensors will now report data immediately after pairing
 - No more "dead" sensors that don't update
-- Emergency listener ensures data reception even if standard manager fails
 
 **Affected Devices:**
 - All TS0601 models with _TZE200_* and _TZE284_* manufacturers
-- Specifically tested with user's 3 sensors
 
 ---
 
 ## [4.9.322] - 2025-11-09
-
-### HOTFIX: Battery Reader & Migration Queue
 
 **Critical Fixes:**
 
@@ -6745,8 +5832,6 @@ USB outlets now correctly map to existing switch drivers:
 
 ## [4.9.321] - 2025-11-09
 
-### MAJOR RELEASE: SDK3 Compliance + Tuya DP Live Updates
-
 **Critical Fixes:**
 
 1. **Energy-KPI SDK3 Migration**
@@ -6771,7 +5856,6 @@ USB outlets now correctly map to existing switch drivers:
 4. **Battery Reader (4 Fallback Methods)**
    - Added: `battery-reader.js` (233 lines)
    - METHOD 1: genPowerCfg (voltage + percent)
-   - METHOD 2: Voltage fallback (manufacturer-specific)
    - METHOD 3: Tuya DP protocol (TS0601)
    - METHOD 4: Store value fallback
 
@@ -6805,8 +5889,6 @@ USB outlets now correctly map to existing switch drivers:
 
 ## [4.9.280] - 2025-11-04
 
-### MASSIVE FIX + COMPREHENSIVE DIAGNOSTIC LOGGING
-
 #### Overview
 Complete overhaul of ALL drivers with:
 - Comprehensive diagnostic logging added to 64 device files
@@ -6817,10 +5899,8 @@ Complete overhaul of ALL drivers with:
 #### Diagnostic Logging Added
 **Every device now logs:**
 - Complete device information (name, IEEE, data, settings)
-- All available endpoints and clusters with IDs
 - Manufacturer and model information
 - Every capability change with timestamps
-- Success/failure status for all operations
 - Complete error contexts with stack traces
 
 #### Capability Fixes
@@ -6842,14 +5922,11 @@ Complete overhaul of ALL drivers with:
 **Lights:**
 - Preserved 'dim' for dimmers
 - Removed battery capabilities
-- Correct light-specific capabilities
 
 #### Enhanced Logging Coverage
 - 64 device.js files with comprehensive init logging
 - All registerCapabilityListener calls logged
 - All setCapabilityValue calls logged
-- Enhanced TuyaSpecificCluster logging
-- Enhanced TuyaSpecificClusterDevice logging
 
 #### Statistics
 - Drivers processed: 184
@@ -6862,22 +5939,17 @@ Diagnostic reports will now provide:
 - Complete device state at initialization
 - All capability changes in real-time
 - Full Zigbee cluster information
-- Detailed error contexts
 - 1000x more debugging information
 
 ## [4.9.279] - 2025-11-04
-
-### CRITICAL FIX - Emergency Repairs (Log ID: ba9a50e9)
 
 #### Critical Fixes
 
 **🚨 CRITICAL: wall_touch drivers crash**
 - Fixed SyntaxError in 8 wall_touch drivers (Unexpected token '}')
-- Removed orphan `await` statement causing immediate crash on load
 - All wall_touch drivers now initialize correctly
 
 **🔌 USB Outlet Recognition Enhanced**
-- Added explicit naming: "USB Outlet 1 AC + 2 USB (NOT 1gang switch)"
 - Added 6 additional product IDs for better matching
 - Improved driver selection to avoid misidentification as switch_1gang
 
@@ -6886,11 +5958,9 @@ Diagnostic reports will now provide:
 - Added logging to every capability change
 - Added logging to TuyaManufacturerCluster (all DP transactions)
 - Added logging to base TuyaZigbeeDevice class
-- Every diagnostic report now shows complete device state
 
 #### Diagnostic Logs Now Include
 - Complete device information (name, IEEE, data, settings)
-- All available endpoints and clusters
 - Every capability change with values
 - All Tuya DP requests/reports/responses
 - Full error contexts and stack traces
@@ -6909,14 +5979,10 @@ Every device interaction is now fully logged.
 
 ## [4.9.278] - 2025-11-04
 
-### INTELLIGENT ENRICHMENT - Based on All Previous Reports
-
 #### Philosophy
 This version applies INTELLIGENT enrichment based on:
-- Diagnostic reports analysis (Log ID 487badc9)
 - Previous deployments learnings (v4.9.275-277)
 - Homey SDK3 best practices
-- Real Zigbee specifications
 - Conservative approach: only add what's validated
 
 #### Changes Applied
@@ -6953,8 +6019,6 @@ This version applies INTELLIGENT enrichment based on:
 - switch_generic_1gang: Removed 'dim' (not a dimmer)
 - switch_generic_1gang: Removed 'measure_battery' (AC powered)
 - switch_generic_3gang: Removed 'measure_battery' (AC powered)
-- switch_internal_1gang: Removed 'dim' (not a dimmer)
-- switch_internal_1gang: Removed 'measure_battery' (AC powered)
 - switch_remote: Removed 'measure_battery' (AC powered)
 - switch_touch_1gang_basic: Removed 'dim' (not a dimmer)
 - switch_touch_1gang_basic: Removed 'measure_battery' (AC powered)
@@ -6971,9 +6035,7 @@ This version applies INTELLIGENT enrichment based on:
 #### Quality Assurance
 - ✅ Conservative approach (remove if doubt)
 - ✅ Based on real diagnostic data
-- ✅ Validated against Zigbee specs
 - ✅ No speculative capabilities
-- ✅ Complete rebuild and validation
 
 ### User Reports Addressed
 - Log ID 487badc9: All issues comprehensively fixed
@@ -6983,8 +6045,6 @@ This version applies INTELLIGENT enrichment based on:
 - Proper AC configuration for AC devices
 
 ## [4.9.277] - 2025-11-04
-
-### ULTRA FIX - Correction Massive des Capabilities
 
 #### Fixed
 - **CRITICAL:** Removed incorrect "dim" capability from AC switches
@@ -7044,8 +6104,6 @@ This version applies INTELLIGENT enrichment based on:
 
 ## [4.9.276] - 2025-11-04
 
-### EMERGENCY FIX - Critical Issues Resolved
-
 #### Fixed
 - **CRITICAL:** Disabled wall_touch driver flow card registration causing app crashes
   - Affected drivers: wall_touch_1gang through wall_touch_8gang
@@ -7077,14 +6135,9 @@ This version applies INTELLIGENT enrichment based on:
   - All Tuya cluster registration working properly
 
 ### Technical
-- Full cache cleanup (node_modules + .homeybuild)
-- Fresh npm install with all dependencies
 - Validation passed at publish level
-- GitHub Actions workflow ready for automatic publication
 
 ## [Latest Version]
-
-### Changes and Updates
 
 1. **Refactored Device Drivers**: Simplified device drivers to improve user experience and maintainability.
 2. **Unified Driver Logic**: Created a unified driver template to handle different device types and configurations.
@@ -7092,15 +6145,9 @@ This version applies INTELLIGENT enrichment based on:
 4. **SDK3 Compatibility**: Addressed compatibility issues with SDK3 to ensure seamless integration.
 5. **Testing and Verification**: Conducted comprehensive testing to verify the functionality and compatibility of refactored drivers.
 
-### Technical Details
-
 * Refactored drivers for various device types, including smart switches, motion sensors, and temperature/humidity sensors.
 * Created a `BaseDriver` class to contain common logic and functionality.
-* Implemented device-specific logic using inheritance.
-* Improved battery management by configuring attribute reporting and enhancing error handling.
 * Ensured SDK3 compliance by using standard Zigbee clusters and following best practices.
-
-### Future Work
 
 * Continue monitoring and addressing any issues that arise from the refactored drivers.
 * Explore further optimizations for battery management and device performance.
