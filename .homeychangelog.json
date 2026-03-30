@@ -1,4 +1,7 @@
 {
+  "5.11.147": {
+    "en": "Universal Tuya Zigbee app v5.11.147 adds new device fingerprints and fixes issues for better performance."
+  },
   "5.11.146": {
     "en": "Universal Tuya Zigbee app v5.11.146 adds new drivers and fixes initialization errors."
   },
@@ -56,10 +59,7 @@
   "5.11.126": {
     "en": "Universal Tuya Zigbee app v5.11.126: Fixed critical DP setup issue, updated device fingerprints, and improved driver categorization."
   },
-  "5.11.125": {
-    "en": "Fixed radar sensor classification and added new device fingerprints for Tuya Zigbee."
-  },
-  "5.11.147": {
-    "en": "v5.11.146: Fixed 'Missing Capability Listener' error during initialization., Total drivers: 191, Total fingerprints: 3185"
+  "5.11.148": {
+    "en": "v5.11.147: Fixed issue with 4 gang wall switch not working (FP: _TZ3000_xabckq1v, example, vision)., Added new fingerprints for improved device compatibility. Total drivers: 191, fingerprints: 3185."
   }
 }
