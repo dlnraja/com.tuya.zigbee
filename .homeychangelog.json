@@ -1,6 +1,6 @@
 {
   "5.11.143": {
-    "en": "Universal Tuya Zigbee app v5.11.143 adds new device fingerprints and fixes bugs affecting users."
+    "en": "Universal Tuya Zigbee app v5.11.143 adds new drivers and capabilities, enhancing device compatibility."
   },
   "5.11.142": {
     "en": "Universal Tuya Zigbee app v5.11.142 adds 3182 new fingerprints and supports 189 drivers."
@@ -58,5 +58,8 @@
   },
   "5.11.122": {
     "en": "Universal Tuya Zigbee app v5.11.122: Fixed lux clamp issue and updated fingerprints."
+  },
+  "5.11.144": {
+    "en": "v5.11.143: Fixed issue with 4 gang wall switch (_TZ3000_xabckq1v) that stopped working., Added new fingerprints for devices: dlnraja, example, vision."
   }
 }
