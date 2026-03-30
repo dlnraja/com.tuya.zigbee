@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.143",
+  "version": "5.11.144",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -74453,6 +74453,188 @@
     },
     {
       "name": {
+        "en": "Radiator Valve (TRV) Zigbee",
+        "fr": "Vanne Thermostatique Zigbee"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "thermostat_mode",
+        "measure_battery",
+        "onoff",
+        "window_detection",
+        "child_lock"
+      ],
+      "capabilitiesOptions": {
+        "target_temperature": {
+          "min": 5,
+          "max": 35,
+          "step": 0.5,
+          "decimals": 1
+        },
+        "measure_temperature": {
+          "decimals": 1
+        }
+      },
+      "zigbee": {
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              61184
+            ],
+            "bindings": [
+              61184
+            ]
+          }
+        },
+        "manufacturerName": [
+          "_TZE200_ckud7u2l",
+          "_TZE200_ywdxldoj",
+          "_TZE200_cwnjrr72",
+          "_TZE200_2ekuz3dz",
+          "_TZE200_kly8gjlz",
+          "_TZE200_a4bpgplm",
+          "_TZE200_b6wax7g0",
+          "_TZE200_bhd_5kn9",
+          "_TZE200_lnbfnyxd",
+          "_TZE200_mudxchsu",
+          "_TZE200_nnrfa68v",
+          "_TZE204_nnrfa68v",
+          "_TYST11_ckud7u2l",
+          "_TYST11_ywdxldoj",
+          "_TYST11_cwnjrr72",
+          "_TYST11_2ekuz3dz",
+          "_TYST11_kly8gjlz",
+          "_TYST11_jeaxp72v"
+        ]
+      },
+      "images": {
+        "small": "drivers/radiator_valve_zigbee/assets/images/small.png",
+        "large": "drivers/radiator_valve_zigbee/assets/images/large.png",
+        "xlarge": "drivers/radiator_valve_zigbee/assets/images/xlarge.png"
+      },
+      "energy": {
+        "batteries": [
+          "CR2450"
+        ]
+      },
+      "id": "radiator_valve_zigbee"
+    },
+    {
+      "name": {
+        "en": "Radiator WiFi Tuya (Local)",
+        "fr": "Radiateur WiFi Tuya (Local)"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "thermostat_mode",
+        "onoff"
+      ],
+      "capabilitiesOptions": {
+        "target_temperature": {
+          "min": 5,
+          "max": 35,
+          "step": 0.5,
+          "decimals": 1
+        }
+      },
+      "connectivity": [
+        "lan"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "images": {
+        "small": "drivers/radiator_wifi_tuya/assets/images/small.png",
+        "large": "drivers/radiator_wifi_tuya/assets/images/large.png",
+        "xlarge": "drivers/radiator_wifi_tuya/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Configuration",
+            "fr": "Configuration Appareil"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID",
+                "fr": "ID Appareil"
+              },
+              "value": ""
+            },
+            {
+              "id": "device_key",
+              "type": "password",
+              "label": {
+                "en": "Device Key (Local Key)",
+                "fr": "Clé Appareil (Local Key)"
+              },
+              "value": ""
+            },
+            {
+              "id": "device_ip",
+              "type": "text",
+              "label": {
+                "en": "Device IP Address",
+                "fr": "Adresse IP"
+              },
+              "value": ""
+            },
+            {
+              "id": "protocol_version",
+              "type": "dropdown",
+              "label": {
+                "en": "Protocol Version",
+                "fr": "Version Protocole"
+              },
+              "value": "3.3",
+              "values": [
+                {
+                  "id": "3.1",
+                  "label": {
+                    "en": "3.1"
+                  }
+                },
+                {
+                  "id": "3.3",
+                  "label": {
+                    "en": "3.3 (Default)"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "radiator_wifi_tuya"
+    },
+    {
+      "name": {
         "en": "Zigbee Rain Sensor",
         "fr": "Capteur de pluie Zigbee",
         "nl": "Regensensor",
@@ -94457,6 +94639,20 @@
       "setable": false,
       "uiComponent": "sensor"
     },
+    "boost_mode": {
+      "type": "boolean",
+      "title": {
+        "en": "Boost Mode",
+        "fr": "Mode Boost"
+      },
+      "desc": {
+        "en": "Temporarily heat at maximum power",
+        "fr": "Chauffage temporaire à puissance maximale"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle"
+    },
     "button_close": {
       "type": "boolean",
       "title": {
@@ -94656,6 +94852,48 @@
       "setable": true,
       "uiComponent": "toggle",
       "insights": true
+    },
+    "eco_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Eco Temperature",
+        "fr": "Température Éco"
+      },
+      "desc": {
+        "en": "Temperature in eco mode",
+        "fr": "Température en mode éco"
+      },
+      "units": {
+        "en": "°C"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "slider",
+      "min": 5,
+      "max": 25,
+      "step": 0.5,
+      "decimals": 1
+    },
+    "frost_protection_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Frost Protection Temperature",
+        "fr": "Température Antigel"
+      },
+      "desc": {
+        "en": "Minimum temperature for frost protection",
+        "fr": "Température minimale pour protection antigel"
+      },
+      "units": {
+        "en": "°C"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "slider",
+      "min": 5,
+      "max": 10,
+      "step": 0.5,
+      "decimals": 1
     },
     "ir_learned_code": {
       "type": "string",
@@ -94883,6 +95121,27 @@
       "step": 5,
       "decimals": 0
     },
+    "temperature_calibration": {
+      "type": "number",
+      "title": {
+        "en": "Temperature Calibration",
+        "fr": "Calibration Température"
+      },
+      "desc": {
+        "en": "Temperature offset for local sensor",
+        "fr": "Décalage de température pour le capteur local"
+      },
+      "units": {
+        "en": "°C"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "slider",
+      "min": -5,
+      "max": 5,
+      "step": 0.1,
+      "decimals": 1
+    },
     "tuya_cluster_event": {
       "type": "string",
       "title": {
@@ -94938,6 +95197,26 @@
       "uiComponent": null,
       "insights": true
     },
+    "valve_position": {
+      "type": "number",
+      "title": {
+        "en": "Valve Position",
+        "fr": "Position Vanne"
+      },
+      "desc": {
+        "en": "Current valve opening percentage",
+        "fr": "Pourcentage d'ouverture de la vanne"
+      },
+      "units": {
+        "en": "%"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "min": 0,
+      "max": 100,
+      "decimals": 0
+    },
     "wifi_heater_mode": {
       "type": "enum",
       "title": {
@@ -94979,6 +95258,20 @@
         }
       ],
       "insights": true
+    },
+    "window_detection": {
+      "type": "boolean",
+      "title": {
+        "en": "Window Detection",
+        "fr": "Détection Fenêtre"
+      },
+      "desc": {
+        "en": "Automatically turn off heating when window is opened",
+        "fr": "Éteint automatiquement le chauffage quand la fenêtre est ouverte"
+      },
+      "getable": true,
+      "setable": true,
+      "uiComponent": "toggle"
     }
   },
   "discovery": {
