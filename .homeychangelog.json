@@ -1,4 +1,7 @@
 {
+  "5.11.140": {
+    "en": "Universal Tuya Zigbee app v5.11.140 adds new device support and fixes pairing issues for specific models."
+  },
   "5.11.138": {
     "en": "Universal Tuya Zigbee app v5.11.138 adds support for new device variants and fixes several pairing issues."
   },
@@ -56,7 +59,7 @@
   "5.11.120": {
     "en": "Universal Tuya Zigbee app v5.11.120 adds new device variants and fixes distance drop issue for radar sensors."
   },
-  "5.11.119": {
-    "en": "Universal Tuya Zigbee app v5.11.119 adds new device variants and updates drivers, now with ."
+  "5.11.142": {
+    "en": "v5.11.140: Fixed pairing failure for presence_sensor_radar with DP-only TS0601 devices., Removed strict cluster endpoints requirement to improve pairing for TS0601 models., Prevented universal_fallback from hijacking motion sensors., Added full Tuya DP mapping for A89G12C and ZS-300TF models., Enriched driver and fingerprint data, increasing total to 3862 fingerprints across 189 drivers."
   }
 }
