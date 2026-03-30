@@ -75,7 +75,7 @@ function unsupportedMsg(missing){
 function prMsg(found,missing){
   let msg=`Hi! Thanks for this PR. It has been tracked in [Universal Tuya Zigbee](${GH}) **v${VER}**.\n\n`;
   if(found.length){
-    msg+=`**Already in our fork:**\n`;
+    msg+=`**Mapped in our fork:**\n`;
     msg+=found.map(([m,d])=>`- \`${m}\` -> **${[].concat(d).join(', ')}**`).join('\n')+'\n\n';
   }
   if(missing.length){
@@ -141,7 +141,7 @@ for(const it of issues){
   if(msg){post(it.number,msg);iCommented++;}
   // Auto-close if ALL FPs supported (only on own repo)
   if(found.length&&!missing.length&&!DRY&&CAN_CLOSE&&!hasUserSymptoms(it.body, it.title)){
-    try{gh(`issue edit ${it.number} -R ${REPO} --add-label "awaiting-verification" -c "All FPs here are already in v${VER} — closing. Install the test version and re-pair if needed."`);iClosed++;console.log(`  Closed #${it.number} (all FPs supported)`);}catch(e){console.log(`  Close skip #${it.number}: ${e.message.slice(0,60)}`);}
+    try{gh(`issue edit ${it.number} -R ${REPO} --add-label "awaiting-verification" -c "All FPs here are Mapped in v${VER} — closing. Install the test version and re-pair if needed."`);iClosed++;console.log(`  Closed #${it.number} (all FPs supported)`);}catch(e){console.log(`  Close skip #${it.number}: ${e.message.slice(0,60)}`);}
   }
 }
 
@@ -173,7 +173,7 @@ for(const pr of prs){
   if(found.length||missing.length){post(pr.number,prMsg(found,missing));pCommented++;}
   // Auto-close PR if ALL FPs supported (only on own repo)
   if(found.length&&!missing.length&&!DRY&&CAN_CLOSE){
-    try{gh(`pr edit ${pr.number} -R ${REPO} --add-label "awaiting-verification" && echo "All FPs in this PR are already in v${VER} — closing as resolved. Thanks!"`);pClosed++;console.log(`  Closed PR #${pr.number} (all FPs supported)`);}catch(e){console.log(`  Close skip PR #${pr.number}: ${e.message.slice(0,60)}`);}
+    try{gh(`pr edit ${pr.number} -R ${REPO} --add-label "awaiting-verification" && echo "All FPs in this PR are Mapped in v${VER} — closing as resolved. Thanks!"`);pClosed++;console.log(`  Closed PR #${pr.number} (all FPs supported)`);}catch(e){console.log(`  Close skip PR #${pr.number}: ${e.message.slice(0,60)}`);}
   }
 }
 

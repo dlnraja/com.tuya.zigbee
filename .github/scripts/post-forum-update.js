@@ -115,7 +115,7 @@ async function main(){
     if(auth.type==='session')await refreshCsrf(auth);
     const lastOwn=await getLastOwnPost(TID);
     // v5.12.1: Content-level version dedup — skip if existing post already mentions this version
-    if(lastOwn&&lastOwn.raw&&lastOwn.raw.includes('v'+ver)){console.log('Post already contains v'+ver+', skipping');fs.appendFileSync(SUM,'Forum: skipped (v'+ver+' already in post)\n');state.lastVersion=ver;saveState(state);return}
+    if(lastOwn&&lastOwn.raw&&lastOwn.raw.includes('v'+ver)){console.log('Post already contains v'+ver+', skipping');fs.appendFileSync(SUM,'Forum: skipped (v'+ver+' Mapped in post)\n');state.lastVersion=ver;saveState(state);return}
     if(lastOwn){
       if(!lastOwn.raw.includes('<!-- bot-update -->') && !lastOwn.raw.includes('<!-- bot-')) {
         console.log('Last dlnraja post appears to be manual. Creating new reply instead of editing.');

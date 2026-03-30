@@ -34,7 +34,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
         this.homey.flow.getActionCard(`switch_wall_5gang_turn_on_gang${gang}`)
           .registerRunListener(async (args) => {
             if (!args.device) return false;
-            await args.device.setCapabilityValue(capMap[gang], true);
+            await args.device.triggerCapabilityListener(capMap[gang], true);
             return true;
           });
         this.log(`[FLOW] ✅ switch_wall_5gang_turn_on_gang${gang}`);
@@ -44,7 +44,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
         this.homey.flow.getActionCard(`switch_wall_5gang_turn_off_gang${gang}`)
           .registerRunListener(async (args) => {
             if (!args.device) return false;
-            await args.device.setCapabilityValue(capMap[gang], false);
+            await args.device.triggerCapabilityListener(capMap[gang], false);
             return true;
           });
         this.log(`[FLOW] ✅ switch_wall_5gang_turn_off_gang${gang}`);
@@ -101,7 +101,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
           if (!args.device) return false;
           for (const cap of Object.values(capMap)) {
             if (args.device.hasCapability(cap)) {
-              await args.device.setCapabilityValue(cap, true);
+              await args.device.triggerCapabilityListener(cap, true);
             }
           }
           return true;
@@ -115,7 +115,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
           if (!args.device) return false;
           for (const cap of Object.values(capMap)) {
             if (args.device.hasCapability(cap)) {
-              await args.device.setCapabilityValue(cap, false);
+              await args.device.triggerCapabilityListener(cap, false);
             }
           }
           return true;
