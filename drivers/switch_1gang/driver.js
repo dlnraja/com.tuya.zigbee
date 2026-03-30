@@ -28,7 +28,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('switch_1gang_turn_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setCapabilityValue('onoff', true);
+          await args.device.triggerCapabilityListener('onoff', true);
           return true;
         });
       this.log('[FLOW] ✅ switch_1gang_turn_on');
@@ -39,7 +39,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('switch_1gang_turn_off')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setCapabilityValue('onoff', false);
+          await args.device.triggerCapabilityListener('onoff', false);
           return true;
         });
       this.log('[FLOW] ✅ switch_1gang_turn_off');

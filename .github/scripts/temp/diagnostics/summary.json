@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-03-30T11:38:03.367Z",
+  "devices": [],
+  "unmatchedFPs": [],
+  "errors": [
+    {
+      "err": "this.homey.flow.getDeviceConditionCard is not a function",
+      "source": "gmail"
+    },
+    {
+      "err": "Initializing Driver air_quality_comprehensive: TypeError: this.homey.flow.getDev",
+      "source": "gmail"
+    },
+    {
+      "err": "Initializing Driver din_rail_meter: TypeError: this.homey.flow.getDeviceConditio",
+      "source": "gmail"
+    },
+    {
+      "err": "Initializing Driver energy_meter_3phase: TypeError: this.homey.flow.getDeviceCon",
+      "source": "gmail"
+    },
+    {
+      "err": "Initializing Driver lcdtemphumidsensor: TypeError: this.homey.flow.getDeviceCond",
+      "source": "gmail"
+    },
+    {
+      "err": "wall_switch_4gang_1way_physical_off)",
+      "source": "gmail"
+    },
+    {
+      "err": "\"Missing Capability Listener: button.push\" and \"Missing Capability Listener: ono",
+      "source": "gmail"
+    },
+    {
+      "err": "button.push\" and \"Missing Capability Lis",
+      "source": "gmail"
+    },
+    {
+      "err": "\"Missing Capability Listener: button.push\" and \"Missing Capability Listener: ono",
+      "source": "gmail"
+    },
+    {
+      "err": "button.push\" and \"Missing Capability Lis",
+      "source": "gmail"
+    },
+    {
+      "err": "Initializing Driver switch_1gang: /app/drivers/switch_1gang/driver.js:93",
+      "source": "gmail"
+    },
+    {
+      "err": "Invalid or unexpected token",
+      "source": "gmail"
+    },
+    {
+      "err": "Initializing Driver switch_2gang: /app/drivers/switch_2gang/driver.js:125",
+      "source": "gmail"
+    },
+    {
+      "err": "=redirect,quality=80/uploads/asset/file/e6ee0138-7a68-4931-abec-d14337cb04ca/120",
+      "source": "gmail"
+    },
+    {
+      "err": "message âDriver Not Initialized: switch_2gangâ for example (for the TZ3000_b",
+      "source": "gmail"
+    }
+  ],
+  "sources": {
+    "gmail": 70
+  }
+}

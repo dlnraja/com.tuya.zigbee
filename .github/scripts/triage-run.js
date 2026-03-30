@@ -38,7 +38,7 @@ function buildSupportedMsg(found){
     return '`'+m+'` → **'+drivers[0]+'**';
   });
   const fpList=parts.length===1?parts[0]:parts.join(', ');
-  return `Already in the [Universal Tuya Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee) v${VER}: ${fpList}.\n\nGrab it here: https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\nRemove and re-pair after installing. If something's off, drop a diagnostic report ID on the [forum thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352).`;
+  return `I see these fingerprints are mapped in the Universal Tuya Zigbee app(https://github.com/dlnraja/com.tuya.zigbee) v${VER}: ${fpList}.\n\nGrab it here: https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\nRemove and re-pair after installing. If something's off, drop a diagnostic report ID on the [forum thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352).`;
 }
 
 function buildUnsupportedMsg(missing){
@@ -49,7 +49,7 @@ function buildPRMsg(found,missing){
   let msg='Thanks for this.\n\n';
   if(found.length){
     const items=found.map(([m,d])=>'`'+m+'` ('+d+')').join(', ');
-    msg+='Already in our fork v'+VER+': '+items+'.\n\n';
+    msg+='Mapped in our fork v'+VER+': '+items+'.\n\n';
   }
   if(missing.length){
     msg+='New ones we\'ll pick up: `'+missing.join('`, `')+'`.\n\n';

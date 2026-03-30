@@ -14,9 +14,7 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 // ZCL-Only manufacturers (no Tuya DP) - forum: Pieter_Pessers BSEED 3-gang
 const ZCL_ONLY_MANUFACTURERS_3G = [
   '_TZ3000_qkixdnon', '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk',
-  '_TZ3000_hafsqare', '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt',
-  '_TZ3000_v4l4b0lp'  // Issue #170 - Flow cards broken for multi-gang
-];
+  '_TZ3000_hafsqare', '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt'  ];
 
 class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
   get gangCount() { return 3; }
@@ -97,14 +95,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
         this.log(`[BSEED-3G] EP${epNum} app cmd: ${value}`);
         // v5.9.23: Track which gang the user actually commanded
         this._lastCommandedGang = epNum;
-        this._lastCommandTime = Date
-    try {
-        await super.onNodeInit({ zclNode });
-      } catch (superErr) {
-        this.error('[SWITCH-3G] ⚠️ Super init error (non-fatal):', superErr.message);
-        this.zclNode = zclNode;
-      }
-.now();
+        this._lastCommandTime = Date.now();
         this._zclState.pending[epNum] = true;
         clearTimeout(this._zclState.timeout[epNum]);
         this._zclState.timeout[epNum] = setTimeout(() => {

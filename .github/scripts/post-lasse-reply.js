@@ -6,11 +6,11 @@ const{fetchWithRetry}=require('./retry-helper');
 
 const reply=`Hi @Lasse_K,
 
-Apologies for the confusing reply earlier — your **HOBEIAN ZG-102Z** is indeed recognized and pairs correctly as a **Contact Sensor**. The productId \`ZG-102Z\` was already in our database all along!
+Apologies for the confusing reply earlier — your **HOBEIAN ZG-102Z** is indeed recognized and pairs correctly as a **Contact Sensor**. The productId \`ZG-102Z\` was Mapped in our database all along!
 
 ### Why I said "not found"
 
-I was checking fingerprints with a regex that **only matches Tuya-style names** (patterns like \`_TZ3000_xxxx\` and \`TS0203\`). Your device's manufacturer name \`HOBEIAN\` and model \`ZG-102Z\` don't match those patterns, so I missed them — even though they were already in the driver. I've now fixed the lookup to detect **all** manufacturer names and product IDs, not just Tuya ones.
+I was checking fingerprints with a regex that **only matches Tuya-style names** (patterns like \`_TZ3000_xxxx\` and \`TS0203\`). Your device's manufacturer name \`HOBEIAN\` and model \`ZG-102Z\` don't match those patterns, so I missed them — even though they were Mapped in the driver. I've now fixed the lookup to detect **all** manufacturer names and product IDs, not just Tuya ones.
 
 ### The Real Issue: Inverted Open/Closed
 
