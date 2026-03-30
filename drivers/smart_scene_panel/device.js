@@ -7,10 +7,7 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('[SCENE-PANEL] v5.13.5 init');
-    await super.onNodeInit({ zclNode });
-    await this.removeCapability('measure_battery').catch(() => {});
-
-    for (let g = 1; g <= 4; g++) {
+    await super.onNodeInit({ zclNode });for (let g = 1; g <= 4; g++) {
       const cap = `onoff.gang${g}`;
       const dp = 23 + g;
       if (this.hasCapability(cap)) {

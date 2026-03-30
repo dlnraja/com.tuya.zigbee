@@ -1,0 +1,106 @@
+{
+  "name": {
+    "en": "Radiator WiFi Tuya (Local)",
+    "fr": "Radiateur WiFi Tuya (Local)"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature",
+    "thermostat_mode",
+    "onoff"
+  ],
+  "capabilitiesOptions": {
+    "target_temperature": {
+      "min": 5,
+      "max": 35,
+      "step": 0.5,
+      "decimals": 1
+    }
+  },
+  "connectivity": [
+    "lan"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "images": {
+    "small": "drivers/radiator_wifi_tuya/assets/images/small.png",
+    "large": "drivers/radiator_wifi_tuya/assets/images/large.png",
+    "xlarge": "drivers/radiator_wifi_tuya/assets/images/xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Device Configuration",
+        "fr": "Configuration Appareil"
+      },
+      "children": [
+        {
+          "id": "device_id",
+          "type": "text",
+          "label": {
+            "en": "Device ID",
+            "fr": "ID Appareil"
+          },
+          "value": ""
+        },
+        {
+          "id": "device_key",
+          "type": "password",
+          "label": {
+            "en": "Device Key (Local Key)",
+            "fr": "Clé Appareil (Local Key)"
+          },
+          "value": ""
+        },
+        {
+          "id": "device_ip",
+          "type": "text",
+          "label": {
+            "en": "Device IP Address",
+            "fr": "Adresse IP"
+          },
+          "value": ""
+        },
+        {
+          "id": "protocol_version",
+          "type": "dropdown",
+          "label": {
+            "en": "Protocol Version",
+            "fr": "Version Protocole"
+          },
+          "value": "3.3",
+          "values": [
+            {
+              "id": "3.1",
+              "label": {
+                "en": "3.1"
+              }
+            },
+            {
+              "id": "3.3",
+              "label": {
+                "en": "3.3 (Default)"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

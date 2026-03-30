@@ -65,10 +65,7 @@ function getModelConfig(manufacturerName) {
   // Default to ADVANCED for unknown models
   return { type: 'ADVANCED', ...MODEL_CONFIGS.ADVANCED };
 }
-class MotionSensorRadarDevice extends HybridSensorBase {
-
-  // v5.5.69: Most radars are battery-powered, but RELAY models are mains-powered
-  get mainsPowered() {
+class MotionSensorRadarDevice extends HybridSensorBase {  get mainsPowered() {
     const config = this._getModelConfig();
     return config.mainsPowered === true;
   }
@@ -180,11 +177,7 @@ class MotionSensorRadarDevice extends HybridSensorBase {
       if (!this.hasCapability('onoff')) {
         await this.addCapability('onoff').catch(() => {});
         this.log('[MMWAVE] ➕ Added onoff capability for relay');
-      }
-      // Remove measure_battery (mains-powered device)
-      await this.removeCapability('measure_battery').catch(() => {});
-      // Remove wrong capabilities that don't apply to RELAY models
-      for (const cap of ['measure_temperature', 'measure_humidity', 'alarm_human', 'measure_presence_time']) {
+      }      for (const cap of ['measure_temperature', 'measure_humidity', 'alarm_human', 'measure_presence_time']) {
         if (this.hasCapability(cap)) {
           await this.removeCapability(cap).catch(() => {});
           this.log(`[MMWAVE] ➖ Removed incorrect ${cap} for RELAY model`);

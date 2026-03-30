@@ -15,13 +15,8 @@ class AirQualityComprehensiveDevice extends HybridSensorBase {
     };
   }
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    // v5.11.15: Remove battery capability for mains-powered air quality monitors
-    // Prevents false low-battery alerts (e.g. _TZE200_8ygsuhe1 Smart Airbox is USB-powered)
-    if (this.mainsPowered && this.hasCapability('measure_battery')) {
-      await this.removeCapability('measure_battery').catch(() => {});
-      this.log('[AIR-QUALITY] 🔌 Mains-powered: removed measure_battery');
+    await super.onNodeInit({ zclNode });    // Prevents false low-battery alerts (e.g. _TZE200_8ygsuhe1 Smart Airbox is USB-powered)
+    if (this.mainsPowered && this.hasCapability('measure_battery')) {this.log('[AIR-QUALITY] 🔌 Mains-powered: removed measure_battery');
     }
 
     // v5.11.15: Ensure VOC and HCHO capabilities are added for devices that report them

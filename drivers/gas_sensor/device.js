@@ -59,11 +59,7 @@ class GasSensorDevice extends HybridSensorBase {
     };
   }
 
-  async onNodeInit({ zclNode }) {
-    // v5.12.11: Mains-powered - remove battery capability
-    await this.removeCapability('measure_battery').catch(() => {});
-    // Parent handles: IAS Zone, Tuya DP
-    await super.onNodeInit({ zclNode });
+  async onNodeInit({ zclNode }) {    await super.onNodeInit({ zclNode });
     this.log('[GAS] v5.5.292 - DPs: 1,2,3,4,9-11,13,14,16 | ZCL: IAS,PWR,EF00');
     this.log('[GAS] ✅ Ready');
     // v5.5.292: Flow triggers now handled by HybridSensorBase._triggerCustomFlowsIfNeeded()
