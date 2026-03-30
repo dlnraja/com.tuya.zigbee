@@ -68,7 +68,7 @@ class CeilingFanDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ ceiling_fan_set_dim');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Ceiling fan flow cards registered');
+    this.log('[FLOW]  Ceiling fan flow cards registered');
   }
 }
 

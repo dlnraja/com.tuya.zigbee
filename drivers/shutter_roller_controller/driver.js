@@ -90,7 +90,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ shutter_roller_controller_set_position');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Roller shutter flow cards registered');
+    this.log('[FLOW]  Roller shutter flow cards registered');
   }
 }
 

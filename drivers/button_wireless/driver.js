@@ -24,7 +24,7 @@ class ButtonWirelessDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ button_wireless_battery_above');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Button wireless flow cards registered');
+    this.log('[FLOW]  Button wireless flow cards registered');
   }
 }
 

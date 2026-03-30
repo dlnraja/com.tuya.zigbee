@@ -35,7 +35,7 @@ class FormaldehydeSensorDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ formaldehyde_sensor_air_quality_good');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Formaldehyde sensor flow cards registered');
+    this.log('[FLOW]  Formaldehyde sensor flow cards registered');
   }
 }
 

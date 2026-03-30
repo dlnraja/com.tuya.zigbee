@@ -34,7 +34,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ contact_sensor_battery_above');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Contact sensor flow cards registered');
+    this.log('[FLOW]  Contact sensor flow cards registered');
   }
 }
 

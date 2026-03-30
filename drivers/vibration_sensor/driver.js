@@ -54,7 +54,7 @@ class VibrationSensorDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ vibration_sensor_tamper_active');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Vibration sensor flow cards registered (v5.11.47)');
+    this.log('[FLOW]  Vibration sensor flow cards registered (v5.11.47)');
   }
 }
 

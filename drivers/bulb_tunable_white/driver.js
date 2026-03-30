@@ -68,7 +68,7 @@ class BulbTunableDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ bulb_tunable_white_bulb_tunable_set_dim');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Tunable white bulb flow cards registered');
+    this.log('[FLOW]  Tunable white bulb flow cards registered');
   }
 }
 

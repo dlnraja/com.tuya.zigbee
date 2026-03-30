@@ -68,7 +68,7 @@ class SmartBulbWhiteDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ bulb_white_smart_bulb_white_set_dim');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 White bulb flow cards registered');
+    this.log('[FLOW]  White bulb flow cards registered');
   }
 }
 

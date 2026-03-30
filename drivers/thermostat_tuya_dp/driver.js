@@ -104,7 +104,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ thermostat_tuya_dp_decrease_temperature');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Thermostat flow cards registered');
+    this.log('[FLOW]  Thermostat flow cards registered');
   }
 }
 

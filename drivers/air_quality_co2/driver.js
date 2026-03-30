@@ -46,7 +46,7 @@ class AirQualityCO2Driver extends ZigBeeDriver {
       this.log('[FLOW] ✅ air_quality_co2_air_quality_good');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Air quality CO2 flow cards registered');
+    this.log('[FLOW]  Air quality CO2 flow cards registered');
   }
 }
 

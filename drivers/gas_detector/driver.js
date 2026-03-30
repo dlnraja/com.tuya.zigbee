@@ -63,7 +63,7 @@ class GasDetectorDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ gas_detector_mute');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Gas detector flow cards registered');
+    this.log('[FLOW]  Gas detector flow cards registered');
   }
 }
 

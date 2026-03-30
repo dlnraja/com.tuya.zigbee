@@ -34,7 +34,7 @@ class RainSensorDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ rain_sensor_rain_intensity_above');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Rain sensor flow cards registered');
+    this.log('[FLOW]  Rain sensor flow cards registered');
   }
 }
 

@@ -105,7 +105,7 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
       this.log(`[FLOW] ⚠️ Could not register test_alarm action: ${err.message}`);
     }
 
-    this.log('[FLOW] 🎉 All smoke detector flow cards registered');
+    this.log('[FLOW]  All smoke detector flow cards registered');
   }
 
   /**

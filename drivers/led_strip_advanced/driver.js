@@ -68,7 +68,7 @@ class LedStripAdvancedDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ led_strip_advanced_set_dim');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 LED strip advanced flow cards registered');
+    this.log('[FLOW]  LED strip advanced flow cards registered');
   }
 }
 

@@ -34,7 +34,7 @@ class WaterLeakSensorDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ water_leak_sensor_battery_above');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Water leak sensor flow cards registered');
+    this.log('[FLOW]  Water leak sensor flow cards registered');
   }
 }
 

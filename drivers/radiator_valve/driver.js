@@ -24,7 +24,7 @@ class RadiatorValveDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ radiator_valve_set_target_temperature');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Radiator valve flow cards registered');
+    this.log('[FLOW]  Radiator valve flow cards registered');
   }
 }
 

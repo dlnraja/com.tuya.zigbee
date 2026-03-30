@@ -45,7 +45,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ presence_sensor_radar_distance_within');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Presence sensor radar flow cards registered');
+    this.log('[FLOW] Presence sensor radar flow cards registered');
   }
 }
 

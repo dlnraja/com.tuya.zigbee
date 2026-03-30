@@ -57,7 +57,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ curtain_motor_set_dim');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Curtain motor flow cards registered');
+    this.log('[FLOW]  Curtain motor flow cards registered');
   }
 }
 

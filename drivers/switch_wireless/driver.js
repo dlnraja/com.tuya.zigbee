@@ -57,7 +57,7 @@ class WirelessSwitchDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ switch_wireless_toggle');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Wireless switch flow cards registered');
+    this.log('[FLOW]  Wireless switch flow cards registered');
   }
 }
 

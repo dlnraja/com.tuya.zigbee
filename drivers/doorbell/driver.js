@@ -39,7 +39,7 @@ class TuyaDoorbellDriver extends ZigBeeDriver {
       this.log('[FLOW] ✅ doorbell_ring_chime');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
-    this.log('[FLOW] 🎉 Doorbell flow cards registered');
+    this.log('[FLOW]  Doorbell flow cards registered');
   }
 }
 
