@@ -5,6 +5,29 @@ let ImapFlow; try { ImapFlow = require('imapflow').ImapFlow } catch {}
 const MBS = ['INBOX', '[Gmail]/All Mail', '[Gmail]/Tous les messages'];
 
 // === RFC 2047 decode (encoded headers like =?UTF-8?B?...?= or =?UTF-8?Q?...?=) ===
+
+function aggressiveSanitize(text) {
+  if (!text) return '';
+  let clean = text;
+  
+  // 1. Remove email addresses (keep domains like @github.com or @homey.app if needed, but safer to replace all)
+  clean = clean.replace(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z0-9_-]+)/gi, '[REDACTED_EMAIL]');
+  
+  // 2. Remove IP addresses (IPv4)
+  clean = clean.replace(/(?:[0-9]{1,3}.){3}[0-9]{1,3}/g, '[REDACTED_IP]');
+  
+  // 3. Remove common phone number patterns
+  clean = clean.replace(/+?([0-9]{1,3})?[-. ]?(?[0-9]{1,4})?[-. ]?[0-9]{1,4}[-. ]?[0-9]{1,4}[-. ]?[0-9]{1,9}/g, function(match) {
+    // Only redact if it looks like a phone number and not a diagnostic ID or timestamp
+    if (match.replace(/[^0-9]/g, '').length >= 8 && !match.includes(':')) {
+       return '[REDACTED_PHONE]';
+    }
+    return match;
+  });
+
+  return clean;
+}
+
 function decodeRFC2047(str) {
   if (!str) return '';
   return str.replace(/=\?([^?]+)\?([BbQq])\?([^?]*)\?=/g, (_, charset, enc, data) => {
@@ -231,7 +254,7 @@ async function readViaIMAP(opts = {}) {
     const out = [];
     try {
       const kws = ['tuya', 'zigbee', 'homey', '_TZE', '_TZ3', 'TS0', 'diagnostic', 'fingerprint', 'device report', 'crash', 'error log'];
-      const senders = ['community.homey.app', 'athom.com', 'notifications@github.com', 'noreply@homey.app'];
+      const senders = ['noreply@community.homey.app', 'noreply@athom.com', 'notifications@github.com', 'noreply@homey.app'];
       const seqSet = new Set();
       for (const kw of kws) { try { (await c.search({ since: new Date(since), subject: kw })).forEach(s => seqSet.add(s)) } catch {} }
       for (const fr of senders) { try { (await c.search({ since: new Date(since), from: fr })).forEach(s => seqSet.add(s)) } catch {} }
@@ -293,7 +316,15 @@ async function readViaIMAP(opts = {}) {
             // Extract crash data
             crashData = extractCrashData(body);
 
-            out.push({
+            
+              // Aggressive privacy sanitization
+              body = aggressiveSanitize(body);
+              if (crashData) {
+                if (crashData.crashApp) crashData.crashApp = aggressiveSanitize(crashData.crashApp);
+                if (crashData.stackTraces) crashData.stackTraces = crashData.stackTraces.map(aggressiveSanitize);
+              }
+              
+              out.push({
               id: 'imap_' + uid,
               subj,
               from: fromAddr,
