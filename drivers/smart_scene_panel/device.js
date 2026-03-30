@@ -6,13 +6,14 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
   get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
-    this.log('[SCENE-PANEL] v5.13.5 init');
-    await super.onNodeInit({ zclNode });for (let g = 1; g <= 4; g++) {
+    this.log('[SCENE-PANEL] v5.13.5 init');for (let g = 1; g <= 4; g++) {
       const cap = `onoff.gang${g}`;
       const dp = 23 + g;
       if (this.hasCapability(cap)) {
         this.registerCapabilityListener(cap, async (value) => {
-          await this.sendDP(dp, 1, value ? 1 : 0);
+          await this.sendDP(dp, 1, value 
+    await super.onNodeInit({ zclNode });
+? 1 : 0);
         });
       }
     }

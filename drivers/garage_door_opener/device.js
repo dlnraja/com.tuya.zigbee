@@ -7,7 +7,6 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
  */
 class GarageDoorOpenerDevice extends TuyaZigbeeDevice {
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
 
     // DP mappings for garage door
     if (this._tuyaEF00Manager) {
@@ -20,7 +19,9 @@ class GarageDoorOpenerDevice extends TuyaZigbeeDevice {
 
     this.registerCapabilityListener('garagedoor_closed', async (value) => {
       this._markAppCommand?.();
-      if (this._tuyaEF00Manager) {
+      if 
+    await super.onNodeInit({ zclNode });
+(this._tuyaEF00Manager) {
         await this._tuyaEF00Manager.sendTuyaDP(1, 1, !value ? 1 : 0);
       }
     });

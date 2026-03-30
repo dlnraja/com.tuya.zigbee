@@ -101,7 +101,6 @@ class USBOutletAdvancedDevice extends HybridPlugBase {
   }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
 
     // Register capability listeners for control
     await this._registerCapabilityListeners();
@@ -255,7 +254,9 @@ class USBOutletAdvancedDevice extends HybridPlugBase {
     // USB 2 control - try multiple DPs
     if (this.hasCapability('onoff.usb2')) {
       this.registerCapabilityListener('onoff.usb2', async (value) => {
-        this.log('[USB-ADV] USB 2 →', value);
+        this.log('[USB-ADV] USB 2 →', val
+    await super.onNodeInit({ zclNode });
+ue);
         // v5.5.35: Try common USB2 DPs
         await this._sendDP(10, value);  // Primary
         await this._sendDP(4, value);   // Alt

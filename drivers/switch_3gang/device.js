@@ -38,12 +38,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
   async onNodeInit({ zclNode }) {
     try {
       // v6.0: Robust initialization with error recovery
-      try {
-        await super.onNodeInit({ zclNode });
-      } catch (superErr) {
-        this.error('[SWITCH-3G] ⚠️ Super init error (non-fatal):', superErr.message);
-        this.zclNode = zclNode;
-      }
+      
 
       // Continue with driver-specific setup
       try {
@@ -102,7 +97,14 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
         this.log(`[BSEED-3G] EP${epNum} app cmd: ${value}`);
         // v5.9.23: Track which gang the user actually commanded
         this._lastCommandedGang = epNum;
-        this._lastCommandTime = Date.now();
+        this._lastCommandTime = Date
+    try {
+        await super.onNodeInit({ zclNode });
+      } catch (superErr) {
+        this.error('[SWITCH-3G] ⚠️ Super init error (non-fatal):', superErr.message);
+        this.zclNode = zclNode;
+      }
+.now();
         this._zclState.pending[epNum] = true;
         clearTimeout(this._zclState.timeout[epNum]);
         this._zclState.timeout[epNum] = setTimeout(() => {

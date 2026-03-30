@@ -36,7 +36,6 @@ class RGBWBulbDevice extends HybridLightBase {
   }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
     this.log('[RGBW] v5.5.129 - DPs: 1-7,21,24-26 | ZCL: 6,8,300,EF00');
     await this._setupColorCluster(zclNode);
     this._setupRGBWListeners();
@@ -79,7 +78,9 @@ class RGBWBulbDevice extends HybridLightBase {
     }
     if (this.hasCapability('light_mode')) {
       this.registerCapabilityListener('light_mode', async (v) => {
-        await this._sendTuyaDP(2, v === 'color' ? 1 : 0, 'enum');
+        await this._sendTuyaDP(2, v === '
+    await super.onNodeInit({ zclNode });
+color' ? 1 : 0, 'enum');
       });
     }
   }
