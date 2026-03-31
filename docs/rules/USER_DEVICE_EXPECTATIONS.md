@@ -1968,3 +1968,10 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 ---
 
 *Auto-generated on 2026-03-31 from v5.11.152 — 4,314+ fingerprints across 191 drivers*
+
+
+## Auto-discovered from GitHub (2026-03-31)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZ3210_mt5xjoy6 + generic | JohanBendz/com.tuya.zigbee#1359 | device_request |
