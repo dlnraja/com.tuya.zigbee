@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-31T03:22:49.905Z",
+  "timestamp": "2026-03-31T06:03:22.556Z",
   "appVersion": "5.11.152",
   "forum": 0,
   "github": 1,
@@ -9,22 +9,14 @@
   "forumDetails": [],
   "githubDetails": [
     {
-      "repo": "dlnraja/com.tuya.zigbee",
-      "number": 181,
-      "type": "pr",
-      "user": "github-actions[bot]",
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1357,
+      "user": "szferi91",
       "fps": [
-        "SONOFF",
-        "danfoss",
-        "eWeLink",
-        "legrand",
-        "sonoff",
-        "xiaomi",
-        "test",
-        "bosch",
-        "ikea",
-        "tuya"
+        "test"
       ],
+      "title": "Performance issue since the last update",
+      "response": "### Issue Analysis\n\nThank you for your report regarding the performance issues following the latest update. Based on the fingerprint lookup you provided, it appears that your device is recognized and supported by the driver `diy_custom_zigbee`. This driver is specifically designed to handle custom Z",
       "model": "gh-gpt-4o-mini"
     }
   ]
