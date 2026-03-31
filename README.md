@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.151 |
+| **App Version** | v5.11.152 |
 | **Device Fingerprints** | 4,350+ |
 | **Unique Product IDs** | 559 |
 | **Drivers** | 191 (142 Zigbee + 49 WiFi) |
@@ -44,7 +44,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-03-30 |
+| **Last Updated** | 2026-03-31 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.151** | v5.11.150: Resolved issues affecting the functionality of various drivers., Added support for 191 drivers and 3880 fi... |
+| **v5.11.152** | v5.11.151: Removed emoji characters from all driver.js files to prevent SyntaxError crashes on Homey Pro., Total driv... |
+| **v5.11.151** | Universal Tuya Zigbee app v5.11.151: Critical fix for SyntaxError crashes and updated drivers. |
 | **v5.11.150** | Universal Tuya Zigbee app v5.11.150 adds new drivers and fingerprints, enhancing device compatibility. |
 | **v5.11.149** | Universal Tuya Zigbee app v5.11.149 adds new drivers and fingerprints, enhancing device compatibility. |
 | **v5.11.148** | Universal Tuya Zigbee app v5.11.148 adds new device fingerprints and fixes bugs for improved compatibility. |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.138** | Universal Tuya Zigbee app v5.11.138 adds support for new device variants and fixes several pairing issues. |
 | **v5.11.137** | v5.11.132: Implemented batch close/respond state update for improved device management., No new features added in thi... |
 | **v5.11.136** | v5.11.132: Implemented batch close/respond state update for improved device management., No new features added in thi... |
-| **v5.11.135** | v5.11.132: Implemented batch close/respond state update for improved device management., No new features added in thi... |
 
 <!-- CHANGELOG_END -->
 
@@ -355,4 +355,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-03-30*
+*Last updated: 2026-03-31*

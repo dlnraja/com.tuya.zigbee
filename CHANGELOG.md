@@ -4,7 +4,17 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.150] - 2026-03-30
+## [5.11.151] - 2026-03-31
+
+### Bug Fixes
+- Removed emoji characters from all driver.js files to prevent SyntaxError crashes on Homey Pro.
+
+### Drivers
+- Total drivers: 191
+- Total fingerprints: 3185
+---
+
+ [5.11.150] - 2026-03-30
 
 ### Bug Fixes
 - Resolved issues affecting the functionality of various drivers.
