@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-31T03:21:57.238Z",
+  "timestamp": "2026-03-31T14:53:04.817Z",
   "appVersion": "5.11.152",
   "findings": {
     "issues": [
@@ -22,20 +22,64 @@
         "imageAnalysis": null
       },
       {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 178,
-        "title": "[soil_sensor] Bug: No Connetion possible \t_TZE284_oitavov2",
-        "user": "haadeess",
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1337,
+        "title": "BSEED 2 button wallswitch zigbee with nuetral _TZ3000_l9brjwau TS0002",
+        "user": "pjmpessers",
         "newFPs": [],
         "existingFPs": [
           {
-            "fp": "_TZE284_oitavov2",
+            "fp": "_TZ3000_l9brjwau",
             "drivers": [
-              "soil_sensor"
+              "switch_2gang"
+            ]
+          },
+          {
+            "fp": "_TZ3000_qkixdnon",
+            "drivers": [
+              "switch_3gang",
+              "switch_4gang"
             ]
           }
         ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/178",
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1337",
+        "state": "open",
+        "imageAnalysis": "[Screenshot Analysis]"
+      },
+      {
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1338,
+        "title": "BSEED 3 button wall switch with neutral _TZ3000_qkixdnon\tTS0003",
+        "user": "pjmpessers",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_qkixdnon",
+            "drivers": [
+              "switch_3gang",
+              "switch_4gang"
+            ]
+          }
+        ],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1338",
+        "state": "open",
+        "imageAnalysis": "[Screenshot Analysis]"
+      },
+      {
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1359,
+        "title": "Device request: Nedis Zigbee 2-Gang Dimmer (ZBWD20RD / TS110E)",
+        "user": "Linqans",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3210_mt5xjoy6",
+            "drivers": [
+              "dimmer_wall_1gang"
+            ]
+          }
+        ],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1359",
         "state": "open",
         "imageAnalysis": null
       },
@@ -160,5 +204,5 @@
     "newFPs": [],
     "forkFPs": []
   },
-  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests\nCurrently, there are no new device fingerprints (FPs) requested in the recent GitHub activity.\n\n## Existing Fingerprints Supported\nThe following fingerprints are already supported in the Universal Tuya Zigbee integration:\n\n1. **_TZ3000_v4l4b0lp**\n   - Drivers: `switch_3gang`\n   - Issue: [Bug: TS0003](https://github.com/dlnraja/com.tuya.zigbee/issues/170) - Sub-capability Flow cards are unlinked.\n\n2. **_TZE284_oitavov2**\n   - Drivers: `soil_sensor`\n   - Issue: [Bug: No Connection possible](https://github.com/dlnraja/com.tuya.zigbee/issues/178).\n\n3. **_TZ3000_xabckq1v**\n   - Drivers: `button_wireless_4`, `scene_switch_4`, `wall_remote_4_gang_2`\n   - Issue: [Bug report - 4 gang wall switch stopped working](https://github.com/JohanBendz/com.tuya.zigbee/issues/1356) (Closed).\n\n4. **_TZ3000_wkai4ga5**\n   - Drivers: `button_wireless_4`, `scene_switch_4`, `wall_remote_4_gang_3`\n   - Issue: Same as above.\n\n## Fingerprints from Forks to Integrate\nNo new fingerprints from forks have been identified for integration at this time.\n\n## Pull Requests with Useful Changes\nSeveral pull requests (PRs) are currently open or closed that may introduce useful changes:\n\n1. **[Fix presence_sensor_radar pairing for DP-only TS0601 devices](https://github.com/dlnraja/com.tuya.zigbee/pull/180)** (Closed)\n   - User: Robsta86\n   - FPs: `_TZE204_sxm7l9xa`, `_TZE204_qasjif9e`\n\n2. **[Added TS110E driver](https://github.com/JohanBendz/com.tuya.zigbee/pull/1350)** (Open)\n   - User: PiTRiS87\n   - FPs: `_TZ3210_ngqk6jia`, `_TZ3210_weaqkhab`\n\n3. **[Add support for Tuya PIR sensor TS0202](https://github.com/JohanBendz/com.tuya.zigbee/pull/1166)** (Closed)\n   - User: chernals\n   - FP: `_TZ3000_c8ozah8n`\n\n4. **[Added 3 new devices](https://github.com/JohanBendz/com.tuya.zigbee/pull/1253)** (Open)\n   - User: Peter-Celica\n   - FPs: `_TZE200_pay2byax`, `_TZ3000_mrpevh8p`\n\n5. **[Update driver.compose.json](https://github.com/JohanBendz/com.tuya.zigbee/pull/1219)** (Open)\n   - User: Melectro1\n   - FP: `_TZ3000_gjrubzje`\n\n6. **[Update driver.compose.json](https://github.com/JohanBendz/com.tuya.zigbee/pull/1218)** (Open)\n   - User: Melectro1\n   - FP: `_TZE204_dapwryy7`\n\n7. **[Add \"_TZE204_bjzrowv2\" - Update app.json](https://github.com/JohanBendz/com.tuya.zigbee/pull/1195)** (Open)\n   - User: YuriEstevan\n   - FP: `_TZE204_bjzrowv2`\n\nThis summary encapsulates the latest developments in the Universal Tuya Zigbee project, highlighting existing support, issues, and contributions from the community."
+  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests\n1. **Nedis Zigbee 2-Gang Dimmer (ZBWD20RD / TS110E)**  \n   - **Issue #1359**: Request for support.  \n   - **Existing Fingerprint**: `_TZ3210_mt5xjoy6` (dimmer_wall_1gang)  \n   - [View Issue](https://github.com/JohanBendz/com.tuya.zigbee/issues/1359)\n\n## Existing Fingerprints Supported\n- **_TZ3000_v4l4b0lp**  \n  - Drivers: `switch_3gang`  \n  - [Issue #170](https://github.com/dlnraja/com.tuya.zigbee/issues/170)\n\n- **_TZ3000_l9brjwau**  \n  - Drivers: `switch_2gang`  \n  - [Issue #1337](https://github.com/JohanBendz/com.tuya.zigbee/issues/1337)\n\n- **_TZ3000_qkixdnon**  \n  - Drivers: `switch_3gang`, `switch_4gang`  \n  - [Issue #1338](https://github.com/JohanBendz/com.tuya.zigbee/issues/1338)\n\n- **_TZ3000_xabckq1v**  \n  - Drivers: `button_wireless_4`, `scene_switch_4`, `wall_remote_4_gang_2`  \n  - [Issue #1356](https://github.com/JohanBendz/com.tuya.zigbee/issues/1356)\n\n- **_TZ3000_wkai4ga5**  \n  - Drivers: `button_wireless_4`, `scene_switch_4`, `wall_remote_4_gang_3`  \n  - [Issue #1356](https://github.com/JohanBendz/com.tuya.zigbee/issues/1356)\n\n## Fingerprints from Forks to Integrate\n- No new fingerprints from forks identified in the current analysis.\n\n## Pull Requests with Useful Changes\n1. **PR #180**: Fix presence_sensor_radar pairing for DP-only TS0601 devices  \n   - **User**: Robsta86  \n   - **Fingerprints**: `_TZE204_sxm7l9xa`, `_TZE204_qasjif9e`  \n   - [View PR](https://github.com/dlnraja/com.tuya.zigbee/pull/180)\n\n2. **PR #1350**: Added TS110E driver  \n   - **User**: PiTRiS87  \n   - **Fingerprints**: `_TZ3210_ngqk6jia`, `_TZ3210_weaqkhab`  \n   - [View PR](https://github.com/JohanBendz/com.tuya.zigbee/pull/1350)\n\n3. **PR #1166**: Add support for Tuya PIR sensor TS0202  \n   - **User**: chernals  \n   - **Fingerprint**: `_TZ3000_c8ozah8n`  \n   - [View PR](https://github.com/JohanBendz/com.tuya.zigbee/pull/1166)\n\n4. **PR #1253**: Added 3 new devices  \n   - **User**: Peter-Celica  \n   - **Fingerprints**: `_TZE200_pay2byax`, `_TZ3000_mrpevh8p`  \n   - [View PR](https://github.com/JohanBendz/com.tuya.zigbee/pull/1253)\n\n5. **PR #1219**: Update driver.compose.json  \n   - **User**: Melectro1  \n   - **Fingerprint**: `_TZ3000_gjrubzje`  \n   - [View PR](https://github.com/JohanBendz/com.tuya.zigbee/pull/1219)\n\n6. **PR #1218**: Update driver.compose.json  \n   - **User**: Melectro1  \n   - **Fingerprint**: `_TZE204_dapwryy7`  \n   - [View PR](https://github.com/JohanBendz/com.tuya.zigbee/pull/1218)\n\n7. **PR #1195**: Add `_TZE204_bjzrowv2` - Update app.json  \n   - **User**: YuriEstevan  \n   - **Fingerprint**: `_TZE204_bjzrowv2`  \n   - [View PR](https://github.com/JohanBendz/com.tuya.zigbee/pull/1195)\n\n---\n\nThis summary encapsulates the latest developments in the Universal Tuya Zigbee GitHub repository, focusing on device requests, existing fingerprints, and notable pull requests. For further details, please refer to the linked issues and pull requests."
 }

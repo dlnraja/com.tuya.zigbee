@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-31T07:32:12.921Z",
+  "timestamp": "2026-03-31T15:43:45.400Z",
   "suggestions": [
     {
       "pattern": "False Battery Alert / Missing Battery",
@@ -56,16 +56,16 @@
     {
       "pattern": "Pairing Failure",
       "id": "pairing",
-      "count": 8,
+      "count": 9,
       "priority": "high",
       "topFPs": [
         [
-          "vision",
+          "TS0601",
           5
         ],
         [
-          "TS0601",
-          4
+          "vision",
+          5
         ],
         [
           "example",
@@ -391,7 +391,7 @@
     "inversion": 1,
     "battery": 30,
     "double_div": 2,
-    "pairing": 8,
+    "pairing": 9,
     "unknown": 5,
     "flow_dup": 0,
     "no_response": 4,

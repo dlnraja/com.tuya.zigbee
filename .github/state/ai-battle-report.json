@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-03-31T04:19:39.049Z",
+  "timestamp": "2026-03-31T15:54:09.234Z",
   "dryRun": false,
   "sources": {
     "external": 1607,
-    "github": 7,
+    "github": 9,
     "forks": 0,
-    "johan": 3,
+    "johan": 2,
     "gmail": 0,
     "forum": 0,
     "diagnostics": 0,
@@ -46,5 +46,5 @@
     "skipped": 0
   },
   "ghApiCalls": 100,
-  "aiSummary": "```json\n{\n  \"summary\": {\n    \"total_sources_scanned\": 1617,\n    \"confirmed_variants\": 0,\n    \"new_fingerprints_classified\": 2,\n    \"top_patterns\": [\n      {\n        \"pattern\": \"False Battery Alert / Missing Battery\",\n        \"count\": 30,\n        \"priority\": \"high\",\n        \"suggested_fix\": \"Set `get mainsPowered() { return true; }` and remove measure_battery in onNodeInit\"\n      },\n      {\n        \"pattern\": \"Pairing Failure\",\n        \"count\": 8,\n        \"priority\": \"high\"\n      }\n    ]\n  }\n}\n```"
+  "aiSummary": "```json\n{\n  \"summary\": {\n    \"total_sources_scanned\": 1618,\n    \"confirmed_variants\": 0,\n    \"new_fingerprints_classified\": 2,\n    \"top_patterns\": [\n      {\n        \"pattern\": \"False Battery Alert / Missing Battery\",\n        \"count\": 30,\n        \"priority\": \"high\",\n        \"suggested_fix\": \"Set `get mainsPowered() { return true; }` and remove measure_battery in onNodeInit\"\n      },\n      {\n        \"pattern\": \"Pairing Failure\",\n        \"count\": 9,\n        \"priority\": \"high\"\n      }\n    ]\n  }\n}\n```"
 }
