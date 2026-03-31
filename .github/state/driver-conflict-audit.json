@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-29T02:16:29.860Z",
+  "timestamp": "2026-03-31T03:37:11.996Z",
   "pidConflicts": [
     {
       "pid": "TS004F",
@@ -130,22 +130,6 @@
       ],
       "crossClass": false,
       "severity": "medium"
-    },
-    {
-      "pid": "TS0207",
-      "drivers": [
-        "rain_sensor",
-        "usb_dongle_dual_repeater",
-        "water_leak_sensor",
-        "zigbee_repeater"
-      ],
-      "classes": [
-        "sensor",
-        "socket",
-        "other"
-      ],
-      "crossClass": true,
-      "severity": "high"
     },
     {
       "pid": "TS0003",
@@ -333,6 +317,21 @@
       ],
       "crossClass": false,
       "severity": "low"
+    },
+    {
+      "pid": "TS0207",
+      "drivers": [
+        "usb_dongle_dual_repeater",
+        "water_leak_sensor",
+        "zigbee_repeater"
+      ],
+      "classes": [
+        "socket",
+        "sensor",
+        "other"
+      ],
+      "crossClass": true,
+      "severity": "high"
     },
     {
       "pid": "TS110E",
@@ -729,30 +728,6 @@
       "severity": "low"
     },
     {
-      "pid": "ZG-223Z",
-      "drivers": [
-        "rain_sensor",
-        "water_leak_sensor"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false,
-      "severity": "low"
-    },
-    {
-      "pid": "ZG-222Z",
-      "drivers": [
-        "rain_sensor",
-        "water_leak_sensor"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false,
-      "severity": "low"
-    },
-    {
       "pid": "TS0011",
       "drivers": [
         "switch_1gang",
@@ -779,6 +754,28 @@
     }
   ],
   "mfrConflicts": [
+    {
+      "mfr": "_TZE200_nnrfa68v",
+      "drivers": [
+        "air_quality_comprehensive",
+        "radiator_valve_zigbee"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TZE204_nnrfa68v",
+      "drivers": [
+        "air_quality_comprehensive",
+        "radiator_valve_zigbee"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
     {
       "mfr": "_TZ3210_s8lvbbu",
       "drivers": [
@@ -1185,10 +1182,87 @@
       "risk": "high"
     },
     {
+      "mfr": "_TZE200_2ekuz3dz",
+      "drivers": [
+        "floor_heating_thermostat",
+        "radiator_valve_zigbee"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
+    {
       "mfr": "_TZE200_rufdtfyv",
       "drivers": [
         "floor_heating_thermostat",
         "radiator_valve"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TYST11_ckud7u2l",
+      "drivers": [
+        "radiator_valve",
+        "radiator_valve_zigbee"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TYST11_cwnjrr72",
+      "drivers": [
+        "radiator_valve",
+        "radiator_valve_zigbee"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TYST11_jeaxp72v",
+      "drivers": [
+        "radiator_valve",
+        "radiator_valve_zigbee"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TYST11_ywdxldoj",
+      "drivers": [
+        "radiator_valve",
+        "radiator_valve_zigbee"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TZE200_lnbfnyxd",
+      "drivers": [
+        "radiator_valve",
+        "radiator_valve_zigbee"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TZE200_mudxchsu",
+      "drivers": [
+        "radiator_valve",
+        "radiator_valve_zigbee"
       ],
       "sharedPids": [
         "TS0601"
@@ -1210,6 +1284,72 @@
       "mfr": "_TZE200_rxq4iti9",
       "drivers": [
         "radiator_valve",
+        "smart_lcd_thermostat"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TZE200_ckud7u2l",
+      "drivers": [
+        "radiator_valve_zigbee",
+        "smart_heater"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TZE200_ywdxldoj",
+      "drivers": [
+        "radiator_valve_zigbee",
+        "thermostat_tuya_dp"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TZE200_cwnjrr72",
+      "drivers": [
+        "radiator_valve_zigbee",
+        "thermostat_tuya_dp"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TZE200_kly8gjlz",
+      "drivers": [
+        "radiator_valve_zigbee",
+        "smart_lcd_thermostat"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TZE200_a4bpgplm",
+      "drivers": [
+        "radiator_valve_zigbee",
+        "thermostat_tuya_dp"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TZE200_b6wax7g0",
+      "drivers": [
+        "radiator_valve_zigbee",
         "smart_lcd_thermostat"
       ],
       "sharedPids": [
@@ -1300,6 +1440,10 @@
     }
   ],
   "orphans": [
+    {
+      "driver": "radiator_wifi_tuya",
+      "reason": "no_fingerprints"
+    },
     {
       "driver": "wifi_air_purifier",
       "reason": "no_fingerprints"
@@ -1612,22 +1756,6 @@
       "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
     },
     {
-      "pid": "TS0207",
-      "splitBy": {
-        "sensor": [
-          "rain_sensor",
-          "water_leak_sensor"
-        ],
-        "socket": [
-          "usb_dongle_dual_repeater"
-        ],
-        "other": [
-          "zigbee_repeater"
-        ]
-      },
-      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
-    },
-    {
       "pid": "TS0501B",
       "splitBy": {
         "light": [
@@ -1675,6 +1803,21 @@
         "remote": [
           "ir_blaster",
           "ir_remote"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0207",
+      "splitBy": {
+        "socket": [
+          "usb_dongle_dual_repeater"
+        ],
+        "sensor": [
+          "water_leak_sensor"
+        ],
+        "other": [
+          "zigbee_repeater"
         ]
       },
       "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
@@ -1813,11 +1956,11 @@
     }
   ],
   "summary": {
-    "totalDrivers": 188,
-    "pidConflicts": 59,
+    "totalDrivers": 190,
+    "pidConflicts": 57,
     "highSeverity": 23,
-    "mfrConflicts": 46,
-    "orphans": 49,
+    "mfrConflicts": 61,
+    "orphans": 50,
     "splitSuggestions": 23
   }
 }

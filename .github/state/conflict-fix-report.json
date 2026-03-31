@@ -1,20 +1,8 @@
 {
-  "timestamp": "2026-03-25T07:33:39.673Z",
-  "before": 657,
-  "resolved_prev": 383,
-  "resolved_v5134_deep": 62,
-  "total_resolved": 445,
-  "removed": 360,
-  "unresolved_cross_driver": 170,
-  "unexpected_conflicts": 4,
-  "all_unexpected_unresolvable": true,
-  "fixes_v5134_deep": [
-    "_TZ3210_j4pdtz9v removed from curtain_motor (fingerbot)",
-    "3 fingerbot FPs moved switch_1gang->fingerbot",
-    "_TZE204_ztqnh5cg removed from generic_tuya (presence_sensor)",
-    "_TZE204_clrdrnya removed from generic_tuya (mmwave relay)",
-    "_TZE204_dcnsggvz removed from climate_sensor (dimmer)",
-    "55 specific device FPs removed from generic_tuya"
-  ],
+  "timestamp": "2026-03-31T03:48:39.975Z",
+  "before": 220,
+  "resolved": 35,
+  "removed": 27,
+  "unresolved": 185,
   "dryRun": false
 }

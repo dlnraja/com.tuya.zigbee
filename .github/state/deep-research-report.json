@@ -1,23 +1,28 @@
 {
-  "ts": "2026-03-29T02:27:22.914Z",
+  "ts": "2026-03-31T03:48:09.180Z",
   "ghCalls": 120,
-  "totalFPs": 91,
-  "newFPs": 1,
+  "totalFPs": 93,
+  "newFPs": 2,
   "researched": 1,
-  "implemented": 0,
+  "implemented": 2,
   "results": [
     {
-      "fp": "_TZ3290_ot6ewjvmej",
-      "driver": "ir_remote",
-      "confidence": 25,
+      "fp": "_TZE200_u6x1zyv2",
+      "driver": "generic_tuya",
+      "confidence": 0,
       "pidsFromIssue": [
-        "TS1201"
+        "TS0601",
+        "TS0203"
       ],
       "discoveredPIDs": [],
-      "variants": 0,
-      "actions": [],
+      "variants": 2,
+      "actions": [
+        "added_pid:TS0601",
+        "added_pid:TS0203"
+      ],
       "sources": [
-        "JohanBendz/com.tuya.zigbee#1331 (issue)"
+        "JohanBendz/com.tuya.zigbee#1347 (issue)",
+        "JohanBendz/com.tuya.zigbee#1272 (issue)"
       ]
     }
   ]

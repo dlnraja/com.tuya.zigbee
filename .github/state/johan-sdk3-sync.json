@@ -1,37 +1,19 @@
 {
-  "timestamp": "2026-03-29T02:16:29.196Z",
+  "timestamp": "2026-03-31T03:37:11.369Z",
   "added": [
     {
-      "fp": "zbeacon",
-      "driver": "contact_sensor",
+      "fp": "_TZ3210_tgvtvdoc",
+      "driver": "universal_fallback",
       "pids": [
-        "DS01"
+        "TS0207"
       ]
     },
     {
-      "fp": "TUYATEC-qun7vq14",
-      "driver": "climate_sensor",
+      "fp": "_TZ3000_awvmkayh",
+      "driver": "universal_fallback",
       "pids": [
-        "RH3052",
-        "TS0201"
-      ]
-    },
-    {
-      "fp": "TUYATEC-O6SNCwd6",
-      "driver": "button_wireless_2",
-      "pids": [
-        "TS0002",
-        "TS0012",
-        "TS0042"
-      ]
-    },
-    {
-      "fp": "TUYATEC-nzrrvgco",
-      "driver": "button_wireless_2",
-      "pids": [
-        "TS0002",
-        "TS0012",
-        "TS0042"
+        "TS0207",
+        "q9mpfhw"
       ]
     }
   ],
@@ -253,6 +235,29 @@
         "existsInOurs": true
       },
       {
+        "file": "TuyaLevelControlCluster.js",
+        "id": null,
+        "name": null,
+        "extendsCluster": "LevelControlCluster",
+        "attributes": [
+          {
+            "name": "tuyaBrightness",
+            "id": "0xF000"
+          },
+          {
+            "name": "moveToLevelTuya",
+            "id": "0xF0"
+          }
+        ],
+        "commands": [
+          {
+            "name": "moveToLevelTuya",
+            "id": "0xF0"
+          }
+        ],
+        "existsInOurs": false
+      },
+      {
         "file": "TuyaOnOffCluster.js",
         "id": null,
         "name": null,
@@ -431,12 +436,12 @@
   "summary": {
     "totalJohanFPs": 636,
     "totalOurFPs": 3993,
-    "missingFPs": 4,
-    "addedFPs": 4,
+    "missingFPs": 2,
+    "addedFPs": 2,
     "skippedFPs": 0,
     "dpGaps": 0,
     "newDrivers": 91,
-    "libClusters": 10,
+    "libClusters": 11,
     "libHelpers": 2,
     "patterns": {
       "readAttributesCalls": 48,

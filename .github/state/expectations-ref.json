@@ -1,8 +1,8 @@
 {
-  "version": "5.11.138",
-  "date": "2026-03-29",
-  "drivers": 188,
-  "fingerprints": 4328,
+  "version": "5.11.152",
+  "date": "2026-03-31",
+  "drivers": 191,
+  "fingerprints": 4314,
   "decisions": [
     {
       "device": "USB Zigbee Dongle (USB-powered relay)",
@@ -360,8 +360,8 @@
     }
   ],
   "interviews": {
-    "total": 160,
-    "fps": 126
+    "total": 163,
+    "fps": 128
   },
   "invertedMfrs": [
     "_TZ3000_26fmupbb",
