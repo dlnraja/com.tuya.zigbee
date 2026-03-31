@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-29T02:16:29.780Z",
+  "timestamp": "2026-03-31T03:37:11.907Z",
   "conflicts": [
     {
       "pid": "TS0501B",
@@ -605,43 +605,6 @@
       "crossClass": false
     },
     {
-      "pid": "TS0207",
-      "drivers": [
-        "rain_sensor",
-        "usb_dongle_dual_repeater",
-        "water_leak_sensor",
-        "zigbee_repeater"
-      ],
-      "classes": [
-        "sensor",
-        "socket",
-        "other"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ZG-223Z",
-      "drivers": [
-        "rain_sensor",
-        "water_leak_sensor"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "ZG-222Z",
-      "drivers": [
-        "rain_sensor",
-        "water_leak_sensor"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
       "pid": "TS0726",
       "drivers": [
         "scene_switch_2",
@@ -707,6 +670,20 @@
       "crossClass": false
     },
     {
+      "pid": "TS0207",
+      "drivers": [
+        "usb_dongle_dual_repeater",
+        "water_leak_sensor",
+        "zigbee_repeater"
+      ],
+      "classes": [
+        "socket",
+        "sensor",
+        "other"
+      ],
+      "crossClass": true
+    },
+    {
       "pid": "TS0049",
       "drivers": [
         "valve_irrigation",
@@ -724,9 +701,9 @@
   "scaffolded": [],
   "errors": [],
   "summary": {
-    "ourDrivers": 188,
+    "ourDrivers": 190,
     "johanDrivers": 113,
-    "pidConflicts": 59,
+    "pidConflicts": 57,
     "crossClassConflicts": 23,
     "uncoveredFPGroups": 0,
     "missingDriverTypes": 0,
