@@ -4,7 +4,14 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.151] - 2026-03-31
+## [5.11.152] - 2026-03-31
+
+### Bug Fixes
+- Fixed rain sensor pairing by removing strict endpoints.
+- Removed emoji characters from all driver.js files to prevent SyntaxError crashes on Homey Pro.
+---
+
+ [5.11.151] - 2026-03-31
 
 ### Bug Fixes
 - Removed emoji characters from all driver.js files to prevent SyntaxError crashes on Homey Pro.
