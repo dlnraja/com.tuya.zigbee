@@ -1,19 +1,12 @@
 {
-  "timestamp": "2026-03-31T03:37:11.369Z",
+  "timestamp": "2026-03-31T15:10:23.710Z",
   "added": [
     {
-      "fp": "_TZ3210_tgvtvdoc",
-      "driver": "universal_fallback",
+      "fp": "TUYATEC-qun7vq14",
+      "driver": "climate_sensor",
       "pids": [
-        "TS0207"
-      ]
-    },
-    {
-      "fp": "_TZ3000_awvmkayh",
-      "driver": "universal_fallback",
-      "pids": [
-        "TS0207",
-        "q9mpfhw"
+        "RH3052",
+        "TS0201"
       ]
     }
   ],
@@ -435,9 +428,9 @@
   },
   "summary": {
     "totalJohanFPs": 636,
-    "totalOurFPs": 3993,
-    "missingFPs": 2,
-    "addedFPs": 2,
+    "totalOurFPs": 3989,
+    "missingFPs": 1,
+    "addedFPs": 1,
     "skippedFPs": 0,
     "dpGaps": 0,
     "newDrivers": 91,

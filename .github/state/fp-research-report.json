@@ -1,22 +1,23 @@
 {
-  "timestamp": "2026-03-31T03:37:12.066Z",
+  "timestamp": "2026-03-31T15:10:26.662Z",
   "total": 1,
-  "resolved": 1,
-  "unknown": 0,
+  "resolved": 0,
+  "unknown": 1,
   "falsePositives": 0,
   "results": [
     {
-      "fp": "_TZ3000_kxaow5ki",
+      "fp": "_TZE200_u6x1zyv2",
       "valid": true,
-      "prefix": "standard",
-      "driver": "button_wireless_1",
+      "prefix": "tuya_dp",
+      "driver": null,
       "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
+      "confidence": 0,
+      "sources": [],
       "method": null,
-      "driverExists": true
+      "falsePositive": {
+        "isFP": false,
+        "reason": "unknown_not_false"
+      }
     }
   ]
 }

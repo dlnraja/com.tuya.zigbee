@@ -1,10 +1,10 @@
 {
-  "ts": "2026-03-31T03:48:09.180Z",
+  "ts": "2026-03-31T15:21:44.097Z",
   "ghCalls": 120,
-  "totalFPs": 93,
+  "totalFPs": 92,
   "newFPs": 2,
   "researched": 1,
-  "implemented": 2,
+  "implemented": 0,
   "results": [
     {
       "fp": "_TZE200_u6x1zyv2",
@@ -16,10 +16,7 @@
       ],
       "discoveredPIDs": [],
       "variants": 2,
-      "actions": [
-        "added_pid:TS0601",
-        "added_pid:TS0203"
-      ],
+      "actions": [],
       "sources": [
         "JohanBendz/com.tuya.zigbee#1347 (issue)",
         "JohanBendz/com.tuya.zigbee#1272 (issue)"

@@ -1,6 +1,6 @@
 # 🏠 Universal Tuya Zigbee v5.11.152
 
-> **191 drivers** · **4339+ fingerprints** · Updated 2026-03-31
+> **191 drivers** · **4314+ fingerprints** · Updated 2026-03-31
 
 Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.
 
@@ -10,16 +10,16 @@ Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehens
 
 ## What's New (v5.11.152)
 
-Universal Tuya Zigbee app v5.11.152 fixes rain sensor pairing issues and improves driver stability.
+Universal Tuya Zigbee app v5.11.152 includes no new drivers or fingerprints, and no bug fixes.
 
 ## Supported Devices
 
 | Category | Drivers | FPs |
 |---|---|---|
-| 🔌 Socket | 48 | 883 |
+| 🔌 Socket | 48 | 880 |
 | 💡 Light | 21 | 440 |
-| 📡 Sensor | 43 | 1848 |
-| 🌡️ Thermostat | 13 | 363 |
+| 📡 Sensor | 43 | 1842 |
+| 🌡️ Thermostat | 13 | 348 |
 | 🪟 Windowcoverings | 3 | 161 |
 | 🔐 Lock | 4 | 22 |
 | 🌀 Fan | 10 | 37 |
@@ -28,7 +28,7 @@ Universal Tuya Zigbee app v5.11.152 fixes rain sensor pairing issues and improve
 | 🔘 Button | 2 | 12 |
 | 🔥 Heater | 4 | 12 |
 | 🚗 Garagedoor | 3 | 13 |
-| 📦 Other | 15 | 442 |
+| 📦 Other | 15 | 441 |
 | 📦 Curtain | 2 | 9 |
 
 [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) — search by fingerprint

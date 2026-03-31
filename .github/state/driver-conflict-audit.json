@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-31T03:37:11.996Z",
+  "timestamp": "2026-03-31T15:10:24.438Z",
   "pidConflicts": [
     {
       "pid": "TS004F",
@@ -755,28 +755,6 @@
   ],
   "mfrConflicts": [
     {
-      "mfr": "_TZE200_nnrfa68v",
-      "drivers": [
-        "air_quality_comprehensive",
-        "radiator_valve_zigbee"
-      ],
-      "sharedPids": [
-        "TS0601"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TZE204_nnrfa68v",
-      "drivers": [
-        "air_quality_comprehensive",
-        "radiator_valve_zigbee"
-      ],
-      "sharedPids": [
-        "TS0601"
-      ],
-      "risk": "high"
-    },
-    {
       "mfr": "_TZ3210_s8lvbbu",
       "drivers": [
         "bulb_rgb",
@@ -938,6 +916,17 @@
       "risk": "high"
     },
     {
+      "mfr": "_TZ3000_5e235jpa",
+      "drivers": [
+        "button_wireless_2",
+        "wall_remote_2_gang"
+      ],
+      "sharedPids": [
+        "TS0042"
+      ],
+      "risk": "high"
+    },
+    {
       "mfr": "_TYZB02_key8kk7r",
       "drivers": [
         "button_wireless_3",
@@ -1022,41 +1011,6 @@
       ],
       "sharedPids": [
         "TS0044"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "HOBEIAN",
-      "drivers": [
-        "climate_sensor",
-        "contact_sensor",
-        "presence_sensor_radar",
-        "soil_sensor"
-      ],
-      "sharedPids": [
-        "TS0601"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "Hobeian",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ],
-      "sharedPids": [
-        "TS0601"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "hobeian",
-      "drivers": [
-        "climate_sensor",
-        "presence_sensor_radar"
-      ],
-      "sharedPids": [
-        "TS0601"
       ],
       "risk": "high"
     },
@@ -1182,87 +1136,10 @@
       "risk": "high"
     },
     {
-      "mfr": "_TZE200_2ekuz3dz",
-      "drivers": [
-        "floor_heating_thermostat",
-        "radiator_valve_zigbee"
-      ],
-      "sharedPids": [
-        "TS0601"
-      ],
-      "risk": "high"
-    },
-    {
       "mfr": "_TZE200_rufdtfyv",
       "drivers": [
         "floor_heating_thermostat",
         "radiator_valve"
-      ],
-      "sharedPids": [
-        "TS0601"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TYST11_ckud7u2l",
-      "drivers": [
-        "radiator_valve",
-        "radiator_valve_zigbee"
-      ],
-      "sharedPids": [
-        "TS0601"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TYST11_cwnjrr72",
-      "drivers": [
-        "radiator_valve",
-        "radiator_valve_zigbee"
-      ],
-      "sharedPids": [
-        "TS0601"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TYST11_jeaxp72v",
-      "drivers": [
-        "radiator_valve",
-        "radiator_valve_zigbee"
-      ],
-      "sharedPids": [
-        "TS0601"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TYST11_ywdxldoj",
-      "drivers": [
-        "radiator_valve",
-        "radiator_valve_zigbee"
-      ],
-      "sharedPids": [
-        "TS0601"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TZE200_lnbfnyxd",
-      "drivers": [
-        "radiator_valve",
-        "radiator_valve_zigbee"
-      ],
-      "sharedPids": [
-        "TS0601"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TZE200_mudxchsu",
-      "drivers": [
-        "radiator_valve",
-        "radiator_valve_zigbee"
       ],
       "sharedPids": [
         "TS0601"
@@ -1284,72 +1161,6 @@
       "mfr": "_TZE200_rxq4iti9",
       "drivers": [
         "radiator_valve",
-        "smart_lcd_thermostat"
-      ],
-      "sharedPids": [
-        "TS0601"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TZE200_ckud7u2l",
-      "drivers": [
-        "radiator_valve_zigbee",
-        "smart_heater"
-      ],
-      "sharedPids": [
-        "TS0601"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TZE200_ywdxldoj",
-      "drivers": [
-        "radiator_valve_zigbee",
-        "thermostat_tuya_dp"
-      ],
-      "sharedPids": [
-        "TS0601"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TZE200_cwnjrr72",
-      "drivers": [
-        "radiator_valve_zigbee",
-        "thermostat_tuya_dp"
-      ],
-      "sharedPids": [
-        "TS0601"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TZE200_kly8gjlz",
-      "drivers": [
-        "radiator_valve_zigbee",
-        "smart_lcd_thermostat"
-      ],
-      "sharedPids": [
-        "TS0601"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TZE200_a4bpgplm",
-      "drivers": [
-        "radiator_valve_zigbee",
-        "thermostat_tuya_dp"
-      ],
-      "sharedPids": [
-        "TS0601"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TZE200_b6wax7g0",
-      "drivers": [
-        "radiator_valve_zigbee",
         "smart_lcd_thermostat"
       ],
       "sharedPids": [
@@ -1959,7 +1770,7 @@
     "totalDrivers": 190,
     "pidConflicts": 57,
     "highSeverity": 23,
-    "mfrConflicts": 61,
+    "mfrConflicts": 44,
     "orphans": 50,
     "splitSuggestions": 23
   }
