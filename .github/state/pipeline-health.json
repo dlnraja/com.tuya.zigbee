@@ -1,13 +1,6 @@
 {
   "runs": [
     {
-      "ts": "2026-03-19T15:58:51.791Z",
-      "wf": "Daily Everything Pipeline",
-      "stale": 0,
-      "missing": 0,
-      "alerts": 0
-    },
-    {
       "ts": "2026-03-20T04:27:34.336Z",
       "wf": "Daily Everything Pipeline",
       "stale": 0,
@@ -209,19 +202,26 @@
       "stale": 0,
       "missing": 0,
       "alerts": 0
+    },
+    {
+      "ts": "2026-03-31T06:20:12.351Z",
+      "wf": "Nightly Auto-Process",
+      "stale": 0,
+      "missing": 0,
+      "alerts": 0
     }
   ],
   "alerts": [],
-  "lastRun": "2026-03-31T04:19:41.409Z",
+  "lastRun": "2026-03-31T06:20:12.351Z",
   "fileHealth": {
     "nightly-state.json": {
       "ok": true,
-      "ageH": 1,
+      "ageH": 0,
       "size": 3978
     },
     "diagnostics-state.json": {
       "ok": true,
-      "ageH": 1,
+      "ageH": 0,
       "size": 9566
     },
     "pattern-data.json": {
@@ -231,17 +231,17 @@
     },
     "resolver-state.json": {
       "ok": true,
-      "ageH": 1,
+      "ageH": 0,
       "size": 8164
     },
     "issue-manager-state.json": {
       "ok": true,
-      "ageH": 1,
-      "size": 16042
+      "ageH": 0,
+      "size": 16120
     },
     "github-state.json": {
       "ok": true,
-      "ageH": 1,
+      "ageH": 0,
       "size": 1582
     }
   }
