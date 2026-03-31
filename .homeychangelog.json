@@ -1,4 +1,7 @@
 {
+  "5.11.152": {
+    "en": "Universal Tuya Zigbee app v5.11.152 fixes rain sensor pairing issues and improves driver stability."
+  },
   "5.11.151": {
     "en": "Universal Tuya Zigbee app v5.11.151: Critical fix for SyntaxError crashes and updated drivers."
   },
@@ -55,11 +58,5 @@
   },
   "5.11.131": {
     "en": "Universal Tuya Zigbee app v5.11.131 adds new device fingerprints and enhances multi-protocol bug detection."
-  },
-  "5.11.130": {
-    "en": "Universal Tuya Zigbee app v5.11.130: Added new device fingerprints, fixed critical SDK compatibility issues, and improved bug detection."
-  },
-  "5.11.152": {
-    "en": "v5.11.151: Removed emoji characters from all driver.js files to prevent SyntaxError crashes on Homey Pro., Total drivers: 191, Total fingerprints: 3185"
   }
 }
