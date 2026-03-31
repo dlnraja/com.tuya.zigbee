@@ -1,9 +1,11 @@
 {
-  "timestamp": "2026-03-31T07:32:12.993Z",
-  "processed": 0,
-  "commented": 0,
+  "timestamp": "2026-03-31T19:22:04.091Z",
+  "processed": 1,
+  "commented": 1,
   "closed": 0,
-  "protocols": {},
+  "protocols": {
+    "zcl": 1
+  },
   "errors": [],
   "fpPidPairs": [],
   "kbMatches": 0
