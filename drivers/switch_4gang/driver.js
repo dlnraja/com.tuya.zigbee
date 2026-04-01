@@ -70,17 +70,17 @@ class Switch4GangDriver extends ZigBeeDriver {
 
       this.gang2IsOnCondition = this.homey.flow.getConditionCard('switch_4gang_gang2_is_on');
       this.gang2IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
-        return args.device.getCapabilityValue('onoff.ganggang2') === true;
+        return args.device.getCapabilityValue('onoff.gang2') === true;
       }));
 
       this.gang3IsOnCondition = this.homey.flow.getConditionCard('switch_4gang_gang3_is_on');
       this.gang3IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
-        return args.device.getCapabilityValue('onoff.ganggang3') === true;
+        return args.device.getCapabilityValue('onoff.gang3') === true;
       }));
 
       this.gang4IsOnCondition = this.homey.flow.getConditionCard('switch_4gang_gang4_is_on');
       this.gang4IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
-        return args.device.getCapabilityValue('onoff.ganggang4') === true;
+        return args.device.getCapabilityValue('onoff.gang4') === true;
       }));
 
       // Register flow card actions - v5.5.562: using safe wrapper
@@ -96,32 +96,32 @@ class Switch4GangDriver extends ZigBeeDriver {
 
       this.gang2OnAction = this.homey.flow.getActionCard('switch_4gang_turn_on_gang2');
       this.gang2OnAction.registerRunListener(this._safeAction(async (args) => {
-        await args.device.triggerCapabilityListener('onoff.ganggang2', true);
+        await args.device.triggerCapabilityListener('onoff.gang2', true);
       }));
 
       this.gang2OffAction = this.homey.flow.getActionCard('switch_4gang_turn_off_gang2');
       this.gang2OffAction.registerRunListener(this._safeAction(async (args) => {
-        await args.device.triggerCapabilityListener('onoff.ganggang2', false);
+        await args.device.triggerCapabilityListener('onoff.gang2', false);
       }));
 
       this.gang3OnAction = this.homey.flow.getActionCard('switch_4gang_turn_on_gang3');
       this.gang3OnAction.registerRunListener(this._safeAction(async (args) => {
-        await args.device.triggerCapabilityListener('onoff.ganggang3', true);
+        await args.device.triggerCapabilityListener('onoff.gang3', true);
       }));
 
       this.gang3OffAction = this.homey.flow.getActionCard('switch_4gang_turn_off_gang3');
       this.gang3OffAction.registerRunListener(this._safeAction(async (args) => {
-        await args.device.triggerCapabilityListener('onoff.ganggang3', false);
+        await args.device.triggerCapabilityListener('onoff.gang3', false);
       }));
 
       this.gang4OnAction = this.homey.flow.getActionCard('switch_4gang_turn_on_gang4');
       this.gang4OnAction.registerRunListener(this._safeAction(async (args) => {
-        await args.device.triggerCapabilityListener('onoff.ganggang4', true);
+        await args.device.triggerCapabilityListener('onoff.gang4', true);
       }));
 
       this.gang4OffAction = this.homey.flow.getActionCard('switch_4gang_turn_off_gang4');
       this.gang4OffAction.registerRunListener(this._safeAction(async (args) => {
-        await args.device.triggerCapabilityListener('onoff.ganggang4', false);
+        await args.device.triggerCapabilityListener('onoff.gang4', false);
       }));
 
       // v5.5.930: LED backlight flow cards
@@ -150,7 +150,7 @@ class Switch4GangDriver extends ZigBeeDriver {
       } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
 
       // v5.12.0: Toggle per gang + all on/off
-      const caps = ['onoff', 'onoff.ganggang2', 'onoff.ganggang3', 'onoff.ganggang4'];
+      const caps = ['onoff', 'onoff.gang2', 'onoff.gang3', 'onoff.gang4'];
       ['gang1', 'gang2', 'gang3', 'gang4'].forEach((gang, idx) => {
         try {
           this.homey.flow.getActionCard(`switch_4gang_toggle_${gang}`)

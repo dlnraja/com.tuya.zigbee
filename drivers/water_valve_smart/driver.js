@@ -52,7 +52,7 @@ class WaterValveSmartDriver extends Homey.Driver {
       this.homey.flow.getActionCard('water_valve_smart_open')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setCapabilityValue('onoff', true);
+          await args.device.triggerCapabilityListener('onoff', true);
           return true;
         });
       this.log('[FLOW] ✅ water_valve_smart_open');
@@ -63,7 +63,7 @@ class WaterValveSmartDriver extends Homey.Driver {
       this.homey.flow.getActionCard('water_valve_smart_close')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setCapabilityValue('onoff', false);
+          await args.device.triggerCapabilityListener('onoff', false);
           return true;
         });
       this.log('[FLOW] ✅ water_valve_smart_close');
@@ -75,7 +75,7 @@ class WaterValveSmartDriver extends Homey.Driver {
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
-          await args.device.setCapabilityValue('onoff', !current);
+          await args.device.triggerCapabilityListener('onoff', !current);
           return true;
         });
       this.log('[FLOW] ✅ water_valve_toggle');

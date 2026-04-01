@@ -25,24 +25,15 @@
         "clusters": [
           0,
           6
-        ],
-        "bindings": [
-          6
         ]
       },
       "2": {
         "clusters": [
           6
-        ],
-        "bindings": [
-          6
         ]
       },
       "3": {
         "clusters": [
-          6
-        ],
-        "bindings": [
           6
         ]
       }
@@ -656,13 +647,6 @@
         "en": "Gang 3",
         "fr": "Gang 3"
       }
-    }
-  },
-  "learnmode": {
-    "image": "./assets/learnmode.svg",
-    "instruction": {
-      "en": "Press and hold the reset button for 5 seconds until the LED blinks",
-      "fr": "Appuyez et maintenez le bouton reset pendant 5 secondes jusqu'à ce que la LED clignote"
     }
   },
   "metadata": {

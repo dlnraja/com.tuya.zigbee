@@ -10,6 +10,14 @@
     "sourceType": "module"
   },
   "rules": {
+    "linebreak-style": "off",
+    "no-unused-vars": "off",
+    "no-empty": "off",
+    "no-case-declarations": "off",
+    "no-useless-escape": "off",
+    "no-useless-catch": "off",
+    "no-constant-condition": "off",
+    "no-undef": "off",
     "indent": [
       "error",
       2
@@ -47,3 +55,5 @@
     "test/"
   ]
 }
+
+

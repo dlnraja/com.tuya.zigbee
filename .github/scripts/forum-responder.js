@@ -355,7 +355,7 @@ async function main(){
         
         if(!dry) {
             console.log('  🤖 Applying humanization pass to final response...');
-            const humanizePrompt = Rewrite the following forum response to sound entirely human, natural, and empathetic, written by the maintainer 'dlnraja' responding directly to users. 
+            const humanizePrompt = `Rewrite the following forum response to sound entirely human, natural, and empathetic, written by the maintainer 'dlnraja' responding directly to users.
 CRITICAL INSTRUCTIONS:
 1. Address the users' context and issues naturally.
 2. DO NOT mention background YAML automations, GitHub Actions, invisible JSON rule fixes, or AI/bot systems. Keep technical fixes focused ONLY on what the user actually cares about (e.g. "I added your fingerprint to the switch driver" or "I fixed the battery reading").
@@ -363,7 +363,7 @@ CRITICAL INSTRUCTIONS:
 4. If there are multiple users addressed, keep the structure clear but conversational.
 5. Use markdown for device names or codes.
 6. Return ONLY the rewritten text, nothing else.
-7. Output in English (or the language of the users).;
+7. Output in English (or the language of the users).`;
             
             try {
                 const hRes = await callAI(contentToHumanize, humanizePrompt, { maxTokens: 2000, complexity: 'high' });
@@ -424,6 +424,9 @@ CRITICAL INSTRUCTIONS:
   }
 }
 main().catch(e=>{console.error('Fatal:',e.message);process.exit(1)});
+
+
+
 
 
 

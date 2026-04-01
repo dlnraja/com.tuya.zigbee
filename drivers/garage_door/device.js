@@ -5,9 +5,7 @@ class GarageDoorDevice extends TuyaSpecificClusterDevice {
     this.log('[GARAGE] initializing...');
     if (this.hasCapability('garagedoor_closed')) {
       this.registerCapabilityListener('garagedoor_closed', async (value) => {
-        this.log('[GARAGE] Door ' + (valu
-    await super.onNodeInit({ zclNode });
-e ? 'CLOSE' : 'OPEN'));
+        this.log('[GARAGE] Door ' + (value ? 'CLOSE' : 'OPEN'));
         await this.sendTuyaCommand(1, true, 'bool');
       });
     }
@@ -46,3 +44,4 @@ e ? 'CLOSE' : 'OPEN'));
   }
 }
 module.exports = GarageDoorDevice;
+

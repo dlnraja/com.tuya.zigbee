@@ -39,8 +39,8 @@ class HVACControllerDevice extends TuyaZigbeeDevice {
     this.registerCapabilityListener('thermostat_mode', async (value) => {
       this._markAppCommand?.();
       if 
-    await super.onNodeInit({ zclNode });
-(value === 'off') {
+
+      (value === 'off') {
         await this._tuyaEF00Manager?.sendTuyaDP(1, 1, 0);
       } else {
         await this._tuyaEF00Manager?.sendTuyaDP(1, 1, 1);
@@ -52,3 +52,5 @@ class HVACControllerDevice extends TuyaZigbeeDevice {
   }
 }
 module.exports = HVACControllerDevice;
+
+

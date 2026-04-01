@@ -78,9 +78,7 @@ class RGBWBulbDevice extends HybridLightBase {
     }
     if (this.hasCapability('light_mode')) {
       this.registerCapabilityListener('light_mode', async (v) => {
-        await this._sendTuyaDP(2, v === '
-    await super.onNodeInit({ zclNode });
-color' ? 1 : 0, 'enum');
+        await this._sendTuyaDP(2, v === 'color' ? 1 : 0, 'enum');
       });
     }
   }
@@ -103,3 +101,4 @@ color' ? 1 : 0, 'enum');
 }
 
 module.exports = RGBWBulbDevice;
+

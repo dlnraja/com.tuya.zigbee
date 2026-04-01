@@ -70,8 +70,8 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('onoff', true);
-          if (args.device.hasCapability('onoff.ganggang2')) {
-            await args.device.triggerCapabilityListener('onoff.ganggang2', true);
+          if (args.device.hasCapability('onoff.gang2')) {
+            await args.device.triggerCapabilityListener('onoff.gang2', true);
           }
           return true;
         });
@@ -83,8 +83,8 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('onoff', false);
-          if (args.device.hasCapability('onoff.ganggang2')) {
-            await args.device.triggerCapabilityListener('onoff.ganggang2', false);
+          if (args.device.hasCapability('onoff.gang2')) {
+            await args.device.triggerCapabilityListener('onoff.gang2', false);
           }
           return true;
         });

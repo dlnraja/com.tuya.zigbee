@@ -13,9 +13,9 @@ class SwitchDimmer1GangDevice extends TuyaSpecificClusterDevice {
       this._mark(); await this.sendTuyaCommand(DP.state, v, 'bool');
     });
     this.registerCapabilityListener('dim', async (v) => {
-      this._mark(); await this.sendTuyaCo
-    await super.onNodeInit({ zclNode });
-mmand(DP.brightness, Math.round(10 + v * 990), 'value');
+      this._mark(); await this.sendTuyaCo;
+      await super.onNodeInit({ zclNode });
+      mmand(DP.brightness, Math.round(10 + v * 990), 'value');
     });
     this.log('Switch Dimmer 1-Gang ready');
   }

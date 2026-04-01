@@ -40,8 +40,8 @@ class FloorHeatingThermostatDevice extends TuyaZigbeeDevice {
     this.registerCapabilityListener('thermostat_mode', async (value) => {
       this._markAppCommand?.();
       if 
-    await super.onNodeInit({ zclNode });
-(this._tuyaEF00Manager) {
+
+      (this._tuyaEF00Manager) {
         await this._tuyaEF00Manager.sendTuyaDP(2, 4, MODE_MAP_REV[value] ?? 0);
       }
     });
@@ -50,3 +50,5 @@ class FloorHeatingThermostatDevice extends TuyaZigbeeDevice {
   }
 }
 module.exports = FloorHeatingThermostatDevice;
+
+

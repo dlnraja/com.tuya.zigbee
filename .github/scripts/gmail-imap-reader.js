@@ -17,7 +17,7 @@ function aggressiveSanitize(text) {
   clean = clean.replace(/(?:[0-9]{1,3}.){3}[0-9]{1,3}/g, '[REDACTED_IP]');
   
   // 3. Remove common phone number patterns
-  clean = clean.replace(/+?([0-9]{1,3})?[-. ]?(?[0-9]{1,4})?[-. ]?[0-9]{1,4}[-. ]?[0-9]{1,4}[-. ]?[0-9]{1,9}/g, function(match) {
+  clean = clean.replace(/\+?([0-9]{1,3})?[-. ]?\(?([0-9]{1,4})\)?[-. ]?[0-9]{1,4}[-. ]?[0-9]{1,4}[-. ]?[0-9]{1,9}/g, function(match) {
     // Only redact if it looks like a phone number and not a diagnostic ID or timestamp
     if (match.replace(/[^0-9]/g, '').length >= 8 && !match.includes(':')) {
        return '[REDACTED_PHONE]';
@@ -354,3 +354,4 @@ async function readViaIMAP(opts = {}) {
 }
 
 module.exports = { readViaIMAP, parseMIME, htmlToText, extractPseudo, extractCrashData, decodeRFC2047 };
+

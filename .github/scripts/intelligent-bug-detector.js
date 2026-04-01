@@ -61,10 +61,10 @@ This helps us identify new variants or edge cases.`
 This was a **known bug fixed in v5.12.3**.
 
 **Root cause:** 
-Heavy initialization in `TuyaZigbeeDevice.onNodeInit()` could crash before capability listeners were registered, causing "Missing Capability Listener" errors.
+Heavy initialization in \`TuyaZigbeeDevice.onNodeInit()\` could crash before capability listeners were registered, causing "Missing Capability Listener" errors.
 
 **Solution implemented in v5.12.3:**
-✅ Capability listeners now registered **BEFORE** `super.onNodeInit()`
+✅ Capability listeners now registered **BEFORE** super.onNodeInit()
 ✅ Prevents initialization crash from blocking listener setup
 ✅ Battery status reporting also fixed
 
@@ -97,7 +97,7 @@ If issue persists after updating and re-pairing, please provide:
 This was **fixed in v6.0** thanks to @Robsta86's contribution (PR #180)!
 
 **Root cause:**
-TS0601 devices (Tuya DP protocol) reject standard ZCL bindings `[1, 1280, 1030]` with `zdoInvalidEndpoint` error.
+TS0601 devices (Tuya DP protocol) reject standard ZCL bindings [1, 1280, 1030] with zdoInvalidEndpoint error.
 
 **Solution in v6.0:**
 ✅ Changed bindings to `[61184]` (Tuya DP cluster only)
@@ -131,21 +131,21 @@ The fix is automatic in v6.0+.`
     response: `🔌 **Multi-Gang Switch Flow Card Issue Detected**
 
 **v6.0 improvements for multi-gang switches:**
-✅ Comprehensive error recovery in `onNodeInit()`
+✅ Comprehensive error recovery in onNodeInit()
 ✅ Graceful degradation prevents total device failure
 ✅ Better logging for diagnosis
 
 **Common causes:**
 
 1. **Capability naming convention:**
-   - Gang 1: `onoff` (NOT `onoff.gang1`)
-   - Gang 2: `onoff.gang2`
-   - Gang 3: `onoff.gang3`
-   - Gang 4: `onoff.gang4`
+   - Gang 1: onoff (NOT onoff.gang1)
+   - Gang 2: onoff.gang2
+   - Gang 3: onoff.gang3
+   - Gang 4: onoff.gang4
 
 2. **Flow card ID pattern:**
-   - Must match: `switch_Xgang_turn_on_gangN`
-   - Example: `switch_3gang_turn_on_gang2`
+   - Must match: switch_Xgang_turn_on_gangN
+   - Example: switch_3gang_turn_on_gang2
 
 3. **Driver initialization error:**
    - Update to v6.0+ for improved error recovery
@@ -178,12 +178,12 @@ Please provide diagnostic report if issue persists after updating.`
 This critical issue was **fixed in v6.0** (March 2026).
 
 **Root cause:**
-Exception in `onNodeInit()` prevented device initialization, leaving device in broken state.
+Exception in onNodeInit() prevented device initialization, leaving device in broken state.
 
 **v6.0 Solution:**
 ✅ Comprehensive try-catch in all multi-gang switches
 ✅ Non-fatal error handling - device remains partially functional
-✅ Clear user messaging via `setUnavailable()`
+✅ Clear user messaging via setUnavailable()
 ✅ Enhanced logging for diagnostics
 
 **Affected drivers (all fixed in v6.0):**
@@ -241,3 +241,10 @@ function analyzeAndRespond(title, body) {
 }
 
 module.exports = { BUG_PATTERNS, analyzeAndRespond };
+
+
+
+
+
+
+

@@ -28,7 +28,7 @@ class CeilingFanDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('ceiling_fan_turn_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setCapabilityValue('onoff', true);
+          await args.device.triggerCapabilityListener('onoff', true);
           return true;
         });
       this.log('[FLOW] ✅ ceiling_fan_turn_on');
@@ -39,7 +39,7 @@ class CeilingFanDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('ceiling_fan_turn_off')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setCapabilityValue('onoff', false);
+          await args.device.triggerCapabilityListener('onoff', false);
           return true;
         });
       this.log('[FLOW] ✅ ceiling_fan_turn_off');
@@ -51,7 +51,7 @@ class CeilingFanDriver extends ZigBeeDriver {
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
-          await args.device.setCapabilityValue('onoff', !current);
+          await args.device.triggerCapabilityListener('onoff', !current);
           return true;
         });
       this.log('[FLOW] ✅ ceiling_fan_toggle');
@@ -62,7 +62,7 @@ class CeilingFanDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('ceiling_fan_set_dim')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setCapabilityValue('dim', args.brightness);
+          await args.device.triggerCapabilityListener('dim', args.brightness);
           return true;
         });
       this.log('[FLOW] ✅ ceiling_fan_set_dim');

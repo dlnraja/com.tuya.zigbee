@@ -187,6 +187,8 @@ class SoilSensorDevice extends TuyaHybridDevice {
       // Value is in 0.01°C units, divide by 100
       // ═══════════════════════════════════════════════════════════════════
       temperatureMeasurement: {
+        requireBinding: false,
+        requireReporting: false,
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
             const temp = data.measuredValue / 100;
@@ -202,6 +204,8 @@ class SoilSensorDevice extends TuyaHybridDevice {
       // Value is in 0.01% units, divide by 100
       // ═══════════════════════════════════════════════════════════════════
       relativeHumidity: {
+        requireBinding: false,
+        requireReporting: false,
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
             const humidity = data.measuredValue / 100;
@@ -219,6 +223,8 @@ class SoilSensorDevice extends TuyaHybridDevice {
       // BATTERY - ZCL standard cluster (0x0001)
       // ═══════════════════════════════════════════════════════════════════
       powerConfiguration: {
+        requireBinding: false,
+        requireReporting: false,
         attributeReport: (data) => {
           if (data.batteryPercentageRemaining !== undefined) {
             const battery = Math.round(data.batteryPercentageRemaining / 2);

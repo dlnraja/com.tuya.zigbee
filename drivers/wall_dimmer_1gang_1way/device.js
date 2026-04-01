@@ -75,9 +75,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
     });
     
     this.registerCapabilityListener('dim', async (value) => {
-      this.log('Dim capability changed to:',
-    await super.onNodeInit({zclNode});
- value, '(APP)');
+      this.log('Dim capability changed to:', value, '(APP)');
       this._markAppCommand();  // v5.5.755: PR #112 - Mark as app command
       const brightness = Math.round(10 + (value * 990));
       this.log('Converted to Tuya brightness:', brightness);
@@ -417,3 +415,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
 }
 
 module.exports = WallDimmer1Gang1Way;
+
+
+
+
