@@ -30,6 +30,26 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
+## 🚀 Latest Updates
+
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### ✨ Recent Changes (Apr 2026)
+
+| Version | Feature |
+|---------|---------|
+| **v5.11.152** | v5.11.151: Removed emoji characters from all driver.js files to prevent Synta... |
+| **v5.11.151** | Universal Tuya Zigbee app v5.11.151: Critical fix for SyntaxError crashes and... |
+| **v5.11.150** | Universal Tuya Zigbee app v5.11.150 adds new drivers and fingerprints, enhanc... |
+| **v5.11.149** | Universal Tuya Zigbee app v5.11.149 adds new drivers and fingerprints, enhanc... |
+| **v5.11.148** | Universal Tuya Zigbee app v5.11.148 adds new device fingerprints and fixes bu... |
+| **v5.11.147** | Universal Tuya Zigbee app v5.11.147 adds new device fingerprints and fixes is... |
+| **v5.11.146** | Universal Tuya Zigbee app v5.11.146 adds new drivers and fixes initialization... |
+| **v5.11.145** | Universal Tuya Zigbee app v5.11.145 adds new device support and fixes critica... |
+| **v5.11.144** | Universal Tuya Zigbee app v5.11.144 adds new device fingerprints and fixes is... |
+| **v5.11.143** | Universal Tuya Zigbee app v5.11.143 adds new drivers and capabilities, enhanc... |
+<!-- CHANGELOG_END -->
+
+
 ## Statistics
 
 | Metric | Value |

@@ -52,7 +52,14 @@
       "TS0207",
       "ZG-223Z",
       "ZG-222Z"
-    ]
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0
+        ]
+      }
+    }
   },
   "images": {
     "small": "drivers/rain_sensor/assets/images/small.png",
