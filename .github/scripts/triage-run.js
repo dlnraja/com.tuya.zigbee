@@ -69,7 +69,7 @@ const summary=[];
 function isOwnerPost(it) {
   try {
     const author = it.user?.login || '';
-    return author.toLowerCase() === 'dlnraja';
+    return author.toLowerCase() === 'dlnraja' || author.toLowerCase() === (process.env.GITHUB_REPOSITORY_OWNER||'').toLowerCase();
   } catch { return false; }
 }
 // Issues

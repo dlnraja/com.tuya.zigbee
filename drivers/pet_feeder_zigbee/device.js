@@ -18,9 +18,7 @@ class PetFeederZigbeeDevice extends TuyaZigbeeDevice {
 
     this.registerCapabilityListener('button', async () => {
       this._markAppCommand?.();
-      if 
-    await super.onNodeInit({ zclNode });
-(this._tuyaEF00Manager) {
+      if (this._tuyaEF00Manager) {
         // DP4: manual feed (1 portion)
         await this._tuyaEF00Manager.sendTuyaDP(4, 2, 1);
       }
@@ -30,3 +28,4 @@ class PetFeederZigbeeDevice extends TuyaZigbeeDevice {
   }
 }
 module.exports = PetFeederZigbeeDevice;
+

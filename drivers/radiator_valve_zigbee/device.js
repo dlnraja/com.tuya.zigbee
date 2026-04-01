@@ -67,9 +67,7 @@ class RadiatorValveZigbeeDevice extends HybridThermostatBase {
       this.registerCapabilityListener('child_lock', this.onChildLockChange.bind(this));
     }
 
-    this.log('[TRV-ZIGBEE] ✅ Comprehens
-    await super.onNodeInit({ zclNode });
-ive TRV initialized');
+    this.log('[TRV-ZIGBEE] ✅ Comprehensive TRV initialized');
   }
 
   async onTargetTemperatureChange(value) {
@@ -160,3 +158,4 @@ ive TRV initialized');
 }
 
 module.exports = RadiatorValveZigbeeDevice;
+

@@ -43,7 +43,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('bulb_rgb_smart_bulb_rgb_turn_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setCapabilityValue('onoff', true);
+          await args.device.triggerCapabilityListener('onoff', true);
           return true;
         });
       this.log('[FLOW] ✅ bulb_rgb_smart_bulb_rgb_turn_on');
@@ -54,7 +54,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('bulb_rgb_smart_bulb_rgb_turn_off')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setCapabilityValue('onoff', false);
+          await args.device.triggerCapabilityListener('onoff', false);
           return true;
         });
       this.log('[FLOW] ✅ bulb_rgb_smart_bulb_rgb_turn_off');
@@ -66,7 +66,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
-          await args.device.setCapabilityValue('onoff', !current);
+          await args.device.triggerCapabilityListener('onoff', !current);
           return true;
         });
       this.log('[FLOW] ✅ bulb_rgb_smart_bulb_rgb_toggle');
@@ -77,7 +77,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('bulb_rgb_smart_bulb_rgb_set_dim')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setCapabilityValue('dim', args.brightness);
+          await args.device.triggerCapabilityListener('dim', args.brightness);
           return true;
         });
       this.log('[FLOW] ✅ bulb_rgb_smart_bulb_rgb_set_dim');

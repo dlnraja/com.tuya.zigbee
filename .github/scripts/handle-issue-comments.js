@@ -77,14 +77,14 @@ async function handleComment(context) {
       owner: context.repo.owner,
       repo: context.repo.repo,
       issue_number: issue.number,
-      body: '⚠️ Sorry to hear the issue persists. This has been escalated for deeper investigation. Please ensure you\'ve provided:
+      body: `⚠️ Sorry to hear the issue persists. This has been escalated for deeper investigation. Please ensure you've provided:
 
 - Full diagnostic report
 - App version number
 - Exact manufacturer name and product ID
 - Complete error messages from logs
 
-This will help identify the root cause.'
+This will help identify the root cause.`
     });
   }
 }
@@ -125,3 +125,4 @@ Thank you for providing the diagnostic ID.
   }
   return null;
 }
+

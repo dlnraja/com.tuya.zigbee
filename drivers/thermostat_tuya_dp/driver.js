@@ -63,7 +63,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('thermostat_tuya_dp_set_target_temperature')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setCapabilityValue('target_temperature', args.temperature);
+          await args.device.triggerCapabilityListener('target_temperature', args.temperature);
           return true;
         });
       this.log('[FLOW] ✅ thermostat_tuya_dp_set_target_temperature');
@@ -74,7 +74,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('thermostat_tuya_dp_set_mode')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setCapabilityValue('tuya_thermostat_mode', args.mode);
+          await args.device.triggerCapabilityListener('tuya_thermostat_mode', args.mode);
           return true;
         });
       this.log('[FLOW] ✅ thermostat_tuya_dp_set_mode');
@@ -86,7 +86,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('target_temperature') || 20;
-          await args.device.setCapabilityValue('target_temperature', current + (args.degrees || 1));
+          await args.device.triggerCapabilityListener('target_temperature', current + (args.degrees || 1));
           return true;
         });
       this.log('[FLOW] ✅ thermostat_tuya_dp_increase_temperature');
@@ -98,7 +98,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('target_temperature') || 20;
-          await args.device.setCapabilityValue('target_temperature', current - (args.degrees || 1));
+          await args.device.triggerCapabilityListener('target_temperature', current - (args.degrees || 1));
           return true;
         });
       this.log('[FLOW] ✅ thermostat_tuya_dp_decrease_temperature');

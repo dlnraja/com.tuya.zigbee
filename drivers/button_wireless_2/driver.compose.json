@@ -91,12 +91,6 @@
           1281,
           57344,
           61184
-        ],
-        "bindings": [
-          1,
-          5,
-          6,
-          57344
         ]
       },
       "2": {
@@ -106,11 +100,6 @@
           5,
           6,
           18,
-          57344
-        ],
-        "bindings": [
-          5,
-          6,
           57344
         ]
       }
@@ -364,6 +353,42 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
+    },
+    {
+      "id": "button_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Operating Mode",
+        "fr": "Mode de fonctionnement"
+      },
+      "hint": {
+        "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+        "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto-Detect",
+            "fr": "Détection Auto"
+          }
+        },
+        {
+          "id": "scene",
+          "label": {
+            "en": "Scene Mode (Multi-press)",
+            "fr": "Mode Scène (Multi-clics)"
+          }
+        },
+        {
+          "id": "dimmer",
+          "label": {
+            "en": "Dimmer Mode",
+            "fr": "Mode Variateur"
+          }
+        }
+      ]
     }
   ],
   "pair": [

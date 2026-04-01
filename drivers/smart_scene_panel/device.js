@@ -11,9 +11,7 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
       const dp = 23 + g;
       if (this.hasCapability(cap)) {
         this.registerCapabilityListener(cap, async (value) => {
-          await this.sendDP(dp, 1, value 
-    await super.onNodeInit({ zclNode });
-? 1 : 0);
+          await this.sendDP(dp, 1, value ? 1 : 0);
         });
       }
     }
@@ -66,3 +64,6 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
 }
 
 module.exports = SmartScenePanelDevice;
+
+
+

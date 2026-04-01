@@ -39,7 +39,7 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('dimmer_dual_channel_turn_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setCapabilityValue('onoff', true);
+          await args.device.triggerCapabilityListener('onoff', true);
           return true;
         });
       this.log('[FLOW] ✅ dimmer_dual_channel_turn_on');
@@ -50,7 +50,7 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('dimmer_dual_channel_turn_off')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setCapabilityValue('onoff', false);
+          await args.device.triggerCapabilityListener('onoff', false);
           return true;
         });
       this.log('[FLOW] ✅ dimmer_dual_channel_turn_off');
@@ -62,7 +62,7 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
-          await args.device.setCapabilityValue('onoff', !current);
+          await args.device.triggerCapabilityListener('onoff', !current);
           return true;
         });
       this.log('[FLOW] ✅ dimmer_dual_channel_toggle');
@@ -73,7 +73,7 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('dimmer_dual_channel_set_dim')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setCapabilityValue('dim', args.level / 100);
+          await args.device.triggerCapabilityListener('dim', args.level / 100);
           return true;
         });
       this.log('[FLOW] ✅ dimmer_dual_channel_set_dim');
@@ -85,7 +85,7 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('dim') || 0;
-          await args.device.setCapabilityValue('dim', Math.min(1, current + 0.1));
+          await args.device.triggerCapabilityListener('dim', Math.min(1, current + 0.1));
           return true;
         });
       this.log('[FLOW] ✅ dimmer_dual_channel_dim_up');
@@ -97,7 +97,7 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('dim') || 0;
-          await args.device.setCapabilityValue('dim', Math.max(0, current - 0.1));
+          await args.device.triggerCapabilityListener('dim', Math.max(0, current - 0.1));
           return true;
         });
       this.log('[FLOW] ✅ dimmer_dual_channel_dim_down');

@@ -56,7 +56,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
           .registerRunListener(async (args) => {
             if (!args.device) return false;
             const current = args.device.getCapabilityValue(capMap[gang]);
-            await args.device.setCapabilityValue(capMap[gang], !current);
+            await args.device.triggerCapabilityListener(capMap[gang], !current);
             return true;
           });
         this.log(`[FLOW] ✅ switch_wall_5gang_toggle_gang${gang}`);

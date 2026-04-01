@@ -28,7 +28,7 @@ class MiniSwitchDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('module_mini_switch_turn_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setCapabilityValue('onoff', true);
+          await args.device.triggerCapabilityListener('onoff', true);
           return true;
         });
       this.log('[FLOW] ✅ module_mini_switch_turn_on');
@@ -39,7 +39,7 @@ class MiniSwitchDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('module_mini_switch_turn_off')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setCapabilityValue('onoff', false);
+          await args.device.triggerCapabilityListener('onoff', false);
           return true;
         });
       this.log('[FLOW] ✅ module_mini_switch_turn_off');
@@ -51,7 +51,7 @@ class MiniSwitchDriver extends ZigBeeDriver {
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
-          await args.device.setCapabilityValue('onoff', !current);
+          await args.device.triggerCapabilityListener('onoff', !current);
           return true;
         });
       this.log('[FLOW] ✅ module_mini_switch_toggle');

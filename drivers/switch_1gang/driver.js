@@ -51,7 +51,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
-          await args.device.setCapabilityValue('onoff', !current);
+          await args.device.triggerCapabilityListener('onoff', !current);
           return true;
         });
       this.log('[FLOW] ✅ switch_1gang_toggle');

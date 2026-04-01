@@ -202,9 +202,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridT
     // Target temperature - different DP per profile
     if (this.hasCapability('target_temperature')) {
       this.registerCapabilityListener('target_temperature', async (v) => {
-        const dp = profile === 'me167' ? 4
-    await super.onNodeInit({ zclNode });
- : 3;
+        const dp = profile === 'me167' ? 4 : 3;
         await this._sendTuyaDP(dp, Math.round(v * 10), 'value');
       });
     }
@@ -229,3 +227,4 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridT
 }
 
 module.exports = RadiatorValveDevice;
+

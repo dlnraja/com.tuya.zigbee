@@ -35,9 +35,6 @@
         "clusters": [
           0,
           6
-        ],
-        "bindings": [
-          6
         ]
       }
     },
@@ -47,5 +44,43 @@
         "en": "Press the button for aprox 10 seconds (the LED should start blinking)."
       }
     }
-  }
+  },
+  "settings": [
+    {
+      "id": "button_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Operating Mode",
+        "fr": "Mode de fonctionnement"
+      },
+      "hint": {
+        "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+        "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto-Detect",
+            "fr": "Détection Auto"
+          }
+        },
+        {
+          "id": "scene",
+          "label": {
+            "en": "Scene Mode (Multi-press)",
+            "fr": "Mode Scène (Multi-clics)"
+          }
+        },
+        {
+          "id": "dimmer",
+          "label": {
+            "en": "Dimmer Mode",
+            "fr": "Mode Variateur"
+          }
+        }
+      ]
+    }
+  ]
 }

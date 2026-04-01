@@ -51,7 +51,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('shutter_roller_controller_open')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setCapabilityValue('windowcoverings_set', 1);
+          await args.device.triggerCapabilityListener('windowcoverings_set', 1);
           return true;
         });
       this.log('[FLOW] ✅ shutter_roller_controller_open');
@@ -62,7 +62,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('shutter_roller_controller_close')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setCapabilityValue('windowcoverings_set', 0);
+          await args.device.triggerCapabilityListener('windowcoverings_set', 0);
           return true;
         });
       this.log('[FLOW] ✅ shutter_roller_controller_close');
@@ -73,7 +73,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('shutter_roller_controller_stop')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setCapabilityValue('windowcoverings_state', 'idle');
+          await args.device.triggerCapabilityListener('windowcoverings_state', 'idle');
           return true;
         });
       this.log('[FLOW] ✅ shutter_roller_controller_stop');
@@ -84,7 +84,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('shutter_roller_controller_set_position')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setCapabilityValue('windowcoverings_set', (args.position || 50) / 100);
+          await args.device.triggerCapabilityListener('windowcoverings_set', (args.position || 50) / 100);
           return true;
         });
       this.log('[FLOW] ✅ shutter_roller_controller_set_position');

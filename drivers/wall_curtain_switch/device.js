@@ -24,9 +24,7 @@ class WallCurtainSwitchDevice extends HybridCoverBase {
 
     if (this.hasCapability('windowcoverings_state')) {
       this.registerCapabilityListener('windowcoverings_state', async (value) => {
-        this.log('[WALL_CURTAIN_SWITCH] s
-    await super.onNodeInit({ zclNode });
-tate:', value);
+        this.log('[WALL_CURTAIN_SWITCH] state:', value);
         const ep = zclNode.endpoints[1];
         if (!ep || !ep.clusters || !ep.clusters.windowCovering) return;
         if (value === 'up') await ep.clusters.windowCovering.upOpen();
