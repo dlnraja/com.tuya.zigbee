@@ -1,7 +1,7 @@
 {
   "mode": "imap",
   "lastOk": "2026-03-30T08:37:47.958Z",
-  "consecutiveFails": 1,
+  "consecutiveFails": 2,
   "emailsFetched": 5,
   "checks": [
     {
@@ -19,7 +19,12 @@
       "time": "2026-03-31T14:53:04.860Z",
       "ok": false,
       "err": "no_imapflow"
+    },
+    {
+      "time": "2026-04-01T14:52:40.127Z",
+      "ok": false,
+      "err": "no_imapflow"
     }
   ],
-  "lastFail": "2026-03-31T14:53:04.860Z"
+  "lastFail": "2026-04-01T14:52:40.127Z"
 }
