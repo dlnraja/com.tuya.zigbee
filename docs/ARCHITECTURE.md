@@ -23,6 +23,7 @@
 > **191+ drivers** | **4374+ fingerprints** | Zigbee + WiFi
 > **191+ drivers** | **4374+ fingerprints** | Zigbee + WiFi
 > **191+ drivers** | **4374+ fingerprints** | Zigbee + WiFi
+> **191+ drivers** | **4374+ fingerprints** | Zigbee + WiFi
 
 ---
 

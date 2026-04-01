@@ -1,34 +1,11 @@
 {
-  "timestamp": "2026-04-01T03:24:55.690Z",
+  "timestamp": "2026-04-01T06:06:57.768Z",
   "appVersion": "5.11.152",
-  "forum": 2,
+  "forum": 0,
   "github": 0,
   "diagnostics": 70,
   "diagNewFPs": 0,
   "diagCritical": 0,
-  "forumDetails": [
-    {
-      "topic": 140352,
-      "post": 1679,
-      "user": "EchoNL",
-      "fps": [
-        "_TZ3000_famkxci2",
-        "_TZ3000_ee8nrt2l"
-      ],
-      "reply": "It appears that you are experiencing issues with several devices, specifically the Loratap remotes (TS0043 and TS0044) and the motion sensor (TS0601). Let's troubleshoot each device based on the infor",
-      "model": "gh-gpt-4o-mini"
-    },
-    {
-      "topic": 26439,
-      "post": 5430,
-      "user": "Pieter_Pessers",
-      "fps": [
-        "_TZ3000_l9brjwau",
-        "_TZ3000_qkixdnon"
-      ],
-      "reply": "Based on the fingerprint lookup, both the BSEED 2 buttons wall switch (_TZ3000_l9brjwau) and the BSEED 3 buttons wall switch (_TZ3000_qkixdnon) are supported.\n\n### BSEED 2 Buttons Wall Switch (_TZ3000",
-      "model": "gh-gpt-4o-mini"
-    }
-  ],
+  "forumDetails": [],
   "githubDetails": []
 }
