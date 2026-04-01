@@ -56,7 +56,7 @@ for (const ver of versions) {
     entry = entry.substring(0, 77) + '...';
   }
   // Escape pipe characters for markdown table
-  entry = entry.replace(/\|/g, '\\|');
+  entry = entry.replace(/\|/g, '\\|').replace(/\n/g, ' ');
   changelogTable += `| **v${ver}** | ${entry} |\n`;
 }
 changelogTable += `<!-- CHANGELOG_END -->\n`;
@@ -66,19 +66,30 @@ let readme = fs.readFileSync(readmePath, 'utf8');
 
 // Replace changelog section
 const startMarker = '## 🚀 Latest Updates';
-const endMarker = '### 🎯 Flow Enrichment';
+const altStartMarker = '## Statistics';
 
 const startIdx = readme.indexOf(startMarker);
-const endIdx = readme.indexOf(endMarker);
-
-if (startIdx !== -1 && endIdx !== -1) {
-  readme = readme.substring(0, startIdx) + changelogTable + '\n' + readme.substring(endIdx);
-  fs.writeFileSync(readmePath, readme);
-  console.log(`✅ README updated with ${versions.length} changelog entries`);
-  console.log(`   Current version: v${currentVersion}`);
-  console.log(`   Latest in changelog: v${versions[0]}`);
+if (startIdx !== -1) {
+  const endMarker = '<!-- CHANGELOG_END -->';
+  const endIdx = readme.indexOf(endMarker, startIdx);
+  if (endIdx !== -1) {
+     readme = readme.substring(0, startIdx) + changelogTable + readme.substring(endIdx + endMarker.length);
+  } else {
+     // Just insert before the next h2
+     const nextH2 = readme.indexOf('## ', startIdx + 10);
+     if (nextH2 !== -1) {
+        readme = readme.substring(0, startIdx) + changelogTable + '\n' + readme.substring(nextH2);
+     }
+  }
 } else {
-  console.log('⚠️ Could not find changelog section markers in README');
-  console.log(`   Start marker found: ${startIdx !== -1}`);
-  console.log(`   End marker found: ${endIdx !== -1}`);
+  // Insert before Statistics
+  const statIdx = readme.indexOf(altStartMarker);
+  if (statIdx !== -1) {
+     readme = readme.substring(0, statIdx) + changelogTable + '\n\n' + readme.substring(statIdx);
+  }
 }
+
+fs.writeFileSync(readmePath, readme);
+console.log(`✅ README updated with ${versions.length} changelog entries`);
+console.log(`   Current version: v${currentVersion}`);
+console.log(`   Latest in changelog: v${versions[0]}`);

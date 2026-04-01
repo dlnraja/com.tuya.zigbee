@@ -52511,8 +52511,7 @@
           "1": {
             "clusters": [
               0
-            ],
-            "bindings": []
+            ]
           }
         },
         "learnmode": {
@@ -52623,9 +52622,6 @@
           "1": {
             "clusters": [
               0,
-              61184
-            ],
-            "bindings": [
               61184
             ]
           }
@@ -52828,9 +52824,6 @@
           "1": {
             "clusters": [
               0,
-              61184
-            ],
-            "bindings": [
               61184
             ]
           }
@@ -53218,10 +53211,6 @@
               5,
               6,
               8
-            ],
-            "bindings": [
-              6,
-              8
             ]
           }
         },
@@ -53585,11 +53574,6 @@
               3,
               4,
               5,
-              6,
-              8,
-              768
-            ],
-            "bindings": [
               6,
               8,
               768
@@ -54190,11 +54174,6 @@
               6,
               8,
               768
-            ],
-            "bindings": [
-              6,
-              8,
-              768
             ]
           }
         },
@@ -54574,11 +54553,6 @@
               6,
               8,
               768
-            ],
-            "bindings": [
-              6,
-              8,
-              768
             ]
           }
         },
@@ -54892,10 +54866,6 @@
               3,
               4,
               5,
-              6,
-              8
-            ],
-            "bindings": [
               6,
               8
             ]
@@ -55256,12 +55226,6 @@
           "1": {
             "clusters": [
               0,
-              1,
-              1280,
-              1281,
-              61184
-            ],
-            "bindings": [
               1,
               1280,
               1281,
@@ -55655,11 +55619,6 @@
               6,
               4096,
               61184
-            ],
-            "bindings": [
-              1,
-              6,
-              4096
             ]
           }
         },
@@ -55905,6 +55864,42 @@
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
             "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
           }
+        },
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
         }
       ],
       "connectivity": [
@@ -56079,12 +56074,6 @@
               1281,
               57344,
               61184
-            ],
-            "bindings": [
-              1,
-              5,
-              6,
-              57344
             ]
           }
         },
@@ -56337,6 +56326,42 @@
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
             "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
           }
+        },
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
         }
       ],
       "pair": [
@@ -56453,12 +56478,6 @@
               1281,
               57344,
               61184
-            ],
-            "bindings": [
-              1,
-              5,
-              6,
-              57344
             ]
           },
           "2": {
@@ -56468,11 +56487,6 @@
               5,
               6,
               18,
-              57344
-            ],
-            "bindings": [
-              5,
-              6,
               57344
             ]
           }
@@ -56726,6 +56740,42 @@
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
             "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
           }
+        },
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
         }
       ],
       "pair": [
@@ -56865,12 +56915,6 @@
               1280,
               1281,
               61184
-            ],
-            "bindings": [
-              1,
-              5,
-              6,
-              57344
             ]
           },
           "2": {
@@ -56881,12 +56925,6 @@
               5,
               6,
               18,
-              57344
-            ],
-            "bindings": [
-              1,
-              5,
-              6,
               57344
             ]
           },
@@ -56899,12 +56937,6 @@
               6,
               18,
               57344
-            ],
-            "bindings": [
-              1,
-              5,
-              6,
-              57344
             ]
           },
           "4": {
@@ -56915,12 +56947,6 @@
               5,
               6,
               18,
-              57344
-            ],
-            "bindings": [
-              1,
-              5,
-              6,
               57344
             ]
           }
@@ -57195,6 +57221,42 @@
             "en": "Sync device time with Homey",
             "fr": "Synchroniser l'heure du device avec Homey"
           }
+        },
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
         }
       ],
       "pair": [
@@ -57361,23 +57423,11 @@
               6,
               18,
               57344
-            ],
-            "bindings": [
-              1,
-              5,
-              6,
-              18,
-              57344
             ]
           },
           "2": {
             "clusters": [
               0,
-              6,
-              18,
-              57344
-            ],
-            "bindings": [
               6,
               18,
               57344
@@ -57389,21 +57439,11 @@
               6,
               18,
               57344
-            ],
-            "bindings": [
-              6,
-              18,
-              57344
             ]
           },
           "4": {
             "clusters": [
               0,
-              6,
-              18,
-              57344
-            ],
-            "bindings": [
               6,
               18,
               57344
@@ -57680,6 +57720,42 @@
             "en": "Sync device time with Homey",
             "fr": "Synchroniser l'heure du device avec Homey"
           }
+        },
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
         }
       ],
       "pair": [
@@ -57809,12 +57885,6 @@
               18,
               57344,
               61184
-            ],
-            "bindings": [
-              1,
-              5,
-              6,
-              57344
             ]
           },
           "2": {
@@ -57824,11 +57894,6 @@
               5,
               6,
               18,
-              57344
-            ],
-            "bindings": [
-              5,
-              6,
               57344
             ]
           },
@@ -57840,11 +57905,6 @@
               6,
               18,
               57344
-            ],
-            "bindings": [
-              5,
-              6,
-              57344
             ]
           },
           "4": {
@@ -57854,11 +57914,6 @@
               5,
               6,
               18,
-              57344
-            ],
-            "bindings": [
-              5,
-              6,
               57344
             ]
           },
@@ -57870,11 +57925,6 @@
               6,
               18,
               57344
-            ],
-            "bindings": [
-              5,
-              6,
-              57344
             ]
           },
           "6": {
@@ -57884,11 +57934,6 @@
               5,
               6,
               18,
-              57344
-            ],
-            "bindings": [
-              5,
-              6,
               57344
             ]
           }
@@ -58142,6 +58187,42 @@
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
             "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
           }
+        },
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
         }
       ],
       "pair": [
@@ -58292,12 +58373,6 @@
               18,
               57344,
               61184
-            ],
-            "bindings": [
-              1,
-              5,
-              6,
-              57344
             ]
           },
           "2": {
@@ -58307,11 +58382,6 @@
               5,
               6,
               18,
-              57344
-            ],
-            "bindings": [
-              5,
-              6,
               57344
             ]
           },
@@ -58323,11 +58393,6 @@
               6,
               18,
               57344
-            ],
-            "bindings": [
-              5,
-              6,
-              57344
             ]
           },
           "4": {
@@ -58337,11 +58402,6 @@
               5,
               6,
               18,
-              57344
-            ],
-            "bindings": [
-              5,
-              6,
               57344
             ]
           },
@@ -58353,11 +58413,6 @@
               6,
               18,
               57344
-            ],
-            "bindings": [
-              5,
-              6,
-              57344
             ]
           },
           "6": {
@@ -58367,11 +58422,6 @@
               5,
               6,
               18,
-              57344
-            ],
-            "bindings": [
-              5,
-              6,
               57344
             ]
           },
@@ -58383,11 +58433,6 @@
               6,
               18,
               57344
-            ],
-            "bindings": [
-              5,
-              6,
-              57344
             ]
           },
           "8": {
@@ -58397,11 +58442,6 @@
               5,
               6,
               18,
-              57344
-            ],
-            "bindings": [
-              5,
-              6,
               57344
             ]
           }
@@ -58655,6 +58695,42 @@
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
             "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
           }
+        },
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
         }
       ],
       "pair": [
@@ -58724,9 +58800,6 @@
           "1": {
             "clusters": [
               0,
-              61184
-            ],
-            "bindings": [
               61184
             ]
           }
@@ -59013,9 +59086,6 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
-          "HOBEIAN",
-          "Hobeian",
-          "hobeian",
           "OWON",
           "_TYST11_2dpplnsn",
           "_TYST11_fzo2pocs",
@@ -60003,8 +60073,7 @@
           "_TZ3000_hy6ncvmw",
           "_TZ3290_rlkmy85q4pzoxobl",
           "_TZ3000_qaaysllp",
-          "_TZE204_myd45weu",
-          "TUYATEC-qun7vq14"
+          "_TZE204_myd45weu"
         ],
         "productId": [
           "TS0201",
@@ -60041,11 +60110,6 @@
               1026,
               1029,
               61184
-            ],
-            "bindings": [
-              1,
-              1026,
-              1029
             ]
           }
         }
@@ -60516,9 +60580,6 @@
             "clusters": [
               0,
               61184
-            ],
-            "bindings": [
-              61184
             ]
           }
         }
@@ -60669,7 +60730,6 @@
           "eWeLink",
           "_TZE200_n8dljorx",
           "Zbeacon",
-          "HOBEIAN",
           "zbeacon"
         ],
         "productId": [
@@ -60710,11 +60770,7 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              61184
-            ],
-            "bindings": [
-              61184
+              0
             ]
           }
         }
@@ -61232,10 +61288,6 @@
               6,
               258,
               61184
-            ],
-            "bindings": [
-              6,
-              258
             ]
           }
         },
@@ -61544,13 +61596,6 @@
           "usageConstant": 0.5
         }
       },
-      "learnmode": {
-        "image": "./assets/learnmode.svg",
-        "instruction": {
-          "en": "Press and hold the reset button for 5 seconds until the LED blinks",
-          "fr": "Appuyez et maintenez le bouton reset pendant 5 secondes jusqu'à ce que la LED clignote"
-        }
-      },
       "metadata": {
         "app": {
           "id": "com.dlnraja.tuya.zigbee",
@@ -61642,9 +61687,6 @@
               5,
               258,
               61184
-            ],
-            "bindings": [
-              258
             ]
           }
         }
@@ -61781,10 +61823,6 @@
               6,
               8,
               61184
-            ],
-            "bindings": [
-              6,
-              8
             ]
           }
         }
@@ -61889,10 +61927,6 @@
               6,
               8,
               61184
-            ],
-            "bindings": [
-              6,
-              8
             ]
           }
         }
@@ -62113,9 +62147,6 @@
           "1": {
             "clusters": [
               0,
-              61184
-            ],
-            "bindings": [
               61184
             ]
           }
@@ -62588,11 +62619,6 @@
               2820,
               1794,
               61184
-            ],
-            "bindings": [
-              6,
-              2820,
-              1794
             ]
           }
         },
@@ -62682,9 +62708,6 @@
               5,
               6,
               61184
-            ],
-            "bindings": [
-              6
             ]
           }
         },
@@ -62948,21 +62971,11 @@
               1026,
               1029,
               1280
-            ],
-            "bindings": [
-              6,
-              8,
-              768,
-              1026,
-              1029
             ]
           },
           "2": {
             "clusters": [
               0,
-              6
-            ],
-            "bindings": [
               6
             ]
           },
@@ -62970,17 +62983,11 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": [
-              6
             ]
           },
           "4": {
             "clusters": [
               0,
-              6
-            ],
-            "bindings": [
               6
             ]
           },
@@ -62988,17 +62995,11 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": [
-              6
             ]
           },
           "6": {
             "clusters": [
               0,
-              6
-            ],
-            "bindings": [
               6
             ]
           },
@@ -63006,17 +63007,11 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": [
-              6
             ]
           },
           "8": {
             "clusters": [
               0,
-              6
-            ],
-            "bindings": [
               6
             ]
           }
@@ -63271,8 +63266,7 @@
             "clusters": [
               0,
               61184
-            ],
-            "bindings": []
+            ]
           }
         },
         "learnmode": {
@@ -63592,9 +63586,6 @@
             "clusters": [
               0,
               61184
-            ],
-            "bindings": [
-              61184
             ]
           }
         }
@@ -63912,11 +63903,6 @@
               2820,
               1794,
               61184
-            ],
-            "bindings": [
-              6,
-              2820,
-              1794
             ]
           }
         }
@@ -63990,8 +63976,7 @@
             "clusters": [
               0,
               61184
-            ],
-            "bindings": []
+            ]
           }
         },
         "learnmode": {
@@ -64071,8 +64056,7 @@
               0,
               6,
               61184
-            ],
-            "bindings": []
+            ]
           }
         },
         "learnmode": {
@@ -64243,9 +64227,6 @@
             "clusters": [
               0,
               61184
-            ],
-            "bindings": [
-              61184
             ]
           }
         }
@@ -64330,9 +64311,6 @@
             "clusters": [
               0,
               61184
-            ],
-            "bindings": [
-              61184
             ]
           }
         }
@@ -64393,9 +64371,6 @@
           "1": {
             "clusters": [
               0,
-              61184
-            ],
-            "bindings": [
               61184
             ]
           }
@@ -64506,8 +64481,7 @@
             "clusters": [
               0,
               61184
-            ],
-            "bindings": []
+            ]
           }
         },
         "learnmode": {
@@ -64572,9 +64546,6 @@
           "1": {
             "clusters": [
               0,
-              61184
-            ],
-            "bindings": [
               61184
             ]
           }
@@ -64665,9 +64636,6 @@
           "1": {
             "clusters": [
               0,
-              61184
-            ],
-            "bindings": [
               61184
             ]
           }
@@ -64998,9 +64966,6 @@
             "clusters": [
               0,
               61184
-            ],
-            "bindings": [
-              61184
             ]
           }
         }
@@ -65301,8 +65266,7 @@
               0,
               3,
               61184
-            ],
-            "bindings": []
+            ]
           }
         },
         "learnmode": {
@@ -65680,8 +65644,7 @@
           "1": {
             "clusters": [
               0
-            ],
-            "bindings": []
+            ]
           }
         },
         "learnmode": {
@@ -66033,8 +65996,7 @@
             "clusters": [
               0,
               61184
-            ],
-            "bindings": []
+            ]
           }
         },
         "learnmode": {
@@ -66137,32 +66099,20 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": [
-              6
             ]
           },
           "2": {
             "clusters": [
-              6
-            ],
-            "bindings": [
               6
             ]
           },
           "3": {
             "clusters": [
               6
-            ],
-            "bindings": [
-              6
             ]
           },
           "4": {
             "clusters": [
-              6
-            ],
-            "bindings": [
               6
             ]
           }
@@ -66173,7 +66123,45 @@
             "en": "Press the top button for aprox 10 seconds (Zigbee logo will start blinking)."
           }
         }
-      }
+      },
+      "settings": [
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "name": {
@@ -66233,8 +66221,7 @@
             "clusters": [
               0,
               61184
-            ],
-            "bindings": []
+            ]
           }
         },
         "learnmode": {
@@ -66390,10 +66377,6 @@
               3,
               513,
               61184
-            ],
-            "bindings": [
-              1,
-              513
             ]
           }
         },
@@ -66728,8 +66711,7 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -66841,8 +66823,7 @@
             "clusters": [
               0,
               61184
-            ],
-            "bindings": []
+            ]
           }
         },
         "learnmode": {
@@ -67146,10 +67127,6 @@
               1,
               3,
               1024
-            ],
-            "bindings": [
-              1,
-              1024
             ]
           }
         },
@@ -67255,11 +67232,6 @@
               57348,
               60672,
               61184
-            ],
-            "bindings": [
-              1,
-              57348,
-              60672
             ]
           }
         }
@@ -67339,10 +67311,6 @@
               6,
               57348,
               60672
-            ],
-            "bindings": [
-              10,
-              25
             ]
           }
         },
@@ -67408,8 +67376,7 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -67488,11 +67455,6 @@
               6,
               8,
               768
-            ],
-            "bindings": [
-              6,
-              8,
-              768
             ]
           }
         }
@@ -67558,10 +67520,6 @@
               5,
               6,
               8
-            ],
-            "bindings": [
-              6,
-              8
             ]
           }
         },
@@ -67618,11 +67576,6 @@
               3,
               4,
               5,
-              6,
-              8,
-              768
-            ],
-            "bindings": [
               6,
               8,
               768
@@ -67707,11 +67660,6 @@
               3,
               4,
               5,
-              6,
-              8,
-              768
-            ],
-            "bindings": [
               6,
               8,
               768
@@ -68025,11 +67973,6 @@
               3,
               4,
               5,
-              6,
-              8,
-              768
-            ],
-            "bindings": [
               6,
               8,
               768
@@ -68358,11 +68301,6 @@
               3,
               4,
               5,
-              6,
-              8,
-              768
-            ],
-            "bindings": [
               6,
               8,
               768
@@ -68707,8 +68645,7 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -68784,8 +68721,7 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -69108,9 +69044,6 @@
               5,
               6,
               61184
-            ],
-            "bindings": [
-              6
             ]
           }
         },
@@ -69682,27 +69615,18 @@
           "CK-TLSR8656-SS5-01(7002)",
           "SNZB-03R2"
         ],
-        "endpoints": {
-          "1": {
-            "clusters": [
-              0,
-              1,
-              1024,
-              1280,
-              1030,
-              61184
-            ],
-            "bindings": [
-              1280,
-              1030
-            ]
-          }
-        },
         "learnmode": {
           "image": "/drivers/motion_sensor/assets/learnmode.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
             "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
           }
         }
       },
@@ -70136,11 +70060,6 @@
               1280,
               1030,
               61184
-            ],
-            "bindings": [
-              1,
-              1280,
-              1030
             ]
           }
         },
@@ -70592,8 +70511,7 @@
             "clusters": [
               0,
               61184
-            ],
-            "bindings": []
+            ]
           }
         },
         "learnmode": {
@@ -70711,8 +70629,7 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -70961,8 +70878,7 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -71366,8 +71282,7 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -71972,8 +71887,7 @@
             "clusters": [
               0,
               61184
-            ],
-            "bindings": []
+            ]
           }
         },
         "learnmode": {
@@ -72103,11 +72017,6 @@
               2820,
               1794,
               61184
-            ],
-            "bindings": [
-              6,
-              2820,
-              1794
             ]
           }
         },
@@ -72323,8 +72232,7 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -72393,11 +72301,6 @@
               1280,
               1030,
               61184
-            ],
-            "bindings": [
-              1,
-              1280,
-              1030
             ]
           }
         },
@@ -72798,9 +72701,6 @@
               1024,
               1280,
               1030,
-              61184
-            ],
-            "bindings": [
               61184
             ]
           }
@@ -73376,10 +73276,6 @@
               3,
               513,
               61184
-            ],
-            "bindings": [
-              1,
-              513
             ]
           }
         },
@@ -73670,13 +73566,6 @@
             "fr": "Mode Chauffage"
           },
           "preventInsights": false
-        }
-      },
-      "learnmode": {
-        "image": "./assets/learnmode.svg",
-        "instruction": {
-          "en": "Press and hold the reset button for 5 seconds until the LED blinks rapidly",
-          "fr": "Appuyez et maintenez le bouton reset pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
         }
       },
       "energy": {
@@ -74189,8 +74078,7 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -74487,9 +74375,6 @@
               0,
               3,
               61184
-            ],
-            "bindings": [
-              61184
             ]
           }
         },
@@ -74691,10 +74576,8 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              6
-            ],
-            "bindings": []
+              0
+            ]
           }
         }
       },
@@ -74747,11 +74630,6 @@
               3,
               4,
               4096
-            ],
-            "bindings": [
-              6,
-              8,
-              5
             ]
           }
         },
@@ -74812,11 +74690,6 @@
               4096,
               57344,
               61184
-            ],
-            "bindings": [
-              1,
-              6,
-              4096
             ]
           }
         }
@@ -74837,6 +74710,44 @@
           "CR2032"
         ]
       },
+      "settings": [
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
+        }
+      ],
       "id": "scene_switch_1"
     },
     {
@@ -74890,11 +74801,6 @@
               4096,
               57344,
               61184
-            ],
-            "bindings": [
-              1,
-              6,
-              4096
             ]
           }
         }
@@ -74916,6 +74822,44 @@
           "CR2450"
         ]
       },
+      "settings": [
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
+        }
+      ],
       "id": "scene_switch_2"
     },
     {
@@ -74978,11 +74922,6 @@
               4096,
               57344,
               61184
-            ],
-            "bindings": [
-              1,
-              6,
-              4096
             ]
           }
         }
@@ -75004,6 +74943,44 @@
           "CR2450"
         ]
       },
+      "settings": [
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
+        }
+      ],
       "id": "scene_switch_3"
     },
     {
@@ -75099,11 +75076,6 @@
               4096,
               57344,
               61184
-            ],
-            "bindings": [
-              1,
-              6,
-              4096
             ]
           }
         }
@@ -75125,6 +75097,44 @@
           "AAA"
         ]
       },
+      "settings": [
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
+        }
+      ],
       "id": "scene_switch_4"
     },
     {
@@ -75210,11 +75220,6 @@
               4096,
               57344,
               61184
-            ],
-            "bindings": [
-              1,
-              6,
-              4096
             ]
           }
         }
@@ -75236,6 +75241,44 @@
           "AAA"
         ]
       },
+      "settings": [
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
+        }
+      ],
       "id": "scene_switch_6"
     },
     {
@@ -75285,9 +75328,6 @@
               5,
               258,
               61184
-            ],
-            "bindings": [
-              258
             ]
           }
         },
@@ -75628,8 +75668,7 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -75940,9 +75979,6 @@
               5,
               6,
               61184
-            ],
-            "bindings": [
-              6
             ]
           }
         },
@@ -76009,9 +76045,6 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": [
-              6
             ]
           }
         },
@@ -76021,7 +76054,45 @@
             "en": "Press the button for aprox 10 seconds (the LED should start blinking)."
           }
         }
-      }
+      },
+      "settings": [
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "name": {
@@ -76056,10 +76127,6 @@
               3,
               513,
               61184
-            ],
-            "bindings": [
-              1,
-              513
             ]
           }
         }
@@ -76145,10 +76212,6 @@
               3,
               513,
               61184
-            ],
-            "bindings": [
-              1,
-              513
             ]
           }
         }
@@ -76353,12 +76416,6 @@
               6,
               8,
               4096
-            ],
-            "bindings": [
-              1,
-              6,
-              8,
-              4096
             ]
           }
         }
@@ -76490,10 +76547,6 @@
               6,
               8,
               4096
-            ],
-            "bindings": [
-              6,
-              8
             ]
           }
         },
@@ -76559,16 +76612,6 @@
               4,
               6,
               4096
-            ],
-            "bindings": [
-              3,
-              4,
-              5,
-              6,
-              8,
-              10,
-              25,
-              4096
             ]
           }
         },
@@ -76579,7 +76622,45 @@
             "sv": "Håll ned sidoknappen ca 10 sekunder (LED-lampan ska börja blinka)."
           }
         }
-      }
+      },
+      "settings": [
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "name": {
@@ -76641,8 +76722,7 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -76699,9 +76779,6 @@
               5,
               6,
               61184
-            ],
-            "bindings": [
-              6
             ]
           }
         }
@@ -76768,9 +76845,6 @@
               6,
               4096,
               57345
-            ],
-            "bindings": [
-              6
             ]
           }
         },
@@ -76780,7 +76854,45 @@
             "en": "Press the reset button for aprox 10 seconds (the LED should start blinking)."
           }
         }
-      }
+      },
+      "settings": [
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "smart_remote_1_button_2",
@@ -76822,10 +76934,6 @@
               6,
               4096,
               57345
-            ],
-            "bindings": [
-              1,
-              6
             ]
           }
         },
@@ -76835,7 +76943,45 @@
             "en": "Press the reset button for aprox 10 seconds (the LED should start blinking)."
           }
         }
-      }
+      },
+      "settings": [
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "smart_remote_4_buttons",
@@ -76874,9 +77020,6 @@
               1,
               1280,
               1281
-            ],
-            "bindings": [
-              1281
             ]
           }
         },
@@ -76886,7 +77029,45 @@
             "en": "Push a pin gently into the reset hole on the backside of the unit for aprox 10 seconds until the led on the front blinks rapidly."
           }
         }
-      }
+      },
+      "settings": [
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "name": {
@@ -76940,8 +77121,7 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -77079,10 +77259,6 @@
               1,
               1280,
               61184
-            ],
-            "bindings": [
-              1,
-              1280
             ]
           }
         },
@@ -77463,15 +77639,21 @@
           "_TZE284_sgabhwa6",
           "_TZE284_hdml1aav",
           "_TZE284_xc3vwx5a",
-          "A89G12C",
-          "HOBEIAN"
+          "A89G12C"
         ],
         "productId": [
           "ZG-303Z",
           "CS-201Z",
           "TS0601",
           "Arteco"
-        ]
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0
+            ]
+          }
+        }
       },
       "settings": [
         {
@@ -78035,8 +78217,7 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -78672,13 +78853,6 @@
           "preventInsights": false
         }
       },
-      "learnmode": {
-        "image": "./assets/learnmode.svg",
-        "instruction": {
-          "en": "Press and hold the reset button for 5 seconds until the LED blinks",
-          "fr": "Appuyez et maintenez le bouton reset pendant 5 secondes jusqu'à ce que la LED clignote"
-        }
-      },
       "metadata": {
         "app": {
           "id": "com.dlnraja.tuya.zigbee",
@@ -78762,7 +78936,6 @@
           "_TZ3000_18ejxno0",
           "_TZ3000_4js6g1cw",
           "_TZ3000_4zf0crgo",
-          "_TZ3000_5e235jpa",
           "_TZ3000_7vcdo2vn",
           "_TZ3000_atp7xmd9",
           "_TZ3000_bi6lpsew",
@@ -78788,8 +78961,6 @@
           "_TZ3000_zxrfobzw",
           "_TZ3002_ymcctknk",
           "_TZE204_zpvusbtv",
-          "tuyatec-nzrrvgco",
-          "tuyatec-o6sncwd6",
           "_TZ3000_rfjctviq",
           "_TZ3210_pdnwpnz5",
           "_TZ3000_yxmafzmd",
@@ -78854,16 +79025,10 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": [
-              6
             ]
           },
           "2": {
             "clusters": [
-              6
-            ],
-            "bindings": [
               6
             ]
           }
@@ -79400,13 +79565,6 @@
           }
         }
       },
-      "learnmode": {
-        "image": "./assets/learnmode.svg",
-        "instruction": {
-          "en": "Press and hold the reset button for 5 seconds until the LED blinks",
-          "fr": "Appuyez et maintenez le bouton reset pendant 5 secondes jusqu'à ce que la LED clignote"
-        }
-      },
       "metadata": {
         "app": {
           "id": "com.dlnraja.tuya.zigbee",
@@ -79474,24 +79632,15 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": [
-              6
             ]
           },
           "2": {
             "clusters": [
               6
-            ],
-            "bindings": [
-              6
             ]
           },
           "3": {
             "clusters": [
-              6
-            ],
-            "bindings": [
               6
             ]
           }
@@ -80107,13 +80256,6 @@
           }
         }
       },
-      "learnmode": {
-        "image": "./assets/learnmode.svg",
-        "instruction": {
-          "en": "Press and hold the reset button for 5 seconds until the LED blinks",
-          "fr": "Appuyez et maintenez le bouton reset pendant 5 secondes jusqu'à ce que la LED clignote"
-        }
-      },
       "metadata": {
         "app": {
           "id": "com.dlnraja.tuya.zigbee",
@@ -80187,32 +80329,20 @@
               5,
               6,
               61184
-            ],
-            "bindings": [
-              6
             ]
           },
           "2": {
             "clusters": [
-              6
-            ],
-            "bindings": [
               6
             ]
           },
           "3": {
             "clusters": [
               6
-            ],
-            "bindings": [
-              6
             ]
           },
           "4": {
             "clusters": [
-              6
-            ],
-            "bindings": [
               6
             ]
           }
@@ -80849,13 +80979,6 @@
           }
         }
       },
-      "learnmode": {
-        "image": "./assets/learnmode.svg",
-        "instruction": {
-          "en": "Press and hold the reset button for 5 seconds until the LED blinks",
-          "fr": "Appuyez et maintenez le bouton reset pendant 5 secondes jusqu'à ce que la LED clignote"
-        }
-      },
       "metadata": {
         "app": {
           "id": "com.dlnraja.tuya.zigbee",
@@ -80945,10 +81068,6 @@
               4,
               5,
               61184
-            ],
-            "bindings": [
-              25,
-              10
             ]
           }
         },
@@ -81095,11 +81214,6 @@
               2820,
               1794,
               61184
-            ],
-            "bindings": [
-              6,
-              2820,
-              1794
             ]
           }
         }
@@ -81361,11 +81475,6 @@
               2820,
               1794,
               61184
-            ],
-            "bindings": [
-              6,
-              2820,
-              1794
             ]
           }
         }
@@ -81667,11 +81776,6 @@
               1026,
               1029,
               61184
-            ],
-            "bindings": [
-              1,
-              1026,
-              1029
             ]
           }
         },
@@ -81738,9 +81842,6 @@
               5,
               6,
               61184
-            ],
-            "bindings": [
-              6
             ]
           }
         }
@@ -82370,9 +82471,6 @@
               5,
               6,
               61184
-            ],
-            "bindings": [
-              6
             ]
           }
         }
@@ -82954,9 +83052,6 @@
               5,
               6,
               61184
-            ],
-            "bindings": [
-              6
             ]
           }
         }
@@ -83363,9 +83458,6 @@
               5,
               6,
               61184
-            ],
-            "bindings": [
-              6
             ]
           }
         }
@@ -83659,11 +83751,6 @@
               6,
               4096,
               61184
-            ],
-            "bindings": [
-              1,
-              6,
-              4096
             ]
           }
         },
@@ -84206,11 +84293,6 @@
               1026,
               1029,
               61184
-            ],
-            "bindings": [
-              1,
-              1026,
-              1029
             ]
           }
         }
@@ -84295,10 +84377,6 @@
               3,
               513,
               61184
-            ],
-            "bindings": [
-              1,
-              513
             ]
           }
         }
@@ -84444,8 +84522,7 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -84596,8 +84673,7 @@
             "clusters": [
               0,
               61184
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -84839,18 +84915,12 @@
               57344,
               57345,
               61184
-            ],
-            "bindings": [
-              6
             ]
           },
           "2": {
             "clusters": [
               4,
               5,
-              6
-            ],
-            "bindings": [
               6
             ]
           }
@@ -85057,9 +85127,6 @@
               2820,
               57344,
               57345
-            ],
-            "bindings": [
-              6
             ]
           },
           "2": {
@@ -85067,18 +85134,12 @@
               4,
               5,
               6
-            ],
-            "bindings": [
-              6
             ]
           },
           "3": {
             "clusters": [
               4,
               5,
-              6
-            ],
-            "bindings": [
               6
             ]
           }
@@ -85293,11 +85354,6 @@
               2820,
               1794,
               61184
-            ],
-            "bindings": [
-              6,
-              2820,
-              1794
             ]
           }
         },
@@ -85853,8 +85909,7 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -85905,8 +85960,7 @@
             "clusters": [
               0,
               61184
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -85988,8 +86042,7 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -86055,9 +86108,6 @@
               4,
               5,
               258
-            ],
-            "bindings": [
-              258
             ]
           }
         },
@@ -86122,10 +86172,6 @@
               4,
               5,
               61184
-            ],
-            "bindings": [
-              25,
-              10
             ]
           }
         },
@@ -86328,9 +86374,6 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": [
-              6
             ]
           }
         },
@@ -86340,7 +86383,45 @@
             "en": "Press the button for aprox 10 seconds (the LED should start blinking)."
           }
         }
-      }
+      },
+      "settings": [
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "wall_remote_2_gang",
@@ -86384,16 +86465,10 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": [
-              6
             ]
           },
           "2": {
             "clusters": [
-              6
-            ],
-            "bindings": [
               6
             ]
           }
@@ -86404,7 +86479,45 @@
             "en": "Press the left button for aprox 10 seconds (the LED should start blinking). A tile for each button will be created. "
           }
         }
-      }
+      },
+      "settings": [
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "wall_remote_3_gang",
@@ -86448,24 +86561,15 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": [
-              6
             ]
           },
           "2": {
             "clusters": [
               6
-            ],
-            "bindings": [
-              6
             ]
           },
           "3": {
             "clusters": [
-              6
-            ],
-            "bindings": [
               6
             ]
           }
@@ -86476,7 +86580,45 @@
             "en": "Press the left button for aprox 10 seconds (the LED should start blinking)."
           }
         }
-      }
+      },
+      "settings": [
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "wall_remote_4_gang",
@@ -86516,32 +86658,20 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": [
-              6
             ]
           },
           "2": {
             "clusters": [
-              6
-            ],
-            "bindings": [
               6
             ]
           },
           "3": {
             "clusters": [
               6
-            ],
-            "bindings": [
-              6
             ]
           },
           "4": {
             "clusters": [
-              6
-            ],
-            "bindings": [
               6
             ]
           }
@@ -86552,7 +86682,45 @@
             "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
           }
         }
-      }
+      },
+      "settings": [
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "wall_remote_4_gang_2",
@@ -86591,10 +86759,6 @@
               1,
               6,
               8
-            ],
-            "bindings": [
-              6,
-              8
             ]
           }
         },
@@ -86604,7 +86768,45 @@
             "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
           }
         }
-      }
+      },
+      "settings": [
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "wall_remote_4_gang_3",
@@ -86643,32 +86845,20 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": [
-              6
             ]
           },
           "2": {
             "clusters": [
-              6
-            ],
-            "bindings": [
               6
             ]
           },
           "3": {
             "clusters": [
               6
-            ],
-            "bindings": [
-              6
             ]
           },
           "4": {
             "clusters": [
-              6
-            ],
-            "bindings": [
               6
             ]
           }
@@ -86679,7 +86869,45 @@
             "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
           }
         }
-      }
+      },
+      "settings": [
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "wall_remote_6_gang",
@@ -86716,48 +86944,30 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": [
-              6
             ]
           },
           "2": {
             "clusters": [
-              6
-            ],
-            "bindings": [
               6
             ]
           },
           "3": {
             "clusters": [
               6
-            ],
-            "bindings": [
-              6
             ]
           },
           "4": {
             "clusters": [
-              6
-            ],
-            "bindings": [
               6
             ]
           },
           "5": {
             "clusters": [
               6
-            ],
-            "bindings": [
-              6
             ]
           },
           "6": {
             "clusters": [
-              6
-            ],
-            "bindings": [
               6
             ]
           }
@@ -86768,7 +86978,45 @@
             "en": "Press pair button for aprox 10 seconds."
           }
         }
-      }
+      },
+      "settings": [
+        {
+          "id": "button_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Operating Mode",
+            "fr": "Mode de fonctionnement"
+          },
+          "hint": {
+            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto-Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "scene",
+              "label": {
+                "en": "Scene Mode (Multi-press)",
+                "fr": "Mode Scène (Multi-clics)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer Mode",
+                "fr": "Mode Variateur"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "name": {
@@ -86822,9 +87070,6 @@
               6,
               57344,
               57345
-            ],
-            "bindings": [
-              6
             ]
           }
         },
@@ -87905,8 +88150,7 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -88272,8 +88516,7 @@
             "clusters": [
               0,
               61184
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -88443,10 +88686,6 @@
               0,
               1,
               6
-            ],
-            "bindings": [
-              1,
-              6
             ]
           }
         }
@@ -88556,8 +88795,7 @@
             "clusters": [
               0,
               6
-            ],
-            "bindings": []
+            ]
           }
         }
       },
@@ -88864,11 +89102,6 @@
               1026,
               1029,
               61184
-            ],
-            "bindings": [
-              1,
-              1026,
-              1029
             ]
           }
         }
@@ -94505,8 +94738,7 @@
             "clusters": [
               0,
               3
-            ],
-            "bindings": []
+            ]
           }
         },
         "learnmode": {
