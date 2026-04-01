@@ -19,17 +19,21 @@ class FingerbotDevice extends TuyaZigbeeDevice {
   async onNodeInit({ zclNode }) {
     // v5.12.3: Register capability listeners BEFORE super to prevent #162
     // TuyaZigbeeDevice.onNodeInit() can crash (heavy init), blocking listener registration
-    this.registerCapabilityListener('onoff', async (value) => {
-      this.log('[Fingerbot] Push action: ' + (value ? 'ON' : 'OFF'));
-      await this.sendTuyaDP(DP_SWITCH, 'bool', value);
-    });
+    if (this.hasCapability('onoff')) {
+      this.registerCapabilityListener('onoff', async (value) => {
+        this.log('[Fingerbot] Push action: ' + (value ? 'ON' : 'OFF'));
+        await this.sendTuyaDP(DP_SWITCH, 'bool', value);
+      });
+    }
 
     if (this.hasCapability('button.push')) {
       this.registerCapabilityListener('button.push', async () => {
         this.log('[Fingerbot] Manual push triggered');
         await this.sendTuyaDP(DP_SWITCH, 'bool', true);
         setTimeout(async () => {
-          await this.setCapabilityValue('onoff', false).catch(this.error);
+          if (this.hasCapability('onoff')) {
+            await this.setCapabilityValue('onoff', false).catch(this.error);
+          }
         }, 1000);
       });
     }
@@ -53,10 +57,14 @@ class FingerbotDevice extends TuyaZigbeeDevice {
   // v5.13.3: Push action for flow cards (#162)
   async triggerPush() {
     await this.sendTuyaDP(DP_SWITCH, 'bool', true);
-    await this.setCapabilityValue('onoff', true).catch(this.error);
-    setTimeout(async () => {
-      await this.setCapabilityValue('onoff', false).catch(this.error);
-    }, 1000);
+    if (this.hasCapability('onoff')) {
+      await this.setCapabilityValue('onoff', true).catch(this.error);
+      setTimeout(async () => {
+        if (this.hasCapability('onoff')) {
+          await this.setCapabilityValue('onoff', false).catch(this.error);
+        }
+      }, 1000);
+    }
   }
 
   registerTuyaDPListener() {
