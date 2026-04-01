@@ -537,3 +537,8 @@ All 12 fingerprints from 20 open issues **already supported** in v5.11.19:
 - **Topic 140352 #1674** @FrankP: `_TZ3290_7v1k4vufotpowp9z`, `_TZ3290_7v1k4vuf` (gh-gpt-4o-mini)
 - **Topic 140352 #1675** @Simon_Ojstersek: no FPs (gh-gpt-4o-mini)
 - **Topic 140352 #1677** @SunBeech: `dlnraja`, `test`, `tuya` (gh-gpt-4o-mini)
+
+
+## Nightly Forum Scan (2026-04-01 v5.11.152)
+- **Topic 140352 #1679** @EchoNL: `_TZ3000_famkxci2`, `_TZ3000_ee8nrt2l` (gh-gpt-4o-mini)
+- **Topic 26439 #5430** @Pieter_Pessers: `_TZ3000_l9brjwau`, `_TZ3000_qkixdnon` (gh-gpt-4o-mini)
