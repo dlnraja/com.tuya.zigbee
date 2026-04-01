@@ -464,13 +464,15 @@ async function staleSweep(repo,items,isPR,state,report){
 
     if(shouldClose){
       if(DRY){console.log('  [DRY-SWEEP] Would close',key,':',reason);swept++;continue}
-      const closeBody=TAG+'\n'+reason+'.\n\nFeel free to reopen if still relevant.';
-      await ghPost('/repos/'+repo+'/issues/'+item.number+'/comments',{body:closeBody});
-      const endpoint=isPR?'/repos/'+repo+'/pulls/'+item.number:'/repos/'+repo+'/issues/'+item.number;
-      const patchBody=isPR?{state:'closed'}:{state:'closed',state_reason:'completed'};
-      const ok=await ghPatch(endpoint,patchBody);
-      if(ok){state.closed.push(key);report.closed++;swept++;console.log('  [SWEEP] CLOSED',key,':',reason)}
-      else console.log('  [SWEEP] CLOSE FAILED',key,'(no perms?)');
+      console.log('  [DISABLED-SWEEP] Auto-close disabled. Would close',key,':',reason);
+      // const closeBody=TAG+'\n'+reason+'.\n\nFeel free to reopen if still relevant.';
+      // await ghPost('/repos/'+repo+'/issues/'+item.number+'/comments',{body:closeBody});
+      // const endpoint=isPR?'/repos/'+repo+'/pulls/'+item.number:'/repos/'+repo+'/issues/'+item.number;
+      // const patchBody=isPR?{state:'closed'}:{state:'closed',state_reason:'completed'};
+      // const ok=await ghPatch(endpoint,patchBody);
+      // if(ok){state.closed.push(key);report.closed++;swept++;console.log('  [SWEEP] CLOSED',key,':',reason)}
+      // else console.log('  [SWEEP] CLOSE FAILED',key,'(no perms?)');
+      swept++;
       await sleep(RATE_SLEEP);
     }
   }

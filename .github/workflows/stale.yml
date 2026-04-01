@@ -27,10 +27,10 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           days-before-stale: 45
-          days-before-close: 14
+          days-before-close: 30
           stale-issue-message: >
             This issue has been automatically marked as **stale** because it has not had
-            recent activity. It will be closed in 14 days if no further activity occurs.
+            recent activity. It will be closed in 30 days if no further activity occurs.
 
 
             If your device is still not working:
@@ -47,7 +47,7 @@ jobs:
           stale-pr-message: >
             This PR has been automatically marked as **stale**. If the fingerprints
             in this PR are not yet supported, please comment to keep it open.
-            Otherwise it will be closed in 14 days.
+            Otherwise it will be closed in 30 days.
           close-pr-message: >
             This PR has been closed due to inactivity. If these fingerprints are still
             needed, please open a new PR or issue.
