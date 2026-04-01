@@ -1,123 +1,12 @@
 {
-  "timestamp": "2026-04-01T03:17:08.350Z",
+  "timestamp": "2026-04-01T05:14:27.438Z",
   "appVersion": "5.11.152",
   "responded": 0,
   "closed": 0,
   "labeled": 0,
-  "issuesProcessed": 104,
-  "prsProcessed": 36,
-  "skipped": 103,
-  "newFingerprints": [
-    {
-      "fp": "_TZ3000_dojqjapa",
-      "source": "dlnraja/com.tuya.zigbee#182",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3000_icoxotza",
-      "source": "dlnraja/com.tuya.zigbee#182",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3000_t7ugva7q",
-      "source": "dlnraja/com.tuya.zigbee#182",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3000_uyrhiafs",
-      "source": "dlnraja/com.tuya.zigbee#182",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3002_vsom92pp",
-      "source": "dlnraja/com.tuya.zigbee#182",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3008_reatplte",
-      "source": "dlnraja/com.tuya.zigbee#182",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3210_imaccztn",
-      "source": "dlnraja/com.tuya.zigbee#182",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3210_vbfp8eyv",
-      "source": "dlnraja/com.tuya.zigbee#182",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3210_zifx0xoj",
-      "source": "dlnraja/com.tuya.zigbee#182",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZB210_qzsxaqqe",
-      "source": "dlnraja/com.tuya.zigbee#182",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE200_hbnfokum",
-      "source": "dlnraja/com.tuya.zigbee#182",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE200_w0ap83qu",
-      "source": "dlnraja/com.tuya.zigbee#182",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE204_cduqh1l0",
-      "source": "dlnraja/com.tuya.zigbee#182",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE204_ouy7vpm1",
-      "source": "dlnraja/com.tuya.zigbee#182",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE284_3regm3h6",
-      "source": "dlnraja/com.tuya.zigbee#182",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE284_4vbj3fxh",
-      "source": "dlnraja/com.tuya.zigbee#182",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE284_4vobcgd3",
-      "source": "dlnraja/com.tuya.zigbee#182",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE284_bw4ayyeh",
-      "source": "dlnraja/com.tuya.zigbee#182",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE284_mul9abs3",
-      "source": "dlnraja/com.tuya.zigbee#182",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE284_mvtclclq",
-      "source": "dlnraja/com.tuya.zigbee#182",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE284_nbv4tdaz",
-      "source": "dlnraja/com.tuya.zigbee#182",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE284_tgrzpqf4",
-      "source": "dlnraja/com.tuya.zigbee#182",
-      "type": "device_request"
-    }
-  ],
-  "evolutionSummary": "In the latest project evolution, we identified 22 new device fingerprints (FPs) through community contributions, primarily sourced from the issue dlnraja/com.tuya.zigbee#182. Notable new devices include FPs such as _TZ3000_dojqjapa and _TZ3210_imaccztn, which enhance our compatibility with various Zigbee devices.\n\nThroughout this period, we processed a total of 104 issues and 36 pull requests (PRs), reflecting our commitment to addressing community feedback and improving device support. While no issues were closed or responded to, the focus on device requests indicates a proactive approach to expanding our device catalog.\n\nAction items moving forward include prioritizing the integration of the newly discovered devices and addressing any outstanding issues to enhance user experience. Continued collaboration with the community will be essential to ensure timely updates and resolutions."
+  "issuesProcessed": 200,
+  "prsProcessed": 35,
+  "skipped": 200,
+  "newFingerprints": [],
+  "evolutionSummary": null
 }
