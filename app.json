@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.152",
+  "version": "5.11.154",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -65841,7 +65841,6 @@
           "enbrighten",
           "eurotronic",
           "eurotronic technology",
-          "ewelink",
           "feit",
           "feit electric",
           "finder",
@@ -65862,7 +65861,6 @@
           "ikea of sweden",
           "iluminize",
           "ilux",
-          "immax",
           "innr",
           "innr lighting b.v.",
           "itead",
@@ -65969,7 +65967,6 @@
           "utec",
           "vimar",
           "vision",
-          "visonic",
           "wallpad",
           "weinzierl",
           "winners",
@@ -65989,6 +65986,8 @@
           "zigbee2mqtt"
         ],
         "productId": [
+          "TS0203",
+          "TS0601",
           "TS0601_generic"
         ],
         "endpoints": {
@@ -74379,24 +74378,9 @@
           }
         },
         "manufacturerName": [
-          "_TZE200_ckud7u2l",
-          "_TZE200_ywdxldoj",
-          "_TZE200_cwnjrr72",
-          "_TZE200_2ekuz3dz",
-          "_TZE200_kly8gjlz",
-          "_TZE200_a4bpgplm",
-          "_TZE200_b6wax7g0",
           "_TZE200_bhd_5kn9",
-          "_TZE200_lnbfnyxd",
-          "_TZE200_mudxchsu",
-          "_TZE200_nnrfa68v",
-          "_TZE204_nnrfa68v",
-          "_TYST11_ckud7u2l",
-          "_TYST11_ywdxldoj",
-          "_TYST11_cwnjrr72",
           "_TYST11_2ekuz3dz",
-          "_TYST11_kly8gjlz",
-          "_TYST11_jeaxp72v"
+          "_TYST11_kly8gjlz"
         ]
       },
       "images": {
@@ -84597,7 +84581,9 @@
           "tuyatec",
           "woox",
           "xiaomi",
-          "zemismart"
+          "zemismart",
+          "_TZ3210_tgvtvdoc",
+          "_TZ3000_awvmkayh"
         ],
         "productId": [
           "TS0001",
@@ -84666,7 +84652,8 @@
           "TS0601",
           "TS110E",
           "TS110F",
-          "TS130F"
+          "TS130F",
+          "q9mpfhw"
         ],
         "endpoints": {
           "1": {

@@ -6,9 +6,9 @@
 
 | Metric | Value |
 |--------|-------|
-| Version | v5.11.152 |
+| Version | v5.11.154 |
 | Drivers | 191 |
-| Fingerprints | 4,314 |
+| Fingerprints | 4,325 |
 | Last Updated | 2026-04-01 |
 
 ## Drivers by Category
@@ -16,7 +16,7 @@
 | Category | Count |
 |----------|-------|
 | socket | 48 |
-| sensor | 43 |
+| sensor | 44 |
 | light | 21 |
 | remote | 17 |
 | other | 15 |
