@@ -10,7 +10,7 @@ Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehens
 
 ## What's New (v5.11.152)
 
-Universal Tuya Zigbee app v5.11.152 includes no new drivers or fingerprints, and no bug fixes.
+Universal Tuya Zigbee app v5.11.152: No new devices or bug fixes in this release.
 
 ## Supported Devices
 

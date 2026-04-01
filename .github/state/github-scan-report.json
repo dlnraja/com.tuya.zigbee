@@ -1,8 +1,62 @@
 {
-  "timestamp": "2026-04-01T03:23:42.614Z",
+  "timestamp": "2026-04-01T14:52:40.086Z",
   "appVersion": "5.11.152",
   "findings": {
     "issues": [
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 165,
+        "title": "Device Request - Zigbee Light sensor ZG-106Z",
+        "user": "johnx1971",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_7y90pany",
+            "drivers": [
+              "climate_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/165",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 170,
+        "title": "Bug: TS0003 (_TZ3000_v4l4b0lp) - Sub-capability Flow cards (Gang 1/2/3) are completely unlinked",
+        "user": "Ssssneak",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_v4l4b0lp",
+            "drivers": [
+              "switch_3gang"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/170",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 164,
+        "title": "[DEVICE]",
+        "user": "late4marshmellow",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_otvn3lne",
+            "drivers": [
+              "motion_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/164",
+        "state": "open",
+        "imageAnalysis": "[Screenshot Analysis]"
+      },
       {
         "repo": "dlnraja/com.tuya.zigbee",
         "number": 182,
@@ -34,168 +88,6 @@
         ],
         "existingFPs": [],
         "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/182",
-        "state": "open",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 171,
-        "title": "Bseed E-touch series Zigbee 1-Gang",
-        "user": "vbesteiro",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3002_jn2x20tg",
-            "drivers": [
-              "switch_1gang"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/171",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 172,
-        "title": "Unable to connect Something went wrong while adding this device, please try again",
-        "user": "ronaldbok",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZE284_oitavov2",
-            "drivers": [
-              "soil_sensor"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/172",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 167,
-        "title": "[Auto] 1 new fingerprint(s) from upstream",
-        "user": "github-actions[bot]",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3000_kxaow5ki",
-            "drivers": [
-              "button_wireless_1"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/167",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 164,
-        "title": "[DEVICE]",
-        "user": "late4marshmellow",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3000_otvn3lne",
-            "drivers": [
-              "motion_sensor"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/164",
-        "state": "closed",
-        "imageAnalysis": "[Screenshot Analysis]"
-      },
-      {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 161,
-        "title": "[fingerbot] Bug:",
-        "user": "dalobalo",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3210_j4pdtz9v",
-            "drivers": [
-              "fingerbot"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/161",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 165,
-        "title": "Device Request - Zigbee Light sensor ZG-106Z",
-        "user": "johnx1971",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3000_7y90pany",
-            "drivers": [
-              "climate_sensor"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/165",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 176,
-        "title": "[soil_sensor] Bug:",
-        "user": "haadeess",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZE284_hdml1aav",
-            "drivers": [
-              "soil_sensor"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/176",
-        "state": "closed",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 178,
-        "title": "[soil_sensor] Bug: No Connetion possible \t_TZE284_oitavov2",
-        "user": "haadeess",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZE284_oitavov2",
-            "drivers": [
-              "soil_sensor"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/178",
-        "state": "open",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 170,
-        "title": "Bug: TS0003 (_TZ3000_v4l4b0lp) - Sub-capability Flow cards (Gang 1/2/3) are completely unlinked",
-        "user": "Ssssneak",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3000_v4l4b0lp",
-            "drivers": [
-              "switch_3gang"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/170",
         "state": "open",
         "imageAnalysis": null
       },
@@ -317,5 +209,5 @@
     "newFPs": [],
     "forkFPs": []
   },
-  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests\nRecent activity has identified several new device fingerprints (FPs) that require integration into the Universal Tuya Zigbee app. The following FPs were found in issue [#182](https://github.com/dlnraja/com.tuya.zigbee/issues/182):\n\n- **New FPs:**\n  - `_TZ3000_dojqjapa`\n  - `_TZ3000_icoxotza`\n  - `_TZ3000_t7ugva7q`\n  - `_TZ3000_uyrhiafs`\n  - `_TZ3002_vsom92pp`\n  - `_TZ3008_reatplte`\n  - `_TZ3210_imaccztn`\n  - `_TZ3210_vbfp8eyv`\n  - `_TZ3210_zifx0xoj`\n  - `_TZB210_qzsxaqqe`\n  - `_TZE200_hbnfokum`\n  - `_TZE200_w0ap83qu`\n  - `_TZE204_cduqh1l0`\n  - `_TZE204_ouy7vpm1`\n  - `_TZE284_3regm3h6`\n  - `_TZE284_4vbj3fxh`\n  - `_TZE284_4vobcgd3`\n  - `_TZE284_bw4ayyeh`\n  - `_TZE284_mul9abs3`\n  - `_TZE284_mvtclclq`\n  - `_TZE284_nbv4tdaz`\n  - `_TZE284_tgrzpqf4`\n\n## Existing Fingerprints\nThe following fingerprints are already supported in the app, as noted in closed issues:\n\n- **Existing FPs:**\n  - `_TZ3002_jn2x20tg` (Drivers: switch_1gang) - [Issue #171](https://github.com/dlnraja/com.tuya.zigbee/issues/171)\n  - `_TZE284_oitavov2` (Drivers: soil_sensor) - [Issue #172](https://github.com/dlnraja/com.tuya.zigbee/issues/172)\n  - `_TZ3000_kxaow5ki` (Drivers: button_wireless_1) - [Issue #167](https://github.com/dlnraja/com.tuya.zigbee/issues/167)\n  - `_TZ3000_otvn3lne` (Drivers: motion_sensor) - [Issue #164](https://github.com/dlnraja/com.tuya.zigbee/issues/164)\n  - `_TZ3210_j4pdtz9v` (Drivers: fingerbot) - [Issue #161](https://github.com/dlnraja/com.tuya.zigbee/issues/161)\n  - `_TZ3000_7y90pany` (Drivers: climate_sensor) - [Issue #165](https://github.com/dlnraja/com.tuya.zigbee/issues/165)\n  - `_TZE284_hdml1aav` (Drivers: soil_sensor) - [Issue #176](https://github.com/dlnraja/com.tuya.zigbee/issues/176)\n  - `_TZE284_oitavov2` (Drivers: soil_sensor) - [Issue #178](https://github.com/dlnraja/com.tuya.zigbee/issues/178)\n  - `_TZ3000_v4l4b0lp` (Drivers: switch_3gang) - [Issue #170](https://github.com/dlnraja/com.tuya.zigbee/issues/170)\n\n## Fingerprints from Forks to Integrate\nFrom the forked repository `JohanBendz/com.tuya.zigbee`, the following fingerprints are available for potential integration:\n\n- **Forked FPs:**\n  - `_TZ3000_l9brjwau` (Drivers: switch_2gang)\n  - `_TZ3000_qkixdnon` (Drivers: switch_3gang, switch_4gang) - [Issue #1337](https://github.com/JohanBendz/com.tuya.zigbee/issues/1337)\n\n## PRs with Useful Changes\nSeveral pull requests (PRs) have been submitted that may enhance the app's functionality:\n\n- **Closed PRs:**\n  - [#180](https://github.com/dlnraja/com.tuya.zigbee/pull/180): Fix presence_sensor_radar pairing for DP-only TS0601 devices (FPs: `_TZE204_sxm7l9xa`, `_TZE204_qasjif9e`)\n  - [#1166](https://github.com/JohanBendz/com.tuya.zigbee/pull/1166): Add support for Tuya PIR sensor TS0202 (FP: `_TZ3000_c8ozah8n`)\n\n- **Open PRs:**\n  - [#1350](https://github.com/JohanBendz/com.tuya.zigbee/pull/1350): Added TS110E driver (FPs: `_TZ3210_ngqk6jia`, `_TZ3210_weaqkhab`)\n  - [#1253](https://github.com/JohanBendz/com.tuya.zigbee/pull/1253): Added 3 new devices (FPs: `_TZE200_pay2byax`, `_TZ3000_mrpevh8p`)\n  - [#1219](https://github.com/JohanBendz/com.tuya.zigbee/pull/1219): Update driver.compose.json (FP: `_TZ3000_gjrubzje`)\n\nThis summary encapsulates the latest developments and contributions to the Universal Tuya Zigbee project, highlighting areas for potential integration and enhancement."
+  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests\n1. **Zigbee Light Sensor ZG-106Z**\n   - **Issue #165** by [johnx1971](https://github.com/dlnraja/com.tuya.zigbee/issues/165)\n   - Existing Fingerprint: `_TZ3000_7y90pany` (Driver: `climate_sensor`)\n\n2. **TS0003 (_TZ3000_v4l4b0lp)**\n   - **Issue #170** by [Ssssneak](https://github.com/dlnraja/com.tuya.zigbee/issues/170)\n   - Existing Fingerprint: `_TZ3000_v4l4b0lp` (Driver: `switch_3gang`)\n\n3. **Motion Sensor**\n   - **Issue #164** by [late4marshmellow](https://github.com/dlnraja/com.tuya.zigbee/issues/164)\n   - Existing Fingerprint: `_TZ3000_otvn3lne` (Driver: `motion_sensor`)\n\n## New Fingerprints Found\n- **From zigbee2mqtt** (Issue #182 by [github-actions](https://github.com/dlnraja/com.tuya.zigbee/issues/182)):\n  - `_TZ3000_dojqjapa`\n  - `_TZ3000_icoxotza`\n  - `_TZ3000_t7ugva7q`\n  - `_TZ3000_uyrhiafs`\n  - `_TZ3002_vsom92pp`\n  - `_TZ3008_reatplte`\n  - `_TZ3210_imaccztn`\n  - `_TZ3210_vbfp8eyv`\n  - `_TZ3210_zifx0xoj`\n  - `_TZB210_qzsxaqqe`\n  - `_TZE200_hbnfokum`\n  - `_TZE200_w0ap83qu`\n  - `_TZE204_cduqh1l0`\n  - `_TZE204_ouy7vpm1`\n  - `_TZE284_3regm3h6`\n  - `_TZE284_4vbj3fxh`\n  - `_TZE284_4vobcgd3`\n  - `_TZE284_bw4ayyeh`\n  - `_TZE284_mul9abs3`\n  - `_TZE284_mvtclclq`\n  - `_TZE284_nbv4tdaz`\n  - `_TZE284_tgrzpqf4`\n\n## Existing Fingerprints from Forks to Integrate\n1. **BSEED 2 Button Wall Switch**\n   - **Issue #1337** by [pjmpessers](https://github.com/JohanBendz/com.tuya.zigbee/issues/1337)\n   - Existing Fingerprints:\n     - `_TZ3000_l9brjwau` (Driver: `switch_2gang`)\n     - `_TZ3000_qkixdnon` (Drivers: `switch_3gang`, `switch_4gang`)\n\n## Pull Requests with Useful Changes\n1. **Fix presence_sensor_radar pairing for DP-only TS0601 devices**\n   - **PR #180** by [Robsta86](https://github.com/dlnraja/com.tuya.zigbee/pull/180) (Closed, not merged)\n   - Fingerprints: `_TZE204_sxm7l9xa`, `_TZE204_qasjif9e`\n\n2. **Added TS110E Driver**\n   - **PR #1350** by [PiTRiS87](https://github.com/JohanBendz/com.tuya.zigbee/pull/1350) (Open)\n   - Fingerprints: `_TZ3210_ngqk6jia`, `_TZ3210_weaqkhab`\n\n3. **Support for Tuya PIR Sensor TS0202**\n   - **PR #1166** by [chernals](https://github.com/JohanBendz/com.tuya.zigbee/pull/1166) (Closed, not merged)\n   - Fingerprint: `_TZ3000_c8ozah8n`\n\n4. **Added 3 New Devices**\n   - **PR #1253** by [Peter-Celica](https://github.com/JohanBendz/com.tuya.zigbee/pull/1253) (Open)\n   - Fingerprints: `_TZE200_pay2byax`, `_TZ3000_mrpevh8p`\n\n5. **Update driver.compose.json**\n   - **PR #1219** by [Melectro1](https://github.com/JohanBendz/com.tuya.zigbee/pull/1219) (Open)\n   - Fingerprint: `_TZ3000_gjrubzje`\n\n6. **Update driver.compose.json**\n   - **PR #1218** by [Melectro1](https://github.com/JohanBendz/com.tuya.zigbee/pull/1218) (Open)\n   - Fingerprint: `_TZE204_dapwryy7`\n\n7. **Add `_TZE204_bjzrowv2` - Update app.json**\n   - **PR #1195** by [YuriEstevan](https://github.com/JohanBendz/com.tuya.zigbee/pull/1195) (Open)\n   - Fingerprint: `_TZE204_bjzrowv2`\n\nThis summary captures the latest developments in the Universal Tuya Zigbee project, highlighting new device requests, existing fingerprints, and significant pull requests for integration."
 }
