@@ -159,18 +159,6 @@
       "CK-TLSR8656-SS5-01(7002)",
       "SNZB-03R2"
     ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          1,
-          1024,
-          1280,
-          1030,
-          61184
-        ]
-      }
-    },
     "learnmode": {
       "image": "/drivers/motion_sensor/assets/learnmode.svg",
       "instruction": {
