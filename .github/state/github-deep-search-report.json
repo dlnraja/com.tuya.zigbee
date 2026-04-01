@@ -1,17 +1,17 @@
 {
-  "timestamp": "2026-03-31T15:26:00.109Z",
+  "timestamp": "2026-04-01T03:55:07.549Z",
   "stats": {
     "ghCalls": 47,
     "codeResults": 170,
     "issueResults": 0,
     "targetedResults": 8,
     "newRepos": 3,
-    "totalFPs": 307,
-    "supported": 303,
+    "totalFPs": 306,
+    "supported": 302,
     "unsupported": 4,
     "withDPs": 0,
     "withIssues": 0,
-    "duration": 208
+    "duration": 187
   },
   "topUnsupported": [
     {
@@ -97,7 +97,7 @@
       "codeRefCount": 2,
       "confidence": 35,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/831185577a8d851d07df2dcba504c6acb3ad9364/src/devices/qa.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/b87c1e3e507b6f9c30d140856a470c396a667522/src/devices/qa.ts"
     }
   ],
   "bugsInSupported": [],
@@ -130,5 +130,5 @@
       "topics": []
     }
   ],
-  "aiPlan": "Here’s a summary of unsupported firmware profiles (FP) and new repositories related to Tuya Zigbee devices, including suggested drivers and capability mappings.\n\n### Unsupported Firmware Profiles\n\n| FP                     | PIDs                      | Suggested Driver          | DP → Capability Map | Repositories                                   | Confidence |\n|-----------------------|--------------------------|---------------------------|---------------------|------------------------------------------------|------------|\n| _TZ3000_c2yscrj8     | TS0601, TS0224, TS0216, TS130F | Tuya Zigbee Generic Driver | N/A                 | kkossev/Hubitat, lsroka76/Z2S_Library        | 90         |\n| _TYZB01_0wcfvptl     | TS0601, TS0224, TS0216   | Tuya Zigbee Generic Driver | N/A                 | kkossev/Hubitat, Mariano-Github/Edge-Drivers-Beta | 75         |\n| _TZ3000_m7djrkhw     | TS0013, TS0003           | Tuya Zigbee Generic Driver | N/A                 | jiramot/zemismart, Mariano-Github/Edge-Drivers-Beta | 65         |\n| _TZE284_nthhgkd6     | TS0601                   | Tuya Zigbee Generic Driver | N/A                 | Koenkk/zigbee-herdsman-converters             | 35         |\n\n### New Repositories\n\n| Repository Name                       | Stars | Description                                           | Value for Integration |\n|---------------------------------------|-------|-----------------------------------------------------|-----------------------|\n| gpmachado/com.gpm.homesuite          | 0     | Homey app for Zigbee/Tuya devices — switches, sensors, plugs and more | High - Broad device support, potential for multiple integrations. |\n| kodalissri/com.MyZigbee.Devices      | 0     | Homey App for Tuya Devices                          | Medium - Focused on Tuya, but limited to Homey platform. |\n| oskarirauta/homey-owon-driver        | 0     | OWON THS317-ET ZigBee Driver (non-tuya version) for Homey | Low - Non-Tuya specific, limited applicability. |\n\n### Assessment of New Repositories\n\n1. **gpmachado/com.gpm.homesuite**: This repository has the potential for high value as it targets a wide range of Zigbee/Tuya devices. Integrating this could enhance compatibility and user experience across multiple device types.\n\n2. **kodalissri/com.MyZigbee.Devices**: This repository focuses specifically on Tuya devices, which could be beneficial for users looking for dedicated support. However, its value is moderate due to its limitation to the Homey platform.\n\n3. **oskarirauta/homey-owon-driver**: While this driver is specific to a non-Tuya device, its value for integration is low as it does not contribute to the Tuya ecosystem. It may be useful for users with specific OWON devices but does not enhance Tuya support.\n\n### Conclusion\n\nThe unsupported firmware profiles indicate a need for a generic driver that can accommodate various Tuya Zigbee devices. The new repositories present opportunities for integration, particularly the first one, which could significantly enhance the ecosystem's compatibility with Zigbee devices."
+  "aiPlan": "Here's a summary of the unsupported firmware profiles (FPs) and new repositories for Tuya Zigbee devices, along with suggested drivers and capability mappings.\n\n### Unsupported Firmware Profiles\n\n| FP                  | PIDs                     | Suggested Driver                     | DP → Capability Map | Repositories                                   | Issues | Confidence |\n|---------------------|-------------------------|--------------------------------------|---------------------|------------------------------------------------|--------|------------|\n| _TZ3000_c2yscrj8   | TS0601, TS0224, TS0216, TS130F | Custom Zigbee Driver | N/A                 | kkossev/Hubitat, lsroka76/Z2S_Library        | 0      | 90         |\n| _TYZB01_0wcfvptl   | TS0601, TS0224, TS0216  | Custom Zigbee Driver | N/A                 | kkossev/Hubitat, Mariano-Github/Edge-Drivers-Beta | 0      | 75         |\n| _TZ3000_m7djrkhw   | TS0013, TS0003          | Custom Zigbee Driver | N/A                 | jiramot/zemismart, Mariano-Github/Edge-Drivers-Beta | 0      | 65         |\n| _TZE284_nthhgkd6   | TS0601                  | Custom Zigbee Driver | N/A                 | Koenkk/zigbee-herdsman-converters             | 0      | 35         |\n\n### New Repositories\n\n| Repository Name                       | Stars | Description                                      | Value for Integration |\n|---------------------------------------|-------|--------------------------------------------------|-----------------------|\n| gpmachado/com.gpm.homesuite          | 0     | Homey app for Zigbee/Tuya devices — switches, sensors, plugs and more | High - Broad device support |\n| kodalissri/com.MyZigbee.Devices      | 0     | Homey App for Tuya Devices                       | Medium - Focused on Tuya |\n| oskarirauta/homey-owon-driver        | 0     | OWON THS317-ET ZigBee Driver (non-tuya version) | Low - Non-Tuya focus |\n\n### Summary\n\n- **Unsupported FPs**: The listed firmware profiles lack support in the current repositories. Custom Zigbee drivers are suggested for integration, but specific DP to capability mappings are not available due to the absence of defined data points (DPS).\n  \n- **New Repositories**: The new repositories present opportunities for integration, especially the ones focused on Zigbee/Tuya devices. The first repository, `gpmachado/com.gpm.homesuite`, appears to have the highest potential due to its broad support for various device types.\n\nThis assessment can guide further development efforts to enhance compatibility and functionality for Tuya Zigbee devices."
 }

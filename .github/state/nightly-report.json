@@ -1,66 +1,34 @@
 {
-  "timestamp": "2026-03-31T14:54:33.113Z",
+  "timestamp": "2026-04-01T03:24:55.690Z",
   "appVersion": "5.11.152",
-  "forum": 3,
-  "github": 2,
+  "forum": 2,
+  "github": 0,
   "diagnostics": 70,
   "diagNewFPs": 0,
   "diagCritical": 0,
   "forumDetails": [
     {
       "topic": 140352,
-      "post": 1674,
-      "user": "FrankP",
+      "post": 1679,
+      "user": "EchoNL",
       "fps": [
-        "_TZ3290_7v1k4vufotpowp9z",
-        "_TZ3290_7v1k4vuf"
+        "_TZ3000_famkxci2",
+        "_TZ3000_ee8nrt2l"
       ],
-      "reply": "It seems you are experiencing issues with the IR remote (_TZ3290_7v1k4vufotpowp9z) not learning IR codes and timing out. Based on the fingerprint lookup, this device is recognized and is associated wi",
+      "reply": "It appears that you are experiencing issues with several devices, specifically the Loratap remotes (TS0043 and TS0044) and the motion sensor (TS0601). Let's troubleshoot each device based on the infor",
       "model": "gh-gpt-4o-mini"
     },
     {
-      "topic": 140352,
-      "post": 1675,
-      "user": "Simon_Ojstersek",
-      "fps": [],
-      "reply": "It appears that your TS0601 motion sensor is indeed recognized in our system, and it has a variety of drivers available, including the `motion_sensor` driver, which is the most relevant for your devic",
-      "model": "gh-gpt-4o-mini"
-    },
-    {
-      "topic": 140352,
-      "post": 1677,
-      "user": "SunBeech",
+      "topic": 26439,
+      "post": 5430,
+      "user": "Pieter_Pessers",
       "fps": [
-        "dlnraja",
-        "test",
-        "tuya"
+        "_TZ3000_l9brjwau",
+        "_TZ3000_qkixdnon"
       ],
-      "reply": "It looks like you’re eager to test the latest version of the Universal Tuya Zigbee app, and you can indeed install the test version directly from the app store page you provided.\n\nRegarding the finger",
+      "reply": "Based on the fingerprint lookup, both the BSEED 2 buttons wall switch (_TZ3000_l9brjwau) and the BSEED 3 buttons wall switch (_TZ3000_qkixdnon) are supported.\n\n### BSEED 2 Buttons Wall Switch (_TZ3000",
       "model": "gh-gpt-4o-mini"
     }
   ],
-  "githubDetails": [
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1359,
-      "user": "Linqans",
-      "fps": [
-        "_TZ3210_mt5xjoy6"
-      ],
-      "title": "Device request: Nedis Zigbee 2-Gang Dimmer (ZBWD20RD / TS110E)",
-      "response": "### Issue #1359: Support Request for Nedis Zigbee 2-Gang Dimmer (ZBWD20RD / TS110E)\n\nThank you for providing detailed information about the Nedis Zigbee 2-Gang Dimmer. Based on the provided fingerprint and device interview data, here's a comprehensive analysis:\n\n#### Fingerprint Support\nThe device h",
-      "model": "gh-gpt-4o-mini"
-    },
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1357,
-      "user": "szferi91",
-      "fps": [
-        "test"
-      ],
-      "title": "Performance issue since the last update",
-      "response": "### Issue #1357: Performance Issues Post-Update\n\nThank you for reporting the performance issues you're experiencing after the latest update. Based on the fingerprint lookup you provided, it appears that your device is recognized and is associated with the driver `diy_custom_zigbee`. \n\n#### Driver In",
-      "model": "gh-gpt-4o-mini"
-    }
-  ]
+  "githubDetails": []
 }
