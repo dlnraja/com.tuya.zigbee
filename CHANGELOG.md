@@ -4,7 +4,19 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.152] - 2026-03-31
+## [5.11.154] - 2026-04-02
+
+### Bug Fixes
+- No bug fixes in this release.
+
+### New Features
+- No new features in this release.
+
+### Improvements
+- No improvements in this release.
+---
+
+ [5.11.152] - 2026-03-31
 
 ### Bug Fixes
 - Fixed rain sensor pairing by removing strict endpoints.
