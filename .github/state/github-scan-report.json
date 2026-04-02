@@ -1,8 +1,62 @@
 {
-  "timestamp": "2026-04-02T04:48:27.977Z",
+  "timestamp": "2026-04-02T15:04:29.761Z",
   "appVersion": "5.11.154",
   "findings": {
     "issues": [
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 171,
+        "title": "Bseed E-touch series Zigbee 1-Gang",
+        "user": "vbesteiro",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3002_jn2x20tg",
+            "drivers": [
+              "switch_1gang"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/171",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 184,
+        "title": "Device Request - Temperature &humidity sensor with external probe - Shenzen New Green Energy Techologies Co ltd / _TZE284_8se38w3c TS0601",
+        "user": "pemikalsen-sudo",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE284_8se38w3c",
+            "drivers": [
+              "climate_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/184",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 183,
+        "title": "[Device Request] Climate Sensor Model TS0201 ID _TZ3000_tsgqxdb4",
+        "user": "Snacker80",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_tsgqxdb4",
+            "drivers": [
+              "climate_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/183",
+        "state": "open",
+        "imageAnalysis": null
+      },
       {
         "repo": "dlnraja/com.tuya.zigbee",
         "number": 165,
@@ -18,6 +72,24 @@
           }
         ],
         "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/165",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "JohanBendz/com.tuya.zigbee",
+        "number": 1360,
+        "title": "Device Request - [Nedis SmartLife Radiator Control] - [_TZE284_ne4pikwm] / [TS0601]",
+        "user": "gitebk",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZE284_ne4pikwm",
+            "drivers": [
+              "climate_sensor"
+            ]
+          }
+        ],
+        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1360",
         "state": "open",
         "imageAnalysis": null
       },
@@ -139,5 +211,5 @@
     "newFPs": [],
     "forkFPs": []
   },
-  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests\n1. **Zigbee Light Sensor ZG-106Z**\n   - **User:** johnx1971\n   - **Existing Fingerprints:** \n     - `_TZ3000_7y90pany` (Driver: `climate_sensor`)\n   - **Issue Link:** [#165](https://github.com/dlnraja/com.tuya.zigbee/issues/165)\n\n2. **BSEED 2 Button Wallswitch Zigbee with Neutral**\n   - **User:** pjmpessers\n   - **Existing Fingerprints:**\n     - `_TZ3000_l9brjwau` (Driver: `switch_2gang`)\n     - `_TZ3000_qkixdnon` (Drivers: `switch_3gang`, `switch_4gang`)\n   - **Issue Link:** [#1337](https://github.com/JohanBendz/com.tuya.zigbee/issues/1337)\n\n## Supported Fingerprints\n- **Existing Fingerprints:**\n  - `_TZ3000_7y90pany` (climate_sensor)\n  - `_TZ3000_l9brjwau` (switch_2gang)\n  - `_TZ3000_qkixdnon` (switch_3gang, switch_4gang)\n\n## Fork Fingerprints to Integrate\n- No new fingerprints from forks were identified in the current analysis.\n\n## Pull Requests with Useful Changes\n1. **Fix presence_sensor_radar pairing for DP-only TS0601 devices**\n   - **User:** Robsta86\n   - **Fingerprints:** `_TZE204_sxm7l9xa`, `_TZE204_qasjif9e`\n   - **Status:** Closed\n   - **PR Link:** [#180](https://github.com/dlnraja/com.tuya.zigbee/pull/180)\n\n2. **Added TS110E Driver**\n   - **User:** PiTRiS87\n   - **Fingerprints:** `_TZ3210_ngqk6jia`, `_TZ3210_weaqkhab`\n   - **Status:** Open\n   - **PR Link:** [#1350](https://github.com/JohanBendz/com.tuya.zigbee/pull/1350)\n\n3. **Add support for Tuya PIR sensor TS0202**\n   - **User:** chernals\n   - **Fingerprint:** `_TZ3000_c8ozah8n`\n   - **Status:** Closed\n   - **PR Link:** [#1166](https://github.com/JohanBendz/com.tuya.zigbee/pull/1166)\n\n4. **Added 3 New Devices**\n   - **User:** Peter-Celica\n   - **Fingerprints:** `_TZE200_pay2byax`, `_TZ3000_mrpevh8p`\n   - **Status:** Open\n   - **PR Link:** [#1253](https://github.com/JohanBendz/com.tuya.zigbee/pull/1253)\n\n5. **Update driver.compose.json**\n   - **User:** Melectro1\n   - **Fingerprint:** `_TZ3000_gjrubzje`\n   - **Status:** Open\n   - **PR Link:** [#1219](https://github.com/JohanBendz/com.tuya.zigbee/pull/1219)\n\n6. **Update driver.compose.json**\n   - **User:** Melectro1\n   - **Fingerprint:** `_TZE204_dapwryy7`\n   - **Status:** Open\n   - **PR Link:** [#1218](https://github.com/JohanBendz/com.tuya.zigbee/pull/1218)\n\n7. **Add `_TZE204_bjzrowv2` - Update app.json**\n   - **User:** YuriEstevan\n   - **Fingerprint:** `_TZE204_bjzrowv2`\n   - **Status:** Open\n   - **PR Link:** [#1195](https://github.com/JohanBendz/com.tuya.zigbee/pull/1195)\n\nThis summary encapsulates the latest developments in the Universal Tuya Zigbee repository, highlighting new device requests, supported fingerprints, and significant pull requests. For further details, please refer to the respective links."
+  "aiSummary": "# Universal Tuya Zigbee GitHub Activity Summary\n\n## New Device Requests\nSeveral new device requests have been identified, with existing fingerprints noted for integration:\n\n1. **Bseed E-touch series Zigbee 1-Gang**\n   - **Fingerprint**: `_TZ3002_jn2x20tg`\n   - **Driver**: `switch_1gang`\n   - [Issue Link](https://github.com/dlnraja/com.tuya.zigbee/issues/171)\n\n2. **Temperature & Humidity Sensor with External Probe**\n   - **Fingerprint**: `_TZE284_8se38w3c`\n   - **Driver**: `climate_sensor`\n   - [Issue Link](https://github.com/dlnraja/com.tuya.zigbee/issues/184)\n\n3. **Climate Sensor Model TS0201**\n   - **Fingerprint**: `_TZ3000_tsgqxdb4`\n   - **Driver**: `climate_sensor`\n   - [Issue Link](https://github.com/dlnraja/com.tuya.zigbee/issues/183)\n\n4. **Zigbee Light Sensor ZG-106Z**\n   - **Fingerprint**: `_TZ3000_7y90pany`\n   - **Driver**: `climate_sensor`\n   - [Issue Link](https://github.com/dlnraja/com.tuya.zigbee/issues/165)\n\n5. **Nedis SmartLife Radiator Control**\n   - **Fingerprint**: `_TZE284_ne4pikwm`\n   - **Driver**: `climate_sensor`\n   - [Issue Link](https://github.com/JohanBendz/com.tuya.zigbee/issues/1360)\n\n6. **BSEED 2 Button Wallswitch**\n   - **Fingerprints**: \n     - `_TZ3000_l9brjwau` (Driver: `switch_2gang`)\n     - `_TZ3000_qkixdnon` (Drivers: `switch_3gang`, `switch_4gang`)\n   - [Issue Link](https://github.com/JohanBendz/com.tuya.zigbee/issues/1337)\n\n## Existing Fingerprints Supported\nThe following fingerprints are already supported in the main repository:\n- `_TZ3002_jn2x20tg`\n- `_TZE284_8se38w3c`\n- `_TZ3000_tsgqxdb4`\n- `_TZ3000_7y90pany`\n- `_TZE284_ne4pikwm`\n- `_TZ3000_l9brjwau`\n- `_TZ3000_qkixdnon`\n\n## Fork Fingerprints to Integrate\nNo new fingerprints from forks have been identified for integration at this time.\n\n## Pull Requests with Useful Changes\nSeveral pull requests (PRs) are currently open or closed, which may contain valuable updates:\n\n1. **Fix presence_sensor_radar pairing for DP-only TS0601 devices**\n   - **PR Number**: [#180](https://github.com/dlnraja/com.tuya.zigbee/pull/180)\n   - **Status**: Closed\n\n2. **Added TS110E driver**\n   - **PR Number**: [#1350](https://github.com/JohanBendz/com.tuya.zigbee/pull/1350)\n   - **Status**: Open\n\n3. **Add support for Tuya PIR sensor TS0202**\n   - **PR Number**: [#1166](https://github.com/JohanBendz/com.tuya.zigbee/pull/1166)\n   - **Status**: Closed\n\n4. **Added 3 new devices**\n   - **PR Number**: [#1253](https://github.com/JohanBendz/com.tuya.zigbee/pull/1253)\n   - **Status**: Open\n\n5. **Update driver.compose.json**\n   - **PR Number**: [#1219](https://github.com/JohanBendz/com.tuya.zigbee/pull/1219)\n   - **Status**: Open\n\n6. **Update driver.compose.json**\n   - **PR Number**: [#1218](https://github.com/JohanBendz/com.tuya.zigbee/pull/1218)\n   - **Status**: Open\n\n7. **Add \"_TZE204_bjzrowv2\" - Update app.json**\n   - **PR Number**: [#1195](https://github.com/JohanBendz/com.tuya.zigbee/pull/1195)\n   - **Status**: Open\n\nThis summary provides a concise overview of the current state of device requests, existing support, and ongoing development efforts for the Universal Tuya Zigbee integration."
 }

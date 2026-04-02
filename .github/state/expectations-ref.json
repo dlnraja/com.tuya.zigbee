@@ -307,13 +307,13 @@
     {
       "id": "battery",
       "pattern": "False Battery Alert / Missing Battery",
-      "count": 30,
+      "count": 32,
       "priority": "high"
     },
     {
       "id": "pairing",
       "pattern": "Pairing Failure",
-      "count": 9,
+      "count": 12,
       "priority": "high"
     },
     {
@@ -323,16 +323,16 @@
       "priority": "high"
     },
     {
-      "id": "ring_value",
-      "pattern": "Ring/Alarm Wrong",
+      "id": "no_response",
+      "pattern": "Device Not Responding",
       "count": 5,
       "priority": "high"
     },
     {
-      "id": "no_response",
-      "pattern": "Device Not Responding",
-      "count": 4,
-      "priority": "medium"
+      "id": "ring_value",
+      "pattern": "Ring/Alarm Wrong",
+      "count": 5,
+      "priority": "high"
     },
     {
       "id": "double_div",
@@ -353,6 +353,12 @@
       "priority": "low"
     },
     {
+      "id": "no_temperature",
+      "pattern": "No Temperature",
+      "count": 1,
+      "priority": "low"
+    },
+    {
       "id": "energy_wrong",
       "pattern": "Wrong Energy",
       "count": 1,
@@ -360,8 +366,8 @@
     }
   ],
   "interviews": {
-    "total": 165,
-    "fps": 129
+    "total": 168,
+    "fps": 130
   },
   "invertedMfrs": [
     "_TZ3000_26fmupbb",

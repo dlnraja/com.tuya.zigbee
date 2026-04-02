@@ -1,6 +1,6 @@
 # 🏠 Universal Tuya Zigbee v5.11.154
 
-> **191 drivers** · **4325+ fingerprints** · Updated 2026-04-02
+> **191 drivers** · **4323+ fingerprints** · Updated 2026-04-02
 
 Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.
 
@@ -10,7 +10,7 @@ Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehens
 
 ## What's New (v5.11.154)
 
-Fixed rain sensor pairing by removing strict endpoints., Removed emoji characters from all driver.js files to prevent SyntaxError crashes on Homey Pro.
+Universal Tuya Zigbee app v5.11.154: No new drivers or fingerprints added.
 
 ## Supported Devices
 
@@ -28,7 +28,7 @@ Fixed rain sensor pairing by removing strict endpoints., Removed emoji character
 | 🔘 Button | 2 | 12 |
 | 🔥 Heater | 4 | 12 |
 | 🚗 Garagedoor | 3 | 13 |
-| 📦 Other | 15 | 441 |
+| 📦 Other | 15 | 439 |
 | 📦 Curtain | 2 | 9 |
 
 [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) — search by fingerprint
