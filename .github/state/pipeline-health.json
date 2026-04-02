@@ -1,13 +1,6 @@
 {
   "runs": [
     {
-      "ts": "2026-03-21T06:20:05.381Z",
-      "wf": "Nightly Auto-Process",
-      "stale": 0,
-      "missing": 0,
-      "alerts": 0
-    },
-    {
       "ts": "2026-03-21T15:41:41.162Z",
       "wf": "Daily Everything Pipeline",
       "stale": 0,
@@ -209,10 +202,17 @@
       "stale": 0,
       "missing": 0,
       "alerts": 0
+    },
+    {
+      "ts": "2026-04-02T04:32:24.064Z",
+      "wf": "Daily Everything Pipeline",
+      "stale": 0,
+      "missing": 0,
+      "alerts": 0
     }
   ],
   "alerts": [],
-  "lastRun": "2026-04-01T16:03:00.983Z",
+  "lastRun": "2026-04-02T04:32:24.064Z",
   "fileHealth": {
     "nightly-state.json": {
       "ok": true,

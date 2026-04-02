@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-01T15:08:12.873Z",
+  "timestamp": "2026-04-02T03:49:52.881Z",
   "pidConflicts": [
     {
       "pid": "TS004F",
@@ -130,6 +130,22 @@
       ],
       "crossClass": false,
       "severity": "medium"
+    },
+    {
+      "pid": "TS0207",
+      "drivers": [
+        "rain_sensor",
+        "usb_dongle_dual_repeater",
+        "water_leak_sensor",
+        "zigbee_repeater"
+      ],
+      "classes": [
+        "sensor",
+        "socket",
+        "other"
+      ],
+      "crossClass": true,
+      "severity": "high"
     },
     {
       "pid": "TS0003",
@@ -317,21 +333,6 @@
       ],
       "crossClass": false,
       "severity": "low"
-    },
-    {
-      "pid": "TS0207",
-      "drivers": [
-        "usb_dongle_dual_repeater",
-        "water_leak_sensor",
-        "zigbee_repeater"
-      ],
-      "classes": [
-        "socket",
-        "sensor",
-        "other"
-      ],
-      "crossClass": true,
-      "severity": "high"
     },
     {
       "pid": "TS110E",
@@ -723,6 +724,30 @@
       ],
       "classes": [
         "socket"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "ZG-223Z",
+      "drivers": [
+        "rain_sensor",
+        "water_leak_sensor"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "ZG-222Z",
+      "drivers": [
+        "rain_sensor",
+        "water_leak_sensor"
+      ],
+      "classes": [
+        "sensor"
       ],
       "crossClass": false,
       "severity": "low"
@@ -1567,6 +1592,22 @@
       "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
     },
     {
+      "pid": "TS0207",
+      "splitBy": {
+        "sensor": [
+          "rain_sensor",
+          "water_leak_sensor"
+        ],
+        "socket": [
+          "usb_dongle_dual_repeater"
+        ],
+        "other": [
+          "zigbee_repeater"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
       "pid": "TS0501B",
       "splitBy": {
         "light": [
@@ -1614,21 +1655,6 @@
         "remote": [
           "ir_blaster",
           "ir_remote"
-        ]
-      },
-      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
-    },
-    {
-      "pid": "TS0207",
-      "splitBy": {
-        "socket": [
-          "usb_dongle_dual_repeater"
-        ],
-        "sensor": [
-          "water_leak_sensor"
-        ],
-        "other": [
-          "zigbee_repeater"
         ]
       },
       "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
@@ -1767,8 +1793,8 @@
     }
   ],
   "summary": {
-    "totalDrivers": 190,
-    "pidConflicts": 57,
+    "totalDrivers": 191,
+    "pidConflicts": 59,
     "highSeverity": 23,
     "mfrConflicts": 44,
     "orphans": 50,

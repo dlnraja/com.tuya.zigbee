@@ -1,6 +1,6 @@
-# 🏠 Universal Tuya Zigbee v5.11.152
+# 🏠 Universal Tuya Zigbee v5.11.154
 
-> **191 drivers** · **4314+ fingerprints** · Updated 2026-04-01
+> **191 drivers** · **4325+ fingerprints** · Updated 2026-04-02
 
 Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.
 
@@ -8,9 +8,9 @@ Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehens
 
 **Stable:** [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/) · **Test:** [Test Channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · **Source:** [GitHub](https://github.com/dlnraja/com.tuya.zigbee)
 
-## What's New (v5.11.152)
+## What's New (v5.11.154)
 
-Universal Tuya Zigbee app v5.11.152: No new devices or bug fixes in this release.
+Fixed rain sensor pairing by removing strict endpoints., Removed emoji characters from all driver.js files to prevent SyntaxError crashes on Homey Pro.
 
 ## Supported Devices
 
@@ -18,7 +18,7 @@ Universal Tuya Zigbee app v5.11.152: No new devices or bug fixes in this release
 |---|---|---|
 | 🔌 Socket | 48 | 880 |
 | 💡 Light | 21 | 440 |
-| 📡 Sensor | 43 | 1842 |
+| 📡 Sensor | 44 | 1853 |
 | 🌡️ Thermostat | 13 | 348 |
 | 🪟 Windowcoverings | 3 | 161 |
 | 🔐 Lock | 4 | 22 |
@@ -45,13 +45,13 @@ Universal Tuya Zigbee app v5.11.152: No new devices or bug fixes in this release
 
 <details><summary>Previous versions</summary>
 
+**v5.11.152:** Universal Tuya Zigbee app v5.11.152 adds new device support and fixes several bugs for improved performance.
+
 **v5.11.151:** Universal Tuya Zigbee app v5.11.151: Critical fix for SyntaxError crashes and updated drivers.
 
 **v5.11.150:** Universal Tuya Zigbee app v5.11.150 adds new drivers and fingerprints, enhancing device compatibility.
 
 **v5.11.149:** Universal Tuya Zigbee app v5.11.149 adds new drivers and fingerprints, enhancing device compatibility.
-
-**v5.11.148:** Universal Tuya Zigbee app v5.11.148 adds new device fingerprints and fixes bugs for improved compatibility.
 
 </details>
 
@@ -66,4 +66,4 @@ This app is free and open-source. If it's useful to you, a small donation helps 
 **PayPal:** [paypal.me/dlnraja](https://paypal.me/dlnraja) · **Revolut:** [revolut.me/dylanoul](https://revolut.me/dylanoul)
 
 ---
-*Last updated 2026-04-01 — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*
+*Last updated 2026-04-02 — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*
