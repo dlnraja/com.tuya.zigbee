@@ -1,39 +1,24 @@
 {
-  "timestamp": "2026-04-02T09:49:51.964Z",
+  "timestamp": "2026-04-02T14:42:43.804Z",
   "appVersion": "5.11.154",
-  "responded": 2,
+  "responded": 1,
   "closed": 0,
   "labeled": 0,
-  "issuesProcessed": 108,
+  "issuesProcessed": 109,
   "prsProcessed": 36,
-  "skipped": 106,
+  "skipped": 107,
   "newFingerprints": [
     {
-      "fp": "sonoff + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#183",
-      "type": "device_request"
+      "fp": "router + TS0726",
+      "source": "dlnraja/com.tuya.zigbee#171",
+      "type": "bug_report"
     },
     {
-      "fp": "debug + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#183",
-      "type": "device_request"
-    },
-    {
-      "fp": "debug + TS0601",
-      "source": "dlnraja/com.tuya.zigbee#183",
-      "type": "device_request"
-    },
-    {
-      "fp": "test + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#183",
-      "type": "device_request"
-    },
-    {
-      "fp": "test + TS0601",
-      "source": "dlnraja/com.tuya.zigbee#183",
-      "type": "device_request"
+      "fp": "vision + TS0726",
+      "source": "dlnraja/com.tuya.zigbee#171",
+      "type": "bug_report"
     }
   ],
-  "evolutionSummary": "In the recent project evolution, we successfully identified and documented five new device fingerprints (FPs) related to the TS0201 and TS0601 models, as detailed in issue dlnraja/com.tuya.zigbee#183. These include various configurations such as \"sonoff + TS0201\" and \"debug + TS0601,\" which will enhance our device compatibility and functionality.\n\nThroughout the project, we processed a total of 108 issues and 36 pull requests (PRs), indicating a robust engagement with the community and a commitment to continuous improvement. Although no issues were closed in this period, the active response to two inquiries demonstrates our dedication to addressing user concerns and refining our offerings.\n\nMoving forward, action items include further testing of the newly discovered device FPs to ensure reliability and performance, as well as prioritizing the resolution of outstanding issues to enhance user experience. This proactive approach will help us maintain momentum and foster a collaborative environment for future developments.",
-  "crossPosts": 2
+  "evolutionSummary": "In the recent project evolution, we have made significant strides in device discovery and issue resolution. A total of 109 issues and 36 pull requests were processed, reflecting our ongoing commitment to enhancing the project. Notably, we identified two new faulty devices: the \"router + TS0726\" and \"vision + TS0726,\" both reported as bugs in issue #171. \n\nDespite the active engagement, no issues were closed during this period, indicating ongoing challenges that require further attention. The team remains focused on addressing these bugs and improving device compatibility. \n\nAction items moving forward include prioritizing the resolution of the newly discovered faulty devices and continuing to monitor and process incoming issues and pull requests to ensure project stability and user satisfaction. Overall, the project is evolving positively, with a clear path for future enhancements and resolutions.",
+  "bugInvestigations": 1
 }

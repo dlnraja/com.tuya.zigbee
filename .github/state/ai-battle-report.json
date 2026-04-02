@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-04-02T04:32:21.771Z",
+  "timestamp": "2026-04-02T16:14:06.259Z",
   "dryRun": false,
   "sources": {
     "external": 1607,
-    "github": 7,
+    "github": 11,
     "forks": 0,
     "johan": 0,
     "gmail": 0,
@@ -25,5 +25,5 @@
     "skipped": 0
   },
   "ghApiCalls": 100,
-  "aiSummary": "```json\n{\n  \"summary\": {\n    \"total_sources_scanned\": 1607,\n    \"confirmed_variants\": 0,\n    \"top_patterns\": [\n      {\n        \"pattern\": \"False Battery Alert / Missing Battery\",\n        \"count\": 30,\n        \"priority\": \"high\"\n      },\n      {\n        \"pattern\": \"Pairing Failure\",\n        \"count\": 9,\n        \"priority\": \"high\"\n      }\n    ]\n  }\n}\n```"
+  "aiSummary": "```json\n{\n  \"summary\": {\n    \"scanned_sources\": {\n      \"external\": 1607,\n      \"github\": 11,\n      \"forks\": 0,\n      \"johan\": 0,\n      \"gmail\": 0,\n      \"forum\": 0,\n      \"diagnostics\": 0,\n      \"deepSearch\": 0\n    },\n    \"confirmed_variants\": 0,\n    \"new_fingerprints_classified\": 0,\n    \"top_patterns\": [\n      {\n        \"pattern\": \"False Battery Alert / Missing Battery\",\n        \"count\": 32,\n        \"priority\": \"high\"\n      },\n      {\n        \"pattern\": \"Pairing Failure\",\n        \"count\": 12,\n        \"priority\": \"high\"\n      }\n    ]\n  }\n}\n```"
 }

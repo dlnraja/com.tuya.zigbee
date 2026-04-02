@@ -1,19 +1,19 @@
 {
-  "timestamp": "2026-04-02T07:48:00.199Z",
+  "timestamp": "2026-04-02T16:03:46.363Z",
   "suggestions": [
     {
       "pattern": "False Battery Alert / Missing Battery",
       "id": "battery",
-      "count": 30,
+      "count": 32,
       "priority": "high",
       "topFPs": [
         [
           "vision",
-          24
+          25
         ],
         [
           "TS0601",
-          14
+          16
         ],
         [
           "router",
@@ -21,7 +21,7 @@
         ],
         [
           "test",
-          4
+          5
         ],
         [
           "example",
@@ -158,6 +158,56 @@
       ]
     },
     {
+      "pattern": "Device Not Responding",
+      "id": "no_response",
+      "count": 5,
+      "priority": "high",
+      "topFPs": [
+        [
+          "vision",
+          3
+        ],
+        [
+          "test",
+          3
+        ],
+        [
+          "TS0601",
+          3
+        ],
+        [
+          "_TZ3210_w0qqde0g",
+          1
+        ],
+        [
+          "TS011F",
+          1
+        ],
+        [
+          "_TZ3000_zutizvyk",
+          1
+        ],
+        [
+          "TS0203",
+          1
+        ],
+        [
+          "_TZ3000_tsgqxdb4",
+          1
+        ],
+        [
+          "sonoff",
+          1
+        ],
+        [
+          "debug",
+          1
+        ]
+      ],
+      "fix": "Check Zigbee mesh, device routing, and cluster bindings",
+      "files": []
+    },
+    {
       "pattern": "Ring/Alarm Wrong",
       "id": "ring_value",
       "count": 5,
@@ -205,56 +255,6 @@
         ]
       ],
       "fix": "Check alarm DP map",
-      "files": []
-    },
-    {
-      "pattern": "Device Not Responding",
-      "id": "no_response",
-      "count": 4,
-      "priority": "medium",
-      "topFPs": [
-        [
-          "vision",
-          3
-        ],
-        [
-          "test",
-          2
-        ],
-        [
-          "TS0601",
-          2
-        ],
-        [
-          "_TZ3210_w0qqde0g",
-          1
-        ],
-        [
-          "TS011F",
-          1
-        ],
-        [
-          "_TZ3000_zutizvyk",
-          1
-        ],
-        [
-          "TS0203",
-          1
-        ],
-        [
-          "HOBEIAN",
-          1
-        ],
-        [
-          "ZG-204Z",
-          1
-        ],
-        [
-          "ZG-204ZL",
-          1
-        ]
-      ],
-      "fix": "Check Zigbee mesh, device routing, and cluster bindings",
       "files": []
     },
     {
@@ -357,6 +357,40 @@
       "files": []
     },
     {
+      "pattern": "No Temperature",
+      "id": "no_temperature",
+      "count": 1,
+      "priority": "low",
+      "topFPs": [
+        [
+          "_TZ3000_tsgqxdb4",
+          1
+        ],
+        [
+          "sonoff",
+          1
+        ],
+        [
+          "debug",
+          1
+        ],
+        [
+          "test",
+          1
+        ],
+        [
+          "TS0201",
+          1
+        ],
+        [
+          "TS0601",
+          1
+        ]
+      ],
+      "fix": "Check DP18 divisor",
+      "files": []
+    },
+    {
       "pattern": "Wrong Energy",
       "id": "energy_wrong",
       "count": 1,
@@ -389,14 +423,14 @@
   ],
   "detections": {
     "inversion": 1,
-    "battery": 30,
+    "battery": 32,
     "double_div": 2,
     "pairing": 12,
     "unknown": 5,
     "flow_dup": 0,
-    "no_response": 4,
+    "no_response": 5,
     "voltage_wrong": 1,
-    "no_temperature": 0,
+    "no_temperature": 1,
     "ring_value": 5,
     "energy_wrong": 1,
     "sensor_zero": 0

@@ -264,3 +264,7 @@
 
 ## Nightly Auto-Responses (2026-03-31 v5.11.152)
 - **dlnraja/com.tuya.zigbee#181** @github-actions[bot]: `SONOFF`, `danfoss`, `eWeLink`, `legrand`, `sonoff`, `xiaomi`, `test`, `bosch`, `ikea`, `tuya` (gh-gpt-4o-mini)
+
+
+## Nightly Auto-Responses (2026-04-02 v5.11.154)
+- **JohanBendz/com.tuya.zigbee#1360** @gitebk: `_TZE284_ne4pikwm`, `vision` (gh-gpt-4o-mini)
