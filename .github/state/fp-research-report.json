@@ -1,23 +1,22 @@
 {
-  "timestamp": "2026-04-01T15:08:21.794Z",
+  "timestamp": "2026-04-02T03:49:52.951Z",
   "total": 1,
-  "resolved": 0,
-  "unknown": 1,
+  "resolved": 1,
+  "unknown": 0,
   "falsePositives": 0,
   "results": [
     {
       "fp": "_TZE200_u6x1zyv2",
       "valid": true,
       "prefix": "tuya_dp",
-      "driver": null,
+      "driver": "rain_sensor",
       "pid": null,
-      "confidence": 0,
-      "sources": [],
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
       "method": null,
-      "falsePositive": {
-        "isFP": false,
-        "reason": "unknown_not_false"
-      }
+      "driverExists": true
     }
   ]
 }

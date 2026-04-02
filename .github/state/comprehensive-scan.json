@@ -1,12 +1,12 @@
 {
-  "date": "2026-03-29T01:59:23.678Z",
+  "date": "2026-04-02T03:43:18.362Z",
   "local": {
-    "drivers": 188,
-    "fps": 3993
+    "drivers": 191,
+    "fps": 3998
   },
   "forkScan": {
-    "filesScanned": 3112,
-    "newFPs": 28964
+    "filesScanned": 3089,
+    "newFPs": 28991
   },
   "upstream": {
     "prs": 0,
@@ -18,10 +18,46 @@
   },
   "newFPsFromForks": [
     {
-      "mfr": "zbeacon",
-      "driver": "doorwindowsensor_4",
-      "fork": "pkuijpers/com.tuya.zigbee",
+      "mfr": "TUYATEC-qun7vq14",
+      "driver": "temphumidsensor2",
+      "fork": "Robsta86/com.tuya.zigbee",
       "branch": "SDK3"
+    },
+    {
+      "mfr": "TUYATEC-qun7vq14",
+      "driver": "climate_sensor",
+      "fork": "Robsta86/com.tuya.zigbee",
+      "branch": "fix/presence-sensor-radar-bindings"
+    },
+    {
+      "mfr": "ewelink",
+      "driver": "generic_tuya",
+      "fork": "Robsta86/com.tuya.zigbee",
+      "branch": "fix/presence-sensor-radar-bindings"
+    },
+    {
+      "mfr": "immax",
+      "driver": "generic_tuya",
+      "fork": "Robsta86/com.tuya.zigbee",
+      "branch": "fix/presence-sensor-radar-bindings"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "generic_tuya",
+      "fork": "Robsta86/com.tuya.zigbee",
+      "branch": "fix/presence-sensor-radar-bindings"
+    },
+    {
+      "mfr": "tuyatec-nzrrvgco",
+      "driver": "switch_2gang",
+      "fork": "Robsta86/com.tuya.zigbee",
+      "branch": "fix/presence-sensor-radar-bindings"
+    },
+    {
+      "mfr": "tuyatec-o6sncwd6",
+      "driver": "switch_2gang",
+      "fork": "Robsta86/com.tuya.zigbee",
+      "branch": "fix/presence-sensor-radar-bindings"
     },
     {
       "mfr": "TUYATEC-qun7vq14",
@@ -30,70 +66,16 @@
       "branch": "SDK3"
     },
     {
-      "mfr": "TUYATEC-O6SNCwd6",
-      "driver": "wall_switch_2_gang",
-      "fork": "pkuijpers/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "TUYATEC-nzrrvgco",
-      "driver": "wall_switch_2_gang",
-      "fork": "pkuijpers/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "zbeacon",
-      "driver": "doorwindowsensor_4",
-      "fork": "pkuijpers/com.tuya.zigbee",
-      "branch": "pr-tuya-fixes"
-    },
-    {
       "mfr": "TUYATEC-qun7vq14",
       "driver": "temphumidsensor2",
       "fork": "pkuijpers/com.tuya.zigbee",
       "branch": "pr-tuya-fixes"
     },
     {
-      "mfr": "TUYATEC-O6SNCwd6",
-      "driver": "wall_switch_2_gang",
-      "fork": "pkuijpers/com.tuya.zigbee",
-      "branch": "pr-tuya-fixes"
-    },
-    {
-      "mfr": "TUYATEC-nzrrvgco",
-      "driver": "wall_switch_2_gang",
-      "fork": "pkuijpers/com.tuya.zigbee",
-      "branch": "pr-tuya-fixes"
-    },
-    {
-      "mfr": "zbeacon",
-      "driver": "doorwindowsensor_4",
-      "fork": "bmalkow/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
       "mfr": "TUYATEC-qun7vq14",
       "driver": "temphumidsensor2",
       "fork": "bmalkow/com.tuya.zigbee",
       "branch": "SDK3"
-    },
-    {
-      "mfr": "TUYATEC-O6SNCwd6",
-      "driver": "wall_switch_2_gang",
-      "fork": "bmalkow/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "TUYATEC-nzrrvgco",
-      "driver": "wall_switch_2_gang",
-      "fork": "bmalkow/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "zbeacon",
-      "driver": "doorwindowsensor_4",
-      "fork": "baschte/de.baschte.tuya.zigbee",
-      "branch": "main"
     },
     {
       "mfr": "L",
@@ -126,44 +108,14 @@
       "branch": "main"
     },
     {
-      "mfr": "TUYATEC-O6SNCwd6",
-      "driver": "wall_switch_2_gang",
-      "fork": "baschte/de.baschte.tuya.zigbee",
-      "branch": "main"
-    },
-    {
-      "mfr": "TUYATEC-nzrrvgco",
-      "driver": "wall_switch_2_gang",
-      "fork": "baschte/de.baschte.tuya.zigbee",
-      "branch": "main"
-    },
-    {
-      "mfr": "zbeacon",
-      "driver": "doorwindowsensor_4",
-      "fork": "tomkusz/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
       "mfr": "TUYATEC-qun7vq14",
       "driver": "temphumidsensor2",
       "fork": "tomkusz/com.tuya.zigbee",
       "branch": "SDK3"
     },
     {
-      "mfr": "TUYATEC-O6SNCwd6",
-      "driver": "wall_switch_2_gang",
-      "fork": "tomkusz/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "TUYATEC-nzrrvgco",
-      "driver": "wall_switch_2_gang",
-      "fork": "tomkusz/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "zbeacon",
-      "driver": "doorwindowsensor_4",
+      "mfr": "_TZ3210_amdymr7l",
+      "driver": "smartplug",
       "fork": "Mmaaikel/com.tuya.zigbee",
       "branch": "SDK3"
     },
@@ -174,45 +126,9 @@
       "branch": "SDK3"
     },
     {
-      "mfr": "TUYATEC-O6SNCwd6",
-      "driver": "wall_switch_2_gang",
-      "fork": "Mmaaikel/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "TUYATEC-nzrrvgco",
-      "driver": "wall_switch_2_gang",
-      "fork": "Mmaaikel/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "zbeacon",
-      "driver": "doorwindowsensor_4",
-      "fork": "hendriksenremco/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
       "mfr": "TUYATEC-qun7vq14",
       "driver": "temphumidsensor2",
       "fork": "hendriksenremco/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "TUYATEC-O6SNCwd6",
-      "driver": "wall_switch_2_gang",
-      "fork": "hendriksenremco/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "TUYATEC-nzrrvgco",
-      "driver": "wall_switch_2_gang",
-      "fork": "hendriksenremco/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "zbeacon",
-      "driver": "doorwindowsensor_4",
-      "fork": "sebastianbrand01/com.tuya.zigbee",
       "branch": "SDK3"
     },
     {
@@ -222,43 +138,31 @@
       "branch": "SDK3"
     },
     {
-      "mfr": "TUYATEC-O6SNCwd6",
-      "driver": "wall_switch_2_gang",
-      "fork": "sebastianbrand01/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "TUYATEC-nzrrvgco",
-      "driver": "wall_switch_2_gang",
-      "fork": "sebastianbrand01/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "zbeacon",
-      "driver": "doorwindowsensor_4",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
       "mfr": "TUYATEC-qun7vq14",
       "driver": "temphumidsensor2",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "SDK3"
     },
     {
-      "mfr": "TUYATEC-O6SNCwd6",
-      "driver": "wall_switch_2_gang",
+      "mfr": "immax",
+      "driver": "air_purifier",
       "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "SDK3"
+      "branch": "feature/add-ir-blaster-driver"
     },
     {
-      "mfr": "TUYATEC-nzrrvgco",
-      "driver": "wall_switch_2_gang",
+      "mfr": "visonic",
+      "driver": "air_purifier",
       "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "SDK3"
+      "branch": "feature/add-ir-blaster-driver"
     },
     {
       "mfr": "aaqs-s01",
+      "driver": "air_quality_co2",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
       "driver": "air_quality_co2",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -276,7 +180,19 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "visonic",
+      "driver": "air_quality_co2",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "aaqs-s01",
+      "driver": "air_quality_comprehensive",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
       "driver": "air_quality_comprehensive",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -290,6 +206,24 @@
     {
       "mfr": "vindstyrka",
       "driver": "air_quality_comprehensive",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "air_quality_comprehensive",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "bulb_dimmable",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "bulb_dimmable",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
     },
@@ -468,6 +402,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "bulb_rgb",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "nuet56-dl27lx1.1",
       "driver": "bulb_rgb",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -552,6 +492,48 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "visonic",
+      "driver": "bulb_rgb",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "bulb_rgbw",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "bulb_rgbw",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "bulb_tunable_white",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "bulb_tunable_white",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "bulb_white",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "bulb_white",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "_tyzb01_trqoesc6",
       "driver": "button_emergency_sos",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -577,6 +559,18 @@
     },
     {
       "mfr": "_tz3400_keyjhapk",
+      "driver": "button_wireless",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "button_wireless",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "button_wireless",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -613,6 +607,12 @@
     },
     {
       "mfr": "hive",
+      "driver": "button_wireless_1",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
       "driver": "button_wireless_1",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -672,6 +672,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "visonic",
+      "driver": "button_wireless_1",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "wxkg01lm",
       "driver": "button_wireless_1",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -708,13 +714,37 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "button_wireless_2",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "button_wireless_2",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "_tyzb02_key8kk7r",
       "driver": "button_wireless_3",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "button_wireless_3",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "loratap",
+      "driver": "button_wireless_3",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "button_wireless_3",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -756,7 +786,49 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "ewelink",
+      "driver": "button_wireless_4",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "button_wireless_4",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "button_wireless_4",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "button_wireless_6",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "button_wireless_6",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "_tz3400_keyjqthh",
+      "driver": "button_wireless_8",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "button_wireless_8",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "button_wireless_8",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -780,7 +852,19 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "ceiling_fan",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "king of fans",
+      "driver": "ceiling_fan",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "ceiling_fan",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -936,12 +1020,6 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
-      "mfr": "_TZE284_7zazvlyn",
-      "driver": "climate_sensor",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
       "mfr": "_tze600_wxq8dpha",
       "driver": "climate_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -1044,6 +1122,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "ewelink",
+      "driver": "climate_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "fnb54-wts08ml1.0",
       "driver": "climate_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -1069,6 +1153,12 @@
     },
     {
       "mfr": "im-z3.0-cct",
+      "driver": "climate_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
       "driver": "climate_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -1302,6 +1392,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "visonic",
+      "driver": "climate_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "wsdcgq01lm",
       "driver": "climate_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -1315,12 +1411,6 @@
     },
     {
       "mfr": "wsdcgq12lm",
-      "driver": "climate_sensor",
-      "fork": "kodalissri/com.tuya.zigbee",
-      "branch": "feature/add-ir-blaster-driver"
-    },
-    {
-      "mfr": "zbeacon",
       "driver": "climate_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -1398,6 +1488,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "co_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "kidde",
       "driver": "co_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -1405,6 +1501,12 @@
     },
     {
       "mfr": "sgmhm-i1",
+      "driver": "co_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "co_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -1494,7 +1596,19 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "ewelink",
+      "driver": "contact_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "hive",
+      "driver": "contact_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
       "driver": "contact_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -1620,13 +1734,13 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
-      "mfr": "wiszb-120",
+      "mfr": "visonic",
       "driver": "contact_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
     },
     {
-      "mfr": "zbeacon",
+      "mfr": "wiszb-120",
       "driver": "contact_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -1746,6 +1860,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "curtain_motor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "lumi.curtain",
       "driver": "curtain_motor",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -1812,6 +1932,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "visonic",
+      "driver": "curtain_motor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "zbcurtain",
       "driver": "curtain_motor",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -1836,6 +1962,30 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "curtain_motor_tilt",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "curtain_motor_tilt",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "dimmer_3gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "dimmer_3gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "_tyzb01_v8gtiaed",
       "driver": "dimmer_dual_channel",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -1843,6 +1993,18 @@
     },
     {
       "mfr": "_tzb210_rkgngb5o",
+      "driver": "dimmer_dual_channel",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "dimmer_dual_channel",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "dimmer_dual_channel",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -1866,6 +2028,24 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "dimmer_wall_1gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "dimmer_wall_1gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "din_rail_meter",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "matseeplus",
       "driver": "din_rail_meter",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -1897,6 +2077,12 @@
     },
     {
       "mfr": "tongou",
+      "driver": "din_rail_meter",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "din_rail_meter",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -1908,6 +2094,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "din_rail_switch",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "matseeplus",
       "driver": "din_rail_switch",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -1944,8 +2136,50 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "visonic",
+      "driver": "din_rail_switch",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "door_controller",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "door_controller",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "doorbell",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "ts0216",
       "driver": "doorbell",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "doorbell",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "energy_meter_3phase",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "energy_meter_3phase",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
     },
@@ -1968,8 +2202,44 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "fan_controller",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "king of fans",
       "driver": "fan_controller",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "fan_controller",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "fingerprint_lock",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "fingerprint_lock",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "formaldehyde_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "formaldehyde_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
     },
@@ -1980,7 +2250,19 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "garage_door",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "pf-pm02d-tyz",
+      "driver": "garage_door",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "garage_door",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -2010,6 +2292,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "gas_detector",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "jy-gz-01aq",
       "driver": "gas_detector",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -2017,6 +2305,12 @@
     },
     {
       "mfr": "jy-gz-03aq",
+      "driver": "gas_detector",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "gas_detector",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -2076,6 +2370,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "gas_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "jy-gz-01aq",
       "driver": "gas_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -2084,6 +2384,24 @@
     {
       "mfr": "jy-gz-03aq",
       "driver": "gas_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "gas_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "gateway_zigbee_bridge",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "gateway_zigbee_bridge",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
     },
@@ -2112,13 +2430,43 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "ewelink",
+      "driver": "generic_tuya",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "generic_tuya",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "generic_tuya",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "haier",
       "driver": "humidifier",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "humidifier",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "midea",
+      "driver": "humidifier",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "humidifier",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -2130,7 +2478,19 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "hvac_air_conditioner",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "midea",
+      "driver": "hvac_air_conditioner",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "hvac_air_conditioner",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -2142,7 +2502,19 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "hvac_dehumidifier",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "midea",
+      "driver": "hvac_dehumidifier",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "hvac_dehumidifier",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -2190,6 +2562,18 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "lcdtemphumidsensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "lcdtemphumidsensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "_tzb210_endmggws",
       "driver": "led_controller_cct",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -2232,7 +2616,19 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "led_controller_cct",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "ts0501b",
+      "driver": "led_controller_cct",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "led_controller_cct",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -2286,6 +2682,18 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "led_controller_dimmable",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "led_controller_dimmable",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "_tzb210_endmggws",
       "driver": "led_controller_rgb",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -2334,6 +2742,18 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "led_controller_rgb",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "led_controller_rgb",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "airam",
       "driver": "led_strip",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -2364,6 +2784,18 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "led_strip",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "led_strip",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "airam",
       "driver": "led_strip_advanced",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -2389,6 +2821,18 @@
     },
     {
       "mfr": "gl-s-007z",
+      "driver": "led_strip_advanced",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "led_strip_advanced",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "led_strip_advanced",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -2430,7 +2874,49 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "led_strip_rgbw",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "led_strip_rgbw",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "lock_smart",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "lock_smart",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "basiczbr3",
+      "driver": "module_mini_switch",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "ewelink",
+      "driver": "module_mini_switch",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "module_mini_switch",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "module_mini_switch",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -2598,6 +3084,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "ewelink",
+      "driver": "motion_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "fantem",
       "driver": "motion_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -2611,6 +3103,12 @@
     },
     {
       "mfr": "hk-sensor-4in1-a",
+      "driver": "motion_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
       "driver": "motion_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -2790,6 +3288,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "visonic",
+      "driver": "motion_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "zg-102z",
       "driver": "motion_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -2856,6 +3360,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "motion_sensor_radar_mmwave",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "loginovo",
       "driver": "motion_sensor_radar_mmwave",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -2863,6 +3373,12 @@
     },
     {
       "mfr": "treatlife",
+      "driver": "motion_sensor_radar_mmwave",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "motion_sensor_radar_mmwave",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -2880,13 +3396,43 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "pet_feeder",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "pet_feeder",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "_tyzb01_iuepbmpv",
       "driver": "plug_energy_monitor",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "ewelink",
+      "driver": "plug_energy_monitor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "plug_energy_monitor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "matseeplus",
+      "driver": "plug_energy_monitor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "plug_energy_monitor",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -2953,6 +3499,12 @@
     },
     {
       "mfr": "hive",
+      "driver": "plug_smart",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
       "driver": "plug_smart",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -3090,6 +3642,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "visonic",
+      "driver": "plug_smart",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "zncz02lm",
       "driver": "plug_smart",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -3120,6 +3678,24 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "pool_pump",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "pool_pump",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "power_clamp_meter",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "tomzn",
       "driver": "power_clamp_meter",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -3128,6 +3704,36 @@
     {
       "mfr": "tongou",
       "driver": "power_clamp_meter",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "power_clamp_meter",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "power_meter",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "power_meter",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "presence_sensor_ceiling",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "presence_sensor_ceiling",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
     },
@@ -3150,7 +3756,7 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
-      "mfr": "_TZE284_rlytpmij",
+      "mfr": "immax",
       "driver": "presence_sensor_radar",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -3163,6 +3769,12 @@
     },
     {
       "mfr": "mg1_5rz",
+      "driver": "presence_sensor_radar",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "presence_sensor_radar",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -3204,6 +3816,18 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "radiator_controller",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "radiator_controller",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "014g2461",
       "driver": "radiator_valve",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -3241,6 +3865,12 @@
     },
     {
       "mfr": "hive",
+      "driver": "radiator_valve",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
       "driver": "radiator_valve",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -3294,6 +3924,96 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "visonic",
+      "driver": "radiator_valve",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "rain_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "rain_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "scene_switch_1",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "scene_switch_1",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "scene_switch_2",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "scene_switch_2",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "scene_switch_3",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "scene_switch_3",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "scene_switch_4",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "scene_switch_4",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "scene_switch_6",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "scene_switch_6",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "shutter_roller_controller",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "shutter_roller_controller",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "_tyzb01_bnggsfsf",
       "driver": "siren",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -3306,13 +4026,31 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "siren",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "orion",
       "driver": "siren",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "visonic",
+      "driver": "siren",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "earu",
+      "driver": "smart_breaker",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
       "driver": "smart_breaker",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -3330,8 +4068,50 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "visonic",
+      "driver": "smart_breaker",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "smart_heater",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "smart_heater",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "smart_heater_controller",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "smart_heater_controller",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "eardatek",
       "driver": "smart_knob_rotary",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "smart_rcbo",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "smart_rcbo",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
     },
@@ -3373,6 +4153,12 @@
     },
     {
       "mfr": "hive",
+      "driver": "smoke_detector_advanced",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
       "driver": "smoke_detector_advanced",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -3432,6 +4218,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "visonic",
+      "driver": "smoke_detector_advanced",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "zcombo",
       "driver": "smoke_detector_advanced",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -3445,6 +4237,18 @@
     },
     {
       "mfr": "coolo",
+      "driver": "soil_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "soil_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "soil_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -3762,6 +4566,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "switch_1gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "kjintbl",
       "driver": "switch_1gang",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -3859,6 +4669,12 @@
     },
     {
       "mfr": "t10d1zw",
+      "driver": "switch_1gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "switch_1gang",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -4038,6 +4854,30 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "switch_2gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "tuyatec-nzrrvgco",
+      "driver": "switch_2gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "tuyatec-o6sncwd6",
+      "driver": "switch_2gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "switch_2gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "_tyzb01_b8cr31hp",
       "driver": "switch_3gang",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -4051,6 +4891,18 @@
     },
     {
       "mfr": "_tyzb01_xiuox57i",
+      "driver": "switch_3gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "switch_3gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "switch_3gang",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -4086,8 +4938,68 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "switch_4gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "mhcozy",
       "driver": "switch_4gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "switch_4gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "switch_plug_1",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "switch_plug_1",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "switch_plug_2",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "switch_plug_2",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "switch_temp_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "switch_temp_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "switch_wall_5gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "switch_wall_5gang",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
     },
@@ -4098,8 +5010,68 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "switch_wall_6gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "switch_wall_6gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "_tyzb01_7gang001",
       "driver": "switch_wall_7gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "switch_wall_7gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "switch_wall_7gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "switch_wall_8gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "switch_wall_8gang",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "switch_wireless",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "switch_wireless",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "ewelink",
+      "driver": "temphumidsensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "temphumidsensor",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
     },
@@ -4112,6 +5084,24 @@
     {
       "mfr": "tuyatec-yg5dcbfu",
       "driver": "temphumidsensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "temphumidsensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "thermostat_4ch",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "thermostat_4ch",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
     },
@@ -4135,6 +5125,12 @@
     },
     {
       "mfr": "hive",
+      "driver": "thermostat_tuya_dp",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
       "driver": "thermostat_tuya_dp",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -4189,6 +5185,12 @@
     },
     {
       "mfr": "th6320zw",
+      "driver": "thermostat_tuya_dp",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "thermostat_tuya_dp",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -4260,6 +5262,30 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "ewelink",
+      "driver": "universal_fallback",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "universal_fallback",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "usb_dongle_dual_repeater",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "usb_dongle_dual_repeater",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "_tyzb01_vkwryfdr",
       "driver": "usb_outlet_advanced",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -4284,6 +5310,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "usb_outlet_advanced",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "lellki",
       "driver": "usb_outlet_advanced",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -4296,6 +5328,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "visonic",
+      "driver": "usb_outlet_advanced",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "_tyzb01_4tlksk8a",
       "driver": "valve_irrigation",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -4303,6 +5341,18 @@
     },
     {
       "mfr": "_tyzb01_ymcdbl3u",
+      "driver": "valve_irrigation",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "valve_irrigation",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "valve_irrigation",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -4315,6 +5365,18 @@
     },
     {
       "mfr": "_tyzb01_ymcdbl3u",
+      "driver": "valve_single",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "valve_single",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "valve_single",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -4333,6 +5395,18 @@
     },
     {
       "mfr": "_tyzb01_j9xxahcl",
+      "driver": "vibration_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "vibration_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
       "driver": "vibration_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -4452,6 +5526,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "ewelink",
+      "driver": "water_leak_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "flszb-110",
       "driver": "water_leak_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -4465,6 +5545,12 @@
     },
     {
       "mfr": "hive",
+      "driver": "water_leak_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
       "driver": "water_leak_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
@@ -4602,6 +5688,12 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "visonic",
+      "driver": "water_leak_sensor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "wally",
       "driver": "water_leak_sensor",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -4620,6 +5712,24 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
+      "mfr": "immax",
+      "driver": "water_tank_monitor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "water_tank_monitor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "water_valve_smart",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
       "mfr": "swv-bsp",
       "driver": "water_valve_smart",
       "fork": "kodalissri/com.tuya.zigbee",
@@ -4628,6 +5738,24 @@
     {
       "mfr": "swv-nh",
       "driver": "water_valve_smart",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "water_valve_smart",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "immax",
+      "driver": "weather_station_outdoor",
+      "fork": "kodalissri/com.tuya.zigbee",
+      "branch": "feature/add-ir-blaster-driver"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "weather_station_outdoor",
       "fork": "kodalissri/com.tuya.zigbee",
       "branch": "feature/add-ir-blaster-driver"
     },
@@ -4644,33 +5772,9 @@
       "branch": "feature/add-ir-blaster-driver"
     },
     {
-      "mfr": "zbeacon",
-      "driver": "doorwindowsensor_4",
-      "fork": "SietzeM/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
       "mfr": "TUYATEC-qun7vq14",
       "driver": "temphumidsensor2",
       "fork": "SietzeM/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "TUYATEC-O6SNCwd6",
-      "driver": "wall_switch_2_gang",
-      "fork": "SietzeM/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "TUYATEC-nzrrvgco",
-      "driver": "wall_switch_2_gang",
-      "fork": "SietzeM/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "zbeacon",
-      "driver": "doorwindowsensor_4",
-      "fork": "theswim/com.tuya.zigbee",
       "branch": "SDK3"
     },
     {
@@ -4680,45 +5784,9 @@
       "branch": "SDK3"
     },
     {
-      "mfr": "TUYATEC-O6SNCwd6",
-      "driver": "wall_switch_2_gang",
-      "fork": "theswim/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "TUYATEC-nzrrvgco",
-      "driver": "wall_switch_2_gang",
-      "fork": "theswim/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "zbeacon",
-      "driver": "doorwindowsensor_4",
-      "fork": "willarentz/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
       "mfr": "TUYATEC-qun7vq14",
       "driver": "temphumidsensor2",
       "fork": "willarentz/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "TUYATEC-O6SNCwd6",
-      "driver": "wall_switch_2_gang",
-      "fork": "willarentz/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "TUYATEC-nzrrvgco",
-      "driver": "wall_switch_2_gang",
-      "fork": "willarentz/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "zbeacon",
-      "driver": "doorwindowsensor_4",
-      "fork": "kindberg95/com.tuya.zigbee",
       "branch": "SDK3"
     },
     {
@@ -4728,46 +5796,10 @@
       "branch": "SDK3"
     },
     {
-      "mfr": "TUYATEC-O6SNCwd6",
-      "driver": "wall_switch_2_gang",
-      "fork": "kindberg95/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "TUYATEC-nzrrvgco",
-      "driver": "wall_switch_2_gang",
-      "fork": "kindberg95/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "zbeacon",
-      "driver": "doorwindowsensor_4",
-      "fork": "Peter-Celica/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
       "mfr": "TUYATEC-qun7vq14",
       "driver": "temphumidsensor2",
       "fork": "Peter-Celica/com.tuya.zigbee",
       "branch": "SDK3"
-    },
-    {
-      "mfr": "TUYATEC-O6SNCwd6",
-      "driver": "wall_switch_2_gang",
-      "fork": "Peter-Celica/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "TUYATEC-nzrrvgco",
-      "driver": "wall_switch_2_gang",
-      "fork": "Peter-Celica/com.tuya.zigbee",
-      "branch": "SDK3"
-    },
-    {
-      "mfr": "zbeacon",
-      "driver": "doorwindowsensor_4",
-      "fork": "Peter-Celica/com.tuya.zigbee",
-      "branch": "patch-1"
     },
     {
       "mfr": "TUYATEC-qun7vq14",
@@ -4776,46 +5808,10 @@
       "branch": "patch-1"
     },
     {
-      "mfr": "TUYATEC-O6SNCwd6",
-      "driver": "wall_switch_2_gang",
-      "fork": "Peter-Celica/com.tuya.zigbee",
-      "branch": "patch-1"
-    },
-    {
-      "mfr": "TUYATEC-nzrrvgco",
-      "driver": "wall_switch_2_gang",
-      "fork": "Peter-Celica/com.tuya.zigbee",
-      "branch": "patch-1"
-    },
-    {
-      "mfr": "zbeacon",
-      "driver": "doorwindowsensor_4",
-      "fork": "Peter-Celica/com.tuya.zigbee",
-      "branch": "patch-2"
-    },
-    {
       "mfr": "TUYATEC-qun7vq14",
       "driver": "temphumidsensor2",
       "fork": "Peter-Celica/com.tuya.zigbee",
       "branch": "patch-2"
-    },
-    {
-      "mfr": "TUYATEC-O6SNCwd6",
-      "driver": "wall_switch_2_gang",
-      "fork": "Peter-Celica/com.tuya.zigbee",
-      "branch": "patch-2"
-    },
-    {
-      "mfr": "TUYATEC-nzrrvgco",
-      "driver": "wall_switch_2_gang",
-      "fork": "Peter-Celica/com.tuya.zigbee",
-      "branch": "patch-2"
-    },
-    {
-      "mfr": "zbeacon",
-      "driver": "doorwindowsensor_4",
-      "fork": "Peter-Celica/com.tuya.zigbee",
-      "branch": "patch-3"
     },
     {
       "mfr": "TUYATEC-qun7vq14",
@@ -4824,46 +5820,10 @@
       "branch": "patch-3"
     },
     {
-      "mfr": "TUYATEC-O6SNCwd6",
-      "driver": "wall_switch_2_gang",
-      "fork": "Peter-Celica/com.tuya.zigbee",
-      "branch": "patch-3"
-    },
-    {
-      "mfr": "TUYATEC-nzrrvgco",
-      "driver": "wall_switch_2_gang",
-      "fork": "Peter-Celica/com.tuya.zigbee",
-      "branch": "patch-3"
-    },
-    {
-      "mfr": "zbeacon",
-      "driver": "doorwindowsensor_4",
-      "fork": "Peter-Celica/com.tuya.zigbee",
-      "branch": "patch-4"
-    },
-    {
       "mfr": "TUYATEC-qun7vq14",
       "driver": "temphumidsensor2",
       "fork": "Peter-Celica/com.tuya.zigbee",
       "branch": "patch-4"
-    },
-    {
-      "mfr": "TUYATEC-O6SNCwd6",
-      "driver": "wall_switch_2_gang",
-      "fork": "Peter-Celica/com.tuya.zigbee",
-      "branch": "patch-4"
-    },
-    {
-      "mfr": "TUYATEC-nzrrvgco",
-      "driver": "wall_switch_2_gang",
-      "fork": "Peter-Celica/com.tuya.zigbee",
-      "branch": "patch-4"
-    },
-    {
-      "mfr": "zbeacon",
-      "driver": "doorwindowsensor_4",
-      "fork": "Peter-Celica/com.tuya.zigbee",
-      "branch": "patch-5"
     },
     {
       "mfr": "TUYATEC-qun7vq14",
@@ -4872,46 +5832,10 @@
       "branch": "patch-5"
     },
     {
-      "mfr": "TUYATEC-O6SNCwd6",
-      "driver": "wall_switch_2_gang",
-      "fork": "Peter-Celica/com.tuya.zigbee",
-      "branch": "patch-5"
-    },
-    {
-      "mfr": "TUYATEC-nzrrvgco",
-      "driver": "wall_switch_2_gang",
-      "fork": "Peter-Celica/com.tuya.zigbee",
-      "branch": "patch-5"
-    },
-    {
-      "mfr": "zbeacon",
-      "driver": "doorwindowsensor_4",
-      "fork": "Peter-Celica/com.tuya.zigbee",
-      "branch": "patch-6"
-    },
-    {
       "mfr": "TUYATEC-qun7vq14",
       "driver": "temphumidsensor2",
       "fork": "Peter-Celica/com.tuya.zigbee",
       "branch": "patch-6"
-    },
-    {
-      "mfr": "TUYATEC-O6SNCwd6",
-      "driver": "wall_switch_2_gang",
-      "fork": "Peter-Celica/com.tuya.zigbee",
-      "branch": "patch-6"
-    },
-    {
-      "mfr": "TUYATEC-nzrrvgco",
-      "driver": "wall_switch_2_gang",
-      "fork": "Peter-Celica/com.tuya.zigbee",
-      "branch": "patch-6"
-    },
-    {
-      "mfr": "_TZE284_7zazvlyn",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
     },
     {
       "mfr": "_TZe200_0hg58wyk",
@@ -6408,12 +7332,6 @@
       "branch": "0b299e7e"
     },
     {
-      "mfr": "zbeacon",
-      "driver": "contact_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
       "mfr": "_TZe200_a0syesf5",
       "driver": "dimmer_dual_channel",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -6434,6 +7352,24 @@
     {
       "mfr": "EWELINK",
       "driver": "generic_diy",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "ewelink",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "immax",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "generic_tuya",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0b299e7e"
     },
@@ -6774,12 +7710,6 @@
       "branch": "0b299e7e"
     },
     {
-      "mfr": "_TZE284_rlytpmij",
-      "driver": "presence_sensor_radar",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0b299e7e"
-    },
-    {
       "mfr": "_TZe200_0nauxa0p",
       "driver": "switch_1gang",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -6852,6 +7782,18 @@
       "branch": "0b299e7e"
     },
     {
+      "mfr": "tuyatec-nzrrvgco",
+      "driver": "switch_2gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "tuyatec-o6sncwd6",
+      "driver": "switch_2gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
       "mfr": "tuyatec-prhs1rsd",
       "driver": "temphumidsensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -6860,6 +7802,18 @@
     {
       "mfr": "tuyatec-yg5dcbfu",
       "driver": "temphumidsensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "ewelink",
+      "driver": "universal_fallback",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0b299e7e"
+    },
+    {
+      "mfr": "immax",
+      "driver": "universal_fallback",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0b299e7e"
     },
@@ -15756,12 +16710,6 @@
       "branch": "0ed2d556"
     },
     {
-      "mfr": "_TZE284_7zazvlyn",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
       "mfr": "_tze284_8zizsafo",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -23094,6 +24042,12 @@
       "branch": "0ed2d556"
     },
     {
+      "mfr": "ewelink",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0ed2d556"
+    },
+    {
       "mfr": "EWELINK",
       "driver": "generic_tuya",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -23215,6 +24169,12 @@
     },
     {
       "mfr": "ILUX",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0ed2d556"
+    },
+    {
+      "mfr": "immax",
       "driver": "generic_tuya",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0ed2d556"
@@ -23845,6 +24805,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0ed2d556"
+    },
+    {
+      "mfr": "visonic",
       "driver": "generic_tuya",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0ed2d556"
@@ -28615,12 +29581,6 @@
     },
     {
       "mfr": "_tze284_rlytpmij",
-      "driver": "presence_sensor_radar",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "0ed2d556"
-    },
-    {
-      "mfr": "_TZE284_rlytpmij",
       "driver": "presence_sensor_radar",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0ed2d556"
@@ -34620,7 +35580,19 @@
       "branch": "0ed2d556"
     },
     {
+      "mfr": "tuyatec-nzrrvgco",
+      "driver": "switch_2gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0ed2d556"
+    },
+    {
       "mfr": "TUYATEC-NZRRVGCO",
+      "driver": "switch_2gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0ed2d556"
+    },
+    {
+      "mfr": "tuyatec-o6sncwd6",
       "driver": "switch_2gang",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0ed2d556"
@@ -38490,6 +39462,12 @@
       "branch": "0ed2d556"
     },
     {
+      "mfr": "ewelink",
+      "driver": "universal_fallback",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0ed2d556"
+    },
+    {
       "mfr": "EWELINK",
       "driver": "universal_fallback",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -38509,6 +39487,12 @@
     },
     {
       "mfr": "IKEA",
+      "driver": "universal_fallback",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "0ed2d556"
+    },
+    {
+      "mfr": "immax",
       "driver": "universal_fallback",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "0ed2d556"
@@ -40212,6 +41196,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "air_purifier",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "air_purifier",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -40675,6 +41665,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "air_purifier",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "air_purifier",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -41184,6 +42180,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "air_quality_co2",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "air_quality_co2",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -41683,6 +42685,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "air_quality_co2",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "air_quality_co2",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -42210,6 +43218,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "air_quality_comprehensive",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "air_quality_comprehensive",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -42709,6 +43723,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "air_quality_comprehensive",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "air_quality_comprehensive",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -43428,6 +44448,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "bulb_dimmable",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "bulb_dimmable",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -43885,6 +44911,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "bulb_dimmable",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "bulb_dimmable",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -45090,6 +46122,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "bulb_rgb",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "bulb_rgb",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -45715,6 +46753,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "bulb_rgb",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "bulb_rgb",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -46548,6 +47592,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "bulb_rgbw",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "bulb_rgbw",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -47023,6 +48073,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "bulb_rgbw",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "bulb_rgbw",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -47760,6 +48816,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "bulb_tunable_white",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "bulb_tunable_white",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -48235,6 +49297,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "bulb_tunable_white",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "bulb_tunable_white",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -48702,6 +49770,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "bulb_white",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "bulb_white",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -49177,6 +50251,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "bulb_white",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "bulb_white",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -49890,6 +50970,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "button_wireless",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "button_wireless",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -50365,6 +51451,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "button_wireless",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "button_wireless",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -51120,6 +52212,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "button_wireless_1",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "button_wireless_1",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -51708,6 +52806,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "visonic",
+      "driver": "button_wireless_1",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "VISONIC",
       "driver": "button_wireless_1",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -52272,6 +53376,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "button_wireless_2",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "button_wireless_2",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -52747,6 +53857,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "button_wireless_2",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "button_wireless_2",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -53274,6 +54390,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "button_wireless_3",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "button_wireless_3",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -53761,6 +54883,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "button_wireless_3",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "button_wireless_3",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -54426,6 +55554,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "ewelink",
+      "driver": "button_wireless_4",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "EWELINK",
       "driver": "button_wireless_4",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -54505,6 +55639,12 @@
     },
     {
       "mfr": "ILUX",
+      "driver": "button_wireless_4",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "immax",
       "driver": "button_wireless_4",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -54967,6 +56107,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "button_wireless_4",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "button_wireless_4",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -55458,6 +56604,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "button_wireless_6",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "button_wireless_6",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -55933,6 +57085,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "button_wireless_6",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "button_wireless_6",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -56388,6 +57546,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "button_wireless_8",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "button_wireless_8",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -56863,6 +58027,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "button_wireless_8",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "button_wireless_8",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -57360,6 +58530,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "ceiling_fan",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "ceiling_fan",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -57847,6 +59023,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "ceiling_fan",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "ceiling_fan",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -64056,12 +65238,6 @@
       "branch": "2b12a20b"
     },
     {
-      "mfr": "_TZE284_7zazvlyn",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
       "mfr": "_tze284_8zizsafo",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -65328,6 +66504,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "ewelink",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "EWELINK",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -65473,6 +66655,12 @@
     },
     {
       "mfr": "IM-Z3.0-CCT",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "immax",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -66402,6 +67590,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "visonic",
+      "driver": "climate_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "VISONIC",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -66481,12 +67675,6 @@
     },
     {
       "mfr": "YOOLAX",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
-      "mfr": "zbeacon",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -67056,6 +68244,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "co_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "co_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -67555,6 +68749,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "co_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "co_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -69270,6 +70470,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "ewelink",
+      "driver": "contact_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "EWELINK",
       "driver": "contact_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -69367,6 +70573,12 @@
     },
     {
       "mfr": "ILUX",
+      "driver": "contact_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "immax",
       "driver": "contact_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -70152,6 +71364,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "visonic",
+      "driver": "contact_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "VISONIC",
       "driver": "contact_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -70207,12 +71425,6 @@
     },
     {
       "mfr": "YOOLAX",
-      "driver": "contact_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
-      "mfr": "zbeacon",
       "driver": "contact_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -72000,6 +73212,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "curtain_motor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "curtain_motor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -72589,6 +73807,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "curtain_motor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "curtain_motor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -73278,6 +74502,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "curtain_motor_tilt",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "curtain_motor_tilt",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -73753,6 +74983,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "curtain_motor_tilt",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "curtain_motor_tilt",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -74214,6 +75450,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "dimmer_3gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "dimmer_3gang",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -74689,6 +75931,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "dimmer_3gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "dimmer_3gang",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -75354,6 +76602,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "dimmer_dual_channel",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "dimmer_dual_channel",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -75829,6 +77083,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "dimmer_dual_channel",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "dimmer_dual_channel",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -77646,6 +78906,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "dimmer_wall_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "dimmer_wall_1gang",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -78103,6 +79369,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "dimmer_wall_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "dimmer_wall_1gang",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -78762,6 +80034,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "din_rail_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "din_rail_meter",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -79303,6 +80581,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "din_rail_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "din_rail_meter",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -79878,6 +81162,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "din_rail_switch",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "din_rail_switch",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -80425,6 +81715,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "din_rail_switch",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "din_rail_switch",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -81504,6 +82800,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "door_controller",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "door_controller",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -81979,6 +83281,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "door_controller",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "door_controller",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -82488,6 +83796,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "doorbell",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "doorbell",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -82975,6 +84289,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "doorbell",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "doorbell",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -83502,6 +84822,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "energy_meter_3phase",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "energy_meter_3phase",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -83977,6 +85303,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "energy_meter_3phase",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "energy_meter_3phase",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -84582,6 +85914,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "fan_controller",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "fan_controller",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -85057,6 +86395,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "fan_controller",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "fan_controller",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -85596,6 +86940,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "fingerprint_lock",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "fingerprint_lock",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -86064,6 +87414,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "visonic",
+      "driver": "fingerprint_lock",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "VISONIC",
       "driver": "fingerprint_lock",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -86515,6 +87871,12 @@
     },
     {
       "mfr": "ILUX",
+      "driver": "formaldehyde_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "immax",
       "driver": "formaldehyde_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -86995,6 +88357,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "formaldehyde_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "formaldehyde_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -87504,6 +88872,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "garage_door",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "garage_door",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -87979,6 +89353,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "garage_door",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "garage_door",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -88524,6 +89904,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "gas_detector",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "gas_detector",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -89023,6 +90409,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "gas_detector",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "gas_detector",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -89664,6 +91056,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "gas_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "gas_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -90168,6 +91566,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "visonic",
+      "driver": "gas_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "VISONIC",
       "driver": "gas_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -90613,6 +92017,12 @@
     },
     {
       "mfr": "ILUX",
+      "driver": "gateway_zigbee_bridge",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "immax",
       "driver": "gateway_zigbee_bridge",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -91093,6 +92503,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "gateway_zigbee_bridge",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "gateway_zigbee_bridge",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -91746,6 +93162,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "ewelink",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "EWELINK",
       "driver": "generic_tuya",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -91867,6 +93289,12 @@
     },
     {
       "mfr": "ILUX",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "immax",
       "driver": "generic_tuya",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -92502,6 +93930,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "visonic",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "VISONIC",
       "driver": "generic_tuya",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -93048,6 +94482,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "humidifier",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "humidifier",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -93528,6 +94968,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "visonic",
+      "driver": "humidifier",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "VISONIC",
       "driver": "humidifier",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -94003,6 +95449,12 @@
     },
     {
       "mfr": "ILUX",
+      "driver": "hvac_air_conditioner",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "immax",
       "driver": "hvac_air_conditioner",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -94495,6 +95947,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "hvac_air_conditioner",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "hvac_air_conditioner",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -95010,6 +96468,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "hvac_dehumidifier",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "hvac_dehumidifier",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -95497,6 +96961,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "hvac_dehumidifier",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "hvac_dehumidifier",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -96162,6 +97632,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "ir_blaster",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "ir_blaster",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -96649,6 +98125,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "ir_blaster",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "ir_blaster",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -97176,6 +98658,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "lcdtemphumidsensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "lcdtemphumidsensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -97651,6 +99139,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "lcdtemphumidsensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "lcdtemphumidsensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -98214,6 +99708,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "led_controller_cct",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "led_controller_cct",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -98701,6 +100201,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "led_controller_cct",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "led_controller_cct",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -99258,6 +100764,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "led_controller_dimmable",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "led_controller_dimmable",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -99733,6 +101245,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "led_controller_dimmable",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "led_controller_dimmable",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -100284,6 +101802,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "led_controller_rgb",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "led_controller_rgb",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -100759,6 +102283,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "led_controller_rgb",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "led_controller_rgb",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -101352,6 +102882,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "led_strip",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "led_strip",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -101827,6 +103363,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "led_strip",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "led_strip",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -102372,6 +103914,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "led_strip_advanced",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "led_strip_advanced",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -102847,6 +104395,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "led_strip_advanced",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "led_strip_advanced",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -103446,6 +105000,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "led_strip_rgbw",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "led_strip_rgbw",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -103921,6 +105481,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "led_strip_rgbw",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "led_strip_rgbw",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -104448,6 +106014,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "lock_smart",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "lock_smart",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -104923,6 +106495,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "lock_smart",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "lock_smart",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -105360,6 +106938,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "ewelink",
+      "driver": "module_mini_switch",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "EWELINK",
       "driver": "module_mini_switch",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -105439,6 +107023,12 @@
     },
     {
       "mfr": "ILUX",
+      "driver": "module_mini_switch",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "immax",
       "driver": "module_mini_switch",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -105919,6 +107509,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "module_mini_switch",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "module_mini_switch",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -107658,6 +109254,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "ewelink",
+      "driver": "motion_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "EWELINK",
       "driver": "motion_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -107779,6 +109381,12 @@
     },
     {
       "mfr": "ILUX",
+      "driver": "motion_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "immax",
       "driver": "motion_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -108648,6 +110256,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "visonic",
+      "driver": "motion_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "VISONIC",
       "driver": "motion_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -108739,12 +110353,6 @@
     },
     {
       "mfr": "zg-204ze",
-      "driver": "motion_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
-      "mfr": "ZG-204ZE",
       "driver": "motion_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -109446,6 +111054,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "motion_sensor_radar_mmwave",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "motion_sensor_radar_mmwave",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -109945,6 +111559,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "motion_sensor_radar_mmwave",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "motion_sensor_radar_mmwave",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -110454,6 +112074,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "pet_feeder",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "pet_feeder",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -110923,6 +112549,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "pet_feeder",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "pet_feeder",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -111954,6 +113586,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "ewelink",
+      "driver": "plug_energy_monitor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "EWELINK",
       "driver": "plug_energy_monitor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -112033,6 +113671,12 @@
     },
     {
       "mfr": "ILUX",
+      "driver": "plug_energy_monitor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "immax",
       "driver": "plug_energy_monitor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -112525,6 +114169,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "plug_energy_monitor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "plug_energy_monitor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -113946,6 +115596,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "plug_smart",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "plug_smart",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -114672,6 +116328,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "visonic",
+      "driver": "plug_smart",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "VISONIC",
       "driver": "plug_smart",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -115212,6 +116874,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "pool_pump",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "pool_pump",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -115681,6 +117349,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "pool_pump",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "pool_pump",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -116238,6 +117912,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "power_clamp_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "power_clamp_meter",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -116736,6 +118416,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "visonic",
+      "driver": "power_clamp_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "VISONIC",
       "driver": "power_clamp_meter",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -117199,6 +118885,12 @@
     },
     {
       "mfr": "ILUX",
+      "driver": "power_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "immax",
       "driver": "power_meter",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -117679,6 +119371,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "power_meter",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "power_meter",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -118188,6 +119886,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "presence_sensor_ceiling",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "presence_sensor_ceiling",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -118663,6 +120367,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "presence_sensor_ceiling",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "presence_sensor_ceiling",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -119226,12 +120936,6 @@
       "branch": "2b12a20b"
     },
     {
-      "mfr": "_TZE284_rlytpmij",
-      "driver": "presence_sensor_radar",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "2b12a20b"
-    },
-    {
       "mfr": "_tze284_sxm7l9xa",
       "driver": "presence_sensor_radar",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -119623,6 +121327,12 @@
     },
     {
       "mfr": "ILUX",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "immax",
       "driver": "presence_sensor_radar",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -120109,6 +121819,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "presence_sensor_radar",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "presence_sensor_radar",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -120630,6 +122346,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "radiator_controller",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "radiator_controller",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -121105,6 +122827,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "radiator_controller",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "radiator_controller",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -122922,6 +124650,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "radiator_valve",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "radiator_valve",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -123480,6 +125214,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "visonic",
+      "driver": "radiator_valve",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "VISONIC",
       "driver": "radiator_valve",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -123984,6 +125724,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "rain_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "rain_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -124459,6 +126205,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "rain_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "rain_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -124926,6 +126678,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "scene_switch_1",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "scene_switch_1",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -125401,6 +127159,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "scene_switch_1",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "scene_switch_1",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -125862,6 +127626,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "scene_switch_2",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "scene_switch_2",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -126337,6 +128107,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "scene_switch_2",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "scene_switch_2",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -126798,6 +128574,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "scene_switch_3",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "scene_switch_3",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -127273,6 +129055,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "scene_switch_3",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "scene_switch_3",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -127770,6 +129558,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "scene_switch_4",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "scene_switch_4",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -128244,6 +130038,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "visonic",
+      "driver": "scene_switch_4",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "VISONIC",
       "driver": "scene_switch_4",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -128695,6 +130495,12 @@
     },
     {
       "mfr": "ILUX",
+      "driver": "scene_switch_6",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "immax",
       "driver": "scene_switch_6",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -129175,6 +130981,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "scene_switch_6",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "scene_switch_6",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -129642,6 +131454,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "shutter_roller_controller",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "shutter_roller_controller",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -130117,6 +131935,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "shutter_roller_controller",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "shutter_roller_controller",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -130692,6 +132516,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "siren",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "siren",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -131179,6 +133009,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "siren",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "siren",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -131736,6 +133572,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "smart_breaker",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "smart_breaker",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -132240,6 +134082,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "visonic",
+      "driver": "smart_breaker",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "VISONIC",
       "driver": "smart_breaker",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -132697,6 +134545,12 @@
     },
     {
       "mfr": "ILUX",
+      "driver": "smart_heater",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "immax",
       "driver": "smart_heater",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -133177,6 +135031,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "smart_heater",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "smart_heater",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -133662,6 +135522,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "smart_heater_controller",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "smart_heater_controller",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -134137,6 +136003,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "smart_heater_controller",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "smart_heater_controller",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -134706,6 +136578,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "smart_rcbo",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "smart_rcbo",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -135181,6 +137059,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "smart_rcbo",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "smart_rcbo",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -135948,6 +137832,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "smoke_detector_advanced",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "smoke_detector_advanced",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -136513,6 +138403,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "smoke_detector_advanced",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "smoke_detector_advanced",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -137196,6 +139092,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "soil_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "soil_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -137671,6 +139573,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "soil_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "soil_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -140550,6 +142458,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "switch_1gang",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -141211,6 +143125,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "switch_1gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "switch_1gang",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -143100,6 +145020,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "switch_2gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "switch_2gang",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -143532,7 +145458,19 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "tuyatec-nzrrvgco",
+      "driver": "switch_2gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "TUYATEC-NZRRVGCO",
+      "driver": "switch_2gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "tuyatec-o6sncwd6",
       "driver": "switch_2gang",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -143569,6 +145507,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "switch_2gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "switch_2gang",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -145122,6 +147066,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "switch_3gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "switch_3gang",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -145579,6 +147529,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "switch_3gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "switch_3gang",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -147120,6 +149076,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "switch_4gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "switch_4gang",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -147589,6 +149551,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "switch_4gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "switch_4gang",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -148188,6 +150156,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "switch_plug_1",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "switch_plug_1",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -148663,6 +150637,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "switch_plug_1",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "switch_plug_1",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -149124,6 +151104,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "switch_plug_2",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "switch_plug_2",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -149599,6 +151585,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "switch_plug_2",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "switch_plug_2",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -150054,6 +152046,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "switch_temp_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "switch_temp_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -150529,6 +152527,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "switch_temp_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "switch_temp_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -150990,6 +152994,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "switch_wall_5gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "switch_wall_5gang",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -151465,6 +153475,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "switch_wall_5gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "switch_wall_5gang",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -151962,6 +153978,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "switch_wall_6gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "switch_wall_6gang",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -152437,6 +154459,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "switch_wall_6gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "switch_wall_6gang",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -152904,6 +154932,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "switch_wall_7gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "switch_wall_7gang",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -153379,6 +155413,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "switch_wall_7gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "switch_wall_7gang",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -153870,6 +155910,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "switch_wall_8gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "switch_wall_8gang",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -154345,6 +156391,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "switch_wall_8gang",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "switch_wall_8gang",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -154806,6 +156858,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "switch_wireless",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "switch_wireless",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -155286,6 +157344,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "visonic",
+      "driver": "switch_wireless",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "VISONIC",
       "driver": "switch_wireless",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -155652,6 +157716,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "ewelink",
+      "driver": "temphumidsensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "EWELINK",
       "driver": "temphumidsensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -155731,6 +157801,12 @@
     },
     {
       "mfr": "ILUX",
+      "driver": "temphumidsensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "immax",
       "driver": "temphumidsensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -156300,6 +158376,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "visonic",
+      "driver": "temphumidsensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "VISONIC",
       "driver": "temphumidsensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -156745,6 +158827,12 @@
     },
     {
       "mfr": "ILUX",
+      "driver": "thermostat_4ch",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "immax",
       "driver": "thermostat_4ch",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -157225,6 +159313,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "thermostat_4ch",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "thermostat_4ch",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -158862,6 +160956,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "thermostat_tuya_dp",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "thermostat_tuya_dp",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -159432,6 +161532,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "visonic",
+      "driver": "thermostat_tuya_dp",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "VISONIC",
       "driver": "thermostat_tuya_dp",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -159630,6 +161736,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "ewelink",
+      "driver": "universal_fallback",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "EWELINK",
       "driver": "universal_fallback",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -159649,6 +161761,12 @@
     },
     {
       "mfr": "IKEA",
+      "driver": "universal_fallback",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "immax",
       "driver": "universal_fallback",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -160140,6 +162258,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "usb_dongle_dual_repeater",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "usb_dongle_dual_repeater",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -160615,6 +162739,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "usb_dongle_dual_repeater",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "usb_dongle_dual_repeater",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -161160,6 +163290,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "usb_outlet_advanced",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "usb_outlet_advanced",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -161653,6 +163789,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "usb_outlet_advanced",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "usb_outlet_advanced",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -162246,6 +164388,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "valve_irrigation",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "valve_irrigation",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -162721,6 +164869,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "valve_irrigation",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "valve_irrigation",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -163254,6 +165408,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "valve_single",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "valve_single",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -163729,6 +165889,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "valve_single",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "valve_single",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -164322,6 +166488,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "vibration_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "vibration_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -164797,6 +166969,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "vibration_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "vibration_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -165846,6 +168024,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "ewelink",
+      "driver": "water_leak_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "EWELINK",
       "driver": "water_leak_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -165967,6 +168151,12 @@
     },
     {
       "mfr": "ILUX",
+      "driver": "water_leak_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "immax",
       "driver": "water_leak_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -166728,6 +168918,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "visonic",
+      "driver": "water_leak_sensor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "VISONIC",
       "driver": "water_leak_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -167274,6 +169470,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "water_tank_monitor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "water_tank_monitor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -167749,6 +169951,12 @@
     },
     {
       "mfr": "VISION",
+      "driver": "water_tank_monitor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "visonic",
       "driver": "water_tank_monitor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -168264,6 +170472,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "immax",
+      "driver": "water_valve_smart",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "IMMAX",
       "driver": "water_valve_smart",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -168768,6 +170982,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "visonic",
+      "driver": "water_valve_smart",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "VISONIC",
       "driver": "water_valve_smart",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -169219,6 +171439,12 @@
     },
     {
       "mfr": "ILUX",
+      "driver": "weather_station_outdoor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
+      "mfr": "immax",
       "driver": "weather_station_outdoor",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "2b12a20b"
@@ -169704,6 +171930,12 @@
       "branch": "2b12a20b"
     },
     {
+      "mfr": "visonic",
+      "driver": "weather_station_outdoor",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "2b12a20b"
+    },
+    {
       "mfr": "VISONIC",
       "driver": "weather_station_outdoor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -169860,12 +172092,6 @@
       "branch": "2b12a20b"
     },
     {
-      "mfr": "_TZE284_7zazvlyn",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
       "mfr": "_TZe200_0hg58wyk",
       "driver": "climate_sensor",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -171360,12 +173586,6 @@
       "branch": "3a27024d"
     },
     {
-      "mfr": "zbeacon",
-      "driver": "contact_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
       "mfr": "_TZe200_a0syesf5",
       "driver": "dimmer_dual_channel",
       "fork": "dlnraja/com.tuya.zigbee",
@@ -171386,6 +173606,24 @@
     {
       "mfr": "EWELINK",
       "driver": "generic_diy",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "ewelink",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "immax",
+      "driver": "generic_tuya",
+      "fork": "dlnraja/com.tuya.zigbee",
+      "branch": "3a27024d"
+    },
+    {
+      "mfr": "visonic",
+      "driver": "generic_tuya",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "3a27024d"
     },
@@ -171724,2082 +173962,6 @@
       "driver": "generic_tuya",
       "fork": "dlnraja/com.tuya.zigbee",
       "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZE284_rlytpmij",
-      "driver": "presence_sensor_radar",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZe200_0nauxa0p",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZe200_9cxuhakf",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZe200_bkkmqmyo",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZe200_tsxpl0d0",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZe204_1v1dxkck",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZe204_68utemio",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZe204_bkkmqmyo",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZe204_bxoo2swd",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZe204_hlx9tnzb",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZe204_zenj4lxv",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZe204_znvwzxkq",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZe284_znvwzxkq",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "tuyatec-prhs1rsd",
-      "driver": "temphumidsensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "tuyatec-yg5dcbfu",
-      "driver": "temphumidsensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3a27024d"
-    },
-    {
-      "mfr": "_TZE284_7zazvlyn",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "EWELINK",
-      "driver": "generic_diy",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE284_rlytpmij",
-      "driver": "presence_sensor_radar",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "tuyatec-prhs1rsd",
-      "driver": "temphumidsensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "tuyatec-yg5dcbfu",
-      "driver": "temphumidsensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b4ed9ce"
-    },
-    {
-      "mfr": "_TZE284_7zazvlyn",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_0hg58wyk",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_0j5jma9b",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_1agwnems",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_1ibpyhdc",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_2aaelwxk",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_2atgpdho",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_2ekuz3dz",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_2hf7x9n3",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_2imwyigp",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_2m38mh6k",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_2pddnnrk",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_2se8efxh",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_3p5ydos3",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_3t91nb6k",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_3towulqd",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_579lguh2",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_7bztmfm1",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_7sjncirf",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_8whxpsiw",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_8ygsuhe1",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_9cqcpkgb",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_9i9dt8is",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_9p5xmj5r",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_9sfg7gm0",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_a4bpgplm",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_a8sdabtg",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_afycb3cg",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_ahpcyzth",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_aqnazj70",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_atpwqgml",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_auin8mzr",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_bfmfhxra",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_bh3n6gk8",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_bq5c8xfe",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_bynnczcb",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_byzdayie",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_c2fmom5z",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_ckud7u2l",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_cpmgn2cf",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_cqtamhh5",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_ctq0k47x",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_cwnjrr72",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_df04ghrb",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_dfxkcots",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_dq1mfjug",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_dwcarsat",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_e3oitdyu",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_eaac7dkw",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_ebwgzdqq",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_ewxhg6o9",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_fsb6zw01",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_fsow0qsk",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_g9a3awaj",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_ga1maeof",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_gbagoilo",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_ggev5fsl",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_gjldowol",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_gkfbdvyx",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_go3tvswy",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_gomuk3dc",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_gubdgai2",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_hggxgsjj",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_hkdl5fmv",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_holel4dk",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_hue3yfsn",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_husqqvux",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_iba1ckek",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_ikvncluo",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_ip2akl4w",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_jfw0a4aa",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_ji1gn7rw",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_jsaqgakf",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_jva8ink8",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_k6jhsr0q",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_kb5noeto",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_kccdzaeo",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_kds0pmmv",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_khzbklyh",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_kijxnb8q",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_kyfqmmyl",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_kzm5w4iz",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_libht6ua",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_lllliz3p",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_llvwkkde",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_lnbfnyxd",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_lpwgshtl",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_lsanae15",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_lu01t0zl",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_lyetpprm",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_m9skfctm",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_mja3fuja",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_mp902om5",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_mudxchsu",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_myd45weu",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_n8dljorx",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_nh9m9emk",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_nkjintbl",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_nklqjk62",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_npj9bug3",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_nslr42tt",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_ntcy3xu1",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_ojtqawav",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_ojzhk75b",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_p9zbdqgs",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_pay2byax",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_ppuj1vem",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_pvvbommb",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_qoy0ekbd",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_qq9mpfhw",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_qzaing2g",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_r32ctezx",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_rccxox8p",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_rhblgy0z",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_rhgsbacq",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_rks0sgb7",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_ryfmq5rl",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_s7rsrtbg",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_sgpeacqp",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_sur6q7ko",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_swaamsoy",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_t5p1vj8r",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_tmszbtzq",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_toeldckg",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_ttcovulf",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_tyffvoij",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_u6x1zyv2",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_uebojraa",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_ugekduaj",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_v6ossqfy",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_v9hkz2yn",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_ves1ycwx",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_viy9ihs7",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_vucankjx",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_vuwtqx0t",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_vvmbj46n",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_vzekyi4c",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_w4cryh2i",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_wbhaespm",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_wfxuhoea",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_whpb9yts",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_wqashyqo",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_wukb7rhc",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_wunufsil",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_wvovwe9h",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_wzk0x7fq",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_xby0s3ta",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_xlnzk169",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_xpq2rzhq",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_xpvamyfz",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_y8jijhba",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_ya4ft0w4",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_yh7aoahi",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_yjryxpot",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_yojqa8xn",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_yvx5lh6k",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_ywdxldoj",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_znbl8dj5",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_znlqjmih",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_ztc6ggyl",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_2imwyigp",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_3regm3h6",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_3t91nb6k",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_7bztmfm1",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_7gclukjs",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_81yrt3lo",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_9qhuzgo0",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_ac0fhfiq",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_atpwqgml",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_bmdsp6bs",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_chbyv06x",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_cjbofhxw",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_cvub6xbb",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_dcnsggvz",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_debczeci",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_dzuqwsyg",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_eekpf0ft",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_gbagoilo",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_gkfbdvyx",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_gomuk3dc",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_hcxvyxa5",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_iaeejhvf",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_ijxvkhd0",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_kyhbrfyl",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_laokfqwu",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_lawxy9e2",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_loejka0i",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_lsanae15",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_lzriup1j",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_mtoaryre",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_mvtclclq",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_n9ctkb6j",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_nbkshs6k",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_no6qtgtl",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_ntcy3xu1",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_ogx8u5z6",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_pcdmj88b",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_q9xty0ad",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_qasjif9e",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_r32ctezx",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_rhblgy0z",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_sbyx0lm6",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_sxm7l9xa",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_ugekduaj",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_uxllnywp",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_v9hkz2yn",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_ves1ycwx",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_vevc4c6g",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_vjpaih9f",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_wbhaespm",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_wfxuhoea",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_wvovwe9h",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_xnbkhhdr",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_xsm7l9xa",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_xu4a5rhj",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_ya4ft0w4",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_yojqa8xn",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_ztc6ggyl",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe21c_dohbhb5k",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_2se8efxh",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_65gzcss7",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_6ycgarab",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_7zazvlyn",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_81yrt3lo",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_8zizsafo",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_aao3yzhs",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_cjbofhxw",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_cvub6xbb",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_debczeci",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_eaet5qt5",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_fhvpaltk",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_g2e6cpnw",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_gomuk3dc",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_gyzlwu5q",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_iadro9bf",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_libht6ua",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_loejka0i",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_myd45weu",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_o9ofysmo",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_ogx8u5z6",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_oitavov2",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_pcdmj88b",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_rccxox8p",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_sgabhwa6",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_tgeqdjgk",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_vuwtqx0t",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_xc3vwx5a",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_xnbkhhdr",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_xpvamyfz",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_znlqjmih",
-      "driver": "climate_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "zbeacon",
-      "driver": "contact_sensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_a0syesf5",
-      "driver": "dimmer_dual_channel",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_la2c2uo9",
-      "driver": "dimmer_dual_channel",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_ykgar0ow",
-      "driver": "dimmer_dual_channel",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "EWELINK",
-      "driver": "generic_diy",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZ321c_4slreunp",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZ321c_fkzihax8",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZb000_42ha4rsc",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZb210_6eed09b9",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZb210_g01ie5wu",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZb210_lnnkh3f9",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZb210_rwy5hexp",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZb210_zmppwawa",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_0zaf1cr8",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_5nldle7w",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_68nvbi09",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_68nvbio9",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_9caxna4s",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_9vpe3fl1",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_axgvo9jh",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_bqcqqjpb",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_cf1sl3tj",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_clrdrnya",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_cpbo62rn",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_eegnwoyw",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_gaj531w3",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_icka1clh",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_jhkttplm",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_nw1r9hp6",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_p6vz3wzt",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_pw7mji0l",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_zah67ekd",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_zxxfv8wi",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_57hjqelq",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_clrdrnya",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_dtzziy1e",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_e5m9c5hl",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_fwondbzy",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_guvc7pdy",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_jktmrpoj",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_lbbg34rj",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_lh3arisb",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_nklqjk62",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_pfayrzcw",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_r0jdjrvi",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_vvvtcehj",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_ycke4deo",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_ztqnh5cg",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_zuq5xxib",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_0zaf1cr8",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_4qznlkbu",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_fwondbzy",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_iilebqoo",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_koxaopnk",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_nklqjk62",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_uqfph8ah",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe600_ogyg1y6b",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe608_c75zqghm",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe608_fmemczv1",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe608_lapuuoke",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe608_xkr8gep3",
-      "driver": "generic_tuya",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZE284_rlytpmij",
-      "driver": "presence_sensor_radar",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_0nauxa0p",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_9cxuhakf",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_bkkmqmyo",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe200_tsxpl0d0",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_1v1dxkck",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_68utemio",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_bkkmqmyo",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_bxoo2swd",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_hlx9tnzb",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_zenj4lxv",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe204_znvwzxkq",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "_TZe284_znvwzxkq",
-      "driver": "switch_1gang",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "tuyatec-prhs1rsd",
-      "driver": "temphumidsensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
-    },
-    {
-      "mfr": "tuyatec-yg5dcbfu",
-      "driver": "temphumidsensor",
-      "fork": "dlnraja/com.tuya.zigbee",
-      "branch": "3b940038"
     }
   ],
   "newFPsFromPRs": [],

@@ -1,6 +1,15 @@
 {
-  "timestamp": "2026-03-30T06:36:35.054Z",
-  "added": [],
+  "timestamp": "2026-04-02T03:49:51.950Z",
+  "added": [
+    {
+      "fp": "TUYATEC-qun7vq14",
+      "driver": "climate_sensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    }
+  ],
   "skipped": [],
   "dpGaps": [],
   "errors": [],
@@ -419,9 +428,9 @@
   },
   "summary": {
     "totalJohanFPs": 636,
-    "totalOurFPs": 4001,
-    "missingFPs": 0,
-    "addedFPs": 0,
+    "totalOurFPs": 3998,
+    "missingFPs": 1,
+    "addedFPs": 1,
     "skippedFPs": 0,
     "dpGaps": 0,
     "newDrivers": 91,

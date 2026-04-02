@@ -1,22 +1,11 @@
 {
-  "timestamp": "2026-04-01T14:53:33.408Z",
-  "appVersion": "5.11.152",
-  "forum": 1,
+  "timestamp": "2026-04-02T03:37:28.861Z",
+  "appVersion": "5.11.154",
+  "forum": 0,
   "github": 0,
   "diagnostics": 70,
   "diagNewFPs": 0,
   "diagCritical": 0,
-  "forumDetails": [
-    {
-      "topic": 140352,
-      "post": 1681,
-      "user": "SingKT",
-      "fps": [
-        "development"
-      ],
-      "reply": "It looks like you've found a fingerprint for your device, and it is associated with the `diy_custom_zigbee` driver. Since the fingerprint indicates that the device is recognized as a manufacturer-spec",
-      "model": "gh-gpt-4o-mini"
-    }
-  ],
+  "forumDetails": [],
   "githubDetails": []
 }
