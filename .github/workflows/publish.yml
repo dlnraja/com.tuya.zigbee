@@ -82,7 +82,7 @@ jobs:
         run: |
           node .github/scripts/generate-ai-changelog.js || echo "AI fallback"
           VER=$(node -p "require('./app.json').version")
-          CL=$(node -e "const cl=require('./.homeychangelog.json');const v=process.argv[1];if(cl[v]&&cl[v].en)process.stdout.write(cl[v].en);else{const k=Object.keys(cl).sort().reverse();if(k[0]&&cl[k[0]].en)process.stdout.write(cl[k[0]].en);}" "$VER" 2>/dev/null || echo "")
+          CL=$(node -e "const cl=require('./.homeychangelog.json');const v=process.argv[1];if(cl[v]&&cl[v].en)process.stdout.write(cl[v].en);" "$VER" 2>/dev/null || echo "")
           echo "ai_text=$CL" >> $GITHUB_OUTPUT
 
       - name: Extract Changelog

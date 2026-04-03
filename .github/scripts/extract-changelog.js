@@ -18,8 +18,6 @@ function fromJson(){
   if(!fs.existsSync(f))return null;
   try{const cl=JSON.parse(fs.readFileSync(f,'utf8'));
     if(cl[ver]&&cl[ver].en)return{md:cl[ver].en,oneLiner:cl[ver].en};
-    const k=Object.keys(cl).sort((a,b)=>b.localeCompare(a,undefined,{numeric:true}));
-    if(k[0]&&cl[k[0]].en)return{md:cl[k[0]].en,oneLiner:cl[k[0]].en};
   }catch{}return null;
 }
 function fromGit(){
