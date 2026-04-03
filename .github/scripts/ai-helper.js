@@ -202,34 +202,20 @@ async function callAI(text,sysPrompt,opts={}){
       else{console.log('  Kimi failed:',r.status);if(r.status===429)cbFail('kimi',300000)}
     }catch(e){console.log('  Kimi error:',e.message);cbFail('kimi',60000)}
   }
-  // Fallback to ApiFreeLLM (free, unlimited)
-  const aflKey=process.env.APIFREELLM_KEY;
-  if(aflKey){
-    console.log('  Falling back to ApiFreeLLM...');
-    try{
-      const r=await fetchT('https://apifreellm.com/api/v1/chat',{
-        method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+aflKey},
-        body:JSON.stringify({message:fullSysPrompt+'\n\n---\nUser message:\n'+text})});
-      if(r.ok){const d=await r.json();if(d.success&&d.response)return{text:d.response.trim(),model:'apifreellm'}}
-      else{console.log('  ApiFreeLLM failed:',r.status)}
-    }catch(e){console.log('  ApiFreeLLM error:',e.message)}
+  // DeepSeek AI (cheap/free, very powerful)
+  const dsKeyChat=process.env.DEEPSEEK_API_KEY;
+  if(dsKeyChat&&cbOk('deepseek')){
+    console.log('  Trying DeepSeek...');try{
+      const r=await fetchT('https://api.deepseek.com/chat/completions',{method:'POST',
+        headers:{'Content-Type':'application/json','Authorization':'Bearer '+dsKeyChat},
+        body:JSON.stringify({model:'deepseek-chat',messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],max_tokens:maxTokens,temperature:0.2})},30000);
+      if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'deepseek-chat'}}
+      else{console.log('  DeepSeek failed:',r.status);cbFail('deepseek',60000)}
+    }catch(e){console.log('  DeepSeek error:',e.message);cbFail('deepseek',60000)}
   }
-  console.log('  All AI failed, using local regex fallback');
-  return localFallback(text);
-}
-
-function localFallback(text){
-  const m=text.match(/_T[A-Z]\w{3,5}_[a-z0-9]{4,16}/g)||[];
-  const p=text.match(/\bTS[0-9]{4}[A-Z]?\b/g)||[];
-  if(!m.length&&!p.length)return null;
-  const fps=[...new Set(m)].map(f=>'`'+f+'`').join(', ');
-  const pids=[...new Set(p)].map(f=>'`'+f+'`').join(', ');
-  let r = "Hi there! I am the automated assistant for this repository. (Note: AI systems are currently under heavy load so I'm using a basic fallback check).\n\n";
-  r += "I see you've provided logs. I successfully detected the following fingerprints: " + (fps || 'none') + ".\n";
-  if (pids) r += "Product IDs: " + pids + "\n\n";
-  r += "> **Quick Tip for sensors showing '56 years ago' or unresponsive data:** Tuya battery sensors go to sleep very fast. Right after pairing, rapidly click the pairing button 2 or 3 times to explicitly wake up the device so Homey can configure the Zigbee reporting intervals. Otherwise, it won't send data!\n\n";
-  r += "Dylan will look into these specific device IDs shortly!";
-  return{text:r,model:'local-regex'};
+  
+  console.log('  All AI engines failed or rate limited. Returning null to avoid raw metadata output.');
+  return null;
 }
 
 async function analyzeImage(imageUrl,prompt){
