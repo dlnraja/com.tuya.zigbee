@@ -4,7 +4,18 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.161] - 2026-04-03
+## [5.11.162] - 2026-04-03
+
+### Bug Fixes
+- Fixed synchronization of frontend pairing emit events with backend TuyaLocalDriver, removing QR-only constraint.
+- Implemented robust cloudless discovery fallback, protocol auto-rotation, and static IP warnings.
+- Added missing button.push capability for Fingerbot to resolve issue #162.
+
+### New Features
+- Enhanced pairing experience with 1-click Tuya App deep link bypass for single-smartphone QR Code pairing on all wifi drivers.
+---
+
+ [5.11.161] - 2026-04-03
 
 ### Bug Fixes
 - Fixed synchronization of energy scaling UI components across smart plugs.
