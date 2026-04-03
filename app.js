@@ -224,6 +224,36 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     // DP/sub-capability cards → UniversalFlowCardLoader
     // Switch/plug cards → FlowCardManager
 
+    // v5.8.46: Manual OTA Checker action card
+    try {
+      this.homey.flow.getActionCard('ota_check_updates').registerRunListener(async (args) => {
+        this.log('[OTA] Manual check sequence initiated via Flow');
+        if (!args.device) return false;
+        
+        try {
+          const update = await this.otaManager?.checkUpdate(args.device);
+          if (update?.available) {
+            await this.homey.notifications.createNotification({
+              excerpt: `OTA Update found for ${args.device.getName()} (v${update.newVersion}). Use a Tuya hub or Z2M to flash it safely.`
+            });
+            this.log(`[OTA] Found update v${update.newVersion} for ${args.device.getName()}`);
+          } else {
+            await this.homey.notifications.createNotification({
+              excerpt: `Your device ${args.device.getName()} is on the latest Tuya firmware.`
+            });
+            this.log(`[OTA] No update found for ${args.device.getName()}`);
+          }
+          return true;
+        } catch (err) {
+          this.error(`[OTA] Checking failed:`, err.message);
+          return false;
+        }
+      });
+      this.log('✅ Registered OTA Update Manual Check flow card');
+    } catch (err) {
+      this.error('⚠️ Could not register OTA check card:', err.message);
+    }
+
     // Initialize Homey Insights
     try {
       await this.initializeInsights();
