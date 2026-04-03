@@ -1,4 +1,7 @@
 {
+  "5.11.156": {
+    "en": "Universal Tuya Zigbee app v5.11.156 adds missing button.push capability for Fingerbot and fixes energy scale issues."
+  },
   "5.11.155": {
     "en": "Universal Tuya Zigbee app v5.11.155 adds missing button.push capability for Fingerbot and improves device support."
   },
@@ -56,10 +59,7 @@
   "5.11.134": {
     "en": "v5.11.132: Implemented batch close/respond state update for improved device management., No new features added in this release., No improvements made in this release., No changes in CI/CD processes."
   },
-  "5.11.133": {
-    "en": "v5.11.132: Implemented batch close/respond state update for improved device management., No new features added in this release., No improvements made in this release., No changes in CI/CD processes."
-  },
-  "5.11.156": {
-    "en": "v5.11.155: Added missing `button.push` capability for Fingerbot to resolve issue #162., No new features added in this release., No improvements made in this release."
+  "5.11.157": {
+    "en": "v5.11.156: Fixed missing `button.push` capability for Fingerbot to resolve issue #162., Addressed SDK v3 flow card deprecation and corrected energy scale issues., No new features added in this release., No improvements made in this release."
   }
 }
