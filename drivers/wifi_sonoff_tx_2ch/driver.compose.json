@@ -96,5 +96,15 @@
     "small": "drivers/wifi_sonoff_tx_2ch/assets/images/small.png",
     "large": "drivers/wifi_sonoff_tx_2ch/assets/images/large.png",
     "xlarge": "drivers/wifi_sonoff_tx_2ch/assets/images/xlarge.png"
-  }
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
 }

@@ -51,5 +51,15 @@
     "large": "drivers/remote_dimmer/assets/images/large.png",
     "small": "drivers/remote_dimmer/assets/images/small.png",
     "xlarge": "drivers/remote_dimmer/assets/images/xlarge.png"
-  }
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
 }
