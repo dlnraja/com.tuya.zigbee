@@ -1,0 +1,119 @@
+name: Homey App CI/CD
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - 'reports/**'
+      - 'project-data/**'
+  workflow_dispatch:
+    inputs:
+      version_type:
+        description: 'Version increment type'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+      changelog:
+        description: 'Changelog message (leave empty for auto-generation)'
+        required: false
+
+jobs:
+  validate:
+    name: Validate Homey App
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: Validate App
+        uses: athombv/github-action-homey-app-validate@master
+        with:
+          level: publish
+
+  publish:
+    name: Publish to Homey App Store
+    needs: validate
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.version_type != ''
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Generate Changelog
+        id: changelog
+        run: |
+          if [ -n "${{ github.event.inputs.changelog }}" ]; then
+            CHANGELOG="${{ github.event.inputs.changelog }}"
+          else
+            # Auto-generate from last commit
+            LAST_COMMIT=$(git log -1 --pretty=format:"%s")
+            
+            if echo "$LAST_COMMIT" | grep -iE "^feat|feature"; then
+              CHANGELOG="New features and device support added"
+            elif echo "$LAST_COMMIT" | grep -iE "^fix|bug"; then
+              CHANGELOG="Bug fixes and stability improvements"
+            elif echo "$LAST_COMMIT" | grep -iE "device|manufacturer|driver"; then
+              CHANGELOG="Enhanced device compatibility"
+            else
+              CHANGELOG="Performance and stability improvements"
+            fi
+          fi
+          
+          # Sanitize (Homey max 400 chars)
+          CHANGELOG=$(echo "$CHANGELOG" | tr -d '\r\n' | head -c 400)
+          echo "changelog=$CHANGELOG" >> $GITHUB_OUTPUT
+          echo "📝 Changelog: $CHANGELOG"
+      
+      - name: Update App Version
+        uses: athombv/github-action-homey-app-version@master
+        id: version
+        with:
+          version: ${{ github.event.inputs.version_type }}
+          changelog: ${{ steps.changelog.outputs.changelog }}
+      
+      - name: Commit Version Changes
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          if [ -n "$(git status --porcelain)" ]; then
+            git add app.json .homeychangelog.json
+            git commit -m "chore: bump version to v${{ steps.version.outputs.version }} [skip ci]"
+            git push
+            echo "✅ Version v${{ steps.version.outputs.version }} committed"
+          fi
+      
+      - name: Publish to Homey App Store
+        uses: athombv/github-action-homey-app-publish@master
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+      
+      - name: Publication Summary
+        run: |
+          echo "## 🎉 Publication Successful" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Version:** v${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Changelog:** ${{ steps.changelog.outputs.changelog }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📋 Next Steps" >> $GITHUB_STEP_SUMMARY
+          echo "1. Go to [Developer Dashboard](https://tools.developer.homey.app)" >> $GITHUB_STEP_SUMMARY
+          echo "2. Find **Universal Tuya Zigbee v${{ steps.version.outputs.version }}**" >> $GITHUB_STEP_SUMMARY
+          echo "3. **Promote to Test** or submit for certification" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔗 Links" >> $GITHUB_STEP_SUMMARY
+          echo "- [Dashboard](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY
+          echo "- [Test URL](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)" >> $GITHUB_STEP_SUMMARY

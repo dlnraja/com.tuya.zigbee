@@ -10,7 +10,7 @@ class SmartHeaterDriver extends ZigBeeDriver {
     const reg = (id, fn) => { try { this.homey.flow.getActionCard(id).registerRunListener(fn); } catch (e) { this.log('[Flow]', id, e.message); } };
     reg('smart_heater_turn_on', async ({ device }) => { await device.triggerCapabilityListener('onoff', true); return true; });
     // v5.13.3: Condition handler
-    try{this.homey.flow.getConditionCard('smart_heater_is_on').registerRunListener(async({device})=>device.getCapabilityValue('onoff')===true);}catch(e){this.log('[Flow]',e.message);}
+    try{this.homey.flow.getDeviceConditionCard('smart_heater_is_on').registerRunListener(async({device})=>device.getCapabilityValue('onoff')===true);}catch(e){this.log('[Flow]',e.message);}
     try{this.homey.flow.getActionCard('smart_heater_set_temperature').registerRunListener(async({device,temperature})=>{if(temperature!==undefined)await device.triggerCapabilityListener('target_temperature',temperature);return true;});}catch(e){this.log('[Flow]',e.message);}
 
     reg('smart_heater_turn_off', async ({ device }) => { await device.triggerCapabilityListener('onoff', false); return true; });

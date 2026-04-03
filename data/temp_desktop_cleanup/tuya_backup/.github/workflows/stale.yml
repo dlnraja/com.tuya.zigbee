@@ -1,0 +1,61 @@
+name: "Stale Issues & PRs"
+
+on:
+  schedule:
+    - cron: '0 5 * * 1'  # Weekly Monday 05:00 UTC
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: stale
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  stale:
+    name: "Close Stale Issues & PRs"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/stale@v9
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          days-before-stale: 45
+          days-before-close: 14
+          stale-issue-message: >
+            This issue has been automatically marked as **stale** because it has not had
+            recent activity. It will be closed in 14 days if no further activity occurs.
+
+
+            If your device is still not working:
+
+            1. Update to the **[latest test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)**
+
+            2. **Remove and re-pair** your device
+
+            3. Share a new diagnostic report on the [Forum](https://community.homey.app/t/140352)
+          close-issue-message: >
+            This issue has been closed due to inactivity. If the problem persists,
+            please open a new issue with a fresh diagnostic report from
+            [Developer Tools](https://tools.developer.homey.app).
+          stale-pr-message: >
+            This PR has been automatically marked as **stale**. If the fingerprints
+            in this PR are not yet supported, please comment to keep it open.
+            Otherwise it will be closed in 14 days.
+          close-pr-message: >
+            This PR has been closed due to inactivity. If these fingerprints are still
+            needed, please open a new PR or issue.
+          stale-issue-label: stale
+          stale-pr-label: stale
+          close-issue-label: closed-stale
+          close-pr-label: closed-stale
+          exempt-issue-labels: "pinned,security,enhancement,auto-fix,community-sync,new-device,needs-info"
+          exempt-pr-labels: "pinned,security,auto-fix,new-device,pr-fingerprints"
+          exempt-all-assignees: true
+          operations-per-run: 100

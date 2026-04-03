@@ -1,0 +1,12 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Close",
+    "fr": "Fermer",
+    "nl": "Sluiten"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "button",
+  "insights": false
+}

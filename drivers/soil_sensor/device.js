@@ -556,7 +556,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
     this._flowTriggerTemperatureChanged = safeGetTrigger('soil_sensor_temperature_changed');
     this._flowTriggerBatteryLow = safeGetTrigger('soil_sensor_battery_low');
 
-    // Condition cards are registered in driver.js with getConditionCard() + registerRunListener()
+    // Condition cards are registered in driver.js with getDeviceConditionCard() + registerRunListener()
     // No need to re-register them here
 
     this.log('[SOIL] Flow triggers initialized');

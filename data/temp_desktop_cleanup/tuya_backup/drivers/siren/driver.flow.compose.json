@@ -1,0 +1,484 @@
+{
+  "triggers": [
+    {
+      "id": "siren_alarm_triggered",
+      "highlight": true,
+      "title": {
+        "en": "Siren started",
+        "nl": "Sirene gestart",
+        "fr": "Sirène démarrée",
+        "de": "Sirene gestartet"
+      },
+      "hint": {
+        "en": "Triggers when the siren starts sounding",
+        "nl": "Triggert wanneer de sirene begint te loeien",
+        "fr": "Se déclenche quand la sirène commence à sonner",
+        "de": "Wird ausgelöst, wenn die Sirene zu tönen beginnt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Siren started",
+        "nl": "Sirene gestart",
+        "fr": "Sirène démarrée",
+        "de": "Sirene gestartet"
+      }
+    },
+    {
+      "id": "siren_alarm_stopped",
+      "title": {
+        "en": "Siren stopped",
+        "nl": "Sirene gestopt",
+        "fr": "Sirène arrêtée",
+        "de": "Sirene gestoppt"
+      },
+      "hint": {
+        "en": "Triggers when the siren stops sounding",
+        "nl": "Triggert wanneer de sirene stopt met loeien",
+        "fr": "Se déclenche quand la sirène arrête de sonner",
+        "de": "Wird ausgelöst, wenn die Sirene aufhört zu tönen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Siren stopped",
+        "nl": "Sirene gestopt",
+        "fr": "Sirène arrêtée",
+        "de": "Sirene gestoppt"
+      }
+    },
+    {
+      "id": "siren_measure_battery_changed",
+      "title": {
+        "en": "Battery level changed",
+        "nl": "Batterijniveau veranderd",
+        "fr": "Niveau batterie changé",
+        "de": "Batteriestand geändert"
+      },
+      "titleFormatted": {
+        "en": "Battery level changed to [[battery]]%",
+        "nl": "Batterijniveau veranderd naar [[battery]]%",
+        "fr": "Niveau batterie changé à [[battery]]%",
+        "de": "Batteriestand geändert zu [[battery]]%"
+      },
+      "tokens": [
+        {
+          "name": "battery",
+          "type": "number",
+          "title": {
+            "en": "Battery (%)",
+            "nl": "Batterij (%)",
+            "fr": "Batterie (%)",
+            "de": "Batterie (%)"
+          },
+          "example": 75
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "siren_battery_low",
+      "title": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      }
+    },
+    {
+      "id": "siren_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      }
+    },
+    {
+      "id": "siren_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      }
+    },
+    {
+      "id": "siren_motion_detected",
+      "title": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "siren_is_sounding",
+      "title": {
+        "en": "Siren !{{is|is not}} sounding",
+        "nl": "Sirene !{{loeit|loeit niet}}",
+        "fr": "Sirène !{{sonne|ne sonne pas}}",
+        "de": "Sirene !{{tönt|tönt nicht}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Siren !{{is|is not}} sounding",
+        "nl": "Sirene !{{loeit|loeit niet}}",
+        "fr": "Sirène !{{sonne|ne sonne pas}}",
+        "de": "Sirene !{{tönt|tönt nicht}}"
+      }
+    },
+    {
+      "id": "siren_is_on",
+      "title": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      }
+    },
+    {
+      "id": "siren_motion_active",
+      "title": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "nl": "Beweging !{{is|is niet}} gedetecteerd",
+        "de": "Bewegung !{{ist|ist nicht}} erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "nl": "Beweging !{{is|is niet}} gedetecteerd",
+        "de": "Bewegung !{{ist|ist nicht}} erkannt"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "siren_turn_on",
+      "title": {
+        "en": "Turn on siren",
+        "nl": "Sirene aanzetten",
+        "fr": "Activer la sirène",
+        "de": "Sirene einschalten"
+      },
+      "titleFormatted": {
+        "en": "Turn on the siren",
+        "nl": "Zet de sirene aan",
+        "fr": "Activer la sirène",
+        "de": "Sirene einschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "siren_turn_off",
+      "title": {
+        "en": "Turn off siren",
+        "nl": "Sirene uitzetten",
+        "fr": "Désactiver la sirène",
+        "de": "Sirene ausschalten"
+      },
+      "titleFormatted": {
+        "en": "Turn off the siren",
+        "nl": "Zet de sirene uit",
+        "fr": "Désactiver la sirène",
+        "de": "Sirene ausschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "siren_set_volume",
+      "title": {
+        "en": "Set volume",
+        "nl": "Volume instellen",
+        "fr": "Régler le volume",
+        "de": "Lautstärke einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set siren volume to [[volume]]",
+        "nl": "Stel sirene volume in op [[volume]]",
+        "fr": "Régler le volume de la sirène à [[volume]]",
+        "de": "Sirenenlautstärke auf [[volume]] einstellen"
+      },
+      "args": [
+        {
+          "name": "volume",
+          "type": "dropdown",
+          "title": {
+            "en": "Volume level",
+            "nl": "Volumeniveau",
+            "fr": "Niveau de volume",
+            "de": "Lautstärkestufe"
+          },
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low",
+                "nl": "Laag",
+                "fr": "Bas",
+                "de": "Niedrig"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium",
+                "nl": "Gemiddeld",
+                "fr": "Moyen",
+                "de": "Mittel"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High",
+                "nl": "Hoog",
+                "fr": "Haut",
+                "de": "Hoch"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "siren_set_duration",
+      "title": {
+        "en": "Set alarm duration",
+        "nl": "Alarmduur instellen",
+        "fr": "Définir la durée de l'alarme",
+        "de": "Alarmdauer einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set alarm duration to [[duration]] seconds",
+        "nl": "Stel alarmduur in op [[duration]] seconden",
+        "fr": "Définir la durée de l'alarme à [[duration]] secondes",
+        "de": "Alarmdauer auf [[duration]] Sekunden einstellen"
+      },
+      "args": [
+        {
+          "name": "duration",
+          "type": "number",
+          "min": 1,
+          "max": 300,
+          "step": 1,
+          "placeholder": {
+            "en": "30"
+          }
+        }
+      ]
+    },
+    {
+      "id": "siren_set_melody",
+      "title": {
+        "en": "Set alarm melody",
+        "nl": "Alarm melodie instellen",
+        "fr": "Définir la mélodie d'alarme",
+        "de": "Alarmmelodie einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set alarm melody to [[melody]]",
+        "nl": "Stel alarm melodie in op [[melody]]",
+        "fr": "Définir la mélodie d'alarme à [[melody]]",
+        "de": "Alarmmelodie auf [[melody]] einstellen"
+      },
+      "hint": {
+        "en": "Select the melody/ringtone for the siren alarm",
+        "fr": "Sélectionner la mélodie/sonnerie pour l'alarme sirène"
+      },
+      "args": [
+        {
+          "name": "melody",
+          "type": "dropdown",
+          "title": {
+            "en": "Melody",
+            "nl": "Melodie",
+            "fr": "Mélodie",
+            "de": "Melodie"
+          },
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Doorbell Chime",
+                "fr": "Sonnette"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Für Elise",
+                "fr": "Pour Élise"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Westminster Chimes",
+                "fr": "Carillon Westminster"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "4-Key Chime",
+                "fr": "Carillon 4 notes"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "William Tell Overture",
+                "fr": "Guillaume Tell"
+              }
+            },
+            {
+              "id": "5",
+              "label": {
+                "en": "Mozart Piano",
+                "fr": "Mozart Piano"
+              }
+            },
+            {
+              "id": "6",
+              "label": {
+                "en": "Space Alarm",
+                "fr": "Alarme Spatiale"
+              }
+            },
+            {
+              "id": "7",
+              "label": {
+                "en": "Klaxon",
+                "fr": "Klaxon"
+              }
+            },
+            {
+              "id": "8",
+              "label": {
+                "en": "Meep Meep",
+                "fr": "Bip Bip"
+              }
+            },
+            {
+              "id": "9",
+              "label": {
+                "en": "Wheep",
+                "fr": "Sifflement"
+              }
+            },
+            {
+              "id": "10",
+              "label": {
+                "en": "Barking Dog",
+                "fr": "Chien qui aboie"
+              }
+            },
+            {
+              "id": "11",
+              "label": {
+                "en": "Alarm Siren",
+                "fr": "Sirène d'alarme"
+              }
+            },
+            {
+              "id": "12",
+              "label": {
+                "en": "Doorbell 2",
+                "fr": "Sonnette 2"
+              }
+            },
+            {
+              "id": "13",
+              "label": {
+                "en": "Old Phone",
+                "fr": "Vieux téléphone"
+              }
+            },
+            {
+              "id": "14",
+              "label": {
+                "en": "Police Siren",
+                "fr": "Sirène Police"
+              }
+            },
+            {
+              "id": "15",
+              "label": {
+                "en": "Evacuation Bell",
+                "fr": "Cloche Évacuation"
+              }
+            },
+            {
+              "id": "16",
+              "label": {
+                "en": "Clock Alarm",
+                "fr": "Réveil"
+              }
+            },
+            {
+              "id": "17",
+              "label": {
+                "en": "Fire Alarm",
+                "fr": "Alarme Incendie"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "siren_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      }
+    }
+  ]
+}

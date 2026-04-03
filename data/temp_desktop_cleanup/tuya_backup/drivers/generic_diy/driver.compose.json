@@ -1,0 +1,206 @@
+{
+  "name": {
+    "en": "Generic DIY Zigbee Device",
+    "fr": "Appareil Zigbee DIY Générique",
+    "nl": "Generiek DIY Zigbee Apparaat",
+    "de": "Generisches DIY Zigbee Gerät"
+  },
+  "class": "other",
+  "images": {
+    "small": "drivers/generic_diy/assets/images/small.png",
+    "large": "drivers/generic_diy/assets/images/large.png",
+    "xlarge": "/drivers/generic_diy/assets/images/xlarge.png"
+  },
+  "capabilities": [],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AAA",
+      "AA",
+      "OTHER"
+    ],
+    "approximation": {
+      "usageConstant": 1
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "dln",
+      "dln-diy",
+      "dlnraja",
+      "efekta",
+      "Legrand",
+      " Legrand",
+      "lumi router",
+      "slzb",
+      "EWELINK",
+      "sonoffzigbee",
+      "Schneider Electric",
+      "Schneider",
+      "SE",
+      "Wiser",
+      "Danfoss",
+      "DANFOSS",
+      "BOSCH",
+      "Bosch",
+      "RBSH",
+      "Niko",
+      "NIKO",
+      "NIKO NV",
+      "D5X84YU",
+      "Netatmo",
+      "ti router",
+      "ti.router",
+      "zig-a-zig-ah",
+      "zigfred"
+    ],
+    "productId": [
+      "BUTTON",
+      "CC2530",
+      "CC2531",
+      "CC2652",
+      "CUSTOM",
+      "DIY",
+      "EFEKTA",
+      "ESP32",
+      "MAKER",
+      "PTVO",
+      "RELAY",
+      "ROUTER",
+      "SENSOR",
+      "SWITCH",
+      "SNZB-01",
+      "SNZB-02",
+      "SNZB-03",
+      "SNZB-04",
+      "SNZB-01P",
+      "SNZB-02P",
+      "SNZB-03P",
+      "SNZB-04P",
+      "SNZB-06P",
+      "S26R2ZB",
+      "S31ZB",
+      "S40ZBTPB",
+      "ZBMINI",
+      "ZBMINIL2",
+      "BASICZBR3",
+      "eTRV0100",
+      "eTRV0101",
+      "eTRV0103",
+      "eT093WRO",
+      "eT093WRG",
+      "TRV001",
+      "TRV003",
+      "0x8040",
+      "BSP-FZ2",
+      "BSP-EZ2",
+      "Battery switch, 1 button",
+      "Battery switch, 2 buttons",
+      "ZIGSTAR",
+      "TS0041A",
+      "TS0026",
+      "TS0052",
+      "TS0224",
+      "TS0105",
+      "TS0901"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Universal Zigbee Device (DIY + Standard ZCL)\n\n1. Put your device in pairing mode\n2. For Sonoff: Hold button 5+ seconds\n3. For ESP32/PTVO: Press boot button\n4. For Danfoss/Legrand/Schneider: Follow manufacturer pairing\n\nCapabilities auto-discovered from ZCL clusters.\n\nSupported: Sonoff, eWeLink, Danfoss, Legrand, Schneider, Bosch, Niko, ESP32, PTVO, CC2652, routers.",
+        "fr": "Appareil Zigbee DIY générique (ESP32, PTVO, CC253x, etc.)\n\n1. Mettez votre appareil DIY en mode appairage\n2. Pour ESP32: Appuyez sur boot ou déclenchez l'appairage\n3. Pour PTVO: Maintenez le bouton 5+ secondes\n4. Pour CC253x: Redémarrez ou réinitialisez\n\nLes capacités seront auto-découvertes depuis les clusters ZCL.\n\nSupporté: ESP32-C6, ESP32-H2, PTVO, CC2530/31, CC2652, routeurs Zigbee."
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "🔧 Device Information",
+        "fr": "🔧 Informations Appareil"
+      },
+      "children": [
+        {
+          "id": "diy_manufacturer_name",
+          "type": "label",
+          "label": {
+            "en": "Manufacturer",
+            "fr": "Fabricant"
+          },
+          "value": "DIY"
+        },
+        {
+          "id": "diy_model_id",
+          "type": "label",
+          "label": {
+            "en": "Model ID",
+            "fr": "ID Modèle"
+          },
+          "value": "Unknown"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "📡 Discovered Clusters",
+        "fr": "📡 Clusters Découverts"
+      },
+      "children": [
+        {
+          "id": "discovered_clusters",
+          "type": "label",
+          "label": {
+            "en": "ZCL Clusters",
+            "fr": "Clusters ZCL"
+          },
+          "value": "Scanning..."
+        },
+        {
+          "id": "discovered_capabilities",
+          "type": "label",
+          "label": {
+            "en": "Capabilities Added",
+            "fr": "Capacités Ajoutées"
+          },
+          "value": "None yet"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "⚙️ Advanced",
+        "fr": "⚙️ Avancé"
+      },
+      "children": [
+        {
+          "id": "force_rescan",
+          "type": "checkbox",
+          "label": {
+            "en": "Force Cluster Rescan",
+            "fr": "Forcer Rescan Clusters"
+          },
+          "value": false,
+          "hint": {
+            "en": "Enable to rescan clusters on next init",
+            "fr": "Activer pour rescanner les clusters au prochain démarrage"
+          }
+        }
+      ]
+    }
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

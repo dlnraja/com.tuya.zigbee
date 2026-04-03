@@ -1,0 +1,518 @@
+{
+  "name": {
+    "en": "DIY Custom Zigbee Device",
+    "fr": "Appareil Zigbee DIY Personnalisé",
+    "nl": "DIY Custom Zigbee Apparaat",
+    "de": "DIY Custom Zigbee Gerät"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Switch 1",
+        "fr": "Interrupteur 1",
+        "nl": "Schakelaar 1",
+        "de": "Schalter 1"
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AAA",
+      "AA",
+      "OTHER"
+    ],
+    "approximation": {
+      "usageConstant": 0.5
+    }
+  },
+  "images": {
+    "small": "drivers/diy_custom_zigbee/assets/images/small.png",
+    "large": "drivers/diy_custom_zigbee/assets/images/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "arduino",
+      "cc1352",
+      "cc1352p",
+      "cc2530",
+      "cc2531",
+      "cc2652",
+      "cc2652p",
+      "cc2652r",
+      "cc2652rb",
+      "cod.m",
+      "conbee",
+      "coordinator",
+      "custom",
+      "debug",
+      "deconz",
+      "demo",
+      "dev",
+      "development",
+      "diy",
+      "diyruz",
+      "dresden elektronik",
+      "e104",
+      "e18",
+      "e72",
+      "ebyte",
+      "efr32",
+      "efr32mg",
+      "efr32mg21",
+      "efr32mg22",
+      "egony",
+      "electrolama",
+      "esp-idf",
+      "esp32",
+      "esp32-c6",
+      "esp32-h2",
+      "esp32c6",
+      "esp32h2",
+      "espidf",
+      "espressif",
+      "example",
+      "gio",
+      "gio.zigbee",
+      "hobby",
+      "home_automation",
+      "homeautomation",
+      "homemade",
+      "hue essentials",
+      "jn5168",
+      "jn5169",
+      "lumi.router",
+      "maker",
+      "modkam",
+      "nordic",
+      "nrf52",
+      "nrf52840",
+      "nxp",
+      "open source",
+      "opensource",
+      "phoscon",
+      "platformio",
+      "popp",
+      "prototype",
+      "ptvo",
+      "ptvo.info",
+      "ptvo.switch",
+      "raspbee",
+      "rf-star",
+      "rfstar",
+      "router",
+      "sample",
+      "silabs",
+      "silicon labs",
+      "slaesh",
+      "slzb-06",
+      "slzb-07",
+      "smartthings",
+      "sonoff zbbridge",
+      "tasmota",
+      "test",
+      "texas instruments",
+      "ti",
+      "tube",
+      "tube's zb",
+      "xyzroe",
+      "z-stack",
+      "z2m",
+      "z2t",
+      "zbbridge",
+      "zha",
+      "zigbee home",
+      "zigbee home automation",
+      "zigbee router",
+      "zigbee_home",
+      "zigbee-router",
+      "zigbee2mqtt",
+      "zigbee2tasmota",
+      "zigbeehome",
+      "zigbeerouter",
+      "zigstar",
+      "znrf52",
+      "zstack",
+      "zzh",
+      "zzh!"
+    ],
+    "productId": [
+      "ARDUINO_ZIGBEE",
+      "BUTTON",
+      "CC1352P_DEV",
+      "CC1352_DEV",
+      "CC2530_ROUTER",
+      "CC2530_SENSOR",
+      "CC2530_SWITCH",
+      "CC2531_ROUTER",
+      "CC2531_USB",
+      "CC2652P_DEV",
+      "CC2652RB_DEV",
+      "CC2652R_DEV",
+      "CC2652_DEV",
+      "COD.M",
+      "CONBEE",
+      "CONBEE II",
+      "CONBEE III",
+      "CUSTOM",
+      "DEBUG",
+      "DEMO",
+      "DIMMER",
+      "DIY-01",
+      "DIY-02",
+      "DIY-03",
+      "DIY-04",
+      "DIY-08",
+      "DIY-LIGHT",
+      "DIY-ROUTER",
+      "DIY-SENSOR",
+      "DIY-SWITCH",
+      "DIYRUZ",
+      "DIYRUZ_AIRSENSE",
+      "DIYRUZ_CONTACT",
+      "DIYRUZ_FLOWER",
+      "DIYRUZ_GEIGER",
+      "DIYRUZ_MOTION",
+      "EFR32MG_DEV",
+      "EFR32_DEV",
+      "ESP32-C6",
+      "ESP32-H2",
+      "ESP32C6_DEV",
+      "ESP32H2_DEV",
+      "HUE_BRIDGE",
+      "LIGHT",
+      "PHOSCON_GATEWAY",
+      "PLATFORMIO_ZIGBEE",
+      "PROTOTYPE",
+      "PTVO.DIMMER",
+      "PTVO.LIGHT",
+      "PTVO.ROUTER",
+      "PTVO.SENSOR",
+      "PTVO.SWITCH",
+      "RASPBEE",
+      "RASPBEE II",
+      "ROUTER",
+      "SAMPLE",
+      "SENSOR",
+      "SLZB-06",
+      "SLZB-07",
+      "SONOFF_ZBBRIDGE",
+      "SWITCH",
+      "TASMOTA",
+      "TEST",
+      "TUBE",
+      "Z2T",
+      "ZBBRIDGE",
+      "ZIGBEE_DEV_KIT",
+      "ZIGSTAR",
+      "ZIGSTAR_LAN",
+      "ZIGSTAR_POE",
+      "ZIGSTAR_STICK",
+      "ZZH",
+      "ZZH!"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768,
+          1026,
+          1029,
+          1280
+        ],
+        "bindings": [
+          6,
+          8,
+          768,
+          1026,
+          1029
+        ]
+      },
+      "2": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "3": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "4": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "5": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "6": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "7": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "8": {
+        "clusters": [
+          0,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/diy_custom_zigbee/assets/learnmode.svg",
+      "instruction": {
+        "en": "DIY Custom Zigbee Device (PTVO, ESP32-H2, CC2530, etc.)\n\n1. Put your DIY device in pairing mode\n2. For PTVO: Short press the button or power cycle\n3. For ESP32: Follow your firmware instructions\n4. For CC2530/CC2531: Power cycle or use button\n5. Device will be auto-detected\n\nSupported Firmware:\n- PTVO Configurable Firmware\n- ESP Zigbee SDK (ESP32-H2/C6)\n- DIYRuZ projects\n- Tasmota Zigbee\n- Custom ZCL implementations",
+        "fr": "Appareil Zigbee DIY (PTVO, ESP32-H2, CC2530, etc.)\n\n1. Mettez votre appareil DIY en mode appairage\n2. PTVO: Appui court sur le bouton ou redémarrage\n3. ESP32: Suivez les instructions de votre firmware\n4. CC2530/CC2531: Redémarrage ou bouton\n5. L'appareil sera auto-détecté\n\nFirmwares Supportés:\n- PTVO Configurable Firmware\n- ESP Zigbee SDK (ESP32-H2/C6)\n- Projets DIYRuZ\n- Tasmota Zigbee\n- Implémentations ZCL personnalisées"
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Device Information",
+        "fr": "Informations Appareil"
+      },
+      "children": [
+        {
+          "id": "device_manufacturer",
+          "type": "label",
+          "label": {
+            "en": "Manufacturer/Firmware",
+            "fr": "Fabricant/Firmware"
+          },
+          "value": "Unknown DIY"
+        },
+        {
+          "id": "device_model",
+          "type": "label",
+          "label": {
+            "en": "Model/Product ID",
+            "fr": "Modèle/ID Produit"
+          },
+          "value": "Custom"
+        },
+        {
+          "id": "detected_endpoints",
+          "type": "label",
+          "label": {
+            "en": "Active Endpoints",
+            "fr": "Endpoints Actifs"
+          },
+          "value": "1"
+        },
+        {
+          "id": "detected_clusters",
+          "type": "label",
+          "label": {
+            "en": "Available Clusters",
+            "fr": "Clusters Disponibles"
+          },
+          "value": "Scanning..."
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "PTVO Configuration",
+        "fr": "Configuration PTVO"
+      },
+      "children": [
+        {
+          "id": "ptvo_outputs",
+          "type": "label",
+          "label": {
+            "en": "PTVO Outputs Detected",
+            "fr": "Sorties PTVO Détectées"
+          },
+          "value": "None"
+        },
+        {
+          "id": "ptvo_inputs",
+          "type": "label",
+          "label": {
+            "en": "PTVO Inputs Detected",
+            "fr": "Entrées PTVO Détectées"
+          },
+          "value": "None"
+        },
+        {
+          "id": "ptvo_sensors",
+          "type": "label",
+          "label": {
+            "en": "PTVO Sensors Detected",
+            "fr": "Capteurs PTVO Détectés"
+          },
+          "value": "None"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Manual Configuration",
+        "fr": "Configuration Manuelle"
+      },
+      "children": [
+        {
+          "id": "force_device_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Force Device Type",
+            "fr": "Forcer Type d'Appareil"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto Detect",
+                "fr": "Détection Auto"
+              }
+            },
+            {
+              "id": "switch",
+              "label": {
+                "en": "Switch (1-8 channels)",
+                "fr": "Interrupteur (1-8 canaux)"
+              }
+            },
+            {
+              "id": "dimmer",
+              "label": {
+                "en": "Dimmer",
+                "fr": "Variateur"
+              }
+            },
+            {
+              "id": "sensor",
+              "label": {
+                "en": "Sensor",
+                "fr": "Capteur"
+              }
+            },
+            {
+              "id": "router",
+              "label": {
+                "en": "Router Only",
+                "fr": "Routeur Uniquement"
+              }
+            },
+            {
+              "id": "light",
+              "label": {
+                "en": "Light (RGB/CCT)",
+                "fr": "Lumière (RGB/CCT)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "enable_debug_logging",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Debug Logging",
+            "fr": "Activer Logs Debug"
+          },
+          "value": true,
+          "hint": {
+            "en": "Log all ZCL messages for debugging custom devices",
+            "fr": "Logger tous les messages ZCL pour débugger les appareils personnalisés"
+          }
+        },
+        {
+          "id": "endpoint_count",
+          "type": "dropdown",
+          "label": {
+            "en": "Number of Endpoints",
+            "fr": "Nombre d'Endpoints"
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "1",
+              "label": {
+                "en": "1 Endpoint",
+                "fr": "1 Endpoint"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "2 Endpoints",
+                "fr": "2 Endpoints"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "4 Endpoints",
+                "fr": "4 Endpoints"
+              }
+            },
+            {
+              "id": "8",
+              "label": {
+                "en": "8 Endpoints",
+                "fr": "8 Endpoints"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

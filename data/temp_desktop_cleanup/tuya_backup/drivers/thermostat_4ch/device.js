@@ -1,0 +1,11 @@
+'use strict';
+const HybridThermostatBase = require('../../lib/devices/HybridThermostatBase');
+
+class Thermostat4ChDevice extends HybridThermostatBase {
+  get mainsPowered() { return true; }
+  async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+    this.log('[THERMOSTAT-4CH] ✅ Ready');
+  }
+}
+module.exports = Thermostat4ChDevice;

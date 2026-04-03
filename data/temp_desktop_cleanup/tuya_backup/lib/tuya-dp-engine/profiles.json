@@ -1,0 +1,242 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-10-16",
+  "description": "Capability profiles for Tuya devices",
+  
+  "profiles": {
+    "smart-plug-energy": {
+      "name": "Smart Plug with Energy Monitoring",
+      "description": "Standard smart plug with comprehensive energy monitoring",
+      "capabilities": [
+        "onoff",
+        "measure_power",
+        "measure_current",
+        "measure_voltage",
+        "meter_power"
+      ],
+      "traits": ["OnOffTrait", "EnergyMonitoringTrait"],
+      "dp_mapping": {
+        "onoff": { "dp": 1, "type": "bool" },
+        "measure_power": { "dp": 19, "type": "value", "converter": "power", "scale": 10 },
+        "measure_current": { "dp": 18, "type": "value", "converter": "current", "scale": 1000 },
+        "measure_voltage": { "dp": 20, "type": "value", "converter": "voltage", "scale": 10 },
+        "meter_power": { "dp": 17, "type": "value", "converter": "energy", "scale": 100 }
+      }
+    },
+    
+    "smart-plug-basic": {
+      "name": "Smart Plug Basic",
+      "description": "Simple on/off smart plug without energy monitoring",
+      "capabilities": ["onoff"],
+      "traits": ["OnOffTrait"],
+      "dp_mapping": {
+        "onoff": { "dp": 1, "type": "bool" }
+      }
+    },
+    
+    "motion-basic": {
+      "name": "Motion Sensor Basic",
+      "description": "PIR motion sensor",
+      "capabilities": ["alarm_motion", "measure_battery"],
+      "traits": ["MotionTrait", "BatteryTrait"],
+      "clusters": [1280],
+      "notes": "IAS Zone cluster"
+    },
+    
+    "motion-illuminance": {
+      "name": "Motion Sensor with Illuminance",
+      "description": "PIR motion sensor with lux measurement",
+      "capabilities": ["alarm_motion", "measure_luminance", "measure_battery"],
+      "traits": ["MotionTrait", "IlluminanceTrait", "BatteryTrait"],
+      "dp_mapping": {
+        "alarm_motion": { "cluster": 1280 },
+        "measure_luminance": { "dp": 12, "type": "value", "converter": "illuminance" }
+      }
+    },
+    
+    "temperature-humidity": {
+      "name": "Temperature & Humidity Sensor",
+      "description": "Climate sensor with temp and humidity",
+      "capabilities": ["measure_temperature", "measure_humidity", "measure_battery"],
+      "traits": ["TemperatureTrait", "HumidityTrait", "BatteryTrait"],
+      "dp_mapping": {
+        "measure_temperature": { "dp": 1, "type": "value", "converter": "temperature", "scale": 10 },
+        "measure_humidity": { "dp": 2, "type": "value", "converter": "humidity", "scale": 10 }
+      }
+    },
+    
+    "co2-monitor": {
+      "name": "CO2 Monitor",
+      "description": "CO2 sensor with temperature and humidity",
+      "capabilities": ["measure_co2", "measure_temperature", "measure_humidity"],
+      "traits": ["CO2Trait", "TemperatureTrait", "HumidityTrait"],
+      "dp_mapping": {
+        "measure_co2": { "dp": 2, "type": "value", "converter": "co2" },
+        "measure_temperature": { "dp": 18, "type": "value", "converter": "temperature", "scale": 10 },
+        "measure_humidity": { "dp": 19, "type": "value", "converter": "humidity", "scale": 10 }
+      }
+    },
+    
+    "contact-basic": {
+      "name": "Door/Window Sensor",
+      "description": "Magnetic contact sensor",
+      "capabilities": ["alarm_contact", "measure_battery"],
+      "traits": ["ContactTrait", "BatteryTrait"],
+      "clusters": [1280],
+      "notes": "IAS Zone cluster"
+    },
+    
+    "water-leak": {
+      "name": "Water Leak Detector",
+      "description": "Water leak sensor with alarm",
+      "capabilities": ["alarm_water", "measure_battery"],
+      "traits": ["WaterLeakTrait", "BatteryTrait"],
+      "dp_mapping": {
+        "alarm_water": { "dp": 15, "type": "bool" }
+      }
+    },
+    
+    "bulb-white-dimmable": {
+      "name": "Dimmable White Bulb",
+      "description": "White LED bulb with dimming",
+      "capabilities": ["onoff", "dim"],
+      "traits": ["OnOffTrait", "DimmingTrait"],
+      "dp_mapping": {
+        "onoff": { "dp": 1, "type": "bool" },
+        "dim": { "dp": 2, "type": "value", "converter": "dim", "max": 1000 }
+      }
+    },
+    
+    "bulb-rgb": {
+      "name": "RGB Smart Bulb",
+      "description": "Full RGB bulb with color temperature",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode"
+      ],
+      "traits": ["OnOffTrait", "DimmingTrait", "ColorTrait", "TemperatureTrait"],
+      "dp_mapping": {
+        "onoff": { "dp": 1, "type": "bool" },
+        "dim": { "dp": 2, "type": "value", "converter": "dim", "max": 1000 },
+        "light_mode": { "dp": 3, "type": "enum", "converter": "enum", "mapping": { "0": "white", "1": "color" } },
+        "light_temperature": { "dp": 4, "type": "value", "converter": "temperature", "min": 0, "max": 1000 },
+        "light_hue": { "dp": 5, "type": "value", "converter": "hue", "max": 360 },
+        "light_saturation": { "dp": 6, "type": "value", "converter": "saturation", "max": 1000 }
+      }
+    },
+    
+    "switch-1gang": {
+      "name": "Wall Switch 1-Gang",
+      "description": "Single gang wall switch",
+      "capabilities": ["onoff"],
+      "traits": ["OnOffTrait"],
+      "dp_mapping": {
+        "onoff": { "dp": 1, "type": "bool" }
+      }
+    },
+    
+    "switch-2gang": {
+      "name": "Wall Switch 2-Gang",
+      "description": "Dual gang wall switch with independent control",
+      "capabilities": ["onoff", "onoff.gang2"],
+      "traits": ["OnOffTrait", "MultiGangTrait"],
+      "dp_mapping": {
+        "onoff": { "dp": 1, "type": "bool" },
+        "onoff.gang2": { "dp": 2, "type": "bool" }
+      }
+    },
+    
+    "switch-3gang": {
+      "name": "Wall Switch 3-Gang",
+      "description": "Triple gang wall switch",
+      "capabilities": ["onoff", "onoff.gang2", "onoff.gang3"],
+      "traits": ["OnOffTrait", "MultiGangTrait"],
+      "dp_mapping": {
+        "onoff": { "dp": 1, "type": "bool" },
+        "onoff.gang2": { "dp": 2, "type": "bool" },
+        "onoff.gang3": { "dp": 3, "type": "bool" }
+      }
+    },
+    
+    "dimmer-1gang": {
+      "name": "Dimmer Switch 1-Gang",
+      "description": "Single gang dimmer switch",
+      "capabilities": ["onoff", "dim"],
+      "traits": ["OnOffTrait", "DimmingTrait"],
+      "dp_mapping": {
+        "onoff": { "dp": 1, "type": "bool" },
+        "dim": { "dp": 2, "type": "value", "converter": "dim", "max": 1000 }
+      }
+    },
+    
+    "thermostat-basic": {
+      "name": "Thermostat",
+      "description": "Basic thermostat with heating/cooling",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "thermostat_mode"
+      ],
+      "traits": ["TemperatureTrait", "ThermostatTrait"],
+      "dp_mapping": {
+        "target_temperature": { "dp": 2, "type": "value", "converter": "temperature", "scale": 10, "min": 50, "max": 300 },
+        "measure_temperature": { "dp": 3, "type": "value", "converter": "temperature", "scale": 10 },
+        "thermostat_mode": { "dp": 1, "type": "enum", "converter": "enum", "mapping": { "0": "off", "1": "heat", "2": "cool", "3": "auto" } }
+      }
+    },
+    
+    "curtain-motor": {
+      "name": "Curtain Motor",
+      "description": "Motorized curtain controller",
+      "capabilities": ["windowcoverings_state", "windowcoverings_set"],
+      "traits": ["CoverTrait"],
+      "dp_mapping": {
+        "windowcoverings_state": { "dp": 1, "type": "enum", "converter": "enum", "mapping": { "0": "stop", "1": "open", "2": "close" } },
+        "windowcoverings_set": { "dp": 2, "type": "value", "converter": "cover", "max": 100 }
+      }
+    },
+    
+    "button-1": {
+      "name": "Wireless Button 1-Key",
+      "description": "Single button remote",
+      "capabilities": ["button"],
+      "traits": ["ButtonTrait"],
+      "clusters": [6],
+      "notes": "Uses OnOff cluster for button presses"
+    },
+    
+    "button-4": {
+      "name": "Wireless Button 4-Key",
+      "description": "Four button scene controller",
+      "capabilities": ["button.1", "button.2", "button.3", "button.4"],
+      "traits": ["ButtonTrait", "MultiButtonTrait"],
+      "clusters": [6],
+      "notes": "Multiple endpoints for buttons"
+    },
+    
+    "generic-ts0601": {
+      "name": "Generic TS0601 Device",
+      "description": "Auto-detected TS0601 device, requires DP learning",
+      "capabilities": [],
+      "traits": ["AutoDetectTrait"],
+      "notes": "Capabilities will be added based on DP discovery"
+    }
+  },
+  
+  "profile_categories": {
+    "plugs": ["smart-plug-energy", "smart-plug-basic"],
+    "lighting": ["bulb-white-dimmable", "bulb-rgb"],
+    "switches": ["switch-1gang", "switch-2gang", "switch-3gang", "dimmer-1gang"],
+    "sensors/motion": ["motion-basic", "motion-illuminance"],
+    "sensors/climate": ["temperature-humidity", "co2-monitor"],
+    "sensors/contact": ["contact-basic"],
+    "sensors/safety": ["water-leak"],
+    "climate": ["thermostat-basic"],
+    "motors": ["curtain-motor"],
+    "buttons": ["button-1", "button-4"]
+  }
+}

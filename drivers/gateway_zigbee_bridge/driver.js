@@ -15,7 +15,7 @@ class ZbbridgeDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is connected
     try {
-      this.homey.flow.getConditionCard('gateway_zigbee_bridge_is_connected')
+      this.homey.flow.getDeviceConditionCard('gateway_zigbee_bridge_is_connected')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getAvailable() === true;

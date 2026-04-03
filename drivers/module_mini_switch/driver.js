@@ -15,7 +15,7 @@ class MiniSwitchDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is on
     try {
-      this.homey.flow.getConditionCard('module_mini_switch_is_on')
+      this.homey.flow.getDeviceConditionCard('module_mini_switch_is_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;

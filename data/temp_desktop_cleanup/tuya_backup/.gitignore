@@ -1,0 +1,190 @@
+# Homey build output - GENERATED AT BUILD TIME, NEVER COMMIT
+.homeybuild/
+# NOTE: .homeycompose/ is the SOURCE directory — it MUST be committed!
+# It contains app.json, capabilities/, and driver compose files.
+env.json
+node_modules/
+
+# Archive folder - temporary/analysis files, NEVER COMMIT
+.archive/
+
+# Temporary analysis files at root - NEVER CREATE THESE
+*.txt
+!README.txt
+*_ids.json
+*_orphans*.json
+*_mapping*.json
+tuya_full.ts
+
+# GitHub Pages (désactivé - mais on garde docs/ pour notre documentation)
+# docs/ <- ne plus ignorer, on utilise docs/ pour notre documentation
+_site/
+.jekyll-cache/
+.jekyll-metadata
+npm-debug.log*
+
+# Sensitive data - NEVER COMMIT
+*.env*
+*.key
+*.pem
+*.token
+config.json
+secrets.json
+homey-auth.*
+
+# Large files
+*.zip
+*.tar.gz
+*.7z
+*.pdf
+pdfhomey/
+lint_report.txt
+
+# Excessively large documentation (DÉSACTIVÉ - on commit tout maintenant)
+# docs/releases/ULTIMATE_AUDIT_REPORT_v2.15.60.md
+# **/ULTIMATE_AUDIT_REPORT*.md
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+.temp-repos/
+
+# IDE
+.vscode/
+.idea/
+
+# Backup complete system - NEVER COMMIT (too large)
+backup/
+backup/*/
+backup/*/*
+ultimate_system/backup/
+ultimate_system/backup/*/
+ultimate_system/backup/*/*
+ultimate_system/backup/*/*/*
+.backup-enrichment/
+
+# Git clones history - NEVER COMMIT
+backup/git_clones/
+backup/git_history/
+backup/branches/
+backup/commits/
+backup/versions/
+
+# Dumps and archives - NEVER COMMIT (generated files)
+dumps/
+dumps/*
+archives/large/
+temp_clones/
+archive/
+archive/*
+
+# Development files (organized)
+.dev/
+archive_old/
+
+*.backup-auto
+# Auto-cleanup rules - Ne pas créer ces fichiers à la racine (DÉSACTIVÉ)
+# *_REPORT*.md
+# *_STATUS*.md
+# *_SUMMARY*.md
+# *_COMPLETE*.md
+# *_FIX*.md
+# *_DEPLOY*.md
+# *_SESSION*.md
+*.tmp
+*.log
+*.bak
+temp_*.bat
+temp_*.js
+
+# AI-generated temporary files
+reports/ai-consensus/consensus-*.md
+!reports/ai-consensus/LATEST_CONSENSUS.md
+reports/batch-runs/batch-run-*.md
+!reports/batch-runs/LATEST_BATCH_RUN.md
+
+# Old metrics (keep only last 30)
+reports/analytics/metrics-*.json
+!reports/analytics/metrics.json
+
+# Test artifacts
+TEST_*.md
+!TEST_PR.md
+coverage/
+.nyc_output/
+
+# Cache files
+.cache/
+*.cache
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# CRITICAL EXCEPTIONS (NEVER DELETE)
+# These files are required for Homey validation:
+!README.txt
+!readme.txt
+!README.TXT
+# Keep all README files
+!README.md
+!*/README.md
+!*/readme.txt
+
+# Large project status files (DÉSACTIVÉ - on commit tout)
+# docs/project-status/PROJECT_STRUCTURE.md
+# docs/project-status/*_LARGE*.md
+# docs/releases/ULTIMATE_AUDIT_REPORT_*.md
+
+# Bloated docs (DÉSACTIVÉ - on commit tout maintenant)
+# docs/workflow/README_WORKFLOW.md
+# docs/community/TUYA_ZIGBEE_LOCAL_SUPPORT.md
+# docs/community/QUICK_IMPROVEMENTS.md
+# docs/project-status/FINAL_ANALYSIS_PUBLICATION.md
+# docs/workflow/QUICK_WORKFLOW.md
+# Backups
+*.backup
+*.bak
+*.old
+
+# Temporary scripts
+create_final_report.py
+extract_device_info.py
+extract_dp_mappings.py
+
+# Sync pipeline generated data
+scripts/sync/data/
+
+# Large auto-generated state files (too big for git)
+.github/state/comprehensive-scan.json
+.github/state/forum-activity-data.json
+.github/state/pr-issue-scan.json
+.github/state/johan-full-scan.json
+.github/state/new-fork-fps.json
+.github/state/spam-scan-results.json
+.github/state/external-sources-data.json
+
+# Claude Code session files
+.claude/
+nul
+
+# External source cache (re-downloaded by sync workflow)
+.github/cache/z2m/
+.github/cache/zha/
+.github/cache/deconz/
+.github/cache/herdsman/
+
+# Security: credentials & tokens
+credentials.json
+token.json
+oauth2.keys.json
+client_secret*.json
+
+# Security: token/secret files in state directory
+.github/state/_new_refresh_token*
+.github/state/_token_*
+.github/state/*secret*
+.github/state/*credential*

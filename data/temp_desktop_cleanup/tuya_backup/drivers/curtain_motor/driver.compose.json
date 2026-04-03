@@ -1,0 +1,656 @@
+{
+  "name": {
+    "en": "Cover Controller",
+    "fr": "Contrôleur de Volet",
+    "nl": "Gordijnmotor",
+    "de": "Vorhangmotor"
+  },
+  "class": "windowcoverings",
+  "capabilities": [
+    "windowcoverings_state",
+    "windowcoverings_set",
+    "windowcoverings_tilt_set",
+    "measure_battery",
+    "measure_luminance",
+    "button",
+    "dim"
+  ],
+  "capabilitiesOptions": {
+    "windowcoverings_set": {
+      "title": {
+        "en": "Position"
+      },
+      "units": {
+        "en": "%"
+      }
+    },
+    "windowcoverings_tilt_set": {
+      "title": {
+        "en": "Tilt"
+      },
+      "units": {
+        "en": "%"
+      }
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie"
+      },
+      "preventInsights": false
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "drivers/curtain_motor/assets/images/small.png",
+    "large": "drivers/curtain_motor/assets/images/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "eWeLink",
+      "SONOFF",
+      "_TZ3000_1dd0d5yi",
+      "_TZ3000_42ha4rsc",
+      "_TZ3000_4uuaja4a",
+      "_TZ3000_5iixzdo7",
+      "_TZ3000_74hsp7qy",
+      "_TZ3000_7hcgjxpc",
+      "_TZ3000_8h7wgocw",
+      "_TZ3000_8kzqqzu4",
+      "_TZ3000_abci1hiu",
+      "_TZ3000_b28wrpvx",
+      "_TZ3000_bs93npae",
+      "_TZ3000_bvrlqyj7",
+      "_TZ3000_c3g3pupu",
+      "_TZ3000_cduqh1l0",
+      "_TZ3000_cfnprab5",
+      "_TZ3000_ckq7u3r4",
+      "_TZ3000_cphmq0q7",
+      "_TZ3000_ctbafvhm",
+      "_TZ3000_cxkjlbxx",
+      "_TZ3000_dbpmpco1",
+      "_TZ3000_dffvflui",
+      "_TZ3000_dksbtrzs",
+      "_TZ3000_dph3rpss",
+      "_TZ3000_e3vhyirx",
+      "_TZ3000_e3vhyrdz",
+      "_TZ3000_eei0ubpy",
+      "_TZ3000_eg7awg6a",
+      "_TZ3000_egfdwm0f",
+      "_TZ3000_exni6swi",
+      "_TZ3000_f1bapcit",
+      "_TZ3000_fbjdkph9",
+      "_TZ3000_fccpjz5z",
+      "_TZ3000_femsaaua",
+      "_TZ3000_femsrftq",
+      "_TZ3000_fgwhjm9j",
+      "_TZ3000_fvhunhxb",
+      "_TZ3000_g1glzzfk",
+      "_TZ3000_gp7p1xsn",
+      "_TZ3000_gznh2xla",
+      "_TZ3000_h1jnz6l9",
+      "_TZ3000_hdc8bbhc",
+      "_TZ3000_hgpnzgac",
+      "_TZ3000_hmitslt3",
+      "_TZ3000_i1rw7p4p",
+      "_TZ3000_idrffznf",
+      "_TZ3000_imaccztn",
+      "_TZ3000_iv2hvncp",
+      "_TZ3000_j1xl73iw",
+      "_TZ3000_j34bmidp",
+      "_TZ3000_jabbwuie",
+      "_TZ3000_jbjz13kn",
+      "_TZ3000_jeanjpmj",
+      "_TZ3000_jimbwdxd",
+      "_TZ3000_jkbrnvhr",
+      "_TZ3000_jnihvwo1",
+      "_TZ3000_jvvhvqjk",
+      "_TZ3000_jwv3cwak",
+      "_TZ3000_k6fvknrr",
+      "_TZ3000_kas5qbpq",
+      "_TZ3000_ke7pzj5d",
+      "_TZ3000_kgvnspdl",
+      "_TZ3000_kksch6ep",
+      "_TZ3000_klch39xt",
+      "_TZ3000_kmuxjukf",
+      "_TZ3000_kud7u2l1",
+      "_TZ3000_kvwjujy9",
+      "_TZ3000_l6iqph4f",
+      "_TZ3000_l6pwxuxm",
+      "_TZ3000_ld6g3agd",
+      "_TZ3000_ltiqubue",
+      "_TZ3000_qa8s8vca",
+      "_TZ3000_qqdbccb3",
+      "_TZ3000_vd43bbfq",
+      "_TZ3000_vw8pawxa",
+      "_TZ3000_yruungrl",
+      "_TZ3000_zirycpws",
+      "_TZ3210_778drfdt",
+      "_TZ3210_dbilpfqk",
+      "_TZ3210_dwytrmda",
+      "_TZ3210_dxroobu3",
+      "_TZ3210_frm6149r",
+      "_TZ3210_j4pdtz9v",
+      "_TZ3210_jicmoite",
+      "_TZ3210_jtifm80b",
+      "_TZ3210_ol1uhvza",
+      "_TZ3210_sxtfesc6",
+      "_TZ3210_xbpt8ewc",
+      "_TZ3210_xwqng7ol",
+      "_TZ3210_zana8d08",
+      "_TZB000_42ha4rsc",
+      "_TZB210_0bkzabht",
+      "_TZB210_3zfp8mki",
+      "_TZB210_417ikxay",
+      "_TZB210_ayx58ft5",
+      "_TZB210_eiwanbeb",
+      "_TZB210_gj0ccsar",
+      "_TZB210_lmqquxus",
+      "_TZB210_rs0ufzwg",
+      "_TZB210_ue01a0s2",
+      "_TZB210_w9hcix2r",
+      "_TZB210_wxazcmsh",
+      "_TZB210_wy1pyu1q",
+      "_TZB210_yatkpuha",
+      "_TZE200_0j5jma9b",
+      "_TZE200_1agwnafq",
+      "_TZE200_1ibpyhdc",
+      "_TZE200_2hf7x9n3",
+      "_TZE200_3i3exuay",
+      "_TZE200_44af8ipg",
+      "_TZE200_4hbx5cvx",
+      "_TZE200_4vobcgd3",
+      "_TZE200_502zx5sl",
+      "_TZE200_56bdwt92",
+      "_TZE200_5bdnqwnx",
+      "_TZE200_5nldle7w",
+      "_TZE200_5sbebbzs",
+      "_TZE200_5tgzpccv",
+      "_TZE200_5zbp6j0u",
+      "_TZE200_68nvbi09",
+      "_TZE200_68nvbio9",
+      "_TZE200_6mafo2gv",
+      "_TZE200_7eue9vhc",
+      "_TZE200_7tdtqgwv",
+      "_TZE200_8k8k3t3j",
+      "_TZE200_8xtk0cjs",
+      "_TZE200_9caxna4s",
+      "_TZE200_9cxuhakf",
+      "_TZE200_9kqxlpby",
+      "_TZE200_9mahtqtg",
+      "_TZE200_9p5xmj5r",
+      "_TZE200_9vpe3fl1",
+      "_TZE200_a4cjpzdi",
+      "_TZE200_a8zrneee",
+      "_TZE200_ahl6l9k5",
+      "_TZE200_akjefhj5",
+      "_TZE200_amp6tsvy",
+      "_TZE200_anv5ujhv",
+      "_TZE200_aoclfnxz",
+      "_TZE200_ar0slwnd",
+      "_TZE200_atpwqgml",
+      "_TZE200_axbpz5wm",
+      "_TZE200_axgvo9jh",
+      "_TZE200_b8x72kmy",
+      "_TZE200_bjzrowv2",
+      "_TZE200_bq5c8xfe",
+      "_TZE200_bqcqqjpb",
+      "_TZE200_c2fmom5z",
+      "_TZE200_cf1sl3tj",
+      "_TZE200_cowvfni3",
+      "_TZE200_cpbo62rn",
+      "_TZE200_cpmgn2cf",
+      "_TZE200_d5p1kr8z",
+      "_TZE200_d8fp6ivb",
+      "_TZE200_dcydapr2",
+      "_TZE200_dfry6ylv",
+      "_TZE200_dq8bu0pt",
+      "_TZE200_eegnwoyw",
+      "_TZE200_ergbiejo",
+      "_TZE200_fctwhugx",
+      "_TZE200_fdtjuw7u",
+      "_TZE200_fzo2pocs",
+      "_TZE200_gaj531w3",
+      "_TZE200_gubdgai2",
+      "_TZE200_hsgrhjpf",
+      "_TZE200_icka1clh",
+      "_TZE200_iossyxra",
+      "_TZE200_j1xl73iw",
+      "_TZE200_jhkttplm",
+      "_TZE200_libht6ua",
+      "_TZE200_lwlvaony",
+      "_TZE200_mlglxwp3",
+      "_TZE200_nkoabg8w",
+      "_TZE200_nogaemzt",
+      "_TZE200_nueqqe6k",
+      "_TZE200_nv6nxo0c",
+      "_TZE200_nw1r9hp6",
+      "_TZE200_ol5jlkkr",
+      "_TZE200_p6vz3wzt",
+      "_TZE200_pk0sfzvr",
+      "_TZE200_pk29mnl3",
+      "_TZE200_pw7mji0l",
+      "_TZE200_r0jdjrvi",
+      "_TZE200_rddyvrci",
+      "_TZE200_rmymn92d",
+      "_TZE200_sbordckq",
+      "_TZE200_sur6q7ko",
+      "_TZE200_uj3f4wr5",
+      "_TZE200_wmcdj3aq",
+      "_TZE200_xaabybja",
+      "_TZE200_xuzcvlku",
+      "_TZE200_yia0p3tr",
+      "_TZE200_zah67ekd",
+      "_TZE200_zah67ekh",
+      "_TZE200_zc2owu5k",
+      "_TZE200_zpzndjez",
+      "_TZE200_zxxfv8wi",
+      "_TZE204_1fuxihti",
+      "_TZE204_57hjqelq",
+      "_TZE204_7tdtqgwv",
+      "_TZE204_bjzrowv2",
+      "_TZE204_fctwhugx",
+      "_TZE204_guvc7pdy",
+      "_TZE204_lh3arisb",
+      "_TZE204_pw7mji0l",
+      "_TZE204_r0jdjrvi",
+      "_TZE204_tgl8i2np",
+      "_TZE204_vvvtcehj",
+      "_TZE204_wzre8hu2",
+      "_TZE204_xu4a5rhj",
+      "_TZE204_xuzcvlku",
+      "_TZE204_ycke4deo",
+      "_TZE204_yrugsphv",
+      "_TZE204_zah67ekh",
+      "_TZE204_zc2owu5k",
+      "_TZE204_zpzndjez",
+      "_TZE204_zuq5xxib",
+      "_TZE284_1fuxihti",
+      "_TZE284_koxaopnk",
+      "_TZE284_libht6ua",
+      "_TZE284_uqfph8ah",
+      "_TZE284_lnyz4a6v",
+      "_TZE284_waa352qv",
+      "_TZE600_ogyg1y6b",
+      "_TZE210_inpjmc0h",
+      "_TYST11_wmcdj3aq",
+      "_TZ3000_eafaa66e",
+      "_TZb210_0bkzabht",
+      "_TZb210_3zfp8mki",
+      "_TZb210_417ikxay",
+      "_TZb210_ayx58ft5",
+      "_TZb210_eiwanbeb",
+      "_TZb210_gj0ccsar",
+      "_TZb210_lmqquxus",
+      "_TZb210_rs0ufzwg",
+      "_TZb210_ue01a0s2",
+      "_TZb210_w9hcix2r",
+      "_TZb210_wxazcmsh",
+      "_TZb210_wy1pyu1q",
+      "_TZb210_yatkpuha"
+    ],
+    "productId": [
+      "TS0302",
+      "ZC-LS02",
+      "TS130F",
+      "DS82",
+      "DS421",
+      "lumi.curtain",
+      "lumi.curtain.hagl04",
+      "lumi.curtain.acn002",
+      "E1757",
+      "KADRILJ",
+      "FYRTUR",
+      "AM02",
+      "AM43-0.45/40-ES-EZ",
+      "AM43-0.45/40-ES-EB",
+      "TS0601",
+      "TS0301",
+      "ZBCurtain"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6,
+          258,
+          61184
+        ],
+        "bindings": [
+          6,
+          258
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/curtain_motor/assets/large.png",
+      "instruction": {
+        "en": "Follow the pairing instructions for your Smart Curtain Motor."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "open_time",
+      "type": "number",
+      "label": {
+        "en": "Open Time (seconds)",
+        "fr": "Temps d'ouverture (secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 120,
+      "step": 1,
+      "hint": {
+        "en": "Time to fully open the cover (0 = auto calibration). Set this to calibrate the open position.",
+        "fr": "Temps pour ouvrir complètement le volet (0 = calibration auto). Définir pour calibrer la position ouverte."
+      }
+    },
+    {
+      "id": "close_time",
+      "type": "number",
+      "label": {
+        "en": "Close Time (seconds)",
+        "fr": "Temps de fermeture (secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 120,
+      "step": 1,
+      "hint": {
+        "en": "Time to fully close the cover (0 = auto calibration). Set this to calibrate the close position.",
+        "fr": "Temps pour fermer complètement le volet (0 = calibration auto). Définir pour calibrer la position fermée."
+      }
+    },
+    {
+      "id": "reverse_direction",
+      "type": "checkbox",
+      "label": {
+        "en": "Reverse Direction",
+        "fr": "Inverser Direction"
+      },
+      "value": false,
+      "hint": {
+        "en": "Swap open/close direction if your curtain moves the wrong way",
+        "fr": "Inverser la direction si votre rideau se déplace dans le mauvais sens"
+      }
+    },
+    {
+      "id": "power_source",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Source",
+        "fr": "Source d'Alimentation"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "ac",
+          "label": {
+            "en": "AC Powered",
+            "fr": "Alimentation Secteur"
+          }
+        },
+        {
+          "id": "dc",
+          "label": {
+            "en": "DC Powered",
+            "fr": "Alimentation DC"
+          }
+        },
+        {
+          "id": "battery",
+          "label": {
+            "en": "Battery Powered",
+            "fr": "Sur Batterie"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select power source manually or use auto-detection",
+        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+      }
+    },
+    {
+      "id": "battery_type",
+      "type": "dropdown",
+      "label": {
+        "en": "Battery Type",
+        "fr": "Type de Batterie"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "CR2032",
+          "label": {
+            "en": "CR2032 (3V Button Cell)",
+            "fr": "CR2032 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "CR2450",
+          "label": {
+            "en": "CR2450 (3V Button Cell)",
+            "fr": "CR2450 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA (1.5V)",
+            "fr": "AAA (1.5V)"
+          }
+        },
+        {
+          "id": "AA",
+          "label": {
+            "en": "AA (1.5V)",
+            "fr": "AA (1.5V)"
+          }
+        },
+        {
+          "id": "CR123A",
+          "label": {
+            "en": "CR123A (3V)",
+            "fr": "CR123A (3V)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select battery type manually or use auto-detection based on voltage",
+        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+      }
+    },
+    {
+      "id": "battery_low_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold (%)",
+        "fr": "Seuil Batterie Faible (%)"
+      },
+      "value": 20,
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "hint": {
+        "en": "Trigger low battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "battery_critical_threshold",
+      "type": "number",
+      "label": {
+        "en": "Critical Battery Threshold (%)",
+        "fr": "Seuil Batterie Critique (%)"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "hint": {
+        "en": "Trigger critical battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "enable_battery_notifications",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Battery Notifications",
+        "fr": "Activer Notifications Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Send flow notifications for battery events",
+        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+      }
+    },
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval (hours)",
+        "fr": "Intervalle Rapport Batterie (heures)"
+      },
+      "value": 24,
+      "min": 1,
+      "max": 168,
+      "step": 1,
+      "hint": {
+        "en": "How often to request battery status updates",
+        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+      }
+    },
+    {
+      "id": "optimization_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy Optimization Mode",
+        "fr": "Mode Optimisation Énergétique"
+      },
+      "value": "balanced",
+      "values": [
+        {
+          "id": "performance",
+          "label": {
+            "en": "Performance (More responsive)",
+            "fr": "Performance (Plus réactif)"
+          }
+        },
+        {
+          "id": "balanced",
+          "label": {
+            "en": "Balanced",
+            "fr": "Équilibré"
+          }
+        },
+        {
+          "id": "power_saving",
+          "label": {
+            "en": "Power Saving (Longer battery)",
+            "fr": "Économie d'énergie (Batterie plus longue)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Balance between responsiveness and battery life",
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+      }
+    },
+    {
+      "id": "show_voltage",
+      "type": "checkbox",
+      "label": {
+        "en": "Show Battery Voltage",
+        "fr": "Afficher Tension Batterie"
+      },
+      "value": false,
+      "hint": {
+        "en": "Display raw battery voltage in device settings",
+        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+      }
+    },
+    {
+      "id": "enable_power_estimation",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Power Estimation",
+        "fr": "Activer Estimation Puissance"
+      },
+      "value": true,
+      "hint": {
+        "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+      }
+    }
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "CR2450",
+      "AAA",
+      "AA",
+      "CR123A"
+    ],
+    "approximation": {
+      "usageConstant": 0.5
+    }
+  },
+  "learnmode": {
+    "image": "./assets/learnmode.svg",
+    "instruction": {
+      "en": "Press and hold the reset button for 5 seconds until the LED blinks",
+      "fr": "Appuyez et maintenez le bouton reset pendant 5 secondes jusqu'à ce que la LED clignote"
+    }
+  },
+  "metadata": {
+    "app": {
+      "id": "com.dlnraja.tuya.zigbee",
+      "name": "Universal Tuya Zigbee",
+      "version": "4.1.3",
+      "api": {
+        "min": 3,
+        "max": 3
+      }
+    }
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

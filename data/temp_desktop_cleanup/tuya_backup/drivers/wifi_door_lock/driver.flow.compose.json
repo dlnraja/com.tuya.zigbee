@@ -1,0 +1,25 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_lock_locked",
+      "title": {
+        "en": "Locked"
+      }
+    },
+    {
+      "id": "wifi_lock_unlocked",
+      "title": {
+        "en": "Unlocked"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "wifi_lock_is_locked",
+      "title": {
+        "en": "Is locked"
+      }
+    }
+  ],
+  "actions": []
+}

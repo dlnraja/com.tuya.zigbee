@@ -1,0 +1,165 @@
+name: 📅 Monthly Device Enrichment
+
+on:
+  schedule:
+    # Run on 1st of every month at 5 AM UTC (staggered from monthly-enrichment at 3AM)
+    - cron: '0 5 1 * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (no commits)'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: monthly-device-enrichment
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: '22'
+
+jobs:
+  scrape-and-enrich:
+    name: 🔍 Scrape Forums & Enrich
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: 📦 Install dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: 🔍 Scan for new manufacturer IDs
+        id: scan
+        run: |
+          echo "## 🔍 Monthly Device Scan" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Date: $(date -u)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Count current manufacturer IDs
+          CURRENT_COUNT=$(grep -rh "manufacturerName" drivers/*/driver.compose.json 2>/dev/null | wc -l || true)
+          echo "Current manufacturer entries: $CURRENT_COUNT" >> $GITHUB_STEP_SUMMARY
+
+          # Count drivers
+          DRIVER_COUNT=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          echo "Total drivers: $DRIVER_COUNT" >> $GITHUB_STEP_SUMMARY
+
+          echo "manufacturer_count=$CURRENT_COUNT" >> $GITHUB_OUTPUT
+          echo "driver_count=$DRIVER_COUNT" >> $GITHUB_OUTPUT
+
+      - name: 🌐 External Sources (Z2M+ZHA+Blakadder)
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: node .github/scripts/external-sources-scanner.js
+
+      - name: 🔍 Enrichment Scanner
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: node .github/scripts/enrichment-scanner.js
+
+      - name: 🔍 Cross-Driver Gap Check
+        continue-on-error: true
+        run: node .github/scripts/cross-driver-gap.js
+
+      - name: 🔍 Recursive Fork Scanner
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          FORK_DEPTH: "3"
+        run: node .github/scripts/scan-forks-recursive.js
+
+      - name: 🌡️ Sensor Capability Gap Check
+        continue-on-error: true
+        run: |
+          echo "### Sensor Capability Gaps" >> $GITHUB_STEP_SUMMARY
+          for d in drivers/soil_sensor drivers/air_quality drivers/temp_hum_sensor; do
+            [ -d "$d" ] || continue
+            NAME=$(basename "$d")
+            CAPS=$(node -p "JSON.parse(require('fs').readFileSync('$d/driver.compose.json')).capabilities?.length||0" 2>/dev/null || echo 0)
+            FPS=$(node -p "JSON.parse(require('fs').readFileSync('$d/driver.compose.json')).zigbee?.manufacturerName?.length||0" 2>/dev/null || echo 0)
+            echo "- $NAME: $CAPS caps, $FPS FPs" >> $GITHUB_STEP_SUMMARY
+          done
+
+      - name: 📊 Generate enrichment report
+        run: |
+          mkdir -p reports
+
+          # Create monthly report
+          cat > reports/monthly-$(date +%Y%m).json << EOF
+          {
+            "date": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "stats": {
+              "drivers": ${{ steps.scan.outputs.driver_count }},
+              "manufacturerEntries": ${{ steps.scan.outputs.manufacturer_count }}
+            },
+            "sources": [
+              "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352",
+              "https://community.homey.app/t/app-pro-tuya-zigbee-app/26439",
+              "https://community.homey.app/t/app-tuya-smart-life-smart-living/146735",
+              "https://community.homey.app/t/app-pro-tuya-zigbee-app-device-request-archive/89271",
+              "https://github.com/Koenkk/zigbee2mqtt/issues",
+              "https://github.com/zigpy/zha-device-handlers"
+            ],
+            "status": "completed"
+          }
+          EOF
+
+          echo "### 📊 Report Generated" >> $GITHUB_STEP_SUMMARY
+          cat reports/monthly-$(date +%Y%m).json >> $GITHUB_STEP_SUMMARY
+
+      - name: 🔨 Validate app
+        run: npx homey app validate --level publish
+
+      - name: 📝 Commit changes (if any)
+        if: ${{ !inputs.dry_run }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Check for changes
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "No changes to commit"
+            echo "### ℹ️ No new devices found this month" >> $GITHUB_STEP_SUMMARY
+          else
+            git add -A
+            D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+            F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
+            VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
+            git commit -m "Device enrichment v${VER} $(date +%Y-%m): ${D} drivers, ${F} FPs [skip ci]" || true
+            git pull --rebase origin master || true
+            git push || true
+            echo "### ✅ Changes committed" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: 📋 Summary
+        run: |
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "### 🎯 Next Steps" >> $GITHUB_STEP_SUMMARY
+          echo "1. Review forum posts for new device requests" >> $GITHUB_STEP_SUMMARY
+          echo "2. Check Zigbee2MQTT for new Tuya converters" >> $GITHUB_STEP_SUMMARY
+          echo "3. Update manufacturer database if needed" >> $GITHUB_STEP_SUMMARY

@@ -1,0 +1,47 @@
+{
+  "name": {
+    "en": "WiFi Heater (Tuya Local)",
+    "fr": "Radiateur WiFi (Tuya Local)",
+    "nl": "WiFi Verwarming (Tuya Lokaal)",
+    "de": "WiFi Heizung (Tuya Lokal)"
+  },
+  "class": "heater",
+  "capabilities": [
+    "onoff",
+    "target_temperature",
+    "measure_temperature",
+    "wifi_heater_mode",
+    "child_lock",
+    "eco_mode"
+  ],
+  "capabilitiesOptions": {
+    "target_temperature": { "min": 5, "max": 35, "step": 1 }
+  },
+  "pair": [
+    { "id": "configure", "navigation": { "next": "list_devices" } },
+    { "id": "list_devices", "template": "list_devices", "navigation": { "prev": "configure" } },
+    { "id": "add_devices", "template": "add_devices" }
+  ],
+  "repair": [
+    { "id": "configure" }
+  ],
+  "settings": [
+    { "type": "group", "label": { "en": "Tuya Local Connection" }, "children": [
+      { "id": "device_id", "type": "text", "label": { "en": "Device ID" }, "hint": { "en": "Tuya device ID (from Tuya IoT platform)" }, "value": "" },
+      { "id": "local_key", "type": "text", "label": { "en": "Local Key" }, "hint": { "en": "AES local key (from Tuya IoT platform)" }, "value": "" },
+      { "id": "ip", "type": "text", "label": { "en": "IP Address" }, "hint": { "en": "Device LAN IP (optional, auto-discovered if empty)" }, "value": "" },
+      { "id": "protocol_version", "type": "dropdown", "label": { "en": "Protocol Version" }, "hint": { "en": "Tuya protocol version" }, "value": "3.3", "values": [
+        { "id": "3.1", "label": { "en": "3.1" } },
+        { "id": "3.3", "label": { "en": "3.3 (most common)" } },
+        { "id": "3.4", "label": { "en": "3.4" } },
+        { "id": "3.5", "label": { "en": "3.5" } }
+      ]}
+    ]}
+  ],
+  "images": {
+    "small": "drivers/wifi_heater/assets/images/small.png",
+    "large": "drivers/wifi_heater/assets/images/large.png"
+  },
+  "platforms": ["local"],
+  "connectivity": ["lan"]
+}

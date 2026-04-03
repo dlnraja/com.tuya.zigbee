@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect x="20" y="15" width="60" height="70" rx="5" fill="#FFF" stroke="#333" stroke-width="2"/>
+  <rect x="28" y="23" width="18" height="18" rx="2" fill="#E3F2FD" stroke="#2196F3" stroke-width="1"/>
+  <rect x="54" y="23" width="18" height="18" rx="2" fill="#FFF3E0" stroke="#FF9800" stroke-width="1"/>
+  <rect x="28" y="49" width="18" height="18" rx="2" fill="#E8F5E9" stroke="#4CAF50" stroke-width="1"/>
+  <rect x="54" y="49" width="18" height="18" rx="2" fill="#FCE4EC" stroke="#E91E63" stroke-width="1"/>
+  <text x="50" y="88" text-anchor="middle" font-size="7" fill="#666">Hold any 5s</text>
+</svg>

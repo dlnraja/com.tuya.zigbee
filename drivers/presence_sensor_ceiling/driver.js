@@ -18,7 +18,7 @@ class CeilingPresenceSensorDriver extends ZigBeeDriver {
 
     // Condition cards
     const cond = (id, fn) => {
-      try { this.homey.flow.getConditionCard(id).registerRunListener(fn); }
+      try { this.homey.flow.getDeviceConditionCard(id).registerRunListener(fn); }
       catch (e) { this.log('[Flow]', id, e.message); }
     };
     cond('presence_sensor_ceiling_is_on', async ({ device }) => device.getCapabilityValue('onoff') === true);

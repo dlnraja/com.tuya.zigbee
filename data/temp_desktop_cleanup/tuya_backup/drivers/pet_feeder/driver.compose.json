@@ -1,0 +1,115 @@
+{
+  "name": {
+    "en": "Smart Pet Feeder",
+    "fr": "Distributeur Croquettes Connecté",
+    "nl": "Slimme Voerbak",
+    "de": "Intelligenter Futterautomat",
+    "it": "Distributore Cibo Smart",
+    "sv": "Smart Matningsautomat",
+    "no": "Smart Fôrautomat",
+    "es": "Comedero Inteligente",
+    "da": "Smart Fodderautomat"
+  },
+  "class": "other",
+  "capabilities": [
+    "button.feed",
+    "alarm_generic"
+  ],
+  "capabilitiesOptions": {
+    "button.feed": {
+      "title": {
+        "en": "Feed Now",
+        "fr": "Distribuer"
+      }
+    },
+    "alarm_generic": {
+      "title": {
+        "en": "Food Low",
+        "fr": "Niveau Bas"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_arrw4hhc",
+      "_TZE200_dq1mfjug",
+      "_TZE200_nymxy9gq",
+      "_TZE204_arrw4hhc",
+      "_TZE204_dq1mfjug",
+      "_TZE204_nymxy9gq"
+    ],
+    "productId": [
+      "TS0601_feeder",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds",
+        "fr": "Maintenez le bouton d'appairage pendant 5 secondes"
+      }
+    }
+  },
+  "flow": {
+    "triggers": [
+      {
+        "id": "pet_feeder_fed",
+        "title": {
+          "en": "Pet was fed",
+          "fr": "Animal nourri",
+          "nl": "Huisdier is gevoerd",
+          "de": "Tier wurde gefüttert"
+        }
+      },
+      {
+        "id": "pet_feeder_food_low",
+        "title": {
+          "en": "Food level is low",
+          "fr": "Niveau de nourriture bas",
+          "nl": "Voerniveau is laag",
+          "de": "Futterniveau ist niedrig"
+        }
+      }
+    ],
+    "conditions": [
+      {
+        "id": "pet_feeder_food_ok",
+        "title": {
+          "en": "Food level !{{is|isn't}} OK",
+          "fr": "Niveau nourriture !{{est|n'est pas}} OK",
+          "nl": "Voerniveau !{{is|is niet}} OK",
+          "de": "Futterniveau !{{ist|ist nicht}} OK"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "id": "pet_feeder_feed_now",
+        "title": {
+          "en": "Feed now",
+          "fr": "Distribuer maintenant",
+          "nl": "Nu voeren",
+          "de": "Jetzt füttern"
+        }
+      }
+    ]
+  },
+  "images": {
+    "small": "drivers/pet_feeder/assets/images/small.png",
+    "large": "drivers/pet_feeder/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

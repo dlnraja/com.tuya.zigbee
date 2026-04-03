@@ -1,0 +1,89 @@
+{
+  "name": {
+    "en": "Fan Speed Controller",
+    "fr": "Contrôleur Ventilateur",
+    "nl": "Ventilator Controller",
+    "de": "Lüfterregler",
+    "it": "Controller Ventilatore",
+    "sv": "Fläktkontroll",
+    "no": "Viftekontroller",
+    "es": "Controlador Ventilador",
+    "da": "Blæserkontrol"
+  },
+  "class": "fan",
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "title": {
+        "en": "Fan Speed",
+        "fr": "Vitesse"
+      },
+      "min": 0,
+      "max": 1,
+      "step": 0.25
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_1h2x4akh",
+      "_TZ3000_9hv6kpds",
+      "_TZ3000_cpyisd3c",
+      "_TZ3000_hk7bcqhu",
+      "_TZ3000_hk7wdzrv",
+      "_TZ3210_lzqq3u4r",
+      "_TZ3210_t46srmxd",
+      "_TZ3210_x1mdzm6o",
+      "_TZE200_a5zyjdpn",
+      "_TZE200_dzuqwsyg",
+      "_TZE200_fvldku9h",
+      "_TZE200_kds0prmv",
+      "_TZE200_r32ctezx",
+      "_TZE204_a5zyjdpn",
+      "_TZE204_dzuqwsyg",
+      "_TZE204_fvldku9h",
+      "_TZE204_kds0prmv",
+      "_TZE204_lawxy9e2",
+      "_TZE204_r32ctezx",
+      "_TZE284_ikul00sx",
+      "_TZE204_2jnoy8dj"
+    ],
+    "productId": [
+      "TS0601_fanctrl",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the power button for 5 seconds until LED blinks",
+        "fr": "Maintenez le bouton power pendant 5 secondes"
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/fan_controller/assets/images/small.png",
+    "large": "drivers/fan_controller/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "approximation": {
+      "usageOn": 50,
+      "usageOff": 1
+    }
+  }
+}

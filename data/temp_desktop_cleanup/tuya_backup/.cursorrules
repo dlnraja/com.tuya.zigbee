@@ -1,0 +1,98 @@
+# Universal Tuya Zigbee - Cursor AI Rules
+# Project: com.dlnraja.tuya.zigbee
+
+## Project Context
+Homey Pro app for 4200+ Tuya Zigbee devices. Hybrid protocol: Tuya DP (0xEF00) + ZCL clusters.
+
+## CRITICAL: Settings Keys
+- Use `zb_model_id` NOT zb_modelId
+- Use `zb_manufacturer_name` NOT zb_manufacturerName
+
+## Flow Cards
+- ID pattern: `{driver}_physical_gang{N}_{on|off}`
+- NO `titleFormatted` with `[[device]]` - causes bugs
+- Always check driver.flow.compose.json for exact IDs
+
+## Imports
+```javascript
+const { ZigBeeDevice } = require('homey-zigbeedriver');
+const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+```
+
+## Switch Mixin Order
+```javascript
+class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
+```
+
+## Physical Button Detection (PR #120 pattern)
+```javascript
+// State tracking
+this._lastOnoffState = null;
+this._appCommandPending = false;
+this._appCommandTimeout = null;
+
+// Mark app command (2000ms timeout)
+_markAppCommand() {
+  this._appCommandPending = true;
+  clearTimeout(this._appCommandTimeout);
+  this._appCommandTimeout = setTimeout(() => {
+    this._appCommandPending = false;
+  }, 2000);
+}
+
+// In DP handler:
+const isPhysical = reportingEvent && !this._appCommandPending;
+```
+
+## Backlight Values
+Strings only: `"off"`, `"normal"`, `"inverted"`
+
+## BSEED ZCL-Only Fingerprints
+`_TZ3000_l9brjwau`, `_TZ3000_blhvsaqf`, `_TZ3000_ysdv91bk`,
+`_TZ3000_hafsqare`, `_TZ3000_e98krvvk`, `_TZ3000_iedbgyxt`
+
+## Tuya DP Protocol
+- Cluster: 0xEF00 | DP1-8: gangs | DP14: power-on | DP15: backlight
+- Types: 0=Raw, 1=Bool, 2=Value, 3=String, 4=Enum, 5=Bitmap
+
+## Key Files
+- `lib/devices/HybridSwitchBase.js` - Base switch class
+- `lib/mixins/PhysicalButtonMixin.js` - Physical detection
+- `drivers/{type}/driver.flow.compose.json` - Flow definitions
+
+## CRITICAL: Fingerprint Matching
+**manufacturerName CAN appear in MULTIPLE drivers** - this is NORMAL!
+
+### Fingerprint = manufacturerName + productId (COMBINED)
+```
+_TZ3000_abc + TS0001 → switch_1gang
+_TZ3000_abc + TS0002 → switch_2gang  (SAME mfr, different productId = OK!)
+_TZ3000_abc + TS0003 → switch_3gang
+```
+
+### When to REMOVE a fingerprint
+Only if SAME manufacturerName + SAME productId in WRONG driver.
+Do NOT remove just because mfr appears in another driver with different productId.
+
+### Common Multi-Driver Manufacturers
+- `_TZ3000_*` - Makes 1-gang, 2-gang, 3-gang variants
+- `_TZE200_*` / `_TZE204_*` - Tuya DP across sensors, TRVs, covers
+- Same OEM = different productIds for different device types
+
+## GITHUB ACTIONS / YML WORKFLOW RULES
+
+> Full reference: `.github/WORKFLOW_GUIDELINES.md` and `.github/SECRETS.md`
+
+### Before editing ANY `.github/workflows/*.yml`:
+1. Read `.github/WORKFLOW_GUIDELINES.md` first
+2. Every job running `node` scripts MUST have: checkout → setup-node → npm ci
+3. Always set `timeout-minutes` on jobs
+4. Always set `permissions:` and `concurrency:` at top level
+5. Use `continue-on-error: true` for optional-secret steps
+6. Use `[skip ci]` in auto-commit messages to prevent infinite loops
+7. Stagger cron schedules by 30+ min to avoid git push conflicts
+8. Draft→test promotion: 3 tiers (Node → curl fallback → verify retry)
+9. `DISCOURSE_API_KEY` lint warnings = false positives (secret exists)
+10. `GITHUB_TOKEN` auto-provided; `GH_PAT` for cross-repo access
+11. Guard missing secrets: `if [ -z "$SECRET" ]; then exit 0; fi`
+12. Git commits: always `git pull --rebase origin master || true` before push

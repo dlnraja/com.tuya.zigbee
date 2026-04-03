@@ -18,7 +18,7 @@ class SwitchWall8gangDriver extends ZigBeeDriver {
 
     gangs.forEach(gang => {
       try {
-        this.homey.flow.getConditionCard(`switch_wall_8gang_gang${gang}_is_on`)
+        this.homey.flow.getDeviceConditionCard(`switch_wall_8gang_gang${gang}_is_on`)
           .registerRunListener(async (args) => {
             if (!args.device) return false;
             return args.device.getCapabilityValue(capMap[gang]) === true;

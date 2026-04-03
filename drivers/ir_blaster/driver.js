@@ -8,7 +8,7 @@ try { IRCodeLibrary = require('../../lib/ir/IRCodeLibrary'); } catch (e) { IRCod
  * v5.5.565: Enhanced IR Blaster Driver - FIXED flow cards to return gracefully
  * v5.5.534: FIXED to use ZigBeeDriver + await super.onInit()
  * v5.5.362: Original - used Driver instead of ZigBeeDriver (caused FrankP issue #950)
- * CRITICAL FIX: All getActionCard/getTriggerCard/getConditionCard calls wrapped in try-catch
+ * CRITICAL FIX: All getActionCard/getTriggerCard/getDeviceConditionCard calls wrapped in try-catch
  * to prevent driver crash when flow cards are missing (diagnostic reports #7cb5ca58 #5dc85d82)
  */
 class IrBlasterDriver extends ZigBeeDriver {
@@ -296,7 +296,7 @@ class IrBlasterDriver extends ZigBeeDriver {
   async _registerEnhancedConditions() {
     // IR learning active condition
     try {
-      this.irLearningActiveCondition = this.homey.flow.getConditionCard('ir_blaster_learning_active');
+      this.irLearningActiveCondition = this.homey.flow.getDeviceConditionCard('ir_blaster_learning_active');
       this.irLearningActiveCondition.registerRunListener(async (args, state) => {
         const device = args.device;
         if (!device || device._learningState === undefined) {
@@ -315,7 +315,7 @@ class IrBlasterDriver extends ZigBeeDriver {
 
     // IR code exists condition
     try {
-      this.irCodeExistsCondition = this.homey.flow.getConditionCard('ir_blaster_code_exists');
+      this.irCodeExistsCondition = this.homey.flow.getDeviceConditionCard('ir_blaster_code_exists');
       this.irCodeExistsCondition.registerRunListener(async (args, state) => {
         const device = args.device;
         const { code_name } = args;
@@ -335,7 +335,7 @@ class IrBlasterDriver extends ZigBeeDriver {
 
     // IR protocol detected condition
     try {
-      this.irProtocolDetectedCondition = this.homey.flow.getConditionCard('ir_blaster_protocol_detected');
+      this.irProtocolDetectedCondition = this.homey.flow.getDeviceConditionCard('ir_blaster_protocol_detected');
       this.irProtocolDetectedCondition.registerRunListener(async (args, state) => {
         const device = args.device;
         const { code_name, protocol } = args;

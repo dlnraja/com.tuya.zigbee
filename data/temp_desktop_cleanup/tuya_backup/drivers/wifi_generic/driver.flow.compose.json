@@ -1,0 +1,25 @@
+{
+  "triggers": [
+    { "id": "wifi_generic_dp_changed", "title": { "en": "A DP value changed" },
+      "tokens": [
+        { "name": "dp", "type": "string", "title": { "en": "DP number" } },
+        { "name": "value", "type": "string", "title": { "en": "Value" } }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "wifi_generic_set_dp",
+      "title": { "en": "Set a DP value" },
+      "args": [
+        { "name": "dp", "type": "text", "title": { "en": "DP number" } },
+        { "name": "value", "type": "text", "title": { "en": "Value" } },
+        { "name": "type", "type": "dropdown", "title": { "en": "Type" }, "values": [
+          { "id": "bool", "label": { "en": "Boolean" } },
+          { "id": "number", "label": { "en": "Number" } },
+          { "id": "string", "label": { "en": "String" } }
+        ]}
+      ]
+    }
+  ]
+}

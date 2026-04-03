@@ -1,0 +1,23 @@
+{
+  "id": "INT-044-A",
+  "deviceName": "HOBEIAN ZG-204ZV Multisensor",
+  "manufacturerName": "HOBEIAN",
+  "productId": "ZG-204ZV",
+  "source": "Ian Gibbo Interview, Naresh_Kodali (Oct 2025)",
+  "user": "Ian_Gibbo, Naresh_Kodali",
+  "status": "supported",
+  "driver": "motion_sensor",
+  "deviceType": "enddevice",
+  "powerSource": "battery",
+  "swBuildId": "0130082025",
+  "inputClusters": [0, 1, 3, 1024, 1026, 1029, 1280, 61184],
+  "capabilities": ["alarm_motion", "measure_luminance", "measure_temperature", "measure_humidity", "measure_battery"],
+  "clusterDetails": {
+    "iasZone": { "zoneType": "motionSensor", "zoneState": "enrolled" },
+    "illuminanceMeasurement": { "measuredValue": true },
+    "temperatureMeasurement": { "measuredValue": true, "divisor": 100 },
+    "relativeHumidity": { "measuredValue": true, "divisor": 100 },
+    "powerConfiguration": { "batteryVoltage": true, "batteryPercentageRemaining": true }
+  },
+  "notes": "Hybrid ZCL + Tuya DP device. IAS Zone enrollment confirmed working in v2.15.33+."
+}

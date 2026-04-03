@@ -29,7 +29,7 @@ class FingerbotDriver extends ZigBeeDriver {
       await device.setCapabilityValue('onoff', !cur);
       await device.sendTuyaDP(1, 'bool', !cur);
     });
-    reg('getConditionCard', 'fingerbot_is_on', async ({ device }) => {
+    reg('getDeviceConditionCard', 'fingerbot_is_on', async ({ device }) => {
       return device.getCapabilityValue('onoff') === true;
     });
   }

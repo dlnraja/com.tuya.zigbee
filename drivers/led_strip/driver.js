@@ -15,7 +15,7 @@ class LedStripDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is on/off
     try {
-      this.homey.flow.getConditionCard('led_strip_led_strip_is_on')
+      this.homey.flow.getDeviceConditionCard('led_strip_led_strip_is_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;

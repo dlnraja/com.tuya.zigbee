@@ -369,16 +369,16 @@ class EnergyMonitorPlugDevice extends HybridPlugBase {
                 await this.setCapabilityValue('meter_power', parseFloat(e)).catch(() => {});
               }
             } catch (_) {}
-          }, 60000);
+          }, 120000); // v5.12.12: increased from 60s to 120s
         }
-        // v5.12.5: also try configureReporting for metering
-        if (mc.configureReporting) {
-          await mc.configureReporting({ currentSummDelivered: { minInterval: 60, maxInterval: 3600, minChange: 1 } })
-            .catch(e => this.log('[ENERGY] Metering reporting:', e.message));
-        }
-        this.log('[ENERGY] ✅ ZCL Metering configured (poll=60s)');
+      // v5.12.5: also try configureReporting for metering
+      if (mc.configureReporting) {
+        await mc.configureReporting({ currentSummDelivered: { minInterval: 60, maxInterval: 3600, minChange: 1 } })
+          .catch(e => this.log('[ENERGY] Metering reporting:', e.message));
       }
-    } catch (e) {
+      this.log('[ENERGY] ✅ ZCL Metering configured (poll=120s)');
+    }
+  } catch (e) {
       this.log(`[ENERGY] ⚠️ Metering cluster error: ${e.message}`);
     }
   }

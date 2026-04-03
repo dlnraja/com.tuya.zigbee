@@ -1,0 +1,159 @@
+{
+  "name": {
+    "en": "Curtain Motor with Tilt",
+    "fr": "Moteur Volet avec Inclinaison",
+    "nl": "Gordijn Kantelmotor",
+    "de": "Vorhang Kippmotor"
+  },
+  "class": "windowcoverings",
+  "capabilities": [
+    "windowcoverings_state",
+    "windowcoverings_set",
+    "windowcoverings_tilt_set",
+    "alarm_generic",
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_3i3exuay",
+      "_TZE200_5sbebbzs",
+      "_TZE200_68nvbio9",
+      "_TZE200_7eue9vhc",
+      "_TZE200_a8zrneee",
+      "_TZE200_cowvfni3",
+      "_TZE200_cpbo62rn",
+      "_TZE200_eegnwoyw",
+      "_TZE200_ergbiejo",
+      "_TZE200_fctwhugx",
+      "_TZE200_fzo2pocs",
+      "_TZE200_gubdgai2",
+      "_TZE200_hsgrhjpf",
+      "_TZE200_iossyxra",
+      "_TZE200_lwlvaony",
+      "_TZE200_nkoabg8w",
+      "_TZE200_nogaemzt",
+      "_TZE200_nueqqe6k",
+      "_TZE200_ol5jlkkr",
+      "_TZE200_pk29mnl3",
+      "_TZE200_r0jdjrvi",
+      "_TZE200_rddyvrci",
+      "_TZE200_rmymn92d",
+      "_TZE200_sbordckq",
+      "_TZE200_sur6q7ko",
+      "_TZE200_wmcdj3aq",
+      "_TZE200_xaabybja",
+      "_TZE200_xuzcvlku",
+      "_TZE200_zah67ekd",
+      "_TZE200_zpzndjez",
+      "_TZE204_guvc7pdy",
+      "_TZE204_r0jdjrvi"
+    ],
+    "productId": [
+      "TS0601_curtain_tilt",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          258,
+          61184
+        ],
+        "bindings": [
+          258
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/curtain_motor_tilt/assets/images/small.png",
+    "large": "drivers/curtain_motor_tilt/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  },
+  "flow": {
+    "actions": [
+      {
+        "id": "curtain_calibrate",
+        "title": {
+          "en": "Calibrate curtain motor",
+          "nl": "Kalibreer gordijnmotor"
+        },
+        "titleFormatted": {
+          "en": "Calibrate [[device]]",
+          "nl": "Kalibreer [[device]]"
+        },
+        "hint": {
+          "en": "Run full open/close cycle for position calibration",
+          "nl": "Voer volledige open/sluit cyclus uit voor positie kalibratie"
+        }
+      },
+      {
+        "id": "curtain_reset_position",
+        "title": {
+          "en": "Reset position to 0%",
+          "nl": "Reset positie naar 0%"
+        },
+        "titleFormatted": {
+          "en": "Reset [[device]] position",
+          "nl": "Reset [[device]] positie"
+        },
+        "hint": {
+          "en": "Reset current position to fully closed",
+          "nl": "Reset huidige positie naar volledig gesloten"
+        }
+      },
+      {
+        "id": "curtain_hold",
+        "title": {
+          "en": "Hold curtain position",
+          "nl": "Gordijn positie vasthouden",
+          "fr": "Maintenir position rideau"
+        },
+        "titleFormatted": {
+          "en": "Hold [[device]] at current position",
+          "nl": "Houd [[device]] op huidige positie"
+        },
+        "hint": {
+          "en": "Stop curtain movement and hold at current position",
+          "nl": "Stop gordijn beweging en houd huidige positie vast"
+        }
+      },
+      {
+        "id": "curtain_open_partial",
+        "title": {
+          "en": "Open curtain partially",
+          "nl": "Gordijn gedeeltelijk openen",
+          "fr": "Ouvrir rideau partiellement"
+        },
+        "titleFormatted": {
+          "en": "Open [[device]] to [[position]]%",
+          "nl": "Open [[device]] naar [[position]]%"
+        },
+        "args": [
+          {
+            "type": "range",
+            "name": "position",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "label": "%",
+            "labelMultiplier": 1
+          }
+        ]
+      }
+    ]
+  }
+}

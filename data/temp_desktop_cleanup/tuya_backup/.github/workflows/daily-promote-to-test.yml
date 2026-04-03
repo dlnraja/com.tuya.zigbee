@@ -1,0 +1,119 @@
+name: Daily Draft to Test
+on:
+  schedule:
+    - cron: '45 3 * * *'
+    - cron: '15 6 * * *'
+    - cron: '45 9 * * *'
+    - cron: '15 12 * * *'
+    - cron: '30 15 * * *'
+    - cron: '15 18 * * *'
+    - cron: '30 21 * * *'
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+  workflow_run:
+    workflows: [Auto Publish, Auto-Publish on Push, Daily Everything Pipeline]
+    types: [completed]
+permissions:
+  contents: read
+concurrency:
+  group: promote-to-test
+  cancel-in-progress: true
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  promote:
+    name: Promote draft to test
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion != 'failure'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      # When triggered by a publish workflow, wait for Athom to process the draft
+      - name: Wait for Athom draft processing
+        if: github.event_name == 'workflow_run'
+        run: |
+          echo "Triggered by workflow_run — waiting 120s for Athom to process draft..."
+          sleep 120
+          echo "Done waiting"
+
+      # Tier 1: Browser automation (Puppeteer) — the ONLY reliable method
+      # Athom has no public API for draft→test, only the web UI works.
+      - name: "Install Puppeteer"
+        continue-on-error: true
+        run: npm install puppeteer --no-save
+      - name: "Tier 1: Promote via Browser (Puppeteer)"
+        id: puppeteer
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: node .github/scripts/auto-promote-puppeteer.js
+
+      # Tier 2: OAuth password grant (gets real access token)
+      - name: "Tier 2: Promote via OAuth"
+        id: oauth
+        if: steps.puppeteer.outcome != 'success'
+        continue-on-error: true
+        timeout-minutes: 3
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          ATHOM_CLIENT_ID: ${{ secrets.ATHOM_CLIENT_ID }}
+          ATHOM_CLIENT_SECRET: ${{ secrets.ATHOM_CLIENT_SECRET }}
+        run: |
+          npm install athom-api --no-save 2>/dev/null || true
+          node .github/scripts/auto-promote-oauth.js
+
+      # Tier 3: API attempt with PAT
+      - name: "Tier 3: Promote via API (PAT)"
+        id: api
+        if: steps.puppeteer.outcome != 'success' && steps.oauth.outcome != 'success'
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/auto-publish-draft.js
+
+      # Tier 4: Retry Puppeteer after 30s
+      - name: "Tier 4: Verify retry (Puppeteer)"
+        if: steps.puppeteer.outcome != 'success' && steps.oauth.outcome != 'success' && steps.api.outcome != 'success'
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: |
+          sleep 30
+          node .github/scripts/auto-promote-puppeteer.js
+
+      # Upload screenshots for debugging
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: promote-screenshots
+          path: screenshots/
+          retention-days: 7
+          if-no-files-found: ignore
+
+      - name: Verify test version
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/verify-test-version.js
+
+      - name: Summary
+        if: always()
+        run: |
+          VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
+          echo "## Draft to Test" >> $GITHUB_STEP_SUMMARY
+          echo "v$VER | Puppeteer=${{ steps.puppeteer.outcome }} | OAuth=${{ steps.oauth.outcome }} | API=${{ steps.api.outcome }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "[Test link](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee/versions)" >> $GITHUB_STEP_SUMMARY

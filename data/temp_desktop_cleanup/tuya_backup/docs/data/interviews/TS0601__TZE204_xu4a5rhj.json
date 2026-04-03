@@ -1,0 +1,26 @@
+{
+  "id": "INT-147",
+  "deviceName": "Longsam Mini M3 Curtain Motor",
+  "manufacturerName": "_TZE204_xu4a5rhj",
+  "productId": "TS0601",
+  "source": "GitHub Issue #117, #122 (elgato7), Z2M #26660",
+  "user": "elgato7",
+  "status": "fixed",
+  "priority": "high",
+  "driver": "curtain_motor",
+  "inputClusters": [4, 5, 61184, 0],
+  "powerSource": "mains",
+  "symptoms": [
+    "Device stopped responding after v5.5.937",
+    "Commands sent but motor doesn't move",
+    "Works with SmartLife app and remote control"
+  ],
+  "rootCause": "DP format changed in v5.5.939 from {dp,datatype,data} to {data:cmd}",
+  "fix": {
+    "applied": true,
+    "version": "5.7.20",
+    "description": "Try BOTH formats: OLD {dp,datatype,data} first, then NEW {data:cmd}"
+  },
+  "z2mReference": "https://github.com/Koenkk/zigbee2mqtt/issues/26660",
+  "notes": "Position is inverted (DP2 = 100-value) - fixed in v5.5.998"
+}

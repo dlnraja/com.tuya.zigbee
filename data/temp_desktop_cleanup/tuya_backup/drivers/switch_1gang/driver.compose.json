@@ -1,0 +1,826 @@
+{
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "measure_battery",
+    "measure_power",
+    "meter_power",
+    "measure_voltage",
+    "measure_current",
+    "button.toggle",
+    "button.identify"
+  ],
+  "zigbee": {
+    "productId": [
+      "TS0001",
+      "TS0011",
+      "TS0001_power",
+      "TS0001_switch",
+      "TS0001_switch_module",
+      "TS0601",
+      "TS000F",
+      "ZBMINI",
+      "ZBMINIL2",
+      "BASICZBR3",
+      "S31ZB",
+      "S26R2ZB"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          61184
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/switch_1gang/assets/learnmode.svg",
+      "instruction": {
+        "en": "Turn the switch on/off 3 times quickly"
+      }
+    },
+    "manufacturerName": [
+      "_TYZB01_1xktopx6",
+      "_TYZB01_4mdqxxnn",
+      "_TYZB01_4qw4rl1u",
+      "_TYZB01_7yidyqxd",
+      "_TYZB01_821siati",
+      "_TYZB01_aneiicmq",
+      "_TYZB01_cbiezpds",
+      "_TYZB01_digziiav",
+      "_TYZB01_dr6sduka",
+      "_TYZB01_ftdkanlj",
+      "_TYZB01_gr6rozze",
+      "_TYZB01_hlla45kx",
+      "_TYZB01_ijihzffk",
+      "_TYZB01_kvwjujy9",
+      "_TYZB01_m6ec2pgj",
+      "_TYZB01_mtunwanm",
+      "_TYZB01_ncutbjdi",
+      "_TYZB01_phjeraqq",
+      "_TYZB01_qeqvmvti",
+      "_TYZB01_qezuin6k",
+      "_TYZB01_rifa0wlb",
+      "_TYZB01_sbpc1zrb",
+      "_TYZB01_seqwasot",
+      "_TYZB01_sqmd19i1",
+      "_TYZB01_ttvdudvx",
+      "_TYZB01_u9kkqh5o",
+      "_TYZB01_uqkphoed",
+      "_TYZB01_v8gtiaed",
+      "_TYZB01_wqcac7lo",
+      "_TYZB01_xfpdrwvc",
+      "_TYZB01_xph99wvr",
+      "_TYZB01_yr95mpib",
+      "_TYZB01_z2umiwvq",
+      "_TYZB01_zqvwka4k",
+      "_TYZB01_zsl6z0pw",
+      "_TYZB02_keyjqthh",
+      "_TZ3000_0ausfos0",
+      "_TZ3000_18ejxrzk",
+      "_TZ3000_1obmmd8k",
+      "_TZ3000_2ac",
+      "_TZ3000_2jxgpoqh",
+      "_TZ3000_2mccw9py",
+      "_TZ3000_3wkqni6o",
+      "_TZ3000_41ki5xyq",
+      "_TZ3000_46t1rvdu",
+      "_TZ3000_4hbrrn7e",
+      "_TZ3000_4js9lo5d",
+      "_TZ3000_4uf3d0ax",
+      "_TZ3000_4whigl8i",
+      "_TZ3000_56bdyj21",
+      "_TZ3000_5e5ptb24",
+      "_TZ3000_5nrcorgu",
+      "_TZ3000_5vujyute",
+      "_TZ3000_6axxqqi2",
+      "_TZ3000_6eyydfyg",
+      "_TZ3000_6oabgtzv",
+      "_TZ3000_7dbxxwkt",
+      "_TZ3000_7jsk6lxz",
+      "_TZ3000_87654321",
+      "_TZ3000_8rppvwda",
+      "_TZ3000_9djocypn",
+      "_TZ3000_9evm3otq",
+      "_TZ3000_abc123",
+      "_TZ3000_adkvzooy",
+      "_TZ3000_aezbqpcu",
+      "_TZ3000_ajkq2isy",
+      "_TZ3000_amal63is",
+      "_TZ3000_arw23zcs",
+      "_TZ3000_b7bxojrg",
+      "_TZ3000_b9vanmes",
+      "_TZ3000_bb6xaihh",
+      "_TZ3000_bezfthwc",
+      "_TZ3000_bppxj3sf",
+      "_TZ3000_bzczr4e1",
+      "_TZ3000_c7nc9w3c",
+      "_TZ3000_cdamjqm9",
+      "_TZ3000_cipibmnp",
+      "_TZ3000_cmcjbqup",
+      "_TZ3000_czuyt8lz",
+      "_TZ3000_d16y6col",
+      "_TZ3000_dku2cfsc",
+      "_TZ3000_dov0a3p1",
+      "_TZ3000_e8cquwdk",
+      "_TZ3000_ejwkn2h2",
+      "_TZ3000_ena8vgqb",
+      "_TZ3000_etx8inrk",
+      "_TZ3000_ew31dmgx",
+      "_TZ3000_f8tmviy0",
+      "_TZ3000_fjt5218m",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_g",
+      "_TZ3000_gbm10jnj",
+      "_TZ3000_gdsvhfao",
+      "_TZ3000_ghi789",
+      "_TZ3000_gidy6sjs",
+      "_TZ3000_gtdswg8k",
+      "_TZ3000_h1c2eamp",
+      "_TZ3000_h1jnz6l8",
+      "_TZ3000_hauznfgh",
+      "_TZ3000_hbdzfqjl",
+      "_TZ3000_hbxsdd6k",
+      "_TZ3000_hdlpifbk",
+      "_TZ3000_hjhbbyxt",
+      "_TZ3000_hkkkuk7k",
+      "_TZ3000_hlwm8e96",
+      "_TZ3000_ho0cjoi2",
+      "_TZ3000_i3k4zrp0",
+      "_TZ3000_i3rjdrwu",
+      "_TZ3000_i8jfiezr",
+      "_TZ3000_iaxvag8w",
+      "_TZ3000_ibpqrvcy",
+      "_TZ3000_it1hm1cr",
+      "_TZ3000_itb0omhv",
+      "_TZ3000_iwhuhzdo",
+      "_TZ3000_jcqs2mrv",
+      "_TZ3000_jd4qb8ux",
+      "_TZ3000_jihobqcz",
+      "_TZ3000_jrpdaujd",
+      "_TZ3000_keabpigb",
+      "_TZ3000_kj0nwdz6",
+      "_TZ3000_ktxqiyra",
+      "_TZ3000_kybmsyjz",
+      "_TZ3000_lbtpiody",
+      "_TZ3000_lfa05ajd",
+      "_TZ3000_llfaquvp",
+      "_TZ3000_lrgccsxm",
+      "_TZ3000_lupfd8bq",
+      "_TZ3000_lupfd8zu",
+      "_TZ3000_lwlhprgx",
+      "_TZ3000_lxw3zcdk",
+      "_TZ3000_majwnphg",
+      "_TZ3000_mtmtljo4",
+      "_TZ3000_nahxzcpz",
+      "_TZ3000_neo2aqj4",
+      "_TZ3000_njintbl6",
+      "_TZ3000_npzfdzhq",
+      "_TZ3000_nrfkrgf4",
+      "_TZ3000_nta0gb8h",
+      "_TZ3000_nz98vdvj",
+      "_TZ3000_oaq83gqc",
+      "_TZ3000_odzoiovu",
+      "_TZ3000_oex7egmt",
+      "_TZ3000_oikiyf3b",
+      "_TZ3000_oz4zgdny",
+      "_TZ3000_oznonj5q",
+      "_TZ3000_pccqzgdc",
+      "_TZ3000_pdevogdj",
+      "_TZ3000_pkeqinnt",
+      "_TZ3000_pmvbt5hh",
+      "_TZ3000_pmz6mjyu",
+      "_TZ3000_pnzfdr9y",
+      "_TZ3000_prd023wy",
+      "_TZ3000_prits6g4",
+      "_TZ3000_ptjcjise",
+      "_TZ3000_q68478x7",
+      "_TZ3000_qewo8dlz",
+      "_TZ3000_qgwcxxws",
+      "_TZ3000_qh6qjuan",
+      "_TZ3000_qspxxfqf",
+      "_TZ3000_r0pmi2p3",
+      "_TZ3000_rae2pvwy",
+      "_TZ3000_rco7azbz",
+      "_TZ3000_rdfh8cfs",
+      "_TZ3000_rfctjdxr",
+      "_TZ3000_rxisxokz",
+      "_TZ3000_s0i14ubi",
+      "_TZ3000_sfc7y1t8",
+      "_TZ3000_sj7jbgks",
+      "_TZ3000_sjpl9eg3",
+      "_TZ3000_skueezt3",
+      "_TZ3000_sskgpxfo",
+      "_TZ3000_svoqrno4",
+      "_TZ3000_syoxtjf0",
+      "_TZ3000_t8hzpgnd",
+      "_TZ3000_tgddllx4",
+      "_TZ3000_thhxrept",
+      "_TZ3000_tk3s5tya",
+      "_TZ3000_tkusjmue",
+      "_TZ3000_tqlv4ez4",
+      "_TZ3000_trdx8uxs",
+      "_TZ3000_ts004f",
+      "_TZ3000_txpirhfq",
+      "_TZ3000_txpitre5",
+      "_TZ3000_tygpud44",
+      "_TZ3000_uxuxkcvd",
+      "_TZ3000_v7fkcekx",
+      "_TZ3000_v7sopte0",
+      "_TZ3000_vjhcenzw",
+      "_TZ3000_vvlivusi",
+      "_TZ3000_w3c7ouru",
+      "_TZ3000_wbfgbpxq",
+      "_TZ3000_wkr3jqmr",
+      "_TZ3000_wpueorev",
+      "_TZ3000_wqcbzbae",
+      "_TZ3000_wrhhi5h2",
+      "_TZ3000_wzauvbcs",
+      "_TZ3000_xiuox57i",
+      "_TZ3000_xrqsdxq6",
+      "_TZ3000_xwuveizv",
+      "_TZ3000_y4che4dc",
+      "_TZ3000_ygvf9xzp",
+      "_TZ3000_yhagrqmd",
+      "_TZ3000_yirp2pgd",
+      "_TZ3000_yl3zuyaw",
+      "_TZ3000_yw5tvzsk",
+      "_TZ3000_zfmxvprs",
+      "_TZ3000_zmy4lslw",
+      "_TZ3000_zw7yf6yk",
+      "_TZ3002_6ahhkwyh",
+      "_TZ3002_vaq2bfcu",
+      "_TZ3210_a2erlvb8",
+      "_TZ3210_tqlv4ug4",
+      "_TZE200_7a5ob7xq",
+      "_TZE200_gbagoilo",
+      "_TZE200_htj3hcpl",
+      "_TZE200_pcg0rykt",
+      "_TZE200_xo3vpoah",
+      "_TZE204_4cl0dzt4",
+      "_TZE204_kyzjsjo3",
+      "_TZE284_1aqlsquf",
+      "_TZE284_6fk3gewc",
+      "_TZE284_7a5ob7xq",
+      "_TZE284_9qhuzgo0",
+      "_TZE284_a2teqi5u",
+      "_TZE284_dmckrsxg",
+      "_TZE284_gt5al3bl",
+      "_TZE284_hlx9tnzb",
+      "_TZE284_ms97nkyy",
+      "_TZE284_n9ctkb6j",
+      "_TZE284_pgxndxp4",
+      "_TZ3000_qamj2vnn",
+      "_TZ3000_tw4ztbp4",
+      "_TZ3002_xkxgfxsg",
+      "_TZe200_0nauxa0p",
+      "_TZe200_9cxuhakf",
+      "_TZe200_abatw3kj",
+      "_TZe200_bkkmqmyo",
+      "_TZe200_hewlydpz",
+      "_TZe200_tsxpl0d0",
+      "_TZe200_wnp4d4va",
+      "_TZe204_1v1dxkck",
+      "_TZe204_68utemio",
+      "_TZe204_bkkmqmyo",
+      "_TZe204_bxoo2swd",
+      "_TZe204_f5efvtbv",
+      "_TZe204_gxbdnfrh",
+      "_TZe204_hlx9tnzb",
+      "_TZe204_iik0pquw",
+      "_TZe204_lbhh5o6z",
+      "_TZe204_lmgrbuwf",
+      "_TZe204_mexisfik",
+      "_TZe204_nvxorhcj",
+      "_TZe204_ojtqawav",
+      "_TZe204_wskr3up8",
+      "_TZe204_zenj4lxv",
+      "_TZe204_znvwzxkq",
+      "_TZe284_f5efvtbv",
+      "_TZe284_lbhh5o6z",
+      "_TZe284_tdhnhhiy",
+      "_TZe284_znvwzxkq",
+      "_TZ3000_bmzfjnbp",
+      "_TZ3000_skueekg3"
+    ]
+  },
+  "images": {
+    "small": "drivers/switch_1gang/assets/images/small.png",
+    "large": "drivers/switch_1gang/assets/images/large.png"
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Device Type Configuration",
+        "fr": "Configuration Type d'Appareil"
+      },
+      "children": [
+        {
+          "id": "device_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Connected Device Type",
+            "fr": "Type d'Appareil Connecté"
+          },
+          "hint": {
+            "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
+            "fr": "Sélectionnez le type d'appareil connecté à ce module. Radiateur inversera la logique MARCHE/ARRÊT."
+          },
+          "value": "light",
+          "values": [
+            {
+              "id": "light",
+              "label": {
+                "en": "💡 Éclairage",
+                "fr": "💡 Éclairage"
+              }
+            },
+            {
+              "id": "outdoor_light",
+              "label": {
+                "en": "🏡 Éclairage extérieur",
+                "fr": "🏡 Éclairage extérieur"
+              }
+            },
+            {
+              "id": "radiator",
+              "label": {
+                "en": "🔥 Radiateur (fil pilote)",
+                "fr": "🔥 Radiateur (fil pilote)"
+              }
+            },
+            {
+              "id": "water_heater",
+              "label": {
+                "en": "🚿 Chauffe-eau / Cumulus",
+                "fr": "🚿 Chauffe-eau / Cumulus"
+              }
+            },
+            {
+              "id": "boiler",
+              "label": {
+                "en": "🏠 Chaudière",
+                "fr": "🏠 Chaudière"
+              }
+            },
+            {
+              "id": "underfloor_heating",
+              "label": {
+                "en": "🦶 Plancher chauffant",
+                "fr": "🦶 Plancher chauffant"
+              }
+            },
+            {
+              "id": "fan",
+              "label": {
+                "en": "🌀 Ventilateur / VMC",
+                "fr": "🌀 Ventilateur / VMC"
+              }
+            },
+            {
+              "id": "ac",
+              "label": {
+                "en": "❄️ Climatisation",
+                "fr": "❄️ Climatisation"
+              }
+            },
+            {
+              "id": "extractor",
+              "label": {
+                "en": "💨 Extracteur / Hotte",
+                "fr": "💨 Extracteur / Hotte"
+              }
+            },
+            {
+              "id": "shutter",
+              "label": {
+                "en": "🪟 Volet roulant / Store",
+                "fr": "🪟 Volet roulant / Store"
+              }
+            },
+            {
+              "id": "gate",
+              "label": {
+                "en": "🚗 Portail / Garage",
+                "fr": "🚗 Portail / Garage"
+              }
+            },
+            {
+              "id": "door_lock",
+              "label": {
+                "en": "🔐 Gâche / Serrure",
+                "fr": "🔐 Gâche / Serrure"
+              }
+            },
+            {
+              "id": "pump",
+              "label": {
+                "en": "💧 Pompe",
+                "fr": "💧 Pompe"
+              }
+            },
+            {
+              "id": "irrigation",
+              "label": {
+                "en": "🌱 Arrosage",
+                "fr": "🌱 Arrosage"
+              }
+            },
+            {
+              "id": "pool",
+              "label": {
+                "en": "🏊 Équipement piscine",
+                "fr": "🏊 Équipement piscine"
+              }
+            },
+            {
+              "id": "socket",
+              "label": {
+                "en": "🔌 Prise commandée",
+                "fr": "🔌 Prise commandée"
+              }
+            },
+            {
+              "id": "appliance",
+              "label": {
+                "en": "🧺 Électroménager",
+                "fr": "🧺 Électroménager"
+              }
+            },
+            {
+              "id": "coffee_machine",
+              "label": {
+                "en": "☕ Machine à café",
+                "fr": "☕ Machine à café"
+              }
+            },
+            {
+              "id": "alarm",
+              "label": {
+                "en": "🚨 Alarme / Sirène",
+                "fr": "🚨 Alarme / Sirène"
+              }
+            },
+            {
+              "id": "camera",
+              "label": {
+                "en": "📹 Caméra",
+                "fr": "📹 Caméra"
+              }
+            },
+            {
+              "id": "tv",
+              "label": {
+                "en": "📺 TV / Écran",
+                "fr": "📺 TV / Écran"
+              }
+            },
+            {
+              "id": "audio",
+              "label": {
+                "en": "🔊 Audio / Hifi",
+                "fr": "🔊 Audio / Hifi"
+              }
+            },
+            {
+              "id": "fountain",
+              "label": {
+                "en": "⛲ Fontaine",
+                "fr": "⛲ Fontaine"
+              }
+            },
+            {
+              "id": "other",
+              "label": {
+                "en": "⚙️ Autre appareil",
+                "fr": "⚙️ Autre appareil"
+              }
+            }
+          ]
+        },
+        {
+          "id": "invert_logic_manual",
+          "type": "checkbox",
+          "label": {
+            "en": "Manual Logic Inversion",
+            "fr": "Inversion Logique Manuelle"
+          },
+          "hint": {
+            "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
+            "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
+          },
+          "value": false
+        }
+      ]
+    },
+    {
+      "id": "power_source",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Source",
+        "fr": "Source d'Alimentation"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "ac",
+          "label": {
+            "en": "AC Powered",
+            "fr": "Alimentation Secteur"
+          }
+        },
+        {
+          "id": "dc",
+          "label": {
+            "en": "DC Powered",
+            "fr": "Alimentation DC"
+          }
+        },
+        {
+          "id": "battery",
+          "label": {
+            "en": "Battery Powered",
+            "fr": "Sur Batterie"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select power source manually or use auto-detection",
+        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+      }
+    },
+    {
+      "id": "battery_type",
+      "type": "dropdown",
+      "label": {
+        "en": "Battery Type",
+        "fr": "Type de Batterie"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "CR2032",
+          "label": {
+            "en": "CR2032",
+            "fr": "CR2032 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "CR2450",
+          "label": {
+            "en": "CR2450",
+            "fr": "CR2450 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA",
+            "fr": "AAA"
+          }
+        },
+        {
+          "id": "AA",
+          "label": {
+            "en": "AA",
+            "fr": "AA"
+          }
+        },
+        {
+          "id": "CR123A",
+          "label": {
+            "en": "CR123A",
+            "fr": "CR123A"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select battery type manually or use auto-detection based on voltage",
+        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+      }
+    },
+    {
+      "id": "battery_low_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold",
+        "fr": "Seuil Batterie Faible (%)"
+      },
+      "value": 20,
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "hint": {
+        "en": "Trigger low battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "battery_critical_threshold",
+      "type": "number",
+      "label": {
+        "en": "Critical Battery Threshold",
+        "fr": "Seuil Batterie Critique (%)"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "hint": {
+        "en": "Trigger critical battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "enable_battery_notifications",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Battery Notifications",
+        "fr": "Activer Notifications Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Send flow notifications for battery events",
+        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+      }
+    },
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval",
+        "fr": "Intervalle Rapport Batterie (heures)"
+      },
+      "value": 24,
+      "min": 1,
+      "max": 168,
+      "step": 1,
+      "hint": {
+        "en": "How often to request battery status updates",
+        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+      }
+    },
+    {
+      "id": "optimization_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy Optimization Mode",
+        "fr": "Mode Optimisation Énergétique"
+      },
+      "value": "balanced",
+      "values": [
+        {
+          "id": "performance",
+          "label": {
+            "en": "Performance (More responsive)",
+            "fr": "Performance (Plus réactif)"
+          }
+        },
+        {
+          "id": "balanced",
+          "label": {
+            "en": "Balanced",
+            "fr": "Équilibré"
+          }
+        },
+        {
+          "id": "power_saving",
+          "label": {
+            "en": "Power Saving (Longer battery)",
+            "fr": "Économie d'énergie (Batterie plus longue)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Balance between responsiveness and battery life",
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+      }
+    },
+    {
+      "id": "show_voltage",
+      "type": "checkbox",
+      "label": {
+        "en": "Show Battery Voltage",
+        "fr": "Afficher Tension Batterie"
+      },
+      "value": false,
+      "hint": {
+        "en": "Display raw battery voltage in device settings",
+        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+      }
+    },
+    {
+      "id": "power_on_behavior",
+      "type": "dropdown",
+      "label": { "en": "Power-On Behavior", "nl": "Gedrag bij inschakelen", "de": "Einschaltverhalten", "fr": "Comportement à la mise sous tension" },
+      "hint": { "en": "What happens when power is restored after an outage (DP14)", "nl": "Wat er gebeurt als de stroom terugkeert na een stroomstoring" },
+      "value": "memory",
+      "values": [
+        { "id": "off", "label": { "en": "Always Off", "nl": "Altijd Uit" } },
+        { "id": "on", "label": { "en": "Always On", "nl": "Altijd Aan" } },
+        { "id": "memory", "label": { "en": "Last State", "nl": "Laatste status" } }
+      ]
+    },
+    {
+      "id": "enable_power_estimation",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Power Estimation",
+        "fr": "Activer Estimation Puissance"
+      },
+      "value": true,
+      "hint": {
+        "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+      }
+    }
+  ],
+  "name": {
+    "en": "1-Gang Smart Switch",
+    "nl": "1-Voudige Schakelaar",
+    "de": "1-Kanal Schalter",
+    "fr": "Interrupteur 1 bouton"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilitiesOptions": {
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie"
+      },
+      "preventInsights": false
+    }
+  },
+  "learnmode": {
+    "image": "./assets/learnmode.svg",
+    "instruction": {
+      "en": "Press and hold the reset button for 5 seconds until the LED blinks",
+      "fr": "Appuyez et maintenez le bouton reset pendant 5 secondes jusqu'à ce que la LED clignote"
+    }
+  },
+  "metadata": {
+    "app": {
+      "id": "com.dlnraja.tuya.zigbee",
+      "name": "Universal Tuya Zigbee",
+      "version": "4.1.3",
+      "api": {
+        "min": 3,
+        "max": 3
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageConstant": 0.5
+    },
+    "batteries": [
+      "OTHER"
+    ]
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

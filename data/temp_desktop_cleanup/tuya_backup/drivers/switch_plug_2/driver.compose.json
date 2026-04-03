@@ -1,0 +1,279 @@
+{
+  "name": {
+    "en": "Smart Plug 2-Gang",
+    "fr": "Prise Connectée 2 Gangs",
+    "nl": "Schakelaardoos 2",
+    "de": "Schaltersteckdose 2"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "onoff.outlet2",
+    "measure_power",
+    "meter_power"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_wxtp7c5y",
+      "_TZ3000_zloso4jk"
+    ],
+    "productId": [
+      "TS0122"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          2820,
+          1794,
+          61184
+        ],
+        "bindings": [
+          6,
+          2820,
+          1794
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/switch_plug_2/assets/images/small.png",
+    "large": "drivers/switch_plug_2/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "OTHER"
+    ]
+  },
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Outlet 1",
+        "fr": "Prise 1"
+      }
+    },
+    "onoff.outlet2": {
+      "title": {
+        "en": "Outlet 2",
+        "fr": "Prise 2"
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Device Type Configuration",
+        "fr": "Configuration Type d'Appareil"
+      },
+      "children": [
+        {
+          "id": "device_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Connected Device Type",
+            "fr": "Type d'Appareil Connecté"
+          },
+          "hint": {
+            "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
+            "fr": "Sélectionnez le type d'appareil connecté à ce module. Radiateur inversera la logique MARCHE/ARRÊT."
+          },
+          "value": "light",
+          "values": [
+            {
+              "id": "light",
+              "label": {
+                "en": "💡 Éclairage",
+                "fr": "💡 Éclairage"
+              }
+            },
+            {
+              "id": "outdoor_light",
+              "label": {
+                "en": "🏡 Éclairage extérieur",
+                "fr": "🏡 Éclairage extérieur"
+              }
+            },
+            {
+              "id": "radiator",
+              "label": {
+                "en": "🔥 Radiateur (fil pilote)",
+                "fr": "🔥 Radiateur (fil pilote)"
+              }
+            },
+            {
+              "id": "water_heater",
+              "label": {
+                "en": "🚿 Chauffe-eau / Cumulus",
+                "fr": "🚿 Chauffe-eau / Cumulus"
+              }
+            },
+            {
+              "id": "boiler",
+              "label": {
+                "en": "🏠 Chaudière",
+                "fr": "🏠 Chaudière"
+              }
+            },
+            {
+              "id": "underfloor_heating",
+              "label": {
+                "en": "🦶 Plancher chauffant",
+                "fr": "🦶 Plancher chauffant"
+              }
+            },
+            {
+              "id": "fan",
+              "label": {
+                "en": "🌀 Ventilateur / VMC",
+                "fr": "🌀 Ventilateur / VMC"
+              }
+            },
+            {
+              "id": "ac",
+              "label": {
+                "en": "❄️ Climatisation",
+                "fr": "❄️ Climatisation"
+              }
+            },
+            {
+              "id": "extractor",
+              "label": {
+                "en": "💨 Extracteur / Hotte",
+                "fr": "💨 Extracteur / Hotte"
+              }
+            },
+            {
+              "id": "shutter",
+              "label": {
+                "en": "🪟 Volet roulant / Store",
+                "fr": "🪟 Volet roulant / Store"
+              }
+            },
+            {
+              "id": "gate",
+              "label": {
+                "en": "🚗 Portail / Garage",
+                "fr": "🚗 Portail / Garage"
+              }
+            },
+            {
+              "id": "door_lock",
+              "label": {
+                "en": "🔐 Gâche / Serrure",
+                "fr": "🔐 Gâche / Serrure"
+              }
+            },
+            {
+              "id": "pump",
+              "label": {
+                "en": "💧 Pompe",
+                "fr": "💧 Pompe"
+              }
+            },
+            {
+              "id": "irrigation",
+              "label": {
+                "en": "🌱 Arrosage",
+                "fr": "🌱 Arrosage"
+              }
+            },
+            {
+              "id": "pool",
+              "label": {
+                "en": "🏊 Équipement piscine",
+                "fr": "🏊 Équipement piscine"
+              }
+            },
+            {
+              "id": "socket",
+              "label": {
+                "en": "🔌 Prise commandée",
+                "fr": "🔌 Prise commandée"
+              }
+            },
+            {
+              "id": "appliance",
+              "label": {
+                "en": "🧺 Électroménager",
+                "fr": "🧺 Électroménager"
+              }
+            },
+            {
+              "id": "coffee_machine",
+              "label": {
+                "en": "☕ Machine à café",
+                "fr": "☕ Machine à café"
+              }
+            },
+            {
+              "id": "alarm",
+              "label": {
+                "en": "🚨 Alarme / Sirène",
+                "fr": "🚨 Alarme / Sirène"
+              }
+            },
+            {
+              "id": "camera",
+              "label": {
+                "en": "📹 Caméra",
+                "fr": "📹 Caméra"
+              }
+            },
+            {
+              "id": "tv",
+              "label": {
+                "en": "📺 TV / Écran",
+                "fr": "📺 TV / Écran"
+              }
+            },
+            {
+              "id": "audio",
+              "label": {
+                "en": "🔊 Audio / Hifi",
+                "fr": "🔊 Audio / Hifi"
+              }
+            },
+            {
+              "id": "fountain",
+              "label": {
+                "en": "⛲ Fontaine",
+                "fr": "⛲ Fontaine"
+              }
+            },
+            {
+              "id": "other",
+              "label": {
+                "en": "⚙️ Autre appareil",
+                "fr": "⚙️ Autre appareil"
+              }
+            }
+          ]
+        },
+        {
+          "id": "invert_logic_manual",
+          "type": "checkbox",
+          "label": {
+            "en": "Manual Logic Inversion",
+            "fr": "Inversion Logique Manuelle"
+          },
+          "hint": {
+            "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
+            "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
+          },
+          "value": false
+        }
+      ]
+    }
+  ]
+}

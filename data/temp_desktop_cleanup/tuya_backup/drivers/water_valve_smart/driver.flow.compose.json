@@ -1,0 +1,150 @@
+{
+  "triggers": [
+    {
+      "id": "water_valve_smart_opened",
+      "highlight": true,
+      "title": {
+        "en": "Valve opened"
+      },
+      "args": []
+    },
+    {
+      "id": "water_valve_smart_closed",
+      "title": {
+        "en": "Valve closed"
+      },
+      "args": []
+    },
+    {
+      "id": "water_valve_smart_leak_detected",
+      "highlight": true,
+      "title": {
+        "en": "Water leak detected!"
+      },
+      "args": []
+    },
+    {
+      "id": "water_valve_smart_leak_cleared",
+      "title": {
+        "en": "Water leak cleared"
+      },
+      "args": []
+    },
+    {
+      "id": "water_valve_smart_temperature_changed",
+      "title": {
+        "en": "Temperature changed"
+      },
+      "titleFormatted": {
+        "en": "Temperature changed to [[temperature]]C"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature"
+          }
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "water_valve_smart_frost_warning",
+      "highlight": true,
+      "title": {
+        "en": "Frost warning"
+      },
+      "args": []
+    },
+    {
+      "id": "water_valve_smart_battery_low",
+      "title": {
+        "en": "Battery is low"
+      },
+      "args": []
+    },
+    {
+      "id": "water_valve_smart_water_consumed",
+      "title": {
+        "en": "Water consumption updated"
+      },
+      "titleFormatted": {
+        "en": "Water consumption: [[liters]] m3"
+      },
+      "tokens": [
+        {
+          "name": "liters",
+          "type": "number",
+          "title": {
+            "en": "Total (m3)"
+          }
+        }
+      ],
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "water_valve_smart_is_open",
+      "title": {
+        "en": "Valve !{{is|is not}} open"
+      },
+      "args": []
+    },
+    {
+      "id": "water_valve_smart_leak_is_detected",
+      "title": {
+        "en": "Water leak !{{is|is not}} detected"
+      },
+      "args": []
+    },
+    {
+      "id": "water_valve_smart_temperature_above",
+      "title": {
+        "en": "Temperature !{{is|is not}} above"
+      },
+      "titleFormatted": {
+        "en": "Temperature !{{is|is not}} above [[temp]]C"
+      },
+      "args": [
+        {
+          "name": "temp",
+          "type": "number",
+          "min": -20,
+          "max": 60
+        }
+      ]
+    },
+    {
+      "id": "water_valve_smart_water_detected",
+      "title": {
+        "en": "Water !{{is|is not}} detected"
+      },
+      "args": []
+    }
+  ],
+  "actions": [
+    {
+      "id": "water_valve_smart_open",
+      "title": {
+        "en": "Open valve"
+      },
+      "args": []
+    },
+    {
+      "id": "water_valve_smart_close",
+      "title": {
+        "en": "Close valve"
+      },
+      "args": []
+    },
+    {
+      "id": "water_valve_smart_toggle",
+      "title": {
+        "en": "Toggle valve"
+      },
+      "args": []
+    }
+  ]
+}

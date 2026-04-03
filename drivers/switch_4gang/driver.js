@@ -63,22 +63,22 @@ class Switch4GangDriver extends ZigBeeDriver {
       this.gang4OffTrigger = this.homey.flow.getDeviceTriggerCard('switch_4gang_gang4_turned_off');
 
       // Register flow card conditions - v5.5.562: using safe wrapper
-      this.gang1IsOnCondition = this.homey.flow.getConditionCard('switch_4gang_gang1_is_on');
+      this.gang1IsOnCondition = this.homey.flow.getDeviceConditionCard('switch_4gang_gang1_is_on');
       this.gang1IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
         return args.device.getCapabilityValue('onoff') === true;
       }));
 
-      this.gang2IsOnCondition = this.homey.flow.getConditionCard('switch_4gang_gang2_is_on');
+      this.gang2IsOnCondition = this.homey.flow.getDeviceConditionCard('switch_4gang_gang2_is_on');
       this.gang2IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
         return args.device.getCapabilityValue('onoff.gang2') === true;
       }));
 
-      this.gang3IsOnCondition = this.homey.flow.getConditionCard('switch_4gang_gang3_is_on');
+      this.gang3IsOnCondition = this.homey.flow.getDeviceConditionCard('switch_4gang_gang3_is_on');
       this.gang3IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
         return args.device.getCapabilityValue('onoff.gang3') === true;
       }));
 
-      this.gang4IsOnCondition = this.homey.flow.getConditionCard('switch_4gang_gang4_is_on');
+      this.gang4IsOnCondition = this.homey.flow.getDeviceConditionCard('switch_4gang_gang4_is_on');
       this.gang4IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
         return args.device.getCapabilityValue('onoff.gang4') === true;
       }));

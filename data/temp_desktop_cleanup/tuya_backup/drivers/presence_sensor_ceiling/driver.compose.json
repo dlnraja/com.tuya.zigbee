@@ -1,0 +1,285 @@
+{
+  "name": {
+    "en": "Ceiling Presence Sensor (230V)",
+    "fr": "Capteur de Présence Plafond (230V)",
+    "nl": "Plafond Aanwezigheidssensor (230V)",
+    "de": "Decken-Präsenzsensor (230V)"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "onoff",
+    "measure_luminance",
+    "measure_luminance.distance"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Relay",
+        "fr": "Relais",
+        "nl": "Relais",
+        "de": "Relais"
+      },
+      "insightsTitleTrue": {
+        "en": "Relay turned on"
+      },
+      "insightsTitleFalse": {
+        "en": "Relay turned off"
+      }
+    }
+  },
+  "subDevices": [],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE204_dtzziy1e",
+      "_TZE204_ijxvkhd0",
+      "_TZE204_qasjif9e",
+      "_TZE204_sbyx0lm6",
+      "_TZE204_sxm7l9xa",
+      "_TZE204_uxllnywp",
+      "_TZE204_yensya2c",
+      "_TZE284_4qznlkbu",
+      "_TZE284_fwondbzy"
+    ],
+    "productId": [
+      "TS0601_ceiling",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1024,
+          1280,
+          1030,
+          61184
+        ],
+        "bindings": [
+          1,
+          1280,
+          1030
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/presence_sensor_ceiling/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes rapidly.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote rapidement."
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "🎯 Radar Detection",
+        "fr": "🎯 Détection Radar"
+      },
+      "children": [
+        {
+          "id": "radar_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Radar Sensitivity",
+            "fr": "Sensibilité Radar"
+          },
+          "value": 7,
+          "min": 0,
+          "max": 9,
+          "step": 1,
+          "hint": {
+            "en": "Detection sensitivity (0=lowest, 9=highest).",
+            "fr": "Sensibilité de détection (0=min, 9=max)."
+          }
+        },
+        {
+          "id": "minimum_range",
+          "type": "number",
+          "label": {
+            "en": "Minimum Range (m)",
+            "fr": "Distance Minimum (m)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 10,
+          "step": 0.5,
+          "hint": {
+            "en": "Minimum detection distance. Objects closer will be ignored.",
+            "fr": "Distance minimale de détection. Objets plus proches seront ignorés."
+          }
+        },
+        {
+          "id": "maximum_range",
+          "type": "number",
+          "label": {
+            "en": "Maximum Range (m)",
+            "fr": "Distance Maximum (m)"
+          },
+          "value": 6,
+          "min": 0.5,
+          "max": 10,
+          "step": 0.5,
+          "hint": {
+            "en": "Maximum detection distance.",
+            "fr": "Distance maximale de détection."
+          }
+        },
+        {
+          "id": "fading_time",
+          "type": "number",
+          "label": {
+            "en": "Absence Delay (s)",
+            "fr": "Délai d'Absence (s)"
+          },
+          "value": 60,
+          "min": 1,
+          "max": 1500,
+          "step": 5,
+          "hint": {
+            "en": "Time before clearing presence after no movement.",
+            "fr": "Temps avant de signaler l'absence."
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "💡 Relay Control",
+        "fr": "💡 Contrôle Relais"
+      },
+      "children": [
+        {
+          "id": "relay_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Relay Mode",
+            "fr": "Mode Relais"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto (follows presence)",
+                "fr": "Auto (suit la présence)"
+              }
+            },
+            {
+              "id": "manual",
+              "label": {
+                "en": "Manual (controlled via flows)",
+                "fr": "Manuel (contrôlé via flows)"
+              }
+            },
+            {
+              "id": "always_on",
+              "label": {
+                "en": "Always On",
+                "fr": "Toujours Allumé"
+              }
+            },
+            {
+              "id": "always_off",
+              "label": {
+                "en": "Always Off",
+                "fr": "Toujours Éteint"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Control how the relay responds to presence detection.",
+            "fr": "Contrôler la réponse du relais à la détection de présence."
+          }
+        },
+        {
+          "id": "relay_delay_on",
+          "type": "number",
+          "label": {
+            "en": "Relay On Delay (s)",
+            "fr": "Délai Activation Relais (s)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 60,
+          "step": 1,
+          "hint": {
+            "en": "Delay before turning relay on after presence detected.",
+            "fr": "Délai avant d'activer le relais après détection."
+          }
+        },
+        {
+          "id": "relay_delay_off",
+          "type": "number",
+          "label": {
+            "en": "Relay Off Delay (s)",
+            "fr": "Délai Désactivation Relais (s)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 300,
+          "step": 5,
+          "hint": {
+            "en": "Delay before turning relay off after presence cleared.",
+            "fr": "Délai avant de désactiver le relais après absence."
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "🌡️ Calibration",
+        "fr": "🌡️ Calibration"
+      },
+      "children": [
+        {
+          "id": "illuminance_calibration",
+          "type": "number",
+          "label": {
+            "en": "Illuminance Offset (lux)",
+            "fr": "Décalage Luminosité (lux)"
+          },
+          "value": 0,
+          "min": -100,
+          "max": 100,
+          "step": 5,
+          "hint": {
+            "en": "Adjust illuminance reading.",
+            "fr": "Ajuster la lecture de luminosité."
+          }
+        }
+      ]
+    }
+  ],
+  "images": {
+    "small": "drivers/presence_sensor_ceiling/assets/images/small.png",
+    "large": "drivers/presence_sensor_ceiling/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "energy": {
+    "approximation": {
+      "usageConstant": 1
+    }
+  }
+}

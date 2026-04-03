@@ -60,9 +60,7 @@ class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
     for (const epNum of [1, 2, 3, 4, 5, 6, 7]) {
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
       this.registerCapabilityListener(capName, async (value) => {
-        this._zclState.pending[epNum] = t;
-        await super.onNodeInit({ zclNode });
-        rue;
+        this._zclState.pending[epNum] = true;
         clearTimeout(this._zclState.timeout[epNum]);
         this._zclState.timeout[epNum] = setTimeout(() => {
           this._zclState.pending[epNum] = false;

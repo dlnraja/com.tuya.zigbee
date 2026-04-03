@@ -16,7 +16,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     // CONDITIONS
     ['gang1', 'gang2', 'gang3'].forEach((gang, idx) => {
       try {
-        this.homey.flow.getConditionCard(`switch_3gang_${gang}_is_on`)
+        this.homey.flow.getDeviceConditionCard(`switch_3gang_${gang}_is_on`)
           .registerRunListener(async (args) => {
             if (!args.device) return false;
             const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;

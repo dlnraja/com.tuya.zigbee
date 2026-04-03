@@ -1,0 +1,33 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Fingerbot Mode",
+    "fr": "Mode Fingerbot"
+  },
+  "values": [
+    {
+      "id": "click",
+      "title": {
+        "en": "Click",
+        "fr": "Clic"
+      }
+    },
+    {
+      "id": "switch",
+      "title": {
+        "en": "Switch",
+        "fr": "Interrupteur"
+      }
+    },
+    {
+      "id": "program",
+      "title": {
+        "en": "Program",
+        "fr": "Programme"
+      }
+    }
+  ],
+  "getable": true,
+  "setable": true,
+  "uiComponent": "picker"
+}

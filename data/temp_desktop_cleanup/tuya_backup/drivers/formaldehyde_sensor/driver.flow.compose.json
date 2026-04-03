@@ -1,0 +1,140 @@
+{
+  "triggers": [
+    {
+      "id": "formaldehyde_sensor_formaldehyde_changed",
+      "title": {
+        "en": "Formaldehyde level changed",
+        "fr": "Niveau formaldéhyde changé"
+      },
+      "tokens": [
+        {
+          "name": "formaldehyde",
+          "type": "number",
+          "title": {
+            "en": "Formaldehyde (μg/m³)",
+            "fr": "Formaldéhyde (μg/m³)"
+          },
+          "example": 25
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Formaldehyde level changed",
+        "fr": "Niveau formaldéhyde changé"
+      }
+    },
+    {
+      "id": "formaldehyde_sensor_voc_changed",
+      "title": {
+        "en": "VOC level changed",
+        "fr": "Niveau COV changé"
+      },
+      "tokens": [
+        {
+          "name": "voc",
+          "type": "number",
+          "title": {
+            "en": "VOC (ppb)",
+            "fr": "COV (ppb)"
+          },
+          "example": 100
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "VOC level changed",
+        "fr": "Niveau COV changé"
+      }
+    },
+    {
+      "id": "formaldehyde_sensor_air_quality_alert",
+      "title": {
+        "en": "Air quality alert",
+        "fr": "Alerte qualité air"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Air quality alert",
+        "fr": "Alerte qualité air"
+      }
+    },
+    {
+      "id": "formaldehyde_sensor_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible"
+      }
+    },
+    {
+      "id": "formaldehyde_sensor_temp_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      }
+    },
+    {
+      "id": "formaldehyde_sensor_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geändert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geändert"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "formaldehyde_sensor_formaldehyde_above",
+      "title": {
+        "en": "Formaldehyde is above",
+        "fr": "Formaldéhyde supérieur à"
+      },
+      "titleFormatted": {
+        "en": "Formaldehyde is above [[level]] μg/m³",
+        "fr": "Formaldéhyde supérieur à [[level]] μg/m³"
+      },
+      "args": [
+        {
+          "name": "level",
+          "type": "number",
+          "min": 0,
+          "max": 1000,
+          "step": 10
+        }
+      ]
+    },
+    {
+      "id": "formaldehyde_sensor_air_quality_good",
+      "title": {
+        "en": "Air quality is !{{good|poor}}",
+        "fr": "Qualité air !{{bonne|mauvaise}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Air quality is !{{good|poor}}",
+        "fr": "Qualité air !{{bonne|mauvaise}}"
+      }
+    }
+  ]
+}
