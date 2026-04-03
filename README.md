@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Fingerprints](https://img.shields.io/badge/fingerprints-4,329+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-193-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Flow Cards](https://img.shields.io/badge/flow%20cards-2,219-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Flow Cards](https://img.shields.io/badge/flow%20cards-2,220-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
@@ -15,7 +15,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 - **Local-only** â€” everything runs on your Homey, nothing goes to the cloud
 - **Hybrid mode** â€” auto-detects whether a device speaks Tuya DP or standard ZCL
 - **Smart battery** â€” voltage-based fallback when devices don't report percentage
-- **2,219+ flow cards** â€” triggers, conditions & actions in EN, FR, NL, DE
+- **2,220+ flow cards** â€” triggers, conditions & actions in EN, FR, NL, DE
 - **SDK3** â€” built on the latest Homey platform
 
 ---
@@ -34,11 +34,11 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.177 |
+| **App Version** | v5.11.178 |
 | **Device Fingerprints** | 4,329+ |
 | **Unique Product IDs** | 559 |
 | **Drivers** | 193 (144 Zigbee + 49 WiFi) |
-| **Flow Cards** | 2,219 |
+| **Flow Cards** | 2,220 |
 | **Unique Capabilities** | 127 |
 | **SVG Icons** | 319 |
 | **Languages** | EN, FR, NL, DE |
@@ -101,6 +101,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
+| **v5.11.178** | v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI... |
 | **v5.11.177** | v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI... |
 | **v5.11.176** | v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI... |
 | **v5.11.175** | v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI... |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.166** | Universal Tuya Zigbee app v5.11.166 adds new capabilities and fixes issues for better device compatibility. |
 | **v5.11.165** | Universal Tuya Zigbee app v5.11.165 adds new device capabilities and fixes issues with smart plugs and button capabil... |
 | **v5.11.164** | Universal Tuya Zigbee app v5.11.164 adds new capabilities and fixes issues for improved device compatibility. |
-| **v5.11.163** | Universal Tuya Zigbee app v5.11.163 adds new features for Tuya WiFi pairing and fixes for energy scaling and button c... |
 
 <!-- CHANGELOG_END -->
 
