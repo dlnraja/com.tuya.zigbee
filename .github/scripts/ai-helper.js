@@ -224,8 +224,11 @@ function localFallback(text){
   if(!m.length&&!p.length)return null;
   const fps=[...new Set(m)].map(f=>'`'+f+'`').join(', ');
   const pids=[...new Set(p)].map(f=>'`'+f+'`').join(', ');
-  let r='Fingerprints found: '+(fps||'none');
-  if(pids)r+='\nProduct IDs: '+pids;
+  let r = "Hi there! I am the automated assistant for this repository. (Note: AI systems are currently under heavy load so I'm using a basic fallback check).\n\n";
+  r += "I see you've provided logs. I successfully detected the following fingerprints: " + (fps || 'none') + ".\n";
+  if (pids) r += "Product IDs: " + pids + "\n\n";
+  r += "> **Quick Tip for sensors showing '56 years ago' or unresponsive data:** Tuya battery sensors go to sleep very fast. Right after pairing, rapidly click the pairing button 2 or 3 times to explicitly wake up the device so Homey can configure the Zigbee reporting intervals. Otherwise, it won't send data!\n\n";
+  r += "Dylan will look into these specific device IDs shortly!";
   return{text:r,model:'local-regex'};
 }
 
