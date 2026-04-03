@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.170",
+  "version": "5.11.171",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -94812,6 +94812,18 @@
       "insightsTitleFalse": {
         "en": "No presence"
       }
+    },
+    "alarm_siren": {
+      "type": "boolean",
+      "title": {
+        "en": "Siren Alarm",
+        "fr": "Alarme sirène",
+        "nl": "Sirene alarm"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icon.svg"
     },
     "alarm_tank_full": {
       "type": "boolean",
