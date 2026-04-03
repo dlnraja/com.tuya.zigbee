@@ -49,7 +49,8 @@
     "maintenance:dry-run": "node scripts/automation/intelligent-maintenance.js --dry-run",
     "validate:recursive": "node scripts/validation/comprehensive-recursive-validator.js",
     "fix:auto": "node scripts/validation/auto-fix-common-issues.js",
-    "validate:fix": "npm run validate:recursive && npm run fix:auto && npm run validate:recursive"
+    "validate:fix": "npm run validate:recursive && npm run fix:auto && npm run validate:recursive",
+    "generate-driver": "node .github/scripts/generate-driver.js"
   },
   "keywords": [
     "homey",
