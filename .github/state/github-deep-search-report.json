@@ -1,19 +1,38 @@
 {
-  "timestamp": "2026-04-02T15:45:44.944Z",
+  "timestamp": "2026-04-03T04:05:21.131Z",
   "stats": {
-    "ghCalls": 44,
+    "ghCalls": 45,
     "codeResults": 140,
     "issueResults": 0,
-    "targetedResults": 1,
+    "targetedResults": 2,
     "newRepos": 3,
-    "totalFPs": 232,
-    "supported": 231,
-    "unsupported": 1,
+    "totalFPs": 230,
+    "supported": 228,
+    "unsupported": 2,
     "withDPs": 0,
     "withIssues": 0,
-    "duration": 227
+    "duration": 233
   },
   "topUnsupported": [
+    {
+      "fp": "_TZE284_xdtnpp1a",
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "repos": [
+        "Koenkk/zigbee-herdsman-converters"
+      ],
+      "sources": [
+        "code_search",
+        "targeted_search"
+      ],
+      "issueCount": 0,
+      "codeRefCount": 3,
+      "confidence": 40,
+      "topIssue": null,
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/de37bc4f421f3fd0b8da6a3efaf10140c9baeefd/src/devices/avatto.ts"
+    },
     {
       "fp": "_TZE284_nthhgkd6",
       "pids": [
@@ -31,7 +50,7 @@
       "codeRefCount": 2,
       "confidence": 35,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/5f2f22377ca0cd966244bfa601444f39ed501bca/src/devices/qa.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/de37bc4f421f3fd0b8da6a3efaf10140c9baeefd/src/devices/qa.ts"
     }
   ],
   "bugsInSupported": [],
@@ -64,5 +83,5 @@
       "topics": []
     }
   ],
-  "aiPlan": "Here's an assessment of the unsupported firmware profiles (FP) and new repositories related to Tuya Zigbee devices. The table includes suggested drivers, capability mappings, and evaluations of new repositories for integration.\n\n### Unsupported Firmware Profiles\n\n| FP                  | PIDs    | Suggested Driver                          | DP → Capability Map | Confidence Level |\n|---------------------|---------|------------------------------------------|---------------------|------------------|\n| _TZE284_nthhgkd6    | TS0601  | `zigbee-herdsman-converters`            | N/A                 | 35%              |\n\n**Notes:**\n- The device with FP `_TZE284_nthhgkd6` and PID `TS0601` currently has no defined data points (DPs), which limits the capability mapping. It is recommended to explore the existing driver in the `zigbee-herdsman-converters` repository for potential updates or contributions that could support this device in the future.\n\n### New Repositories Assessment\n\n| Repository Name                          | Stars | Description                                                   | Value for Integration |\n|------------------------------------------|-------|---------------------------------------------------------------|-----------------------|\n| gpmachado/com.gpm.homesuite             | 0     | Homey app for Zigbee/Tuya devices — switches, sensors, plugs and more | Moderate - Potentially useful for integrating various Zigbee/Tuya devices, but lacks community validation (0 stars). |\n| kodalissri/com.MyZigbee.Devices         | 0     | Homey App for Tuya Devices                                   | Moderate - Similar to the previous repo, it could provide support for Tuya devices but needs more visibility and contributions. |\n| oskarirauta/homey-owon-driver           | 0     | OWON THS317-ET ZigBee Driver (non-tuya version) for Homey   | Low - Focuses on a specific non-Tuya device, which may not align with broader Tuya integration goals. |\n\n**Overall Assessment:**\n- The unsupported firmware profile indicates a need for further development and community engagement to enhance compatibility with existing drivers.\n- The new repositories show promise but lack community engagement (0 stars), suggesting that they may not be widely adopted or tested. Integrating these repositories could provide additional functionality but would require careful evaluation and possibly further development to ensure reliability and compatibility with existing systems. \n\nIn conclusion, while the unsupported device presents a challenge, the new repositories offer potential avenues for expanding Tuya Zigbee device support, albeit with caution due to their current lack of community validation."
+  "aiPlan": "Here’s a summary of the unsupported Tuya Zigbee devices and new repositories, along with suggested drivers and capability mappings.\n\n### Unsupported Devices\n\n| FP                    | PIDs   | Suggested Driver                          | DP → Capability Map | Confidence |\n|-----------------------|--------|------------------------------------------|----------------------|------------|\n| _TZE284_xdtnpp1a      | TS0601 | `zigbee-herdsman-converters`            | N/A                  | 40%        |\n| _TZE284_nthhgkd6      | TS0601 | `zigbee-herdsman-converters`            | N/A                  | 35%        |\n\n**Notes:**\n- Both devices are identified with the same PID (TS0601) and are currently unsupported in the `zigbee-herdsman-converters` repository.\n- The lack of data points (dps) suggests that these devices may not have been fully integrated or tested yet.\n- The confidence levels indicate a moderate likelihood of successful integration if development continues.\n\n### New Repositories\n\n| Repository Name                          | Stars | Description                                                   | Value for Integration |\n|------------------------------------------|-------|---------------------------------------------------------------|-----------------------|\n| gpmachado/com.gpm.homesuite             | 0     | Homey app for Zigbee/Tuya devices — switches, sensors, plugs and more | Potentially high, as it targets a broad range of devices. |\n| kodalissri/com.MyZigbee.Devices         | 0     | Homey App for Tuya Devices                                   | Moderate, focuses specifically on Tuya devices. |\n| oskarirauta/homey-owon-driver            | 0     | OWON THS317-ET ZigBee Driver (non-tuya version) for Homey   | Low, as it targets a specific non-Tuya device. |\n\n**Assessment of New Repositories:**\n- **gpmachado/com.gpm.homesuite**: This repository could be valuable for integration due to its broad focus on various Zigbee/Tuya devices, which may help in supporting the unsupported devices listed above.\n- **kodalissri/com.MyZigbee.Devices**: This repository is specifically for Tuya devices, which could provide insights or code that may assist in integrating unsupported devices.\n- **oskarirauta/homey-owon-driver**: While this repository is focused on a specific device, it may not contribute significantly to the integration of unsupported Tuya devices.\n\n### Conclusion\nThe unsupported devices require further development and testing to achieve integration. The suggested driver is the `zigbee-herdsman-converters`, which is already a known repository for Zigbee device integration. The new repositories present opportunities for collaboration and integration, particularly the first two, which focus on a wider range of devices."
 }
