@@ -1,26 +1,26 @@
 {
-  "timestamp": "2026-04-03T04:22:32.211Z",
+  "timestamp": "2026-04-03T10:30:45.004Z",
   "devices": [],
   "unmatchedFPs": [],
   "errors": [
     {
-      "err": "switch_3gang_physical_gang2_single)",
+      "err": "Could not get device by id",
       "source": "gmail"
     },
     {
-      "err": "switch_3gang_physical_gang2_long_press)",
+      "err": "is not solved. also, when I run the code locally from VSC on docker I get the fo",
       "source": "gmail"
     },
     {
-      "err": "switch_3gang_physical_gang2_single)",
+      "err": "[err] [ManagerDrivers] [Driver:fingerbot] Error Initializing Device: Error: Cann",
       "source": "gmail"
     },
     {
-      "err": "switch_3gang_physical_gang2_long_press)",
+      "err": "find module '../../lib/tuya/TuyaZigbeeDevice'",
       "source": "gmail"
     }
   ],
   "sources": {
-    "gmail": 50
+    "gmail": 42
   }
 }
