@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-02T16:03:46.439Z",
+  "ts": "2026-04-03T04:22:33.558Z",
   "correlations": [],
   "actionable": [
     {
@@ -43,13 +43,13 @@
     {
       "id": "battery",
       "pattern": "False Battery Alert / Missing Battery",
-      "count": 30,
+      "count": 32,
       "priority": "high"
     },
     {
       "id": "pairing",
       "pattern": "Pairing Failure",
-      "count": 9,
+      "count": 12,
       "priority": "high"
     },
     {
@@ -59,16 +59,16 @@
       "priority": "high"
     },
     {
-      "id": "ring_value",
-      "pattern": "Ring/Alarm Wrong",
+      "id": "no_response",
+      "pattern": "Device Not Responding",
       "count": 5,
       "priority": "high"
     },
     {
-      "id": "no_response",
-      "pattern": "Device Not Responding",
-      "count": 4,
-      "priority": "medium"
+      "id": "ring_value",
+      "pattern": "Ring/Alarm Wrong",
+      "count": 5,
+      "priority": "high"
     }
   ],
   "flowAudit": [

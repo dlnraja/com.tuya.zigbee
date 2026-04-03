@@ -1,33 +1,20 @@
 {
-  "timestamp": "2026-04-02T15:06:00.096Z",
+  "timestamp": "2026-04-03T03:37:52.090Z",
   "appVersion": "5.11.154",
   "forum": 1,
-  "github": 1,
+  "github": 0,
   "diagnostics": 50,
   "diagNewFPs": 0,
   "diagCritical": 0,
   "forumDetails": [
     {
       "topic": 140352,
-      "post": 1684,
-      "user": "robertklep",
+      "post": 1686,
+      "user": "smarthomesven",
       "fps": [],
-      "reply": "It seems that the contact sensor you mentioned is being recognized as an unknown Zigbee device, but it is functioning correctly. This is likely due to the recent improvements in generic Zigbee device ",
+      "reply": "You're correct that Tuya often uses its own custom clusters, which can lead to compatibility issues with generic Zigbee implementations. However, in this case, the fingerprint lookup indicates that we",
       "model": "gh-gpt-4o-mini"
     }
   ],
-  "githubDetails": [
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1360,
-      "user": "gitebk",
-      "fps": [
-        "_TZE284_ne4pikwm",
-        "vision"
-      ],
-      "title": "Device Request - [Nedis SmartLife Radiator Control] - [_TZE284_ne4pikwm] / [TS0601]",
-      "response": "### Device Request - Nedis SmartLife Radiator Control (TS0601)\n\nThe Nedis ZBHTR20WT radiator thermostat, identified by the model ID `TS0601` and manufacturer name `_TZE284_ne4pikwm`, is supported by our Universal Tuya Zigbee integration.\n\n#### Supported Drivers\nThe device can utilize the following d",
-      "model": "gh-gpt-4o-mini"
-    }
-  ]
+  "githubDetails": []
 }

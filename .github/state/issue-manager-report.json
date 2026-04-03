@@ -1,24 +1,12 @@
 {
-  "timestamp": "2026-04-02T14:42:43.804Z",
+  "timestamp": "2026-04-03T03:16:44.349Z",
   "appVersion": "5.11.154",
-  "responded": 1,
+  "responded": 0,
   "closed": 0,
   "labeled": 0,
   "issuesProcessed": 109,
   "prsProcessed": 36,
-  "skipped": 107,
-  "newFingerprints": [
-    {
-      "fp": "router + TS0726",
-      "source": "dlnraja/com.tuya.zigbee#171",
-      "type": "bug_report"
-    },
-    {
-      "fp": "vision + TS0726",
-      "source": "dlnraja/com.tuya.zigbee#171",
-      "type": "bug_report"
-    }
-  ],
-  "evolutionSummary": "In the recent project evolution, we have made significant strides in device discovery and issue resolution. A total of 109 issues and 36 pull requests were processed, reflecting our ongoing commitment to enhancing the project. Notably, we identified two new faulty devices: the \"router + TS0726\" and \"vision + TS0726,\" both reported as bugs in issue #171. \n\nDespite the active engagement, no issues were closed during this period, indicating ongoing challenges that require further attention. The team remains focused on addressing these bugs and improving device compatibility. \n\nAction items moving forward include prioritizing the resolution of the newly discovered faulty devices and continuing to monitor and process incoming issues and pull requests to ensure project stability and user satisfaction. Overall, the project is evolving positively, with a clear path for future enhancements and resolutions.",
-  "bugInvestigations": 1
+  "skipped": 109,
+  "newFingerprints": [],
+  "evolutionSummary": null
 }
