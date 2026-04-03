@@ -155,8 +155,11 @@ function doSmartLife(){
       H.emit('login',{mode:'smartlife_qr',region:reg,schema:schema},function(err,r){
         unspin('btn-sl');
         if(err){show('sl-err',err.message||String(err));return}
-        var msg = '<b>QR Code linked!</b><br>';
-        msg += '<a href="'+schema+'://qrLogin?token='+r.qrCode+'" target="_blank" style="display:inline-block;padding:10px;background:#00a870;color:white;text-decoration:none;border-radius:5px;margin:10px 0;">Click here to Open '+schema+' App</a>';
+        var qrUrl = schema + '://qrLogin?token=' + r.qrCode;
+        var encodedUrl = encodeURIComponent(qrUrl);
+        var msg = '<b>Scan this or click the link!</b><br>';
+        msg += '<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+encodedUrl+'" style="margin:10px auto;display:block;" /><br>';
+        msg += '<a href="'+qrUrl+'" target="_blank" style="display:inline-block;padding:10px;background:#00a870;color:white;text-decoration:none;border-radius:5px;margin:5px 0;">Click to Open App (Phone only)</a>';
         msg += '<br><i>(Wait here after authorizing)</i>';
         show('sl-ok',msg);
         
