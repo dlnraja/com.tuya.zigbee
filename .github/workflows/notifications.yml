@@ -21,19 +21,6 @@ jobs:
           node .github/scripts/homey-device-diagnostics.js || true
           
       - name: Send Secure Email Notification
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          secure: true
-          # Secrets are securely passed via GitHub Secrets, never hardcoded
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
-          subject: "[Homey Tuya Zigbee] New GitHub Event: ${{ github.event_name }}"
-          to: "maintainers@example.com"
-          from: "Tuya Zigbee Bot"
-          body: |
-            Event triggered in the repository or new diagnostics retrieved.
-            Details: ${{ github.event.issue.html_url || github.event.pull_request.html_url }}
-            Message: Please review the latest PRs or Issues matching Tuya Zigbee App.
-            The scripts verified multi-variants constraints.
+        run: |
+          echo "Event triggered in the repository: ${{ github.event_name }}"
+          echo "Details: ${{ github.event.issue.html_url || github.event.pull_request.html_url }}"
