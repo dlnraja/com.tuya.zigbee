@@ -15,7 +15,7 @@ class SmartBulbWhiteDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is on
     try {
-      this.homey.flow.getDeviceConditionCard('bulb_white_smart_bulb_white_is_on')
+      this.homey.flow.getConditionCard('bulb_white_smart_bulb_white_is_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;

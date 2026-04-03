@@ -21,7 +21,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // CONDITION: Siren is/is not sounding
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      const sirenCondition = this.homey.flow.getDeviceConditionCard('siren_is_sounding');
+      const sirenCondition = this.homey.flow.getConditionCard('siren_is_sounding');
       sirenCondition.registerRunListener(async (args) => {
         const device = args.device;
         if (!device) {

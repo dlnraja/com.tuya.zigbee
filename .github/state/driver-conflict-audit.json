@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-03T15:17:20.883Z",
+  "timestamp": "2026-04-03T17:19:35.569Z",
   "pidConflicts": [
     {
       "pid": "TS004F",
@@ -974,6 +974,17 @@
       "risk": "high"
     },
     {
+      "mfr": "_TZ3000_11pg3ima",
+      "drivers": [
+        "button_wireless_4",
+        "wall_remote_4_gang_2"
+      ],
+      "sharedPids": [
+        "TS004F"
+      ],
+      "risk": "high"
+    },
+    {
       "mfr": "_TZ3000_a4xycprs",
       "drivers": [
         "button_wireless_4",
@@ -992,6 +1003,28 @@
       ],
       "sharedPids": [
         "TS0044"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TZ3000_et7afzxz",
+      "drivers": [
+        "button_wireless_4",
+        "wall_remote_4_gang_2"
+      ],
+      "sharedPids": [
+        "TS004F"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TZ3000_nuombroo",
+      "drivers": [
+        "button_wireless_4",
+        "wall_remote_4_gang_2"
+      ],
+      "sharedPids": [
+        "TS004F"
       ],
       "risk": "high"
     },
@@ -1172,6 +1205,28 @@
       "risk": "high"
     },
     {
+      "mfr": "_TZE200_1ibpyhdc",
+      "drivers": [
+        "motion_sensor_2",
+        "thermostat_tuya_dp"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TZE200_ttcovulf",
+      "drivers": [
+        "motion_sensor_2",
+        "motion_sensor_radar_mmwave"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
+    {
       "mfr": "_TZE200_p3dbf6qs",
       "drivers": [
         "radiator_valve",
@@ -1187,6 +1242,28 @@
       "drivers": [
         "radiator_valve",
         "smart_lcd_thermostat"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TYST11_d0yu2xgi",
+      "drivers": [
+        "siren",
+        "sirentemphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0601"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TZE200_d0yu2xgi",
+      "drivers": [
+        "siren",
+        "sirentemphumidsensor"
       ],
       "sharedPids": [
         "TS0601"
@@ -1220,6 +1297,17 @@
       "drivers": [
         "smart_knob",
         "smart_knob_switch"
+      ],
+      "sharedPids": [
+        "TS004F"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TZ3000_b3mgfu0d",
+      "drivers": [
+        "smart_knob_rotary",
+        "wall_remote_4_gang_2"
       ],
       "sharedPids": [
         "TS004F"
@@ -1305,11 +1393,11 @@
       "reason": "no_fingerprints"
     },
     {
-      "driver": "wifi_door_lock",
+      "driver": "wifi_doorbell",
       "reason": "no_fingerprints"
     },
     {
-      "driver": "wifi_doorbell",
+      "driver": "wifi_door_lock",
       "reason": "no_fingerprints"
     },
     {
@@ -1793,10 +1881,10 @@
     }
   ],
   "summary": {
-    "totalDrivers": 191,
+    "totalDrivers": 193,
     "pidConflicts": 59,
     "highSeverity": 23,
-    "mfrConflicts": 44,
+    "mfrConflicts": 52,
     "orphans": 50,
     "splitSuggestions": 23
   }

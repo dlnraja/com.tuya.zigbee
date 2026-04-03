@@ -296,7 +296,7 @@ class IrBlasterDriver extends ZigBeeDriver {
   async _registerEnhancedConditions() {
     // IR learning active condition
     try {
-      this.irLearningActiveCondition = this.homey.flow.getDeviceConditionCard('ir_blaster_learning_active');
+      this.irLearningActiveCondition = this.homey.flow.getConditionCard('ir_blaster_learning_active');
       this.irLearningActiveCondition.registerRunListener(async (args, state) => {
         const device = args.device;
         if (!device || device._learningState === undefined) {
@@ -315,7 +315,7 @@ class IrBlasterDriver extends ZigBeeDriver {
 
     // IR code exists condition
     try {
-      this.irCodeExistsCondition = this.homey.flow.getDeviceConditionCard('ir_blaster_code_exists');
+      this.irCodeExistsCondition = this.homey.flow.getConditionCard('ir_blaster_code_exists');
       this.irCodeExistsCondition.registerRunListener(async (args, state) => {
         const device = args.device;
         const { code_name } = args;
@@ -335,7 +335,7 @@ class IrBlasterDriver extends ZigBeeDriver {
 
     // IR protocol detected condition
     try {
-      this.irProtocolDetectedCondition = this.homey.flow.getDeviceConditionCard('ir_blaster_protocol_detected');
+      this.irProtocolDetectedCondition = this.homey.flow.getConditionCard('ir_blaster_protocol_detected');
       this.irProtocolDetectedCondition.registerRunListener(async (args, state) => {
         const device = args.device;
         const { code_name, protocol } = args;

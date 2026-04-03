@@ -39,9 +39,20 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlugB
   _applyScale(value, capability) {
     const powerScale = parseFloat(this.getSetting('power_scale')) || 1;
     const energyScale = parseFloat(this.getSetting('meter_power_scale')) || parseFloat(this.getSetting('energy_scale')) || 1;
-
+    // For voltage, '0.1' is the dropdown default. We don't want to double-divide if we already pass v/10.
+    // Wait, the dropdown values are 0.01, 0.1, 1, 10.
+    // Let the base value from caller be the raw value, and we apply the scale directly if possible!
+    // But then default must match. Let's just multiply the base divided value by however it differs from 1.
+    
     if (capability === 'measure_power') return value * powerScale;
     if (capability === 'meter_power') return value * energyScale;
+    
+    const voltageScale = parseFloat(this.getSetting('voltage_scale')) || 0.1;
+    if (capability === 'measure_voltage') return value * (voltageScale / 0.1); 
+    
+    const currentScale = parseFloat(this.getSetting('current_scale')) || 0.001;
+    if (capability === 'measure_current') return value * (currentScale / 0.001);
+
     return value;
   }
 
@@ -112,8 +123,14 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlugB
           const scaled = this._applyScale(v / 10, 'measure_power');
           this.setCapabilityValue('measure_power', parseFloat(scaled)).catch(() => { });
         });
-        elec.on('attr.rmsVoltage', (v) => this.setCapabilityValue('measure_voltage', parseFloat(v) / 10).catch(() => { }));
-        elec.on('attr.rmsCurrent', (v) => this.setCapabilityValue('measure_current', parseFloat(v) / 1000).catch(() => { }));
+        elec.on('attr.rmsVoltage', (v) => {
+          const scaled = this._applyScale(v / 10, 'measure_voltage');
+          this.setCapabilityValue('measure_voltage', parseFloat(scaled)).catch(() => { });
+        });
+        elec.on('attr.rmsCurrent', (v) => {
+          const scaled = this._applyScale(v / 1000, 'measure_current');
+          this.setCapabilityValue('measure_current', parseFloat(scaled)).catch(() => { });
+        });
         this.log('[PLUG] ✅ ZCL Electrical Measurement configured (with scale support)');
       }
     } catch (e) { /* ignore */ }

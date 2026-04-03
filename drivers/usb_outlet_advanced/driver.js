@@ -39,7 +39,7 @@ class UsbOutletAdvancedDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is on
     try {
-      this.homey.flow.getDeviceConditionCard('usb_outlet_advanced_is_on')
+      this.homey.flow.getConditionCard('usb_outlet_advanced_is_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
