@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.160 |
+| **App Version** | v5.11.161 |
 | **Device Fingerprints** | 4,329+ |
 | **Unique Product IDs** | 559 |
 | **Drivers** | 193 (144 Zigbee + 49 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.160** | v5.11.159: Fixed synchronization of energy scaling UI components across smart plugs., Added missing button.push capab... |
+| **v5.11.161** | v5.11.160: Fixed missing `button.push` capability for Fingerbot, resolving issue #162., Synchronized energy scaling U... |
+| **v5.11.160** | Universal Tuya Zigbee app v5.11.160 adds new device capabilities and fixes critical bugs for improved performance. |
 | **v5.11.159** | Universal Tuya Zigbee app v5.11.159 adds new device support and fixes UI issues for energy scaling. |
 | **v5.11.158** | Universal Tuya Zigbee app v5.11.158 adds new driver support and fixes energy scaling UI components. |
 | **v5.11.157** | Universal Tuya Zigbee app v5.11.157 adds new device capabilities and fixes driver issues. |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.148** | Universal Tuya Zigbee app v5.11.148 adds new device fingerprints and fixes bugs for improved compatibility. |
 | **v5.11.147** | Universal Tuya Zigbee app v5.11.147 adds new device fingerprints and fixes issues for better performance. |
 | **v5.11.146** | Universal Tuya Zigbee app v5.11.146 adds new drivers and fixes initialization errors. |
-| **v5.11.145** | Universal Tuya Zigbee app v5.11.145 adds new device support and fixes critical driver issues. |
 
 <!-- CHANGELOG_END -->
 
