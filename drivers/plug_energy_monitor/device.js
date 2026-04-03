@@ -358,8 +358,12 @@ class EnergyMonitorPlugDevice extends HybridPlugBase {
     // Metering Cluster (0x0702) — event + poll fallback
     try {
       const mc = ep1.clusters?.metering || ep1.clusters?.seMetering;
-      const eDiv = zclAttrs.energy?.divisor || 100;
-      const parseE = (v) => (typeof v === 'object' ? v[0] || 0 : v) / eDiv;
+      const baseEDiv = zclAttrs.energy?.divisor || 100;
+      const parseE = (v) => {
+        const raw = typeof v === 'object' ? v[0] || 0 : v;
+        const eScale = parseFloat(this.getSetting?.('meter_power_scale')) || 1;
+        return (raw / baseEDiv) * eScale;
+      };
       if (mc && zclAttrs.energy) {
         if (mc.on) {
           mc.on('attr.currentSummDelivered', (v) => {

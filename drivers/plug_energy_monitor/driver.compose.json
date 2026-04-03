@@ -508,6 +508,24 @@
       }
     },
     {
+      "id": "meter_power_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy (kWh) Scale",
+        "fr": "Échelle Énergie (kWh)"
+      },
+      "value": "1",
+      "values": [
+        { "id": "0.1", "label": { "en": "÷10", "fr": "÷10" } },
+        { "id": "1", "label": { "en": "×1 (Default)", "fr": "×1 (Par défaut)" } },
+        { "id": "10", "label": { "en": "×10", "fr": "×10" } }
+      ],
+      "hint": {
+        "en": "Adjust if total energy (kWh) readings are way off.",
+        "fr": "Ajuster si l'énergie totale (kWh) est incorrecte."
+      }
+    },
+    {
       "id": "power_compensation",
       "type": "number",
       "label": {

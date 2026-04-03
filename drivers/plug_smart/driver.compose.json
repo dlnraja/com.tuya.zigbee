@@ -437,6 +437,42 @@
       },
       "children": [
         {
+          "id": "power_scale",
+          "type": "dropdown",
+          "label": {
+            "en": "Power scaling",
+            "nl": "Vermogen schaling"
+          },
+          "hint": {
+            "en": "Adjust if power (W) readings are incorrect",
+            "nl": "Aanpassen indien vermogen (W) niet klopt"
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0.1",
+              "label": {
+                "en": "÷10",
+                "nl": "÷10"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "×1 (no scaling)",
+                "nl": "×1 (geen schaling)"
+              }
+            },
+            {
+              "id": "10",
+              "label": {
+                "en": "×10",
+                "nl": "×10"
+              }
+            }
+          ]
+        },
+        {
           "id": "voltage_scale",
           "type": "dropdown",
           "label": {
