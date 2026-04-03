@@ -1,618 +1,183 @@
 # Diagnostics Cross-Reference (auto-generated)
-# Generated: 2026-04-02T06:27:17.558Z
-# Emails processed: 154
+# Generated: 2026-04-03T06:27:19.788Z
+# Emails processed: 40
 
 fingerprints:
-  _TZ321C_fkzihax8:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [presence_sensor_radar]
-    mentions: 1
-    source_types: [github]
-    reporters: [NoroddH]
-    sources:
-      - type: github
-        date: 2026-03-13T06:16:54.000Z
-  TS0225:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [gas_sensor, motion_sensor, presence_sensor_radar, universal_fallback]
-    mentions: 1
-    source_types: [github]
-    reporters: [NoroddH]
-    sources:
-      - type: github
-        date: 2026-03-13T06:16:54.000Z
-  _TZ321C_fkzihaxe8:
-    priority: NaN
-    supported: true
-    protocol: hybrid
-    drivers: [presence_sensor_radar]
-    requires: [DP_listeners, magic_packet, IAS_enrollment]
-    mentions: 1
-    source_types: [github]
-    reporters: [github-actions[bot]]
-    sources:
-      - type: github
-        date: 2026-03-13T06:48:50.000Z
-  _TZ3000_7y90pany:
+  _TZ3000_tsgqxdb4:
     priority: NaN
     supported: true
     protocol: unknown
     drivers: [climate_sensor]
-    mentions: 3
+    mentions: 2
     source_types: [github]
-    reporters: [johnx1971, github-actions[bot]]
+    reporters: [Snacker80, github-actions[bot]]
     sources:
       - type: github
-        date: 2026-03-19T12:17:07.000Z
+        date: 2026-04-02T08:17:17.000Z
       - type: github
-        date: 2026-03-19T12:17:18.000Z
+        date: 2026-04-02T08:17:30.000Z
+  TS0201:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    drivers: [climate_sensor, lcdtemphumidsensor, temphumidsensor, universal_fallback]
+    mentions: 3
+    source_types: [github, diagnostic]
+    reporters: [Snacker80, github-actions[bot]]
+    sources:
       - type: github
-        date: 2026-04-01T07:25:27.000Z
+        date: 2026-04-02T08:17:17.000Z
+      - type: github
+        date: 2026-04-02T08:17:30.000Z
+      - type: diagnostic
+        date: 2026-04-02T09:49:58.000Z
   TS0601:
     priority: NaN
     supported: true
     protocol: unknown
     drivers: [air_purifier, air_quality_co2, air_quality_comprehensive, button_emergency_sos, button_wireless_6, ceiling_fan, climate_sensor, co_sensor, contact_sensor, curtain_motor, curtain_motor_tilt, dimmer_3gang, dimmer_dual_channel, dimmer_wall_1gang, din_rail_meter, din_rail_switch, door_controller, doorbell, energy_meter_3phase, fan_controller, fingerprint_lock, floor_heating_thermostat, formaldehyde_sensor, garage_door, garage_door_opener, gas_detector, gas_sensor, generic_tuya, humidifier, hvac_air_conditioner, hvac_controller, hvac_dehumidifier, ir_blaster, lcdtemphumidsensor, light_sensor_outdoor, lock_smart, motion_sensor, motion_sensor_radar_mmwave, pet_feeder, pet_feeder_zigbee, plug_energy_monitor, plug_smart, pool_pump, power_clamp_meter, power_meter, presence_sensor_ceiling, presence_sensor_radar, radiator_controller, radiator_valve, radiator_valve_zigbee, rain_sensor, scene_switch_4, shutter_roller_controller, siren, smart_breaker, smart_heater, smart_heater_controller, smart_lcd_thermostat, smart_rcbo, smart_scene_panel, smoke_detector_advanced, soil_sensor, switch_1gang, switch_2gang, switch_3gang, switch_4gang, switch_dimmer_1gang, switch_wall_5gang, switch_wall_6gang, switch_wall_8gang, thermostat_4ch, thermostat_tuya_dp, universal_fallback, usb_outlet_advanced, valve_irrigation, valve_single, vibration_sensor, water_leak_sensor, water_tank_monitor, water_valve_smart, weather_station_outdoor]
-    mentions: 11
-    source_types: [github, bug_report, crash_report, device_issue]
-    reporters: [johnx1971, github-actions[bot], C.I., R.B., late4marshmellow, haadeess, S.O., Ech...]
-    sources:
-      - type: github
-        date: 2026-03-19T12:17:07.000Z
-      - type: github
-        date: 2026-03-19T12:17:18.000Z
-      - type: bug_report
-        date: 2026-03-24T21:38:25.000Z
-      - type: crash_report
-        date: 2026-03-24T22:04:38.000Z
-      - type: device_issue
-        date: 2026-03-26T15:02:29.000Z
-  _TZ3000_mrpevh8p:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [button_wireless_1]
-    mentions: 1
+    mentions: 4
     source_types: [github]
-    reporters: [github-actions[bot]]
+    reporters: [Snacker80, github-actions[bot], pemikalsen-sudo]
     sources:
       - type: github
-        date: 2026-03-22T18:46:40.000Z
-  _TZ3000_xr7itfxq:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [button_wireless_2]
-    mentions: 1
-    source_types: [github]
-    reporters: [github-actions[bot]]
-    sources:
+        date: 2026-04-02T08:17:17.000Z
       - type: github
-        date: 2026-03-22T18:46:40.000Z
-  _TZ3000_zgyzgdua:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    conflict: true  # Same FP in multiple drivers!
-    drivers: [button_wireless_4, scene_switch_4]
-    mentions: 1
-    source_types: [github]
-    reporters: [github-actions[bot]]
-    action: "Verify productId mapping - ensure correct driver match"
-    sources:
+        date: 2026-04-02T08:17:30.000Z
       - type: github
-        date: 2026-03-22T18:46:40.000Z
-  _TZ3000_kxaow5ki:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [button_wireless_1]
-    mentions: 1
-    source_types: [github]
-    reporters: [github-actions[bot]]
-    sources:
+        date: 2026-04-02T10:15:48.000Z
       - type: github
-        date: 2026-03-23T06:53:29.000Z
-  _TZE284_bquwrqh1:
+        date: 2026-04-02T10:25:53.000Z
+  _TZE284_8se38w3c:
     priority: NaN
     supported: true
     protocol: tuya_dp
-    drivers: [motion_sensor]
+    drivers: [climate_sensor]
     requires: [TuyaEF00Manager, dpMappings]
-    mentions: 2
-    source_types: [bug_report, crash_report]
-    reporters: [C.I.]
-    sources:
-      - type: bug_report
-        date: 2026-03-24T21:38:25.000Z
-      - type: crash_report
-        date: 2026-03-24T22:04:38.000Z
-  TS011F:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [plug_energy_monitor, plug_smart, switch_1gang, switch_2gang, universal_fallback]
-    mentions: 1
-    source_types: [bug_report]
-    reporters: [C.I.]
-    sources:
-      - type: bug_report
-        date: 2026-03-24T21:38:25.000Z
-  _TZ3002_jn2x20tg:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [switch_1gang]
-    mentions: 1
-    source_types: [bug_report]
-    reporters: [V.B.]
-    sources:
-      - type: bug_report
-        date: 2026-03-24T23:10:45.000Z
-  TS0726:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [scene_switch_2, scene_switch_3, switch_1gang, switch_2gang, switch_4gang, switch_wall_6gang, wall_switch_4gang_1way]
-    mentions: 1
-    source_types: [bug_report]
-    reporters: [V.B.]
-    sources:
-      - type: bug_report
-        date: 2026-03-24T23:10:45.000Z
-  _TZ3000_v4l4b0lp:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [switch_3gang]
-    mentions: 5
-    source_types: [github]
-    reporters: [Ssssneak, github-actions[bot]]
-    sources:
-      - type: github
-        date: 2026-03-25T06:00:19.000Z
-      - type: github
-        date: 2026-03-25T06:00:34.000Z
-      - type: github
-        date: 2026-03-25T20:05:23.000Z
-      - type: github
-        date: 2026-03-30T07:00:32.000Z
-      - type: github
-        date: 2026-03-30T18:20:41.000Z
-  TS0003:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [switch_2gang, switch_3gang, universal_fallback, usb_dongle_triple, wall_switch_3gang_1way]
     mentions: 3
-    source_types: [github]
-    reporters: [Ssssneak, github-actions[bot]]
-    sources:
-      - type: github
-        date: 2026-03-25T06:00:19.000Z
-      - type: github
-        date: 2026-03-25T06:00:34.000Z
-      - type: github
-        date: 2026-03-30T07:00:32.000Z
-  _TZE284_oitavov2:
-    priority: NaN
-    supported: true
-    protocol: tuya_dp
-    drivers: [soil_sensor]
-    requires: [TuyaEF00Manager, dpMappings]
-    mentions: 1
-    source_types: [device_issue]
-    reporters: [R.B.]
-    sources:
-      - type: device_issue
-        date: 2026-03-26T15:02:29.000Z
-  _TZ3000_otvn3lne:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [motion_sensor]
-    mentions: 2
-    source_types: [github]
-    reporters: [late4marshmellow]
-    sources:
-      - type: github
-        date: 2026-03-27T23:23:50.000Z
-      - type: github
-        date: 2026-04-01T06:39:39.000Z
-  TS0202:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [motion_sensor]
-    mentions: 2
-    source_types: [github]
-    reporters: [late4marshmellow]
-    sources:
-      - type: github
-        date: 2026-03-27T23:23:50.000Z
-      - type: github
-        date: 2026-04-01T06:39:39.000Z
-  _TZE284_hdml1aav:
-    priority: NaN
-    supported: true
-    protocol: tuya_dp
-    drivers: [soil_sensor]
-    requires: [TuyaEF00Manager, dpMappings]
-    mentions: 1
-    source_types: [github]
-    reporters: [haadeess]
-    sources:
-      - type: github
-        date: 2026-03-28T15:10:25.000Z
-  ZBMINI:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [generic_diy, module_mini_switch, switch_1gang]
-    mentions: 1
-    source_types: [github]
-    reporters: [github-actions[bot]]
-    sources:
-      - type: github
-        date: 2026-03-30T06:37:14.000Z
-  S31ZB:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [generic_diy, plug_energy_monitor, switch_1gang]
-    mentions: 1
-    source_types: [github]
-    reporters: [github-actions[bot]]
-    sources:
-      - type: github
-        date: 2026-03-30T06:37:14.000Z
-  TRVZB:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [radiator_valve]
-    mentions: 1
-    source_types: [github]
-    reporters: [github-actions[bot]]
-    sources:
-      - type: github
-        date: 2026-03-30T06:37:14.000Z
-  _TZB000_yqjaollc:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [plug_energy_monitor]
-    mentions: 1
-    source_types: [diagnostic]
+    source_types: [diagnostic, github]
+    reporters: [pemikalsen-sudo]
     sources:
       - type: diagnostic
-        date: 2026-03-31T06:30:00.000Z
-  TS0121:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [plug_energy_monitor, universal_fallback]
-    mentions: 1
-    source_types: [diagnostic]
-    sources:
-      - type: diagnostic
-        date: 2026-03-31T06:30:00.000Z
-  _TZ3000_famkxci2:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [button_wireless_3]
-    mentions: 1
-    source_types: [bug_report]
-    reporters: [Ech...]
-    sources:
-      - type: bug_report
-        date: 2026-03-31T19:49:10.000Z
-  _TZ3000_ee8nrt2l:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    conflict: true  # Same FP in multiple drivers!
-    drivers: [button_wireless_4, wall_remote_4_gang]
-    mentions: 1
-    source_types: [bug_report]
-    reporters: [Ech...]
-    action: "Verify productId mapping - ensure correct driver match"
-    sources:
-      - type: bug_report
-        date: 2026-03-31T19:49:10.000Z
-  TS0043:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [button_wireless_3, scene_switch_3, universal_fallback, wall_remote_3_gang, wall_switch_3gang_1way]
-    mentions: 1
-    source_types: [bug_report]
-    reporters: [Ech...]
-    sources:
-      - type: bug_report
-        date: 2026-03-31T19:49:10.000Z
-  TS0044:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [button_wireless_4, handheld_remote_4_buttons, universal_fallback, wall_remote_4_gang, wall_remote_4_gang_3]
-    mentions: 1
-    source_types: [bug_report]
-    reporters: [Ech...]
-    sources:
-      - type: bug_report
-        date: 2026-03-31T19:49:10.000Z
+        date: 2026-04-02T09:49:58.000Z
+      - type: github
+        date: 2026-04-02T10:15:48.000Z
+      - type: github
+        date: 2026-04-02T10:25:53.000Z
 
 users:
   github-actions[bot]:
-    activity_score: 88
-    emails: 33
-    fingerprints: [_TZ321C_fkzihaxe8, _TZ3000_7y90pany, _TZ3000_mrpevh8p, _TZ3000_xr7itfxq, _TZ3000_zgyzgdua, _TZ3000_kxaow5ki, _TZ3000_v4l4b0lp]
+    activity_score: 18
+    emails: 7
+    fingerprints: [_TZ3000_tsgqxdb4]
     types: [github]
-    latest: 2026-04-01T07:25:35.000Z
-  Ssssneak:
-    activity_score: 24
-    emails: 9
-    fingerprints: [_TZ3000_v4l4b0lp]
+    latest: 2026-04-02T10:21:17.000Z
+  pemikalsen-sudo:
+    activity_score: 12
+    emails: 4
+    fingerprints: [_TZE284_8se38w3c]
     types: [github]
-    has_errors: true
-    latest: 2026-04-01T07:27:56.000Z
-  haadeess:
-    activity_score: 16
-    emails: 5
-    fingerprints: [_TZE284_hdml1aav]
-    types: [github]
-    has_errors: true
-    latest: 2026-03-28T15:11:39.000Z
-  late4marshmellow:
-    activity_score: 14
-    emails: 5
-    fingerprints: [_TZ3000_otvn3lne]
-    types: [github]
-    latest: 2026-04-01T06:39:39.000Z
-  C.I.:
-    activity_score: 13
-    emails: 3
-    fingerprints: [_TZE284_bquwrqh1]
-    types: [bug_report, crash_report]
-    has_errors: true
-    latest: 2026-03-24T22:04:38.000Z
-  T.L.:
-    activity_score: 11
-    emails: 3
-    types: [changelog, crash_report, general]
-    has_errors: true
-    latest: 2026-03-31T10:41:04.000Z
-  johnx1971:
+    latest: 2026-04-02T11:14:04.000Z
+  Snacker80:
     activity_score: 10
     emails: 3
-    fingerprints: [_TZ3000_7y90pany]
+    fingerprints: [_TZ3000_tsgqxdb4]
     types: [github]
-    latest: 2026-04-01T07:25:27.000Z
-  S.O.:
-    activity_score: 9
-    emails: 3
-    types: [diagnostic, bug_report, device_issue]
-    latest: 2026-04-01T11:25:50.000Z
-  Ech...:
-    activity_score: 9
-    emails: 1
-    fingerprints: [_TZ3000_famkxci2, _TZ3000_ee8nrt2l]
-    types: [bug_report]
-    latest: 2026-03-31T19:49:10.000Z
-  R.B.:
-    activity_score: 8
-    emails: 2
-    fingerprints: [_TZE284_oitavov2]
-    types: [device_issue]
-    latest: 2026-03-26T15:02:29.000Z
-  V.B.:
-    activity_score: 8
-    emails: 1
-    fingerprints: [_TZ3002_jn2x20tg]
-    types: [bug_report]
-    has_errors: true
-    latest: 2026-03-24T23:10:45.000Z
-  T.G.:
-    activity_score: 7
-    emails: 2
-    types: [bug_report]
-    has_errors: true
-    latest: 2026-03-31T14:00:40.000Z
-  Pieter:
-    activity_score: 7
-    emails: 3
-    types: [github]
-    latest: 2026-03-31T17:07:48.000Z
-  NoroddH:
-    activity_score: 6
-    emails: 1
-    fingerprints: [_TZ321C_fkzihax8]
-    types: [github]
-    latest: 2026-03-13T06:16:54.000Z
-  F.L.:
-    activity_score: 6
-    emails: 2
-    types: [bug_report, general]
-    latest: 2026-04-01T14:26:09.000Z
-  Fra...:
-    activity_score: 6
-    emails: 2
-    types: [diagnostic, device_issue]
-    latest: 2026-03-31T09:49:51.000Z
-  H.B.:
+    latest: 2026-04-02T08:18:22.000Z
+  T.L.:
     activity_score: 5
     emails: 2
-    types: [device_issue]
-    latest: 2026-03-13T09:59:28.000Z
-  M.K.:
-    activity_score: 5
-    emails: 2
-    types: [device_issue]
-    latest: 2026-03-21T21:04:47.000Z
-  E.G.:
-    activity_score: 5
-    emails: 1
-    types: [device_issue]
-    has_errors: true
-    latest: 2026-03-23T18:33:40.000Z
-  Homey:
-    activity_score: 5
-    emails: 2
-    types: [device_issue]
-    latest: 2026-04-01T08:09:48.000Z
-  R.W.:
-    activity_score: 5
-    emails: 1
-    types: [bug_report]
-    has_errors: true
-    latest: 2026-03-31T09:04:46.000Z
-  R.U.:
-    activity_score: 5
-    emails: 2
-    types: [general]
-    latest: 2026-04-01T15:58:35.000Z
-  N.D.:
-    activity_score: 5
-    emails: 1
-    types: [general]
-    has_errors: true
-    latest: 2026-03-31T15:20:14.000Z
-  H.L.:
-    activity_score: 5
-    emails: 1
     types: [changelog]
-    has_errors: true
-    latest: 2026-03-31T16:45:06.000Z
-  S.L.:
+    latest: 2026-04-02T21:03:29.000Z
+  R.K.:
     activity_score: 5
     emails: 2
-    types: [general]
-    latest: 2026-03-31T18:39:09.000Z
-  Vau...:
-    activity_score: 3
+    types: [device_issue]
+    latest: 2026-04-03T04:34:20.000Z
+  T.G.:
+    activity_score: 5
     emails: 1
     types: [interview]
-    latest: 2026-03-19T15:42:45.000Z
-  homey:
+    has_errors: true
+    latest: 2026-04-02T14:00:23.000Z
+  Spi...:
+    activity_score: 5
+    emails: 1
+    types: [bug_report]
+    has_errors: true
+    latest: 2026-04-02T15:04:55.000Z
+  Rev...:
+    activity_score: 5
+    emails: 1
+    types: [bug_report]
+    has_errors: true
+    latest: 2026-04-02T16:47:51.000Z
+  L.R.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-03-04T12:05:58.000Z
+  R.U.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-03-04T15:07:20.000Z
+  F.L.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-03-04T15:33:16.000Z
+  N.D.:
+    activity_score: 3
+    emails: 1
+    types: [changelog]
+    latest: 2026-03-04T17:04:24.000Z
+  I.L.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-03-04T17:56:10.000Z
+  U.L.:
+    activity_score: 3
+    emails: 1
+    types: [diagnostic]
+    latest: 2026-04-02T09:01:40.000Z
+  L.K.:
     activity_score: 3
     emails: 1
     types: [device_issue]
-    latest: 2026-03-19T16:29:48.000Z
-  P.W.:
+    latest: 2026-04-02T09:52:51.000Z
+  vbesteiro:
+    activity_score: 3
+    emails: 1
+    types: [github]
+    latest: 2026-04-02T10:21:04.000Z
+  H.B.:
     activity_score: 3
     emails: 1
     types: [device_issue]
-    latest: 2026-03-20T16:25:03.000Z
+    latest: 2026-04-02T13:14:10.000Z
+  S.L.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-04-02T15:42:56.000Z
   Sve...:
     activity_score: 3
     emails: 1
     types: [device_issue]
-    latest: 2026-03-24T14:06:03.000Z
-  �.N.:
-    activity_score: 3
-    emails: 1
-    types: [changelog]
-    latest: 2026-03-24T23:18:12.000Z
-  Wuma68:
-    activity_score: 3
-    emails: 1
-    types: [github]
-    latest: 2026-03-26T19:57:40.000Z
-  Osc...:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-03-30T08:30:47.000Z
-  UGC...:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-03-30T15:30:32.000Z
-  Sun...:
-    activity_score: 3
-    emails: 1
-    types: [device_issue]
-    latest: 2026-03-31T09:21:10.000Z
-  Cur...:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-03-31T21:38:50.000Z
-  T.A.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-04-01T08:27:16.000Z
-  Sin...:
-    activity_score: 3
-    emails: 1
-    types: [device_issue]
-    latest: 2026-04-01T13:29:40.000Z
-  M.L.:
-    activity_score: 3
-    emails: 1
-    types: [changelog]
-    latest: 2026-03-31T22:51:54.000Z
-  Clo...:
-    activity_score: 3
-    emails: 1
-    types: [changelog]
-    latest: 2026-04-01T23:37:58.000Z
-  C.M.:
-    activity_score: 3
-    emails: 1
-    types: [device_issue]
-    latest: 2026-04-02T04:52:37.000Z
+    latest: 2026-04-02T22:41:22.000Z
 
 error_patterns:
-  - count: 4
-    error: "Could not get device by id"
-  - count: 2
-    error: "=redirect,quality=80/uploads/asset/file/e6ee0138-7a68-4931-abec-d14337cb04ca/120"
   - count: 1
-    error: "Not Found: Device with ID 749b13e8-f3a4-4dcd-8b83-53d192f72b33"
+    error: "=redirect,quality=80/uploads/asset/file/a[REDACTED_PHONE]f-487b-9c63-dac45a3565e"
   - count: 1
-    error: "get coordinator IEEE address"
+    error: "RX malformed alert >>]( https://mail.spiceworks.com/c/AQiv0hQQ9L83GNfC9EAg7t7lDS"
   - count: 1
-    error: "get Homey IEEE address for CIE write"
+    error: "be Null issue >>]( https://mail.spiceworks.com/c/AQiv0hQQ9L8"
   - count: 1
-    error: "paired) needs only to be added to the 4 buttons wireless dri"
-  - count: 1
-    error: "be paired at all."
-  - count: 1
-    error: ", but the https://homey.app/a/com.dlnraja.tuya.zigbee/test/ currently is working"
-  - count: 1
-    error: "![image|233x500](upload://y4NtgGhLKDNjSqBiMmXu8EVUR8t.jpeg)"
-  - count: 1
-    error: "(got some information masked for security issues)"
-  - count: 1
-    error: "This operation was aborted`"
-  - count: 1
-    error: "endpointId=1 clusterId=1: Unexpected Bind Response (status: zdoInvalidEndpoint)`"
-  - count: 1
-    error: "failed to create binding (ep: 1, cl: 1) Unexpected Bind Response (status: zdoInv"
-  - count: 1
-    error: "Unexpected Bind Response (status: zdoInvalidEndpoint)`"
-  - count: 1
-    error: "create_bindings_failed`"
-  - count: 1
-    error: "â**Unable to connect** Something went wrong while adding this device, please t"
-  - count: 1
-    error: ". If you need other values, please give me a brief explanation of how to access"
-  - count: 1
-    error: "/unhandled exception in the app's code whenever the Flow action listener is call"
-  - count: 1
-    error: "error/unhandled exception in the app's code whenever the Flow action listener is"
-  - count: 1
-    error: "Reporting), CVE[REDACTED_PHONE] (NVIDIA Apex), CVE[REDACTED_PHONE] (Synology Dis"
+    error: "isme, et sur le transfert de fonds (informations concernant le payeur). SiÃ¨ge s"
 
 protocol_distribution:
-  unknown: 24
-  hybrid: 1
-  tuya_dp: 3
+  unknown: 3
+  tuya_dp: 1

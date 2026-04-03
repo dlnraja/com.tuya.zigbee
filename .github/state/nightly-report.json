@@ -1,20 +1,11 @@
 {
-  "timestamp": "2026-04-03T03:37:52.090Z",
+  "timestamp": "2026-04-03T05:59:50.378Z",
   "appVersion": "5.11.154",
-  "forum": 1,
+  "forum": 0,
   "github": 0,
   "diagnostics": 50,
   "diagNewFPs": 0,
   "diagCritical": 0,
-  "forumDetails": [
-    {
-      "topic": 140352,
-      "post": 1686,
-      "user": "smarthomesven",
-      "fps": [],
-      "reply": "You're correct that Tuya often uses its own custom clusters, which can lead to compatibility issues with generic Zigbee implementations. However, in this case, the fingerprint lookup indicates that we",
-      "model": "gh-gpt-4o-mini"
-    }
-  ],
+  "forumDetails": [],
   "githubDetails": []
 }

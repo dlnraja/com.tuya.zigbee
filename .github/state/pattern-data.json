@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-03T04:22:33.489Z",
+  "timestamp": "2026-04-03T06:54:53.546Z",
   "suggestions": [
     {
       "pattern": "False Battery Alert / Missing Battery",
@@ -56,7 +56,7 @@
     {
       "pattern": "Pairing Failure",
       "id": "pairing",
-      "count": 12,
+      "count": 9,
       "priority": "high",
       "topFPs": [
         [
@@ -68,19 +68,11 @@
           5
         ],
         [
-          "tuya",
-          4
-        ],
-        [
           "example",
           3
         ],
         [
           "generic",
-          3
-        ],
-        [
-          "dlnraja",
           3
         ],
         [
@@ -98,6 +90,14 @@
         [
           "TS0202",
           2
+        ],
+        [
+          "_TZE284_hdml1aav",
+          2
+        ],
+        [
+          "_TZE204_ahwvlkpy",
+          1
         ]
       ],
       "fix": "Check driver.compose.json fingerprints, verify manufacturerName + productId",
@@ -425,7 +425,7 @@
     "inversion": 1,
     "battery": 32,
     "double_div": 2,
-    "pairing": 12,
+    "pairing": 9,
     "unknown": 5,
     "flow_dup": 0,
     "no_response": 5,
