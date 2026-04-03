@@ -6,6 +6,7 @@
   "connectivity": ["zigbee"],
   "capabilities": [
     "onoff",
+    "button.push",
     "finger_bot_mode",
     "measure_battery"
   ],
