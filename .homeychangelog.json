@@ -1,4 +1,7 @@
 {
+  "5.11.155": {
+    "en": "Universal Tuya Zigbee app v5.11.155 adds missing button.push capability for Fingerbot and improves device support."
+  },
   "5.11.154": {
     "en": "Universal Tuya Zigbee app v5.11.154 adds 453 new fingerprints and supports 191 drivers."
   },
@@ -56,10 +59,7 @@
   "5.11.133": {
     "en": "v5.11.132: Implemented batch close/respond state update for improved device management., No new features added in this release., No improvements made in this release., No changes in CI/CD processes."
   },
-  "5.11.132": {
-    "en": "Updated Universal Tuya Zigbee app with batch state update feature."
-  },
-  "5.11.155": {
-    "en": "v5.11.154: No bug fixes in this release., No new features in this release., No improvements in this release."
+  "5.11.156": {
+    "en": "v5.11.155: Added missing `button.push` capability for Fingerbot to resolve issue #162., No new features added in this release., No improvements made in this release."
   }
 }
