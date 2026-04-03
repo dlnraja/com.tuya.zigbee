@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.154",
+  "version": "5.11.155",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -28177,362 +28177,51 @@
         ]
       },
       {
-        "id": "wall_remote_4_gang_2_button_4gang_button_1_pressed",
+        "id": "wall_remote_4_gang_buttons_2",
         "title": {
-          "fr": "Bouton 1 appuyé",
-          "en": "Button 1 pressed"
+          "en": "Button"
         },
         "titleFormatted": {
-          "fr": "Bouton 1 appuyé",
-          "en": "Button 1 pressed"
+          "en": "The [[button]]"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
             "filter": "driver_id=wall_remote_4_gang_2"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_4_gang_2_button_4gang_button_1_double",
-        "title": {
-          "fr": "Bouton 1 double-appui",
-          "en": "Button 1 double-pressed"
-        },
-        "titleFormatted": {
-          "fr": "Bouton 1 double-appui",
-          "en": "Button 1 double-pressed"
-        },
-        "args": [
+          },
           {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_4_gang_2"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_4_gang_2_button_4gang_button_1_long",
-        "title": {
-          "fr": "Bouton 1 appui long",
-          "en": "Button 1 long-pressed"
-        },
-        "titleFormatted": {
-          "fr": "Bouton 1 appui long",
-          "en": "Button 1 long-pressed"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_4_gang_2"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_4_gang_2_button_4gang_button_1_triple",
-        "title": {
-          "fr": "Bouton 1 triple-appui",
-          "en": "Button 1 triple-pressed"
-        },
-        "titleFormatted": {
-          "fr": "Bouton 1 triple-appui",
-          "en": "Button 1 triple-pressed"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_4_gang_2"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_4_gang_2_button_4gang_button_1_release",
-        "title": {
-          "fr": "Bouton 1 relâché",
-          "en": "Button 1 released"
-        },
-        "titleFormatted": {
-          "fr": "Bouton 1 relâché",
-          "en": "Button 1 released"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_4_gang_2"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_4_gang_2_button_4gang_button_2_pressed",
-        "title": {
-          "fr": "Bouton 2 appuyé",
-          "en": "Button 2 pressed"
-        },
-        "titleFormatted": {
-          "fr": "Bouton 2 appuyé",
-          "en": "Button 2 pressed"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_4_gang_2"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_4_gang_2_button_4gang_button_2_double",
-        "title": {
-          "fr": "Bouton 2 double-appui",
-          "en": "Button 2 double-pressed"
-        },
-        "titleFormatted": {
-          "fr": "Bouton 2 double-appui",
-          "en": "Button 2 double-pressed"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_4_gang_2"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_4_gang_2_button_4gang_button_2_long",
-        "title": {
-          "fr": "Bouton 2 appui long",
-          "en": "Button 2 long-pressed"
-        },
-        "titleFormatted": {
-          "fr": "Bouton 2 appui long",
-          "en": "Button 2 long-pressed"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_4_gang_2"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_4_gang_2_button_4gang_button_2_triple",
-        "title": {
-          "fr": "Bouton 2 triple-appui",
-          "en": "Button 2 triple-pressed"
-        },
-        "titleFormatted": {
-          "fr": "Bouton 2 triple-appui",
-          "en": "Button 2 triple-pressed"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_4_gang_2"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_4_gang_2_button_4gang_button_2_release",
-        "title": {
-          "fr": "Bouton 2 relâché",
-          "en": "Button 2 released"
-        },
-        "titleFormatted": {
-          "fr": "Bouton 2 relâché",
-          "en": "Button 2 released"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_4_gang_2"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_4_gang_2_button_4gang_button_3_pressed",
-        "title": {
-          "fr": "Bouton 3 appuyé",
-          "en": "Button 3 pressed"
-        },
-        "titleFormatted": {
-          "fr": "Bouton 3 appuyé",
-          "en": "Button 3 pressed"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_4_gang_2"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_4_gang_2_button_4gang_button_3_double",
-        "title": {
-          "fr": "Bouton 3 double-appui",
-          "en": "Button 3 double-pressed"
-        },
-        "titleFormatted": {
-          "fr": "Bouton 3 double-appui",
-          "en": "Button 3 double-pressed"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_4_gang_2"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_4_gang_2_button_4gang_button_3_long",
-        "title": {
-          "fr": "Bouton 3 appui long",
-          "en": "Button 3 long-pressed"
-        },
-        "titleFormatted": {
-          "fr": "Bouton 3 appui long",
-          "en": "Button 3 long-pressed"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_4_gang_2"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_4_gang_2_button_4gang_button_3_triple",
-        "title": {
-          "fr": "Bouton 3 triple-appui",
-          "en": "Button 3 triple-pressed"
-        },
-        "titleFormatted": {
-          "fr": "Bouton 3 triple-appui",
-          "en": "Button 3 triple-pressed"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_4_gang_2"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_4_gang_2_button_4gang_button_3_release",
-        "title": {
-          "fr": "Bouton 3 relâché",
-          "en": "Button 3 released"
-        },
-        "titleFormatted": {
-          "fr": "Bouton 3 relâché",
-          "en": "Button 3 released"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_4_gang_2"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_4_gang_2_button_4gang_button_4_pressed",
-        "title": {
-          "fr": "Bouton 4 appuyé",
-          "en": "Button 4 pressed"
-        },
-        "titleFormatted": {
-          "fr": "Bouton 4 appuyé",
-          "en": "Button 4 pressed"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_4_gang_2"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_4_gang_2_button_4gang_button_4_double",
-        "title": {
-          "fr": "Bouton 4 double-appui",
-          "en": "Button 4 double-pressed"
-        },
-        "titleFormatted": {
-          "fr": "Bouton 4 double-appui",
-          "en": "Button 4 double-pressed"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_4_gang_2"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_4_gang_2_button_4gang_button_4_long",
-        "title": {
-          "fr": "Bouton 4 appui long",
-          "en": "Button 4 long-pressed"
-        },
-        "titleFormatted": {
-          "fr": "Bouton 4 appui long",
-          "en": "Button 4 long-pressed"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_4_gang_2"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_4_gang_2_button_4gang_button_4_triple",
-        "title": {
-          "fr": "Bouton 4 triple-appui",
-          "en": "Button 4 triple-pressed"
-        },
-        "titleFormatted": {
-          "fr": "Bouton 4 triple-appui",
-          "en": "Button 4 triple-pressed"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_4_gang_2"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_4_gang_2_button_4gang_button_4_release",
-        "title": {
-          "fr": "Bouton 4 relâché",
-          "en": "Button 4 released"
-        },
-        "titleFormatted": {
-          "fr": "Bouton 4 relâché",
-          "en": "Button 4 released"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_4_gang_2"
+            "name": "button",
+            "type": "dropdown",
+            "title": {
+              "en": "Button Pressed"
+            },
+            "values": [
+              {
+                "id": "leftUp",
+                "label": {
+                  "en": "Upper Left Button Pressed"
+                }
+              },
+              {
+                "id": "rightUp",
+                "label": {
+                  "en": "Upper Right Button Pressed"
+                }
+              },
+              {
+                "id": "leftDown",
+                "label": {
+                  "en": "Lower Left Button Pressed"
+                }
+              },
+              {
+                "id": "rightDown",
+                "label": {
+                  "en": "Lower Right Button Pressed"
+                }
+              }
+            ]
           }
         ]
       },
@@ -59073,6 +58762,7 @@
       "class": "sensor",
       "capabilities": [
         "measure_temperature",
+        "measure_temperature.probe",
         "measure_humidity",
         "measure_battery"
       ],
@@ -59084,6 +58774,16 @@
         ]
       },
       "subDevices": [],
+      "capabilityOptions": {
+        "measure_temperature.probe": {
+          "title": {
+            "en": "Probe Temperature",
+            "fr": "Température Sonde",
+            "nl": "Sonde Temperatuur",
+            "de": "Sondentemperatur"
+          }
+        }
+      },
       "zigbee": {
         "manufacturerName": [
           "OWON",
@@ -59628,7 +59328,6 @@
           "_TZE284_6ocnqlhn",
           "_TZE284_6teua268",
           "_TZE284_78ioiaml",
-          "_TZE284_8se38w3c",
           "_TZE284_9ern5sfh",
           "_TZE284_9m4kmbfu",
           "_TZE284_9xstqowh",
@@ -59989,7 +59688,6 @@
           "_TZe284_6kijc7nd",
           "_TZe284_6teua268",
           "_TZe284_78ioiaml",
-          "_TZe284_8se38w3c",
           "_TZe284_9ern5sfh",
           "_TZe284_9xstqowh",
           "_TZe284_a14rjslz",
@@ -60073,7 +59771,8 @@
           "_TZ3000_hy6ncvmw",
           "_TZ3290_rlkmy85q4pzoxobl",
           "_TZ3000_qaaysllp",
-          "_TZE204_myd45weu"
+          "_TZE204_myd45weu",
+          "_TZE284_8se38w3c"
         ],
         "productId": [
           "TS0201",
@@ -64006,44 +63705,36 @@
       "id": "fan_controller"
     },
     {
+      "id": "fingerbot",
       "name": {
-        "en": "Fingerbot Button Pusher",
-        "fr": "Fingerbot Poussoir de Bouton",
-        "nl": "Fingerbot Knopdrukker",
-        "de": "Fingerbot Tastendrücker"
+        "en": "Finger Bot"
       },
       "class": "button",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
       "capabilities": [
         "onoff",
-        "measure_battery",
-        "button.push"
+        "finger_bot_mode",
+        "measure_battery"
       ],
-      "capabilitiesOptions": {
-        "button.push": {
-          "title": {
-            "en": "Push Button",
-            "fr": "Appuyer sur le Bouton",
-            "nl": "Druk op Knop",
-            "de": "Taste Drücken"
-          }
-        }
+      "images": {
+        "large": "/drivers/fingerbot/assets/images/large.png",
+        "small": "/drivers/fingerbot/assets/images/small.png"
       },
       "energy": {
         "batteries": [
           "CR2"
-        ],
-        "approximation": {
-          "usageConstant": 0.3
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3210_232nryqh",
-          "_TZ3210_dse8ogfy",
           "_TZ3210_j4pdtz9v",
-          "_TZ3210_7vgttna6",
-          "_TZ3210_a04acm9s",
-          "_TZ3210_cm9mbpr1",
+          "_TZ3210_dse8ogfy",
+          "_TZ3210_232nryqh",
           "_TZ3210_okbss9dy"
         ],
         "productId": [
@@ -64056,124 +63747,19 @@
               0,
               6,
               61184
+            ],
+            "bindings": [
+              10
             ]
           }
         },
         "learnmode": {
-          "image": "/drivers/fingerbot/assets/learnmode.svg",
+          "image": "/drivers/fingerbot/assets/icon.svg",
           "instruction": {
-            "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+            "en": "Press the setup button inside the Finger Bot for approx 10 seconds to enter pairing mode."
           }
         }
-      },
-      "settings": [
-        {
-          "id": "fingerbot_mode",
-          "type": "dropdown",
-          "label": {
-            "en": "Operating Mode",
-            "fr": "Mode de Fonctionnement"
-          },
-          "value": "click",
-          "values": [
-            {
-              "id": "click",
-              "label": {
-                "en": "Click (push and release)",
-                "fr": "Clic (appuyer et relâcher)"
-              }
-            },
-            {
-              "id": "switch",
-              "label": {
-                "en": "Switch (toggle position)",
-                "fr": "Interrupteur (basculer position)"
-              }
-            },
-            {
-              "id": "program",
-              "label": {
-                "en": "Program (custom sequence)",
-                "fr": "Programme (séquence personnalisée)"
-              }
-            }
-          ]
-        },
-        {
-          "id": "lower_limit",
-          "type": "number",
-          "label": {
-            "en": "Down Movement Limit (%)",
-            "fr": "Limite de Mouvement Bas (%)"
-          },
-          "value": 100,
-          "min": 50,
-          "max": 100,
-          "units": "%",
-          "hint": {
-            "en": "How far down the finger moves (50-100%)",
-            "fr": "Distance de descente du doigt (50-100%)"
-          }
-        },
-        {
-          "id": "upper_limit",
-          "type": "number",
-          "label": {
-            "en": "Up Movement Limit (%)",
-            "fr": "Limite de Mouvement Haut (%)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 50,
-          "units": "%",
-          "hint": {
-            "en": "How far up the finger moves (0-50%)",
-            "fr": "Distance de montée du doigt (0-50%)"
-          }
-        },
-        {
-          "id": "sustain_time",
-          "type": "number",
-          "label": {
-            "en": "Sustain Time (seconds)",
-            "fr": "Temps de Maintien (secondes)"
-          },
-          "value": 0,
-          "min": 0,
-          "max": 10,
-          "units": "s",
-          "hint": {
-            "en": "How long to hold the button (0-10s)",
-            "fr": "Durée de maintien du bouton (0-10s)"
-          }
-        },
-        {
-          "id": "reverse_direction",
-          "type": "checkbox",
-          "label": {
-            "en": "Reverse Direction",
-            "fr": "Inverser la Direction"
-          },
-          "value": false,
-          "hint": {
-            "en": "Reverse the push direction",
-            "fr": "Inverser la direction de poussée"
-          }
-        }
-      ],
-      "images": {
-        "small": "drivers/fingerbot/assets/images/small.png",
-        "large": "drivers/fingerbot/assets/images/large.png",
-        "xlarge": "drivers/fingerbot/assets/images/xlarge.png"
-      },
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "zigbee"
-      ],
-      "id": "fingerbot"
+      }
     },
     {
       "name": {
@@ -69996,6 +69582,85 @@
       "id": "motion_sensor"
     },
     {
+      "id": "motion_sensor_2",
+      "name": {
+        "en": "Motion Sensor"
+      },
+      "class": "sensor",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilities": [
+        "measure_battery",
+        "measure_luminance",
+        "alarm_motion",
+        "alarm_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2450"
+        ]
+      },
+      "images": {
+        "large": "/drivers/motion_sensor_2/assets/images/large.png",
+        "small": "/drivers/motion_sensor_2/assets/images/small.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_3towulqd",
+          "_TZE200_bh3n6gk8",
+          "_TZE200_1ibpyhdc",
+          "_TZE200_ttcovulf"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              1024,
+              1280,
+              61184
+            ],
+            "bindings": [
+              1,
+              1024,
+              1280
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/motion_sensor_2/assets/icon.svg",
+          "instruction": {
+            "en": "Press the reset button for aprox 5 seconds until the LED blinks."
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "batteryThreshold",
+          "type": "number",
+          "label": {
+            "en": "Battery Low Alarm Voltage Threshold (%)"
+          },
+          "hint": {
+            "en": "This setting determines the threshold before a battery alarm is given."
+          },
+          "value": 20,
+          "attr": {
+            "step": 1,
+            "min": 10,
+            "max": 90
+          }
+        }
+      ]
+    },
+    {
       "name": {
         "en": "Presence Sensor (Radar)",
         "fr": "Capteur de Présence (Radar)",
@@ -72570,10 +72235,8 @@
           "_TZ321C_fkzihax8",
           "_TZ321C_fkzihaxe8",
           "_TZE200_2aaelwxk",
-          "_TZE200_3towulqd",
           "_TZE200_4pm4pekt",
           "_TZE200_7gclukjs",
-          "_TZE200_bh3n6gk8",
           "_TZE200_cq8lu23i",
           "_TZE200_crq3r3la",
           "_TZE200_f1pvdgoh",
@@ -75913,6 +75576,70 @@
       ],
       "capabilitiesOptions": {},
       "id": "siren"
+    },
+    {
+      "id": "sirentemphumidsensor",
+      "name": {
+        "en": "Siren, Temperature & Humidity Sensor"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_battery",
+        "alarm_siren"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "greyout": false
+        }
+      },
+      "energy": {
+        "batteries": [
+          "CR123A",
+          "CR123A"
+        ]
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "/drivers/sirentemphumidsensor/assets/images/small.png",
+        "large": "/drivers/sirentemphumidsensor/assets/images/large.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_TZE200_d0yu2xgi",
+          "_TYST11_d0yu2xgi"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              61184
+            ],
+            "bindings": [
+              10,
+              25,
+              61184
+            ]
+          }
+        },
+        "learnmode": {
+          "instruction": {
+            "en": "Press and hold the button inside the battery compartment for aprox 5 seconds until the siren beeps."
+          }
+        }
+      }
     },
     {
       "name": {
@@ -81827,6 +81554,26 @@
               6,
               61184
             ]
+          },
+          "2": {
+            "clusters": [
+              6
+            ]
+          },
+          "3": {
+            "clusters": [
+              6
+            ]
+          },
+          "4": {
+            "clusters": [
+              6
+            ]
+          },
+          "5": {
+            "clusters": [
+              6
+            ]
           }
         }
       },
@@ -82456,6 +82203,31 @@
               6,
               61184
             ]
+          },
+          "2": {
+            "clusters": [
+              6
+            ]
+          },
+          "3": {
+            "clusters": [
+              6
+            ]
+          },
+          "4": {
+            "clusters": [
+              6
+            ]
+          },
+          "5": {
+            "clusters": [
+              6
+            ]
+          },
+          "6": {
+            "clusters": [
+              6
+            ]
           }
         }
       },
@@ -83037,6 +82809,36 @@
               6,
               61184
             ]
+          },
+          "2": {
+            "clusters": [
+              6
+            ]
+          },
+          "3": {
+            "clusters": [
+              6
+            ]
+          },
+          "4": {
+            "clusters": [
+              6
+            ]
+          },
+          "5": {
+            "clusters": [
+              6
+            ]
+          },
+          "6": {
+            "clusters": [
+              6
+            ]
+          },
+          "7": {
+            "clusters": [
+              6
+            ]
           }
         }
       },
@@ -83442,6 +83244,41 @@
               5,
               6,
               61184
+            ]
+          },
+          "2": {
+            "clusters": [
+              6
+            ]
+          },
+          "3": {
+            "clusters": [
+              6
+            ]
+          },
+          "4": {
+            "clusters": [
+              6
+            ]
+          },
+          "5": {
+            "clusters": [
+              6
+            ]
+          },
+          "6": {
+            "clusters": [
+              6
+            ]
+          },
+          "7": {
+            "clusters": [
+              6
+            ]
+          },
+          "8": {
+            "clusters": [
+              6
             ]
           }
         }
@@ -84581,9 +84418,7 @@
           "tuyatec",
           "woox",
           "xiaomi",
-          "zemismart",
-          "_TZ3210_tgvtvdoc",
-          "_TZ3000_awvmkayh"
+          "zemismart"
         ],
         "productId": [
           "TS0001",
@@ -86723,9 +86558,8 @@
       ],
       "capabilities": [],
       "images": {
-        "large": "drivers/wall_remote_4_gang_2/assets/images/large.png",
-        "small": "drivers/wall_remote_4_gang_2/assets/images/small.png",
-        "xlarge": "drivers/wall_remote_4_gang_2/assets/images/xlarge.png"
+        "large": "/drivers/wall_remote_4_gang_2/assets/images/large.png",
+        "small": "/drivers/wall_remote_4_gang_2/assets/images/small.png"
       },
       "energy": {
         "batteries": [
@@ -86734,7 +86568,13 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_xabckq1v"
+          "_TZ3000_xabckq1v",
+          "_TZ3000_nuombroo",
+          "_TZ3000_czuyt8lz",
+          "_TZ3000_0ht8dnxj",
+          "_TZ3000_b3mgfu0d",
+          "_TZ3000_11pg3ima",
+          "_TZ3000_et7afzxz"
         ],
         "productId": [
           "TS004F"
@@ -86744,6 +86584,40 @@
             "clusters": [
               0,
               1,
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "2": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "3": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
+              6,
+              8
+            ]
+          },
+          "4": {
+            "clusters": [
+              6,
+              8
+            ],
+            "bindings": [
               6,
               8
             ]
@@ -86756,44 +86630,7 @@
           }
         }
       },
-      "settings": [
-        {
-          "id": "button_mode",
-          "type": "dropdown",
-          "label": {
-            "en": "Operating Mode",
-            "fr": "Mode de fonctionnement"
-          },
-          "hint": {
-            "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
-          },
-          "value": "auto",
-          "values": [
-            {
-              "id": "auto",
-              "label": {
-                "en": "Auto-Detect",
-                "fr": "Détection Auto"
-              }
-            },
-            {
-              "id": "scene",
-              "label": {
-                "en": "Scene Mode (Multi-press)",
-                "fr": "Mode Scène (Multi-clics)"
-              }
-            },
-            {
-              "id": "dimmer",
-              "label": {
-                "en": "Dimmer Mode",
-                "fr": "Mode Variateur"
-              }
-            }
-          ]
-        }
-      ]
+      "settings": []
     },
     {
       "id": "wall_remote_4_gang_3",
@@ -95084,6 +94921,39 @@
       "step": 0.5,
       "decimals": 1
     },
+    "finger_bot_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Fingerbot Mode",
+        "fr": "Mode Fingerbot"
+      },
+      "values": [
+        {
+          "id": "click",
+          "title": {
+            "en": "Click",
+            "fr": "Clic"
+          }
+        },
+        {
+          "id": "switch",
+          "title": {
+            "en": "Switch",
+            "fr": "Interrupteur"
+          }
+        },
+        {
+          "id": "program",
+          "title": {
+            "en": "Program",
+            "fr": "Programme"
+          }
+        }
+      ],
+      "getable": true,
+      "setable": true,
+      "uiComponent": "picker"
+    },
     "frost_protection_temperature": {
       "type": "number",
       "title": {
@@ -95244,6 +95114,44 @@
       "min": 0,
       "max": 100,
       "step": 1
+    },
+    "measure_temperature.probe": {
+      "type": "number",
+      "title": {
+        "en": "Probe Temperature",
+        "nl": "Sonde Temperatuur",
+        "da": "Sonde Temperatur",
+        "fr": "Température de Sonde",
+        "it": "Temperatura della Sonda",
+        "ko": "프로브 온도",
+        "no": "Sonde Temperatur",
+        "pl": "Temperatura Sondy",
+        "ru": "Температура Зонда",
+        "sv": "Sondtemperatur",
+        "es": "Temperatura de Sonda",
+        "de": "Sondentemperatur"
+      },
+      "units": {
+        "en": "°C",
+        "nl": "°C",
+        "da": "°C",
+        "fr": "°C",
+        "it": "°C",
+        "ko": "°C",
+        "no": "°C",
+        "pl": "°C",
+        "ru": "°C",
+        "sv": "°C",
+        "es": "°C",
+        "de": "°C"
+      },
+      "insights": true,
+      "chartType": "spline",
+      "decimals": 1,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/icons/temperature.svg"
     },
     "measure_voc": {
       "type": "number",
