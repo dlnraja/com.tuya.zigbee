@@ -15,7 +15,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is on
     try {
-      this.homey.flow.getDeviceConditionCard('hvac_dehumidifier_dehumidifier_hybrid_is_on')
+      this.homey.flow.getConditionCard('hvac_dehumidifier_dehumidifier_hybrid_is_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-03T15:17:20.802Z",
+  "timestamp": "2026-04-03T17:19:34.246Z",
   "conflicts": [
     {
       "pid": "TS0501B",
@@ -719,16 +719,29 @@
       "crossClass": true
     }
   ],
-  "uncoveredFPs": [],
+  "uncoveredFPs": [
+    {
+      "johanDriver": "temphumidsensor2",
+      "missingMfrs": [
+        "TUYATEC-qun7vq14"
+      ],
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ],
+      "class": "sensor",
+      "pidsCovered": true
+    }
+  ],
   "missingDrivers": [],
   "scaffolded": [],
   "errors": [],
   "summary": {
-    "ourDrivers": 191,
+    "ourDrivers": 193,
     "johanDrivers": 113,
     "pidConflicts": 59,
     "crossClassConflicts": 23,
-    "uncoveredFPGroups": 0,
+    "uncoveredFPGroups": 1,
     "missingDriverTypes": 0,
     "scaffolded": 0,
     "fpsAdded": 0,

@@ -32,7 +32,7 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
     // CONDITION: Smoke is/is not detected
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      const smokeDetectedCondition = this.homey.flow.getDeviceConditionCard('smoke_detector_advanced_smoke_detected');
+      const smokeDetectedCondition = this.homey.flow.getConditionCard('smoke_detector_advanced_smoke_detected');
       smokeDetectedCondition.registerRunListener(async (args) => {
         const device = args.device;
         if (!device) {
@@ -52,7 +52,7 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
     // CONDITION: Battery is/is not above threshold
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      const batteryAboveCondition = this.homey.flow.getDeviceConditionCard('smoke_detector_advanced_battery_above');
+      const batteryAboveCondition = this.homey.flow.getConditionCard('smoke_detector_advanced_battery_above');
       batteryAboveCondition.registerRunListener(async (args) => {
         const device = args.device;
         if (!device) {

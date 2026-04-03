@@ -15,7 +15,7 @@ class BulbTunableDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is on
     try {
-      this.homey.flow.getDeviceConditionCard('bulb_tunable_white_bulb_tunable_is_on')
+      this.homey.flow.getConditionCard('bulb_tunable_white_bulb_tunable_is_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;

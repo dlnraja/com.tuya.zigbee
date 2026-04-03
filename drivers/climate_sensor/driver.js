@@ -37,7 +37,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
       // ═══════════════════════════════════════════════════════════════
       // CONDITION CARDS - with device validation
       // ═══════════════════════════════════════════════════════════════
-      this.tempAboveCondition = this.homey.flow.getDeviceConditionCard('climate_sensor_temperature_above');
+      this.tempAboveCondition = this.homey.flow.getConditionCard('climate_sensor_temperature_above');
       this.tempAboveCondition?.registerRunListener(async (args) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');
@@ -47,7 +47,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
         return temp !== null && temp > args.temp;
       });
 
-      this.tempBelowCondition = this.homey.flow.getDeviceConditionCard('climate_sensor_temperature_below');
+      this.tempBelowCondition = this.homey.flow.getConditionCard('climate_sensor_temperature_below');
       this.tempBelowCondition?.registerRunListener(async (args) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');
@@ -57,7 +57,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
         return temp !== null && temp < args.temp;
       });
 
-      this.humidityAboveCondition = this.homey.flow.getDeviceConditionCard('climate_sensor_humidity_above');
+      this.humidityAboveCondition = this.homey.flow.getConditionCard('climate_sensor_humidity_above');
       this.humidityAboveCondition?.registerRunListener(async (args) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');
@@ -67,7 +67,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
         return humidity !== null && humidity > args.humidity;
       });
 
-      this.humidityBelowCondition = this.homey.flow.getDeviceConditionCard('climate_sensor_humidity_below');
+      this.humidityBelowCondition = this.homey.flow.getConditionCard('climate_sensor_humidity_below');
       this.humidityBelowCondition?.registerRunListener(async (args) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');

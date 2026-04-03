@@ -153,15 +153,24 @@ class EnergyMonitorPlugDevice extends HybridPlugBase {
 
   // v5.11.25: Override ZCL energy divisors for devices that report in actual units
   get zclEnergyDivisors() {
-    // v5.11.27: Use correct settings key (zb_manufacturer_name), fallback to getData()
     const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
-    // _TZ3210_* variants report activePower in Watts, rmsVoltage in Volts (not deci-)
-    // Fix #137: _TZ3210_w0qqde0g showed 23.5V instead of 235V (was using divisor 10)
     const directUnitMfrs = ['_TZ3210_xzhnra8x', '_TZ3210_w0qqde0g'];
-    if (directUnitMfrs.includes(mfr)) {
-      return { power: 1, voltage: 1, current: 1000 };
-    }
-    return super.zclEnergyDivisors;
+    const baseDivisors = directUnitMfrs.includes(mfr) 
+      ? { power: 1, voltage: 1, current: 1000 }
+      : super.zclEnergyDivisors;
+      
+    // v5.12.0: Allow user settings to override multipliers for ZCL devices
+    // User scale works by multiplying the base value.
+    // If a scale dropdown isn't set, it defaults to 1 (making no change to base divisor).
+    const powerScale = parseFloat(this.getSetting?.('power_scale')) || 1;
+    const voltageScale = parseFloat(this.getSetting?.('voltage_scale')) || 1;
+    const currentScale = parseFloat(this.getSetting?.('current_scale')) || 1;
+    
+    return {
+      power: baseDivisors.power / powerScale,
+      voltage: baseDivisors.voltage / voltageScale,
+      current: baseDivisors.current / currentScale
+    };
   }
 
   /**

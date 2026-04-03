@@ -34,7 +34,7 @@ class SoilSensorDriver extends ZigBeeDriver {
 
     const safeGetCondition = (id) => {
       try {
-        return this.homey.flow.getDeviceConditionCard(id);
+        return this.homey.flow.getConditionCard(id);
       } catch (e) {
         this.log(`[FLOW] Condition '${id}' not defined - skipping`);
         return null;

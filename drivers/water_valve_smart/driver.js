@@ -18,7 +18,7 @@ class WaterValveSmartDriver extends Homey.Driver {
     
     // CONDITION: Valve is open
     try {
-      this.homey.flow.getDeviceConditionCard('water_valve_smart_is_open')
+      this.homey.flow.getConditionCard('water_valve_smart_is_open')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -28,7 +28,7 @@ class WaterValveSmartDriver extends Homey.Driver {
 
     // CONDITION: Leak is detected (v5.8.10: Fixed ID to match driver.flow.compose.json)
     try {
-      this.homey.flow.getDeviceConditionCard('water_valve_smart_leak_is_detected')
+      this.homey.flow.getConditionCard('water_valve_smart_leak_is_detected')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_water') === true;
@@ -38,7 +38,7 @@ class WaterValveSmartDriver extends Homey.Driver {
 
     // CONDITION: Temperature above
     try {
-      this.homey.flow.getDeviceConditionCard('water_valve_smart_temperature_above')
+      this.homey.flow.getConditionCard('water_valve_smart_temperature_above')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const temp = args.device.getCapabilityValue('measure_temperature') || 0;
@@ -86,7 +86,7 @@ class WaterValveSmartDriver extends Homey.Driver {
 
     // CONDITION: Water is/is not detected
     try {
-      this.homey.flow.getDeviceConditionCard('water_valve_smart_water_detected')
+      this.homey.flow.getConditionCard('water_valve_smart_water_detected')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_water') === true;

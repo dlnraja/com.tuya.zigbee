@@ -15,7 +15,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is presence detected
     try {
-      this.homey.flow.getDeviceConditionCard('motion_sensor_radar_mmwave_is_presence_detected')
+      this.homey.flow.getConditionCard('motion_sensor_radar_mmwave_is_presence_detected')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_motion') === true;
@@ -25,7 +25,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
 
     // CONDITION: Illuminance above
     try {
-      this.homey.flow.getDeviceConditionCard('motion_sensor_radar_mmwave_illuminance_above')
+      this.homey.flow.getConditionCard('motion_sensor_radar_mmwave_illuminance_above')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const lux = args.device.getCapabilityValue('measure_luminance') || 0;
@@ -36,7 +36,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
 
     // CONDITION: Illuminance below
     try {
-      this.homey.flow.getDeviceConditionCard('motion_sensor_radar_mmwave_illuminance_below')
+      this.homey.flow.getConditionCard('motion_sensor_radar_mmwave_illuminance_below')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const lux = args.device.getCapabilityValue('measure_luminance') || 0;
@@ -47,7 +47,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
 
     // CONDITION: Temperature above
     try {
-      this.homey.flow.getDeviceConditionCard('motion_sensor_radar_mmwave_temperature_above')
+      this.homey.flow.getConditionCard('motion_sensor_radar_mmwave_temperature_above')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const temp = args.device.getCapabilityValue('measure_temperature') || 0;
@@ -58,7 +58,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
 
     // CONDITION: Target distance less than
     try {
-      this.homey.flow.getDeviceConditionCard('motion_sensor_radar_mmwave_target_distance_less_than')
+      this.homey.flow.getConditionCard('motion_sensor_radar_mmwave_target_distance_less_than')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const distance = args.device.getCapabilityValue('measure_luminance.distance') || 0;

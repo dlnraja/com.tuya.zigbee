@@ -9,7 +9,7 @@ class WaterValveGardenDriver extends Homey.Driver {
 
   _registerFlowCards() {
     try {
-      this.homey.flow.getDeviceConditionCard('water_valve_garden_is_open')
+      this.homey.flow.getConditionCard('water_valve_garden_is_open')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;

@@ -15,7 +15,7 @@ class PlugSmartDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Plug is/is not on
     try {
-      this.homey.flow.getDeviceConditionCard('plug_smart_is_on')
+      this.homey.flow.getConditionCard('plug_smart_is_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
