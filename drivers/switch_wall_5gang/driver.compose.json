@@ -48,16 +48,24 @@
         ]
       },
       "2": {
-        "clusters": [6]
+        "clusters": [
+          6
+        ]
       },
       "3": {
-        "clusters": [6]
+        "clusters": [
+          6
+        ]
       },
       "4": {
-        "clusters": [6]
+        "clusters": [
+          6
+        ]
       },
       "5": {
-        "clusters": [6]
+        "clusters": [
+          6
+        ]
       }
     }
   },
@@ -584,5 +592,15 @@
         "fr": "Gang 5"
       }
     }
-  }
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
 }

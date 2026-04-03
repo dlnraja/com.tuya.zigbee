@@ -1,59 +1,97 @@
 {
-    "id": "wall_remote_4_gang_2",
-    "name": {
-      "en": "4 Gang Wall Remote"
-    },
-    "class": "remote",
-    "platforms": ["local"],
-    "connectivity": ["zigbee"],
-    "capabilities": [
+  "id": "wall_remote_4_gang_2",
+  "name": {
+    "en": "4 Gang Wall Remote"
+  },
+  "class": "remote",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [],
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
+  },
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_xabckq1v",
+      "_TZ3000_nuombroo",
+      "_TZ3000_czuyt8lz",
+      "_TZ3000_0ht8dnxj",
+      "_TZ3000_b3mgfu0d",
+      "_TZ3000_11pg3ima",
+      "_TZ3000_et7afzxz"
     ],
-    "images": {
-      "large": "{{driverAssetsPath}}/images/large.png",
-      "small": "{{driverAssetsPath}}/images/small.png"
-    },
-    "energy": {
-      "batteries": [
-        "CR2032"
-      ]
-    },
-    "zigbee": {
-      "manufacturerName": [
-        "_TZ3000_xabckq1v",
-        "_TZ3000_nuombroo",
-        "_TZ3000_czuyt8lz",
-        "_TZ3000_0ht8dnxj",
-        "_TZ3000_b3mgfu0d",
-        "_TZ3000_11pg3ima",
-        "_TZ3000_et7afzxz"
-      ],
-      "productId": [
-        "TS004F"
-      ],
-      "endpoints": {
-        "1": {
-          "clusters": [0, 1, 6, 8],
-          "bindings": [6, 8]
-        },
-        "2": {
-          "clusters": [6, 8],
-          "bindings": [6, 8]
-        },
-        "3": {
-          "clusters": [6, 8],
-          "bindings": [6, 8]
-        },
-        "4": {
-          "clusters": [6, 8],
-          "bindings": [6, 8]
-        }
+    "productId": [
+      "TS004F"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          6,
+          8
+        ],
+        "bindings": [
+          6,
+          8
+        ]
       },
-      "learnmode": {
-        "image": "{{driverAssetsPath}}/icon.svg",
-        "instruction": {
-          "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
-        }
+      "2": {
+        "clusters": [
+          6,
+          8
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      },
+      "3": {
+        "clusters": [
+          6,
+          8
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      },
+      "4": {
+        "clusters": [
+          6,
+          8
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
+      "instruction": {
+        "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
       }
     }
-
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
 }

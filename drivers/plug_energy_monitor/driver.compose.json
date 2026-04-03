@@ -462,9 +462,27 @@
       },
       "value": "1",
       "values": [
-        { "id": "0.1", "label": { "en": "÷10", "fr": "÷10" } },
-        { "id": "1", "label": { "en": "×1 (Default)", "fr": "×1 (Par défaut)" } },
-        { "id": "10", "label": { "en": "×10", "fr": "×10" } }
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (Par défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
       ],
       "hint": {
         "en": "Adjust if power readings are way off.",
@@ -480,9 +498,27 @@
       },
       "value": "1",
       "values": [
-        { "id": "0.1", "label": { "en": "÷10", "fr": "÷10" } },
-        { "id": "1", "label": { "en": "×1 (Default)", "fr": "×1 (Par défaut)" } },
-        { "id": "10", "label": { "en": "×10", "fr": "×10" } }
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (Par défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
       ],
       "hint": {
         "en": "Adjust if voltage readings are way off.",
@@ -498,9 +534,27 @@
       },
       "value": "1",
       "values": [
-        { "id": "0.1", "label": { "en": "÷10", "fr": "÷10" } },
-        { "id": "1", "label": { "en": "×1 (Default)", "fr": "×1 (Par défaut)" } },
-        { "id": "10", "label": { "en": "×10", "fr": "×10" } }
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (Par défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
       ],
       "hint": {
         "en": "Adjust if current readings are way off.",
@@ -516,9 +570,27 @@
       },
       "value": "1",
       "values": [
-        { "id": "0.1", "label": { "en": "÷10", "fr": "÷10" } },
-        { "id": "1", "label": { "en": "×1 (Default)", "fr": "×1 (Par défaut)" } },
-        { "id": "10", "label": { "en": "×10", "fr": "×10" } }
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (Par défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
       ],
       "hint": {
         "en": "Adjust if total energy (kWh) readings are way off.",
@@ -616,5 +688,15 @@
       "template": "add_devices"
     }
   ],
-  "capabilitiesOptions": {}
+  "capabilitiesOptions": {},
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
 }
