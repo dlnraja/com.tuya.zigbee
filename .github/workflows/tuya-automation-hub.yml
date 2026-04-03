@@ -78,11 +78,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .github/state/
-          FILES=$(git diff --cached --name-only | wc -l)
+          git add .github/state/ drivers/ lib/ app.json .homeycompose/ || true
+          CODE_FILES=$(git diff --cached --name-only | grep -E '^drivers/|^lib/|^app\.json|^\.homeycompose/' | wc -l || echo 0)
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
-          if ! git diff --cached --quiet; then
-            git commit -m "v${VER}: processed issues/PRs, ${FILES} file(s) [skip ci]"
+          if [ "$CODE_FILES" -gt 0 ]; then
+            git commit -m "v${VER}: processed issues/PRs, ${CODE_FILES} file(s) [skip ci]"
             for i in 1 2 3 4 5; do
               git pull --rebase origin master || git rebase --abort
               if git push; then break; fi
@@ -168,12 +168,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .github/state/
-          FILES=$(git diff --cached --name-only | wc -l)
+          git add .github/state/ drivers/ lib/ app.json .homeycompose/ || true
+          CODE_FILES=$(git diff --cached --name-only | grep -E '^drivers/|^lib/|^app\.json|^\.homeycompose/' | wc -l || echo 0)
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
-          if ! git diff --cached --quiet; then
-            git commit -m "Enrichment v${VER}: ${F} FPs cross-referenced Z2M/ZHA/forum, ${FILES} file(s) [skip ci]"
+          if [ "$CODE_FILES" -gt 0 ]; then
+            git commit -m "Enrichment v${VER}: ${F} FPs cross-referenced Z2M/ZHA/forum, ${CODE_FILES} file(s) [skip ci]"
             for i in 1 2 3 4 5; do
               git pull --rebase origin master || git rebase --abort
               if git push; then break; fi
