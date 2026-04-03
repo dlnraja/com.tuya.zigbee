@@ -119,7 +119,7 @@ async function getBookmarks(auth){
 // 7. Search for project references/citations
 async function searchProjectReferences(auth){
   console.log('== Project References ==');
-  const terms=['dlnraja','universal tuya zigbee','com.dlnraja.tuya.zigbee','tuya zigbee device app test'];
+  const terms=['dlnraja','universal tuya zigbee','com.dlnraja.tuya.zigbee','tuya zigbee device app test', 'tuya wifi', 'zigbee tuya'];
   const refs=[];const seenTopics=new Set();
   for(const q of terms){
     const d=await forumGet('/search.json?q='+encodeURIComponent(q),auth);

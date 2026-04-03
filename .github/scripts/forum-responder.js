@@ -358,12 +358,12 @@ async function main(){
             const humanizePrompt = `Rewrite the following forum response to sound entirely human, natural, and empathetic, written by the maintainer 'dlnraja' responding directly to users.
 CRITICAL INSTRUCTIONS:
 1. Address the users' context and issues naturally.
-2. DO NOT mention background YAML automations, GitHub Actions, invisible JSON rule fixes, or AI/bot systems. Keep technical fixes focused ONLY on what the user actually cares about (e.g. "I added your fingerprint to the switch driver" or "I fixed the battery reading").
-3. Keep it relatively concise but friendly.
-4. If there are multiple users addressed, keep the structure clear but conversational.
-5. Use markdown for device names or codes.
+2. DO NOT mention background YAML automations, GitHub Actions, invisible JSON rule fixes, or AI/bot systems.
+3. Keep technical fixes focused ONLY on what the user actually cares about (e.g. "I added your fingerprint to the switch driver" or "I fixed the battery reading").
+4. Mention casually that you processed their specific requests by doing deep cross-referencing of databases (Z2M, diagnostics, logs, email reports, external DBs) and deep analysis, showing them you take their specific post highly seriously and manually review their cases.
+5. Keep it relatively concise but friendly.
 6. Return ONLY the rewritten text, nothing else.
-7. Output in English (or the language of the users).`;
+7. Output in French or English depending on the user's language.`;
             
             try {
                 const hRes = await callAI(contentToHumanize, humanizePrompt, { maxTokens: 2000, complexity: 'high' });
