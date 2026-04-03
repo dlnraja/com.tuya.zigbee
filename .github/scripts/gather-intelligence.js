@@ -137,6 +137,22 @@ function gatherAll(){
   const eco=rj("ecosystem-scan-report.json");
   if(eco){ctx.ecosystem={repos:Object.keys(eco.repos||{}).length,fps:(eco.allFPs||[]).slice(0,15),unsup:(eco.crossRef||[]).filter(x=>!x.supported).map(x=>x.fp).slice(0,10)}}
 
+  // 18. Project Rules (.windsurfrules) and Core Discoveries
+  try {
+    const rules = fs.readFileSync(path.join(__dirname, '..', '..', '.windsurfrules'), 'utf8');
+    // Extract key sections (first 1000 chars to avoid overloading context limit)
+    ctx.projectRules = rules.substring(0, 1000) + '...';
+  } catch (e) {
+    ctx.projectRules = 'Project rules not found.';
+  }
+
+  // 19. Recent Discoveries (Session Insights)
+  ctx.discoveries = `
+  1. Multi-Gang Routing (Homey v3): Base classes like HybridSwitchBase MANUALLY route endpoints (this.zclNode.endpoints[gang]). The missing { endpoint: X } mapped capability initialization is NOT a bug and won't crash Homey because the underlying ZCL commands are explicitly addressed.
+  2. Energy Calibration: Users have direct control via UI using 'power_scale', 'voltage_scale', 'current_scale', and 'meter_power_scale' (kWh) inside plug_energy_monitor and plug_smart. Always advise them to fine-tune these multipliers if values are /10 or /100 off, since firmwares drastically differ across variants.
+  3. SDK Migration: getDeviceConditionCard() is DEPRECATED in SDK v3, replaced entirely by getConditionCard() to fix 'not a function' crashes.
+  `;
+
   return ctx;
 }
 
@@ -214,6 +230,16 @@ function formatForAI(ctx){
     if(ctx.ecosystem.fps&&ctx.ecosystem.fps.length)s+="FPs: "+ctx.ecosystem.fps.slice(0,8).map(f=>"`"+f+"`").join(", ")+"\n";
     if(ctx.ecosystem.unsup&&ctx.ecosystem.unsup.length)s+="Unsupported: "+ctx.ecosystem.unsup.slice(0,6).map(f=>"`"+f+"`").join(", ")+"\n";
     s+="\n";
+  }
+
+  if(ctx.projectRules){
+    s+="### Project Architectural Rules (Snippet)\n";
+    s+=ctx.projectRules + "\n\n";
+  }
+
+  if(ctx.discoveries){
+    s+="### AI Hardcoded Discoveries & Fixes\n";
+    s+=ctx.discoveries + "\n\n";
   }
 
   return s;
