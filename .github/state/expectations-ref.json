@@ -313,7 +313,7 @@
     {
       "id": "pairing",
       "pattern": "Pairing Failure",
-      "count": 12,
+      "count": 9,
       "priority": "high"
     },
     {
@@ -366,8 +366,8 @@
     }
   ],
   "interviews": {
-    "total": 169,
-    "fps": 130
+    "total": 170,
+    "fps": 131
   },
   "invertedMfrs": [
     "_TZ3000_26fmupbb",

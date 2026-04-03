@@ -1,183 +1,197 @@
 # Diagnostics Cross-Reference (auto-generated)
-# Generated: 2026-04-03T06:27:19.788Z
-# Emails processed: 40
+# Generated: 2026-04-03T15:15:14.409Z
+# Emails processed: 47
 
 fingerprints:
-  _TZ3000_tsgqxdb4:
+  _TZ321C_fkzihaxe8:
+    priority: NaN
+    supported: true
+    protocol: hybrid
+    drivers: [presence_sensor_radar]
+    requires: [DP_listeners, magic_packet, IAS_enrollment]
+    mentions: 3
+    source_types: [github]
+    reporters: [github-actions[bot]]
+    sources:
+      - type: github
+        date: 2026-03-05T18:59:48.000Z
+      - type: github
+        date: 2026-03-05T22:39:08.000Z
+      - type: github
+        date: 2026-03-06T00:23:29.000Z
+  TS0225:
     priority: NaN
     supported: true
     protocol: unknown
-    drivers: [climate_sensor]
+    drivers: [gas_sensor, motion_sensor, presence_sensor_radar, universal_fallback]
     mentions: 2
     source_types: [github]
-    reporters: [Snacker80, github-actions[bot]]
+    reporters: [github-actions[bot]]
     sources:
       - type: github
-        date: 2026-04-02T08:17:17.000Z
+        date: 2026-03-05T22:39:08.000Z
       - type: github
-        date: 2026-04-02T08:17:30.000Z
+        date: 2026-03-06T00:23:29.000Z
+  _TZ3210_w0qqde0g:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    drivers: [plug_energy_monitor]
+    mentions: 1
+    source_types: [github]
+    reporters: [Lalla80111]
+    sources:
+      - type: github
+        date: 2026-03-06T09:05:08.000Z
+  TS011F:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    drivers: [plug_energy_monitor, plug_smart, switch_1gang, switch_2gang, universal_fallback]
+    mentions: 1
+    source_types: [github]
+    reporters: [Lalla80111]
+    sources:
+      - type: github
+        date: 2026-03-06T09:05:08.000Z
+  _TZ3210_jic09i9a:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    drivers: [ir_blaster]
+    mentions: 1
+    source_types: [device_issue]
+    reporters: [F.V.]
+    sources:
+      - type: device_issue
+        date: 2026-03-06T18:23:45.000Z
+  _TZ3210_ogx8u9it:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    drivers: [ir_blaster]
+    mentions: 1
+    source_types: [device_issue]
+    reporters: [F.V.]
+    sources:
+      - type: device_issue
+        date: 2026-03-06T18:23:45.000Z
+  TS1201:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    drivers: [climate_sensor, ir_blaster, ir_remote]
+    mentions: 1
+    source_types: [device_issue]
+    reporters: [F.V.]
+    sources:
+      - type: device_issue
+        date: 2026-03-06T18:23:45.000Z
   TS0201:
     priority: NaN
     supported: true
     protocol: unknown
     drivers: [climate_sensor, lcdtemphumidsensor, temphumidsensor, universal_fallback]
-    mentions: 3
-    source_types: [github, diagnostic]
-    reporters: [Snacker80, github-actions[bot]]
-    sources:
-      - type: github
-        date: 2026-04-02T08:17:17.000Z
-      - type: github
-        date: 2026-04-02T08:17:30.000Z
-      - type: diagnostic
-        date: 2026-04-02T09:49:58.000Z
-  TS0601:
-    priority: NaN
-    supported: true
-    protocol: unknown
-    drivers: [air_purifier, air_quality_co2, air_quality_comprehensive, button_emergency_sos, button_wireless_6, ceiling_fan, climate_sensor, co_sensor, contact_sensor, curtain_motor, curtain_motor_tilt, dimmer_3gang, dimmer_dual_channel, dimmer_wall_1gang, din_rail_meter, din_rail_switch, door_controller, doorbell, energy_meter_3phase, fan_controller, fingerprint_lock, floor_heating_thermostat, formaldehyde_sensor, garage_door, garage_door_opener, gas_detector, gas_sensor, generic_tuya, humidifier, hvac_air_conditioner, hvac_controller, hvac_dehumidifier, ir_blaster, lcdtemphumidsensor, light_sensor_outdoor, lock_smart, motion_sensor, motion_sensor_radar_mmwave, pet_feeder, pet_feeder_zigbee, plug_energy_monitor, plug_smart, pool_pump, power_clamp_meter, power_meter, presence_sensor_ceiling, presence_sensor_radar, radiator_controller, radiator_valve, radiator_valve_zigbee, rain_sensor, scene_switch_4, shutter_roller_controller, siren, smart_breaker, smart_heater, smart_heater_controller, smart_lcd_thermostat, smart_rcbo, smart_scene_panel, smoke_detector_advanced, soil_sensor, switch_1gang, switch_2gang, switch_3gang, switch_4gang, switch_dimmer_1gang, switch_wall_5gang, switch_wall_6gang, switch_wall_8gang, thermostat_4ch, thermostat_tuya_dp, universal_fallback, usb_outlet_advanced, valve_irrigation, valve_single, vibration_sensor, water_leak_sensor, water_tank_monitor, water_valve_smart, weather_station_outdoor]
-    mentions: 4
+    mentions: 1
     source_types: [github]
-    reporters: [Snacker80, github-actions[bot], pemikalsen-sudo]
+    reporters: [Snacker80]
     sources:
       - type: github
-        date: 2026-04-02T08:17:17.000Z
-      - type: github
-        date: 2026-04-02T08:17:30.000Z
-      - type: github
-        date: 2026-04-02T10:15:48.000Z
-      - type: github
-        date: 2026-04-02T10:25:53.000Z
-  _TZE284_8se38w3c:
-    priority: NaN
-    supported: true
-    protocol: tuya_dp
-    drivers: [climate_sensor]
-    requires: [TuyaEF00Manager, dpMappings]
-    mentions: 3
-    source_types: [diagnostic, github]
-    reporters: [pemikalsen-sudo]
-    sources:
-      - type: diagnostic
-        date: 2026-04-02T09:49:58.000Z
-      - type: github
-        date: 2026-04-02T10:15:48.000Z
-      - type: github
-        date: 2026-04-02T10:25:53.000Z
+        date: 2026-04-03T11:17:46.000Z
 
 users:
   github-actions[bot]:
-    activity_score: 18
-    emails: 7
-    fingerprints: [_TZ3000_tsgqxdb4]
+    activity_score: 28
+    emails: 12
+    fingerprints: [_TZ321C_fkzihaxe8]
     types: [github]
-    latest: 2026-04-02T10:21:17.000Z
-  pemikalsen-sudo:
-    activity_score: 12
-    emails: 4
-    fingerprints: [_TZE284_8se38w3c]
+    latest: 2026-03-06T18:47:57.000Z
+  F.V.:
+    activity_score: 9
+    emails: 1
+    fingerprints: [_TZ3210_jic09i9a, _TZ3210_ogx8u9it]
+    types: [device_issue]
+    latest: 2026-03-06T18:23:45.000Z
+  Lalla80111:
+    activity_score: 6
+    emails: 1
+    fingerprints: [_TZ3210_w0qqde0g]
     types: [github]
-    latest: 2026-04-02T11:14:04.000Z
-  Snacker80:
-    activity_score: 10
-    emails: 3
-    fingerprints: [_TZ3000_tsgqxdb4]
-    types: [github]
-    latest: 2026-04-02T08:18:22.000Z
-  T.L.:
-    activity_score: 5
-    emails: 2
-    types: [changelog]
-    latest: 2026-04-02T21:03:29.000Z
-  R.K.:
+    latest: 2026-03-06T09:05:08.000Z
+  L.K.:
     activity_score: 5
     emails: 2
     types: [device_issue]
-    latest: 2026-04-03T04:34:20.000Z
-  T.G.:
-    activity_score: 5
+    latest: 2026-04-03T11:45:20.000Z
+  NoroddH:
+    activity_score: 3
     emails: 1
-    types: [interview]
-    has_errors: true
-    latest: 2026-04-02T14:00:23.000Z
-  Spi...:
-    activity_score: 5
+    types: [github]
+    latest: 2026-03-05T12:26:01.000Z
+  P.L.:
+    activity_score: 3
     emails: 1
-    types: [bug_report]
-    has_errors: true
-    latest: 2026-04-02T15:04:55.000Z
-  Rev...:
-    activity_score: 5
+    types: [general]
+    latest: 2026-03-05T14:27:59.000Z
+  GitHub:
+    activity_score: 3
     emails: 1
-    types: [bug_report]
-    has_errors: true
-    latest: 2026-04-02T16:47:51.000Z
+    types: [general]
+    latest: 2026-03-05T18:00:25.000Z
+  M.P.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-03-05T18:03:50.000Z
+  Homey:
+    activity_score: 3
+    emails: 1
+    types: [changelog]
+    latest: 2026-03-06T11:14:47.000Z
+  O.V.:
+    activity_score: 3
+    emails: 1
+    types: [device_issue]
+    latest: 2026-03-06T17:53:19.000Z
+  C.M.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-03-07T03:03:32.000Z
+  eeckelaertyannick:
+    activity_score: 3
+    emails: 1
+    types: [github]
+    latest: 2026-03-07T17:37:50.000Z
+  MF-ITuser:
+    activity_score: 3
+    emails: 1
+    types: [github]
+    latest: 2026-03-07T18:14:49.000Z
   L.R.:
     activity_score: 3
     emails: 1
     types: [general]
-    latest: 2026-03-04T12:05:58.000Z
-  R.U.:
+    latest: 2026-03-07T18:30:42.000Z
+  T.L.:
     activity_score: 3
     emails: 1
     types: [general]
-    latest: 2026-03-04T15:07:20.000Z
-  F.L.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-03-04T15:33:16.000Z
-  N.D.:
-    activity_score: 3
-    emails: 1
-    types: [changelog]
-    latest: 2026-03-04T17:04:24.000Z
-  I.L.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-03-04T17:56:10.000Z
-  U.L.:
-    activity_score: 3
-    emails: 1
-    types: [diagnostic]
-    latest: 2026-04-02T09:01:40.000Z
-  L.K.:
-    activity_score: 3
-    emails: 1
-    types: [device_issue]
-    latest: 2026-04-02T09:52:51.000Z
-  vbesteiro:
+    latest: 2026-04-03T10:45:32.000Z
+  Snacker80:
     activity_score: 3
     emails: 1
     types: [github]
-    latest: 2026-04-02T10:21:04.000Z
-  H.B.:
-    activity_score: 3
-    emails: 1
-    types: [device_issue]
-    latest: 2026-04-02T13:14:10.000Z
-  S.L.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-04-02T15:42:56.000Z
-  Sve...:
-    activity_score: 3
-    emails: 1
-    types: [device_issue]
-    latest: 2026-04-02T22:41:22.000Z
+    latest: 2026-04-03T11:17:46.000Z
 
 error_patterns:
   - count: 1
-    error: "=redirect,quality=80/uploads/asset/file/a[REDACTED_PHONE]f-487b-9c63-dac45a3565e"
+    error: "this.homey.flow.getDeviceConditionCard is not a function"
   - count: 1
-    error: "RX malformed alert >>]( https://mail.spiceworks.com/c/AQiv0hQQ9L83GNfC9EAg7t7lDS"
+    error: "Initializing Driver air_quality_comprehensive: TypeError: this.homey.flow.getDev"
   - count: 1
-    error: "be Null issue >>]( https://mail.spiceworks.com/c/AQiv0hQQ9L8"
-  - count: 1
-    error: "isme, et sur le transfert de fonds (informations concernant le payeur). SiÃ¨ge s"
+    error: "Initializing Driver din_rail_meter: TypeError: this.homey.flow.getDeviceConditio"
 
 protocol_distribution:
-  unknown: 3
-  tuya_dp: 1
+  hybrid: 1
+  unknown: 7

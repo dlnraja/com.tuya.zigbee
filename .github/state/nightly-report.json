@@ -1,11 +1,25 @@
 {
-  "timestamp": "2026-04-03T05:59:50.378Z",
+  "timestamp": "2026-04-03T15:04:43.729Z",
   "appVersion": "5.11.154",
   "forum": 0,
-  "github": 0,
-  "diagnostics": 50,
+  "github": 1,
+  "diagnostics": 42,
   "diagNewFPs": 0,
   "diagCritical": 0,
   "forumDetails": [],
-  "githubDetails": []
+  "githubDetails": [
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1361,
+      "user": "gangstigen-glitch",
+      "fps": [
+        "_TZ3000_xwh1e22x",
+        "example",
+        "vision"
+      ],
+      "title": "Device Request - [Zigbee 3.9 remote] - [MiBoxer] / [FUT089Z]",
+      "response": "### Device Request - MiBoxer FUT089Z\n\nThank you for providing the detailed device interview data for the MiBoxer FUT089Z Zigbee remote controller. Based on the information provided, here’s a comprehensive analysis:\n\n#### Fingerprint Support\nThe device has a model ID of `TS1002` and is manufactured b",
+      "model": "gh-gpt-4o-mini"
+    }
+  ]
 }
