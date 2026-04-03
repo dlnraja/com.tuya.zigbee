@@ -62,10 +62,14 @@ jobs:
       - name: Run GitHub Scanner
         continue-on-error: true
         env:
-          GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
           DRY_RUN: ${{ inputs.dry_run || 'true' }}
           GEMINI_MAX_TIER: "1"
         run: node .github/scripts/github-scanner.js
@@ -77,9 +81,16 @@ jobs:
           git add .github/state/
           FILES=$(git diff --cached --name-only | wc -l)
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
-          git diff --cached --quiet || git commit -m "v${VER}: processed issues/PRs, ${FILES} file(s) [skip ci]"
-          git pull --rebase origin master || true
-          git push || true
+          if ! git diff --cached --quiet; then
+            git commit -m "v${VER}: processed issues/PRs, ${FILES} file(s) [skip ci]"
+            for i in 1 2 3 4 5; do
+              git pull --rebase origin master || git rebase --abort
+              if git push; then break; fi
+              sleep $((RANDOM % 10 + 5))
+            done
+          else
+            echo "No changes to commit for GitHub Scanner."
+          fi
 
   enrichment-scanner:
     name: Enrichment Scanner
@@ -99,10 +110,14 @@ jobs:
       - name: Run Enrichment Scanner
         continue-on-error: true
         env:
-          GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
           GEMINI_MAX_TIER: "1"
         run: node .github/scripts/enrichment-scanner.js
       - name: Scan Public APIs (davemachado/public-api)
@@ -113,6 +128,11 @@ jobs:
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
           GEMINI_MAX_TIER: "1"
         run: node .github/scripts/manufacturer-scraper.js
       - name: Run Tuya WiFi Local Automation Deep Researcher
@@ -122,6 +142,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
           GEMINI_MAX_TIER: "1"
         run: node .github/scripts/tuya-wifi-local-researcher.js
       - name: Run Diagnostic Auto Resolver & Crash Fixer
@@ -147,9 +172,16 @@ jobs:
           FILES=$(git diff --cached --name-only | wc -l)
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
-          git diff --cached --quiet || git commit -m "Enrichment v${VER}: ${F} FPs cross-referenced Z2M/ZHA/forum, ${FILES} file(s) [skip ci]"
-          git pull --rebase origin master || true
-          git push || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Enrichment v${VER}: ${F} FPs cross-referenced Z2M/ZHA/forum, ${FILES} file(s) [skip ci]"
+            for i in 1 2 3 4 5; do
+              git pull --rebase origin master || git rebase --abort
+              if git push; then break; fi
+              sleep $((RANDOM % 10 + 5))
+            done
+          else
+            echo "No changes to commit for Enrichment Scanner."
+          fi
 
   forum-update:
     name: Forum Status Update
