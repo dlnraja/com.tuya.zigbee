@@ -30,6 +30,26 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
+## 🚀 Latest Updates
+
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### ✨ Recent Changes (Apr 2026)
+
+| Version | Feature |
+|---------|---------|
+| **v5.11.178** | Universal Tuya Zigbee app v5.11.178: Fixed generator script crash, added expl... |
+| **v5.11.166** | Universal Tuya Zigbee app v5.11.166 adds new capabilities and fixes issues fo... |
+| **v5.11.165** | Universal Tuya Zigbee app v5.11.165 adds new device capabilities and fixes is... |
+| **v5.11.164** | Universal Tuya Zigbee app v5.11.164 adds new capabilities and fixes issues fo... |
+| **v5.11.163** | Universal Tuya Zigbee app v5.11.163 adds new features for Tuya WiFi pairing a... |
+| **v5.11.162** | Universal Tuya Zigbee app v5.11.162 adds new device capabilities and fixes bu... |
+| **v5.11.161** | Universal Tuya Zigbee app v5.11.161 adds new device capabilities and fixes cr... |
+| **v5.11.160** | Universal Tuya Zigbee app v5.11.160 adds new device capabilities and fixes cr... |
+| **v5.11.159** | Universal Tuya Zigbee app v5.11.159 adds new device support and fixes UI issu... |
+| **v5.11.158** | Universal Tuya Zigbee app v5.11.158 adds new driver support and fixes energy ... |
+<!-- CHANGELOG_END -->
+
+
 ## Statistics
 
 | Metric | Value |
