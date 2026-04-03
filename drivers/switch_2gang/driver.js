@@ -33,7 +33,8 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           .registerRunListener(async (args) => {
             if (!args.device) return false;
             const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
-            await args.device.triggerCapabilityListener(cap, true);
+            await args.device._setGangOnOff(idx + 1, true).catch(() => {});
+            await args.device.setCapabilityValue(cap, true).catch(() => {});
             return true;
           });
         this.log(`[FLOW] ✅ switch_2gang_turn_on_${gang}`);
@@ -44,7 +45,8 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           .registerRunListener(async (args) => {
             if (!args.device) return false;
             const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
-            await args.device.triggerCapabilityListener(cap, false);
+            await args.device._setGangOnOff(idx + 1, false).catch(() => {});
+            await args.device.setCapabilityValue(cap, false).catch(() => {});
             return true;
           });
         this.log(`[FLOW] ✅ switch_2gang_turn_off_${gang}`);
@@ -69,7 +71,8 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('switch_2gang_turn_on_all')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('onoff', true);
+          await args.device._setGangOnOff(1, true).catch(() => {});
+          await args.device.setCapabilityValue('onoff', true).catch(() => {});
           if (args.device.hasCapability('onoff.gang2')) {
             await args.device.triggerCapabilityListener('onoff.gang2', true);
           }
@@ -82,7 +85,8 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('switch_2gang_turn_off_all')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('onoff', false);
+          await args.device._setGangOnOff(1, false).catch(() => {});
+          await args.device.setCapabilityValue('onoff', false).catch(() => {});
           if (args.device.hasCapability('onoff.gang2')) {
             await args.device.triggerCapabilityListener('onoff.gang2', false);
           }

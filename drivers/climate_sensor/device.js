@@ -95,7 +95,7 @@ class ClimateSensorDevice extends HybridSensorBase {
 
   /** Capabilities for climate sensors */
   get sensorCapabilities() {
-    return ['measure_temperature', 'measure_humidity', 'measure_battery'];
+    return ['measure_temperature', 'measure_temperature.probe', 'measure_humidity', 'measure_battery'];
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -184,7 +184,13 @@ class ClimateSensorDevice extends HybridSensorBase {
       1: { capability: 'measure_temperature', divisor: 10 },    // Standard: all _TZE* devices
       6: { capability: 'measure_temperature', divisor: 10 },    // Alt: some _TZE204 models
       18: { capability: 'measure_temperature', divisor: 10 },   // Alt: ZG227C and some LCD models
-      38: { capability: 'measure_temperature.probe', divisor: 10 }, // v5.13.0: External probe temperature (Issue #184)
+      38: {
+        capability: 'measure_temperature.probe', divisor: 10,
+        // v5.13.0: External probe temperature (Issue #184 - _TZE284_8se38w3c)
+        // DP38 = probe temperature for sensors with external NTC/waterproof probe
+        // Dynamically add capability if not present yet
+        dynamicAdd: true
+      },
 
       // ═══════════════════════════════════════════════════════════════════
       // HUMIDITY DPs (multiple variants)

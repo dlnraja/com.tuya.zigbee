@@ -39,7 +39,8 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('dimmer_dual_channel_turn_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('onoff', true);
+          await args.device._setGangOnOff(1, true).catch(() => {});
+          await args.device.setCapabilityValue('onoff', true).catch(() => {});
           return true;
         });
       this.log('[FLOW] ✅ dimmer_dual_channel_turn_on');
@@ -50,7 +51,8 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('dimmer_dual_channel_turn_off')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('onoff', false);
+          await args.device._setGangOnOff(1, false).catch(() => {});
+          await args.device.setCapabilityValue('onoff', false).catch(() => {});
           return true;
         });
       this.log('[FLOW] ✅ dimmer_dual_channel_turn_off');
@@ -62,7 +64,8 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
-          await args.device.triggerCapabilityListener('onoff', !current);
+          await args.device._setGangOnOff(1, !current).catch(() => {});
+          await args.device.setCapabilityValue('onoff', !current).catch(() => {});
           return true;
         });
       this.log('[FLOW] ✅ dimmer_dual_channel_toggle');

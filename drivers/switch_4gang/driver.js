@@ -86,12 +86,14 @@ class Switch4GangDriver extends ZigBeeDriver {
       // Register flow card actions - v5.5.562: using safe wrapper
       this.gang1OnAction = this.homey.flow.getActionCard('switch_4gang_turn_on_gang1');
       this.gang1OnAction.registerRunListener(this._safeAction(async (args) => {
-        await args.device.triggerCapabilityListener('onoff', true);
+        await args.device._setGangOnOff(1, true).catch(() => {});
+          await args.device.setCapabilityValue('onoff', true).catch(() => {});
       }));
 
       this.gang1OffAction = this.homey.flow.getActionCard('switch_4gang_turn_off_gang1');
       this.gang1OffAction.registerRunListener(this._safeAction(async (args) => {
-        await args.device.triggerCapabilityListener('onoff', false);
+        await args.device._setGangOnOff(1, false).catch(() => {});
+          await args.device.setCapabilityValue('onoff', false).catch(() => {});
       }));
 
       this.gang2OnAction = this.homey.flow.getActionCard('switch_4gang_turn_on_gang2');
@@ -157,7 +159,8 @@ class Switch4GangDriver extends ZigBeeDriver {
             .registerRunListener(this._safeAction(async (args) => {
               const cap = caps[idx];
               const v = args.device.getCapabilityValue(cap);
-              await args.device.triggerCapabilityListener(cap, !v);
+              await args.device._setGangOnOff(idx + 1, !v).catch(() => {});
+            await args.device.setCapabilityValue(cap, !v).catch(() => {});
             }));
         } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
       });
@@ -166,7 +169,8 @@ class Switch4GangDriver extends ZigBeeDriver {
         this.homey.flow.getActionCard('switch_4gang_turn_on_all')
           .registerRunListener(this._safeAction(async (args) => {
             for (const cap of caps) {
-              if (args.device.hasCapability(cap)) await args.device.triggerCapabilityListener(cap, true);
+              if (args.device.hasCapability(cap)) await args.device._setGangOnOff(idx + 1, true).catch(() => {});
+            await args.device.setCapabilityValue(cap, true).catch(() => {});
             }
           }));
       } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
@@ -175,7 +179,8 @@ class Switch4GangDriver extends ZigBeeDriver {
         this.homey.flow.getActionCard('switch_4gang_turn_off_all')
           .registerRunListener(this._safeAction(async (args) => {
             for (const cap of caps) {
-              if (args.device.hasCapability(cap)) await args.device.triggerCapabilityListener(cap, false);
+              if (args.device.hasCapability(cap)) await args.device._setGangOnOff(idx + 1, false).catch(() => {});
+            await args.device.setCapabilityValue(cap, false).catch(() => {});
             }
           }));
       } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }

@@ -34,6 +34,18 @@
         "1": {
           "clusters": [0, 1, 6, 8],
           "bindings": [6, 8]
+        },
+        "2": {
+          "clusters": [6, 8],
+          "bindings": [6, 8]
+        },
+        "3": {
+          "clusters": [6, 8],
+          "bindings": [6, 8]
+        },
+        "4": {
+          "clusters": [6, 8],
+          "bindings": [6, 8]
         }
       },
       "learnmode": {

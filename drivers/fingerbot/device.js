@@ -5,7 +5,7 @@ const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
 const TuyaOnOffCluster = require('../../lib/TuyaOnOffCluster');
 const TuyaSpecificClusterDevice = require('../../lib/TuyaSpecificClusterDevice');
 const { getDataValue } = require('../../lib/TuyaHelpers');
-const { V1_FINGER_BOT_DATA_POINTS } = require('../../lib/TuyaDataPoints');
+const { V1_FINGER_BOT_DATA_POINTS } = require('../../lib/tuya/TuyaDataPointsJohan');
 
 Cluster.addCluster(TuyaSpecificCluster);
 Cluster.addCluster(TuyaOnOffCluster);
@@ -213,6 +213,24 @@ class FingerBot extends TuyaSpecificClusterDevice {
         this._setCapabilitySafe('onoff', value, 'Failed to update onoff from onOff cluster');
       });
     }
+
+    if (this.hasCapability('finger_bot_mode')) {
+      this.registerCapabilityListener('finger_bot_mode', async value => {
+        this.log(`FingerBot mode change requested: ${value}`);
+        // Mode: 0=click, 1=switch, 2=program
+        const modeEnum = MODE[value] !== undefined ? MODE[value] : 0;
+        
+        // Write to BOTH standard DP101 and alternative DP8 to cover all variants
+        try {
+          if (this.zclNode && this.zclNode.endpoints[1]) {
+             await this.writeEnum(V1_FINGER_BOT_DATA_POINTS.mode || 101, modeEnum).catch(() => {});
+             await this.writeEnum(8, modeEnum).catch(() => {}); // Fallback for alternative devices
+          }
+        } catch (e) {
+          this.log('Could not write mode DP:', e.message);
+        }
+      });
+    }
   }
 
   _registerTuyaListeners(zclNode) {
@@ -322,7 +340,8 @@ class FingerBot extends TuyaSpecificClusterDevice {
     this.log(`FingerBot DP ${dp}:`, parsedValue);
 
     switch (dp) {
-      case V1_FINGER_BOT_DATA_POINTS.battery: {
+      case V1_FINGER_BOT_DATA_POINTS.battery:
+      case 12: { // Alternative DP12 for Battery
         if (this.hasCapability('measure_battery')) {
           await this._setCapabilitySafe(
             'measure_battery',
@@ -343,8 +362,16 @@ class FingerBot extends TuyaSpecificClusterDevice {
       }
 
       case V1_FINGER_BOT_DATA_POINTS.mode:
+      case 8: { // Alternative DP8 for Mode
         this.log('FingerBot mode DP report:', parsedValue);
+        // Map 0 -> click, 1 -> switch, 2 -> program
+        const modes = ['click', 'switch', 'program'];
+        const modeString = modes[parsedValue] || 'click';
+        if (this.hasCapability('finger_bot_mode')) {
+           await this._setCapabilitySafe('finger_bot_mode', modeString, 'Failed to update mode');
+        }
         break;
+      }
 
       case V1_FINGER_BOT_DATA_POINTS.lower:
         this.log('FingerBot lower limit DP report:', parsedValue);

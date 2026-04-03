@@ -199,14 +199,7 @@ class Switch4GangDevice extends BaseClass {
         
         // v5.9.23: Track which gang the user actually commanded
         this._lastCommandedGang = gangNum;
-        this._lastComma;
-        try {
-          await super.onNodeInit({ zclNode });
-        } catch (superErr) {
-          this.error('[SWITCH-4G] ⚠️ Super init error (non-fatal):', superErr.message);
-          this.zclNode = zclNode;
-        }
-        ndTime = Date.now();
+        this._lastCommandTime = Date.now();
         
         // v5.8.87: Hartmut fix — TS0726 firmware toggles ALL gangs on single EP cmd
         // Mark ALL gangs as app-commanded to prevent false physical detection

@@ -96,7 +96,8 @@ class SwitchWall6GangDriver extends ZigBeeDriver {
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           for (const cap of Object.values(capMap)) {
-            if (args.device.hasCapability(cap)) await args.device.triggerCapabilityListener(cap, true);
+            if (args.device.hasCapability(cap)) await args.device._setGangOnOff(idx + 1, true).catch(() => {});
+            await args.device.setCapabilityValue(cap, true).catch(() => {});
           }
           return true;
         });
@@ -108,7 +109,8 @@ class SwitchWall6GangDriver extends ZigBeeDriver {
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           for (const cap of Object.values(capMap)) {
-            if (args.device.hasCapability(cap)) await args.device.triggerCapabilityListener(cap, false);
+            if (args.device.hasCapability(cap)) await args.device._setGangOnOff(idx + 1, false).catch(() => {});
+            await args.device.setCapabilityValue(cap, false).catch(() => {});
           }
           return true;
         });

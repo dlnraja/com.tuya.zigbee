@@ -322,9 +322,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
       const capName = epNum === 1 ? 'onoff' : 'onoff.gang2';
       
       this.registerCapabilityListener(capName, async (value) => {
-        this.log(`[BSEED-2G] EP${epNum} a
-    await super.onNodeInit({ zclNode });
-pp cmd: ${value}`);
+        this.log(`[BSEED-2G] EP${epNum} app cmd: ${value}`);
         // v5.9.23: Track which gang the user actually commanded
         this._lastCommandedGang = epNum;
         this._lastCommandTime = Date.now();
