@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.158",
+  "version": "5.11.159",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -70880,6 +70880,42 @@
           }
         },
         {
+          "id": "meter_power_scale",
+          "type": "dropdown",
+          "label": {
+            "en": "Energy (kWh) Scale",
+            "fr": "Échelle Énergie (kWh)"
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0.1",
+              "label": {
+                "en": "÷10",
+                "fr": "÷10"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "×1 (Default)",
+                "fr": "×1 (Par défaut)"
+              }
+            },
+            {
+              "id": "10",
+              "label": {
+                "en": "×10",
+                "fr": "×10"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Adjust if total energy (kWh) readings are way off.",
+            "fr": "Ajuster si l'énergie totale (kWh) est incorrecte."
+          }
+        },
+        {
           "id": "power_compensation",
           "type": "number",
           "label": {
@@ -71411,6 +71447,42 @@
             "nl": "Energie Meetwaarde Kalibratie"
           },
           "children": [
+            {
+              "id": "power_scale",
+              "type": "dropdown",
+              "label": {
+                "en": "Power scaling",
+                "nl": "Vermogen schaling"
+              },
+              "hint": {
+                "en": "Adjust if power (W) readings are incorrect",
+                "nl": "Aanpassen indien vermogen (W) niet klopt"
+              },
+              "value": "1",
+              "values": [
+                {
+                  "id": "0.1",
+                  "label": {
+                    "en": "÷10",
+                    "nl": "÷10"
+                  }
+                },
+                {
+                  "id": "1",
+                  "label": {
+                    "en": "×1 (no scaling)",
+                    "nl": "×1 (geen schaling)"
+                  }
+                },
+                {
+                  "id": "10",
+                  "label": {
+                    "en": "×10",
+                    "nl": "×10"
+                  }
+                }
+              ]
+            },
             {
               "id": "voltage_scale",
               "type": "dropdown",
