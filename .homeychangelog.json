@@ -1,4 +1,7 @@
 {
+  "5.11.163": {
+    "en": "Universal Tuya Zigbee app v5.11.163 adds new features for Tuya WiFi pairing and fixes for energy scaling and button capabilities."
+  },
   "5.11.162": {
     "en": "Universal Tuya Zigbee app v5.11.162 adds new device capabilities and fixes bugs for improved user experience."
   },
@@ -56,10 +59,7 @@
   "5.11.143": {
     "en": "Universal Tuya Zigbee app v5.11.143 adds new drivers and capabilities, enhancing device compatibility."
   },
-  "5.11.142": {
-    "en": "Universal Tuya Zigbee app v5.11.142 adds 3182 new fingerprints and supports 189 drivers."
-  },
-  "5.11.163": {
-    "en": "v5.11.162: Fixed synchronization of frontend pairing emit events with backend TuyaLocalDriver, removing QR-only constraint., Implemented robust cloudless discovery fallback, protocol auto-rotation, and static IP warnings., Added missing button.push capability for Fingerbot to resolve issue #162., Enhanced pairing experience with 1-click Tuya App deep link bypass for single-smartphone QR Code pairi"
+  "5.11.164": {
+    "en": "v5.11.163: Fixed energy scaling UI components synchronization across smart plugs., Added missing `button.push` capability for Fingerbot to resolve issue #162., Implemented 1-click Tuya App deep link bypass for single-smartphone QR Code pairing UX on all WiFi drivers., Synchronized frontend pairing emit events with backend for TuyaLocalDriver and removed QR-only constraint."
   }
 }
