@@ -108,6 +108,36 @@ jobs:
       - name: Scan Public APIs (davemachado/public-api)
         continue-on-error: true
         run: node .github/scripts/scan-public-apis.js
+      - name: Run Commercial Descriptions Scraper (Aliexpress/Tuya)
+        continue-on-error: true
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_MAX_TIER: "1"
+        run: node .github/scripts/manufacturer-scraper.js
+      - name: Run Tuya WiFi Local Automation Deep Researcher
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_MAX_TIER: "1"
+        run: node .github/scripts/tuya-wifi-local-researcher.js
+      - name: Run Diagnostic Auto Resolver & Crash Fixer
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/diagnostic-auto-resolver.js
+      - name: Monthly Homey SDK 3 Reference Sync
+        continue-on-error: true
+        if: github.event.schedule == '0 4 1 * *' || github.event_name == 'workflow_dispatch'
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_MAX_TIER: "1"
+        run: node .github/scripts/sync-sdk3-docs.js
       - name: Commit state
         if: always()
         run: |
