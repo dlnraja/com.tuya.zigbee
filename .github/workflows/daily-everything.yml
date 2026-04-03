@@ -507,6 +507,14 @@ jobs:
         continue-on-error: true
         run: node .github/scripts/pipeline-health.js
 
+      # ===== 10p. DRIVER LOCALIZATION (I18N) =====
+      - name: "10p. Driver Localization (I18N)"
+        id: i18n
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 10
+        run: node .github/scripts/translate-all.js || true
+
       # ===== 11. COMMIT: All state + docs + changelogs =====
       - name: "11. Commit all changes"
         id: commit
