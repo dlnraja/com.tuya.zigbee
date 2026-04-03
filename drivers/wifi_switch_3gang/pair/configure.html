@@ -78,8 +78,7 @@ Credentials saved locally. Cloud only used once for key retrieval.
 <div class="fg"><label>Access Secret</label><input type="password" id="sl_as" placeholder="from iot.tuya.com"/></div>
 </div>
 <div class="row">
-<div class="fg"><label>Smart Life Email</label><input type="email" id="sl_email" placeholder="your@email.com"/></div>
-<div class="fg"><label>Password</label><input type="password" id="sl_pw" placeholder="Smart Life password"/></div>
+<div class="fg"><label>No account needed (Leave empty to use 1-Click Phone link)</label></div>
 </div>
 <div class="row">
 <div class="fg"><label>Country Code</label><input type="text" id="sl_cc" value="33" placeholder="33"/><div class="hint">33=FR, 1=US, 44=UK, 49=DE</div></div>
@@ -140,17 +139,34 @@ function doEasy(){
 
 function doSmartLife(){
   var aid=document.getElementById('sl_aid').value.trim(),as=document.getElementById('sl_as').value.trim();
-  var em=document.getElementById('sl_email').value.trim(),pw=document.getElementById('sl_pw').value.trim();
-  var cc=document.getElementById('sl_cc').value.trim(),reg=document.getElementById('sl_reg').value,schema=document.getElementById('sl_schema').value;
+  var reg=document.getElementById('sl_reg').value,schema=document.getElementById('sl_schema').value;
   hide('sl-err');hide('sl-ok');
-  if(!aid||!as){show('sl-err','Access ID and Secret required (see instructions above)');return}
-  if(!em||!pw){show('sl-err','Smart Life email and password required');return}
   spin('btn-sl');
-  H.emit('login',{mode:'smartlife',accessId:aid,accessSecret:as,email:em,password:pw,countryCode:cc,region:reg,schema:schema},function(err,r){
-    unspin('btn-sl');
-    if(err){show('sl-err',err.message||String(err));return}
-    done=true;show('sl-ok',r.count+' devices found! Click Next to select.');
-  });
+  
+  if (aid && as) {
+      // Direct IoT login
+      H.emit('login',{mode:'cloud',accessId:aid,accessSecret:as,region:reg},function(err,r){
+        unspin('btn-sl');
+        if(err){show('sl-err',err.message||String(err));return}
+        done=true;show('sl-ok',r.count+' devices found! Click Next to select.');
+      });
+  } else {
+      // SmartLife QR + DeepLink approach (no accessId/secret)
+      H.emit('login',{mode:'smartlife_qr',region:reg,schema:schema},function(err,r){
+        unspin('btn-sl');
+        if(err){show('sl-err',err.message||String(err));return}
+        var msg = '<b>QR Code linked!</b><br>';
+        msg += '<a href="'+schema+'://qrLogin?token='+r.qrCode+'" target="_blank" style="display:inline-block;padding:10px;background:#00a870;color:white;text-decoration:none;border-radius:5px;margin:10px 0;">Click here to Open '+schema+' App</a>';
+        msg += '<br><i>(Wait here after authorizing)</i>';
+        show('sl-ok',msg);
+        
+        // Start polling!
+        H.emit('poll_qr',{}, function(err2,r2) {
+           if(err2){show('sl-err',err2.message||String(err2));return}
+           done=true; show('sl-ok',r2.count+' devices found! Click Next.');
+        });
+      });
+  }
 }
 
 function doIoT(){
