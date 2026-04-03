@@ -7,7 +7,7 @@ const fs = require('fs');
 const path = require('path');
 
 const z2mUrl = 'https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/tuya.ts';
-const driverMap = require('../../docs/rules/Z2M_ZHA_TO_HOMEY_MAP.md'); // conceptual
+
 
 async function fetchZ2MDefinitions() {
     console.log('Fetching Z2M Tuya Definitions...');
