@@ -1,0 +1,20 @@
+{
+  "id": "ota_check_updates",
+  "title": {
+    "en": "Check Device OTA Firmware Updates",
+    "fr": "Vérifier Mises à Jour (OTA) de l'appareil",
+    "nl": "OTA firmware updates controleren"
+  },
+  "hint": {
+    "en": "Queries Zigbee2MQTT index for updates. You will be notified.",
+    "fr": "Interroge l'index Z2M. Vous recevrez une notification au besoin.",
+    "nl": "Vraagt de Z2M-index op. U krijgt een melding."
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+    }
+  ]
+}
