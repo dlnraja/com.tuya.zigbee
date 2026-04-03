@@ -1,4 +1,7 @@
 {
+  "5.11.166": {
+    "en": "Universal Tuya Zigbee app v5.11.166 adds new capabilities and fixes issues for better device compatibility."
+  },
   "5.11.165": {
     "en": "Universal Tuya Zigbee app v5.11.165 adds new device capabilities and fixes issues with smart plugs and button capabilities."
   },
@@ -56,10 +59,7 @@
   "5.11.146": {
     "en": "Universal Tuya Zigbee app v5.11.146 adds new drivers and fixes initialization errors."
   },
-  "5.11.145": {
-    "en": "Universal Tuya Zigbee app v5.11.145 adds new device support and fixes critical driver issues."
-  },
-  "5.11.166": {
-    "en": "v5.11.165: Fixed synchronization of energy scaling UI components across smart plugs., Added missing `button.push` capability to Fingerbot to resolve issue #162., Enhanced Tuya WiFi pairing with local QR code generation, improving compatibility with PC Web App., Implemented robust cloudless discovery fallback and protocol auto-rotation for better device connectivity."
+  "5.11.167": {
+    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
   }
 }
