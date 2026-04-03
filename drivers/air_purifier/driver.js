@@ -20,7 +20,8 @@ class AirPurifierDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('air_purifier_turn_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('onoff', true);
+          await args.device._setGangOnOff(1, true).catch(() => {});
+          await args.device.setCapabilityValue('onoff', true).catch(() => {});
           return true;
         });
     } catch (e) { this.error('Action turn_on:', e.message); }
@@ -28,7 +29,8 @@ class AirPurifierDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('air_purifier_turn_off')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('onoff', false);
+          await args.device._setGangOnOff(1, false).catch(() => {});
+          await args.device.setCapabilityValue('onoff', false).catch(() => {});
           return true;
         });
     } catch (e) { this.error('Action turn_off:', e.message); }

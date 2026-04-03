@@ -8,6 +8,7 @@
   "class": "sensor",
   "capabilities": [
     "measure_temperature",
+    "measure_temperature.probe",
     "measure_humidity",
     "measure_battery"
   ],
@@ -19,6 +20,16 @@
     ]
   },
   "subDevices": [],
+  "capabilityOptions": {
+    "measure_temperature.probe": {
+      "title": {
+        "en": "Probe Temperature",
+        "fr": "Température Sonde",
+        "nl": "Sonde Temperatuur",
+        "de": "Sondentemperatur"
+      }
+    }
+  },
   "zigbee": {
     "manufacturerName": [
       "OWON",

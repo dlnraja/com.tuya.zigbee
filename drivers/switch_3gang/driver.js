@@ -33,7 +33,8 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           .registerRunListener(async (args) => {
             if (!args.device) return false;
             const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
-            await args.device.triggerCapabilityListener(cap, true);
+            await args.device._setGangOnOff(idx + 1, true).catch(() => {});
+            await args.device.setCapabilityValue(cap, true).catch(() => {});
             return true;
           });
         this.log(`[FLOW] ✅ switch_3gang_turn_on_${gang}`);
@@ -44,7 +45,8 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           .registerRunListener(async (args) => {
             if (!args.device) return false;
             const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
-            await args.device.triggerCapabilityListener(cap, false);
+            await args.device._setGangOnOff(idx + 1, false).catch(() => {});
+            await args.device.setCapabilityValue(cap, false).catch(() => {});
             return true;
           });
         this.log(`[FLOW] ✅ switch_3gang_turn_off_${gang}`);
@@ -90,7 +92,8 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
             if (!args.device) return false;
             const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
             const v = args.device.getCapabilityValue(cap);
-            await args.device.triggerCapabilityListener(cap, !v);
+            await args.device._setGangOnOff(idx + 1, !v).catch(() => {});
+            await args.device.setCapabilityValue(cap, !v).catch(() => {});
             return true;
           });
       } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
@@ -100,7 +103,8 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('switch_3gang_turn_on_all')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('onoff', true);
+          await args.device._setGangOnOff(1, true).catch(() => {});
+          await args.device.setCapabilityValue('onoff', true).catch(() => {});
           for (let i = 2; i <= 3; i++) {
             if (args.device.hasCapability(`onoff.gang${i}`)) await args.device.triggerCapabilityListener(`onoff.gang${i}`, true);
           }
@@ -112,7 +116,8 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('switch_3gang_turn_off_all')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('onoff', false);
+          await args.device._setGangOnOff(1, false).catch(() => {});
+          await args.device.setCapabilityValue('onoff', false).catch(() => {});
           for (let i = 2; i <= 3; i++) {
             if (args.device.hasCapability(`onoff.gang${i}`)) await args.device.triggerCapabilityListener(`onoff.gang${i}`, false);
           }
