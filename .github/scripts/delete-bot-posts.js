@@ -10,7 +10,9 @@ const TO_DELETE=[
   // v5.11.25 duplicate update posts
   714623,714834,714908,715034,
   // v5.11.26 duplicate update posts
-  715292,715294
+  715292,715294,
+  // malformed fallback bot post
+  727130
 ];
 
 async function main(){

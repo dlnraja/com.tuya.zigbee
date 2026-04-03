@@ -36,5 +36,4 @@ jobs:
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          DRY_RUN: ${{ inputs.dry_run && 'true' || 'false' }}
-        run: node .github/scripts/cleanup-wrong-thread-posts.js
+        run: node .github/scripts/delete-bot-posts.js
