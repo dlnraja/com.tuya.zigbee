@@ -4,7 +4,15 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.159] - 2026-04-03
+## [5.11.160] - 2026-04-03
+
+### Bug Fixes
+- Fixed missing `button.push` capability for Fingerbot, resolving issue #162.
+- Synchronized energy scaling UI components across smart plugs.
+- Addressed SDK v3 flow card deprecation and energy scale issues (#137).
+---
+
+ [5.11.159] - 2026-04-03
 
 ### Bug Fixes
 - Fixed synchronization of energy scaling UI components across smart plugs.
