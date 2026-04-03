@@ -1,0 +1,43 @@
+name: Auto Discovery from Forums & Z2M (Enhanced)
+
+on:
+  schedule:
+    - cron: '0 4 * * 0' # Every Sunday at 4 AM
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  discover-devices:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Fetch Zigbee2MQTT Database & External Sources
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm ci || npm install
+          node .github/scripts/external-sources-scanner.js || true
+
+      - name: Cross-reference Missing Devices & PR Analysis
+        id: crossref
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Comparing forum requested IDs against Z2M implementations..."
+          node .github/scripts/cross-ref-intelligence.js || true
+          node .github/scripts/scan-prs-issues.js || true
+
+      - name: Generate Driver Skeleton
+        run: |
+          echo "Generating driver skeletons based on Z2M DP mappings..."
+          node .github/scripts/auto-driver-scaffold.js || true

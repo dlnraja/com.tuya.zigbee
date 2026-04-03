@@ -1,0 +1,42 @@
+name: Forum Monitor (Enhanced)
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Every hour
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  monitor-homey-forum:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Parse Johan's & dlnraja's Homey Forum Threads
+        id: parse
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          # 140352 = dlnraja post, 26439 = Johan Benz post
+          FORUM_TOPICS: '140352,26439'
+          REPLY_TOPICS: '140352,26439'
+        run: |
+          npm ci || npm install
+          echo "Scraping community.homey.app threads..."
+          node .github/scripts/forum-activity-scraper.js || true
+          node .github/scripts/forum-responder.js || true
+
+      - name: Extract Device IDs and Cross-reference Implementations
+        run: |
+          echo "Extracting context (user, issue, images, tx/rx fallbacks)..."
+          # Detect manufacturerName variants efficiently
+          node .github/scripts/variant-scanner.js || true

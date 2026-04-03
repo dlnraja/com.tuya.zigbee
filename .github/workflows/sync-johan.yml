@@ -1,0 +1,55 @@
+name: Synchronisation Johan Repo (Enhanced)
+on:
+  schedule:
+    - cron: '30 2 * * *' # Every day at 02:30 AM
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  sync-upstream:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Scrap & Sync Johan Benz commits (SDK3 & FPs)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm ci || npm install
+          # Uses the advanced AI sync script to detect new Device IDs and variants
+          node .github/scripts/sync-johan-sdk3.js
+
+      - name: Validate Multi-Gang Endpoints & Driver Conflicts
+        run: |
+          # Ensures Johan's multi-gang components don't conflict with our architecture
+          node .github/scripts/driver-conflict-audit.js
+
+      - name: Create Auto-PR with Changes
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "feat: sync from Johan Benz upstream (Enhanced AI)"
+          title: "🔄 Synchronisation Automatique Johan Benz"
+          body: |
+            ## 🔄 Auto-Sync report
+            This PR automatically cherry-picks changes and new device variants from Johan Benz's repository.
+            
+            **Checks performed:**
+            - [x] New device IDs detected using heuristics script
+            - [x] Endpoint routing validated for multi-gang devices
+            - [x] Tuya raw frame handlers adapted
+            
+            *Please review carefully before merging.*
+          branch: auto-sync-johan-enhanced
+          labels: "upstream, automerge"

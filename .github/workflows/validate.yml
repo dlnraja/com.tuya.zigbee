@@ -135,6 +135,60 @@ jobs:
           [ $MISS -gt 0 ] && echo "::warning::$MISS missing driver images — will fail publish validation"
           echo "$MISS missing image(s)"
 
+      - name: 🔌 Multi-Gang Endpoint Routing Check
+        run: |
+          node -e "
+            const fs=require('fs'),path=require('path');
+            let issues=0;
+            const dirs=fs.readdirSync('drivers').filter(d=>fs.statSync(path.join('drivers',d)).isDirectory());
+            for(const d of dirs){
+              const f=path.join('drivers',d,'driver.compose.json');
+              if(!fs.existsSync(f))continue;
+              const j=JSON.parse(fs.readFileSync(f,'utf8'));
+              const caps=j.capabilities||[];
+              const eps=j.zigbee?.endpoints||{};
+              // Check: every onoff.gangN must have endpoint N declared
+              for(const cap of caps){
+                const m=cap.match(/^onoff\.gang(\d+)$/);
+                if(m){
+                  const epNum=m[1];
+                  if(!eps[epNum]){
+                    console.log('⚠️ '+d+': '+cap+' has NO endpoint '+epNum+' declared');
+                    issues++;
+                  } else {
+                    const clusters=eps[epNum].clusters||[];
+                    // Cluster 6 = genOnOff — required for switch endpoints
+                    if(!clusters.includes(6)&&!clusters.includes(0x0006)){
+                      console.log('⚠️ '+d+': EP'+epNum+' missing onOff cluster (6)');
+                      issues++;
+                    }
+                  }
+                }
+              }
+            }
+            console.log(issues?issues+' endpoint routing issue(s)':'✅ All multi-gang endpoints properly declared');
+          "
+
+      - name: 📡 TX/RX Protocol Coverage Check
+        run: |
+          node -e "
+            const fs=require('fs'),path=require('path');
+            const dirs=fs.readdirSync('drivers').filter(d=>fs.statSync(path.join('drivers',d)).isDirectory());
+            let switchDrivers=0,withFallback=0;
+            for(const d of dirs){
+              const devFile=path.join('drivers',d,'device.js');
+              if(!fs.existsSync(devFile))continue;
+              const code=fs.readFileSync(devFile,'utf8');
+              // Only check switch/socket drivers
+              if(!d.includes('switch')&&!d.includes('plug')&&!d.includes('socket'))continue;
+              switchDrivers++;
+              // Check for TX fallback pattern (either writeAttributes or sendDP fallback)
+              const hasTXFallback=code.includes('TX-FALLBACK')||code.includes('writeAttributes')||code.includes('sendDP');
+              if(hasTXFallback)withFallback++;
+            }
+            console.log('Switch/socket drivers: '+switchDrivers+', with TX fallback: '+withFallback);
+          "
+
       - name: 🔍 Validate (npx primary)
         run: npx homey app validate --level ${{ inputs.level || 'publish' }}
 
