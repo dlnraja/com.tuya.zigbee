@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Project Rules + Architecture - Condensed context for AI automation
  * Sources: ARCHITECTURE.md, CRITICAL_MISTAKES.md, DEVELOPMENT_RULES.md, Windsurf workflows, memory rules
  */
@@ -97,6 +97,11 @@ const PROJECT_RULES = [
 '- Solar inverters (APsystems, Enphase, SolarEdge) = proprietary protocol',
 '- Red flags: requires manufacturer gateway, no _TZ* prefix',
 '- For solar monitoring: use bidirectional energy meters (_TZE204_ac0fhfiq)',
+'',
+'### KNOWN BUGS & FIXES (LATEST)',
+'- "56 years ago" timestamp on battery sensors (TS0202, TS0203, TS004F, etc.): FIXED! This was caused by sleepy devices hiding the Tuya cluster during pairing. We implemented a "Passive DP Listener" fallback in v5.11.170+ that catches datagrams natively, matching Zigbee2MQTT behavior. Tell users to update!',
+'- "Could not get device by ID" string errors on Wireless Buttons: FIXED! A syntax error in the button manual mode listener was solved. Tell users to update!',
+'- Multi-gang switches crashing routing: FIXED! We integrated Johan\'s endpoint map.',
 '',
 '### RESPONSE GUIDELINES',
 '- If fingerprint supported: tell which driver, how to pair, link to install',
