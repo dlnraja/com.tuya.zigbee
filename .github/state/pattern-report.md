@@ -3,7 +3,7 @@
 | Pattern | Reports | Priority | Top Fingerprints |
 |---|---|---|---|
 | False Battery Alert / Missing Battery | 32 | **high** | `vision` (25x), `TS0601` (16x), `router` (6x) |
-| Pairing Failure | 12 | **high** | `TS0601` (5x), `vision` (5x), `tuya` (4x) |
+| Pairing Failure | 9 | **high** | `TS0601` (5x), `vision` (5x), `example` (3x) |
 | Device Shows Unknown | 5 | **high** | `TS0601` (3x), `_TZE284_aa03yzhs` (2x), `test` (2x) |
 | Device Not Responding | 5 | **high** | `vision` (3x), `test` (3x), `TS0601` (3x) |
 | Ring/Alarm Wrong | 5 | **high** | `vision` (5x), `TS011F` (3x), `_TZ3000_j1v25l17` (2x) |
@@ -18,10 +18,10 @@
 **Files:** `drivers/{driver}/device.js`
 **Most affected:** `vision` (25x), `TS0601` (16x), `router` (6x), `test` (5x), `example` (3x), `TS0202` (3x), `generic` (3x), `TS0044` (3x), `lumi` (3x), `_TZ3000_o4mkahkc` (2x)
 
-### Pairing Failure (12 reports)
+### Pairing Failure (9 reports)
 **Fix:** Check driver.compose.json fingerprints, verify manufacturerName + productId
 **Files:** `drivers/{driver}/driver.compose.json`
-**Most affected:** `TS0601` (5x), `vision` (5x), `tuya` (4x), `example` (3x), `generic` (3x), `dlnraja` (3x), `_TZ3000_o4mkahkc` (2x), `test` (2x), `_TZ3000_o4mkahk` (2x), `TS0202` (2x)
+**Most affected:** `TS0601` (5x), `vision` (5x), `example` (3x), `generic` (3x), `_TZ3000_o4mkahkc` (2x), `test` (2x), `_TZ3000_o4mkahk` (2x), `TS0202` (2x), `_TZE284_hdml1aav` (2x), `_TZE204_ahwvlkpy` (1x)
 
 ### Device Shows Unknown (5 reports)
 **Fix:** Check settings keys: zb_model_id (not zb_modelId), zb_manufacturer_name (not zb_manufacturerName)
