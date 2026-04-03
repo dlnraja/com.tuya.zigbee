@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.178",
+  "version": "5.11.179",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -52247,6 +52247,16 @@
           "usageOff": 1
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "air_purifier"
     },
     {
@@ -52454,6 +52464,16 @@
       ],
       "connectivity": [
         "zigbee"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "air_quality_co2"
     },
@@ -52817,6 +52837,16 @@
         {
           "id": "add_devices",
           "template": "add_devices"
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ],
       "id": "air_quality_comprehensive"
@@ -53191,6 +53221,16 @@
           "setOnDim": true
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "bulb_dimmable"
     },
     {
@@ -53710,6 +53750,16 @@
           "setOnDim": true
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "bulb_rgb"
     },
     {
@@ -54154,6 +54204,16 @@
           "setOnDim": true
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "bulb_rgbw"
     },
     {
@@ -54533,6 +54593,16 @@
           "setOnDim": true
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "bulb_tunable_white"
     },
     {
@@ -54848,6 +54918,16 @@
           "setOnDim": true
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "bulb_white"
     },
     {
@@ -55275,6 +55355,16 @@
           "template": "add_devices"
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "button_emergency_sos"
     },
     {
@@ -55643,6 +55733,16 @@
         {
           "id": "add_devices",
           "template": "add_devices"
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ],
       "id": "button_wireless"
@@ -56092,6 +56192,16 @@
           "template": "add_devices"
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "button_wireless_1"
     },
     {
@@ -56504,6 +56614,16 @@
         {
           "id": "add_devices",
           "template": "add_devices"
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ],
       "id": "button_wireless_2"
@@ -56985,6 +57105,16 @@
         {
           "id": "add_devices",
           "template": "add_devices"
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ],
       "id": "button_wireless_3"
@@ -57480,6 +57610,16 @@
           "template": "add_devices"
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "button_wireless_4"
     },
     {
@@ -57951,6 +58091,16 @@
         {
           "id": "add_devices",
           "template": "add_devices"
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ],
       "id": "button_wireless_6"
@@ -58461,6 +58611,16 @@
           "template": "add_devices"
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "button_wireless_8"
     },
     {
@@ -58770,6 +58930,16 @@
         }
       ],
       "capabilitiesOptions": {},
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "ceiling_fan"
     },
     {
@@ -60259,6 +60429,16 @@
       "connectivity": [
         "zigbee"
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "climate_sensor"
     },
     {
@@ -60313,6 +60493,16 @@
       ],
       "connectivity": [
         "zigbee"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "co_sensor"
     },
@@ -60789,6 +60979,16 @@
         {
           "id": "add_devices",
           "template": "add_devices"
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ],
       "id": "contact_sensor"
@@ -61345,6 +61545,16 @@
           "template": "add_devices"
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "curtain_motor"
     },
     {
@@ -61499,6 +61709,16 @@
           }
         ]
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "curtain_motor_tilt"
     },
     {
@@ -61595,6 +61815,16 @@
           "usageOff": 0.5
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "dimmer_3gang"
     },
     {
@@ -61687,6 +61917,16 @@
           "usageOff": 0.5
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "dimmer_dual_channel"
     },
     {
@@ -62174,6 +62414,16 @@
           "setOnDim": true
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "dimmer_wall_1gang"
     },
     {
@@ -62359,6 +62609,16 @@
       "connectivity": [
         "zigbee"
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "din_rail_meter"
     },
     {
@@ -62454,6 +62714,16 @@
           "usageOff": 0
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "din_rail_switch"
     },
     {
@@ -62946,6 +63216,16 @@
       "connectivity": [
         "zigbee"
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "diy_custom_zigbee"
     },
     {
@@ -63252,6 +63532,16 @@
         }
       ],
       "capabilitiesOptions": {},
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "door_controller"
     },
     {
@@ -63565,6 +63855,16 @@
         }
       ],
       "capabilitiesOptions": {},
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "doorbell"
     },
     {
@@ -63636,6 +63936,16 @@
       ],
       "connectivity": [
         "zigbee"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "energy_meter_3phase"
     },
@@ -63722,6 +64032,16 @@
           "usageOff": 1
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "fan_controller"
     },
     {
@@ -63780,7 +64100,17 @@
             "en": "Press the setup button inside the Finger Bot for approx 10 seconds to enter pairing mode."
           }
         }
-      }
+      },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ]
     },
     {
       "name": {
@@ -63848,6 +64178,16 @@
       ],
       "connectivity": [
         "zigbee"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "fingerprint_lock"
     },
@@ -63938,6 +64278,16 @@
           "usageConstant": 2
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "floor_heating_thermostat"
     },
     {
@@ -64035,6 +64385,16 @@
       "connectivity": [
         "zigbee"
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "formaldehyde_sensor"
     },
     {
@@ -64109,6 +64469,16 @@
       "connectivity": [
         "zigbee"
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "garage_door"
     },
     {
@@ -64174,6 +64544,16 @@
           "usageConstant": 1
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "garage_door_opener"
     },
     {
@@ -64501,6 +64881,16 @@
         {
           "id": "add_devices",
           "template": "add_devices"
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ],
       "id": "gas_detector"
@@ -64833,6 +65223,16 @@
         }
       ],
       "capabilitiesOptions": {},
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "gas_sensor"
     },
     {
@@ -65140,6 +65540,16 @@
         }
       ],
       "capabilitiesOptions": {},
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "gateway_zigbee_bridge"
     },
     {
@@ -65344,6 +65754,16 @@
       ],
       "connectivity": [
         "zigbee"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "generic_diy"
     },
@@ -65666,6 +66086,16 @@
       "connectivity": [
         "zigbee"
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "generic_tuya"
     },
     {
@@ -65767,6 +66197,16 @@
             }
           ]
         }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ]
     },
     {
@@ -65854,6 +66294,16 @@
           "usageOff": 1
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "humidifier"
     },
     {
@@ -66251,6 +66701,16 @@
           "template": "add_devices"
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "hvac_air_conditioner"
     },
     {
@@ -66337,6 +66797,16 @@
           "usageConstant": 5
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "hvac_controller"
     },
     {
@@ -66697,6 +67167,16 @@
           "template": "add_devices"
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "hvac_dehumidifier"
     },
     {
@@ -66753,6 +67233,16 @@
       ],
       "connectivity": [
         "zigbee"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "illuminance_sensor"
     },
@@ -66856,6 +67346,16 @@
           "usageConstant": 0.3
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "ir_blaster"
     },
     {
@@ -66933,6 +67433,16 @@
         "small": "drivers/ir_remote/assets/images/small.png",
         "xlarge": "drivers/ir_remote/assets/images/xlarge.png"
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "ir_remote"
     },
     {
@@ -67025,6 +67535,16 @@
           ]
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "lcdtemphumidsensor"
     },
     {
@@ -67086,6 +67606,16 @@
           "setOnDim": true
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "led_controller_cct"
     },
     {
@@ -67148,6 +67678,16 @@
           "usageOff": 0.5
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "led_controller_dimmable"
     },
     {
@@ -67210,6 +67750,16 @@
           "setOnDim": true
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "led_controller_rgb"
     },
     {
@@ -67540,6 +68090,16 @@
           "setOnDim": true
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "led_strip"
     },
     {
@@ -67856,6 +68416,16 @@
           "setOnDim": true
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "led_strip_advanced"
     },
     {
@@ -68216,6 +68786,16 @@
           "setOnDim": true
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "led_strip_rgbw"
     },
     {
@@ -68272,6 +68852,16 @@
           "AAA"
         ]
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "light_sensor_outdoor"
     },
     {
@@ -68587,6 +69177,16 @@
         }
       ],
       "capabilitiesOptions": {},
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "lock_smart"
     },
     {
@@ -69058,6 +69658,16 @@
         }
       ],
       "capabilitiesOptions": {},
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "module_mini_switch"
     },
     {
@@ -69600,6 +70210,16 @@
           "template": "add_devices"
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "motion_sensor"
     },
     {
@@ -69662,6 +70282,16 @@
           }
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "settings": [
         {
           "id": "batteryThreshold",
@@ -70145,6 +70775,16 @@
           "template": "add_devices"
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "motion_sensor_radar_mmwave"
     },
     {
@@ -70261,6 +70901,16 @@
       "connectivity": [
         "zigbee"
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "pet_feeder"
     },
     {
@@ -70334,6 +70984,16 @@
           "usageConstant": 3
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "pet_feeder_zigbee"
     },
     {
@@ -71027,6 +71687,16 @@
         }
       ],
       "capabilitiesOptions": {},
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "plug_energy_monitor"
     },
     {
@@ -71716,6 +72386,16 @@
           "template": "add_devices"
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "plug_smart"
     },
     {
@@ -71779,6 +72459,16 @@
           "usageOff": 0
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "pool_pump"
     },
     {
@@ -71902,6 +72592,16 @@
       ],
       "connectivity": [
         "zigbee"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "power_clamp_meter"
     },
@@ -72111,6 +72811,16 @@
       ],
       "connectivity": [
         "zigbee"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "power_meter"
     },
@@ -72390,6 +73100,16 @@
           "usageConstant": 1
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "presence_sensor_ceiling"
     },
     {
@@ -73116,6 +73836,16 @@
           "template": "add_devices"
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "presence_sensor_radar"
     },
     {
@@ -73659,6 +74389,16 @@
           "template": "add_devices"
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "radiator_controller"
     },
     {
@@ -74200,6 +74940,16 @@
           "template": "add_devices"
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "radiator_valve"
     },
     {
@@ -74257,6 +75007,16 @@
           "CR2450"
         ]
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "radiator_valve_zigbee"
     },
     {
@@ -74364,6 +75124,16 @@
           ]
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "radiator_wifi_tuya"
     },
     {
@@ -74440,6 +75210,16 @@
       "connectivity": [
         "zigbee"
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "rain_sensor"
     },
     {
@@ -74496,6 +75276,16 @@
         "small": "drivers/remote_dimmer/assets/images/small.png",
         "xlarge": "drivers/remote_dimmer/assets/images/xlarge.png"
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "remote_dimmer"
     },
     {
@@ -74594,6 +75384,16 @@
               }
             }
           ]
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ],
       "id": "scene_switch_1"
@@ -74706,6 +75506,16 @@
               }
             }
           ]
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ],
       "id": "scene_switch_2"
@@ -74827,6 +75637,16 @@
               }
             }
           ]
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ],
       "id": "scene_switch_3"
@@ -74983,6 +75803,16 @@
           ]
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "scene_switch_4"
     },
     {
@@ -75125,6 +75955,16 @@
               }
             }
           ]
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ],
       "id": "scene_switch_6"
@@ -75443,6 +76283,16 @@
         }
       ],
       "capabilitiesOptions": {},
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "shutter_roller_controller"
     },
     {
@@ -75776,6 +76626,16 @@
         }
       ],
       "capabilitiesOptions": {},
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "siren"
     },
     {
@@ -75840,7 +76700,17 @@
             "en": "Press and hold the button inside the battery compartment for aprox 5 seconds until the siren beeps."
           }
         }
-      }
+      },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ]
     },
     {
       "name": {
@@ -75918,6 +76788,16 @@
           "usageOff": 0
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "smart_breaker"
     },
     {
@@ -76004,6 +76884,16 @@
             }
           ]
         }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ]
     },
     {
@@ -76059,6 +76949,16 @@
           "OTHER"
         ]
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "smart_heater"
     },
     {
@@ -76270,6 +77170,16 @@
           ]
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "smart_heater_controller"
     },
     {
@@ -76348,6 +77258,16 @@
           "CR2032"
         ]
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "smart_knob"
     },
     {
@@ -76476,6 +77396,16 @@
         "large": "drivers/smart_knob_rotary/assets/images/large.png",
         "xlarge": "drivers/smart_knob_rotary/assets/images/xlarge.png"
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "smart_knob_rotary"
     },
     {
@@ -76572,6 +77502,16 @@
             }
           ]
         }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ]
     },
     {
@@ -76654,6 +77594,16 @@
           "usageConstant": 1
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "smart_lcd_thermostat"
     },
     {
@@ -76711,6 +77661,16 @@
           "OTHER"
         ]
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "smart_rcbo"
     },
     {
@@ -76804,6 +77764,16 @@
             }
           ]
         }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ]
     },
     {
@@ -76893,6 +77863,16 @@
             }
           ]
         }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ]
     },
     {
@@ -76978,6 +77958,16 @@
               }
             }
           ]
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ]
     },
@@ -77095,6 +78085,16 @@
       ],
       "connectivity": [
         "zigbee"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "smart_scene_panel"
     },
@@ -77448,6 +78448,16 @@
         }
       ],
       "capabilitiesOptions": {},
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "smoke_detector_advanced"
     },
     {
@@ -77725,6 +78735,16 @@
       ],
       "connectivity": [
         "zigbee"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "soil_sensor"
     },
@@ -78803,6 +79823,16 @@
           "template": "add_devices"
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "switch_1gang"
     },
     {
@@ -79515,6 +80545,16 @@
           "template": "add_devices"
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "switch_2gang"
     },
     {
@@ -80204,6 +81244,16 @@
         {
           "id": "add_devices",
           "template": "add_devices"
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ],
       "id": "switch_3gang"
@@ -80929,6 +81979,16 @@
           "template": "add_devices"
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "switch_4gang"
     },
     {
@@ -81090,6 +82150,16 @@
               ]
             }
           ]
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ],
       "id": "switch_dimmer_1gang"
@@ -81351,6 +82421,16 @@
               "value": false
             }
           ]
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ],
       "id": "switch_plug_1"
@@ -81628,6 +82708,16 @@
           ]
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "switch_plug_2"
     },
     {
@@ -81705,6 +82795,16 @@
         "large": "drivers/switch_temp_sensor/assets/images/large.png",
         "xlarge": "drivers/switch_temp_sensor/assets/images/xlarge.png"
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "switch_temp_sensor"
     },
     {
@@ -82302,6 +83402,16 @@
           }
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "switch_wall_5gang"
     },
     {
@@ -82924,6 +84034,16 @@
           "template": "add_devices"
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "switch_wall_6gang"
     },
     {
@@ -83349,6 +84469,16 @@
       "connectivity": [
         "zigbee"
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "switch_wall_7gang"
     },
     {
@@ -83733,6 +84863,16 @@
       ],
       "connectivity": [
         "zigbee"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "switch_wall_8gang"
     },
@@ -84245,6 +85385,16 @@
         }
       ],
       "capabilitiesOptions": {},
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "switch_wireless"
     },
     {
@@ -84358,6 +85508,16 @@
           ]
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "temphumidsensor"
     },
     {
@@ -84441,6 +85601,16 @@
           }
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "thermostat_4ch"
     },
     {
@@ -84558,6 +85728,16 @@
           "OTHER"
         ]
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "thermostat_tuya_dp"
     },
     {
@@ -84863,6 +86043,16 @@
           "template": "add_devices"
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "universal_fallback"
     },
     {
@@ -85077,6 +86267,16 @@
       "connectivity": [
         "zigbee"
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "usb_dongle_dual_repeater"
     },
     {
@@ -85283,6 +86483,16 @@
               }
             }
           ]
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ],
       "id": "usb_dongle_triple"
@@ -85868,6 +87078,16 @@
           "template": "add_devices"
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "usb_outlet_advanced"
     },
     {
@@ -85952,6 +87172,16 @@
           "AA"
         ]
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "valve_irrigation"
     },
     {
@@ -86003,6 +87233,16 @@
           "AA"
         ]
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "valve_single"
     },
     {
@@ -86080,6 +87320,16 @@
       "connectivity": [
         "zigbee"
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "vibration_sensor"
     },
     {
@@ -86140,7 +87390,17 @@
             "en": "Power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping) or press the Pause-button 5sec until Open-button blinks."
           }
         }
-      }
+      },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ]
     },
     {
       "name": {
@@ -86349,6 +87609,16 @@
           ]
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wall_dimmer_1gang_1way"
     },
     {
@@ -86443,6 +87713,16 @@
               }
             }
           ]
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ]
     },
@@ -86539,6 +87819,16 @@
               }
             }
           ]
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ]
     },
@@ -86640,6 +87930,16 @@
               }
             }
           ]
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ]
     },
@@ -86743,6 +88043,16 @@
             }
           ]
         }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ]
     },
     {
@@ -86831,6 +88141,16 @@
           }
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "settings": []
     },
     {
@@ -86931,6 +88251,16 @@
               }
             }
           ]
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ]
     },
@@ -87041,6 +88371,16 @@
             }
           ]
         }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ]
     },
     {
@@ -87150,6 +88490,16 @@
               ]
             }
           ]
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ],
       "id": "wall_switch_1gang_1way"
@@ -87433,6 +88783,16 @@
               ]
             }
           ]
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ],
       "id": "wall_switch_2gang_1way"
@@ -87743,6 +89103,16 @@
           ]
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wall_switch_3gang_1way"
     },
     {
@@ -88050,6 +89420,16 @@
               ]
             }
           ]
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
         }
       ],
       "id": "wall_switch_4gang_1way"
@@ -88449,6 +89829,16 @@
           "template": "add_devices"
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "water_leak_sensor"
     },
     {
@@ -88664,6 +90054,16 @@
           ]
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "water_tank_monitor"
     },
     {
@@ -88743,6 +90143,16 @@
       ],
       "connectivity": [
         "zigbee"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "water_valve_garden"
     },
@@ -89079,6 +90489,16 @@
           "template": "add_devices"
         }
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "water_valve_smart"
     },
     {
@@ -89206,6 +90626,16 @@
       "connectivity": [
         "zigbee"
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "weather_station_outdoor"
     },
     {
@@ -89323,6 +90753,16 @@
       "connectivity": [
         "lan"
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_air_purifier"
     },
     {
@@ -89438,6 +90878,16 @@
       ],
       "connectivity": [
         "lan"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "wifi_air_quality"
     },
@@ -89729,6 +91179,16 @@
       "connectivity": [
         "lan"
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_camera"
     },
     {
@@ -89842,6 +91302,16 @@
       ],
       "connectivity": [
         "lan"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "wifi_cover"
     },
@@ -89960,6 +91430,16 @@
         "large": "drivers/wifi_dehumidifier/assets/images/large.png",
         "xlarge": "drivers/wifi_dehumidifier/assets/images/xlarge.png"
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_dehumidifier"
     },
     {
@@ -90073,6 +91553,16 @@
       ],
       "connectivity": [
         "lan"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "wifi_dimmer"
     },
@@ -90195,6 +91685,16 @@
           "INTERNAL"
         ]
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_door_lock"
     },
     {
@@ -90309,6 +91809,16 @@
         "large": "drivers/wifi_doorbell/assets/images/large.png",
         "xlarge": "drivers/wifi_doorbell/assets/images/xlarge.png"
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_doorbell"
     },
     {
@@ -90399,6 +91909,16 @@
         "lan"
       ],
       "discovery": "ewelink_mdns",
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_ewelink_bulb"
     },
     {
@@ -90488,6 +92008,16 @@
         "lan"
       ],
       "discovery": "ewelink_mdns",
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_ewelink_dimmer"
     },
     {
@@ -90595,6 +92125,16 @@
         "lan"
       ],
       "discovery": "ewelink_mdns",
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_ewelink_fan"
     },
     {
@@ -90684,6 +92224,16 @@
         "lan"
       ],
       "discovery": "ewelink_mdns",
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_ewelink_led"
     },
     {
@@ -90772,6 +92322,16 @@
         "lan"
       ],
       "discovery": "ewelink_mdns",
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_ewelink_plug"
     },
     {
@@ -90863,6 +92423,16 @@
         "lan"
       ],
       "discovery": "ewelink_mdns",
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_ewelink_pow"
     },
     {
@@ -90951,6 +92521,16 @@
         "lan"
       ],
       "discovery": "ewelink_mdns",
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_ewelink_switch"
     },
     {
@@ -91052,6 +92632,16 @@
         "lan"
       ],
       "discovery": "ewelink_mdns",
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_ewelink_switch_2ch"
     },
     {
@@ -91165,6 +92755,16 @@
         "lan"
       ],
       "discovery": "ewelink_mdns",
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_ewelink_switch_4ch"
     },
     {
@@ -91255,6 +92855,16 @@
         "lan"
       ],
       "discovery": "ewelink_mdns",
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_ewelink_th"
     },
     {
@@ -91369,6 +92979,16 @@
       "connectivity": [
         "lan"
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_fan"
     },
     {
@@ -91482,6 +93102,16 @@
       ],
       "connectivity": [
         "lan"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "wifi_garage_door"
     },
@@ -91618,6 +93248,16 @@
       ],
       "connectivity": [
         "lan"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "wifi_generic"
     },
@@ -91759,6 +93399,16 @@
       "connectivity": [
         "lan"
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_heater"
     },
     {
@@ -91875,6 +93525,16 @@
       "connectivity": [
         "lan"
       ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_humidifier"
     },
     {
@@ -91987,6 +93647,16 @@
       ],
       "connectivity": [
         "lan"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "wifi_ir_remote"
     },
@@ -92106,6 +93776,16 @@
         "large": "drivers/wifi_led_strip/assets/images/large.png",
         "xlarge": "drivers/wifi_led_strip/assets/images/xlarge.png"
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_led_strip"
     },
     {
@@ -92223,6 +93903,16 @@
       ],
       "connectivity": [
         "lan"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "wifi_light"
     },
@@ -92343,6 +94033,16 @@
           "INTERNAL"
         ]
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_pet_feeder"
     },
     {
@@ -92459,6 +94159,16 @@
       ],
       "connectivity": [
         "lan"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "wifi_plug"
     },
@@ -92600,6 +94310,16 @@
         "large": "drivers/wifi_power_strip/assets/images/large.png",
         "xlarge": "drivers/wifi_power_strip/assets/images/xlarge.png"
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_power_strip"
     },
     {
@@ -92720,6 +94440,16 @@
           "INTERNAL"
         ]
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_robot_vacuum"
     },
     {
@@ -92841,6 +94571,16 @@
           "INTERNAL"
         ]
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_sensor"
     },
     {
@@ -92963,6 +94703,16 @@
           "INTERNAL"
         ]
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_siren"
     },
     {
@@ -93051,6 +94801,16 @@
         "large": "drivers/wifi_sonoff_basicr4/assets/images/large.png",
         "xlarge": "drivers/wifi_sonoff_basicr4/assets/images/xlarge.png"
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_sonoff_basicr4"
     },
     {
@@ -93155,6 +94915,16 @@
         "large": "drivers/wifi_sonoff_dualr3/assets/images/large.png",
         "xlarge": "drivers/wifi_sonoff_dualr3/assets/images/xlarge.png"
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_sonoff_dualr3"
     },
     {
@@ -93243,6 +95013,16 @@
         "large": "drivers/wifi_sonoff_micro/assets/images/large.png",
         "xlarge": "drivers/wifi_sonoff_micro/assets/images/xlarge.png"
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_sonoff_micro"
     },
     {
@@ -93331,6 +95111,16 @@
         "large": "drivers/wifi_sonoff_minir3/assets/images/large.png",
         "xlarge": "drivers/wifi_sonoff_minir3/assets/images/xlarge.png"
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_sonoff_minir3"
     },
     {
@@ -93419,6 +95209,16 @@
         "large": "drivers/wifi_sonoff_minir4/assets/images/large.png",
         "xlarge": "drivers/wifi_sonoff_minir4/assets/images/xlarge.png"
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_sonoff_minir4"
     },
     {
@@ -93511,6 +95311,16 @@
         "large": "drivers/wifi_sonoff_pow_elite/assets/images/large.png",
         "xlarge": "drivers/wifi_sonoff_pow_elite/assets/images/xlarge.png"
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_sonoff_pow_elite"
     },
     {
@@ -93599,6 +95409,16 @@
         "large": "drivers/wifi_sonoff_smate2/assets/images/large.png",
         "xlarge": "drivers/wifi_sonoff_smate2/assets/images/xlarge.png"
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_sonoff_smate2"
     },
     {
@@ -93690,6 +95510,16 @@
         "large": "drivers/wifi_sonoff_thr316d/assets/images/large.png",
         "xlarge": "drivers/wifi_sonoff_thr316d/assets/images/xlarge.png"
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_sonoff_thr316d"
     },
     {
@@ -93778,6 +95608,16 @@
         "large": "drivers/wifi_sonoff_tx_1ch/assets/images/large.png",
         "xlarge": "drivers/wifi_sonoff_tx_1ch/assets/images/xlarge.png"
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_sonoff_tx_1ch"
     },
     {
@@ -93879,6 +95719,16 @@
         "large": "drivers/wifi_sonoff_tx_2ch/assets/images/large.png",
         "xlarge": "drivers/wifi_sonoff_tx_2ch/assets/images/xlarge.png"
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_sonoff_tx_2ch"
     },
     {
@@ -93986,6 +95836,16 @@
         "large": "drivers/wifi_sonoff_tx_3ch/assets/images/large.png",
         "xlarge": "drivers/wifi_sonoff_tx_3ch/assets/images/xlarge.png"
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_sonoff_tx_3ch"
     },
     {
@@ -94098,6 +95958,16 @@
       ],
       "connectivity": [
         "lan"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "wifi_switch"
     },
@@ -94225,6 +96095,16 @@
           }
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_switch_2gang"
     },
     {
@@ -94357,6 +96237,16 @@
           }
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_switch_3gang"
     },
     {
@@ -94495,6 +96385,16 @@
           }
         }
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_switch_4gang"
     },
     {
@@ -94610,6 +96510,16 @@
       ],
       "connectivity": [
         "lan"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "wifi_thermostat"
     },
@@ -94730,6 +96640,16 @@
           "INTERNAL"
         ]
       },
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
       "id": "wifi_water_valve"
     },
     {
@@ -94788,6 +96708,16 @@
       ],
       "connectivity": [
         "zigbee"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
       ],
       "id": "zigbee_repeater"
     }
