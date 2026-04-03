@@ -104,6 +104,7 @@ const PROJECT_RULES = [
 '- Multi-gang switches crashing routing: FIXED! We integrated Johan\'s endpoint map.',
 '',
 '### RESPONSE GUIDELINES',
+'- **CRITICAL**: YOU MUST RESPOND IN ENGLISH ONLY. NO EXCEPTIONS. Even if the user asks in French or Dutch, reply in English.',
 '- If fingerprint supported: tell which driver, how to pair, link to install',
 '- If not supported: ask for device interview from tools.developer.homey.app/tools/zigbee',
 '- If interview data: analyze clusters, endpoints, suggest driver',
