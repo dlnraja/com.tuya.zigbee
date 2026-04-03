@@ -16,7 +16,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is on
     try {
-      this.homey.flow.getConditionCard('dimmer_wall_1gang_dimmer_1gang_is_on')
+      this.homey.flow.getDeviceConditionCard('dimmer_wall_1gang_dimmer_1gang_is_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;

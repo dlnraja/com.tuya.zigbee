@@ -1,0 +1,79 @@
+{
+  "name": {
+    "en": "Zigbee Rain Sensor",
+    "fr": "Capteur de pluie Zigbee",
+    "nl": "Regensensor",
+    "de": "Regensensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_water",
+    "measure_humidity",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "alarm_water": {
+      "title": {
+        "en": "Raining",
+        "fr": "Pluie"
+      }
+    },
+    "measure_humidity": {
+      "title": {
+        "en": "Rain Level",
+        "fr": "Niveau pluie"
+      },
+      "units": "%"
+    }
+  },
+  "energy": {
+    "batteries": [
+      "AAA",
+      "AA"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_abaplimj",
+      "_TZ3000_abjodzas",
+      "_TZ3000_awvmkayh",
+      "_TZ3000_k1msavlx",
+      "_TZ3000_zrm3oxsh",
+      "_TZ3210_p68kms0l",
+      "_TZ3210_tgvtvdoc",
+      "_TZE200_u6x1zyv2",
+      "_TZE204_u6x1zyv2",
+      "_TZE284_iilebqoo",
+      "_TZ3000_otwpdq1d"
+    ],
+    "productId": [
+      "TS0207_rain",
+      "TS0601",
+      "TS0207"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          1280,
+          61184
+        ],
+        "bindings": [
+          1,
+          1280
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/rain_sensor/assets/images/small.png",
+    "large": "drivers/rain_sensor/assets/images/large.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

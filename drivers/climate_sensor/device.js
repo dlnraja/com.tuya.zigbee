@@ -184,6 +184,7 @@ class ClimateSensorDevice extends HybridSensorBase {
       1: { capability: 'measure_temperature', divisor: 10 },    // Standard: all _TZE* devices
       6: { capability: 'measure_temperature', divisor: 10 },    // Alt: some _TZE204 models
       18: { capability: 'measure_temperature', divisor: 10 },   // Alt: ZG227C and some LCD models
+      38: { capability: 'measure_temperature.probe', divisor: 10 }, // v5.13.0: External probe temperature (Issue #184)
 
       // ═══════════════════════════════════════════════════════════════════
       // HUMIDITY DPs (multiple variants)

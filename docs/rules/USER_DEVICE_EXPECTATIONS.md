@@ -193,6 +193,12 @@
 
 
 
+## Nightly Auto-Scan (2026-04-03)
+| User | Fingerprint(s) | Source | Date |
+|------|---------------|--------|------|
+| gitebk | `_TZE284_ne4pikwm`, `vision` | JohanBendz/com.tuya.zigbee#1360 | Auto-scanned 2026-04-03 |
+
+
 ## Nightly Auto-Scan (2026-04-01)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|

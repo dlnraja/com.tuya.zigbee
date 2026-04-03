@@ -1,0 +1,156 @@
+# 🛡️ HOMEYIGNORE OPTIMISÉ - Version sécurisée et intelligente
+# Généré automatiquement - NE PAS ÉDITER MANUELLEMENT
+# Script: optimize-homeyignore.js
+# Date: 2025-12-22T14:41:03.187Z
+
+# === SÉCURITÉ CRITIQUE ===
+# GitHub Actions et workflows (CRITIQUE - ne jamais inclure dans l'app)
+.github/
+.githooks/
+.git/
+
+# Scripts développement et sécurité (CRITIQUE)
+scripts/
+project-data/
+docs/
+references/
+backup/
+
+# === OPTIMISATION BUILD ===
+# Cache et dépendances
+node_modules/
+.npm/
+.nyc_output/
+*.log
+*.tmp
+npm-debug.log*
+
+# IDE et éditeurs
+.vscode/
+.idea/
+*.sublime-*
+.vs/
+
+# Tests et développement
+test/
+tests/
+spec/
+*.test.js
+*.spec.js
+jest.config.js
+karma.conf.js
+
+# Build et distribution (CRITIQUE)
+.homeybuild/
+build/
+dist/
+out/
+target/
+
+# === FICHIERS TEMPORAIRES ===
+# Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+backup-*
+
+# OS spécifiques
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Configuration développement
+.env
+.env.*
+config.local.js
+secrets.json
+
+# Documentation développement
+README.dev.md
+CONTRIBUTING.md
+CHANGELOG.dev.md
+TODO.md
+
+# Scripts système
+*.ps1
+*.cmd
+*.bat
+
+# Configuration linting/formatting
+eslint.config.js
+.eslintrc.*
+.prettierrc.*
+babel.config.js
+webpack.config.js
+rollup.config.js
+vite.config.js
+
+# Fichiers temporaires
+*.bak
+*.old
+*.orig
+*~
+*.swp
+*.swo
+temp/
+tmp/
+
+# Logs et reporting
+reports/
+logs/
+
+# Large audit files
+MANUFACTURER_IDS_AUDIT.json
+**/MANUFACTURER_IDS_AUDIT.json
+
+# Archive folder
+.archive/
+
+# NOTE: large.png and xlarge.png are REQUIRED for App Store publishing
+# Do NOT exclude them - Homey App Store guidelines require:
+# - small.png (75x75) - required
+# - large.png (500x500) - required  
+# - xlarge.png (1000x1000) - optional but recommended
+
+# Learnmode SVGs (optional, reduces payload significantly)
+**/learnmode.svg
+
+# Large data files not needed at runtime
+lib/data/new_fingerprints.json
+**/new_fingerprints.json
+package-lock.json
+CHANGELOG.md
+
+# Backup folders
+backup/
+
+# Markdown files (not needed at runtime)
+**/*.md
+*.md
+
+# Backup files
+**/*.backup*
+**/*.bak
+
+# Tools folder (development only)
+tools/
+
+# Large data files
+lib/data/new_fingerprints.js
+lib/data/smart_fingerprints.js
+
+# CSV files (development only)
+*.csv
+**/*.csv
+
+# Cascade/AI files
+.cascade
+.windsurfrules
+.cursorrules
+
+# Documentation and reports
+docs/reports/
+*.analysis.json
+
+# Note: .homeychangelog.json is REQUIRED for app store - do not exclude

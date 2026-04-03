@@ -15,7 +15,7 @@ class TuyaDoorbellDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Battery above threshold
     try {
-      this.homey.flow.getConditionCard('doorbell_battery_above')
+      this.homey.flow.getDeviceConditionCard('doorbell_battery_above')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const battery = args.device.getCapabilityValue('measure_battery') || 0;

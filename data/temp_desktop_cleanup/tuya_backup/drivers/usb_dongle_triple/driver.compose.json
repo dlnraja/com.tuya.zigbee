@@ -1,0 +1,189 @@
+{
+  "name": {
+    "en": "USB Dongle Triple (3-Port)",
+    "fr": "Dongle USB Triple (3 Ports)",
+    "nl": "USB Dongle Triple (3 Poorten)"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "onoff.usb2",
+    "onoff.usb3",
+    "measure_power",
+    "meter_power",
+    "measure_voltage",
+    "measure_current"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "USB Port 1",
+        "fr": "Port USB 1"
+      }
+    },
+    "onoff.usb2": {
+      "title": {
+        "en": "USB Port 2",
+        "fr": "Port USB 2"
+      }
+    },
+    "onoff.usb3": {
+      "title": {
+        "en": "USB Port 3",
+        "fr": "Port USB 3"
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageConstant": 7.5
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "drivers/usb_dongle_triple/assets/images/small.png",
+    "large": "drivers/usb_dongle_triple/assets/images/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_mw1pqqqt"
+    ],
+    "productId": [
+      "TS0003"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          1794,
+          2820,
+          57344,
+          57345
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "2": {
+        "clusters": [
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      },
+      "3": {
+        "clusters": [
+          4,
+          5,
+          6
+        ],
+        "bindings": [
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the button for 5 seconds until the LED flashes rapidly.",
+        "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'au clignotement rapide."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "power_on_behavior",
+      "type": "dropdown",
+      "label": {
+        "en": "Power-on Behavior",
+        "fr": "Comportement au demarrage"
+      },
+      "value": "previous",
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "fr": "Eteint"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "On",
+            "fr": "Allume"
+          }
+        },
+        {
+          "id": "toggle",
+          "label": {
+            "en": "Toggle",
+            "fr": "Inverser"
+          }
+        },
+        {
+          "id": "previous",
+          "label": {
+            "en": "Previous State",
+            "fr": "Etat precedent"
+          }
+        }
+      ]
+    },
+    {
+      "id": "indicator_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Indicator LED",
+        "fr": "LED indicateur"
+      },
+      "value": "on_off",
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "fr": "Eteint"
+          }
+        },
+        {
+          "id": "on_off",
+          "label": {
+            "en": "On when switch is on",
+            "fr": "Allume quand actif"
+          }
+        },
+        {
+          "id": "inverted",
+          "label": {
+            "en": "On when switch is off",
+            "fr": "Allume quand eteint"
+          }
+        }
+      ]
+    },
+    {
+      "id": "switch_mode",
+      "type": "dropdown",
+      "label": { "en": "External Switch Type", "nl": "Extern schakelaartype", "de": "Externer Schaltertyp", "fr": "Type d'interrupteur externe" },
+      "hint": { "en": "Type of external switch connected to this relay module", "nl": "Type externe schakelaar aangesloten op deze relaismodule" },
+      "value": "toggle",
+      "values": [
+        { "id": "toggle", "label": { "en": "Toggle", "nl": "Tuimelschakelaar" } },
+        { "id": "state", "label": { "en": "State (Rocker)", "nl": "Status (Wipschakelaar)" } },
+        { "id": "momentary", "label": { "en": "Momentary (Push Button)", "nl": "Pulsdrukknop" } }
+      ]
+    }
+  ]
+}

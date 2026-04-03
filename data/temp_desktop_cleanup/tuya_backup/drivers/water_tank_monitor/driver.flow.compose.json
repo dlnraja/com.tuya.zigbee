@@ -1,0 +1,50 @@
+{
+  "triggers": [
+    {
+      "id": "water_tank_monitor_state_changed",
+      "title": { "en": "Liquid state changed", "nl": "Vloeistofstatus veranderd", "fr": "Etat liquide change", "de": "Flussigkeitsstatus geandert" },
+      "tokens": [
+        { "name": "state", "type": "string", "title": { "en": "State" }, "example": { "en": "low" } }
+      ],
+      "args": []
+    },
+    {
+      "id": "water_tank_monitor_level_changed",
+      "title": { "en": "Liquid level changed", "nl": "Vloeistofniveau veranderd", "fr": "Niveau liquide change", "de": "Flussigkeitsstand geandert" },
+      "tokens": [
+        { "name": "depth", "type": "number", "title": { "en": "Depth (cm)" }, "example": 50 },
+        { "name": "percentage", "type": "number", "title": { "en": "Fill (%)" }, "example": 75 }
+      ],
+      "args": []
+    },
+    {
+      "id": "water_tank_monitor_low",
+      "highlight": true,
+      "title": { "en": "Liquid level is low", "nl": "Vloeistofniveau is laag", "fr": "Niveau liquide bas", "de": "Flussigkeitsstand niedrig" },
+      "args": []
+    },
+    {
+      "id": "water_tank_monitor_high",
+      "title": { "en": "Liquid level is high", "nl": "Vloeistofniveau is hoog", "fr": "Niveau liquide haut", "de": "Flussigkeitsstand hoch" },
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "water_tank_monitor_level_above",
+      "title": { "en": "Fill level !{{is|is not}} above", "nl": "Vulniveau !{{is|is niet}} boven", "fr": "Niveau !{{est|n'est pas}} au-dessus de", "de": "Fullstand !{{ist|ist nicht}} uber" },
+      "titleFormatted": { "en": "Fill level !{{is|is not}} above [[level]]%", "nl": "Vulniveau !{{is|is niet}} boven [[level]]%", "fr": "Niveau !{{est|n'est pas}} au-dessus de [[level]]%", "de": "Fullstand !{{ist|ist nicht}} uber [[level]]%" },
+      "args": [
+        { "name": "level", "type": "number", "min": 0, "max": 100, "step": 5, "placeholder": { "en": "20" } }
+      ]
+    },
+    {
+      "id": "water_tank_monitor_state_is",
+      "title": { "en": "Liquid state !{{is|is not}}", "nl": "Vloeistofstatus !{{is|is niet}}", "fr": "Etat liquide !{{est|n'est pas}}", "de": "Flussigkeitsstatus !{{ist|ist nicht}}" },
+      "titleFormatted": { "en": "Liquid state !{{is|is not}} [[state]]", "nl": "Vloeistofstatus !{{is|is niet}} [[state]]", "fr": "Etat liquide !{{est|n'est pas}} [[state]]", "de": "Flussigkeitsstatus !{{ist|ist nicht}} [[state]]" },
+      "args": [
+        { "name": "state", "type": "dropdown", "values": [ { "id": "low", "label": { "en": "Low" } }, { "id": "normal", "label": { "en": "Normal" } }, { "id": "high", "label": { "en": "High" } } ] }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1133 @@
+{
+  "timestamp": "2026-01-10T06:00:22.926Z",
+  "stats": {
+    "driversScanned": 89,
+    "totalTriggers": 96,
+    "totalConditions": 32,
+    "totalActions": 27,
+    "totalIssues": 86
+  },
+  "issues": {
+    "missingRegistration": [],
+    "missingRunListener": [],
+    "triggeredButNotDefined": [],
+    "definedButNeverTriggered": [
+      {
+        "driver": "air_quality_co2",
+        "id": "co2_level_changed"
+      },
+      {
+        "driver": "air_quality_co2",
+        "id": "co2_level_above"
+      },
+      {
+        "driver": "air_quality_co2",
+        "id": "co2_level_below"
+      },
+      {
+        "driver": "air_quality_co2",
+        "id": "co2_alert_triggered"
+      },
+      {
+        "driver": "button_emergency_sos",
+        "id": "sos_button_pressed"
+      },
+      {
+        "driver": "button_emergency_sos",
+        "id": "sos_button_released"
+      },
+      {
+        "driver": "button_emergency_sos",
+        "id": "sos_battery_low"
+      },
+      {
+        "driver": "button_emergency_sos",
+        "id": "sos_tamper_alarm"
+      },
+      {
+        "driver": "button_wireless",
+        "id": "button_pressed"
+      },
+      {
+        "driver": "button_wireless",
+        "id": "button_double_pressed"
+      },
+      {
+        "driver": "button_wireless",
+        "id": "button_long_pressed"
+      },
+      {
+        "driver": "button_wireless",
+        "id": "button_battery_low"
+      },
+      {
+        "driver": "climate_sensor",
+        "id": "climate_temperature_changed"
+      },
+      {
+        "driver": "climate_sensor",
+        "id": "climate_humidity_changed"
+      },
+      {
+        "driver": "climate_sensor",
+        "id": "climate_temperature_above"
+      },
+      {
+        "driver": "climate_sensor",
+        "id": "climate_temperature_below"
+      },
+      {
+        "driver": "climate_sensor",
+        "id": "climate_humidity_above"
+      },
+      {
+        "driver": "climate_sensor",
+        "id": "climate_humidity_below"
+      },
+      {
+        "driver": "climate_sensor",
+        "id": "climate_battery_low"
+      },
+      {
+        "driver": "contact_sensor",
+        "id": "contact_opened"
+      },
+      {
+        "driver": "contact_sensor",
+        "id": "contact_closed"
+      },
+      {
+        "driver": "contact_sensor",
+        "id": "contact_battery_low"
+      },
+      {
+        "driver": "curtain_motor",
+        "id": "cover_position_changed"
+      },
+      {
+        "driver": "curtain_motor",
+        "id": "cover_opened"
+      },
+      {
+        "driver": "curtain_motor",
+        "id": "cover_closed"
+      },
+      {
+        "driver": "curtain_motor",
+        "id": "cover_stopped"
+      },
+      {
+        "driver": "dimmer_wall_1gang",
+        "id": "dimmer_turned_on"
+      },
+      {
+        "driver": "dimmer_wall_1gang",
+        "id": "dimmer_turned_off"
+      },
+      {
+        "driver": "dimmer_wall_1gang",
+        "id": "dimmer_level_changed"
+      },
+      {
+        "driver": "gas_sensor",
+        "id": "gas_alarm_triggered"
+      },
+      {
+        "driver": "gas_sensor",
+        "id": "gas_alarm_cleared"
+      },
+      {
+        "driver": "gas_sensor",
+        "id": "gas_level_changed"
+      },
+      {
+        "driver": "motion_sensor",
+        "id": "motion_illuminance_changed"
+      },
+      {
+        "driver": "motion_sensor",
+        "id": "motion_illuminance_above"
+      },
+      {
+        "driver": "motion_sensor",
+        "id": "motion_illuminance_below"
+      },
+      {
+        "driver": "motion_sensor",
+        "id": "motion_battery_low"
+      },
+      {
+        "driver": "plug_smart",
+        "id": "plug_power_changed"
+      },
+      {
+        "driver": "plug_smart",
+        "id": "plug_power_above"
+      },
+      {
+        "driver": "plug_smart",
+        "id": "plug_standby_entered"
+      },
+      {
+        "driver": "plug_smart",
+        "id": "plug_standby_exited"
+      },
+      {
+        "driver": "plug_smart",
+        "id": "plug_overload"
+      },
+      {
+        "driver": "presence_sensor_radar",
+        "id": "presence_distance_changed"
+      },
+      {
+        "driver": "presence_sensor_radar",
+        "id": "presence_illuminance_changed"
+      },
+      {
+        "driver": "radiator_valve",
+        "id": "valve_target_changed"
+      },
+      {
+        "driver": "radiator_valve",
+        "id": "valve_heating_started"
+      },
+      {
+        "driver": "radiator_valve",
+        "id": "valve_heating_stopped"
+      },
+      {
+        "driver": "radiator_valve",
+        "id": "valve_battery_low"
+      },
+      {
+        "driver": "radiator_valve",
+        "id": "valve_window_open"
+      },
+      {
+        "driver": "siren",
+        "id": "siren_alarm_triggered"
+      },
+      {
+        "driver": "siren",
+        "id": "siren_alarm_stopped"
+      },
+      {
+        "driver": "siren",
+        "id": "siren_tamper_alarm"
+      },
+      {
+        "driver": "siren",
+        "id": "siren_battery_low"
+      },
+      {
+        "driver": "smoke_detector_advanced",
+        "id": "smoke_alarm_triggered"
+      },
+      {
+        "driver": "smoke_detector_advanced",
+        "id": "smoke_alarm_cleared"
+      },
+      {
+        "driver": "smoke_detector_advanced",
+        "id": "smoke_tamper_alarm"
+      },
+      {
+        "driver": "smoke_detector_advanced",
+        "id": "smoke_battery_low"
+      },
+      {
+        "driver": "soil_sensor",
+        "id": "soil_moisture_changed"
+      },
+      {
+        "driver": "soil_sensor",
+        "id": "soil_moisture_below"
+      },
+      {
+        "driver": "soil_sensor",
+        "id": "soil_moisture_above"
+      },
+      {
+        "driver": "soil_sensor",
+        "id": "soil_temperature_changed"
+      },
+      {
+        "driver": "soil_sensor",
+        "id": "soil_battery_low"
+      },
+      {
+        "driver": "switch_1gang",
+        "id": "switch_turned_on"
+      },
+      {
+        "driver": "switch_1gang",
+        "id": "switch_turned_off"
+      },
+      {
+        "driver": "switch_1gang",
+        "id": "switch_power_changed"
+      },
+      {
+        "driver": "switch_2gang",
+        "id": "switch2_gang1_on"
+      },
+      {
+        "driver": "switch_2gang",
+        "id": "switch2_gang1_off"
+      },
+      {
+        "driver": "switch_2gang",
+        "id": "switch2_gang2_on"
+      },
+      {
+        "driver": "switch_2gang",
+        "id": "switch2_gang2_off"
+      },
+      {
+        "driver": "switch_2gang",
+        "id": "switch2_power_changed"
+      },
+      {
+        "driver": "switch_3gang",
+        "id": "switch3_gang1_on"
+      },
+      {
+        "driver": "switch_3gang",
+        "id": "switch3_gang1_off"
+      },
+      {
+        "driver": "switch_3gang",
+        "id": "switch3_gang2_on"
+      },
+      {
+        "driver": "switch_3gang",
+        "id": "switch3_gang2_off"
+      },
+      {
+        "driver": "switch_3gang",
+        "id": "switch3_gang3_on"
+      },
+      {
+        "driver": "switch_3gang",
+        "id": "switch3_gang3_off"
+      },
+      {
+        "driver": "thermostat_tuya_dp",
+        "id": "thermostat_target_changed"
+      },
+      {
+        "driver": "thermostat_tuya_dp",
+        "id": "thermostat_mode_changed"
+      },
+      {
+        "driver": "thermostat_tuya_dp",
+        "id": "thermostat_heating_started"
+      },
+      {
+        "driver": "thermostat_tuya_dp",
+        "id": "thermostat_heating_stopped"
+      },
+      {
+        "driver": "water_leak_sensor",
+        "id": "water_leak_detected"
+      },
+      {
+        "driver": "water_leak_sensor",
+        "id": "water_leak_cleared"
+      },
+      {
+        "driver": "water_leak_sensor",
+        "id": "water_battery_low"
+      }
+    ],
+    "missingTokens": [
+      {
+        "driver": "soil_sensor",
+        "id": "soil_sensor_soil_moisture_changed"
+      },
+      {
+        "driver": "soil_sensor",
+        "id": "soil_sensor_soil_temperature_changed"
+      }
+    ],
+    "incorrectCapability": [
+      {
+        "driver": "gas_sensor",
+        "id": "gas_alarm_is_active",
+        "capability": "alarm_is_active"
+      },
+      {
+        "driver": "smoke_detector_advanced",
+        "id": "smoke_alarm_is_active",
+        "capability": "alarm_is_active"
+      }
+    ]
+  },
+  "results": [
+    {
+      "driver": "air_quality_co2",
+      "triggers": 4,
+      "conditions": 1,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "co2_level_changed",
+          "message": "Trigger 'co2_level_changed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "co2_level_above",
+          "message": "Trigger 'co2_level_above' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "co2_level_below",
+          "message": "Trigger 'co2_level_below' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "co2_alert_triggered",
+          "message": "Trigger 'co2_alert_triggered' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "button_emergency_sos",
+      "triggers": 5,
+      "conditions": 1,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "sos_button_pressed",
+          "message": "Trigger 'sos_button_pressed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "sos_button_released",
+          "message": "Trigger 'sos_button_released' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "sos_battery_low",
+          "message": "Trigger 'sos_battery_low' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "sos_tamper_alarm",
+          "message": "Trigger 'sos_tamper_alarm' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "button_wireless",
+      "triggers": 4,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "button_pressed",
+          "message": "Trigger 'button_pressed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "button_double_pressed",
+          "message": "Trigger 'button_double_pressed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "button_long_pressed",
+          "message": "Trigger 'button_long_pressed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "button_battery_low",
+          "message": "Trigger 'button_battery_low' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "climate_sensor",
+      "triggers": 7,
+      "conditions": 2,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "climate_temperature_changed",
+          "message": "Trigger 'climate_temperature_changed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "climate_humidity_changed",
+          "message": "Trigger 'climate_humidity_changed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "climate_temperature_above",
+          "message": "Trigger 'climate_temperature_above' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "climate_temperature_below",
+          "message": "Trigger 'climate_temperature_below' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "climate_humidity_above",
+          "message": "Trigger 'climate_humidity_above' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "climate_humidity_below",
+          "message": "Trigger 'climate_humidity_below' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "climate_battery_low",
+          "message": "Trigger 'climate_battery_low' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "contact_sensor",
+      "triggers": 3,
+      "conditions": 1,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "contact_opened",
+          "message": "Trigger 'contact_opened' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "contact_closed",
+          "message": "Trigger 'contact_closed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "contact_battery_low",
+          "message": "Trigger 'contact_battery_low' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "curtain_motor",
+      "triggers": 5,
+      "conditions": 2,
+      "actions": 2,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "cover_position_changed",
+          "message": "Trigger 'cover_position_changed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "cover_opened",
+          "message": "Trigger 'cover_opened' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "cover_closed",
+          "message": "Trigger 'cover_closed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "cover_stopped",
+          "message": "Trigger 'cover_stopped' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "dimmer_wall_1gang",
+      "triggers": 3,
+      "conditions": 2,
+      "actions": 2,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "dimmer_turned_on",
+          "message": "Trigger 'dimmer_turned_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "dimmer_turned_off",
+          "message": "Trigger 'dimmer_turned_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "dimmer_level_changed",
+          "message": "Trigger 'dimmer_level_changed' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "gas_sensor",
+      "triggers": 3,
+      "conditions": 1,
+      "actions": 2,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "gas_alarm_triggered",
+          "message": "Trigger 'gas_alarm_triggered' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "gas_alarm_cleared",
+          "message": "Trigger 'gas_alarm_cleared' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "gas_level_changed",
+          "message": "Trigger 'gas_level_changed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "INCORRECT_CAPABILITY",
+          "severity": "HIGH",
+          "card": "condition",
+          "id": "gas_alarm_is_active",
+          "message": "Condition 'gas_alarm_is_active' référence capability 'alarm_is_active' non présente dans driver",
+          "expectedCap": "alarm_is_active"
+        }
+      ]
+    },
+    {
+      "driver": "motion_sensor",
+      "triggers": 4,
+      "conditions": 1,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "motion_illuminance_changed",
+          "message": "Trigger 'motion_illuminance_changed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "motion_illuminance_above",
+          "message": "Trigger 'motion_illuminance_above' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "motion_illuminance_below",
+          "message": "Trigger 'motion_illuminance_below' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "motion_battery_low",
+          "message": "Trigger 'motion_battery_low' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "plug_smart",
+      "triggers": 5,
+      "conditions": 2,
+      "actions": 1,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "plug_power_changed",
+          "message": "Trigger 'plug_power_changed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "plug_power_above",
+          "message": "Trigger 'plug_power_above' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "plug_standby_entered",
+          "message": "Trigger 'plug_standby_entered' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "plug_standby_exited",
+          "message": "Trigger 'plug_standby_exited' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "plug_overload",
+          "message": "Trigger 'plug_overload' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "presence_sensor_radar",
+      "triggers": 6,
+      "conditions": 2,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "presence_distance_changed",
+          "message": "Trigger 'presence_distance_changed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "presence_illuminance_changed",
+          "message": "Trigger 'presence_illuminance_changed' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "radiator_valve",
+      "triggers": 5,
+      "conditions": 2,
+      "actions": 2,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "valve_target_changed",
+          "message": "Trigger 'valve_target_changed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "valve_heating_started",
+          "message": "Trigger 'valve_heating_started' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "valve_heating_stopped",
+          "message": "Trigger 'valve_heating_stopped' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "valve_battery_low",
+          "message": "Trigger 'valve_battery_low' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "valve_window_open",
+          "message": "Trigger 'valve_window_open' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "siren",
+      "triggers": 4,
+      "conditions": 1,
+      "actions": 6,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "siren_alarm_triggered",
+          "message": "Trigger 'siren_alarm_triggered' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "siren_alarm_stopped",
+          "message": "Trigger 'siren_alarm_stopped' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "siren_tamper_alarm",
+          "message": "Trigger 'siren_tamper_alarm' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "siren_battery_low",
+          "message": "Trigger 'siren_battery_low' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "smoke_detector_advanced",
+      "triggers": 4,
+      "conditions": 1,
+      "actions": 2,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "smoke_alarm_triggered",
+          "message": "Trigger 'smoke_alarm_triggered' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "smoke_alarm_cleared",
+          "message": "Trigger 'smoke_alarm_cleared' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "smoke_tamper_alarm",
+          "message": "Trigger 'smoke_tamper_alarm' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "smoke_battery_low",
+          "message": "Trigger 'smoke_battery_low' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "INCORRECT_CAPABILITY",
+          "severity": "HIGH",
+          "card": "condition",
+          "id": "smoke_alarm_is_active",
+          "message": "Condition 'smoke_alarm_is_active' référence capability 'alarm_is_active' non présente dans driver",
+          "expectedCap": "alarm_is_active"
+        }
+      ]
+    },
+    {
+      "driver": "soil_sensor",
+      "triggers": 10,
+      "conditions": 2,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "soil_moisture_changed",
+          "message": "Trigger 'soil_moisture_changed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "soil_moisture_below",
+          "message": "Trigger 'soil_moisture_below' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "soil_moisture_above",
+          "message": "Trigger 'soil_moisture_above' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "soil_temperature_changed",
+          "message": "Trigger 'soil_temperature_changed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "soil_battery_low",
+          "message": "Trigger 'soil_battery_low' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "MISSING_TOKENS",
+          "severity": "MEDIUM",
+          "card": "trigger",
+          "id": "soil_sensor_soil_moisture_changed",
+          "message": "Trigger 'soil_sensor_soil_moisture_changed' devrait avoir des tokens"
+        },
+        {
+          "type": "MISSING_TOKENS",
+          "severity": "MEDIUM",
+          "card": "trigger",
+          "id": "soil_sensor_soil_temperature_changed",
+          "message": "Trigger 'soil_sensor_soil_temperature_changed' devrait avoir des tokens"
+        }
+      ]
+    },
+    {
+      "driver": "switch_1gang",
+      "triggers": 3,
+      "conditions": 1,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_turned_on",
+          "message": "Trigger 'switch_turned_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_turned_off",
+          "message": "Trigger 'switch_turned_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_power_changed",
+          "message": "Trigger 'switch_power_changed' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "switch_2gang",
+      "triggers": 5,
+      "conditions": 2,
+      "actions": 3,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch2_gang1_on",
+          "message": "Trigger 'switch2_gang1_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch2_gang1_off",
+          "message": "Trigger 'switch2_gang1_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch2_gang2_on",
+          "message": "Trigger 'switch2_gang2_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch2_gang2_off",
+          "message": "Trigger 'switch2_gang2_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch2_power_changed",
+          "message": "Trigger 'switch2_power_changed' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "switch_3gang",
+      "triggers": 6,
+      "conditions": 3,
+      "actions": 4,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch3_gang1_on",
+          "message": "Trigger 'switch3_gang1_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch3_gang1_off",
+          "message": "Trigger 'switch3_gang1_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch3_gang2_on",
+          "message": "Trigger 'switch3_gang2_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch3_gang2_off",
+          "message": "Trigger 'switch3_gang2_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch3_gang3_on",
+          "message": "Trigger 'switch3_gang3_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch3_gang3_off",
+          "message": "Trigger 'switch3_gang3_off' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "thermostat_tuya_dp",
+      "triggers": 4,
+      "conditions": 2,
+      "actions": 1,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "thermostat_target_changed",
+          "message": "Trigger 'thermostat_target_changed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "thermostat_mode_changed",
+          "message": "Trigger 'thermostat_mode_changed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "thermostat_heating_started",
+          "message": "Trigger 'thermostat_heating_started' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "thermostat_heating_stopped",
+          "message": "Trigger 'thermostat_heating_stopped' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "water_leak_sensor",
+      "triggers": 3,
+      "conditions": 1,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "water_leak_detected",
+          "message": "Trigger 'water_leak_detected' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "water_leak_cleared",
+          "message": "Trigger 'water_leak_cleared' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "water_battery_low",
+          "message": "Trigger 'water_battery_low' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    }
+  ]
+}

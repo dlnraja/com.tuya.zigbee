@@ -1,0 +1,115 @@
+{
+  "name": {
+    "en": "WiFi Dehumidifier (Tuya Local)"
+  },
+  "class": "fan",
+  "capabilities": [
+    "onoff",
+    "measure_humidity",
+    "measure_temperature",
+    "target_humidity",
+    "alarm_water"
+  ],
+  "pair": [
+    {
+      "id": "configure",
+      "navigation": {
+        "next": "list_devices"
+      }
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "prev": "configure"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "repair": [
+    {
+      "id": "configure"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Tuya Local"
+      },
+      "children": [
+        {
+          "id": "device_id",
+          "type": "text",
+          "label": {
+            "en": "Device ID"
+          },
+          "value": ""
+        },
+        {
+          "id": "local_key",
+          "type": "text",
+          "label": {
+            "en": "Local Key"
+          },
+          "value": ""
+        },
+        {
+          "id": "ip",
+          "type": "text",
+          "label": {
+            "en": "IP"
+          },
+          "value": ""
+        },
+        {
+          "id": "protocol_version",
+          "type": "dropdown",
+          "label": {
+            "en": "Protocol"
+          },
+          "value": "3.3",
+          "values": [
+            {
+              "id": "3.1",
+              "label": {
+                "en": "3.1"
+              }
+            },
+            {
+              "id": "3.3",
+              "label": {
+                "en": "3.3"
+              }
+            },
+            {
+              "id": "3.4",
+              "label": {
+                "en": "3.4"
+              }
+            },
+            {
+              "id": "3.5",
+              "label": {
+                "en": "3.5"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "lan"
+  ],
+  "images": {
+    "small": "drivers/wifi_dehumidifier/assets/images/small.png",
+    "large": "drivers/wifi_dehumidifier/assets/images/large.png"
+  }
+}

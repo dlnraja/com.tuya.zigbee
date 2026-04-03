@@ -1,0 +1,148 @@
+# Universal Tuya Zigbee - Validation Workflow
+# v5.8.88 - Updated 2026-02-10
+# Runs on pull requests to validate app before merge
+
+name: 🔍 Validate Homey App
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # Daily 12:00 UTC — validation sanity check
+  pull_request:
+    branches:
+      - master
+      - main
+    paths:
+      - '**.js'
+      - '**.json'
+      - 'drivers/**'
+      - 'lib/**'
+  workflow_dispatch:
+    inputs:
+      level:
+        description: "Validation level"
+        required: false
+        type: choice
+        options:
+          - debug
+          - publish
+          - verified
+        default: publish
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: "22"
+  # APP_VERSION read dynamically from app.json
+
+jobs:
+  validate:
+    name: 🔍 Validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: 📦 Install dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: 🔄 Check driver/app.json sync
+        id: sync
+        run: |
+          node scripts/maintenance/sync-app-json.js 2>&1 || true
+          if git diff --quiet app.json 2>/dev/null; then
+            echo "synced=true" >> $GITHUB_OUTPUT
+          else
+            echo "synced=false" >> $GITHUB_OUTPUT
+            echo "⚠️ app.json is out of sync with drivers!"
+          fi
+
+      - name: 🔨 Build app
+        run: npx homey app build
+
+      - name: 📦 Get App Info
+        id: info
+        run: |
+          VERSION=$(node -p "require('./app.json').version")
+          NAME=$(node -p "require('./app.json').name.en")
+          DRIVERS=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "name=$NAME" >> $GITHUB_OUTPUT
+          echo "drivers=$DRIVERS" >> $GITHUB_OUTPUT
+          echo "📦 $NAME v$VERSION - $DRIVERS drivers"
+
+      - name: 🔍 JS Syntax Check
+        run: |
+          FAIL=0
+          for f in $(find lib drivers -name "*.js" 2>/dev/null); do
+            if ! node -c "$f" 2>/dev/null; then
+              echo "❌ Syntax error: $f"
+              FAIL=1
+            fi
+          done
+          echo "JS syntax: $([[ $FAIL -eq 0 ]] && echo OK || echo FAILED)"
+
+      - name: 🔍 Fingerprint Collision Check
+        run: |
+          node -e "
+            const fs=require('fs'),path=require('path');
+            const dirs=fs.readdirSync('drivers').filter(d=>fs.statSync(path.join('drivers',d)).isDirectory());
+            const map=new Map();
+            for(const d of dirs){
+              const f=path.join('drivers',d,'driver.compose.json');
+              if(!fs.existsSync(f))continue;
+              const j=JSON.parse(fs.readFileSync(f,'utf8'));
+              const z=j.zigbee;
+              if(!z||!z.manufacturerName||!z.productId)continue;
+              for(const mfr of z.manufacturerName){
+                for(const pid of z.productId){
+                  const key=mfr+'|'+pid;
+                  if(!map.has(key))map.set(key,[]);
+                  map.get(key).push(d);
+                }
+              }
+            }
+            let col=0;
+            for(const [k,v] of map){if(v.length>1){console.log('⚠️ Collision:',k,'in',v.join(', '));col++;}}
+            console.log(col?col+' collision(s) found':'No fingerprint collisions');
+          "
+
+      - name: 🔍 Validate (Athom Official)
+        uses: athombv/github-action-homey-app-validate@v1
+        with:
+          level: ${{ inputs.level || 'publish' }}
+
+      - name: ✅ Summary
+        if: success()
+        run: |
+          echo "## ✅ ${{ steps.info.outputs.name }} v${{ steps.info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Validation Level | ${{ inputs.level || 'publish' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Drivers | ${{ steps.info.outputs.drivers }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Sync Status | ${{ steps.sync.outputs.synced == 'true' && '✅ Synced' || '⚠️ Out of sync' }} |" >> $GITHUB_STEP_SUMMARY
+
+      - name: ❌ Failed
+        if: failure()
+        run: |
+          echo "## ❌ Validation Failed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Run \`homey app validate --level publish\` locally for details." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🛠️ Quick Fixes" >> $GITHUB_STEP_SUMMARY
+          echo "1. \`node scripts/maintenance/sync-app-json.js\`" >> $GITHUB_STEP_SUMMARY
+          echo "2. \`npx homey app build\`" >> $GITHUB_STEP_SUMMARY
+          echo "3. \`npx homey app validate --level publish\`" >> $GITHUB_STEP_SUMMARY

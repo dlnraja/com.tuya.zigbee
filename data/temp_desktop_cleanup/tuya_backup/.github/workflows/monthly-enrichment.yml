@@ -1,0 +1,129 @@
+# Monthly Enrichment Pipeline - Universal Tuya Zigbee
+# Runs monthly to scan forums, analyze PRs, validate drivers, and generate reports
+# ENRICHMENT ONLY - Never removes existing functionality
+# Forum sources: 140352 (dlnraja), 26439 (JohanBendz), 146735 (Tuya Smart Life), 89271 (Device Archive)
+
+name: Monthly Enrichment Pipeline
+
+on:
+  schedule:
+    - cron: '0 3 1 * *'  # First day of each month at 3 AM UTC
+  workflow_dispatch:
+    inputs:
+      force_full_scan:
+        description: 'Force full scan (ignore cache)'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: monthly-enrichment
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  monthly-scan:
+    name: Monthly Intelligence Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: Run collision lint
+        id: lint
+        run: |
+          echo "## Collision Analysis" >> $GITHUB_STEP_SUMMARY
+          node scripts/automation/lint-collisions.js 2>&1 | tee lint-output.txt || true
+          cat lint-output.txt >> $GITHUB_STEP_SUMMARY
+
+      - name: Generate device matrix
+        run: |
+          echo "## Device Matrix" >> $GITHUB_STEP_SUMMARY
+          node scripts/automation/generate-matrix.js
+
+      - name: Run monthly scan
+        run: |
+          echo "## Monthly Scan" >> $GITHUB_STEP_SUMMARY
+          node scripts/automation/monthly-scan.js
+
+      - name: Validate YAML-JS consistency
+        run: |
+          echo "## Driver Validation" >> $GITHUB_STEP_SUMMARY
+          node scripts/automation/validate-drivers.js 2>&1 | tee validation.txt || true
+          cat validation.txt >> $GITHUB_STEP_SUMMARY
+
+      - name: Audit Flow Cards
+        run: |
+          echo "## Flow Card Audit" >> $GITHUB_STEP_SUMMARY
+          node scripts/automation/audit-flowcards.js 2>&1 | tee flowcards.txt || true
+          cat flowcards.txt >> $GITHUB_STEP_SUMMARY
+
+      - name: 🌐 Run Community Sync
+        run: |
+          echo "## Community Sync" >> $GITHUB_STEP_SUMMARY
+          node scripts/community-sync/sync-all.js 2>&1 | tee community-sync.txt || true
+          node scripts/community-sync/generate-report.js >> $GITHUB_STEP_SUMMARY || true
+
+      - name: Homey Device Diagnostics
+        continue-on-error: true
+        env:
+          HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/homey-device-diagnostics.js
+
+      - name: 🔌 Scan Public APIs (davemachado/public-api)
+        continue-on-error: true
+        run: node .github/scripts/scan-public-apis.js
+
+      - name: 🔍 External Sources (Z2M+ZHA+Blakadder)
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: node .github/scripts/external-sources-scanner.js
+
+      - name: 🔍 Enrichment Scanner
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: node .github/scripts/enrichment-scanner.js
+
+      - name: 📝 AI Changelog
+        continue-on-error: true
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/generate-ai-changelog.js
+
+      - name: Commit reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/*.md data/*.json data/community-sync/*.json .github/state/*.json || true
+          D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
+          git diff --staged --quiet || git commit -m "Monthly enrichment $(date +%Y-%m): ${D} drivers, ${F} FPs validated + reports updated [skip ci]"
+          git pull --rebase origin master || true
+          git push || true

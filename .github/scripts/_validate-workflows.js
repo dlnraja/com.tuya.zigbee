@@ -121,6 +121,7 @@ for (const f of files) {
   if (doc.on && doc.on.schedule) {
     const scheds = Array.isArray(doc.on.schedule) ? doc.on.schedule : [doc.on.schedule];
     for (const sc of scheds) {
+      if (!sc) continue;
       const cron = sc.cron || sc;
       if (typeof cron === 'string') {
         const parts = cron.trim().split(/\s+/);
@@ -140,6 +141,7 @@ for (const f of files) {
   if (!doc || !doc.on || !doc.on.schedule) continue;
   const scheds = Array.isArray(doc.on.schedule) ? doc.on.schedule : [doc.on.schedule];
   for (const sc of scheds) {
+    if (!sc) continue;
     const cron = (sc.cron || sc || '').trim();
     if (!cronMap.has(cron)) cronMap.set(cron, []);
     cronMap.get(cron).push(f);

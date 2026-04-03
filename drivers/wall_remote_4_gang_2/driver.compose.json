@@ -1,86 +1,47 @@
 {
-  "id": "wall_remote_4_gang_2",
-  "name": {
-    "en": "4 Gang Wall Remote"
-  },
-  "class": "remote",
-  "platforms": [
-    "local"
-  ],
-  "connectivity": [
-    "zigbee"
-  ],
-  "capabilities": [],
-  "images": {
-    "large": "drivers/wall_remote_4_gang_2/assets/images/large.png",
-    "small": "drivers/wall_remote_4_gang_2/assets/images/small.png",
-    "xlarge": "drivers/wall_remote_4_gang_2/assets/images/xlarge.png"
-  },
-  "energy": {
-    "batteries": [
-      "CR2032"
-    ]
-  },
-  "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_xabckq1v"
-    ],
-    "productId": [
-      "TS004F"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          1,
-          6,
-          8
-        ]
-      }
+    "id": "wall_remote_4_gang_2",
+    "name": {
+      "en": "4 Gang Wall Remote"
     },
-    "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
-      "instruction": {
-        "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
+    "class": "remote",
+    "platforms": ["local"],
+    "connectivity": ["zigbee"],
+    "capabilities": [
+    ],
+    "images": {
+      "large": "{{driverAssetsPath}}/images/large.png",
+      "small": "{{driverAssetsPath}}/images/small.png"
+    },
+    "energy": {
+      "batteries": [
+        "CR2032"
+      ]
+    },
+    "zigbee": {
+      "manufacturerName": [
+        "_TZ3000_xabckq1v",
+        "_TZ3000_nuombroo",
+        "_TZ3000_czuyt8lz",
+        "_TZ3000_0ht8dnxj",
+        "_TZ3000_b3mgfu0d",
+        "_TZ3000_11pg3ima",
+        "_TZ3000_et7afzxz"
+      ],
+      "productId": [
+        "TS004F"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [0, 1, 6, 8],
+          "bindings": [6, 8]
+        }
+      },
+      "learnmode": {
+        "image": "{{driverAssetsPath}}/icon.svg",
+        "instruction": {
+          "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
+        }
       }
     }
-  },
-  "settings": [
-    {
-      "id": "button_mode",
-      "type": "dropdown",
-      "label": {
-        "en": "Operating Mode",
-        "fr": "Mode de fonctionnement"
-      },
-      "hint": {
-        "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-        "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
-      },
-      "value": "auto",
-      "values": [
-        {
-          "id": "auto",
-          "label": {
-            "en": "Auto-Detect",
-            "fr": "Détection Auto"
-          }
-        },
-        {
-          "id": "scene",
-          "label": {
-            "en": "Scene Mode (Multi-press)",
-            "fr": "Mode Scène (Multi-clics)"
-          }
-        },
-        {
-          "id": "dimmer",
-          "label": {
-            "en": "Dimmer Mode",
-            "fr": "Mode Variateur"
-          }
-        }
-      ]
-    }
-  ]
+
 }

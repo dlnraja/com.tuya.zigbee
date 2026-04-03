@@ -15,7 +15,7 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is on
     try {
-      this.homey.flow.getConditionCard('dimmer_dual_channel_is_on')
+      this.homey.flow.getDeviceConditionCard('dimmer_dual_channel_is_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -25,7 +25,7 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
 
     // CONDITION: Dim above
     try {
-      this.homey.flow.getConditionCard('dimmer_dual_channel_dim_above')
+      this.homey.flow.getDeviceConditionCard('dimmer_dual_channel_dim_above')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const dim = args.device.getCapabilityValue('dim') || 0;

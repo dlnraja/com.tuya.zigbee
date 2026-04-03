@@ -1,0 +1,196 @@
+# Universal Tuya Zigbee - Auto PR/Issue Responder
+# Triggers on issues/PRs: opened, reopened, edited on dlnraja repo
+# Checks fingerprints, responds, labels, and auto-closes if all FPs supported
+
+name: "Auto Issue/PR Responder"
+
+on:
+  issues:
+    types: [opened, reopened, edited]
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: auto-respond-${{ github.event.number }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  respond:
+    name: "Auto-Respond"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Check fingerprints, respond, and auto-close
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const APP = 'https://homey.app/a/com.dlnraja.tuya.zigbee/test/';
+            const FORUM = 'https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352';
+            const DEV = 'https://tools.developer.homey.app';
+            const TAG = '<!-- tuya-triage-bot -->';
+
+            // Load all fingerprints + productIds
+            const fps = new Set();
+            const driverMap = new Map();
+            const driversDir = path.join(process.env.GITHUB_WORKSPACE, 'drivers');
+            let driverCount = 0;
+            for (const d of fs.readdirSync(driversDir)) {
+              const cf = path.join(driversDir, d, 'driver.compose.json');
+              if (!fs.existsSync(cf)) continue;
+              driverCount++;
+              try {
+                const j = JSON.parse(fs.readFileSync(cf, 'utf8'));
+                for (const m of (j.zigbee?.manufacturerName || [])) {
+                  fps.add(m);
+                  if (!driverMap.has(m)) driverMap.set(m, []);
+                  driverMap.get(m).push(d);
+                }
+                for (const p of (j.zigbee?.productId || [])) fps.add(p);
+              } catch {}
+            }
+
+            // Extract fingerprints from issue/PR
+            const isIssue = !!context.payload.issue;
+            const isPR = !!context.payload.pull_request;
+            const item = context.payload.issue || context.payload.pull_request;
+            const body = item?.body || '';
+            const title = item?.title || '';
+            const text = title + ' ' + body;
+            const num = item?.number;
+            const action = context.payload.action; // opened, reopened, edited
+
+            // Match Tuya-style FPs + TS productIds
+            const mfrs = [...new Set(text.match(/_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}/g) || [])];
+            const pids = [...new Set(text.match(/\bTS\d{4}[A-Z]?\b/g) || [])];
+            const nonTuya = [...new Set((text.match(/\b[A-Z][A-Z0-9]{5,15}\b/g) || []).filter(m => fps.has(m)))];
+            const allMfrs = [...new Set([...mfrs, ...nonTuya])];
+
+            // Detect WiFi device requests (Tuya WiFi / Smart Life / Lidl Home / Meross / Avatto)
+            const isWiFi = /wifi|wi-fi|smart\s*life|tuya\s*cloud|local\s*key|lidl\s*home|meross|avatto|silvercrest|nedis|local\s*control/i.test(text);
+            // Detect sensor capability requests (fertilizer, EC, VOC, formaldehyde, etc.)
+            const isSensorGap = /fertilizer|conductivity|\bEC\b|measure_ec|soil.*fertil|missing.*reading|missing.*capability|new.*capability|add.*sensor/i.test(text);
+            const wifiDriverCount = fs.readdirSync(driversDir).filter(d => d.startsWith('wifi_')).length;
+
+            if (!allMfrs.length && !pids.length) {
+              console.log('No fingerprints found — skipping');
+              // Still label if it looks like a device request
+              const labels = ['device-request', 'needs-info'];
+              if (isWiFi) labels.push('wifi');
+              if (isIssue && action === 'opened' && /device|support|add|request|wifi|smart.?life/i.test(title)) {
+                await github.rest.issues.addLabels({
+                  owner: context.repo.owner, repo: context.repo.repo,
+                  issue_number: num, labels
+                });
+              }
+              return;
+            }
+
+            // Check existing bot comment (avoid duplicates on edit/reopen)
+            const comments = await github.rest.issues.listComments({
+              owner: context.repo.owner, repo: context.repo.repo,
+              issue_number: num, per_page: 30
+            });
+            const existingBot = comments.data.find(c => c.body?.includes(TAG));
+
+            const found = allMfrs.filter(m => fps.has(m));
+            const missing = allMfrs.filter(m => !fps.has(m));
+            const version = require(path.join(process.env.GITHUB_WORKSPACE, 'app.json')).version;
+            const allSupported = allMfrs.length > 0 && missing.length === 0;
+
+            // Build response
+            let msg = TAG + '\n';
+
+            if (found.length) {
+              const lines = found.map(m => {
+                const drivers = driverMap.get(m) || ['unknown'];
+                return `- \`${m}\` → **${drivers.join('**, **')}**`;
+              }).join('\n');
+              msg += `These are already supported in v${version}:\n\n${lines}\n\n`;
+            }
+
+            if (missing.length) {
+              msg += `Not yet supported: \`${missing.join('\`, \`')}\`\n\n`;
+              msg += `I've logged these for the next release. If you can share a device interview from [Developer Tools](${DEV}) and a Z2M link (if it exists), that helps a lot.\n\n`;
+            }
+
+            if (isPR) {
+              msg += `Thanks for this PR! The fingerprints have been tracked and `;
+              msg += allSupported ? `are already integrated.\n\n` : `will be reviewed.\n\n`;
+            }
+
+            if (allSupported) {
+              msg += `All fingerprints are already supported — install the [test version](${APP}), remove the device, and re-pair it.\n\n`;
+            }
+
+            if (isWiFi) {
+              msg += `This app also has ${wifiDriverCount} WiFi device types with local LAN control (no cloud).\n\n`;
+            }
+            if (isSensorGap) {
+              msg += `For missing sensor readings (fertilizer, EC, VOC, etc.): please share **app logs** (Settings → Apps → Tuya → View Log) showing DP numbers — this helps us map unknown data points.\n\n`;
+            }
+            msg += `[Test version](${APP}) · [Forum thread](${FORUM}) · [Developer Tools](${DEV})`;
+
+            // Post or update comment
+            if (existingBot && action !== 'opened') {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                comment_id: existingBot.id, body: msg
+              });
+              console.log(`Updated bot comment on #${num}`);
+            } else if (!existingBot) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: num, body: msg
+              });
+              console.log(`Posted response to #${num}`);
+            }
+
+            // Labels
+            const labels = [];
+            if (missing.length) labels.push('new-device');
+            if (allSupported) labels.push('already-supported');
+            if (isPR) labels.push('pr-fingerprints');
+            if (labels.length) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: num, labels
+              });
+            }
+
+            // Auto-close if ALL fingerprints are already supported
+            if (allSupported && isIssue && allMfrs.length > 0) {
+              console.log(`All ${found.length} FPs supported — auto-closing #${num}`);
+              await github.rest.issues.update({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: num, state: 'closed', state_reason: 'completed'
+              });
+            }
+            // Auto-close PR if all FPs supported (comment only, don't merge)
+            if (allSupported && isPR && allMfrs.length > 0) {
+              console.log(`All ${found.length} FPs in PR supported — closing PR #${num}`);
+              await github.rest.pulls.update({
+                owner: context.repo.owner, repo: context.repo.repo,
+                pull_number: num, state: 'closed'
+              });
+            }
+
+            console.log(`#${num}: ${found.length} found, ${missing.length} missing, action=${action}`);

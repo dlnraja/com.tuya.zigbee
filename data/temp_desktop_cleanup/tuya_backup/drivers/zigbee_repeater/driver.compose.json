@@ -1,0 +1,54 @@
+{
+  "name": {
+    "en": "Zigbee Signal Repeater",
+    "fr": "Répéteur de Signal Zigbee"
+  },
+  "class": "other",
+  "capabilities": [],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_1mxvlhmq",
+      "_TZ3000_amdymr7l",
+      "_TZ3000_gdc3biaj",
+      "_TZ3000_hopvlupy",
+      "_TZ3000_kxlmv9ag",
+      "_TZ3000_m0vaazwu",
+      "_TZ3000_rku4cnct",
+      "_TZ3000_sgpbz53b",
+      "_TZ3000_ufttklsz"
+    ],
+    "productId": [
+      "TS0207"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3
+        ],
+        "bindings": []
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Plug in the USB repeater and hold button 5s."
+      }
+    }
+  },
+  "icon": "/drivers/zigbee_repeater/assets/icon.svg",
+  "images": {
+    "small": "drivers/zigbee_repeater/assets/images/small.png",
+    "large": "drivers/zigbee_repeater/assets/images/large.png"
+  },
+  "energy": {
+    "approximation": {
+      "usageConstant": 1
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ]
+}

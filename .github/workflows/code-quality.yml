@@ -59,6 +59,7 @@ jobs:
         run: |
           echo "## 🔍 Code Quality" >> $GITHUB_STEP_SUMMARY
 
+          npm ci
           # Settings keys bug
           if grep -rq "zb_modelId\|zb_manufacturerName" lib/ drivers/ --include="*.js" 2>/dev/null; then
             echo "❌ Wrong settings keys (use zb_model_id)" >> $GITHUB_STEP_SUMMARY

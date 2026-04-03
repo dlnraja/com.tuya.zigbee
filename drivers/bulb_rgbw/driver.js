@@ -15,7 +15,7 @@ class BulbRgbwDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is on/off
     try {
-      this.homey.flow.getConditionCard('bulb_rgbw_bulb_rgbw_is_on')
+      this.homey.flow.getDeviceConditionCard('bulb_rgbw_bulb_rgbw_is_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;

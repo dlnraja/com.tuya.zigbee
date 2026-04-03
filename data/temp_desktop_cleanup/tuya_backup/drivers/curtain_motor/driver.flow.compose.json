@@ -1,0 +1,353 @@
+{
+  "triggers": [
+    {
+      "id": "button_pressed",
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton pressé"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "number",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": 1
+        },
+        {
+          "name": "scene",
+          "type": "string",
+          "title": {
+            "en": "Scene",
+            "fr": "Scène"
+          },
+          "example": "pressed"
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Button pressed",
+        "fr": "Bouton pressé"
+      }
+    },
+    {
+      "id": "curtain_motor_windowcoverings_set_changed",
+      "title": {
+        "en": "Position changed",
+        "fr": "Position changée"
+      },
+      "tokens": [
+        {
+          "name": "position",
+          "type": "number",
+          "title": {
+            "en": "Position",
+            "fr": "Position"
+          },
+          "example": 0.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Position changed",
+        "fr": "Position changée"
+      }
+    },
+    {
+      "id": "curtain_motor_dim_changed",
+      "title": {
+        "en": "Brightness changed",
+        "fr": "Luminosité changée"
+      },
+      "tokens": [
+        {
+          "name": "dim",
+          "type": "number",
+          "title": {
+            "en": "Brightness",
+            "fr": "Luminosité"
+          },
+          "example": 0.75
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Brightness changed",
+        "fr": "Luminosité changée"
+      }
+    },
+    {
+      "id": "curtain_motor_measure_battery_changed",
+      "title": {
+        "en": "Battery level changed",
+        "fr": "Niveau batterie changé"
+      },
+      "tokens": [
+        {
+          "name": "battery",
+          "type": "number",
+          "title": {
+            "en": "Battery (%)",
+            "fr": "Batterie (%)"
+          },
+          "example": 75
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery level changed",
+        "fr": "Niveau batterie changé"
+      }
+    },
+    {
+      "id": "curtain_motor_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
+    },
+    {
+      "id": "curtain_motor_physical_on",
+      "title": { "en": "Physically opened", "fr": "Ouvert physiquement" },
+      "tokens": [{ "name": "gang", "type": "number", "title": { "en": "Gang" }, "example": 1 }],
+      "args": []
+    },
+    {
+      "id": "curtain_motor_physical_off",
+      "title": { "en": "Physically closed", "fr": "Fermé physiquement" },
+      "tokens": [{ "name": "gang", "type": "number", "title": { "en": "Gang" }, "example": 1 }],
+      "args": []
+    },
+    {
+      "id": "curtain_motor_physical_single",
+      "title": { "en": "Button pressed (physical)", "fr": "Bouton pressé (physique)" },
+      "tokens": [{ "name": "gang", "type": "number", "title": { "en": "Gang" }, "example": 1 }],
+      "args": []
+    },
+    {
+      "id": "curtain_motor_lux_changed",
+      "title": {
+        "en": "Luminance changed",
+        "fr": "Luminance changée",
+        "nl": "Lichtsterkte gewijzigd",
+        "de": "Helligkeit geändert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Luminance changed",
+        "fr": "Luminance changée",
+        "nl": "Lichtsterkte gewijzigd",
+        "de": "Helligkeit geändert"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "curtain_motor_set_windowcoverings_set",
+      "title": {
+        "en": "Set position to...",
+        "fr": "Régler la position à..."
+      },
+      "args": [
+        {
+          "name": "position",
+          "type": "range",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "label": "%",
+          "labelMultiplier": 100,
+          "title": {
+            "en": "Position",
+            "fr": "Position"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set position to [[position]]%",
+        "fr": "Régler la position à [[position]]%"
+      }
+    },
+    {
+      "id": "curtain_motor_windowcoverings_open",
+      "title": {
+        "en": "Open",
+        "fr": "Ouvrir"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Open",
+        "fr": "Ouvrir"
+      }
+    },
+    {
+      "id": "curtain_motor_windowcoverings_close",
+      "title": {
+        "en": "Close",
+        "fr": "Fermer"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Close",
+        "fr": "Fermer"
+      }
+    },
+    {
+      "id": "curtain_motor_set_dim",
+      "title": {
+        "en": "Set brightness to...",
+        "fr": "Régler la luminosité à..."
+      },
+      "args": [
+        {
+          "name": "brightness",
+          "type": "range",
+          "min": 0,
+          "max": 1,
+          "step": 0.01,
+          "label": "%",
+          "labelMultiplier": 100,
+          "title": {
+            "en": "Brightness",
+            "fr": "Luminosité"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Set brightness to [[brightness]]%",
+        "fr": "Régler la luminosité à [[brightness]]%"
+      }
+    },
+    {
+      "id": "curtain_motor_stop",
+      "title": {
+        "en": "Stop",
+        "fr": "Arrêter",
+        "nl": "Stoppen",
+        "de": "Stoppen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Stop",
+        "fr": "Arrêter",
+        "nl": "Stoppen",
+        "de": "Stoppen"
+      }
+    },
+    {
+      "id": "curtain_motor_set_favorite",
+      "title": {
+        "en": "Go to favorite position",
+        "fr": "Aller position favorite",
+        "nl": "Ga naar favoriete positie",
+        "de": "Zur Lieblingsposition"
+      },
+      "hint": {
+        "en": "Move to the saved favorite position (if supported)",
+        "fr": "Aller à la position favorite enregistrée"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Go to favorite position",
+        "fr": "Aller position favorite",
+        "nl": "Ga naar favoriete positie",
+        "de": "Zur Lieblingsposition"
+      }
+    },
+    {
+      "id": "curtain_motor_set_brightness",
+      "title": {
+        "en": "Set brightness",
+        "fr": "Régler luminosité",
+        "nl": "Helderheid instellen",
+        "de": "Helligkeit einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set brightness to [[brightness]]%",
+        "fr": "Régler luminosité à [[brightness]]%",
+        "nl": "Helderheid op [[brightness]]%",
+        "de": "Helligkeit auf [[brightness]]%"
+      },
+      "args": [
+        {
+          "name": "brightness",
+          "type": "range",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "label": "%",
+          "labelDecimals": 0
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_set_position",
+      "title": {
+        "en": "Set position",
+        "fr": "Régler position",
+        "nl": "Positie instellen",
+        "de": "Position einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set position to [[position]]%",
+        "fr": "Régler position à [[position]]%",
+        "nl": "Positie op [[position]]%",
+        "de": "Position auf [[position]]%"
+      },
+      "args": [
+        {
+          "name": "position",
+          "type": "range",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "label": "%",
+          "labelDecimals": 0
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_open",
+      "title": {
+        "en": "Open",
+        "fr": "Ouvrir",
+        "nl": "Openen",
+        "de": "Öffnen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Open",
+        "fr": "Ouvrir",
+        "nl": "Openen",
+        "de": "Öffnen"
+      }
+    },
+    {
+      "id": "curtain_motor_close",
+      "title": {
+        "en": "Close",
+        "fr": "Fermer",
+        "nl": "Sluiten",
+        "de": "Schließen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Close",
+        "fr": "Fermer",
+        "nl": "Sluiten",
+        "de": "Schließen"
+      }
+    }
+  ]
+}
