@@ -36,8 +36,9 @@ jobs:
       # === AI providers (configured) ===
       GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      # Optional AI fallbacks (GROQ, HF, MISTRAL, CEREBRAS, TOGETHER, OPENROUTER, DEEPSEEK, KIMI, APIFREELLM)
-      # Not yet configured — see .github/SECRETS.md to enable
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      # Optional AI fallbacks (HF, MISTRAL, CEREBRAS, TOGETHER, OPENROUTER, KIMI, APIFREELLM)
       # === GitHub ===
       GH_PAT: ${{ secrets.GH_PAT }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
