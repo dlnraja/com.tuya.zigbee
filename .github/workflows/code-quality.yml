@@ -45,6 +45,8 @@ jobs:
 
       - name: 🔍 Validate Homey App (publish)
         id: homey_validate
+        env:
+          NODE_OPTIONS: "--no-deprecation"
         run: |
           if npx homey app validate --level publish 2>&1; then
             echo "result=✅ Passed" >> $GITHUB_OUTPUT
