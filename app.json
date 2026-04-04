@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.184",
+  "version": "5.11.185",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -27198,7 +27198,11 @@
             "name": "device",
             "filter": "driver_id=wall_dimmer_1gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turned on - physical button",
+          "nl": "Aangezet - fysieke knop"
+        }
       },
       {
         "id": "wall_dimmer_1gang_1way_turned_off",
@@ -27216,7 +27220,11 @@
             "name": "device",
             "filter": "driver_id=wall_dimmer_1gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turned off - physical button",
+          "nl": "Uitgezet - fysieke knop"
+        }
       },
       {
         "id": "wall_dimmer_1gang_1way_brightness_increased",
@@ -27245,7 +27253,11 @@
             "name": "device",
             "filter": "driver_id=wall_dimmer_1gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Brightness increased - physical button",
+          "nl": "Helderheid verhoogd - fysieke knop"
+        }
       },
       {
         "id": "wall_dimmer_1gang_1way_brightness_decreased",
@@ -27274,7 +27286,11 @@
             "name": "device",
             "filter": "driver_id=wall_dimmer_1gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Brightness decreased - physical button",
+          "nl": "Helderheid verlaagd - fysieke knop"
+        }
       },
       {
         "id": "wall_remote_1_gang_button_1gang_button_1_pressed",
@@ -29141,7 +29157,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_1gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turned on - physical button",
+          "nl": "Aangezet - fysieke knop"
+        }
       },
       {
         "id": "wall_switch_1gang_1way_turned_off",
@@ -29159,7 +29179,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_1gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turned off - physical button",
+          "nl": "Uitgezet - fysieke knop"
+        }
       },
       {
         "id": "wall_switch_1gang_1way_gang1_scene",
@@ -29185,7 +29209,11 @@
               "en": "on"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Scene triggered",
+          "nl": "Scène geactiveerd"
+        }
       },
       {
         "id": "wall_switch_1gang_1way_physical_on",
@@ -29197,6 +29225,10 @@
           }
         ],
         "title": {
+          "nl": "Fysiek AAN",
+          "en": "Physical ON"
+        },
+        "titleFormatted": {
           "nl": "Fysiek AAN",
           "en": "Physical ON"
         }
@@ -29213,6 +29245,10 @@
         "title": {
           "nl": "Fysiek UIT",
           "en": "Physical OFF"
+        },
+        "titleFormatted": {
+          "nl": "Fysiek UIT",
+          "en": "Physical OFF"
         }
       },
       {
@@ -29227,6 +29263,10 @@
         "title": {
           "nl": "Enkele druk",
           "en": "Single press"
+        },
+        "titleFormatted": {
+          "nl": "Enkele druk",
+          "en": "Single press"
         }
       },
       {
@@ -29239,6 +29279,10 @@
           }
         ],
         "title": {
+          "nl": "Dubbele druk",
+          "en": "Double press"
+        },
+        "titleFormatted": {
           "nl": "Dubbele druk",
           "en": "Double press"
         }
@@ -29264,7 +29308,11 @@
             },
             "type": "number"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "nl": "Lange druk",
+          "en": "Long press"
+        }
       },
       {
         "id": "wall_switch_1gang_1way_physical_triple",
@@ -29287,7 +29335,11 @@
             },
             "type": "number"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "nl": "Drievoudige druk",
+          "en": "Triple press"
+        }
       },
       {
         "id": "wall_switch_2gang_1way_turned_on",
@@ -29301,7 +29353,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_2gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turned on",
+          "nl": "Aangezet"
+        }
       },
       {
         "id": "wall_switch_2gang_1way_turned_off",
@@ -29315,7 +29371,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_2gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turned off",
+          "nl": "Uitgezet"
+        }
       },
       {
         "id": "wall_switch_2gang_1way_physical_gang1_on",
@@ -29329,7 +29389,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_2gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 1 physical ON",
+          "nl": "Gang 1 fysiek AAN"
+        }
       },
       {
         "id": "wall_switch_2gang_1way_physical_gang1_off",
@@ -29343,7 +29407,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_2gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 1 physical OFF",
+          "nl": "Gang 1 fysiek UIT"
+        }
       },
       {
         "id": "wall_switch_2gang_1way_physical_gang2_on",
@@ -29357,7 +29425,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_2gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 2 physical ON",
+          "nl": "Gang 2 fysiek AAN"
+        }
       },
       {
         "id": "wall_switch_2gang_1way_physical_gang2_off",
@@ -29371,7 +29443,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_2gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 2 physical OFF",
+          "nl": "Gang 2 fysiek UIT"
+        }
       },
       {
         "id": "wall_switch_2gang_1way_gang1_scene",
@@ -29397,7 +29473,11 @@
               "en": "on"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 1 scene triggered",
+          "nl": "Gang 1 scène geactiveerd"
+        }
       },
       {
         "id": "wall_switch_2gang_1way_gang2_scene",
@@ -29423,7 +29503,11 @@
               "en": "on"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 2 scene triggered",
+          "nl": "Gang 2 scène geactiveerd"
+        }
       },
       {
         "id": "wall_switch_3gang_1way_turned_on",
@@ -29437,7 +29521,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_3gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turned on",
+          "nl": "Aangezet"
+        }
       },
       {
         "id": "wall_switch_3gang_1way_turned_off",
@@ -29451,7 +29539,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_3gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turned off",
+          "nl": "Uitgezet"
+        }
       },
       {
         "id": "wall_switch_3gang_1way_physical_gang1_on",
@@ -29465,7 +29557,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_3gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 1 physical ON",
+          "nl": "Gang 1 fysiek AAN"
+        }
       },
       {
         "id": "wall_switch_3gang_1way_physical_gang1_off",
@@ -29479,7 +29575,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_3gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 1 physical OFF",
+          "nl": "Gang 1 fysiek UIT"
+        }
       },
       {
         "id": "wall_switch_3gang_1way_physical_gang2_on",
@@ -29493,7 +29593,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_3gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 2 physical ON",
+          "nl": "Gang 2 fysiek AAN"
+        }
       },
       {
         "id": "wall_switch_3gang_1way_physical_gang2_off",
@@ -29507,7 +29611,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_3gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 2 physical OFF",
+          "nl": "Gang 2 fysiek UIT"
+        }
       },
       {
         "id": "wall_switch_3gang_1way_physical_gang3_on",
@@ -29521,7 +29629,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_3gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 3 physical ON",
+          "nl": "Gang 3 fysiek AAN"
+        }
       },
       {
         "id": "wall_switch_3gang_1way_physical_gang3_off",
@@ -29535,7 +29647,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_3gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 3 physical OFF",
+          "nl": "Gang 3 fysiek UIT"
+        }
       },
       {
         "id": "wall_switch_3gang_1way_gang1_scene",
@@ -29561,7 +29677,11 @@
               "en": "on"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 1 scene triggered",
+          "nl": "Gang 1 scène geactiveerd"
+        }
       },
       {
         "id": "wall_switch_3gang_1way_gang2_scene",
@@ -29587,7 +29707,11 @@
               "en": "on"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 2 scene triggered",
+          "nl": "Gang 2 scène geactiveerd"
+        }
       },
       {
         "id": "wall_switch_3gang_1way_gang3_scene",
@@ -29613,7 +29737,11 @@
               "en": "on"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 3 scene triggered",
+          "nl": "Gang 3 scène geactiveerd"
+        }
       },
       {
         "id": "wall_switch_4gang_1way_turned_on",
@@ -29627,7 +29755,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_4gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turned on",
+          "nl": "Aangezet"
+        }
       },
       {
         "id": "wall_switch_4gang_1way_turned_off",
@@ -29641,7 +29773,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_4gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Turned off",
+          "nl": "Uitgezet"
+        }
       },
       {
         "id": "wall_switch_4gang_1way_physical_gang1_on",
@@ -29655,7 +29791,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_4gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 1 physical ON",
+          "nl": "Gang 1 fysiek AAN"
+        }
       },
       {
         "id": "wall_switch_4gang_1way_physical_gang1_off",
@@ -29669,7 +29809,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_4gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 1 physical OFF",
+          "nl": "Gang 1 fysiek UIT"
+        }
       },
       {
         "id": "wall_switch_4gang_1way_physical_gang2_on",
@@ -29683,7 +29827,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_4gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 2 physical ON",
+          "nl": "Gang 2 fysiek AAN"
+        }
       },
       {
         "id": "wall_switch_4gang_1way_physical_gang2_off",
@@ -29697,7 +29845,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_4gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 2 physical OFF",
+          "nl": "Gang 2 fysiek UIT"
+        }
       },
       {
         "id": "wall_switch_4gang_1way_physical_gang3_on",
@@ -29711,7 +29863,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_4gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 3 physical ON",
+          "nl": "Gang 3 fysiek AAN"
+        }
       },
       {
         "id": "wall_switch_4gang_1way_physical_gang3_off",
@@ -29725,7 +29881,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_4gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 3 physical OFF",
+          "nl": "Gang 3 fysiek UIT"
+        }
       },
       {
         "id": "wall_switch_4gang_1way_physical_gang4_on",
@@ -29739,7 +29899,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_4gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 4 physical ON",
+          "nl": "Gang 4 fysiek AAN"
+        }
       },
       {
         "id": "wall_switch_4gang_1way_physical_gang4_off",
@@ -29753,7 +29917,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_4gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 4 physical OFF",
+          "nl": "Gang 4 fysiek UIT"
+        }
       },
       {
         "id": "wall_switch_4gang_1way_gang1_scene",
@@ -29779,7 +29947,11 @@
               "en": "on"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 1 scene triggered",
+          "nl": "Gang 1 scène geactiveerd"
+        }
       },
       {
         "id": "wall_switch_4gang_1way_gang2_scene",
@@ -29805,7 +29977,11 @@
               "en": "on"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 2 scene triggered",
+          "nl": "Gang 2 scène geactiveerd"
+        }
       },
       {
         "id": "wall_switch_4gang_1way_gang3_scene",
@@ -29831,7 +30007,11 @@
               "en": "on"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 3 scene triggered",
+          "nl": "Gang 3 scène geactiveerd"
+        }
       },
       {
         "id": "wall_switch_4gang_1way_gang4_scene",
@@ -29857,7 +30037,11 @@
               "en": "on"
             }
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Gang 4 scene triggered",
+          "nl": "Gang 4 scène geactiveerd"
+        }
       },
       {
         "id": "wall_switch_4gang_1way_physical_on",
@@ -29871,7 +30055,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_4gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Physical button ON",
+          "nl": "Fysieke knop AAN"
+        }
       },
       {
         "id": "wall_switch_4gang_1way_physical_off",
@@ -29885,7 +30073,11 @@
             "name": "device",
             "filter": "driver_id=wall_switch_4gang_1way"
           }
-        ]
+        ],
+        "titleFormatted": {
+          "en": "Physical button OFF",
+          "nl": "Fysieke knop UIT"
+        }
       },
       {
         "id": "water_leak_sensor_alarm_water_true",
@@ -37076,6 +37268,11 @@
           "fr": "Vérifier Mises à Jour (OTA) de l'appareil",
           "nl": "OTA firmware updates controleren"
         },
+        "titleFormatted": {
+          "en": "Check OTA firmware updates for [[device]]",
+          "fr": "Vérifier les MàJ OTA pour [[device]]",
+          "nl": "OTA firmware updates controleren voor [[device]]"
+        },
         "hint": {
           "en": "Queries Zigbee2MQTT index for updates. You will be notified.",
           "fr": "Interroge l'index Z2M. Vous recevrez une notification au besoin.",
@@ -37139,6 +37336,10 @@
           "en": "Turn off Gang..",
           "fr": "Eteindre Bouton.."
         },
+        "titleFormatted": {
+          "en": "Turn off gang [[gang]] of [[device]]",
+          "fr": "Eteindre bouton [[gang]] de [[device]]"
+        },
         "args": [
           {
             "name": "device",
@@ -37194,6 +37395,10 @@
         "title": {
           "en": "Turn on Gang..",
           "fr": "Allumer Bouton.."
+        },
+        "titleFormatted": {
+          "en": "Turn on gang [[gang]] of [[device]]",
+          "fr": "Allumer bouton [[gang]] de [[device]]"
         },
         "args": [
           {
