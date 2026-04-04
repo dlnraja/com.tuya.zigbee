@@ -12,12 +12,6 @@ class WallRemote3GangDevice extends ButtonDevice {
     this.buttonCount = 3;
     this.log('[WALL_REMOTE_3_GANG] v5.12.0 init - 3 buttons');
     await super.onNodeInit({ zclNode }).catch(err => this.error('[WALL_REMOTE_3_GANG] init err:', err.message));
-    // --- Battery Alarm (auto-injected) ---
-    if (this.hasCapability('measure_battery')) {
-      this.registerCapabilityListener('measure_battery', async (value) => {
-        if (this.hasCapability('alarm_battery')) {
-          await this.setCapabilityValue('alarm_battery', value < 15).catch(() => {});
-        }
       });
       // Initial check
       const bat = this.getCapabilityValue('measure_battery');

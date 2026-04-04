@@ -1,16 +1,17 @@
 #!/usr/bin/env node
 /**
- * Inject alarm_battery capability into battery-powered drivers.
+ * Inject alarm_battery capability — SDK v3 COMPLIANT version.
  * 
- * From deep diagnostics analysis:
- * - 282 capability gap entries show alarm_battery missing
- * - Users report not knowing when battery is low
- * - JohanBendz fork and pkuijpers fork both have alarm_battery
+ * SDK v3 RULE: NEVER use BOTH measure_battery AND alarm_battery on same device.
+ * - measure_battery = device reports precise 0-100% level
+ * - alarm_battery = device only reports boolean low/ok
  * 
- * Logic:
- * 1. If driver has measure_battery but NOT alarm_battery → add it
- * 2. If driver has energy.batteries in compose → definitely needs it
- * 3. Add alarm_battery capability to compose + implement in device.js
+ * This script ONLY adds alarm_battery to drivers that:
+ * 1. Have energy.batteries configured (battery-powered)
+ * 2. Do NOT already have measure_battery (would conflict)
+ * 3. Do NOT already have alarm_battery
+ * 4. Are NOT mains-powered (bulbs, LEDs, plugs, switches, dimmers)
+ * 5. Are NOT WiFi drivers (different auth/implementation)
  */
 'use strict';
 const fs = require('fs');
@@ -19,10 +20,20 @@ const path = require('path');
 const DDIR = path.join(process.cwd(), 'drivers');
 let fixed = 0, skipped = 0;
 
+// Never add alarm_battery to these categories
+const EXCLUDE = [
+  /^bulb_/, /^led_/, /^plug_/, /^switch_\d/, /^switch_plug/,
+  /^dimmer_/, /^din_rail/, /^power_/, /^energy_meter/,
+  /^smart_breaker/, /^smart_rcbo/, /^module_/, /^shutter_/,
+  /^ceiling_fan/, /^curtain_/, /^hvac_/, /^usb_/,
+  /^gateway_/, /^zigbee_repeater/,
+  /^wifi_/, /^ir_blaster/, /^ir_remote/,
+  /^generic_diy/, /^generic_tuya/, /^universal_fallback/
+];
+
 for (const d of fs.readdirSync(DDIR)) {
   const composeFile = path.join(DDIR, d, 'driver.compose.json');
-  const deviceFile = path.join(DDIR, d, 'device.js');
-  if (!fs.existsSync(composeFile)) continue;
+  if (!fs.existsSync(composeFile)) { skipped++; continue; }
   
   const compose = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
   const caps = compose.capabilities || [];
@@ -30,78 +41,21 @@ for (const d of fs.readdirSync(DDIR)) {
   // Skip if already has alarm_battery
   if (caps.includes('alarm_battery')) { skipped++; continue; }
   
-  // Check if battery-powered
-  const hasBatteryMeasure = caps.includes('measure_battery');
-  const hasBatteryConfig = compose.energy?.batteries?.length > 0;
+  // SDK v3: NEVER combine with measure_battery
+  if (caps.includes('measure_battery')) { skipped++; continue; }
   
-  if (!hasBatteryMeasure && !hasBatteryConfig) { skipped++; continue; }
+  // Skip excluded categories
+  if (EXCLUDE.some(p => p.test(d))) { skipped++; continue; }
   
-  // Add alarm_battery right after measure_battery (or at end)
-  const mbIdx = caps.indexOf('measure_battery');
-  if (mbIdx >= 0) {
-    caps.splice(mbIdx + 1, 0, 'alarm_battery');
-  } else {
-    caps.push('alarm_battery');
-  }
+  // Only add if battery-powered
+  if (!compose.energy?.batteries?.length) { skipped++; continue; }
+  
+  caps.push('alarm_battery');
   compose.capabilities = caps;
-  
   fs.writeFileSync(composeFile, JSON.stringify(compose, null, 2) + '\n');
-  
-  // Now inject alarm_battery logic into device.js
-  if (fs.existsSync(deviceFile)) {
-    let code = fs.readFileSync(deviceFile, 'utf8');
-    
-    // Only inject if not already handling alarm_battery
-    if (!code.includes('alarm_battery')) {
-      // Find onNodeInit or onInit and inject battery alarm logic
-      const injectCode = `
-    // --- Battery Alarm (auto-injected) ---
-    if (this.hasCapability('measure_battery')) {
-      this.registerCapabilityListener('measure_battery', async (value) => {
-        if (this.hasCapability('alarm_battery')) {
-          await this.setCapabilityValue('alarm_battery', value < 15).catch(() => {});
-        }
-      });
-      // Initial check
-      const bat = this.getCapabilityValue('measure_battery');
-      if (bat !== null && this.hasCapability('alarm_battery')) {
-        this.setCapabilityValue('alarm_battery', bat < 15).catch(() => {});
-      }
-    }`;
-      
-      // Try to inject after attribute reporting block or after super.onNodeInit
-      if (code.includes("this.log('Attribute reporting configured successfully')")) {
-        code = code.replace(
-          "this.log('Attribute reporting configured successfully');",
-          "this.log('Attribute reporting configured successfully');" + injectCode
-        );
-      } else if (code.includes('await super.onNodeInit')) {
-        code = code.replace(
-          /await super\.onNodeInit\([^)]*\)[^;]*;/,
-          (m) => m + injectCode
-        );
-      } else if (code.includes("this.log('[")) {
-        // Insert after first log line in onNodeInit
-        code = code.replace(
-          /(async onNodeInit\([^)]*\)\s*\{[^}]*?this\.log\([^)]+\);)/,
-          (m) => m + injectCode
-        );
-      }
-      
-      // Validate syntax before writing
-      try {
-        new Function(code);
-        fs.writeFileSync(deviceFile, code);
-      } catch (e) {
-        // Syntax invalid - skip device.js modification, only compose changed
-      }
-    }
-  }
-  
-  console.log(`✅ ${d}: added alarm_battery`);
+  console.log(`✅ ${d}: added alarm_battery (no measure_battery conflict)`);
   fixed++;
 }
 
-console.log(`\n=== Summary ===`);
-console.log(`Fixed: ${fixed}`);
+console.log(`\nFixed: ${fixed}`);
 console.log(`Skipped: ${skipped}`);
