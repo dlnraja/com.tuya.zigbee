@@ -18,19 +18,21 @@ class WiFiHeaterDevice extends TuyaLocalDevice {
   }
   _setupFlows() {
     const cf = this.homey.flow;
-    cf.getDeviceConditionCard('wifi_heater_is_heating').registerRunListener(async () => this.getCapabilityValue('onoff') === true);
-    cf.getDeviceConditionCard('wifi_heater_mode_is').registerRunListener(async (a) => this.getCapabilityValue('wifi_heater_mode') === a.mode);
-    cf.getActionCard('wifi_heater_set_mode').registerRunListener(async (a) => { await this._client.setDP('4', ({ manual: 0, program: 1, eco: 2 })[a.mode] || 0); });
-    cf.getActionCard('wifi_heater_set_temperature').registerRunListener(async (a) => { await this._client.setDP('2', Math.round(a.temperature)); });
+    const safeGet = (fn, id) => { try { return fn.call(cf, id); } catch (e) { return null; } };
+    safeGet(cf.getDeviceConditionCard, 'wifi_heater_is_heating')?.registerRunListener(async () => this.getCapabilityValue('onoff') === true);
+    safeGet(cf.getDeviceConditionCard, 'wifi_heater_mode_is')?.registerRunListener(async (a) => this.getCapabilityValue('wifi_heater_mode') === a.mode);
+    safeGet(cf.getActionCard, 'wifi_heater_set_mode')?.registerRunListener(async (a) => { await this._client?.setDP('4', ({ manual: 0, program: 1, eco: 2 })[a.mode] || 0); });
+    safeGet(cf.getActionCard, 'wifi_heater_set_temperature')?.registerRunListener(async (a) => { await this._client?.setDP('2', Math.round(a.temperature)); });
   }
   _fireFlowTriggers(changes) {
     const cf = this.homey.flow;
+    const safeGet = (fn, id) => { try { return fn.call(cf, id); } catch (e) { return null; } };
     if (changes.onoff) {
       const cardId = changes.onoff.to ? 'wifi_heater_turned_on' : 'wifi_heater_turned_off';
-      cf.getDeviceTriggerCard(cardId).trigger(this, {}, {}).catch(this.error);
+      safeGet(cf.getDeviceTriggerCard, cardId)?.trigger(this, {}, {}).catch(this.error);
     }
     if (changes.wifi_heater_mode) {
-      cf.getDeviceTriggerCard('wifi_heater_mode_changed').trigger(this, { mode: changes.wifi_heater_mode.to }, {}).catch(this.error);
+      safeGet(cf.getDeviceTriggerCard, 'wifi_heater_mode_changed')?.trigger(this, { mode: changes.wifi_heater_mode.to }, {}).catch(this.error);
     }
   }
 

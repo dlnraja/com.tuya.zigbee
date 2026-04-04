@@ -225,9 +225,9 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
 
       // v5.12.0: Trigger specific press type flow cards
       if (value === 1) {
-        try { this.homey.flow.getDeviceTriggerCard('button_emergency_sos_double_pressed').trigger(this, {}, {}).catch(() => {}); } catch(e) {}
+        try { (() => { try { return this.homey.flow.getDeviceTriggerCard('button_emergency_sos_double_pressed'); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {}); } catch(e) {}
       } else if (value === 2) {
-        try { this.homey.flow.getDeviceTriggerCard('button_emergency_sos_long_pressed').trigger(this, {}, {}).catch(() => {}); } catch(e) {}
+        try { (() => { try { return this.homey.flow.getDeviceTriggerCard('button_emergency_sos_long_pressed'); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {}); } catch(e) {}
       }
 
 
