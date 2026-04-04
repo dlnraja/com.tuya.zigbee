@@ -117,6 +117,28 @@ const RULES = [
     },
     fix: null,
   },
+  {
+    id: 'tuya-raw-listener-leak',
+    severity: 'warn',
+    desc: 'RX/raw listener detected without removeAllListeners cleanup in onDeleted.',
+    test: (code) => {
+      const hasRxListener = /\.on\s*\(\s*['"](?:rx|raw)['"]/.test(code);
+      const hasCleanup = /removeAllListeners\s*\(\s*['"](?:rx|raw)['"]/.test(code);
+      return hasRxListener && !hasCleanup;
+    },
+    fix: null,
+  },
+  {
+    id: 'tuya-raw-no-debounce',
+    severity: 'warn',
+    desc: 'RX/raw handler without debounce mutex — risk of double-trigger.',
+    test: (code) => {
+      const hasRxListener = /\.on\s*\(\s*['"](?:rx|raw)['"]/.test(code);
+      const hasDebounce = /_rawHandledTimeout|_lastRawTs|_debounce/.test(code);
+      return hasRxListener && !hasDebounce;
+    },
+    fix: null,
+  },
 ];
 
 function loadCompose(driverDir) {
@@ -158,8 +180,10 @@ async function aiEnrichDriver(filePath, code, staticResults, memory) {
   const caps = compose?.capabilities || [];
   const fps = compose?.zigbee?.manufacturerName || [];
 
-  // Build context-aware prompt
-  let prompt = `You are a Homey SDK v3 expert. Analyze this Zigbee driver file.
+  // Build context-aware Ultimate Prompt
+  let prompt = `You are an Expert Software Architect for Homey Pro SDK v3 and Universal Tuya Zigbee.
+You operate inside a CI/CD GitHub Actions pipeline. Your mission is to ENRICH and FIX driver source code.
+You generate Node.js code that will run on Homey Pro boxes — you DO NOT run on the box yourself.
 
 DRIVER: ${driver}
 CAPABILITIES: ${caps.join(', ')}
@@ -170,27 +194,58 @@ ${staticResults.map(r => `- ${r.severity.toUpperCase()}: ${r.desc}`).join('\n') 
 
 `;
 
-  // Inject learned patterns from memory
+  // Inject learned patterns from memory (recursive learning)
   const patterns = memory.patterns || [];
   if (patterns.length > 0) {
-    prompt += `KNOWN PATTERNS (from past runs):\n`;
+    prompt += `KNOWN PATTERNS (from ${memory.totalRuns || 0} past runs):\n`;
     for (const p of patterns.slice(-10)) {
       prompt += `- ${p.id}: ${p.desc} (seen ${p.count}x)\n`;
     }
     prompt += '\n';
   }
 
-  prompt += `RULES:
-1. ONLY suggest ADDITIONS or FIXES. NEVER remove existing functionality.
-2. If a Tuya DP mapping is missing for a capability, suggest adding it.
-3. If a cluster binding is missing, suggest adding it.
-4. Ensure async onNodeInit() pattern is used.
-5. Verify that await is used with setCapabilityValue.
-6. Check for proper error handling in capability listeners.
-7. If code is correct, respond with ONLY the word "VALID".
-8. If you have suggestions, respond with a JSON object:
-   {"suggestions": [{"type": "add|fix|improve", "location": "line description", "current": "...", "proposed": "...", "reason": "..."}]}
-   Do NOT output the full file — only output specific suggestions.
+  prompt += `=== SMART MERGE RULES (ABSOLUTE) ===
+1. CUMULATIVE STRICT: NEVER delete a deviceId, manufacturerName, DataPoint (DP), or cluster from the original. ONLY add or fix.
+2. OUTPUT FORMAT: Respond ONLY with a JSON object or the word "VALID". No markdown, no explanations.
+3. If code is correct: respond "VALID".
+4. If you have suggestions: {"suggestions": [{"type": "add|fix|improve", "location": "description", "current": "...", "proposed": "...", "reason": "..."}]}
+
+=== SDK v3 COMPLIANCE (VITAL) ===
+1. ASYNC INIT: onInit() is deprecated. Generate 'async onNodeInit()' for Zigbee drivers.
+2. AWAIT: Every 'this.setCapabilityValue()' MUST be preceded by 'await'.
+3. API: Use exclusively 'this.homey.<managerId>' (this.homey.drivers, this.homey.flow, this.homey.settings). NEVER generate global 'ManagerDrivers' or 'ManagerZwave'.
+4. MEMORY: Every event listener (.on()) must have cleanup in 'async onDeleted()' via removeAllListeners(). This prevents memory leaks on Homey Pro 2023.
+
+=== TUYA CLUSTER HIERARCHY (Priority Order) ===
+When mapping new features, respect this strict hierarchy:
+1. BOUNDCLUSTER (Standard ZCL): genOnOff, genLevelCtrl, msTemperatureMeasurement — use native clusters first.
+2. TUYABOUNDCLUSTER (EF00): Priority for 90% of Tuya hardware. Map DataPoints on cluster 0xEF00/61184.
+   - If an EF00 DP is unrecognized, listen for the TuyaBoundCluster 'unhandled_dp' event, NOT raw RX.
+3. RAW/RX (Last Resort): Only for non-standard trames outside ZCL and EF00 (e.g., Tuya scene buttons).
+
+=== ADVANCED PATTERNS ===
+
+CASE A — PHYSICAL BUTTONS & SCENES (Johan's Raw Pattern):
+If device is a button/scene switch that fails on standard clusters:
+- Generate low-level listener: this.zclNode.endpoints[X].clusters[NAME].on("rx", ...)
+- Parse raw payload hex for click types (0x00=single, 0x01=double, 0x02=hold)
+- ANTI-DOUBLON MANDATORY: Always include a debounce mutex (300ms lock):
+  if (this._rawHandledTimeout) return;
+  this._rawHandledTimeout = setTimeout(() => { this._rawHandledTimeout = null; }, 300);
+- TX ACKNOWLEDGE: Add writeCommand with manual Header 0x11 to prevent Tuya LED error blink
+
+CASE B — IR RECEIVERS:
+If device handles infrared codes:
+- NEVER process raw frames in isolation — IR payloads exceed Zigbee MTU (~80 bytes)
+- Generate Buffer Reassembly: this._irBuffer = Buffer.alloc(0), concat incoming rx payloads
+- Trigger decode ONLY on end-frame header or 200ms inactivity timeout
+
+CASE C — LCD CLIMATE & TIME SYNC:
+If device is a thermostat (TRV) or has LCD displaying time:
+- Tuya ignores standard Time cluster (0x000A) — uses DP 0x24 via EF00 instead
+- Generate syncTime() method using this.homey.clock.getTimezone() for GMT offset
+- Attach to setInterval (every 3 hours) in onNodeInit()
+- Format: 8-byte payload [Year-2000, Month, Day, Hour, Min, Sec, Weekday, 0x00]
 
 DRIVER CODE:
 \`\`\`javascript
