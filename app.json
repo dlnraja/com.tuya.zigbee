@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.183",
+  "version": "5.11.184",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -56372,7 +56372,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TYZB02_keyjhapk",
           "_TZ3000_adkvzooy",
           "_TZ3000_arfwfgoa",
           "_TZ3000_d0ypg4o2",
@@ -56380,13 +56379,6 @@
           "_TZ3000_kt7obmnn",
           "_TZ3000_qous95zh",
           "_TZ3000_xr7itfxq",
-          "_TZ3000_owgcnkrh",
-          "_TZ3000_5e235jpa",
-          "_TZ3000_fkvaniuu",
-          "_TZ3000_h1c2eamp",
-          "_TZ3000_oikiyf3b",
-          "_TZ3400_keyjhapk",
-          "_TZ3000_tzvbimpq",
           "TUYATEC-O6SNCwd6",
           "TUYATEC-nzrrvgco"
         ],
@@ -60753,7 +60745,8 @@
           "_TZE200_n8dljorx",
           "Zbeacon",
           "zbeacon",
-          "_TZ3000_ox0is7yv"
+          "_TZ3000_ox0is7yv",
+          "HOBEIAN"
         ],
         "productId": [
           "TS0203",
@@ -97421,44 +97414,6 @@
       "min": 0,
       "max": 100,
       "step": 1
-    },
-    "measure_temperature.probe": {
-      "type": "number",
-      "title": {
-        "en": "Probe Temperature",
-        "nl": "Sonde Temperatuur",
-        "da": "Sonde Temperatur",
-        "fr": "Température de Sonde",
-        "it": "Temperatura della Sonda",
-        "ko": "프로브 온도",
-        "no": "Sonde Temperatur",
-        "pl": "Temperatura Sondy",
-        "ru": "Температура Зонда",
-        "sv": "Sondtemperatur",
-        "es": "Temperatura de Sonda",
-        "de": "Sondentemperatur"
-      },
-      "units": {
-        "en": "°C",
-        "nl": "°C",
-        "da": "°C",
-        "fr": "°C",
-        "it": "°C",
-        "ko": "°C",
-        "no": "°C",
-        "pl": "°C",
-        "ru": "°C",
-        "sv": "°C",
-        "es": "°C",
-        "de": "°C"
-      },
-      "insights": true,
-      "chartType": "spline",
-      "decimals": 1,
-      "getable": true,
-      "setable": false,
-      "uiComponent": "sensor",
-      "icon": "/assets/icons/temperature.svg"
     },
     "measure_voc": {
       "type": "number",
