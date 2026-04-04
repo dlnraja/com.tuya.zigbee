@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-04T20:11:54.816Z",
+  "ts": "2026-04-04T20:28:08.912Z",
   "currentCount": 3997,
   "src": {
     "johan": {
@@ -8103,137 +8103,9 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 56,
+      "issueCount": 46,
       "prCount": 4,
       "deviceRequests": [
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 187,
-          "title": "[Auto] 27 new fingerprints from community (2026-04)",
-          "mfrs": [
-            "_TZ3000_wol32olt",
-            "_TZE284_uo8qcagc",
-            "_TZB210_qzsxaqqe",
-            "_TZE284_tgrzpqf4",
-            "_TZE284_nbv4tdaz",
-            "_TZ3000_dojqjapa",
-            "_TZE204_cduqh1l0",
-            "_TZE284_4vobcgd3",
-            "_TZ3210_zifx0xoj",
-            "_TZ3008_reatplte",
-            "_TZ3000_uyrhiafs",
-            "_TZ3000_t7ugva7q",
-            "_TZ3210_imaccztn",
-            "_TZ3000_icoxotza",
-            "_TZ3210_vbfp8eyv",
-            "_TZE284_bw4ayyeh",
-            "_TZ3210_7vgttna6",
-            "_TZ3210_a04acm9s",
-            "_TZ3210_cm9mbpr1",
-            "_TZE284_mul9abs3",
-            "_TZ3002_vsom92pp",
-            "_TZE284_3regm3h6",
-            "_TZE204_ouy7vpm1",
-            "_TZE284_mvtclclq",
-            "_TZE200_hbnfokum",
-            "_TZE200_w0ap83qu",
-            "_TZE284_4vbj3fxh"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 184,
-          "title": "Device Request - Temperature &humidity sensor with external probe - Shenzen New Green Energy Techologies Co ltd / _TZE284_8se38w3c TS0601",
-          "mfrs": [
-            "_TZE284_8se38w3c",
-            "_TZE284_8se38w3c",
-            "_TZE284_8se38w3c"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 183,
-          "title": "[Device Request] Climate Sensor Model TS0201 ID _TZ3000_tsgqxdb4",
-          "mfrs": [
-            "_TZ3000_tsgqxdb4",
-            "_TZ3000_tsgqxdb4"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 182,
-          "title": "[Auto] New Tuya devices found in zigbee2mqtt",
-          "mfrs": [
-            "_TZ3000_dojqjapa",
-            "_TZ3000_icoxotza",
-            "_TZ3000_t7ugva7q",
-            "_TZ3000_uyrhiafs",
-            "_TZ3002_vsom92pp",
-            "_TZ3008_reatplte",
-            "_TZ3210_imaccztn",
-            "_TZ3210_vbfp8eyv",
-            "_TZ3210_zifx0xoj",
-            "_TZB210_qzsxaqqe",
-            "_TZE200_hbnfokum",
-            "_TZE200_w0ap83qu",
-            "_TZE204_cduqh1l0",
-            "_TZE204_ouy7vpm1",
-            "_TZE284_3regm3h6",
-            "_TZE284_4vbj3fxh",
-            "_TZE284_4vobcgd3",
-            "_TZE284_bw4ayyeh",
-            "_TZE284_mul9abs3",
-            "_TZE284_mvtclclq",
-            "_TZE284_nbv4tdaz",
-            "_TZE284_tgrzpqf4"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 178,
-          "title": "[soil_sensor] Bug: No Connetion possible \t_TZE284_oitavov2",
-          "mfrs": [
-            "_TZE284_oitavov2"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 171,
-          "title": "Bseed E-touch series Zigbee 1-Gang",
-          "mfrs": [
-            "_TZ3002_jn2x20tg",
-            "_TZ3002_jn2x20tg",
-            "_TZ3002_jn2x20tg",
-            "_TZ3002_jn2x20tg"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 170,
-          "title": "Bug: TS0003 (_TZ3000_v4l4b0lp) - Sub-capability Flow cards (Gang 1/2/3) are completely unlinked",
-          "mfrs": [
-            "_TZ3000_v4l4b0lp",
-            "_TZ3000_v4l4b0lp"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 165,
-          "title": "Device Request - Zigbee Light sensor ZG-106Z",
-          "mfrs": [
-            "_TZ3000_7y90pany"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 164,
-          "title": "[DEVICE]",
-          "mfrs": [
-            "_TZ3000_otvn3lne",
-            "_TZ3000_otvn3lne",
-            "_TZ3000_otvn3lne"
-          ]
-        },
         {
           "repo": "JohanBendz/com.tuya.zigbee",
           "num": 1361,
@@ -8343,6 +8215,98 @@
             "_TZ3210_xzhnra8x",
             "_TZ3210_xzhnra8x",
             "_TZ3210_xzhnra8x"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1347,
+          "title": "Support request for multiple Tuya sensors (Smoke, Water, Rain, Radar, SOS)",
+          "mfrs": [
+            "_TZE284_6ycgarab",
+            "_TZE200_u6x1zyv2",
+            "_TZE204_dwcarsat",
+            "_TZE200_vrcfo4i0",
+            "_TZ3000_zutizvyk"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1346,
+          "title": "Add time sync support and fix LCD temp/humidity sensor",
+          "mfrs": [
+            "_TZE200_locansqn"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1345,
+          "title": "Device Request - AVATTO Smart thermostat WT198 - _TZE284_xnbkhhdr / TS0601",
+          "mfrs": [
+            "_TZE284_xnbkhhdr",
+            "_TZE284_xnbkhhdr",
+            "_TZE284_xnbkhhdr"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1344,
+          "title": "Bug report - [Short description] _TZ3000_bgsigers - TS0201 sensors stopped working",
+          "mfrs": [
+            "_TZ3000_bgsigers"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1343,
+          "title": "Device Request - 10G 4 in 1 human motionsensor  - _TZE200_rhgsbacq / TS0601",
+          "mfrs": [
+            "_TZE200_rhgsbacq",
+            "_TZE200_rhgsbacq",
+            "_TZE200_rhgsbacq"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1341,
+          "title": "Device Request - Tuya Smart Plant sensor - _TZE284_aao3yzhs / TS0601",
+          "mfrs": [
+            "_TZE284_aao3yzhs",
+            "_TZE284_aao3yzhs",
+            "_TZE284_aao3yzhs"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1339,
+          "title": "BSEED 1 button wall switch with neutral. _TZ3000_blhvsaqf TS0001",
+          "mfrs": [
+            "_TZ3000_blhvsaqf",
+            "_TZ3000_blhvsaqf",
+            "_TZ3000_blhvsaqf",
+            "_TZ3000_blhvsaqf"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1338,
+          "title": "BSEED 3 button wall switch with neutral _TZ3000_qkixdnon\tTS0003",
+          "mfrs": [
+            "_TZ3000_qkixdnon",
+            "_TZ3000_qkixdnon",
+            "_TZ3000_qkixdnon"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1337,
+          "title": "BSEED 2 button wallswitch zigbee with nuetral _TZ3000_l9brjwau TS0002",
+          "mfrs": [
+            "_TZ3000_qkixdnon",
+            "_TZ3000_qkixdnon",
+            "_TZ3000_qkixdnon",
+            "_TZ3000_l9brjwau",
+            "_TZ3000_l9brjwau",
+            "_TZ3000_l9brjwau"
           ]
         }
       ]
