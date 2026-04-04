@@ -4,7 +4,22 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.187] - 2026-04-04
+## [5.11.188] - 2026-04-04
+
+### New Features
+- Added 27 new device fingerprints from Zigbee2MQTT, ZHA, forum contributions, and JohanBendz
+
+### Bug Fixes
+- Fixed forum post merging logic to ensure humanized updates
+- Improved AI waiter and anti-spam mechanisms for forum responses
+
+### Improvements
+- Enhanced i18n localization with AI-powered auto-translations
+- Updated community sync process for better fingerprint integration
+- Refined automated forum response handling
+---
+
+ [5.11.187] - 2026-04-04
 
 ### Maintenance
 - No user-facing changes in this release.

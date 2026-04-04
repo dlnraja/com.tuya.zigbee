@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.188 |
+| **App Version** | v5.11.189 |
 | **Device Fingerprints** | 4,326+ |
 | **Unique Product IDs** | 559 |
 | **Drivers** | 193 (144 Zigbee + 49 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.188** | v5.11.187: No user-facing changes in this release. |
+| **v5.11.189** | v5.11.188: Added 27 new device fingerprints from Zigbee2MQTT, ZHA, forum contributions, and JohanBendz, Fixed forum p... |
+| **v5.11.188** | Community sync: 27 new fingerprints added from Z2M/ZHA/forum/JohanBendz. Minor AI and forum  improvements. Total: . |
 | **v5.11.187** | Maintenance release. No user-facing changes. |
 | **v5.11.186** | Universal Tuya Zigbee app v5.11.186 adds 681 new fingerprints and updates 193 drivers. |
 | **v5.11.185** | v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI... |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.177** | v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI... |
 | **v5.11.176** | v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI... |
 | **v5.11.175** | v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI... |
-| **v5.11.174** | v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI... |
 
 <!-- CHANGELOG_END -->
 
