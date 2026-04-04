@@ -114,6 +114,20 @@ env:
 which caused bot to post release updates on OTHER people's threads (T26439, T146735).
 Fix: hardcoded `.filter(t=>t===140352)` safety net — even if env overridden, only T140352 is used.
 
+**BUG FIXED v5.11.190:** `forum-auto-responder.yml` AND `forum-monitor.yml` both had
+`REPLY_TOPICS: '140352,26439'` which allowed the bot to post replies on JohanBendz's thread (T26439).
+Fix: changed REPLY_TOPICS to '140352' in both workflows. FORUM_TOPICS may still include 26439 for
+READ-ONLY scanning, but REPLY_TOPICS must ONLY be '140352'.
+
+### 12. Copilot Semantic Linter — SAFETY RULES
+The original `gh copilot suggest` approach was **dangerous**: it would echo raw Copilot output
+directly into driver files (`echo "$SUGGESTION" > "$file"`), potentially destroying working code.
+**v5.11.190 FIX:** Replaced with a safe, static bash-based SDK v3 validator that:
+- NEVER modifies files — report-only mode
+- Checks 7 SDK v3 rules: async init, Manager globals, v2 API, await setCapability, listener leaks, settings keys, titleFormatted
+- Has 5-minute timeout to prevent blocking the pipeline
+
+
 ### 11. Auto-reopen chain
 When user comments on closed issue/PR → `auto-reopen-on-comment.yml` reopens it →
 `auto-respond.yml` triggers on `reopened` event → daily/nightly re-process in next cycle.
