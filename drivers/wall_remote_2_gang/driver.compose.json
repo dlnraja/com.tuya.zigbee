@@ -10,7 +10,37 @@
   "connectivity": [
     "zigbee"
   ],
-  "capabilities": [],
+  "capabilities": [
+    "button.1",
+    "button.2",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1",
+        "nl": "Knop 1",
+        "de": "Taste 1"
+      }
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2",
+        "nl": "Knop 2",
+        "de": "Taste 2"
+      }
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    }
+  },
   "images": {
     "large": "drivers/wall_remote_2_gang/assets/images/large.png",
     "small": "drivers/wall_remote_2_gang/assets/images/small.png",

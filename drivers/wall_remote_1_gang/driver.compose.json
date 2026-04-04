@@ -10,7 +10,10 @@
   "connectivity": [
     "zigbee"
   ],
-  "capabilities": [],
+  "capabilities": [
+    "button.1",
+    "measure_battery"
+  ],
   "images": {
     "large": "drivers/wall_remote_1_gang/assets/images/large.png",
     "small": "drivers/wall_remote_1_gang/assets/images/small.png",
@@ -101,5 +104,23 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1",
+        "nl": "Knop 1",
+        "de": "Taste 1"
+      }
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    }
+  }
 }
