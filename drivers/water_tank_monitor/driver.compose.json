@@ -11,7 +11,8 @@
     "measure_water_percentage",
     "alarm_water_low",
     "alarm_water_high",
-    "alarm_water"
+    "alarm_water",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "measure_water_level": {

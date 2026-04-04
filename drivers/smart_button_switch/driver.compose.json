@@ -12,7 +12,8 @@
   ],
   "capabilities": [
     "button.1",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "images": {
     "large": "drivers/smart_button_switch/assets/images/large.png",

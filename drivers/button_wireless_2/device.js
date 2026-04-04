@@ -20,6 +20,19 @@ class Button2GangDevice extends ButtonDevice {
 
     this.buttonCount = 2;
     await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
+    // --- Battery Alarm (auto-injected) ---
+    if (this.hasCapability('measure_battery')) {
+      this.registerCapabilityListener('measure_battery', async (value) => {
+        if (this.hasCapability('alarm_battery')) {
+          await this.setCapabilityValue('alarm_battery', value < 15).catch(() => {});
+        }
+      });
+      // Initial check
+      const bat = this.getCapabilityValue('measure_battery');
+      if (bat !== null && this.hasCapability('alarm_battery')) {
+        this.setCapabilityValue('alarm_battery', bat < 15).catch(() => {});
+      }
+    }
     await this._setupE000Detection(zclNode);
     await this._setupExtraDetection(zclNode);
     await this._setupRawFrameInterceptor(zclNode);

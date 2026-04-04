@@ -6,7 +6,8 @@
   "class": "sensor",
   "capabilities": [
     "button.1",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "button.1": {
