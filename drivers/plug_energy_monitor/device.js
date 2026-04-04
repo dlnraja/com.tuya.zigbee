@@ -3,6 +3,8 @@
 const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
 const { getDeviceConfig, transformDpValue, ENERGY_CONFIGS } = require('../../lib/configs/IntelligentDeviceConfig');
 const { setupSonoffEnergy } = require('../../lib/mixins/SonoffEnergyMixin');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -149,7 +151,7 @@ function getEnergyConfig(manufacturerName) {
   return ENERGY_CONFIG_MAP[manufacturerName] || ENERGY_DEVICE_CONFIGS.TUYA_DP_STANDARD;
 }
 
-class EnergyMonitorPlugDevice extends HybridPlugBase {
+class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlugBase)) {
 
   // v5.11.25: Override ZCL energy divisors for devices that report in actual units
   get zclEnergyDivisors() {
@@ -289,7 +291,12 @@ class EnergyMonitorPlugDevice extends HybridPlugBase {
     }
 
     await setupSonoffEnergy(this, zclNode);
-    this.log('[ENERGY] ✅ Energy monitor plug ready');
+
+    // Initialize physical and virtual buttons
+    await this.initPhysicalButtonDetection(zclNode);
+    await this.initVirtualButtons();
+
+    this.log('[ENERGY] ✅ Energy monitor plug ready (v5.13.1 + Bidirectional Buttons)');
   }
 
   /**
@@ -384,14 +391,14 @@ class EnergyMonitorPlugDevice extends HybridPlugBase {
             } catch (_) {}
           }, 120000); // v5.12.12: increased from 60s to 120s
         }
-      // v5.12.5: also try configureReporting for metering
-      if (mc.configureReporting) {
-        await mc.configureReporting({ currentSummDelivered: { minInterval: 60, maxInterval: 3600, minChange: 1 } })
-          .catch(e => this.log('[ENERGY] Metering reporting:', e.message));
+        // v5.12.5: also try configureReporting for metering
+        if (mc.configureReporting) {
+          await mc.configureReporting({ currentSummDelivered: { minInterval: 60, maxInterval: 3600, minChange: 1 } })
+            .catch(e => this.log('[ENERGY] Metering reporting:', e.message));
+        }
+        this.log('[ENERGY] ✅ ZCL Metering configured (poll=120s)');
       }
-      this.log('[ENERGY] ✅ ZCL Metering configured (poll=120s)');
-    }
-  } catch (e) {
+    } catch (e) {
       this.log(`[ENERGY] ⚠️ Metering cluster error: ${e.message}`);
     }
   }

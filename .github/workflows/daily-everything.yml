@@ -668,7 +668,7 @@ jobs:
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          APP_VERSION: ${{ steps.stats.outputs.version }}
+          APP_VERSION: ${{ steps.bump.outputs.version || steps.stats.outputs.version }}
         run: |
           # CHANGELOG env intentionally empty — post-forum-update.js reads from .homeychangelog.json
           node .github/scripts/post-forum-update.js || true

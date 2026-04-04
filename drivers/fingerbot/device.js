@@ -43,61 +43,61 @@ class FingerBotTimeBoundCluster extends BoundCluster {
 
     for (const attributeId of attributes) {
       switch (attributeId) {
-        case 0x0007: { // localTime
-          const localTime =
+      case 0x0007: { // localTime
+        const localTime =
             Math.floor((Date.now() - ZIGBEE_EPOCH_MS) / 1000) +
             (-new Date().getTimezoneOffset() * 60);
 
-          const buf = Buffer.alloc(8);
-          buf.writeUInt16LE(0x0007, 0);
-          buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
-          buf.writeUInt8(ZCL_TYPE_UTC_TIME, 3);
-          buf.writeUInt32LE(localTime >>> 0, 4);
-          chunks.push(buf);
-          break;
-        }
+        const buf = Buffer.alloc(8);
+        buf.writeUInt16LE(0x0007, 0);
+        buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
+        buf.writeUInt8(ZCL_TYPE_UTC_TIME, 3);
+        buf.writeUInt32LE(localTime >>> 0, 4);
+        chunks.push(buf);
+        break;
+      }
 
-        case 0x0000: { // time
-          const utcTime = Math.floor((Date.now() - ZIGBEE_EPOCH_MS) / 1000);
+      case 0x0000: { // time
+        const utcTime = Math.floor((Date.now() - ZIGBEE_EPOCH_MS) / 1000);
 
-          const buf = Buffer.alloc(8);
-          buf.writeUInt16LE(0x0000, 0);
-          buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
-          buf.writeUInt8(ZCL_TYPE_UTC_TIME, 3);
-          buf.writeUInt32LE(utcTime >>> 0, 4);
-          chunks.push(buf);
-          break;
-        }
+        const buf = Buffer.alloc(8);
+        buf.writeUInt16LE(0x0000, 0);
+        buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
+        buf.writeUInt8(ZCL_TYPE_UTC_TIME, 3);
+        buf.writeUInt32LE(utcTime >>> 0, 4);
+        chunks.push(buf);
+        break;
+      }
 
-        case 0x0001: { // timeStatus
-          const buf = Buffer.alloc(5);
-          buf.writeUInt16LE(0x0001, 0);
-          buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
-          buf.writeUInt8(ZCL_TYPE_BITMAP8, 3);
-          buf.writeUInt8(0x02, 4); // synchronized
-          chunks.push(buf);
-          break;
-        }
+      case 0x0001: { // timeStatus
+        const buf = Buffer.alloc(5);
+        buf.writeUInt16LE(0x0001, 0);
+        buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
+        buf.writeUInt8(ZCL_TYPE_BITMAP8, 3);
+        buf.writeUInt8(0x02, 4); // synchronized
+        chunks.push(buf);
+        break;
+      }
 
-        case 0x0002: { // timeZone
-          const timeZone = -new Date().getTimezoneOffset() * 60;
+      case 0x0002: { // timeZone
+        const timeZone = -new Date().getTimezoneOffset() * 60;
 
-          const buf = Buffer.alloc(8);
-          buf.writeUInt16LE(0x0002, 0);
-          buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
-          buf.writeUInt8(ZCL_TYPE_INT32, 3);
-          buf.writeInt32LE(timeZone, 4);
-          chunks.push(buf);
-          break;
-        }
+        const buf = Buffer.alloc(8);
+        buf.writeUInt16LE(0x0002, 0);
+        buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
+        buf.writeUInt8(ZCL_TYPE_INT32, 3);
+        buf.writeInt32LE(timeZone, 4);
+        chunks.push(buf);
+        break;
+      }
 
-        default: {
-          const buf = Buffer.alloc(3);
-          buf.writeUInt16LE(attributeId, 0);
-          buf.writeUInt8(ZCL_STATUS_UNSUPPORTED_ATTRIBUTE, 2);
-          chunks.push(buf);
-          break;
-        }
+      default: {
+        const buf = Buffer.alloc(3);
+        buf.writeUInt16LE(attributeId, 0);
+        buf.writeUInt8(ZCL_STATUS_UNSUPPORTED_ATTRIBUTE, 2);
+        chunks.push(buf);
+        break;
+      }
       }
     }
 
@@ -223,8 +223,8 @@ class FingerBot extends TuyaSpecificClusterDevice {
         // Write to BOTH standard DP101 and alternative DP8 to cover all variants
         try {
           if (this.zclNode && this.zclNode.endpoints[1]) {
-             await this.writeEnum(V1_FINGER_BOT_DATA_POINTS.mode || 101, modeEnum).catch(() => {});
-             await this.writeEnum(8, modeEnum).catch(() => {}); // Fallback for alternative devices
+            await this.writeEnum(V1_FINGER_BOT_DATA_POINTS.mode || 101, modeEnum).catch(() => {});
+            await this.writeEnum(8, modeEnum).catch(() => {}); // Fallback for alternative devices
           }
         } catch (e) {
           this.log('Could not write mode DP:', e.message);
@@ -340,61 +340,61 @@ class FingerBot extends TuyaSpecificClusterDevice {
     this.log(`FingerBot DP ${dp}:`, parsedValue);
 
     switch (dp) {
-      case V1_FINGER_BOT_DATA_POINTS.battery:
-      case 12: { // Alternative DP12 for Battery
-        if (this.hasCapability('measure_battery')) {
-          await this._setCapabilitySafe(
-            'measure_battery',
-            parsedValue,
-            'Failed to update battery',
-          );
-        }
+    case V1_FINGER_BOT_DATA_POINTS.battery:
+    case 12: { // Alternative DP12 for Battery
+      if (this.hasCapability('measure_battery')) {
+        await this._setCapabilitySafe(
+          'measure_battery',
+          parsedValue,
+          'Failed to update battery',
+        );
+      }
 
-        const isLow =
+      const isLow =
           typeof parsedValue === 'number' && parsedValue <= BATTERY_LOW_THRESHOLD;
 
-        if (isLow && !this._lastBatteryLowState) {
-          this._triggerFlowCard('fingerbot_battery_low');
-        }
-
-        this._lastBatteryLowState = isLow;
-        break;
+      if (isLow && !this._lastBatteryLowState) {
+        this._triggerFlowCard('fingerbot_battery_low');
       }
 
-      case V1_FINGER_BOT_DATA_POINTS.mode:
-      case 8: { // Alternative DP8 for Mode
-        this.log('FingerBot mode DP report:', parsedValue);
-        // Map 0 -> click, 1 -> switch, 2 -> program
-        const modes = ['click', 'switch', 'program'];
-        const modeString = modes[parsedValue] || 'click';
-        if (this.hasCapability('finger_bot_mode')) {
-           await this._setCapabilitySafe('finger_bot_mode', modeString, 'Failed to update mode');
-        }
-        break;
+      this._lastBatteryLowState = isLow;
+      break;
+    }
+
+    case V1_FINGER_BOT_DATA_POINTS.mode:
+    case 8: { // Alternative DP8 for Mode
+      this.log('FingerBot mode DP report:', parsedValue);
+      // Map 0 -> click, 1 -> switch, 2 -> program
+      const modes = ['click', 'switch', 'program'];
+      const modeString = modes[parsedValue] || 'click';
+      if (this.hasCapability('finger_bot_mode')) {
+        await this._setCapabilitySafe('finger_bot_mode', modeString, 'Failed to update mode');
       }
+      break;
+    }
 
-      case V1_FINGER_BOT_DATA_POINTS.lower:
-        this.log('FingerBot lower limit DP report:', parsedValue);
-        break;
+    case V1_FINGER_BOT_DATA_POINTS.lower:
+      this.log('FingerBot lower limit DP report:', parsedValue);
+      break;
 
-      case V1_FINGER_BOT_DATA_POINTS.delay:
-        this.log('FingerBot delay DP report:', parsedValue);
-        break;
+    case V1_FINGER_BOT_DATA_POINTS.delay:
+      this.log('FingerBot delay DP report:', parsedValue);
+      break;
 
-      case V1_FINGER_BOT_DATA_POINTS.reverse:
-        this.log('FingerBot reverse DP report:', parsedValue);
-        break;
+    case V1_FINGER_BOT_DATA_POINTS.reverse:
+      this.log('FingerBot reverse DP report:', parsedValue);
+      break;
 
-      case V1_FINGER_BOT_DATA_POINTS.upper:
-        this.log('FingerBot upper limit DP report:', parsedValue);
-        break;
+    case V1_FINGER_BOT_DATA_POINTS.upper:
+      this.log('FingerBot upper limit DP report:', parsedValue);
+      break;
 
-      case V1_FINGER_BOT_DATA_POINTS.touch:
-        this.log('FingerBot touch DP report:', parsedValue);
-        break;
+    case V1_FINGER_BOT_DATA_POINTS.touch:
+      this.log('FingerBot touch DP report:', parsedValue);
+      break;
 
-      default:
-        this.log('Unhandled FingerBot DP:', dp, 'value:', parsedValue);
+    default:
+      this.log('Unhandled FingerBot DP:', dp, 'value:', parsedValue);
     }
   }
 
@@ -438,45 +438,45 @@ class FingerBot extends TuyaSpecificClusterDevice {
 
     for (const key of changedKeys) {
       switch (key) {
-        case 'fingerbot_mode':
+      case 'fingerbot_mode':
+        await this.writeEnum(
+          V1_FINGER_BOT_DATA_POINTS.mode,
+          MODE[this._normalizeMode(newSettings.fingerbot_mode)],
+        );
+        break;
+
+      case 'lower_limit':
+        await this.writeData32(
+          V1_FINGER_BOT_DATA_POINTS.lower,
+          newSettings.lower_limit,
+        );
+        break;
+
+      case 'upper_limit':
+        await this.writeData32(
+          V1_FINGER_BOT_DATA_POINTS.upper,
+          newSettings.upper_limit,
+        );
+        break;
+
+      case 'sustain_time':
+        await this.writeData32(
+          V1_FINGER_BOT_DATA_POINTS.delay,
+          newSettings.sustain_time,
+        );
+        break;
+
+      case 'reverse_direction':
+        if (typeof newSettings.reverse_direction === 'boolean') {
           await this.writeEnum(
-            V1_FINGER_BOT_DATA_POINTS.mode,
-            MODE[this._normalizeMode(newSettings.fingerbot_mode)],
+            V1_FINGER_BOT_DATA_POINTS.reverse,
+            newSettings.reverse_direction ? 1 : 0,
           );
-          break;
+        }
+        break;
 
-        case 'lower_limit':
-          await this.writeData32(
-            V1_FINGER_BOT_DATA_POINTS.lower,
-            newSettings.lower_limit,
-          );
-          break;
-
-        case 'upper_limit':
-          await this.writeData32(
-            V1_FINGER_BOT_DATA_POINTS.upper,
-            newSettings.upper_limit,
-          );
-          break;
-
-        case 'sustain_time':
-          await this.writeData32(
-            V1_FINGER_BOT_DATA_POINTS.delay,
-            newSettings.sustain_time,
-          );
-          break;
-
-        case 'reverse_direction':
-          if (typeof newSettings.reverse_direction === 'boolean') {
-            await this.writeEnum(
-              V1_FINGER_BOT_DATA_POINTS.reverse,
-              newSettings.reverse_direction ? 1 : 0,
-            );
-          }
-          break;
-
-        default:
-          this.log('Unhandled FingerBot setting change:', key);
+      default:
+        this.log('Unhandled FingerBot setting change:', key);
       }
     }
   }
