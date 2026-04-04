@@ -337,6 +337,81 @@ function validateMerge() {
   return { valid: true, checks };
 }
 
+// Generate a human-readable merge summary for PR comments
+function generateMergeSummary(prData, cats, risk, reasons, mergeType, conflictFiles) {
+  const author = prData.author?.login || 'unknown';
+  const lines = [];
+
+  lines.push(`## ✅ PR fusionnée automatiquement`);
+  lines.push('');
+  lines.push(`**${prData.title}** (par @${author})`);
+  lines.push('');
+
+  // What was changed (human-readable)
+  lines.push('### Ce qui a été intégré');
+  if (cats.fingerprints.length > 0) {
+    const drivers = cats.fingerprints.map(f => f.split('/')[1] || f).join(', ');
+    lines.push(`- 🔍 **${cats.fingerprints.length} fingerprint(s)** mis à jour : ${drivers}`);
+  }
+  if (cats.drivers.length > 0) {
+    const driverNames = [...new Set(cats.drivers.map(f => f.split('/')[1] || f))].join(', ');
+    lines.push(`- 🔧 **${cats.drivers.length} fichier(s) driver** modifié(s) : ${driverNames}`);
+  }
+  if (cats.scripts.length > 0) {
+    lines.push(`- ⚙️ **${cats.scripts.length} script(s) automation** modifié(s)`);
+  }
+  if (cats.workflows.length > 0) {
+    lines.push(`- 🔄 **${cats.workflows.length} workflow(s) CI/CD** modifié(s)`);
+  }
+  if (cats.deps.length > 0) {
+    lines.push(`- 📦 **Dépendances** mises à jour`);
+  }
+  if (cats.docs.length > 0) {
+    lines.push(`- 📝 **${cats.docs.length} document(s)** mis à jour`);
+  }
+  if (cats.other.length > 0) {
+    lines.push(`- 📁 **${cats.other.length} autre(s) fichier(s)** modifié(s)`);
+  }
+  lines.push('');
+
+  // How it was merged
+  lines.push('### Comment');
+  if (mergeType === 'conflict-resolved') {
+    lines.push(`- ⚡ **Conflits détectés et résolus automatiquement** dans : \`${conflictFiles.join('`, `')}\``);
+    lines.push('- La meilleure version de chaque fichier a été sélectionnée intelligemment');
+  } else if (mergeType === 'clean') {
+    lines.push('- ✅ Merge propre, aucun conflit');
+  }
+  lines.push(`- 🔐 Niveau de risque : **${risk}/10** (${reasons.join(', ')})`);
+  lines.push('- ✅ Validation post-merge : app.js, app.json, drivers — tout OK');
+  lines.push('');
+
+  lines.push('---');
+  lines.push('_🤖 Fusionné par Smart PR Auto-Merge — branche supprimée automatiquement_');
+
+  return lines.join('\n');
+}
+
+// Close a PR with a human-readable summary, then delete the branch
+function closePR(prNumber, prData, cats, risk, reasons, mergeType, conflictFiles) {
+  const summary = generateMergeSummary(prData, cats, risk, reasons, mergeType, conflictFiles || []);
+
+  // Post the detailed comment
+  gh(`pr comment ${prNumber} -R ${REPO} --body "${summary.replace(/"/g, '\\"')}"`);
+
+  // Close the PR
+  gh(`pr close ${prNumber} -R ${REPO}`);
+
+  // Delete the remote branch (cleanup)
+  const branch = prData.headRefName;
+  if (branch && branch !== 'master' && branch !== 'main') {
+    log(`  Deleting branch: ${branch}`);
+    git(`push origin --delete ${branch} 2>/dev/null`);
+  }
+
+  log(`  ✅ PR #${prNumber} closed with summary and branch deleted`);
+}
+
 // Process a single PR
 async function processPR(prNumber) {
   log(`\n### Processing PR #${prNumber}`);
@@ -390,24 +465,21 @@ async function processPR(prNumber) {
       validation.checks.forEach(c => log(`  ${c}`));
 
       if (validation.valid && risk <= 5) {
-        git(`commit -m "Smart merge PR #${prNumber}: ${prData.title} (conflicts resolved)"`);
+        git(`commit -m "Merge PR #${prNumber}: ${prData.title} (conflicts resolved) [skip ci]"`);
         git('push origin HEAD');
-        // Close the PR with a comment
-        gh(`pr comment ${prNumber} -R ${REPO} --body "✅ **Auto-merged** with intelligent conflict resolution.\n\nConflicts resolved in: ${conflict.files.join(', ')}\nRisk level: ${risk}/10\n\n_Merged by Smart PR Auto-Merge_"`);
-        gh(`pr close ${prNumber} -R ${REPO}`);
-        log('  ✅ Merged and closed');
+        closePR(prNumber, prData, cats, risk, reasons, 'conflict-resolved', conflict.files);
         return true;
       } else {
         git('reset --hard HEAD~1');
         log(`  Validation failed or risk too high (${risk}/10), labeling for review`);
         gh(`pr edit ${prNumber} -R ${REPO} --add-label "needs-review,has-conflicts"`);
-        gh(`pr comment ${prNumber} -R ${REPO} --body "⚠️ **AI conflict resolution attempted** but validation failed or risk is too high (${risk}/10).\n\nPlease review manually.\n\n_Smart PR Auto-Merge_"`);
+        gh(`pr comment ${prNumber} -R ${REPO} --body "⚠️ **Tentative de résolution automatique des conflits**\n\nLe merge a été tenté mais la validation a échoué ou le risque est trop élevé (${risk}/10).\n\n**Fichiers en conflit :** ${conflict.files.join(', ')}\n\nMerci de vérifier manuellement avant de fusionner.\n\n_🤖 Smart PR Auto-Merge_"`);
         return false;
       }
     } else {
       log(`  ❌ Cannot auto-resolve: ${conflict.reason}`);
       gh(`pr edit ${prNumber} -R ${REPO} --add-label "needs-review,has-conflicts"`);
-      gh(`pr comment ${prNumber} -R ${REPO} --body "⚠️ Merge conflicts detected but could not auto-resolve: ${conflict.reason}\n\nPlease resolve manually.\n\n_Smart PR Auto-Merge_"`);
+      gh(`pr comment ${prNumber} -R ${REPO} --body "⚠️ **Conflits de merge détectés**\n\nLes conflits n'ont pas pu être résolus automatiquement : ${conflict.reason}\n\nMerci de résoudre les conflits manuellement.\n\n_🤖 Smart PR Auto-Merge_"`);
       return false;
     }
   }
@@ -426,16 +498,15 @@ async function processPR(prNumber) {
       validation.checks.forEach(c => log(`  ${c}`));
 
       if (validation.valid) {
-        git(`commit -m "Merge PR #${prNumber}: ${prData.title}"`);
+        git(`commit -m "Merge PR #${prNumber}: ${prData.title} [skip ci]"`);
         git('push origin HEAD');
-        gh(`pr comment ${prNumber} -R ${REPO} --body "✅ **Auto-merged** (risk: ${risk}/10, ${reasons.join(', ')})\n\n_Smart PR Auto-Merge_"`);
-        gh(`pr close ${prNumber} -R ${REPO}`);
-        log('  ✅ Merged successfully');
+        closePR(prNumber, prData, cats, risk, reasons, 'clean');
         return true;
       } else {
         git('merge --abort 2>/dev/null || git reset --hard HEAD');
         log('  Validation failed, requesting review');
         gh(`pr edit ${prNumber} -R ${REPO} --add-label "needs-review"`);
+        gh(`pr comment ${prNumber} -R ${REPO} --body "⚠️ **Validation échouée**\n\nLe merge a été tenté mais la validation du code a échoué. Vérifiez les erreurs de syntaxe dans les drivers.\n\nChecks: ${validation.checks.join(' | ')}\n\n_🤖 Smart PR Auto-Merge_"`);
         return false;
       }
     }
@@ -443,7 +514,21 @@ async function processPR(prNumber) {
     // Medium/high risk — approve but require human confirmation
     log(`  Medium/high risk (${risk}/10), labeling for review`);
     gh(`pr edit ${prNumber} -R ${REPO} --add-label "reviewed-by-ai,risk-${risk <= 6 ? 'medium' : 'high'}"`);
-    gh(`pr comment ${prNumber} -R ${REPO} --body "🤖 **AI Review Complete**\n\nRisk: ${risk}/10\nCategories: ${reasons.join(', ')}\nFiles: ${filesList.length}\n\n${risk <= 6 ? '✅ Looks safe to merge manually.' : '⚠️ Review carefully before merging.'}\n\n_Smart PR Auto-Merge_"`);
+
+    const riskEmoji = risk <= 6 ? '🟡' : '🔴';
+    const riskAdvice = risk <= 6
+      ? 'Ce PR semble sûr à fusionner manuellement.'
+      : 'Ce PR contient des changements sensibles — vérifiez attentivement avant de fusionner.';
+
+    const changeSummary = [];
+    if (cats.fingerprints.length) changeSummary.push(`${cats.fingerprints.length} fingerprints`);
+    if (cats.drivers.length) changeSummary.push(`${cats.drivers.length} fichiers driver`);
+    if (cats.scripts.length) changeSummary.push(`${cats.scripts.length} scripts`);
+    if (cats.workflows.length) changeSummary.push(`${cats.workflows.length} workflows`);
+    if (cats.deps.length) changeSummary.push('dépendances');
+    if (cats.docs.length) changeSummary.push(`${cats.docs.length} docs`);
+
+    gh(`pr comment ${prNumber} -R ${REPO} --body "${riskEmoji} **Analyse automatique terminée**\n\n**Risque : ${risk}/10** — ${reasons.join(', ')}\n**Changements :** ${changeSummary.join(', ') || 'aucun classifié'}\n**Total :** ${filesList.length} fichier(s)\n\n${riskAdvice}\n\n_🤖 Smart PR Auto-Merge_"`);
     return false;
   }
 
