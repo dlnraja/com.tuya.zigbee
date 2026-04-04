@@ -35,6 +35,12 @@ jobs:
       - name: Merge last 3 posts into 1 humanized post
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
+          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
+          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}

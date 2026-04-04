@@ -1,6 +1,7 @@
 /**
  * AI Helper - Multi-provider with project rules injection
- * Chain (FREE TIERS): Gemini → DeepSeek → GitHub Models → OpenAI(free) → Groq → Granite → Mistral(free) → OpenRouter → Cerebras → Together → Kimi → ApiFreeLLM
+ * Orchestrated for Free Tiers, Prioritizing Intelligent Aggregators.
+ * Chain: OpenRouter → HuggingFace → Cerebras → Together → Groq → DeepSeek → Gemini → GitHub Models → OpenAI → Mistral → Kimi
  */
 const fs=require('fs'),path=require('path');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -14,12 +15,14 @@ function cbFail(n,ms){_cb[n]={t:Date.now(),c:ms||300000};}
 function fetchT(url,opts,ms){ms=ms||30000;const ac=new AbortController();const tid=setTimeout(()=>ac.abort(),ms);opts=Object.assign({},opts,{signal:ac.signal});return fetch(url,opts).finally(()=>clearTimeout(tid));}
 // Backoff with jitter
 function backoff(attempt){return Math.min(2000*Math.pow(2,attempt)+Math.random()*1000,60000);}
+
 const _rt={m:{},d:{},mt:0,dd:''};
-const _rtF=path.join(__dirname,'..','state','ai-rate-state.json');
+const _rtF=path.join(__dirname,'..','..','.github','state','ai-rate-state.json');
 function _rtLoad(){try{const j=JSON.parse(fs.readFileSync(_rtF,'utf8'));const td=new Date().toISOString().slice(0,10);if(j.dd===td){_rt.d=j.d||{};_rt.dd=td}}catch{}}
 function _rtSave(){try{_rt.dd=new Date().toISOString().slice(0,10);fs.mkdirSync(path.dirname(_rtF),{recursive:true});fs.writeFileSync(_rtF,JSON.stringify(_rt))}catch{}}
 function _rtTrack(id){const n=Date.now(),td=new Date().toISOString().slice(0,10);if(n-_rt.mt>60000){_rt.m={};_rt.mt=n}if(_rt.dd!==td){_rt.d={};_rt.dd=td}_rt.m[id]=(_rt.m[id]||0)+1;_rt.d[id]=(_rt.d[id]||0)+1;_rtSave()}
-function _rtBudget(){return'gem:'+(_rt.d['gemini']||0)+'/1400 ds:'+(_rt.d['ds']||0)+'/100 oai:'+(_rt.d['openai']||0)+'/200 mi:'+(_rt.d['mistral']||0)+'/30'}
+function _rtBudget(){return Object.entries(_rt.d).map(([k,v])=>k+':'+v).join(' ');}
+
 function classifyTask(t,s,o){
   if(o&&o.complexity!==undefined){const m={trivial:0,low:1,medium:2,high:3};return{cx:typeof o.complexity==='string'?(m[o.complexity]??1):o.complexity,type:o.taskType||'generate'}}
   const lc=((t||'')+' '+(s||'')).toLowerCase();let type='generate';
@@ -31,217 +34,260 @@ function classifyTask(t,s,o){
   return{cx:type==='code'||type==='analyze'?2:1,type};
 }
 
-async function callAI(text,sysPrompt,opts={}){
-  const maxTokens=opts.maxTokens||2048;
-  // Inject project rules + loaded rules + architecture into system prompt
-  const archContext=ARCHITECTURE_SUMMARY?'\n\n---\n'+ARCHITECTURE_SUMMARY:'';
-  const rulesContext=LOADED_RULES?'\n\n---\n'+LOADED_RULES:'';
-  const fullSysPrompt=PROJECT_RULES+archContext+rulesContext+'\n\n'+sysPrompt;
-  // Try Gemini first (free: 15 RPM, 1500 RPD — cap at 1400 for safety)
-  _rtLoad();
-  const gemKey=process.env.GOOGLE_API_KEY;
-  if(gemKey){
-    const gemUsed=_rt.d['gemini']||0;const gemRpd=1400;
-    if(gemUsed>=gemRpd){console.log('  Gemini daily cap ('+gemUsed+'/'+gemRpd+') — skipping to preserve free tier');}
-    else{
-    const models=['gemini-2.0-flash','gemini-2.0-flash-lite'];
-    for(const model of models){
-      if(!cbOk('gemini-'+model))continue;
-      for(let retry=0;retry<3;retry++){
-        if(retry>0)await sleep(backoff(retry));
-        try{
-          const r=await fetchT('https://generativelanguage.googleapis.com/v1beta/models/'+model+':generateContent?key='+gemKey,{
-            method:'POST',headers:{'Content-Type':'application/json'},
-            body:JSON.stringify({systemInstruction:{parts:[{text:fullSysPrompt}]},contents:[{parts:[{text}]}],
-              generationConfig:{temperature:0.2,maxOutputTokens:maxTokens}})});
-          if(r.ok){const d=await r.json();const t=d.candidates?.[0]?.content?.parts?.[0]?.text;if(t){_rtTrack('gemini');return{text:t.trim(),model}}}
-          if(r.status===429){console.log('  Gemini '+model+' 429, backoff...');if(retry>=2)cbFail('gemini-'+model,120000);continue}
-          if(r.status>=500){cbFail('gemini-'+model,60000);break}
-          break;
-        }catch(e){if(e.name==='AbortError')console.log('  Gemini '+model+' timeout');cbFail('gemini-'+model,60000);break}
+async function callAIEngine(url, headers, body, providerName, maxRetries = 1, timeout = 30000) {
+  if (!cbOk(providerName)) return null;
+  for (let retry = 0; retry <= maxRetries; retry++) {
+    if (retry > 0) await sleep(backoff(retry));
+    try {
+      const r = await fetchT(url, { method: 'POST', headers, body: JSON.stringify(body) }, timeout);
+      if (r.ok) {
+        const d = await r.json();
+        const t = d.choices?.[0]?.message?.content || d.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (t) {
+            _rtTrack(providerName);
+            return { text: t.trim(), model: providerName };
+        }
       }
-    }
-    } // end gemini daily cap else
-  }
-  // DeepSeek: free credits then pay-as-you-go — cap low to conserve
-  const dsKey=process.env.DEEPSEEK_API_KEY;
-  if(dsKey&&cbOk('deepseek')){const dsU=_rt.d['ds']||0;if(dsU<100){
-    const tk=classifyTask(text,sysPrompt,opts);const dsM=tk.cx>=3?'deepseek-reasoner':'deepseek-chat';
-    console.log('  Trying DeepSeek ('+dsM+')...');try{
-      const r=await fetchT('https://api.deepseek.com/chat/completions',{method:'POST',
-        headers:{'Content-Type':'application/json','Authorization':'Bearer '+dsKey},
-        body:JSON.stringify({model:dsM,messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],max_tokens:maxTokens,temperature:0.2})},45000);
-      if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t){_rtTrack('ds');return{text:t.trim(),model:dsM}}}
-      else if(r.status===429)cbFail('deepseek',120000);
-    }catch(e){console.log('  DeepSeek err:',e.message);cbFail('deepseek',60000)}
-  }}
-  // GitHub Models (free via GITHUB_TOKEN - models.inference.ai.azure.com)
-  const ghToken=process.env.GH_PAT||process.env.GITHUB_TOKEN;
-  if(ghToken){
-    const ghModels=['gpt-4o-mini','Mistral-small-2503','Meta-Llama-3.1-8B-Instruct'];
-    // Truncate system prompt for GitHub Models (8k token limit ~24k chars)
-    const ghSys=fullSysPrompt.length>6000?sysPrompt.substring(0,5000)+'...(truncated)':fullSysPrompt;
-    const ghText=text.length>12000?text.substring(0,12000)+'...(truncated)':text;
-    for(const model of ghModels){
-      if(!cbOk('gh-'+model))continue;
-      try{
-        console.log('  Trying GitHub Models ('+model+')...');
-        const r=await fetchT('https://models.inference.ai.azure.com/chat/completions',{
-          method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+ghToken},
-          body:JSON.stringify({model,messages:[{role:'system',content:ghSys},{role:'user',content:ghText}],max_tokens:maxTokens,temperature:0.2})});
-        if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'gh-'+model}}
-        if(r.status===429){console.log('  GitHub Models '+model+' 429, backoff...');await sleep(backoff(1));continue}
-        else{const e=await r.text().catch(()=>'');console.log('  GitHub Models '+model+' failed:',r.status,e.substring(0,150))}
-      }catch(e){console.log('  GitHub Models '+model+' error:',e.message);cbFail('gh-'+model,60000)}
+      if (r.status === 429) {
+        console.log(`  [${providerName}] 429 rate limit.`);
+        if (retry >= maxRetries) cbFail(providerName, 180000);
+      } else if (r.status >= 500) {
+        console.log(`  [${providerName}] 5xx error.`);
+        cbFail(providerName, 60000);
+        break;
+      } else {
+        const e = await r.text().catch(()=>'');
+        console.log(`  [${providerName}] failed: ${r.status}`);
+        break;
+      }
+    } catch (e) {
+      console.log(`  [${providerName}] error: ${e.message}`);
+      if (e.name === 'AbortError') cbFail(providerName, 60000);
     }
   }
-  // OpenAI FREE TIER: gpt-3.5-turbo — 3 RPM, 200 RPD, 40K TPM, cap tokens to 500
-  const oaiKey=process.env.OPENAI_API_KEY;
-  if(oaiKey&&cbOk('openai')){
-    const oaiRpd=200,oaiRpm=3,oaiMax=Math.min(maxTokens,500);
-    const oaiUsed=_rt.d['openai']||0,oaiMin=_rt.m['openai']||0;
-    if(oaiUsed<oaiRpd&&oaiMin<oaiRpm){
-      console.log('  Trying OpenAI free (gpt-3.5-turbo, '+oaiUsed+'/'+oaiRpd+' daily)...');
-      try{
-        const r=await fetchT('https://api.openai.com/v1/chat/completions',{
-          method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+oaiKey},
-          body:JSON.stringify({model:'gpt-3.5-turbo',messages:[{role:'system',content:fullSysPrompt.substring(0,4000)},{role:'user',content:text.substring(0,8000)}],max_tokens:oaiMax,temperature:0.2})});
-        if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t){_rtTrack('openai');return{text:t.trim(),model:'openai-gpt35-free'}}}
-        if(r.status===429){console.log('  OpenAI 429 rate limit');cbFail('openai',300000)}
-        else if(r.status===402||r.status===403){console.log('  OpenAI free tier exhausted');cbFail('openai',3600000)}
-        else{const e=await r.text().catch(()=>'');console.log('  OpenAI failed:',r.status,e.substring(0,150))}
-      }catch(e){console.log('  OpenAI error:',e.message);cbFail('openai',120000)}
-    }else console.log('  OpenAI free limit ('+oaiUsed+'/'+oaiRpd+' daily, '+oaiMin+'/'+oaiRpm+' rpm)');
-  }
-  // Fallback to Groq (free, fast inference)
-  const groqKey=process.env.GROQ_API_KEY;
-  if(groqKey){
-    console.log('  Falling back to Groq...');
-    try{
-      const r=await fetchT('https://api.groq.com/openai/v1/chat/completions',{
-        method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+groqKey},
-        body:JSON.stringify({model:'llama-3.3-70b-versatile',messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],max_tokens:maxTokens,temperature:0.2})});
-      if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'llama-3.3-70b-groq'}}
-      else console.log('  Groq failed:',r.status);
-    }catch(e){console.log('  Groq error:',e.message)}
-  }
-  // HuggingFace (HF_TOKEN): Smart Task-based routing
-  const hfKey=process.env.HF_TOKEN;
-  if(hfKey&&cbOk('hf')){
-    const tk=classifyTask(text,sysPrompt,opts);
-    let hfM='meta-llama/Llama-3.1-8B-Instruct';
-    if(tk.cx>=3)hfM='Qwen/Qwen2.5-72B-Instruct'; // Reasoning
-    else if(tk.type==='code')hfM='Qwen/Qwen2.5-Coder-32B-Instruct'; // Code
-    else if(tk.type==='analyze'||tk.type==='merge')hfM='ibm-granite/granite-3.3-8b-instruct'; // Merge
-    
-    console.log(`  Trying HuggingFace (${hfM})...`);
-    try{
-      const r=await fetchT('https://router.huggingface.co/v1/chat/completions',{
-        method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+hfKey},
-        body:JSON.stringify({model:hfM,messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],max_tokens:maxTokens,temperature:0.2})});
-      if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'hf-'+hfM.split('/').pop()}}
-      else if(r.status===429)cbFail('hf', 300000);
-      else{const e=await r.text().catch(()=>'');console.log('  HF failed:',r.status,e.substring(0,100))}
-    }catch(e){console.log('  HF error:',e.message);cbFail('hf',60000)}
-  }
-  // Mistral FREE TIER: open-mistral-nemo — 1 RPM, 30 RPD, cap tokens to 500
-  const miKey=process.env.MISTRAL_API_KEY;
-  if(miKey&&cbOk('mistral')){
-    const miRpd=30,miRpm=1,miMax=Math.min(maxTokens,500);
-    const miUsed=_rt.d['mistral']||0,miMin=_rt.m['mistral']||0;
-    if(miUsed<miRpd&&miMin<miRpm){
-      console.log('  Trying Mistral free (nemo, '+miUsed+'/'+miRpd+' daily)...');
-      try{
-        const r=await fetchT('https://api.mistral.ai/v1/chat/completions',{
-          method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+miKey},
-          body:JSON.stringify({model:'open-mistral-nemo',messages:[{role:'system',content:fullSysPrompt.substring(0,4000)},{role:'user',content:text.substring(0,8000)}],max_tokens:miMax,temperature:0.2})});
-        if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t){_rtTrack('mistral');return{text:t.trim(),model:'mistral-nemo-free'}}}
-        if(r.status===429){console.log('  Mistral 429 rate limit');cbFail('mistral',300000)}
-        else if(r.status===402||r.status===403){console.log('  Mistral free tier exhausted');cbFail('mistral',3600000)}
-        else{const e=await r.text().catch(()=>'');console.log('  Mistral failed:',r.status,e.substring(0,150))}
-      }catch(e){console.log('  Mistral error:',e.message);cbFail('mistral',120000)}
-    }else console.log('  Mistral free limit ('+miUsed+'/'+miRpd+' daily, '+miMin+'/'+miRpm+' rpm)');
-  }
-  // Fallback to OpenRouter (free models)
-  const orKey=process.env.OPENROUTER_API_KEY;
-  if(orKey){
-    console.log('  Falling back to OpenRouter...');
-    try{
-      const r=await fetchT('https://openrouter.ai/api/v1/chat/completions',{
-        method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+orKey},
-        body:JSON.stringify({model:'meta-llama/llama-3.3-8b-instruct:free',messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],max_tokens:maxTokens,temperature:0.2})});
-      if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'openrouter-free'}}
-      else console.log('  OpenRouter failed:',r.status);
-    }catch(e){console.log('  OpenRouter error:',e.message)}
-  }
-  // Fallback to Cerebras (free, fast inference)
-  const cerebrasKey=process.env.CEREBRAS_API_KEY;
-  if(cerebrasKey&&cbOk('cerebras')){
-    console.log('  Falling back to Cerebras...');
-    try{
-      const r=await fetchT('https://api.cerebras.ai/v1/chat/completions',{
-        method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+cerebrasKey},
-        body:JSON.stringify({model:'llama-3.3-70b',messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],max_tokens:maxTokens,temperature:0.2})});
-      if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'cerebras-llama70b'}}
-      else{console.log('  Cerebras failed:',r.status);cbFail('cerebras',120000)}
-    }catch(e){console.log('  Cerebras error:',e.message);cbFail('cerebras',60000)}
-  }
-  // Fallback to Together.ai (free tier)
-  const togetherKey=process.env.TOGETHER_API_KEY;
-  if(togetherKey&&cbOk('together')){
-    console.log('  Falling back to Together.ai...');
-    try{
-      const r=await fetchT('https://api.together.xyz/v1/chat/completions',{
-        method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+togetherKey},
-        body:JSON.stringify({model:'meta-llama/Llama-3.3-70B-Instruct-Turbo-Free',messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],max_tokens:maxTokens,temperature:0.2})});
-      if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'together-llama70b'}}
-      else{console.log('  Together failed:',r.status);cbFail('together',120000)}
-    }catch(e){console.log('  Together error:',e.message);cbFail('together',60000)}
-  }
-  // Kimi (Moonshot) FREE: moonshot-v1-8k — good long-context reasoning
-  const kimiKey=process.env.KIMI_API_KEY;
-  if(kimiKey&&cbOk('kimi')){
-    console.log('  Trying Kimi (Moonshot)...');try{
-      const r=await fetchT('https://api.moonshot.cn/v1/chat/completions',{method:'POST',
-        headers:{'Content-Type':'application/json','Authorization':'Bearer '+kimiKey},
-        body:JSON.stringify({model:'moonshot-v1-8k',messages:[{role:'system',content:fullSysPrompt.substring(0,6000)},{role:'user',content:text.substring(0,6000)}],max_tokens:Math.min(maxTokens,1024),temperature:0.2})},30000);
-      if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'kimi-moonshot'}}
-      else{console.log('  Kimi failed:',r.status);if(r.status===429)cbFail('kimi',300000)}
-    }catch(e){console.log('  Kimi error:',e.message);cbFail('kimi',60000)}
-  }
-  // DeepSeek AI (cheap/free, very powerful)
-  const dsKeyChat=process.env.DEEPSEEK_API_KEY;
-  if(dsKeyChat&&cbOk('deepseek')){
-    console.log('  Trying DeepSeek...');try{
-      const r=await fetchT('https://api.deepseek.com/chat/completions',{method:'POST',
-        headers:{'Content-Type':'application/json','Authorization':'Bearer '+dsKeyChat},
-        body:JSON.stringify({model:'deepseek-chat',messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],max_tokens:maxTokens,temperature:0.2})},30000);
-      if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'deepseek-chat'}}
-      else{console.log('  DeepSeek failed:',r.status);cbFail('deepseek',60000)}
-    }catch(e){console.log('  DeepSeek error:',e.message);cbFail('deepseek',60000)}
-  }
-  
-  console.log('  All AI engines failed or rate limited. Returning null to avoid raw metadata output.');
   return null;
 }
 
+async function callAI(text,sysPrompt,opts={}){
+  const maxTokens=opts.maxTokens||2048;
+  const tk = classifyTask(text, sysPrompt, opts);
+  
+  const archContext=ARCHITECTURE_SUMMARY?'\n\n---\n'+ARCHITECTURE_SUMMARY:'';
+  const rulesContext=LOADED_RULES?'\n\n---\n'+LOADED_RULES:'';
+  const fullSysPrompt=PROJECT_RULES+archContext+rulesContext+'\n\n'+sysPrompt;
+  
+  _rtLoad();
+  
+  // 1. OpenRouter (Aggregator - High priority)
+  if (process.env.OPENROUTER_API_KEY && cbOk('openrouter')) {
+    console.log('  Trying OpenRouter...');
+    const res = await callAIEngine(
+      'https://openrouter.ai/api/v1/chat/completions',
+      {'Authorization': 'Bearer ' + process.env.OPENROUTER_API_KEY, 'Content-Type': 'application/json'},
+      {model:'meta-llama/llama-3.3-8b-instruct:free', messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
+      'openrouter'
+    );
+    if (res) return res;
+  }
+
+  // 2. HuggingFace (Aggregator)
+  if (process.env.HF_TOKEN && cbOk('hf')) {
+    let hfM='meta-llama/Llama-3.1-8B-Instruct';
+    if(tk.cx>=3)hfM='Qwen/Qwen2.5-72B-Instruct';
+    else if(tk.type==='code')hfM='Qwen/Qwen2.5-Coder-32B-Instruct';
+    else if(tk.type==='analyze'||tk.type==='merge')hfM='ibm-granite/granite-3.3-8b-instruct';
+    console.log(`  Trying HuggingFace (${hfM})...`);
+    const res = await callAIEngine(
+      'https://router.huggingface.co/v1/chat/completions',
+      {'Authorization': 'Bearer ' + process.env.HF_TOKEN, 'Content-Type': 'application/json'},
+      {model:hfM, messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
+      `hf-${hfM.split('/').pop()}`
+    );
+    if (res) return res;
+  }
+
+  // 3. Cerebras (Fast 70B)
+  if (process.env.CEREBRAS_API_KEY && cbOk('cerebras')) {
+    console.log('  Trying Cerebras...');
+    const res = await callAIEngine(
+      'https://api.cerebras.ai/v1/chat/completions',
+      {'Authorization': 'Bearer ' + process.env.CEREBRAS_API_KEY, 'Content-Type': 'application/json'},
+      {model:'llama-3.3-70b', messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
+      'cerebras'
+    );
+    if (res) return res;
+  }
+
+  // 4. Together.ai
+  if (process.env.TOGETHER_API_KEY && cbOk('together')) {
+    console.log('  Trying Together...');
+    const res = await callAIEngine(
+      'https://api.together.xyz/v1/chat/completions',
+      {'Authorization': 'Bearer ' + process.env.TOGETHER_API_KEY, 'Content-Type': 'application/json'},
+      {model:'meta-llama/Llama-3.3-70B-Instruct-Turbo-Free', messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
+      'together'
+    );
+    if (res) return res;
+  }
+
+  // 5. Groq
+  if (process.env.GROQ_API_KEY && cbOk('groq')) {
+    console.log('  Trying Groq...');
+    const res = await callAIEngine(
+      'https://api.groq.com/openai/v1/chat/completions',
+      {'Authorization': 'Bearer ' + process.env.GROQ_API_KEY, 'Content-Type': 'application/json'},
+      {model:'llama-3.3-70b-versatile', messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
+      'groq'
+    );
+    if (res) return res;
+  }
+
+  // 6. DeepSeek
+  if (process.env.DEEPSEEK_API_KEY && cbOk('deepseek')) {
+    const dsM=tk.cx>=3?'deepseek-reasoner':'deepseek-chat';
+    console.log(`  Trying DeepSeek (${dsM})...`);
+    const res = await callAIEngine(
+      'https://api.deepseek.com/chat/completions',
+      {'Authorization': 'Bearer ' + process.env.DEEPSEEK_API_KEY, 'Content-Type': 'application/json'},
+      {model:dsM, messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
+      'deepseek'
+    );
+    if (res) return res;
+  }
+
+  // 7. Gemini (High Cap, free tier limits apply)
+  if (process.env.GOOGLE_API_KEY && cbOk('gemini')) {
+    const gemUsed = _rt.d['gemini'] || 0;
+    if (gemUsed < 1400) {
+      console.log('  Trying Gemini...');
+      const res = await callAIEngine(
+        'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + process.env.GOOGLE_API_KEY,
+        {'Content-Type': 'application/json'},
+        {systemInstruction:{parts:[{text:fullSysPrompt}]},contents:[{parts:[{text}]}], generationConfig:{temperature:0.2,maxOutputTokens:maxTokens}},
+        'gemini'
+      );
+      if (res) return res;
+    } else console.log('  Gemini cap reached.');
+  }
+
+  // 8. GitHub Models 
+  const ghToken = process.env.GH_PAT || process.env.GITHUB_TOKEN;
+  if (ghToken && cbOk('gh-models')) {
+    const ghSys = fullSysPrompt.length > 6000 ? sysPrompt.substring(0, 5000) + '...' : fullSysPrompt;
+    console.log('  Trying GitHub Models...');
+    const res = await callAIEngine(
+      'https://models.inference.ai.azure.com/chat/completions',
+      {'Authorization': 'Bearer ' + ghToken, 'Content-Type': 'application/json'},
+      {model:'gpt-4o-mini', messages:[{role:'system',content:ghSys},{role:'user',content:text.substring(0,12000)}], max_tokens:maxTokens, temperature:0.2},
+      'gh-models'
+    );
+    if (res) return res;
+  }
+
+  // 9. OpenAI (Strict Limits)
+  if (process.env.OPENAI_API_KEY && cbOk('openai')) {
+    if ((_rt.d['openai']||0) < 200 && (_rt.m['openai']||0) < 3) {
+      console.log('  Trying OpenAI...');
+      const res = await callAIEngine(
+        'https://api.openai.com/v1/chat/completions',
+        {'Authorization': 'Bearer ' + process.env.OPENAI_API_KEY, 'Content-Type': 'application/json'},
+        {model:'gpt-3.5-turbo', messages:[{role:'system',content:fullSysPrompt.substring(0,4000)},{role:'user',content:text.substring(0,8000)}], max_tokens:Math.min(maxTokens,500), temperature:0.2},
+        'openai'
+      );
+      if (res) return res;
+    }
+  }
+
+  // 10. Mistral
+  if (process.env.MISTRAL_API_KEY && cbOk('mistral')) {
+    if ((_rt.d['mistral']||0) < 30 && (_rt.m['mistral']||0) < 1) {
+      console.log('  Trying Mistral...');
+      const res = await callAIEngine(
+        'https://api.mistral.ai/v1/chat/completions',
+        {'Authorization': 'Bearer ' + process.env.MISTRAL_API_KEY, 'Content-Type': 'application/json'},
+        {model:'open-mistral-nemo', messages:[{role:'system',content:fullSysPrompt.substring(0,4000)},{role:'user',content:text.substring(0,8000)}], max_tokens:Math.min(maxTokens,500), temperature:0.2},
+        'mistral'
+      );
+      if (res) return res;
+    }
+  }
+
+  // 11. Kimi
+  if (process.env.KIMI_API_KEY && cbOk('kimi')) {
+    console.log('  Trying Kimi...');
+    const res = await callAIEngine(
+      'https://api.moonshot.cn/v1/chat/completions',
+      {'Authorization': 'Bearer ' + process.env.KIMI_API_KEY, 'Content-Type': 'application/json'},
+      {model:'moonshot-v1-8k', messages:[{role:'system',content:fullSysPrompt.substring(0,6000)},{role:'user',content:text.substring(0,6000)}], max_tokens:Math.min(maxTokens, 1024), temperature:0.2},
+      'kimi'
+    );
+    if (res) return res;
+  }
+
+  console.log('  All AI engines failed or rate limited.');
+  return { text: "AI_OFFLINE_OR_LIMIT_REACHED", model: "fallback-error-system" };
+}
+
+// Map-Reduce logic with varying models for concurrency
+async function splitTaskAndCombine(text, sysPrompt, opts={}) {
+  const maxTokens = opts.maxTokens || 2048;
+  const tk = classifyTask(text, sysPrompt, opts);
+  
+  if (text.length < 3000 || tk.cx <= 1 || (opts.depth||0) >= 2) {
+    return await callAI(text, sysPrompt, opts);
+  }
+  
+  console.log(`  [AI Orchestrator] Slicing task (depth ${opts.depth||0}) length (${text.length})`);
+  
+  const slicePrompt = `Split the following complex text into exactly TWO non-overlapping sub-tasks (JSON array of 2 strings). Preserve all details. Do not solve them. Output ONLY valid JSON: ["PART1_TEXT...", "PART2_TEXT..."]`;
+  const sliceRes = await callAI(text, slicePrompt, { maxTokens: 4096, complexity: 1 });
+  
+  let parts = null;
+  if (sliceRes && sliceRes.text) {
+    try {
+      const cleaned = sliceRes.text.replace(/```json/g, '').replace(/```/g, '').trim();
+      parts = JSON.parse(cleaned);
+      if (!Array.isArray(parts) || parts.length !== 2) parts = null;
+    } catch(e) {}
+  }
+  
+  if (!parts) return await callAI(text, sysPrompt, opts);
+  
+  // Parallel map with offset to force different providers if possible 
+  // (In practice, cbOk/rate limiting and random jitter organically distribute load if run concurrently)
+  console.log(`  [AI Orchestrator] Sub-task execution in parallel...`);
+  const results = await Promise.all([
+    splitTaskAndCombine(parts[0], sysPrompt, { ...opts, depth: (opts.depth||0)+1 }),
+    splitTaskAndCombine(parts[1], sysPrompt, { ...opts, depth: (opts.depth||0)+1 }),
+    sleep(1000) // Small offset
+  ]);
+  
+  if (!results[0] || !results[1]) return results[0] || results[1] || null;
+  
+  console.log(`  [AI Orchestrator] Merging solutions...`);
+  const mergeSystem = `Merge these two processed parts seamlessly. Original goal: ${sysPrompt}`;
+  const mergeText = `[PART 1]\n${results[0].text}\n\n[PART 2]\n${results[1].text}`;
+  
+  const finalRes = await callAI(mergeText, mergeSystem, { ...opts, maxTokens: Math.max(maxTokens, 4000) });
+  if (finalRes) return { text: finalRes.text, model: `map-reduce(${results[0].model}+${results[1].model}->${finalRes.model})` };
+  
+  return { text: results[0].text + '\n\n' + results[1].text, model: 'map-reduce(fallback)' };
+}
+
+async function callAIEnsemble(t,s,o){try{const{qc,pickForTask}=require('./ai-ensemble');const tk=classifyTask(t,s,o);const ps=pickForTask(tk.type,2);if(ps.length<2)return callAI(t,s,o);const mt=Math.min((o||{}).maxTokens||2048,1500);const res=await Promise.allSettled(ps.map(p=>qc(p,t,s,mt)));const ans=res.map((r,i)=>({p:ps[i],t:r.status==='fulfilled'?r.value:null})).filter(a=>a.t&&a.t.length>20);if(!ans.length)return callAI(t,s,o);if(ans.length===1)return{text:ans[0].t,model:'ens-'+ans[0].p};const mp='Synthesize into ONE answer (max 300w):\n\n'+ans.map(a=>'['+a.p+']:\n'+a.t).join('\n\n');const m=await callAI(mp,'Merge AI answers.',{maxTokens:mt,complexity:'low'});return m||{text:ans[0].t,model:'ens-'+ans[0].p}}catch(e){console.log('  Ensemble fallback:',e.message);return callAI(t,s,o)}}
+
 async function analyzeImage(imageUrl,prompt){
   let b64;try{b64=await fetchImageBase64(imageUrl)}catch(e){console.log('  Img fetch fail:',e.message);return null}
-  // Gemini Vision (shares daily cap with text: 1400 RPD)
   _rtLoad();
-  const gemKey=process.env.GOOGLE_API_KEY;
-  if(gemKey&&cbOk('gemini-vision')&&(_rt.d['gemini']||0)<1400){
+  if (process.env.GOOGLE_API_KEY&&cbOk('gemini-vision')&&(_rt.d['gemini']||0)<1400){
     for(let i=0;i<2;i++){if(i)await sleep(backoff(i));try{
-      const r=await fetchT('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+gemKey,{
+      const r=await fetchT('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+process.env.GOOGLE_API_KEY,{
         method:'POST',headers:{'Content-Type':'application/json'},
         body:JSON.stringify({contents:[{parts:[{text:prompt},{inlineData:{mimeType:'image/jpeg',data:b64}}]}],
           generationConfig:{temperature:0.2,maxOutputTokens:2048}})});
       if(r.ok){const d=await r.json();const vt=d.candidates?.[0]?.content?.parts?.[0]?.text?.trim();if(vt){_rtTrack('gemini');return vt}}
     }catch{}}
   }
-  // OpenAI Vision DISABLED — gpt-4o-mini is PAID, not free tier. Zero billing policy.
-  // If OpenAI adds a free vision model in the future, re-enable with daily cap.
-  // GitHub Models Vision fallback
   const ght=process.env.GH_PAT||process.env.GITHUB_TOKEN;
   if(ght&&cbOk('gh-vision')){
     try{
@@ -266,7 +312,7 @@ function textSimilarity(a,b){
 }
 function isDuplicateContent(a,b,thr){return textSimilarity(a,b)>=(thr||0.40)}
 const MAX_POST_SIZE=28000;
-const _cdF=path.join(__dirname,'..','state','forum-post-cooldown.json');
+const _cdF=path.join(__dirname,'..','..','.github','state','forum-post-cooldown.json');
 function _getCD(){try{return JSON.parse(fs.readFileSync(_cdF,'utf8'))}catch{return{}}}
 function _setCD(){try{fs.mkdirSync(path.dirname(_cdF),{recursive:true});fs.writeFileSync(_cdF,JSON.stringify({t:Date.now()}))}catch{}}
 function smartMergePost(existing,fresh,opts){
@@ -279,62 +325,6 @@ function smartMergePost(existing,fresh,opts){
   _setCD();return{action:'edit',content:merged,reason:'replaced'};
 }
 function getAIBudget(){_rtLoad();return{used:_rt.d,budget:_rtBudget()}}
-
-/**
- * Intelligent Task Slicing (Map-Reduce)
- * Recursively splits large problems into sub-tasks (binary tree), solves them via different providers (circular list), and merges.
- */
-async function splitTaskAndCombine(text, sysPrompt, opts={}) {
-  const maxTokens = opts.maxTokens || 2048;
-  const tk = classifyTask(text, sysPrompt, opts);
-  
-  // Base case: if task is small/simple, don't split
-  if (text.length < 3000 || tk.cx <= 1 || (opts.depth||0) >= 2) {
-    return await callAI(text, sysPrompt, opts);
-  }
-  
-  console.log(`  [AI Binary Tree] Slicing task (depth ${opts.depth||0}) due to length (${text.length}) and complexity (${tk.cx})`);
-  
-  // Step 1: Use a fast/free model (like GitHub or Groq) to slice the task into 2 sub-tasks
-  const slicePrompt = `Split the following complex text into exactly TWO non-overlapping sub-tasks (JSON array of 2 strings). Preserve all details. Do not solve them. Output ONLY valid JSON: ["PART1_TEXT...", "PART2_TEXT..."]`;
-  const sliceOpts = { maxTokens: 4096, complexity: 1 };
-  const sliceRes = await callAI(text, slicePrompt, sliceOpts);
-  
-  let parts = null;
-  if (sliceRes && sliceRes.text) {
-    try {
-      const cleaned = sliceRes.text.replace(/```json/g, '').replace(/```/g, '').trim();
-      parts = JSON.parse(cleaned);
-      if (!Array.isArray(parts) || parts.length !== 2) parts = null;
-    } catch(e) { console.log('  [AI Task Slice] Failed to parse JSON, falling back.'); }
-  }
-  
-  // If slicing failed, process normally
-  if (!parts) return await callAI(text, sysPrompt, opts);
-  
-  console.log(`  [AI Binary Tree] Success! Sliced into 2 parts (${parts[0].length} and ${parts[1].length} chars). Processing circularly...`);
-  
-  // Step 2: Process circularly/parallelly (Map)
-  const results = await Promise.all([
-    splitTaskAndCombine(parts[0], sysPrompt, { ...opts, depth: (opts.depth||0)+1 }),
-    splitTaskAndCombine(parts[1], sysPrompt, { ...opts, depth: (opts.depth||0)+1 })
-  ]);
-  
-  if (!results[0] || !results[1]) return results[0] || results[1] || null;
-  
-  // Step 3: Merge the results (Reduce)
-  console.log(`  [AI Binary Tree] Merging 2 solved sub-tasks...`);
-  const mergeSystem = `Merge these two processed parts seamlessly. Original goal: ${sysPrompt}`;
-  const mergeText = `[PART 1]\n${results[0].text}\n\n[PART 2]\n${results[1].text}`;
-  
-  const finalRes = await callAI(mergeText, mergeSystem, { ...opts, maxTokens: Math.max(maxTokens, 4000) });
-  if (finalRes) return { text: finalRes.text, model: `map-reduce(${results[0].model}+${results[1].model}->${finalRes.model})` };
-  
-  return { text: results[0].text + '\n\n' + results[1].text, model: 'map-reduce(fallback)' };
-}
-
-async function callAIEnsemble(t,s,o){try{const{qc,pickForTask}=require('./ai-ensemble');const tk=classifyTask(t,s,o);const ps=pickForTask(tk.type,2);if(ps.length<2)return callAI(t,s,o);const mt=Math.min((o||{}).maxTokens||2048,1500);const res=await Promise.allSettled(ps.map(p=>qc(p,t,s,mt)));const ans=res.map((r,i)=>({p:ps[i],t:r.status==='fulfilled'?r.value:null})).filter(a=>a.t&&a.t.length>20);if(!ans.length)return callAI(t,s,o);if(ans.length===1)return{text:ans[0].t,model:'ens-'+ans[0].p};const mp='Synthesize into ONE answer (max 300w):\n\n'+ans.map(a=>'['+a.p+']:\n'+a.t).join('\n\n');const m=await callAI(mp,'Merge AI answers.',{maxTokens:mt,complexity:'low'});return m||{text:ans[0].t,model:'ens-'+ans[0].p}}catch(e){console.log('  Ensemble fallback:',e.message);return callAI(t,s,o)}}
+function localFallback(){}
 
 module.exports={callAI,callAIEnsemble,splitTaskAndCombine,analyzeImage,sleep,localFallback,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost,getAIBudget,classifyTask};
-
-
