@@ -68,6 +68,11 @@ class PetFeederDevice extends ZigBeeDevice {
       break;
     }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = PetFeederDevice;

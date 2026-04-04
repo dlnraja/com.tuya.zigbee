@@ -40,6 +40,11 @@ class WiFiThermostatDevice extends TuyaLocalDevice {
     }
     this.log('[WIFI-THERMOSTAT] Ready (with modes: off/heat/auto/eco)');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = WiFiThermostatDevice;

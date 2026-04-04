@@ -62,5 +62,10 @@ class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
 
     this.log('[LIGHT-OUT] \u2705 Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = LightSensorOutdoorDevice;

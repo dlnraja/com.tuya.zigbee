@@ -42,6 +42,11 @@ class COSensorDevice extends HybridSensorBase {
     await super.onNodeInit({ zclNode });
     this.log('[CO] ✅ CO sensor ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = COSensorDevice;

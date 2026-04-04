@@ -14,6 +14,11 @@ class HandheldRemote4ButtonsDevice extends ButtonDevice {
     await super.onNodeInit({ zclNode }).catch(err => this.error('[HANDHELD_REMOTE_4_BUTTONS] init err:', err.message));
     this.log('[HANDHELD_REMOTE_4_BUTTONS] ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = HandheldRemote4ButtonsDevice;

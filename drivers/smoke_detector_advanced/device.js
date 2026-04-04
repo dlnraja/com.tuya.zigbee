@@ -321,5 +321,10 @@ class SmokeDetectorAdvancedDevice extends HybridSensorBase {
       this.log(`[SMOKE-ADV] IAS enrollment error: ${e.message}`);
     }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = SmokeDetectorAdvancedDevice;

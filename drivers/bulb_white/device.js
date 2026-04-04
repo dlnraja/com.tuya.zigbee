@@ -31,6 +31,11 @@ class WhiteBulbDevice extends HybridLightBase {
     await super.onNodeInit({ zclNode });
     this.log('[BULB] ✅ White bulb ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = WhiteBulbDevice;

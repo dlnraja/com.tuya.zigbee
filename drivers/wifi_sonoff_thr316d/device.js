@@ -17,5 +17,10 @@ class D extends E{
     for(const c of['measure_temperature','measure_humidity','target_temperature'])if(!this.hasCapability(c))await this.addCapability(c).catch(()=>{});
     await super.onInit();
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports=D;

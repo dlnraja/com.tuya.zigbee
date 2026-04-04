@@ -25,6 +25,11 @@ class WiFiWaterValveDevice extends TuyaLocalDevice {
     }
     this.log('[WIFI-WATER-VALVE] Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = WiFiWaterValveDevice;

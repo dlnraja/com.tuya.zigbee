@@ -32,6 +32,11 @@ class LEDControllerCCTDevice extends HybridLightBase {
     await super.onNodeInit({ zclNode });
     this.log('[LED-CCT] ✅ LED controller CCT ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = LEDControllerCCTDevice;

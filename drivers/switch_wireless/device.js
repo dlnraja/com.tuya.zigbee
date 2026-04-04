@@ -54,5 +54,10 @@ class SwitchWirelessDevice extends HybridSwitchBase {
     }
     if (typeof super._handleDP === 'function') super._handleDP(dp, value);
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = SwitchWirelessDevice;

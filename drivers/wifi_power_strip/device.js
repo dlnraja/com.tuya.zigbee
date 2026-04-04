@@ -31,6 +31,11 @@ class WiFiPowerStripDevice extends TuyaLocalDevice {
     }
     this.log('[WIFI-POWER-STRIP] Ready (6 sockets + USB + energy)');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = WiFiPowerStripDevice;

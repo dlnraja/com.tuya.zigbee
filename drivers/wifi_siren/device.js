@@ -29,6 +29,11 @@ class WiFiSirenDevice extends TuyaLocalDevice {
     }
     this.log('[WIFI-SIREN] Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = WiFiSirenDevice;

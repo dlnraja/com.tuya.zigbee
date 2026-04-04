@@ -65,6 +65,11 @@ class WiFiLightDevice extends TuyaLocalDevice {
     await super.onInit();
     this.log('[WIFI-LIGHT] Ready (RGBCW with HSV color)');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = WiFiLightDevice;

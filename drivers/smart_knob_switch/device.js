@@ -14,6 +14,11 @@ class SmartKnobSwitchDevice extends ButtonDevice {
     await super.onNodeInit({ zclNode }).catch(err => this.error('[SMART_KNOB_SWITCH] init err:', err.message));
     this.log('[SMART_KNOB_SWITCH] ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = SmartKnobSwitchDevice;

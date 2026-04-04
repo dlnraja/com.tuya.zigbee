@@ -91,5 +91,10 @@ class WeatherStationOutdoorDevice extends HybridSensorBase {
       }
     } catch (e) { /* flow card may not exist */ }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = WeatherStationOutdoorDevice;

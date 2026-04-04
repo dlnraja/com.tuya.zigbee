@@ -22,6 +22,11 @@ class WiFiPetFeederDevice extends TuyaLocalDevice {
     }
     this.log('[WIFI-PET-FEEDER] Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = WiFiPetFeederDevice;

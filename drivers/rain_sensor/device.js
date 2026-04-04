@@ -125,6 +125,11 @@ class RainSensorDevice extends HybridSensorBase {
       this.log('[RAIN-IAS] Setup error:', err.message);
     }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = RainSensorDevice;

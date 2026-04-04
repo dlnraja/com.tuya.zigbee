@@ -160,6 +160,11 @@ class UsbDongleTripleDevice extends ZigBeeDevice {
       }).catch(() => {});
     }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = UsbDongleTripleDevice;

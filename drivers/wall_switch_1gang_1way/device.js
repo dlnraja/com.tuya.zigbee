@@ -32,6 +32,11 @@ class WallSwitch1Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
     await this.initVirtualButtons();
     this.log('[WALL-1G] v5.8.95 - Bidirectional physical+virtual button detection ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = WallSwitch1Gang1WayDevice;

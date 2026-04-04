@@ -63,6 +63,11 @@ class SmartLCDThermostatDevice extends TuyaZigbeeDevice {
 
     this.log('[LCD-THERMO] \u2705 Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = SmartLCDThermostatDevice;
 

@@ -147,6 +147,11 @@ class AirQualityCO2Device extends HybridSensorBase {
       }
     } catch (e) { /* ignore */ }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = AirQualityCO2Device;

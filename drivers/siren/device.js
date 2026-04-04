@@ -152,6 +152,11 @@ class SirenDevice extends HybridPlugBase {
     }
   }
 
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = SirenDevice;

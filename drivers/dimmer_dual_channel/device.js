@@ -56,6 +56,11 @@ class DimmerDualChannelDevice extends ZigBeeDevice {
 
     this.log('[DIMMER-DUAL] ✅ 2-Channel Dimmer Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = DimmerDualChannelDevice;

@@ -53,5 +53,10 @@ class ModuleMiniSwitchDevice extends PhysicalButtonMixin(HybridSwitchBase) {
       await handleSonoffEwlSettings(this, k, newSettings[k]);
     }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = ModuleMiniSwitchDevice;

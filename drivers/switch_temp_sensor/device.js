@@ -293,6 +293,11 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
     this.log('Settings changed:', changedKeys);
   }
 
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = SwitchTempSensorDevice;

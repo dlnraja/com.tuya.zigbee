@@ -72,5 +72,10 @@ class SceneSwitch4Device extends ButtonDevice {
       }
     } catch (e) { /* ok */ }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = SceneSwitch4Device;

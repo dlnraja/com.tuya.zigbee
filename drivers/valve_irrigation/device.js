@@ -69,6 +69,15 @@ class ValveIrrigationDevice extends HybridPlugBase {
       await tuya.datapoint({ dp: 1, value: true, type: 'bool' });
     }
   }
+
+
+  async onDeleted() {
+    // Clean up timers to prevent memory leaks
+    if (this._interval) { clearInterval(this._interval); this._interval = null; }
+    if (this._timer) { clearTimeout(this._timer); this._timer = null; }
+    if (this._pollInterval) { clearInterval(this._pollInterval); this._pollInterval = null; }
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = ValveIrrigationDevice;

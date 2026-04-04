@@ -71,6 +71,11 @@ class IlluminanceSensorDevice extends HybridSensorBase {
     if (value === 0 || value === 0xFFFF) return 0;
     return Math.round(Math.pow(10, (value - 1) / 10000));
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = IlluminanceSensorDevice;

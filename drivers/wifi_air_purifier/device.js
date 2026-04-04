@@ -29,6 +29,11 @@ class WiFiAirPurifierDevice extends TuyaLocalDevice {
     }
     this.log('[WIFI-AIR-PURIFIER] Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = WiFiAirPurifierDevice;

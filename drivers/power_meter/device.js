@@ -52,5 +52,10 @@ class PowerMeterDevice extends HybridPlugBase {
     await super.onNodeInit({ zclNode });
     this.log('[POWER-METER] ✅ Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = PowerMeterDevice;

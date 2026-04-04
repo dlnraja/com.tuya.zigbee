@@ -15,5 +15,10 @@ class D extends EweLinkLocalDevice{
     await super.onInit();
     this.log('[EWE-DIMMER] Ready - D1');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports=D;

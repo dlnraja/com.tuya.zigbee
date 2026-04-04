@@ -44,6 +44,11 @@ class GarageDoorOpenerDevice extends TuyaZigbeeDevice {
 
     this.log('[GARAGE] \u2705 Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = GarageDoorOpenerDevice;
 

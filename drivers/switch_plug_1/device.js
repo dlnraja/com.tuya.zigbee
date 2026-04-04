@@ -33,5 +33,10 @@ class SwitchPlug1Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlu
     await this.initVirtualButtons();
     this.log('[SWITCH-PLUG-1] ✅ Ready (v5.13.1 + Bidirectional Buttons)');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = SwitchPlug1Device;

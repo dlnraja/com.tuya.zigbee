@@ -23,5 +23,10 @@ class Thermostat4ChDevice extends HybridThermostatBase {
     await super.onNodeInit({ zclNode });
     this.log('[THERMOSTAT-4CH] ✅ Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = Thermostat4ChDevice;

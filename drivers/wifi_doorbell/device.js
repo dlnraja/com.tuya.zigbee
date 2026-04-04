@@ -45,6 +45,11 @@ class WiFiDoorbellDevice extends TuyaLocalDevice {
     }
     this.log('[WIFI-DOORBELL] Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = WiFiDoorbellDevice;

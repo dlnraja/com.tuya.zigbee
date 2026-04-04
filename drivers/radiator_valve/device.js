@@ -247,6 +247,11 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridT
       this.log('[TRV] SONOFF setup skipped:', e.message);
     }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = RadiatorValveDevice;

@@ -94,6 +94,11 @@ class LCDTempHumidSensorDevice extends HybridSensorBase {
       this.log('[LCD] 📊 Temperature:', temp, '°C Humidity:', hum, '% Battery:', bat, '%');
     }, 100);
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = LCDTempHumidSensorDevice;

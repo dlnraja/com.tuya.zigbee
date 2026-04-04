@@ -30,5 +30,10 @@ class DoorControllerDevice extends HybridPlugBase {
     await super.onNodeInit({ zclNode });
     this.log('[DOOR-CTRL] ✅ Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = DoorControllerDevice;

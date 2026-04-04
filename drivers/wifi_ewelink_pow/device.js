@@ -15,5 +15,10 @@ class D extends EweLinkLocalDevice{
     await super.onInit();
     this.log('[EWE-POW] Ready - S31/S40/POW R2/R3/Elite');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports=D;

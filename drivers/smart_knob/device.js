@@ -116,5 +116,10 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
       this.homey.flow.getDeviceTriggerCard(card).trigger(this, {}, {}).catch(() => {});
     }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = SmartKnobDevice;

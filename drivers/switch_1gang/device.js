@@ -95,6 +95,11 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
       await handleSonoffEwlSettings(this, k, newSettings[k]);
     }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = Switch1GangDevice;

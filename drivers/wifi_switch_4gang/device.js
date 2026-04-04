@@ -33,6 +33,11 @@ class WiFiSwitch4GangDevice extends TuyaLocalDevice {
     }
     this.log('[WIFI-SWITCH-4G] Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = WiFiSwitch4GangDevice;

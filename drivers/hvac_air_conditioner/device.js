@@ -30,5 +30,10 @@ class HVACAirConditionerDevice extends HybridThermostatBase {
 
     await super.onNodeInit({ zclNode });this.log('[AC] ✅ Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = HVACAirConditionerDevice;

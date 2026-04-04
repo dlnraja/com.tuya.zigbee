@@ -21,6 +21,11 @@ class WiFiGarageDoorDevice extends TuyaLocalDevice {
     }
     this.log('[WIFI-GARAGE] Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = WiFiGarageDoorDevice;

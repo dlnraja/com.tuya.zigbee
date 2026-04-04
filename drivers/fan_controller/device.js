@@ -180,6 +180,11 @@ class FanControllerDevice extends ZigBeeDevice {
       break;
     }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = FanControllerDevice;

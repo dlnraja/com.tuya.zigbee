@@ -70,6 +70,11 @@ class WiFiLedStripDevice extends TuyaLocalDevice {
     await super.onInit();
     this.log('[WIFI-LED-STRIP] Ready (RGBCW + music + scenes)');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = WiFiLedStripDevice;
