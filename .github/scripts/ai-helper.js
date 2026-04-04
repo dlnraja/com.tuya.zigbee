@@ -125,17 +125,24 @@ async function callAI(text,sysPrompt,opts={}){
       else console.log('  Groq failed:',r.status);
     }catch(e){console.log('  Groq error:',e.message)}
   }
-  // Fallback to IBM Granite via HuggingFace (free)
+  // HuggingFace (HF_TOKEN): Smart Task-based routing
   const hfKey=process.env.HF_TOKEN;
-  if(hfKey){
-    console.log('  Falling back to IBM Granite (HuggingFace)...');
+  if(hfKey&&cbOk('hf')){
+    const tk=classifyTask(text,sysPrompt,opts);
+    let hfM='meta-llama/Llama-3.1-8B-Instruct';
+    if(tk.cx>=3)hfM='Qwen/Qwen2.5-72B-Instruct'; // Reasoning
+    else if(tk.type==='code')hfM='Qwen/Qwen2.5-Coder-32B-Instruct'; // Code
+    else if(tk.type==='analyze'||tk.type==='merge')hfM='ibm-granite/granite-3.3-8b-instruct'; // Merge
+    
+    console.log(`  Trying HuggingFace (${hfM})...`);
     try{
       const r=await fetchT('https://router.huggingface.co/v1/chat/completions',{
         method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+hfKey},
-        body:JSON.stringify({model:'ibm-granite/granite-3.3-8b-instruct',messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],max_tokens:maxTokens,temperature:0.2})});
-      if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'granite-3.3-8b'}}
-      else{const e=await r.text().catch(()=>'');console.log('  Granite failed:',r.status,e.substring(0,150))}
-    }catch(e){console.log('  Granite error:',e.message)}
+        body:JSON.stringify({model:hfM,messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}],max_tokens:maxTokens,temperature:0.2})});
+      if(r.ok){const d=await r.json();const t=d.choices?.[0]?.message?.content;if(t)return{text:t.trim(),model:'hf-'+hfM.split('/').pop()}}
+      else if(r.status===429)cbFail('hf', 300000);
+      else{const e=await r.text().catch(()=>'');console.log('  HF failed:',r.status,e.substring(0,100))}
+    }catch(e){console.log('  HF error:',e.message);cbFail('hf',60000)}
   }
   // Mistral FREE TIER: open-mistral-nemo — 1 RPM, 30 RPD, cap tokens to 500
   const miKey=process.env.MISTRAL_API_KEY;
@@ -272,8 +279,62 @@ function smartMergePost(existing,fresh,opts){
   _setCD();return{action:'edit',content:merged,reason:'replaced'};
 }
 function getAIBudget(){_rtLoad();return{used:_rt.d,budget:_rtBudget()}}
+
+/**
+ * Intelligent Task Slicing (Map-Reduce)
+ * Recursively splits large problems into sub-tasks (binary tree), solves them via different providers (circular list), and merges.
+ */
+async function splitTaskAndCombine(text, sysPrompt, opts={}) {
+  const maxTokens = opts.maxTokens || 2048;
+  const tk = classifyTask(text, sysPrompt, opts);
+  
+  // Base case: if task is small/simple, don't split
+  if (text.length < 3000 || tk.cx <= 1 || (opts.depth||0) >= 2) {
+    return await callAI(text, sysPrompt, opts);
+  }
+  
+  console.log(`  [AI Binary Tree] Slicing task (depth ${opts.depth||0}) due to length (${text.length}) and complexity (${tk.cx})`);
+  
+  // Step 1: Use a fast/free model (like GitHub or Groq) to slice the task into 2 sub-tasks
+  const slicePrompt = `Split the following complex text into exactly TWO non-overlapping sub-tasks (JSON array of 2 strings). Preserve all details. Do not solve them. Output ONLY valid JSON: ["PART1_TEXT...", "PART2_TEXT..."]`;
+  const sliceOpts = { maxTokens: 4096, complexity: 1 };
+  const sliceRes = await callAI(text, slicePrompt, sliceOpts);
+  
+  let parts = null;
+  if (sliceRes && sliceRes.text) {
+    try {
+      const cleaned = sliceRes.text.replace(/```json/g, '').replace(/```/g, '').trim();
+      parts = JSON.parse(cleaned);
+      if (!Array.isArray(parts) || parts.length !== 2) parts = null;
+    } catch(e) { console.log('  [AI Task Slice] Failed to parse JSON, falling back.'); }
+  }
+  
+  // If slicing failed, process normally
+  if (!parts) return await callAI(text, sysPrompt, opts);
+  
+  console.log(`  [AI Binary Tree] Success! Sliced into 2 parts (${parts[0].length} and ${parts[1].length} chars). Processing circularly...`);
+  
+  // Step 2: Process circularly/parallelly (Map)
+  const results = await Promise.all([
+    splitTaskAndCombine(parts[0], sysPrompt, { ...opts, depth: (opts.depth||0)+1 }),
+    splitTaskAndCombine(parts[1], sysPrompt, { ...opts, depth: (opts.depth||0)+1 })
+  ]);
+  
+  if (!results[0] || !results[1]) return results[0] || results[1] || null;
+  
+  // Step 3: Merge the results (Reduce)
+  console.log(`  [AI Binary Tree] Merging 2 solved sub-tasks...`);
+  const mergeSystem = `Merge these two processed parts seamlessly. Original goal: ${sysPrompt}`;
+  const mergeText = `[PART 1]\n${results[0].text}\n\n[PART 2]\n${results[1].text}`;
+  
+  const finalRes = await callAI(mergeText, mergeSystem, { ...opts, maxTokens: Math.max(maxTokens, 4000) });
+  if (finalRes) return { text: finalRes.text, model: `map-reduce(${results[0].model}+${results[1].model}->${finalRes.model})` };
+  
+  return { text: results[0].text + '\n\n' + results[1].text, model: 'map-reduce(fallback)' };
+}
+
 async function callAIEnsemble(t,s,o){try{const{qc,pickForTask}=require('./ai-ensemble');const tk=classifyTask(t,s,o);const ps=pickForTask(tk.type,2);if(ps.length<2)return callAI(t,s,o);const mt=Math.min((o||{}).maxTokens||2048,1500);const res=await Promise.allSettled(ps.map(p=>qc(p,t,s,mt)));const ans=res.map((r,i)=>({p:ps[i],t:r.status==='fulfilled'?r.value:null})).filter(a=>a.t&&a.t.length>20);if(!ans.length)return callAI(t,s,o);if(ans.length===1)return{text:ans[0].t,model:'ens-'+ans[0].p};const mp='Synthesize into ONE answer (max 300w):\n\n'+ans.map(a=>'['+a.p+']:\n'+a.t).join('\n\n');const m=await callAI(mp,'Merge AI answers.',{maxTokens:mt,complexity:'low'});return m||{text:ans[0].t,model:'ens-'+ans[0].p}}catch(e){console.log('  Ensemble fallback:',e.message);return callAI(t,s,o)}}
 
-module.exports={callAI,callAIEnsemble,analyzeImage,sleep,localFallback,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost,getAIBudget,classifyTask};
+module.exports={callAI,callAIEnsemble,splitTaskAndCombine,analyzeImage,sleep,localFallback,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost,getAIBudget,classifyTask};
 
 

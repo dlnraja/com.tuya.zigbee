@@ -1,5 +1,9 @@
 'use strict';
 
+// v5.11.185: Suppress punycode DEP0040 deprecation from transitive deps
+// (whatwg-url@5/tr46@0.0.3 via node-fetch@2 — not our code)
+require('./lib/suppress-punycode');
+
 // v5.8.25: Patch color-space module to fix Homey sandbox require('./rgb') error
 // Must be BEFORE any homey-zigbeedriver imports
 try {
