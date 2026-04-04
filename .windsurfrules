@@ -132,20 +132,32 @@ const TuyaZigbeeDevice = require('../../lib/TuyaZigbeeDevice');
 ### Sensor Value Rejected by Validator
 - Check ProductValueValidator.js min/max ranges
 
-## SDK v3 BATTERY CAPABILITIES (CRITICAL - DO NOT VIOLATE)
+## SDK v3 BATTERY CAPABILITIES — RUNTIME ADAPTIVE
 
 ### Rule: NEVER combine measure_battery + alarm_battery on same device
-- `measure_battery` = device reports precise 0-100% level → use ONLY this
-- `alarm_battery` = device only reports boolean low/ok → use ONLY this
-- Both together → DUPLICATE UI components + DUPLICATE Flow Cards = REJECTED
+- But BOTH should be declared as POSSIBLE in compose for hybrid variants
+- `UnifiedBatteryHandler.js` (lib/battery/) adapts at RUNTIME:
+  - Probes ZCL genPowerCfg, Tuya DP, IAS Zone, all simultaneously
+  - If device reports % → keeps `measure_battery`, removes `alarm_battery`
+  - If device reports boolean low/ok only → keeps `alarm_battery`, removes `measure_battery`
+  - If mains/kinetic → removes both
+  - Same driver, different variants = different runtime behavior
 
-### When to use which:
-| Device reports | Capability | Example |
-|---|---|---|
-| Numeric % (0-100) | `measure_battery` only | Most Tuya sensors, TRVs |
-| Boolean low/ok | `alarm_battery` only | Some old IAS sensors |
-| Nothing (mains) | Neither | Wall switches, plugs, bulbs |
-| Nothing (kinetic) | Neither | Self-powered wireless buttons |
+### Why RUNTIME, not STATIC:
+- Chinese manufacturers make exotic implementations
+- Same manufacturerName: variant A = battery, variant B = mains, variant C = kinetic
+- Some devices report battery from 3 sources simultaneously (ZCL + Tuya DP + IAS Zone)
+- Some devices switch protocol mid-session
+- Static compose cannot predict which variant will be paired
+- UnifiedBatteryHandler handles ALL cases via runtime probing
+
+### Energy source detection order (UnifiedBatteryHandler):
+1. ZCL genPowerCfg (cluster 0x0001) → batteryPercentageRemaining ÷ 2
+2. Tuya DP (DP 4,10,14,15,21,100-105) → direct percentage
+3. IAS Zone Status bit 3 → low-battery boolean
+4. Voltage DPs (DP 33,35,247) → voltage-to-percent curve conversion
+5. mainsPowered getter → remove all battery capabilities
+6. Kinetic detection (TS004x without batteries) → remove all
 
 ## DEVICE POWER SOURCE CLASSIFICATION (all cases)
 
