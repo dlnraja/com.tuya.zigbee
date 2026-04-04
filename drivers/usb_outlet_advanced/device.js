@@ -129,12 +129,6 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Hyb
         }
       ]);
       this.log('Attribute reporting configured successfully');
-    // --- Battery Alarm (auto-injected) ---
-    if (this.hasCapability('measure_battery')) {
-      this.registerCapabilityListener('measure_battery', async (value) => {
-        if (this.hasCapability('alarm_battery')) {
-          await this.setCapabilityValue('alarm_battery', value < 15).catch(() => {});
-        }
       });
       // Initial check
       const bat = this.getCapabilityValue('measure_battery');
