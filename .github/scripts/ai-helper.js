@@ -84,7 +84,7 @@ async function callAI(text,sysPrompt,opts={}){
     const res = await callAIEngine(
       'https://openrouter.ai/api/v1/chat/completions',
       {'Authorization': 'Bearer ' + process.env.OPENROUTER_API_KEY, 'Content-Type': 'application/json'},
-      {model:'meta-llama/llama-3.3-8b-instruct:free', messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
+      {model:'meta-llama/llama-3.1-8b-instruct:free', messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
       'openrouter'
     );
     if (res) return res;
@@ -112,7 +112,7 @@ async function callAI(text,sysPrompt,opts={}){
     const res = await callAIEngine(
       'https://api.cerebras.ai/v1/chat/completions',
       {'Authorization': 'Bearer ' + process.env.CEREBRAS_API_KEY, 'Content-Type': 'application/json'},
-      {model:'llama-3.3-70b', messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
+      {model:'llama3.1-70b', messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
       'cerebras'
     );
     if (res) return res;

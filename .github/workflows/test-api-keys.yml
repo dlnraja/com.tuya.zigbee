@@ -71,9 +71,9 @@ jobs:
 
             const msgs = [{role:"user", content:"Hi"}];
 
-            if (keys['OpenRouter']) await check('OpenRouter', 'https://openrouter.ai/api/v1/chat/completions', {'Authorization':'Bearer '+keys['OpenRouter'],'Content-Type':'application/json'}, {model:'meta-llama/llama-3.3-8b-instruct:free', messages:msgs, max_tokens:5});
+            if (keys['OpenRouter']) await check('OpenRouter', 'https://openrouter.ai/api/v1/chat/completions', {'Authorization':'Bearer '+keys['OpenRouter'],'Content-Type':'application/json'}, {model:'meta-llama/llama-3.1-8b-instruct:free', messages:msgs, max_tokens:5});
             if (keys['HuggingFace']) await check('HuggingFace', 'https://router.huggingface.co/v1/chat/completions', {'Authorization':'Bearer '+keys['HuggingFace'],'Content-Type':'application/json'}, {model:'meta-llama/Llama-3.1-8B-Instruct', messages:msgs, max_tokens:5});
-            if (keys['Cerebras']) await check('Cerebras', 'https://api.cerebras.ai/v1/chat/completions', {'Authorization':'Bearer '+keys['Cerebras'],'Content-Type':'application/json'}, {model:'llama-3.3-70b', messages:msgs, max_tokens:5});
+            if (keys['Cerebras']) await check('Cerebras', 'https://api.cerebras.ai/v1/chat/completions', {'Authorization':'Bearer '+keys['Cerebras'],'Content-Type':'application/json'}, {model:'llama3.1-70b', messages:msgs, max_tokens:5});
             if (keys['Together']) await check('Together', 'https://api.together.xyz/v1/chat/completions', {'Authorization':'Bearer '+keys['Together'],'Content-Type':'application/json'}, {model:'meta-llama/Llama-3.3-70B-Instruct-Turbo-Free', messages:msgs, max_tokens:5});
             if (keys['Groq']) await check('Groq', 'https://api.groq.com/openai/v1/chat/completions', {'Authorization':'Bearer '+keys['Groq'],'Content-Type':'application/json'}, {model:'llama-3.3-70b-versatile', messages:msgs, max_tokens:5});
             if (keys['DeepSeek']) await check('DeepSeek', 'https://api.deepseek.com/chat/completions', {'Authorization':'Bearer '+keys['DeepSeek'],'Content-Type':'application/json'}, {model:'deepseek-chat', messages:msgs, max_tokens:5});
