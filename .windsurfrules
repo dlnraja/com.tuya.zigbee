@@ -233,3 +233,34 @@ Device matches if manufacturerName IN list AND productId IN list.
 - DO NOT add TS004x to scene_switch (conflicts with button_wireless)
 - FIXED: _TZ3000_bi6lpsew removed from scene_switch_6 (TS0043, wrong driver)
 - FIXED: All scene switches got cluster 57344 (0xE000) for E000 detection
+
+## SDK v3 OFFICIAL RULES (source: apps-sdk-v3.developer.homey.app)
+
+### Manager Access Pattern (MANDATORY)
+```javascript
+// SDK v3: Access managers through this.homey.<managerId>
+this.homey.drivers.getDriver('my-driver');  // ManagerDrivers
+this.homey.flow.getDeviceTriggerCard('id'); // ManagerFlow
+this.homey.settings.get('key');             // ManagerSettings
+
+// WRONG (SDK v2 global Managers — will crash):
+// Homey.ManagerDrivers, ManagerSettings, etc.
+```
+
+### Async Requirements (MANDATORY)
+- `async onNodeInit()` — Zigbee device initialization (NOT onInit)
+- `await this.setCapabilityValue()` — MUST be awaited
+- `async onPair()`, `async onDiscovery()` — all pairing methods async
+- NO `.then()` callbacks for SDK v3 methods — use async/await
+
+### Memory Management (Homey Pro 2023 critical)
+- Every `registerCapabilityListener` must be idempotent on restart
+- Avoid listener duplication when device reconnects/restarts
+- Clear timeouts in `onDeleted()` or `onUninit()`
+- Max ~8 listeners per device before memory review needed
+
+### CI Semantic Linter Safety
+- NEVER auto-modify driver files in CI — report-only mode
+- Don't blindly pipe AI output into source files
+- SDK v3 linter checks: async init, Manager globals, v2 API, await setCapability, listener leaks, settings keys, titleFormatted
+

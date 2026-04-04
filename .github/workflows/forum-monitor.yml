@@ -9,6 +9,14 @@ permissions:
   contents: read
   issues: write
 
+concurrency:
+  group: forum-monitor
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
 jobs:
   monitor-homey-forum:
     runs-on: ubuntu-latest
@@ -26,12 +34,12 @@ jobs:
       KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
-          node-version: 18
+          node-version: '22'
 
       - name: Parse Johan's & dlnraja's Homey Forum Threads
         id: parse
@@ -39,9 +47,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          # 140352 = dlnraja post, 26439 = Johan Benz post
+          # 140352 = dlnraja post, 26439 = Johan Benz post (READ-ONLY scan)
           FORUM_TOPICS: '140352,26439'
-          REPLY_TOPICS: '140352,26439'
+          REPLY_TOPICS: '140352'
         run: |
           npm ci || npm install
           echo "Scraping community.homey.app threads..."

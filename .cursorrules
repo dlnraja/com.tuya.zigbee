@@ -96,3 +96,20 @@ Do NOT remove just because mfr appears in another driver with different productI
 10. `GITHUB_TOKEN` auto-provided; `GH_PAT` for cross-repo access
 11. Guard missing secrets: `if [ -z "$SECRET" ]; then exit 0; fi`
 12. Git commits: always `git pull --rebase origin master || true` before push
+
+## SDK v3 OFFICIAL RULES (apps-sdk-v3.developer.homey.app)
+- Managers via `this.homey.<managerId>`: `this.homey.drivers`, `this.homey.flow`, `this.homey.settings`
+- Zigbee init: `async onNodeInit()` (NOT sync onInit)
+- `await this.setCapabilityValue()` — always awaited
+- Memory: idempotent listeners, clear timeouts in `onDeleted()`/`onUninit()`
+- NO v2 patterns: `this.homey.zigbee.getDevice()`, global Manager*
+
+## FORUM POSTING — ABSOLUTE RULE
+- Bot must ONLY post on T140352. REPLY_TOPICS must be '140352' only
+- FORUM_TOPICS can include other threads for READ-ONLY scanning
+- Never add T26439 (Johan), T146735 (Tuya) to REPLY_TOPICS
+
+## CI SEMANTIC LINTER — SAFETY
+- NEVER auto-modify driver files — report-only
+- Never pipe AI output into source files
+
