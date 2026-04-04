@@ -76,7 +76,8 @@
     "zigbee-clusters": "^2.6.0"
   },
   "overrides": {
-    "color-space": "1.15.0"
+    "color-space": "1.15.0",
+    "punycode": "^2.3.1"
   },
   "devDependencies": {
     "@octokit/rest": "^22.0.1",
