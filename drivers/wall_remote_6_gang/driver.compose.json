@@ -10,7 +10,15 @@
   "connectivity": [
     "zigbee"
   ],
-  "capabilities": [],
+  "capabilities": [
+    "button.1",
+    "button.2",
+    "button.3",
+    "button.4",
+    "button.5",
+    "button.6",
+    "measure_battery"
+  ],
   "images": {
     "large": "drivers/wall_remote_6_gang/assets/images/large.png",
     "small": "drivers/wall_remote_6_gang/assets/images/small.png",
@@ -115,5 +123,63 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1",
+        "nl": "Knop 1",
+        "de": "Taste 1"
+      }
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2",
+        "nl": "Knop 2",
+        "de": "Taste 2"
+      }
+    },
+    "button.3": {
+      "title": {
+        "en": "Button 3",
+        "fr": "Bouton 3",
+        "nl": "Knop 3",
+        "de": "Taste 3"
+      }
+    },
+    "button.4": {
+      "title": {
+        "en": "Button 4",
+        "fr": "Bouton 4",
+        "nl": "Knop 4",
+        "de": "Taste 4"
+      }
+    },
+    "button.5": {
+      "title": {
+        "en": "Button 5",
+        "fr": "Bouton 5",
+        "nl": "Knop 5",
+        "de": "Taste 5"
+      }
+    },
+    "button.6": {
+      "title": {
+        "en": "Button 6",
+        "fr": "Bouton 6",
+        "nl": "Knop 6",
+        "de": "Taste 6"
+      }
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    }
+  }
 }
