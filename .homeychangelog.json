@@ -1,4 +1,7 @@
 {
+  "5.11.188": {
+    "en": "Community sync: 27 new fingerprints added from Z2M/ZHA/forum/JohanBendz. Minor AI and forum  improvements. Total: ."
+  },
   "5.11.187": {
     "en": "Maintenance release. No user-facing changes."
   },
@@ -56,10 +59,7 @@
   "5.11.169": {
     "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
   },
-  "5.11.168": {
-    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.188": {
-    "en": "v5.11.187: No user-facing changes in this release."
+  "5.11.189": {
+    "en": "v5.11.188: Added 27 new device fingerprints from Zigbee2MQTT, ZHA, forum contributions, and JohanBendz, Fixed forum post merging logic to ensure humanized updates, Improved AI waiter and anti-spam mechanisms for forum responses, Enhanced i18n localization with AI-powered auto-translations, Updated community sync process for better fingerprint integration"
   }
 }
