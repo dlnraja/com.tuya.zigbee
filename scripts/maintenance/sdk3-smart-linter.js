@@ -139,6 +139,45 @@ const RULES = [
     },
     fix: null,
   },
+  {
+    id: 'sdk3-battery-conflict',
+    severity: 'error',
+    desc: 'SDK v3 violation: measure_battery + alarm_battery on same device. Creates duplicate UI/Flow Cards.',
+    test: (code, driverDir) => {
+      const compose = loadCompose(driverDir);
+      if (!compose) return false;
+      const caps = compose.capabilities || [];
+      return caps.includes('measure_battery') && caps.includes('alarm_battery');
+    },
+    fix: null, // Runtime handler adapts — but compose should not declare both
+  },
+  {
+    id: 'sdk3-flow-card-unsafe',
+    severity: 'error',
+    desc: 'Bare getDeviceTriggerCard/getDeviceConditionCard/getDeviceActionCard without try-catch — crashes app if card missing.',
+    test: (code) => {
+      const bareCall = /this\.homey\.flow\.getDevice(?:Trigger|Condition|Action)Card\s*\(/g;
+      const inTryCatch = /try\s*\{[^}]*getDevice(?:Trigger|Condition|Action)Card/g;
+      const total = (code.match(bareCall) || []).length;
+      const safe = (code.match(inTryCatch) || []).length;
+      return total > 0 && safe < total;
+    },
+    fix: null,
+  },
+  {
+    id: 'sdk3-mains-has-battery',
+    severity: 'warn',
+    desc: 'Device has mainsPowered=true but compose still declares battery capability. Runtime handler will fix, but compose is misleading.',
+    test: (code, driverDir) => {
+      const isMains = /mainsPowered\s*\(\)\s*\{[^}]*return\s+true/s.test(code);
+      if (!isMains) return false;
+      const compose = loadCompose(driverDir);
+      if (!compose) return false;
+      const caps = compose.capabilities || [];
+      return caps.includes('measure_battery') || caps.includes('alarm_battery');
+    },
+    fix: null,
+  },
 ];
 
 function loadCompose(driverDir) {
@@ -215,6 +254,43 @@ ${staticResults.map(r => `- ${r.severity.toUpperCase()}: ${r.desc}`).join('\n') 
 2. AWAIT: Every 'this.setCapabilityValue()' MUST be preceded by 'await'.
 3. API: Use exclusively 'this.homey.<managerId>' (this.homey.drivers, this.homey.flow, this.homey.settings). NEVER generate global 'ManagerDrivers' or 'ManagerZwave'.
 4. MEMORY: Every event listener (.on()) must have cleanup in 'async onDeleted()' via removeAllListeners(). This prevents memory leaks on Homey Pro 2023.
+5. FLOW CARDS: ALWAYS wrap getDeviceTriggerCard/getDeviceConditionCard/getDeviceActionCard in try-catch. Missing cards crash the entire app.
+
+=== SDK v3 BATTERY & ENERGY RULES (CRITICAL) ===
+1. NEVER combine measure_battery + alarm_battery on same device. Causes duplicate UI and Flow Cards.
+2. Drivers serve THOUSANDS of variants — same manufacturerName can be battery OR mains OR kinetic.
+3. Use RUNTIME ADAPTATION via UnifiedBatteryHandler (lib/battery/):
+   - Compose declares measure_battery as possibility
+   - Runtime probes ZCL genPowerCfg + Tuya DP + IAS Zone + voltage
+   - If device reports %: keep measure_battery, remove alarm_battery
+   - If device reports boolean only: keep alarm_battery, remove measure_battery
+   - If mains/kinetic: remove both battery capabilities
+4. POWER SOURCE TYPES (all must be supported):
+   - Battery: energy.batteries in compose, ZCL cluster 0x0001 or Tuya DP 4/10/14/15/21/100-105
+   - Mains (220V/USB): mainsPowered() returns true, NO battery caps
+   - Hybrid (mains + battery backup): runtime detection, same driver serves both
+   - Kinetic/mechanical (self-powered): TS004x buttons, energy from click, NO battery
+   - Chinese exotic: ANY combination possible, even ALL at once
+5. NEVER assume power source from driver name or manufacturerName alone.
+6. Battery DPs: 4, 10, 14, 15, 21, 100, 101, 102, 104, 105 (percentage)
+7. Voltage DPs: 33, 35, 247 (mV or 10mV, convert via discharge curve)
+8. IAS Zone Status bit 3 = low-battery boolean alarm
+
+=== ZIGBEE PROTOCOL TYPES (all must be respected) ===
+1. Tuya DP (TS0601 / cluster 0xEF00): Uses dpMappings + TuyaEF00Manager.
+   - NEVER add ZCL cluster bindings to TS0601 drivers
+   - Each _TZE200/204/284_ manufacturerName may need DIFFERENT DP maps
+2. Standard ZCL: Uses configureAttributeReporting() + cluster bindings.
+   - NEVER add TuyaEF00Manager to standard ZCL drivers
+3. Tuya Standard (ZCL + extensions): Standard clusters + 0xE000/0xE001.
+4. Custom clusters (0xFC00-0xFCFF): Raw frame interception.
+
+=== VARIANT INTELLIGENCE ===
+- One manufacturerName → many productIds (NORMAL): same OEM, different products
+- One productId → many manufacturerNames (NORMAL): TS0601 is generic container
+- Same mfr+pid combo → MUST map to same driver (conflict if not)
+- Power source varies per variant! Same _TZ3000_ can be battery OR mains OR kinetic
+- Use runtime capability detection: if (this.hasCapability('X')) before setup
 
 === TUYA CLUSTER HIERARCHY (Priority Order) ===
 When mapping new features, respect this strict hierarchy:
@@ -246,6 +322,12 @@ If device is a thermostat (TRV) or has LCD displaying time:
 - Generate syncTime() method using this.homey.clock.getTimezone() for GMT offset
 - Attach to setInterval (every 3 hours) in onNodeInit()
 - Format: 8-byte payload [Year-2000, Month, Day, Hour, Min, Sec, Weekday, 0x00]
+
+CASE D — RUNTIME ENERGY ADAPTATION:
+If device has battery capabilities:
+- Initialize UnifiedBatteryHandler in onNodeInit(): this._batteryHandler = new UnifiedBatteryHandler(this); await this._batteryHandler.initialize(this.zclNode);
+- Handler automatically probes all sources and adapts capabilities
+- DO NOT manually add/remove battery caps — let the handler do it
 
 DRIVER CODE:
 \`\`\`javascript

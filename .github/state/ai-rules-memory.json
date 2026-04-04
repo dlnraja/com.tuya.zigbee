@@ -6,12 +6,8 @@
       "severity": "info",
       "count": 3,
       "firstSeen": "2026-04-04T17:57:49.240Z",
-      "lastSeen": "2026-04-04T17:57:49.253Z",
-      "files": [
-        "air_purifier",
-        "air_quality_co2",
-        "bulb_rgb"
-      ]
+      "lastSeen": "2026-04-04T21:47:00.000Z",
+      "files": ["air_purifier", "air_quality_co2", "bulb_rgb"]
     },
     {
       "id": "sdk3-ondeleted-cleanup",
@@ -19,13 +15,74 @@
       "severity": "info",
       "count": 1,
       "firstSeen": "2026-04-04T17:57:49.253Z",
-      "lastSeen": "2026-04-04T17:57:49.253Z",
-      "files": [
-        "bulb_rgb"
-      ]
+      "lastSeen": "2026-04-04T21:47:00.000Z",
+      "files": ["bulb_rgb"]
+    },
+    {
+      "id": "sdk3-battery-conflict",
+      "desc": "NEVER combine measure_battery + alarm_battery. SDK v3 creates duplicate UI/Flow Cards. Use runtime adaptation via UnifiedBatteryHandler.",
+      "severity": "error",
+      "count": 108,
+      "firstSeen": "2026-04-04T21:17:00.000Z",
+      "lastSeen": "2026-04-04T21:47:00.000Z",
+      "files": ["RESOLVED: 108 drivers had both caps, reverted to measure_battery only"]
+    },
+    {
+      "id": "sdk3-flow-card-unsafe",
+      "desc": "Bare getDeviceTriggerCard/getDeviceConditionCard/getDeviceActionCard crashes app if card missing in app.json. ALWAYS use try-catch.",
+      "severity": "error",
+      "count": 23,
+      "firstSeen": "2026-04-04T17:46:00.000Z",
+      "lastSeen": "2026-04-04T21:47:00.000Z",
+      "files": ["RESOLVED: 23+ drivers wrapped in try-catch by fix-unsafe-flow-cards.js"]
+    },
+    {
+      "id": "runtime-energy-adaptation",
+      "desc": "Chinese variants are too diverse for static compose. Same manufacturerName can be battery, mains, kinetic, hybrid. UnifiedBatteryHandler probes ALL sources (ZCL/DP/IAS/voltage) at runtime and adapts capabilities dynamically.",
+      "severity": "critical-pattern",
+      "count": 193,
+      "firstSeen": "2026-04-04T21:30:00.000Z",
+      "lastSeen": "2026-04-04T21:47:00.000Z",
+      "files": ["lib/battery/UnifiedBatteryHandler.js"]
+    },
+    {
+      "id": "battery-dp-mapping",
+      "desc": "Battery DPs: 4,10,14,15,21,100,101,102,104,105 (%). Voltage DPs: 33,35,247 (mV). IAS Zone bit 3 = low-battery. ZCL genPowerCfg 0x0001 batteryPercentageRemaining div 2.",
+      "severity": "knowledge",
+      "count": 1,
+      "firstSeen": "2026-04-04T21:30:00.000Z",
+      "lastSeen": "2026-04-04T21:47:00.000Z",
+      "files": ["lib/battery/UnifiedBatteryHandler.js"]
+    },
+    {
+      "id": "power-source-types",
+      "desc": "5 power types: Battery (measure_battery), Mains (mainsPowered=true, no battery caps), Hybrid (runtime detect), Kinetic/self-powered (TS004x, no battery), USB (treated as mains). NEVER assume from driver name.",
+      "severity": "knowledge",
+      "count": 1,
+      "firstSeen": "2026-04-04T21:30:00.000Z",
+      "lastSeen": "2026-04-04T21:47:00.000Z",
+      "files": ["lib/battery/UnifiedBatteryHandler.js"]
+    },
+    {
+      "id": "zigbee-protocol-types",
+      "desc": "4 protocol types: Tuya DP (TS0601/0xEF00), Standard ZCL (TS0001-TS0504), Tuya+ZCL (0xE000/0xE001 extensions), Custom (0xFC00-0xFCFF). NEVER mix: no ZCL bindings on TS0601, no EF00 on standard ZCL.",
+      "severity": "knowledge",
+      "count": 1,
+      "firstSeen": "2026-04-04T21:30:00.000Z",
+      "lastSeen": "2026-04-04T21:47:00.000Z",
+      "files": ["drivers/*/device.js"]
+    },
+    {
+      "id": "variant-intelligence",
+      "desc": "One manufacturerName maps to many productIds (normal). One productId (especially TS0601) maps to many manufacturerNames (normal). Same mfr+pid = MUST be same driver. Power source varies per variant - same _TZ3000_ can be battery OR mains OR kinetic.",
+      "severity": "knowledge",
+      "count": 982,
+      "firstSeen": "2026-04-04T21:07:00.000Z",
+      "lastSeen": "2026-04-04T21:47:00.000Z",
+      "files": ["982 fork FPs analyzed"]
     }
   ],
-  "lastRun": "2026-04-04T17:57:49.068Z",
-  "totalRuns": 1,
-  "totalIssues": 4
+  "lastRun": "2026-04-04T21:47:00.000Z",
+  "totalRuns": 6,
+  "totalIssues": 135
 }
