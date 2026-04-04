@@ -423,11 +423,20 @@ function generateMergeSummary(prData, cats, risk, reasons, mergeType, conflictFi
 function closePR(prNumber, prData, cats, risk, reasons, mergeType, conflictFiles) {
   const summary = generateMergeSummary(prData, cats, risk, reasons, mergeType, conflictFiles || []);
 
-  // Post the detailed comment
-  gh(`pr comment ${prNumber} -R ${REPO} --body "${summary.replace(/"/g, '\\"')}"`);
+  // Write comment to temp file to avoid shell escaping issues with backticks, quotes, etc.
+  const tmpFile = path.join(process.cwd(), '.github', 'state', `pr-${prNumber}-close-comment.md`);
+  try {
+    fs.mkdirSync(path.dirname(tmpFile), { recursive: true });
+    fs.writeFileSync(tmpFile, summary, 'utf8');
+    gh(`pr comment ${prNumber} -R ${REPO} --body-file "${tmpFile}"`);
+  } catch (e) {
+    log(`  ⚠️ Comment write failed: ${e.message}`);
+    // Fallback: simple comment
+    gh(`pr comment ${prNumber} -R ${REPO} --body "✅ PR #${prNumber} merged via Smart Auto-Merge"`);
+  }
 
-  // Close the PR
-  gh(`pr close ${prNumber} -R ${REPO}`);
+  // Close the PR with a human-readable closing comment
+  gh(`pr close ${prNumber} -R ${REPO} --comment "Merged into master — all changes integrated successfully. See above comment for details."`);
 
   // Delete the remote branch (cleanup)
   const branch = prData.headRefName;
@@ -436,7 +445,10 @@ function closePR(prNumber, prData, cats, risk, reasons, mergeType, conflictFiles
     git(`push origin --delete ${branch} 2>/dev/null`);
   }
 
-  log(`  ✅ PR #${prNumber} closed with summary and branch deleted`);
+  // Clean up temp file
+  try { fs.unlinkSync(tmpFile); } catch {}
+
+  log(`  ✅ PR #${prNumber} closed with detailed summary and branch deleted`);
 }
 
 // Process a single PR
