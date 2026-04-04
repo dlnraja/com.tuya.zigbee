@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-04T21:04:10.286Z",
+  "ts": "2026-04-04T21:19:27.138Z",
   "currentCount": 3997,
   "src": {
     "johan": {
@@ -8103,9 +8103,43 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 46,
+      "issueCount": 47,
       "prCount": 4,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 190,
+          "title": "[Auto] 27 new fingerprints from community (2026-04)",
+          "mfrs": [
+            "_TZ3000_wol32olt",
+            "_TZE284_uo8qcagc",
+            "_TZB210_qzsxaqqe",
+            "_TZE284_tgrzpqf4",
+            "_TZE284_nbv4tdaz",
+            "_TZ3000_dojqjapa",
+            "_TZE204_cduqh1l0",
+            "_TZE284_4vobcgd3",
+            "_TZ3210_zifx0xoj",
+            "_TZ3008_reatplte",
+            "_TZ3000_uyrhiafs",
+            "_TZ3000_t7ugva7q",
+            "_TZ3210_imaccztn",
+            "_TZ3000_icoxotza",
+            "_TZ3210_vbfp8eyv",
+            "_TZE284_bw4ayyeh",
+            "_TZ3210_7vgttna6",
+            "_TZ3210_a04acm9s",
+            "_TZ3210_cm9mbpr1",
+            "_TZE284_mul9abs3",
+            "_TZ3002_vsom92pp",
+            "_TZE284_3regm3h6",
+            "_TZE204_ouy7vpm1",
+            "_TZE284_mvtclclq",
+            "_TZE200_hbnfokum",
+            "_TZE200_w0ap83qu",
+            "_TZE284_4vbj3fxh"
+          ]
+        },
         {
           "repo": "JohanBendz/com.tuya.zigbee",
           "num": 1361,
@@ -8294,19 +8328,6 @@
             "_TZ3000_qkixdnon",
             "_TZ3000_qkixdnon",
             "_TZ3000_qkixdnon"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1337,
-          "title": "BSEED 2 button wallswitch zigbee with nuetral _TZ3000_l9brjwau TS0002",
-          "mfrs": [
-            "_TZ3000_qkixdnon",
-            "_TZ3000_qkixdnon",
-            "_TZ3000_qkixdnon",
-            "_TZ3000_l9brjwau",
-            "_TZ3000_l9brjwau",
-            "_TZ3000_l9brjwau"
           ]
         }
       ]
