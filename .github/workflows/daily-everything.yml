@@ -215,24 +215,28 @@ jobs:
             echo "⚠️ Driver validation found errors — see log above"
           fi
 
-      # ===== 6c. CRASH PREVENTION & CAPABILITY ENRICHMENT =====
-      - name: "6c. Crash Prevention & Capability Enrichment"
+      # ===== 6c. CRASH PREVENTION & RUNTIME-ADAPTIVE ENRICHMENT =====
+      - name: "6c. Crash Prevention & Runtime-Adaptive Enrichment"
         continue-on-error: true
         timeout-minutes: 5
         run: |
-          echo "=== 1/4: SDK v3 Flow Card Crash Prevention ==="
+          echo "=== 1/5: SDK v3 Flow Card Crash Prevention ==="
           node scripts/maintenance/fix-unsafe-flow-cards.js 2>&1 || echo "⚠️ flow-card fixer unavailable"
 
           echo ""
-          echo "=== 2/4: SDK v3 alarm_battery Conflict Revert ==="
+          echo "=== 2/5: Restore Battery Caps (runtime-adaptive) ==="
+          node scripts/maintenance/restore-battery-caps.js 2>&1 || echo "⚠️ battery restore unavailable"
+
+          echo ""
+          echo "=== 3/5: SDK v3 Battery Conflict Revert ==="
           node scripts/maintenance/revert-alarm-battery-conflict.js 2>&1 || echo "⚠️ conflict reverter unavailable"
 
           echo ""
-          echo "=== 3/4: Remote/Button Empty Capabilities Fix ==="
+          echo "=== 4/5: Remote/Button Empty Capabilities Fix ==="
           node scripts/maintenance/fix-empty-remote-caps.js 2>&1 || echo "⚠️ remote-caps fixer unavailable"
 
           echo ""
-          echo "=== 4/4: Syntax + JSON Validation Gate ==="
+          echo "=== 5/5: Syntax + JSON Validation Gate ==="
           FAIL=0
           for f in drivers/*/device.js; do
             node -c "$f" 2>/dev/null || { echo "❌ JS Syntax error: $f"; FAIL=1; }

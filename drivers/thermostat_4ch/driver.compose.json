@@ -19,7 +19,8 @@
     "measure_temperature.ch2",
     "measure_temperature.ch3",
     "measure_temperature.ch4",
-    "thermostat_mode"
+    "thermostat_mode",
+    "measure_battery"
   ],
   "zigbee": {
     "manufacturerName": [

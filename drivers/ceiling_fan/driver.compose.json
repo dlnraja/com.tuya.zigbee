@@ -9,7 +9,8 @@
   "capabilities": [
     "dim",
     "onoff",
-    "dim.speed"
+    "dim.speed",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
