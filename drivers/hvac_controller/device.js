@@ -66,6 +66,11 @@ class HVACControllerDevice extends TuyaZigbeeDevice {
 
     this.log('[HVAC] \u2705 Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = HVACControllerDevice;
 

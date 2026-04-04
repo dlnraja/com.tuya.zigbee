@@ -36,6 +36,11 @@ class WiFiDoorLockDevice extends TuyaLocalDevice {
     }
     this.log('[WIFI-DOOR-LOCK] Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = WiFiDoorLockDevice;

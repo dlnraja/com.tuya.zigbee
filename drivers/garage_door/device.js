@@ -58,6 +58,11 @@ class GarageDoorDevice extends TuyaSpecificClusterDevice {
       this.log('[GARAGE] Unknown DP' + dp + ' = ' + value);
     }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = GarageDoorDevice;
 

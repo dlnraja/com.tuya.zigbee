@@ -35,5 +35,10 @@ class FingerprintLockDevice extends HybridSensorBase {
     await super.onNodeInit({ zclNode });
     this.log('[FINGERPRINT_LOCK] Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = FingerprintLockDevice;

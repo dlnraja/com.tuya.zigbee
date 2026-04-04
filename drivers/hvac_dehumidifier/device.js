@@ -44,5 +44,10 @@ class HVACDehumidifierDevice extends HybridThermostatBase {
 
     await super.onNodeInit({ zclNode });this.log('[DEHUMIDIFIER] ✅ Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = HVACDehumidifierDevice;

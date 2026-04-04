@@ -16,5 +16,10 @@ class D extends EweLinkLocalDevice{
     await super.onInit();
     this.log('[EWE-LED] Ready - L1/L2 LED Strip');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports=D;

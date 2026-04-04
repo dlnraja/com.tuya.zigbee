@@ -184,6 +184,11 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlugB
       }
     } catch (e) { /* ignore */ }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = SmartPlugDevice;

@@ -44,5 +44,10 @@ class SmartRCBODevice extends HybridPlugBase {
     await super.onNodeInit({ zclNode });
     this.log('[RCBO] ✅ Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = SmartRCBODevice;

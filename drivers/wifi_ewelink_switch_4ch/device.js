@@ -18,5 +18,10 @@ class D extends EweLinkLocalDevice{
     await super.onInit();
     this.log('[EWE-SWITCH-4CH] Ready - 4CH Pro R3');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports=D;

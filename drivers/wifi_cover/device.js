@@ -30,6 +30,11 @@ class WiFiCoverDevice extends TuyaLocalDevice {
     await super.onInit();
     this.log('[WIFI-COVER] Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = WiFiCoverDevice;

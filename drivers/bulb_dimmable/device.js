@@ -52,6 +52,11 @@ class DimmableBulbDevice extends VirtualButtonMixin(HybridLightBase) {
     await this.initVirtualButtons();
     this.log('[DIM-BULB] v5.5.992 ✅ Ready + virtual buttons');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = DimmableBulbDevice;

@@ -166,6 +166,11 @@ class DinRailMeterDevice extends ZigBeeDevice {
       this.log(`Bidirectional mode: ${this._bidirectional}`);
     }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = DinRailMeterDevice;

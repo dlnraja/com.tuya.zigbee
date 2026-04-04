@@ -235,6 +235,11 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
       this.homey.setTimeout(() => this._configureEnergyReporting(zclNode), 60 * 1000);
     }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = UsbDongleDualRepeaterDevice;

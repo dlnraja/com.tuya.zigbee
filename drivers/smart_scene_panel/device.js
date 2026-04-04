@@ -61,6 +61,11 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
       await this.ef00Manager.sendDP(dp, type, value);
     }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = SmartScenePanelDevice;

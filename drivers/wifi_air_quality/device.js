@@ -22,6 +22,11 @@ class WiFiAirQualityDevice extends TuyaLocalDevice {
     }
     this.log('[WIFI-AIR-QUALITY] Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = WiFiAirQualityDevice;

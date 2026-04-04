@@ -52,5 +52,10 @@ class ValveSingleDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlu
       this._appCommandPending = false;
     }, 2000);
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = ValveSingleDevice;

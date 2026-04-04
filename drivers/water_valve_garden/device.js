@@ -44,5 +44,10 @@ class WaterValveGardenDevice extends ZigBeeDevice {
     }
     this.log('[VALVE-GARDEN] Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = WaterValveGardenDevice;

@@ -23,5 +23,10 @@ class LEDStripAdvancedDevice extends HybridLightBase {
     await super.onNodeInit({ zclNode });
     this.log('[LED-ADV] ✅ Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = LEDStripAdvancedDevice;

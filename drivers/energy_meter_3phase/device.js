@@ -44,5 +44,10 @@ class EnergyMeter3PhaseDevice extends HybridPlugBase {
     await super.onNodeInit({ zclNode });
     this.log('[ENERGY-3PH] ✅ Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = EnergyMeter3PhaseDevice;

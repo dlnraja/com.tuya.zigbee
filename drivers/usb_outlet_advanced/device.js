@@ -368,6 +368,11 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Hyb
     // Call parent handler
     if (super.onTuyaStatus) super.onTuyaStatus(status);
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = USBOutletAdvancedDevice;

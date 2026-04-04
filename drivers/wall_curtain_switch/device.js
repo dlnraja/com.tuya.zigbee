@@ -41,6 +41,11 @@ class WallCurtainSwitchDevice extends HybridCoverBase {
 
     this.log('[WALL_CURTAIN_SWITCH] ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = WallCurtainSwitchDevice;

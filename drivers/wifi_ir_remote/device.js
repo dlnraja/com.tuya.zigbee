@@ -58,6 +58,11 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
     await this.setStoreValue('learned_codes', this._learnedCodes).catch(() => {});
     this.log(`[WIFI-IR] Deleted: ${name}`);
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = WiFiIRRemoteDevice;

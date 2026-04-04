@@ -14,6 +14,11 @@ class WallRemote4Gang3Device extends ButtonDevice {
     await super.onNodeInit({ zclNode }).catch(err => this.error('[WALL_REMOTE_4_GANG_3] init err:', err.message));
     this.log('[WALL_REMOTE_4_GANG_3] ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = WallRemote4Gang3Device;

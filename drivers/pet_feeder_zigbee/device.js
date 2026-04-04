@@ -26,6 +26,11 @@ class PetFeederZigbeeDevice extends TuyaZigbeeDevice {
 
     this.log('[PET-FEEDER] \u2705 Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = PetFeederZigbeeDevice;
 

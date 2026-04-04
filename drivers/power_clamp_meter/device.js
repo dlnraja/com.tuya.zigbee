@@ -430,6 +430,11 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       this.log(`CT ratio changed to: ${this._ctRatio}`);
     }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = PowerClampMeterDevice;

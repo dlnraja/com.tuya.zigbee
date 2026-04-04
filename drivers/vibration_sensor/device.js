@@ -63,6 +63,11 @@ class VibrationSensorDevice extends HybridSensorBase {
     await super.onNodeInit({ zclNode });
     this.log('[VIBRATION] ✅ Vibration sensor v5.11.47 ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = VibrationSensorDevice;

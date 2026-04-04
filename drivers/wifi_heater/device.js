@@ -33,5 +33,10 @@ class WiFiHeaterDevice extends TuyaLocalDevice {
       cf.getDeviceTriggerCard('wifi_heater_mode_changed').trigger(this, { mode: changes.wifi_heater_mode.to }, {}).catch(this.error);
     }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = WiFiHeaterDevice;

@@ -37,5 +37,10 @@ class SmartHeaterDevice extends HybridThermostatBase {
 
     await super.onNodeInit({ zclNode });this.log('[HEATER] ✅ Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = SmartHeaterDevice;

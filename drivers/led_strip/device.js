@@ -31,6 +31,11 @@ class LEDStripDevice extends HybridLightBase {
     await super.onNodeInit({ zclNode });
     this.log('[LED] ✅ LED strip ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = LEDStripDevice;

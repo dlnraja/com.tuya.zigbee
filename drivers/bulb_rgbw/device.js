@@ -114,6 +114,11 @@ class RGBWBulbDevice extends HybridLightBase {
     const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
     if (tuya?.datapoint) await tuya.datapoint({ dp, value, type });
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = RGBWBulbDevice;

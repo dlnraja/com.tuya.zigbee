@@ -356,6 +356,11 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
       this.log(`[LED] Could not read initial values: ${err.message}`);
     }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = LEDControllerDimmableDevice;

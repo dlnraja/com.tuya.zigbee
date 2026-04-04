@@ -23,5 +23,10 @@ class LEDStripRGBWDevice extends HybridLightBase {
     await super.onNodeInit({ zclNode });
     this.log('[LED-RGBW] ✅ Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = LEDStripRGBWDevice;

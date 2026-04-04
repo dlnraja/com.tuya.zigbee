@@ -16,5 +16,10 @@ class D extends EweLinkLocalDevice{
     await super.onInit();
     this.log('[EWE-FAN] Ready - iFan03/iFan04');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports=D;

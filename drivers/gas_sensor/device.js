@@ -95,6 +95,11 @@ class GasSensorDevice extends HybridSensorBase {
       this.log('[GAS] 🔇 Alarm silenced');
     } catch (e) { this.log('[GAS] Silence failed:', e.message); }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = GasSensorDevice;

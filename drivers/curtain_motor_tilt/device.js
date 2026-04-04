@@ -23,5 +23,10 @@ class CurtainMotorTiltDevice extends HybridCoverBase {
     await super.onNodeInit({ zclNode });
     this.log('[CURTAIN-TILT] ✅ Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = CurtainMotorTiltDevice;

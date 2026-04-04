@@ -57,6 +57,11 @@ class FormaldehydeSensorDevice extends HybridSensorBase {
 
     await super.onNodeInit({ zclNode });this.log('[FORMALDEHYDE] ✅ Formaldehyde sensor ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = FormaldehydeSensorDevice;

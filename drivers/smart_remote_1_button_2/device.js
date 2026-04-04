@@ -14,6 +14,11 @@ class SmartRemote1Button2Device extends ButtonDevice {
     await super.onNodeInit({ zclNode }).catch(err => this.error('[SMART_REMOTE_1_BUTTON_2] init err:', err.message));
     this.log('[SMART_REMOTE_1_BUTTON_2] ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = SmartRemote1Button2Device;

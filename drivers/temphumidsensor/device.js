@@ -85,6 +85,11 @@ class TuyatecTempHumidSensorDevice extends HybridSensorBase {
       this.log('[TUYATEC] 📊 T:', temp, '°C H:', hum, '% B:', bat, '%');
     }, 100);
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = TuyatecTempHumidSensorDevice;

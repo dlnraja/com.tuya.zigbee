@@ -178,6 +178,11 @@ class RadiatorValveZigbeeDevice extends HybridThermostatBase {
     // Schedule format: "HH:MM/TEMP HH:MM/TEMP ..." encoded as string DP
     await this.sendTuyaDPCommand(dp, schedule, 3);
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = RadiatorValveZigbeeDevice;

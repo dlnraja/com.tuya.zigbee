@@ -344,6 +344,11 @@ class GenericDIYDevice extends ZigBeeDevice {
       return false;
     }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = GenericDIYDevice;

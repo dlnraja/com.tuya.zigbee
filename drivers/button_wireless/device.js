@@ -124,6 +124,11 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
     }
   }
 
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = UniversalWirelessButtonDevice;

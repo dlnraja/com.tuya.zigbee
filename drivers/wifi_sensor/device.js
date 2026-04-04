@@ -28,6 +28,11 @@ class WiFiSensorDevice extends TuyaLocalDevice {
     }
     this.log('[WIFI-SENSOR] Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = WiFiSensorDevice;

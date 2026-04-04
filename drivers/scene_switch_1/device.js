@@ -63,5 +63,10 @@ class SceneSwitch1Device extends ButtonDevice {
       endpoint.bindings['tuyaE000'] = bc;
     } catch (e) { /* ok */ }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = SceneSwitch1Device;

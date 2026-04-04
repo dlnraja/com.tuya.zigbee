@@ -31,6 +31,11 @@ class LEDControllerRGBDevice extends HybridLightBase {
     await super.onNodeInit({ zclNode });
     this.log('[LED-RGB] ✅ LED controller RGB ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = LEDControllerRGBDevice;

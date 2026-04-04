@@ -16,5 +16,10 @@ class WiFiGenericDevice extends TuyaLocalDevice {
     this.log('[WIFI-GENERIC] Raw DPs:', JSON.stringify(dps));
     this.setSettings({ discovered_dps: JSON.stringify(dps) }).catch(() => {});
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = WiFiGenericDevice;

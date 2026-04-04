@@ -75,6 +75,11 @@ class ThermostatTuyaDPDevice extends HybridThermostatBase {
     this.log('[THERMOSTAT] v5.5.129 - DPs: 1-9,13-17,24,35,36,101 | ZCL: 513,516,1,EF00');
     this.log('[THERMOSTAT] ✅ Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = ThermostatTuyaDPDevice;

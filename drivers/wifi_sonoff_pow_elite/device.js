@@ -20,5 +20,10 @@ class D extends E{
       this.setCapabilityValue('meter_power',parseFloat(data.oneKwh)/100).catch(()=>{});
     }
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports=D;

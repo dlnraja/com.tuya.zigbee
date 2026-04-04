@@ -22,5 +22,10 @@ class ShutterRollerDevice extends HybridCoverBase {
     await super.onNodeInit({ zclNode });
     this.log('[SHUTTER] ✅ Ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 module.exports = ShutterRollerDevice;

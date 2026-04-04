@@ -267,6 +267,11 @@ class RGBBulbDevice extends HybridLightBase {
   get transitionTime() {
     return this._transitionTime ?? this.getSetting('transition_time') ?? 0.4;
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = RGBBulbDevice;

@@ -39,6 +39,11 @@ class TunableWhiteBulbDevice extends HybridLightBase {
     await super.onNodeInit({ zclNode });
     this.log('[BULB] ✅ Tunable white bulb ready');
   }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = TunableWhiteBulbDevice;
