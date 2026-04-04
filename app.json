@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.179",
+  "version": "5.11.180",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -37134,6 +37134,118 @@
         ]
       },
       {
+        "id": "switch_multi_gang_turn_off",
+        "title": {
+          "en": "Turn off Gang..",
+          "fr": "Eteindre Bouton.."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          },
+          {
+            "name": "gang",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "title": {
+                  "en": "Gang 1"
+                }
+              },
+              {
+                "id": "2",
+                "title": {
+                  "en": "Gang 2"
+                }
+              },
+              {
+                "id": "3",
+                "title": {
+                  "en": "Gang 3"
+                }
+              },
+              {
+                "id": "4",
+                "title": {
+                  "en": "Gang 4"
+                }
+              },
+              {
+                "id": "5",
+                "title": {
+                  "en": "Gang 5"
+                }
+              },
+              {
+                "id": "6",
+                "title": {
+                  "en": "Gang 6"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "switch_multi_gang_turn_on",
+        "title": {
+          "en": "Turn on Gang..",
+          "fr": "Allumer Bouton.."
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_uri=homey:app:com.dlnraja.tuya.zigbee"
+          },
+          {
+            "name": "gang",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "title": {
+                  "en": "Gang 1"
+                }
+              },
+              {
+                "id": "2",
+                "title": {
+                  "en": "Gang 2"
+                }
+              },
+              {
+                "id": "3",
+                "title": {
+                  "en": "Gang 3"
+                }
+              },
+              {
+                "id": "4",
+                "title": {
+                  "en": "Gang 4"
+                }
+              },
+              {
+                "id": "5",
+                "title": {
+                  "en": "Gang 5"
+                }
+              },
+              {
+                "id": "6",
+                "title": {
+                  "en": "Gang 6"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "tuya_dp_send",
         "title": {
           "en": "Send Tuya DP",
@@ -67200,7 +67312,8 @@
           "_TYZB01_4mdqxxnn",
           "_TYZB01_m6ec2pgj",
           "_TZ3000_8uxxzz4b",
-          "_TZ3000_do6txrcw"
+          "_TZ3000_do6txrcw",
+          "ZG-106Z"
         ],
         "productId": [
           "TS0222",
@@ -70253,7 +70366,6 @@
         "manufacturerName": [
           "_TZE200_3towulqd",
           "_TZE200_bh3n6gk8",
-          "_TZE200_1ibpyhdc",
           "_TZE200_ttcovulf"
         ],
         "productId": [
