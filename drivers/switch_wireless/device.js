@@ -47,7 +47,7 @@ class SwitchWirelessDevice extends HybridSwitchBase {
       this._lastWirelessPress = now;
       const pt = resolvePressType(value);
       this.log(`[WIRELESS-SWITCH] DP2 press=${pt}`);
-      try { this.homey.flow.getDeviceTriggerCard('switch_wireless_button_pressed').trigger(this, { press_type: pt }, {}).catch(() => {}); } catch (e) { /* */ }
+      try { (() => { try { return this.homey.flow.getDeviceTriggerCard('switch_wireless_button_pressed'); } catch(e) { return null; } })()?.trigger(this, { press_type: pt }, {}).catch(() => {}); } catch (e) { /* */ }
       const c = { single: 'switch_wireless_single_press', double: 'switch_wireless_double_press', long: 'switch_wireless_long_press' }[pt];
       if (c) { try { this.homey.flow.getDeviceTriggerCard(c).trigger(this, {}, {}).catch(() => {}); } catch (e) { /* */ } }
       return;
