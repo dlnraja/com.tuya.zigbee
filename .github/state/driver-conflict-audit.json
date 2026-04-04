@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-03T17:19:35.569Z",
+  "timestamp": "2026-04-04T03:34:18.583Z",
   "pidConflicts": [
     {
       "pid": "TS004F",
@@ -1393,11 +1393,11 @@
       "reason": "no_fingerprints"
     },
     {
-      "driver": "wifi_doorbell",
+      "driver": "wifi_door_lock",
       "reason": "no_fingerprints"
     },
     {
-      "driver": "wifi_door_lock",
+      "driver": "wifi_doorbell",
       "reason": "no_fingerprints"
     },
     {
