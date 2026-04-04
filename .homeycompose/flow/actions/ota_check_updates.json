@@ -5,6 +5,11 @@
     "fr": "Vérifier Mises à Jour (OTA) de l'appareil",
     "nl": "OTA firmware updates controleren"
   },
+  "titleFormatted": {
+    "en": "Check OTA firmware updates for [[device]]",
+    "fr": "Vérifier les MàJ OTA pour [[device]]",
+    "nl": "OTA firmware updates controleren voor [[device]]"
+  },
   "hint": {
     "en": "Queries Zigbee2MQTT index for updates. You will be notified.",
     "fr": "Interroge l'index Z2M. Vous recevrez une notification au besoin.",

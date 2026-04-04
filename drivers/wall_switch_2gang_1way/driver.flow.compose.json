@@ -6,7 +6,11 @@
         "en": "Turned on",
         "nl": "Aangezet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "nl": "Aangezet"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_turned_off",
@@ -14,7 +18,11 @@
         "en": "Turned off",
         "nl": "Uitgezet"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "nl": "Uitgezet"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_physical_gang1_on",
@@ -22,7 +30,11 @@
         "en": "Gang 1 physical ON",
         "nl": "Gang 1 fysiek AAN"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 1 physical ON",
+        "nl": "Gang 1 fysiek AAN"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_physical_gang1_off",
@@ -30,7 +42,11 @@
         "en": "Gang 1 physical OFF",
         "nl": "Gang 1 fysiek UIT"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 1 physical OFF",
+        "nl": "Gang 1 fysiek UIT"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_physical_gang2_on",
@@ -38,7 +54,11 @@
         "en": "Gang 2 physical ON",
         "nl": "Gang 2 fysiek AAN"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 2 physical ON",
+        "nl": "Gang 2 fysiek AAN"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_physical_gang2_off",
@@ -46,7 +66,11 @@
         "en": "Gang 2 physical OFF",
         "nl": "Gang 2 fysiek UIT"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 2 physical OFF",
+        "nl": "Gang 2 fysiek UIT"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_gang1_scene",
@@ -66,7 +90,11 @@
             "en": "on"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Gang 1 scene triggered",
+        "nl": "Gang 1 scène geactiveerd"
+      }
     },
     {
       "id": "wall_switch_2gang_1way_gang2_scene",
@@ -86,7 +114,11 @@
             "en": "on"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Gang 2 scene triggered",
+        "nl": "Gang 2 scène geactiveerd"
+      }
     }
   ],
   "actions": [
