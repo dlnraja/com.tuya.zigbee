@@ -65,7 +65,8 @@
   "author": "Dylan L.N. Raja",
   "license": "MIT",
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=22.0.0",
+    "homey": ">=12.2.0"
   },
   "dependencies": {
     "color-space": "1.15.0",
