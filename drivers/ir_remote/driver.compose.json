@@ -12,8 +12,7 @@
   "capabilities": [
     "button.learn_ir",
     "ir_learned_code",
-    "ir_send_code",
-    "measure_battery"
+    "ir_send_code"
   ],
   "capabilitiesOptions": {
     "button.learn_ir": {

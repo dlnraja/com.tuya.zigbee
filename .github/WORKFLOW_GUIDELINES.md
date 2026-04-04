@@ -297,3 +297,72 @@ Safe auto-add PIDs: `SNZB-*`, `ZBMINI*`, `S31ZB`, `S[46]0ZBT*`, `BASICZBR*`, `TR
 **BUG FIXED:** dlnraja commenting on closed issues (to confirm resolution)
 triggered the auto-reopen bot → infinite close/reopen loop.
 Fix: added `dlnraja` to both the `if:` condition AND the `SKIP_USERS` array.
+
+---
+
+## K. SDK v3 Battery & Power Rules (CRITICAL for Automation)
+
+### RULE: Never combine `measure_battery` + `alarm_battery`
+Any automation (linter, enrichment, scaffold) that adds capabilities
+MUST check this constraint BEFORE injecting:
+
+```javascript
+// SAFE check before adding battery capability
+const caps = compose.capabilities || [];
+if (caps.includes('measure_battery')) {
+  // NEVER add alarm_battery — SDK v3 violation
+}
+if (caps.includes('alarm_battery')) {
+  // NEVER add measure_battery — SDK v3 violation
+}
+```
+
+### Power Source Detection (for automation scripts)
+Automation scripts MUST NOT assume power source from driver name alone.
+The same manufacturerName can power differently based on productId.
+
+```
+Decision tree:
+1. Does compose have energy.batteries? → Battery device
+2. Does device.js have mainsPowered=true? → Mains device
+3. Is class=remote AND productId=TS004x? → Kinetic (self-powered)
+4. Is class=socket/light/fan? → Probably mains (verify compose)
+5. Default: DO NOT add battery capabilities automatically
+```
+
+### Maintenance Scripts Safety Rules
+All scripts in `scripts/maintenance/` MUST:
+1. **Never add both** `measure_battery` + `alarm_battery`
+2. **Validate JSON** after compose modification
+3. **Validate JS** syntax after device.js modification (`node -c`)
+4. **Log every change** for audit trail
+5. **Be idempotent** — running twice = same result
+6. **Never remove** capabilities without explicit justification
+7. **Never modify** WiFi driver authentication/implementation
+8. **Respect protocol type** — don't add ZCL clusters to Tuya DP drivers
+
+### Pipeline Step 6c Safety Gate
+The daily pipeline runs `revert-alarm-battery-conflict.js` to catch
+any regressions introduced by AI linting or enrichment steps.
+Order: `fix-flow-cards` → `revert-battery-conflicts` → `fix-empty-caps` → `validate`
+
+---
+
+## L. Protocol-Aware Automation Rules
+
+### Tuya DP (TS0601) Drivers
+- NEVER add standard ZCL cluster bindings to TS0601 drivers
+- ALWAYS use dpMappings for capability mapping
+- Different _TZE200_ manufacturerNames need DIFFERENT DP numbers
+- Validate DP numbers against Z2M/ZHA/Tuya IoT Platform
+
+### Standard ZCL Drivers 
+- ALWAYS use configureAttributeReporting()
+- NEVER add TuyaEF00Manager to standard ZCL drivers
+- Use zclNode.endpoints[N].clusters for capability binding
+
+### Multi-Variant Drivers
+- One driver can serve thousands of FP combinations
+- NEVER assume all variants have same features
+- Use runtime capability detection in device.js
+- Example: `if (this.hasCapability('measure_power'))` before setup

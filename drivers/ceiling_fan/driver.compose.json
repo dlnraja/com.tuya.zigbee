@@ -8,7 +8,6 @@
   "class": "fan",
   "capabilities": [
     "dim",
-    "measure_battery",
     "onoff",
     "dim.speed"
   ],

@@ -132,6 +132,115 @@ const TuyaZigbeeDevice = require('../../lib/TuyaZigbeeDevice');
 ### Sensor Value Rejected by Validator
 - Check ProductValueValidator.js min/max ranges
 
+## SDK v3 BATTERY CAPABILITIES (CRITICAL - DO NOT VIOLATE)
+
+### Rule: NEVER combine measure_battery + alarm_battery on same device
+- `measure_battery` = device reports precise 0-100% level → use ONLY this
+- `alarm_battery` = device only reports boolean low/ok → use ONLY this
+- Both together → DUPLICATE UI components + DUPLICATE Flow Cards = REJECTED
+
+### When to use which:
+| Device reports | Capability | Example |
+|---|---|---|
+| Numeric % (0-100) | `measure_battery` only | Most Tuya sensors, TRVs |
+| Boolean low/ok | `alarm_battery` only | Some old IAS sensors |
+| Nothing (mains) | Neither | Wall switches, plugs, bulbs |
+| Nothing (kinetic) | Neither | Self-powered wireless buttons |
+
+## DEVICE POWER SOURCE CLASSIFICATION (all cases)
+
+### 1. Battery-Powered (class: sensor, remote)
+- Has `energy.batteries` in compose → MUST have ONE battery cap
+- Reports % → `measure_battery` | Reports boolean → `alarm_battery`
+- Examples: motion_sensor, contact_sensor, temphumidsensor, remotes
+
+### 2. Mains-Powered (class: socket, light, fan)
+- NO battery capability ever
+- `get mainsPowered() { return true; }` in device.js
+- Remove measure_battery if inherited: `removeCapability('measure_battery')`
+- Examples: wall switches, plugs, bulbs, LED strips, dimmers, din_rail
+
+### 3. Hybrid (mains + battery backup)
+- Some wall-mounted sensors run on BOTH mains AND battery
+- Same manufacturerName can have mains AND battery variants
+- MUST check at runtime: `mainsPowered` getter + conditional capability
+- Example: Some _TZ3000_ wall remotes are battery, others are hardwired
+
+### 4. Self-Powered / Kinetic / Mechanical
+- Energy harvesting from button press click (no battery, no mains)
+- NO battery capability, NO energy.batteries in compose
+- Examples: Tuya wireless buttons (TS0041-TS0046), some scene switches
+- These devices use cluster 0xE000 or onOff commands only
+- Fingerprint: same _TZ3000_ prefix but productId TS004x
+
+### 5. USB-Powered (mains equivalent)
+- Treated exactly like mains: NO battery capability
+- `get mainsPowered() { return true; }`  
+- Examples: air quality sensors (_TZE200_8ygsuhe1), IR blasters
+
+## ZIGBEE PROTOCOL CLASSIFICATION (all cases)
+
+### 1. Tuya DP Protocol (TS0601 / cluster 0xEF00)
+- productId = TS0601 (always)
+- Cluster 61184 (0xEF00) for data exchange
+- Uses TuyaEF00Manager for DP parsing
+- dpMappings in device.js maps DP numbers to capabilities
+- Thousands of variants: same _TZE200/204/284_ prefix = DP device
+- EACH manufacturerName may have DIFFERENT DP mappings!
+
+### 2. Standard ZCL (native Zigbee clusters)
+- productId = TS0001-TS0504, TS011F, TS0121, etc.
+- Uses standard clusters: onOff(6), levelControl(8), colorControl(768)
+- No TuyaEF00Manager needed
+- configureAttributeReporting() for periodic updates
+- Most reliable protocol type
+
+### 3. Tuya Standard Zigbee (ZCL + Tuya extensions)
+- productId = TS0001-TS0044, TS011F
+- Standard ZCL clusters PLUS Tuya-specific attributes
+- May have cluster 0xE000 (57344) for button press types
+- May have cluster 0xE001 (57345) for Tuya-specific settings
+- Backlight, power-on-state via Tuya DPs on cluster 0xEF00
+
+### 4. Custom Zigbee (manufacturer-specific clusters)
+- Non-standard clusters (0xFC00-0xFCFF)
+- Requires raw frame interception in device.js
+- Example: some LIDL/Silvercrest devices
+
+## VARIANT INTELLIGENCE (manufacturerName × productId matrix)
+
+### One manufacturerName → Many productIds (NORMAL)
+```
+_TZ3000_abc + TS0001 → switch_1gang
+_TZ3000_abc + TS0002 → switch_2gang
+_TZ3000_abc + TS0043 → button_wireless_3
+```
+Same OEM manufactures different product types.
+
+### One productId → Many manufacturerNames (NORMAL)
+```
+TS0601 + _TZE200_xxx → thermostat
+TS0601 + _TZE200_yyy → soil_sensor
+TS0601 + _TZE284_zzz → presence_sensor_radar
+```
+TS0601 is a generic container; the manufacturerName determines function.
+
+### Same manufacturerName + Same productId → MUST be same driver
+If same combo maps to different drivers = CONFLICT. Fix by:
+1. Check Z2M/ZHA for correct device type
+2. Move to correct driver
+3. Keep in only ONE driver
+
+### Power Source Varies Per Variant!
+```
+_TZ3000_abc + TS0041 → kinetic button (no battery)
+_TZ3000_abc + TS0042 → kinetic 2-button (no battery)
+_TZE200_def + TS0601 → battery soil sensor (measure_battery)
+_TZE200_ghi + TS0601 → USB air quality (mainsPowered=true)
+```
+NEVER assume power source from manufacturerName alone.
+Check productId + device class + energy config.
+
 ## CRITICAL: Fingerprint Matching Rules
 
 ### manufacturerName CAN appear in MULTIPLE drivers - THIS IS NORMAL!
