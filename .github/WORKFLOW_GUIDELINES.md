@@ -132,6 +132,42 @@ directly into driver files (`echo "$SUGGESTION" > "$file"`), potentially destroy
 When user comments on closed issue/PR → `auto-reopen-on-comment.yml` reopens it →
 `auto-respond.yml` triggers on `reopened` event → daily/nightly re-process in next cycle.
 
+### 13. INFORMATION FLOW & ATTRIBUTION — CRITICAL RULE
+
+**SCAN EVERYTHING, IMPLEMENT SILENTLY, CREDIT ONLY OWN SOURCES.**
+
+#### What to SCAN (READ-ONLY, implement silently):
+- All Tuya-related forum threads: T26439 (Johan), T146735 (Tuya Smart Life), T89271 (archive), etc.
+- Johan Bendz's GitHub (JohanBendz/com.tuya.zigbee) — PRs, issues, code changes
+- All Tuya WiFi threads and related projects
+- Other forks and community contributions
+- **→ Implement discoveries into drivers/code, but NEVER mention the source in:**
+  - Forum posts
+  - Changelogs
+  - Commit messages (use generic "improved" / "added support")
+  - GitHub issue/PR comments
+
+#### What to PUBLICIZE (visible in logs/changelogs/forum):
+Only content from these sources MAY be mentioned:
+- **dlnraja's own forum thread** (T140352) — user requests, bug reports
+- **dlnraja's GitHub** — own issues, own PRs
+- **Direct user requests** from T140352
+- **All descendant forks** of dlnraja/com.tuya.zigbee
+- **→ These CAN appear in:** changelogs, forum posts, commit messages, logs
+
+#### Forum Post Merge Rule:
+- **ALWAYS check the last poster on T140352**
+- If last poster is `dlnraja` (even if it was the bot posting): **EDIT/MERGE** into that post
+- If last poster is someone else: **NEW reply** (only on T140352)
+- NEVER create consecutive posts — always merge with own last post
+- Use `merge-last-posts.js` for cleanup if multiple bot posts exist
+
+#### Why this matters:
+- Johan Bendz is the original author — we don't advertise that we watch his repo
+- Forum community sees us as independent — no "synced from..." mentions
+- Prevents attribution conflicts and maintains professional boundaries
+
+
 ---
 
 ## D. Draft → Test Promotion

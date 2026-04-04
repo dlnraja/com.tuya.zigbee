@@ -49,6 +49,10 @@ function cleanReply(r){
   // Strip any leaked automation/infrastructure terms (CRITICAL: never expose backend)
   r=r.replace(/\b(?:scraping|scraped|scraper|automated scan(?:ning|s)?|cron\s*job|pipeline|workflow|GitHub Actions?|API\s*key|OAuth|IMAP|token\s*rotation|bot\s*(?:scan|audit|self)|Discourse\s*API|GMAIL_\w+|HOMEY_(?:EMAIL|PASSWORD)|ai[- ]?analysis|ai[- ]?helper|rate[- ]?limit|circuit[- ]?breaker)\b[^.\n]*/gi,'');
   r=r.replace(/\b(?:SPA|single[- ]page|ensemble|LLM|GPT|language model|auto[- ]?respond|deep[- ]?fork|fork.integrat\w*|algorithm|NLP|neural|machine.learning)\b[^.\n]*/gi,'');
+  // ATTRIBUTION FILTER: Never mention external sources (implement silently)
+  r=r.replace(/\b(?:Johan\s*Bendz?|JohanBendz|upstream\s*(?:repo|fork|merge)|synced?\s*from|ported?\s*from|borrowed\s*from|taken\s*from|inspired\s*by|based\s*on\s*\w+'s)\b[^.\n]*/gi,'');
+  r=r.replace(/\b(?:forum\s*(?:monitor|scan|scrape)|watched?\s*(?:thread|topic)|cross[- ]?referenc\w+\s*other\s*thread)\b[^.\n]*/gi,'');
+  r=r.replace(/\b(?:com\.tuya\.zigbee(?![\w]))\b[^.\n]*JohanBendz[^.\n]*/gi,'');
   r=r.replace(/\n{3,}/g,'\n\n');
   return r.trim();
 }

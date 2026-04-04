@@ -113,3 +113,9 @@ Do NOT remove just because mfr appears in another driver with different productI
 - NEVER auto-modify driver files — report-only
 - Never pipe AI output into source files
 
+## INFORMATION FLOW & ATTRIBUTION
+- SCAN everything (Johan, WiFi, all threads, forks) → implement SILENTLY
+- External sources: NEVER mention in forum/changelogs/commits/PR comments
+- Own sources (dlnraja T140352, own GitHub, own PRs, own forks): CAN mention
+- Forum: ALWAYS merge with last dlnraja post (even if bot posted it)
+- Commit messages for external syncs: use generic wording ("improved", "added support")
