@@ -72,7 +72,12 @@ async function callAI(text,sysPrompt,opts={}){
   const maxTokens=opts.maxTokens||2048;
   const tk = classifyTask(text, sysPrompt, opts);
   
-  const archContext=ARCHITECTURE_SUMMARY?'\n\n---\n'+ARCHITECTURE_SUMMARY:'';
+  // Intelligent Waiter: Global retry loop for the entire API cascade
+  let globalAttempts = 0;
+  const maxGlobalAttempts = opts.maxGlobalAttempts || 3;
+  
+  while(globalAttempts < maxGlobalAttempts) {
+    const archContext=ARCHITECTURE_SUMMARY?'\n\n---\n'+ARCHITECTURE_SUMMARY:'';
   const rulesContext=LOADED_RULES?'\n\n---\n'+LOADED_RULES:'';
   const fullSysPrompt=PROJECT_RULES+archContext+rulesContext+'\n\n'+sysPrompt;
   
@@ -222,19 +227,29 @@ async function callAI(text,sysPrompt,opts={}){
     }
   }
 
-  // 11. Kimi
-  if (process.env.KIMI_API_KEY && cbOk('kimi')) {
-    console.log('  Trying Kimi...');
-    const res = await callAIEngine(
-      'https://api.moonshot.cn/v1/chat/completions',
-      {'Authorization': 'Bearer ' + process.env.KIMI_API_KEY, 'Content-Type': 'application/json'},
-      {model:'moonshot-v1-8k', messages:[{role:'system',content:fullSysPrompt.substring(0,6000)},{role:'user',content:text.substring(0,6000)}], max_tokens:Math.min(maxTokens, 1024), temperature:0.2},
-      'kimi'
-    );
-    if (res) return res;
+    // 11. Kimi
+    if (process.env.KIMI_API_KEY && cbOk('kimi')) {
+      console.log('  Trying Kimi...');
+      const res = await callAIEngine(
+        'https://api.moonshot.cn/v1/chat/completions',
+        {'Authorization': 'Bearer ' + process.env.KIMI_API_KEY, 'Content-Type': 'application/json'},
+        {model:'moonshot-v1-8k', messages:[{role:'system',content:fullSysPrompt.substring(0,6000)},{role:'user',content:text.substring(0,6000)}], max_tokens:Math.min(maxTokens, 1024), temperature:0.2},
+        'kimi'
+      );
+      if (res) return res;
+    }
+
+    console.log(`  [Waiter] All AI engines exhausted on attempt ${globalAttempts + 1}/${maxGlobalAttempts}.`);
+    globalAttempts++;
+    if (globalAttempts >= maxGlobalAttempts) break;
+    
+    // Resume runs when necessary: exponential smart sleep
+    const waitMs = 30000 * Math.pow(1.5, globalAttempts);
+    console.log(`  [Waiter] Sleeping for ${waitMs/1000}s to let rate limits recover before resuming...`);
+    await sleep(waitMs);
   }
 
-  console.log('  All AI engines failed or rate limited.');
+  console.log('  [Waiter] Max global retries reached. Failing gracefully.');
   return { text: "AI_OFFLINE_OR_LIMIT_REACHED", model: "fallback-error-system" };
 }
 

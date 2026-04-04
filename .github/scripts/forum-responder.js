@@ -350,7 +350,7 @@ async function main(){
         // we pass the combined content to the AI to rewrite it in a deeply human, natural, empathetic tone.
         // We explicitly instruct it NOT to mention internal GitHub YAML automation, background rule checks, or invisible JSON fixes.
         // ---------------------------------------------------------
-        let isMerging = lastOwn && lastOwn.raw.includes('<!-- bot-reply -->');
+        let isMerging = !!lastOwn;
         let contentToHumanize = isMerging ? (lastOwn.raw.replace(/<!-- bot-reply -->/g, '') + '\n\n' + reply) : reply;
         
         if(!dry) {
@@ -380,18 +380,16 @@ CRITICAL INSTRUCTIONS:
         
         reply += '\n<!-- bot-reply -->';
       
-      if(lastOwn && lastOwn.raw.includes('<!-- bot-reply -->')){
+      if(lastOwn){
         mergeResult=smartMergePost(lastOwn.raw,reply);
         if(mergeResult.action==='skip'){
           console.log('  ⏭ SmartMerge skip:',mergeResult.reason);
           state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};
           continue
         }
-      } else if (lastOwn) {
-        console.log('  Last post is manual. Skipping merge, will post new reply.');
       }
       
-      const editTarget=(lastOwn && lastOwn.raw.includes('<!-- bot-reply -->'))?lastOwn:null;
+      const editTarget=lastOwn?lastOwn:null;
       for(let i=0;i<3;i++){
         try{
           if(auth.type==='session')await refreshCsrf(auth);
