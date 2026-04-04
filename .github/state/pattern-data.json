@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-04-04T04:02:04.718Z",
+  "timestamp": "2026-04-04T06:30:36.386Z",
   "suggestions": [
     {
       "pattern": "False Battery Alert / Missing Battery",
       "id": "battery",
-      "count": 32,
+      "count": 34,
       "priority": "high",
       "topFPs": [
         [
@@ -24,11 +24,15 @@
           5
         ],
         [
-          "example",
-          3
+          "TS0202",
+          5
         ],
         [
-          "TS0202",
+          "tuya",
+          4
+        ],
+        [
+          "example",
           3
         ],
         [
@@ -42,10 +46,6 @@
         [
           "lumi",
           3
-        ],
-        [
-          "_TZ3000_o4mkahkc",
-          2
         ]
       ],
       "fix": "Set `get mainsPowered() { return true; }` and remove measure_battery in onNodeInit",
@@ -106,6 +106,56 @@
       ]
     },
     {
+      "pattern": "Device Not Responding",
+      "id": "no_response",
+      "count": 6,
+      "priority": "high",
+      "topFPs": [
+        [
+          "vision",
+          3
+        ],
+        [
+          "test",
+          3
+        ],
+        [
+          "TS0601",
+          3
+        ],
+        [
+          "_TZ3210_w0qqde0g",
+          1
+        ],
+        [
+          "TS011F",
+          1
+        ],
+        [
+          "_TZ3000_zutizvyk",
+          1
+        ],
+        [
+          "TS0203",
+          1
+        ],
+        [
+          "_TZ3000_tsgqxdb4",
+          1
+        ],
+        [
+          "sonoff",
+          1
+        ],
+        [
+          "debug",
+          1
+        ]
+      ],
+      "fix": "Check Zigbee mesh, device routing, and cluster bindings",
+      "files": []
+    },
+    {
       "pattern": "Device Shows Unknown",
       "id": "unknown",
       "count": 5,
@@ -156,56 +206,6 @@
       "files": [
         "drivers/{driver}/device.js"
       ]
-    },
-    {
-      "pattern": "Device Not Responding",
-      "id": "no_response",
-      "count": 5,
-      "priority": "high",
-      "topFPs": [
-        [
-          "vision",
-          3
-        ],
-        [
-          "test",
-          3
-        ],
-        [
-          "TS0601",
-          3
-        ],
-        [
-          "_TZ3210_w0qqde0g",
-          1
-        ],
-        [
-          "TS011F",
-          1
-        ],
-        [
-          "_TZ3000_zutizvyk",
-          1
-        ],
-        [
-          "TS0203",
-          1
-        ],
-        [
-          "_TZ3000_tsgqxdb4",
-          1
-        ],
-        [
-          "sonoff",
-          1
-        ],
-        [
-          "debug",
-          1
-        ]
-      ],
-      "fix": "Check Zigbee mesh, device routing, and cluster bindings",
-      "files": []
     },
     {
       "pattern": "Ring/Alarm Wrong",
@@ -423,12 +423,12 @@
   ],
   "detections": {
     "inversion": 1,
-    "battery": 32,
+    "battery": 34,
     "double_div": 2,
     "pairing": 9,
     "unknown": 5,
     "flow_dup": 0,
-    "no_response": 5,
+    "no_response": 6,
     "voltage_wrong": 1,
     "no_temperature": 1,
     "ring_value": 5,
