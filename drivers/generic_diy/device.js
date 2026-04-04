@@ -35,6 +35,19 @@ class GenericDIYDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('[DIY] ═══════════════════════════════════════');
+    // --- Battery Alarm (auto-injected) ---
+    if (this.hasCapability('measure_battery')) {
+      this.registerCapabilityListener('measure_battery', async (value) => {
+        if (this.hasCapability('alarm_battery')) {
+          await this.setCapabilityValue('alarm_battery', value < 15).catch(() => {});
+        }
+      });
+      // Initial check
+      const bat = this.getCapabilityValue('measure_battery');
+      if (bat !== null && this.hasCapability('alarm_battery')) {
+        this.setCapabilityValue('alarm_battery', bat < 15).catch(() => {});
+      }
+    }
     this.log('[DIY] GENERIC DIY ZIGBEE v5.7.2');
     this.log('[DIY] ESP32 / PTVO / CC253x / Custom ZCL');
     this.log('[DIY] With comprehensive flow cards');

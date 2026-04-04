@@ -11,7 +11,9 @@
     "large": "drivers/generic_diy/assets/images/large.png",
     "xlarge": "drivers/generic_diy/assets/images/xlarge.png"
   },
-  "capabilities": [],
+  "capabilities": [
+    "alarm_battery"
+  ],
   "energy": {
     "batteries": [
       "CR2032",

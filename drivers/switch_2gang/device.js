@@ -57,6 +57,19 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
     // causing "Missing Capability Listener: onoff" for standard Tuya DP 2-gang switches
     // (Forum: Rikjes #1676, _TZ3000_jl7qyupf)
     await super.onNodeInit({ zclNode });
+    // --- Battery Alarm (auto-injected) ---
+    if (this.hasCapability('measure_battery')) {
+      this.registerCapabilityListener('measure_battery', async (value) => {
+        if (this.hasCapability('alarm_battery')) {
+          await this.setCapabilityValue('alarm_battery', value < 15).catch(() => {});
+        }
+      });
+      // Initial check
+      const bat = this.getCapabilityValue('measure_battery');
+      if (bat !== null && this.hasCapability('alarm_battery')) {
+        this.setCapabilityValue('alarm_battery', bat < 15).catch(() => {});
+      }
+    }
 
     // v5.5.26: Setup power measurement for ZCL devices
     await this._setupPowerMeasurement(zclNode);
