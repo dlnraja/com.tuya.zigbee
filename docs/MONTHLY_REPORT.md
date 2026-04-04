@@ -1,41 +1,41 @@
-# Monthly Tuya Zigbee Report - 2026-03
+# Monthly Tuya Zigbee Report - 2026-04
 
-*Generated: 2026-03-01T03:53:56.647Z*
+*Generated: 2026-04-04T14:54:10.423Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
-| Total Drivers | 143 |
-| Manufacturer IDs | 82586 |
-| Collisions | 494 |
+| Total Drivers | 193 |
+| Manufacturer IDs | 78568 |
+| Collisions | 185 |
 
 ## ⚠️ Collisions Detected
 
 | ID | Drivers |
 |----|--------|
-| `_TZE200_ryfmq5rl|TS0601` | air_quality_co2, air_quality_comprehensive, formaldehyde_sensor |
-| `_TZE200_yvx5lh6k|TS0601` | air_quality_co2, air_quality_comprehensive |
-| `_TZ3000_gek6snaj|TS0501B` | bulb_dimmable, led_controller_dimmable |
-| `_TZ3000_oborybow|TS0501B` | bulb_dimmable, led_controller_dimmable |
-| `_TZ3210_iystcadi|TS0501B` | bulb_dimmable, led_controller_dimmable |
-| `_TZ3000_gek6snaj|TS0505B` | bulb_rgbw, led_strip |
-| `_TZ3000_oborybow|TS0505B` | bulb_rgbw, led_strip |
-| `_TZ3210_iystcadi|TS0505B` | bulb_rgbw, led_strip |
-| `_TZ3000_gjnozsaz|TS0601` | button_emergency_sos, plug_energy_monitor |
-| `_TZ3000_p3fph1go|TS0601` | button_emergency_sos, climate_sensor |
-| `_TZ3000_tj4pwzzm|TS0601` | button_emergency_sos, climate_sensor |
-| `_TZ3000_ug1vtuzn|TS0601` | button_emergency_sos, climate_sensor |
-| `_TZ3000_zsh6uat3|TS0601` | button_emergency_sos, climate_sensor |
-| `_TZE200_kzm5w4iz|TS0601` | button_emergency_sos, climate_sensor |
-| `_TZ3000_b3mgfu0d|TS004F` | button_wireless_4, smart_knob_rotary |
-| `_TZ3000_czuyt8lz|TS004F` | button_wireless_4, smart_knob_rotary |
-| `_TZ3000_kjfzuycl|TS004F` | button_wireless_4, smart_knob_rotary |
-| `_TZ3000_pcqjmcud|TS004F` | button_wireless_4, smart_knob_rotary |
-| `_TZ3000_rrjr1q0u|TS004F` | button_wireless_4, smart_knob_rotary |
-| `_TZ3000_1h2x4akh|TS0601` | ceiling_fan, din_rail_switch, fan_controller, plug_energy_monitor |
+| `_TZ3000_as7eqiri|TS0505A` | bulb_rgb, bulb_rgbw |
+| `_TZ3000_as7eqiri|TS0505B` | bulb_rgb, bulb_rgbw |
+| `_TZ3000_fbja4q6h|TS0505A` | bulb_rgb, bulb_rgbw |
+| `_TZ3000_fbja4q6h|TS0505B` | bulb_rgb, bulb_rgbw |
+| `_TZ3000_hcm1fqxe|TS0505A` | bulb_rgb, bulb_rgbw |
+| `_TZ3000_hcm1fqxe|TS0505B` | bulb_rgb, bulb_rgbw |
+| `_TZ3000_keabpigb|TS0505A` | bulb_rgb, bulb_rgbw |
+| `_TZ3000_keabpigb|TS0505B` | bulb_rgb, bulb_rgbw |
+| `_TZ3000_kihkx3cq|TS0505A` | bulb_rgb, bulb_rgbw |
+| `_TZ3000_kihkx3cq|TS0505B` | bulb_rgb, bulb_rgbw |
+| `_TZ3000_lzfwt5qx|TS0505A` | bulb_rgb, bulb_rgbw |
+| `_TZ3000_lzfwt5qx|TS0505B` | bulb_rgb, bulb_rgbw |
+| `_TZ3000_m6u3q8jy|TS0505A` | bulb_rgb, bulb_rgbw |
+| `_TZ3000_m6u3q8jy|TS0505B` | bulb_rgb, bulb_rgbw |
+| `_TZ3000_tqlv4yz4|TS0505A` | bulb_rgb, bulb_rgbw |
+| `_TZ3000_tqlv4yz4|TS0505B` | bulb_rgb, bulb_rgbw |
+| `_TZ3000_u5u4cakc|TS0505A` | bulb_rgb, bulb_rgbw |
+| `_TZ3000_u5u4cakc|TS0505B` | bulb_rgb, bulb_rgbw |
+| `_TZ3000_vzopcetz|TS0505A` | bulb_rgb, bulb_rgbw |
+| `_TZ3000_vzopcetz|TS0505B` | bulb_rgb, bulb_rgbw |
 
-*...and 474 more*
+*...and 165 more*
 
 ## 📋 Action Items
 
