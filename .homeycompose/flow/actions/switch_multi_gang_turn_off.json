@@ -4,6 +4,10 @@
     "en": "Turn off Gang..",
     "fr": "Eteindre Bouton.."
   },
+  "titleFormatted": {
+    "en": "Turn off gang [[gang]] of [[device]]",
+    "fr": "Eteindre bouton [[gang]] de [[device]]"
+  },
   "args": [
     {
       "name": "device",

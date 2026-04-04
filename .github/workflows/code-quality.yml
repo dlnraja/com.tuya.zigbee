@@ -131,9 +131,10 @@ jobs:
           done
           [ $FAIL -eq 0 ] && echo "✅ All driver JSON valid" >> $GITHUB_STEP_SUMMARY
 
-      - name: � Mains-Powered Battery Check
+      - name: ⚡ Mains-Powered Battery Check
         run: |
           echo "### Mains-Powered Battery Check" >> $GITHUB_STEP_SUMMARY
+          echo "_Note: Many Tuya devices support dual power (mains + battery backup). These are warnings only._" >> $GITHUB_STEP_SUMMARY
           ISSUES=0
           for d in drivers/*/device.js; do
             DRIVER=$(basename "$(dirname "$d")")
@@ -144,13 +145,17 @@ jobs:
                 DC="drivers/$DRIVER/driver.compose.json"
                 HAS_BATT=$(node -e "try{const c=JSON.parse(require('fs').readFileSync('$DC','utf8'));console.log((c.capabilities||[]).includes('measure_battery'))}catch{console.log(false)}" 2>/dev/null || true)
                 if [ "$HAS_BATT" = "true" ] && [ "$HAS_REMOVE" = "0" ]; then
-                  echo "❌ $DRIVER: mains-powered but has measure_battery without removeCapability" >> $GITHUB_STEP_SUMMARY
+                  echo "⚠️ $DRIVER: mains-powered but has measure_battery (dual-power?)" >> $GITHUB_STEP_SUMMARY
                   ISSUES=$((ISSUES+1))
                 fi
               fi
             fi
           done
-          [ $ISSUES -eq 0 ] && echo "✅ All mains devices OK" >> $GITHUB_STEP_SUMMARY
+          if [ $ISSUES -eq 0 ]; then
+            echo "✅ All mains devices OK" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "ℹ️ $ISSUES driver(s) with dual-power pattern detected (non-blocking)" >> $GITHUB_STEP_SUMMARY
+          fi
 
       - name: 🔑 Empty Fingerprint Check
         run: |

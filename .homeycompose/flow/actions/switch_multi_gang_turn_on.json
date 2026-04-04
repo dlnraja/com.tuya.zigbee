@@ -4,6 +4,10 @@
     "en": "Turn on Gang..",
     "fr": "Allumer Bouton.."
   },
+  "titleFormatted": {
+    "en": "Turn on gang [[gang]] of [[device]]",
+    "fr": "Allumer bouton [[gang]] de [[device]]"
+  },
   "args": [
     {
       "name": "device",
