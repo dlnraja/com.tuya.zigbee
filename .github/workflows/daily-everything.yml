@@ -540,8 +540,32 @@ jobs:
         with:
           level: publish
 
-      - name: "12b. Publish to Homey"
+      # CRITICAL: Bump version BEFORE publishing — without this, Athom rejects
+      # duplicate versions and the app never updates on the test channel
+      - name: "12a. Bump version (patch)"
         if: steps.commit.outcome == 'success'
+        id: bump
+        continue-on-error: true
+        uses: athombv/github-action-homey-app-version@986685b4903efabc9531248b2fdc9734223ff9f3 # v1
+        with:
+          version: patch
+          changelog: "Daily update — new device support and improvements"
+
+      - name: "12a2. Sync package.json + push version bump"
+        if: steps.bump.outcome == 'success'
+        run: |
+          node -e "const f=require('fs'),a=require('./app.json'),p=JSON.parse(f.readFileSync('package.json','utf8'));p.version=a.version;f.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n');console.log('Synced package.json to v'+a.version);"
+          NEW_VER=$(node -p "require('./app.json').version")
+          echo "new_version=$NEW_VER" >> $GITHUB_OUTPUT
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app.json package.json .homeychangelog.json 2>/dev/null || git add -A
+          git diff --cached --quiet || git commit -m "v${NEW_VER}: daily version bump [skip ci]"
+          git push origin HEAD || true
+          echo "Bumped to v${NEW_VER}"
+
+      - name: "12b. Publish to Homey"
+        if: steps.bump.outcome == 'success'
         continue-on-error: true
         id: pub
         uses: athombv/github-action-homey-app-publish@48be66b7f2f870c22b6117d7bb84dfa06c4fc309 # v1
@@ -549,13 +573,13 @@ jobs:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 
       - name: "12c. Create GitHub Release"
-        if: steps.commit.outcome == 'success'
+        if: steps.bump.outcome == 'success'
         continue-on-error: true
         uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2
         with:
-          tag_name: v${{ steps.stats.outputs.version }}
-          name: v${{ steps.stats.outputs.version }}
-          body: "Daily update v${{ steps.stats.outputs.version }} — improvements and new device support"
+          tag_name: v${{ steps.bump.outputs.version || steps.stats.outputs.version }}
+          name: v${{ steps.bump.outputs.version || steps.stats.outputs.version }}
+          body: "Daily update v${{ steps.bump.outputs.version || steps.stats.outputs.version }} — improvements and new device support"
           draft: false
           prerelease: false
           make_latest: true
@@ -653,7 +677,7 @@ jobs:
         if: always()
         run: |
           echo "## 🚀 Daily Everything Pipeline — MEGA" >> $GITHUB_STEP_SUMMARY
-          echo "**App:** v${{ steps.stats.outputs.version }} | ${{ steps.stats.outputs.drivers }} drivers | ${{ steps.stats.outputs.fps }} FPs | ${{ steps.stats.outputs.multi_driver }} multi-driver mfrs" >> $GITHUB_STEP_SUMMARY
+          echo "**App:** v${{ steps.bump.outputs.version || steps.stats.outputs.version }} | ${{ steps.stats.outputs.drivers }} drivers | ${{ steps.stats.outputs.fps }} FPs | ${{ steps.stats.outputs.multi_driver }} multi-driver mfrs" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "| # | Step | Status |" >> $GITHUB_STEP_SUMMARY
           echo "|---|------|--------|" >> $GITHUB_STEP_SUMMARY
@@ -703,13 +727,14 @@ jobs:
           echo "| 10m | User Expectations | ${{ steps.gen_expectations.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 10n | AI Battle Orchestrator | ${{ steps.ai_battle.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 11 | Commit | ${{ steps.commit.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 12 | Validate + Publish | ${{ steps.pub.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 12a | **Version Bump** | **${{ steps.bump.outcome }}** |" >> $GITHUB_STEP_SUMMARY
+          echo "| 12b | Validate + Publish | ${{ steps.pub.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 13a | Promote API | ${{ steps.promote_api.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 13c | Promote Puppeteer | ${{ steps.promote_node.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 14 | Forum Update | — |" >> $GITHUB_STEP_SUMMARY
           echo "| 14b | Deploy Device Finder | — |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Total: 34 automation steps** | [Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee) | [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/)" >> $GITHUB_STEP_SUMMARY
+          echo "**Total: 35 automation steps** | [Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee) | [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/)" >> $GITHUB_STEP_SUMMARY
 
       - name: Upload reports
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v4
