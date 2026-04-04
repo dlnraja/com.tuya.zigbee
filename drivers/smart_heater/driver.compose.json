@@ -11,7 +11,8 @@
     "target_temperature",
     "thermostat_mode",
     "measure_temperature",
-    "measure_power"
+    "measure_power",
+    "measure_battery"
   ],
   "zigbee": {
     "manufacturerName": [

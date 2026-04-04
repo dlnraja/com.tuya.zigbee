@@ -6,7 +6,9 @@
     "de": "Universelles Zigbee/Tuya Gerät"
   },
   "class": "other",
-  "capabilities": [],
+  "capabilities": [
+    "measure_battery"
+  ],
   "capabilitiesOptions": {},
   "energy": {
     "batteries": [

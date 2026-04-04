@@ -8,7 +8,8 @@
   "class": "remote",
   "capabilities": [
     "button.learn_ir",
-    "onoff"
+    "onoff",
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "button.learn_ir": {

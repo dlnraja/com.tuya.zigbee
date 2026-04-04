@@ -10,7 +10,8 @@
     "alarm_generic",
     "alarm_co",
     "alarm_co2",
-    "alarm_gas"
+    "alarm_gas",
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "alarm_generic": {

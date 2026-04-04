@@ -11,7 +11,8 @@
     "measure_temperature",
     "thermostat_mode",
     "dim.speed",
-    "onoff"
+    "onoff",
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "onoff": {
