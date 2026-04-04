@@ -215,6 +215,50 @@ jobs:
             echo "⚠️ Driver validation found errors — see log above"
           fi
 
+      # ===== 6c. SEMANTIC LINTER: Copilot SDK v3 Validator =====
+      - name: "🤖 Install & Run Semantic Linter (GH Copilot)"
+        id: copilot_linter
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh extension install github/gh-copilot --force || true
+          CHANGED_FILES=$(git diff --name-only HEAD^ HEAD | grep 'drivers/.*\.js$' || true)
+
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "ℹ️ Aucun driver modifié à analyser."
+            exit 0
+          fi
+
+          for file in $CHANGED_FILES; do
+            echo "🔍 Analyse sémantique de $file..."
+            SUGGESTION=$(gh copilot suggest "Analyze the file $file. 
+            Ensure it follows Homey SDK v3 standards:
+            - NO 'this.homey.zigbee.getDevice()' (v2).
+            - 'onMeshInit()' MUST be async.
+            - Use 'this.homey.devices.getDevice()' if needed.
+            - Check for valid Tuya DP mapping syntax.
+            - Ensure no 'capabilities' conflicts (e.g. duplicate measure_power mapping).
+            If the code is perfect, reply ONLY with 'VALID'. 
+            If not, provide the FULL corrected code block." -t shell)
+
+            if [[ "$SUGGESTION" == *"VALID"* ]]; then
+              echo "✅ $file est conforme au SDK v3."
+            else
+              echo "⚠️ Correction détectée pour $file. Application des patchs Copilot..."
+              echo "$SUGGESTION" > "$file"
+              sed -i '/^```/d' "$file" 
+            fi
+          done
+
+      - name: "🚩 Auto-Commit des corrections Copilot"
+        continue-on-error: true
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action [Copilot Linter]"
+          git add drivers/
+          git diff-index --quiet HEAD || git commit -m "🤖 [AI] Refactoring sémantique SDK v3 via Copilot"
+
       # ===== 7. FORUM ACTIVITY: Scrape ALL account activity =====
       - name: "7. Forum Activity Scraper"
         id: forum_activity
