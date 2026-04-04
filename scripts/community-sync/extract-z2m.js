@@ -73,16 +73,17 @@ module.exports = async () => {
     const src = await fetchUrl(TUYA_TS_URL);
     const devices = parseDevices(src);
     
-    // Dedupe by manufacturerName
+    // Dedupe by manufacturerName+productId (NOT just mfr — same mfr can have different PIDs)
     const unique = {};
     for (const d of devices) {
-      if (!unique[d.mfr] || d.productId) {
-        unique[d.mfr] = d;
+      const key = `${d.mfr}||${d.productId || 'unknown'}`;
+      if (!unique[key] || (d.vendor && !unique[key].vendor)) {
+        unique[key] = d;
       }
     }
     
     const result = Object.values(unique);
-    console.log(`  ✅ Found ${result.length} unique fingerprints with details`);
+    console.log(`  ✅ Found ${result.length} unique fingerprints (mfr+pid pairs) with details`);
     
     // Return with enriched data
     return {
