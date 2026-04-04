@@ -1,122 +1,65 @@
 {
-  "5.11.166": {
-    "en": "Universal Tuya Zigbee app v5.11.166 adds new capabilities and fixes issues for better device compatibility."
+  "5.11.186": {
+    "en": "Universal Tuya Zigbee app v5.11.186 adds 681 new fingerprints and updates 193 drivers."
   },
-  "5.11.165": {
-    "en": "Universal Tuya Zigbee app v5.11.165 adds new device capabilities and fixes issues with smart plugs and button capabilities."
-  },
-  "5.11.164": {
-    "en": "Universal Tuya Zigbee app v5.11.164 adds new capabilities and fixes issues for improved device compatibility."
-  },
-  "5.11.163": {
-    "en": "Universal Tuya Zigbee app v5.11.163 adds new features for Tuya WiFi pairing and fixes for energy scaling and button capabilities."
-  },
-  "5.11.162": {
-    "en": "Universal Tuya Zigbee app v5.11.162 adds new device capabilities and fixes bugs for improved user experience."
-  },
-  "5.11.161": {
-    "en": "Universal Tuya Zigbee app v5.11.161 adds new device capabilities and fixes critical bugs."
-  },
-  "5.11.160": {
-    "en": "Universal Tuya Zigbee app v5.11.160 adds new device capabilities and fixes critical bugs for improved performance."
-  },
-  "5.11.159": {
-    "en": "Universal Tuya Zigbee app v5.11.159 adds new device support and fixes UI issues for energy scaling."
-  },
-  "5.11.158": {
-    "en": "Universal Tuya Zigbee app v5.11.158 adds new driver support and fixes energy scaling UI components."
-  },
-  "5.11.157": {
-    "en": "Universal Tuya Zigbee app v5.11.157 adds new device capabilities and fixes driver issues."
-  },
-  "5.11.156": {
-    "en": "Universal Tuya Zigbee app v5.11.156 adds missing button.push capability for Fingerbot and fixes energy scale issues."
-  },
-  "5.11.155": {
-    "en": "Universal Tuya Zigbee app v5.11.155 adds missing button.push capability for Fingerbot and improves device support."
-  },
-  "5.11.154": {
-    "en": "Universal Tuya Zigbee app v5.11.154 adds 453 new fingerprints and supports 191 drivers."
-  },
-  "5.11.152": {
-    "en": "Universal Tuya Zigbee app v5.11.152 adds new device support and fixes several bugs for improved performance."
-  },
-  "5.11.151": {
-    "en": "Universal Tuya Zigbee app v5.11.151: Critical fix for SyntaxError crashes and updated drivers."
-  },
-  "5.11.150": {
-    "en": "Universal Tuya Zigbee app v5.11.150 adds new drivers and fingerprints, enhancing device compatibility."
-  },
-  "5.11.149": {
-    "en": "Universal Tuya Zigbee app v5.11.149 adds new drivers and fingerprints, enhancing device compatibility."
-  },
-  "5.11.148": {
-    "en": "Universal Tuya Zigbee app v5.11.148 adds new device fingerprints and fixes bugs for improved compatibility."
-  },
-  "5.11.147": {
-    "en": "Universal Tuya Zigbee app v5.11.147 adds new device fingerprints and fixes issues for better performance."
-  },
-  "5.11.146": {
-    "en": "Universal Tuya Zigbee app v5.11.146 adds new drivers and fixes initialization errors."
-  },
-  "5.11.167": {
-    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.168": {
-    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.169": {
-    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.170": {
-    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.171": {
-    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.172": {
-    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.173": {
-    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.174": {
-    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.175": {
-    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.176": {
-    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.177": {
-    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.178": {
-    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.179": {
-    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.180": {
-    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.181": {
-    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.182": {
-    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.183": {
+  "5.11.185": {
     "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
   },
   "5.11.184": {
     "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
   },
-  "5.11.185": {
+  "5.11.183": {
     "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
   },
-  "5.11.186": {
-    "en": "v5.11.186: v5.11.186: Intelligent task slicing + 12 AI key monthly rollout"
+  "5.11.182": {
+    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
+  },
+  "5.11.181": {
+    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
+  },
+  "5.11.180": {
+    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
+  },
+  "5.11.179": {
+    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
+  },
+  "5.11.178": {
+    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
+  },
+  "5.11.177": {
+    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
+  },
+  "5.11.176": {
+    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
+  },
+  "5.11.175": {
+    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
+  },
+  "5.11.174": {
+    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
+  },
+  "5.11.173": {
+    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
+  },
+  "5.11.172": {
+    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
+  },
+  "5.11.171": {
+    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
+  },
+  "5.11.170": {
+    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
+  },
+  "5.11.169": {
+    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
+  },
+  "5.11.168": {
+    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
+  },
+  "5.11.167": {
+    "en": "v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
+  },
+  "5.11.187": {
+    "en": "v5.11.186: Fixed issues with device compatibility for certain Zigbee devices., Added 681 new fingerprints for enhanced device support., Updated 193 drivers to improve overall functionality."
   }
 }

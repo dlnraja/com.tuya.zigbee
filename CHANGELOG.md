@@ -4,7 +4,17 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.166] - 2026-04-03
+## [5.11.186] - 2026-04-04
+
+### Bug Fixes
+- Fixed issues with device compatibility for certain Zigbee devices.
+
+### New Features
+- Added 681 new fingerprints for enhanced device support.
+- Updated 193 drivers to improve overall functionality.
+---
+
+ [5.11.166] - 2026-04-03
 
 ### Bug Fixes
 - Added missing `button.push` capability to FingerBot, resolving issue #162.
