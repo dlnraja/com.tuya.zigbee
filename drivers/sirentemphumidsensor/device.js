@@ -82,25 +82,25 @@ const getDataValue = dpValue => {
   if (!dpValue || !dpValue.data) return null;
 
   switch (dpValue.datatype) {
-    case dataTypes.raw:
-      return dpValue.data;
-    case dataTypes.bool:
-      return dpValue.data[0] === 1;
-    case dataTypes.value:
-      return convertMultiByteNumberPayloadToSingleDecimalNumber(dpValue.data);
-    case dataTypes.string: {
-      let dataString = '';
-      for (let i = 0; i < dpValue.data.length; ++i) {
-        dataString += String.fromCharCode(dpValue.data[i]);
-      }
-      return dataString;
+  case dataTypes.raw:
+    return dpValue.data;
+  case dataTypes.bool:
+    return dpValue.data[0] === 1;
+  case dataTypes.value:
+    return convertMultiByteNumberPayloadToSingleDecimalNumber(dpValue.data);
+  case dataTypes.string: {
+    let dataString = '';
+    for (let i = 0; i < dpValue.data.length; ++i) {
+      dataString += String.fromCharCode(dpValue.data[i]);
     }
-    case dataTypes.enum:
-      return dpValue.data[0];
-    case dataTypes.bitmap:
-      return convertMultiByteNumberPayloadToSingleDecimalNumber(dpValue.data);
-    default:
-      return null;
+    return dataString;
+  }
+  case dataTypes.enum:
+    return dpValue.data[0];
+  case dataTypes.bitmap:
+    return convertMultiByteNumberPayloadToSingleDecimalNumber(dpValue.data);
+  default:
+    return null;
   }
 };
 
@@ -111,61 +111,61 @@ class SirenTimeBoundCluster extends BoundCluster {
 
     for (const attributeId of attributes) {
       switch (attributeId) {
-        case 0x0007: { // localTime
-          const localTime =
+      case 0x0007: { // localTime
+        const localTime =
             Math.floor((Date.now() - ZIGBEE_EPOCH_MS) / 1000) +
             (-new Date().getTimezoneOffset() * 60);
 
-          const buf = Buffer.alloc(8);
-          buf.writeUInt16LE(0x0007, 0);
-          buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
-          buf.writeUInt8(ZCL_TYPE_UTC_TIME, 3);
-          buf.writeUInt32LE(localTime >>> 0, 4);
-          chunks.push(buf);
-          break;
-        }
+        const buf = Buffer.alloc(8);
+        buf.writeUInt16LE(0x0007, 0);
+        buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
+        buf.writeUInt8(ZCL_TYPE_UTC_TIME, 3);
+        buf.writeUInt32LE(localTime >>> 0, 4);
+        chunks.push(buf);
+        break;
+      }
 
-        case 0x0000: { // time
-          const utcTime = Math.floor((Date.now() - ZIGBEE_EPOCH_MS) / 1000);
+      case 0x0000: { // time
+        const utcTime = Math.floor((Date.now() - ZIGBEE_EPOCH_MS) / 1000);
 
-          const buf = Buffer.alloc(8);
-          buf.writeUInt16LE(0x0000, 0);
-          buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
-          buf.writeUInt8(ZCL_TYPE_UTC_TIME, 3);
-          buf.writeUInt32LE(utcTime >>> 0, 4);
-          chunks.push(buf);
-          break;
-        }
+        const buf = Buffer.alloc(8);
+        buf.writeUInt16LE(0x0000, 0);
+        buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
+        buf.writeUInt8(ZCL_TYPE_UTC_TIME, 3);
+        buf.writeUInt32LE(utcTime >>> 0, 4);
+        chunks.push(buf);
+        break;
+      }
 
-        case 0x0001: { // timeStatus
-          const buf = Buffer.alloc(5);
-          buf.writeUInt16LE(0x0001, 0);
-          buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
-          buf.writeUInt8(ZCL_TYPE_BITMAP8, 3);
-          buf.writeUInt8(0x02, 4); // synchronized
-          chunks.push(buf);
-          break;
-        }
+      case 0x0001: { // timeStatus
+        const buf = Buffer.alloc(5);
+        buf.writeUInt16LE(0x0001, 0);
+        buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
+        buf.writeUInt8(ZCL_TYPE_BITMAP8, 3);
+        buf.writeUInt8(0x02, 4); // synchronized
+        chunks.push(buf);
+        break;
+      }
 
-        case 0x0002: { // timeZone
-          const timeZone = -new Date().getTimezoneOffset() * 60;
+      case 0x0002: { // timeZone
+        const timeZone = -new Date().getTimezoneOffset() * 60;
 
-          const buf = Buffer.alloc(8);
-          buf.writeUInt16LE(0x0002, 0);
-          buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
-          buf.writeUInt8(ZCL_TYPE_INT32, 3);
-          buf.writeInt32LE(timeZone, 4);
-          chunks.push(buf);
-          break;
-        }
+        const buf = Buffer.alloc(8);
+        buf.writeUInt16LE(0x0002, 0);
+        buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
+        buf.writeUInt8(ZCL_TYPE_INT32, 3);
+        buf.writeInt32LE(timeZone, 4);
+        chunks.push(buf);
+        break;
+      }
 
-        default: {
-          const buf = Buffer.alloc(3);
-          buf.writeUInt16LE(attributeId, 0);
-          buf.writeUInt8(ZCL_STATUS_UNSUPPORTED_ATTRIBUTE, 2);
-          chunks.push(buf);
-          break;
-        }
+      default: {
+        const buf = Buffer.alloc(3);
+        buf.writeUInt16LE(attributeId, 0);
+        buf.writeUInt8(ZCL_STATUS_UNSUPPORTED_ATTRIBUTE, 2);
+        chunks.push(buf);
+        break;
+      }
       }
     }
 
@@ -382,73 +382,73 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
     );
 
     switch (dp) {
-      case dataPoints.ALARM:
-        await this.safeSetCapabilityValue('onoff', !!measuredValue);
-        await this.safeSetCapabilityValue('alarm_siren', !!measuredValue);
-        break;
+    case dataPoints.ALARM:
+      await this.safeSetCapabilityValue('onoff', !!measuredValue);
+      await this.safeSetCapabilityValue('alarm_siren', !!measuredValue);
+      break;
 
-      case dataPoints.TEMPERATURE:
-        this.reportTemperatureCapacity(measuredValue);
-        break;
+    case dataPoints.TEMPERATURE:
+      this.reportTemperatureCapacity(measuredValue);
+      break;
 
-      case dataPoints.HUMIDITY:
-        this.reportHumidityCapacity(measuredValue);
-        break;
+    case dataPoints.HUMIDITY:
+      this.reportHumidityCapacity(measuredValue);
+      break;
 
-      case dataPoints.POWER_MODE:
-        this.handlePowerMode(measuredValue);
-        break;
+    case dataPoints.POWER_MODE:
+      this.handlePowerMode(measuredValue);
+      break;
 
-      case dataPoints.VOLUME:
-        await this.safeSetSettings({ alarmvolume: String(measuredValue) });
-        break;
+    case dataPoints.VOLUME:
+      await this.safeSetSettings({ alarmvolume: String(measuredValue) });
+      break;
 
-      case dataPoints.DURATION:
-        await this.safeSetSettings({ alarmsoundtime: measuredValue });
-        break;
+    case dataPoints.DURATION:
+      await this.safeSetSettings({ alarmsoundtime: measuredValue });
+      break;
 
-      case dataPoints.MELODY:
-        await this.safeSetSettings({ alarmtune: String(measuredValue) });
-        break;
+    case dataPoints.MELODY:
+      await this.safeSetSettings({ alarmtune: String(measuredValue) });
+      break;
 
-/*       case dataPoints.TUYA_BATTERY_PERCENTAGE:
+      /*       case dataPoints.TUYA_BATTERY_PERCENTAGE:
         this.reportBatteryPercentageCapacity(measuredValue);
         break; */
 
-      case dataPoints.TEMP_UNIT:
-      case dataPoints.TEMP_ALARM:
-      case dataPoints.HUM_ALARM:
-      case dataPoints.TEMP_MIN:
-      case dataPoints.TEMP_MAX:
-      case dataPoints.HUM_MIN:
-      case dataPoints.HUM_MAX:
-        this.log(`Known DP ${dp}, current value:`, measuredValue);
-        break;
+    case dataPoints.TEMP_UNIT:
+    case dataPoints.TEMP_ALARM:
+    case dataPoints.HUM_ALARM:
+    case dataPoints.TEMP_MIN:
+    case dataPoints.TEMP_MAX:
+    case dataPoints.HUM_MIN:
+    case dataPoints.HUM_MAX:
+      this.log(`Known DP ${dp}, current value:`, measuredValue);
+      break;
 
-      default:
-        this.log(`UNHANDLED Tuya ${source}: dp=${dp}, value=${measuredValue}`, data);
-        break;
+    default:
+      this.log(`UNHANDLED Tuya ${source}: dp=${dp}, value=${measuredValue}`, data);
+      break;
     }
   }
 
   handlePowerMode(measuredValue) {
     switch (measuredValue) {
-      case 0:
-      case 1:
-        this.log('Power mode: battery');
-        this.reportAlarmBatteryCapacity(false);
-        break;
+    case 0:
+    case 1:
+      this.log('Power mode: battery');
+      this.reportAlarmBatteryCapacity(false);
+      break;
 
-      case 2:
-      case 3:
-      case 4:
-        this.log('Power mode: dc/usb');
-        this.reportAlarmBatteryCapacity(false);
-        break;
+    case 2:
+    case 3:
+    case 4:
+      this.log('Power mode: dc/usb');
+      this.reportAlarmBatteryCapacity(false);
+      break;
 
-      default:
-        this.log('Unknown power mode:', measuredValue);
-        break;
+    default:
+      this.log('Unknown power mode:', measuredValue);
+      break;
     }
   }
 
@@ -496,7 +496,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
     this.setCapabilityValue('measure_temperature', parsedValue + temperatureOffset).catch(this.error);
   }
 
-/*   reportBatteryPercentageCapacity(measuredValue) {
+  /*   reportBatteryPercentageCapacity(measuredValue) {
     const parsedValue = Number(measuredValue);
 
     this.log('measure_battery | battery percentage remaining:', parsedValue, '%');
@@ -511,20 +511,20 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   async onSettings({ newSettings, changedKeys }) {
     for (const updatedSetting of changedKeys) {
       switch (updatedSetting) {
-        case 'alarmvolume':
-          await this.sendAlarmVolume(Number(newSettings[updatedSetting]));
-          break;
+      case 'alarmvolume':
+        await this.sendAlarmVolume(Number(newSettings[updatedSetting]));
+        break;
 
-        case 'alarmsoundtime':
-          await this.sendAlarmDuration(Number(newSettings[updatedSetting]));
-          break;
+      case 'alarmsoundtime':
+        await this.sendAlarmDuration(Number(newSettings[updatedSetting]));
+        break;
 
-        case 'alarmtune':
-          await this.sendAlarmTune(Number(newSettings[updatedSetting]));
-          break;
+      case 'alarmtune':
+        await this.sendAlarmTune(Number(newSettings[updatedSetting]));
+        break;
 
-        default:
-          break;
+      default:
+        break;
       }
     }
   }

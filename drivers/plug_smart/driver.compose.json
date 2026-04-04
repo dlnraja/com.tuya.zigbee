@@ -653,6 +653,54 @@
       "hint": {
         "en": "Adjust power calibration (supports decimals)"
       }
+    },
+    {
+      "id": "report_min_power",
+      "type": "number",
+      "label": {
+        "en": "Min Reporting Interval (Power)",
+        "fr": "Intervalle de rapport min (Puissance)"
+      },
+      "value": 30,
+      "min": 5,
+      "max": 3600,
+      "step": 1,
+      "hint": {
+        "en": "Minimum seconds between power reports (lower = more traffic)",
+        "fr": "Secondes minimum entre les rapports de puissance"
+      }
+    },
+    {
+      "id": "report_max_power",
+      "type": "number",
+      "label": {
+        "en": "Max Reporting Interval (Power)",
+        "fr": "Intervalle de rapport max (Puissance)"
+      },
+      "value": 600,
+      "min": 60,
+      "max": 3600,
+      "step": 1,
+      "hint": {
+        "en": "Maximum seconds between power reports",
+        "fr": "Secondes maximum entre les rapports de puissance"
+      }
+    },
+    {
+      "id": "report_change_power",
+      "type": "number",
+      "label": {
+        "en": "Min Change (Power)",
+        "fr": "Changement min (Puissance)"
+      },
+      "value": 5,
+      "min": 1,
+      "max": 1000,
+      "step": 1,
+      "hint": {
+        "en": "Minimum power change in Watts to trigger a report",
+        "fr": "Changement minimum en Watts pour déclencher un rapport"
+      }
     }
   ],
   "images": {

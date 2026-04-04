@@ -240,9 +240,8 @@ function resolveJsonConflict(filePath) {
 }
 
 // Resolve JS file conflicts
-function resolveJsConflict(filePath, prData) {
+async function resolveJsConflict(filePath, prData) {
   try {
-    // For driver.js files: if PR adds new features, prefer PR
     // For infrastructure scripts: keep ours
     if (filePath.startsWith('.github/')) {
       git(`checkout --ours "${filePath}"`);
@@ -251,14 +250,42 @@ function resolveJsConflict(filePath, prData) {
       return true;
     }
 
-    // For driver files: take PR version (likely a fix or improvement)
-    if (filePath.startsWith('drivers/')) {
+    // For driver files: Attempt AI Merge
+    if (filePath.startsWith('drivers/') || filePath.startsWith('lib/')) {
+      // Load AI helper if available
+      let callAI;
+      try { callAI = require('./ai-helper').callAI; } catch (e) { log('  No AI helper available for JS conflict.'); }
+
+      if (callAI && (process.env.GOOGLE_API_KEY || process.env.GROQ_API_KEY || process.env.GITHUB_TOKEN)) {
+        try {
+          const contentWithMarkers = fs.readFileSync(filePath, 'utf8');
+          if (contentWithMarkers.includes('<<<<<<< HEAD')) {
+             log(`  🤖 Asking AI (Copilot/Gemini) to smartly merge conflicts in ${filePath}...`);
+             const prompt = 'You are a Tuya Zigbee for Homey expert. Resolve the git merge conflict strictly keeping the best features from both branches (our base vs PR). Output only the resolved file content without markdown code blocks, explanations, or markers.';
+             const aiRes = await callAI(contentWithMarkers, prompt, { maxTokens: 4000 });
+             if (aiRes && aiRes.text && !aiRes.text.includes('<<<<<<<')) {
+                // Wipe markdown block if present
+                let resolvedText = aiRes.text.replace(/^```[\s\S]*?\n/g, '').replace(/```$/g, '').trim();
+                fs.writeFileSync(filePath, resolvedText);
+                git(`add "${filePath}"`);
+                log(`  ✅ ${filePath}: intelligently merged using AI (${aiRes.model})!`);
+                return true;
+             } else {
+                log(`  ⚠️ AI failed to resolve ${filePath} cleanly.`);
+             }
+          }
+        } catch (err) {
+          log(`  ⚠️ AI merge error for ${filePath}: ${err.message}`);
+        }
+      }
+
+      // Fallback: take PR version (likely a fix or improvement)
       try {
         const prContent = git(`show ${prData.headRef}:${filePath}`);
         if (prContent) {
           fs.writeFileSync(filePath, prContent);
           git(`add "${filePath}"`);
-          log(`  ✅ ${filePath}: took PR version (driver improvement)`);
+          log(`  ✅ ${filePath}: took PR version (driver improvement fallback)`);
           return true;
         }
       } catch {}

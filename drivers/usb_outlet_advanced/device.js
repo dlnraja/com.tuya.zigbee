@@ -1,5 +1,7 @@
 'use strict';
 const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
  * USB Outlet Advanced Device - v5.5.35 ENHANCED DP COVERAGE
@@ -42,7 +44,7 @@ const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
  *
  * ═══════════════════════════════════════════════════════════════════════════
  */
-class USBOutletAdvancedDevice extends HybridPlugBase {
+class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlugBase)) {
 
   get plugCapabilities() {
     return ['onoff', 'onoff.socket2', 'onoff.usb1', 'onoff.usb2', 'onoff.led'];
@@ -114,7 +116,11 @@ class USBOutletAdvancedDevice extends HybridPlugBase {
     // v5.5.54: Setup ZCL listeners for endpoints 2 and 3 (non-Tuya devices)
     await this._setupMultiEndpointZCL(zclNode);
 
-    this.log('[USB-ADV] ✅ Ready - Full power monitoring enabled');
+    // Initialize physical and virtual buttons
+    await this.initPhysicalButtonDetection(zclNode);
+    await this.initVirtualButtons();
+
+    this.log('[USB-ADV] ✅ Ready - Full power monitoring enabled (v5.13.1 + Bidirectional Buttons)');
   }
 
   /**
