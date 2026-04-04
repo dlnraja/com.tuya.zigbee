@@ -228,10 +228,80 @@ function checkFlowCards() {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
+// CHECK 6: HybridSwitchBase/PlugBase subclasses with defensive init wrapping
+// v5.11.182: Root cause of "Driver Not Initialized" (Wiosenna_26, Rikjes)
+// ═══════════════════════════════════════════════════════════════════════════════
+function checkDefensiveInit() {
+  console.log('\n📋 Check 6: Defensive init wrapping (register listeners on error)...');
+
+  const drivers = fs.readdirSync(DRIVERS_DIR).filter(d => {
+    const deviceFile = path.join(DRIVERS_DIR, d, 'device.js');
+    if (!fs.existsSync(deviceFile)) return false;
+    const content = fs.readFileSync(deviceFile, 'utf8');
+    return content.includes('HybridSwitchBase') || content.includes('HybridPlugBase');
+  });
+
+  for (const driver of drivers) {
+    const deviceFile = path.join(DRIVERS_DIR, driver, 'device.js');
+    const content = fs.readFileSync(deviceFile, 'utf8');
+
+    // If it overrides onNodeInit, it must either:
+    // 1. Call super.onNodeInit() (which now has defensive wrapping), or
+    // 2. Register its own capability listeners
+    if (content.includes('async onNodeInit')) {
+      const hasSuper = content.includes('super.onNodeInit');
+      const hasOwnListeners = content.includes('registerCapabilityListener');
+      const hasZclOnly = content.includes('_initZclOnlyMode');
+
+      if (!hasSuper && !hasOwnListeners && !hasZclOnly) {
+        error(driver, 'Overrides onNodeInit without calling super.onNodeInit() or registering listeners directly');
+      } else {
+        ok(driver, 'Init chain properly handled');
+      }
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// CHECK 7: Endpoint-capability alignment for multi-gang devices
+// Forum issue: onoff.2 must map to endpoint 2, onoff.gang3 to endpoint 3, etc.
+// Without this, Homey SDK defaults all commands to EP1 or throws undefined
+// ═══════════════════════════════════════════════════════════════════════════════
+function checkEndpointAlignment() {
+  console.log('\n📋 Check 7: Endpoint-capability alignment...');
+
+  const drivers = fs.readdirSync(DRIVERS_DIR).filter(d =>
+    fs.statSync(path.join(DRIVERS_DIR, d)).isDirectory()
+  );
+
+  for (const driver of drivers) {
+    const composeFile = path.join(DRIVERS_DIR, driver, 'driver.compose.json');
+    if (!fs.existsSync(composeFile)) continue;
+
+    try {
+      const compose = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
+      const capabilities = compose.capabilities || [];
+      const endpoints = compose.zigbee?.endpoints || {};
+
+      // Find multi-gang capabilities
+      for (const cap of capabilities) {
+        const gangMatch = cap.match(/\.(?:gang)?(\d+)$/);
+        if (gangMatch) {
+          const expectedEP = parseInt(gangMatch[1]);
+          if (!endpoints[String(expectedEP)]) {
+            warn(driver, `Capability '${cap}' implies EP${expectedEP} but no endpoint ${expectedEP} defined in zigbee.endpoints`);
+          }
+        }
+      }
+    } catch (e) { /* already reported */ }
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
 // RUN ALL CHECKS
 // ═══════════════════════════════════════════════════════════════════════════════
 console.log('═══════════════════════════════════════════════════════════════');
-console.log('  TUYA ZIGBEE DRIVER VALIDATOR v5.13.1');
+console.log('  TUYA ZIGBEE DRIVER VALIDATOR v5.11.182');
 console.log('  Based on forum reports + debugging discoveries');
 console.log('═══════════════════════════════════════════════════════════════');
 
@@ -240,6 +310,8 @@ checkSuperOnNodeInit();
 checkMultiGangCapabilities();
 checkDuplicateFingerprints();
 checkFlowCards();
+checkDefensiveInit();
+checkEndpointAlignment();
 
 console.log('\n═══════════════════════════════════════════════════════════════');
 console.log(`  RESULTS: ${errors} errors, ${warnings} warnings`);
