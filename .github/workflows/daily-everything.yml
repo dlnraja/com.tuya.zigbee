@@ -197,6 +197,18 @@ jobs:
           DRY_RUN: 'true'
         run: node .github/scripts/nightly-processor.js
 
+      # ===== 6b. DRIVER VALIDATION: Check for known bugs =====
+      - name: "6b. Driver Integrity Validator"
+        id: driver_validate
+        continue-on-error: true
+        timeout-minutes: 5
+        run: |
+          echo "=== Running Driver Validator ==="
+          node .github/scripts/validate-drivers.js 2>&1 | tee /tmp/validate-drivers.txt || true
+          if grep -q "❌" /tmp/validate-drivers.txt; then
+            echo "⚠️ Driver validation found errors — see log above"
+          fi
+
       # ===== 7. FORUM ACTIVITY: Scrape ALL account activity =====
       - name: "7. Forum Activity Scraper"
         id: forum_activity

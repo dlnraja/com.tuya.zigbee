@@ -567,6 +567,25 @@ async function main() {
     merged = await processPR(parseInt(prNum, 10));
   }
 
+  // v5.13.1: Post-merge driver validation
+  if (merged) {
+    log('\n🔍 Running post-merge driver validation...');
+    try {
+      const validateResult = require('child_process').execSync(
+        'node .github/scripts/validate-drivers.js 2>&1',
+        { encoding: 'utf8', timeout: 30000 }
+      );
+      if (validateResult.includes('❌')) {
+        log('⚠️ Post-merge validation found issues:');
+        log(validateResult.split('\n').filter(l => l.includes('❌') || l.includes('RESULTS')).join('\n'));
+      } else {
+        log('✅ Post-merge validation passed');
+      }
+    } catch (e) {
+      log(`⚠️ Validation script: ${e.message.split('\n').slice(0, 3).join(' ')}`);
+    }
+  }
+
   // Set output
   if (SUM) {
     log('\n---');

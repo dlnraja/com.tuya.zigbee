@@ -52,6 +52,12 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
     // v5.5.43: Cleanup orphan capabilities
     await this._cleanupOrphanCapabilities();
 
+    // v5.13.1: CRITICAL FIX — Call super.onNodeInit() to register capability listeners
+    // Without this, HybridSwitchBase._registerCapabilityListeners() never fires,
+    // causing "Missing Capability Listener: onoff" for standard Tuya DP 2-gang switches
+    // (Forum: Rikjes #1676, _TZ3000_jl7qyupf)
+    await super.onNodeInit({ zclNode });
+
     // v5.5.26: Setup power measurement for ZCL devices
     await this._setupPowerMeasurement(zclNode);
 
@@ -61,7 +67,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
     // v5.5.412: Initialize virtual buttons
     await this.initVirtualButtons();
 
-    this.log('[SWITCH-2G] v5.5.896 - Physical button detection enabled');
+    this.log('[SWITCH-2G] v5.13.1 - Physical button + capability listeners enabled');
   }
 
   /**
