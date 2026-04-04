@@ -178,6 +178,29 @@ class SirenTimeBoundCluster extends BoundCluster {
 class sensortemphumidsensor extends TuyaSpecificClusterDevice {
 
   async onNodeInit({ zclNode }) {
+    // --- Attribute Reporting Configuration (auto-generated) ---
+    try {
+      await this.configureAttributeReporting([
+        {
+          cluster: 'msTemperatureMeasurement',
+          attributeName: 'measuredValue',
+          minInterval: 30,
+          maxInterval: 600,
+          minChange: 50,
+        },
+        {
+          cluster: 'msRelativeHumidity',
+          attributeName: 'measuredValue',
+          minInterval: 30,
+          maxInterval: 600,
+          minChange: 100,
+        }
+      ]);
+      this.log('Attribute reporting configured successfully');
+    } catch (err) {
+      this.log('Attribute reporting config failed (device may not support it):', err.message);
+    }
+
     this.printNode();
 
     this._timeBoundCluster = null;

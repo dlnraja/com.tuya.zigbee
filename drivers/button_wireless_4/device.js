@@ -40,6 +40,22 @@ class Button4GangDevice extends ButtonDevice {
   _zclNode = null;
 
   async onNodeInit({ zclNode }) {
+    // --- Attribute Reporting Configuration (auto-generated) ---
+    try {
+      await this.configureAttributeReporting([
+        {
+          cluster: 'genPowerCfg',
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 3600,
+          maxInterval: 43200,
+          minChange: 2,
+        }
+      ]);
+      this.log('Attribute reporting configured successfully');
+    } catch (err) {
+      this.log('Attribute reporting config failed (device may not support it):', err.message);
+    }
+
     this._zclNode = zclNode;
     this.log('═══════════════════════════════════════════════════════════════');
     this.log('[BUTTON4] 🔘 Button4GangDevice v5.7.18 initializing...');

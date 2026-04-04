@@ -44,6 +44,43 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
   }
 
   async onNodeInit({ zclNode }) {
+    // --- Attribute Reporting Configuration (auto-generated) ---
+    try {
+      await this.configureAttributeReporting([
+        {
+          cluster: 'genPowerCfg',
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 3600,
+          maxInterval: 43200,
+          minChange: 2,
+        },
+        {
+          cluster: 'haElectricalMeasurement',
+          attributeName: 'activePower',
+          minInterval: 10,
+          maxInterval: 300,
+          minChange: 5,
+        },
+        {
+          cluster: 'haElectricalMeasurement',
+          attributeName: 'rmsVoltage',
+          minInterval: 30,
+          maxInterval: 600,
+          minChange: 1,
+        },
+        {
+          cluster: 'haElectricalMeasurement',
+          attributeName: 'rmsCurrent',
+          minInterval: 30,
+          maxInterval: 600,
+          minChange: 10,
+        }
+      ]);
+      this.log('Attribute reporting configured successfully');
+    } catch (err) {
+      this.log('Attribute reporting config failed (device may not support it):', err.message);
+    }
+
     // v5.8.95: Removed redundant _markAppCommand + broken _handleTuyaDatapoint wrapper.
     // HybridSwitchBase._setGangOnOff() now calls PhysicalButtonMixin.markAppCommand() centrally.
     await super.onNodeInit({ zclNode });

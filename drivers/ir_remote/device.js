@@ -37,6 +37,22 @@ class IRRemoteDevice extends ZigBeeDevice {
   get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
+    // --- Attribute Reporting Configuration (auto-generated) ---
+    try {
+      await this.configureAttributeReporting([
+        {
+          cluster: 'genPowerCfg',
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 3600,
+          maxInterval: 43200,
+          minChange: 2,
+        }
+      ]);
+      this.log('Attribute reporting configured successfully');
+    } catch (err) {
+      this.log('Attribute reporting config failed (device may not support it):', err.message);
+    }
+
     // v5.13.3: IR remotes are USB-powered, remove battery capthis.log('[IR] Init Zigbee IR Remote — Zosung protocol');
     this._seq = 0;
     this._pendingSend = null;   // { msg: string, seq: number, resolve, reject }

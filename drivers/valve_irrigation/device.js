@@ -33,6 +33,22 @@ class ValveIrrigationDevice extends HybridPlugBase {
   }
 
   async onNodeInit({ zclNode }) {
+    // --- Attribute Reporting Configuration (auto-generated) ---
+    try {
+      await this.configureAttributeReporting([
+        {
+          cluster: 'genPowerCfg',
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 3600,
+          maxInterval: 43200,
+          minChange: 2,
+        }
+      ]);
+      this.log('Attribute reporting configured successfully');
+    } catch (err) {
+      this.log('Attribute reporting config failed (device may not support it):', err.message);
+    }
+
     // Parent handles onoff listener - DO NOT re-register
     await super.onNodeInit({ zclNode });
     this.log('[VALVE-IRR] v5.5.129 - DPs: 1,5-7,11,13-15,101-104 | ZCL: 6,1,EF00');
