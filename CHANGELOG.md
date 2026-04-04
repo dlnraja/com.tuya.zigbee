@@ -4,7 +4,13 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.186] - 2026-04-04
+## [5.11.187] - 2026-04-04
+
+### Maintenance
+- No user-facing changes in this release.
+---
+
+ [5.11.186] - 2026-04-04
 
 ### Bug Fixes
 - Fixed issues with device compatibility for certain Zigbee devices.
