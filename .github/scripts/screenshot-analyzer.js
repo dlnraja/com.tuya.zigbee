@@ -6,20 +6,20 @@ const PROMPTS={
   deep:`Analyze this screenshot from a Tuya/Zigbee smart home app. Extract ALL visible information as JSON:
 {
   "app": "which app (Homey/Tuya Smart/SmartLife/Z2M/ZHA/other)",
-  "fingerprints": ["_TZxxxx_xxx manufacturerNames if visible"],
-  "productIds": ["TSxxxx if visible"],
+  "fingerprints": ["_TZxxxx_xxx manufacturerNames if visible. BEWARE: manufacturerName alone does NOT uniquely identify a Tuya device, it needs productId too."],
+  "productIds": ["TSxxxx if visible. CRITICAL for resolving driver overlaps."],
   "deviceType": "sensor/switch/cover/thermostat/etc",
   "deviceName": "visible device name",
   "capabilities": ["list ALL visible sensor readings, controls, toggles"],
   "readings": {"capability": "value with unit"},
   "settings": ["visible settings/options"],
   "errors": ["any error messages or warnings"],
-  "missingData": ["sensors showing no data or dashes"],
+  "missingData": ["sensors showing no data, dashes, 0, or null"],
   "powerSource": "battery/mains/usb/unknown",
   "uiFeatures": ["special UI elements: graphs, schedules, scenes, etc"],
   "clusterInfo": ["any visible cluster IDs or DP numbers"],
-  "firmwareInfo": "any visible firmware/version info",
-  "competitorFeatures": ["features this app has that might be missing in our app"]
+  "semanticDiscrepancies": ["If Tuya app: what features is the Homey app missing? If Homey app: are values incoherent (e.g. 2300V instead of 230V, 0.2C instead of 20C) or empty?"],
+  "driverEnrichment": ["Specific variables, DPs, or divisors needed to fix the above missing or incoherent data. Mention fingerprint + productId pairing logic."]
 }
 Return ONLY valid JSON. If not a smart home screenshot, return NULL.`,
 
@@ -125,8 +125,9 @@ function mergeAnalyses(results){
     competitorFeatures:toArr(merged.competitorFeatures),
     deviceType:merged.deviceType,
     deviceName:merged.deviceName,
-    app:merged.app,
     powerSource:merged.powerSource,
+    semanticDiscrepancies:results.flatMap(r=>r.parsed?.semanticDiscrepancies||[]).filter(Boolean),
+    driverEnrichment:results.flatMap(r=>r.parsed?.driverEnrichment||[]).filter(Boolean),
     imageCount:results.length
   };
 }
@@ -145,6 +146,8 @@ function formatForAIContext(analysis){
   if(analysis.missingData?.length)parts.push('Missing data: '+analysis.missingData.join(', '));
   if(analysis.powerSource)parts.push('Power: '+analysis.powerSource);
   if(analysis.competitorFeatures?.length)parts.push('Competitor features to consider: '+analysis.competitorFeatures.join(', '));
+  if(analysis.semanticDiscrepancies?.length)parts.push('Semantic Discrepancies (Logic/Values): '+analysis.semanticDiscrepancies.join(' | '));
+  if(analysis.driverEnrichment?.length)parts.push('Driver Enrichment (DPs/Variants): '+analysis.driverEnrichment.join(' | '));
   if(analysis.uiFeatures?.length)parts.push('UI features: '+analysis.uiFeatures.join(', '));
   return parts.join('\n');
 }

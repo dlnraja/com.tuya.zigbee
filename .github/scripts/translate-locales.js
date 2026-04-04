@@ -42,15 +42,27 @@ async function translateLocales() {
             const prompt = `Translate the values of this JSON object from English to ${lang.toUpperCase()}. Retain the exact same keys. Output ONLY valid JSON, nothing else.\n\n${JSON.stringify(mapping, null, 2)}`;
             const res = await callAI(prompt, "You are a professional JSON translation bot.", { maxTokens: 1500, complexity: 'low' });
 
+            let success = false;
             if (res && res.text) {
                 try {
                     const jsonMatch = res.text.match(/\{[\s\S]*\}/);
                     if (jsonMatch) {
                         const tr = JSON.parse(jsonMatch[0]);
-                        for (const k of Object.keys(tr)) langData[k] = tr[k];
+                        for (const k of Object.keys(tr)) {
+                            if (mapping[k]) langData[k] = tr[k];
+                        }
+                        success = true;
                     }
                 } catch(e) {
-                    console.log(`❌ AI JSON parse failed for ${lang} chunk.`);
+                    console.log(`❌ AI JSON parse failed for ${lang} chunk. Using fallback.`);
+                }
+            }
+            
+            // NO-AI FALLBACK
+            if (!success) {
+                console.log(`⚠️ Applying non-AI fallback for ${lang} chunk.`);
+                for (const k of chunk) {
+                    langData[k] = `[EN] ${mapping[k]}`;
                 }
             }
         }
