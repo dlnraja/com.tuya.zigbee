@@ -98,17 +98,18 @@ async function main() {
     r.src.gh = await require('./parse-issues')();
   } catch(e) { r.src.gh = { error: e.message }; }
 
-  // Dedupe new fingerprints, prefer entries with more details
+  // Dedupe new fingerprints using mfr+productId (different PIDs = different devices!)
   const seen = {};
   r.newFps = r.newFps.filter(fp => {
-    if (seen[fp.mfr]) {
+    const key = `${fp.mfr}||${fp.productId || '-'}`;
+    if (seen[key]) {
       // Keep the one with more details
-      if (fp.productId && !seen[fp.mfr].productId) {
-        seen[fp.mfr] = fp;
+      if (fp.vendor && !seen[key].vendor) {
+        seen[key] = fp;
       }
       return false;
     }
-    seen[fp.mfr] = fp;
+    seen[key] = fp;
     return true;
   });
 
