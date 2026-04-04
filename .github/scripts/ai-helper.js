@@ -81,10 +81,20 @@ async function callAI(text,sysPrompt,opts={}){
   // 1. OpenRouter (Aggregator - High priority)
   if (process.env.OPENROUTER_API_KEY && cbOk('openrouter')) {
     console.log('  Trying OpenRouter...');
+    let orModel = 'google/gemini-2.0-flash-lite-preview-02-05:free'; // Safe fallback
+    try {
+      const mr = await fetchT('https://openrouter.ai/api/v1/models', {}, 3000);
+      if (mr.ok) {
+        const d = await mr.json();
+        const frees = d.data.filter(m => m.pricing && m.pricing.prompt === "0" && m.id.endsWith(':free'));
+        if (frees.length > 0) orModel = frees[0].id; // Pick first available free model
+      }
+    } catch(e) {}
+    
     const res = await callAIEngine(
       'https://openrouter.ai/api/v1/chat/completions',
       {'Authorization': 'Bearer ' + process.env.OPENROUTER_API_KEY, 'Content-Type': 'application/json'},
-      {model:'meta-llama/llama-3.1-8b-instruct:free', messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
+      {model:orModel, messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
       'openrouter'
     );
     if (res) return res;
