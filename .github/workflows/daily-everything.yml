@@ -220,28 +220,31 @@ jobs:
         continue-on-error: true
         timeout-minutes: 5
         run: |
-          echo "=== 1/3: SDK v3 Flow Card Crash Prevention ==="
+          echo "=== 1/4: SDK v3 Flow Card Crash Prevention ==="
           node scripts/maintenance/fix-unsafe-flow-cards.js 2>&1 || echo "⚠️ flow-card fixer unavailable"
 
           echo ""
-          echo "=== 2/3: alarm_battery Capability Injection ==="
-          node scripts/maintenance/inject-alarm-battery.js 2>&1 || echo "⚠️ alarm-battery injector unavailable"
+          echo "=== 2/4: SDK v3 alarm_battery Conflict Revert ==="
+          node scripts/maintenance/revert-alarm-battery-conflict.js 2>&1 || echo "⚠️ conflict reverter unavailable"
 
           echo ""
-          echo "=== 3/3: Remote/Button Empty Capabilities Fix ==="
+          echo "=== 3/4: Remote/Button Empty Capabilities Fix ==="
           node scripts/maintenance/fix-empty-remote-caps.js 2>&1 || echo "⚠️ remote-caps fixer unavailable"
 
           echo ""
-          echo "=== Syntax Validation ==="
+          echo "=== 4/4: Syntax + JSON Validation Gate ==="
           FAIL=0
           for f in drivers/*/device.js; do
-            node -c "$f" 2>/dev/null || { echo "❌ Syntax error: $f"; FAIL=1; }
+            node -c "$f" 2>/dev/null || { echo "❌ JS Syntax error: $f"; FAIL=1; }
+          done
+          for f in drivers/*/driver.compose.json; do
+            node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null || { echo "❌ JSON error: $f"; FAIL=1; }
           done
           if [ $FAIL -eq 1 ]; then
-            echo "❌ Syntax errors found — rolling back driver changes"
+            echo "❌ Validation errors — rolling back driver changes"
             git checkout -- drivers/
           else
-            echo "✅ All drivers pass syntax validation"
+            echo "✅ All drivers pass validation"
           fi
 
       # ===== 6d. SEMANTIC LINTER: SDK v3 Smart Enrichment =====
