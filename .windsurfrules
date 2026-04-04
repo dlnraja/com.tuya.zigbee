@@ -264,3 +264,25 @@ this.homey.settings.get('key');             // ManagerSettings
 - Don't blindly pipe AI output into source files
 - SDK v3 linter checks: async init, Manager globals, v2 API, await setCapability, listener leaks, settings keys, titleFormatted
 
+## VISIBILITY MATRIX (Ghost Mode vs Public Mode)
+
+### SILENT sources (implement code, hide attribution):
+- Johan Bendz GitHub (JohanBendz/com.tuya.zigbee)
+- Forum T26439, T146735, T89271, all non-T140352 threads
+- Tuya WiFi threads, external forks, community PRs
+- Zigbee2MQTT, ZHA, deConz discoveries
+- → Code: YES (implement) | Logs/Changelog: NO | Forum: NO | Commits: generic wording
+
+### PUBLIC sources (full visibility):
+- Forum T140352 (dlnraja's own thread)
+- dlnraja's GitHub issues/PRs
+- Direct user requests from T140352
+- All descendant forks of dlnraja/com.tuya.zigbee
+- → Code: YES | Logs: YES | Changelog: YES | Forum: YES (merge with last post)
+
+### Forum Ghostwriter Rules:
+- If last poster = dlnraja: AI edits/merges into existing post (organic fusion)
+- If last poster = someone else: AI creates new reply (only on T140352)
+- NEVER consecutive bot posts — always merge with own last post
+- Ghostwriter tone: casual, like a dev editing their own post ("edit: just pushed...")
+- NEVER expose: automation, bots, AI, pipelines, Johan, upstream sync

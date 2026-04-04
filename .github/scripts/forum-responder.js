@@ -351,34 +351,49 @@ async function main(){
               // ---------------------------------------------------------
         // HUMANIZATION & SECRET FIXES HIDING STEP
         // If the last post is from the owner (dlnraja) and we are about to merge or reply,
-        // we pass the combined content to the AI to rewrite it in a deeply human, natural, empathetic tone.
-        // We explicitly instruct it NOT to mention internal GitHub YAML automation, background rule checks, or invisible JSON fixes.
+        // we pass the combined content to the AI to rewrite in an organic, natural tone.
+        // GHOSTWRITER MODE: When merging, AI rewrites the existing post with new info woven in naturally.
         // ---------------------------------------------------------
         let isMerging = !!lastOwn;
-        let contentToHumanize = isMerging ? (lastOwn.raw.replace(/<!-- bot-reply -->/g, '') + '\n\n' + reply) : reply;
+        let contentToHumanize, humanizePrompt;
+        
+        if (isMerging) {
+          // ORGANIC MERGE: AI rewrites the existing post with new info fused in
+          contentToHumanize = `EXISTING POST (by dlnraja):\n${lastOwn.raw.replace(/<!-- bot-reply -->/g, '')}\n\nNEW INFORMATION TO WEAVE IN:\n${reply}`;
+          humanizePrompt = `You ARE dlnraja, the solo dev of Universal Tuya Zigbee on Homey.
+You're editing your own previous forum post to add new information. Make it look like YOU came back to your PC and naturally updated your message.
+
+CRITICAL RULES:
+1. ORGANIC FUSION: Weave the NEW INFORMATION into the EXISTING POST naturally. Don't append it — integrate it as if you just edited your own message.
+2. CONTINUITY: Use natural edit patterns like "Edit: just pushed a fix for...", "ah btw I also checked...", "update: the DP mapping is now...", or simply expand existing paragraphs.
+3. TONE: Match the exact tone and language of the EXISTING POST. If it's casual, stay casual. If it's technical, stay technical. If it's in French, write in French.
+4. ABSOLUTELY FORBIDDEN: "Mise à jour automatique", "Voici un ajout", "As an AI", "---", "Update:", numbered lists, ## headers, corporate greetings, "Happy to help", "Feel free to", signatures.
+5. NEVER mention: GitHub Actions, pipelines, bots, AI, scraping, automation, Johan Bendz, upstream sync, workflows, cron jobs, token rotation.
+6. KEEP IT SHORT: Don't bloat the post. Add the new info concisely. Max 400 words total.
+7. Return ONLY the final post text ready to publish. Nothing else.`;
+        } else {
+          // NEW POST: Write a fresh reply as dlnraja
+          contentToHumanize = reply;
+          humanizePrompt = `You ARE dlnraja, solo dev of Universal Tuya Zigbee on Homey. Write a casual forum reply.
+Sound like a real person typing between coding sessions — short sentences, no corporate tone.
+ABSOLUTELY NO: "Hi @user," greetings, bullet lists with arrows, ## headers, numbered steps, "Happy to help", "Feel free to", "As always,", signatures.
+NEVER mention: GitHub Actions, pipelines, bots, AI, scraping, automation, Johan Bendz, upstream sync, workflows.
+Mention casually that you checked their specific case (Z2M cross-reference, diagnostics, logs).
+Max 250 words. Return ONLY the text.`;
+        }
         
         if(!dry) {
-            console.log('  🤖 Applying humanization pass to final response...');
-            const humanizePrompt = `Rewrite the following forum response to sound entirely human, natural, and empathetic, written by the maintainer 'dlnraja' responding directly to users.
-CRITICAL INSTRUCTIONS:
-1. Address the users' context and issues naturally.
-2. DO NOT mention background YAML automations, GitHub Actions, invisible JSON rule fixes, or AI/bot systems.
-3. Keep technical fixes focused ONLY on what the user actually cares about (e.g. "I added your fingerprint to the switch driver" or "I fixed the battery reading").
-4. Mention casually that you processed their specific requests by doing deep cross-referencing of databases (Z2M, diagnostics, logs, email reports, external DBs) and deep analysis, showing them you take their specific post highly seriously and manually review their cases.
-5. Keep it relatively concise but friendly.
-6. Return ONLY the rewritten text, nothing else.
-7. Output in French or English depending on the user's language.`;
-            
+            console.log('  🤖 Ghostwriter: ' + (isMerging ? 'organic merge' : 'new reply') + '...');
             try {
                 const hRes = await callAI(contentToHumanize, humanizePrompt, { maxTokens: 2000, complexity: 'high' });
                 if (hRes && hRes.text) {
-                    reply = hRes.text;
-                    console.log('  ✅ Humanization successful.');
+                    reply = sanitize(hRes.text);
+                    console.log('  ✅ Ghostwriter successful (' + (isMerging ? 'merged' : 'new') + ', model: ' + hRes.model + ')');
                 } else {
-                    console.log('  ⚠️ Humanization returned empty, using original.');
+                    console.log('  ⚠️ Ghostwriter returned empty, using original.');
                 }
             } catch(e) {
-                console.log('  ⚠️ Humanization failed:', e.message);
+                console.log('  ⚠️ Ghostwriter failed:', e.message);
             }
         }
       if(lastOwn){
