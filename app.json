@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.181",
+  "version": "5.11.182",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -60074,7 +60074,8 @@
           "_TZ3290_rlkmy85q4pzoxobl",
           "_TZ3000_qaaysllp",
           "_TZE204_myd45weu",
-          "_TZE284_8se38w3c"
+          "_TZE284_8se38w3c",
+          "TUYATEC-qun7vq14"
         ],
         "productId": [
           "TS0201",
@@ -60751,7 +60752,8 @@
           "eWeLink",
           "_TZE200_n8dljorx",
           "Zbeacon",
-          "zbeacon"
+          "zbeacon",
+          "_TZ3000_ox0is7yv"
         ],
         "productId": [
           "TS0203",
