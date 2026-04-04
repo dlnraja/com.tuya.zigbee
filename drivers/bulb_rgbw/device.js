@@ -36,6 +36,22 @@ class RGBWBulbDevice extends HybridLightBase {
   }
 
   async onNodeInit({ zclNode }) {
+    // --- Attribute Reporting Configuration (auto-generated) ---
+    try {
+      await this.configureAttributeReporting([
+        {
+          cluster: 'genPowerCfg',
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 3600,
+          maxInterval: 43200,
+          minChange: 2,
+        }
+      ]);
+      this.log('Attribute reporting configured successfully');
+    } catch (err) {
+      this.log('Attribute reporting config failed (device may not support it):', err.message);
+    }
+
     this.log('[RGBW] v5.5.129 - DPs: 1-7,21,24-26 | ZCL: 6,8,300,EF00');
     await this._setupColorCluster(zclNode);
     this._setupRGBWListeners();

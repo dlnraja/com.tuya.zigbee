@@ -9,6 +9,22 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
  */
 class HVACControllerDevice extends TuyaZigbeeDevice {
   async onNodeInit({ zclNode }) {
+    // --- Attribute Reporting Configuration (auto-generated) ---
+    try {
+      await this.configureAttributeReporting([
+        {
+          cluster: 'msTemperatureMeasurement',
+          attributeName: 'measuredValue',
+          minInterval: 30,
+          maxInterval: 600,
+          minChange: 50,
+        }
+      ]);
+      this.log('Attribute reporting configured successfully');
+    } catch (err) {
+      this.log('Attribute reporting config failed (device may not support it):', err.message);
+    }
+
 
     const MODE_MAP = { 0: 'cool', 1: 'heat', 2: 'auto' };
     const MODE_MAP_REV = { 'cool': 0, 'heat': 1, 'auto': 2, 'off': 0 };

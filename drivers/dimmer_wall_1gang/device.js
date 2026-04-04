@@ -37,6 +37,22 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(HybridLightBase) {
   }
 
   async onNodeInit({ zclNode }) {
+    // --- Attribute Reporting Configuration (auto-generated) ---
+    try {
+      await this.configureAttributeReporting([
+        {
+          cluster: 'haElectricalMeasurement',
+          attributeName: 'activePower',
+          minInterval: 10,
+          maxInterval: 300,
+          minChange: 5,
+        }
+      ]);
+      this.log('Attribute reporting configured successfully');
+    } catch (err) {
+      this.log('Attribute reporting config failed (device may not support it):', err.message);
+    }
+
     // Parent handles ALL: onoff/dim listeners, ZCL setup
     await super.onNodeInit({ zclNode });
     // v5.5.412: Initialize virtual buttons
