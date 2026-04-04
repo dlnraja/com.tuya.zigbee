@@ -215,75 +215,40 @@ jobs:
             echo "⚠️ Driver validation found errors — see log above"
           fi
 
-      # ===== 6c. SEMANTIC LINTER: SDK v3 Static Validator =====
-      - name: "🤖 SDK v3 Semantic Lint (safe, report-only)"
+      # ===== 6c. SEMANTIC LINTER: SDK v3 Smart Enrichment =====
+      - name: "🤖 SDK v3 Smart Enrichment Linter"
         id: copilot_linter
         continue-on-error: true
-        timeout-minutes: 5
+        timeout-minutes: 10
+        env:
+          DRY_RUN: 'false'
+          AI_ENRICH: 'true'
+          MAX_LINT_FILES: '20'
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY || '' }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
+          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
+        run: node scripts/maintenance/sdk3-smart-linter.js
+
+      - name: "🚩 Commit SDK v3 Linter Fixes"
+        continue-on-error: true
         run: |
-          CHANGED_FILES=$(git diff --name-only HEAD~1 HEAD 2>/dev/null | grep 'drivers/.*\.js$' || true)
-
-          if [ -z "$CHANGED_FILES" ]; then
-            echo "ℹ️ No driver files changed to analyze."
-            exit 0
+          git add drivers/ .github/state/ai-rules-memory.json .github/state/sdk3-lint-report.json 2>/dev/null || true
+          if ! git diff --cached --quiet 2>/dev/null; then
+            # Post-commit validation gate: build + validate
+            if npx homey app build 2>&1 | tail -1 | grep -q "error"; then
+              echo "❌ Build failed after linter — rolling back"
+              git checkout -- drivers/
+            else
+              git commit -m "🤖 [SDK v3 Linter] Smart enrichment — auto-fix + AI suggestions [skip ci]"
+              echo "✅ Linter fixes committed"
+            fi
+          else
+            echo "ℹ️ No linter changes to commit"
           fi
-
-          ISSUES=0
-          for file in $CHANGED_FILES; do
-            [ ! -f "$file" ] && continue
-            echo "🔍 Analyzing $file..."
-
-            # SDK v3 Rule 1: No synchronous onInit (must be async onNodeInit for Zigbee)
-            if grep -qE '\bonInit\b\s*\(' "$file" && ! grep -qE 'async\s+onInit\s*\(' "$file"; then
-              echo "::warning file=$file::SDK v3: onInit() should be async. For Zigbee use async onNodeInit()."
-              ISSUES=$((ISSUES+1))
-            fi
-
-            # SDK v3 Rule 2: No old Manager globals (ManagerDrivers, ManagerSettings, etc)
-            if grep -qE '\bManager[A-Z]\w+\b' "$file" && ! grep -q 'require.*Manager' "$file"; then
-              echo "::warning file=$file::SDK v3: Direct Manager access detected. Use this.homey.<managerId> instead."
-              ISSUES=$((ISSUES+1))
-            fi
-
-            # SDK v3 Rule 3: No this.homey.zigbee.getDevice() (v2 pattern)
-            if grep -q 'this\.homey\.zigbee\.getDevice' "$file"; then
-              echo "::error file=$file::SDK v3 VIOLATION: this.homey.zigbee.getDevice() is SDK v2. Remove it."
-              ISSUES=$((ISSUES+1))
-            fi
-
-            # SDK v3 Rule 4: setCapabilityValue should be awaited
-            if grep -qE 'this\.setCapabilityValue\(' "$file" && grep -qE '[^a][^w][^a][^i][^t]\s*this\.setCapabilityValue\(' "$file" 2>/dev/null; then
-              AWAIT_COUNT=$(grep -c 'await.*this\.setCapabilityValue\(' "$file" || echo 0)
-              TOTAL_COUNT=$(grep -c 'this\.setCapabilityValue\(' "$file" || echo 0)
-              if [ "$AWAIT_COUNT" -lt "$TOTAL_COUNT" ]; then
-                echo "::warning file=$file::SDK v3: $((TOTAL_COUNT-AWAIT_COUNT))/$TOTAL_COUNT setCapabilityValue() calls may be missing await."
-              fi
-            fi
-
-            # SDK v3 Rule 5: Memory leak — registerCapabilityListener without cleanup
-            LISTENER_COUNT=$(grep -c 'registerCapabilityListener\|registerMultipleCapabilityListener' "$file" 2>/dev/null || echo 0)
-            if [ "$LISTENER_COUNT" -gt 8 ]; then
-              echo "::warning file=$file::Memory: $LISTENER_COUNT capability listeners registered. Verify no duplicates on device restart."
-            fi
-
-            # Tuya-specific: Settings keys must be snake_case
-            if grep -q 'zb_modelId\|zb_manufacturerName' "$file"; then
-              echo "::error file=$file::CRITICAL: Wrong settings key! Use zb_model_id and zb_manufacturer_name (snake_case)."
-              ISSUES=$((ISSUES+1))
-            fi
-
-            # Tuya-specific: No titleFormatted with [[device]] in flow triggers
-            if grep -q 'titleFormatted.*\[\[device\]\]' "$file"; then
-              echo "::error file=$file::Bug: titleFormatted with [[device]] causes manual device selection bug."
-              ISSUES=$((ISSUES+1))
-            fi
-
-            echo "  ✅ $file analyzed."
-          done
-
-          echo "SDK v3 Lint: $ISSUES issue(s) found across $(echo "$CHANGED_FILES" | wc -w) file(s)."
-          # Report only — never auto-modify driver files in CI
-
 
 
       # ===== 7. FORUM ACTIVITY: Scrape ALL account activity =====

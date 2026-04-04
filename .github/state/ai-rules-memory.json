@@ -1,0 +1,31 @@
+{
+  "patterns": [
+    {
+      "id": "sdk3-await-capability",
+      "desc": "setCapabilityValue() calls should be awaited.",
+      "severity": "info",
+      "count": 3,
+      "firstSeen": "2026-04-04T17:57:49.240Z",
+      "lastSeen": "2026-04-04T17:57:49.253Z",
+      "files": [
+        "air_purifier",
+        "air_quality_co2",
+        "bulb_rgb"
+      ]
+    },
+    {
+      "id": "sdk3-ondeleted-cleanup",
+      "desc": "Driver has listeners but no onDeleted/onUninit cleanup.",
+      "severity": "info",
+      "count": 1,
+      "firstSeen": "2026-04-04T17:57:49.253Z",
+      "lastSeen": "2026-04-04T17:57:49.253Z",
+      "files": [
+        "bulb_rgb"
+      ]
+    }
+  ],
+  "lastRun": "2026-04-04T17:57:49.068Z",
+  "totalRuns": 1,
+  "totalIssues": 4
+}

@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-04-04T17:57:49.258Z",
+  "driversScanned": 5,
+  "staticIssues": 4,
+  "autoFixed": 0,
+  "aiSuggestions": 0,
+  "aiApplied": 0,
+  "dryRun": true,
+  "results": [
+    {
+      "driver": "air_purifier",
+      "issues": [
+        "sdk3-await-capability"
+      ]
+    },
+    {
+      "driver": "air_quality_co2",
+      "issues": [
+        "sdk3-await-capability"
+      ]
+    },
+    {
+      "driver": "air_quality_comprehensive",
+      "issues": []
+    },
+    {
+      "driver": "bulb_dimmable",
+      "issues": []
+    },
+    {
+      "driver": "bulb_rgb",
+      "issues": [
+        "sdk3-await-capability",
+        "sdk3-ondeleted-cleanup"
+      ]
+    }
+  ],
+  "memoryPatterns": 2
+}
