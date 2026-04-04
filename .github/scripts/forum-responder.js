@@ -377,16 +377,8 @@ CRITICAL INSTRUCTIONS:
                 console.log('  ⚠️ Humanization failed:', e.message);
             }
         }
-        
-        reply += '\n<!-- bot-reply -->';
-      
       if(lastOwn){
-        mergeResult=smartMergePost(lastOwn.raw,reply);
-        if(mergeResult.action==='skip'){
-          console.log('  ⏭ SmartMerge skip:',mergeResult.reason);
-          state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};
-          continue
-        }
+        mergeResult = { action: 'edit', content: reply, reason: 'unconditional-humanized-merge' };
       }
       
       const editTarget=lastOwn?lastOwn:null;
