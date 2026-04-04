@@ -1,6 +1,6 @@
-# 🏠 Universal Tuya Zigbee v5.11.154
+# 🏠 Universal Tuya Zigbee v5.11.179
 
-> **191 drivers** · **4323+ fingerprints** · Updated 2026-04-03
+> **193 drivers** · **4329+ fingerprints** · Updated 2026-04-04
 
 Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.
 
@@ -8,9 +8,9 @@ Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehens
 
 **Stable:** [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/) · **Test:** [Test Channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · **Source:** [GitHub](https://github.com/dlnraja/com.tuya.zigbee)
 
-## What's New (v5.11.154)
+## What's New (v5.11.179)
 
-Universal Tuya Zigbee app v5.11.154: No new drivers or fingerprints added.
+Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137.
 
 ## Supported Devices
 
@@ -18,17 +18,17 @@ Universal Tuya Zigbee app v5.11.154: No new drivers or fingerprints added.
 |---|---|---|
 | 🔌 Socket | 48 | 880 |
 | 💡 Light | 21 | 440 |
-| 📡 Sensor | 44 | 1853 |
+| 📡 Sensor | 45 | 1854 |
 | 🌡️ Thermostat | 13 | 348 |
 | 🪟 Windowcoverings | 3 | 161 |
 | 🔐 Lock | 4 | 22 |
 | 🌀 Fan | 10 | 37 |
 | 🔔 Doorbell | 2 | 8 |
-| 🎮 Remote | 17 | 89 |
-| 🔘 Button | 2 | 12 |
+| 🎮 Remote | 17 | 95 |
+| 🔘 Button | 2 | 9 |
 | 🔥 Heater | 4 | 12 |
 | 🚗 Garagedoor | 3 | 13 |
-| 📦 Other | 15 | 439 |
+| 📦 Other | 16 | 441 |
 | 📦 Curtain | 2 | 9 |
 
 [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) — search by fingerprint
@@ -45,13 +45,13 @@ Universal Tuya Zigbee app v5.11.154: No new drivers or fingerprints added.
 
 <details><summary>Previous versions</summary>
 
-**v5.11.152:** Universal Tuya Zigbee app v5.11.152 adds new device support and fixes several bugs for improved performance.
+**v5.11.178:** Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137.
 
-**v5.11.151:** Universal Tuya Zigbee app v5.11.151: Critical fix for SyntaxError crashes and updated drivers.
+**v5.11.177:** Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137.
 
-**v5.11.150:** Universal Tuya Zigbee app v5.11.150 adds new drivers and fingerprints, enhancing device compatibility.
+**v5.11.176:** Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137.
 
-**v5.11.149:** Universal Tuya Zigbee app v5.11.149 adds new drivers and fingerprints, enhancing device compatibility.
+**v5.11.175:** Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137.
 
 </details>
 
@@ -66,4 +66,4 @@ This app is free and open-source. If it's useful to you, a small donation helps 
 **PayPal:** [paypal.me/dlnraja](https://paypal.me/dlnraja) · **Revolut:** [revolut.me/dylanoul](https://revolut.me/dylanoul)
 
 ---
-*Last updated 2026-04-03 — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*
+*Last updated 2026-04-04 — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-03T15:17:20.226Z",
+  "timestamp": "2026-04-04T03:34:17.988Z",
   "added": [
     {
       "fp": "TUYATEC-qun7vq14",
@@ -34,7 +34,6 @@
     "lcdtemphumidluxsensor",
     "lcdtemphumidsensor_2",
     "lcdtemphumidsensor_3",
-    "motion_sensor_2",
     "outdoor_2_socket",
     "outdoor_plug",
     "pir_sensor_2",
@@ -57,7 +56,6 @@
     "rgb_spot_GU10",
     "rgb_spot_GardenLight",
     "rgb_wall_led_light",
-    "sirentemphumidsensor",
     "slim_motion_sensor",
     "smartPlug_DinRail",
     "smart_air_detection_box",
@@ -428,12 +426,12 @@
   },
   "summary": {
     "totalJohanFPs": 636,
-    "totalOurFPs": 3998,
+    "totalOurFPs": 3994,
     "missingFPs": 1,
     "addedFPs": 1,
     "skippedFPs": 0,
     "dpGaps": 0,
-    "newDrivers": 91,
+    "newDrivers": 89,
     "libClusters": 11,
     "libHelpers": 2,
     "patterns": {
