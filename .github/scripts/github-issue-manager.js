@@ -465,15 +465,27 @@ async function staleSweep(repo,items,isPR,state,report){
 
     if(shouldClose){
       if(DRY){console.log('  [DRY-SWEEP] Would close',key,':',reason);swept++;continue}
-      console.log('  [DISABLED-SWEEP] Auto-close disabled. Would close',key,':',reason);
-      // const closeBody=TAG+'\n'+reason+'.\n\nFeel free to reopen if still relevant.';
-      // await ghPost('/repos/'+repo+'/issues/'+item.number+'/comments',{body:closeBody});
-      // const endpoint=isPR?'/repos/'+repo+'/pulls/'+item.number:'/repos/'+repo+'/issues/'+item.number;
-      // const patchBody=isPR?{state:'closed'}:{state:'closed',state_reason:'completed'};
-      // const ok=await ghPatch(endpoint,patchBody);
-      // if(ok){state.closed.push(key);report.closed++;swept++;console.log('  [SWEEP] CLOSED',key,':',reason)}
-      // else console.log('  [SWEEP] CLOSE FAILED',key,'(no perms?)');
-      swept++;
+      
+      let humanReason = reason;
+      if(reason.includes('User confirmed fix')) humanReason = "Glad to hear it's working! I'll close this now.";
+      else if(reason.includes('Owner closed')) humanReason = "Closing this out as requested.";
+      else if(reason.includes('inactive') || reason.includes('verification requested')) humanReason = "It's been a while without any updates, so I'll go ahead and close this to keep the tracker clean.";
+      
+      const closeBody=TAG+'\n'+humanReason+' Feel free to drop a new comment or reopen if you run into any more issues or need further help! 👋';
+      
+      await ghPost('/repos/'+repo+'/issues/'+item.number+'/comments',{body:closeBody});
+      const endpoint=isPR?'/repos/'+repo+'/pulls/'+item.number:'/repos/'+repo+'/issues/'+item.number;
+      const patchBody=isPR?{state:'closed'}:{state:'closed',state_reason:'completed'};
+      const ok=await ghPatch(endpoint,patchBody);
+      
+      if(ok){
+        state.closed.push(key);
+        report.closed++;
+        swept++;
+        console.log('  [SWEEP] CLOSED',key,':',reason);
+      }
+      else console.log('  [SWEEP] CLOSE FAILED',key,'(no perms?)');
+      
       await sleep(RATE_SLEEP);
     }
   }
