@@ -4,7 +4,17 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.196] - 2026-04-05
+## [5.11.197] - 2026-04-05
+
+### New Features
+- Added 3 new device fingerprints to driver mappings, enabling direct support for recently released Tuya hardware.
+- Integrated 2,141 upstream device profiles into the compatibility database, improving automatic pairing accuracy for sensors, switches, and climate controllers.
+
+### Improvements
+- Updated manufacturer and product ID matching to recognize newer Tuya OEM variants, reducing manual pairing steps and unrecognized device fallbacks.
+---
+
+ [5.11.196] - 2026-04-05
 
 ### Bug Fixes
 - Fixed pairing failures for 151 devices using uppercase manufacturer IDs by enforcing strict case-insensitive fingerprint matching.
