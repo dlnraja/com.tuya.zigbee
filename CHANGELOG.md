@@ -4,7 +4,26 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.194] - 2026-04-05
+## [5.11.195] - 2026-04-05
+
+### Bug Fixes
+- Fixed dual-temperature display issue on TS0201 climate sensors by removing default probe temperature.
+- Resolved a critical crash caused by phantom `getDeviceConditionCard` and `getDeviceActionCard` SDK3 methods.
+- Corrected absolute ZCL action handlers to use native `TriggerCapabilityListener` for proper gang action support with hybrid DP translation.
+
+### New Features
+- Enabled physical flow triggers for multi-gang sub-devices via ZCL commands (requires re-pairing).
+
+### Improvements
+- Added 28 new device fingerprints from Zigbee2MQTT, ZHA, forum, and JohanBendz contributions.
+- Enhanced AI linter rules for omni-channel routing and physical button flows based on PacketNinja and Johan findings.
+- Implemented winssurf cascade parsing to optimize HTTP request handling.
+- Improved SDK compatibility rule enforcement for fingerprints.
+- Updated driver conflict audit and resolver states for better maintenance.
+
+---
+
+ [5.11.194] - 2026-04-05
 
 ### New Features
 - Added 28 new device fingerprints sourced from community reports and upstream databases.
