@@ -58,6 +58,20 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
       }
     });
 
+    // Fix Issue #170: Handle ZCL Commands (Physical buttons that don't send attr.onOff)
+    if (typeof onOff.on === 'function') {
+      const fakeAttr = (val) => {
+        if (val === 'toggle') val = !this.getCapabilityValue('onoff');
+        onOff.emit('attr.onOff', val);
+      };
+      onOff.on('commandOn', () => fakeAttr(true));
+      onOff.on('commandOff', () => fakeAttr(false));
+      onOff.on('commandToggle', () => fakeAttr('toggle'));
+      onOff.on('setOn', () => fakeAttr(true));
+      onOff.on('setOff', () => fakeAttr(false));
+      onOff.on('toggle', () => fakeAttr('toggle'));
+    }
+
     this.registerCapabilityListener('onoff', async (value) => {
       this.log('[SUB-DEVICE] Gang ' + gn + ' app cmd: ' + value);
       this._zclState.pending = true;
@@ -105,7 +119,8 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
   _setupGang1SceneDetection(zclNode) {
     const onOff = zclNode?.endpoints?.[1]?.clusters?.onOff;
     if (!onOff) return;
-    onOff.on('attr.onOff', (value) => {
+    
+    const triggerFlows = (value) => {
       const mode = this.sceneMode;
       const isPhys = !this._appCommandPending?.gang1;
       // v5.12.4: Removed 'auto' physical gang trigger - PhysicalButtonMixin handles it (fixes BSEED double-trigger)
@@ -114,7 +129,23 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
           .trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
         this.log(`[SCENE] Gang 1 scene: ${value ? 'on' : 'off'}`);
       }
-    });
+    };
+
+    onOff.on('attr.onOff', triggerFlows);
+
+    if (typeof onOff.on === 'function') {
+      const fakeAttr = (val) => {
+        if (val === 'toggle') val = !this.getCapabilityValue('onoff');
+        triggerFlows(val);
+      };
+      onOff.on('commandOn', () => fakeAttr(true));
+      onOff.on('commandOff', () => fakeAttr(false));
+      onOff.on('commandToggle', () => fakeAttr('toggle'));
+      onOff.on('setOn', () => fakeAttr(true));
+      onOff.on('setOff', () => fakeAttr(false));
+      onOff.on('toggle', () => fakeAttr('toggle'));
+    }
+
     this.log(`[SCENE] Gang 1 scene detection setup, mode=${this.sceneMode}`);
   }
 

@@ -234,8 +234,10 @@ jobs:
         run: |
           echo "=== Syntax + JSON Validation Gate ==="
           FAIL=0
-          for f in drivers/*/device.js; do
-            node -c "$f" 2>/dev/null || { echo "❌ JS Syntax error: $f"; FAIL=1; }
+          for f in drivers/*/device.js drivers/*/driver.js; do
+            if [ -f "$f" ]; then
+              node -c "$f" 2>/dev/null || { echo "❌ JS Syntax error: $f"; FAIL=1; }
+            fi
           done
           for f in drivers/*/driver.compose.json; do
             node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null || { echo "❌ JSON error: $f"; FAIL=1; }
