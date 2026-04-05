@@ -95,6 +95,17 @@ For battery devices, bindings must be in `driver.compose.json`:
 "bindings": [1, 1280, 1281]  // powerConfiguration, iasZone, iasAce
 ```
 
+### Hybrid Energy & Battery Handling
+**CRITICAL RULE**: Tuya manufacturers frequently mix hardware cases! A device seemingly designed for wall installation might be battery-powered, mains-powered, self-kinetic (mechanical push force), or hybrid.
+1. **Never assume static power sources.** Drivers must handle all variants regardless of the driver's name.
+2. **UnifiedBatteryHandler**: Drivers MUST use `UnifiedBatteryHandler` for energy management. It dynamically adapts at runtime to:
+   - Native Zigbee (`genPowerCfg`)
+   - Tuya DP (`batteryPercentageRemaining`)
+   - Custom Zigbee
+   - Missing battery attributes (detects if it's mechanical/mains instead)
+3. **Capability Injection**: Declare `measure_battery` in `driver.compose.json` when variants *might* have batteries. The handler will auto-remove it at runtime if the matched device has `mainsPowered().` No destructive string replacements!
+4. **SDK v3 Conflicts**: Exclusively use `measure_battery`. NEVER include both `measure_battery` and `alarm_battery`.
+
 ---
 
 ## 🌐 Sources for Device Research
