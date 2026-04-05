@@ -38,6 +38,14 @@ const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
 - CO2 min changed from 300 to 0 (allows warmup/calibration values)
 - Location: lib/ProductValueValidator.js
 
+### ZCL Cluster Double-Parsing Bug:
+- Hybrid sensors using `setupUniversalZCLListeners(this, zclNode, this.clusterHandlers)` will inherently process events.
+- Never blindly call `_setupZCLCluster` inside `_setupZCLMode` unless checking `if (!this.clusterHandlers?.temperatureMeasurement)` to prevent duplicated bouncing logs and logic overlap.
+
+### Phantom Capabilities & Fallbacks:
+- If `modelId` is unknown during onboarding, do NOT fallback to a generic multi-sensor profile (like `HOBEIAN_10G_MULTI`) that forcibly assigns `hasTemperature: true`. This causes UI pollution and drops ZCL dependencies (like IAS Zone PIR motion) by setting `useTuyaDP: true` only.
+- Always cascade missing model IDs safely into hybrid robust configs like `HOBEIAN_ZG204ZM_FALLBACK`.
+
 ## PATTERNS
 
 ### Mixin Order:
@@ -332,6 +340,7 @@ Device matches if manufacturerName IN list AND productId IN list.
 - Condition driver-level: `getDeviceConditionCard()`
 - Condition app-level: `getConditionCard()`
 - NO `[[device]]` in titleFormatted for triggers
+- ALWAYS use `this._safeSetCapability()` rather than `this.setCapabilityValue()` natively on virtual endpoints so custom triggers (e.g. `switch_3gang_gangX_turned_on`) propagate correctly.
 
 ## GITHUB ISSUES / PR HANDLING
 - NEVER auto-close issues or PRs until fully resolved and deeply verified

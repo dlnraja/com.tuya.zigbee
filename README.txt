@@ -1,12 +1,3 @@
-Tuya Zigbee
-Adds support for a wide variety of Tuya Zigbee devices to Homey Pro.
+This application provides unified support for a wide variety of Tuya Zigbee devices, aiming to integrate as many unbranded, generic, and rebranded smart home products as possible. It utilizes a universal fallback approach to automatically map unknown sub-variants into working templates without requiring explicit configuration. 
 
-This application provides unified drivers for Tuya-based Zigbee devices, aiming to support as many unbranded, generic, and rebranded devices as possible through a "universal fallback" approach.
-
-### Key Features
-- **Universal Drivers**: Automatically maps unknown sub-variants (like _TZ3000... or _TZE200...) into working templates.
-- **Self-Healing Device Database**: Community-reported missing fingerprints are dynamically integrated.
-- **SDK3 Compliant**: Built on the robust Homey SDKv3 for stability and performance.
-- **Smart Plugs, Bulbs & Sensors**: Extensive support for presence detectors, energy monitors, multi-gang switches, and RGB bulbs.
-
-If your device pairs as an "Unknown Zigbee Device", please open an issue on the GitHub repository with the Manufacturer ID so it can be mapped into the hybrid fallback drivers.
+Users can connect a vast array of smart plugs, presence detectors, energy monitors, multi-gang wall switches, thermostats, and intelligent bulbs directly to their smart home environment. The drivers are engineered to dynamically expand coverage and autonomously heal configuration maps, ensuring strong stability and high compatibility for an ever-growing list of devices.

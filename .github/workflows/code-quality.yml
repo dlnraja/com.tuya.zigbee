@@ -159,6 +159,11 @@ jobs:
             echo "ℹ️ $ISSUES driver(s) with dual-power pattern detected (non-blocking)" >> $GITHUB_STEP_SUMMARY
           fi
 
+      - name: 🛡️ Sensor Fallback Safety Check
+        run: |
+          echo "### Fallbacks Strategy Check" >> $GITHUB_STEP_SUMMARY
+          grep -rq "HOBEIAN_10G_MULTI_FALLBACK" drivers/ 2>/dev/null && { echo "❌ Dangerous HOBEIAN_10G_MULTI_FALLBACK fallback detected. Use ZG204ZM instead." >> $GITHUB_STEP_SUMMARY; exit 1; } || echo "✅ Fallback safety verified" >> $GITHUB_STEP_SUMMARY
+
       - name: 🔑 Empty Fingerprint Check
         run: |
           echo "### Empty Fingerprint Check" >> $GITHUB_STEP_SUMMARY
