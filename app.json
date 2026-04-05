@@ -52810,8 +52810,8 @@
         "measure_humidity",
         "measure_voc",
         "measure_formaldehyde",
-        "measure_battery",
-        "alarm_generic"
+        "alarm_generic",
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "alarm_generic": {
@@ -58942,9 +58942,9 @@
       "class": "fan",
       "capabilities": [
         "dim",
-        "measure_battery",
         "onoff",
-        "dim.speed"
+        "dim.speed",
+        "measure_battery"
       ],
       "energy": {
         "batteries": [
@@ -61317,10 +61317,10 @@
         "windowcoverings_state",
         "windowcoverings_set",
         "windowcoverings_tilt_set",
-        "measure_battery",
         "measure_luminance",
         "button",
-        "dim"
+        "dim",
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "windowcoverings_set": {
@@ -62252,7 +62252,8 @@
       "capabilities": [
         "dim",
         "onoff",
-        "measure_power"
+        "measure_power",
+        "measure_battery"
       ],
       "energy": {
         "approximation": {
@@ -64880,8 +64881,8 @@
         "alarm_generic",
         "alarm_co",
         "alarm_co2",
-        "measure_battery",
-        "alarm_gas"
+        "alarm_gas",
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "alarm_generic": {
@@ -65218,10 +65219,10 @@
       "capabilities": [
         "alarm_co",
         "alarm_co2",
-        "measure_battery",
         "alarm_contact",
         "alarm_gas",
-        "alarm_tamper"
+        "alarm_tamper",
+        "measure_battery"
       ],
       "energy": {
         "batteries": [
@@ -65877,7 +65878,9 @@
         "large": "drivers/generic_diy/assets/images/large.png",
         "xlarge": "drivers/generic_diy/assets/images/xlarge.png"
       },
-      "capabilities": [],
+      "capabilities": [
+        "measure_battery"
+      ],
       "energy": {
         "batteries": [
           "CR2032",
@@ -66423,7 +66426,8 @@
         "zigbee"
       ],
       "capabilities": [
-        "button"
+        "button",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/handheld_remote_4_buttons/assets/images/large.png",
@@ -66631,8 +66635,8 @@
         "measure_temperature",
         "thermostat_mode",
         "dim.speed",
-        "measure_battery",
-        "onoff"
+        "onoff",
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -67135,10 +67139,10 @@
         "measure_temperature",
         "measure_power",
         "alarm_water",
-        "measure_battery",
         "onoff",
         "target_temperature",
-        "dim.speed"
+        "dim.speed",
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -70550,8 +70554,7 @@
       "capabilities": [
         "measure_battery",
         "measure_luminance",
-        "alarm_motion",
-        "alarm_battery"
+        "alarm_motion"
       ],
       "energy": {
         "batteries": [
@@ -75594,8 +75597,7 @@
         "zigbee"
       ],
       "capabilities": [
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "energy": {
         "batteries": [
@@ -77172,7 +77174,10 @@
       "connectivity": [
         "zigbee"
       ],
-      "capabilities": [],
+      "capabilities": [
+        "button.1",
+        "measure_battery"
+      ],
       "images": {
         "large": "drivers/smart_button_switch/assets/images/large.png",
         "small": "drivers/smart_button_switch/assets/images/small.png",
@@ -77254,7 +77259,25 @@
             "nl": "Controleer op OTA-updates"
           }
         }
-      ]
+      ],
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1",
+            "nl": "Knop 1",
+            "de": "Taste 1"
+          }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie",
+            "nl": "Batterij",
+            "de": "Batterie"
+          }
+        }
+      }
     },
     {
       "name": {
@@ -77269,8 +77292,8 @@
         "target_temperature",
         "thermostat_mode",
         "measure_temperature",
-        "measure_battery",
-        "measure_power"
+        "measure_power",
+        "measure_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -77782,7 +77805,8 @@
         "zigbee"
       ],
       "capabilities": [
-        "dim"
+        "dim",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/smart_knob_switch/assets/images/large.png",
@@ -78148,7 +78172,10 @@
       "connectivity": [
         "zigbee"
       ],
-      "capabilities": [],
+      "capabilities": [
+        "button.1",
+        "measure_battery"
+      ],
       "images": {
         "large": "drivers/smart_remote_1_button_2/assets/images/large.png",
         "small": "drivers/smart_remote_1_button_2/assets/images/small.png",
@@ -78233,7 +78260,25 @@
             "nl": "Controleer op OTA-updates"
           }
         }
-      ]
+      ],
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1",
+            "nl": "Knop 1",
+            "de": "Taste 1"
+          }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie",
+            "nl": "Batterij",
+            "de": "Batterie"
+          }
+        }
+      }
     },
     {
       "id": "smart_remote_4_buttons",
@@ -78247,7 +78292,13 @@
       "connectivity": [
         "zigbee"
       ],
-      "capabilities": [],
+      "capabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4",
+        "measure_battery"
+      ],
       "images": {
         "large": "drivers/smart_remote_4_buttons/assets/images/large.png",
         "small": "drivers/smart_remote_4_buttons/assets/images/small.png",
@@ -78329,7 +78380,49 @@
             "nl": "Controleer op OTA-updates"
           }
         }
-      ]
+      ],
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1",
+            "nl": "Knop 1",
+            "de": "Taste 1"
+          }
+        },
+        "button.2": {
+          "title": {
+            "en": "Button 2",
+            "fr": "Bouton 2",
+            "nl": "Knop 2",
+            "de": "Taste 2"
+          }
+        },
+        "button.3": {
+          "title": {
+            "en": "Button 3",
+            "fr": "Bouton 3",
+            "nl": "Knop 3",
+            "de": "Taste 3"
+          }
+        },
+        "button.4": {
+          "title": {
+            "en": "Button 4",
+            "fr": "Bouton 4",
+            "nl": "Knop 4",
+            "de": "Taste 4"
+          }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie",
+            "nl": "Batterij",
+            "de": "Batterie"
+          }
+        }
+      }
     },
     {
       "name": {
@@ -80206,7 +80299,8 @@
         "meter_power",
         "button.toggle_1",
         "button.toggle_2",
-        "button.identify"
+        "button.identify",
+        "measure_battery"
       ],
       "zigbee": {
         "productId": [
@@ -80928,7 +81022,8 @@
         "button.toggle_1",
         "button.toggle_2",
         "button.toggle_3",
-        "button.identify"
+        "button.identify",
+        "measure_battery"
       ],
       "zigbee": {
         "productId": [
@@ -81630,7 +81725,8 @@
         "button.toggle_2",
         "button.toggle_3",
         "button.toggle_4",
-        "button.identify"
+        "button.identify",
+        "measure_battery"
       ],
       "zigbee": {
         "productId": [
@@ -82807,7 +82903,8 @@
         "onoff",
         "onoff.outlet2",
         "measure_power",
-        "meter_power"
+        "meter_power",
+        "measure_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -83180,7 +83277,8 @@
         "onoff.gang2",
         "onoff.gang3",
         "onoff.gang4",
-        "onoff.gang5"
+        "onoff.gang5",
+        "measure_battery"
       ],
       "energy": {
         "approximation": {
@@ -83793,7 +83891,8 @@
         "onoff.gang3",
         "onoff.gang4",
         "onoff.gang5",
-        "onoff.gang6"
+        "onoff.gang6",
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -84421,7 +84520,8 @@
         "onoff.gang4",
         "onoff.gang5",
         "onoff.gang6",
-        "onoff.gang7"
+        "onoff.gang7",
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -84857,7 +84957,8 @@
         "onoff.gang5",
         "onoff.gang6",
         "onoff.gang7",
-        "onoff.gang8"
+        "onoff.gang8",
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -85901,7 +86002,8 @@
         "measure_temperature.ch2",
         "measure_temperature.ch3",
         "measure_temperature.ch4",
-        "thermostat_mode"
+        "thermostat_mode",
+        "measure_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -86108,7 +86210,9 @@
         "de": "Universelles Zigbee/Tuya Gerät"
       },
       "class": "other",
-      "capabilities": [],
+      "capabilities": [
+        "measure_battery"
+      ],
       "capabilitiesOptions": {},
       "energy": {
         "batteries": [
@@ -86429,7 +86533,8 @@
         "measure_power",
         "meter_power",
         "measure_voltage",
-        "measure_current"
+        "measure_current",
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -86874,7 +86979,8 @@
         "measure_power",
         "meter_power",
         "measure_voltage",
-        "measure_current"
+        "measure_current",
+        "measure_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -87993,7 +88099,10 @@
       "connectivity": [
         "zigbee"
       ],
-      "capabilities": [],
+      "capabilities": [
+        "button.1",
+        "measure_battery"
+      ],
       "images": {
         "large": "drivers/wall_remote_1_gang/assets/images/large.png",
         "small": "drivers/wall_remote_1_gang/assets/images/small.png",
@@ -88084,7 +88193,25 @@
             "nl": "Controleer op OTA-updates"
           }
         }
-      ]
+      ],
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1",
+            "nl": "Knop 1",
+            "de": "Taste 1"
+          }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie",
+            "nl": "Batterij",
+            "de": "Batterie"
+          }
+        }
+      }
     },
     {
       "id": "wall_remote_2_gang",
@@ -88098,7 +88225,37 @@
       "connectivity": [
         "zigbee"
       ],
-      "capabilities": [],
+      "capabilities": [
+        "button.1",
+        "button.2",
+        "measure_battery"
+      ],
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1",
+            "nl": "Knop 1",
+            "de": "Taste 1"
+          }
+        },
+        "button.2": {
+          "title": {
+            "en": "Button 2",
+            "fr": "Bouton 2",
+            "nl": "Knop 2",
+            "de": "Taste 2"
+          }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie",
+            "nl": "Batterij",
+            "de": "Batterie"
+          }
+        }
+      },
       "images": {
         "large": "drivers/wall_remote_2_gang/assets/images/large.png",
         "small": "drivers/wall_remote_2_gang/assets/images/small.png",
@@ -88205,7 +88362,12 @@
       "connectivity": [
         "zigbee"
       ],
-      "capabilities": [],
+      "capabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "measure_battery"
+      ],
       "images": {
         "large": "drivers/wall_remote_3_gang/assets/images/large.png",
         "small": "drivers/wall_remote_3_gang/assets/images/small.png",
@@ -88303,7 +88465,41 @@
             "nl": "Controleer op OTA-updates"
           }
         }
-      ]
+      ],
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1",
+            "nl": "Knop 1",
+            "de": "Taste 1"
+          }
+        },
+        "button.2": {
+          "title": {
+            "en": "Button 2",
+            "fr": "Bouton 2",
+            "nl": "Knop 2",
+            "de": "Taste 2"
+          }
+        },
+        "button.3": {
+          "title": {
+            "en": "Button 3",
+            "fr": "Bouton 3",
+            "nl": "Knop 3",
+            "de": "Taste 3"
+          }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie",
+            "nl": "Batterij",
+            "de": "Batterie"
+          }
+        }
+      }
     },
     {
       "id": "wall_remote_4_gang",
@@ -88317,7 +88513,13 @@
       "connectivity": [
         "zigbee"
       ],
-      "capabilities": [],
+      "capabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4",
+        "measure_battery"
+      ],
       "images": {
         "large": "drivers/wall_remote_4_gang/assets/images/large.png",
         "small": "drivers/wall_remote_4_gang/assets/images/small.png",
@@ -88415,7 +88617,49 @@
             "nl": "Controleer op OTA-updates"
           }
         }
-      ]
+      ],
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1",
+            "nl": "Knop 1",
+            "de": "Taste 1"
+          }
+        },
+        "button.2": {
+          "title": {
+            "en": "Button 2",
+            "fr": "Bouton 2",
+            "nl": "Knop 2",
+            "de": "Taste 2"
+          }
+        },
+        "button.3": {
+          "title": {
+            "en": "Button 3",
+            "fr": "Bouton 3",
+            "nl": "Knop 3",
+            "de": "Taste 3"
+          }
+        },
+        "button.4": {
+          "title": {
+            "en": "Button 4",
+            "fr": "Bouton 4",
+            "nl": "Knop 4",
+            "de": "Taste 4"
+          }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie",
+            "nl": "Batterij",
+            "de": "Batterie"
+          }
+        }
+      }
     },
     {
       "id": "wall_remote_4_gang_2",
@@ -88429,7 +88673,13 @@
       "connectivity": [
         "zigbee"
       ],
-      "capabilities": [],
+      "capabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4",
+        "measure_battery"
+      ],
       "images": {
         "large": "/drivers/wall_remote_4_gang_2/assets/images/large.png",
         "small": "/drivers/wall_remote_4_gang_2/assets/images/small.png"
@@ -88513,6 +88763,48 @@
           }
         }
       ],
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1",
+            "nl": "Knop 1",
+            "de": "Taste 1"
+          }
+        },
+        "button.2": {
+          "title": {
+            "en": "Button 2",
+            "fr": "Bouton 2",
+            "nl": "Knop 2",
+            "de": "Taste 2"
+          }
+        },
+        "button.3": {
+          "title": {
+            "en": "Button 3",
+            "fr": "Bouton 3",
+            "nl": "Knop 3",
+            "de": "Taste 3"
+          }
+        },
+        "button.4": {
+          "title": {
+            "en": "Button 4",
+            "fr": "Bouton 4",
+            "nl": "Knop 4",
+            "de": "Taste 4"
+          }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie",
+            "nl": "Batterij",
+            "de": "Batterie"
+          }
+        }
+      },
       "settings": []
     },
     {
@@ -88527,7 +88819,13 @@
       "connectivity": [
         "zigbee"
       ],
-      "capabilities": [],
+      "capabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4",
+        "measure_battery"
+      ],
       "images": {
         "large": "drivers/wall_remote_4_gang_3/assets/images/large.png",
         "small": "drivers/wall_remote_4_gang_3/assets/images/small.png",
@@ -88624,7 +88922,49 @@
             "nl": "Controleer op OTA-updates"
           }
         }
-      ]
+      ],
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1",
+            "nl": "Knop 1",
+            "de": "Taste 1"
+          }
+        },
+        "button.2": {
+          "title": {
+            "en": "Button 2",
+            "fr": "Bouton 2",
+            "nl": "Knop 2",
+            "de": "Taste 2"
+          }
+        },
+        "button.3": {
+          "title": {
+            "en": "Button 3",
+            "fr": "Bouton 3",
+            "nl": "Knop 3",
+            "de": "Taste 3"
+          }
+        },
+        "button.4": {
+          "title": {
+            "en": "Button 4",
+            "fr": "Bouton 4",
+            "nl": "Knop 4",
+            "de": "Taste 4"
+          }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie",
+            "nl": "Batterij",
+            "de": "Batterie"
+          }
+        }
+      }
     },
     {
       "id": "wall_remote_6_gang",
@@ -88638,7 +88978,15 @@
       "connectivity": [
         "zigbee"
       ],
-      "capabilities": [],
+      "capabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
+        "button.6",
+        "measure_battery"
+      ],
       "images": {
         "large": "drivers/wall_remote_6_gang/assets/images/large.png",
         "small": "drivers/wall_remote_6_gang/assets/images/small.png",
@@ -88743,7 +89091,65 @@
             "nl": "Controleer op OTA-updates"
           }
         }
-      ]
+      ],
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1",
+            "nl": "Knop 1",
+            "de": "Taste 1"
+          }
+        },
+        "button.2": {
+          "title": {
+            "en": "Button 2",
+            "fr": "Bouton 2",
+            "nl": "Knop 2",
+            "de": "Taste 2"
+          }
+        },
+        "button.3": {
+          "title": {
+            "en": "Button 3",
+            "fr": "Bouton 3",
+            "nl": "Knop 3",
+            "de": "Taste 3"
+          }
+        },
+        "button.4": {
+          "title": {
+            "en": "Button 4",
+            "fr": "Bouton 4",
+            "nl": "Knop 4",
+            "de": "Taste 4"
+          }
+        },
+        "button.5": {
+          "title": {
+            "en": "Button 5",
+            "fr": "Bouton 5",
+            "nl": "Knop 5",
+            "de": "Taste 5"
+          }
+        },
+        "button.6": {
+          "title": {
+            "en": "Button 6",
+            "fr": "Bouton 6",
+            "nl": "Knop 6",
+            "de": "Taste 6"
+          }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie",
+            "nl": "Batterij",
+            "de": "Batterie"
+          }
+        }
+      }
     },
     {
       "name": {
@@ -90216,7 +90622,8 @@
         "measure_water_percentage",
         "alarm_water_low",
         "alarm_water_high",
-        "alarm_water"
+        "alarm_water",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_water_level": {
@@ -94822,8 +95229,7 @@
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
-        "measure_battery",
-        "alarm_battery"
+        "measure_battery"
       ],
       "pair": [
         {
