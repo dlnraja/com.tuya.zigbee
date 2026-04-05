@@ -69,7 +69,7 @@ jobs:
           while IFS= read -r MFR; do
             [ -z "$MFR" ] && continue
             RESULT=$(node scripts/automation/crossref-user-issues.js "$MFR" 2>/dev/null || echo "NOT FOUND")
-            REPORT="${REPORT}\n| \\\${MFR}\\\ | ${RESULT} |"
+            REPORT="${REPORT}\n| ${MFR} | ${RESULT} |"
           done <<< "${{ steps.extract.outputs.mfrs }}"
           echo "report<<EOF" >> $GITHUB_OUTPUT
           echo -e "$REPORT" >> $GITHUB_OUTPUT
