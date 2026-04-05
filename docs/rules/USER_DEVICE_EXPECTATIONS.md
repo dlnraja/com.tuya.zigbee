@@ -2438,3 +2438,36 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 ---
 
 *Auto-generated on 2026-04-04 from v5.11.179 — 4,328+ fingerprints across 193 drivers*
+
+
+## Auto-discovered from GitHub (2026-04-05)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZ3000_wol32olt | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZE284_uo8qcagc | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZB210_qzsxaqqe | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZE284_tgrzpqf4 | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZE284_nbv4tdaz | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZ3000_dojqjapa | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZE204_cduqh1l0 | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZE284_4vobcgd3 | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZ3210_zifx0xoj | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZ3008_reatplte | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZ3000_uyrhiafs | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZ3000_t7ugva7q | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZ3210_imaccztn | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZ3000_icoxotza | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZ3210_vbfp8eyv | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZE284_bw4ayyeh | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZ3210_7vgttna6 | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZ3210_a04acm9s | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZ3210_cm9mbpr1 | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZE284_mul9abs3 | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZ3002_vsom92pp | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZE284_3regm3h6 | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZE204_ouy7vpm1 | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZE284_mvtclclq | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZE200_hbnfokum | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZE200_w0ap83qu | dlnraja/com.tuya.zigbee#190 | device_request |
+| _TZE284_4vbj3fxh | dlnraja/com.tuya.zigbee#190 | device_request |
