@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.204 |
+| **App Version** | v5.11.205 |
 | **Device Fingerprints** | 7,594+ |
 | **Unique Product IDs** | 559 |
 | **Drivers** | 213 (163 Zigbee + 50 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.204** | v5.11.203: Emergency SOS Buttons:, Device Support:, Expanded compatibility for wireless emergency buttons and panic s... |
+| **v5.11.205** | v5.11.204: Implemented 'Full State Card' discovery for the SOS button driver, improving identity and force report han... |
+| **v5.11.204** | Updated Universal Tuya Zigbee app to v5.11.204 with . Added support for Full State Card discovery. |
 | **v5.11.203** | Added universal support for all 4 Zigbee SOS reporting standards to emergency buttons, improving cross-brand compatib... |
 | **v5.11.202** | Added support for new Tuya devices and improved pairing instructions. |
 | **v5.11.201** | Added 3 new device fingerprints including Nedis SmartLife Radiator Control. Fixed connection recovery and battery rep... |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.193** | Resolved fingerprint pairing conflicts, added support for new Tuya device variants, and improved SDK compatibility fo... |
 | **v5.11.192** | Added 28+ new device fingerprints including Nedis SmartLife Radiator Control. Implemented smart hybrid matching to au... |
 | **v5.11.191** | Added 28 new device fingerprints, including Nedis SmartLife Radiator Control. Expanded compatibility across switch, s... |
-| **v5.11.190** | Added 27 new device fingerprints and low-battery alerts for 113 devices. Fixed SDK v3 flow crashes, restored missing ... |
 
 <!-- CHANGELOG_END -->
 
