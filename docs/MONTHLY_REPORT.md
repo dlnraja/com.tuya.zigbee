@@ -1,41 +1,37 @@
 # Monthly Tuya Zigbee Report - 2026-04
 
-*Generated: 2026-04-04T23:08:53.862Z*
+*Generated: 2026-04-05T15:20:47.524Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
-| Total Drivers | 193 |
-| Manufacturer IDs | 78568 |
-| Collisions | 185 |
+| Total Drivers | 212 |
+| Manufacturer IDs | 65332 |
+| Collisions | 18 |
 
 ## ⚠️ Collisions Detected
 
 | ID | Drivers |
 |----|--------|
-| `_TZ3000_as7eqiri|TS0505A` | bulb_rgb, bulb_rgbw |
-| `_TZ3000_as7eqiri|TS0505B` | bulb_rgb, bulb_rgbw |
-| `_TZ3000_fbja4q6h|TS0505A` | bulb_rgb, bulb_rgbw |
-| `_TZ3000_fbja4q6h|TS0505B` | bulb_rgb, bulb_rgbw |
-| `_TZ3000_hcm1fqxe|TS0505A` | bulb_rgb, bulb_rgbw |
-| `_TZ3000_hcm1fqxe|TS0505B` | bulb_rgb, bulb_rgbw |
-| `_TZ3000_keabpigb|TS0505A` | bulb_rgb, bulb_rgbw |
-| `_TZ3000_keabpigb|TS0505B` | bulb_rgb, bulb_rgbw |
-| `_TZ3000_kihkx3cq|TS0505A` | bulb_rgb, bulb_rgbw |
-| `_TZ3000_kihkx3cq|TS0505B` | bulb_rgb, bulb_rgbw |
-| `_TZ3000_lzfwt5qx|TS0505A` | bulb_rgb, bulb_rgbw |
-| `_TZ3000_lzfwt5qx|TS0505B` | bulb_rgb, bulb_rgbw |
-| `_TZ3000_m6u3q8jy|TS0505A` | bulb_rgb, bulb_rgbw |
-| `_TZ3000_m6u3q8jy|TS0505B` | bulb_rgb, bulb_rgbw |
-| `_TZ3000_tqlv4yz4|TS0505A` | bulb_rgb, bulb_rgbw |
-| `_TZ3000_tqlv4yz4|TS0505B` | bulb_rgb, bulb_rgbw |
-| `_TZ3000_u5u4cakc|TS0505A` | bulb_rgb, bulb_rgbw |
-| `_TZ3000_u5u4cakc|TS0505B` | bulb_rgb, bulb_rgbw |
-| `_TZ3000_vzopcetz|TS0505A` | bulb_rgb, bulb_rgbw |
-| `_TZ3000_vzopcetz|TS0505B` | bulb_rgb, bulb_rgbw |
-
-*...and 165 more*
+| `tuyatec-qun7vq14|TS0201` | climate_sensor, temphumidsensor |
+| `tuyatec-qun7vq14|ZG-227Z` | climate_sensor, temphumidsensor |
+| `tuyatec-qun7vq14|CK-TLSR8656-SS5-01(7014)` | climate_sensor, temphumidsensor |
+| `tuyatec-qun7vq14|TY0201` | climate_sensor, temphumidsensor |
+| `tuyatec-qun7vq14|RH3052` | climate_sensor, temphumidsensor |
+| `zbeacon|TS0601` | contact_sensor, sensor_contact_motion_hybrid |
+| `_tze200_rufdtfyv|TS0601` | device_floor_heating_thermostat_hybrid, radiator_valve |
+| `_tze200_p3dbf6qs|TS0601` | device_radiator_valve_smart_hybrid, radiator_valve |
+| `_tze200_rxq4iti9|TS0601` | device_radiator_valve_smart_hybrid, radiator_valve |
+| `_tze200_0hb4rdnp|TS1101` | dimmer_dual_channel, dimmer_wall_1gang |
+| `_tze200_0hb4rdnp|TS0601` | dimmer_dual_channel, dimmer_wall_1gang |
+| `_tze200_4mh6tyyo|TS1101` | dimmer_dual_channel, dimmer_wall_1gang |
+| `_tze200_4mh6tyyo|TS0601` | dimmer_dual_channel, dimmer_wall_1gang |
+| `_tze200_gne0e6mk|TS1101` | dimmer_dual_channel, dimmer_wall_1gang |
+| `_tze200_gne0e6mk|TS0601` | dimmer_dual_channel, dimmer_wall_1gang |
+| `hobeian|TS0203` | presence_sensor_radar, sensor_contact_presence_hybrid |
+| `hobeian|TS0601` | presence_sensor_radar, sensor_contact_presence_hybrid |
+| `_tz3000_pzui3skt|TS004F` | remote_button_wireless_wall_hybrid, smart_knob_rotary |
 
 ## 📋 Action Items
 
