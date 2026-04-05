@@ -165,6 +165,16 @@ const RULES = [
     fix: null,
   },
   {
+    id: 'sdk3-phantom-flow-method',
+    severity: 'error',
+    desc: 'CRITICAL: getDeviceConditionCard() and getDeviceActionCard() DO NOT EXIST in Homey SDK v3. Use getConditionCard() and getActionCard() instead. This crashes the entire app on init.',
+    test: (code) => /\.getDevice(?:Condition|Action)Card\s*\(/.test(code),
+    count: (code) => (code.match(/\.getDevice(?:Condition|Action)Card\s*\(/g) || []).length,
+    fix: (code) => code
+      .replace(/\.getDeviceConditionCard\s*\(/g, '.getConditionCard(')
+      .replace(/\.getDeviceActionCard\s*\(/g, '.getActionCard('),
+  },
+  {
     id: 'sdk3-mains-has-battery',
     severity: 'warn',
     desc: 'Device has mainsPowered=true but compose still declares battery capability. Runtime handler will fix, but compose is misleading.',
@@ -175,6 +185,31 @@ const RULES = [
       if (!compose) return false;
       const caps = compose.capabilities || [];
       return caps.includes('measure_battery') || caps.includes('alarm_battery');
+    },
+    fix: null,
+  },
+  {
+    id: 'sdk3-missing-energy-batteries',
+    severity: 'error',
+    desc: 'Driver declares measure_battery capability but driver.compose.json is missing energy.batteries array. SDK3 validation will fail.',
+    test: (code, driverDir) => {
+      const compose = loadCompose(driverDir);
+      if (!compose) return false;
+      const caps = compose.capabilities || [];
+      if (!caps.includes('measure_battery')) return false;
+      return !compose.energy || !compose.energy.batteries || compose.energy.batteries.length === 0;
+    },
+    fix: null, // Requires JSON edit, not JS code edit
+  },
+  {
+    id: 'sdk3-raw-zcl-in-flow-action',
+    severity: 'warn',
+    desc: 'Flow Action handler uses raw ZCL cluster call (zclNode.endpoints[].clusters.onOff) instead of triggerCapabilityListener(). This breaks Tuya DP-based devices.',
+    test: (code) => {
+      // Only flag if it's inside a registerRunListener context AND uses direct ZCL
+      const hasRunListener = /registerRunListener/.test(code);
+      const hasRawZcl = /zclNode\.endpoints\[.*\]\.clusters\.onOff\.set(?:On|Off)/s.test(code);
+      return hasRunListener && hasRawZcl;
     },
     fix: null,
   },
