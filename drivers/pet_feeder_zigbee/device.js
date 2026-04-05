@@ -9,12 +9,11 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 class PetFeederZigbeeDevice extends TuyaZigbeeDevice {
   async onNodeInit({ zclNode }) {
 
-    if (this._tuyaEF00Manager) {
-      this._tuyaEF00Manager.dpMappings = {
-        6: { capability: 'alarm_generic', converter: v => !!v },
-        101: { capability: 'measure_weight', divisor: 1 },
-      };
-    }
+    // v5.13.20: Assign dpMappings directly to device for EF00Manager visibility
+    this.dpMappings = {
+      6: { capability: 'alarm_generic', converter: v => !!v },
+      101: { capability: 'measure_weight', divisor: 1 },
+    };
 
     this.registerCapabilityListener('button', async () => {
       this._markAppCommand?.();

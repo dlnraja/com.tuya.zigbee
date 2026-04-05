@@ -66,14 +66,13 @@ class HVACControllerDevice extends TuyaZigbeeDevice {
     const MODE_MAP = { 0: 'cool', 1: 'heat', 2: 'auto' };
     const MODE_MAP_REV = { 'cool': 0, 'heat': 1, 'auto': 2, 'off': 0 };
 
-    if (this._tuyaEF00Manager) {
-      this._tuyaEF00Manager.dpMappings = {
-        1: { capability: 'onoff', converter: v => !!v },
-        2: { capability: 'target_temperature', divisor: 10 },
-        3: { capability: 'measure_temperature', divisor: 10 },
-        4: { capability: 'thermostat_mode', converter: v => MODE_MAP[v] || 'auto' },
-      };
-    }
+    // v5.13.20: Assign dpMappings directly to device for EF00Manager visibility
+    this.dpMappings = {
+      1: { capability: 'onoff', converter: v => !!v },
+      2: { capability: 'target_temperature', divisor: 10 },
+      3: { capability: 'measure_temperature', divisor: 10 },
+      4: { capability: 'thermostat_mode', converter: v => MODE_MAP[v] || 'auto' },
+    };
 
     this.registerCapabilityListener('onoff', async (value) => {
       this._markAppCommand?.();

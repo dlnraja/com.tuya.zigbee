@@ -73,14 +73,13 @@ class SmartLCDThermostatDevice extends TuyaZigbeeDevice {
     const MODE_MAP = { 0: 'auto', 1: 'heat', 2: 'off' };
     const MODE_MAP_REV = { 'auto': 0, 'heat': 1, 'off': 2 };
 
-    if (this._tuyaEF00Manager) {
-      this._tuyaEF00Manager.dpMappings = {
-        1: { capability: 'thermostat_mode', converter: v => MODE_MAP[v] || 'auto' },
-        2: { capability: 'target_temperature', divisor: 10 },
-        3: { capability: 'measure_temperature', divisor: 10 },
-        4: { capability: 'measure_humidity', divisor: 1 },
-      };
-    }
+    // v5.13.20: Assign dpMappings directly to device for EF00Manager visibility
+    this.dpMappings = {
+      1: { capability: 'thermostat_mode', converter: v => MODE_MAP[v] || 'auto' },
+      2: { capability: 'target_temperature', divisor: 10 },
+      3: { capability: 'measure_temperature', divisor: 10 },
+      4: { capability: 'measure_humidity', divisor: 1 },
+    };
 
     this.registerCapabilityListener('target_temperature', async (value) => {
       this._markAppCommand?.();

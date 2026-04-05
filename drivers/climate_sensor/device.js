@@ -375,11 +375,11 @@ class ClimateSensorDevice extends HybridSensorBase {
               }
             }
             // v5.5.189: Apply calibration offset
-            const temp = this._applyTempOffset(rawTemp);
-            this.log(`[ZCL] 🌡️ Temperature: ${temp}°C (confidence: ${this._climateInference?.getConfidence() || 'N/A'}%)`);
+            // v6.0: Use _safeSetCapability to ensure offsets and consistency logic are applied
             this._registerZclData?.(); // v5.5.108: Track for learning
-            this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
+            this._safeSetCapability('measure_temperature', rawTemp).catch(() => { });
           }
+
         }
       },
 
@@ -404,11 +404,11 @@ class ClimateSensorDevice extends HybridSensorBase {
               }
             }
             // v5.5.189: Apply calibration offset
-            const humidity = this._applyHumOffset(rawHum);
-            this.log(`[ZCL] 💧 Humidity: ${humidity}% (confidence: ${this._climateInference?.getConfidence() || 'N/A'}%)`);
+            // v6.0: Use _safeSetCapability to ensure offsets and consistency logic are applied
             this._registerZclData?.(); // v5.5.108: Track for learning
-            this.setCapabilityValue('measure_humidity', parseFloat(humidity)).catch(() => { });
+            this._safeSetCapability('measure_humidity', rawHum).catch(() => { });
           }
+
         }
       },
 
@@ -435,8 +435,9 @@ class ClimateSensorDevice extends HybridSensorBase {
             
             this.log(`[ZCL] 🔋 Battery: ${battery}%`);
             this._registerZclData?.(); // v5.5.108: Track for learning
-            this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+            this._safeSetCapability('measure_battery', battery).catch(() => { });
           }
+
         }
       }
     };

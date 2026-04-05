@@ -139,11 +139,11 @@ class AirQualityCO2Device extends HybridSensorBase {
     try {
       const temp = ep1.clusters?.msTemperatureMeasurement;
       if (temp?.on) {
-        temp.on('attr.measuredValue', (v) => { const t=parseFloat(v)/100; if(t>=-40&&t<=80) this.setCapabilityValue('measure_temperature',t).catch(()=>{}); else this.log('[CO2] ZCL temp rejected:',t); });
+        temp.on('attr.measuredValue', (v) => { const t=parseFloat(v)/100; if(t>=-40&&t<=80) this._safeSetCapability('measure_temperature',t).catch(()=>{}); else this.log('[CO2] ZCL temp rejected:',t); });
       }
       const hum = ep1.clusters?.msRelativeHumidity;
       if (hum?.on) {
-        hum.on('attr.measuredValue', (v) => { const h=parseFloat(v)/100; if(h>=0&&h<=100) this.setCapabilityValue('measure_humidity',h).catch(()=>{}); else this.log('[CO2] ZCL hum rejected:',h); });
+        hum.on('attr.measuredValue', (v) => { const h=parseFloat(v)/100; if(h>=0&&h<=100) this._safeSetCapability('measure_humidity',h).catch(()=>{}); else this.log('[CO2] ZCL hum rejected:',h); });
       }
     } catch (e) { /* ignore */ }
   }

@@ -25,13 +25,12 @@ class GarageDoorOpenerDevice extends TuyaZigbeeDevice {
 
 
     // DP mappings for garage door
-    if (this._tuyaEF00Manager) {
-      this._tuyaEF00Manager.dpMappings = {
-        1: { capability: 'garagedoor_closed', converter: v => !v },
-        2: { capability: 'alarm_contact', converter: v => !!v },
-        3: { capability: 'measure_battery', divisor: 1 },
-      };
-    }
+    // v5.13.20: Assign dpMappings directly to device for EF00Manager visibility
+    this.dpMappings = {
+      1: { capability: 'onoff', converter: v => !!v },
+      2: { capability: 'garage_door_status', converter: v => v === 0 ? 'opened' : 'closed' },
+      101: { capability: 'onoff', converter: v => !!v },
+    };
 
     this.registerCapabilityListener('garagedoor_closed', async (value) => {
       this._markAppCommand?.();

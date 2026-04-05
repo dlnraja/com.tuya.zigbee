@@ -43,13 +43,11 @@ class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
       });
     }
 
-    // Tuya DP fallback
-    if (this._tuyaEF00Manager) {
-      this._tuyaEF00Manager.dpMappings = {
-        1: { capability: 'measure_luminance', divisor: 1 },
-        4: { capability: 'measure_battery', divisor: 1 },
-      };
-    }
+    // v5.13.20: Assign dpMappings directly to device for EF00Manager visibility
+    this.dpMappings = {
+      1: { capability: 'measure_luminance', divisor: 1 },
+      4: { capability: 'measure_battery', divisor: 1 },
+    };
 
     // Battery via power configuration
     const power = ep1?.clusters?.powerConfiguration || ep1?.clusters?.[1];
