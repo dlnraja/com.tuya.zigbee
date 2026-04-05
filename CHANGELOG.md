@@ -4,7 +4,20 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.192] - 2026-04-05
+## [5.11.193] - 2026-04-05
+
+### Bug Fixes
+- Resolved true fingerprint collisions that caused devices to pair with incorrect drivers, using improved hybrid matching logic.
+- Fixed SDK compatibility enforcement to prevent pairing failures on newer Tuya chipsets.
+
+### New Features
+- Added support for multiple new Tuya device variants and updated existing drivers with community-sourced fingerprints.
+
+### Improvements
+- Enhanced driver matching accuracy for devices sharing manufacturer names but differing in product IDs.
+---
+
+ [5.11.192] - 2026-04-05
 
 ### New Devices & Fingerprints
 - Added 28+ new Tuya device fingerprints from community reports and upstream Zigbee databases.
