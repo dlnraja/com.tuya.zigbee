@@ -1069,11 +1069,63 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     // v5.12.151: Track when device was last seen for heartbeat
     this._updateActivity();
 
+    // v5.13.18: FULL DEVICE DISCOVERY (The "Full State Card" investigation)
+    // We try to pull all identity and status info while the radio is hot (~2 sec)
+    this._performFullDiscovery().catch(() => {});
+
     // PERFECT moment to configure reporting, read battery AND self-heal bindings!
     await this._configureAndReadBattery();
     
     // v5.13.10: Ensure CIE address is correct (fixes "not working" issues)
     await this._verifyCieAddress().catch(() => {});
+  }
+
+  /**
+   * v5.13.18: Investigate device "Identity Card" and force full state report
+   * Some Tuya devices only report a full status card when queried (like TCP/UDP)
+   */
+  async _performFullDiscovery() {
+    const ep1 = this.zclNode?.endpoints?.[1];
+    if (!ep1) return;
+
+    this.log('[SOS] 🔍 Investigating device "Identity Card"...');
+
+    // 1. IDENTITY: Read Basic cluster attributes (vulnerability/variant fingerprinting)
+    const basic = ep1.clusters?.basic || ep1.clusters?.genBasic;
+    if (basic?.readAttributes) {
+      Promise.race([
+        basic.readAttributes(['appVersion', 'hwVersion', 'stackVersion', 'dateCode', 'zclVersion']),
+        new Promise((_, r) => setTimeout(() => r(new Error('Timeout')), 1000))
+      ]).then(res => {
+        this.log('[SOS] 🔍 Identity card received:', JSON.stringify(res));
+      }).catch(() => {});
+    }
+
+    // 2. FULL STATE: Support for "on-demand" full state reports (Tuya Special)
+    // Some devices (Category 4) need a "Magic Packet" or "Data Query" to speak
+    const tuya = ep1.clusters?.tuya || ep1.clusters?.manuSpecificTuya || ep1.clusters?.['0xEF00'];
+    if (tuya) {
+      try {
+        // Try to send Magic Packet (MCU version request + Data Query)
+        if (typeof tuya.sendMagicPacket === 'function') {
+          this.log('[SOS] 🪄 Sending Tuya Magic Packet (Full Card Request)...');
+          await tuya.sendMagicPacket().catch(() => {});
+        } else if (typeof tuya.dataQuery === 'function') {
+          this.log('[SOS] 🪄 Sending Tuya Data Query (Full Card Request)...');
+          await tuya.dataQuery({}).catch(() => {});
+        }
+      } catch (e) {
+        this.log('[SOS] 🪄 Magic packet failed:', e.message);
+      }
+    }
+
+    // 3. SECURE STATE: Verify IAS Zone Type
+    const iasZone = ep1.clusters?.iasZone;
+    if (iasZone?.readAttributes) {
+      iasZone.readAttributes(['zoneType', 'zoneState']).then(res => {
+        this.log('[SOS] 🔍 Secure Zone status:', JSON.stringify(res || {}));
+      }).catch(() => {});
+    }
   }
 
   /**
