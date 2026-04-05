@@ -4,7 +4,15 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.193] - 2026-04-05
+## [5.11.194] - 2026-04-05
+
+### New Features
+- Added 28 new device fingerprints sourced from community reports and upstream databases.
+- Added driver support for Nedis SmartLife Radiator Control (_TZE284_ne4pikwm / TS0601).
+- Expanded total device coverage to 212 drivers and 3,766+ fingerprints.
+---
+
+ [5.11.193] - 2026-04-05
 
 ### Bug Fixes
 - Resolved true fingerprint collisions that caused devices to pair with incorrect drivers, using improved hybrid matching logic.
