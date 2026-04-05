@@ -263,6 +263,18 @@ jobs:
             fi
           done
 
+      # ===== 6a-ter. MASTER SELF-HEAL ENGINE (ALL SESSION DISCOVERIES) =====
+      - name: "6a-ter. Master Self-Heal Engine"
+        continue-on-error: true
+        timeout-minutes: 5
+        run: |
+          echo "=== Running Master Self-Heal Engine (all session discoveries) ==="
+          node scripts/maintenance/master-self-heal.js 2>&1 | tee /tmp/self-heal-report.txt || true
+          if grep -q "Total auto-fixes: 0" /tmp/self-heal-report.txt; then
+            echo "✅ No fixes needed — app is clean"
+          else
+            echo "⚠️ Self-heal applied fixes — see report above"
+          fi
 
       # ===== 6b. DRIVER VALIDATION: Check for known bugs =====
       - name: "6b. Driver Integrity Validator"
