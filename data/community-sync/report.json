@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-05T08:03:36.095Z",
+  "ts": "2026-04-05T08:47:00.837Z",
   "currentCount": 3997,
   "src": {
     "johan": {
@@ -18883,7 +18883,7 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 48,
+      "issueCount": 49,
       "prCount": 5,
       "deviceRequests": [
         {
@@ -18953,6 +18953,15 @@
             "_TZE200_hbnfokum",
             "_TZE200_w0ap83qu",
             "_TZE284_4vbj3fxh"
+          ]
+        },
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 170,
+          "title": "Bug: TS0003 (_TZ3000_v4l4b0lp) - Sub-capability Flow cards (Gang 1/2/3) are completely unlinked",
+          "mfrs": [
+            "_TZ3000_v4l4b0lp",
+            "_TZ3000_v4l4b0lp"
           ]
         },
         {
@@ -19122,17 +19131,6 @@
             "_TZE284_aao3yzhs",
             "_TZE284_aao3yzhs",
             "_TZE284_aao3yzhs"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1339,
-          "title": "BSEED 1 button wall switch with neutral. _TZ3000_blhvsaqf TS0001",
-          "mfrs": [
-            "_TZ3000_blhvsaqf",
-            "_TZ3000_blhvsaqf",
-            "_TZ3000_blhvsaqf",
-            "_TZ3000_blhvsaqf"
           ]
         }
       ]
