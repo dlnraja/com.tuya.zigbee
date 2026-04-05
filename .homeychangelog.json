@@ -1,4 +1,7 @@
 {
+  "5.11.200": {
+    "en": "Added support for ZG-204ZM and WiFi water sensor. Stabilized sleepy devices."
+  },
   "5.11.199": {
     "en": "Added support for 3 new device fingerprints, including the Nedis SmartLife Radiator Control (_TZE284_ne4pikwm)."
   },
@@ -56,10 +59,7 @@
   "5.11.181": {
     "en": "v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
   },
-  "5.11.180": {
-    "en": "v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.200": {
-    "en": "v5.11.199: Added support for 3 new device fingerprints across existing drivers., Added `_TZE284_ne4pikwm` (TS0601) for Nedis SmartLife Radiator Control valves., Expanded fingerprint database with latest community reports to improve automatic device matching."
+  "5.11.201": {
+    "en": "v5.11.200: Added support for ZG-204ZM., Added support for WiFi water sensor., Stabilized functionality for sleepy devices."
   }
 }

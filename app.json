@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.200",
+  "version": "5.11.201",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -34937,6 +34937,125 @@
             "filter": "driver_id=wifi_thermostat"
           }
         ]
+      },
+      {
+        "id": "wifi_water_tank_monitor_state_changed",
+        "title": {
+          "en": "Liquid state changed",
+          "nl": "Vloeistofstatus veranderd",
+          "fr": "Etat liquide change",
+          "de": "Flussigkeitsstatus geandert"
+        },
+        "tokens": [
+          {
+            "name": "state",
+            "type": "string",
+            "title": {
+              "en": "State"
+            },
+            "example": {
+              "en": "low"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_water_tank_monitor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Liquid state changed",
+          "nl": "Vloeistofstatus veranderd",
+          "fr": "Etat liquide change",
+          "de": "Flussigkeitsstatus geandert"
+        }
+      },
+      {
+        "id": "wifi_water_tank_monitor_level_changed",
+        "title": {
+          "en": "Liquid level changed",
+          "nl": "Vloeistofniveau veranderd",
+          "fr": "Niveau liquide change",
+          "de": "Flussigkeitsstand geandert"
+        },
+        "tokens": [
+          {
+            "name": "depth",
+            "type": "number",
+            "title": {
+              "en": "Depth (cm)"
+            },
+            "example": 50
+          },
+          {
+            "name": "percentage",
+            "type": "number",
+            "title": {
+              "en": "Fill (%)"
+            },
+            "example": 75
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_water_tank_monitor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Liquid level changed",
+          "nl": "Vloeistofniveau veranderd",
+          "fr": "Niveau liquide change",
+          "de": "Flussigkeitsstand geandert"
+        }
+      },
+      {
+        "id": "wifi_water_tank_monitor_low",
+        "highlight": true,
+        "title": {
+          "en": "Liquid level is low",
+          "nl": "Vloeistofniveau is laag",
+          "fr": "Niveau liquide bas",
+          "de": "Flussigkeitsstand niedrig"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_water_tank_monitor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Liquid level is low",
+          "nl": "Vloeistofniveau is laag",
+          "fr": "Niveau liquide bas",
+          "de": "Flussigkeitsstand niedrig"
+        }
+      },
+      {
+        "id": "wifi_water_tank_monitor_high",
+        "title": {
+          "en": "Liquid level is high",
+          "nl": "Vloeistofniveau is hoog",
+          "fr": "Niveau liquide haut",
+          "de": "Flussigkeitsstand hoch"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_water_tank_monitor"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Liquid level is high",
+          "nl": "Vloeistofniveau is hoog",
+          "fr": "Niveau liquide haut",
+          "de": "Flussigkeitsstand hoch"
+        }
       }
     ],
     "conditions": [
@@ -41306,6 +41425,84 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=wifi_switch_2gang"
+          }
+        ]
+      },
+      {
+        "id": "wifi_water_tank_monitor_level_above",
+        "title": {
+          "en": "Fill level !{{is|is not}} above",
+          "nl": "Vulniveau !{{is|is niet}} boven",
+          "fr": "Niveau !{{est|n'est pas}} au-dessus de",
+          "de": "Fullstand !{{ist|ist nicht}} uber"
+        },
+        "titleFormatted": {
+          "en": "Fill level !{{is|is not}} above [[level]]%",
+          "nl": "Vulniveau !{{is|is niet}} boven [[level]]%",
+          "fr": "Niveau !{{est|n'est pas}} au-dessus de [[level]]%",
+          "de": "Fullstand !{{ist|ist nicht}} uber [[level]]%"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_water_tank_monitor"
+          },
+          {
+            "name": "level",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "placeholder": {
+              "en": "20"
+            }
+          }
+        ]
+      },
+      {
+        "id": "wifi_water_tank_monitor_state_is",
+        "title": {
+          "en": "Liquid state !{{is|is not}}",
+          "nl": "Vloeistofstatus !{{is|is niet}}",
+          "fr": "Etat liquide !{{est|n'est pas}}",
+          "de": "Flussigkeitsstatus !{{ist|ist nicht}}"
+        },
+        "titleFormatted": {
+          "en": "Liquid state !{{is|is not}} [[state]]",
+          "nl": "Vloeistofstatus !{{is|is niet}} [[state]]",
+          "fr": "Etat liquide !{{est|n'est pas}} [[state]]",
+          "de": "Flussigkeitsstatus !{{ist|ist nicht}} [[state]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_water_tank_monitor"
+          },
+          {
+            "name": "state",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "low",
+                "label": {
+                  "en": "Low"
+                }
+              },
+              {
+                "id": "normal",
+                "label": {
+                  "en": "Normal"
+                }
+              },
+              {
+                "id": "high",
+                "label": {
+                  "en": "High"
+                }
+              }
+            ]
           }
         ]
       }
@@ -77053,8 +77250,10 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0,
-              6
+              1,
+              1026,
+              1029,
+              61184
             ]
           }
         }
@@ -83705,6 +83904,7 @@
           "_tze284_4qznlkbu",
           "_tze284_9ovska9w",
           "_tze284_ar5przmw",
+          "_tze284_bquwrqh1",
           "_tze284_chcnj5st",
           "_tze284_debczeci",
           "_tze284_fwondbzy",
@@ -83802,6 +84002,7 @@
           "_tze284_4qznlkbu",
           "_tze284_9ovska9w",
           "_tze284_ar5przmw",
+          "_tze284_bquwrqh1",
           "_tze284_chcnj5st",
           "_tze284_debczeci",
           "_tze284_fwondbzy",
@@ -83855,7 +84056,6 @@
           "1": {
             "clusters": [
               0,
-              1,
               1024,
               1280,
               1030,
@@ -88743,7 +88943,11 @@
         ],
         "productId": [
           "TS0203",
-          "TS0601"
+          "TS0601",
+          "ZG-204ZM",
+          "ZG-204ZL",
+          "ZG-204ZV",
+          "ZG-227Z"
         ],
         "learnmode": {
           "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
@@ -112572,6 +112776,219 @@
         }
       ],
       "id": "wifi_thermostat"
+    },
+    {
+      "name": {
+        "en": "WiFi Liquid Level Sensor",
+        "fr": "Capteur Niveau Liquide WiFi"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_water_level",
+        "measure_water_percentage",
+        "alarm_water_low",
+        "alarm_water_high",
+        "alarm_water"
+      ],
+      "capabilitiesOptions": {
+        "measure_water_level": {
+          "title": {
+            "en": "Liquid Depth"
+          }
+        },
+        "measure_water_percentage": {
+          "title": {
+            "en": "Fill Level"
+          }
+        },
+        "alarm_water_low": {
+          "title": {
+            "en": "Low Level Alert"
+          }
+        },
+        "alarm_water_high": {
+          "title": {
+            "en": "High Level Alert"
+          }
+        },
+        "alarm_water": {
+          "title": {
+            "en": "Level Alert"
+          }
+        }
+      },
+      "pair": [
+        {
+          "id": "configure",
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "prev": "configure"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "configure"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Tuya Local Connection"
+          },
+          "children": [
+            {
+              "id": "device_id",
+              "type": "text",
+              "label": {
+                "en": "Device ID"
+              },
+              "value": ""
+            },
+            {
+              "id": "local_key",
+              "type": "text",
+              "label": {
+                "en": "Local Key"
+              },
+              "value": ""
+            },
+            {
+              "id": "ip",
+              "type": "text",
+              "label": {
+                "en": "IP Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "protocol_version",
+              "type": "dropdown",
+              "label": {
+                "en": "Protocol Version"
+              },
+              "value": "3.3",
+              "values": [
+                {
+                  "id": "3.1",
+                  "label": {
+                    "en": "3.1"
+                  }
+                },
+                {
+                  "id": "3.3",
+                  "label": {
+                    "en": "3.3 (most common)"
+                  }
+                },
+                {
+                  "id": "3.4",
+                  "label": {
+                    "en": "3.4"
+                  }
+                },
+                {
+                  "id": "3.5",
+                  "label": {
+                    "en": "3.5"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Tank Configuration"
+          },
+          "children": [
+            {
+              "id": "installation_height",
+              "type": "number",
+              "label": {
+                "en": "Installation Height (mm)"
+              },
+              "hint": {
+                "en": "Distance from sensor to tank bottom in mm (DP19, 10-4000)"
+              },
+              "value": 2000,
+              "min": 10,
+              "max": 4000,
+              "step": 1,
+              "units": "mm"
+            },
+            {
+              "id": "liquid_depth_max",
+              "type": "number",
+              "label": {
+                "en": "Sensor to Full Line (mm)"
+              },
+              "hint": {
+                "en": "Height from sensor to liquid surface when full (DP21, 10-4000)"
+              },
+              "value": 200,
+              "min": 10,
+              "max": 4000,
+              "step": 1,
+              "units": "mm"
+            },
+            {
+              "id": "max_set",
+              "type": "number",
+              "label": {
+                "en": "Max Alarm Level (%)"
+              },
+              "hint": {
+                "en": "High level alarm threshold percentage (DP7, 0-100)"
+              },
+              "value": 100,
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "units": "%"
+            },
+            {
+              "id": "min_set",
+              "type": "number",
+              "label": {
+                "en": "Min Alarm Level (%)"
+              },
+              "hint": {
+                "en": "Low level alarm threshold percentage (DP8, 0-100)"
+              },
+              "value": 0,
+              "min": 0,
+              "max": 100,
+              "step": 1,
+              "units": "%"
+            }
+          ]
+        }
+      ],
+      "images": {
+        "small": "drivers/wifi_water_tank_monitor/assets/images/small.png",
+        "large": "drivers/wifi_water_tank_monitor/assets/images/large.png",
+        "xlarge": "drivers/wifi_water_tank_monitor/assets/images/xlarge.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "id": "wifi_water_tank_monitor"
     },
     {
       "name": {

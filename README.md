@@ -2,20 +2,20 @@
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-7,591+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Drivers](https://img.shields.io/badge/drivers-212-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Flow Cards](https://img.shields.io/badge/flow%20cards-2,448-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-7,593+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Drivers](https://img.shields.io/badge/drivers-213-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Flow Cards](https://img.shields.io/badge/flow%20cards-2,454-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
-A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **212 drivers** and **7,591+ device fingerprints**.
+A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **213 drivers** and **7,593+ device fingerprints**.
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
 - **Hybrid mode** — auto-detects whether a device speaks Tuya DP or standard ZCL
 - **Smart battery** — voltage-based fallback when devices don't report percentage
-- **2,448+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
+- **2,454+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
 - **SDK3** — built on the latest Homey platform
 
 ---
@@ -34,11 +34,11 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.200 |
-| **Device Fingerprints** | 7,591+ |
+| **App Version** | v5.11.201 |
+| **Device Fingerprints** | 7,593+ |
 | **Unique Product IDs** | 559 |
-| **Drivers** | 212 (163 Zigbee + 49 WiFi) |
-| **Flow Cards** | 2,448 |
+| **Drivers** | 213 (163 Zigbee + 50 WiFi) |
+| **Flow Cards** | 2,454 |
 | **Unique Capabilities** | 127 |
 | **SVG Icons** | 353 |
 | **Languages** | EN, FR, NL, DE |
@@ -56,7 +56,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | 4 | `plug_energy_monitor` | 296 |
 | 5 | `dimmer_wall_1gang` | 264 |
 | 6 | `curtain_motor` | 240 |
-| 7 | `presence_sensor_radar` | 196 |
+| 7 | `presence_sensor_radar` | 198 |
 | 8 | `contact_sensor` | 184 |
 | 9 | `motion_sensor` | 180 |
 | 10 | `switch_2gang` | 180 |
@@ -75,7 +75,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Class | Count |
 |-------|-------|
-| sensor | 55 |
+| sensor | 56 |
 | socket | 49 |
 | light | 23 |
 | other | 18 |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.200** | v5.11.199: Added support for 3 new device fingerprints across existing drivers., Added `_TZE284_ne4pikwm` (TS0601) fo... |
+| **v5.11.201** | v5.11.200: Added support for ZG-204ZM., Added support for WiFi water sensor., Stabilized functionality for sleepy dev... |
+| **v5.11.200** | Added support for ZG-204ZM and WiFi water sensor. Stabilized sleepy devices. |
 | **v5.11.199** | Added support for 3 new device fingerprints, including the Nedis SmartLife Radiator Control (_TZE284_ne4pikwm). |
 | **v5.11.198** | Added support for 3 new Tuya device fingerprints, including the Nedis SmartLife Radiator Control. Driver matrix updat... |
 | **v5.11.197** | Added support for 3 new Tuya device fingerprints and integrated 2,141 upstream device profiles to improve automatic p... |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **v5.11.189** | Added 27 new device fingerprints including Nedis SmartLife Radiator. Fixed SDK v3 flow card crashes, resolved alarm_b... |
 | **v5.11.188** | Community sync: 27 new fingerprints added from Z2M/ZHA/forum/JohanBendz. Minor and forum improvements. Total: . |
 | **v5.11.187** | Mntenance release. No user-facing changes. |
-| **v5.11.186** | Universal Tuya Zigbee app v5.11.186 adds 681 new fingerprints and updates 193 drivers. |
 
 <!-- CHANGELOG_END -->
 
@@ -181,7 +181,7 @@ Homey Pro
        │    └─ Per-fingerprint: DP mappings, quirks, timing
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
-       └─ 212 Drivers ─ 7,591+ fingerprints
+       └─ 213 Drivers ─ 7,593+ fingerprints
 ```
 
 ---
