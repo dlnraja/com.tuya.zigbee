@@ -1,4 +1,7 @@
 {
+  "5.11.196": {
+    "en": "Fixed pairing for 151 devices with uppercase manufacturer IDs, updated fingerprints across bulb, button, and sensor drivers, and improved overall Tuya Zigbee compatibility."
+  },
   "5.11.195": {
     "en": "Bug fixes for climate sensor dual temperature display, critical SDK3 method crash fix, enhanced physical button flow support for multi-gang devices, and 28 new device fingerprints from community sources."
   },
@@ -56,10 +59,7 @@
   "5.11.177": {
     "en": "v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
   },
-  "5.11.176": {
-    "en": "v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.196": {
-    "en": "v5.11.195: Fixed dual-temperature display issue on TS0201 climate sensors by removing default probe temperature., Resolved a critical crash caused by phantom `getDeviceConditionCard` and `getDeviceActionCard` SDK3 methods., Corrected absolute ZCL action handlers to use native `TriggerCapabilityListener` for proper gang action support with hybrid DP translation., Enabled physical flow triggers for"
+  "5.11.197": {
+    "en": "v5.11.196: Fixed pairing failures for 151 devices using uppercase manufacturer IDs by enforcing strict case-insensitive fingerprint matching., Resolved capability mapping and endpoint routing issues in multiple bulb, wireless button, and air quality sensor drivers., Added and updated fingerprints across 20+ drivers including `bulb_rgbw`, `bulb_tunable_white`, `button_wireless_*`, and `air_quality_"
   }
 }

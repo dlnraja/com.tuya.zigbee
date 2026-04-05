@@ -30,31 +30,11 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 ---
 
-## ðŸš€ Latest Updates
-
-<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
-### âœ¨ Recent Changes (Apr 2026)
-
-| Version | Feature |
-|---------|---------|
-| **v5.11.196** | v5.11.195: Fixed dual-temperature display issue on TS0201 climate sensors by ... |
-| **v5.11.195** | Bug fixes for climate sensor dual temperature display, critical SDK3 method c... |
-| **v5.11.194** | Added support for 28 new Tuya device variants, including the Nedis SmartLife ... |
-| **v5.11.193** | Resolved fingerprint pairing conflicts, added support for new Tuya device var... |
-| **v5.11.192** | Added 28+ new device fingerprints including Nedis SmartLife Radiator Control.... |
-| **v5.11.191** | Added 28 new device fingerprints, including Nedis SmartLife Radiator Control.... |
-| **v5.11.190** | Added 27 new device fingerprints and low-battery alerts for 113 devices. Fixe... |
-| **v5.11.189** | Added 27 new device fingerprints including Nedis SmartLife Radiator. Fixed SD... |
-| **v5.11.188** | Community sync: 27 new fingerprints added from Z2M/ZHA/forum/JohanBendz. Mino... |
-| **v5.11.187** | Mntenance release. No user-facing changes. |
-<!-- CHANGELOG_END -->
-
-
 ## Statistics
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.196 |
+| **App Version** | v5.11.197 |
 | **Device Fingerprints** | 7,591+ |
 | **Unique Product IDs** | 559 |
 | **Drivers** | 212 (163 Zigbee + 49 WiFi) |
@@ -121,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.196** | v5.11.195: Fixed dual-temperature display issue on TS0201 climate sensors by removing default probe temperature., Res... |
+| **v5.11.197** | v5.11.196: Fixed pairing failures for 151 devices using uppercase manufacturer IDs by enforcing strict case-insensiti... |
+| **v5.11.196** | Fixed pairing for 151 devices with uppercase manufacturer IDs, updated fingerprints across bulb, button, and sensor d... |
 | **v5.11.195** | Bug fixes for climate sensor dual temperature display, critical SDK3 method crash fix, enhanced physical button flow ... |
 | **v5.11.194** | Added support for 28 new Tuya device variants, including the Nedis SmartLife Radiator Control. Total coverage now spa... |
 | **v5.11.193** | Resolved fingerprint pairing conflicts, added support for new Tuya device variants, and improved SDK compatibility fo... |
@@ -135,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.185** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI co... |
 | **v5.11.184** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI co... |
 | **v5.11.183** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI co... |
-| **v5.11.182** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI co... |
 
 <!-- CHANGELOG_END -->
 
