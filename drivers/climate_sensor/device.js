@@ -95,7 +95,7 @@ class ClimateSensorDevice extends HybridSensorBase {
 
   /** Capabilities for climate sensors */
   get sensorCapabilities() {
-    return ['measure_temperature', 'measure_temperature.probe', 'measure_humidity', 'measure_battery'];
+    return ['measure_temperature', 'measure_humidity', 'measure_battery'];
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -496,6 +496,19 @@ class ClimateSensorDevice extends HybridSensorBase {
 
     // Call parent initialization (HybridSensorBase sets up ALL listeners)
     await super.onNodeInit({ zclNode });
+
+    // v5.13.3: RUNTIME CLEANUP — Remove measure_temperature.probe for standard
+    // ZCL devices (TS0201/_TZ3000_*) that were paired before this fix.
+    // Only DP38-based devices (external probe sensors like _TZE284_8se38w3c) need it.
+    // This capability is now dynamically added when DP38 data arrives (see dpMappings).
+    if (this.hasCapability('measure_temperature.probe')) {
+      const mfr = (this.getSetting('zb_manufacturer_name') || '').toLowerCase();
+      const isDP38Device = mfr.startsWith('_tze284_8se38w3c') || mfr.startsWith('_tze284_tgrzpqf4');
+      if (!isDP38Device) {
+        this.log('[CLIMATE] 🧹 Removing unused measure_temperature.probe (standard ZCL device)');
+        await this.removeCapability('measure_temperature.probe').catch(() => {});
+      }
+    }
 
     // ═══════════════════════════════════════════════════════════════════════
     // Read device info from basic cluster
