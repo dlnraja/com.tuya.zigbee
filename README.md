@@ -2,20 +2,20 @@
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-4,326+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Drivers](https://img.shields.io/badge/drivers-193-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Flow Cards](https://img.shields.io/badge/flow%20cards-2,222-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-4,200+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Drivers](https://img.shields.io/badge/drivers-212-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Flow Cards](https://img.shields.io/badge/flow%20cards-2,469-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
-A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **193 drivers** and **4,326+ device fingerprints**.
+A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **212 drivers** and **4,200+ device fingerprints**.
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
 - **Hybrid mode** — auto-detects whether a device speaks Tuya DP or standard ZCL
 - **Smart battery** — voltage-based fallback when devices don't report percentage
-- **2,222+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
+- **2,469+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
 - **SDK3** — built on the latest Homey platform
 
 ---
@@ -34,13 +34,13 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.192 |
-| **Device Fingerprints** | 4,326+ |
+| **App Version** | v5.11.193 |
+| **Device Fingerprints** | 4,200+ |
 | **Unique Product IDs** | 559 |
-| **Drivers** | 193 (144 Zigbee + 49 WiFi) |
-| **Flow Cards** | 2,222 |
+| **Drivers** | 212 (163 Zigbee + 49 WiFi) |
+| **Flow Cards** | 2,469 |
 | **Unique Capabilities** | 127 |
-| **SVG Icons** | 320 |
+| **SVG Icons** | 353 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
@@ -50,41 +50,41 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 988 |
-| 2 | `switch_1gang` | 347 |
-| 3 | `radiator_valve` | 224 |
-| 4 | `generic_tuya` | 200 |
+| 1 | `climate_sensor` | 987 |
+| 2 | `switch_1gang` | 345 |
+| 3 | `radiator_valve` | 221 |
+| 4 | `generic_tuya` | 176 |
 | 5 | `plug_energy_monitor` | 148 |
 | 6 | `dimmer_wall_1gang` | 132 |
-| 7 | `curtain_motor` | 130 |
-| 8 | `bulb_rgbw` | 118 |
-| 9 | `contact_sensor` | 109 |
-| 10 | `diy_custom_zigbee` | 103 |
-| 11 | `motion_sensor` | 102 |
-| 12 | `presence_sensor_radar` | 101 |
-| 13 | `switch_2gang` | 92 |
-| 14 | `switch_4gang` | 80 |
+| 7 | `curtain_motor` | 120 |
+| 8 | `contact_sensor` | 106 |
+| 9 | `diy_custom_zigbee` | 103 |
+| 10 | `motion_sensor` | 101 |
+| 11 | `presence_sensor_radar` | 100 |
+| 12 | `switch_2gang` | 90 |
+| 13 | `bulb_rgbw` | 86 |
+| 14 | `switch_4gang` | 79 |
 | 15 | `thermostat_tuya_dp` | 67 |
-| 16 | `switch_3gang` | 65 |
-| 17 | `bulb_rgb` | 55 |
-| 18 | `water_leak_sensor` | 52 |
-| 19 | `bulb_tunable_white` | 46 |
-| 20 | `universal_fallback` | 43 |
+| 16 | `switch_3gang` | 64 |
+| 17 | `water_leak_sensor` | 51 |
+| 18 | `bulb_tunable_white` | 46 |
+| 19 | `bulb_dimmable` | 40 |
+| 20 | `smoke_detector_advanced` | 38 |
 
 ### Drivers by Device Class
 
 | Class | Count |
 |-------|-------|
-| socket | 48 |
-| sensor | 45 |
-| light | 21 |
+| sensor | 55 |
+| socket | 49 |
+| light | 23 |
+| other | 18 |
 | remote | 17 |
-| other | 16 |
-| thermostat | 13 |
+| thermostat | 15 |
 | fan | 10 |
+| windowcoverings | 5 |
 | lock | 4 |
 | heater | 4 |
-| windowcoverings | 3 |
 | garagedoor | 3 |
 | button | 2 |
 | doorbell | 2 |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.192** | v5.11.191: Added 28 new Tuya device fingerprints from community reports and upstream sources, Added support for Nedis... |
+| **v5.11.193** | v5.11.192: Added 28+ new Tuya device fingerprints from community reports and upstream Zigbee databases., Added suppor... |
+| **v5.11.192** | Added 28+ new device fingerprints including Nedis SmartLife Radiator Control. Implemented smart hybrid matching to au... |
 | **v5.11.191** | Added 28 new device fingerprints, including Nedis SmartLife Radiator Control. Expanded compatibility across switch, s... |
 | **v5.11.190** | Added 27 new device fingerprints and low-battery alerts for 113 devices. Fixed SDK v3 flow crashes, restored missing ... |
 | **v5.11.189** | Added 27 new device fingerprints including Nedis SmartLife Radiator. Fixed SDK v3 flow card crashes, resolved alarm_b... |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **v5.11.181** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI co... |
 | **v5.11.180** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI co... |
 | **v5.11.179** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI co... |
-| **v5.11.178** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI co... |
 
 <!-- CHANGELOG_END -->
 
@@ -181,7 +181,7 @@ Homey Pro
        │    └─ Per-fingerprint: DP mappings, quirks, timing
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
-       └─ 193 Drivers ─ 4,326+ fingerprints
+       └─ 212 Drivers ─ 4,200+ fingerprints
 ```
 
 ---

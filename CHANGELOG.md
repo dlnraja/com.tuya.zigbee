@@ -4,7 +4,24 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.191] - 2026-04-05
+## [5.11.192] - 2026-04-05
+
+### New Devices & Fingerprints
+- Added 28+ new Tuya device fingerprints from community reports and upstream Zigbee databases.
+- Added support for Nedis SmartLife Radiator Control (`_TZE284_ne4pikwm` / TS0601).
+- Updated `bulb_rgb` driver with refined capability mappings and improved color state handling.
+
+### Improvements
+- Implemented smart hybrid matching to automatically resolve true fingerprint collisions during device pairing, preventing mismatched driver assignments.
+- Enhanced device pattern recognition to better handle manufacturer variations across multi-gang switches and sensors.
+- Refined pairing flow to reduce false negatives for devices with overlapping manufacturer/product IDs.
+
+### Bug Fixes
+- Fixed driver assignment conflicts for devices sharing identical manufacturer names but different product variants.
+- Resolved capability mapping inconsistencies in recently added sensor and switch variants.
+---
+
+ [5.11.191] - 2026-04-05
 
 ### New Devices & Fingerprints
 - Added 28 new Tuya device fingerprints from community reports and upstream sources
