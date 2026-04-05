@@ -257,8 +257,16 @@ async function researchFP(fp,opts={}){
   const result={fp,valid:isValidFP(fp),prefix:classifyByPrefix(fp),driver:null,pid:null,confidence:0,sources:[],method:null};
   if(!result.valid)return result;
 
-  // 1. Already supported?
-  if(idx.mIdx.has(fp)){result.driver=idx.mIdx.get(fp)[0];result.driverExists=true;result.sources.push('local');result.confidence=100;return result}
+  // 1. Already supported in a SPECIFIC driver?
+  let isOnlyGeneric = false;
+  if(idx.mIdx.has(fp)){
+    const matchingDrivers = idx.mIdx.get(fp);
+    const specificDriver = matchingDrivers.find(d => d !== 'device_generic_tuya_universal_hybrid' && d !== 'universal_fallback' && d !== 'generic_tuya');
+    if(specificDriver) {
+      result.driver=specificDriver;result.driverExists=true;result.sources.push('local');result.confidence=100;return result;
+    }
+    isOnlyGeneric = true;
+  }
 
   // 2. Comprehensive scan correlation
   const comp=searchCompScan(fp);
@@ -355,9 +363,34 @@ async function main(){
   // Also from external sources
   const ext=loadJ(path.join(STATE,'external-sources-data.json'));
   if(ext?.allDevices){for(const d of ext.allDevices){const fp=d.fp||d.manufacturerName;if(fp&&isValidFP(fp)&&!fps.includes(fp))fps.push(fp)}}
+  
+  // NEW: Read missing FPs straight from USER_DEVICE_EXPECTATIONS.md tracking
+  try {
+    const md = fs.readFileSync(path.join(__dirname,'..','..','docs','rules','USER_DEVICE_EXPECTATIONS.md'), 'utf8');
+    // Extract everything looking like _TZ or _TZE...
+    const matches = md.match(/_TZ[A-Za-z0-9_]+/g);
+    if(matches) {
+      for(const m of matches){
+        if(isValidFP(m) && !fps.includes(m)) fps.push(m);
+      }
+    }
+  } catch(e) {}
+
+  // NEW: Grab everything stuck in the universal fallback drivers to progressively re-classify them!
+  const genericPaths = [
+    path.join(DDIR,'universal_fallback','driver.compose.json'),
+    path.join(DDIR,'generic_tuya','driver.compose.json')
+  ];
+  for(const gp of genericPaths){
+    const drv=loadJ(gp);
+    if(drv?.zigbee?.manufacturerName){
+      for(const fp of drv.zigbee.manufacturerName){if(isValidFP(fp)&&!fps.includes(fp))fps.push(fp)}
+    }
+  }
+
   console.log('FPs to research:',fps.length);
   if(!fps.length){console.log('Nothing to research.');return}
-  const results=await batchResearch(fps.slice(0,50),{token,autoAdd:process.env.AUTO_ADD==='true'});
+  const results=await batchResearch(fps, {token,autoAdd:process.env.AUTO_ADD==='true'});
   // Save report
   const report={timestamp:new Date().toISOString(),total:results.length,
     resolved:results.filter(r=>r.driver&&r.confidence>=60).length,

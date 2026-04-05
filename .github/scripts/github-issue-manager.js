@@ -433,33 +433,45 @@ async function staleSweep(repo,items,isPR,state,report){
     if(sMfrs.length&&sPids.length){allSupp=sMfrs.every(m=>sPids.some(p=>resolveFingerprint(m,p)))}
     else if(allFPs.length){allSupp=allFPs.every(fp=>findAllDrivers(fp).length>0)}
 
+    const issueAuthor = item.user?.login || '';
+    const isAuthorOwner = OWNER_USERS.has(issueAuthor);
+
     // Check if we already commented
     const comments=await ghGet('/repos/'+repo+'/issues/'+item.number+'/comments?per_page=10');
     const hasBot=comments&&comments.some(c=>(c.body||'').includes(TAG));
-    if(!hasBot)continue; // Only sweep items we already responded to
+    if(!hasBot && !isAuthorOwner)continue; // Only sweep items we already responded to, unless they are ours
 
     let shouldClose=false;let reason='';
+    
+    // Evaluate User Confirmation
+    let userConfirmed = false;
+    if(comments&&comments.length){
+      // Look for a comment from a non-owner that confirms it works
+      const userComments = comments.filter(c => !OWNER_USERS.has(c.user?.login));
+      if(userComments.length) {
+        const lastUserComment = (userComments[userComments.length-1].body||'').toLowerCase();
+        if(lastUserComment.includes('works')||lastUserComment.includes('working')||lastUserComment.includes('confirmed')||lastUserComment.includes('fixed')||lastUserComment.includes('perfect')) {
+          userConfirmed = true;
+        }
+      }
+    }
 
-    // Rule 1: All FPs supported + awaiting-verification label + >14 days
-    // v5.11.137: Skip for bug reports — FP supported != bug fixed
-    const hasVerifyLabel=item.labels&&item.labels.some(l=>(l.name||l)==='awaiting-verification');
-    const hasBugLabel=item.labels&&item.labels.some(l=>/bug|broken|fix|error/i.test(l.name||l));
-    const titleHintsBug=/bug|broken|not work|crash|error|fail|wrong|issue/i.test(item.title||'');
-    if(allSupp&&hasBot&&hasVerifyLabel&&age>=14&&!hasBugLabel&&!titleHintsBug){
-      shouldClose=true;reason='All FPs supported, verification requested '+age+'d ago with no response';
-    }
-    // Rule 2: Stale >30 days + already triaged
-    if(!shouldClose&&age>=STALE_DAYS&&hasBot&&hasVerifyLabel){
-      shouldClose=true;reason='Inactive >'+age+'d, verification requested with no response';
-    }
-    // Rule 3: Last comment from owner/bot with closing language
-    if(!shouldClose&&comments&&comments.length){
-      const last=comments[comments.length-1];
-      const lu=last?.user?.login||'';
-      const lb=(last?.body||'').toLowerCase();
-      const userOk=!OWNER_USERS.has(lu)&&(lb.includes('works')||lb.includes('confirmed')||lb.includes('fixed'));
-      if(userOk||(hasVerifyLabel&&OWNER_USERS.has(lu)&&lb.includes('closing'))){
-        shouldClose=true;reason=userOk?'User confirmed fix':'Owner closed after verification';
+    // New Rules requested by User: 
+    // ONLY close automatically WITHOUT confirmation if the PR/Issue was CREATED by dlnraja or the bot.
+    // If created by a regular user, it MUST wait for userConfirmed.
+    
+    if (isAuthorOwner) {
+      // It's our own bot/owner issue. Close it if it's been handled or has 'awaiting-verification'
+      const hasVerifyLabel=item.labels&&item.labels.some(l=>(l.name||l)==='awaiting-verification');
+      if (allSupp || hasVerifyLabel) {
+        shouldClose=true; reason='Auto-closed owner/bot issue after processing';
+      } else if (age >= 7) {
+        shouldClose=true; reason='Auto-closed old owner/bot task';
+      }
+    } else {
+      // It's a user issue. Wait for confirmation.
+      if (userConfirmed) {
+        shouldClose=true; reason='User confirmed fix';
       }
     }
 
@@ -468,8 +480,8 @@ async function staleSweep(repo,items,isPR,state,report){
       
       let humanReason = reason;
       if(reason.includes('User confirmed fix')) humanReason = "Glad to hear it's working! I'll close this now.";
-      else if(reason.includes('Owner closed')) humanReason = "Closing this out as requested.";
-      else if(reason.includes('inactive') || reason.includes('verification requested')) humanReason = "It's been a while without any updates, so I'll go ahead and close this to keep the tracker clean.";
+      else if(reason.includes('Auto-closed owner')) humanReason = "Closing this automated task as it has been processed and deployed into our universal/hybrid fallbacks.";
+      else humanReason = "Closing this tracking item.";
       
       const closeBody=TAG+'\n'+humanReason+' Feel free to drop a new comment or reopen if you run into any more issues or need further help! 👋';
       

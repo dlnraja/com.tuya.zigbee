@@ -2,7 +2,7 @@ name: "Bot Auto-Response & PR Merger"
 
 on:
   schedule:
-    - cron: '*/30 * * * *'    # Every 30 minutes
+    - cron: '0 3 * * *'    # Every 24 hours at 3 AM
   issues:
     types: [opened, edited]
   pull_request:
