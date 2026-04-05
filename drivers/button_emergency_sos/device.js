@@ -747,8 +747,20 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     }
     this._lastTrigger = now;
 
+    // v5.13.12: Enhanced payload logging for "WaterLeak" identification (alarm2)
+    let triggerReason = 'Unknown';
+    if (payload?.zoneStatus !== undefined) {
+      const status = payload.zoneStatus;
+      const alarm1 = (status & 0x01) !== 0;
+      const alarm2 = (status & 0x02) !== 0;
+      triggerReason = `IAS Zone Status (Alarm1: ${alarm1}, Alarm2: ${alarm2})`;
+    } else if (payload?.source) {
+      triggerReason = `Source: ${payload.source}`;
+    }
+
     this.log('[SOS] ════════════════════════════════════════');
     this.log('[SOS] 🆘 SOS BUTTON PRESSED!');
+    this.log(`[SOS] Reason: ${triggerReason}`);
     this.log('[SOS] Payload:', JSON.stringify(payload));
     this.log('[SOS] ════════════════════════════════════════');
 
@@ -760,7 +772,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     // v5.13.10: Proactive battery read while radio is hot
     this._readBatteryNow().catch(() => {});
     
-    // v5.13.10: Verify CIE address (self-heal)
+    // v5.13.12: Verify CIE address (self-heal) - proactive recovery
     this._verifyCieAddress().catch(() => {});
 
     // Set capability
