@@ -4,7 +4,18 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.202] - 2026-04-05
+## [5.11.203] - 2026-04-05
+
+### New Features
+- **Emergency SOS Buttons:** Implemented universal support for all 4 Zigbee SOS reporting philosophies (Safe, Fake, Panel, and Tuya). Ensures reliable alarm triggering regardless of manufacturer firmware behavior.
+- **Device Support:** Added 3 new device fingerprints to existing drivers.
+
+### Improvements
+- Expanded compatibility for wireless emergency buttons and panic switches.
+- Total driver count increased to 213.
+---
+
+ [5.11.202] - 2026-04-05
 
 ### Bug Fixes
 - Added support for device _TZ3000_cdso6bjw based on latest Z2M research.
