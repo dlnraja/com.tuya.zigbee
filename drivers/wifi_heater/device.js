@@ -19,8 +19,8 @@ class WiFiHeaterDevice extends TuyaLocalDevice {
   _setupFlows() {
     const cf = this.homey.flow;
     const safeGet = (fn, id) => { try { return fn.call(cf, id); } catch (e) { return null; } };
-    safeGet(cf.getDeviceConditionCard, 'wifi_heater_is_heating')?.registerRunListener(async () => this.getCapabilityValue('onoff') === true);
-    safeGet(cf.getDeviceConditionCard, 'wifi_heater_mode_is')?.registerRunListener(async (a) => this.getCapabilityValue('wifi_heater_mode') === a.mode);
+    safeGet(cf.getConditionCard.bind(cf), 'wifi_heater_is_heating')?.registerRunListener(async () => this.getCapabilityValue('onoff') === true);
+    safeGet(cf.getConditionCard.bind(cf), 'wifi_heater_mode_is')?.registerRunListener(async (a) => this.getCapabilityValue('wifi_heater_mode') === a.mode);
     safeGet(cf.getActionCard, 'wifi_heater_set_mode')?.registerRunListener(async (a) => { await this._client?.setDP('4', ({ manual: 0, program: 1, eco: 2 })[a.mode] || 0); });
     safeGet(cf.getActionCard, 'wifi_heater_set_temperature')?.registerRunListener(async (a) => { await this._client?.setDP('2', Math.round(a.temperature)); });
   }

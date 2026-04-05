@@ -43,7 +43,7 @@ class FanControllerDevice extends ZigBeeDevice {
     const safeGetCard = (type, id) => {
       try {
         if (type === 'action') return this.homey.flow.getActionCard(id);
-        if (type === 'condition') return this.homey.flow.getDeviceConditionCard(id);
+        if (type === 'condition') return this.homey.flow.getConditionCard(id);
       } catch (e) {
         this.log(`[FLOW] Card '${id}' not available: ${e.message}`);
       }
@@ -160,19 +160,23 @@ class FanControllerDevice extends ZigBeeDevice {
       const wasOn = this.getCapabilityValue('onoff');
       this.setCapabilityValue('onoff', !!value).catch(this.error);
       // Trigger flow cards
-      if (!!value && !wasOn) {
-        this.homey.flow.getDeviceTriggerCard('fan_controller_turned_on').trigger(this).catch(this.error);
-      } else if (!value && wasOn) {
-        this.homey.flow.getDeviceTriggerCard('fan_controller_turned_off').trigger(this).catch(this.error);
-      }
+      try {
+        if (!!value && !wasOn) {
+          this.homey.flow.getDeviceTriggerCard('fan_controller_turned_on').trigger(this).catch(this.error);
+        } else if (!value && wasOn) {
+          this.homey.flow.getDeviceTriggerCard('fan_controller_turned_off').trigger(this).catch(this.error);
+        }
+      } catch (e) { /* Card may not exist */ }
       break;
 
     case 3: // Speed (0-4)
       const dim = value / 4; // Convert to 0-1 range
       this.setCapabilityValue('dim', dim).catch(this.error);
       // Trigger speed changed flow card
-      this.homey.flow.getDeviceTriggerCard('fan_controller_speed_changed')
-        .trigger(this, { speed: Math.round(dim * 100) }).catch(this.error);
+      try {
+        this.homey.flow.getDeviceTriggerCard('fan_controller_speed_changed')
+          .trigger(this, { speed: Math.round(dim * 100) }).catch(this.error);
+      } catch (e) { /* Card may not exist */ }
       break;
 
     case 6: // Mode (some devices)

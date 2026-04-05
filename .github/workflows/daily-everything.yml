@@ -215,6 +215,21 @@ jobs:
           echo "=== Grouping duplicated logic into hybrid drivers ==="
           node scripts/maintenance/auto-resolve-collisions.js || true
 
+      # ===== 6a-bis. AUTO-FIX PHANTOM SDK METHODS (CRITICAL) =====
+      - name: "6a-bis. Auto-Fix Phantom SDK3 Methods (NO-AI)"
+        continue-on-error: true
+        timeout-minutes: 2
+        run: |
+          echo "=== Auto-fixing phantom SDK methods (getDeviceConditionCard/getDeviceActionCard) ==="
+          # These methods do NOT exist in Homey SDK v3 and crash the entire app on startup
+          find drivers/ lib/ -name '*.js' -exec grep -l 'getDeviceConditionCard\|getDeviceActionCard' {} \; | while read f; do
+            if [ -f "$f" ]; then
+              sed -i 's/\.getDeviceConditionCard\s*(/\.getConditionCard(/g' "$f"
+              sed -i 's/\.getDeviceActionCard\s*(/\.getActionCard(/g' "$f"
+              echo "  ✅ Fixed phantom methods in: $f"
+            fi
+          done
+
       # ===== 6b. DRIVER VALIDATION: Check for known bugs =====
       - name: "6b. Driver Integrity Validator"
         id: driver_validate
