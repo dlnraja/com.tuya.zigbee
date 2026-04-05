@@ -4,7 +4,16 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.204] - 2026-04-05
+## [5.11.205] - 2026-04-05
+
+### Bug Fixes
+- Added 3 new fingerprints to improve device compatibility.
+
+### New Features
+- Integrated 3 new fingerprints for better support of Zigbee devices.
+---
+
+ [5.11.204] - 2026-04-05
 
 ### Bug Fixes
 - Implemented 'Full State Card' discovery for the SOS button driver, improving identity and force report handling.
