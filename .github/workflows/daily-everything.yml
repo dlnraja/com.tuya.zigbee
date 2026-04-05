@@ -204,6 +204,15 @@ jobs:
           DRY_RUN: 'true'
         run: node .github/scripts/nightly-processor.js
 
+      # ===== 6a. AUTO-RESOLVE COLLISIONS =====
+      - name: "6a. Auto-Resolve True Collisions"
+        id: collision_resolver
+        continue-on-error: true
+        timeout-minutes: 5
+        run: |
+          echo "=== Grouping duplicated logic into hybrid drivers ==="
+          node scripts/maintenance/auto-resolve-collisions.js || true
+
       # ===== 6b. DRIVER VALIDATION: Check for known bugs =====
       - name: "6b. Driver Integrity Validator"
         id: driver_validate

@@ -140,9 +140,9 @@ function checkMultiGangCapabilities() {
 // CHECK 4: Duplicate manufacturer IDs across drivers
 // ═══════════════════════════════════════════════════════════════════════════════
 function checkDuplicateFingerprints() {
-  console.log('\n📋 Check 4: Duplicate fingerprints across drivers...');
+  console.log('\n📋 Check 4: TRUE Fingerprint Collisions (mfr + pid)...');
 
-  const mfrMap = new Map(); // manufacturerName → [driverNames]
+  const fpMap = new Map(); // "mfr|pid" → [driverNames]
 
   const drivers = fs.readdirSync(DRIVERS_DIR).filter(d =>
     fs.statSync(path.join(DRIVERS_DIR, d)).isDirectory()
@@ -155,36 +155,32 @@ function checkDuplicateFingerprints() {
     try {
       const compose = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
       const mfrNames = compose.zigbee?.manufacturerName || [];
+      const pIdNames = compose.zigbee?.productId || [];
 
       for (const mfr of mfrNames) {
-        if (!mfrMap.has(mfr)) mfrMap.set(mfr, []);
-        mfrMap.get(mfr).push(driver);
+        for (const pid of pIdNames) {
+          const key = `${mfr}|${pid}`;
+          if (!fpMap.has(key)) fpMap.set(key, []);
+          fpMap.get(key).push(driver);
+        }
       }
     } catch (e) { /* already reported */ }
   }
 
-  // Report duplicates (same mfr in multiple drivers)
+  // Report TRUE duplicates (same mfr AND same pid in multiple drivers)
   let dupCount = 0;
-  for (const [mfr, drivers] of mfrMap) {
-    if (drivers.length > 1) {
-      // Some duplicates are intentional (e.g. _TZ3000 in both switch and dimmer)
-      // Only warn for truly conflicting types
-      const types = new Set(drivers.map(d => {
-        if (d.includes('switch') || d.includes('plug')) return 'switch';
-        if (d.includes('sensor') || d.includes('climate')) return 'sensor';
-        if (d.includes('remote') || d.includes('button')) return 'remote';
-        return d;
-      }));
-
-      if (types.size > 1) {
-        warn('GLOBAL', `'${mfr}' in ${drivers.length} DIFFERENT driver types: ${drivers.join(', ')}`);
-        dupCount++;
-      }
+  for (const [key, drvs] of fpMap) {
+    // Unique list of drivers
+    const uniqueDrivers = [...new Set(drvs)];
+    if (uniqueDrivers.length > 1) {
+      const [mfr, pid] = key.split('|');
+      error('GLOBAL', `TRUE COLLISION: FP '${mfr}' with '${pid}' exists in multiple drivers: ${uniqueDrivers.join(', ')}. SDK matches both! You MUST move this into a new combined hybrid category folder (e.g. switch_dimmer_custom) to prevent random routing!`);
+      dupCount++;
     }
   }
 
   if (dupCount === 0) {
-    console.log('  No conflicting cross-type duplicates found');
+    console.log('  No true FP collisions found (mfr+pid).');
   }
 }
 
