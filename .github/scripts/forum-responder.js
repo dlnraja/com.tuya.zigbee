@@ -92,7 +92,15 @@ function logReply(state,tid,postId){
 }
 // Anti-spam: check if topic already has a recent dlnraja reply in fetched posts
 function hasRecentOwnReply(posts){
-  return posts.some(p=>p.username==='dlnraja');
+  // v5.12.3: Strictly skip if NO non-dlnraja posts in have been added or if dlnraja is the LAST one to speak
+  const nonOwn = posts.filter(p => !p.username.includes('dlnraja') && !p.username.includes('bot'));
+  if (nonOwn.length === 0) return true; // Just me or other bots? Skip.
+  
+  // If the absolute latest post in the stream is by me, don't double tap
+  const absoluteLatest = posts[posts.length - 1];
+  if (absoluteLatest && absoluteLatest.username === 'dlnraja') return true;
+  
+  return false;
 }
 // v5.12.x: Cross-check global cooldown file (shared with post-forum-update.js and forum-updater.js)
 function checkGlobalCooldown(){
@@ -194,16 +202,16 @@ async function batchAI(postInfos,ver,threadCtx){
 
   let ctx='You ARE Dylan, the dev. You\'re typing a quick reply on your own forum thread between coding sessions. Plain casual text, no markdown headers, no bullet lists, no tables.\n';
   ctx+='Sound like a real person: "yeah that one\'s in there", "I\'ll check", "oh nice, added that last week". @mention inline, never as greeting.\n';
-  ctx+='CRITICAL RULE 1: ONLY talk about driver enrichments, new fingerprints, new devices, and bug fixes that directly affect users.\n';
-  ctx+='CRITICAL RULE 2: NEVER mention internal improvements, optimizations, CI/CD, GitHub, bots, AI, workflows, scanning, infrastructure, or refactoring. If someone asks about these, or if you did a fix related to them, remain COMPLETELY SILENT about them. \n';
-  ctx+='CRITICAL RULE 3: Read the thread context. If I (dlnraja) have manually posted a reply recently, YOU MUST take my manual comment into account. Do NOT contradict me or override what I said.\n';
+  ctx+='CRITICAL RULE 1: ONLY talk about driver updates, new device additions, and addressing specific user requests (fingerprints, bug reports).\n';
+  ctx+='CRITICAL RULE 2: NEVER mention: AI, bots, pipelines, GitHub, automation, infrastructure, scanning, refactoring, or internal optimization efforts. Even if you "fixed" something using an action, describe it as "I just pushed a fix".\n';
+  ctx+='CRITICAL RULE 3: Strictly speak in ONE voice: dlnraja. Casual, dev-centric, no formal greeting/closing.\n';
   ctx+='SPAM TRIGGERS (will get flagged): "Hi @user,", bullet lists, numbered steps, "Thank you for", "Please provide", ## headers, "Happy to help", "As always,".\n';
   ctx+='Max 200 words. Vary your opening every time. End naturally, no footer/signature.\n\n';
 
   // Add intelligence context
   if(intel)ctx+=intel+'\n';
 
-  // v5.11.29: Add expectations reference for informed decisions
+  // Add expectations reference for informed decisions
   const expRef=loadExpectationsRef();
   if(expRef){
     ctx+='## DECISION REFERENCE (consult before replying)\n';
@@ -253,7 +261,8 @@ async function batchAI(postInfos,ver,threadCtx){
   ctx+='If missing sensor readings, casually ask for app logs to see DPs.\n';
   ctx+='Never repeat same advice per device. Mention re-pair at most once, casually.\n';
   ctx+='Do NOT start with a greeting. Do NOT end with a signature. Just stop talking.\n';
-  ctx+='Reply or NULL if nothing device-related:';
+  ctx+='Reply or NULL if nothing device-related. If you have NO new information about a user\'s requested fingerprint, and NO new driver updates to share, return NULL instead of generic "I\'m looking into it" messages.\n';
+  ctx+='Reply or NULL:';
 
   // Use ensemble (parallel multi-AI) for richer replies when available, fallback to single callAI
   const r=await callAIEnsemble(ctx,sys,{maxTokens:2000}).catch(()=>null)||await callAI(ctx,sys,{maxTokens:2000});
@@ -367,9 +376,9 @@ CRITICAL RULES:
 1. ORGANIC FUSION: Weave the NEW INFORMATION into the EXISTING POST naturally. Don't append it — integrate it as if you just edited your own message.
 2. CONTINUITY: Use natural edit patterns like "Edit: just pushed a fix for...", "ah btw I also checked...", "update: the DP mapping is now...", or simply expand existing paragraphs.
 3. TONE: Match the exact tone and language of the EXISTING POST. If it's casual, stay casual. If it's technical, stay technical. If it's in French, write in French.
-4. ABSOLUTELY FORBIDDEN: "Mise à jour automatique", "Voici un ajout", "As an AI", "---", "Update:", numbered lists, ## headers, corporate greetings, "Happy to help", "Feel free to", signatures.
-5. NEVER mention: GitHub Actions, pipelines, bots, AI, scraping, automation, Johan Bendz, upstream sync, workflows, cron jobs, token rotation.
-6. KEEP IT SHORT: Don't bloat the post. Add the new info concisely. Max 400 words total.
+4. ABSOLUTELY FORBIDDEN: "Mise à jour automatique", "Voici un ajout", "As an AI", "---", "Update:", "Bot", "Scanning", signatures.
+5. FOCUS ONLY: Driver updates (mentioning what changed v5.x.x) and user request help (DP mapping, fingerprints).
+6. KEEP IT SHORT: Don't bloat the post. Max 250 words total.
 7. Return ONLY the final post text ready to publish. Nothing else.`;
         } else {
           // NEW POST: Write a fresh reply as dlnraja

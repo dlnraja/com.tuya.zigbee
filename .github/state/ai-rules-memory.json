@@ -4,10 +4,18 @@
       "id": "sdk3-await-capability",
       "desc": "setCapabilityValue() calls should be awaited.",
       "severity": "info",
-      "count": 3,
+      "count": 10,
       "firstSeen": "2026-04-04T17:57:49.240Z",
-      "lastSeen": "2026-04-04T21:47:00.000Z",
-      "files": ["air_purifier", "air_quality_co2", "bulb_rgb"]
+      "lastSeen": "2026-04-05T22:20:34.433Z",
+      "files": [
+        "air_purifier",
+        "air_quality_co2",
+        "bulb_rgb",
+        "bulb_rgbw",
+        "bulb_rgb_led_hybrid",
+        "button_emergency_sos",
+        "climate_sensor"
+      ]
     },
     {
       "id": "sdk3-ondeleted-cleanup",
@@ -16,7 +24,9 @@
       "count": 1,
       "firstSeen": "2026-04-04T17:57:49.253Z",
       "lastSeen": "2026-04-04T21:47:00.000Z",
-      "files": ["bulb_rgb"]
+      "files": [
+        "bulb_rgb"
+      ]
     },
     {
       "id": "sdk3-battery-conflict",
@@ -25,16 +35,21 @@
       "count": 108,
       "firstSeen": "2026-04-04T21:17:00.000Z",
       "lastSeen": "2026-04-04T21:47:00.000Z",
-      "files": ["RESOLVED: 108 drivers had both caps, reverted to measure_battery only"]
+      "files": [
+        "RESOLVED: 108 drivers had both caps, reverted to measure_battery only"
+      ]
     },
     {
       "id": "sdk3-flow-card-unsafe",
       "desc": "Bare getDeviceTriggerCard/getDeviceConditionCard/getDeviceActionCard crashes app if card missing in app.json. ALWAYS use try-catch.",
       "severity": "error",
-      "count": 23,
+      "count": 24,
       "firstSeen": "2026-04-04T17:46:00.000Z",
-      "lastSeen": "2026-04-04T21:47:00.000Z",
-      "files": ["RESOLVED: 23+ drivers wrapped in try-catch by fix-unsafe-flow-cards.js"]
+      "lastSeen": "2026-04-05T22:20:34.322Z",
+      "files": [
+        "RESOLVED: 23+ drivers wrapped in try-catch by fix-unsafe-flow-cards.js",
+        "air_purifier"
+      ]
     },
     {
       "id": "runtime-energy-adaptation",
@@ -43,7 +58,9 @@
       "count": 193,
       "firstSeen": "2026-04-04T21:30:00.000Z",
       "lastSeen": "2026-04-04T21:47:00.000Z",
-      "files": ["lib/battery/UnifiedBatteryHandler.js"]
+      "files": [
+        "lib/battery/UnifiedBatteryHandler.js"
+      ]
     },
     {
       "id": "battery-dp-mapping",
@@ -52,7 +69,9 @@
       "count": 1,
       "firstSeen": "2026-04-04T21:30:00.000Z",
       "lastSeen": "2026-04-04T21:47:00.000Z",
-      "files": ["lib/battery/UnifiedBatteryHandler.js"]
+      "files": [
+        "lib/battery/UnifiedBatteryHandler.js"
+      ]
     },
     {
       "id": "power-source-types",
@@ -61,7 +80,9 @@
       "count": 1,
       "firstSeen": "2026-04-04T21:30:00.000Z",
       "lastSeen": "2026-04-04T21:47:00.000Z",
-      "files": ["lib/battery/UnifiedBatteryHandler.js"]
+      "files": [
+        "lib/battery/UnifiedBatteryHandler.js"
+      ]
     },
     {
       "id": "zigbee-protocol-types",
@@ -70,7 +91,9 @@
       "count": 1,
       "firstSeen": "2026-04-04T21:30:00.000Z",
       "lastSeen": "2026-04-04T21:47:00.000Z",
-      "files": ["drivers/*/device.js"]
+      "files": [
+        "drivers/*/device.js"
+      ]
     },
     {
       "id": "variant-intelligence",
@@ -79,10 +102,74 @@
       "count": 982,
       "firstSeen": "2026-04-04T21:07:00.000Z",
       "lastSeen": "2026-04-04T21:47:00.000Z",
-      "files": ["982 fork FPs analyzed"]
+      "files": [
+        "982 fork FPs analyzed"
+      ]
+    },
+    {
+      "id": "sdk3-trigger-card-no-try",
+      "desc": "getDeviceTriggerCard() called without try-catch. Missing cards will crash the app.",
+      "severity": "warn",
+      "count": 1,
+      "firstSeen": "2026-04-05T22:20:34.324Z",
+      "lastSeen": "2026-04-05T22:20:34.324Z",
+      "files": [
+        "air_purifier"
+      ]
+    },
+    {
+      "id": "sdk3-case-sensitive-fingerprint",
+      "desc": "Fingerprint in enrichment data uses UPPERCASE (e.g., _TZE200_PAY2BYAX). Tuya fingerprints must be lowercase to match correctly.",
+      "severity": "warn",
+      "count": 13,
+      "firstSeen": "2026-04-05T22:20:34.331Z",
+      "lastSeen": "2026-04-05T22:20:34.434Z",
+      "files": [
+        "air_quality_co2",
+        "air_quality_comprehensive",
+        "bulb_dimmable",
+        "bulb_rgb",
+        "bulb_rgbw",
+        "button_emergency_sos",
+        "button_wireless",
+        "button_wireless_1",
+        "button_wireless_2",
+        "button_wireless_3",
+        "button_wireless_4",
+        "button_wireless_8",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "tuya-climate-safe-set",
+      "desc": "Climate data detected. Use _safeSetCapability() instead of setCapabilityValue() to ensure calibration offsets are applied.",
+      "severity": "warn",
+      "count": 6,
+      "firstSeen": "2026-04-05T22:20:34.331Z",
+      "lastSeen": "2026-04-05T22:20:34.414Z",
+      "files": [
+        "air_quality_co2",
+        "button_emergency_sos",
+        "button_wireless",
+        "button_wireless_1",
+        "button_wireless_4",
+        "button_wireless_smart_hybrid"
+      ]
+    },
+    {
+      "id": "sdk3-mains-has-battery",
+      "desc": "Device has mainsPowered=true but compose still declares battery capability. Runtime handler will fix, but compose is misleading.",
+      "severity": "warn",
+      "count": 2,
+      "firstSeen": "2026-04-05T22:20:34.336Z",
+      "lastSeen": "2026-04-05T22:20:34.420Z",
+      "files": [
+        "air_quality_comprehensive",
+        "ceiling_fan"
+      ]
     }
   ],
-  "lastRun": "2026-04-04T21:47:00.000Z",
-  "totalRuns": 6,
-  "totalIssues": 135
+  "lastRun": "2026-04-05T22:20:34.094Z",
+  "totalRuns": 7,
+  "totalIssues": 165
 }
