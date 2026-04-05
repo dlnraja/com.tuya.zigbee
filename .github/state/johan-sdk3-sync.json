@@ -1,15 +1,6 @@
 {
-  "timestamp": "2026-04-04T03:34:17.988Z",
-  "added": [
-    {
-      "fp": "TUYATEC-qun7vq14",
-      "driver": "climate_sensor",
-      "pids": [
-        "RH3052",
-        "TS0201"
-      ]
-    }
-  ],
+  "timestamp": "2026-04-05T03:39:59.441Z",
+  "added": [],
   "skipped": [],
   "dpGaps": [],
   "errors": [],
@@ -268,7 +259,7 @@
           }
         ],
         "commands": [],
-        "existsInOurs": false
+        "existsInOurs": true
       },
       {
         "file": "TuyaPowerOnStateCluster.js",
@@ -426,9 +417,9 @@
   },
   "summary": {
     "totalJohanFPs": 636,
-    "totalOurFPs": 3994,
-    "missingFPs": 1,
-    "addedFPs": 1,
+    "totalOurFPs": 3997,
+    "missingFPs": 0,
+    "addedFPs": 0,
     "skippedFPs": 0,
     "dpGaps": 0,
     "newDrivers": 89,
