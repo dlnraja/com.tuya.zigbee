@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.191 |
+| **App Version** | v5.11.192 |
 | **Device Fingerprints** | 4,326+ |
 | **Unique Product IDs** | 559 |
 | **Drivers** | 193 (144 Zigbee + 49 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.191** | v5.11.190: Added `alarm_battery` capability to 113 battery-powered drivers, Added automatic time synchronization for ... |
+| **v5.11.192** | v5.11.191: Added 28 new Tuya device fingerprints from community reports and upstream sources, Added support for Nedis... |
+| **v5.11.191** | Added 28 new device fingerprints, including Nedis SmartLife Radiator Control. Expanded compatibility across switch, s... |
 | **v5.11.190** | Added 27 new device fingerprints and low-battery alerts for 113 devices. Fixed SDK v3 flow crashes, restored missing ... |
 | **v5.11.189** | Added 27 new device fingerprints including Nedis SmartLife Radiator. Fixed SDK v3 flow card crashes, resolved alarm_b... |
 | **v5.11.188** | Community sync: 27 new fingerprints added from Z2M/ZHA/forum/JohanBendz. Minor and forum improvements. Total: . |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.180** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI co... |
 | **v5.11.179** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI co... |
 | **v5.11.178** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI co... |
-| **v5.11.177** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI co... |
 
 <!-- CHANGELOG_END -->
 

@@ -4,7 +4,15 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.190] - 2026-04-05
+## [5.11.191] - 2026-04-05
+
+### New Devices & Fingerprints
+- Added 28 new Tuya device fingerprints from community reports and upstream sources
+- Added support for Nedis SmartLife Radiator Control (`_TZE284_ne4pikwm` / `TS0601`)
+- Expanded compatibility for existing switch, sensor, and climate drivers with newly identified manufacturer variants
+---
+
+ [5.11.190] - 2026-04-05
 
 ### New Features
 - Added `alarm_battery` capability to 113 battery-powered drivers
