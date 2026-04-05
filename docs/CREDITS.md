@@ -5,15 +5,13 @@
 
 | Contributor | Fingerprints | PRs | Source |
 |------------|-------------|-----|--------|
-| [@dlnraja](https://github.com/dlnraja) | 0 | 16 | [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
+| [@dlnraja](https://github.com/dlnraja) | 0 | 10 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
 | [@WJGvdVelden](https://github.com/WJGvdVelden) | 0 | 9 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
 | [@pbruining](https://github.com/pbruining) | 0 | 9 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
-| [@packetninja](https://github.com/packetninja) | 0 | 7 | [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
 | [@BertvanHoekelen](https://github.com/BertvanHoekelen) | 0 | 7 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
 | [@jepke](https://github.com/jepke) | 0 | 6 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
 | [@jrevillard](https://github.com/jrevillard) | 0 | 5 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
 | [@slicke](https://github.com/slicke) | 0 | 5 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
-| [@Peter-Celica](https://github.com/Peter-Celica) | 0 | 4 | [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
 | [@sinan92](https://github.com/sinan92) | 0 | 4 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
 | [@Melectro1](https://github.com/Melectro1) | 0 | 4 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
 | [@stefan-schweiger](https://github.com/stefan-schweiger) | 0 | 4 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
@@ -23,9 +21,6 @@
 | [@bengro](https://github.com/bengro) | 0 | 3 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
 | [@nuker1991](https://github.com/nuker1991) | 0 | 3 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
 | [@danielgajdos](https://github.com/danielgajdos) | 0 | 3 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
-| [@michelhelsdingen](https://github.com/michelhelsdingen) | 0 | 2 | [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
-| [@google-labs-jules[bot]](https://github.com/google-labs-jules[bot]) | 0 | 2 | [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
-| [@vl14-dev](https://github.com/vl14-dev) | 0 | 2 | [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
 | [@NicolasYDDER](https://github.com/NicolasYDDER) | 0 | 2 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
 | [@YuriEstevan](https://github.com/YuriEstevan) | 0 | 2 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
 | [@mikberg](https://github.com/mikberg) | 0 | 2 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
@@ -45,11 +40,11 @@
 | [@cor73x](https://github.com/cor73x) | 0 | 2 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
 | [@rdl987](https://github.com/rdl987) | 0 | 2 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
 | [@Malalicious](https://github.com/Malalicious) | 0 | 2 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
-| [@Robsta86](https://github.com/Robsta86) | 0 | 1 | [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
-| [@AreAArseth](https://github.com/AreAArseth) | 0 | 1 | [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
 | [@PiTRiS87](https://github.com/PiTRiS87) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
 | [@pkuijpers](https://github.com/pkuijpers) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
 | [@bmalkow](https://github.com/bmalkow) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@michelhelsdingen](https://github.com/michelhelsdingen) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
+| [@Peter-Celica](https://github.com/Peter-Celica) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
 | [@jievie2000](https://github.com/jievie2000) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
 | [@TKGHill](https://github.com/TKGHill) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
 | [@crimson7O](https://github.com/crimson7O) | 0 | 1 | [JohanBendz/com.tuya.zigbee](https://github.com/JohanBendz/com.tuya.zigbee) |
