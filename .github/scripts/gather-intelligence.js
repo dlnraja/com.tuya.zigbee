@@ -153,6 +153,19 @@ function gatherAll(){
   3. SDK Migration: getDeviceConditionCard() is DEPRECATED in SDK v3, replaced entirely by getConditionCard() to fix 'not a function' crashes.
   `;
 
+  // 20. Recently Modified Drivers (last 7 days)
+  try {
+    const driversDir = path.join(__dirname, '..', '..', 'drivers');
+    const now = Date.now();
+    const weekAgo = now - (7 * 24 * 60 * 60 * 1000);
+    ctx.recentDrivers = fs.readdirSync(driversDir).filter(d => {
+      const p = path.join(driversDir, d);
+      if (!fs.statSync(p).isDirectory()) return false;
+      const mtime = fs.statSync(path.join(p, 'driver.compose.json')).mtimeMs;
+      return mtime > weekAgo;
+    }).slice(0, 15);
+  } catch (e) {}
+
   return ctx;
 }
 
@@ -240,6 +253,11 @@ function formatForAI(ctx){
   if(ctx.discoveries){
     s+="### AI Hardcoded Discoveries & Fixes\n";
     s+=ctx.discoveries + "\n\n";
+  }
+
+  if(ctx.recentDrivers?.length){
+    s+="### Recently Updated Drivers (last 7 days)\n";
+    s+=ctx.recentDrivers.join(', ') + "\n\n";
   }
 
   return s;
