@@ -4,7 +4,17 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.199] - 2026-04-05
+## [5.11.200] - 2026-04-05
+
+### New Features
+- Added support for ZG-204ZM.
+- Added support for WiFi water sensor.
+
+### Bug Fixes
+- Stabilized functionality for sleepy devices.
+---
+
+ [5.11.199] - 2026-04-05
 
 ### New Devices & Fingerprints
 - Added support for 3 new device fingerprints across existing drivers.
