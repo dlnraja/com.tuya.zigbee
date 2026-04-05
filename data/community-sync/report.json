@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-05T10:22:40.407Z",
+  "ts": "2026-04-05T10:42:43.371Z",
   "currentCount": 7180,
   "src": {
     "johan": {
@@ -18883,7 +18883,7 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 49,
+      "issueCount": 50,
       "prCount": 5,
       "deviceRequests": [
         {
@@ -18953,6 +18953,15 @@
             "_TZE200_hbnfokum",
             "_TZE200_w0ap83qu",
             "_TZE284_4vbj3fxh"
+          ]
+        },
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 183,
+          "title": "[Device Request] Climate Sensor Model TS0201 ID _TZ3000_tsgqxdb4",
+          "mfrs": [
+            "_TZ3000_tsgqxdb4",
+            "_TZ3000_tsgqxdb4"
           ]
         },
         {
@@ -19121,16 +19130,6 @@
             "_TZE200_rhgsbacq",
             "_TZE200_rhgsbacq",
             "_TZE200_rhgsbacq"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1341,
-          "title": "Device Request - Tuya Smart Plant sensor - _TZE284_aao3yzhs / TS0601",
-          "mfrs": [
-            "_TZE284_aao3yzhs",
-            "_TZE284_aao3yzhs",
-            "_TZE284_aao3yzhs"
           ]
         }
       ]
