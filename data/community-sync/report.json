@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-05T07:10:42.060Z",
+  "ts": "2026-04-05T07:40:38.024Z",
   "currentCount": 3997,
   "src": {
     "johan": {
@@ -18883,7 +18883,7 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 49,
+      "issueCount": 48,
       "prCount": 5,
       "deviceRequests": [
         {
@@ -18953,16 +18953,6 @@
             "_TZE200_hbnfokum",
             "_TZE200_w0ap83qu",
             "_TZE284_4vbj3fxh"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 184,
-          "title": "Device Request - Temperature &humidity sensor with external probe - Shenzen New Green Energy Techologies Co ltd / _TZE284_8se38w3c TS0601",
-          "mfrs": [
-            "_TZE284_8se38w3c",
-            "_TZE284_8se38w3c",
-            "_TZE284_8se38w3c"
           ]
         },
         {
@@ -19132,6 +19122,17 @@
             "_TZE284_aao3yzhs",
             "_TZE284_aao3yzhs",
             "_TZE284_aao3yzhs"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1339,
+          "title": "BSEED 1 button wall switch with neutral. _TZ3000_blhvsaqf TS0001",
+          "mfrs": [
+            "_TZ3000_blhvsaqf",
+            "_TZ3000_blhvsaqf",
+            "_TZ3000_blhvsaqf",
+            "_TZ3000_blhvsaqf"
           ]
         }
       ]
