@@ -1,4 +1,7 @@
 {
+  "5.11.202": {
+    "en": "Added support for new Tuya devices and improved pairing instructions."
+  },
   "5.11.201": {
     "en": "Added 3 new device fingerprints including Nedis SmartLife Radiator Control. Fixed connection recovery and battery reporting for SOS emergency buttons."
   },
@@ -56,10 +59,7 @@
   "5.11.183": {
     "en": "v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
   },
-  "5.11.182": {
-    "en": "v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.202": {
-    "en": "v5.11.201: Added support for 3 new device fingerprints, including the Nedis SmartLife Radiator Control (`_TZE284_ne4pikwm`)., Fixed connection drops and CIE self-healing for SOS emergency button devices., Resolved battery status probing on sleepy SOS devices to ensure accurate and timely updates."
+  "5.11.203": {
+    "en": "v5.11.202: Added support for device _TZ3000_cdso6bjw based on latest Z2M research., Improved pairing instructions and added arm command support for better user experience., 213 drivers now available., 3 fingerprints supported."
   }
 }
