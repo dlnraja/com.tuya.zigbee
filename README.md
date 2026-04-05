@@ -30,31 +30,11 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 ---
 
-## ðŸš€ Latest Updates
-
-<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
-### âœ¨ Recent Changes (Apr 2026)
-
-| Version | Feature |
-|---------|---------|
-| **v5.11.189** | v5.11.188: Added 27 new device fingerprints from Zigbee2MQTT, ZHA, forum cont... |
-| **v5.11.188** | Community sync: 27 new fingerprints added from Z2M/ZHA/forum/JohanBendz. Mino... |
-| **v5.11.187** | Mntenance release. No user-facing changes. |
-| **v5.11.186** | Universal Tuya Zigbee app v5.11.186 adds 681 new fingerprints and updates 193... |
-| **v5.11.185** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue ... |
-| **v5.11.184** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue ... |
-| **v5.11.183** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue ... |
-| **v5.11.182** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue ... |
-| **v5.11.181** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue ... |
-| **v5.11.180** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue ... |
-<!-- CHANGELOG_END -->
-
-
 ## Statistics
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.190 |
+| **App Version** | v5.11.191 |
 | **Device Fingerprints** | 4,326+ |
 | **Unique Product IDs** | 559 |
 | **Drivers** | 193 (144 Zigbee + 49 WiFi) |
@@ -121,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.190** | v5.11.189: Added 27 new device fingerprints from community reports, Z2M, and ZHA databases, Added support for Nedis S... |
+| **v5.11.191** | v5.11.190: Added `alarm_battery` capability to 113 battery-powered drivers, Added automatic time synchronization for ... |
+| **v5.11.190** | Added 27 new device fingerprints and low-battery alerts for 113 devices. Fixed SDK v3 flow crashes, restored missing ... |
 | **v5.11.189** | Added 27 new device fingerprints including Nedis SmartLife Radiator. Fixed SDK v3 flow card crashes, resolved alarm_b... |
 | **v5.11.188** | Community sync: 27 new fingerprints added from Z2M/ZHA/forum/JohanBendz. Minor and forum improvements. Total: . |
 | **v5.11.187** | Mntenance release. No user-facing changes. |
@@ -135,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.179** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI co... |
 | **v5.11.178** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI co... |
 | **v5.11.177** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI co... |
-| **v5.11.176** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI co... |
 
 <!-- CHANGELOG_END -->
 

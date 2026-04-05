@@ -4,7 +4,21 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.189] - 2026-04-05
+## [5.11.190] - 2026-04-05
+
+### New Features
+- Added `alarm_battery` capability to 113 battery-powered drivers
+- Added automatic time synchronization for 13 TRV/thermostat/LCD drivers
+- Added support for 27 new device fingerprints from community and Z2M/ZHA sources
+
+### Bug Fixes
+- Fixed SDK v3 crash caused by `alarm_battery` capability conflicts
+- Fixed flow card crashes across the app for SDK v3 compliance
+- Restored missing `measure_battery` capability on affected devices
+- Fixed missing capabilities in 10 wireless button and remote drivers
+---
+
+ [5.11.189] - 2026-04-05
 
 ### New Devices & Fingerprints
 - Added 27 new device fingerprints from community reports, Z2M, and ZHA databases

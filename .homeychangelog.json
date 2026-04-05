@@ -1,4 +1,7 @@
 {
+  "5.11.190": {
+    "en": "Added 27 new device fingerprints and low-battery alerts for 113 devices. Fixed SDK v3 flow crashes, restored missing battery capabilities, added time sync for 13 thermostats, and fixed missing capabilities in 10 remote drivers."
+  },
   "5.11.189": {
     "en": "Added 27 new device fingerprints including Nedis SmartLife Radiator. Fixed SDK v3 flow card crashes, resolved alarm_battery capability conflicts, and restored battery reporting. Added time sync for 13 TRV drivers and fixed missing capabilities in 10 remote drivers."
   },
@@ -56,10 +59,7 @@
   "5.11.171": {
     "en": "v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
   },
-  "5.11.170": {
-    "en": "v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.190": {
-    "en": "v5.11.189: Added 27 new device fingerprints from community reports, Z2M, and ZHA databases, Added support for Nedis SmartLife Radiator Control (_TZE284_ne4pikwm / TS0601), Fixed SDK v3 flow card crash prevention across all drivers, Resolved alarm_battery capability conflicts that caused pairing failures in 108 drivers, Restored measure_battery capability and reporting for affected battery-powered"
+  "5.11.191": {
+    "en": "v5.11.190: Added `alarm_battery` capability to 113 battery-powered drivers, Added automatic time synchronization for 13 TRV/thermostat/LCD drivers, Added support for 27 new device fingerprints from community and Z2M/ZHA sources, Fixed SDK v3 crash caused by `alarm_battery` capability conflicts, Fixed flow card crashes across the app for SDK v3 compliance"
   }
 }
