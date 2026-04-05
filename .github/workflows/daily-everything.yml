@@ -66,7 +66,8 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
-
+      - name: Save START_SHA
+        run: echo "START_SHA=$(git rev-parse HEAD)" >> $GITHUB_ENV
       - name: App stats
         id: stats
         run: |
@@ -630,6 +631,12 @@ jobs:
         with:
           level: publish
 
+      - name: "11.5 Generating Dynamic Changelog"
+        id: changelog_gen
+        continue-on-error: true
+        if: steps.commit.outcome == 'success'
+        run: node .github/scripts/generate-daily-changelog.js
+
       # CRITICAL: Bump version BEFORE publishing — without this, Athom rejects
       # duplicate versions and the app never updates on the test channel
       - name: "12a. Bump version (patch)"
@@ -639,7 +646,7 @@ jobs:
         uses: athombv/github-action-homey-app-version@986685b4903efabc9531248b2fdc9734223ff9f3 # v1
         with:
           version: patch
-          changelog: "Daily update — new device support and improvements"
+          changelog: ${{ steps.changelog_gen.outputs.changelog || 'Automated updates and bug fixes' }}
 
       - name: "12a2. Sync package.json + push version bump"
         if: steps.bump.outcome == 'success'
@@ -669,7 +676,7 @@ jobs:
         with:
           tag_name: v${{ steps.bump.outputs.version || steps.stats.outputs.version }}
           name: v${{ steps.bump.outputs.version || steps.stats.outputs.version }}
-          body: "Daily update v${{ steps.bump.outputs.version || steps.stats.outputs.version }} — improvements and new device support"
+          body: ${{ steps.changelog_gen.outputs.changelog || 'Automated device support enrichment' }}
           draft: false
           prerelease: false
           make_latest: true

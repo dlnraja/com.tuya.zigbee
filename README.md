@@ -56,7 +56,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | 4 | `generic_tuya` | 200 |
 | 5 | `plug_energy_monitor` | 148 |
 | 6 | `dimmer_wall_1gang` | 132 |
-| 7 | `curtain_motor` | 130 |
+| 7 | `curtn_motor` | 130 |
 | 8 | `bulb_rgbw` | 118 |
 | 9 | `contact_sensor` | 109 |
 | 10 | `diy_custom_zigbee` | 103 |
@@ -88,7 +88,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | garagedoor | 3 |
 | button | 2 |
 | doorbell | 2 |
-| curtain | 2 |
+| curtn | 2 |
 | camera | 1 |
 | vacuumcleaner | 1 |
 | speaker | 1 |
@@ -102,20 +102,20 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | Version | Changes |
 |---------|---------|
 | **v5.11.189** | v5.11.188: Added 27 new device fingerprints from Zigbee2MQTT, ZHA, forum contributions, and JohanBendz, Fixed forum p... |
-| **v5.11.188** | Community sync: 27 new fingerprints added from Z2M/ZHA/forum/JohanBendz. Minor AI and forum  improvements. Total: . |
-| **v5.11.187** | Maintenance release. No user-facing changes. |
+| **v5.11.188** | Community sync: 27 new fingerprints added from Z2M/ZHA/forum/JohanBendz. Minor  and forum  improvements. Total: . |
+| **v5.11.187** | Mntenance release. No user-facing changes. |
 | **v5.11.186** | Universal Tuya Zigbee app v5.11.186 adds 681 new fingerprints and updates 193 drivers. |
-| **v5.11.185** | v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI... |
-| **v5.11.184** | v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI... |
-| **v5.11.183** | v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI... |
-| **v5.11.182** | v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI... |
-| **v5.11.181** | v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI... |
-| **v5.11.180** | v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI... |
-| **v5.11.179** | v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI... |
-| **v5.11.178** | v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI... |
-| **v5.11.177** | v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI... |
-| **v5.11.176** | v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI... |
-| **v5.11.175** | v5.11.166: Added missing `button.push` capability to FingerBot, resolving issue #162., Synchronized energy scaling UI... |
+| **v5.11.185** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI... |
+| **v5.11.184** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI... |
+| **v5.11.183** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI... |
+| **v5.11.182** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI... |
+| **v5.11.181** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI... |
+| **v5.11.180** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI... |
+| **v5.11.179** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI... |
+| **v5.11.178** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI... |
+| **v5.11.177** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI... |
+| **v5.11.176** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI... |
+| **v5.11.175** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI... |
 
 <!-- CHANGELOG_END -->
 
@@ -131,7 +131,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 ### Smart Battery Management
 - 8 battery chemistries supported
 - 4 calculation algorithms
-- Voltage-based fallback when percentage unavailable
+- Voltage-based fallback when percentage unavlable
 
 ### Energy Monitoring
 - Full kWh, W, V, A support
@@ -153,13 +153,13 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **Dimmers** | Wall dimmers, LED dimmers, rotary knobs | ZCL + Tuya DP |
 | **Lights** | RGB, RGBW, CCT bulbs, LED strips | ZCL |
 | **Plugs & Sockets** | Smart plugs, energy monitors, power strips | ZCL + Tuya DP |
-| **Sensors** | Temp/humidity, motion, contact, water leak, smoke, air quality | ZCL + Tuya DP |
+| **Sensors** | Temp/humidity, motion, contact, water leak, smoke, r quality | ZCL + Tuya DP |
 | **Presence Radars** | mmWave, PIR+radar hybrid, HOBEIAN ZG-204ZM | ZCL + Tuya DP |
 | **Thermostats & TRVs** | Radiator valves, floor heating, AVATTO, Moes | Tuya DP |
-| **Covers** | Curtain motors, roller blinds, garage doors | Tuya DP + ZCL |
+| **Covers** | Curtn motors, roller blinds, garage doors | Tuya DP + ZCL |
 | **Buttons & Remotes** | Scene switches (1-4 button), SOS buttons, rotary | ZCL |
 | **Locks** | Smart door locks, fingerprint locks | Tuya DP |
-| **Climate** | Air purifiers, fans, IR blasters, humidifiers | Tuya DP |
+| **Climate** | r purifiers, fans, IR blasters, humidifiers | Tuya DP |
 | **Water** | Valves, tank monitors, garden timers | Tuya DP |
 | **WiFi Devices** | Tuya WiFi switches, plugs, sensors (via cloud API) | WiFi/Cloud |
 
@@ -202,9 +202,9 @@ Homey Pro
 
 ## Automation Workflows
 
-| Workflow | Schedule | Description |
+| Workflow | Schedule | Deion |
 |----------|----------|-------------|
-| **Daily Everything** | Daily 2 AM UTC | Forum + GitHub auto-response with AI |
+| **Dly Everything** | Dly 2 AM UTC | Forum + GitHub auto-response with  |
 | **Forum Responder** | Every 6h | Monitors topics 140352, 26439 |
 | **GitHub Scanner** | Mon/Thu | Issues, PRs, forks analysis |
 | **Enrichment Scanner** | Mon/Thu | Z2M, ZHA, deCONZ, Blakadder sync |
@@ -218,10 +218,10 @@ Homey Pro
 | Issue | Affected Devices | Status |
 |-------|-----------------|--------|
 | **TS0601 Time Sync** | LCD climate sensors (_TZE284_*) | Some firmwares ignore Zigbee time responses |
-| **Battery 0%** | TS0044 buttons (_TZ3000_wkai4ga5) | Reports 0% always - firmware bug |
+| **Battery 0%** | TS0044 buttons (_TZ3000_wk4ga5) | Reports 0% always - firmware bug |
 | **Cloud-only devices** | Some TS0601 variants | MCU ignores local Zigbee commands |
 
-> **Re-pairing required** after driver updates to apply new mappings.
+> **Re-pring required** after driver updates to apply new mappings.
 
 ---
 
@@ -263,37 +263,37 @@ homey app run
 
 ## FAQ
 
-<details>
+<detls>
 <summary><strong>My device shows as "unknown Zigbee device"</strong></summary>
 
 Your device's fingerprint (manufacturerName + productId) is not yet in the app. Open a GitHub issue with your device interview from [Homey Developer Tools](https://tools.developer.homey.app/tools/zigbee).
-</details>
+</detls>
 
-<details>
-<summary><strong>Device paired but doesn't respond to commands</strong></summary>
+<detls>
+<summary><strong>Device pred but doesn't respond to commands</strong></summary>
 
-1. Try re-pairing the device (remove and add again)
+1. Try re-pring the device (remove and add agn)
 2. Check if it's a Tuya DP device (TS0601) â€” these need specific DP mappings
 3. For BSEED/Zemismart: these are ZCL-only, ensure explicit binding is working
-</details>
+</detls>
 
-<details>
+<detls>
 <summary><strong>Battery always shows 0%</strong></summary>
 
-Some devices (e.g., TS0044 _TZ3000_wkai4ga5) have a firmware bug that always reports 0%. The app uses voltage-based fallback when available, but some devices don't report voltage either.
-</details>
+Some devices (e.g., TS0044 _TZ3000_wk4ga5) have a firmware bug that always reports 0%. The app uses voltage-based fallback when avlable, but some devices don't report voltage either.
+</detls>
 
-<details>
+<detls>
 <summary><strong>Temperature/humidity values are wrong (divided by 10 or 100)</strong></summary>
 
-This is usually a double-division bug. The app auto-detects divisors from Tuya DP values. If values are still wrong after re-pairing, open an issue with your exact manufacturerName.
-</details>
+This is usually a double-division bug. The app auto-detects divisors from Tuya DP values. If values are still wrong after re-pring, open an issue with your exact manufacturerName.
+</detls>
 
-<details>
+<detls>
 <summary><strong>How to get the test version?</strong></summary>
 
-Install from: [Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) â€” this is auto-promoted from draft builds daily.
-</details>
+Install from: [Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) â€” this is auto-promoted from draft builds dly.
+</detls>
 
 ---
 
@@ -302,7 +302,7 @@ Install from: [Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) 
 1. **Fork** the repository
 2. **Create** a feature branch (`git checkout -b feat/my-device`)
 3. **Validate**: `homey app validate --level publish`
-4. **Submit** a pull request with description
+4. **Submit** a pull request with deion
 
 ### Report a New Device
 1. Get a **device interview** from [Homey Developer Tools](https://tools.developer.homey.app/tools/zigbee)
@@ -331,10 +331,10 @@ This app is developed in my free time, powered by passion and coffee!
 
 ## Credits & Thanks
 
-A massive thank you to the maintainers and contributors of:
+A massive thank you to the mntners and contributors of:
 - **[Koenkk](https://github.com/Koenkk)** and all contributors to **Zigbee2MQTT**
 - **[blakadder](https://github.com/blakadder)** and the Zigbee Device Compatibility Repository
-- The **zigpy / ZHA / zha-device-handlers** maintainers
+- The **zigpy / ZHA / zha-device-handlers** mntners
 - The **CSA (Connectivity Standards Alliance)** for the Zigbee specifications
 - All developers and testers who share device logs, diagnostics, and fingerprints
 
