@@ -440,8 +440,9 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
         this.log(`[SOS] 🆘 EP${epId} IAS ACE command:`, cmd, JSON.stringify(payload || {}));
         const cmdLower = (cmd || '').toString().toLowerCase();
         if (cmdLower.includes('emergency') || cmdLower.includes('panic') ||
-          cmdLower.includes('fire') || cmdLower.includes('sos') || cmdLower === '02') {
-          this.log(`[SOS] 🆘🆘🆘 EP${epId} ALARM command detected!`);
+          cmdLower.includes('fire') || cmdLower.includes('sos') || 
+          cmdLower.includes('arm') || cmdLower === '02' || cmdLower === '00') {
+          this.log(`[SOS] 🆘🆘🆘 EP${epId} ALARM command detected (${cmd})!`);
           this._handleAlarm({ source: `iasAce-command-EP${epId}`, command: cmd });
         }
       });
@@ -465,9 +466,9 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
         this.log(`[SOS] 🆘 EP${epId} Raw cluster command ID: 0x${commandId.toString(16)}`, frame);
 
         // Command IDs for IAS ACE:
-        // 0x02 = emergency, 0x03 = fire, 0x04 = panic
-        if (commandId === 0x02 || commandId === 0x03 || commandId === 0x04) {
-          const cmdName = commandId === 0x02 ? 'emergency' : (commandId === 0x03 ? 'fire' : 'panic');
+        // 0x00 = arm (some buttons use this for SOS), 0x02 = emergency, 0x03 = fire, 0x04 = panic
+        if (commandId === 0x00 || commandId === 0x02 || commandId === 0x03 || commandId === 0x04) {
+          const cmdName = commandId === 0x00 ? 'arm' : (commandId === 0x02 ? 'emergency' : (commandId === 0x03 ? 'fire' : 'panic'));
           this.log(`[SOS] 🆘🆘🆘 EP${epId} RAW ${cmdName.toUpperCase()} command (0x${commandId.toString(16)})!`);
           this._handleAlarm({ source: `iasAce-raw-${cmdName}-EP${epId}`, commandId });
         }
