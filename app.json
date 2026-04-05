@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.11.202",
+  "version": "5.11.203",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -61641,6 +61641,7 @@
           "_tz3000_ug1vtuzn",
           "_tz3000_wr2ucaj9",
           "_tz3000_zpjuqnco",
+          "_tz3000_cdso6bjw",
           "_tze200_0ble7ow3",
           "_tze200_kzm5w4iz",
           "_tze284_3qhgndv6",
@@ -61713,8 +61714,8 @@
         "learnmode": {
           "image": "/drivers/button_emergency_sos/assets/learnmode.svg",
           "instruction": {
-            "en": "Press and hold the SOS button for 5 seconds. KEEP PRESSING the button every 10 seconds during pairing to prevent device sleep and enrollment timeout.",
-            "fr": "Appuyez et maintenez le bouton SOS pendant 5 secondes. CONTINUEZ à appuyer toutes les 10 secondes pendant l appairage pour éviter la mise en veille."
+            "en": "Press and hold the SOS button for 5 seconds. KEEP PRESSING the button every 2 seconds during pairing to prevent device sleep and enrollment timeout.",
+            "fr": "Appuyez et maintenez le bouton SOS pendant 5 secondes. CONTINUEZ à appuyer toutes les 2 secondes pendant l appairage pour éviter la mise en veille."
           }
         }
       },
