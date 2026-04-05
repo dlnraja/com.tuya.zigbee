@@ -230,9 +230,6 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
         try { (() => { try { return this.homey.flow.getDeviceTriggerCard('button_emergency_sos_long_pressed'); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {}); } catch(e) {}
       }
 
-
-      // Read battery when device is awake
-      this.homey.setTimeout(() => this._readBatteryNow(), 200);
       return;
     }
 
@@ -242,9 +239,6 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       if (value === true || value === 1 || value === 'true') {
         this.log('[SOS] 🆘🆘🆘 Tuya DP SOS detected!');
         this._handleAlarm({ source: 'tuya-dp', dp, value });
-
-        // v5.5.146: Read battery when device is awake (button press wakes it)
-        this.homey.setTimeout(() => this._readBatteryNow(), 200);
       }
     }
   }
@@ -660,12 +654,12 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       }
     };
 
-    // v5.5.107: Write CIE Address FIRST (required for some devices)
+    // v5.13.5: Non-blocking Write CIE Address FIRST (fixes sleepy miss)
     try {
       const ieeeAddress = await this._getCoordinatorIeee();
       this.log('[SOS] Writing CIE Address:', ieeeAddress);
-      await iasZone.writeAttributes({ iasCIEAddress: ieeeAddress }).catch(() => { });
-      await iasZone.writeAttributes({ iasCieAddress: ieeeAddress }).catch(() => { });
+      iasZone.writeAttributes({ iasCIEAddress: ieeeAddress }).catch(() => { });
+      iasZone.writeAttributes({ iasCieAddress: ieeeAddress }).catch(() => { });
     } catch (e) {
       this.log('[SOS] CIE address write (normal if not supported):', e.message);
     }
@@ -673,22 +667,27 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     // v5.5.107: Track enrollment status
     this._enrollmentPending = true;
 
-    // Proactive enrollment (will likely fail if device is sleeping)
+    // Proactive enrollment (non-blocking)
     try {
-      await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 10 });
-      this.log('[SOS] ✅ Proactive enrollment sent');
-      this._enrollmentPending = false;
+      iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 10 }).then(() => {
+        this.log('[SOS] ✅ Proactive enrollment sent');
+        this._enrollmentPending = false;
+      }).catch(() => {
+        this.log('[SOS] Enrollment pending - will retry when device wakes up');
+      });
     } catch (e) {
       this.log('[SOS] Enrollment pending - will retry when device wakes up');
-      // v5.5.107: NO automatic retry - will retry in _handleAlarm when device wakes
     }
 
-    // v5.5.107: Bind the cluster to receive reports
+    // v5.13.5: Bind the cluster to receive reports (non-blocking)
     try {
-      await iasZone.bind();
-      this.log('[SOS] ✅ IAS Zone bound');
+      iasZone.bind().then(() => {
+        this.log('[SOS] ✅ IAS Zone bound');
+      }).catch((e) => {
+        this.log('[SOS] Binding (normal if already bound):', e.message);
+      });
     } catch (e) {
-      this.log('[SOS] Binding (normal if already bound):', e.message);
+      this.log('[SOS] Binding failed locally:', e.message);
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -769,10 +768,6 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       this.setCapabilityValue('alarm_generic', false).catch(() => { });
       this.log('[SOS] alarm_generic reset');
     }, 5000);
-
-    // v5.5.137: Configure reporting AND read battery while device is awake
-    // This is crucial - the device will go back to sleep in ~2 seconds!
-    this._configureAndReadBattery();
   }
 
   /**
@@ -784,12 +779,13 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       const iasZone = ep1?.clusters?.iasZone;
       if (!iasZone) return;
 
-      this.log('[SOS] 🔄 Device awake - attempting enrollment...');
+      this.log('[SOS] 🔄 Device awake - attempting enrollment (non-blocking)...');
       const ieee = await this._getCoordinatorIeee();
-      if (ieee) await iasZone.writeAttributes({ iasCIEAddress: ieee }).catch(() => { });
-      await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 10 });
-      this.log('[SOS] ✅ Enrollment successful (device was awake)');
-      this._enrollmentPending = false;
+      if (ieee) iasZone.writeAttributes({ iasCIEAddress: ieee }).catch(() => { });
+      iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 10 }).then(() => {
+        this.log('[SOS] ✅ Enrollment successful (device was awake)');
+        this._enrollmentPending = false;
+      }).catch(() => {});
     } catch (e) {
       this.log('[SOS] Enrollment attempt failed:', e.message);
       // Keep _enrollmentPending = true for next wake
@@ -1140,18 +1136,8 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       }
     }
     // Direct fallbacks
-    const direct = this.homey?.zigbee?.ieeeAddress || this.homey?.zigbee?.address || this.driver?.homey?.zigbee?.ieeeAddress;
-    if (direct) return direct;
-    // Read existing CIE from device
-    try {
-      const ias = this.zclNode?.endpoints?.[1]?.clusters?.iasZone;
-      if (ias?.readAttributes) {
-        const attrs = await ias.readAttributes(['iasCIEAddress']);
-        if (attrs?.iasCIEAddress) return attrs.iasCIEAddress;
-      }
-    } catch (e) { /* ignore */ }
-    this.log('[SOS] Could not determine coordinator IEEE');
-    return null;
+    const direct = this.homey?.zigbee?.ieeeAddress || this.homey?.zigbee?.address || this.driver?.homey?.zigbee?.ieeeAddress || '00:00:00:00:00:00:00:00';
+    return direct;
   }
 
   async onUninit() {

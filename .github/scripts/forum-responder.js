@@ -145,11 +145,11 @@ async function getLastOwnPost(tid){
     if(!r2.ok)return null;
     const posts=(await r2.json()).post_stream?.posts||[];
     // Find the most recent dlnraja post (not necessarily the very last)
+    // Find if the VERY LAST post is by dlnraja
     const sorted=posts.sort((a,b)=>b.post_number-a.post_number);
-    const own=sorted.find(p=>p.username==='dlnraja');
-    if(own){
-      return{id:own.id,postNumber:own.post_number,
-        raw:own.raw||strip(own.cooked||''),isLast:sorted[0]?.id===own.id};
+    if(sorted[0]?.username==='dlnraja'){
+      return{id:sorted[0].id,postNumber:sorted[0].post_number,
+        raw:sorted[0].raw||strip(sorted[0].cooked||''),isLast:true};
     }
     return null;
   }catch{return null}

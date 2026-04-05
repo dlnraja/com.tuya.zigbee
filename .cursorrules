@@ -12,6 +12,7 @@ Homey Pro app for 4200+ Tuya Zigbee devices. Hybrid protocol: Tuya DP (0xEF00) +
 - ID pattern: `{driver}_physical_gang{N}_{on|off}`
 - NO `titleFormatted` with `[[device]]` - causes bugs
 - Always check driver.flow.compose.json for exact IDs
+- Virtual buttons MUST use `this._safeSetCapability()` rather than direct setter to ensure flow triggers map optimally internally.
 
 ## Imports
 ```javascript
@@ -43,6 +44,10 @@ _markAppCommand() {
 // In DP handler:
 const isPhysical = reportingEvent && !this._appCommandPending;
 ```
+
+## Anti-Patterns & Bug Fallbacks
+- **ZCL Cluster Double-Parsing**: When mixing custom inference handlers in `setupUniversalZCLListeners` for hybrid sensors, wrap base class setups (`_setupZCLCluster`) in checks for `!this.clusterHandlers?.temperatureMeasurement` to prevent bouncing parallel streams.
+- **Phantom Capabilities**: Do NOT fallback to feature-bloated configs like `HOBEIAN_10G_MULTI` for missing-model IDs on onboarding. It assigns fake temperature and humidity capabilities causing UI spam, and breaks IAS Zone protocols. Cascade safely into robust profiles like `HOBEIAN_ZG204ZM_FALLBACK`.
 
 ## Backlight Values
 Strings only: `"off"`, `"normal"`, `"inverted"`

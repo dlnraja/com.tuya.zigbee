@@ -97,5 +97,16 @@ for (const d of dirs) {
   }
 }
 
+// 6. Virtual Button Flow Triggers (must use _safeSetCapability)
+const mixinPath = path.join(DIRS, '..', 'lib', 'mixins', 'VirtualButtonMixin.js');
+if (fs.existsSync(mixinPath)) {
+  const txt = fs.readFileSync(mixinPath, 'utf8');
+  if (txt.includes('setCapabilityValue(')) {
+    // If it includes setCapabilityValue directly outside of _safeSetCapability implementation, flag a warning.
+    // It's a rough check but helps audit future mistakes.
+    warn('VirtualButtonMixin.js natively found calling setCapabilityValue. Ensure flow trigger triggers use _safeSetCapability.');
+  }
+}
+
 console.log('Done. ' + errors + ' errors, ' + warnings + ' warnings.');
 if (errors > 0) process.exit(1);

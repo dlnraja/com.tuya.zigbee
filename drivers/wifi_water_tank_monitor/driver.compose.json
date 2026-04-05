@@ -1,0 +1,146 @@
+{
+  "name": {
+    "en": "WiFi Liquid Level Sensor",
+    "fr": "Capteur Niveau Liquide WiFi"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_water_level",
+    "measure_water_percentage",
+    "alarm_water_low",
+    "alarm_water_high",
+    "alarm_water"
+  ],
+  "capabilitiesOptions": {
+    "measure_water_level": {
+      "title": { "en": "Liquid Depth" }
+    },
+    "measure_water_percentage": {
+      "title": { "en": "Fill Level" }
+    },
+    "alarm_water_low": {
+      "title": { "en": "Low Level Alert" }
+    },
+    "alarm_water_high": {
+      "title": { "en": "High Level Alert" }
+    },
+    "alarm_water": {
+      "title": { "en": "Level Alert" }
+    }
+  },
+  "pair": [
+    {
+      "id": "configure",
+      "navigation": { "next": "list_devices" }
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": { "prev": "configure" }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "repair": [
+    {
+      "id": "configure"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": { "en": "Tuya Local Connection" },
+      "children": [
+        {
+          "id": "device_id",
+          "type": "text",
+          "label": { "en": "Device ID" },
+          "value": ""
+        },
+        {
+          "id": "local_key",
+          "type": "text",
+          "label": { "en": "Local Key" },
+          "value": ""
+        },
+        {
+          "id": "ip",
+          "type": "text",
+          "label": { "en": "IP Address" },
+          "value": ""
+        },
+        {
+          "id": "protocol_version",
+          "type": "dropdown",
+          "label": { "en": "Protocol Version" },
+          "value": "3.3",
+          "values": [
+            { "id": "3.1", "label": { "en": "3.1" } },
+            { "id": "3.3", "label": { "en": "3.3 (most common)" } },
+            { "id": "3.4", "label": { "en": "3.4" } },
+            { "id": "3.5", "label": { "en": "3.5" } }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": { "en": "Tank Configuration" },
+      "children": [
+        {
+          "id": "installation_height",
+          "type": "number",
+          "label": { "en": "Installation Height (mm)" },
+          "hint": { "en": "Distance from sensor to tank bottom in mm (DP19, 10-4000)" },
+          "value": 2000,
+          "min": 10,
+          "max": 4000,
+          "step": 1,
+          "units": "mm"
+        },
+        {
+          "id": "liquid_depth_max",
+          "type": "number",
+          "label": { "en": "Sensor to Full Line (mm)" },
+          "hint": { "en": "Height from sensor to liquid surface when full (DP21, 10-4000)" },
+          "value": 200,
+          "min": 10,
+          "max": 4000,
+          "step": 1,
+          "units": "mm"
+        },
+        {
+          "id": "max_set",
+          "type": "number",
+          "label": { "en": "Max Alarm Level (%)" },
+          "hint": { "en": "High level alarm threshold percentage (DP7, 0-100)" },
+          "value": 100,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "units": "%"
+        },
+        {
+          "id": "min_set",
+          "type": "number",
+          "label": { "en": "Min Alarm Level (%)" },
+          "hint": { "en": "Low level alarm threshold percentage (DP8, 0-100)" },
+          "value": 0,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "units": "%"
+        }
+      ]
+    }
+  ],
+  "images": {
+    "small": "drivers/wifi_water_tank_monitor/assets/images/small.png",
+    "large": "drivers/wifi_water_tank_monitor/assets/images/large.png",
+    "xlarge": "drivers/wifi_water_tank_monitor/assets/images/xlarge.png"
+  },
+  "platforms": [ "local" ],
+  "connectivity": [ "lan" ]
+}
