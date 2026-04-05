@@ -1,4 +1,7 @@
 {
+  "5.11.205": {
+    "en": "Added 3 new fingerprints for enhanced device compatibility in Universal Tuya Zigbee app v5.11.205."
+  },
   "5.11.204": {
     "en": "Updated Universal Tuya Zigbee app to v5.11.204 with . Added support for Full State Card discovery."
   },
@@ -56,10 +59,7 @@
   "5.11.186": {
     "en": "Universal Tuya Zigbee app v5.11.186 adds 681 new fingerprints and updates 193 drivers."
   },
-  "5.11.185": {
-    "en": "v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.205": {
-    "en": "v5.11.204: Implemented 'Full State Card' discovery for the SOS button driver, improving identity and force report handling., No new features added in this release., No improvements made in this release."
+  "5.11.206": {
+    "en": "v5.11.205: Added 3 new fingerprints to improve device compatibility., Integrated 3 new fingerprints for better support of Zigbee devices."
   }
 }
