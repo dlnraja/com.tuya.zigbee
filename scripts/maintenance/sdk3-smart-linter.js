@@ -213,6 +213,72 @@ const RULES = [
     },
     fix: null,
   },
+  {
+    id: 'sdk3-case-sensitive-fingerprint',
+    severity: 'warn',
+    desc: 'Fingerprint in enrichment data uses UPPERCASE (e.g., _TZE200_PAY2BYAX). Tuya fingerprints must be lowercase to match correctly.',
+    test: (code, driverDir) => {
+      const compose = loadCompose(driverDir);
+      if (!compose || !compose.zigbee) return false;
+      const mfrs = compose.zigbee.manufacturerName || [];
+      return mfrs.some(m => /^_T[A-Z0-9]+_[A-Z0-9]+$/.test(m));
+    },
+    fix: null,
+  },
+  {
+    id: 'sdk3-static-probe-zcl',
+    severity: 'warn',
+    desc: 'driver.compose.json declares measure_temperature.probe as default capability. For pure ZCL sensors (TS0201/_TZ3000_*), probe should only be added dynamically via DP38.',
+    test: (code, driverDir) => {
+      const compose = loadCompose(driverDir);
+      if (!compose) return false;
+      const caps = compose.capabilities || [];
+      if (!caps.includes('measure_temperature.probe')) return false;
+      // Only flag if driver has pure-ZCL fingerprints
+      const mfrs = compose.zigbee?.manufacturerName || [];
+      return mfrs.some(m => m.toLowerCase().startsWith('_tz3000_'));
+    },
+    fix: null,
+  },
+  {
+    id: 'sdk3-trigger-card-no-try',
+    severity: 'warn',
+    desc: 'getDeviceTriggerCard() called without try-catch. Missing cards will crash the app.',
+    test: (code) => {
+      if (!/getDeviceTriggerCard/.test(code)) return false;
+      // Check if there are calls NOT inside try blocks
+      const lines = code.split('\n');
+      for (let i = 0; i < lines.length; i++) {
+        if (/getDeviceTriggerCard/.test(lines[i])) {
+          // Look back max 5 lines for 'try {'
+          let inTry = false;
+          for (let j = Math.max(0, i - 5); j <= i; j++) {
+            if (/try\s*\{/.test(lines[j])) inTry = true;
+          }
+          if (!inTry) return true;
+        }
+      }
+      return false;
+    },
+    fix: null,
+  },
+  {
+    id: 'sdk3-dp-variant-awareness',
+    severity: 'info',
+    desc: 'DP mapping has no variant-awareness comment. Same DP can serve different functions across _TZE200/_TZE204/_TZE284 variants. Consider adding variant notes.',
+    test: (code) => {
+      // Only flag if file has dpMappings but no variant comments
+      if (!/dpMappings/.test(code)) return false;
+      if (/variant/i.test(code)) return false; // Already has variant comments
+      // Check if multiple TZE prefixes are referenced
+      const hasTZE200 = /_TZE200/i.test(code);
+      const hasTZE204 = /_TZE204/i.test(code);
+      const hasTZE284 = /_TZE284/i.test(code);
+      const prefixCount = [hasTZE200, hasTZE204, hasTZE284].filter(Boolean).length;
+      return prefixCount >= 2; // Multiple variants = needs awareness
+    },
+    fix: null,
+  },
 ];
 
 function loadCompose(driverDir) {

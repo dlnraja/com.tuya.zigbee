@@ -216,9 +216,9 @@ jobs:
           node scripts/maintenance/auto-resolve-collisions.js || true
 
       # ===== 6a-bis. AUTO-FIX PHANTOM SDK METHODS (CRITICAL) =====
-      - name: "6a-bis. Auto-Fix Phantom SDK3 Methods (NO-AI)"
+      - name: "6a-bis. Auto-Fix Phantom SDK3 Methods + Fingerprint Case + Probe Dedup (NO-AI)"
         continue-on-error: true
-        timeout-minutes: 2
+        timeout-minutes: 3
         run: |
           echo "=== Auto-fixing phantom SDK methods (getDeviceConditionCard/getDeviceActionCard) ==="
           # These methods do NOT exist in Homey SDK v3 and crash the entire app on startup
@@ -229,6 +229,40 @@ jobs:
               echo "  ✅ Fixed phantom methods in: $f"
             fi
           done
+
+          echo ""
+          echo "=== Auto-fixing uppercase fingerprints in driver.compose.json ==="
+          # Tuya fingerprints MUST be lowercase (e.g., _TZE200_pay2byax not _TZE200_PAY2BYAX)
+          find drivers/ -name 'driver.compose.json' | while read f; do
+            if grep -qE '"_T[A-Z0-9]+_[A-Z]+' "$f" 2>/dev/null; then
+              node -e "
+                const fs = require('fs');
+                const raw = fs.readFileSync('$f','utf8');
+                const fixed = raw.replace(/\"(_T[A-Z0-9]+_[A-Za-z0-9]+)\"/g, (m, p) => '\"' + p.toLowerCase() + '\"');
+                if (fixed !== raw) { fs.writeFileSync('$f', fixed); console.log('  ✅ Lowercased fingerprints in: $f'); }
+              " || true
+            fi
+          done
+
+          echo ""
+          echo "=== Removing static measure_temperature.probe from pure-ZCL drivers ==="
+          # Pure ZCL sensors (_TZ3000_*) cannot have DP38 probes; probe should be dynamic only
+          find drivers/ -name 'driver.compose.json' | while read f; do
+            if grep -q '"measure_temperature.probe"' "$f" 2>/dev/null; then
+              if grep -q '_TZ3000_\|_TZ3210_' "$f" 2>/dev/null; then
+                if ! grep -q '_TZE200_\|_TZE204_\|_TZE284_' "$f" 2>/dev/null; then
+                  # Pure ZCL driver with probe declared — remove it
+                  node -e "
+                    const fs = require('fs');
+                    const raw = fs.readFileSync('$f','utf8');
+                    const fixed = raw.replace(/,?\s*\"measure_temperature\.probe\"/g, '');
+                    if (fixed !== raw) { fs.writeFileSync('$f', fixed); console.log('  ✅ Removed static probe from: $f'); }
+                  " || true
+                fi
+              fi
+            fi
+          done
+
 
       # ===== 6b. DRIVER VALIDATION: Check for known bugs =====
       - name: "6b. Driver Integrity Validator"

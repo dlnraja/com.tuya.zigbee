@@ -497,16 +497,25 @@ class ClimateSensorDevice extends HybridSensorBase {
     // Call parent initialization (HybridSensorBase sets up ALL listeners)
     await super.onNodeInit({ zclNode });
 
-    // v5.13.3: RUNTIME CLEANUP — Remove measure_temperature.probe for standard
-    // ZCL devices (TS0201/_TZ3000_*) that were paired before this fix.
-    // Only DP38-based devices (external probe sensors like _TZE284_8se38w3c) need it.
-    // This capability is now dynamically added when DP38 data arrives (see dpMappings).
+    // v5.13.4: INTELLIGENT PROBE DEDUP — Variant-aware dual-temperature handling
+    // Rule 1: Pure ZCL devices (_TZ3000_*/_TZ3210_*) → remove probe immediately (no DP38)
+    // Rule 2: DP-capable devices (_TZE*) → observe for 5 min; if both temps are
+    //         identical, it's a duplicate → remove. If they differ, it's a legit
+    //         internal+external probe setup (soil sensor, climate box, etc.) → keep both.
     if (this.hasCapability('measure_temperature.probe')) {
       const mfr = (this.getSetting('zb_manufacturer_name') || '').toLowerCase();
-      const isDP38Device = mfr.startsWith('_tze284_8se38w3c') || mfr.startsWith('_tze284_tgrzpqf4');
-      if (!isDP38Device) {
-        this.log('[CLIMATE] 🧹 Removing unused measure_temperature.probe (standard ZCL device)');
+      const isPureZCL = mfr.startsWith('_tz3000_') || mfr.startsWith('_tz3210_') ||
+                        mfr.startsWith('_tz6210_') || mfr.startsWith('owon');
+      if (isPureZCL) {
+        this.log('[CLIMATE] 🧹 Removing measure_temperature.probe (pure ZCL device, no DP38 possible)');
         await this.removeCapability('measure_temperature.probe').catch(() => {});
+      } else {
+        // DP-capable device — start 5-minute observation window
+        this._probeObservationSamples = [];
+        this._probeObservationTimer = this.homey.setTimeout(() => {
+          this._evaluateProbeDedup();
+        }, 5 * 60 * 1000); // 5 minutes
+        this.log('[CLIMATE] 🔍 Probe observation started (5min window for dedup check)');
       }
     }
 
@@ -702,6 +711,58 @@ class ClimateSensorDevice extends HybridSensorBase {
     }
     this.log('[CLIMATE] ════════════════════════════════════════════════════════════');
     this.log('');
+  }
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // v5.13.4: INTELLIGENT PROBE DEDUP SYSTEM
+  // Observes both measure_temperature and measure_temperature.probe for 5 min
+  // If they report identical values → duplicate → remove probe
+  // If they differ → legitimate internal+external probe → keep both
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  /**
+   * Record an observation sample for probe dedup analysis.
+   * Called automatically when either temperature capability is updated.
+   */
+  _recordProbeObservation() {
+    if (!this._probeObservationSamples) return;
+    const mainTemp = this.getCapabilityValue('measure_temperature');
+    const probeTemp = this.getCapabilityValue('measure_temperature.probe');
+    if (mainTemp !== null && probeTemp !== null) {
+      this._probeObservationSamples.push({
+        main: mainTemp,
+        probe: probeTemp,
+        ts: Date.now()
+      });
+    }
+  }
+
+  /**
+   * After 5-minute observation window, evaluate if probe is a duplicate.
+   * Tolerance: if ALL samples within 0.5°C → duplicate, remove probe.
+   * If ANY sample differs by > 0.5°C → legitimate dual sensor → keep.
+   */
+  async _evaluateProbeDedup() {
+    const samples = this._probeObservationSamples || [];
+    this._probeObservationSamples = null; // Stop collecting
+
+    if (samples.length < 2) {
+      this.log('[PROBE-DEDUP] ℹ️ Not enough samples during observation — keeping probe capability');
+      return;
+    }
+
+    const allIdentical = samples.every(s => Math.abs(s.main - s.probe) <= 0.5);
+    const neverReported = samples.every(s => s.probe === null || s.probe === undefined);
+
+    if (neverReported) {
+      this.log('[PROBE-DEDUP] ⚠️ Probe never reported data — removing as unused');
+      await this.removeCapability('measure_temperature.probe').catch(() => {});
+    } else if (allIdentical) {
+      this.log(`[PROBE-DEDUP] 🧹 All ${samples.length} samples identical (±0.5°C) — removing duplicate probe`);
+      await this.removeCapability('measure_temperature.probe').catch(() => {});
+    } else {
+      this.log(`[PROBE-DEDUP] ✅ Temperatures differ across ${samples.length} samples — keeping probe (legitimate dual sensor)`);
+    }
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
