@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-05T11:01:26.811Z",
+  "ts": "2026-04-05T11:18:03.737Z",
   "currentCount": 7180,
   "src": {
     "johan": {
@@ -18883,9 +18883,17 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 50,
+      "issueCount": 51,
       "prCount": 5,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 193,
+          "title": "[climate_sensor _TZ3000_xr3htd96 TS0201] Bug:",
+          "mfrs": [
+            "_TZ3000_xr3htd96"
+          ]
+        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 192,
@@ -19120,16 +19128,6 @@
           "title": "Bug report - [Short description] _TZ3000_bgsigers - TS0201 sensors stopped working",
           "mfrs": [
             "_TZ3000_bgsigers"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1343,
-          "title": "Device Request - 10G 4 in 1 human motionsensor  - _TZE200_rhgsbacq / TS0601",
-          "mfrs": [
-            "_TZE200_rhgsbacq",
-            "_TZE200_rhgsbacq",
-            "_TZE200_rhgsbacq"
           ]
         }
       ]
