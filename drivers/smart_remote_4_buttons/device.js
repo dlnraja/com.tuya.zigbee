@@ -12,13 +12,6 @@ class SmartRemote4ButtonsDevice extends ButtonDevice {
     this.buttonCount = 4;
     this.log('[SMART_REMOTE_4_BUTTONS] v5.12.0 init - 4 buttons');
     await super.onNodeInit({ zclNode }).catch(err => this.error('[SMART_REMOTE_4_BUTTONS] init err:', err.message));
-      });
-      // Initial check
-      const bat = this.getCapabilityValue('measure_battery');
-      if (bat !== null && this.hasCapability('alarm_battery')) {
-        this.setCapabilityValue('alarm_battery', bat < 15).catch(() => {});
-      }
-    }
     this.log('[SMART_REMOTE_4_BUTTONS] ready');
   }
 

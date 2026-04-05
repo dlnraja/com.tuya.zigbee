@@ -83,13 +83,6 @@ class RGBBulbDevice extends HybridLightBase {
     try {
       // v5.5.288: Enhanced error handling for TS0505B "Could not get device by id" issue
       this.log('[RGB] v5.5.288 - Starting initialization...');
-      });
-      // Initial check
-      const bat = this.getCapabilityValue('measure_battery');
-      if (bat !== null && this.hasCapability('alarm_battery')) {
-        this.setCapabilityValue('alarm_battery', bat < 15).catch(() => {});
-      }
-    }
       this.log(`[RGB] Device ID: ${this.getData()?.id || 'unknown'}`);
       this.log(`[RGB] ManufacturerName: ${this.getData()?.manufacturerName || 'unknown'}`);
 

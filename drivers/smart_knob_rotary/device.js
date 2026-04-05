@@ -8,13 +8,6 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('Smart Knob Rotary device initialized');
-      });
-      // Initial check
-      const bat = this.getCapabilityValue('measure_battery');
-      if (bat !== null && this.hasCapability('alarm_battery')) {
-        this.setCapabilityValue('alarm_battery', bat < 15).catch(() => {});
-      }
-    }
     
     // Store zclNode for later use
     this._zclNode = zclNode;

@@ -100,7 +100,7 @@ This was **fixed in v6.0** thanks to @Robsta86's contribution (PR #180)!
 TS0601 devices (Tuya DP protocol) reject standard ZCL bindings [1, 1280, 1030] with zdoInvalidEndpoint error.
 
 **Solution in v6.0:**
-✅ Changed bindings to `[61184]` (Tuya DP cluster only)
+✅ Changed bindings to \`[61184]\` (Tuya DP cluster only)
 ✅ Tested with _TZE204_sxm7l9xa and _TZE204_qasjif9e
 ✅ Applies to ALL TS0601 devices (presence sensors, soil sensors, etc.)
 

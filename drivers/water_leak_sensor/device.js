@@ -252,13 +252,6 @@ class WaterLeakSensorDevice extends HybridSensorBase {
     this._invertAlarm = this.getSetting('invert_alarm') || false;
 
     await super.onNodeInit({ zclNode });
-      });
-      // Initial check
-      const bat = this.getCapabilityValue('measure_battery');
-      if (bat !== null && this.hasCapability('alarm_battery')) {
-        this.setCapabilityValue('alarm_battery', bat < 15).catch(() => {});
-      }
-    }
 
     // v5.8.28: CRITICAL FIX - IAS Zone enrollment (Lasse_K forum 'inactivated' fix)
     // IASZoneManager.enrollIASZone() was defined but NEVER called, causing sensors to stay notEnrolled

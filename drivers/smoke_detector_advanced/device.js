@@ -205,13 +205,6 @@ class SmokeDetectorAdvancedDevice extends HybridSensorBase {
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
-      });
-      // Initial check
-      const bat = this.getCapabilityValue('measure_battery');
-      if (bat !== null && this.hasCapability('alarm_battery')) {
-        this.setCapabilityValue('alarm_battery', bat < 15).catch(() => {});
-      }
-    }
 
     // v5.5.503: DIAGNOSTIC LOGGING for Martijn report
     const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || 'UNKNOWN';

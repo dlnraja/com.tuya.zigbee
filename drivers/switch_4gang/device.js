@@ -82,13 +82,6 @@ class Switch4GangDevice extends BaseClass {
         }
 
         await super.onNodeInit({ zclNode });
-      });
-      // Initial check
-      const bat = this.getCapabilityValue('measure_battery');
-      if (bat !== null && this.hasCapability('alarm_battery')) {
-        this.setCapabilityValue('alarm_battery', bat < 15).catch(() => {});
-      }
-    }
 
         // v5.5.896: Physical button detection (single/double/long/triple)
         await this.initPhysicalButtonDetection?.(zclNode);

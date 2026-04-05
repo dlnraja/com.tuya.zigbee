@@ -21,13 +21,6 @@ class SmartRemote1ButtonDevice extends ButtonDevice {
         }
       ]);
       this.log('Attribute reporting configured successfully');
-      });
-      // Initial check
-      const bat = this.getCapabilityValue('measure_battery');
-      if (bat !== null && this.hasCapability('alarm_battery')) {
-        this.setCapabilityValue('alarm_battery', bat < 15).catch(() => {});
-      }
-    }
     } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }

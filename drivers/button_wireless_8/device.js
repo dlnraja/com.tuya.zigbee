@@ -20,13 +20,6 @@ class Button8GangDevice extends ButtonDevice {
 
     this.buttonCount = 8;
     await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
-      });
-      // Initial check
-      const bat = this.getCapabilityValue('measure_battery');
-      if (bat !== null && this.hasCapability('alarm_battery')) {
-        this.setCapabilityValue('alarm_battery', bat < 15).catch(() => {});
-      }
-    }
     await this._setupE000Detection(zclNode);
     await this._setupExtraDetection(zclNode);
     this.log('[INIT] ✅ Button8GangDevice initialized - 8 buttons ready');

@@ -18,7 +18,10 @@ async function main(){
   if(!entries.length){
     console.log('Fallback: GitHub README...');
     const r2=await fetchWithRetry('https://raw.githubusercontent.com/public-apis/public-apis/master/README.md',{},{retries:3,label:'publicApisFallback'});
-    if(!r2.ok)throw new Error('Fetch failed: '+r2.status);
+    if(!r2.ok) {
+      console.log('Fetch failed: '+r2.status + '. Skipping public APIs scan.');
+      return;
+    }
     const md=await r2.text();let cat=null;
     for(const l of md.split('\n')){const cm=l.match(/^###\s+(.+)/);if(cm){cat=cm[1].trim();continue}
       const rm=l.match(/^\|\s*\[([^\]]+)\]\(([^)]+)\)\s*\|\s*([^|]*)\|\s*([^|]*)\|/);
