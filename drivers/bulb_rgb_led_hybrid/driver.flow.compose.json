@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "bulb_rgb_smart_bulb_rgb_turned_on",
+      "id": "bulb_rgb_smart_bulb_rgb_turned_on_dup_payo6",
       "title": {
         "en": "Turned on",
         "fr": "Allumé"
@@ -13,7 +13,7 @@
       }
     },
     {
-      "id": "bulb_rgb_smart_bulb_rgb_turned_off",
+      "id": "bulb_rgb_smart_bulb_rgb_turned_off_dup_qrmu8",
       "title": {
         "en": "Turned off",
         "fr": "Éteint"
@@ -25,7 +25,7 @@
       }
     },
     {
-      "id": "bulb_rgb_smart_bulb_rgb_dim_changed",
+      "id": "bulb_rgb_smart_bulb_rgb_dim_changed_dup_foyuw",
       "title": {
         "en": "Brightness changed",
         "fr": "Luminosité changée"
@@ -48,7 +48,7 @@
       }
     },
     {
-      "id": "bulb_rgb_turned_on",
+      "id": "bulb_rgb_turned_on_dup_k1ywl",
       "title": {
         "en": "Turned on",
         "fr": "Allumé",
@@ -64,7 +64,7 @@
       }
     },
     {
-      "id": "bulb_rgb_turned_off",
+      "id": "bulb_rgb_turned_off_dup_mhyn8",
       "title": {
         "en": "Turned off",
         "fr": "Éteint",
@@ -80,7 +80,7 @@
       }
     },
     {
-      "id": "bulb_rgb_battery_low",
+      "id": "bulb_rgb_battery_low_dup_d0z4z",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -98,7 +98,7 @@
   ],
   "conditions": [
     {
-      "id": "bulb_rgb_smart_bulb_rgb_is_on",
+      "id": "bulb_rgb_smart_bulb_rgb_is_on_dup_t4rvf",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}"
@@ -110,7 +110,7 @@
       "args": []
     },
     {
-      "id": "bulb_rgb_is_on",
+      "id": "bulb_rgb_is_on_dup_f65xq",
       "title": {
         "en": "Is !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}",
@@ -128,7 +128,7 @@
   ],
   "actions": [
     {
-      "id": "bulb_rgb_smart_bulb_rgb_turn_on",
+      "id": "bulb_rgb_smart_bulb_rgb_turn_on_dup_k8w5o",
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
@@ -140,7 +140,7 @@
       }
     },
     {
-      "id": "bulb_rgb_smart_bulb_rgb_turn_off",
+      "id": "bulb_rgb_smart_bulb_rgb_turn_off_dup_0wbi0",
       "title": {
         "en": "Turn off",
         "fr": "Éteindre"
@@ -152,7 +152,7 @@
       }
     },
     {
-      "id": "bulb_rgb_smart_bulb_rgb_toggle",
+      "id": "bulb_rgb_smart_bulb_rgb_toggle_dup_7gj82",
       "title": {
         "en": "Toggle on or off",
         "fr": "Basculer"
@@ -164,7 +164,7 @@
       }
     },
     {
-      "id": "bulb_rgb_smart_bulb_rgb_set_dim",
+      "id": "bulb_rgb_smart_bulb_rgb_set_dim_dup_7p03i",
       "title": {
         "en": "Set brightness to...",
         "fr": "Régler la luminosité à..."
@@ -190,7 +190,7 @@
       }
     },
     {
-      "id": "bulb_rgb_turn_on",
+      "id": "bulb_rgb_turn_on_dup_rsqdj",
       "title": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -206,7 +206,7 @@
       }
     },
     {
-      "id": "bulb_rgb_turn_off",
+      "id": "bulb_rgb_turn_off_dup_ndqug",
       "title": {
         "en": "Turn off",
         "fr": "Éteindre",
@@ -222,7 +222,7 @@
       }
     },
     {
-      "id": "bulb_rgb_toggle",
+      "id": "bulb_rgb_toggle_dup_p33lg",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -238,7 +238,7 @@
       }
     },
     {
-      "id": "bulb_rgb_set_brightness",
+      "id": "bulb_rgb_set_brightness_dup_hywwp",
       "title": {
         "en": "Set brightness",
         "fr": "Régler luminosité",

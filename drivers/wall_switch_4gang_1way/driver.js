@@ -72,28 +72,38 @@ class WallSwitch4Gang1WayDriver extends ZigBeeDriver {
         });
       } catch (err) { this.error(`Action ${id}: ${err.message}`); }
     }
-    for (const { id, ep, val } of gangActions) {
+        for (const { id, ep, val } of gangActions) {
       try {
         this.homey.flow.getActionCard(id).registerRunListener(async (args) => {
           if (!args.device) return false;
-          const onOff = args.device.zclNode?.endpoints?.[ep]?.clusters?.onOff;
-          if (!onOff) return false;
-          if (val === 'toggle') { await onOff.toggle(); }
-          else { await onOff[val ? 'setOn' : 'setOff'](); }
+          const cap = ep === 1 ? 'onoff' : ('onoff.gang' + ep);
+          try {
+            if (val === 'toggle') {
+              await args.device.triggerCapabilityListener(cap, !args.device.getCapabilityValue(cap));
+            } else {
+              await args.device.triggerCapabilityListener(cap, val);
+            }
+          } catch(e) {
+            args.device.error('Flow Action Error:', e);
+          }
           return true;
         });
       } catch (err) { this.error(`Action ${id}: ${err.message}`); }
     }
-    for (const { id, val } of [
+        for (const { id, val } of [
       { id: `${P}_turn_on_all`, val: true },
       { id: `${P}_turn_off_all`, val: false },
     ]) {
       try {
         this.homey.flow.getActionCard(id).registerRunListener(async (args) => {
           if (!args.device) return false;
-          for (let ep = 1; ep <= 4; ep++) {
-            const onOff = args.device.zclNode?.endpoints?.[ep]?.clusters?.onOff;
-            if (onOff) await onOff[val ? 'setOn' : 'setOff']().catch(() => {});
+          // Determine the number of gangs from P (e.g. 'switch_3gang' -> 3)
+          let numGangs = 1;
+          const match = P.match(/^switch_(\d+)gang$/);
+          if (match) numGangs = parseInt(match[1], 10);
+          for (let ep = 1; ep <= numGangs; ep++) {
+            const cap = ep === 1 ? 'onoff' : ('onoff.gang' + ep);
+            try { await args.device.triggerCapabilityListener(cap, val); } catch(e) {}
           }
           return true;
         });

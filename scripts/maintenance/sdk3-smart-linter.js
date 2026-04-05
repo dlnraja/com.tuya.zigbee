@@ -275,6 +275,8 @@ ${staticResults.map(r => `- ${r.severity.toUpperCase()}: ${r.desc}`).join('\n') 
 6. Battery DPs: 4, 10, 14, 15, 21, 100, 101, 102, 104, 105 (percentage)
 7. Voltage DPs: 33, 35, 247 (mV or 10mV, convert via discharge curve)
 8. IAS Zone Status bit 3 = low-battery boolean alarm
+9. energy.batteries: Whenever a driver assigns `measure_battery` in its capabilities, YOU MUST strictly define an `"energy": { "batteries": ["OTHER"] }` array (or "AA", "CR2032") in `driver.compose.json` to pass Homey SDK3 validation!
+10. measure_battery_changed: NEVER manually define `measure_battery_changed` (or `_temp_changed`, `_humidity_changed`) explicitly in flow triggers. Homey SDK v3 implicitly auto-generates them.
 
 === ZIGBEE PROTOCOL TYPES (all must be respected) ===
 1. Tuya DP (TS0601 / cluster 0xEF00): Uses dpMappings + TuyaEF00Manager.

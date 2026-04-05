@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "smart_knob_rotary_rotate_left",
+      "id": "smart_knob_rotary_rotate_left_dup_abqvw",
       "highlight": true,
       "title": {
         "en": "Rotated left",
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "smart_knob_rotary_rotate_right",
+      "id": "smart_knob_rotary_rotate_right_dup_gpqtu",
       "highlight": true,
       "title": {
         "en": "Rotated right",
@@ -65,7 +65,7 @@
       }
     },
     {
-      "id": "smart_knob_rotary_pressed",
+      "id": "smart_knob_rotary_pressed_dup_quc7f",
       "highlight": true,
       "title": {
         "en": "Button pressed",
@@ -97,7 +97,7 @@
       }
     },
     {
-      "id": "smart_knob_rotary_single_press",
+      "id": "smart_knob_rotary_single_press_dup_1xrsx",
       "title": {
         "en": "Single press",
         "fr": "Appui simple",
@@ -113,7 +113,7 @@
       }
     },
     {
-      "id": "smart_knob_rotary_double_press",
+      "id": "smart_knob_rotary_double_press_dup_itm14",
       "title": {
         "en": "Double press",
         "fr": "Double appui",
@@ -129,7 +129,7 @@
       }
     },
     {
-      "id": "smart_knob_rotary_long_press",
+      "id": "smart_knob_rotary_long_press_dup_ia8c5",
       "title": {
         "en": "Long press",
         "fr": "Appui long",
@@ -145,7 +145,7 @@
       }
     },
     {
-      "id": "smart_knob_rotary_battery_low",
+      "id": "smart_knob_rotary_battery_low_dup_4kttr",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -163,7 +163,7 @@
   ],
   "conditions": [
     {
-      "id": "smart_knob_rotary_brightness_above",
+      "id": "smart_knob_rotary_brightness_above_dup_aiuyz",
       "title": {
         "en": "Brightness level is above...",
         "fr": "Niveau de luminosité supérieur à..."
@@ -189,7 +189,7 @@
   ],
   "actions": [
     {
-      "id": "smart_knob_rotary_set_brightness",
+      "id": "smart_knob_rotary_set_brightness_dup_3ymsl",
       "title": {
         "en": "Set brightness",
         "fr": "Régler luminosité",
