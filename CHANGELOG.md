@@ -4,7 +4,26 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.188] - 2026-04-04
+## [5.11.189] - 2026-04-05
+
+### New Devices & Fingerprints
+- Added 27 new device fingerprints from community reports, Z2M, and ZHA databases
+- Added support for Nedis SmartLife Radiator Control (_TZE284_ne4pikwm / TS0601)
+
+### Bug Fixes
+- Fixed SDK v3 flow card crash prevention across all drivers
+- Resolved alarm_battery capability conflicts that caused pairing failures in 108 drivers
+- Restored measure_battery capability and reporting for affected battery-powered devices
+- Fixed missing capabilities in 10 wall remote and wireless button drivers
+- Fixed memory leak when removing devices from the app
+
+### Improvements
+- Added automatic time synchronization for 13 TRV, thermostat, and LCD display drivers
+- Improved attribute reporting reliability for 88 sensor drivers
+- Improved energy and battery reporting accuracy across all device variants
+---
+
+ [5.11.188] - 2026-04-04
 
 ### New Features
 - Added 27 new device fingerprints from Zigbee2MQTT, ZHA, forum contributions, and JohanBendz
