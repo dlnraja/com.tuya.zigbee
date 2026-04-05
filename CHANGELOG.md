@@ -4,7 +4,17 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.200] - 2026-04-05
+## [5.11.201] - 2026-04-05
+
+### New Devices & Fingerprints
+- Added support for 3 new device fingerprints, including the Nedis SmartLife Radiator Control (`_TZE284_ne4pikwm`).
+
+### Bug Fixes
+- Fixed connection drops and CIE self-healing for SOS emergency button devices.
+- Resolved battery status probing on sleepy SOS devices to ensure accurate and timely updates.
+---
+
+ [5.11.200] - 2026-04-05
 
 ### New Features
 - Added support for ZG-204ZM.

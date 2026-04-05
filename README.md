@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.201 |
+| **App Version** | v5.11.202 |
 | **Device Fingerprints** | 7,593+ |
 | **Unique Product IDs** | 559 |
 | **Drivers** | 213 (163 Zigbee + 50 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.201** | v5.11.200: Added support for ZG-204ZM., Added support for WiFi water sensor., Stabilized functionality for sleepy dev... |
+| **v5.11.202** | v5.11.201: Added support for 3 new device fingerprints, including the Nedis SmartLife Radiator Control (`_TZE284_ne4p... |
+| **v5.11.201** | Added 3 new device fingerprints including Nedis SmartLife Radiator Control. Fixed connection recovery and battery rep... |
 | **v5.11.200** | Added support for ZG-204ZM and WiFi water sensor. Stabilized sleepy devices. |
 | **v5.11.199** | Added support for 3 new device fingerprints, including the Nedis SmartLife Radiator Control (_TZE284_ne4pikwm). |
 | **v5.11.198** | Added support for 3 new Tuya device fingerprints, including the Nedis SmartLife Radiator Control. Driver matrix updat... |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.190** | Added 27 new device fingerprints and low-battery alerts for 113 devices. Fixed SDK v3 flow crashes, restored missing ... |
 | **v5.11.189** | Added 27 new device fingerprints including Nedis SmartLife Radiator. Fixed SDK v3 flow card crashes, resolved alarm_b... |
 | **v5.11.188** | Community sync: 27 new fingerprints added from Z2M/ZHA/forum/JohanBendz. Minor and forum improvements. Total: . |
-| **v5.11.187** | Mntenance release. No user-facing changes. |
 
 <!-- CHANGELOG_END -->
 
