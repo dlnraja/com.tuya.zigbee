@@ -84,12 +84,12 @@ jobs:
             const nonTuya = [...new Set((text.match(/\b[A-Z][A-Z0-9]{5,15}\b/g) || []).filter(m => fps.has(m)))];
             const allMfrs = [...new Set([...mfrs, ...nonTuya])];
 
-            // Detect WiFi device requests (Tuya WiFi / Smart Life / Lidl Home / Meross / Avatto)
+            // Detect specialized requests
             const isWiFi = /wifi|wi-fi|smart\s*life|tuya\s*cloud|local\s*key|lidl\s*home|meross|avatto|silvercrest|nedis|local\s*control/i.test(text);
-            // Detect sensor capability requests (fertilizer, EC, VOC, formaldehyde, etc.)
             const isSensorGap = /fertilizer|conductivity|\bEC\b|measure_ec|soil.*fertil|missing.*reading|missing.*capability|new.*capability|add.*sensor/i.test(text);
-            // v5.11.99: Detect "works after X minutes" delay complaints
             const isDelayIssue = /after\s+\d+\s*min|few\s+minutes?\s+later|takes?\s+\d+\s*min|delay|not\s+report|no\s+data|works?\s+after|doesn.t\s+report\s+immediately/i.test(text);
+            const isClimate = /climate|temperature|humidity|temp|hum|pressure|calibration|offset|wrong\s+reading|not\s+accurate/i.test(text);
+            
             const wifiDriverCount = fs.readdirSync(driversDir).filter(d => d.startsWith('wifi_')).length;
 
             if (!allMfrs.length && !pids.length) {
@@ -97,6 +97,7 @@ jobs:
               // Still label if it looks like a device request
               const labels = ['device-request', 'needs-info'];
               if (isWiFi) labels.push('wifi');
+              if (isClimate) labels.push('climate');
               if (isIssue && action === 'opened' && /device|support|add|request|wifi|smart.?life/i.test(title)) {
                 await github.rest.issues.addLabels({
                   owner: context.repo.owner, repo: context.repo.repo,
@@ -126,12 +127,19 @@ jobs:
                 const drivers = driverMap.get(m) || ['unknown'];
                 return `- \`${m}\` → **${drivers.join('**, **')}**`;
               }).join('\n');
-              msg += `Fingerprint(s) found in v${version}:\n\n${lines}\n\n`;
+              msg += `### ✅ Driver Status\nFingerprint(s) found in v${version}:\n\n${lines}\n\n`;
             }
 
             if (missing.length) {
-              msg += `Not yet supported: \`${missing.join('\`, \`')}\`\n\n`;
+              msg += `### 🚧 New Device Support\nNot yet supported: \`${missing.join('\`, \`')}\`\n\n`;
               msg += `I've logged these for the next release. If you can share a device interview from [Developer Tools](${DEV}) and a Z2M link (if it exists), that helps a lot.\n\n`;
+            }
+
+            if (isClimate && allSupported) {
+              msg += `### 🌡️ Climate Sensor Tips\nIf your temperature/humidity readings are slightly off, you can calibrate them in **Device Settings**:\n`;
+              msg += `- Use **Temperature Offset** to adjust the reading (°C).\n`;
+              msg += `- Use **Humidity Offset** to adjust the reading (%).\n`;
+              msg += `*Note: Calibration is applied immediately on next report.*\n\n`;
             }
 
             if (isPR) {
@@ -140,7 +148,7 @@ jobs:
             }
 
             if (allSupported) {
-              msg += `Install the [test version](${APP}), **remove the device, and re-pair** so it picks up the correct driver.\n\n`;
+              msg += `### 🚀 Action Required\nInstall the [test version](${APP}), **remove the device, and re-pair** so it picks up the correct driver.\n\n`;
               msg += `**If the device still shows as unknown or doesn't work**, please share a diagnostic report ID and a [Developer Tools interview](${DEV}) — we will investigate and fix it.\n\n`;
             }
 
@@ -153,7 +161,7 @@ jobs:
             if (isDelayIssue) {
               msg += `**Delay fix (v${version}+):** Devices now send a dataQuery immediately on init instead of waiting. Update the app to the latest test version and re-pair the device.\n\n`;
             }
-            msg += `[Test version](${APP}) · [Forum thread](${FORUM}) · [Developer Tools](${DEV})`;
+            msg += `---\n[Test version](${APP}) · [Forum thread](${FORUM}) · [Developer Tools](${DEV})`;
 
             // Post or update comment
             if (existingBot && action !== 'opened') {
@@ -173,6 +181,7 @@ jobs:
             // Labels
             const labels = [];
             if (missing.length) labels.push('new-device');
+            if (isClimate) labels.push('climate');
             if (labels.length) {
               await github.rest.issues.addLabels({
                 owner: context.repo.owner, repo: context.repo.repo,
