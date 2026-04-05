@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v5.11.199 |
+| **App Version** | v5.11.200 |
 | **Device Fingerprints** | 7,591+ |
 | **Unique Product IDs** | 559 |
 | **Drivers** | 212 (163 Zigbee + 49 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.199** | v5.11.198: Added support for 3 new Tuya device fingerprints, including `_TZE284_ne4pikwm` (Nedis SmartLife Radiator C... |
+| **v5.11.200** | v5.11.199: Added support for 3 new device fingerprints across existing drivers., Added `_TZE284_ne4pikwm` (TS0601) fo... |
+| **v5.11.199** | Added support for 3 new device fingerprints, including the Nedis SmartLife Radiator Control (_TZE284_ne4pikwm). |
 | **v5.11.198** | Added support for 3 new Tuya device fingerprints, including the Nedis SmartLife Radiator Control. Driver matrix updat... |
 | **v5.11.197** | Added support for 3 new Tuya device fingerprints and integrated 2,141 upstream device profiles to improve automatic p... |
 | **v5.11.196** | Fixed pairing for 151 devices with uppercase manufacturer IDs, updated fingerprints across bulb, button, and sensor d... |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.188** | Community sync: 27 new fingerprints added from Z2M/ZHA/forum/JohanBendz. Minor and forum improvements. Total: . |
 | **v5.11.187** | Mntenance release. No user-facing changes. |
 | **v5.11.186** | Universal Tuya Zigbee app v5.11.186 adds 681 new fingerprints and updates 193 drivers. |
-| **v5.11.185** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI co... |
 
 <!-- CHANGELOG_END -->
 
