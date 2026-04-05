@@ -154,10 +154,10 @@ const RULES = [
   {
     id: 'sdk3-flow-card-unsafe',
     severity: 'error',
-    desc: 'Bare getDeviceTriggerCard/getDeviceConditionCard/getDeviceActionCard without try-catch — crashes app if card missing.',
+    desc: 'Bare getDeviceTriggerCard or getActionCard without try-catch — crashes app if card missing.',
     test: (code) => {
-      const bareCall = /this\.homey\.flow\.getDevice(?:Trigger|Condition|Action)Card\s*\(/g;
-      const inTryCatch = /try\s*\{[^}]*getDevice(?:Trigger|Condition|Action)Card/g;
+      const bareCall = /this\.homey\.flow\.(?:getDeviceTriggerCard|getActionCard)\s*\(/g;
+      const inTryCatch = /try\s*\{[^}]*\.(?:getDeviceTriggerCard|getActionCard)/g;
       const total = (code.match(bareCall) || []).length;
       const safe = (code.match(inTryCatch) || []).length;
       return total > 0 && safe < total;
@@ -254,7 +254,7 @@ ${staticResults.map(r => `- ${r.severity.toUpperCase()}: ${r.desc}`).join('\n') 
 2. AWAIT: Every 'this.setCapabilityValue()' MUST be preceded by 'await'.
 3. API: Use exclusively 'this.homey.<managerId>' (this.homey.drivers, this.homey.flow, this.homey.settings). NEVER generate global 'ManagerDrivers' or 'ManagerZwave'.
 4. MEMORY: Every event listener (.on()) must have cleanup in 'async onDeleted()' via removeAllListeners(). This prevents memory leaks on Homey Pro 2023.
-5. FLOW CARDS: ALWAYS wrap getDeviceTriggerCard/getDeviceConditionCard/getDeviceActionCard in try-catch. Missing cards crash the entire app.
+5. FLOW CARDS: ALWAYS wrap getDeviceTriggerCard or getActionCard in try-catch. Also NOTE: `this.homey.flow.getDeviceConditionCard` DOES NOT EXIST (use `getConditionCard` instead if needed).
 
 === SDK v3 BATTERY & ENERGY RULES (CRITICAL) ===
 1. NEVER combine measure_battery + alarm_battery on same device. Causes duplicate UI and Flow Cards.
@@ -300,6 +300,23 @@ When mapping new features, respect this strict hierarchy:
 2. TUYABOUNDCLUSTER (EF00): Priority for 90% of Tuya hardware. Map DataPoints on cluster 0xEF00/61184.
    - If an EF00 DP is unrecognized, listen for the TuyaBoundCluster 'unhandled_dp' event, NOT raw RX.
 3. RAW/RX (Last Resort): Only for non-standard trames outside ZCL and EF00 (e.g., Tuya scene buttons).
+
+=== OMNI-CHANNEL COMMAND ROUTING & PHYSICAL BUTTON RULES (CRITICAL) ===
+To properly handle multi-gang, hybrid Tuya/ZCL routers, and buttons across ALL levels of abstraction (Raw ZCL, Tuya EF00, Flow, UI, Physical), drivers MUST implement the Omni-Channel routing pattern:
+1. APP/UI COMMANDS -> PROTOCOL OMNI-CATCHER: All incoming 'Turn On/Off' commands (whether from UI tile, Homey Flow Action 'Turn on', or Web API) MUST ultimately route through `this.triggerCapabilityListener('onoff.gangX', val)`.
+   - NEVER use `this.setCapabilityValue` to *execute* an action (it only changes UI).
+   - NEVER use raw `args.device.zclNode.endpoints[ep].clusters.onOff.setOn()` directly in Flow Actions.
+   - Using `triggerCapabilityListener` ensures the 'onoff' capability handler decides if the payload goes via pure ZCL (`this.zclNode...`) or Tuya DPs (`this._handleTuyaDatapoint...`).
+2. PHYSICAL VS VIRTUAL DETECTION (`_appCommandPending`):
+   - In `registerCapabilityListener('onoff', ...)`, ALWAYS flag `this._appCommandPending = true` with a `setTimeout` of 2000ms.
+   - This flag proves the command originated logically from Homey (App/Flow/Virtual).
+3. PHYSICAL STATE ARRIVAL (Device -> Homey):
+   - When state arrives horizontally from the device either via ZCL Report (`this.zclNode...on('attr')`) or Custom Tuya DP (`_handleTuyaDatapoint`), check `this._appCommandPending`.
+   - If `_appCommandPending === true`: This is a bidirectional ACK of the virtual command. Do nothing except `this.setCapabilityValue`.
+   - If `_appCommandPending !== true`: THIS IS A PHYSICAL BUTTON PRESS / REAL WORLD EVENT. Trigger `this.homey.flow.getDeviceTriggerCard('turned_on_physical_gangX').trigger(this)`!
+4. RAW / STREAM / CUSTOM FALLBACKS:
+   - For heavily customized tuples (e.g. TS004F/Scene buttons), catch raw commands via `this.zclNode.on('rawCommand')`.
+   - Before acting, translate the raw endpoint and cluster command directly into a normalized `triggerCapabilityListener` or a direct Flow trigger! This unifies the execution pipe.
 
 === ADVANCED PATTERNS ===
 
