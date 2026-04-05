@@ -30,6 +30,26 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
+## 🚀 Latest Updates
+
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### ✨ Recent Changes (Apr 2026)
+
+| Version | Feature |
+|---------|---------|
+| **v5.11.196** | v5.11.195: Fixed dual-temperature display issue on TS0201 climate sensors by ... |
+| **v5.11.195** | Bug fixes for climate sensor dual temperature display, critical SDK3 method c... |
+| **v5.11.194** | Added support for 28 new Tuya device variants, including the Nedis SmartLife ... |
+| **v5.11.193** | Resolved fingerprint pairing conflicts, added support for new Tuya device var... |
+| **v5.11.192** | Added 28+ new device fingerprints including Nedis SmartLife Radiator Control.... |
+| **v5.11.191** | Added 28 new device fingerprints, including Nedis SmartLife Radiator Control.... |
+| **v5.11.190** | Added 27 new device fingerprints and low-battery alerts for 113 devices. Fixe... |
+| **v5.11.189** | Added 27 new device fingerprints including Nedis SmartLife Radiator. Fixed SD... |
+| **v5.11.188** | Community sync: 27 new fingerprints added from Z2M/ZHA/forum/JohanBendz. Mino... |
+| **v5.11.187** | Mntenance release. No user-facing changes. |
+<!-- CHANGELOG_END -->
+
+
 ## Statistics
 
 | Metric | Value |
