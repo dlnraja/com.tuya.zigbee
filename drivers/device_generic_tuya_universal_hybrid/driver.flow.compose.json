@@ -1,30 +1,7 @@
 {
   "triggers": [
     {
-      "id": "generic_tuya_measure_battery_changed",
-      "title": {
-        "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
-      },
-      "tokens": [
-        {
-          "name": "battery",
-          "type": "number",
-          "title": {
-            "en": "Battery (%)",
-            "fr": "Batterie (%)"
-          },
-          "example": 75
-        }
-      ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
-      }
-    },
-    {
-      "id": "generic_tuya_measure_temperature_changed",
+      "id": "generic_tuya_measure_temperature_changed_dup_0i1og",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée"
@@ -47,7 +24,7 @@
       }
     },
     {
-      "id": "generic_tuya_measure_humidity_changed",
+      "id": "generic_tuya_measure_humidity_changed_dup_wjpsf",
       "title": {
         "en": "Humidity changed",
         "fr": "Humidité changée"
@@ -70,7 +47,7 @@
       }
     },
     {
-      "id": "generic_tuya_dp_received",
+      "id": "generic_tuya_dp_received_dup_u7cyg",
       "title": {
         "en": "Data Point received",
         "fr": "Point de données reçu"
@@ -102,7 +79,7 @@
       }
     },
     {
-      "id": "generic_tuya_battery_low",
+      "id": "generic_tuya_battery_low_dup_036qp",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -118,7 +95,7 @@
       }
     },
     {
-      "id": "generic_tuya_temp_changed",
+      "id": "generic_tuya_temp_changed_dup_yl5ub",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée",
@@ -134,7 +111,7 @@
       }
     },
     {
-      "id": "generic_tuya_humidity_changed",
+      "id": "generic_tuya_humidity_changed_dup_q7vcq",
       "title": {
         "en": "Humidity changed",
         "fr": "Humidité changée",
@@ -152,7 +129,7 @@
   ],
   "conditions": [
     {
-      "id": "generic_tuya_battery_above",
+      "id": "generic_tuya_battery_above_dup_w7eyh",
       "title": {
         "en": "Battery is above...",
         "fr": "Batterie au-dessus de..."
@@ -178,7 +155,7 @@
   ],
   "actions": [
     {
-      "id": "generic_tuya_request_dp",
+      "id": "generic_tuya_request_dp_dup_09qf3",
       "title": {
         "en": "Request Data Point",
         "fr": "Demander Point de Données"

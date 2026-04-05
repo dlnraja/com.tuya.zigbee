@@ -46,35 +46,6 @@
       }
     },
     {
-      "id": "siren_measure_battery_changed",
-      "title": {
-        "en": "Battery level changed",
-        "nl": "Batterijniveau veranderd",
-        "fr": "Niveau batterie changé",
-        "de": "Batteriestand geändert"
-      },
-      "titleFormatted": {
-        "en": "Battery level changed to [[battery]]%",
-        "nl": "Batterijniveau veranderd naar [[battery]]%",
-        "fr": "Niveau batterie changé à [[battery]]%",
-        "de": "Batteriestand geändert zu [[battery]]%"
-      },
-      "tokens": [
-        {
-          "name": "battery",
-          "type": "number",
-          "title": {
-            "en": "Battery (%)",
-            "nl": "Batterij (%)",
-            "fr": "Batterie (%)",
-            "de": "Batterie (%)"
-          },
-          "example": 75
-        }
-      ],
-      "args": []
-    },
-    {
       "id": "siren_battery_low",
       "title": {
         "en": "Battery is low",

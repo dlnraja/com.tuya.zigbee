@@ -47,29 +47,6 @@
       }
     },
     {
-      "id": "air_quality_comprehensive_comprehensive_air_monitor_measure_battery_changed",
-      "title": {
-        "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
-      },
-      "tokens": [
-        {
-          "name": "battery",
-          "type": "number",
-          "title": {
-            "en": "Battery (%)",
-            "fr": "Batterie (%)"
-          },
-          "example": 75
-        }
-      ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
-      }
-    },
-    {
       "id": "air_quality_comprehensive_temp_changed",
       "title": {
         "en": "Temperature changed",
@@ -121,21 +98,57 @@
   "conditions": [
     {
       "id": "air_quality_comprehensive_co2_above",
-      "title": { "en": "CO₂ !{{is|is not}} above" },
-      "titleFormatted": { "en": "CO₂ !{{is|is not}} above [[co2]] ppm" },
-      "args": [{ "name": "co2", "type": "number", "min": 0, "max": 5000, "step": 50 }]
+      "title": {
+        "en": "CO₂ !{{is|is not}} above"
+      },
+      "titleFormatted": {
+        "en": "CO₂ !{{is|is not}} above [[co2]] ppm"
+      },
+      "args": [
+        {
+          "name": "co2",
+          "type": "number",
+          "min": 0,
+          "max": 5000,
+          "step": 50
+        }
+      ]
     },
     {
       "id": "air_quality_comprehensive_temp_above",
-      "title": { "en": "Temperature !{{is|is not}} above" },
-      "titleFormatted": { "en": "Temperature !{{is|is not}} above [[temperature]] °C" },
-      "args": [{ "name": "temperature", "type": "number", "min": -40, "max": 80, "step": 0.5 }]
+      "title": {
+        "en": "Temperature !{{is|is not}} above"
+      },
+      "titleFormatted": {
+        "en": "Temperature !{{is|is not}} above [[temperature]] °C"
+      },
+      "args": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "min": -40,
+          "max": 80,
+          "step": 0.5
+        }
+      ]
     },
     {
       "id": "air_quality_comprehensive_humidity_above",
-      "title": { "en": "Humidity !{{is|is not}} above" },
-      "titleFormatted": { "en": "Humidity !{{is|is not}} above [[humidity]] %" },
-      "args": [{ "name": "humidity", "type": "number", "min": 0, "max": 100, "step": 1 }]
+      "title": {
+        "en": "Humidity !{{is|is not}} above"
+      },
+      "titleFormatted": {
+        "en": "Humidity !{{is|is not}} above [[humidity]] %"
+      },
+      "args": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 1
+        }
+      ]
     }
   ],
   "actions": []

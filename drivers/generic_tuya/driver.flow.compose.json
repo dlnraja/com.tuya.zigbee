@@ -1,29 +1,6 @@
 {
   "triggers": [
     {
-      "id": "generic_tuya_measure_battery_changed",
-      "title": {
-        "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
-      },
-      "tokens": [
-        {
-          "name": "battery",
-          "type": "number",
-          "title": {
-            "en": "Battery (%)",
-            "fr": "Batterie (%)"
-          },
-          "example": 75
-        }
-      ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
-      }
-    },
-    {
       "id": "generic_tuya_measure_temperature_changed",
       "title": {
         "en": "Temperature changed",

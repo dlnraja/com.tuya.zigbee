@@ -45,23 +45,6 @@
       }
     },
     {
-      "id": "button_emergency_sos_measure_battery_changed",
-      "title": {
-        "en": "Battery changed"
-      },
-      "tokens": [
-        {
-          "name": "battery",
-          "type": "number",
-          "title": "Battery"
-        }
-      ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery changed"
-      }
-    },
-    {
       "id": "button_emergency_sos_battery_low",
       "title": {
         "en": "Battery low",

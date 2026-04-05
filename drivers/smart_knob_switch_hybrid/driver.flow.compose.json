@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "smart_knob_button_pressed",
+      "id": "smart_knob_button_pressed_dup_hwp4e",
       "title": {
         "en": "Knob button pressed",
         "fr": "Bouton du variateur appuyé"
@@ -23,7 +23,7 @@
       }
     },
     {
-      "id": "smart_knob_single_press",
+      "id": "smart_knob_single_press_dup_tfgqe",
       "title": {
         "en": "Knob single press",
         "fr": "Appui simple"
@@ -34,7 +34,7 @@
       }
     },
     {
-      "id": "smart_knob_double_press",
+      "id": "smart_knob_double_press_dup_m9tm3",
       "title": {
         "en": "Knob double press",
         "fr": "Double appui"
@@ -45,7 +45,7 @@
       }
     },
     {
-      "id": "smart_knob_long_press",
+      "id": "smart_knob_long_press_dup_y7u45",
       "title": {
         "en": "Knob long press",
         "fr": "Appui long"
@@ -56,7 +56,7 @@
       }
     },
     {
-      "id": "smart_knob_rotated",
+      "id": "smart_knob_rotated_dup_v282a",
       "title": {
         "en": "Knob rotated",
         "fr": "Variateur tourné"
@@ -87,7 +87,7 @@
       }
     },
     {
-      "id": "smart_knob_level_changed",
+      "id": "smart_knob_level_changed_dup_2lmpi",
       "title": {
         "en": "Brightness level changed",
         "fr": "Niveau de luminosité changé"
