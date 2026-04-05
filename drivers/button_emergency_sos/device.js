@@ -549,6 +549,34 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
         this.log('[SOS] Basic attr change:', attr, value);
       });
     }
+
+    // Method D: v5.13.15: genMultistateInput cluster (some 'Fake SOS' use this)
+    const msCluster = ep1.clusters?.multistateInput || ep1.clusters?.genMultistateInput || ep1.clusters?.['18'];
+    if (msCluster) {
+      this.log('[SOS] 📡 Setting up genMultistateInput listener...');
+      if (typeof msCluster.on === 'function') {
+        msCluster.on('attr.presentValue', (value) => {
+          this.log('[SOS] 🆘 multistateInput presentValue:', value);
+          this._handleAlarm({ source: 'multistate-attr', value });
+        });
+        msCluster.on('report', (attrs) => {
+          if (attrs?.presentValue !== undefined) {
+            this.log('[SOS] 🆘 multistateInput REPORT:', attrs.presentValue);
+            this._handleAlarm({ source: 'multistate-report', value: attrs.presentValue });
+          }
+        });
+      }
+      this.log('[SOS] ✅ genMultistateInput listeners configured');
+    }
+
+    // Method E: v5.13.15: genLevelCtrl cluster (some SOS buttons send Step commands)
+    const levelCluster = ep1.clusters?.levelControl || ep1.clusters?.genLevelCtrl || ep1.clusters?.['8'];
+    if (levelCluster && typeof levelCluster.on === 'function') {
+      levelCluster.on('command', (cmd, payload) => {
+        this.log('[SOS] 🆘 levelControl command:', cmd, payload);
+        this._handleAlarm({ source: 'levelControl', command: cmd });
+      });
+    }
   }
 
   async _ensureCapabilities() {
@@ -580,9 +608,11 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     const hasIasZone = clusterNames.some(n => n.toLowerCase().includes('iaszone') || n === '1280');
     const hasPowerCfg = clusterNames.some(n => n.toLowerCase().includes('power') || n === '1');
     const hasTuya = clusterNames.some(n => n.toLowerCase().includes('tuya') || n === '61184' || n === 'ef00');
+    const hasOnOff = clusterNames.some(n => n.toLowerCase().includes('onoff') || n === '6');
+    const hasMulti = clusterNames.some(n => n.toLowerCase().includes('multistate') || n === '18');
 
     // Count essential clusters
-    const essentialCount = [hasIasAce, hasIasZone, hasPowerCfg, hasTuya].filter(Boolean).length;
+    const essentialCount = [hasIasAce, hasIasZone, hasPowerCfg, hasTuya, hasOnOff, hasMulti].filter(Boolean).length;
 
     if (essentialCount === 0 && clusterNames.length <= 2) {
       // Only basic cluster - interview failed!
@@ -604,13 +634,15 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
       await this.setUnavailable('Device needs to be re-paired. Remove from Homey, factory reset (hold button 5-10s), then re-pair.').catch(() => {});
       
       this._interviewFailed = true;
-    } else if (essentialCount < 2) {
+    } else if (essentialCount < 2 && !hasTuya) {
       // Partial interview - might work partially
       this.log('[SOS] ⚠️ Partial interview: Some clusters missing');
       this.log(`[SOS]   IAS ACE (1281): ${hasIasAce ? '✅' : '❌'}`);
       this.log(`[SOS]   IAS Zone (1280): ${hasIasZone ? '✅' : '❌'}`);
       this.log(`[SOS]   Power Config (1): ${hasPowerCfg ? '✅' : '❌'}`);
-      this.log(`[SOS]   Tuya DP (61184): ${hasTuya ? '✅' : '❌'}`);
+      this.log(`[SOS]   Tuya DP (EF00): ${hasTuya ? '✅' : '❌'}`);
+      this.log(`[SOS]   OnOff (6): ${hasOnOff ? '✅' : '❌'}`);
+      this.log(`[SOS]   MultiState (18): ${hasMulti ? '✅' : '❌'}`);
       
       if (!hasPowerCfg) {
         this.log('[SOS] ℹ️ Battery reading may not work without powerConfiguration cluster');
