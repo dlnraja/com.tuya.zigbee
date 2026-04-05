@@ -1,4 +1,7 @@
 {
+  "5.11.195": {
+    "en": "Bug fixes for climate sensor dual temperature display, critical SDK3 method crash fix, enhanced physical button flow support for multi-gang devices, and 28 new device fingerprints from community sources."
+  },
   "5.11.194": {
     "en": "Added support for 28 new Tuya device variants, including the Nedis SmartLife Radiator Control. Total coverage now spans ."
   },
@@ -56,10 +59,7 @@
   "5.11.176": {
     "en": "v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
   },
-  "5.11.175": {
-    "en": "v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.195": {
-    "en": "v5.11.194: Added 28 new device fingerprints sourced from community reports and upstream databases., Added driver support for Nedis SmartLife Radiator Control (_TZE284_ne4pikwm / TS0601)., Expanded total device coverage to 212 drivers and 3,766+ fingerprints."
+  "5.11.196": {
+    "en": "v5.11.195: Fixed dual-temperature display issue on TS0201 climate sensors by removing default probe temperature., Resolved a critical crash caused by phantom `getDeviceConditionCard` and `getDeviceActionCard` SDK3 methods., Corrected absolute ZCL action handlers to use native `TriggerCapabilityListener` for proper gang action support with hybrid DP translation., Enabled physical flow triggers for"
   }
 }
