@@ -73,14 +73,28 @@ async function scan(){
     try{
       const data=await get(BASE+'/t/'+TOPIC_ID+'/posts.json?post_number=999999');
       const stream=data.post_stream||{};
-      const postIds=(stream.stream||[]).slice(-100);
-
+      const allPostIds=(stream.stream||[]);
+      
+      const newPostIds = allPostIds.filter(id => id > lastId);
       const posts=[];
-      for(let i=0;i<postIds.length;i+=20){
-        const chunk=postIds.slice(i,i+20);
-        const url=BASE+'/t/'+TOPIC_ID+'/posts.json?'+chunk.map(id=>'post_ids[]='+id).join('&');
-        try{const r=await get(url);posts.push(...(r.post_stream?.posts||[]));}
-        catch(e){/* skip chunk error */}
+      
+      // Use the posts already provided in the initial fetch to avoid extra requests
+      const initialPosts = stream.posts || [];
+      for (const p of initialPosts) {
+        if (p.id > lastId) posts.push(p);
+      }
+      
+      const initialPostIds = new Set(initialPosts.map(p => p.id));
+      const postIdsToFetch = newPostIds.filter(id => !initialPostIds.has(id)).slice(-100);
+
+      // Only chunk requests if we have actually new unseen post IDs
+      if (postIdsToFetch.length > 0) {
+        for(let i=0;i<postIdsToFetch.length;i+=20){
+          const chunk=postIdsToFetch.slice(i,i+20);
+          const url=BASE+'/t/'+TOPIC_ID+'/posts.json?'+chunk.map(id=>'post_ids[]='+id).join('&');
+          try{const r=await get(url);posts.push(...(r.post_stream?.posts||[]));}
+          catch(e){/* skip chunk error */}
+        }
       }
 
       const newPosts=posts.filter(p=>p.id>lastId);

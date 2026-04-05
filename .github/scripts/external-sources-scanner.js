@@ -83,12 +83,12 @@ async function scanZ2MConverters(){
 }
 
 // ====== Z2M: Issues + PRs with Tuya devices ======
-async function scanZ2MIssuesPRs(){
+async function scanZ2MIssuesPRs(sinceQuery){
   console.log('== Z2M Issues & PRs ==');
   const results=[];
   const queries=['repo:Koenkk/zigbee2mqtt+_TZE+state:open','repo:Koenkk/zigbee2mqtt+tuya+state:open','repo:Koenkk/zigbee-herdsman-converters+tuya+state:open','repo:Koenkk/zigbee-herdsman-converters+_TZE+state:open','repo:Koenkk/zigbee-herdsman-converters+SNZB+state:open','repo:Koenkk/zigbee2mqtt+sonoff+state:open'];
   for(const q of queries){
-    const d=await fetchJSON(GH+'/search/issues?q='+encodeURIComponent(q)+'&per_page=30&sort=created&order=desc',hdrs(TOKEN));
+    const d=await fetchJSON(GH+'/search/issues?q='+encodeURIComponent(q + sinceQuery)+'&per_page=30&sort=updated&order=desc',hdrs(TOKEN));
     if(!d||!d.items)continue;
     for(const iss of d.items){
       const text=(iss.title||'')+' '+(iss.body||'');
@@ -102,7 +102,7 @@ async function scanZ2MIssuesPRs(){
     }
     await sleep(2000);
   }
-  console.log('  Found',results.length,'FP entries from Z2M issues/PRs');
+  console.log('  Found',results.length,'FP entries from Z2M issues/PRs (Incremental)');
   return results;
 }
 
@@ -139,18 +139,18 @@ async function scanZHAQuirks(){
 }
 
 // ====== ZHA: Issues ======
-async function scanZHAIssues(){
+async function scanZHAIssues(sinceQuery){
   console.log('== ZHA Issues ==');
   const results=[];
   for(const q of['repo:zigpy/zha-device-handlers+tuya+state:open','repo:home-assistant/core+tuya+zigbee+state:open']){
-    const d=await fetchJSON(GH+'/search/issues?q='+encodeURIComponent(q)+'&per_page=20&sort=created&order=desc',hdrs(TOKEN));
+    const d=await fetchJSON(GH+'/search/issues?q='+encodeURIComponent(q + sinceQuery)+'&per_page=20&sort=updated&order=desc',hdrs(TOKEN));
     if(!d||!d.items)continue;
     for(const iss of d.items){const text=(iss.title||'')+' '+(iss.body||'');const found=extractFP(text);
       if(found.length){const dps=extractDPs(text);const pids=extractPID(text);const isBug=extractBugSignals(text);
         results.push(...found.map(fp=>({fp,pid:pids[0]||null,source:'zha-issue',num:iss.number,title:iss.title?.slice(0,80),url:iss.html_url,dps,isBug})))}}
     await sleep(2000);
   }
-  console.log('  Found',results.length,'FP entries from ZHA issues');
+  console.log('  Found',results.length,'FP entries from ZHA issues (Incremental)');
   return results;
 }
 
@@ -305,13 +305,14 @@ async function main(){
   console.log('=== External Sources Scanner (10-source, smart functionality) ===');
   console.log('App: v'+appVer,'| Known FPs:',fps.size);
   const state=loadState();
+  const sinceQuery = state.lastRun ? ` updated:>${state.lastRun.split('T')[0]}` : '';
   const allDevices=[];
 
   // Collect from all sources
   const z2mConv=await scanZ2MConverters();allDevices.push(...z2mConv);await sleep(1000);
-  const z2mIssues=await scanZ2MIssuesPRs();allDevices.push(...z2mIssues);await sleep(1000);
+  const z2mIssues=await scanZ2MIssuesPRs(sinceQuery);allDevices.push(...z2mIssues);await sleep(1000);
   const zhaQuirks=await scanZHAQuirks();allDevices.push(...zhaQuirks);await sleep(1000);
-  const zhaIssues=await scanZHAIssues();allDevices.push(...zhaIssues);await sleep(1000);
+  const zhaIssues=await scanZHAIssues(sinceQuery);allDevices.push(...zhaIssues);await sleep(1000);
   const blakadder=await scanBlakadder();allDevices.push(...blakadder);await sleep(1000);
   const deconz=await scanDeCONZ();allDevices.push(...deconz);await sleep(1000);
   const hubitat=await scanHubitat();allDevices.push(...hubitat);await sleep(1000);
@@ -350,15 +351,20 @@ async function main(){
   const bugs=await searchBugs(unsupported.slice(0,10).map(d=>d.fp));
 
   // Smart AI: implementation plans with DP→capability + quirks + variants
-  console.log('\n== AI Implementation Analysis ==');
+  console.log('\n== AI Implementation Analysis (Cascaded Context) ==');
   const withDPs=uniqueFPs.filter(d=>d.dps.length>0);
   const gapDevs=supported.filter(d=>{const ext=d.dps.filter(n=>!d.localDPs.includes(n));return ext.length>0}).slice(0,10);
   const topNew=unsupported.filter(d=>d.dps.length>0||d.sources.length>=2).slice(0,15);
+  
+  // Provide the PREVIOUS AI plan as context (cascade method) to save AI reasoning
+  const previousPlan = state.lastPlan ? `\nPREVIOUS PLAN RESULTS (do not repeat, just update):\n${state.lastPlan.slice(0,2000)}\n` : '';
+
   const aiInput={v:appVer,known:fps.size,ext:uniqueFPs.length,
     newDevs:topNew.map(d=>({fp:d.fp,pid:d.pid,dps:d.dps,caps:d.caps.slice(0,6),src:d.sources,bugs:d.bugs.length})),
     gaps:gapDevs.map(d=>({fp:d.fp,pid:d.pid,drv:d.localDriver,missDPs:d.dps.filter(n=>!d.localDPs.includes(n)),missCaps:d.caps.filter(c=>!c.startsWith('cat')).slice(0,5)})),
     src:{z2m:z2mConv.length,zha:zhaQuirks.length,blak:blakadder.length,dec:deconz.length,hub:hubitat.length,st:smartthings.length,ha:haForum.length,loc:local.length}};
-  const aiPrompt='Tuya Zigbee expert. For each new device: suggest driver, DP→capability map, quirks. For gaps: missing DPs to add. Markdown table. Max 500 words.';
+  
+  const aiPrompt=`Tuya Zigbee expert. For each new device: suggest driver, DP→capability map, quirks. For gaps: missing DPs to add. Markdown table. Max 500 words. IMPORTANT: Cascade intel.${previousPlan}`;
   const ai=await callAI(JSON.stringify(aiInput),aiPrompt,{maxTokens:1500});
 
   // Save full device functionality
@@ -374,7 +380,7 @@ async function main(){
     withDPs:withDPs.length,gapsInSupported:gapDevs.length,variantCount:variants.size,bugCount:bugs.length,sources:sc,
     topUnsupported:unsupported.slice(0,30).map(d=>({fp:d.fp,pid:d.pid,dps:d.dps,sources:d.sources})),aiPlan:ai?.text};
   fs.writeFileSync(REPORT_F,JSON.stringify(report,null,2)+'\n');
-  saveState({lastRun:new Date().toISOString(),knownDevices:Object.fromEntries(uniqueFPs.slice(0,200).map(d=>[d.fp,d.sources[0]]))});
+  saveState({lastRun:new Date().toISOString(),knownDevices:Object.fromEntries(uniqueFPs.slice(0,200).map(d=>[d.fp,d.sources[0]])),lastPlan:ai?.text||state.lastPlan});
 
   console.log('\n=== Done (11 sources) ===');
   console.log('With DPs:',withDPs.length,'| Gaps in supported:',gapDevs.length);
