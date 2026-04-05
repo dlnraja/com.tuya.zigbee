@@ -175,6 +175,38 @@
         "nl": "Lichtsterkte gewijzigd",
         "de": "Helligkeit geändert"
       }
+    },
+    {
+      "id": "button_pressed",
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton pressé"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "number",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": 1
+        },
+        {
+          "name": "scene",
+          "type": "string",
+          "title": {
+            "en": "Scene",
+            "fr": "Scène"
+          },
+          "example": "pressed"
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Button pressed",
+        "fr": "Bouton pressé"
+      }
     }
   ],
   "actions": [

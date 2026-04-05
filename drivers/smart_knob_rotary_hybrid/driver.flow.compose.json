@@ -159,6 +159,102 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       }
+    },
+    {
+      "id": "smart_knob_rotary_rotate_left",
+      "highlight": true,
+      "title": {
+        "en": "Rotated left",
+        "fr": "Rotation gauche",
+        "nl": "Naar links gedraaid",
+        "de": "Nach links gedreht"
+      },
+      "hint": {
+        "en": "When the knob is rotated counter-clockwise",
+        "fr": "Lorsque le bouton est tourné dans le sens antihoraire"
+      },
+      "tokens": [
+        {
+          "name": "brightness",
+          "type": "number",
+          "title": {
+            "en": "Brightness %",
+            "fr": "Luminosité %"
+          },
+          "example": 50
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Rotated left",
+        "fr": "Rotation gauche",
+        "nl": "Naar links gedraaid",
+        "de": "Nach links gedreht"
+      }
+    },
+    {
+      "id": "smart_knob_rotary_rotate_right",
+      "highlight": true,
+      "title": {
+        "en": "Rotated right",
+        "fr": "Rotation droite",
+        "nl": "Naar rechts gedraaid",
+        "de": "Nach rechts gedreht"
+      },
+      "hint": {
+        "en": "When the knob is rotated clockwise",
+        "fr": "Lorsque le bouton est tourné dans le sens horaire"
+      },
+      "tokens": [
+        {
+          "name": "brightness",
+          "type": "number",
+          "title": {
+            "en": "Brightness %",
+            "fr": "Luminosité %"
+          },
+          "example": 50
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Rotated right",
+        "fr": "Rotation droite",
+        "nl": "Naar rechts gedraaid",
+        "de": "Nach rechts gedreht"
+      }
+    },
+    {
+      "id": "smart_knob_rotary_pressed",
+      "highlight": true,
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé",
+        "nl": "Knop ingedrukt",
+        "de": "Taste gedrückt"
+      },
+      "hint": {
+        "en": "When the knob button is pressed (single, double, or hold)",
+        "fr": "Lorsque le bouton est appuyé (simple, double ou maintenu)"
+      },
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action",
+            "fr": "Action"
+          },
+          "example": "single"
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé",
+        "nl": "Knop ingedrukt",
+        "de": "Taste gedrückt"
+      }
     }
   ],
   "conditions": [
