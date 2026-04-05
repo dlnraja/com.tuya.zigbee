@@ -10,10 +10,10 @@ async function renderIcon(svgPath, outPath, size) {
   const pad = Math.round(size * 0.15);
   const iconSz = size - pad * 2;
   const icon = await sharp(svgBuf)
-    .resize(iconSz, iconSz, { fit: 'contain', background: { r: 255, g: 255, b: 255, alpha: 0 } })
+    .resize(iconSz, iconSz, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
     .png().toBuffer();
   await sharp({
-    create: { width: size, height: size, channels: 4, background: { r: 255, g: 255, b: 255, alpha: 1 } }
+    create: { width: size, height: size, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } }
   }).composite([{ input: icon, left: pad, top: pad }]).png().toFile(outPath);
 }
 
