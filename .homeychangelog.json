@@ -1,4 +1,7 @@
 {
+  "5.11.199": {
+    "en": "Added support for 3 new device fingerprints, including the Nedis SmartLife Radiator Control (_TZE284_ne4pikwm)."
+  },
   "5.11.198": {
     "en": "Added support for 3 new Tuya device fingerprints, including the Nedis SmartLife Radiator Control. Driver matrix updated with validated mappings."
   },
@@ -56,10 +59,7 @@
   "5.11.180": {
     "en": "v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
   },
-  "5.11.179": {
-    "en": "v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.199": {
-    "en": "v5.11.198: Added support for 3 new Tuya device fingerprints, including `_TZE284_ne4pikwm` (Nedis SmartLife Radiator Control), Updated driver matrix with validated device mappings for improved compatibility"
+  "5.11.200": {
+    "en": "v5.11.199: Added support for 3 new device fingerprints across existing drivers., Added `_TZE284_ne4pikwm` (TS0601) for Nedis SmartLife Radiator Control valves., Expanded fingerprint database with latest community reports to improve automatic device matching."
   }
 }
