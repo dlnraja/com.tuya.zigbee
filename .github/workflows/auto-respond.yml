@@ -94,73 +94,73 @@ jobs:
 
             if (!allMfrs.length && !pids.length) {
               console.log('No fingerprints found — skipping');
-              // Still label if it looks like a device request
-              const labels = ['device-request', 'needs-info'];
-              if (isWiFi) labels.push('wifi');
-              if (isClimate) labels.push('climate');
-              if (isIssue && action === 'opened' && /device|support|add|request|wifi|smart.?life/i.test(title)) {
-                await github.rest.issues.addLabels({
-                  owner: context.repo.owner, repo: context.repo.repo,
-                  issue_number: num, labels
-                });
-              }
               return;
             }
 
-            // Check existing bot comment (avoid duplicates on edit/reopen)
+            // ANTI-SPAM: Check existing bot comment
             const comments = await github.rest.issues.listComments({
               owner: context.repo.owner, repo: context.repo.repo,
-              issue_number: num, per_page: 30
+              issue_number: num, per_page: 50
             });
             const existingBot = comments.data.find(c => c.body?.includes(TAG));
+            
+            // If already responded and it's just an edit/sync, skip unless FPs changed significantly
+            if (existingBot && action !== 'opened') {
+               const prevFPs = (existingBot.body.match(/`(_T[^`]+)`/g) || []).map(m => m.replace(/`/g, ''));
+               const currentFPs = [...allMfrs];
+               if (currentFPs.every(f => prevFPs.includes(f)) && !text.includes('!!FORCE_RESCAN!!')) {
+                 console.log('No new FPs since last bot comment — skipping to avoid spam');
+                 return;
+               }
+            }
 
             const found = allMfrs.filter(m => fps.has(m));
             const missing = allMfrs.filter(m => !fps.has(m));
             const version = require(path.join(process.env.GITHUB_WORKSPACE, 'app.json')).version;
             const allSupported = allMfrs.length > 0 && missing.length === 0;
 
-            // Build response
+            // ENRICHMENT: Quick Z2M check for missing FPs
+            let externalInfo = '';
+            if (missing.length > 0) {
+              try {
+                const enrichmentPath = path.join(process.env.GITHUB_WORKSPACE, '.github', 'state', 'enrichment-state.json');
+                if (fs.existsSync(enrichmentPath)) {
+                  const estate = JSON.parse(fs.readFileSync(enrichmentPath, 'utf8'));
+                  const known = missing.filter(f => estate.knownNew?.includes(f));
+                  if (known.length > 0) externalInfo += `\n> 🔍 Enrichment: ${known.length} of these are already in [Zigbee2MQTT](https://www.zigbee2mqtt.io/) or [Blakadder](https://zigbee.blakadder.com/) - adding them should be easy.\n`;
+                }
+              } catch(e) {}
+            }
+
+            // Build response (Casual "Dylan" tone)
             let msg = TAG + '\n';
+            msg += `Hey! I've peeked into the fingerprints shared here. Here's what I found:\n\n`;
 
             if (found.length) {
               const lines = found.map(m => {
                 const drivers = driverMap.get(m) || ['unknown'];
                 return `- \`${m}\` → **${drivers.join('**, **')}**`;
               }).join('\n');
-              msg += `### ✅ Driver Status\nFingerprint(s) found in v${version}:\n\n${lines}\n\n`;
+              msg += `### ✅ Driver Status\nAlready supported in v${version}:\n\n${lines}\n\n`;
             }
 
             if (missing.length) {
-              msg += `### 🚧 New Device Support\nNot yet supported: \`${missing.join('\`, \`')}\`\n\n`;
-              msg += `I've logged these for the next release. If you can share a device interview from [Developer Tools](${DEV}) and a Z2M link (if it exists), that helps a lot.\n\n`;
+              msg += `### 🚧 Driver Enrichment\nNot supported yet: \`${missing.join('\`, \`')}\`\n${externalInfo}\n`;
+              msg += `I've added these to the internal research queue for the next release. If you can share a [Developer Tools interview](${DEV}), especially the **External State** and **Endpoints** tabs, that helps me map the data points correctly.\n\n`;
             }
 
             if (isClimate && allSupported) {
-              msg += `### 🌡️ Climate Sensor Tips\nIf your temperature/humidity readings are slightly off, you can calibrate them in **Device Settings**:\n`;
-              msg += `- Use **Temperature Offset** to adjust the reading (°C).\n`;
-              msg += `- Use **Humidity Offset** to adjust the reading (%).\n`;
-              msg += `*Note: Calibration is applied immediately on next report.*\n\n`;
-            }
-
-            if (isPR) {
-              msg += `Thanks for this PR! The fingerprints have been tracked and `;
-              msg += allSupported ? `have been mapped to drivers.\n\n` : `will be reviewed.\n\n`;
+              msg += `**Tip:** For climate sensors, remember you can adjust the **Temperature/Humidity Offset** in Device Settings if the readings are slightly off.\n\n`;
             }
 
             if (allSupported) {
-              msg += `### 🚀 Action Required\nInstall the [test version](${APP}), **remove the device, and re-pair** so it picks up the correct driver.\n\n`;
-              msg += `**If the device still shows as unknown or doesn't work**, please share a diagnostic report ID and a [Developer Tools interview](${DEV}) — we will investigate and fix it.\n\n`;
+              msg += `🚀 **Testing:** Install the [test version](${APP}), **remove and re-pair** the device. If it still shows as unknown, send me a diagnostic report ID.\n\n`;
             }
 
             if (isWiFi) {
-              msg += `This app also has ${wifiDriverCount} WiFi device types with local LAN control (no cloud).\n\n`;
+              msg += `*Side note:* This app also has ${wifiDriverCount} Tuya WiFi models with local LAN control - check the [forum](${FORUM}) if you have those too.\n\n`;
             }
-            if (isSensorGap) {
-              msg += `For missing sensor readings (fertilizer, EC, VOC, etc.): please share **app logs** (Settings → Apps → Tuya → View Log) showing DP numbers — this helps us map unknown data points.\n\n`;
-            }
-            if (isDelayIssue) {
-              msg += `**Delay fix (v${version}+):** Devices now send a dataQuery immediately on init instead of waiting. Update the app to the latest test version and re-pair the device.\n\n`;
-            }
+
             msg += `---\n[Test version](${APP}) · [Forum thread](${FORUM}) · [Developer Tools](${DEV})`;
 
             // Post or update comment
