@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-04T03:34:18.583Z",
+  "timestamp": "2026-04-04T17:10:43.659Z",
   "pidConflicts": [
     {
       "pid": "TS004F",
@@ -930,28 +930,6 @@
       "risk": "high"
     },
     {
-      "mfr": "_TYZB02_keyjhapk",
-      "drivers": [
-        "button_wireless_2",
-        "wall_remote_2_gang"
-      ],
-      "sharedPids": [
-        "TS0042"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TZ3000_5e235jpa",
-      "drivers": [
-        "button_wireless_2",
-        "wall_remote_2_gang"
-      ],
-      "sharedPids": [
-        "TS0042"
-      ],
-      "risk": "high"
-    },
-    {
       "mfr": "_TYZB02_key8kk7r",
       "drivers": [
         "button_wireless_3",
@@ -964,6 +942,17 @@
     },
     {
       "mfr": "_TZ3000_a7ouggvs",
+      "drivers": [
+        "button_wireless_3",
+        "wall_remote_3_gang"
+      ],
+      "sharedPids": [
+        "TS0043"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TZ3000_famkxci2",
       "drivers": [
         "button_wireless_3",
         "wall_remote_3_gang"
@@ -1084,6 +1073,18 @@
       "risk": "high"
     },
     {
+      "mfr": "HOBEIAN",
+      "drivers": [
+        "contact_sensor",
+        "presence_sensor_radar"
+      ],
+      "sharedPids": [
+        "TS0203",
+        "TS0601"
+      ],
+      "risk": "high"
+    },
+    {
       "mfr": "_TZ3000_8kzqqzu4",
       "drivers": [
         "curtain_motor",
@@ -1198,17 +1199,6 @@
       "drivers": [
         "floor_heating_thermostat",
         "radiator_valve"
-      ],
-      "sharedPids": [
-        "TS0601"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TZE200_1ibpyhdc",
-      "drivers": [
-        "motion_sensor_2",
-        "thermostat_tuya_dp"
       ],
       "sharedPids": [
         "TS0601"
@@ -1393,11 +1383,11 @@
       "reason": "no_fingerprints"
     },
     {
-      "driver": "wifi_door_lock",
+      "driver": "wifi_doorbell",
       "reason": "no_fingerprints"
     },
     {
-      "driver": "wifi_doorbell",
+      "driver": "wifi_door_lock",
       "reason": "no_fingerprints"
     },
     {
@@ -1884,7 +1874,7 @@
     "totalDrivers": 193,
     "pidConflicts": 59,
     "highSeverity": 23,
-    "mfrConflicts": 52,
+    "mfrConflicts": 51,
     "orphans": 50,
     "splitSuggestions": 23
   }
