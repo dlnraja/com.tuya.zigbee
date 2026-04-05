@@ -751,10 +751,16 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     this.log('[SOS] Payload:', JSON.stringify(payload));
     this.log('[SOS] ════════════════════════════════════════');
 
-    // v5.5.107: Device is AWAKE NOW - try enrollment if pending
+    // v5.13.10: Device is AWAKE NOW - trigger critical recovery and updates
     if (this._enrollmentPending) {
       this._tryEnrollmentNow();
     }
+    
+    // v5.13.10: Proactive battery read while radio is hot
+    this._readBatteryNow().catch(() => {});
+    
+    // v5.13.10: Verify CIE address (self-heal)
+    this._verifyCieAddress().catch(() => {});
 
     // Set capability
     this.setCapabilityValue('alarm_generic', true).catch(() => { });
@@ -1014,9 +1020,15 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     this.log('[SOS] 📡 ════════════════════════════════════════');
     this.log('[SOS] 📡 END DEVICE ANNOUNCE - Device is AWAKE!');
     this.log('[SOS] 📡 ════════════════════════════════════════');
+    
+    // v5.12.151: Track when device was last seen for heartbeat
+    this._updateActivity();
 
-    // PERFECT moment to configure reporting and read battery!
+    // PERFECT moment to configure reporting, read battery AND self-heal bindings!
     await this._configureAndReadBattery();
+    
+    // v5.13.10: Ensure CIE address is correct (fixes "not working" issues)
+    await this._verifyCieAddress().catch(() => {});
   }
 
   /**
@@ -1116,6 +1128,38 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     await this._readBatteryNow();
 
     this.log('[SOS] 🔋 ════════════════════════════════════════');
+  }
+
+  /**
+   * v5.13.10: Verify and self-heal IAS CIE Address
+   * Some Tuya devices "forget" their coordinator or lose enrollment
+   */
+  async _verifyCieAddress() {
+    const ep1 = this.zclNode?.endpoints?.[1];
+    const iasZone = ep1?.clusters?.iasZone;
+    if (!iasZone || !iasZone.readAttributes) return;
+
+    try {
+      const ieee = await this._getCoordinatorIeee();
+      if (!ieee) return;
+
+      // Read current CIE address (race against sleep)
+      const res = await Promise.race([
+        iasZone.readAttributes(['iasCIEAddress']),
+        new Promise((_, r) => setTimeout(() => r(new Error('Timeout')), 1000))
+      ]).catch(() => null);
+
+      if (res && res.iasCIEAddress && res.iasCIEAddress !== ieee) {
+        this.log(`[SOS] 🔧 CIE Address mismatch! Current: ${res.iasCIEAddress}, Target: ${ieee}. Fixing...`);
+        await iasZone.writeAttributes({ iasCIEAddress: ieee }).catch(() => {});
+        this.log('[SOS] ✅ CIE Address recovered');
+      } else if (!res) {
+        // Timeout or error - just try to write it once to be safe
+        iasZone.writeAttributes({ iasCIEAddress: ieee }).catch(() => {});
+      }
+    } catch (e) {
+      this.log('[SOS] CIE Verify failed:', e.message);
+    }
   }
 
   /**
