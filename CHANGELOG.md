@@ -4,7 +4,18 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.195] - 2026-04-05
+## [5.11.196] - 2026-04-05
+
+### Bug Fixes
+- Fixed pairing failures for 151 devices using uppercase manufacturer IDs by enforcing strict case-insensitive fingerprint matching.
+- Resolved capability mapping and endpoint routing issues in multiple bulb, wireless button, and air quality sensor drivers.
+
+### New Features & Improvements
+- Added and updated fingerprints across 20+ drivers including `bulb_rgbw`, `bulb_tunable_white`, `button_wireless_*`, and `air_quality_*`.
+- Expanded total device support to 3,183+ fingerprints across 212 drivers for broader Tuya Zigbee coverage.
+---
+
+ [5.11.195] - 2026-04-05
 
 ### Bug Fixes
 - Fixed dual-temperature display issue on TS0201 climate sensors by removing default probe temperature.
