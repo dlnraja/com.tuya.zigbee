@@ -12,13 +12,6 @@ class SmartButtonSwitchDevice extends ButtonDevice {
     this.buttonCount = 1;
     this.log('[SMART_BUTTON_SWITCH] v5.12.0 init - 1 button');
     await super.onNodeInit({ zclNode }).catch(err => this.error('[SMART_BUTTON_SWITCH] init err:', err.message));
-      });
-      // Initial check
-      const bat = this.getCapabilityValue('measure_battery');
-      if (bat !== null && this.hasCapability('alarm_battery')) {
-        this.setCapabilityValue('alarm_battery', bat < 15).catch(() => {});
-      }
-    }
     this.log('[SMART_BUTTON_SWITCH] ready');
   }
 

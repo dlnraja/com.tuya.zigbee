@@ -197,7 +197,7 @@ async function main() {
   
   // 1. Scan forks
   console.log('--- Phase 1: FORK SCAN ---');
-  const forkResults = await scanForks(UPSTREAM, 0, 2);
+  const forkResults = await scanForks(UPSTREAM, 0, 0);
   
   // Find new FPs not in our codebase
   const newFPs = [];

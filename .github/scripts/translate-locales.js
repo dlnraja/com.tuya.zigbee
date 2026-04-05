@@ -23,10 +23,35 @@ async function translateLocales() {
         if (fs.existsSync(langPath)) {
             try { langData = JSON.parse(fs.readFileSync(langPath, 'utf8')); } catch(e) {}
         }
+        
+        let staticMap = {};
+        try { staticMap = JSON.parse(fs.readFileSync(path.join(__dirname, 'fallback-map.json'), 'utf8')); } catch(e) {}
 
-        const missingKeys = enKeys.filter(k => typeof langData[k] === 'undefined');
-        if (!missingKeys.length) {
+        const missingKeysAll = enKeys.filter(k => typeof langData[k] === 'undefined');
+        if (!missingKeysAll.length) {
             console.log(`✅ [${lang}] All locales are up to date.`);
+            continue;
+        }
+        
+        // 1. Static-First Fallback
+        const missingKeys = [];
+        let staticHit = 0;
+        for (const k of missingKeysAll) {
+            const enText = enData[k];
+            if (staticMap[enText] && staticMap[enText][lang]) {
+                langData[k] = staticMap[enText][lang];
+                staticHit++;
+            } else {
+                missingKeys.push(k);
+            }
+        }
+        
+        if (staticHit > 0) {
+            console.log(`⚡ [${lang}] Auto-filled ${staticHit} keys using static fallback-map.json.`);
+        }
+        
+        if (!missingKeys.length) {
+            fs.writeFileSync(langPath, JSON.stringify(langData, null, 2));
             continue;
         }
 

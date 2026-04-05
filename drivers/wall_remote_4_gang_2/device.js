@@ -13,13 +13,6 @@ class wall_remote_4_gang_2 extends TuyaZigbeeDevice {
     
     // Call parent to setup raw frame fallbacks
     await super.onNodeInit({ zclNode });
-      });
-      // Initial check
-      const bat = this.getCapabilityValue('measure_battery');
-      if (bat !== null && this.hasCapability('alarm_battery')) {
-        this.setCapabilityValue('alarm_battery', bat < 15).catch(() => {});
-      }
-    }
 
     this._buttonPressedTriggerDevice = this.homey.flow.getDeviceTriggerCard('wall_remote_4_gang_buttons_2');
     if (this._buttonPressedTriggerDevice) {

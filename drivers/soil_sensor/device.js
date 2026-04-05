@@ -241,13 +241,6 @@ class SoilSensorDevice extends TuyaHybridDevice {
     // v5.12.3: Wrap super in try/catch for battery device timeout
     try {
       await super.onNodeInit({ zclNode });
-      });
-      // Initial check
-      const bat = this.getCapabilityValue('measure_battery');
-      if (bat !== null && this.hasCapability('alarm_battery')) {
-        this.setCapabilityValue('alarm_battery', bat < 15).catch(() => {});
-      }
-    }
     } catch (err) {
       this.log('[SOIL] Base init error:', err.message);
     }

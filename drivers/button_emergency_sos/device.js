@@ -51,13 +51,6 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('');
-      });
-      // Initial check
-      const bat = this.getCapabilityValue('measure_battery');
-      if (bat !== null && this.hasCapability('alarm_battery')) {
-        this.setCapabilityValue('alarm_battery', bat < 15).catch(() => {});
-      }
-    }
     this.log('╔══════════════════════════════════════════════════════════════╗');
     this.log('║     SOS EMERGENCY BUTTON v5.5.146 - UNIVERSAL                ║');
     this.log('║   Supports: IAS ACE + IAS Zone + Tuya DP + genOnOff          ║');
