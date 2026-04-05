@@ -1,1 +1,0 @@
-const fs=require('fs');const p=require('path');const cp=require('child_process');let e=0;for(const d of fs.readdirSync('drivers')){const f=p.join('drivers',d,'device.js');if(!fs.existsSync(f))continue;try{cp.execSync('node -c '+f, {stdio:'ignore'})}catch(x){console.log('Broken: '+f);e++;}}console.log('Total broken: '+e);
