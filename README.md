@@ -30,6 +30,26 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
+## 🚀 Latest Updates
+
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### ✨ Recent Changes (Apr 2026)
+
+| Version | Feature |
+|---------|---------|
+| **v5.11.189** | v5.11.188: Added 27 new device fingerprints from Zigbee2MQTT, ZHA, forum cont... |
+| **v5.11.188** | Community sync: 27 new fingerprints added from Z2M/ZHA/forum/JohanBendz. Mino... |
+| **v5.11.187** | Mntenance release. No user-facing changes. |
+| **v5.11.186** | Universal Tuya Zigbee app v5.11.186 adds 681 new fingerprints and updates 193... |
+| **v5.11.185** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue ... |
+| **v5.11.184** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue ... |
+| **v5.11.183** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue ... |
+| **v5.11.182** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue ... |
+| **v5.11.181** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue ... |
+| **v5.11.180** | v5.11.166: Added missing `button.push` capability to Finger, resolving issue ... |
+<!-- CHANGELOG_END -->
+
+
 ## Statistics
 
 | Metric | Value |
