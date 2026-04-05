@@ -237,19 +237,51 @@ async function searchBugs(targetFPs){
   return bugs;
 }
 
-// ====== SmartThings: Community DTH handlers ======
+// ====== SmartThings: Edge Drivers (Lua) + Legacy DTH (Groovy) ======
 async function scanSmartThings(){
   console.log('== SmartThings ==');
   const results=[];
-  const d=await fetchJSON(GH+'/search/code?q=_TZE200+tuya+zigbee+language:groovy&per_page=10',hdrs(TOKEN));
-  if(d?.items){for(const item of d.items){
+  
+  // 1. Modern Edge Drivers (Lua + fingerprints.yml) - v5.13.19
+  // Search for fingerprints.yml files containing Tuya IDs
+  const qEdge = 'path:fingerprints.yml+tuya+zigbee';
+  const dEdge = await fetchJSON(GH+'/search/code?q='+encodeURIComponent(qEdge), hdrs(TOKEN));
+  if(dEdge?.items){
+    for(const item of dEdge.items){
+      const content = await fetchText('https://raw.githubusercontent.com/'+item.repository?.full_name+'/master/'+item.path);
+      if(!content) continue;
+      const found = extractFP(content);
+      const dps = extractDPs(content);
+      for(const fp of found) results.push({fp, pid:null, source:'st-edge', repo:item.repository?.full_name, file:item.path, dps});
+    }
+  }
+  await sleep(2000);
+
+  // 2. Search for Tuya Lua drivers
+  const qLua = '_TZE200+tuya+language:lua';
+  const dLua = await fetchJSON(GH+'/search/code?q='+encodeURIComponent(qLua), hdrs(TOKEN));
+  if(dLua?.items){
+    for(const item of dLua.items){
+      const found = extractFP(item.name); // Usually FPs are not in filename
+      if(found.length) {
+        for(const fp of found) results.push({fp, pid:null, source:'st-edge-lua', repo:item.repository?.full_name});
+      }
+    }
+  }
+  await sleep(2000);
+
+  // 3. Legacy DTH (Groovy) - Fallback
+  const qGroovy = '_TZE200+tuya+zigbee+language:groovy';
+  const dGroovy = await fetchJSON(GH+'/search/code?q='+encodeURIComponent(qGroovy)+'&per_page=10',hdrs(TOKEN));
+  if(dGroovy?.items){for(const item of dGroovy.items){
     const fragments=(item.text_matches?.map(m=>m.fragment).join(' ')||'');
     const found=extractFP((item.name||'')+' '+fragments);
     const dps=extractDPs(fragments);const pids=extractPID(fragments);
-    for(const fp of found)results.push({fp,pid:pids[0]||null,source:'smartthings',repo:item.repository?.full_name,dps});
+    for(const fp of found)results.push({fp,pid:pids[0]||null,source:'st-legacy',repo:item.repository?.full_name,dps});
   }}
   await sleep(2000);
-  console.log('  Found',results.length,'FP entries from SmartThings');
+
+  console.log('  Found',results.length,'FP entries from SmartThings (Edge + Legacy)');
   return results;
 }
 
