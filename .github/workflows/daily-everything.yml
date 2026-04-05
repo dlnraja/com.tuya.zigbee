@@ -204,12 +204,14 @@ jobs:
           DRY_RUN: 'true'
         run: node .github/scripts/nightly-processor.js
 
-      # ===== 6a. AUTO-RESOLVE COLLISIONS =====
-      - name: "6a. Auto-Resolve True Collisions"
+      # ===== 6a. AUTO-RESOLVE COLLISIONS & HYGIENE =====
+      - name: "6a. Auto-Resolve Fingerprint Issues (NO-AI)"
         id: collision_resolver
         continue-on-error: true
         timeout-minutes: 5
         run: |
+          echo "=== Enforcing case rules & removing wildcards ==="
+          node scripts/maintenance/enforce-fingerprint-rules.js || true
           echo "=== Grouping duplicated logic into hybrid drivers ==="
           node scripts/maintenance/auto-resolve-collisions.js || true
 
