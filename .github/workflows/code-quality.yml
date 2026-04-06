@@ -31,6 +31,13 @@ env:
   NODE_VERSION: "22"
 
 jobs:
+  ai:
+    name: AI Intelligence Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🤖 AI Orchestrator Health
+        run: node .github/scripts/ai-helper.js --check-health
+
   quality:
     name: 🔧 Quality Checks
     runs-on: ubuntu-latest
@@ -83,14 +90,16 @@ jobs:
             echo "✅ Imports OK" >> $GITHUB_STEP_SUMMARY
           fi
 
-      - name: 🔍 Check getConditionCard vs getDeviceConditionCard
+      - name: 🔍 Check getDevice*Card vs get*Card (SDK3 Spec)
         run: |
-          # Check for wrong flow card method usage
-          WRONG_METHOD=$(grep -rn "getConditionCard" drivers/ --include="*.js" 2>/dev/null | grep -v "getDeviceConditionCard" | wc -l || true)
+          # Homey SDK v3 prefers getTriggerCard, getConditionCard, getActionCard
+          # getDevice*Card was causing 'is not a function' in recent Homey versions
+          WRONG_METHOD=$(grep -rnE "getDevice(Trigger|Condition|Action)Card" drivers/ lib/ --include="*.js" 2>/dev/null | wc -l || true)
           if [ "$WRONG_METHOD" -gt 0 ]; then
-            echo "⚠️ Found $WRONG_METHOD uses of getConditionCard (check if should be getDeviceConditionCard)" >> $GITHUB_STEP_SUMMARY
+            echo "❌ Found $WRONG_METHOD uses of deprecated getDevice*Card methods. Use get*Card instead." >> $GITHUB_STEP_SUMMARY
+            exit 1
           else
-            echo "✅ Flow card methods OK" >> $GITHUB_STEP_SUMMARY
+            echo "✅ Flow card methods (SDK3 compliant) OK" >> $GITHUB_STEP_SUMMARY
           fi
 
       - name: 🔍 Deep Bug Checks
@@ -153,6 +162,14 @@ jobs:
               fi
             fi
           done
+          echo "=== 🛡️ BVB Health Audit (v6.1.6 - WiFi + Zigbee) ==="
+          # Rules: Bizarree Value Blocking coverage for all drivers
+          # v6.1.6: Includes battery specific error blocks (255, 127, 200)
+          node scripts/automation/bvb-impact-report.js || true
+          
+          echo "=== 🔋 Hybrid Energy Check (v7.0.x) ==="
+          # Ensures all drivers with measure_battery have valid energy manifests for SDK3
+          node scripts/ci/smart-energy-fixer.js
           if [ $ISSUES -eq 0 ]; then
             echo "✅ All mains devices OK" >> $GITHUB_STEP_SUMMARY
           else
