@@ -60730,8 +60730,7 @@
           "usageOff": 0.5
         },
         "batteries": [
-          "AAA",
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -60938,11 +60937,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -61343,7 +61338,7 @@
           "usageConstant": 0.5
         },
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -61879,7 +61874,7 @@
           "usageConstant": 0.5
         },
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -62643,7 +62638,7 @@
           "usageConstant": 0.5
         },
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -63107,7 +63102,7 @@
           "usageConstant": 0.5
         },
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -63707,7 +63702,7 @@
           "usageConstant": 0.5
         },
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -64214,7 +64209,7 @@
           "usageConstant": 0.5
         },
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -64553,7 +64548,6 @@
       },
       "energy": {
         "batteries": [
-          "CR2032",
           "CR2450"
         ],
         "mains": true
@@ -65400,7 +65394,6 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
           "CR2450"
         ],
         "approximation": {
@@ -65482,7 +65475,6 @@
       },
       "energy": {
         "batteries": [
-          "CR2032",
           "CR2450"
         ],
         "approximation": {
@@ -66068,7 +66060,6 @@
       },
       "energy": {
         "batteries": [
-          "CR2032",
           "CR2450"
         ],
         "approximation": {
@@ -67027,7 +67018,6 @@
       },
       "energy": {
         "batteries": [
-          "CR2032",
           "CR2450"
         ],
         "approximation": {
@@ -67555,9 +67545,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -68221,8 +68209,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2450",
-          "AAA"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -68724,7 +68711,6 @@
       },
       "energy": {
         "batteries": [
-          "AAA",
           "CR2450"
         ],
         "approximation": {
@@ -69177,7 +69163,6 @@
       },
       "energy": {
         "batteries": [
-          "CR2032",
           "CR2450"
         ],
         "approximation": {
@@ -69543,11 +69528,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -69869,8 +69850,6 @@
       ],
       "energy": {
         "batteries": [
-          "AAA",
-          "CR2032",
           "CR2450"
         ],
         "mains": true
@@ -72576,9 +72555,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2",
-          "CR123A",
-          "AAA"
+          "CR2450"
         ],
         "mains": true
       },
@@ -72653,9 +72630,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR1632",
-          "AAA"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -74304,11 +74279,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -74728,11 +74699,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -74912,7 +74879,7 @@
       ],
       "energy": {
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -75374,11 +75341,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -75511,7 +75474,7 @@
       ],
       "energy": {
         "batteries": [
-          "AA"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 2
@@ -75610,7 +75573,7 @@
       ],
       "energy": {
         "batteries": [
-          "AA"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 2
@@ -75664,9 +75627,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2032",
-          "AAA",
-          "AA"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -75829,7 +75790,7 @@
       ],
       "energy": {
         "batteries": [
-          "AA"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -76150,7 +76111,7 @@
       ],
       "energy": {
         "batteries": [
-          "AA"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -76895,7 +76856,7 @@
           "usageConstant": 0.5
         },
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -78084,10 +78045,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2032",
-          "AAA",
-          "AA",
-          "OTHER"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -78753,8 +78711,7 @@
       ],
       "energy": {
         "batteries": [
-          "AA",
-          "AAA"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -79081,8 +79038,7 @@
       ],
       "energy": {
         "batteries": [
-          "OTHER",
-          "OTHER"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -79426,8 +79382,7 @@
       ],
       "energy": {
         "batteries": [
-          "AAA",
-          "AAA"
+          "CR2450"
         ],
         "mains": true
       },
@@ -79815,7 +79770,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2"
+          "CR2450"
         ],
         "mains": true
       },
@@ -79896,10 +79851,7 @@
       ],
       "energy": {
         "batteries": [
-          "AA",
-          "AA",
-          "AA",
-          "AA"
+          "CR2450"
         ],
         "mains": true
       },
@@ -80105,8 +80057,7 @@
           "usageOff": 0.5
         },
         "batteries": [
-          "CR2450",
-          "AAA"
+          "CR2450"
         ],
         "mains": true
       },
@@ -80412,11 +80363,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -80773,8 +80720,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2450",
-          "AAA"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -81181,11 +81127,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -81505,10 +81447,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "AAA",
-          "AA",
-          "OTHER"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 1
@@ -81815,9 +81754,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2032",
-          "AAA",
-          "AA"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -82585,11 +82522,7 @@
           "usageConstant": 0.5
         },
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "CR2450"
         ],
         "mains": true
       },
@@ -83060,11 +82993,7 @@
           "usageConstant": 0.5
         },
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "CR2450"
         ],
         "mains": true
       },
@@ -83410,8 +83339,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2450",
-          "CR2032"
+          "CR2450"
         ],
         "mains": true
       },
@@ -83631,8 +83559,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2450",
-          "CR2032"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.3
@@ -83678,9 +83605,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2450",
-          "CR2032",
-          "AAA"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.3
@@ -83767,9 +83692,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA"
+          "CR2450"
         ],
         "mains": true
       },
@@ -83962,7 +83885,7 @@
       ],
       "energy": {
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -84119,7 +84042,7 @@
       ],
       "energy": {
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -84158,11 +84081,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -84524,7 +84443,7 @@
           "usageConstant": 0.5
         },
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -84857,7 +84776,7 @@
           "usageConstant": 0.5
         },
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -85251,7 +85170,7 @@
           "usageConstant": 0.5
         },
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -85824,8 +85743,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2450",
-          "AAA"
+          "CR2450"
         ],
         "mains": true
       },
@@ -85857,7 +85775,7 @@
       ],
       "energy": {
         "batteries": [
-          "AA"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -86213,12 +86131,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A",
-          "INTERNAL"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -86709,9 +86622,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2450",
-          "CR123A",
-          "AAA"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -87549,11 +87460,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -89162,7 +89069,7 @@
           "usageOff": 0
         },
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -90243,8 +90150,7 @@
       },
       "energy": {
         "batteries": [
-          "AAA",
-          "AAA"
+          "CR2450"
         ],
         "mains": true
       },
@@ -91713,12 +91619,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A",
-          "INTERNAL"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -92335,7 +92236,7 @@
       ],
       "energy": {
         "batteries": [
-          "AA"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -93431,8 +93332,7 @@
       },
       "energy": {
         "batteries": [
-          "AAA",
-          "AA"
+          "CR2450"
         ],
         "mains": true
       },
@@ -93576,9 +93476,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -94045,7 +93943,6 @@
       },
       "energy": {
         "batteries": [
-          "CR2032",
           "CR2450"
         ],
         "approximation": {
@@ -94145,7 +94042,6 @@
       },
       "energy": {
         "batteries": [
-          "CR2032",
           "CR2450"
         ],
         "approximation": {
@@ -94543,8 +94439,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2450",
-          "CR2032"
+          "CR2450"
         ],
         "mains": true
       },
@@ -94656,7 +94551,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032"
+          "CR2450"
         ],
         "mains": true
       },
@@ -94780,7 +94675,6 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
           "CR2450"
         ],
         "mains": true
@@ -94914,7 +94808,6 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
           "CR2450"
         ],
         "mains": true
@@ -95099,8 +94992,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2450",
-          "AAA"
+          "CR2450"
         ],
         "mains": true
       },
@@ -95253,8 +95145,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2450",
-          "AAA"
+          "CR2450"
         ],
         "mains": true
       },
@@ -95376,7 +95267,6 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
           "CR2450"
         ],
         "mains": true
@@ -95450,8 +95340,6 @@
       ],
       "energy": {
         "batteries": [
-          "AAA",
-          "CR2032",
           "CR2450"
         ],
         "mains": true
@@ -95937,8 +95825,6 @@
       ],
       "energy": {
         "batteries": [
-          "AAA",
-          "CR2032",
           "CR2450"
         ],
         "mains": true
@@ -96436,9 +96322,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2450",
-          "CR123A",
-          "AAA"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -97418,12 +97302,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A",
-          "INTERNAL"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -98037,12 +97916,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A",
-          "INTERNAL"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -98097,11 +97971,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -99114,12 +98984,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A",
-          "INTERNAL"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -99175,11 +99040,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA",
-          "AA",
-          "CR123A"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -99499,8 +99360,7 @@
       ],
       "energy": {
         "batteries": [
-          "OTHER",
-          "OTHER"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -99905,8 +99765,7 @@
       },
       "energy": {
         "batteries": [
-          "CR123A",
-          "CR123A"
+          "CR2450"
         ],
         "mains": true
       },
@@ -100151,7 +100010,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2032"
+          "CR2450"
         ],
         "mains": true
       },
@@ -100297,7 +100156,7 @@
       ],
       "energy": {
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -100623,7 +100482,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032"
+          "CR2450"
         ],
         "mains": true
       },
@@ -100706,7 +100565,6 @@
       },
       "energy": {
         "batteries": [
-          "CR2032",
           "CR2450"
         ],
         "approximation": {
@@ -100855,7 +100713,6 @@
       },
       "energy": {
         "batteries": [
-          "CR2032",
           "CR2450"
         ],
         "approximation": {
@@ -101100,7 +100957,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032"
+          "CR2450"
         ],
         "mains": true
       },
@@ -101270,7 +101127,7 @@
       ],
       "energy": {
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -101454,7 +101311,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2032"
+          "CR2450"
         ],
         "mains": true
       },
@@ -101563,7 +101420,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2032"
+          "CR2450"
         ],
         "mains": true
       },
@@ -101690,7 +101547,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2032"
+          "CR2450"
         ],
         "mains": true
       },
@@ -101963,8 +101820,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2",
-          "CR123A"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -102461,8 +102317,6 @@
       },
       "energy": {
         "batteries": [
-          "AAA",
-          "CR2032",
           "CR2450"
         ],
         "mains": true
@@ -104481,7 +104335,7 @@
           "usageConstant": 0.5
         },
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -105396,7 +105250,7 @@
           "usageConstant": 0.5
         },
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -106234,7 +106088,7 @@
           "usageConstant": 0.5
         },
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -107127,7 +106981,7 @@
           "usageConstant": 0.5
         },
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -107942,7 +107796,7 @@
           "usageConstant": 0.5
         },
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -108024,7 +107878,7 @@
       ],
       "energy": {
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -108294,7 +108148,7 @@
       ],
       "energy": {
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -108640,7 +108494,7 @@
           "usageConstant": 0.5
         },
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -109293,7 +109147,7 @@
           "usageConstant": 0.5
         },
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -109941,7 +109795,7 @@
       },
       "energy": {
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -110386,7 +110240,7 @@
       },
       "energy": {
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -110735,7 +110589,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -111260,8 +111114,7 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
-          "AAA"
+          "CR2450"
         ],
         "mains": true
       },
@@ -111449,7 +111302,7 @@
       ],
       "energy": {
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -111736,7 +111589,7 @@
       },
       "energy": {
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -111766,7 +111619,7 @@
       "capabilitiesOptions": {},
       "energy": {
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -112183,7 +112036,7 @@
           "usageConstant": 5
         },
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -112639,7 +112492,7 @@
           "usageConstant": 0.5
         },
         "batteries": [
-          "OTHER"
+          "CR2450"
         ],
         "mains": true
       },
@@ -113346,7 +113199,7 @@
       ],
       "energy": {
         "batteries": [
-          "AA"
+          "CR2450"
         ],
         "mains": true
       },
@@ -113418,7 +113271,7 @@
       ],
       "energy": {
         "batteries": [
-          "AA"
+          "CR2450"
         ],
         "mains": true
       },
@@ -113450,7 +113303,6 @@
       ],
       "energy": {
         "batteries": [
-          "CR2032",
           "CR2450"
         ],
         "mains": true
@@ -113886,7 +113738,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2032"
+          "CR2450"
         ],
         "mains": true
       },
@@ -114032,7 +113884,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2032"
+          "CR2450"
         ],
         "mains": true
       },
@@ -114161,7 +114013,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2032"
+          "CR2450"
         ],
         "mains": true
       },
@@ -114312,7 +114164,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2032"
+          "CR2450"
         ],
         "mains": true
       },
@@ -114468,7 +114320,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2032"
+          "CR2450"
         ],
         "mains": true
       },
@@ -114609,7 +114461,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2032"
+          "CR2450"
         ],
         "mains": true
       },
@@ -114768,7 +114620,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2032"
+          "CR2450"
         ],
         "mains": true
       },
@@ -116102,9 +115954,7 @@
       },
       "energy": {
         "batteries": [
-          "CR2032",
-          "CR2450",
-          "AAA"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -116886,7 +116736,7 @@
       },
       "energy": {
         "batteries": [
-          "AA"
+          "CR2450"
         ],
         "mains": true
       },
@@ -117004,7 +116854,7 @@
       },
       "energy": {
         "batteries": [
-          "AA"
+          "CR2450"
         ],
         "approximation": {
           "usageConstant": 0.5
@@ -117357,8 +117207,7 @@
       },
       "energy": {
         "batteries": [
-          "AAA",
-          "AA"
+          "CR2450"
         ],
         "mains": true
       },
@@ -118518,7 +118367,7 @@
       ],
       "energy": {
         "batteries": [
-          "INTERNAL"
+          "CR2450"
         ],
         "mains": true
       },
@@ -120867,7 +120716,7 @@
       ],
       "energy": {
         "batteries": [
-          "INTERNAL"
+          "CR2450"
         ],
         "mains": true
       },
@@ -121275,7 +121124,7 @@
       ],
       "energy": {
         "batteries": [
-          "INTERNAL"
+          "CR2450"
         ],
         "mains": true
       },
@@ -121406,7 +121255,7 @@
       ],
       "energy": {
         "batteries": [
-          "INTERNAL"
+          "CR2450"
         ],
         "mains": true
       },
@@ -121539,7 +121388,7 @@
       ],
       "energy": {
         "batteries": [
-          "INTERNAL"
+          "CR2450"
         ],
         "mains": true
       },
@@ -123690,7 +123539,7 @@
       ],
       "energy": {
         "batteries": [
-          "INTERNAL"
+          "CR2450"
         ],
         "mains": true
       },
