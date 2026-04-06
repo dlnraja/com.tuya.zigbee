@@ -1,4 +1,7 @@
 {
+  "7.0.3": {
+    "en": "Universal Tuya Zigbee app v7.0.3 adds 3 new fingerprints and includes various driver updates."
+  },
   "7.0.2": {
     "en": "Fixed SDK v3 flow card crashes, resolved duplicate flow IDs, and patched unlinked gang capabilities on TS0003 switches. Improved battery/energy device stability with dynamic switching and strict value filtering. Added 6 new device fingerprints."
   },
@@ -56,10 +59,7 @@
   "5.11.196": {
     "en": "Fixed pairing for 151 devices with uppercase manufacturer IDs, updated fingerprints across bulb, button, and sensor drivers, and improved overall Tuya Zigbee compatibility."
   },
-  "5.11.195": {
-    "en": "Bug fixes for climate sensor dual temperature display, critical SDK3 method crash fix, enhanced physical button flow support for multi-gang devices, and 28 new device fingerprints from community sources."
-  },
-  "7.0.3": {
-    "en": "v7.0.2: Fixed 'is not a function' crash on flow card triggers by aligning with SDK v3 get*Card methods., Resolved duplicate Flow card trigger IDs that blocked validation and caused manual selection bugs., Fixed unlinked sub-gang capabilities on TS0003 multi-gang switches., Patched capability update crashes in wireless switches using safe value setters., Fixed duplicate flow ID arrays in hybrid ene"
+  "7.0.4": {
+    "en": "v7.0.3: Fixed issues with 3 new fingerprints., Added support for 3 new fingerprints in the driver database., Updated a total of 221 drivers."
   }
 }
