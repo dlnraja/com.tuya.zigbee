@@ -161,7 +161,7 @@
       }
     },
     {
-      "id": "smart_knob_rotary_rotate_left",
+      "id": "smart_knob_rotary_hybrid_rotate_left",
       "highlight": true,
       "title": {
         "en": "Rotated left",
@@ -193,7 +193,7 @@
       }
     },
     {
-      "id": "smart_knob_rotary_rotate_right",
+      "id": "smart_knob_rotary_hybrid_rotate_right",
       "highlight": true,
       "title": {
         "en": "Rotated right",
@@ -225,7 +225,7 @@
       }
     },
     {
-      "id": "smart_knob_rotary_pressed",
+      "id": "smart_knob_rotary_hybrid_pressed",
       "highlight": true,
       "title": {
         "en": "Button pressed",

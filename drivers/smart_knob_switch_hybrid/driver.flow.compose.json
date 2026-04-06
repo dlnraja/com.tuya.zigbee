@@ -109,7 +109,7 @@
       }
     },
     {
-      "id": "smart_knob_level_changed",
+      "id": "smart_knob_switch_hybrid_level_changed",
       "title": {
         "en": "Brightness level changed",
         "fr": "Niveau de luminosité changé"
@@ -131,7 +131,7 @@
       }
     },
     {
-      "id": "smart_knob_rotated",
+      "id": "smart_knob_switch_hybrid_rotated",
       "title": {
         "en": "Knob rotated",
         "fr": "Variateur tourné"
@@ -162,7 +162,7 @@
       }
     },
     {
-      "id": "smart_knob_button_pressed",
+      "id": "smart_knob_switch_hybrid_button_pressed",
       "title": {
         "en": "Knob button pressed",
         "fr": "Bouton du variateur appuyé"
