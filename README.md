@@ -30,6 +30,26 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
+## 🚀 Latest Updates
+
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### ✨ Recent Changes (Apr 2026)
+
+| Version | Feature |
+|---------|---------|
+| **v5.12.0** | Major stabilization release: Integrated Parallel Bot Handler for faster maint... |
+| **v5.11.206** | v5.11.205: Added 3 new fingerprints to improve device compatibility., Integra... |
+| **v5.11.205** | Added 3 new fingerprints for enhanced device compatibility in Universal Tuya ... |
+| **v5.11.204** | Updated Universal Tuya Zigbee app to v5.11.204 with . Added support for Full ... |
+| **v5.11.203** | Added universal support for all 4 Zigbee SOS reporting standards to emergency... |
+| **v5.11.202** | Added support for new Tuya devices and improved pairing instructions. |
+| **v5.11.201** | Added 3 new device fingerprints including Nedis SmartLife Radiator Control. F... |
+| **v5.11.200** | Added support for ZG-204ZM and WiFi water sensor. Stabilized sleepy devices. |
+| **v5.11.199** | Added support for 3 new device fingerprints, including the Nedis SmartLife Ra... |
+| **v5.11.198** | Added support for 3 new Tuya device fingerprints, including the Nedis SmartLi... |
+<!-- CHANGELOG_END -->
+
+
 ## Statistics
 
 | Metric | Value |
