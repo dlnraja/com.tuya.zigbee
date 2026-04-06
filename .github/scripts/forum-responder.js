@@ -241,13 +241,13 @@ async function batchAI(postInfos,ver,threadCtx){
     ctx+='\n';
   }
 
-  // v5.11.99: Multi-driver awareness context
-  ctx+='## MULTI-DRIVER RULES\n';
-  ctx+='Same manufacturerName CAN appear in multiple drivers — this is normal.\n';
-  ctx+='Fingerprint = manufacturerName + productId COMBINED. Ask for productId (TS0001/TS0002/etc) if user only shares manufacturerName.\n';
-  ctx+='If user says "works after X minutes": fixed in latest — update+re-pair.\n';
+  // v6.3.4: Multi-driver & Signature Intelligence
+  ctx+='## SIGNATURE INTELLIGENCE\n';
+  ctx+='Tuya manufacturerName is NOT unique. Always use (manufacturerName + productId + deviceId) for matching.\n';
+  ctx+='If a user reports a device already "in the app" but behaving differently (e.g. TH sensor instead of Soil), it is a VARIANT. Ask for the full Zigbee Interview.\n';
+  ctx+='We resolve variants using specific deviceId (e.g. 514 vs 81) or cluster lists (Tuya Cluster 0xEF00 presence).\n';
   ctx+='## VALUE ISSUES\n';
-  ctx+='Voltage 2300V=divisor bug,fixed. Temp 0/null=re-pair. Ring/alarm stuck=re-pair. Energy huge=divisor fixed. Sensor zero=re-pair. Double-div temp 0.2=fixed v5.11.15. Soil fertilizer=ask app logs for DPs. Battery 0% on mains=known,fixed.\n\n';
+  ctx+='Soil npj9bug3: DP 111 is Soil Moisture (NOT alarm). Moisture Canyon (0% drops): Fixed in BVB v6.1.1 — needs 3 matching readings to validate drop. LCD TH sensors: re-pair to ensure Tuya Cluster binding. Energy massive: divisor fixed v6.3.5. Double-div temp 0.2: fixed v5.11.15. Battery 0% on mains: known,fixed.\n\n';
 
   // v5.12.2: Thread context
   const tcF=formatThreadContext(threadCtx);

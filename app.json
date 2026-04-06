@@ -60241,25 +60241,505 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "_TYST11_D0YU2XGI",
+          "_TYST11_d0yu2xgi",
+          "_TZ3000_6UZKISV2",
+          "_TZ3000_6uzkisv2",
+          "_TZ3000_FLLYGHYJ",
+          "_TZ3000_SAIQCN0Y",
+          "_TZ3000_UTWGOAUK",
+          "_TZ3000_XR3HTD96",
+          "_TZ3000_ZL1KMJQX",
+          "_TZ3000_fllyghyj",
+          "_TZ3000_saiqcn0y",
+          "_TZ3000_utwgoauk",
+          "_TZ3000_xr3htd96",
+          "_TZ3000_zl1kmjqx",
+          "_TZE200_0NAUXA0P",
+          "_TZE200_0nauxa0p",
+          "_TZE200_1AGWNEMS",
+          "_TZE200_1IBPYHDC",
+          "_TZE200_1agwnems",
+          "_TZE200_1ibpyhdc",
+          "_TZE200_2EKUZ3DZ",
+          "_TZE200_2SE8EFXH",
+          "_TZE200_2ekuz3dz",
+          "_TZE200_2se8efxh",
+          "_TZE200_3I3EXUAY",
+          "_TZE200_3P5YDOS3",
+          "_TZE200_3TOWULQD",
+          "_TZE200_3i3exuay",
+          "_TZE200_3p5ydos3",
+          "_TZE200_3towulqd",
+          "_TZE200_44AF8VYI",
+          "_TZE200_44af8vyi",
+          "_TZE200_4MH6TYYO",
+          "_TZE200_4VOBCGD3",
+          "_TZE200_4mh6tyyo",
+          "_TZE200_4vobcgd3",
+          "_TZE200_579LGUH2",
+          "_TZE200_579lguh2",
+          "_TZE200_5ZBP6J0U",
+          "_TZE200_5zbp6j0u",
+          "_TZE200_68NVBIO9",
+          "_TZE200_68nvbio9",
           "_TZE200_7BZTMFM1",
+          "_TZE200_7YORANX2",
           "_TZE200_7bztmfm1",
+          "_TZE200_7yoranx2",
+          "_TZE200_8YGSUHE1",
+          "_TZE200_8ygsuhe1",
+          "_TZE200_9CQCPKGB",
+          "_TZE200_9CXUHAKF",
+          "_TZE200_9I9DT8IS",
+          "_TZE200_9MAHTQTG",
+          "_TZE200_9P5XMJ5R",
+          "_TZE200_9YAPGBUV",
+          "_TZE200_9cqcpkgb",
+          "_TZE200_9cxuhakf",
+          "_TZE200_9i9dt8is",
+          "_TZE200_9mahtqtg",
+          "_TZE200_9p5xmj5r",
+          "_TZE200_9yapgbuv",
+          "_TZE200_A0SYESF5",
+          "_TZE200_A8SDABTG",
+          "_TZE200_AOCLFNXZ",
+          "_TZE200_AQNAZJ70",
+          "_TZE200_AXGVO9JH",
+          "_TZE200_BH3N6GK8",
+          "_TZE200_BJAWZODF",
+          "_TZE200_BJZROWV2",
+          "_TZE200_BQ5C8XFE",
+          "_TZE200_C2FMOM5Z",
+          "_TZE200_CF1SL3TJ",
+          "_TZE200_CIRVGEP4",
+          "_TZE200_COWVFNI3",
+          "_TZE200_CTQ0K47X",
+          "_TZE200_D0YU2XGI",
+          "_TZE200_DFXKCOTS",
+          "_TZE200_DI3TFV5B",
+          "_TZE200_E3OITDYU",
+          "_TZE200_E9BA97VF",
+          "_TZE200_EBWGZDQQ",
+          "_TZE200_FDTJUW7U",
+          "_TZE200_FJJBHX9D",
+          "_TZE200_GA1MAEOF",
+          "_TZE200_GAJ531W3",
+          "_TZE200_GBAGOILO",
+          "_TZE200_GWKAPSOQ",
+          "_TZE200_HOLEL4DK",
+          "_TZE200_HSGRHJPF",
+          "_TZE200_HUE3YFSN",
+          "_TZE200_HUSQQVUX",
+          "_TZE200_IKVNCLUO",
+          "_TZE200_IP2AKL4W",
+          "_TZE200_JTHF7VB6",
+          "_TZE200_JVA8INK8",
+          "_TZE200_JWSJBXJS",
+          "_TZE200_KDS0PMMV",
+          "_TZE200_KLY8GJLZ",
+          "_TZE200_LA2C2UO9",
+          "_TZE200_LLLLIZ3P",
+          "_TZE200_LNBFNYXD",
+          "_TZE200_LOCANSQN",
+          "_TZE200_LYETPPRM",
+          "_TZE200_M9SKFCTM",
+          "_TZE200_MEXISFIK",
+          "_TZE200_MJA3FUJA",
+          "_TZE200_MUDXCHSU",
+          "_TZE200_MYD45WEU",
+          "_TZE200_NKOABG8W",
+          "_TZE200_NOGAEMZT",
+          "_TZE200_NTCY3XU1",
+          "_TZE200_NUEQQE6K",
+          "_TZE200_NW1R9HP6",
+          "_TZE200_OJZHK75B",
+          "_TZE200_P0GZBQCT",
+          "_TZE200_PK0SFZVR",
+          "_TZE200_PW7MJI0L",
+          "_TZE200_PY4CM3HE",
           "_TZE200_QPN5Q17M",
+          "_TZE200_QQ9MPFHW",
+          "_TZE200_QYFLBNBJ",
+          "_TZE200_R0JDJRVI",
+          "_TZE200_R731ZLXK",
+          "_TZE200_RCCXOX8P",
+          "_TZE200_RDDYVRCI",
+          "_TZE200_RMYMN92D",
+          "_TZE200_RYFMQ5RL",
+          "_TZE200_S8GKRKXK",
+          "_TZE200_SGPEACQP",
+          "_TZE200_SHKXSGIS",
+          "_TZE200_SUR6Q7KO",
+          "_TZE200_SWAAMSOY",
+          "_TZE200_T5P1VJ8R",
+          "_TZE200_TTCOVULF",
+          "_TZE200_UEBOJRAA",
+          "_TZE200_UJ3F4WR5",
+          "_TZE200_UTKEMKBS",
+          "_TZE200_VS0SKPUC",
+          "_TZE200_VUCANKJX",
+          "_TZE200_VVMBJ46N",
+          "_TZE200_VZEKYI4C",
+          "_TZE200_W4CRYH2I",
+          "_TZE200_WHPB9YTS",
+          "_TZE200_WMCDJ3AQ",
+          "_TZE200_WUKB7RHC",
+          "_TZE200_XAABYBJA",
+          "_TZE200_XPQ2RZHQ",
+          "_TZE200_XUZCVLKU",
+          "_TZE200_YH7AOAHI",
+          "_TZE200_YIA0P3TR",
+          "_TZE200_YJJDCQSQ",
+          "_TZE200_YVX5LH6K",
+          "_TZE200_ZAH67EKD",
+          "_TZE200_ZL1KMJQX",
+          "_TZE200_ZPZNDJEZ",
+          "_TZE200_ZTC6GGYL",
+          "_TZE200_a0syesf5",
+          "_TZE200_a8sdabtg",
+          "_TZE200_aoclfnxz",
+          "_TZE200_aqnazj70",
+          "_TZE200_axgvo9jh",
+          "_TZE200_bh3n6gk8",
+          "_TZE200_bjawzodf",
+          "_TZE200_bjzrowv2",
+          "_TZE200_bq5c8xfe",
+          "_TZE200_c2fmom5z",
+          "_TZE200_cf1sl3tj",
+          "_TZE200_cirvgep4",
+          "_TZE200_cowvfni3",
+          "_TZE200_ctq0k47x",
+          "_TZE200_d0yu2xgi",
+          "_TZE200_dfxkcots",
+          "_TZE200_di3tfv5b",
+          "_TZE200_e3oitdyu",
+          "_TZE200_e9ba97vf",
+          "_TZE200_ebwgzdqq",
+          "_TZE200_fdtjuw7u",
+          "_TZE200_fjjbhx9d",
+          "_TZE200_ga1maeof",
+          "_TZE200_gaj531w3",
+          "_TZE200_gbagoilo",
+          "_TZE200_gwkapsoq",
+          "_TZE200_holel4dk",
+          "_TZE200_hsgrhjpf",
+          "_TZE200_hue3yfsn",
+          "_TZE200_husqqvux",
+          "_TZE200_ikvncluo",
+          "_TZE200_ip2akl4w",
+          "_TZE200_jthf7vb6",
+          "_TZE200_jva8ink8",
+          "_TZE200_jwsjbxjs",
+          "_TZE200_kds0pmmv",
+          "_TZE200_kly8gjlz",
+          "_TZE200_la2c2uo9",
+          "_TZE200_lllliz3p",
+          "_TZE200_lnbfnyxd",
+          "_TZE200_locansqn",
+          "_TZE200_lyetpprm",
+          "_TZE200_m9skfctm",
+          "_TZE200_mexisfik",
+          "_TZE200_mja3fuja",
+          "_TZE200_mudxchsu",
+          "_TZE200_myd45weu",
+          "_TZE200_nkoabg8w",
+          "_TZE200_nogaemzt",
+          "_TZE200_ntcy3xu1",
+          "_TZE200_nueqqe6k",
+          "_TZE200_nw1r9hp6",
+          "_TZE200_ojzhk75b",
+          "_TZE200_p0gzbqct",
+          "_TZE200_pk0sfzvr",
+          "_TZE200_pw7mji0l",
+          "_TZE200_py4cm3he",
           "_TZE200_qpn5q17m",
+          "_TZE200_qq9mpfhw",
+          "_TZE200_qyflbnbj",
+          "_TZE200_r0jdjrvi",
+          "_TZE200_r731zlxk",
+          "_TZE200_rccxox8p",
+          "_TZE200_rddyvrci",
+          "_TZE200_rmymn92d",
+          "_TZE200_ryfmq5rl",
+          "_TZE200_s8gkrkxk",
+          "_TZE200_sgpeacqp",
+          "_TZE200_shkxsgis",
+          "_TZE200_sur6q7ko",
+          "_TZE200_swaamsoy",
+          "_TZE200_t5p1vj8r",
+          "_TZE200_ttcovulf",
+          "_TZE200_uebojraa",
+          "_TZE200_uj3f4wr5",
+          "_TZE200_utkemkbs",
+          "_TZE200_vs0skpuc",
+          "_TZE200_vucankjx",
+          "_TZE200_vvmbj46n",
+          "_TZE200_vzekyi4c",
+          "_TZE200_w4cryh2i",
+          "_TZE200_whpb9yts",
+          "_TZE200_wmcdj3aq",
+          "_TZE200_wukb7rhc",
+          "_TZE200_xaabybja",
+          "_TZE200_xpq2rzhq",
+          "_TZE200_xuzcvlku",
+          "_TZE200_yh7aoahi",
+          "_TZE200_yia0p3tr",
+          "_TZE200_yjjdcqsq",
+          "_TZE200_yvx5lh6k",
+          "_TZE200_zah67ekd",
+          "_TZE200_zl1kmjqx",
+          "_TZE200_zpzndjez",
+          "_TZE200_ztc6ggyl",
+          "_TZE201_ZTC6GGYL",
+          "_TZE201_ztc6ggyl",
+          "_TZE202_ZTC6GGYL",
+          "_TZE202_ztc6ggyl",
+          "_TZE203_ZTC6GGYL",
+          "_TZE203_ztc6ggyl",
+          "_TZE204_1FUXIHTI",
+          "_TZE204_1fuxihti",
+          "_TZE204_5CUOCQTY",
+          "_TZE204_5cuocqty",
+          "_TZE204_6WI2MOPE",
+          "_TZE204_6wi2mope",
           "_TZE204_7BZTMFM1",
+          "_TZE204_7GCLUKJS",
           "_TZE204_7bztmfm1",
+          "_TZE204_7gclukjs",
+          "_TZE204_9QHUZGO0",
+          "_TZE204_9YAPGBUV",
+          "_TZE204_9qhuzgo0",
+          "_TZE204_9yapgbuv",
+          "_TZE204_AAGRXLBD",
+          "_TZE204_AOCLFNXZ",
+          "_TZE204_BXOO2SWD",
+          "_TZE204_CIRVGEP4",
+          "_TZE204_DCNSGGVZ",
+          "_TZE204_HLX9TNZB",
+          "_TZE204_IIK0PQUW",
+          "_TZE204_IJXVKHD0",
+          "_TZE204_MYD45WEU",
+          "_TZE204_N9CTKB6J",
+          "_TZE204_NTCY3XU1",
+          "_TZE204_QASJIF9E",
           "_TZE204_QPN5Q17M",
+          "_TZE204_SXM7L9XA",
+          "_TZE204_T1BLO2BJ",
+          "_TZE204_UPAGMTA9",
+          "_TZE204_UTKEMKBS",
+          "_TZE204_VEVC4C6G",
+          "_TZE204_XSM7L9XA",
+          "_TZE204_XU4A5RHJ",
+          "_TZE204_YJJDCQSQ",
+          "_TZE204_ZENJ4LXV",
+          "_TZE204_ZTC6GGYL",
+          "_TZE204_ZTQNH5CG",
+          "_TZE204_aagrxlbd",
+          "_TZE204_aoclfnxz",
+          "_TZE204_bxoo2swd",
+          "_TZE204_cirvgep4",
+          "_TZE204_dcnsggvz",
+          "_TZE204_hlx9tnzb",
+          "_TZE204_iik0pquw",
+          "_TZE204_ijxvkhd0",
+          "_TZE204_myd45weu",
+          "_TZE204_n9ctkb6j",
+          "_TZE204_ntcy3xu1",
+          "_TZE204_qasjif9e",
           "_TZE204_qpn5q17m",
+          "_TZE204_sxm7l9xa",
+          "_TZE204_t1blo2bj",
+          "_TZE204_upagmta9",
+          "_TZE204_utkemkbs",
+          "_TZE204_vevc4c6g",
+          "_TZE204_xsm7l9xa",
+          "_TZE204_xu4a5rhj",
+          "_TZE204_yjjdcqsq",
+          "_TZE204_zenj4lxv",
+          "_TZE204_ztc6ggyl",
+          "_TZE204_ztqnh5cg",
           "_TZE20X_XXXXXXXX",
+          "_TZE20X_xxxxxxxx",
           "_TZE20x_xxxxxxxx",
+          "_TZE284_AAO3YZHS",
+          "_TZE284_G2E6CPNW",
+          "_TZE284_SGABHWA6",
+          "_TZE284_aao3yzhs",
+          "_TZE284_g2e6cpnw",
+          "_TZE284_sgabhwa6",
+          "_tyst11_d0yu2xgi",
+          "_tz3000_6uzkisv2",
+          "_tz3000_fllyghyj",
+          "_tz3000_saiqcn0y",
+          "_tz3000_utwgoauk",
+          "_tz3000_xr3htd96",
+          "_tz3000_zl1kmjqx",
+          "_tze200_0nauxa0p",
+          "_tze200_1agwnems",
+          "_tze200_1ibpyhdc",
+          "_tze200_2ekuz3dz",
+          "_tze200_2se8efxh",
+          "_tze200_3i3exuay",
+          "_tze200_3p5ydos3",
+          "_tze200_3towulqd",
+          "_tze200_44af8vyi",
+          "_tze200_4mh6tyyo",
+          "_tze200_4vobcgd3",
+          "_tze200_579lguh2",
+          "_tze200_5zbp6j0u",
+          "_tze200_68nvbio9",
           "_tze200_7bztmfm1",
+          "_tze200_7yoranx2",
+          "_tze200_8ygsuhe1",
+          "_tze200_9cqcpkgb",
+          "_tze200_9cxuhakf",
+          "_tze200_9i9dt8is",
+          "_tze200_9mahtqtg",
+          "_tze200_9p5xmj5r",
+          "_tze200_9yapgbuv",
+          "_tze200_a0syesf5",
+          "_tze200_a8sdabtg",
+          "_tze200_aoclfnxz",
+          "_tze200_aqnazj70",
+          "_tze200_axgvo9jh",
+          "_tze200_bh3n6gk8",
+          "_tze200_bjawzodf",
+          "_tze200_bjzrowv2",
+          "_tze200_bq5c8xfe",
+          "_tze200_c2fmom5z",
+          "_tze200_cf1sl3tj",
+          "_tze200_cirvgep4",
+          "_tze200_cowvfni3",
+          "_tze200_ctq0k47x",
+          "_tze200_d0yu2xgi",
+          "_tze200_dfxkcots",
+          "_tze200_di3tfv5b",
+          "_tze200_e3oitdyu",
+          "_tze200_e9ba97vf",
+          "_tze200_ebwgzdqq",
+          "_tze200_fdtjuw7u",
+          "_tze200_fjjbhx9d",
+          "_tze200_ga1maeof",
+          "_tze200_gaj531w3",
+          "_tze200_gbagoilo",
+          "_tze200_gwkapsoq",
+          "_tze200_holel4dk",
+          "_tze200_hsgrhjpf",
+          "_tze200_hue3yfsn",
+          "_tze200_husqqvux",
+          "_tze200_ikvncluo",
+          "_tze200_ip2akl4w",
+          "_tze200_jthf7vb6",
+          "_tze200_jva8ink8",
+          "_tze200_jwsjbxjs",
+          "_tze200_kds0pmmv",
+          "_tze200_kly8gjlz",
+          "_tze200_la2c2uo9",
+          "_tze200_lllliz3p",
+          "_tze200_lnbfnyxd",
+          "_tze200_locansqn",
+          "_tze200_lyetpprm",
+          "_tze200_m9skfctm",
+          "_tze200_mexisfik",
+          "_tze200_mja3fuja",
+          "_tze200_mudxchsu",
+          "_tze200_myd45weu",
+          "_tze200_nkoabg8w",
+          "_tze200_nogaemzt",
+          "_tze200_ntcy3xu1",
+          "_tze200_nueqqe6k",
+          "_tze200_nw1r9hp6",
+          "_tze200_ojzhk75b",
+          "_tze200_p0gzbqct",
+          "_tze200_pk0sfzvr",
+          "_tze200_pw7mji0l",
+          "_tze200_py4cm3he",
           "_tze200_qpn5q17m",
+          "_tze200_qq9mpfhw",
+          "_tze200_qyflbnbj",
+          "_tze200_r0jdjrvi",
+          "_tze200_r731zlxk",
+          "_tze200_rccxox8p",
+          "_tze200_rddyvrci",
+          "_tze200_rmymn92d",
+          "_tze200_ryfmq5rl",
+          "_tze200_s8gkrkxk",
+          "_tze200_sgpeacqp",
+          "_tze200_shkxsgis",
+          "_tze200_sur6q7ko",
+          "_tze200_swaamsoy",
+          "_tze200_t5p1vj8r",
+          "_tze200_ttcovulf",
+          "_tze200_uebojraa",
+          "_tze200_uj3f4wr5",
+          "_tze200_utkemkbs",
+          "_tze200_vs0skpuc",
+          "_tze200_vucankjx",
+          "_tze200_vvmbj46n",
+          "_tze200_vzekyi4c",
+          "_tze200_w4cryh2i",
+          "_tze200_whpb9yts",
+          "_tze200_wmcdj3aq",
+          "_tze200_wukb7rhc",
+          "_tze200_xaabybja",
+          "_tze200_xpq2rzhq",
+          "_tze200_xuzcvlku",
+          "_tze200_yh7aoahi",
+          "_tze200_yia0p3tr",
+          "_tze200_yjjdcqsq",
+          "_tze200_yvx5lh6k",
+          "_tze200_zah67ekd",
+          "_tze200_zl1kmjqx",
+          "_tze200_zpzndjez",
+          "_tze200_ztc6ggyl",
+          "_tze201_ztc6ggyl",
+          "_tze202_ztc6ggyl",
+          "_tze203_ztc6ggyl",
+          "_tze204_1fuxihti",
+          "_tze204_5cuocqty",
+          "_tze204_6wi2mope",
           "_tze204_7bztmfm1",
+          "_tze204_7gclukjs",
+          "_tze204_9qhuzgo0",
+          "_tze204_9yapgbuv",
+          "_tze204_aagrxlbd",
+          "_tze204_aoclfnxz",
+          "_tze204_bxoo2swd",
+          "_tze204_cirvgep4",
+          "_tze204_dcnsggvz",
+          "_tze204_hlx9tnzb",
+          "_tze204_iik0pquw",
+          "_tze204_ijxvkhd0",
+          "_tze204_myd45weu",
+          "_tze204_n9ctkb6j",
+          "_tze204_ntcy3xu1",
+          "_tze204_qasjif9e",
           "_tze204_qpn5q17m",
-          "_tze20x_xxxxxxxx"
+          "_tze204_sxm7l9xa",
+          "_tze204_t1blo2bj",
+          "_tze204_upagmta9",
+          "_tze204_utkemkbs",
+          "_tze204_vevc4c6g",
+          "_tze204_xsm7l9xa",
+          "_tze204_xu4a5rhj",
+          "_tze204_yjjdcqsq",
+          "_tze204_zenj4lxv",
+          "_tze204_ztc6ggyl",
+          "_tze204_ztqnh5cg",
+          "_tze20x_xxxxxxxx",
+          "_tze284_aao3yzhs",
+          "_tze284_g2e6cpnw",
+          "_tze284_sgabhwa6"
         ],
         "productId": [
+          "TS0201",
+          "TS0601",
+          "TS0601_AIR_PURIFIER",
           "TS0601_air_purifier",
-          "TS0601"
+          "ts0201",
+          "ts0601",
+          "ts0601_air_purifier"
         ],
         "endpoints": {
           "1": {
@@ -60396,8 +60876,11 @@
           "_tze204_zl1kmjqx"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_CO2",
           "TS0601_co2",
-          "TS0601"
+          "ts0601",
+          "ts0601_co2"
         ],
         "endpoints": {
           "1": {
@@ -60636,7 +61119,10 @@
         "productId": [
           "TS0005",
           "TS0006",
-          "TS0601"
+          "TS0601",
+          "ts0005",
+          "ts0006",
+          "ts0601"
         ],
         "learnmode": {
           "image": "/drivers/air_quality_comprehensive/assets/learnmode.svg",
@@ -60974,8 +61460,16 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "_TYZB01_QEZUIN6K",
+          "_TYZB01_V8GTIAED",
+          "_TYZB01_qezuin6k",
+          "_TYZB01_v8gtiaed",
           "_TZ3000_7DCDDNYE",
+          "_TZ3000_7YSDNEBC",
           "_TZ3000_7dcddnye",
+          "_TZ3000_7ysdnebc",
+          "_TZ3000_92CHSKY7",
+          "_TZ3000_92chsky7",
           "_TZ3000_9CPUACA6",
           "_TZ3000_9EVM3OTQ",
           "_TZ3000_9cpuaca6",
@@ -60988,8 +61482,10 @@
           "_TZ3000_JUQ7I1FR",
           "_TZ3000_KEABPIGB",
           "_TZ3000_KIHKX3CQ",
+          "_TZ3000_KTUOYVT5",
           "_TZ3000_LZFWT5QX",
           "_TZ3000_M6U3Q8JY",
+          "_TZ3000_MGUSV51K",
           "_TZ3000_NBNMW9NC",
           "_TZ3000_NOSNX7IM",
           "_TZ3000_TQLV4YZ4",
@@ -61005,8 +61501,10 @@
           "_TZ3000_juq7i1fr",
           "_TZ3000_keabpigb",
           "_TZ3000_kihkx3cq",
+          "_TZ3000_ktuoyvt5",
           "_TZ3000_lzfwt5qx",
           "_TZ3000_m6u3q8jy",
+          "_TZ3000_mgusv51k",
           "_TZ3000_nbnmw9nc",
           "_TZ3000_nosnx7im",
           "_TZ3000_tqlv4yz4",
@@ -61020,6 +61518,8 @@
           "_TZ3210_0fc3g9sq",
           "_TZ3210_1AGIHF3Z",
           "_TZ3210_1agihf3z",
+          "_TZ3210_3MPWQZUU",
+          "_TZ3210_3mpwqzuu",
           "_TZ3210_4UBYLGHK",
           "_TZ3210_4ubylghk",
           "_TZ3210_BCPLF4DS",
@@ -61030,15 +61530,21 @@
           "_TZ3210_H1ZVCPWD",
           "_TZ3210_HZDHB62Z",
           "_TZ3210_JKBDRVVF",
+          "_TZ3210_K1MSUVG6",
           "_TZ3210_LEZKAFXF",
           "_TZ3210_LFBZ816S",
           "_TZ3210_LMQQUXUS",
+          "_TZ3210_NGQK6JIA",
+          "_TZ3210_PAGAJPOG",
           "_TZ3210_RBGFKWBL",
           "_TZ3210_SROEZL0S",
           "_TZ3210_TAW0FC13",
           "_TZ3210_V5YQUXMA",
+          "_TZ3210_WDEXAYPG",
+          "_TZ3210_WEAQKHAB",
           "_TZ3210_WUHEYHVM",
           "_TZ3210_YLUVWHJC",
+          "_TZ3210_ZXBTUB8R",
           "_TZ3210_bcplf4ds",
           "_TZ3210_dbilpfqk",
           "_TZ3210_dxrjkpi6",
@@ -61047,16 +61553,27 @@
           "_TZ3210_h1zvcpwd",
           "_TZ3210_hzdhb62z",
           "_TZ3210_jkbdrvvf",
+          "_TZ3210_k1msuvg6",
           "_TZ3210_lezkafxf",
           "_TZ3210_lfbz816s",
           "_TZ3210_lmqquxus",
+          "_TZ3210_ngqk6jia",
+          "_TZ3210_pagajpog",
           "_TZ3210_rbgfkwbl",
           "_TZ3210_sroezl0s",
           "_TZ3210_taw0fc13",
           "_TZ3210_v5yquxma",
+          "_TZ3210_wdexaypg",
+          "_TZ3210_weaqkhab",
           "_TZ3210_wuheyhvm",
           "_TZ3210_yluvwhjc",
+          "_TZ3210_zxbtub8r",
+          "_TZB210_RKGNGB5O",
+          "_tyzb01_qezuin6k",
+          "_tyzb01_v8gtiaed",
           "_tz3000_7dcddnye",
+          "_tz3000_7ysdnebc",
+          "_tz3000_92chsky7",
           "_tz3000_9cpuaca6",
           "_tz3000_9evm3otq",
           "_tz3000_as7eqiri",
@@ -61067,8 +61584,10 @@
           "_tz3000_juq7i1fr",
           "_tz3000_keabpigb",
           "_tz3000_kihkx3cq",
+          "_tz3000_ktuoyvt5",
           "_tz3000_lzfwt5qx",
           "_tz3000_m6u3q8jy",
+          "_tz3000_mgusv51k",
           "_tz3000_nbnmw9nc",
           "_tz3000_nosnx7im",
           "_tz3000_tqlv4yz4",
@@ -61079,6 +61598,7 @@
           "_tz3210_0c4np92r",
           "_tz3210_0fc3g9sq",
           "_tz3210_1agihf3z",
+          "_tz3210_3mpwqzuu",
           "_tz3210_4ubylghk",
           "_tz3210_bcplf4ds",
           "_tz3210_dbilpfqk",
@@ -61088,22 +61608,29 @@
           "_tz3210_h1zvcpwd",
           "_tz3210_hzdhb62z",
           "_tz3210_jkbdrvvf",
+          "_tz3210_k1msuvg6",
           "_tz3210_lezkafxf",
           "_tz3210_lfbz816s",
           "_tz3210_lmqquxus",
+          "_tz3210_ngqk6jia",
+          "_tz3210_pagajpog",
           "_tz3210_rbgfkwbl",
           "_tz3210_sroezl0s",
           "_tz3210_taw0fc13",
           "_tz3210_v5yquxma",
+          "_tz3210_wdexaypg",
+          "_tz3210_weaqkhab",
           "_tz3210_wuheyhvm",
           "_tz3210_yluvwhjc",
+          "_tz3210_zxbtub8r",
           "_tzb210_rkgngb5o"
         ],
         "productId": [
-          "TS0501A",
-          "TS0501B",
-          "TS110E",
-          "TS110F",
+          "A19 W 10 YEAR",
+          "A19 W 10 year",
+          "BR30 W 10 YEAR",
+          "BR30 W 10 year",
+          "GL-B-001Z",
           "LED1623G12",
           "LED1649C5",
           "LED1836G9",
@@ -61111,15 +61638,43 @@
           "LWB006",
           "LWB010",
           "LWB014",
-          "Plug 01",
-          "A19 W 10 year",
-          "BR30 W 10 year",
+          "PAR38 W 10 YEAR",
           "PAR38 W 10 year",
-          "GL-B-001Z",
-          "RS 125",
+          "PLUG 01",
+          "Plug 01",
           "RB 165",
           "RB 175 W",
-          "ZBT-DimmableLight"
+          "RS 125",
+          "TS0052",
+          "TS0501A",
+          "TS0501B",
+          "TS1101",
+          "TS110E",
+          "TS110F",
+          "ZBT-DIMMABLELIGHT",
+          "ZBT-DimmableLight",
+          "a19 w 10 year",
+          "br30 w 10 year",
+          "gl-b-001z",
+          "led1623g12",
+          "led1649c5",
+          "led1836g9",
+          "lwb004",
+          "lwb006",
+          "lwb010",
+          "lwb014",
+          "par38 w 10 year",
+          "plug 01",
+          "rb 165",
+          "rb 175 w",
+          "rs 125",
+          "ts0052",
+          "ts0501a",
+          "ts0501b",
+          "ts1101",
+          "ts110e",
+          "ts110f",
+          "zbt-dimmablelight"
         ],
         "endpoints": {
           "1": {
@@ -61440,28 +61995,53 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "EWELIGHT",
           "_TZ3000_12SXJAP4",
           "_TZ3000_12sxjap4",
+          "_TZ3000_5BSF8VAJ",
+          "_TZ3000_5bsf8vaj",
           "_TZ3000_6ZVW8HAM",
           "_TZ3000_6zvw8ham",
           "_TZ3000_7DCDDNYE",
           "_TZ3000_7dcddnye",
+          "_TZ3000_9CPUACA6",
+          "_TZ3000_9cpuaca6",
+          "_TZ3000_DBOU1AP4",
+          "_TZ3000_DL4PXP1R",
+          "_TZ3000_GEK6SNAJ",
           "_TZ3000_GN91MCMZ",
+          "_TZ3000_H1JNZ6L8",
           "_TZ3000_HLIJWSAI",
+          "_TZ3000_I8L0NQDU",
           "_TZ3000_KDPXJU99",
           "_TZ3000_KEABPIGV",
           "_TZ3000_OBACBUKL",
           "_TZ3000_ODYGIGTH",
+          "_TZ3000_Q50ZHDSC",
           "_TZ3000_QD7HEJ8U",
+          "_TZ3000_QQJAZIWS",
           "_TZ3000_QZJCSMAR",
+          "_TZ3000_RIWP3K79",
+          "_TZ3000_UKUVYHAA",
+          "_TZ3000_UTAGPNZS",
+          "_TZ3000_dbou1ap4",
+          "_TZ3000_dl4pxp1r",
+          "_TZ3000_gek6snaj",
           "_TZ3000_gn91mcmz",
+          "_TZ3000_h1jnz6l8",
           "_TZ3000_hlijwsai",
+          "_TZ3000_i8l0nqdu",
           "_TZ3000_kdpxju99",
           "_TZ3000_keabpigv",
           "_TZ3000_obacbukl",
           "_TZ3000_odygigth",
+          "_TZ3000_q50zhdsc",
           "_TZ3000_qd7hej8u",
+          "_TZ3000_qqjaziws",
           "_TZ3000_qzjcsmar",
+          "_TZ3000_riwp3k79",
+          "_TZ3000_ukuvyhaa",
+          "_TZ3000_utagpnzs",
           "_TZ3210_0ZABBFAX",
           "_TZ3210_0zabbfax",
           "_TZ3210_4UBYLGHK",
@@ -61503,6 +62083,7 @@
           "_TZ3210_K1PE6IBM",
           "_TZ3210_LJOASIXL",
           "_TZ3210_MJA6R5IX",
+          "_TZ3210_R0XGKFT5",
           "_TZ3210_R5AFGMKL",
           "_TZ3210_RCGGC0YS",
           "_TZ3210_RWMITWJ4",
@@ -61544,6 +62125,7 @@
           "_TZ3210_k1pe6ibm",
           "_TZ3210_ljoasixl",
           "_TZ3210_mja6r5ix",
+          "_TZ3210_r0xgkft5",
           "_TZ3210_r5afgmkl",
           "_TZ3210_rcggc0ys",
           "_TZ3210_rwmitwj4",
@@ -61558,17 +62140,51 @@
           "_TZ3210_zrvxvydd",
           "_TZ3290_GNL5A6A5",
           "_TZ3290_gnl5a6a5",
+          "_TZB210_0BKZABHT",
+          "_TZB210_3ZFP8MKI",
+          "_TZB210_417IKXAY",
+          "_TZB210_6EED09B9",
+          "_TZB210_AAVHAADB",
+          "_TZB210_AYX58FT5",
+          "_TZB210_EIWANBEB",
+          "_TZB210_ENDMGGWS",
+          "_TZB210_G01IE5WU",
+          "_TZB210_GJ0CCSAR",
+          "_TZB210_LMQQUXUS",
+          "_TZB210_LNNKH3F9",
+          "_TZB210_QUINZF3W",
+          "_TZB210_RKGNGB5O",
+          "_TZB210_RS0UFZWG",
+          "_TZB210_RWY5HEXP",
+          "_TZB210_UE01A0S2",
+          "_TZB210_W9HCIX2R",
+          "_TZB210_WXAZCMSH",
+          "_TZB210_WY1PYU1Q",
+          "_TZB210_YATKPUHA",
+          "_TZB210_ZMPPWAWA",
           "_tz3000_12sxjap4",
+          "_tz3000_5bsf8vaj",
           "_tz3000_6zvw8ham",
           "_tz3000_7dcddnye",
+          "_tz3000_9cpuaca6",
+          "_tz3000_dbou1ap4",
+          "_tz3000_dl4pxp1r",
+          "_tz3000_gek6snaj",
           "_tz3000_gn91mcmz",
+          "_tz3000_h1jnz6l8",
           "_tz3000_hlijwsai",
+          "_tz3000_i8l0nqdu",
           "_tz3000_kdpxju99",
           "_tz3000_keabpigv",
           "_tz3000_obacbukl",
           "_tz3000_odygigth",
+          "_tz3000_q50zhdsc",
           "_tz3000_qd7hej8u",
+          "_tz3000_qqjaziws",
           "_tz3000_qzjcsmar",
+          "_tz3000_riwp3k79",
+          "_tz3000_ukuvyhaa",
+          "_tz3000_utagpnzs",
           "_tz3210_0zabbfax",
           "_tz3210_4ubylghk",
           "_tz3210_5vbjzw54",
@@ -61604,6 +62220,7 @@
           "_tz3210_k1pe6ibm",
           "_tz3210_ljoasixl",
           "_tz3210_mja6r5ix",
+          "_tz3210_r0xgkft5",
           "_tz3210_r5afgmkl",
           "_tz3210_rcggc0ys",
           "_tz3210_rwmitwj4",
@@ -61639,6 +62256,7 @@
           "_tzb210_wy1pyu1q",
           "_tzb210_yatkpuha",
           "_tzb210_zmppwawa",
+          "eWeLight",
           "ewelight"
         ],
         "endpoints": {
@@ -61662,8 +62280,10 @@
           }
         },
         "productId": [
-          "TS0503A",
-          "TS0503B",
+          "E11-G13",
+          "E11-G14",
+          "E11-G23",
+          "GL-C-006",
           "LCT001",
           "LCT002",
           "LCT003",
@@ -61674,16 +62294,39 @@
           "LCT014",
           "LCT015",
           "LCT016",
-          "GL-C-006",
           "RB 185 C",
           "RB 285 C",
-          "E11-G13",
-          "E11-G14",
-          "E11-G23",
-          "ZBT-ColorLight",
+          "TS0503A",
+          "TS0503B",
+          "TS0504B",
           "TS0505A",
           "TS0505B",
-          "ZB-CL01"
+          "ZB-CL01",
+          "ZBT-COLORLIGHT",
+          "ZBT-ColorLight",
+          "e11-g13",
+          "e11-g14",
+          "e11-g23",
+          "gl-c-006",
+          "lct001",
+          "lct002",
+          "lct003",
+          "lct007",
+          "lct010",
+          "lct011",
+          "lct012",
+          "lct014",
+          "lct015",
+          "lct016",
+          "rb 185 c",
+          "rb 285 c",
+          "ts0503a",
+          "ts0503b",
+          "ts0504b",
+          "ts0505a",
+          "ts0505b",
+          "zb-cl01",
+          "zbt-colorlight"
         ]
       },
       "settings": [
@@ -62144,7 +62787,8 @@
           }
         },
         "productId": [
-          "TS0505B"
+          "TS0505B",
+          "ts0505b"
         ]
       },
       "settings": [
@@ -62575,6 +63219,8 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "EWELINK",
+          "SONOFF",
           "_TZ3000_7HCGJXPC",
           "_TZ3000_7hcgjxpc",
           "_TZ3000_9CPUACA6",
@@ -62715,6 +63361,23 @@
           "_TZ3210_zbabx9wh",
           "_TZ3210_zfblruvv",
           "_TZ3210_zrvxvydd",
+          "_TZB210_3ZFP8MKI",
+          "_TZB210_417IKXAY",
+          "_TZB210_6EED09B9",
+          "_TZB210_ENDMGGWS",
+          "_TZB210_GJ0CCSAR",
+          "_TZB210_LNNKH3F9",
+          "_TZB210_RS0UFZWG",
+          "_TZB210_RWY5HEXP",
+          "_TZB210_U3RI0968",
+          "_TZB210_UE01A0S2",
+          "_TZB210_UOIQHJQE",
+          "_TZB210_W9HCIX2R",
+          "_TZB210_WXAZCMSH",
+          "_TZB210_WY1PYU1Q",
+          "_TZB210_YATKPUHA",
+          "_TZB210_ZDVRSTS8",
+          "_TZB210_ZMPPWAWA",
           "_tz3000_7hcgjxpc",
           "_tz3000_9cpuaca6",
           "_tz3000_bdbb0fon",
@@ -62806,19 +63469,34 @@
           "sonoff"
         ],
         "productId": [
-          "generic",
+          "CK-BL702-AL-01(7009_Z102LG03-1)",
+          "CLASSIC A60 RGBW",
+          "Classic A60 RGBW",
+          "FE-GU10-5W",
+          "FLEX RGBW",
+          "Flex RGBW",
+          "GENERIC",
+          "GL-B-008Z",
+          "GL-C-008",
+          "SMD9300",
           "TS0504A",
           "TS0504B",
           "TS0505A",
           "TS0505B",
-          "Classic A60 RGBW",
-          "Flex RGBW",
-          "GL-C-008",
-          "GL-B-008Z",
           "TS1002",
-          "FE-GU10-5W",
-          "SMD9300",
-          "CK-BL702-AL-01(7009_Z102LG03-1)"
+          "ck-bl702-al-01(7009_z102lg03-1)",
+          "classic a60 rgbw",
+          "fe-gu10-5w",
+          "flex rgbw",
+          "generic",
+          "gl-b-008z",
+          "gl-c-008",
+          "smd9300",
+          "ts0504a",
+          "ts0504b",
+          "ts0505a",
+          "ts0505b",
+          "ts1002"
         ],
         "endpoints": {
           "1": {
@@ -63202,6 +63880,7 @@
           "_TZ3210_CLAEH5DS",
           "_TZ3210_DXRJKPI6",
           "_TZ3210_H1ZVCPWD",
+          "_TZ3210_INVESBER",
           "_TZ3210_IYSTCADI",
           "_TZ3210_JKBDRVVF",
           "_TZ3210_KSQWLZ9V",
@@ -63211,12 +63890,14 @@
           "_TZ3210_SROEZL0S",
           "_TZ3210_TAW0FC13",
           "_TZ3210_WUHEYHVM",
+          "_TZ3210_ZDRHQMO0",
           "_TZ3210_agwvapnp",
           "_TZ3210_bcplf4ds",
           "_TZ3210_c2iwpxf1",
           "_TZ3210_claeh5ds",
           "_TZ3210_dxrjkpi6",
           "_TZ3210_h1zvcpwd",
+          "_TZ3210_invesber",
           "_TZ3210_iystcadi",
           "_TZ3210_jkbdrvvf",
           "_TZ3210_ksqwlz9v",
@@ -63226,6 +63907,10 @@
           "_TZ3210_sroezl0s",
           "_TZ3210_taw0fc13",
           "_TZ3210_wuheyhvm",
+          "_TZ3210_zdrhqmo0",
+          "_TZB210_0BKZABHT",
+          "_TZB210_AYX58FT5",
+          "_TZB210_EIWANBEB",
           "_tz3000_49qchf10",
           "_tz3000_5fkufhn1",
           "_tz3000_6dwfra5l",
@@ -63260,6 +63945,7 @@
           "_tz3210_claeh5ds",
           "_tz3210_dxrjkpi6",
           "_tz3210_h1zvcpwd",
+          "_tz3210_invesber",
           "_tz3210_iystcadi",
           "_tz3210_jkbdrvvf",
           "_tz3210_ksqwlz9v",
@@ -63269,13 +63955,20 @@
           "_tz3210_sroezl0s",
           "_tz3210_taw0fc13",
           "_tz3210_wuheyhvm",
+          "_tz3210_zdrhqmo0",
           "_tzb210_0bkzabht",
           "_tzb210_ayx58ft5",
           "_tzb210_eiwanbeb"
         ],
         "productId": [
-          "TS0502A",
-          "TS0502B",
+          "CLASSIC A60 TW",
+          "Classic A60 TW",
+          "E11-N13",
+          "E11-N14",
+          "E12-N13",
+          "E12-N14",
+          "GL-B-007Z",
+          "GL-C-007",
           "LED1545G12",
           "LED1546G12",
           "LTW001",
@@ -63284,16 +63977,32 @@
           "LTW012",
           "LTW013",
           "LTW015",
-          "Classic A60 TW",
-          "GL-C-007",
-          "GL-B-007Z",
-          "RS 128 T",
           "RB 178 T",
-          "E11-N13",
-          "E11-N14",
-          "E12-N13",
-          "E12-N14",
-          "ZBT-CCTLight"
+          "RS 128 T",
+          "TS0502A",
+          "TS0502B",
+          "ZBT-CCTLIGHT",
+          "ZBT-CCTLight",
+          "classic a60 tw",
+          "e11-n13",
+          "e11-n14",
+          "e12-n13",
+          "e12-n14",
+          "gl-b-007z",
+          "gl-c-007",
+          "led1545g12",
+          "led1546g12",
+          "ltw001",
+          "ltw004",
+          "ltw010",
+          "ltw012",
+          "ltw013",
+          "ltw015",
+          "rb 178 t",
+          "rs 128 t",
+          "ts0502a",
+          "ts0502b",
+          "zbt-cctlight"
         ],
         "endpoints": {
           "1": {
@@ -63623,7 +64332,8 @@
           "_tz3000_oboryztc"
         ],
         "productId": [
-          "TS0501"
+          "TS0501",
+          "ts0501"
         ],
         "endpoints": {
           "1": {
@@ -63953,7 +64663,9 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "_TYZB01_QM6DJPTA",
           "_TYZB01_TRQOESC6",
+          "_TYZB01_qm6djpta",
           "_TYZb01_trqoesc6",
           "_TZ3000_0DUMFK2Z",
           "_TZ3000_0ZRCCFGX",
@@ -64029,6 +64741,7 @@
           "_TZE200_kzm5w4iz",
           "_TZE284_3QHGNDV6",
           "_TZE284_3qhgndv6",
+          "_tyzb01_qm6djpta",
           "_tyzb01_trqoesc6",
           "_tz3000_0dumfk2z",
           "_tz3000_0zrccfgx",
@@ -64069,11 +64782,16 @@
           "_tze284_3qhgndv6"
         ],
         "productId": [
-          "ZBPB10BK",
+          "TS0215",
+          "TS0215A",
           "TS0218",
           "TS0601",
-          "TS0215",
-          "TS0215A"
+          "ZBPB10BK",
+          "ts0215",
+          "ts0215a",
+          "ts0218",
+          "ts0601",
+          "zbpb10bk"
         ],
         "endpoints": {
           "1": {
@@ -64474,22 +65192,25 @@
           "_tz3400_keyjhapk"
         ],
         "productId": [
-          "TS0040",
+          "CK-TLSR8656-SS5-01(7000)",
           "SNZB-01",
-          "SNZB-01P",
           "SNZB-01M",
-          "WB01",
+          "SNZB-01P",
+          "TS0040",
           "WB-01",
-          "CK-TLSR8656-SS5-01(7000)"
+          "WB01",
+          "ck-tlsr8656-ss5-01(7000)",
+          "snzb-01",
+          "snzb-01m",
+          "snzb-01p",
+          "ts0040",
+          "wb-01",
+          "wb01"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              3,
-              6,
-              4096,
               61184
             ]
           }
@@ -64872,9 +65593,12 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "EWELINK",
+          "SONOFF",
           "_TYZB01_1XKTOPX6",
           "_TYZB01_4QW4RL1U",
           "_TYZB02_KEYJQTHH",
+          "_TYZB02_keyjqthh",
           "_TYZb01_1xktopx6",
           "_TYZb01_4qw4rl1u",
           "_TYZb02_keyjqthh",
@@ -64882,10 +65606,14 @@
           "_TZ3000_0cxtpylt",
           "_TZ3000_22UGZKME",
           "_TZ3000_22ugzkme",
+          "_TZ3000_4UPL1FCJ",
+          "_TZ3000_4upl1fcj",
           "_TZ3000_5BPEDA8U",
           "_TZ3000_5bpeda8u",
           "_TZ3000_6KM7DJCM",
           "_TZ3000_6km7djcm",
+          "_TZ3000_8RPPVWDA",
+          "_TZ3000_8rppvwda",
           "_TZ3000_ABRSVSOU",
           "_TZ3000_ADNDOLVX",
           "_TZ3000_AN5RJIWD",
@@ -64897,7 +65625,9 @@
           "_TZ3000_DKU2CFSC",
           "_TZ3000_EBAR5P3Z",
           "_TZ3000_F97VQ5MN",
+          "_TZ3000_FA9MLVJA",
           "_TZ3000_FKP5ZYHO",
+          "_TZ3000_ITB0OMHV",
           "_TZ3000_IXLA93VD",
           "_TZ3000_JA5OSU5G",
           "_TZ3000_KE_X0OO3",
@@ -64906,10 +65636,13 @@
           "_TZ3000_NXDZIQZC",
           "_TZ3000_OWGCNKRH",
           "_TZ3000_PESZEJY7",
+          "_TZ3000_PZUI3SKT",
+          "_TZ3000_Q68478X7",
           "_TZ3000_QGWCXXWS",
           "_TZ3000_QJA6NQ5Z",
           "_TZ3000_RCO1YZB1",
           "_TZ3000_SSP0MAQM",
+          "_TZ3000_TK3S5TYG",
           "_TZ3000_URI7BER7",
           "_TZ3000_URI7OADN",
           "_TZ3000_URI7ONGN",
@@ -64927,7 +65660,9 @@
           "_TZ3000_dku2cfsc",
           "_TZ3000_ebar5p3z",
           "_TZ3000_f97vq5mn",
+          "_TZ3000_fa9mlvja",
           "_TZ3000_fkp5zyho",
+          "_TZ3000_itb0omhv",
           "_TZ3000_ixla93vd",
           "_TZ3000_ja5osu5g",
           "_TZ3000_ke_x0oo3",
@@ -64936,10 +65671,13 @@
           "_TZ3000_nxdziqzc",
           "_TZ3000_owgcnkrh",
           "_TZ3000_peszejy7",
+          "_TZ3000_pzui3skt",
+          "_TZ3000_q68478x7",
           "_TZ3000_qgwcxxws",
           "_TZ3000_qja6nq5z",
           "_TZ3000_rco1yzb1",
           "_TZ3000_ssp0maqm",
+          "_TZ3000_tk3s5tyg",
           "_TZ3000_uri7ber7",
           "_TZ3000_uri7oadn",
           "_TZ3000_uri7ongn",
@@ -64957,8 +65695,10 @@
           "_tyzb02_keyjqthh",
           "_tz3000_0cxtpylt",
           "_tz3000_22ugzkme",
+          "_tz3000_4upl1fcj",
           "_tz3000_5bpeda8u",
           "_tz3000_6km7djcm",
+          "_tz3000_8rppvwda",
           "_tz3000_abrsvsou",
           "_tz3000_adndolvx",
           "_tz3000_an5rjiwd",
@@ -64970,7 +65710,9 @@
           "_tz3000_dku2cfsc",
           "_tz3000_ebar5p3z",
           "_tz3000_f97vq5mn",
+          "_tz3000_fa9mlvja",
           "_tz3000_fkp5zyho",
+          "_tz3000_itb0omhv",
           "_tz3000_ixla93vd",
           "_tz3000_ja5osu5g",
           "_tz3000_ke_x0oo3",
@@ -64979,10 +65721,13 @@
           "_tz3000_nxdziqzc",
           "_tz3000_owgcnkrh",
           "_tz3000_peszejy7",
+          "_tz3000_pzui3skt",
+          "_tz3000_q68478x7",
           "_tz3000_qgwcxxws",
           "_tz3000_qja6nq5z",
           "_tz3000_rco1yzb1",
           "_tz3000_ssp0maqm",
+          "_tz3000_tk3s5tyg",
           "_tz3000_uri7ber7",
           "_tz3000_uri7oadn",
           "_tz3000_uri7ongn",
@@ -64996,47 +65741,65 @@
           "sonoff"
         ],
         "productId": [
-          "TS0041",
-          "ZG-101ZL",
-          "WXKG01LM",
-          "WXKG02LM",
-          "WXKG03LM",
-          "WXKG11LM",
-          "WXKG12LM",
-          "WXKG06LM",
-          "WXKG07LM",
-          "lumi.sensor_switch",
-          "lumi.sensor_switch.aq2",
-          "lumi.sensor_switch.aq3",
-          "lumi.remote.b1acn01",
+          "3450-L",
+          "3450-l",
           "E1524/E1810",
           "E1743",
-          "E1812",
           "E1744",
+          "E1812",
           "E2001/E2002",
           "E2123",
+          "LUMI.REMOTE.B1ACN01",
+          "LUMI.SENSOR_SWITCH",
+          "LUMI.SENSOR_SWITCH.AQ2",
+          "LUMI.SENSOR_SWITCH.AQ3",
+          "ROM001",
           "RWL020",
           "RWL021",
           "RWL022",
-          "ROM001",
-          "3450-L",
           "SNZB-01",
           "SNZB-01P",
-          "TS0041A"
+          "TS0041",
+          "TS0041A",
+          "WXKG01LM",
+          "WXKG02LM",
+          "WXKG03LM",
+          "WXKG06LM",
+          "WXKG07LM",
+          "WXKG11LM",
+          "WXKG12LM",
+          "ZG-101ZL",
+          "e1524/e1810",
+          "e1743",
+          "e1744",
+          "e1812",
+          "e2001/e2002",
+          "e2123",
+          "lumi.remote.b1acn01",
+          "lumi.sensor_switch",
+          "lumi.sensor_switch.aq2",
+          "lumi.sensor_switch.aq3",
+          "rom001",
+          "rwl020",
+          "rwl021",
+          "rwl022",
+          "snzb-01",
+          "snzb-01p",
+          "ts0041",
+          "ts0041a",
+          "wxkg01lm",
+          "wxkg02lm",
+          "wxkg03lm",
+          "wxkg06lm",
+          "wxkg07lm",
+          "wxkg11lm",
+          "wxkg12lm",
+          "zg-101zl"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              3,
-              4,
-              5,
-              6,
-              18,
-              1280,
-              1281,
-              57344,
               61184
             ]
           }
@@ -65415,54 +66178,565 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "TUYATEC-NZRRVGCO",
+          "TUYATEC-O6SNCWD6",
+          "TUYATEC-O6SNCwd6",
+          "TUYATEC-nzrrvgco",
+          "_TYZB01_2ATHZHFR",
+          "_TYZB01_2athzhfr",
+          "_TYZB01_4TLKSK8A",
+          "_TYZB01_4tlksk8a",
+          "_TYZB01_6G8B7AT8",
+          "_TYZB01_6SADKHCY",
+          "_TYZB01_6g8b7at8",
+          "_TYZB01_6sadkhcy",
+          "_TYZB01_ANEIICMQ",
+          "_TYZB01_B8CR31HP",
+          "_TYZB01_DIGZIIAV",
+          "_TYZB01_MQEL1WHF",
+          "_TYZB01_MTLHQN48",
+          "_TYZB01_NCUTBJDI",
+          "_TYZB01_QEQVMVTI",
+          "_TYZB01_SEQWASOT",
+          "_TYZB01_VZRYTTTN",
+          "_TYZB01_XFPDRWVC",
+          "_TYZB01_XIUOX57I",
+          "_TYZB01_YMCDBL3U",
+          "_TYZB01_ZSL6Z0PW",
+          "_TYZB01_aneiicmq",
+          "_TYZB01_b8cr31hp",
+          "_TYZB01_digziiav",
+          "_TYZB01_mqel1whf",
+          "_TYZB01_mtlhqn48",
+          "_TYZB01_ncutbjdi",
+          "_TYZB01_qeqvmvti",
+          "_TYZB01_seqwasot",
+          "_TYZB01_vzrytttn",
+          "_TYZB01_xfpdrwvc",
+          "_TYZB01_xiuox57i",
+          "_TYZB01_ymcdbl3u",
+          "_TYZB01_zsl6z0pw",
           "_TYZB02_KEYJHAPK",
+          "_TYZB02_keyjhapk",
           "_TYZb02_keyjhapk",
+          "_TZ3000_0ZFRHQ4I",
+          "_TZ3000_0zfrhq4i",
+          "_TZ3000_18EJXNO0",
+          "_TZ3000_18ejxno0",
+          "_TZ3000_1H2X4AKH",
+          "_TZ3000_1OBWWNMQ",
+          "_TZ3000_1h2x4akh",
+          "_TZ3000_1obwwnmq",
+          "_TZ3000_2DLWLVEX",
+          "_TZ3000_2PUTQRMW",
+          "_TZ3000_2dlwlvex",
+          "_TZ3000_2putqrmw",
+          "_TZ3000_3IAS4W4O",
+          "_TZ3000_3OOAZ3NG",
+          "_TZ3000_3U4HRIPK",
+          "_TZ3000_3UIMVKN6",
+          "_TZ3000_3WKQNI6O",
+          "_TZ3000_3ias4w4o",
+          "_TZ3000_3ooaz3ng",
+          "_TZ3000_3u4hripk",
+          "_TZ3000_3uimvkn6",
+          "_TZ3000_3wkqni6o",
+          "_TZ3000_46T1RVDU",
+          "_TZ3000_46t1rvdu",
+          "_TZ3000_4JS9LO5D",
+          "_TZ3000_4O16JDCA",
+          "_TZ3000_4UF3D0AX",
+          "_TZ3000_4UX0ONDB",
+          "_TZ3000_4js9lo5d",
+          "_TZ3000_4o16jdca",
+          "_TZ3000_4uf3d0ax",
+          "_TZ3000_4ux0ondb",
+          "_TZ3000_56BDYJ21",
+          "_TZ3000_56bdyj21",
+          "_TZ3000_5CT6E7YE",
+          "_TZ3000_5E235JPA",
+          "_TZ3000_5E5PTB24",
+          "_TZ3000_5F43H46B",
+          "_TZ3000_5ITY3ZYU",
+          "_TZ3000_5UCUJJTS",
+          "_TZ3000_5VUJYUTE",
+          "_TZ3000_5ct6e7ye",
+          "_TZ3000_5e235jpa",
+          "_TZ3000_5e5ptb24",
+          "_TZ3000_5f43h46b",
+          "_TZ3000_5ity3zyu",
+          "_TZ3000_5ucujjts",
+          "_TZ3000_5vujyute",
+          "_TZ3000_6AXXQQI2",
+          "_TZ3000_6EYYDFYG",
+          "_TZ3000_6L1PJFQE",
+          "_TZ3000_6axxqqi2",
+          "_TZ3000_6eyydfyg",
+          "_TZ3000_6l1pjfqe",
+          "_TZ3000_7ED9CQGI",
+          "_TZ3000_7JX5YPRA",
+          "_TZ3000_7ed9cqgi",
+          "_TZ3000_7jx5ypra",
+          "_TZ3000_88IQNHVD",
+          "_TZ3000_88iqnhvd",
+          "_TZ3000_8NKB7MOF",
+          "_TZ3000_8nkb7mof",
+          "_TZ3000_9HPXG80K",
+          "_TZ3000_9hpxg80k",
           "_TZ3000_ADKVZOOY",
+          "_TZ3000_AEZBQPCU",
+          "_TZ3000_AMDYMR71",
+          "_TZ3000_AMDYMR7L",
           "_TZ3000_ARFWFGOA",
+          "_TZ3000_ATP7XMD9",
+          "_TZ3000_B28WRPVX",
+          "_TZ3000_BFN1W0MM",
+          "_TZ3000_BVRLQYJ7",
+          "_TZ3000_CAYEPV1A",
+          "_TZ3000_CDAMJQM9",
+          "_TZ3000_CEHUW1LW",
+          "_TZ3000_CFNPRAB5",
+          "_TZ3000_CPHMQ0Q7",
           "_TZ3000_D0YPG4O2",
           "_TZ3000_DFGBTUB0",
+          "_TZ3000_DKSBTRZS",
+          "_TZ3000_E98KRVVK",
+          "_TZ3000_EW3LDMGX",
+          "_TZ3000_EYZB8YG3",
+          "_TZ3000_F8TMVIY0",
+          "_TZ3000_FISB3AJO",
+          "_TZ3000_FKVANIUU",
           "_TZ3000_FQ1SXFRJ",
+          "_TZ3000_FQOYNHKU",
+          "_TZ3000_FUKAA7NC",
+          "_TZ3000_FVH3PJAZ",
+          "_TZ3000_G5XAWFCQ",
+          "_TZ3000_GIDY6SJS",
+          "_TZ3000_GJNOZSAZ",
+          "_TZ3000_GNJOZSAZ",
+          "_TZ3000_GVN91TMX",
+          "_TZ3000_GZNH2XLA",
+          "_TZ3000_H1C2EAMP",
+          "_TZ3000_HAFSQARE",
+          "_TZ3000_HDOPUWV6",
+          "_TZ3000_HHIODADE",
+          "_TZ3000_HKTQAHRQ",
+          "_TZ3000_HLWM8E96",
+          "_TZ3000_IEDBGYXT",
+          "_TZ3000_J1V25L17",
+          "_TZ3000_J9568H44",
+          "_TZ3000_JAK16DLL",
+          "_TZ3000_JCFJE0KB",
+          "_TZ3000_JI4ARAAR",
+          "_TZ3000_JL7QYUPF",
+          "_TZ3000_KSW8QTMT",
           "_TZ3000_KT7OBMNN",
+          "_TZ3000_KX0PRIS5",
+          "_TZ3000_LEPZUHTO",
+          "_TZ3000_LLFAQUVP",
+          "_TZ3000_LMLSDUWS",
+          "_TZ3000_LRGCCSXM",
+          "_TZ3000_LUPFD8ZU",
+          "_TZ3000_LVHY15IX",
+          "_TZ3000_M9AF2L6G",
+          "_TZ3000_MAJWNPHG",
+          "_TZ3000_MKLGAYEK",
+          "_TZ3000_MRAOVVMM",
+          "_TZ3000_MRQEA2UU",
+          "_TZ3000_MX3VGYEA",
+          "_TZ3000_NKCOBIES",
+          "_TZ3000_NPZFDCOF",
+          "_TZ3000_NTA0GB8H",
+          "_TZ3000_NUENZETQ",
+          "_TZ3000_O005NUXX",
+          "_TZ3000_O4CJETLM",
+          "_TZ3000_OAQ83GQC",
+          "_TZ3000_ODZOIOVU",
+          "_TZ3000_OEX7EGMT",
+          "_TZ3000_OIKIYF3B",
+          "_TZ3000_OKAZ9TJS",
+          "_TZ3000_OWGCNKRH",
+          "_TZ3000_P8ALO7QA",
+          "_TZ3000_PJCQJTEV",
+          "_TZ3000_PMVBT5HH",
+          "_TZ3000_PMZ6MJYU",
+          "_TZ3000_PRITS6G4",
+          "_TZ3000_QAA59ZQD",
+          "_TZ3000_QCDQW8NF",
+          "_TZ3000_QCGW8QFA",
+          "_TZ3000_QEWO8DLZ",
+          "_TZ3000_QMI1CFUQ",
+          "_TZ3000_QN8QVK9Y",
           "_TZ3000_QOUS95ZH",
+          "_TZ3000_QYSTBCJG",
+          "_TZ3000_R6BUO8BA",
+          "_TZ3000_RDTIXBNU",
+          "_TZ3000_RMJR4UFZ",
+          "_TZ3000_RULDV5DT",
+          "_TZ3000_RUXEXJFZ",
+          "_TZ3000_S8R1QOYQ",
+          "_TZ3000_SJPL9EG3",
+          "_TZ3000_SS98EC5D",
+          "_TZ3000_SVOQRNO4",
+          "_TZ3000_THHXREPT",
+          "_TZ3000_TQLV4UG4",
+          "_TZ3000_TVUARKSA",
+          "_TZ3000_TYPDPBPG",
+          "_TZ3000_TYPDPDPG",
+          "_TZ3000_U5U4CAKC",
+          "_TZ3000_VMPBYGS5",
+          "_TZ3000_VTSCRPMW",
+          "_TZ3000_VVLIVUSI",
+          "_TZ3000_VZOPCETZ",
+          "_TZ3000_W05EXIF3",
+          "_TZ3000_W0QQDE0G",
+          "_TZ3000_W0YPWA1F",
+          "_TZ3000_WAHO4JTJ",
+          "_TZ3000_WW6DRJA5",
+          "_TZ3000_WYHUOCAL",
+          "_TZ3000_WZAUVBCS",
+          "_TZ3000_WZMUK9AI",
           "_TZ3000_XR7ITFXQ",
+          "_TZ3000_Y4ONA9ME",
+          "_TZ3000_YHAGRQMD",
+          "_TZ3000_YL3ZUYAW",
+          "_TZ3000_YNMOWQK2",
+          "_TZ3000_YSDV91BK",
+          "_TZ3000_ZLOSO4JK",
+          "_TZ3000_ZMY1WAW6",
+          "_TZ3000_ZMY4LSLW",
           "_TZ3000_adkvzooy",
+          "_TZ3000_aezbqpcu",
+          "_TZ3000_amdymr71",
+          "_TZ3000_amdymr7l",
           "_TZ3000_arfwfgoa",
+          "_TZ3000_atp7xmd9",
+          "_TZ3000_b28wrpvx",
+          "_TZ3000_bfn1w0mm",
+          "_TZ3000_bvrlqyj7",
+          "_TZ3000_cayepv1a",
+          "_TZ3000_cdamjqm9",
+          "_TZ3000_cehuw1lw",
+          "_TZ3000_cfnprab5",
+          "_TZ3000_cphmq0q7",
           "_TZ3000_d0ypg4o2",
           "_TZ3000_dfgbtub0",
+          "_TZ3000_dksbtrzs",
+          "_TZ3000_e98krvvk",
+          "_TZ3000_ew3ldmgx",
+          "_TZ3000_eyzb8yg3",
+          "_TZ3000_f8tmviy0",
+          "_TZ3000_fisb3ajo",
+          "_TZ3000_fkvaniuu",
           "_TZ3000_fq1sxfrj",
+          "_TZ3000_fqoynhku",
+          "_TZ3000_fukaa7nc",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_g5xawfcq",
+          "_TZ3000_gidy6sjs",
+          "_TZ3000_gjnozsaz",
+          "_TZ3000_gnjozsaz",
+          "_TZ3000_gvn91tmx",
+          "_TZ3000_gznh2xla",
+          "_TZ3000_h1c2eamp",
+          "_TZ3000_hafsqare",
+          "_TZ3000_hdopuwv6",
+          "_TZ3000_hhiodade",
+          "_TZ3000_hktqahrq",
+          "_TZ3000_hlwm8e96",
+          "_TZ3000_iedbgyxt",
+          "_TZ3000_j1v25l17",
+          "_TZ3000_j9568h44",
+          "_TZ3000_jak16dll",
+          "_TZ3000_jcfje0kb",
+          "_TZ3000_ji4araar",
+          "_TZ3000_jl7qyupf",
+          "_TZ3000_ksw8qtmt",
           "_TZ3000_kt7obmnn",
+          "_TZ3000_kx0pris5",
+          "_TZ3000_lepzuhto",
+          "_TZ3000_llfaquvp",
+          "_TZ3000_lmlsduws",
+          "_TZ3000_lrgccsxm",
+          "_TZ3000_lupfd8zu",
+          "_TZ3000_lvhy15ix",
+          "_TZ3000_m9af2l6g",
+          "_TZ3000_majwnphg",
+          "_TZ3000_mklgayek",
+          "_TZ3000_mraovvmm",
+          "_TZ3000_mrqea2uu",
+          "_TZ3000_mx3vgyea",
+          "_TZ3000_nkcobies",
+          "_TZ3000_npzfdcof",
+          "_TZ3000_nta0gb8h",
+          "_TZ3000_nuenzetq",
+          "_TZ3000_o005nuxx",
+          "_TZ3000_o4cjetlm",
+          "_TZ3000_oaq83gqc",
+          "_TZ3000_odzoiovu",
+          "_TZ3000_oex7egmt",
+          "_TZ3000_oikiyf3b",
+          "_TZ3000_okaz9tjs",
+          "_TZ3000_owgcnkrh",
+          "_TZ3000_p8alo7qa",
+          "_TZ3000_pjcqjtev",
+          "_TZ3000_pmvbt5hh",
+          "_TZ3000_pmz6mjyu",
+          "_TZ3000_prits6g4",
+          "_TZ3000_qaa59zqd",
+          "_TZ3000_qcdqw8nf",
+          "_TZ3000_qcgw8qfa",
+          "_TZ3000_qewo8dlz",
+          "_TZ3000_qmi1cfuq",
+          "_TZ3000_qn8qvk9y",
           "_TZ3000_qous95zh",
+          "_TZ3000_qystbcjg",
+          "_TZ3000_r6buo8ba",
+          "_TZ3000_rdtixbnu",
+          "_TZ3000_rmjr4ufz",
+          "_TZ3000_ruldv5dt",
+          "_TZ3000_ruxexjfz",
+          "_TZ3000_s8r1qoyq",
+          "_TZ3000_sjpl9eg3",
+          "_TZ3000_ss98ec5d",
+          "_TZ3000_svoqrno4",
+          "_TZ3000_thhxrept",
+          "_TZ3000_tqlv4ug4",
+          "_TZ3000_tvuarksa",
+          "_TZ3000_typdpbpg",
+          "_TZ3000_typdpdpg",
+          "_TZ3000_u5u4cakc",
+          "_TZ3000_vmpbygs5",
+          "_TZ3000_vtscrpmw",
+          "_TZ3000_vvlivusi",
+          "_TZ3000_vzopcetz",
+          "_TZ3000_w05exif3",
+          "_TZ3000_w0qqde0g",
+          "_TZ3000_w0ypwa1f",
+          "_TZ3000_waho4jtj",
+          "_TZ3000_ww6drja5",
+          "_TZ3000_wyhuocal",
+          "_TZ3000_wzauvbcs",
+          "_TZ3000_wzmuk9ai",
           "_TZ3000_xr7itfxq",
+          "_TZ3000_y4ona9me",
+          "_TZ3000_yhagrqmd",
+          "_TZ3000_yl3zuyaw",
+          "_TZ3000_ynmowqk2",
+          "_TZ3000_ysdv91bk",
+          "_TZ3000_zloso4jk",
+          "_TZ3000_zmy1waw6",
+          "_TZ3000_zmy4lslw",
+          "_TZ3400_KEYJHAPK",
+          "_TZ3400_keyjhapk",
+          "_tyzb01_2athzhfr",
+          "_tyzb01_4tlksk8a",
+          "_tyzb01_6g8b7at8",
+          "_tyzb01_6sadkhcy",
+          "_tyzb01_aneiicmq",
+          "_tyzb01_b8cr31hp",
+          "_tyzb01_digziiav",
+          "_tyzb01_mqel1whf",
+          "_tyzb01_mtlhqn48",
+          "_tyzb01_ncutbjdi",
+          "_tyzb01_qeqvmvti",
+          "_tyzb01_seqwasot",
+          "_tyzb01_vzrytttn",
+          "_tyzb01_xfpdrwvc",
+          "_tyzb01_xiuox57i",
+          "_tyzb01_ymcdbl3u",
+          "_tyzb01_zsl6z0pw",
           "_tyzb02_keyjhapk",
+          "_tz3000_0zfrhq4i",
+          "_tz3000_18ejxno0",
+          "_tz3000_1h2x4akh",
+          "_tz3000_1obwwnmq",
+          "_tz3000_2dlwlvex",
+          "_tz3000_2putqrmw",
+          "_tz3000_3ias4w4o",
+          "_tz3000_3ooaz3ng",
+          "_tz3000_3u4hripk",
+          "_tz3000_3uimvkn6",
+          "_tz3000_3wkqni6o",
+          "_tz3000_46t1rvdu",
+          "_tz3000_4js9lo5d",
+          "_tz3000_4o16jdca",
+          "_tz3000_4uf3d0ax",
+          "_tz3000_4ux0ondb",
+          "_tz3000_56bdyj21",
+          "_tz3000_5ct6e7ye",
+          "_tz3000_5e235jpa",
+          "_tz3000_5e5ptb24",
+          "_tz3000_5f43h46b",
+          "_tz3000_5ity3zyu",
+          "_tz3000_5ucujjts",
+          "_tz3000_5vujyute",
+          "_tz3000_6axxqqi2",
+          "_tz3000_6eyydfyg",
+          "_tz3000_6l1pjfqe",
+          "_tz3000_7ed9cqgi",
+          "_tz3000_7jx5ypra",
+          "_tz3000_88iqnhvd",
+          "_tz3000_8nkb7mof",
+          "_tz3000_9hpxg80k",
           "_tz3000_adkvzooy",
+          "_tz3000_aezbqpcu",
+          "_tz3000_amdymr71",
+          "_tz3000_amdymr7l",
           "_tz3000_arfwfgoa",
+          "_tz3000_atp7xmd9",
+          "_tz3000_b28wrpvx",
+          "_tz3000_bfn1w0mm",
+          "_tz3000_bvrlqyj7",
+          "_tz3000_cayepv1a",
+          "_tz3000_cdamjqm9",
+          "_tz3000_cehuw1lw",
+          "_tz3000_cfnprab5",
+          "_tz3000_cphmq0q7",
           "_tz3000_d0ypg4o2",
           "_tz3000_dfgbtub0",
+          "_tz3000_dksbtrzs",
+          "_tz3000_e98krvvk",
+          "_tz3000_ew3ldmgx",
+          "_tz3000_eyzb8yg3",
+          "_tz3000_f8tmviy0",
+          "_tz3000_fisb3ajo",
+          "_tz3000_fkvaniuu",
           "_tz3000_fq1sxfrj",
+          "_tz3000_fqoynhku",
+          "_tz3000_fukaa7nc",
+          "_tz3000_fvh3pjaz",
+          "_tz3000_g5xawfcq",
+          "_tz3000_gidy6sjs",
+          "_tz3000_gjnozsaz",
+          "_tz3000_gnjozsaz",
+          "_tz3000_gvn91tmx",
+          "_tz3000_gznh2xla",
+          "_tz3000_h1c2eamp",
+          "_tz3000_hafsqare",
+          "_tz3000_hdopuwv6",
+          "_tz3000_hhiodade",
+          "_tz3000_hktqahrq",
+          "_tz3000_hlwm8e96",
+          "_tz3000_iedbgyxt",
+          "_tz3000_j1v25l17",
+          "_tz3000_j9568h44",
+          "_tz3000_jak16dll",
+          "_tz3000_jcfje0kb",
+          "_tz3000_ji4araar",
+          "_tz3000_jl7qyupf",
+          "_tz3000_ksw8qtmt",
           "_tz3000_kt7obmnn",
+          "_tz3000_kx0pris5",
+          "_tz3000_lepzuhto",
+          "_tz3000_llfaquvp",
+          "_tz3000_lmlsduws",
+          "_tz3000_lrgccsxm",
+          "_tz3000_lupfd8zu",
+          "_tz3000_lvhy15ix",
+          "_tz3000_m9af2l6g",
+          "_tz3000_majwnphg",
+          "_tz3000_mklgayek",
+          "_tz3000_mraovvmm",
+          "_tz3000_mrqea2uu",
+          "_tz3000_mx3vgyea",
+          "_tz3000_nkcobies",
+          "_tz3000_npzfdcof",
+          "_tz3000_nta0gb8h",
+          "_tz3000_nuenzetq",
+          "_tz3000_o005nuxx",
+          "_tz3000_o4cjetlm",
+          "_tz3000_oaq83gqc",
+          "_tz3000_odzoiovu",
+          "_tz3000_oex7egmt",
+          "_tz3000_oikiyf3b",
+          "_tz3000_okaz9tjs",
+          "_tz3000_owgcnkrh",
+          "_tz3000_p8alo7qa",
+          "_tz3000_pjcqjtev",
+          "_tz3000_pmvbt5hh",
+          "_tz3000_pmz6mjyu",
+          "_tz3000_prits6g4",
+          "_tz3000_qaa59zqd",
+          "_tz3000_qcdqw8nf",
+          "_tz3000_qcgw8qfa",
+          "_tz3000_qewo8dlz",
+          "_tz3000_qmi1cfuq",
+          "_tz3000_qn8qvk9y",
           "_tz3000_qous95zh",
+          "_tz3000_qystbcjg",
+          "_tz3000_r6buo8ba",
+          "_tz3000_rdtixbnu",
+          "_tz3000_rmjr4ufz",
+          "_tz3000_ruldv5dt",
+          "_tz3000_ruxexjfz",
+          "_tz3000_s8r1qoyq",
+          "_tz3000_sjpl9eg3",
+          "_tz3000_ss98ec5d",
+          "_tz3000_svoqrno4",
+          "_tz3000_thhxrept",
+          "_tz3000_tqlv4ug4",
+          "_tz3000_tvuarksa",
+          "_tz3000_typdpbpg",
+          "_tz3000_typdpdpg",
+          "_tz3000_u5u4cakc",
+          "_tz3000_vmpbygs5",
+          "_tz3000_vtscrpmw",
+          "_tz3000_vvlivusi",
+          "_tz3000_vzopcetz",
+          "_tz3000_w05exif3",
+          "_tz3000_w0qqde0g",
+          "_tz3000_w0ypwa1f",
+          "_tz3000_waho4jtj",
+          "_tz3000_ww6drja5",
+          "_tz3000_wyhuocal",
+          "_tz3000_wzauvbcs",
+          "_tz3000_wzmuk9ai",
           "_tz3000_xr7itfxq",
+          "_tz3000_y4ona9me",
+          "_tz3000_yhagrqmd",
+          "_tz3000_yl3zuyaw",
+          "_tz3000_ynmowqk2",
+          "_tz3000_ysdv91bk",
+          "_tz3000_zloso4jk",
+          "_tz3000_zmy1waw6",
+          "_tz3000_zmy4lslw",
+          "_tz3400_keyjhapk",
           "tuyatec-nzrrvgco",
           "tuyatec-o6sncwd6"
         ],
         "productId": [
-          "TS0042",
+          "TS0001",
           "TS0002",
-          "TS0012"
+          "TS0003",
+          "TS000F",
+          "TS0011",
+          "TS0012",
+          "TS0013",
+          "TS0042",
+          "TS0043",
+          "TS0111",
+          "TS011F",
+          "TS0121",
+          "TSO121",
+          "ts0001",
+          "ts0002",
+          "ts0003",
+          "ts000f",
+          "ts0011",
+          "ts0012",
+          "ts0013",
+          "ts0042",
+          "ts0043",
+          "ts0111",
+          "ts011f",
+          "ts0121",
+          "tso121"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              3,
-              4,
-              5,
-              6,
-              18,
-              1280,
-              1281,
-              57344,
               61184
             ]
           },
@@ -65866,47 +67140,64 @@
       "zigbee": {
         "manufacturerName": [
           "_TYZB02_KEY8KK7R",
+          "_TYZB02_key8kk7r",
           "_TYZb02_key8kk7r",
           "_TZ3000_A7OUGGVS",
           "_TZ3000_BCZR4E10",
           "_TZ3000_BI6LPSEW",
           "_TZ3000_FAMKXCI2",
           "_TZ3000_FKVANIUU",
+          "_TZ3000_GBM10JNJ",
           "_TZ3000_IY2C3N6P",
           "_TZ3000_MJWG6A52",
           "_TZ3000_MUTFMN4U",
           "_TZ3000_NGSPH3OJ",
+          "_TZ3000_QZJCSMAR",
+          "_TZ3000_RRJR1Q0U",
+          "_TZ3000_SJ7JBGKS",
           "_TZ3000_UYJMM0ET",
           "_TZ3000_W3C7OURU",
           "_TZ3000_W8JWKCZZ",
+          "_TZ3000_YW5TVZSK",
           "_TZ3000_a7ouggvs",
           "_TZ3000_bczr4e10",
           "_TZ3000_bi6lpsew",
           "_TZ3000_famkxci2",
           "_TZ3000_fkvaniuu",
+          "_TZ3000_gbm10jnj",
           "_TZ3000_iy2c3n6p",
           "_TZ3000_mjwg6a52",
           "_TZ3000_mutfmn4u",
           "_TZ3000_ngsph3oj",
+          "_TZ3000_qzjcsmar",
+          "_TZ3000_rrjr1q0u",
+          "_TZ3000_sj7jbgks",
           "_TZ3000_uyjmm0et",
           "_TZ3000_w3c7ouru",
           "_TZ3000_w8jwkczz",
+          "_TZ3000_yw5tvzsk",
           "_tyzb02_key8kk7r",
           "_tz3000_a7ouggvs",
           "_tz3000_bczr4e10",
           "_tz3000_bi6lpsew",
           "_tz3000_famkxci2",
           "_tz3000_fkvaniuu",
+          "_tz3000_gbm10jnj",
           "_tz3000_iy2c3n6p",
           "_tz3000_mjwg6a52",
           "_tz3000_mutfmn4u",
           "_tz3000_ngsph3oj",
+          "_tz3000_qzjcsmar",
+          "_tz3000_rrjr1q0u",
+          "_tz3000_sj7jbgks",
           "_tz3000_uyjmm0et",
           "_tz3000_w3c7ouru",
-          "_tz3000_w8jwkczz"
+          "_tz3000_w8jwkczz",
+          "_tz3000_yw5tvzsk"
         ],
         "productId": [
-          "TS0043"
+          "TS0043",
+          "ts0043"
         ],
         "learnmode": {
           "image": "/drivers/button_wireless_3/assets/learnmode.svg",
@@ -65926,15 +67217,6 @@
           "1": {
             "clusters": [
               0,
-              1,
-              3,
-              4,
-              5,
-              6,
-              18,
-              57344,
-              1280,
-              1281,
               61184
             ]
           },
@@ -66385,8 +67667,14 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "EWELINK",
+          "SONOFF",
+          "_TYZB01_BAGT1E4O",
           "_TYZB01_QM6DJPTA",
+          "_TYZB01_bagt1e4o",
           "_TYZb01_qm6djpta",
+          "_TZ3000_0HT8DNXJ",
+          "_TZ3000_0ht8dnxj",
           "_TZ3000_11PG3IMA",
           "_TZ3000_11pg3ima",
           "_TZ3000_4FJIWWEB",
@@ -66395,15 +67683,21 @@
           "_TZ3000_5tqxpine",
           "_TZ3000_A4XYCPRS",
           "_TZ3000_ABCI1HIU",
+          "_TZ3000_ABRSVSOU",
           "_TZ3000_AN5RJIWD",
           "_TZ3000_B3MGFU0D",
           "_TZ3000_BGTZM4NY",
           "_TZ3000_CZUYT8LZ",
+          "_TZ3000_DKU2CFSC",
           "_TZ3000_DZIAICT4",
           "_TZ3000_EE8NRT2L",
           "_TZ3000_ET7AFZXZ",
+          "_TZ3000_FJT5218M",
+          "_TZ3000_IXLA93VD",
           "_TZ3000_J61X9RXN",
           "_TZ3000_J70OANAB",
+          "_TZ3000_JA5OSU5G",
+          "_TZ3000_JCSPR0TP",
           "_TZ3000_KAFLZTA4",
           "_TZ3000_KFU8ZAPD",
           "_TZ3000_KJFZUYCL",
@@ -66411,13 +67705,17 @@
           "_TZ3000_MH9PX7CQ",
           "_TZ3000_NUOMBROO",
           "_TZ3000_PCQJMCUD",
+          "_TZ3000_QJA6NQ5Z",
           "_TZ3000_QZJCSMAR",
+          "_TZ3000_R0PMI2P3",
+          "_TZ3000_RCO1YZB1",
           "_TZ3000_RRJR1DSK",
           "_TZ3000_SQW3QQTC",
           "_TZ3000_U3NV1JWK",
           "_TZ3000_UAA99ARV",
           "_TZ3000_UFHTXR59",
           "_TZ3000_URI7EZ8U",
+          "_TZ3000_URI7ONGN",
           "_TZ3000_VDFWJOPK",
           "_TZ3000_VP6CLF9D",
           "_TZ3000_W4THIANR",
@@ -66427,19 +67725,26 @@
           "_TZ3000_XKH6OAJZ",
           "_TZ3000_XWUVEIZV",
           "_TZ3000_YESUIIPB",
+          "_TZ3000_YIRP2PGD",
           "_TZ3000_ZGYZGDUA",
           "_TZ3000_ZSZZGWEG",
           "_TZ3000_a4xycprs",
           "_TZ3000_abci1hiu",
+          "_TZ3000_abrsvsou",
           "_TZ3000_an5rjiwd",
           "_TZ3000_b3mgfu0d",
           "_TZ3000_bgtzm4ny",
           "_TZ3000_czuyt8lz",
+          "_TZ3000_dku2cfsc",
           "_TZ3000_dziaict4",
           "_TZ3000_ee8nrt2l",
           "_TZ3000_et7afzxz",
+          "_TZ3000_fjt5218m",
+          "_TZ3000_ixla93vd",
           "_TZ3000_j61x9rxn",
           "_TZ3000_j70oanab",
+          "_TZ3000_ja5osu5g",
+          "_TZ3000_jcspr0tp",
           "_TZ3000_kaflzta4",
           "_TZ3000_kfu8zapd",
           "_TZ3000_kjfzuycl",
@@ -66447,13 +67752,17 @@
           "_TZ3000_mh9px7cq",
           "_TZ3000_nuombroo",
           "_TZ3000_pcqjmcud",
+          "_TZ3000_qja6nq5z",
           "_TZ3000_qzjcsmar",
+          "_TZ3000_r0pmi2p3",
+          "_TZ3000_rco1yzb1",
           "_TZ3000_rrjr1dsk",
           "_TZ3000_sqw3qqtc",
           "_TZ3000_u3nv1jwk",
           "_TZ3000_uaa99arv",
           "_TZ3000_ufhtxr59",
           "_TZ3000_uri7ez8u",
+          "_TZ3000_uri7ongn",
           "_TZ3000_vdfwjopk",
           "_TZ3000_vp6clf9d",
           "_TZ3000_w4thianr",
@@ -66463,6 +67772,7 @@
           "_TZ3000_xkh6oajz",
           "_TZ3000_xwuveizv",
           "_TZ3000_yesuiipb",
+          "_TZ3000_yirp2pgd",
           "_TZ3000_zgyzgdua",
           "_TZ3000_zszzgweg",
           "_TZ3040_FWXUZCF4",
@@ -66475,21 +67785,29 @@
           "_TZ3290_ixd9mvv4",
           "_TZ3290_nkpxapoz",
           "_TZ3290_yyax9ajf",
+          "_tyzb01_bagt1e4o",
           "_tyzb01_qm6djpta",
+          "_tz3000_0ht8dnxj",
           "_tz3000_11pg3ima",
           "_tz3000_4fjiwweb",
           "_tz3000_5tqxpine",
           "_tz3000_a4xycprs",
           "_tz3000_abci1hiu",
+          "_tz3000_abrsvsou",
           "_tz3000_an5rjiwd",
           "_tz3000_b3mgfu0d",
           "_tz3000_bgtzm4ny",
           "_tz3000_czuyt8lz",
+          "_tz3000_dku2cfsc",
           "_tz3000_dziaict4",
           "_tz3000_ee8nrt2l",
           "_tz3000_et7afzxz",
+          "_tz3000_fjt5218m",
+          "_tz3000_ixla93vd",
           "_tz3000_j61x9rxn",
           "_tz3000_j70oanab",
+          "_tz3000_ja5osu5g",
+          "_tz3000_jcspr0tp",
           "_tz3000_kaflzta4",
           "_tz3000_kfu8zapd",
           "_tz3000_kjfzuycl",
@@ -66497,13 +67815,17 @@
           "_tz3000_mh9px7cq",
           "_tz3000_nuombroo",
           "_tz3000_pcqjmcud",
+          "_tz3000_qja6nq5z",
           "_tz3000_qzjcsmar",
+          "_tz3000_r0pmi2p3",
+          "_tz3000_rco1yzb1",
           "_tz3000_rrjr1dsk",
           "_tz3000_sqw3qqtc",
           "_tz3000_u3nv1jwk",
           "_tz3000_uaa99arv",
           "_tz3000_ufhtxr59",
           "_tz3000_uri7ez8u",
+          "_tz3000_uri7ongn",
           "_tz3000_vdfwjopk",
           "_tz3000_vp6clf9d",
           "_tz3000_w4thianr",
@@ -66513,6 +67835,7 @@
           "_tz3000_xkh6oajz",
           "_tz3000_xwuveizv",
           "_tz3000_yesuiipb",
+          "_tz3000_yirp2pgd",
           "_tz3000_zgyzgdua",
           "_tz3000_zszzgweg",
           "_tz3040_fwxuzcf4",
@@ -66524,9 +67847,14 @@
           "sonoff"
         ],
         "productId": [
+          "SNZB-01M",
+          "TS0014",
           "TS0044",
           "TS004F",
-          "SNZB-01M"
+          "snzb-01m",
+          "ts0014",
+          "ts0044",
+          "ts004f"
         ],
         "learnmode": {
           "image": "/drivers/button_wireless_4/assets/learnmode.svg",
@@ -67003,28 +68331,26 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "_TZ3000_ISZEGWPD",
+          "_TZ3000_iszegwpd",
           "_TZE200_ZXX7MI77",
           "_TZE200_zxx7mi77",
           "_TZE204_ZXX7MI77",
           "_TZE204_zxx7mi77",
+          "_tz3000_iszegwpd",
           "_tze200_zxx7mi77",
           "_tze204_zxx7mi77"
         ],
         "productId": [
           "TS0046",
-          "TS0601"
+          "TS0601",
+          "ts0046",
+          "ts0601"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              3,
-              4,
-              5,
-              6,
-              18,
-              57344,
               61184
             ]
           },
@@ -67512,19 +68838,13 @@
           "_tz3400_keyjqthh"
         ],
         "productId": [
-          "TS0048"
+          "TS0048",
+          "ts0048"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              3,
-              4,
-              5,
-              6,
-              18,
-              57344,
               61184
             ]
           },
@@ -67974,21 +69294,13 @@
           "_tz3000_yj6k7vfo"
         ],
         "productId": [
-          "TS0041"
+          "TS0041",
+          "ts0041"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              3,
-              4,
-              5,
-              6,
-              18,
-              1280,
-              1281,
-              57344,
               61184
             ]
           }
@@ -68347,8 +69659,11 @@
           "_tz3210_t46srmxd"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_FAN",
           "TS0601_fan",
-          "TS0601"
+          "ts0601",
+          "ts0601_fan"
         ],
         "learnmode": {
           "image": "/drivers/ceiling_fan/assets/learnmode.svg",
@@ -68668,6 +69983,37 @@
       "zigbee": {
         "manufacturerName": [
           "HOBEIAN",
+          "OWON",
+          "TUYATEC-1G3TAWNP",
+          "TUYATEC-1UXX9CCI",
+          "TUYATEC-1g3tawnp",
+          "TUYATEC-1uxx9cci",
+          "TUYATEC-ABKEHQUS",
+          "TUYATEC-BFQ2I2SY",
+          "TUYATEC-Bfq2i2Sy",
+          "TUYATEC-G3GL6CGY",
+          "TUYATEC-GQHXIXYK",
+          "TUYATEC-HAOIUWZY",
+          "TUYATEC-HaoiuWzy",
+          "TUYATEC-OJMXEIKG",
+          "TUYATEC-OJMXEIKQ",
+          "TUYATEC-PRHS1RSD",
+          "TUYATEC-QUN7VQ14",
+          "TUYATEC-RIUJ5XZS",
+          "TUYATEC-V3UXBUXY",
+          "TUYATEC-VMGH3FXD",
+          "TUYATEC-YG5DCBFU",
+          "TUYATEC-abkehqus",
+          "TUYATEC-g3gl6cgy",
+          "TUYATEC-gqhxixyk",
+          "TUYATEC-ojmxeikg",
+          "TUYATEC-ojmxeikq",
+          "TUYATEC-prhs1rsd",
+          "TUYATEC-qun7vq14",
+          "TUYATEC-riuj5xzs",
+          "TUYATEC-v3uxbuxy",
+          "TUYATEC-vmgh3fxd",
+          "TUYATEC-yg5dcbfu",
           "_TYST11_2DPPLNSN",
           "_TYST11_FZO2POCS",
           "_TYST11_PISLTM67",
@@ -68678,11 +70024,30 @@
           "_TYSt11_pisltm67",
           "_TYSt11_udank5zs",
           "_TYSt11_wv90ladg",
+          "_TYZB01_A476RAQ2",
+          "_TYZB01_CBIEZPDS",
+          "_TYZB01_FTDKANLJ",
+          "_TYZB01_HJSGDKFL",
+          "_TYZB01_KVWJUJY9",
           "_TYZB01_ZQVWKA4K",
+          "_TYZB01_a476raq2",
+          "_TYZB01_cbiezpds",
+          "_TYZB01_ftdkanlj",
+          "_TYZB01_hjsgdkfl",
+          "_TYZB01_kvwjujy9",
           "_TYZb01_zqvwka4k",
+          "_TZ1800_LADPNGDX",
+          "_TZ2000_A476RAQ2",
+          "_TZ2000_AVDNVYKF",
+          "_TZ2000_HJSGDKFL",
           "_TZ2000_LXVYCLN5",
+          "_TZ2000_XOGB73AM",
           "_TZ2000_ZSFVULDE",
+          "_TZ2000_a476raq2",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
           "_TZ2000_lxvycln5",
+          "_TZ2000_xogb73am",
           "_TZ2000_zsfvulde",
           "_TZ3000_0HKMCRZA",
           "_TZ3000_0S1IZERX",
@@ -68727,13 +70092,17 @@
           "_TZ3000_88IQNHVD",
           "_TZ3000_88iqnhvd",
           "_TZ3000_8UAOILU9",
+          "_TZ3000_8YBE88NF",
           "_TZ3000_8uaoilu9",
+          "_TZ3000_8ybe88nf",
           "_TZ3000_9KBBFEHO",
           "_TZ3000_9kbbfeho",
           "_TZ3000_AKQDG6G7",
           "_TZ3000_AMQUDJR0",
           "_TZ3000_AQQCRPTJ",
           "_TZ3000_B1Q8KWMH",
+          "_TZ3000_BGUSER20",
+          "_TZ3000_BJAWZODF",
           "_TZ3000_BKFE0BAB",
           "_TZ3000_BMHWNL7S",
           "_TZ3000_BPKIJO14",
@@ -68749,6 +70118,8 @@
           "_TZ3000_ESYNMMOX",
           "_TZ3000_EXC99DVW",
           "_TZ3000_F09J9QJB",
+          "_TZ3000_F2BW0B6K",
+          "_TZ3000_FIE1DPKM",
           "_TZ3000_FKXMYICS",
           "_TZ3000_FLLYGHYJ",
           "_TZ3000_FLONMACT",
@@ -68759,9 +70130,11 @@
           "_TZ3000_GSZJT2XX",
           "_TZ3000_HGM6K8KU",
           "_TZ3000_HY6NCVMW",
+          "_TZ3000_I8JFIEZR",
           "_TZ3000_IDRXIAJL",
           "_TZ3000_IIACQPDZ",
           "_TZ3000_ISW9U95Y",
+          "_TZ3000_ITNRSUFE",
           "_TZ3000_IUGNAASP",
           "_TZ3000_IV6PH5TR",
           "_TZ3000_J6ADK9ID",
@@ -68801,6 +70174,7 @@
           "_TZ3000_R0O2DAHU",
           "_TZ3000_RCUQXKQ0",
           "_TZ3000_RDHUKKMI",
+          "_TZ3000_RUSU2VZB",
           "_TZ3000_SAIQCN0Y",
           "_TZ3000_SFHYVE2G",
           "_TZ3000_T3S9QMMG",
@@ -68826,8 +70200,10 @@
           "_TZ3000_XEUMNFF9",
           "_TZ3000_XR3HTD96",
           "_TZ3000_XYZ",
+          "_TZ3000_YD2E749Y",
           "_TZ3000_YERVJNLJ",
           "_TZ3000_YUPC0PB7",
+          "_TZ3000_YWAGC4RJ",
           "_TZ3000_ZBEACON",
           "_TZ3000_ZF1LXTLJ",
           "_TZ3000_ZFIRRI2D",
@@ -68839,6 +70215,8 @@
           "_TZ3000_amqudjr0",
           "_TZ3000_aqqcrptj",
           "_TZ3000_b1q8kwmh",
+          "_TZ3000_bguser20",
+          "_TZ3000_bjawzodf",
           "_TZ3000_bkfe0bab",
           "_TZ3000_bmhwnl7s",
           "_TZ3000_bpkijo14",
@@ -68854,6 +70232,8 @@
           "_TZ3000_esynmmox",
           "_TZ3000_exc99dvw",
           "_TZ3000_f09j9qjb",
+          "_TZ3000_f2bw0b6k",
+          "_TZ3000_fie1dpkm",
           "_TZ3000_fkxmyics",
           "_TZ3000_fllyghyj",
           "_TZ3000_flonmact",
@@ -68864,9 +70244,11 @@
           "_TZ3000_gszjt2xx",
           "_TZ3000_hgm6k8ku",
           "_TZ3000_hy6ncvmw",
+          "_TZ3000_i8jfiezr",
           "_TZ3000_idrxiajl",
           "_TZ3000_iiacqpdz",
           "_TZ3000_isw9u95y",
+          "_TZ3000_itnrsufe",
           "_TZ3000_iugnaasp",
           "_TZ3000_iv6ph5tr",
           "_TZ3000_j6adk9id",
@@ -68906,6 +70288,7 @@
           "_TZ3000_r0o2dahu",
           "_TZ3000_rcuqxkq0",
           "_TZ3000_rdhukkmi",
+          "_TZ3000_rusu2vzb",
           "_TZ3000_saiqcn0y",
           "_TZ3000_sfhyve2g",
           "_TZ3000_t3s9qmmg",
@@ -68931,8 +70314,10 @@
           "_TZ3000_xeumnff9",
           "_TZ3000_xr3htd96",
           "_TZ3000_xyz",
+          "_TZ3000_yd2e749y",
           "_TZ3000_yervjnlj",
           "_TZ3000_yupc0pb7",
+          "_TZ3000_ywagc4rj",
           "_TZ3000_zbeacon",
           "_TZ3000_zf1lxtlj",
           "_TZ3000_zfirri2d",
@@ -68944,14 +70329,18 @@
           "_TZ3210_6pwpez2j",
           "_TZ3210_ALXKWN0H",
           "_TZ3210_FGWHJM9J",
+          "_TZ3210_HUZKZQYK",
           "_TZ3210_M3MXV66L",
+          "_TZ3210_NCW88JFQ",
           "_TZ3210_PFBZS1AN",
           "_TZ3210_PWAUW3G2",
           "_TZ3210_S9LUMFHN",
           "_TZ3210_Y5ZTGA9R",
           "_TZ3210_alxkwn0h",
           "_TZ3210_fgwhjm9j",
+          "_TZ3210_huzkzqyk",
           "_TZ3210_m3mxv66l",
+          "_TZ3210_ncw88jfq",
           "_TZ3210_pfbzs1an",
           "_TZ3210_pwauw3g2",
           "_TZ3210_s9lumfhn",
@@ -68964,6 +70353,7 @@
           "_TZ3290_lypnqvlem5eq1ree",
           "_TZ3290_rlkmy85q4pzoxobl",
           "_TZ3290_yac64inudpovoaba",
+          "_TZ6210_DUV6FHWT",
           "_TZE200_01FVXAMO",
           "_TZE200_01fvxamo",
           "_TZE200_04YFVWEB",
@@ -70043,9 +71433,18 @@
           "_tyst11_pisltm67",
           "_tyst11_udank5zs",
           "_tyst11_wv90ladg",
+          "_tyzb01_a476raq2",
+          "_tyzb01_cbiezpds",
+          "_tyzb01_ftdkanlj",
+          "_tyzb01_hjsgdkfl",
+          "_tyzb01_kvwjujy9",
           "_tyzb01_zqvwka4k",
           "_tz1800_ladpngdx",
+          "_tz2000_a476raq2",
+          "_tz2000_avdnvykf",
+          "_tz2000_hjsgdkfl",
           "_tz2000_lxvycln5",
+          "_tz2000_xogb73am",
           "_tz2000_zsfvulde",
           "_tz3000_0hkmcrza",
           "_tz3000_0s1izerx",
@@ -70069,11 +71468,14 @@
           "_tz3000_85czd6fy",
           "_tz3000_88iqnhvd",
           "_tz3000_8uaoilu9",
+          "_tz3000_8ybe88nf",
           "_tz3000_9kbbfeho",
           "_tz3000_akqdg6g7",
           "_tz3000_amqudjr0",
           "_tz3000_aqqcrptj",
           "_tz3000_b1q8kwmh",
+          "_tz3000_bguser20",
+          "_tz3000_bjawzodf",
           "_tz3000_bkfe0bab",
           "_tz3000_bmhwnl7s",
           "_tz3000_bpkijo14",
@@ -70089,6 +71491,8 @@
           "_tz3000_esynmmox",
           "_tz3000_exc99dvw",
           "_tz3000_f09j9qjb",
+          "_tz3000_f2bw0b6k",
+          "_tz3000_fie1dpkm",
           "_tz3000_fkxmyics",
           "_tz3000_fllyghyj",
           "_tz3000_flonmact",
@@ -70099,9 +71503,11 @@
           "_tz3000_gszjt2xx",
           "_tz3000_hgm6k8ku",
           "_tz3000_hy6ncvmw",
+          "_tz3000_i8jfiezr",
           "_tz3000_idrxiajl",
           "_tz3000_iiacqpdz",
           "_tz3000_isw9u95y",
+          "_tz3000_itnrsufe",
           "_tz3000_iugnaasp",
           "_tz3000_iv6ph5tr",
           "_tz3000_j6adk9id",
@@ -70141,6 +71547,7 @@
           "_tz3000_r0o2dahu",
           "_tz3000_rcuqxkq0",
           "_tz3000_rdhukkmi",
+          "_tz3000_rusu2vzb",
           "_tz3000_saiqcn0y",
           "_tz3000_sfhyve2g",
           "_tz3000_t3s9qmmg",
@@ -70166,8 +71573,10 @@
           "_tz3000_xeumnff9",
           "_tz3000_xr3htd96",
           "_tz3000_xyz",
+          "_tz3000_yd2e749y",
           "_tz3000_yervjnlj",
           "_tz3000_yupc0pb7",
+          "_tz3000_ywagc4rj",
           "_tz3000_zbeacon",
           "_tz3000_zf1lxtlj",
           "_tz3000_zfirri2d",
@@ -70178,7 +71587,9 @@
           "_tz3210_6pwpez2j",
           "_tz3210_alxkwn0h",
           "_tz3210_fgwhjm9j",
+          "_tz3210_huzkzqyk",
           "_tz3210_m3mxv66l",
+          "_tz3210_ncw88jfq",
           "_tz3210_pfbzs1an",
           "_tz3210_pwauw3g2",
           "_tz3210_s9lumfhn",
@@ -70725,10 +72136,30 @@
           "_tze284_zpvusbtv",
           "_tze284_zqq3cipq",
           "_tze600_wxq8dpha",
-          "owon"
+          "hobeian",
+          "owon",
+          "tuyatec-1g3tawnp",
+          "tuyatec-1uxx9cci",
+          "tuyatec-abkehqus",
+          "tuyatec-bfq2i2sy",
+          "tuyatec-g3gl6cgy",
+          "tuyatec-gqhxixyk",
+          "tuyatec-haoiuwzy",
+          "tuyatec-ojmxeikg",
+          "tuyatec-ojmxeikq",
+          "tuyatec-prhs1rsd",
+          "tuyatec-qun7vq14",
+          "tuyatec-riuj5xzs",
+          "tuyatec-v3uxbuxy",
+          "tuyatec-vmgh3fxd",
+          "tuyatec-yg5dcbfu",
+          "_TZE284_9ern5sfh"
         ],
         "productId": [
           "CK-TLSR8656-SS5-01(7014)",
+          "LUMI.SENSOR_HT",
+          "LUMI.SENSOR_HT.AGL02",
+          "LUMI.WEATHER",
           "RH3052",
           "SM0201",
           "SNZB-02",
@@ -70750,17 +72181,36 @@
           "ZG-227Z",
           "ZG-227ZL",
           "ZG-303Z",
+          "ck-tlsr8656-ss5-01(7014)",
           "lumi.sensor_ht",
           "lumi.sensor_ht.agl02",
-          "lumi.weather"
+          "lumi.weather",
+          "rh3052",
+          "sm0201",
+          "snzb-02",
+          "snzb-02d",
+          "snzb-02dr2",
+          "snzb-02ld",
+          "snzb-02p",
+          "snzb-02wd",
+          "th01",
+          "ths317-et",
+          "ts0201",
+          "ts0222",
+          "ts0601",
+          "ts1201",
+          "ty0201",
+          "wsdcgq01lm",
+          "wsdcgq11lm",
+          "wsdcgq12lm",
+          "zg-227z",
+          "zg-227zl",
+          "zg-303z"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              1026,
-              1029,
               61184
             ]
           }
@@ -71242,8 +72692,11 @@
           "_tze204_pbdlrmfb"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_CO",
           "TS0601_co",
-          "TS0601"
+          "ts0601",
+          "ts0601_co"
         ],
         "endpoints": {
           "1": {
@@ -71304,12 +72757,50 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
+          "IMMAX",
+          "Immax",
+          "TUYATEC-0L6XAQMI",
+          "TUYATEC-0l6xaqmi",
+          "TUYATEC-3TIPNSRX",
+          "TUYATEC-3tipnsrx",
+          "TUYATEC-7QUNN4GQ",
+          "TUYATEC-7qunn4gq",
+          "TUYATEC-ABKEHQUS",
+          "TUYATEC-BFQ2I2SY",
+          "TUYATEC-CRR8QB0P",
+          "TUYATEC-G3GL6CGY",
+          "TUYATEC-IP9GANVW",
+          "TUYATEC-KBQF60NT",
+          "TUYATEC-KTGE2VQT",
+          "TUYATEC-R9HGSSOL",
+          "TUYATEC-RKQIQVCS",
+          "TUYATEC-SB6T7ETT",
+          "TUYATEC-TRHRGA6P",
+          "TUYATEC-crr8qb0p",
+          "TUYATEC-ip9ganvw",
+          "TUYATEC-kbqf60nt",
+          "TUYATEC-r9hgssol",
+          "TUYATEC-rkqiqvcs",
+          "TUYATEC-sb6t7ett",
+          "TUYATEC-trhrga6p",
+          "VISONIC",
+          "Visonic",
+          "ZBEACON",
+          "_TYST11_QQ9MPFHW",
+          "_TYST11_qq9mpfhw",
           "_TYZB01_NCDAPBWY",
+          "_TYZB01_SQMD19I1",
           "_TYZB01_XPH99WVR",
+          "_TYZB01_sqmd19i1",
+          "_TYZB01_xph99wvr",
           "_TYZb01_ncdapbwy",
           "_TYZb01_xph99wvr",
+          "_TZ1800_EJWKN2H2",
+          "_TZ1800_ejwkn2h2",
           "_TZ3000_0GKRB5PY",
+          "_TZ3000_0S9GUKZT",
           "_TZ3000_0gkrb5py",
+          "_TZ3000_0s9gukzt",
           "_TZ3000_1BWPJVLZ",
           "_TZ3000_1bwpjvlz",
           "_TZ3000_26FMUPBB",
@@ -71318,18 +72809,28 @@
           "_TZ3000_2MBFXLZR",
           "_TZ3000_2dlwlvex",
           "_TZ3000_2mbfxlzr",
+          "_TZ3000_3DFEWSK1",
+          "_TZ3000_3dfewsk1",
           "_TZ3000_402JJYRO",
           "_TZ3000_402jjyro",
           "_TZ3000_4UGNZSLI",
+          "_TZ3000_4UVOVZ4R",
           "_TZ3000_4ugnzsli",
+          "_TZ3000_4uvovz4r",
+          "_TZ3000_5K5VH43T",
+          "_TZ3000_5k5vh43t",
           "_TZ3000_6JEESVRT",
+          "_TZ3000_6OABGTZV",
           "_TZ3000_6ZVW8HAM",
           "_TZ3000_6jeesvrt",
+          "_TZ3000_6oabgtzv",
           "_TZ3000_6zvw8ham",
           "_TZ3000_7D8YME6F",
           "_TZ3000_7TBSRUQL",
           "_TZ3000_7d8yme6f",
           "_TZ3000_7tbsruql",
+          "_TZ3000_85CZD6FY",
+          "_TZ3000_85czd6fy",
           "_TZ3000_8YHYPBO7",
           "_TZ3000_8yhypbo7",
           "_TZ3000_996RPFY6",
@@ -71339,8 +72840,10 @@
           "_TZ3000_A33RW7OU",
           "_TZ3000_AU1RJICN",
           "_TZ3000_AU2O5E6Q",
+          "_TZ3000_AWVMKAYH",
           "_TZ3000_B7M9QDA0",
           "_TZ3000_BMG14AX2",
+          "_TZ3000_BPKIJO14",
           "_TZ3000_BR3LAUKF",
           "_TZ3000_BWLVYJWK",
           "_TZ3000_BZXLOFT",
@@ -71354,21 +72857,33 @@
           "_TZ3000_DECXRTWA",
           "_TZ3000_DO6TXRCW",
           "_TZ3000_EBAR6LJY",
+          "_TZ3000_EIT7P838",
           "_TZ3000_F1HMOYJ4",
           "_TZ3000_FA9MLVJA",
           "_TZ3000_FKU2H3GW",
+          "_TZ3000_FXVJHDYL",
           "_TZ3000_GNTWYTXO",
+          "_TZ3000_GSZJT2XX",
           "_TZ3000_HGU1DLAK",
           "_TZ3000_HKCPBLRS",
           "_TZ3000_IMDFHHUD",
           "_TZ3000_J2W1DW29",
           "_TZ3000_JQGE2FJX",
+          "_TZ3000_K4EJ3WW2",
           "_TZ3000_KEAYT8OL",
+          "_TZ3000_KSTBKT6A",
+          "_TZ3000_KYB656NO",
+          "_TZ3000_M0VAAZAB",
+          "_TZ3000_MISW04HQ",
           "_TZ3000_MSL2RXJN",
+          "_TZ3000_MUGYHZ0Q",
           "_TZ3000_N2EGFSLI",
           "_TZ3000_NBNMW9NC",
+          "_TZ3000_NKKL7UZV",
+          "_TZ3000_NLSSZMZL",
           "_TZ3000_O4MKAHKC",
           "_TZ3000_O5WJXXQN",
+          "_TZ3000_OCJLO4EA",
           "_TZ3000_OKOHWWAP",
           "_TZ3000_OSU834UN",
           "_TZ3000_OX0IS7YV",
@@ -71384,15 +72899,21 @@
           "_TZ3000_RYLAOZUC",
           "_TZ3000_S8R1QOYQ",
           "_TZ3000_SUIGGVYH",
+          "_TZ3000_T6JRIAWG",
           "_TZ3000_TASPDDVQ",
           "_TZ3000_TH6ZQQY6",
           "_TZ3000_TIMX9IVQ",
           "_TZ3000_UDYJYLT7",
+          "_TZ3000_UFTTKLSZ",
+          "_TZ3000_UPGCBODY",
           "_TZ3000_UVTI8NKD",
           "_TZ3000_V7CHGQSO",
           "_TZ3000_WBRLNKM9",
+          "_TZ3000_WLQUQIIZ",
           "_TZ3000_WPTAYAQR",
+          "_TZ3000_WUEP9ZNG",
           "_TZ3000_WUT53HFM",
+          "_TZ3000_WW9I3E0Y",
           "_TZ3000_WYHUOCAL",
           "_TZ3000_X8Q36XWF",
           "_TZ3000_XPQ2NMKR",
@@ -71404,8 +72925,10 @@
           "_TZ3000_a33rw7ou",
           "_TZ3000_au1rjicn",
           "_TZ3000_au2o5e6q",
+          "_TZ3000_awvmkayh",
           "_TZ3000_b7m9qda0",
           "_TZ3000_bmg14ax2",
+          "_TZ3000_bpkijo14",
           "_TZ3000_br3laukf",
           "_TZ3000_bwlvyjwk",
           "_TZ3000_bzxloft",
@@ -71419,21 +72942,33 @@
           "_TZ3000_decxrtwa",
           "_TZ3000_do6txrcw",
           "_TZ3000_ebar6ljy",
+          "_TZ3000_eit7p838",
           "_TZ3000_f1hmoyj4",
           "_TZ3000_fa9mlvja",
           "_TZ3000_fku2h3gw",
+          "_TZ3000_fxvjhdyl",
           "_TZ3000_gntwytxo",
+          "_TZ3000_gszjt2xx",
           "_TZ3000_hgu1dlak",
           "_TZ3000_hkcpblrs",
           "_TZ3000_imdfhhud",
           "_TZ3000_j2w1dw29",
           "_TZ3000_jqge2fjx",
+          "_TZ3000_k4ej3ww2",
           "_TZ3000_keayt8ol",
+          "_TZ3000_kstbkt6a",
+          "_TZ3000_kyb656no",
+          "_TZ3000_m0vaazab",
+          "_TZ3000_misw04hq",
           "_TZ3000_msl2rxjn",
+          "_TZ3000_mugyhz0q",
           "_TZ3000_n2egfsli",
           "_TZ3000_nbnmw9nc",
+          "_TZ3000_nkkl7uzv",
+          "_TZ3000_nlsszmzl",
           "_TZ3000_o4mkahkc",
           "_TZ3000_o5wjxxqn",
+          "_TZ3000_ocjlo4ea",
           "_TZ3000_okohwwap",
           "_TZ3000_osu834un",
           "_TZ3000_ox0is7yv",
@@ -71449,15 +72984,21 @@
           "_TZ3000_rylaozuc",
           "_TZ3000_s8r1qoyq",
           "_TZ3000_suiggvyh",
+          "_TZ3000_t6jriawg",
           "_TZ3000_taspddvq",
           "_TZ3000_th6zqqy6",
           "_TZ3000_timx9ivq",
           "_TZ3000_udyjylt7",
+          "_TZ3000_ufttklsz",
+          "_TZ3000_upgcbody",
           "_TZ3000_uvti8nkd",
           "_TZ3000_v7chgqso",
           "_TZ3000_wbrlnkm9",
+          "_TZ3000_wlquqiiz",
           "_TZ3000_wptayaqr",
+          "_TZ3000_wuep9zng",
           "_TZ3000_wut53hfm",
+          "_TZ3000_ww9i3e0y",
           "_TZ3000_wyhuocal",
           "_TZ3000_x8q36xwf",
           "_TZ3000_xpq2nmkr",
@@ -71469,10 +73010,12 @@
           "_TZ3210_3ULG9KPO",
           "_TZ3210_3ulg9kpo",
           "_TZ3210_JOWHPXOP",
+          "_TZ3210_TGVTVDOC",
           "_TZ3210_UMI6VBSZ",
           "_TZ3210_ZBABX9WH",
           "_TZ3210_ZMPPWAWA",
           "_TZ3210_jowhpxop",
+          "_TZ3210_tgvtvdoc",
           "_TZ3210_umi6vbsz",
           "_TZ3210_zbabx9wh",
           "_TZ3210_zmppwawa",
@@ -71488,28 +73031,38 @@
           "_TZE284_U8OUAQSZ",
           "_TZE284_nklqjk62",
           "_TZE284_u8ouaqsz",
+          "_tyst11_qq9mpfhw",
           "_tyzb01_ncdapbwy",
+          "_tyzb01_sqmd19i1",
           "_tyzb01_xph99wvr",
           "_tz1800_ejwkn2h2",
           "_tz3000_0gkrb5py",
+          "_tz3000_0s9gukzt",
           "_tz3000_1bwpjvlz",
           "_tz3000_26fmupbb",
           "_tz3000_2dlwlvex",
           "_tz3000_2mbfxlzr",
+          "_tz3000_3dfewsk1",
           "_tz3000_402jjyro",
           "_tz3000_4ugnzsli",
+          "_tz3000_4uvovz4r",
+          "_tz3000_5k5vh43t",
           "_tz3000_6jeesvrt",
+          "_tz3000_6oabgtzv",
           "_tz3000_6zvw8ham",
           "_tz3000_7d8yme6f",
           "_tz3000_7tbsruql",
+          "_tz3000_85czd6fy",
           "_tz3000_8yhypbo7",
           "_tz3000_996rpfy6",
           "_tz3000_9eeavbk5",
           "_tz3000_a33rw7ou",
           "_tz3000_au1rjicn",
           "_tz3000_au2o5e6q",
+          "_tz3000_awvmkayh",
           "_tz3000_b7m9qda0",
           "_tz3000_bmg14ax2",
+          "_tz3000_bpkijo14",
           "_tz3000_br3laukf",
           "_tz3000_bwlvyjwk",
           "_tz3000_bzxloft",
@@ -71523,21 +73076,33 @@
           "_tz3000_decxrtwa",
           "_tz3000_do6txrcw",
           "_tz3000_ebar6ljy",
+          "_tz3000_eit7p838",
           "_tz3000_f1hmoyj4",
           "_tz3000_fa9mlvja",
           "_tz3000_fku2h3gw",
+          "_tz3000_fxvjhdyl",
           "_tz3000_gntwytxo",
+          "_tz3000_gszjt2xx",
           "_tz3000_hgu1dlak",
           "_tz3000_hkcpblrs",
           "_tz3000_imdfhhud",
           "_tz3000_j2w1dw29",
           "_tz3000_jqge2fjx",
+          "_tz3000_k4ej3ww2",
           "_tz3000_keayt8ol",
+          "_tz3000_kstbkt6a",
+          "_tz3000_kyb656no",
+          "_tz3000_m0vaazab",
+          "_tz3000_misw04hq",
           "_tz3000_msl2rxjn",
+          "_tz3000_mugyhz0q",
           "_tz3000_n2egfsli",
           "_tz3000_nbnmw9nc",
+          "_tz3000_nkkl7uzv",
+          "_tz3000_nlsszmzl",
           "_tz3000_o4mkahkc",
           "_tz3000_o5wjxxqn",
+          "_tz3000_ocjlo4ea",
           "_tz3000_okohwwap",
           "_tz3000_osu834un",
           "_tz3000_ox0is7yv",
@@ -71553,15 +73118,21 @@
           "_tz3000_rylaozuc",
           "_tz3000_s8r1qoyq",
           "_tz3000_suiggvyh",
+          "_tz3000_t6jriawg",
           "_tz3000_taspddvq",
           "_tz3000_th6zqqy6",
           "_tz3000_timx9ivq",
           "_tz3000_udyjylt7",
+          "_tz3000_ufttklsz",
+          "_tz3000_upgcbody",
           "_tz3000_uvti8nkd",
           "_tz3000_v7chgqso",
           "_tz3000_wbrlnkm9",
+          "_tz3000_wlquqiiz",
           "_tz3000_wptayaqr",
+          "_tz3000_wuep9zng",
           "_tz3000_wut53hfm",
+          "_tz3000_ww9i3e0y",
           "_tz3000_wyhuocal",
           "_tz3000_x8q36xwf",
           "_tz3000_xpq2nmkr",
@@ -71572,6 +73143,7 @@
           "_tz3000_zutizvykts0203",
           "_tz3210_3ulg9kpo",
           "_tz3210_jowhpxop",
+          "_tz3210_tgvtvdoc",
           "_tz3210_umi6vbsz",
           "_tz3210_zbabx9wh",
           "_tz3210_zmppwawa",
@@ -71583,6 +73155,7 @@
           "_tze284_u8ouaqsz",
           "immax",
           "tuyatec-0l6xaqmi",
+          "tuyatec-3tipnsrx",
           "tuyatec-7qunn4gq",
           "tuyatec-abkehqus",
           "tuyatec-bfq2i2sy",
@@ -71595,35 +73168,70 @@
           "tuyatec-rkqiqvcs",
           "tuyatec-sb6t7ett",
           "tuyatec-trhrga6p",
-          "visonic"
+          "visonic",
+          "zbeacon"
         ],
         "productId": [
-          "TS0203",
-          "ZG-102Z",
-          "ZG-102ZL",
+          "3300-S",
+          "3300-s",
+          "3320-L",
+          "3320-l",
+          "CK-TLSR8656-SS5-01(7003)",
+          "DOORWINDOW-SENSOR-ZB3.0",
           "DS01",
-          "RH3001",
+          "DoorWindow-Sensor-ZB3.0",
+          "E1603/E1702",
+          "LUMI.MAGNET.AC01",
+          "LUMI.MAGNET.AGL02",
+          "LUMI.SENSOR_MAGNET",
+          "LUMI.SENSOR_MAGNET.AQ2",
           "MCCGQ01LM",
           "MCCGQ11LM",
           "MCCGQ12LM",
           "MCCGQ14LM",
-          "lumi.sensor_magnet",
-          "lumi.sensor_magnet.aq2",
-          "lumi.magnet.ac01",
-          "lumi.magnet.agl02",
-          "E1603/E1702",
-          "TRADFRI open/close remote",
-          "3300-S",
-          "3320-L",
+          "MCT-340 E",
+          "Q9MPFHW",
+          "RH3001",
           "SNZB-04",
-          "TS0601",
           "SNZB-04P",
           "SNZB-04PR2",
-          "CK-TLSR8656-SS5-01(7003)",
           "SNZB-04R2",
+          "TRADFRI OPEN/CLOSE REMOTE",
+          "TRADFRI open/close remote",
           "TS0021",
-          "DoorWindow-Sensor-ZB3.0",
-          "MCT-340 E"
+          "TS0203",
+          "TS0207",
+          "TS0601",
+          "TY0203",
+          "ZG-102Z",
+          "ZG-102ZL",
+          "ck-tlsr8656-ss5-01(7003)",
+          "doorwindow-sensor-zb3.0",
+          "ds01",
+          "e1603/e1702",
+          "lumi.magnet.ac01",
+          "lumi.magnet.agl02",
+          "lumi.sensor_magnet",
+          "lumi.sensor_magnet.aq2",
+          "mccgq01lm",
+          "mccgq11lm",
+          "mccgq12lm",
+          "mccgq14lm",
+          "mct-340 e",
+          "q9mpfhw",
+          "rh3001",
+          "snzb-04",
+          "snzb-04p",
+          "snzb-04pr2",
+          "snzb-04r2",
+          "tradfri open/close remote",
+          "ts0021",
+          "ts0203",
+          "ts0207",
+          "ts0601",
+          "ty0203",
+          "zg-102z",
+          "zg-102zl"
         ],
         "learnmode": {
           "image": "/drivers/contact_sensor/assets/learnmode.svg",
@@ -72044,6 +73652,7 @@
           "_TZ3000_QQDBCCB3",
           "_TZ3000_VD43BBFQ",
           "_TZ3000_VW8PAWXA",
+          "_TZ3000_WPTAYAQR",
           "_TZ3000_YRUUNGRL",
           "_TZ3000_ZIRYCPWS",
           "_TZ3000_bs93npae",
@@ -72066,6 +73675,7 @@
           "_TZ3000_qqdbccb3",
           "_TZ3000_vd43bbfq",
           "_TZ3000_vw8pawxa",
+          "_TZ3000_wptayaqr",
           "_TZ3000_yruungrl",
           "_TZ3000_zirycpws",
           "_TZ3210_778DRFDT",
@@ -72090,6 +73700,20 @@
           "_TZ3210_xbpt8ewc",
           "_TZ3210_xwqng7ol",
           "_TZ3210_zana8d08",
+          "_TZB000_42HA4RSC",
+          "_TZB210_0BKZABHT",
+          "_TZB210_3ZFP8MKI",
+          "_TZB210_417IKXAY",
+          "_TZB210_AYX58FT5",
+          "_TZB210_EIWANBEB",
+          "_TZB210_GJ0CCSAR",
+          "_TZB210_LMQQUXUS",
+          "_TZB210_RS0UFZWG",
+          "_TZB210_UE01A0S2",
+          "_TZB210_W9HCIX2R",
+          "_TZB210_WXAZCMSH",
+          "_TZB210_WY1PYU1Q",
+          "_TZB210_YATKPUHA",
           "_TZE200_2IMWYIGP",
           "_TZE200_2imwyigp",
           "_TZE200_4VOBCGD3",
@@ -72306,6 +73930,7 @@
           "_tz3000_qqdbccb3",
           "_tz3000_vd43bbfq",
           "_tz3000_vw8pawxa",
+          "_tz3000_wptayaqr",
           "_tz3000_yruungrl",
           "_tz3000_zirycpws",
           "_tz3210_778drfdt",
@@ -72428,32 +74053,50 @@
           "_tze600_ogyg1y6b"
         ],
         "productId": [
-          "TS0302",
-          "ZC-LS02",
-          "TS130F",
-          "DS82",
-          "DS421",
-          "lumi.curtain",
-          "lumi.curtain.hagl04",
-          "lumi.curtain.acn002",
-          "E1757",
-          "KADRILJ",
-          "FYRTUR",
           "AM02",
-          "AM43-0.45/40-ES-EZ",
           "AM43-0.45/40-ES-EB",
-          "TS0601",
+          "AM43-0.45/40-ES-EZ",
+          "DS421",
+          "DS82",
+          "E1757",
+          "FYRTUR",
+          "KADRILJ",
+          "LUMI.CURTAIN",
+          "LUMI.CURTAIN.ACN002",
+          "LUMI.CURTAIN.HAGL04",
+          "TS0105",
           "TS0301",
-          "ZBCurtain",
+          "TS0302",
           "TS030F",
-          "TS0105"
+          "TS0601",
+          "TS130F",
+          "ZBCURTAIN",
+          "ZBCurtain",
+          "ZC-LS02",
+          "am02",
+          "am43-0.45/40-es-eb",
+          "am43-0.45/40-es-ez",
+          "ds421",
+          "ds82",
+          "e1757",
+          "fyrtur",
+          "kadrilj",
+          "lumi.curtain",
+          "lumi.curtain.acn002",
+          "lumi.curtain.hagl04",
+          "ts0105",
+          "ts0301",
+          "ts0302",
+          "ts030f",
+          "ts0601",
+          "ts130f",
+          "zbcurtain",
+          "zc-ls02"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              6,
-              258,
               61184
             ]
           }
@@ -72868,14 +74511,13 @@
           "_tze200_wmcdj3aq"
         ],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "ts0601"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              6,
-              258,
               61184
             ]
           }
@@ -73330,17 +74972,16 @@
           "_tze204_r0jdjrvi"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_CURTAIN_TILT",
           "TS0601_curtain_tilt",
-          "TS0601"
+          "ts0601",
+          "ts0601_curtain_tilt"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              3,
-              4,
-              5,
-              258,
               61184
             ]
           }
@@ -73512,14 +75153,13 @@
           "_tz3000_qqdbccb3"
         ],
         "productId": [
-          "TS130F"
+          "TS130F",
+          "ts130f"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              6,
-              258,
               61184
             ]
           }
@@ -73928,7 +75568,8 @@
           "_tze200_rufdtfyv"
         ],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "ts0601"
         ],
         "endpoints": {
           "1": {
@@ -74023,7 +75664,8 @@
       "zigbee": {
         "manufacturerName": [],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "ts0601"
         ],
         "endpoints": {
           "1": {
@@ -74108,6 +75750,30 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "AQARA",
+          "AUBESS",
+          "AVATTO",
+          "BLITZWOLF",
+          "BSEED",
+          "BW-",
+          "GIRIER",
+          "HEIMAN",
+          "IKEA",
+          "LIDL",
+          "LONSONHO",
+          "LUMI",
+          "MOES",
+          "NAS-",
+          "NEO",
+          "PHILIPS",
+          "SIGNIFY",
+          "SILVERCREST",
+          "SMARTTHINGS",
+          "TRADFRI",
+          "TUYA",
+          "WOOX",
+          "XIAOMI",
+          "ZEMISMART",
           "aqara",
           "aubess",
           "avatto",
@@ -74135,7 +75801,9 @@
         ],
         "productId": [
           "TS0203",
-          "TS0601"
+          "TS0601",
+          "ts0203",
+          "ts0601"
         ],
         "endpoints": {
           "1": {
@@ -74250,7 +75918,8 @@
           "_tze200_rxq4iti9"
         ],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "ts0601"
         ],
         "learnmode": {
           "image": "/drivers/radiator_valve/assets/learnmode.svg",
@@ -74560,7 +76229,8 @@
       "zigbee": {
         "manufacturerName": [],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "ts0601"
         ],
         "learnmode": {
           "image": "/drivers/radiator_valve/assets/learnmode.svg",
@@ -74880,18 +76550,16 @@
           "_tze204_pdznlbhv"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_DIMMER3",
           "TS0601_dimmer3",
-          "TS0601"
+          "ts0601",
+          "ts0601_dimmer3"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              3,
-              4,
-              5,
-              6,
-              8,
               61184
             ]
           }
@@ -74991,6 +76659,7 @@
           "_TZ3210_TKKB1YM8",
           "_TZ3210_pagajpog",
           "_TZ3210_tkkb1ym8",
+          "_TZB210_RKGNGB5O",
           "_TZE200_BXOO2SWD",
           "_TZE200_E3OITDYU",
           "_TZE200_ZENJ4LXV",
@@ -75014,18 +76683,15 @@
           "_tze204_zenj4lxv"
         ],
         "productId": [
+          "TS0601",
           "TS1101",
-          "TS0601"
+          "ts0601",
+          "ts1101"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              3,
-              4,
-              5,
-              6,
-              8,
               61184
             ]
           }
@@ -75114,18 +76780,15 @@
           "_tze200_gne0e6mk"
         ],
         "productId": [
+          "TS0601",
           "TS1101",
-          "TS0601"
+          "ts0601",
+          "ts1101"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              3,
-              4,
-              5,
-              6,
-              8,
               61184
             ]
           }
@@ -75249,7 +76912,8 @@
           "_tz3210_weaqkhab"
         ],
         "productId": [
-          "TS110E"
+          "TS110E",
+          "ts110e"
         ],
         "endpoints": {
           "1": {
@@ -75473,6 +77137,8 @@
           "_TZ3210_zlnbjiaw",
           "_TZ3210_zmy9hjay",
           "_TZ3210_zxbtub8r",
+          "_TZB210_3OWG3KKV",
+          "_TZB210_WJZ9EPJD",
           "_TZE200_0HB4RDNP",
           "_TZE200_0NAUXA0P",
           "_TZE200_0hb4rdnp",
@@ -75723,14 +77389,23 @@
           "_tze284_znvwzxkq"
         ],
         "productId": [
-          "TS0601_dim1",
+          "TS0052",
           "TS0601",
-          "ZBMINI-DIM",
-          "ZBMINID",
+          "TS0601_DIM1",
+          "TS0601_dim1",
+          "TS1101",
           "TS110E",
           "TS110F",
-          "TS1101",
-          "TS0052"
+          "ZBMINI-DIM",
+          "ZBMINID",
+          "ts0052",
+          "ts0601",
+          "ts0601_dim1",
+          "ts1101",
+          "ts110e",
+          "ts110f",
+          "zbmini-dim",
+          "zbminid"
         ],
         "learnmode": {
           "image": "/drivers/dimmer_wall_1gang/assets/learnmode.svg",
@@ -76264,22 +77939,21 @@
           "_tze284_cjbofhxw"
         ],
         "productId": [
-          "SPM01-1Z2",
           "SDM01-3Z1",
           "SDM02-2Z1",
+          "SPM01-1Z2",
           "SPM02-3Z3",
-          "TS0601"
+          "TS0601",
+          "sdm01-3z1",
+          "sdm02-2z1",
+          "spm01-1z2",
+          "spm02-3z3",
+          "ts0601"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              3,
-              4,
-              5,
-              6,
-              2820,
-              1794,
               61184
             ]
           }
@@ -76396,17 +78070,16 @@
           "_tze204_rhblgy0z"
         ],
         "productId": [
+          "TS0001_DIN",
           "TS0001_din",
-          "TS0601"
+          "TS0601",
+          "ts0001_din",
+          "ts0601"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              3,
-              4,
-              5,
-              6,
               61184
             ]
           }
@@ -76489,6 +78162,109 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "ARDUINO",
+          "CC1352",
+          "CC1352P",
+          "CC2530",
+          "CC2531",
+          "CC2652",
+          "CC2652P",
+          "CC2652R",
+          "CC2652RB",
+          "COD.M",
+          "CONBEE",
+          "COORDINATOR",
+          "CUSTOM",
+          "DEBUG",
+          "DECONZ",
+          "DEMO",
+          "DEV",
+          "DEVELOPMENT",
+          "DIY",
+          "DIYRUZ",
+          "DRESDEN ELEKTRONIK",
+          "E104",
+          "E18",
+          "E72",
+          "EBYTE",
+          "EFR32",
+          "EFR32MG",
+          "EFR32MG21",
+          "EFR32MG22",
+          "EGONY",
+          "ELECTROLAMA",
+          "ESP-IDF",
+          "ESP32",
+          "ESP32-C6",
+          "ESP32-H2",
+          "ESP32C6",
+          "ESP32H2",
+          "ESPIDF",
+          "ESPRESSIF",
+          "EXAMPLE",
+          "GIO",
+          "GIO.ZIGBEE",
+          "HOBBY",
+          "HOMEAUTOMATION",
+          "HOMEMADE",
+          "HOME_AUTOMATION",
+          "HUE ESSENTIALS",
+          "JN5168",
+          "JN5169",
+          "LUMI.ROUTER",
+          "MAKER",
+          "MODKAM",
+          "NORDIC",
+          "NRF52",
+          "NRF52840",
+          "NXP",
+          "OPEN SOURCE",
+          "OPENSOURCE",
+          "PHOSCON",
+          "PLATFORMIO",
+          "POPP",
+          "PROTOTYPE",
+          "PTVO",
+          "PTVO.INFO",
+          "PTVO.SWITCH",
+          "RASPBEE",
+          "RF-STAR",
+          "RFSTAR",
+          "ROUTER",
+          "SAMPLE",
+          "SILABS",
+          "SILICON LABS",
+          "SLAESH",
+          "SLZB-06",
+          "SLZB-07",
+          "SMARTTHINGS",
+          "SONOFF ZBBRIDGE",
+          "TASMOTA",
+          "TEST",
+          "TEXAS INSTRUMENTS",
+          "TI",
+          "TUBE",
+          "TUBE'S ZB",
+          "XYZROE",
+          "Z-STACK",
+          "Z2M",
+          "Z2T",
+          "ZBBRIDGE",
+          "ZHA",
+          "ZIGBEE HOME",
+          "ZIGBEE HOME AUTOMATION",
+          "ZIGBEE ROUTER",
+          "ZIGBEE-ROUTER",
+          "ZIGBEE2MQTT",
+          "ZIGBEE2TASMOTA",
+          "ZIGBEEHOME",
+          "ZIGBEEROUTER",
+          "ZIGBEE_HOME",
+          "ZIGSTAR",
+          "ZNRF52",
+          "ZSTACK",
+          "ZZH",
+          "ZZH!",
           "arduino",
           "cc1352",
           "cc1352p",
@@ -76581,10 +78357,10 @@
           "zigbee home",
           "zigbee home automation",
           "zigbee router",
-          "zigbee_home",
           "zigbee-router",
           "zigbee2mqtt",
           "zigbee2tasmota",
+          "zigbee_home",
           "zigbeehome",
           "zigbeerouter",
           "zigstar",
@@ -76666,7 +78442,80 @@
           "ZIGSTAR_POE",
           "ZIGSTAR_STICK",
           "ZZH",
-          "ZZH!"
+          "ZZH!",
+          "arduino_zigbee",
+          "button",
+          "cc1352_dev",
+          "cc1352p_dev",
+          "cc2530_router",
+          "cc2530_sensor",
+          "cc2530_switch",
+          "cc2531_router",
+          "cc2531_usb",
+          "cc2652_dev",
+          "cc2652p_dev",
+          "cc2652r_dev",
+          "cc2652rb_dev",
+          "cod.m",
+          "conbee",
+          "conbee ii",
+          "conbee iii",
+          "custom",
+          "debug",
+          "demo",
+          "dimmer",
+          "diy-01",
+          "diy-02",
+          "diy-03",
+          "diy-04",
+          "diy-08",
+          "diy-light",
+          "diy-router",
+          "diy-sensor",
+          "diy-switch",
+          "diyruz",
+          "diyruz_airsense",
+          "diyruz_contact",
+          "diyruz_flower",
+          "diyruz_geiger",
+          "diyruz_motion",
+          "efr32_dev",
+          "efr32mg_dev",
+          "esp32-c6",
+          "esp32-h2",
+          "esp32c6_dev",
+          "esp32h2_dev",
+          "hue_bridge",
+          "light",
+          "phoscon_gateway",
+          "platformio_zigbee",
+          "prototype",
+          "ptvo.dimmer",
+          "ptvo.light",
+          "ptvo.router",
+          "ptvo.sensor",
+          "ptvo.switch",
+          "raspbee",
+          "raspbee ii",
+          "router",
+          "sample",
+          "sensor",
+          "slzb-06",
+          "slzb-07",
+          "sonoff_zbbridge",
+          "switch",
+          "tasmota",
+          "test",
+          "tube",
+          "z2t",
+          "zbbridge",
+          "zigbee_dev_kit",
+          "zigstar",
+          "zigstar_lan",
+          "zigstar_poe",
+          "zigstar_stick",
+          "zzh",
+          "zzh!"
         ],
         "endpoints": {
           "1": {
@@ -76985,8 +78834,11 @@
           "_tze204_nklqjk97"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_DOOR",
           "TS0601_door",
-          "TS0601"
+          "ts0601",
+          "ts0601_door"
         ],
         "endpoints": {
           "1": {
@@ -77325,7 +79177,9 @@
         ],
         "productId": [
           "TS0211",
-          "TS0601"
+          "TS0601",
+          "ts0211",
+          "ts0601"
         ],
         "learnmode": {
           "image": "/drivers/doorbell/assets/learnmode.svg",
@@ -77682,18 +79536,15 @@
         ],
         "productId": [
           "TS0601",
-          "TS0601_3phase"
+          "TS0601_3PHASE",
+          "TS0601_3phase",
+          "ts0601",
+          "ts0601_3phase"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              3,
-              4,
-              5,
-              6,
-              2820,
-              1794,
               61184
             ]
           }
@@ -77802,8 +79653,11 @@
           "_tze284_ikul00sx"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_FANCTRL",
           "TS0601_fanctrl",
-          "TS0601"
+          "ts0601",
+          "ts0601_fanctrl"
         ],
         "endpoints": {
           "1": {
@@ -77889,17 +79743,25 @@
           "_tz3210_232nryqh",
           "_tz3210_dse8ogfy",
           "_tz3210_j4pdtz9v",
-          "_tz3210_okbss9dy"
+          "_tz3210_okbss9dy",
+          "_TZ3210_j4pdtz9v",
+          "_TZ3210_dse8ogfy",
+          "_TZ3210_232nryqh",
+          "_TZ3210_okbss9dy",
+          "_TZ3000_g8n1n7lg",
+          "_TYZB01_phjeraqq"
         ],
         "productId": [
           "TS0001",
-          "TS0001_fingerbot"
+          "TS0001_FINGERBOT",
+          "TS0001_fingerbot",
+          "ts0001",
+          "ts0001_fingerbot"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              6,
               61184
             ],
             "bindings": [
@@ -77979,8 +79841,11 @@
           "_tze204_xyhhcx94"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_LOCK",
           "TS0601_lock",
-          "TS0601"
+          "ts0601",
+          "ts0601_lock"
         ],
         "learnmode": {
           "instruction": {
@@ -78089,7 +79954,8 @@
           "_tze204_aoclfnxz"
         ],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "ts0601"
         ],
         "endpoints": {
           "1": {
@@ -78161,8 +80027,11 @@
           "_tze200_mce9kjpm"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_HCHO",
           "TS0601_hcho",
-          "TS0601"
+          "ts0601",
+          "ts0601_hcho"
         ],
         "endpoints": {
           "1": {
@@ -78296,8 +80165,11 @@
           "_tze204_wfxuhoea"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_GARAGE",
           "TS0601_garage",
-          "TS0601"
+          "ts0601",
+          "ts0601_garage"
         ],
         "endpoints": {
           "1": {
@@ -78383,7 +80255,9 @@
         ],
         "productId": [
           "TS0601",
-          "TS0603"
+          "TS0603",
+          "ts0601",
+          "ts0603"
         ],
         "endpoints": {
           "1": {
@@ -78509,7 +80383,9 @@
         },
         "productId": [
           "TS0204",
-          "TS0601"
+          "TS0601",
+          "ts0204",
+          "ts0601"
         ],
         "endpoints": {
           "1": {
@@ -78835,6 +80711,8 @@
           "_TZ3290_uc8lwbi2",
           "_TZ3400_TK3S5TYG",
           "_TZ3400_tk3s5tyg",
+          "_TZE200_2AAELWXK",
+          "_TZE200_2aaelwxk",
           "_TZE200_8ISDKY6J",
           "_TZE200_8isdky6j",
           "_TZE200_AJ0OXO1I",
@@ -78879,6 +80757,7 @@
           "_tz3290_s6ezpa3j",
           "_tz3290_uc8lwbi2",
           "_tz3400_tk3s5tyg",
+          "_tze200_2aaelwxk",
           "_tze200_8isdky6j",
           "_tze200_aj0oxo1i",
           "_tze200_auin8mzr",
@@ -78898,11 +80777,17 @@
           "_tze284_rjgdhqqi"
         ],
         "productId": [
-          "TS0601_gas",
-          "TS0601",
           "TS0225",
+          "TS0301",
+          "TS0601",
+          "TS0601_GAS",
+          "TS0601_gas",
           "ZG-225Z",
-          "TS0301"
+          "ts0225",
+          "ts0301",
+          "ts0601",
+          "ts0601_gas",
+          "zg-225z"
         ],
         "learnmode": {
           "image": "/drivers/gas_sensor/assets/learnmode.svg",
@@ -79220,13 +81105,14 @@
           "_tz3000_o1jzcxou"
         ],
         "productId": [
-          "TS0601_gw"
+          "TS0601_GW",
+          "TS0601_gw",
+          "ts0601_gw"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              3,
               61184
             ]
           }
@@ -79536,7 +81422,31 @@
       },
       "zigbee": {
         "manufacturerName": [
+          " LEGRAND",
           " legrand",
+          "BOSCH",
+          "D5X84YU",
+          "DANFOSS",
+          "DLN",
+          "DLN-DIY",
+          "DLNRAJA",
+          "EFEKTA",
+          "LEGRAND",
+          "LUMI ROUTER",
+          "NETATMO",
+          "NIKO",
+          "NIKO NV",
+          "RBSH",
+          "SCHNEIDER",
+          "SCHNEIDER ELECTRIC",
+          "SE",
+          "SLZB",
+          "SONOFFZIGBEE",
+          "TI ROUTER",
+          "TI.ROUTER",
+          "WISER",
+          "ZIG-A-ZIG-AH",
+          "ZIGFRED",
           "bosch",
           "d5x84yu",
           "danfoss",
@@ -79562,7 +81472,16 @@
           "zigfred"
         ],
         "productId": [
+          "0X8040",
+          "0x8040",
+          "BASICZBR3",
+          "BATTERY SWITCH, 1 BUTTON",
+          "BATTERY SWITCH, 2 BUTTONS",
+          "BSP-EZ2",
+          "BSP-FZ2",
           "BUTTON",
+          "Battery switch, 1 button",
+          "Battery switch, 2 buttons",
           "CC2530",
           "CC2531",
           "CC2652",
@@ -79570,46 +81489,92 @@
           "DIY",
           "EFEKTA",
           "ESP32",
+          "ET093WRG",
+          "ET093WRO",
+          "ETRV0100",
+          "ETRV0101",
+          "ETRV0103",
           "MAKER",
           "PTVO",
           "RELAY",
           "ROUTER",
-          "SENSOR",
-          "SWITCH",
-          "SNZB-01",
-          "SNZB-02",
-          "SNZB-03",
-          "SNZB-04",
-          "SNZB-01P",
-          "SNZB-02P",
-          "SNZB-03P",
-          "SNZB-04P",
-          "SNZB-06P",
           "S26R2ZB",
           "S31ZB",
           "S40ZBTPB",
+          "SENSOR",
+          "SNZB-01",
+          "SNZB-01P",
+          "SNZB-02",
+          "SNZB-02P",
+          "SNZB-03",
+          "SNZB-03P",
+          "SNZB-04",
+          "SNZB-04P",
+          "SNZB-06P",
+          "SWITCH",
+          "TRV001",
+          "TRV003",
+          "TS0026",
+          "TS0041A",
+          "TS0052",
+          "TS0105",
+          "TS0224",
+          "TS0901",
           "ZBMINI",
           "ZBMINIL2",
-          "BASICZBR3",
+          "ZIGSTAR",
+          "basiczbr3",
+          "battery switch, 1 button",
+          "battery switch, 2 buttons",
+          "bsp-ez2",
+          "bsp-fz2",
+          "button",
+          "cc2530",
+          "cc2531",
+          "cc2652",
+          "custom",
+          "diy",
+          "eT093WRG",
+          "eT093WRO",
           "eTRV0100",
           "eTRV0101",
           "eTRV0103",
-          "eT093WRO",
-          "eT093WRG",
-          "TRV001",
-          "TRV003",
-          "0x8040",
-          "BSP-FZ2",
-          "BSP-EZ2",
-          "Battery switch, 1 button",
-          "Battery switch, 2 buttons",
-          "ZIGSTAR",
-          "TS0041A",
-          "TS0026",
-          "TS0052",
-          "TS0224",
-          "TS0105",
-          "TS0901"
+          "efekta",
+          "esp32",
+          "et093wrg",
+          "et093wro",
+          "etrv0100",
+          "etrv0101",
+          "etrv0103",
+          "maker",
+          "ptvo",
+          "relay",
+          "router",
+          "s26r2zb",
+          "s31zb",
+          "s40zbtpb",
+          "sensor",
+          "snzb-01",
+          "snzb-01p",
+          "snzb-02",
+          "snzb-02p",
+          "snzb-03",
+          "snzb-03p",
+          "snzb-04",
+          "snzb-04p",
+          "snzb-06p",
+          "switch",
+          "trv001",
+          "trv003",
+          "ts0026",
+          "ts0041a",
+          "ts0052",
+          "ts0105",
+          "ts0224",
+          "ts0901",
+          "zbmini",
+          "zbminil2",
+          "zigstar"
         ],
         "endpoints": {
           "1": {
@@ -79765,7 +81730,182 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "3REALITY",
           "3reality",
+          "ADURO",
+          "ADUROSMART",
+          "AJAX",
+          "ALDI",
+          "ALLEGION",
+          "AONE",
+          "ATSMART",
+          "AUGUST",
+          "AURORA",
+          "AURORA LIGHTING",
+          "BERKER",
+          "BINGOELEC",
+          "BITRON",
+          "BITRON HOME",
+          "BITRON VIDEO",
+          "BOSCH",
+          "BRK",
+          "BROAN",
+          "BTICINO",
+          "BUSCH-JAEGER",
+          "CENTRALITE",
+          "CLIMAX",
+          "CLIMAX TECHNOLOGY",
+          "COMAP",
+          "CONNECTIVITY STANDARDS ALLIANCE",
+          "COOPER",
+          "COSWALL",
+          "CREE INC.",
+          "DANALOCK",
+          "DANFOSS",
+          "DANFOSS A/S",
+          "DAWON",
+          "DAWON DNS",
+          "DE",
+          "DEVELCO",
+          "DEVELCO PRODUCTS A/S",
+          "DIYRUZ",
+          "DOME",
+          "DRESDEN ELEKTRONIK",
+          "EATON",
+          "EATON CORPORATION",
+          "ECOLINK",
+          "ECOSMART",
+          "ECOZY",
+          "EDP",
+          "ELKO",
+          "ELTAKO",
+          "ENBRIGHTEN",
+          "EUROTRONIC",
+          "EUROTRONIC TECHNOLOGY",
+          "FEIT",
+          "FEIT ELECTRIC",
+          "FINDER",
+          "FIRST ALERT",
+          "FRIENT",
+          "FRIENT A/S",
+          "GEWISS",
+          "GIRA",
+          "GLEDOPTO",
+          "GOCONTROL",
+          "HAGER",
+          "HEIMANTECHNOLOGY",
+          "HEIMGARD",
+          "HUE",
+          "IKEA OF SWEDEN",
+          "ILUMINIZE",
+          "ILUX",
+          "INNR",
+          "INNR LIGHTING B.V.",
+          "ITEAD",
+          "JASCO",
+          "JASCO PRODUCTS",
+          "JUNG",
+          "KEEN",
+          "KONKE",
+          "KONYKS",
+          "KOREAKOSS",
+          "KOSS",
+          "KTNNKG",
+          "LEDVANCE",
+          "LEEDARSON",
+          "LEEDARSON LIGHTING",
+          "LEGRAND",
+          "LEVITON MANUFACTURING",
+          "LIFX",
+          "LINEAR",
+          "LINKIND",
+          "LIVARNO",
+          "LIVARNO LUX",
+          "LIVOLO",
+          "LK",
+          "LUTRON ELECTRONICS",
+          "MATTER",
+          "MDT",
+          "MEDION",
+          "MERTEN",
+          "MIBOXER",
+          "MLI",
+          "MONOPRICE",
+          "MULLER LICHT",
+          "MÜLLER LICHT",
+          "NAMRON",
+          "NANOLEAF",
+          "NEO COOLCAM",
+          "NORTEK",
+          "NUKI",
+          "NUTONE",
+          "OSRAM",
+          "PAULMANN",
+          "PAULMANN LICHT",
+          "PAULMANN LICHT GMBH",
+          "PERENIO",
+          "PHILIPS HUE",
+          "PHOSCON",
+          "POPP",
+          "REV",
+          "REVOGNI",
+          "RING LLC",
+          "ROB",
+          "ROBB",
+          "ROBERT BOSCH GMBH",
+          "RYRA",
+          "SALUS",
+          "SAMJIN",
+          "SAMSUNG",
+          "SAMSUNG ELECTRONICS",
+          "SASWELL",
+          "SCHNEIDER ELECTRIC",
+          "SE",
+          "SECURIFI",
+          "SENGLED",
+          "SENGLED INC.",
+          "SENGOKU",
+          "SERCOMM",
+          "SHINASYSTEM",
+          "SIGNIFY NETHERLANDS B.V.",
+          "SINOPE",
+          "SINOPE TECHNOLOGIES",
+          "SITERWELL",
+          "SMARTECH",
+          "SMARTTHINGS INC.",
+          "SMARTVILL",
+          "SPECTRUM BRANDS",
+          "SR-ZG",
+          "STELPRO",
+          "SUNRICHER",
+          "SWANN",
+          "TEDEE",
+          "TERNCY",
+          "THIRD REALITY",
+          "THIRD REALITY, INC",
+          "THREAD",
+          "TINT",
+          "TRUST",
+          "TRUST INTERNATIONAL",
+          "U-TEC",
+          "ULTRALOQ",
+          "UTEC",
+          "VIMAR",
+          "VISION",
+          "WALLPAD",
+          "WEINZIERL",
+          "WINNERS",
+          "WISER",
+          "WIZ",
+          "WOOLLEY",
+          "YAGUSMART",
+          "YALE",
+          "YEELIGHT",
+          "YOOLAX",
+          "ZEN",
+          "ZEN THERMOSTAT",
+          "ZIGBEE ALLIANCE",
+          "ZIGBEE2MQTT",
           "aduro",
           "adurosmart",
           "ajax",
@@ -79944,7 +82084,11 @@
         "productId": [
           "TS0203",
           "TS0601",
-          "TS0601_generic"
+          "TS0601_GENERIC",
+          "TS0601_generic",
+          "ts0203",
+          "ts0601",
+          "ts0601_generic"
         ],
         "endpoints": {
           "1": {
@@ -80056,7 +82200,8 @@
       "zigbee": {
         "manufacturerName": [],
         "productId": [
-          "TS0044"
+          "TS0044",
+          "ts0044"
         ],
         "endpoints": {
           "1": {
@@ -80201,8 +82346,11 @@
           "_tze204_nt5dgejc"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_HUMID",
           "TS0601_humid",
-          "TS0601"
+          "ts0601",
+          "ts0601_humid"
         ],
         "endpoints": {
           "1": {
@@ -80366,16 +82514,16 @@
           "_tze204_zuhszj9s"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_AC",
           "TS0601_ac",
-          "TS0601"
+          "ts0601",
+          "ts0601_ac"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              3,
-              513,
               61184
             ]
           }
@@ -80722,7 +82870,8 @@
           "_tze284_cfczgbss"
         ],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "ts0601"
         ],
         "endpoints": {
           "1": {
@@ -80860,8 +83009,11 @@
           "_tze204_qtbrwrfv"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_DEHUM",
           "TS0601_dehum",
-          "TS0601"
+          "ts0601",
+          "ts0601_dehum"
         ],
         "endpoints": {
           "1": {
@@ -81166,6 +83318,7 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "ZG-106Z",
           "_TYZB01_4MDQXXNN",
           "_TYZB01_M6EC2PGJ",
           "_TYZb01_4mdqxxnn",
@@ -81182,7 +83335,9 @@
         ],
         "productId": [
           "TS0222",
-          "ZG-106Z"
+          "ZG-106Z",
+          "ts0222",
+          "zg-106z"
         ],
         "endpoints": {
           "1": {
@@ -81356,17 +83511,15 @@
           "_tze284_la9vhsok"
         ],
         "productId": [
+          "TS0601",
           "TS1201",
-          "TS0601"
+          "ts0601",
+          "ts1201"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              6,
-              57348,
-              60672,
               61184
             ]
           }
@@ -81456,7 +83609,8 @@
           "_tz3290_xjpbcxn92aaxvmlz"
         ],
         "productId": [
-          "TS1201"
+          "TS1201",
+          "ts1201"
         ],
         "endpoints": {
           "1": {
@@ -81560,20 +83714,25 @@
           "_tz3000_itnrsufe",
           "_tz3000_rusu2vzb",
           "_tz3000_yd2e749y",
-          "_tze200_vvmbj46n"
+          "_tze200_vvmbj46n",
+          "_TZE284_9ern5sfh",
+          "_TZE284_9ERN5SFH"
         ],
         "productId": [
-          "TS0601_lcd",
-          "TS0601",
           "TS0201",
-          "TY0201"
+          "TS0601",
+          "TS0601_LCD",
+          "TS0601_lcd",
+          "TY0201",
+          "ts0201",
+          "ts0601",
+          "ts0601_lcd",
+          "ty0201"
         ],
         "endpoints": {
           "1": {
             "clusters": [
-              1,
-              1026,
-              1029,
+              0,
               61184
             ]
           }
@@ -81657,6 +83816,8 @@
           "_TZ3210_iystcadi",
           "_TZ3210_p9ao60da",
           "_TZ3210_r0xgkft5",
+          "_TZB210_ENDMGGWS",
+          "_TZB210_NGNT8KNI",
           "_tz3000_obacbukl",
           "_tz3000_riwp3k79",
           "_tz3210_iystcadi",
@@ -81666,7 +83827,8 @@
           "_tzb210_ngnt8kni"
         ],
         "productId": [
-          "TS0502"
+          "TS0502",
+          "ts0502"
         ],
         "endpoints": {
           "1": {
@@ -81737,14 +83899,20 @@
         "manufacturerName": [
           "_TZ3210_IYSTCADI",
           "_TZ3210_iystcadi",
+          "_TZB210_3DXBG9KS",
           "_tz3210_iystcadi",
           "_tzb210_3dxbg9ks"
         ],
         "productId": [
-          "TS0601_led",
-          "TS0501B",
           "TRI-C1ZR",
-          "TRI-K1ZR"
+          "TRI-K1ZR",
+          "TS0501B",
+          "TS0601_LED",
+          "TS0601_led",
+          "tri-c1zr",
+          "tri-k1zr",
+          "ts0501b",
+          "ts0601_led"
         ],
         "endpoints": {
           "1": {
@@ -81814,7 +83982,9 @@
         ],
         "productId": [
           "TS0503",
-          "TS0504"
+          "TS0504",
+          "ts0503",
+          "ts0504"
         ],
         "endpoints": {
           "1": {
@@ -81925,8 +84095,11 @@
           "_tz3210_quinzf3w"
         ],
         "productId": [
+          "TS0505B",
+          "TS0601_STRIP",
           "TS0601_strip",
-          "TS0505B"
+          "ts0505b",
+          "ts0601_strip"
         ],
         "endpoints": {
           "1": {
@@ -82276,7 +84449,9 @@
           }
         },
         "productId": [
-          "TS0601_strip_adv"
+          "TS0601_STRIP_ADV",
+          "TS0601_strip_adv",
+          "ts0601_strip_adv"
         ]
       },
       "settings": [
@@ -82613,7 +84788,9 @@
           "_tz3210_trm3l2aw"
         ],
         "productId": [
-          "TS0601_strip_rgbw"
+          "TS0601_STRIP_RGBW",
+          "TS0601_strip_rgbw",
+          "ts0601_strip_rgbw"
         ],
         "endpoints": {
           "1": {
@@ -83076,7 +85253,9 @@
         },
         "productId": [
           "TS0505A",
-          "TS0505B"
+          "TS0505B",
+          "ts0505a",
+          "ts0505b"
         ]
       },
       "settings": [
@@ -83507,8 +85686,10 @@
           "_tz3210_snzbbgvi"
         ],
         "productId": [
+          "TS0222",
           "TS0601",
-          "TS0222"
+          "ts0222",
+          "ts0601"
         ],
         "endpoints": {
           "1": {
@@ -83610,8 +85791,11 @@
           "_tze284_mgstdyz3"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_SMARTLOCK",
           "TS0601_smartlock",
-          "TS0601"
+          "ts0601",
+          "ts0601_smartlock"
         ],
         "learnmode": {
           "image": "/drivers/lock_smart/assets/learnmode.svg",
@@ -83949,24 +86133,29 @@
           "_tz3000_vmpbygs5"
         ],
         "productId": [
+          "01MINIZB",
+          "01minizb",
+          "ZBM5-1C-120",
           "ZBMINI",
           "ZBMINI-L",
           "ZBMINIL2",
-          "ZBMINIR2",
-          "01MINIZB",
-          "ZBM5-1C-120",
-          "ZBMINIR",
           "ZBMINIL2-R2",
-          "ZBMINIR2-R2"
+          "ZBMINIR",
+          "ZBMINIR2",
+          "ZBMINIR2-R2",
+          "zbm5-1c-120",
+          "zbmini",
+          "zbmini-l",
+          "zbminil2",
+          "zbminil2-r2",
+          "zbminir",
+          "zbminir2",
+          "zbminir2-r2"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              3,
-              4,
-              5,
-              6,
               61184
             ]
           }
@@ -84658,36 +86847,94 @@
           "tuyatec-lha8pbwd",
           "tuyatec-smmlguju",
           "tuyatec-zn9wyqtr",
-          "tuyatec-zw6hxafz"
+          "tuyatec-zw6hxafz",
+          "TUYATEC-bd5faf9p",
+          "TUYATEC-zw6hxafz",
+          "_TYZB01_jytabjkb",
+          "_TYZB01_dl7cejts",
+          "_TZ3000_mmtwjmaq",
+          "_TZ3000_kmh5qpmb",
+          "_TZ3000_msl6wxk9",
+          "_TZ3000_mcxw5ehu",
+          "_TZ3000_otvn3lne",
+          "_TZ3000_6ygjfyll",
+          "_TZ3040_6ygjfyll",
+          "_TZ3040_bb6xaihh",
+          "_TZ3000_nss8amz9",
+          "_TZ3000_bsvqrxru",
+          "_TYZB01_dr6sduka",
+          "_TZ3000_o4mkahkc",
+          "_TZ3000_c8ozah8n",
+          "_TZ3040_wqmtjsyk",
+          "_TZ3000_mg4dy6z6",
+          "_TZ3000_y56pgpgs",
+          "_TYZB01_geepvxsy",
+          "TUYATEC-lha8pbwd",
+          "TUYATEC-zn9wyqtr",
+          "TUYATEC-53o41joc",
+          "TUYATEC-deetibst",
+          "TUYATEC-dgtxmihe",
+          "TUYATEC-b5g40alm",
+          "TUYATEC-dxnohkpd",
+          "_TZ3000_lf56vpxj",
+          "_TZ1800_fcdjzz3s"
         ],
         "productId": [
-          "TS0202",
-          "TS0225",
-          "ZG-204Z",
-          "MS01",
-          "RH3040",
-          "IH012-RT01",
-          "TY0202",
-          "lumi.sensor_motion",
-          "lumi.sensor_motion.aq2",
-          "lumi.motion.ac02",
-          "lumi.motion.agl04",
-          "TRADFRI motion sensor",
-          "E1745",
+          "3305-S",
+          "3305-s",
+          "3325-S",
+          "3325-s",
+          "3326-L",
+          "3326-l",
+          "CK-TLSR8656-SS5-01(7002)",
           "E1525/E1745",
+          "E1745",
+          "IH012-RT01",
+          "LUMI.MOTION.AC02",
+          "LUMI.MOTION.AGL04",
+          "LUMI.SENSOR_MOTION",
+          "LUMI.SENSOR_MOTION.AQ2",
+          "MS01",
+          "MSO1",
+          "RH3040",
           "SML001",
           "SML002",
           "SML003",
           "SML004",
-          "3326-L",
-          "3305-S",
-          "3325-S",
           "SNZB-03",
-          "TS0601",
           "SNZB-03P",
-          "MSO1",
-          "CK-TLSR8656-SS5-01(7002)",
-          "SNZB-03R2"
+          "SNZB-03R2",
+          "TRADFRI MOTION SENSOR",
+          "TRADFRI motion sensor",
+          "TS0202",
+          "TS0225",
+          "TS0601",
+          "TY0202",
+          "ZG-204Z",
+          "ck-tlsr8656-ss5-01(7002)",
+          "e1525/e1745",
+          "e1745",
+          "ih012-rt01",
+          "lumi.motion.ac02",
+          "lumi.motion.agl04",
+          "lumi.sensor_motion",
+          "lumi.sensor_motion.aq2",
+          "ms01",
+          "mso1",
+          "rh3040",
+          "sml001",
+          "sml002",
+          "sml003",
+          "sml004",
+          "snzb-03",
+          "snzb-03p",
+          "snzb-03r2",
+          "tradfri motion sensor",
+          "ts0202",
+          "ts0225",
+          "ts0601",
+          "ty0202",
+          "zg-204z"
         ],
         "learnmode": {
           "image": "/drivers/motion_sensor/assets/learnmode.svg",
@@ -85116,15 +87363,13 @@
           "_tze200_bh3n6gk8"
         ],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "ts0601"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              1024,
-              1280,
               61184
             ],
             "bindings": [
@@ -85275,10 +87520,6 @@
           "1": {
             "clusters": [
               0,
-              1,
-              1024,
-              1280,
-              1030,
               61184
             ]
           }
@@ -85291,8 +87532,11 @@
           }
         },
         "productId": [
+          "TS0601",
+          "TS0601_MMWAVE",
           "TS0601_mmwave",
-          "TS0601"
+          "ts0601",
+          "ts0601_mmwave"
         ]
       },
       "settings": [
@@ -85745,8 +87989,11 @@
           "_tze204_nymxy9gq"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_FEEDER",
           "TS0601_feeder",
-          "TS0601"
+          "ts0601",
+          "ts0601_feeder"
         ],
         "endpoints": {
           "1": {
@@ -85882,7 +88129,8 @@
           "_tze204_sh1btabb"
         ],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "ts0601"
         ],
         "endpoints": {
           "1": {
@@ -85947,9 +88195,16 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "CK-BL702-SWP-01(7020)",
+          "EWELINK",
+          "SONOFF",
+          "ZBEACON",
           "Zbeacon",
           "_TYZB01_HLLA45KX",
+          "_TYZB01_IUEPBMPV",
           "_TYZB01_MTUNWANM",
+          "_TYZB01_hlla45kx",
+          "_TYZB01_iuepbmpv",
           "_TYZb01_hlla45kx",
           "_TYZb01_mtunwanm",
           "_TZ3000_0ZFRHQ4I",
@@ -86003,11 +88258,13 @@
           "_TZ3000_CEHUW1LW",
           "_TZ3000_CFNPRAB5",
           "_TZ3000_CJRNGDR3",
+          "_TZ3000_CYMSNFVF",
           "_TZ3000_CZUYT8LZ",
           "_TZ3000_DD8WWZCY",
           "_TZ3000_DLHHRHS8",
           "_TZ3000_DLUG3KBC",
           "_TZ3000_DPO1YSAK",
+          "_TZ3000_EW31DMGX",
           "_TZ3000_EW3LDMGX",
           "_TZ3000_EYZB8YG3",
           "_TZ3000_FQOYNHKU",
@@ -86029,6 +88286,7 @@
           "_TZ3000_J1V25L17",
           "_TZ3000_JVZVULEN",
           "_TZ3000_K6FVKNRR",
+          "_TZ3000_KDI2O9M6",
           "_TZ3000_KSW8QTMT",
           "_TZ3000_KX0PRIS5",
           "_TZ3000_KY0FQ4HO",
@@ -86047,6 +88305,7 @@
           "_TZ3000_OIYMH3QU",
           "_TZ3000_OKAZ9TJS",
           "_TZ3000_PJCQJTEV",
+          "_TZ3000_PLYVNUF5",
           "_TZ3000_PS3DMATO",
           "_TZ3000_PVLVOXVT",
           "_TZ3000_QEUVNOHG",
@@ -86100,11 +88359,13 @@
           "_TZ3000_cehuw1lw",
           "_TZ3000_cfnprab5",
           "_TZ3000_cjrngdr3",
+          "_TZ3000_cymsnfvf",
           "_TZ3000_czuyt8lz",
           "_TZ3000_dd8wwzcy",
           "_TZ3000_dlhhrhs8",
           "_TZ3000_dlug3kbc",
           "_TZ3000_dpo1ysak",
+          "_TZ3000_ew31dmgx",
           "_TZ3000_ew3ldmgx",
           "_TZ3000_eyzb8yg3",
           "_TZ3000_fqoynhku",
@@ -86126,6 +88387,7 @@
           "_TZ3000_j1v25l17",
           "_TZ3000_jvzvulen",
           "_TZ3000_k6fvknrr",
+          "_TZ3000_kdi2o9m6",
           "_TZ3000_ksw8qtmt",
           "_TZ3000_kx0pris5",
           "_TZ3000_ky0fq4ho",
@@ -86144,6 +88406,7 @@
           "_TZ3000_oiymh3qu",
           "_TZ3000_okaz9tjs",
           "_TZ3000_pjcqjtev",
+          "_TZ3000_plyvnuf5",
           "_TZ3000_ps3dmato",
           "_TZ3000_pvlvoxvt",
           "_TZ3000_qeuvnohg",
@@ -86194,6 +88457,8 @@
           "_TZ3210_4ux0ondb",
           "_TZ3210_5CT6E7YE",
           "_TZ3210_5ct6e7ye",
+          "_TZ3210_7JNK7L3K",
+          "_TZ3210_7jnk7l3k",
           "_TZ3210_8N4DN1NE",
           "_TZ3210_8n4dn1ne",
           "_TZ3210_CEHUW1LW",
@@ -86214,6 +88479,7 @@
           "_TZ3210_urjf5u18",
           "_TZ3210_w0qqde0g",
           "_TZ3210_xzhnra8x",
+          "_TZB000_YQJAOLLC",
           "_TZE200_2USB_SOCKET",
           "_TZE200_2usb_socket",
           "_TZE200_F91MIYHJ",
@@ -86243,6 +88509,7 @@
           "_TZN3000_CFNPRAB5",
           "_TZN3000_cfnprab5",
           "_tyzb01_hlla45kx",
+          "_tyzb01_iuepbmpv",
           "_tyzb01_mtunwanm",
           "_tz3000_0zfrhq4i",
           "_tz3000_1hwjutgo",
@@ -86274,11 +88541,13 @@
           "_tz3000_cehuw1lw",
           "_tz3000_cfnprab5",
           "_tz3000_cjrngdr3",
+          "_tz3000_cymsnfvf",
           "_tz3000_czuyt8lz",
           "_tz3000_dd8wwzcy",
           "_tz3000_dlhhrhs8",
           "_tz3000_dlug3kbc",
           "_tz3000_dpo1ysak",
+          "_tz3000_ew31dmgx",
           "_tz3000_ew3ldmgx",
           "_tz3000_eyzb8yg3",
           "_tz3000_fqoynhku",
@@ -86300,6 +88569,7 @@
           "_tz3000_j1v25l17",
           "_tz3000_jvzvulen",
           "_tz3000_k6fvknrr",
+          "_tz3000_kdi2o9m6",
           "_tz3000_ksw8qtmt",
           "_tz3000_kx0pris5",
           "_tz3000_ky0fq4ho",
@@ -86318,6 +88588,7 @@
           "_tz3000_oiymh3qu",
           "_tz3000_okaz9tjs",
           "_tz3000_pjcqjtev",
+          "_tz3000_plyvnuf5",
           "_tz3000_ps3dmato",
           "_tz3000_pvlvoxvt",
           "_tz3000_qeuvnohg",
@@ -86365,6 +88636,7 @@
           "_tz3210_2uollq9d",
           "_tz3210_4ux0ondb",
           "_tz3210_5ct6e7ye",
+          "_tz3210_7jnk7l3k",
           "_tz3210_8n4dn1ne",
           "_tz3210_cehuw1lw",
           "_tz3210_ddigca5n",
@@ -86392,47 +88664,90 @@
           "_tzn3000_cfnprab5",
           "ck-bl702-swp-01(7020)",
           "ewelink",
-          "sonoff"
+          "sonoff",
+          "zbeacon"
         ],
         "productId": [
-          "TS0121",
-          "TS011F",
-          "A7Z",
           "A11Z",
-          "SP-EUC01",
-          "SP-EUC02",
+          "A7Z",
+          "CK-BL702-SWP-01(7020)",
+          "E1603/E1702/E1708",
+          "HY0104",
+          "HY0105",
+          "JZ-ZB-005",
+          "LSPA9",
+          "LUMI.PLUG.MACN01",
+          "LUMI.PLUG.MAEU01",
+          "LUMI.PLUG.MMEU01",
+          "S26R2ZB",
+          "S31 LITE ZB",
+          "S31 Lite zb",
+          "S31ZB",
+          "S40LITE",
+          "S40ZBTPB",
+          "S40ZBTPF",
+          "S40ZBTPG",
+          "S60ZBTPE",
+          "S60ZBTPF",
+          "S60ZBTPF-R2",
+          "S60ZBTPG",
+          "SA-028-1",
+          "SA-029-1",
+          "SNZB-06P",
           "SP 120",
           "SP 220",
           "SP 222",
-          "S60ZBTPF",
-          "S60ZBTPG",
-          "S60ZBTPE",
-          "S31ZB",
-          "S31 Lite zb",
-          "S26R2ZB",
-          "S40ZBTPB",
-          "LSPA9",
-          "HY0105",
-          "HY0104",
-          "JZ-ZB-005",
-          "ZBMINIL2",
-          "lumi.plug.maeu01",
-          "lumi.plug.macn01",
-          "lumi.plug.mmeu01",
-          "E1603/E1702/E1708",
-          "TRADFRI control outlet",
-          "TS0601",
-          "CK-BL702-SWP-01(7020)",
-          "S40LITE",
-          "SA-029-1",
-          "SA-028-1",
-          "Z111PL0H-1JX",
-          "SNZB-06P",
+          "SP-EUC01",
+          "SP-EUC02",
           "SPM01",
           "SPMZBR2",
-          "S40ZBTPF",
-          "S40ZBTPG",
-          "S60ZBTPF-R2"
+          "TRADFRI CONTROL OUTLET",
+          "TRADFRI control outlet",
+          "TS011F",
+          "TS0121",
+          "TS0601",
+          "TSO121",
+          "Z111PL0H-1JX",
+          "ZBMINIL2",
+          "a11z",
+          "a7z",
+          "ck-bl702-swp-01(7020)",
+          "e1603/e1702/e1708",
+          "hy0104",
+          "hy0105",
+          "jz-zb-005",
+          "lspa9",
+          "lumi.plug.macn01",
+          "lumi.plug.maeu01",
+          "lumi.plug.mmeu01",
+          "s26r2zb",
+          "s31 lite zb",
+          "s31zb",
+          "s40lite",
+          "s40zbtpb",
+          "s40zbtpf",
+          "s40zbtpg",
+          "s60zbtpe",
+          "s60zbtpf",
+          "s60zbtpf-r2",
+          "s60zbtpg",
+          "sa-028-1",
+          "sa-029-1",
+          "snzb-06p",
+          "sp 120",
+          "sp 220",
+          "sp 222",
+          "sp-euc01",
+          "sp-euc02",
+          "spm01",
+          "spmzbr2",
+          "tradfri control outlet",
+          "ts011f",
+          "ts0121",
+          "ts0601",
+          "tso121",
+          "z111pl0h-1jx",
+          "zbminil2"
         ],
         "learnmode": {
           "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
@@ -86445,7 +88760,7 @@
           "1": {
             "clusters": [
               0,
-              6
+              61184
             ]
           }
         }
@@ -86949,7 +89264,10 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "ZBEACON",
           "Zbeacon",
+          "_TZ1800_AKZVKZQQ",
+          "_TZ1800_HO6I0ZK9",
           "_TZ3000_00MK2XZY",
           "_TZ3000_00mk2xzy",
           "_TZ3000_0YXEAWJT",
@@ -86965,24 +89283,34 @@
           "_TZ3000_9HPXG80K",
           "_TZ3000_9hpxg80k",
           "_TZ3000_AIR9M6AF",
+          "_TZ3000_BR3LAUKF",
           "_TZ3000_CICWJQTH",
+          "_TZ3000_CJFMU5HE",
           "_TZ3000_G1PZICMQ",
           "_TZ3000_J0KTMUL1",
+          "_TZ3000_KZ1ANOI8",
+          "_TZ3000_MQ4WUJMP",
           "_TZ3000_MVVW8WNX",
           "_TZ3000_PL5V1YYY",
           "_TZ3000_PLYVNUF5",
+          "_TZ3000_PNZFDR9Y",
           "_TZ3000_QCDQW8NF",
           "_TZ3000_TWQCTVNA",
           "_TZ3000_UPJRXMSR",
           "_TZ3000_YUJKCHBZ",
           "_TZ3000_Z6FGD73R",
           "_TZ3000_air9m6af",
+          "_TZ3000_br3laukf",
           "_TZ3000_cicwjqth",
+          "_TZ3000_cjfmu5he",
           "_TZ3000_g1pzicmq",
           "_TZ3000_j0ktmul1",
+          "_TZ3000_kz1anoi8",
+          "_TZ3000_mq4wujmp",
           "_TZ3000_mvvw8wnx",
           "_TZ3000_pl5v1yyy",
           "_TZ3000_plyvnuf5",
+          "_TZ3000_pnzfdr9y",
           "_TZ3000_qcdqw8nf",
           "_TZ3000_twqctvna",
           "_TZ3000_upjrxmsr",
@@ -86999,12 +89327,14 @@
           "_TZ3210_BEP7CCEW",
           "_TZ3210_C7NC9W3C",
           "_TZ3210_CJRNGDR3",
+          "_TZ3210_EYMUNFFL",
           "_TZ3210_NHQKA112",
           "_TZ3210_RAQJCXO5",
           "_TZ3210_YVXJAWLT",
           "_TZ3210_bep7ccew",
           "_TZ3210_c7nc9w3c",
           "_TZ3210_cjrngdr3",
+          "_TZ3210_eymunffl",
           "_TZ3210_nhqka112",
           "_TZ3210_raqjcxo5",
           "_TZ3210_yvxjawlt",
@@ -87018,12 +89348,17 @@
           "_tz3000_5f43h46r",
           "_tz3000_9hpxg80k",
           "_tz3000_air9m6af",
+          "_tz3000_br3laukf",
           "_tz3000_cicwjqth",
+          "_tz3000_cjfmu5he",
           "_tz3000_g1pzicmq",
           "_tz3000_j0ktmul1",
+          "_tz3000_kz1anoi8",
+          "_tz3000_mq4wujmp",
           "_tz3000_mvvw8wnx",
           "_tz3000_pl5v1yyy",
           "_tz3000_plyvnuf5",
+          "_tz3000_pnzfdr9y",
           "_tz3000_qcdqw8nf",
           "_tz3000_twqctvna",
           "_tz3000_upjrxmsr",
@@ -87036,20 +89371,34 @@
           "_tz3210_bep7ccew",
           "_tz3210_c7nc9w3c",
           "_tz3210_cjrngdr3",
+          "_tz3210_eymunffl",
           "_tz3210_nhqka112",
           "_tz3210_raqjcxo5",
-          "_tz3210_yvxjawlt"
+          "_tz3210_yvxjawlt",
+          "zbeacon"
         ],
         "productId": [
-          "TS0111",
-          "TS0101",
-          "TS0601",
-          "TS011F",
           "S26R2ZB",
+          "S31 LITE ZB",
           "S31 Lite zb",
           "S40LITE",
           "S60ZBTPF",
-          "S60ZBTPG"
+          "S60ZBTPG",
+          "TS0049",
+          "TS0101",
+          "TS0111",
+          "TS011F",
+          "TS0601",
+          "s26r2zb",
+          "s31 lite zb",
+          "s40lite",
+          "s60zbtpf",
+          "s60zbtpg",
+          "ts0049",
+          "ts0101",
+          "ts0111",
+          "ts011f",
+          "ts0601"
         ],
         "learnmode": {
           "image": "/drivers/plug_smart/assets/learnmode.svg",
@@ -87062,7 +89411,7 @@
           "1": {
             "clusters": [
               0,
-              6
+              61184
             ]
           }
         }
@@ -87762,8 +90111,11 @@
           "_tze204_ruavtjnq"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_POOL",
           "TS0601_pool",
-          "TS0601"
+          "ts0601",
+          "ts0601_pool"
         ],
         "endpoints": {
           "1": {
@@ -87910,19 +90262,16 @@
           "_tze284_byzdayie"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_CLAMP",
           "TS0601_clamp",
-          "TS0601"
+          "ts0601",
+          "ts0601_clamp"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              3,
-              4,
-              5,
-              6,
-              2820,
-              1794,
               61184
             ]
           }
@@ -88152,7 +90501,10 @@
         ],
         "productId": [
           "TS0601",
-          "TS0601_meter"
+          "TS0601_METER",
+          "TS0601_meter",
+          "ts0601",
+          "ts0601_meter"
         ],
         "endpoints": {
           "1": {
@@ -88236,17 +90588,16 @@
           "_tze204_yensya2c"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_CEILING",
           "TS0601_ceiling",
-          "TS0601"
+          "ts0601",
+          "ts0601_ceiling"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              1024,
-              1280,
-              1030,
               61184
             ]
           }
@@ -88517,6 +90868,8 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
+          "ZG-204ZE",
+          "ZGAF-205L",
           "_TZ3000_AIGDDB2B",
           "_TZ3000_aigddb2b",
           "_TZ3210_FKZIHAX8",
@@ -88812,23 +91165,43 @@
           "CK-BL702-MWS-01",
           "CK-BL702-MWS-01(7016)",
           "MG1_5RZ",
+          "SNZB-06P",
           "SZLMR10",
           "TS0203",
           "TS0225",
           "TS0601",
+          "ZG-204ZE",
           "ZG-204ZH",
           "ZG-204ZK",
           "ZG-204ZL",
           "ZG-204ZM",
+          "ZG-204ZQ",
           "ZG-204ZV",
           "ZG-205Z",
-          "ZP-301Z",
-          "SNZB-06P",
-          "ZG-204ZE",
-          "ZG-204ZQ",
           "ZG-205ZL",
           "ZG-302ZL",
-          "ZG-302ZM"
+          "ZG-302ZM",
+          "ZP-301Z",
+          "ck-bl702-mws-01",
+          "ck-bl702-mws-01(7016)",
+          "mg1_5rz",
+          "snzb-06p",
+          "szlmr10",
+          "ts0203",
+          "ts0225",
+          "ts0601",
+          "zg-204ze",
+          "zg-204zh",
+          "zg-204zk",
+          "zg-204zl",
+          "zg-204zm",
+          "zg-204zq",
+          "zg-204zv",
+          "zg-205z",
+          "zg-205zl",
+          "zg-302zl",
+          "zg-302zm",
+          "zp-301z"
         ],
         "learnmode": {
           "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
@@ -88841,9 +91214,6 @@
           "1": {
             "clusters": [
               0,
-              1024,
-              1280,
-              1030,
               61184
             ]
           }
@@ -89418,16 +91788,16 @@
       ],
       "zigbee": {
         "productId": [
+          "TS0601",
+          "TS0601_RAD",
           "TS0601_rad",
-          "TS0601"
+          "ts0601",
+          "ts0601_rad"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              3,
-              513,
               61184
             ]
           }
@@ -90540,23 +92910,43 @@
           "_tze284_rv6iuyxb"
         ],
         "productId": [
-          "TV01-ZB",
-          "TV02-ZB",
-          "TRV601",
-          "TRV602",
-          "SEA801-Zigbee",
-          "eTRV0100",
-          "SPZB0001",
-          "SPZB0003",
-          "lumi.airrtc.agl001",
-          "lumi.airrtc.vrfegl01",
           "014G2461",
           "014G2463",
+          "014g2461",
+          "014g2463",
+          "ETRV0100",
+          "LUMI.AIRRTC.AGL001",
+          "LUMI.AIRRTC.VRFEGL01",
+          "SEA801-ZIGBEE",
+          "SEA801-Zigbee",
+          "SPZB0001",
+          "SPZB0003",
           "STZB402",
           "STZB403",
-          "Zen-01",
+          "TRV601",
+          "TRV602",
+          "TRVZB",
           "TS0601",
-          "TRVZB"
+          "TV01-ZB",
+          "TV02-ZB",
+          "ZEN-01",
+          "Zen-01",
+          "eTRV0100",
+          "etrv0100",
+          "lumi.airrtc.agl001",
+          "lumi.airrtc.vrfegl01",
+          "sea801-zigbee",
+          "spzb0001",
+          "spzb0003",
+          "stzb402",
+          "stzb403",
+          "trv601",
+          "trv602",
+          "trvzb",
+          "ts0601",
+          "tv01-zb",
+          "tv02-zb",
+          "zen-01"
         ],
         "learnmode": {
           "image": "/drivers/radiator_valve/assets/learnmode.svg",
@@ -90869,13 +93259,13 @@
       },
       "zigbee": {
         "productId": [
-          "TS0601"
+          "TS0601",
+          "ts0601"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              3,
               61184
             ]
           }
@@ -91102,11 +93492,17 @@
           "_tze284_iilebqoo"
         ],
         "productId": [
+          "TS0207",
+          "TS0207_RAIN",
           "TS0207_rain",
           "TS0601",
-          "TS0207",
+          "ZG-222Z",
           "ZG-223Z",
-          "ZG-222Z"
+          "ts0207",
+          "ts0207_rain",
+          "ts0601",
+          "zg-222z",
+          "zg-223z"
         ],
         "endpoints": {
           "1": {
@@ -91214,7 +93610,8 @@
           "_tz3000_u3nv1jwk"
         ],
         "productId": [
-          "TS0044"
+          "TS0044",
+          "ts0044"
         ],
         "learnmode": {
           "image": "/drivers/button_wireless_4/assets/learnmode.svg",
@@ -91686,7 +94083,8 @@
           "_tz3000_pzui3skt"
         ],
         "productId": [
-          "TS004F"
+          "TS004F",
+          "ts004f"
         ],
         "endpoints": {
           "1": {
@@ -91810,23 +94208,19 @@
         "productId": [
           "TS0041",
           "TS0043",
-          "TS004F",
           "TS0044",
-          "TS0046"
+          "TS0046",
+          "TS004F",
+          "ts0041",
+          "ts0043",
+          "ts0044",
+          "ts0046",
+          "ts004f"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              3,
-              4,
-              5,
-              6,
-              18,
-              1280,
-              1281,
-              57344,
               61184
             ]
           }
@@ -92176,7 +94570,8 @@
           "_tyzb01_bngwdjsr"
         ],
         "productId": [
-          "TS1001"
+          "TS1001",
+          "ts1001"
         ],
         "endpoints": {
           "1": {
@@ -92250,17 +94645,14 @@
           "_tz3000_tkusjmue"
         ],
         "productId": [
-          "TS0601_scene1"
+          "TS0601_SCENE1",
+          "TS0601_scene1",
+          "ts0601_scene1"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              3,
-              6,
-              4096,
-              57344,
               61184
             ]
           }
@@ -92372,19 +94764,18 @@
           "_tz3002_6ahhkwyh"
         ],
         "productId": [
+          "TS0042",
+          "TS0601_SCENE2",
           "TS0601_scene2",
           "TS0726",
-          "TS0042"
+          "ts0042",
+          "ts0601_scene2",
+          "ts0726"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              3,
-              6,
-              4096,
-              57344,
               61184
             ]
           }
@@ -92506,19 +94897,18 @@
           "_tz3002_weh1jmhg"
         ],
         "productId": [
+          "TS0043",
+          "TS0601_SCENE3",
           "TS0601_scene3",
           "TS0726",
-          "TS0043"
+          "ts0043",
+          "ts0601_scene3",
+          "ts0726"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              3,
-              6,
-              4096,
-              57344,
               61184
             ]
           }
@@ -92692,19 +95082,17 @@
           "_tze284_tgeqdjgk"
         ],
         "productId": [
+          "ERS-10TZBVK-AA",
           "TS0601",
           "ZG-101ZS",
-          "ERS-10TZBVK-AA"
+          "ers-10tzbvk-aa",
+          "ts0601",
+          "zg-101zs"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              3,
-              6,
-              4096,
-              57344,
               61184
             ]
           }
@@ -92850,17 +95238,14 @@
           "_tz3000_iszegwpd"
         ],
         "productId": [
-          "TS0601_scene6"
+          "TS0601_SCENE6",
+          "TS0601_scene6",
+          "ts0601_scene6"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              3,
-              6,
-              4096,
-              57344,
               61184
             ]
           }
@@ -92975,17 +95360,14 @@
         ],
         "productId": [
           "TS0042",
-          "TS0043"
+          "TS0043",
+          "ts0042",
+          "ts0043"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              3,
-              6,
-              4096,
-              57344,
               61184
             ]
           }
@@ -93095,18 +95477,17 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "EWELINK",
           "ewelink"
         ],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "ts0601"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              1026,
-              1029,
               61184
             ]
           }
@@ -93582,22 +95963,25 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "TUYATEC-QUN7VQ14",
           "tuyatec-qun7vq14"
         ],
         "productId": [
-          "TS0201",
-          "ZG-227Z",
           "CK-TLSR8656-SS5-01(7014)",
+          "RH3052",
+          "TS0201",
           "TY0201",
-          "RH3052"
+          "ZG-227Z",
+          "ck-tlsr8656-ss5-01(7014)",
+          "rh3052",
+          "ts0201",
+          "ty0201",
+          "zg-227z"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              1026,
-              1029,
               61184
             ]
           }
@@ -94071,7 +96455,8 @@
       "zigbee": {
         "manufacturerName": [],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "ts0601"
         ],
         "learnmode": {
           "image": "/drivers/motion_sensor/assets/learnmode.svg",
@@ -94083,7 +96468,8 @@
         "endpoints": {
           "1": {
             "clusters": [
-              0
+              0,
+              61184
             ]
           }
         }
@@ -94498,10 +96884,12 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
+          "HOBEIAN",
           "hobeian"
         ],
         "productId": [
-          "ZG-227Z"
+          "ZG-227Z",
+          "zg-227z"
         ],
         "learnmode": {
           "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
@@ -94514,10 +96902,6 @@
           "1": {
             "clusters": [
               0,
-              1,
-              1024,
-              1280,
-              1030,
               61184
             ]
           }
@@ -95121,7 +97505,9 @@
         ],
         "productId": [
           "TS0225",
-          "TS0601"
+          "TS0601",
+          "ts0225",
+          "ts0601"
         ],
         "learnmode": {
           "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
@@ -95134,9 +97520,6 @@
           "1": {
             "clusters": [
               0,
-              1024,
-              1280,
-              1030,
               61184
             ]
           }
@@ -95739,10 +98122,6 @@
           "1": {
             "clusters": [
               0,
-              1,
-              1024,
-              1280,
-              1030,
               61184
             ]
           }
@@ -95755,7 +98134,8 @@
           }
         },
         "productId": [
-          "TS0601"
+          "TS0601",
+          "ts0601"
         ]
       },
       "settings": [
@@ -96189,6 +98569,7 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
+          "HOBEIAN",
           "hobeian"
         ],
         "productId": [
@@ -96196,7 +98577,12 @@
           "TS0601",
           "ZG-204ZL",
           "ZG-204ZM",
-          "ZG-204ZV"
+          "ZG-204ZV",
+          "ts0203",
+          "ts0601",
+          "zg-204zl",
+          "zg-204zm",
+          "zg-204zv"
         ],
         "learnmode": {
           "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
@@ -96209,10 +98595,6 @@
           "1": {
             "clusters": [
               0,
-              1,
-              1024,
-              1280,
-              1030,
               61184
             ]
           }
@@ -96812,17 +99194,16 @@
           "_tze204_guvc7pdy"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_SHUTTER",
           "TS0601_shutter",
-          "TS0601"
+          "ts0601",
+          "ts0601_shutter"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              3,
-              4,
-              5,
-              258,
               61184
             ]
           }
@@ -97210,7 +99591,10 @@
         "productId": [
           "TS0216",
           "TS0219",
-          "TS0601"
+          "TS0601",
+          "ts0216",
+          "ts0219",
+          "ts0601"
         ],
         "learnmode": {
           "image": "/drivers/siren/assets/learnmode.svg",
@@ -97545,14 +99929,13 @@
           "_tze200_d0yu2xgi"
         ],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "ts0601"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              4,
-              5,
               61184
             ],
             "bindings": [
@@ -97616,14 +99999,13 @@
       "zigbee": {
         "manufacturerName": [],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "ts0601"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              4,
-              5,
               61184
             ],
             "bindings": [
@@ -97695,17 +100077,16 @@
           "_tze204_wbhaespm"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_BREAKER",
           "TS0601_breaker",
-          "TS0601"
+          "ts0601",
+          "ts0601_breaker"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              3,
-              4,
-              5,
-              6,
               61184
             ]
           }
@@ -97775,7 +100156,8 @@
       "zigbee": {
         "manufacturerName": [],
         "productId": [
-          "TS0041"
+          "TS0041",
+          "ts0041"
         ],
         "endpoints": {
           "1": {
@@ -97885,16 +100267,16 @@
           "_tze204_ckud7u2l"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_HEATER",
           "TS0601_heater",
-          "TS0601"
+          "ts0601",
+          "ts0601_heater"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              3,
-              513,
               61184
             ]
           }
@@ -97990,16 +100372,16 @@
           "_tze204_c88teujp"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_HEATCTRL",
           "TS0601_heatctrl",
-          "TS0601"
+          "ts0601",
+          "ts0601_heatctrl"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              3,
-              513,
               61184
             ]
           }
@@ -98207,8 +100589,10 @@
           "_tz3000_uri7ber7"
         ],
         "productId": [
+          "ERS-10TZBVK-AA",
           "TS004F",
-          "ERS-10TZBVK-AA"
+          "ers-10tzbvk-aa",
+          "ts004f"
         ],
         "endpoints": {
           "1": {
@@ -98350,9 +100734,12 @@
           "_tz3000_ugi8ky6u"
         ],
         "productId": [
-          "TS004F",
           "ERS-10TZBVK-AA",
-          "ZG-101ZD"
+          "TS004F",
+          "ZG-101ZD",
+          "ers-10tzbvk-aa",
+          "ts004f",
+          "zg-101zd"
         ],
         "endpoints": {
           "1": {
@@ -98489,7 +100876,8 @@
           "_tz3000_uri7ongn"
         ],
         "productId": [
-          "TS004F"
+          "TS004F",
+          "ts004f"
         ],
         "endpoints": {
           "1": {
@@ -98560,7 +100948,8 @@
       "zigbee": {
         "manufacturerName": [],
         "productId": [
-          "TS004F"
+          "TS004F",
+          "ts004f"
         ],
         "endpoints": {
           "1": {
@@ -98676,7 +101065,8 @@
           "_tz3000_qja6nq5z"
         ],
         "productId": [
-          "TS004F"
+          "TS004F",
+          "ts004f"
         ],
         "endpoints": {
           "1": {
@@ -98778,7 +101168,8 @@
           "_tze204_p3dbf6qs"
         ],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "ts0601"
         ],
         "endpoints": {
           "1": {
@@ -98844,17 +101235,16 @@
           "_tze204_hkdl5fmv"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_RCBO",
           "TS0601_rcbo",
-          "TS0601"
+          "ts0601",
+          "ts0601_rcbo"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              3,
-              4,
-              5,
-              6,
               61184
             ]
           }
@@ -98923,7 +101313,8 @@
           "_tz3000_yirp2pgd"
         ],
         "productId": [
-          "TS004F"
+          "TS004F",
+          "ts004f"
         ],
         "endpoints": {
           "1": {
@@ -99027,7 +101418,8 @@
           "_tz3000_ja5osu5g"
         ],
         "productId": [
-          "TS004F"
+          "TS004F",
+          "ts004f"
         ],
         "endpoints": {
           "1": {
@@ -99152,7 +101544,8 @@
           "_tyzb01_qm6djpta"
         ],
         "productId": [
-          "TS0215A"
+          "TS0215A",
+          "ts0215a"
         ],
         "endpoints": {
           "1": {
@@ -99313,7 +101706,8 @@
           "_tze284_rlytpmij"
         ],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "ts0601"
         ],
         "endpoints": {
           "1": {
@@ -99427,6 +101821,8 @@
           "_TYZB01_O7M83470",
           "_TYZB01_TOB46AOQ",
           "_TYZB01_WQCAC7LO",
+          "_TYZB01_dsjszp0x",
+          "_TYZB01_wqcac7lo",
           "_TYZb01_0aps0h1r",
           "_TYZb01_dsjszp0x",
           "_TYZb01_o7m83470",
@@ -99541,8 +101937,6 @@
           "1": {
             "clusters": [
               0,
-              1,
-              1280,
               61184
             ]
           }
@@ -99555,20 +101949,34 @@
           }
         },
         "productId": [
-          "TS0205",
-          "PG-S11Z",
-          "YG400A",
-          "SA12IZL",
-          "SD8SC_00.00.03.12TC",
           "GS361A-H04",
           "HS1SA",
           "HS3SA",
-          "SMSZB-120",
-          "lumi.sensor_smoke",
           "JTYJ-GD-01LM/BW",
-          "SSSQS01LM",
+          "LUMI.SENSOR_SMOKE",
           "NAS-SD02B0",
-          "TS0601"
+          "PG-S11Z",
+          "SA12IZL",
+          "SD8SC_00.00.03.12TC",
+          "SMSZB-120",
+          "SSSQS01LM",
+          "TS0205",
+          "TS0601",
+          "YG400A",
+          "gs361a-h04",
+          "hs1sa",
+          "hs3sa",
+          "jtyj-gd-01lm/bw",
+          "lumi.sensor_smoke",
+          "nas-sd02b0",
+          "pg-s11z",
+          "sa12izl",
+          "sd8sc_00.00.03.12tc",
+          "smszb-120",
+          "sssqs01lm",
+          "ts0205",
+          "ts0601",
+          "yg400a"
         ]
       },
       "settings": [
@@ -99903,6 +102311,7 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
+          "A89G12C",
           "_TZE200_2SE8EFXH",
           "_TZE200_2se8efxh",
           "_TZE200_4XSYPNEY",
@@ -99996,13 +102405,23 @@
           "_tze284_oitavov2",
           "_tze284_sgabhwa6",
           "_tze284_xc3vwx5a",
-          "a89g12c"
+          "a89g12c",
+          "_TZE200_sh8v7fhd",
+          "_TZE200_SH8V7FHD",
+          "_TZE204_sh8v7fhd",
+          "_TZE204_SH8V7FHD",
+          "_TZ3000_wzmuk9ai"
         ],
         "productId": [
-          "ZG-303Z",
+          "ARTECO",
+          "Arteco",
           "CS-201Z",
           "TS0601",
-          "Arteco"
+          "ZG-303Z",
+          "arteco",
+          "cs-201z",
+          "ts0601",
+          "zg-303z"
         ],
         "endpoints": {
           "1": {
@@ -100197,32 +102616,61 @@
       ],
       "zigbee": {
         "productId": [
+          "01MINIZB",
+          "01minizb",
+          "BASICZBR3",
+          "S26R2ZB",
+          "S31ZB",
           "TS0001",
-          "TS0011",
+          "TS0001_POWER",
+          "TS0001_SWITCH",
+          "TS0001_SWITCH_MODULE",
           "TS0001_power",
           "TS0001_switch",
           "TS0001_switch_module",
-          "TS0601",
           "TS000F",
+          "TS0011",
+          "TS0101",
+          "TS011F",
+          "TS0601",
+          "TS0726",
+          "TS4100",
+          "ZBM5-1C-120",
+          "ZBM5-2C-120",
+          "ZBM5-3C-120",
           "ZBMINI",
           "ZBMINIL2",
-          "BASICZBR3",
-          "S31ZB",
-          "S26R2ZB",
-          "01MINIZB",
-          "ZBMINIR2",
-          "ZBM5-1C-120",
-          "ZBMINIR",
           "ZBMINIL2-R2",
+          "ZBMINIR",
+          "ZBMINIR2",
           "ZBMINIR2-R2",
           "ZG-301Z",
           "ZG-302Z1",
-          "TS0101",
-          "TS4100",
-          "TS011F",
-          "ZBM5-2C-120",
-          "ZBM5-3C-120",
-          "TS0726"
+          "basiczbr3",
+          "s26r2zb",
+          "s31zb",
+          "ts0001",
+          "ts0001_power",
+          "ts0001_switch",
+          "ts0001_switch_module",
+          "ts000f",
+          "ts0011",
+          "ts0101",
+          "ts011f",
+          "ts0601",
+          "ts0726",
+          "ts4100",
+          "zbm5-1c-120",
+          "zbm5-2c-120",
+          "zbm5-3c-120",
+          "zbmini",
+          "zbminil2",
+          "zbminil2-r2",
+          "zbminir",
+          "zbminir2",
+          "zbminir2-r2",
+          "zg-301z",
+          "zg-302z1"
         ],
         "learnmode": {
           "image": "/drivers/switch_1gang/assets/learnmode.svg",
@@ -101926,16 +104374,29 @@
       "zigbee": {
         "productId": [
           "TS0002",
-          "TS0012",
+          "TS0002_POWER",
+          "TS0002_SWITCH_MODULE",
           "TS0002_power",
           "TS0002_switch_module",
-          "TS0601",
-          "ZG-302Z2",
-          "TS011F",
-          "ZG-305Z",
           "TS0003",
+          "TS0012",
           "TS0013",
-          "TS0726"
+          "TS011F",
+          "TS0601",
+          "TS0726",
+          "ZG-302Z2",
+          "ZG-305Z",
+          "ts0002",
+          "ts0002_power",
+          "ts0002_switch_module",
+          "ts0003",
+          "ts0012",
+          "ts0013",
+          "ts011f",
+          "ts0601",
+          "ts0726",
+          "zg-302z2",
+          "zg-305z"
         ],
         "learnmode": {
           "image": "/drivers/switch_2gang/assets/learnmode.svg",
@@ -102827,11 +105288,19 @@
       "zigbee": {
         "productId": [
           "TS0003",
-          "TS0013",
+          "TS0003_POWER",
+          "TS0003_SWITCH_MODULE",
           "TS0003_power",
           "TS0003_switch_module",
+          "TS0013",
           "TS0601",
-          "ZG-302Z3"
+          "ZG-302Z3",
+          "ts0003",
+          "ts0003_power",
+          "ts0003_switch_module",
+          "ts0013",
+          "ts0601",
+          "zg-302z3"
         ],
         "endpoints": {
           "1": {
@@ -103656,22 +106125,27 @@
       ],
       "zigbee": {
         "productId": [
+          "JZ-ZB-004",
           "TS0004",
-          "TS0014",
+          "TS0004_POWER",
+          "TS0004_SWITCH_MODULE",
           "TS0004_power",
           "TS0004_switch_module",
+          "TS0014",
           "TS0601",
           "TS0726",
-          "JZ-ZB-004"
+          "jz-zb-004",
+          "ts0004",
+          "ts0004_power",
+          "ts0004_switch_module",
+          "ts0014",
+          "ts0601",
+          "ts0726"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              3,
-              4,
-              5,
-              6,
               61184
             ]
           },
@@ -103923,7 +106397,14 @@
           "_tz3210_iymfxdis",
           "_tze204_xibaabmu",
           "_tze284_xibaabmu",
-          "lellki"
+          "lellki",
+          "_TZ3000_hdlpifbk",
+          "_TZ3000_excgg5kb",
+          "_TZ3000_u3oupgdy",
+          "_TZ3000_wkr3jqmr",
+          "_TZ3000_imaccztn",
+          "LELLKI",
+          "_TZ3000_mmkbptmx"
         ]
       },
       "images": {
@@ -104565,14 +107046,13 @@
           "_tze284_4ar89tr1"
         ],
         "productId": [
-          "TS0601"
+          "TS0601",
+          "ts0601"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              4,
-              5,
               61184
             ]
           }
@@ -104715,9 +107195,12 @@
       ],
       "zigbee": {
         "productId": [
-          "TS0601",
           "TS011F",
-          "TS0726"
+          "TS0601",
+          "TS0726",
+          "ts011f",
+          "ts0601",
+          "ts0726"
         ],
         "learnmode": {
           "image": "/drivers/switch_2gang/assets/learnmode.svg",
@@ -104740,12 +107223,13 @@
           "1": {
             "clusters": [
               0,
-              6
+              61184
             ]
           },
           "2": {
             "clusters": [
-              6
+              0,
+              61184
             ]
           }
         }
@@ -105351,18 +107835,14 @@
           "_tz3000_typdpbpg"
         ],
         "productId": [
-          "TS0601_sp1"
+          "TS0601_SP1",
+          "TS0601_sp1",
+          "ts0601_sp1"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              3,
-              4,
-              5,
-              6,
-              2820,
-              1794,
               61184
             ]
           }
@@ -105625,18 +108105,13 @@
           "_tz3000_zloso4jk"
         ],
         "productId": [
-          "TS0122"
+          "TS0122",
+          "ts0122"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              3,
-              4,
-              5,
-              6,
-              2820,
-              1794,
               61184
             ]
           }
@@ -105941,15 +108416,14 @@
           "_tz3218_7fiyo3kv"
         ],
         "productId": [
-          "TS0601_tempswitch"
+          "TS0601_TEMPSWITCH",
+          "TS0601_tempswitch",
+          "ts0601_tempswitch"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              1026,
-              1029,
               61184
             ]
           }
@@ -106012,7 +108486,9 @@
         ],
         "productId": [
           "TS0015",
-          "TS0601"
+          "TS0601",
+          "ts0015",
+          "ts0601"
         ],
         "learnmode": {
           "image": "/drivers/switch_wall_5gang/assets/learnmode.svg",
@@ -106025,10 +108501,6 @@
           "1": {
             "clusters": [
               0,
-              3,
-              4,
-              5,
-              6,
               61184
             ]
           },
@@ -106688,7 +109160,10 @@
         "productId": [
           "TS0016",
           "TS0601",
-          "TS0726"
+          "TS0726",
+          "ts0016",
+          "ts0601",
+          "ts0726"
         ],
         "learnmode": {
           "image": "/drivers/switch_wall_6gang/assets/learnmode.svg",
@@ -106701,10 +109176,6 @@
           "1": {
             "clusters": [
               0,
-              3,
-              4,
-              5,
-              6,
               61184
             ]
           },
@@ -107316,16 +109787,13 @@
           "_tz3000_7gang001"
         ],
         "productId": [
-          "TS0007"
+          "TS0007",
+          "ts0007"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              3,
-              4,
-              5,
-              6,
               61184
             ]
           },
@@ -107772,17 +110240,16 @@
           "_tze204_ws8g8u0b"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_8GANG",
           "TS0601_8gang",
-          "TS0601"
+          "ts0601",
+          "ts0601_8gang"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              3,
-              4,
-              5,
-              6,
               61184
             ]
           },
@@ -108115,16 +110582,14 @@
           "_tz3000_ixla93vd"
         ],
         "productId": [
-          "TS0601_wirelesssw"
+          "TS0601_WIRELESSSW",
+          "TS0601_wirelesssw",
+          "ts0601_wirelesssw"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              3,
-              6,
-              4096,
               61184
             ]
           }
@@ -108632,6 +111097,20 @@
       "zigbee": {
         "manufacturerName": [
           "HOBEIAN",
+          "TUYATEC-1G3TAWNP",
+          "TUYATEC-1UXX9CCI",
+          "TUYATEC-ABKEHQUS",
+          "TUYATEC-BFQ2I2SY",
+          "TUYATEC-G3GL6CGY",
+          "TUYATEC-GQHXIXYK",
+          "TUYATEC-HAOIUWZY",
+          "TUYATEC-OJMXEIKG",
+          "TUYATEC-OJMXEIKQ",
+          "TUYATEC-PRHS1RSD",
+          "TUYATEC-RIUJ5XZS",
+          "TUYATEC-V3UXBUXY",
+          "TUYATEC-VMGH3FXD",
+          "TUYATEC-YG5DCBFU",
           "_TZ3000_8YBE88NF",
           "_TZ3000_8ybe88nf",
           "_TZ3000_BGUSER20",
@@ -108650,6 +111129,7 @@
           "_tz3000_fie1dpkm",
           "_tz3000_i8jfiezr",
           "_tz3000_jnhu1llv",
+          "hobeian",
           "tuyatec-1g3tawnp",
           "tuyatec-1uxx9cci",
           "tuyatec-abkehqus",
@@ -108666,20 +111146,23 @@
           "tuyatec-yg5dcbfu"
         ],
         "productId": [
-          "TY0201",
-          "SNTZ003",
           "CK-TLSR8656-SS5-01(7014)",
-          "ZG-227Z",
           "RH3052",
-          "TS0201"
+          "SNTZ003",
+          "TS0201",
+          "TY0201",
+          "ZG-227Z",
+          "ck-tlsr8656-ss5-01(7014)",
+          "rh3052",
+          "sntz003",
+          "ts0201",
+          "ty0201",
+          "zg-227z"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              1026,
-              1029,
               61184
             ]
           }
@@ -108767,16 +111250,16 @@
           "_tze200_zion52ef"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_THERMO4CH",
           "TS0601_thermo4ch",
-          "TS0601"
+          "ts0601",
+          "ts0601_thermo4ch"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              3,
-              513,
               61184
             ]
           }
@@ -109059,8 +111542,11 @@
           "_tze284_znlqjmih"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_THERMO",
           "TS0601_thermo",
-          "TS0601"
+          "ts0601",
+          "ts0601_thermo"
         ],
         "endpoints": {
           "1": {
@@ -109112,12 +111598,27 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "LIDL LIVARNO",
+          "NOUS",
+          "TS",
+          "TUYATEC",
+          "_TY",
           "_TYST",
           "_TYSt",
           "_TYZB",
           "_TYZb",
+          "_TZ",
+          "_TZB",
+          "_TZC",
           "_TZE",
+          "_TZF",
+          "_TZH",
+          "_TZJ",
+          "_TZL",
           "_TZN",
+          "_TZQ",
+          "_TZS",
+          "_TZW",
           "_ty",
           "_tyst",
           "_tyzb",
@@ -109139,6 +111640,7 @@
           "tuyatec"
         ],
         "productId": [
+          "Q9MPFHW",
           "TS0001",
           "TS0002",
           "TS0003",
@@ -109206,7 +111708,74 @@
           "TS110E",
           "TS110F",
           "TS130F",
-          "q9mpfhw"
+          "q9mpfhw",
+          "ts0001",
+          "ts0002",
+          "ts0003",
+          "ts0004",
+          "ts0005",
+          "ts0006",
+          "ts0011",
+          "ts0012",
+          "ts0013",
+          "ts0014",
+          "ts0015",
+          "ts0041",
+          "ts0042",
+          "ts0043",
+          "ts0044",
+          "ts0045",
+          "ts0046",
+          "ts0047",
+          "ts0048",
+          "ts004f",
+          "ts0101",
+          "ts0111",
+          "ts011f",
+          "ts0121",
+          "ts0201",
+          "ts0203",
+          "ts0204",
+          "ts0205",
+          "ts0206",
+          "ts0207",
+          "ts0208",
+          "ts0209",
+          "ts0210",
+          "ts0211",
+          "ts0212",
+          "ts0215",
+          "ts0215a",
+          "ts0216",
+          "ts0216a",
+          "ts0218",
+          "ts0222",
+          "ts0225",
+          "ts0301",
+          "ts0302",
+          "ts0303",
+          "ts0304",
+          "ts0401",
+          "ts0402",
+          "ts0501",
+          "ts0501a",
+          "ts0501b",
+          "ts0502",
+          "ts0502a",
+          "ts0502b",
+          "ts0503",
+          "ts0503a",
+          "ts0503b",
+          "ts0504",
+          "ts0504a",
+          "ts0504b",
+          "ts0505",
+          "ts0505a",
+          "ts0505b",
+          "ts0601",
+          "ts110e",
+          "ts110f",
+          "ts130f"
         ],
         "endpoints": {
           "1": {
@@ -109453,22 +112022,18 @@
           "_tz3000_cfv2uyxe"
         ],
         "productId": [
+          "TS0002",
           "TS0207",
+          "TS0601_REPEATER",
           "TS0601_repeater",
-          "TS0002"
+          "ts0002",
+          "ts0207",
+          "ts0601_repeater"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              3,
-              4,
-              5,
-              6,
-              1794,
-              2820,
-              57344,
-              57345,
               61184
             ]
           },
@@ -109680,7 +112245,8 @@
           "_tz3000_mw1pqqqt"
         ],
         "productId": [
-          "TS0003"
+          "TS0003",
+          "ts0003"
         ],
         "endpoints": {
           "1": {
@@ -109904,6 +112470,7 @@
       "zigbee": {
         "manufacturerName": [
           "_TYZB01_VKWRYFDR",
+          "_TYZB01_vkwryfdr",
           "_TYZb01_vkwryfdr",
           "_TZ3000_8KCQDNGY",
           "_TZ3000_8kcqdngy",
@@ -109917,6 +112484,9 @@
           "_TZ3000_ko6v90pg",
           "_TZ3000_qyolrmc9",
           "_TZ3000_u5u4caho",
+          "_TZB210_2DP1BPQQ",
+          "_TZB210_HBEJZGPJ",
+          "_TZB210_WLBHVABF",
           "_TZE200_BSEED2G",
           "_TZE200_bseed2g",
           "_TZE204_BSEED3G",
@@ -109939,18 +112509,14 @@
         ],
         "productId": [
           "TS0115",
-          "TS0601"
+          "TS0601",
+          "ts0115",
+          "ts0601"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              3,
-              4,
-              5,
-              6,
-              2820,
-              1794,
               61184
             ]
           }
@@ -110574,9 +113140,13 @@
           "_tze284_v5xjyphj"
         ],
         "productId": [
-          "TS0601_irrigation",
+          "TS0049",
           "TS0601",
-          "TS0049"
+          "TS0601_IRRIGATION",
+          "TS0601_irrigation",
+          "ts0049",
+          "ts0601",
+          "ts0601_irrigation"
         ],
         "endpoints": {
           "1": {
@@ -110641,9 +113211,13 @@
           "_tze200_vrjkcam9"
         ],
         "productId": [
-          "TS0601_valve",
+          "TS0001",
           "TS0601",
-          "TS0001"
+          "TS0601_VALVE",
+          "TS0601_valve",
+          "ts0001",
+          "ts0601",
+          "ts0601_valve"
         ],
         "endpoints": {
           "1": {
@@ -110778,10 +113352,16 @@
         "productId": [
           "TS0209",
           "TS0210",
-          "ZG-102ZM",
           "TS0601",
+          "ZG-102ZM",
+          "ZG-103Z",
           "ZG-103ZL",
-          "ZG-103Z"
+          "ts0209",
+          "ts0210",
+          "ts0601",
+          "zg-102zm",
+          "zg-103z",
+          "zg-103zl"
         ],
         "endpoints": {
           "1": {
@@ -110849,7 +113429,8 @@
           "_tz3000_wptayaqr"
         ],
         "productId": [
-          "TS130F"
+          "TS130F",
+          "ts130f"
         ],
         "endpoints": {
           "1": {
@@ -110915,22 +113496,27 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "_TZB210_G01IE5WU",
+          "_TZB210_ZXBTUB8R",
           "_tzb210_g01ie5wu",
           "_tzb210_zxbtub8r"
         ],
         "productId": [
-          "TS004F",
-          "TS0501B",
+          "EDM-1ZBA-EU",
           "TRI-C1ZR",
           "TRI-K1ZR",
-          "EDM-1ZBA-EU"
+          "TS004F",
+          "TS0501B",
+          "edm-1zba-eu",
+          "tri-c1zr",
+          "tri-k1zr",
+          "ts004f",
+          "ts0501b"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              4,
-              5,
               61184
             ]
           }
@@ -111131,7 +113717,8 @@
           "_tz3000_tk3s5tyg"
         ],
         "productId": [
-          "TS0041"
+          "TS0041",
+          "ts0041"
         ],
         "endpoints": {
           "1": {
@@ -111296,7 +113883,8 @@
           "_tz3400_keyjhapk"
         ],
         "productId": [
-          "TS0042"
+          "TS0042",
+          "ts0042"
         ],
         "endpoints": {
           "1": {
@@ -111405,7 +113993,8 @@
           "_tz3000_rrjr1q0u"
         ],
         "productId": [
-          "TS0043"
+          "TS0043",
+          "ts0043"
         ],
         "endpoints": {
           "1": {
@@ -111547,7 +114136,8 @@
       "zigbee": {
         "manufacturerName": [],
         "productId": [
-          "TS0044"
+          "TS0044",
+          "ts0044"
         ],
         "endpoints": {
           "1": {
@@ -111701,7 +114291,8 @@
       "zigbee": {
         "manufacturerName": [],
         "productId": [
-          "TS004F"
+          "TS004F",
+          "ts004f"
         ],
         "endpoints": {
           "1": {
@@ -111840,7 +114431,8 @@
       "zigbee": {
         "manufacturerName": [],
         "productId": [
-          "TS0044"
+          "TS0044",
+          "ts0044"
         ],
         "endpoints": {
           "1": {
@@ -111997,7 +114589,8 @@
       "zigbee": {
         "manufacturerName": [],
         "productId": [
-          "TS0046"
+          "TS0046",
+          "ts0046"
         ],
         "endpoints": {
           "1": {
@@ -112200,7 +114793,9 @@
         ],
         "productId": [
           "TS0001",
-          "TS0011"
+          "TS0011",
+          "ts0001",
+          "ts0011"
         ],
         "endpoints": {
           "1": {
@@ -112377,7 +114972,10 @@
         "productId": [
           "TS0002",
           "TS0012",
-          "TS0042"
+          "TS0042",
+          "ts0002",
+          "ts0012",
+          "ts0042"
         ],
         "endpoints": {
           "1": {
@@ -112734,7 +115332,10 @@
         "productId": [
           "TS0003",
           "TS0013",
-          "TS0043"
+          "TS0043",
+          "ts0003",
+          "ts0013",
+          "ts0043"
         ],
         "endpoints": {
           "1": {
@@ -113048,7 +115649,8 @@
           "_tz3002_vaq2bfcu"
         ],
         "productId": [
-          "TS0726"
+          "TS0726",
+          "ts0726"
         ],
         "endpoints": {
           "1": {
@@ -113326,6 +115928,10 @@
       "zigbee": {
         "manufacturerName": [
           "HOBEIAN",
+          "TUYATEC-3TIPNSRX",
+          "TUYATEC-BDUZ1XXP",
+          "TUYATEC-H4WNRTCK",
+          "TUYATEC-KTEV3UWQ",
           "_TYST11_QQ9MPFHW",
           "_TYSt11_qq9mpfhw",
           "_TYZB01_O63SSAAH",
@@ -113470,32 +116076,57 @@
           "_tze284_2qx7sivb",
           "_tze284_8sejxcue",
           "_tze284_aghfucwi",
+          "hobeian",
           "tuyatec-3tipnsrx",
           "tuyatec-bduz1xxp",
           "tuyatec-h4wnrtck",
           "tuyatec-ktev3uwq"
         ],
         "productId": [
-          "TS0207",
-          "q9mpfhw",
-          "ZG-222Z",
-          "ZG-223Z",
+          "3315-S",
+          "3315-SEU",
+          "3315-Seu",
+          "3315-s",
+          "3315-seu",
+          "CK-TLSR8656-SS5-01(7019)",
+          "HS1WL",
           "LS21001",
-          "_TZ3000_eit6l5",
-          "_TZ3000_k4ej3ww2",
-          "_TZ3000_kyb656no",
-          "lumi.sensor_wleak.aq1",
+          "LUMI.SENSOR_WLEAK.AQ1",
+          "Q9MPFHW",
           "SJCGQ11LM",
           "SJCGQ12LM",
           "SJCGQ13LM",
-          "HS1WL",
           "SNZB-05",
-          "3315-S",
-          "3315-Seu",
-          "TS0601",
-          "SQ510A",
           "SNZB-05P",
-          "CK-TLSR8656-SS5-01(7019)"
+          "SQ510A",
+          "TS0207",
+          "TS0601",
+          "ZG-222Z",
+          "ZG-223Z",
+          "_TZ3000_EIT6L5",
+          "_TZ3000_K4EJ3WW2",
+          "_TZ3000_KYB656NO",
+          "_TZ3000_eit6l5",
+          "_TZ3000_k4ej3ww2",
+          "_TZ3000_kyb656no",
+          "_tz3000_eit6l5",
+          "_tz3000_k4ej3ww2",
+          "_tz3000_kyb656no",
+          "ck-tlsr8656-ss5-01(7019)",
+          "hs1wl",
+          "ls21001",
+          "lumi.sensor_wleak.aq1",
+          "q9mpfhw",
+          "sjcgq11lm",
+          "sjcgq12lm",
+          "sjcgq13lm",
+          "snzb-05",
+          "snzb-05p",
+          "sq510a",
+          "ts0207",
+          "ts0601",
+          "zg-222z",
+          "zg-223z"
         ],
         "learnmode": {
           "image": "/drivers/water_leak_sensor/assets/learnmode.svg",
@@ -113899,7 +116530,10 @@
         ],
         "productId": [
           "TS0601",
-          "TS0601_tank"
+          "TS0601_TANK",
+          "TS0601_tank",
+          "ts0601",
+          "ts0601_tank"
         ],
         "endpoints": {
           "1": {
@@ -114090,7 +116724,8 @@
           "_tz3290_ixd9mvv4"
         ],
         "productId": [
-          "TS0049"
+          "TS0049",
+          "ts0049"
         ],
         "endpoints": {
           "1": {
@@ -114216,13 +116851,21 @@
           }
         },
         "productId": [
-          "TS0601_watervalve",
-          "TS0601",
+          "SWV-ZFE",
+          "SWV-ZFU",
           "SWV-ZN",
           "SWV-ZNE",
-          "SWV-ZFE",
           "SWV-ZNU",
-          "SWV-ZFU"
+          "TS0601",
+          "TS0601_WATERVALVE",
+          "TS0601_watervalve",
+          "swv-zfe",
+          "swv-zfu",
+          "swv-zn",
+          "swv-zne",
+          "swv-znu",
+          "ts0601",
+          "ts0601_watervalve"
         ],
         "endpoints": {
           "1": {
@@ -114539,16 +117182,16 @@
           "_tze200_wlcyxdky"
         ],
         "productId": [
+          "TS0601",
+          "TS0601_WEATHER",
           "TS0601_weather",
-          "TS0601"
+          "ts0601",
+          "ts0601_weather"
         ],
         "endpoints": {
           "1": {
             "clusters": [
               0,
-              1,
-              1026,
-              1029,
               61184
             ]
           }
@@ -120917,7 +123560,8 @@
           "_tz3000_wlquqiiz"
         ],
         "productId": [
-          "TS0207"
+          "TS0207",
+          "ts0207"
         ],
         "endpoints": {
           "1": {

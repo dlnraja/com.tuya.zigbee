@@ -151,7 +151,17 @@ class SoilSensorDevice extends TuyaHybridDevice {
       106: { capability: null, setting: 'illuminance_calibration', min: -1000, max: 1000 },
       107: { capability: null, setting: 'temperature_calibration', min: -20, max: 20 },
       110: { capability: null, setting: 'soil_warning', min: 0, max: 100 },
-      111: { capability: 'alarm_water', transform: (v) => v === 1 },
+      111: { 
+        capability: 'measure_humidity.soil', 
+        divisor: 1,
+        // v6.3.1: _TZE200_npj9bug3 uses DP 111 for moisture (%). 
+        // For other devices, DP 111 is alarm_water (bool).
+        transform: (v) => {
+          const mfr = this.getSetting?.('zb_manufacturer_name') || '';
+          if (mfr.includes('npj9bug3')) return v;
+          return v === 1; // Fallback to alarm_water
+        }
+      },
       112: { capability: 'measure_conductivity', divisor: 1 }, // soil fertility uS/cm
       113: { capability: null, setting: 'soil_fertility_calibration', min: -1000, max: 1000 },
       114: { capability: null, setting: 'soil_fertility_warning_setting', min: 0, max: 5000 },
@@ -367,6 +377,17 @@ class SoilSensorDevice extends TuyaHybridDevice {
       return;
     }
     
+    if (dp === 111) {
+      const mfr = this.getSetting?.('zb_manufacturer_name') || '';
+      if (mfr.includes('npj9bug3')) {
+        this.log(`[SOIL] 🌱 SOIL MOISTURE DP111 = ${parsedValue}% [npj9bug3 specific]`);
+        this._safeSetCapability('measure_humidity.soil', parseFloat(parsedValue));
+      } else {
+        this.log(`[SOIL] 💧 WATER SHORTAGE DP111 = ${parsedValue} [bool fallback]`);
+        this._safeSetCapability('alarm_water', parsedValue === 1);
+      }
+      return;
+    }
     if (dp === 101) {
       this.log(`[SOIL] ☁️ AIR HUMIDITY DP101 = ${parsedValue}%`);
       this._safeSetCapability('measure_humidity', parseFloat(parsedValue));
