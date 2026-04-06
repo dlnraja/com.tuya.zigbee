@@ -11,12 +11,13 @@ if (!oldSha) {
 
 try {
   // Get all driver.compose.json files modified
-  const diffCmd = `git diff --name-only ${oldSha} HEAD | grep "driver.compose.json"`;
+  const diffCmd = `git diff --name-only ${oldSha} HEAD`;
   let files = [];
   try {
-    files = execSync(diffCmd, { stdio: ['pipe', 'pipe', 'ignore'] }).toString().trim().split('\n').filter(Boolean);
+    const allFiles = execSync(diffCmd, { stdio: ['pipe', 'pipe', 'ignore'] }).toString().trim().split('\n').filter(Boolean);
+    files = allFiles.filter(f => f.includes('driver.compose.json'));
   } catch (e) {
-    // grep returns 1 if no match
+    // git failed or no diff
   }
 
   const addedDevices = [];
