@@ -1,4 +1,7 @@
 {
+  "7.0.5": {
+    "en": "Fixed incorrect sensor and energy readings on WiFi Tuya devices by adding automatic divisor and multiplier resolution to the datapoint mapping engine."
+  },
   "7.0.4": {
     "en": "Universal Tuya Zigbee app v7.0.4 adds 3 new fingerprints and improves driver support."
   },
@@ -56,10 +59,7 @@
   "5.11.198": {
     "en": "Added support for 3 new Tuya device fingerprints, including the Nedis SmartLife Radiator Control. Driver matrix updated with validated mappings."
   },
-  "5.11.197": {
-    "en": "Added support for 3 new Tuya device fingerprints and integrated 2,141 upstream device profiles to improve automatic pairing and driver matching."
-  },
-  "7.0.5": {
-    "en": "v7.0.4: Fixed issues with Hybrid Energy for MAX Tuya Local Deployment., Added 3 new fingerprints for enhanced device compatibility., Updated 221 drivers to support the latest device capabilities."
+  "7.0.6": {
+    "en": "v7.0.5: Fixed incorrect sensor and energy readings on WiFi Tuya devices by implementing automatic divisor/multiplier resolution in the DP mapping engine."
   }
 }

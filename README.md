@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v7.0.5 |
+| **App Version** | v7.0.6 |
 | **Device Fingerprints** | 12,852+ |
 | **Unique Product IDs** | 1217 |
 | **Drivers** | 221 (171 Zigbee + 50 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v7.0.5** | v7.0.4: Fixed issues with Hybrid Energy for MAX Tuya Local Deployment., Added 3 new fingerprints for enhanced device ... |
+| **v7.0.6** | v7.0.5: Fixed incorrect sensor and energy readings on WiFi Tuya devices by implementing automatic divisor/multiplier ... |
+| **v7.0.5** | Fixed incorrect sensor and energy readings on WiFi Tuya devices by adding automatic divisor and multiplier resolution... |
 | **v7.0.4** | Universal Tuya Zigbee app v7.0.4 adds 3 new fingerprints and improves driver support. |
 | **v7.0.3** | Universal Tuya Zigbee app v7.0.3 adds new device support and fixes bugs affecting users. |
 | **v7.0.2** | Fixed SDK v3 flow card crashes, resolved duplicate flow IDs, and patched unlinked gang capabilities on TS0003 switche... |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.206** | v5.11.205: Added 3 new fingerprints to improve device compatibility., Integrated 3 new fingerprints for better suppor... |
 | **v5.11.205** | Added 3 new fingerprints for enhanced device compatibility in Universal Tuya Zigbee app v5.11.205. |
 | **v5.11.204** | Updated Universal Tuya Zigbee app to v5.11.204 with . Added support for Full State Card discovery. |
-| **v5.11.203** | Added universal support for all 4 Zigbee SOS reporting standards to emergency buttons, improving cross-brand compatib... |
 
 <!-- CHANGELOG_END -->
 
