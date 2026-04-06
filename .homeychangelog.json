@@ -2,6 +2,9 @@
   "5.12.0": {
     "en": "Major stabilization release: Integrated Parallel Bot Handler for faster maintenance, fixed eWeLink/SONOFF plug support (Issue #194), and resolved multi-gang capability mapping bugs."
   },
+  "5.11.206": {
+    "en": "Added support for TS110E device and fixed stability issues."
+  },
   "5.11.205": {
     "en": "Added 3 new fingerprints for enhanced device compatibility in Universal Tuya Zigbee app v5.11.205."
   },
@@ -56,13 +59,7 @@
   "5.11.188": {
     "en": "Community sync: 27 new fingerprints added from Z2M/ZHA/forum/JohanBendz. Minor and forum improvements. Total: ."
   },
-  "5.11.187": {
-    "en": "Mntenance release. No user-facing changes."
-  },
-  "5.11.186": {
-    "en": "Universal Tuya Zigbee app v5.11.186 adds 681 new fingerprints and updates 193 drivers."
-  },
-  "5.11.206": {
-    "en": "v5.11.205: Added 3 new fingerprints to improve device compatibility., Integrated 3 new fingerprints for better support of Zigbee devices."
+  "5.12.1": {
+    "en": "v5.11.206: Fixed stability issues with _safeSetCapability., Added support for TS110E device., Updated 221 drivers and 3 fingerprints."
   }
 }

@@ -4,7 +4,19 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.205] - 2026-04-05
+## [5.11.206] - 2026-04-06
+
+### Bug Fixes
+- Fixed stability issues with _safeSetCapability.
+
+### New Features
+- Added support for TS110E device.
+
+### Improvements
+- Updated 221 drivers and 3 fingerprints.
+---
+
+ [5.11.205] - 2026-04-05
 
 ### Bug Fixes
 - Added 3 new fingerprints to improve device compatibility.
