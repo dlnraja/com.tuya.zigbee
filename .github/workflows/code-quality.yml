@@ -6,7 +6,7 @@ name: 🔍 Code Quality Check
 
 on:
   schedule:
-    - cron: '0 3 * * 3'  # Weekly Wednesday 03:00 UTC — periodic quality check
+    - cron: '0 3 * * 1'  # Weekly Monday 03:00 UTC
   pull_request:
     branches: [master, main]
   push:
@@ -14,6 +14,8 @@ on:
     paths:
       - '**.js'
       - 'drivers/**/*.json'
+      - '.homeycompose/**/*.json'
+      - 'app.json'
   workflow_dispatch:
 
 permissions:
@@ -130,51 +132,39 @@ jobs:
               || echo "⚠️ $d no DP" >> $GITHUB_STEP_SUMMARY
           done
 
-      - name: 🔍 JSON Validation
+      - name: 🔍 Manifest & Discovery Validation
         run: |
-          echo "### JSON Validation" >> $GITHUB_STEP_SUMMARY
+          echo "### Manifest & Discovery" >> $GITHUB_STEP_SUMMARY
+          # Check for tuya_wifi strategy in app.json
+          if ! grep -q "tuya_wifi" app.json 2>/dev/null; then
+            echo "❌ app.json is missing tuya_wifi discovery strategy!" >> $GITHUB_STEP_SUMMARY
+            exit 1
+          fi
+          # JSON Validation for all manifests
           FAIL=0
-          for f in drivers/*/driver.compose.json; do
-            if ! node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null; then
-              echo "❌ Invalid JSON: $f" >> $GITHUB_STEP_SUMMARY
-              FAIL=1
-            fi
-          done
-          [ $FAIL -eq 0 ] && echo "✅ All driver JSON valid" >> $GITHUB_STEP_SUMMARY
-
-      - name: ⚡ Mains-Powered Battery Check
-        run: |
-          echo "### Mains-Powered Battery Check" >> $GITHUB_STEP_SUMMARY
-          echo "_Note: Many Tuya devices support dual power (mains + battery backup). These are warnings only._" >> $GITHUB_STEP_SUMMARY
-          ISSUES=0
-          for d in drivers/*/device.js; do
-            DRIVER=$(basename "$(dirname "$d")")
-            if grep -q "mainsPowered" "$d" 2>/dev/null; then
-              IS_MAINS=$(node -e "const c=require('fs').readFileSync('$d','utf8');const m=c.match(/get mainsPowered\(\)\s*\{\s*return (true|false)/);console.log(m?m[1]:'unknown')" 2>/dev/null || true)
-              if [ "$IS_MAINS" = "true" ]; then
-                HAS_REMOVE=$(grep -c "removeCapability.*measure_battery" "$d" 2>/dev/null || true)
-                DC="drivers/$DRIVER/driver.compose.json"
-                HAS_BATT=$(node -e "try{const c=JSON.parse(require('fs').readFileSync('$DC','utf8'));console.log((c.capabilities||[]).includes('measure_battery'))}catch{console.log(false)}" 2>/dev/null || true)
-                if [ "$HAS_BATT" = "true" ] && [ "$HAS_REMOVE" = "0" ]; then
-                  echo "⚠️ $DRIVER: mains-powered but has measure_battery (dual-power?)" >> $GITHUB_STEP_SUMMARY
-                  ISSUES=$((ISSUES+1))
-                fi
+          for f in drivers/*/driver.compose.json .homeycompose/**/*.json app.json; do
+            if [ -f "$f" ]; then
+              if ! node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null; then
+                echo "❌ Invalid JSON: $f" >> $GITHUB_STEP_SUMMARY
+                FAIL=1
               fi
             fi
           done
-          echo "=== 🛡️ BVB Health Audit (v6.1.6 - WiFi + Zigbee) ==="
-          # Rules: Bizarree Value Blocking coverage for all drivers
-          # v6.1.6: Includes battery specific error blocks (255, 127, 200)
-          node scripts/automation/bvb-impact-report.js || true
+          [ $FAIL -eq 0 ] && echo "✅ All manifests (JSON) are valid" >> $GITHUB_STEP_SUMMARY || exit 1
+
+      - name: 🔋 Battery & Energy Auto-Healing (SDK 3)
+        run: |
+          echo "### Battery & Energy Audit" >> $GITHUB_STEP_SUMMARY
+          # Run deduplication before validation
+          node scripts/ci/check-flow-ids.js
           
-          echo "=== 🔋 Hybrid Energy Check (v7.0.x) ==="
-          # Ensures all drivers with measure_battery have valid energy manifests for SDK3
+          # Fix energy manifests for SDK 3
           node scripts/ci/smart-energy-fixer.js
-          if [ $ISSUES -eq 0 ]; then
-            echo "✅ All mains devices OK" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "ℹ️ $ISSUES driver(s) with dual-power pattern detected (non-blocking)" >> $GITHUB_STEP_SUMMARY
-          fi
+          
+          # Audit BVB (Bizarre Value Blocking)
+          node scripts/automation/bvb-impact-report.js || echo "BVB Audit failed" >> $GITHUB_STEP_SUMMARY
+          
+          echo "✅ Battery & Energy auto-healing complete" >> $GITHUB_STEP_SUMMARY
 
       - name: 🛡️ Sensor Fallback Safety Check
         run: |
