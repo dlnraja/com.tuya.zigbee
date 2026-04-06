@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "5.12.2",
+  "version": "5.12.3",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -62619,8 +62619,10 @@
     {
       "name": {
         "en": "Bulb Rgb Led Hybrid",
-        "nl": "Bulb Rgb Led Hybrid",
-        "fr": "Bulb Rgb Led Hybrid"
+        "nl": "Bulb Rgb Led Hybride",
+        "fr": "Ampoule Rgb Led Hybride",
+        "de": "RGB-LED-Hybridlampe",
+        "es": "Bombilla Rgb Led Híbrida"
       },
       "class": "light",
       "capabilities": [
@@ -69126,8 +69128,10 @@
     {
       "name": {
         "en": "Button Wireless Smart Hybrid",
-        "nl": "Button Wireless Smart Hybrid",
-        "fr": "Button Wireless Smart Hybrid"
+        "nl": "Draadloze Slimme Hybride Knop",
+        "fr": "Bouton Intelligent Hybride Sans Fil",
+        "de": "Drahtloser Intelligenter Hybridknopf",
+        "es": "Botón Híbrido Inteligente Inalámbrico"
       },
       "class": "sensor",
       "capabilities": [
@@ -74337,8 +74341,10 @@
     {
       "name": {
         "en": "Curtain Motor Shutter Hybrid",
-        "nl": "Curtain Motor Shutter Hybrid",
-        "fr": "Curtain Motor Shutter Hybrid"
+        "nl": "Hybride motor voor gordijnen en rolluiken",
+        "fr": "Moteur hybride pour rideaux et volets",
+        "de": "Hybrider Motor für Vorhänge und Rollläden",
+        "es": "Motor híbrido para cortinas y persianas"
       },
       "class": "windowcoverings",
       "capabilities": [
@@ -74977,8 +74983,10 @@
     {
       "name": {
         "en": "Curtain Motor Wall Hybrid",
-        "nl": "Curtain Motor Wall Hybrid",
-        "fr": "Curtain Motor Wall Hybrid"
+        "nl": "Hybride wandgordijnmotor",
+        "fr": "Moteur de rideau mural hybride",
+        "de": "Hybrider Wandvorhangmotor",
+        "es": "Motor de cortina mural híbrido"
       },
       "class": "windowcoverings",
       "capabilities": [
@@ -75400,8 +75408,10 @@
     {
       "name": {
         "en": "Device Floor Heating Hybrid",
-        "nl": "Device Floor Heating Hybrid",
-        "fr": "Device Floor Heating Hybrid"
+        "nl": "Hybride vloerverwarming",
+        "fr": "Chauffage de sol hybride",
+        "de": "Hybrid Fußbodenheizung",
+        "es": "Calefacción por suelo radiante híbrida"
       },
       "class": "thermostat",
       "capabilities": [
@@ -75500,8 +75510,10 @@
     {
       "name": {
         "en": "Device Floor Heating Thermostat Hybrid",
-        "nl": "Device Floor Heating Thermostat Hybrid",
-        "fr": "Device Floor Heating Thermostat Hybrid"
+        "nl": "Hybride thermostaat voor vloerverwarming",
+        "fr": "Thermostat hybride pour chauffage au sol",
+        "de": "Hybrider Thermostat für Fußbodenheizung",
+        "es": "Termostato híbrido para calefacción por suelo radiante"
       },
       "class": "thermostat",
       "capabilities": [
@@ -75596,8 +75608,10 @@
     {
       "name": {
         "en": "Device Generic Tuya Universal Hybrid",
-        "nl": "Device Generic Tuya Universal Hybrid",
-        "fr": "Device Generic Tuya Universal Hybrid"
+        "nl": "Algemeen Tuya Universeel Hybride Apparaat",
+        "fr": "Appareil Générique Tuya Universel Hybride",
+        "de": "Gerät Generic Tuya Universal Hybrid",
+        "es": "Dispositivo Genérico Tuya Universal Híbrido"
       },
       "class": "other",
       "images": {
@@ -75775,8 +75789,10 @@
     {
       "name": {
         "en": "Device Radiator Valve Hybrid",
-        "nl": "Device Radiator Valve Hybrid",
-        "fr": "Device Radiator Valve Hybrid"
+        "nl": "Hybride Radiatorkraan",
+        "fr": "Vanne de Radiateur Hybride",
+        "de": "Hybrid-Radiatorventil",
+        "es": "Válvula de Radiador Híbrida"
       },
       "class": "thermostat",
       "capabilities": [
@@ -76093,8 +76109,10 @@
     {
       "name": {
         "en": "Device Radiator Valve Smart Hybrid",
-        "nl": "Device Radiator Valve Smart Hybrid",
-        "fr": "Device Radiator Valve Smart Hybrid"
+        "nl": "Slimme Hybride Radiatorkraan",
+        "fr": "Vanne de Radiateur Intelligente Hybride",
+        "de": "Intelligentes Hybrid-Radiatorventil",
+        "es": "Válvula de Radiador Inteligente Híbrida"
       },
       "class": "thermostat",
       "capabilities": [
@@ -76635,8 +76653,10 @@
     {
       "name": {
         "en": "Dimmer Dual Channel Hybrid",
-        "nl": "Dimmer Dual Channel Hybrid",
-        "fr": "Dimmer Dual Channel Hybrid"
+        "nl": "Dimmer Dubbel Kanaal Hybride",
+        "fr": "Variateur à Double Canal Hybride",
+        "de": "Dimmer Dual-Kanal Hybrid",
+        "es": "Atenuador de Doble Canal Híbrido"
       },
       "class": "light",
       "capabilities": [

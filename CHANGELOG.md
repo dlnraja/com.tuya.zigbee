@@ -4,7 +4,17 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.12.1] - 2026-04-06
+## [5.12.2] - 2026-04-06
+
+### Bug Fixes
+- Fixed energy multiplier for device _TZ3000_wzmuk9ai.
+- Resolved connection issues for soil sensors and LCD sensors, adding new fingerprints.
+
+### New Features
+- Added support for new device variants, enhancing compatibility with additional Zigbee devices.
+---
+
+ [5.12.1] - 2026-04-06
 
 ### Bug Fixes
 - Fixed energy multiplier for device _TZ3000_wzmuk9ai.
