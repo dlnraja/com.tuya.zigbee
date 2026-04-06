@@ -36,7 +36,7 @@ class SwitchWirelessDevice extends HybridSwitchBase {
   _handleDP(dp, value) {
     if (dp === 1) {
       const boolVal = value === 1 || value === true;
-      this.setCapabilityValue('onoff', boolVal).catch(() => {});
+      this._safeSetCapability('onoff', boolVal).catch(() => {});
       const cardId = boolVal ? 'switch_wireless_onoff_true' : 'switch_wireless_onoff_false';
       try { this.homey.flow.getTriggerCard().trigger(this {}, {}).catch(() => {}); } catch (e) { /* */ }
       return;

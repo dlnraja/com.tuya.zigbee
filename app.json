@@ -1181,7 +1181,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_turned_on_dup_payo6",
+        "id": "bulb_rgb_smart_bulb_rgb_turned_on_bulb_rgb_led_hybrid",
         "title": {
           "en": "Turned on",
           "fr": "Allumé"
@@ -1199,7 +1199,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_turned_off_dup_qrmu8",
+        "id": "bulb_rgb_smart_bulb_rgb_turned_off_bulb_rgb_led_hybrid",
         "title": {
           "en": "Turned off",
           "fr": "Éteint"
@@ -1217,7 +1217,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_dim_changed_dup_foyuw",
+        "id": "bulb_rgb_smart_bulb_rgb_dim_changed_bulb_rgb_led_hybrid",
         "title": {
           "en": "Brightness changed",
           "fr": "Luminosité changée"
@@ -1246,7 +1246,7 @@
         }
       },
       {
-        "id": "bulb_rgb_turned_on_dup_k1ywl",
+        "id": "bulb_rgb_turned_on_bulb_rgb_led_hybrid",
         "title": {
           "en": "Turned on",
           "fr": "Allumé",
@@ -1268,7 +1268,7 @@
         }
       },
       {
-        "id": "bulb_rgb_turned_off_dup_mhyn8",
+        "id": "bulb_rgb_turned_off_bulb_rgb_led_hybrid",
         "title": {
           "en": "Turned off",
           "fr": "Éteint",
@@ -1290,7 +1290,7 @@
         }
       },
       {
-        "id": "bulb_rgb_battery_low_dup_d0z4z",
+        "id": "bulb_rgb_battery_low_bulb_rgb_led_hybrid",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -5170,7 +5170,7 @@
         }
       },
       {
-        "id": "button_wireless_1_button_1gang_button_pressed_dup_wack0",
+        "id": "button_wireless_1_button_1gang_button_pressed_button_wireless_smart_hybrid",
         "title": {
           "en": "Button pressed",
           "fr": "Bouton appuyé"
@@ -5199,7 +5199,7 @@
         ]
       },
       {
-        "id": "button_wireless_1_button_1gang_button_double_press_dup_aursz",
+        "id": "button_wireless_1_button_1gang_button_double_press_button_wireless_smart_hybrid",
         "title": {
           "en": "Button double-pressed",
           "fr": "Bouton double-cliqué"
@@ -5228,7 +5228,7 @@
         ]
       },
       {
-        "id": "button_wireless_1_button_1gang_button_long_press_dup_lx1bs",
+        "id": "button_wireless_1_button_1gang_button_long_press_button_wireless_smart_hybrid",
         "title": {
           "en": "Button long-pressed",
           "fr": "Bouton pressé longtemps"
@@ -5257,7 +5257,7 @@
         ]
       },
       {
-        "id": "button_wireless_1_button_1gang_button_multi_press_dup_zzjnd",
+        "id": "button_wireless_1_button_1gang_button_multi_press_button_wireless_smart_hybrid",
         "title": {
           "en": "Button multi-pressed",
           "fr": "Bouton multi-cliqué"
@@ -5295,7 +5295,7 @@
         ]
       },
       {
-        "id": "button_wireless_1_button_1gang_button_1_pressed_dup_uqtp8",
+        "id": "button_wireless_1_button_1gang_button_1_pressed_button_wireless_smart_hybrid",
         "title": {
           "en": "Button 1 pressed",
           "fr": "Bouton 1 appuyé"
@@ -5313,7 +5313,7 @@
         }
       },
       {
-        "id": "button_wireless_1_button_1gang_button_1_double_dup_mk2ax",
+        "id": "button_wireless_1_button_1gang_button_1_double_button_wireless_smart_hybrid",
         "title": {
           "en": "Button 1 double-pressed",
           "fr": "Bouton 1 double-cliqué"
@@ -5331,7 +5331,7 @@
         }
       },
       {
-        "id": "button_wireless_1_button_1gang_button_1_long_dup_k5n4v",
+        "id": "button_wireless_1_button_1gang_button_1_long_button_wireless_smart_hybrid",
         "title": {
           "en": "Button 1 long-pressed",
           "fr": "Bouton 1 pressé longtemps"
@@ -5349,7 +5349,7 @@
         }
       },
       {
-        "id": "button_wireless_1_button_1gang_button_1_triple_dup_mbm87",
+        "id": "button_wireless_1_button_1gang_button_1_triple_button_wireless_smart_hybrid",
         "title": {
           "en": "Button 1 triple-pressed",
           "fr": "Bouton 1 triple-cliqué"
@@ -5367,7 +5367,7 @@
         }
       },
       {
-        "id": "button_wireless_1_button_1gang_button_1_release_dup_zzkbq",
+        "id": "button_wireless_1_button_1gang_button_1_release_button_wireless_smart_hybrid",
         "title": {
           "en": "Button 1 released - after hold",
           "fr": "Bouton 1 relâché - après maintien"
@@ -5385,7 +5385,7 @@
         }
       },
       {
-        "id": "button_wireless_1_battery_low_dup_9u6py",
+        "id": "button_wireless_1_battery_low_button_wireless_smart_hybrid",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -6330,7 +6330,7 @@
         }
       },
       {
-        "id": "button_pressed_dup_gik3l",
+        "id": "button_pressed_curtain_motor_shutter_hybrid",
         "title": {
           "en": "Button pressed",
           "fr": "Bouton pressé"
@@ -6368,7 +6368,7 @@
         }
       },
       {
-        "id": "curtain_motor_windowcoverings_set_changed_dup_3bk9n",
+        "id": "curtain_motor_windowcoverings_set_changed_curtain_motor_shutter_hybrid",
         "title": {
           "en": "Position changed",
           "fr": "Position changée"
@@ -6397,7 +6397,7 @@
         }
       },
       {
-        "id": "curtain_motor_dim_changed_dup_vgt37",
+        "id": "curtain_motor_dim_changed_curtain_motor_shutter_hybrid",
         "title": {
           "en": "Brightness changed",
           "fr": "Luminosité changée"
@@ -6426,7 +6426,7 @@
         }
       },
       {
-        "id": "curtain_motor_battery_low_dup_c7ngr",
+        "id": "curtain_motor_battery_low_curtain_motor_shutter_hybrid",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -6448,7 +6448,7 @@
         }
       },
       {
-        "id": "curtain_motor_physical_on_dup_wr9y2",
+        "id": "curtain_motor_physical_on_curtain_motor_shutter_hybrid",
         "title": {
           "en": "Physically opened",
           "fr": "Ouvert physiquement"
@@ -6476,7 +6476,7 @@
         }
       },
       {
-        "id": "curtain_motor_physical_off_dup_zpqu2",
+        "id": "curtain_motor_physical_off_curtain_motor_shutter_hybrid",
         "title": {
           "en": "Physically closed",
           "fr": "Fermé physiquement"
@@ -6504,7 +6504,7 @@
         }
       },
       {
-        "id": "curtain_motor_physical_single_dup_je5l8",
+        "id": "curtain_motor_physical_single_curtain_motor_shutter_hybrid",
         "title": {
           "en": "Physically pressed",
           "fr": "Pressé physiquement"
@@ -6532,7 +6532,7 @@
         }
       },
       {
-        "id": "curtain_motor_lux_changed_dup_g7nsv",
+        "id": "curtain_motor_lux_changed_curtain_motor_shutter_hybrid",
         "title": {
           "en": "Luminance changed",
           "fr": "Luminance changée",
@@ -6614,7 +6614,7 @@
         }
       },
       {
-        "id": "button_pressed_dup_3kq7c",
+        "id": "button_pressed_curtain_motor_wall_hybrid",
         "title": {
           "en": "Button pressed",
           "fr": "Bouton pressé"
@@ -6652,7 +6652,7 @@
         }
       },
       {
-        "id": "curtain_motor_windowcoverings_set_changed_dup_lpwyt",
+        "id": "curtain_motor_windowcoverings_set_changed_curtain_motor_wall_hybrid",
         "title": {
           "en": "Position changed",
           "fr": "Position changée"
@@ -6681,7 +6681,7 @@
         }
       },
       {
-        "id": "curtain_motor_dim_changed_dup_ve8pz",
+        "id": "curtain_motor_dim_changed_curtain_motor_wall_hybrid",
         "title": {
           "en": "Brightness changed",
           "fr": "Luminosité changée"
@@ -6710,7 +6710,7 @@
         }
       },
       {
-        "id": "curtain_motor_battery_low_dup_38x5k",
+        "id": "curtain_motor_battery_low_curtain_motor_wall_hybrid",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -6732,7 +6732,7 @@
         }
       },
       {
-        "id": "curtain_motor_physical_on_dup_h2lei",
+        "id": "curtain_motor_physical_on_curtain_motor_wall_hybrid",
         "title": {
           "en": "Physically opened",
           "fr": "Ouvert physiquement"
@@ -6760,7 +6760,7 @@
         }
       },
       {
-        "id": "curtain_motor_physical_off_dup_9yck8",
+        "id": "curtain_motor_physical_off_curtain_motor_wall_hybrid",
         "title": {
           "en": "Physically closed",
           "fr": "Fermé physiquement"
@@ -6788,7 +6788,7 @@
         }
       },
       {
-        "id": "curtain_motor_physical_single_dup_9v11u",
+        "id": "curtain_motor_physical_single_curtain_motor_wall_hybrid",
         "title": {
           "en": "Physically pressed",
           "fr": "Pressé physiquement"
@@ -6816,7 +6816,7 @@
         }
       },
       {
-        "id": "curtain_motor_lux_changed_dup_l0jv6",
+        "id": "curtain_motor_lux_changed_curtain_motor_wall_hybrid",
         "title": {
           "en": "Luminance changed",
           "fr": "Luminance changée",
@@ -6876,7 +6876,7 @@
         }
       },
       {
-        "id": "generic_tuya_measure_temperature_changed_dup_0i1og",
+        "id": "generic_tuya_measure_temperature_changed_device_generic_tuya_universal_hybrid",
         "title": {
           "en": "Temperature changed",
           "fr": "Température changée"
@@ -6905,7 +6905,7 @@
         }
       },
       {
-        "id": "generic_tuya_measure_humidity_changed_dup_wjpsf",
+        "id": "generic_tuya_measure_humidity_changed_device_generic_tuya_universal_hybrid",
         "title": {
           "en": "Humidity changed",
           "fr": "Humidité changée"
@@ -6934,7 +6934,7 @@
         }
       },
       {
-        "id": "generic_tuya_dp_received_dup_u7cyg",
+        "id": "generic_tuya_dp_received_device_generic_tuya_universal_hybrid",
         "title": {
           "en": "Data Point received",
           "fr": "Point de données reçu"
@@ -6972,7 +6972,7 @@
         }
       },
       {
-        "id": "generic_tuya_battery_low_dup_036qp",
+        "id": "generic_tuya_battery_low_device_generic_tuya_universal_hybrid",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -6994,7 +6994,7 @@
         }
       },
       {
-        "id": "generic_tuya_temp_changed_dup_yl5ub",
+        "id": "generic_tuya_temp_changed_device_generic_tuya_universal_hybrid",
         "title": {
           "en": "Temperature changed",
           "fr": "Température changée",
@@ -7016,7 +7016,7 @@
         }
       },
       {
-        "id": "generic_tuya_humidity_changed_dup_q7vcq",
+        "id": "generic_tuya_humidity_changed_device_generic_tuya_universal_hybrid",
         "title": {
           "en": "Humidity changed",
           "fr": "Humidité changée",
@@ -7067,7 +7067,7 @@
         }
       },
       {
-        "id": "radiator_valve_measure_temperature_changed_dup_5azk6",
+        "id": "radiator_valve_measure_temperature_changed_device_radiator_valve_hybrid",
         "title": {
           "en": "Temperature changed",
           "fr": "Température changée"
@@ -7096,7 +7096,7 @@
         }
       },
       {
-        "id": "radiator_valve_temp_changed_dup_9q7ku",
+        "id": "radiator_valve_temp_changed_device_radiator_valve_hybrid",
         "title": {
           "en": "Temperature changed",
           "fr": "Température changée",
@@ -7118,7 +7118,7 @@
         }
       },
       {
-        "id": "radiator_valve_battery_low_dup_4ooyu",
+        "id": "radiator_valve_battery_low_device_radiator_valve_hybrid",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -7140,7 +7140,7 @@
         }
       },
       {
-        "id": "radiator_valve_target_temperature_changed_dup_tnhi1",
+        "id": "radiator_valve_target_temperature_changed_device_radiator_valve_smart_hybrid",
         "title": {
           "en": "Target temperature changed",
           "fr": "Température cible changée"
@@ -12244,7 +12244,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_turned_on_dup_xkkg0",
+        "id": "bulb_rgb_smart_bulb_rgb_turned_on_light_bulb_rgb_rgbw_hybrid",
         "title": {
           "en": "Turned on",
           "fr": "Allumé"
@@ -12262,7 +12262,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_turned_off_dup_0kbzf",
+        "id": "bulb_rgb_smart_bulb_rgb_turned_off_light_bulb_rgb_rgbw_hybrid",
         "title": {
           "en": "Turned off",
           "fr": "Éteint"
@@ -12280,7 +12280,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_dim_changed_dup_uc572",
+        "id": "bulb_rgb_smart_bulb_rgb_dim_changed_light_bulb_rgb_rgbw_hybrid",
         "title": {
           "en": "Brightness changed",
           "fr": "Luminosité changée"
@@ -12309,7 +12309,7 @@
         }
       },
       {
-        "id": "bulb_rgb_turned_on_dup_9bngj",
+        "id": "bulb_rgb_turned_on_light_bulb_rgb_rgbw_hybrid",
         "title": {
           "en": "Turned on",
           "fr": "Allumé",
@@ -12331,7 +12331,7 @@
         }
       },
       {
-        "id": "bulb_rgb_turned_off_dup_uj9kh",
+        "id": "bulb_rgb_turned_off_light_bulb_rgb_rgbw_hybrid",
         "title": {
           "en": "Turned off",
           "fr": "Éteint",
@@ -12353,7 +12353,7 @@
         }
       },
       {
-        "id": "bulb_rgb_battery_low_dup_pvn7f",
+        "id": "bulb_rgb_battery_low_light_bulb_rgb_rgbw_hybrid",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -14297,7 +14297,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_pressed_dup_tswkk",
+        "id": "button_wireless_4_button_4gang_button_pressed_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "A button was pressed",
           "fr": "Un bouton a été appuyé"
@@ -14330,7 +14330,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_double_press_dup_puzdv",
+        "id": "button_wireless_4_button_4gang_button_double_press_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "A button was double-pressed",
           "fr": "Un bouton a été double-cliqué"
@@ -14363,7 +14363,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_long_press_dup_aje2l",
+        "id": "button_wireless_4_button_4gang_button_long_press_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "A button was long-pressed",
           "fr": "Un bouton a été appuyé longtemps"
@@ -14396,7 +14396,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_multi_press_dup_wa92p",
+        "id": "button_wireless_4_button_4gang_button_multi_press_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "A button was multi-pressed",
           "fr": "Un bouton a été multi-cliqué"
@@ -14438,7 +14438,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_1_pressed_dup_zehs8",
+        "id": "button_wireless_4_button_4gang_button_1_pressed_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "Button 1 pressed",
           "fr": "Bouton 1 appuyé"
@@ -14456,7 +14456,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_1_double_dup_gdhry",
+        "id": "button_wireless_4_button_4gang_button_1_double_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "Button 1 double-pressed",
           "fr": "Bouton 1 double-cliqué"
@@ -14474,7 +14474,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_1_long_dup_4vld0",
+        "id": "button_wireless_4_button_4gang_button_1_long_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "Button 1 long-pressed",
           "fr": "Bouton 1 pressé longtemps"
@@ -14492,7 +14492,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_2_pressed_dup_y5ngc",
+        "id": "button_wireless_4_button_4gang_button_2_pressed_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "Button 2 pressed",
           "fr": "Bouton 2 appuyé"
@@ -14510,7 +14510,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_2_double_dup_90wl1",
+        "id": "button_wireless_4_button_4gang_button_2_double_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "Button 2 double-pressed",
           "fr": "Bouton 2 double-cliqué"
@@ -14528,7 +14528,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_2_long_dup_nxvuv",
+        "id": "button_wireless_4_button_4gang_button_2_long_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "Button 2 long-pressed",
           "fr": "Bouton 2 pressé longtemps"
@@ -14546,7 +14546,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_3_pressed_dup_ryzz7",
+        "id": "button_wireless_4_button_4gang_button_3_pressed_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "Button 3 pressed",
           "fr": "Bouton 3 appuyé"
@@ -14564,7 +14564,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_3_double_dup_0efve",
+        "id": "button_wireless_4_button_4gang_button_3_double_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "Button 3 double-pressed",
           "fr": "Bouton 3 double-cliqué"
@@ -14582,7 +14582,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_3_long_dup_pmav1",
+        "id": "button_wireless_4_button_4gang_button_3_long_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "Button 3 long-pressed",
           "fr": "Bouton 3 pressé longtemps"
@@ -14600,7 +14600,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_4_pressed_dup_q80zi",
+        "id": "button_wireless_4_button_4gang_button_4_pressed_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "Button 4 pressed",
           "fr": "Bouton 4 appuyé"
@@ -14618,7 +14618,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_4_double_dup_ivohw",
+        "id": "button_wireless_4_button_4gang_button_4_double_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "Button 4 double-pressed",
           "fr": "Bouton 4 double-cliqué"
@@ -14636,7 +14636,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_4_long_dup_8ka50",
+        "id": "button_wireless_4_button_4gang_button_4_long_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "Button 4 long-pressed",
           "fr": "Bouton 4 pressé longtemps"
@@ -14654,7 +14654,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_1_triple_dup_9gv21",
+        "id": "button_wireless_4_button_4gang_button_1_triple_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "Button 1 triple-pressed",
           "fr": "Bouton 1 triple-cliqué"
@@ -14672,7 +14672,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_2_triple_dup_sovs4",
+        "id": "button_wireless_4_button_4gang_button_2_triple_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "Button 2 triple-pressed",
           "fr": "Bouton 2 triple-cliqué"
@@ -14690,7 +14690,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_3_triple_dup_mvs1k",
+        "id": "button_wireless_4_button_4gang_button_3_triple_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "Button 3 triple-pressed",
           "fr": "Bouton 3 triple-cliqué"
@@ -14708,7 +14708,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_4_triple_dup_ar4oi",
+        "id": "button_wireless_4_button_4gang_button_4_triple_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "Button 4 triple-pressed",
           "fr": "Bouton 4 triple-cliqué"
@@ -14726,7 +14726,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_1_release_dup_ytxbp",
+        "id": "button_wireless_4_button_4gang_button_1_release_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "Button 1 released - after hold",
           "fr": "Bouton 1 relâché - après maintien"
@@ -14744,7 +14744,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_2_release_dup_bej82",
+        "id": "button_wireless_4_button_4gang_button_2_release_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "Button 2 released - after hold",
           "fr": "Bouton 2 relâché - après maintien"
@@ -14762,7 +14762,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_3_release_dup_0nd5h",
+        "id": "button_wireless_4_button_4gang_button_3_release_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "Button 3 released - after hold",
           "fr": "Bouton 3 relâché - après maintien"
@@ -14780,7 +14780,7 @@
         }
       },
       {
-        "id": "button_wireless_4_button_4gang_button_4_release_dup_m8tvy",
+        "id": "button_wireless_4_button_4gang_button_4_release_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "Button 4 released - after hold",
           "fr": "Bouton 4 relâché - après maintien"
@@ -14798,7 +14798,7 @@
         }
       },
       {
-        "id": "button_wireless_4_battery_low_dup_s96ch",
+        "id": "button_wireless_4_battery_low_remote_button_wireless_handheld_hybrid",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -15022,7 +15022,7 @@
         }
       },
       {
-        "id": "button_wireless_1_button_1gang_button_pressed_dup_fx4vl",
+        "id": "button_wireless_1_button_1gang_button_pressed_remote_button_wireless_wall_hybrid",
         "title": {
           "en": "Button pressed",
           "fr": "Bouton appuyé"
@@ -15051,7 +15051,7 @@
         ]
       },
       {
-        "id": "button_wireless_1_button_1gang_button_double_press_dup_9wdli",
+        "id": "button_wireless_1_button_1gang_button_double_press_remote_button_wireless_wall_hybrid",
         "title": {
           "en": "Button double-pressed",
           "fr": "Bouton double-cliqué"
@@ -15080,7 +15080,7 @@
         ]
       },
       {
-        "id": "button_wireless_1_button_1gang_button_long_press_dup_lnaf8",
+        "id": "button_wireless_1_button_1gang_button_long_press_remote_button_wireless_wall_hybrid",
         "title": {
           "en": "Button long-pressed",
           "fr": "Bouton pressé longtemps"
@@ -15109,7 +15109,7 @@
         ]
       },
       {
-        "id": "button_wireless_1_button_1gang_button_multi_press_dup_mdmy2",
+        "id": "button_wireless_1_button_1gang_button_multi_press_remote_button_wireless_wall_hybrid",
         "title": {
           "en": "Button multi-pressed",
           "fr": "Bouton multi-cliqué"
@@ -15147,7 +15147,7 @@
         ]
       },
       {
-        "id": "button_wireless_1_button_1gang_button_1_pressed_dup_xt270",
+        "id": "button_wireless_1_button_1gang_button_1_pressed_remote_button_wireless_wall_hybrid",
         "title": {
           "en": "Button 1 pressed",
           "fr": "Bouton 1 appuyé"
@@ -15165,7 +15165,7 @@
         }
       },
       {
-        "id": "button_wireless_1_button_1gang_button_1_double_dup_ir66a",
+        "id": "button_wireless_1_button_1gang_button_1_double_remote_button_wireless_wall_hybrid",
         "title": {
           "en": "Button 1 double-pressed",
           "fr": "Bouton 1 double-cliqué"
@@ -15183,7 +15183,7 @@
         }
       },
       {
-        "id": "button_wireless_1_button_1gang_button_1_long_dup_ehxex",
+        "id": "button_wireless_1_button_1gang_button_1_long_remote_button_wireless_wall_hybrid",
         "title": {
           "en": "Button 1 long-pressed",
           "fr": "Bouton 1 pressé longtemps"
@@ -15201,7 +15201,7 @@
         }
       },
       {
-        "id": "button_wireless_1_button_1gang_button_1_triple_dup_3oihw",
+        "id": "button_wireless_1_button_1gang_button_1_triple_remote_button_wireless_wall_hybrid",
         "title": {
           "en": "Button 1 triple-pressed",
           "fr": "Bouton 1 triple-cliqué"
@@ -15219,7 +15219,7 @@
         }
       },
       {
-        "id": "button_wireless_1_button_1gang_button_1_release_dup_1a8jh",
+        "id": "button_wireless_1_button_1gang_button_1_release_remote_button_wireless_wall_hybrid",
         "title": {
           "en": "Button 1 released - after hold",
           "fr": "Bouton 1 relâché - après maintien"
@@ -15237,7 +15237,7 @@
         }
       },
       {
-        "id": "button_wireless_1_battery_low_dup_9ul0y",
+        "id": "button_wireless_1_battery_low_remote_button_wireless_wall_hybrid",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -18394,7 +18394,7 @@
         }
       },
       {
-        "id": "scene_switch_2_button_pressed_dup_g1nwx",
+        "id": "scene_switch_2_button_pressed_scene_switch_wall_hybrid",
         "title": {
           "en": "Button pressed",
           "fr": "Bouton appuyé",
@@ -18453,7 +18453,7 @@
         ]
       },
       {
-        "id": "scene_switch_2_button_double_press_dup_fcxz9",
+        "id": "scene_switch_2_button_double_press_scene_switch_wall_hybrid",
         "title": {
           "en": "Button double-pressed",
           "fr": "Bouton double-cliqué",
@@ -18512,7 +18512,7 @@
         ]
       },
       {
-        "id": "scene_switch_2_button_long_press_dup_8i0bq",
+        "id": "scene_switch_2_button_long_press_scene_switch_wall_hybrid",
         "title": {
           "en": "Button long-pressed",
           "fr": "Bouton appui long",
@@ -18571,7 +18571,7 @@
         ]
       },
       {
-        "id": "scene_switch_2_battery_low_dup_xt5d9",
+        "id": "scene_switch_2_battery_low_scene_switch_wall_hybrid",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -18593,7 +18593,7 @@
         }
       },
       {
-        "id": "scene_switch_2_button_2gang_button_1_pressed_dup_zyv5k",
+        "id": "scene_switch_2_button_2gang_button_1_pressed_scene_switch_wall_hybrid",
         "title": {
           "en": "Button 1 pressed",
           "fr": "Bouton 1 appuye"
@@ -18611,7 +18611,7 @@
         }
       },
       {
-        "id": "scene_switch_2_button_2gang_button_1_double_dup_zm9jp",
+        "id": "scene_switch_2_button_2gang_button_1_double_scene_switch_wall_hybrid",
         "title": {
           "en": "Button 1 double-pressed",
           "fr": "Bouton 1 double-appui"
@@ -18629,7 +18629,7 @@
         }
       },
       {
-        "id": "scene_switch_2_button_2gang_button_1_long_dup_9pdv5",
+        "id": "scene_switch_2_button_2gang_button_1_long_scene_switch_wall_hybrid",
         "title": {
           "en": "Button 1 long-pressed",
           "fr": "Bouton 1 appui long"
@@ -18647,7 +18647,7 @@
         }
       },
       {
-        "id": "scene_switch_2_button_2gang_button_1_triple_dup_o5u5v",
+        "id": "scene_switch_2_button_2gang_button_1_triple_scene_switch_wall_hybrid",
         "title": {
           "en": "Button 1 triple-pressed",
           "fr": "Bouton 1 triple-appui"
@@ -18665,7 +18665,7 @@
         }
       },
       {
-        "id": "scene_switch_2_button_2gang_button_1_release_dup_wkt1j",
+        "id": "scene_switch_2_button_2gang_button_1_release_scene_switch_wall_hybrid",
         "title": {
           "en": "Button 1 released",
           "fr": "Bouton 1 relache"
@@ -18683,7 +18683,7 @@
         }
       },
       {
-        "id": "scene_switch_2_button_2gang_button_2_pressed_dup_5xruy",
+        "id": "scene_switch_2_button_2gang_button_2_pressed_scene_switch_wall_hybrid",
         "title": {
           "en": "Button 2 pressed",
           "fr": "Bouton 2 appuye"
@@ -18701,7 +18701,7 @@
         }
       },
       {
-        "id": "scene_switch_2_button_2gang_button_2_double_dup_bppdx",
+        "id": "scene_switch_2_button_2gang_button_2_double_scene_switch_wall_hybrid",
         "title": {
           "en": "Button 2 double-pressed",
           "fr": "Bouton 2 double-appui"
@@ -18719,7 +18719,7 @@
         }
       },
       {
-        "id": "scene_switch_2_button_2gang_button_2_long_dup_4f7t7",
+        "id": "scene_switch_2_button_2gang_button_2_long_scene_switch_wall_hybrid",
         "title": {
           "en": "Button 2 long-pressed",
           "fr": "Bouton 2 appui long"
@@ -18737,7 +18737,7 @@
         }
       },
       {
-        "id": "scene_switch_2_button_2gang_button_2_triple_dup_m71qj",
+        "id": "scene_switch_2_button_2gang_button_2_triple_scene_switch_wall_hybrid",
         "title": {
           "en": "Button 2 triple-pressed",
           "fr": "Bouton 2 triple-appui"
@@ -18755,7 +18755,7 @@
         }
       },
       {
-        "id": "scene_switch_2_button_2gang_button_2_release_dup_8uyhd",
+        "id": "scene_switch_2_button_2gang_button_2_release_scene_switch_wall_hybrid",
         "title": {
           "en": "Button 2 released",
           "fr": "Bouton 2 relache"
@@ -18773,7 +18773,7 @@
         }
       },
       {
-        "id": "climate_sensor_temperature_changed_dup_lzeml",
+        "id": "climate_sensor_temperature_changed_sensor_climate_contact_hybrid",
         "highlight": true,
         "title": {
           "en": "Temperature changed",
@@ -18803,7 +18803,7 @@
         }
       },
       {
-        "id": "climate_sensor_humidity_changed_dup_rxpkf",
+        "id": "climate_sensor_humidity_changed_sensor_climate_contact_hybrid",
         "title": {
           "en": "Humidity changed",
           "fr": "Humidité changée"
@@ -18832,7 +18832,7 @@
         }
       },
       {
-        "id": "climate_sensor_battery_low_dup_poadf",
+        "id": "climate_sensor_battery_low_sensor_climate_contact_hybrid",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible"
@@ -18850,7 +18850,7 @@
         }
       },
       {
-        "id": "climate_sensor_temperature_alarm_high_dup_2kq1t",
+        "id": "climate_sensor_temperature_alarm_high_sensor_climate_contact_hybrid",
         "title": {
           "en": "Temperature too high",
           "fr": "Température trop haute"
@@ -18868,7 +18868,7 @@
         }
       },
       {
-        "id": "climate_sensor_temperature_alarm_low_dup_c49r3",
+        "id": "climate_sensor_temperature_alarm_low_sensor_climate_contact_hybrid",
         "title": {
           "en": "Temperature too low",
           "fr": "Température trop basse"
@@ -18886,7 +18886,7 @@
         }
       },
       {
-        "id": "climate_sensor_humidity_alarm_high_dup_ahio1",
+        "id": "climate_sensor_humidity_alarm_high_sensor_climate_contact_hybrid",
         "title": {
           "en": "Humidity too high",
           "fr": "Humidité trop haute"
@@ -18904,7 +18904,7 @@
         }
       },
       {
-        "id": "climate_sensor_humidity_alarm_low_dup_j2zsi",
+        "id": "climate_sensor_humidity_alarm_low_sensor_climate_contact_hybrid",
         "title": {
           "en": "Humidity too low",
           "fr": "Humidité trop basse"
@@ -18922,7 +18922,7 @@
         }
       },
       {
-        "id": "climate_sensor_temp_changed_dup_4wgzx",
+        "id": "climate_sensor_temp_changed_sensor_climate_contact_hybrid",
         "title": {
           "en": "Temperature changed",
           "fr": "Température changée",
@@ -19115,7 +19115,7 @@
         }
       },
       {
-        "id": "motion_sensor_motion_detected_dup_wpnm1",
+        "id": "motion_sensor_motion_detected_sensor_contact_motion_hybrid",
         "highlight": true,
         "title": {
           "en": "Motion detected",
@@ -19134,7 +19134,7 @@
         }
       },
       {
-        "id": "motion_sensor_motion_cleared_dup_7ei1s",
+        "id": "motion_sensor_motion_cleared_sensor_contact_motion_hybrid",
         "title": {
           "en": "Motion cleared",
           "fr": "Mouvement terminé"
@@ -19152,7 +19152,7 @@
         }
       },
       {
-        "id": "motion_sensor_battery_low_dup_be7y5",
+        "id": "motion_sensor_battery_low_sensor_contact_motion_hybrid",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible"
@@ -19170,7 +19170,7 @@
         }
       },
       {
-        "id": "motion_sensor_battery_changed_dup_ojjz9",
+        "id": "motion_sensor_battery_changed_sensor_contact_motion_hybrid",
         "title": {
           "en": "Battery level changed",
           "fr": "Niveau batterie changé"
@@ -19199,7 +19199,7 @@
         }
       },
       {
-        "id": "motion_sensor_tamper_true_dup_kse41",
+        "id": "motion_sensor_tamper_true_sensor_contact_motion_hybrid",
         "title": {
           "en": "Tamper alarm triggered",
           "fr": "Alarme anti-sabotage déclenchée",
@@ -19221,7 +19221,7 @@
         }
       },
       {
-        "id": "motion_sensor_tamper_false_dup_ome7k",
+        "id": "motion_sensor_tamper_false_sensor_contact_motion_hybrid",
         "title": {
           "en": "Tamper alarm cleared",
           "fr": "Alarme anti-sabotage terminée",
@@ -19243,7 +19243,7 @@
         }
       },
       {
-        "id": "motion_sensor_lux_changed_dup_hjuo1",
+        "id": "motion_sensor_lux_changed_sensor_contact_motion_hybrid",
         "title": {
           "en": "Luminance changed",
           "fr": "Luminance changée",
@@ -19295,7 +19295,7 @@
         ]
       },
       {
-        "id": "motion_sensor_tamper_alarm_dup_6e3ic",
+        "id": "motion_sensor_tamper_alarm_sensor_contact_motion_hybrid",
         "title": {
           "en": "Tamper alarm",
           "fr": "Alarme sabotage",
@@ -19715,7 +19715,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_presence_detected_dup_e00vx",
+        "id": "motion_sensor_radar_mmwave_presence_detected_sensor_motion_radar_hybrid",
         "title": {
           "en": "Presence detected",
           "fr": "Présence détectée"
@@ -19733,7 +19733,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_presence_cleared_dup_cqjhy",
+        "id": "motion_sensor_radar_mmwave_presence_cleared_sensor_motion_radar_hybrid",
         "title": {
           "en": "Presence cleared",
           "fr": "Présence disparue"
@@ -19751,7 +19751,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_motion_detected_dup_io3d5",
+        "id": "motion_sensor_radar_mmwave_motion_detected_sensor_motion_radar_hybrid",
         "title": {
           "en": "Motion detected",
           "fr": "Mouvement détecté"
@@ -19769,7 +19769,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_no_motion_dup_wnox6",
+        "id": "motion_sensor_radar_mmwave_no_motion_sensor_motion_radar_hybrid",
         "title": {
           "en": "No motion",
           "fr": "Aucun mouvement"
@@ -19787,7 +19787,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_illuminance_changed_dup_6zwia",
+        "id": "motion_sensor_radar_mmwave_illuminance_changed_sensor_motion_radar_hybrid",
         "title": {
           "en": "Illuminance changed",
           "fr": "Luminosité changée"
@@ -19816,7 +19816,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_temperature_changed_dup_qla6y",
+        "id": "motion_sensor_radar_mmwave_temperature_changed_sensor_motion_radar_hybrid",
         "title": {
           "en": "Temperature changed",
           "fr": "Température changée"
@@ -19845,7 +19845,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_humidity_changed_dup_4fdih",
+        "id": "motion_sensor_radar_mmwave_humidity_changed_sensor_motion_radar_hybrid",
         "title": {
           "en": "Humidity changed",
           "fr": "Humidité changée"
@@ -19874,7 +19874,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_target_distance_changed_dup_nf4wn",
+        "id": "motion_sensor_radar_mmwave_target_distance_changed_sensor_motion_radar_hybrid",
         "title": {
           "en": "Target distance changed",
           "fr": "Distance cible changée"
@@ -19903,7 +19903,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_battery_low_dup_eq4s2",
+        "id": "motion_sensor_radar_mmwave_battery_low_sensor_motion_radar_hybrid",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible"
@@ -19921,7 +19921,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_battery_changed_dup_1tqng",
+        "id": "motion_sensor_radar_mmwave_battery_changed_sensor_motion_radar_hybrid",
         "title": {
           "en": "Battery level changed",
           "fr": "Niveau batterie changé"
@@ -19950,7 +19950,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_distance_changed_dup_hjsk4",
+        "id": "motion_sensor_radar_mmwave_distance_changed_sensor_motion_radar_hybrid",
         "title": {
           "en": "Distance changed",
           "fr": "Distance changée",
@@ -19972,7 +19972,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_temp_changed_dup_6w3n3",
+        "id": "motion_sensor_radar_mmwave_temp_changed_sensor_motion_radar_hybrid",
         "title": {
           "en": "Temperature changed",
           "fr": "Température changée",
@@ -19994,7 +19994,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_lux_changed_dup_l4xe1",
+        "id": "motion_sensor_radar_mmwave_lux_changed_sensor_motion_radar_hybrid",
         "title": {
           "en": "Luminance changed",
           "fr": "Luminance changée",
@@ -20073,7 +20073,7 @@
         }
       },
       {
-        "id": "presence_sensor_radar_motion_detected_dup_tcrzg",
+        "id": "presence_sensor_radar_motion_detected_sensor_presence_radar_hybrid",
         "title": {
           "en": "Motion detected",
           "nl": "Beweging gedetecteerd",
@@ -20101,7 +20101,7 @@
         }
       },
       {
-        "id": "presence_sensor_radar_illuminance_changed_dup_u6kdv",
+        "id": "presence_sensor_radar_illuminance_changed_sensor_presence_radar_hybrid",
         "title": {
           "en": "Illuminance changed",
           "nl": "Lichtsterkte veranderd",
@@ -20136,7 +20136,7 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_distance_changed_dup_cqh01",
+        "id": "presence_sensor_radar_distance_changed_sensor_presence_radar_hybrid",
         "title": {
           "en": "Detection distance changed",
           "nl": "Detectieafstand veranderd",
@@ -20171,7 +20171,7 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_lux_changed_dup_n5dl7",
+        "id": "presence_sensor_radar_lux_changed_sensor_presence_radar_hybrid",
         "title": {
           "en": "Luminance changed",
           "fr": "Luminance changée",
@@ -20193,7 +20193,7 @@
         }
       },
       {
-        "id": "presence_sensor_radar_battery_low_dup_dsz9d",
+        "id": "presence_sensor_radar_battery_low_sensor_presence_radar_hybrid",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -21189,7 +21189,7 @@
         }
       },
       {
-        "id": "smart_knob_rotary_rotate_left_dup_abqvw",
+        "id": "smart_knob_rotary_rotate_left_smart_knob_rotary_hybrid",
         "highlight": true,
         "title": {
           "en": "Rotated left",
@@ -21227,7 +21227,7 @@
         }
       },
       {
-        "id": "smart_knob_rotary_rotate_right_dup_gpqtu",
+        "id": "smart_knob_rotary_rotate_right_smart_knob_rotary_hybrid",
         "highlight": true,
         "title": {
           "en": "Rotated right",
@@ -21265,7 +21265,7 @@
         }
       },
       {
-        "id": "smart_knob_rotary_pressed_dup_quc7f",
+        "id": "smart_knob_rotary_pressed_smart_knob_rotary_hybrid",
         "highlight": true,
         "title": {
           "en": "Button pressed",
@@ -21303,7 +21303,7 @@
         }
       },
       {
-        "id": "smart_knob_rotary_single_press_dup_1xrsx",
+        "id": "smart_knob_rotary_single_press_smart_knob_rotary_hybrid",
         "title": {
           "en": "Single press",
           "fr": "Appui simple",
@@ -21325,7 +21325,7 @@
         }
       },
       {
-        "id": "smart_knob_rotary_double_press_dup_itm14",
+        "id": "smart_knob_rotary_double_press_smart_knob_rotary_hybrid",
         "title": {
           "en": "Double press",
           "fr": "Double appui",
@@ -21347,7 +21347,7 @@
         }
       },
       {
-        "id": "smart_knob_rotary_long_press_dup_ia8c5",
+        "id": "smart_knob_rotary_long_press_smart_knob_rotary_hybrid",
         "title": {
           "en": "Long press",
           "fr": "Appui long",
@@ -21369,7 +21369,7 @@
         }
       },
       {
-        "id": "smart_knob_rotary_battery_low_dup_4kttr",
+        "id": "smart_knob_rotary_battery_low_smart_knob_rotary_hybrid",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -21595,7 +21595,7 @@
         ]
       },
       {
-        "id": "smart_knob_button_pressed_dup_hwp4e",
+        "id": "smart_knob_button_pressed_smart_knob_switch_hybrid",
         "title": {
           "en": "Knob button pressed",
           "fr": "Bouton du variateur appuyé"
@@ -21624,7 +21624,7 @@
         ]
       },
       {
-        "id": "smart_knob_single_press_dup_tfgqe",
+        "id": "smart_knob_single_press_smart_knob_switch_hybrid",
         "title": {
           "en": "Knob single press",
           "fr": "Appui simple"
@@ -21642,7 +21642,7 @@
         ]
       },
       {
-        "id": "smart_knob_double_press_dup_m9tm3",
+        "id": "smart_knob_double_press_smart_knob_switch_hybrid",
         "title": {
           "en": "Knob double press",
           "fr": "Double appui"
@@ -21660,7 +21660,7 @@
         ]
       },
       {
-        "id": "smart_knob_long_press_dup_y7u45",
+        "id": "smart_knob_long_press_smart_knob_switch_hybrid",
         "title": {
           "en": "Knob long press",
           "fr": "Appui long"
@@ -21678,7 +21678,7 @@
         ]
       },
       {
-        "id": "smart_knob_rotated_dup_v282a",
+        "id": "smart_knob_rotated_smart_knob_switch_hybrid",
         "title": {
           "en": "Knob rotated",
           "fr": "Variateur tourné"
@@ -21716,7 +21716,7 @@
         ]
       },
       {
-        "id": "smart_knob_level_changed_dup_2lmpi",
+        "id": "smart_knob_level_changed_smart_knob_switch_hybrid",
         "title": {
           "en": "Brightness level changed",
           "fr": "Niveau de luminosité changé"
@@ -25082,7 +25082,7 @@
         }
       },
       {
-        "id": "switch_2gang_gang1_turned_on_dup_mp7ii",
+        "id": "switch_2gang_gang1_turned_on_switch_hybrid",
         "title": {
           "en": "Gang 1 turned on",
           "fr": "Gang 1 allumé",
@@ -25104,7 +25104,7 @@
         }
       },
       {
-        "id": "switch_2gang_gang1_turned_off_dup_9tm04",
+        "id": "switch_2gang_gang1_turned_off_switch_hybrid",
         "title": {
           "en": "Gang 1 turned off",
           "fr": "Gang 1 éteint",
@@ -25126,7 +25126,7 @@
         }
       },
       {
-        "id": "switch_2gang_gang2_turned_on_dup_jmjhn",
+        "id": "switch_2gang_gang2_turned_on_switch_hybrid",
         "title": {
           "en": "Gang 2 turned on",
           "fr": "Gang 2 allumé",
@@ -25148,7 +25148,7 @@
         }
       },
       {
-        "id": "switch_2gang_gang2_turned_off_dup_sp9yr",
+        "id": "switch_2gang_gang2_turned_off_switch_hybrid",
         "title": {
           "en": "Gang 2 turned off",
           "fr": "Gang 2 éteint",
@@ -25170,7 +25170,7 @@
         }
       },
       {
-        "id": "switch_2gang_physical_gang1_on_dup_gw7za",
+        "id": "switch_2gang_physical_gang1_on_switch_hybrid",
         "title": {
           "en": "Physical button gang 1 ON",
           "fr": "Bouton physique gang 1 ON",
@@ -25198,7 +25198,7 @@
         }
       },
       {
-        "id": "switch_2gang_physical_gang1_off_dup_8axi2",
+        "id": "switch_2gang_physical_gang1_off_switch_hybrid",
         "title": {
           "en": "Physical button gang 1 OFF",
           "fr": "Bouton physique gang 1 OFF",
@@ -25220,7 +25220,7 @@
         }
       },
       {
-        "id": "switch_2gang_physical_gang2_on_dup_wzafm",
+        "id": "switch_2gang_physical_gang2_on_switch_hybrid",
         "title": {
           "en": "Physical button gang 2 ON",
           "fr": "Bouton physique gang 2 ON",
@@ -25242,7 +25242,7 @@
         }
       },
       {
-        "id": "switch_2gang_physical_gang2_off_dup_nh22j",
+        "id": "switch_2gang_physical_gang2_off_switch_hybrid",
         "title": {
           "en": "Physical button gang 2 OFF",
           "fr": "Bouton physique gang 2 OFF",
@@ -25264,7 +25264,7 @@
         }
       },
       {
-        "id": "switch_2gang_turned_on_dup_t8zqh",
+        "id": "switch_2gang_turned_on_switch_hybrid",
         "title": {
           "en": "Turned on",
           "fr": "Allumé",
@@ -25286,7 +25286,7 @@
         }
       },
       {
-        "id": "switch_2gang_turned_off_dup_uumxz",
+        "id": "switch_2gang_turned_off_switch_hybrid",
         "title": {
           "en": "Turned off",
           "fr": "Éteint",
@@ -25308,7 +25308,7 @@
         }
       },
       {
-        "id": "switch_2gang_power_changed_dup_po97j",
+        "id": "switch_2gang_power_changed_switch_hybrid",
         "title": {
           "en": "Power changed",
           "fr": "Puissance changée",
@@ -25330,7 +25330,7 @@
         }
       },
       {
-        "id": "switch_2gang_gang1_scene_dup_x88ma",
+        "id": "switch_2gang_gang1_scene_switch_hybrid",
         "title": {
           "en": "Gang 1 scene triggered"
         },
@@ -25358,7 +25358,7 @@
         }
       },
       {
-        "id": "switch_2gang_gang2_scene_dup_pbba2",
+        "id": "switch_2gang_gang2_scene_switch_hybrid",
         "title": {
           "en": "Gang 2 scene triggered"
         },
@@ -36683,7 +36683,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_is_on_dup_t4rvf",
+        "id": "bulb_rgb_smart_bulb_rgb_is_on_bulb_rgb_led_hybrid",
         "title": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
@@ -36701,7 +36701,7 @@
         ]
       },
       {
-        "id": "bulb_rgb_is_on_dup_f65xq",
+        "id": "bulb_rgb_is_on_bulb_rgb_led_hybrid",
         "title": {
           "en": "Is !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}",
@@ -37230,7 +37230,7 @@
         }
       },
       {
-        "id": "generic_tuya_battery_above_dup_w7eyh",
+        "id": "generic_tuya_battery_above_device_generic_tuya_universal_hybrid",
         "title": {
           "en": "Battery is above...",
           "fr": "Batterie au-dessus de..."
@@ -38889,7 +38889,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_is_on_dup_mgtko",
+        "id": "bulb_rgb_smart_bulb_rgb_is_on_light_bulb_rgb_rgbw_hybrid",
         "title": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
@@ -38907,7 +38907,7 @@
         ]
       },
       {
-        "id": "bulb_rgb_is_on_dup_81ok2",
+        "id": "bulb_rgb_is_on_light_bulb_rgb_rgbw_hybrid",
         "title": {
           "en": "Is !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}",
@@ -39641,7 +39641,7 @@
         ]
       },
       {
-        "id": "climate_sensor_temperature_above_dup_hzgys",
+        "id": "climate_sensor_temperature_above_sensor_climate_contact_hybrid",
         "title": {
           "en": "Temperature is above",
           "fr": "Température supérieure à"
@@ -39670,7 +39670,7 @@
         ]
       },
       {
-        "id": "climate_sensor_temperature_below_dup_j90ir",
+        "id": "climate_sensor_temperature_below_sensor_climate_contact_hybrid",
         "title": {
           "en": "Temperature is below",
           "fr": "Température inférieure à"
@@ -39699,7 +39699,7 @@
         ]
       },
       {
-        "id": "climate_sensor_humidity_above_dup_efp2y",
+        "id": "climate_sensor_humidity_above_sensor_climate_contact_hybrid",
         "title": {
           "en": "Humidity is above",
           "fr": "Humidité supérieure à"
@@ -39728,7 +39728,7 @@
         ]
       },
       {
-        "id": "climate_sensor_humidity_below_dup_d3ynt",
+        "id": "climate_sensor_humidity_below_sensor_climate_contact_hybrid",
         "title": {
           "en": "Humidity is below",
           "fr": "Humidité inférieure à"
@@ -39873,7 +39873,7 @@
         ]
       },
       {
-        "id": "motion_sensor_motion_active_dup_h8b3y",
+        "id": "motion_sensor_motion_active_sensor_contact_motion_hybrid",
         "title": {
           "en": "Motion !{{is|is not}} detected",
           "fr": "Mouvement !{{est|n'est pas}} détecté"
@@ -39891,7 +39891,7 @@
         }
       },
       {
-        "id": "motion_sensor_tamper_active_dup_xixm5",
+        "id": "motion_sensor_tamper_active_sensor_contact_motion_hybrid",
         "title": {
           "en": "Tamper !{{is|is not}} active",
           "fr": "Sabotage !{{est|n'est pas}} actif",
@@ -40129,7 +40129,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_is_presence_detected_dup_e5u47",
+        "id": "motion_sensor_radar_mmwave_is_presence_detected_sensor_motion_radar_hybrid",
         "title": {
           "en": "Presence is !{{detected|not detected}}",
           "fr": "Présence !{{détectée|non détectée}}"
@@ -40147,7 +40147,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_illuminance_above_dup_fhhem",
+        "id": "motion_sensor_radar_mmwave_illuminance_above_sensor_motion_radar_hybrid",
         "title": {
           "en": "Illuminance is above",
           "fr": "Luminosité supérieure à"
@@ -40176,7 +40176,7 @@
         ]
       },
       {
-        "id": "motion_sensor_radar_mmwave_illuminance_below_dup_06hs3",
+        "id": "motion_sensor_radar_mmwave_illuminance_below_sensor_motion_radar_hybrid",
         "title": {
           "en": "Illuminance is below",
           "fr": "Luminosité inférieure à"
@@ -40205,7 +40205,7 @@
         ]
       },
       {
-        "id": "motion_sensor_radar_mmwave_temperature_above_dup_f4110",
+        "id": "motion_sensor_radar_mmwave_temperature_above_sensor_motion_radar_hybrid",
         "title": {
           "en": "Temperature is above",
           "fr": "Température supérieure à"
@@ -40234,7 +40234,7 @@
         ]
       },
       {
-        "id": "motion_sensor_radar_mmwave_target_distance_less_than_dup_89l79",
+        "id": "motion_sensor_radar_mmwave_target_distance_less_than_sensor_motion_radar_hybrid",
         "title": {
           "en": "Target distance is less than",
           "fr": "Distance cible inférieure à"
@@ -40263,7 +40263,7 @@
         ]
       },
       {
-        "id": "motion_sensor_radar_mmwave_motion_active_dup_v1cak",
+        "id": "motion_sensor_radar_mmwave_motion_active_sensor_motion_radar_hybrid",
         "title": {
           "en": "Motion !{{is|is not}} detected",
           "fr": "Mouvement !{{est|n'est pas}} détecté",
@@ -40285,7 +40285,7 @@
         }
       },
       {
-        "id": "presence_sensor_radar_is_present_dup_36v72",
+        "id": "presence_sensor_radar_is_present_sensor_presence_radar_hybrid",
         "title": {
           "en": "Someone !{{is|is not}} present",
           "nl": "Iemand !{{is|is niet}} aanwezig",
@@ -40307,7 +40307,7 @@
         }
       },
       {
-        "id": "presence_sensor_radar_illuminance_above_dup_cm6qq",
+        "id": "presence_sensor_radar_illuminance_above_sensor_presence_radar_hybrid",
         "title": {
           "en": "Illuminance !{{is|is not}} above",
           "nl": "Lichtsterkte !{{is|is niet}} boven",
@@ -40339,7 +40339,7 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_distance_within_dup_rlo06",
+        "id": "presence_sensor_radar_distance_within_sensor_presence_radar_hybrid",
         "title": {
           "en": "Target !{{is|is not}} within distance",
           "nl": "Doel !{{is|is niet}} binnen afstand",
@@ -40371,7 +40371,7 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_motion_active_dup_9nqh2",
+        "id": "presence_sensor_radar_motion_active_sensor_presence_radar_hybrid",
         "title": {
           "en": "Motion !{{is|is not}} detected",
           "fr": "Mouvement !{{est|n'est pas}} détecté",
@@ -40615,7 +40615,7 @@
         ]
       },
       {
-        "id": "smart_knob_rotary_brightness_above_dup_aiuyz",
+        "id": "smart_knob_rotary_brightness_above_smart_knob_rotary_hybrid",
         "title": {
           "en": "Brightness level is above...",
           "fr": "Niveau de luminosité supérieur à..."
@@ -41244,7 +41244,7 @@
         }
       },
       {
-        "id": "switch_2gang_gang1_is_on_dup_fofko",
+        "id": "switch_2gang_gang1_is_on_switch_hybrid",
         "title": {
           "en": "Gang 1 is !{{on|off}}",
           "fr": "Gang 1 est !{{allumé|éteint}}",
@@ -41266,7 +41266,7 @@
         }
       },
       {
-        "id": "switch_2gang_gang2_is_on_dup_zcnjp",
+        "id": "switch_2gang_gang2_is_on_switch_hybrid",
         "title": {
           "en": "Gang 2 is !{{on|off}}",
           "fr": "Gang 2 est !{{allumé|éteint}}",
@@ -41288,7 +41288,7 @@
         }
       },
       {
-        "id": "switch_2gang_is_on_dup_18uj2",
+        "id": "switch_2gang_is_on_switch_hybrid",
         "title": {
           "en": "Is !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}",
@@ -43959,7 +43959,7 @@
         ]
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_turn_on_dup_k8w5o",
+        "id": "bulb_rgb_smart_bulb_rgb_turn_on_bulb_rgb_led_hybrid",
         "title": {
           "en": "Turn on",
           "fr": "Allumer"
@@ -43977,7 +43977,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_turn_off_dup_0wbi0",
+        "id": "bulb_rgb_smart_bulb_rgb_turn_off_bulb_rgb_led_hybrid",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre"
@@ -43995,7 +43995,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_toggle_dup_7gj82",
+        "id": "bulb_rgb_smart_bulb_rgb_toggle_bulb_rgb_led_hybrid",
         "title": {
           "en": "Toggle on or off",
           "fr": "Basculer"
@@ -44013,7 +44013,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_set_dim_dup_7p03i",
+        "id": "bulb_rgb_smart_bulb_rgb_set_dim_bulb_rgb_led_hybrid",
         "title": {
           "en": "Set brightness to...",
           "fr": "Régler la luminosité à..."
@@ -44044,7 +44044,7 @@
         }
       },
       {
-        "id": "bulb_rgb_turn_on_dup_rsqdj",
+        "id": "bulb_rgb_turn_on_bulb_rgb_led_hybrid",
         "title": {
           "en": "Turn on",
           "fr": "Allumer",
@@ -44066,7 +44066,7 @@
         }
       },
       {
-        "id": "bulb_rgb_turn_off_dup_ndqug",
+        "id": "bulb_rgb_turn_off_bulb_rgb_led_hybrid",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre",
@@ -44088,7 +44088,7 @@
         }
       },
       {
-        "id": "bulb_rgb_toggle_dup_p33lg",
+        "id": "bulb_rgb_toggle_bulb_rgb_led_hybrid",
         "title": {
           "en": "Toggle",
           "fr": "Basculer",
@@ -44110,7 +44110,7 @@
         }
       },
       {
-        "id": "bulb_rgb_set_brightness_dup_hywwp",
+        "id": "bulb_rgb_set_brightness_bulb_rgb_led_hybrid",
         "title": {
           "en": "Set brightness",
           "fr": "Régler luminosité",
@@ -45052,7 +45052,7 @@
         }
       },
       {
-        "id": "curtain_motor_set_windowcoverings_set_dup_ja05a",
+        "id": "curtain_motor_set_windowcoverings_set_curtain_motor_shutter_hybrid",
         "title": {
           "en": "Set position to...",
           "fr": "Régler la position à..."
@@ -45083,7 +45083,7 @@
         }
       },
       {
-        "id": "curtain_motor_windowcoverings_open_dup_cakc1",
+        "id": "curtain_motor_windowcoverings_open_curtain_motor_shutter_hybrid",
         "title": {
           "en": "Open",
           "fr": "Ouvrir"
@@ -45101,7 +45101,7 @@
         }
       },
       {
-        "id": "curtain_motor_windowcoverings_close_dup_l6aqq",
+        "id": "curtain_motor_windowcoverings_close_curtain_motor_shutter_hybrid",
         "title": {
           "en": "Close",
           "fr": "Fermer"
@@ -45119,7 +45119,7 @@
         }
       },
       {
-        "id": "curtain_motor_set_dim_dup_l3o2p",
+        "id": "curtain_motor_set_dim_curtain_motor_shutter_hybrid",
         "title": {
           "en": "Set brightness to...",
           "fr": "Régler la luminosité à..."
@@ -45150,7 +45150,7 @@
         }
       },
       {
-        "id": "curtain_motor_stop_dup_q2bsi",
+        "id": "curtain_motor_stop_curtain_motor_shutter_hybrid",
         "title": {
           "en": "Stop",
           "fr": "Arrêter",
@@ -45172,7 +45172,7 @@
         }
       },
       {
-        "id": "curtain_motor_set_favorite_dup_ekit5",
+        "id": "curtain_motor_set_favorite_curtain_motor_shutter_hybrid",
         "title": {
           "en": "Go to favorite position",
           "fr": "Aller position favorite",
@@ -45198,7 +45198,7 @@
         }
       },
       {
-        "id": "curtain_motor_set_brightness_dup_9a2kn",
+        "id": "curtain_motor_set_brightness_curtain_motor_shutter_hybrid",
         "title": {
           "en": "Set brightness",
           "fr": "Régler luminosité",
@@ -45229,7 +45229,7 @@
         ]
       },
       {
-        "id": "curtain_motor_set_position_dup_igcdt",
+        "id": "curtain_motor_set_position_curtain_motor_shutter_hybrid",
         "title": {
           "en": "Set position",
           "fr": "Régler position",
@@ -45260,7 +45260,7 @@
         ]
       },
       {
-        "id": "curtain_motor_open_dup_5r00r",
+        "id": "curtain_motor_open_curtain_motor_shutter_hybrid",
         "title": {
           "en": "Open",
           "fr": "Ouvrir",
@@ -45282,7 +45282,7 @@
         }
       },
       {
-        "id": "curtain_motor_close_dup_usinn",
+        "id": "curtain_motor_close_curtain_motor_shutter_hybrid",
         "title": {
           "en": "Close",
           "fr": "Fermer",
@@ -45401,7 +45401,7 @@
         }
       },
       {
-        "id": "curtain_motor_set_windowcoverings_set_dup_gdler",
+        "id": "curtain_motor_set_windowcoverings_set_curtain_motor_wall_hybrid",
         "title": {
           "en": "Set position to...",
           "fr": "Régler la position à..."
@@ -45432,7 +45432,7 @@
         }
       },
       {
-        "id": "curtain_motor_windowcoverings_open_dup_ibodj",
+        "id": "curtain_motor_windowcoverings_open_curtain_motor_wall_hybrid",
         "title": {
           "en": "Open",
           "fr": "Ouvrir"
@@ -45450,7 +45450,7 @@
         }
       },
       {
-        "id": "curtain_motor_windowcoverings_close_dup_g969g",
+        "id": "curtain_motor_windowcoverings_close_curtain_motor_wall_hybrid",
         "title": {
           "en": "Close",
           "fr": "Fermer"
@@ -45468,7 +45468,7 @@
         }
       },
       {
-        "id": "curtain_motor_set_dim_dup_anfqm",
+        "id": "curtain_motor_set_dim_curtain_motor_wall_hybrid",
         "title": {
           "en": "Set brightness to...",
           "fr": "Régler la luminosité à..."
@@ -45499,7 +45499,7 @@
         }
       },
       {
-        "id": "curtain_motor_stop_dup_6m8w2",
+        "id": "curtain_motor_stop_curtain_motor_wall_hybrid",
         "title": {
           "en": "Stop",
           "fr": "Arrêter",
@@ -45521,7 +45521,7 @@
         }
       },
       {
-        "id": "curtain_motor_set_favorite_dup_irsyf",
+        "id": "curtain_motor_set_favorite_curtain_motor_wall_hybrid",
         "title": {
           "en": "Go to favorite position",
           "fr": "Aller position favorite",
@@ -45547,7 +45547,7 @@
         }
       },
       {
-        "id": "curtain_motor_set_brightness_dup_1pq5y",
+        "id": "curtain_motor_set_brightness_curtain_motor_wall_hybrid",
         "title": {
           "en": "Set brightness",
           "fr": "Régler luminosité",
@@ -45578,7 +45578,7 @@
         ]
       },
       {
-        "id": "curtain_motor_set_position_dup_07kqd",
+        "id": "curtain_motor_set_position_curtain_motor_wall_hybrid",
         "title": {
           "en": "Set position",
           "fr": "Régler position",
@@ -45609,7 +45609,7 @@
         ]
       },
       {
-        "id": "curtain_motor_open_dup_tbh0l",
+        "id": "curtain_motor_open_curtain_motor_wall_hybrid",
         "title": {
           "en": "Open",
           "fr": "Ouvrir",
@@ -45631,7 +45631,7 @@
         }
       },
       {
-        "id": "curtain_motor_close_dup_m0jyy",
+        "id": "curtain_motor_close_curtain_motor_wall_hybrid",
         "title": {
           "en": "Close",
           "fr": "Fermer",
@@ -45653,7 +45653,7 @@
         }
       },
       {
-        "id": "generic_tuya_request_dp_dup_09qf3",
+        "id": "generic_tuya_request_dp_device_generic_tuya_universal_hybrid",
         "title": {
           "en": "Request Data Point",
           "fr": "Demander Point de Données"
@@ -45682,7 +45682,7 @@
         ]
       },
       {
-        "id": "radiator_valve_set_target_temperature_dup_s75o7",
+        "id": "radiator_valve_set_target_temperature_device_radiator_valve_hybrid",
         "title": {
           "en": "Set temperature to...",
           "fr": "Régler la température à..."
@@ -45711,7 +45711,7 @@
         }
       },
       {
-        "id": "radiator_valve_set_temperature_dup_ksnjf",
+        "id": "radiator_valve_set_temperature_device_radiator_valve_hybrid",
         "title": {
           "en": "Set temperature",
           "fr": "Régler température",
@@ -49407,7 +49407,7 @@
         ]
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_turn_on_dup_ytyzf",
+        "id": "bulb_rgb_smart_bulb_rgb_turn_on_light_bulb_rgb_rgbw_hybrid",
         "title": {
           "en": "Turn on",
           "fr": "Allumer"
@@ -49425,7 +49425,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_turn_off_dup_ezcri",
+        "id": "bulb_rgb_smart_bulb_rgb_turn_off_light_bulb_rgb_rgbw_hybrid",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre"
@@ -49443,7 +49443,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_toggle_dup_jdf8u",
+        "id": "bulb_rgb_smart_bulb_rgb_toggle_light_bulb_rgb_rgbw_hybrid",
         "title": {
           "en": "Toggle on or off",
           "fr": "Basculer"
@@ -49461,7 +49461,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_set_dim_dup_dyblc",
+        "id": "bulb_rgb_smart_bulb_rgb_set_dim_light_bulb_rgb_rgbw_hybrid",
         "title": {
           "en": "Set brightness to...",
           "fr": "Régler la luminosité à..."
@@ -49492,7 +49492,7 @@
         }
       },
       {
-        "id": "bulb_rgb_turn_on_dup_yusve",
+        "id": "bulb_rgb_turn_on_light_bulb_rgb_rgbw_hybrid",
         "title": {
           "en": "Turn on",
           "fr": "Allumer",
@@ -49514,7 +49514,7 @@
         }
       },
       {
-        "id": "bulb_rgb_turn_off_dup_2vkqa",
+        "id": "bulb_rgb_turn_off_light_bulb_rgb_rgbw_hybrid",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre",
@@ -49536,7 +49536,7 @@
         }
       },
       {
-        "id": "bulb_rgb_toggle_dup_3z7px",
+        "id": "bulb_rgb_toggle_light_bulb_rgb_rgbw_hybrid",
         "title": {
           "en": "Toggle",
           "fr": "Basculer",
@@ -49558,7 +49558,7 @@
         }
       },
       {
-        "id": "bulb_rgb_set_brightness_dup_trzt4",
+        "id": "bulb_rgb_set_brightness_light_bulb_rgb_rgbw_hybrid",
         "title": {
           "en": "Set brightness",
           "fr": "Régler luminosité",
@@ -50493,7 +50493,7 @@
         ]
       },
       {
-        "id": "motion_sensor_radar_mmwave_set_radar_sensitivity_dup_95fva",
+        "id": "motion_sensor_radar_mmwave_set_radar_sensitivity_sensor_motion_radar_hybrid",
         "title": {
           "en": "Set radar sensitivity",
           "fr": "Définir sensibilité radar"
@@ -50522,7 +50522,7 @@
         ]
       },
       {
-        "id": "motion_sensor_radar_mmwave_set_detection_range_dup_g73sq",
+        "id": "motion_sensor_radar_mmwave_set_detection_range_sensor_motion_radar_hybrid",
         "title": {
           "en": "Set detection range",
           "fr": "Définir plage de détection"
@@ -50562,7 +50562,7 @@
         ]
       },
       {
-        "id": "motion_sensor_radar_mmwave_set_fading_time_dup_5w6kd",
+        "id": "motion_sensor_radar_mmwave_set_fading_time_sensor_motion_radar_hybrid",
         "title": {
           "en": "Set fading time",
           "fr": "Définir délai d'absence"
@@ -50591,7 +50591,7 @@
         ]
       },
       {
-        "id": "motion_sensor_radar_mmwave_set_detection_delay_dup_x4fyy",
+        "id": "motion_sensor_radar_mmwave_set_detection_delay_sensor_motion_radar_hybrid",
         "title": {
           "en": "Set detection delay",
           "fr": "Définir délai de détection"
@@ -51308,7 +51308,7 @@
         ]
       },
       {
-        "id": "smart_knob_rotary_set_brightness_dup_3ymsl",
+        "id": "smart_knob_rotary_set_brightness_smart_knob_rotary_hybrid",
         "title": {
           "en": "Set brightness",
           "fr": "Régler luminosité",
@@ -53413,7 +53413,7 @@
         ]
       },
       {
-        "id": "switch_2gang_turn_on_gang1_dup_388ho",
+        "id": "switch_2gang_turn_on_gang1_switch_hybrid",
         "title": {
           "en": "Turn on gang 1",
           "fr": "Allumer gang 1",
@@ -53435,7 +53435,7 @@
         }
       },
       {
-        "id": "switch_2gang_turn_off_gang1_dup_50ly9",
+        "id": "switch_2gang_turn_off_gang1_switch_hybrid",
         "title": {
           "en": "Turn off gang 1",
           "fr": "Éteindre gang 1",
@@ -53457,7 +53457,7 @@
         }
       },
       {
-        "id": "switch_2gang_turn_on_gang2_dup_i4u1e",
+        "id": "switch_2gang_turn_on_gang2_switch_hybrid",
         "title": {
           "en": "Turn on gang 2",
           "fr": "Allumer gang 2",
@@ -53479,7 +53479,7 @@
         }
       },
       {
-        "id": "switch_2gang_turn_off_gang2_dup_yr4no",
+        "id": "switch_2gang_turn_off_gang2_switch_hybrid",
         "title": {
           "en": "Turn off gang 2",
           "fr": "Éteindre gang 2",
@@ -53501,7 +53501,7 @@
         }
       },
       {
-        "id": "switch_2gang_toggle_gang1_dup_7h8xm",
+        "id": "switch_2gang_toggle_gang1_switch_hybrid",
         "title": {
           "en": "Toggle gang 1",
           "fr": "Basculer gang 1",
@@ -53529,7 +53529,7 @@
         }
       },
       {
-        "id": "switch_2gang_toggle_gang2_dup_v991u",
+        "id": "switch_2gang_toggle_gang2_switch_hybrid",
         "title": {
           "en": "Toggle gang 2",
           "fr": "Basculer gang 2",
@@ -53551,7 +53551,7 @@
         }
       },
       {
-        "id": "switch_2gang_turn_on_all_dup_wcbv5",
+        "id": "switch_2gang_turn_on_all_switch_hybrid",
         "title": {
           "en": "Turn on all gangs",
           "fr": "Allumer tous les gangs",
@@ -53579,7 +53579,7 @@
         }
       },
       {
-        "id": "switch_2gang_turn_off_all_dup_mes91",
+        "id": "switch_2gang_turn_off_all_switch_hybrid",
         "title": {
           "en": "Turn off all gangs",
           "fr": "Éteindre tous les gangs",
@@ -53601,7 +53601,7 @@
         }
       },
       {
-        "id": "switch_2gang_set_backlight_dup_9ax17",
+        "id": "switch_2gang_set_backlight_switch_hybrid",
         "title": {
           "en": "Set LED backlight mode",
           "fr": "Définir le mode rétroéclairage LED",
@@ -53668,7 +53668,7 @@
         ]
       },
       {
-        "id": "switch_2gang_turn_on_dup_eazqq",
+        "id": "switch_2gang_turn_on_switch_hybrid",
         "title": {
           "en": "Turn on",
           "fr": "Allumer",
@@ -53690,7 +53690,7 @@
         }
       },
       {
-        "id": "switch_2gang_turn_off_dup_qnr7m",
+        "id": "switch_2gang_turn_off_switch_hybrid",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre",
@@ -53712,7 +53712,7 @@
         }
       },
       {
-        "id": "switch_2gang_toggle_dup_mvw87",
+        "id": "switch_2gang_toggle_switch_hybrid",
         "title": {
           "en": "Toggle",
           "fr": "Basculer",
@@ -53734,7 +53734,7 @@
         }
       },
       {
-        "id": "switch_2gang_set_scene_mode_dup_fpixx",
+        "id": "switch_2gang_set_scene_mode_switch_hybrid",
         "title": {
           "en": "Set scene mode"
         },
@@ -60732,7 +60732,8 @@
         "batteries": [
           "AAA",
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -60945,7 +60946,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "subDevices": [],
       "zigbee": {
@@ -61342,7 +61344,8 @@
         },
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -61877,7 +61880,8 @@
         },
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -62640,7 +62644,8 @@
         },
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -63103,7 +63108,8 @@
         },
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -63702,7 +63708,8 @@
         },
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -64208,7 +64215,8 @@
         },
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -64547,7 +64555,8 @@
         "batteries": [
           "CR2032",
           "CR2450"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -65396,7 +65405,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "pair": [
         {
@@ -65477,7 +65487,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -66062,7 +66073,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -67020,7 +67032,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -67548,7 +67561,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -68212,7 +68226,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -68714,7 +68729,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -69166,7 +69182,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -69534,7 +69551,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -69854,7 +69872,8 @@
           "AAA",
           "CR2032",
           "CR2450"
-        ]
+        ],
+        "mains": true
       },
       "subDevices": [],
       "capabilityOptions": {
@@ -72560,7 +72579,8 @@
           "CR2",
           "CR123A",
           "AAA"
-        ]
+        ],
+        "mains": true
       },
       "subDevices": [],
       "zigbee": {
@@ -72639,7 +72659,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "subDevices": [],
       "zigbee": {
@@ -74291,7 +74312,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "metadata": {
         "app": {
@@ -74714,7 +74736,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "metadata": {
         "app": {
@@ -74890,7 +74913,8 @@
       "energy": {
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "flow": {
         "actions": [
@@ -75358,7 +75382,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "metadata": {
         "app": {
@@ -75490,7 +75515,8 @@
         ],
         "approximation": {
           "usageConstant": 2
-        }
+        },
+        "mains": true
       },
       "maintenanceActions": [
         {
@@ -75588,7 +75614,8 @@
         ],
         "approximation": {
           "usageConstant": 2
-        }
+        },
+        "mains": true
       },
       "maintenanceActions": [
         {
@@ -75643,7 +75670,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -75805,7 +75833,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -76125,7 +76154,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [],
@@ -76732,7 +76762,11 @@
         "approximation": {
           "usageOn": 60,
           "usageOff": 0.5
-        }
+        },
+        "batteries": [
+          "CR2450"
+        ],
+        "mains": true
       },
       "maintenanceActions": [
         {
@@ -76862,7 +76896,8 @@
         },
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -78056,7 +78091,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "images": {
         "small": "drivers/diy_custom_zigbee/assets/images/small.png",
@@ -78722,7 +78758,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -79049,7 +79086,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -79390,7 +79428,8 @@
         "batteries": [
           "AAA",
           "AAA"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -79777,7 +79816,8 @@
       "energy": {
         "batteries": [
           "CR2"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -79860,7 +79900,8 @@
           "AA",
           "AA",
           "AA"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -80066,7 +80107,8 @@
         "batteries": [
           "CR2450",
           "AAA"
-        ]
+        ],
+        "mains": true
       },
       "subDevices": [],
       "zigbee": {
@@ -80378,7 +80420,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "subDevices": [],
       "zigbee": {
@@ -80735,7 +80778,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "subDevices": [],
       "zigbee": {
@@ -81145,7 +81189,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -81467,7 +81512,8 @@
         ],
         "approximation": {
           "usageConstant": 1
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -81775,7 +81821,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -82543,7 +82590,8 @@
           "AAA",
           "AA",
           "CR123A"
-        ]
+        ],
+        "mains": true
       },
       "platforms": [
         "local"
@@ -83017,7 +83065,8 @@
           "AAA",
           "AA",
           "CR123A"
-        ]
+        ],
+        "mains": true
       },
       "platforms": [
         "local"
@@ -83363,7 +83412,8 @@
         "batteries": [
           "CR2450",
           "CR2032"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -83586,7 +83636,8 @@
         ],
         "approximation": {
           "usageConstant": 0.3
-        }
+        },
+        "mains": true
       },
       "maintenanceActions": [
         {
@@ -83633,7 +83684,8 @@
         ],
         "approximation": {
           "usageConstant": 0.3
-        }
+        },
+        "mains": true
       },
       "subDevices": [],
       "zigbee": {
@@ -83718,7 +83770,8 @@
           "CR2032",
           "CR2450",
           "AAA"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -83910,7 +83963,8 @@
       "energy": {
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -84066,7 +84120,8 @@
       "energy": {
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -84111,7 +84166,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -84469,7 +84525,8 @@
         },
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -84801,7 +84858,8 @@
         },
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -85194,7 +85252,8 @@
         },
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -85767,7 +85826,8 @@
         "batteries": [
           "CR2450",
           "AAA"
-        ]
+        ],
+        "mains": true
       },
       "maintenanceActions": [
         {
@@ -85801,7 +85861,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -86161,7 +86222,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -86653,7 +86715,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "subDevices": [],
       "zigbee": {
@@ -87399,7 +87462,8 @@
       "energy": {
         "batteries": [
           "CR2450"
-        ]
+        ],
+        "mains": true
       },
       "images": {
         "large": "/drivers/motion_sensor_2/assets/images/large.png",
@@ -87493,7 +87557,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "subDevices": [],
       "zigbee": {
@@ -89098,7 +89163,8 @@
         },
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -90179,7 +90245,8 @@
         "batteries": [
           "AAA",
           "AAA"
-        ]
+        ],
+        "mains": true
       },
       "settings": [
         {
@@ -91655,7 +91722,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "pair": [
         {
@@ -92271,7 +92339,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -93200,7 +93269,8 @@
       "energy": {
         "batteries": [
           "CR2450"
-        ]
+        ],
+        "mains": true
       },
       "maintenanceActions": [
         {
@@ -93363,7 +93433,8 @@
         "batteries": [
           "AAA",
           "AA"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -93511,7 +93582,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -93978,7 +94050,8 @@
         ],
         "approximation": {
           "usageConstant": 0.3
-        }
+        },
+        "mains": true
       },
       "platforms": [
         "local"
@@ -94077,7 +94150,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -94471,7 +94545,8 @@
         "batteries": [
           "CR2450",
           "CR2032"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -94582,7 +94657,8 @@
       "energy": {
         "batteries": [
           "CR2032"
-        ]
+        ],
+        "mains": true
       },
       "settings": [
         {
@@ -94706,7 +94782,8 @@
         "batteries": [
           "CR2032",
           "CR2450"
-        ]
+        ],
+        "mains": true
       },
       "settings": [
         {
@@ -94839,7 +94916,8 @@
         "batteries": [
           "CR2032",
           "CR2450"
-        ]
+        ],
+        "mains": true
       },
       "settings": [
         {
@@ -95023,7 +95101,8 @@
         "batteries": [
           "CR2450",
           "AAA"
-        ]
+        ],
+        "mains": true
       },
       "settings": [
         {
@@ -95176,7 +95255,8 @@
         "batteries": [
           "CR2450",
           "AAA"
-        ]
+        ],
+        "mains": true
       },
       "settings": [
         {
@@ -95298,7 +95378,8 @@
         "batteries": [
           "CR2032",
           "CR2450"
-        ]
+        ],
+        "mains": true
       },
       "settings": [
         {
@@ -95372,7 +95453,8 @@
           "AAA",
           "CR2032",
           "CR2450"
-        ]
+        ],
+        "mains": true
       },
       "subDevices": [],
       "capabilityOptions": {
@@ -95858,7 +95940,8 @@
           "AAA",
           "CR2032",
           "CR2450"
-        ]
+        ],
+        "mains": true
       },
       "subDevices": [],
       "capabilityOptions": {
@@ -96359,7 +96442,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "subDevices": [],
       "zigbee": {
@@ -97343,7 +97427,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "pair": [
         {
@@ -97961,7 +98046,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "pair": [
         {
@@ -98019,7 +98105,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "subDevices": [],
       "zigbee": {
@@ -99036,7 +99123,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "pair": [
         {
@@ -99095,7 +99183,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -99415,7 +99504,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -99817,7 +99907,8 @@
         "batteries": [
           "CR123A",
           "CR123A"
-        ]
+        ],
+        "mains": true
       },
       "platforms": [
         "local"
@@ -100061,7 +100152,8 @@
       "energy": {
         "batteries": [
           "CR2032"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [],
@@ -100206,7 +100298,8 @@
       "energy": {
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "maintenanceActions": [
         {
@@ -100531,7 +100624,8 @@
       "energy": {
         "batteries": [
           "CR2032"
-        ]
+        ],
+        "mains": true
       },
       "maintenanceActions": [
         {
@@ -100617,7 +100711,8 @@
         ],
         "approximation": {
           "usageConstant": 0.3
-        }
+        },
+        "mains": true
       },
       "platforms": [
         "local"
@@ -100765,7 +100860,8 @@
         ],
         "approximation": {
           "usageConstant": 0.3
-        }
+        },
+        "mains": true
       },
       "platforms": [
         "local"
@@ -101005,7 +101101,8 @@
       "energy": {
         "batteries": [
           "CR2032"
-        ]
+        ],
+        "mains": true
       },
       "maintenanceActions": [
         {
@@ -101174,7 +101271,8 @@
       "energy": {
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "settings": [
         {
@@ -101357,7 +101455,8 @@
       "energy": {
         "batteries": [
           "CR2032"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -101465,7 +101564,8 @@
       "energy": {
         "batteries": [
           "CR2032"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -101591,7 +101691,8 @@
       "energy": {
         "batteries": [
           "CR2032"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -101867,7 +101968,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "subDevices": [],
       "zigbee": {
@@ -102362,7 +102464,8 @@
           "AAA",
           "CR2032",
           "CR2450"
-        ]
+        ],
+        "mains": true
       },
       "subDevices": [],
       "zigbee": {
@@ -103918,7 +104021,7 @@
                   }
                 },
                 {
-                  "id": "other",
+                  "id": "CR2450",
                   "label": {
                     "en": "⚙️ Autre appareil",
                     "fr": "⚙️ Autre appareil"
@@ -104379,7 +104482,8 @@
         },
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "pair": [
         {
@@ -104933,7 +105037,7 @@
                   }
                 },
                 {
-                  "id": "other",
+                  "id": "CR2450",
                   "label": {
                     "en": "⚙️ Autre appareil",
                     "fr": "⚙️ Autre appareil"
@@ -105293,7 +105397,8 @@
         },
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "pair": [
         {
@@ -105764,7 +105869,7 @@
                   }
                 },
                 {
-                  "id": "other",
+                  "id": "CR2450",
                   "label": {
                     "en": "⚙️ Autre appareil",
                     "fr": "⚙️ Autre appareil"
@@ -106130,7 +106235,8 @@
         },
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "pair": [
         {
@@ -106650,7 +106756,7 @@
                   }
                 },
                 {
-                  "id": "other",
+                  "id": "CR2450",
                   "label": {
                     "en": "⚙️ Autre appareil",
                     "fr": "⚙️ Autre appareil"
@@ -107022,7 +107128,8 @@
         },
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "pair": [
         {
@@ -107477,7 +107584,7 @@
                   }
                 },
                 {
-                  "id": "other",
+                  "id": "CR2450",
                   "label": {
                     "en": "⚙️ Autre appareil",
                     "fr": "⚙️ Autre appareil"
@@ -107836,7 +107943,8 @@
         },
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "pair": [
         {
@@ -107917,7 +108025,8 @@
       "energy": {
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "settings": [
         {
@@ -108102,7 +108211,7 @@
                   }
                 },
                 {
-                  "id": "other",
+                  "id": "CR2450",
                   "label": {
                     "en": "⚙️ Autre appareil",
                     "fr": "⚙️ Autre appareil"
@@ -108186,7 +108295,8 @@
       "energy": {
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -108385,7 +108495,7 @@
                   }
                 },
                 {
-                  "id": "other",
+                  "id": "CR2450",
                   "label": {
                     "en": "⚙️ Autre appareil",
                     "fr": "⚙️ Autre appareil"
@@ -108531,7 +108641,8 @@
         },
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -108764,7 +108875,7 @@
                   }
                 },
                 {
-                  "id": "other",
+                  "id": "CR2450",
                   "label": {
                     "en": "⚙️ Autre appareil",
                     "fr": "⚙️ Autre appareil"
@@ -109183,7 +109294,8 @@
         },
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -109455,7 +109567,7 @@
                   }
                 },
                 {
-                  "id": "other",
+                  "id": "CR2450",
                   "label": {
                     "en": "⚙️ Autre appareil",
                     "fr": "⚙️ Autre appareil"
@@ -109830,7 +109942,8 @@
       "energy": {
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -110067,7 +110180,7 @@
                   }
                 },
                 {
-                  "id": "other",
+                  "id": "CR2450",
                   "label": {
                     "en": "⚙️ Autre appareil",
                     "fr": "⚙️ Autre appareil"
@@ -110274,7 +110387,8 @@
       "energy": {
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -110528,7 +110642,7 @@
                   }
                 },
                 {
-                  "id": "other",
+                  "id": "CR2450",
                   "label": {
                     "en": "⚙️ Autre appareil",
                     "fr": "⚙️ Autre appareil"
@@ -110625,7 +110739,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -110840,7 +110955,7 @@
                   }
                 },
                 {
-                  "id": "other",
+                  "id": "CR2450",
                   "label": {
                     "en": "⚙️ Autre appareil",
                     "fr": "⚙️ Autre appareil"
@@ -111147,7 +111262,8 @@
         "batteries": [
           "CR2032",
           "AAA"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -111334,7 +111450,8 @@
       "energy": {
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "capabilitiesOptions": {
         "onoff": {
@@ -111620,7 +111737,8 @@
       "energy": {
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "maintenanceActions": [
         {
@@ -111649,7 +111767,8 @@
       "energy": {
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -111964,7 +112083,7 @@
                   }
                 },
                 {
-                  "id": "other",
+                  "id": "CR2450",
                   "label": {
                     "en": "Other",
                     "fr": "Autre"
@@ -112065,7 +112184,8 @@
         },
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -112520,7 +112640,8 @@
         },
         "batteries": [
           "OTHER"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -113226,7 +113347,8 @@
       "energy": {
         "batteries": [
           "AA"
-        ]
+        ],
+        "mains": true
       },
       "maintenanceActions": [
         {
@@ -113297,7 +113419,8 @@
       "energy": {
         "batteries": [
           "AA"
-        ]
+        ],
+        "mains": true
       },
       "maintenanceActions": [
         {
@@ -113329,7 +113452,8 @@
         "batteries": [
           "CR2032",
           "CR2450"
-        ]
+        ],
+        "mains": true
       },
       "subDevices": [],
       "zigbee": {
@@ -113763,7 +113887,8 @@
       "energy": {
         "batteries": [
           "CR2032"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -113908,7 +114033,8 @@
       "energy": {
         "batteries": [
           "CR2032"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -114036,7 +114162,8 @@
       "energy": {
         "batteries": [
           "CR2032"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -114186,7 +114313,8 @@
       "energy": {
         "batteries": [
           "CR2032"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [],
@@ -114341,7 +114469,8 @@
       "energy": {
         "batteries": [
           "CR2032"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [],
@@ -114481,7 +114610,8 @@
       "energy": {
         "batteries": [
           "CR2032"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [],
@@ -114639,7 +114769,8 @@
       "energy": {
         "batteries": [
           "CR2032"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [],
@@ -115977,7 +116108,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "subDevices": [],
       "zigbee": {
@@ -116755,7 +116887,8 @@
       "energy": {
         "batteries": [
           "AA"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -116875,7 +117008,8 @@
         ],
         "approximation": {
           "usageConstant": 0.5
-        }
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -117225,7 +117359,8 @@
         "batteries": [
           "AAA",
           "AA"
-        ]
+        ],
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -118384,7 +118519,8 @@
       "energy": {
         "batteries": [
           "INTERNAL"
-        ]
+        ],
+        "mains": true
       },
       "maintenanceActions": [
         {
@@ -120732,7 +120868,8 @@
       "energy": {
         "batteries": [
           "INTERNAL"
-        ]
+        ],
+        "mains": true
       },
       "maintenanceActions": [
         {
@@ -121139,7 +121276,8 @@
       "energy": {
         "batteries": [
           "INTERNAL"
-        ]
+        ],
+        "mains": true
       },
       "maintenanceActions": [
         {
@@ -121269,7 +121407,8 @@
       "energy": {
         "batteries": [
           "INTERNAL"
-        ]
+        ],
+        "mains": true
       },
       "maintenanceActions": [
         {
@@ -121401,7 +121540,8 @@
       "energy": {
         "batteries": [
           "INTERNAL"
-        ]
+        ],
+        "mains": true
       },
       "maintenanceActions": [
         {
@@ -123551,7 +123691,8 @@
       "energy": {
         "batteries": [
           "INTERNAL"
-        ]
+        ],
+        "mains": true
       },
       "maintenanceActions": [
         {
