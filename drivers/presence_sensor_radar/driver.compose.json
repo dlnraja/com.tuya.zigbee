@@ -31,6 +31,8 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
+      "ZG-204ZE",
+      "ZGAF-205L",
       "_TZ3000_AIGDDB2B",
       "_TZ3000_aigddb2b",
       "_TZ3210_FKZIHAX8",
@@ -326,23 +328,43 @@
       "CK-BL702-MWS-01",
       "CK-BL702-MWS-01(7016)",
       "MG1_5RZ",
+      "SNZB-06P",
       "SZLMR10",
       "TS0203",
       "TS0225",
       "TS0601",
+      "ZG-204ZE",
       "ZG-204ZH",
       "ZG-204ZK",
       "ZG-204ZL",
       "ZG-204ZM",
+      "ZG-204ZQ",
       "ZG-204ZV",
       "ZG-205Z",
-      "ZP-301Z",
-      "SNZB-06P",
-      "ZG-204ZE",
-      "ZG-204ZQ",
       "ZG-205ZL",
       "ZG-302ZL",
-      "ZG-302ZM"
+      "ZG-302ZM",
+      "ZP-301Z",
+      "ck-bl702-mws-01",
+      "ck-bl702-mws-01(7016)",
+      "mg1_5rz",
+      "snzb-06p",
+      "szlmr10",
+      "ts0203",
+      "ts0225",
+      "ts0601",
+      "zg-204ze",
+      "zg-204zh",
+      "zg-204zk",
+      "zg-204zl",
+      "zg-204zm",
+      "zg-204zq",
+      "zg-204zv",
+      "zg-205z",
+      "zg-205zl",
+      "zg-302zl",
+      "zg-302zm",
+      "zp-301z"
     ],
     "learnmode": {
       "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
@@ -355,9 +377,6 @@
       "1": {
         "clusters": [
           0,
-          1024,
-          1280,
-          1030,
           61184
         ]
       }

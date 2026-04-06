@@ -96,7 +96,10 @@
     "productId": [
       "TS0016",
       "TS0601",
-      "TS0726"
+      "TS0726",
+      "ts0016",
+      "ts0601",
+      "ts0726"
     ],
     "learnmode": {
       "image": "/drivers/switch_wall_6gang/assets/learnmode.svg",
@@ -109,10 +112,6 @@
       "1": {
         "clusters": [
           0,
-          3,
-          4,
-          5,
-          6,
           61184
         ]
       },

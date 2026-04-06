@@ -48,17 +48,16 @@
       "_tze204_yensya2c"
     ],
     "productId": [
+      "TS0601",
+      "TS0601_CEILING",
       "TS0601_ceiling",
-      "TS0601"
+      "ts0601",
+      "ts0601_ceiling"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
-          1024,
-          1280,
-          1030,
           61184
         ]
       }

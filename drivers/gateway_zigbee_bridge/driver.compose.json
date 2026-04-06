@@ -30,13 +30,14 @@
       "_tz3000_o1jzcxou"
     ],
     "productId": [
-      "TS0601_gw"
+      "TS0601_GW",
+      "TS0601_gw",
+      "ts0601_gw"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          3,
           61184
         ]
       }

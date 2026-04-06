@@ -15,9 +15,12 @@
   ],
   "zigbee": {
     "productId": [
-      "TS0601",
       "TS011F",
-      "TS0726"
+      "TS0601",
+      "TS0726",
+      "ts011f",
+      "ts0601",
+      "ts0726"
     ],
     "learnmode": {
       "image": "/drivers/switch_2gang/assets/learnmode.svg",
@@ -40,12 +43,13 @@
       "1": {
         "clusters": [
           0,
-          6
+          61184
         ]
       },
       "2": {
         "clusters": [
-          6
+          0,
+          61184
         ]
       }
     }

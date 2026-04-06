@@ -10,7 +10,15 @@ function translateAll() {
     if (!fs.existsSync(driversDir)) return;
     
     const drivers = fs.readdirSync(driversDir);
+    let count = 0;
+    const MAX_PER_RUN = 10;
+
     for (const d of drivers) {
+        if (count >= MAX_PER_RUN) {
+            console.log(`Reached limit of ${MAX_PER_RUN} translations. Stopping.`);
+            break;
+        }
+
         const composePath = path.join(driversDir, d, 'driver.compose.json');
         if (fs.existsSync(composePath)) {
             try {
@@ -19,6 +27,7 @@ function translateAll() {
                     console.log(`Needs translation: ${d}`);
                     try {
                         execSync(`node .github/scripts/i18n-translator.js "${composePath}"`, { stdio: 'inherit' });
+                        count++;
                     } catch(e) { console.error('Translation step failed'); }
                 }
             } catch (e) {}

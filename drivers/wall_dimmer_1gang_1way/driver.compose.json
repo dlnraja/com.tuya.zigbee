@@ -34,22 +34,27 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_TZB210_G01IE5WU",
+      "_TZB210_ZXBTUB8R",
       "_tzb210_g01ie5wu",
       "_tzb210_zxbtub8r"
     ],
     "productId": [
-      "TS004F",
-      "TS0501B",
+      "EDM-1ZBA-EU",
       "TRI-C1ZR",
       "TRI-K1ZR",
-      "EDM-1ZBA-EU"
+      "TS004F",
+      "TS0501B",
+      "edm-1zba-eu",
+      "tri-c1zr",
+      "tri-k1zr",
+      "ts004f",
+      "ts0501b"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          4,
-          5,
           61184
         ]
       }

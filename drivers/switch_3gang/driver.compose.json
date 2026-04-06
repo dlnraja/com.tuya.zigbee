@@ -15,11 +15,19 @@
   "zigbee": {
     "productId": [
       "TS0003",
-      "TS0013",
+      "TS0003_POWER",
+      "TS0003_SWITCH_MODULE",
       "TS0003_power",
       "TS0003_switch_module",
+      "TS0013",
       "TS0601",
-      "ZG-302Z3"
+      "ZG-302Z3",
+      "ts0003",
+      "ts0003_power",
+      "ts0003_switch_module",
+      "ts0013",
+      "ts0601",
+      "zg-302z3"
     ],
     "endpoints": {
       "1": {

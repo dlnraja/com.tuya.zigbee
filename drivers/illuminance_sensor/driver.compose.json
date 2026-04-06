@@ -16,6 +16,7 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "ZG-106Z",
       "_TYZB01_4MDQXXNN",
       "_TYZB01_M6EC2PGJ",
       "_TYZb01_4mdqxxnn",
@@ -32,7 +33,9 @@
     ],
     "productId": [
       "TS0222",
-      "ZG-106Z"
+      "ZG-106Z",
+      "ts0222",
+      "zg-106z"
     ],
     "endpoints": {
       "1": {

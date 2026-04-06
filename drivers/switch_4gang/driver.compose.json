@@ -15,22 +15,27 @@
   ],
   "zigbee": {
     "productId": [
+      "JZ-ZB-004",
       "TS0004",
-      "TS0014",
+      "TS0004_POWER",
+      "TS0004_SWITCH_MODULE",
       "TS0004_power",
       "TS0004_switch_module",
+      "TS0014",
       "TS0601",
       "TS0726",
-      "JZ-ZB-004"
+      "jz-zb-004",
+      "ts0004",
+      "ts0004_power",
+      "ts0004_switch_module",
+      "ts0014",
+      "ts0601",
+      "ts0726"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          3,
-          4,
-          5,
-          6,
           61184
         ]
       },

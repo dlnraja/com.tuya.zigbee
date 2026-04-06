@@ -33,18 +33,16 @@
       "_tze204_pdznlbhv"
     ],
     "productId": [
+      "TS0601",
+      "TS0601_DIMMER3",
       "TS0601_dimmer3",
-      "TS0601"
+      "ts0601",
+      "ts0601_dimmer3"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          3,
-          4,
-          5,
-          6,
-          8,
           61184
         ]
       }

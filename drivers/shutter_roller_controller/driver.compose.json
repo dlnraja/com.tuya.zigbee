@@ -33,17 +33,16 @@
       "_tze204_guvc7pdy"
     ],
     "productId": [
+      "TS0601",
+      "TS0601_SHUTTER",
       "TS0601_shutter",
-      "TS0601"
+      "ts0601",
+      "ts0601_shutter"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          3,
-          4,
-          5,
-          258,
           61184
         ]
       }

@@ -30,6 +30,8 @@
       "_TYZB01_O7M83470",
       "_TYZB01_TOB46AOQ",
       "_TYZB01_WQCAC7LO",
+      "_TYZB01_dsjszp0x",
+      "_TYZB01_wqcac7lo",
       "_TYZb01_0aps0h1r",
       "_TYZb01_dsjszp0x",
       "_TYZb01_o7m83470",
@@ -138,17 +140,12 @@
       "_tze284_6ycgarab",
       "_tze284_gyzlwu5q",
       "_tze284_n4ttsck2",
-      "_tze284_rccxox8p",
-      "_TYZB01_dsjszp0x",
-      "_TYZB01_wqcac7lo",
-      "_TZ3210_up3pngle"
+      "_tze284_rccxox8p"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
-          1280,
           61184
         ]
       }
@@ -161,20 +158,34 @@
       }
     },
     "productId": [
-      "TS0205",
-      "PG-S11Z",
-      "YG400A",
-      "SA12IZL",
-      "SD8SC_00.00.03.12TC",
       "GS361A-H04",
       "HS1SA",
       "HS3SA",
-      "SMSZB-120",
-      "lumi.sensor_smoke",
       "JTYJ-GD-01LM/BW",
-      "SSSQS01LM",
+      "LUMI.SENSOR_SMOKE",
       "NAS-SD02B0",
-      "TS0601"
+      "PG-S11Z",
+      "SA12IZL",
+      "SD8SC_00.00.03.12TC",
+      "SMSZB-120",
+      "SSSQS01LM",
+      "TS0205",
+      "TS0601",
+      "YG400A",
+      "gs361a-h04",
+      "hs1sa",
+      "hs3sa",
+      "jtyj-gd-01lm/bw",
+      "lumi.sensor_smoke",
+      "nas-sd02b0",
+      "pg-s11z",
+      "sa12izl",
+      "sd8sc_00.00.03.12tc",
+      "smszb-120",
+      "sssqs01lm",
+      "ts0205",
+      "ts0601",
+      "yg400a"
     ]
   },
   "settings": [

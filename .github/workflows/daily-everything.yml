@@ -31,7 +31,7 @@ jobs:
   everything:
     name: "MEGA Pipeline — 34 steps"
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 360
     env:
       # === AI providers — circular chain with free-tier rate limiting ===
       # ai-helper.js: Gemini→DeepSeek→GitHub Models→OpenAI→Groq→Granite/HF→Mistral→OpenRouter→Cerebras→Together→Kimi→DeepSeek(retry)
@@ -138,6 +138,16 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
           SCAN_FORKS: "true"
         run: node .github/scripts/triage-upstream-enhanced.js
+
+      # ===== 3ba. UNIVERSAL STABILITY: Manifest relaxation & normalization =====
+      - name: "3ba. Universal Stability Norms (Relaxed + Caseless)"
+        id: stability_norms
+        continue-on-error: true
+        run: |
+          echo "=== Relaxing clusters for Tuya MCU devices ==="
+          node scripts/automation/relax-manifest-clusters.js || true
+          echo "=== Normalizing case for all fingerprints ==="
+          node scripts/automation/manifest-caseless-processor.js || true
 
       # ===== 3bb. GITHUB: Parallel Bot Cleanup (Fast resolution) =====
       - name: "3bb. Parallel Bot Cleanup (v5.12.35)"
@@ -685,13 +695,12 @@ jobs:
         if: always()
         continue-on-error: true
         run: node .github/scripts/pipeline-health.js
-
       # ===== 10p. DRIVER LOCALIZATION (I18N) =====
       - name: "10p. Driver Localization (I18N)"
         id: i18n
         if: always()
         continue-on-error: true
-        timeout-minutes: 10
+        timeout-minutes: 15
         run: node .github/scripts/translate-all.js || true
 
       # ===== 11. COMMIT: All state + docs + changelogs =====

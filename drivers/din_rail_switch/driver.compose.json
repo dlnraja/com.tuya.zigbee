@@ -80,17 +80,16 @@
       "_tze204_rhblgy0z"
     ],
     "productId": [
+      "TS0001_DIN",
       "TS0001_din",
-      "TS0601"
+      "TS0601",
+      "ts0001_din",
+      "ts0601"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          3,
-          4,
-          5,
-          6,
           61184
         ]
       }
