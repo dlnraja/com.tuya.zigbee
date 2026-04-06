@@ -4,7 +4,19 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.0.2] - 2026-04-06
+## [7.0.3] - 2026-04-06
+
+### Bug Fixes
+- Fixed issues with 3 new fingerprints.
+
+### New Features
+- Added support for 3 new fingerprints in the driver database.
+
+### Improvements
+- Updated a total of 221 drivers.
+---
+
+ [7.0.2] - 2026-04-06
 
 ### Bug Fixes
 - Fixed SDK v3 compliance crash when accessing device flow cards
