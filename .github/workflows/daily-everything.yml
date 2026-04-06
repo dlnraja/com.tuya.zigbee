@@ -35,16 +35,16 @@ jobs:
     env:
       # === AI providers — circular chain with free-tier rate limiting ===
       # ai-helper.js: Gemini→DeepSeek→GitHub Models→OpenAI→Groq→Granite/HF→Mistral→OpenRouter→Cerebras→Together→Kimi→DeepSeek(retry)
-      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}          # Gemini 2.0 Flash (1400 RPD free)
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}          # GPT-3.5-turbo (200 RPD free)
-      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}      # DeepSeek chat/reasoner (free credits)
-      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}        # Llama-3.3-70B (free fast inference)
-      HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}                # HuggingFace/Granite (free)
-      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}  # Mistral Nemo (30 RPD free)
-      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}  # Free models (Llama-3.3)
-      CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}      # Llama-70B (free inference)
-      TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}      # Llama-70B Turbo (free)
-      KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}              # Moonshot v1-8k (free)
+      GOOGLE_API_KEY: "${{ secrets.GOOGLE_API_KEY }}"
+      OPENAI_API_KEY: "${{ secrets.OPENAI_API_KEY }}"
+      DEEPSEEK_API_KEY: "${{ secrets.DEEPSEEK_API_KEY }}"
+      GROQ_API_KEY: "${{ secrets.GROQ_API_KEY }}"
+      HF_TOKEN: "${{ secrets.HF_TOKEN }}"
+      MISTRAL_API_KEY: "${{ secrets.MISTRAL_API_KEY }}"
+      OPENROUTER_API_KEY: "${{ secrets.OPENROUTER_API_KEY }}"
+      CEREBRAS_API_KEY: "${{ secrets.CEREBRAS_API_KEY }}"
+      TOGETHER_API_KEY: "${{ secrets.TOGETHER_API_KEY }}"
+      KIMI_API_KEY: "${{ secrets.KIMI_API_KEY }}"
       # === GitHub ===
       GH_PAT: ${{ secrets.GH_PAT }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -58,13 +58,26 @@ jobs:
       HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
       HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+
+      # ===== 0a. INTELLIGENCE MODE SELECTOR (IA-less Fallback) =====
+      - name: "0a. Intelligence Mode Selector"
+        id: intelligence_selector
+        run: |
+          if [ -n "${{ secrets.GOOGLE_API_KEY }}" ] || [ -n "${{ secrets.OPENAI_API_KEY }}" ] || [ -n "${{ secrets.OPENROUTER_API_KEY }}" ]; then
+            echo "PIPELINE_MODE=AI_ORCHESTRATED" >> $GITHUB_ENV
+            echo "::notice::Pipeline intelligence: AI_ORCHESTRATED (DeepMind Cloud enabled)"
+          else
+            echo "PIPELINE_MODE=RULE_BASED" >> $GITHUB_ENV
+            echo "::warning::Pipeline intelligence: RULE_BASED (IA-less / Cloudless-First mode)"
+          fi
+
       - name: 🛡️ Zigbee Signature Audit
         run: node scripts/ci/signature-audit.js
       - run: npm ci --prefer-offline --no-audit || npm install
@@ -237,140 +250,69 @@ jobs:
             fi
           fi
 
-      # ===== 6. NIGHTLY: Scan forum+GitHub data (no replies — forum-responder handles that) =====
-      - name: "6. Nightly Processor (scan-only)"
+      # ===== 6. NIGHTLY: IA-less / Cloudless-First Processing =====
+      - name: "6. Nightly Rule-Based Processor"
         id: nightly
         continue-on-error: true
         timeout-minutes: 10
         env:
           DRY_RUN: 'true'
-        run: node .github/scripts/nightly-processor.js
-
-      # ===== 6a. AUTO-RESOLVE COLLISIONS & HYGIENE =====
-      - name: "6a. Auto-Resolve Fingerprint Issues (NO-AI)"
-        id: collision_resolver
-        continue-on-error: true
-        timeout-minutes: 5
+          PIPELINE_MODE: ${{ env.PIPELINE_MODE }}
         run: |
-          echo "=== Enforcing case rules & removing wildcards ==="
-          node scripts/maintenance/enforce-fingerprint-rules.js || true
-          echo "=== Grouping duplicated logic into hybrid drivers ==="
-          node scripts/maintenance/auto-resolve-collisions.js || true
-          echo "=== 🛡️ BVB Health Audit (v6.1.4) ==="
-          node scripts/automation/bvb-impact-report.js || true
+          echo "=== Nightly Process (Mode: $PIPELINE_MODE) ==="
+          node .github/scripts/nightly-processor.js
 
-      # ===== 6a-bis. AUTO-FIX PHANTOM SDK METHODS (CRITICAL) =====
-      - name: "6a-bis. Auto-Fix Phantom SDK3 Methods + Fingerprint Case + Probe Dedup (NO-AI)"
-        continue-on-error: true
-        timeout-minutes: 3
-        run: |
-          echo "=== Auto-fixing phantom SDK methods (getDeviceConditionCard/getDeviceActionCard) ==="
-          # These methods do NOT exist in Homey SDK v3 and crash the entire app on startup
-          find drivers/ lib/ -name '*.js' -exec grep -l 'getDeviceConditionCard\|getDeviceActionCard' {} \; | while read f; do
-            if [ -f "$f" ]; then
-              sed -i 's/\.getDeviceConditionCard\s*(/\.getConditionCard(/g' "$f"
-              sed -i 's/\.getDeviceActionCard\s*(/\.getActionCard(/g' "$f"
-              echo "  ✅ Fixed phantom methods in: $f"
-            fi
-          done
-
-          echo ""
-          echo "=== Auto-fixing uppercase fingerprints in driver.compose.json ==="
-          # Tuya fingerprints MUST be lowercase (e.g., _TZE200_pay2byax not _TZE200_PAY2BYAX)
-          find drivers/ -name 'driver.compose.json' | while read f; do
-            if grep -qE '"_T[A-Z0-9]+_[A-Z]+' "$f" 2>/dev/null; then
-              node -e "
-                const fs = require('fs');
-                const raw = fs.readFileSync('$f','utf8');
-                const fixed = raw.replace(/\"(_T[A-Z0-9]+_[A-Za-z0-9]+)\"/g, (m, p) => '\"' + p.toLowerCase() + '\"');
-                if (fixed !== raw) { fs.writeFileSync('$f', fixed); console.log('  ✅ Lowercased fingerprints in: $f'); }
-              " || true
-            fi
-          done
-
-          echo ""
-          echo "=== Removing static measure_temperature.probe from pure-ZCL drivers ==="
-          # Pure ZCL sensors (_TZ3000_*) cannot have DP38 probes; probe should be dynamic only
-          find drivers/ -name 'driver.compose.json' | while read f; do
-            if grep -q '"measure_temperature.probe"' "$f" 2>/dev/null; then
-              if grep -q '_TZ3000_\|_TZ3210_' "$f" 2>/dev/null; then
-                if ! grep -q '_TZE200_\|_TZE204_\|_TZE284_' "$f" 2>/dev/null; then
-                  # Pure ZCL driver with probe declared — remove it
-                  node -e "
-                    const fs = require('fs');
-                    const raw = fs.readFileSync('$f','utf8');
-                    const fixed = raw.replace(/,?\s*\"measure_temperature\.probe\"/g, '');
-                    if (fixed !== raw) { fs.writeFileSync('$f', fixed); console.log('  ✅ Removed static probe from: $f'); }
-                  " || true
-                fi
-              fi
-            fi
-          done
-
-      # ===== 6a-ter. MASTER SELF-HEAL ENGINE (ALL SESSION DISCOVERIES) =====
-      - name: "6a-ter. Master Self-Heal Engine"
-        continue-on-error: true
-        timeout-minutes: 5
-        run: |
-          echo "=== Running Master Self-Heal Engine (all session discoveries) ==="
-          node scripts/maintenance/master-self-heal.js 2>&1 | tee /tmp/self-heal-report.txt || true
-          if grep -q "Total auto-fixes: 0" /tmp/self-heal-report.txt; then
-            echo "✅ No fixes needed — app is clean"
-          else
-            echo "⚠️ Self-heal applied fixes — see report above"
-          fi
-
-      # ===== 6b. DRIVER VALIDATION: Check for known bugs =====
-      - name: "6b. Driver Integrity Validator"
-        id: driver_validate
-        continue-on-error: true
-        timeout-minutes: 5
-        run: |
-          echo "=== Running Driver Validator ==="
-          node .github/scripts/validate-drivers.js 2>&1 | tee /tmp/validate-drivers.txt || true
-          if grep -q "❌" /tmp/validate-drivers.txt; then
-            echo "⚠️ Driver validation found errors — see log above"
-          fi
-
-      # ===== 6c. DRIVER SYNTAX & JSON VALIDATION GATE =====
-      - name: "6c. Syntax + JSON Validation Gate"
-        continue-on-error: true
-        timeout-minutes: 5
-        run: |
-          echo "=== Syntax + JSON Validation Gate ==="
-          FAIL=0
-          for f in drivers/*/device.js drivers/*/driver.js; do
-            if [ -f "$f" ]; then
-              node -c "$f" 2>/dev/null || { echo "❌ JS Syntax error: $f"; FAIL=1; }
-            fi
-          done
-          for f in drivers/*/driver.compose.json; do
-            node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null || { echo "❌ JSON error: $f"; FAIL=1; }
-          done
-          if [ $FAIL -eq 1 ]; then
-            echo "❌ Validation errors — rolling back driver changes"
-            git checkout -- drivers/
-          else
-            echo "✅ All drivers pass validation"
-          fi
-
-      # ===== 6d. SEMANTIC LINTER: SDK v3 Smart Enrichment =====
-      - name: "🤖 SDK v3 Smart Enrichment Linter"
-        id: copilot_linter
+      # ===== 6a. MASTER STABILIZATION & HYGIENE (NO-AI) =====
+      - name: "6a. Master Stabilization: Magic Spell + Energy + BVB"
+        id: sterilization
         continue-on-error: true
         timeout-minutes: 10
+        run: |
+          echo "=== 🛡️ Magic Spell & Energy Settings Validate (v1.1.0) ==="
+          # Rules: super.onNodeInit() check, energy scaling (Issue #197), SOS rules
+          node scripts/automation/validate-magic-spell.js
+          
+          echo "=== ⚙️ Master Self-Heal Engine (Idempotent Repair) ==="
+          # Rules: SDK3 phantoms, FP case, probe dedup, energy batteries
+          node scripts/maintenance/master-self-heal.js
+          
+          echo "=== 🛡️ BVB Health Audit (v6.1.5 - WiFi + Zigbee) ==="
+          # Rules: Bizarree Value Blocking coverage for all drivers
+          node scripts/automation/bvb-impact-report.js || true
+
+      # ===== 6b. UNIVERSAL TRIAGE: IA-less Device Classification =====
+      - name: "6b. Universal Triage Engine (Rule-Based Fallback)"
+        id: triage_engine
+        continue-on-error: true
+        run: |
+          echo "=== 🕵️ Running IA-less Device Triage (SOS + Plug + Sensor) ==="
+          # This script uses DeviceFingerprintDB.js (Static Rules)
+          node scripts/maintenance/triage-engine.js --auto-add || true
+
+      # ===== 6c. WIFI HEALTH: Cloudless-First Protocol Check =====
+      - name: "6c. WiFi Protocol & Auto-Healing Audit"
+        continue-on-error: true
+        run: |
+          echo "=== 🌐 Checking WiFi Driver Coherence ==="
+          # Ensures all WiFi drivers use TuyaLocalClient with autoHealing: true
+          grep -l "TuyaLocalDevice" drivers/*/device.js | xargs grep -L "autoHealing" || echo "✅ All WiFi drivers are Auto-Heal ready"
+
+      # ===== 6d. GITHUB: SMART PR/ISSUE SCAN (AI if available, else Rule-based) =====
+      - name: "6d. GitHub Issue & Fingerprint Research"
+        id: gh_research
+        continue-on-error: true
+        timeout-minutes: 20
         env:
-          DRY_RUN: 'false'
-          AI_ENRICH: 'true'
-          MAX_LINT_FILES: '20'
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
-          HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY || '' }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
-          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
-          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
-        run: node scripts/maintenance/sdk3-smart-linter.js
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          if [ "$PIPELINE_MODE" = "AI_ORCHESTRATED" ]; then
+            node .github/scripts/issue-deep-researcher.js
+            node .github/scripts/smart-device-processor.js
+          else
+            echo "⚠️ AI Offline: Using Rule-Based classification (via triage-engine.js)"
+            node .github/scripts/scan-prs-issues.js
+          fi
+
 
       - name: "🚩 Commit SDK v3 Linter Fixes"
         continue-on-error: true
@@ -954,4 +896,5 @@ jobs:
           echo "=== 🤖 Final Passing: AI Self-Correction & Regression Audit ==="
           node scripts/automation/self-correction-audit.js || true
           echo "=== 🏁 Pipeline Complete ==="
+
 

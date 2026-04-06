@@ -15,7 +15,7 @@ class LockSmartDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is locked
     try {
-      this.homey.flow.getConditionCard('lock_smart_is_locked')
+      this.homey.flow.getDeviceConditionCard('lock_smart_is_locked')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('locked') === true;
@@ -25,7 +25,7 @@ class LockSmartDriver extends ZigBeeDriver {
 
     // ACTION: Lock
     try {
-      this.homey.flow.getActionCard('lock_smart_lock')
+      this.homey.flow.getDeviceActionCard('lock_smart_lock')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('locked', true);
@@ -36,7 +36,7 @@ class LockSmartDriver extends ZigBeeDriver {
 
     // ACTION: Unlock
     try {
-      this.homey.flow.getActionCard('lock_smart_unlock')
+      this.homey.flow.getDeviceActionCard('lock_smart_unlock')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('locked', false);

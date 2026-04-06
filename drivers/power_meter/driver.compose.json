@@ -169,22 +169,94 @@
             "en": "Enable for solar/grid meters that measure import and export",
             "fr": "Activer pour compteurs solaires qui mesurent import et export"
           }
+        },
+        {
+          "id": "voltage_scale",
+          "type": "dropdown",
+          "label": {
+            "en": "Voltage Scale",
+            "fr": "Échelle Tension"
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0.1",
+              "label": {
+                "en": "÷10",
+                "fr": "÷10"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "×1 (Default)",
+                "fr": "×1 (Par défaut)"
+              }
+            },
+            {
+              "id": "10",
+              "label": {
+                "en": "×10",
+                "fr": "×10"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Adjust if voltage readings are incorrect",
+            "fr": "Ajuster si les mesures de tension sont incorrectes"
+          }
+        },
+        {
+          "id": "current_scale",
+          "type": "dropdown",
+          "label": {
+            "en": "Current Scale",
+            "fr": "Échelle Courant"
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0.1",
+              "label": {
+                "en": "÷10",
+                "fr": "÷10"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "×1 (Default)",
+                "fr": "×1 (Par défaut)"
+              }
+            },
+            {
+              "id": "10",
+              "label": {
+                "en": "×10",
+                "fr": "×10"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Adjust if current readings are incorrect",
+            "fr": "Ajuster si les mesures de courant sont incorrectes"
+          }
         }
       ]
     }
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_BYFDWKTR",
-      "_TZ3000_VSN4QAL7",
-      "_TZ3000_byfdwktr",
-      "_TZ3000_vsn4qal7",
-      "_TZE200_WJK6RURM",
-      "_TZE200_wjk6rurm",
-      "_TZE204_WJK6RURM",
-      "_TZE204_wjk6rurm",
-      "_TZE284_WJK6RURM",
-      "_TZE284_wjk6rurm",
+      "_tz3000_byfdwktr",
+      "_tz3000_vsn4qal7",
+      "_tz3000_byfdwktr",
+      "_tz3000_vsn4qal7",
+      "_tze200_wjk6rurm",
+      "_tze200_wjk6rurm",
+      "_tze204_wjk6rurm",
+      "_tze204_wjk6rurm",
+      "_tze284_wjk6rurm",
+      "_tze284_wjk6rurm",
       "_tz3000_byfdwktr",
       "_tz3000_vsn4qal7",
       "_tze200_wjk6rurm",

@@ -20,7 +20,7 @@ class SmartScenePanelDriver extends ZigBeeDriver {
 
     // Action cards: set switch
     for (let g = 1; g <= 4; g++) {
-      const card = this.homey.flow.getActionCard(`smart_scene_panel_set_switch_${g}`);
+      const card = this.homey.flow.getDeviceActionCard(`smart_scene_panel_set_switch_${g}`);
       card.registerRunListener(async (args, state) => {
         await args.device.triggerCapabilityListener(`onoff.gang${g}`, args.state);
         await args.device.sendDP(23 + g, 1, args.state ? 1 : 0);
@@ -32,3 +32,4 @@ class SmartScenePanelDriver extends ZigBeeDriver {
 }
 
 module.exports = SmartScenePanelDriver;
+

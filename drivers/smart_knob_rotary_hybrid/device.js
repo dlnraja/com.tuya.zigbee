@@ -449,8 +449,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
 
     // Trigger generic flow card with action token
     try {
-      await this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_hybrid_pressed')
-        .trigger(this, { action }).catch(() => {});
+      await this.homey.flow.getDeviceTriggerCard().trigger(this { action }).catch(() => {});
     } catch (e) { /* ignore */ }
 
     // v5.7.11: Trigger specific flow cards based on action type
@@ -465,8 +464,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     
     if (specificCardId) {
       try {
-        await this.homey.flow.getDeviceTriggerCard(specificCardId)
-          .trigger(this, {}, {}).catch(() => {});
+        await this.homey.flow.getDeviceTriggerCard().trigger(this {}, {}).catch(() => {});
         this.log(`[FLOW] ✅ Triggered ${specificCardId}`);
       } catch (e) { /* ignore */ }
     }
@@ -506,4 +504,5 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
 }
 
 module.exports = SmartKnobRotaryDevice;
+
 

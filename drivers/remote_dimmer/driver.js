@@ -41,3 +41,4 @@ class RemoteDimmerDriver extends Driver {
 }
 
 module.exports = RemoteDimmerDriver;
+

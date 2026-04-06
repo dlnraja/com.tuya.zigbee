@@ -66,3 +66,4 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
 }
 
 module.exports = SosEmergencyButtonDriver;
+

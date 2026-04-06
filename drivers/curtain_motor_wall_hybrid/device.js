@@ -313,3 +313,4 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCo
 }
 
 module.exports = CurtainMotorDevice;
+

@@ -40,7 +40,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
     } catch (err) { this.error('Scene trigger failed:', err.message); }
 
     try {
-      this.homey.flow.getActionCard('wall_switch_1gang_1way_set_scene_mode')
+      this.homey.flow.getDeviceActionCard('wall_switch_1gang_1way_set_scene_mode')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSceneMode(args.mode);
@@ -51,7 +51,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set backlight mode
     try {
-      this.homey.flow.getActionCard('wall_switch_1gang_1way_set_backlight')
+      this.homey.flow.getDeviceActionCard('wall_switch_1gang_1way_set_backlight')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           this.log(`Flow: Setting backlight mode to ${args.mode}`);
@@ -71,7 +71,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set power-on behavior (v5.11.30)
     try {
-      this.homey.flow.getActionCard('wall_switch_1gang_1way_set_power_on_behavior')
+      this.homey.flow.getDeviceActionCard('wall_switch_1gang_1way_set_power_on_behavior')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ power_on_behavior: args.mode });
@@ -87,7 +87,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set external switch type (v5.11.30)
     try {
-      this.homey.flow.getActionCard('wall_switch_1gang_1way_set_switch_mode')
+      this.homey.flow.getDeviceActionCard('wall_switch_1gang_1way_set_switch_mode')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ switch_mode: args.mode });
@@ -105,3 +105,4 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
 }
 
 module.exports = WallSwitch1Gang1WayDriver;
+

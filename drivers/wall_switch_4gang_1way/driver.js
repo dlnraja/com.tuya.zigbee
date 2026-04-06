@@ -23,7 +23,7 @@ class WallSwitch4Gang1WayDriver extends ZigBeeDriver {
     }
 
     try {
-      this.homey.flow.getActionCard(`${P}_set_backlight`)
+      this.homey.flow.getDeviceActionCard(`${P}_set_backlight`)
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setBacklightMode(args.mode);
@@ -33,7 +33,7 @@ class WallSwitch4Gang1WayDriver extends ZigBeeDriver {
     } catch (err) { this.error('Action set_backlight:', err.message); }
 
     try {
-      this.homey.flow.getActionCard(`${P}_set_scene_mode`)
+      this.homey.flow.getDeviceActionCard(`${P}_set_scene_mode`)
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSceneMode(args.mode);
@@ -65,16 +65,16 @@ class WallSwitch4Gang1WayDriver extends ZigBeeDriver {
     ];
     for (const { id, fn } of simpleActions) {
       try {
-        this.homey.flow.getActionCard(id).registerRunListener(async (args) => {
+        this.homey.flow.getDeviceActionCard(id).registerRunListener(async (args) => {
           if (!args.device) return false;
           await fn(args.device);
           return true;
         });
       } catch (err) { this.error(`Action ${id}: ${err.message}`); }
     }
-    for (const { id, ep, val } of gangActions) {
+        for (const { id, ep, val } of gangActions) {
       try {
-        this.homey.flow.getActionCard(id).registerRunListener(async (args) => {
+        this.homey.flow.getDeviceActionCard(id).registerRunListener(async (args) => {
           if (!args.device) return false;
           const cap = ep === 1 ? 'onoff' : ('onoff.gang' + ep);
           try {
@@ -90,12 +90,12 @@ class WallSwitch4Gang1WayDriver extends ZigBeeDriver {
         });
       } catch (err) { this.error(`Action ${id}: ${err.message}`); }
     }
-    for (const { id, val } of [
+        for (const { id, val } of [
       { id: `${P}_turn_on_all`, val: true },
       { id: `${P}_turn_off_all`, val: false },
     ]) {
       try {
-        this.homey.flow.getActionCard(id).registerRunListener(async (args) => {
+        this.homey.flow.getDeviceActionCard(id).registerRunListener(async (args) => {
           if (!args.device) return false;
           // Determine the number of gangs from P (e.g. 'switch_3gang' -> 3)
           let numGangs = 1;
@@ -112,7 +112,7 @@ class WallSwitch4Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set power-on behavior (v5.11.30)
     try {
-      this.homey.flow.getActionCard(`${P}_set_power_on_behavior`)
+      this.homey.flow.getDeviceActionCard(`${P}_set_power_on_behavior`)
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ power_on_behavior: args.mode });
@@ -128,7 +128,7 @@ class WallSwitch4Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set external switch type (v5.11.30)
     try {
-      this.homey.flow.getActionCard(`${P}_set_switch_mode`)
+      this.homey.flow.getDeviceActionCard(`${P}_set_switch_mode`)
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ switch_mode: args.mode });
@@ -145,3 +145,4 @@ class WallSwitch4Gang1WayDriver extends ZigBeeDriver {
 }
 
 module.exports = WallSwitch4Gang1WayDriver;
+
