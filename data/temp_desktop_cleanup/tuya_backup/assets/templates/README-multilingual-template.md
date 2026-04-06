@@ -1,6 +1,0 @@
-# {{DRIVER_NAME}}## 📋 Description{{DESCRIPTION}}## 🏷️ Classe{{CLASS}}## 🔧 Capabilities{{CAPABILITIES}}## 📡 Type{{TYPE}}## 🏭 Manufacturer{{MANUFACTURER}}## 📱 Model{{MODEL}}## 🔄 Fusion{{#if FUSION}}- **Drivers fusionnés**: {{FUSION_DRIVERS}}- **Date de fusion**: {{FUSION_DATE}}- **Raison**: {{FUSION_REASON}}{{/if}}## 🔄 Renommage{{#if RENAME}}- **Ancien nom**: {{OLD_NAME}}- **Nouveau nom**: {{NEW_NAME}}- **Date**: {{RENAME_DATE}}- **Raison**: {{RENAME_REASON}}{{/if}}## 🧠 Heuristique Appliquée{{#if HEURISTIC}}- **Capabilities déduites**: {{HEURISTIC_CAPABILITIES}}- **Classe déduite**: {{HEURISTIC_CLASS}}- **Date d'application**: {{HEURISTIC_DATE}}- **Statut**: ⚠️ Partiellement déduit{{/if}}## 📚 Sources{{#each SOURCES}}- **{{NAME}}**: {{URL}}{{/each}}## 🔧 Fonctionnalités{{#each FEATURES}}- ✅ {{FEATURE}}{{/each}}## ⚠️ Limitations{{#each LIMITATIONS}}- {{LIMITATION}}{{/each}}## 🚀 Statut{{STATUS}}---**📅 Version**: {{VERSION}} **🎯 Status**: {{STATUS_ICON}} {{STATUS_TEXT}} **🔧 Type**: {{TYPE_TEXT}}---## 🇬🇧 English{{ENGLISH_DESCRIPTION}}## 🇫🇷 Français{{FRENCH_DESCRIPTION}}## 🇳🇱 Nederlands{{DUTCH_DESCRIPTION}}## 🇱🇰 தமிழ்{{TAMIL_DESCRIPTION}} 
-
----
-**🎯 MEGA-PROMPT ULTIME - VERSION FINALE 2025**
-**📅 Enhanced with enrichment mode**
-**✅ Template enriched and optimized**
