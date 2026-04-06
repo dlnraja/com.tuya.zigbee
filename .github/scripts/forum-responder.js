@@ -373,22 +373,25 @@ async function main(){
         
         if (isMerging) {
           // ORGANIC MERGE: AI rewrites the existing post with new info fused in
-          contentToHumanize = `EXISTING POST (by dlnraja):\n${lastOwn.raw.replace(/<!-- bot-reply -->/g, '')}\n\nNEW INFORMATION TO WEAVE IN:\n${reply}`;
-          humanizePrompt = `You ARE dlnraja, the developer. You're editing your latest forum post to add new fixes.
-1. INTEGRATION: Weave the NEW INFORMATION into the EXISTING POST naturally. 
-2. V6.2.0 PATTERN: Start the update section with "Update: v[VERSION] pushed to Test!". 
-3. ADDRESSING USERS: For each new fix, tag the user (@user) and explain the specific solution (e.g. "Fixed the Moisture Canyon drops for @user", "Added DP101 fallback for @user's LCD").
-4. SILENT BARRIER: Do NOT mention where the "other" devices came from (e.g. Johan's repo). Focus ONLY on the users you are replying to now.
-5. NO BOT-SPEAK: No "Hi @user,", no "I hope this helps", no signatures. Return only the final post content.`;
+          contentToHumanize = `CURRENT POST CONTENT:\n${lastOwn.raw.replace(/<!-- bot-reply -->/g, '')}\n\nNEW UPDATES TO INTEGRATE:\n${reply}`;
+          humanizePrompt = `You ARE dlnraja, the solo developer. You are updating your latest forum post to include new fixes.
+1. INTEGRATION: Rewrite the entire post to weave the NEW UPDATES into the CURRENT CONTENT organically. 
+2. STYLE: Keep it casual and direct. Short sentences. No corporate fluff.
+3. STRUCTURE: Use paragraphs, NOT bullet points. No numbered steps.
+4. VERSIONING: Keep the "Update: v[VERSION] pushed to Test!" line at the top of the newest section.
+5. ADDRESSING USERS: Casually tag users (@user) when mentioning their specific fix (e.g., "Corrected the energy multiplier for @user").
+6. SILENT BARRIER: Never mention bots, AI, infrastructure, or other repos.
+Return only the final post text.`;
         } else {
           // NEW POST: Write a fresh reply as dlnraja
           contentToHumanize = reply;
-          humanizePrompt = `You ARE dlnraja, solo dev of Universal Tuya Zigbee on Homey. Write a casual forum reply.
-Sound like a real person typing between coding sessions — short sentences, no corporate tone.
-ABSOLUTELY NO: "Hi @user," greetings, bullet lists with arrows, ## headers, numbered steps, "Happy to help", "Feel free to", "As always,", signatures.
-NEVER mention: GitHub Actions, pipelines, bots, AI, scraping, automation, Johan Bendz, upstream sync, workflows.
-Mention casually that you checked their specific case (Z2M cross-reference, diagnostics, logs).
-Max 250 words. Return ONLY the text.`;
+          humanizePrompt = `You ARE dlnraja, developer of the app. Write a casual, short forum reply.
+Talk like a real human dev between coding blocks. 
+ABSOLUTELY NO: "Hi @user,", bullet lists, "Key features:", ## headers, "Happy to help", signatures.
+STRUCTURE: Use 1-2 organic paragraphs. 
+CONTENT: Mention the version and the specific fixes for the users tagged. 
+Mention that you cross-referenced their diagnostics/Z2M.
+Max 200 words. Return ONLY the text.`;
         }
         
         if(!dry) {
