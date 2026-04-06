@@ -154,6 +154,21 @@ jobs:
         continue-on-error: true
         run: node scripts/automation/deduplicate-fingerprints.js
 
+      # ===== 3bd. GITHUB: Smart PR Auto-Merger (Approve + Merge + Fix Conflicts) =====
+      - name: "3bd. Smart PR Auto-Merger (v5.13.0)"
+        id: pr_merger
+        continue-on-error: true
+        timeout-minutes: 15
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: node scripts/automation/pr-auto-merger.js
+
+      # ===== 3be. GITHUB: Manifest Caseless Normalization (Homey Match Fix) =====
+      - name: "3be. Manifest Caseless Normalization"
+        id: caseless_fix
+        continue-on-error: true
+        run: node scripts/automation/manifest-caseless-processor.js
+
       # ===== 3b. GITHUB: Comprehensive scan (forks+PRs+issues) =====
       - name: "3b. Comprehensive GitHub Scan"
         id: comp_gh_scan

@@ -24,9 +24,15 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_TZ3210_EEJM8DCR",
+      "_TZ3210_INVESBER",
+      "_TZ3210_IYSTCADI",
       "_TZ3210_eejm8dcr",
       "_TZ3210_invesber",
-      "_TZ3210_iystcadi"
+      "_TZ3210_iystcadi",
+      "_tz3210_eejm8dcr",
+      "_tz3210_invesber",
+      "_tz3210_iystcadi"
     ],
     "endpoints": {
       "1": {
