@@ -26,7 +26,8 @@
     ],
     "approximation": {
       "usageConstant": 0.5
-    }
+    },
+    "mains": true
   },
   "zigbee": {
     "manufacturerName": [

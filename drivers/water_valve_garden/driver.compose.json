@@ -23,7 +23,8 @@
   "energy": {
     "batteries": [
       "AA"
-    ]
+    ],
+    "mains": true
   },
   "zigbee": {
     "manufacturerName": [

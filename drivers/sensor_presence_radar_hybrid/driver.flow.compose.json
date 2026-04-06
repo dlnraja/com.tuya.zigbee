@@ -46,7 +46,7 @@
       }
     },
     {
-      "id": "presence_sensor_radar_motion_detected_dup_tcrzg",
+      "id": "presence_sensor_radar_motion_detected_sensor_presence_radar_hybrid",
       "title": {
         "en": "Motion detected",
         "nl": "Beweging gedetecteerd",
@@ -68,7 +68,7 @@
       }
     },
     {
-      "id": "presence_sensor_radar_illuminance_changed_dup_u6kdv",
+      "id": "presence_sensor_radar_illuminance_changed_sensor_presence_radar_hybrid",
       "title": {
         "en": "Illuminance changed",
         "nl": "Lichtsterkte veranderd",
@@ -97,7 +97,7 @@
       "args": []
     },
     {
-      "id": "presence_sensor_radar_distance_changed_dup_cqh01",
+      "id": "presence_sensor_radar_distance_changed_sensor_presence_radar_hybrid",
       "title": {
         "en": "Detection distance changed",
         "nl": "Detectieafstand veranderd",
@@ -126,7 +126,7 @@
       "args": []
     },
     {
-      "id": "presence_sensor_radar_lux_changed_dup_n5dl7",
+      "id": "presence_sensor_radar_lux_changed_sensor_presence_radar_hybrid",
       "title": {
         "en": "Luminance changed",
         "fr": "Luminance changée",
@@ -142,7 +142,7 @@
       }
     },
     {
-      "id": "presence_sensor_radar_battery_low_dup_dsz9d",
+      "id": "presence_sensor_radar_battery_low_sensor_presence_radar_hybrid",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -160,7 +160,7 @@
   ],
   "conditions": [
     {
-      "id": "presence_sensor_radar_is_present_dup_36v72",
+      "id": "presence_sensor_radar_is_present_sensor_presence_radar_hybrid",
       "title": {
         "en": "Someone !{{is|is not}} present",
         "nl": "Iemand !{{is|is niet}} aanwezig",
@@ -176,7 +176,7 @@
       }
     },
     {
-      "id": "presence_sensor_radar_illuminance_above_dup_cm6qq",
+      "id": "presence_sensor_radar_illuminance_above_sensor_presence_radar_hybrid",
       "title": {
         "en": "Illuminance !{{is|is not}} above",
         "nl": "Lichtsterkte !{{is|is niet}} boven",
@@ -203,7 +203,7 @@
       ]
     },
     {
-      "id": "presence_sensor_radar_distance_within_dup_rlo06",
+      "id": "presence_sensor_radar_distance_within_sensor_presence_radar_hybrid",
       "title": {
         "en": "Target !{{is|is not}} within distance",
         "nl": "Doel !{{is|is niet}} binnen afstand",
@@ -230,7 +230,7 @@
       ]
     },
     {
-      "id": "presence_sensor_radar_motion_active_dup_9nqh2",
+      "id": "presence_sensor_radar_motion_active_sensor_presence_radar_hybrid",
       "title": {
         "en": "Motion !{{is|is not}} detected",
         "fr": "Mouvement !{{est|n'est pas}} détecté",

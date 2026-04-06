@@ -27,7 +27,8 @@
   "energy": {
     "batteries": [
       "CR2032"
-    ]
+    ],
+    "mains": true
   },
   "zigbee": {
     "manufacturerName": [],

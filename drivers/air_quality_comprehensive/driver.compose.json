@@ -35,7 +35,8 @@
     ],
     "approximation": {
       "usageConstant": 0.5
-    }
+    },
+    "mains": true
   },
   "subDevices": [],
   "zigbee": {

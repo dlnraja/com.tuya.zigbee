@@ -23,7 +23,8 @@
   "energy": {
     "batteries": [
       "CR2"
-    ]
+    ],
+    "mains": true
   },
   "zigbee": {
     "manufacturerName": [

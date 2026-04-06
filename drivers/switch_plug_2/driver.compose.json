@@ -46,7 +46,8 @@
   "energy": {
     "batteries": [
       "OTHER"
-    ]
+    ],
+    "mains": true
   },
   "capabilitiesOptions": {
     "onoff": {
@@ -245,7 +246,7 @@
               }
             },
             {
-              "id": "other",
+              "id": "CR2450",
               "label": {
                 "en": "⚙️ Autre appareil",
                 "fr": "⚙️ Autre appareil"

@@ -113,7 +113,8 @@
   "energy": {
     "batteries": [
       "INTERNAL"
-    ]
+    ],
+    "mains": true
   },
   "maintenanceActions": [
     {

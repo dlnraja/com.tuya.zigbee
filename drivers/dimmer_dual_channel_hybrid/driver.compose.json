@@ -83,7 +83,11 @@
     "approximation": {
       "usageOn": 60,
       "usageOff": 0.5
-    }
+    },
+    "batteries": [
+      "CR2450"
+    ],
+    "mains": true
   },
   "maintenanceActions": [
     {
