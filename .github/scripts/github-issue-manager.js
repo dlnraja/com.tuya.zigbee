@@ -579,8 +579,7 @@ async function main(){
     }
     await sleep(5000);
 
-    // Fetch ALL open PRs (paginated)
-    let allPRs=[];
+    const allPRs=[];
     for(let page=1;page<=5;page++){
       const batch=await ghGet('/repos/'+repo+'/pulls?state=open&sort=updated&direction=desc&per_page=100&page='+page);
       if(!batch||!batch.length)break;
@@ -588,17 +587,10 @@ async function main(){
       if(batch.length<100)break;
       await sleep(500);
     }
-    // Also fetch recently closed PRs if requested
-    if(INCLUDE_CLOSED){
-      for(let page=1;page<=2;page++){
-        const batch=await ghGet('/repos/'+repo+'/pulls?state=closed&sort=updated&direction=desc&per_page=100&page='+page);
-        if(!batch||!batch.length)break;
-        allPRs.push(...batch);
-        if(batch.length<100)break;
-        await sleep(500);
-      }
-    }
-    console.log('PRs found:',allPRs.length,'(processing up to',Math.min(allPRs.length,MAX_ITEMS)+')');
+    // Also fetch recently closed PRs for re-opening check
+    const closedPRs=await ghGet('/repos/'+repo+'/pulls?state=closed&sort=updated&direction=desc&per_page=30')||[];
+
+    console.log('PRs found: open='+allPRs.length+', closed-recent='+closedPRs.length);
 
     let prBatch=0;
     for(const pr of allPRs.slice(0,MAX_ITEMS)){
@@ -608,6 +600,30 @@ async function main(){
       if(prBatch%10===0){console.log('  [Rate] Pausing after',prBatch,'PRs...');await sleep(15000)}
     }
     await sleep(5000);
+
+    // v5.13.5: Auto-Reopen logic for closed items where someone responded
+    console.log('\n  == Re-open Check: '+repo+' ==');
+    for(const item of [...realIssues.filter(i=>i.state==='closed'), ...closedPRs]){
+      const key=repo+'#'+(item.pull_request?'PR':'')+item.number;
+      const comments=await ghGet('/repos/'+repo+'/issues/'+item.number+'/comments?per_page=5&sort=created&direction=desc');
+      if(comments && comments.length){
+        const last=comments[0];
+        const lastUser=last.user?.login||'';
+        const isBot=OWNER_USERS.has(lastUser);
+        if(!isBot && daysSince(last.created_at) < 7){
+          // Non-bot user commented recently on a closed item
+          console.log(`  [RE-OPEN] Detected activity on ${key} by @${lastUser}`);
+          if(!DRY){
+            const endpoint='/repos/'+repo+'/issues/'+item.number;
+            const ok=await ghPatch(endpoint,{state:'open'});
+            if(ok){
+               await ghPost(endpoint+'/comments',{body:TAG+'\nRe-opening this automatically because @'+lastUser+' just posted a comment. Looking into it! 👋'});
+               console.log(`    Successfully re-opened ${key}`);
+            }
+          }
+        }
+      }
+    }
 
     // v5.11.47: Stale Sweep — close open items we already responded to
     console.log('\n  == Stale Sweep: '+repo+' ==');
