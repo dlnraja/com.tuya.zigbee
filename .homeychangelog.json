@@ -1,4 +1,7 @@
 {
+  "5.12.0": {
+    "en": "Major stabilization release: Integrated Parallel Bot Handler for faster maintenance, fixed eWeLink/SONOFF plug support (Issue #194), and resolved multi-gang capability mapping bugs."
+  },
   "5.11.205": {
     "en": "Added 3 new fingerprints for enhanced device compatibility in Universal Tuya Zigbee app v5.11.205."
   },

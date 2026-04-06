@@ -1,278 +1,376 @@
 {
-  "timestamp": "2026-03-21T07:56:10.742Z",
-  "total": 247,
-  "groups": 33,
+  "timestamp": "2026-04-06T00:38:18.737Z",
+  "total": 646,
+  "groups": 83,
   "caseInsensitive": true,
   "details": {
-    "air_quality_comprehensive & lcdtemphumidsensor": [
+    "air_quality_co2 & dimmer_wall_1gang": [
       {
-        "mfr": "_tz2000_avdnvykf",
+        "mfr": "_tze200_9cxuhakf",
         "pid": "TS0601"
-      },
+      }
+    ],
+    "air_quality_co2 & climate_sensor": [
       {
-        "mfr": "_tz2000_hjsgdkfl",
+        "mfr": "_tze200_c2fmom5z",
+        "pid": "TS0601"
+      }
+    ],
+    "air_quality_comprehensive & climate_sensor": [
+      {
+        "mfr": "_tze200_8ygsuhe1",
         "pid": "TS0601"
       }
     ],
     "bulb_rgb & bulb_rgbw": [
       {
-        "mfr": "_tz3000_as7eqiri",
+        "mfr": "_tz3000_kdpxju99",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3000_as7eqiri",
+        "mfr": "_tz3000_kdpxju99",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3000_fbja4q6h",
+        "mfr": "_tz3000_odygigth",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3000_fbja4q6h",
+        "mfr": "_tz3000_odygigth",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3000_hcm1fqxe",
+        "mfr": "_tz3210_b8jdosxo",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3000_hcm1fqxe",
+        "mfr": "_tz3210_b8jdosxo",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3000_keabpigb",
+        "mfr": "_tz3210_bfwvfyx1",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3000_keabpigb",
+        "mfr": "_tz3210_bfwvfyx1",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3000_kihkx3cq",
+        "mfr": "_tz3210_c0s1xloa",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3000_kihkx3cq",
+        "mfr": "_tz3210_c0s1xloa",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3000_lzfwt5qx",
+        "mfr": "_tz3210_cieijuw1",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3000_lzfwt5qx",
+        "mfr": "_tz3210_cieijuw1",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3000_m6u3q8jy",
+        "mfr": "_tz3210_dn5higyl",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3000_m6u3q8jy",
+        "mfr": "_tz3210_dn5higyl",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3000_tqlv4yz4",
+        "mfr": "_tz3210_dwzfzfjc",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3000_tqlv4yz4",
+        "mfr": "_tz3210_dwzfzfjc",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3000_u5u4cakc",
+        "mfr": "_tz3210_hicxa0rh",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3000_u5u4cakc",
+        "mfr": "_tz3210_hicxa0rh",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3000_vzopcetz",
+        "mfr": "_tz3210_hxtfthp5",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3000_vzopcetz",
+        "mfr": "_tz3210_hxtfthp5",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3000_w2ug5kgu",
+        "mfr": "_tz3210_ifga63rg",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3000_w2ug5kgu",
+        "mfr": "_tz3210_ifga63rg",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3000_x2fqbdun",
+        "mfr": "_tz3210_it1u8ahz",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3000_x2fqbdun",
+        "mfr": "_tz3210_it1u8ahz",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3210_0c4np92r",
+        "mfr": "_tz3210_iw0zkcu8",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3210_0c4np92r",
+        "mfr": "_tz3210_iw0zkcu8",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3210_0fc3g9sq",
+        "mfr": "_tz3210_jd3z4yig",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3210_0fc3g9sq",
+        "mfr": "_tz3210_jd3z4yig",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3210_1agihf3z",
+        "mfr": "_tz3210_jicmoite",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3210_1agihf3z",
+        "mfr": "_tz3210_jicmoite",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3210_4ubylghk",
+        "mfr": "_tz3210_jjqdqxfq",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3210_4ubylghk",
+        "mfr": "_tz3210_jjqdqxfq",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3210_bcplf4ds",
+        "mfr": "_tz3210_ljoasixl",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3210_bcplf4ds",
+        "mfr": "_tz3210_ljoasixl",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3210_dxrjkpi6",
+        "mfr": "_tz3210_r5afgmkl",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3210_dxrjkpi6",
+        "mfr": "_tz3210_r5afgmkl",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3210_h1zvcpwd",
+        "mfr": "_tz3210_rcggc0ys",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3210_h1zvcpwd",
+        "mfr": "_tz3210_rcggc0ys",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3210_jkbdrvvf",
+        "mfr": "_tz3210_sln7ah6r",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3210_jkbdrvvf",
+        "mfr": "_tz3210_sln7ah6r",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3210_lezkafxf",
+        "mfr": "_tz3210_sw9uxoea",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3210_lezkafxf",
+        "mfr": "_tz3210_sw9uxoea",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3210_lmqquxus",
+        "mfr": "_tz3210_wbsgmojq",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3210_lmqquxus",
+        "mfr": "_tz3210_wbsgmojq",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3210_rbgfkwbl",
+        "mfr": "_tz3210_wxa85bwk",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3210_rbgfkwbl",
+        "mfr": "_tz3210_wxa85bwk",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3210_s8lvbbu",
+        "mfr": "_tz3210_x13bu7za",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3210_s8lvbbu",
+        "mfr": "_tz3210_x13bu7za",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3210_sroezl0s",
+        "mfr": "_tz3210_z1vlyufu",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3210_sroezl0s",
+        "mfr": "_tz3210_z1vlyufu",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3210_taw0fc13",
+        "mfr": "_tz3210_zrvxvydd",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3210_taw0fc13",
+        "mfr": "_tz3210_zrvxvydd",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3210_wuheyhvm",
+        "mfr": "_tzb210_3zfp8mki",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3210_wuheyhvm",
+        "mfr": "_tzb210_3zfp8mki",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3210_s8lvbbuc",
+        "mfr": "_tzb210_417ikxay",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3210_s8lvbbuc",
+        "mfr": "_tzb210_417ikxay",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3000_dbou1ap4",
+        "mfr": "_tzb210_6eed09b9",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3000_dbou1ap4",
+        "mfr": "_tzb210_6eed09b9",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3000_qd7hej8u",
+        "mfr": "_tzb210_endmggws",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3000_qd7hej8u",
+        "mfr": "_tzb210_endmggws",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3210_mja6r5ix",
+        "mfr": "_tzb210_gj0ccsar",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3210_mja6r5ix",
+        "mfr": "_tzb210_gj0ccsar",
         "pid": "TS0505B"
       },
       {
-        "mfr": "_tz3000_q50zhdsc",
+        "mfr": "_tzb210_lnnkh3f9",
         "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3000_q50zhdsc",
+        "mfr": "_tzb210_lnnkh3f9",
+        "pid": "TS0505B"
+      },
+      {
+        "mfr": "_tzb210_rs0ufzwg",
+        "pid": "TS0505A"
+      },
+      {
+        "mfr": "_tzb210_rs0ufzwg",
+        "pid": "TS0505B"
+      },
+      {
+        "mfr": "_tzb210_rwy5hexp",
+        "pid": "TS0505A"
+      },
+      {
+        "mfr": "_tzb210_rwy5hexp",
+        "pid": "TS0505B"
+      },
+      {
+        "mfr": "_tzb210_ue01a0s2",
+        "pid": "TS0505A"
+      },
+      {
+        "mfr": "_tzb210_ue01a0s2",
+        "pid": "TS0505B"
+      },
+      {
+        "mfr": "_tzb210_w9hcix2r",
+        "pid": "TS0505A"
+      },
+      {
+        "mfr": "_tzb210_w9hcix2r",
+        "pid": "TS0505B"
+      },
+      {
+        "mfr": "_tzb210_wxazcmsh",
+        "pid": "TS0505A"
+      },
+      {
+        "mfr": "_tzb210_wxazcmsh",
+        "pid": "TS0505B"
+      },
+      {
+        "mfr": "_tzb210_wy1pyu1q",
+        "pid": "TS0505A"
+      },
+      {
+        "mfr": "_tzb210_wy1pyu1q",
+        "pid": "TS0505B"
+      },
+      {
+        "mfr": "_tzb210_yatkpuha",
+        "pid": "TS0505A"
+      },
+      {
+        "mfr": "_tzb210_yatkpuha",
+        "pid": "TS0505B"
+      },
+      {
+        "mfr": "_tzb210_zmppwawa",
+        "pid": "TS0505A"
+      },
+      {
+        "mfr": "_tzb210_zmppwawa",
         "pid": "TS0505B"
       }
     ],
-    "bulb_rgb & led_strip": [
+    "bulb_rgb & light_bulb_rgb_rgbw_hybrid": [
+      {
+        "mfr": "_tz3000_qd7hej8u",
+        "pid": "TS0505A"
+      },
+      {
+        "mfr": "_tz3000_qd7hej8u",
+        "pid": "TS0505B"
+      },
+      {
+        "mfr": "_tz3210_4ubylghk",
+        "pid": "TS0505A"
+      },
+      {
+        "mfr": "_tz3210_4ubylghk",
+        "pid": "TS0505B"
+      },
+      {
+        "mfr": "_tz3210_mja6r5ix",
+        "pid": "TS0505A"
+      },
+      {
+        "mfr": "_tz3210_mja6r5ix",
+        "pid": "TS0505B"
+      }
+    ],
+    "bulb_rgb & bulb_rgb_led_hybrid": [
       {
         "mfr": "_tz3210_eejm8dcr",
         "pid": "TS0505B"
@@ -286,31 +384,67 @@
         "pid": "TS0505B"
       }
     ],
-    "button_emergency_sos & smart_remote_4_buttons": [
+    "bulb_rgbw & light_bulb_rgb_rgbw_hybrid": [
       {
-        "mfr": "_tz3000_eo3dttwe",
-        "pid": "TS0215A"
+        "mfr": "_tz3210_s8lvbbu",
+        "pid": "TS0505A"
       },
       {
-        "mfr": "_tz3000_fsiepnrh",
-        "pid": "TS0215A"
-      },
-      {
-        "mfr": "_tz3000_p6ju8myv",
-        "pid": "TS0215A"
+        "mfr": "_tz3210_s8lvbbu",
+        "pid": "TS0505B"
       }
     ],
-    "button_wireless_1 & wall_remote_1_gang": [
+    "bulb_rgbw & led_strip": [
+      {
+        "mfr": "_tz3000_gek6snaj",
+        "pid": "TS0505B"
+      }
+    ],
+    "button_emergency_sos & climate_sensor": [
+      {
+        "mfr": "_tz3000_0zrccfgx",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_9r5jaajv",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_irwuzilv",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_jwcixnrz",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_p3fph1go",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_tj4pwzzm",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_u2bbagu4",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_ug1vtuzn",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_zsh6uat3",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_kzm5w4iz",
+        "pid": "TS0601"
+      }
+    ],
+    "button_wireless_1 & remote_button_wireless_wall_hybrid": [
       {
         "mfr": "_tyzb02_keyjqthh",
-        "pid": "TS0041"
-      },
-      {
-        "mfr": "_tz3000_4upl1fcj",
-        "pid": "TS0041"
-      },
-      {
-        "mfr": "_tz3000_8rppvwda",
         "pid": "TS0041"
       },
       {
@@ -328,27 +462,9 @@
       {
         "mfr": "_tz3000_peszejy7",
         "pid": "TS0041"
-      },
-      {
-        "mfr": "_tz3000_pzui3skt",
-        "pid": "TS0041"
-      },
-      {
-        "mfr": "_tz3000_q68478x7",
-        "pid": "TS0041"
-      },
-      {
-        "mfr": "_tz3000_itb0omhv",
-        "pid": "TS0041"
       }
     ],
-    "button_wireless_1 & smart_button_switch & wall_remote_1_gang": [
-      {
-        "mfr": "_tz3000_fa9mlvja",
-        "pid": "TS0041"
-      }
-    ],
-    "button_wireless_1 & smart_button_switch": [
+    "button_wireless_1 & button_wireless_smart_hybrid": [
       {
         "mfr": "_tz3000_qgwcxxws",
         "pid": "TS0041"
@@ -362,33 +478,15 @@
       {
         "mfr": "_tyzb02_keyjhapk",
         "pid": "TS0042"
-      },
+      }
+    ],
+    "button_wireless_2 & scene_switch_wall_hybrid": [
       {
-        "mfr": "_tz3000_owgcnkrh",
-        "pid": "TS0042"
-      },
-      {
-        "mfr": "_tz3000_5e235jpa",
-        "pid": "TS0042"
-      },
-      {
-        "mfr": "_tz3000_fkvaniuu",
-        "pid": "TS0042"
-      },
-      {
-        "mfr": "_tz3000_h1c2eamp",
-        "pid": "TS0042"
-      },
-      {
-        "mfr": "_tz3000_oikiyf3b",
-        "pid": "TS0042"
-      },
-      {
-        "mfr": "_tz3400_keyjhapk",
+        "mfr": "_tz3000_dfgbtub0",
         "pid": "TS0042"
       }
     ],
-    "button_wireless_3 & wall_remote_3_gang": [
+    "button_wireless_3 & remote_button_wireless_wall_hybrid": [
       {
         "mfr": "_tyzb02_key8kk7r",
         "pid": "TS0043"
@@ -398,81 +496,1985 @@
         "pid": "TS0043"
       },
       {
-        "mfr": "_tz3000_gbm10jnj",
-        "pid": "TS0043"
-      },
-      {
-        "mfr": "_tz3000_sj7jbgks",
-        "pid": "TS0043"
-      },
-      {
-        "mfr": "_tz3000_yw5tvzsk",
+        "mfr": "_tz3000_famkxci2",
         "pid": "TS0043"
       }
     ],
-    "button_wireless_4 & wall_remote_4_gang": [
+    "button_wireless_3 & scene_switch_wall_hybrid": [
+      {
+        "mfr": "_tz3000_w8jwkczz",
+        "pid": "TS0043"
+      }
+    ],
+    "button_wireless_4 & remote_button_wireless_wall_hybrid": [
+      {
+        "mfr": "_tz3000_11pg3ima",
+        "pid": "TS0044"
+      },
+      {
+        "mfr": "_tz3000_11pg3ima",
+        "pid": "TS004F"
+      },
       {
         "mfr": "_tz3000_a4xycprs",
         "pid": "TS0044"
+      },
+      {
+        "mfr": "_tz3000_a4xycprs",
+        "pid": "TS004F"
       },
       {
         "mfr": "_tz3000_ee8nrt2l",
         "pid": "TS0044"
       },
       {
+        "mfr": "_tz3000_ee8nrt2l",
+        "pid": "TS004F"
+      },
+      {
+        "mfr": "_tz3000_et7afzxz",
+        "pid": "TS0044"
+      },
+      {
+        "mfr": "_tz3000_et7afzxz",
+        "pid": "TS004F"
+      },
+      {
+        "mfr": "_tz3000_nuombroo",
+        "pid": "TS0044"
+      },
+      {
+        "mfr": "_tz3000_nuombroo",
+        "pid": "TS004F"
+      },
+      {
+        "mfr": "_tz3000_uaa99arv",
+        "pid": "TS0044"
+      },
+      {
+        "mfr": "_tz3000_uaa99arv",
+        "pid": "TS004F"
+      },
+      {
         "mfr": "_tz3000_ufhtxr59",
         "pid": "TS0044"
       },
       {
+        "mfr": "_tz3000_ufhtxr59",
+        "pid": "TS004F"
+      },
+      {
         "mfr": "_tz3000_vp6clf9d",
         "pid": "TS0044"
-      }
-    ],
-    "button_wireless_4 & handheld_remote_4_buttons": [
+      },
       {
-        "mfr": "_tz3000_u3nv1jwk",
-        "pid": "TS0044"
-      }
-    ],
-    "button_wireless_4 & wall_remote_4_gang_3": [
-      {
-        "mfr": "_tz3000_uaa99arv",
-        "pid": "TS0044"
+        "mfr": "_tz3000_vp6clf9d",
+        "pid": "TS004F"
       },
       {
         "mfr": "_tz3000_wkai4ga5",
         "pid": "TS0044"
       },
       {
-        "mfr": "_tz3000_jcspr0tp",
+        "mfr": "_tz3000_wkai4ga5",
+        "pid": "TS004F"
+      },
+      {
+        "mfr": "_tz3000_xabckq1v",
         "pid": "TS0044"
-      }
-    ],
-    "button_wireless_4 & wall_remote_4_gang_2": [
+      },
       {
         "mfr": "_tz3000_xabckq1v",
         "pid": "TS004F"
       }
     ],
-    "button_wireless_6 & wall_remote_6_gang": [
+    "button_wireless_4 & smart_knob_switch_hybrid": [
       {
-        "mfr": "_tz3000_iszegwpd",
-        "pid": "TS0046"
+        "mfr": "_tz3000_4fjiwweb",
+        "pid": "TS004F"
       }
     ],
-    "climate_sensor & contact_sensor & water_leak_sensor": [
+    "button_wireless_4 & smart_knob_rotary_hybrid": [
       {
-        "mfr": "ewelink",
+        "mfr": "_tz3000_b3mgfu0d",
+        "pid": "TS004F"
+      },
+      {
+        "mfr": "_tz3000_czuyt8lz",
+        "pid": "TS004F"
+      },
+      {
+        "mfr": "_tz3000_kjfzuycl",
+        "pid": "TS004F"
+      }
+    ],
+    "button_wireless_4 & smart_knob_rotary": [
+      {
+        "mfr": "_tz3000_pcqjmcud",
+        "pid": "TS004F"
+      }
+    ],
+    "button_wireless_4 & remote_button_wireless_handheld_hybrid": [
+      {
+        "mfr": "_tz3000_u3nv1jwk",
+        "pid": "TS0044"
+      }
+    ],
+    "climate_sensor & lcdtemphumidsensor": [
+      {
+        "mfr": "_tyzb01_cbiezpds",
+        "pid": "TS0201"
+      },
+      {
+        "mfr": "_tyzb01_cbiezpds",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tyzb01_cbiezpds",
+        "pid": "TY0201"
+      },
+      {
+        "mfr": "_tz2000_a476raq2",
+        "pid": "TS0201"
+      },
+      {
+        "mfr": "_tz2000_a476raq2",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz2000_a476raq2",
+        "pid": "TY0201"
+      },
+      {
+        "mfr": "_tz2000_xogb73am",
+        "pid": "TS0201"
+      },
+      {
+        "mfr": "_tz2000_xogb73am",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz2000_xogb73am",
+        "pid": "TY0201"
+      },
+      {
+        "mfr": "_tz3000_bgsigers",
+        "pid": "TS0201"
+      },
+      {
+        "mfr": "_tz3000_bgsigers",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_bgsigers",
+        "pid": "TY0201"
+      },
+      {
+        "mfr": "_tz3000_bjawzodf",
+        "pid": "TS0201"
+      },
+      {
+        "mfr": "_tz3000_bjawzodf",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_bjawzodf",
+        "pid": "TY0201"
+      },
+      {
+        "mfr": "_tz3000_itnrsufe",
+        "pid": "TS0201"
+      },
+      {
+        "mfr": "_tz3000_itnrsufe",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_itnrsufe",
+        "pid": "TY0201"
+      },
+      {
+        "mfr": "_tz3000_rusu2vzb",
+        "pid": "TS0201"
+      },
+      {
+        "mfr": "_tz3000_rusu2vzb",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_rusu2vzb",
+        "pid": "TY0201"
+      },
+      {
+        "mfr": "_tz3000_yd2e749y",
+        "pid": "TS0201"
+      },
+      {
+        "mfr": "_tz3000_yd2e749y",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_yd2e749y",
+        "pid": "TY0201"
+      },
+      {
+        "mfr": "_tze200_vvmbj46n",
+        "pid": "TS0201"
+      },
+      {
+        "mfr": "_tze200_vvmbj46n",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_vvmbj46n",
+        "pid": "TY0201"
+      }
+    ],
+    "climate_sensor & switch_1gang": [
+      {
+        "mfr": "_tz3000_0ghwhypc",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_1adss9de",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_3a9beq8a",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_4rbqgcuv",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_5ng23zjs",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_65ajyxua",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_8n7lqbm0",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_afgzktgb",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_ark8nv4y",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_bhcpnvud",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_bmqxalil",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_cpozgbrx",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_ctftgjwb",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_drc9tuqb",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_fdxihpp7",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_g8n1n7lg",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_g92baclx",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_gbshwgag",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_gjrubzje",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_gzvniqjb",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_hktqahrq",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_hzlsaltw",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_i9oy2rdq",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_ikuxinvo",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_itb0omhv",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_jsfzkftc",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_kycczpw8",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_l8fsgo6p",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_m8f3z8ju",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_m9af2l6g",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_ma3mhpx2",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_mkhkxx1p",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_mx3vgyea",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_myaaknbq",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_n0lphcok",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_npzfdcof",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_pgq7ormg",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_q6a3tepg",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_q8r0bbvy",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_qaabwu5c",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_qlai3277",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_qmi1cfuq",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_qnejhcsu",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_qorepo2x",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_qq9ahj6z",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_qsp2pwtf",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_qvmiyxuk",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_rmjr4ufz",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_skueekg3",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_tqlv4ug4",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_tygpxwqa",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_uaa34g7v",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_udl7uyd2",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_v7gnj3ad",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_veu2v775",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_w1tcofu8",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_wijoqjk1",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_wn65ixz9",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_x3ewpzyr",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_x8mbwtsz",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_ysdv91bk",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_zmy1waw6",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3210_fhx7lk3d",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3218_hdc8bbha",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3218_ya5d6wth",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_abatw3kj",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_hewlydpz",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_ojtqawav",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_wnp4d4va",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_f5efvtbv",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_gbagoilo",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_gxbdnfrh",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_iik0pquw",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_lbhh5o6z",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_lmgrbuwf",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_mexisfik",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_nvxorhcj",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_wskr3up8",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze21c_dohbhb5k",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze284_f5efvtbv",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze284_lbhh5o6z",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze284_tdhnhhiy",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze284_xnwxmj8z",
         "pid": "TS0601"
       }
     ],
-    "contact_sensor & vibration_sensor": [
+    "climate_sensor & plug_energy_monitor": [
       {
-        "mfr": "_tz3000_osu834un",
+        "mfr": "_tz3000_1hwjutgo",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_2iiimqs9",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_2putqrmw",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_2uollq9d",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_303avxxt",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_6l1pjfqe",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_7issjl2q",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_8a833yls",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_8fdayfch",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_8nyaanzb",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_cfnprab5",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_dd8wwzcy",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_dlhhrhs8",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_dlug3kbc",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_gazjngjl",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_gdyjfvgm",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_hyfvrar3",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_in5s3wn1",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_lnggrqqi",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_lqb7lcq9",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_nzkqcvvs",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_o005nuxx",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_qiutut5y",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_rgpqqmbj",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_rk2yzt0u",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_rqbjepe8",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_rtcrrvia",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_sgb0xhwn",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_uwkja6z1",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_v1pdxuqq",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_wbloefbf",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_wzmuk9ai",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_ysiog9xi",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_zjchz7pd",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_zv6x8bt2",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_q9xty0ad",
         "pid": "TS0601"
       }
     ],
-    "curtain_motor & wall_curtain_switch": [
+    "climate_sensor & switch_2gang": [
+      {
+        "mfr": "_tz3000_4xfqlgqo",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_54hjn4vs",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_5gey1ohx",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_5ksufhqi",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_aa5t61rh",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_aaifmpuq",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_biakwrag",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_criiahcg",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_eei0ubpy",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_fbjdkph9",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_fisb3ajo",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_hojntt34",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_huvxrx4i",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_i9w5mehz",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_in5qxhtt",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_irrmjcgi",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_jl7qyupf",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_kpatq5pq",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_ljhbw1c9",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_lmlsduws",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_mtnpt6ws",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_mufwv0ry",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_nuenzetq",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_ogpla3lh",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_qaa59zqd",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_rul9yxcc",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_ruxexjfz",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_tas0zemd",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_wnzoyohq",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_ywubfuvt",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_zbfya6h0",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_zxrfobzw",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_g1ib5ldv",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_ji1gn7rw",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_nh9m9emk",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_nkjintbl",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_wunufsil",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_wvovwe9h",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_wvovwe9h",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & switch_4gang": [
+      {
+        "mfr": "_tz3000_5ajpkyq6",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_5kxl9esg",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_etufnltx",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_ezqbvrqz",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_gexniqbq",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_iymfxdis",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_kfkqkjqe",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_lcjsewlo",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_liygxtcq",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_m3pafcnk",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_m4ah6bcz",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_mdj7kra9",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_mmkbptmx",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_ncb6mkx8",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_nivavasg",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_noru9tix",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_qhyadm57",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_rsylfthg",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_s678wazd",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_u3oupgdy",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_wsspgtcd",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3002_a4kvf6zd",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3002_hkaktryd",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3002_l8bfzlcd",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3002_pw4ad2xa",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3002_u7d3nes3",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3002_uu4uircb",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3002_ybtqbyk3",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3002_yptomml1",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & switch_3gang": [
+      {
+        "mfr": "_tz3000_66fekqhh",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_785olaiq",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_aknpkt02",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_aracgljk",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_avky2mvc",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_bvij6kod",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_dyzkbcip",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_empogkya",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_eqsair32",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_fawk5xjv",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_g9chy2ib",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_hbic3ka3",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_ju82pu2b",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_lsunm46z",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_lubfc1t5",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_mhhxxjrs",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_mzcp0of6",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_nnwehhst",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_ok0ggpk7",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_ouwfc1qj",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_pf7swkqp",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_pv4puuxi",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_qxcnwv26",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_rhkfbfcv",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_sznawwyw",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_uilitwsy",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_v4l4b0lp",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_vsasbzkf",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_ypgri8yz",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_2hf7x9n3",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_atpwqgml",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_bynnczcb",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_kyfqmmyl",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_atpwqgml",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & illuminance_sensor": [
+      {
+        "mfr": "_tz3000_8uxxzz4b",
+        "pid": "TS0222"
+      }
+    ],
+    "climate_sensor & temphumidsensor": [
+      {
+        "mfr": "_tz3000_8ybe88nf",
+        "pid": "CK-TLSR8656-SS5-01(7014)"
+      },
+      {
+        "mfr": "_tz3000_8ybe88nf",
+        "pid": "RH3052"
+      },
+      {
+        "mfr": "_tz3000_8ybe88nf",
+        "pid": "TS0201"
+      },
+      {
+        "mfr": "_tz3000_8ybe88nf",
+        "pid": "TY0201"
+      },
+      {
+        "mfr": "_tz3000_8ybe88nf",
+        "pid": "ZG-227Z"
+      },
+      {
+        "mfr": "_tz3000_bguser20",
+        "pid": "CK-TLSR8656-SS5-01(7014)"
+      },
+      {
+        "mfr": "_tz3000_bguser20",
+        "pid": "RH3052"
+      },
+      {
+        "mfr": "_tz3000_bguser20",
+        "pid": "TS0201"
+      },
+      {
+        "mfr": "_tz3000_bguser20",
+        "pid": "TY0201"
+      },
+      {
+        "mfr": "_tz3000_bguser20",
+        "pid": "ZG-227Z"
+      },
+      {
+        "mfr": "_tz3000_f2bw0b6k",
+        "pid": "CK-TLSR8656-SS5-01(7014)"
+      },
+      {
+        "mfr": "_tz3000_f2bw0b6k",
+        "pid": "RH3052"
+      },
+      {
+        "mfr": "_tz3000_f2bw0b6k",
+        "pid": "TS0201"
+      },
+      {
+        "mfr": "_tz3000_f2bw0b6k",
+        "pid": "TY0201"
+      },
+      {
+        "mfr": "_tz3000_f2bw0b6k",
+        "pid": "ZG-227Z"
+      },
+      {
+        "mfr": "_tz3000_fie1dpkm",
+        "pid": "CK-TLSR8656-SS5-01(7014)"
+      },
+      {
+        "mfr": "_tz3000_fie1dpkm",
+        "pid": "RH3052"
+      },
+      {
+        "mfr": "_tz3000_fie1dpkm",
+        "pid": "TS0201"
+      },
+      {
+        "mfr": "_tz3000_fie1dpkm",
+        "pid": "TY0201"
+      },
+      {
+        "mfr": "_tz3000_fie1dpkm",
+        "pid": "ZG-227Z"
+      }
+    ],
+    "climate_sensor & contact_sensor": [
+      {
+        "mfr": "_tz3000_a33rw7ou",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_au2o5e6q",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_cqlnswn0",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_hgu1dlak",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_okohwwap",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_pjb1ua0m",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_n8dljorx",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & curtain_motor": [
+      {
+        "mfr": "_tz3000_cet6ch1r",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_2imwyigp",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_4vobcgd3",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_9p5xmj5r",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_a8sdabtg",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_ahpcyzth",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_bfmfhxra",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_cqtamhh5",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_df04ghrb",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_go3tvswy",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_kccdzaeo",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_khzbklyh",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_kijxnb8q",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_libht6ua",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_llvwkkde",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_pk0sfzvr",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_qoy0ekbd",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_s7rsrtbg",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_tmszbtzq",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_toeldckg",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_xlnzk169",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_yia0p3tr",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_znbl8dj5",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_1fuxihti",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_2imwyigp",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_yrugsphv",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & switch_wall_6gang": [
+      {
+        "mfr": "_tz3000_cvis4qmw",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & dimmer_wall_1gang": [
+      {
+        "mfr": "_tz3000_estfrmup",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_hexqj6ls",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_kvwrdf47",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_mgusv51k",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_0nauxa0p",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_1agwnems",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_579lguh2",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_6fjev1mn",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_ctq0k47x",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_ebwgzdqq",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_qzaing2g",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_vucankjx",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_whpb9yts",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_xpvamyfz",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_y8yjulon",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_9qhuzgo0",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_vevc4c6g",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze284_xpvamyfz",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & water_leak_sensor": [
+      {
+        "mfr": "_tz3000_kxlmv9ag",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_mqiev3jk",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_r80pzsb9",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_shopg9ss",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3000_wmlc9p9z",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & gas_detector": [
+      {
+        "mfr": "_tz3000_ywagc4rj",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3210_ncw88jfq",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_ggev5fsl",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_yojqa8xn",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & gas_sensor": [
+      {
+        "mfr": "_tz3290_8xzb2ghn",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3290_s6ezpa3j",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tz3290_uc8lwbi2",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_8isdky6j",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_aj0oxo1i",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_p6fuhvez",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_yojqa8xn",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & radiator_valve": [
+      {
+        "mfr": "_tze200_0j5jma9b",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_7tdtqgwv",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_9mahtqtg",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_anv5ujhv",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_bq5c8xfe",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & thermostat_tuya_dp": [
+      {
+        "mfr": "_tze200_1n2zev06",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_3yp57tby",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_7sjncirf",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_8whxpsiw",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_a4bpgplm",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_gd4rvykv",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_lpwgshtl",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_pisltm67",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_qq9mpfhw",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_r731zlxk",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_s8gkrkxk",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_v6ossqfy",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_xby0s3ta",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_znlqjmih",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_5toc8efa",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_cvub6xbb",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_ogx8u5z6",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_p3lqqy2r",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_pcdmj88b",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze284_cvub6xbb",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze284_ogx8u5z6",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze284_pcdmj88b",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze284_xnbkhhdr",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze284_znlqjmih",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & scene_switch_4": [
+      {
+        "mfr": "_tze200_2m38mh6k",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze284_tgeqdjgk",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & rain_sensor": [
+      {
+        "mfr": "_tze200_2pddnnrk",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_jsaqgakf",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_u6x1zyv2",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & valve_irrigation": [
+      {
+        "mfr": "_tze200_2wg5qrjy",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_7ytb3h8u",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_afycb3cg",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_fphxkxue",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_gomuk3dc",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_hggxgsjj",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_ugekduaj",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_xlppj4f5",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_yjryxpot",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_7ytb3h8u",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_a7sghmms",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_gomuk3dc",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_loejka0i",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_ugekduaj",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze284_7ytb3h8u",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze284_8zizsafo",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze284_eaet5qt5",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze284_gomuk3dc",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze284_loejka0i",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & curtain_motor_tilt": [
+      {
+        "mfr": "_tze200_3i3exuay",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_7eue9vhc",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_ergbiejo",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_gubdgai2",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_hsgrhjpf",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_nogaemzt",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_nueqqe6k",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_rmymn92d",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_xaabybja",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & presence_sensor_radar": [
+      {
+        "mfr": "_tze200_4pm4pekt",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_cq8lu23i",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_p9zbdqgs",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_bmdsp6bs",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_laokfqwu",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_nbkshs6k",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_ya4ft0w4",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & din_rail_switch": [
+      {
+        "mfr": "_tze200_ewxhg6o9",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_fsb6zw01",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_rhblgy0z",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_rhblgy0z",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & motion_sensor": [
+      {
+        "mfr": "_tze200_gjldowol",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & vibration_sensor": [
+      {
+        "mfr": "_tze200_iba1ckek",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_jfw0a4aa",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_wzk0x7fq",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & din_rail_meter": [
+      {
+        "mfr": "_tze200_lsanae15",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_lsanae15",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & radiator_controller": [
+      {
+        "mfr": "_tze200_pcdmj88b",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_3regm3h6",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & water_valve_smart": [
+      {
+        "mfr": "_tze200_vuwtqx0t",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze284_vuwtqx0t",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & switch_dimmer_1gang": [
+      {
+        "mfr": "_tze204_dcnsggvz",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & siren": [
+      {
+        "mfr": "_tze204_hcxvyxa5",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_q76rtoa9",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & fan_controller": [
+      {
+        "mfr": "_tze204_lawxy9e2",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & usb_outlet_advanced": [
+      {
+        "mfr": "_tze204_mvtclclq",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & ir_blaster": [
+      {
+        "mfr": "_tze284_3mzb0sdz",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze284_3mzb0sdz",
+        "pid": "TS1201"
+      }
+    ],
+    "climate_sensor & soil_sensor": [
+      {
+        "mfr": "_tze284_65gzcss7",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze284_65gzcss7",
+        "pid": "ZG-303Z"
+      },
+      {
+        "mfr": "_tze284_o9ofysmo",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze284_o9ofysmo",
+        "pid": "ZG-303Z"
+      },
+      {
+        "mfr": "_tze284_xc3vwx5a",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze284_xc3vwx5a",
+        "pid": "ZG-303Z"
+      }
+    ],
+    "climate_sensor & smart_scene_panel": [
+      {
+        "mfr": "_tze284_7zazvlyn",
+        "pid": "TS0601"
+      }
+    ],
+    "climate_sensor & garage_door_opener": [
+      {
+        "mfr": "_tze608_c75zqghm",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze608_fmemczv1",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze608_lapuuoke",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze608_xkr8gep3",
+        "pid": "TS0601"
+      }
+    ],
+    "contact_sensor & plug_energy_monitor": [
+      {
+        "mfr": "_tz3000_cjrngdr3",
+        "pid": "TS0601"
+      }
+    ],
+    "contact_sensor & curtain_motor": [
+      {
+        "mfr": "_tz3000_eafaa66e",
+        "pid": "TS0601"
+      }
+    ],
+    "contact_sensor & motion_sensor": [
+      {
+        "mfr": "_tz3000_o4mkahkc",
+        "pid": "TS0601"
+      }
+    ],
+    "contact_sensor & valve_irrigation": [
+      {
+        "mfr": "_tz3210_0jxeoadc",
+        "pid": "TS0601"
+      }
+    ],
+    "contact_sensor & dimmer_wall_1gang": [
+      {
+        "mfr": "_tz3210_jowhpxop",
+        "pid": "TS0601"
+      }
+    ],
+    "curtain_motor & curtain_motor_wall_hybrid": [
       {
         "mfr": "_tz3000_8kzqqzu4",
         "pid": "TS130F"
@@ -508,15 +2510,31 @@
     ],
     "curtain_motor & curtain_motor_tilt": [
       {
+        "mfr": "_tze200_5sbebbzs",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_eegnwoyw",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_fctwhugx",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_fzo2pocs",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze200_iossyxra",
+        "pid": "TS0601"
+      },
+      {
         "mfr": "_tze200_nkoabg8w",
         "pid": "TS0601"
       },
       {
-        "mfr": "_tze200_xuzcvlku",
-        "pid": "TS0601"
-      },
-      {
-        "mfr": "_tze200_nogaemzt",
+        "mfr": "_tze200_ol5jlkkr",
         "pid": "TS0601"
       },
       {
@@ -524,27 +2542,11 @@
         "pid": "TS0601"
       },
       {
-        "mfr": "_tze200_zpzndjez",
-        "pid": "TS0601"
-      },
-      {
         "mfr": "_tze200_rddyvrci",
         "pid": "TS0601"
       },
       {
-        "mfr": "_tze200_nueqqe6k",
-        "pid": "TS0601"
-      },
-      {
-        "mfr": "_tze200_xaabybja",
-        "pid": "TS0601"
-      },
-      {
-        "mfr": "_tze200_rmymn92d",
-        "pid": "TS0601"
-      },
-      {
-        "mfr": "_tze200_3i3exuay",
+        "mfr": "_tze200_xuzcvlku",
         "pid": "TS0601"
       },
       {
@@ -552,39 +2554,79 @@
         "pid": "TS0601"
       },
       {
-        "mfr": "_tze200_hsgrhjpf",
+        "mfr": "_tze200_zpzndjez",
+        "pid": "TS0601"
+      }
+    ],
+    "curtain_motor & curtain_motor_shutter_hybrid": [
+      {
+        "mfr": "_tze200_cowvfni3",
         "pid": "TS0601"
       },
       {
-        "mfr": "_tze200_68nvbio9",
+        "mfr": "_tze200_wmcdj3aq",
         "pid": "TS0601"
       }
     ],
     "curtain_motor & shutter_roller_controller": [
       {
-        "mfr": "_tze200_wmcdj3aq",
+        "mfr": "_tze204_guvc7pdy",
         "pid": "TS0601"
-      },
+      }
+    ],
+    "dimmer_3gang & dimmer_dual_channel": [
       {
-        "mfr": "_tze200_cowvfni3",
+        "mfr": "_tze200_bxoo2swd",
+        "pid": "TS0601"
+      }
+    ],
+    "dimmer_dual_channel & switch_1gang": [
+      {
+        "mfr": "_tyzb01_v8gtiaed",
         "pid": "TS0601"
       }
     ],
     "dimmer_dual_channel & dimmer_wall_1gang": [
       {
-        "mfr": "_tze200_0hb4rdnp",
+        "mfr": "_tz3210_pagajpog",
         "pid": "TS1101"
       },
       {
-        "mfr": "_tze200_0hb4rdnp",
+        "mfr": "_tz3210_pagajpog",
         "pid": "TS0601"
       },
       {
-        "mfr": "_tze200_4mh6tyyo",
+        "mfr": "_tz3210_tkkb1ym8",
         "pid": "TS1101"
       },
       {
-        "mfr": "_tze200_4mh6tyyo",
+        "mfr": "_tz3210_tkkb1ym8",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_bxoo2swd",
+        "pid": "TS1101"
+      },
+      {
+        "mfr": "_tze204_bxoo2swd",
+        "pid": "TS0601"
+      },
+      {
+        "mfr": "_tze204_zenj4lxv",
+        "pid": "TS1101"
+      },
+      {
+        "mfr": "_tze204_zenj4lxv",
+        "pid": "TS0601"
+      }
+    ],
+    "dimmer_dual_channel_hybrid & dimmer_wall_1gang": [
+      {
+        "mfr": "_tze200_0hb4rdnp",
+        "pid": "TS1101"
+      },
+      {
+        "mfr": "_tze200_0hb4rdnp",
         "pid": "TS0601"
       },
       {
@@ -596,466 +2638,120 @@
         "pid": "TS0601"
       }
     ],
-    "floor_heating_thermostat & radiator_valve": [
+    "dimmer_wall_1gang & switch_2gang": [
       {
-        "mfr": "_tze200_rufdtfyv",
+        "mfr": "_tz3000_7ed9cqgi",
         "pid": "TS0601"
       }
     ],
-    "radiator_valve & smart_lcd_thermostat": [
+    "dimmer_wall_1gang & switch_1gang": [
       {
-        "mfr": "_tze200_p3dbf6qs",
+        "mfr": "_tz3210_2dfy6tol",
         "pid": "TS0601"
       },
       {
-        "mfr": "_tze200_rxq4iti9",
+        "mfr": "_tz3210_tfxwxklq",
         "pid": "TS0601"
       }
     ],
-    "scene_switch_2 & wall_remote_2_gang": [
+    "dimmer_wall_1gang & plug_energy_monitor": [
       {
-        "mfr": "_tz3000_dfgbtub0",
-        "pid": "TS0042"
-      }
-    ],
-    "scene_switch_3 & wall_remote_3_gang": [
-      {
-        "mfr": "_tz3000_w8jwkczz",
-        "pid": "TS0043"
-      }
-    ],
-    "smart_knob & smart_knob_switch": [
-      {
-        "mfr": "_tz3000_4fjiwweb",
-        "pid": "TS004F"
-      },
-      {
-        "mfr": "_tz3000_ixla93vd",
-        "pid": "TS004F"
-      },
-      {
-        "mfr": "_tz3000_qja6nq5z",
-        "pid": "TS004F"
-      },
-      {
-        "mfr": "_tz3000_abrsvsou",
-        "pid": "TS004F"
-      }
-    ],
-    "smart_knob_rotary & smart_remote_1_button": [
-      {
-        "mfr": "_tz3000_kjfzuycl",
-        "pid": "TS004F"
-      }
-    ],
-    "smart_knob_rotary & smart_knob_switch": [
-      {
-        "mfr": "_tz3000_uri7ongn",
-        "pid": "TS004F"
-      }
-    ],
-    "switch_1gang & switch_2gang": [
-      {
-        "mfr": "_tyzb01_digziiav",
+        "mfr": "_tz3210_5ct6e7ye",
         "pid": "TS0601"
       },
       {
-        "mfr": "_tyzb01_digziiav",
-        "pid": "TS011F"
-      },
-      {
-        "mfr": "_tyzb01_zsl6z0pw",
+        "mfr": "_tz3210_8n4dn1ne",
         "pid": "TS0601"
       },
       {
-        "mfr": "_tyzb01_zsl6z0pw",
-        "pid": "TS011F"
-      },
-      {
-        "mfr": "_tz3000_4js9lo5d",
-        "pid": "TS0601"
-      },
-      {
-        "mfr": "_tz3000_4js9lo5d",
-        "pid": "TS011F"
-      },
-      {
-        "mfr": "_tz3000_llfaquvp",
-        "pid": "TS0601"
-      },
-      {
-        "mfr": "_tz3000_llfaquvp",
-        "pid": "TS011F"
-      },
-      {
-        "mfr": "_tz3000_pmz6mjyu",
-        "pid": "TS0601"
-      },
-      {
-        "mfr": "_tz3000_pmz6mjyu",
-        "pid": "TS011F"
-      }
-    ],
-    "switch_1gang & wall_switch_1gang_1way": [
-      {
-        "mfr": "_tyzb01_qeqvmvti",
-        "pid": "TS0001"
-      },
-      {
-        "mfr": "_tyzb01_qeqvmvti",
-        "pid": "TS0011"
-      },
-      {
-        "mfr": "_tyzb01_seqwasot",
-        "pid": "TS0001"
-      },
-      {
-        "mfr": "_tyzb01_seqwasot",
-        "pid": "TS0011"
-      },
-      {
-        "mfr": "_tyzb01_xfpdrwvc",
-        "pid": "TS0001"
-      },
-      {
-        "mfr": "_tyzb01_xfpdrwvc",
-        "pid": "TS0011"
-      },
-      {
-        "mfr": "_tz3000_3wkqni6o",
-        "pid": "TS0001"
-      },
-      {
-        "mfr": "_tz3000_3wkqni6o",
-        "pid": "TS0011"
-      },
-      {
-        "mfr": "_tz3000_6eyydfyg",
-        "pid": "TS0001"
-      },
-      {
-        "mfr": "_tz3000_6eyydfyg",
-        "pid": "TS0011"
-      },
-      {
-        "mfr": "_tz3000_f8tmviy0",
-        "pid": "TS0001"
-      },
-      {
-        "mfr": "_tz3000_f8tmviy0",
-        "pid": "TS0011"
-      },
-      {
-        "mfr": "_tz3000_gidy6sjs",
-        "pid": "TS0001"
-      },
-      {
-        "mfr": "_tz3000_gidy6sjs",
-        "pid": "TS0011"
-      },
-      {
-        "mfr": "_tz3000_oaq83gqc",
-        "pid": "TS0001"
-      },
-      {
-        "mfr": "_tz3000_oaq83gqc",
-        "pid": "TS0011"
-      },
-      {
-        "mfr": "_tz3000_oex7egmt",
-        "pid": "TS0001"
-      },
-      {
-        "mfr": "_tz3000_oex7egmt",
-        "pid": "TS0011"
-      },
-      {
-        "mfr": "_tz3000_yl3zuyaw",
-        "pid": "TS0001"
-      },
-      {
-        "mfr": "_tz3000_yl3zuyaw",
-        "pid": "TS0011"
-      },
-      {
-        "mfr": "_tz3000_hktqahrq",
-        "pid": "TS0001"
-      },
-      {
-        "mfr": "_tz3000_hktqahrq",
-        "pid": "TS0011"
-      }
-    ],
-    "switch_1gang & switch_4gang": [
-      {
-        "mfr": "_tz3002_vaq2bfcu",
+        "mfr": "_tz3210_urjf5u18",
         "pid": "TS0601"
       }
     ],
-    "switch_2gang & wall_switch_2gang_1way": [
+    "dimmer_wall_1gang & fan_controller": [
       {
-        "mfr": "_tyzb01_2athzhfr",
-        "pid": "TS0002"
-      },
-      {
-        "mfr": "_tyzb01_2athzhfr",
-        "pid": "TS0012"
-      },
-      {
-        "mfr": "_tyzb01_6g8b7at8",
-        "pid": "TS0002"
-      },
-      {
-        "mfr": "_tyzb01_6g8b7at8",
-        "pid": "TS0012"
-      },
-      {
-        "mfr": "_tyzb01_6sadkhcy",
-        "pid": "TS0002"
-      },
-      {
-        "mfr": "_tyzb01_6sadkhcy",
-        "pid": "TS0012"
-      },
-      {
-        "mfr": "_tyzb01_mtlhqn48",
-        "pid": "TS0002"
-      },
-      {
-        "mfr": "_tyzb01_mtlhqn48",
-        "pid": "TS0012"
-      },
-      {
-        "mfr": "_tyzb01_vzrytttn",
-        "pid": "TS0002"
-      },
-      {
-        "mfr": "_tyzb01_vzrytttn",
-        "pid": "TS0012"
-      },
-      {
-        "mfr": "_tz3000_18ejxno0",
-        "pid": "TS0002"
-      },
-      {
-        "mfr": "_tz3000_18ejxno0",
-        "pid": "TS0012"
-      },
-      {
-        "mfr": "_tz3000_atp7xmd9",
-        "pid": "TS0002"
-      },
-      {
-        "mfr": "_tz3000_atp7xmd9",
-        "pid": "TS0012"
-      },
-      {
-        "mfr": "_tz3000_kgxej1dv",
-        "pid": "TS0002"
-      },
-      {
-        "mfr": "_tz3000_kgxej1dv",
-        "pid": "TS0012"
-      },
-      {
-        "mfr": "_tz3000_mklgayek",
-        "pid": "TS0002"
-      },
-      {
-        "mfr": "_tz3000_mklgayek",
-        "pid": "TS0012"
-      },
-      {
-        "mfr": "_tz3000_mrqea2uu",
-        "pid": "TS0002"
-      },
-      {
-        "mfr": "_tz3000_mrqea2uu",
-        "pid": "TS0012"
-      },
-      {
-        "mfr": "_tz3000_qn8qvk9y",
-        "pid": "TS0002"
-      },
-      {
-        "mfr": "_tz3000_qn8qvk9y",
-        "pid": "TS0012"
-      },
-      {
-        "mfr": "tuyatec-nzrrvgco",
-        "pid": "TS0002"
-      },
-      {
-        "mfr": "tuyatec-nzrrvgco",
-        "pid": "TS0012"
-      },
-      {
-        "mfr": "tuyatec-o6sncwd6",
-        "pid": "TS0002"
-      },
-      {
-        "mfr": "tuyatec-o6sncwd6",
-        "pid": "TS0012"
-      },
-      {
-        "mfr": "_tz3000_ywubfuvt",
-        "pid": "TS0002"
-      },
-      {
-        "mfr": "_tz3000_ywubfuvt",
-        "pid": "TS0012"
+        "mfr": "_tz3210_lzqq3u4r",
+        "pid": "TS0601"
       }
     ],
-    "switch_3gang & wall_switch_3gang_1way": [
+    "dimmer_wall_1gang & water_leak_sensor": [
       {
-        "mfr": "_tyzb01_b8cr31hp",
-        "pid": "TS0003"
+        "mfr": "_tz3210_ngqk6jia",
+        "pid": "TS0601"
       },
       {
-        "mfr": "_tyzb01_b8cr31hp",
-        "pid": "TS0013"
-      },
-      {
-        "mfr": "_tyzb01_mqel1whf",
-        "pid": "TS0003"
-      },
-      {
-        "mfr": "_tyzb01_mqel1whf",
-        "pid": "TS0013"
-      },
-      {
-        "mfr": "_tyzb01_xiuox57i",
-        "pid": "TS0003"
-      },
-      {
-        "mfr": "_tyzb01_xiuox57i",
-        "pid": "TS0013"
-      },
-      {
-        "mfr": "_tz3000_eqsair32",
-        "pid": "TS0003"
-      },
-      {
-        "mfr": "_tz3000_eqsair32",
-        "pid": "TS0013"
-      },
-      {
-        "mfr": "_tz3000_qxcnwv26",
-        "pid": "TS0003"
-      },
-      {
-        "mfr": "_tz3000_qxcnwv26",
-        "pid": "TS0013"
+        "mfr": "_tz3210_weaqkhab",
+        "pid": "TS0601"
       }
     ],
-    "switch_4gang & wall_switch_4gang_1way": [
+    "din_rail_meter & hvac_dehumidifier": [
       {
-        "mfr": "_tz3000_qkixdnon",
-        "pid": "TS0004"
+        "mfr": "_tze204_eaac7dkw",
+        "pid": "TS0601"
+      }
+    ],
+    "din_rail_meter & energy_meter_3phase": [
+      {
+        "mfr": "_tze204_nslr42tt",
+        "pid": "TS0601"
+      }
+    ],
+    "door_controller & garage_door": [
+      {
+        "mfr": "_tze204_nklqjk62",
+        "pid": "TS0601"
+      }
+    ],
+    "gas_sensor & switch_1gang": [
+      {
+        "mfr": "_tz3000_kqvb5akv",
+        "pid": "TS0601"
+      }
+    ],
+    "gas_sensor & switch_4gang": [
+      {
+        "mfr": "_tz3000_ltt60asa",
+        "pid": "TS0601"
       },
       {
-        "mfr": "_tz3000_qkixdnon",
-        "pid": "TS0014"
+        "mfr": "_tz3002_sal078g8",
+        "pid": "TS0601"
       },
       {
-        "mfr": "_tz3000_qkixdnon",
-        "pid": "TS0726"
+        "mfr": "_tz3002_sfh0jtz0",
+        "pid": "TS0601"
+      }
+    ],
+    "generic_tuya & presence_sensor_radar": [
+      {
+        "mfr": "_tz321c_4slreunp",
+        "pid": "TS0203"
       },
       {
-        "mfr": "_tz3000_xk5udnd6",
-        "pid": "TS0004"
+        "mfr": "_tz321c_4slreunp",
+        "pid": "TS0601"
+      }
+    ],
+    "generic_tuya & plug_energy_monitor": [
+      {
+        "mfr": "sonoff",
+        "pid": "TS0601"
+      }
+    ],
+    "module_mini_switch & plug_energy_monitor": [
+      {
+        "mfr": "sonoff",
+        "pid": "ZBMINIL2"
       },
       {
-        "mfr": "_tz3000_xk5udnd6",
-        "pid": "TS0014"
-      },
+        "mfr": "ewelink",
+        "pid": "ZBMINIL2"
+      }
+    ],
+    "plug_energy_monitor & sensor_climate_contact_hybrid": [
       {
-        "mfr": "_tz3000_xk5udnd6",
-        "pid": "TS0726"
-      },
-      {
-        "mfr": "_tz3000_bseed",
-        "pid": "TS0004"
-      },
-      {
-        "mfr": "_tz3000_bseed",
-        "pid": "TS0014"
-      },
-      {
-        "mfr": "_tz3000_bseed",
-        "pid": "TS0726"
-      },
-      {
-        "mfr": "_tz3002_pzao9ls1",
-        "pid": "TS0004"
-      },
-      {
-        "mfr": "_tz3002_pzao9ls1",
-        "pid": "TS0014"
-      },
-      {
-        "mfr": "_tz3002_pzao9ls1",
-        "pid": "TS0726"
-      },
-      {
-        "mfr": "_tz3002_vaq2bfcu",
-        "pid": "TS0004"
-      },
-      {
-        "mfr": "_tz3002_vaq2bfcu",
-        "pid": "TS0014"
-      },
-      {
-        "mfr": "_tz3002_vaq2bfcu",
-        "pid": "TS0726"
-      },
-      {
-        "mfr": "_tz3000_blhvsaqf",
-        "pid": "TS0004"
-      },
-      {
-        "mfr": "_tz3000_blhvsaqf",
-        "pid": "TS0014"
-      },
-      {
-        "mfr": "_tz3000_blhvsaqf",
-        "pid": "TS0726"
-      },
-      {
-        "mfr": "_tz3000_ysdv91bk",
-        "pid": "TS0004"
-      },
-      {
-        "mfr": "_tz3000_ysdv91bk",
-        "pid": "TS0014"
-      },
-      {
-        "mfr": "_tz3000_ysdv91bk",
-        "pid": "TS0726"
-      },
-      {
-        "mfr": "_tz3000_hafsqare",
-        "pid": "TS0004"
-      },
-      {
-        "mfr": "_tz3000_hafsqare",
-        "pid": "TS0014"
-      },
-      {
-        "mfr": "_tz3000_hafsqare",
-        "pid": "TS0726"
-      },
-      {
-        "mfr": "_tz3000_e98krvvk",
-        "pid": "TS0004"
-      },
-      {
-        "mfr": "_tz3000_e98krvvk",
-        "pid": "TS0014"
-      },
-      {
-        "mfr": "_tz3000_e98krvvk",
-        "pid": "TS0726"
+        "mfr": "ewelink",
+        "pid": "TS0601"
       }
     ]
   }

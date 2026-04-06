@@ -139,6 +139,21 @@ jobs:
           SCAN_FORKS: "true"
         run: node .github/scripts/triage-upstream-enhanced.js
 
+      # ===== 3bb. GITHUB: Parallel Bot Cleanup (Fast resolution) =====
+      - name: "3bb. Parallel Bot Cleanup (v5.12.35)"
+        id: bot_cleanup
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: node scripts/automation/parallel-bot-handler.js
+
+      # ===== 3bc. GITHUB: Global Fingerprint Deduplication =====
+      - name: "3bc. Global Fingerprint Deduplication"
+        id: dedupe_fp
+        continue-on-error: true
+        run: node scripts/automation/deduplicate-fingerprints.js
+
       # ===== 3b. GITHUB: Comprehensive scan (forks+PRs+issues) =====
       - name: "3b. Comprehensive GitHub Scan"
         id: comp_gh_scan

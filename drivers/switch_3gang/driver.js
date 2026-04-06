@@ -103,10 +103,13 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('switch_3gang_turn_on_all')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, true).catch(() => {});
-          await args.device.setCapabilityValue('onoff', true).catch(() => {});
-          for (let i = 2; i <= 3; i++) {
-            if (args.device.hasCapability(`onoff.gang${i}`)) await args.device.triggerCapabilityListener(`onoff.gang${i}`, true);
+          // Set each gang (triggering hardware and local state update)
+          for (let i = 1; i <= 3; i++) {
+            const cap = i === 1 ? 'onoff' : `onoff.gang${i}`;
+            if (args.device.hasCapability(cap)) {
+              await args.device._setGangOnOff(i, true).catch(() => {});
+              await args.device.setCapabilityValue(cap, true).catch(() => {});
+            }
           }
           return true;
         });
@@ -116,10 +119,13 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('switch_3gang_turn_off_all')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, false).catch(() => {});
-          await args.device.setCapabilityValue('onoff', false).catch(() => {});
-          for (let i = 2; i <= 3; i++) {
-            if (args.device.hasCapability(`onoff.gang${i}`)) await args.device.triggerCapabilityListener(`onoff.gang${i}`, false);
+          // Set each gang (triggering hardware and local state update)
+          for (let i = 1; i <= 3; i++) {
+            const cap = i === 1 ? 'onoff' : `onoff.gang${i}`;
+            if (args.device.hasCapability(cap)) {
+              await args.device._setGangOnOff(i, false).catch(() => {});
+              await args.device.setCapabilityValue(cap, false).catch(() => {});
+            }
           }
           return true;
         });
@@ -133,8 +139,8 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           await args.device.setSceneMode(args.mode);
           return true;
         });
-      this.log('[FLOW] \u2705 switch_3gang_set_scene_mode');
-    } catch (err) { this.log('[FLOW] \u26A0\uFE0F ' + err.message); }
+      this.log('[FLOW] ✅ switch_3gang_set_scene_mode');
+    } catch (err) { this.log('[FLOW] ⚠️ ' + err.message); }
 
     this.log('[FLOW] 3-Gang switch flow cards registered (v5.12.0)');
   }

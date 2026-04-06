@@ -1,6 +1,7 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const CoreCapabilityMixin = require('../../lib/mixins/CoreCapabilityMixin');
 
 // v5.11.102: Import IEEEAddressManager for proper CIE address enrollment
 let IEEEAddressManager = null;
@@ -1431,6 +1432,9 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     this.log('[SOS-DEBUG] Global listeners setup complete');
   }
 }
+
+// v6.1: Mixin for _safeSetCapability safety (ensures no crashes on battery reports)
+Object.assign(SosEmergencyButtonDevice.prototype, CoreCapabilityMixin);
 
 module.exports = SosEmergencyButtonDevice;
 

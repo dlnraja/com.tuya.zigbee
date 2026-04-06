@@ -1,0 +1,91 @@
+{
+  "id": "dimmer_ts110e",
+  "name": {
+    "en": "Tuya Dimmer Module TS110E",
+    "fr": "Module Variateur Tuya TS110E",
+    "nl": "Tuya Dimmer Module TS110E"
+  },
+  "class": "light",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff",
+    "dim"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "opts": {
+        "duration": true
+      }
+    }
+  },
+  "images": {
+    "large": "drivers/dimmer_ts110e/assets/images/large.png",
+    "small": "drivers/dimmer_ts110e/assets/images/small.png"
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 5,
+      "usageOff": 0.5
+    }
+  },
+  "settings": [
+    {
+      "id": "minBrightness",
+      "type": "number",
+      "label": {
+        "en": "Minimum Brightness",
+        "fr": "Luminosité Minimale"
+      },
+      "value": 10,
+      "min": 1,
+      "max": 1000
+    },
+    {
+      "id": "maxBrightness",
+      "type": "number",
+      "label": {
+        "en": "Maximum Brightness",
+        "fr": "Luminosité Maximale"
+      },
+      "value": 1000,
+      "min": 1,
+      "max": 1000
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_tz3210_ngqk6jia",
+      "_tz3210_weaqkhab"
+    ],
+    "productId": [
+      "TS110E"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8
+        ],
+        "bindings": [
+          6,
+          8
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press the setup button for 10 seconds or switch the unit on and off five times to enter pairing mode.",
+        "fr": "Appuyez sur le bouton de configuration pendant 10 secondes ou allumez et éteignez l'appareil cinq fois pour passer en mode appairage."
+      }
+    }
+  }
+}

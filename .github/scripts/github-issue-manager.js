@@ -24,7 +24,7 @@ const VERIFY_TAG='<!-- awaiting-verification -->';
 const VERIFY_LABEL='awaiting-verification';
 const VERIFY_DAYS=14;
 const REPO_OWNER=process.env.GITHUB_REPOSITORY_OWNER||'dlnraja';
-const OWNER_USERS=new Set([REPO_OWNER,'dlnraja','github-actions[bot]','dependabot[bot]','tuya-triage-bot']);
+const OWNER_USERS=new Set([REPO_OWNER,'dlnraja','github-actions','github-actions[bot]','dependabot','dependabot[bot]','tuya-triage-bot','google-labs-jules','snyk-bot','renovate-bot']);
 const{fetchWithRetry}=require('./retry-helper');
 const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP,isConcatenatedFP}=require('./fp-validator');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));

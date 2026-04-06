@@ -71,13 +71,13 @@ class Button1GangDriver extends ZigBeeDriver {
 
       // Battery trigger
       try {
-// 
+        // 
         if (batteryCard) {
           batteryCard.registerRunListener(async (args, state) => {
             if (!args.device) return false;
             return true;
           });
-// 
+          // 
         }
       } catch (e) {
         // Optional

@@ -110,7 +110,7 @@ class SmokeDetectorAdvancedDevice extends HybridSensorBase {
             if (device) {
               device.log?.(`[SMOKE] DP4 as battery: ${battery}%`);
               // v5.5.955: Trigger battery flow cards
-// 
+              // 
               if (battery < 20) {
                 device.driver?.homey?.flow?.getTriggerCard?.('smoke_detector_advanced_battery_low')?.trigger(device, {}).catch(() => {});
               }
