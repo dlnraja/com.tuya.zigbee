@@ -25,9 +25,7 @@
   },
   "energy": {
     "batteries": [
-      "CR2450",
-      "CR2032",
-      "AAA"
+      "CR2450"
     ],
     "approximation": {
       "usageConstant": 0.3
