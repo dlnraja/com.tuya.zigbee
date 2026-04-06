@@ -20,7 +20,8 @@
     },
     "batteries": [
       "OTHER"
-    ]
+    ],
+    "mains": true
   },
   "zigbee": {
     "manufacturerName": [
@@ -253,7 +254,7 @@
               }
             },
             {
-              "id": "other",
+              "id": "CR2450",
               "label": {
                 "en": "⚙️ Autre appareil",
                 "fr": "⚙️ Autre appareil"

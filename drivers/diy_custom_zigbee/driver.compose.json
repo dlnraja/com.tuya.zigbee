@@ -31,7 +31,8 @@
     ],
     "approximation": {
       "usageConstant": 0.5
-    }
+    },
+    "mains": true
   },
   "images": {
     "small": "drivers/diy_custom_zigbee/assets/images/small.png",

@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "smart_knob_button_pressed_dup_hwp4e",
+      "id": "smart_knob_button_pressed_smart_knob_switch_hybrid",
       "title": {
         "en": "Knob button pressed",
         "fr": "Bouton du variateur appuyé"
@@ -23,7 +23,7 @@
       }
     },
     {
-      "id": "smart_knob_single_press_dup_tfgqe",
+      "id": "smart_knob_single_press_smart_knob_switch_hybrid",
       "title": {
         "en": "Knob single press",
         "fr": "Appui simple"
@@ -34,7 +34,7 @@
       }
     },
     {
-      "id": "smart_knob_double_press_dup_m9tm3",
+      "id": "smart_knob_double_press_smart_knob_switch_hybrid",
       "title": {
         "en": "Knob double press",
         "fr": "Double appui"
@@ -45,7 +45,7 @@
       }
     },
     {
-      "id": "smart_knob_long_press_dup_y7u45",
+      "id": "smart_knob_long_press_smart_knob_switch_hybrid",
       "title": {
         "en": "Knob long press",
         "fr": "Appui long"
@@ -56,7 +56,7 @@
       }
     },
     {
-      "id": "smart_knob_rotated_dup_v282a",
+      "id": "smart_knob_rotated_smart_knob_switch_hybrid",
       "title": {
         "en": "Knob rotated",
         "fr": "Variateur tourné"
@@ -87,7 +87,7 @@
       }
     },
     {
-      "id": "smart_knob_level_changed_dup_2lmpi",
+      "id": "smart_knob_level_changed_smart_knob_switch_hybrid",
       "title": {
         "en": "Brightness level changed",
         "fr": "Niveau de luminosité changé"

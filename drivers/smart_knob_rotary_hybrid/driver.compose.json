@@ -73,7 +73,8 @@
     ],
     "approximation": {
       "usageConstant": 0.3
-    }
+    },
+    "mains": true
   },
   "platforms": [
     "local"

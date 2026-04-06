@@ -18,7 +18,8 @@
   "energy": {
     "batteries": [
       "CR2450"
-    ]
+    ],
+    "mains": true
   },
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",

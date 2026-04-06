@@ -67,7 +67,8 @@
   "energy": {
     "batteries": [
       "OTHER"
-    ]
+    ],
+    "mains": true
   },
   "capabilitiesOptions": {
     "onoff": {

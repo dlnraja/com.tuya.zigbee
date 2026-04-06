@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "smart_knob_rotary_rotate_left_dup_abqvw",
+      "id": "smart_knob_rotary_rotate_left_smart_knob_rotary_hybrid",
       "highlight": true,
       "title": {
         "en": "Rotated left",
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "smart_knob_rotary_rotate_right_dup_gpqtu",
+      "id": "smart_knob_rotary_rotate_right_smart_knob_rotary_hybrid",
       "highlight": true,
       "title": {
         "en": "Rotated right",
@@ -65,7 +65,7 @@
       }
     },
     {
-      "id": "smart_knob_rotary_pressed_dup_quc7f",
+      "id": "smart_knob_rotary_pressed_smart_knob_rotary_hybrid",
       "highlight": true,
       "title": {
         "en": "Button pressed",
@@ -97,7 +97,7 @@
       }
     },
     {
-      "id": "smart_knob_rotary_single_press_dup_1xrsx",
+      "id": "smart_knob_rotary_single_press_smart_knob_rotary_hybrid",
       "title": {
         "en": "Single press",
         "fr": "Appui simple",
@@ -113,7 +113,7 @@
       }
     },
     {
-      "id": "smart_knob_rotary_double_press_dup_itm14",
+      "id": "smart_knob_rotary_double_press_smart_knob_rotary_hybrid",
       "title": {
         "en": "Double press",
         "fr": "Double appui",
@@ -129,7 +129,7 @@
       }
     },
     {
-      "id": "smart_knob_rotary_long_press_dup_ia8c5",
+      "id": "smart_knob_rotary_long_press_smart_knob_rotary_hybrid",
       "title": {
         "en": "Long press",
         "fr": "Appui long",
@@ -145,7 +145,7 @@
       }
     },
     {
-      "id": "smart_knob_rotary_battery_low_dup_4kttr",
+      "id": "smart_knob_rotary_battery_low_smart_knob_rotary_hybrid",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -259,7 +259,7 @@
   ],
   "conditions": [
     {
-      "id": "smart_knob_rotary_brightness_above_dup_aiuyz",
+      "id": "smart_knob_rotary_brightness_above_smart_knob_rotary_hybrid",
       "title": {
         "en": "Brightness level is above...",
         "fr": "Niveau de luminosité supérieur à..."
@@ -285,7 +285,7 @@
   ],
   "actions": [
     {
-      "id": "smart_knob_rotary_set_brightness_dup_3ymsl",
+      "id": "smart_knob_rotary_set_brightness_smart_knob_rotary_hybrid",
       "title": {
         "en": "Set brightness",
         "fr": "Régler luminosité",

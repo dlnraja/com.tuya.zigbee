@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "bulb_rgb_smart_bulb_rgb_turned_on_dup_xkkg0",
+      "id": "bulb_rgb_smart_bulb_rgb_turned_on_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Turned on",
         "fr": "Allumé"
@@ -13,7 +13,7 @@
       }
     },
     {
-      "id": "bulb_rgb_smart_bulb_rgb_turned_off_dup_0kbzf",
+      "id": "bulb_rgb_smart_bulb_rgb_turned_off_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Turned off",
         "fr": "Éteint"
@@ -25,7 +25,7 @@
       }
     },
     {
-      "id": "bulb_rgb_smart_bulb_rgb_dim_changed_dup_uc572",
+      "id": "bulb_rgb_smart_bulb_rgb_dim_changed_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Brightness changed",
         "fr": "Luminosité changée"
@@ -48,7 +48,7 @@
       }
     },
     {
-      "id": "bulb_rgb_turned_on_dup_9bngj",
+      "id": "bulb_rgb_turned_on_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Turned on",
         "fr": "Allumé",
@@ -64,7 +64,7 @@
       }
     },
     {
-      "id": "bulb_rgb_turned_off_dup_uj9kh",
+      "id": "bulb_rgb_turned_off_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Turned off",
         "fr": "Éteint",
@@ -80,7 +80,7 @@
       }
     },
     {
-      "id": "bulb_rgb_battery_low_dup_pvn7f",
+      "id": "bulb_rgb_battery_low_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -98,7 +98,7 @@
   ],
   "conditions": [
     {
-      "id": "bulb_rgb_smart_bulb_rgb_is_on_dup_mgtko",
+      "id": "bulb_rgb_smart_bulb_rgb_is_on_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}"
@@ -110,7 +110,7 @@
       "args": []
     },
     {
-      "id": "bulb_rgb_is_on_dup_81ok2",
+      "id": "bulb_rgb_is_on_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Is !{{on|off}}",
         "fr": "Est !{{allumé|éteint}}",
@@ -128,7 +128,7 @@
   ],
   "actions": [
     {
-      "id": "bulb_rgb_smart_bulb_rgb_turn_on_dup_ytyzf",
+      "id": "bulb_rgb_smart_bulb_rgb_turn_on_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
@@ -140,7 +140,7 @@
       }
     },
     {
-      "id": "bulb_rgb_smart_bulb_rgb_turn_off_dup_ezcri",
+      "id": "bulb_rgb_smart_bulb_rgb_turn_off_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Turn off",
         "fr": "Éteindre"
@@ -152,7 +152,7 @@
       }
     },
     {
-      "id": "bulb_rgb_smart_bulb_rgb_toggle_dup_jdf8u",
+      "id": "bulb_rgb_smart_bulb_rgb_toggle_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Toggle on or off",
         "fr": "Basculer"
@@ -164,7 +164,7 @@
       }
     },
     {
-      "id": "bulb_rgb_smart_bulb_rgb_set_dim_dup_dyblc",
+      "id": "bulb_rgb_smart_bulb_rgb_set_dim_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Set brightness to...",
         "fr": "Régler la luminosité à..."
@@ -190,7 +190,7 @@
       }
     },
     {
-      "id": "bulb_rgb_turn_on_dup_yusve",
+      "id": "bulb_rgb_turn_on_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -206,7 +206,7 @@
       }
     },
     {
-      "id": "bulb_rgb_turn_off_dup_2vkqa",
+      "id": "bulb_rgb_turn_off_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Turn off",
         "fr": "Éteindre",
@@ -222,7 +222,7 @@
       }
     },
     {
-      "id": "bulb_rgb_toggle_dup_3z7px",
+      "id": "bulb_rgb_toggle_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -238,7 +238,7 @@
       }
     },
     {
-      "id": "bulb_rgb_set_brightness_dup_trzt4",
+      "id": "bulb_rgb_set_brightness_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Set brightness",
         "fr": "Régler luminosité",

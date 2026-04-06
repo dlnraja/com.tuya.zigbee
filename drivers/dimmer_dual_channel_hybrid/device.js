@@ -13,6 +13,34 @@ const { CLUSTER } = require('zigbee-clusters');
  */
 class DimmerDualChannelDevice extends ZigBeeDevice {
 
+  async onInit() {
+    await super.onInit();
+    
+    // Check power type from settings or assume mains powered
+    let isMains = true;
+    try {
+      const s = this.getSettings();
+      if (s && s.tuya_mains_powered !== undefined) {
+        isMains = s.tuya_mains_powered;
+      }
+    } catch(e) {}
+
+    if (isMains) {
+      this.log('Mode Secteur détecté : Nettoyage des capacités batterie');
+      if (this.hasCapability('measure_battery')) {
+        await this.removeCapability('measure_battery').catch(this.error);
+      }
+      if (typeof this.setEnergy === 'function') {
+        await this.setEnergy({ mains: true, batteries: null }).catch(this.error);
+      }
+    } else {
+      this.log('Mode Pile détecté : Activation du monitoring');
+      if (typeof this.setEnergy === 'function') {
+        await this.setEnergy({ mains: false, batteries: ["CR2450"] }).catch(this.error);
+      }
+    }
+  }
+
   async onNodeInit({ zclNode }) {
     this.log('╔══════════════════════════════════════════════════════════════╗');
     this.log('║         DUAL CHANNEL DIMMER v5.3.90                          ║');

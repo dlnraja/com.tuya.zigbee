@@ -242,7 +242,7 @@
               }
             },
             {
-              "id": "other",
+              "id": "CR2450",
               "label": {
                 "en": "⚙️ Autre appareil",
                 "fr": "⚙️ Autre appareil"
@@ -601,7 +601,8 @@
     },
     "batteries": [
       "OTHER"
-    ]
+    ],
+    "mains": true
   },
   "pair": [
     {

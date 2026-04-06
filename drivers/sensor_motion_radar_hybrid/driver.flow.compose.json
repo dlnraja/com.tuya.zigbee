@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "motion_sensor_radar_mmwave_presence_detected_dup_e00vx",
+      "id": "motion_sensor_radar_mmwave_presence_detected_sensor_motion_radar_hybrid",
       "title": {
         "en": "Presence detected",
         "fr": "Présence détectée"
@@ -13,7 +13,7 @@
       }
     },
     {
-      "id": "motion_sensor_radar_mmwave_presence_cleared_dup_cqjhy",
+      "id": "motion_sensor_radar_mmwave_presence_cleared_sensor_motion_radar_hybrid",
       "title": {
         "en": "Presence cleared",
         "fr": "Présence disparue"
@@ -25,7 +25,7 @@
       }
     },
     {
-      "id": "motion_sensor_radar_mmwave_motion_detected_dup_io3d5",
+      "id": "motion_sensor_radar_mmwave_motion_detected_sensor_motion_radar_hybrid",
       "title": {
         "en": "Motion detected",
         "fr": "Mouvement détecté"
@@ -37,7 +37,7 @@
       }
     },
     {
-      "id": "motion_sensor_radar_mmwave_no_motion_dup_wnox6",
+      "id": "motion_sensor_radar_mmwave_no_motion_sensor_motion_radar_hybrid",
       "title": {
         "en": "No motion",
         "fr": "Aucun mouvement"
@@ -49,7 +49,7 @@
       }
     },
     {
-      "id": "motion_sensor_radar_mmwave_illuminance_changed_dup_6zwia",
+      "id": "motion_sensor_radar_mmwave_illuminance_changed_sensor_motion_radar_hybrid",
       "title": {
         "en": "Illuminance changed",
         "fr": "Luminosité changée"
@@ -72,7 +72,7 @@
       }
     },
     {
-      "id": "motion_sensor_radar_mmwave_temperature_changed_dup_qla6y",
+      "id": "motion_sensor_radar_mmwave_temperature_changed_sensor_motion_radar_hybrid",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée"
@@ -95,7 +95,7 @@
       }
     },
     {
-      "id": "motion_sensor_radar_mmwave_humidity_changed_dup_4fdih",
+      "id": "motion_sensor_radar_mmwave_humidity_changed_sensor_motion_radar_hybrid",
       "title": {
         "en": "Humidity changed",
         "fr": "Humidité changée"
@@ -118,7 +118,7 @@
       }
     },
     {
-      "id": "motion_sensor_radar_mmwave_target_distance_changed_dup_nf4wn",
+      "id": "motion_sensor_radar_mmwave_target_distance_changed_sensor_motion_radar_hybrid",
       "title": {
         "en": "Target distance changed",
         "fr": "Distance cible changée"
@@ -141,7 +141,7 @@
       }
     },
     {
-      "id": "motion_sensor_radar_mmwave_battery_low_dup_eq4s2",
+      "id": "motion_sensor_radar_mmwave_battery_low_sensor_motion_radar_hybrid",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible"
@@ -153,7 +153,7 @@
       }
     },
     {
-      "id": "motion_sensor_radar_mmwave_battery_changed_dup_1tqng",
+      "id": "motion_sensor_radar_mmwave_battery_changed_sensor_motion_radar_hybrid",
       "title": {
         "en": "Battery level changed",
         "fr": "Niveau batterie changé"
@@ -176,7 +176,7 @@
       }
     },
     {
-      "id": "motion_sensor_radar_mmwave_distance_changed_dup_hjsk4",
+      "id": "motion_sensor_radar_mmwave_distance_changed_sensor_motion_radar_hybrid",
       "title": {
         "en": "Distance changed",
         "fr": "Distance changée",
@@ -192,7 +192,7 @@
       }
     },
     {
-      "id": "motion_sensor_radar_mmwave_temp_changed_dup_6w3n3",
+      "id": "motion_sensor_radar_mmwave_temp_changed_sensor_motion_radar_hybrid",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée",
@@ -208,7 +208,7 @@
       }
     },
     {
-      "id": "motion_sensor_radar_mmwave_lux_changed_dup_l4xe1",
+      "id": "motion_sensor_radar_mmwave_lux_changed_sensor_motion_radar_hybrid",
       "title": {
         "en": "Luminance changed",
         "fr": "Luminance changée",
@@ -226,7 +226,7 @@
   ],
   "conditions": [
     {
-      "id": "motion_sensor_radar_mmwave_is_presence_detected_dup_e5u47",
+      "id": "motion_sensor_radar_mmwave_is_presence_detected_sensor_motion_radar_hybrid",
       "title": {
         "en": "Presence is !{{detected|not detected}}",
         "fr": "Présence !{{détectée|non détectée}}"
@@ -238,7 +238,7 @@
       }
     },
     {
-      "id": "motion_sensor_radar_mmwave_illuminance_above_dup_fhhem",
+      "id": "motion_sensor_radar_mmwave_illuminance_above_sensor_motion_radar_hybrid",
       "title": {
         "en": "Illuminance is above",
         "fr": "Luminosité supérieure à"
@@ -262,7 +262,7 @@
       ]
     },
     {
-      "id": "motion_sensor_radar_mmwave_illuminance_below_dup_06hs3",
+      "id": "motion_sensor_radar_mmwave_illuminance_below_sensor_motion_radar_hybrid",
       "title": {
         "en": "Illuminance is below",
         "fr": "Luminosité inférieure à"
@@ -286,7 +286,7 @@
       ]
     },
     {
-      "id": "motion_sensor_radar_mmwave_temperature_above_dup_f4110",
+      "id": "motion_sensor_radar_mmwave_temperature_above_sensor_motion_radar_hybrid",
       "title": {
         "en": "Temperature is above",
         "fr": "Température supérieure à"
@@ -310,7 +310,7 @@
       ]
     },
     {
-      "id": "motion_sensor_radar_mmwave_target_distance_less_than_dup_89l79",
+      "id": "motion_sensor_radar_mmwave_target_distance_less_than_sensor_motion_radar_hybrid",
       "title": {
         "en": "Target distance is less than",
         "fr": "Distance cible inférieure à"
@@ -334,7 +334,7 @@
       ]
     },
     {
-      "id": "motion_sensor_radar_mmwave_motion_active_dup_v1cak",
+      "id": "motion_sensor_radar_mmwave_motion_active_sensor_motion_radar_hybrid",
       "title": {
         "en": "Motion !{{is|is not}} detected",
         "fr": "Mouvement !{{est|n'est pas}} détecté",
@@ -352,7 +352,7 @@
   ],
   "actions": [
     {
-      "id": "motion_sensor_radar_mmwave_set_radar_sensitivity_dup_95fva",
+      "id": "motion_sensor_radar_mmwave_set_radar_sensitivity_sensor_motion_radar_hybrid",
       "title": {
         "en": "Set radar sensitivity",
         "fr": "Définir sensibilité radar"
@@ -376,7 +376,7 @@
       ]
     },
     {
-      "id": "motion_sensor_radar_mmwave_set_detection_range_dup_g73sq",
+      "id": "motion_sensor_radar_mmwave_set_detection_range_sensor_motion_radar_hybrid",
       "title": {
         "en": "Set detection range",
         "fr": "Définir plage de détection"
@@ -411,7 +411,7 @@
       ]
     },
     {
-      "id": "motion_sensor_radar_mmwave_set_fading_time_dup_5w6kd",
+      "id": "motion_sensor_radar_mmwave_set_fading_time_sensor_motion_radar_hybrid",
       "title": {
         "en": "Set fading time",
         "fr": "Définir délai d'absence"
@@ -435,7 +435,7 @@
       ]
     },
     {
-      "id": "motion_sensor_radar_mmwave_set_detection_delay_dup_x4fyy",
+      "id": "motion_sensor_radar_mmwave_set_detection_delay_sensor_motion_radar_hybrid",
       "title": {
         "en": "Set detection delay",
         "fr": "Définir délai de détection"
