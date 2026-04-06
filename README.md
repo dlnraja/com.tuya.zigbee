@@ -123,6 +123,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 |---------|---------|
 | **v7.0.3** | v7.0.2: Fixed SDK v3 compliance crash when accessing device flow cards, Resolved duplicate Flow card trigger IDs that... |
 | **v7.0.2** | v7.0.2: Fixed flow card crashes, TS0003 gang linking, and energy meter reporting. Added TS110E support, strict batter... |
+| **v7.0.3** | v7.0.2: Fixed 'is not a function' crash on flow card triggers by aligning with SDK v3 get*Card methods., Resolved dup... |
+| **v7.0.2** | Fixed SDK v3 flow card crashes, resolved duplicate flow IDs, and patched unlinked gang capabilities on TS0003 switche... |
 | **v7.0.1** | Fixed flow card crashes and device ID errors, resolved unlinked sub-gang controls on TS0003 switches, fixed duplicate... |
 | **v7.0.0** | Fixed flow trigger errors, TS0003 gang linking, and energy metering. Added TS110E support, optimized HOBEIAN sensors,... |
 | **v5.12.3** | v5.12.2: Fixed energy multiplier for device _TZ3000_wzmuk9ai., Resolved connection issues for soil sensors and LCD se... |
