@@ -4,7 +4,27 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.0.1] - 2026-04-06
+## [7.0.2] - 2026-04-06
+
+### Bug Fixes
+- Fixed SDK v3 compliance crash when accessing device flow cards
+- Resolved duplicate Flow card trigger IDs that blocked app validation
+- Fixed unlinked sub-gang capabilities on TS0003 multi-gang switches
+- Corrected energy multiplier reporting for `_TZ3000_wzmuk9ai` plugs
+- Fixed Zbeacon plug connectivity and state reporting
+- Resolved connection drops and alarm reset issues for soil and LCD sensors
+- Patched driver fingerprint collisions to prevent incorrect device matching
+
+### New Features & Improvements
+- Added support for TS110E dimmer switches
+- Implemented dynamic energy/battery switching for hybrid energy meters
+- Added strict Tuya battery value filters to block garbage readings (0, 255, 65535)
+- Relaxed cluster matching to improve compatibility with Tuya-Bridge devices
+- Added 6 new device fingerprints for soil and LCD sensors
+- Optimized capability updates to prevent sudden value jumps and false triggers
+---
+
+ [7.0.1] - 2026-04-06
 
 ### Bug Fixes
 - Fixed `TypeError` crashes in flow cards by aligning card retrieval methods with Homey SDK v3 specifications.
