@@ -283,39 +283,14 @@ class SoilSensorDevice extends TuyaHybridDevice {
 
   /**
    * v5.5.334: Handle settings changes (Hobeian PR#6 fix)
-   * Implements temperature_unit, calibration offsets, and soil_warning threshold
+   * Note: Calibration is now handled automatically by the base class.
    */
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     this.log('[SOIL] ⚙️ Settings changed:', changedKeys);
 
-    for (const key of changedKeys) {
-      const newValue = newSettings[key];
-      this.log(`[SOIL] Setting ${key}: ${oldSettings[key]} → ${newValue}`);
-
-      switch (key) {
-      case 'temperature_calibration':
-        this._temperatureCalibration = newValue || 0;
-        break;
-      case 'humidity_calibration':
-        this._humidityCalibration = newValue || 0;
-        break;
-      case 'moisture_calibration':
-        this._moistureCalibration = newValue || 0;
-        break;
-      case 'soil_warning_threshold':
-        this._soilWarningThreshold = newValue || 30;
-        // Re-evaluate alarm_water based on current moisture
-        this._updateWaterAlarm();
-        break;
-      case 'temperature_unit':
-        this._temperatureUnit = newValue || 'celsius';
-        // Re-display temperature in new unit
-        const currentTemp = this.getCapabilityValue('measure_temperature');
-        if (currentTemp !== null) {
-          this.log(`[SOIL] Temperature unit changed, current: ${currentTemp}°C`);
-        }
-        break;
-      }
+    if (changedKeys.includes('soil_warning_threshold')) {
+      this._soilWarningThreshold = newSettings.soil_warning_threshold || 30;
+      this._updateWaterAlarm();
     }
   }
 
@@ -387,149 +362,82 @@ class SoilSensorDevice extends TuyaHybridDevice {
     
     
     if (dp === 112) {
-      this.log('[SOIL] 🧪 SOIL FERTILITY DP112 = ' + parsedValue + ' μS/cm');
-      if (this.hasCapability('measure_conductivity')) {
-        this.setCapabilityValue('measure_conductivity', parseFloat(parsedValue)).catch(()=>{});
-      }
+      this.log(`[SOIL] 🧪 SOIL FERTILITY DP112 = ${parsedValue} μS/cm`);
+      this._safeSetCapability('measure_conductivity', parseFloat(parsedValue));
       return;
     }
     
     if (dp === 101) {
-      this.log('[SOIL] ☁️ AIR HUMIDITY DP101 = ' + parsedValue + '%');
-      if (this.hasCapability('measure_humidity')) {
-        this.setCapabilityValue('measure_humidity', parseFloat(parsedValue)).catch(()=>{});
-      }
+      this.log(`[SOIL] ☁️ AIR HUMIDITY DP101 = ${parsedValue}%`);
+      this._safeSetCapability('measure_humidity', parseFloat(parsedValue));
       return;
     }
     if (dp === 109) {
-      // v5.13.X: DP109 = Soil Moisture alternative (seen on A89G12C)
-      let calibratedMoisture = parsedValue + (this._moistureCalibration || 0);
-      calibratedMoisture = Math.max(0, Math.min(100, calibratedMoisture));
-      this.log('[SOIL] 🌱 SOIL MOISTURE DP109 = ' + parsedValue + '% -> ' + calibratedMoisture + '%');
+      this.log(`[SOIL] 🌱 SOIL MOISTURE DP109 = ${parsedValue}%`);
       let cap = this.hasCapability('measure_humidity.soil') ? 'measure_humidity.soil' : 'measure_humidity';
-      if (this.hasCapability(cap)) {
-        this.setCapabilityValue(cap, parseFloat(calibratedMoisture)).catch(()=>{});
-      }
+      this._safeSetCapability(cap, parseFloat(parsedValue));
       return;
     }
     if (dp === 3) {
-      // v5.11.18: Guard against compound frame mis-parse (peter_kawa report)
-      // When compound frames arrive, first parse reads full buffer as single uint32
-      // giving absurd values like 67109120 instead of actual moisture 0-100%
       if (parsedValue > 100 && !Buffer.isBuffer(value)) {
         this.log(`[SOIL] ⚠️ DP3 value ${parsedValue} > 100% — compound frame artifact, skipping`);
         return;
       }
-      // DP3 = SOIL MOISTURE (measure_humidity.soil)
-      this.log('[SOIL] 🌱 ════════════════════════════════════════════════════');
       this.log(`[SOIL] 🌱 SOIL MOISTURE DP3 = ${parsedValue}%`);
 
-      // v5.5.334: Apply calibration offset (Hobeian PR#6)
-      let calibratedMoisture = parsedValue + (this._moistureCalibration || 0);
-      calibratedMoisture = Math.max(0, Math.min(100, calibratedMoisture)); // Clamp 0-100
-
-      // v5.5.317: Validate with inference engine
-      let validatedMoisture = calibratedMoisture;
+      let validatedMoisture = parsedValue;
       if (this._soilInference) {
         const currentTemp = this.getCapabilityValue('measure_temperature');
-        validatedMoisture = this._soilInference.validateMoisture(calibratedMoisture, currentTemp);
-
-        // Log watering prediction
-        const wateringNeed = this._soilInference.predictWateringNeed();
-        if (wateringNeed) {
-          this.log(`[SOIL] 💧 Watering: ${wateringNeed.message} (${wateringNeed.urgency})`);
-        }
-        this.log(`[SOIL] 📈 Trend: ${this._soilInference.getTrend()}`);
-      }
-      this.log(`[SOIL] 🌱 Calibrated: ${parsedValue} + ${this._moistureCalibration || 0} = ${validatedMoisture}%`);
-      this.log('[SOIL] 🌱 ════════════════════════════════════════════════════');
-
-      // DIRECT SET - bypass parent handler potential issues
-      if (this.hasCapability('measure_humidity.soil')) {
-        this.setCapabilityValue('measure_humidity.soil', parseFloat(validatedMoisture))
-          .then(() => this.log(`[SOIL] ✅ measure_humidity.soil SET to ${validatedMoisture}%`))
-          .catch(err => this.log(`[SOIL] ❌ measure_humidity.soil FAILED: ${err.message}`));
-      } else if (this.hasCapability('measure_humidity')) {
-        // Fallback for devices without measure_humidity.soil
-        this.setCapabilityValue('measure_humidity', parseFloat(validatedMoisture))
-          .then(() => this.log(`[SOIL] ✅ measure_humidity SET to ${validatedMoisture}%`))
-          .catch(err => this.log(`[SOIL] ❌ measure_humidity FAILED: ${err.message}`));
-      } else {
-        this.log('[SOIL] ⚠️ No moisture capability found!');
+        validatedMoisture = this._soilInference.validateMoisture(parsedValue, currentTemp);
       }
 
-      // v5.5.334: Update water alarm based on threshold (Hobeian PR#6)
+      const targetCap = this.hasCapability('measure_humidity.soil') ? 'measure_humidity.soil' : 'measure_humidity';
+      this._safeSetCapability(targetCap, parseFloat(validatedMoisture));
+
       if (this.hasCapability('alarm_water')) {
         const threshold = this._soilWarningThreshold || 30;
-        const alarm = validatedMoisture < threshold;
-        this.setCapabilityValue('alarm_water', alarm).catch(() => { });
-        if (alarm) {
-          this.log(`[SOIL] ⚠️ WATER ALARM: Moisture ${validatedMoisture}% < threshold ${threshold}%`);
+        // v6.1.1: Force alarm to false if moisture is clearly safe (> threshold)
+        // This resolves 'stuck' alarms when DP111 is latched or BVB smoothing occurs.
+        const alarm = (validatedMoisture < threshold);
+        this._safeSetCapability('alarm_water', alarm);
+        if (!alarm) {
+          this.log(`[SOIL] 💧 Forcing alarm_water to false as moisture ${validatedMoisture}% > ${threshold}%`);
         }
       }
-      return; // Don't call parent - we handled it directly
+      return;
     }
 
     if (dp === 5) {
-      // v5.11.19: Guard against compound frame mis-parse (same pattern as DP3)
-      // Compound frames cause parsedValue=67109120 → 671091.2°C after /100
-      // Max raw temp: 80°C × 100 = 8000, so >10000 is always compound artifact
       if (parsedValue > 10000 && !Buffer.isBuffer(value)) {
         this.log(`[SOIL] ⚠️ DP5 value ${parsedValue} > 10000 — compound frame artifact, skipping`);
         return;
       }
-      // DP5 = TEMPERATURE (divide by 10)
       let temp = parsedValue;
-      const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData?.()?.manufacturerName || this.getStore?.()?.manufacturerName || '';
-      // v5.9.9: DutchDuke F3 fix — QT-07S sends raw °C (18→18°C, not 1.8°C)
-      // Added getData()/getStore() fallback — getSetting may be empty at init
+      const mfr = this.getSettingValue?.('zb_manufacturer_name') || '';
       const rawCelsius = mfr.toLowerCase().includes('_tze284_oitavov2') || mfr.toLowerCase().includes('_tze200_oitavov2');
       if (rawCelsius) { /* already °C */ }
       else if (temp > 1000) temp = temp / 100;
       else if (temp > 100) temp = temp / 10;
       else temp = temp / 10;
 
-      // v5.5.334: Apply calibration offset (Hobeian PR#6)
-      temp = temp + (this._temperatureCalibration || 0);
-
-      this.log(`[SOIL] 🌡️ TEMPERATURE DP5 = ${parsedValue} → ${temp}°C (calibration: ${this._temperatureCalibration || 0})`);
-
-      if (this.hasCapability('measure_temperature')) {
-        this.setCapabilityValue('measure_temperature', parseFloat(temp))
-          .then(() => this.log(`[SOIL] ✅ measure_temperature SET to ${temp}°C`))
-          .catch(err => this.log(`[SOIL] ❌ measure_temperature FAILED: ${err.message}`));
-      }
+      this.log(`[SOIL] 🌡️ TEMPERATURE DP5 = ${parsedValue} → Raw ${temp}°C`);
+      this._safeSetCapability('measure_temperature', parseFloat(temp));
       return;
     }
 
     if (dp === 14) {
-      // v5.11.19: Guard against compound frame mis-parse
       if (parsedValue > 2 && !Buffer.isBuffer(value)) {
-        this.log(`[SOIL] ⚠️ DP14 value ${parsedValue} > 2 — not a valid battery_state enum, skipping`);
+        this.log(`[SOIL] ⚠️ DP14 value ${parsedValue} > 2 — skipping`);
         return;
       }
-      // DP14 = BATTERY STATE (enum: 0=low, 1=med, 2=high)
       const batteryMap = { 0: 10, 1: 50, 2: 100 };
       const battery = batteryMap[parsedValue] ?? parsedValue;
-      this.log(`[SOIL] 🔋 BATTERY STATE DP14 = ${parsedValue} → ${battery}%`);
-
-      if (this.hasCapability('measure_battery')) {
-        this.setCapabilityValue('measure_battery', parseFloat(battery))
-          .then(() => this.log(`[SOIL] ✅ measure_battery SET to ${battery}%`))
-          .catch(err => this.log(`[SOIL] ❌ measure_battery FAILED: ${err.message}`));
-      }
+      this._safeSetCapability('measure_battery', parseFloat(battery));
       return;
     }
 
     if (dp === 15) {
-      // DP15 = BATTERY PERCENTAGE (direct)
-      this.log(`[SOIL] 🔋 BATTERY % DP15 = ${parsedValue}%`);
-
-      if (this.hasCapability('measure_battery')) {
-        this.setCapabilityValue('measure_battery', parseFloat(parsedValue))
-          .then(() => this.log(`[SOIL] ✅ measure_battery SET to ${parsedValue}%`))
-          .catch(err => this.log(`[SOIL] ❌ measure_battery FAILED: ${err.message}`));
-      }
+      this._safeSetCapability('measure_battery', parseFloat(parsedValue));
       return;
     }
 
@@ -563,13 +471,9 @@ class SoilSensorDevice extends TuyaHybridDevice {
   }
 
   /**
-   * v5.5.154: Override setCapabilityValue to trigger flows
+   * v5.13.1: HANDLE CUSTOM FLOW TRIGGERS via master hook
    */
-  async setCapabilityValue(capability, value) {
-    await super.setCapabilityValue(capability, value);
-
-    // Trigger flows based on capability changes
-    // v5.5.337: Handle both measure_humidity.soil and measure_humidity
+  async _triggerCustomFlowsIfNeeded(capability, value, previousValue) {
     if (capability === 'measure_humidity.soil' || capability === 'measure_humidity') {
       this._triggerMoistureFlows(value);
     } else if (capability === 'measure_temperature') {

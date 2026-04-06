@@ -1,6 +1,24 @@
 # Universal Tuya Zigbee - AI Rules
 # Project: com.dlnraja.tuya.zigbee | SDK: Homey SDK3 Zigbee
 
+## 🌊 WINDSURF AI CASCADE: PROJECT MAPPING & TOKEN ECONOMY
+- **Mapping Strict:** Before modifying complex drivers, analyze `lib/devices/BaseHybridDevice.js` and `lib/mixins/CapabilityManagerMixin.js` to understand global logic. Do NOT duplicate code that should be a mixin.
+- **Token Optimization:** When analyzing large files (e.g. `TuyaEF00Manager.js`), use `grep_search` to find relevant DP cases instead of reading the whole 4000+ lines.
+- **Hierarchy Awareness:** Always check `onNodeInit` in the parent class (`HybridSensorBase` → `BaseHybridDevice` → `ZigBeeDevice`) before adding initialization logic.
+
+## 🛡️ BIZARRE VALUE BLOCKING (BVB)
+- **Master Setter:** Use `this._safeSetCapability()` (or its alias `this.safeSetCapabilityValue()`) for all updates.
+- **Garbage Filtering:** Values like `0xFFFF` (65535), `255` (for non-power), or `0` (for phantom radar reports) must be blocked at the mixin level.
+- **Jump Protection (v6.1.1):** Block sudden jumps (>35% humidity, >25% battery) unless confirmed by THREE (3) consecutive reports for garbage values (0, 100, 255).
+- **Recovery Jump:** Allow large jumps (e.g. 0 -> 50%) instantly if the target value is in a "safe" range (30-70%). This prevents smoothing lag when a sensor recovers.
+- **Sanitization:** Ensure units are correct (C vs F) and decimals are matched (AdaptiveDataParser usually handles /10, check for double-division).
+- **Soil Alarm Logic:** Force `alarm_water` to `false` if `measure_humidity.soil` > threshold, even if hardware DP reports an alarm.
+
+## 🏘️ COMMUNITY INTEL & FINGERPRINTS
+- **Loratap Handling:** _TZ3000_famkxci2 (3-button) and _TZ3000_ee8nrt2l (4-button) may use Cluster 0xE000 (57344). If standard ZCL fails, check `specialHandling: 'ts004x_loratap_e000'`.
+- **Contact Heartbeat:** If sensors show "56 years ago", ensure `setLastSeenAt(now)` is called via `_updateLastSeen` in the capability mixin.
+- **Unknown Zigbee:** If a device is "Unknown", cross-reference its fingerprints with `lib/ManufacturerVariationManager.js` and `app.json`.
+
 ## CRITICAL BUGS TO AVOID
 
 ### Settings Keys (ALWAYS use these exact keys):
@@ -90,6 +108,14 @@ if (isPhysical) {
 ### Air Quality DPs (_TZE200_8ygsuhe1):
 - DP2: CO2 (ppm, div 1) | DP18: Temp (div 10) | DP19: Humidity (div 10)
 - DP20: PM2.5 (div 1) | DP21: VOC (ppb, div 1) | DP22: HCHO (mg/m3, div 100)
+
+### Soil Sensor DPs (_TZE204_*, _TZE200_*):
+- DP1: Moisture (0-100%) | DP2: Temperature (div 10) | DP15: Battery (%)
+- DP111: Water Shortage Alarm (0=OK, 1=Alarm) -> Override with moisture-based logic if inconsistent.
+
+### LCD Temp/Hum DPs (_TZE284_9ern5sfh):
+- DP1: Temperature | DP2: Humidity | DP4: Battery (%)
+- **Case Note:** Always add BOTH `_TZE284_9ern5sfh` (lowercase) and `_TZE284_9ERN5SFH` (uppercase) to compose to ensure Homey matching.
 
 ## FILES STRUCTURE
 - `lib/devices/HybridSwitchBase.js` - Base class for switches
