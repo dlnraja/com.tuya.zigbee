@@ -4,7 +4,21 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.0.0] - 2026-04-06
+## [7.0.1] - 2026-04-06
+
+### Bug Fixes
+- Fixed `TypeError` crashes in flow cards by aligning card retrieval methods with Homey SDK v3 specifications.
+- Resolved "Could not get device by ID" errors affecting wireless buttons and multi-gang switches.
+- Fixed unlinked sub-gang capabilities on TS0003 switches that prevented independent control of secondary relays.
+- Resolved duplicate Flow card trigger IDs that blocked app validation and caused manual device selection bugs.
+- Disabled destructive self-heal rules that could inadvertently modify device configurations.
+
+### New Features & Device Support
+- Added support for 3 new device fingerprints across switch and sensor drivers.
+- Expanded compatibility for TS0003 multi-gang switch variants with improved endpoint routing.
+---
+
+ [7.0.0] - 2026-04-06
 
 ### Bug Fixes
 - Resolved "Could not get device by ID" errors in flow triggers across all drivers

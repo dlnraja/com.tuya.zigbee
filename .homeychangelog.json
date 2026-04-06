@@ -1,4 +1,7 @@
 {
+  "7.0.1": {
+    "en": "Fixed flow card crashes and device ID errors, resolved unlinked sub-gang controls on TS0003 switches, fixed duplicate flow trigger IDs, and added support for new device fingerprints."
+  },
   "7.0.0": {
     "en": "Fixed flow trigger errors, TS0003 gang linking, and energy metering. Added TS110E support, optimized HOBEIAN sensors, and improved BVB stability for radar/LCD devices."
   },
@@ -56,10 +59,7 @@
   "5.11.194": {
     "en": "Added support for 28 new Tuya device variants, including the Nedis SmartLife Radiator Control. Total coverage now spans ."
   },
-  "5.11.193": {
-    "en": "Resolved fingerprint pairing conflicts, added support for new Tuya device variants, and improved SDK compatibility for stable connections."
-  },
-  "7.0.1": {
-    "en": "v7.0.0: Resolved \"Could not get device by ID\" errors in flow triggers across all drivers, Fixed duplicate Flow card trigger IDs that blocked app validation, Corrected unlinked sub-gang capabilities on TS0003 multi-gang switches, Fixed incorrect energy multiplier for `_TZ3000_wzmuk9ai` smart plugs, Resolved connectivity drops for Zbeacon plugs and soil moisture sensors"
+  "7.0.2": {
+    "en": "v7.0.1: Fixed `TypeError` crashes in flow cards by aligning card retrieval methods with Homey SDK v3 specifications., Resolved \"Could not get device by ID\" errors affecting wireless buttons and multi-gang switches., Fixed unlinked sub-gang capabilities on TS0003 switches that prevented independent control of secondary relays., Resolved duplicate Flow card trigger IDs that blocked app validation an"
   }
 }
