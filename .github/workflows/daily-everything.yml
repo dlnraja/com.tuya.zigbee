@@ -944,3 +944,12 @@ jobs:
             docs/rules/*.md
           retention-days: 14
 
+      # ===== 11. FINAL SELF-CORRECTION AUDIT (AI-POWERED) =====
+      - name: "11. Final Self-Correction Audit (AI-Powered)"
+        id: self_correction
+        if: always()
+        run: |
+          echo "=== 🤖 Final Passing: AI Self-Correction & Regression Audit ==="
+          node scripts/automation/self-correction-audit.js || true
+          echo "=== 🏁 Pipeline Complete ==="
+
