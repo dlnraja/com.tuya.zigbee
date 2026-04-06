@@ -139,6 +139,17 @@ async function main(){
   console.log('Suggestions: '+report.splitSuggestions.length);
   for(const s of report.splitSuggestions.slice(0,10)){console.log('  '+s.pid+': '+JSON.stringify(Object.keys(s.splitBy)));}
 
+  console.log('\n--- 🛡️ Mfr + PID Pairing Check (Safety v6.3) ---');
+  report.pairingAudit = [];
+  for(const [d,info] of drivers){
+    const hasTuyaMCU = info.mfrs.some(m => m.startsWith('_TZE'));
+    if (hasTuyaMCU && info.pids.length === 0) {
+      report.pairingAudit.push({driver: d, risk: 'high', reason: 'Tuya MCU (_TZE) driver missing productId triggers (risky generic matching)'});
+    }
+  }
+  console.log('High-risk drivers (missing PIDs): ' + report.pairingAudit.length);
+  for(const r of report.pairingAudit){console.log('  [RISK] '+r.driver+': '+r.reason);}
+
   report.summary={totalDrivers:drivers.size,pidConflicts:report.pidConflicts.length,highSeverity:high.length,mfrConflicts:report.mfrConflicts.length,orphans:report.orphans.length,splitSuggestions:report.splitSuggestions.length};
   fs.writeFileSync(REPORT_FILE,JSON.stringify(report,null,2));
   console.log('\n=== Summary ===');
