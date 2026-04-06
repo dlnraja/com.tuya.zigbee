@@ -70,6 +70,7 @@ const ENERGY_DEVICE_CONFIGS = {
       '_TZ3000_ss98ec5d', '_TZ3000_uwkja6z1', '_TZ3000_yujkchbz',
       '_TZ3210_xzhnra8x',  // v5.11.17: Reports in Watts/Volts (divisor 1)
       'SONOFF', 'Sonoff',  // Sonoff S60ZBTPF/S60ZBTPG/S60ZBTPE
+      'Zbeacon', 'zbeacon',
     ],
     protocol: 'zcl',
     clusters: {
