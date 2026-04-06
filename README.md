@@ -124,6 +124,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 |---------|---------|
 | **v7.0.4** | v7.0.3: Fixed issues with 3 new fingerprints., Added support for 3 new fingerprints in the driver database., Updated ... |
 | **v7.0.3** | Universal Tuya Zigbee app v7.0.3 adds 3 new fingerprints and includes various driver updates. |
+| **v7.0.4** | v7.0.3: Fixed issues with hybrid energy reporting for specific devices., Added support for new device fingerprints to... |
+| **v7.0.3** | Universal Tuya Zigbee app v7.0.3 adds new device support and fixes bugs affecting users. |
 | **v7.0.2** | Fixed SDK v3 flow card crashes, resolved duplicate flow IDs, and patched unlinked gang capabilities on TS0003 switche... |
 | **v7.0.1** | Fixed flow card crashes and device ID errors, resolved unlinked sub-gang controls on TS0003 switches, fixed duplicate... |
 | **v7.0.0** | Fixed flow trigger errors, TS0003 gang linking, and energy metering. Added TS110E support, optimized HOBEIAN sensors,... |

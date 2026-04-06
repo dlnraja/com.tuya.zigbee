@@ -14,6 +14,10 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ### Improvements
 - Updated a total of 221 drivers.
+- Fixed issues with hybrid energy reporting for specific devices.
+
+### New Features
+- Added support for new device fingerprints to enhance compatibility with Tuya devices.
 ---
 
  [7.0.2] - 2026-04-06
