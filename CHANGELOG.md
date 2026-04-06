@@ -4,7 +4,19 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [5.11.208] - 2026-04-06
+## [5.12.1] - 2026-04-06
+
+### Bug Fixes
+- Fixed energy multiplier for device _TZ3000_wzmuk9ai.
+
+### New Features
+- Added support for new device variants.
+
+### Improvements
+- Updated driver and fingerprint counts: 221 drivers, 3143 fingerprints.
+---
+
+ [5.11.208] - 2026-04-06
 
 ### Bug Fixes
 - Fixed fingerprint casing regression.
