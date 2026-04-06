@@ -4,7 +4,19 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.0.5] - 2026-04-06
+## [7.0.6] - 2026-04-06
+
+### v7.0.6
+
+**Bug Fixes**
+- Fixed Tuya WiFi device discovery by implementing mDNS strategy, resolving pairing timeouts for local network devices.
+
+**New Devices & Fingerprints**
+- Added support for new device fingerprints across existing drivers.
+- Updated capability mappings to correctly handle newly added device variants.
+---
+
+ [7.0.5] - 2026-04-06
 
 ### Bug Fixes
 - Fixed incorrect sensor and energy readings on WiFi Tuya devices by implementing automatic divisor/multiplier resolution in the DP mapping engine.
