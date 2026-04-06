@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 14px; color: #333; margin: 0; font-size: 13px; }
+        h2 { margin: 0 0 2px; font-size: 17px; }
+        .sub { color: #666; font-size: 11px; margin: 0 0 10px; }
+        
+        .tabs-nav { display: flex; border-bottom: 2px solid #eee; margin-bottom: 12px; overflow-x: auto; white-space: nowrap; }
+        .tab-btn { padding: 7px 12px; cursor: pointer; font-size: 12px; font-weight: 600; color: #888; border: none; background: none; border-bottom: 2px solid transparent; margin-bottom: -2px; }
+        .tab-btn.active { color: #00a870; border-bottom-color: #00a870; }
+        
+        .tab-pane { display: none; }
+        .tab-pane.active { display: block; }
+        
+        .fg { margin-bottom: 10px; }
+        label { display: block; font-weight: 600; margin-bottom: 2px; font-size: 12px; }
+        .hint { font-size: 10px; color: #888; margin-top: 1px; }
+        input, select { width: 100%; padding: 7px; border: 1px solid #ccc; border-radius: 5px; font-size: 12px; margin-bottom: 5px; }
+        input:focus, select:focus { border-color: #00E6A0; outline: none; }
+        
+        .row { display: flex; gap: 8px; }
+        .row > * { flex: 1; }
+        
+        .btn-action { display: block; width: 100%; padding: 9px; border: none; border-radius: 5px; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 6px; background: #00a870; color: #fff; text-align: center; }
+        .btn-action:hover { background: #009060; }
+        .btn-action:disabled { background: #aaa; }
+        
+        .err { color: #e74c3c; font-size: 11px; display: none; margin-top: 5px; padding: 5px; background: #fef2f2; border-radius: 4px; }
+        .ok { color: #00a870; font-size: 11px; display: none; margin-top: 5px; padding: 5px; background: #f0faf5; border-radius: 4px; }
+        
+        .box { background: #f0faf5; border: 1px solid #c3f0d8; border-radius: 5px; padding: 8px; margin-bottom: 10px; font-size: 11px; line-height: 1.5; }
+        .box2 { background: #fff8e6; border: 1px solid #ffe0a0; border-radius: 5px; padding: 8px; margin-bottom: 10px; font-size: 11px; line-height: 1.5; }
+        
+        #qrcode { background: #fff; padding: 10px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin: 15px auto; width: 140px; height: 140px; display: flex; align-items: center; justify-content: center; }
+        .instruction { text-align: center; color: #666; margin: 10px 0; font-size: 12px; }
+        .sp { display: inline-block; width: 13px; height: 13px; border: 2px solid #fff; border-top-color: transparent; border-radius: 50%; animation: spin .7s linear infinite; vertical-align: middle; margin-right: 5px; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        .alert { background-color: #d1ecf1; color: #0c5460; border-color: #bee5eb; padding: .75rem 1.25rem; margin-bottom: 1rem; border: 1px solid transparent; border-radius: .25rem; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+<div class="tuya-setup-container">
+  <header>
+    <h2>Tuya WiFi Setup</h2>
+    <p class="sub">100% local control after initial key retrieval</p>
+  </header>
+
+  <nav class="tabs-nav">
+    <button class="tab-btn active" data-tab="auto">Auto Link</button>
+    <button class="tab-btn" data-tab="easy">Easy Login</button>
+    <button class="tab-btn" data-tab="smartlife">Smart Life</button>
+    <button class="tab-btn" data-tab="iot">IoT Platform</button>
+    <button class="tab-btn" data-tab="manual">Manual</button>
+  </nav>
+
+  <div class="tabs-content">
+    
+    <div id="tab-auto" class="tab-pane active">
+      <div class="view-web" id="qr-container">
+        <p class="instruction">Scannez ce code avec l'app <strong>Smart Life</strong> (Profil > Scan)</p>
+        <div id="qrcode"></div> 
+      </div>
+      
+      <div class="view-mobile" id="mobile-link-container" style="display:none;">
+        <p class="instruction">Utilisez ce bouton si vous n'avez qu'un seul téléphone :</p>
+        <button class="btn-action" onclick="openTuyaApp()">📱 Ouvrir Smart Life / Tuya</button>
+      </div>
+    </div>
+
+    <!-- Easy Login -->
+    <div id="tab-easy" class="tab-pane">
+      <div class="alert alert-info">Saisissez vos identifiants d'application mobiles.</div>
+      <div class="fg"><label>Smart Life Email</label><input type="email" id="easy_email" placeholder="your@email.com"></div>
+      <div class="fg"><label>Password</label><input type="password" id="easy_password" placeholder="Password"></div>
+      <div class="row">
+        <div class="fg"><label>Country Code</label><input type="text" id="easy_country" placeholder="33" value="33"></div>
+        <div class="fg"><label>App</label><select id="easy_app"><option value="smartlife">Smart Life</option><option value="tuyaSmart">Tuya Smart</option></select></div>
+      </div>
+      <button class="btn-action" onclick="loginEasy()">Connexion & Scan</button>
+      <div class="err" id="easy-err"></div>
+      <div class="ok" id="easy-ok"></div>
+    </div>
+
+    <!-- Smart Life (Cloud + ID) -->
+    <div id="tab-smartlife" class="tab-pane">
+      <div class="box"><b>Full login</b> - Enter IoT credentials.</div>
+      <div class="row">
+        <div class="fg"><label>Access ID</label><input type="text" id="sl_aid"></div>
+        <div class="fg"><label>Access Secret</label><input type="password" id="sl_as"></div>
+      </div>
+      <div class="row">
+        <div class="fg"><label>Region</label><select id="sl_reg"><option value="eu">Europe</option><option value="us">Americas</option><option value="cn">China</option></select></div>
+        <div class="fg"><label>Country Code</label><input type="text" id="sl_cc" value="33"></div>
+      </div>
+      <button class="btn-action" onclick="loginSmartLife()">Connexion & Scan</button>
+      <div class="err" id="sl-err"></div>
+      <div class="ok" id="sl-ok"></div>
+    </div>
+
+    <!-- IoT Platform -->
+    <div id="tab-iot" class="tab-pane">
+      <div class="box"><b>Direct IoT</b> - Cloud Project credentials.</div>
+      <div class="fg"><label>Access ID</label><input type="text" id="iot_aid"></div>
+      <div class="fg"><label>Access Secret</label><input type="password" id="iot_as"></div>
+      <div class="fg"><label>Region</label><select id="iot_reg"><option value="eu">Europe</option><option value="us">Americas</option><option value="cn">China</option></select></div>
+      <button class="btn-action" onclick="loginIoT()">Scan Devices</button>
+      <div class="err" id="iot-err"></div>
+      <div class="ok" id="iot-ok"></div>
+    </div>
+
+    <!-- Manual -->
+    <div id="tab-manual" class="tab-pane">
+      <div class="box2"><b>Manual Entry</b></div>
+      <div class="fg"><label>Device ID</label><input type="text" id="m_did"></div>
+      <div class="fg"><label>Local Key</label><input type="text" id="m_lk"></div>
+      <button class="btn-action" onclick="manualAdd()">Add Device</button>
+      <div class="err" id="man-err"></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+var H, done = false, pollInterval;
+
+// Script d'intelligence fourni par l'utilisateur
+const isMobile = (/Android|iPhone|iPad/i.test(navigator.userAgent));
+
+function initInterface() {
+  if (isMobile) {
+    document.getElementById('qr-container').style.display = 'none';
+    document.getElementById('mobile-link-container').style.display = 'block';
+  }
+}
+
+async function generateToken() {
+  if (window.qrGenerated) return;
+  window.qrGenerated = true;
+  
+  H.emit('login', { mode: 'smartlife_qr', region: 'eu' }, function(err, r) {
+    if (err) return;
+    
+    var token = r.qrCode;
+    window.pairingToken = token;
+    
+    if (!isMobile) {
+      document.getElementById('qrcode').innerHTML = '';
+      new QRCode(document.getElementById("qrcode"), `https://smartapp.tuya.com/s/p?t=${token}`);
+    }
+    
+    startPolling(token);
+  });
+}
+
+function openTuyaApp() {
+  const url = `smartlife://link?token=${window.pairingToken}`;
+  window.location.href = url;
+}
+
+async function startPolling(token) {
+  if (pollInterval) clearInterval(pollInterval);
+  pollInterval = setInterval(async () => {
+    H.emit('poll_qr', { token }, function(err, r) {
+      if (!err && r && r.count > 0) {
+        clearInterval(pollInterval);
+        done = true;
+      }
+    });
+  }, 2500);
+}
+
+// Gestionnaire d'onglets
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll('.tab-btn, .tab-pane').forEach(el => el.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    if (btn.dataset.tab === 'auto') generateToken();
+  };
+});
+
+function hide(id) { document.getElementById(id).style.display = 'none'; }
+function show(id, msg) { var e = document.getElementById(id); e.innerHTML = msg; e.style.display = 'block'; }
+
+function loginEasy() {
+  var em = document.getElementById('easy_email').value.trim();
+  var pw = document.getElementById('easy_password').value.trim();
+  var cc = document.getElementById('easy_country').value.trim();
+  var app = document.getElementById('easy_app').value;
+  hide('easy-err'); hide('easy-ok');
+  if(!em||!pw){show('easy-err','Credentials required');return}
+  H.emit('login',{mode:'simple',email:em,password:pw,countryCode:cc,schema:app},function(err,r){
+    if(err){show('easy-err',err.message);return}
+    done=true;show('easy-ok',r.count+' devices found!');
+  });
+}
+
+function loginSmartLife() {
+  var aid=document.getElementById('sl_aid').value.trim(), as=document.getElementById('sl_as').value.trim();
+  var reg=document.getElementById('sl_reg').value;
+  hide('sl-err'); hide('sl-ok');
+  H.emit('login',{mode:'cloud',accessId:aid,accessSecret:as,region:reg},function(err,r){
+    if(err){show('sl-err',err.message);return}
+    done=true;show('sl-ok',r.count+' devices found!');
+  });
+}
+
+function loginIoT() {
+  var aid=document.getElementById('iot_aid').value.trim(), as=document.getElementById('iot_as').value.trim();
+  var reg=document.getElementById('iot_reg').value;
+  hide('iot-err'); hide('iot-ok');
+  H.emit('login',{mode:'cloud',accessId:aid,accessSecret:as,region:reg},function(err,r){
+    if(err){show('iot-err',err.message);return}
+    done=true;show('iot-ok',r.count+' devices found!');
+  });
+}
+
+function manualAdd() {
+   var did = document.getElementById('m_did').value.trim();
+   var lk = document.getElementById('m_lk').value.trim();
+   if (!did || !lk) return;
+   H.emit('configure', { device_id: did, local_key: lk }, (err) => { if(!err) done = true; });
+}
+
+function onHomeyReady(Homey) {
+  H = Homey;
+  H.ready();
+  initInterface();
+  generateToken();
+
+  Homey.on('nextView', function() {
+    if (done) return;
+    var tab = document.querySelector('.tab-btn.active').dataset.tab;
+    if (tab === 'manual') manualAdd();
+  });
+}
+</script>
+</body>
+</html>
