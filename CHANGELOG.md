@@ -14,6 +14,11 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 **New Devices & Fingerprints**
 - Added support for new device fingerprints across existing drivers.
 - Updated capability mappings to correctly handle newly added device variants.
+### New Features
+- **WiFi Pairing Overhaul:** All WiFi drivers now feature a unified 5-tab Auto-Link interface, simplifying network configuration and device linking.
+
+### Bug Fixes
+- **WiFi Discovery:** Implemented mDNS fallback strategy for Tuya WiFi devices, resolving connection timeouts and improving initial pairing success rates.
 ---
 
  [7.0.5] - 2026-04-06

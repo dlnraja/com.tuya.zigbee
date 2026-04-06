@@ -103,6 +103,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 |---------|---------|
 | **v7.0.7** | v7.0.6: Fixed Tuya WiFi device discovery by implementing mDNS strategy, resolving pairing timeouts for local network ... |
 | **v7.0.6** | Added mDNS discovery strategy for Tuya WiFi devices to fix local pairing issues. Added support for new device fingerp... |
+| **v7.0.7** | v7.0.6: WiFi Pairing Overhaul:, WiFi Discovery: |
+| **v7.0.6** | Updated WiFi device pairing with a new 5-tab Auto-Link interface for easier setup. Fixed mDNS discovery strategy to i... |
 | **v7.0.5** | Fixed incorrect sensor and energy readings on WiFi Tuya devices by adding automatic divisor and multiplier resolution... |
 | **v7.0.4** | Universal Tuya Zigbee app v7.0.4 adds 3 new fingerprints and improves driver support. |
 | **v7.0.3** | Universal Tuya Zigbee app v7.0.3 adds new device support and fixes bugs affecting users. |

@@ -1,6 +1,6 @@
 {
   "7.0.6": {
-    "en": "Added mDNS discovery strategy for Tuya WiFi devices to fix local pairing issues. Added support for new device fingerprints. Total: 221 drivers."
+    "en": "Updated WiFi device pairing with a new 5-tab Auto-Link interface for easier setup. Fixed mDNS discovery strategy to improve connection reliability for Tuya WiFi devices. Now supports 221 drivers and 6 new fingerprints."
   },
   "7.0.5": {
     "en": "Fixed incorrect sensor and energy readings on WiFi Tuya devices by adding automatic divisor and multiplier resolution to the datapoint mapping engine."
@@ -60,6 +60,6 @@
     "en": "Added support for 3 new device fingerprints, including the Nedis SmartLife Radiator Control (_TZE284_ne4pikwm)."
   },
   "7.0.7": {
-    "en": "v7.0.6: Fixed Tuya WiFi device discovery by implementing mDNS strategy, resolving pairing timeouts for local network devices., Added support for new device fingerprints across existing drivers., Updated capability mappings to correctly handle newly added device variants."
+    "en": "v7.0.6: WiFi Pairing Overhaul:, WiFi Discovery:"
   }
 }
