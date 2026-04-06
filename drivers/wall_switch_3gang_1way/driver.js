@@ -68,7 +68,7 @@ class WallSwitch3Gang1WayDriver extends ZigBeeDriver {
         });
       } catch (err) { this.error(`Action ${id}: ${err.message}`); }
     }
-        for (const { id, ep, val } of gangActions) {
+    for (const { id, ep, val } of gangActions) {
       try {
         this.homey.flow.getActionCard(id).registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -86,7 +86,7 @@ class WallSwitch3Gang1WayDriver extends ZigBeeDriver {
         });
       } catch (err) { this.error(`Action ${id}: ${err.message}`); }
     }
-        for (const { id, val } of [
+    for (const { id, val } of [
       { id: `${P}_turn_on_all`, val: true },
       { id: `${P}_turn_off_all`, val: false },
     ]) {

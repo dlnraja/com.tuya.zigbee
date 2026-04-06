@@ -102,7 +102,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
           for (const cap of Object.values(capMap)) {
             if (args.device.hasCapability(cap)) {
               await args.device._setGangOnOff(idx + 1, true).catch(() => {});
-            await args.device.setCapabilityValue(cap, true).catch(() => {});
+              await args.device.setCapabilityValue(cap, true).catch(() => {});
             }
           }
           return true;
@@ -117,7 +117,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
           for (const cap of Object.values(capMap)) {
             if (args.device.hasCapability(cap)) {
               await args.device._setGangOnOff(idx + 1, false).catch(() => {});
-            await args.device.setCapabilityValue(cap, false).catch(() => {});
+              await args.device.setCapabilityValue(cap, false).catch(() => {});
             }
           }
           return true;

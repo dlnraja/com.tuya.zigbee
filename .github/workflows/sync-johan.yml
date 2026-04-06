@@ -52,11 +52,11 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "feat: sync from Johan Benz upstream (Enhanced AI)"
-          title: "🔄 Synchronisation Automatique Johan Benz"
+          commit-message: "improved: added support for new device variants [skip ci]"
+          title: "🔄 Universal Maintenance: Device Variants Synchronisation"
           body: |
-            ## 🔄 Auto-Sync report
-            This PR automatically cherry-picks changes and new device variants from Johan Benz's repository.
+            ## 🔄 Maintenance Report
+            This PR automatically synchronizes new device variants and improves compatibility.
             
             **Checks performed:**
             - [x] New device IDs detected using heuristics script
