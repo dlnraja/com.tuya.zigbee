@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "climate_sensor_temperature_changed",
+      "id": "sensor_climate_temphumidsensor_hybrid_temperature_changed",
       "highlight": true,
       "title": {
         "en": "Temperature changed",
@@ -25,7 +25,7 @@
       }
     },
     {
-      "id": "climate_sensor_humidity_changed",
+      "id": "sensor_climate_temphumidsensor_hybrid_humidity_changed",
       "title": {
         "en": "Humidity changed",
         "fr": "Humidité changée"
@@ -48,7 +48,7 @@
       }
     },
     {
-      "id": "climate_sensor_battery_low",
+      "id": "sensor_climate_temphumidsensor_hybrid_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible"
@@ -60,7 +60,7 @@
       }
     },
     {
-      "id": "climate_sensor_temperature_alarm_high",
+      "id": "sensor_climate_temphumidsensor_hybrid_temperature_alarm_high",
       "title": {
         "en": "Temperature too high",
         "fr": "Température trop haute"
@@ -72,7 +72,7 @@
       }
     },
     {
-      "id": "climate_sensor_temperature_alarm_low",
+      "id": "sensor_climate_temphumidsensor_hybrid_temperature_alarm_low",
       "title": {
         "en": "Temperature too low",
         "fr": "Température trop basse"
@@ -84,7 +84,7 @@
       }
     },
     {
-      "id": "climate_sensor_humidity_alarm_high",
+      "id": "sensor_climate_temphumidsensor_hybrid_humidity_alarm_high",
       "title": {
         "en": "Humidity too high",
         "fr": "Humidité trop haute"
@@ -96,7 +96,7 @@
       }
     },
     {
-      "id": "climate_sensor_humidity_alarm_low",
+      "id": "sensor_climate_temphumidsensor_hybrid_humidity_alarm_low",
       "title": {
         "en": "Humidity too low",
         "fr": "Humidité trop basse"
@@ -108,7 +108,7 @@
       }
     },
     {
-      "id": "climate_sensor_temp_changed",
+      "id": "sensor_climate_temphumidsensor_hybrid_temp_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée",
@@ -126,7 +126,7 @@
   ],
   "conditions": [
     {
-      "id": "climate_sensor_temperature_above",
+      "id": "sensor_climate_temphumidsensor_hybrid_temperature_above",
       "title": {
         "en": "Temperature is above",
         "fr": "Température supérieure à"
@@ -150,7 +150,7 @@
       ]
     },
     {
-      "id": "climate_sensor_temperature_below",
+      "id": "sensor_climate_temphumidsensor_hybrid_temperature_below",
       "title": {
         "en": "Temperature is below",
         "fr": "Température inférieure à"
@@ -174,7 +174,7 @@
       ]
     },
     {
-      "id": "climate_sensor_humidity_above",
+      "id": "sensor_climate_temphumidsensor_hybrid_humidity_above",
       "title": {
         "en": "Humidity is above",
         "fr": "Humidité supérieure à"
@@ -198,7 +198,7 @@
       ]
     },
     {
-      "id": "climate_sensor_humidity_below",
+      "id": "sensor_climate_temphumidsensor_hybrid_humidity_below",
       "title": {
         "en": "Humidity is below",
         "fr": "Humidité inférieure à"
