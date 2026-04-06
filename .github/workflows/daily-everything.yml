@@ -254,6 +254,8 @@ jobs:
           node scripts/maintenance/enforce-fingerprint-rules.js || true
           echo "=== Grouping duplicated logic into hybrid drivers ==="
           node scripts/maintenance/auto-resolve-collisions.js || true
+          echo "=== 🛡️ BVB Health Audit (v6.1.4) ==="
+          node scripts/automation/bvb-impact-report.js || true
 
       # ===== 6a-bis. AUTO-FIX PHANTOM SDK METHODS (CRITICAL) =====
       - name: "6a-bis. Auto-Fix Phantom SDK3 Methods + Fingerprint Case + Probe Dedup (NO-AI)"
@@ -462,7 +464,9 @@ jobs:
         id: driver_audit
         continue-on-error: true
         timeout-minutes: 5
-        run: node .github/scripts/driver-conflict-audit.js
+        run: |
+          echo "=== 🕵️ Driver Conflict & Case Collision Audit ==="
+          node .github/scripts/driver-conflict-audit.js
 
       # ===== 9b2. FP RESEARCH ENGINE: Deep classify via Z2M/Blakadder/CompScan =====
       - name: "9b2. FP Research Engine (Deep Classify)"

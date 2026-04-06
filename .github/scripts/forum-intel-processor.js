@@ -20,7 +20,19 @@ function loadAllFPs(){
   return map;
 }
 
-function suggestDriver(fp){
+function suggestDriver(fp, context = ''){
+  const up = fp.toUpperCase();
+  const ctx = context.toLowerCase();
+  
+  // v6.1.4: Direct pattern matching
+  if (ctx.includes('lcd') || ctx.includes('backlight') || ctx.includes('th05z')) {
+    if (up.startsWith('_TZE200') || up.startsWith('_TZE204') || up.startsWith('_TZE284')) return 'lcdtemphumidsensor';
+  }
+  
+  if (ctx.includes('soil') || ctx.includes('moisture') || ctx.includes('plant')) {
+    return 'soil_sensor';
+  }
+
   // Prefix-based heuristic when no Z2M data available
   if(fp.startsWith('_TZE200')||fp.startsWith('_TZE204')||fp.startsWith('_TZE284'))return null;
   if(fp.startsWith('_TZ3210'))return null;
@@ -64,7 +76,28 @@ async function main(){
   console.log('Known FPs:',fps.size,'| Missing from forum:',intel.missingFPs?.length||0);
 
   const added=[],skipped=[],suggestions=[];
+  const issueSet = new Set();
+  
+  for(const issue of (intel.allIssues || [])){
+    for(const fp of (issue.missing || [])) {
+      if(issueSet.has(fp)) continue;
+      issueSet.add(fp);
+
+      if(fps.has(fp)){skipped.push(fp);continue}
+      if(!fp.match(/^_T[A-Z][A-Z0-9]{2,5}_[a-z0-9]{4,}$/i)){skipped.push(fp);continue}
+      
+      const driver=suggestDriver(fp, issue.text || '');
+      if(!driver){suggestions.push({fp,reason:'Need Z2M/interview data to assign driver'});continue}
+      if(DRY){added.push({fp,driver,dry:true});continue}
+      if(addFPToDriver(fp,driver))added.push({fp,driver,dry:false});
+      else skipped.push(fp);
+    }
+  }
+  
+  // Fallback for missingFPs not in allIssues (legacy compat)
   for(const fp of(intel.missingFPs||[])){
+    if(issueSet.has(fp)) continue;
+    issueSet.add(fp);
     if(fps.has(fp)){skipped.push(fp);continue}
     if(!fp.match(/^_T[A-Z][A-Z0-9]{2,5}_[a-z0-9]{4,}$/i)){skipped.push(fp);continue}
     const driver=suggestDriver(fp);

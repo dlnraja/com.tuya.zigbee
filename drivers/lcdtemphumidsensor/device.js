@@ -33,9 +33,11 @@ class LCDTempHumidSensorDevice extends HybridSensorBase {
       // Temperature
       1: { capability: 'measure_temperature', divisor: 10 },
       18: { capability: 'measure_temperature', divisor: 10 },
+      101: { capability: 'measure_temperature', divisor: 10 }, // v6.1.6: fallback for _TZE284_
 
       // Humidity (÷10 for TZE200 variants like _TZE200_vvmbj46n)
       2: { capability: 'measure_humidity', divisor: 10 },
+      102: { capability: 'measure_humidity', divisor: 10 }, // v6.1.6: fallback for _TZE284_
 
       // Battery
       // v5.12.3: DP3 battery enum for _TZE200_vvmbj46n (TH05Z: 0=low, 1=medium, 2=high)

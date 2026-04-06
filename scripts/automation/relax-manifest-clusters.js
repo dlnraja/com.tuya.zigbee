@@ -27,7 +27,10 @@ const HYBRID_DRIVERS = [
   'sensor_motion_radar_hybrid',
   'plug_energy_monitor',
   'plug_smart',
-  'switch_hybrid'
+  'switch_hybrid',
+  'soil_sensor',
+  'lcdtemphumidsensor',
+  'climate_sensor'
 ];
 
 function processFile(filePath) {
