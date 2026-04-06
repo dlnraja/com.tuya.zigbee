@@ -9,6 +9,7 @@
 ## 🛡️ BIZARRE VALUE BLOCKING (BVB)
 - **Master Setter:** Use `this._safeSetCapability()` (or its alias `this.safeSetCapabilityValue()`) for all updates.
 - **Jump Protection (v6.1.2):** Block sudden jumps (>35% humidity, >25% battery) unless confirmed by THREE (3) consecutive reports for garbage values (0, 100, 255). 
+- **ZCL Error Codes (v6.1.5):** Systematically block `65535` (0xFFFF), `32767` (0x7FFF), `-32768` (0x8000), and `-1` for all measurement capabilities.
 - **BVB TTL (v6.1.2):** Clean `_jumpHold` memory after 5 minutes (300,000ms) to prevent memory leaks on intermittent sensors.
 - **255 Garbage Rule (CRITICAL):** Do NOT block 255 for lighting capabilities (`dim`, `light_hue`, `light_saturation`) as 255 = 100% in Zigbee Level Control.
 - **Radar Ghost Protection (v6.1.2):** Ignore value `0` reports for non-motion capabilities if received within 2s of a presence/motion trigger (Tuya radar junk data).
@@ -233,6 +234,7 @@ const TuyaZigbeeDevice = require('../../lib/TuyaZigbeeDevice');
 - dpMappings in device.js maps DP numbers to capabilities
 - Thousands of variants: same _TZE200/204/284_ prefix = DP device
 - EACH manufacturerName may have DIFFERENT DP mappings!
+- **TS0601 Crossing Rule:** When analyzing logs for devices starting with `_TZE`, prioritize incoming Data Points (DP) over standard Zigbee Cluster reporting. If a device is recognized but reports `0` on standard clusters, search the debug log for high-range DPs (e.g., 101, 102).
 
 ### 2. Standard ZCL (native Zigbee clusters)
 - productId = TS0001-TS0504, TS011F, TS0121, etc.

@@ -36,11 +36,21 @@ function auditPIDConflicts(drivers){
 
 function auditMfrConflicts(drivers){
   const mfrIdx=new Map();
+  const caseIdx=new Map(); // Track normalized case collisions
   const skip=new Set(['universal_fallback','generic_diy','generic_tuya','diy_custom_zigbee']);
+  
   for(const [d,info] of drivers){
     if(skip.has(d))continue;
-    for(const m of info.mfrs){if(!mfrIdx.has(m))mfrIdx.set(m,[]);mfrIdx.get(m).push(d);}
+    for(const m of info.mfrs){
+      if(!mfrIdx.has(m))mfrIdx.set(m,[]);
+      mfrIdx.get(m).push(d);
+      
+      const norm = m.toLowerCase();
+      if(!caseIdx.has(norm))caseIdx.set(norm,new Set());
+      caseIdx.get(norm).add(m);
+    }
   }
+
   const dupes=[];
   for(const [mfr,drvs] of mfrIdx){
     if(drvs.length<=1)continue;
@@ -50,7 +60,19 @@ function auditMfrConflicts(drivers){
       dupes.push({mfr,drivers:drvs,sharedPids,risk:'high'});
     }
   }
-  return dupes;
+
+  const caseCollisions=[];
+  for(const [norm,variants] of caseIdx){
+    if(variants.size>1){
+      const drvs = [...variants].flatMap(v=>mfrIdx.get(v)||[]);
+      const uniqueDrvs = [...new Set(drvs)];
+      if(uniqueDrvs.length>1){
+        caseCollisions.push({norm,variants:[...variants],drivers:uniqueDrvs,risk:'medium'});
+      }
+    }
+  }
+
+  return {mfrConflicts:dupes,caseCollisions};
 }
 
 function auditOrphanDrivers(drivers){
@@ -95,9 +117,17 @@ async function main(){
   for(const c of high.slice(0,15)){console.log('  [HIGH] '+c.pid+' -> '+c.drivers.join(', ')+' (classes: '+c.classes.join(',')+')');}
 
   console.log('\n--- Manufacturer Conflicts ---');
-  report.mfrConflicts=auditMfrConflicts(drivers);
+  const mfrResult=auditMfrConflicts(drivers);
+  report.mfrConflicts=mfrResult.mfrConflicts;
+  report.caseCollisions=mfrResult.caseCollisions;
   console.log('MFR+PID duplicates (real risk): '+report.mfrConflicts.length);
   for(const d of report.mfrConflicts.slice(0,10)){console.log('  '+d.mfr+' -> '+d.drivers.join(', ')+' sharedPIDs='+d.sharedPids.join(','));}
+  
+  if (report.caseCollisions.length) {
+    console.log('\n--- MFR Case Collisions (Match Risk) ---');
+    console.log('Collisions: ' + report.caseCollisions.length);
+    for(const c of report.caseCollisions.slice(0,10)){console.log('  '+c.norm+' -> variants='+c.variants.join(',')+' drivers='+c.drivers.join(','));}
+  }
 
   console.log('\n--- Orphan Drivers ---');
   report.orphans=auditOrphanDrivers(drivers);
