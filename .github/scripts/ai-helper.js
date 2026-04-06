@@ -353,3 +353,5 @@ function getAIBudget(){_rtLoad();return{used:_rt.d,budget:_rtBudget()}}
 function localFallback(){}
 
 module.exports={callAI,callAIEnsemble,splitTaskAndCombine,analyzeImage,sleep,localFallback,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost,getAIBudget,classifyTask};
+
+if(process.argv.includes('--check-health')){ Object.keys(process.env).forEach(k=>{ if(k.endsWith('_API_KEY')||k==='HF_TOKEN') console.log('✅ Found '+k); }); process.exit(0); }
