@@ -4,9 +4,9 @@
       "id": "sdk3-await-capability",
       "desc": "setCapabilityValue() calls should be awaited.",
       "severity": "info",
-      "count": 10,
+      "count": 16,
       "firstSeen": "2026-04-04T17:57:49.240Z",
-      "lastSeen": "2026-04-05T22:20:34.433Z",
+      "lastSeen": "2026-04-06T04:01:32.385Z",
       "files": [
         "air_purifier",
         "air_quality_co2",
@@ -14,7 +14,8 @@
         "bulb_rgbw",
         "bulb_rgb_led_hybrid",
         "button_emergency_sos",
-        "climate_sensor"
+        "climate_sensor",
+        "bulb_rgbw_led_hybrid"
       ]
     },
     {
@@ -43,9 +44,9 @@
       "id": "sdk3-flow-card-unsafe",
       "desc": "Bare getDeviceTriggerCard/getDeviceConditionCard/getDeviceActionCard crashes app if card missing in app.json. ALWAYS use try-catch.",
       "severity": "error",
-      "count": 24,
+      "count": 25,
       "firstSeen": "2026-04-04T17:46:00.000Z",
-      "lastSeen": "2026-04-05T22:20:34.322Z",
+      "lastSeen": "2026-04-06T04:01:32.377Z",
       "files": [
         "RESOLVED: 23+ drivers wrapped in try-catch by fix-unsafe-flow-cards.js",
         "air_purifier"
@@ -110,9 +111,9 @@
       "id": "sdk3-trigger-card-no-try",
       "desc": "getDeviceTriggerCard() called without try-catch. Missing cards will crash the app.",
       "severity": "warn",
-      "count": 1,
+      "count": 2,
       "firstSeen": "2026-04-05T22:20:34.324Z",
-      "lastSeen": "2026-04-05T22:20:34.324Z",
+      "lastSeen": "2026-04-06T04:01:32.377Z",
       "files": [
         "air_purifier"
       ]
@@ -160,16 +161,16 @@
       "id": "sdk3-mains-has-battery",
       "desc": "Device has mainsPowered=true but compose still declares battery capability. Runtime handler will fix, but compose is misleading.",
       "severity": "warn",
-      "count": 2,
+      "count": 3,
       "firstSeen": "2026-04-05T22:20:34.336Z",
-      "lastSeen": "2026-04-05T22:20:34.420Z",
+      "lastSeen": "2026-04-06T04:01:32.379Z",
       "files": [
         "air_quality_comprehensive",
         "ceiling_fan"
       ]
     }
   ],
-  "lastRun": "2026-04-05T22:20:34.094Z",
-  "totalRuns": 7,
-  "totalIssues": 165
+  "lastRun": "2026-04-06T04:01:32.365Z",
+  "totalRuns": 8,
+  "totalIssues": 174
 }
