@@ -30,6 +30,27 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
+## 🚀 Latest Updates
+
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### ✨ Recent Changes (Apr 2026)
+
+| Version | Feature |
+|---------|---------|
+| **v7.0.3** | v7.0.2: Fixed 'is not a function' crash on flow card triggers by aligning wit... |
+| **v7.0.2** | Fixed SDK v3 flow card crashes, resolved duplicate flow IDs, and patched unli... |
+| **v7.0.1** | Fixed flow card crashes and device ID errors, resolved unlinked sub-gang cont... |
+| **v7.0.0** | Fixed flow trigger errors, TS0003 gang linking, and energy metering. Added TS... |
+| **v5.12.3** | v5.12.2: Fixed energy multiplier for device _TZ3000_wzmuk9ai., Resolved conne... |
+| **v5.12.2** | Universal Tuya Zigbee app v5.12.2 adds support for new device variants and re... |
+| **v5.12.1** | Universal Tuya Zigbee app v5.12.1 adds support for new device variants and re... |
+| **v5.12.0** | Major stabilization release: Integrated Parallel Bot Handler for faster maint... |
+| **v5.11.208** | Added Zbeacon support and fixed fingerprint casing regression in Universal Tu... |
+| **v5.11.206** | v5.11.205: Added 3 new fingerprints to improve device compatibility., Integra... |
+<!-- CHANGELOG_END -->
+
+
+
 ## Statistics
 
 | Metric | Value |
