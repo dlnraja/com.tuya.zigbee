@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v7.0.2 |
+| **App Version** | v7.0.3 |
 | **Device Fingerprints** | 12,852+ |
 | **Unique Product IDs** | 1217 |
 | **Drivers** | 221 (171 Zigbee + 50 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v7.0.2** | v7.0.1: Fixed `TypeError` crashes in flow cards by aligning card retrieval methods with Homey SDK v3 specifications.,... |
+| **v7.0.3** | v7.0.2: Fixed SDK v3 compliance crash when accessing device flow cards, Resolved duplicate Flow card trigger IDs that... |
+| **v7.0.2** | v7.0.2: Fixed flow card crashes, TS0003 gang linking, and energy meter reporting. Added TS110E support, strict batter... |
 | **v7.0.1** | Fixed flow card crashes and device ID errors, resolved unlinked sub-gang controls on TS0003 switches, fixed duplicate... |
 | **v7.0.0** | Fixed flow trigger errors, TS0003 gang linking, and energy metering. Added TS110E support, optimized HOBEIAN sensors,... |
 | **v5.12.3** | v5.12.2: Fixed energy multiplier for device _TZ3000_wzmuk9ai., Resolved connection issues for soil sensors and LCD se... |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.203** | Added universal support for all 4 Zigbee SOS reporting standards to emergency buttons, improving cross-brand compatib... |
 | **v5.11.202** | Added support for new Tuya devices and improved pairing instructions. |
 | **v5.11.201** | Added 3 new device fingerprints including Nedis SmartLife Radiator Control. Fixed connection recovery and battery rep... |
-| **v5.11.200** | Added support for ZG-204ZM and WiFi water sensor. Stabilized sleepy devices. |
 
 <!-- CHANGELOG_END -->
 
