@@ -65,6 +65,8 @@ jobs:
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+      - name: 🛡️ Zigbee Signature Audit
+        run: node scripts/ci/signature-audit.js
       - run: npm ci --prefer-offline --no-audit || npm install
       - name: Save START_SHA
         run: echo "START_SHA=$(git rev-parse HEAD)" >> $GITHUB_ENV
