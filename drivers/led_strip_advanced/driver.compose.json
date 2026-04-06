@@ -25,8 +25,12 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_TZ3000_OBORYZTC",
       "_TZ3000_oboryztc",
-      "_TZ3210_iystcadi"
+      "_TZ3210_IYSTCADI",
+      "_TZ3210_iystcadi",
+      "_tz3000_oboryztc",
+      "_tz3210_iystcadi"
     ],
     "endpoints": {
       "1": {
