@@ -1,4 +1,7 @@
 {
+  "5.12.2": {
+    "en": "Universal Tuya Zigbee app v5.12.2 adds support for new device variants and resolves several fingerprint issues."
+  },
   "5.12.1": {
     "en": "Universal Tuya Zigbee app v5.12.1 adds support for new device variants and resolves several fingerprint issues."
   },
@@ -56,10 +59,7 @@
   "5.11.191": {
     "en": "Added 28 new device fingerprints, including Nedis SmartLife Radiator Control. Expanded compatibility across switch, sensor, and climate drivers."
   },
-  "5.11.190": {
-    "en": "Added 27 new device fingerprints and low-battery alerts for 113 devices. Fixed SDK v3 flow crashes, restored missing battery capabilities, added time sync for 13 thermostats, and fixed missing capabilities in 10 remote drivers."
-  },
-  "5.12.2": {
-    "en": "v5.12.1: Fixed energy multiplier for device _TZ3000_wzmuk9ai., Added support for new device variants., Updated driver and fingerprint counts: 221 drivers, 3143 fingerprints."
+  "5.12.3": {
+    "en": "v5.12.2: Fixed energy multiplier for device _TZ3000_wzmuk9ai., Resolved connection issues for soil sensors and LCD sensors, adding new fingerprints., Added support for new device variants, enhancing compatibility with additional Zigbee devices."
   }
 }
