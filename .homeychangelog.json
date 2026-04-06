@@ -1,4 +1,7 @@
 {
+  "7.0.4": {
+    "en": "Universal Tuya Zigbee app v7.0.4 adds 3 new fingerprints and improves driver support."
+  },
   "7.0.3": {
     "en": "Universal Tuya Zigbee app v7.0.3 adds new device support and fixes bugs affecting users."
   },
@@ -56,10 +59,7 @@
   "5.11.197": {
     "en": "Added support for 3 new Tuya device fingerprints and integrated 2,141 upstream device profiles to improve automatic pairing and driver matching."
   },
-  "5.11.196": {
-    "en": "Fixed pairing for 151 devices with uppercase manufacturer IDs, updated fingerprints across bulb, button, and sensor drivers, and improved overall Tuya Zigbee compatibility."
-  },
-  "7.0.4": {
-    "en": "v7.0.3: Fixed issues with hybrid energy reporting for specific devices., Added support for new device fingerprints to enhance compatibility with Tuya devices."
+  "7.0.5": {
+    "en": "v7.0.4: Fixed issues with Hybrid Energy for MAX Tuya Local Deployment., Added 3 new fingerprints for enhanced device compatibility., Updated 221 drivers to support the latest device capabilities."
   }
 }
