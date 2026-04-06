@@ -422,25 +422,32 @@ this.homey.settings.get('key');             // ManagerSettings
 - Don't blindly pipe AI output into source files
 - SDK v3 linter checks: async init, Manager globals, v2 API, await setCapability, listener leaks, settings keys, titleFormatted
 
-## VISIBILITY MATRIX (Ghost Mode vs Public Mode)
+## 📊 VISIBILITY MATRIX & AI GHOSTWRITER (v6.2.0)
 
-### SILENT sources (implement code, hide attribution):
-- Johan Bendz GitHub (JohanBendz/com.tuya.zigbee)
-- Forum T26439, T146735, T89271, all non-T140352 threads
-- Tuya WiFi threads, external forks, community PRs
-- Zigbee2MQTT, ZHA, deConz discoveries
-- → Code: YES (implement) | Logs/Changelog: NO | Forum: NO | Commits: generic wording
+### 1. SILENT SOURCES (Implement & Absorb Silently)
+- **Sources**: Johan Bendz GitHub, Forum T26439, T146735, T89271, Zigbee2MQTT, ZHA, deConz, GitHub Deep Search.
+- **Visibility**: 
+    - **Code**: YES (Implement immediately).
+    - **Logs/Commit Messages**: GENERIC ONLY (e.g., "Enriched device support").
+    - **Forum/Changelog**: NO (Do NOT mention these sources or the specific IDs).
+- **Goal**: Maintain a clean, non-spammy presence while maximizing device support.
 
-### PUBLIC sources (full visibility):
-- Forum T140352 (dlnraja's own thread)
-- dlnraja's GitHub issues/PRs
-- Direct user requests from T140352
-- All descendant forks of dlnraja/com.tuya.zigbee
-- → Code: YES | Logs: YES | Changelog: YES | Forum: YES (merge with last post)
+### 2. PUBLIC SOURCES (Full Visibility & Engagement)
+- **Sources**: Forum T140352 (dlnraja's thread), dlnraja's GitHub Issues/PRs, Direct user tags in T140352.
+- **Visibility**:
+    - **Code**: YES.
+    - **Logs/Changelog**: DETAILED (Mention user, bug type, and fix).
+    - **Forum**: YES (Post update as a reply or merge into last post).
 
-### Forum Ghostwriter Rules:
-- If last poster = dlnraja: AI edits/merges into existing post (organic fusion)
-- If last poster = someone else: AI creates new reply (only on T140352)
-- NEVER consecutive bot posts — always merge with own last post
-- Ghostwriter tone: casual, like a dev editing their own post ("edit: just pushed...")
-- NEVER expose: automation, bots, AI, pipelines, Johan, upstream sync
+### 3. AUTOMATED FORUM REPLY PATTERN (MANDATORY)
+When writing automated responses (e.g., via `forum-responder.js` or manual copy-paste):
+- **Header**: `Update: v[VERSION] pushed to Test channel!`
+- **User Targeting**: Use `@username` for each reporter.
+- **Specifics**: Detail exactly what was done (e.g., "Mfr _TZE... added", "BVB filter for 0% drops implemented").
+- **Call to Action**: "Please remove and re-pair to apply" and "Let me know if it's stable."
+- **Tone**: Professional Dev (no bot-speak). Avoid phrases like "I am an AI" or "As an automated assistant".
+
+### 4. DAILY PIPELINE (CONTINUOUS IMPROVEMENT)
+- **Bug Squashing**: If a post describes a bug (e.g., "Moisture Canyon"), the pipeline must look for corresponding DP logs and propose a BVB refinement.
+- **Feature Growth**: If a user asks for a feature (e.g., "Can I have Lux?"), the pipeline must check Z2M/ZHA for the DP and scaffold the capability in `HybridSensorBase`.
+- **Silent Ingestion**: The `daily-everything` pipeline must absorb ALL silent discoveries every 24h without generating noise in the forum.
