@@ -1,6 +1,6 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
 const CoreCapabilityMixin = require('../../lib/mixins/CoreCapabilityMixin');
 
 // v5.11.102: Import IEEEAddressManager for proper CIE address enrollment
@@ -48,7 +48,7 @@ try {
  * ║                                                                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class SosEmergencyButtonDevice extends ZigBeeDevice {
+class SosEmergencyButtonDevice extends BaseHybridDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('');
@@ -844,28 +844,35 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
     }
   }
 
-  /**
-   * v5.5.147: Trigger flow cards via driver (FIXED)
-   */
   _triggerFlow() {
     this.log('[SOS] 📢 Triggering flow cards...');
 
+    // v5.13.0: Use app's safe getter
+    const app = this.homey.app;
+    
     // v5.5.147: Use driver's triggerSOS method (properly registered)
     if (this.driver?.triggerSOS) {
       this.driver.triggerSOS(this, {}, {});
       this.log('[SOS] ✅ driver.triggerSOS() called');
-    } else {
-      this.log('[SOS] ⚠️ driver.triggerSOS not available, trying direct...');
+    } else if (app?._safeGetTriggerCard) {
+      this.log('[SOS] ⚠️ driver.triggerSOS not available, trying app._safeGetTriggerCard...');
 
-      // Fallback: direct trigger
+      // Fallback: direct trigger via app's safe getter
+      const card = app._safeGetTriggerCard('button_emergency_sos_pressed');
+      if (card) {
+        card.trigger(this, {}, {}).catch(e => this.log('[SOS] trigger error:', e.message));
+        this.log('[SOS] ✅ button_emergency_sos_pressed triggered (safe direct)');
+      }
+    } else {
+      // Last resort: legacy direct (wrapped)
       try {
         const card = this.homey.flow.getDeviceTriggerCard('button_emergency_sos_pressed');
         if (card) {
           card.trigger(this, {}, {}).catch(e => this.log('[SOS] trigger error:', e.message));
-          this.log('[SOS] ✅ button_emergency_sos_pressed triggered (direct)');
+          this.log('[SOS] ✅ button_emergency_sos_pressed triggered (legacy direct)');
         }
       } catch (e) {
-        this.log('[SOS] ⚠️ Direct trigger failed:', e.message);
+        this.log('[SOS] ⚠️ Legacy direct trigger failed:', e.message);
       }
     }
   }
@@ -1437,5 +1444,6 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
 Object.assign(SosEmergencyButtonDevice.prototype, CoreCapabilityMixin);
 
 module.exports = SosEmergencyButtonDevice;
+
 
 

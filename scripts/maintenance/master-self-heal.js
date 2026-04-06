@@ -425,8 +425,8 @@ async function main() {
   log('╚══════════════════════════════════════════════════════════════════════════════╝');
 
   // AUTO-FIX RULES (safe, idempotent)
-  rule_phantomMethods();
-  rule_fingerprintCase();
+  // rule_phantomMethods(); // DISABLED: Destroys device flow cards
+  // rule_fingerprintCase(); // DISABLED: Breaks case-sensitive Tuya discovery
   rule_probeDedup();
   rule_energyBatteries();
 

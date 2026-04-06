@@ -90,3 +90,4 @@ class Button1GangDriver extends ZigBeeDriver {
 }
 
 module.exports = Button1GangDriver;
+

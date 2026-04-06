@@ -124,13 +124,11 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           }
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_wall_8gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
-            this.homey.flow.getDeviceTriggerCard(flowId)
-              .trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
+            this.homey.flow.getDeviceTriggerCard().trigger(this { gang: epNum, state: value }, {}).catch(() => {});
             this.log(`[SWITCH-8G] Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
           }
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-            this.homey.flow.getDeviceTriggerCard(`switch_wall_8gang_gang${epNum}_scene`)
-              .trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+            this.homey.flow.getDeviceTriggerCard().trigger(this { action: value ? 'on' : 'off' }, {}).catch(() => {});
             this.log(`[SWITCH-8G] Scene G${epNum} ${value ? 'on' : 'off'}`);
           }
         }
@@ -150,3 +148,4 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
   }
 }
 module.exports = Switch8GangDevice;
+

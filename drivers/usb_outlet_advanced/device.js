@@ -377,3 +377,4 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Hyb
 
 module.exports = USBOutletAdvancedDevice;
 
+

@@ -38,24 +38,24 @@ jobs:
 
     env:
       # === AI providers — circular chain (ai-helper.js) ===
-      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
-      HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
-      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
-      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
-      CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
-      TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
-      KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
+      GOOGLE_API_KEY: "${{ secrets.GOOGLE_API_KEY }}"
+      OPENAI_API_KEY: "${{ secrets.OPENAI_API_KEY }}"
+      DEEPSEEK_API_KEY: "${{ secrets.DEEPSEEK_API_KEY || '' }}"
+      GROQ_API_KEY: "${{ secrets.GROQ_API_KEY || '' }}"
+      HF_TOKEN: "${{ secrets.HF_TOKEN || '' }}"
+      MISTRAL_API_KEY: "${{ secrets.MISTRAL_API_KEY || '' }}"
+      OPENROUTER_API_KEY: "${{ secrets.OPENROUTER_API_KEY || '' }}"
+      CEREBRAS_API_KEY: "${{ secrets.CEREBRAS_API_KEY || '' }}"
+      TOGETHER_API_KEY: "${{ secrets.TOGETHER_API_KEY || '' }}"
+      KIMI_API_KEY: "${{ secrets.KIMI_API_KEY || '' }}"
 
 
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
@@ -132,19 +132,21 @@ jobs:
       - name: Summary
         if: always()
         run: |
-          echo "## Johan SDK3 Sync Results" >> "$GITHUB_STEP_SUMMARY"
-          echo "- FPs added: ${{ steps.sync.outputs.added || '0' }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "- DP gaps: ${{ steps.sync.outputs.gaps || '0' }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "- New drivers: ${{ steps.sync.outputs.new_drivers || '0' }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "- Scaffolded: ${{ steps.scaffold.outputs.scaffolded || '0' }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "- FPs added (scaffold): ${{ steps.scaffold.outputs.fps_added || '0' }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "- High conflicts: ${{ steps.audit.outputs.high_conflicts || '0' }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "- Split suggestions: ${{ steps.audit.outputs.split_suggestions || '0' }}" >> "$GITHUB_STEP_SUMMARY"
-          if [ -f .github/state/johan-sdk3-sync.json ]; then
-            echo '```json' >> "$GITHUB_STEP_SUMMARY"
-            cat .github/state/johan-sdk3-sync.json | node -e "d=require('fs').readFileSync('/dev/stdin','utf8');try{console.log(JSON.stringify(JSON.parse(d).summary,null,2))}catch{console.log(d)}" >> "$GITHUB_STEP_SUMMARY"
-            echo '```' >> "$GITHUB_STEP_SUMMARY"
-          fi
+          {
+            echo "## Johan SDK3 Sync Results"
+            echo "- FPs added: ${{ steps.sync.outputs.added || '0' }}"
+            echo "- DP gaps: ${{ steps.sync.outputs.gaps || '0' }}"
+            echo "- New drivers: ${{ steps.sync.outputs.new_drivers || '0' }}"
+            echo "- Scaffolded: ${{ steps.scaffold.outputs.scaffolded || '0' }}"
+            echo "- FPs added (scaffold): ${{ steps.scaffold.outputs.fps_added || '0' }}"
+            echo "- High conflicts: ${{ steps.audit.outputs.high_conflicts || '0' }}"
+            echo "- Split suggestions: ${{ steps.audit.outputs.split_suggestions || '0' }}"
+            if [ -f .github/state/johan-sdk3-sync.json ]; then
+              echo '```json'
+              cat .github/state/johan-sdk3-sync.json | node -e "d=require('fs').readFileSync('/dev/stdin','utf8');try{console.log(JSON.stringify(JSON.parse(d).summary,null,2))}catch{console.log(d)}"
+              echo '```'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload report
         if: always()
@@ -156,3 +158,4 @@ jobs:
             .github/state/driver-scaffold-report.json
             .github/state/driver-conflict-audit.json
           retention-days: 30
+

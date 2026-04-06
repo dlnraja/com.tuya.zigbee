@@ -3368,14 +3368,12 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       if (detected) {
         // v5.5.926: Fixed flow card IDs - must match driver.flow.compose.json
         // Trigger: sensor_motion_presence_hybrid_presence_detected
-        await this.homey.flow.getDeviceTriggerCard('sensor_motion_presence_hybrid_presence_detected')
-          .trigger(this).catch(() => { });
+        await this.homey.flow.getDeviceTriggerCard().trigger(this.catch(() => { });
         this.log('[RADAR-FLOW] ✅ Triggered: sensor_motion_presence_hybrid_presence_detected');
       } else {
         // v5.5.926: Fixed flow card IDs - must match driver.flow.compose.json
         // Trigger: sensor_motion_presence_hybrid_presence_cleared
-        await this.homey.flow.getDeviceTriggerCard('sensor_motion_presence_hybrid_presence_cleared')
-          .trigger(this).catch(() => { });
+        await this.homey.flow.getDeviceTriggerCard().trigger(this.catch(() => { });
         this.log('[RADAR-FLOW] ✅ Triggered: sensor_motion_presence_hybrid_presence_cleared');
       }
     } catch (err) {
@@ -4256,4 +4254,5 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 }
 
 module.exports = PresenceSensorRadarDevice;
+
 

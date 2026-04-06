@@ -35,3 +35,4 @@ class SceneSwitch3Driver extends ZigBeeDriver {
 }
 
 module.exports = SceneSwitch3Driver;
+

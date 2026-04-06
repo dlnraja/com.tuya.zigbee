@@ -47,13 +47,12 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
         if (mode !== 'magic') this.setCapabilityValue('onoff', value).catch(() => {});
         if (isPhys && (mode === 'auto' || mode === 'both')) {
           const fid = 'wall_switch_4gang_1way_turned_' + (value ? 'on' : 'off');
-          this.homey.flow.getDeviceTriggerCard(fid).trigger(this, {}, {}).catch(() => {});
+          this.homey.flow.getDeviceTriggerCard().trigger(this {}, {}).catch(() => {});
           const pgid = `wall_switch_4gang_1way_physical_gang${gn}_` + (value ? 'on' : 'off');
-          this.homey.flow.getDeviceTriggerCard(pgid).trigger(this, {}, {}).catch(() => {});
+          this.homey.flow.getDeviceTriggerCard().trigger(this {}, {}).catch(() => {});
         }
         if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-          this.homey.flow.getDeviceTriggerCard(`wall_switch_4gang_1way_gang${gn}_scene`)
-            .trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+          this.homey.flow.getDeviceTriggerCard().trigger(this { action: value ? 'on' : 'off' }, {}).catch(() => {});
         }
       }
     });
@@ -125,8 +124,7 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
       const isPhys = !this._appCommandPending?.gang1;
       // v5.12.4: Removed 'auto' physical gang trigger - PhysicalButtonMixin handles it (fixes BSEED double-trigger)
       if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-        this.homey.flow.getDeviceTriggerCard('wall_switch_4gang_1way_gang1_scene')
-          .trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+        this.homey.flow.getDeviceTriggerCard().trigger(this { action: value ? 'on' : 'off' }, {}).catch(() => {});
         this.log(`[SCENE] Gang 1 scene: ${value ? 'on' : 'off'}`);
       }
     };
@@ -156,3 +154,4 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
 }
 
 module.exports = WallSwitch4Gang1WayDevice;
+

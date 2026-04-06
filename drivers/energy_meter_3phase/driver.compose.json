@@ -24,34 +24,34 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3210_402VRQ2I",
-      "_TZ3210_402vrq2i",
-      "_TZ3400_402VRQ2I",
-      "_TZ3400_402vrq2i",
-      "_TZE200_D2ZFGTIJ",
-      "_TZE200_S4SA1MCX",
-      "_TZE200_X8DIWKQB",
-      "_TZE200_d2zfgtij",
-      "_TZE200_s4sa1mcx",
-      "_TZE200_x8diwkqb",
-      "_TZE204_D2ZFGTIJ",
-      "_TZE204_JRCFSAA3",
-      "_TZE204_NSLR42TT",
-      "_TZE204_S4SA1MCX",
-      "_TZE204_SDYKKWSU",
-      "_TZE204_X8DIWKQB",
-      "_TZE204_d2zfgtij",
-      "_TZE204_jrcfsaa3",
-      "_TZE204_nslr42tt",
-      "_TZE204_s4sa1mcx",
-      "_TZE204_sdykkwsu",
-      "_TZE204_x8diwkqb",
-      "_TZE284_D2ZFGTIJ",
-      "_TZE284_S4SA1MCX",
-      "_TZE284_X8DIWKQB",
-      "_TZE284_d2zfgtij",
-      "_TZE284_s4sa1mcx",
-      "_TZE284_x8diwkqb",
+      "_tz3210_402vrq2i",
+      "_tz3210_402vrq2i",
+      "_tz3400_402vrq2i",
+      "_tz3400_402vrq2i",
+      "_tze200_d2zfgtij",
+      "_tze200_s4sa1mcx",
+      "_tze200_x8diwkqb",
+      "_tze200_d2zfgtij",
+      "_tze200_s4sa1mcx",
+      "_tze200_x8diwkqb",
+      "_tze204_d2zfgtij",
+      "_tze204_jrcfsaa3",
+      "_tze204_nslr42tt",
+      "_tze204_s4sa1mcx",
+      "_tze204_sdykkwsu",
+      "_tze204_x8diwkqb",
+      "_tze204_d2zfgtij",
+      "_tze204_jrcfsaa3",
+      "_tze204_nslr42tt",
+      "_tze204_s4sa1mcx",
+      "_tze204_sdykkwsu",
+      "_tze204_x8diwkqb",
+      "_tze284_d2zfgtij",
+      "_tze284_s4sa1mcx",
+      "_tze284_x8diwkqb",
+      "_tze284_d2zfgtij",
+      "_tze284_s4sa1mcx",
+      "_tze284_x8diwkqb",
       "_tz3210_402vrq2i",
       "_tz3400_402vrq2i",
       "_tze200_d2zfgtij",
@@ -93,6 +93,152 @@
   ],
   "connectivity": [
     "zigbee"
+  ],
+  "settings": [
+    {
+      "id": "power_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Measurement Scale",
+        "fr": "Échelle Mesure Puissance"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (Par défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Adjust if power readings are way off.",
+        "fr": "Ajuster si les mesures de puissance sont incorrectes."
+      }
+    },
+    {
+      "id": "voltage_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Voltage Measurement Scale",
+        "fr": "Échelle Mesure Tension"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (Par défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Adjust if voltage readings are way off.",
+        "fr": "Ajuster si les mesures de tension sont incorrectes."
+      }
+    },
+    {
+      "id": "current_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Current Measurement Scale",
+        "fr": "Échelle Mesure Courant"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (Par défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Adjust if current readings are way off.",
+        "fr": "Ajuster si les mesures de courant sont incorrectes."
+      }
+    },
+    {
+      "id": "meter_power_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy (kWh) Scale",
+        "fr": "Échelle Énergie (kWh)"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (Par défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Adjust if total energy (kWh) readings are way off.",
+        "fr": "Ajuster si l'énergie totale (kWh) est incorrecte."
+      }
+    }
   ],
   "maintenanceActions": [
     {

@@ -37,7 +37,7 @@ class SwitchDimmer1GangDevice extends TuyaSpecificClusterDevice {
       this.setCapabilityValue('onoff', s).catch(() => {});
       if (phys) {
         const id = s ? 'switch_dimmer_1gang_turned_on' : 'switch_dimmer_1gang_turned_off';
-        this.homey.flow.getDeviceTriggerCard(id).trigger(this, {}, {}).catch(() => {});
+        this.homey.flow.getDeviceTriggerCard().trigger(this {}, {}).catch(() => {});
       }
     } else if (data.dp === DP.brightness) {
       const raw = typeof v === 'number' ? v : parseInt(v);
@@ -48,11 +48,9 @@ class SwitchDimmer1GangDevice extends TuyaSpecificClusterDevice {
       const dim = Math.max(0, Math.min(1, (raw - 10) / 990));
       this.setCapabilityValue('dim', dim).catch(() => {});
       if (phys && up) {
-        this.homey.flow.getDeviceTriggerCard('switch_dimmer_1gang_brightness_increased')
-          .trigger(this, { brightness: dim }, {}).catch(() => {});
+        this.homey.flow.getDeviceTriggerCard().trigger(this { brightness: dim }, {}).catch(() => {});
       } else if (phys && dn) {
-        this.homey.flow.getDeviceTriggerCard('switch_dimmer_1gang_brightness_decreased')
-          .trigger(this, { brightness: dim }, {}).catch(() => {});
+        this.homey.flow.getDeviceTriggerCard().trigger(this { brightness: dim }, {}).catch(() => {});
       }
     }
   }
@@ -69,3 +67,4 @@ class SwitchDimmer1GangDevice extends TuyaSpecificClusterDevice {
 }
 
 module.exports = SwitchDimmer1GangDevice;
+

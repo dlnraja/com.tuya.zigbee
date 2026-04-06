@@ -43,6 +43,10 @@ jobs:
         run: |
           node .github/scripts/dp-learning-system.js || true
 
+      - name: Validate Tuya Magic Spell & Energy Scaling
+        run: |
+          node scripts/automation/validate-magic-spell.js
+
       - name: Recursive Device Variance Testing
         run: |
           echo "Recursive test of manufacturer variants for device IDs"

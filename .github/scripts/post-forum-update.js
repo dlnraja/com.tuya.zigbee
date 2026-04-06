@@ -3,7 +3,7 @@
 const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
 const{getForumAuth,refreshCsrf,authHeaders,fmtCk,FORUM}=require('./forum-auth');
-const{textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost}=require('./ai-helper');
+const{textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost,callAI}=require('./ai-helper');
 const{sanitize}=require('./sanitize-forum');
 const TID=140352;
 const SUM=process.env.GITHUB_STEP_SUMMARY||'/dev/null';
@@ -124,11 +124,53 @@ async function main(){
         const m=smartMergePost(lastOwn.raw,raw);
         console.log('SmartMerge:',m.reason);
         if(m.action==='skip'){console.log('Skipping ('+m.reason+')');fs.appendFileSync(SUM,'Forum: skipped ('+m.reason+')\n');return}
+        
+        // v5.13.5: GHOSTWRITER ORGANIC MERGE
+        // Ask AI to weave the new update into the existing post naturally
+        console.log('  🤖 Ghostwriter: organic merge...');
+        const contentToHumanize = `CURRENT POST CONTENT:\n${lastOwn.raw.replace(/<!-- bot-update -->/g, '')}\n\nNEW RELEASE UPDATE:\n${raw}`;
+        const humanizePrompt = `You ARE dlnraja, the solo developer. You are updating your latest forum post to announce v${ver}.
+1. INTEGRATION: Rewrite the entire post to weave the NEW RELEASE UPDATE into the CURRENT CONTENT organically. 
+2. STYLE: Casual, direct, short sentences. Developer-to-developer tone. No corporate fluff.
+3. STRUCTURE: Use paragraphs. No bullet lists for the main text.
+4. VERSIONING: Keep the "Update: v[VERSION] pushed to Test!" line at the top of the newest section.
+5. TAIL: Keep the "Covers a huge range of Tuya devices..." mention. 
+6. SILENT BARRIER: Never mention bots, AI, or automated scripts.
+Return ONLY the final post text.`;
+        
+        try {
+          const hRes = await callAI(contentToHumanize, humanizePrompt, { maxTokens: 4000, complexity: 'high' });
+          if (hRes && hRes.text && hRes.text !== 'AI_OFFLINE_OR_LIMIT_REACHED') {
+            m.content = sanitize(hRes.text) + '\n<!-- bot-update -->';
+            console.log('  ✅ Ghostwriter successful (merged, model: ' + hRes.model + ')');
+          } else {
+            console.log('  ⚠️ Ghostwriter failed or offline, using smartMerge default.');
+          }
+        } catch(e) {
+          console.log('  ⚠️ Ghostwriter error:', e.message);
+        }
+
         await editPost(lastOwn.id,m.content,auth);
         console.log('Edited post #'+lastOwn.postNumber+' ('+m.reason+')');
       }
     }else{
-      await postReply(TID,raw,auth);
+      // Fresh reply also gets humanized
+      let freshRaw = raw;
+      console.log('  🤖 Ghostwriter: fresh reply...');
+      const freshPrompt = `You ARE dlnraja, developer of the app. Write a short, casual forum reply to announce v${ver}.
+Talk like a human dev. No corporate greeting. No bullet lists. No "Key features".
+Mention the version and the specific changes: ${cl}.
+Return ONLY the text.`;
+      
+      try {
+        const hRes = await callAI(raw, freshPrompt, { maxTokens: 2000 });
+        if (hRes && hRes.text && hRes.text !== 'AI_OFFLINE_OR_LIMIT_REACHED') {
+          freshRaw = sanitize(hRes.text) + '\n<!-- bot-update -->';
+          console.log('  ✅ Ghostwriter successful (new reply)');
+        }
+      } catch(e) {}
+
+      await postReply(TID,freshRaw,auth);
       console.log('Posted new reply (no existing dlnraja post found)');
     }
     setGlobalCooldown();

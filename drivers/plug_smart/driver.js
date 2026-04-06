@@ -15,7 +15,7 @@ class PlugSmartDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Plug is/is not on
     try {
-      this.homey.flow.getConditionCard('plug_smart_is_on')
+      this.homey.flow.getDeviceConditionCard('plug_smart_is_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -25,7 +25,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      this.homey.flow.getActionCard('plug_smart_turn_on')
+      this.homey.flow.getDeviceActionCard('plug_smart_turn_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -37,7 +37,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      this.homey.flow.getActionCard('plug_smart_turn_off')
+      this.homey.flow.getDeviceActionCard('plug_smart_turn_off')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -49,7 +49,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      this.homey.flow.getActionCard('plug_smart_toggle')
+      this.homey.flow.getDeviceActionCard('plug_smart_toggle')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
@@ -62,7 +62,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
     // ACTION: Turn on after delay
     try {
-      this.homey.flow.getActionCard('plug_smart_turn_on_delay')
+      this.homey.flow.getDeviceActionCard('plug_smart_turn_on_delay')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const delay = (args.delay || 10) * 1000;
@@ -74,7 +74,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
     // ACTION: Turn off after delay
     try {
-      this.homey.flow.getActionCard('plug_smart_turn_off_delay')
+      this.homey.flow.getDeviceActionCard('plug_smart_turn_off_delay')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const delay = (args.delay || 10) * 1000;

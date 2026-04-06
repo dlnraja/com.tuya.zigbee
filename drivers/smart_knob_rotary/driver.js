@@ -37,7 +37,7 @@ class SmartKnobRotaryDriver extends Homey.Driver {
       .registerRunListener(async (args, state) => true);
 
     // Brightness condition
-    this.homey.flow.getConditionCard('smart_knob_rotary_brightness_above')
+    this.homey.flow.getDeviceConditionCard('smart_knob_rotary_brightness_above')
       .registerRunListener(async (args, state) => {
         const device = args.device;
         if (device && device.hasCapability('dim')) {
@@ -53,4 +53,5 @@ class SmartKnobRotaryDriver extends Homey.Driver {
 }
 
 module.exports = SmartKnobRotaryDriver;
+
 

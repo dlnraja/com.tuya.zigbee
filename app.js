@@ -66,6 +66,58 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   /**
    * onInit is called when the app is initialized.
    */
+  /**
+   * Safe getter for flow trigger cards
+   * prevents SDK3 crashes when flowId is missing in app.json
+   */
+  _safeGetTriggerCard(id) {
+    try {
+      const card = this.homey.flow.getTriggerCard(id);
+      if (!card) {
+        this.log(`[FLOW-SAFE] ⚠️ Trigger card not found: ${id}`);
+        return null;
+      }
+      return card;
+    } catch (e) {
+      this.log(`[FLOW-SAFE] ❌ getTriggerCard crashed for ${id}: ${e.message}`);
+      return null;
+    }
+  }
+
+  /**
+   * Safe getter for flow condition cards
+   */
+  _safeGetConditionCard(id) {
+    try {
+      const card = this.homey.flow.getConditionCard(id);
+      if (!card) {
+        this.log(`[FLOW-SAFE] ⚠️ Condition card not found: ${id}`);
+        return null;
+      }
+      return card;
+    } catch (e) {
+      this.log(`[FLOW-SAFE] ❌ getConditionCard crashed for ${id}: ${e.message}`);
+      return null;
+    }
+  }
+
+  /**
+   * Safe getter for flow action cards
+   */
+  _safeGetActionCard(id) {
+    try {
+      const card = this.homey.flow.getActionCard(id);
+      if (!card) {
+        this.log(`[FLOW-SAFE] ⚠️ Action card not found: ${id}`);
+        return null;
+      }
+      return card;
+    } catch (e) {
+      this.log(`[FLOW-SAFE] ❌ getActionCard crashed for ${id}: ${e.message}`);
+      return null;
+    }
+  }
+
   async onInit() {
     // AUDIT V2: Initialize Developer Settings FIRST
     this.initializeSettings();
@@ -901,28 +953,28 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   _registerUniversalFlowCards() {
     try {
       // TRIGGER: Any DP changed
-      this.homey.flow.getDeviceTriggerCard('tuya_dp_changed').registerRunListener(async (args, state) => true);
+      this.homey.flow.getTriggerCard('tuya_dp_changed').registerRunListener(async (args, state) => true);
 
       // TRIGGER: Bitmap changed
-      this.homey.flow.getDeviceTriggerCard('tuya_bitmap_changed').registerRunListener(async (args, state) => {
+      this.homey.flow.getTriggerCard('tuya_bitmap_changed').registerRunListener(async (args, state) => {
         return !args.dp || args.dp === 0 || state.dp_number === args.dp;
       });
 
       // TRIGGER: Raw received
-      this.homey.flow.getDeviceTriggerCard('tuya_raw_received').registerRunListener(async (args, state) => {
+      this.homey.flow.getTriggerCard('tuya_raw_received').registerRunListener(async (args, state) => {
         return !args.dp || args.dp === 0 || state.dp_number === args.dp;
       });
 
       // TRIGGER: Cluster event
-      this.homey.flow.getDeviceTriggerCard('tuya_cluster_received').registerRunListener(async (args, state) => true);
+      this.homey.flow.getTriggerCard('tuya_cluster_received').registerRunListener(async (args, state) => true);
 
       // TRIGGER: DP received (existing card, ensure registered)
-      this.homey.flow.getDeviceTriggerCard('tuya_dp_received').registerRunListener(async (args, state) => {
+      this.homey.flow.getTriggerCard('tuya_dp_received').registerRunListener(async (args, state) => {
         return !args.dp || args.dp === 0 || state.dp === args.dp;
       });
 
       // TRIGGER: Threshold crossed
-      this.homey.flow.getDeviceTriggerCard('tuya_dp_threshold_crossed').registerRunListener(async (args, state) => {
+      this.homey.flow.getTriggerCard('tuya_dp_threshold_crossed').registerRunListener(async (args, state) => {
         return state.dp === args.dp;
       });
 
