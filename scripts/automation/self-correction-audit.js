@@ -30,37 +30,64 @@ async function main() {
     console.log('  ❌ Syntax: Failed');
   }
 
-  // 2. BVB Coherence Check
+  // 2. BVB Coherence Check (Static Regex Audit)
   try {
     console.log('Auditing BVB Mixin logic...');
     const mixin = fs.readFileSync(path.join(ROOT, 'lib/mixins/CapabilityManagerMixin.js'), 'utf8');
     
-    // Check if 255 is still allowed for light
-    const hasLightSafe = mixin.includes('isLighting') && mixin.includes('dim');
-    // Check if error codes are present
-    const hasErrorCodes = mixin.includes('65535') && mixin.includes('32767');
+    const checks = {
+      lightSafe: mixin.includes('isLighting') && mixin.includes('dim'),
+      errorCodes: [65535, 32767, -32768, -1].every(c => mixin.includes(String(c))),
+      safeSetUsed: mixin.includes('_safeSetCapability'),
+      radarGhost: mixin.includes('RADAR GHOST PROTECTION')
+    };
     
-    if (hasLightSafe && hasErrorCodes) {
+    if (Object.values(checks).every(v => v)) {
       auditReport.bvbCoherenceOk = true;
       console.log('  ✅ BVB Coherence: OK');
     } else {
-      auditReport.warnings.push('BVB Logic appears compromised: missing light-safety or error codes');
+      auditReport.warnings.push(`BVB Logic compromised. Missing: ${Object.entries(checks).filter(([k,v]) => !v).map(([k]) => k).join(', ')}`);
       console.log('  ⚠️ BVB Coherence: Warning');
     }
   } catch (e) {
     auditReport.errors.push(`BVB Audit Error: ${e.message}`);
   }
 
-  // 3. Driver/Fingerprint Integrity
+  // 3. Driver Integrity & Orphan Check (Cloudless)
   try {
-    console.log('Checking Tuya MCU pairing integrity...');
-    const conflictResult = JSON.parse(fs.readFileSync(path.join(STATE_DIR, 'driver-conflict-audit.json'), 'utf8'));
-    const highRisk = conflictResult.pairingAudit || [];
-    if (highRisk.length > 5) {
-       auditReport.warnings.push(`Too many drivers (${highRisk.length}) missing Product IDs for Tuya MCU devices.`);
-       auditReport.noDegradation = false;
+    console.log('Auditing Driver Integrity...');
+    const drivers = fs.readdirSync(path.join(ROOT, 'drivers')).filter(d => fs.existsSync(path.join(ROOT, 'drivers', d, 'driver.compose.json')));
+    
+    for (const d of drivers) {
+      const compose = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers', d, 'driver.compose.json'), 'utf8'));
+      const devJs = path.join(ROOT, 'drivers', d, 'device.js');
+      
+      // Orphan Check
+      if (!fs.existsSync(devJs)) {
+        auditReport.errors.push(`Driver ${d} is missing device.js (Orphan)`);
+        auditReport.noDegradation = false;
+      }
+
+      // PID/Mfr Pair Check for Tuya MCU
+      const mfrs = compose.zigbee?.manufacturerName || [];
+      const pids = compose.zigbee?.productId || [];
+      if (mfrs.some(m => m.startsWith('_TZE')) && pids.length === 0) {
+        auditReport.warnings.push(`Driver ${d}: Tuya MCU (_TZE) missing productId triggers.`);
+      }
+
+      // DP Duplication Check (if device.js exists)
+      if (fs.existsSync(devJs)) {
+        const content = fs.readFileSync(devJs, 'utf8');
+        const dps = (content.match(/^\s*(\d+):/gm) || []).map(m => m.trim().replace(':', ''));
+        const dups = dps.filter((item, index) => dps.indexOf(item) !== index);
+        if (dups.length > 0) {
+          auditReport.warnings.push(`Driver ${d}: Duplicate DP definitions found: ${[...new Set(dups)].join(', ')}`);
+        }
+      }
     }
-  } catch (e) {}
+  } catch (e) {
+    auditReport.errors.push(`Driver Audit Error: ${e.message}`);
+  }
 
   // 4. Summarize to GitHub Summary
   const SUMMARY = process.env.GITHUB_STEP_SUMMARY || (process.platform === 'win32' ? 'NUL' : '/dev/null');
