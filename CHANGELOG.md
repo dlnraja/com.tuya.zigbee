@@ -4,7 +4,13 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.0.4] - 2026-04-06
+## [7.0.5] - 2026-04-06
+
+### Bug Fixes
+- Fixed incorrect sensor and energy readings on WiFi Tuya devices by implementing automatic divisor/multiplier resolution in the DP mapping engine.
+---
+
+ [7.0.4] - 2026-04-06
 
 ### Bug Fixes
 - Fixed issues with Hybrid Energy for MAX Tuya Local Deployment.
