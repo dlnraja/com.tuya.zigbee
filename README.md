@@ -37,7 +37,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Feature |
 |---------|---------|
-| **v5.12.1** | v5.11.208: Fixed fingerprint casing regression., Added support for Zbeacon de... |
+| **v5.12.2** | v5.12.1: Fixed energy multiplier for device _TZ3000_wzmuk9ai., Added support ... |
+| **v5.12.1** | Universal Tuya Zigbee app v5.12.1 adds support for new device variants and re... |
 | **v5.12.0** | Major stabilization release: Integrated Parallel Bot Handler for faster maint... |
 | **v5.11.208** | Added Zbeacon support and fixed fingerprint casing regression in Universal Tu... |
 | **v5.11.206** | v5.11.205: Added 3 new fingerprints to improve device compatibility., Integra... |
@@ -46,8 +47,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.203** | Added universal support for all 4 Zigbee SOS reporting standards to emergency... |
 | **v5.11.202** | Added support for new Tuya devices and improved pairing instructions. |
 | **v5.11.201** | Added 3 new device fingerprints including Nedis SmartLife Radiator Control. F... |
-| **v5.11.200** | Added support for ZG-204ZM and WiFi water sensor. Stabilized sleepy devices. |
 <!-- CHANGELOG_END -->
+
 
 
 
