@@ -1,4 +1,10 @@
 {
+  "7.0.0": {
+    "en": "Fixed flow trigger errors, TS0003 gang linking, and energy metering. Added TS110E support, optimized HOBEIAN sensors, and improved BVB stability for radar/LCD devices."
+  },
+  "5.12.3": {
+    "en": "v5.12.2: Fixed energy multiplier for device _TZ3000_wzmuk9ai., Resolved connection issues for soil sensors and LCD sensors, adding new fingerprints., Added support for new device variants, enhancing compatibility with additional Zigbee devices."
+  },
   "5.12.2": {
     "en": "Universal Tuya Zigbee app v5.12.2 adds support for new device variants and resolves several fingerprint issues."
   },
@@ -53,13 +59,7 @@
   "5.11.193": {
     "en": "Resolved fingerprint pairing conflicts, added support for new Tuya device variants, and improved SDK compatibility for stable connections."
   },
-  "5.11.192": {
-    "en": "Added 28+ new device fingerprints including Nedis SmartLife Radiator Control. Implemented smart hybrid matching to automatically resolve fingerprint collisions during pairing. Updated RGB bulb driver and refined device pattern recognition for improved stability."
-  },
-  "5.11.191": {
-    "en": "Added 28 new device fingerprints, including Nedis SmartLife Radiator Control. Expanded compatibility across switch, sensor, and climate drivers."
-  },
-  "5.12.3": {
-    "en": "v5.12.2: Fixed energy multiplier for device _TZ3000_wzmuk9ai., Resolved connection issues for soil sensors and LCD sensors, adding new fingerprints., Added support for new device variants, enhancing compatibility with additional Zigbee devices."
+  "7.0.1": {
+    "en": "v7.0.0: Resolved \"Could not get device by ID\" errors in flow triggers across all drivers, Fixed duplicate Flow card trigger IDs that blocked app validation, Corrected unlinked sub-gang capabilities on TS0003 multi-gang switches, Fixed incorrect energy multiplier for `_TZ3000_wzmuk9ai` smart plugs, Resolved connectivity drops for Zbeacon plugs and soil moisture sensors"
   }
 }
