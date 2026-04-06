@@ -199,22 +199,21 @@
       "_tze284_cjbofhxw"
     ],
     "productId": [
-      "SPM01-1Z2",
       "SDM01-3Z1",
       "SDM02-2Z1",
+      "SPM01-1Z2",
       "SPM02-3Z3",
-      "TS0601"
+      "TS0601",
+      "sdm01-3z1",
+      "sdm02-2z1",
+      "spm01-1z2",
+      "spm02-3z3",
+      "ts0601"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          3,
-          4,
-          5,
-          6,
-          2820,
-          1794,
           61184
         ]
       }

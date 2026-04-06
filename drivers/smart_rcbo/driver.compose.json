@@ -25,17 +25,16 @@
       "_tze204_hkdl5fmv"
     ],
     "productId": [
+      "TS0601",
+      "TS0601_RCBO",
       "TS0601_rcbo",
-      "TS0601"
+      "ts0601",
+      "ts0601_rcbo"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          3,
-          4,
-          5,
-          6,
           61184
         ]
       }

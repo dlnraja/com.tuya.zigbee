@@ -69,18 +69,15 @@
     ],
     "productId": [
       "TS0601",
-      "TS0601_3phase"
+      "TS0601_3PHASE",
+      "TS0601_3phase",
+      "ts0601",
+      "ts0601_3phase"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          3,
-          4,
-          5,
-          6,
-          2820,
-          1794,
           61184
         ]
       }

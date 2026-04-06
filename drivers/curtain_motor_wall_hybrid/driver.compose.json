@@ -63,14 +63,13 @@
       "_tz3000_qqdbccb3"
     ],
     "productId": [
-      "TS130F"
+      "TS130F",
+      "ts130f"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          6,
-          258,
           61184
         ]
       }

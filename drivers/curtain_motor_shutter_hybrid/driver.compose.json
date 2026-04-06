@@ -61,14 +61,13 @@
       "_tze200_wmcdj3aq"
     ],
     "productId": [
-      "TS0601"
+      "TS0601",
+      "ts0601"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          6,
-          258,
           61184
         ]
       }

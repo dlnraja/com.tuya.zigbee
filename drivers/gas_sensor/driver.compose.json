@@ -46,6 +46,8 @@
       "_TZ3290_uc8lwbi2",
       "_TZ3400_TK3S5TYG",
       "_TZ3400_tk3s5tyg",
+      "_TZE200_2AAELWXK",
+      "_TZE200_2aaelwxk",
       "_TZE200_8ISDKY6J",
       "_TZE200_8isdky6j",
       "_TZE200_AJ0OXO1I",
@@ -90,6 +92,7 @@
       "_tz3290_s6ezpa3j",
       "_tz3290_uc8lwbi2",
       "_tz3400_tk3s5tyg",
+      "_tze200_2aaelwxk",
       "_tze200_8isdky6j",
       "_tze200_aj0oxo1i",
       "_tze200_auin8mzr",
@@ -106,15 +109,20 @@
       "_tze284_ezqy5pvh",
       "_tze284_ggev5fsl",
       "_tze284_nj7sfid2",
-      "_tze284_rjgdhqqi",
-      "_TZE200_2aaelwxk"
+      "_tze284_rjgdhqqi"
     ],
     "productId": [
-      "TS0601_gas",
-      "TS0601",
       "TS0225",
+      "TS0301",
+      "TS0601",
+      "TS0601_GAS",
+      "TS0601_gas",
       "ZG-225Z",
-      "TS0301"
+      "ts0225",
+      "ts0301",
+      "ts0601",
+      "ts0601_gas",
+      "zg-225z"
     ],
     "learnmode": {
       "image": "/drivers/gas_sensor/assets/learnmode.svg",

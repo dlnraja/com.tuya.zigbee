@@ -43,17 +43,16 @@
       "_tze204_wbhaespm"
     ],
     "productId": [
+      "TS0601",
+      "TS0601_BREAKER",
       "TS0601_breaker",
-      "TS0601"
+      "ts0601",
+      "ts0601_breaker"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          3,
-          4,
-          5,
-          6,
           61184
         ]
       }

@@ -41,6 +41,30 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "AQARA",
+      "AUBESS",
+      "AVATTO",
+      "BLITZWOLF",
+      "BSEED",
+      "BW-",
+      "GIRIER",
+      "HEIMAN",
+      "IKEA",
+      "LIDL",
+      "LONSONHO",
+      "LUMI",
+      "MOES",
+      "NAS-",
+      "NEO",
+      "PHILIPS",
+      "SIGNIFY",
+      "SILVERCREST",
+      "SMARTTHINGS",
+      "TRADFRI",
+      "TUYA",
+      "WOOX",
+      "XIAOMI",
+      "ZEMISMART",
       "aqara",
       "aubess",
       "avatto",
@@ -68,7 +92,9 @@
     ],
     "productId": [
       "TS0203",
-      "TS0601"
+      "TS0601",
+      "ts0203",
+      "ts0601"
     ],
     "endpoints": {
       "1": {

@@ -90,29 +90,26 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_TZ3000_ISZEGWPD",
+      "_TZ3000_iszegwpd",
       "_TZE200_ZXX7MI77",
       "_TZE200_zxx7mi77",
       "_TZE204_ZXX7MI77",
       "_TZE204_zxx7mi77",
+      "_tz3000_iszegwpd",
       "_tze200_zxx7mi77",
-      "_tze204_zxx7mi77",
-      "_TZ3000_iszegwpd"
+      "_tze204_zxx7mi77"
     ],
     "productId": [
       "TS0046",
-      "TS0601"
+      "TS0601",
+      "ts0046",
+      "ts0601"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
-          3,
-          4,
-          5,
-          6,
-          18,
-          57344,
           61184
         ]
       },

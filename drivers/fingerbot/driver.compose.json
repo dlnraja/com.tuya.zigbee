@@ -48,13 +48,15 @@
     ],
     "productId": [
       "TS0001",
-      "TS0001_fingerbot"
+      "TS0001_FINGERBOT",
+      "TS0001_fingerbot",
+      "ts0001",
+      "ts0001_fingerbot"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          6,
           61184
         ],
         "bindings": [

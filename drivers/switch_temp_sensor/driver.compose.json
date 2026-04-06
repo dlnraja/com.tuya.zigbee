@@ -48,15 +48,14 @@
       "_tz3218_7fiyo3kv"
     ],
     "productId": [
-      "TS0601_tempswitch"
+      "TS0601_TEMPSWITCH",
+      "TS0601_tempswitch",
+      "ts0601_tempswitch"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
-          1026,
-          1029,
           61184
         ]
       }

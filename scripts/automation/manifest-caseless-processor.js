@@ -3,7 +3,7 @@
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      MANIFEST CASELESS PROCESSOR - v1.0.0                                    ║
+ * ║      MANIFEST CASELESS PROCESSOR - v1.1.0                                    ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  Ensures Tuya fingerprints are present in BOTH Uppercase and Lowercase       ║
  * ║  in driver manifests, bypassing Homey's case-sensitive matching.             ║
@@ -24,35 +24,43 @@ function processFile(filePath) {
     return;
   }
 
-  if (!content.zigbee || !content.zigbee.manufacturerName) return;
-
-  const original = content.zigbee.manufacturerName;
-  const newNames = new Set(original);
   let changed = false;
 
-  for (const name of original) {
-    if (typeof name !== 'string') continue;
-
-    // We focus on Tuya prefixes which are the most common source of casing issues
-    if (name.startsWith('_TZ') || name.startsWith('_TY') || name.startsWith('_TZE')) {
-      const lower = name.toLowerCase();
-      const upper = name.toUpperCase();
-
-      if (!newNames.has(lower)) {
-        newNames.add(lower);
+  if (content.zigbee) {
+    // 1. Process manufacturerName (Case-insensitive)
+    if (Array.isArray(content.zigbee.manufacturerName)) {
+      const original = content.zigbee.manufacturerName;
+      const newNames = new Set(original);
+      for (const name of original) {
+        if (typeof name !== 'string') continue;
+        newNames.add(name.toLowerCase());
+        newNames.add(name.toUpperCase());
+      }
+      if (newNames.size !== original.length) {
+        content.zigbee.manufacturerName = [...newNames].sort();
         changed = true;
       }
-      if (!newNames.has(upper)) {
-        newNames.add(upper);
+    }
+
+    // 2. Process productId (Case-insensitive)
+    if (Array.isArray(content.zigbee.productId)) {
+      const original = content.zigbee.productId;
+      const newIds = new Set(original);
+      for (const id of original) {
+        if (typeof id !== 'string') continue;
+        newIds.add(id.toLowerCase());
+        newIds.add(id.toUpperCase());
+      }
+      if (newIds.size !== original.length) {
+        content.zigbee.productId = [...newIds].sort();
         changed = true;
       }
     }
   }
 
   if (changed) {
-    content.zigbee.manufacturerName = [...newNames].sort();
     fs.writeFileSync(filePath, JSON.stringify(content, null, 2) + '\n');
-    console.log(`  [CASELESS] Updated ${path.basename(path.dirname(filePath))}: Added ${newNames.size - original.length} variants.`);
+    console.log(`  [CASELESS] Updated ${path.basename(path.dirname(filePath))}: Normalised manufacturerNames/productIds.`);
   }
 }
 

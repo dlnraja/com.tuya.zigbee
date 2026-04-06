@@ -59,22 +59,18 @@
       "_tz3000_cfv2uyxe"
     ],
     "productId": [
+      "TS0002",
       "TS0207",
+      "TS0601_REPEATER",
       "TS0601_repeater",
-      "TS0002"
+      "ts0002",
+      "ts0207",
+      "ts0601_repeater"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          3,
-          4,
-          5,
-          6,
-          1794,
-          2820,
-          57344,
-          57345,
           61184
         ]
       },

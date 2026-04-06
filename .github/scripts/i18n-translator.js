@@ -44,7 +44,10 @@ async function translateDriver(driverPath) {
 
 const target = process.argv[2];
 if (target) {
-    translateDriver(target);
+    translateDriver(target).catch(e => {
+        console.error('Translation error:', e.message);
+        process.exit(1);
+    });
 } else {
     console.log('Please provide a driver path, e.g. drivers/my_sensor/driver.compose.json');
 }

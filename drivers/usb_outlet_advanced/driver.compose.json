@@ -61,6 +61,7 @@
   "zigbee": {
     "manufacturerName": [
       "_TYZB01_VKWRYFDR",
+      "_TYZB01_vkwryfdr",
       "_TYZb01_vkwryfdr",
       "_TZ3000_8KCQDNGY",
       "_TZ3000_8kcqdngy",
@@ -74,6 +75,9 @@
       "_TZ3000_ko6v90pg",
       "_TZ3000_qyolrmc9",
       "_TZ3000_u5u4caho",
+      "_TZB210_2DP1BPQQ",
+      "_TZB210_HBEJZGPJ",
+      "_TZB210_WLBHVABF",
       "_TZE200_BSEED2G",
       "_TZE200_bseed2g",
       "_TZE204_BSEED3G",
@@ -92,23 +96,18 @@
       "_tzb210_wlbhvabf",
       "_tze200_bseed2g",
       "_tze204_bseed3g",
-      "_tze204_mvtclclq",
-      "_TYZB01_vkwryfdr"
+      "_tze204_mvtclclq"
     ],
     "productId": [
       "TS0115",
-      "TS0601"
+      "TS0601",
+      "ts0115",
+      "ts0601"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          3,
-          4,
-          5,
-          6,
-          2820,
-          1794,
           61184
         ]
       }

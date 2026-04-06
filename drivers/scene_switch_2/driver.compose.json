@@ -38,19 +38,18 @@
       "_tz3002_6ahhkwyh"
     ],
     "productId": [
+      "TS0042",
+      "TS0601_SCENE2",
       "TS0601_scene2",
       "TS0726",
-      "TS0042"
+      "ts0042",
+      "ts0601_scene2",
+      "ts0726"
     ],
     "endpoints": {
       "1": {
         "clusters": [
           0,
-          1,
-          3,
-          6,
-          4096,
-          57344,
           61184
         ]
       }

@@ -96,10 +96,18 @@ const CATEGORY = {
   module_mini_switch: 'switch', generic_tuya: 'diy', universal_fallback: 'diy',
   siren: 'safety', doorbell: 'safety', lock_smart: 'lock',
   pet_feeder_zigbee: 'pet', water_valve_garden: 'valve',
+  // Added v5.13.0: Hybrid drivers
+  sensor_motion_presence_hybrid: 'hybrid', sensor_presence_radar_hybrid: 'hybrid',
+  sensor_climate_water_hybrid: 'hybrid', sensor_climate_temphumidsensor_hybrid: 'hybrid',
+  sensor_contact_motion_hybrid: 'hybrid', sensor_contact_presence_hybrid: 'hybrid',
+  sensor_motion_radar_hybrid: 'hybrid', plug_energy_monitor_hybrid: 'hybrid',
+  switch_hybrid: 'hybrid', smart_knob_rotary_hybrid: 'hybrid',
+  smart_knob_switch_hybrid: 'hybrid',
 };
 
 // Specialization score: higher = more specialized, wins conflicts
 const SPECIALIZATION = {
+  'hybrid': 100, // Hybrid drivers always win
   'cover': 90, 'thermostat': 85, 'radar': 85, 'safety': 80,
   'valve': 80, 'lock': 80, 'pet': 80, 'ir': 75, 'pump': 75,
   'monitor': 75, 'hvac': 70, 'fan': 70, 'scene': 70,
