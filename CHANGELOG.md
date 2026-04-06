@@ -4,7 +4,19 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.0.3] - 2026-04-06
+## [7.0.4] - 2026-04-06
+
+### Bug Fixes
+- Fixed issues with Hybrid Energy for MAX Tuya Local Deployment.
+
+### New Features
+- Added 3 new fingerprints for enhanced device compatibility.
+
+### Improvements
+- Updated 221 drivers to support the latest device capabilities.
+---
+
+ [7.0.3] - 2026-04-06
 
 ### Bug Fixes
 - Fixed issues with 3 new fingerprints.
