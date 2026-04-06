@@ -15,7 +15,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is present
     try {
-      this.homey.flow.getDeviceConditionCard('presence_sensor_radar_is_present')
+      this.homey.flow.getConditionCard('presence_sensor_radar_is_present')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_motion') === true;
@@ -25,7 +25,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
 
     // CONDITION: Illuminance above
     try {
-      this.homey.flow.getDeviceConditionCard('presence_sensor_radar_illuminance_above')
+      this.homey.flow.getConditionCard('presence_sensor_radar_illuminance_above')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const lux = args.device.getCapabilityValue('measure_luminance') || 0;
@@ -36,7 +36,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
 
     // CONDITION: Distance within
     try {
-      this.homey.flow.getDeviceConditionCard('presence_sensor_radar_distance_within')
+      this.homey.flow.getConditionCard('presence_sensor_radar_distance_within')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const distance = args.device.getCapabilityValue('measure_luminance.distance') || 0;

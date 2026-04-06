@@ -80,7 +80,7 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(HybridLightBase) {
       this._lastOnoffState = v;
       if (isPhysical) {
         const id = v ? 'dimmer_wall_1gang_physical_on' : 'dimmer_wall_1gang_physical_off';
-        this.homey.flow.getDeviceTriggerCard().trigger(this {}, {}).catch(() => {});
+        this.homey.flow.getTriggerCard().trigger(this {}, {}).catch(() => {});
       }
     } else if (dpId === 2 || dpId === 101) {
       const dim = this.getCapabilityValue('dim');
@@ -89,7 +89,7 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(HybridLightBase) {
       this._lastDimValue = dim;
       if (isPhysical && oldDim !== null) {
         const id = increased ? 'dimmer_wall_1gang_physical_brightness_up' : 'dimmer_wall_1gang_physical_brightness_down';
-        this.homey.flow.getDeviceTriggerCard().trigger(this { brightness: Math.round(dim * 100) }, {}).catch(() => {});
+        this.homey.flow.getTriggerCard().trigger(this { brightness: Math.round(dim * 100) }, {}).catch(() => {});
       }
     }
   }

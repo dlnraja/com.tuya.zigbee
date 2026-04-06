@@ -15,7 +15,7 @@ class CeilingFanDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is on
     try {
-      this.homey.flow.getDeviceConditionCard('ceiling_fan_is_on')
+      this.homey.flow.getConditionCard('ceiling_fan_is_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -25,7 +25,7 @@ class CeilingFanDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      this.homey.flow.getDeviceActionCard('ceiling_fan_turn_on')
+      this.homey.flow.getActionCard('ceiling_fan_turn_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -37,7 +37,7 @@ class CeilingFanDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      this.homey.flow.getDeviceActionCard('ceiling_fan_turn_off')
+      this.homey.flow.getActionCard('ceiling_fan_turn_off')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -49,7 +49,7 @@ class CeilingFanDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      this.homey.flow.getDeviceActionCard('ceiling_fan_toggle')
+      this.homey.flow.getActionCard('ceiling_fan_toggle')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
@@ -62,7 +62,7 @@ class CeilingFanDriver extends ZigBeeDriver {
 
     // ACTION: Set brightness/speed
     try {
-      this.homey.flow.getDeviceActionCard('ceiling_fan_set_dim')
+      this.homey.flow.getActionCard('ceiling_fan_set_dim')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('dim', args.brightness);

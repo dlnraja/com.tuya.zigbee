@@ -93,6 +93,7 @@ function rule_phantomMethods() {
 
     code = code.replace(/\.getDeviceConditionCard\s*\(/g, '.getConditionCard(');
     code = code.replace(/\.getDeviceActionCard\s*\(/g, '.getActionCard(');
+    code = code.replace(/\.getDeviceTriggerCard\s*\(/g, '.getTriggerCard(');
 
     if (code !== original) {
       safeWrite(file, code);
@@ -425,7 +426,7 @@ async function main() {
   log('╚══════════════════════════════════════════════════════════════════════════════╝');
 
   // AUTO-FIX RULES (safe, idempotent)
-  // rule_phantomMethods(); // DISABLED: Destroys device flow cards
+  rule_phantomMethods();
   // rule_fingerprintCase(); // DISABLED: Breaks case-sensitive Tuya discovery
   rule_probeDedup();
   rule_energyBatteries();
