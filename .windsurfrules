@@ -8,11 +8,11 @@
 
 ## 🛡️ BIZARRE VALUE BLOCKING (BVB)
 - **Master Setter:** Use `this._safeSetCapability()` (or its alias `this.safeSetCapabilityValue()`) for all updates.
-- **Garbage Filtering:** Values like `0xFFFF` (65535), `255` (for non-power), or `0` (for phantom radar reports) must be blocked at the mixin level.
-- **Jump Protection (v6.1.1):** Block sudden jumps (>35% humidity, >25% battery) unless confirmed by THREE (3) consecutive reports for garbage values (0, 100, 255).
-- **Recovery Jump:** Allow large jumps (e.g. 0 -> 50%) instantly if the target value is in a "safe" range (30-70%). This prevents smoothing lag when a sensor recovers.
-- **Sanitization:** Ensure units are correct (C vs F) and decimals are matched (AdaptiveDataParser usually handles /10, check for double-division).
-- **Soil Alarm Logic:** Force `alarm_water` to `false` if `measure_humidity.soil` > threshold, even if hardware DP reports an alarm.
+- **Jump Protection (v6.1.2):** Block sudden jumps (>35% humidity, >25% battery) unless confirmed by THREE (3) consecutive reports for garbage values (0, 100, 255). 
+- **BVB TTL (v6.1.2):** Clean `_jumpHold` memory after 5 minutes (300,000ms) to prevent memory leaks on intermittent sensors.
+- **255 Garbage Rule (CRITICAL):** Do NOT block 255 for lighting capabilities (`dim`, `light_hue`, `light_saturation`) as 255 = 100% in Zigbee Level Control.
+- **Radar Ghost Protection (v6.1.2):** Ignore value `0` reports for non-motion capabilities if received within 2s of a presence/motion trigger (Tuya radar junk data).
+- **Recovery Jump:** Allow large jumps (e.g. 0 -> 50%) instantly if the target value is in a "safe" range (30-70%).
 
 ## 🏘️ COMMUNITY INTEL & FINGERPRINTS
 - **Loratap Handling:** _TZ3000_famkxci2 (3-button) and _TZ3000_ee8nrt2l (4-button) may use Cluster 0xE000 (57344). If standard ZCL fails, check `specialHandling: 'ts004x_loratap_e000'`.
