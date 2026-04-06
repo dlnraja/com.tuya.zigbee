@@ -303,13 +303,13 @@ class Switch4GangDevice extends BaseClass {
 
         if (isPhysical && (mode === 'auto' || mode === 'both')) {
           const flowId = `switch_4gang_physical_gang${gangNum}_${value ? 'on' : 'off'}`;
-          this.homey.flow.getDeviceTriggerCard().trigger(this { gang: gangNum, state: value }, {})
+          this.homey.flow.getTriggerCard().trigger(this { gang: gangNum, state: value }, {})
             .catch(() => {});
           this.log(`[BSEED-4G] 🔘 Physical G${gangNum} ${value ? 'ON' : 'OFF'}`);
         }
 
         if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-          this.homey.flow.getDeviceTriggerCard().trigger(this { action: value ? 'on' : 'off' }, {})
+          this.homey.flow.getTriggerCard().trigger(this { action: value ? 'on' : 'off' }, {})
             .catch(() => {});
           this.log(`[BSEED-4G] 🎬 Scene G${gangNum} ${value ? 'on' : 'off'}`);
         }
@@ -377,13 +377,13 @@ class Switch4GangDevice extends BaseClass {
 
       if (isPhysical && (mode === 'auto' || mode === 'both')) {
         const flowId = `switch_4gang_physical_gang${dpId}_${boolVal ? 'on' : 'off'}`;
-        this.homey.flow.getDeviceTriggerCard().trigger(this { gang: dpId, state: boolVal }, {})
+        this.homey.flow.getTriggerCard().trigger(this { gang: dpId, state: boolVal }, {})
           .catch(() => {});
         this.log(`[BSEED-4G] 🔘 Physical G${dpId} ${boolVal ? 'ON' : 'OFF'} (via Tuya DP)`);
       }
 
       if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-        this.homey.flow.getDeviceTriggerCard().trigger(this { action: boolVal ? 'on' : 'off' }, {})
+        this.homey.flow.getTriggerCard().trigger(this { action: boolVal ? 'on' : 'off' }, {})
           .catch(() => {});
         this.log(`[BSEED-4G] 🎬 Scene G${dpId} ${boolVal ? 'on' : 'off'} (via Tuya DP)`);
       }

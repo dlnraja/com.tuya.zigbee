@@ -87,29 +87,29 @@ class WaterValveSmartDevice extends HybridPlugBase {
       switch (capability) {
       case 'onoff': {
         const id = value ? 'water_valve_smart_opened' : 'water_valve_smart_closed';
-        this.homey.flow.getDeviceTriggerCard().trigger(this {}, {}).catch(() => {});
+        this.homey.flow.getTriggerCard().trigger(this {}, {}).catch(() => {});
         break;
       }
       case 'alarm_water': {
         const id = value ? 'water_valve_smart_leak_detected' : 'water_valve_smart_leak_cleared';
-        this.homey.flow.getDeviceTriggerCard().trigger(this {}, {}).catch(() => {});
+        this.homey.flow.getTriggerCard().trigger(this {}, {}).catch(() => {});
         break;
       }
       case 'measure_temperature': {
-        this.homey.flow.getDeviceTriggerCard().trigger(this { temperature: value }, {}).catch(() => {});
+        this.homey.flow.getTriggerCard().trigger(this { temperature: value }, {}).catch(() => {});
         if (value <= 2 && (prev === undefined || prev === null || prev > 2)) {
-          this.homey.flow.getDeviceTriggerCard().trigger(this {}, {}).catch(() => {});
+          this.homey.flow.getTriggerCard().trigger(this {}, {}).catch(() => {});
         }
         break;
       }
       case 'measure_battery': {
         if (value <= 15 && (prev === undefined || prev === null || prev > 15)) {
-          this.homey.flow.getDeviceTriggerCard().trigger(this {}, {}).catch(() => {});
+          this.homey.flow.getTriggerCard().trigger(this {}, {}).catch(() => {});
         }
         break;
       }
       case 'meter_water': {
-        this.homey.flow.getDeviceTriggerCard().trigger(this { liters: value }, {}).catch(() => {});
+        this.homey.flow.getTriggerCard().trigger(this { liters: value }, {}).catch(() => {});
         break;
       }
       }

@@ -16,7 +16,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is on
     try {
-      this.homey.flow.getDeviceConditionCard('dimmer_wall_1gang_dimmer_1gang_is_on')
+      this.homey.flow.getConditionCard('dimmer_wall_1gang_dimmer_1gang_is_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -26,7 +26,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      this.homey.flow.getDeviceActionCard('dimmer_wall_1gang_dimmer_1gang_turn_on')
+      this.homey.flow.getActionCard('dimmer_wall_1gang_dimmer_1gang_turn_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -38,7 +38,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      this.homey.flow.getDeviceActionCard('dimmer_wall_1gang_dimmer_1gang_turn_off')
+      this.homey.flow.getActionCard('dimmer_wall_1gang_dimmer_1gang_turn_off')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -50,7 +50,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      this.homey.flow.getDeviceActionCard('dimmer_wall_1gang_dimmer_1gang_toggle')
+      this.homey.flow.getActionCard('dimmer_wall_1gang_dimmer_1gang_toggle')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
@@ -63,7 +63,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
 
     // ACTION: Set brightness
     try {
-      this.homey.flow.getDeviceActionCard('dimmer_wall_1gang_dimmer_1gang_set_dim')
+      this.homey.flow.getActionCard('dimmer_wall_1gang_dimmer_1gang_set_dim')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('dim', args.brightness);
@@ -74,7 +74,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
 
     // ACTION: Set brightness with transition
     try {
-      this.homey.flow.getDeviceActionCard('dimmer_wall_1gang_dimmer_1gang_set_dim_with_transition')
+      this.homey.flow.getActionCard('dimmer_wall_1gang_dimmer_1gang_set_dim_with_transition')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('dim', args.brightness, { transition: args.transition });

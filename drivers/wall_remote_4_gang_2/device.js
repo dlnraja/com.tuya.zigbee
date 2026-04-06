@@ -14,7 +14,7 @@ class wall_remote_4_gang_2 extends TuyaZigbeeDevice {
     // Call parent to setup raw frame fallbacks
     await super.onNodeInit({ zclNode });
 
-    this._buttonPressedTriggerDevice = this.homey.flow.getDeviceTriggerCard('wall_remote_4_gang_buttons_2');
+    this._buttonPressedTriggerDevice = this.homey.flow.getTriggerCard('wall_remote_4_gang_buttons_2');
     if (this._buttonPressedTriggerDevice) {
       this._buttonPressedTriggerDevice.registerRunListener(async (args, state) => {
         return args.button === state.button;

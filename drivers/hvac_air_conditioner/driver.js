@@ -15,7 +15,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is on
     try {
-      this.homey.flow.getDeviceConditionCard('hvac_air_conditioner_air_conditioner_hybrid_is_on')
+      this.homey.flow.getConditionCard('hvac_air_conditioner_air_conditioner_hybrid_is_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -25,7 +25,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      this.homey.flow.getDeviceActionCard('hvac_air_conditioner_air_conditioner_hybrid_turn_on')
+      this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_hybrid_turn_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -37,7 +37,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      this.homey.flow.getDeviceActionCard('hvac_air_conditioner_air_conditioner_hybrid_turn_off')
+      this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_hybrid_turn_off')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -49,7 +49,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      this.homey.flow.getDeviceActionCard('hvac_air_conditioner_air_conditioner_hybrid_toggle')
+      this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_hybrid_toggle')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
@@ -62,7 +62,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
 
     // ACTION: Set target temperature
     try {
-      this.homey.flow.getDeviceActionCard('hvac_air_conditioner_air_conditioner_hybrid_set_target_temperature')
+      this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_hybrid_set_target_temperature')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('target_temperature', args.temperature);
