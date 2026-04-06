@@ -53,9 +53,9 @@ async function main() {
     auditReport.errors.push(`BVB Audit Error: ${e.message}`);
   }
 
-  // 3. Driver Integrity & Orphan Check (Cloudless)
+  // 3. Driver Integrity & WiFi Cloudless Check (Cloudless Logic)
   try {
-    console.log('Auditing Driver Integrity...');
+    console.log('Auditing Driver Integrity & WiFi Cloudless settings...');
     const drivers = fs.readdirSync(path.join(ROOT, 'drivers')).filter(d => fs.existsSync(path.join(ROOT, 'drivers', d, 'driver.compose.json')));
     
     for (const d of drivers) {
@@ -66,6 +66,22 @@ async function main() {
       if (!fs.existsSync(devJs)) {
         auditReport.errors.push(`Driver ${d} is missing device.js (Orphan)`);
         auditReport.noDegradation = false;
+      }
+
+      // v6.3.4: WiFi Cloudless Goal Audit
+      if (d.startsWith('wifi_')) {
+        const settings = compose.settings || [];
+        const hasLocalKey = settings.some(s => s.id === 'localKey' || (s.children && s.children.some(c => c.id === 'localKey')));
+        const hasDevId = settings.some(s => s.id === 'devId' || (s.children && s.children.some(c => c.id === 'devId')));
+        
+        if (!hasLocalKey || !hasDevId) {
+          auditReport.warnings.push(`WiFi Driver ${d}: Missing localKey/devId settings for Cloudless Goal.`);
+        }
+        
+        // Check for local connectivity marker
+        if (compose.platforms && !compose.platforms.includes('local')) {
+           auditReport.warnings.push(`WiFi Driver ${d}: 'local' platform missing in manifest.`);
+        }
       }
 
       // PID/Mfr Pair Check for Tuya MCU
