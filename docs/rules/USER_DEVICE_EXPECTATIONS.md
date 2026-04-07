@@ -2471,3 +2471,26 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 | _TZE200_hbnfokum | dlnraja/com.tuya.zigbee#190 | device_request |
 | _TZE200_w0ap83qu | dlnraja/com.tuya.zigbee#190 | device_request |
 | _TZE284_4vbj3fxh | dlnraja/com.tuya.zigbee#190 | device_request |
+
+
+## Auto-discovered from GitHub (2026-04-07)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZ3210_ncw88jfq + TS0011 | dlnraja/com.tuya.zigbee#200 | bug_report |
+| _TZ3210_ncw88jfq + TS0201 | dlnraja/com.tuya.zigbee#200 | bug_report |
+| _TZ3210_ncw88jfq + TS011F | dlnraja/com.tuya.zigbee#200 | bug_report |
+| _TZ3210_ncw88jfq + sensor | dlnraja/com.tuya.zigbee#200 | bug_report |
+| vision + TS0011 | dlnraja/com.tuya.zigbee#200 | bug_report |
+| vision + TS0201 | dlnraja/com.tuya.zigbee#200 | bug_report |
+| vision + TS011F | dlnraja/com.tuya.zigbee#200 | bug_report |
+| vision + sensor | dlnraja/com.tuya.zigbee#200 | bug_report |
+| zigbee2mqtt + TS0011 | dlnraja/com.tuya.zigbee#200 | bug_report |
+| zigbee2mqtt + TS0201 | dlnraja/com.tuya.zigbee#200 | bug_report |
+| zigbee2mqtt + TS011F | dlnraja/com.tuya.zigbee#200 | bug_report |
+| SONOFF + button | dlnraja/com.tuya.zigbee#198 | bug_report |
+| SONOFF + sensor | dlnraja/com.tuya.zigbee#198 | bug_report |
+| SONOFF + test | dlnraja/com.tuya.zigbee#198 | bug_report |
+| test + TS0601 | dlnraja/com.tuya.zigbee#198 | bug_report |
+| test + SNZB-01 | dlnraja/com.tuya.zigbee#198 | bug_report |
+| test + SNZB-01M | dlnraja/com.tuya.zigbee#198 | bug_report |
