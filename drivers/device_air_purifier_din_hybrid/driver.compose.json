@@ -1,0 +1,155 @@
+{
+  "name": {
+    "en": "Device Air Purifier Din Hybrid",
+    "nl": "Device Air Purifier Din Hybrid",
+    "fr": "Device Air Purifier Din Hybrid"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_power",
+    "meter_power",
+    "measure_voltage",
+    "measure_current",
+    "meter_power.exported",
+    "onoff",
+    "dim",
+    "measure_pm25"
+  ],
+  "capabilitiesOptions": {
+    "measure_power": {
+      "title": {
+        "en": "Power",
+        "fr": "Puissance"
+      },
+      "units": "W"
+    },
+    "meter_power": {
+      "title": {
+        "en": "Energy Consumed",
+        "fr": "Énergie Consommée"
+      },
+      "units": "kWh"
+    },
+    "meter_power.exported": {
+      "title": {
+        "en": "Energy Exported",
+        "fr": "Énergie Exportée"
+      },
+      "units": "kWh"
+    },
+    "measure_voltage": {
+      "title": {
+        "en": "Voltage",
+        "fr": "Tension"
+      },
+      "units": "V"
+    },
+    "measure_current": {
+      "title": {
+        "en": "Current",
+        "fr": "Courant"
+      },
+      "units": "A"
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Measurement Settings",
+        "fr": "Paramètres de Mesure"
+      },
+      "children": [
+        {
+          "id": "power_scale",
+          "type": "dropdown",
+          "label": {
+            "en": "Power Scale",
+            "fr": "Échelle Puissance"
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0.1",
+              "label": {
+                "en": "÷10",
+                "fr": "÷10"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "×1 (Default)",
+                "fr": "×1 (Par défaut)"
+              }
+            },
+            {
+              "id": "10",
+              "label": {
+                "en": "×10",
+                "fr": "×10"
+              }
+            }
+          ]
+        },
+        {
+          "id": "bidirectional",
+          "type": "checkbox",
+          "label": {
+            "en": "Bidirectional (Solar)",
+            "fr": "Bidirectionnel (Solaire)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Enable for solar/grid meters",
+            "fr": "Activer pour compteurs solaires"
+          }
+        }
+      ]
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_tze200_shkxsgis"
+    ],
+    "productId": [
+      "TS0601",
+      "ts0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press the pairing button on the meter for 5 seconds until LED blinks rapidly",
+        "fr": "Appuyez sur le bouton d'appairage du compteur pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/din_rail_meter/assets/images/small.png",
+    "large": "drivers/din_rail_meter/assets/images/large.png",
+    "xlarge": "drivers/din_rail_meter/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

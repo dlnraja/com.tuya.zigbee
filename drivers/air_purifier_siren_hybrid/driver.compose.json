@@ -1,0 +1,80 @@
+{
+  "id": "sirentemphumidsensor",
+  "name": {
+    "en": "Air Purifier Siren Hybrid",
+    "nl": "Air Purifier Siren Hybrid",
+    "fr": "Air Purifier Siren Hybrid"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_battery",
+    "alarm_siren",
+    "alarm_motion",
+    "measure_battery",
+    "alarm_generic",
+    "dim",
+    "measure_pm25"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "greyout": false
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ],
+    "mains": true
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tyst11_d0yu2xgi",
+      "_tze200_d0yu2xgi"
+    ],
+    "productId": [
+      "TS0601",
+      "ts0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ],
+        "bindings": [
+          10,
+          25,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the button inside the battery compartment for aprox 5 seconds until the siren beeps."
+      }
+    }
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

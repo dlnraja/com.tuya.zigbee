@@ -1,0 +1,89 @@
+{
+  "name": {
+    "en": "Device Air Purifier Smart Hybrid",
+    "nl": "Device Air Purifier Smart Hybrid",
+    "fr": "Device Air Purifier Smart Hybrid"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature",
+    "measure_humidity",
+    "thermostat_mode",
+    "onoff",
+    "dim",
+    "measure_pm25"
+  ],
+  "capabilitiesOptions": {
+    "target_temperature": {
+      "min": 5,
+      "max": 35,
+      "step": 0.5
+    },
+    "thermostat_mode": {
+      "values": [
+        {
+          "id": "auto",
+          "title": {
+            "en": "Schedule"
+          }
+        },
+        {
+          "id": "heat",
+          "title": {
+            "en": "Manual"
+          }
+        },
+        {
+          "id": "off",
+          "title": {
+            "en": "Off"
+          }
+        }
+      ]
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tze200_kly8gjlz"
+    ],
+    "productId": [
+      "TS0601",
+      "ts0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/smart_lcd_thermostat/assets/images/small.png",
+    "large": "drivers/smart_lcd_thermostat/assets/images/large.png",
+    "xlarge": "drivers/smart_lcd_thermostat/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "approximation": {
+      "usageConstant": 1
+    }
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

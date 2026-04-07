@@ -1,0 +1,85 @@
+{
+  "name": {
+    "en": "Device Air Purifier Humidifier Hybrid",
+    "nl": "Device Air Purifier Humidifier Hybrid",
+    "fr": "Device Air Purifier Humidifier Hybrid"
+  },
+  "class": "fan",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_humidity",
+    "dim.humidity",
+    "measure_pm25"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "title": {
+        "en": "Mist Level",
+        "fr": "Niveau Brume"
+      },
+      "min": 0,
+      "max": 1,
+      "step": 0.33
+    },
+    "dim.humidity": {
+      "title": {
+        "en": "Target Humidity",
+        "fr": "Humidité Cible"
+      },
+      "min": 30,
+      "max": 80,
+      "step": 5
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tze200_mja3fuja"
+    ],
+    "productId": [
+      "TS0601",
+      "ts0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the power button for 5 seconds until WiFi indicator blinks",
+        "fr": "Maintenez le bouton power pendant 5 secondes"
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/humidifier/assets/images/small.png",
+    "large": "drivers/humidifier/assets/images/large.png",
+    "xlarge": "drivers/humidifier/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "approximation": {
+      "usageOn": 30,
+      "usageOff": 1
+    }
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "name": {
+    "en": "Device Air Purifier Thermostat Hybrid",
+    "nl": "Device Air Purifier Thermostat Hybrid",
+    "fr": "Device Air Purifier Thermostat Hybrid"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature",
+    "thermostat_mode",
+    "measure_battery",
+    "onoff",
+    "measure_humidity",
+    "dim",
+    "measure_pm25"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_tze200_1ibpyhdc",
+      "_tze200_qq9mpfhw",
+      "_tze200_r731zlxk",
+      "_tze200_s8gkrkxk"
+    ],
+    "productId": [
+      "TS0601",
+      "ts0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "large": "drivers/thermostat_tuya_dp/assets/images/large.png",
+    "small": "drivers/thermostat_tuya_dp/assets/images/small.png",
+    "xlarge": "drivers/thermostat_tuya_dp/assets/images/xlarge.png"
+  },
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ],
+    "mains": true
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

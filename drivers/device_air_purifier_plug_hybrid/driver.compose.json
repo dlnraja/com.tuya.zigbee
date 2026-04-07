@@ -1,0 +1,307 @@
+{
+  "name": {
+    "en": "Device Air Purifier Plug Hybrid",
+    "nl": "Device Air Purifier Plug Hybrid",
+    "fr": "Device Air Purifier Plug Hybrid"
+  },
+  "class": "socket",
+  "capabilities": [
+    "measure_power",
+    "meter_power",
+    "measure_voltage",
+    "measure_current",
+    "onoff",
+    "dim",
+    "measure_pm25"
+  ],
+  "energy": {
+    "approximation": {
+      "usageConstant": 0.5
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tze200_m9skfctm",
+      "_tze200_rccxox8p"
+    ],
+    "productId": [
+      "TS0601",
+      "ts0601"
+    ],
+    "learnmode": {
+      "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    },
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "enable_power_estimation",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Power Estimation",
+        "fr": "Activer Estimation Puissance"
+      },
+      "value": true,
+      "hint": {
+        "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+      }
+    },
+    {
+      "id": "power_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Measurement Scale",
+        "fr": "Échelle Mesure Puissance"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (Par défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Adjust if power readings are way off.",
+        "fr": "Ajuster si les mesures de puissance sont incorrectes."
+      }
+    },
+    {
+      "id": "voltage_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Voltage Measurement Scale",
+        "fr": "Échelle Mesure Tension"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (Par défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Adjust if voltage readings are way off.",
+        "fr": "Ajuster si les mesures de tension sont incorrectes."
+      }
+    },
+    {
+      "id": "current_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Current Measurement Scale",
+        "fr": "Échelle Mesure Courant"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (Par défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Adjust if current readings are way off.",
+        "fr": "Ajuster si les mesures de courant sont incorrectes."
+      }
+    },
+    {
+      "id": "meter_power_scale",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy (kWh) Scale",
+        "fr": "Échelle Énergie (kWh)"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0.1",
+          "label": {
+            "en": "÷10",
+            "fr": "÷10"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "×1 (Default)",
+            "fr": "×1 (Par défaut)"
+          }
+        },
+        {
+          "id": "10",
+          "label": {
+            "en": "×10",
+            "fr": "×10"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Adjust if total energy (kWh) readings are way off.",
+        "fr": "Ajuster si l'énergie totale (kWh) est incorrecte."
+      }
+    },
+    {
+      "id": "power_compensation",
+      "type": "number",
+      "label": {
+        "en": "Power Compensation",
+        "fr": "power compensation"
+      },
+      "value": 0,
+      "min": -10,
+      "max": 10,
+      "step": 0.1,
+      "hint": {
+        "en": "Adjust power compensation (supports decimals)"
+      }
+    },
+    {
+      "id": "voltage_calibration",
+      "type": "number",
+      "label": {
+        "en": "Voltage Calibration",
+        "fr": "voltage calibration"
+      },
+      "value": 0,
+      "min": -50,
+      "max": 50,
+      "step": 0.1,
+      "hint": {
+        "en": "Adjust voltage calibration (supports decimals)"
+      }
+    },
+    {
+      "id": "current_calibration",
+      "type": "number",
+      "label": {
+        "en": "Current Calibration",
+        "fr": "current calibration"
+      },
+      "value": 0,
+      "min": -5,
+      "max": 5,
+      "step": 0.01,
+      "hint": {
+        "en": "Adjust current calibration (supports decimals)"
+      }
+    },
+    {
+      "id": "power_calibration",
+      "type": "number",
+      "label": {
+        "en": "Power Calibration",
+        "fr": "power calibration"
+      },
+      "value": 0,
+      "min": -100,
+      "max": 100,
+      "step": 0.1,
+      "hint": {
+        "en": "Adjust power calibration (supports decimals)"
+      }
+    }
+  ],
+  "images": {
+    "small": "drivers/plug_energy_monitor/assets/images/small.png",
+    "large": "drivers/plug_energy_monitor/assets/images/large.png",
+    "xlarge": "drivers/plug_energy_monitor/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "capabilitiesOptions": {},
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

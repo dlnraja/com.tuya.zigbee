@@ -1,0 +1,165 @@
+{
+  "name": {
+    "en": "Air Purifier Curtain Hybrid",
+    "nl": "Air Purifier Curtain Hybrid",
+    "fr": "Air Purifier Curtain Hybrid"
+  },
+  "class": "windowcoverings",
+  "capabilities": [
+    "windowcoverings_state",
+    "windowcoverings_set",
+    "windowcoverings_tilt_set",
+    "alarm_generic",
+    "measure_battery",
+    "onoff",
+    "dim",
+    "measure_pm25"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_tze200_3i3exuay",
+      "_tze200_68nvbio9",
+      "_tze200_hsgrhjpf",
+      "_tze200_nogaemzt",
+      "_tze200_nueqqe6k",
+      "_tze200_rmymn92d",
+      "_tze200_xaabybja",
+      "_tze200_4vobcgd3",
+      "_tze200_5zbp6j0u",
+      "_tze200_9p5xmj5r",
+      "_tze200_a8sdabtg",
+      "_tze200_axgvo9jh",
+      "_tze200_bjzrowv2",
+      "_tze200_cf1sl3tj",
+      "_tze200_fdtjuw7u",
+      "_tze200_gaj531w3",
+      "_tze200_nw1r9hp6",
+      "_tze200_pk0sfzvr",
+      "_tze200_pw7mji0l",
+      "_tze200_uj3f4wr5",
+      "_tze200_yia0p3tr",
+      "_tze204_1fuxihti",
+      "_tze204_xu4a5rhj",
+      "_tze200_cowvfni3",
+      "_tze200_wmcdj3aq",
+      "_tze200_nkoabg8w",
+      "_tze200_r0jdjrvi",
+      "_tze200_rddyvrci",
+      "_tze200_xuzcvlku",
+      "_tze200_zah67ekd",
+      "_tze200_zpzndjez"
+    ],
+    "productId": [
+      "TS0601",
+      "ts0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/curtain_motor_tilt/assets/images/small.png",
+    "large": "drivers/curtain_motor_tilt/assets/images/large.png",
+    "xlarge": "drivers/curtain_motor_tilt/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ],
+    "mains": true
+  },
+  "flow": {
+    "actions": [
+      {
+        "id": "curtain_calibrate",
+        "title": {
+          "en": "Calibrate curtain motor",
+          "nl": "Kalibreer gordijnmotor"
+        },
+        "titleFormatted": {
+          "en": "Calibrate [[device]]",
+          "nl": "Kalibreer [[device]]"
+        },
+        "hint": {
+          "en": "Run full open/close cycle for position calibration",
+          "nl": "Voer volledige open/sluit cyclus uit voor positie kalibratie"
+        }
+      },
+      {
+        "id": "curtain_reset_position",
+        "title": {
+          "en": "Reset position to 0%",
+          "nl": "Reset positie naar 0%"
+        },
+        "titleFormatted": {
+          "en": "Reset [[device]] position",
+          "nl": "Reset [[device]] positie"
+        },
+        "hint": {
+          "en": "Reset current position to fully closed",
+          "nl": "Reset huidige positie naar volledig gesloten"
+        }
+      },
+      {
+        "id": "curtain_hold",
+        "title": {
+          "en": "Hold curtain position",
+          "nl": "Gordijn positie vasthouden",
+          "fr": "Maintenir position rideau"
+        },
+        "titleFormatted": {
+          "en": "Hold [[device]] at current position",
+          "nl": "Houd [[device]] op huidige positie"
+        },
+        "hint": {
+          "en": "Stop curtain movement and hold at current position",
+          "nl": "Stop gordijn beweging en houd huidige positie vast"
+        }
+      },
+      {
+        "id": "curtain_open_partial",
+        "title": {
+          "en": "Open curtain partially",
+          "nl": "Gordijn gedeeltelijk openen",
+          "fr": "Ouvrir rideau partiellement"
+        },
+        "titleFormatted": {
+          "en": "Open [[device]] to [[position]]%",
+          "nl": "Open [[device]] naar [[position]]%"
+        },
+        "args": [
+          {
+            "type": "range",
+            "name": "position",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "label": "%",
+            "labelMultiplier": 1
+          }
+        ]
+      }
+    ]
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}
