@@ -4,7 +4,16 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.0.7] - 2026-04-06
+## [7.0.8] - 2026-04-07
+
+### Bug Fixes
+- Fixed issues with device recognition for existing drivers.
+
+### New Features
+- Added 3 new fingerprints to support additional devices.
+---
+
+ [7.0.7] - 2026-04-06
 
 ### New Features
 - Deployed the new 5-tab Auto-Link pairing interface across all WiFi drivers for a faster, more intuitive setup process.
