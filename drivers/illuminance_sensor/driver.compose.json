@@ -1,7 +1,10 @@
 {
   "name": {
     "en": "Illuminance Sensor",
-    "fr": "Capteur de Luminosité"
+    "fr": "Capteur d'illuminance",
+    "nl": "Verlichtingssensor",
+    "de": "Helligkeitssensor",
+    "es": "Sensor de iluminancia"
   },
   "class": "sensor",
   "capabilities": [

@@ -1,7 +1,10 @@
 {
   "name": {
     "en": "Radiator Valve (TRV) Zigbee",
-    "fr": "Vanne Thermostatique Zigbee"
+    "fr": "Vanne de Radiateur (TRV) Zigbee",
+    "nl": "Radiatorkraan (TRV) Zigbee",
+    "de": "Heizkörperventil (TRV) Zigbee",
+    "es": "Válvula de Radiador (TRV) Zigbee"
   },
   "class": "thermostat",
   "capabilities": [

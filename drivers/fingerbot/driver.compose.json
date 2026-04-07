@@ -1,7 +1,11 @@
 {
   "id": "FingerBot",
   "name": {
-    "en": "Finger Bot"
+    "en": "Finger Bot",
+    "fr": "Doigt Bot",
+    "nl": "Vinger Bot",
+    "de": "Finger Bot",
+    "es": "Botón de Dedo"
   },
   "class": "button",
   "platforms": [

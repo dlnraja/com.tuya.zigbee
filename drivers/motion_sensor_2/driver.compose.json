@@ -1,7 +1,11 @@
 {
   "id": "motion_sensor_2",
   "name": {
-    "en": "Motion Sensor"
+    "en": "Motion Sensor",
+    "fr": "Capteur de mouvement",
+    "nl": "Bewegingssensor",
+    "de": "Bewegungsmelder",
+    "es": "Sensor de movimiento"
   },
   "class": "sensor",
   "platforms": [
