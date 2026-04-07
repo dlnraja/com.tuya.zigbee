@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v7.0.7 |
+| **App Version** | v7.0.8 |
 | **Device Fingerprints** | 12,852+ |
 | **Unique Product IDs** | 1217 |
 | **Drivers** | 221 (171 Zigbee + 50 WiFi) |
@@ -44,7 +44,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-04-06 |
+| **Last Updated** | 2026-04-07 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -101,9 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v7.0.7** | v7.0.6: Fixed Tuya WiFi device discovery by implementing mDNS strategy, resolving pairing timeouts for local network ... |
-| **v7.0.6** | Added mDNS discovery strategy for Tuya WiFi devices to fix local pairing issues. Added support for new device fingerp... |
-| **v7.0.7** | v7.0.6: WiFi Pairing Overhaul:, WiFi Discovery: |
+| **v7.0.8** | v7.0.7: Deployed the new 5-tab Auto-Link pairing interface across all WiFi drivers for a faster, more intuitive setup... |
+| **v7.0.7** | Updated WiFi pairing UI with a streamlined 5-tab Auto-Link flow and added mDNS discovery for more reliable device set... |
 | **v7.0.6** | Updated WiFi device pairing with a new 5-tab Auto-Link interface for easier setup. Fixed mDNS discovery strategy to i... |
 | **v7.0.5** | Fixed incorrect sensor and energy readings on WiFi Tuya devices by adding automatic divisor and multiplier resolution... |
 | **v7.0.4** | Universal Tuya Zigbee app v7.0.4 adds 3 new fingerprints and improves driver support. |
@@ -117,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.12.0** | Major stabilization release: Integrated Parallel Bot Handler for faster maintenance, fixed eWeLink/SONOFF plug suppor... |
 | **v5.11.208** | Added Zbeacon support and fixed fingerprint casing regression in Universal Tuya Zigbee app. |
 | **v5.11.206** | v5.11.205: Added 3 new fingerprints to improve device compatibility., Integrated 3 new fingerprints for better suppor... |
-| **v5.11.205** | Added 3 new fingerprints for enhanced device compatibility in Universal Tuya Zigbee app v5.11.205. |
 
 <!-- CHANGELOG_END -->
 
@@ -357,4 +355,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-04-06*
+*Last updated: 2026-04-07*
