@@ -1,153 +1,49 @@
 {
-  "timestamp": "2026-04-05T09:46:09.522Z",
-  "appVersion": "5.11.195",
+  "timestamp": "2026-04-07T09:53:17.833Z",
+  "appVersion": "7.0.9",
   "responded": 0,
   "closed": 0,
   "labeled": 0,
-  "issuesProcessed": 103,
+  "issuesProcessed": 105,
   "prsProcessed": 36,
-  "skipped": 102,
+  "skipped": 104,
   "newFingerprints": [
     {
-      "fp": "_TZ3000_wol32olt",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
+      "fp": "dlnraja + CK-BL702-SWP-01(7020)",
+      "source": "dlnraja/com.tuya.zigbee#194",
+      "type": "bug_report"
     },
     {
-      "fp": "_TZE284_uo8qcagc",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
+      "fp": "dlnraja + test",
+      "source": "dlnraja/com.tuya.zigbee#194",
+      "type": "bug_report"
     },
     {
-      "fp": "_TZB210_qzsxaqqe",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
+      "fp": "eWeLink + CK-BL702-SWP-01(7020)",
+      "source": "dlnraja/com.tuya.zigbee#194",
+      "type": "bug_report"
     },
     {
-      "fp": "_TZE284_tgrzpqf4",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
+      "fp": "eWeLink + test",
+      "source": "dlnraja/com.tuya.zigbee#194",
+      "type": "bug_report"
     },
     {
-      "fp": "_TZE284_nbv4tdaz",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
+      "fp": "tuya + CK-BL702-SWP-01(7020)",
+      "source": "dlnraja/com.tuya.zigbee#194",
+      "type": "bug_report"
     },
     {
-      "fp": "_TZ3000_dojqjapa",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
+      "fp": "tuya + test",
+      "source": "dlnraja/com.tuya.zigbee#194",
+      "type": "bug_report"
     },
     {
-      "fp": "_TZE204_cduqh1l0",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE284_4vobcgd3",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3210_zifx0xoj",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3210_2putqrmw",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3008_reatplte",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3000_uyrhiafs",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3000_t7ugva7q",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3210_imaccztn",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3000_icoxotza",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3210_vbfp8eyv",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE284_bw4ayyeh",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3210_7vgttna6",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3210_a04acm9s",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3210_cm9mbpr1",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE284_mul9abs3",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZ3002_vsom92pp",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE284_3regm3h6",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE204_ouy7vpm1",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE284_mvtclclq",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE200_hbnfokum",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE200_w0ap83qu",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE284_4vbj3fxh",
-      "source": "dlnraja/com.tuya.zigbee#192",
-      "type": "device_request"
+      "fp": "test + CK-BL702-SWP-01(7020)",
+      "source": "dlnraja/com.tuya.zigbee#194",
+      "type": "bug_report"
     }
   ],
-  "evolutionSummary": "This cycle processed **103 issues** and **36 PRs**, identifying **28 new device fingerprints** primarily sourced from issue #192. Key additions include `_TZ3000_wol32olt`, `_TZE284_uo8qcagc`, `_TZB210_qzsxaqqe`, and multiple `_TZE284`/`_TZ3210` variants. While **0 issues were closed** in this batch, the high processing volume reflects active backlog triage and fingerprint ingestion.\n\n**Action Items:**\n• **Driver Mapping:** Assign the 28 new fingerprints to compatible drivers using strict `manufacturerName` + `productId` pairing. Cross-reference `_TZE284`/`_TZB210` DPs against `TuyaDataPointsZ2M.js` to avoid double-division or capability conflicts.\n• **Issue #192 Priority:** Validate DP mappings for requested devices, update `DeviceFingerprintDB.js`, and ensure no wildcard patterns are used in `driver.compose.json`.\n• **Community Response:** Draft replies for pending device requests, guiding users to re-pair or submit `tools.developer.homey.app` diagnostics if clusters are missing.\n• **CI/CD Deployment:** Commit fingerprint updates to trigger GitHub Actions publishing. Verify against the 4,300+ baseline to prevent routing collisions.\n\nThe app continues scaling robust Tuya Zigbee compatibility across switches, sensors, and energy monitors."
+  "evolutionSummary": "In the recent project evolution, we identified seven new feature points (FPs) related to the CK-BL702-SWP-01(7020) device, primarily sourced from bug reports in the dlnraja/com.tuya.zigbee repository. The new FPs include various combinations of device and testing scenarios, indicating a focus on enhancing compatibility and functionality.\n\nThroughout the project, we processed a total of 105 issues and 36 pull requests (PRs), reflecting a proactive approach to managing project contributions and addressing user concerns. However, there were no responses or closures recorded for the issues, highlighting a potential area for improvement in community engagement and resolution of outstanding queries.\n\nMoving forward, action items include prioritizing the resolution of the newly discovered bugs, enhancing communication with contributors to ensure timely responses, and continuing to monitor the performance of the CK-BL702-SWP-01(7020) device integration. This will help streamline future updates and foster a more collaborative development environment.",
+  "bugInvestigations": 1
 }

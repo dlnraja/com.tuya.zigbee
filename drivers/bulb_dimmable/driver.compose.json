@@ -9,11 +9,11 @@
   "capabilities": [
     "dim",
     "light_hue",
+    "light_mode",
     "light_saturation",
     "light_temperature",
-    "light_mode",
-    "onoff",
-    "measure_battery"
+    "measure_battery",
+    "onoff"
   ],
   "energy": {
     "approximation": {
@@ -26,184 +26,75 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tyzb01_qezuin6k",
-      "_tyzb01_v8gtiaed",
-      "_tyzb01_qezuin6k",
-      "_tyzb01_v8gtiaed",
-      "_tz3000_7dcddnye",
-      "_tz3000_7ysdnebc",
-      "_tz3000_7dcddnye",
-      "_tz3000_7ysdnebc",
-      "_tz3000_92chsky7",
-      "_tz3000_92chsky7",
-      "_tz3000_9cpuaca6",
-      "_tz3000_9evm3otq",
-      "_tz3000_9cpuaca6",
-      "_tz3000_9evm3otq",
-      "_tz3000_as7eqiri",
-      "_tz3000_dbou1ap4",
-      "_tz3000_fbja4q6h",
-      "_tz3000_hcm1fqxe",
-      "_tz3000_j2w1dw29",
-      "_tz3000_juq7i1fr",
-      "_tz3000_keabpigb",
-      "_tz3000_kihkx3cq",
-      "_tz3000_ktuoyvt5",
-      "_tz3000_lzfwt5qx",
-      "_tz3000_m6u3q8jy",
-      "_tz3000_mgusv51k",
-      "_tz3000_nbnmw9nc",
-      "_tz3000_nosnx7im",
-      "_tz3000_tqlv4yz4",
-      "_tz3000_u5u4cakc",
-      "_tz3000_vzopcetz",
-      "_tz3000_w2ug5kgu",
-      "_tz3000_x2fqbdun",
-      "_tz3000_as7eqiri",
-      "_tz3000_dbou1ap4",
-      "_tz3000_fbja4q6h",
-      "_tz3000_hcm1fqxe",
-      "_tz3000_j2w1dw29",
-      "_tz3000_juq7i1fr",
-      "_tz3000_keabpigb",
-      "_tz3000_kihkx3cq",
-      "_tz3000_ktuoyvt5",
-      "_tz3000_lzfwt5qx",
-      "_tz3000_m6u3q8jy",
-      "_tz3000_mgusv51k",
-      "_tz3000_nbnmw9nc",
-      "_tz3000_nosnx7im",
-      "_tz3000_tqlv4yz4",
-      "_tz3000_u5u4cakc",
-      "_tz3000_vzopcetz",
-      "_tz3000_w2ug5kgu",
-      "_tz3000_x2fqbdun",
-      "_tz3210_0c4np92r",
-      "_tz3210_0fc3g9sq",
-      "_tz3210_0c4np92r",
-      "_tz3210_0fc3g9sq",
-      "_tz3210_1agihf3z",
-      "_tz3210_1agihf3z",
-      "_tz3210_3mpwqzuu",
-      "_tz3210_3mpwqzuu",
-      "_tz3210_4ubylghk",
-      "_tz3210_4ubylghk",
-      "_tz3210_bcplf4ds",
-      "_tz3210_dbilpfqk",
-      "_tz3210_dxrjkpi6",
-      "_tz3210_dxroobu3",
-      "_tz3210_ebbfkvoy",
-      "_tz3210_h1zvcpwd",
-      "_tz3210_hzdhb62z",
-      "_tz3210_jkbdrvvf",
-      "_tz3210_k1msuvg6",
-      "_tz3210_lezkafxf",
-      "_tz3210_lfbz816s",
-      "_tz3210_lmqquxus",
-      "_tz3210_ngqk6jia",
-      "_tz3210_pagajpog",
-      "_tz3210_rbgfkwbl",
-      "_tz3210_sroezl0s",
-      "_tz3210_taw0fc13",
-      "_tz3210_v5yquxma",
-      "_tz3210_wdexaypg",
-      "_tz3210_weaqkhab",
-      "_tz3210_wuheyhvm",
-      "_tz3210_yluvwhjc",
-      "_tz3210_zxbtub8r",
-      "_tz3210_bcplf4ds",
-      "_tz3210_dbilpfqk",
-      "_tz3210_dxrjkpi6",
-      "_tz3210_dxroobu3",
-      "_tz3210_ebbfkvoy",
-      "_tz3210_h1zvcpwd",
-      "_tz3210_hzdhb62z",
-      "_tz3210_jkbdrvvf",
-      "_tz3210_k1msuvg6",
-      "_tz3210_lezkafxf",
-      "_tz3210_lfbz816s",
-      "_tz3210_lmqquxus",
-      "_tz3210_ngqk6jia",
-      "_tz3210_pagajpog",
-      "_tz3210_rbgfkwbl",
-      "_tz3210_sroezl0s",
-      "_tz3210_taw0fc13",
-      "_tz3210_v5yquxma",
-      "_tz3210_wdexaypg",
-      "_tz3210_weaqkhab",
-      "_tz3210_wuheyhvm",
-      "_tz3210_yluvwhjc",
-      "_tz3210_zxbtub8r",
-      "_tzb210_rkgngb5o",
-      "_tyzb01_qezuin6k",
-      "_tyzb01_v8gtiaed",
-      "_tz3000_7dcddnye",
-      "_tz3000_7ysdnebc",
-      "_tz3000_92chsky7",
-      "_tz3000_9cpuaca6",
-      "_tz3000_9evm3otq",
-      "_tz3000_as7eqiri",
-      "_tz3000_dbou1ap4",
-      "_tz3000_fbja4q6h",
-      "_tz3000_hcm1fqxe",
-      "_tz3000_j2w1dw29",
-      "_tz3000_juq7i1fr",
-      "_tz3000_keabpigb",
-      "_tz3000_kihkx3cq",
-      "_tz3000_ktuoyvt5",
-      "_tz3000_lzfwt5qx",
-      "_tz3000_m6u3q8jy",
-      "_tz3000_mgusv51k",
-      "_tz3000_nbnmw9nc",
-      "_tz3000_nosnx7im",
-      "_tz3000_tqlv4yz4",
-      "_tz3000_u5u4cakc",
-      "_tz3000_vzopcetz",
-      "_tz3000_w2ug5kgu",
-      "_tz3000_x2fqbdun",
-      "_tz3210_0c4np92r",
-      "_tz3210_0fc3g9sq",
-      "_tz3210_1agihf3z",
-      "_tz3210_3mpwqzuu",
-      "_tz3210_4ubylghk",
-      "_tz3210_bcplf4ds",
-      "_tz3210_dbilpfqk",
-      "_tz3210_dxrjkpi6",
-      "_tz3210_dxroobu3",
-      "_tz3210_ebbfkvoy",
-      "_tz3210_h1zvcpwd",
-      "_tz3210_hzdhb62z",
-      "_tz3210_jkbdrvvf",
-      "_tz3210_k1msuvg6",
-      "_tz3210_lezkafxf",
-      "_tz3210_lfbz816s",
-      "_tz3210_lmqquxus",
-      "_tz3210_ngqk6jia",
-      "_tz3210_pagajpog",
-      "_tz3210_rbgfkwbl",
-      "_tz3210_sroezl0s",
-      "_tz3210_taw0fc13",
-      "_tz3210_v5yquxma",
-      "_tz3210_wdexaypg",
-      "_tz3210_weaqkhab",
-      "_tz3210_wuheyhvm",
-      "_tz3210_yluvwhjc",
-      "_tz3210_zxbtub8r",
-      "_tzb210_rkgngb5o",
       "_TYZB01_qezuin6k",
-      "_TZ3210_ngqk6jia",
-      "_TZ3000_ktuoyvt5",
-      "_TZ3210_zxbtub8r",
-      "_TZ3210_weaqkhab",
-      "_TZ3210_k1msuvg6",
-      "_TZ3000_mgusv51k",
       "_TYZB01_v8gtiaed",
+      "_TZ3000_7ysdnebc",
       "_TZ3000_92chsky7",
-      "_TZ3210_wdexaypg",
+      "_TZ3000_ktuoyvt5",
+      "_TZ3000_mgusv51k",
       "_TZ3210_3mpwqzuu",
-      "_TZ3210_pagajpog",
       "_TZ3210_4ubylghk",
-      "_TZ3000_7ysdnebc"
+      "_TZ3210_k1msuvg6",
+      "_TZ3210_ngqk6jia",
+      "_TZ3210_pagajpog",
+      "_TZ3210_wdexaypg",
+      "_TZ3210_weaqkhab",
+      "_TZ3210_zxbtub8r",
+      "_tyzb01_qezuin6k",
+      "_tyzb01_v8gtiaed",
+      "_tz3000_7dcddnye",
+      "_tz3000_7ysdnebc",
+      "_tz3000_92chsky7",
+      "_tz3000_9cpuaca6",
+      "_tz3000_9evm3otq",
+      "_tz3000_as7eqiri",
+      "_tz3000_dbou1ap4",
+      "_tz3000_fbja4q6h",
+      "_tz3000_hcm1fqxe",
+      "_tz3000_j2w1dw29",
+      "_tz3000_juq7i1fr",
+      "_tz3000_keabpigb",
+      "_tz3000_kihkx3cq",
+      "_tz3000_ktuoyvt5",
+      "_tz3000_lzfwt5qx",
+      "_tz3000_m6u3q8jy",
+      "_tz3000_mgusv51k",
+      "_tz3000_nbnmw9nc",
+      "_tz3000_nosnx7im",
+      "_tz3000_tqlv4yz4",
+      "_tz3000_u5u4cakc",
+      "_tz3000_vzopcetz",
+      "_tz3000_w2ug5kgu",
+      "_tz3000_x2fqbdun",
+      "_tz3210_0c4np92r",
+      "_tz3210_0fc3g9sq",
+      "_tz3210_1agihf3z",
+      "_tz3210_3mpwqzuu",
+      "_tz3210_4ubylghk",
+      "_tz3210_bcplf4ds",
+      "_tz3210_dbilpfqk",
+      "_tz3210_dxrjkpi6",
+      "_tz3210_dxroobu3",
+      "_tz3210_ebbfkvoy",
+      "_tz3210_h1zvcpwd",
+      "_tz3210_hzdhb62z",
+      "_tz3210_jkbdrvvf",
+      "_tz3210_k1msuvg6",
+      "_tz3210_lezkafxf",
+      "_tz3210_lfbz816s",
+      "_tz3210_lmqquxus",
+      "_tz3210_ngqk6jia",
+      "_tz3210_pagajpog",
+      "_tz3210_rbgfkwbl",
+      "_tz3210_sroezl0s",
+      "_tz3210_taw0fc13",
+      "_tz3210_v5yquxma",
+      "_tz3210_wdexaypg",
+      "_tz3210_weaqkhab",
+      "_tz3210_wuheyhvm",
+      "_tz3210_yluvwhjc",
+      "_tz3210_zxbtub8r",
+      "_tzb210_rkgngb5o"
     ],
     "productId": [
       "A19 W 10 YEAR",
@@ -499,6 +390,229 @@
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
         "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
       }
+    },
+    {
+      "id": "power_source",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Source",
+        "fr": "Source d'Alimentation"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "ac",
+          "label": {
+            "en": "AC Powered",
+            "fr": "Alimentation Secteur"
+          }
+        },
+        {
+          "id": "dc",
+          "label": {
+            "en": "DC Powered",
+            "fr": "Alimentation DC"
+          }
+        },
+        {
+          "id": "battery",
+          "label": {
+            "en": "Battery Powered",
+            "fr": "Sur Batterie"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select power source manually or use auto-detection",
+        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+      }
+    },
+    {
+      "id": "battery_type",
+      "type": "dropdown",
+      "label": {
+        "en": "Battery Type",
+        "fr": "Type de Batterie"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "CR2032",
+          "label": {
+            "en": "CR2032",
+            "fr": "CR2032 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "CR2450",
+          "label": {
+            "en": "CR2450",
+            "fr": "CR2450 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA",
+            "fr": "AAA"
+          }
+        },
+        {
+          "id": "AA",
+          "label": {
+            "en": "AA",
+            "fr": "AA"
+          }
+        },
+        {
+          "id": "CR123A",
+          "label": {
+            "en": "CR123A",
+            "fr": "CR123A"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select battery type manually or use auto-detection based on voltage",
+        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+      }
+    },
+    {
+      "id": "battery_low_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold",
+        "fr": "Seuil Batterie Faible (%)"
+      },
+      "value": 20,
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "hint": {
+        "en": "Trigger low battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "battery_critical_threshold",
+      "type": "number",
+      "label": {
+        "en": "Critical Battery Threshold",
+        "fr": "Seuil Batterie Critique (%)"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "hint": {
+        "en": "Trigger critical battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "enable_battery_notifications",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Battery Notifications",
+        "fr": "Activer Notifications Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Send flow notifications for battery events",
+        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+      }
+    },
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval",
+        "fr": "Intervalle Rapport Batterie (heures)"
+      },
+      "value": 24,
+      "min": 1,
+      "max": 168,
+      "step": 1,
+      "hint": {
+        "en": "How often to request battery status updates",
+        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+      }
+    },
+    {
+      "id": "optimization_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy Optimization Mode",
+        "fr": "Mode Optimisation Énergétique"
+      },
+      "value": "balanced",
+      "values": [
+        {
+          "id": "performance",
+          "label": {
+            "en": "Performance (More responsive)",
+            "fr": "Performance (Plus réactif)"
+          }
+        },
+        {
+          "id": "balanced",
+          "label": {
+            "en": "Balanced",
+            "fr": "Équilibré"
+          }
+        },
+        {
+          "id": "power_saving",
+          "label": {
+            "en": "Power Saving (Longer battery)",
+            "fr": "Économie d'énergie (Batterie plus longue)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Balance between responsiveness and battery life",
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+      }
+    },
+    {
+      "id": "show_voltage",
+      "type": "checkbox",
+      "label": {
+        "en": "Show Battery Voltage",
+        "fr": "Afficher Tension Batterie"
+      },
+      "value": false,
+      "hint": {
+        "en": "Display raw battery voltage in device settings",
+        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+      }
+    },
+    {
+      "id": "enable_power_estimation",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Power Estimation",
+        "fr": "Activer Estimation Puissance"
+      },
+      "value": true,
+      "hint": {
+        "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+      }
     }
   ],
   "images": {
@@ -529,6 +643,23 @@
     {
       "id": "add_devices",
       "template": "add_devices"
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
     }
   ],
   "capabilitiesOptions": {
@@ -537,6 +668,14 @@
     }
   },
   "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    },
     {
       "id": "ota_check",
       "title": {

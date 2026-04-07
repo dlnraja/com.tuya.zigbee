@@ -1,0 +1,213 @@
+{
+  "name": {
+    "en": "Air Purifier Quality Hybrid",
+    "nl": "Air Purifier Quality Hybrid",
+    "fr": "Air Purifier Quality Hybrid"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_co2",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_pm25",
+    "measure_voc",
+    "measure_formaldehyde",
+    "alarm_generic",
+    "measure_battery",
+    "onoff",
+    "dim",
+    "measure_power"
+  ],
+  "subDevices": [],
+  "capabilitiesOptions": {
+    "measure_co2": {
+      "title": {
+        "en": "CO2 Level",
+        "fr": "Niveau CO2"
+      },
+      "units": "ppm"
+    },
+    "measure_pm25": {
+      "title": {
+        "en": "PM2.5",
+        "fr": "PM2.5"
+      },
+      "units": "µg/m³"
+    },
+    "measure_voc": {
+      "title": {
+        "en": "VOC",
+        "fr": "COV"
+      }
+    },
+    "measure_formaldehyde": {
+      "title": {
+        "en": "Formaldehyde (HCHO)",
+        "fr": "Formaldéhyde (HCHO)"
+      },
+      "units": "mg/m³"
+    },
+    "alarm_generic": {
+      "title": {
+        "en": "Air Quality Alert",
+        "fr": "Alerte Qualité Air"
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 1,
+      "usageOff": 0.5
+    },
+    "batteries": [
+      "CR2450"
+    ],
+    "mains": true
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tze200_9cxuhakf"
+    ],
+    "productId": [
+      "TS0601",
+      "ts0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "co2_threshold",
+      "type": "number",
+      "label": {
+        "en": "CO2 Alert Threshold",
+        "fr": "Seuil alerte CO2"
+      },
+      "value": 1000,
+      "min": 400,
+      "max": 5000,
+      "units": "ppm"
+    },
+    {
+      "id": "temperature_unit",
+      "type": "dropdown",
+      "label": {
+        "en": "Temperature Unit",
+        "fr": "Unité température"
+      },
+      "value": "celsius",
+      "values": [
+        {
+          "id": "celsius",
+          "label": {
+            "en": "Celsius",
+            "fr": "Celsius"
+          }
+        },
+        {
+          "id": "fahrenheit",
+          "label": {
+            "en": "Fahrenheit",
+            "fr": "Fahrenheit"
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Sensor Calibration",
+        "nl": "Sensor Kalibratie"
+      },
+      "children": [
+        {
+          "id": "temperature_offset",
+          "type": "number",
+          "label": {
+            "en": "Temperature offset",
+            "nl": "Temperatuur correctie"
+          },
+          "hint": {
+            "en": "Adjust sensor reading (±10°C)",
+            "nl": "Pas meetwaarde aan (±10°C)"
+          },
+          "units": "°C",
+          "value": 0,
+          "min": -10,
+          "max": 10,
+          "step": 0.1
+        },
+        {
+          "id": "humidity_offset",
+          "type": "number",
+          "label": {
+            "en": "Humidity offset",
+            "nl": "Luchtvochtigheid correctie"
+          },
+          "hint": {
+            "en": "Adjust sensor reading (±30%)",
+            "nl": "Pas meetwaarde aan (±30%)"
+          },
+          "units": "%",
+          "value": 0,
+          "min": -30,
+          "max": 30,
+          "step": 1
+        }
+      ]
+    },
+    {
+      "id": "sensor_precision",
+      "type": "dropdown",
+      "label": {
+        "en": "Decimal Precision",
+        "fr": "Précision"
+      },
+      "value": "1",
+      "hint": {
+        "en": "Decimals for temperature/humidity values"
+      },
+      "values": [
+        {
+          "id": "1",
+          "label": {
+            "en": "1 decimal (20.5°C)"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "2 decimals (20.53°C)"
+          }
+        }
+      ]
+    }
+  ],
+  "images": {
+    "small": "drivers/air_quality_co2/assets/images/small.png",
+    "large": "drivers/air_quality_co2/assets/images/large.png",
+    "xlarge": "drivers/air_quality_co2/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}
