@@ -18,7 +18,7 @@ class WallDimmer1Gang1WayDriver extends Homey.Driver {
   _registerFlowCards() {
     // ACTION: Set backlight mode
     try {
-      this.homey.flow.getActionCard('wall_dimmer_1gang_1way_set_backlight')
+      this.homey.flow.getDeviceActionCard('wall_dimmer_1gang_1way_set_backlight')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const backlightValue = parseInt(args.mode, 10);

@@ -15,7 +15,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Switch is on/off
     try {
-      this.homey.flow.getConditionCard('switch_1gang_is_on')
+      this.homey.flow.getDeviceConditionCard('switch_1gang_is_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -25,7 +25,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      this.homey.flow.getActionCard('switch_1gang_turn_on')
+      this.homey.flow.getDeviceActionCard('switch_1gang_turn_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -37,7 +37,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      this.homey.flow.getActionCard('switch_1gang_turn_off')
+      this.homey.flow.getDeviceActionCard('switch_1gang_turn_off')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -49,7 +49,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
     // v5.5.906: ACTION: Toggle
     try {
-      this.homey.flow.getActionCard('switch_1gang_toggle')
+      this.homey.flow.getDeviceActionCard('switch_1gang_toggle')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
@@ -62,7 +62,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
     // v5.5.930: ACTION: Set LED backlight mode
     try {
-      this.homey.flow.getActionCard('switch_1gang_set_backlight')
+      this.homey.flow.getDeviceActionCard('switch_1gang_set_backlight')
         .registerRunListener(async (args) => {
           if (!args.device || !args.mode) return false;
           await args.device.setBacklightMode(args.mode);
@@ -73,7 +73,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
     // v5.5.930: ACTION: Set LED backlight color
     try {
-      this.homey.flow.getActionCard('switch_1gang_set_backlight_color')
+      this.homey.flow.getDeviceActionCard('switch_1gang_set_backlight_color')
         .registerRunListener(async (args) => {
           if (!args.device || !args.state || !args.color) return false;
           await args.device.setBacklightColor(args.state, args.color);
@@ -84,7 +84,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
     // v5.5.930: ACTION: Set LED backlight brightness
     try {
-      this.homey.flow.getActionCard('switch_1gang_set_backlight_brightness')
+      this.homey.flow.getDeviceActionCard('switch_1gang_set_backlight_brightness')
         .registerRunListener(async (args) => {
           if (!args.device || args.brightness === undefined) return false;
           await args.device.setBacklightBrightness(args.brightness);
@@ -96,7 +96,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     this.log('[FLOW] \uD83C\uDF89 Scene mode registered');
     // v5.12.5: Scene mode action
     try {
-      this.homey.flow.getActionCard('switch_1gang_set_scene_mode')
+      this.homey.flow.getDeviceActionCard('switch_1gang_set_scene_mode')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSceneMode(args.mode);

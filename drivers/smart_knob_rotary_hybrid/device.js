@@ -410,7 +410,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     }
 
     // Trigger flow card
-    const rotateLeftTrigger = this.homey.flow.getTriggerCard('smart_knob_rotary_hybrid_rotate_left');
+    const rotateLeftTrigger = this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_hybrid_rotate_left');
     if (rotateLeftTrigger) {
       await rotateLeftTrigger.trigger(this, { 
         brightness: Math.round(this._simulatedBrightness * 100) 
@@ -429,7 +429,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     }
 
     // Trigger flow card
-    const rotateRightTrigger = this.homey.flow.getTriggerCard('smart_knob_rotary_hybrid_rotate_right');
+    const rotateRightTrigger = this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_hybrid_rotate_right');
     if (rotateRightTrigger) {
       await rotateRightTrigger.trigger(this, { 
         brightness: Math.round(this._simulatedBrightness * 100) 
@@ -449,7 +449,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
 
     // Trigger generic flow card with action token
     try {
-      await this.homey.flow.getTriggerCard().trigger(this { action }).catch(() => {});
+      await this.homey.flow.getDeviceTriggerCard().trigger(this, { action }).catch(() => {});
     } catch (e) { /* ignore */ }
 
     // v5.7.11: Trigger specific flow cards based on action type
@@ -464,7 +464,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     
     if (specificCardId) {
       try {
-        await this.homey.flow.getTriggerCard().trigger(this {}, {}).catch(() => {});
+        await this.homey.flow.getDeviceTriggerCard().trigger(this, {}, {}).catch(() => {});
         this.log(`[FLOW] ✅ Triggered ${specificCardId}`);
       } catch (e) { /* ignore */ }
     }

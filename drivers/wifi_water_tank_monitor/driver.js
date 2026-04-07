@@ -7,7 +7,7 @@ class WiFiWaterTankMonitorDriver extends TuyaLocalDriver {
     this.log('[WIFI-TANK-DRV] Wi-Fi Liquid Level Sensor driver initialized');
 
     const safeGetTrigger = (id) => {
-      try { return this.homey.flow.getTriggerCard(id); }
+      try { return this.homey.flow.getDeviceTriggerCard(id); }
       catch (e) { this.log(`[FLOW] Trigger '${id}' not defined`); return null; }
     };
 
@@ -18,7 +18,7 @@ class WiFiWaterTankMonitorDriver extends TuyaLocalDriver {
 
     // Condition: fill level above threshold
     try {
-      this.homey.flow.getConditionCard('wifi_water_tank_monitor_level_above')
+      this.homey.flow.getDeviceConditionCard('wifi_water_tank_monitor_level_above')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const pct = args.device.getCapabilityValue('measure_water_percentage') || 0;
@@ -28,7 +28,7 @@ class WiFiWaterTankMonitorDriver extends TuyaLocalDriver {
 
     // Condition: liquid state is
     try {
-      this.homey.flow.getConditionCard('wifi_water_tank_monitor_state_is')
+      this.homey.flow.getDeviceConditionCard('wifi_water_tank_monitor_state_is')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const LIQUID_STATE = { 0: 'normal', 1: 'low', 2: 'high' };

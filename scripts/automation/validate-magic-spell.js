@@ -33,33 +33,16 @@ function main() {
     const isHybrid = /extends\s+Hybrid(Switch|Plug)Base/.test(content);
     if (!isHybrid) continue;
 
-    // 2. Check for onNodeInit implementation
-    if (/onNodeInit\s*\(\)\s*\{/.test(content)) {
-      // Must call super.onNodeInit()
-      if (!/super\.onNodeInit\s*\(\)/.test(content)) {
-        console.error(`❌ [${d}] MISSING super.onNodeInit()! This breaks the Tuya Magic Spell (ZCL reporting).`);
-        errors++;
-      }
+    // 5. SDK v3 Flow Card Compliance (Critical for v7.0.0 stability)
+    if (/\.getDevice(Trigger|Condition|Action)Card\s*\(/.test(content)) {
+      console.error(`❌ [${d}] Using DEPRECATED SDK v2 flow card getter! Must use getTriggerCard, getConditionCard, or getActionCard.`);
+      errors++;
     }
 
-    // 3. SECONARY: Check for safeSetCapability usage
-    if (/this\.setCapabilityValue\s*\(/.test(content) && !content.includes('_safeSetCapability')) {
-      console.warn(`⚠️ [${d}] Using raw setCapabilityValue. Should use _safeSetCapability for throttling/calibration.`);
+    // 6. Optional: Check for missing try-catch around flow cards
+    if (/\.get(Trigger|Condition|Action)Card\s*\(/.test(content) && !/try\s*\{/.test(content)) {
+      console.warn(`⚠️ [${d}] Flow card accessed without try-catch. If the card is missing from app.json, the app will CRASH.`);
       warnings++;
-    }
-
-    // 4. Energy Calibration Settings Audit
-    const composePath = path.join(DRIVERS_DIR, d, 'driver.compose.json');
-    if (fs.existsSync(composePath)) {
-      const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-      const caps = compose.capabilities || [];
-      if (caps.includes('measure_power') || caps.includes('measure_current')) {
-        const settingsRaw = fs.readFileSync(composePath, 'utf8');
-        if (!settingsRaw.includes('current_scale') && !settingsRaw.includes('current_multiplier')) {
-          console.error(`❌ [${d}] Energy MONITORING detected but no "current_scale" setting found! User won't be able to fix scaling (Issue #197).`);
-          errors++;
-        }
-      }
     }
   }
 

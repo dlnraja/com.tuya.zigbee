@@ -25,6 +25,7 @@ async function main() {
   console.log('=== 🕵️ Universal Triage Engine (v1.0.0) ===');
   
   // 1. SCAN FORUM CACHE (If available)
+  const autoAdd = process.argv.includes('--auto-add');
   const forumCache = path.join(ROOT, '.github/state/forum-intel.json');
   if (fs.existsSync(forumCache)) {
     console.log('--- Forum Intelligence Triage ---');
@@ -33,9 +34,11 @@ async function main() {
       for (const item of intel.reports || []) {
         if (item.mfr && item.pid) {
           const result = classifyDevice(item.mfr, item.pid, item.clusters || []);
-          if (result) {
+          if (result && result.confidence > 80) {
             console.log(`  [MATCH] ${item.mfr} -> ${result.driver} (${result.confidence}%)`);
-            // TODO: Auto-add to driver.compose.json if --auto-add is set
+            if (autoAdd) {
+              await injectFingerprint(result.driver, item.mfr, item.pid);
+            }
           }
         }
       }
@@ -50,7 +53,8 @@ async function main() {
   const drivers = fs.readdirSync(DRIVERS_DIR).filter(d => fs.existsSync(path.join(DRIVERS_DIR, d, 'driver.compose.json')));
   for (const d of drivers) {
     try {
-      const manifest = JSON.parse(fs.readFileSync(path.join(DRIVERS_DIR, d, 'driver.compose.json'), 'utf8'));
+      const manifestPath = path.join(DRIVERS_DIR, d, 'driver.compose.json');
+      const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
       const endpoints = manifest.zigbee?.endpoints || {};
       for (const epId in endpoints) {
         const clusters = endpoints[epId].clusters || [];
@@ -58,10 +62,52 @@ async function main() {
           console.warn(`  [ALERT] Driver ${d} has SOS cluster (1280) but is NOT the SOS driver! Potential misclassification.`);
         }
       }
+      
+      // v5.13.2: Multi-gang variant detection logic
+      const mfrs = manifest.zigbee?.manufacturerName || [];
+      if (mfrs.some(m => /_TZE20[04]/.test(m)) && d.includes('switch_1gang')) {
+        console.warn(`  [ALERT] Driver ${d} contains Tuya Multi-endpoint IDs but is a 1-gang driver. Audit needed.`);
+      }
+
     } catch (e) {}
   }
 
   console.log('\nDone.');
+}
+
+/**
+ * 💉 Injects a fingerprint into a driver's manifest
+ */
+async function injectFingerprint(driverId, mfr, pid) {
+  const composePath = path.join(DRIVERS_DIR, driverId, 'driver.compose.json');
+  if (!fs.existsSync(composePath)) return;
+
+  try {
+    const raw = fs.readFileSync(composePath, 'utf8');
+    const compose = JSON.parse(raw);
+    if (!compose.zigbee) compose.zigbee = {};
+    if (!compose.zigbee.manufacturerName) compose.zigbee.manufacturerName = [];
+    if (!compose.zigbee.productId) compose.zigbee.productId = [];
+
+    // Case-insensitive check
+    const mset = new Set(compose.zigbee.manufacturerName.map(m => m.toLowerCase()));
+    if (!mset.has(mfr.toLowerCase())) {
+      compose.zigbee.manufacturerName.push(mfr);
+      // v5.13.2: Rule F5 Lowercase Injection
+      if (mfr !== mfr.toLowerCase()) {
+        compose.zigbee.manufacturerName.push(mfr.toLowerCase());
+      }
+      console.log(`  💉 Injected FP ${mfr} into ${driverId}`);
+      
+      if (pid && !compose.zigbee.productId.includes(pid)) {
+        compose.zigbee.productId.push(pid);
+      }
+      
+      fs.writeFileSync(composePath, JSON.stringify(compose, null, 2) + '\n');
+    }
+  } catch (e) {
+    console.error(`  [ERR] Failed to inject FP into ${driverId}:`, e.message);
+  }
 }
 
 main().catch(console.error);

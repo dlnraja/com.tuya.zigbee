@@ -83,6 +83,7 @@ class GasSensorDevice extends HybridSensorBase {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
     await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected
     this.log('[GAS] v5.5.292 - DPs: 1,2,3,4,9-11,13,14,16 | ZCL: IAS,PWR,EF00');
     this.log('[GAS] ✅ Ready');
     // v5.5.292: Flow triggers now handled by HybridSensorBase._triggerCustomFlowsIfNeeded()

@@ -33,6 +33,7 @@ class FingerprintLockDevice extends HybridSensorBase {
     }
 
     await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected
     this.log('[FINGERPRINT_LOCK] Ready');
   }
 

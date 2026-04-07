@@ -80,6 +80,7 @@ class AirQualityCO2Device extends HybridSensorBase {
     }
 
     await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected
 
     // v5.5.317: Initialize intelligent inference engines
     this._airQualityInference = new AirQualityInference(this, {

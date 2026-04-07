@@ -497,6 +497,7 @@ class ClimateSensorDevice extends HybridSensorBase {
 
     // Call parent initialization (HybridSensorBase sets up ALL listeners)
     await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected
 
     // v5.13.4: INTELLIGENT PROBE DEDUP — Variant-aware dual-temperature handling
     // Rule 1: Pure ZCL devices (_TZ3000_*/_TZ3210_*) → remove probe immediately (no DP38)

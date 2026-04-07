@@ -32,8 +32,8 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tze200_vvmbj46n",
-      "_tze284_aao3yzhs"
+      "_TZE200_VVMBJ46N",
+      "_TZE284_AAO3YZHS"
     ],
     "productId": [
       "TS0201",
@@ -70,7 +70,11 @@
     "approximation": {
       "usageOn": 50,
       "usageOff": 1
-    }
+    },
+    "batteries": [
+      "AAA",
+      "AAA"
+    ]
   },
   "maintenanceActions": [
     {

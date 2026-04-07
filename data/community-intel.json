@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-07T14:58:42.454Z",
+  "timestamp": "2026-04-07T20:47:09.656Z",
   "issues": [
     {
       "author": {
@@ -249,6 +249,21 @@
           "minimizedReason": "",
           "reactionGroups": [],
           "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/194#issuecomment-4197368188",
+          "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOPPue0s76Y_Ym",
+          "author": {
+            "login": "john1v"
+          },
+          "authorAssociation": "NONE",
+          "body": "I create report 9152fd7d-795c-4395-8fc4-e0d97eb25c5b",
+          "createdAt": "2026-04-07T17:06:45Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/194#issuecomment-4200855078",
           "viewerDidAuthor": false
         }
       ]
@@ -964,67 +979,5 @@
       ]
     }
   ],
-  "prs": [
-    {
-      "author": {
-        "is_bot": true,
-        "login": "app/github-actions"
-      },
-      "body": "## 🔄 Maintenance Report\nThis PR automatically synchronizes new device variants and improves compatibility.\n\n**Checks performed:**\n- [x] New device IDs detected using heuristics script\n- [x] Endpoint routing validated for multi-gang devices\n- [x] Tuya raw frame handlers adapted\n\n*Please review carefully before merging.*",
-      "createdAt": "2026-04-07T03:36:17Z",
-      "number": 201,
-      "state": "OPEN",
-      "title": "🔄 Universal Maintenance: Device Variants Synchronisation",
-      "comments": [],
-      "reviews": [],
-      "mergeable": "MERGEABLE",
-      "commits": [
-        {
-          "authoredDate": "2026-04-07T03:36:15Z",
-          "authors": [
-            {
-              "email": "dlnraja@users.noreply.github.com",
-              "id": "MDQ6VXNlcjk3NDY4OTg=",
-              "login": "dlnraja",
-              "name": "dlnraja"
-            }
-          ],
-          "committedDate": "2026-04-07T03:36:15Z",
-          "messageBody": "",
-          "messageHeadline": "improved: added support for new device variants [skip ci]",
-          "oid": "078f3b1160b6586b00ec443b11f6c31e96766a3f"
-        },
-        {
-          "authoredDate": "2026-04-07T13:07:04Z",
-          "authors": [
-            {
-              "email": "dylan.rajasekaram@gmail.com",
-              "id": "MDQ6VXNlcjk3NDY4OTg=",
-              "login": "dlnraja",
-              "name": "Dylan Rajasekaram"
-            }
-          ],
-          "committedDate": "2026-04-07T13:07:04Z",
-          "messageBody": "…conflicts",
-          "messageHeadline": "Merge master into auto-sync-johan-enhanced and auto-resolve manifest …",
-          "oid": "129cbfdbf179b5f63591eb3f68387024d7529d32"
-        },
-        {
-          "authoredDate": "2026-04-07T13:08:19Z",
-          "authors": [
-            {
-              "email": "dylan.rajasekaram@gmail.com",
-              "id": "MDQ6VXNlcjk3NDY4OTg=",
-              "login": "dlnraja",
-              "name": "Dylan Rajasekaram"
-            }
-          ],
-          "committedDate": "2026-04-07T13:08:19Z",
-          "messageBody": "",
-          "messageHeadline": "Auto-fix: Hybrid Flow IDs and Probe Dedup",
-          "oid": "bb328b167323629b1a0b88a31bcb6f55246dffcc"
-        }
-      ]
-    }
-  ]
+  "prs": []
 }

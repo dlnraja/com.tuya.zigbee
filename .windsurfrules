@@ -364,11 +364,19 @@ Device matches if manufacturerName IN list AND productId IN list.
 4. `git commit && git push`
 
 ## FLOW CARD RULES
-- Trigger: `getDeviceTriggerCard()` with empty args
-- Condition driver-level: `getDeviceConditionCard()`
-- Condition app-level: `getConditionCard()`
-- NO `[[device]]` in titleFormatted for triggers
-- ALWAYS use `this._safeSetCapability()` rather than `this.setCapabilityValue()` natively on virtual endpoints so custom triggers (e.g. `switch_3gang_gangX_turned_on`) propagate correctly.
+### 🚫 DEPRECATED SDK 2 METHODS (DO NOT USE - Causes crashes in SDK 3):
+- **getDeviceTriggerCard(id)** → Use `getTriggerCard(id)`
+- **getDeviceConditionCard(id)** → Use `getConditionCard(id)`
+- **getDeviceActionCard(id)** → Use `getActionCard(id)`
+- **getDriver()** (global) → Use `this.homey.drivers.getDriver(id)`
+- **getSettings()** (global) → Use `this.homey.settings.get(key)` or `this.getSettings()` on device
+- **setCapabilityValue()** (global) → Use `this.setCapabilityValue(id, value)` on device (awaited)
+
+### ⚡ SDK 3 FLOW CARD PATTERNS:
+- **Trigger**: `this.homey.flow.getTriggerCard(id)`
+- **Condition**: `this.homey.flow.getConditionCard(id)`
+- **Action**: `this.homey.flow.getActionCard(id)`
+- **ALWAYS** wrap flow card registration/access in `try...catch` to prevent app-wide crashes if the card is missing from `app.json` or `driver.compose.json`.
 
 ## GITHUB ISSUES / PR HANDLING
 - NEVER auto-close issues or PRs until fully resolved and deeply verified

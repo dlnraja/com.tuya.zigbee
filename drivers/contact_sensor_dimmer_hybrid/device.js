@@ -212,6 +212,7 @@ class ContactSensorDevice extends HybridSensorBase {
 
     // Parent handles EVERYTHING: Tuya DP, ZCL, IAS Zone, battery
     await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected
 
     await setupSonoffSensor(this, zclNode);
     this.log('[CONTACT] v5.11.106 - DPs: 1,2,3,4,5,15,101 | ZCL: IAS,PWR,EF00 | SONOFF: tamper');

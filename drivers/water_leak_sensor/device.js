@@ -252,6 +252,7 @@ class WaterLeakSensorDevice extends HybridSensorBase {
     this._invertAlarm = this.getSetting('invert_alarm') || false;
 
     await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected
 
     // v5.8.28: CRITICAL FIX - IAS Zone enrollment (Lasse_K forum 'inactivated' fix)
     // IASZoneManager.enrollIASZone() was defined but NEVER called, causing sensors to stay notEnrolled

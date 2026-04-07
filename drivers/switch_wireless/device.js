@@ -23,6 +23,7 @@ class SwitchWirelessDevice extends HybridSwitchBase {
     }
 
     await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected
     this._lastWirelessPress = 0;
     this.log('[WIRELESS-SWITCH] ✅ Ready (v5.12.12)');
   }
@@ -38,7 +39,7 @@ class SwitchWirelessDevice extends HybridSwitchBase {
       const boolVal = value === 1 || value === true;
       this._safeSetCapability('onoff', boolVal).catch(() => {});
       const cardId = boolVal ? 'switch_wireless_onoff_true' : 'switch_wireless_onoff_false';
-      try { this.homey.flow.getTriggerCard().trigger(this {}, {}).catch(() => {}); } catch (e) { /* */ }
+      try { this.homey.flow.getDeviceTriggerCard().trigger(this, {}, {}).catch(() => {}); } catch (e) { /* */ }
       return;
     }
     if (dp === 2) {
@@ -47,9 +48,9 @@ class SwitchWirelessDevice extends HybridSwitchBase {
       this._lastWirelessPress = now;
       const pt = resolvePressType(value);
       this.log(`[WIRELESS-SWITCH] DP2 press=${pt}`);
-      try { (() => { try { return this.homey.flow.getTriggerCard('switch_wireless_button_pressed'); } catch(e) { return null; } })()?.trigger(this, { press_type: pt }, {}).catch(() => {}); } catch (e) { /* */ }
+      try { (() => { try { return this.homey.flow.getDeviceTriggerCard('switch_wireless_button_pressed'); } catch(e) { return null; } })()?.trigger(this, { press_type: pt }, {}).catch(() => {}); } catch (e) { /* */ }
       const c = { single: 'switch_wireless_single_press', double: 'switch_wireless_double_press', long: 'switch_wireless_long_press' }[pt];
-      if (c) { try { this.homey.flow.getTriggerCard().trigger(this {}, {}).catch(() => {}); } catch (e) { /* */ } }
+      if (c) { try { this.homey.flow.getDeviceTriggerCard().trigger(this, {}, {}).catch(() => {}); } catch (e) { /* */ } }
       return;
     }
     if (typeof super._handleDP === 'function') super._handleDP(dp, value);

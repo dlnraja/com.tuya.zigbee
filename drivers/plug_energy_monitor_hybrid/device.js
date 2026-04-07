@@ -496,6 +496,7 @@ class ClimateSensorDevice extends HybridSensorBase {
 
     // Call parent initialization (HybridSensorBase sets up ALL listeners)
     await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected
 
     // ═══════════════════════════════════════════════════════════════════════
     // Read device info from basic cluster

@@ -187,69 +187,9 @@ class Switch4GangDevice extends BaseClass {
     };
     this._sendTuyaDPBool = sendTuyaDPBool;
 
-    // v5.5.999: Register capability listeners for ALL gangs
-    // These listeners send ZCL commands to control the switch
-    for (const epNum of [1, 2, 3, 4]) {
-      const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
-      
-      // v5.5.999: Use arrow function to capture epNum correctly in closure
-      const gangNum = epNum;
-      this.registerCapabilityListener(capName, async (value) => {
-        this.log(`[BSEED-4G] EP${gangNum} app cmd: ${value}`);
-        
-        // v5.9.23: Track which gang the user actually commanded
-        this._lastCommandedGang = gangNum;
-        this._lastCommandTime = Date.now();
-        
-        // v5.8.87: Hartmut fix — TS0726 firmware toggles ALL gangs on single EP cmd
-        // Mark ALL gangs as app-commanded to prevent false physical detection
-        if (this.requiresPerEndpointControl?.()) {
-          this.markAppCommandAll?.();
-          for (const g of [1, 2, 3, 4]) {
-            this._zclState.pending[g] = true;
-            clearTimeout(this._zclState.timeout[g]);
-            this._zclState.timeout[g] = setTimeout(() => {
-              this._zclState.pending[g] = false;
-            }, 2000);
-          }
-        } else {
-          this.markAppCommand?.(gangNum, value);
-        }
-        
-        this._zclState.pending[gangNum] = true;
-        clearTimeout(this._zclState.timeout[gangNum]);
-        this._zclState.timeout[gangNum] = setTimeout(() => {
-          this._zclState.pending[gangNum] = false;
-        }, 2000);
-        
-        // v5.11.29: ATTRIBUTE WRITE FIX (Z2M #27167, ZHA #2443, ZHA #1580)
-        // TS0726 firmware broadcasts ZCL on/off COMMANDS (setOn/setOff) to ALL EPs.
-        // But routes ATTRIBUTE WRITES (writeAttributes) per-EP correctly.
-        // This is the same fix ZHA uses via TuyaZBOnOffAttributeCluster.
-        const onOff = getOnOffCluster(gangNum);
-        if (onOff && typeof onOff.writeAttributes === 'function') {
-          try {
-            await onOff.writeAttributes({ onOff: value ? true : false });
-            this.log(`[BSEED-4G] EP${gangNum} writeAttr onOff=${value} (per-EP fix)`);
-          } catch (attrErr) {
-            // Fallback to standard command if writeAttributes fails
-            this.log(`[BSEED-4G] EP${gangNum} writeAttr failed: ${attrErr.message}, trying cmd`);
-            if (typeof onOff[value ? 'setOn' : 'setOff'] === 'function') {
-              await onOff[value ? 'setOn' : 'setOff']();
-              this.log(`[BSEED-4G] EP${gangNum} ZCL cmd ${value ? 'ON' : 'OFF'} sent (fallback)`);
-            }
-          }
-        } else if (onOff && typeof onOff[value ? 'setOn' : 'setOff'] === 'function') {
-          await onOff[value ? 'setOn' : 'setOff']();
-          this.log(`[BSEED-4G] EP${gangNum} ZCL cmd ${value ? 'ON' : 'OFF'} sent`);
-        } else {
-          const dpSent = await sendTuyaDPBool(gangNum, value);
-          if (!dpSent) this.log(`[BSEED-4G] EP${gangNum} no ZCL/DP - not sent`);
-        }
-        return true;
-      });
-      this.log(`[BSEED-4G] EP${epNum} capability listener registered for ${capName}`);
-    }
+    // v5.13.2: Unified listener registration (Capability + Flow Cards)
+    // Inherited from HybridSwitchBase, handles ZCL/DP fallback automatically
+    this._registerCapabilityListeners();
 
     // v5.7.38: Setup attribute listeners for available endpoints
     // Also setup delayed retry for endpoints where cluster isn't ready yet
@@ -303,13 +243,13 @@ class Switch4GangDevice extends BaseClass {
 
         if (isPhysical && (mode === 'auto' || mode === 'both')) {
           const flowId = `switch_4gang_physical_gang${gangNum}_${value ? 'on' : 'off'}`;
-          this.homey.flow.getTriggerCard().trigger(this { gang: gangNum, state: value }, {})
+          this.homey.flow.getDeviceTriggerCard(flowId).trigger(this, { gang: gangNum, state: value }, {})
             .catch(() => {});
           this.log(`[BSEED-4G] 🔘 Physical G${gangNum} ${value ? 'ON' : 'OFF'}`);
         }
 
         if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-          this.homey.flow.getTriggerCard().trigger(this { action: value ? 'on' : 'off' }, {})
+          this.homey.flow.getDeviceTriggerCard(`switch_4gang_gang${gangNum}_scene`).trigger(this, { action: value ? 'on' : 'off' }, {})
             .catch(() => {});
           this.log(`[BSEED-4G] 🎬 Scene G${gangNum} ${value ? 'on' : 'off'}`);
         }
@@ -377,13 +317,13 @@ class Switch4GangDevice extends BaseClass {
 
       if (isPhysical && (mode === 'auto' || mode === 'both')) {
         const flowId = `switch_4gang_physical_gang${dpId}_${boolVal ? 'on' : 'off'}`;
-        this.homey.flow.getTriggerCard().trigger(this { gang: dpId, state: boolVal }, {})
+        this.homey.flow.getDeviceTriggerCard().trigger(this, { gang: dpId, state: boolVal }, {})
           .catch(() => {});
         this.log(`[BSEED-4G] 🔘 Physical G${dpId} ${boolVal ? 'ON' : 'OFF'} (via Tuya DP)`);
       }
 
       if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-        this.homey.flow.getTriggerCard().trigger(this { action: boolVal ? 'on' : 'off' }, {})
+        this.homey.flow.getDeviceTriggerCard().trigger(this, { action: boolVal ? 'on' : 'off' }, {})
           .catch(() => {});
         this.log(`[BSEED-4G] 🎬 Scene G${dpId} ${boolVal ? 'on' : 'off'} (via Tuya DP)`);
       }

@@ -68,6 +68,7 @@ class TuyatecTempHumidSensorDevice extends HybridSensorBase {
     }
 
     await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected
     const settings = this.getSettings() || {};
     this.log('[TUYATEC] ✅ TUYATEC Temperature/Humidity Sensor ready');
     this.log('[TUYATEC] Model:', settings.zb_model_id || settings.zb_modelId || 'TUYATEC_TempHumid');

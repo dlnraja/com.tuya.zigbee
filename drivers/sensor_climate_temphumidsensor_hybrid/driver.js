@@ -26,18 +26,18 @@ class ClimateSensorDriver extends ZigBeeDriver {
       // ═══════════════════════════════════════════════════════════════
       // TRIGGER CARDS - IDs must match driver.flow.compose.json
       // ═══════════════════════════════════════════════════════════════
-      this.temperatureChangedTrigger = this.homey.flow.getTriggerCard('climate_sensor_temperature_changed');
-      this.humidityChangedTrigger = this.homey.flow.getTriggerCard('climate_sensor_humidity_changed');
-      this.batteryLowTrigger = this.homey.flow.getTriggerCard('climate_sensor_battery_low');
-      this.tempAlarmHighTrigger = this.homey.flow.getTriggerCard('climate_sensor_temperature_alarm_high');
-      this.tempAlarmLowTrigger = this.homey.flow.getTriggerCard('climate_sensor_temperature_alarm_low');
-      this.humidityAlarmHighTrigger = this.homey.flow.getTriggerCard('climate_sensor_humidity_alarm_high');
-      this.humidityAlarmLowTrigger = this.homey.flow.getTriggerCard('climate_sensor_humidity_alarm_low');
+      this.temperatureChangedTrigger = this.homey.flow.getDeviceTriggerCard('climate_sensor_temperature_changed');
+      this.humidityChangedTrigger = this.homey.flow.getDeviceTriggerCard('climate_sensor_humidity_changed');
+      this.batteryLowTrigger = this.homey.flow.getDeviceTriggerCard('climate_sensor_battery_low');
+      this.tempAlarmHighTrigger = this.homey.flow.getDeviceTriggerCard('climate_sensor_temperature_alarm_high');
+      this.tempAlarmLowTrigger = this.homey.flow.getDeviceTriggerCard('climate_sensor_temperature_alarm_low');
+      this.humidityAlarmHighTrigger = this.homey.flow.getDeviceTriggerCard('climate_sensor_humidity_alarm_high');
+      this.humidityAlarmLowTrigger = this.homey.flow.getDeviceTriggerCard('climate_sensor_humidity_alarm_low');
 
       // ═══════════════════════════════════════════════════════════════
       // CONDITION CARDS - with device validation
       // ═══════════════════════════════════════════════════════════════
-      this.tempAboveCondition = this.homey.flow.getConditionCard('climate_sensor_temperature_above');
+      this.tempAboveCondition = this.homey.flow.getDeviceConditionCard('climate_sensor_temperature_above');
       this.tempAboveCondition?.registerRunListener(async (args) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');
@@ -47,7 +47,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
         return temp !== null && temp > args.temp;
       });
 
-      this.tempBelowCondition = this.homey.flow.getConditionCard('climate_sensor_temperature_below');
+      this.tempBelowCondition = this.homey.flow.getDeviceConditionCard('climate_sensor_temperature_below');
       this.tempBelowCondition?.registerRunListener(async (args) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');
@@ -57,7 +57,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
         return temp !== null && temp < args.temp;
       });
 
-      this.humidityAboveCondition = this.homey.flow.getConditionCard('climate_sensor_humidity_above');
+      this.humidityAboveCondition = this.homey.flow.getDeviceConditionCard('climate_sensor_humidity_above');
       this.humidityAboveCondition?.registerRunListener(async (args) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');
@@ -67,7 +67,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
         return humidity !== null && humidity > args.humidity;
       });
 
-      this.humidityBelowCondition = this.homey.flow.getConditionCard('climate_sensor_humidity_below');
+      this.humidityBelowCondition = this.homey.flow.getDeviceConditionCard('climate_sensor_humidity_below');
       this.humidityBelowCondition?.registerRunListener(async (args) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');

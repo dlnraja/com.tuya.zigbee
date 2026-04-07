@@ -61,6 +61,7 @@ class VibrationSensorDevice extends HybridSensorBase {
     if (!this.hasCapability('measure_temperature')) await this.addCapability('measure_temperature').catch(() => {});
 
     await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected
     this.log('[VIBRATION] ✅ Vibration sensor v5.11.47 ready');
   }
 

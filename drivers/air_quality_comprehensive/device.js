@@ -45,7 +45,8 @@ class AirQualityComprehensiveDevice extends HybridSensorBase {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    await super.onNodeInit({ zclNode });    // Prevents false low-battery alerts (e.g. _TZE200_8ygsuhe1 Smart Airbox is USB-powered)
+    await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected    // Prevents false low-battery alerts (e.g. _TZE200_8ygsuhe1 Smart Airbox is USB-powered)
     if (this.mainsPowered && this.hasCapability('measure_battery')) {this.log('[AIR-QUALITY] 🔌 Mains-powered: removed measure_battery');
     }
 

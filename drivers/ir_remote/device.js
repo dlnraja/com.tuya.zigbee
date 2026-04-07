@@ -309,8 +309,14 @@ class IRRemoteDevice extends ZigBeeDevice {
       this.setCapabilityValue('ir_learned_code', keyCode).catch(this.error);
 
       // Trigger flow
-      this.homey.flow.getTriggerCard().trigger(this { ir_code: keyCode }, {})
-        .catch(err => this.error('[IR-RX] Flow trigger err:', err.message));
+      const trigger = this.homey.flow.getDeviceTriggerCard('ir_code_received');
+      if (trigger) {
+        trigger.trigger(this, { ir_code: keyCode }, {})
+          .catch(err => this.error('[IR-RX] Flow trigger err:', err.message));
+      } else {
+        this.homey.flow.getDeviceTriggerCard('ir_code_received').trigger(this, { ir_code: keyCode }, {})
+          .catch(err => this.error('[IR-RX] Flow trigger fallback err:', err.message));
+      }
 
       if (this._learnBuffer.resolve) this._learnBuffer.resolve(keyCode);
       this._learnBuffer = null;

@@ -15,7 +15,7 @@ class UsbOutletAdvancedDriver extends ZigBeeDriver {
     // Safe flow card registration helper
     const safeGetTrigger = (id) => {
       try {
-        return this.homey.flow.getTriggerCard(id);
+        return this.homey.flow.getDeviceTriggerCard(id);
       } catch (e) {
         this.log(`[FLOW] Trigger '${id}' not defined - skipping`);
         return null;
@@ -39,7 +39,7 @@ class UsbOutletAdvancedDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is on
     try {
-      this.homey.flow.getConditionCard('usb_outlet_advanced_is_on')
+      this.homey.flow.getDeviceConditionCard('usb_outlet_advanced_is_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -49,7 +49,7 @@ class UsbOutletAdvancedDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      this.homey.flow.getActionCard('usb_outlet_advanced_turn_on')
+      this.homey.flow.getDeviceActionCard('usb_outlet_advanced_turn_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -61,7 +61,7 @@ class UsbOutletAdvancedDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      this.homey.flow.getActionCard('usb_outlet_advanced_turn_off')
+      this.homey.flow.getDeviceActionCard('usb_outlet_advanced_turn_off')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -73,7 +73,7 @@ class UsbOutletAdvancedDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      this.homey.flow.getActionCard('usb_outlet_advanced_toggle')
+      this.homey.flow.getDeviceActionCard('usb_outlet_advanced_toggle')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');

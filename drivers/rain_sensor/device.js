@@ -50,6 +50,7 @@ class RainSensorDevice extends HybridSensorBase {
     }
 
     await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected
     
     // v5.5.889: IAS Zone support for TS0207 rain sensors
     await this._setupIASZone(zclNode);

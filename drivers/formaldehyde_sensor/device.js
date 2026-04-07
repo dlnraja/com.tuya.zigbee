@@ -55,7 +55,8 @@ class FormaldehydeSensorDevice extends HybridSensorBase {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    await super.onNodeInit({ zclNode });this.log('[FORMALDEHYDE] ✅ Formaldehyde sensor ready');
+    await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injectedthis.log('[FORMALDEHYDE] ✅ Formaldehyde sensor ready');
   }
 
 
