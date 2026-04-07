@@ -1,21 +1,8 @@
 {
-  "timestamp": "2026-04-07T13:08:14.574Z",
+  "timestamp": "2026-04-07T14:58:42.821Z",
   "totalFiles": 0,
-  "totalFixes": 2852,
+  "totalFixes": 2850,
   "rules": {
-    "probe-dedup-static": {
-      "count": 2,
-      "files": [
-        {
-          "file": "drivers\\plug_energy_monitor_hybrid\\driver.compose.json",
-          "detail": "Removed static probe from pure-ZCL driver"
-        },
-        {
-          "file": "drivers\\sensor_climate_contact_hybrid\\driver.compose.json",
-          "detail": "Removed static probe from pure-ZCL driver"
-        }
-      ]
-    },
     "flow-card-try-catch": {
       "count": 1,
       "files": [
