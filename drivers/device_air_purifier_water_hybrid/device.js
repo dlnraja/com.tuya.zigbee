@@ -36,6 +36,7 @@ class WaterTankMonitorDevice extends HybridSensorBase {
     this._lastPercent = null;
 
     await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected
     this.log('[LIQUID] Liquid level sensor initialized');
   }
 

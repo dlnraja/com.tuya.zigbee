@@ -32,17 +32,17 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tze200_3towulqd",
-      "_tze200_bh3n6gk8",
-      "_tze200_holel4dk",
-      "_tze200_jva8ink8",
-      "_tze200_lyetpprm",
-      "_tze200_wukb7rhc",
-      "_tze200_xpq2rzhq",
-      "_tze201_ztc6ggyl",
-      "_tze202_ztc6ggyl",
-      "_tze203_ztc6ggyl",
-      "_tze204_xsm7l9xa"
+      "_TZE200_3TOWULQD",
+      "_TZE200_BH3N6GK8",
+      "_TZE200_HOLEL4DK",
+      "_TZE200_JVA8INK8",
+      "_TZE200_LYETPPRM",
+      "_TZE200_WUKB7RHC",
+      "_TZE200_XPQ2RZHQ",
+      "_TZE201_ZTC6GGYL",
+      "_TZE202_ZTC6GGYL",
+      "_TZE203_ZTC6GGYL",
+      "_TZE204_XSM7L9XA"
     ],
     "productId": [
       "TS0601",
@@ -77,7 +77,11 @@
     "approximation": {
       "usageOn": 50,
       "usageOff": 1
-    }
+    },
+    "batteries": [
+      "AAA",
+      "AAA"
+    ]
   },
   "maintenanceActions": [
     {

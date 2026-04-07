@@ -35,24 +35,14 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_tz3290_7v1k4vufotpowp9z",
-      "_tz3290_7v1k4vufotpowp9z",
-      "_tz3290_acv1iuslxi3shaaj",
-      "_tz3290_j37rooaxrcdcqo5n",
-      "_tz3290_ot6ewjvmejq5ekhl",
-      "_tz3290_u9xac5rv",
-      "_tz3290_xjpbcxn92aaxvmlz",
-      "_tz3290_acv1iuslxi3shaaj",
-      "_tz3290_j37rooaxrcdcqo5n",
-      "_tz3290_ot6ewjvmejq5ekhl",
-      "_tz3290_u9xac5rv",
-      "_tz3290_xjpbcxn92aaxvmlz",
-      "_tz3290_7v1k4vufotpowp9z",
-      "_tz3290_acv1iuslxi3shaaj",
-      "_tz3290_j37rooaxrcdcqo5n",
-      "_tz3290_ot6ewjvmejq5ekhl",
-      "_tz3290_u9xac5rv",
-      "_tz3290_xjpbcxn92aaxvmlz"
+      "_TZ3210_JIC09I9A",
+      "_TZ3210_OGX8U9IT",
+      "_TZ3290_7V1K4VUFOTPOWP9Z",
+      "_TZ3290_ACV1IUSLXI3SHAAJ",
+      "_TZ3290_J37ROOAXRCDCQO5N",
+      "_TZ3290_OT6EWJVMEJQ5EKHL",
+      "_TZ3290_U9XAC5RV",
+      "_TZ3290_XJPBCXN92AAXVMLZ"
     ],
     "productId": [
       "TS1201",
@@ -94,5 +84,25 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "ir_code_received",
+        "title": {
+          "en": "IR Code Received",
+          "fr": "Code IR Reçu"
+        },
+        "tokens": [
+          {
+            "name": "ir_code",
+            "type": "string",
+            "title": {
+              "en": "IR Code"
+            }
+          }
+        ]
+      }
+    ]
+  }
 }

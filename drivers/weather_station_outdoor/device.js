@@ -50,6 +50,7 @@ class WeatherStationOutdoorDevice extends HybridSensorBase {
     }
 
     await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected
     this.log('[WEATHER] ✅ Weather Station Outdoor v5.8.31 Ready');
   }
 
@@ -65,13 +66,13 @@ class WeatherStationOutdoorDevice extends HybridSensorBase {
     try {
       switch (capability) {
       case 'measure_temperature':
-        this.homey.flow.getTriggerCard().trigger(this { temperature: value }, {}).catch(() => {});
+        this.homey.flow.getDeviceTriggerCard().trigger(this, { temperature: value }, {}).catch(() => {});
         break;
       case 'measure_humidity':
-        this.homey.flow.getTriggerCard().trigger(this { humidity: value }, {}).catch(() => {});
+        this.homey.flow.getDeviceTriggerCard().trigger(this, { humidity: value }, {}).catch(() => {});
         break;
       case 'measure_pressure': {
-        this.homey.flow.getTriggerCard().trigger(this { pressure: value }, {}).catch(() => {});
+        this.homey.flow.getDeviceTriggerCard().trigger(this, { pressure: value }, {}).catch(() => {});
         // Track pressure trend for condition cards
         if (prev != null && typeof prev === 'number') {
           const trend = value > prev ? 'rising' : value < prev ? 'falling' : 'stable';
@@ -81,7 +82,7 @@ class WeatherStationOutdoorDevice extends HybridSensorBase {
       }
       case 'measure_battery':
         if (value <= 15 && (prev === undefined || prev === null || prev > 15)) {
-          this.homey.flow.getTriggerCard().trigger(this {}, {}).catch(() => {});
+          this.homey.flow.getDeviceTriggerCard().trigger(this, {}, {}).catch(() => {});
         }
         break;
       }

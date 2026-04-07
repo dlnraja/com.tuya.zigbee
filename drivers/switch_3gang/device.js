@@ -14,7 +14,9 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 // ZCL-Only manufacturers (no Tuya DP) - forum: Pieter_Pessers BSEED 3-gang
 const ZCL_ONLY_MANUFACTURERS_3G = [
   '_TZ3000_qkixdnon', '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk',
-  '_TZ3000_hafsqare', '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt'  ];
+  '_TZ3000_hafsqare', '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt',
+  'HOBEIAN' // v7.0.9: Added HOBEIAN ZG-302Z3 stability
+];
 
 class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
   get gangCount() { return 3; }
@@ -103,43 +105,9 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
       return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
     };
 
-    // v5.5.990: Register capability listeners FIRST (packetninja fix)
-    for (const epNum of [1, 2, 3]) {
-      const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
-      
-      this.registerCapabilityListener(capName, async (value) => {
-        this.log(`[BSEED-3G] EP${epNum} app cmd: ${value}`);
-        // v5.9.23: Track which gang the user actually commanded
-        this._lastCommandedGang = epNum;
-        this._lastCommandTime = Date.now();
-        this._zclState.pending[epNum] = true;
-        clearTimeout(this._zclState.timeout[epNum]);
-        this._zclState.timeout[epNum] = setTimeout(() => {
-          this._zclState.pending[epNum] = false;
-        }, 2000);
-        
-        // v5.11.29: Use writeAttributes instead of setOn/setOff (Z2M #27167, ZHA #2443)
-        // TS0726 FW broadcasts ZCL commands to all EPs but routes attr writes per-EP
-        const onOff = getOnOffCluster(epNum);
-        if (onOff && typeof onOff.writeAttributes === 'function') {
-          try {
-            await onOff.writeAttributes({ onOff: value ? true : false });
-            this.log(`[BSEED-3G] EP${epNum} writeAttr onOff=${value} (per-EP fix)`);
-          } catch (e) {
-            this.log(`[BSEED-3G] EP${epNum} writeAttr failed: ${e.message}, fallback`);
-            if (typeof onOff[value ? 'setOn' : 'setOff'] === 'function') {
-              await onOff[value ? 'setOn' : 'setOff']();
-            }
-          }
-        } else if (onOff) {
-          await onOff[value ? 'setOn' : 'setOff']();
-        } else {
-          this.log(`[BSEED-3G] EP${epNum} onOff cluster not found`);
-        }
-        return true;
-      });
-      this.log(`[BSEED-3G] EP${epNum} capability listener registered`);
-    }
+    // v5.13.2: Unified listener registration (Capability + Flow Cards)
+    // Inherited from HybridSwitchBase, handles ZCL/DP fallback automatically
+    this._registerCapabilityListeners();
 
     // Setup attribute listeners for physical button detection
     for (const epNum of [1, 2, 3]) {
@@ -175,12 +143,12 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           }
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_3gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
-            this.homey.flow.getTriggerCard().trigger(this, { gang: epNum, state: value }, {})
+            this.homey.flow.getDeviceTriggerCard(flowId).trigger(this, { gang: epNum, state: value }, {})
               .catch(() => {});
             this.log(`[BSEED-3G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
           }
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-            this.homey.flow.getTriggerCard().trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+            this.homey.flow.getDeviceTriggerCard(`switch_3gang_gang${epNum}_scene`).trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
             this.log(`[BSEED-3G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
           }
         }

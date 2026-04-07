@@ -28,7 +28,7 @@ class Button1GangDriver extends ZigBeeDriver {
 
       for (const triggerId of mainTriggers) {
         try {
-          const card = this.homey.flow.getTriggerCard(triggerId);
+          const card = this.homey.flow.getDeviceTriggerCard(triggerId);
           if (card) {
             card.registerRunListener(async (args, state) => {
               if (!args.device) {
@@ -53,7 +53,7 @@ class Button1GangDriver extends ZigBeeDriver {
 
       for (const triggerId of button1Triggers) {
         try {
-          const card = this.homey.flow.getTriggerCard(triggerId);
+          const card = this.homey.flow.getDeviceTriggerCard(triggerId);
           if (card) {
             card.registerRunListener(async (args, state) => {
               if (!args.device) {

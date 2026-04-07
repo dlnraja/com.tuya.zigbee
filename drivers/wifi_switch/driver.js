@@ -7,7 +7,7 @@ class WiFiSwitchDriver extends TuyaLocalDriver {
     await super.onInit();
     this.log('[WIFI-SWITCH-DRV] Driver initialized');
     // v5.13.3: Flow card handlers
-    try{(() => { try { return this.homey.flow.getActionCard('wifi_switch_toggle'); } catch(e) { return null; } })()?.registerRunListener(async({device})=>{const v=device.getCapabilityValue('onoff');await device.triggerCapabilityListener('onoff',!v);return true;});}catch(e){this.log('[Flow]',e.message);}
+    try{(() => { try { return this.homey.flow.getDeviceActionCard('wifi_switch_toggle'); } catch(e) { return null; } })()?.registerRunListener(async({device})=>{const v=device.getCapabilityValue('onoff');await device.triggerCapabilityListener('onoff',!v);return true;});}catch(e){this.log('[Flow]',e.message);}
   }
 }
 

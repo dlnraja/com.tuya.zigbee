@@ -71,11 +71,11 @@ function processFile(filePath) {
   // Simpler approach: wrap each get*Card call
   const replacements = [
     [/this\.homey\.flow\.getDeviceTriggerCard\((['"][^'"]+['"])\)\.(\w+)/g, 
-     (m, id, method) => `(() => { try { return this.homey.flow.getDeviceTriggerCard(${id}); } catch(e) { return null; } })()?.${method}`],
+     (m, id, method) => `(() => { try { return this.homey.flow.getTriggerCard(${id}); } catch(e) { return null; } })()?.${method}`],
     [/this\.homey\.flow\.getDeviceConditionCard\((['"][^'"]+['"])\)\.(\w+)/g,
-     (m, id, method) => `(() => { try { return this.homey.flow.getDeviceConditionCard(${id}); } catch(e) { return null; } })()?.${method}`],
+     (m, id, method) => `(() => { try { return this.homey.flow.getConditionCard(${id}); } catch(e) { return null; } })()?.${method}`],
     [/this\.homey\.flow\.getDeviceActionCard\((['"][^'"]+['"])\)\.(\w+)/g,
-     (m, id, method) => `(() => { try { return this.homey.flow.getDeviceActionCard(${id}); } catch(e) { return null; } })()?.${method}`],
+     (m, id, method) => `(() => { try { return this.homey.flow.getActionCard(${id}); } catch(e) { return null; } })()?.${method}`],
     [/this\.homey\.flow\.getActionCard\((['"][^'"]+['"])\)\.(\w+)/g,
      (m, id, method) => `(() => { try { return this.homey.flow.getActionCard(${id}); } catch(e) { return null; } })()?.${method}`],
     [/this\.homey\.flow\.getTriggerCard\((['"][^'"]+['"])\)\.(\w+)/g,
@@ -84,11 +84,11 @@ function processFile(filePath) {
      (m, id, method) => `(() => { try { return this.homey.flow.getConditionCard(${id}); } catch(e) { return null; } })()?.${method}`],
     // cf alias versions  
     [/cf\.getDeviceTriggerCard\((['"][^'"]+['"])\)\.(\w+)/g,
-     (m, id, method) => `(() => { try { return cf.getDeviceTriggerCard(${id}); } catch(e) { return null; } })()?.${method}`],
+     (m, id, method) => `(() => { try { return cf.getTriggerCard(${id}); } catch(e) { return null; } })()?.${method}`],
     [/cf\.getDeviceConditionCard\((['"][^'"]+['"])\)\.(\w+)/g,
-     (m, id, method) => `(() => { try { return cf.getDeviceConditionCard(${id}); } catch(e) { return null; } })()?.${method}`],
+     (m, id, method) => `(() => { try { return cf.getConditionCard(${id}); } catch(e) { return null; } })()?.${method}`],
     [/cf\.getDeviceActionCard\((['"][^'"]+['"])\)\.(\w+)/g,
-     (m, id, method) => `(() => { try { return cf.getDeviceActionCard(${id}); } catch(e) { return null; } })()?.${method}`],
+     (m, id, method) => `(() => { try { return cf.getActionCard(${id}); } catch(e) { return null; } })()?.${method}`],
     [/cf\.getActionCard\((['"][^'"]+['"])\)\.(\w+)/g,
      (m, id, method) => `(() => { try { return cf.getActionCard(${id}); } catch(e) { return null; } })()?.${method}`],
     [/cf\.getTriggerCard\((['"][^'"]+['"])\)\.(\w+)/g,
@@ -137,6 +137,37 @@ function main() {
     }
   }
   
+  // Process all library files
+  function getJSFiles(dir) {
+    let results = [];
+    const list = fs.readdirSync(dir);
+    list.forEach(file => {
+      file = path.join(dir, file);
+      const stat = fs.statSync(file);
+      if (stat && stat.isDirectory()) {
+        results = results.concat(getJSFiles(file));
+      } else if (file.endsWith('.js')) {
+        results.push(file);
+      }
+    });
+    return results;
+  }
+
+  const libFiles = getJSFiles(LIBDIR);
+
+  for (const filePath of libFiles) {
+    totalFiles++;
+    const result = processFile(filePath);
+    
+    if (result.changes > 0) {
+      const relPath = path.relative(LIBDIR, filePath);
+      console.log(`  ✅ lib/${relPath}: ${result.changes} pattern(s) fixed`);
+      totalFixed++;
+    } else if (result.skipped) {
+      totalSkipped++;
+    }
+  }
+
   console.log(`\n=== Summary ===`);
   console.log(`Files scanned: ${totalFiles}`);
   console.log(`Files fixed: ${totalFixed}`);

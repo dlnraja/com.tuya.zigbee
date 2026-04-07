@@ -1,5 +1,5 @@
 # Community Intelligence Report
-*Generated: 2026-04-07T14:58:42.454Z*
+*Generated: 2026-04-07T20:47:09.656Z*
 
 ## Open Issues (5)
 
@@ -620,7 +620,7 @@ https://github.com/dlnraja/com.tuya.zigbee/blob/722cb3c6f8c018920f9d2d23999836b0
 
 
 
-**Comments (6):**
+**Comments (7):**
 > **dlnraja:** <!-- tuya-issue-manager -->
 > Hey @john1v,
 > 
@@ -660,6 +660,8 @@ https://github.com/dlnraja/com.tuya.zigbee/blob/722cb3c6f8c018920f9d2d23999836b0
 > > If your device is still not working, please share:
 > > 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app)
 > > 2. **Diagnostic Report ID** from device settings
+
+> **john1v:** I create report 9152fd7d-795c-4395-8fc4-e0d97eb25c5b
 
 ---
 
@@ -1220,22 +1222,5 @@ Currently on v5.11.118
 
 ---
 
-## Open Pull Requests (1)
-
-### [#201] 🔄 Universal Maintenance: Device Variants Synchronisation
-*Author: app/github-actions | Created: 2026-04-07T03:36:17Z*
-**Status:** OPEN | **Mergeable:** MERGEABLE
-
-**Body:**
-## 🔄 Maintenance Report
-This PR automatically synchronizes new device variants and improves compatibility.
-
-**Checks performed:**
-- [x] New device IDs detected using heuristics script
-- [x] Endpoint routing validated for multi-gang devices
-- [x] Tuya raw frame handlers adapted
-
-*Please review carefully before merging.*
-
----
+## Open Pull Requests (0)
 

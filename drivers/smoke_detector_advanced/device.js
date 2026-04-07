@@ -205,6 +205,7 @@ class SmokeDetectorAdvancedDevice extends HybridSensorBase {
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected
 
     // v5.5.503: DIAGNOSTIC LOGGING for Martijn report
     const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || 'UNKNOWN';

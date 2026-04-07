@@ -44,6 +44,7 @@ class ModuleMiniSwitchDevice extends PhysicalButtonMixin(HybridSwitchBase) {
     }
 
     await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected
     await setupSonoffEwelink(this, zclNode);
     this.log('[MINI-SWITCH] ✅ Ready');
   }

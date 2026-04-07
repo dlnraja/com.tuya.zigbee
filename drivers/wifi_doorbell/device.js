@@ -26,12 +26,12 @@ class WiFiDoorbellDevice extends TuyaLocalDevice {
   _fireFlowTriggers(changes) {
     if (changes['alarm_generic']) {
       const flowId = 'wifi_doorbell_ring';
-      try { this.homey.flow.getTriggerCard().trigger(this {}, {}).catch(() => {}); }
+      try { this.homey.flow.getDeviceTriggerCard().trigger(this, {}, {}).catch(() => {}); }
       catch (e) { /* no flow card */ }
     }
     if (changes['alarm_motion']) {
       const flowId = 'wifi_doorbell_motion';
-      try { this.homey.flow.getTriggerCard().trigger(this {}, {}).catch(() => {}); }
+      try { this.homey.flow.getDeviceTriggerCard().trigger(this, {}, {}).catch(() => {}); }
       catch (e) { /* no flow card */ }
     }
   }

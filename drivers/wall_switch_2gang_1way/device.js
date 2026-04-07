@@ -52,14 +52,14 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
           // Auto/Both: trigger physical button flow (general + per-gang)
           if (mode === 'auto' || mode === 'both') {
             const fid = 'wall_switch_2gang_1way_turned_' + (value ? 'on' : 'off');
-            this.homey.flow.getTriggerCard().trigger(this {}, {}).catch(() => {});
+            this.homey.flow.getDeviceTriggerCard().trigger(this, {}, {}).catch(() => {});
             const pgid = 'wall_switch_2gang_1way_physical_gang2_' + (value ? 'on' : 'off');
-            this.homey.flow.getTriggerCard().trigger(this {}, {}).catch(() => {});
+            this.homey.flow.getDeviceTriggerCard().trigger(this, {}, {}).catch(() => {});
           }
           // Magic/Both: trigger scene flow
           if (mode === 'auto' || mode === 'magic' || mode === 'both') {
             const action = value ? 'on' : 'off';
-            this.homey.flow.getTriggerCard().trigger(this { action }, {}).catch(() => {});
+            this.homey.flow.getDeviceTriggerCard().trigger(this, { action }, {}).catch(() => {});
             this.log(`[SCENE] Gang 2 scene: ${action}`);
           }
           // Magic: revert load to previous state
@@ -123,6 +123,7 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
     this._appCommandPending = { gang1: false };
     this._appCommandTimeout = { gang1: null };
     await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected
     await this.initPhysicalButtonDetection(zclNode);
     this._setupGang1SceneDetection(zclNode);
     this.log('[PRIMARY] Gang 1 ready');
@@ -142,11 +143,11 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
       const isPhys = !this._appCommandPending?.gang1;
       if (isPhys && (mode === 'auto' || mode === 'both')) {
         const pgid = 'wall_switch_2gang_1way_physical_gang1_' + (value ? 'on' : 'off');
-        this.homey.flow.getTriggerCard().trigger(this {}, {}).catch(() => {});
+        this.homey.flow.getDeviceTriggerCard().trigger(this, {}, {}).catch(() => {});
       }
       if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
         const action = value ? 'on' : 'off';
-        this.homey.flow.getTriggerCard().trigger(this { action }, {}).catch(() => {});
+        this.homey.flow.getDeviceTriggerCard().trigger(this, { action }, {}).catch(() => {});
         this.log(`[SCENE] Gang 1 scene: ${action}`);
       }
       // In magic mode, revert the load state

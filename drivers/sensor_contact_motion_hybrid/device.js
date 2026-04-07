@@ -676,6 +676,7 @@ class MotionSensorDevice extends HybridSensorBase {
     await this._ensureTuyaDPCapabilities();
 
     await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected
 
     // v5.8.28: CRITICAL FIX - IAS Zone enrollment (Lasse_K forum 'inactivated' fix)
     try {

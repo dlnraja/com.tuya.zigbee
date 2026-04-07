@@ -303,6 +303,10 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
    * Enhanced with physical button flow triggers (packetninja technique)
    */
   async _initZclOnlyMode(zclNode) {
+    // v5.13.2: Unified listener registration (Capability + Flow Cards)
+    // Inherited from HybridSwitchBase, handles ZCL/DP fallback automatically
+    this._registerCapabilityListeners();
+
     this._zclState = {
       lastState: { 1: null, 2: null },
       pending: { 1: false, 2: false },
@@ -322,44 +326,6 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
       const ep = this._zclNode?.endpoints?.[epNum];
       return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
     };
-
-    // v5.5.990: Register capability listeners FIRST (packetninja fix)
-    for (const epNum of [1, 2]) {
-      const capName = epNum === 1 ? 'onoff' : 'onoff.gang2';
-      
-      this.registerCapabilityListener(capName, async (value) => {
-        this.log(`[BSEED-2G] EP${epNum} app cmd: ${value}`);
-        // v5.9.23: Track which gang the user actually commanded
-        this._lastCommandedGang = epNum;
-        this._lastCommandTime = Date.now();
-        this._zclState.pending[epNum] = true;
-        clearTimeout(this._zclState.timeout[epNum]);
-        this._zclState.timeout[epNum] = setTimeout(() => {
-          this._zclState.pending[epNum] = false;
-        }, 2000);
-        
-        // v5.11.29: Use writeAttributes instead of setOn/setOff (Z2M #27167, ZHA #2443)
-        // TS0726 FW broadcasts ZCL commands to all EPs but routes attr writes per-EP
-        const onOff = getOnOffCluster(epNum);
-        if (onOff && typeof onOff.writeAttributes === 'function') {
-          try {
-            await onOff.writeAttributes({ onOff: value ? true : false });
-            this.log(`[BSEED-2G] EP${epNum} writeAttr onOff=${value} (per-EP fix)`);
-          } catch (e) {
-            this.log(`[BSEED-2G] EP${epNum} writeAttr failed: ${e.message}, fallback`);
-            if (typeof onOff[value ? 'setOn' : 'setOff'] === 'function') {
-              await onOff[value ? 'setOn' : 'setOff']();
-            }
-          }
-        } else if (onOff) {
-          await onOff[value ? 'setOn' : 'setOff']();
-        } else {
-          this.log(`[BSEED-2G] EP${epNum} onOff cluster not found`);
-        }
-        return true;
-      });
-      this.log(`[BSEED-2G] EP${epNum} capability listener registered`);
-    }
 
     // Setup attribute listeners for physical button detection
     for (const epNum of [1, 2]) {
@@ -395,12 +361,12 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           }
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_2gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
-            this.homey.flow.getTriggerCard().trigger(this { gang: epNum, state: value }, {})
+            this.homey.flow.getDeviceTriggerCard().trigger(this, { gang: epNum, state: value }, {})
               .catch(() => {});
             this.log(`[BSEED-2G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
           }
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-            this.homey.flow.getTriggerCard().trigger(this { action: value ? 'on' : 'off' }, {}).catch(() => {});
+            this.homey.flow.getDeviceTriggerCard().trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
             this.log(`[BSEED-2G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
           }
         }

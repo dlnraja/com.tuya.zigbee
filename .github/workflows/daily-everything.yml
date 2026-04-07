@@ -18,7 +18,7 @@ permissions:
 
 concurrency:
   group: daily-everything
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 defaults:
   run:
@@ -58,13 +58,14 @@ jobs:
       HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
       HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
 
       # ===== 0a. INTELLIGENCE MODE SELECTOR (IA-less Fallback) =====
       - name: "0a. Intelligence Mode Selector"
@@ -80,7 +81,8 @@ jobs:
 
       - name: 🛡️ Zigbee Signature Audit
         run: node scripts/ci/signature-audit.js
-      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
       - name: Save START_SHA
         run: echo "START_SHA=$(git rev-parse HEAD)" >> $GITHUB_ENV
       - name: App stats
@@ -637,12 +639,24 @@ jobs:
           MAX_GH_CALLS: "100"
         run: node .github/scripts/master-ai-battle.js
 
-      # ===== 10o. PIPELINE HEALTH CHECK =====
-      - name: "10o. Pipeline Health Check"
+      # ===== 10o. AUTONOMOUS MAINTENANCE ORCHESTRATOR (v1.1.0) =====
+      - name: "10o. Autonomous Maintenance Orchestrator"
+        id: autonomous_maint
+        if: always()
+        continue-on-error: true
+        env:
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: |
+          echo "=== 🧠 Running Autonomous Maintenance Loop ==="
+          node scripts/maintenance/autonomous-maintenance-orchestrator.js
+
+      # ===== 10p. PIPELINE HEALTH CHECK =====
+      - name: "10p. Pipeline Health Check"
         id: health
         if: always()
         continue-on-error: true
         run: node .github/scripts/pipeline-health.js
+
       # ===== 10p. DRIVER LOCALIZATION (I18N) =====
       - name: "10p. Driver Localization (I18N)"
         id: i18n

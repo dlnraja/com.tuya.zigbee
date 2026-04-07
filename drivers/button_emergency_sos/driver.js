@@ -14,7 +14,7 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
     
     // v5.5.832: Register flow trigger card with registerRunListener
     try {
-      this._sosFlowCard = this.homey.flow.getTriggerCard('button_emergency_sos_pressed');
+      this._sosFlowCard = this.homey.flow.getDeviceTriggerCard('button_emergency_sos_pressed');
       if (this._sosFlowCard) {
         // v5.5.832: CRITICAL - Register run listener for trigger cards
         this._sosFlowCard.registerRunListener(async (args, state) => {
@@ -53,7 +53,7 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
     } else {
       // Fallback: try to get card again
       try {
-        const card = this.homey.flow.getTriggerCard('button_emergency_sos_pressed');
+        const card = this.homey.flow.getDeviceTriggerCard('button_emergency_sos_pressed');
         if (card) {
           await card.trigger(device, tokens, state);
           this.log('[FLOW] ✅ button_emergency_sos_pressed triggered (fallback)!');

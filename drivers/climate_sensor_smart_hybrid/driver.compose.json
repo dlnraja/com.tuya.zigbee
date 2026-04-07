@@ -42,7 +42,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tze284_7zazvlyn"
+      "_TZE284_7ZAZVLYN"
     ],
     "productId": [
       "TS0601",
@@ -125,5 +125,11 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "AAA"
+    ]
+  }
 }

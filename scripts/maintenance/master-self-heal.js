@@ -18,6 +18,10 @@
  *  6. multigang-flow-routing — Replace raw ZCL onOff.setOn() with triggerCapabilityListener
  *  7. dp-variant-doc         — Flag DP mappings missing variant comments
  *  8. case-insensitive-matching — Ensure all manufacturer comparisons use .toLowerCase()
+ *  9. duplicate-fingerprints    — Flag ambiguity in driver pairing
+ *  10. punycode-deprecation    — Replace node-internal with userland
+ *  11. hybrid-flow-id-prefixing — Fix collisions in driver.flow.compose.json
+ *  12. capability-init-sanity   — Ensure _registerCapabilityListeners and initPhysicalButtonDetection are called
  */
 'use strict';
 
@@ -91,14 +95,17 @@ function rule_phantomMethods() {
     let code = fs.readFileSync(file, 'utf8');
     const original = code;
 
-    code = code.replace(/\.getDeviceConditionCard\s*\(/g, '.getConditionCard(');
-    code = code.replace(/\.getDeviceActionCard\s*\(/g, '.getActionCard(');
-    code = code.replace(/\.getDeviceTriggerCard\s*\(/g, '.getTriggerCard(');
+    // v5.13.3: SDK3 MANDATORY NORMALIZATION (REVERSED)
+    // Athom SDK3 REQUIRES getDevice*Card() for driver-specific flow cards
+    // Using simple get*Card() for these cards results in null/unlinked cards
+    code = code.replace(/\.getConditionCard\s*\(/g, '.getDeviceConditionCard(');
+    code = code.replace(/\.getActionCard\s*\(/g, '.getDeviceActionCard(');
+    code = code.replace(/\.getTriggerCard\s*\(/g, '.getDeviceTriggerCard(');
 
     if (code !== original) {
       safeWrite(file, code);
       fixes++;
-      addFix('sdk3-phantom-methods', file, 'Replaced phantom flow card methods');
+      addFix('sdk3-device-flow-cards', file, 'Normalized to SDK3 getDevice*Card methods for driver-specific flows');
       log(`  ✅ Fixed: ${path.relative(ROOT, file)}`);
     }
   }
@@ -225,24 +232,20 @@ function rule_flowCardTryCatch() {
 // ═══════════════════════════════════════════════════════════════════════════════
 
 function rule_energyBatteries() {
-  log('\n📋 Rule 5: Energy Batteries Enforcement');
+  log('\n📋 Rule 5: Energy Batteries Enforcement (SDK3 Publish Compliance)');
   const composeFiles = findFiles(DRIVERS_DIR, '.json').filter(f => f.endsWith('driver.compose.json'));
   let fixes = 0;
 
-  const DEFAULT_BATTERIES = ['AAA', 'AAA', 'AAA']; // Most Tuya sensors use 2-3 AAA
+  const DEFAULT_BATTERIES = ['AAA', 'AAA']; // Most Tuya hybrid sensors use 2xAAA
 
   for (const file of composeFiles) {
     try {
       const compose = JSON.parse(fs.readFileSync(file, 'utf8'));
       const caps = compose.capabilities || [];
 
+      // SDK3 MANDATORY: If measure_battery is present, energy.batteries MUST be defined
+      // Source: SDK3 Validation Error "missing an array 'energy.batteries' because the capability measure_battery is being used"
       if (!caps.includes('measure_battery') && !caps.includes('alarm_battery')) continue;
-
-      // Check if device is battery-powered (not mains-powered via class)
-      const deviceClass = compose.class || '';
-      const mainsPowered = ['socket', 'light', 'fan', 'heater', 'other'].includes(deviceClass);
-
-      if (mainsPowered) continue; // Mains devices don't need batteries array
 
       if (!compose.energy || !compose.energy.batteries || compose.energy.batteries.length === 0) {
         if (!compose.energy) compose.energy = {};
@@ -250,7 +253,7 @@ function rule_energyBatteries() {
           compose.energy.batteries = DEFAULT_BATTERIES;
           safeWrite(file, JSON.stringify(compose, null, 2) + '\n');
           fixes++;
-          addFix('energy-batteries', file, 'Added energy.batteries array');
+          addFix('energy-batteries', file, 'Added energy.batteries array for SDK3 compliance');
           log(`  ✅ Fixed: ${path.relative(ROOT, file)}`);
         }
       }
@@ -400,18 +403,24 @@ function rule_duplicateFingerprints() {
 function rule_punycodeDeprecation() {
   log('\n📋 Rule 10: Punycode Deprecation Check');
   const jsFiles = [...findFiles(DRIVERS_DIR, '.js'), ...findFiles(LIB_DIR, '.js')];
-  let warnings = 0;
+  let fixes = 0;
 
   for (const file of jsFiles) {
-    const code = fs.readFileSync(file, 'utf8');
-    if (/require\s*\(\s*['"]punycode['"]\s*\)/.test(code)) {
-      warnings++;
-      addFix('punycode-deprecation', file, 'Uses deprecated punycode module');
-      log(`  ⚠️  ${path.relative(ROOT, file)}: uses deprecated punycode`);
+    let code = fs.readFileSync(file, 'utf8');
+    const original = code;
+    
+    // Replace require('punycode') with require('punycode/') - forces npm package over built-in
+    code = code.replace(/require\s*\(\s*['"]punycode['"]\s*\)/g, "require('punycode/')");
+
+    if (code !== original) {
+      safeWrite(file, code);
+      fixes++;
+      addFix('punycode-deprecation', file, 'Replaced internal punycode with userland punycode/');
+      log(`  ✅ Fixed: ${path.relative(ROOT, file)}`);
     }
   }
 
-  log(`  → ${warnings} files using deprecated punycode`);
+  log(`  → ${fixes} files fixed`);
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -463,6 +472,101 @@ function rule_flowIdPrefixing() {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
+// RULE 12: CAPABILITY REGISTRATION SANITY
+// Ensure _registerCapabilityListeners() and initPhysicalButtonDetection() are called
+// ═══════════════════════════════════════════════════════════════════════════════
+
+function rule_capabilityInitSanity() {
+  log('\n📋 Rule 12: Capability Registration Sanity');
+  const jsFiles = findFiles(DRIVERS_DIR, '.js').filter(f => f.endsWith('device.js'));
+  let fixes = 0;
+
+  for (const file of jsFiles) {
+    try {
+      let code = fs.readFileSync(file, 'utf8');
+      const original = code;
+      
+      // Check if it's a HybridSwitchBase or HybridSensorBase (most need these)
+      if (!/HybridSwitchBase|HybridSensorBase|BaseHybridDevice/.test(code)) continue;
+      if (!/async onNodeInit/.test(code)) continue;
+
+      // Rule 12a: Ensure _registerCapabilityListeners() is called somewhere in onNodeInit
+      if (!/_registerCapabilityListeners\s*\(/.test(code)) {
+         // Append it before the end of onNodeInit or before super.onNodeInit
+         if (/await super\.onNodeInit/.test(code)) {
+           code = code.replace(/await super\.onNodeInit\s*\(\s*\{.*?\}\s*\);/s, (match) => {
+             return `${match}\n    this._registerCapabilityListeners(); // rule-12a injected`;
+           });
+         } else if (/onNodeInit\s*\(\{.*?\}\)\s*\{/.test(code)) {
+           code = code.replace(/onNodeInit\s*\(\{.*?\}\)\s*\{/, (match) => {
+             return `${match}\n    this._registerCapabilityListeners(); // rule-12a injected`;
+           });
+         }
+      }
+
+      if (code !== original) {
+        safeWrite(file, code);
+        fixes++;
+        addFix('capability-init-sanity', file, 'Injected missing capability listener registration');
+        log(`  ✅ Fixed: ${path.relative(ROOT, file)}`);
+      }
+    } catch (e) {
+      report.errors.push({ rule: 'capability-init-sanity', file, error: e.message });
+    }
+  }
+
+  log(`  → ${fixes} files fixed`);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// RULE 13: FINGERPRINT WILDCARD CLEANUP (NO-AI)
+// Remove '*' from manufacturerName/productId (SDK v3 crashes on them)
+// ═══════════════════════════════════════════════════════════════════════════════
+
+function rule_fingerprintWildcardCleanup() {
+  log('\n📋 Rule 13: Fingerprint Wildcard Cleanup');
+  const drivers = fs.readdirSync(DRIVERS_DIR).filter(d => fs.statSync(path.join(DRIVERS_DIR, d)).isDirectory());
+  let fixes = 0;
+
+  for (const driver of drivers) {
+    const composeFile = path.join(DRIVERS_DIR, driver, 'driver.compose.json');
+    if (!fs.existsSync(composeFile)) continue;
+
+    try {
+      let raw = fs.readFileSync(composeFile, 'utf8');
+      const compose = JSON.parse(raw);
+      if (!compose.zigbee) continue;
+
+      let changed = false;
+      const cleanArray = (arr) => {
+        if (!Array.isArray(arr)) return arr;
+        const filtered = arr.filter(v => typeof v === 'string' && !v.includes('*'));
+        if (filtered.length !== arr.length) changed = true;
+        return filtered;
+      };
+
+      if (compose.zigbee.manufacturerName) {
+        compose.zigbee.manufacturerName = cleanArray(compose.zigbee.manufacturerName);
+      }
+      if (compose.zigbee.productId) {
+        compose.zigbee.productId = cleanArray(compose.zigbee.productId);
+      }
+
+      if (changed) {
+        safeWrite(composeFile, JSON.stringify(compose, null, 2) + '\n');
+        fixes++;
+        addFix('fingerprint-wildcard-cleanup', composeFile, 'Removed SDK3-incompatible wildcard (*) from fingerprints');
+        log(`  ✅ Fixed: ${path.relative(ROOT, composeFile)}`);
+      }
+    } catch (e) {
+      report.errors.push({ rule: 'fingerprint-wildcard-cleanup', file: composeFile, error: e.message });
+    }
+  }
+
+  log(`  → ${fixes} files fixed`);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
 // MAIN ORCHESTRATOR
 // ═══════════════════════════════════════════════════════════════════════════════
 
@@ -478,6 +582,7 @@ async function main() {
   // rule_fingerprintCase(); // DISABLED: Breaks case-sensitive Tuya discovery
   rule_probeDedup();
   rule_energyBatteries();
+  rule_fingerprintWildcardCleanup();
 
   // DETECTION RULES (report only, manual fixes recommended)
   rule_flowCardTryCatch();
@@ -487,6 +592,7 @@ async function main() {
   rule_duplicateFingerprints();
   rule_punycodeDeprecation();
   rule_flowIdPrefixing();
+  rule_capabilityInitSanity();
 
   // ═══════════════════════════════════════════════════════════════════════════
   // REPORT SUMMARY
@@ -495,7 +601,7 @@ async function main() {
   log('  SELF-HEAL REPORT');
   log('═══════════════════════════════════════════════════════════════════════');
 
-  const autoFixed = ['sdk3-phantom-methods', 'fingerprint-case', 'probe-dedup-static', 'energy-batteries', 'hybrid-flow-id-prefixing'];
+  const autoFixed = ['sdk3-phantom-methods', 'fingerprint-case', 'probe-dedup-static', 'energy-batteries', 'hybrid-flow-id-prefixing', 'capability-init-sanity', 'fingerprint-wildcard-cleanup'];
   const manualReview = Object.keys(report.rules).filter(r => !autoFixed.includes(r));
 
   let totalAutoFixes = 0;

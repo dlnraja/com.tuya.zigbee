@@ -30,8 +30,17 @@ async function main() {
 
     if (config.zigbee && config.zigbee.manufacturerName) {
       const original = config.zigbee.manufacturerName;
-      // Lowercase and unique
-      const unique = [...new Set(original)];
+      // Case-insensitive unique set
+      const seen = new Set();
+      const unique = [];
+      for (const m of (original || [])) {
+        if (!m) continue;
+        const low = m.toLowerCase();
+        if (!seen.has(low)) {
+          seen.add(low);
+          unique.push(m);
+        }
+      }
       unique.sort();
       
       if (unique.length !== original.length) {

@@ -29,6 +29,7 @@ class IlluminanceSensorDevice extends HybridSensorBase {
 
     this.log('[ILLUMINANCE] Initializing illuminance sensor');
     await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected
     await this._setupIlluminanceCluster(zclNode);
   }
 

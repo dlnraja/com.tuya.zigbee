@@ -238,6 +238,7 @@ async onNodeInit({ zclNode }) {
     this.registerCapabilityListener('onoff', async (value) => {
       this.log(`[MMWAVE] 🔌 Relay contro
     await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected
 l: ${value ? 'ON' : 'OFF'} (DP108)`);
       const tuya = zclNode?.endpoints?.[1]?.clusters?.tuya;
       if (tuya?.datapoint) {

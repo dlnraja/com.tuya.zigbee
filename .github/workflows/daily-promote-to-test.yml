@@ -5,7 +5,7 @@ on:
     - cron: '30 15 * * *'  # After daily-everything 14:00 publish
   workflow_dispatch:
   workflow_run:
-    workflows: [Auto Publish, Auto-Publish on Push, Daily Everything Pipeline]
+    workflows: [Master CI/CD Pipeline, Auto Publish, Auto-Publish on Push, Daily Everything Pipeline]
     types: [completed]
 permissions:
   contents: read

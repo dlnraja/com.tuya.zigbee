@@ -122,7 +122,8 @@ class GasDetectorDevice extends HybridSensorBase {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    await super.onNodeInit({ zclNode });this.log('[GAS-DETECTOR] v5.5.932 ✅ Ready');
+    await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injectedthis.log('[GAS-DETECTOR] v5.5.932 ✅ Ready');
     this.log('[GAS-DETECTOR] Manufacturer:', this.getSetting('zb_manufacturer_name') || 'unknown');
   }
 

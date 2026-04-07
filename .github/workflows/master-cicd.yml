@@ -1,0 +1,165 @@
+name: MASTER CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: 'Version bump'
+        required: true
+        default: 'patch'
+        type: choice
+        options: [patch, minor, major, none]
+      promote:
+        description: 'Promote to test channel'
+        type: boolean
+        default: true
+      post_forum:
+        description: 'Post update to Homey Forum'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: master-cicd
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+  APP_ID: "com.dlnraja.tuya.zigbee"
+
+jobs:
+  validate:
+    name: 🛡️ Validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Homey Validate
+        run: npx homey app validate --level publish
+      - name: Athom Docker Validate (Optional)
+        continue-on-error: true
+        uses: athombv/github-action-homey-app-validate@v1
+        with:
+          level: publish
+
+  publish-and-promote:
+    name: 🚀 Publish & Promote
+    needs: validate
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'push' && !contains(github.event.head_commit.message, '[skip ci]'))
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          # Use GH_PAT if available to allow triggering other workflows on push
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+      
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      # 1. Version Bump
+      - name: 🏷️ Version Bump
+        id: bump
+        if: github.event.inputs.bump != 'none'
+        uses: athombv/github-action-homey-app-version@v1
+        with:
+          version: ${{ github.event.inputs.bump || 'patch' }}
+          # Auto-extract changelog or use default
+          changelog: "v${{ github.event.inputs.bump || 'patch' }}: New device support and stability improvements"
+
+      - name: 🔄 Sync package.json
+        if: steps.bump.outcome == 'success'
+        run: |
+          node -e "const f=require('fs'),a=require('./app.json'),p=JSON.parse(f.readFileSync('package.json','utf8'));p.version=a.version;f.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n');"
+          echo "NEW_VERSION=$(node -p 'require("./app.json").version')" >> $GITHUB_ENV
+
+      # 2. Commit Version Bump
+      - name: 💾 Commit Version
+        if: steps.bump.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app.json package.json .homeychangelog.json
+          git commit -m "v${{ env.NEW_VERSION }}: automatic version bump [skip ci]"
+          git push origin HEAD || echo "No changes to push"
+
+      # 3. Publish to Homey App Store (Drafts)
+      - name: 📤 Publish (Draft)
+        id: publish
+        if: env.NEW_VERSION != ''
+        uses: athombv/github-action-homey-app-publish@v1
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+
+      # 4. Promote to Test Channel
+      - name: 🎯 Promote to Test (Draft -> Test)
+        if: steps.publish.outcome == 'success' && (github.event.inputs.promote != 'false')
+        id: promote
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          ATHOM_CLIENT_ID: ${{ secrets.ATHOM_CLIENT_ID }}
+          ATHOM_CLIENT_SECRET: ${{ secrets.ATHOM_CLIENT_SECRET }}
+        run: |
+          echo "Waiting 120s for Athom to process draft..."
+          sleep 120
+          # Try API first
+          node .github/scripts/auto-publish-draft.js || \
+          # Try Puppeteer as fallback
+          node .github/scripts/auto-promote-puppeteer.js
+
+      # 5. Create GitHub Release
+      - name: 🐙 Create Release
+        if: steps.publish.outcome == 'success'
+        continue-on-error: true
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ env.NEW_VERSION }}
+          name: v${{ env.NEW_VERSION }}
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      # 6. Post to Forum
+      - name: 💬 Post to Forum
+        if: steps.promote.outcome == 'success' && (github.event.inputs.post_forum != 'false')
+        continue-on-error: true
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          APP_VERSION: ${{ env.NEW_VERSION }}
+        run: node .github/scripts/post-forum-update.js
+
+      - name: 📝 Summary
+        if: always()
+        run: |
+          echo "## CI/CD Execution Summary" >> $GITHUB_STEP_SUMMARY
+          echo "- **Version:** v${{ env.NEW_VERSION || 'N/A' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Validation:** ${{ needs.validate.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Publish:** ${{ steps.publish.outcome }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Promote:** ${{ steps.promote.outcome }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "[Manage App](https://tools.developer.homey.app/apps/app/${{ env.APP_ID }})" >> $GITHUB_STEP_SUMMARY
+          echo "[Test Link](https://homey.app/a/${{ env.APP_ID }}/test/)" >> $GITHUB_STEP_SUMMARY
