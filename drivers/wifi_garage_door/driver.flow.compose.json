@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "wifi_garage_opened",
+      "id": "wifi_garage_door_wifi_garage_opened",
       "title": {
         "en": "Garage opened"
       },
@@ -10,7 +10,7 @@
       }
     },
     {
-      "id": "wifi_garage_closed",
+      "id": "wifi_garage_door_wifi_garage_closed",
       "title": {
         "en": "Garage closed"
       },
@@ -21,7 +21,7 @@
   ],
   "conditions": [
     {
-      "id": "wifi_garage_is_open",
+      "id": "wifi_garage_door_wifi_garage_is_open",
       "title": {
         "en": "Garage is open"
       },
