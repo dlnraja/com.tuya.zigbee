@@ -2494,3 +2494,16 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 | test + TS0601 | dlnraja/com.tuya.zigbee#198 | bug_report |
 | test + SNZB-01 | dlnraja/com.tuya.zigbee#198 | bug_report |
 | test + SNZB-01M | dlnraja/com.tuya.zigbee#198 | bug_report |
+
+
+## Auto-discovered from GitHub (2026-04-07)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| dlnraja + CK-BL702-SWP-01(7020) | dlnraja/com.tuya.zigbee#194 | bug_report |
+| dlnraja + test | dlnraja/com.tuya.zigbee#194 | bug_report |
+| eWeLink + CK-BL702-SWP-01(7020) | dlnraja/com.tuya.zigbee#194 | bug_report |
+| eWeLink + test | dlnraja/com.tuya.zigbee#194 | bug_report |
+| tuya + CK-BL702-SWP-01(7020) | dlnraja/com.tuya.zigbee#194 | bug_report |
+| tuya + test | dlnraja/com.tuya.zigbee#194 | bug_report |
+| test + CK-BL702-SWP-01(7020) | dlnraja/com.tuya.zigbee#194 | bug_report |
