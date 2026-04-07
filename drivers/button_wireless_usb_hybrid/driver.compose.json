@@ -1,0 +1,216 @@
+{
+  "name": {
+    "en": "Button Wireless Usb Hybrid",
+    "nl": "Button Wireless Usb Hybrid",
+    "fr": "Button Wireless Usb Hybrid"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "onoff.usb2",
+    "measure_power",
+    "meter_power",
+    "measure_voltage",
+    "measure_current",
+    "measure_battery",
+    "button.1",
+    "button.2"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "USB Port 1",
+        "fr": "Port USB 1"
+      }
+    },
+    "onoff.usb2": {
+      "title": {
+        "en": "USB Port 2",
+        "fr": "Port USB 2"
+      }
+    },
+    "measure_power": {
+      "title": {
+        "en": "Power",
+        "fr": "Puissance"
+      }
+    },
+    "meter_power": {
+      "title": {
+        "en": "Energy",
+        "fr": "Énergie"
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageConstant": 5
+    },
+    "batteries": [
+      "CR2450"
+    ],
+    "mains": true
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tz3000_5f43h46b"
+    ],
+    "productId": [
+      "TS0002",
+      "ts0002"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      },
+      "2": {
+        "clusters": [
+          4,
+          5,
+          6
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the button for 5 seconds until the LED flashes rapidly.",
+        "fr": "Appuyez et maintenez le bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement."
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "power_on_behavior",
+      "type": "dropdown",
+      "label": {
+        "en": "Power-on Behavior",
+        "fr": "Comportement au démarrage"
+      },
+      "value": "previous",
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "fr": "Éteint"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "On",
+            "fr": "Allumé"
+          }
+        },
+        {
+          "id": "toggle",
+          "label": {
+            "en": "Toggle",
+            "fr": "Inverser"
+          }
+        },
+        {
+          "id": "previous",
+          "label": {
+            "en": "Previous State",
+            "fr": "État précédent"
+          }
+        }
+      ]
+    },
+    {
+      "id": "indicator_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Indicator LED",
+        "fr": "LED indicateur"
+      },
+      "value": "on_off",
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Off",
+            "fr": "Éteint"
+          }
+        },
+        {
+          "id": "on_off",
+          "label": {
+            "en": "On when switch is on",
+            "fr": "Allumé quand interrupteur actif"
+          }
+        },
+        {
+          "id": "inverted",
+          "label": {
+            "en": "On when switch is off",
+            "fr": "Allumé quand interrupteur éteint"
+          }
+        }
+      ]
+    },
+    {
+      "id": "switch_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "External Switch Type",
+        "nl": "Extern schakelaartype",
+        "de": "Externer Schaltertyp",
+        "fr": "Type d'interrupteur externe"
+      },
+      "hint": {
+        "en": "Type of external switch connected to this relay module",
+        "nl": "Type externe schakelaar aangesloten op deze relaismodule"
+      },
+      "value": "toggle",
+      "values": [
+        {
+          "id": "toggle",
+          "label": {
+            "en": "Toggle",
+            "nl": "Tuimelschakelaar"
+          }
+        },
+        {
+          "id": "state",
+          "label": {
+            "en": "State (Rocker)",
+            "nl": "Status (Wipschakelaar)"
+          }
+        },
+        {
+          "id": "momentary",
+          "label": {
+            "en": "Momentary (Push Button)",
+            "nl": "Pulsdrukknop"
+          }
+        }
+      ]
+    }
+  ],
+  "images": {
+    "small": "drivers/usb_dongle_dual_repeater/assets/images/small.png",
+    "large": "drivers/usb_dongle_dual_repeater/assets/images/large.png",
+    "xlarge": "drivers/usb_dongle_dual_repeater/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

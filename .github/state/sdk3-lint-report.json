@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-04-05T22:30:19.332Z",
+  "timestamp": "2026-04-07T04:07:54.237Z",
   "driversScanned": 20,
-  "staticIssues": 30,
-  "autoFixed": 6,
+  "staticIssues": 21,
+  "autoFixed": 2,
   "aiSuggestions": 0,
   "aiApplied": 0,
   "dryRun": false,
@@ -10,44 +10,109 @@
     {
       "driver": "air_purifier",
       "issues": [
-        "sdk3-await-capability",
-        "sdk3-flow-card-unsafe",
-        "sdk3-trigger-card-no-try"
+        "sdk3-await-capability"
       ]
     },
     {
-      "driver": "air_quality_co2",
+      "driver": "air_purifier_climate_hybrid",
       "issues": [
         "sdk3-await-capability",
-        "sdk3-case-sensitive-fingerprint",
+        "sdk3-missing-energy-batteries"
+      ]
+    },
+    {
+      "driver": "air_purifier_curtain_hybrid",
+      "issues": []
+    },
+    {
+      "driver": "air_purifier_dimmer_hybrid",
+      "issues": []
+    },
+    {
+      "driver": "air_purifier_din_hybrid",
+      "issues": [
+        "sdk3-await-capability"
+      ]
+    },
+    {
+      "driver": "air_purifier_lcdtemphumidsensor_hybrid",
+      "issues": [
+        "sdk3-await-capability",
+        "sdk3-missing-energy-batteries"
+      ]
+    },
+    {
+      "driver": "air_purifier_motion_hybrid",
+      "issues": [
+        "sdk3-await-capability",
+        "sdk3-missing-energy-batteries"
+      ]
+    },
+    {
+      "driver": "air_purifier_presence_hybrid",
+      "issues": [
+        "sdk3-await-capability",
         "tuya-climate-safe-set"
       ]
     },
     {
+      "driver": "air_purifier_quality_hybrid",
+      "issues": []
+    },
+    {
+      "driver": "air_purifier_sensor_hybrid",
+      "issues": [
+        "sdk3-await-capability",
+        "sdk3-dp-variant-awareness",
+        "tuya-climate-safe-set"
+      ]
+    },
+    {
+      "driver": "air_purifier_siren_hybrid",
+      "issues": [
+        "sdk3-await-capability",
+        "sdk3-battery-conflict",
+        "tuya-climate-safe-set"
+      ]
+    },
+    {
+      "driver": "air_purifier_soil_hybrid",
+      "issues": [
+        "sdk3-await-capability"
+      ]
+    },
+    {
+      "driver": "air_purifier_switch_hybrid",
+      "issues": []
+    },
+    {
+      "driver": "air_quality_co2",
+      "issues": []
+    },
+    {
       "driver": "air_quality_comprehensive",
       "issues": [
-        "sdk3-mains-has-battery",
-        "sdk3-case-sensitive-fingerprint"
+        "sdk3-mains-has-battery"
+      ]
+    },
+    {
+      "driver": "air_quality_comprehensive_hybrid",
+      "issues": [
+        "sdk3-mains-has-battery"
       ]
     },
     {
       "driver": "bulb_dimmable",
-      "issues": [
-        "sdk3-case-sensitive-fingerprint"
-      ]
+      "issues": []
+    },
+    {
+      "driver": "bulb_dimmable_dimmer_hybrid",
+      "issues": []
     },
     {
       "driver": "bulb_rgb",
       "issues": [
-        "sdk3-await-capability",
-        "sdk3-case-sensitive-fingerprint"
-      ]
-    },
-    {
-      "driver": "bulb_rgbw",
-      "issues": [
-        "sdk3-await-capability",
-        "sdk3-case-sensitive-fingerprint"
+        "sdk3-await-capability"
       ]
     },
     {
@@ -55,85 +120,7 @@
       "issues": [
         "sdk3-await-capability"
       ]
-    },
-    {
-      "driver": "bulb_tunable_white",
-      "issues": []
-    },
-    {
-      "driver": "bulb_white",
-      "issues": []
-    },
-    {
-      "driver": "button_emergency_sos",
-      "issues": [
-        "sdk3-await-capability",
-        "sdk3-case-sensitive-fingerprint",
-        "tuya-climate-safe-set"
-      ]
-    },
-    {
-      "driver": "button_wireless",
-      "issues": [
-        "sdk3-case-sensitive-fingerprint",
-        "tuya-climate-safe-set"
-      ]
-    },
-    {
-      "driver": "button_wireless_1",
-      "issues": [
-        "sdk3-case-sensitive-fingerprint",
-        "tuya-climate-safe-set"
-      ]
-    },
-    {
-      "driver": "button_wireless_2",
-      "issues": [
-        "sdk3-case-sensitive-fingerprint"
-      ]
-    },
-    {
-      "driver": "button_wireless_3",
-      "issues": [
-        "sdk3-case-sensitive-fingerprint"
-      ]
-    },
-    {
-      "driver": "button_wireless_4",
-      "issues": [
-        "sdk3-case-sensitive-fingerprint",
-        "tuya-climate-safe-set"
-      ]
-    },
-    {
-      "driver": "button_wireless_6",
-      "issues": []
-    },
-    {
-      "driver": "button_wireless_8",
-      "issues": [
-        "sdk3-case-sensitive-fingerprint"
-      ]
-    },
-    {
-      "driver": "button_wireless_smart_hybrid",
-      "issues": [
-        "tuya-climate-safe-set"
-      ]
-    },
-    {
-      "driver": "ceiling_fan",
-      "issues": [
-        "sdk3-mains-has-battery"
-      ]
-    },
-    {
-      "driver": "climate_sensor",
-      "issues": [
-        "sdk3-await-capability",
-        "sdk3-case-sensitive-fingerprint"
-      ]
     }
   ],
-  "memoryPatterns": 13
+  "memoryPatterns": 15
 }
