@@ -1,6 +1,6 @@
 {
-  "ts": "2026-04-05T18:54:51.353Z",
-  "currentCount": 3559,
+  "ts": "2026-04-07T22:56:40.558Z",
+  "currentCount": 3572,
   "src": {
     "johan": {
       "count": 650,
@@ -18883,177 +18883,18 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 53,
+      "issueCount": 51,
       "prCount": 4,
       "deviceRequests": [
         {
           "repo": "dlnraja/com.tuya.zigbee",
-          "num": 195,
-          "title": "[Auto] 2141 new fingerprints from community (2026-04)",
+          "num": 200,
+          "title": "Temperature and Humidity LCD sensor",
           "mfrs": [
-            "_TZE200_s8gkrkxk",
-            "_TZ3000_vd43bbfq",
-            "_TZ3000_1dd0d5yi",
-            "_TZ3000_ke7pzj5d",
-            "_TZ3000_fccpjz5z",
-            "_TZ3000_4uuaja4a",
-            "_TZ3000_zirycpws",
-            "_TZ3000_femsaaua",
-            "_TZ3000_e3vhyirx",
-            "_TZ3000_jwv3cwak",
-            "_TZ3210_dwytrmda",
-            "_TZ3210_ol1uhvza",
-            "_TZ3000_eg7awg6a",
-            "_TZ3000_eafaa66e",
-            "_TZ3000_j1xl73iw",
-            "_TZ3000_l6iqph4f",
-            "_TZE200_5zbp6j0u",
-            "_TZE200_bjzrowv2",
-            "_TZE200_nkoabg8w",
-            "_TZE200_xuzcvlku",
-            "_TZE200_4vobcgd3",
-            "_TZE200_nogaemzt",
-            "_TZE200_r0jdjrvi",
-            "_TZE200_pk0sfzvr",
-            "_TZE200_fdtjuw7u",
-            "_TZE200_zpzndjez",
-            "_TZE200_wmcdj3aq",
-            "_TZE200_cowvfni3",
-            "_TZE200_rddyvrci",
-            "_TZE200_nueqqe6k",
-            "_TZE200_xaabybja",
-            "_TZE200_rmymn92d",
-            "_TZE200_3i3exuay",
-            "_TZE200_zah67ekd",
-            "_TZE200_hsgrhjpf",
-            "_TZE200_68nvbio9",
-            "_TZE200_pw7mji0l",
-            "_TZE200_uj3f4wr5",
-            "_TZE204_1fuxihti",
-            "_TZE200_axgvo9jh",
-            "_TZE200_gaj531w3",
-            "_TZE200_yia0p3tr",
-            "_TZE200_nw1r9hp6",
-            "_TZE200_cf1sl3tj",
-            "_TZE200_9p5xmj5r",
-            "_TZE204_xu4a5rhj",
-            "_TZ3210_invesber",
-            "_TZ3210_zdrhqmo0",
-            "_TZ3210_ngqk6jia",
-            "_TZ3000_ktuoyvt5",
-            "_TZ3210_zxbtub8r",
-            "_TZ3210_weaqkhab",
-            "_TZ3210_k1msuvg6",
-            "_TZ3000_mgusv51k",
-            "_TZ3210_ngqk6jia",
-            "_TZE200_la2c2uo9",
-            "_TZE204_hlx9tnzb",
-            "_TZE200_ip2akl4w",
-            "_TZE200_1agwnems",
-            "_TZE200_579lguh2",
-            "_TZE200_vucankjx",
-            "_TZE200_4mh6tyyo",
-            "_TZE204_n9ctkb6j",
-            "_TZE204_9qhuzgo0",
-            "_TZE204_dcnsggvz",
-            "_TZE204_5cuocqty",
-            "_TZ3000_92chsky7",
-            "_TZ3210_wdexaypg",
-            "_TZ3210_3mpwqzuu",
-            "_TZ3210_pagajpog",
-            "_TZ3210_4ubylghk",
-            "_TZ3000_7ysdnebc",
-            "_TZE200_e3oitdyu",
-            "_TZE204_zenj4lxv",
-            "_TZE204_bxoo2swd",
-            "_TZE200_gwkapsoq",
-            "_TZE200_fjjbhx9d"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 193,
-          "title": "[climate_sensor _TZ3000_xr3htd96 TS0201] Bug:",
-          "mfrs": [
-            "_TZ3000_xr3htd96"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 192,
-          "title": "[Auto] 28 new fingerprints from community (2026-04)",
-          "mfrs": [
-            "_TZ3000_wol32olt",
-            "_TZE284_uo8qcagc",
-            "_TZB210_qzsxaqqe",
-            "_TZE284_tgrzpqf4",
-            "_TZE284_nbv4tdaz",
-            "_TZ3000_dojqjapa",
-            "_TZE204_cduqh1l0",
-            "_TZE284_4vobcgd3",
-            "_TZ3210_zifx0xoj",
-            "_TZ3210_2putqrmw",
-            "_TZ3008_reatplte",
-            "_TZ3000_uyrhiafs",
-            "_TZ3000_t7ugva7q",
-            "_TZ3210_imaccztn",
-            "_TZ3000_icoxotza",
-            "_TZ3210_vbfp8eyv",
-            "_TZE284_bw4ayyeh",
-            "_TZ3210_7vgttna6",
-            "_TZ3210_a04acm9s",
-            "_TZ3210_cm9mbpr1",
-            "_TZE284_mul9abs3",
-            "_TZ3002_vsom92pp",
-            "_TZE284_3regm3h6",
-            "_TZE204_ouy7vpm1",
-            "_TZE284_mvtclclq",
-            "_TZE200_hbnfokum",
-            "_TZE200_w0ap83qu",
-            "_TZE284_4vbj3fxh"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 190,
-          "title": "[Auto] 27 new fingerprints from community (2026-04)",
-          "mfrs": [
-            "_TZ3000_wol32olt",
-            "_TZE284_uo8qcagc",
-            "_TZB210_qzsxaqqe",
-            "_TZE284_tgrzpqf4",
-            "_TZE284_nbv4tdaz",
-            "_TZ3000_dojqjapa",
-            "_TZE204_cduqh1l0",
-            "_TZE284_4vobcgd3",
-            "_TZ3210_zifx0xoj",
-            "_TZ3008_reatplte",
-            "_TZ3000_uyrhiafs",
-            "_TZ3000_t7ugva7q",
-            "_TZ3210_imaccztn",
-            "_TZ3000_icoxotza",
-            "_TZ3210_vbfp8eyv",
-            "_TZE284_bw4ayyeh",
-            "_TZ3210_7vgttna6",
-            "_TZ3210_a04acm9s",
-            "_TZ3210_cm9mbpr1",
-            "_TZE284_mul9abs3",
-            "_TZ3002_vsom92pp",
-            "_TZE284_3regm3h6",
-            "_TZE204_ouy7vpm1",
-            "_TZE284_mvtclclq",
-            "_TZE200_hbnfokum",
-            "_TZE200_w0ap83qu",
-            "_TZE284_4vbj3fxh"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 183,
-          "title": "[Device Request] Climate Sensor Model TS0201 ID _TZ3000_tsgqxdb4",
-          "mfrs": [
-            "_TZ3000_tsgqxdb4",
-            "_TZ3000_tsgqxdb4"
+            "_TZ3210_ncw88jfq",
+            "_TZ3210_ncw88jfq",
+            "_TZ3210_ncw88jfq",
+            "_TZ3210_ncw88jfq"
           ]
         },
         {
@@ -19204,6 +19045,45 @@
             "_TZE284_xnbkhhdr",
             "_TZE284_xnbkhhdr",
             "_TZE284_xnbkhhdr"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1344,
+          "title": "Bug report - [Short description] _TZ3000_bgsigers - TS0201 sensors stopped working",
+          "mfrs": [
+            "_TZ3000_bgsigers"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1343,
+          "title": "Device Request - 10G 4 in 1 human motionsensor  - _TZE200_rhgsbacq / TS0601",
+          "mfrs": [
+            "_TZE200_rhgsbacq",
+            "_TZE200_rhgsbacq",
+            "_TZE200_rhgsbacq"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1341,
+          "title": "Device Request - Tuya Smart Plant sensor - _TZE284_aao3yzhs / TS0601",
+          "mfrs": [
+            "_TZE284_aao3yzhs",
+            "_TZE284_aao3yzhs",
+            "_TZE284_aao3yzhs"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1339,
+          "title": "BSEED 1 button wall switch with neutral. _TZ3000_blhvsaqf TS0001",
+          "mfrs": [
+            "_TZ3000_blhvsaqf",
+            "_TZ3000_blhvsaqf",
+            "_TZ3000_blhvsaqf",
+            "_TZ3000_blhvsaqf"
           ]
         }
       ]
@@ -21377,6 +21257,23 @@
       "hasBattery": true,
       "vendor": null,
       "description": "alarm_contact, alarm_battery",
+      "source": "Johan"
+    },
+    {
+      "mfr": "zbeacon",
+      "productId": [
+        "DS01"
+      ],
+      "driver": "doorwindowsensor_4",
+      "deviceType": "sensor",
+      "capabilities": [
+        "alarm_contact",
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "hasBattery": true,
+      "vendor": null,
+      "description": "alarm_contact, alarm_battery, measure_battery",
       "source": "Johan"
     },
     {
@@ -25210,27 +25107,6 @@
       "source": "Johan"
     },
     {
-      "mfr": "_TZ3000_wzmuk9ai",
-      "productId": [
-        "TS0121",
-        "TSO121",
-        "TS011F"
-      ],
-      "driver": "smartplug",
-      "deviceType": "socket",
-      "capabilities": [
-        "onoff",
-        "measure_power",
-        "meter_power",
-        "measure_current",
-        "measure_voltage"
-      ],
-      "hasBattery": false,
-      "vendor": null,
-      "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-      "source": "Johan"
-    },
-    {
       "mfr": "_TZ3000_jak16dll",
       "productId": [
         "TS011F"
@@ -25524,21 +25400,6 @@
         "TS0115"
       ],
       "driver": "socket_power_strip_four",
-      "deviceType": "socket",
-      "capabilities": [
-        "onoff"
-      ],
-      "hasBattery": false,
-      "vendor": null,
-      "description": "onoff",
-      "source": "Johan"
-    },
-    {
-      "mfr": "LELLKI",
-      "productId": [
-        "JZ-ZB-004"
-      ],
-      "driver": "socket_power_strip_four_three",
       "deviceType": "socket",
       "capabilities": [
         "onoff"
@@ -59219,6 +59080,6 @@
       "driver": null
     }
   ],
-  "newCount": 2141,
+  "newCount": 2140,
   "enrichedCount": 2149
 }

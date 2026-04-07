@@ -2169,6 +2169,23 @@
     "source": "Johan"
   },
   {
+    "mfr": "zbeacon",
+    "productId": [
+      "DS01"
+    ],
+    "driver": "doorwindowsensor_4",
+    "deviceType": "sensor",
+    "capabilities": [
+      "alarm_contact",
+      "alarm_battery",
+      "measure_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "alarm_contact, alarm_battery, measure_battery",
+    "source": "Johan"
+  },
+  {
     "mfr": "_TZ3210_7jnk7l3k",
     "productId": [
       "TS011F"
@@ -5999,27 +6016,6 @@
     "source": "Johan"
   },
   {
-    "mfr": "_TZ3000_wzmuk9ai",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Johan"
-  },
-  {
     "mfr": "_TZ3000_jak16dll",
     "productId": [
       "TS011F"
@@ -6313,21 +6309,6 @@
       "TS0115"
     ],
     "driver": "socket_power_strip_four",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Johan"
-  },
-  {
-    "mfr": "LELLKI",
-    "productId": [
-      "JZ-ZB-004"
-    ],
-    "driver": "socket_power_strip_four_three",
     "deviceType": "socket",
     "capabilities": [
       "onoff"
