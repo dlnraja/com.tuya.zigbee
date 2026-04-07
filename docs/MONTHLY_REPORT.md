@@ -1,37 +1,41 @@
 # Monthly Tuya Zigbee Report - 2026-04
 
-*Generated: 2026-04-05T18:54:51.008Z*
+*Generated: 2026-04-07T22:56:40.097Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
-| Total Drivers | 212 |
-| Manufacturer IDs | 65332 |
-| Collisions | 18 |
+| Total Drivers | 288 |
+| Manufacturer IDs | 139391 |
+| Collisions | 3209 |
 
 ## ⚠️ Collisions Detected
 
 | ID | Drivers |
 |----|--------|
-| `tuyatec-qun7vq14|TS0201` | climate_sensor, temphumidsensor |
-| `tuyatec-qun7vq14|ZG-227Z` | climate_sensor, temphumidsensor |
-| `tuyatec-qun7vq14|CK-TLSR8656-SS5-01(7014)` | climate_sensor, temphumidsensor |
-| `tuyatec-qun7vq14|TY0201` | climate_sensor, temphumidsensor |
-| `tuyatec-qun7vq14|RH3052` | climate_sensor, temphumidsensor |
-| `zbeacon|TS0601` | contact_sensor, sensor_contact_motion_hybrid |
-| `_tze200_rufdtfyv|TS0601` | device_floor_heating_thermostat_hybrid, radiator_valve |
-| `_tze200_p3dbf6qs|TS0601` | device_radiator_valve_smart_hybrid, radiator_valve |
-| `_tze200_rxq4iti9|TS0601` | device_radiator_valve_smart_hybrid, radiator_valve |
-| `_tze200_0hb4rdnp|TS1101` | dimmer_dual_channel, dimmer_wall_1gang |
-| `_tze200_0hb4rdnp|TS0601` | dimmer_dual_channel, dimmer_wall_1gang |
-| `_tze200_4mh6tyyo|TS1101` | dimmer_dual_channel, dimmer_wall_1gang |
-| `_tze200_4mh6tyyo|TS0601` | dimmer_dual_channel, dimmer_wall_1gang |
-| `_tze200_gne0e6mk|TS1101` | dimmer_dual_channel, dimmer_wall_1gang |
-| `_tze200_gne0e6mk|TS0601` | dimmer_dual_channel, dimmer_wall_1gang |
-| `hobeian|TS0203` | presence_sensor_radar, sensor_contact_presence_hybrid |
-| `hobeian|TS0601` | presence_sensor_radar, sensor_contact_presence_hybrid |
-| `_tz3000_pzui3skt|TS004F` | remote_button_wireless_wall_hybrid, smart_knob_rotary |
+| `TUYATEC-1G3TAWNP|RH3052` | air_purifier, climate_sensor |
+| `TUYATEC-1G3TAWNP|TS0201` | air_purifier, climate_sensor |
+| `TUYATEC-1G3TAWNP|TS0222` | air_purifier, climate_sensor |
+| `TUYATEC-1G3TAWNP|TS0601` | air_purifier, climate_sensor |
+| `TUYATEC-1G3TAWNP|TY0201` | air_purifier, climate_sensor |
+| `TUYATEC-1G3TAWNP|rh3052` | air_purifier, climate_sensor |
+| `TUYATEC-1G3TAWNP|ts0201` | air_purifier, climate_sensor |
+| `TUYATEC-1G3TAWNP|ts0222` | air_purifier, climate_sensor |
+| `TUYATEC-1G3TAWNP|ts0601` | air_purifier, climate_sensor |
+| `TUYATEC-1G3TAWNP|ty0201` | air_purifier, climate_sensor |
+| `TUYATEC-1UXX9CCI|RH3052` | air_purifier, climate_sensor |
+| `TUYATEC-1UXX9CCI|TS0201` | air_purifier, climate_sensor |
+| `TUYATEC-1UXX9CCI|TS0222` | air_purifier, climate_sensor |
+| `TUYATEC-1UXX9CCI|TS0601` | air_purifier, climate_sensor |
+| `TUYATEC-1UXX9CCI|TY0201` | air_purifier, climate_sensor |
+| `TUYATEC-1UXX9CCI|rh3052` | air_purifier, climate_sensor |
+| `TUYATEC-1UXX9CCI|ts0201` | air_purifier, climate_sensor |
+| `TUYATEC-1UXX9CCI|ts0222` | air_purifier, climate_sensor |
+| `TUYATEC-1UXX9CCI|ts0601` | air_purifier, climate_sensor |
+| `TUYATEC-1UXX9CCI|ty0201` | air_purifier, climate_sensor |
+
+*...and 3189 more*
 
 ## 📋 Action Items
 
