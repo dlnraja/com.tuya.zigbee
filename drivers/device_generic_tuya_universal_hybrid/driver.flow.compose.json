@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "generic_tuya_measure_temperature_changed_device_generic_tuya_universal_hybrid",
+      "id": "device_generic_tuya_universal_hybrid_generic_tuya_measure_temperature_changed_device_generic_tuya_universal_hybrid",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée"
@@ -24,7 +24,7 @@
       }
     },
     {
-      "id": "generic_tuya_measure_humidity_changed_device_generic_tuya_universal_hybrid",
+      "id": "device_generic_tuya_universal_hybrid_generic_tuya_measure_humidity_changed_device_generic_tuya_universal_hybrid",
       "title": {
         "en": "Humidity changed",
         "fr": "Humidité changée"
@@ -47,7 +47,7 @@
       }
     },
     {
-      "id": "generic_tuya_dp_received_device_generic_tuya_universal_hybrid",
+      "id": "device_generic_tuya_universal_hybrid_generic_tuya_dp_received_device_generic_tuya_universal_hybrid",
       "title": {
         "en": "Data Point received",
         "fr": "Point de données reçu"
@@ -79,7 +79,7 @@
       }
     },
     {
-      "id": "generic_tuya_battery_low_device_generic_tuya_universal_hybrid",
+      "id": "device_generic_tuya_universal_hybrid_generic_tuya_battery_low_device_generic_tuya_universal_hybrid",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -95,7 +95,7 @@
       }
     },
     {
-      "id": "generic_tuya_temp_changed_device_generic_tuya_universal_hybrid",
+      "id": "device_generic_tuya_universal_hybrid_generic_tuya_temp_changed_device_generic_tuya_universal_hybrid",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée",
@@ -111,7 +111,7 @@
       }
     },
     {
-      "id": "generic_tuya_humidity_changed_device_generic_tuya_universal_hybrid",
+      "id": "device_generic_tuya_universal_hybrid_generic_tuya_humidity_changed_device_generic_tuya_universal_hybrid",
       "title": {
         "en": "Humidity changed",
         "fr": "Humidité changée",
@@ -129,7 +129,7 @@
   ],
   "conditions": [
     {
-      "id": "generic_tuya_battery_above_device_generic_tuya_universal_hybrid",
+      "id": "device_generic_tuya_universal_hybrid_generic_tuya_battery_above_device_generic_tuya_universal_hybrid",
       "title": {
         "en": "Battery is above...",
         "fr": "Batterie au-dessus de..."
@@ -155,7 +155,7 @@
   ],
   "actions": [
     {
-      "id": "generic_tuya_request_dp_device_generic_tuya_universal_hybrid",
+      "id": "device_generic_tuya_universal_hybrid_generic_tuya_request_dp_device_generic_tuya_universal_hybrid",
       "title": {
         "en": "Request Data Point",
         "fr": "Demander Point de Données"

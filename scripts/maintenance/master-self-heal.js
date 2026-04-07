@@ -415,6 +415,54 @@ function rule_punycodeDeprecation() {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
+// RULE 11: HYBRID FLOW ID PREFIXING
+// Ensure all flow cards in driver.flow.compose.json start with {driverId}_
+// ═══════════════════════════════════════════════════════════════════════════════
+
+function rule_flowIdPrefixing() {
+  log('\n📋 Rule 11: Hybrid Flow ID Prefixing');
+  const flowFiles = findFiles(DRIVERS_DIR, '.json').filter(f => f.endsWith('driver.flow.compose.json'));
+  let fixes = 0;
+
+  for (const file of flowFiles) {
+    try {
+      const driverId = path.basename(path.dirname(file));
+      const raw = fs.readFileSync(file, 'utf8');
+      const flow = JSON.parse(raw);
+      let changed = false;
+
+      const prefix = `${driverId}_`;
+      const processCategory = (category) => {
+        if (!Array.isArray(flow[category])) return;
+        flow[category].forEach(card => {
+          if (card.id && !card.id.startsWith(prefix)) {
+            const oldId = card.id;
+            card.id = prefix + card.id;
+            changed = true;
+            if (VERBOSE) log(`    [FIX] ${oldId} -> ${card.id}`);
+          }
+        });
+      };
+
+      processCategory('triggers');
+      processCategory('conditions');
+      processCategory('actions');
+
+      if (changed) {
+        safeWrite(file, JSON.stringify(flow, null, 2) + '\n');
+        fixes++;
+        addFix('hybrid-flow-id-prefixing', file, `Prefixed flow cards with ${prefix}`);
+        log(`  ✅ Fixed: ${path.relative(ROOT, file)}`);
+      }
+    } catch (e) {
+      report.errors.push({ rule: 'hybrid-flow-id-prefixing', file, error: e.message });
+    }
+  }
+
+  log(`  → ${fixes} files fixed`);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
 // MAIN ORCHESTRATOR
 // ═══════════════════════════════════════════════════════════════════════════════
 
@@ -438,6 +486,7 @@ async function main() {
   rule_caseInsensitiveMatching();
   rule_duplicateFingerprints();
   rule_punycodeDeprecation();
+  rule_flowIdPrefixing();
 
   // ═══════════════════════════════════════════════════════════════════════════
   // REPORT SUMMARY
@@ -446,7 +495,7 @@ async function main() {
   log('  SELF-HEAL REPORT');
   log('═══════════════════════════════════════════════════════════════════════');
 
-  const autoFixed = ['sdk3-phantom-methods', 'fingerprint-case', 'probe-dedup-static', 'energy-batteries'];
+  const autoFixed = ['sdk3-phantom-methods', 'fingerprint-case', 'probe-dedup-static', 'energy-batteries', 'hybrid-flow-id-prefixing'];
   const manualReview = Object.keys(report.rules).filter(r => !autoFixed.includes(r));
 
   let totalAutoFixes = 0;

@@ -22,7 +22,11 @@ function auditPIDConflicts(drivers){
   const skip=new Set(['universal_fallback','generic_diy','generic_tuya','diy_custom_zigbee']);
   for(const [d,info] of drivers){
     if(skip.has(d))continue;
-    for(const p of info.pids){if(!pidIdx.has(p))pidIdx.set(p,[]);pidIdx.get(p).push(d);}
+    for(const p of info.pids){
+      const norm = typeof p === 'string' ? p.toUpperCase() : p;
+      if(!pidIdx.has(norm))pidIdx.set(norm,[]);
+      if(!pidIdx.get(norm).includes(d)) pidIdx.get(norm).push(d);
+    }
   }
   const conflicts=[];
   for(const [pid,drvs] of pidIdx){

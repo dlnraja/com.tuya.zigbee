@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-06T03:41:28.398Z",
+  "timestamp": "2026-04-07T03:36:12.750Z",
   "added": [
     {
       "fp": "_TZE200_s8gkrkxk",
@@ -575,7 +575,7 @@
     },
     {
       "fp": "TUYATEC-g3gl6cgy",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -583,7 +583,7 @@
     },
     {
       "fp": "TUYATEC-Bfq2i2Sy",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -591,7 +591,7 @@
     },
     {
       "fp": "TUYATEC-abkehqus",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -1022,29 +1022,22 @@
       ]
     },
     {
-      "fp": "zbeacon",
-      "driver": "contact_sensor",
-      "pids": [
-        "DS01"
-      ]
-    },
-    {
       "fp": "_TZ3210_7jnk7l3k",
-      "driver": "plug_energy_monitor",
+      "driver": "button_wireless_2",
       "pids": [
         "TS011F"
       ]
     },
     {
       "fp": "_TYZB01_hlla45kx",
-      "driver": "plug_energy_monitor",
+      "driver": "button_wireless_2",
       "pids": [
         "TS011F"
       ]
     },
     {
       "fp": "_TZ3210_j4pdtz9v",
-      "driver": "fingerbot",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0001",
         "TS0001_fingerbot"
@@ -1052,7 +1045,7 @@
     },
     {
       "fp": "_TZ3210_dse8ogfy",
-      "driver": "fingerbot",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0001",
         "TS0001_fingerbot"
@@ -1060,7 +1053,7 @@
     },
     {
       "fp": "_TZ3210_232nryqh",
-      "driver": "fingerbot",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0001",
         "TS0001_fingerbot"
@@ -1068,7 +1061,7 @@
     },
     {
       "fp": "_TZ3210_okbss9dy",
-      "driver": "fingerbot",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0001",
         "TS0001_fingerbot"
@@ -1123,7 +1116,7 @@
     },
     {
       "fp": "_TZ3000_qaaysllp",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "TS0201",
         "TS0222"
@@ -1131,7 +1124,7 @@
     },
     {
       "fp": "_TYZB01_ftdkanlj",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "TS0201",
         "TS0222"
@@ -1139,7 +1132,7 @@
     },
     {
       "fp": "_TYZB01_kvwjujy9",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "TS0201",
         "TS0222"
@@ -1147,7 +1140,7 @@
     },
     {
       "fp": "_TZ3210_huzkzqyk",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "TS0201",
         "TS0222"
@@ -1155,7 +1148,7 @@
     },
     {
       "fp": "_TZ2000_a476raq2",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "TS0201",
         "TY0201"
@@ -1163,7 +1156,7 @@
     },
     {
       "fp": "_TZ2000_xogb73am",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "TS0201",
         "TY0201"
@@ -1171,7 +1164,7 @@
     },
     {
       "fp": "_TZ2000_avdnvykf",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "TS0201",
         "TY0201"
@@ -1179,7 +1172,7 @@
     },
     {
       "fp": "_TZ2000_hjsgdkfl",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "TS0201",
         "TY0201"
@@ -1187,7 +1180,7 @@
     },
     {
       "fp": "_TYZB01_a476raq2",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "TS0201",
         "TY0201"
@@ -1195,7 +1188,7 @@
     },
     {
       "fp": "_TYZB01_hjsgdkfl",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "TS0201",
         "TY0201"
@@ -1203,7 +1196,7 @@
     },
     {
       "fp": "_TYZB01_iuepbmpv",
-      "driver": "plug_energy_monitor",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0121",
         "TSO121",
@@ -1212,7 +1205,7 @@
     },
     {
       "fp": "_TZ3000_rusu2vzb",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "TS0201",
         "TY0201"
@@ -1220,7 +1213,7 @@
     },
     {
       "fp": "_TZ3000_yd2e749y",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "TS0201",
         "TY0201"
@@ -1228,7 +1221,7 @@
     },
     {
       "fp": "_TZ3000_ywagc4rj",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "TS0201",
         "TY0201"
@@ -1236,7 +1229,7 @@
     },
     {
       "fp": "_TZ3000_itnrsufe",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "TS0201",
         "TY0201"
@@ -1244,7 +1237,7 @@
     },
     {
       "fp": "_TZ3000_bjawzodf",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "TS0201",
         "TY0201"
@@ -1252,7 +1245,7 @@
     },
     {
       "fp": "_TZ3210_ncw88jfq",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "TS0201",
         "TY0201"
@@ -1358,7 +1351,7 @@
     },
     {
       "fp": "_TZ3000_uwkja6z1",
-      "driver": "plug_energy_monitor",
+      "driver": "button_wireless_2",
       "pids": [
         "TS011F"
       ]
@@ -1561,21 +1554,21 @@
     },
     {
       "fp": "_TZ3000_kdi2o9m6",
-      "driver": "plug_energy_monitor",
+      "driver": "button_wireless_2",
       "pids": [
         "TS011F"
       ]
     },
     {
       "fp": "_TZ3000_ew31dmgx",
-      "driver": "plug_energy_monitor",
+      "driver": "button_wireless_2",
       "pids": [
         "TS011F"
       ]
     },
     {
       "fp": "_TZ3000_dpo1ysak",
-      "driver": "plug_energy_monitor",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0121",
         "TSO121",
@@ -1584,35 +1577,35 @@
     },
     {
       "fp": "_TZ3000_plyvnuf5",
-      "driver": "plug_energy_monitor",
+      "driver": "button_wireless_2",
       "pids": [
         "TS011F"
       ]
     },
     {
       "fp": "_TZ3000_hyfvrar3",
-      "driver": "plug_energy_monitor",
+      "driver": "button_wireless_2",
       "pids": [
         "TS011F"
       ]
     },
     {
       "fp": "_TZ3000_cymsnfvf",
-      "driver": "plug_energy_monitor",
+      "driver": "button_wireless_2",
       "pids": [
         "TS011F"
       ]
     },
     {
       "fp": "_TZ3000_upjrsxh1",
-      "driver": "plug_energy_monitor",
+      "driver": "button_wireless_2",
       "pids": [
         "TS011F"
       ]
     },
     {
       "fp": "_TZ3000_wamqdr3f",
-      "driver": "plug_energy_monitor",
+      "driver": "button_wireless_2",
       "pids": [
         "TS011F"
       ]
@@ -1759,7 +1752,7 @@
     },
     {
       "fp": "_TZ3000_g8n1n7lg",
-      "driver": "fingerbot",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0001"
       ]
@@ -2063,7 +2056,7 @@
     },
     {
       "fp": "_TZ3000_qeuvnohg",
-      "driver": "plug_energy_monitor",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0121",
         "TSO121",
@@ -2301,7 +2294,7 @@
     },
     {
       "fp": "_TYZB01_phjeraqq",
-      "driver": "fingerbot",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0001"
       ]
@@ -3287,7 +3280,7 @@
     },
     {
       "fp": "TUYATEC-yg5dcbfu",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -3295,7 +3288,7 @@
     },
     {
       "fp": "TUYATEC-prhs1rsd",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -3303,7 +3296,7 @@
     },
     {
       "fp": "TUYATEC-gqhxixyk",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -3311,7 +3304,7 @@
     },
     {
       "fp": "TUYATEC-vmgh3fxd",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -3319,7 +3312,7 @@
     },
     {
       "fp": "TUYATEC-ojmxeikg",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -3327,7 +3320,7 @@
     },
     {
       "fp": "TUYATEC-ojmxeikq",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -3335,7 +3328,7 @@
     },
     {
       "fp": "TUYATEC-1g3tawnp",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -3343,7 +3336,7 @@
     },
     {
       "fp": "_TZ3000_i8jfiezr",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -3351,7 +3344,7 @@
     },
     {
       "fp": "TUYATEC-v3uxbuxy",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -3359,7 +3352,7 @@
     },
     {
       "fp": "_TZ3000_bguser20",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -3367,7 +3360,7 @@
     },
     {
       "fp": "_TZ3000_8ybe88nf",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -3375,7 +3368,7 @@
     },
     {
       "fp": "_TZ3000_fie1dpkm",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -3383,7 +3376,7 @@
     },
     {
       "fp": "TUYATEC-riuj5xzs",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -3391,7 +3384,7 @@
     },
     {
       "fp": "TUYATEC-1uxx9cci",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -3399,7 +3392,7 @@
     },
     {
       "fp": "_TZ3000_f2bw0b6k",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -3407,7 +3400,7 @@
     },
     {
       "fp": "TUYATEC-HaoiuWzy",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -3415,7 +3408,7 @@
     },
     {
       "fp": "_TZ3000_dowj6gyi",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -3423,7 +3416,7 @@
     },
     {
       "fp": "_TZ3000_0s1izerx",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -3431,7 +3424,7 @@
     },
     {
       "fp": "TUYATEC-qun7vq14",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -3439,7 +3432,7 @@
     },
     {
       "fp": "_TZ3000_akqdg6g7",
-      "driver": "climate_sensor",
+      "driver": "air_purifier",
       "pids": [
         "RH3052",
         "TS0201"
@@ -4044,56 +4037,56 @@
     },
     {
       "fp": "_TZ3000_a7ouggvs",
-      "driver": "button_wireless_3",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0043"
       ]
     },
     {
       "fp": "_TYZB02_key8kk7r",
-      "driver": "button_wireless_3",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0043"
       ]
     },
     {
       "fp": "_TZ3000_qzjcsmar",
-      "driver": "button_wireless_3",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0043"
       ]
     },
     {
       "fp": "_TZ3000_rrjr1q0u",
-      "driver": "button_wireless_3",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0043"
       ]
     },
     {
       "fp": "_TZ3000_w8jwkczz",
-      "driver": "button_wireless_3",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0043"
       ]
     },
     {
       "fp": "_TZ3000_gbm10jnj",
-      "driver": "button_wireless_3",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0043"
       ]
     },
     {
       "fp": "_TZ3000_yw5tvzsk",
-      "driver": "button_wireless_3",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0043"
       ]
     },
     {
       "fp": "_TZ3000_sj7jbgks",
-      "driver": "button_wireless_3",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0043"
       ]
@@ -5437,9 +5430,9 @@
   },
   "summary": {
     "totalJohanFPs": 636,
-    "totalOurFPs": 3568,
-    "missingFPs": 636,
-    "addedFPs": 636,
+    "totalOurFPs": 3570,
+    "missingFPs": 635,
+    "addedFPs": 635,
     "skippedFPs": 0,
     "dpGaps": 0,
     "newDrivers": 89,
