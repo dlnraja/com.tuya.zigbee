@@ -30,6 +30,26 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
+## 🚀 Latest Updates
+
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### ✨ Recent Changes (Apr 2026)
+
+| Version | Feature |
+|---------|---------|
+| **v7.0.9** | v7.0.8: Fixed issues with device recognition for existing drivers., Added 3 n... |
+| **v7.0.8** | Universal Tuya Zigbee app v7.0.8 adds 3 new fingerprints and 221 drivers for ... |
+| **v7.0.7** | Updated WiFi pairing UI with a streamlined 5-tab Auto-Link flow and added mDN... |
+| **v7.0.6** | Updated WiFi device pairing with a new 5-tab Auto-Link interface for easier s... |
+| **v7.0.5** | Fixed incorrect sensor and energy readings on WiFi Tuya devices by adding aut... |
+| **v7.0.4** | Universal Tuya Zigbee app v7.0.4 adds 3 new fingerprints and improves driver ... |
+| **v7.0.3** | Universal Tuya Zigbee app v7.0.3 adds new device support and fixes bugs affec... |
+| **v7.0.2** | Fixed SDK v3 flow card crashes, resolved duplicate flow IDs, and patched unli... |
+| **v7.0.1** | Fixed flow card crashes and device ID errors, resolved unlinked sub-gang cont... |
+| **v7.0.0** | Fixed flow trigger errors, TS0003 gang linking, and energy metering. Added TS... |
+<!-- CHANGELOG_END -->
+
+
 ## Statistics
 
 | Metric | Value |
