@@ -1,41 +1,41 @@
 # Monthly Tuya Zigbee Report - 2026-04
 
-*Generated: 2026-04-08T03:48:54.999Z*
+*Generated: 2026-04-08T04:47:15.026Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
-| Total Drivers | 288 |
-| Manufacturer IDs | 139391 |
-| Collisions | 3209 |
+| Total Drivers | 304 |
+| Manufacturer IDs | 227953 |
+| Collisions | 54 |
 
 ## ⚠️ Collisions Detected
 
 | ID | Drivers |
 |----|--------|
-| `TUYATEC-1G3TAWNP|RH3052` | air_purifier, climate_sensor |
-| `TUYATEC-1G3TAWNP|TS0201` | air_purifier, climate_sensor |
-| `TUYATEC-1G3TAWNP|TS0222` | air_purifier, climate_sensor |
-| `TUYATEC-1G3TAWNP|TS0601` | air_purifier, climate_sensor |
-| `TUYATEC-1G3TAWNP|TY0201` | air_purifier, climate_sensor |
-| `TUYATEC-1G3TAWNP|rh3052` | air_purifier, climate_sensor |
-| `TUYATEC-1G3TAWNP|ts0201` | air_purifier, climate_sensor |
-| `TUYATEC-1G3TAWNP|ts0222` | air_purifier, climate_sensor |
-| `TUYATEC-1G3TAWNP|ts0601` | air_purifier, climate_sensor |
-| `TUYATEC-1G3TAWNP|ty0201` | air_purifier, climate_sensor |
-| `TUYATEC-1UXX9CCI|RH3052` | air_purifier, climate_sensor |
-| `TUYATEC-1UXX9CCI|TS0201` | air_purifier, climate_sensor |
-| `TUYATEC-1UXX9CCI|TS0222` | air_purifier, climate_sensor |
-| `TUYATEC-1UXX9CCI|TS0601` | air_purifier, climate_sensor |
-| `TUYATEC-1UXX9CCI|TY0201` | air_purifier, climate_sensor |
-| `TUYATEC-1UXX9CCI|rh3052` | air_purifier, climate_sensor |
-| `TUYATEC-1UXX9CCI|ts0201` | air_purifier, climate_sensor |
-| `TUYATEC-1UXX9CCI|ts0222` | air_purifier, climate_sensor |
-| `TUYATEC-1UXX9CCI|ts0601` | air_purifier, climate_sensor |
-| `TUYATEC-1UXX9CCI|ty0201` | air_purifier, climate_sensor |
+| `_TZ3400_KEYJHAPK|SNZB-01` | button_wireless, remote_button_wireless_hybrid |
+| `_TZ3400_KEYJHAPK|SNZB-01M` | button_wireless, remote_button_wireless_hybrid |
+| `_TZ3400_KEYJHAPK|SNZB-01P` | button_wireless, remote_button_wireless_hybrid |
+| `_TZ3400_KEYJHAPK|snzb-01` | button_wireless, remote_button_wireless_hybrid |
+| `_TZ3400_KEYJHAPK|snzb-01m` | button_wireless, remote_button_wireless_hybrid |
+| `_TZ3400_KEYJHAPK|snzb-01p` | button_wireless, remote_button_wireless_hybrid |
+| `_tz3400_keyjhapk|SNZB-01` | button_wireless, remote_button_wireless_hybrid |
+| `_tz3400_keyjhapk|SNZB-01M` | button_wireless, remote_button_wireless_hybrid |
+| `_tz3400_keyjhapk|SNZB-01P` | button_wireless, remote_button_wireless_hybrid |
+| `_tz3400_keyjhapk|snzb-01` | button_wireless, remote_button_wireless_hybrid |
+| `_tz3400_keyjhapk|snzb-01m` | button_wireless, remote_button_wireless_hybrid |
+| `_tz3400_keyjhapk|snzb-01p` | button_wireless, remote_button_wireless_hybrid |
+| `_TZ3000_PLYVNUF5|TS011F` | button_wireless_plug_hybrid, device_plug_energy_hybrid |
+| `_TZ3000_PLYVNUF5|ts011f` | button_wireless_plug_hybrid, device_plug_energy_hybrid |
+| `_TZ3210_7JNK7L3K|TS011F` | button_wireless_plug_hybrid, device_plug_energy_hybrid |
+| `_TZ3210_7JNK7L3K|ts011f` | button_wireless_plug_hybrid, device_plug_energy_hybrid |
+| `_tz3000_plyvnuf5|TS011F` | button_wireless_plug_hybrid, device_plug_energy_hybrid |
+| `_tz3000_plyvnuf5|ts011f` | button_wireless_plug_hybrid, device_plug_energy_hybrid |
+| `_tz3210_7jnk7l3k|TS011F` | button_wireless_plug_hybrid, device_plug_energy_hybrid |
+| `_tz3210_7jnk7l3k|ts011f` | button_wireless_plug_hybrid, device_plug_energy_hybrid |
 
-*...and 3189 more*
+*...and 34 more*
 
 ## 📋 Action Items
 
