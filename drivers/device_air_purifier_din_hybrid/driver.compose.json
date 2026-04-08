@@ -110,12 +110,12 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_SHKXSGIS"
+      "_TZE200_SHKXSGIS",
+      "_TZE200_AQNAZJ70",
+      "_tze200_shkxsgis",
+      "_tze200_aqnazj70"
     ],
-    "productId": [
-      "TS0601",
-      "ts0601"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

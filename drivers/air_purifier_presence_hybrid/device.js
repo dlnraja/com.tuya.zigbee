@@ -2394,11 +2394,11 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
             if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
               const battery = Math.min(100, Math.round(attrs.batteryPercentageRemaining / 2));
               this.log(`[RADAR] 🔋 Battery read: ${attrs.batteryPercentageRemaining} -> ${battery}%`);
-              this.setCapabilityValue('measure_battery', battery).catch(() => {});
+              this._safeSetCapability('measure_battery', battery).catch(() => {});
             } else if (attrs?.batteryVoltage && !this.getCapabilityValue('measure_battery')) {
               const battery = Math.min(100, Math.max(0, Math.round((attrs.batteryVoltage - 20) * 10)));
               this.log(`[RADAR] 🔋 Battery voltage: ${attrs.batteryVoltage / 10}V -> ${battery}%`);
-              this.setCapabilityValue('measure_battery', battery).catch(() => {});
+              this._safeSetCapability('measure_battery', battery).catch(() => {});
             }
           }
           // Also try Tuya dataQuery to get all DPs including DP110
@@ -2671,7 +2671,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       if (t <= -40 || t >= 100) return;
       if (!self.hasCapability('measure_temperature'))
         await self.addCapability('measure_temperature').catch(() => {});
-      self.setCapabilityValue('measure_temperature', t).catch(() => {});
+      self._safeSetCapability('measure_temperature', t).catch(() => {});
     });
 
     listen(ep1.clusters?.msRelativeHumidity, 'attr.measuredValue', async (v) => {
@@ -2680,14 +2680,14 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       if (h < 0 || h > 100) return;
       if (!self.hasCapability('measure_humidity'))
         await self.addCapability('measure_humidity').catch(() => {});
-      self.setCapabilityValue('measure_humidity', h).catch(() => {});
+      self._safeSetCapability('measure_humidity', h).catch(() => {});
     });
 
     listen(ep1.clusters?.msIlluminanceMeasurement, 'attr.measuredValue', async (v) => {
       const lux = parseFloat(Math.round(Math.pow(10, (v - 1) / 10000)));
       if (!self.hasCapability('measure_luminance'))
         await self.addCapability('measure_luminance').catch(() => {});
-      self.setCapabilityValue('measure_luminance', lux).catch(() => {});
+      self._safeSetCapability('measure_luminance', lux).catch(() => {});
     });
 
     // v5.11.3: Add throttle to prevent duplicate unthrottled battery updates
@@ -2707,7 +2707,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       lastPermBattValue = b;
       if (!self.hasCapability('measure_battery'))
         await self.addCapability('measure_battery').catch(() => {});
-      self.setCapabilityValue('measure_battery', b).catch(() => {});
+      self._safeSetCapability('measure_battery', b).catch(() => {});
     });
   }
 
@@ -2963,7 +2963,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         this.log(`[RADAR-LUX] ☀️ DP${dpId} → ${finalLux} lux`);
       }
       
-      this.setCapabilityValue('measure_luminance', parseFloat(finalLux)).catch(() => { });
+      this._safeSetCapability('measure_luminance', parseFloat(finalLux)).catch(() => { });
 
       // v5.5.315: Feed lux to intelligent inference engine
       if (dpMap[dpId].feedInference) {
@@ -2980,7 +2980,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       const temp = Math.round((rawTemp / divisor) * 10) / 10;
       if (temp >= -40 && temp <= 80) {
         this.log(`[RADAR] 🌡️ DP${dpId} → temperature = ${temp}°C (raw: ${rawTemp}, ÷${divisor})`);
-        this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+        this._safeSetCapability('measure_temperature', temp).catch(() => { });
       } else {
         this.log(`[RADAR] ⚠️ DP${dpId} temperature out of range: ${temp}°C (raw: ${rawTemp})`);
       }
@@ -3000,7 +3000,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       }
       if (humidity >= 0 && humidity <= 100) {
         this.log(`[RADAR] 💧 DP${dpId} → humidity = ${humidity}% (raw: ${rawHumid}, ÷${divisor}, ×${multiplier})`);
-        this.setCapabilityValue('measure_humidity', humidity).catch(() => { });
+        this._safeSetCapability('measure_humidity', humidity).catch(() => { });
       } else {
         this.log(`[RADAR] ⚠️ DP${dpId} humidity out of range: ${humidity}% (raw: ${rawHumid})`);
       }
@@ -3024,7 +3024,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
         // Only update if: significant change (>5%) OR enough time passed OR first report
         if (batteryChange >= 5 || (now - lastBatteryUpdate) > throttleMs || lastBatteryUpdate === 0) {
           this.log(`[RADAR] 🔋 DP${dpId} → battery = ${battery}% (change: ${batteryChange}%)`);
-          this.setCapabilityValue('measure_battery', battery).catch(() => { });
+          this._safeSetCapability('measure_battery', battery).catch(() => { });
           this._lastBatteryUpdate = now;
         } else {
           // Suppress spam - don't log to reduce noise
@@ -3418,7 +3418,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
           lastZclBatteryUpdate = now;
           lastZclBatteryValue = battery;
           this.log(`[RADAR] 🔋 ZCL Battery: ${v} -> ${battery}%`);
-          this.setCapabilityValue('measure_battery', battery).catch(() => { });
+          this._safeSetCapability('measure_battery', battery).catch(() => { });
         });
         powerCluster.on('attr.batteryVoltage', (v) => {
           // Backup: calculate from voltage if percentage not available
@@ -3426,7 +3426,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
           if (v && !this.getCapabilityValue('measure_battery')) {
             const battery = Math.min(100, Math.max(0, Math.round((v - 20) * 10)));
             this.log(`[RADAR] 🔋 ZCL Battery voltage: ${v / 10}V -> ${battery}%`);
-            this.setCapabilityValue('measure_battery', battery).catch(() => { });
+            this._safeSetCapability('measure_battery', battery).catch(() => { });
           }
         });
         this.log('[RADAR] ✅ PowerConfiguration cluster configured (5min throttle + 5% minChange)');
@@ -3476,7 +3476,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
           this._luxLastUpdateSource.zcl = now;
           lastLuxUpdate = now;
           lastLuxValue = roundedLux;
-          this.setCapabilityValue('measure_luminance', roundedLux).catch(() => { });
+          this._safeSetCapability('measure_luminance', roundedLux).catch(() => { });
         });
         this.log('[RADAR] ✅ Illuminance cluster configured (30s throttle + 15% minChange)');
       }
@@ -3492,7 +3492,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
           const temp = v / 100;
           if (temp > -40 && temp < 100) { // Sanity check
             this.log(`[RADAR] 🌡️ ZCL Temperature: ${v} -> ${temp}°C`);
-            this.setCapabilityValue('measure_temperature', temp).catch(() => { });
+            this._safeSetCapability('measure_temperature', temp).catch(() => { });
           }
         });
         this.log('[RADAR] ✅ Temperature cluster (0x0402) configured - ZG-204ZV fix');
@@ -3508,7 +3508,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
           const humidity = v / 100;
           if (humidity >= 0 && humidity <= 100) { // Sanity check
             this.log(`[RADAR] 💧 ZCL Humidity: ${v} -> ${humidity}%`);
-            this.setCapabilityValue('measure_humidity', humidity).catch(() => { });
+            this._safeSetCapability('measure_humidity', humidity).catch(() => { });
           }
         });
         this.log('[RADAR] ✅ Humidity cluster (0x0405) configured - ZG-204ZV fix');

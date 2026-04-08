@@ -1,0 +1,133 @@
+{
+  "name": {
+    "en": "Device Air Purifier Hybrid",
+    "nl": "Device Air Purifier Hybrid",
+    "fr": "Device Air Purifier Hybrid"
+  },
+  "class": "thermostat",
+  "capabilities": [
+    "target_temperature",
+    "measure_temperature",
+    "thermostat_mode",
+    "measure_battery",
+    "onoff",
+    "measure_humidity",
+    "dim",
+    "measure_pm25"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_1IBPYHDC",
+      "_TZE200_QQ9MPFHW",
+      "_TZE200_R731ZLXK",
+      "_TZE200_S8GKRKXK",
+      "_TZE200_2EKUZ3DZ",
+      "_TZE200_AOCLFNXZ",
+      "_TZE204_AOCLFNXZ",
+      "_TZE200_7YORANX2",
+      "_TZE200_9MAHTQTG",
+      "_TZE200_BQ5C8XFE",
+      "_TZE200_E9BA97VF",
+      "_TZE200_HUE3YFSN",
+      "_TZE200_HUSQQVUX",
+      "_TZE200_KDS0PMMV",
+      "_TZE200_LLLLIZ3P",
+      "_TZE200_LNBFNYXD",
+      "_TZE200_MUDXCHSU",
+      "_TZE200_PY4CM3HE",
+      "_TZE200_SUR6Q7KO",
+      "_TZE200_8YGSUHE1",
+      "_TZE200_C2FMOM5Z",
+      "_TZE200_RYFMQ5RL",
+      "_TZE200_YVX5LH6K",
+      "_TZE200_KLY8GJLZ",
+      "_TZE200_M9SKFCTM",
+      "_TZE200_RCCXOX8P",
+      "_TZE200_MJA3FUJA",
+      "_TZE200_NTCY3XU1",
+      "_TZE200_T5P1VJ8R",
+      "_TZE200_UEBOJRAA",
+      "_TZE200_VZEKYI4C",
+      "_TZE200_YH7AOAHI",
+      "_TZE204_NTCY3XU1",
+      "_TZE200_OJZHK75B",
+      "_TZE200_SHKXSGIS",
+      "_TZE204_T1BLO2BJ",
+      "_tze200_1ibpyhdc",
+      "_tze200_qq9mpfhw",
+      "_tze200_r731zlxk",
+      "_tze200_s8gkrkxk",
+      "_tze200_2ekuz3dz",
+      "_tze200_aoclfnxz",
+      "_tze204_aoclfnxz",
+      "_tze200_7yoranx2",
+      "_tze200_9mahtqtg",
+      "_tze200_bq5c8xfe",
+      "_tze200_e9ba97vf",
+      "_tze200_hue3yfsn",
+      "_tze200_husqqvux",
+      "_tze200_kds0pmmv",
+      "_tze200_lllliz3p",
+      "_tze200_lnbfnyxd",
+      "_tze200_mudxchsu",
+      "_tze200_py4cm3he",
+      "_tze200_sur6q7ko",
+      "_tze200_8ygsuhe1",
+      "_tze200_c2fmom5z",
+      "_tze200_ryfmq5rl",
+      "_tze200_yvx5lh6k",
+      "_tze200_kly8gjlz",
+      "_tze200_m9skfctm",
+      "_tze200_rccxox8p",
+      "_tze200_mja3fuja",
+      "_tze200_ntcy3xu1",
+      "_tze200_t5p1vj8r",
+      "_tze200_uebojraa",
+      "_tze200_vzekyi4c",
+      "_tze200_yh7aoahi",
+      "_tze204_ntcy3xu1",
+      "_tze200_ojzhk75b",
+      "_tze200_shkxsgis",
+      "_tze204_t1blo2bj"
+    ],
+    "productId": [
+      "TS0601",
+      "ts0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "large": "drivers/thermostat_tuya_dp/assets/images/large.png",
+    "small": "drivers/thermostat_tuya_dp/assets/images/small.png",
+    "xlarge": "drivers/thermostat_tuya_dp/assets/images/xlarge.png"
+  },
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ],
+    "mains": true
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

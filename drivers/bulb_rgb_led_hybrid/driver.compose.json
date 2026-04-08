@@ -26,14 +26,7 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_5BSF8VAJ",
-      "_TZ3000_DL4PXP1R",
-      "_TZ3000_I8L0NQDU",
-      "_TZ3000_QQJAZIWS",
-      "_TZ3000_UKUVYHAA",
-      "_TZ3000_UTAGPNZS"
-    ],
+    "manufacturerName": [],
     "endpoints": {
       "1": {
         "clusters": [

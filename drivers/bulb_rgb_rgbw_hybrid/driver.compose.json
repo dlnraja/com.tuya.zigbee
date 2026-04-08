@@ -27,7 +27,8 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_GEK6SNAJ"
+      "_TZ3000_GEK6SNAJ",
+      "_tz3000_gek6snaj"
     ],
     "endpoints": {
       "1": {
@@ -49,10 +50,7 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     },
-    "productId": [
-      "TS0505B",
-      "ts0505b"
-    ]
+    "productId": []
   },
   "settings": [
     {

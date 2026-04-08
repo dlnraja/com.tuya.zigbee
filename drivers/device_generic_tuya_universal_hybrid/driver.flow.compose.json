@@ -125,6 +125,16 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       }
+    },
+    {
+      "id": "generic_tuya_X_changed",
+      "title": {
+        "en": "Dynamic card generic_tuya_X_changed"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Dynamic card generic_tuya_X_changed"
+      }
     }
   ],
   "conditions": [

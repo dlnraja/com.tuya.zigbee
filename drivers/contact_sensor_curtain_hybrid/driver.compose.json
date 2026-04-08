@@ -54,12 +54,10 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_WPTAYAQR"
+      "_TZ3000_WPTAYAQR",
+      "_tz3000_wptayaqr"
     ],
-    "productId": [
-      "TS0601",
-      "ts0601"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

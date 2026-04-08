@@ -11,16 +11,7 @@
     "button.identify"
   ],
   "zigbee": {
-    "productId": [
-      "S26R2ZB",
-      "TS0101",
-      "TS011F",
-      "TS0601",
-      "s26r2zb",
-      "ts0101",
-      "ts011f",
-      "ts0601"
-    ],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/switch_1gang/assets/learnmode.svg",
       "instruction": {
@@ -28,7 +19,8 @@
       }
     },
     "manufacturerName": [
-      "_TZ3000_PNZFDR9Y"
+      "_TZ3000_PNZFDR9Y",
+      "_tz3000_pnzfdr9y"
     ],
     "endpoints": {
       "1": {

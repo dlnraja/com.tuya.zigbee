@@ -175,6 +175,16 @@
         "nl": "Lichtsterkte gewijzigd",
         "de": "Helligkeit geändert"
       }
+    },
+    {
+      "id": "button_pressed",
+      "title": {
+        "en": "button pressed"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "button pressed"
+      }
     }
   ],
   "actions": [
