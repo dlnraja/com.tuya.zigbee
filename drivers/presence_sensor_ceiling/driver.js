@@ -22,7 +22,7 @@ class CeilingPresenceSensorDriver extends ZigBeeDriver {
 
     // v5.13.3: Register flow card action handlers
     const reg = (id, fn) => {
-      try { (() => { try { return this.homey.flow.getDeviceActionCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().registerRunListener(fn); }
+      try { (() => { try { return this.homey.flow.getActionCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().registerRunListener(fn); }
       catch (e) { this.log('[Flow]', id, e.message); }
     };
     reg('presence_sensor_ceiling_turn_on', async ({ device }) => { await device.triggerCapabilityListener('onoff', true); return true; });
@@ -31,7 +31,7 @@ class CeilingPresenceSensorDriver extends ZigBeeDriver {
 
     // Condition cards
     const cond = (id, fn) => {
-      try { (() => { try { return this.homey.flow.getDeviceConditionCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().registerRunListener(fn); }
+      try { (() => { try { return this.homey.flow.getConditionCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().registerRunListener(fn); }
       catch (e) { this.log('[Flow]', id, e.message); }
     };
     cond('presence_sensor_ceiling_is_on', async ({ device }) => device.getCapabilityValue('onoff') === true);

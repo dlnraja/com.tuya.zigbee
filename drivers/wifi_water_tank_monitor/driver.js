@@ -20,8 +20,8 @@ class WiFiWaterTankMonitorDriver extends TuyaLocalDriver {
     this.log('[WIFI-TANK-DRV] Wi-Fi Liquid Level Sensor driver initialized');
 
     const safeGetTrigger = (id) => {
-      try { return (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getDeviceTriggerCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); }
-      catch (e) { this.log(`[FLOW] Trigger '${id}' not defined`); return null; }
+      try { return this.homey.flow.getTriggerCard(id); }
+      catch (e) { this.error(`[FLOW-SAFE] Failed to load trigger ${id}:`, e.message); return null; }
     };
 
     this.stateChangedTrigger = safeGetTrigger('wifi_water_tank_monitor_state_changed');
@@ -31,24 +31,28 @@ class WiFiWaterTankMonitorDriver extends TuyaLocalDriver {
 
     // Condition: fill level above threshold
     try {
-      (() => { try { return this.homey.flow.getDeviceConditionCard('wifi_water_tank_monitor_level_above'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = (() => { try { return this.homey.flow.getConditionCard('wifi_water_tank_monitor_level_above'); } catch(e) { return null; } })();
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const pct = args.device.getCapabilityValue('measure_water_percentage') || 0;
           return pct > (args.level || 20);
         });
+      }
     } catch (err) { this.log(`[FLOW] level_above: ${err.message}`); }
 
     // Condition: liquid state is
     try {
-      (() => { try { return this.homey.flow.getDeviceConditionCard('wifi_water_tank_monitor_state_is'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = (() => { try { return this.homey.flow.getConditionCard('wifi_water_tank_monitor_state_is'); } catch(e) { return null; } })();
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const LIQUID_STATE = { 0: 'normal', 1: 'low', 2: 'high' };
           let curr = 'normal';
           try { curr = LIQUID_STATE[args.device.getSetting('discovered_dps') ? JSON.parse(args.device.getSetting('discovered_dps'))['1'] : 0] || 'normal'; } catch(e){}
           return curr === args.state;
         });
+      }
     } catch (err) { this.log(`[FLOW] state_is: ${err.message}`); }
 
   }

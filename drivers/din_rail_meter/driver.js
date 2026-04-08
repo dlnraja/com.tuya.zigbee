@@ -19,7 +19,7 @@ class DinRailMeterDriver extends Driver {
   async onInit() {
     this.log('Din Rail Meter driver initialized');
     try {
-      const actionCard = (() => { try { return this.homey.flow.getDeviceActionCard('din_rail_meter_reset_meter'); } catch(e) { return null; } })();
+      const actionCard = (() => { try { return this.homey.flow.getActionCard('din_rail_meter_reset_meter'); } catch(e) { return null; } })();
       if (actionCard) {
         actionCard.registerRunListener(async (args, state) => {
           if (args.device && typeof args.device.resetMeter === 'function') {

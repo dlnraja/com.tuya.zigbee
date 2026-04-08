@@ -73,11 +73,18 @@ function healHybrids() {
                     || (dfj.conditions?.find(c => c.id === refId));
           
           if (match) {
-            console.log(`  [SYNC] ${hybrid}: Copying card ${refId} from ${d}`);
             const category = dfj.triggers?.find(t => t.id === refId) ? 'triggers' : (dfj.actions?.find(a => a.id === refId) ? 'actions' : 'conditions');
+            
+            // v7.0.15: Prefix the card ID with the hybrid driver name to avoid global collisions (Issue #170)
+            const newCard = JSON.parse(JSON.stringify(match));
+            const prefixedId = `${hybrid}_${refId}`;
+            newCard.id = prefixedId;
+            
+            console.log(`  [SYNC] ${hybrid}: Copying card ${refId} as ${prefixedId} from ${d}`);
             if (!flowData[category]) flowData[category] = [];
-            flowData[category].push(JSON.parse(JSON.stringify(match)));
-            existingIds.add(refId);
+            flowData[category].push(newCard);
+            existingIds.add(refId); // Keep original in track to avoid re-adding
+            existingIds.add(prefixedId);
             found = true;
             break;
           }

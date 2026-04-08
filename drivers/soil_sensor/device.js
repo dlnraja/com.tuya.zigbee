@@ -473,7 +473,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
   _initFlowTriggers() {
     // v5.8.72: Safe flow card getter — prevents onNodeInit crash if card missing
     const safeGetTrigger = (id) => {
-      try { return (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getDeviceTriggerCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); }
+      try { return (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getTriggerCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); }
       catch (e) { this.log(`[SOIL] ⚠️ Flow trigger '${id}' not available: ${e.message}`); return null; }
     };
 

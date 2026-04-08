@@ -67,17 +67,17 @@ class WeatherStationOutdoorDevice extends HybridSensorBase {
       switch (capability) {
       case 'measure_temperature':
         try {
-          (() => { try { return this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_outdoor_temperature_changed'); } catch(e) { return null; } })()?.trigger(this, { temperature: value }, {}).catch(() => {});
+          (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('weather_station_outdoor_outdoor_temperature_changed'); } catch(e) { return null; } })(); } catch(e) { return null; } })()?.trigger(this, { temperature: value }, {}).catch(() => {});
         } catch (e) { /* card missing */ }
         break;
       case 'measure_humidity':
         try {
-          (() => { try { return this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_outdoor_humidity_changed'); } catch(e) { return null; } })()?.trigger(this, { humidity: value }, {}).catch(() => {});
+          (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('weather_station_outdoor_outdoor_humidity_changed'); } catch(e) { return null; } })(); } catch(e) { return null; } })()?.trigger(this, { humidity: value }, {}).catch(() => {});
         } catch (e) { /* card missing */ }
         break;
       case 'measure_pressure': {
         try {
-          (() => { try { return this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_pressure_changed'); } catch(e) { return null; } })()?.trigger(this, { pressure: value }, {}).catch(() => {});
+          (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('weather_station_outdoor_pressure_changed'); } catch(e) { return null; } })(); } catch(e) { return null; } })()?.trigger(this, { pressure: value }, {}).catch(() => {});
         } catch (e) { /* card missing */ }
         // Track pressure trend for condition cards
         if (prev != null && typeof prev === 'number') {
@@ -89,7 +89,7 @@ class WeatherStationOutdoorDevice extends HybridSensorBase {
       case 'measure_battery':
         if (value <= 15 && (prev === undefined || prev === null || prev > 15)) {
           try {
-            (() => { try { return this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_battery_low'); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
+            (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('weather_station_outdoor_battery_low'); } catch(e) { return null; } })(); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
           } catch (e) { /* card missing */ }
         }
         break;

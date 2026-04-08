@@ -124,3 +124,8 @@ Do NOT remove just because mfr appears in another driver with different productI
 - Own sources (dlnraja T140352, own GitHub, own PRs, own forks): CAN mention
 - Forum: ALWAYS merge with last dlnraja post (even if bot posted it)
 - Commit messages for external syncs: use generic wording ("improved", "added support")
+
+## REASONING & QUALITY ASSURANCE
+- **Chain of Thought (Chaîne de pensée)**: Always "think step-by-step" before providing the final answer or code implementation. This mandatory decomposition reduces hallucinations and ensures logical consistency.
+- Validate fixes against stack traces found in diagnostics files before committing.
+- Ensure all architectural changes maintain SDK 3 compliance.

@@ -96,10 +96,10 @@
       background: #fff;
       padding: 10px;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       margin: 15px auto;
-      width: 140px;
-      height: 140px;
+      width: 200px;
+      height: 200px;
     }
     #qrcode img { width: 100%; height: auto; }
     
@@ -148,7 +148,16 @@
         </div>
         
         <div id="view-web">
-          <p class="instruction">Scan with <strong>Smart Life</strong> app<br><small>(Profile > Scan icon top right)</small></p>
+          <p class="instruction">Scan with <strong>Smart Life</strong> or <strong>Tuya</strong> app<br><small>(Profile > Scan icon top right)</small></p>
+          <div class="fg" style="max-width: 200px; margin: 0 auto 10px;">
+            <label>Data Center Region</label>
+            <select id="auto_reg" onchange="generateToken(true)">
+              <option value="eu">Europe (EU)</option>
+              <option value="us">Americas (US)</option>
+              <option value="cn">China (CN)</option>
+              <option value="in">India (IN)</option>
+            </select>
+          </div>
           <div id="qrcode"></div>
           <div class="qr-status" id="qr-status">Waiting for code...</div>
         </div>
@@ -246,17 +255,19 @@
     }
     function unspin(id) { var b = document.getElementById(id); b.disabled = false; b.innerHTML = b.dataset.orig || 'Confirm'; }
 
-    async function generateToken() {
-      if (window.qrGenerated) return;
+    async function generateToken(force = false) {
+      if (window.qrGenerated && !force) return;
       window.qrGenerated = true;
       hide('auto-err');
       
-      H.emit('login', { mode: 'smartlife_qr', region: 'eu' }, function(err, r) {
+      var reg = document.getElementById('auto_reg').value || 'eu';
+      var app = document.getElementById('easy_app').value || 'smartlife';
+
+      H.emit('login', { mode: 'smartlife_qr', region: reg, schema: app }, function(err, r) {
         if (err) { show('auto-err', err.message || String(err)); return; }
         
         var token = r.qrCode;
-        var schema = document.getElementById('easy_app').value || 'smartlife';
-        var qrUrl = schema + '://qrLogin?token=' + token;
+        var qrUrl = app + '://qrLogin?token=' + token;
         window.pairingToken = token;
         
         // Show QR or Button
@@ -266,7 +277,7 @@
           document.getElementById('view-mobile').style.display = 'block';
         } else {
           document.getElementById('qrcode').innerHTML = '';
-          new QRCode(document.getElementById("qrcode"), { text: qrUrl, width: 140, height: 140 });
+          new QRCode(document.getElementById("qrcode"), { text: qrUrl, width: 200, height: 200, correctLevel: QRCode.CorrectLevel.H });
           document.getElementById('qr-status').textContent = 'Code generated. Scan now.';
         }
         

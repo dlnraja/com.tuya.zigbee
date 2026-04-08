@@ -381,15 +381,15 @@ class WiFiCameraDevice extends Homey.Device {
 
   _registerFlowCards() {
     try {
-      const privacyCard = (() => { try { return this.homey.flow.getDeviceActionCard('wifi_camera_set_privacy'); } catch(e) { return null; } })();
+      const privacyCard = (() => { try { return (() => { try { return this.homey.flow.getActionCard('wifi_camera_set_privacy'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
       privacyCard.registerRunListener(async (args) => {
         await this._setDP(DP.PRIVACY_MODE, args.mode === 'on');
       });
-      const nvCard = (() => { try { return this.homey.flow.getDeviceActionCard('wifi_camera_set_night_vision'); } catch(e) { return null; } })();
+      const nvCard = (() => { try { return (() => { try { return this.homey.flow.getActionCard('wifi_camera_set_night_vision'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
       nvCard.registerRunListener(async (args) => {
         await this._setDP(DP.NIGHT_VISION, parseInt(args.mode, 10));
       });
-      const ptzCard = (() => { try { return this.homey.flow.getDeviceActionCard('wifi_camera_ptz_move'); } catch(e) { return null; } })();
+      const ptzCard = (() => { try { return (() => { try { return this.homey.flow.getActionCard('wifi_camera_ptz_move'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
       ptzCard.registerRunListener(async (args) => {
         await this._setDP(DP.PTZ_CONTROL, args.direction);
         setTimeout(() => this._setDP(DP.PTZ_STOP, true).catch(() => {}), 1000);

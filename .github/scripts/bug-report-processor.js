@@ -46,19 +46,35 @@ async function main(){
   if(newFPs.length>0){
     for(const{fp}of newFPs){
       // Find best driver match by prefix
-      const prefix=fp.substring(0,fp.lastIndexOf('_'));
+      const prefix = fp.includes('_') ? fp.substring(0, fp.lastIndexOf('_')) : fp;
+      console.log(`Searching for best driver match for ${fp} (prefix: ${prefix})...`);
       let bestDriver=null,bestCount=0;
       for(const d of fs.readdirSync(DDIR)){
         const cf=path.join(DDIR,d,'driver.compose.json');
         if(!fs.existsSync(cf))continue;
-        const raw=fs.readFileSync(cf,'utf8');
-        const count=(raw.match(new RegExp(prefix,'g'))||[]).length;
-        if(count>bestCount){bestCount=count;bestDriver=d;}
+        try {
+          const raw=fs.readFileSync(cf,'utf8');
+          // Safer count without RegExp search string injection risk
+          const count = raw.split(prefix).length - 1;
+          if(count > bestCount){
+            bestCount=count;
+            bestDriver=d;
+          }
+        } catch (e) {
+          console.error(`  Error reading ${cf}: ${e.message}`);
+        }
       }
-      if(bestDriver&&bestCount>=1){
+      if(bestDriver && bestCount >= 1){
+        console.log(`Matched ${bestDriver} with ${bestCount} occurrences of prefix ${prefix}`);
         // Add fingerprint to driver
         const cf=path.join(DDIR,bestDriver,'driver.compose.json');
-        const compose=JSON.parse(fs.readFileSync(cf,'utf8'));
+        let compose;
+        try {
+          compose=JSON.parse(fs.readFileSync(cf,'utf8'));
+        } catch (e) {
+          console.error(`  Failed to parse ${cf}: ${e.message}`);
+          continue;
+        }
         if(compose.zigbee&&compose.zigbee.manufacturerName){
           if(!compose.zigbee.manufacturerName.includes(fp)){
             compose.zigbee.manufacturerName.push(fp);

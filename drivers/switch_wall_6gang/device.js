@@ -30,6 +30,7 @@ class Switch6GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
 
   async onNodeInit({ zclNode }) {
     this.initPhysicalButtonDetection(); // rule-19 injected
+    
     this._registerCapabilityListeners(); // rule-12a injected
     if (this.isZclOnlyDevice) {
       this.log('[SWITCH-6G] 🔵 ZCL-ONLY MODE');
@@ -93,7 +94,7 @@ class Switch6GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_wall_6gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
             try {
-              const card = (() => { try { return this.homey.flow.getDeviceTriggerCard(flowId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+              const card = (() => { try { return this.homey.flow.getTriggerCard(flowId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
               if (card) await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
               this.log(`[SWITCH-6G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
             } catch (e) { }
@@ -101,7 +102,7 @@ class Switch6GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
             const sceneId = `switch_wall_6gang_gang${epNum}_scene`;
             try {
-              const card = (() => { try { return this.homey.flow.getDeviceTriggerCard(sceneId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+              const card = (() => { try { return this.homey.flow.getTriggerCard(sceneId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
               if (card) await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
               this.log(`[SWITCH-6G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
             } catch (e) { }

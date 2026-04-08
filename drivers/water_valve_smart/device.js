@@ -83,52 +83,48 @@ class WaterValveSmartDevice extends HybridPlugBase {
     const prev = this.getCapabilityValue(capability);
     await super.setCapabilityValue(capability, value);
     if (prev === value) return;
-    try {
-      switch (capability) {
-      case 'onoff': {
-        this.log('[WATER] Valve ' + (value ? 'OPENED' : 'CLOSED'));
-        try {
-          const id = value ? 'water_valve_smart_opened' : 'water_valve_smart_closed';
-          (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getDeviceTriggerCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().trigger(this, {}, {}).catch(() => {});
-        } catch (e) { /* card missing */ }
-        break;
+
+    // Helper to trigger flow cards safely
+    const triggerCard = async (id, tokens = {}, state = {}) => {
+      try {
+        const card = this.homey.flow.getTriggerCard(id);
+        if (card) {
+          await card.trigger(this, tokens, state);
+        }
+      } catch (err) {
+        this.error(`[FLOW-TRIGGER] Failed to trigger ${id}: ${err.message}`);
       }
-      case 'alarm_water': {
-        try {
-          const id = value ? 'water_valve_smart_leak_detected' : 'water_valve_smart_leak_cleared';
-          (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getDeviceTriggerCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().trigger(this, {}, {}).catch(() => {});
-        } catch (e) { /* card missing */ }
+    };
+
+    switch (capability) {
+      case 'onoff':
+        this.log(`[WATER] Valve ${value ? 'OPENED' : 'CLOSED'}`);
+        await triggerCard(value ? 'water_valve_smart_opened' : 'water_valve_smart_closed');
         break;
-      }
-      case 'measure_temperature': {
-        this.log('[WATER] Temperature:', value);
-        try {
-          (() => { try { return this.homey.flow.getDeviceTriggerCard('water_valve_smart_temperature_changed'); } catch(e) { return null; } })()?.trigger(this, { temperature: value }, {}).catch(() => {});
-        } catch (e) { /* card missing */ }
+
+      case 'alarm_water':
+        await triggerCard(value ? 'water_valve_smart_leak_detected' : 'water_valve_smart_leak_cleared');
+        break;
+
+      case 'measure_temperature':
+        this.log(`[WATER] Temperature: ${value}`);
+        await triggerCard('water_valve_smart_temperature_changed', { temperature: value });
         if (value < 4) {
-          try {
-            (() => { try { return this.homey.flow.getDeviceTriggerCard('water_valve_smart_frost_warning'); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
-          } catch (e) { /* card missing */ }
+          await triggerCard('water_valve_smart_frost_warning');
         }
         break;
-      }
-      case 'measure_battery': {
+
+      case 'measure_battery':
         if (value <= 15 && (prev === undefined || prev === null || prev > 15)) {
-          try {
-            (() => { try { return this.homey.flow.getDeviceTriggerCard('water_valve_smart_battery_low'); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
-          } catch (e) { /* card missing */ }
+          await triggerCard('water_valve_smart_battery_low');
         }
         break;
-      }
-      case 'meter_water': {
-        this.log('[WATER] Consumption updated:', value);
-        try {
-          (() => { try { return this.homey.flow.getDeviceTriggerCard('water_valve_smart_water_consumed'); } catch(e) { return null; } })()?.trigger(this, { liters: value }, {}).catch(() => {});
-        } catch (e) { /* card missing */ }
+
+      case 'meter_water':
+        this.log(`[WATER] Consumption updated: ${value}`);
+        await triggerCard('water_valve_smart_water_consumed', { liters: value });
         break;
-      }
-      }
-    } catch (e) { /* flow card may not exist */ }
+    }
   }
 
 

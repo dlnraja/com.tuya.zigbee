@@ -28,7 +28,7 @@ class LockSmartDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is locked
     try {
-      (() => { try { return this.homey.flow.getDeviceConditionCard('lock_smart_is_locked'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('lock_smart_is_locked'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('locked') === true;
@@ -38,7 +38,7 @@ class LockSmartDriver extends ZigBeeDriver {
 
     // ACTION: Lock
     try {
-      (() => { try { return this.homey.flow.getDeviceActionCard('lock_smart_lock'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('lock_smart_lock'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('locked', true);
@@ -49,7 +49,7 @@ class LockSmartDriver extends ZigBeeDriver {
 
     // ACTION: Unlock
     try {
-      (() => { try { return this.homey.flow.getDeviceActionCard('lock_smart_unlock'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('lock_smart_unlock'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('locked', false);

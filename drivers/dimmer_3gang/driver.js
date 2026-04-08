@@ -23,11 +23,11 @@ class Dimmer3GangDriver extends ZigBeeDriver {
     await super.onInit(); // v5.5.534: SDK3 CRITICAL
     this.log('3-Gang Dimmer Driver v5.5.534 initialized');
     // v5.13.3: Register flow card action handlers
-    const reg = (id, fn) => { try { (() => { try { return this.homey.flow.getDeviceActionCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().registerRunListener(fn); } catch (e) { this.log('[Flow]', id, e.message); } };
+    const reg = (id, fn) => { try { (() => { try { return this.homey.flow.getActionCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().registerRunListener(fn); } catch (e) { this.log('[Flow]', id, e.message); } };
     reg('dimmer_3gang_turn_on', async ({ device }) => { await device.triggerCapabilityListener('onoff', true); return true; });
     // v5.13.3: Condition handler
-      (() => { try { return this.homey.flow.getDeviceConditionCard('dimmer_3gang_is_on'); } catch(e) { return null; } })();
-      (() => { try { return this.homey.flow.getDeviceActionCard('dimmer_3gang_set_brightness'); } catch(e) { return null; } })();
+      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('dimmer_3gang_is_on'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('dimmer_3gang_set_brightness'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
 
     reg('dimmer_3gang_turn_off', async ({ device }) => { await device.triggerCapabilityListener('onoff', false); return true; });
     reg('dimmer_3gang_toggle', async ({ device }) => { const v = device.getCapabilityValue('onoff'); await device.triggerCapabilityListener('onoff', !v); return true; });
