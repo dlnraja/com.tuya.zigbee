@@ -25,12 +25,10 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_KMH5QPMB"
+      "_TZ3000_KMH5QPMB",
+      "_tz3000_kmh5qpmb"
     ],
-    "productId": [
-      "TS0601",
-      "ts0601"
-    ],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/motion_sensor/assets/learnmode.svg",
       "instruction": {

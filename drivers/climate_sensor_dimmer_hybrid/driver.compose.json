@@ -24,12 +24,10 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3210_HUZKZQYK"
+      "_TZ3210_HUZKZQYK",
+      "_tz3210_huzkzqyk"
     ],
-    "productId": [
-      "TS0601",
-      "ts0601"
-    ],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/dimmer_wall_1gang/assets/learnmode.svg",
       "instruction": {

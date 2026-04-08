@@ -42,12 +42,10 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZE284_7ZAZVLYN"
+      "_TZE284_7ZAZVLYN",
+      "_tze284_7zazvlyn"
     ],
-    "productId": [
-      "TS0601",
-      "ts0601"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

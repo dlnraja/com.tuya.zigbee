@@ -45,12 +45,10 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_KLY8GJLZ"
+      "_TZE200_KLY8GJLZ",
+      "_tze200_kly8gjlz"
     ],
-    "productId": [
-      "TS0601",
-      "ts0601"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

@@ -30,7 +30,8 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_TTCOVULF"
+      "_TZE200_TTCOVULF",
+      "_tze200_ttcovulf"
     ],
     "endpoints": {
       "1": {
@@ -47,10 +48,7 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     },
-    "productId": [
-      "TS0601",
-      "ts0601"
-    ]
+    "productId": []
   },
   "settings": [
     {

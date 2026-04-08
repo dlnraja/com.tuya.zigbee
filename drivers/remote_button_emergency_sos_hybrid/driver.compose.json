@@ -33,12 +33,10 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TYZB01_QM6DJPTA"
+      "_TYZB01_QM6DJPTA",
+      "_tyzb01_qm6djpta"
     ],
-    "productId": [
-      "TS0215A",
-      "ts0215a"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

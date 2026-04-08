@@ -71,12 +71,10 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_OJZHK75B"
+      "_TZE200_OJZHK75B",
+      "_tze200_ojzhk75b"
     ],
-    "productId": [
-      "TS0601",
-      "ts0601"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

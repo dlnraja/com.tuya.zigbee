@@ -33,10 +33,7 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_YWAGC4RJ",
-      "_TZ3210_NCW88JFQ"
-    ],
+    "manufacturerName": [],
     "learnmode": {
       "image": "/drivers/gas_detector/assets/learnmode.svg",
       "instruction": {

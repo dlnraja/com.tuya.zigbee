@@ -13,10 +13,7 @@
     "measure_humidity"
   ],
   "zigbee": {
-    "productId": [
-      "TS0601",
-      "ts0601"
-    ],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/switch_1gang/assets/learnmode.svg",
       "instruction": {
@@ -24,7 +21,8 @@
       }
     },
     "manufacturerName": [
-      "_TZ3000_I8JFIEZR"
+      "_TZ3000_I8JFIEZR",
+      "_tz3000_i8jfiezr"
     ],
     "endpoints": {
       "1": {

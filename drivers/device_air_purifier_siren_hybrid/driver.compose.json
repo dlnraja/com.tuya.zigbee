@@ -24,12 +24,14 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZE204_T1BLO2BJ"
+      "_TZE204_T1BLO2BJ",
+      "_TYST11_D0YU2XGI",
+      "_TZE200_D0YU2XGI",
+      "_tze204_t1blo2bj",
+      "_tyst11_d0yu2xgi",
+      "_tze200_d0yu2xgi"
     ],
-    "productId": [
-      "TS0601",
-      "ts0601"
-    ],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/siren/assets/learnmode.svg",
       "instruction": {

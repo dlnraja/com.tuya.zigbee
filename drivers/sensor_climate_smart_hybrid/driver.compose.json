@@ -1,0 +1,136 @@
+{
+  "name": {
+    "en": "Sensor Climate Smart Hybrid",
+    "nl": "Sensor Climate Smart Hybrid",
+    "fr": "Sensor Climate Smart Hybrid"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff.gang1",
+    "onoff.gang2",
+    "onoff.gang3",
+    "onoff.gang4",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_battery"
+  ],
+  "capabilitiesOptions": {
+    "onoff.gang1": {
+      "title": {
+        "en": "Switch 1",
+        "fr": "Interrupteur 1"
+      }
+    },
+    "onoff.gang2": {
+      "title": {
+        "en": "Switch 2",
+        "fr": "Interrupteur 2"
+      }
+    },
+    "onoff.gang3": {
+      "title": {
+        "en": "Switch 3",
+        "fr": "Interrupteur 3"
+      }
+    },
+    "onoff.gang4": {
+      "title": {
+        "en": "Switch 4",
+        "fr": "Interrupteur 4"
+      }
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE284_7ZAZVLYN",
+      "_tze284_7zazvlyn"
+    ],
+    "productId": [
+      "TS0601",
+      "ts0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "power_on_behavior",
+      "type": "dropdown",
+      "label": {
+        "en": "Power-On Behavior"
+      },
+      "value": "memory",
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Off"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "On"
+          }
+        },
+        {
+          "id": "memory",
+          "label": {
+            "en": "Last State"
+          }
+        }
+      ]
+    },
+    {
+      "id": "backlight",
+      "type": "checkbox",
+      "label": {
+        "en": "Screen Backlight"
+      },
+      "value": true
+    },
+    {
+      "id": "pir_delay",
+      "type": "number",
+      "label": {
+        "en": "Radar Delay (seconds)"
+      },
+      "value": 5,
+      "min": 1,
+      "max": 600
+    }
+  ],
+  "images": {
+    "small": "drivers/smart_scene_panel/assets/images/small.png",
+    "large": "drivers/smart_scene_panel/assets/images/large.png",
+    "xlarge": "drivers/smart_scene_panel/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "AAA"
+    ]
+  }
+}

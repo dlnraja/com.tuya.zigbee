@@ -55,12 +55,10 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_5F43H46B"
+      "_TZ3000_5F43H46B",
+      "_tz3000_5f43h46b"
     ],
-    "productId": [
-      "TS0002",
-      "ts0002"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

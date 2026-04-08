@@ -26,12 +26,10 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3210_JOWHPXOP"
+      "_TZ3210_JOWHPXOP",
+      "_tz3210_jowhpxop"
     ],
-    "productId": [
-      "TS0601",
-      "ts0601"
-    ],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/contact_sensor/assets/learnmode.svg",
       "instruction": {

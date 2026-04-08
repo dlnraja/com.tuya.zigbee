@@ -1,0 +1,105 @@
+{
+  "name": {
+    "en": "Device Air Purifier Motion Hybrid",
+    "nl": "Device Air Purifier Motion Hybrid",
+    "fr": "Device Air Purifier Motion Hybrid"
+  },
+  "class": "fan",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_pm25",
+    "measure_battery",
+    "measure_luminance",
+    "alarm_motion"
+  ],
+  "capabilitiesOptions": {
+    "dim": {
+      "title": {
+        "en": "Fan Speed",
+        "fr": "Vitesse Ventilateur"
+      }
+    },
+    "measure_pm25": {
+      "title": {
+        "en": "PM2.5",
+        "fr": "PM2.5"
+      },
+      "units": "µg/m³"
+    }
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE200_3TOWULQD",
+      "_TZE200_BH3N6GK8",
+      "_TZE200_HOLEL4DK",
+      "_TZE200_JVA8INK8",
+      "_TZE200_LYETPPRM",
+      "_TZE200_WUKB7RHC",
+      "_TZE200_XPQ2RZHQ",
+      "_TZE201_ZTC6GGYL",
+      "_TZE202_ZTC6GGYL",
+      "_TZE203_ZTC6GGYL",
+      "_TZE204_XSM7L9XA",
+      "_tze200_3towulqd",
+      "_tze200_bh3n6gk8",
+      "_tze200_holel4dk",
+      "_tze200_jva8ink8",
+      "_tze200_lyetpprm",
+      "_tze200_wukb7rhc",
+      "_tze200_xpq2rzhq",
+      "_tze201_ztc6ggyl",
+      "_tze202_ztc6ggyl",
+      "_tze203_ztc6ggyl",
+      "_tze204_xsm7l9xa"
+    ],
+    "productId": [
+      "TS0601",
+      "ts0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the power button for 5 seconds",
+        "fr": "Maintenez le bouton power pendant 5 secondes"
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/air_purifier/assets/images/small.png",
+    "large": "drivers/air_purifier/assets/images/large.png",
+    "xlarge": "drivers/air_purifier/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "approximation": {
+      "usageOn": 50,
+      "usageOff": 1
+    },
+    "batteries": [
+      "AAA",
+      "AAA"
+    ]
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

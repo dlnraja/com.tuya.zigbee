@@ -34,21 +34,26 @@
   "zigbee": {
     "manufacturerName": [
       "EWELINK",
-      "HOBEIAN",
-      "TUYATEC-ABKEHQUS",
-      "TUYATEC-BFQ2I2SY",
-      "TUYATEC-G3GL6CGY",
       "_TZ3000_85CZD6FY",
       "_TZ3000_BPKIJO14",
       "_TZ3000_GSZJT2XX",
       "_TZ3000_M0VAAZAB",
       "_TZ3000_MISW04HQ",
       "_TZ3000_UFTTKLSZ",
-      "_TZ3000_WLQUQIIZ"
+      "_TZ3000_WLQUQIIZ",
+      "_tz3000_85czd6fy",
+      "_tz3000_bpkijo14",
+      "_tz3000_gszjt2xx",
+      "_tz3000_m0vaazab",
+      "_tz3000_misw04hq",
+      "_tz3000_ufttklsz",
+      "_tz3000_wlquqiiz"
     ],
     "productId": [
       "ZG-227Z",
-      "zg-227z"
+      "zg-227z",
+      "TS0601",
+      "ts0601"
     ],
     "endpoints": {
       "1": {
