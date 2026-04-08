@@ -1,2003 +1,858 @@
 {
-  "timestamp": "2026-04-07T22:16:53.186Z",
+  "timestamp": "2026-04-08T03:09:03.359Z",
   "totalFiles": 0,
-  "totalFixes": 1162,
+  "totalFixes": 877,
   "rules": {
-    "sdk3-device-flow-cards": {
-      "count": 285,
-      "files": [
-        {
-          "file": "drivers\\air_purifier\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\air_purifier\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\air_purifier_climate_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\air_purifier_climate_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\air_purifier_curtain_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\air_purifier_dimmer_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\air_purifier_dimmer_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\air_purifier_din_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\air_purifier_lcdtemphumidsensor_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\air_purifier_lcdtemphumidsensor_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\air_purifier_motion_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\air_purifier_motion_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\air_purifier_presence_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\air_purifier_presence_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\air_purifier_quality_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\air_purifier_sensor_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\air_purifier_soil_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\air_purifier_soil_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\air_purifier_switch_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\air_quality_co2\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\bulb_dimmable\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\bulb_dimmable_dimmer_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\bulb_rgb\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\bulb_rgbw\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\bulb_rgb_led_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\bulb_rgb_rgbw_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\bulb_tunable_white\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\bulb_white\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\button_emergency_sos\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\button_emergency_sos\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\button_wireless\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\button_wireless_1\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\button_wireless_plug_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\button_wireless_smart_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\button_wireless_switch_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\button_wireless_switch_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\button_wireless_usb_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\ceiling_fan\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\climate_sensor\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\climate_sensor_dimmer_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\climate_sensor_dimmer_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\climate_sensor_gas_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\climate_sensor_plug_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\climate_sensor_plug_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\climate_sensor_smart_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\climate_sensor_smart_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\climate_sensor_switch_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\contact_sensor\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\contact_sensor_curtain_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\contact_sensor_curtain_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\contact_sensor_dimmer_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\contact_sensor_plug_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\contact_sensor_plug_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\contact_sensor_switch_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\contact_sensor_zigbee_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\co_sensor\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\curtain_motor\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\curtain_motor\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\curtain_motor_shutter_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\curtain_motor_shutter_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\curtain_motor_tilt\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\curtain_motor_tilt_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\curtain_motor_tilt_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\curtain_motor_wall_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\curtain_motor_wall_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\device_air_purifier_din_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\device_air_purifier_humidifier_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\device_air_purifier_plug_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\device_air_purifier_radiator_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\device_air_purifier_siren_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\device_air_purifier_smoke_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\device_air_purifier_thermostat_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\device_air_purifier_water_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\device_din_rail_meter_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\device_generic_tuya_universal_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\device_generic_tuya_universal_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\device_plug_energy_monitor_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\device_plug_energy_monitor_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\device_plug_smart_water_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\device_plug_smart_water_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\device_radiator_valve_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\device_radiator_valve_smart_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\dimmer_3gang\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\dimmer_3gang\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\dimmer_dual_channel\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\dimmer_dual_channel_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\dimmer_wall_1gang\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\dimmer_wall_1gang\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\dimmer_wall_plug_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\dimmer_wall_switch_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\dimmer_wall_switch_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\dimmer_wall_water_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\dimmer_wall_water_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\din_rail_meter\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\din_rail_switch\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\diy_custom_zigbee\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\doorbell\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\door_controller\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\door_controller_garage_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\energy_meter_3phase\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\fan_controller\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\fingerbot\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\fingerbot_switch_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\fingerprint_lock\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\formaldehyde_sensor\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\gas_detector\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\gas_sensor\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\gateway_zigbee_bridge\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\generic_diy\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\generic_tuya\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\generic_tuya\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\humidifier\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\hvac_air_conditioner\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\hvac_dehumidifier\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\ir_blaster\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\ir_remote\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\ir_remote\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\lcdtemphumidsensor_plug_energy_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\led_controller_cct\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\led_controller_dimmable\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\led_controller_rgb\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\led_strip\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\led_strip_advanced\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\led_strip_rgbw\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\light_bulb_rgb_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\light_bulb_rgb_led_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\light_bulb_rgb_rgbw_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\lock_smart\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\module_mini_switch\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\module_mini_switch_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\motion_sensor\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\motion_sensor_radar_mmwave\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\motion_sensor_switch_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\pet_feeder\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\plug_energy_monitor\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\plug_energy_monitor_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\plug_smart\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\plug_smart\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\plug_smart_switch_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\pool_pump\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\power_clamp_meter\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\power_meter\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\presence_sensor_ceiling\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\presence_sensor_radar\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\presence_sensor_radar\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\radiator_controller\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\radiator_valve\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\rain_sensor\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\remote_button_wireless_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\remote_button_wireless_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\remote_button_wireless_smart_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\remote_button_wireless_wall_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\remote_dimmer\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\remote_dimmer\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\scene_switch_1\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\scene_switch_2\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\scene_switch_3\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\scene_switch_4\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\scene_switch_6\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\scene_switch_wall_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\sensor_climate_contact_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\sensor_climate_lcdtemphumidsensor_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\sensor_climate_motion_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\sensor_climate_presence_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\sensor_climate_presence_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\sensor_climate_temphumidsensor_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\sensor_contact_motion_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\sensor_contact_presence_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\sensor_contact_presence_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\sensor_contact_rain_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\sensor_contact_water_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\sensor_gas_presence_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\sensor_gas_presence_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\sensor_lcdtemphumidsensor_soil_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\sensor_lcdtemphumidsensor_soil_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\sensor_motion_presence_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\sensor_motion_presence_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\sensor_motion_radar_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\sensor_presence_radar_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\sensor_presence_radar_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\shutter_roller_controller\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\siren\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\smart_breaker\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\smart_heater\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\smart_heater_controller\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\smart_knob\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\smart_knob_rotary\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\smart_knob_rotary\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\smart_knob_rotary_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\smart_knob_rotary_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\smart_knob_switch_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\smart_rcbo\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\smart_scene_panel\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\smart_scene_panel\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\smoke_detector_advanced\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\soil_sensor\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\soil_sensor\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_1gang\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_2gang\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_2gang\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_3gang\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_3gang\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_4gang\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_4gang\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_dimmer_1gang\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_dimmer_1gang\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_hybrid\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_hybrid\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_plug_1\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_plug_2\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_temp_sensor\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_wall_5gang\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_wall_5gang\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_wall_6gang\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_wall_6gang\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_wall_7gang\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_wall_7gang\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_wall_8gang\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_wall_8gang\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_wireless\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\switch_wireless\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\thermostat_4ch\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\thermostat_tuya_dp\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\usb_dongle_dual_repeater\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\usb_dongle_triple\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\usb_outlet_advanced\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\usb_outlet_advanced\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\valve_irrigation\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\valve_single\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\vibration_sensor\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\wall_dimmer_1gang_1way\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\wall_dimmer_1gang_1way\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\wall_remote_4_gang_2\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\wall_switch_1gang_1way\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\wall_switch_2gang_1way\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\wall_switch_2gang_1way\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\wall_switch_3gang_1way\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\wall_switch_3gang_1way\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\wall_switch_4gang_1way\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\wall_switch_4gang_1way\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\water_leak_sensor\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\water_tank_monitor\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\water_valve_garden\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\water_valve_smart\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\water_valve_smart\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\weather_station_outdoor\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\weather_station_outdoor\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\wifi_camera\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\wifi_cover\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\wifi_doorbell\\device.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\wifi_generic\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\wifi_led_strip\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\wifi_power_strip\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\wifi_siren\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\wifi_switch\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\wifi_thermostat\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "drivers\\wifi_water_tank_monitor\\driver.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\battery\\BatteryMonitoringMixin.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\battery\\BatteryMonitoringSystem.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\ButtonRemoteManager.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\devices\\BaseHybridDevice.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\devices\\BaseTuyaDPDevice.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\devices\\ButtonDevice.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\devices\\HybridSensorBase.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\devices\\HybridSwitchBase.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\devices\\WallTouchDevice.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\diagnostics\\DeviceHealth.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\dynamic\\DynamicEnergyManager.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\dynamic\\DynamicFlowCardManager.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\dynamic\\SmartFlowManager.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\flow\\AdvancedFlowCardManager.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\flow\\FlowCardManager.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\flow\\FlowTriggerHelpers.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\flow\\UniversalFlowCardLoader.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\FlowCardHelper.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\HeimanIasDevice.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\managers\\EnergyManager.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\managers\\IASZoneManager.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\mixins\\CoreCapabilityMixin.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\mixins\\PhysicalButtonMixin.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\SDK3BestPractices.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\SonoffZclDevice.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\tuya\\TuyaDPFlowCardManager.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\TuyaUniversalBridge.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        },
-        {
-          "file": "lib\\zigbee\\GreenPowerManager.js",
-          "detail": "Normalized to SDK3 getDevice*Card methods for driver-specific flows"
-        }
-      ]
-    },
     "flow-card-try-catch": {
       "count": 212,
       "files": [
         {
-          "file": "drivers\\air_purifier\\device.js",
+          "file": "drivers/air_purifier/device.js",
           "detail": "Line 28: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\air_purifier\\device.js",
+          "file": "drivers/air_purifier/device.js",
           "detail": "Line 35: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\air_purifier_climate_hybrid\\device.js",
+          "file": "drivers/air_purifier_climate_hybrid/device.js",
           "detail": "Line 28: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\air_purifier_climate_hybrid\\device.js",
+          "file": "drivers/air_purifier_climate_hybrid/device.js",
           "detail": "Line 35: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\air_purifier_dimmer_hybrid\\device.js",
+          "file": "drivers/air_purifier_dimmer_hybrid/device.js",
           "detail": "Line 83: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\air_purifier_dimmer_hybrid\\device.js",
+          "file": "drivers/air_purifier_dimmer_hybrid/device.js",
           "detail": "Line 92: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\air_purifier_lcdtemphumidsensor_hybrid\\device.js",
+          "file": "drivers/air_purifier_lcdtemphumidsensor_hybrid/device.js",
           "detail": "Line 28: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\air_purifier_lcdtemphumidsensor_hybrid\\device.js",
+          "file": "drivers/air_purifier_lcdtemphumidsensor_hybrid/device.js",
           "detail": "Line 35: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\air_purifier_motion_hybrid\\device.js",
+          "file": "drivers/air_purifier_motion_hybrid/device.js",
           "detail": "Line 28: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\air_purifier_motion_hybrid\\device.js",
+          "file": "drivers/air_purifier_motion_hybrid/device.js",
           "detail": "Line 35: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\air_purifier_presence_hybrid\\device.js",
+          "file": "drivers/air_purifier_presence_hybrid/device.js",
           "detail": "Line 3377: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\button_wireless_switch_hybrid\\device.js",
+          "file": "drivers/button_wireless_switch_hybrid/device.js",
           "detail": "Line 398: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\button_wireless_switch_hybrid\\device.js",
+          "file": "drivers/button_wireless_switch_hybrid/device.js",
           "detail": "Line 403: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\climate_sensor\\driver.js",
+          "file": "drivers/climate_sensor/driver.js",
           "detail": "Line 31: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\climate_sensor\\driver.js",
+          "file": "drivers/climate_sensor/driver.js",
           "detail": "Line 32: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\climate_sensor\\driver.js",
+          "file": "drivers/climate_sensor/driver.js",
           "detail": "Line 33: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\climate_sensor\\driver.js",
+          "file": "drivers/climate_sensor/driver.js",
           "detail": "Line 34: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\climate_sensor\\driver.js",
+          "file": "drivers/climate_sensor/driver.js",
           "detail": "Line 35: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\climate_sensor_dimmer_hybrid\\device.js",
+          "file": "drivers/climate_sensor_dimmer_hybrid/device.js",
           "detail": "Line 83: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\climate_sensor_dimmer_hybrid\\device.js",
+          "file": "drivers/climate_sensor_dimmer_hybrid/device.js",
           "detail": "Line 92: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\climate_sensor_plug_hybrid\\device.js",
+          "file": "drivers/climate_sensor_plug_hybrid/device.js",
           "detail": "Line 133: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\climate_sensor_smart_hybrid\\device.js",
+          "file": "drivers/climate_sensor_smart_hybrid/device.js",
           "detail": "Line 34: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\climate_sensor_smart_hybrid\\device.js",
+          "file": "drivers/climate_sensor_smart_hybrid/device.js",
           "detail": "Line 36: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\climate_sensor_smart_hybrid\\driver.js",
+          "file": "drivers/climate_sensor_smart_hybrid/driver.js",
           "detail": "Line 10: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\climate_sensor_smart_hybrid\\driver.js",
+          "file": "drivers/climate_sensor_smart_hybrid/driver.js",
           "detail": "Line 17: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\contact_sensor_curtain_hybrid\\device.js",
+          "file": "drivers/contact_sensor_curtain_hybrid/device.js",
           "detail": "Line 237: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\contact_sensor_plug_hybrid\\device.js",
+          "file": "drivers/contact_sensor_plug_hybrid/device.js",
           "detail": "Line 133: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\curtain_motor\\device.js",
+          "file": "drivers/curtain_motor/device.js",
           "detail": "Line 237: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\curtain_motor_shutter_hybrid\\device.js",
+          "file": "drivers/curtain_motor_shutter_hybrid/device.js",
           "detail": "Line 237: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\curtain_motor_tilt_hybrid\\device.js",
+          "file": "drivers/curtain_motor_tilt_hybrid/device.js",
           "detail": "Line 237: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\curtain_motor_wall_hybrid\\device.js",
+          "file": "drivers/curtain_motor_wall_hybrid/device.js",
           "detail": "Line 237: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\device_generic_tuya_universal_hybrid\\device.js",
+          "file": "drivers/device_generic_tuya_universal_hybrid/device.js",
           "detail": "Line 247: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\device_plug_energy_monitor_hybrid\\device.js",
+          "file": "drivers/device_plug_energy_monitor_hybrid/device.js",
           "detail": "Line 133: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\device_plug_smart_water_hybrid\\device.js",
+          "file": "drivers/device_plug_smart_water_hybrid/device.js",
           "detail": "Line 133: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\dimmer_3gang\\device.js",
+          "file": "drivers/dimmer_3gang/device.js",
           "detail": "Line 137: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\dimmer_3gang\\device.js",
+          "file": "drivers/dimmer_3gang/device.js",
           "detail": "Line 144: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\dimmer_wall_1gang\\device.js",
+          "file": "drivers/dimmer_wall_1gang/device.js",
           "detail": "Line 83: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\dimmer_wall_1gang\\device.js",
+          "file": "drivers/dimmer_wall_1gang/device.js",
           "detail": "Line 92: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\dimmer_wall_switch_hybrid\\device.js",
+          "file": "drivers/dimmer_wall_switch_hybrid/device.js",
           "detail": "Line 398: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\dimmer_wall_switch_hybrid\\device.js",
+          "file": "drivers/dimmer_wall_switch_hybrid/device.js",
           "detail": "Line 403: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\dimmer_wall_water_hybrid\\device.js",
+          "file": "drivers/dimmer_wall_water_hybrid/device.js",
           "detail": "Line 83: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\dimmer_wall_water_hybrid\\device.js",
+          "file": "drivers/dimmer_wall_water_hybrid/device.js",
           "detail": "Line 92: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\generic_diy\\device.js",
+          "file": "drivers/generic_diy/device.js",
           "detail": "Line 84: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\generic_tuya\\device.js",
+          "file": "drivers/generic_tuya/device.js",
           "detail": "Line 247: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\ir_remote\\device.js",
+          "file": "drivers/ir_remote/device.js",
           "detail": "Line 312: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\ir_remote\\device.js",
+          "file": "drivers/ir_remote/device.js",
           "detail": "Line 317: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\motion_sensor\\driver.js",
+          "file": "drivers/motion_sensor/driver.js",
           "detail": "Line 21: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\motion_sensor\\driver.js",
+          "file": "drivers/motion_sensor/driver.js",
           "detail": "Line 22: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\motion_sensor\\driver.js",
+          "file": "drivers/motion_sensor/driver.js",
           "detail": "Line 23: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\plug_energy_monitor_hybrid\\driver.js",
+          "file": "drivers/plug_energy_monitor_hybrid/driver.js",
           "detail": "Line 31: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\plug_energy_monitor_hybrid\\driver.js",
+          "file": "drivers/plug_energy_monitor_hybrid/driver.js",
           "detail": "Line 32: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\plug_energy_monitor_hybrid\\driver.js",
+          "file": "drivers/plug_energy_monitor_hybrid/driver.js",
           "detail": "Line 33: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\plug_energy_monitor_hybrid\\driver.js",
+          "file": "drivers/plug_energy_monitor_hybrid/driver.js",
           "detail": "Line 34: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\plug_energy_monitor_hybrid\\driver.js",
+          "file": "drivers/plug_energy_monitor_hybrid/driver.js",
           "detail": "Line 35: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\plug_smart\\device.js",
+          "file": "drivers/plug_smart/device.js",
           "detail": "Line 133: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\presence_sensor_radar\\device.js",
+          "file": "drivers/presence_sensor_radar/device.js",
           "detail": "Line 3377: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\remote_button_wireless_hybrid\\device.js",
+          "file": "drivers/remote_button_wireless_hybrid/device.js",
           "detail": "Line 413: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\remote_button_wireless_hybrid\\device.js",
+          "file": "drivers/remote_button_wireless_hybrid/device.js",
           "detail": "Line 432: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\remote_button_wireless_hybrid\\driver.js",
+          "file": "drivers/remote_button_wireless_hybrid/driver.js",
           "detail": "Line 16: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\remote_button_wireless_hybrid\\driver.js",
+          "file": "drivers/remote_button_wireless_hybrid/driver.js",
           "detail": "Line 20: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\remote_button_wireless_hybrid\\driver.js",
+          "file": "drivers/remote_button_wireless_hybrid/driver.js",
           "detail": "Line 24: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\remote_button_wireless_hybrid\\driver.js",
+          "file": "drivers/remote_button_wireless_hybrid/driver.js",
           "detail": "Line 28: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\remote_button_wireless_hybrid\\driver.js",
+          "file": "drivers/remote_button_wireless_hybrid/driver.js",
           "detail": "Line 32: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\remote_button_wireless_hybrid\\driver.js",
+          "file": "drivers/remote_button_wireless_hybrid/driver.js",
           "detail": "Line 36: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\remote_dimmer\\device.js",
+          "file": "drivers/remote_dimmer/device.js",
           "detail": "Line 138: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\remote_dimmer\\driver.js",
+          "file": "drivers/remote_dimmer/driver.js",
           "detail": "Line 10: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\remote_dimmer\\driver.js",
+          "file": "drivers/remote_dimmer/driver.js",
           "detail": "Line 14: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\remote_dimmer\\driver.js",
+          "file": "drivers/remote_dimmer/driver.js",
           "detail": "Line 18: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\remote_dimmer\\driver.js",
+          "file": "drivers/remote_dimmer/driver.js",
           "detail": "Line 22: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\remote_dimmer\\driver.js",
+          "file": "drivers/remote_dimmer/driver.js",
           "detail": "Line 26: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\remote_dimmer\\driver.js",
+          "file": "drivers/remote_dimmer/driver.js",
           "detail": "Line 30: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\remote_dimmer\\driver.js",
+          "file": "drivers/remote_dimmer/driver.js",
           "detail": "Line 34: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\remote_dimmer\\driver.js",
+          "file": "drivers/remote_dimmer/driver.js",
           "detail": "Line 38: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_1\\driver.js",
+          "file": "drivers/scene_switch_1/driver.js",
           "detail": "Line 11: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_1\\driver.js",
+          "file": "drivers/scene_switch_1/driver.js",
           "detail": "Line 12: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_1\\driver.js",
+          "file": "drivers/scene_switch_1/driver.js",
           "detail": "Line 13: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_1\\driver.js",
+          "file": "drivers/scene_switch_1/driver.js",
           "detail": "Line 14: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_2\\driver.js",
+          "file": "drivers/scene_switch_2/driver.js",
           "detail": "Line 11: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_2\\driver.js",
+          "file": "drivers/scene_switch_2/driver.js",
           "detail": "Line 12: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_2\\driver.js",
+          "file": "drivers/scene_switch_2/driver.js",
           "detail": "Line 13: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_3\\driver.js",
+          "file": "drivers/scene_switch_3/driver.js",
           "detail": "Line 11: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_3\\driver.js",
+          "file": "drivers/scene_switch_3/driver.js",
           "detail": "Line 12: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_3\\driver.js",
+          "file": "drivers/scene_switch_3/driver.js",
           "detail": "Line 13: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_6\\driver.js",
+          "file": "drivers/scene_switch_6/driver.js",
           "detail": "Line 11: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_6\\driver.js",
+          "file": "drivers/scene_switch_6/driver.js",
           "detail": "Line 12: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_6\\driver.js",
+          "file": "drivers/scene_switch_6/driver.js",
           "detail": "Line 13: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_wall_hybrid\\driver.js",
+          "file": "drivers/scene_switch_wall_hybrid/driver.js",
           "detail": "Line 11: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_wall_hybrid\\driver.js",
+          "file": "drivers/scene_switch_wall_hybrid/driver.js",
           "detail": "Line 12: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_wall_hybrid\\driver.js",
+          "file": "drivers/scene_switch_wall_hybrid/driver.js",
           "detail": "Line 13: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_contact_hybrid\\driver.js",
+          "file": "drivers/sensor_climate_contact_hybrid/driver.js",
           "detail": "Line 31: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_contact_hybrid\\driver.js",
+          "file": "drivers/sensor_climate_contact_hybrid/driver.js",
           "detail": "Line 32: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_contact_hybrid\\driver.js",
+          "file": "drivers/sensor_climate_contact_hybrid/driver.js",
           "detail": "Line 33: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_contact_hybrid\\driver.js",
+          "file": "drivers/sensor_climate_contact_hybrid/driver.js",
           "detail": "Line 34: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_contact_hybrid\\driver.js",
+          "file": "drivers/sensor_climate_contact_hybrid/driver.js",
           "detail": "Line 35: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_lcdtemphumidsensor_hybrid\\driver.js",
+          "file": "drivers/sensor_climate_lcdtemphumidsensor_hybrid/driver.js",
           "detail": "Line 31: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_lcdtemphumidsensor_hybrid\\driver.js",
+          "file": "drivers/sensor_climate_lcdtemphumidsensor_hybrid/driver.js",
           "detail": "Line 32: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_lcdtemphumidsensor_hybrid\\driver.js",
+          "file": "drivers/sensor_climate_lcdtemphumidsensor_hybrid/driver.js",
           "detail": "Line 33: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_lcdtemphumidsensor_hybrid\\driver.js",
+          "file": "drivers/sensor_climate_lcdtemphumidsensor_hybrid/driver.js",
           "detail": "Line 34: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_lcdtemphumidsensor_hybrid\\driver.js",
+          "file": "drivers/sensor_climate_lcdtemphumidsensor_hybrid/driver.js",
           "detail": "Line 35: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_motion_hybrid\\driver.js",
+          "file": "drivers/sensor_climate_motion_hybrid/driver.js",
           "detail": "Line 21: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_motion_hybrid\\driver.js",
+          "file": "drivers/sensor_climate_motion_hybrid/driver.js",
           "detail": "Line 22: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_motion_hybrid\\driver.js",
+          "file": "drivers/sensor_climate_motion_hybrid/driver.js",
           "detail": "Line 23: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_presence_hybrid\\device.js",
+          "file": "drivers/sensor_climate_presence_hybrid/device.js",
           "detail": "Line 3377: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_temphumidsensor_hybrid\\driver.js",
+          "file": "drivers/sensor_climate_temphumidsensor_hybrid/driver.js",
           "detail": "Line 31: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_temphumidsensor_hybrid\\driver.js",
+          "file": "drivers/sensor_climate_temphumidsensor_hybrid/driver.js",
           "detail": "Line 32: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_temphumidsensor_hybrid\\driver.js",
+          "file": "drivers/sensor_climate_temphumidsensor_hybrid/driver.js",
           "detail": "Line 33: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_temphumidsensor_hybrid\\driver.js",
+          "file": "drivers/sensor_climate_temphumidsensor_hybrid/driver.js",
           "detail": "Line 34: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_temphumidsensor_hybrid\\driver.js",
+          "file": "drivers/sensor_climate_temphumidsensor_hybrid/driver.js",
           "detail": "Line 35: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_contact_motion_hybrid\\driver.js",
+          "file": "drivers/sensor_contact_motion_hybrid/driver.js",
           "detail": "Line 21: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_contact_motion_hybrid\\driver.js",
+          "file": "drivers/sensor_contact_motion_hybrid/driver.js",
           "detail": "Line 22: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_contact_motion_hybrid\\driver.js",
+          "file": "drivers/sensor_contact_motion_hybrid/driver.js",
           "detail": "Line 23: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_contact_presence_hybrid\\device.js",
+          "file": "drivers/sensor_contact_presence_hybrid/device.js",
           "detail": "Line 3377: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_gas_presence_hybrid\\device.js",
+          "file": "drivers/sensor_gas_presence_hybrid/device.js",
           "detail": "Line 3377: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_motion_presence_hybrid\\device.js",
+          "file": "drivers/sensor_motion_presence_hybrid/device.js",
           "detail": "Line 3377: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_presence_radar_hybrid\\device.js",
+          "file": "drivers/sensor_presence_radar_hybrid/device.js",
           "detail": "Line 3377: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob\\device.js",
+          "file": "drivers/smart_knob/device.js",
           "detail": "Line 69: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob\\device.js",
+          "file": "drivers/smart_knob/device.js",
           "detail": "Line 74: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob\\device.js",
+          "file": "drivers/smart_knob/device.js",
           "detail": "Line 84: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob\\device.js",
+          "file": "drivers/smart_knob/device.js",
           "detail": "Line 85: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob\\device.js",
+          "file": "drivers/smart_knob/device.js",
           "detail": "Line 108: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob\\device.js",
+          "file": "drivers/smart_knob/device.js",
           "detail": "Line 111: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_rotary\\device.js",
+          "file": "drivers/smart_knob_rotary/device.js",
           "detail": "Line 413: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_rotary\\device.js",
+          "file": "drivers/smart_knob_rotary/device.js",
           "detail": "Line 432: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_rotary\\driver.js",
+          "file": "drivers/smart_knob_rotary/driver.js",
           "detail": "Line 16: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_rotary\\driver.js",
+          "file": "drivers/smart_knob_rotary/driver.js",
           "detail": "Line 20: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_rotary\\driver.js",
+          "file": "drivers/smart_knob_rotary/driver.js",
           "detail": "Line 24: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_rotary\\driver.js",
+          "file": "drivers/smart_knob_rotary/driver.js",
           "detail": "Line 28: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_rotary\\driver.js",
+          "file": "drivers/smart_knob_rotary/driver.js",
           "detail": "Line 32: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_rotary\\driver.js",
+          "file": "drivers/smart_knob_rotary/driver.js",
           "detail": "Line 36: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_rotary_hybrid\\device.js",
+          "file": "drivers/smart_knob_rotary_hybrid/device.js",
           "detail": "Line 413: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_rotary_hybrid\\device.js",
+          "file": "drivers/smart_knob_rotary_hybrid/device.js",
           "detail": "Line 432: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_rotary_hybrid\\driver.js",
+          "file": "drivers/smart_knob_rotary_hybrid/driver.js",
           "detail": "Line 16: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_rotary_hybrid\\driver.js",
+          "file": "drivers/smart_knob_rotary_hybrid/driver.js",
           "detail": "Line 20: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_rotary_hybrid\\driver.js",
+          "file": "drivers/smart_knob_rotary_hybrid/driver.js",
           "detail": "Line 24: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_rotary_hybrid\\driver.js",
+          "file": "drivers/smart_knob_rotary_hybrid/driver.js",
           "detail": "Line 28: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_rotary_hybrid\\driver.js",
+          "file": "drivers/smart_knob_rotary_hybrid/driver.js",
           "detail": "Line 32: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_rotary_hybrid\\driver.js",
+          "file": "drivers/smart_knob_rotary_hybrid/driver.js",
           "detail": "Line 36: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_switch_hybrid\\device.js",
+          "file": "drivers/smart_knob_switch_hybrid/device.js",
           "detail": "Line 69: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_switch_hybrid\\device.js",
+          "file": "drivers/smart_knob_switch_hybrid/device.js",
           "detail": "Line 74: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_switch_hybrid\\device.js",
+          "file": "drivers/smart_knob_switch_hybrid/device.js",
           "detail": "Line 84: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_switch_hybrid\\device.js",
+          "file": "drivers/smart_knob_switch_hybrid/device.js",
           "detail": "Line 85: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_switch_hybrid\\device.js",
+          "file": "drivers/smart_knob_switch_hybrid/device.js",
           "detail": "Line 108: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_switch_hybrid\\device.js",
+          "file": "drivers/smart_knob_switch_hybrid/device.js",
           "detail": "Line 111: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_scene_panel\\device.js",
+          "file": "drivers/smart_scene_panel/device.js",
           "detail": "Line 34: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_scene_panel\\device.js",
+          "file": "drivers/smart_scene_panel/device.js",
           "detail": "Line 36: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_scene_panel\\driver.js",
+          "file": "drivers/smart_scene_panel/driver.js",
           "detail": "Line 10: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_scene_panel\\driver.js",
+          "file": "drivers/smart_scene_panel/driver.js",
           "detail": "Line 17: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_2gang\\device.js",
+          "file": "drivers/switch_2gang/device.js",
           "detail": "Line 364: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_2gang\\device.js",
+          "file": "drivers/switch_2gang/device.js",
           "detail": "Line 369: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_3gang\\device.js",
+          "file": "drivers/switch_3gang/device.js",
           "detail": "Line 146: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_3gang\\device.js",
+          "file": "drivers/switch_3gang/device.js",
           "detail": "Line 151: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_4gang\\device.js",
+          "file": "drivers/switch_4gang/device.js",
           "detail": "Line 246: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_4gang\\device.js",
+          "file": "drivers/switch_4gang/device.js",
           "detail": "Line 252: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_4gang\\device.js",
+          "file": "drivers/switch_4gang/device.js",
           "detail": "Line 320: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_4gang\\device.js",
+          "file": "drivers/switch_4gang/device.js",
           "detail": "Line 326: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_4gang\\driver.js",
+          "file": "drivers/switch_4gang/driver.js",
           "detail": "Line 60: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_4gang\\driver.js",
+          "file": "drivers/switch_4gang/driver.js",
           "detail": "Line 61: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_4gang\\driver.js",
+          "file": "drivers/switch_4gang/driver.js",
           "detail": "Line 62: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_4gang\\driver.js",
+          "file": "drivers/switch_4gang/driver.js",
           "detail": "Line 63: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_dimmer_1gang\\device.js",
+          "file": "drivers/switch_dimmer_1gang/device.js",
           "detail": "Line 40: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_dimmer_1gang\\device.js",
+          "file": "drivers/switch_dimmer_1gang/device.js",
           "detail": "Line 51: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_dimmer_1gang\\device.js",
+          "file": "drivers/switch_dimmer_1gang/device.js",
           "detail": "Line 53: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_hybrid\\device.js",
+          "file": "drivers/switch_hybrid/device.js",
           "detail": "Line 398: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_hybrid\\device.js",
+          "file": "drivers/switch_hybrid/device.js",
           "detail": "Line 403: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_wall_5gang\\device.js",
+          "file": "drivers/switch_wall_5gang/device.js",
           "detail": "Line 93: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_wall_5gang\\device.js",
+          "file": "drivers/switch_wall_5gang/device.js",
           "detail": "Line 97: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_wall_6gang\\device.js",
+          "file": "drivers/switch_wall_6gang/device.js",
           "detail": "Line 93: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_wall_6gang\\device.js",
+          "file": "drivers/switch_wall_6gang/device.js",
           "detail": "Line 97: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_wall_7gang\\device.js",
+          "file": "drivers/switch_wall_7gang/device.js",
           "detail": "Line 93: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_wall_7gang\\device.js",
+          "file": "drivers/switch_wall_7gang/device.js",
           "detail": "Line 97: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_wall_8gang\\device.js",
+          "file": "drivers/switch_wall_8gang/device.js",
           "detail": "Line 128: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_wall_8gang\\device.js",
+          "file": "drivers/switch_wall_8gang/device.js",
           "detail": "Line 132: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\wall_dimmer_1gang_1way\\device.js",
+          "file": "drivers/wall_dimmer_1gang_1way/device.js",
           "detail": "Line 276: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\wall_dimmer_1gang_1way\\device.js",
+          "file": "drivers/wall_dimmer_1gang_1way/device.js",
           "detail": "Line 310: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\wall_dimmer_1gang_1way\\device.js",
+          "file": "drivers/wall_dimmer_1gang_1way/device.js",
           "detail": "Line 314: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\wall_remote_4_gang_2\\device.js",
+          "file": "drivers/wall_remote_4_gang_2/device.js",
           "detail": "Line 17: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\wall_switch_2gang_1way\\device.js",
+          "file": "drivers/wall_switch_2gang_1way/device.js",
           "detail": "Line 55: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\wall_switch_2gang_1way\\device.js",
+          "file": "drivers/wall_switch_2gang_1way/device.js",
           "detail": "Line 57: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\wall_switch_2gang_1way\\device.js",
+          "file": "drivers/wall_switch_2gang_1way/device.js",
           "detail": "Line 62: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\wall_switch_2gang_1way\\device.js",
+          "file": "drivers/wall_switch_2gang_1way/device.js",
           "detail": "Line 146: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\wall_switch_2gang_1way\\device.js",
+          "file": "drivers/wall_switch_2gang_1way/device.js",
           "detail": "Line 150: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\wall_switch_3gang_1way\\device.js",
+          "file": "drivers/wall_switch_3gang_1way/device.js",
           "detail": "Line 49: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\wall_switch_3gang_1way\\device.js",
+          "file": "drivers/wall_switch_3gang_1way/device.js",
           "detail": "Line 51: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\wall_switch_3gang_1way\\device.js",
+          "file": "drivers/wall_switch_3gang_1way/device.js",
           "detail": "Line 54: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\wall_switch_3gang_1way\\device.js",
+          "file": "drivers/wall_switch_3gang_1way/device.js",
           "detail": "Line 121: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\wall_switch_3gang_1way\\device.js",
+          "file": "drivers/wall_switch_3gang_1way/device.js",
           "detail": "Line 124: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\wall_switch_4gang_1way\\device.js",
+          "file": "drivers/wall_switch_4gang_1way/device.js",
           "detail": "Line 50: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\wall_switch_4gang_1way\\device.js",
+          "file": "drivers/wall_switch_4gang_1way/device.js",
           "detail": "Line 52: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\wall_switch_4gang_1way\\device.js",
+          "file": "drivers/wall_switch_4gang_1way/device.js",
           "detail": "Line 55: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\wall_switch_4gang_1way\\device.js",
+          "file": "drivers/wall_switch_4gang_1way/device.js",
           "detail": "Line 128: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\water_valve_smart\\device.js",
+          "file": "drivers/water_valve_smart/device.js",
           "detail": "Line 95: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\water_valve_smart\\device.js",
+          "file": "drivers/water_valve_smart/device.js",
           "detail": "Line 99: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\water_valve_smart\\device.js",
+          "file": "drivers/water_valve_smart/device.js",
           "detail": "Line 101: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\water_valve_smart\\device.js",
+          "file": "drivers/water_valve_smart/device.js",
           "detail": "Line 107: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\water_valve_smart\\device.js",
+          "file": "drivers/water_valve_smart/device.js",
           "detail": "Line 112: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\weather_station_outdoor\\device.js",
+          "file": "drivers/weather_station_outdoor/device.js",
           "detail": "Line 72: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\weather_station_outdoor\\device.js",
+          "file": "drivers/weather_station_outdoor/device.js",
           "detail": "Line 75: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\weather_station_outdoor\\device.js",
+          "file": "drivers/weather_station_outdoor/device.js",
           "detail": "Line 85: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "lib\\ButtonRemoteManager.js",
+          "file": "lib/ButtonRemoteManager.js",
           "detail": "Line 195: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "lib\\devices\\BaseHybridDevice.js",
-          "detail": "Line 2626: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\devices\\BaseHybridDevice.js",
-          "detail": "Line 2639: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\devices\\BaseHybridDevice.js",
-          "detail": "Line 2672: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\devices\\BaseHybridDevice.js",
-          "detail": "Line 2801: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\devices\\ButtonDevice.js",
-          "detail": "Line 1799: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\devices\\HybridSensorBase.js",
-          "detail": "Line 3378: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\devices\\WallTouchDevice.js",
-          "detail": "Line 184: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\devices\\WallTouchDevice.js",
-          "detail": "Line 201: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\flow\\FlowTriggerHelpers.js",
-          "detail": "Line 84: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\mixins\\CoreCapabilityMixin.js",
-          "detail": "Line 39: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\SDK3BestPractices.js",
+          "file": "lib/SDK3BestPractices.js",
           "detail": "Line 46: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "lib\\SonoffZclDevice.js",
+          "file": "lib/SonoffZclDevice.js",
           "detail": "Line 701: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "lib\\TuyaUniversalBridge.js",
+          "file": "lib/TuyaUniversalBridge.js",
           "detail": "Line 182: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/devices/BaseHybridDevice.js",
+          "detail": "Line 2626: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/devices/BaseHybridDevice.js",
+          "detail": "Line 2639: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/devices/BaseHybridDevice.js",
+          "detail": "Line 2672: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/devices/BaseHybridDevice.js",
+          "detail": "Line 2801: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/devices/ButtonDevice.js",
+          "detail": "Line 1799: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/devices/HybridSensorBase.js",
+          "detail": "Line 3378: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/devices/WallTouchDevice.js",
+          "detail": "Line 184: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/devices/WallTouchDevice.js",
+          "detail": "Line 201: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/flow/FlowTriggerHelpers.js",
+          "detail": "Line 84: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/mixins/CoreCapabilityMixin.js",
+          "detail": "Line 39: getDeviceTriggerCard without try-catch"
         }
       ]
     },
@@ -2005,7 +860,7 @@
       "count": 1,
       "files": [
         {
-          "file": "drivers\\radiator_controller\\device.js",
+          "file": "drivers/radiator_controller/device.js",
           "detail": "5 raw ZCL calls in flow handlers — should use triggerCapabilityListener"
         }
       ]
@@ -2014,55 +869,55 @@
       "count": 13,
       "files": [
         {
-          "file": "drivers\\air_purifier_sensor_hybrid\\device.js",
+          "file": "drivers/air_purifier_sensor_hybrid/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\button_wireless_plug_hybrid\\device.js",
+          "file": "drivers/button_wireless_plug_hybrid/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\device_air_purifier_plug_hybrid\\device.js",
+          "file": "drivers/device_air_purifier_plug_hybrid/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\device_air_purifier_radiator_hybrid\\device.js",
+          "file": "drivers/device_air_purifier_radiator_hybrid/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\device_radiator_valve_hybrid\\device.js",
+          "file": "drivers/device_radiator_valve_hybrid/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\device_radiator_valve_smart_hybrid\\device.js",
+          "file": "drivers/device_radiator_valve_smart_hybrid/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\dimmer_wall_plug_hybrid\\device.js",
+          "file": "drivers/dimmer_wall_plug_hybrid/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\lcdtemphumidsensor_plug_energy_hybrid\\device.js",
+          "file": "drivers/lcdtemphumidsensor_plug_energy_hybrid/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\motion_sensor_radar_mmwave\\device.js",
+          "file": "drivers/motion_sensor_radar_mmwave/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\plug_energy_monitor\\device.js",
+          "file": "drivers/plug_energy_monitor/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\radiator_valve\\device.js",
+          "file": "drivers/radiator_valve/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\sensor_motion_radar_hybrid\\device.js",
+          "file": "drivers/sensor_motion_radar_hybrid/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\water_valve_smart\\device.js",
+          "file": "drivers/water_valve_smart/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         }
       ]
@@ -3224,7 +2079,7 @@
         },
         {
           "file": "drivers",
-          "detail": "sonoff found in: bulb_rgbw, button_wireless_1, button_wireless_4, plug_energy_monitor"
+          "detail": "sonoff found in: bulb_rgbw, button_wireless, button_wireless_1, button_wireless_4, plug_energy_monitor"
         },
         {
           "file": "drivers",
