@@ -1,6 +1,33 @@
 {
-  "timestamp": "2026-04-07T20:47:09.656Z",
+  "timestamp": "2026-04-08T13:41:06.726Z",
   "issues": [
+    {
+      "author": {
+        "is_bot": true,
+        "login": "app/github-actions"
+      },
+      "body": "## 🌐 Monthly Community Sync Found 2140 New Fingerprints\n\n| Manufacturer ID | Product ID | Device Type | Source | Vendor | Capabilities |\n|---|---|---|---|---|---|\n| `_TZE200_s8gkrkxk` | TS0601 | christmas_lights | Johan | - | onoff, dim, light_hue |\n| `_TZ3000_vd43bbfq` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |\n| `_TZ3000_1dd0d5yi` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |\n| `_TZ3000_ke7pzj5d` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |\n| `_TZ3000_fccpjz5z` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |\n| `_TZ3000_4uuaja4a` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |\n| `_TZ3000_zirycpws` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |\n| `_TZ3000_femsaaua` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |\n| `_TZ3000_e3vhyirx` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |\n| `_TZ3000_jwv3cwak` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |\n| `_TZ3210_dwytrmda` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |\n| `_TZ3210_ol1uhvza` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |\n| `_TZ3000_eg7awg6a` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |\n| `_TZ3000_eafaa66e` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |\n| `_TZ3000_j1xl73iw` | TS130F | curtain_module_2_gang | Johan | - | windowcoverings_set, windowcoverings_state |\n| `_TZ3000_l6iqph4f` | TS130F | curtain_module_2_gang | Johan | - | windowcoverings_set, windowcoverings_state |\n| `_TZE200_5zbp6j0u` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_bjzrowv2` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_nkoabg8w` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_xuzcvlku` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_4vobcgd3` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_nogaemzt` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_r0jdjrvi` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_pk0sfzvr` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_fdtjuw7u` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_zpzndjez` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_wmcdj3aq` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_cowvfni3` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_rddyvrci` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_nueqqe6k` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_xaabybja` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_rmymn92d` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_3i3exuay` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_zah67ekd` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_hsgrhjpf` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_68nvbio9` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_pw7mji0l` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_uj3f4wr5` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE204_1fuxihti` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_axgvo9jh` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_gaj531w3` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_yia0p3tr` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_nw1r9hp6` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_cf1sl3tj` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE200_9p5xmj5r` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZE204_xu4a5rhj` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |\n| `_TZ3210_invesber` | TS0502B | dimmable_led_strip | Johan | - | - |\n| `_TZ3210_zdrhqmo0` | TS0502B | dimmable_recessed_led | Johan | - | - |\n| `_TYZB01_qezuin6k` | TS110F,TS110E,TS0052 | dimmer_1_gang | Johan | - | onoff, dim |\n| `_TZ3210_ngqk6jia` | TS110F,TS110E,TS0052 | dimmer_1_gang | Johan | - | onoff, dim |\n| `_TZ3000_ktuoyvt5` | TS110F,TS110E,TS0052 | dimmer_1_gang | Johan | - | onoff, dim |\n| `_TZ3210_zxbtub8r` | TS110F,TS110E,TS0052 | dimmer_1_gang | Johan | - | onoff, dim |\n| `_TZ3210_weaqkhab` | TS110F,TS110E,TS0052 | dimmer_1_gang | Johan | - | onoff, dim |\n| `_TZ3210_k1msuvg6` | TS110F,TS110E,TS0052 | dimmer_1_gang | Johan | - | onoff, dim |\n| `_TZ3000_mgusv51k` | TS110F,TS110E,TS0052 | dimmer_1_gang | Johan | - | onoff, dim |\n| `_TZ3210_ngqk6jia` | TS110E | dimmer_1_gang_2 | Johan | - | onoff, dim |\n| `_TZE200_la2c2uo9` | TS0601 | dimmer_1_gang_tuya | Johan | - | onoff, dim |\n| `_TZE204_hlx9tnzb` | TS0601 | dimmer_1_gang_tuya | Johan | - | onoff, dim |\n| `_TZE200_ip2akl4w` | TS0601 | dimmer_1_gang_tuya | Johan | - | onoff, dim |\n| `_TZE200_1agwnems` | TS0601 | dimmer_1_gang_tuya | Johan | - | onoff, dim |\n| `_TZE200_579lguh2` | TS0601 | dimmer_1_gang_tuya | Johan | - | onoff, dim |\n| `_TZE200_vucankjx` | TS0601 | dimmer_1_gang_tuya | Johan | - | onoff, dim |\n| `_TZE200_4mh6tyyo` | TS0601 | dimmer_1_gang_tuya | Johan | - | onoff, dim |\n| `_TZE204_n9ctkb6j` | TS0601 | dimmer_1_gang_tuya | Johan | - | onoff, dim |\n| `_TZE204_9qhuzgo0` | TS0601 | dimmer_1_gang_tuya | Johan | - | onoff, dim |\n| `_TZE204_dcnsggvz` | TS0601 | dimmer_1_gang_tuya | Johan | - | onoff, dim |\n| `_TZE204_5cuocqty` | TS0601 | dimmer_1_gang_tuya | Johan | - | onoff, dim |\n| `_TYZB01_v8gtiaed` | TS110F,TS110E,TS1101 | dimmer_2_gang | Johan | - | onoff, dim |\n| `_TZ3000_92chsky7` | TS110F,TS110E,TS1101 | dimmer_2_gang | Johan | - | onoff, dim |\n| `_TZ3210_wdexaypg` | TS110F,TS110E,TS1101 | dimmer_2_gang | Johan | - | onoff, dim |\n| `_TZ3210_3mpwqzuu` | TS110F,TS110E,TS1101 | dimmer_2_gang | Johan | - | onoff, dim |\n| `_TZ3210_pagajpog` | TS110F,TS110E,TS1101 | dimmer_2_gang | Johan | - | onoff, dim |\n| `_TZ3210_4ubylghk` | TS110F,TS110E,TS1101 | dimmer_2_gang | Johan | - | onoff, dim |\n| `_TZ3000_7ysdnebc` | TS110F,TS110E,TS1101 | dimmer_2_gang | Johan | - | onoff, dim |\n| `_TZE200_e3oitdyu` | TS0601 | dimmer_2_gang_tuya | Johan | - | onoff, dim |\n| `_TZE204_zenj4lxv` | TS0601 | dimmer_2_gang_tuya | Johan | - | onoff, dim |\n| `_TZE204_bxoo2swd` | TS0601 | dimmer_2_gang_tuya | Johan | - | onoff, dim |\n| `_TZE200_gwkapsoq` | TS0601 | dimmer_2_gang_tuya | Johan | - | onoff, dim |\n| `_TZE200_fjjbhx9d` | TS0601 | dimmer_2_gang_tuya | Johan | - | onoff, dim |\n| `TUYATEC-g3gl6cgy` | RH3001,TS0203,SNZB-04 | doorwindowsensor | Johan | - | alarm_contact, alarm_battery |\n\n*...and 2060 more*\n\n### Sources\n- Zigbee2MQTT tuya.ts (mfr+pid+vendor+description)\n- JohanBendz/com.tuya.zigbee (mfr+pid+class+caps+battery)\n- GitHub Issues/PRs\n- Homey Forums\n\n### Statistics\n- Total new: 2140\n- With productId: 656\n- With vendor: 15\n- Battery devices: 275\n\n*Auto-generated by monthly community sync v5.12.1*",
+      "createdAt": "2026-04-08T10:15:46Z",
+      "number": 205,
+      "title": "[Auto] 2140 new fingerprints from community (2026-04)",
+      "comments": [
+        {
+          "id": "IC_kwDOPPue0s76q96n",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "<!-- tuya-issue-manager -->\nHey there! Thanks for the update on the new fingerprints. I see a lot of curtain modules and motors in the mix. If you're experiencing any issues with these devices, please remember to completely delete them from your Homey, re-pair them, and recreate any flow cards you have set up. This is super important because Homey caches capabilities during pairing, and starting fresh can help resolve any bugs.\n\nIf you're missing readings from sensors like fertilizer or VOC, I'd love to check the app logs for you. Just share the logs showing the DP numbers, and I'll dive into it. \n\nLet me know if you need any more help!",
+          "createdAt": "2026-04-08T10:25:30Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/205#issuecomment-4205567655",
+          "viewerDidAuthor": true
+        }
+      ]
+    },
     {
       "author": {
         "id": "MDQ6VXNlcjQ2MzM0NDU=",
@@ -146,6 +173,21 @@
           "reactionGroups": [],
           "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/198#issuecomment-4193459984",
           "viewerDidAuthor": false
+        },
+        {
+          "id": "IC_kwDOPPue0s76q48J",
+          "author": {
+            "login": "dlnraja"
+          },
+          "authorAssociation": "OWNER",
+          "body": "<!-- diag-resolver -->\n### Set mainsPowered=true and remove measure_battery in onNodeInit\n\n**Action:** remove_battery_capability\n\n**Version:** v7.0.10\n",
+          "createdAt": "2026-04-08T10:21:55Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/198#issuecomment-4205547273",
+          "viewerDidAuthor": true
         }
       ]
     },

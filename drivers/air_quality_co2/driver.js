@@ -28,7 +28,7 @@ class AirQualityCO2Driver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: CO2 above
     try {
-      (() => { try { return this.homey.flow.getDeviceConditionCard('air_quality_co2_co2_above'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('air_quality_co2_co2_above'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const co2 = args.device.getCapabilityValue('measure_co2') || 0;
@@ -39,7 +39,7 @@ class AirQualityCO2Driver extends ZigBeeDriver {
 
     // CONDITION: CO2 below
     try {
-      (() => { try { return this.homey.flow.getDeviceConditionCard('air_quality_co2_co2_below'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('air_quality_co2_co2_below'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const co2 = args.device.getCapabilityValue('measure_co2') || 0;
@@ -50,7 +50,7 @@ class AirQualityCO2Driver extends ZigBeeDriver {
 
     // CONDITION: Air quality good
     try {
-      (() => { try { return this.homey.flow.getDeviceConditionCard('air_quality_co2_air_quality_good'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('air_quality_co2_air_quality_good'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const co2 = args.device.getCapabilityValue('measure_co2') || 0;

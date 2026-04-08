@@ -41,7 +41,7 @@ class Button1GangDriver extends ZigBeeDriver {
 
       for (const triggerId of mainTriggers) {
         try {
-          const card = (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getDeviceTriggerCard(triggerId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+          const card = (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getTriggerCard(triggerId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
           if (card) {
             card.registerRunListener(async (args, state) => {
               if (!args.device) {
@@ -66,7 +66,7 @@ class Button1GangDriver extends ZigBeeDriver {
 
       for (const triggerId of button1Triggers) {
         try {
-          const card = (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getDeviceTriggerCard(triggerId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+          const card = (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getTriggerCard(triggerId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
           if (card) {
             card.registerRunListener(async (args, state) => {
               if (!args.device) {

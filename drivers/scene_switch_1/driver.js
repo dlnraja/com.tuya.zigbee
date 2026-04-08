@@ -21,10 +21,10 @@ class SceneSwitch1Driver extends ZigBeeDriver {
     this.log('SceneSwitch1Driver initialized');
 
     // Register flow triggers
-      (() => { try { return this.homey.flow.getDeviceTriggerCard('scene_switch_1_button_pressed'); } catch(e) { return null; } })();
-      (() => { try { return this.homey.flow.getDeviceTriggerCard('scene_switch_1_button_double_press'); } catch(e) { return null; } })();
-      (() => { try { return this.homey.flow.getDeviceTriggerCard('scene_switch_1_button_long_press'); } catch(e) { return null; } })();
-      (() => { try { return this.homey.flow.getDeviceTriggerCard('scene_switch_1_battery_changed'); } catch(e) { return null; } })();
+      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('scene_switch_1_button_pressed'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('scene_switch_1_button_double_press'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('scene_switch_1_button_long_press'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('scene_switch_1_battery_changed'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
 
     this.log('SceneSwitch1Driver flow triggers registered');
   }

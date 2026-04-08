@@ -29,16 +29,16 @@ class MotionSensorDriver extends ZigBeeDriver {
       // ═══════════════════════════════════════════════════════════════
       // TRIGGER CARDS - All triggers from driver.flow.compose.json
       // ═══════════════════════════════════════════════════════════════
-      (() => { try { return this.homey.flow.getDeviceTriggerCard('motion_sensor_motion_detected'); } catch(e) { return null; } })();
-      (() => { try { return this.homey.flow.getDeviceTriggerCard('motion_sensor_motion_cleared'); } catch(e) { return null; } })();
-      (() => { try { return this.homey.flow.getDeviceTriggerCard('motion_sensor_battery_low'); } catch(e) { return null; } })();
-      (() => { try { return this.homey.flow.getDeviceTriggerCard('motion_sensor_battery_changed'); } catch(e) { return null; } })();
-      (() => { try { return this.homey.flow.getDeviceTriggerCard('motion_sensor_lux_changed'); } catch(e) { return null; } })();
+      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('motion_sensor_motion_detected'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('motion_sensor_motion_cleared'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('motion_sensor_battery_low'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('motion_sensor_battery_changed'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('motion_sensor_lux_changed'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
 
       // ═══════════════════════════════════════════════════════════════
       // CONDITION CARDS - with device validation
       // ═══════════════════════════════════════════════════════════════
-      (() => { try { return this.homey.flow.getDeviceConditionCard('motion_sensor_motion_active'); } catch(e) { return null; } })();
+      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('motion_sensor_motion_active'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
       this.motionActiveCondition?.registerRunListener(async (args) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');

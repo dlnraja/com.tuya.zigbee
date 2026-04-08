@@ -26,7 +26,8 @@
  *  14. logic-case-audit       — Flag suspected case-sensitive comparisons
  *  15. this-prefix-safety     — Replace global SDK method calls with 'this.' (ReferenceError prevention)
  *  16. defensive-get-device   — Inject defensive getDeviceById override in drivers
- *  17. safe-flow-lookup       — Wrap getDeviceTriggerCard in try-catch
+ *  29. safe-flow-lookup       — Wrap getDeviceTriggerCard in try-catch
+ *  30. wifi-qr-stability      — Enforce larger QR codes and regional schema in WiFi drivers
  */
 'use strict';
 
@@ -100,17 +101,16 @@ function rule_phantomMethods() {
     let code = fs.readFileSync(file, 'utf8');
     const original = code;
 
-    // v5.13.3: SDK3 MANDATORY NORMALIZATION (REVERSED)
-    // Athom SDK3 REQUIRES getDevice*Card() for driver-specific flow cards
-    // Using simple get*Card() for these cards results in null/unlinked cards
-    code = code.replace(/\.getConditionCard\s*\(/g, '.getDeviceConditionCard(');
-    code = code.replace(/\.getActionCard\s*\(/g, '.getDeviceActionCard(');
-    code = code.replace(/\.getTriggerCard\s*\(/g, '.getDeviceTriggerCard(');
+    // v7.0.12: SDK3 STANDARD NORMALIZATION
+    // Standardize all Flow card lookups to SDK 3 methods.
+    code = code.replace(/\.getDeviceConditionCard\s*\(/g, '.getConditionCard(');
+    code = code.replace(/\.getDeviceActionCard\s*\(/g, '.getActionCard(');
+    code = code.replace(/\.getDeviceTriggerCard\s*\(/g, '.getTriggerCard(');
 
     if (code !== original) {
       safeWrite(file, code);
       fixes++;
-      addFix('sdk3-device-flow-cards', file, 'Normalized to SDK3 getDevice*Card methods for driver-specific flows');
+      addFix('sdk3-flow-cards-standard', file, 'Normalized to SDK 3 get*Card methods');
       log(`  ✅ Fixed: ${path.relative(ROOT, file)}`);
     }
   }
@@ -138,6 +138,9 @@ function rule_fingerprintCase() {
       let changed = false;
       const fixed = mfrs.map(m => {
         if (typeof m !== 'string') return m;
+        // v7.0.15: Skip lowercasing for case-sensitive brands (Issue #194)
+        if (/^(SONOFF|eWeLink|E-WELINK|SNZB)/i.test(m)) return m;
+        
         const lower = m.toLowerCase();
         if (m !== lower) { changed = true; return lower; }
         return m;
@@ -910,6 +913,7 @@ async function main() {
   rule_safeFlowLookup();
   rule_multiGangCapOptions(); 
   rule_physicalButtonDetection();
+  rule_wifiQrStability();
 
   // ═══════════════════════════════════════════════════════════════════════════
   // REPORT SUMMARY

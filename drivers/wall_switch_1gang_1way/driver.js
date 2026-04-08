@@ -33,7 +33,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
 
     try {
       // Flow card: Turned on (physical button)
-      (() => { try { return this.homey.flow.getDeviceTriggerCard('wall_switch_1gang_1way_turned_on'); } catch(e) { return null; } })();
+      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('wall_switch_1gang_1way_turned_on'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
       this.log('✅ Flow card registered: wall_switch_1gang_1way_turned_on');
     } catch (err) {
       this.error('Failed to register turned_on flow card:', err.message);
@@ -41,19 +41,19 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
 
     try {
       // Flow card: Turned off (physical button)
-      (() => { try { return this.homey.flow.getDeviceTriggerCard('wall_switch_1gang_1way_turned_off'); } catch(e) { return null; } })();
+      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('wall_switch_1gang_1way_turned_off'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
       this.log('✅ Flow card registered: wall_switch_1gang_1way_turned_off');
     } catch (err) {
       this.error('Failed to register turned_off flow card:', err.message);
     }
 
     try {
-      (() => { try { return this.homey.flow.getDeviceTriggerCard('wall_switch_1gang_1way_gang1_scene'); } catch(e) { return null; } })();
+      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('wall_switch_1gang_1way_gang1_scene'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
       this.log('✅ Flow card registered: wall_switch_1gang_1way_gang1_scene');
     } catch (err) { this.error('Scene trigger failed:', err.message); }
 
     try {
-      (() => { try { return this.homey.flow.getDeviceActionCard('wall_switch_1gang_1way_set_scene_mode'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('wall_switch_1gang_1way_set_scene_mode'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSceneMode(args.mode);
@@ -64,7 +64,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set backlight mode
     try {
-      (() => { try { return this.homey.flow.getDeviceActionCard('wall_switch_1gang_1way_set_backlight'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('wall_switch_1gang_1way_set_backlight'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           this.log(`Flow: Setting backlight mode to ${args.mode}`);
@@ -84,7 +84,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set power-on behavior (v5.11.30)
     try {
-      (() => { try { return this.homey.flow.getDeviceActionCard('wall_switch_1gang_1way_set_power_on_behavior'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('wall_switch_1gang_1way_set_power_on_behavior'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ power_on_behavior: args.mode });
@@ -100,7 +100,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set external switch type (v5.11.30)
     try {
-      (() => { try { return this.homey.flow.getDeviceActionCard('wall_switch_1gang_1way_set_switch_mode'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('wall_switch_1gang_1way_set_switch_mode'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ switch_mode: args.mode });

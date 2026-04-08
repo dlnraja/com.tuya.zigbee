@@ -28,7 +28,7 @@ class ZbbridgeDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is connected
     try {
-      (() => { try { return this.homey.flow.getDeviceConditionCard('gateway_zigbee_bridge_is_connected'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('gateway_zigbee_bridge_is_connected'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getAvailable() === true;
@@ -38,7 +38,7 @@ class ZbbridgeDriver extends ZigBeeDriver {
 
     // ACTION: Permit join
     try {
-      (() => { try { return this.homey.flow.getDeviceActionCard('gateway_zigbee_bridge_permit_join'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('gateway_zigbee_bridge_permit_join'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           this.log('[FLOW] Permit join requested');
@@ -49,7 +49,7 @@ class ZbbridgeDriver extends ZigBeeDriver {
 
     // ACTION: Disable join
     try {
-      (() => { try { return this.homey.flow.getDeviceActionCard('gateway_zigbee_bridge_disable_join'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('gateway_zigbee_bridge_disable_join'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           this.log('[FLOW] Disable join requested');

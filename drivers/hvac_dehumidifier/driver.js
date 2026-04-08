@@ -28,7 +28,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is on
     try {
-      (() => { try { return this.homey.flow.getDeviceConditionCard('hvac_dehumidifier_dehumidifier_hybrid_is_on'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('hvac_dehumidifier_dehumidifier_hybrid_is_on'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -38,7 +38,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      (() => { try { return this.homey.flow.getDeviceActionCard('hvac_dehumidifier_dehumidifier_hybrid_turn_on'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('hvac_dehumidifier_dehumidifier_hybrid_turn_on'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -50,7 +50,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      (() => { try { return this.homey.flow.getDeviceActionCard('hvac_dehumidifier_dehumidifier_hybrid_turn_off'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('hvac_dehumidifier_dehumidifier_hybrid_turn_off'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -62,7 +62,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      (() => { try { return this.homey.flow.getDeviceActionCard('hvac_dehumidifier_dehumidifier_hybrid_toggle'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('hvac_dehumidifier_dehumidifier_hybrid_toggle'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');

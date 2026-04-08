@@ -1,4 +1,4 @@
-# Rules for Physical & Virtual Button Logic (v1.0.0)
+# Rules for Physical & Virtual Button Logic (v1.1.0)
 > Core architectural rules for bidirectional button synchronization in Universal Tuya App.
 
 ## 1. Bidirectional Sync (RX/TX)
@@ -9,19 +9,24 @@
 *   **Rule 1.2: Physical Triggering**
     *   If `isAppCommand(gang)` is `false`, the report is a physical event.
     *   **Action**: Use `_triggerPhysicalFlow(gang, value)` and then `_safeSetCapability(gangId, value)`.
+*   **Rule 1.3: Physical Execution (Zero Defect)**
+    *   Flow Action cards MUST use `triggerCapabilityListener()` instead of `setCapabilityValue()` to ensure actual physical relay switching.
+    *   **Action**: Implement fallback in `HybridSwitchBase` to route flow commands through listeners.
 
-## 2. Hardening (Anti-Burst)
+## 2. Hardening (Anti-Burst & SDK 3 Safety)
 *   **Rule 2.1: ZCL Burst Debounce**
-    *   High-frequency frames (e.g. triple click in 50ms) can crash the driver.
-    *   **Action**: Implement `_isDebounced()` check with at least 200ms threshold in `PhysicalButtonMixin.js`.
+    *   High-frequency frames can crash the driver.
+    *   **Action**: Implement `_isDebounced()` check (200ms threshold) in `PhysicalButtonMixin.js`.
 *   **Rule 2.2: SDK 3 Flow Protection**
-    *   Flow card lookups via `getTriggerCard()` are prone to synchronous throw/crash if card ID is invalid.
-    *   **Action**: ALWAYS use `app._safeGetTriggerCard()` wrapper.
+    *   `getTriggerCard()` can throw/crash if card ID is invalid.
+    *   **Action**: ALWAYS use the **Safe-Get-Card pattern**: `(() => { try { return this.homey.flow.getTriggerCard(id); } catch(e) { return null; } })()`.
+*   **Rule 2.3: Method-Call Safety**
+    *   To prevent `ReferenceError` during complex inheritance calls, always prefix SDK methods (like `setCapabilityValue`) with `this.`.
 
-## 3. Virtual Buttons
-*   **Rule 3.1: Packetninja State Tracking**
-    *   Virtual buttons (Toggle, Dim Up, Identify) must record events in `_virtualButtonState`.
-    *   **Action**: Use `_recordVirtualButtonEvent(gang, type, data)` for audit logs and forensic diagnostics.
+## 3. Fingerprint Integrity
+*   **Rule 3.1: Resolution Conflict**
+    *   Manufacturer IDs MUST NOT be duplicated across drivers of different "gang" counts (e.g., mapping a 3-gang MFR to a 1-gang driver is forbidden).
+    *   **Action**: Audit `DeviceFingerprintDB.js` daily for gang-count consistency.
 
 ## 4. Multi-Layer Logic
 *   **Layer 0: Trame Réseau (Raw)**
@@ -36,3 +41,5 @@
     *   ALWAYS use `.toLowerCase()` when matching `manufacturerName`.
 *   **Rule 5.2: Generic Fallbacks**
     *   For `_TZ3000_` devices, prefer generic drivers but prune `onoff` if it's a battery remote.
+*   **Rule 5.3: Standard Initialization**
+    *   Avoid using "ZCL-only" modes for non-BSEED devices. Standard hybrid initialization is the robust default.

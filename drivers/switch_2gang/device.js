@@ -59,6 +59,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
     // (Forum: Rikjes #1676, _TZ3000_jl7qyupf)
     await super.onNodeInit({ zclNode });
     this.initPhysicalButtonDetection(); // rule-19 injected
+    
 
     // v5.5.26: Setup power measurement for ZCL devices
     await this._setupPowerMeasurement(zclNode);
@@ -364,7 +365,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_2gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
             try {
-              const card = (() => { try { return this.homey.flow.getDeviceTriggerCard(flowId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+              const card = (() => { try { return this.homey.flow.getTriggerCard(flowId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
               if (card) await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
               this.log(`[BSEED-2G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
             } catch (e) { }
@@ -372,7 +373,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
             const sceneId = `switch_2gang_gang${epNum}_scene`;
             try {
-              const card = (() => { try { return this.homey.flow.getDeviceTriggerCard(sceneId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+              const card = (() => { try { return this.homey.flow.getTriggerCard(sceneId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
               if (card) await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
               this.log(`[BSEED-2G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
             } catch (e) { }

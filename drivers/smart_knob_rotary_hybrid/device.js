@@ -410,7 +410,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     }
 
     // Trigger flow card
-      const rotateLeftTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_hybrid_rotate_left'); } catch(e) { return null; } })();
+      const rotateLeftTrigger = (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_hybrid_rotate_left'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
     if (rotateLeftTrigger) {
       await rotateLeftTrigger.trigger(this, { 
         brightness: Math.round(this._simulatedBrightness * 100) 
@@ -429,7 +429,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     }
 
     // Trigger flow card
-      const rotateRightTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_hybrid_rotate_right'); } catch(e) { return null; } })();
+      const rotateRightTrigger = (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_hybrid_rotate_right'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
     if (rotateRightTrigger) {
       await rotateRightTrigger.trigger(this, { 
         brightness: Math.round(this._simulatedBrightness * 100) 
@@ -449,7 +449,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
 
     // Trigger generic flow card with action token
     try {
-      (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_hybrid_pressed'); } catch(e) { return null; } })();
+      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_hybrid_pressed'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
     } catch (e) { /* ignore */ }
 
     // v5.7.11: Trigger specific flow cards based on action type
@@ -464,7 +464,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     
     if (specificCardId) {
       try {
-        await (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getDeviceTriggerCard(specificCardId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().trigger(this, {}, {}).catch(() => {});
+        await (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getTriggerCard(specificCardId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().trigger(this, {}, {}).catch(() => {});
         this.log(`[FLOW] ✅ Triggered ${specificCardId}`);
       } catch (e) { /* ignore */ }
     }

@@ -18,7 +18,7 @@ class WiFiGenericDriver extends TuyaLocalDriver {
     await super.onInit();
     this.log('[WIFI-GENERIC-DRV] Generic WiFi driver initialized');
     // v5.13.3: Flow card handlers
-      (() => { try { return this.homey.flow.getDeviceActionCard('wifi_generic_set_dp'); } catch(e) { return null; } })();
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('wifi_generic_set_dp'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
   }
 }
 module.exports = WiFiGenericDriver;

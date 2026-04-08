@@ -43,7 +43,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is on/off
     try {
-      (() => { try { return this.homey.flow.getDeviceConditionCard('bulb_rgb_smart_bulb_rgb_is_on'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('bulb_rgb_smart_bulb_rgb_is_on'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -53,7 +53,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      (() => { try { return this.homey.flow.getDeviceActionCard('bulb_rgb_smart_bulb_rgb_turn_on'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('bulb_rgb_smart_bulb_rgb_turn_on'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -65,7 +65,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      (() => { try { return this.homey.flow.getDeviceActionCard('bulb_rgb_smart_bulb_rgb_turn_off'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('bulb_rgb_smart_bulb_rgb_turn_off'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -77,7 +77,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      (() => { try { return this.homey.flow.getDeviceActionCard('bulb_rgb_smart_bulb_rgb_toggle'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('bulb_rgb_smart_bulb_rgb_toggle'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
@@ -90,7 +90,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
 
     // ACTION: Set brightness
     try {
-      (() => { try { return this.homey.flow.getDeviceActionCard('bulb_rgb_smart_bulb_rgb_set_dim'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('bulb_rgb_smart_bulb_rgb_set_dim'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('dim', args.brightness);
@@ -108,7 +108,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
 
   _registerSetColorTempKelvinAction() {
     try {
-      const action = (() => { try { return this.homey.flow.getDeviceActionCard('set_color_temp_kelvin'); } catch(e) { return null; } })();
+      const action = (() => { try { return (() => { try { return this.homey.flow.getActionCard('set_color_temp_kelvin'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
       if (!action) return;
 
       action.registerRunListener(async (args) => {

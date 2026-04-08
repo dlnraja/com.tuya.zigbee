@@ -37,6 +37,36 @@
       "units": {
         "en": "m"
       }
+    },
+    "onoff.gang2": {
+      "title": {
+        "en": "Gang 2"
+      }
+    },
+    "onoff.gang3": {
+      "title": {
+        "en": "Gang 3"
+      }
+    },
+    "button.toggle_1": {
+      "title": {
+        "en": " 1"
+      }
+    },
+    "button.toggle_2": {
+      "title": {
+        "en": " 2"
+      }
+    },
+    "button.toggle_3": {
+      "title": {
+        "en": " 3"
+      }
+    },
+    "button.identify": {
+      "title": {
+        "en": " identify"
+      }
     }
   },
   "subDevices": [],

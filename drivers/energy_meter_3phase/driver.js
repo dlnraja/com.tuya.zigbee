@@ -19,7 +19,7 @@ class EnergyMeter3phaseDriver extends Driver {
   async onInit() {
     this.log('3-Phase Energy Meter driver initialized');
     // v5.13.3: Flow card handlers
-      (() => { try { return this.homey.flow.getDeviceActionCard('energy_meter_3phase_reset_meter'); } catch(e) { return null; } })();
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('energy_meter_3phase_reset_meter'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
   }
 }
 

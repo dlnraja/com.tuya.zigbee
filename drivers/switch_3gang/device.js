@@ -68,7 +68,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
     this.initPhysicalButtonDetection(); // rule-19 injected
         await this.initPhysicalButtonDetection(zclNode);
         await this.initVirtualButtons();
-        this.log('[SWITCH-3G] v5.5.919 - Physical button detection enabled');
+        this.log('[SWITCH-3G] v7.0.12 - Physical button detection enabled');
       } catch (setupErr) {
         this.log('[SWITCH-3G] Setup warning:', setupErr.message);
       }
@@ -146,7 +146,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_3gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
             try {
-              const card = (() => { try { return this.homey.flow.getDeviceTriggerCard(flowId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+              const card = (() => { try { return this.homey.flow.getTriggerCard(flowId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
               if (card) await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
               this.log(`[BSEED-3G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
             } catch (e) { }
@@ -154,7 +154,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
             const sceneId = `switch_3gang_gang${epNum}_scene`;
             try {
-              const card = (() => { try { return this.homey.flow.getDeviceTriggerCard(sceneId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+              const card = (() => { try { return this.homey.flow.getTriggerCard(sceneId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
               if (card) await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
               this.log(`[BSEED-3G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
             } catch (e) { }

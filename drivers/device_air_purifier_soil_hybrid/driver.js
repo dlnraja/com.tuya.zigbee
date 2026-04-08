@@ -13,6 +13,19 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * - Soil sensors: temperature + humidity + soil moisture
  */
 class SoilSensorDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   async onInit() {
     this.log('╔══════════════════════════════════════════════════════════════╗');
@@ -25,7 +38,7 @@ class SoilSensorDriver extends ZigBeeDriver {
     // v5.5.556: Safe flow card registration helper (no stderr on missing cards)
     const safeGetTrigger = (id) => {
       try {
-        return this.homey.flow.getDeviceTriggerCard(id);
+        return this.homey.flow.getTriggerCard(id);
       } catch (e) {
         this.log(`[FLOW] Trigger '${id}' not defined - skipping`);
         return null;
@@ -34,7 +47,7 @@ class SoilSensorDriver extends ZigBeeDriver {
 
     const safeGetCondition = (id) => {
       try {
-        return this.homey.flow.getDeviceConditionCard(id);
+        return this.homey.flow.getConditionCard(id);
       } catch (e) {
         this.log(`[FLOW] Condition '${id}' not defined - skipping`);
         return null;

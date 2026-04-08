@@ -103,6 +103,7 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlugB
 
     // Parent handles onoff listener - DO NOT re-register
     await super.onNodeInit({ zclNode });
+    this.initPhysicalButtonDetection(); // rule-19 injected
     this.log('[PLUG] v5.6.0 - DPs: 1,7,9,17-21,101,102 | ZCL: 6,2820,1794,EF00');
 
     // Setup ZCL energy monitoring (parent doesn't do this)
@@ -130,7 +131,7 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlugB
             this._lastOnoffState = state;
             if (isPhysical) {
               const flowId = state ? 'plug_smart_physical_on' : 'plug_smart_physical_off';
-              this.homey.flow.getDeviceTriggerCard().trigger(this, {}, {}).catch(() => {});
+              this.homey.flow.getTriggerCard().trigger(this, {}, {}).catch(() => {});
             }
           }
         }

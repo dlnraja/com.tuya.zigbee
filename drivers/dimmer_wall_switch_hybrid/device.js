@@ -396,12 +396,12 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           }
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_2gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
-            this.homey.flow.getDeviceTriggerCard().trigger(this, { gang: epNum, state: value }, {})
+            this.homey.flow.getTriggerCard().trigger(this, { gang: epNum, state: value }, {})
               .catch(() => {});
             this.log(`[BSEED-2G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
           }
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-            this.homey.flow.getDeviceTriggerCard().trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+            this.homey.flow.getTriggerCard().trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
             this.log(`[BSEED-2G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
           }
         }

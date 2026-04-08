@@ -28,7 +28,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Switch is on/off
     try {
-      (() => { try { return this.homey.flow.getDeviceConditionCard('switch_1gang_is_on'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('switch_1gang_is_on'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -38,7 +38,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      (() => { try { return this.homey.flow.getDeviceActionCard('switch_1gang_turn_on'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('switch_1gang_turn_on'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -50,7 +50,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      (() => { try { return this.homey.flow.getDeviceActionCard('switch_1gang_turn_off'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('switch_1gang_turn_off'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -62,7 +62,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
     // v5.5.906: ACTION: Toggle
     try {
-      (() => { try { return this.homey.flow.getDeviceActionCard('switch_1gang_toggle'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('switch_1gang_toggle'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
@@ -75,7 +75,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
     // v5.5.930: ACTION: Set LED backlight mode
     try {
-      (() => { try { return this.homey.flow.getDeviceActionCard('switch_1gang_set_backlight'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('switch_1gang_set_backlight'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device || !args.mode) return false;
           await args.device.setBacklightMode(args.mode);
@@ -86,7 +86,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
     // v5.5.930: ACTION: Set LED backlight color
     try {
-      (() => { try { return this.homey.flow.getDeviceActionCard('switch_1gang_set_backlight_color'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('switch_1gang_set_backlight_color'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device || !args.state || !args.color) return false;
           await args.device.setBacklightColor(args.state, args.color);
@@ -97,7 +97,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
     // v5.5.930: ACTION: Set LED backlight brightness
     try {
-      (() => { try { return this.homey.flow.getDeviceActionCard('switch_1gang_set_backlight_brightness'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('switch_1gang_set_backlight_brightness'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device || args.brightness === undefined) return false;
           await args.device.setBacklightBrightness(args.brightness);
@@ -109,7 +109,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     this.log('[FLOW] \uD83C\uDF89 Scene mode registered');
     // v5.12.5: Scene mode action
     try {
-      (() => { try { return this.homey.flow.getDeviceActionCard('switch_1gang_set_scene_mode'); } catch(e) { return null; } })()
+      (() => { try { return (() => { try { return this.homey.flow.getActionCard('switch_1gang_set_scene_mode'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSceneMode(args.mode);

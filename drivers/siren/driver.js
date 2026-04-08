@@ -34,7 +34,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // CONDITION: Siren is/is not sounding
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      const sirenCondition = (() => { try { return this.homey.flow.getDeviceConditionCard('siren_is_sounding'); } catch(e) { return null; } })();
+      const sirenCondition = (() => { try { return (() => { try { return this.homey.flow.getConditionCard('siren_is_sounding'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
       sirenCondition.registerRunListener(async (args) => {
         const device = args.device;
         if (!device) {
@@ -54,7 +54,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Turn on siren
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      const turnOnAction = (() => { try { return this.homey.flow.getDeviceActionCard('siren_turn_on'); } catch(e) { return null; } })();
+      const turnOnAction = (() => { try { return (() => { try { return this.homey.flow.getActionCard('siren_turn_on'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
       turnOnAction.registerRunListener(async (args) => {
         const device = args.device;
         if (!device) {
@@ -84,7 +84,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Turn off siren
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      const turnOffAction = (() => { try { return this.homey.flow.getDeviceActionCard('siren_turn_off'); } catch(e) { return null; } })();
+      const turnOffAction = (() => { try { return (() => { try { return this.homey.flow.getActionCard('siren_turn_off'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
       turnOffAction.registerRunListener(async (args) => {
         const device = args.device;
         if (!device) {
@@ -114,7 +114,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Set volume
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      const setVolumeAction = (() => { try { return this.homey.flow.getDeviceActionCard('siren_set_volume'); } catch(e) { return null; } })();
+      const setVolumeAction = (() => { try { return (() => { try { return this.homey.flow.getActionCard('siren_set_volume'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
       setVolumeAction.registerRunListener(async (args) => {
         const device = args.device;
         if (!device) {
@@ -146,7 +146,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Set duration
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      const setDurationAction = (() => { try { return this.homey.flow.getDeviceActionCard('siren_set_duration'); } catch(e) { return null; } })();
+      const setDurationAction = (() => { try { return (() => { try { return this.homey.flow.getActionCard('siren_set_duration'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
       setDurationAction.registerRunListener(async (args) => {
         const device = args.device;
         if (!device) {
@@ -176,7 +176,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Set melody
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      const setMelodyAction = (() => { try { return this.homey.flow.getDeviceActionCard('siren_set_melody'); } catch(e) { return null; } })();
+      const setMelodyAction = (() => { try { return (() => { try { return this.homey.flow.getActionCard('siren_set_melody'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
       setMelodyAction.registerRunListener(async (args) => {
         const device = args.device;
         if (!device) return false;
