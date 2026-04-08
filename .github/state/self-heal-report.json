@@ -1,22 +1,14 @@
 {
-  "timestamp": "2026-04-08T10:29:38.801Z",
+  "timestamp": "2026-04-08T13:47:43.894Z",
   "totalFiles": 0,
-  "totalFixes": 3197,
+  "totalFixes": 3144,
   "rules": {
     "flow-card-try-catch": {
-      "count": 65,
+      "count": 61,
       "files": [
         {
           "file": "drivers/air_purifier_presence_hybrid/device.js",
           "detail": "Line 3377: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "drivers/blaster_remote_hybrid/device.js",
-          "detail": "Line 312: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "drivers/blaster_remote_hybrid/device.js",
-          "detail": "Line 317: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers/button_wireless_switch_hybrid/device.js",
@@ -68,7 +60,7 @@
         },
         {
           "file": "drivers/device_plug_energy_hybrid/device.js",
-          "detail": "Line 133: getDeviceTriggerCard without try-catch"
+          "detail": "Line 134: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers/device_plug_energy_monitor_hybrid/device.js",
@@ -76,7 +68,7 @@
         },
         {
           "file": "drivers/device_plug_smart_hybrid/device.js",
-          "detail": "Line 133: getDeviceTriggerCard without try-catch"
+          "detail": "Line 134: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers/device_plug_smart_water_hybrid/device.js",
@@ -139,16 +131,8 @@
           "detail": "Line 36: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers/sensor_climate_smart_hybrid/driver.js",
-          "detail": "Line 10: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "drivers/sensor_climate_smart_hybrid/driver.js",
-          "detail": "Line 17: getDeviceTriggerCard without try-catch"
-        },
-        {
           "file": "drivers/sensor_contact_plug_hybrid/device.js",
-          "detail": "Line 133: getDeviceTriggerCard without try-catch"
+          "detail": "Line 134: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers/sensor_contact_presence_hybrid/device.js",
@@ -12471,87 +12455,6 @@
         }
       ]
     },
-    "hybrid-flow-id-prefixing": {
-      "count": 19,
-      "files": [
-        {
-          "file": "drivers/blaster_remote_hybrid/driver.flow.compose.json",
-          "detail": "Prefixed flow cards with blaster_remote_hybrid_"
-        },
-        {
-          "file": "drivers/button_wireless_fingerbot_hybrid/driver.flow.compose.json",
-          "detail": "Prefixed flow cards with button_wireless_fingerbot_hybrid_"
-        },
-        {
-          "file": "drivers/climate_sensor_presence_hybrid/driver.flow.compose.json",
-          "detail": "Prefixed flow cards with climate_sensor_presence_hybrid_"
-        },
-        {
-          "file": "drivers/contact_sensor_curtain_hybrid/driver.flow.compose.json",
-          "detail": "Prefixed flow cards with contact_sensor_curtain_hybrid_"
-        },
-        {
-          "file": "drivers/curtain_motor_tilt_hybrid/driver.flow.compose.json",
-          "detail": "Prefixed flow cards with curtain_motor_tilt_hybrid_"
-        },
-        {
-          "file": "drivers/device_air_purifier_hybrid/driver.flow.compose.json",
-          "detail": "Prefixed flow cards with device_air_purifier_hybrid_"
-        },
-        {
-          "file": "drivers/device_air_purifier_motion_hybrid/driver.flow.compose.json",
-          "detail": "Prefixed flow cards with device_air_purifier_motion_hybrid_"
-        },
-        {
-          "file": "drivers/device_air_purifier_presence_hybrid/driver.flow.compose.json",
-          "detail": "Prefixed flow cards with device_air_purifier_presence_hybrid_"
-        },
-        {
-          "file": "drivers/device_air_purifier_soil_hybrid/driver.flow.compose.json",
-          "detail": "Prefixed flow cards with device_air_purifier_soil_hybrid_"
-        },
-        {
-          "file": "drivers/device_generic_tuya_universal_hybrid/driver.flow.compose.json",
-          "detail": "Prefixed flow cards with device_generic_tuya_universal_hybrid_"
-        },
-        {
-          "file": "drivers/device_plug_energy_hybrid/driver.flow.compose.json",
-          "detail": "Prefixed flow cards with device_plug_energy_hybrid_"
-        },
-        {
-          "file": "drivers/device_plug_smart_hybrid/driver.flow.compose.json",
-          "detail": "Prefixed flow cards with device_plug_smart_hybrid_"
-        },
-        {
-          "file": "drivers/remote_button_wireless_plug_hybrid/driver.flow.compose.json",
-          "detail": "Prefixed flow cards with remote_button_wireless_plug_hybrid_"
-        },
-        {
-          "file": "drivers/remote_button_wireless_scene_hybrid/driver.flow.compose.json",
-          "detail": "Prefixed flow cards with remote_button_wireless_scene_hybrid_"
-        },
-        {
-          "file": "drivers/remote_button_wireless_usb_hybrid/driver.flow.compose.json",
-          "detail": "Prefixed flow cards with remote_button_wireless_usb_hybrid_"
-        },
-        {
-          "file": "drivers/remote_button_wireless_valve_hybrid/driver.flow.compose.json",
-          "detail": "Prefixed flow cards with remote_button_wireless_valve_hybrid_"
-        },
-        {
-          "file": "drivers/sensor_climate_smart_hybrid/driver.flow.compose.json",
-          "detail": "Prefixed flow cards with sensor_climate_smart_hybrid_"
-        },
-        {
-          "file": "drivers/sensor_contact_plug_hybrid/driver.flow.compose.json",
-          "detail": "Prefixed flow cards with sensor_contact_plug_hybrid_"
-        },
-        {
-          "file": "drivers/sensor_contact_zigbee_hybrid/driver.flow.compose.json",
-          "detail": "Prefixed flow cards with sensor_contact_zigbee_hybrid_"
-        }
-      ]
-    },
     "naked-flow-cards": {
       "count": 35,
       "files": [
@@ -12703,146 +12606,6 @@
         {
           "file": "lib/diagnostics/DeviceHealth.js",
           "detail": "Suspected case-sensitive comparison of manufacturerName"
-        }
-      ]
-    },
-    "defensive-get-device": {
-      "count": 16,
-      "files": [
-        {
-          "file": "drivers/blaster_remote_hybrid/driver.js",
-          "detail": "Injected defensive getDeviceById override"
-        },
-        {
-          "file": "drivers/button_wireless_fingerbot_hybrid/driver.js",
-          "detail": "Injected defensive getDeviceById override"
-        },
-        {
-          "file": "drivers/climate_sensor_presence_hybrid/driver.js",
-          "detail": "Injected defensive getDeviceById override"
-        },
-        {
-          "file": "drivers/device_air_purifier_hybrid/driver.js",
-          "detail": "Injected defensive getDeviceById override"
-        },
-        {
-          "file": "drivers/device_air_purifier_motion_hybrid/driver.js",
-          "detail": "Injected defensive getDeviceById override"
-        },
-        {
-          "file": "drivers/device_air_purifier_presence_hybrid/driver.js",
-          "detail": "Injected defensive getDeviceById override"
-        },
-        {
-          "file": "drivers/device_air_purifier_soil_hybrid/driver.js",
-          "detail": "Injected defensive getDeviceById override"
-        },
-        {
-          "file": "drivers/device_plug_energy_hybrid/driver.js",
-          "detail": "Injected defensive getDeviceById override"
-        },
-        {
-          "file": "drivers/device_plug_smart_hybrid/driver.js",
-          "detail": "Injected defensive getDeviceById override"
-        },
-        {
-          "file": "drivers/remote_button_wireless_plug_hybrid/driver.js",
-          "detail": "Injected defensive getDeviceById override"
-        },
-        {
-          "file": "drivers/remote_button_wireless_scene_hybrid/driver.js",
-          "detail": "Injected defensive getDeviceById override"
-        },
-        {
-          "file": "drivers/remote_button_wireless_usb_hybrid/driver.js",
-          "detail": "Injected defensive getDeviceById override"
-        },
-        {
-          "file": "drivers/remote_button_wireless_valve_hybrid/driver.js",
-          "detail": "Injected defensive getDeviceById override"
-        },
-        {
-          "file": "drivers/sensor_climate_smart_hybrid/driver.js",
-          "detail": "Injected defensive getDeviceById override"
-        },
-        {
-          "file": "drivers/sensor_contact_plug_hybrid/driver.js",
-          "detail": "Injected defensive getDeviceById override"
-        },
-        {
-          "file": "drivers/sensor_contact_zigbee_hybrid/driver.js",
-          "detail": "Injected defensive getDeviceById override"
-        }
-      ]
-    },
-    "safe-flow-lookup": {
-      "count": 4,
-      "files": [
-        {
-          "file": "drivers/blaster_remote_hybrid/device.js",
-          "detail": "Wrapped Flow card lookups in try-catch."
-        },
-        {
-          "file": "drivers/blaster_remote_hybrid/driver.js",
-          "detail": "Wrapped Flow card lookups in try-catch."
-        },
-        {
-          "file": "drivers/sensor_climate_smart_hybrid/driver.js",
-          "detail": "Wrapped Flow card lookups in try-catch."
-        },
-        {
-          "file": "lib/devices/ButtonDevice.js",
-          "detail": "Wrapped Flow card lookups in try-catch."
-        }
-      ]
-    },
-    "multigang-cap-options": {
-      "count": 5,
-      "files": [
-        {
-          "file": "drivers/button_wireless_fingerbot_hybrid/driver.compose.json",
-          "detail": "Added missing capabilitiesOptions for sub-capabilities"
-        },
-        {
-          "file": "drivers/climate_sensor_presence_hybrid/driver.compose.json",
-          "detail": "Added missing capabilitiesOptions for sub-capabilities"
-        },
-        {
-          "file": "drivers/remote_button_wireless_plug_hybrid/driver.compose.json",
-          "detail": "Added missing capabilitiesOptions for sub-capabilities"
-        },
-        {
-          "file": "drivers/remote_button_wireless_usb_hybrid/driver.compose.json",
-          "detail": "Added missing capabilitiesOptions for sub-capabilities"
-        },
-        {
-          "file": "drivers/remote_button_wireless_valve_hybrid/driver.compose.json",
-          "detail": "Added missing capabilitiesOptions for sub-capabilities"
-        }
-      ]
-    },
-    "physical-button-init": {
-      "count": 5,
-      "files": [
-        {
-          "file": "drivers/button_wireless_fingerbot_hybrid/device.js",
-          "detail": "Injected missing initPhysicalButtonDetection() call"
-        },
-        {
-          "file": "drivers/device_plug_energy_hybrid/device.js",
-          "detail": "Injected missing initPhysicalButtonDetection() call"
-        },
-        {
-          "file": "drivers/device_plug_smart_hybrid/device.js",
-          "detail": "Injected missing initPhysicalButtonDetection() call"
-        },
-        {
-          "file": "drivers/remote_button_wireless_plug_hybrid/device.js",
-          "detail": "Injected missing initPhysicalButtonDetection() call"
-        },
-        {
-          "file": "drivers/sensor_contact_plug_hybrid/device.js",
-          "detail": "Injected missing initPhysicalButtonDetection() call"
         }
       ]
     }
