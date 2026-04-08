@@ -103,6 +103,7 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlugB
 
     // Parent handles onoff listener - DO NOT re-register
     await super.onNodeInit({ zclNode });
+    this.initPhysicalButtonDetection(); // rule-19 injected
     this.log('[PLUG] v5.6.0 - DPs: 1,7,9,17-21,101,102 | ZCL: 6,2820,1794,EF00');
 
     // Setup ZCL energy monitoring (parent doesn't do this)
