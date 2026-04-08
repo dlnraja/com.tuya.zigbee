@@ -47,12 +47,12 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
         if (mode !== 'magic') this.setCapabilityValue('onoff', value).catch(() => {});
         if (isPhys && (mode === 'auto' || mode === 'both')) {
           const fid = 'wall_switch_4gang_1way_turned_' + (value ? 'on' : 'off');
-          this.homey.flow.getDeviceTriggerCard().trigger(this, {}, {}).catch(() => {});
+          (() => { try { return this.homey.flow.getDeviceTriggerCard(fid); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().trigger(this, {}, {}).catch(() => {});
           const pgid = `wall_switch_4gang_1way_physical_gang${gn}_` + (value ? 'on' : 'off');
-          this.homey.flow.getDeviceTriggerCard().trigger(this, {}, {}).catch(() => {});
+          (() => { try { return this.homey.flow.getDeviceTriggerCard(pgid); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().trigger(this, {}, {}).catch(() => {});
         }
         if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-          this.homey.flow.getDeviceTriggerCard().trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+          (() => { try { return this.homey.flow.getDeviceTriggerCard('wall_switch_4gang_1way_gang' + gn + '_scene'); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
         }
       }
     });
@@ -110,6 +110,7 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
     this._appCommandPending = { gang1: false };
     this._appCommandTimeout = { gang1: null };
     await super.onNodeInit({ zclNode });
+    this.initPhysicalButtonDetection(); // rule-19 injected
     this._registerCapabilityListeners(); // rule-12a injected
     await this.initPhysicalButtonDetection(zclNode);
     this._setupGang1SceneDetection(zclNode);
@@ -125,7 +126,7 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
       const isPhys = !this._appCommandPending?.gang1;
       // v5.12.4: Removed 'auto' physical gang trigger - PhysicalButtonMixin handles it (fixes BSEED double-trigger)
       if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-        this.homey.flow.getDeviceTriggerCard().trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+        (() => { try { return this.homey.flow.getDeviceTriggerCard('wall_switch_4gang_1way_gang1_scene'); } catch(e) { return null; } })()?.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
         this.log(`[SCENE] Gang 1 scene: ${value ? 'on' : 'off'}`);
       }
     };

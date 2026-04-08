@@ -38,19 +38,25 @@ class SwitchWirelessDevice extends HybridSwitchBase {
     if (dp === 1) {
       const boolVal = value === 1 || value === true;
       this._safeSetCapability('onoff', boolVal).catch(() => {});
-      const cardId = boolVal ? 'switch_wireless_onoff_true' : 'switch_wireless_onoff_false';
-      try { this.homey.flow.getDeviceTriggerCard().trigger(this, {}, {}).catch(() => {}); } catch (e) { /* */ }
+      try {
+        const id = boolVal ? 'switch_wireless_onoff_true' : 'switch_wireless_onoff_false';
+        (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getDeviceTriggerCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().trigger(this, { timestamp: new Date().toISOString() }, {}).catch(() => {});
+      } catch (e) { /* card missing */ }
       return;
     }
     if (dp === 2) {
       const now = Date.now();
       if (now - this._lastWirelessPress < 300) return;
       this._lastWirelessPress = now;
-      const pt = resolvePressType(value);
-      this.log(`[WIRELESS-SWITCH] DP2 press=${pt}`);
-      try { (() => { try { return this.homey.flow.getDeviceTriggerCard('switch_wireless_button_pressed'); } catch(e) { return null; } })()?.trigger(this, { press_type: pt }, {}).catch(() => {}); } catch (e) { /* */ }
-      const c = { single: 'switch_wireless_single_press', double: 'switch_wireless_double_press', long: 'switch_wireless_long_press' }[pt];
-      if (c) { try { this.homey.flow.getDeviceTriggerCard().trigger(this, {}, {}).catch(() => {}); } catch (e) { /* */ } }
+      const pressType = resolvePressType(value);
+      this.log(`[WIRELESS-SWITCH] DP2 press=${pressType}`);
+      const c = { single: 'switch_wireless_single_press', double: 'switch_wireless_double_press', long: 'switch_wireless_long_press' }[pressType];
+      if (c) {
+        try {
+          (() => { try { return this.homey.flow.getDeviceTriggerCard(c); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().trigger(this, {}, {}).catch(() => {});
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('switch_wireless_button_pressed'); } catch(e) { return null; } })();
+        } catch (e) { /* card missing */ }
+      }
       return;
     }
     if (typeof super._handleDP === 'function') super._handleDP(dp, value);

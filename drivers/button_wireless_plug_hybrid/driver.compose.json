@@ -308,7 +308,18 @@
       "template": "add_devices"
     }
   ],
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": " 1"
+      }
+    },
+    "button.2": {
+      "title": {
+        "en": " 2"
+      }
+    }
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

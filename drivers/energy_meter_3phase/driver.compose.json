@@ -233,5 +233,22 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "capabilitiesOptions": {
+    "measure_power.phase1": {
+      "title": {
+        "en": "Power phase1"
+      }
+    },
+    "measure_power.phase2": {
+      "title": {
+        "en": "Power phase2"
+      }
+    },
+    "measure_power.phase3": {
+      "title": {
+        "en": "Power phase3"
+      }
+    }
+  }
 }

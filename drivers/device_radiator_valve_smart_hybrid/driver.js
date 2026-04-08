@@ -6,6 +6,19 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * v5.5.572: CRITICAL FIX - Flow card run listeners were missing
  */
 class RadiatorValveDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   async onInit() {
     this.log('RadiatorValveDriver v5.5.572 initialized');
@@ -15,7 +28,7 @@ class RadiatorValveDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // ACTION: Set target temperature
     try {
-      this.homey.flow.getDeviceActionCard('radiator_valve_set_target_temperature')
+      (() => { try { return this.homey.flow.getDeviceActionCard('radiator_valve_set_target_temperature'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('target_temperature', args.temperature);

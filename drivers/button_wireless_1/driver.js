@@ -11,6 +11,19 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * - Wrong:   button_wireless_1_button_pressed (what FlowCardHelper generated)
  */
 class Button1GangDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   async onInit() {
     await super.onInit(); // v5.5.533: SDK3 CRITICAL - must call super first!
@@ -28,7 +41,7 @@ class Button1GangDriver extends ZigBeeDriver {
 
       for (const triggerId of mainTriggers) {
         try {
-          const card = this.homey.flow.getDeviceTriggerCard(triggerId);
+          const card = (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getDeviceTriggerCard(triggerId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
           if (card) {
             card.registerRunListener(async (args, state) => {
               if (!args.device) {
@@ -53,7 +66,7 @@ class Button1GangDriver extends ZigBeeDriver {
 
       for (const triggerId of button1Triggers) {
         try {
-          const card = this.homey.flow.getDeviceTriggerCard(triggerId);
+          const card = (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getDeviceTriggerCard(triggerId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
           if (card) {
             card.registerRunListener(async (args, state) => {
               if (!args.device) {

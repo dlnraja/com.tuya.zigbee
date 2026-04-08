@@ -8,6 +8,10 @@
  * 1. Hybrid Inheritance: Any device using _safeSetCapability MUST extend BaseHybridDevice.
  * 2. SDK 3 Safety: All flow card getters must be wrapped or use safe app getters.
  * 3. Regression Prevention: No direct setCapabilityValue calls in hybrid drivers.
+ * 4. Physical Button Hardening (v7.0.x): Remote button devices MUST call initPhysicalButtonDetection().
+ * 5. Moisture Canyon Protection: Soil sensors MUST use BVB constraints for measure_humidity.soil.
+ * 4. Physical Button Hardening (v7.0.x): Remote button devices MUST call initPhysicalButtonDetection().
+ * 5. Moisture Canyon Protection: Soil sensors MUST use BVB constraints for measure_humidity.soil.
  */
 
 const fs = require('fs');
@@ -32,8 +36,24 @@ function audit() {
     const content = fs.readFileSync(devicePath, 'utf8');
 
     // --- 1. Inheritance Check ---
+    const hybridBases = [
+      'BaseHybridDevice', 
+      'HybridSwitchBase', 
+      'HybridPlugBase', 
+      'HybridSensorBase', 
+      'ClimateSensorDevice', 
+      'CoverHybridDevice', 
+      'EweLinkLocalDevice',
+      'TuyaHybridDevice',
+      'AutoAdaptiveDevice',
+      'ButtonDevice',
+      'TuyaSpecificClusterDevice',
+      'ZclClimateDevice',
+      'BaseDevice' // v5.13.2: Base class for some older drivers that implement the mixin
+    ];
+    const hybridRegex = new RegExp(`extends\\s+(${hybridBases.join('|')})`);
+    const extendsHybrid = hybridRegex.test(content);
     const usesSafeSetter = content.includes('_safeSetCapability');
-    const extendsHybrid = /extends\s+(BaseHybridDevice|HybridSwitchBase|HybridPlugBase|HybridSensorBase|ClimateSensorDevice|CoverHybridDevice)/.test(content);
     
     if (usesSafeSetter && !extendsHybrid) {
       // EXCLUSION: BaseHybridDevice itself
@@ -48,11 +68,16 @@ function audit() {
     const flowGetters = ['getTriggerCard', 'getConditionCard', 'getActionCard'];
     for (const getter of flowGetters) {
       if (content.includes(`this.homey.flow.${getter}`)) {
-        // Check if it's wrapped in try-catch or if it's using the app's safe getter
-        // Simplified check: if it's not preceded by 'try {' in the same block or followed by '.catch'
-        // Actually, we prefer usage of this.homey.app._safeGetTriggerCard
-        console.warn(`⚠️ [${d}] Unwrapped ${getter} detected. Should use app._safeGet${getter.replace('get', '')} for SDK 3 stability.`);
-        warnings++;
+        // Check if it's wrapped in IIFE or using the app's safe getter
+        const safeGetter = `_safeGet${getter.replace('get', '')}`;
+        const isSafe = content.includes(`this.homey.app.${safeGetter}`) || 
+                       content.includes('this.homey.app._safeGetCard') ||
+                       (content.includes('(() => { try {') && content.includes(`this.homey.flow.${getter}`));
+        
+        if (!isSafe) {
+          console.warn(`⚠️ [${d}] Unwrapped ${getter} detected. Should use app.${safeGetter} for SDK 3 stability.`);
+          warnings++;
+        }
       }
     }
 

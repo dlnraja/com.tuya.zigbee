@@ -3,10 +3,23 @@
 const { Driver } = require('homey');
 
 class PoolPumpDriver extends Driver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
   async onInit() {
     this.log('Pool Pump driver initialized');
     // v5.13.3: Flow card handlers
-    const r=(i,fn)=>{try{this.homey.flow.getDeviceActionCard(i).registerRunListener(fn);}catch(e){this.log('[Flow]',i,e.message);}};
+    const r=(i,fn)=>{try{(() => { try { return this.homey.flow.getDeviceActionCard(i); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().registerRunListener(fn);}catch(e){this.log('[Flow]',i,e.message);}};
     r('pool_pump_turn_on',async({device})=>{await device.triggerCapabilityListener('onoff',true);return true;});
     r('pool_pump_turn_off',async({device})=>{await device.triggerCapabilityListener('onoff',false);return true;});
     r('pool_pump_toggle',async({device})=>{const v=device.getCapabilityValue('onoff');await device.triggerCapabilityListener('onoff',!v);return true;});

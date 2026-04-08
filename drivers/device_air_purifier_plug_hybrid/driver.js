@@ -6,6 +6,19 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * v5.5.572: CRITICAL FIX - Flow card run listeners were missing
  */
 class PlugEnergyMonitorDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   async onInit() {
     this.log('PlugEnergyMonitorDriver v5.5.572 initialized');
@@ -15,7 +28,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Plug is on/off
     try {
-      this.homey.flow.getDeviceConditionCard('plug_energy_monitor_is_on')
+      (() => { try { return this.homey.flow.getDeviceConditionCard('plug_energy_monitor_is_on'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -25,7 +38,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // CONDITION: Power above threshold
     try {
-      this.homey.flow.getDeviceConditionCard('plug_energy_monitor_power_above')
+      (() => { try { return this.homey.flow.getDeviceConditionCard('plug_energy_monitor_power_above'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const power = args.device.getCapabilityValue('measure_power') || 0;
@@ -36,7 +49,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // CONDITION: Energy above threshold
     try {
-      this.homey.flow.getDeviceConditionCard('plug_energy_monitor_energy_above')
+      (() => { try { return this.homey.flow.getDeviceConditionCard('plug_energy_monitor_energy_above'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const energy = args.device.getCapabilityValue('meter_power') || 0;
@@ -47,7 +60,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      this.homey.flow.getDeviceActionCard('plug_energy_monitor_turn_on')
+      (() => { try { return this.homey.flow.getDeviceActionCard('plug_energy_monitor_turn_on'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -59,7 +72,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      this.homey.flow.getDeviceActionCard('plug_energy_monitor_turn_off')
+      (() => { try { return this.homey.flow.getDeviceActionCard('plug_energy_monitor_turn_off'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -71,7 +84,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      this.homey.flow.getDeviceActionCard('plug_energy_monitor_toggle')
+      (() => { try { return this.homey.flow.getDeviceActionCard('plug_energy_monitor_toggle'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
@@ -84,7 +97,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // ACTION: Reset energy meter
     try {
-      this.homey.flow.getDeviceActionCard('plug_energy_monitor_reset_meter')
+      (() => { try { return this.homey.flow.getDeviceActionCard('plug_energy_monitor_reset_meter'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('meter_power', 0);

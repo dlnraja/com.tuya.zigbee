@@ -410,7 +410,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     }
 
     // Trigger flow card
-    const rotateLeftTrigger = this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_left');
+      const rotateLeftTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_left'); } catch(e) { return null; } })();
     if (rotateLeftTrigger) {
       await rotateLeftTrigger.trigger(this, { 
         brightness: Math.round(this._simulatedBrightness * 100) 
@@ -429,7 +429,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     }
 
     // Trigger flow card
-    const rotateRightTrigger = this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_right');
+      const rotateRightTrigger = (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_right'); } catch(e) { return null; } })();
     if (rotateRightTrigger) {
       await rotateRightTrigger.trigger(this, { 
         brightness: Math.round(this._simulatedBrightness * 100) 

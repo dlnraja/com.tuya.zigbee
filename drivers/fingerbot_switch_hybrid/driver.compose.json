@@ -662,6 +662,21 @@
         "fr": "Batterie"
       },
       "preventInsights": false
+    },
+    "button.toggle": {
+      "title": {
+        "en": " toggle"
+      }
+    },
+    "button.identify": {
+      "title": {
+        "en": " identify"
+      }
+    },
+    "button.push": {
+      "title": {
+        "en": " push"
+      }
     }
   },
   "metadata": {

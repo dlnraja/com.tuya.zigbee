@@ -6,6 +6,19 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * v5.5.582: CRITICAL FIX - Flow card run listeners were missing
  */
 class ZbbridgeDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   async onInit() {
     this.log('ZbbridgeDriver v5.5.582 initialized');
@@ -15,7 +28,7 @@ class ZbbridgeDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is connected
     try {
-      this.homey.flow.getDeviceConditionCard('gateway_zigbee_bridge_is_connected')
+      (() => { try { return this.homey.flow.getDeviceConditionCard('gateway_zigbee_bridge_is_connected'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getAvailable() === true;
@@ -25,7 +38,7 @@ class ZbbridgeDriver extends ZigBeeDriver {
 
     // ACTION: Permit join
     try {
-      this.homey.flow.getDeviceActionCard('gateway_zigbee_bridge_permit_join')
+      (() => { try { return this.homey.flow.getDeviceActionCard('gateway_zigbee_bridge_permit_join'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           this.log('[FLOW] Permit join requested');
@@ -36,7 +49,7 @@ class ZbbridgeDriver extends ZigBeeDriver {
 
     // ACTION: Disable join
     try {
-      this.homey.flow.getDeviceActionCard('gateway_zigbee_bridge_disable_join')
+      (() => { try { return this.homey.flow.getDeviceActionCard('gateway_zigbee_bridge_disable_join'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           this.log('[FLOW] Disable join requested');

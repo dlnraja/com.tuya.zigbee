@@ -6,6 +6,19 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * v5.5.580: CRITICAL FIX - Flow card run listeners were missing
  */
 class RainSensorDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   async onInit() {
     this.log('RainSensorDriver v5.5.580 initialized');
@@ -15,7 +28,7 @@ class RainSensorDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is raining
     try {
-      this.homey.flow.getDeviceConditionCard('rain_sensor_is_raining')
+      (() => { try { return this.homey.flow.getDeviceConditionCard('rain_sensor_is_raining'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_water') === true;
@@ -25,7 +38,7 @@ class RainSensorDriver extends ZigBeeDriver {
 
     // CONDITION: Rain intensity above
     try {
-      this.homey.flow.getDeviceConditionCard('rain_sensor_rain_intensity_above')
+      (() => { try { return this.homey.flow.getDeviceConditionCard('rain_sensor_rain_intensity_above'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const intensity = args.device.getCapabilityValue('measure_rain') || 0;

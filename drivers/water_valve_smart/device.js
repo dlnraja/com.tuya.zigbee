@@ -86,30 +86,45 @@ class WaterValveSmartDevice extends HybridPlugBase {
     try {
       switch (capability) {
       case 'onoff': {
-        const id = value ? 'water_valve_smart_opened' : 'water_valve_smart_closed';
-        this.homey.flow.getDeviceTriggerCard().trigger(this, {}, {}).catch(() => {});
+        this.log('[WATER] Valve ' + (value ? 'OPENED' : 'CLOSED'));
+        try {
+          const id = value ? 'water_valve_smart_opened' : 'water_valve_smart_closed';
+          (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getDeviceTriggerCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().trigger(this, {}, {}).catch(() => {});
+        } catch (e) { /* card missing */ }
         break;
       }
       case 'alarm_water': {
-        const id = value ? 'water_valve_smart_leak_detected' : 'water_valve_smart_leak_cleared';
-        this.homey.flow.getDeviceTriggerCard().trigger(this, {}, {}).catch(() => {});
+        try {
+          const id = value ? 'water_valve_smart_leak_detected' : 'water_valve_smart_leak_cleared';
+          (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getDeviceTriggerCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().trigger(this, {}, {}).catch(() => {});
+        } catch (e) { /* card missing */ }
         break;
       }
       case 'measure_temperature': {
-        this.homey.flow.getDeviceTriggerCard().trigger(this, { temperature: value }, {}).catch(() => {});
-        if (value <= 2 && (prev === undefined || prev === null || prev > 2)) {
-          this.homey.flow.getDeviceTriggerCard().trigger(this, {}, {}).catch(() => {});
+        this.log('[WATER] Temperature:', value);
+        try {
+          (() => { try { return this.homey.flow.getDeviceTriggerCard('water_valve_smart_temperature_changed'); } catch(e) { return null; } })()?.trigger(this, { temperature: value }, {}).catch(() => {});
+        } catch (e) { /* card missing */ }
+        if (value < 4) {
+          try {
+            (() => { try { return this.homey.flow.getDeviceTriggerCard('water_valve_smart_frost_warning'); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
+          } catch (e) { /* card missing */ }
         }
         break;
       }
       case 'measure_battery': {
         if (value <= 15 && (prev === undefined || prev === null || prev > 15)) {
-          this.homey.flow.getDeviceTriggerCard().trigger(this, {}, {}).catch(() => {});
+          try {
+            (() => { try { return this.homey.flow.getDeviceTriggerCard('water_valve_smart_battery_low'); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
+          } catch (e) { /* card missing */ }
         }
         break;
       }
       case 'meter_water': {
-        this.homey.flow.getDeviceTriggerCard().trigger(this, { liters: value }, {}).catch(() => {});
+        this.log('[WATER] Consumption updated:', value);
+        try {
+          (() => { try { return this.homey.flow.getDeviceTriggerCard('water_valve_smart_water_consumed'); } catch(e) { return null; } })()?.trigger(this, { liters: value }, {}).catch(() => {});
+        } catch (e) { /* card missing */ }
         break;
       }
       }

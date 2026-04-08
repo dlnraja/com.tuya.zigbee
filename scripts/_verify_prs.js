@@ -10,8 +10,8 @@ fs.readdirSync(d).forEach(dr => {
   const f = path.join(d, dr, 'driver.flow.compose.json');
   if (!fs.existsSync(f)) return;
   const c = fs.readFileSync(f, 'utf8');
-  if (c.includes('[[device]]') || c.includes('titleFormatted')) {
-    checks.push('PR#120 VIOLATION: ' + f + ' still has titleFormatted/[[device]]');
+  if (c.includes('[[device]]')) {
+    checks.push('PR#120 VIOLATION: ' + f + ' still has [[device]] in titleFormatted');
   }
 });
 

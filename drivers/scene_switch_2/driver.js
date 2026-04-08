@@ -3,14 +3,27 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class SceneSwitch2Driver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   async onInit() {
     this.log('SceneSwitch2Driver initialized');
 
     // Register flow triggers with button argument
-    this._buttonPressedTrigger = this.homey.flow.getDeviceTriggerCard('scene_switch_2_button_pressed');
-    this._buttonDoubleTrigger = this.homey.flow.getDeviceTriggerCard('scene_switch_2_button_double_press');
-    this._buttonLongTrigger = this.homey.flow.getDeviceTriggerCard('scene_switch_2_button_long_press');
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('scene_switch_2_button_pressed'); } catch(e) { return null; } })();
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('scene_switch_2_button_double_press'); } catch(e) { return null; } })();
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('scene_switch_2_button_long_press'); } catch(e) { return null; } })();
 
     // Register argument filters
     this._buttonPressedTrigger.registerRunListener(async (args, state) => args.button === state.button);

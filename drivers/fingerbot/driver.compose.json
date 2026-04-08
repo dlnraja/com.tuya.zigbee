@@ -66,5 +66,12 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "capabilitiesOptions": {
+    "button.push": {
+      "title": {
+        "en": " push"
+      }
+    }
+  }
 }

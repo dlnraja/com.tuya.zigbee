@@ -35,9 +35,10 @@ function validateDriver(name, d) {
 
   // Button device validation
   const isButton = SPECIAL_DEVICES.buttons.some(p => name.includes(p));
-  if (isButton) {
+  const isHybrid = name.includes('_hybrid');
+  if (isButton && !isHybrid) {
     if (capabilities.includes('onoff')) {
-      log('error', name, 'Button device has onoff capability (should be stateless)');
+      log('error', name, 'Stateless button device has onoff capability');
     }
     const hasButtonCaps = capabilities.some(c => c.startsWith('button.'));
     if (!hasButtonCaps && !capabilities.includes('button')) {

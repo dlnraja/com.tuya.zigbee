@@ -227,9 +227,9 @@ class SosEmergencyButtonDevice extends BaseHybridDevice {
 
       // v5.12.0: Trigger specific press type flow cards
       if (value === 1) {
-        try { (() => { try { return this.homey.flow.getDeviceTriggerCard('button_emergency_sos_double_pressed'); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {}); } catch(e) {}
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('button_emergency_sos_double_pressed'); } catch(e) { return null; } })();
       } else if (value === 2) {
-        try { (() => { try { return this.homey.flow.getDeviceTriggerCard('button_emergency_sos_long_pressed'); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {}); } catch(e) {}
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('button_emergency_sos_long_pressed'); } catch(e) { return null; } })();
       }
 
       return;
@@ -867,7 +867,7 @@ class SosEmergencyButtonDevice extends BaseHybridDevice {
     } else {
       // Last resort: legacy direct (wrapped)
       try {
-        const card = this.homey.flow.getDeviceTriggerCard('button_emergency_sos_pressed');
+      const card = (() => { try { return this.homey.flow.getDeviceTriggerCard('button_emergency_sos_pressed'); } catch(e) { return null; } })();
         if (card) {
           card.trigger(this, {}, {}).catch(e => this.log('[SOS] trigger error:', e.message));
           this.log('[SOS] ✅ button_emergency_sos_pressed triggered (legacy direct)');

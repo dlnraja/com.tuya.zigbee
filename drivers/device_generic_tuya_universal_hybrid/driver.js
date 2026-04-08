@@ -10,6 +10,19 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * Low priority matching - only matches if no other driver claims the device.
  */
 class GenericTuyaDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   async onInit() {
     this.log('Generic Tuya Driver v5.5.583 initialized');
@@ -20,7 +33,7 @@ class GenericTuyaDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Battery above
     try {
-      this.homey.flow.getDeviceConditionCard('generic_tuya_battery_above')
+      (() => { try { return this.homey.flow.getDeviceConditionCard('generic_tuya_battery_above'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
@@ -31,7 +44,7 @@ class GenericTuyaDriver extends ZigBeeDriver {
 
     // ACTION: Request DP
     try {
-      this.homey.flow.getDeviceActionCard('generic_tuya_request_dp')
+      (() => { try { return this.homey.flow.getDeviceActionCard('generic_tuya_request_dp'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           try {

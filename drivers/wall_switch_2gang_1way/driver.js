@@ -8,6 +8,19 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * Sub-device support configured via driver.compose.json "devices" section
  */
 class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   async onInit() {
     this.log('Wall Switch 2-Gang 1-Way Driver initialized');
@@ -24,12 +37,12 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
       `${P}_gang1_scene`, `${P}_gang2_scene`
     ];
     for (const id of triggers) {
-      try { this.homey.flow.getDeviceTriggerCard(id); } catch (err) { this.error(`Trigger ${id}: ${err.message}`); }
+      try { (() => { try { return this.homey.flow.getDeviceTriggerCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (err) { this.error(`Trigger ${id}: ${err.message}`); }
     }
 
     // ACTION: Set backlight mode
     try {
-      this.homey.flow.getDeviceActionCard(`${P}_set_backlight`)
+      (() => { try { return this.homey.flow.getDeviceActionCard(`${P}_set_backlight`); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setBacklightMode(args.mode);
@@ -40,7 +53,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set scene mode
     try {
-      this.homey.flow.getDeviceActionCard(`${P}_set_scene_mode`)
+      (() => { try { return this.homey.flow.getDeviceActionCard(`${P}_set_scene_mode`); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSceneMode(args.mode);
@@ -66,7 +79,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
     ];
     for (const { id, fn } of simpleActions) {
       try {
-        this.homey.flow.getDeviceActionCard(id).registerRunListener(async (args) => {
+        (() => { try { return this.homey.flow.getDeviceActionCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().registerRunListener(async (args) => {
           if (!args.device) return false;
           await fn(args.device);
           return true;
@@ -75,7 +88,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
     }
         for (const { id, ep, val } of gangActions) {
       try {
-        this.homey.flow.getDeviceActionCard(id).registerRunListener(async (args) => {
+        (() => { try { return this.homey.flow.getDeviceActionCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().registerRunListener(async (args) => {
           if (!args.device) return false;
           const cap = ep === 1 ? 'onoff' : ('onoff.gang' + ep);
           try {
@@ -97,7 +110,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
       { id: `${P}_turn_off_all`, val: false },
     ]) {
       try {
-        this.homey.flow.getDeviceActionCard(id).registerRunListener(async (args) => {
+        (() => { try { return this.homey.flow.getDeviceActionCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().registerRunListener(async (args) => {
           if (!args.device) return false;
           // Determine the number of gangs from P (e.g. 'switch_3gang' -> 3)
           let numGangs = 1;
@@ -114,7 +127,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set power-on behavior (v5.11.30)
     try {
-      this.homey.flow.getDeviceActionCard(`${P}_set_power_on_behavior`)
+      (() => { try { return this.homey.flow.getDeviceActionCard(`${P}_set_power_on_behavior`); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ power_on_behavior: args.mode });
@@ -130,7 +143,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set external switch type (v5.11.30)
     try {
-      this.homey.flow.getDeviceActionCard(`${P}_set_switch_mode`)
+      (() => { try { return this.homey.flow.getDeviceActionCard(`${P}_set_switch_mode`); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ switch_mode: args.mode });

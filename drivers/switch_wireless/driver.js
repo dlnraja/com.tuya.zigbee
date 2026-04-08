@@ -6,6 +6,19 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * v5.5.581: CRITICAL FIX - Flow card run listeners were missing
  */
 class WirelessSwitchDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   async onInit() {
     this.log('WirelessSwitchDriver v5.5.581 initialized');
@@ -15,7 +28,7 @@ class WirelessSwitchDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is on
     try {
-      this.homey.flow.getDeviceConditionCard('switch_wireless_is_on')
+      (() => { try { return this.homey.flow.getDeviceConditionCard('switch_wireless_is_on'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -25,7 +38,7 @@ class WirelessSwitchDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      this.homey.flow.getDeviceActionCard('switch_wireless_turn_on')
+      (() => { try { return this.homey.flow.getDeviceActionCard('switch_wireless_turn_on'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -37,7 +50,7 @@ class WirelessSwitchDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      this.homey.flow.getDeviceActionCard('switch_wireless_turn_off')
+      (() => { try { return this.homey.flow.getDeviceActionCard('switch_wireless_turn_off'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -49,7 +62,7 @@ class WirelessSwitchDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      this.homey.flow.getDeviceActionCard('switch_wireless_toggle')
+      (() => { try { return this.homey.flow.getDeviceActionCard('switch_wireless_toggle'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');

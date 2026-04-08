@@ -22,6 +22,11 @@
  *  10. punycode-deprecation    — Replace node-internal with userland
  *  11. hybrid-flow-id-prefixing — Fix collisions in driver.flow.compose.json
  *  12. capability-init-sanity   — Ensure _registerCapabilityListeners and initPhysicalButtonDetection are called
+ *  13. naked-flow-cards       — Flag Flow card calls missing ID argument
+ *  14. logic-case-audit       — Flag suspected case-sensitive comparisons
+ *  15. this-prefix-safety     — Replace global SDK method calls with 'this.' (ReferenceError prevention)
+ *  16. defensive-get-device   — Inject defensive getDeviceById override in drivers
+ *  17. safe-flow-lookup       — Wrap getDeviceTriggerCard in try-catch
  */
 'use strict';
 
@@ -471,6 +476,7 @@ function rule_flowIdPrefixing() {
   log(`  → ${fixes} files fixed`);
 }
 
+
 // ═══════════════════════════════════════════════════════════════════════════════
 // RULE 12: CAPABILITY REGISTRATION SANITY
 // Ensure _registerCapabilityListeners() and initPhysicalButtonDetection() are called
@@ -566,13 +572,315 @@ function rule_fingerprintWildcardCleanup() {
   log(`  → ${fixes} files fixed`);
 }
 
+/**
+ * Rule 13: Find "naked" getDeviceTriggerCard() calls without arguments.
+ * These are ALWAYS invalid in SDK 3 but common after automated refactoring.
+ */
+function rule_nakedFlowCards() {
+  log('\n🔍 Rule 13: Detecting naked Flow card calls (missing ID)...');
+  const files = findFiles(ROOT, '.js');
+  let issues = 0;
+
+  files.forEach(file => {
+    if (file.includes('node_modules') || file.includes('scripts')) return;
+    try {
+      const content = fs.readFileSync(file, 'utf8');
+      const nakedCall = /\.getDevice(Trigger|Action|Condition)Card\(\)/g;
+      const matches = content.match(nakedCall);
+      if (matches) {
+        issues += matches.length;
+        addFix('naked-flow-cards', file, `Found ${matches.length} naked flow card call(s) missing ID argument`);
+        log(`  ⚠️  Naked call in: ${path.relative(ROOT, file)}`);
+      }
+    } catch (e) {
+      report.errors.push({ rule: 'naked-flow-cards', file, error: e.message });
+    }
+  });
+  log(`  → ${issues} issues found (Manual fix required)`);
+}
+
+/**
+ * Rule 14: Case-insensitive logic audit.
+ * Detect usage of comparison logic that doesn't respect case on manufacturerName.
+ */
+function rule_logicCaseAudit() {
+  log('\n🔍 Rule 14: Case-insensitive logic audit (manufacturerName comparisons)...');
+  const files = findFiles(ROOT, '.js');
+  let warnings = 0;
+
+  files.forEach(file => {
+    if (file.includes('node_modules') || file.includes('scripts')) return;
+    try {
+      const content = fs.readFileSync(file, 'utf8');
+      // Look for comparison with manufacturerName that isn't using a CI method
+      const badComparisons = [
+        /manufacturerName\s*===[^']*'[^']+'(?!\s*===)/g, // Match equality with strings, but avoid complex ones
+        /manufacturerName\s*!==[^']*'[^']+'(?!\s*!==)/g,
+        /\.includes\(\s*this\.(driver\.)?manufacturerName/g
+      ];
+
+      // Filter out safe comparisons (undefined, null, typeof)
+      const contentFiltered = content.replace(/manufacturerName\s*===\s*(undefined|null)/g, '')
+                                     .replace(/manufacturerName\s*!==\s*(undefined|null)/g, '')
+                                     .replace(/typeof\s+[\s\S]+?manufacturerName/g, '');
+
+      badComparisons.forEach(regex => {
+        if (regex.test(content)) {
+          warnings++;
+          addFix('logic-case-audit', file, `Suspected case-sensitive comparison of manufacturerName`);
+          log(`  ⚠️  Bad comparison in: ${path.relative(ROOT, file)}`);
+        }
+      });
+    } catch (e) { /* ignore */ }
+  });
+  log(`  → ${warnings} suspect code blocks found`);
+}
+
 // ═══════════════════════════════════════════════════════════════════════════════
-// MAIN ORCHESTRATOR
+// RULE 15: THIS-PREFIX SAFETY
+// Replace global SDK method calls (addCapability, setCapabilityValue, etc.) with this.
 // ═══════════════════════════════════════════════════════════════════════════════
+
+function rule_thisPrefixSafety() {
+  log('\n📋 Rule 15: This-Prefix Safety (ReferenceError prevention)');
+  const jsFiles = [...findFiles(DRIVERS_DIR, '.js'), ...findFiles(LIB_DIR, '.js')];
+  let fixes = 0;
+
+  const methods = [
+    'addCapability',
+    'removeCapability',
+    'setCapabilityValue',
+    'getCapabilityValue',
+    'hasCapability',
+    'getCapabilities',
+    'setSettings',
+    'getSettings',
+    'setStoreValue',
+    'getStoreValue',
+  ];
+
+  for (const file of jsFiles) {
+    let code = fs.readFileSync(file, 'utf8');
+    const original = code;
+
+    methods.forEach(method => {
+      // Regex explanation:
+      // (^|[^a-zA-Z0-9_.$])  -> Not preceded by a character that would make it part of another property access or name
+      // (${method})          -> The specific method name
+      // \\s*\\(              -> Followed by an opening parenthesis
+      // Exclude matches that are already calls on 'this', 'super', 'device', 'args.device', or 'node'
+      // ALSO exclude definitions: preceded by 'async ', 'function ', or 'static '
+      const regex = new RegExp(`(^|[^a-zA-Z0-9_.$])(?<!this\\.|super\\.|device\\.|node\\.|args\\.device\\.|async\\s+|function\\s+|static\\s+)(${method})\\s*\\(`, 'g');
+      
+      code = code.replace(regex, (match, p1, p2) => {
+        // Double check we are not in a comment or string (very basic check)
+        const linesBefore = code.substring(0, code.indexOf(match)).split('\n');
+        const currentLine = linesBefore[linesBefore.length - 1];
+        if (currentLine.includes('//') || currentLine.includes('/*')) return match;
+        
+        // Final sanity check: if followed by { on same line, it's likely a definition
+        const restOfLine = code.substring(code.indexOf(match) + match.length).split('\n')[0];
+        if (restOfLine.trim().startsWith('{') || restOfLine.includes('=>')) return match;
+
+        return `${p1}this.${p2}(`;
+      });
+    });
+
+    if (code !== original) {
+      safeWrite(file, code);
+      fixes++;
+      addFix('this-prefix-safety', file, 'Prefixed global SDK method calls with this.');
+      if (VERBOSE) log(`    [FIX] Added 'this.' prefix in ${path.relative(ROOT, file)}`);
+    }
+  }
+  log(`  → ${fixes} files fixed`);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// RULE 16: DEFENSIVE GETDEVICEBYID OVERRIDE
+// Inject a try-catch wrapper for getDeviceById into all driver classes
+// ═══════════════════════════════════════════════════════════════════════════════
+
+function rule_defensiveGetDeviceById() {
+  log('\n📋 Rule 16: Defensive getDeviceById override');
+  const driverFiles = findFiles(DRIVERS_DIR, 'driver.js');
+  let fixes = 0;
+
+  const injection = `
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(\`[CRASH-PREVENTION] Could not get device by id: \${id} - \${err.message}\`);
+      return null;
+    }
+  }
+`;
+
+  for (const file of driverFiles) {
+    let code = fs.readFileSync(file, 'utf8');
+    const original = code;
+
+    // Target TuyaZigbeeDriver or any class extending ZigBeeDriver/Driver
+    if (!/extends\s+(ZigBeeDriver|Driver|TuyaLocalDriver)/.test(code)) continue;
+    if (/getDeviceById\s*\(/.test(code)) continue; // Already has it
+
+    // Inject after the class declaration line
+    code = code.replace(/(class\s+\w+\s+extends\s+(?:ZigBeeDriver|Driver|TuyaLocalDriver)\s*\{)/, `$1${injection}`);
+
+    if (code !== original) {
+      safeWrite(file, code);
+      fixes++;
+      addFix('defensive-get-device', file, 'Injected defensive getDeviceById override');
+      if (VERBOSE) log(`    [FIX] Injected getDeviceById in ${path.relative(ROOT, file)}`);
+    }
+  }
+  log(`  → ${fixes} files fixed`);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// RULE 17: SAFE FLOW LOOKUP
+// Wrap Flow card lookups in try-catch to prevent crashes when cards are missing
+// ═══════════════════════════════════════════════════════════════════════════════
+
+function rule_safeFlowLookup() {
+  log('\n📋 Rule 17: Safe Flow Lookup (try-catch wrapper)');
+  const jsFiles = [...findFiles(DRIVERS_DIR, '.js'), ...findFiles(LIB_DIR, '.js')];
+  let fixes = 0;
+
+  const methods = ['getDeviceTriggerCard', 'getDeviceActionCard', 'getDeviceConditionCard'];
+
+  for (const file of jsFiles) {
+    let code = fs.readFileSync(file, 'utf8');
+    const original = code;
+
+    methods.forEach(m => {
+      // v7.0.13: Use a more restrictive lookbehind and check for already wrapped code
+      // We avoid wrapping if it's preceded by "return " and part of a try-catch pattern
+      const regex = new RegExp(`(?<!(?:try\\s*\\{\\s*|return\\s+))this\\.homey\\.flow\\.${m}\\s*\\(([^)]+)\\)`, 'g');
+      
+      code = code.replace(regex, (match, args) => {
+        return `(() => { try { return this.homey.flow.${m}(${args}); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })()`;
+      });
+    });
+
+    if (code !== original) {
+      safeWrite(file, code);
+      fixes++;
+      addFix('safe-flow-lookup', file, 'Wrapped Flow card lookups in try-catch.');
+    }
+  }
+  log(`  → ${fixes} files fixed`);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// RULE 18: MULTI-GANG CAPABILITY OPTIONS (SDK3 Publish Compliance)
+// Subcapabilities like onoff.gang1 MUST have a title in capabilitiesOptions
+// ═══════════════════════════════════════════════════════════════════════════════
+
+function rule_multiGangCapOptions() {
+  log('\n📋 Rule 18: Multi-Gang Capability Options (SDK3 Publish Compliance)');
+  const composeFiles = findFiles(DRIVERS_DIR, '.json').filter(f => f.endsWith('driver.compose.json'));
+  let fixes = 0;
+
+  for (const file of composeFiles) {
+    try {
+      const raw = fs.readFileSync(file, 'utf8');
+      const compose = JSON.parse(raw);
+      const caps = compose.capabilities || [];
+      const subCaps = caps.filter(c => c.includes('.'));
+      
+      if (subCaps.length === 0) continue;
+
+      if (!compose.capabilitiesOptions) compose.capabilitiesOptions = {};
+      let changed = false;
+
+      for (const cap of subCaps) {
+        if (!compose.capabilitiesOptions[cap]) {
+          // Generate a sensible title
+          const parts = cap.split('.');
+          const base = parts[0];
+          const sub = parts[1];
+          const gangMatch = sub.match(/gang(\d+)/i) || sub.match(/ch(\d+)/i) || sub.match(/_(\d+)/);
+          const gangNum = gangMatch ? gangMatch[1] : sub;
+          
+          let title = '';
+          if (base === 'onoff') title = `Gang ${gangNum}`;
+          else if (base === 'measure_temperature') title = `Temperature ${gangNum}`;
+          else if (base === 'measure_humidity') title = `Humidity ${gangNum}`;
+          else if (base === 'target_temperature') title = `Target Temp ${gangNum}`;
+          else title = `${base.split('_').slice(1).join(' ')} ${gangNum}`;
+
+          compose.capabilitiesOptions[cap] = {
+            title: {
+              en: title.charAt(0).toUpperCase() + title.slice(1)
+            }
+          };
+          changed = true;
+        }
+      }
+
+      if (changed) {
+        safeWrite(file, JSON.stringify(compose, null, 2) + '\n');
+        fixes++;
+        addFix('multigang-cap-options', file, 'Added missing capabilitiesOptions for sub-capabilities');
+        log(`  ✅ Fixed: ${path.relative(ROOT, file)}`);
+      }
+    } catch (e) {
+      report.errors.push({ rule: 'multigang-cap-options', file, error: e.message });
+    }
+  }
+
+  log(`  → ${fixes} files fixed`);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// RULE 19: PHYSICAL BUTTON DETECTION INITIALIZATION (v7.0 MAX Stability)
+// Ensure devices using PhysicalButtonMixin call this.initPhysicalButtonDetection()
+// ═══════════════════════════════════════════════════════════════════════════════
+
+function rule_physicalButtonDetection() {
+  log('\n📋 Rule 19: Physical Button Detection Initialization');
+  const jsFiles = findFiles(DRIVERS_DIR, '.js').filter(f => f.endsWith('device.js'));
+  let fixes = 0;
+
+  for (const file of jsFiles) {
+    try {
+      let code = fs.readFileSync(file, 'utf8');
+      const original = code;
+      
+      if (!code.includes('PhysicalButtonMixin')) continue;
+      if (code.includes('this.initPhysicalButtonDetection()')) continue;
+
+      // Inject into onNodeInit
+      if (/await super\.onNodeInit/.test(code)) {
+        code = code.replace(/(await super\.onNodeInit\s*\(\s*\{.*?\}\s*\);)/s, `$1\n    this.initPhysicalButtonDetection(); // rule-19 injected`);
+      } else if (/async onNodeInit/.test(code)) {
+        code = code.replace(/(async onNodeInit\s*\(\s*\{.*?\}\s*\)\s*\{)/, `$1\n    this.initPhysicalButtonDetection(); // rule-19 injected`);
+      }
+
+      if (code !== original) {
+        safeWrite(file, code);
+        fixes++;
+        addFix('physical-button-init', file, 'Injected missing initPhysicalButtonDetection() call');
+        log(`  ✅ Fixed: ${path.relative(ROOT, file)}`);
+      }
+    } catch (e) {
+      report.errors.push({ rule: 'physical-button-init', file, error: e.message });
+    }
+  }
+
+  log(`  → ${fixes} files fixed`);
+}
+
 
 async function main() {
   log('╔══════════════════════════════════════════════════════════════════════════════╗');
-  log('║  MASTER SELF-HEAL ENGINE v1.0 — Universal Tuya Zigbee                      ║');
+  log('║  MASTER SELF-HEAL ENGINE v1.1 — Universal Tuya Zigbee                      ║');
   log('║  Encoding all session discoveries into automated self-repair               ║');
   log(`║  Mode: ${DRY ? 'DRY RUN (preview)' : 'LIVE (applying fixes)'}${' '.repeat(54 - (DRY ? 21 : 22))}║`);
   log('╚══════════════════════════════════════════════════════════════════════════════╝');
@@ -593,6 +901,15 @@ async function main() {
   rule_punycodeDeprecation();
   rule_flowIdPrefixing();
   rule_capabilityInitSanity();
+  rule_nakedFlowCards();
+  rule_logicCaseAudit();
+
+  // v7.0.12: CRITICAL ARCHITECTURAL REINFORCEMENTS
+  rule_thisPrefixSafety();
+  rule_defensiveGetDeviceById();
+  rule_safeFlowLookup();
+  rule_multiGangCapOptions(); 
+  rule_physicalButtonDetection();
 
   // ═══════════════════════════════════════════════════════════════════════════
   // REPORT SUMMARY
@@ -601,7 +918,20 @@ async function main() {
   log('  SELF-HEAL REPORT');
   log('═══════════════════════════════════════════════════════════════════════');
 
-  const autoFixed = ['sdk3-phantom-methods', 'fingerprint-case', 'probe-dedup-static', 'energy-batteries', 'hybrid-flow-id-prefixing', 'capability-init-sanity', 'fingerprint-wildcard-cleanup'];
+  const autoFixed = [
+    'sdk3-phantom-methods', 
+    'fingerprint-case', 
+    'probe-dedup-static', 
+    'energy-batteries', 
+    'hybrid-flow-id-prefixing', 
+    'capability-init-sanity', 
+    'fingerprint-wildcard-cleanup',
+    'this-prefix-safety',
+    'defensive-get-device',
+    'safe-flow-lookup',
+    'multigang-cap-options',
+    'physical-button-init'
+  ];
   const manualReview = Object.keys(report.rules).filter(r => !autoFixed.includes(r));
 
   let totalAutoFixes = 0;

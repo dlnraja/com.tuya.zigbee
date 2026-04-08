@@ -37,6 +37,7 @@ class ValveSingleDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlu
     this._appCommandTimeout = null;
 
     await super.onNodeInit({ zclNode });
+    this.initPhysicalButtonDetection(); // rule-19 injected
 
     // v5.6.0: Initialize bidirectional button support
     await this.initPhysicalButtonDetection(zclNode);

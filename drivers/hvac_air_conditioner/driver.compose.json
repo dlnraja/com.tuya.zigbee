@@ -84,6 +84,11 @@
         "fr": "Batterie"
       },
       "preventInsights": false
+    },
+    "dim.speed": {
+      "title": {
+        "en": " speed"
+      }
     }
   },
   "energy": {

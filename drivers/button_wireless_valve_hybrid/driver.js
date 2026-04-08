@@ -8,6 +8,19 @@ const { registerButtonFlowCards } = require('../../lib/FlowCardHelper');
  * v5.5.114: Original
  */
 class ButtonWireless2GangDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   async onInit() {
     await super.onInit(); // v5.5.533: SDK3 CRITICAL

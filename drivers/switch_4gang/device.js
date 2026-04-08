@@ -77,11 +77,13 @@ class Switch4GangDevice extends BaseClass {
       try {
         if (this.isZclOnlyDevice) {
           this.log('[SWITCH-4G] 🔵 ZCL-ONLY MODE (BSEED/Zemismart)');
+          this.zclNode = zclNode; // v5.13.2: CRITICAL - set for base class use
           await this._initZclOnlyMode(zclNode);
           return;
         }
 
         await super.onNodeInit({ zclNode });
+    this.initPhysicalButtonDetection(); // rule-19 injected
 
         // v5.5.896: Physical button detection (single/double/long/triple)
         await this.initPhysicalButtonDetection?.(zclNode);
@@ -209,7 +211,7 @@ class Switch4GangDevice extends BaseClass {
 
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
       const gangNum = epNum; // Capture for closure
-      onOff.on('attr.onOff', (value) => {
+      onOff.on('attr.onOff', async (value) => {
         // v5.9.15: Skip periodic heartbeat reports (value unchanged = not a press)
         // BSEED TS0726 sends attr reports every 5 min confirming current state
         if (this._zclState.lastState[gangNum] === value) return;
@@ -243,15 +245,20 @@ class Switch4GangDevice extends BaseClass {
 
         if (isPhysical && (mode === 'auto' || mode === 'both')) {
           const flowId = `switch_4gang_physical_gang${gangNum}_${value ? 'on' : 'off'}`;
-          this.homey.flow.getDeviceTriggerCard(flowId).trigger(this, { gang: gangNum, state: value }, {})
-            .catch(() => {});
-          this.log(`[BSEED-4G] 🔘 Physical G${gangNum} ${value ? 'ON' : 'OFF'}`);
+          try {
+            const card = (() => { try { return this.homey.flow.getDeviceTriggerCard(flowId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+            if (card) await card.trigger(this, { gang: gangNum, state: value }, {}).catch(() => {});
+            this.log(`[BSEED-4G] 🔘 Physical G${gangNum} ${value ? 'ON' : 'OFF'}`);
+          } catch (e) { }
         }
 
         if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-          this.homey.flow.getDeviceTriggerCard(`switch_4gang_gang${gangNum}_scene`).trigger(this, { action: value ? 'on' : 'off' }, {})
-            .catch(() => {});
-          this.log(`[BSEED-4G] 🎬 Scene G${gangNum} ${value ? 'on' : 'off'}`);
+          const sceneId = `switch_4gang_gang${gangNum}_scene`;
+          try {
+            const card = (() => { try { return this.homey.flow.getDeviceTriggerCard(sceneId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+            if (card) await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+            this.log(`[BSEED-4G] 🎬 Scene G${gangNum} ${value ? 'on' : 'off'}`);
+          } catch (e) { }
         }
       });
       this.log(`[BSEED-4G] EP${epNum} ZCL onOff + physical + scene detection registered`);
@@ -317,15 +324,20 @@ class Switch4GangDevice extends BaseClass {
 
       if (isPhysical && (mode === 'auto' || mode === 'both')) {
         const flowId = `switch_4gang_physical_gang${dpId}_${boolVal ? 'on' : 'off'}`;
-        this.homey.flow.getDeviceTriggerCard().trigger(this, { gang: dpId, state: boolVal }, {})
-          .catch(() => {});
-        this.log(`[BSEED-4G] 🔘 Physical G${dpId} ${boolVal ? 'ON' : 'OFF'} (via Tuya DP)`);
+        try {
+          (() => { try { return this.homey.flow.getDeviceTriggerCard(flowId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().trigger(this, { gang: dpId, state: boolVal }, {})
+            .catch(() => {});
+          this.log(`[BSEED-4G] 🔘 Physical G${dpId} ${boolVal ? 'ON' : 'OFF'} (via Tuya DP: ${flowId})`);
+        } catch (e) { /* card missing */ }
       }
 
       if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-        this.homey.flow.getDeviceTriggerCard().trigger(this, { action: boolVal ? 'on' : 'off' }, {})
-          .catch(() => {});
-        this.log(`[BSEED-4G] 🎬 Scene G${dpId} ${boolVal ? 'on' : 'off'} (via Tuya DP)`);
+        const sceneId = `switch_4gang_gang${dpId}_scene`;
+        try {
+          (() => { try { return this.homey.flow.getDeviceTriggerCard(sceneId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().trigger(this, { action: boolVal ? 'on' : 'off' }, {})
+            .catch(() => {});
+          this.log(`[BSEED-4G] 🎬 Scene G${dpId} ${boolVal ? 'on' : 'off'} (via Tuya DP: ${sceneId})`);
+        } catch (e) { /* card missing */ }
       }
     };
 

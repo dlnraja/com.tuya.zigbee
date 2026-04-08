@@ -6,6 +6,19 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * v5.5.575: CRITICAL FIX - Flow card run listeners were missing
  */
 class CeilingFanDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   async onInit() {
     this.log('CeilingFanDriver v5.5.575 initialized');
@@ -15,7 +28,7 @@ class CeilingFanDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is on
     try {
-      this.homey.flow.getDeviceConditionCard('ceiling_fan_is_on')
+      (() => { try { return this.homey.flow.getDeviceConditionCard('ceiling_fan_is_on'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -25,7 +38,7 @@ class CeilingFanDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      this.homey.flow.getDeviceActionCard('ceiling_fan_turn_on')
+      (() => { try { return this.homey.flow.getDeviceActionCard('ceiling_fan_turn_on'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -37,7 +50,7 @@ class CeilingFanDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      this.homey.flow.getDeviceActionCard('ceiling_fan_turn_off')
+      (() => { try { return this.homey.flow.getDeviceActionCard('ceiling_fan_turn_off'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -49,7 +62,7 @@ class CeilingFanDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      this.homey.flow.getDeviceActionCard('ceiling_fan_toggle')
+      (() => { try { return this.homey.flow.getDeviceActionCard('ceiling_fan_toggle'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
@@ -62,7 +75,7 @@ class CeilingFanDriver extends ZigBeeDriver {
 
     // ACTION: Set brightness/speed
     try {
-      this.homey.flow.getDeviceActionCard('ceiling_fan_set_dim')
+      (() => { try { return this.homey.flow.getDeviceActionCard('ceiling_fan_set_dim'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('dim', args.brightness);
