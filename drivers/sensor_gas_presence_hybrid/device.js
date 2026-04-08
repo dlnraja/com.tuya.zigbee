@@ -3368,14 +3368,18 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     try {
       if (detected) {
         // v5.5.926: Fixed flow card IDs - must match driver.flow.compose.json
-        // Trigger: presence_sensor_radar_presence_detected
-        await this.homey.flow.getDeviceTriggerCard().trigger(this, {}).catch(() => { });
-        this.log('[RADAR-FLOW] ✅ Triggered: presence_sensor_radar_presence_detected');
+        // Trigger: sensor_gas_presence_hybrid_presence_sensor_radar_presence_detected
+        try {
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('sensor_gas_presence_hybrid_presence_sensor_radar_presence_detected'); } catch(e) { return null; } })();
+        } catch (e) { /* card missing */ }
+        this.log('[RADAR-FLOW] ✅ Triggered: sensor_gas_presence_hybrid_presence_sensor_radar_presence_detected');
       } else {
         // v5.5.926: Fixed flow card IDs - must match driver.flow.compose.json
-        // Trigger: presence_sensor_radar_presence_cleared
-        await this.homey.flow.getDeviceTriggerCard().trigger(this, {}).catch(() => { });
-        this.log('[RADAR-FLOW] ✅ Triggered: presence_sensor_radar_presence_cleared');
+        // Trigger: sensor_gas_presence_hybrid_presence_sensor_radar_presence_cleared
+        try {
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('sensor_gas_presence_hybrid_presence_sensor_radar_presence_cleared'); } catch(e) { return null; } })();
+        } catch (e) { /* card missing */ }
+        this.log('[RADAR-FLOW] ✅ Triggered: sensor_gas_presence_hybrid_presence_sensor_radar_presence_cleared');
       }
     } catch (err) {
       this.log('[RADAR-FLOW] ⚠️ Flow trigger error:', err.message);

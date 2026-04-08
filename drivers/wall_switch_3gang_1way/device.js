@@ -103,6 +103,7 @@ class WallSwitch3Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
     this._appCommandPending = { gang1: false };
     this._appCommandTimeout = { gang1: null };
     await super.onNodeInit({ zclNode });
+    this.initPhysicalButtonDetection(); // rule-19 injected
     this._registerCapabilityListeners(); // rule-12a injected
     await this.initPhysicalButtonDetection(zclNode);
     this._setupGang1SceneDetection(zclNode);

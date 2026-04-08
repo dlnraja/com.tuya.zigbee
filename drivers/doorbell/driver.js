@@ -6,6 +6,19 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * v5.5.571: CRITICAL FIX - Flow card run listeners were missing
  */
 class TuyaDoorbellDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   async onInit() {
     this.log('TuyaDoorbellDriver v5.5.571 initialized');
@@ -15,7 +28,7 @@ class TuyaDoorbellDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Battery above threshold
     try {
-      this.homey.flow.getDeviceConditionCard('doorbell_battery_above')
+      (() => { try { return this.homey.flow.getDeviceConditionCard('doorbell_battery_above'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
@@ -26,7 +39,7 @@ class TuyaDoorbellDriver extends ZigBeeDriver {
 
     // ACTION: Ring chime
     try {
-      this.homey.flow.getDeviceActionCard('doorbell_ring_chime')
+      (() => { try { return this.homey.flow.getDeviceActionCard('doorbell_ring_chime'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           try {

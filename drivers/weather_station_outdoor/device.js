@@ -66,13 +66,19 @@ class WeatherStationOutdoorDevice extends HybridSensorBase {
     try {
       switch (capability) {
       case 'measure_temperature':
-        this.homey.flow.getDeviceTriggerCard().trigger(this, { temperature: value }, {}).catch(() => {});
+        try {
+          (() => { try { return this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_outdoor_temperature_changed'); } catch(e) { return null; } })()?.trigger(this, { temperature: value }, {}).catch(() => {});
+        } catch (e) { /* card missing */ }
         break;
       case 'measure_humidity':
-        this.homey.flow.getDeviceTriggerCard().trigger(this, { humidity: value }, {}).catch(() => {});
+        try {
+          (() => { try { return this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_outdoor_humidity_changed'); } catch(e) { return null; } })()?.trigger(this, { humidity: value }, {}).catch(() => {});
+        } catch (e) { /* card missing */ }
         break;
       case 'measure_pressure': {
-        this.homey.flow.getDeviceTriggerCard().trigger(this, { pressure: value }, {}).catch(() => {});
+        try {
+          (() => { try { return this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_pressure_changed'); } catch(e) { return null; } })()?.trigger(this, { pressure: value }, {}).catch(() => {});
+        } catch (e) { /* card missing */ }
         // Track pressure trend for condition cards
         if (prev != null && typeof prev === 'number') {
           const trend = value > prev ? 'rising' : value < prev ? 'falling' : 'stable';
@@ -82,7 +88,9 @@ class WeatherStationOutdoorDevice extends HybridSensorBase {
       }
       case 'measure_battery':
         if (value <= 15 && (prev === undefined || prev === null || prev > 15)) {
-          this.homey.flow.getDeviceTriggerCard().trigger(this, {}, {}).catch(() => {});
+          try {
+            (() => { try { return this.homey.flow.getDeviceTriggerCard('weather_station_outdoor_battery_low'); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
+          } catch (e) { /* card missing */ }
         }
         break;
       }

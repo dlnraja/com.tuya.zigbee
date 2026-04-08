@@ -175,11 +175,17 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: node scripts/automation/parallel-bot-handler.js
 
-      # ===== 3bc. GITHUB: Global Fingerprint Deduplication =====
-      - name: "3bc. Global Fingerprint Deduplication"
+      # ===== 3bc. GITHUB: Global Fingerprint Deduplication & Conflict Check =====
+      - name: "3bc. Global Fingerprint Deduplication & Conflict Check"
         id: dedupe_fp
         continue-on-error: true
-        run: node scripts/automation/deduplicate-fingerprints.js
+        run: |
+          node scripts/automation/deduplicate-fingerprints.js
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            node scripts/automation/fix-fingerprint-conflicts.js --report-only
+          else
+            node scripts/automation/fix-fingerprint-conflicts.js --auto-fix || node scripts/automation/fix-fingerprint-conflicts.js --report-only
+          fi
 
       # ===== 3bd. GITHUB: Smart PR Auto-Merger (Approve + Merge + Fix Conflicts) =====
       - name: "3bd. Smart PR Auto-Merger (v5.13.0)"
@@ -189,12 +195,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: node scripts/automation/pr-auto-merger.js
-
-      # ===== 3be. GITHUB: Manifest Caseless Normalization (Homey Match Fix) =====
-      - name: "3be. Manifest Caseless Normalization"
-        id: caseless_fix
-        continue-on-error: true
-        run: node scripts/automation/manifest-caseless-processor.js
 
       # ===== 3b. GITHUB: Comprehensive scan (forks+PRs+issues) =====
       - name: "3b. Comprehensive GitHub Scan"
@@ -265,11 +265,14 @@ jobs:
           node .github/scripts/nightly-processor.js
 
       # ===== 6a. MASTER STABILIZATION & HYGIENE (NO-AI) =====
-      - name: "6a. Master Stabilization: Magic Spell + Energy + BVB"
+      - name: "6a. Master Stabilization: Flow Cards + Magic Spell + Energy + BVB"
         id: sterilization
         continue-on-error: true
-        timeout-minutes: 10
+        timeout-minutes: 15
         run: |
+          echo "=== 🛡️ SDK v3 Flow Card Safety Fixer (v2.0.0) ==="
+          node scripts/maintenance/fix-unsafe-flow-cards.js
+          
           echo "=== 🛡️ Magic Spell & Energy Settings Validate (v1.1.0) ==="
           # Rules: super.onNodeInit() check, energy scaling (Issue #197), SOS rules
           node scripts/automation/validate-magic-spell.js
@@ -281,6 +284,10 @@ jobs:
           echo "=== 🛡️ BVB Health Audit (v6.1.5 - WiFi + Zigbee) ==="
           # Rules: Bizarree Value Blocking coverage for all drivers
           node scripts/automation/bvb-impact-report.js || true
+
+          echo "=== 🛡️ Universal Stability Audit (v7.0.x) ==="
+          # Rules: Inheritance check, Safe Flow Card usage, Physical Button Hardening
+          node scripts/maintenance/stability-audit.js || true
 
       # ===== 6b. UNIVERSAL TRIAGE: IA-less Device Classification =====
       - name: "6b. Universal Triage Engine (Rule-Based Fallback)"
@@ -457,17 +464,12 @@ jobs:
         timeout-minutes: 5
         run: node .github/scripts/cross-driver-gap.js || true
 
-      # ===== 9c2. Fingerprint Conflict Check =====
-      - name: "9c2. Fingerprint Conflict Check"
-        id: fp_conflicts
+      # ===== 9c2. GITHUB: Extra PR/Issue triage check =====
+      - name: "9c2. Extra PR/Issue Triage Check"
+        id: extra_triage
         continue-on-error: true
         timeout-minutes: 5
-        run: |
-          if [ "${{ inputs.dry_run }}" = "true" ]; then
-            node scripts/automation/fix-fingerprint-conflicts.js --report-only
-          else
-            node scripts/automation/fix-fingerprint-conflicts.js --auto-fix || node scripts/automation/fix-fingerprint-conflicts.js --report-only
-          fi
+        run: echo "Extra triage step"
 
       # ===== 9d. Scan Public APIs (Z2M/ZHA/Blakadder live) =====
       - name: "9d. Scan Public APIs"

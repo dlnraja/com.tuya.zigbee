@@ -6,6 +6,19 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * v5.5.570: CRITICAL FIX - Flow card run listeners were missing
  */
 class WaterLeakSensorDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   async onInit() {
     this.log('WaterLeakSensorDriver v5.5.570 initialized');
@@ -15,7 +28,7 @@ class WaterLeakSensorDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Water is/is not detected
     try {
-      this.homey.flow.getDeviceConditionCard('water_leak_sensor_water_detected')
+      (() => { try { return this.homey.flow.getDeviceConditionCard('water_leak_sensor_water_detected'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_water') === true;
@@ -25,7 +38,7 @@ class WaterLeakSensorDriver extends ZigBeeDriver {
 
     // CONDITION: Battery above threshold
     try {
-      this.homey.flow.getDeviceConditionCard('water_leak_sensor_battery_above')
+      (() => { try { return this.homey.flow.getDeviceConditionCard('water_leak_sensor_battery_above'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const battery = args.device.getCapabilityValue('measure_battery') || 0;

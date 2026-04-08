@@ -45,6 +45,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
   async onNodeInit({ zclNode }) {
     if (this.isZclOnlyDevice) {
       this.log('[SWITCH-2G] 🔵 ZCL-ONLY MODE (BSEED)');
+      this.zclNode = zclNode; // v5.13.2: CRITICAL - set for base class use
       await this._initZclOnlyMode(zclNode);
       return;
     }
@@ -57,6 +58,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
     // causing "Missing Capability Listener: onoff" for standard Tuya DP 2-gang switches
     // (Forum: Rikjes #1676, _TZ3000_jl7qyupf)
     await super.onNodeInit({ zclNode });
+    this.initPhysicalButtonDetection(); // rule-19 injected
 
     // v5.5.26: Setup power measurement for ZCL devices
     await this._setupPowerMeasurement(zclNode);
@@ -336,7 +338,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
       }
 
       const capName = epNum === 1 ? 'onoff' : 'onoff.gang2';
-      onOff.on('attr.onOff', (value) => {
+      onOff.on('attr.onOff', async (value) => {
         const now = Date.now();
         const isPhysical = !this._zclState.pending[epNum];
 
@@ -361,13 +363,19 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           }
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_2gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
-            this.homey.flow.getDeviceTriggerCard().trigger(this, { gang: epNum, state: value }, {})
-              .catch(() => {});
-            this.log(`[BSEED-2G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+            try {
+              const card = (() => { try { return this.homey.flow.getDeviceTriggerCard(flowId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+              if (card) await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
+              this.log(`[BSEED-2G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+            } catch (e) { }
           }
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-            this.homey.flow.getDeviceTriggerCard().trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
-            this.log(`[BSEED-2G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
+            const sceneId = `switch_2gang_gang${epNum}_scene`;
+            try {
+              const card = (() => { try { return this.homey.flow.getDeviceTriggerCard(sceneId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+              if (card) await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+              this.log(`[BSEED-2G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
+            } catch (e) { }
           }
         }
       });

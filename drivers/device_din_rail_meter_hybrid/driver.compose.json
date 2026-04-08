@@ -47,6 +47,16 @@
         "fr": "Batterie"
       },
       "preventInsights": false
+    },
+    "dim.speed": {
+      "title": {
+        "en": " speed"
+      }
+    },
+    "meter_power.exported": {
+      "title": {
+        "en": "Power exported"
+      }
     }
   },
   "energy": {

@@ -35,13 +35,15 @@ Only remove a fingerprint if it causes WRONG driver matching:
 - Same OEM supplies different productIds for different device types
 
 ### 3. SDK3 Compliance
-- **No wildcards** in manufacturerName (e.g., `_TZE284_*` is INVALID)
-- Must use complete IDs like `_TZE284_rccxox8p`
-- All flow cards must be registered in both `driver.flow.compose.json` AND compiled into `app.json`
+- **Getter Mandate**: ALWAYS use `this.homey.flow.getDeviceTriggerCard('id')`, `getDeviceActionCard('id')`, or `getDeviceConditionCard('id')` for driver-specific flow cards. Fixed-name getters (e.g. `getTriggerCard`) are DEPRECATED and unreliable in SDK 3.
+- **Card IDs**: Every getter call MUST pass the explicit ID defined in `driver.flow.compose.json`. Naked calls (without arguments) are INVALID and will cause flows to remain unlinked.
+- **No wildcards** in manufacturerName (e.g., `_TZE284_*` is INVALID).
+- All flow cards must be registered in both `driver.flow.compose.json` AND compiled into `app.json`.
 
 ### 4. Case-Insensitive Matching
-All manufacturerName/productId comparisons use case-insensitive matching.
-Include both cases when possible: `_TZE200_abcdefgh` and `_tze200_abcdefgh`
+- **Enforcement**: All `manufacturerName` and `productId` comparisons must be case-insensitive.
+- **Best Practice**: Use `ManufacturerVariationManager.includesCI(mfr)` or `.toLowerCase()` before comparisons.
+- **Fingerprints**: Include both casing variants in `driver.compose.json` when encountered in the field.
 
 ### 5. Sleepy Battery Devices
 TS0601 battery devices use **passive mode**:
@@ -54,21 +56,18 @@ TS0601 battery devices use **passive mode**:
 ## 📋 Flow Card Rules
 
 ### Flow Card ID Matching
-- Flow card IDs in `driver.js` MUST exactly match IDs in `driver.flow.compose.json`
-- If compose doesn't auto-compile to `app.json`, add manually to `app.json`
+- Flow card IDs in `driver.js` MUST exactly match IDs in `driver.flow.compose.json`.
+- Standard Prefix: `${driverId}_`. Auto-prefixed by Rule 11 of the Self-Heal engine.
+- Multi-gang Pattern: `${driverId}_gang${N}_${action}` or `${driverId}_physical_gang${N}_${action}`.
 
 ### Flow Card Registration Pattern
 ```javascript
-// In driver.js onInit()
-this._triggerCard = this.homey.flow.getDeviceTriggerCard('driver_name_trigger_id');
+// ✅ CORRECT: SDK 3 compliant with explicit ID
+const flowId = 'my_driver_trigger_name';
+this._triggerCard = this.homey.flow.getDeviceTriggerCard(flowId);
 
-// The ID must exist in driver.flow.compose.json:
-{
-  "triggers": [{
-    "id": "driver_name_trigger_id",
-    "title": { "en": "...", "fr": "..." }
-  }]
-}
+// ❌ INCORRECT: Deprecated getter and missing ID
+this._triggerCard = this.homey.flow.getTriggerCard(); 
 ```
 
 ---

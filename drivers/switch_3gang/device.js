@@ -60,10 +60,12 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
       try {
         if (this.isZclOnlyDevice) {
           this.log('[SWITCH-3G] 🔵 ZCL-ONLY MODE (BSEED)');
+          this.zclNode = zclNode; // v5.13.2: CRITICAL - ensure zclNode is set for base class
           await this._initZclOnlyMode(zclNode);
           return;
         }
         await super.onNodeInit({ zclNode });
+    this.initPhysicalButtonDetection(); // rule-19 injected
         await this.initPhysicalButtonDetection(zclNode);
         await this.initVirtualButtons();
         this.log('[SWITCH-3G] v5.5.919 - Physical button detection enabled');
@@ -118,7 +120,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
       }
 
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
-      onOff.on('attr.onOff', (value) => {
+      onOff.on('attr.onOff', async (value) => {
         const now = Date.now();
         const isPhysical = !this._zclState.pending[epNum];
 
@@ -143,13 +145,19 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           }
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_3gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
-            this.homey.flow.getDeviceTriggerCard(flowId).trigger(this, { gang: epNum, state: value }, {})
-              .catch(() => {});
-            this.log(`[BSEED-3G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+            try {
+              const card = (() => { try { return this.homey.flow.getDeviceTriggerCard(flowId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+              if (card) await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
+              this.log(`[BSEED-3G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+            } catch (e) { }
           }
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-            this.homey.flow.getDeviceTriggerCard(`switch_3gang_gang${epNum}_scene`).trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
-            this.log(`[BSEED-3G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
+            const sceneId = `switch_3gang_gang${epNum}_scene`;
+            try {
+              const card = (() => { try { return this.homey.flow.getDeviceTriggerCard(sceneId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+              if (card) await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+              this.log(`[BSEED-3G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
+            } catch (e) { }
           }
         }
       });

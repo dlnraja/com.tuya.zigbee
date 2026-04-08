@@ -13,31 +13,31 @@ class SmartKnobRotaryDriver extends Homey.Driver {
 
   _registerFlowCards() {
     // Rotate left trigger
-    this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_left')
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_left'); } catch(e) { return null; } })();
       .registerRunListener(async (args, state) => true);
 
     // Rotate right trigger
-    this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_right')
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_right'); } catch(e) { return null; } })();
       .registerRunListener(async (args, state) => true);
 
     // Button pressed trigger
-    this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_pressed')
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_pressed'); } catch(e) { return null; } })();
       .registerRunListener(async (args, state) => true);
 
     // Single press trigger
-    this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_single_press')
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_single_press'); } catch(e) { return null; } })();
       .registerRunListener(async (args, state) => true);
 
     // Double press trigger
-    this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_double_press')
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_double_press'); } catch(e) { return null; } })();
       .registerRunListener(async (args, state) => true);
 
     // Long press trigger
-    this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_long_press')
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_long_press'); } catch(e) { return null; } })();
       .registerRunListener(async (args, state) => true);
 
     // Brightness condition
-    this.homey.flow.getDeviceConditionCard('smart_knob_rotary_brightness_above')
+      (() => { try { return this.homey.flow.getDeviceConditionCard('smart_knob_rotary_brightness_above'); } catch(e) { return null; } })();
       .registerRunListener(async (args, state) => {
         const device = args.device;
         if (device && device.hasCapability('dim')) {

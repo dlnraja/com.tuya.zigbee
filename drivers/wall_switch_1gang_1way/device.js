@@ -28,6 +28,7 @@ class WallSwitch1Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
     // v5.8.95: Removed broken _setupPhysicalButtonFlowDetection + _markAppCommand.
     // HybridSwitchBase._setGangOnOff() now calls PhysicalButtonMixin.markAppCommand() centrally.
     await super.onNodeInit({ zclNode });
+    this.initPhysicalButtonDetection(); // rule-19 injected
     this._registerCapabilityListeners(); // rule-12a injected
     await this.initPhysicalButtonDetection(zclNode);
     await this.initVirtualButtons();

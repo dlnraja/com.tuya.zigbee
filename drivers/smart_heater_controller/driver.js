@@ -3,14 +3,27 @@
 const { Driver } = require('homey');
 
 class SmartHeaterControllerDriver extends Driver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
   async onInit() {
     this.log('Smart Heater Controller driver initialized');
     // v5.13.3: Register flow card action handlers
-    const reg = (id, fn) => { try { this.homey.flow.getDeviceActionCard(id).registerRunListener(fn); } catch (e) { this.log('[Flow]', id, e.message); } };
+    const reg = (id, fn) => { try { (() => { try { return this.homey.flow.getDeviceActionCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().registerRunListener(fn); } catch (e) { this.log('[Flow]', id, e.message); } };
     reg('smart_heater_controller_turn_on', async ({ device }) => { await device.triggerCapabilityListener('onoff', true); return true; });
     // v5.13.3: Condition handler
-    try{(() => { try { return this.homey.flow.getDeviceConditionCard('smart_heater_controller_is_on'); } catch(e) { return null; } })()?.registerRunListener(async({device})=>device.getCapabilityValue('onoff')===true);}catch(e){this.log('[Flow]',e.message);}
-    try{(() => { try { return this.homey.flow.getDeviceActionCard('smart_heater_controller_set_temperature'); } catch(e) { return null; } })()?.registerRunListener(async({device,temperature})=>{if(temperature!==undefined)await device.triggerCapabilityListener('target_temperature',temperature);return true;});}catch(e){this.log('[Flow]',e.message);}
+      (() => { try { return this.homey.flow.getDeviceConditionCard('smart_heater_controller_is_on'); } catch(e) { return null; } })();
+      (() => { try { return this.homey.flow.getDeviceActionCard('smart_heater_controller_set_temperature'); } catch(e) { return null; } })();
 
     reg('smart_heater_controller_turn_off', async ({ device }) => { await device.triggerCapabilityListener('onoff', false); return true; });
     reg('smart_heater_controller_toggle', async ({ device }) => { const v = device.getCapabilityValue('onoff'); await device.triggerCapabilityListener('onoff', !v); return true; });

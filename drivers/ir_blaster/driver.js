@@ -12,6 +12,19 @@ try { IRCodeLibrary = require('../../lib/ir/IRCodeLibrary'); } catch (e) { IRCod
  * to prevent driver crash when flow cards are missing (diagnostic reports #7cb5ca58 #5dc85d82)
  */
 class IrBlasterDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   async onInit() {
     await super.onInit(); // v5.5.534: SDK3 CRITICAL - must call super first!
@@ -46,7 +59,7 @@ class IrBlasterDriver extends ZigBeeDriver {
   async _registerEnhancedActions() {
     // Enhanced learn IR code action
     try {
-      this.irLearnCodeAction = this.homey.flow.getDeviceActionCard('ir_blaster_learn_code');
+      (() => { try { return this.homey.flow.getDeviceActionCard('ir_blaster_learn_code'); } catch(e) { return null; } })();
       this.irLearnCodeAction.registerRunListener(async (args, state) => {
         const device = args.device;
         if (!device || typeof device._enableAdvancedLearnMode !== 'function') {
@@ -73,7 +86,7 @@ class IrBlasterDriver extends ZigBeeDriver {
 
     // Enhanced send IR code action
     try {
-      this.irSendCodeAction = this.homey.flow.getDeviceActionCard('ir_blaster_send_code');
+      (() => { try { return this.homey.flow.getDeviceActionCard('ir_blaster_send_code'); } catch(e) { return null; } })();
       this.irSendCodeAction.registerRunListener(async (args, state) => {
         const device = args.device;
         if (!device || typeof device.sendEnhancedIRCode !== 'function') {
@@ -99,7 +112,7 @@ class IrBlasterDriver extends ZigBeeDriver {
 
     // v5.5.362: Send by category action with proper error handling
     try {
-      this.irSendByCategoryAction = this.homey.flow.getDeviceActionCard('ir_blaster_send_by_category');
+      (() => { try { return this.homey.flow.getDeviceActionCard('ir_blaster_send_by_category'); } catch(e) { return null; } })();
       this.irSendByCategoryAction.registerRunListener(async (args, state) => {
         const device = args.device;
         if (!device || typeof device.getCodesByCategory !== 'function') {
@@ -126,7 +139,7 @@ class IrBlasterDriver extends ZigBeeDriver {
 
     // v5.5.606: AC command action (SmartIR compatible)
     try {
-      this.irSendACAction = this.homey.flow.getDeviceActionCard('ir_blaster_send_ac_command');
+      (() => { try { return this.homey.flow.getDeviceActionCard('ir_blaster_send_ac_command'); } catch(e) { return null; } })();
       this.irSendACAction.registerRunListener(async (args, state) => {
         const device = args.device;
         if (!device || typeof device.sendACCommand !== 'function') {
@@ -143,7 +156,7 @@ class IrBlasterDriver extends ZigBeeDriver {
     // v5.12: Send by brand (IRDB)
     if (IRCodeLibrary) {
       try {
-        const card = this.homey.flow.getDeviceActionCard('ir_blaster_send_by_brand');
+      const card = (() => { try { return this.homey.flow.getDeviceActionCard('ir_blaster_send_by_brand'); } catch(e) { return null; } })();
         card.registerRunListener(async (args) => {
           const dev = args.device;
           if (!dev) return false;
@@ -167,7 +180,7 @@ class IrBlasterDriver extends ZigBeeDriver {
 
     // v5.12: Send Learned Command (autocomplete)
     try {
-      const slc = this.homey.flow.getDeviceActionCard('ir_blaster_send_learned');
+      const slc = (() => { try { return this.homey.flow.getDeviceActionCard('ir_blaster_send_learned'); } catch(e) { return null; } })();
       slc.registerRunListener(async (args) => {
         const d = args.device;
         if (!d || !d._learnedCodes) return false;
@@ -189,7 +202,7 @@ class IrBlasterDriver extends ZigBeeDriver {
 
     // v5.12: Delete Stored IR Code (autocomplete)
     try {
-      const dc = this.homey.flow.getDeviceActionCard('ir_blaster_delete_code');
+      const dc = (() => { try { return this.homey.flow.getDeviceActionCard('ir_blaster_delete_code'); } catch(e) { return null; } })();
       dc.registerRunListener(async (args) => {
         const d = args.device;
         if (!d || typeof d.deleteStoredCode !== 'function') return false;
@@ -209,7 +222,7 @@ class IrBlasterDriver extends ZigBeeDriver {
 
     // v5.12: Send Raw IR Code (Pronto Hex / Base64)
     try {
-      const sr = this.homey.flow.getDeviceActionCard('ir_blaster_send_raw');
+      const sr = (() => { try { return this.homey.flow.getDeviceActionCard('ir_blaster_send_raw'); } catch(e) { return null; } })();
       sr.registerRunListener(async (args) => {
         const d = args.device;
         if (!d || typeof d.sendEnhancedIRCode !== 'function') return false;
@@ -230,7 +243,7 @@ class IrBlasterDriver extends ZigBeeDriver {
     ];
     for (const btn of tvButtons) {
       try {
-        const card = this.homey.flow.getDeviceActionCard(`ir_blaster_${btn}`);
+        const card = (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getDeviceActionCard(`ir_blaster_${btn}`); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
         card.registerRunListener(async (args) => {
           const d = args.device;
           if (!d || !d._learnedCodes) return false;
@@ -257,7 +270,7 @@ class IrBlasterDriver extends ZigBeeDriver {
   async _registerEnhancedTriggers() {
     // Learning started trigger
     try {
-      this.learningStartedTrigger = this.homey.flow.getDeviceTriggerCard('ir_blaster_learning_started');
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('ir_blaster_learning_started'); } catch(e) { return null; } })();
       this.log('✅ ir_blaster_learning_started trigger registered');
     } catch (err) {
       this.log('⚠️ ir_blaster_learning_started not available:', err.message);
@@ -265,7 +278,7 @@ class IrBlasterDriver extends ZigBeeDriver {
 
     // Learning state changed trigger
     try {
-      this.learningStateChangedTrigger = this.homey.flow.getDeviceTriggerCard('ir_blaster_learning_state_changed');
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('ir_blaster_learning_state_changed'); } catch(e) { return null; } })();
       this.log('✅ ir_blaster_learning_state_changed trigger registered');
     } catch (err) {
       this.log('⚠️ ir_blaster_learning_state_changed not available:', err.message);
@@ -273,7 +286,7 @@ class IrBlasterDriver extends ZigBeeDriver {
 
     // Code learned trigger (legacy compatibility)
     try {
-      this.codeLearnedTrigger = this.homey.flow.getDeviceTriggerCard('ir_blaster_code_learned');
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('ir_blaster_code_learned'); } catch(e) { return null; } })();
       this.log('✅ ir_blaster_code_learned trigger registered');
     } catch (err) {
       this.log('⚠️ ir_blaster_code_learned not available:', err.message);
@@ -281,7 +294,7 @@ class IrBlasterDriver extends ZigBeeDriver {
 
     // Code analyzed trigger
     try {
-      this.codeAnalyzedTrigger = this.homey.flow.getDeviceTriggerCard('ir_blaster_code_analyzed');
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('ir_blaster_code_analyzed'); } catch(e) { return null; } })();
       this.log('✅ ir_blaster_code_analyzed trigger registered');
     } catch (err) {
       this.log('⚠️ ir_blaster_code_analyzed not available:', err.message);
@@ -296,7 +309,7 @@ class IrBlasterDriver extends ZigBeeDriver {
   async _registerEnhancedConditions() {
     // IR learning active condition
     try {
-      this.irLearningActiveCondition = this.homey.flow.getDeviceConditionCard('ir_blaster_learning_active');
+      (() => { try { return this.homey.flow.getDeviceConditionCard('ir_blaster_learning_active'); } catch(e) { return null; } })();
       this.irLearningActiveCondition.registerRunListener(async (args, state) => {
         const device = args.device;
         if (!device || device._learningState === undefined) {
@@ -315,7 +328,7 @@ class IrBlasterDriver extends ZigBeeDriver {
 
     // IR code exists condition
     try {
-      this.irCodeExistsCondition = this.homey.flow.getDeviceConditionCard('ir_blaster_code_exists');
+      (() => { try { return this.homey.flow.getDeviceConditionCard('ir_blaster_code_exists'); } catch(e) { return null; } })();
       this.irCodeExistsCondition.registerRunListener(async (args, state) => {
         const device = args.device;
         const { code_name } = args;
@@ -335,7 +348,7 @@ class IrBlasterDriver extends ZigBeeDriver {
 
     // IR protocol detected condition
     try {
-      this.irProtocolDetectedCondition = this.homey.flow.getDeviceConditionCard('ir_blaster_protocol_detected');
+      (() => { try { return this.homey.flow.getDeviceConditionCard('ir_blaster_protocol_detected'); } catch(e) { return null; } })();
       this.irProtocolDetectedCondition.registerRunListener(async (args, state) => {
         const device = args.device;
         const { code_name, protocol } = args;

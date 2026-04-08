@@ -64,9 +64,11 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
   }
 
   async onNodeInit({ zclNode }) {
+    this.initPhysicalButtonDetection(); // rule-19 injected
     this._registerCapabilityListeners(); // rule-12a injected
     if (this.isZclOnlyDevice) {
       this.log('[SWITCH-8G] 🔵 ZCL-ONLY MODE');
+      this.zclNode = zclNode; // v5.13.2: CRITICAL - set for base class use
       await this._initZclOnlyMode(zclNode);
       return;
     }
@@ -113,7 +115,7 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
       if (!onOff || typeof onOff.on !== 'function') continue;
 
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
-      onOff.on('attr.onOff', (value) => {
+      onOff.on('attr.onOff', async (value) => {
         const isPhysical = !this._zclState.pending[epNum];
         if (this._zclState.lastState[epNum] !== value) {
           this._zclState.lastState[epNum] = value;
@@ -125,12 +127,19 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           }
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_wall_8gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
-            this.homey.flow.getDeviceTriggerCard().trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
-            this.log(`[SWITCH-8G] Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+            try {
+              const card = (() => { try { return this.homey.flow.getDeviceTriggerCard(flowId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+              if (card) await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
+              this.log(`[SWITCH-8G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+            } catch (e) { }
           }
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-            this.homey.flow.getDeviceTriggerCard().trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
-            this.log(`[SWITCH-8G] Scene G${epNum} ${value ? 'on' : 'off'}`);
+            const sceneId = `switch_wall_8gang_gang${epNum}_scene`;
+            try {
+              const card = (() => { try { return this.homey.flow.getDeviceTriggerCard(sceneId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+              if (card) await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+              this.log(`[SWITCH-8G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
+            } catch (e) { }
           }
         }
       });

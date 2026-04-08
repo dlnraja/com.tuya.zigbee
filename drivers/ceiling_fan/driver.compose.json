@@ -306,7 +306,13 @@
       "template": "add_devices"
     }
   ],
-  "capabilitiesOptions": {},
+  "capabilitiesOptions": {
+    "dim.speed": {
+      "title": {
+        "en": " speed"
+      }
+    }
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

@@ -29,6 +29,7 @@ class SwitchPlug1Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlu
     }
 
     await super.onNodeInit({ zclNode });
+    this.initPhysicalButtonDetection(); // rule-19 injected
     await this.initPhysicalButtonDetection(zclNode);
     await this.initVirtualButtons();
     this.log('[SWITCH-PLUG-1] ✅ Ready (v5.13.1 + Bidirectional Buttons)');

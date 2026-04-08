@@ -14,6 +14,19 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * Root cause: Pairing timeout/driver selection failure
  */
 class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   async onInit() {
     this.log('SmartSmokeDetectorAdvancedDriver v5.5.568 initialized');
@@ -32,7 +45,7 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
     // CONDITION: Smoke is/is not detected
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      const smokeDetectedCondition = this.homey.flow.getDeviceConditionCard('smoke_detector_advanced_smoke_detected');
+      const smokeDetectedCondition = (() => { try { return this.homey.flow.getDeviceConditionCard('smoke_detector_advanced_smoke_detected'); } catch(e) { return null; } })();
       smokeDetectedCondition.registerRunListener(async (args) => {
         const device = args.device;
         if (!device) {
@@ -52,7 +65,7 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
     // CONDITION: Battery is/is not above threshold
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      const batteryAboveCondition = this.homey.flow.getDeviceConditionCard('smoke_detector_advanced_battery_above');
+      const batteryAboveCondition = (() => { try { return this.homey.flow.getDeviceConditionCard('smoke_detector_advanced_battery_above'); } catch(e) { return null; } })();
       batteryAboveCondition.registerRunListener(async (args) => {
         const device = args.device;
         if (!device) {
@@ -74,7 +87,7 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
     // ACTION: Test the alarm
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      const testAlarmAction = this.homey.flow.getDeviceActionCard('smoke_detector_advanced_test_alarm');
+      const testAlarmAction = (() => { try { return this.homey.flow.getDeviceActionCard('smoke_detector_advanced_test_alarm'); } catch(e) { return null; } })();
       testAlarmAction.registerRunListener(async (args) => {
         const device = args.device;
         if (!device) {

@@ -4,7 +4,7 @@
   "totalFixes": 877,
   "rules": {
     "flow-card-try-catch": {
-      "count": 212,
+      "count": 53,
       "files": [
         {
           "file": "drivers/air_purifier/device.js",
@@ -1107,7 +1107,7 @@
         },
         {
           "file": "drivers",
-          "detail": "_tz3210_ncw88jfq found in: air_purifier, climate_sensor, climate_sensor_gas_hybrid, temphumidsensor"
+          "detail": "_tz3210_ncw88jfq found in: air_purifier, climate_sensor, climate_sensor, climate_sensor_gas_hybrid, temphumidsensor"
         },
         {
           "file": "drivers",
@@ -2075,7 +2075,7 @@
         },
         {
           "file": "drivers",
-          "detail": "ewelink found in: bulb_rgbw, button_wireless_1, button_wireless_4, plug_energy_monitor, plug_energy_monitor_hybrid, sensor_climate_contact_hybrid"
+          "detail": "ewelink found in: bulb_rgbw, button_wireless_1, button_wireless_4, plug_energy_monitor, plug_energy_monitor, plug_energy_monitor_hybrid, sensor_climate_contact_hybrid"
         },
         {
           "file": "drivers",
@@ -3019,7 +3019,7 @@
         },
         {
           "file": "drivers",
-          "detail": "_tz3000_ysdv91bk found in: button_wireless_2, button_wireless_switch_hybrid, button_wireless_wall_hybrid"
+          "detail": "_tz3000_ysdv91bk found in: button_wireless_2, button_wireless_switch_hybrid, button_wireless_wall_hybrid, wall_switch_1gang_1way"
         },
         {
           "file": "drivers",
@@ -3503,7 +3503,7 @@
         },
         {
           "file": "drivers",
-          "detail": "_tz3000_blhvsaqf found in: switch_1gang, wall_switch_2gang_1way, wall_switch_3gang_1way"
+          "detail": "_tz3000_blhvsaqf found in: switch_1gang, wall_switch_1gang_1way, wall_switch_2gang_1way, wall_switch_3gang_1way"
         },
         {
           "file": "drivers",
@@ -3528,6 +3528,149 @@
         {
           "file": "drivers",
           "detail": "_tz3000_bseed found in: wall_switch_2gang_1way, wall_switch_3gang_1way"
+        }
+      ]
+    },
+    "naked-flow-cards": {
+      "count": 28,
+      "files": [
+        {
+          "file": "drivers\\air_purifier_presence_hybrid\\device.js",
+          "detail": "Found 2 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\button_wireless_switch_hybrid\\device.js",
+          "detail": "Found 2 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\climate_sensor_dimmer_hybrid\\device.js",
+          "detail": "Found 2 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\climate_sensor_plug_hybrid\\device.js",
+          "detail": "Found 1 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\climate_sensor_smart_hybrid\\device.js",
+          "detail": "Found 2 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\contact_sensor_plug_hybrid\\device.js",
+          "detail": "Found 1 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\device_plug_energy_monitor_hybrid\\device.js",
+          "detail": "Found 1 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\device_plug_smart_water_hybrid\\device.js",
+          "detail": "Found 1 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\dimmer_3gang\\device.js",
+          "detail": "Found 2 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\dimmer_wall_1gang\\device.js",
+          "detail": "Found 2 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\dimmer_wall_switch_hybrid\\device.js",
+          "detail": "Found 2 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\dimmer_wall_water_hybrid\\device.js",
+          "detail": "Found 2 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\fan_controller\\device.js",
+          "detail": "Found 3 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\plug_smart\\device.js",
+          "detail": "Found 1 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\presence_sensor_radar\\device.js",
+          "detail": "Found 2 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\remote_button_wireless_hybrid\\device.js",
+          "detail": "Found 2 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\remote_dimmer\\device.js",
+          "detail": "Found 1 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\sensor_climate_presence_hybrid\\device.js",
+          "detail": "Found 2 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\sensor_contact_presence_hybrid\\device.js",
+          "detail": "Found 2 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\smart_knob_rotary\\device.js",
+          "detail": "Found 2 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\smart_knob_switch_hybrid\\device.js",
+          "detail": "Found 6 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\smart_scene_panel\\device.js",
+          "detail": "Found 2 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\switch_dimmer_1gang\\device.js",
+          "detail": "Found 3 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\wall_dimmer_1gang_1way\\device.js",
+          "detail": "Found 3 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\wall_switch_2gang_1way\\device.js",
+          "detail": "Found 5 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "drivers\\wall_switch_3gang_1way\\device.js",
+          "detail": "Found 5 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "lib\\devices\\ButtonDevice.js",
+          "detail": "Found 1 naked flow card call(s) missing ID argument"
+        },
+        {
+          "file": "tmp\\cleanup_flows.js",
+          "detail": "Found 1 naked flow card call(s) missing ID argument"
+        }
+      ]
+    },
+    "logic-case-audit": {
+      "count": 3,
+      "files": [
+        {
+          "file": ".homeybuild\\lib\\devices\\HybridSensorBase.js",
+          "detail": "Suspected case-sensitive comparison of manufacturerName"
+        },
+        {
+          "file": ".homeybuild\\lib\\diagnostics\\DeviceHealth.js",
+          "detail": "Suspected case-sensitive comparison of manufacturerName"
+        },
+        {
+          "file": "lib\\diagnostics\\DeviceHealth.js",
+          "detail": "Suspected case-sensitive comparison of manufacturerName"
+        }
+      ]
+    },
+    "safe-flow-lookup": {
+      "count": 1,
+      "files": [
+        {
+          "file": "lib\\devices\\HybridSensorBase.js",
+          "detail": "Wrapped Flow card lookups in try-catch."
         }
       ]
     }

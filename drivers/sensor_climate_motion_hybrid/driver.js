@@ -7,6 +7,19 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * Fixes "Cannot get device by id" error - returns false instead of throwing
  */
 class MotionSensorDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   async onInit() {
     await super.onInit();
@@ -16,16 +29,16 @@ class MotionSensorDriver extends ZigBeeDriver {
       // ═══════════════════════════════════════════════════════════════
       // TRIGGER CARDS - All triggers from driver.flow.compose.json
       // ═══════════════════════════════════════════════════════════════
-      this.motionDetectedTrigger = this.homey.flow.getDeviceTriggerCard('motion_sensor_motion_detected');
-      this.motionClearedTrigger = this.homey.flow.getDeviceTriggerCard('motion_sensor_motion_cleared');
-      this.batteryLowTrigger = this.homey.flow.getDeviceTriggerCard('motion_sensor_battery_low');
-      this.batteryChangedTrigger = this.homey.flow.getDeviceTriggerCard('motion_sensor_battery_changed');
-      this.luxChangedTrigger = this.homey.flow.getDeviceTriggerCard('motion_sensor_lux_changed');
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('motion_sensor_motion_detected'); } catch(e) { return null; } })();
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('motion_sensor_motion_cleared'); } catch(e) { return null; } })();
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('motion_sensor_battery_low'); } catch(e) { return null; } })();
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('motion_sensor_battery_changed'); } catch(e) { return null; } })();
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('motion_sensor_lux_changed'); } catch(e) { return null; } })();
 
       // ═══════════════════════════════════════════════════════════════
       // CONDITION CARDS - with device validation
       // ═══════════════════════════════════════════════════════════════
-      this.motionActiveCondition = this.homey.flow.getDeviceConditionCard('motion_sensor_motion_active');
+      (() => { try { return this.homey.flow.getDeviceConditionCard('motion_sensor_motion_active'); } catch(e) { return null; } })();
       this.motionActiveCondition?.registerRunListener(async (args) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');

@@ -62,5 +62,12 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "capabilitiesOptions": {
+    "dim.valve": {
+      "title": {
+        "en": " valve"
+      }
+    }
+  }
 }

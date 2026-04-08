@@ -439,5 +439,12 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "capabilitiesOptions": {
+    "measure_luminance.distance": {
+      "title": {
+        "en": "Luminance distance"
+      }
+    }
+  }
 }

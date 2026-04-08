@@ -81,7 +81,7 @@ class GenericDIYDevice extends ZigBeeDevice {
   // ═══════════════════════════════════════════════════════════
 
   _triggerFlow(flowId, tokens = {}) {
-    const card = this.homey.flow.getDeviceTriggerCard(flowId);
+    const card = (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getDeviceTriggerCard(flowId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
     if (card) {
       card.trigger(this, tokens, {}).catch(e => this.error(`[DIY] Flow ${flowId}: ${e.message}`));
       this.log(`[DIY] 🔔 Flow: ${flowId}`, tokens);
@@ -140,7 +140,7 @@ class GenericDIYDevice extends ZigBeeDevice {
 
   _registerFlowActions() {
     // Identify action
-    this.homey.flow.getDeviceActionCard('generic_diy_identify')?.registerRunListener(async () => {
+      (() => { try { return this.homey.flow.getDeviceActionCard('generic_diy_identify'); } catch(e) { return null; } })();
       const ep = this.zclNode?.endpoints?.[1];
       if (ep?.clusters?.identify) {
         await ep.clusters.identify.identify({ identifyTime: 5 });
@@ -149,20 +149,20 @@ class GenericDIYDevice extends ZigBeeDevice {
     });
 
     // Turn on/off endpoint actions
-    this.homey.flow.getDeviceActionCard('generic_diy_turn_on_endpoint')?.registerRunListener(async ({ endpoint }) => {
+      (() => { try { return this.homey.flow.getDeviceActionCard('generic_diy_turn_on_endpoint'); } catch(e) { return null; } })();
       const ep = this.zclNode?.endpoints?.[endpoint];
       if (ep?.clusters?.onOff) await ep.clusters.onOff.setOn();
       return true;
     });
 
-    this.homey.flow.getDeviceActionCard('generic_diy_turn_off_endpoint')?.registerRunListener(async ({ endpoint }) => {
+      (() => { try { return this.homey.flow.getDeviceActionCard('generic_diy_turn_off_endpoint'); } catch(e) { return null; } })();
       const ep = this.zclNode?.endpoints?.[endpoint];
       if (ep?.clusters?.onOff) await ep.clusters.onOff.setOff();
       return true;
     });
 
     // Set dim level
-    this.homey.flow.getDeviceActionCard('generic_diy_set_dim')?.registerRunListener(async ({ level }) => {
+      (() => { try { return this.homey.flow.getDeviceActionCard('generic_diy_set_dim'); } catch(e) { return null; } })();
       const ep = this.zclNode?.endpoints?.[1];
       if (ep?.clusters?.levelControl) {
         await ep.clusters.levelControl.moveToLevel({ level: Math.round(level * 254), transitionTime: 0 });

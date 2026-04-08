@@ -9,7 +9,7 @@ class WaterValveGardenDriver extends Homey.Driver {
 
   _registerFlowCards() {
     try {
-      this.homey.flow.getDeviceConditionCard('water_valve_garden_is_open')
+      (() => { try { return this.homey.flow.getDeviceConditionCard('water_valve_garden_is_open'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -17,7 +17,7 @@ class WaterValveGardenDriver extends Homey.Driver {
     } catch (e) { this.log('[FLOW] ' + e.message); }
 
     try {
-      this.homey.flow.getDeviceActionCard('water_valve_garden_open')
+      (() => { try { return this.homey.flow.getDeviceActionCard('water_valve_garden_open'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -27,7 +27,7 @@ class WaterValveGardenDriver extends Homey.Driver {
     } catch (e) { this.log('[FLOW] ' + e.message); }
 
     try {
-      this.homey.flow.getDeviceActionCard('water_valve_garden_close')
+      (() => { try { return this.homey.flow.getDeviceActionCard('water_valve_garden_close'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -37,7 +37,7 @@ class WaterValveGardenDriver extends Homey.Driver {
     } catch (e) { this.log('[FLOW] ' + e.message); }
 
     try {
-      this.homey.flow.getDeviceActionCard('water_valve_garden_toggle')
+      (() => { try { return this.homey.flow.getDeviceActionCard('water_valve_garden_toggle'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const cur = args.device.getCapabilityValue('onoff');

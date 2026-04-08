@@ -11,6 +11,19 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * v5.5.506: Fixed flow card registration with proper error handling
  */
 class Switch4GangDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   /**
    * Safe wrapper for condition handlers - returns false if device invalid
@@ -53,82 +66,82 @@ class Switch4GangDriver extends ZigBeeDriver {
 
     try {
       // Register flow card triggers for each gang
-      this.gang1OnTrigger = this.homey.flow.getDeviceTriggerCard('switch_4gang_gang1_turned_on');
-      this.gang1OffTrigger = this.homey.flow.getDeviceTriggerCard('switch_4gang_gang1_turned_off');
-      this.gang2OnTrigger = this.homey.flow.getDeviceTriggerCard('switch_4gang_gang2_turned_on');
-      this.gang2OffTrigger = this.homey.flow.getDeviceTriggerCard('switch_4gang_gang2_turned_off');
-      this.gang3OnTrigger = this.homey.flow.getDeviceTriggerCard('switch_4gang_gang3_turned_on');
-      this.gang3OffTrigger = this.homey.flow.getDeviceTriggerCard('switch_4gang_gang3_turned_off');
-      this.gang4OnTrigger = this.homey.flow.getDeviceTriggerCard('switch_4gang_gang4_turned_on');
-      this.gang4OffTrigger = this.homey.flow.getDeviceTriggerCard('switch_4gang_gang4_turned_off');
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('switch_4gang_gang1_turned_on'); } catch(e) { return null; } })();
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('switch_4gang_gang1_turned_off'); } catch(e) { return null; } })();
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('switch_4gang_gang2_turned_on'); } catch(e) { return null; } })();
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('switch_4gang_gang2_turned_off'); } catch(e) { return null; } })();
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('switch_4gang_gang3_turned_on'); } catch(e) { return null; } })();
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('switch_4gang_gang3_turned_off'); } catch(e) { return null; } })();
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('switch_4gang_gang4_turned_on'); } catch(e) { return null; } })();
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('switch_4gang_gang4_turned_off'); } catch(e) { return null; } })();
 
       // Register flow card conditions - v5.5.562: using safe wrapper
-      this.gang1IsOnCondition = this.homey.flow.getDeviceConditionCard('switch_4gang_gang1_is_on');
+      (() => { try { return this.homey.flow.getDeviceConditionCard('switch_4gang_gang1_is_on'); } catch(e) { return null; } })();
       this.gang1IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
         return args.device.getCapabilityValue('onoff') === true;
       }));
 
-      this.gang2IsOnCondition = this.homey.flow.getDeviceConditionCard('switch_4gang_gang2_is_on');
+      (() => { try { return this.homey.flow.getDeviceConditionCard('switch_4gang_gang2_is_on'); } catch(e) { return null; } })();
       this.gang2IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
         return args.device.getCapabilityValue('onoff.gang2') === true;
       }));
 
-      this.gang3IsOnCondition = this.homey.flow.getDeviceConditionCard('switch_4gang_gang3_is_on');
+      (() => { try { return this.homey.flow.getDeviceConditionCard('switch_4gang_gang3_is_on'); } catch(e) { return null; } })();
       this.gang3IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
         return args.device.getCapabilityValue('onoff.gang3') === true;
       }));
 
-      this.gang4IsOnCondition = this.homey.flow.getDeviceConditionCard('switch_4gang_gang4_is_on');
+      (() => { try { return this.homey.flow.getDeviceConditionCard('switch_4gang_gang4_is_on'); } catch(e) { return null; } })();
       this.gang4IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
         return args.device.getCapabilityValue('onoff.gang4') === true;
       }));
 
       // Register flow card actions - v5.5.562: using safe wrapper
-      this.gang1OnAction = this.homey.flow.getDeviceActionCard('switch_4gang_turn_on_gang1');
+      (() => { try { return this.homey.flow.getDeviceActionCard('switch_4gang_turn_on_gang1'); } catch(e) { return null; } })();
       this.gang1OnAction.registerRunListener(this._safeAction(async (args) => {
         await args.device._setGangOnOff(1, true).catch(() => {});
         await args.device.setCapabilityValue('onoff', true).catch(() => {});
       }));
 
-      this.gang1OffAction = this.homey.flow.getDeviceActionCard('switch_4gang_turn_off_gang1');
+      (() => { try { return this.homey.flow.getDeviceActionCard('switch_4gang_turn_off_gang1'); } catch(e) { return null; } })();
       this.gang1OffAction.registerRunListener(this._safeAction(async (args) => {
         await args.device._setGangOnOff(1, false).catch(() => {});
         await args.device.setCapabilityValue('onoff', false).catch(() => {});
       }));
 
-      this.gang2OnAction = this.homey.flow.getDeviceActionCard('switch_4gang_turn_on_gang2');
+      (() => { try { return this.homey.flow.getDeviceActionCard('switch_4gang_turn_on_gang2'); } catch(e) { return null; } })();
       this.gang2OnAction.registerRunListener(this._safeAction(async (args) => {
         await args.device.triggerCapabilityListener('onoff.gang2', true);
       }));
 
-      this.gang2OffAction = this.homey.flow.getDeviceActionCard('switch_4gang_turn_off_gang2');
+      (() => { try { return this.homey.flow.getDeviceActionCard('switch_4gang_turn_off_gang2'); } catch(e) { return null; } })();
       this.gang2OffAction.registerRunListener(this._safeAction(async (args) => {
         await args.device.triggerCapabilityListener('onoff.gang2', false);
       }));
 
-      this.gang3OnAction = this.homey.flow.getDeviceActionCard('switch_4gang_turn_on_gang3');
+      (() => { try { return this.homey.flow.getDeviceActionCard('switch_4gang_turn_on_gang3'); } catch(e) { return null; } })();
       this.gang3OnAction.registerRunListener(this._safeAction(async (args) => {
         await args.device.triggerCapabilityListener('onoff.gang3', true);
       }));
 
-      this.gang3OffAction = this.homey.flow.getDeviceActionCard('switch_4gang_turn_off_gang3');
+      (() => { try { return this.homey.flow.getDeviceActionCard('switch_4gang_turn_off_gang3'); } catch(e) { return null; } })();
       this.gang3OffAction.registerRunListener(this._safeAction(async (args) => {
         await args.device.triggerCapabilityListener('onoff.gang3', false);
       }));
 
-      this.gang4OnAction = this.homey.flow.getDeviceActionCard('switch_4gang_turn_on_gang4');
+      (() => { try { return this.homey.flow.getDeviceActionCard('switch_4gang_turn_on_gang4'); } catch(e) { return null; } })();
       this.gang4OnAction.registerRunListener(this._safeAction(async (args) => {
         await args.device.triggerCapabilityListener('onoff.gang4', true);
       }));
 
-      this.gang4OffAction = this.homey.flow.getDeviceActionCard('switch_4gang_turn_off_gang4');
+      (() => { try { return this.homey.flow.getDeviceActionCard('switch_4gang_turn_off_gang4'); } catch(e) { return null; } })();
       this.gang4OffAction.registerRunListener(this._safeAction(async (args) => {
         await args.device.triggerCapabilityListener('onoff.gang4', false);
       }));
 
       // v5.5.930: LED backlight flow cards
       try {
-        this.homey.flow.getDeviceActionCard('switch_4gang_set_backlight')
+        (() => { try { return this.homey.flow.getDeviceActionCard('switch_4gang_set_backlight'); } catch(e) { return null; } })()
           .registerRunListener(this._safeAction(async (args) => {
             await args.device.setBacklightMode(args.mode);
           }));
@@ -136,7 +149,7 @@ class Switch4GangDriver extends ZigBeeDriver {
       } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
 
       try {
-        this.homey.flow.getDeviceActionCard('switch_4gang_set_backlight_color')
+        (() => { try { return this.homey.flow.getDeviceActionCard('switch_4gang_set_backlight_color'); } catch(e) { return null; } })()
           .registerRunListener(this._safeAction(async (args) => {
             await args.device.setBacklightColor(args.state, args.color);
           }));
@@ -144,7 +157,7 @@ class Switch4GangDriver extends ZigBeeDriver {
       } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
 
       try {
-        this.homey.flow.getDeviceActionCard('switch_4gang_set_backlight_brightness')
+        (() => { try { return this.homey.flow.getDeviceActionCard('switch_4gang_set_backlight_brightness'); } catch(e) { return null; } })()
           .registerRunListener(this._safeAction(async (args) => {
             await args.device.setBacklightBrightness(args.brightness);
           }));
@@ -155,7 +168,7 @@ class Switch4GangDriver extends ZigBeeDriver {
       const caps = ['onoff', 'onoff.gang2', 'onoff.gang3', 'onoff.gang4'];
       ['gang1', 'gang2', 'gang3', 'gang4'].forEach((gang, idx) => {
         try {
-          this.homey.flow.getDeviceActionCard(`switch_4gang_toggle_${gang}`)
+          (() => { try { return this.homey.flow.getDeviceActionCard(`switch_4gang_toggle_${gang}`); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })()
             .registerRunListener(this._safeAction(async (args) => {
               const cap = caps[idx];
               const v = args.device.getCapabilityValue(cap);
@@ -166,7 +179,7 @@ class Switch4GangDriver extends ZigBeeDriver {
       });
 
       try {
-        this.homey.flow.getDeviceActionCard('switch_4gang_turn_on_all')
+        (() => { try { return this.homey.flow.getDeviceActionCard('switch_4gang_turn_on_all'); } catch(e) { return null; } })()
           .registerRunListener(this._safeAction(async (args) => {
             for (const cap of caps) {
               if (args.device.hasCapability(cap)) await args.device._setGangOnOff(idx + 1, true).catch(() => {});
@@ -176,7 +189,7 @@ class Switch4GangDriver extends ZigBeeDriver {
       } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
 
       try {
-        this.homey.flow.getDeviceActionCard('switch_4gang_turn_off_all')
+        (() => { try { return this.homey.flow.getDeviceActionCard('switch_4gang_turn_off_all'); } catch(e) { return null; } })()
           .registerRunListener(this._safeAction(async (args) => {
             for (const cap of caps) {
               if (args.device.hasCapability(cap)) await args.device._setGangOnOff(idx + 1, false).catch(() => {});
@@ -187,11 +200,11 @@ class Switch4GangDriver extends ZigBeeDriver {
 
       // v5.12.5: Scene mode triggers + action (ported from wall_switch_4gang_1way)
       for (const g of [1, 2, 3, 4]) {
-        try { this.homey.flow.getDeviceTriggerCard(`switch_4gang_gang${g}_scene`); } catch (e) { this.log(`[FLOW] scene G${g}: ${e.message}`); }
+        try { (() => { try { return this.homey.flow.getDeviceTriggerCard(`switch_4gang_gang${g}_scene`); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.log(`[FLOW] scene G${g}: ${e.message}`); }
       }
 
       try {
-        this.homey.flow.getDeviceActionCard('switch_4gang_set_scene_mode')
+        (() => { try { return this.homey.flow.getDeviceActionCard('switch_4gang_set_scene_mode'); } catch(e) { return null; } })()
           .registerRunListener(this._safeAction(async (args) => {
             await args.device.setSceneMode(args.mode);
           }));

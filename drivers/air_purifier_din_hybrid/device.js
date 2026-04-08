@@ -18,6 +18,7 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeD
   get gangCount() { return 1; }
 
   async onNodeInit({ zclNode }) {
+    this.initPhysicalButtonDetection(); // rule-19 injected
     this.log('DIN Rail Switch v5.6.0 initializing...');
 
     // v5.6.0: Track state for physical button detection

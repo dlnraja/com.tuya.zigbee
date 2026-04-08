@@ -8,6 +8,19 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * This caused "flow cards give error" reports
  */
 class TuyaGasSensorTs0601Driver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   async onInit() {
     this.log('TuyaGasSensorTs0601Driver v5.5.570 initialized');
@@ -19,7 +32,7 @@ class TuyaGasSensorTs0601Driver extends ZigBeeDriver {
     // CONDITION: Gas is/is not detected
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      this.homey.flow.getDeviceConditionCard('gas_sensor_gas_detected')
+      (() => { try { return this.homey.flow.getDeviceConditionCard('gas_sensor_gas_detected'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_gas') === true;
@@ -33,7 +46,7 @@ class TuyaGasSensorTs0601Driver extends ZigBeeDriver {
     // CONDITION: CO is/is not detected
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      this.homey.flow.getDeviceConditionCard('gas_sensor_co_detected')
+      (() => { try { return this.homey.flow.getDeviceConditionCard('gas_sensor_co_detected'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_co') === true;
@@ -47,7 +60,7 @@ class TuyaGasSensorTs0601Driver extends ZigBeeDriver {
     // CONDITION: Gas level is/is not above threshold
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      this.homey.flow.getDeviceConditionCard('gas_sensor_level_above')
+      (() => { try { return this.homey.flow.getDeviceConditionCard('gas_sensor_level_above'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const level = args.device.getCapabilityValue('measure_gas') || 0;
@@ -62,7 +75,7 @@ class TuyaGasSensorTs0601Driver extends ZigBeeDriver {
     // ACTION: Mute alarm
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      this.homey.flow.getDeviceActionCard('gas_sensor_mute_alarm')
+      (() => { try { return this.homey.flow.getDeviceActionCard('gas_sensor_mute_alarm'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           try {
@@ -84,7 +97,7 @@ class TuyaGasSensorTs0601Driver extends ZigBeeDriver {
     // ACTION: Self-test
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      this.homey.flow.getDeviceActionCard('gas_sensor_self_test')
+      (() => { try { return this.homey.flow.getDeviceActionCard('gas_sensor_self_test'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           try {

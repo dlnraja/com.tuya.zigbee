@@ -127,5 +127,27 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "capabilitiesOptions": {
+    "dim.valve_1": {
+      "title": {
+        "en": " 1"
+      }
+    },
+    "dim.valve_2": {
+      "title": {
+        "en": " 2"
+      }
+    },
+    "dim.valve_3": {
+      "title": {
+        "en": " 3"
+      }
+    },
+    "dim.valve_4": {
+      "title": {
+        "en": " 4"
+      }
+    }
+  }
 }

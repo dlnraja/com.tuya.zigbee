@@ -72,6 +72,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCo
 
     // Parent handles ALL: cover listeners, Tuya DP, ZCL
     await super.onNodeInit({ zclNode });
+    this.initPhysicalButtonDetection(); // rule-19 injected
     this.log('[CURTAIN] v5.6.0 - DPs: 1-15,101-105 | ZCL: 258,6,8,EF00');
 
     // v5.5.322: Add luminance + button for Tuya DP curtains (Eftychis #779)
@@ -234,7 +235,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCo
       }, 500);
 
       // Trigger flow card if available
-      const triggerCard = this.homey.flow.getDeviceTriggerCard('button_pressed');
+      const triggerCard = (() => { try { return this.homey.flow.getDeviceTriggerCard('button_pressed'); } catch(e) { return null; } })();
       if (triggerCard) {
         await triggerCard.trigger(this, { button: 1, scene: 'pressed' }).catch(() => { });
       }

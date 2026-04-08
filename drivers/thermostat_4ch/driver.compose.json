@@ -80,6 +80,51 @@
       "title": {
         "en": "Zone 4"
       }
+    },
+    "onoff.ch2": {
+      "title": {
+        "en": "Gang 2"
+      }
+    },
+    "onoff.ch3": {
+      "title": {
+        "en": "Gang 3"
+      }
+    },
+    "onoff.ch4": {
+      "title": {
+        "en": "Gang 4"
+      }
+    },
+    "target_temperature.ch2": {
+      "title": {
+        "en": "Target Temp 2"
+      }
+    },
+    "target_temperature.ch3": {
+      "title": {
+        "en": "Target Temp 3"
+      }
+    },
+    "target_temperature.ch4": {
+      "title": {
+        "en": "Target Temp 4"
+      }
+    },
+    "measure_temperature.ch2": {
+      "title": {
+        "en": "Temperature 2"
+      }
+    },
+    "measure_temperature.ch3": {
+      "title": {
+        "en": "Temperature 3"
+      }
+    },
+    "measure_temperature.ch4": {
+      "title": {
+        "en": "Temperature 4"
+      }
     }
   },
   "maintenanceActions": [

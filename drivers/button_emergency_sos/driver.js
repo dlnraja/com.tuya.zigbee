@@ -8,13 +8,26 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * v5.5.832: Added registerRunListener and enhanced error diagnostics
  */
 class SosEmergencyButtonDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   async onInit() {
     this.log('SosEmergencyButtonDriver v5.5.832 initialized');
     
     // v5.5.832: Register flow trigger card with registerRunListener
     try {
-      this._sosFlowCard = this.homey.flow.getDeviceTriggerCard('button_emergency_sos_pressed');
+      (() => { try { return this.homey.flow.getDeviceTriggerCard('button_emergency_sos_pressed'); } catch(e) { return null; } })();
       if (this._sosFlowCard) {
         // v5.5.832: CRITICAL - Register run listener for trigger cards
         this._sosFlowCard.registerRunListener(async (args, state) => {
@@ -53,7 +66,7 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
     } else {
       // Fallback: try to get card again
       try {
-        const card = this.homey.flow.getDeviceTriggerCard('button_emergency_sos_pressed');
+      const card = (() => { try { return this.homey.flow.getDeviceTriggerCard('button_emergency_sos_pressed'); } catch(e) { return null; } })();
         if (card) {
           await card.trigger(device, tokens, state);
           this.log('[FLOW] ✅ button_emergency_sos_pressed triggered (fallback)!');

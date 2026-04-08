@@ -16,7 +16,7 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
     this.log('Air Purifier ready');
   }
 
-  handleTuyaDataReport(data) {
+  async handleTuyaDataReport(data) {
     if (!data || data.dp == null) return;
     const v = data.data ?? data.value;
     if (data.dp === DP.state) {
@@ -24,15 +24,21 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
       if (this._lastOnoff !== s) {
         this._lastOnoff = s;
         this.setCapabilityValue('onoff', s).catch(() => {});
-        const id = s ? 'air_purifier_turned_on' : 'air_purifier_turned_off';
-        this.homey.flow.getDeviceTriggerCard().trigger(this, {}, {}).catch(() => {});
+        const id = s ? 'air_purifier_motion_hybrid_air_purifier_turned_on' : 'air_purifier_motion_hybrid_air_purifier_turned_off';
+        try {
+          const card = (() => { try { return this.homey.flow.getDeviceTriggerCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+          if (card) await card.trigger(this, {}, {}).catch(() => {});
+        } catch (e) {}
       }
     } else if (data.dp === DP.pm25) {
       const pm = typeof v === 'number' ? v : parseInt(v);
       if (this._lastPm25 !== pm) {
         this._lastPm25 = pm;
         this.setCapabilityValue('measure_pm25', pm).catch(() => {});
-        this.homey.flow.getDeviceTriggerCard().trigger(this, { pm25: pm }, {}).catch(() => {});
+        try {
+          const card = (() => { try { return this.homey.flow.getDeviceTriggerCard('air_purifier_motion_hybrid_air_purifier_pm25_changed'); } catch(e) { return null; } })();
+          if (card) await card.trigger(this, { pm25: pm }, {}).catch(() => {});
+        } catch (e) {}
       }
     } else if (data.dp === DP.speed) {
       const spd = typeof v === 'number' ? v : parseInt(v);
