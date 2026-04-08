@@ -2619,3 +2619,11 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 | _TZ3000_ke7pzj5d + TS0502B | dlnraja/com.tuya.zigbee#205 | feature |
 | _TZ3000_ke7pzj5d + TS0052 | dlnraja/com.tuya.zigbee#205 | feature |
 | _TZ3000_ke7pzj5d + TS1101 | dlnraja/com.tuya.zigbee#205 | feature |
+
+
+## Auto-discovered from GitHub (2026-04-08)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZ3000_wzmuk9ai + router | dlnraja/com.tuya.zigbee#197 | bug_report |
+| router + TS011F | dlnraja/com.tuya.zigbee#197 | bug_report |
