@@ -3038,22 +3038,6 @@
         }
       },
       {
-        "id": "blaster_remote_hybrid_ir_code_received",
-        "title": {
-          "en": "ir code received"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=blaster_remote_hybrid"
-          }
-        ],
-        "titleFormatted": {
-          "en": "ir code received"
-        }
-      },
-      {
         "id": "bulb_dimmable_smart_bulb_dimmer_turned_on",
         "title": {
           "en": "Turned on",
