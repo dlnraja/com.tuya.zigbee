@@ -24,7 +24,10 @@ const GH='https://github.com/dlnraja/com.tuya.zigbee';
 function gh(c){return execSync(`gh ${c}`,{encoding:'utf8',timeout:60000,maxBuffer:50*1024*1024}).trim();}
 function wasTriaged(n){try{return gh(`api repos/${REPO}/issues/${n}/comments --jq ".[].body"`).includes(TAG);}catch{return false;}}
 function post(n,body){
-  if(DRY){console.log(`[DRY] #${n}: ${body.slice(0,120)}...`);return;}
+  if (DRY || !CAN_CLOSE) {
+    console.log(`[SILENT-TRIAGE] #${n} on ${REPO}: (Message suppressed)`);
+    return;
+  }
   const f=path.join(os.tmpdir(),'_triage.md');
   fs.writeFileSync(f,`${TAG}\n${body}`);
   try{gh(`issue comment ${n} -R ${REPO} -F "${f}"`);console.log(`Commented on ${REPO}#${n}`);}
@@ -195,7 +198,7 @@ if(SCAN_FORKS){
           const ORIG_REPO=REPO;
           // Post redirect comment on fork
           const msg=`Hi! This device request has been tracked in [Universal Tuya Zigbee](${GH}) **v${VER}**.\n\nPlease install from [Homey App Store](${APP}) and report issues on our [Forum](${FORUM}) or [GitHub](${GH}/issues).`;
-          if(!DRY){
+          if(!DRY && CAN_CLOSE){
             try{
               const f=path.join(os.tmpdir(),'_triage_fork.md');
               fs.writeFileSync(f,`${TAG}\n${msg}`);

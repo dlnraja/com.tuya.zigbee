@@ -776,6 +776,84 @@
       "template": "add_devices"
     }
   ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "switch_2gang_physical_gang1_on",
+        "title": {
+          "en": "Gang 1 turned on (physical)",
+          "fr": "Gang 1 allumé (physique)"
+        }
+      },
+      {
+        "id": "switch_2gang_physical_gang1_off",
+        "title": {
+          "en": "Gang 1 turned off (physical)",
+          "fr": "Gang 1 éteint (physique)"
+        }
+      },
+      {
+        "id": "switch_2gang_physical_gang2_on",
+        "title": {
+          "en": "Gang 2 turned on (physical)",
+          "fr": "Gang 2 allumé (physique)"
+        }
+      },
+      {
+        "id": "switch_2gang_physical_gang2_off",
+        "title": {
+          "en": "Gang 2 turned off (physical)",
+          "fr": "Gang 2 éteint (physique)"
+        }
+      },
+      {
+        "id": "switch_2gang_gang1_scene",
+        "title": {
+          "en": "Gang 1 scene trigger",
+          "fr": "Gang 1 déclencheur de scène"
+        },
+        "args": [
+          {
+            "name": "action",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "on",
+                "label": { "en": "On", "fr": "On" }
+              },
+              {
+                "id": "off",
+                "label": { "en": "Off", "fr": "Off" }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "switch_2gang_gang2_scene",
+        "title": {
+          "en": "Gang 2 scene trigger",
+          "fr": "Gang 2 déclencheur de scène"
+        },
+        "args": [
+          {
+            "name": "action",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "on",
+                "label": { "en": "On", "fr": "On" }
+              },
+              {
+                "id": "off",
+                "label": { "en": "Off", "fr": "Off" }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

@@ -286,8 +286,13 @@ async function processIssue(repo,issue,state,report,extData){
     if(!imageCtx){const ci=extractImages(c.body||'');if(ci.length){const sa2=await analyzeScreenshot(ci[0],'github comment');imageCtx=sa2?formatForAIContext(sa2):''}}
   }
 
-  // Respond if not already responded
+  // Respond if not already responded (SILENT for external repos as per Thinking Opus 4.6 mandate)
   if(!hasBot){
+    if (repo !== OWN) {
+      console.log(`  [SILENT-TRIAGE] Analysis complete for #${issue.number} on ${repo}. Skipping public comment.`);
+      markProcessed(state,repo,issue.number);
+      return;
+    }
     const response=await generateResponse(issue,fpResults,classification,variants,bugs,imageCtx,bodyLinks,repo,bugFindings,researchResults);
     if(response){
       const posted=await ghPost('/repos/'+repo+'/issues/'+issue.number+'/comments',{body:response});
@@ -367,6 +372,11 @@ async function processPR(repo,pr,state,report,extData){
 
   if(!hasBot){
     const isUp=repo!==OWN;
+    if (isUp) {
+      console.log(`  [SILENT-TRIAGE-PR] Analysis complete for PR #${pr.number} on ${repo}. Skipping public comment.`);
+      markProcessed(state,repo,'PR'+pr.number);
+      return;
+    }
     let msg=TAG+'\n';
     if(isUp){
       msg+='Hi! 👋 Thanks for this contribution.\n\n';

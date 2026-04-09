@@ -1364,30 +1364,26 @@ const SENSOR_CONFIGS = {
     // v5.5.983: 4x4_Pete forum fix - suppress battery spam warnings
     suppressBatteryWarnings: true,
     batteryThrottleMs: 3600000,  // Only update battery max every hour
-    writableDPs: [2, 3, 4, 102, 103, 104, 105, 107, 108, 109, 110, 111, 122, 123],
+    writableDPs: [2, 4, 102, 105, 107, 108, 109, 110, 111, 113, 122, 123],
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_bool' },
       101: { cap: 'alarm_motion', type: 'motion_state_enum' },
-      106: { cap: 'measure_luminance', type: 'lux_direct' },
+      104: { cap: 'measure_luminance', type: 'lux_direct' }, // Z2M: DP104
+      106: { cap: 'measure_luminance', type: 'lux_direct' }, // Variant: DP106
       121: { cap: 'measure_battery', divisor: 1 },
-      // v5.8.63: Complete settings per Z2M #21919 + device page
-      2: { cap: null, setting: 'large_motion_detection_sensitivity', min: 0, max: 10 },
-      3: { cap: null, setting: 'mov_minimum_distance', divisor: 100 },
-      4: { cap: null, setting: 'large_motion_detection_distance', divisor: 100, min: 0, max: 10 },
-      102: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
-      103: { cap: null, setting: 'motion_false_detection' },
-      104: { cap: null, setting: 'medium_motion_detection_distance', divisor: 100, min: 0, max: 6 },
-      105: { cap: null, setting: 'medium_motion_detection_sensitivity', min: 0, max: 10 },
+      // v5.8.63: Aligned with Z2M and driver.compose.json
+      2: { cap: null, setting: 'large_motion_sensitivity', min: 0, max: 10 },
+      4: { cap: null, setting: 'large_motion_distance', divisor: 100, min: 0, max: 10 },
+      102: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },
+      105: { cap: null, setting: 'fading_time', min: 0, max: 28800 },
       107: { cap: null, setting: 'indicator' },
-      108: { cap: null, setting: 'small_detection_distance', divisor: 100, min: 0, max: 6 },
-      109: { cap: null, setting: 'small_detection_sensitivity', min: 0, max: 10 },
-      // v5.9.18: Z2M #21919 additional settings (commented as untested in Z2M converter)
+      108: { cap: null, setting: 'static_detection_distance', divisor: 100, min: 0, max: 6 },
+      109: { cap: null, setting: 'static_detection_sensitivity', min: 0, max: 10 },
       110: { cap: null, setting: 'micro_minimum_distance', divisor: 100 },
       111: { cap: null, setting: 'motionless_minimum_distance', divisor: 100 },
-      112: { cap: null, internal: 'reset_setting' },
       113: { cap: null, setting: 'breathe_false_detection' },
       122: { cap: null, setting: 'motion_detection_mode' },
-      123: { cap: null, setting: 'motion_detection_sensitivity', min: 0, max: 10 },
+      123: { cap: null, setting: 'radar_sensitivity', min: 0, max: 10 },
     }
   },
 

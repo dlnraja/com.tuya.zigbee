@@ -247,6 +247,17 @@ async onNodeInit({ zclNode }) {
   }
 
   await super.onNodeInit({ zclNode });
+    // v5.12.5: Continuous Illuminance Reporting (Forum Issue #37)
+    try {
+      const illum = zclNode.endpoints[1]?.clusters?.illuminanceMeasurement;
+      if (illum) {
+        await illum.configureReporting({
+          measuredValue: { minInterval: 60, maxInterval: 900, minChange: 10 }
+        }).catch(e => this.log('[ILLUM] config failed:', e.message));
+        this.log('[ILLUM] ✅ Periodic reporting configured');
+      }
+    } catch (e) { }
+
   this._registerCapabilityListeners(); // rule-12a injected
 
   // v5.5.17: Add occupancy cluster listener for radar sensors

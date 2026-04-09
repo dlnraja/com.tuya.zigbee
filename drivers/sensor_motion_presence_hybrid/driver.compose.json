@@ -32,13 +32,13 @@
   "zigbee": {
     "manufacturerName": [
       "_TZE284_BQUWRQH1",
-      "_tze284_bquwrqh1"
+      "_TZE200_bj9m6v91",
+      "_tze284_bquwrqh1",
+      "_tze200_bj9m6v91"
     ],
     "productId": [
       "TS0225",
-      "TS0601",
-      "ts0225",
-      "ts0601"
+      "ts0225"
     ],
     "learnmode": {
       "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
