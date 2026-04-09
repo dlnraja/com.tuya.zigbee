@@ -1,32 +1,44 @@
 # Monthly Tuya Zigbee Report - 2026-04
 
-*Generated: 2026-04-09T10:24:56.801Z*
+*Generated: 2026-04-09T11:18:50.356Z*
 
-## 📊 Summary
+## 📊 Architectural Health [v7.0.22]
 
-| Metric | Value |
-|--------|-------|
-| Total Drivers | 304 |
-| Manufacturer IDs | 227671 |
-| Collisions | 13 |
+| Metric | Value | Status |
+|--------|-------|--------|
+| Total Drivers | 305 | ✅ |
+| Manufacturer IDs | 255502 | ✅ |
+| Collisions | 175 | ⚠️ |
+| v7 Architectural Debt | 273 legacy drivers | 🛠️ |
+| PR Auto-Merger | Active | 🛡️ |
+| Community Responder | Template Ready | 🤖 |
 
 ## ⚠️ Collisions Detected
 
 | ID | Drivers |
 |----|--------|
-| `EWELINK|S26R2ZB` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
-| `EWELINK|S31 LITE ZB` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
-| `EWELINK|S31 Lite zb` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
-| `EWELINK|S40LITE` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
-| `EWELINK|S60ZBTPF` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
-| `EWELINK|S60ZBTPG` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
-| `EWELINK|TS011F` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
-| `EWELINK|s26r2zb` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
-| `EWELINK|s31 lite zb` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
-| `EWELINK|s40lite` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
-| `EWELINK|s60zbtpf` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
-| `EWELINK|s60zbtpg` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
-| `EWELINK|ts011f` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
+| `_TZ3210_ncw88jfq|RH3052` | air_purifier, climate_sensor |
+| `_TZ3210_ncw88jfq|TS0201` | air_purifier, climate_sensor |
+| `_TZ3210_ncw88jfq|TS0222` | air_purifier, climate_sensor |
+| `_TZ3210_ncw88jfq|TS0601` | air_purifier, climate_sensor |
+| `_TZ3210_ncw88jfq|TY0201` | air_purifier, climate_sensor |
+| `_TZ3210_ncw88jfq|rh3052` | air_purifier, climate_sensor |
+| `_TZ3210_ncw88jfq|ts0201` | air_purifier, climate_sensor |
+| `_TZ3210_ncw88jfq|ts0222` | air_purifier, climate_sensor |
+| `_TZ3210_ncw88jfq|ts0601` | air_purifier, climate_sensor |
+| `_TZ3210_ncw88jfq|ty0201` | air_purifier, climate_sensor |
+| `_TZE200_vvmbj46n|TS0201` | air_purifier, lcdtemphumidsensor |
+| `_TZE200_vvmbj46n|TS0601` | air_purifier, lcdtemphumidsensor |
+| `_TZE200_vvmbj46n|TY0201` | air_purifier, lcdtemphumidsensor |
+| `_TZE200_vvmbj46n|ts0201` | air_purifier, lcdtemphumidsensor |
+| `_TZE200_vvmbj46n|ts0601` | air_purifier, lcdtemphumidsensor |
+| `_TZE200_vvmbj46n|ty0201` | air_purifier, lcdtemphumidsensor |
+| `_TZE200_yjjdcqsq|TS0201` | air_purifier, lcdtemphumidsensor |
+| `_TZE200_yjjdcqsq|TS0601` | air_purifier, lcdtemphumidsensor |
+| `_TZE200_yjjdcqsq|TY0201` | air_purifier, lcdtemphumidsensor |
+| `_TZE200_yjjdcqsq|ts0201` | air_purifier, lcdtemphumidsensor |
+
+*...and 155 more*
 
 ## 📋 Action Items
 
