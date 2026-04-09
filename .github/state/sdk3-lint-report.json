@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-04-09T08:13:27.790Z",
+  "timestamp": "2026-04-09T04:06:44.544Z",
   "driversScanned": 20,
-  "staticIssues": 27,
+  "staticIssues": 28,
   "autoFixed": 0,
   "aiSuggestions": 0,
   "aiApplied": 0,
@@ -66,6 +66,7 @@
       "driver": "air_purifier_sensor_hybrid",
       "issues": [
         "sdk3-await-capability",
+        "sdk3-case-sensitive-fingerprint",
         "sdk3-dp-variant-awareness"
       ]
     },
