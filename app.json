@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "7.0.10",
+  "version": "7.0.22",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -39786,7 +39786,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -39808,7 +39808,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -39830,7 +39830,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -39852,7 +39852,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -39880,7 +39880,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -39902,7 +39902,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -39924,7 +39924,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -39946,7 +39946,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -39968,7 +39968,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -39990,7 +39990,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -40012,7 +40012,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -40031,7 +40031,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "tokens": [
@@ -40059,7 +40059,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "tokens": [
@@ -40090,7 +40090,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -40112,7 +40112,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -40134,7 +40134,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -40156,7 +40156,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -40178,7 +40178,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -40200,7 +40200,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -40228,7 +40228,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -40250,7 +40250,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -40272,7 +40272,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -40294,7 +40294,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -40316,7 +40316,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -40338,7 +40338,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -40360,7 +40360,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -40382,7 +40382,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -40404,7 +40404,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -40423,7 +40423,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "tokens": [
@@ -40451,7 +40451,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "tokens": [
@@ -40479,7 +40479,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "tokens": [
@@ -48640,7 +48640,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.3"
+            "filter": "driver_id=wall_remote_3_gang"
           }
         ]
       },
@@ -48658,7 +48658,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.3"
+            "filter": "driver_id=wall_remote_3_gang"
           }
         ]
       },
@@ -48676,7 +48676,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.3"
+            "filter": "driver_id=wall_remote_3_gang"
           }
         ]
       },
@@ -48694,7 +48694,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.3"
+            "filter": "driver_id=wall_remote_3_gang"
           }
         ]
       },
@@ -48712,7 +48712,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.3"
+            "filter": "driver_id=wall_remote_3_gang"
           }
         ]
       },
@@ -48730,7 +48730,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.3"
+            "filter": "driver_id=wall_remote_3_gang"
           }
         ]
       },
@@ -48748,7 +48748,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.3"
+            "filter": "driver_id=wall_remote_3_gang"
           }
         ]
       },
@@ -48766,7 +48766,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.3"
+            "filter": "driver_id=wall_remote_3_gang"
           }
         ]
       },
@@ -48784,7 +48784,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.3"
+            "filter": "driver_id=wall_remote_3_gang"
           }
         ]
       },
@@ -48802,7 +48802,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.3"
+            "filter": "driver_id=wall_remote_3_gang"
           }
         ]
       },
@@ -48820,7 +48820,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.3"
+            "filter": "driver_id=wall_remote_3_gang"
           }
         ]
       },
@@ -48838,7 +48838,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.3"
+            "filter": "driver_id=wall_remote_3_gang"
           }
         ]
       },
@@ -48856,7 +48856,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.3"
+            "filter": "driver_id=wall_remote_3_gang"
           }
         ]
       },
@@ -48874,7 +48874,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.3"
+            "filter": "driver_id=wall_remote_3_gang"
           }
         ]
       },
@@ -48892,7 +48892,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.3"
+            "filter": "driver_id=wall_remote_3_gang"
           }
         ]
       },
@@ -48910,7 +48910,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.4"
+            "filter": "driver_id=wall_remote_4_gang"
           }
         ]
       },
@@ -48928,7 +48928,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.4"
+            "filter": "driver_id=wall_remote_4_gang"
           }
         ]
       },
@@ -48946,7 +48946,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.4"
+            "filter": "driver_id=wall_remote_4_gang"
           }
         ]
       },
@@ -48964,7 +48964,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.4"
+            "filter": "driver_id=wall_remote_4_gang"
           }
         ]
       },
@@ -48982,7 +48982,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.4"
+            "filter": "driver_id=wall_remote_4_gang"
           }
         ]
       },
@@ -49000,7 +49000,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.4"
+            "filter": "driver_id=wall_remote_4_gang"
           }
         ]
       },
@@ -49018,7 +49018,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.4"
+            "filter": "driver_id=wall_remote_4_gang"
           }
         ]
       },
@@ -49036,7 +49036,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.4"
+            "filter": "driver_id=wall_remote_4_gang"
           }
         ]
       },
@@ -49054,7 +49054,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.4"
+            "filter": "driver_id=wall_remote_4_gang"
           }
         ]
       },
@@ -49072,7 +49072,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.4"
+            "filter": "driver_id=wall_remote_4_gang"
           }
         ]
       },
@@ -49090,7 +49090,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.4"
+            "filter": "driver_id=wall_remote_4_gang"
           }
         ]
       },
@@ -49108,7 +49108,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.4"
+            "filter": "driver_id=wall_remote_4_gang"
           }
         ]
       },
@@ -49126,7 +49126,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.4"
+            "filter": "driver_id=wall_remote_4_gang"
           }
         ]
       },
@@ -49144,7 +49144,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.4"
+            "filter": "driver_id=wall_remote_4_gang"
           }
         ]
       },
@@ -49162,7 +49162,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.4"
+            "filter": "driver_id=wall_remote_4_gang"
           }
         ]
       },
@@ -49180,7 +49180,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.4"
+            "filter": "driver_id=wall_remote_4_gang"
           }
         ]
       },
@@ -49198,7 +49198,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.4"
+            "filter": "driver_id=wall_remote_4_gang"
           }
         ]
       },
@@ -49216,7 +49216,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.4"
+            "filter": "driver_id=wall_remote_4_gang"
           }
         ]
       },
@@ -49234,7 +49234,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.4"
+            "filter": "driver_id=wall_remote_4_gang"
           }
         ]
       },
@@ -49252,7 +49252,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=button.4"
+            "filter": "driver_id=wall_remote_4_gang"
           }
         ]
       },
@@ -61647,7 +61647,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -61669,7 +61669,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -61691,7 +61691,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -61713,7 +61713,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -61735,7 +61735,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -61757,7 +61757,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -61779,7 +61779,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -83373,7 +83373,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -83395,7 +83395,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -83417,7 +83417,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -83439,7 +83439,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -83467,7 +83467,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -83489,7 +83489,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -83517,7 +83517,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -83539,7 +83539,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -83573,7 +83573,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           },
           {
             "type": "dropdown",
@@ -83628,7 +83628,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -83650,7 +83650,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -83672,7 +83672,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           }
         ],
         "titleFormatted": {
@@ -83694,7 +83694,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang2"
+            "filter": "driver_id=switch_2gang"
           },
           {
             "name": "mode",
@@ -83734,7 +83734,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -83756,7 +83756,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -83778,7 +83778,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -83800,7 +83800,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -83822,7 +83822,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -83844,7 +83844,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -83864,7 +83864,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -83882,7 +83882,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -83900,7 +83900,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -83918,7 +83918,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -83936,7 +83936,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -83961,7 +83961,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           },
           {
             "type": "dropdown",
@@ -84006,7 +84006,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           },
           {
             "type": "dropdown",
@@ -84072,7 +84072,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           },
           {
             "type": "range",
@@ -84098,7 +84098,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -84120,7 +84120,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -84142,7 +84142,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           }
         ],
         "titleFormatted": {
@@ -84164,7 +84164,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "capabilities=onoff.gang3"
+            "filter": "driver_id=switch_3gang"
           },
           {
             "name": "mode",
@@ -91761,6 +91761,17 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "air_purifier_climate_hybrid_air_purifier_pm25_changed",
+            "title": {
+              "en": "Air Purifier Climate Hybrid Air Purifier Pm25 Changed",
+              "fr": "Air Purifier Climate Hybrid Air Purifier Pm25 Changed"
+            }
+          }
+        ]
+      },
       "id": "air_purifier_climate_hybrid"
     },
     {
@@ -92430,6 +92441,17 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "air_purifier_lcdtemphumidsensor_hybrid_air_purifier_pm25_changed",
+            "title": {
+              "en": "Air Purifier Lcdtemphumidsensor Hybrid Air Purifier Pm25 Changed",
+              "fr": "Air Purifier Lcdtemphumidsensor Hybrid Air Purifier Pm25 Changed"
+            }
+          }
+        ]
+      },
       "id": "air_purifier_lcdtemphumidsensor_hybrid"
     },
     {
@@ -92515,6 +92537,17 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "air_purifier_motion_hybrid_air_purifier_pm25_changed",
+            "title": {
+              "en": "Air Purifier Motion Hybrid Air Purifier Pm25 Changed",
+              "fr": "Air Purifier Motion Hybrid Air Purifier Pm25 Changed"
+            }
+          }
+        ]
+      },
       "id": "air_purifier_motion_hybrid"
     },
     {
@@ -96087,7 +96120,8 @@
           "ts1101",
           "ts110e",
           "ts110f",
-          "zbt-dimmablelight"
+          "zbt-dimmablelight",
+          "TS0501"
         ],
         "endpoints": {
           "1": {
@@ -97136,7 +97170,8 @@
           "ts0505a",
           "ts0505b",
           "zb-cl01",
-          "zbt-colorlight"
+          "zbt-colorlight",
+          "TS0505"
         ]
       },
       "settings": [
@@ -99057,7 +99092,8 @@
           "rs 128 t",
           "ts0502a",
           "ts0502b",
-          "zbt-cctlight"
+          "zbt-cctlight",
+          "TS0502"
         ],
         "endpoints": {
           "1": {
@@ -100159,6 +100195,31 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "button_emergency_sos_double_pressed",
+            "title": {
+              "en": "Button Emergency Sos Double Pressed",
+              "fr": "Button Emergency Sos Double Pressed"
+            }
+          },
+          {
+            "id": "button_emergency_sos_long_pressed",
+            "title": {
+              "en": "Button Emergency Sos Long Pressed",
+              "fr": "Button Emergency Sos Long Pressed"
+            }
+          },
+          {
+            "id": "button_emergency_sos_pressed",
+            "title": {
+              "en": "Button Emergency Sos Pressed",
+              "fr": "Button Emergency Sos Pressed"
+            }
+          }
+        ]
+      },
       "id": "button_emergency_sos"
     },
     {
@@ -113969,6 +114030,17 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "button_pressed",
+            "title": {
+              "en": "Button Pressed",
+              "fr": "Button Pressed"
+            }
+          }
+        ]
+      },
       "id": "contact_sensor_curtain_hybrid"
     },
     {
@@ -116804,6 +116876,17 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "button_pressed",
+            "title": {
+              "en": "Button Pressed",
+              "fr": "Button Pressed"
+            }
+          }
+        ]
+      },
       "id": "curtain_motor"
     },
     {
@@ -117220,6 +117303,17 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "curtain_motor_shutter_hybrid_button_pressed",
+            "title": {
+              "en": "Curtain Motor Shutter Hybrid Button Pressed",
+              "fr": "Curtain Motor Shutter Hybrid Button Pressed"
+            }
+          }
+        ]
+      },
       "id": "curtain_motor_shutter_hybrid"
     },
     {
@@ -117798,6 +117892,17 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "button_pressed",
+            "title": {
+              "en": "Button Pressed",
+              "fr": "Button Pressed"
+            }
+          }
+        ]
+      },
       "id": "curtain_motor_tilt_hybrid"
     },
     {
@@ -118210,6 +118315,17 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "curtain_motor_wall_hybrid_button_pressed",
+            "title": {
+              "en": "Curtain Motor Wall Hybrid Button Pressed",
+              "fr": "Curtain Motor Wall Hybrid Button Pressed"
+            }
+          }
+        ]
+      },
       "id": "curtain_motor_wall_hybrid"
     },
     {
@@ -141601,6 +141717,8 @@
           "_TZ3000_ZRM3OXSH",
           "_TZ3000_ZV6X8BT2",
           "_TZ3000_ZWAADVUS",
+          "_TZ3000_oxv67pno",
+          "_tz3000_oxv67pno",
           "_TZ3210_2UOLLQ9D",
           "_TZ3210_4UX0ONDB",
           "_TZ3210_CEHUW1LW",
@@ -148729,6 +148847,24 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "remote_button_wireless_hybrid_rotate_left",
+            "title": {
+              "en": "Remote Button Wireless Hybrid Rotate Left",
+              "fr": "Remote Button Wireless Hybrid Rotate Left"
+            }
+          },
+          {
+            "id": "remote_button_wireless_hybrid_rotate_right",
+            "title": {
+              "en": "Remote Button Wireless Hybrid Rotate Right",
+              "fr": "Remote Button Wireless Hybrid Rotate Right"
+            }
+          }
+        ]
+      },
       "id": "remote_button_wireless_hybrid"
     },
     {
@@ -158283,6 +158419,24 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "sensor_gas_presence_hybrid_presence_sensor_radar_presence_detected",
+            "title": {
+              "en": "Sensor Gas Presence Hybrid Presence Sensor Radar Presence Detected",
+              "fr": "Sensor Gas Presence Hybrid Presence Sensor Radar Presence Detected"
+            }
+          },
+          {
+            "id": "sensor_gas_presence_hybrid_presence_sensor_radar_presence_cleared",
+            "title": {
+              "en": "Sensor Gas Presence Hybrid Presence Sensor Radar Presence Cleared",
+              "fr": "Sensor Gas Presence Hybrid Presence Sensor Radar Presence Cleared"
+            }
+          }
+        ]
+      },
       "id": "sensor_gas_presence_hybrid"
     },
     {
@@ -159152,6 +159306,24 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "sensor_motion_presence_hybrid_presence_detected",
+            "title": {
+              "en": "Sensor Motion Presence Hybrid Presence Detected",
+              "fr": "Sensor Motion Presence Hybrid Presence Detected"
+            }
+          },
+          {
+            "id": "sensor_motion_presence_hybrid_presence_cleared",
+            "title": {
+              "en": "Sensor Motion Presence Hybrid Presence Cleared",
+              "fr": "Sensor Motion Presence Hybrid Presence Cleared"
+            }
+          }
+        ]
+      },
       "id": "sensor_motion_presence_hybrid"
     },
     {
@@ -160220,6 +160392,24 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "sensor_presence_radar_hybrid_presence_detected",
+            "title": {
+              "en": "Sensor Presence Radar Hybrid Presence Detected",
+              "fr": "Sensor Presence Radar Hybrid Presence Detected"
+            }
+          },
+          {
+            "id": "sensor_presence_radar_hybrid_presence_cleared",
+            "title": {
+              "en": "Sensor Presence Radar Hybrid Presence Cleared",
+              "fr": "Sensor Presence Radar Hybrid Presence Cleared"
+            }
+          }
+        ]
+      },
       "id": "sensor_presence_radar_hybrid"
     },
     {
@@ -161643,6 +161833,45 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "smart_knob_level_changed",
+            "title": {
+              "en": "Smart Knob Level Changed",
+              "fr": "Smart Knob Level Changed"
+            }
+          },
+          {
+            "id": "smart_knob_rotated",
+            "title": {
+              "en": "Smart Knob Rotated",
+              "fr": "Smart Knob Rotated"
+            }
+          },
+          {
+            "id": "smart_knob_rotated",
+            "title": {
+              "en": "Smart Knob Rotated",
+              "fr": "Smart Knob Rotated"
+            }
+          },
+          {
+            "id": "smart_knob_level_changed",
+            "title": {
+              "en": "Smart Knob Level Changed",
+              "fr": "Smart Knob Level Changed"
+            }
+          },
+          {
+            "id": "smart_knob_button_pressed",
+            "title": {
+              "en": "Smart Knob Button Pressed",
+              "fr": "Smart Knob Button Pressed"
+            }
+          }
+        ]
+      },
       "id": "smart_knob"
     },
     {
@@ -161779,6 +162008,24 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "smart_knob_rotary_rotate_left",
+            "title": {
+              "en": "Smart Knob Rotary Rotate Left",
+              "fr": "Smart Knob Rotary Rotate Left"
+            }
+          },
+          {
+            "id": "smart_knob_rotary_rotate_right",
+            "title": {
+              "en": "Smart Knob Rotary Rotate Right",
+              "fr": "Smart Knob Rotary Rotate Right"
+            }
+          }
+        ]
+      },
       "id": "smart_knob_rotary"
     },
     {
@@ -161927,6 +162174,31 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "smart_knob_rotary_hybrid_rotate_left",
+            "title": {
+              "en": "Smart Knob Rotary Hybrid Rotate Left",
+              "fr": "Smart Knob Rotary Hybrid Rotate Left"
+            }
+          },
+          {
+            "id": "smart_knob_rotary_hybrid_rotate_right",
+            "title": {
+              "en": "Smart Knob Rotary Hybrid Rotate Right",
+              "fr": "Smart Knob Rotary Hybrid Rotate Right"
+            }
+          },
+          {
+            "id": "smart_knob_rotary_hybrid_pressed",
+            "title": {
+              "en": "Smart Knob Rotary Hybrid Pressed",
+              "fr": "Smart Knob Rotary Hybrid Pressed"
+            }
+          }
+        ]
+      },
       "id": "smart_knob_rotary_hybrid"
     },
     {
@@ -165816,6 +166088,7 @@
           "_TZE204_ATPWQGML",
           "_TZE204_E1HUTAAJ",
           "_TZE284_C8IPBLJQ",
+          "_TZ3210_n0wbkysi",
           "_tyzb01_4lwqwyqn",
           "_tyzb01_u9kkqh5o",
           "_tz3000_0q5fjqgw",
@@ -171384,6 +171657,17 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "switch_wireless_button_pressed",
+            "title": {
+              "en": "Switch Wireless Button Pressed",
+              "fr": "Switch Wireless Button Pressed"
+            }
+          }
+        ]
+      },
       "id": "switch_wireless"
     },
     {
@@ -171868,7 +172152,9 @@
           "_tzn",
           "_tzq",
           "_tzs",
-          "_tzw"
+          "_tzw",
+          "_TZE200_u6x1zyv2",
+          "_TZE284_hdml1aav"
         ],
         "productId": [
           "Q9MPFHW",
@@ -173234,6 +173520,17 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "usb_outlet_button_pressed",
+            "title": {
+              "en": "Usb Outlet Button Pressed",
+              "fr": "Usb Outlet Button Pressed"
+            }
+          }
+        ]
+      },
       "id": "usb_outlet_advanced"
     },
     {
@@ -174555,6 +174852,17 @@
             "de": "Batterie"
           }
         }
+      },
+      "flow": {
+        "triggers": [
+          {
+            "id": "wall_remote_4_gang_buttons_2",
+            "title": {
+              "en": "Wall Remote 4 Gang Buttons 2",
+              "fr": "Wall Remote 4 Gang Buttons 2"
+            }
+          }
+        ]
       },
       "settings": []
     },
@@ -175943,6 +176251,17 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "wall_switch_4gang_1way_gang1_scene",
+            "title": {
+              "en": "Wall Switch 4gang 1way Gang1 Scene",
+              "fr": "Wall Switch 4gang 1way Gang1 Scene"
+            }
+          }
+        ]
+      },
       "id": "wall_switch_4gang_1way"
     },
     {
@@ -177214,6 +177533,38 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "weather_station_outdoor_outdoor_temperature_changed",
+            "title": {
+              "en": "Weather Station Outdoor Outdoor Temperature Changed",
+              "fr": "Weather Station Outdoor Outdoor Temperature Changed"
+            }
+          },
+          {
+            "id": "weather_station_outdoor_outdoor_humidity_changed",
+            "title": {
+              "en": "Weather Station Outdoor Outdoor Humidity Changed",
+              "fr": "Weather Station Outdoor Outdoor Humidity Changed"
+            }
+          },
+          {
+            "id": "weather_station_outdoor_pressure_changed",
+            "title": {
+              "en": "Weather Station Outdoor Pressure Changed",
+              "fr": "Weather Station Outdoor Pressure Changed"
+            }
+          },
+          {
+            "id": "weather_station_outdoor_battery_low",
+            "title": {
+              "en": "Weather Station Outdoor Battery Low",
+              "fr": "Weather Station Outdoor Battery Low"
+            }
+          }
+        ]
+      },
       "id": "weather_station_outdoor"
     },
     {

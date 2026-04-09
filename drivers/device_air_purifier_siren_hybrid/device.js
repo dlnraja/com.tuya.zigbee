@@ -138,9 +138,9 @@ class SirenDevice extends HybridPlugBase {
   }
 
   async _sendTuyaDP(dp, value, type) {
-    // v5.11.27: Use _tuyaEF00Manager from base class (the ONLY working API for EF00 cluster)
-    if (this._tuyaEF00Manager?.sendDatapoint) {
-      await this._tuyaEF00Manager.sendDatapoint(dp, value, type);
+    // v5.11.27: Use tuyaEF00Manager from base class (the ONLY working API for EF00 cluster)
+    if (this.tuyaEF00Manager?.sendDatapoint) {
+      await this.tuyaEF00Manager.sendDatapoint(dp, value, type);
       return;
     }
     // Fallback: direct cluster write

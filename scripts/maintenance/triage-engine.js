@@ -105,25 +105,32 @@ async function main() {
 
     console.log(`Triage ${protocolPrefix} ${driverId}...`);
 
-    const endpoints = manifest.zigbee?.endpoints || {};
-      
+    try {
+      const endpoints = manifest.zigbee?.endpoints || {};
       for (const epId in endpoints) {
         const clusters = endpoints[epId].clusters || [];
         
         // SOS Button Check
-          console.warn(`  [MISMATCH] ${d}: Has SOS cluster (1280) but is NOT an SOS driver!`);
+        if ((clusters.includes(1280) || clusters.includes(1281)) && !driverId.includes('sos')) {
+          console.warn(`  [MISMATCH] ${driverId}: Has SOS cluster (1280) but is NOT an SOS driver!`);
           results.alerts++;
         }
 
         // Radar/mWave Check
-        if (clusters.includes(0xEF00) && d.includes('motion') && !d.includes('radar')) {
+        if (clusters.includes(0xEF00) && driverId.includes('motion') && !driverId.includes('radar')) {
            const mfrs = manifest.zigbee?.manufacturerName || [];
            if (mfrs.some(m => /_TZE20[04]/.test(m))) {
-              console.log(`  [INFO] ${d}: Multi-gang radar detected in motion driver. Recommendation: Upgrade to HybridSensorBase.`);
+              console.log(`  [INFO] ${driverId}: Multi-gang radar detected in motion driver. Recommendation: Upgrade to HybridSensorBase.`);
            }
         }
       }
-    } catch (e) {}
+    } catch (e) {
+      console.error(`  [ERR] Failed to triage ${driverId}: ${e.message}`);
+    }
+  }
+
+  for (const d of drivers) {
+    await triageDriver(d);
   }
 
   // 4. REPORT SUMMARY

@@ -83,8 +83,8 @@ class SmartLCDThermostatDevice extends TuyaZigbeeDevice {
 
     this.registerCapabilityListener('target_temperature', async (value) => {
       this._markAppCommand?.();
-      if (this._tuyaEF00Manager) {
-        await this._tuyaEF00Manager.sendTuyaDP(2, 2, Math.round(value * 10));
+      if (this.tuyaEF00Manager) {
+        await this.tuyaEF00Manager.sendTuyaDP(2, 2, Math.round(value * 10));
       }
     });
 
@@ -92,8 +92,8 @@ class SmartLCDThermostatDevice extends TuyaZigbeeDevice {
       this._markAppCommand?.();
       if 
 
-      (this._tuyaEF00Manager) {
-        await this._tuyaEF00Manager.sendTuyaDP(1, 4, MODE_MAP_REV[value] ?? 0);
+      (this.tuyaEF00Manager) {
+        await this.tuyaEF00Manager.sendTuyaDP(1, 4, MODE_MAP_REV[value] ?? 0);
       }
     });
 

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-08T19:58:12.866Z",
+  "timestamp": "2026-04-09T06:03:45.211Z",
   "driversChecked": 304,
   "collisions": [
     {
@@ -45,10 +45,17 @@
       ]
     },
     {
-      "id": "_TZE200_TTCOVULF|*",
+      "id": "_TZ3210_IYSTCADI|TS0502",
       "drivers": [
-        "air_purifier_sensor_hybrid",
-        "sensor_motion_radar_hybrid"
+        "bulb_tunable_white",
+        "led_controller_cct"
+      ]
+    },
+    {
+      "id": "_TZ3000_EE8NRT2L|TS0044",
+      "drivers": [
+        "button_wireless_4",
+        "wall_remote_4_gang"
       ]
     },
     {
@@ -137,10 +144,31 @@
       ]
     },
     {
+      "id": "_TZE200_U6X1ZYV2|TS0207",
+      "drivers": [
+        "rain_sensor",
+        "universal_fallback"
+      ]
+    },
+    {
+      "id": "_TZE200_U6X1ZYV2|TS0601",
+      "drivers": [
+        "rain_sensor",
+        "universal_fallback"
+      ]
+    },
+    {
       "id": "_TYZB01_QM6DJPTA|*",
       "drivers": [
         "remote_button_emergency_sos_hybrid",
         "smart_remote_4_buttons"
+      ]
+    },
+    {
+      "id": "_TZ3000_W8JWKCZZ|TS0043",
+      "drivers": [
+        "remote_button_wireless_scene_hybrid",
+        "wall_remote_3_gang"
       ]
     },
     {
@@ -149,17 +177,19 @@
         "sensor_climate_presence_hybrid",
         "sensor_contact_presence_hybrid"
       ]
+    },
+    {
+      "id": "_TZE284_HDML1AAV|TS0601",
+      "drivers": [
+        "sensor_lcdtemphumidsensor_soil_hybrid",
+        "universal_fallback"
+      ]
     }
   ],
   "buttonLogicFailures": [],
   "sdkDeprecations": [
-    "lib\\utils\\migration-queue.js:275: const device = await homey.drivers.getDevice({ id: deviceId });",
-    ".homeybuild\\lib\\utils\\migration-queue.js:267: const device = await homey.drivers.getDevice({ id: deviceId });",
-    "lib\\utils\\migration-queue.js:275: const device = await homey.drivers.getDevice({ id: deviceId });",
     "scripts\\maintenance\\zero-defect-architect-audit.js:119: if (line.includes('drivers.getDevice(') || line.includes('drivers.getDeviceById(') || line.includes("
   ],
-  "radarLogicCheck": [
-    "presence_sensor_ceiling: Missing hybrid base inheritance for radar."
-  ],
+  "radarLogicCheck": [],
   "errors": []
 }
