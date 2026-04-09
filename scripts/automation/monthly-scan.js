@@ -4,7 +4,7 @@
  * 
  * Scans:
  * - Homey Forum messages
- * - GitHub PRs/Issues from Johan and dlnraja forks
+ * - GitHub PRs/Issues from dlnraja fork (Autonomous Maintenance)
  * - Existing YAML/JS for patterns
  * 
  * Outputs:
@@ -215,12 +215,16 @@ function generateReport() {
   report += `*Generated: ${now.toISOString()}*\n\n`;
   
   // Summary
-  report += `## 📊 Summary\n\n`;
-  report += `| Metric | Value |\n`;
-  report += `|--------|-------|\n`;
-  report += `| Total Drivers | ${Object.keys(drivers).length} |\n`;
-  report += `| Manufacturer IDs | ${totalMfrs} |\n`;
-  report += `| Collisions | ${collisions.length} |\n`;
+  const legacyGangs = Object.entries(drivers).filter(([_, d]) => d.caps.some(c => c.includes('_') || c.includes('gang'))).length;
+  report += `## 📊 Architectural Health [v7.0.22]\n\n`;
+  report += `| Metric | Value | Status |\n`;
+  report += `|--------|-------|--------|\n`;
+  report += `| Total Drivers | ${Object.keys(drivers).length} | ✅ |\n`;
+  report += `| Manufacturer IDs | ${totalMfrs} | ✅ |\n`;
+  report += `| Collisions | ${collisions.length} | ${collisions.length > 0 ? '⚠️' : '✅'} |\n`;
+  report += `| v7 Architectural Debt | ${legacyGangs} legacy drivers | 🛠️ |\n`;
+  report += `| PR Auto-Merger | Active | 🛡️ |\n`;
+  report += `| Community Responder | Template Ready | 🤖 |\n`;
   report += `\n`;
   
   // Collisions

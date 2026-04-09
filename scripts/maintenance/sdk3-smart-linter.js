@@ -154,10 +154,10 @@ const RULES = [
   {
     id: 'sdk3-flow-card-unsafe',
     severity: 'error',
-    desc: 'Bare getDeviceTriggerCard or getActionCard without try-catch — crashes app if card missing.',
+    desc: 'Bare getTriggerCard or getActionCard without try-catch — crashes app if card missing.',
     test: (code) => {
-      const bareCall = /this\.homey\.flow\.(?:getDeviceTriggerCard|getActionCard)\s*\(/g;
-      const inTryCatch = /try\s*\{[^}]*\.(?:getDeviceTriggerCard|getActionCard)/g;
+      const bareCall = /this\.homey\.flow\.(?:getTriggerCard|getActionCard)\s*\(/g;
+      const inTryCatch = /try\s*\{[^}]*\.(?:getTriggerCard|getActionCard)/g;
       const total = (code.match(bareCall) || []).length;
       const safe = (code.match(inTryCatch) || []).length;
       return total > 0 && safe < total;
@@ -167,12 +167,13 @@ const RULES = [
   {
     id: 'sdk3-phantom-flow-method',
     severity: 'error',
-    desc: 'CRITICAL: getDeviceConditionCard() and getDeviceActionCard() DO NOT EXIST in Homey SDK v3. Use getConditionCard() and getActionCard() instead. This crashes the entire app on init.',
-    test: (code) => /\.getDevice(?:Condition|Action)Card\s*\(/.test(code),
-    count: (code) => (code.match(/\.getDevice(?:Condition|Action)Card\s*\(/g) || []).length,
+    desc: 'CRITICAL: getDeviceConditionCard(), getDeviceActionCard() and getDeviceTriggerCard() DO NOT EXIST in Homey SDK v3. Use getConditionCard(), getActionCard() and getTriggerCard() instead.',
+    test: (code) => /\.getDevice(?:Condition|Action|Trigger)Card\s*\(/.test(code),
+    count: (code) => (code.match(/\.getDevice(?:Condition|Action|Trigger)Card\s*\(/g) || []).length,
     fix: (code) => code
       .replace(/\.getDeviceConditionCard\s*\(/g, '.getConditionCard(')
-      .replace(/\.getDeviceActionCard\s*\(/g, '.getActionCard('),
+      .replace(/\.getDeviceActionCard\s*\(/g, '.getActionCard(')
+      .replace(/\.getDeviceTriggerCard\s*\(/g, '.getTriggerCard('),
   },
   {
     id: 'sdk3-mains-has-battery',
@@ -243,13 +244,13 @@ const RULES = [
   {
     id: 'sdk3-trigger-card-no-try',
     severity: 'warn',
-    desc: 'getDeviceTriggerCard() called without try-catch. Missing cards will crash the app.',
+    desc: 'getTriggerCard() called without try-catch. Missing cards will crash the app.',
     test: (code) => {
-      if (!/getDeviceTriggerCard/.test(code)) return false;
+      if (!/getTriggerCard/.test(code)) return false;
       // Check if there are calls NOT inside try blocks
       const lines = code.split('\n');
       for (let i = 0; i < lines.length; i++) {
-        if (/getDeviceTriggerCard/.test(lines[i])) {
+        if (/getTriggerCard/.test(lines[i])) {
           // Look back max 5 lines for 'try {'
           let inTry = false;
           for (let j = Math.max(0, i - 5); j <= i; j++) {
@@ -366,7 +367,7 @@ ${staticResults.map(r => `- ${r.severity.toUpperCase()}: ${r.desc}`).join('\n') 
 2. AWAIT: Every 'this.setCapabilityValue()' MUST be preceded by 'await'.
 3. API: Use exclusively 'this.homey.<managerId>' (this.homey.drivers, this.homey.flow, this.homey.settings). NEVER generate global 'ManagerDrivers' or 'ManagerZwave'.
 4. MEMORY: Every event listener (.on()) must have cleanup in 'async onDeleted()' via removeAllListeners(). This prevents memory leaks on Homey Pro 2023.
-5. FLOW CARDS: ALWAYS wrap getDeviceTriggerCard or getActionCard in try-catch. Also NOTE: this.homey.flow.getDeviceConditionCard DOES NOT EXIST (use getConditionCard instead if needed).
+5. FLOW CARDS: ALWAYS wrap getTriggerCard, getConditionCard or getActionCard in try-catch. NEVER use 'getDeviceTriggerCard' etc (hallucinated in previous versions).
 
 === SDK v3 BATTERY & ENERGY RULES (CRITICAL) ===
 1. NEVER combine measure_battery + alarm_battery on same device. Causes duplicate UI and Flow Cards.

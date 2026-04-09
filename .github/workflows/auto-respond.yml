@@ -37,6 +37,15 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
+      - name: "0a. Intelligence Mode Selector (Cloudless-First)"
+        id: intelligence_selector
+        run: |
+          if [ -n "${{ secrets.GOOGLE_API_KEY }}" ] || [ -n "${{ secrets.OPENAI_API_KEY }}" ] || [ -n "${{ secrets.OPENROUTER_API_KEY }}" ]; then
+            echo "PIPELINE_MODE=AI_ORCHESTRATED" >> $GITHUB_ENV
+          else
+            echo "PIPELINE_MODE=RULE_BASED" >> $GITHUB_ENV
+          fi
+
       - name: Check fingerprints, respond, and auto-close
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7
         with:

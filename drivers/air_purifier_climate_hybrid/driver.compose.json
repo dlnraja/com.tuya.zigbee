@@ -52,8 +52,6 @@
       "_TYZB01_HJSGDKFL",
       "_TYZB01_KVWJUJY9",
       "_TZ2000_A476RAQ2",
-      "_TZ2000_AVDNVYKF",
-      "_TZ2000_HJSGDKFL",
       "_TZ2000_XOGB73AM",
       "_TZ3000_0S1IZERX",
       "_TZ3000_8YBE88NF",
@@ -63,21 +61,17 @@
       "_TZ3000_DOWJ6GYI",
       "_TZ3000_F2BW0B6K",
       "_TZ3000_FIE1DPKM",
-      "_TZ3000_I8JFIEZR",
       "_TZ3000_ITNRSUFE",
       "_TZ3000_QAAYSLLP",
       "_TZ3000_RUSU2VZB",
       "_TZ3000_YD2E749Y",
       "_TZ3000_YWAGC4RJ",
-      "_TZ3210_HUZKZQYK",
       "_TZ3210_NCW88JFQ",
       "_tyzb01_a476raq2",
       "_tyzb01_ftdkanlj",
       "_tyzb01_hjsgdkfl",
       "_tyzb01_kvwjujy9",
       "_tz2000_a476raq2",
-      "_tz2000_avdnvykf",
-      "_tz2000_hjsgdkfl",
       "_tz2000_xogb73am",
       "_tz3000_0s1izerx",
       "_tz3000_8ybe88nf",
@@ -87,13 +81,11 @@
       "_tz3000_dowj6gyi",
       "_tz3000_f2bw0b6k",
       "_tz3000_fie1dpkm",
-      "_tz3000_i8jfiezr",
       "_tz3000_itnrsufe",
       "_tz3000_qaaysllp",
       "_tz3000_rusu2vzb",
       "_tz3000_yd2e749y",
       "_tz3000_ywagc4rj",
-      "_tz3210_huzkzqyk",
       "_tz3210_ncw88jfq"
     ],
     "productId": [
@@ -152,5 +144,16 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "air_purifier_climate_hybrid_air_purifier_pm25_changed",
+        "title": {
+          "en": "Air Purifier Climate Hybrid Air Purifier Pm25 Changed",
+          "fr": "Air Purifier Climate Hybrid Air Purifier Pm25 Changed"
+        }
+      }
+    ]
+  }
 }

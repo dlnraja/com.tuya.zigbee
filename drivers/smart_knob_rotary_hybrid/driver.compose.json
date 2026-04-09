@@ -143,5 +143,30 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "smart_knob_rotary_hybrid_rotate_left",
+        "title": {
+          "en": "Smart Knob Rotary Hybrid Rotate Left",
+          "fr": "Smart Knob Rotary Hybrid Rotate Left"
+        }
+      },
+      {
+        "id": "smart_knob_rotary_hybrid_rotate_right",
+        "title": {
+          "en": "Smart Knob Rotary Hybrid Rotate Right",
+          "fr": "Smart Knob Rotary Hybrid Rotate Right"
+        }
+      },
+      {
+        "id": "smart_knob_rotary_hybrid_pressed",
+        "title": {
+          "en": "Smart Knob Rotary Hybrid Pressed",
+          "fr": "Smart Knob Rotary Hybrid Pressed"
+        }
+      }
+    ]
+  }
 }

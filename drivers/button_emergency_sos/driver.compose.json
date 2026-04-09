@@ -475,5 +475,30 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "button_emergency_sos_double_pressed",
+        "title": {
+          "en": "Button Emergency Sos Double Pressed",
+          "fr": "Button Emergency Sos Double Pressed"
+        }
+      },
+      {
+        "id": "button_emergency_sos_long_pressed",
+        "title": {
+          "en": "Button Emergency Sos Long Pressed",
+          "fr": "Button Emergency Sos Long Pressed"
+        }
+      },
+      {
+        "id": "button_emergency_sos_pressed",
+        "title": {
+          "en": "Button Emergency Sos Pressed",
+          "fr": "Button Emergency Sos Pressed"
+        }
+      }
+    ]
+  }
 }

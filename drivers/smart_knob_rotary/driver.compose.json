@@ -131,5 +131,23 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "smart_knob_rotary_rotate_left",
+        "title": {
+          "en": "Smart Knob Rotary Rotate Left",
+          "fr": "Smart Knob Rotary Rotate Left"
+        }
+      },
+      {
+        "id": "smart_knob_rotary_rotate_right",
+        "title": {
+          "en": "Smart Knob Rotary Rotate Right",
+          "fr": "Smart Knob Rotary Rotate Right"
+        }
+      }
+    ]
+  }
 }

@@ -517,5 +517,16 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "switch_wireless_button_pressed",
+        "title": {
+          "en": "Switch Wireless Button Pressed",
+          "fr": "Switch Wireless Button Pressed"
+        }
+      }
+    ]
+  }
 }

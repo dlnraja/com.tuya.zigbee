@@ -599,5 +599,16 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "usb_outlet_button_pressed",
+        "title": {
+          "en": "Usb Outlet Button Pressed",
+          "fr": "Usb Outlet Button Pressed"
+        }
+      }
+    ]
+  }
 }

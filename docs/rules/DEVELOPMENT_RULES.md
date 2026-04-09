@@ -35,7 +35,7 @@ Only remove a fingerprint if it causes WRONG driver matching:
 - Same OEM supplies different productIds for different device types
 
 ### 3. SDK3 Compliance
-- **Getter Mandate**: ALWAYS use `this.homey.flow.getDeviceTriggerCard('id')`, `getDeviceActionCard('id')`, or `getDeviceConditionCard('id')` for driver-specific flow cards. Fixed-name getters (e.g. `getTriggerCard`) are DEPRECATED and unreliable in SDK 3.
+- **Getter Mandate**: ALWAYS use `this.homey.flow.getTriggerCard('id')`, `this.homey.flow.getActionCard('id')`, or `this.homey.flow.getConditionCard('id')` for driver-specific flow cards. Generic methods like `getTriggerCard` (without calling on flow manager) are DEPRECATED in some contexts, but the 'Device' suffix added in previous documentation was a hallucination and causes runtime crashes.
 - **Card IDs**: Every getter call MUST pass the explicit ID defined in `driver.flow.compose.json`. Naked calls (without arguments) are INVALID and will cause flows to remain unlinked.
 - **No wildcards** in manufacturerName (e.g., `_TZE284_*` is INVALID).
 - All flow cards must be registered in both `driver.flow.compose.json` AND compiled into `app.json`.
@@ -64,10 +64,10 @@ TS0601 battery devices use **passive mode**:
 ```javascript
 // ✅ CORRECT: SDK 3 compliant with explicit ID
 const flowId = 'my_driver_trigger_name';
-this._triggerCard = this.homey.flow.getDeviceTriggerCard(flowId);
+this._triggerCard = this.homey.flow.getTriggerCard(flowId);
 
-// ❌ INCORRECT: Deprecated getter and missing ID
-this._triggerCard = this.homey.flow.getTriggerCard(); 
+// ❌ INCORRECT: Missing ID and non-existent getter
+this._triggerCard = this.homey.flow.getDeviceTriggerCard(); 
 ```
 
 ---

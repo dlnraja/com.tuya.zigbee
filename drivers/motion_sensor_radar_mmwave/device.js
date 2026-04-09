@@ -113,30 +113,31 @@ get _defaultDpMappings() {
       transform: (v) => v === 1 || v === true,
       alsoSets: { 'alarm_human': (v) => v === 1 || v === true }
     },
-    2: { capability: 'measure_humidity', divisor: 1 },
-    3: { capability: 'measure_temperature', divisor: 10 },
+    2: { capability: null, setting: 'radar_sensitivity' },      // sensitivity (0-10)
+    3: { capability: null, setting: 'maximum_range', divisor: 100 }, // precision max range (m)
     4: { capability: 'measure_battery', divisor: 1 },
+    6: { capability: null, setting: 'reverse_direction' },       // motor or relay inversion
+    9: { capability: 'measure_luminance.distance', divisor: 100 }, // target distance (m)
+    12: { capability: 'measure_luminance', divisor: 1 },        // illuminance (lux)
+    13: { capability: 'measure_luminance', divisor: 1 },        // alt illuminance (lux)
     15: { capability: 'measure_battery', divisor: 1 },
-    9: { capability: null, setting: 'radar_sensitivity' },
-    10: { capability: null, setting: 'minimum_range' },
-    11: { capability: null, setting: 'maximum_range' },
-    12: { capability: 'measure_luminance', divisor: 1 },
     101: {
       capability: 'measure_presence_time',
       divisor: 1,
       alsoSetsMotion: true
     },
     102: {
-      capability: 'measure_luminance.distance',
+      capability: 'measure_presence_time',                      // alt presence time
       divisor: 1
     },
-    103: { capability: 'measure_luminance', divisor: 1 },
-    104: { capability: null, setting: 'fading_time' },
-    105: { capability: null, setting: 'detection_delay' },
-    106: { capability: 'measure_luminance', divisor: 1 },
-    107: { capability: null, setting: 'indicator' },
+    103: { capability: 'measure_luminance', divisor: 1 },       // alt lux
+    104: { capability: null, setting: 'fading_time' },          // fading time (s)
+    105: { capability: null, setting: 'detection_delay' },      // detection delay (s)
+    106: { capability: 'measure_luminance', divisor: 1 },       // alt lux (ZG-204ZM)
+    107: { capability: null, setting: 'indicator' },            // LED indicator
     108: { capability: null, setting: 'small_detection_distance' },
     109: { capability: null, setting: 'small_detection_sensitivity' },
+    111: { capability: 'measure_luminance', divisor: 10 },      // lux (0.1 lux scale)
   };
 }
 
@@ -236,10 +237,7 @@ async onNodeInit({ zclNode }) {
   // v5.12.0: Register onoff listener for RELAY models (DP108 = breaker_status)
   if (config.type === 'RELAY' && this.hasCapability('onoff')) {
     this.registerCapabilityListener('onoff', async (value) => {
-      this.log(`[MMWAVE] 🔌 Relay contro
-    await super.onNodeInit({ zclNode });
-    this._registerCapabilityListeners(); // rule-12a injected
-l: ${value ? 'ON' : 'OFF'} (DP108)`);
+      this.log(`[MMWAVE] 🔌 Relay control: ${value ? 'ON' : 'OFF'} (DP108)`);
       const tuya = zclNode?.endpoints?.[1]?.clusters?.tuya;
       if (tuya?.datapoint) {
         await tuya.datapoint({ dp: 108, value: value ? 1 : 0, type: 'enum' });
@@ -247,6 +245,9 @@ l: ${value ? 'ON' : 'OFF'} (DP108)`);
     });
     this.log('[MMWAVE] 🔌 Relay onoff listener registered (DP108)');
   }
+
+  await super.onNodeInit({ zclNode });
+  this._registerCapabilityListeners(); // rule-12a injected
 
   // v5.5.17: Add occupancy cluster listener for radar sensors
   // Some radars use occupancySensing cluster instead of Tuya DP
@@ -363,23 +364,34 @@ _setupPeriodicLuminanceQuery() {
     clearInterval(this._luminanceQueryTimer);
   }
 
-  // Query luminance DP every 2 minutes for continuous updates
+  // Query luminance DP every 1 minute for continuous updates if mains powered
+  const queryInterval = this.mainsPowered ? 1 * 60 * 1000 : 5 * 60 * 1000;
+  
   this._luminanceQueryTimer = setInterval(async () => {
     try {
+      // v5.13.5: If mains powered, also try direct ZCL read for better accuracy
+      if (this.mainsPowered) {
+        const ep1 = this.zclNode?.endpoints?.[1];
+        const illu = ep1?.clusters?.msIlluminanceMeasurement || ep1?.clusters?.illuminanceMeasurement;
+        if (illu) {
+          await illu.readAttributes(['measuredValue']).catch(() => {});
+        }
+      }
+
       if (this.safeTuyaDataQuery) {
         // Query DP12 (main illuminance) and DP103 (alt illuminance)
         await this.safeTuyaDataQuery([12, 103], {
           logPrefix: '[LUMINANCE-PERIODIC]',
-          delayBetweenQueries: 100,
-          timeout: 3000
+          delayBetweenQueries: 200,
+          timeout: 4000
         });
       }
     } catch (e) {
-      // Silent - device may be asleep
+      // Silent - device may be busy
     }
-  }, 2 * 60 * 1000); // Every 2 minutes
+  }, queryInterval);
 
-  this.log('[LUMINANCE-FIX] ⏰ Periodic DP query started (every 2min)');
+  this.log(`[LUMINANCE-FIX] ⏰ Periodic DP query started (every ${queryInterval/1000}s, mains=${this.mainsPowered})`);
 }
 
 /**

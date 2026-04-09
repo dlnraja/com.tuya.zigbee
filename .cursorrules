@@ -126,6 +126,22 @@ Do NOT remove just because mfr appears in another driver with different productI
 - Commit messages for external syncs: use generic wording ("improved", "added support")
 
 ## REASONING & QUALITY ASSURANCE
-- **Chain of Thought (Chaîne de pensée)**: Always "think step-by-step" before providing the final answer or code implementation. This mandatory decomposition reduces hallucinations and ensures logical consistency.
-- Validate fixes against stack traces found in diagnostics files before committing.
-- Ensure all architectural changes maintain SDK 3 compliance.
+- Rule 15 (Shadow-Pulsar): All cloud mirroring MUST use the `TuyaShadowPulsar` singleton with leaky-bucket throttling.
+- Rule 16 (Anti-Echo): All incoming WiFi/Cloud state updates MUST be gated by the `echoCache` to prevent infinite feedback loops between Homey and Tuya Cloud.
+- Rule 17 (Native Multi-Gang): Multi-button devices MUST use SDK 3 Dot-Notation (`onoff.1`, `onoff.2`) and be routed through the `handleGangReport` shield in `MultiGangMixin`.
+- Rule 18 (DevOps Shield): All automated manifest updates MUST pass through the `ajv` schema validator before being committed.
+- Rule 19 (Local-First): Command execution MUST prioritize direct TCP/Zigbee over Cloud. Cloud is for status shadowing only.
+- Chain of Thought (CoT): Step-by-step reasoning is mandatory for all architectural changes to prevent protocol contamination.
+- Rule 21 (Logic Interoperability): Flow card filters for common capabilities (e.g., multi-gang onoff/button) MUST use `capabilities` filters instead of `driver_id` to allow cross-driver support for hybrid and prefixed (e.g. air_purifier_*) variants.
+- Rule 22 (Legacy Fingerprint Anchor): When migrating a manufacturerName from Driver A to Driver B, the fingerprint MUST be preserved in Driver A (Legacy Anchor) to prevent breaking existing 4000+ users. New users will naturally match Driver B via higher weight or explicit pairing choice.
+- Rule 23 (Generic Pattern Registration): Non-standard Tuya/Zigbee clusters like `0xFC11` (Woolley/Sonoff) must be treated as architectural plugins in `lib/mixins` rather than localized driver code.
+- Rule 24 (MCU Serial Integrity): Devices using Tuya DP Type 0 (RAW) for MCU communication MUST have a dedicated parser in `lib/tuya/parsers/` to prevent buffer overflow or malformed ZCL frames.
+- Rule 25 (Time Sync Governance): MCU-based devices (TRVs, LCD Thermostats) requiring Command 0x24 (Time Sync) must be prioritized with the `TuyaTimeManager` to avoid "56 years ago" or "Jan 1 1970" display errors.
+- Rule 26 (Wildcard ID Broadening): For high-volume chipsets (TS0601, TS0001, TS011F), use a `productId` wildcard entry in the generic driver to catch future unknown variants, while maintaining explicit `manufacturerName` entries in specialized drivers to ensure `ManufacturerVariationManager` logic applies correctly.
+- Rule 27 (SDK 3+ Capability Hierarchy): Always use dot-notation for multi-gang devices (`onoff.1`, `onoff.2`) instead of legacy underscores (`onoff_2`) to enable native Homey grouping and flow card fragmentation.
+- Rule 28 (Composite Identity Mapping): Decisions in `ManufacturerVariationManager` MUST consider the (manufacturerName, productId) tuple. A single manufacturerName (e.g. `_TZE200_xxxx`) can represent different hardware versions via different Product IDs (e.g. `TS0601` vs `TS0602`), requiring distinct DP mapping or calibration logic.
+
+## INTELLECTUAL HARVESTING (Opus 4.6 Mode)
+- **Beyond Fingerprints**: Intelligence harvesting must look for "Structural Innovations" in `lib/` and "Hidden Gems" (methods like `calibration`, `exponential_backoff`, `inching`) in the fork ecosystem.
+- **Silent Implementation**: Learned logic from forks should be implemented natively in the main library branch and attributed to "Protocol Enhancements" in changelogs.
+- **Diagnostic Ingestion**: Forum diagnostic reports (e.g. from T140352) must be parsed for missing DPs and automatically registered in `IntelligentDeviceConfig.js`.

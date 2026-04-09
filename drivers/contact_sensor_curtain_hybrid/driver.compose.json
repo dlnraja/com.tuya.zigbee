@@ -407,5 +407,16 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "button_pressed",
+        "title": {
+          "en": "Button Pressed",
+          "fr": "Button Pressed"
+        }
+      }
+    ]
+  }
 }

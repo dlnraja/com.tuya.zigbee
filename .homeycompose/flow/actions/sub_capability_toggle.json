@@ -1,0 +1,38 @@
+{
+  "id": "sub_capability_toggle",
+  "title": {
+    "en": "Toggle sub-capability",
+    "fr": "Basculer sous-capacité",
+    "nl": "Sub-capability omschakelen",
+    "de": "Sub-Fähigkeit umschalten"
+  },
+  "titleFormatted": {
+    "en": "Toggle [[capability]] on [[device]]",
+    "fr": "Basculer [[capability]] sur [[device]]",
+    "nl": "Omschakelen [[capability]] op [[device]]",
+    "de": "Umschalten [[capability]] auf [[device]]"
+  },
+  "hint": {
+    "en": "Toggle a boolean sub-capability (e.g., onoff.gang2, smart_home_lock.1)",
+    "fr": "Bascule une sous-capacité booléenne (ex: onoff.gang2)"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=onoff"
+    },
+    {
+      "name": "capability",
+      "type": "text",
+      "title": {
+        "en": "Capability",
+        "fr": "Capacité"
+      },
+      "placeholder": {
+        "en": "onoff.gang2",
+        "fr": "onoff.gang2"
+      }
+    }
+  ]
+}

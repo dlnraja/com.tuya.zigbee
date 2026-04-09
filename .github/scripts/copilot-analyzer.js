@@ -41,7 +41,7 @@ VARIANT INTELLIGENCE:
 - Thousands of variants per driver — NEVER assume all have same energy/features
 
 FLOW CARDS: 
-- ALWAYS wrap getDeviceTriggerCard/getDeviceConditionCard/getDeviceActionCard in try-catch
+- ALWAYS wrap getTriggerCard/getConditionCard/getActionCard in try-catch (NEVER use 'getDevice*' suffix)
 - Missing flow cards crash the ENTIRE app (not just one driver)
 
 Format your response exactly like this:

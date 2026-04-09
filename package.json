@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "7.0.9",
+  "version": "7.0.22",
   "description": "Universal Tuya Zigbee - Local-first control with AI automation",
   "main": "app.js",
   "scripts": {
@@ -8,6 +8,7 @@
     "validate": "homey app validate",
     "validate:debug": "homey app validate --level debug",
     "validate:publish": "homey app validate --level publish",
+    "validate:ajv": "ajv validate -s docs/schemas/driver.compose.schema.json -d 'drivers/**/driver.compose.json'",
     "publish": "homey app publish",
     "rename": "node scripts/fixes/RENAME_ALL_DUPLICATE_NAMES.js",
     "test": "mocha test/**/*.test.js --timeout 5000",

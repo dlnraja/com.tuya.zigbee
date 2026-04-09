@@ -2,7 +2,7 @@
 'use strict';
 
 /**
- * triage-engine.js - v1.0.0
+ * triage-engine.js - v2.0.0 "Universal Task Divider"
  * 
  * UNIVERSAL TRIAGE ENGINE (IA-LESS / CLOUD-LESS)
  * 
@@ -10,6 +10,7 @@
  * 1. Missing SOS Buttons (clusters 1280/1281)
  * 2. Unmapped Smart Plugs
  * 3. Generic Zigbee devices that should be Tuya Hybrid.
+ * 4. ARCHITECTURAL REGRESSIONS: Manager casing, Inheritance gaps.
  * 
  * Uses DeviceFingerprintDB.js for static rule-based classification.
  */
@@ -22,13 +23,19 @@ const ROOT = process.cwd();
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
 
 async function main() {
-  console.log('=== 🕵️ Universal Triage Engine (v1.0.0) ===');
+  console.log('=== 🕵️ Universal Triage Engine (v2.0.0) ===');
   
-  // 1. SCAN FORUM CACHE (If available)
+  const results = {
+    injections: 0,
+    alerts: 0,
+    regressions: 0
+  };
+
+  // 1. SCAN FORUM CACHE
   const autoAdd = process.argv.includes('--auto-add');
   const forumCache = path.join(ROOT, '.github/state/forum-intel.json');
   if (fs.existsSync(forumCache)) {
-    console.log('--- Forum Intelligence Triage ---');
+    console.log('--- [1/4] Forum Intelligence Triage ---');
     try {
       const intel = JSON.parse(fs.readFileSync(forumCache, 'utf8'));
       for (const item of intel.reports || []) {
@@ -37,7 +44,8 @@ async function main() {
           if (result && result.confidence > 80) {
             console.log(`  [MATCH] ${item.mfr} -> ${result.driver} (${result.confidence}%)`);
             if (autoAdd) {
-              await injectFingerprint(result.driver, item.mfr, item.pid);
+              const injected = await injectFingerprint(result.driver, item.mfr, item.pid);
+              if (injected) results.injections++;
             }
           }
         }
@@ -47,32 +55,85 @@ async function main() {
     }
   }
 
-  // 2. SOS SPECIAL RECOVERY (Cluster-based scanning)
-  console.log('\n--- Smart Cluster Triage ---');
-  // Scan all drivers to see if any generic ones have SOS clusters
-  const drivers = fs.readdirSync(DRIVERS_DIR).filter(d => fs.existsSync(path.join(DRIVERS_DIR, d, 'driver.compose.json')));
+  // 2. ARCHITECTURAL REGRESSION AUDIT (Deep Thinking v99)
+  console.log('\n--- [2/4] Architectural Regression Audit ---');
+  const drivers = fs.readdirSync(DRIVERS_DIR).filter(d => fs.existsSync(path.join(DRIVERS_DIR, d, 'device.js')));
+  
   for (const d of drivers) {
     try {
-      const manifestPath = path.join(DRIVERS_DIR, d, 'driver.compose.json');
-      const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
-      const endpoints = manifest.zigbee?.endpoints || {};
-      for (const epId in endpoints) {
-        const clusters = endpoints[epId].clusters || [];
-        if (clusters.includes(1280) && d !== 'button_emergency_sos') {
-          console.warn(`  [ALERT] Driver ${d} has SOS cluster (1280) but is NOT the SOS driver! Potential misclassification.`);
-        }
+      const devicePath = path.join(DRIVERS_DIR, d, 'device.js');
+      const code = fs.readFileSync(devicePath, 'utf8');
+
+      // A. Manager Casing Regression (_tuyaEF00Manager vs tuyaEF00Manager)
+      if (/_tuyaEF00Manager/.test(code) && !/BaseHybridDevice|TuyaEF00Manager/.test(d)) {
+         console.warn(`  [REGRESSION] ${d}: Legacy _tuyaEF00Manager detected. Use tuyaEF00Manager (v7.0.21 standard).`);
+         results.regressions++;
       }
+
+      // B. Inheritance Audit
+      const manifest = JSON.parse(fs.readFileSync(path.join(DRIVERS_DIR, d, 'driver.compose.json'), 'utf8'));
+      const isTuya = (manifest.zigbee?.manufacturerName || []).some(m => m.startsWith('_T') || m.includes('Tuya'));
       
-      // v5.13.2: Multi-gang variant detection logic
-      const mfrs = manifest.zigbee?.manufacturerName || [];
-      if (mfrs.some(m => /_TZE20[04]/.test(m)) && d.includes('switch_1gang')) {
-        console.warn(`  [ALERT] Driver ${d} contains Tuya Multi-endpoint IDs but is a 1-gang driver. Audit needed.`);
+      if (isTuya && !/BaseHybridDevice|HybridSensorBase|HybridSwitchBase|HybridPlugBase|HybridCoverBase|HybridThermostatBase|AutoAdaptiveDevice/.test(code)) {
+        console.warn(`  [ALERT] ${d}: Tuya device missing Hybrid Base inheritance. Potential stability risk.`);
+        results.alerts++;
+      }
+
+      // C. Flow Card Registration Safety
+      if (/getTriggerCard|getActionCard|getConditionCard/.test(code) && !/try\s*\{/.test(code)) {
+        console.warn(`  [SAFETY] ${d}: Flow card lookup outside try-catch found.`);
+        results.alerts++;
       }
 
     } catch (e) {}
   }
 
-  console.log('\nDone.');
+  // 3. CLUSTER & CAPABILITY MISMATCH
+  console.log('\n--- [3/4] Smart Cluster Triage ---');
+  async function triageDriver(driverId) {
+    const driverPath = path.join(ROOT, 'drivers', driverId);
+    const manifestPath = path.join(driverPath, 'driver.compose.json');
+    
+    if (!fs.existsSync(manifestPath)) return;
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+
+    // v7.0.22: ANTI-CONTAMINATION SHIELD
+    // Categorize driver to apply protocol-specific rules
+    const isZigbee = !!manifest.zigbee;
+    const isWiFi = driverId.startsWith('wifi_');
+    const protocolPrefix = isZigbee ? '🐝 [Zigbee]' : (isWiFi ? '📶 [WiFi]' : '❓ [Other]');
+
+    console.log(`Triage ${protocolPrefix} ${driverId}...`);
+
+    const endpoints = manifest.zigbee?.endpoints || {};
+      
+      for (const epId in endpoints) {
+        const clusters = endpoints[epId].clusters || [];
+        
+        // SOS Button Check
+          console.warn(`  [MISMATCH] ${d}: Has SOS cluster (1280) but is NOT an SOS driver!`);
+          results.alerts++;
+        }
+
+        // Radar/mWave Check
+        if (clusters.includes(0xEF00) && d.includes('motion') && !d.includes('radar')) {
+           const mfrs = manifest.zigbee?.manufacturerName || [];
+           if (mfrs.some(m => /_TZE20[04]/.test(m))) {
+              console.log(`  [INFO] ${d}: Multi-gang radar detected in motion driver. Recommendation: Upgrade to HybridSensorBase.`);
+           }
+        }
+      }
+    } catch (e) {}
+  }
+
+  // 4. REPORT SUMMARY
+  console.log('\n--- [4/4] Triage Summary ---');
+  console.log(`  Injections:  ${results.injections}`);
+  console.log(`  Alerts:      ${results.alerts}`);
+  console.log(`  Regressions: ${results.regressions}`);
+  console.log('=== Triage Complete ===');
+
+  if (results.regressions > 0) process.exit(1); // Block PRs with regressions
 }
 
 /**
@@ -80,7 +141,7 @@ async function main() {
  */
 async function injectFingerprint(driverId, mfr, pid) {
   const composePath = path.join(DRIVERS_DIR, driverId, 'driver.compose.json');
-  if (!fs.existsSync(composePath)) return;
+  if (!fs.existsSync(composePath)) return false;
 
   try {
     const raw = fs.readFileSync(composePath, 'utf8');
@@ -89,25 +150,24 @@ async function injectFingerprint(driverId, mfr, pid) {
     if (!compose.zigbee.manufacturerName) compose.zigbee.manufacturerName = [];
     if (!compose.zigbee.productId) compose.zigbee.productId = [];
 
-    // Case-insensitive check
     const mset = new Set(compose.zigbee.manufacturerName.map(m => m.toLowerCase()));
     if (!mset.has(mfr.toLowerCase())) {
       compose.zigbee.manufacturerName.push(mfr);
-      // v5.13.2: Rule F5 Lowercase Injection
       if (mfr !== mfr.toLowerCase()) {
         compose.zigbee.manufacturerName.push(mfr.toLowerCase());
       }
-      console.log(`  💉 Injected FP ${mfr} into ${driverId}`);
-      
       if (pid && !compose.zigbee.productId.includes(pid)) {
         compose.zigbee.productId.push(pid);
       }
-      
       fs.writeFileSync(composePath, JSON.stringify(compose, null, 2) + '\n');
+      console.log(`  💉 Injected FP ${mfr} into ${driverId}`);
+      return true;
     }
   } catch (e) {
     console.error(`  [ERR] Failed to inject FP into ${driverId}:`, e.message);
   }
+  return false;
 }
 
 main().catch(console.error);
+

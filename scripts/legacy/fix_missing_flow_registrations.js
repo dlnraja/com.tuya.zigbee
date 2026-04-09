@@ -38,7 +38,7 @@ function fixDriverFlowRegistration(driverConfig) {
   const content = fs.readFileSync(driverFile, 'utf8');
 
   // Vérifier si déjà enregistré
-  if (content.includes('getDeviceTriggerCard') || content.includes('getDeviceConditionCard')) {
+  if (content.includes('getTriggerCard') || content.includes('getConditionCard')) {
     console.log(`   ✓ ${driverConfig.name}: déjà enregistré`);
     return false;
   }
@@ -69,7 +69,7 @@ function fixDriverFlowRegistration(driverConfig) {
   registrationCode.push('    // Register flow triggers');
 
   driverConfig.triggers.forEach(triggerId => {
-    registrationCode.push(`    this._${triggerId}Trigger = this.homey.flow.getDeviceTriggerCard('${triggerId}');`);
+    registrationCode.push(`    this._${triggerId}Trigger = this.homey.flow.getTriggerCard('${triggerId}');`);
   });
 
   if (driverConfig.conditions.length > 0) {
@@ -77,7 +77,7 @@ function fixDriverFlowRegistration(driverConfig) {
     registrationCode.push('    // Register flow conditions');
 
     driverConfig.conditions.forEach(conditionId => {
-      registrationCode.push(`    this._${conditionId}Condition = this.homey.flow.getDeviceConditionCard('${conditionId}');`);
+      registrationCode.push(`    this._${conditionId}Condition = this.homey.flow.getConditionCard('${conditionId}');`);
 
       // Ajouter runListener selon le type
       if (conditionId.includes('is_open') || conditionId.includes('is_detected')) {

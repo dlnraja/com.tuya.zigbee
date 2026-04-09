@@ -28,7 +28,10 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZ3000_w8jwkczz",
+      "_tz3000_w8jwkczz"
+    ],
     "productId": [
       "TS0043",
       "ts0043"

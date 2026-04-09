@@ -1,0 +1,930 @@
+{
+  "timestamp": "2026-04-09T05:39:38.972Z",
+  "stats": {
+    "driversScanned": 304,
+    "totalTriggers": 6,
+    "totalConditions": 3,
+    "totalActions": 12,
+    "totalIssues": 61
+  },
+  "issues": {
+    "missingRegistration": [
+      {
+        "driver": "air_purifier_curtain_hybrid",
+        "type": "action",
+        "id": "curtain_calibrate"
+      },
+      {
+        "driver": "air_purifier_curtain_hybrid",
+        "type": "action",
+        "id": "curtain_reset_position"
+      },
+      {
+        "driver": "air_purifier_curtain_hybrid",
+        "type": "action",
+        "id": "curtain_hold"
+      },
+      {
+        "driver": "air_purifier_curtain_hybrid",
+        "type": "action",
+        "id": "curtain_open_partial"
+      },
+      {
+        "driver": "blaster_remote_hybrid",
+        "type": "trigger",
+        "id": "ir_code_received"
+      },
+      {
+        "driver": "curtain_motor_tilt",
+        "type": "action",
+        "id": "curtain_calibrate"
+      },
+      {
+        "driver": "curtain_motor_tilt",
+        "type": "action",
+        "id": "curtain_reset_position"
+      },
+      {
+        "driver": "curtain_motor_tilt",
+        "type": "action",
+        "id": "curtain_hold"
+      },
+      {
+        "driver": "curtain_motor_tilt",
+        "type": "action",
+        "id": "curtain_open_partial"
+      },
+      {
+        "driver": "ir_remote",
+        "type": "trigger",
+        "id": "ir_code_received"
+      },
+      {
+        "driver": "pet_feeder",
+        "type": "trigger",
+        "id": "pet_feeder_fed"
+      },
+      {
+        "driver": "pet_feeder",
+        "type": "trigger",
+        "id": "pet_feeder_food_low"
+      },
+      {
+        "driver": "pet_feeder",
+        "type": "condition",
+        "id": "pet_feeder_food_ok"
+      },
+      {
+        "driver": "radiator_controller",
+        "type": "trigger",
+        "id": "radiator_mode_changed"
+      },
+      {
+        "driver": "radiator_controller",
+        "type": "trigger",
+        "id": "pilot_signal_sent"
+      },
+      {
+        "driver": "radiator_controller",
+        "type": "condition",
+        "id": "radiator_is_heating"
+      },
+      {
+        "driver": "radiator_controller",
+        "type": "condition",
+        "id": "heating_mode_is"
+      },
+      {
+        "driver": "radiator_controller",
+        "type": "action",
+        "id": "set_heating_mode"
+      },
+      {
+        "driver": "radiator_controller",
+        "type": "action",
+        "id": "send_pilot_signal"
+      },
+      {
+        "driver": "radiator_controller",
+        "type": "action",
+        "id": "set_temperature_offset"
+      }
+    ],
+    "missingRunListener": [],
+    "triggeredButNotDefined": [
+      {
+        "driver": "air_purifier_climate_hybrid",
+        "id": "air_purifier_climate_hybrid_air_purifier_pm25_changed"
+      },
+      {
+        "driver": "air_purifier_lcdtemphumidsensor_hybrid",
+        "id": "air_purifier_lcdtemphumidsensor_hybrid_air_purifier_pm25_changed"
+      },
+      {
+        "driver": "air_purifier_motion_hybrid",
+        "id": "air_purifier_motion_hybrid_air_purifier_pm25_changed"
+      },
+      {
+        "driver": "button_emergency_sos",
+        "id": "button_emergency_sos_double_pressed"
+      },
+      {
+        "driver": "button_emergency_sos",
+        "id": "button_emergency_sos_long_pressed"
+      },
+      {
+        "driver": "button_emergency_sos",
+        "id": "button_emergency_sos_pressed"
+      },
+      {
+        "driver": "contact_sensor_curtain_hybrid",
+        "id": "button_pressed"
+      },
+      {
+        "driver": "curtain_motor",
+        "id": "button_pressed"
+      },
+      {
+        "driver": "curtain_motor_shutter_hybrid",
+        "id": "curtain_motor_shutter_hybrid_button_pressed"
+      },
+      {
+        "driver": "curtain_motor_tilt_hybrid",
+        "id": "button_pressed"
+      },
+      {
+        "driver": "curtain_motor_wall_hybrid",
+        "id": "curtain_motor_wall_hybrid_button_pressed"
+      },
+      {
+        "driver": "remote_button_wireless_hybrid",
+        "id": "remote_button_wireless_hybrid_rotate_left"
+      },
+      {
+        "driver": "remote_button_wireless_hybrid",
+        "id": "remote_button_wireless_hybrid_rotate_right"
+      },
+      {
+        "driver": "sensor_gas_presence_hybrid",
+        "id": "sensor_gas_presence_hybrid_presence_sensor_radar_presence_detected"
+      },
+      {
+        "driver": "sensor_gas_presence_hybrid",
+        "id": "sensor_gas_presence_hybrid_presence_sensor_radar_presence_cleared"
+      },
+      {
+        "driver": "sensor_motion_presence_hybrid",
+        "id": "sensor_motion_presence_hybrid_presence_detected"
+      },
+      {
+        "driver": "sensor_motion_presence_hybrid",
+        "id": "sensor_motion_presence_hybrid_presence_cleared"
+      },
+      {
+        "driver": "sensor_presence_radar_hybrid",
+        "id": "sensor_presence_radar_hybrid_presence_detected"
+      },
+      {
+        "driver": "sensor_presence_radar_hybrid",
+        "id": "sensor_presence_radar_hybrid_presence_cleared"
+      },
+      {
+        "driver": "smart_knob",
+        "id": "smart_knob_level_changed"
+      },
+      {
+        "driver": "smart_knob",
+        "id": "smart_knob_rotated"
+      },
+      {
+        "driver": "smart_knob",
+        "id": "smart_knob_rotated"
+      },
+      {
+        "driver": "smart_knob",
+        "id": "smart_knob_level_changed"
+      },
+      {
+        "driver": "smart_knob",
+        "id": "smart_knob_button_pressed"
+      },
+      {
+        "driver": "smart_knob_rotary",
+        "id": "smart_knob_rotary_rotate_left"
+      },
+      {
+        "driver": "smart_knob_rotary",
+        "id": "smart_knob_rotary_rotate_right"
+      },
+      {
+        "driver": "smart_knob_rotary_hybrid",
+        "id": "smart_knob_rotary_hybrid_rotate_left"
+      },
+      {
+        "driver": "smart_knob_rotary_hybrid",
+        "id": "smart_knob_rotary_hybrid_rotate_right"
+      },
+      {
+        "driver": "smart_knob_rotary_hybrid",
+        "id": "smart_knob_rotary_hybrid_pressed"
+      },
+      {
+        "driver": "switch_wireless",
+        "id": "switch_wireless_button_pressed"
+      },
+      {
+        "driver": "usb_outlet_advanced",
+        "id": "usb_outlet_button_pressed"
+      },
+      {
+        "driver": "wall_remote_4_gang_2",
+        "id": "wall_remote_4_gang_buttons_2"
+      },
+      {
+        "driver": "wall_switch_4gang_1way",
+        "id": "wall_switch_4gang_1way_gang1_scene"
+      },
+      {
+        "driver": "weather_station_outdoor",
+        "id": "weather_station_outdoor_outdoor_temperature_changed"
+      },
+      {
+        "driver": "weather_station_outdoor",
+        "id": "weather_station_outdoor_outdoor_humidity_changed"
+      },
+      {
+        "driver": "weather_station_outdoor",
+        "id": "weather_station_outdoor_pressure_changed"
+      },
+      {
+        "driver": "weather_station_outdoor",
+        "id": "weather_station_outdoor_battery_low"
+      }
+    ],
+    "definedButNeverTriggered": [
+      {
+        "driver": "pet_feeder",
+        "id": "pet_feeder_fed"
+      },
+      {
+        "driver": "pet_feeder",
+        "id": "pet_feeder_food_low"
+      },
+      {
+        "driver": "radiator_controller",
+        "id": "radiator_mode_changed"
+      },
+      {
+        "driver": "radiator_controller",
+        "id": "pilot_signal_sent"
+      }
+    ],
+    "missingTokens": [],
+    "incorrectCapability": []
+  },
+  "results": [
+    {
+      "driver": "air_purifier_climate_hybrid",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "air_purifier_climate_hybrid_air_purifier_pm25_changed",
+          "message": "Trigger 'air_purifier_climate_hybrid_air_purifier_pm25_changed' appelé dans device.js mais NON défini dans driver.compose.json"
+        }
+      ]
+    },
+    {
+      "driver": "air_purifier_curtain_hybrid",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 4,
+      "issues": [
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "HIGH",
+          "card": "action",
+          "id": "curtain_calibrate",
+          "message": "Action 'curtain_calibrate' définie mais NON enregistrée dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "HIGH",
+          "card": "action",
+          "id": "curtain_reset_position",
+          "message": "Action 'curtain_reset_position' définie mais NON enregistrée dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "HIGH",
+          "card": "action",
+          "id": "curtain_hold",
+          "message": "Action 'curtain_hold' définie mais NON enregistrée dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "HIGH",
+          "card": "action",
+          "id": "curtain_open_partial",
+          "message": "Action 'curtain_open_partial' définie mais NON enregistrée dans driver.js"
+        }
+      ]
+    },
+    {
+      "driver": "air_purifier_lcdtemphumidsensor_hybrid",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "air_purifier_lcdtemphumidsensor_hybrid_air_purifier_pm25_changed",
+          "message": "Trigger 'air_purifier_lcdtemphumidsensor_hybrid_air_purifier_pm25_changed' appelé dans device.js mais NON défini dans driver.compose.json"
+        }
+      ]
+    },
+    {
+      "driver": "air_purifier_motion_hybrid",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "air_purifier_motion_hybrid_air_purifier_pm25_changed",
+          "message": "Trigger 'air_purifier_motion_hybrid_air_purifier_pm25_changed' appelé dans device.js mais NON défini dans driver.compose.json"
+        }
+      ]
+    },
+    {
+      "driver": "blaster_remote_hybrid",
+      "triggers": 1,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "ir_code_received",
+          "message": "Trigger 'ir_code_received' défini mais NON enregistré dans driver.js"
+        }
+      ]
+    },
+    {
+      "driver": "button_emergency_sos",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "button_emergency_sos_double_pressed",
+          "message": "Trigger 'button_emergency_sos_double_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
+        },
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "button_emergency_sos_long_pressed",
+          "message": "Trigger 'button_emergency_sos_long_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
+        },
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "button_emergency_sos_pressed",
+          "message": "Trigger 'button_emergency_sos_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
+        }
+      ]
+    },
+    {
+      "driver": "contact_sensor_curtain_hybrid",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "button_pressed",
+          "message": "Trigger 'button_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
+        }
+      ]
+    },
+    {
+      "driver": "curtain_motor",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "button_pressed",
+          "message": "Trigger 'button_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
+        }
+      ]
+    },
+    {
+      "driver": "curtain_motor_shutter_hybrid",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "curtain_motor_shutter_hybrid_button_pressed",
+          "message": "Trigger 'curtain_motor_shutter_hybrid_button_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
+        }
+      ]
+    },
+    {
+      "driver": "curtain_motor_tilt",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 4,
+      "issues": [
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "HIGH",
+          "card": "action",
+          "id": "curtain_calibrate",
+          "message": "Action 'curtain_calibrate' définie mais NON enregistrée dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "HIGH",
+          "card": "action",
+          "id": "curtain_reset_position",
+          "message": "Action 'curtain_reset_position' définie mais NON enregistrée dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "HIGH",
+          "card": "action",
+          "id": "curtain_hold",
+          "message": "Action 'curtain_hold' définie mais NON enregistrée dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "HIGH",
+          "card": "action",
+          "id": "curtain_open_partial",
+          "message": "Action 'curtain_open_partial' définie mais NON enregistrée dans driver.js"
+        }
+      ]
+    },
+    {
+      "driver": "curtain_motor_tilt_hybrid",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "button_pressed",
+          "message": "Trigger 'button_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
+        }
+      ]
+    },
+    {
+      "driver": "curtain_motor_wall_hybrid",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "curtain_motor_wall_hybrid_button_pressed",
+          "message": "Trigger 'curtain_motor_wall_hybrid_button_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
+        }
+      ]
+    },
+    {
+      "driver": "ir_remote",
+      "triggers": 1,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "ir_code_received",
+          "message": "Trigger 'ir_code_received' défini mais NON enregistré dans driver.js"
+        }
+      ]
+    },
+    {
+      "driver": "pet_feeder",
+      "triggers": 2,
+      "conditions": 1,
+      "actions": 1,
+      "issues": [
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "pet_feeder_fed",
+          "message": "Trigger 'pet_feeder_fed' défini mais NON enregistré dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "pet_feeder_food_low",
+          "message": "Trigger 'pet_feeder_food_low' défini mais NON enregistré dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "CRITICAL",
+          "card": "condition",
+          "id": "pet_feeder_food_ok",
+          "message": "Condition 'pet_feeder_food_ok' définie mais NON enregistrée dans driver.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "pet_feeder_fed",
+          "message": "Trigger 'pet_feeder_fed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "pet_feeder_food_low",
+          "message": "Trigger 'pet_feeder_food_low' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "radiator_controller",
+      "triggers": 2,
+      "conditions": 2,
+      "actions": 3,
+      "issues": [
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "radiator_mode_changed",
+          "message": "Trigger 'radiator_mode_changed' défini mais NON enregistré dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "pilot_signal_sent",
+          "message": "Trigger 'pilot_signal_sent' défini mais NON enregistré dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "CRITICAL",
+          "card": "condition",
+          "id": "radiator_is_heating",
+          "message": "Condition 'radiator_is_heating' définie mais NON enregistrée dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "CRITICAL",
+          "card": "condition",
+          "id": "heating_mode_is",
+          "message": "Condition 'heating_mode_is' définie mais NON enregistrée dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "HIGH",
+          "card": "action",
+          "id": "set_heating_mode",
+          "message": "Action 'set_heating_mode' définie mais NON enregistrée dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "HIGH",
+          "card": "action",
+          "id": "send_pilot_signal",
+          "message": "Action 'send_pilot_signal' définie mais NON enregistrée dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "HIGH",
+          "card": "action",
+          "id": "set_temperature_offset",
+          "message": "Action 'set_temperature_offset' définie mais NON enregistrée dans driver.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "radiator_mode_changed",
+          "message": "Trigger 'radiator_mode_changed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "pilot_signal_sent",
+          "message": "Trigger 'pilot_signal_sent' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "remote_button_wireless_hybrid",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "remote_button_wireless_hybrid_rotate_left",
+          "message": "Trigger 'remote_button_wireless_hybrid_rotate_left' appelé dans device.js mais NON défini dans driver.compose.json"
+        },
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "remote_button_wireless_hybrid_rotate_right",
+          "message": "Trigger 'remote_button_wireless_hybrid_rotate_right' appelé dans device.js mais NON défini dans driver.compose.json"
+        }
+      ]
+    },
+    {
+      "driver": "sensor_gas_presence_hybrid",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "sensor_gas_presence_hybrid_presence_sensor_radar_presence_detected",
+          "message": "Trigger 'sensor_gas_presence_hybrid_presence_sensor_radar_presence_detected' appelé dans device.js mais NON défini dans driver.compose.json"
+        },
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "sensor_gas_presence_hybrid_presence_sensor_radar_presence_cleared",
+          "message": "Trigger 'sensor_gas_presence_hybrid_presence_sensor_radar_presence_cleared' appelé dans device.js mais NON défini dans driver.compose.json"
+        }
+      ]
+    },
+    {
+      "driver": "sensor_motion_presence_hybrid",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "sensor_motion_presence_hybrid_presence_detected",
+          "message": "Trigger 'sensor_motion_presence_hybrid_presence_detected' appelé dans device.js mais NON défini dans driver.compose.json"
+        },
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "sensor_motion_presence_hybrid_presence_cleared",
+          "message": "Trigger 'sensor_motion_presence_hybrid_presence_cleared' appelé dans device.js mais NON défini dans driver.compose.json"
+        }
+      ]
+    },
+    {
+      "driver": "sensor_presence_radar_hybrid",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "sensor_presence_radar_hybrid_presence_detected",
+          "message": "Trigger 'sensor_presence_radar_hybrid_presence_detected' appelé dans device.js mais NON défini dans driver.compose.json"
+        },
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "sensor_presence_radar_hybrid_presence_cleared",
+          "message": "Trigger 'sensor_presence_radar_hybrid_presence_cleared' appelé dans device.js mais NON défini dans driver.compose.json"
+        }
+      ]
+    },
+    {
+      "driver": "smart_knob",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "smart_knob_level_changed",
+          "message": "Trigger 'smart_knob_level_changed' appelé dans device.js mais NON défini dans driver.compose.json"
+        },
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "smart_knob_rotated",
+          "message": "Trigger 'smart_knob_rotated' appelé dans device.js mais NON défini dans driver.compose.json"
+        },
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "smart_knob_rotated",
+          "message": "Trigger 'smart_knob_rotated' appelé dans device.js mais NON défini dans driver.compose.json"
+        },
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "smart_knob_level_changed",
+          "message": "Trigger 'smart_knob_level_changed' appelé dans device.js mais NON défini dans driver.compose.json"
+        },
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "smart_knob_button_pressed",
+          "message": "Trigger 'smart_knob_button_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
+        }
+      ]
+    },
+    {
+      "driver": "smart_knob_rotary",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "smart_knob_rotary_rotate_left",
+          "message": "Trigger 'smart_knob_rotary_rotate_left' appelé dans device.js mais NON défini dans driver.compose.json"
+        },
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "smart_knob_rotary_rotate_right",
+          "message": "Trigger 'smart_knob_rotary_rotate_right' appelé dans device.js mais NON défini dans driver.compose.json"
+        }
+      ]
+    },
+    {
+      "driver": "smart_knob_rotary_hybrid",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "smart_knob_rotary_hybrid_rotate_left",
+          "message": "Trigger 'smart_knob_rotary_hybrid_rotate_left' appelé dans device.js mais NON défini dans driver.compose.json"
+        },
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "smart_knob_rotary_hybrid_rotate_right",
+          "message": "Trigger 'smart_knob_rotary_hybrid_rotate_right' appelé dans device.js mais NON défini dans driver.compose.json"
+        },
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "smart_knob_rotary_hybrid_pressed",
+          "message": "Trigger 'smart_knob_rotary_hybrid_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
+        }
+      ]
+    },
+    {
+      "driver": "switch_wireless",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "switch_wireless_button_pressed",
+          "message": "Trigger 'switch_wireless_button_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
+        }
+      ]
+    },
+    {
+      "driver": "usb_outlet_advanced",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "usb_outlet_button_pressed",
+          "message": "Trigger 'usb_outlet_button_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
+        }
+      ]
+    },
+    {
+      "driver": "wall_remote_4_gang_2",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "wall_remote_4_gang_buttons_2",
+          "message": "Trigger 'wall_remote_4_gang_buttons_2' appelé dans device.js mais NON défini dans driver.compose.json"
+        }
+      ]
+    },
+    {
+      "driver": "wall_switch_4gang_1way",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "wall_switch_4gang_1way_gang1_scene",
+          "message": "Trigger 'wall_switch_4gang_1way_gang1_scene' appelé dans device.js mais NON défini dans driver.compose.json"
+        }
+      ]
+    },
+    {
+      "driver": "weather_station_outdoor",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "weather_station_outdoor_outdoor_temperature_changed",
+          "message": "Trigger 'weather_station_outdoor_outdoor_temperature_changed' appelé dans device.js mais NON défini dans driver.compose.json"
+        },
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "weather_station_outdoor_outdoor_humidity_changed",
+          "message": "Trigger 'weather_station_outdoor_outdoor_humidity_changed' appelé dans device.js mais NON défini dans driver.compose.json"
+        },
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "weather_station_outdoor_pressure_changed",
+          "message": "Trigger 'weather_station_outdoor_pressure_changed' appelé dans device.js mais NON défini dans driver.compose.json"
+        },
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "weather_station_outdoor_battery_low",
+          "message": "Trigger 'weather_station_outdoor_battery_low' appelé dans device.js mais NON défini dans driver.compose.json"
+        }
+      ]
+    }
+  ]
+}

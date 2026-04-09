@@ -49,13 +49,40 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
       - run: npm ci --prefer-offline --no-audit || npm install
+      
+      # ===== 0a. INTELLIGENCE MODE SELECTOR (Cloudless-First) =====
+      - name: "0a. Intelligence Mode Selector"
+        id: intelligence_selector
+        run: |
+          if [ -n "${{ secrets.GOOGLE_API_KEY }}" ]; then
+            echo "PIPELINE_MODE=AI_ORCHESTRATED" >> $GITHUB_ENV
+            echo "::notice::Pipeline intelligence: AI_ORCHESTRATED"
+          else
+            echo "PIPELINE_MODE=RULE_BASED" >> $GITHUB_ENV
+            echo "::warning::Pipeline intelligence: RULE_BASED (CloudlessFallback active)"
+          fi
+      
+      - name: ⚙️ Run Auto-Ganger (Sub-Device Provisioning)
+        run: node scripts/automation/generate-subdevices.js
+
+      - name: 🛡️ AJV Schema Validation (Anti-Corruption Shield)
+        run: |
+          curl -s https://raw.githubusercontent.com/athombv/node-homey-app-schema/master/driver.compose.schema.json > .homeycompose/driver.compose.schema.json
+          npx ajv validate -s .homeycompose/driver.compose.schema.json -d "drivers/*/driver.compose.json" --all-errors
+      
       - name: Homey Validate
         run: npx homey app validate --level publish
-      - name: Athom Docker Validate (Optional)
-        continue-on-error: true
-        uses: athombv/github-action-homey-app-validate@v1
-        with:
-          level: publish
+
+      # ⚙️ Thinking Opus 4.6: Autonomous Maintenance Guard
+      - name: 🛡️ Autonomous Maintenance Guard (Flows + Broadening)
+        run: |
+          echo "=== 🛡️ Checking Composite Identities & Wildcards ==="
+          node scripts/maintenance/rule-21-linter.js
+          node scripts/automation/fingerprint-broadener.js
+          
+          echo "=== 🧪 Flow Card Compliance Audit ==="
+          node scripts/analysis/audit_all_flow_cards.js
+          node scripts/legacy/fix_all_flow_issues.js || true
 
   publish-and-promote:
     name: 🚀 Publish & Promote

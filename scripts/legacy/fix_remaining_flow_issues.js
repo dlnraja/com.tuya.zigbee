@@ -34,9 +34,9 @@ function addMissingRegistration(driverName, cardType, cardId) {
   let content = fs.readFileSync(driverJsPath, 'utf8');
 
   // Vérifier si déjà enregistré
-  const registrationPattern = cardType === 'trigger' ? `getDeviceTriggerCard('${cardId}')` :
-    cardType === 'condition' ? `getDeviceConditionCard('${cardId}')` :
-      `getDeviceActionCard('${cardId}')`;
+  const registrationPattern = cardType === 'trigger' ? `getTriggerCard('${cardId}')` :
+    cardType === 'condition' ? `getConditionCard('${cardId}')` :
+      `getActionCard('${cardId}')`;
 
   if (content.includes(registrationPattern)) {
     return false; // Déjà enregistré
@@ -48,9 +48,9 @@ function addMissingRegistration(driverName, cardType, cardId) {
 
   // Chercher la dernière registration existante du même type
   let lastRegistrationIndex = -1;
-  const searchPattern = cardType === 'trigger' ? 'getDeviceTriggerCard' :
-    cardType === 'condition' ? 'getDeviceConditionCard' :
-      'getDeviceActionCard';
+  const searchPattern = cardType === 'trigger' ? 'getTriggerCard' :
+    cardType === 'condition' ? 'getConditionCard' :
+      'getActionCard';
 
   for (let i = 0; i < lines.length; i++) {
     if (lines[i].includes(searchPattern)) {
@@ -112,9 +112,9 @@ function addMissingRegistration(driverName, cardType, cardId) {
   const indent = '    ';
 
   if (cardType === 'trigger') {
-    registrationCode.push(`${indent}this._${cardId}Trigger = this.homey.flow.getDeviceTriggerCard('${cardId}');`);
+    registrationCode.push(`${indent}this._${cardId}Trigger = this.homey.flow.getTriggerCard('${cardId}');`);
   } else if (cardType === 'condition') {
-    registrationCode.push(`${indent}this._${cardId}Condition = this.homey.flow.getDeviceConditionCard('${cardId}');`);
+    registrationCode.push(`${indent}this._${cardId}Condition = this.homey.flow.getConditionCard('${cardId}');`);
 
     // Ajouter runListener
     const capability = extractCapabilityFromCondition(cardId, compose.capabilities);
@@ -136,7 +136,7 @@ function addMissingRegistration(driverName, cardType, cardId) {
       stats.runListenersAdded++;
     }
   } else if (cardType === 'action') {
-    registrationCode.push(`${indent}this._${cardId}Action = this.homey.flow.getDeviceActionCard('${cardId}');`);
+    registrationCode.push(`${indent}this._${cardId}Action = this.homey.flow.getActionCard('${cardId}');`);
     registrationCode.push(`${indent}this._${cardId}Action.registerRunListener(async (args) => {`);
     registrationCode.push(`${indent}  const { device } = args;`);
     registrationCode.push(`${indent}  // TODO: Implement action logic`);
@@ -213,7 +213,7 @@ function addMissingRunListener(driverName, conditionId) {
 
   // Vérifier si runListener déjà présent
   const lines = content.split('\n');
-  const registrationLine = lines.findIndex(l => l.includes(`getDeviceConditionCard('${conditionId}')`));
+  const registrationLine = lines.findIndex(l => l.includes(`getConditionCard('${conditionId}')`));
 
   if (registrationLine === -1) return false;
 
