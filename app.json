@@ -3038,6 +3038,22 @@
         }
       },
       {
+        "id": "blaster_remote_hybrid_ir_code_received",
+        "title": {
+          "en": "ir code received"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=blaster_remote_hybrid"
+          }
+        ],
+        "titleFormatted": {
+          "en": "ir code received"
+        }
+      },
+      {
         "id": "bulb_dimmable_smart_bulb_dimmer_turned_on",
         "title": {
           "en": "Turned on",
@@ -11809,6 +11825,38 @@
         }
       },
       {
+        "id": "contact_sensor_curtain_hybrid_button_pressed",
+        "title": {
+          "en": "button pressed"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=contact_sensor_curtain_hybrid"
+          }
+        ],
+        "titleFormatted": {
+          "en": "button pressed"
+        }
+      },
+      {
+        "id": "contact_sensor_curtain_hybrid_button_pressed",
+        "title": {
+          "en": "button pressed"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=contact_sensor_curtain_hybrid"
+          }
+        ],
+        "titleFormatted": {
+          "en": "button pressed"
+        }
+      },
+      {
         "id": "contact_sensor_dimmer_hybrid_contact_sensor_opened",
         "highlight": true,
         "title": {
@@ -13508,6 +13556,38 @@
           "fr": "Luminance changée",
           "nl": "Lichtsterkte gewijzigd",
           "de": "Helligkeit geändert"
+        }
+      },
+      {
+        "id": "curtain_motor_tilt_hybrid_button_pressed",
+        "title": {
+          "en": "button pressed"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=curtain_motor_tilt_hybrid"
+          }
+        ],
+        "titleFormatted": {
+          "en": "button pressed"
+        }
+      },
+      {
+        "id": "curtain_motor_tilt_hybrid_button_pressed",
+        "title": {
+          "en": "button pressed"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=curtain_motor_tilt_hybrid"
+          }
+        ],
+        "titleFormatted": {
+          "en": "button pressed"
         }
       },
       {
@@ -16379,6 +16459,22 @@
           "fr": "Humidité changée",
           "nl": "Vochtigheid gewijzigd",
           "de": "Feuchtigkeit geändert"
+        }
+      },
+      {
+        "id": "device_generic_tuya_universal_hybrid_generic_tuya_X_changed",
+        "title": {
+          "en": "Dynamic card generic_tuya_X_changed"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_generic_tuya_universal_hybrid"
+          }
+        ],
+        "titleFormatted": {
+          "en": "Dynamic card generic_tuya_X_changed"
         }
       },
       {
@@ -104878,25 +104974,7 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [
-          "_TZ3000_PLYVNUF5",
-          "_TZ3210_7JNK7L3K",
-          "_tz3000_plyvnuf5",
-          "_tz3210_7jnk7l3k",
-          "_TZ3210_7jnk7l3k",
-          "_TYZB01_hlla45kx",
-          "_TYZB01_iuepbmpv",
-          "_TZ3000_uwkja6z1",
-          "_TZ3000_kdi2o9m6",
-          "_TZ3000_ew31dmgx",
-          "_TZ3000_dpo1ysak",
-          "_TZ3000_plyvnuf5",
-          "_TZ3000_hyfvrar3",
-          "_TZ3000_cymsnfvf",
-          "_TZ3000_upjrsxh1",
-          "_TZ3000_wamqdr3f",
-          "_TZ3000_qeuvnohg"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS011F",
           "TS0121",
@@ -105642,7 +105720,11 @@
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_PCQJMCUD",
-          "_tz3000_pcqjmcud"
+          "_TZE200_sh1btaba",
+          "_TZ3000_tzvbimpq",
+          "_tz3000_pcqjmcud",
+          "_tz3000_tzvbimpq",
+          "_tze200_sh1btaba"
         ],
         "productId": [
           "TS0041",
@@ -116981,6 +117063,7 @@
           "_TZ3210_ZANA8D08",
           "_TZ3210_dwytrmda",
           "_TZ3210_ol1uhvza",
+          "_TZB000_yqjaollc",
           "_TZB000_42HA4RSC",
           "_TZB210_0BKZABHT",
           "_TZB210_3ZFP8MKI",
@@ -123274,7 +123357,8 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "ZBEACON"
+          "ZBEACON",
+          "EWELINK"
         ],
         "productId": [
           "S26R2ZB",
@@ -126864,6 +126948,139 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "dimmer_3gang_physical_gang1_on",
+            "title": {
+              "en": "Gang 1 turned on (physical)",
+              "fr": "Gang 1 allumé (physique)"
+            }
+          },
+          {
+            "id": "dimmer_3gang_physical_gang1_off",
+            "title": {
+              "en": "Gang 1 turned off (physical)",
+              "fr": "Gang 1 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "dimmer_3gang_physical_gang2_on",
+            "title": {
+              "en": "Gang 2 turned on (physical)",
+              "fr": "Gang 2 allumé (physique)"
+            }
+          },
+          {
+            "id": "dimmer_3gang_physical_gang2_off",
+            "title": {
+              "en": "Gang 2 turned off (physical)",
+              "fr": "Gang 2 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "dimmer_3gang_physical_gang3_on",
+            "title": {
+              "en": "Gang 3 turned on (physical)",
+              "fr": "Gang 3 allumé (physique)"
+            }
+          },
+          {
+            "id": "dimmer_3gang_physical_gang3_off",
+            "title": {
+              "en": "Gang 3 turned off (physical)",
+              "fr": "Gang 3 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "dimmer_3gang_gang1_scene",
+            "title": {
+              "en": "Gang 1 scene trigger",
+              "fr": "Déclencheur de scène Gang 1"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dimmer_3gang_gang2_scene",
+            "title": {
+              "en": "Gang 2 scene trigger",
+              "fr": "Déclencheur de scène Gang 2"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "dimmer_3gang_gang3_scene",
+            "title": {
+              "en": "Gang 3 scene trigger",
+              "fr": "Déclencheur de scène Gang 3"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       "id": "dimmer_3gang"
     },
     {
@@ -135761,8 +135978,10 @@
     {
       "name": {
         "en": "Lcdtemphumidsensor Plug Energy Hybrid",
-        "nl": "Lcdtemphumidsensor Plug Energy Hybrid",
-        "fr": "Lcdtemphumidsensor Plug Energy Hybrid"
+        "nl": "LCD-temperatuur- en vochtigheidssensor Plug Energie Hybride",
+        "fr": "Capteur de température et d'humidité LCD Plug Énergie Hybride",
+        "de": "LCD-Temperatur- und Feuchtigkeitssensor Plug Energie Hybrid",
+        "es": "Sensor de temperatura y humedad LCD Plug Energía Híbrida"
       },
       "class": "socket",
       "capabilities": [
@@ -137362,8 +137581,10 @@
     {
       "name": {
         "en": "Light Bulb Rgb Hybrid",
-        "nl": "Light Bulb Rgb Hybrid",
-        "fr": "Light Bulb Rgb Hybrid"
+        "nl": "Rgb Hybride Lamp",
+        "fr": "Ampoule Rgb Hybride",
+        "de": "Rgb Hybrid Glühbirne",
+        "es": "Bombilla Rgb Híbrida"
       },
       "class": "light",
       "capabilities": [
@@ -137836,8 +138057,10 @@
     {
       "name": {
         "en": "Light Bulb Rgb Led Hybrid",
-        "nl": "Light Bulb Rgb Led Hybrid",
-        "fr": "Light Bulb Rgb Led Hybrid"
+        "nl": "Lichtbulb Rgb Led Hybride",
+        "fr": "Ampoule Rgb Led Hybride",
+        "de": "Lampen Rgb Led Hybrid",
+        "es": "Bombilla Rgb Led Híbrida"
       },
       "class": "light",
       "capabilities": [
@@ -139786,8 +140009,10 @@
     {
       "name": {
         "en": "Module Mini Switch Hybrid",
-        "nl": "Module Mini Switch Hybrid",
-        "fr": "Module Mini Switch Hybrid"
+        "nl": "Module Mini Schakelaar Hybride",
+        "fr": "Module Mini Interrupteur Hybride",
+        "de": "Modul Mini Schalter Hybrid",
+        "es": "Módulo Mini Interruptor Híbrido"
       },
       "class": "socket",
       "capabilities": [
@@ -141073,10 +141298,8 @@
           }
         },
         "productId": [
-          "TS0601",
           "TS0601_MMWAVE",
           "TS0601_mmwave",
-          "ts0601",
           "ts0601_mmwave"
         ]
       },
@@ -142135,8 +142358,10 @@
       ],
       "name": {
         "en": "Motion Sensor Switch Hybrid",
-        "nl": "Motion Sensor Switch Hybrid",
-        "fr": "Motion Sensor Switch Hybrid"
+        "nl": "Hybride Bewegingssensor Schakelaar",
+        "fr": "Interrupteur Hybride de Détection de Mouvement",
+        "de": "Hybrid Bewegungsmelder Schalter",
+        "es": "Interruptor Híbrido de Sensor de Movimiento"
       },
       "platforms": [
         "local"
@@ -143020,8 +143245,10 @@
     {
       "name": {
         "en": "Plug Energy Monitor Hybrid",
-        "nl": "Plug Energy Monitor Hybrid",
-        "fr": "Plug Energy Monitor Hybrid"
+        "nl": "Hybride energie-monitor voor stekker",
+        "fr": "Moniteur d'énergie hybride pour prise",
+        "de": "Hybrider Energie-Monitor für Steckdose",
+        "es": "Monitor de energía híbrido para enchufe"
       },
       "class": "sensor",
       "capabilities": [
@@ -145590,8 +145817,10 @@
       ],
       "name": {
         "en": "Plug Smart Switch Hybrid",
-        "nl": "Plug Smart Switch Hybrid",
-        "fr": "Plug Smart Switch Hybrid"
+        "nl": "Slimme Hybride Schakelaar",
+        "fr": "Interrupteur Intelligent Hybride",
+        "de": "Intelligenter Hybrid-Schalter",
+        "es": "Interruptor Híbrido Inteligente"
       },
       "platforms": [
         "local"
@@ -148881,8 +149110,10 @@
       "id": "remote_button_emergency_sos_hybrid",
       "name": {
         "en": "Remote Button Emergency Sos Hybrid",
-        "nl": "Remote Button Emergency Sos Hybrid",
-        "fr": "Remote Button Emergency Sos Hybrid"
+        "nl": "Afstandsbediening Noodknop Sos Hybride",
+        "fr": "Bouton d'urgence à distance Sos Hybride",
+        "de": "Fernbedienung Notfallknopf Sos Hybrid",
+        "es": "Botón de Emergencia Remoto Sos Híbrido"
       },
       "class": "remote",
       "platforms": [
@@ -149571,14 +149802,12 @@
       ],
       "zigbee": {
         "manufacturerName": [
-          "_TZ3000_ABRSVSOU",
+          "SONOFF",
+          "EWELINK",
           "_TZ3000_AN5RJIWD",
           "_TZ3000_DKU2CFSC",
-          "_TZ3000_IXLA93VD",
           "_TZ3000_JA5OSU5G",
-          "_TZ3000_QJA6NQ5Z",
           "_TZ3000_RCO1YZB1",
-          "_TZ3000_URI7ONGN",
           "_TZ3000_FA9MLVJA",
           "_TZ3000_QGWCXXWS",
           "_TZ3000_YJ6K7VFO",
@@ -149592,16 +149821,11 @@
           "_TZ3000_OIKIYF3B",
           "_TZ3000_QZJCSMAR",
           "_TZ3000_RRJR1Q0U",
-          "_TZ3400_KEYJHAPK",
           "_TZ3000_YIRP2PGD",
-          "_tz3000_abrsvsou",
           "_tz3000_an5rjiwd",
           "_tz3000_dku2cfsc",
-          "_tz3000_ixla93vd",
           "_tz3000_ja5osu5g",
-          "_tz3000_qja6nq5z",
           "_tz3000_rco1yzb1",
-          "_tz3000_uri7ongn",
           "_tz3000_fa9mlvja",
           "_tz3000_qgwcxxws",
           "_tz3000_yj6k7vfo",
@@ -149615,7 +149839,6 @@
           "_tz3000_oikiyf3b",
           "_tz3000_qzjcsmar",
           "_tz3000_rrjr1q0u",
-          "_tz3400_keyjhapk",
           "_tz3000_yirp2pgd"
         ],
         "productId": [
@@ -149629,6 +149852,12 @@
           "ts0044",
           "TS0046",
           "ts0046",
+          "SNZB-01",
+          "SNZB-01P",
+          "snzb-01",
+          "snzb-01p",
+          "SNZB-01M",
+          "snzb-01m",
           "TS0042",
           "ts0042"
         ],
@@ -149669,31 +149898,15 @@
           }
         }
       ],
-      "flow": {
-        "triggers": [
-          {
-            "id": "remote_button_wireless_hybrid_rotate_left",
-            "title": {
-              "en": "Remote Button Wireless Hybrid Rotate Left",
-              "fr": "Remote Button Wireless Hybrid Rotate Left"
-            }
-          },
-          {
-            "id": "remote_button_wireless_hybrid_rotate_right",
-            "title": {
-              "en": "Remote Button Wireless Hybrid Rotate Right",
-              "fr": "Remote Button Wireless Hybrid Rotate Right"
-            }
-          }
-        ]
-      },
       "id": "remote_button_wireless_hybrid"
     },
     {
       "name": {
         "en": "Remote Button Wireless Plug Hybrid",
-        "nl": "Remote Button Wireless Plug Hybrid",
-        "fr": "Remote Button Wireless Plug Hybrid"
+        "nl": "Draadloze Hybrid Stekker met Afstandsbediening",
+        "fr": "Prise Hybride Sans Fil avec Bouton Télécommande",
+        "de": "Drahtloser Hybrid-Stecker mit Fernbedienung",
+        "es": "Enchufe Híbrido Inalámbrico con Botón Remoto"
       },
       "class": "socket",
       "capabilities": [
@@ -150110,8 +150323,10 @@
     {
       "name": {
         "en": "Remote Button Wireless Scene Hybrid",
-        "nl": "Remote Button Wireless Scene Hybrid",
-        "fr": "Remote Button Wireless Scene Hybrid"
+        "nl": "Draadloze Afstandsbediening Scene Hybrid",
+        "fr": "Bouton Télécommande Sans Fil Scène Hybride",
+        "de": "Drahtlose Fernbedienung Szenen Hybrid",
+        "es": "Botón Remoto Inalámbrico Escena Híbrida"
       },
       "class": "sensor",
       "capabilities": [
@@ -152874,7 +153089,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "EWELINK",
           "_TZ3000_85CZD6FY",
           "_TZ3000_BPKIJO14",
           "_TZ3000_GSZJT2XX",
@@ -157282,7 +157496,9 @@
       },
       "subDevices": [],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZE200_u6x1zyv2"
+        ],
         "productId": [
           "TS0207",
           "TS0601",
@@ -159551,13 +159767,13 @@
       "zigbee": {
         "manufacturerName": [
           "_TZE284_BQUWRQH1",
-          "_tze284_bquwrqh1"
+          "_TZE200_bj9m6v91",
+          "_tze284_bquwrqh1",
+          "_tze200_bj9m6v91"
         ],
         "productId": [
           "TS0225",
-          "TS0601",
-          "ts0225",
-          "ts0601"
+          "ts0225"
         ],
         "learnmode": {
           "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
@@ -164504,6 +164720,7 @@
           "_TZE284_NPJ9BUG3",
           "_TZE284_O9OFYSMO",
           "_TZE284_XC3VWX5A",
+          "_TZE284_hdml1aav",
           "_tze200_4xsypney",
           "_tze200_9cv5tcgq",
           "_tze200_a0gspfyz",
@@ -166787,6 +167004,96 @@
           "template": "add_devices"
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "switch_2gang_physical_gang1_on",
+            "title": {
+              "en": "Gang 1 turned on (physical)",
+              "fr": "Gang 1 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_2gang_physical_gang1_off",
+            "title": {
+              "en": "Gang 1 turned off (physical)",
+              "fr": "Gang 1 éteint (physique)"
+            }
+          },
+          {
+            "id": "switch_2gang_physical_gang2_on",
+            "title": {
+              "en": "Gang 2 turned on (physical)",
+              "fr": "Gang 2 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_2gang_physical_gang2_off",
+            "title": {
+              "en": "Gang 2 turned off (physical)",
+              "fr": "Gang 2 éteint (physique)"
+            }
+          },
+          {
+            "id": "switch_2gang_gang1_scene",
+            "title": {
+              "en": "Gang 1 scene trigger",
+              "fr": "Gang 1 déclencheur de scène"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_2gang_gang2_scene",
+            "title": {
+              "en": "Gang 2 scene trigger",
+              "fr": "Gang 2 déclencheur de scène"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       "maintenanceActions": [
         {
           "id": "ota_check",
@@ -167570,6 +167877,139 @@
           "template": "add_devices"
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "switch_3gang_physical_gang1_on",
+            "title": {
+              "en": "Gang 1 turned on (physical)",
+              "fr": "Gang 1 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_3gang_physical_gang1_off",
+            "title": {
+              "en": "Gang 1 turned off (physical)",
+              "fr": "Gang 1 éteint (physique)"
+            }
+          },
+          {
+            "id": "switch_3gang_physical_gang2_on",
+            "title": {
+              "en": "Gang 2 turned on (physical)",
+              "fr": "Gang 2 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_3gang_physical_gang2_off",
+            "title": {
+              "en": "Gang 2 turned off (physical)",
+              "fr": "Gang 2 éteint (physique)"
+            }
+          },
+          {
+            "id": "switch_3gang_physical_gang3_on",
+            "title": {
+              "en": "Gang 3 turned on (physical)",
+              "fr": "Gang 3 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_3gang_physical_gang3_off",
+            "title": {
+              "en": "Gang 3 turned off (physical)",
+              "fr": "Gang 3 éteint (physique)"
+            }
+          },
+          {
+            "id": "switch_3gang_gang1_scene",
+            "title": {
+              "en": "Gang 1 scene trigger",
+              "fr": "Gang 1 déclencheur de scène"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_3gang_gang2_scene",
+            "title": {
+              "en": "Gang 2 scene trigger",
+              "fr": "Gang 2 déclencheur de scène"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_3gang_gang3_scene",
+            "title": {
+              "en": "Gang 3 scene trigger",
+              "fr": "Gang 3 déclencheur de scène"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       "maintenanceActions": [
         {
           "id": "ota_check",
@@ -168408,6 +168848,182 @@
           "template": "add_devices"
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "switch_4gang_physical_gang1_on",
+            "title": {
+              "en": "Gang 1 turned on (physical)",
+              "fr": "Gang 1 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_4gang_physical_gang1_off",
+            "title": {
+              "en": "Gang 1 turned off (physical)",
+              "fr": "Gang 1 éteint (physique)"
+            }
+          },
+          {
+            "id": "switch_4gang_physical_gang2_on",
+            "title": {
+              "en": "Gang 2 turned on (physical)",
+              "fr": "Gang 2 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_4gang_physical_gang2_off",
+            "title": {
+              "en": "Gang 2 turned off (physical)",
+              "fr": "Gang 2 éteint (physique)"
+            }
+          },
+          {
+            "id": "switch_4gang_physical_gang3_on",
+            "title": {
+              "en": "Gang 3 turned on (physical)",
+              "fr": "Gang 3 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_4gang_physical_gang3_off",
+            "title": {
+              "en": "Gang 3 turned off (physical)",
+              "fr": "Gang 3 éteint (physique)"
+            }
+          },
+          {
+            "id": "switch_4gang_physical_gang4_on",
+            "title": {
+              "en": "Gang 4 turned on (physical)",
+              "fr": "Gang 4 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_4gang_physical_gang4_off",
+            "title": {
+              "en": "Gang 4 turned off (physical)",
+              "fr": "Gang 4 éteint (physique)"
+            }
+          },
+          {
+            "id": "switch_4gang_gang1_scene",
+            "title": {
+              "en": "Gang 1 scene trigger",
+              "fr": "Gang 1 déclencheur de scène"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_4gang_gang2_scene",
+            "title": {
+              "en": "Gang 2 scene trigger",
+              "fr": "Gang 2 déclencheur de scène"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_4gang_gang3_scene",
+            "title": {
+              "en": "Gang 3 scene trigger",
+              "fr": "Gang 3 déclencheur de scène"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_4gang_gang4_scene",
+            "title": {
+              "en": "Gang 4 scene trigger",
+              "fr": "Gang 4 déclencheur de scène"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       "maintenanceActions": [
         {
           "id": "ota_check",
@@ -170488,6 +171104,225 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "switch_wall_5gang_physical_gang1_on",
+            "title": {
+              "en": "Gang 1 turned on (physical)",
+              "fr": "Gang 1 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_5gang_physical_gang1_off",
+            "title": {
+              "en": "Gang 1 turned off (physical)",
+              "fr": "Gang 1 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_5gang_physical_gang2_on",
+            "title": {
+              "en": "Gang 2 turned on (physical)",
+              "fr": "Gang 2 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_5gang_physical_gang2_off",
+            "title": {
+              "en": "Gang 2 turned off (physical)",
+              "fr": "Gang 2 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_5gang_physical_gang3_on",
+            "title": {
+              "en": "Gang 3 turned on (physical)",
+              "fr": "Gang 3 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_5gang_physical_gang3_off",
+            "title": {
+              "en": "Gang 3 turned off (physical)",
+              "fr": "Gang 3 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_5gang_physical_gang4_on",
+            "title": {
+              "en": "Gang 4 turned on (physical)",
+              "fr": "Gang 4 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_5gang_physical_gang4_off",
+            "title": {
+              "en": "Gang 4 turned off (physical)",
+              "fr": "Gang 4 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_5gang_physical_gang5_on",
+            "title": {
+              "en": "Gang 5 turned on (physical)",
+              "fr": "Gang 5 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_5gang_physical_gang5_off",
+            "title": {
+              "en": "Gang 5 turned off (physical)",
+              "fr": "Gang 5 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_5gang_gang1_scene",
+            "title": {
+              "en": "Gang 1 scene trigger",
+              "fr": "Déclencheur de scène Gang 1"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_wall_5gang_gang2_scene",
+            "title": {
+              "en": "Gang 2 scene trigger",
+              "fr": "Déclencheur de scène Gang 2"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_wall_5gang_gang3_scene",
+            "title": {
+              "en": "Gang 3 scene trigger",
+              "fr": "Déclencheur de scène Gang 3"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_wall_5gang_gang4_scene",
+            "title": {
+              "en": "Gang 4 scene trigger",
+              "fr": "Déclencheur de scène Gang 4"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_wall_5gang_gang5_scene",
+            "title": {
+              "en": "Gang 5 scene trigger",
+              "fr": "Déclencheur de scène Gang 5"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       "id": "switch_wall_5gang"
     },
     {
@@ -171129,6 +171964,268 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "switch_wall_6gang_physical_gang1_on",
+            "title": {
+              "en": "Gang 1 turned on (physical)",
+              "fr": "Gang 1 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_6gang_physical_gang1_off",
+            "title": {
+              "en": "Gang 1 turned off (physical)",
+              "fr": "Gang 1 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_6gang_physical_gang2_on",
+            "title": {
+              "en": "Gang 2 turned on (physical)",
+              "fr": "Gang 2 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_6gang_physical_gang2_off",
+            "title": {
+              "en": "Gang 2 turned off (physical)",
+              "fr": "Gang 2 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_6gang_physical_gang3_on",
+            "title": {
+              "en": "Gang 3 turned on (physical)",
+              "fr": "Gang 3 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_6gang_physical_gang3_off",
+            "title": {
+              "en": "Gang 3 turned off (physical)",
+              "fr": "Gang 3 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_6gang_physical_gang4_on",
+            "title": {
+              "en": "Gang 4 turned on (physical)",
+              "fr": "Gang 4 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_6gang_physical_gang4_off",
+            "title": {
+              "en": "Gang 4 turned off (physical)",
+              "fr": "Gang 4 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_6gang_physical_gang5_on",
+            "title": {
+              "en": "Gang 5 turned on (physical)",
+              "fr": "Gang 5 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_6gang_physical_gang5_off",
+            "title": {
+              "en": "Gang 5 turned off (physical)",
+              "fr": "Gang 5 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_6gang_physical_gang6_on",
+            "title": {
+              "en": "Gang 6 turned on (physical)",
+              "fr": "Gang 6 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_6gang_physical_gang6_off",
+            "title": {
+              "en": "Gang 6 turned off (physical)",
+              "fr": "Gang 6 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_6gang_gang1_scene",
+            "title": {
+              "en": "Gang 1 scene trigger",
+              "fr": "Déclencheur de scène Gang 1"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_wall_6gang_gang2_scene",
+            "title": {
+              "en": "Gang 2 scene trigger",
+              "fr": "Déclencheur de scène Gang 2"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_wall_6gang_gang3_scene",
+            "title": {
+              "en": "Gang 3 scene trigger",
+              "fr": "Déclencheur de scène Gang 3"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_wall_6gang_gang4_scene",
+            "title": {
+              "en": "Gang 4 scene trigger",
+              "fr": "Déclencheur de scène Gang 4"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_wall_6gang_gang5_scene",
+            "title": {
+              "en": "Gang 5 scene trigger",
+              "fr": "Déclencheur de scène Gang 5"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_wall_6gang_gang6_scene",
+            "title": {
+              "en": "Gang 6 scene trigger",
+              "fr": "Déclencheur de scène Gang 6"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       "id": "switch_wall_6gang"
     },
     {
@@ -171565,6 +172662,311 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "switch_wall_7gang_physical_gang1_on",
+            "title": {
+              "en": "Gang 1 turned on (physical)",
+              "fr": "Gang 1 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_7gang_physical_gang1_off",
+            "title": {
+              "en": "Gang 1 turned off (physical)",
+              "fr": "Gang 1 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_7gang_physical_gang2_on",
+            "title": {
+              "en": "Gang 2 turned on (physical)",
+              "fr": "Gang 2 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_7gang_physical_gang2_off",
+            "title": {
+              "en": "Gang 2 turned off (physical)",
+              "fr": "Gang 2 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_7gang_physical_gang3_on",
+            "title": {
+              "en": "Gang 3 turned on (physical)",
+              "fr": "Gang 3 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_7gang_physical_gang3_off",
+            "title": {
+              "en": "Gang 3 turned off (physical)",
+              "fr": "Gang 3 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_7gang_physical_gang4_on",
+            "title": {
+              "en": "Gang 4 turned on (physical)",
+              "fr": "Gang 4 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_7gang_physical_gang4_off",
+            "title": {
+              "en": "Gang 4 turned off (physical)",
+              "fr": "Gang 4 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_7gang_physical_gang5_on",
+            "title": {
+              "en": "Gang 5 turned on (physical)",
+              "fr": "Gang 5 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_7gang_physical_gang5_off",
+            "title": {
+              "en": "Gang 5 turned off (physical)",
+              "fr": "Gang 5 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_7gang_physical_gang6_on",
+            "title": {
+              "en": "Gang 6 turned on (physical)",
+              "fr": "Gang 6 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_7gang_physical_gang6_off",
+            "title": {
+              "en": "Gang 6 turned off (physical)",
+              "fr": "Gang 6 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_7gang_physical_gang7_on",
+            "title": {
+              "en": "Gang 7 turned on (physical)",
+              "fr": "Gang 7 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_7gang_physical_gang7_off",
+            "title": {
+              "en": "Gang 7 turned off (physical)",
+              "fr": "Gang 7 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_7gang_gang1_scene",
+            "title": {
+              "en": "Gang 1 scene trigger",
+              "fr": "Déclencheur de scène Gang 1"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_wall_7gang_gang2_scene",
+            "title": {
+              "en": "Gang 2 scene trigger",
+              "fr": "Déclencheur de scène Gang 2"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_wall_7gang_gang3_scene",
+            "title": {
+              "en": "Gang 3 scene trigger",
+              "fr": "Déclencheur de scène Gang 3"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_wall_7gang_gang4_scene",
+            "title": {
+              "en": "Gang 4 scene trigger",
+              "fr": "Déclencheur de scène Gang 4"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_wall_7gang_gang5_scene",
+            "title": {
+              "en": "Gang 5 scene trigger",
+              "fr": "Déclencheur de scène Gang 5"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_wall_7gang_gang6_scene",
+            "title": {
+              "en": "Gang 6 scene trigger",
+              "fr": "Déclencheur de scène Gang 6"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_wall_7gang_gang7_scene",
+            "title": {
+              "en": "Gang 7 scene trigger",
+              "fr": "Déclencheur de scène Gang 7"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       "id": "switch_wall_7gang"
     },
     {
@@ -171966,6 +173368,354 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "switch_wall_8gang_physical_gang1_on",
+            "title": {
+              "en": "Gang 1 turned on (physical)",
+              "fr": "Gang 1 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_8gang_physical_gang1_off",
+            "title": {
+              "en": "Gang 1 turned off (physical)",
+              "fr": "Gang 1 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_8gang_physical_gang2_on",
+            "title": {
+              "en": "Gang 2 turned on (physical)",
+              "fr": "Gang 2 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_8gang_physical_gang2_off",
+            "title": {
+              "en": "Gang 2 turned off (physical)",
+              "fr": "Gang 2 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_8gang_physical_gang3_on",
+            "title": {
+              "en": "Gang 3 turned on (physical)",
+              "fr": "Gang 3 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_8gang_physical_gang3_off",
+            "title": {
+              "en": "Gang 3 turned off (physical)",
+              "fr": "Gang 3 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_8gang_physical_gang4_on",
+            "title": {
+              "en": "Gang 4 turned on (physical)",
+              "fr": "Gang 4 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_8gang_physical_gang4_off",
+            "title": {
+              "en": "Gang 4 turned off (physical)",
+              "fr": "Gang 4 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_8gang_physical_gang5_on",
+            "title": {
+              "en": "Gang 5 turned on (physical)",
+              "fr": "Gang 5 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_8gang_physical_gang5_off",
+            "title": {
+              "en": "Gang 5 turned off (physical)",
+              "fr": "Gang 5 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_8gang_physical_gang6_on",
+            "title": {
+              "en": "Gang 6 turned on (physical)",
+              "fr": "Gang 6 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_8gang_physical_gang6_off",
+            "title": {
+              "en": "Gang 6 turned off (physical)",
+              "fr": "Gang 6 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_8gang_physical_gang7_on",
+            "title": {
+              "en": "Gang 7 turned on (physical)",
+              "fr": "Gang 7 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_8gang_physical_gang7_off",
+            "title": {
+              "en": "Gang 7 turned off (physical)",
+              "fr": "Gang 7 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_8gang_physical_gang8_on",
+            "title": {
+              "en": "Gang 8 turned on (physical)",
+              "fr": "Gang 8 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_8gang_physical_gang8_off",
+            "title": {
+              "en": "Gang 8 turned off (physical)",
+              "fr": "Gang 8 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "switch_wall_8gang_gang1_scene",
+            "title": {
+              "en": "Gang 1 scene trigger",
+              "fr": "Déclencheur de scène Gang 1"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_wall_8gang_gang2_scene",
+            "title": {
+              "en": "Gang 2 scene trigger",
+              "fr": "Déclencheur de scène Gang 2"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_wall_8gang_gang3_scene",
+            "title": {
+              "en": "Gang 3 scene trigger",
+              "fr": "Déclencheur de scène Gang 3"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_wall_8gang_gang4_scene",
+            "title": {
+              "en": "Gang 4 scene trigger",
+              "fr": "Déclencheur de scène Gang 4"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_wall_8gang_gang5_scene",
+            "title": {
+              "en": "Gang 5 scene trigger",
+              "fr": "Déclencheur de scène Gang 5"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_wall_8gang_gang6_scene",
+            "title": {
+              "en": "Gang 6 scene trigger",
+              "fr": "Déclencheur de scène Gang 6"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_wall_8gang_gang7_scene",
+            "title": {
+              "en": "Gang 7 scene trigger",
+              "fr": "Déclencheur de scène Gang 7"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "switch_wall_8gang_gang8_scene",
+            "title": {
+              "en": "Gang 8 scene trigger",
+              "fr": "Déclencheur de scène Gang 8"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       "id": "switch_wall_8gang"
     },
     {
@@ -173306,6 +175056,141 @@
         }
       ],
       "id": "universal_fallback"
+    },
+    {
+      "id": "universal_zigbee",
+      "name": {
+        "en": "Generic Zigbee Device",
+        "fr": "Appareil Zigbee Générique",
+        "nl": "Universeel Zigbee-apparaat",
+        "de": "Universelles Zigbee-Gerät"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_temperature",
+        "measure_humidity",
+        "measure_luminance",
+        "alarm_motion",
+        "alarm_contact",
+        "alarm_water",
+        "measure_battery",
+        "measure_power",
+        "measure_voltage",
+        "measure_current",
+        "meter_power",
+        "light_hue",
+        "light_saturation",
+        "light_temperature",
+        "light_mode",
+        "windowcoverings_set",
+        "windowcoverings_state",
+        "target_temperature",
+        "thermostat_mode",
+        "tuya_dp_value",
+        "tuya_dp_string",
+        "tuya_dp_raw",
+        "tuya_cluster_event"
+      ],
+      "capabilitiesOptions": {
+        "tuya_dp_value": {
+          "title": {
+            "en": "Last DP Value (Numeric)"
+          }
+        },
+        "tuya_dp_string": {
+          "title": {
+            "en": "Last DP String"
+          }
+        },
+        "tuya_dp_raw": {
+          "title": {
+            "en": "Last Raw DP (Hex)"
+          }
+        },
+        "tuya_cluster_event": {
+          "title": {
+            "en": "Last Cluster Event"
+          }
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "zigbee": {
+        "manufacturerName": [
+          "IKEA of Sweden",
+          "Philips",
+          "Signify Netherlands B.V.",
+          "LIDL Home",
+          "Silvercrest",
+          "SONOFF",
+          "Sonoff",
+          "eWeLink",
+          "Xiaomi",
+          "LUMI",
+          "Aqara",
+          "Zemismart",
+          "Moes",
+          "GIRIER",
+          "Avatto",
+          "Aubess",
+          "Heiman",
+          "EcoDim",
+          "Eco-DIM",
+          "Sunricher",
+          "Robb SMARRT",
+          "Legrand",
+          "Schneider Electric",
+          "Danfoss",
+          "Eurotronic",
+          "Bitron",
+          "Tuya",
+          "TUYA",
+          "_TZ3000_",
+          "_TZE200_",
+          "_TZE204_",
+          "_TZE284_",
+          "_TYZB01_",
+          "_TYZB02_",
+          "_TZ3210_",
+          "_TYZB01_",
+          "_TZ3000_ox96m1m4",
+          "_TZ3000_vm9p7o5f"
+        ],
+        "productId": [
+          "TS011F",
+          "TS0001",
+          "TS0002",
+          "TS0003",
+          "TS0004",
+          "TS0301",
+          "TS0501",
+          "TS011E",
+          "TS0201",
+          "TS0203",
+          "TS0601",
+          "TS0011",
+          "TS0012",
+          "TS0013"
+        ],
+        "learnmode": {
+          "image": "/drivers/universal_zigbee/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press the pairing button on your Zigbee device until it enters pairing mode.",
+            "fr": "Appuyez sur le bouton d'appairage de votre appareil Zigbee jusqu'à ce qu'il passe en mode appairage."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/universal_zigbee/assets/images/large.png",
+        "small": "/drivers/universal_zigbee/assets/images/small.png",
+        "xlarge": "/drivers/universal_zigbee/assets/images/xlarge.png"
+      }
     },
     {
       "name": {
@@ -176448,6 +178333,96 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "wall_switch_2gang_1way_physical_gang1_on",
+            "title": {
+              "en": "Gang 1 turned on (physical)",
+              "fr": "Gang 1 allumé (physique)"
+            }
+          },
+          {
+            "id": "wall_switch_2gang_1way_physical_gang1_off",
+            "title": {
+              "en": "Gang 1 turned off (physical)",
+              "fr": "Gang 1 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "wall_switch_2gang_1way_physical_gang2_on",
+            "title": {
+              "en": "Gang 2 turned on (physical)",
+              "fr": "Gang 2 allumé (physique)"
+            }
+          },
+          {
+            "id": "wall_switch_2gang_1way_physical_gang2_off",
+            "title": {
+              "en": "Gang 2 turned off (physical)",
+              "fr": "Gang 2 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "wall_switch_2gang_1way_gang1_scene",
+            "title": {
+              "en": "Gang 1 scene trigger",
+              "fr": "Déclencheur de scène Gang 1"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "wall_switch_2gang_1way_gang2_scene",
+            "title": {
+              "en": "Gang 2 scene trigger",
+              "fr": "Déclencheur de scène Gang 2"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       "id": "wall_switch_2gang_1way"
     },
     {
@@ -176761,6 +178736,139 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "wall_switch_3gang_1way_physical_gang1_on",
+            "title": {
+              "en": "Gang 1 turned on (physical)",
+              "fr": "Gang 1 allumé (physique)"
+            }
+          },
+          {
+            "id": "wall_switch_3gang_1way_physical_gang1_off",
+            "title": {
+              "en": "Gang 1 turned off (physical)",
+              "fr": "Gang 1 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "wall_switch_3gang_1way_physical_gang2_on",
+            "title": {
+              "en": "Gang 2 turned on (physical)",
+              "fr": "Gang 2 allumé (physique)"
+            }
+          },
+          {
+            "id": "wall_switch_3gang_1way_physical_gang2_off",
+            "title": {
+              "en": "Gang 2 turned off (physical)",
+              "fr": "Gang 2 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "wall_switch_3gang_1way_physical_gang3_on",
+            "title": {
+              "en": "Gang 3 turned on (physical)",
+              "fr": "Gang 3 allumé (physique)"
+            }
+          },
+          {
+            "id": "wall_switch_3gang_1way_physical_gang3_off",
+            "title": {
+              "en": "Gang 3 turned off (physical)",
+              "fr": "Gang 3 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "wall_switch_3gang_1way_gang1_scene",
+            "title": {
+              "en": "Gang 1 scene trigger",
+              "fr": "Déclencheur de scène Gang 1"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "wall_switch_3gang_1way_gang2_scene",
+            "title": {
+              "en": "Gang 2 scene trigger",
+              "fr": "Déclencheur de scène Gang 2"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "wall_switch_3gang_1way_gang3_scene",
+            "title": {
+              "en": "Gang 3 scene trigger",
+              "fr": "Déclencheur de scène Gang 3"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       "id": "wall_switch_3gang_1way"
     },
     {
@@ -177091,6 +179199,149 @@
               "en": "Wall Switch 4gang 1way Gang1 Scene",
               "fr": "Wall Switch 4gang 1way Gang1 Scene"
             }
+          },
+          {
+            "id": "wall_switch_4gang_1way_physical_gang1_on",
+            "title": {
+              "en": "Gang 1 turned on (physical)",
+              "fr": "Gang 1 allumé (physique)"
+            }
+          },
+          {
+            "id": "wall_switch_4gang_1way_physical_gang1_off",
+            "title": {
+              "en": "Gang 1 turned off (physical)",
+              "fr": "Gang 1 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "wall_switch_4gang_1way_physical_gang2_on",
+            "title": {
+              "en": "Gang 2 turned on (physical)",
+              "fr": "Gang 2 allumé (physique)"
+            }
+          },
+          {
+            "id": "wall_switch_4gang_1way_physical_gang2_off",
+            "title": {
+              "en": "Gang 2 turned off (physical)",
+              "fr": "Gang 2 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "wall_switch_4gang_1way_physical_gang3_on",
+            "title": {
+              "en": "Gang 3 turned on (physical)",
+              "fr": "Gang 3 allumé (physique)"
+            }
+          },
+          {
+            "id": "wall_switch_4gang_1way_physical_gang3_off",
+            "title": {
+              "en": "Gang 3 turned off (physical)",
+              "fr": "Gang 3 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "wall_switch_4gang_1way_physical_gang4_on",
+            "title": {
+              "en": "Gang 4 turned on (physical)",
+              "fr": "Gang 4 allumé (physique)"
+            }
+          },
+          {
+            "id": "wall_switch_4gang_1way_physical_gang4_off",
+            "title": {
+              "en": "Gang 4 turned off (physical)",
+              "fr": "Gang 4 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "wall_switch_4gang_1way_gang2_scene",
+            "title": {
+              "en": "Gang 2 scene trigger",
+              "fr": "Déclencheur de scène Gang 2"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "wall_switch_4gang_1way_gang3_scene",
+            "title": {
+              "en": "Gang 3 scene trigger",
+              "fr": "Déclencheur de scène Gang 3"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "wall_switch_4gang_1way_gang4_scene",
+            "title": {
+              "en": "Gang 4 scene trigger",
+              "fr": "Déclencheur de scène Gang 4"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -185580,6 +187831,96 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "wifi_switch_2gang_physical_gang1_on",
+            "title": {
+              "en": "Gang 1 turned on (physical)",
+              "fr": "Gang 1 allumé (physique)"
+            }
+          },
+          {
+            "id": "wifi_switch_2gang_physical_gang1_off",
+            "title": {
+              "en": "Gang 1 turned off (physical)",
+              "fr": "Gang 1 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "wifi_switch_2gang_physical_gang2_on",
+            "title": {
+              "en": "Gang 2 turned on (physical)",
+              "fr": "Gang 2 allumé (physique)"
+            }
+          },
+          {
+            "id": "wifi_switch_2gang_physical_gang2_off",
+            "title": {
+              "en": "Gang 2 turned off (physical)",
+              "fr": "Gang 2 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "wifi_switch_2gang_gang1_scene",
+            "title": {
+              "en": "Gang 1 scene trigger",
+              "fr": "Déclencheur de scène Gang 1"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "wifi_switch_2gang_gang2_scene",
+            "title": {
+              "en": "Gang 2 scene trigger",
+              "fr": "Déclencheur de scène Gang 2"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       "id": "wifi_switch_2gang"
     },
     {
@@ -185760,6 +188101,139 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "wifi_switch_3gang_physical_gang1_on",
+            "title": {
+              "en": "Gang 1 turned on (physical)",
+              "fr": "Gang 1 allumé (physique)"
+            }
+          },
+          {
+            "id": "wifi_switch_3gang_physical_gang1_off",
+            "title": {
+              "en": "Gang 1 turned off (physical)",
+              "fr": "Gang 1 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "wifi_switch_3gang_physical_gang2_on",
+            "title": {
+              "en": "Gang 2 turned on (physical)",
+              "fr": "Gang 2 allumé (physique)"
+            }
+          },
+          {
+            "id": "wifi_switch_3gang_physical_gang2_off",
+            "title": {
+              "en": "Gang 2 turned off (physical)",
+              "fr": "Gang 2 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "wifi_switch_3gang_physical_gang3_on",
+            "title": {
+              "en": "Gang 3 turned on (physical)",
+              "fr": "Gang 3 allumé (physique)"
+            }
+          },
+          {
+            "id": "wifi_switch_3gang_physical_gang3_off",
+            "title": {
+              "en": "Gang 3 turned off (physical)",
+              "fr": "Gang 3 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "wifi_switch_3gang_gang1_scene",
+            "title": {
+              "en": "Gang 1 scene trigger",
+              "fr": "Déclencheur de scène Gang 1"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "wifi_switch_3gang_gang2_scene",
+            "title": {
+              "en": "Gang 2 scene trigger",
+              "fr": "Déclencheur de scène Gang 2"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "wifi_switch_3gang_gang3_scene",
+            "title": {
+              "en": "Gang 3 scene trigger",
+              "fr": "Déclencheur de scène Gang 3"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       "id": "wifi_switch_3gang"
     },
     {
@@ -185946,6 +188420,182 @@
           }
         }
       ],
+      "flow": {
+        "triggers": [
+          {
+            "id": "wifi_switch_4gang_physical_gang1_on",
+            "title": {
+              "en": "Gang 1 turned on (physical)",
+              "fr": "Gang 1 allumé (physique)"
+            }
+          },
+          {
+            "id": "wifi_switch_4gang_physical_gang1_off",
+            "title": {
+              "en": "Gang 1 turned off (physical)",
+              "fr": "Gang 1 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "wifi_switch_4gang_physical_gang2_on",
+            "title": {
+              "en": "Gang 2 turned on (physical)",
+              "fr": "Gang 2 allumé (physique)"
+            }
+          },
+          {
+            "id": "wifi_switch_4gang_physical_gang2_off",
+            "title": {
+              "en": "Gang 2 turned off (physical)",
+              "fr": "Gang 2 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "wifi_switch_4gang_physical_gang3_on",
+            "title": {
+              "en": "Gang 3 turned on (physical)",
+              "fr": "Gang 3 allumé (physique)"
+            }
+          },
+          {
+            "id": "wifi_switch_4gang_physical_gang3_off",
+            "title": {
+              "en": "Gang 3 turned off (physical)",
+              "fr": "Gang 3 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "wifi_switch_4gang_physical_gang4_on",
+            "title": {
+              "en": "Gang 4 turned on (physical)",
+              "fr": "Gang 4 allumé (physique)"
+            }
+          },
+          {
+            "id": "wifi_switch_4gang_physical_gang4_off",
+            "title": {
+              "en": "Gang 4 turned off (physical)",
+              "fr": "Gang 4 allumé (éteint) (physique)"
+            }
+          },
+          {
+            "id": "wifi_switch_4gang_gang1_scene",
+            "title": {
+              "en": "Gang 1 scene trigger",
+              "fr": "Déclencheur de scène Gang 1"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "wifi_switch_4gang_gang2_scene",
+            "title": {
+              "en": "Gang 2 scene trigger",
+              "fr": "Déclencheur de scène Gang 2"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "wifi_switch_4gang_gang3_scene",
+            "title": {
+              "en": "Gang 3 scene trigger",
+              "fr": "Déclencheur de scène Gang 3"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "wifi_switch_4gang_gang4_scene",
+            "title": {
+              "en": "Gang 4 scene trigger",
+              "fr": "Déclencheur de scène Gang 4"
+            },
+            "args": [
+              {
+                "name": "action",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "on",
+                    "label": {
+                      "en": "On",
+                      "fr": "On"
+                    }
+                  },
+                  {
+                    "id": "off",
+                    "label": {
+                      "en": "Off",
+                      "fr": "Off"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       "id": "wifi_switch_4gang"
     },
     {
