@@ -64,6 +64,9 @@ async function main() {
   // PHASE 4: Architectural Hardening (Zero-Defect Audit)
   run('node scripts/maintenance/zero-defect-architect-audit.js', 'Ph4: Zero-Defect Architect Audit');
 
+  // PHASE 4b: Smart PR Auto-Merging (Opus 4.6 Integration)
+  run('node scripts/automation/pr-auto-merger.js', 'Ph4b: Smart PR Auto-Merger (Approve + Merge + Self-Heal)');
+
   // PHASE 5: Integrity Verification
   console.log('\n🔍 [VALIDATION] Verifying app integrity...');
   const isValid = run('npx homey app validate --level publish', 'Ph5: Homey SDK3 Validation Audit');
