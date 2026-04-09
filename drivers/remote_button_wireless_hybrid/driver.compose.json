@@ -87,14 +87,12 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_ABRSVSOU",
+      "SONOFF",
+      "EWELINK",
       "_TZ3000_AN5RJIWD",
       "_TZ3000_DKU2CFSC",
-      "_TZ3000_IXLA93VD",
       "_TZ3000_JA5OSU5G",
-      "_TZ3000_QJA6NQ5Z",
       "_TZ3000_RCO1YZB1",
-      "_TZ3000_URI7ONGN",
       "_TZ3000_FA9MLVJA",
       "_TZ3000_QGWCXXWS",
       "_TZ3000_YJ6K7VFO",
@@ -108,16 +106,11 @@
       "_TZ3000_OIKIYF3B",
       "_TZ3000_QZJCSMAR",
       "_TZ3000_RRJR1Q0U",
-      "_TZ3400_KEYJHAPK",
       "_TZ3000_YIRP2PGD",
-      "_tz3000_abrsvsou",
       "_tz3000_an5rjiwd",
       "_tz3000_dku2cfsc",
-      "_tz3000_ixla93vd",
       "_tz3000_ja5osu5g",
-      "_tz3000_qja6nq5z",
       "_tz3000_rco1yzb1",
-      "_tz3000_uri7ongn",
       "_tz3000_fa9mlvja",
       "_tz3000_qgwcxxws",
       "_tz3000_yj6k7vfo",
@@ -131,7 +124,6 @@
       "_tz3000_oikiyf3b",
       "_tz3000_qzjcsmar",
       "_tz3000_rrjr1q0u",
-      "_tz3400_keyjhapk",
       "_tz3000_yirp2pgd"
     ],
     "productId": [
@@ -145,6 +137,12 @@
       "ts0044",
       "TS0046",
       "ts0046",
+      "SNZB-01",
+      "SNZB-01P",
+      "snzb-01",
+      "snzb-01p",
+      "SNZB-01M",
+      "snzb-01m",
       "TS0042",
       "ts0042"
     ],
@@ -184,23 +182,5 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ],
-  "flow": {
-    "triggers": [
-      {
-        "id": "remote_button_wireless_hybrid_rotate_left",
-        "title": {
-          "en": "Remote Button Wireless Hybrid Rotate Left",
-          "fr": "Remote Button Wireless Hybrid Rotate Left"
-        }
-      },
-      {
-        "id": "remote_button_wireless_hybrid_rotate_right",
-        "title": {
-          "en": "Remote Button Wireless Hybrid Rotate Right",
-          "fr": "Remote Button Wireless Hybrid Rotate Right"
-        }
-      }
-    ]
-  }
+  ]
 }

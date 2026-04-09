@@ -6,7 +6,7 @@
       "severity": "info",
       "count": 43,
       "firstSeen": "2026-04-04T17:57:49.240Z",
-      "lastSeen": "2026-04-09T08:03:45.540Z",
+      "lastSeen": "2026-04-09T03:57:07.506Z",
       "files": [
         "air_purifier",
         "air_quality_co2",
@@ -43,7 +43,7 @@
       "severity": "error",
       "count": 111,
       "firstSeen": "2026-04-04T21:17:00.000Z",
-      "lastSeen": "2026-04-09T08:03:45.493Z",
+      "lastSeen": "2026-04-09T03:57:07.498Z",
       "files": [
         "RESOLVED: 108 drivers had both caps, reverted to measure_battery only",
         "air_purifier_siren_hybrid"
@@ -55,7 +55,7 @@
       "severity": "error",
       "count": 32,
       "firstSeen": "2026-04-04T17:46:00.000Z",
-      "lastSeen": "2026-04-09T08:03:45.479Z",
+      "lastSeen": "2026-04-09T03:57:07.496Z",
       "files": [
         "RESOLVED: 23+ drivers wrapped in try-catch by fix-unsafe-flow-cards.js",
         "air_purifier",
@@ -128,7 +128,7 @@
       "severity": "warn",
       "count": 9,
       "firstSeen": "2026-04-05T22:20:34.324Z",
-      "lastSeen": "2026-04-09T08:03:45.479Z",
+      "lastSeen": "2026-04-09T03:57:07.496Z",
       "files": [
         "air_purifier",
         "air_purifier_climate_hybrid",
@@ -143,9 +143,9 @@
       "id": "sdk3-case-sensitive-fingerprint",
       "desc": "Fingerprint in enrichment data uses UPPERCASE (e.g., _TZE200_PAY2BYAX). Tuya fingerprints must be lowercase to match correctly.",
       "severity": "warn",
-      "count": 32,
+      "count": 33,
       "firstSeen": "2026-04-05T22:20:34.331Z",
-      "lastSeen": "2026-04-09T08:03:45.540Z",
+      "lastSeen": "2026-04-09T03:57:07.506Z",
       "files": [
         "air_quality_co2",
         "air_quality_comprehensive",
@@ -193,7 +193,7 @@
       "severity": "warn",
       "count": 10,
       "firstSeen": "2026-04-05T22:20:34.336Z",
-      "lastSeen": "2026-04-09T08:03:45.529Z",
+      "lastSeen": "2026-04-09T03:57:07.503Z",
       "files": [
         "air_quality_comprehensive",
         "ceiling_fan",
@@ -220,13 +220,13 @@
       "severity": "info",
       "count": 3,
       "firstSeen": "2026-04-07T03:58:16.630Z",
-      "lastSeen": "2026-04-09T08:03:45.489Z",
+      "lastSeen": "2026-04-09T03:57:07.497Z",
       "files": [
         "air_purifier_sensor_hybrid"
       ]
     }
   ],
-  "lastRun": "2026-04-09T08:03:44.975Z",
+  "lastRun": "2026-04-09T03:57:07.470Z",
   "totalRuns": 10,
-  "totalIssues": 254
+  "totalIssues": 255
 }

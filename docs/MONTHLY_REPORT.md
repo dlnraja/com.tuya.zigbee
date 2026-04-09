@@ -1,41 +1,32 @@
 # Monthly Tuya Zigbee Report - 2026-04
 
-*Generated: 2026-04-09T03:27:05.655Z*
+*Generated: 2026-04-09T10:24:56.801Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
 | Total Drivers | 304 |
-| Manufacturer IDs | 227953 |
-| Collisions | 54 |
+| Manufacturer IDs | 227671 |
+| Collisions | 13 |
 
 ## ⚠️ Collisions Detected
 
 | ID | Drivers |
 |----|--------|
-| `_TZ3400_KEYJHAPK|SNZB-01` | button_wireless, remote_button_wireless_hybrid |
-| `_TZ3400_KEYJHAPK|SNZB-01M` | button_wireless, remote_button_wireless_hybrid |
-| `_TZ3400_KEYJHAPK|SNZB-01P` | button_wireless, remote_button_wireless_hybrid |
-| `_TZ3400_KEYJHAPK|snzb-01` | button_wireless, remote_button_wireless_hybrid |
-| `_TZ3400_KEYJHAPK|snzb-01m` | button_wireless, remote_button_wireless_hybrid |
-| `_TZ3400_KEYJHAPK|snzb-01p` | button_wireless, remote_button_wireless_hybrid |
-| `_tz3400_keyjhapk|SNZB-01` | button_wireless, remote_button_wireless_hybrid |
-| `_tz3400_keyjhapk|SNZB-01M` | button_wireless, remote_button_wireless_hybrid |
-| `_tz3400_keyjhapk|SNZB-01P` | button_wireless, remote_button_wireless_hybrid |
-| `_tz3400_keyjhapk|snzb-01` | button_wireless, remote_button_wireless_hybrid |
-| `_tz3400_keyjhapk|snzb-01m` | button_wireless, remote_button_wireless_hybrid |
-| `_tz3400_keyjhapk|snzb-01p` | button_wireless, remote_button_wireless_hybrid |
-| `_TZ3000_PLYVNUF5|TS011F` | button_wireless_plug_hybrid, device_plug_energy_hybrid |
-| `_TZ3000_PLYVNUF5|ts011f` | button_wireless_plug_hybrid, device_plug_energy_hybrid |
-| `_TZ3210_7JNK7L3K|TS011F` | button_wireless_plug_hybrid, device_plug_energy_hybrid |
-| `_TZ3210_7JNK7L3K|ts011f` | button_wireless_plug_hybrid, device_plug_energy_hybrid |
-| `_tz3000_plyvnuf5|TS011F` | button_wireless_plug_hybrid, device_plug_energy_hybrid |
-| `_tz3000_plyvnuf5|ts011f` | button_wireless_plug_hybrid, device_plug_energy_hybrid |
-| `_tz3210_7jnk7l3k|TS011F` | button_wireless_plug_hybrid, device_plug_energy_hybrid |
-| `_tz3210_7jnk7l3k|ts011f` | button_wireless_plug_hybrid, device_plug_energy_hybrid |
-
-*...and 34 more*
+| `EWELINK|S26R2ZB` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
+| `EWELINK|S31 LITE ZB` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
+| `EWELINK|S31 Lite zb` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
+| `EWELINK|S40LITE` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
+| `EWELINK|S60ZBTPF` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
+| `EWELINK|S60ZBTPG` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
+| `EWELINK|TS011F` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
+| `EWELINK|s26r2zb` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
+| `EWELINK|s31 lite zb` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
+| `EWELINK|s40lite` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
+| `EWELINK|s60zbtpf` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
+| `EWELINK|s60zbtpg` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
+| `EWELINK|ts011f` | device_plug_energy_hybrid, device_plug_energy_monitor_hybrid |
 
 ## 📋 Action Items
 
