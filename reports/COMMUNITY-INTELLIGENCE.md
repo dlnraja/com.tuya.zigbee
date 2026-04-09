@@ -1,10 +1,10 @@
 # Community Intelligence Report
-*Generated: 2026-04-08T13:45:17.242Z*
+*Generated: 2026-04-09T06:03:38.950Z*
 
 ## Open Issues (6)
 
-### [#205] [Auto] 2140 new fingerprints from community (2026-04)
-*Author: app/github-actions | Created: 2026-04-08T10:15:46Z*
+### [#211] [Auto] 2140 new fingerprints from community (2026-04)
+*Author: app/github-actions | Created: 2026-04-09T04:34:40Z*
 
 **Body:**
 ## 🌐 Monthly Community Sync Found 2140 New Fingerprints
@@ -110,11 +110,945 @@
 
 **Comments (1):**
 > **dlnraja:** <!-- tuya-issue-manager -->
-> Hey there! Thanks for the update on the new fingerprints. I see a lot of curtain modules and motors in the mix. If you're experiencing any issues with these devices, please remember to completely delete them from your Homey, re-pair them, and recreate any flow cards you have set up. This is super important because Homey caches capabilities during pairing, and starting fresh can help resolve any bugs.
+> Hey there! Thanks for the update on the new fingerprints. It's great to see so many devices being recognized! 
 > 
-> If you're missing readings from sensors like fertilizer or VOC, I'd love to check the app logs for you. Just share the logs showing the DP numbers, and I'll dive into it. 
+> If you encounter any issues with multi-gang bindings or capabilities, please remember to completely delete the affected device from Homey, re-pair it, and recreate your flow cards. This is important because Homey caches capabilities at pairing, and this step helps ensure everything works smoothly.
 > 
-> Let me know if you need any more help!
+> If you're missing sensor readings or have any specific concerns, feel free to share the app logs showing the DP numbers. That'll help me investigate further.
+> 
+> Let me know if you need anything else or have more questions!
+
+---
+
+### [#206] [Zigbee USB Plug 3 Gang] TS0003 - _TZ3210_n0wbkysi
+*Author: cristianoisaac | Created: 2026-04-08T15:57:58Z*
+
+**Body:**
+### Brand & Model
+
+Generic
+
+### Where Purchased
+
+https://pt.aliexpress.com/item/1005007279741443.html
+
+### Power Source
+
+Mains (AC)
+
+### Zigbee Fingerprint (MANDATORY)
+
+```yaml
+"manufacturerName": "_TZ3210_n0wbkysi"
+"modelId": "TS0003",
+"endpoints": {
+    "ieeeAddress": "xx:xx:xx:xx:xx:xx:xx:xx",
+    "networkAddress": 61212,
+    "modelId": "TS0003",
+    "manufacturerName": "_TZ3210_n0wbkysi",
+    "endpointDescriptors": [
+      {
+        "endpointId": 1,
+        "applicationProfileId": 260,
+        "applicationDeviceId": 256,
+        "applicationDeviceVersion": 0,
+        "_reserved1": 1,
+        "inputClusters": [
+          3,
+          4,
+          5,
+          6,
+          57344,
+          57345,
+          0
+        ],
+        "outputClusters": [
+          25,
+          10
+        ],
+        "nwkAddrOfInterest": 61212,
+        "_reserved": 0,
+        "status": "ZSuccess"
+      },
+      {
+        "endpointId": 2,
+        "applicationProfileId": 260,
+        "applicationDeviceId": 256,
+        "applicationDeviceVersion": 0,
+        "_reserved1": 1,
+        "inputClusters": [
+          4,
+          5,
+          6,
+          57344,
+          57345
+        ],
+        "outputClusters": [],
+        "nwkAddrOfInterest": 61212,
+        "_reserved": 0,
+        "status": "ZSuccess"
+      },
+      {
+        "endpointId": 3,
+        "applicationProfileId": 260,
+        "applicationDeviceId": 256,
+        "applicationDeviceVersion": 0,
+        "_reserved1": 1,
+        "inputClusters": [
+          4,
+          5,
+          6,
+          57344,
+          57345
+        ],
+        "outputClusters": [],
+        "nwkAddrOfInterest": 61212,
+        "_reserved": 0,
+        "status": "ZSuccess"
+      },
+      {
+        "endpointId": 242,
+        "applicationProfileId": 41440,
+        "applicationDeviceId": 97,
+        "applicationDeviceVersion": 0,
+        "_reserved1": 0,
+        "inputClusters": [],
+        "outputClusters": [
+          33
+        ],
+        "nwkAddrOfInterest": 61212,
+        "_reserved": 0,
+        "status": "ZSuccess"
+      }
+    ],
+    "deviceType": "router",
+    "receiveWhenIdle": true,
+    "capabilities": {
+      "alternatePANCoordinator": false,
+      "deviceType": true,
+      "powerSourceMains": true,
+      "receiveWhenIdle": true,
+      "security": false,
+      "allocateAddress": true
+    },
+    "extendedEndpointDescriptors": {
+      "1": {
+        "clusters": {
+          "identify": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable",
+                  "writable"
+                ],
+                "id": 0,
+                "dataTypeId": 33,
+                "name": "identifyTime",
+                "value": 0
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65533,
+                "dataTypeId": 33,
+                "name": "clusterRevision",
+                "value": 1
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          },
+          "groups": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 0,
+                "dataTypeId": 24,
+                "name": "nameSupport",
+                "value": {
+                  "type": "Buffer",
+                  "data": [
+                    0
+                  ]
+                }
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65533,
+                "dataTypeId": 33,
+                "name": "clusterRevision",
+                "value": 1
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          },
+          "scenes": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 0,
+                "dataTypeId": 32
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 1,
+                "dataTypeId": 32
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 2,
+                "dataTypeId": 32
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 3,
+                "dataTypeId": 16
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 4,
+                "dataTypeId": 24
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65533,
+                "dataTypeId": 33,
+                "name": "clusterRevision",
+                "value": 1
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          },
+          "onOff": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 0,
+                "dataTypeId": 16,
+                "name": "onOff",
+                "value": false,
+                "reportingConfiguration": {
+                  "direction": "reported",
+                  "attributeDataType": 16,
+                  "minInterval": 0,
+                  "maxInterval": 900,
+                  "status": "SUCCESS"
+                }
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 16384,
+                "dataTypeId": 16
+              },
+              {
+                "acl": [
+                  "readable",
+                  "writable"
+                ],
+                "id": 16385,
+                "dataTypeId": 33,
+                "name": "onTime",
+                "value": 0
+              },
+              {
+                "acl": [
+                  "readable",
+                  "writable"
+                ],
+                "id": 16386,
+                "dataTypeId": 33,
+                "name": "offWaitTime",
+                "value": 0
+              },
+              {
+                "acl": [
+                  "readable",
+                  "writable"
+                ],
+                "id": 16387,
+                "dataTypeId": 48
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65533,
+                "dataTypeId": 33,
+                "name": "clusterRevision",
+                "value": 1
+              },
+              {
+                "acl": [
+                  "readable",
+                  "writable"
+                ],
+                "id": 32770,
+                "dataTypeId": 48
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          },
+          "basic": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 0,
+                "dataTypeId": 32,
+                "name": "zclVersion",
+                "value": 3
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 1,
+                "dataTypeId": 32,
+                "name": "appVersion",
+                "value": 74
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 2,
+                "dataTypeId": 32,
+                "name": "stackVersion",
+                "value": 2
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 3,
+                "dataTypeId": 32,
+                "name": "hwVersion",
+                "value": 1
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 4,
+                "dataTypeId": 66,
+                "name": "manufacturerName",
+                "value": "_TZ3210_n0wbkysi"
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 5,
+                "dataTypeId": 66,
+                "name": "modelId",
+                "value": "TS0003"
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 7,
+                "dataTypeId": 48,
+                "name": "powerSource",
+                "value": "mains"
+              },
+              {
+                "acl": [
+                  "readable",
+                  "writable"
+                ],
+                "id": 18,
+                "dataTypeId": 16,
+                "name": "deviceEnabled",
+                "value": true
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65533,
+                "dataTypeId": 33,
+                "name": "clusterRevision",
+                "value": 1
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65534,
+                "dataTypeId": 48,
+                "name": "attributeReportingStatus",
+                "value": "PENDING"
+              },
+              {
+                "acl": [
+                  "writable"
+                ],
+                "id": 65502,
+                "dataTypeId": 32
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          }
+        },
+        "bindings": {
+          "ota": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 0,
+                "dataTypeId": 240,
+                "name": "upgradeServerID",
+                "value": "ff:ff:ff:ff:ff:ff:ff:ff"
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 1,
+                "dataTypeId": 35,
+                "name": "fileOffset",
+                "value": 4294967295
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 2,
+                "dataTypeId": 35,
+                "name": "currentFileVersion",
+                "value": 1241657345
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 3,
+                "dataTypeId": 33,
+                "name": "currentZigBeeStackVersion",
+                "value": 2
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 4,
+                "dataTypeId": 35,
+                "name": "downloadedFileVersion",
+                "value": 4294967295
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 5,
+                "dataTypeId": 33,
+                "name": "downloadedZigBeeStackVersion",
+                "value": 65535
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 6,
+                "dataTypeId": 48,
+                "name": "imageUpgradeStatus",
+                "value": "normal"
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 7,
+                "dataTypeId": 33,
+                "name": "manufacturerID",
+                "value": 4417
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 8,
+                "dataTypeId": 33,
+                "name": "imageTypeID",
+                "value": 65535
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 9,
+                "dataTypeId": 33,
+                "name": "minimumBlockPeriod",
+                "value": 0
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65533,
+                "dataTypeId": 33,
+                "name": "clusterRevision",
+                "value": 1
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          },
+          "time": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 0,
+                "dataTypeId": 226
+              },
+              {
+                "acl": [
+                  "readable",
+                  "writable"
+                ],
+                "id": 1,
+                "dataTypeId": 24
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 7,
+                "dataTypeId": 35
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65533,
+                "dataTypeId": 33,
+                "name": "clusterRevision",
+                "value": 1
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          }
+        }
+      },
+      "2": {
+        "clusters": {
+          "groups": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 0,
+                "dataTypeId": 24,
+                "name": "nameSupport",
+                "value": {
+                  "type": "Buffer",
+                  "data": [
+                    0
+                  ]
+                }
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65533,
+                "dataTypeId": 33,
+                "name": "clusterRevision",
+                "value": 1
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          },
+          "scenes": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 0,
+                "dataTypeId": 32
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 1,
+                "dataTypeId": 32
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 2,
+                "dataTypeId": 32
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 3,
+                "dataTypeId": 16
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 4,
+                "dataTypeId": 24
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65533,
+                "dataTypeId": 33,
+                "name": "clusterRevision",
+                "value": 1
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          },
+          "onOff": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 0,
+                "dataTypeId": 16,
+                "name": "onOff",
+                "value": false,
+                "reportingConfiguration": {
+                  "direction": "reported",
+                  "attributeDataType": 16,
+                  "minInterval": 0,
+                  "maxInterval": 900,
+                  "status": "SUCCESS"
+                }
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 16384,
+                "dataTypeId": 16
+              },
+              {
+                "acl": [
+                  "readable",
+                  "writable"
+                ],
+                "id": 16385,
+                "dataTypeId": 33,
+                "name": "onTime",
+                "value": 0
+              },
+              {
+                "acl": [
+                  "readable",
+                  "writable"
+                ],
+                "id": 16386,
+                "dataTypeId": 33,
+                "name": "offWaitTime",
+                "value": 0
+              },
+              {
+                "acl": [
+                  "readable",
+                  "writable"
+                ],
+                "id": 16387,
+                "dataTypeId": 48
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65533,
+                "dataTypeId": 33,
+                "name": "clusterRevision",
+                "value": 1
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          }
+        },
+        "bindings": {}
+      },
+      "3": {
+        "clusters": {
+          "groups": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 0,
+                "dataTypeId": 24,
+                "name": "nameSupport",
+                "value": {
+                  "type": "Buffer",
+                  "data": [
+                    0
+                  ]
+                }
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65533,
+                "dataTypeId": 33,
+                "name": "clusterRevision",
+                "value": 1
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          },
+          "scenes": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 0,
+                "dataTypeId": 32
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 1,
+                "dataTypeId": 32
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 2,
+                "dataTypeId": 32
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 3,
+                "dataTypeId": 16
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 4,
+                "dataTypeId": 24
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65533,
+                "dataTypeId": 33,
+                "name": "clusterRevision",
+                "value": 1
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          },
+          "onOff": {
+            "attributes": [
+              {
+                "acl": [
+                  "readable",
+                  "reportable"
+                ],
+                "id": 0,
+                "dataTypeId": 16,
+                "name": "onOff",
+                "value": false,
+                "reportingConfiguration": {
+                  "direction": "reported",
+                  "attributeDataType": 16,
+                  "minInterval": 0,
+                  "maxInterval": 900,
+                  "status": "SUCCESS"
+                }
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 16384,
+                "dataTypeId": 16
+              },
+              {
+                "acl": [
+                  "readable",
+                  "writable"
+                ],
+                "id": 16385,
+                "dataTypeId": 33,
+                "name": "onTime",
+                "value": 0
+              },
+              {
+                "acl": [
+                  "readable",
+                  "writable"
+                ],
+                "id": 16386,
+                "dataTypeId": 33,
+                "name": "offWaitTime",
+                "value": 0
+              },
+              {
+                "acl": [
+                  "readable",
+                  "writable"
+                ],
+                "id": 16387,
+                "dataTypeId": 48
+              },
+              {
+                "acl": [
+                  "readable"
+                ],
+                "id": 65533,
+                "dataTypeId": 33,
+                "name": "clusterRevision",
+                "value": 1
+              }
+            ],
+            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+            "commandsReceived": "UNSUP_GENERAL_COMMAND"
+          }
+        },
+        "bindings": {}
+      },
+      "242": {
+        "clusters": {},
+        "bindings": {}
+      }
+    }
+```
+
+### TS0601 DP List (if applicable)
+
+```yaml
+
+```
+
+### Zigbee2MQTT Link
+
+https://www.zigbee2mqtt.io/devices/TZ3000_mw1pqqqt.html
+
+### Home Assistant / ZHA Link
+
+_No response_
+
+### Expected Capabilities
+
+- Smart plug: onoff (each one of 3 gangs)
+- onoff timer
+- Restore State After Power Lost
+
+### Pairing Logs / Notes
+
+- Device requires 5 seconds long press to reset
+
+### Checklist
+
+- [x] I have searched existing issues (no duplicate)
+- [x] I have provided complete Zigbee fingerprint
+- [x] I understand this app is for LOCAL Zigbee control (not cloud/WiFi)
+- [x] I am willing to test the driver when created
+
+**Comments (4):**
+> **github-actions:** ## Fingerprint Cross-Reference
+> 
+> | Manufacturer | Driver Match |
+> |---|---|
+> 
+> | _TZ3210_n0wbkysi | NOT FOUND |
+> 
+> ---
+> *Auto-generated by crossref workflow*
+
+> **github-actions:** <!-- tuya-triage-bot -->
+> Hey! I've peeked into the fingerprints shared here. Here's what I found:
+> 
+> ### ✅ Driver Status
+> Already supported in v7.0.10:
+> 
+> - `TS0003` → **unknown**
+> - `TS0601` → **unknown**
+> 
+> ### 🚧 Driver Enrichment
+> Not supported yet: `_TZ3210_n0wbkysi`
+> 
+> I've added these to the internal research queue for the next release. If you can share a [Developer Tools interview](https://tools.developer.homey.app), especially the **External State** and **Endpoints** tabs, that helps me map the data points correctly.
+> 
+> *Side note:* This app also has 50 Tuya WiFi models with local LAN control - check the [forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352) if you have those too.
+> 
+> ---
+> [Test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · [Forum thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352) · [Developer Tools](https://tools.developer.homey.app)
+
+> **dlnraja:** <!-- tuya-issue-manager -->
+> Hey @cristianoisaac, thanks for the detailed report! I see that your Zigbee USB Plug 3 Gang (TS0003) isn't functioning as expected. Given the multi-gang nature of this device, I recommend completely deleting it from Homey, re-pairing it, and then recreating your flow cards. This is crucial since Homey caches capabilities at pairing, and we want to ensure everything is fresh.
+> 
+> Also, if you're missing any specific sensor readings, could you share the app logs showing the DP numbers? That'll help me dig deeper into the issue. I'll check the compatibility with the current drivers and see if there's anything we can do to improve support for your device. 
+> 
+> Let me know how it goes!
+
+> **github-actions:** ## Fingerprint Cross-Reference
+> 
+> | Manufacturer | Driver Match |
+> |---|---|
+> 
+> | _TZ3210_n0wbkysi | NOT FOUND |
+> 
+> ---
+> *Auto-generated by crossref workflow*
 
 ---
 
@@ -596,133 +1530,6 @@ Any other information that might help (device quirks, special modes, pairing iss
 > As a heads up, if we find that the device needs a fix related to multi-gang bindings or capabilities, you’ll need to completely delete the device, re-pair it, and recreate any flow cards, since Homey caches capabilities at pairing.
 > 
 > I’ll check the Zigbee interview you provided and see what we can do. Looking forward to your logs!
-
----
-
-### [#198] SNZB-01M still detected as unknown Zigbee device
-*Author: clementloridan | Created: 2026-04-06T11:44:09Z*
-
-**Body:**
-## 📱 Basic Information
-
-**Brand & Model**:  Sonoff SNZB-01M
-**Purchase Link**: N/A
-**Power Source**: [ X] Battery / [ ] Mains
-**Current Status**: [ ] Not pairing / [ X] Pairs but missing features / [ ] Not working at all
-
----
-
-## 🔍 Zigbee Fingerprint (MANDATORY)
-
-Please provide this information from Homey Developer Tools:
-
-**Manufacturer Name**: `SONOFF`  
-**Model ID**: `SNZB-01M`  
-**Endpoints**: `[Please see note below`  
-**Clusters**: `Please see note below`
-
-**Screenshot or fingerprint data**:
-
-<img width="1848" height="2649" alt="Image" src="https://github.com/user-attachments/assets/094276d5-671c-4d6f-ada5-f7a5fc40ebb2" />
-
-Important note: This does not match the usual Tuya-style fingerprint format expected by this template (e.g. Manufacturer `_TZxxxxxx` and Model `TSxxxx`).
-
----
-
-## 📊 TS0601 Data Points (if applicable)
-
-Not applicable.
-
-This device does not appear to expose itself as a TS0601 device in Homey Developer Tools.
-
----
-
-## 🔗 References
-
-**Zigbee2MQTT**: N/A  
-**Home Assistant/ZHA**: N/A
-**Other documentation**:
-- Homey app test version used: Universal Tuya Zigbee test v5.12.2
-- Reference discussed in repository: drivers/button_wireless_4/driver.compose.json
-
----
-
-## ✨ Expected Capabilities
-
-What features should work? Check all that apply:
-
-- [ ] On/Off
-- [ ] Brightness/Dim
-- [ ] Temperature
-- [ ] Humidity
-- [ ] Motion detection
-- [ ] Contact sensor
-- [ X] Battery level
-- [ ] Energy monitoring (power, current, voltage)
-- [ X] Other: button actions (single press / double press / long press / release if supported)
-
----
-
-## 📝 Additional Notes
-
-N/A
-
-
-**Comments (6):**
-> **github-actions:** <!-- tuya-triage-bot -->
-> Hey! I've peeked into the fingerprints shared here. Here's what I found:
-> 
-> ### ✅ Driver Status
-> Already supported in v5.12.1:
-> 
-> - `SONOFF` → **bulb_rgbw**, **button_wireless_1**, **button_wireless_4**, **plug_energy_monitor**
-> - `TS0601` → **unknown**
-> 
-> **Tip:** For climate sensors, remember you can adjust the **Temperature/Humidity Offset** in Device Settings if the readings are slightly off.
-> 
-> 🚀 **Testing:** Install the [test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/), **remove and re-pair** the device. If it still shows as unknown, send me a diagnostic report ID.
-> 
-> ---
-> [Test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · [Forum thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352) · [Developer Tools](https://tools.developer.homey.app)
-
-> **dlnraja:** <!-- tuya-issue-manager -->
-> Hey @clementloridan, thanks for the detailed report! It looks like the SNZB-01M is being detected as an unknown device, even though the fingerprint seems supported by the `button_wireless_4` driver.
-> 
-> To troubleshoot this, I recommend completely deleting the device from Homey, then re-pairing it. This step is crucial because Homey caches capabilities at pairing, and we want to ensure it recognizes the device correctly. After re-pairing, you'll also need to recreate any flow cards associated with it.
-> 
-> If you're still having issues after that, please check the app logs for any DP numbers related to the device. That info can help us dig deeper into what's going on. I'll keep an eye on this and let you know if I find anything else!
-
-> **clementloridan:** @dlnraja I'm really new on this.
-> Can you guide me?
-> This will really help and I will now for next time.
-> 
-> Should i switch off and on Homey?
-> 
-> Right now I have this:
-> ![image](https://github.com/user-attachments/assets/cdcf1f8a-d5ed-4e66-a558-ebb114428160)
-
-> **dlnraja:** There is an official app for son off, have you tried yet 
-> 
-> 
-> On utilmate app settings there an diag button click it and write some text and click on send !![Screenshot_20260406_163132.jpg](https://github.com/user-attachments/assets/bc390c0e-785f-4288-b1dc-5c1d05a78e07)
-> 
-> ![Screenshot_20260406_163134.jpg](https://github.com/user-attachments/assets/0867885c-6eef-45fa-90ec-9839d4f3fc9b)
-> 
-> ![Screenshot_20260406_163139.jpg](https://github.com/user-attachments/assets/cb5570f3-e2fd-4a61-bc28-1b1b24ad5de7)
-> 
-> 
-
-> **clementloridan:** Official Sonoff Homey App doesn't work.
-> 
-> This is diag ID: 40491ffe-f6d6-47cb-a304-2914813699c2
-
-> **dlnraja:** <!-- diag-resolver -->
-> ### Set mainsPowered=true and remove measure_battery in onNodeInit
-> 
-> **Action:** remove_battery_capability
-> 
-> **Version:** v7.0.10
-> 
 
 ---
 

@@ -74,7 +74,7 @@ async function main() {
     lastRun: Date.now(),
     duration,
     status: isValid ? 'HEALTHY' : 'WARNINGS',
-    version: require('./app.json').version
+    version: require(path.join(ROOT, 'app.json')).version
   };
 
   fs.writeFileSync(STATE_FILE, JSON.stringify(report, null, 2));

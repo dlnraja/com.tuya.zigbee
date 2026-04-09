@@ -36,8 +36,8 @@ class GarageDoorOpenerDevice extends TuyaZigbeeDevice {
       this._markAppCommand?.();
       if 
 
-      (this._tuyaEF00Manager) {
-        await this._tuyaEF00Manager.sendTuyaDP(1, 1, !value ? 1 : 0);
+      (this.tuyaEF00Manager) {
+        await this.tuyaEF00Manager.sendTuyaDP(1, 1, !value ? 1 : 0);
       }
     });
 

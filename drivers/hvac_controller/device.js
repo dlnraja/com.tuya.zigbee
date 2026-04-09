@@ -76,15 +76,15 @@ class HVACControllerDevice extends TuyaZigbeeDevice {
 
     this.registerCapabilityListener('onoff', async (value) => {
       this._markAppCommand?.();
-      if (this._tuyaEF00Manager) {
-        await this._tuyaEF00Manager.sendTuyaDP(1, 1, value ? 1 : 0);
+      if (this.tuyaEF00Manager) {
+        await this.tuyaEF00Manager.sendTuyaDP(1, 1, value ? 1 : 0);
       }
     });
 
     this.registerCapabilityListener('target_temperature', async (value) => {
       this._markAppCommand?.();
-      if (this._tuyaEF00Manager) {
-        await this._tuyaEF00Manager.sendTuyaDP(2, 2, Math.round(value * 10));
+      if (this.tuyaEF00Manager) {
+        await this.tuyaEF00Manager.sendTuyaDP(2, 2, Math.round(value * 10));
       }
     });
 
@@ -93,10 +93,10 @@ class HVACControllerDevice extends TuyaZigbeeDevice {
       if 
 
       (value === 'off') {
-        await this._tuyaEF00Manager?.sendTuyaDP(1, 1, 0);
+        await this.tuyaEF00Manager?.sendTuyaDP(1, 1, 0);
       } else {
-        await this._tuyaEF00Manager?.sendTuyaDP(1, 1, 1);
-        await this._tuyaEF00Manager?.sendTuyaDP(4, 4, MODE_MAP_REV[value] ?? 2);
+        await this.tuyaEF00Manager?.sendTuyaDP(1, 1, 1);
+        await this.tuyaEF00Manager?.sendTuyaDP(4, 4, MODE_MAP_REV[value] ?? 2);
       }
     });
 
