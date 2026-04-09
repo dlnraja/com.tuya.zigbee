@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-04-09T08:05:16.991Z",
-  "driversChecked": 304,
+  "timestamp": "2026-04-09T14:44:02.911Z",
+  "driversChecked": 305,
   "collisions": [
     {
       "id": "_TZE200_S8GKRKXK|TS0601",
@@ -4053,6 +4053,76 @@
       ]
     },
     {
+      "id": "EWELINK|CK-BL702-AL-01(7009_Z102LG03-1)",
+      "drivers": [
+        "bulb_rgbw",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "EWELINK|TS0504A",
+      "drivers": [
+        "bulb_rgbw",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "EWELINK|TS0504B",
+      "drivers": [
+        "bulb_rgbw",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "EWELINK|TS0505A",
+      "drivers": [
+        "bulb_rgbw",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "EWELINK|TS0505B",
+      "drivers": [
+        "bulb_rgbw",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SONOFF|CK-BL702-AL-01(7009_Z102LG03-1)",
+      "drivers": [
+        "bulb_rgbw",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SONOFF|TS0504A",
+      "drivers": [
+        "bulb_rgbw",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SONOFF|TS0504B",
+      "drivers": [
+        "bulb_rgbw",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SONOFF|TS0505A",
+      "drivers": [
+        "bulb_rgbw",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SONOFF|TS0505B",
+      "drivers": [
+        "bulb_rgbw",
+        "universal_zigbee"
+      ]
+    },
+    {
       "id": "_TZ3210_IYSTCADI|TS0502",
       "drivers": [
         "bulb_tunable_white",
@@ -4060,7 +4130,121 @@
       ]
     },
     {
+      "id": "SONOFF|SNZB-01",
+      "drivers": [
+        "button_wireless_1",
+        "remote_button_wireless_hybrid"
+      ]
+    },
+    {
+      "id": "SONOFF|SNZB-01M",
+      "drivers": [
+        "button_wireless_1",
+        "remote_button_wireless_hybrid"
+      ]
+    },
+    {
+      "id": "SONOFF|SNZB-01P",
+      "drivers": [
+        "button_wireless_1",
+        "remote_button_wireless_hybrid"
+      ]
+    },
+    {
+      "id": "SONOFF|TS0041",
+      "drivers": [
+        "button_wireless_1",
+        "remote_button_wireless_hybrid",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SONOFF|TS0041A",
+      "drivers": [
+        "button_wireless_1",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "EWELINK|SNZB-01",
+      "drivers": [
+        "button_wireless_1",
+        "remote_button_wireless_hybrid"
+      ]
+    },
+    {
+      "id": "EWELINK|SNZB-01M",
+      "drivers": [
+        "button_wireless_1",
+        "remote_button_wireless_hybrid"
+      ]
+    },
+    {
+      "id": "EWELINK|SNZB-01P",
+      "drivers": [
+        "button_wireless_1",
+        "remote_button_wireless_hybrid"
+      ]
+    },
+    {
+      "id": "EWELINK|TS0041",
+      "drivers": [
+        "button_wireless_1",
+        "remote_button_wireless_hybrid",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "EWELINK|TS0041A",
+      "drivers": [
+        "button_wireless_1",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "_TZ3000_FA9MLVJA|SNZB-01",
+      "drivers": [
+        "button_wireless_1",
+        "remote_button_wireless_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_FA9MLVJA|SNZB-01M",
+      "drivers": [
+        "button_wireless_1",
+        "remote_button_wireless_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_FA9MLVJA|SNZB-01P",
+      "drivers": [
+        "button_wireless_1",
+        "remote_button_wireless_hybrid"
+      ]
+    },
+    {
       "id": "_TZ3000_FA9MLVJA|TS0041",
+      "drivers": [
+        "button_wireless_1",
+        "remote_button_wireless_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_YJ6K7VFO|SNZB-01",
+      "drivers": [
+        "button_wireless_1",
+        "remote_button_wireless_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_YJ6K7VFO|SNZB-01M",
+      "drivers": [
+        "button_wireless_1",
+        "remote_button_wireless_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_YJ6K7VFO|SNZB-01P",
       "drivers": [
         "button_wireless_1",
         "remote_button_wireless_hybrid"
@@ -4074,7 +4258,49 @@
       ]
     },
     {
+      "id": "_TZ3000_QGWCXXWS|SNZB-01",
+      "drivers": [
+        "button_wireless_1",
+        "remote_button_wireless_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_QGWCXXWS|SNZB-01M",
+      "drivers": [
+        "button_wireless_1",
+        "remote_button_wireless_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_QGWCXXWS|SNZB-01P",
+      "drivers": [
+        "button_wireless_1",
+        "remote_button_wireless_hybrid"
+      ]
+    },
+    {
       "id": "_TZ3000_QGWCXXWS|TS0041",
+      "drivers": [
+        "button_wireless_1",
+        "remote_button_wireless_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_TK3S5TYG|SNZB-01",
+      "drivers": [
+        "button_wireless_1",
+        "remote_button_wireless_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_TK3S5TYG|SNZB-01M",
+      "drivers": [
+        "button_wireless_1",
+        "remote_button_wireless_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_TK3S5TYG|SNZB-01P",
       "drivers": [
         "button_wireless_1",
         "remote_button_wireless_hybrid"
@@ -4088,17 +4314,9 @@
       ]
     },
     {
-      "id": "_TYZB01_HLLA45KX|TS0111",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid"
-      ]
-    },
-    {
       "id": "_TYZB01_HLLA45KX|TS011F",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
         "plug_energy_monitor"
       ]
     },
@@ -4106,7 +4324,6 @@
       "id": "_TYZB01_HLLA45KX|TS0121",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
         "plug_energy_monitor"
       ]
     },
@@ -4114,78 +4331,13 @@
       "id": "_TYZB01_HLLA45KX|TSO121",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
         "plug_energy_monitor"
-      ]
-    },
-    {
-      "id": "_TYZB01_IUEPBMPV|TS0111",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid"
-      ]
-    },
-    {
-      "id": "_TYZB01_IUEPBMPV|TS011F",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid"
-      ]
-    },
-    {
-      "id": "_TYZB01_IUEPBMPV|TS0121",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid"
-      ]
-    },
-    {
-      "id": "_TYZB01_IUEPBMPV|TSO121",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3000_CYMSNFVF|TS0111",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3000_CYMSNFVF|TS011F",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3000_CYMSNFVF|TS0121",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3000_CYMSNFVF|TSO121",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3000_DPO1YSAK|TS0111",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid"
       ]
     },
     {
       "id": "_TZ3000_DPO1YSAK|TS011F",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
         "plug_energy_monitor"
       ]
     },
@@ -4193,7 +4345,6 @@
       "id": "_TZ3000_DPO1YSAK|TS0121",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
         "plug_energy_monitor"
       ]
     },
@@ -4201,51 +4352,20 @@
       "id": "_TZ3000_DPO1YSAK|TSO121",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
         "plug_energy_monitor"
-      ]
-    },
-    {
-      "id": "_TZ3000_EW31DMGX|TS0111",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid"
       ]
     },
     {
       "id": "_TZ3000_EW31DMGX|TS011F",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
         "plug_energy_monitor_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3000_EW31DMGX|TS0121",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3000_EW31DMGX|TSO121",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3000_HYFVRAR3|TS0111",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid"
       ]
     },
     {
       "id": "_TZ3000_HYFVRAR3|TS011F",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
         "plug_energy_monitor"
       ]
     },
@@ -4253,7 +4373,6 @@
       "id": "_TZ3000_HYFVRAR3|TS0121",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
         "plug_energy_monitor"
       ]
     },
@@ -4261,50 +4380,13 @@
       "id": "_TZ3000_HYFVRAR3|TSO121",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
         "plug_energy_monitor"
-      ]
-    },
-    {
-      "id": "_TZ3000_KDI2O9M6|TS0111",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3000_KDI2O9M6|TS011F",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3000_KDI2O9M6|TS0121",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3000_KDI2O9M6|TSO121",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3000_QEUVNOHG|TS0111",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid"
       ]
     },
     {
       "id": "_TZ3000_QEUVNOHG|TS011F",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
         "plug_energy_monitor"
       ]
     },
@@ -4312,7 +4394,6 @@
       "id": "_TZ3000_QEUVNOHG|TS0121",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
         "plug_energy_monitor"
       ]
     },
@@ -4320,22 +4401,13 @@
       "id": "_TZ3000_QEUVNOHG|TSO121",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
         "plug_energy_monitor"
-      ]
-    },
-    {
-      "id": "_TZ3000_UPJRSXH1|TS0111",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid"
       ]
     },
     {
       "id": "_TZ3000_UPJRSXH1|TS011F",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
         "plug_energy_monitor"
       ]
     },
@@ -4343,7 +4415,6 @@
       "id": "_TZ3000_UPJRSXH1|TS0121",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
         "plug_energy_monitor"
       ]
     },
@@ -4351,22 +4422,13 @@
       "id": "_TZ3000_UPJRSXH1|TSO121",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
         "plug_energy_monitor"
-      ]
-    },
-    {
-      "id": "_TZ3000_UWKJA6Z1|TS0111",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid"
       ]
     },
     {
       "id": "_TZ3000_UWKJA6Z1|TS011F",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
         "plug_energy_monitor"
       ]
     },
@@ -4374,7 +4436,6 @@
       "id": "_TZ3000_UWKJA6Z1|TS0121",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
         "plug_energy_monitor"
       ]
     },
@@ -4382,22 +4443,13 @@
       "id": "_TZ3000_UWKJA6Z1|TSO121",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
         "plug_energy_monitor"
-      ]
-    },
-    {
-      "id": "_TZ3000_WAMQDR3F|TS0111",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid"
       ]
     },
     {
       "id": "_TZ3000_WAMQDR3F|TS011F",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
         "plug_energy_monitor"
       ]
     },
@@ -4405,7 +4457,6 @@
       "id": "_TZ3000_WAMQDR3F|TS0121",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
         "plug_energy_monitor"
       ]
     },
@@ -4413,7 +4464,6 @@
       "id": "_TZ3000_WAMQDR3F|TSO121",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
         "plug_energy_monitor"
       ]
     },
@@ -4909,20 +4959,6 @@
     },
     {
       "id": "_TZ3000_H1C2EAMP|TS0043",
-      "drivers": [
-        "button_wireless_2",
-        "remote_button_wireless_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3400_KEYJHAPK|TS0042",
-      "drivers": [
-        "button_wireless_2",
-        "remote_button_wireless_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3400_KEYJHAPK|TS0043",
       "drivers": [
         "button_wireless_2",
         "remote_button_wireless_hybrid"
@@ -6750,66 +6786,17 @@
       ]
     },
     {
-      "id": "_TZ3000_ABRSVSOU|TS0044",
-      "drivers": [
-        "button_wireless_4",
-        "remote_button_wireless_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3000_ABRSVSOU|TS004F",
-      "drivers": [
-        "button_wireless_4",
-        "remote_button_wireless_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3000_QJA6NQ5Z|TS0044",
-      "drivers": [
-        "button_wireless_4",
-        "remote_button_wireless_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3000_QJA6NQ5Z|TS004F",
-      "drivers": [
-        "button_wireless_4",
-        "remote_button_wireless_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3000_IXLA93VD|TS0044",
-      "drivers": [
-        "button_wireless_4",
-        "remote_button_wireless_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3000_IXLA93VD|TS004F",
-      "drivers": [
-        "button_wireless_4",
-        "remote_button_wireless_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3000_URI7ONGN|TS0044",
-      "drivers": [
-        "button_wireless_4",
-        "remote_button_wireless_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3000_URI7ONGN|TS004F",
-      "drivers": [
-        "button_wireless_4",
-        "remote_button_wireless_hybrid"
-      ]
-    },
-    {
       "id": "_TZ3000_KJFZUYCL|TS004F",
       "drivers": [
         "button_wireless_4",
         "remote_button_wireless_smart_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_RCO1YZB1|SNZB-01M",
+      "drivers": [
+        "button_wireless_4",
+        "remote_button_wireless_hybrid"
       ]
     },
     {
@@ -6827,6 +6814,13 @@
       ]
     },
     {
+      "id": "_TZ3000_YIRP2PGD|SNZB-01M",
+      "drivers": [
+        "button_wireless_4",
+        "remote_button_wireless_hybrid"
+      ]
+    },
+    {
       "id": "_TZ3000_YIRP2PGD|TS0044",
       "drivers": [
         "button_wireless_4",
@@ -6835,6 +6829,13 @@
     },
     {
       "id": "_TZ3000_YIRP2PGD|TS004F",
+      "drivers": [
+        "button_wireless_4",
+        "remote_button_wireless_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_JA5OSU5G|SNZB-01M",
       "drivers": [
         "button_wireless_4",
         "remote_button_wireless_hybrid"
@@ -6859,6 +6860,13 @@
       "drivers": [
         "button_wireless_4",
         "remote_button_wireless_smart_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_DKU2CFSC|SNZB-01M",
+      "drivers": [
+        "button_wireless_4",
+        "remote_button_wireless_hybrid"
       ]
     },
     {
@@ -7073,6 +7081,13 @@
       ]
     },
     {
+      "id": "_TZB000_YQJAOLLC|TS0601",
+      "drivers": [
+        "curtain_motor",
+        "plug_energy_monitor"
+      ]
+    },
+    {
       "id": "_TZE200_5SBEBBZS|TS0601",
       "drivers": [
         "curtain_motor",
@@ -7115,8 +7130,93 @@
       ]
     },
     {
+      "id": "AQARA|TS0601",
+      "drivers": [
+        "device_generic_tuya_universal_hybrid",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "AUBESS|TS0601",
+      "drivers": [
+        "device_generic_tuya_universal_hybrid",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "AVATTO|TS0601",
+      "drivers": [
+        "device_generic_tuya_universal_hybrid",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "GIRIER|TS0601",
+      "drivers": [
+        "device_generic_tuya_universal_hybrid",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "HEIMAN|TS0601",
+      "drivers": [
+        "device_generic_tuya_universal_hybrid",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "LUMI|TS0601",
+      "drivers": [
+        "device_generic_tuya_universal_hybrid",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "MOES|TS0601",
+      "drivers": [
+        "device_generic_tuya_universal_hybrid",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "PHILIPS|TS0601",
+      "drivers": [
+        "device_generic_tuya_universal_hybrid",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SILVERCREST|TS0601",
+      "drivers": [
+        "device_generic_tuya_universal_hybrid",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "TUYA|TS0601",
+      "drivers": [
+        "device_generic_tuya_universal_hybrid",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "XIAOMI|TS0601",
+      "drivers": [
+        "device_generic_tuya_universal_hybrid",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "ZEMISMART|TS0601",
+      "drivers": [
+        "device_generic_tuya_universal_hybrid",
+        "universal_zigbee"
+      ]
+    },
+    {
       "id": "EWELINK|S26R2ZB",
       "drivers": [
+        "device_plug_energy_hybrid",
         "device_plug_energy_monitor_hybrid",
         "plug_energy_monitor"
       ]
@@ -7124,6 +7224,7 @@
     {
       "id": "EWELINK|S31 LITE ZB",
       "drivers": [
+        "device_plug_energy_hybrid",
         "device_plug_energy_monitor_hybrid",
         "plug_energy_monitor"
       ]
@@ -7131,6 +7232,7 @@
     {
       "id": "EWELINK|S40LITE",
       "drivers": [
+        "device_plug_energy_hybrid",
         "device_plug_energy_monitor_hybrid",
         "plug_energy_monitor"
       ]
@@ -7138,6 +7240,7 @@
     {
       "id": "EWELINK|S60ZBTPF",
       "drivers": [
+        "device_plug_energy_hybrid",
         "device_plug_energy_monitor_hybrid",
         "plug_energy_monitor"
       ]
@@ -7145,6 +7248,7 @@
     {
       "id": "EWELINK|S60ZBTPG",
       "drivers": [
+        "device_plug_energy_hybrid",
         "device_plug_energy_monitor_hybrid",
         "plug_energy_monitor"
       ]
@@ -7152,8 +7256,18 @@
     {
       "id": "EWELINK|TS011F",
       "drivers": [
+        "device_plug_energy_hybrid",
         "device_plug_energy_monitor_hybrid",
-        "plug_energy_monitor"
+        "plug_energy_monitor",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "EWELINK|TS0601",
+      "drivers": [
+        "device_plug_energy_hybrid",
+        "plug_energy_monitor",
+        "universal_zigbee"
       ]
     },
     {
@@ -7171,16 +7285,262 @@
       ]
     },
     {
-      "id": "EWELINK|TS0601",
+      "id": "DANFOSS|TS0026",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "DANFOSS|TS0041A",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "DANFOSS|TS0052",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "DANFOSS|TS0105",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "DANFOSS|TS0224",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "DANFOSS|TS0901",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "LEGRAND|TS0026",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "LEGRAND|TS0041A",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "LEGRAND|TS0052",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "LEGRAND|TS0105",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "LEGRAND|TS0224",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "LEGRAND|TS0901",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SCHNEIDER ELECTRIC|TS0026",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SCHNEIDER ELECTRIC|TS0041A",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SCHNEIDER ELECTRIC|TS0052",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SCHNEIDER ELECTRIC|TS0105",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SCHNEIDER ELECTRIC|TS0224",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SCHNEIDER ELECTRIC|TS0901",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "BITRON|TS0203",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "BITRON|TS0601",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "DANFOSS|TS0203",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "DANFOSS|TS0601",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "EUROTRONIC|TS0203",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "EUROTRONIC|TS0601",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "IKEA OF SWEDEN|TS0203",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "IKEA OF SWEDEN|TS0601",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "LEGRAND|TS0203",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "LEGRAND|TS0601",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SCHNEIDER ELECTRIC|TS0203",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SCHNEIDER ELECTRIC|TS0601",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SIGNIFY NETHERLANDS B.V.|TS0203",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SIGNIFY NETHERLANDS B.V.|TS0601",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SUNRICHER|TS0203",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SUNRICHER|TS0601",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SONOFF|TS011F",
       "drivers": [
         "plug_energy_monitor",
-        "sensor_climate_contact_hybrid"
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SONOFF|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "universal_zigbee"
       ]
     },
     {
       "id": "_TZE200_U6X1ZYV2|TS0207",
       "drivers": [
         "rain_sensor",
+        "sensor_contact_rain_hybrid",
         "universal_fallback"
       ]
     },
@@ -7188,6 +7548,7 @@
       "id": "_TZE200_U6X1ZYV2|TS0601",
       "drivers": [
         "rain_sensor",
+        "sensor_contact_rain_hybrid",
         "universal_fallback"
       ]
     },
@@ -7196,6 +7557,62 @@
       "drivers": [
         "remote_button_emergency_sos_hybrid",
         "smart_remote_4_buttons"
+      ]
+    },
+    {
+      "id": "SONOFF|TS0043",
+      "drivers": [
+        "remote_button_wireless_hybrid",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SONOFF|TS0044",
+      "drivers": [
+        "remote_button_wireless_hybrid",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SONOFF|TS0046",
+      "drivers": [
+        "remote_button_wireless_hybrid",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SONOFF|TS0042",
+      "drivers": [
+        "remote_button_wireless_hybrid",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "EWELINK|TS0043",
+      "drivers": [
+        "remote_button_wireless_hybrid",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "EWELINK|TS0044",
+      "drivers": [
+        "remote_button_wireless_hybrid",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "EWELINK|TS0046",
+      "drivers": [
+        "remote_button_wireless_hybrid",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "EWELINK|TS0042",
+      "drivers": [
+        "remote_button_wireless_hybrid",
+        "universal_zigbee"
       ]
     },
     {
@@ -7209,13 +7626,14 @@
       "id": "_TZE284_HDML1AAV|TS0601",
       "drivers": [
         "sensor_lcdtemphumidsensor_soil_hybrid",
+        "soil_sensor",
         "universal_fallback"
       ]
     }
   ],
   "buttonLogicFailures": [],
   "sdkDeprecations": [
-    "scripts\\maintenance\\zero-defect-architect-audit.js:119: if (line.includes('drivers.getDevice(') || line.includes('drivers.getDeviceById(') || line.includes("
+    "scripts/maintenance/zero-defect-architect-audit.js:119: if (line.includes('drivers.getDevice(') || line.includes('drivers.getDeviceById(') || line.includes("
   ],
   "radarLogicCheck": [],
   "errors": []
