@@ -2627,3 +2627,59 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 |---|---|---|
 | _TZ3000_wzmuk9ai + router | dlnraja/com.tuya.zigbee#197 | bug_report |
 | router + TS011F | dlnraja/com.tuya.zigbee#197 | bug_report |
+
+
+## Auto-discovered from GitHub (2026-04-09)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZ3210_7jnk7l3k + TS0201 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3210_7jnk7l3k + TS0121 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3210_7jnk7l3k + TS0003 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3210_7jnk7l3k + TS0225 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3210_7jnk7l3k + TS0601 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3210_7jnk7l3k + Arteco | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3210_7jnk7l3k + CK-BL702-MWS-01 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3210_7jnk7l3k + CK-BL702-MWS-01(7016) | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3210_7jnk7l3k + TS011F | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3210_7jnk7l3k + TY0201 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3210_7jnk7l3k + TSO121 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3210_7jnk7l3k + sensor | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3210_7jnk7l3k + switch | dlnraja/com.tuya.zigbee#213 | feature |
+| _TYZB01_hlla45kx + TS0201 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TYZB01_hlla45kx + TS0225 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TYZB01_hlla45kx + Arteco | dlnraja/com.tuya.zigbee#213 | feature |
+| _TYZB01_hlla45kx + CK-BL702-MWS-01 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TYZB01_hlla45kx + CK-BL702-MWS-01(7016) | dlnraja/com.tuya.zigbee#213 | feature |
+| _TYZB01_hlla45kx + TY0201 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TYZB01_hlla45kx + sensor | dlnraja/com.tuya.zigbee#213 | feature |
+| _TYZB01_hlla45kx + switch | dlnraja/com.tuya.zigbee#213 | feature |
+| _TYZB01_iuepbmpv + TS0201 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TYZB01_iuepbmpv + TS0225 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TYZB01_iuepbmpv + Arteco | dlnraja/com.tuya.zigbee#213 | feature |
+| _TYZB01_iuepbmpv + CK-BL702-MWS-01 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TYZB01_iuepbmpv + CK-BL702-MWS-01(7016) | dlnraja/com.tuya.zigbee#213 | feature |
+| _TYZB01_iuepbmpv + TY0201 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TYZB01_iuepbmpv + sensor | dlnraja/com.tuya.zigbee#213 | feature |
+| _TYZB01_iuepbmpv + switch | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3000_uwkja6z1 + TS0201 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3000_uwkja6z1 + TS0225 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3000_uwkja6z1 + Arteco | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3000_uwkja6z1 + CK-BL702-MWS-01 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3000_uwkja6z1 + CK-BL702-MWS-01(7016) | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3000_uwkja6z1 + TY0201 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3000_uwkja6z1 + sensor | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3000_uwkja6z1 + switch | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3000_kdi2o9m6 + TS0201 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3000_kdi2o9m6 + TS0225 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3000_kdi2o9m6 + Arteco | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3000_kdi2o9m6 + CK-BL702-MWS-01 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3000_kdi2o9m6 + CK-BL702-MWS-01(7016) | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3000_kdi2o9m6 + TY0201 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3000_kdi2o9m6 + sensor | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3000_kdi2o9m6 + switch | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3000_ew31dmgx + TS0201 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3000_ew31dmgx + TS0225 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3000_ew31dmgx + Arteco | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3000_ew31dmgx + CK-BL702-MWS-01 | dlnraja/com.tuya.zigbee#213 | feature |
+| _TZ3000_ew31dmgx + CK-BL702-MWS-01(7016) | dlnraja/com.tuya.zigbee#213 | feature |
