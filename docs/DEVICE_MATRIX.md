@@ -28,7 +28,7 @@
 | bulb_tunable_white | 96 | CLASSIC A60 TW, Classic A60 TW, E11-N13, E11-N14, E12-N13, E12-N14, GL-B-007Z, GL-C-007, LED1545G12, LED1546G12, LTW001, LTW004, LTW010, LTW012, LTW013, LTW015, RB 178 T, RS 128 T, TS0502A, TS0502B, ZBT-CCTLIGHT, ZBT-CCTLight, classic a60 tw, e11-n13, e11-n14, e12-n13, e12-n14, gl-b-007z, gl-c-007, led1545g12, led1546g12, ltw001, ltw004, ltw010, ltw012, ltw013, ltw015, rb 178 t, rs 128 t, ts0502a, ts0502b, zbt-cctlight | dim, light_hue, light_saturation... |
 | bulb_white | 4 | TS0501, ts0501 | dim, light_hue, light_saturation... |
 | button_emergency_sos | 76 | TS0215, TS0215A, TS0218, TS0601, ZBPB10BK, ts0215, ts0215a, ts0218, ts0601, zbpb10bk | alarm_generic, measure_battery |
-| button_wireless | 10 | CK-TLSR8656-SS5-01(7000), SNZB-01, SNZB-01M, SNZB-01P, TS0040, WB-01, WB01, ck-tlsr8656-ss5-01(7000), snzb-01, snzb-01m, snzb-01p, ts0040, wb-01, wb01 | measure_battery |
+| button_wireless | 8 | CK-TLSR8656-SS5-01(7000), SNZB-01, SNZB-01M, SNZB-01P, TS0040, WB-01, WB01, ck-tlsr8656-ss5-01(7000), snzb-01, snzb-01m, snzb-01p, ts0040, wb-01, wb01 | measure_battery |
 | button_wireless_1 | 59 | 3450-L, 3450-l, E1524/E1810, E1743, E1744, E1812, E2001/E2002, E2123, LUMI.REMOTE.B1ACN01, LUMI.SENSOR_SWITCH, LUMI.SENSOR_SWITCH.AQ2, LUMI.SENSOR_SWITCH.AQ3, ROM001, RWL020, RWL021, RWL022, SNZB-01, SNZB-01M, SNZB-01P, TS0041, TS0041A, WXKG01LM, WXKG02LM, WXKG03LM, WXKG06LM, WXKG07LM, WXKG11LM, WXKG12LM, ZG-101ZL, e1524/e1810, e1743, e1744, e1812, e2001/e2002, e2123, lumi.remote.b1acn01, lumi.sensor_switch, lumi.sensor_switch.aq2, lumi.sensor_switch.aq3, rom001, rwl020, rwl021, rwl022, snzb-01, snzb-01m, snzb-01p, ts0041, ts0041a, wxkg01lm, wxkg02lm, wxkg03lm, wxkg06lm, wxkg07lm, wxkg11lm, wxkg12lm, zg-101zl | button.1, measure_battery |
 | button_wireless_2 | 58 | TS0001, TS0001_FINGERBOT, TS0001_fingerbot, TS0002, TS0003, TS000F, TS0011, TS0012, TS0013, TS0042, TS0043, TS0111, ts0001, ts0001_fingerbot, ts0002, ts0003, ts000f, ts0011, ts0012, ts0013, ts0042, ts0043, ts0111 | button.1, button.2, measure_battery |
 | button_wireless_3 | 18 | TS0043, ts0043 | button.1, button.2, button.3... |
@@ -36,7 +36,7 @@
 | button_wireless_6 | 4 | TS0046, TS0601, ts0046, ts0601 | button.1, button.2, button.3... |
 | button_wireless_8 | 2 | TS0048, ts0048 | button.1, button.2, button.3... |
 | button_wireless_fingerbot_hybrid | 12 | TS0001, ts0001, TS0001_FINGERBOT, TS0001_fingerbot, ts0001_fingerbot | onoff, measure_battery, measure_power... |
-| button_wireless_plug_hybrid | 4 | TS011F, TS0121, TSO121, ts011f, ts0121, tso121, TS0111, ts0111 | measure_power, meter_power, measure_voltage... |
+| button_wireless_plug_hybrid | 0 | TS011F, TS0121, TSO121, ts011f, ts0121, tso121, TS0111, ts0111 | measure_power, meter_power, measure_voltage... |
 | button_wireless_scene_hybrid | 2 | TS0042, TS0043, ts0042, ts0043 | button.1, button.2, measure_battery |
 | button_wireless_smart_hybrid | 2 | TS0041, ts0041, TS004F, ts004f | button.1, measure_battery |
 | button_wireless_switch_hybrid | 6 | TS0002, TS0003, TS0012, TS0013, TS011F, ts0002, ts0003, ts0012, ts0013, ts011f, TS0001, TS000F, TS0011, ts0001, ts000f, ts0011, TS0014, ts0014 | onoff, onoff.gang2, measure_power... |
@@ -82,8 +82,8 @@
 | device_floor_heating_hybrid | 2 | TS0601, ts0601 | target_temperature, measure_temperature, measure_temperature.floor... |
 | device_floor_heating_thermostat_hybrid | 0 | TS0601, ts0601 | target_temperature, measure_temperature, measure_temperature.floor... |
 | device_generic_tuya_universal_hybrid | 24 | TS0203, TS0601, ts0203, ts0601 | measure_battery, measure_temperature, measure_humidity |
-| device_plug_energy_hybrid | 5 | S26R2ZB, S31 LITE ZB, S31 Lite zb, S40LITE, S60ZBTPF, S60ZBTPG, TS011F, s26r2zb, s31 lite zb, s40lite, s60zbtpf, s60zbtpg, ts011f, TS0601, ts0601 | onoff, measure_power, meter_power... |
-| device_plug_energy_monitor_hybrid | 1 | S26R2ZB, S31 LITE ZB, S31 Lite zb, S40LITE, S60ZBTPF, S60ZBTPG, TS011F, s26r2zb, s31 lite zb, s40lite, s60zbtpf, s60zbtpg, ts011f, TS0601, ts0601, S31ZB, ZBMINIL2, s31zb, zbminil2 | onoff, measure_power, meter_power... |
+| device_plug_energy_hybrid | 2 | S26R2ZB, S31 LITE ZB, S31 Lite zb, S40LITE, S60ZBTPF, S60ZBTPG, TS011F, s26r2zb, s31 lite zb, s40lite, s60zbtpf, s60zbtpg, ts011f, TS0601, ts0601 | onoff, measure_power, meter_power... |
+| device_plug_energy_monitor_hybrid | 1 | S26R2ZB, S31 LITE ZB, S31 Lite zb, S40LITE, S60ZBTPF, S60ZBTPG, TS011F, s26r2zb, s31 lite zb, s40lite, s60zbtpf, s60zbtpg, ts011f, S31ZB, ZBMINIL2, s31zb, zbminil2 | onoff, measure_power, meter_power... |
 | device_plug_smart_hybrid | 4 | TS0049, ts0049 | onoff, measure_power, meter_power... |
 | device_plug_smart_water_hybrid | 0 | TS0049, ts0049 | onoff, measure_power, meter_power... |
 | device_radiator_valve_hybrid | 4 | TS0601, ts0601 | target_temperature, measure_temperature, thermostat_mode... |
@@ -160,10 +160,10 @@
 | rain_sensor | 18 | TS0207, TS0207_RAIN, TS0207_rain, TS0601, ZG-222Z, ZG-223Z, ts0207, ts0207_rain, ts0601, zg-222z, zg-223z | alarm_water, measure_humidity, measure_battery |
 | remote_button_emergency_sos_hybrid | 2 | - | button.1, button.2, button.3... |
 | remote_button_wireless_handheld_hybrid | 2 | - | button.1, button.2, button.3... |
-| remote_button_wireless_hybrid | 48 | TS004F, ts004f, TS0041, ts0041, TS0043, ts0043, TS0044, ts0044, TS0046, ts0046, SNZB-01, SNZB-01P, snzb-01, snzb-01p, SNZB-01M, snzb-01m, TS0042, ts0042 | button.rotate_left, button.rotate_right, button.press... |
+| remote_button_wireless_hybrid | 38 | TS004F, ts004f, TS0041, ts0041, TS0043, ts0043, TS0044, ts0044, TS0046, ts0046, SNZB-01, SNZB-01P, snzb-01, snzb-01p, SNZB-01M, snzb-01m, TS0042, ts0042 | button.rotate_left, button.rotate_right, button.press... |
 | remote_button_wireless_plug_hybrid | 96 | TS0111, ts0111 | measure_power, meter_power, measure_voltage... |
 | remote_button_wireless_scene_hybrid | 4 | TS0042, TS0043, ts0042, ts0043 | button.1, button.2, measure_battery |
-| remote_button_wireless_smart_hybrid | 12 | TS0041, ts0041, TS004F, ts004f | button.1, measure_battery |
+| remote_button_wireless_smart_hybrid | 4 | TS0041, ts0041, TS004F, ts004f | button.1, measure_battery |
 | remote_button_wireless_usb_hybrid | 2 | TS0002, ts0002 | onoff, onoff.usb2, measure_power... |
 | remote_button_wireless_valve_hybrid | 2 | TS0001, ts0001 | button.1, button.2, measure_battery... |
 | remote_button_wireless_wall_hybrid | 56 | TS0041, TS0043, TS0044, TS0046, TS004F, ts0041, ts0043, ts0044, ts0046, ts004f, TS0042, ts0042, TS0001, TS0002, TS0003, TS0011, TS0012, TS0013, ts0001, ts0002, ts0003, ts0011, ts0012, ts0013 | button.1, measure_battery |
@@ -174,7 +174,7 @@
 | scene_switch_4 | 22 | ERS-10TZBVK-AA, TS0601, ZG-101ZS, ers-10tzbvk-aa, ts0601, zg-101zs | button.1, button.2, button.3... |
 | scene_switch_6 | 2 | TS0601_SCENE6, TS0601_scene6, ts0601_scene6 | button.1, button.2, button.3... |
 | scene_switch_wall_hybrid | 0 | TS0042, TS0043, ts0042, ts0043 | button.1, button.2, measure_battery |
-| sensor_climate_contact_hybrid | 15 | ZG-227Z, zg-227z, TS0601, ts0601 | measure_temperature, measure_humidity, measure_battery... |
+| sensor_climate_contact_hybrid | 14 | ZG-227Z, zg-227z, TS0601, ts0601 | measure_temperature, measure_humidity, measure_battery... |
 | sensor_climate_lcdtemphumidsensor_hybrid | 0 | TS0201, TS0601, TY0201, ts0201, ts0601, ty0201 | measure_temperature, measure_humidity, measure_battery |
 | sensor_climate_motion_hybrid | 2 | - | alarm_motion, measure_battery, measure_luminance... |
 | sensor_climate_presence_hybrid | 1 | - | alarm_motion, measure_luminance, measure_temperature... |
@@ -257,6 +257,6 @@
 | zigbee_repeater | 10 | TS0207, ts0207 |  |
 
 ---
-**Total:** 253 drivers, 6964 manufacturer IDs
+**Total:** 253 drivers, 6936 manufacturer IDs
 
-*Generated: 2026-04-09T03:27:05.605Z*
+*Generated: 2026-04-09T04:22:18.366Z*
