@@ -69,6 +69,12 @@ async function callAIEngine(url, headers, body, providerName, maxRetries = 1, ti
 }
 
 async function callAI(text,sysPrompt,opts={}){
+  // v7.0.25: Cloudless-First Shield
+  if (process.env.PIPELINE_MODE === 'RULE_BASED') {
+    console.log('  [SHIELD] Cloudless-First Mode: Skipping AI and using Template/Rule fallbacks.');
+    return { text: "AI_OFFLINE_OR_LIMIT_REACHED", model: "rule-based-fallback" };
+  }
+
   const maxTokens=opts.maxTokens||2048;
   const tk = classifyTask(text, sysPrompt, opts);
   

@@ -13,30 +13,44 @@
   ],
   "capabilitiesOptions": {
     "measure_water_level": {
-      "title": { "en": "Liquid Depth" }
+      "title": {
+        "en": "Liquid Depth"
+      }
     },
     "measure_water_percentage": {
-      "title": { "en": "Fill Level" }
+      "title": {
+        "en": "Fill Level"
+      }
     },
     "alarm_water_low": {
-      "title": { "en": "Low Level Alert" }
+      "title": {
+        "en": "Low Level Alert"
+      }
     },
     "alarm_water_high": {
-      "title": { "en": "High Level Alert" }
+      "title": {
+        "en": "High Level Alert"
+      }
     },
     "alarm_water": {
-      "title": { "en": "Level Alert" }
+      "title": {
+        "en": "Level Alert"
+      }
     }
   },
   "pair": [
     {
       "id": "configure",
-      "navigation": { "next": "list_devices" }
+      "navigation": {
+        "next": "list_devices"
+      }
     },
     {
       "id": "list_devices",
       "template": "list_devices",
-      "navigation": { "prev": "configure" }
+      "navigation": {
+        "prev": "configure"
+      }
     },
     {
       "id": "add_devices",
@@ -51,49 +65,85 @@
   "settings": [
     {
       "type": "group",
-      "label": { "en": "Tuya Local Connection" },
+      "label": {
+        "en": "Tuya Local Connection"
+      },
       "children": [
         {
           "id": "device_id",
           "type": "text",
-          "label": { "en": "Device ID" },
+          "label": {
+            "en": "Device ID"
+          },
           "value": ""
         },
         {
           "id": "local_key",
           "type": "text",
-          "label": { "en": "Local Key" },
+          "label": {
+            "en": "Local Key"
+          },
           "value": ""
         },
         {
           "id": "ip",
           "type": "text",
-          "label": { "en": "IP Address" },
+          "label": {
+            "en": "IP Address"
+          },
           "value": ""
         },
         {
           "id": "protocol_version",
           "type": "dropdown",
-          "label": { "en": "Protocol Version" },
+          "label": {
+            "en": "Protocol Version"
+          },
           "value": "3.3",
           "values": [
-            { "id": "3.1", "label": { "en": "3.1" } },
-            { "id": "3.3", "label": { "en": "3.3 (most common)" } },
-            { "id": "3.4", "label": { "en": "3.4" } },
-            { "id": "3.5", "label": { "en": "3.5" } }
+            {
+              "id": "3.1",
+              "label": {
+                "en": "3.1"
+              }
+            },
+            {
+              "id": "3.3",
+              "label": {
+                "en": "3.3 (most common)"
+              }
+            },
+            {
+              "id": "3.4",
+              "label": {
+                "en": "3.4"
+              }
+            },
+            {
+              "id": "3.5",
+              "label": {
+                "en": "3.5"
+              }
+            }
           ]
         }
       ]
     },
     {
       "type": "group",
-      "label": { "en": "Tank Configuration" },
+      "label": {
+        "en": "Tank Configuration"
+      },
       "children": [
         {
           "id": "installation_height",
           "type": "number",
-          "label": { "en": "Installation Height (mm)" },
-          "hint": { "en": "Distance from sensor to tank bottom in mm (DP19, 10-4000)" },
+          "label": {
+            "en": "Installation Height (mm)"
+          },
+          "hint": {
+            "en": "Distance from sensor to tank bottom in mm (DP19, 10-4000)"
+          },
           "value": 2000,
           "min": 10,
           "max": 4000,
@@ -103,8 +153,12 @@
         {
           "id": "liquid_depth_max",
           "type": "number",
-          "label": { "en": "Sensor to Full Line (mm)" },
-          "hint": { "en": "Height from sensor to liquid surface when full (DP21, 10-4000)" },
+          "label": {
+            "en": "Sensor to Full Line (mm)"
+          },
+          "hint": {
+            "en": "Height from sensor to liquid surface when full (DP21, 10-4000)"
+          },
           "value": 200,
           "min": 10,
           "max": 4000,
@@ -114,8 +168,12 @@
         {
           "id": "max_set",
           "type": "number",
-          "label": { "en": "Max Alarm Level (%)" },
-          "hint": { "en": "High level alarm threshold percentage (DP7, 0-100)" },
+          "label": {
+            "en": "Max Alarm Level (%)"
+          },
+          "hint": {
+            "en": "High level alarm threshold percentage (DP7, 0-100)"
+          },
           "value": 100,
           "min": 0,
           "max": 100,
@@ -125,8 +183,12 @@
         {
           "id": "min_set",
           "type": "number",
-          "label": { "en": "Min Alarm Level (%)" },
-          "hint": { "en": "Low level alarm threshold percentage (DP8, 0-100)" },
+          "label": {
+            "en": "Min Alarm Level (%)"
+          },
+          "hint": {
+            "en": "Low level alarm threshold percentage (DP8, 0-100)"
+          },
           "value": 0,
           "min": 0,
           "max": 100,
@@ -134,6 +196,30 @@
           "units": "%"
         }
       ]
+    },
+    {
+      "id": "sync_email",
+      "type": "text",
+      "label": {
+        "en": "Cloud Sync Email",
+        "fr": "Email de synchronisation"
+      },
+      "hint": {
+        "en": "Optional: Email for automatic local key retrieval",
+        "fr": "Optionnel : Email pour récupération auto des clés"
+      }
+    },
+    {
+      "id": "sync_password",
+      "type": "password",
+      "label": {
+        "en": "Cloud Sync Password",
+        "fr": "Mot de passe de synchronisation"
+      },
+      "hint": {
+        "en": "Optional: Password for the Tuya/Smart Life app",
+        "fr": "Optionnel : Mot de passe de l'app Tuya/Smart Life"
+      }
     }
   ],
   "images": {
@@ -141,6 +227,24 @@
     "large": "drivers/wifi_water_tank_monitor/assets/images/large.png",
     "xlarge": "drivers/wifi_water_tank_monitor/assets/images/xlarge.png"
   },
-  "platforms": [ "local" ],
-  "connectivity": [ "lan" ]
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "lan"
+  ],
+  "discoveryStrategies": [
+    {
+      "strategy": "mdns-sd",
+      "options": {
+        "name": "_tuya._tcp.local"
+      }
+    },
+    {
+      "strategy": "ssdp",
+      "options": {
+        "search": "urn:schemas-upnp-org:device:Basic:1"
+      }
+    }
+  ]
 }

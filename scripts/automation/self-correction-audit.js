@@ -105,6 +105,43 @@ async function main() {
     auditReport.errors.push(`Driver Audit Error: ${e.message}`);
   }
 
+  // 4. Thinking Opus 4.6 (Rules 21-28) Compliance Audit
+  try {
+    console.log('Auditing Thinking Opus 4.6 (Rules 21-28) Compliance...');
+    
+    // A. Rule 21: Flow Card Interoperability (app.json)
+    const appJson = JSON.parse(fs.readFileSync(path.join(ROOT, 'app.json'), 'utf8'));
+    const forbidden = ['driver_id=switch_2gang', 'driver_id=switch_3gang', 'driver_id=switch_4gang'];
+    ['triggers', 'conditions', 'actions'].forEach(section => {
+      (appJson.flow?.[section] || []).forEach(card => {
+        if (card.filter && forbidden.some(f => card.filter.includes(f))) {
+          auditReport.warnings.push(`Rule 21 Violation: Flow card ${card.id} uses forbidden ${card.filter}. Must use capability filters.`);
+          auditReport.noDegradation = false;
+        }
+      });
+    });
+
+    // B. Rule 27: SDK 3+ Dot-Notation Hierarchy
+    const drivers = fs.readdirSync(path.join(ROOT, 'drivers')).filter(d => fs.existsSync(path.join(ROOT, 'drivers', d, 'driver.compose.json')));
+    for (const d of drivers) {
+      const compose = JSON.parse(fs.readFileSync(path.join(ROOT, 'drivers', d, 'driver.compose.json'), 'utf8'));
+      const caps = compose.capabilities || [];
+      if (caps.some(c => c.includes('_') && (c.includes('gang') || c.includes('onoff')))) {
+        auditReport.warnings.push(`Rule 27 Violation: Driver ${d} uses legacy underscore notation (${caps.find(c => c.includes('_'))}). Use dot.notation.`);
+      }
+    }
+
+    // C. Rule 28: Composite Identity (Variation Manager)
+    const variationMgr = fs.readFileSync(path.join(ROOT, 'lib/ManufacturerVariationManager.js'), 'utf8');
+    if (!variationMgr.includes('productId') || !variationMgr.includes('equalsCI(productId')) {
+      auditReport.warnings.push(`Rule 28 Violation: ManufacturerVariationManager might be missing Composite Identity (productId) logic.`);
+    }
+
+    console.log('  ✅ Thinking Opus 4.6 Compliance: Completed with audits.');
+  } catch (e) {
+    auditReport.errors.push(`Opus 4.6 Audit Error: ${e.message}`);
+  }
+
   // 4. Summarize to GitHub Summary
   const SUMMARY = process.env.GITHUB_STEP_SUMMARY || (process.platform === 'win32' ? 'NUL' : '/dev/null');
   let md = '### ⚙️ Self-Correction Audit Result\n';

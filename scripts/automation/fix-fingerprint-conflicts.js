@@ -171,6 +171,15 @@ function resolveConflict(conflict, drivers) {
     return removals;
   }
 
+  // Rule 1.4: TS0203 (Contact Sensor) MUST stay in contact_sensor
+  // it is often hijacked by presence_sensor_radar or universal_fallback
+  if (pid.toUpperCase() === 'TS0203' && drvNames.includes('contact_sensor')) {
+    for (const d of drvNames.filter(name => name !== 'contact_sensor')) {
+      removals.push({ driver: d, mfr, reason: 'TS0203 is a contact sensor' });
+    }
+    return removals;
+  }
+
   // Rule 1.5: climate_sensor is a catch-all — loses to ANY specialized driver
   // climate_sensor has TS0601 which matches almost everything via cartesian product
   if (drvNames.includes('climate_sensor') && drvNames.length === 2) {

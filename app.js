@@ -61,6 +61,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   // NOTE: Database updates handled by GitHub Actions, not at runtime
   developerDebugMode = false; // 🔍 AUDIT V2: Contrôle verbosity logs
   experimentalSmartAdapt = false; // ⚠️ AUDIT V2: Modifications capabilities opt-in
+  experimentalCloudMirror = false; // 🪞 v7.0.22: Zigbee-to-Cloud mirroring opt-in
 
 
   /**
@@ -142,11 +143,16 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     this.log('Universal Tuya Zigbee App is initializing...');
     this.log(`📊 Mode: ${this.developerDebugMode ? 'DEVELOPER (verbose)' : 'PRODUCTION (minimal logs)'}`);
     this.log(`🤖 Smart-Adapt: ${this.experimentalSmartAdapt ? 'EXPERIMENTAL (modifies)' : 'READ-ONLY (safe)'}`);
+    this.log(`🪞 Cloud Mirror: ${this.experimentalCloudMirror ? 'ENABLED (experimental)' : 'DISABLED (safe-local)'}`);
     this.log(`🔧 MaxListeners: ${EventEmitter.defaultMaxListeners} (prevents warnings with many devices)`);
 
     // Initialize CapabilityManager for safe capability creation
     this.capabilityManager = new CapabilityManager(this.homey);
     this.log('✅ CapabilityManager initialized');
+
+    // v7.0.22: Initialize Shadow-Pulsar singleton
+    const TuyaShadowPulsar = require('./lib/tuya-local/TuyaShadowPulsar');
+    TuyaShadowPulsar.setEnabled(this.experimentalCloudMirror);
 
     // 🤖 Initialize Intelligent Device Identification Database
     // Scans ALL drivers and builds comprehensive ID database
@@ -1226,9 +1232,12 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     // Get settings with defaults
     this.developerDebugMode = this.homey.settings.get('developer_debug_mode') ?? false;
     this.experimentalSmartAdapt = this.homey.settings.get('experimental_smart_adapt') ?? false;
+    this.experimentalCloudMirror = this.homey.settings.get('experimental_cloud_mirror') ?? false;
 
     // Listen for settings changes
     this.homey.settings.on('set', (key) => {
+      const TuyaShadowPulsar = require('./lib/tuya-local/TuyaShadowPulsar');
+
       if (key === 'developer_debug_mode') {
         this.developerDebugMode = this.homey.settings.get('developer_debug_mode');
         this.log(`🔍 [AUDIT V2] Developer Debug Mode: ${this.developerDebugMode ? 'ENABLED (verbose)' : 'DISABLED (minimal)'}`);
@@ -1244,12 +1253,19 @@ class UniversalTuyaZigbeeApp extends Homey.App {
           this.log('⚠️  Only enable if you understand the risks.');
         }
       }
+
+      if (key === 'experimental_cloud_mirror') {
+        this.experimentalCloudMirror = this.homey.settings.get('experimental_cloud_mirror');
+        this.log(`🪞 [v7.0.22] Experimental Cloud Mirror: ${this.experimentalCloudMirror ? 'ENABLED' : 'DISABLED'}`);
+        TuyaShadowPulsar.setEnabled(this.experimentalCloudMirror);
+      }
     });
 
     // Log initial state
     this.log(`[AUDIT V2] Settings initialized:`);
     this.log(`  - Developer Debug: ${this.developerDebugMode}`);
     this.log(`  - Experimental Smart-Adapt: ${this.experimentalSmartAdapt}`);
+    this.log(`  - Experimental Cloud Mirror: ${this.experimentalCloudMirror}`);
   }
 
   /**

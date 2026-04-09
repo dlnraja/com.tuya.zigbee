@@ -317,5 +317,16 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "wall_switch_4gang_1way_gang1_scene",
+        "title": {
+          "en": "Wall Switch 4gang 1way Gang1 Scene",
+          "fr": "Wall Switch 4gang 1way Gang1 Scene"
+        }
+      }
+    ]
+  }
 }

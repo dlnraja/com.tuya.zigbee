@@ -184,5 +184,23 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "remote_button_wireless_hybrid_rotate_left",
+        "title": {
+          "en": "Remote Button Wireless Hybrid Rotate Left",
+          "fr": "Remote Button Wireless Hybrid Rotate Left"
+        }
+      },
+      {
+        "id": "remote_button_wireless_hybrid_rotate_right",
+        "title": {
+          "en": "Remote Button Wireless Hybrid Rotate Right",
+          "fr": "Remote Button Wireless Hybrid Rotate Right"
+        }
+      }
+    ]
+  }
 }

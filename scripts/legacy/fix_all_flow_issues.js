@@ -6,7 +6,7 @@ const path = require('path');
 
 console.log('🔧 CORRECTION AUTOMATIQUE - TOUS LES BUGS FLOW CARDS\n');
 
-const ROOT = path.join(__dirname, '..');
+const ROOT = path.join(__dirname, '..', '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
 
 const auditReport = JSON.parse(fs.readFileSync(path.join(ROOT, 'FLOW_CARDS_AUDIT_REPORT.json'), 'utf8'));
@@ -41,9 +41,9 @@ function fixMissingRegistrations(driverName) {
   let content = fs.readFileSync(driverJsPath, 'utf8');
 
   // Vérifier si déjà enregistré
-  const hasRegistrations = content.includes('getDeviceTriggerCard') ||
-    content.includes('getDeviceConditionCard') ||
-    content.includes('getDeviceActionCard');
+  const hasRegistrations = content.includes('getTriggerCard') ||
+    content.includes('getConditionCard') ||
+    content.includes('getActionCard');
 
   if (hasRegistrations) {
     return 0; // Déjà partiellement enregistré, skip pour éviter duplications
@@ -84,7 +84,7 @@ function fixMissingRegistrations(driverName) {
   if (triggers.length > 0) {
     registrationCode.push('    // Register flow triggers');
     triggers.forEach(trigger => {
-      registrationCode.push(`    this._${trigger.id}Trigger = this.homey.flow.getDeviceTriggerCard('${trigger.id}');`);
+      registrationCode.push(`    this._${trigger.id}Trigger = this.homey.flow.getTriggerCard('${trigger.id}');`);
       stats.registrationsAdded++;
     });
     registrationCode.push('    ');
@@ -93,7 +93,7 @@ function fixMissingRegistrations(driverName) {
   if (conditions.length > 0) {
     registrationCode.push('    // Register flow conditions');
     conditions.forEach(condition => {
-      registrationCode.push(`    this._${condition.id}Condition = this.homey.flow.getDeviceConditionCard('${condition.id}');`);
+      registrationCode.push(`    this._${condition.id}Condition = this.homey.flow.getConditionCard('${condition.id}');`);
 
       // Générer runListener automatique
       const capability = extractCapabilityFromCondition(condition.id, compose.capabilities);
@@ -123,7 +123,7 @@ function fixMissingRegistrations(driverName) {
   if (actions.length > 0) {
     registrationCode.push('    // Register flow actions');
     actions.forEach(action => {
-      registrationCode.push(`    this._${action.id}Action = this.homey.flow.getDeviceActionCard('${action.id}');`);
+      registrationCode.push(`    this._${action.id}Action = this.homey.flow.getActionCard('${action.id}');`);
       registrationCode.push(`    this._${action.id}Action.registerRunListener(async (args) => {`);
       registrationCode.push(`      const { device } = args;`);
       registrationCode.push(`      // TODO: Implement action logic`);

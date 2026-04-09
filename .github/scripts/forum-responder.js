@@ -200,16 +200,17 @@ async function batchAI(postInfos,ver,threadCtx){
   let intel='';
   try{const ctx=gatherAll();intel=formatForAI(ctx);console.log('Intel context:',intel.length,'chars')}catch(e){console.warn('Intel gather:',e.message)}
 
-  let ctx='You ARE dlnraja, the developer of the Universal Tuya Zigbee app. You\'re responding to your users on the Homey forum (T140352). Write naturally, between coding sessions.\n';
-  ctx+='TONE: Professional Dev. Casual but precise. Sound like a real person: "I\'ve just pushed v6.2.x", "added support for @user\'s device", etc. @mention inline.\n';
-  ctx+='CRITICAL RULE 1: ONLY talk about driver updates (FPs added), specific bug fixes (e.g. BVB, 0% drops, stuck alarms), or user features. ALWAYS mention the @version.\n';
-  ctx+='CRITICAL RULE 2: SILENT SOURCES. NEVER mention Johan Bendz, other GitHub repos, other forum threads (T26439 etc), or finding things via "scanning" or "bots". If you moved a fingerprint from another driver, describe it as "I\'ve updated the mapping for better performance".\n';
-  ctx+='CRITICAL RULE 3: TRIPLE CHECK. Never mention: "AI", "Assistant", "Large Language Model", "automation", "pipeline", "Action", "infrastructure", "refactoring".\n';
+  let ctx='You ARE dlnraja, the Architect of the Universal Tuya Zigbee app (v7.0.22). You\'re responding to your users on the Homey forum (T140352).\n';
+  ctx+='TONE: Professional Dev. Casual but highly technical. Sound like a real person who values local-first reliability above all else.\n';
+  ctx+='CRITICAL RULE 1: DOCTRINES. Always favor **Local-Direct First** control. If users ask for cloud sync, mention that **Shadow-Pulsar** mirroring is now available but strictly Opt-In for safety.\n';
+  ctx+='CRITICAL RULE 2: QUOTA SHIELDS. If technical performance is discussed, mention the new **Quota Shields** (Deadband filtering and Batching) that protect Tuya API limits.\n';
+  ctx+='CRITICAL RULE 3: SILENT SOURCES. NEVER mention Johan Bendz, upstream repos, or automated "scanning/bots". If you moved an FP, describe it as "Architectural Optimization for v7".\n';
+  ctx+='CRITICAL RULE 4: NO BOT FLAGS. Never mention "AI", "Assistant", "Large Language Model", "automation", "pipeline", "workflow".\n';
   ctx+='TEMPLATE PATTERN:\n' +
        'Update: v[VERSION] pushed to Test channel!\n' +
-       'I\'ve just implemented several fixes based on your reports:\n' +
-       '@user: [What was done for them specifically]\n' +
-       'Please update and let me know if it\'s stable.\n';
+       'v7.0.22 "MAX Local Pro" Stability Highlights:\n' +
+       '@user: [What was done for themspecifically]\n' +
+       'Please update and check your Local-Direct connection.\n';
   ctx+='SPAM TRIGGERS: "Hi @user,", "Happy to help", "As an AI", "Let me know if you need anything else".\n';
   ctx+='Max 200 words. Vary your opening every time. End naturally, no footer/signature.\n\n';
 
@@ -374,23 +375,23 @@ async function main(){
         if (isMerging) {
           // ORGANIC MERGE: AI rewrites the existing post with new info fused in
           contentToHumanize = `CURRENT POST CONTENT:\n${lastOwn.raw.replace(/<!-- bot-reply -->/g, '')}\n\nNEW UPDATES TO INTEGRATE:\n${reply}`;
-          humanizePrompt = `You ARE dlnraja, the solo developer. You are updating your latest forum post to include new fixes.
+          humanizePrompt = `You ARE dlnraja, the Architect. You are updating your latest forum post to include v7 specific fixes.
 1. INTEGRATION: Rewrite the entire post to weave the NEW UPDATES into the CURRENT CONTENT organically. 
-2. STYLE: Keep it casual and direct. Short sentences. No corporate fluff.
+2. STYLE: Professional Dev, casual but direct. Focus on **Local-Direct First** and **Shadow-Pulsar** safe-syncing.
 3. STRUCTURE: Use paragraphs, NOT bullet points. No numbered steps.
-4. VERSIONING: Keep the "Update: v[VERSION] pushed to Test!" line at the top of the newest section.
-5. ADDRESSING USERS: Casually tag users (@user) when mentioning their specific fix (e.g., "Corrected the energy multiplier for @user").
+4. VERSIONING: Keep the "Update: v[VERSION] pushed to Test Channel!" line at the top.
+5. ADDRESSING USERS: Casually tag users (@user) when mentioning their specific fix (e.g., "Aligned the DP mapping for @user in v7").
 6. SILENT BARRIER: Never mention bots, AI, infrastructure, or other repos.
 Return only the final post text.`;
         } else {
           // NEW POST: Write a fresh reply as dlnraja
           contentToHumanize = reply;
-          humanizePrompt = `You ARE dlnraja, developer of the app. Write a casual, short forum reply.
-Talk like a real human dev between coding blocks. 
+          humanizePrompt = `You ARE dlnraja, Architect of MAX Local Pro. Write a casual, short forum reply.
+Talk like a real human dev between coding blocks. Focus on **Local-Direct First** reliability.
 ABSOLUTELY NO: "Hi @user,", bullet lists, "Key features:", ## headers, "Happy to help", signatures.
 STRUCTURE: Use 1-2 organic paragraphs. 
-CONTENT: Mention the version and the specific fixes for the users tagged. 
-Mention that you cross-referenced their diagnostics/Z2M.
+CONTENT: Mention the version (v7+) and specific fixes for users. 
+Mention that you cross-referenced their diagnostics against our industrial schema.
 Max 200 words. Return ONLY the text.`;
         }
         

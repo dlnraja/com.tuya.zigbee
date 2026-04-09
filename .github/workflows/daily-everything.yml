@@ -156,14 +156,16 @@ jobs:
           SCAN_FORKS: "true"
         run: node .github/scripts/triage-upstream-enhanced.js
 
-      # ===== 3ba. UNIVERSAL STABILITY: Manifest relaxation & normalization =====
-      - name: "3ba. Universal Stability Norms (Relaxed + Caseless)"
-        id: stability_norms
+      # ===== 3ba. UNIVERSAL STABILITY & NEXUS ORCHESTRATION (v7.0.21) =====
+      - name: "3ba. Nexus Orchestrator (Triage + Self-Heal + Audit)"
+        id: nexus
         continue-on-error: true
         run: |
-          echo "=== Relaxing clusters for Tuya MCU devices ==="
+          echo "=== 🧠 Launching Nexus Orchestrator v2.0 ==="
+          node scripts/maintenance/autonomous-maintenance-orchestrator.js
+          
+          echo "=== 🛡️ Stability Normalization (Clusters + Case) ==="
           node scripts/automation/relax-manifest-clusters.js || true
-          echo "=== Normalizing case for all fingerprints ==="
           node scripts/automation/manifest-caseless-processor.js || true
 
       # ===== 3bb. GITHUB: Parallel Bot Cleanup (Fast resolution) =====
@@ -285,29 +287,28 @@ jobs:
           # Rules: Bizarree Value Blocking coverage for all drivers
           node scripts/automation/bvb-impact-report.js || true
 
+          echo "=== 🛡️ Rule 21 Compliance: Flow Interoperability ==="
+          # Rules: Multi-gang filters based on capabilities instead of driver_ids
+          node scripts/maintenance/rule-21-linter.js
+
           echo "=== 🛡️ Universal Stability Audit (v7.0.x) ==="
           # Rules: Inheritance check, Safe Flow Card usage, Physical Button Hardening
           node scripts/maintenance/stability-audit.js || true
 
-      # ===== 6b. UNIVERSAL TRIAGE: IA-less Device Classification =====
-      - name: "6b. Universal Triage Engine (Rule-Based Fallback)"
-        id: triage_engine
-        continue-on-error: true
-        run: |
-          echo "=== 🕵️ Running IA-less Device Triage (SOS + Plug + Sensor) ==="
-          # This script uses DeviceFingerprintDB.js (Static Rules)
-          node scripts/maintenance/triage-engine.js --auto-add || true
+          echo "=== 🛡️ Rule 28: Composite Identity & Wildcard Broadening (Thinking Opus 4.6) ==="
+          node scripts/automation/fingerprint-broadener.js || true
+          
+          echo "=== 🛡️ Legacy Flow Card Automatic Fixer (v1.0.0) ==="
+          if [ -f FLOW_CARDS_AUDIT_REPORT.json ]; then
+            node scripts/legacy/fix_all_flow_issues.js || true
+          else
+            echo "ℹ️ No audit report found, running standalone Flow audit first"
+            node scripts/analysis/audit_all_flow_cards.js || true
+            node scripts/legacy/fix_all_flow_issues.js || true
+          fi
 
-      # ===== 6c. WIFI HEALTH: Cloudless-First Protocol Check =====
-      - name: "6c. WiFi Protocol & Auto-Healing Audit"
-        continue-on-error: true
-        run: |
-          echo "=== 🌐 Checking WiFi Driver Coherence ==="
-          # Ensures all WiFi drivers use TuyaLocalClient with autoHealing: true
-          grep -l "TuyaLocalDevice" drivers/*/device.js | xargs grep -L "autoHealing" || echo "✅ All WiFi drivers are Auto-Heal ready"
-
-      # ===== 6d. GITHUB: SMART PR/ISSUE SCAN (AI if available, else Rule-based) =====
-      - name: "6d. GitHub Issue & Fingerprint Research"
+      # ===== 6b. GITHUB: SMART PR/ISSUE SCAN (AI if available, else Rule-based) =====
+      - name: "6b. GitHub Issue & Fingerprint Research"
         id: gh_research
         continue-on-error: true
         timeout-minutes: 20
@@ -320,6 +321,32 @@ jobs:
           else
             echo "⚠️ AI Offline: Using Rule-Based classification (via triage-engine.js)"
             node .github/scripts/scan-prs-issues.js
+          fi
+
+      # ===== 6c. WIFI HEALTH: Cloudless-First Protocol Check =====
+      - name: "6c. WiFi Protocol & Auto-Healing Audit"
+        continue-on-error: true
+        run: |
+          echo "=== 🌐 Checking WiFi Driver Coherence ==="
+          # Ensures all WiFi drivers use TuyaLocalClient with autoHealing: true
+          grep -l "TuyaLocalDevice" drivers/*/device.js | xargs grep -L "autoHealing" || echo "✅ All WiFi drivers are Auto-Heal ready"
+
+      # ===== 6d. ARCHITECTURAL HEALTH CHECK (Deep Thinking Level 99) =====
+      - name: "6d. v99 Architectural Health Check"
+        id: health_check
+        continue-on-error: true
+        run: |
+          echo "=== 🏆 Verifying Zero-Defect Architectural Gate ==="
+          # Check for manager casing regressions
+          grep -r "_tuyaEF00Manager" drivers/ --exclude-dir=node_modules && (echo "❌ Regression Detected: Legacy casing found!" && exit 1) || echo "✅ No legacy casing regressions."
+          
+          # Check for inheritance gaps
+          node scripts/maintenance/triage-engine.js --report-only
+          
+          echo "=== 🧊 Cloudless Fallback Governance ==="
+          echo "Pipeline Mode: ${{ env.PIPELINE_MODE }}"
+          if [ "${{ env.PIPELINE_MODE }}" = "RULE_BASED" ]; then
+            echo "✅ Governance: Pure Local Rule-Based (IA-less) execution confirmed."
           fi
 
 
@@ -501,6 +528,14 @@ jobs:
         env:
           FORK_DEPTH: "3"
         run: node .github/scripts/deep-fork-integrator.js
+
+      - name: "10b1. Autonomous Intel Harvester"
+        id: intel_harvester
+        continue-on-error: true
+        timeout-minutes: 15
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: node scripts/maintenance/autonomous-intel-harvester.js
 
       - name: "10b2. Legacy Fork FPs (fallback)"
         id: impl_fork_fps

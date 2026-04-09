@@ -68,7 +68,7 @@ const ENERGY_DEVICE_CONFIGS = {
       '_TZ3000_zloso4jk', '_TZ3000_5f43h46b', '_TZ3000_cehuw1lw',
       '_TZ3000_g5xawfcq', '_TZ3000_hdopuwv6', '_TZ3000_mraovvmm',
       '_TZ3000_ga5shatp', '_TZ3000_ss98ec5d', '_TZ3000_uwkja6z1', '_TZ3000_yujkchbz',
-      '_TZ3000_wzmuk9ai', // Issue #197: Smart Plug current correction
+      '_TZ3000_wzmuk9ai', '_TZ3000_oxv67pno',
       '_TZ3210_xzhnra8x',  // v5.11.17: Reports in Watts/Volts (divisor 1)
       'SONOFF', 'Sonoff',  // Sonoff S60ZBTPF/S60ZBTPG/S60ZBTPE
       'Zbeacon', 'zbeacon',

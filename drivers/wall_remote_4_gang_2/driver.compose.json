@@ -135,5 +135,16 @@
         "de": "Batterie"
       }
     }
+  },
+  "flow": {
+    "triggers": [
+      {
+        "id": "wall_remote_4_gang_buttons_2",
+        "title": {
+          "en": "Wall Remote 4 Gang Buttons 2",
+          "fr": "Wall Remote 4 Gang Buttons 2"
+        }
+      }
+    ]
   }
 }

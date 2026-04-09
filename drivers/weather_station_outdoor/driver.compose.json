@@ -134,5 +134,37 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "weather_station_outdoor_outdoor_temperature_changed",
+        "title": {
+          "en": "Weather Station Outdoor Outdoor Temperature Changed",
+          "fr": "Weather Station Outdoor Outdoor Temperature Changed"
+        }
+      },
+      {
+        "id": "weather_station_outdoor_outdoor_humidity_changed",
+        "title": {
+          "en": "Weather Station Outdoor Outdoor Humidity Changed",
+          "fr": "Weather Station Outdoor Outdoor Humidity Changed"
+        }
+      },
+      {
+        "id": "weather_station_outdoor_pressure_changed",
+        "title": {
+          "en": "Weather Station Outdoor Pressure Changed",
+          "fr": "Weather Station Outdoor Pressure Changed"
+        }
+      },
+      {
+        "id": "weather_station_outdoor_battery_low",
+        "title": {
+          "en": "Weather Station Outdoor Battery Low",
+          "fr": "Weather Station Outdoor Battery Low"
+        }
+      }
+    ]
+  }
 }

@@ -407,5 +407,16 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "curtain_motor_wall_hybrid_button_pressed",
+        "title": {
+          "en": "Curtain Motor Wall Hybrid Button Pressed",
+          "fr": "Curtain Motor Wall Hybrid Button Pressed"
+        }
+      }
+    ]
+  }
 }

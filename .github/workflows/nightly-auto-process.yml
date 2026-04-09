@@ -54,11 +54,23 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
 
+      - name: "0a. Intelligence Mode Selector (Cloudless-First)"
+        id: intelligence_selector
+        run: |
+          if [ -n "${{ secrets.GOOGLE_API_KEY }}" ] || [ -n "${{ secrets.OPENAI_API_KEY }}" ] || [ -n "${{ secrets.OPENROUTER_API_KEY }}" ]; then
+            echo "PIPELINE_MODE=AI_ORCHESTRATED" >> $GITHUB_ENV
+            echo "::notice::Pipeline intelligence: AI_ORCHESTRATED (Cloud enabled)"
+          else
+            echo "PIPELINE_MODE=RULE_BASED" >> $GITHUB_ENV
+            echo "::warning::Pipeline intelligence: RULE_BASED (Cloudless-First fallback active)"
+          fi
+
       - name: Run Nightly Processor
         continue-on-error: true
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PIPELINE_MODE: ${{ env.PIPELINE_MODE }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           # Optional AI fallbacks (MISTRAL, DEEPSEEK, GROQ) — see .github/SECRETS.md

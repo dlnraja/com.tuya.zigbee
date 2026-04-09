@@ -1,156 +1,138 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <title>Tuya WiFi Discovery</title>
+  <!-- Standard Homey SDK 3 Pairing Script -->
+  <script src="/homey.js" data-origin="pair"></script>
   <style>
+    :root {
+      --primary: #00a870;
+      --primary-dark: #008f5d;
+      --bg: #f8fafc;
+      --text: #334155;
+      --text-muted: #64748b;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
     * { box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      padding: 14px;
-      color: #333;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      padding: 16px;
+      color: var(--text);
       margin: 0;
-      font-size: 13px;
-      line-height: 1.4;
+      font-size: 14px;
+      line-height: 1.5;
+      background: var(--bg);
+      -webkit-user-select: none;
     }
-    h2 { margin: 0 0 2px; font-size: 17px; }
-    .sub { color: #666; font-size: 11px; margin: 0 0 10px; }
+    .tuya-setup-container { max-width: 500px; margin: 0 auto; }
+    header { text-align: center; margin-bottom: 20px; }
+    h2 { margin: 0 0 4px; font-size: 20px; font-weight: 700; color: #1e293b; }
+    .sub { color: var(--text-muted); font-size: 13px; margin: 0; }
     
-    /* Tabs Navigation */
     .tabs-nav {
       display: flex;
-      border-bottom: 2px solid #eee;
-      margin-bottom: 12px;
+      background: #e2e8f0;
+      padding: 4px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      gap: 4px;
       overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
     }
+    .tabs-nav::-webkit-scrollbar { display: none; }
     .tab-btn {
+      flex: 1;
       padding: 8px 12px;
       cursor: pointer;
       font-size: 11px;
       font-weight: 600;
-      color: #888;
+      color: #64748b;
       border: none;
       background: none;
-      border-bottom: 2px solid transparent;
-      margin-bottom: -2px;
+      border-radius: 8px;
       white-space: nowrap;
       transition: all 0.2s;
     }
-    .tab-btn.active {
-      color: #00a870;
-      border-bottom-color: #00a870;
-    }
+    .tab-btn.active { color: #1e293b; background: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
     
-    /* Tab Panes */
-    .tab-pane { display: none; }
-    .tab-pane.active { display: block; }
+    .tab-pane { display: none; margin-top: 10px; }
+    .tab-pane.active { display: block; animation: fadeIn 0.3s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
     
-    .fg { margin-bottom: 10px; }
-    label { display: block; font-weight: 600; margin-bottom: 2px; font-size: 11px; }
-    .hint { font-size: 10px; color: #888; margin-top: 1px; }
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 20px; box-shadow: var(--shadow); margin-bottom: 16px; }
+    .card-title { font-weight: 700; font-size: 15px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    
+    .fg { margin-bottom: 12px; }
+    label { display: block; font-weight: 600; margin-bottom: 4px; font-size: 11px; color: #475569; text-transform: uppercase; }
     
     input, select {
       width: 100%;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 12px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 14px;
       background: #fff;
     }
-    input:focus, select:focus {
-      border-color: #00a870;
-      outline: none;
-      box-shadow: 0 0 0 2px rgba(0, 168, 112, 0.15);
-    }
-    
-    .row { display: flex; gap: 8px; }
-    .row > * { flex: 1; }
+    input:focus, select:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 0 3px rgba(0, 168, 112, 0.1); }
     
     .btn-action {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 6px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      margin-top: 8px;
-      background: #00a870;
-      color: #fff;
-      transition: background 0.2s;
+      display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+      padding: 12px; border: none; border-radius: 10px; font-size: 14px; font-weight: 700;
+      cursor: pointer; background: var(--primary); color: #fff; transition: all 0.2s;
     }
-    .btn-action:hover { background: #009060; }
-    .btn-action:disabled { background: #ccc; cursor: not-allowed; }
+    .btn-action:hover { background: var(--primary-dark); transform: translateY(-1px); }
+    .btn-action:disabled { background: #cbd5e1; cursor: not-allowed; }
     
-    .err { color: #e74c3c; font-size: 11px; display: none; margin-top: 8px; padding: 8px; background: #fef2f2; border-radius: 5px; border: 1px solid #fee2e2; }
-    .ok { color: #00a870; font-size: 11px; display: none; margin-top: 8px; padding: 8px; background: #f0faf5; border-radius: 5px; border: 1px solid #dcfce7; }
-    
-    .alert { padding: 8px; border-radius: 5px; margin-bottom: 10px; font-size: 11px; }
-    .alert-info { background: #f0f9ff; color: #0369a1; border: 1px solid #e0f2fe; }
-    
-    .box { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 6px; padding: 10px; margin-bottom: 12px; font-size: 11px; }
-    .box b { color: #111; }
-    .box ol { margin: 5px 0 0; padding-left: 18px; }
-    
-    #qrcode {
-      background: #fff;
-      padding: 10px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      margin: 15px auto;
-      width: 200px;
-      height: 200px;
+    .qr-container { text-align: center; margin: 20px 0; min-height: 240px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    #qr-image {
+      background: #fff; padding: 15px; border-radius: 16px; border: 1px solid var(--border);
+      width: 220px; height: 220px; display: none; margin: 0 auto;
     }
-    #qrcode img { width: 100%; height: auto; }
+    #qr-image img { width: 100%; height: auto; image-rendering: pixelated; }
+    
+    .btn-app-link {
+      display: none; height: 48px;
+      background: linear-gradient(135deg, #FF5A05 0%, #FF2F00 100%);
+      color: white; margin-top: 15px; text-decoration: none; border: none;
+      border-radius: 12px; font-weight: 700; width: 100%; cursor: pointer;
+    }
+    
+    .err { color: #dc2626; font-size: 12px; display: none; margin-top: 12px; padding: 12px; background: #fee2e2; border-radius: 10px; border: 1px solid #fecaca; }
+    .ok { color: var(--primary-dark); font-size: 12px; display: none; margin-top: 12px; padding: 12px; background: #dcfce7; border-radius: 10px; border: 1px solid #bbf7d0; }
     
     .sp {
-      display: inline-block;
-      width: 14px;
-      height: 14px;
-      border: 2px solid rgba(255,255,255,0.3);
-      border-top-color: #fff;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-      vertical-align: middle;
-      margin-right: 6px;
+      width: 32px; height: 32px; border: 4px solid rgba(0, 168, 112, 0.1);
+      border-top-color: var(--primary); border-radius: 50%; animation: spin 0.8s linear infinite;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
-    
-    .instruction { text-align: center; color: #666; margin: 10px 0; font-size: 12px; }
-    
-    details { margin-top: 8px; cursor: pointer; }
-    details summary { font-weight: 600; color: #00a870; outline: none; }
-    
-    .qr-status { text-align: center; font-style: italic; color: #888; font-size: 10px; margin-top: 5px; }
-
   </style>
-  <script src="/homey/assets/js/qrcode.min.js"></script>
 </head>
 <body>
   <div class="tuya-setup-container">
-    <h2>Tuya WiFi Setup</h2>
-    <p class="sub">100% local control after initial key retrieval</p>
+    <header>
+      <h2>Tuya WiFi Discovery</h2>
+      <p class="sub">MAX Local v7.0 • Zero-Latency Control</p>
+    </header>
 
     <nav class="tabs-nav">
       <button class="tab-btn active" data-tab="auto">Auto Link</button>
       <button class="tab-btn" data-tab="easy">Easy Login</button>
       <button class="tab-btn" data-tab="smartlife">Smart Life</button>
-      <button class="tab-btn" data-tab="iot">IoT Platform</button>
+      <button class="tab-btn" data-tab="iot">IoT Cloud</button>
       <button class="tab-btn" data-tab="manual">Manual</button>
     </nav>
 
     <div class="tabs-content">
       
-      <!-- TAB: Auto Link -->
+      <!-- TAB 1: Auto Link -->
       <div id="tab-auto" class="tab-pane active">
-        <div class="box">
-          <b>Fastest method</b> - Link directly via mobile app scan or button.
-        </div>
-        
-        <div id="view-web">
-          <p class="instruction">Scan with <strong>Smart Life</strong> or <strong>Tuya</strong> app<br><small>(Profile > Scan icon top right)</small></p>
-          <div class="fg" style="max-width: 200px; margin: 0 auto 10px;">
-            <label>Data Center Region</label>
+        <div class="card">
+          <div class="card-title">🚀 Fast Pairing</div>
+          <p style="font-size:12px; color:var(--text-muted); margin-bottom:15px;">Retrieve keys automatically by scanning or clicking the button.</p>
+          <div class="fg"><label>Region</label>
             <select id="auto_reg" onchange="generateToken(true)">
               <option value="eu">Europe (EU)</option>
               <option value="us">Americas (US)</option>
@@ -158,184 +140,243 @@
               <option value="in">India (IN)</option>
             </select>
           </div>
-          <div id="qrcode"></div>
-          <div class="qr-status" id="qr-status">Waiting for code...</div>
+          <div class="qr-container">
+            <div id="qr-image"></div>
+            <div id="qr-placeholder" style="display:flex; flex-direction:column; align-items:center;">
+               <div class="sp"></div>
+               <div style="font-size:11px; margin-top:12px; color:#64748b;">Generating QR Code...</div>
+            </div>
+            <div class="qr-status" id="qr-status" style="margin-top:10px; font-size:12px;">Waiting for Homey...</div>
+          </div>
+          <button class="btn-app-link" id="btn-app-link" onclick="openTuyaApp()">📱 Open in Smart Life / Tuya</button>
         </div>
-        
-        <div id="view-mobile" style="display:none;">
-          <p class="instruction">Tap the button to open Smart Life and authorize Homey.</p>
-          <button class="btn-action" onclick="openTuyaApp()">📱 Open Smart Life / Tuya</button>
-          <p class="qr-status">Return here after authorizing in the app.</p>
-        </div>
-        
-        <div class="err" id="auto-err"></div>
-        <div class="ok" id="auto-ok"></div>
+        <div class="err" id="auto-err"></div><div class="ok" id="auto-ok"></div>
       </div>
 
-      <!-- TAB: Easy Login -->
+      <!-- TAB 2: Easy Login -->
       <div id="tab-easy" class="tab-pane">
-        <div class="box">
-          <b>App Login</b> - Enter your Smart Life / Tuya credentials.
-          <details>
-            <summary>Why Country Code?</summary>
-            Used to route to the correct data center (33=FR, 31=NL, 1=US, 44=UK).
-          </details>
+        <div class="card">
+          <div class="card-title">📧 Simple Login</div>
+          <p style="font-size:12px; color:var(--text-muted);">Login with your app credentials to fetch all device keys.</p>
+          <div class="fg"><label>Email</label><input type="email" id="easy_em" placeholder="your@email.com"></div>
+          <div class="fg"><label>Password</label><input type="password" id="easy_pw" placeholder="App password"></div>
+          <div class="fg"><label>Country Code</label><input type="text" id="easy_cc" value="33" placeholder="e.g. 33 for France"></div>
+          <button class="btn-action" id="btn-easy" onclick="doEasy()">🌀 Connect Account</button>
         </div>
-        <div class="fg"><label>Email</label><input type="email" id="easy_email" placeholder="your@email.com"></div>
-        <div class="fg"><label>Password</label><input type="password" id="easy_pw" placeholder="App password"></div>
-        <div class="row">
-          <div class="fg"><label>Country Code</label><input type="text" id="easy_cc" value="33"></div>
-          <div class="fg"><label>App</label><select id="easy_app"><option value="smartlife">Smart Life</option><option value="tuyaSmart">Tuya Smart</option></select></div>
-        </div>
-        <button class="btn-action" id="btn-easy" onclick="doEasy()">Connect & Scan</button>
-        <div class="err" id="easy-err"></div>
-        <div class="ok" id="easy-ok"></div>
+        <div class="err" id="easy-err"></div><div class="ok" id="easy-ok"></div>
       </div>
 
-      <!-- TAB: Smart Life (Legacy/Full) -->
+      <!-- TAB 3: Smart Life Registry -->
       <div id="tab-smartlife" class="tab-pane">
-        <div class="box"><b>Cloud Login</b> - Full credentials for advanced users.</div>
-        <div class="row">
-          <div class="fg"><label>Access ID</label><input type="text" id="sl_aid"></div>
-          <div class="fg"><label>Access Secret</label><input type="password" id="sl_as"></div>
+        <div class="card">
+          <div class="card-title">☁️ Account Sync</div>
+          <p style="font-size:12px; color:var(--text-muted);">Full account synchronization for many devices.</p>
+          <div class="fg"><label>Registry Email</label><input type="email" id="reg_em"></div>
+          <div class="fg"><label>Registry Password</label><input type="password" id="reg_pw"></div>
+          <button class="btn-action" onclick="doSync('smartlife')">🌀 Sync All Devices</button>
         </div>
-        <div class="row">
-          <div class="fg"><label>Region</label><select id="sl_reg"><option value="eu">Europe</option><option value="us">Americas</option><option value="cn">China</option></select></div>
-          <div class="fg"><label>Country Code</label><input type="text" id="sl_cc" value="33"></div>
-        </div>
-        <button class="btn-action" id="btn-sl" onclick="doSmartLife()">Connect & Scan</button>
-        <div class="err" id="sl-err"></div>
-        <div class="ok" id="sl-ok"></div>
       </div>
 
-      <!-- TAB: IoT Platform -->
+      <!-- TAB 4: IoT Platform -->
       <div id="tab-iot" class="tab-pane">
-        <div class="box"><b>Direct IoT</b> - Use your Cloud Project credentials.</div>
-        <div class="fg"><label>Access ID</label><input type="text" id="iot_aid"></div>
-        <div class="fg"><label>Access Secret</label><input type="password" id="iot_as"></div>
-        <div class="fg"><label>Region</label><select id="iot_reg"><option value="eu">Europe</option><option value="us">Americas</option><option value="cn">China</option></select></div>
-        <button class="btn-action" id="btn-iot" onclick="doIoT()">Scan Devices</button>
-        <div class="err" id="iot-err"></div>
-        <div class="ok" id="iot-ok"></div>
+        <div class="card">
+          <div class="card-title">💻 Developer Platform</div>
+          <p style="font-size:12px; color:var(--text-muted);">Use Access ID and Client Secret from Tuya IoT Platform.</p>
+          <div class="fg"><label>Access ID</label><input type="text" id="iot_id"></div>
+          <div class="fg"><label>Access Secret</label><input type="password" id="iot_sec"></div>
+          <div class="fg"><label>Region</label>
+            <select id="iot_reg">
+              <option value="eu">Europe</option>
+              <option value="us">Americas</option>
+              <option value="cn">China</option>
+            </select>
+          </div>
+          <button class="btn-action" onclick="doSync('cloud')">🌀 Fetch from Platform</button>
+        </div>
       </div>
 
-      <!-- TAB: Manual -->
+      <!-- TAB 5: Manual Entry -->
       <div id="tab-manual" class="tab-pane">
-        <div class="box"><b>Manual Entry</b> - Enter credentials directly.</div>
-        <div class="fg"><label>Device ID</label><input type="text" id="m_did"></div>
-        <div class="fg"><label>Local Key</label><input type="text" id="m_lk"></div>
-        <div class="fg"><label>IP (Optional)</label><input type="text" id="m_ip"></div>
-        <div class="fg"><label>Protocol</label><select id="m_pv"><option value="3.3">3.3</option><option value="3.1">3.1</option><option value="3.4">3.4</option></select></div>
+        <div class="card">
+          <div class="card-title">🛠️ Manual Control</div>
+          <p style="font-size:12px; color:var(--text-muted);">Enter details for 100% offline local communication.</p>
+          <div class="fg"><label>Device ID</label><input type="text" id="m_did"></div>
+          <div class="fg"><label>Local Key</label><input type="text" id="m_lk"></div>
+          <div class="fg"><label>IP Address (Optional)</label><input type="text" id="m_ip" placeholder="192.168.1.X"></div>
+          <div class="fg"><label>Version</label>
+            <select id="m_pv">
+              <option value="3.3">3.3 (Standard)</option>
+              <option value="3.4">3.4 (Encrypted)</option>
+              <option value="3.5">3.5 (Newest)</option>
+            </select>
+          </div>
+        </div>
       </div>
 
     </div>
   </div>
 
   <script>
-    var H, done = false;
+    var done = false; 
+    var pairingToken = '';
     var pollInterval;
+    var qrGenerated = false;
+    var pollAttempts = 0;
     
-    // Tab switching
+    // Switch tabs
     document.querySelectorAll('.tab-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.tab-btn, .tab-pane').forEach(el => el.classList.remove('active'));
         btn.classList.add('active');
         document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
-        if (btn.dataset.tab === 'auto' && !window.qrGenerated) generateToken();
+        if (btn.dataset.tab === 'auto' && !qrGenerated) generateToken();
       });
     });
 
-    function hide(id) { document.getElementById(id).style.display = 'none'; }
-    function show(id, msg) { var e = document.getElementById(id); e.innerHTML = msg; e.style.display = 'block'; }
-    function spin(id) { 
-      var b = document.getElementById(id); 
-      b.disabled = true; 
-      b.dataset.orig = b.innerHTML; 
-      b.innerHTML = '<span class="sp"></span>' + (b.dataset.tab === 'auto' ? 'Waiting...' : 'Connecting...'); 
+    function hide(id) { var e = document.getElementById(id); if(e) e.style.display = 'none'; }
+    function show(id, msg) { 
+      var e = document.getElementById(id); 
+      if(e) { 
+        if(msg) e.innerHTML = msg; 
+        e.style.display = 'block'; 
+      } 
     }
-    function unspin(id) { var b = document.getElementById(id); b.disabled = false; b.innerHTML = b.dataset.orig || 'Confirm'; }
+    
+    function generateToken(force = false) {
+      if (!window.Homey) return;
+      if (qrGenerated && !force) return;
+      qrGenerated = true;
+      pollAttempts = 0;
+      hide('auto-err'); 
+      show('qr-placeholder'); 
+      hide('qr-image'); 
+      hide('btn-app-link');
+      document.getElementById('qr-status').textContent = 'Requesting Token...';
 
-    async function generateToken(force = false) {
-      if (window.qrGenerated && !force) return;
-      window.qrGenerated = true;
-      hide('auto-err');
+      var reg = document.getElementById('auto_reg').value;
       
-      var reg = document.getElementById('auto_reg').value || 'eu';
-      var app = document.getElementById('easy_app').value || 'smartlife';
-
-      H.emit('login', { mode: 'smartlife_qr', region: reg, schema: app }, function(err, r) {
-        if (err) { show('auto-err', err.message || String(err)); return; }
-        
-        var token = r.qrCode;
-        var qrUrl = app + '://qrLogin?token=' + token;
-        window.pairingToken = token;
-        
-        // Show QR or Button
-        var isMobile = Homey.isMobile || /Android|iPhone|iPad/i.test(navigator.userAgent);
-        if (isMobile) {
-          document.getElementById('view-web').style.display = 'none';
-          document.getElementById('view-mobile').style.display = 'block';
-        } else {
-          document.getElementById('qrcode').innerHTML = '';
-          new QRCode(document.getElementById("qrcode"), { text: qrUrl, width: 200, height: 200, correctLevel: QRCode.CorrectLevel.H });
-          document.getElementById('qr-status').textContent = 'Code generated. Scan now.';
+      window.Homey.emit('login', { mode: 'smartlife_qr', region: reg, schema: 'smartlife' }, (err, r) => {
+        if (err) { 
+          qrGenerated = false;
+          hide('qr-placeholder'); 
+          show('auto-err', err.message || err); 
+          document.getElementById('qr-status').textContent = 'Error occurred.';
+          return; 
         }
         
-        startPolling();
+        pairingToken = r.qrCode;
+        if (r.localQrImage) {
+          hide('qr-placeholder');
+          var img = document.createElement('img'); 
+          img.src = r.localQrImage;
+          var c = document.getElementById('qr-image'); 
+          c.innerHTML = ''; 
+          c.appendChild(img);
+          show('qr-image');
+          show('btn-app-link'); 
+          document.getElementById('qr-status').textContent = 'Scan code to authorize.';
+          startPolling(2000); // Start with 2s interval
+        } else {
+          show('auto-err', 'Failed to generate QR image locally.');
+        }
       });
     }
 
     function openTuyaApp() {
-      var schema = document.getElementById('easy_app').value || 'smartlife';
-      var url = schema + '://qrLogin?token=' + window.pairingToken;
-      window.location.href = url;
+      if (pairingToken && window.Homey) {
+        var url = 'smartlife://qrLogin?token=' + pairingToken;
+        window.Homey.openURL(url);
+      }
     }
 
-    function startPolling() {
-      if (pollInterval) clearInterval(pollInterval);
-      pollInterval = setInterval(() => {
-        H.emit('poll_qr', {}, function(err, r) {
+    /**
+     * v7.0.22: Exponential Backoff Polling
+     * Prevents Tuya API Rate Limiting while keeping UI responsive
+     */
+    function startPolling(interval) {
+      if (pollInterval) clearTimeout(pollInterval);
+      if (pollAttempts > 15) { // Stop after ~1 minute of exponential waiting
+          document.getElementById('qr-status').textContent = 'Session expired. Please refresh.';
+          qrGenerated = false;
+          return;
+      }
+
+      pollInterval = setTimeout(() => {
+        if (done) return;
+        pollAttempts++;
+        window.Homey.emit('poll_qr', {}, (err, r) => {
           if (!err && r && r.count > 0) {
-            clearInterval(pollInterval);
             done = true;
-            show('auto-ok', '🎉 ' + r.count + ' devices found! Click Next to add them.');
-            document.getElementById('qr-status').textContent = 'Authenticated!';
+            show('auto-ok', '🎉 ' + r.count + ' devices found! Click Next.');
+            document.getElementById('qr-status').textContent = 'Authorization successful!';
+          } else {
+            // Successively increase wait time: 2s, 3s, 4.5s, 6.7s...
+            startPolling(Math.min(interval * 1.5, 30000));
           }
         });
-      }, 3000);
+      }, interval);
     }
 
     function doEasy() {
-      var em = document.getElementById('easy_email').value.trim();
+      var em = document.getElementById('easy_em').value.trim();
       var pw = document.getElementById('easy_pw').value.trim();
-      var cc = document.getElementById('easy_cc').value.trim();
-      var app = document.getElementById('easy_app').value;
-      hide('easy-err'); hide('easy-ok');
       if (!em || !pw) { show('easy-err', 'Missing credentials'); return; }
-      spin('btn-easy');
-      H.emit('login', { mode: 'simple', email: em, password: pw, countryCode: cc, schema: app }, function(err, r) {
-        unspin('btn-easy');
-        if (err) { show('easy-err', err.message); return; }
-        done = true; show('easy-ok', r.count + ' devices found!');
+      hide('easy-err'); hide('easy-ok');
+      document.getElementById('btn-easy').disabled = true;
+      document.getElementById('btn-easy').textContent = '🌀 Searching Cloud...';
+
+      window.Homey.emit('login', { mode: 'simple', email: em, password: pw }, (err, r) => {
+        document.getElementById('btn-easy').disabled = false;
+        document.getElementById('btn-easy').textContent = '🌀 Connect Account';
+        if (err) { show('easy-err', err.message || err); return; }
+        done = true; 
+        show('easy-ok', 'Sync complete: ' + (r.count || 0) + ' devices found! Click Next.');
       });
     }
 
-    function onHomeyReady(Homey) {
-      H = Homey;
-      Homey.ready();
-      // Start with Auto Link token generation
-      generateToken();
-      
-      Homey.on('nextView', function() {
-        if (done) return;
-        var tab = document.querySelector('.tab-btn.active').dataset.tab;
-        if (tab !== 'manual') return;
-        var did = document.getElementById('m_did').value.trim();
-        var lk = document.getElementById('m_lk').value.trim();
-        if (!did || !lk) return;
-        H.emit('configure', { device_id: did, local_key: lk, ip: document.getElementById('m_ip').value.trim(), protocol_version: document.getElementById('m_pv').value }, (err) => { if(!err) done = true; });
+    function doSync(mode) {
+      if (!window.Homey) return;
+      var data = { mode: mode };
+      if (mode === 'cloud') {
+        data.accessId = document.getElementById('iot_id').value;
+        data.accessSecret = document.getElementById('iot_sec').value;
+        data.region = document.getElementById('iot_reg').value;
+      }
+      window.Homey.emit('login', data, (err, r) => {
+        if (!err && r && r.count > 0) done = true;
       });
     }
+
+    // SDK 3 Standard Ready Event
+    if (window.Homey) {
+      window.Homey.on('ready', () => {
+        // v7.0.22: Context-Aware Routing (QR vs Deep Link)
+        if (window.Homey.isMobile) {
+            document.getElementById('qr-placeholder').style.display = 'none';
+            document.getElementById('qr-status').textContent = 'Open the Tuya app to link.';
+            show('btn-app-link'); 
+        } else {
+            generateToken();
+        }
+      });
+
+      // Handle 'Next' event from Homey UI
+      window.Homey.on('nextView', () => {
+          if (done) return;
+          var tab = document.querySelector('.tab-btn.active').dataset.tab;
+          if (tab === 'manual') {
+            window.Homey.emit('configure', { 
+              device_id: document.getElementById('m_did').value.trim(), 
+              local_key: document.getElementById('m_lk').value.trim(), 
+              ip: document.getElementById('m_ip').value.trim(), 
+              protocol_version: document.getElementById('m_pv').value 
+            }, (err) => { if(!err) done = true; });
+          }
+      });
+    } else {
+       console.error('Homey script not loaded or blocked by CSP');
+    }
+
   </script>
 </body>
 </html>

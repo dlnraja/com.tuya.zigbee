@@ -411,5 +411,16 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "curtain_motor_shutter_hybrid_button_pressed",
+        "title": {
+          "en": "Curtain Motor Shutter Hybrid Button Pressed",
+          "fr": "Curtain Motor Shutter Hybrid Button Pressed"
+        }
+      }
+    ]
+  }
 }

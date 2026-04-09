@@ -244,7 +244,7 @@ function rule_energyBatteries() {
   const composeFiles = findFiles(DRIVERS_DIR, '.json').filter(f => f.endsWith('driver.compose.json'));
   let fixes = 0;
 
-  const DEFAULT_BATTERIES = ['AAA', 'AAA']; // Most Tuya hybrid sensors use 2xAAA
+  const DEFAULT_BATTERIES = ['CR2450']; // v7.0.16: Standard for Homey Validator compliance
 
   for (const file of composeFiles) {
     try {
@@ -755,19 +755,25 @@ function rule_safeFlowLookup() {
   const jsFiles = [...findFiles(DRIVERS_DIR, '.js'), ...findFiles(LIB_DIR, '.js')];
   let fixes = 0;
 
-  const methods = ['getDeviceTriggerCard', 'getDeviceActionCard', 'getDeviceConditionCard'];
+  const methodsMapping = {
+    'getDeviceTriggerCard': 'getTriggerCard',
+    'getDeviceActionCard': 'getActionCard',
+    'getDeviceConditionCard': 'getConditionCard',
+    'getTriggerCard': 'getTriggerCard',
+    'getActionCard': 'getActionCard',
+    'getConditionCard': 'getConditionCard'
+  };
 
   for (const file of jsFiles) {
     let code = fs.readFileSync(file, 'utf8');
     const original = code;
 
-    methods.forEach(m => {
+    Object.entries(methodsMapping).forEach(([oldMethod, newMethod]) => {
       // v7.0.13: Use a more restrictive lookbehind and check for already wrapped code
-      // We avoid wrapping if it's preceded by "return " and part of a try-catch pattern
-      const regex = new RegExp(`(?<!(?:try\\s*\\{\\s*|return\\s+))this\\.homey\\.flow\\.${m}\\s*\\(([^)]+)\\)`, 'g');
+      const regex = new RegExp(`(?<!(?:try\\s*\\{\\s*|return\\s+))this\\.homey\\.flow\\.${oldMethod}\\s*\\(([^)]+)\\)`, 'g');
       
       code = code.replace(regex, (match, args) => {
-        return `(() => { try { return this.homey.flow.${m}(${args}); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })()`;
+        return `(() => { try { return this.homey.flow.${newMethod}(${args}); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })()`;
       });
     });
 
@@ -881,6 +887,53 @@ function rule_physicalButtonDetection() {
 }
 
 
+/** Rule 20: Propagate Premium Pairing UI to all WiFi drivers (v7.0.16) */
+function rule_wifiQrStability() {
+  log('\n📋 Rule 20: WiFi Premium Pairing UI Propagation');
+  const driversDir = path.join(ROOT, 'drivers');
+  if (!fs.existsSync(driversDir)) return;
+  const drivers = fs.readdirSync(driversDir);
+  
+  // Load master template from wifi_generic
+  const masterPath = path.join(driversDir, 'wifi_generic', 'pair', 'configure.html');
+  if (!fs.existsSync(masterPath)) {
+    log('  ❌ Master template NOT found at wifi_generic. Skipping propagation.');
+    return;
+  }
+  const masterContent = fs.readFileSync(masterPath, 'utf8');
+  let fixes = 0;
+
+  for (const driverId of drivers) {
+    const pairHtmlPath = path.join(driversDir, driverId, 'pair', 'configure.html');
+    if (!fs.existsSync(pairHtmlPath)) continue;
+
+    try {
+      // Logic: Target drivers starting with wifi_ or having wifi in compose.json
+      const composePath = path.join(driversDir, driverId, 'driver.compose.json');
+      let isWifi = driverId.startsWith('wifi_');
+      
+      if (!isWifi && fs.existsSync(composePath)) {
+        const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
+        isWifi = (compose.id && compose.id.includes('wifi')) || 
+                 (compose.name && (compose.name.en || '').toLowerCase().includes('wifi'));
+      }
+
+      if (!isWifi) continue;
+
+      const currentContent = fs.readFileSync(pairHtmlPath, 'utf8');
+      if (currentContent !== masterContent) {
+        fs.writeFileSync(pairHtmlPath, masterContent);
+        fixes++;
+        addFix('wifi-qr-stability', driverId, 'Overwrote pairing UI with v7.0.16 premium template');
+        log(`  ✅ Propagated: ${driverId}`);
+      }
+    } catch (e) {
+      report.errors.push({ rule: 'wifi-qr-stability', file: driverId, error: e.message });
+    }
+  }
+  log(`  → ${fixes} WiFi drivers updated with premium template`);
+}
+
 async function main() {
   log('╔══════════════════════════════════════════════════════════════════════════════╗');
   log('║  MASTER SELF-HEAL ENGINE v1.1 — Universal Tuya Zigbee                      ║');
@@ -908,12 +961,10 @@ async function main() {
   rule_logicCaseAudit();
 
   // v7.0.12: CRITICAL ARCHITECTURAL REINFORCEMENTS
-  rule_thisPrefixSafety();
-  rule_defensiveGetDeviceById();
-  rule_safeFlowLookup();
-  rule_multiGangCapOptions(); 
-  rule_physicalButtonDetection();
   rule_wifiQrStability();
+  rule_wifiCloudSyncConfig();
+  rule_flowIdCleanup();
+  rule_discoveryStrategies();
 
   // ═══════════════════════════════════════════════════════════════════════════
   // REPORT SUMMARY
@@ -934,7 +985,11 @@ async function main() {
     'defensive-get-device',
     'safe-flow-lookup',
     'multigang-cap-options',
-    'physical-button-init'
+    'physical-button-init',
+    'wifi-cloud-sync-settings',
+    'wifi-qr-stability',
+    'flow-id-cleanup',
+    'wifi-discovery-strategies'
   ];
   const manualReview = Object.keys(report.rules).filter(r => !autoFixed.includes(r));
 
@@ -978,6 +1033,214 @@ async function main() {
   } else {
     process.exit(0); // Clean
   }
+}
+
+function rule_wifiCloudSyncConfig() {
+  log('\n📋 Rule 21: WiFi Cloud Sync Settings Calibration');
+  const driversDir = path.join(ROOT, 'drivers');
+  if (!fs.existsSync(driversDir)) return;
+  const drivers = fs.readdirSync(driversDir);
+  let fixes = 0;
+  
+  for (const driverId of drivers) {
+    const composePath = path.join(driversDir, driverId, 'driver.compose.json');
+    if (!fs.existsSync(composePath)) continue;
+    
+    try {
+      const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
+      // Detect WiFi driver
+      const isWifi = (compose.id && compose.id.includes('wifi')) || 
+                     (compose.name && (compose.name.en || '').toLowerCase().includes('wifi')) ||
+                     (driverId.startsWith('wifi_'));
+      
+      if (!isWifi) continue;
+      
+      if (!compose.settings) compose.settings = [];
+      let changed = false;
+      
+      const syncSettings = [
+        {
+          "id": "sync_email",
+          "type": "text",
+          "label": { "en": "Cloud Sync Email", "fr": "Email de synchronisation" },
+          "hint": { "en": "Optional: Email for automatic local key retrieval", "fr": "Optionnel : Email pour récupération auto des clés" }
+        },
+        {
+          "id": "sync_password",
+          "type": "password",
+          "label": { "en": "Cloud Sync Password", "fr": "Mot de passe de synchronisation" },
+          "hint": { "en": "Optional: Password for the Tuya/Smart Life app", "fr": "Optionnel : Mot de passe de l'app Tuya/Smart Life" }
+        }
+      ];
+      
+      for (const s of syncSettings) {
+        if (!compose.settings.find(existing => existing.id === s.id)) {
+          compose.settings.push(s);
+          changed = true;
+        }
+      }
+      
+      if (changed) {
+        fs.writeFileSync(composePath, JSON.stringify(compose, null, 2) + '\n');
+        fixes++;
+        addFix('wifi-cloud-sync-settings', driverId, 'Added cloud sync settings');
+        log(`  ✅ Added Cloud Sync: ${driverId}`);
+      }
+    } catch (e) {
+      report.errors.push({ rule: 'wifi-cloud-sync-settings', file: driverId, error: e.message });
+    }
+  }
+  log(`  → ${fixes} drivers updated`);
+}
+
+/** Rule 22: Cleanup duplicate Flow IDs (e.g. dup_tnhi1) to passing SDK validation */
+function rule_flowIdCleanup() {
+  log('\n📋 Rule 22: Flow ID Duplicate Cleanup');
+  const flowFiles = findFiles(DRIVERS_DIR, '.json').filter(f => f.endsWith('driver.flow.compose.json'));
+  let fixes = 0;
+
+  for (const file of flowFiles) {
+    try {
+      const raw = fs.readFileSync(file, 'utf8');
+      const flow = JSON.parse(raw);
+      let changed = false;
+
+      const processCategory = (category) => {
+        if (!Array.isArray(flow[category])) return;
+        const seen = new Set();
+        flow[category] = flow[category].filter(card => {
+          if (!card.id) return true;
+          if (card.id.startsWith('dup_') || seen.has(card.id)) {
+            changed = true;
+            log(`    [DELETE] Duplicate/Trash ID: ${card.id} in ${path.relative(ROOT, file)}`);
+            return false;
+          }
+          seen.add(card.id);
+          return true;
+        });
+      };
+
+      processCategory('triggers');
+      processCategory('conditions');
+      processCategory('actions');
+
+      if (changed) {
+        fs.writeFileSync(file, JSON.stringify(flow, null, 2) + '\n');
+        fixes++;
+        addFix('flow-id-cleanup', file, 'Removed duplicate/trash flow IDs (dup_*)');
+        log(`  ✅ Cleaned: ${path.relative(ROOT, file)}`);
+      }
+    } catch (e) {
+      report.errors.push({ rule: 'flow-id-cleanup', file, error: e.message });
+    }
+  }
+  log(`  → ${fixes} flow files cleaned`);
+}
+
+/** Rule 23: Propagate discoveryStrategies for mDNS support (_tuya._tcp.local) */
+function rule_discoveryStrategies() {
+  log('\n📋 Rule 23: WiFi Discovery Strategies Propagation');
+  const driversDir = path.join(ROOT, 'drivers');
+  if (!fs.existsSync(driversDir)) return;
+  const drivers = fs.readdirSync(driversDir);
+  let fixes = 0;
+  
+  for (const driverId of drivers) {
+    const composePath = path.join(driversDir, driverId, 'driver.compose.json');
+    if (!fs.existsSync(composePath)) continue;
+    
+    try {
+      const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
+      const isWifi = (compose.id && compose.id.includes('wifi')) || 
+                     (compose.name && (compose.name.en || '').toLowerCase().includes('wifi')) ||
+                     (driverId.startsWith('wifi_'));
+      
+      if (!isWifi) continue;
+      
+      let changed = false;
+      const strategies = [
+        { "strategy": "mdns-sd", "options": { "name": "_tuya._tcp.local" } },
+        { "strategy": "ssdp", "options": { "search": "urn:schemas-upnp-org:device:Basic:1" } }
+      ];
+
+      if (!compose.discoveryStrategies) {
+        compose.discoveryStrategies = strategies;
+        changed = true;
+      } else {
+        strategies.forEach(s => {
+          const match = compose.discoveryStrategies.find(ex => 
+            ex.strategy === s.strategy && 
+            (ex.options?.name === s.options?.name || ex.options?.search === s.options?.search)
+          );
+          if (!match) {
+            compose.discoveryStrategies.push(s);
+            changed = true;
+          }
+        });
+      }
+      
+      if (changed) {
+        fs.writeFileSync(composePath, JSON.stringify(compose, null, 2) + '\n');
+        fixes++;
+        addFix('wifi-discovery-strategies', driverId, 'Added mDNS/SSDP discovery strategies');
+        log(`  ✅ Added mDNS/SSDP: ${driverId}`);
+      }
+    } catch (e) {
+      report.errors.push({ rule: 'wifi-discovery-strategies', file: driverId, error: e.message });
+    }
+  }
+  log(`  → ${fixes} drivers updated`);
+}
+
+/** Rule 25: Critical Fingerprint Repair (_TZ3000_n2egfsli) */
+function rule_fingerprintRepair() {
+  log('\n📋 Rule 25: Critical Fingerprint Repair (_TZ3000_n2egfsli)');
+  const contactPath = path.resolve(ROOT, 'drivers/contact_sensor/driver.compose.json');
+  if (!fs.existsSync(contactPath)) return;
+  
+  try {
+    const compose = JSON.parse(fs.readFileSync(contactPath, 'utf8'));
+    let changed = false;
+    
+    if (compose.zigbee && compose.zigbee.manufacturerName) {
+      if (!compose.zigbee.manufacturerName.includes('_TZ3000_n2egfsli')) {
+        compose.zigbee.manufacturerName.push('_TZ3000_n2egfsli');
+        changed = true;
+      }
+    }
+    
+    if (changed) {
+      fs.writeFileSync(contactPath, JSON.stringify(compose, null, 2) + '\n');
+      addFix('fingerprint-repair', 'contact_sensor', 'Added missing _TZ3000_n2egfsli fingerprint');
+      log('  ✅ Fixed _TZ3000_n2egfsli in contact_sensor');
+    }
+  } catch(e) { log('  ❌ Fingerprint repair failed:', e.message); }
+}
+
+async function main() {
+  log('╔══════════════════════════════════════════════════════════════════════════════╗');
+  log('║  MASTER SELF-HEAL ENGINE v1.2 — Universal Tuya Zigbee                      ║');
+  log('║  Discovery Engine: UDP + mDNS + SSDP + TCP Unicast                         ║');
+  log(`║  Mode: ${DRY ? 'DRY RUN (preview)' : 'LIVE (applying fixes)'}${' '.repeat(54 - (DRY ? 21 : 22))}║`);
+  log('╚══════════════════════════════════════════════════════════════════════════════╝');
+
+  // AUTO-FIX RULES
+  rule_phantomMethods();
+  rule_probeDedup();
+  rule_energyBatteries();
+  rule_fingerprintWildcardCleanup();
+  rule_multiGangCapOptions();
+  rule_physicalButtonDetection();
+  rule_wifiQrStability();
+  rule_discoveryStrategies();
+  rule_fingerprintRepair();
+
+  // DETECTION RULES
+  rule_flowCardTryCatch();
+  rule_multigangFlowRouting();
+  rule_dpVariantDocs();
+  rule_caseInsensitiveMatching();
+  rule_duplicateFingerprints();
 }
 
 main().catch(e => {

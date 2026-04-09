@@ -608,5 +608,23 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "sensor_motion_presence_hybrid_presence_detected",
+        "title": {
+          "en": "Sensor Motion Presence Hybrid Presence Detected",
+          "fr": "Sensor Motion Presence Hybrid Presence Detected"
+        }
+      },
+      {
+        "id": "sensor_motion_presence_hybrid_presence_cleared",
+        "title": {
+          "en": "Sensor Motion Presence Hybrid Presence Cleared",
+          "fr": "Sensor Motion Presence Hybrid Presence Cleared"
+        }
+      }
+    ]
+  }
 }

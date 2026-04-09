@@ -1,0 +1,165 @@
+{
+  "timestamp": "2026-04-08T19:58:12.866Z",
+  "driversChecked": 304,
+  "collisions": [
+    {
+      "id": "_TZ3210_NCW88JFQ|TS0201",
+      "drivers": [
+        "air_purifier_climate_hybrid",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3210_NCW88JFQ|TS0601",
+      "drivers": [
+        "air_purifier_climate_hybrid",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3210_NCW88JFQ|RH3052",
+      "drivers": [
+        "air_purifier_climate_hybrid",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3210_NCW88JFQ|TS0222",
+      "drivers": [
+        "air_purifier_climate_hybrid",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3210_NCW88JFQ|TY0201",
+      "drivers": [
+        "air_purifier_climate_hybrid",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_AQNAZJ70|*",
+      "drivers": [
+        "air_purifier_din_hybrid",
+        "device_air_purifier_din_hybrid"
+      ]
+    },
+    {
+      "id": "_TZE200_TTCOVULF|*",
+      "drivers": [
+        "air_purifier_sensor_hybrid",
+        "sensor_motion_radar_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3210_NCW88JFQ|CK-TLSR8656-SS5-01(7014)",
+      "drivers": [
+        "climate_sensor",
+        "sensor_climate_temphumidsensor_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3210_NCW88JFQ|ZG-227Z",
+      "drivers": [
+        "climate_sensor",
+        "sensor_climate_temphumidsensor_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_WPTAYAQR|*",
+      "drivers": [
+        "contact_sensor_curtain_hybrid",
+        "curtain_motor_wall_hybrid",
+        "wall_curtain_switch"
+      ]
+    },
+    {
+      "id": "EWELINK|S26R2ZB",
+      "drivers": [
+        "device_plug_energy_monitor_hybrid",
+        "plug_energy_monitor"
+      ]
+    },
+    {
+      "id": "EWELINK|S31 LITE ZB",
+      "drivers": [
+        "device_plug_energy_monitor_hybrid",
+        "plug_energy_monitor"
+      ]
+    },
+    {
+      "id": "EWELINK|S40LITE",
+      "drivers": [
+        "device_plug_energy_monitor_hybrid",
+        "plug_energy_monitor"
+      ]
+    },
+    {
+      "id": "EWELINK|S60ZBTPF",
+      "drivers": [
+        "device_plug_energy_monitor_hybrid",
+        "plug_energy_monitor"
+      ]
+    },
+    {
+      "id": "EWELINK|S60ZBTPG",
+      "drivers": [
+        "device_plug_energy_monitor_hybrid",
+        "plug_energy_monitor"
+      ]
+    },
+    {
+      "id": "EWELINK|TS011F",
+      "drivers": [
+        "device_plug_energy_monitor_hybrid",
+        "plug_energy_monitor"
+      ]
+    },
+    {
+      "id": "EWELINK|S31ZB",
+      "drivers": [
+        "device_plug_energy_monitor_hybrid",
+        "plug_energy_monitor"
+      ]
+    },
+    {
+      "id": "EWELINK|ZBMINIL2",
+      "drivers": [
+        "device_plug_energy_monitor_hybrid",
+        "plug_energy_monitor"
+      ]
+    },
+    {
+      "id": "EWELINK|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "sensor_climate_contact_hybrid"
+      ]
+    },
+    {
+      "id": "_TYZB01_QM6DJPTA|*",
+      "drivers": [
+        "remote_button_emergency_sos_hybrid",
+        "smart_remote_4_buttons"
+      ]
+    },
+    {
+      "id": "HOBEIAN|*",
+      "drivers": [
+        "sensor_climate_presence_hybrid",
+        "sensor_contact_presence_hybrid"
+      ]
+    }
+  ],
+  "buttonLogicFailures": [],
+  "sdkDeprecations": [
+    "lib\\utils\\migration-queue.js:275: const device = await homey.drivers.getDevice({ id: deviceId });",
+    ".homeybuild\\lib\\utils\\migration-queue.js:267: const device = await homey.drivers.getDevice({ id: deviceId });",
+    "lib\\utils\\migration-queue.js:275: const device = await homey.drivers.getDevice({ id: deviceId });",
+    "scripts\\maintenance\\zero-defect-architect-audit.js:119: if (line.includes('drivers.getDevice(') || line.includes('drivers.getDeviceById(') || line.includes("
+  ],
+  "radarLogicCheck": [
+    "presence_sensor_ceiling: Missing hybrid base inheritance for radar."
+  ],
+  "errors": []
+}

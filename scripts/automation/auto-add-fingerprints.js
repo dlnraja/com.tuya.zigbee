@@ -56,7 +56,16 @@ function main() {
   // Add missing product IDs (only safe standard Tuya patterns)
   for (const p of (report.missingProductIds || [])) {
     if (!SAFE_PID.test(p.value)) { skipped++; continue; }
-    const driver = p.suggestedDriver || 'generic_diy';
+    
+    // Better driver suggestion for multi-gang switches
+    let driver = p.suggestedDriver;
+    if (!driver || driver === 'generic_diy') {
+      if (p.value === 'TS0002') driver = 'zigbee_2_gang_switch';
+      else if (p.value === 'TS0003') driver = 'zigbee_3_gang_switch';
+      else if (p.value === 'TS0004') driver = 'zigbee_4_gang_switch';
+      else driver = 'generic_diy';
+    }
+
     if (patchDriver(driver, 'productId', p.value)) {
       console.log('+ pid ' + p.value + ' -> ' + driver);
       added++;

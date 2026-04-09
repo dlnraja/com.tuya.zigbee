@@ -1,0 +1,199 @@
+{
+  "name": {
+    "en": "Remote Button Wireless Hybrid",
+    "nl": "Draadloze hybride afstandsbedieningsknop",
+    "fr": "Bouton de télécommande sans fil hybride",
+    "de": "Drahtlose Hybrid-Fernbedienungstaste",
+    "es": "Botón de control remoto inalámbrico híbrido"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "button.rotate_left",
+    "button.rotate_right",
+    "button.press",
+    "dim",
+    "measure_battery",
+    "button.1"
+  ],
+  "capabilitiesOptions": {
+    "button.rotate_left": {
+      "title": {
+        "en": "Rotate Left",
+        "fr": "Rotation Gauche",
+        "nl": "Draai Links",
+        "de": "Links drehen"
+      },
+      "getable": false,
+      "setable": false
+    },
+    "button.rotate_right": {
+      "title": {
+        "en": "Rotate Right",
+        "fr": "Rotation Droite",
+        "nl": "Draai Rechts",
+        "de": "Rechts drehen"
+      },
+      "getable": false,
+      "setable": false
+    },
+    "button.press": {
+      "title": {
+        "en": "Press",
+        "fr": "Appui",
+        "nl": "Druk",
+        "de": "Drücken"
+      },
+      "getable": false,
+      "setable": false
+    },
+    "dim": {
+      "title": {
+        "en": "Brightness Level",
+        "fr": "Niveau de Luminosité",
+        "nl": "Helderheidsniveau",
+        "de": "Helligkeitsstufe"
+      },
+      "setable": false,
+      "getable": true
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    },
+    "button.1": {
+      "title": {
+        "en": " 1"
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ],
+    "approximation": {
+      "usageConstant": 0.3
+    },
+    "mains": true
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZ3000_ABRSVSOU",
+      "_TZ3000_AN5RJIWD",
+      "_TZ3000_DKU2CFSC",
+      "_TZ3000_IXLA93VD",
+      "_TZ3000_JA5OSU5G",
+      "_TZ3000_QJA6NQ5Z",
+      "_TZ3000_RCO1YZB1",
+      "_TZ3000_URI7ONGN",
+      "_TZ3000_FA9MLVJA",
+      "_TZ3000_QGWCXXWS",
+      "_TZ3000_YJ6K7VFO",
+      "_TZ3000_OWGCNKRH",
+      "_TZ3000_TK3S5TYG",
+      "_TYZB02_KEY8KK7R",
+      "_TZ3000_A7OUGGVS",
+      "_TYZB02_KEYJHAPK",
+      "_TZ3000_5E235JPA",
+      "_TZ3000_H1C2EAMP",
+      "_TZ3000_OIKIYF3B",
+      "_TZ3000_QZJCSMAR",
+      "_TZ3000_RRJR1Q0U",
+      "_TZ3400_KEYJHAPK",
+      "_TZ3000_YIRP2PGD",
+      "_tz3000_abrsvsou",
+      "_tz3000_an5rjiwd",
+      "_tz3000_dku2cfsc",
+      "_tz3000_ixla93vd",
+      "_tz3000_ja5osu5g",
+      "_tz3000_qja6nq5z",
+      "_tz3000_rco1yzb1",
+      "_tz3000_uri7ongn",
+      "_tz3000_fa9mlvja",
+      "_tz3000_qgwcxxws",
+      "_tz3000_yj6k7vfo",
+      "_tz3000_owgcnkrh",
+      "_tz3000_tk3s5tyg",
+      "_tyzb02_key8kk7r",
+      "_tz3000_a7ouggvs",
+      "_tyzb02_keyjhapk",
+      "_tz3000_5e235jpa",
+      "_tz3000_h1c2eamp",
+      "_tz3000_oikiyf3b",
+      "_tz3000_qzjcsmar",
+      "_tz3000_rrjr1q0u",
+      "_tz3400_keyjhapk",
+      "_tz3000_yirp2pgd"
+    ],
+    "productId": [
+      "TS004F",
+      "ts004f",
+      "TS0041",
+      "ts0041",
+      "TS0043",
+      "ts0043",
+      "TS0044",
+      "ts0044",
+      "TS0046",
+      "ts0046",
+      "TS0042",
+      "ts0042"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          3,
+          4,
+          6,
+          8,
+          4096
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press and hold the button for 10 seconds until LED flashes rapidly, then release.\n\nNote: Some models require pressing the button 5 times quickly.",
+        "fr": "Appuyez et maintenez le bouton pendant 10 secondes jusqu'à ce que la LED clignote rapidement.\n\nRemarque: Certains modèles nécessitent d'appuyer 5 fois rapidement.",
+        "nl": "Houd de knop 10 seconden ingedrukt tot de LED snel knippert.\n\nOpmerking: Sommige modellen vereisen 5 keer snel drukken.",
+        "de": "Halten Sie die Taste 10 Sekunden gedrückt, bis die LED schnell blinkt.\n\nHinweis: Einige Modelle erfordern 5 schnelle Tastendrücke."
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/smart_knob_rotary/assets/images/small.png",
+    "large": "drivers/smart_knob_rotary/assets/images/large.png",
+    "xlarge": "drivers/smart_knob_rotary/assets/images/xlarge.png"
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "remote_button_wireless_hybrid_rotate_left",
+        "title": {
+          "en": "Remote Button Wireless Hybrid Rotate Left",
+          "fr": "Remote Button Wireless Hybrid Rotate Left"
+        }
+      }
+    ]
+  }
+}

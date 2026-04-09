@@ -86,5 +86,44 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "smart_knob_level_changed",
+        "title": {
+          "en": "Smart Knob Level Changed",
+          "fr": "Smart Knob Level Changed"
+        }
+      },
+      {
+        "id": "smart_knob_rotated",
+        "title": {
+          "en": "Smart Knob Rotated",
+          "fr": "Smart Knob Rotated"
+        }
+      },
+      {
+        "id": "smart_knob_rotated",
+        "title": {
+          "en": "Smart Knob Rotated",
+          "fr": "Smart Knob Rotated"
+        }
+      },
+      {
+        "id": "smart_knob_level_changed",
+        "title": {
+          "en": "Smart Knob Level Changed",
+          "fr": "Smart Knob Level Changed"
+        }
+      },
+      {
+        "id": "smart_knob_button_pressed",
+        "title": {
+          "en": "Smart Knob Button Pressed",
+          "fr": "Smart Knob Button Pressed"
+        }
+      }
+    ]
+  }
 }

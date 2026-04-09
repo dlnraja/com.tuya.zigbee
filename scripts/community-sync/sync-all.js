@@ -65,13 +65,13 @@ async function main() {
     enrichedFps: []  // v5.7.46: Full device details
   };
 
-  // Johan sync
+  // v7.0.22: Johan sync (INTERNAL ONLY - Silent Source Doctrine)
   try {
-    console.log('\n🔄 JohanBendz sync...');
+    console.log('\n🔄 JohanBendz sync (Silent)...');
     r.src.johan = require('./extract-johan')();
     if (r.src.johan.fingerprints) {
       r.src.johan.fingerprints.forEach(fp => {
-        const enriched = { ...fp, source: 'Johan', driver: fp.driver || inferDeviceType(fp.productId, fp.description) };
+        const enriched = { ...fp, source: 'Internal-Audit', driver: fp.driver || inferDeviceType(fp.productId, fp.description) };
         r.enrichedFps.push(enriched);
         if (!current.has(fp.mfr)) r.newFps.push(enriched);
       });

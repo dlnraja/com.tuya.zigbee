@@ -63,6 +63,30 @@
           "value": true
         }
       ]
+    },
+    {
+      "id": "sync_email",
+      "type": "text",
+      "label": {
+        "en": "Cloud Sync Email",
+        "fr": "Email de synchronisation"
+      },
+      "hint": {
+        "en": "Optional: Email for automatic local key retrieval",
+        "fr": "Optionnel : Email pour récupération auto des clés"
+      }
+    },
+    {
+      "id": "sync_password",
+      "type": "password",
+      "label": {
+        "en": "Cloud Sync Password",
+        "fr": "Mot de passe de synchronisation"
+      },
+      "hint": {
+        "en": "Optional: Password for the Tuya/Smart Life app",
+        "fr": "Optionnel : Mot de passe de l'app Tuya/Smart Life"
+      }
     }
   ],
   "platforms": [
@@ -94,6 +118,20 @@
         "en": "Check Zigbee OTA Update",
         "fr": "Vérifier MàJ OTA",
         "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "discoveryStrategies": [
+    {
+      "strategy": "mdns-sd",
+      "options": {
+        "name": "_tuya._tcp.local"
+      }
+    },
+    {
+      "strategy": "ssdp",
+      "options": {
+        "search": "urn:schemas-upnp-org:device:Basic:1"
       }
     }
   ]

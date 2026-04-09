@@ -612,5 +612,23 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "sensor_presence_radar_hybrid_presence_detected",
+        "title": {
+          "en": "Sensor Presence Radar Hybrid Presence Detected",
+          "fr": "Sensor Presence Radar Hybrid Presence Detected"
+        }
+      },
+      {
+        "id": "sensor_presence_radar_hybrid_presence_cleared",
+        "title": {
+          "en": "Sensor Presence Radar Hybrid Presence Cleared",
+          "fr": "Sensor Presence Radar Hybrid Presence Cleared"
+        }
+      }
+    ]
+  }
 }

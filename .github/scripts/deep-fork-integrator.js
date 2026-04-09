@@ -164,6 +164,17 @@ async function scanForkDeep(fork,local,results){
         results.dpFinds.push({driver:norm,fork:fork.full_name,missingDPs,srcDriver:drvName,
           codeSize:code.length,forkDPs:dpNums,ourDPs});
       }
+
+      // v7.0.22: Smarts Detection (Thinking Opus 4.6 Engine)
+      const intelMatch = code.match(/(calibration|offset|correction|retry|backoff|multiplier|divisor|scale|limit|protection|memory|inching)/gi);
+      if(intelMatch && intelMatch.length > 2){
+        const uniqueIntels = [...new Set(intelMatch.map(m => m.toLowerCase()))];
+        if(!results.innovationFinds) results.innovationFinds = [];
+        results.innovationFinds.push({
+          driver: norm, fork: fork.full_name, keywords: uniqueIntels, 
+          intelCount: intelMatch.length, file: dj.path
+        });
+      }
     }
 
     // Also scan non-default branches (up to 3)
@@ -305,12 +316,14 @@ async function main(){
     applied,
     newDriversFound:results.newDrivers.length,
     dpFindsCount:results.dpFinds.length,
+    innovationFindsCount: (results.innovationFinds || []).length,
     settingsFinds:results.settingsAdds.length,
     fpAddsTotal:results.fpAdds.length
   };
   saveJ(path.join(SD,'deep-fork-report.json'),report);
   saveJ(path.join(SD,'fork-new-drivers.json'),results.newDrivers);
   saveJ(path.join(SD,'fork-dp-finds.json'),results.dpFinds);
+  if(results.innovationFinds?.length) saveJ(path.join(SD,'fork-innovation-finds.json'),results.innovationFinds);
   if(results.settingsAdds.length)saveJ(path.join(SD,'fork-settings-finds.json'),results.settingsAdds);
 
   // Also save new-fork-fps.json for backward compat with implement-fork-fps.js

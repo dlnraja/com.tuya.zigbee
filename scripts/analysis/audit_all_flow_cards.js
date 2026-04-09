@@ -6,7 +6,7 @@ const path = require('path');
 
 console.log('🔍 AUDIT EXHAUSTIF FLOW CARDS - TOUS DRIVERS\n');
 
-const ROOT = path.join(__dirname, '..');
+const ROOT = path.join(__dirname, '..', '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
 
 const issues = {
@@ -66,7 +66,7 @@ function scanDriver(driverName) {
     // ═══════════════════════════════════════════════════════════════════════════
 
     triggers.forEach(trigger => {
-      const registrationPattern = `getDeviceTriggerCard('${trigger.id}')`;
+      const registrationPattern = `getTriggerCard('${trigger.id}')`;
       if (driverJs && !driverJs.includes(registrationPattern)) {
         result.issues.push({
           type: 'MISSING_REGISTRATION',
@@ -80,7 +80,7 @@ function scanDriver(driverName) {
     });
 
     conditions.forEach(condition => {
-      const registrationPattern = `getDeviceConditionCard('${condition.id}')`;
+      const registrationPattern = `getConditionCard('${condition.id}')`;
       if (driverJs && !driverJs.includes(registrationPattern)) {
         result.issues.push({
           type: 'MISSING_REGISTRATION',
@@ -107,7 +107,7 @@ function scanDriver(driverName) {
     });
 
     actions.forEach(action => {
-      const registrationPattern = `getDeviceActionCard('${action.id}')`;
+      const registrationPattern = `getActionCard('${action.id}')`;
       if (driverJs && !driverJs.includes(registrationPattern)) {
         result.issues.push({
           type: 'MISSING_REGISTRATION',
@@ -124,7 +124,7 @@ function scanDriver(driverName) {
     // CHECK 2: Triggers appelés dans device.js mais non définis
     // ═══════════════════════════════════════════════════════════════════════════
 
-    const triggerMatches = deviceJs.match(/getDeviceTriggerCard\('([^']+)'\)/g);
+    const triggerMatches = deviceJs.match(/getTriggerCard\('([^']+)'\)/g);
     if (triggerMatches) {
       triggerMatches.forEach(match => {
         const triggerId = match.match(/'([^']+)'/)[1];
@@ -147,7 +147,7 @@ function scanDriver(driverName) {
     // ═══════════════════════════════════════════════════════════════════════════
 
     triggers.forEach(trigger => {
-      const triggerPattern = `getDeviceTriggerCard('${trigger.id}')`;
+      const triggerPattern = `getTriggerCard('${trigger.id}')`;
       if (deviceJs && !deviceJs.includes(triggerPattern)) {
         result.issues.push({
           type: 'DEFINED_NOT_TRIGGERED',

@@ -8,7 +8,7 @@ const{investigate:investigateBug}=require('./bug-investigator');
 const{detectFromGitHub,buildPromptContext,getResponseHints}=require('./user-profile-detector');
 let _researchEngine=null;
 function getResearch(){if(_researchEngine)return _researchEngine;try{_researchEngine=require('./fp-research-engine')}catch{_researchEngine=null}return _researchEngine}
-const REPOS=(process.env.REPOS||'dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee').split(',').map(s=>s.trim());
+const REPOS=(process.env.REPOS||'dlnraja/com.tuya.zigbee').split(',').map(s=>s.trim());
 const OWN=REPOS[0];
 const DRY=process.env.DRY_RUN==='true';
 const GH='https://api.github.com';
@@ -47,11 +47,8 @@ async function crossPostForum(msg){
 
 // Cross-post to other GitHub repo
 async function crossPostGH(fromRepo,issueNum,msg,report){
-  const target=fromRepo===OWN?'JohanBendz/com.tuya.zigbee':OWN;
-  const searchUrl='/search/issues?q=repo:'+target+'+'+encodeURIComponent(msg.slice(0,30));
-  // Don't create duplicate - just log
-  report.crossPosts=(report.crossPosts||0)+1;
-  console.log('    Cross-ref: '+target+' (from '+fromRepo+'#'+issueNum+')');
+  // v7.0.22: Disabled cross-post to legacy upstream
+  return;
 }
 
 function loadState(){try{return JSON.parse(fs.readFileSync(STATE_F,'utf8'))}catch{return{processed:[],closed:[],labeled:[],lastRun:null}}}
@@ -93,11 +90,9 @@ async function generateResponse(issue,fpResults,classification,variants,bugs,ima
     forumUrl:'https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352',
     devTools:'https://tools.developer.homey.app',githubUrl:'https://github.com/dlnraja/com.tuya.zigbee',
     referenceDocs: ['docs/rules/DEVELOPMENT_RULES.md', 'docs/rules/CRITICAL_MISTAKES.md', 'https://apps.developer.homey.app/']};
-  const isUpstream=repo&&repo!==OWN;
-  let prompt='You are Dylan, French dev of Universal Tuya Zigbee (v'+appVer+'). Write a short GitHub comment. Casual tone, say "I" naturally ("I added", "I\'ll check"). ABSOLUTE RULE: What a user reports is truth — never contradict their observations, always investigate. Consult Homey SDK docs and local docs for technical advice. IMPORTANT KNOWLEDGE 1: Tuya manufacturers mix energy types (mains/battery/kinetic/hybrid) under the same IDs. Devices now use an adaptive UnifiedBatteryHandler at runtime — DO NOT suggest removing power caps manually. We adapt automatically! IMPORTANT KNOWLEDGE 2: If a bug fix is related to multi-gang bindings, capabilities, sub-devices, or flow cards, you MUST instruct the user to completely DELETE their device, RE-PAIR it, and RE-CREATE their flow cards (Homey permanently caches capabilities at pairing!). If missing sensor readings (fertilizer, EC, VOC), ask for app logs showing DP numbers. Max 200 words. NO bot/automated/AI/scanning/pipeline/workflow references, NO signature footer. Just stop when done.';
-  if(isUpstream)prompt+='\nCRITICAL: This issue is on the JohanBendz/com.tuya.zigbee upstream repo. You MUST clearly redirect the user to our actively maintained fork at [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee). Explain this fork supports way more devices than upstream. ALWAYS include the test install link: '+ctx.installUrl+' and community forum: '+ctx.forumUrl+'. Tell the user to install, then remove and re-pair their device. Report any issues on the forum thread or the dlnraja GitHub repo.';
+  let prompt='You are Dylan, the Architect of Universal Tuya Zigbee "MAX Local Pro" (v'+appVer+'). Write a professional GitHub comment. Casual tone, say "I" naturally. ABSOLUTE RULE: What a user reports is truth — never contradict their observations, always investigate. Consult Homey SDK docs and local docs for technical advice. \n\n**v7 PRO-TIPS**:\n1. **Doctrine**: We are 100% **Local-Direct First**. \n2. **Shadow-Pulsar**: If cloud sync is asked, mention the safe opt-in mirroring.\n3. **SDK 3 Compliance**: All drivers are built to Athom industrial standards. \n4. **Multi-Gang**: If sub-device issues, user MUST delete and re-pair (Dot-Notation cache issue).\n5. **Logs**: If missing EC/VOC/Fertilizer data, ask for app logs for DP extraction.\n\nNO bot/automated/AI/scanning/pipeline/workflow references, NO signature footer.';
   let profileCtx='';try{const det=detectFromGitHub(issue.user?.login||'',issue.body||'');profileCtx=buildPromptContext(det)}catch{}
-  prompt+='\\n'+profileCtx+'Context: '+JSON.stringify(ctx);
+  prompt+='\n'+profileCtx+'Context: '+JSON.stringify(ctx);
   let text='Issue: '+issue.title+'\nBy: @'+(issue.user?.login||'?')+'\nBody: '+(issue.body||'').slice(0,2000)+'\nFP results: '+JSON.stringify(fpResults)+'\nClassification: '+JSON.stringify(classification)+'\nVariants from Z2M/ZHA/Blakadder: '+JSON.stringify(variants||[])+'\nAssociated bugs: '+JSON.stringify(bugs||[]);
   if(bugFindings&&bugFindings.length)text+='\nBug investigation findings: '+JSON.stringify(bugFindings.map(b=>({fp:b.fp,driver:b.driver,findings:b.findings,divisors:b.divisors})));
   if(researchResults&&researchResults.length)text+='\nFP Research results: '+JSON.stringify(researchResults.map(r=>({fp:r.fp,driver:r.driver,pid:r.pid,confidence:r.confidence,method:r.method,vendor:r.vendor,deviceType:r.deviceType})));
@@ -123,10 +118,10 @@ function buildFastResponse(issue,fpResults,repo,allSupported){if(hasUserSymptoms
   if(allSupported&&fpResults.length){
     const driverList=fpResults.map(f=>'`'+f.fp+'` → **'+f.drivers.join(', ')+'**').join(', ');
     if(det.isReturning&&det.pending)msg+='Update: '+det.pending.note+'\n\n';
-    msg+='Fingerprint(s) found in v'+appVer+': '+driverList+'.\n\n';
-    msg+='Install the latest test version: https://homey.app/a/com.dlnraja.tuya.zigbee/test/\nRemove and re-pair your device after installing.\n\n';
-    msg+='**If the device still shows as unknown or doesn\'t work**, share a diagnostic report ID and a Developer Tools interview — we will investigate and fix it.';
-    if(isUp)msg+='\n\nForum: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352';
+    msg+='The fingerprint(s) listed above are officially supported in the **v7.0 MAX Local Pro** build.\n\n';
+    msg+='**Action Required**:\n1. Install the latest test version: https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n2. **Remove and re-pair** your device (required to bind the new v7 architectural mixins).\n\n';
+    msg+='If the device still behaves unexpectedly, please share a diagnostic report ID and a Developer Tools interview. We prioritize local-first stability.';
+    if(isUp)msg+='\n\nMaintained Fork: https://github.com/dlnraja/com.tuya.zigbee';
     return msg;
   }
   return null;

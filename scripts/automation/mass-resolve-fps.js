@@ -106,10 +106,10 @@ function main() {
     } catch (e) { console.error('Error reading pr-scan:', e.message); }
   }
 
-  // 2. Process _upstream_new_fps.json
+  // v7.0.22: Upstream processing (Silent Source Doctrine)
   const upstreamFile = path.join(SDIR, '_upstream_new_fps.json');
   if (fs.existsSync(upstreamFile)) {
-    console.log('Processing _upstream_new_fps.json...');
+    console.log('Processing Internal-Audit sync...');
     try {
       const upData = JSON.parse(fs.readFileSync(upstreamFile, 'utf8'));
       for (const item of upData) {
@@ -121,7 +121,7 @@ function main() {
         
         if (drv && addFP(mfr, drv, drivers, mfrIdx)) totalAdded++;
       }
-    } catch (e) { console.error('Error reading upstream-new-fps:', e.message); }
+    } catch (e) { console.error('Error reading internal-sync:', e.message); }
   }
 
   // 3. Process _fork_new_fps.json

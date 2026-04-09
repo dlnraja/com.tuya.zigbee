@@ -80,5 +80,16 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "air_purifier_motion_hybrid_air_purifier_pm25_changed",
+        "title": {
+          "en": "Air Purifier Motion Hybrid Air Purifier Pm25 Changed",
+          "fr": "Air Purifier Motion Hybrid Air Purifier Pm25 Changed"
+        }
+      }
+    ]
+  }
 }

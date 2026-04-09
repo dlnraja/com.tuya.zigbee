@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-04-08T13:41:06.939Z",
+  "timestamp": "2026-04-08T14:49:10.575Z",
   "totalFiles": 0,
-  "totalFixes": 3050,
+  "totalFixes": 3099,
   "rules": {
     "multigang-flow-routing": {
       "count": 1,
@@ -12225,6 +12225,207 @@
         {
           "file": "lib\\diagnostics\\DeviceHealth.js",
           "detail": "Suspected case-sensitive comparison of manufacturerName"
+        }
+      ]
+    },
+    "wifi-qr-stability": {
+      "count": 49,
+      "files": [
+        {
+          "file": "wifi_air_purifier",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_air_quality",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_camera",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_cover",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_dehumidifier",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_dimmer",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_doorbell",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_door_lock",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_ewelink_bulb",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_ewelink_dimmer",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_ewelink_fan",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_ewelink_led",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_ewelink_plug",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_ewelink_pow",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_ewelink_switch",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_ewelink_switch_2ch",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_ewelink_switch_4ch",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_ewelink_th",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_fan",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_garage_door",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_heater",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_humidifier",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_ir_remote",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_led_strip",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_light",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_pet_feeder",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_plug",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_power_strip",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_robot_vacuum",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_sensor",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_siren",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_sonoff_basicr4",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_sonoff_dualr3",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_sonoff_micro",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_sonoff_minir3",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_sonoff_minir4",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_sonoff_pow_elite",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_sonoff_smate2",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_sonoff_thr316d",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_sonoff_tx_1ch",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_sonoff_tx_2ch",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_sonoff_tx_3ch",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_switch",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_switch_2gang",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_switch_3gang",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_switch_4gang",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_thermostat",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_water_tank_monitor",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
+        },
+        {
+          "file": "wifi_water_valve",
+          "detail": "Overwrote pairing UI with v7.0.16 premium template"
         }
       ]
     }
