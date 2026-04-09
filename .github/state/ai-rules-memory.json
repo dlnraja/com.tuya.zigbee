@@ -4,9 +4,9 @@
       "id": "sdk3-await-capability",
       "desc": "setCapabilityValue() calls should be awaited.",
       "severity": "info",
-      "count": 32,
+      "count": 43,
       "firstSeen": "2026-04-04T17:57:49.240Z",
-      "lastSeen": "2026-04-08T03:58:58.750Z",
+      "lastSeen": "2026-04-09T03:57:07.506Z",
       "files": [
         "air_purifier",
         "air_quality_co2",
@@ -41,9 +41,9 @@
       "id": "sdk3-battery-conflict",
       "desc": "NEVER combine measure_battery + alarm_battery. SDK v3 creates duplicate UI/Flow Cards. Use runtime adaptation via UnifiedBatteryHandler.",
       "severity": "error",
-      "count": 110,
+      "count": 111,
       "firstSeen": "2026-04-04T21:17:00.000Z",
-      "lastSeen": "2026-04-08T03:58:58.743Z",
+      "lastSeen": "2026-04-09T03:57:07.498Z",
       "files": [
         "RESOLVED: 108 drivers had both caps, reverted to measure_battery only",
         "air_purifier_siren_hybrid"
@@ -53,9 +53,9 @@
       "id": "sdk3-flow-card-unsafe",
       "desc": "Bare getDeviceTriggerCard/getDeviceConditionCard/getDeviceActionCard crashes app if card missing in app.json. ALWAYS use try-catch.",
       "severity": "error",
-      "count": 31,
+      "count": 32,
       "firstSeen": "2026-04-04T17:46:00.000Z",
-      "lastSeen": "2026-04-08T03:58:58.748Z",
+      "lastSeen": "2026-04-09T03:57:07.496Z",
       "files": [
         "RESOLVED: 23+ drivers wrapped in try-catch by fix-unsafe-flow-cards.js",
         "air_purifier",
@@ -126,9 +126,9 @@
       "id": "sdk3-trigger-card-no-try",
       "desc": "getDeviceTriggerCard() called without try-catch. Missing cards will crash the app.",
       "severity": "warn",
-      "count": 8,
+      "count": 9,
       "firstSeen": "2026-04-05T22:20:34.324Z",
-      "lastSeen": "2026-04-08T03:58:58.748Z",
+      "lastSeen": "2026-04-09T03:57:07.496Z",
       "files": [
         "air_purifier",
         "air_purifier_climate_hybrid",
@@ -143,9 +143,9 @@
       "id": "sdk3-case-sensitive-fingerprint",
       "desc": "Fingerprint in enrichment data uses UPPERCASE (e.g., _TZE200_PAY2BYAX). Tuya fingerprints must be lowercase to match correctly.",
       "severity": "warn",
-      "count": 23,
+      "count": 33,
       "firstSeen": "2026-04-05T22:20:34.331Z",
-      "lastSeen": "2026-04-08T03:58:58.750Z",
+      "lastSeen": "2026-04-09T03:57:07.506Z",
       "files": [
         "air_quality_co2",
         "air_quality_comprehensive",
@@ -191,9 +191,9 @@
       "id": "sdk3-mains-has-battery",
       "desc": "Device has mainsPowered=true but compose still declares battery capability. Runtime handler will fix, but compose is misleading.",
       "severity": "warn",
-      "count": 7,
+      "count": 10,
       "firstSeen": "2026-04-05T22:20:34.336Z",
-      "lastSeen": "2026-04-08T03:58:58.748Z",
+      "lastSeen": "2026-04-09T03:57:07.503Z",
       "files": [
         "air_quality_comprehensive",
         "ceiling_fan",
@@ -218,15 +218,15 @@
       "id": "sdk3-dp-variant-awareness",
       "desc": "DP mapping has no variant-awareness comment. Same DP can serve different functions across _TZE200/_TZE204/_TZE284 variants. Consider adding variant notes.",
       "severity": "info",
-      "count": 2,
+      "count": 3,
       "firstSeen": "2026-04-07T03:58:16.630Z",
-      "lastSeen": "2026-04-08T03:58:58.742Z",
+      "lastSeen": "2026-04-09T03:57:07.497Z",
       "files": [
         "air_purifier_sensor_hybrid"
       ]
     }
   ],
-  "lastRun": "2026-04-08T03:58:58.721Z",
-  "totalRuns": 9,
-  "totalIssues": 227
+  "lastRun": "2026-04-09T03:57:07.470Z",
+  "totalRuns": 10,
+  "totalIssues": 255
 }

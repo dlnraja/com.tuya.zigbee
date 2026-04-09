@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-04-08T04:08:36.740Z",
+  "timestamp": "2026-04-09T04:06:44.544Z",
   "driversScanned": 20,
-  "staticIssues": 41,
-  "autoFixed": 1,
+  "staticIssues": 28,
+  "autoFixed": 0,
   "aiSuggestions": 0,
   "aiApplied": 0,
   "dryRun": false,
@@ -11,18 +11,14 @@
       "driver": "air_purifier",
       "issues": [
         "sdk3-await-capability",
-        "sdk3-flow-card-unsafe",
-        "sdk3-case-sensitive-fingerprint",
-        "sdk3-trigger-card-no-try"
+        "sdk3-case-sensitive-fingerprint"
       ]
     },
     {
       "driver": "air_purifier_climate_hybrid",
       "issues": [
         "sdk3-await-capability",
-        "sdk3-flow-card-unsafe",
-        "sdk3-case-sensitive-fingerprint",
-        "sdk3-trigger-card-no-try"
+        "sdk3-case-sensitive-fingerprint"
       ]
     },
     {
@@ -31,10 +27,7 @@
     },
     {
       "driver": "air_purifier_dimmer_hybrid",
-      "issues": [
-        "sdk3-flow-card-unsafe",
-        "sdk3-trigger-card-no-try"
-      ]
+      "issues": []
     },
     {
       "driver": "air_purifier_din_hybrid",
@@ -46,17 +39,13 @@
     {
       "driver": "air_purifier_lcdtemphumidsensor_hybrid",
       "issues": [
-        "sdk3-await-capability",
-        "sdk3-flow-card-unsafe",
-        "sdk3-trigger-card-no-try"
+        "sdk3-await-capability"
       ]
     },
     {
       "driver": "air_purifier_motion_hybrid",
       "issues": [
-        "sdk3-await-capability",
-        "sdk3-flow-card-unsafe",
-        "sdk3-trigger-card-no-try"
+        "sdk3-await-capability"
       ]
     },
     {
@@ -64,8 +53,7 @@
       "issues": [
         "sdk3-await-capability",
         "sdk3-flow-card-unsafe",
-        "sdk3-trigger-card-no-try",
-        "tuya-climate-safe-set"
+        "sdk3-trigger-card-no-try"
       ]
     },
     {
@@ -122,10 +110,8 @@
       "driver": "blaster_remote_hybrid",
       "issues": [
         "sdk3-await-capability",
-        "sdk3-flow-card-unsafe",
         "sdk3-mains-has-battery",
-        "sdk3-case-sensitive-fingerprint",
-        "sdk3-trigger-card-no-try"
+        "sdk3-case-sensitive-fingerprint"
       ]
     },
     {
