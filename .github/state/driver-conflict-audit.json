@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-09T03:08:52.358Z",
+  "timestamp": "2026-04-09T08:30:34.418Z",
   "pidConflicts": [
     {
       "pid": "TS004F",
@@ -1037,172 +1037,7 @@
       "severity": "low"
     }
   ],
-  "mfrConflicts": [
-    {
-      "mfr": "_TZ3400_KEYJHAPK",
-      "drivers": [
-        "button_wireless",
-        "remote_button_wireless_hybrid"
-      ],
-      "sharedPids": [
-        "SNZB-01",
-        "SNZB-01M",
-        "SNZB-01P",
-        "snzb-01",
-        "snzb-01m",
-        "snzb-01p"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_tz3400_keyjhapk",
-      "drivers": [
-        "button_wireless",
-        "remote_button_wireless_hybrid"
-      ],
-      "sharedPids": [
-        "SNZB-01",
-        "SNZB-01M",
-        "SNZB-01P",
-        "snzb-01",
-        "snzb-01m",
-        "snzb-01p"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TZ3000_PLYVNUF5",
-      "drivers": [
-        "button_wireless_plug_hybrid",
-        "device_plug_energy_hybrid"
-      ],
-      "sharedPids": [
-        "TS011F",
-        "ts011f"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TZ3210_7JNK7L3K",
-      "drivers": [
-        "button_wireless_plug_hybrid",
-        "device_plug_energy_hybrid"
-      ],
-      "sharedPids": [
-        "TS011F",
-        "ts011f"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_tz3000_plyvnuf5",
-      "drivers": [
-        "button_wireless_plug_hybrid",
-        "device_plug_energy_hybrid"
-      ],
-      "sharedPids": [
-        "TS011F",
-        "ts011f"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_tz3210_7jnk7l3k",
-      "drivers": [
-        "button_wireless_plug_hybrid",
-        "device_plug_energy_hybrid"
-      ],
-      "sharedPids": [
-        "TS011F",
-        "ts011f"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TZ3000_ABRSVSOU",
-      "drivers": [
-        "remote_button_wireless_hybrid",
-        "remote_button_wireless_smart_hybrid"
-      ],
-      "sharedPids": [
-        "TS004F",
-        "ts004f",
-        "TS0041",
-        "ts0041"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TZ3000_QJA6NQ5Z",
-      "drivers": [
-        "remote_button_wireless_hybrid",
-        "remote_button_wireless_smart_hybrid"
-      ],
-      "sharedPids": [
-        "TS004F",
-        "ts004f",
-        "TS0041",
-        "ts0041"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TZ3000_URI7ONGN",
-      "drivers": [
-        "remote_button_wireless_hybrid",
-        "remote_button_wireless_smart_hybrid"
-      ],
-      "sharedPids": [
-        "TS004F",
-        "ts004f",
-        "TS0041",
-        "ts0041"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_tz3000_abrsvsou",
-      "drivers": [
-        "remote_button_wireless_hybrid",
-        "remote_button_wireless_smart_hybrid"
-      ],
-      "sharedPids": [
-        "TS004F",
-        "ts004f",
-        "TS0041",
-        "ts0041"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_tz3000_qja6nq5z",
-      "drivers": [
-        "remote_button_wireless_hybrid",
-        "remote_button_wireless_smart_hybrid"
-      ],
-      "sharedPids": [
-        "TS004F",
-        "ts004f",
-        "TS0041",
-        "ts0041"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_tz3000_uri7ongn",
-      "drivers": [
-        "remote_button_wireless_hybrid",
-        "remote_button_wireless_smart_hybrid"
-      ],
-      "sharedPids": [
-        "TS004F",
-        "ts004f",
-        "TS0041",
-        "ts0041"
-      ],
-      "risk": "high"
-    }
-  ],
+  "mfrConflicts": [],
   "caseCollisions": [
     {
       "norm": "_tz2000_avdnvykf",
@@ -2484,18 +2319,6 @@
       "risk": "medium"
     },
     {
-      "norm": "_tz3400_keyjhapk",
-      "variants": [
-        "_TZ3400_KEYJHAPK",
-        "_tz3400_keyjhapk"
-      ],
-      "drivers": [
-        "button_wireless",
-        "remote_button_wireless_hybrid"
-      ],
-      "risk": "medium"
-    },
-    {
       "norm": "_tyzb02_keyjqthh",
       "variants": [
         "_TYZB02_KEYJQTHH",
@@ -3070,30 +2893,6 @@
       "drivers": [
         "button_wireless_4",
         "ir_blaster"
-      ],
-      "risk": "medium"
-    },
-    {
-      "norm": "_tz3000_plyvnuf5",
-      "variants": [
-        "_TZ3000_PLYVNUF5",
-        "_tz3000_plyvnuf5"
-      ],
-      "drivers": [
-        "button_wireless_plug_hybrid",
-        "device_plug_energy_hybrid"
-      ],
-      "risk": "medium"
-    },
-    {
-      "norm": "_tz3210_7jnk7l3k",
-      "variants": [
-        "_TZ3210_7JNK7L3K",
-        "_tz3210_7jnk7l3k"
-      ],
-      "drivers": [
-        "button_wireless_plug_hybrid",
-        "device_plug_energy_hybrid"
       ],
       "risk": "medium"
     },
@@ -3678,18 +3477,6 @@
       "risk": "medium"
     },
     {
-      "norm": "_tz3000_abrsvsou",
-      "variants": [
-        "_TZ3000_ABRSVSOU",
-        "_tz3000_abrsvsou"
-      ],
-      "drivers": [
-        "remote_button_wireless_hybrid",
-        "remote_button_wireless_smart_hybrid"
-      ],
-      "risk": "medium"
-    },
-    {
       "norm": "_tz3000_dku2cfsc",
       "variants": [
         "_TZ3000_DKU2CFSC",
@@ -3702,19 +3489,6 @@
       "risk": "medium"
     },
     {
-      "norm": "_tz3000_ixla93vd",
-      "variants": [
-        "_TZ3000_IXLA93VD",
-        "_tz3000_ixla93vd"
-      ],
-      "drivers": [
-        "remote_button_wireless_hybrid",
-        "remote_button_wireless_smart_hybrid",
-        "switch_wireless"
-      ],
-      "risk": "medium"
-    },
-    {
       "norm": "_tz3000_ja5osu5g",
       "variants": [
         "_TZ3000_JA5OSU5G",
@@ -3723,30 +3497,6 @@
       "drivers": [
         "remote_button_wireless_hybrid",
         "smart_remote_1_button_2"
-      ],
-      "risk": "medium"
-    },
-    {
-      "norm": "_tz3000_qja6nq5z",
-      "variants": [
-        "_TZ3000_QJA6NQ5Z",
-        "_tz3000_qja6nq5z"
-      ],
-      "drivers": [
-        "remote_button_wireless_hybrid",
-        "remote_button_wireless_smart_hybrid"
-      ],
-      "risk": "medium"
-    },
-    {
-      "norm": "_tz3000_uri7ongn",
-      "variants": [
-        "_TZ3000_URI7ONGN",
-        "_tz3000_uri7ongn"
-      ],
-      "drivers": [
-        "remote_button_wireless_hybrid",
-        "remote_button_wireless_smart_hybrid"
       ],
       "risk": "medium"
     },
@@ -4076,6 +3826,20 @@
       "mfrs": [
         "_TZ3000_GEK6SNAJ",
         "_tz3000_gek6snaj"
+      ]
+    },
+    {
+      "driver": "button_wireless_plug_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS011F",
+        "TS0121",
+        "TSO121",
+        "ts011f",
+        "ts0121",
+        "tso121",
+        "TS0111",
+        "ts0111"
       ]
     },
     {
@@ -5466,8 +5230,8 @@
     "totalDrivers": 304,
     "pidConflicts": 69,
     "highSeverity": 37,
-    "mfrConflicts": 12,
-    "orphans": 128,
+    "mfrConflicts": 0,
+    "orphans": 129,
     "splitSuggestions": 37
   }
 }
