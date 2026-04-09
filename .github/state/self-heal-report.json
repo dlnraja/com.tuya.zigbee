@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-04-09T03:08:51.332Z",
+  "timestamp": "2026-04-09T08:30:33.331Z",
   "totalFiles": 0,
-  "totalFixes": 3144,
+  "totalFixes": 3142,
   "rules": {
     "flow-card-try-catch": {
       "count": 61,
@@ -323,7 +323,7 @@
       ]
     },
     "duplicate-fingerprints": {
-      "count": 3032,
+      "count": 3026,
       "files": [
         {
           "file": "drivers",
@@ -911,7 +911,7 @@
         },
         {
           "file": "drivers",
-          "detail": "ewelink found in: bulb_rgbw, device_plug_energy_monitor_hybrid, remote_button_wireless_hybrid, sensor_climate_contact_hybrid"
+          "detail": "ewelink found in: bulb_rgbw, device_plug_energy_hybrid, device_plug_energy_monitor_hybrid, remote_button_wireless_hybrid"
         },
         {
           "file": "drivers",
@@ -1336,10 +1336,6 @@
         {
           "file": "drivers",
           "detail": "_tz3400_key8kk7r found in: button_wireless, button_wireless"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3400_keyjhapk found in: button_wireless, button_wireless, remote_button_wireless_hybrid, remote_button_wireless_hybrid"
         },
         {
           "file": "drivers",
@@ -1780,14 +1776,6 @@
         {
           "file": "drivers",
           "detail": "_tz3210_okbss9dy found in: button_wireless_fingerbot_hybrid, button_wireless_fingerbot_hybrid"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3000_plyvnuf5 found in: button_wireless_plug_hybrid, button_wireless_plug_hybrid, device_plug_energy_hybrid, device_plug_energy_hybrid"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3210_7jnk7l3k found in: button_wireless_plug_hybrid, button_wireless_plug_hybrid, device_plug_energy_hybrid, device_plug_energy_hybrid"
         },
         {
           "file": "drivers",
@@ -8895,10 +8883,6 @@
         },
         {
           "file": "drivers",
-          "detail": "_tz3000_abrsvsou found in: remote_button_wireless_hybrid, remote_button_wireless_hybrid, remote_button_wireless_smart_hybrid, remote_button_wireless_smart_hybrid"
-        },
-        {
-          "file": "drivers",
           "detail": "_tz3000_an5rjiwd found in: remote_button_wireless_hybrid, remote_button_wireless_hybrid"
         },
         {
@@ -8907,23 +8891,11 @@
         },
         {
           "file": "drivers",
-          "detail": "_tz3000_ixla93vd found in: remote_button_wireless_hybrid, remote_button_wireless_hybrid, remote_button_wireless_smart_hybrid, remote_button_wireless_smart_hybrid, switch_wireless, switch_wireless"
-        },
-        {
-          "file": "drivers",
           "detail": "_tz3000_ja5osu5g found in: remote_button_wireless_hybrid, remote_button_wireless_hybrid, smart_remote_1_button_2, smart_remote_1_button_2"
         },
         {
           "file": "drivers",
-          "detail": "_tz3000_qja6nq5z found in: remote_button_wireless_hybrid, remote_button_wireless_hybrid, remote_button_wireless_smart_hybrid, remote_button_wireless_smart_hybrid"
-        },
-        {
-          "file": "drivers",
           "detail": "_tz3000_rco1yzb1 found in: remote_button_wireless_hybrid, remote_button_wireless_hybrid"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3000_uri7ongn found in: remote_button_wireless_hybrid, remote_button_wireless_hybrid, remote_button_wireless_smart_hybrid, remote_button_wireless_smart_hybrid"
         },
         {
           "file": "drivers",
@@ -11595,6 +11567,10 @@
         },
         {
           "file": "drivers",
+          "detail": "_tz3000_ixla93vd found in: switch_wireless, switch_wireless"
+        },
+        {
+          "file": "drivers",
           "detail": "_tz3000_jnhu1llv found in: temphumidsensor, temphumidsensor"
         },
         {
@@ -12452,6 +12428,27 @@
         {
           "file": "drivers",
           "detail": "_tz3000_rku4cnct found in: zigbee_repeater, zigbee_repeater"
+        }
+      ]
+    },
+    "hybrid-flow-id-prefixing": {
+      "count": 4,
+      "files": [
+        {
+          "file": "drivers/blaster_remote_hybrid/driver.flow.compose.json",
+          "detail": "Prefixed flow cards with blaster_remote_hybrid_"
+        },
+        {
+          "file": "drivers/contact_sensor_curtain_hybrid/driver.flow.compose.json",
+          "detail": "Prefixed flow cards with contact_sensor_curtain_hybrid_"
+        },
+        {
+          "file": "drivers/curtain_motor_tilt_hybrid/driver.flow.compose.json",
+          "detail": "Prefixed flow cards with curtain_motor_tilt_hybrid_"
+        },
+        {
+          "file": "drivers/device_generic_tuya_universal_hybrid/driver.flow.compose.json",
+          "detail": "Prefixed flow cards with device_generic_tuya_universal_hybrid_"
         }
       ]
     },
