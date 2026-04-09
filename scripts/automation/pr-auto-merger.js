@@ -29,10 +29,18 @@ function mergeJsonArrays(base, head) {
   
   const mergeKeys = (b, h) => {
     for (const key in h) {
-      if (Array.isArray(h[key]) && Array.isArray(b[key])) {
-        // Union arrays and unique
-        b[key] = [...new Set([...b[key], ...h[key]])].sort();
-      } else if (typeof h[key] === 'object' && h[key] !== null && typeof b[key] === 'object' && b[key] !== null) {
+      if (h[key] === null) {
+        b[key] = null;
+        continue;
+      }
+      
+      if (Array.isArray(h[key])) {
+        if (!Array.isArray(b[key])) b[key] = [];
+        // Union arrays and unique, filtering out nulls/falsy if necessary for fingerprints
+        const combined = [...new Set([...b[key], ...h[key]])].filter(item => item !== null);
+        b[key] = combined.sort((x, y) => String(x).localeCompare(String(y)));
+      } else if (typeof h[key] === 'object') {
+        if (typeof b[key] !== 'object' || b[key] === null) b[key] = {};
         mergeKeys(b[key], h[key]);
       } else {
         b[key] = h[key];
