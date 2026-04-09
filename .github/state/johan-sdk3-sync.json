@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-07T03:36:12.750Z",
+  "timestamp": "2026-04-09T03:35:02.008Z",
   "added": [
     {
       "fp": "_TZE200_s8gkrkxk",
@@ -1022,15 +1022,22 @@
       ]
     },
     {
+      "fp": "zbeacon",
+      "driver": "contact_sensor",
+      "pids": [
+        "DS01"
+      ]
+    },
+    {
       "fp": "_TZ3210_7jnk7l3k",
-      "driver": "button_wireless_2",
+      "driver": "button_wireless_plug_hybrid",
       "pids": [
         "TS011F"
       ]
     },
     {
       "fp": "_TYZB01_hlla45kx",
-      "driver": "button_wireless_2",
+      "driver": "button_wireless_plug_hybrid",
       "pids": [
         "TS011F"
       ]
@@ -1196,7 +1203,7 @@
     },
     {
       "fp": "_TYZB01_iuepbmpv",
-      "driver": "button_wireless_2",
+      "driver": "button_wireless_plug_hybrid",
       "pids": [
         "TS0121",
         "TSO121",
@@ -1351,7 +1358,7 @@
     },
     {
       "fp": "_TZ3000_uwkja6z1",
-      "driver": "button_wireless_2",
+      "driver": "button_wireless_plug_hybrid",
       "pids": [
         "TS011F"
       ]
@@ -1554,21 +1561,21 @@
     },
     {
       "fp": "_TZ3000_kdi2o9m6",
-      "driver": "button_wireless_2",
+      "driver": "button_wireless_plug_hybrid",
       "pids": [
         "TS011F"
       ]
     },
     {
       "fp": "_TZ3000_ew31dmgx",
-      "driver": "button_wireless_2",
+      "driver": "button_wireless_plug_hybrid",
       "pids": [
         "TS011F"
       ]
     },
     {
       "fp": "_TZ3000_dpo1ysak",
-      "driver": "button_wireless_2",
+      "driver": "button_wireless_plug_hybrid",
       "pids": [
         "TS0121",
         "TSO121",
@@ -1577,35 +1584,35 @@
     },
     {
       "fp": "_TZ3000_plyvnuf5",
-      "driver": "button_wireless_2",
+      "driver": "button_wireless_plug_hybrid",
       "pids": [
         "TS011F"
       ]
     },
     {
       "fp": "_TZ3000_hyfvrar3",
-      "driver": "button_wireless_2",
+      "driver": "button_wireless_plug_hybrid",
       "pids": [
         "TS011F"
       ]
     },
     {
       "fp": "_TZ3000_cymsnfvf",
-      "driver": "button_wireless_2",
+      "driver": "button_wireless_plug_hybrid",
       "pids": [
         "TS011F"
       ]
     },
     {
       "fp": "_TZ3000_upjrsxh1",
-      "driver": "button_wireless_2",
+      "driver": "button_wireless_plug_hybrid",
       "pids": [
         "TS011F"
       ]
     },
     {
       "fp": "_TZ3000_wamqdr3f",
-      "driver": "button_wireless_2",
+      "driver": "button_wireless_plug_hybrid",
       "pids": [
         "TS011F"
       ]
@@ -2056,7 +2063,7 @@
     },
     {
       "fp": "_TZ3000_qeuvnohg",
-      "driver": "button_wireless_2",
+      "driver": "button_wireless_plug_hybrid",
       "pids": [
         "TS0121",
         "TSO121",
@@ -2164,7 +2171,7 @@
     },
     {
       "fp": "_TZ3210_eymunffl",
-      "driver": "plug_smart",
+      "driver": "device_plug_smart_hybrid",
       "pids": [
         "TS0101",
         "TS0049"
@@ -2172,7 +2179,7 @@
     },
     {
       "fp": "_TZ3000_cjfmu5he",
-      "driver": "plug_smart",
+      "driver": "device_plug_smart_hybrid",
       "pids": [
         "TS0101",
         "TS0049"
@@ -2180,7 +2187,7 @@
     },
     {
       "fp": "_TZ3000_kz1anoi8",
-      "driver": "plug_smart",
+      "driver": "device_plug_smart_hybrid",
       "pids": [
         "TS0101",
         "TS0049"
@@ -2188,7 +2195,7 @@
     },
     {
       "fp": "_TZ3000_mq4wujmp",
-      "driver": "plug_smart",
+      "driver": "device_plug_smart_hybrid",
       "pids": [
         "TS0101",
         "TS0049"
@@ -2705,15 +2712,6 @@
       ]
     },
     {
-      "fp": "_TZ3000_wzmuk9ai",
-      "driver": "button_wireless_2",
-      "pids": [
-        "TS0121",
-        "TSO121",
-        "TS011F"
-      ]
-    },
-    {
       "fp": "_TZ3000_jak16dll",
       "driver": "button_wireless_2",
       "pids": [
@@ -2837,13 +2835,6 @@
       "driver": "usb_outlet_advanced",
       "pids": [
         "TS0115"
-      ]
-    },
-    {
-      "fp": "LELLKI",
-      "driver": "switch_4gang",
-      "pids": [
-        "JZ-ZB-004"
       ]
     },
     {
@@ -5430,9 +5421,9 @@
   },
   "summary": {
     "totalJohanFPs": 636,
-    "totalOurFPs": 3570,
-    "missingFPs": 635,
-    "addedFPs": 635,
+    "totalOurFPs": 6379,
+    "missingFPs": 634,
+    "addedFPs": 634,
     "skippedFPs": 0,
     "dpGaps": 0,
     "newDrivers": 89,
