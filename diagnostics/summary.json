@@ -1,28 +1,7 @@
 {
-  "timestamp": "2026-04-08T10:39:03.923Z",
+  "timestamp": "2026-04-09T10:41:25.363Z",
   "devices": [],
-  "unmatchedFPs": [
-    {
-      "fp": "_TZE200_u6x1zyv2",
-      "source": "gmail",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zig"
-    },
-    {
-      "fp": "_TZE284_hdml1aav",
-      "source": "gmail",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zig"
-    },
-    {
-      "fp": "_TZB000_yqjaollc",
-      "source": "gmail",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostic"
-    },
-    {
-      "fp": "_TZ3000_tzvbimpq",
-      "source": "gmail",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zig"
-    }
-  ],
+  "unmatchedFPs": [],
   "errors": [
     {
       "err": "IAS Zone enrollment incomplete. Remove and re-add device if sensor not respondin",
