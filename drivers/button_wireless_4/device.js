@@ -341,10 +341,27 @@ class Button4GangDevice extends ButtonDevice {
           this.log(`[BUTTON4-PHYSICAL] 📡 Setting up scene listener on EP${ep}...`);
 
           // v5.9.22: Use centralized PRESS_MAP (prevents 0-index regression)
+          
+          // v5.12.5: Compressed Scene ID Mapping fix (Forum Issue #23)
+          // Some devices send all buttons on EP1 with IDs: 1,2,3... or 10,11,12...
           const handleSceneRecall = async (sceneId) => {
-            const pressType = resolvePressType(sceneId, 'BTN4-scene');
-            this.log(`[BUTTON4-SCENE] 🔘 Physical Button ${ep} ${pressType.toUpperCase()} (scene ${sceneId})`);
-            await this.triggerButtonPress(ep, pressType);
+            let button = ep;
+            let actualScene = sceneId;
+            
+            if (sceneId >= 10 && ep === 1) {
+              button = Math.floor(sceneId / 10) + 1;
+              actualScene = sceneId % 10;
+              this.log(`[BUTTON4-SCENE] 🧭 Compressed Mapping: scene ${sceneId} -> button ${button}, action ${actualScene}`);
+            } else if (sceneId > 1 && ep === 1 && sceneId <= 4) {
+              // Some use 1=Btn1, 2=Btn2...
+              button = sceneId;
+              actualScene = 0; // Single press
+              this.log(`[BUTTON4-SCENE] 🧭 Linear Mapping: scene ${sceneId} -> button ${button}`);
+            }
+
+            const pressType = resolvePressType(actualScene, 'BTN4-scene');
+            this.log(`[BUTTON4-SCENE] 🔘 Physical Button ${button} ${pressType.toUpperCase()} (scene ${sceneId})`);
+            await this.triggerButtonPress(button, pressType);
           };
 
           // v5.5.369: Pattern 1 - Direct 'recall' event (SonoffZclDevice pattern)

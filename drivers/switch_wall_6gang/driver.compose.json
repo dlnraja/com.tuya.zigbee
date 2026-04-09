@@ -636,5 +636,267 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "switch_wall_6gang_physical_gang1_on",
+        "title": {
+          "en": "Gang 1 turned on (physical)",
+          "fr": "Gang 1 allumé (physique)"
+        }
+      },
+      {
+        "id": "switch_wall_6gang_physical_gang1_off",
+        "title": {
+          "en": "Gang 1 turned off (physical)",
+          "fr": "Gang 1 allumé (éteint) (physique)"
+        }
+      },
+      {
+        "id": "switch_wall_6gang_physical_gang2_on",
+        "title": {
+          "en": "Gang 2 turned on (physical)",
+          "fr": "Gang 2 allumé (physique)"
+        }
+      },
+      {
+        "id": "switch_wall_6gang_physical_gang2_off",
+        "title": {
+          "en": "Gang 2 turned off (physical)",
+          "fr": "Gang 2 allumé (éteint) (physique)"
+        }
+      },
+      {
+        "id": "switch_wall_6gang_physical_gang3_on",
+        "title": {
+          "en": "Gang 3 turned on (physical)",
+          "fr": "Gang 3 allumé (physique)"
+        }
+      },
+      {
+        "id": "switch_wall_6gang_physical_gang3_off",
+        "title": {
+          "en": "Gang 3 turned off (physical)",
+          "fr": "Gang 3 allumé (éteint) (physique)"
+        }
+      },
+      {
+        "id": "switch_wall_6gang_physical_gang4_on",
+        "title": {
+          "en": "Gang 4 turned on (physical)",
+          "fr": "Gang 4 allumé (physique)"
+        }
+      },
+      {
+        "id": "switch_wall_6gang_physical_gang4_off",
+        "title": {
+          "en": "Gang 4 turned off (physical)",
+          "fr": "Gang 4 allumé (éteint) (physique)"
+        }
+      },
+      {
+        "id": "switch_wall_6gang_physical_gang5_on",
+        "title": {
+          "en": "Gang 5 turned on (physical)",
+          "fr": "Gang 5 allumé (physique)"
+        }
+      },
+      {
+        "id": "switch_wall_6gang_physical_gang5_off",
+        "title": {
+          "en": "Gang 5 turned off (physical)",
+          "fr": "Gang 5 allumé (éteint) (physique)"
+        }
+      },
+      {
+        "id": "switch_wall_6gang_physical_gang6_on",
+        "title": {
+          "en": "Gang 6 turned on (physical)",
+          "fr": "Gang 6 allumé (physique)"
+        }
+      },
+      {
+        "id": "switch_wall_6gang_physical_gang6_off",
+        "title": {
+          "en": "Gang 6 turned off (physical)",
+          "fr": "Gang 6 allumé (éteint) (physique)"
+        }
+      },
+      {
+        "id": "switch_wall_6gang_gang1_scene",
+        "title": {
+          "en": "Gang 1 scene trigger",
+          "fr": "Déclencheur de scène Gang 1"
+        },
+        "args": [
+          {
+            "name": "action",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "fr": "On"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Off"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_6gang_gang2_scene",
+        "title": {
+          "en": "Gang 2 scene trigger",
+          "fr": "Déclencheur de scène Gang 2"
+        },
+        "args": [
+          {
+            "name": "action",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "fr": "On"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Off"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_6gang_gang3_scene",
+        "title": {
+          "en": "Gang 3 scene trigger",
+          "fr": "Déclencheur de scène Gang 3"
+        },
+        "args": [
+          {
+            "name": "action",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "fr": "On"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Off"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_6gang_gang4_scene",
+        "title": {
+          "en": "Gang 4 scene trigger",
+          "fr": "Déclencheur de scène Gang 4"
+        },
+        "args": [
+          {
+            "name": "action",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "fr": "On"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Off"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_6gang_gang5_scene",
+        "title": {
+          "en": "Gang 5 scene trigger",
+          "fr": "Déclencheur de scène Gang 5"
+        },
+        "args": [
+          {
+            "name": "action",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "fr": "On"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Off"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "switch_wall_6gang_gang6_scene",
+        "title": {
+          "en": "Gang 6 scene trigger",
+          "fr": "Déclencheur de scène Gang 6"
+        },
+        "args": [
+          {
+            "name": "action",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "fr": "On"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Off"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

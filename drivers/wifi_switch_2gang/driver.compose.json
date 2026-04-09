@@ -169,5 +169,95 @@
         "search": "urn:schemas-upnp-org:device:Basic:1"
       }
     }
-  ]
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "wifi_switch_2gang_physical_gang1_on",
+        "title": {
+          "en": "Gang 1 turned on (physical)",
+          "fr": "Gang 1 allumé (physique)"
+        }
+      },
+      {
+        "id": "wifi_switch_2gang_physical_gang1_off",
+        "title": {
+          "en": "Gang 1 turned off (physical)",
+          "fr": "Gang 1 allumé (éteint) (physique)"
+        }
+      },
+      {
+        "id": "wifi_switch_2gang_physical_gang2_on",
+        "title": {
+          "en": "Gang 2 turned on (physical)",
+          "fr": "Gang 2 allumé (physique)"
+        }
+      },
+      {
+        "id": "wifi_switch_2gang_physical_gang2_off",
+        "title": {
+          "en": "Gang 2 turned off (physical)",
+          "fr": "Gang 2 allumé (éteint) (physique)"
+        }
+      },
+      {
+        "id": "wifi_switch_2gang_gang1_scene",
+        "title": {
+          "en": "Gang 1 scene trigger",
+          "fr": "Déclencheur de scène Gang 1"
+        },
+        "args": [
+          {
+            "name": "action",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "fr": "On"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Off"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_2gang_gang2_scene",
+        "title": {
+          "en": "Gang 2 scene trigger",
+          "fr": "Déclencheur de scène Gang 2"
+        },
+        "args": [
+          {
+            "name": "action",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "fr": "On"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Off"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

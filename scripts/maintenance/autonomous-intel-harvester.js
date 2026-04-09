@@ -19,7 +19,7 @@ const REPORT_FILE = path.join(ROOT, 'REPORTS', 'INTELLECTUAL-ENRICHMENT.md');
 const STATE_FILE = path.join(ROOT, '.github', 'state', 'intel-harvester-state.json');
 
 // Configuration
-const UPSTREAM = 'JohanBendz/com.tuya.zigbee';
+const UPSTREAM = 'dlnraja/com.tuya.zigbee';
 const OWN = 'dlnraja/com.tuya.zigbee';
 const INTEL_KEYWORDS = [
   'calibration', 'offset', 'correction', 'firmware_workaround', 
@@ -44,80 +44,94 @@ async function main() {
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
   if (!fs.existsSync(path.dirname(REPORT_FILE))) fs.mkdirSync(path.dirname(REPORT_FILE), { recursive: true });
 
-  // 1. Get all forks
-  console.log('  → Identifying all ecosystem forks...');
+  // 1. Get all forks + Upstream branches
+  console.log('  → Identifying all ecosystem sources (Ascending & Descending)...');
   const forksRaw = gh(`api repos/${UPSTREAM}/forks --per-page 100`);
   const forks = JSON.parse(forksRaw || '[]');
-  console.log(`    Found ${forks.length} forks in the ecosystem.`);
+  
+  // Add Upstream itself to the analysis list
+  forks.unshift({ full_name: UPSTREAM, pushed_at: new Date().toISOString() });
+  
+  console.log(`    Found ${forks.length} potential innovation sources.`);
 
   const harvest = {
     timestamp: new Date().toISOString(),
     newMethods: [],
     structuralInnovations: [],
     hiddenGems: [],
-    forksAnalyzed: 0
+    forksAnalyzed: 0,
+    branchesScanned: 0
   };
 
-  // 2. Perform Deep Structural Analysis on top 15 most active forks
-  const activeForks = forks
+  // 2. Perform Deep Structural Analysis on top source repositories
+  const activeSources = forks
     .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at))
-    .slice(0, 15);
+    .slice(0, 20);
 
-  for (const fork of activeForks) {
-    console.log(`  → Analyzing fork: ${fork.full_name}`);
+  for (const source of activeSources) {
+    console.log(`  → Analyzing source: ${source.full_name}`);
     harvest.forksAnalyzed++;
 
-    // A. Check for new files in lib/ (Structural Innovations)
-    const libFilesRaw = gh(`api repos/${fork.full_name}/contents/lib`);
-    if (libFilesRaw) {
-      const libFiles = JSON.parse(libFilesRaw);
-      for (const file of libFiles) {
-        if (file.type === 'file' && !fs.existsSync(path.join(ROOT, 'lib', file.name))) {
-          console.log(`    ⭐ Found NEW library file: ${file.name}`);
-          harvest.structuralInnovations.push({
-            fork: fork.full_name,
-            file: file.name,
-            path: file.path,
-            url: file.html_url
-          });
+    // Get all branches for this source
+    const branchesRaw = gh(`api repos/${source.full_name}/branches`);
+    const branches = JSON.parse(branchesRaw || '[]');
+    
+    for (const br of branches) {
+      const branchName = br.name;
+      harvest.branchesScanned++;
+      console.log(`    ↳ Scanning branch: ${branchName}`);
+
+      // A. Check for new files in lib/ on this branch
+      const libFilesRaw = gh(`api repos/${source.full_name}/contents/lib?ref=${branchName}`);
+      if (libFilesRaw) {
+        const libFiles = JSON.parse(libFilesRaw);
+        for (const file of libFiles) {
+          if (file.type === 'file' && !fs.existsSync(path.join(ROOT, 'lib', file.name))) {
+            harvest.structuralInnovations.push({
+              source: source.full_name,
+              branch: branchName,
+              file: file.name,
+              url: file.html_url
+            });
+          }
         }
       }
-    }
 
-    // B. Check for new Methods/Ideas in app.js and lib/
-    const importantFiles = ['app.js', 'lib/BaseHybridDevice.js', 'lib/TuyaEF00Manager.js', 'lib/UniversalDataHandler.js'];
-    for (const fpath of importantFiles) {
-      const remoteContent = gh(`api repos/${fork.full_name}/contents/${fpath} --template '{{.content}}' | base64 -d`);
-      if (!remoteContent) continue;
+      // B. Analyze core logic files for new Methods on this branch
+      const importantFiles = ['app.js', 'lib/BaseHybridDevice.js', 'lib/TuyaEF00Manager.js', 'lib/UniversalDataHandler.js'];
+      for (const fpath of importantFiles) {
+        const remoteContent = gh(`api repos/${source.full_name}/contents/${fpath}?ref=${branchName} --template '{{.content}}' | base64 -d`);
+        if (!remoteContent) continue;
 
-      const localPath = path.join(ROOT, fpath);
-      if (!fs.existsSync(localPath)) continue;
-      const localContent = fs.readFileSync(localPath, 'utf8');
+        const localPath = path.join(ROOT, fpath);
+        if (!fs.existsSync(localPath)) continue;
+        const localContent = fs.readFileSync(localPath, 'utf8');
 
-      // Simple regex to find function names
-      const funcRegex = /(?:async\s+)?([a-zA-Z0-9_]+)\s*\([^)]*\)\s*\{/g;
-      const remoteMethods = [...remoteContent.matchAll(funcRegex)].map(m => m[1]);
-      const localMethods = [...localContent.matchAll(funcRegex)].map(m => m[1]);
+        const funcRegex = /(?:async\s+)?([a-zA-Z0-9_]+)\s*\([^)]*\)\s*\{/g;
+        const remoteMethods = [...remoteContent.matchAll(funcRegex)].map(m => m[1]);
+        const localMethods = [...localContent.matchAll(funcRegex)].map(m => m[1]);
 
-      const newMethods = remoteMethods.filter(m => !localMethods.includes(m) && !m.startsWith('_'));
-      if (newMethods.length > 0) {
-        console.log(`    ✨ Found ${newMethods.length} new methods in ${fpath}`);
-        harvest.newMethods.push({
-          fork: fork.full_name,
-          file: fpath,
-          methods: newMethods
-        });
-      }
-
-      // C. Search for Intel Keywords (Hidden Gems)
-      for (const kw of INTEL_KEYWORDS) {
-        if (remoteContent.includes(kw) && !localContent.includes(kw)) {
-          harvest.hiddenGems.push({
-            fork: fork.full_name,
+        const newMethods = remoteMethods.filter(m => !localMethods.includes(m) && !m.startsWith('_'));
+        if (newMethods.length > 0) {
+          harvest.newMethods.push({
+            source: source.full_name,
+            branch: branchName,
             file: fpath,
-            keyword: kw,
-            context: 'Potentially new logic for ' + kw
+            methods: newMethods
           });
+        }
+
+        // C. Search for Intel Keywords
+        for (const kw of INTEL_KEYWORDS) {
+          if (remoteContent.includes(kw) && !localContent.includes(kw)) {
+            harvest.hiddenGems.push({
+              source: source.full_name,
+              branch: branchName,
+              file: fpath,
+              keyword: kw,
+              context: 'Silent implementation for ' + kw
+            });
+          }
         }
       }
     }
@@ -165,13 +179,13 @@ async function main() {
   md += `## 🏗️ Structural Innovations (New Files)\n`;
   if (harvest.structuralInnovations.length === 0) md += `_No new biological structures found._\n`;
   for (const si of harvest.structuralInnovations) {
-    md += `- **${si.file}** in \`${si.fork}\` [View Source](${si.url})\n`;
+    md += `- **${si.file}** in \`${si.source}\` [View Source](${si.url})\n`;
   }
 
   md += `\n## ⚡ Smart Methods & Logic Extensions\n`;
   if (harvest.newMethods.length === 0) md += `_No new cognitive pathways detected._\n`;
   for (const nm of harvest.newMethods) {
-    md += `### ${nm.file} (${nm.fork})\n`;
+    md += `### ${nm.file} (${nm.source})\n`;
     md += `Found methods: ${nm.methods.map(m => `\`${m}\``).join(', ')}\n\n`;
   }
 
@@ -188,7 +202,7 @@ async function main() {
   const uniqueGems = [...new Set(forkGems.map(g => g.keyword))];
   for (const kw of uniqueGems) {
     const examples = forkGems.filter(g => g.keyword === kw);
-    md += `- **${kw}**: Detected in ${examples.length} location(s) (e.g., \`${examples[0].fork}\`)\n`;
+    md += `- **${kw}**: Detected in ${examples.length} location(s) (e.g., \`${examples[0].source}\`)\n`;
   }
 
   fs.writeFileSync(REPORT_FILE, md);
