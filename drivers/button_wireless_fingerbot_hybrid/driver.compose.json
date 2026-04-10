@@ -28,12 +28,30 @@
       }
     },
     "manufacturerName": [
-      { "manufacturerName": "_TZ3210_232NRYQH", "deviceId": 257 },
-      { "manufacturerName": "_TZ3210_DSE8OGFY", "deviceId": 257 },
-      { "manufacturerName": "_TZ3210_J4PDTZ9V", "deviceId": 257 },
-      { "manufacturerName": "_TZ3210_OKBSS9DY", "deviceId": 257 },
-      { "manufacturerName": "_TZ3000_G8N1N7LG", "deviceId": 257 },
-      { "manufacturerName": "_TYZB01_PHJERAQQ", "deviceId": 257 },
+      {
+        "manufacturerName": "_TZ3210_232NRYQH",
+        "deviceId": 257
+      },
+      {
+        "manufacturerName": "_TZ3210_DSE8OGFY",
+        "deviceId": 257
+      },
+      {
+        "manufacturerName": "_TZ3210_J4PDTZ9V",
+        "deviceId": 257
+      },
+      {
+        "manufacturerName": "_TZ3210_OKBSS9DY",
+        "deviceId": 257
+      },
+      {
+        "manufacturerName": "_TZ3000_G8N1N7LG",
+        "deviceId": 257
+      },
+      {
+        "manufacturerName": "_TYZB01_PHJERAQQ",
+        "deviceId": 257
+      },
       "_tyzb01_phjeraqq",
       "_tz3000_g8n1n7lg",
       "_tz3210_232nryqh",
@@ -756,5 +774,58 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "radio_presence_detected",
+        "title": {
+          "en": "Radio sensing presence detected",
+          "fr": "Présence détectée par radio (LQI)"
+        }
+      }
+    ],
+    "conditions": [
+      {
+        "id": "is_radio_presence_detected",
+        "title": {
+          "en": "Radio presence is detected",
+          "fr": "Présence radio détectée"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "id": "calibrate_virtual_energy",
+        "title": {
+          "en": "Calibrate virtual energy",
+          "fr": "Calibrer l'énergie virtuelle"
+        },
+        "args": [
+          {
+            "name": "watts",
+            "type": "number",
+            "placeholder": {
+              "en": "Nominal Watts",
+              "fr": "Watts nominaux"
+            }
+          }
+        ]
+      },
+      {
+        "id": "set_sensing_threshold",
+        "title": {
+          "en": "Set radio sensing sensitivity",
+          "fr": "Régler la détection radio"
+        },
+        "args": [
+          {
+            "name": "threshold",
+            "type": "number",
+            "placeholder": "2-50"
+          }
+        ]
+      }
+    ]
+  }
 }
