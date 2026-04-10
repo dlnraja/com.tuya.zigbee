@@ -14,7 +14,8 @@
     "light_temperature",
     "light_mode",
     "onoff",
-    "measure_battery"
+    "measure_battery",
+    "light_color_temp"
   ],
   "energy": {
     "approximation": {
@@ -50,7 +51,13 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
       }
     },
-    "productId": []
+    "productId": [],
+    "capabilities": {
+      "light_color_temp": {
+        "cluster": "colorControl",
+        "attr": "colorTemperature"
+      }
+    }
   },
   "settings": [
     {

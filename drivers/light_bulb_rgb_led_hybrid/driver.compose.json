@@ -14,7 +14,8 @@
     "light_temperature",
     "light_mode",
     "onoff",
-    "measure_battery"
+    "measure_battery",
+    "light_color_temp"
   ],
   "energy": {
     "approximation": {
@@ -67,7 +68,13 @@
     "productId": [
       "TS0505B",
       "ts0505b"
-    ]
+    ],
+    "capabilities": {
+      "light_color_temp": {
+        "cluster": "colorControl",
+        "attr": "colorTemperature"
+      }
+    }
   },
   "settings": [
     {

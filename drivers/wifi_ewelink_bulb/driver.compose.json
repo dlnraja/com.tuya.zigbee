@@ -6,7 +6,8 @@
   "capabilities": [
     "onoff",
     "dim",
-    "light_temperature"
+    "light_temperature",
+    "light_color_temp"
   ],
   "pair": [
     {

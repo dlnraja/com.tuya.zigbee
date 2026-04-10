@@ -15,7 +15,8 @@
     "light_mode",
     "onoff",
     "measure_battery",
-    "measure_power"
+    "measure_power",
+    "light_color_temp"
   ],
   "energy": {
     "approximation": {
@@ -55,6 +56,12 @@
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    },
+    "capabilities": {
+      "light_color_temp": {
+        "cluster": "colorControl",
+        "attr": "colorTemperature"
       }
     }
   },
