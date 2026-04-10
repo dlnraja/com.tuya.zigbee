@@ -2,10 +2,10 @@
 'use strict';
 
 /**
- * signature-audit.js - v6.3.0
+ * signature-audit.js - v7.0.0
  * 
- * Pre-flight Check for Zigbee Signature Collisions.
- * Prevents "driver hijacking" where multiple drivers claim the same signature.
+ * Pre-flight Check for Zigbee Signature Collisions AND Architectural Integrity.
+ * Prevents "driver hijacking" and ensures SDK 3 compliance.
  */
 
 const fs = require('fs');
@@ -77,19 +77,43 @@ function audit() {
     }
   }
 
-  if (collisions.length === 0) {
-    console.log('✅ No signature collisions detected. Driver selection is unambiguous.');
-    process.exit(0);
+  // --- ARCHITECTURAL CHECKS ---
+  const architecturalIssues = [];
+  const entries = fs.readdirSync(DRIVERS_DIR);
+  for (const entry of entries) {
+    const devicePath = path.join(DRIVERS_DIR, entry, 'device.js');
+    if (!fs.existsSync(devicePath)) continue;
+    const code = fs.readFileSync(devicePath, 'utf8');
+
+    // Rule 1: SDK3 Async Init
+    if (code.includes('onNodeInit(') && !code.includes('async onNodeInit(')) {
+       architecturalIssues.push(`[SDK3] ${entry}: onNodeInit should be async.`);
+    }
+
+    // Rule 2: Adaptive Lighting Readiness
+    if (entry.includes('bulb') || entry.includes('light')) {
+       const compose = JSON.parse(fs.readFileSync(path.join(DRIVERS_DIR, entry, 'driver.compose.json'), 'utf8'));
+       if (compose.capabilities?.includes('dim') && !compose.capabilities?.includes('light_color_temp')) {
+          architecturalIssues.push(`[ADAPTIVE] ${entry}: Dimmable light missing light_color_temp capability.`);
+       }
+    }
   }
 
-  console.error(`❌ Found ${collisions.length} Signature Collisions!\n`);
-  for (const c of collisions) {
-    console.error(`[COLLISION] Signature: Mfr=${c.mfr}, PID=${c.pid}, DeviceID=${c.devId || 'Any'}`);
-    console.error(`            Claimed by: ${c.drivers.join(' AND ')}`);
-    console.error('            Action: Differentiate these drivers using deviceId, endpoints, or clusters.\n');
+  if (collisions.length > 0) {
+    console.error(`❌ Found ${collisions.length} Signature Collisions!\n`);
+    for (const c of collisions) {
+       console.error(`[COLLISION] Signature: Mfr=${c.mfr}, PID=${c.pid}, DeviceID=${c.devId || 'Any'}`);
+       console.error(`            Claimed by: ${c.drivers.join(' AND ')}`);
+    }
   }
 
-  process.exit(1);
+  if (architecturalIssues.length > 0) {
+    console.warn(`\n⚠️  Found ${architecturalIssues.length} Architectural Suggestions:\n`);
+    for (const issue of architecturalIssues) console.warn(issue);
+  }
+
+  if (collisions.length > 0) process.exit(1);
+  process.exit(0);
 }
 
 audit();
