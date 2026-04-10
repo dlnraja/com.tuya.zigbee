@@ -21,6 +21,12 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    this.homey.flow.getTriggerCard('switch_2gang_gang2_scene');
+    this.homey.flow.getTriggerCard('switch_2gang_gang1_scene');
+    this.homey.flow.getTriggerCard('switch_2gang_physical_gang2_off');
+    this.homey.flow.getTriggerCard('switch_2gang_physical_gang2_on');
+    this.homey.flow.getTriggerCard('switch_2gang_physical_gang1_off');
+    this.homey.flow.getTriggerCard('switch_2gang_physical_gang1_on');
     this.log('Tuya Zigbee 2-Gang Switch Driver v5.5.570 initialized');
     this._registerFlowCards();
   }

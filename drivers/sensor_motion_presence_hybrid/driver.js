@@ -21,6 +21,8 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    this.homey.flow.getTriggerCard('sensor_motion_presence_hybrid_presence_cleared');
+    this.homey.flow.getTriggerCard('sensor_motion_presence_hybrid_presence_detected');
     this.log('PresenceSensorRadarDriver v5.5.580 initialized');
     this._registerFlowCards();
   }

@@ -17,6 +17,15 @@ class WiFiSwitch3gangDriver extends TuyaLocalDriver {
   }
 
   async onInit() {
+    this.homey.flow.getTriggerCard('wifi_switch_3gang_gang3_scene');
+    this.homey.flow.getTriggerCard('wifi_switch_3gang_gang2_scene');
+    this.homey.flow.getTriggerCard('wifi_switch_3gang_gang1_scene');
+    this.homey.flow.getTriggerCard('wifi_switch_3gang_physical_gang3_off');
+    this.homey.flow.getTriggerCard('wifi_switch_3gang_physical_gang3_on');
+    this.homey.flow.getTriggerCard('wifi_switch_3gang_physical_gang2_off');
+    this.homey.flow.getTriggerCard('wifi_switch_3gang_physical_gang2_on');
+    this.homey.flow.getTriggerCard('wifi_switch_3gang_physical_gang1_off');
+    this.homey.flow.getTriggerCard('wifi_switch_3gang_physical_gang1_on');
     await super.onInit();
     this.log('[WIFI-SWITCH-3GANG-DRV] Driver initialized');
   }

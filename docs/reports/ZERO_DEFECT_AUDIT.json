@@ -1,6 +1,14 @@
 {
-  "timestamp": "2026-04-10T03:09:58.407Z",
+<<<<<<< HEAD
+  "timestamp": "2026-04-10T02:53:28.816Z",
   "driversChecked": 305,
+||||||| parent of 579b162b37 (v7.2.0: The Autonomous Awakening. Implemented Adaptive Lighting, Radio Sensing, Smart Gestures, and High-Performance Nexus Orchestration. [skip ci])
+  "timestamp": "2026-04-09T08:05:16.991Z",
+  "driversChecked": 304,
+=======
+  "timestamp": "2026-04-09T20:05:05.155Z",
+  "driversChecked": 305,
+>>>>>>> 579b162b37 (v7.2.0: The Autonomous Awakening. Implemented Adaptive Lighting, Radio Sensing, Smart Gestures, and High-Performance Nexus Orchestration. [skip ci])
   "collisions": [
     {
       "id": "_TZE200_S8GKRKXK|TS0601",
@@ -6779,6 +6787,13 @@
       ]
     },
     {
+      "id": "_TZ3000_TZVBIMPQ|TS0042",
+      "drivers": [
+        "button_wireless_2",
+        "wall_remote_2_gang"
+      ]
+    },
+    {
       "id": "_TZ3000_EE8NRT2L|TS0044",
       "drivers": [
         "button_wireless_4",
@@ -7285,6 +7300,7 @@
       ]
     },
     {
+<<<<<<< HEAD
       "id": "DANFOSS|TS0026",
       "drivers": [
         "generic_diy",
@@ -7524,6 +7540,256 @@
     },
     {
       "id": "SONOFF|TS011F",
+||||||| parent of 579b162b37 (v7.2.0: The Autonomous Awakening. Implemented Adaptive Lighting, Radio Sensing, Smart Gestures, and High-Performance Nexus Orchestration. [skip ci])
+      "id": "EWELINK|TS0601",
+=======
+      "id": "_TZ3000_LTT60ASA|TS0601",
+      "drivers": [
+        "gas_sensor",
+        "switch_4gang"
+      ]
+    },
+    {
+      "id": "DANFOSS|TS0026",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "DANFOSS|TS0041A",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "DANFOSS|TS0052",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "DANFOSS|TS0105",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "DANFOSS|TS0224",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "DANFOSS|TS0901",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "LEGRAND|TS0026",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "LEGRAND|TS0041A",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "LEGRAND|TS0052",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "LEGRAND|TS0105",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "LEGRAND|TS0224",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "LEGRAND|TS0901",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SCHNEIDER ELECTRIC|TS0026",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SCHNEIDER ELECTRIC|TS0041A",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SCHNEIDER ELECTRIC|TS0052",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SCHNEIDER ELECTRIC|TS0105",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SCHNEIDER ELECTRIC|TS0224",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SCHNEIDER ELECTRIC|TS0901",
+      "drivers": [
+        "generic_diy",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "BITRON|TS0203",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "BITRON|TS0601",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "DANFOSS|TS0203",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "DANFOSS|TS0601",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "EUROTRONIC|TS0203",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "EUROTRONIC|TS0601",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "IKEA OF SWEDEN|TS0203",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "IKEA OF SWEDEN|TS0601",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "LEGRAND|TS0203",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "LEGRAND|TS0601",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SCHNEIDER ELECTRIC|TS0203",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SCHNEIDER ELECTRIC|TS0601",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SIGNIFY NETHERLANDS B.V.|TS0203",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SIGNIFY NETHERLANDS B.V.|TS0601",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SUNRICHER|TS0203",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SUNRICHER|TS0601",
+      "drivers": [
+        "generic_tuya",
+        "universal_zigbee"
+      ]
+    },
+    {
+      "id": "SONOFF|TS011F",
+>>>>>>> 579b162b37 (v7.2.0: The Autonomous Awakening. Implemented Adaptive Lighting, Radio Sensing, Smart Gestures, and High-Performance Nexus Orchestration. [skip ci])
       "drivers": [
         "plug_energy_monitor",
         "universal_zigbee"

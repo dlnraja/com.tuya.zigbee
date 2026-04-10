@@ -75,17 +75,11 @@ async function fetchNewPosts(tid,since){
 }
 
 // Anti-spam: check if we already replied recently in this topic
-function checkCooldown(state,tid,latestPostId){
+function checkCooldown(state,tid){
   const log=state.replyLog||[];
   const recent=log.filter(e=>e.tid===tid&&Date.now()-new Date(e.ts).getTime()<REPLY_COOLDOWN_MS);
   if(recent.length){
     console.log('  ⏳ Cooldown: replied to T'+tid+' '+Math.round((Date.now()-new Date(recent[0].ts).getTime())/60000)+'m ago');
-    return false;
-  }
-  // v7.2.2: Hard Post-ID Duplicate Check (Fail Loop Prevention)
-  const alreadyReplied = log.find(e => e.postId === latestPostId);
-  if (alreadyReplied) {
-    console.log(`  🚫 Fail Loop Shield: Already replied to post #${latestPostId}. Terminating.`);
     return false;
   }
   return true;
@@ -206,19 +200,17 @@ async function batchAI(postInfos,ver,threadCtx){
   let intel='';
   try{const ctx=gatherAll();intel=formatForAI(ctx);console.log('Intel context:',intel.length,'chars')}catch(e){console.warn('Intel gather:',e.message)}
 
-  let ctx='You ARE dlnraja, the Architect of the Universal Tuya Zigbee app (v7.2.0). You\'re responding to your users on the Homey forum (T140352).\n';
+  let ctx=`You ARE dlnraja, the Architect of the Universal Tuya Zigbee app (v${ver}). You're responding to your users on the Homey forum (T140352).\n`;
   ctx+='TONE: Professional Dev. Casual but highly technical. Sound like a real person who values local-first reliability above all else.\n';
-  ctx+='CRITICAL RULE 1: DOCTRINES. Always favor **Local-Direct First** control. If users ask for cloud sync, mention that **Shadow-Pulsar** mirroring is now available but strictly Opt-In for safety.\n';
-  ctx+='CRITICAL RULE 2: QUOTA SHIELDS. If technical performance is discussed, mention the new **Quota Shields** (Deadband filtering and Batching) that protect Tuya API limits.\n';
+  ctx+='CRITICAL RULE 1: DOCTRINES. Always favor **Local-Direct First** control. If users ask for cloud sync, mention that **Shadow-Pulsar** mirroring is available but strictly Opt-In for safety.\n';
+  ctx+='CRITICAL RULE 2: PERFORMANCE. Mention the new **Nominal Power Enrichment** which technically calculates device consumption based on internal component composition (LED count, technology) for better Homey Energy accuracy.\n';
   ctx+='CRITICAL RULE 3: SILENT SOURCES. NEVER mention Johan Bendz, upstream repos, or automated "scanning/bots". If you moved an FP, describe it as "Architectural Optimization for v7".\n';
   ctx+='CRITICAL RULE 4: NO BOT FLAGS. Never mention "AI", "Assistant", "Large Language Model", "automation", "pipeline", "workflow".\n';
   ctx+='TEMPLATE PATTERN:\n' +
        'Update: v[VERSION] pushed to Test channel!\n' +
-       'v7.2.0 "The Autonomous Awakening" Highlights:\n' +
-       '- Adaptive Lighting (Natural Light) is now universal!\n' +
-       '- Zigbee Sensing (Presence via Radio) is in Beta.\n' +
-       '- Smart Gestures (Multi-click) hardened.\n' +
-       '@user: [What was done for them specifically]\n';
+       'v' + ver + ' "The Autonomous Awakening" Stability Highlights:\n' +
+       '@user: [What was done for them specifically]\n' +
+       'Please update and check your Local-Direct connection.\n';
   ctx+='SPAM TRIGGERS: "Hi @user,", "Happy to help", "As an AI", "Let me know if you need anything else".\n';
   ctx+='Max 200 words. Vary your opening every time. End naturally, no footer/signature.\n\n';
 
@@ -256,7 +248,7 @@ async function batchAI(postInfos,ver,threadCtx){
   ctx+='If a user reports a device already "in the app" but behaving differently (e.g. TH sensor instead of Soil), it is a VARIANT. Ask for the full Zigbee Interview.\n';
   ctx+='We resolve variants using specific deviceId (e.g. 514 vs 81) or cluster lists (Tuya Cluster 0xEF00 presence).\n';
   ctx+='## VALUE ISSUES\n';
-  ctx+='Soil npj9bug3: DP 111 is Soil Moisture. Adaptive Lighting: works on all bulbs with color_temp. Radio Sensing: analyzing LQI fluctuations for presence. Multi-click: resolve ZCL+DP sequence via SmartGestureEngine. Moisture Canyon: fixed BVB v6.1.1. Energy massively high: divisor auto-fix v7.1. Battery 0%: firmware bug, fallback enabled.\n\n';
+  ctx+='Soil npj9bug3: DP 111 is Soil Moisture (NOT alarm). Moisture Canyon (0% drops): Fixed in BVB v7 — needs 3 matching readings to validate drop. LCD TH sensors: re-pair to ensure Tuya Cluster binding. Energy massive: divisor fixed in v7. Double-div temp: fixed. Battery 0% on mains: known, fixed.\n\n';
 
   // v5.12.2: Thread context
   const tcF=formatThreadContext(threadCtx);
@@ -328,8 +320,7 @@ async function main(){
     console.log('  Device:',devPosts.length,'/',fr.posts.length);
     if(!devPosts.length){state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
     // Anti-spam: skip if we already replied recently (per-topic cooldown)
-    const latestPostToReplyTo = devPosts[devPosts.length - 1].post.id;
-    if(!checkCooldown(state,tid,latestPostToReplyTo)){state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
+    if(!checkCooldown(state,tid)){state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
     // Anti-spam: skip if global cooldown active (shared with post-forum-update.js)
     if(!checkGlobalCooldown()){state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
     // Anti-spam: skip if our own reply already exists in the fetched batch

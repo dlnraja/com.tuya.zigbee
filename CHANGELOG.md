@@ -5,6 +5,7 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 ---
 
 ## [7.1.0] - 2026-04-09
+## [7.2.0] - 2026-04-10
 
 ### 🚀 Omni-Sync Architecture (Autonomous Maintenance)
 - **Unified Mapping Intelligence**: Centralized DP mapping database shared across all drivers.
@@ -16,170 +17,22 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 - Fixed `safeAddCapability` to prevent SDK 3 crashes when capabilities already exist.
 - Updated `SourceCredits.js` tracking for all external data sources.
 - Improved `DriverMappingLoader` with versioning and last-updated tracking.
+### 🧠 The Autonomous Awakening (Nexus Orchestration)
+- **Virtual Energy Engine**: Automatically calculates power (W) and energy (kWh) for all switches, plugs, and lights based on state and nominal power when hardware metering is missing.
+- **Radio-Based Presence Sensing**: Beta feature that infers presence by monitoring Zigbee signal (LQI/RSSI) fluctuations. Static devices (bulbs/plugs) can now detect movement in their immediate radio environment.
+- **Nexus Collision Resolver**: Automated CI/CD pipeline that proactively identifies and fixes device fingerprint collisions, ensuring unique and stable device routing.
+- **Improved Adaptive Lighting**: Enhanced Natural Light support with biological clock presets and deeper Zigbee 3.0 cluster integration.
+
+### Bug Fixes & Improvements
+- Resolved fingerprint collisions between `air_purifier`, `climate_sensor`, and `remote_button` drivers.
+- Automated technical power calculation (`nominal_power`) for 305+ drivers based on hardware composition (LED count, relay class).
+- Hardened `CapabilityManagerMixin` with intelligent energy report suppression and improved bizarre value blocking.
+- SDK 3 Compliance: Final audit of flow card ID collisions and manifest structure validation.
 
 ---
 
 ## [7.0.8] - 2026-04-07
 
- [7.0.7] - 2026-04-06
-
-### New Features
-- Deployed the new 5-tab Auto-Link pairing interface across all WiFi drivers for a faster, more intuitive setup process.
-
-### Bug Fixes & Improvements
-- Added mDNS discovery strategy to `tuya_wifi` to resolve pairing timeouts and improve initial device detection.
-- Updated driver database to 221 drivers with 6 new fingerprint mappings for enhanced compatibility.
----
-
- [7.0.6] - 2026-04-06
-
-### v7.0.6
-
-**Bug Fixes**
-- Fixed Tuya WiFi device discovery by implementing mDNS strategy, resolving pairing timeouts for local network devices.
-
-**New Devices & Fingerprints**
-- Added support for new device fingerprints across existing drivers.
-- Updated capability mappings to correctly handle newly added device variants.
-### New Features
-- **WiFi Pairing Overhaul:** All WiFi drivers now feature a unified 5-tab Auto-Link interface, simplifying network configuration and device linking.
-
-### Bug Fixes
-- **WiFi Discovery:** Implemented mDNS fallback strategy for Tuya WiFi devices, resolving connection timeouts and improving initial pairing success rates.
----
-
- [7.0.5] - 2026-04-06
-
-### Bug Fixes
-- Fixed incorrect sensor and energy readings on WiFi Tuya devices by implementing automatic divisor/multiplier resolution in the DP mapping engine.
----
-
- [7.0.4] - 2026-04-06
-
-### Bug Fixes
-- Fixed issues with Hybrid Energy for MAX Tuya Local Deployment.
-
-### New Features
-- Added 3 new fingerprints for enhanced device compatibility.
-
-### Improvements
-- Updated 221 drivers to support the latest device capabilities.
----
-
- [7.0.3] - 2026-04-06
-
-### Bug Fixes
-- Fixed issues with 3 new fingerprints.
-
-### New Features
-- Added support for 3 new fingerprints in the driver database.
-
-### Improvements
-- Updated a total of 221 drivers.
-- Fixed issues with hybrid energy reporting for specific devices.
-
-### New Features
-- Added support for new device fingerprints to enhance compatibility with Tuya devices.
----
-
- [7.0.2] - 2026-04-06
-
-### Bug Fixes
-- Fixed SDK v3 compliance crash when accessing device flow cards
-- Resolved duplicate Flow card trigger IDs that blocked app validation
-- Fixed unlinked sub-gang capabilities on TS0003 multi-gang switches
-- Corrected energy multiplier reporting for `_TZ3000_wzmuk9ai` plugs
-- Fixed Zbeacon plug connectivity and state reporting
-- Resolved connection drops and alarm reset issues for soil and LCD sensors
-- Patched driver fingerprint collisions to prevent incorrect device matching
-
-### New Features & Improvements
-- Added support for TS110E dimmer switches
-- Implemented dynamic energy/battery switching for hybrid energy meters
-- Added strict Tuya battery value filters to block garbage readings (0, 255, 65535)
-- Relaxed cluster matching to improve compatibility with Tuya-Bridge devices
-- Added 6 new device fingerprints for soil and LCD sensors
-- Optimized capability updates to prevent sudden value jumps and false triggers
-- Fixed 'is not a function' crash on flow card triggers by aligning with SDK v3 get*Card methods.
-- Resolved duplicate Flow card trigger IDs that blocked validation and caused manual selection bugs.
-- Fixed unlinked sub-gang capabilities on TS0003 multi-gang switches.
-- Patched capability update crashes in wireless switches using safe value setters.
-- Fixed duplicate flow ID arrays in hybrid energy drivers and added strict battery value filtering to block garbage data.
-
-### New Features & Improvements
-- Added 6 new device fingerprints for broader hardware support.
-- Implemented dynamic energy/battery switching for hybrid power devices to prevent conflicting capability states.
----
-
- [7.0.1] - 2026-04-06
-
-### Bug Fixes
-- Fixed `TypeError` crashes in flow cards by aligning card retrieval methods with Homey SDK v3 specifications.
-- Resolved "Could not get device by ID" errors affecting wireless buttons and multi-gang switches.
-- Fixed unlinked sub-gang capabilities on TS0003 switches that prevented independent control of secondary relays.
-- Resolved duplicate Flow card trigger IDs that blocked app validation and caused manual device selection bugs.
-- Disabled destructive self-heal rules that could inadvertently modify device configurations.
-
-### New Features & Device Support
-- Added support for 3 new device fingerprints across switch and sensor drivers.
-- Expanded compatibility for TS0003 multi-gang switch variants with improved endpoint routing.
----
-
- [7.0.0] - 2026-04-06
-
-### Bug Fixes
-- Resolved "Could not get device by ID" errors in flow triggers across all drivers
-- Fixed duplicate Flow card trigger IDs that blocked app validation
-- Corrected unlinked sub-gang capabilities on TS0003 multi-gang switches
-- Fixed incorrect energy multiplier for `_TZ3000_wzmuk9ai` smart plugs
-- Resolved connectivity drops for Zbeacon plugs and soil moisture sensors
-- Relaxed cluster matching to ensure stable operation in Tuya-Bridge mode
-- Disabled aggressive self-heal rules that caused unexpected device resets
-- Fixed soil sensor alarm state not clearing properly after dry conditions
-
-### New Features & Device Support
-- Added native support for TS110E dimmer switches
-- Optimized HOBEIAN sensor variants for improved data reporting
-- Added new fingerprints for LCD display and soil moisture sensors
-- Implemented LCD DP fallbacks (101/102) for broader display compatibility
-
-### Improvements
-- Enhanced Bizarre Value Blocking (BVB): refined jump protection for lighting and radar sensors, added memory leak prevention, and improved recovery logic for sudden value spikes
-- Resolved 621 driver fingerprint collisions and healed hybrid flow card mappings for more reliable automation triggers
----
-
- [5.12.2] - 2026-04-06
-
-### Bug Fixes
-- Fixed energy multiplier for device _TZ3000_wzmuk9ai.
-- Resolved connection issues for soil sensors and LCD sensors, adding new fingerprints.
-
-### New Features
-- Added support for new device variants, enhancing compatibility with additional Zigbee devices.
----
-
- [5.12.1] - 2026-04-06
-
-### Bug Fixes
-- Fixed energy multiplier for device _TZ3000_wzmuk9ai.
-
-### New Features
-- Added support for new device variants.
-
-### Improvements
-- Updated driver and fingerprint counts: 221 drivers, 3143 fingerprints.
----
-
- [5.11.208] - 2026-04-06
-
-### Bug Fixes
-- Fixed fingerprint casing regression.
-
-### New Features
-- Added support for Zbeacon devices.
----
-
- [5.11.205] - 2026-04-05
 ## [5.11.206] - 2026-04-06
 
 ### Bug Fixes
@@ -4256,41 +4109,6 @@ All open device requests from JohanBendz/com.tuya.zigbee repository have been pr
 
 #### Files Changed
 - `lib/UniversalDataHandler.js` - Fixed IAS Zone capability mapping
-
-## [5.5.0] - 2025-12-06
-
-#### Issue #83 - WoodUpp LED Driver
-- Moved `_TZB210_ngnt8kni` (WoodUpp 24V LED Driver) to `led_controller_cct`
-- Added `TS0501B` to supported product IDs for CCT
-
-#### Drivers Enriched (26 total)
-| Driver | New Manufacturers | New Models |
-|--------|-------------------|------------|
-| r_quality_co2 | +2 | - |
-| bulb_rgb | - | +1 |
-| button_wireless | +5 | +4 |
-| contact_sensor | - | +1 |
-| curtn_motor | +4 | +1 |
-| dimmer_wall_1gang | +3 | +2 |
-| doorbell | +4 | - |
-| gas_sensor | +3 | - |
-| led_strip | +1 | +2 |
-| lock_smart | +4 | - |
-| motion_sensor | +2 | +1 |
-| plug_energy_monitor | +3 | +2 |
-| plug_smart | +1 | +1 |
-| radiator_valve | +2 | - |
-| scene_switch_4 | +6 | +1 |
-| soil_sensor | +4 | - |
-| switch_1gang | +4 | - |
-| switch_2gang | +2 | +1 |
-| switch_3gang | +7 | +1 |
-| switch_4gang | +3 | - |
-| thermostat_tuya_dp | +2 | - |
-| usb_outlet_advanced | +4 | +1 |
-| water_leak_sensor | +2 | - |
-
-#### New s
 
 ## [5.2.33] - 2025-11-29
 

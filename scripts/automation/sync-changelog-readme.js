@@ -28,11 +28,11 @@ const currentVersion = appJson.version;
 
 // Get latest 10 versions (sorted descending)
 const versions = Object.keys(changelog)
-  .sort((a, b) => {
-    const partsA = a.split('.').map(Number);
-    const partsB = b.split('.').map(Number);
+                .sort((a, b) => {
+    const partsA = a.split('.').map(v => parseInt(v, 10) || 0);
+    const partsB = b.split('.').map(v => parseInt(v, 10) || 0);
     for (let i = 0; i < 3; i++) {
-      if (partsA[i] !== partsB[i]) return partsB[i] - partsA[i];
+        if (partsA[i] !== partsB[i]) return partsB[i] - partsA[i];
     }
     return 0;
   })
@@ -46,7 +46,7 @@ const dateStr = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
 let changelogTable = `## 🚀 Latest Updates\n\n`;
 changelogTable += `<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->\n`;
 changelogTable += `### ✨ Recent Changes (${dateStr})\n\n`;
-changelogTable += `| Version | Feature |\n`;
+changelogTable += `| Version | Changes |\n`;
 changelogTable += `|---------|---------|\n`;
 
 for (const ver of versions) {
@@ -92,4 +92,4 @@ if (startIdx !== -1) {
 fs.writeFileSync(readmePath, readme);
 console.log(`✅ README updated with ${versions.length} changelog entries`);
 console.log(`   Current version: v${currentVersion}`);
-console.log(`   Latest in changelog: v${versions[0]}`);
+console.log(`   Latest in changelog: v${versions[0]}`)

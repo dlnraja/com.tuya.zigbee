@@ -41,6 +41,11 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 ### âœ¨ Recent Changes (Apr 2026)
 
 | **v7.1.0** | Omni-Sync Architecture: Autonomous sync from Z2M & ZHA, Self-Healing Migration Queue, Enriched DP Parser. |
+| Version | Changes |
+|---------|---------|
+| **v7.2.0** | The Autonomous Awakening: Adaptive Lighting, Radio Sensing, Smart Gestures, a... |
+| **v7.1.0** | Omni-Sync Architecture: Autonomous sync from Z2M & ZHA, Self-Healing Migratio... |
+| **v7.0.22** | ðŸš€ [Opus 4.6] Universal Zigbee Hardening: Expanded brand fallbacks, dynamic Z... |
 | **v7.0.9** | v7.0.8: Fixed issues with device recognition for existing drivers., Added 3 n... |
 | **v7.0.8** | Universal Tuya Zigbee app v7.0.8 adds 3 new fingerprints and 221 drivers for ... |
 | **v7.0.7** | Updated WiFi pairing UI with a streamlined 5-tab Auto-Link flow and added mDN... |
@@ -48,36 +53,28 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v7.0.5** | Fixed incorrect sensor and energy readings on WiFi Tuya devices by adding aut... |
 | **v7.0.4** | Universal Tuya Zigbee app v7.0.4 adds 3 new fingerprints and improves driver ... |
 | **v7.0.3** | Universal Tuya Zigbee app v7.0.3 adds new device support and fixes bugs affec... |
-| **v7.0.2** | Fixed SDK v3 flow card crashes, resolved duplicate flow IDs, and patched unli... |
-| **v7.0.1** | Fixed flow card crashes and device ID errors, resolved unlinked sub-gang cont... |
-| **v7.0.0** | Fixed flow trigger errors, TS0003 gang linking, and energy metering. Added TS... |
 <!-- CHANGELOG_END -->
 
 
-
-
-
-
-
-
-
-
+---
 
 ## Statistics
 
 | Metric | Value |
 |--------|-------|
 | **App Version** | v7.1.0 |
+| **App Version** | v7.2.0 |
 | **Device Fingerprints** | 12,852+ |
 | **Unique Product IDs** | 1217 |
 | **Drivers** | 221 (171 Zigbee + 50 WiFi) |
-| **Flow Cards** | 2,524 |
+| **Flow Cards** | 2,557 |
 | **Unique Capabilities** | 127 |
 | **SVG Icons** | 366 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
 | **Last Updated** | 2026-04-09 |
+| **Last Updated** | 2026-04-10 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -125,32 +122,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | camera | 1 |
 | vacuumcleaner | 1 |
 | speaker | 1 |
-
----
-
-## Latest Updates
-
-<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
-
-| Version | Changes |
-|---------|---------|
-| **v7.0.9** | v7.0.8: Fixed issues with device recognition for existing drivers., Added 3 new fingerprints to support additional de... |
-| **v7.0.8** | Universal Tuya Zigbee app v7.0.8 adds 3 new fingerprints and 221 drivers for enhanced device compatibility. |
-| **v7.0.7** | Updated WiFi pairing UI with a streamlined 5-tab Auto-Link flow and added mDNS discovery for more reliable device set... |
-| **v7.0.6** | Updated WiFi device pairing with a new 5-tab Auto-Link interface for easier setup. Fixed mDNS discovery strategy to i... |
-| **v7.0.5** | Fixed incorrect sensor and energy readings on WiFi Tuya devices by adding automatic divisor and multiplier resolution... |
-| **v7.0.4** | Universal Tuya Zigbee app v7.0.4 adds 3 new fingerprints and improves driver support. |
-| **v7.0.3** | Universal Tuya Zigbee app v7.0.3 adds new device support and fixes bugs affecting users. |
-| **v7.0.2** | Fixed SDK v3 flow card crashes, resolved duplicate flow IDs, and patched unlinked gang capabilities on TS0003 switche... |
-| **v7.0.1** | Fixed flow card crashes and device ID errors, resolved unlinked sub-gang controls on TS0003 switches, fixed duplicate... |
-| **v7.0.0** | Fixed flow trigger errors, TS0003 gang linking, and energy metering. Added TS110E support, optimized HOBEIAN sensors,... |
-| **v5.12.3** | v5.12.2: Fixed energy multiplier for device _TZ3000_wzmuk9ai., Resolved connection issues for soil sensors and LCD se... |
-| **v5.12.2** | Universal Tuya Zigbee app v5.12.2 adds support for new device variants and resolves several fingerprint issues. |
-| **v5.12.1** | Universal Tuya Zigbee app v5.12.1 adds support for new device variants and resolves several fingerprint issues. |
-| **v5.12.0** | Major stabilization release: Integrated Parallel Bot Handler for faster maintenance, fixed eWeLink/SONOFF plug suppor... |
-| **v5.11.208** | Added Zbeacon support and fixed fingerprint casing regression in Universal Tuya Zigbee app. |
-
-<!-- CHANGELOG_END -->
 
 ---
 

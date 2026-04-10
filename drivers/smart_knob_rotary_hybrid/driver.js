@@ -5,6 +5,9 @@ const Homey = require('homey');
 class SmartKnobRotaryDriver extends Homey.Driver {
 
   async onInit() {
+    this.homey.flow.getTriggerCard('smart_knob_rotary_hybrid_pressed');
+    this.homey.flow.getTriggerCard('smart_knob_rotary_hybrid_rotate_right');
+    this.homey.flow.getTriggerCard('smart_knob_rotary_hybrid_rotate_left');
     this.log('Smart Knob Rotary driver initialized');
 
     // Register flow cards
