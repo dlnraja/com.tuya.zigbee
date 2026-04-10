@@ -477,6 +477,63 @@
         "en": "Cut power if consumption exceeds this value (0 = disabled)",
         "fr": "Coupure si la consommation dépasse cette valeur (0 = désactivé)"
       }
+    },
+    {
+      "id": "inching_duration",
+      "type": "number",
+      "label": {
+        "en": "Inching Duration (Secs)",
+        "fr": "Durée Inching (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 60,
+      "step": 0.1,
+      "hint": {
+        "en": "Automatically turn off after X seconds (Pulse mode)",
+        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+      }
+    },
+    {
+      "id": "enable_state_recovery",
+      "type": "checkbox",
+      "label": {
+        "en": "Software State Recovery",
+        "fr": "Récupération d'État Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Restore previous ON/OFF state after power failure",
+        "fr": "Restore l'état précédent après une coupure de courant"
+      }
+    },
+    {
+      "id": "enable_soft_transitions",
+      "type": "checkbox",
+      "label": {
+        "en": "Soft transitions (Fade)",
+        "fr": "Transitions douces (Fade)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable software-simulated smooth transitions (Lights/Dim)",
+        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+      }
+    },
+    {
+      "id": "maintenance_threshold",
+      "type": "number",
+      "label": {
+        "en": "Maintenance Alert Threshold",
+        "fr": "Seuil Alerte Maintenance"
+      },
+      "value": 30,
+      "min": 0,
+      "max": 100,
+      "hint": {
+        "en": "Alert if health score drops below this value",
+        "fr": "Alerte si le score de santé descend sous cette valeur"
+      }
     }
   ],
   "energy": {
