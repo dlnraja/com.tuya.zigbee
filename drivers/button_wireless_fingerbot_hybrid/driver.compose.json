@@ -9,10 +9,9 @@
     "measure_current",
     "button.toggle",
     "button.identify",
-    "button.push",
-    "finger_bot_mode",
     "button.1",
-    "button.2"
+    "button.2",
+    "finger_bot_mode"
   ],
   "zigbee": {
     "productId": [
@@ -29,12 +28,12 @@
       }
     },
     "manufacturerName": [
-      "_TYZB01_PHJERAQQ",
-      "_TZ3000_G8N1N7LG",
-      "_TZ3210_232NRYQH",
-      "_TZ3210_DSE8OGFY",
-      "_TZ3210_J4PDTZ9V",
-      "_TZ3210_OKBSS9DY",
+      { "manufacturerName": "_TZ3210_232NRYQH", "deviceId": 257 },
+      { "manufacturerName": "_TZ3210_DSE8OGFY", "deviceId": 257 },
+      { "manufacturerName": "_TZ3210_J4PDTZ9V", "deviceId": 257 },
+      { "manufacturerName": "_TZ3210_OKBSS9DY", "deviceId": 257 },
+      { "manufacturerName": "_TZ3000_G8N1N7LG", "deviceId": 257 },
+      { "manufacturerName": "_TYZB01_PHJERAQQ", "deviceId": 257 },
       "_tyzb01_phjeraqq",
       "_tz3000_g8n1n7lg",
       "_tz3210_232nryqh",
