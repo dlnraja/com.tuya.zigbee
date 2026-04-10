@@ -1,14 +1,14 @@
 {
   "name": {
     "en": "2-Buttons Wireless Controller",
-    "fr": "2-Boutons Contrôleur Sans Fil",
+    "fr": "2-Boutons ContrÃƒÆ’Ã‚Â´leur Sans Fil",
     "nl": "2-Knoppen Draadloze Controller",
     "de": "2-Tasten Drahtlos-Controller",
     "it": "2-Pulsanti Controller Wireless",
-    "sv": "2-Knappar Trådlös Kontroller",
-    "no": "2-Knapper Trådløs Kontroller",
-    "es": "2-Botones Controlador Inalámbrico",
-    "da": "2-Knapper Trådløs Controller"
+    "sv": "2-Knappar TrÃƒÆ’Ã‚Â¥dlÃƒÆ’Ã‚Â¶s Kontroller",
+    "no": "2-Knapper TrÃƒÆ’Ã‚Â¥dlÃƒÆ’Ã‚Â¸s Kontroller",
+    "es": "2-Botones Controlador InalÃƒÆ’Ã‚Â¡mbrico",
+    "da": "2-Knapper TrÃƒÆ’Ã‚Â¥dlÃƒÆ’Ã‚Â¸s Controller"
   },
   "class": "sensor",
   "capabilities": [
@@ -60,6 +60,16 @@
       "TUYATEC-O6SNCWD6",
       "_TYZB01_HLLA45KX",
       "_TYZB01_IUEPBMPV",
+      "_tyzb01_hlla45kx",
+      "_tyzb01_iuepbmpv",
+      "_TZ3210_7jnk7l3k",
+      "_TZ3000_kdi2o9m6",
+      "_TZ3000_dpo1ysak",
+      "_TZ3000_plyvnuf5",
+      "_TZ3000_hyfvrar3",
+      "_TZ3000_cymsnfvf",
+      "_TZ3000_upjrsxh1",
+      "_TZ3000_qeuvnohg",
       "_TZ3000_1H2X4AKH",
       "_TZ3000_1OBWWNMQ",
       "_TZ3000_88IQNHVD",
@@ -69,7 +79,6 @@
       "_TZ3000_D0YPG4O2",
       "_TZ3000_DKSBTRZS",
       "_TZ3000_DPO1YSAK",
-      "_TZ3000_EW31DMGX",
       "_TZ3000_FQ1SXFRJ",
       "_TZ3000_FUKAA7NC",
       "_TZ3000_GZNH2XLA",
@@ -81,11 +90,8 @@
       "_TZ3000_QEUVNOHG",
       "_TZ3000_QOUS95ZH",
       "_TZ3000_UPJRSXH1",
-      "_TZ3000_UWKJA6Z1",
       "_TZ3000_VMPBYGS5",
-      "_TZ3000_WAMQDR3F",
       "_TZ3000_XR7ITFXQ",
-      "_TZ3000_wzmuk9ai",
       "_tyzb01_hlla45kx",
       "_tyzb01_iuepbmpv",
       "_tz3000_1h2x4akh",
@@ -97,7 +103,6 @@
       "_tz3000_d0ypg4o2",
       "_tz3000_dksbtrzs",
       "_tz3000_dpo1ysak",
-      "_tz3000_ew31dmgx",
       "_tz3000_fq1sxfrj",
       "_tz3000_fukaa7nc",
       "_tz3000_gznh2xla",
@@ -109,11 +114,8 @@
       "_tz3000_qeuvnohg",
       "_tz3000_qous95zh",
       "_tz3000_upjrsxh1",
-      "_tz3000_uwkja6z1",
       "_tz3000_vmpbygs5",
-      "_tz3000_wamqdr3f",
       "_tz3000_xr7itfxq",
-      "_tz3000_wzmuk9ai",
       "_TZ3210_j4pdtz9v",
       "_TZ3210_dse8ogfy",
       "_TZ3210_232nryqh",
@@ -233,7 +235,6 @@
       "_TYZB02_key8kk7r",
       "_TZ3000_qzjcsmar",
       "_TZ3000_rrjr1q0u",
-      "_TZ3000_w8jwkczz",
       "_TZ3000_gbm10jnj",
       "_TZ3000_yw5tvzsk",
       "_TZ3000_sj7jbgks",
@@ -348,14 +349,14 @@
       "image": "/drivers/button_wireless_2/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-        "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
+        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â  ce que la LED clignote rapidement",
+        "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â  ce que la LED clignote rapidement",
+        "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â  ce que la LED clignote rapidement",
+        "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â  ce que la LED clignote rapidement",
+        "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â  ce que la LED clignote rapidement",
+        "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â  ce que la LED clignote rapidement",
+        "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â  ce que la LED clignote rapidement",
+        "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â  ce que la LED clignote rapidement"
       }
     }
   },
@@ -384,7 +385,7 @@
           "id": "auto",
           "label": {
             "en": "Auto Detect",
-            "fr": "Détection Automatique"
+            "fr": "DÃƒÆ’Ã‚Â©tection Automatique"
           }
         },
         {
@@ -411,7 +412,7 @@
       ],
       "hint": {
         "en": "Select power source manually or use auto-detection",
-        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+        "fr": "SÃƒÆ’Ã‚Â©lectionnez la source d'alimentation manuellement ou utilisez la dÃƒÆ’Ã‚Â©tection automatique"
       }
     },
     {
@@ -427,7 +428,7 @@
           "id": "auto",
           "label": {
             "en": "Auto Detect",
-            "fr": "Détection Automatique"
+            "fr": "DÃƒÆ’Ã‚Â©tection Automatique"
           }
         },
         {
@@ -468,7 +469,7 @@
       ],
       "hint": {
         "en": "Select battery type manually or use auto-detection based on voltage",
-        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+        "fr": "SÃƒÆ’Ã‚Â©lectionnez le type de batterie manuellement ou utilisez la dÃƒÆ’Ã‚Â©tection automatique basÃƒÆ’Ã‚Â©e sur la tension"
       }
     },
     {
@@ -484,7 +485,7 @@
       "step": 5,
       "hint": {
         "en": "Trigger low battery warning when below this percentage",
-        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+        "fr": "DÃƒÆ’Ã‚Â©clencher l'alerte batterie faible en dessous de ce pourcentage"
       }
     },
     {
@@ -500,7 +501,7 @@
       "step": 5,
       "hint": {
         "en": "Trigger critical battery warning when below this percentage",
-        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+        "fr": "DÃƒÆ’Ã‚Â©clencher l'alerte batterie critique en dessous de ce pourcentage"
       }
     },
     {
@@ -513,7 +514,7 @@
       "value": true,
       "hint": {
         "en": "Send flow notifications for battery events",
-        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+        "fr": "Envoyer des notifications de flow pour les ÃƒÆ’Ã‚Â©vÃƒÆ’Ã‚Â©nements de batterie"
       }
     },
     {
@@ -529,7 +530,7 @@
       "step": 1,
       "hint": {
         "en": "How often to request battery status updates",
-        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+        "fr": "FrÃƒÆ’Ã‚Â©quence de demande des mises ÃƒÆ’Ã‚Â  jour d'ÃƒÆ’Ã‚Â©tat de batterie"
       }
     },
     {
@@ -537,7 +538,7 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation Énergétique"
+        "fr": "Mode Optimisation ÃƒÆ’Ã¢â‚¬Â°nergÃƒÆ’Ã‚Â©tique"
       },
       "value": "balanced",
       "values": [
@@ -545,27 +546,27 @@
           "id": "performance",
           "label": {
             "en": "Performance (More responsive)",
-            "fr": "Performance (Plus réactif)"
+            "fr": "Performance (Plus rÃƒÆ’Ã‚Â©actif)"
           }
         },
         {
           "id": "balanced",
           "label": {
             "en": "Balanced",
-            "fr": "Équilibré"
+            "fr": "ÃƒÆ’Ã¢â‚¬Â°quilibrÃƒÆ’Ã‚Â©"
           }
         },
         {
           "id": "power_saving",
           "label": {
             "en": "Power Saving (Longer battery)",
-            "fr": "Économie d'énergie (Batterie plus longue)"
+            "fr": "ÃƒÆ’Ã¢â‚¬Â°conomie d'ÃƒÆ’Ã‚Â©nergie (Batterie plus longue)"
           }
         }
       ],
       "hint": {
         "en": "Balance between responsiveness and battery life",
-        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+        "fr": "ÃƒÆ’Ã¢â‚¬Â°quilibre entre rÃƒÆ’Ã‚Â©activitÃƒÆ’Ã‚Â© et durÃƒÆ’Ã‚Â©e de vie de la batterie"
       }
     },
     {
@@ -578,7 +579,7 @@
       "value": false,
       "hint": {
         "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+        "fr": "Afficher la tension brute de la batterie dans les paramÃƒÆ’Ã‚Â¨tres du pÃƒÆ’Ã‚Â©riphÃƒÆ’Ã‚Â©rique"
       }
     },
     {
@@ -591,7 +592,7 @@
       "value": true,
       "hint": {
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
-        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+        "fr": "Estimer la consommation quand la mesure rÃƒÆ’Ã‚Â©elle n'est pas disponible (appareils AC/DC seulement)"
       }
     },
     {
@@ -603,7 +604,7 @@
       },
       "hint": {
         "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-        "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+        "fr": "Le mode ScÃƒÆ’Ã‚Â¨ne permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de dÃƒÆ’Ã‚Â©tecter et basculer automatiquement."
       },
       "value": "auto",
       "values": [
@@ -611,14 +612,14 @@
           "id": "auto",
           "label": {
             "en": "Auto-Detect",
-            "fr": "Détection Auto"
+            "fr": "DÃƒÆ’Ã‚Â©tection Auto"
           }
         },
         {
           "id": "scene",
           "label": {
             "en": "Scene Mode (Multi-press)",
-            "fr": "Mode Scène (Multi-clics)"
+            "fr": "Mode ScÃƒÆ’Ã‚Â¨ne (Multi-clics)"
           }
         },
         {
@@ -635,12 +636,12 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la Détection de Présence Radio"
+        "fr": "Activer la DÃƒÆ’Ã‚Â©tection de PrÃƒÆ’Ã‚Â©sence Radio"
       },
       "value": false,
       "hint": {
         "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+        "fr": "DÃƒÆ’Ã‚Â©duit la prÃƒÆ’Ã‚Â©sence des fluctuations du signal Zigbee (BETA)"
       }
     },
     {
@@ -648,7 +649,7 @@
       "type": "number",
       "label": {
         "en": "Radio Presence Sensitivity",
-        "fr": "Sensibilité Présence Radio"
+        "fr": "SensibilitÃƒÆ’Ã‚Â© PrÃƒÆ’Ã‚Â©sence Radio"
       },
       "value": 15,
       "min": 5,
@@ -663,12 +664,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software Child Lock",
-        "fr": "Sécurité Enfant Logicielle"
+        "fr": "SÃƒÆ’Ã‚Â©curitÃƒÆ’Ã‚Â© Enfant Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Prevents manual state changes on the device",
-        "fr": "Empêche les changements d'état manuels sur l'appareil"
+        "fr": "EmpÃƒÆ’Ã‚Âªche les changements d'ÃƒÆ’Ã‚Â©tat manuels sur l'appareil"
       }
     },
     {
@@ -683,7 +684,7 @@
       "max": 1440,
       "hint": {
         "en": "Turn off automatically after X minutes (0 = disabled)",
-        "fr": "S'éteint après X minutes (0 = désactivé)"
+        "fr": "S'ÃƒÆ’Ã‚Â©teint aprÃƒÆ’Ã‚Â¨s X minutes (0 = dÃƒÆ’Ã‚Â©sactivÃƒÆ’Ã‚Â©)"
       }
     },
     {
@@ -691,12 +692,12 @@
       "type": "checkbox",
       "label": {
         "en": "Vacation Mode (Presence Sim)",
-        "fr": "Mode Vacances (Simulation Présence)"
+        "fr": "Mode Vacances (Simulation PrÃƒÆ’Ã‚Â©sence)"
       },
       "value": false,
       "hint": {
         "en": "Randomly toggle device during evenings to simulate presence",
-        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+        "fr": "Actionne l'appareil alÃƒÆ’Ã‚Â©atoirement le soir pour simuler une prÃƒÆ’Ã‚Â©sence"
       }
     },
     {
@@ -704,14 +705,14 @@
       "type": "number",
       "label": {
         "en": "Emulated Motion Hold (Seconds)",
-        "fr": "Maintien Mouvement Émulé (Secondes)"
+        "fr": "Maintien Mouvement ÃƒÆ’Ã¢â‚¬Â°mulÃƒÆ’Ã‚Â© (Secondes)"
       },
       "value": 0,
       "min": 0,
       "max": 3600,
       "hint": {
         "en": "Keep motion 'ON' for X seconds after hardware clears",
-        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+        "fr": "Garde le mouvement 'ON' pendant X secondes aprÃƒÆ’Ã‚Â¨s le reset matÃƒÆ’Ã‚Â©riel"
       }
     },
     {
@@ -726,7 +727,7 @@
       "max": 1000,
       "hint": {
         "en": "Software emulation for single-action buttons",
-        "fr": "Émulation logicielle pour boutons à action unique"
+        "fr": "ÃƒÆ’Ã¢â‚¬Â°mulation logicielle pour boutons ÃƒÆ’Ã‚Â  action unique"
       }
     },
     {
@@ -741,7 +742,7 @@
       "max": 4000,
       "hint": {
         "en": "Cut power if consumption exceeds this value (0 = disabled)",
-        "fr": "Coupure si la consommation dépasse cette valeur (0 = désactivé)"
+        "fr": "Coupure si la consommation dÃƒÆ’Ã‚Â©passe cette valeur (0 = dÃƒÆ’Ã‚Â©sactivÃƒÆ’Ã‚Â©)"
       }
     },
     {
@@ -749,7 +750,7 @@
       "type": "number",
       "label": {
         "en": "Inching Duration (Secs)",
-        "fr": "Durée Inching (Secondes)"
+        "fr": "DurÃƒÆ’Ã‚Â©e Inching (Secondes)"
       },
       "value": 0,
       "min": 0,
@@ -757,7 +758,7 @@
       "step": 0.1,
       "hint": {
         "en": "Automatically turn off after X seconds (Pulse mode)",
-        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+        "fr": "S'ÃƒÆ’Ã‚Â©teint automatiquement aprÃƒÆ’Ã‚Â¨s X secondes (mode Impulsion)"
       }
     },
     {
@@ -765,12 +766,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software State Recovery",
-        "fr": "Récupération d'État Logicielle"
+        "fr": "RÃƒÆ’Ã‚Â©cupÃƒÆ’Ã‚Â©ration d'ÃƒÆ’Ã¢â‚¬Â°tat Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Restore previous ON/OFF state after power failure",
-        "fr": "Restore l'état précédent après une coupure de courant"
+        "fr": "Restore l'ÃƒÆ’Ã‚Â©tat prÃƒÆ’Ã‚Â©cÃƒÆ’Ã‚Â©dent aprÃƒÆ’Ã‚Â¨s une coupure de courant"
       }
     },
     {
@@ -783,7 +784,7 @@
       "value": false,
       "hint": {
         "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+        "fr": "Active les transitions douces simulÃƒÆ’Ã‚Â©es (LumiÃƒÆ’Ã‚Â¨res/Variateurs)"
       }
     },
     {
@@ -798,7 +799,7 @@
       "max": 100,
       "hint": {
         "en": "Alert if health score drops below this value",
-        "fr": "Alerte si le score de santé descend sous cette valeur"
+        "fr": "Alerte si le score de santÃƒÆ’Ã‚Â© descend sous cette valeur"
       }
     }
   ],
@@ -826,7 +827,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MàJ OTA",
+        "fr": "VÃƒÆ’Ã‚Â©rifier MÃƒÆ’Ã‚Â J OTA",
         "nl": "Controleer op OTA-updates"
       }
     }
@@ -837,7 +838,7 @@
         "id": "radio_presence_detected",
         "title": {
           "en": "Radio sensing presence detected",
-          "fr": "Présence détectée par radio (LQI)"
+          "fr": "PrÃƒÆ’Ã‚Â©sence dÃƒÆ’Ã‚Â©tectÃƒÆ’Ã‚Â©e par radio (LQI)"
         }
       }
     ],
@@ -846,7 +847,7 @@
         "id": "is_radio_presence_detected",
         "title": {
           "en": "Radio presence is detected",
-          "fr": "Présence radio détectée"
+          "fr": "PrÃƒÆ’Ã‚Â©sence radio dÃƒÆ’Ã‚Â©tectÃƒÆ’Ã‚Â©e"
         }
       }
     ],
@@ -855,7 +856,7 @@
         "id": "calibrate_virtual_energy",
         "title": {
           "en": "Calibrate virtual energy",
-          "fr": "Calibrer l'énergie virtuelle"
+          "fr": "Calibrer l'ÃƒÆ’Ã‚Â©nergie virtuelle"
         },
         "args": [
           {
@@ -872,7 +873,7 @@
         "id": "set_sensing_threshold",
         "title": {
           "en": "Set radio sensing sensitivity",
-          "fr": "Régler la détection radio"
+          "fr": "RÃƒÆ’Ã‚Â©gler la dÃƒÆ’Ã‚Â©tection radio"
         },
         "args": [
           {

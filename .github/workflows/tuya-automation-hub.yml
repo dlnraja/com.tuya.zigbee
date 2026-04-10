@@ -227,6 +227,14 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
+      
+      - name: App stats
+        id: stats
+        run: |
+          V=$(node -p "require('./app.json').version")
+          echo "version=$V" >> $GITHUB_OUTPUT
+          echo "NEW_VERSION=$V" >> $GITHUB_ENV
+
       # forum-updater.js REMOVED — duplicate forum poster (post-forum-update.js in publish.yml is the sole source)
       - name: Forum Summary (skipped)
         run: echo "Forum updates handled by post-forum-update.js on publish only"
@@ -251,3 +259,13 @@ jobs:
         run: |
           if [ -z "$HOMEY_PAT" ]; then exit 0; fi
           node .github/scripts/auto-publish-draft.js || true
+
+      # 📣 Forum Announcement (Nexus Awareness)
+      - name: 💬 Post to Forum
+        if: always()
+        continue-on-error: true
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          APP_VERSION: ${{ env.NEW_VERSION }}
+        run: node .github/scripts/post-forum-update.js

@@ -346,7 +346,8 @@
   },
   "energy": {
     "approximation": {
-      "usageConstant": 0.7
+      "usageOff": 0.7,
+      "usageOn": 100
     }
   }
 }

@@ -30,7 +30,10 @@
       "CR2450"
     ],
     "mains": true,
-    "approximation": {}
+    "approximation": {
+      "usageOff": 0.2,
+      "usageOn": 100
+    }
   },
   "zigbee": {
     "manufacturerName": [],

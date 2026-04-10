@@ -923,7 +923,8 @@
   },
   "energy": {
     "approximation": {
-      "usageConstant": 0.4
+      "usageOff": 0.4,
+      "usageOn": 100
     },
     "batteries": [
       "CR2450"

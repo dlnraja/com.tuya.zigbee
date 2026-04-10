@@ -45,7 +45,7 @@ The CI/CD pipeline and the `TriageEngine` must validate the driver protocol befo
 
 ---
 
-## 🧠 4. Autonomous Intelligence (Thinking Opus 4.6)
+## 🧠 4. Autonomous Intelligence (Thinking Nexus Autonomous)
 
 ### Intelligence Harvesting
 - **Descending Search**: Scans descendant forks of the ecosystem for specific driver patches and community-tested manufacturer names.

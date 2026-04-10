@@ -24,12 +24,8 @@
     "manufacturerName": [
       "CK-BL702-SWP-01(7020)",
       "E-WELINK",
-      "EWELINK",
-      "eWeLink",
-      "ewelink",
       "SONOFF",
       "sonoff",
-      "_TYZB01_HLLA45KX",
       "_TYZB01_MTUNWANM",
       "_TZ3000_1HWJUTGO",
       "_TZ3000_2IIIMQS9",
@@ -48,12 +44,10 @@
       "_TZ3000_DD8WWZCY",
       "_TZ3000_DLHHRHS8",
       "_TZ3000_DLUG3KBC",
-      "_TZ3000_DPO1YSAK",
       "_TZ3000_GAZJNGJL",
       "_TZ3000_GDYJFVGM",
       "_TZ3000_HELYQDVS",
       "_TZ3000_HHIODEZ3",
-      "_TZ3000_HYFVRAR3",
       "_TZ3000_I8L0NQDU",
       "_TZ3000_IBEFEICF",
       "_TZ3000_IKSASDBV",
@@ -74,7 +68,6 @@
       "_TZ3000_OIYMH3QU",
       "_TZ3000_PS3DMATO",
       "_TZ3000_PVLVOXVT",
-      "_TZ3000_QEUVNOHG",
       "_TZ3000_QIUTUT5Y",
       "_TZ3000_QLMNXMAC",
       "_TZ3000_RAVIYUVK",
@@ -84,7 +77,6 @@
       "_TZ3000_RTCRRVIA",
       "_TZ3000_SGB0XHWN",
       "_TZ3000_U1RKAJSR",
-      "_TZ3000_UPJRSXH1",
       "_TZ3000_UWAORT14",
       "_TZ3000_UWKJA6Z1",
       "_TZ3000_V1PDXUQQ",
@@ -125,7 +117,6 @@
       "_TZE284_DAPWRYY7",
       "_TZE284_DCNSGGVZ",
       "_TZN3000_CFNPRAB5",
-      "_tyzb01_hlla45kx",
       "_tyzb01_mtunwanm",
       "_tz3000_1hwjutgo",
       "_tz3000_2iiimqs9",
@@ -144,12 +135,10 @@
       "_tz3000_dd8wwzcy",
       "_tz3000_dlhhrhs8",
       "_tz3000_dlug3kbc",
-      "_tz3000_dpo1ysak",
       "_tz3000_gazjngjl",
       "_tz3000_gdyjfvgm",
       "_tz3000_helyqdvs",
       "_tz3000_hhiodez3",
-      "_tz3000_hyfvrar3",
       "_tz3000_i8l0nqdu",
       "_tz3000_ibefeicf",
       "_tz3000_iksasdbv",
@@ -170,7 +159,6 @@
       "_tz3000_oiymh3qu",
       "_tz3000_ps3dmato",
       "_tz3000_pvlvoxvt",
-      "_tz3000_qeuvnohg",
       "_tz3000_qiutut5y",
       "_tz3000_qlmnxmac",
       "_tz3000_raviyuvk",
@@ -180,7 +168,6 @@
       "_tz3000_rtcrrvia",
       "_tz3000_sgb0xhwn",
       "_tz3000_u1rkajsr",
-      "_tz3000_upjrsxh1",
       "_tz3000_uwaort14",
       "_tz3000_uwkja6z1",
       "_tz3000_v1pdxuqq",
@@ -232,18 +219,12 @@
       "LUMI.PLUG.MACN01",
       "LUMI.PLUG.MAEU01",
       "LUMI.PLUG.MMEU01",
-      "S26R2ZB",
-      "S31 LITE ZB",
-      "S31 Lite zb",
       "S31ZB",
-      "S40LITE",
       "S40ZBTPB",
       "S40ZBTPF",
       "S40ZBTPG",
       "S60ZBTPE",
-      "S60ZBTPF",
       "S60ZBTPF-R2",
-      "S60ZBTPG",
       "SA-028-1",
       "SA-029-1",
       "SNZB-06P",
@@ -256,9 +237,7 @@
       "SPMZBR2",
       "TRADFRI CONTROL OUTLET",
       "TRADFRI control outlet",
-      "TS011F",
       "TS0121",
-      "TS0601",
       "TSO121",
       "Z111PL0H-1JX",
       "ZBMINIL2",
@@ -273,17 +252,12 @@
       "lumi.plug.macn01",
       "lumi.plug.maeu01",
       "lumi.plug.mmeu01",
-      "s26r2zb",
-      "s31 lite zb",
       "s31zb",
-      "s40lite",
       "s40zbtpb",
       "s40zbtpf",
       "s40zbtpg",
       "s60zbtpe",
-      "s60zbtpf",
       "s60zbtpf-r2",
-      "s60zbtpg",
       "sa-028-1",
       "sa-029-1",
       "snzb-06p",
@@ -295,9 +269,7 @@
       "spm01",
       "spmzbr2",
       "tradfri control outlet",
-      "ts011f",
       "ts0121",
-      "ts0601",
       "tso121",
       "z111pl0h-1jx",
       "zbminil2"
@@ -306,7 +278,7 @@
       "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã  ce que la LED clignote."
       }
     },
     "endpoints": {
@@ -328,7 +300,7 @@
       "value": true,
       "hint": {
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
-        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+        "fr": "Estimer la consommation quand la mesure rÃ©elle n'est pas disponible (appareils AC/DC seulement)"
       }
     },
     {
@@ -336,29 +308,29 @@
       "type": "dropdown",
       "label": {
         "en": "Power Measurement Scale",
-        "fr": "Échelle Mesure Puissance"
+        "fr": "Ã‰chelle Mesure Puissance"
       },
       "value": "1",
       "values": [
         {
           "id": "0.1",
           "label": {
-            "en": "÷10",
-            "fr": "÷10"
+            "en": "Ã·10",
+            "fr": "Ã·10"
           }
         },
         {
           "id": "1",
           "label": {
-            "en": "×1 (Default)",
-            "fr": "×1 (Par défaut)"
+            "en": "Ã—1 (Default)",
+            "fr": "Ã—1 (Par dÃ©faut)"
           }
         },
         {
           "id": "10",
           "label": {
-            "en": "×10",
-            "fr": "×10"
+            "en": "Ã—10",
+            "fr": "Ã—10"
           }
         }
       ],
@@ -372,29 +344,29 @@
       "type": "dropdown",
       "label": {
         "en": "Voltage Measurement Scale",
-        "fr": "Échelle Mesure Tension"
+        "fr": "Ã‰chelle Mesure Tension"
       },
       "value": "1",
       "values": [
         {
           "id": "0.1",
           "label": {
-            "en": "÷10",
-            "fr": "÷10"
+            "en": "Ã·10",
+            "fr": "Ã·10"
           }
         },
         {
           "id": "1",
           "label": {
-            "en": "×1 (Default)",
-            "fr": "×1 (Par défaut)"
+            "en": "Ã—1 (Default)",
+            "fr": "Ã—1 (Par dÃ©faut)"
           }
         },
         {
           "id": "10",
           "label": {
-            "en": "×10",
-            "fr": "×10"
+            "en": "Ã—10",
+            "fr": "Ã—10"
           }
         }
       ],
@@ -408,29 +380,29 @@
       "type": "dropdown",
       "label": {
         "en": "Current Measurement Scale",
-        "fr": "Échelle Mesure Courant"
+        "fr": "Ã‰chelle Mesure Courant"
       },
       "value": "1",
       "values": [
         {
           "id": "0.1",
           "label": {
-            "en": "÷10",
-            "fr": "÷10"
+            "en": "Ã·10",
+            "fr": "Ã·10"
           }
         },
         {
           "id": "1",
           "label": {
-            "en": "×1 (Default)",
-            "fr": "×1 (Par défaut)"
+            "en": "Ã—1 (Default)",
+            "fr": "Ã—1 (Par dÃ©faut)"
           }
         },
         {
           "id": "10",
           "label": {
-            "en": "×10",
-            "fr": "×10"
+            "en": "Ã—10",
+            "fr": "Ã—10"
           }
         }
       ],
@@ -444,35 +416,35 @@
       "type": "dropdown",
       "label": {
         "en": "Energy (kWh) Scale",
-        "fr": "Échelle Énergie (kWh)"
+        "fr": "Ã‰chelle Ã‰nergie (kWh)"
       },
       "value": "1",
       "values": [
         {
           "id": "0.1",
           "label": {
-            "en": "÷10",
-            "fr": "÷10"
+            "en": "Ã·10",
+            "fr": "Ã·10"
           }
         },
         {
           "id": "1",
           "label": {
-            "en": "×1 (Default)",
-            "fr": "×1 (Par défaut)"
+            "en": "Ã—1 (Default)",
+            "fr": "Ã—1 (Par dÃ©faut)"
           }
         },
         {
           "id": "10",
           "label": {
-            "en": "×10",
-            "fr": "×10"
+            "en": "Ã—10",
+            "fr": "Ã—10"
           }
         }
       ],
       "hint": {
         "en": "Adjust if total energy (kWh) readings are way off.",
-        "fr": "Ajuster si l'énergie totale (kWh) est incorrecte."
+        "fr": "Ajuster si l'Ã©nergie totale (kWh) est incorrecte."
       }
     },
     {
@@ -540,12 +512,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software Child Lock",
-        "fr": "Sécurité Enfant Logicielle"
+        "fr": "SÃ©curitÃ© Enfant Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Prevents manual state changes on the device",
-        "fr": "Empêche les changements d'état manuels sur l'appareil"
+        "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil"
       }
     },
     {
@@ -560,7 +532,7 @@
       "max": 1440,
       "hint": {
         "en": "Turn off automatically after X minutes (0 = disabled)",
-        "fr": "S'éteint après X minutes (0 = désactivé)"
+        "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)"
       }
     },
     {
@@ -568,12 +540,12 @@
       "type": "checkbox",
       "label": {
         "en": "Vacation Mode (Presence Sim)",
-        "fr": "Mode Vacances (Simulation Présence)"
+        "fr": "Mode Vacances (Simulation PrÃ©sence)"
       },
       "value": false,
       "hint": {
         "en": "Randomly toggle device during evenings to simulate presence",
-        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+        "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence"
       }
     },
     {
@@ -581,14 +553,14 @@
       "type": "number",
       "label": {
         "en": "Emulated Motion Hold (Seconds)",
-        "fr": "Maintien Mouvement Émulé (Secondes)"
+        "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
       },
       "value": 0,
       "min": 0,
       "max": 3600,
       "hint": {
         "en": "Keep motion 'ON' for X seconds after hardware clears",
-        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+        "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel"
       }
     },
     {
@@ -603,7 +575,7 @@
       "max": 1000,
       "hint": {
         "en": "Software emulation for single-action buttons",
-        "fr": "Émulation logicielle pour boutons à action unique"
+        "fr": "Ã‰mulation logicielle pour boutons Ã  action unique"
       }
     },
     {
@@ -611,7 +583,7 @@
       "type": "number",
       "label": {
         "en": "Inching Duration (Secs)",
-        "fr": "Durée Inching (Secondes)"
+        "fr": "DurÃ©e Inching (Secondes)"
       },
       "value": 0,
       "min": 0,
@@ -619,7 +591,7 @@
       "step": 0.1,
       "hint": {
         "en": "Automatically turn off after X seconds (Pulse mode)",
-        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+        "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)"
       }
     },
     {
@@ -627,12 +599,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software State Recovery",
-        "fr": "Récupération d'État Logicielle"
+        "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Restore previous ON/OFF state after power failure",
-        "fr": "Restore l'état précédent après une coupure de courant"
+        "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant"
       }
     },
     {
@@ -645,7 +617,7 @@
       "value": false,
       "hint": {
         "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+        "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)"
       }
     },
     {
@@ -660,7 +632,7 @@
       "max": 100,
       "hint": {
         "en": "Alert if health score drops below this value",
-        "fr": "Alerte si le score de santé descend sous cette valeur"
+        "fr": "Alerte si le score de santÃ© descend sous cette valeur"
       }
     }
   ],
@@ -700,7 +672,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MàJ OTA",
+        "fr": "VÃ©rifier MÃ J OTA",
         "nl": "Controleer op OTA-updates"
       }
     }
@@ -711,7 +683,7 @@
         "id": "radio_presence_detected",
         "title": {
           "en": "Radio sensing presence detected",
-          "fr": "Présence détectée par radio (LQI)"
+          "fr": "PrÃ©sence dÃ©tectÃ©e par radio (LQI)"
         }
       }
     ],
@@ -720,7 +692,7 @@
         "id": "is_radio_presence_detected",
         "title": {
           "en": "Radio presence is detected",
-          "fr": "Présence radio détectée"
+          "fr": "PrÃ©sence radio dÃ©tectÃ©e"
         }
       }
     ],
@@ -729,7 +701,7 @@
         "id": "calibrate_virtual_energy",
         "title": {
           "en": "Calibrate virtual energy",
-          "fr": "Calibrer l'énergie virtuelle"
+          "fr": "Calibrer l'Ã©nergie virtuelle"
         },
         "args": [
           {
@@ -746,7 +718,7 @@
         "id": "set_sensing_threshold",
         "title": {
           "en": "Set radio sensing sensitivity",
-          "fr": "Régler la détection radio"
+          "fr": "RÃ©gler la dÃ©tection radio"
         },
         "args": [
           {

@@ -40,20 +40,20 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 <!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
 ### âœ¨ Recent Changes (Apr 2026)
 
-| **v7.1.0** | Omni-Sync Architecture: Autonomous sync from Z2M & ZHA, Self-Healing Migration Queue, Enriched DP Parser. |
 | Version | Changes |
 |---------|---------|
+| **v7.2.5** | ðŸš€ Nexus Awakening: Stable Release of Premium Features (Adaptive Lighting, TP... |
 | **v7.2.0** | The Autonomous Awakening: Adaptive Lighting, Radio Sensing, Smart Gestures, a... |
 | **v7.1.0** | Omni-Sync Architecture: Autonomous sync from Z2M & ZHA, Self-Healing Migratio... |
-| **v7.0.22** | ðŸš€ [Opus 4.6] Universal Zigbee Hardening: Expanded brand fallbacks, dynamic Z... |
+| **v7.0.22** | ðŸš€ [Nexus Autonomous] Universal Zigbee Hardening: Expanded brand fallbacks, d... |
 | **v7.0.9** | v7.0.8: Fixed issues with device recognition for existing drivers., Added 3 n... |
 | **v7.0.8** | Universal Tuya Zigbee app v7.0.8 adds 3 new fingerprints and 221 drivers for ... |
 | **v7.0.7** | Updated WiFi pairing UI with a streamlined 5-tab Auto-Link flow and added mDN... |
 | **v7.0.6** | Updated WiFi device pairing with a new 5-tab Auto-Link interface for easier s... |
 | **v7.0.5** | Fixed incorrect sensor and energy readings on WiFi Tuya devices by adding aut... |
 | **v7.0.4** | Universal Tuya Zigbee app v7.0.4 adds 3 new fingerprints and improves driver ... |
-| **v7.0.3** | Universal Tuya Zigbee app v7.0.3 adds new device support and fixes bugs affec... |
 <!-- CHANGELOG_END -->
+
 
 
 ---
@@ -62,8 +62,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v7.1.0 |
-| **App Version** | v7.2.0 |
+| **App Version** | v7.2.5 |
 | **Device Fingerprints** | 12,852+ |
 | **Unique Product IDs** | 1217 |
 | **Drivers** | 221 (171 Zigbee + 50 WiFi) |
@@ -73,7 +72,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-04-09 |
 | **Last Updated** | 2026-04-10 |
 
 ### Top 20 Drivers by Fingerprint Count

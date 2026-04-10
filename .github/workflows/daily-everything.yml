@@ -174,7 +174,7 @@ jobs:
           SCAN_FORKS: "true"
         run: node .github/scripts/triage-upstream-enhanced.js
 
-      # ===== 3ba. UNIVERSAL STABILITY & NEXUS ORCHESTRATION (v7.0.22) =====
+      # ===== 3ba. UNIVERSAL STABILITY & NEXUS ORCHESTRATION (v7.2.5) =====
       - name: "3ba. Nexus Orchestrator (Triage + Self-Heal + Audit)"
         id: nexus
         continue-on-error: true
@@ -279,14 +279,17 @@ jobs:
           # Rules: Inheritance check, Safe Flow Card usage, Physical Button Hardening
           node scripts/maintenance/stability-audit.js || true
 
-          echo "=== 🛡️ Rule 28: Composite Identity & Wildcard Broadening (Thinking Opus 4.6) ==="
+          echo "=== 🛡️ Rule 28: Composite Identity & Wildcard Broadening (Thinking Nexus Autonomous) ==="
           node scripts/automation/fingerprint-broadener.js || true
           
-          echo "=== 🧊 Opus 4.6: Master Flow-Linkage Patcher ==="
+          echo "=== 🧊 Nexus Autonomous: Master Flow-Linkage Patcher ==="
           node scripts/maintenance/master-flow-patcher.js
 
-          echo "=== 🌱 Opus 4.6: Autonomous Evolution Engine ==="
+          echo "=== 🌱 Nexus Autonomous: Autonomous Evolution Engine ==="
           node scripts/maintenance/autonomous-evolution-engine.js
+
+          echo "=== 🖼️ Nexus Visual Rebranding Engine (Autonomous) ==="
+          node scripts/automation/apply-premium-nexus-images.js || true
 
           if [ -f FLOW_CARDS_AUDIT_REPORT.json ]; then
             node scripts/legacy/fix_all_flow_issues.js || true
@@ -801,12 +804,11 @@ jobs:
         if: always() && steps.promote_api.outcome != 'success' && steps.promote_oauth.outcome != 'success'
         continue-on-error: true
         run: |
-          rm -rf node_modules/@puppeteer/browsers 2>/dev/null || true
-          npm install puppeteer --no-save --force 2>&1 || true
+          npm install puppeteer --no-save --force || true
 
       - name: "13d. Promote via Browser (Puppeteer fallback)"
         if: always() && steps.promote_api.outcome != 'success' && steps.promote_oauth.outcome != 'success'
-        id: promote_node
+        id: promote_puppeteer
         continue-on-error: true
         timeout-minutes: 5
         env:
@@ -823,6 +825,16 @@ jobs:
           path: screenshots/
           retention-days: 7
           if-no-files-found: ignore
+
+      # 📣 Forum Announcement (Nexus Awareness)
+      - name: 💬 Post to Forum
+        if: always()
+        continue-on-error: true
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          APP_VERSION: ${{ steps.stats.outputs.version }}
+        run: node .github/scripts/post-forum-update.js
 
       # ===== 14. FORUM POST: Update with latest version =====
       - name: "14. Forum Update"
@@ -908,6 +920,7 @@ jobs:
           echo "| 13c | Promote Puppeteer | ${{ steps.promote_node.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 14 | Forum Update | — |" >> $GITHUB_STEP_SUMMARY
           echo "| 14b | Deploy Device Finder | — |" >> $GITHUB_STEP_SUMMARY
+          echo "| 15 | **Nexus Intelligence** | ${{ steps.autonomous_maint.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Total: 35 automation steps** | [Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee) | [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/)" >> $GITHUB_STEP_SUMMARY
 

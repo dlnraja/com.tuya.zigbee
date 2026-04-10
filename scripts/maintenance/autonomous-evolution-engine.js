@@ -6,7 +6,7 @@ const path = require('path');
 
 const ROOT = process.cwd();
 const INTEL_REPORT = path.join(ROOT, 'REPORTS', 'INTELLECTUAL-ENRICHMENT.md');
-const CHALLENGE_REPORT = path.join(ROOT, 'docs/reports/OPUS_4.6_CHALLENGE_REPORT.json');
+const CHALLENGE_REPORT = path.join(ROOT, 'docs/reports/NEXUS_AWAKENING_CHALLENGE_REPORT.json');
 
 async function main() {
   console.log('🌱  AUTONOMOUS EVOLUTION ENGINE - ACTIVATED');

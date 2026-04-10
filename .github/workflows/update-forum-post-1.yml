@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/templates/forum-post-1.md'
       - '.github/scripts/update-post-1.js'
+      - 'app.json'
 
 permissions:
   contents: read

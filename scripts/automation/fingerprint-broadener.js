@@ -86,7 +86,7 @@ function processBroadening() {
         } catch {}
     });
 
-    // 3. Chipset-Wide Broadening (The "Thinking Opus" Method)
+    // 3. Chipset-Wide Broadening (The "Thinking Nexus" Method)
     Object.entries(BROAD_TARGETS).forEach(([pid, driver]) => {
         const cp = path.join(DRIVERS_DIR, driver, 'driver.compose.json');
         if (!fs.existsSync(cp)) return;

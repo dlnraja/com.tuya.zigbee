@@ -136,7 +136,7 @@ Thank you for enriching the Tuya ecosystem.`;
     }
 
     // 4. v2.0.0: AUTONOMOUS SELF-HEAL & HARVEST
-    console.log("    [OPUS 4.6] Running Intelligence Harvest & Self-Heal on PR code...");
+    console.log("    [NEXUS AWAKENING] Running Intelligence Harvest & Self-Heal on PR code...");
     try {
       // A. External Intel Harvest
       execSync('node scripts/maintenance/autonomous-intel-harvester.js', { stdio: 'inherit' });
@@ -162,7 +162,7 @@ Thank you for enriching the Tuya ecosystem.`;
       execSync('git add -A');
       const diff = execSync('git diff --cached --name-only', { encoding: 'utf8' });
       if (diff.trim()) {
-        execSync('git commit -m "🤖 [Opus 4.6] Automated Self-Healing & Intelligence Enrichment [skip ci]"');
+        execSync('git commit -m "🤖 [Nexus Autonomous] Automated Self-Healing & Intelligence Enrichment [skip ci]"');
         console.log("    [HEALED] Applied autonomous fixes to the PR code.");
       }
     } catch (e) {
@@ -177,7 +177,7 @@ Thank you for enriching the Tuya ecosystem.`;
       execSync('git push origin master');
       
       // Close the PR since we merged it manually
-      const closeComment = "🤖 **Integrated with Thinking Opus 4.6 Autonomous Pipeline**.\n- **Self-Healing**: Applied (Rules 11, 21, 22)\n- **Intel Harvest**: Extracted and Unified\n- **Stability**: Verified\n\nBranch fused into master. Your contribution is now alive in the v7 fleet!";
+      const closeComment = "🤖 **Integrated with Thinking Nexus Autonomous Autonomous Pipeline**.\n- **Self-Healing**: Applied (Rules 11, 21, 22)\n- **Intel Harvest**: Extracted and Unified\n- **Stability**: Verified\n\nBranch fused into master. Your contribution is now alive in the v7 fleet!";
       gh(`pr close "${pr.number}" -R "${REPO}" -c "${closeComment}"`);
       console.log(`  [OK] PR #${pr.number} integrated and closed.`);
     } else {

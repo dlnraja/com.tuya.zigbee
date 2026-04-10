@@ -23,8 +23,7 @@
   },
   "energy": {
     "approximation": {
-      "usageOn": 0,
-      "usageOff": 0
+      "usageConstant": 0.2
     }
   },
   "zigbee": {
