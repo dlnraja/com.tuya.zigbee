@@ -1,7 +1,11 @@
 {
   "id": "sirentemphumidsensor",
   "name": {
-    "en": "Siren, Temperature & Humidity Sensor"
+    "en": "Siren, Temperature & Humidity Sensor",
+    "fr": "Sirène, Capteur de Température et d'Humidité",
+    "nl": "Sirene, Temperatuur- en Vochtigheidssensor",
+    "de": "Sirene, Temperatur- und Feuchtigkeitssensor",
+    "es": "Sirena, Sensor de Temperatura y Humedad"
   },
   "class": "other",
   "capabilities": [

@@ -1,7 +1,11 @@
 {
   "id": "smart_button_switch",
   "name": {
-    "en": "Smart Button Switch"
+    "en": "Smart Button Switch",
+    "fr": "Interrupteur à bouton intelligent",
+    "nl": "Slimme knop schakelaar",
+    "de": "Intelligenter Taster Schalter",
+    "es": "Interruptor de botón inteligente"
   },
   "class": "remote",
   "platforms": [
