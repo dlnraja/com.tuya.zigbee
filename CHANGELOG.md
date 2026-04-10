@@ -4,14 +4,22 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.0.8] - 2026-04-07
+## [7.1.0] - 2026-04-09
 
-### Bug Fixes
-- Fixed issues with device recognition for existing drivers.
+### 🚀 Omni-Sync Architecture (Autonomous Maintenance)
+- **Unified Mapping Intelligence**: Centralized DP mapping database shared across all drivers.
+- **Autonomous Sync Engine**: Weekly automated synchronization of fingerprints and mappings from **Zigbee2MQTT** (Tuya, Sonoff, Danfoss) and **ZHA** referentials.
+- **Safe Auto-Migration Queue**: Intelligent detection of better-suited drivers with a secure migration queue to prevent crashes and respect user preferences.
+- **Enriched Dynamic Parsing**: Universal DP parser now resolves string-based transforms from the live database.
 
-### New Features
-- Added 3 new fingerprints to support additional devices.
+### Bug Fixes & Improvements
+- Fixed `safeAddCapability` to prevent SDK 3 crashes when capabilities already exist.
+- Updated `SourceCredits.js` tracking for all external data sources.
+- Improved `DriverMappingLoader` with versioning and last-updated tracking.
+
 ---
+
+## [7.0.8] - 2026-04-07
 
  [7.0.7] - 2026-04-06
 

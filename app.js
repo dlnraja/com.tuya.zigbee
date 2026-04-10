@@ -191,68 +191,71 @@ class UniversalTuyaZigbeeApp extends Homey.App {
       this.error('⚠️ Universal Flow Loader failed (non-critical):', err.message);
     }
 
-    // Initialize Advanced Analytics
-    try {
-      this.analytics = new AdvancedAnalytics(this.homey);
-      await this.analytics.initialize();
-      this.log('✅ Advanced Analytics initialized');
-    } catch (err) {
-      this.error('⚠️ Analytics failed (non-critical):', err.message);
-    }
+    // 🚀 v7.0.22: Sub-manager initialization (Parallelized for Performance)
+    const initTasks = [
+      // Advanced Analytics
+      (async () => {
+        try {
+          this.analytics = new AdvancedAnalytics(this.homey);
+          await this.analytics.initialize();
+          this.log('✅ Advanced Analytics initialized');
+        } catch (err) { this.error('⚠️ Analytics failed:', err.message); }
+      })(),
 
-    // Initialize Smart Device Discovery
-    try {
-      this.discovery = new SmartDeviceDiscovery(this.homey);
-      await this.discovery.initialize();
-      this.log('✅ Smart Device Discovery initialized');
-    } catch (err) {
-      this.error('⚠️ Discovery failed (non-critical):', err.message);
-    }
+      // Smart Device Discovery
+      (async () => {
+        try {
+          this.discovery = new SmartDeviceDiscovery(this.homey);
+          await this.discovery.initialize();
+          this.log('✅ Smart Device Discovery initialized');
+        } catch (err) { this.error('⚠️ Discovery failed:', err.message); }
+      })(),
 
-    // Initialize Performance Optimizer
-    try {
-      this.optimizer = new PerformanceOptimizer({
-        maxCacheSize: 1000,
-        maxCacheMemory: 10 * 1024 * 1024 // 10 MB
-      });
-      this.log('✅ Performance Optimizer initialized');
-    } catch (err) { this.error('⚠️ Optimizer failed:', err.message); }
+      // Performance Optimizer
+      (async () => {
+        try {
+          this.optimizer = new PerformanceOptimizer({
+            maxCacheSize: 1000,
+            maxCacheMemory: 10 * 1024 * 1024 // 10 MB
+          });
+          this.log('✅ Performance Optimizer initialized');
+        } catch (err) { this.error('⚠️ Optimizer failed:', err.message); }
+      })(),
 
-    // Initialize Unknown Device Handler
-    try {
-      this.unknownHandler = new UnknownDeviceHandler(this.homey);
-      this.log('✅ Unknown Device Handler initialized');
-    } catch (err) { this.error('⚠️ UnknownHandler failed:', err.message); }
+      // Diagnostic & Logs (Safe to run in parallel)
+      (async () => {
+        try {
+          this.unknownHandler = new UnknownDeviceHandler(this.homey);
+          this.systemLogsCollector = new SystemLogsCollector(this.homey);
+          this.diagnosticAPI = new DiagnosticAPI(this);
+          this.logBuffer = new LogBuffer(this.homey);
+          this.log('✅ Diagnostic Suite initialized');
+        } catch (err) { this.error('⚠️ Diagnostic Suite failed:', err.message); }
+      })(),
 
-    // Initialize System Logs Collector for Diagnostics
-    try {
-      this.systemLogsCollector = new SystemLogsCollector(this.homey);
-      this.log('✅ System Logs Collector initialized');
-    } catch (err) { this.error('⚠️ SystemLogs failed:', err.message); }
+      // OTA & Quirks
+      (async () => {
+        try {
+          this.otaManager = new OTAUpdateManager(this.homey);
+          this.quirksDatabase = QuirksDatabase;
+          this.log('✅ OTA & Quirks initialized');
+        } catch (err) { this.error('⚠️ OTA/Quirks failed:', err.message); }
+      })()
+    ];
 
-    // 🔬 Initialize Diagnostic API for MCP/AI integration
-    try {
-      this.diagnosticAPI = new DiagnosticAPI(this);
-      this.log('✅ Diagnostic API initialized (MCP-ready)');
-    } catch (err) { this.error('⚠️ DiagnosticAPI failed:', err.message); }
+    // Wait for all non-critical init tasks
+    Promise.all(initTasks).then(() => {
+      const startupTime = ((Date.now() - initStartTime) / 1000).toFixed(2);
+      this.log(`🚀 All auxiliary managers initialized in ${startupTime}s`);
+    }).catch(err => {
+      this.error('⚠️ Parallel initialization error:', err.message);
+    });
 
-    // 📝 Initialize LogBuffer for MCP-accessible logs
-    try {
-      this.logBuffer = new LogBuffer(this.homey);
-      this.log('✅ LogBuffer initialized (accessible via ManagerSettings)');
-    } catch (err) { this.error('⚠️ LogBuffer failed:', err.message); }
-
-    // 🤖 Initialize SuggestionEngine for non-destructive Smart-Adapt
+    // 🤖 Initialize SuggestionEngine for non-destructive Smart-Adapt (Needs LogBuffer)
     try {
       this.suggestionEngine = new SuggestionEngine(this.homey, this.logBuffer);
-      this.log('✅ SuggestionEngine initialized (non-destructive mode)');
+      this.log('✅ SuggestionEngine initialized');
     } catch (err) { this.error('⚠️ SuggestionEngine failed:', err.message); }
-
-    // 📦 Initialize OTA Firmware Update Manager
-    try {
-      this.otaManager = new OTAUpdateManager(this.homey);
-      this.log('✅ OTA Update Manager initialized');
-    } catch (err) { this.error('⚠️ OTA Manager failed:', err.message); }
 
     // 📜 Database updates handled by GitHub Actions ONLY (not at runtime)
     // See: .github/workflows/MASTER-intelligent-enrichment.yml (weekly)
@@ -576,225 +579,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     }
   }
 
-  /**
-   * @deprecated v5.8.45: All cards were phantom (never defined in app.json). Kept as no-op.
-   */
-  registerFlowCards() {
-    // v5.8.45: REMOVED - all 9 cards were never defined in app.json
-    return;
-  }
 
-  /**
-   * @deprecated v5.8.45: All cards were phantom. Kept as no-op.
-   */
-  registerFlowCards_REMOVED() {
-    this.log('📋 Registering Homey Native Flow Cards...');
-
-    try {
-      // CONDITION: Device is online/offline - REMOVED (not defined in flow cards)
-      // this.homey.flow.getConditionCard('is_online')
-      //   .registerRunListener(async (args) => {
-      //     return args.device.getAvailable();
-      //   });
-
-      // CONDITION: Battery below threshold - REMOVED (not defined in flow cards)
-      // this.homey.flow.getConditionCard('battery_below')
-      //   .registerRunListener(async (args) => {
-      //     if (!args.device.hasCapability('measure_battery')) {
-      //       return false;
-      //     }
-      //     const batteryLevel = args.device.getCapabilityValue('measure_battery');
-      //     return batteryLevel < args.percentage;
-      //   });
-
-      // ACTION: Identify device (blink/beep)
-      // DISABLED: Flow card not defined in app.json - causes "Invalid Flow Card ID: identify_device" error
-      // this.homey.flow.getActionCard('identify_device')
-      //   .registerRunListener(async (args) => {
-      //     if (typeof args.device.identify === 'function') {
-      //       await args.device.identify();
-      //     } else {
-      //       // Fallback: toggle device quickly
-      //       if (args.device.hasCapability('onoff')) {
-      //         const original = args.device.getCapabilityValue('onoff');
-      //         await args.device.setCapabilityValue('onoff', !original);
-      //         await new Promise(resolve => setTimeout(resolve, 500));
-      //         await args.device.setCapabilityValue('onoff', original);
-      //       }
-      //     }
-      //   });
-
-      // ACTION: Check firmware updates
-      // DISABLED: Flow card not defined in app.json - would cause "Invalid Flow Card ID" error
-      // this.homey.flow.getActionCard('check_firmware_update')
-      //   .registerRunListener(async (args) => {
-      //     if (typeof args.device.checkFirmwareUpdate === 'function') {
-      //       await args.device.checkFirmwareUpdate();
-      //     }
-      //   });
-
-      // ACTION: Reset device to defaults
-      // DISABLED: Flow card not defined in app.json - would cause "Invalid Flow Card ID" error
-      // this.homey.flow.getActionCard('reset_device')
-      //   .registerRunListener(async (args) => {
-      //     if (typeof args.device.resetDevice === 'function') {
-      //       await args.device.resetDevice();
-      //     }
-      //   });
-
-      this.log('✅ Homey Native Flow Cards registered (0 cards - all custom cards disabled to prevent errors)');
-    } catch (err) {
-      this.error('⚠️  Error registering flow cards:', err.message);
-      // Don't crash the app if flow cards fail to register
-    }
-  }
-
-  /**
-   * @deprecated v5.8.45: All OTA/health cards were phantom. Kept as no-op.
-   */
-  registerOTAFlowCards() {
-    // v5.8.45: REMOVED - all 9 OTA/health cards were never defined in app.json
-    return;
-  }
-
-  /**
-   * @deprecated v5.8.45: Dead code preserved for reference only
-   */
-  registerOTAFlowCards_REMOVED() {
-    this.log('📦 Registering OTA Flow Cards...');
-    let registered = 0;
-
-    // v5.5.556: Helper to safely register flow cards (no stderr output)
-    const safeRegister = (type, id, handler) => {
-      try {
-        const method = type === 'trigger' ? 'getTriggerCard' : 
-                       type === 'action' ? 'getActionCard' : 'getConditionCard';
-        const card = this.homey.flow[method](id);
-        if (card) {
-          card.registerRunListener(handler);
-          registered++;
-          return card;
-        }
-      } catch (err) {
-        // v5.5.556: Log to stdout only, not stderr
-        this.log(`[FLOW] Flow card '${id}' not defined - skipping`);
-      }
-      return null;
-    };
-
-    try {
-
-    // OTA Flow Cards (optional - may not be defined)
-    this._otaUpdateAvailable = safeRegister('trigger', 'ota_update_available', 
-      async () => true);
-    
-    safeRegister('trigger', 'ota_update_completed', async () => true);
-    
-    safeRegister('action', 'ota_check_updates', async (args) => {
-      this.log('[OTA] Checking for updates via flow action...');
-      const devices = Object.values(this.homey.drivers.getDrivers())
-        .flatMap(driver => Object.values(driver.getDevices()));
-      let updatesFound = 0;
-      for (const device of devices) {
-        try {
-          const update = await this.otaManager?.checkUpdate(device);
-          if (update?.available) {
-            updatesFound++;
-            if (this._otaUpdateAvailable) {
-              await this._otaUpdateAvailable.trigger({
-                device_name: device.getName(),
-                current_version: String(update.currentVersion),
-                new_version: String(update.newVersion)
-              });
-            }
-          }
-        } catch (err) { /* Continue */ }
-      }
-      this.log(`[OTA] Found ${updatesFound} updates available`);
-      return true;
-    });
-
-    // Device Health Flow Cards (optional)
-    safeRegister('trigger', 'device_offline', async () => true);
-    safeRegister('trigger', 'device_online', async () => true);
-    safeRegister('trigger', 'low_battery_warning', async () => true);
-    safeRegister('trigger', 'zigbee_signal_weak', async () => true);
-
-    // ACTION: Identify device - v5.5.551: Safe wrapper
-    safeRegister('action', 'device_identify', async (args) => {
-      try {
-        if (!args?.device || typeof args.device.getName !== 'function') {
-          this.error('[IDENTIFY] Device not available (may have been deleted)');
-          return false;
-        }
-        const device = args.device;
-        this.log(`[IDENTIFY] Identifying device: ${device.getName()}`);
-        const endpoint = device.zclNode?.endpoints?.[1];
-        if (endpoint?.clusters?.identify) {
-          await endpoint.clusters.identify.identify({ identifyTime: 10 });
-          this.log(`[IDENTIFY] Device ${device.getName()} is blinking`);
-        } else if (device.hasCapability('onoff')) {
-          const original = device.getCapabilityValue('onoff');
-          await device.setCapabilityValue('onoff', !original);
-          await new Promise(r => setTimeout(r, 500));
-          await device.setCapabilityValue('onoff', original);
-        }
-        return true;
-      } catch (err) {
-        this.error(`[IDENTIFY] Error:`, err.message);
-        return false;
-      }
-    });
-
-    // CONDITION: Device is online - v5.5.551: Safe wrapper
-    safeRegister('condition', 'device_is_online', async (args) => {
-      try {
-        if (!args?.device || typeof args.device.getAvailable !== 'function') {
-          return false;
-        }
-        return args.device.getAvailable();
-      } catch (err) {
-        this.error('[FLOW] device_is_online error:', err.message);
-        return false;
-      }
-    });
-
-    this.log(`✅ OTA/Health Flow Cards registered (${registered} cards)`);
-
-    // ═══════════════════════════════════════════════════════════════════
-    // v5.5.409: GENERIC TUYA DP FLOW CARDS (Inspired by com.tuya2)
-    // v5.5.551: All wrapped in safeRegister to prevent crashes
-    // ═══════════════════════════════════════════════════════════════════
-    this.log('ℹ️ Tuya DP Flow Cards skipped (SDK3 compatibility)');
-      /*
-      try {
-        // TRIGGER: Receive DP Boolean
-        this.homey.flow.getTriggerCard('receive_dp_boolean')
-          .registerRunListener(async (args, state) => {
-            return state.dp_id === args.dp_id;
-          });
-
-        // TRIGGER: Receive DP Number
-        this.homey.flow.getTriggerCard('receive_dp_number')
-          .registerRunListener(async (args, state) => {
-            return state.dp_id === args.dp_id;
-          });
-
-        // TRIGGER: Receive DP String
-        this.homey.flow.getTriggerCard('receive_dp_string')
-          .registerRunListener(async (args, state) => {
-            return state.dp_id === args.dp_id;
-          });
-
-        // TRIGGER: Receive ANY DP (for debugging)
-        this.homey.flow.getTriggerCard('receive_dp_any')
-          .registerRunListener(async (args, state) => true);
-
-        this.log('✅ Tuya DP Trigger Flow Cards registered (4 cards)');
-      } catch (err) {
-        this.error('⚠️ Error registering DP trigger flow cards:', err.message);
-      }
-    */
 
     // v5.8.20: Removed invalid flow card registrations (send_dp_boolean, etc.)
     // Use tuya_dp_send from .homeycompose instead

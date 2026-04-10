@@ -28,7 +28,8 @@ class UsbOutletAdvancedDriver extends ZigBeeDriver {
     // Safe flow card registration helper
     const safeGetTrigger = (id) => {
       try {
-        return (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getTriggerCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+        return
+      this.homey.flow.getTriggerCard(id) ;
       } catch (e) {
         this.log(`[FLOW] Trigger '${id}' not defined - skipping`);
         return null;
@@ -52,7 +53,7 @@ class UsbOutletAdvancedDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is on
     try {
-      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('usb_outlet_advanced_is_on'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
+      this.homey.flow.getConditionCard('usb_outlet_advanced_is_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -62,7 +63,7 @@ class UsbOutletAdvancedDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      (() => { try { return (() => { try { return this.homey.flow.getActionCard('usb_outlet_advanced_turn_on'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
+      this.homey.flow.getActionCard('usb_outlet_advanced_turn_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -74,7 +75,7 @@ class UsbOutletAdvancedDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      (() => { try { return (() => { try { return this.homey.flow.getActionCard('usb_outlet_advanced_turn_off'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
+      this.homey.flow.getActionCard('usb_outlet_advanced_turn_off')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -86,7 +87,7 @@ class UsbOutletAdvancedDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      (() => { try { return (() => { try { return this.homey.flow.getActionCard('usb_outlet_advanced_toggle'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
+      this.homey.flow.getActionCard('usb_outlet_advanced_toggle')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');

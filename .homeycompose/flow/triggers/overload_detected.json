@@ -1,0 +1,24 @@
+{
+  "id": "overload_detected",
+  "title": {
+    "en": "Overload detected (Safety Cutoff)",
+    "fr": "Surcharge détectée (Coupure Sécurité)"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "energy.mains=true"
+    }
+  ],
+  "tokens": [
+    {
+      "name": "power",
+      "type": "number",
+      "title": {
+        "en": "Current Power (W)",
+        "fr": "Puissance actuelle (W)"
+      }
+    }
+  ]
+}

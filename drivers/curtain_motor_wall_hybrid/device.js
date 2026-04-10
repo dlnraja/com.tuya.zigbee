@@ -235,7 +235,8 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCo
       }, 500);
 
       // Trigger flow card if available
-      const triggerCard = (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('curtain_motor_wall_hybrid_button_pressed'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      const triggerCard =
+      this._getFlowCard('curtain_motor_wall_hybrid_button_pressed')
       if (triggerCard) {
         await triggerCard.trigger(this, { button: 1, scene: 'pressed' }).catch(() => { });
       }

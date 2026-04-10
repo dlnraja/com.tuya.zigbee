@@ -37,7 +37,7 @@ class SwitchDimmer1GangDevice extends TuyaSpecificClusterDevice {
       this.setCapabilityValue('onoff', s).catch(() => {});
       if (phys) {
         const id = s ? 'switch_dimmer_1gang_turned_on' : 'switch_dimmer_1gang_turned_off';
-        this.homey.flow.getTriggerCard().trigger(this, {}, {}).catch(() => {});
+      this._getFlowCard(id)
       }
     } else if (data.dp === DP.brightness) {
       const raw = typeof v === 'number' ? v : parseInt(v);

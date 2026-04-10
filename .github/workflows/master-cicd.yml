@@ -31,8 +31,8 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: master-cicd
-  cancel-in-progress: true
+  group: homey-app-store-delivery
+  cancel-in-progress: false
 
 env:
   NODE_VERSION: "22"
@@ -82,6 +82,7 @@ jobs:
           
           echo "=== 🧪 Flow Card Compliance Audit ==="
           node scripts/analysis/audit_all_flow_cards.js
+          node scripts/maintenance/fleet-repair-flows.js
           node scripts/legacy/fix_all_flow_issues.js || true
 
   publish-and-promote:
@@ -121,15 +122,35 @@ jobs:
           node -e "const f=require('fs'),a=require('./app.json'),p=JSON.parse(f.readFileSync('package.json','utf8'));p.version=a.version;f.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n');"
           echo "NEW_VERSION=$(node -p 'require("./app.json").version')" >> $GITHUB_ENV
 
-      # 2. Commit Version Bump
+      # 2. Commit Version Bump (Robust with Conflict Rebase)
       - name: 💾 Commit Version
         if: steps.bump.outcome == 'success'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add app.json package.json .homeychangelog.json
-          git commit -m "v${{ env.NEW_VERSION }}: automatic version bump [skip ci]"
-          git push origin HEAD || echo "No changes to push"
+          
+          if git diff --cached --quiet; then
+            echo "ℹ️ No version changes to commit"
+          else
+            git commit -m "v${{ env.NEW_VERSION }}: automatic version bump [skip ci]"
+            
+            # Intelligent Push with Retry/Rebase
+            MAX_RETRIES=5
+            RETRY_COUNT=0
+            until [ $RETRY_COUNT -ge $MAX_RETRIES ]
+            do
+              git pull --rebase origin master && git push origin master && break
+              RETRY_COUNT=$((RETRY_COUNT+1))
+              echo "::warning::Push failed, retrying ($RETRY_COUNT/$MAX_RETRIES)..."
+              sleep $((RANDOM % 10 + 5))
+            done
+            
+            if [ $RETRY_COUNT -eq $MAX_RETRIES ]; then
+              echo "❌ Failed to push version bump after $MAX_RETRIES attempts"
+              exit 1
+            fi
+          fi
 
       # 3. Publish to Homey App Store (Drafts)
       - name: 📤 Publish (Draft)

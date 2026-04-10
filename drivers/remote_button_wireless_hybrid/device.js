@@ -4,10 +4,10 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
 const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap');
 
-class SmartKnobRotaryDevice extends ZigBeeDevice {
+class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('Smart Knob Rotary device initialized');
+    this.log('Remote Button Wireless Hybrid device initialized');
     
     // Store zclNode for later use
     this._zclNode = zclNode;
@@ -38,7 +38,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     await this._setupE000Detection(zclNode);
     await this._setupTuyaDPDetection(zclNode);
 
-    this.log('Smart Knob Rotary initialization complete');
+    this.log('Remote Button Wireless Hybrid initialization complete');
   }
 
   /**
@@ -410,7 +410,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     }
 
     // Trigger flow card
-      const rotateLeftTrigger = (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('remote_button_wireless_hybrid_rotate_left'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+    const rotateLeftTrigger = this.homey.flow.getTriggerCard('remote_button_wireless_hybrid_rotate_left');
     if (rotateLeftTrigger) {
       await rotateLeftTrigger.trigger(this, { 
         brightness: Math.round(this._simulatedBrightness * 100) 
@@ -429,7 +429,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     }
 
     // Trigger flow card
-      const rotateRightTrigger = (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('remote_button_wireless_hybrid_rotate_right'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+    const rotateRightTrigger = this.homey.flow.getTriggerCard('remote_button_wireless_hybrid_rotate_right');
     if (rotateRightTrigger) {
       await rotateRightTrigger.trigger(this, { 
         brightness: Math.round(this._simulatedBrightness * 100) 
@@ -449,7 +449,10 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
 
     // Trigger generic flow card with action token
     try {
-      await this.homey.flow.getTriggerCard().trigger(this, { action }).catch(() => {});
+      const genericTrigger = this.homey.flow.getTriggerCard('remote_button_wireless_hybrid_press');
+      if (genericTrigger) {
+        await genericTrigger.trigger(this, { action }).catch(() => {});
+      }
     } catch (e) { /* ignore */ }
 
     // v5.7.11: Trigger specific flow cards based on action type
@@ -464,8 +467,11 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     
     if (specificCardId) {
       try {
-        await this.homey.flow.getTriggerCard().trigger(this, {}, {}).catch(() => {});
-        this.log(`[FLOW] ✅ Triggered ${specificCardId}`);
+        const triggerCard = this.homey.flow.getTriggerCard(specificCardId);
+        if (triggerCard) {
+            await triggerCard.trigger(this, { action }).catch(() => {});
+            this.log(`[FLOW] ✅ Triggered ${specificCardId}`);
+        }
       } catch (e) { /* ignore */ }
     }
   }
@@ -498,11 +504,9 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
   }
 
   onDeleted() {
-    this.log('Smart Knob Rotary device deleted');
+    this.log('Remote Button Wireless Hybrid device deleted');
   }
 
 }
 
-module.exports = SmartKnobRotaryDevice;
-
-
+module.exports = RemoteButtonWirelessHybridDevice;

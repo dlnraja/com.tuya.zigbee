@@ -40,7 +40,7 @@ class SwitchWirelessDevice extends HybridSwitchBase {
       this._safeSetCapability('onoff', boolVal).catch(() => {});
       try {
         const id = boolVal ? 'switch_wireless_onoff_true' : 'switch_wireless_onoff_false';
-        (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getTriggerCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().trigger(this, { timestamp: new Date().toISOString() }, {}).catch(() => {});
+      this._getFlowCard(id) .trigger(this, { timestamp: new Date().toISOString() }, {}).catch(() => {});
       } catch (e) { /* card missing */ }
       return;
     }
@@ -53,8 +53,8 @@ class SwitchWirelessDevice extends HybridSwitchBase {
       const c = { single: 'switch_wireless_single_press', double: 'switch_wireless_double_press', long: 'switch_wireless_long_press' }[pressType];
       if (c) {
         try {
-          (() => { try { return this.homey.flow.getTriggerCard(c); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().trigger(this, {}, {}).catch(() => {});
-      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('switch_wireless_button_pressed'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      this._getFlowCard(c)
+      this._getFlowCard('switch_wireless_button_pressed')
         } catch (e) { /* card missing */ }
       }
       return;

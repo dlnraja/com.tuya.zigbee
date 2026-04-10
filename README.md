@@ -13,7 +13,12 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
+- **Omni-Sync Intelligence** — autonomously pulls fingerprints & DP mappings from Z2M/ZHA
 - **Hybrid mode** — auto-detects whether a device speaks Tuya DP or standard ZCL
+- **Adaptive Lighting** — "Natural Light" simulation for ANY Zigbee bulb (Inspiration: HUE Pro)
+- **Zigbee Sensing** — Presence detection via radio interference patterns (BETA)
+- **Smart Gesture Engine** — High-fidelity Multi-click (1-3x) & Hold detection
+- **Self-Healing Migration** — automatically identifies and guides you to the best driver
 - **Smart battery** — voltage-based fallback when devices don't report percentage
 - **2,524+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
 - **SDK3** — built on the latest Homey platform
@@ -35,8 +40,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 <!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
 ### ✨ Recent Changes (Apr 2026)
 
-| Version | Feature |
-|---------|---------|
+| **v7.1.0** | Omni-Sync Architecture: Autonomous sync from Z2M & ZHA, Self-Healing Migration Queue, Enriched DP Parser. |
 | **v7.0.9** | v7.0.8: Fixed issues with device recognition for existing drivers., Added 3 n... |
 | **v7.0.8** | Universal Tuya Zigbee app v7.0.8 adds 3 new fingerprints and 221 drivers for ... |
 | **v7.0.7** | Updated WiFi pairing UI with a streamlined 5-tab Auto-Link flow and added mDN... |
@@ -63,7 +67,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v7.0.9 |
+| **App Version** | v7.1.0 |
 | **Device Fingerprints** | 12,852+ |
 | **Unique Product IDs** | 1217 |
 | **Drivers** | 221 (171 Zigbee + 50 WiFi) |
@@ -73,7 +77,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-04-07 |
+| **Last Updated** | 2026-04-09 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -203,11 +207,14 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 ```
 Homey Pro
   └─ Universal Tuya Zigbee App (SDK3)
+       ├─ Omni-Sync Intelligence (Autonomous)
+       │    ├─ Z2M/ZHA Mapping Sync (Weekly)
+       │    └─ Safe Auto-Migration Queue
        ├─ Hybrid Protocol Engine
        │    ├─ Tuya DP (Cluster 0xEF00) ─ DP1-DP255 data points
        │    └─ Standard ZCL ─ onOff, levelControl, colorControl, etc.
-       ├─ DeviceProfileRegistry (149 profiles)
-       │    └─ Per-fingerprint: DP mappings, quirks, timing
+       ├─ DriverMappingDatabase (Z2M-Enriched)
+       │    └─ Dynamic Transforms: divide_10, battery, boolean, etc.
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
        └─ 221 Drivers ─ 12,852+ fingerprints
@@ -384,4 +391,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-04-07*
+*Last updated: 2026-04-10*

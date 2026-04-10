@@ -45,13 +45,21 @@ class WallSwitch3Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
         const mode = this.sceneMode;
         if (mode !== 'magic') this.setCapabilityValue('onoff', value).catch(() => {});
         if (isPhys && (mode === 'auto' || mode === 'both')) {
-          const fid = 'wall_switch_3gang_1way_turned_' + (value ? 'on' : 'off');
-          this.homey.flow.getTriggerCard().trigger(this, {}, {}).catch(() => {});
-          const pgid = `wall_switch_3gang_1way_physical_gang${gn}_` + (value ? 'on' : 'off');
-          this.homey.flow.getTriggerCard().trigger(this, {}, {}).catch(() => {});
+          const fid = `wall_switch_3gang_1way_turned_${value ? 'on' : 'off'}`;
+          const trigger =
+      this._getFlowCard(fid, 'trigger')
+          if (trigger) trigger
+
+          const pgid = `wall_switch_3gang_1way_physical_gang${gn}_${value ? 'on' : 'off'}`;
+          const pTrigger =
+      this._getFlowCard(pgid, 'trigger')
+          if (pTrigger) pTrigger
         }
         if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-          this.homey.flow.getTriggerCard().trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+          const sid = `wall_switch_3gang_1way_gang${gn}_scene`;
+          const sTrigger =
+      this._getFlowCard(sid, 'trigger')
+          if (sTrigger) sTrigger.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
         }
       }
     });
@@ -118,12 +126,19 @@ class WallSwitch3Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
       const mode = this.sceneMode;
       const isPhys = !this._appCommandPending?.gang1;
       if (isPhys && (mode === 'auto' || mode === 'both')) {
-        const pgid = 'wall_switch_3gang_1way_physical_gang1_' + (value ? 'on' : 'off');
-        this.homey.flow.getTriggerCard().trigger(this, {}, {}).catch(() => {});
+        const pgid = `wall_switch_3gang_1way_physical_gang1_${value ? 'on' : 'off'}`;
+        const pTrigger =
+      this._getFlowCard(pgid, 'trigger')
+        if (pTrigger) pTrigger
       }
       if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-        this.homey.flow.getTriggerCard().trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
-        this.log(`[SCENE] Gang 1 scene: ${value ? 'on' : 'off'}`);
+        const sid = 'wall_switch_3gang_1way_gang1_scene';
+        const sTrigger =
+      this._getFlowCard(sid, 'trigger')
+        if (sTrigger) {
+          sTrigger.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+          this.log(`[SCENE] Gang 1 scene: ${value ? 'on' : 'off'}`);
+        }
       }
     };
 

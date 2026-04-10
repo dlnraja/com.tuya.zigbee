@@ -42,8 +42,10 @@ class FanControllerDevice extends ZigBeeDevice {
     // Safe flow card getter to prevent crashes on missing cards
     const safeGetCard = (type, id) => {
       try {
-        if (type === 'action') return (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getActionCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
-        if (type === 'condition') return (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getConditionCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+        if (type === 'action') return
+      this._getFlowCard(id, 'action') ;
+        if (type === 'condition') return
+      this._getFlowCard(id, 'condition') ;
       } catch (e) {
         this.log(`[FLOW] Card '${id}' not available: ${e.message}`);
       }

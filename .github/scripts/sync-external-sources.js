@@ -100,21 +100,47 @@ async function downloadZHA() {
   const tree = await fetchJSON('https://api.github.com/repos/zigpy/zha-device-handlers/git/trees/dev?recursive=1', hdrs(TOKEN));
   if (tree && tree.tree) {
     const tuyaFiles = tree.tree
-      .filter(f => (f.path.startsWith('zhaquirks/tuya/') || f.path.startsWith('zhaquirks/sonoff/')) && f.path.endsWith('.py') && !f.path.endsWith('__init__.py'))
-      .slice(0, 80);
-    console.log('  Found ' + tuyaFiles.length + ' Tuya + SONOFF quirk files');
+      .filter(f => (f.path.startsWith('zhaquirks/tuya/') || f.path.startsWith('zhaquirks/sonoff/') || f.path.startsWith('zhaquirks/xiaomi/aqara/')) && f.path.endsWith('.py') && !f.path.endsWith('__init__.py'))
+      .slice(0, 100);
+    console.log('  Found ' + tuyaFiles.length + ' Tuya / SONOFF / Aqara quirk files');
 
     for (const f of tuyaFiles) {
       const src = await fetchText('https://raw.githubusercontent.com/zigpy/zha-device-handlers/dev/' + f.path);
-      if (src) {
+      if (src && (src.includes('_T') || src.includes('SONOFF') || src.includes('Aqara'))) {
         const basename = f.path.split('/').pop();
         fs.writeFileSync(path.join(dir, basename), src);
       }
-      await sleep(300);
+      await sleep(200);
     }
     console.log('  Downloaded ' + tuyaFiles.length + ' quirk files');
   }
 
+  return true;
+}
+
+// =============================================================================
+// DOWNLOAD: CSA (Connectivity Standards Alliance) / Zigbee Alliance Certified
+// =============================================================================
+async function downloadCSA() {
+  console.log('\n== Downloading CSA / Zigbee Certified Data ==');
+  const dir = path.join(CACHE, 'csa');
+  ensureDir(dir);
+
+  // Since CSA doesn't have a public JSON API, we use a known mirror of certified products
+  // or community maintained lists from Hubitat/HA
+  const csaFiles = [
+    { url: 'https://raw.githubusercontent.com/HubitatCommunity/Hubitat-Zigbee-Certified/master/fingerprints.json', name: 'hubitat-certified.json' },
+    { url: 'https://raw.githubusercontent.com/zigpy/zigpy/master/zigpy/profiles/zcl/clusters/__init__.py', name: 'zcl-init.py' }
+  ];
+
+  for (const f of csaFiles) {
+    const src = await fetchText(f.url);
+    if (src) {
+      fs.writeFileSync(path.join(dir, f.name), src);
+      console.log('  Saved ' + f.name + ' (' + Math.round(src.length / 1024) + 'KB)');
+    }
+    await sleep(500);
+  }
   return true;
 }
 
@@ -200,6 +226,7 @@ async function main() {
   await downloadZHA();
   await downloadDeCONZ();
   await downloadHerdsmanDefs();
+  await downloadCSA();
 
   // Count cached files
   let totalFiles = 0;

@@ -54,14 +54,17 @@ function processFile(filePath) {
   // We use a clean IIFE wrapper if not already wrapped
   const patterns = [
     {
-      reg: /this\.homey\.flow\.get(Device)?(Trigger|Condition|Action)Card\(['"]([^'"]+)['"]\)(\.?\w+)?/g,
-      replacer: (match, dev, type, id, method) => {
-        if (match.includes('try {')) return match; // Already wrapped
-        let cleanCall = `this.homey.flow.get${type}Card('${id}')`;
+      // Match this.homey.flow.get... or homey.flow.get...
+      reg: /(?<!try\s*\{\s*|return\s+)(this\.)?homey\.flow\.get(Device)?(Trigger|Condition|Action)Card\(['"]([^'"]+)['"]\)(\.?\w+)?/g,
+      replacer: (match, prefix, dev, type, id, method) => {
+        prefix = prefix || '';
+        let cleanCall = `${prefix}homey.flow.get${type}Card('${id}')`;
+        const wrapper = `(() => { try { return ${cleanCall}; } catch(e) { return null; } })()`;
+        
         if (method) {
-          return `(() => { try { return ${cleanCall}; } catch(e) { return null; } })()${method.startsWith('.') ? '?' : ''}${method}`;
+          return `${wrapper}${method.startsWith('.') ? '?' : ''}${method}`;
         }
-        return `(() => { try { return ${cleanCall}; } catch(e) { return null; } })()`;
+        return wrapper;
       }
     }
   ];

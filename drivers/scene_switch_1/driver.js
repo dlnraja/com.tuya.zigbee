@@ -21,10 +21,10 @@ class SceneSwitch1Driver extends ZigBeeDriver {
     this.log('SceneSwitch1Driver initialized');
 
     // Register flow triggers
-      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('scene_switch_1_button_pressed'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
-      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('scene_switch_1_button_double_press'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
-      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('scene_switch_1_button_long_press'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
-      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('scene_switch_1_battery_changed'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      this.homey.flow.getTriggerCard('scene_switch_1_button_pressed')
+      this.homey.flow.getTriggerCard('scene_switch_1_button_double_press')
+      this.homey.flow.getTriggerCard('scene_switch_1_button_long_press')
+      this.homey.flow.getTriggerCard('scene_switch_1_battery_changed')
 
     this.log('SceneSwitch1Driver flow triggers registered');
   }

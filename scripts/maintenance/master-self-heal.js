@@ -769,11 +769,18 @@ function rule_safeFlowLookup() {
     const original = code;
 
     Object.entries(methodsMapping).forEach(([oldMethod, newMethod]) => {
-      // v7.0.13: Use a more restrictive lookbehind and check for already wrapped code
-      const regex = new RegExp(`(?<!(?:try\\s*\\{\\s*|return\\s+))this\\.homey\\.flow\\.${oldMethod}\\s*\\(([^)]+)\\)`, 'g');
+      // v7.1.0: Refined replacement to use standardized _getFlowCard helper
+      // This avoids recursive nesting and ensures SDK 3 compliance
+      const regex = new RegExp(`(?<!(?:try\\s*\\{\\s*|return\\s+|this\\._getFlowCard\\s*\\())this\\.homey\\.flow\\.${oldMethod}\\s*\\(([^)]+)\\)`, 'g');
       
       code = code.replace(regex, (match, args) => {
-        return `(() => { try { return this.homey.flow.${newMethod}(${args}); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })()`;
+        const typeMap = {
+          'getTriggerCard': 'trigger',
+          'getActionCard': 'action',
+          'getConditionCard': 'condition'
+        };
+        const type = typeMap[newMethod] || 'trigger';
+        return `this._getFlowCard(${args}, '${type}')`;
       });
     });
 
