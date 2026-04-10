@@ -1,117 +1,17 @@
 {
-  "timestamp": "2026-04-09T05:39:38.972Z",
+  "timestamp": "2026-04-10T03:31:53.375Z",
   "stats": {
-    "driversScanned": 304,
-    "totalTriggers": 6,
+    "driversScanned": 305,
+    "totalTriggers": 212,
     "totalConditions": 3,
     "totalActions": 12,
-    "totalIssues": 61
+    "totalIssues": 214
   },
   "issues": {
-    "missingRegistration": [
-      {
-        "driver": "air_purifier_curtain_hybrid",
-        "type": "action",
-        "id": "curtain_calibrate"
-      },
-      {
-        "driver": "air_purifier_curtain_hybrid",
-        "type": "action",
-        "id": "curtain_reset_position"
-      },
-      {
-        "driver": "air_purifier_curtain_hybrid",
-        "type": "action",
-        "id": "curtain_hold"
-      },
-      {
-        "driver": "air_purifier_curtain_hybrid",
-        "type": "action",
-        "id": "curtain_open_partial"
-      },
-      {
-        "driver": "blaster_remote_hybrid",
-        "type": "trigger",
-        "id": "ir_code_received"
-      },
-      {
-        "driver": "curtain_motor_tilt",
-        "type": "action",
-        "id": "curtain_calibrate"
-      },
-      {
-        "driver": "curtain_motor_tilt",
-        "type": "action",
-        "id": "curtain_reset_position"
-      },
-      {
-        "driver": "curtain_motor_tilt",
-        "type": "action",
-        "id": "curtain_hold"
-      },
-      {
-        "driver": "curtain_motor_tilt",
-        "type": "action",
-        "id": "curtain_open_partial"
-      },
-      {
-        "driver": "ir_remote",
-        "type": "trigger",
-        "id": "ir_code_received"
-      },
-      {
-        "driver": "pet_feeder",
-        "type": "trigger",
-        "id": "pet_feeder_fed"
-      },
-      {
-        "driver": "pet_feeder",
-        "type": "trigger",
-        "id": "pet_feeder_food_low"
-      },
-      {
-        "driver": "pet_feeder",
-        "type": "condition",
-        "id": "pet_feeder_food_ok"
-      },
-      {
-        "driver": "radiator_controller",
-        "type": "trigger",
-        "id": "radiator_mode_changed"
-      },
-      {
-        "driver": "radiator_controller",
-        "type": "trigger",
-        "id": "pilot_signal_sent"
-      },
-      {
-        "driver": "radiator_controller",
-        "type": "condition",
-        "id": "radiator_is_heating"
-      },
-      {
-        "driver": "radiator_controller",
-        "type": "condition",
-        "id": "heating_mode_is"
-      },
-      {
-        "driver": "radiator_controller",
-        "type": "action",
-        "id": "set_heating_mode"
-      },
-      {
-        "driver": "radiator_controller",
-        "type": "action",
-        "id": "send_pilot_signal"
-      },
-      {
-        "driver": "radiator_controller",
-        "type": "action",
-        "id": "set_temperature_offset"
-      }
-    ],
+    "missingRegistration": [],
     "missingRunListener": [],
-    "triggeredButNotDefined": [
+    "triggeredButNotDefined": [],
+    "definedButNeverTriggered": [
       {
         "driver": "air_purifier_climate_hybrid",
         "id": "air_purifier_climate_hybrid_air_purifier_pm25_changed"
@@ -123,6 +23,10 @@
       {
         "driver": "air_purifier_motion_hybrid",
         "id": "air_purifier_motion_hybrid_air_purifier_pm25_changed"
+      },
+      {
+        "driver": "blaster_remote_hybrid",
+        "id": "ir_code_received"
       },
       {
         "driver": "button_emergency_sos",
@@ -157,12 +61,60 @@
         "id": "curtain_motor_wall_hybrid_button_pressed"
       },
       {
-        "driver": "remote_button_wireless_hybrid",
-        "id": "remote_button_wireless_hybrid_rotate_left"
+        "driver": "dimmer_3gang",
+        "id": "dimmer_3gang_physical_gang1_on"
       },
       {
-        "driver": "remote_button_wireless_hybrid",
-        "id": "remote_button_wireless_hybrid_rotate_right"
+        "driver": "dimmer_3gang",
+        "id": "dimmer_3gang_physical_gang1_off"
+      },
+      {
+        "driver": "dimmer_3gang",
+        "id": "dimmer_3gang_physical_gang2_on"
+      },
+      {
+        "driver": "dimmer_3gang",
+        "id": "dimmer_3gang_physical_gang2_off"
+      },
+      {
+        "driver": "dimmer_3gang",
+        "id": "dimmer_3gang_physical_gang3_on"
+      },
+      {
+        "driver": "dimmer_3gang",
+        "id": "dimmer_3gang_physical_gang3_off"
+      },
+      {
+        "driver": "dimmer_3gang",
+        "id": "dimmer_3gang_gang1_scene"
+      },
+      {
+        "driver": "dimmer_3gang",
+        "id": "dimmer_3gang_gang2_scene"
+      },
+      {
+        "driver": "dimmer_3gang",
+        "id": "dimmer_3gang_gang3_scene"
+      },
+      {
+        "driver": "ir_remote",
+        "id": "ir_code_received"
+      },
+      {
+        "driver": "pet_feeder",
+        "id": "pet_feeder_fed"
+      },
+      {
+        "driver": "pet_feeder",
+        "id": "pet_feeder_food_low"
+      },
+      {
+        "driver": "radiator_controller",
+        "id": "radiator_mode_changed"
+      },
+      {
+        "driver": "radiator_controller",
+        "id": "pilot_signal_sent"
       },
       {
         "driver": "sensor_gas_presence_hybrid",
@@ -209,14 +161,6 @@
         "id": "smart_knob_button_pressed"
       },
       {
-        "driver": "smart_knob_rotary",
-        "id": "smart_knob_rotary_rotate_left"
-      },
-      {
-        "driver": "smart_knob_rotary",
-        "id": "smart_knob_rotary_rotate_right"
-      },
-      {
         "driver": "smart_knob_rotary_hybrid",
         "id": "smart_knob_rotary_hybrid_rotate_left"
       },
@@ -227,6 +171,426 @@
       {
         "driver": "smart_knob_rotary_hybrid",
         "id": "smart_knob_rotary_hybrid_pressed"
+      },
+      {
+        "driver": "switch_2gang",
+        "id": "switch_2gang_physical_gang1_on"
+      },
+      {
+        "driver": "switch_2gang",
+        "id": "switch_2gang_physical_gang1_off"
+      },
+      {
+        "driver": "switch_2gang",
+        "id": "switch_2gang_physical_gang2_on"
+      },
+      {
+        "driver": "switch_2gang",
+        "id": "switch_2gang_physical_gang2_off"
+      },
+      {
+        "driver": "switch_2gang",
+        "id": "switch_2gang_gang1_scene"
+      },
+      {
+        "driver": "switch_2gang",
+        "id": "switch_2gang_gang2_scene"
+      },
+      {
+        "driver": "switch_3gang",
+        "id": "switch_3gang_physical_gang1_on"
+      },
+      {
+        "driver": "switch_3gang",
+        "id": "switch_3gang_physical_gang1_off"
+      },
+      {
+        "driver": "switch_3gang",
+        "id": "switch_3gang_physical_gang2_on"
+      },
+      {
+        "driver": "switch_3gang",
+        "id": "switch_3gang_physical_gang2_off"
+      },
+      {
+        "driver": "switch_3gang",
+        "id": "switch_3gang_physical_gang3_on"
+      },
+      {
+        "driver": "switch_3gang",
+        "id": "switch_3gang_physical_gang3_off"
+      },
+      {
+        "driver": "switch_3gang",
+        "id": "switch_3gang_gang1_scene"
+      },
+      {
+        "driver": "switch_3gang",
+        "id": "switch_3gang_gang2_scene"
+      },
+      {
+        "driver": "switch_3gang",
+        "id": "switch_3gang_gang3_scene"
+      },
+      {
+        "driver": "switch_4gang",
+        "id": "switch_4gang_physical_gang1_on"
+      },
+      {
+        "driver": "switch_4gang",
+        "id": "switch_4gang_physical_gang1_off"
+      },
+      {
+        "driver": "switch_4gang",
+        "id": "switch_4gang_physical_gang2_on"
+      },
+      {
+        "driver": "switch_4gang",
+        "id": "switch_4gang_physical_gang2_off"
+      },
+      {
+        "driver": "switch_4gang",
+        "id": "switch_4gang_physical_gang3_on"
+      },
+      {
+        "driver": "switch_4gang",
+        "id": "switch_4gang_physical_gang3_off"
+      },
+      {
+        "driver": "switch_4gang",
+        "id": "switch_4gang_physical_gang4_on"
+      },
+      {
+        "driver": "switch_4gang",
+        "id": "switch_4gang_physical_gang4_off"
+      },
+      {
+        "driver": "switch_4gang",
+        "id": "switch_4gang_gang1_scene"
+      },
+      {
+        "driver": "switch_4gang",
+        "id": "switch_4gang_gang2_scene"
+      },
+      {
+        "driver": "switch_4gang",
+        "id": "switch_4gang_gang3_scene"
+      },
+      {
+        "driver": "switch_4gang",
+        "id": "switch_4gang_gang4_scene"
+      },
+      {
+        "driver": "switch_wall_5gang",
+        "id": "switch_wall_5gang_physical_gang1_on"
+      },
+      {
+        "driver": "switch_wall_5gang",
+        "id": "switch_wall_5gang_physical_gang1_off"
+      },
+      {
+        "driver": "switch_wall_5gang",
+        "id": "switch_wall_5gang_physical_gang2_on"
+      },
+      {
+        "driver": "switch_wall_5gang",
+        "id": "switch_wall_5gang_physical_gang2_off"
+      },
+      {
+        "driver": "switch_wall_5gang",
+        "id": "switch_wall_5gang_physical_gang3_on"
+      },
+      {
+        "driver": "switch_wall_5gang",
+        "id": "switch_wall_5gang_physical_gang3_off"
+      },
+      {
+        "driver": "switch_wall_5gang",
+        "id": "switch_wall_5gang_physical_gang4_on"
+      },
+      {
+        "driver": "switch_wall_5gang",
+        "id": "switch_wall_5gang_physical_gang4_off"
+      },
+      {
+        "driver": "switch_wall_5gang",
+        "id": "switch_wall_5gang_physical_gang5_on"
+      },
+      {
+        "driver": "switch_wall_5gang",
+        "id": "switch_wall_5gang_physical_gang5_off"
+      },
+      {
+        "driver": "switch_wall_5gang",
+        "id": "switch_wall_5gang_gang1_scene"
+      },
+      {
+        "driver": "switch_wall_5gang",
+        "id": "switch_wall_5gang_gang2_scene"
+      },
+      {
+        "driver": "switch_wall_5gang",
+        "id": "switch_wall_5gang_gang3_scene"
+      },
+      {
+        "driver": "switch_wall_5gang",
+        "id": "switch_wall_5gang_gang4_scene"
+      },
+      {
+        "driver": "switch_wall_5gang",
+        "id": "switch_wall_5gang_gang5_scene"
+      },
+      {
+        "driver": "switch_wall_6gang",
+        "id": "switch_wall_6gang_physical_gang1_on"
+      },
+      {
+        "driver": "switch_wall_6gang",
+        "id": "switch_wall_6gang_physical_gang1_off"
+      },
+      {
+        "driver": "switch_wall_6gang",
+        "id": "switch_wall_6gang_physical_gang2_on"
+      },
+      {
+        "driver": "switch_wall_6gang",
+        "id": "switch_wall_6gang_physical_gang2_off"
+      },
+      {
+        "driver": "switch_wall_6gang",
+        "id": "switch_wall_6gang_physical_gang3_on"
+      },
+      {
+        "driver": "switch_wall_6gang",
+        "id": "switch_wall_6gang_physical_gang3_off"
+      },
+      {
+        "driver": "switch_wall_6gang",
+        "id": "switch_wall_6gang_physical_gang4_on"
+      },
+      {
+        "driver": "switch_wall_6gang",
+        "id": "switch_wall_6gang_physical_gang4_off"
+      },
+      {
+        "driver": "switch_wall_6gang",
+        "id": "switch_wall_6gang_physical_gang5_on"
+      },
+      {
+        "driver": "switch_wall_6gang",
+        "id": "switch_wall_6gang_physical_gang5_off"
+      },
+      {
+        "driver": "switch_wall_6gang",
+        "id": "switch_wall_6gang_physical_gang6_on"
+      },
+      {
+        "driver": "switch_wall_6gang",
+        "id": "switch_wall_6gang_physical_gang6_off"
+      },
+      {
+        "driver": "switch_wall_6gang",
+        "id": "switch_wall_6gang_gang1_scene"
+      },
+      {
+        "driver": "switch_wall_6gang",
+        "id": "switch_wall_6gang_gang2_scene"
+      },
+      {
+        "driver": "switch_wall_6gang",
+        "id": "switch_wall_6gang_gang3_scene"
+      },
+      {
+        "driver": "switch_wall_6gang",
+        "id": "switch_wall_6gang_gang4_scene"
+      },
+      {
+        "driver": "switch_wall_6gang",
+        "id": "switch_wall_6gang_gang5_scene"
+      },
+      {
+        "driver": "switch_wall_6gang",
+        "id": "switch_wall_6gang_gang6_scene"
+      },
+      {
+        "driver": "switch_wall_7gang",
+        "id": "switch_wall_7gang_physical_gang1_on"
+      },
+      {
+        "driver": "switch_wall_7gang",
+        "id": "switch_wall_7gang_physical_gang1_off"
+      },
+      {
+        "driver": "switch_wall_7gang",
+        "id": "switch_wall_7gang_physical_gang2_on"
+      },
+      {
+        "driver": "switch_wall_7gang",
+        "id": "switch_wall_7gang_physical_gang2_off"
+      },
+      {
+        "driver": "switch_wall_7gang",
+        "id": "switch_wall_7gang_physical_gang3_on"
+      },
+      {
+        "driver": "switch_wall_7gang",
+        "id": "switch_wall_7gang_physical_gang3_off"
+      },
+      {
+        "driver": "switch_wall_7gang",
+        "id": "switch_wall_7gang_physical_gang4_on"
+      },
+      {
+        "driver": "switch_wall_7gang",
+        "id": "switch_wall_7gang_physical_gang4_off"
+      },
+      {
+        "driver": "switch_wall_7gang",
+        "id": "switch_wall_7gang_physical_gang5_on"
+      },
+      {
+        "driver": "switch_wall_7gang",
+        "id": "switch_wall_7gang_physical_gang5_off"
+      },
+      {
+        "driver": "switch_wall_7gang",
+        "id": "switch_wall_7gang_physical_gang6_on"
+      },
+      {
+        "driver": "switch_wall_7gang",
+        "id": "switch_wall_7gang_physical_gang6_off"
+      },
+      {
+        "driver": "switch_wall_7gang",
+        "id": "switch_wall_7gang_physical_gang7_on"
+      },
+      {
+        "driver": "switch_wall_7gang",
+        "id": "switch_wall_7gang_physical_gang7_off"
+      },
+      {
+        "driver": "switch_wall_7gang",
+        "id": "switch_wall_7gang_gang1_scene"
+      },
+      {
+        "driver": "switch_wall_7gang",
+        "id": "switch_wall_7gang_gang2_scene"
+      },
+      {
+        "driver": "switch_wall_7gang",
+        "id": "switch_wall_7gang_gang3_scene"
+      },
+      {
+        "driver": "switch_wall_7gang",
+        "id": "switch_wall_7gang_gang4_scene"
+      },
+      {
+        "driver": "switch_wall_7gang",
+        "id": "switch_wall_7gang_gang5_scene"
+      },
+      {
+        "driver": "switch_wall_7gang",
+        "id": "switch_wall_7gang_gang6_scene"
+      },
+      {
+        "driver": "switch_wall_7gang",
+        "id": "switch_wall_7gang_gang7_scene"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_physical_gang1_on"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_physical_gang1_off"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_physical_gang2_on"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_physical_gang2_off"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_physical_gang3_on"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_physical_gang3_off"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_physical_gang4_on"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_physical_gang4_off"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_physical_gang5_on"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_physical_gang5_off"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_physical_gang6_on"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_physical_gang6_off"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_physical_gang7_on"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_physical_gang7_off"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_physical_gang8_on"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_physical_gang8_off"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_gang1_scene"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_gang2_scene"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_gang3_scene"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_gang4_scene"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_gang5_scene"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_gang6_scene"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_gang7_scene"
+      },
+      {
+        "driver": "switch_wall_8gang",
+        "id": "switch_wall_8gang_gang8_scene"
       },
       {
         "driver": "switch_wireless",
@@ -241,8 +605,112 @@
         "id": "wall_remote_4_gang_buttons_2"
       },
       {
+        "driver": "wall_switch_2gang_1way",
+        "id": "wall_switch_2gang_1way_physical_gang1_on"
+      },
+      {
+        "driver": "wall_switch_2gang_1way",
+        "id": "wall_switch_2gang_1way_physical_gang1_off"
+      },
+      {
+        "driver": "wall_switch_2gang_1way",
+        "id": "wall_switch_2gang_1way_physical_gang2_on"
+      },
+      {
+        "driver": "wall_switch_2gang_1way",
+        "id": "wall_switch_2gang_1way_physical_gang2_off"
+      },
+      {
+        "driver": "wall_switch_2gang_1way",
+        "id": "wall_switch_2gang_1way_gang1_scene"
+      },
+      {
+        "driver": "wall_switch_2gang_1way",
+        "id": "wall_switch_2gang_1way_gang2_scene"
+      },
+      {
+        "driver": "wall_switch_3gang_1way",
+        "id": "wall_switch_3gang_1way_physical_gang1_on"
+      },
+      {
+        "driver": "wall_switch_3gang_1way",
+        "id": "wall_switch_3gang_1way_physical_gang1_off"
+      },
+      {
+        "driver": "wall_switch_3gang_1way",
+        "id": "wall_switch_3gang_1way_physical_gang2_on"
+      },
+      {
+        "driver": "wall_switch_3gang_1way",
+        "id": "wall_switch_3gang_1way_physical_gang2_off"
+      },
+      {
+        "driver": "wall_switch_3gang_1way",
+        "id": "wall_switch_3gang_1way_physical_gang3_on"
+      },
+      {
+        "driver": "wall_switch_3gang_1way",
+        "id": "wall_switch_3gang_1way_physical_gang3_off"
+      },
+      {
+        "driver": "wall_switch_3gang_1way",
+        "id": "wall_switch_3gang_1way_gang1_scene"
+      },
+      {
+        "driver": "wall_switch_3gang_1way",
+        "id": "wall_switch_3gang_1way_gang2_scene"
+      },
+      {
+        "driver": "wall_switch_3gang_1way",
+        "id": "wall_switch_3gang_1way_gang3_scene"
+      },
+      {
         "driver": "wall_switch_4gang_1way",
         "id": "wall_switch_4gang_1way_gang1_scene"
+      },
+      {
+        "driver": "wall_switch_4gang_1way",
+        "id": "wall_switch_4gang_1way_physical_gang1_on"
+      },
+      {
+        "driver": "wall_switch_4gang_1way",
+        "id": "wall_switch_4gang_1way_physical_gang1_off"
+      },
+      {
+        "driver": "wall_switch_4gang_1way",
+        "id": "wall_switch_4gang_1way_physical_gang2_on"
+      },
+      {
+        "driver": "wall_switch_4gang_1way",
+        "id": "wall_switch_4gang_1way_physical_gang2_off"
+      },
+      {
+        "driver": "wall_switch_4gang_1way",
+        "id": "wall_switch_4gang_1way_physical_gang3_on"
+      },
+      {
+        "driver": "wall_switch_4gang_1way",
+        "id": "wall_switch_4gang_1way_physical_gang3_off"
+      },
+      {
+        "driver": "wall_switch_4gang_1way",
+        "id": "wall_switch_4gang_1way_physical_gang4_on"
+      },
+      {
+        "driver": "wall_switch_4gang_1way",
+        "id": "wall_switch_4gang_1way_physical_gang4_off"
+      },
+      {
+        "driver": "wall_switch_4gang_1way",
+        "id": "wall_switch_4gang_1way_gang2_scene"
+      },
+      {
+        "driver": "wall_switch_4gang_1way",
+        "id": "wall_switch_4gang_1way_gang3_scene"
+      },
+      {
+        "driver": "wall_switch_4gang_1way",
+        "id": "wall_switch_4gang_1way_gang4_scene"
       },
       {
         "driver": "weather_station_outdoor",
@@ -259,108 +727,216 @@
       {
         "driver": "weather_station_outdoor",
         "id": "weather_station_outdoor_battery_low"
+      },
+      {
+        "driver": "wifi_switch_2gang",
+        "id": "wifi_switch_2gang_physical_gang1_on"
+      },
+      {
+        "driver": "wifi_switch_2gang",
+        "id": "wifi_switch_2gang_physical_gang1_off"
+      },
+      {
+        "driver": "wifi_switch_2gang",
+        "id": "wifi_switch_2gang_physical_gang2_on"
+      },
+      {
+        "driver": "wifi_switch_2gang",
+        "id": "wifi_switch_2gang_physical_gang2_off"
+      },
+      {
+        "driver": "wifi_switch_2gang",
+        "id": "wifi_switch_2gang_gang1_scene"
+      },
+      {
+        "driver": "wifi_switch_2gang",
+        "id": "wifi_switch_2gang_gang2_scene"
+      },
+      {
+        "driver": "wifi_switch_3gang",
+        "id": "wifi_switch_3gang_physical_gang1_on"
+      },
+      {
+        "driver": "wifi_switch_3gang",
+        "id": "wifi_switch_3gang_physical_gang1_off"
+      },
+      {
+        "driver": "wifi_switch_3gang",
+        "id": "wifi_switch_3gang_physical_gang2_on"
+      },
+      {
+        "driver": "wifi_switch_3gang",
+        "id": "wifi_switch_3gang_physical_gang2_off"
+      },
+      {
+        "driver": "wifi_switch_3gang",
+        "id": "wifi_switch_3gang_physical_gang3_on"
+      },
+      {
+        "driver": "wifi_switch_3gang",
+        "id": "wifi_switch_3gang_physical_gang3_off"
+      },
+      {
+        "driver": "wifi_switch_3gang",
+        "id": "wifi_switch_3gang_gang1_scene"
+      },
+      {
+        "driver": "wifi_switch_3gang",
+        "id": "wifi_switch_3gang_gang2_scene"
+      },
+      {
+        "driver": "wifi_switch_3gang",
+        "id": "wifi_switch_3gang_gang3_scene"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_physical_gang1_on"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_physical_gang1_off"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_physical_gang2_on"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_physical_gang2_off"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_physical_gang3_on"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_physical_gang3_off"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_physical_gang4_on"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_physical_gang4_off"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_gang1_scene"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_gang2_scene"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_gang3_scene"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_gang4_scene"
       }
     ],
-    "definedButNeverTriggered": [
+    "missingTokens": [
       {
-        "driver": "pet_feeder",
-        "id": "pet_feeder_fed"
+        "driver": "air_purifier_climate_hybrid",
+        "id": "air_purifier_climate_hybrid_air_purifier_pm25_changed"
       },
       {
-        "driver": "pet_feeder",
-        "id": "pet_feeder_food_low"
+        "driver": "air_purifier_lcdtemphumidsensor_hybrid",
+        "id": "air_purifier_lcdtemphumidsensor_hybrid_air_purifier_pm25_changed"
       },
       {
-        "driver": "radiator_controller",
-        "id": "radiator_mode_changed"
+        "driver": "air_purifier_motion_hybrid",
+        "id": "air_purifier_motion_hybrid_air_purifier_pm25_changed"
       },
       {
-        "driver": "radiator_controller",
-        "id": "pilot_signal_sent"
+        "driver": "smart_knob",
+        "id": "smart_knob_level_changed"
+      },
+      {
+        "driver": "smart_knob",
+        "id": "smart_knob_level_changed"
+      },
+      {
+        "driver": "weather_station_outdoor",
+        "id": "weather_station_outdoor_outdoor_temperature_changed"
+      },
+      {
+        "driver": "weather_station_outdoor",
+        "id": "weather_station_outdoor_outdoor_humidity_changed"
+      },
+      {
+        "driver": "weather_station_outdoor",
+        "id": "weather_station_outdoor_pressure_changed"
       }
     ],
-    "missingTokens": [],
     "incorrectCapability": []
   },
   "results": [
     {
       "driver": "air_purifier_climate_hybrid",
-      "triggers": 0,
+      "triggers": 1,
       "conditions": 0,
       "actions": 0,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "air_purifier_climate_hybrid_air_purifier_pm25_changed",
-          "message": "Trigger 'air_purifier_climate_hybrid_air_purifier_pm25_changed' appelé dans device.js mais NON défini dans driver.compose.json"
-        }
-      ]
-    },
-    {
-      "driver": "air_purifier_curtain_hybrid",
-      "triggers": 0,
-      "conditions": 0,
-      "actions": 4,
-      "issues": [
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "curtain_calibrate",
-          "message": "Action 'curtain_calibrate' définie mais NON enregistrée dans driver.js"
+          "message": "Trigger 'air_purifier_climate_hybrid_air_purifier_pm25_changed' défini mais JAMAIS appelé dans device.js"
         },
         {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "curtain_reset_position",
-          "message": "Action 'curtain_reset_position' définie mais NON enregistrée dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "curtain_hold",
-          "message": "Action 'curtain_hold' définie mais NON enregistrée dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "curtain_open_partial",
-          "message": "Action 'curtain_open_partial' définie mais NON enregistrée dans driver.js"
+          "type": "MISSING_TOKENS",
+          "severity": "MEDIUM",
+          "card": "trigger",
+          "id": "air_purifier_climate_hybrid_air_purifier_pm25_changed",
+          "message": "Trigger 'air_purifier_climate_hybrid_air_purifier_pm25_changed' devrait avoir des tokens"
         }
       ]
     },
     {
       "driver": "air_purifier_lcdtemphumidsensor_hybrid",
-      "triggers": 0,
+      "triggers": 1,
       "conditions": 0,
       "actions": 0,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "air_purifier_lcdtemphumidsensor_hybrid_air_purifier_pm25_changed",
-          "message": "Trigger 'air_purifier_lcdtemphumidsensor_hybrid_air_purifier_pm25_changed' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'air_purifier_lcdtemphumidsensor_hybrid_air_purifier_pm25_changed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "MISSING_TOKENS",
+          "severity": "MEDIUM",
+          "card": "trigger",
+          "id": "air_purifier_lcdtemphumidsensor_hybrid_air_purifier_pm25_changed",
+          "message": "Trigger 'air_purifier_lcdtemphumidsensor_hybrid_air_purifier_pm25_changed' devrait avoir des tokens"
         }
       ]
     },
     {
       "driver": "air_purifier_motion_hybrid",
-      "triggers": 0,
+      "triggers": 1,
       "conditions": 0,
       "actions": 0,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "air_purifier_motion_hybrid_air_purifier_pm25_changed",
-          "message": "Trigger 'air_purifier_motion_hybrid_air_purifier_pm25_changed' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'air_purifier_motion_hybrid_air_purifier_pm25_changed' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "MISSING_TOKENS",
+          "severity": "MEDIUM",
+          "card": "trigger",
+          "id": "air_purifier_motion_hybrid_air_purifier_pm25_changed",
+          "message": "Trigger 'air_purifier_motion_hybrid_air_purifier_pm25_changed' devrait avoir des tokens"
         }
       ]
     },
@@ -371,151 +947,186 @@
       "actions": 0,
       "issues": [
         {
-          "type": "MISSING_REGISTRATION",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "ir_code_received",
-          "message": "Trigger 'ir_code_received' défini mais NON enregistré dans driver.js"
+          "message": "Trigger 'ir_code_received' défini mais JAMAIS appelé dans device.js"
         }
       ]
     },
     {
       "driver": "button_emergency_sos",
-      "triggers": 0,
+      "triggers": 3,
       "conditions": 0,
       "actions": 0,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "button_emergency_sos_double_pressed",
-          "message": "Trigger 'button_emergency_sos_double_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'button_emergency_sos_double_pressed' défini mais JAMAIS appelé dans device.js"
         },
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "button_emergency_sos_long_pressed",
-          "message": "Trigger 'button_emergency_sos_long_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'button_emergency_sos_long_pressed' défini mais JAMAIS appelé dans device.js"
         },
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "button_emergency_sos_pressed",
-          "message": "Trigger 'button_emergency_sos_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'button_emergency_sos_pressed' défini mais JAMAIS appelé dans device.js"
         }
       ]
     },
     {
       "driver": "contact_sensor_curtain_hybrid",
-      "triggers": 0,
+      "triggers": 1,
       "conditions": 0,
       "actions": 0,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "button_pressed",
-          "message": "Trigger 'button_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'button_pressed' défini mais JAMAIS appelé dans device.js"
         }
       ]
     },
     {
       "driver": "curtain_motor",
-      "triggers": 0,
+      "triggers": 1,
       "conditions": 0,
       "actions": 0,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "button_pressed",
-          "message": "Trigger 'button_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'button_pressed' défini mais JAMAIS appelé dans device.js"
         }
       ]
     },
     {
       "driver": "curtain_motor_shutter_hybrid",
-      "triggers": 0,
+      "triggers": 1,
       "conditions": 0,
       "actions": 0,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "curtain_motor_shutter_hybrid_button_pressed",
-          "message": "Trigger 'curtain_motor_shutter_hybrid_button_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
-        }
-      ]
-    },
-    {
-      "driver": "curtain_motor_tilt",
-      "triggers": 0,
-      "conditions": 0,
-      "actions": 4,
-      "issues": [
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "curtain_calibrate",
-          "message": "Action 'curtain_calibrate' définie mais NON enregistrée dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "curtain_reset_position",
-          "message": "Action 'curtain_reset_position' définie mais NON enregistrée dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "curtain_hold",
-          "message": "Action 'curtain_hold' définie mais NON enregistrée dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "curtain_open_partial",
-          "message": "Action 'curtain_open_partial' définie mais NON enregistrée dans driver.js"
+          "message": "Trigger 'curtain_motor_shutter_hybrid_button_pressed' défini mais JAMAIS appelé dans device.js"
         }
       ]
     },
     {
       "driver": "curtain_motor_tilt_hybrid",
-      "triggers": 0,
+      "triggers": 1,
       "conditions": 0,
       "actions": 0,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "button_pressed",
-          "message": "Trigger 'button_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'button_pressed' défini mais JAMAIS appelé dans device.js"
         }
       ]
     },
     {
       "driver": "curtain_motor_wall_hybrid",
-      "triggers": 0,
+      "triggers": 1,
       "conditions": 0,
       "actions": 0,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "curtain_motor_wall_hybrid_button_pressed",
-          "message": "Trigger 'curtain_motor_wall_hybrid_button_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'curtain_motor_wall_hybrid_button_pressed' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "dimmer_3gang",
+      "triggers": 9,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "dimmer_3gang_physical_gang1_on",
+          "message": "Trigger 'dimmer_3gang_physical_gang1_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "dimmer_3gang_physical_gang1_off",
+          "message": "Trigger 'dimmer_3gang_physical_gang1_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "dimmer_3gang_physical_gang2_on",
+          "message": "Trigger 'dimmer_3gang_physical_gang2_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "dimmer_3gang_physical_gang2_off",
+          "message": "Trigger 'dimmer_3gang_physical_gang2_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "dimmer_3gang_physical_gang3_on",
+          "message": "Trigger 'dimmer_3gang_physical_gang3_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "dimmer_3gang_physical_gang3_off",
+          "message": "Trigger 'dimmer_3gang_physical_gang3_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "dimmer_3gang_gang1_scene",
+          "message": "Trigger 'dimmer_3gang_gang1_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "dimmer_3gang_gang2_scene",
+          "message": "Trigger 'dimmer_3gang_gang2_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "dimmer_3gang_gang3_scene",
+          "message": "Trigger 'dimmer_3gang_gang3_scene' défini mais JAMAIS appelé dans device.js"
         }
       ]
     },
@@ -526,11 +1137,11 @@
       "actions": 0,
       "issues": [
         {
-          "type": "MISSING_REGISTRATION",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "ir_code_received",
-          "message": "Trigger 'ir_code_received' défini mais NON enregistré dans driver.js"
+          "message": "Trigger 'ir_code_received' défini mais JAMAIS appelé dans device.js"
         }
       ]
     },
@@ -540,27 +1151,6 @@
       "conditions": 1,
       "actions": 1,
       "issues": [
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "pet_feeder_fed",
-          "message": "Trigger 'pet_feeder_fed' défini mais NON enregistré dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "pet_feeder_food_low",
-          "message": "Trigger 'pet_feeder_food_low' défini mais NON enregistré dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "CRITICAL",
-          "card": "condition",
-          "id": "pet_feeder_food_ok",
-          "message": "Condition 'pet_feeder_food_ok' définie mais NON enregistrée dans driver.js"
-        },
         {
           "type": "DEFINED_NOT_TRIGGERED",
           "severity": "WARNING",
@@ -584,55 +1174,6 @@
       "actions": 3,
       "issues": [
         {
-          "type": "MISSING_REGISTRATION",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "radiator_mode_changed",
-          "message": "Trigger 'radiator_mode_changed' défini mais NON enregistré dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "pilot_signal_sent",
-          "message": "Trigger 'pilot_signal_sent' défini mais NON enregistré dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "CRITICAL",
-          "card": "condition",
-          "id": "radiator_is_heating",
-          "message": "Condition 'radiator_is_heating' définie mais NON enregistrée dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "CRITICAL",
-          "card": "condition",
-          "id": "heating_mode_is",
-          "message": "Condition 'heating_mode_is' définie mais NON enregistrée dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "set_heating_mode",
-          "message": "Action 'set_heating_mode' définie mais NON enregistrée dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "send_pilot_signal",
-          "message": "Action 'send_pilot_signal' définie mais NON enregistrée dans driver.js"
-        },
-        {
-          "type": "MISSING_REGISTRATION",
-          "severity": "HIGH",
-          "card": "action",
-          "id": "set_temperature_offset",
-          "message": "Action 'set_temperature_offset' définie mais NON enregistrée dans driver.js"
-        },
-        {
           "type": "DEFINED_NOT_TRIGGERED",
           "severity": "WARNING",
           "card": "trigger",
@@ -649,280 +1190,1473 @@
       ]
     },
     {
-      "driver": "remote_button_wireless_hybrid",
-      "triggers": 0,
-      "conditions": 0,
-      "actions": 0,
-      "issues": [
-        {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "remote_button_wireless_hybrid_rotate_left",
-          "message": "Trigger 'remote_button_wireless_hybrid_rotate_left' appelé dans device.js mais NON défini dans driver.compose.json"
-        },
-        {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "remote_button_wireless_hybrid_rotate_right",
-          "message": "Trigger 'remote_button_wireless_hybrid_rotate_right' appelé dans device.js mais NON défini dans driver.compose.json"
-        }
-      ]
-    },
-    {
       "driver": "sensor_gas_presence_hybrid",
-      "triggers": 0,
+      "triggers": 2,
       "conditions": 0,
       "actions": 0,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "sensor_gas_presence_hybrid_presence_sensor_radar_presence_detected",
-          "message": "Trigger 'sensor_gas_presence_hybrid_presence_sensor_radar_presence_detected' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'sensor_gas_presence_hybrid_presence_sensor_radar_presence_detected' défini mais JAMAIS appelé dans device.js"
         },
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "sensor_gas_presence_hybrid_presence_sensor_radar_presence_cleared",
-          "message": "Trigger 'sensor_gas_presence_hybrid_presence_sensor_radar_presence_cleared' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'sensor_gas_presence_hybrid_presence_sensor_radar_presence_cleared' défini mais JAMAIS appelé dans device.js"
         }
       ]
     },
     {
       "driver": "sensor_motion_presence_hybrid",
-      "triggers": 0,
+      "triggers": 2,
       "conditions": 0,
       "actions": 0,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "sensor_motion_presence_hybrid_presence_detected",
-          "message": "Trigger 'sensor_motion_presence_hybrid_presence_detected' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'sensor_motion_presence_hybrid_presence_detected' défini mais JAMAIS appelé dans device.js"
         },
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "sensor_motion_presence_hybrid_presence_cleared",
-          "message": "Trigger 'sensor_motion_presence_hybrid_presence_cleared' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'sensor_motion_presence_hybrid_presence_cleared' défini mais JAMAIS appelé dans device.js"
         }
       ]
     },
     {
       "driver": "sensor_presence_radar_hybrid",
-      "triggers": 0,
+      "triggers": 2,
       "conditions": 0,
       "actions": 0,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "sensor_presence_radar_hybrid_presence_detected",
-          "message": "Trigger 'sensor_presence_radar_hybrid_presence_detected' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'sensor_presence_radar_hybrid_presence_detected' défini mais JAMAIS appelé dans device.js"
         },
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "sensor_presence_radar_hybrid_presence_cleared",
-          "message": "Trigger 'sensor_presence_radar_hybrid_presence_cleared' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'sensor_presence_radar_hybrid_presence_cleared' défini mais JAMAIS appelé dans device.js"
         }
       ]
     },
     {
       "driver": "smart_knob",
-      "triggers": 0,
+      "triggers": 5,
       "conditions": 0,
       "actions": 0,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "smart_knob_level_changed",
-          "message": "Trigger 'smart_knob_level_changed' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'smart_knob_level_changed' défini mais JAMAIS appelé dans device.js"
         },
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "smart_knob_rotated",
-          "message": "Trigger 'smart_knob_rotated' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'smart_knob_rotated' défini mais JAMAIS appelé dans device.js"
         },
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "smart_knob_rotated",
-          "message": "Trigger 'smart_knob_rotated' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'smart_knob_rotated' défini mais JAMAIS appelé dans device.js"
         },
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "smart_knob_level_changed",
-          "message": "Trigger 'smart_knob_level_changed' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'smart_knob_level_changed' défini mais JAMAIS appelé dans device.js"
         },
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "smart_knob_button_pressed",
-          "message": "Trigger 'smart_knob_button_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
-        }
-      ]
-    },
-    {
-      "driver": "smart_knob_rotary",
-      "triggers": 0,
-      "conditions": 0,
-      "actions": 0,
-      "issues": [
-        {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
-          "card": "trigger",
-          "id": "smart_knob_rotary_rotate_left",
-          "message": "Trigger 'smart_knob_rotary_rotate_left' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'smart_knob_button_pressed' défini mais JAMAIS appelé dans device.js"
         },
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "MISSING_TOKENS",
+          "severity": "MEDIUM",
           "card": "trigger",
-          "id": "smart_knob_rotary_rotate_right",
-          "message": "Trigger 'smart_knob_rotary_rotate_right' appelé dans device.js mais NON défini dans driver.compose.json"
+          "id": "smart_knob_level_changed",
+          "message": "Trigger 'smart_knob_level_changed' devrait avoir des tokens"
+        },
+        {
+          "type": "MISSING_TOKENS",
+          "severity": "MEDIUM",
+          "card": "trigger",
+          "id": "smart_knob_level_changed",
+          "message": "Trigger 'smart_knob_level_changed' devrait avoir des tokens"
         }
       ]
     },
     {
       "driver": "smart_knob_rotary_hybrid",
-      "triggers": 0,
+      "triggers": 3,
       "conditions": 0,
       "actions": 0,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "smart_knob_rotary_hybrid_rotate_left",
-          "message": "Trigger 'smart_knob_rotary_hybrid_rotate_left' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'smart_knob_rotary_hybrid_rotate_left' défini mais JAMAIS appelé dans device.js"
         },
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "smart_knob_rotary_hybrid_rotate_right",
-          "message": "Trigger 'smart_knob_rotary_hybrid_rotate_right' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'smart_knob_rotary_hybrid_rotate_right' défini mais JAMAIS appelé dans device.js"
         },
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "smart_knob_rotary_hybrid_pressed",
-          "message": "Trigger 'smart_knob_rotary_hybrid_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'smart_knob_rotary_hybrid_pressed' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "switch_2gang",
+      "triggers": 6,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_2gang_physical_gang1_on",
+          "message": "Trigger 'switch_2gang_physical_gang1_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_2gang_physical_gang1_off",
+          "message": "Trigger 'switch_2gang_physical_gang1_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_2gang_physical_gang2_on",
+          "message": "Trigger 'switch_2gang_physical_gang2_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_2gang_physical_gang2_off",
+          "message": "Trigger 'switch_2gang_physical_gang2_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_2gang_gang1_scene",
+          "message": "Trigger 'switch_2gang_gang1_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_2gang_gang2_scene",
+          "message": "Trigger 'switch_2gang_gang2_scene' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "switch_3gang",
+      "triggers": 9,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_3gang_physical_gang1_on",
+          "message": "Trigger 'switch_3gang_physical_gang1_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_3gang_physical_gang1_off",
+          "message": "Trigger 'switch_3gang_physical_gang1_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_3gang_physical_gang2_on",
+          "message": "Trigger 'switch_3gang_physical_gang2_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_3gang_physical_gang2_off",
+          "message": "Trigger 'switch_3gang_physical_gang2_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_3gang_physical_gang3_on",
+          "message": "Trigger 'switch_3gang_physical_gang3_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_3gang_physical_gang3_off",
+          "message": "Trigger 'switch_3gang_physical_gang3_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_3gang_gang1_scene",
+          "message": "Trigger 'switch_3gang_gang1_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_3gang_gang2_scene",
+          "message": "Trigger 'switch_3gang_gang2_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_3gang_gang3_scene",
+          "message": "Trigger 'switch_3gang_gang3_scene' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "switch_4gang",
+      "triggers": 12,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_4gang_physical_gang1_on",
+          "message": "Trigger 'switch_4gang_physical_gang1_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_4gang_physical_gang1_off",
+          "message": "Trigger 'switch_4gang_physical_gang1_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_4gang_physical_gang2_on",
+          "message": "Trigger 'switch_4gang_physical_gang2_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_4gang_physical_gang2_off",
+          "message": "Trigger 'switch_4gang_physical_gang2_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_4gang_physical_gang3_on",
+          "message": "Trigger 'switch_4gang_physical_gang3_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_4gang_physical_gang3_off",
+          "message": "Trigger 'switch_4gang_physical_gang3_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_4gang_physical_gang4_on",
+          "message": "Trigger 'switch_4gang_physical_gang4_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_4gang_physical_gang4_off",
+          "message": "Trigger 'switch_4gang_physical_gang4_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_4gang_gang1_scene",
+          "message": "Trigger 'switch_4gang_gang1_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_4gang_gang2_scene",
+          "message": "Trigger 'switch_4gang_gang2_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_4gang_gang3_scene",
+          "message": "Trigger 'switch_4gang_gang3_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_4gang_gang4_scene",
+          "message": "Trigger 'switch_4gang_gang4_scene' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "switch_wall_5gang",
+      "triggers": 15,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_5gang_physical_gang1_on",
+          "message": "Trigger 'switch_wall_5gang_physical_gang1_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_5gang_physical_gang1_off",
+          "message": "Trigger 'switch_wall_5gang_physical_gang1_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_5gang_physical_gang2_on",
+          "message": "Trigger 'switch_wall_5gang_physical_gang2_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_5gang_physical_gang2_off",
+          "message": "Trigger 'switch_wall_5gang_physical_gang2_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_5gang_physical_gang3_on",
+          "message": "Trigger 'switch_wall_5gang_physical_gang3_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_5gang_physical_gang3_off",
+          "message": "Trigger 'switch_wall_5gang_physical_gang3_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_5gang_physical_gang4_on",
+          "message": "Trigger 'switch_wall_5gang_physical_gang4_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_5gang_physical_gang4_off",
+          "message": "Trigger 'switch_wall_5gang_physical_gang4_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_5gang_physical_gang5_on",
+          "message": "Trigger 'switch_wall_5gang_physical_gang5_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_5gang_physical_gang5_off",
+          "message": "Trigger 'switch_wall_5gang_physical_gang5_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_5gang_gang1_scene",
+          "message": "Trigger 'switch_wall_5gang_gang1_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_5gang_gang2_scene",
+          "message": "Trigger 'switch_wall_5gang_gang2_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_5gang_gang3_scene",
+          "message": "Trigger 'switch_wall_5gang_gang3_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_5gang_gang4_scene",
+          "message": "Trigger 'switch_wall_5gang_gang4_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_5gang_gang5_scene",
+          "message": "Trigger 'switch_wall_5gang_gang5_scene' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "switch_wall_6gang",
+      "triggers": 18,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_6gang_physical_gang1_on",
+          "message": "Trigger 'switch_wall_6gang_physical_gang1_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_6gang_physical_gang1_off",
+          "message": "Trigger 'switch_wall_6gang_physical_gang1_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_6gang_physical_gang2_on",
+          "message": "Trigger 'switch_wall_6gang_physical_gang2_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_6gang_physical_gang2_off",
+          "message": "Trigger 'switch_wall_6gang_physical_gang2_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_6gang_physical_gang3_on",
+          "message": "Trigger 'switch_wall_6gang_physical_gang3_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_6gang_physical_gang3_off",
+          "message": "Trigger 'switch_wall_6gang_physical_gang3_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_6gang_physical_gang4_on",
+          "message": "Trigger 'switch_wall_6gang_physical_gang4_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_6gang_physical_gang4_off",
+          "message": "Trigger 'switch_wall_6gang_physical_gang4_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_6gang_physical_gang5_on",
+          "message": "Trigger 'switch_wall_6gang_physical_gang5_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_6gang_physical_gang5_off",
+          "message": "Trigger 'switch_wall_6gang_physical_gang5_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_6gang_physical_gang6_on",
+          "message": "Trigger 'switch_wall_6gang_physical_gang6_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_6gang_physical_gang6_off",
+          "message": "Trigger 'switch_wall_6gang_physical_gang6_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_6gang_gang1_scene",
+          "message": "Trigger 'switch_wall_6gang_gang1_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_6gang_gang2_scene",
+          "message": "Trigger 'switch_wall_6gang_gang2_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_6gang_gang3_scene",
+          "message": "Trigger 'switch_wall_6gang_gang3_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_6gang_gang4_scene",
+          "message": "Trigger 'switch_wall_6gang_gang4_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_6gang_gang5_scene",
+          "message": "Trigger 'switch_wall_6gang_gang5_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_6gang_gang6_scene",
+          "message": "Trigger 'switch_wall_6gang_gang6_scene' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "switch_wall_7gang",
+      "triggers": 21,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_7gang_physical_gang1_on",
+          "message": "Trigger 'switch_wall_7gang_physical_gang1_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_7gang_physical_gang1_off",
+          "message": "Trigger 'switch_wall_7gang_physical_gang1_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_7gang_physical_gang2_on",
+          "message": "Trigger 'switch_wall_7gang_physical_gang2_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_7gang_physical_gang2_off",
+          "message": "Trigger 'switch_wall_7gang_physical_gang2_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_7gang_physical_gang3_on",
+          "message": "Trigger 'switch_wall_7gang_physical_gang3_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_7gang_physical_gang3_off",
+          "message": "Trigger 'switch_wall_7gang_physical_gang3_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_7gang_physical_gang4_on",
+          "message": "Trigger 'switch_wall_7gang_physical_gang4_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_7gang_physical_gang4_off",
+          "message": "Trigger 'switch_wall_7gang_physical_gang4_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_7gang_physical_gang5_on",
+          "message": "Trigger 'switch_wall_7gang_physical_gang5_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_7gang_physical_gang5_off",
+          "message": "Trigger 'switch_wall_7gang_physical_gang5_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_7gang_physical_gang6_on",
+          "message": "Trigger 'switch_wall_7gang_physical_gang6_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_7gang_physical_gang6_off",
+          "message": "Trigger 'switch_wall_7gang_physical_gang6_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_7gang_physical_gang7_on",
+          "message": "Trigger 'switch_wall_7gang_physical_gang7_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_7gang_physical_gang7_off",
+          "message": "Trigger 'switch_wall_7gang_physical_gang7_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_7gang_gang1_scene",
+          "message": "Trigger 'switch_wall_7gang_gang1_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_7gang_gang2_scene",
+          "message": "Trigger 'switch_wall_7gang_gang2_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_7gang_gang3_scene",
+          "message": "Trigger 'switch_wall_7gang_gang3_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_7gang_gang4_scene",
+          "message": "Trigger 'switch_wall_7gang_gang4_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_7gang_gang5_scene",
+          "message": "Trigger 'switch_wall_7gang_gang5_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_7gang_gang6_scene",
+          "message": "Trigger 'switch_wall_7gang_gang6_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_7gang_gang7_scene",
+          "message": "Trigger 'switch_wall_7gang_gang7_scene' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "switch_wall_8gang",
+      "triggers": 24,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_physical_gang1_on",
+          "message": "Trigger 'switch_wall_8gang_physical_gang1_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_physical_gang1_off",
+          "message": "Trigger 'switch_wall_8gang_physical_gang1_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_physical_gang2_on",
+          "message": "Trigger 'switch_wall_8gang_physical_gang2_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_physical_gang2_off",
+          "message": "Trigger 'switch_wall_8gang_physical_gang2_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_physical_gang3_on",
+          "message": "Trigger 'switch_wall_8gang_physical_gang3_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_physical_gang3_off",
+          "message": "Trigger 'switch_wall_8gang_physical_gang3_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_physical_gang4_on",
+          "message": "Trigger 'switch_wall_8gang_physical_gang4_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_physical_gang4_off",
+          "message": "Trigger 'switch_wall_8gang_physical_gang4_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_physical_gang5_on",
+          "message": "Trigger 'switch_wall_8gang_physical_gang5_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_physical_gang5_off",
+          "message": "Trigger 'switch_wall_8gang_physical_gang5_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_physical_gang6_on",
+          "message": "Trigger 'switch_wall_8gang_physical_gang6_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_physical_gang6_off",
+          "message": "Trigger 'switch_wall_8gang_physical_gang6_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_physical_gang7_on",
+          "message": "Trigger 'switch_wall_8gang_physical_gang7_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_physical_gang7_off",
+          "message": "Trigger 'switch_wall_8gang_physical_gang7_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_physical_gang8_on",
+          "message": "Trigger 'switch_wall_8gang_physical_gang8_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_physical_gang8_off",
+          "message": "Trigger 'switch_wall_8gang_physical_gang8_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_gang1_scene",
+          "message": "Trigger 'switch_wall_8gang_gang1_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_gang2_scene",
+          "message": "Trigger 'switch_wall_8gang_gang2_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_gang3_scene",
+          "message": "Trigger 'switch_wall_8gang_gang3_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_gang4_scene",
+          "message": "Trigger 'switch_wall_8gang_gang4_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_gang5_scene",
+          "message": "Trigger 'switch_wall_8gang_gang5_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_gang6_scene",
+          "message": "Trigger 'switch_wall_8gang_gang6_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_gang7_scene",
+          "message": "Trigger 'switch_wall_8gang_gang7_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "switch_wall_8gang_gang8_scene",
+          "message": "Trigger 'switch_wall_8gang_gang8_scene' défini mais JAMAIS appelé dans device.js"
         }
       ]
     },
     {
       "driver": "switch_wireless",
-      "triggers": 0,
+      "triggers": 1,
       "conditions": 0,
       "actions": 0,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "switch_wireless_button_pressed",
-          "message": "Trigger 'switch_wireless_button_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'switch_wireless_button_pressed' défini mais JAMAIS appelé dans device.js"
         }
       ]
     },
     {
       "driver": "usb_outlet_advanced",
-      "triggers": 0,
+      "triggers": 1,
       "conditions": 0,
       "actions": 0,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "usb_outlet_button_pressed",
-          "message": "Trigger 'usb_outlet_button_pressed' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'usb_outlet_button_pressed' défini mais JAMAIS appelé dans device.js"
         }
       ]
     },
     {
       "driver": "wall_remote_4_gang_2",
-      "triggers": 0,
+      "triggers": 1,
       "conditions": 0,
       "actions": 0,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "wall_remote_4_gang_buttons_2",
-          "message": "Trigger 'wall_remote_4_gang_buttons_2' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'wall_remote_4_gang_buttons_2' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "wall_switch_2gang_1way",
+      "triggers": 6,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_2gang_1way_physical_gang1_on",
+          "message": "Trigger 'wall_switch_2gang_1way_physical_gang1_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_2gang_1way_physical_gang1_off",
+          "message": "Trigger 'wall_switch_2gang_1way_physical_gang1_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_2gang_1way_physical_gang2_on",
+          "message": "Trigger 'wall_switch_2gang_1way_physical_gang2_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_2gang_1way_physical_gang2_off",
+          "message": "Trigger 'wall_switch_2gang_1way_physical_gang2_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_2gang_1way_gang1_scene",
+          "message": "Trigger 'wall_switch_2gang_1way_gang1_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_2gang_1way_gang2_scene",
+          "message": "Trigger 'wall_switch_2gang_1way_gang2_scene' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "wall_switch_3gang_1way",
+      "triggers": 9,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_3gang_1way_physical_gang1_on",
+          "message": "Trigger 'wall_switch_3gang_1way_physical_gang1_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_3gang_1way_physical_gang1_off",
+          "message": "Trigger 'wall_switch_3gang_1way_physical_gang1_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_3gang_1way_physical_gang2_on",
+          "message": "Trigger 'wall_switch_3gang_1way_physical_gang2_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_3gang_1way_physical_gang2_off",
+          "message": "Trigger 'wall_switch_3gang_1way_physical_gang2_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_3gang_1way_physical_gang3_on",
+          "message": "Trigger 'wall_switch_3gang_1way_physical_gang3_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_3gang_1way_physical_gang3_off",
+          "message": "Trigger 'wall_switch_3gang_1way_physical_gang3_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_3gang_1way_gang1_scene",
+          "message": "Trigger 'wall_switch_3gang_1way_gang1_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_3gang_1way_gang2_scene",
+          "message": "Trigger 'wall_switch_3gang_1way_gang2_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_3gang_1way_gang3_scene",
+          "message": "Trigger 'wall_switch_3gang_1way_gang3_scene' défini mais JAMAIS appelé dans device.js"
         }
       ]
     },
     {
       "driver": "wall_switch_4gang_1way",
-      "triggers": 0,
+      "triggers": 12,
       "conditions": 0,
       "actions": 0,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "wall_switch_4gang_1way_gang1_scene",
-          "message": "Trigger 'wall_switch_4gang_1way_gang1_scene' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'wall_switch_4gang_1way_gang1_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_4gang_1way_physical_gang1_on",
+          "message": "Trigger 'wall_switch_4gang_1way_physical_gang1_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_4gang_1way_physical_gang1_off",
+          "message": "Trigger 'wall_switch_4gang_1way_physical_gang1_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_4gang_1way_physical_gang2_on",
+          "message": "Trigger 'wall_switch_4gang_1way_physical_gang2_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_4gang_1way_physical_gang2_off",
+          "message": "Trigger 'wall_switch_4gang_1way_physical_gang2_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_4gang_1way_physical_gang3_on",
+          "message": "Trigger 'wall_switch_4gang_1way_physical_gang3_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_4gang_1way_physical_gang3_off",
+          "message": "Trigger 'wall_switch_4gang_1way_physical_gang3_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_4gang_1way_physical_gang4_on",
+          "message": "Trigger 'wall_switch_4gang_1way_physical_gang4_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_4gang_1way_physical_gang4_off",
+          "message": "Trigger 'wall_switch_4gang_1way_physical_gang4_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_4gang_1way_gang2_scene",
+          "message": "Trigger 'wall_switch_4gang_1way_gang2_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_4gang_1way_gang3_scene",
+          "message": "Trigger 'wall_switch_4gang_1way_gang3_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wall_switch_4gang_1way_gang4_scene",
+          "message": "Trigger 'wall_switch_4gang_1way_gang4_scene' défini mais JAMAIS appelé dans device.js"
         }
       ]
     },
     {
       "driver": "weather_station_outdoor",
-      "triggers": 0,
+      "triggers": 4,
       "conditions": 0,
       "actions": 0,
       "issues": [
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "weather_station_outdoor_outdoor_temperature_changed",
-          "message": "Trigger 'weather_station_outdoor_outdoor_temperature_changed' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'weather_station_outdoor_outdoor_temperature_changed' défini mais JAMAIS appelé dans device.js"
         },
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "weather_station_outdoor_outdoor_humidity_changed",
-          "message": "Trigger 'weather_station_outdoor_outdoor_humidity_changed' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'weather_station_outdoor_outdoor_humidity_changed' défini mais JAMAIS appelé dans device.js"
         },
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "weather_station_outdoor_pressure_changed",
-          "message": "Trigger 'weather_station_outdoor_pressure_changed' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'weather_station_outdoor_pressure_changed' défini mais JAMAIS appelé dans device.js"
         },
         {
-          "type": "TRIGGERED_NOT_DEFINED",
-          "severity": "CRITICAL",
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
           "card": "trigger",
           "id": "weather_station_outdoor_battery_low",
-          "message": "Trigger 'weather_station_outdoor_battery_low' appelé dans device.js mais NON défini dans driver.compose.json"
+          "message": "Trigger 'weather_station_outdoor_battery_low' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "MISSING_TOKENS",
+          "severity": "MEDIUM",
+          "card": "trigger",
+          "id": "weather_station_outdoor_outdoor_temperature_changed",
+          "message": "Trigger 'weather_station_outdoor_outdoor_temperature_changed' devrait avoir des tokens"
+        },
+        {
+          "type": "MISSING_TOKENS",
+          "severity": "MEDIUM",
+          "card": "trigger",
+          "id": "weather_station_outdoor_outdoor_humidity_changed",
+          "message": "Trigger 'weather_station_outdoor_outdoor_humidity_changed' devrait avoir des tokens"
+        },
+        {
+          "type": "MISSING_TOKENS",
+          "severity": "MEDIUM",
+          "card": "trigger",
+          "id": "weather_station_outdoor_pressure_changed",
+          "message": "Trigger 'weather_station_outdoor_pressure_changed' devrait avoir des tokens"
+        }
+      ]
+    },
+    {
+      "driver": "wifi_switch_2gang",
+      "triggers": 6,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_2gang_physical_gang1_on",
+          "message": "Trigger 'wifi_switch_2gang_physical_gang1_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_2gang_physical_gang1_off",
+          "message": "Trigger 'wifi_switch_2gang_physical_gang1_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_2gang_physical_gang2_on",
+          "message": "Trigger 'wifi_switch_2gang_physical_gang2_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_2gang_physical_gang2_off",
+          "message": "Trigger 'wifi_switch_2gang_physical_gang2_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_2gang_gang1_scene",
+          "message": "Trigger 'wifi_switch_2gang_gang1_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_2gang_gang2_scene",
+          "message": "Trigger 'wifi_switch_2gang_gang2_scene' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "wifi_switch_3gang",
+      "triggers": 9,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_3gang_physical_gang1_on",
+          "message": "Trigger 'wifi_switch_3gang_physical_gang1_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_3gang_physical_gang1_off",
+          "message": "Trigger 'wifi_switch_3gang_physical_gang1_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_3gang_physical_gang2_on",
+          "message": "Trigger 'wifi_switch_3gang_physical_gang2_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_3gang_physical_gang2_off",
+          "message": "Trigger 'wifi_switch_3gang_physical_gang2_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_3gang_physical_gang3_on",
+          "message": "Trigger 'wifi_switch_3gang_physical_gang3_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_3gang_physical_gang3_off",
+          "message": "Trigger 'wifi_switch_3gang_physical_gang3_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_3gang_gang1_scene",
+          "message": "Trigger 'wifi_switch_3gang_gang1_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_3gang_gang2_scene",
+          "message": "Trigger 'wifi_switch_3gang_gang2_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_3gang_gang3_scene",
+          "message": "Trigger 'wifi_switch_3gang_gang3_scene' défini mais JAMAIS appelé dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "wifi_switch_4gang",
+      "triggers": 12,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_physical_gang1_on",
+          "message": "Trigger 'wifi_switch_4gang_physical_gang1_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_physical_gang1_off",
+          "message": "Trigger 'wifi_switch_4gang_physical_gang1_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_physical_gang2_on",
+          "message": "Trigger 'wifi_switch_4gang_physical_gang2_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_physical_gang2_off",
+          "message": "Trigger 'wifi_switch_4gang_physical_gang2_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_physical_gang3_on",
+          "message": "Trigger 'wifi_switch_4gang_physical_gang3_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_physical_gang3_off",
+          "message": "Trigger 'wifi_switch_4gang_physical_gang3_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_physical_gang4_on",
+          "message": "Trigger 'wifi_switch_4gang_physical_gang4_on' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_physical_gang4_off",
+          "message": "Trigger 'wifi_switch_4gang_physical_gang4_off' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_gang1_scene",
+          "message": "Trigger 'wifi_switch_4gang_gang1_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_gang2_scene",
+          "message": "Trigger 'wifi_switch_4gang_gang2_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_gang3_scene",
+          "message": "Trigger 'wifi_switch_4gang_gang3_scene' défini mais JAMAIS appelé dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_gang4_scene",
+          "message": "Trigger 'wifi_switch_4gang_gang4_scene' défini mais JAMAIS appelé dans device.js"
         }
       ]
     }

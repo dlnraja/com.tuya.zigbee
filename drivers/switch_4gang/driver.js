@@ -61,6 +61,18 @@ class Switch4GangDriver extends ZigBeeDriver {
   }
 
   async onInit() {
+    this.homey.flow.getTriggerCard('switch_4gang_gang4_scene');
+    this.homey.flow.getTriggerCard('switch_4gang_gang3_scene');
+    this.homey.flow.getTriggerCard('switch_4gang_gang2_scene');
+    this.homey.flow.getTriggerCard('switch_4gang_gang1_scene');
+    this.homey.flow.getTriggerCard('switch_4gang_physical_gang4_off');
+    this.homey.flow.getTriggerCard('switch_4gang_physical_gang4_on');
+    this.homey.flow.getTriggerCard('switch_4gang_physical_gang3_off');
+    this.homey.flow.getTriggerCard('switch_4gang_physical_gang3_on');
+    this.homey.flow.getTriggerCard('switch_4gang_physical_gang2_off');
+    this.homey.flow.getTriggerCard('switch_4gang_physical_gang2_on');
+    this.homey.flow.getTriggerCard('switch_4gang_physical_gang1_off');
+    this.homey.flow.getTriggerCard('switch_4gang_physical_gang1_on');
     this.log('4-Gang Switch Driver v5.5.562 initializing...');
     await super.onInit();
 

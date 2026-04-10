@@ -17,6 +17,7 @@ class IRRemoteDriver extends Driver {
   }
 
   async onInit() {
+    this.homey.flow.getTriggerCard('ir_code_received');
     this.log('Zigbee IR Remote driver initialized');
 
     // Action: Send IR code

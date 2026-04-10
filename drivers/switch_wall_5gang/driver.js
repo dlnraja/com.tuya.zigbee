@@ -21,6 +21,21 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    this.homey.flow.getTriggerCard('switch_wall_5gang_gang5_scene');
+    this.homey.flow.getTriggerCard('switch_wall_5gang_gang4_scene');
+    this.homey.flow.getTriggerCard('switch_wall_5gang_gang3_scene');
+    this.homey.flow.getTriggerCard('switch_wall_5gang_gang2_scene');
+    this.homey.flow.getTriggerCard('switch_wall_5gang_gang1_scene');
+    this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang5_off');
+    this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang5_on');
+    this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang4_off');
+    this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang4_on');
+    this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang3_off');
+    this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang3_on');
+    this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang2_off');
+    this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang2_on');
+    this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang1_off');
+    this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang1_on');
     this.log('WallSwitch5gangDriver v5.5.587 initialized');
     this._registerFlowCards();
   }

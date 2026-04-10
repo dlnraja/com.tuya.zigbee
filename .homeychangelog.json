@@ -1,4 +1,16 @@
 {
+  "7.2.0": {
+    "en": "The Autonomous Awakening: Adaptive Lighting, Radio Sensing, Smart Gestures, and High-Performance Nexus Orchestration."
+  },
+  "7.1.0": {
+    "en": "Omni-Sync Architecture: Autonomous sync from Z2M & ZHA, Self-Healing Migration Queue, Enriched DP Parser."
+  },
+  "7.0.22": {
+    "en": "🚀 [Opus 4.6] Universal Zigbee Hardening: Expanded brand fallbacks, dynamic ZCL reporting, and IAS Zone enrollment retry."
+  },
+  "7.0.9": {
+    "en": "v7.0.8: Fixed issues with device recognition for existing drivers., Added 3 new fingerprints to support additional devices."
+  },
   "7.0.8": {
     "en": "Universal Tuya Zigbee app v7.0.8 adds 3 new fingerprints and 221 drivers for enhanced device compatibility."
   },
@@ -58,12 +70,5 @@
   },
   "5.11.201": {
     "en": "Added 3 new device fingerprints including Nedis SmartLife Radiator Control. Fixed connection recovery and battery reporting for SOS emergency buttons."
-  },
-  "7.0.9": {
-    "en": "v7.0.8: Fixed issues with device recognition for existing drivers., Added 3 new fingerprints to support additional devices."
-  },
-  "7.0.22": {
-    "en": "🚀 [Opus 4.6] Universal Zigbee Hardening: Expanded brand fallbacks, dynamic ZCL reporting, and IAS Zone enrollment retry."
-  },
-  "7.2.0": "The Autonomous Awakening: Adaptive Lighting, Radio Sensing, Smart Gestures, and High-Performance Nexus Orchestration."
+  }
 }

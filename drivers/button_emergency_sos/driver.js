@@ -23,6 +23,8 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    this.homey.flow.getTriggerCard('button_emergency_sos_long_pressed');
+    this.homey.flow.getTriggerCard('button_emergency_sos_double_pressed');
     this.log('SosEmergencyButtonDriver v5.5.832 initialized');
     
     // v5.5.832: Register flow trigger card with registerRunListener

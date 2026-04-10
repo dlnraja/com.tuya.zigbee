@@ -18,6 +18,10 @@ class CurtainMotorTiltDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    this.homey.flow.getActionCard('curtain_open_partial');
+    this.homey.flow.getActionCard('curtain_hold');
+    this.homey.flow.getActionCard('curtain_reset_position');
+    this.homey.flow.getActionCard('curtain_calibrate');
     this.log('CurtainMotorTiltDriver initialized');
     // v5.13.3: Register flow card action handlers
     const reg = (id, fn) => { try {

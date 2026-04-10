@@ -21,7 +21,14 @@ class SmartKnobRotaryDriver extends Homey.Driver {
       .registerRunListener(async (args, state) => true);
 
     // Button pressed trigger
+<<<<<<< HEAD
       this.homey.flow.getTriggerCard('smart_knob_rotary_pressed')
+||||||| parent of 5373b92b80 (feat: Autonomous Awakening v7.2.5 Hardening (Smart Emulation & Health Scaling))
+      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_pressed'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+=======
+    this.homey.flow.getTriggerCard('smart_knob_rotary_press');
+    this.homey.flow.getTriggerCard('smart_knob_rotary_pressed')
+>>>>>>> 5373b92b80 (feat: Autonomous Awakening v7.2.5 Hardening (Smart Emulation & Health Scaling))
       .registerRunListener(async (args, state) => true);
 
     // Single press trigger

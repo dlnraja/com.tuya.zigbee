@@ -20,6 +20,15 @@ class Dimmer3GangDriver extends ZigBeeDriver {
   }
 
   async onInit() {
+    this.homey.flow.getTriggerCard('dimmer_3gang_gang3_scene');
+    this.homey.flow.getTriggerCard('dimmer_3gang_gang2_scene');
+    this.homey.flow.getTriggerCard('dimmer_3gang_gang1_scene');
+    this.homey.flow.getTriggerCard('dimmer_3gang_physical_gang3_off');
+    this.homey.flow.getTriggerCard('dimmer_3gang_physical_gang3_on');
+    this.homey.flow.getTriggerCard('dimmer_3gang_physical_gang2_off');
+    this.homey.flow.getTriggerCard('dimmer_3gang_physical_gang2_on');
+    this.homey.flow.getTriggerCard('dimmer_3gang_physical_gang1_off');
+    this.homey.flow.getTriggerCard('dimmer_3gang_physical_gang1_on');
     await super.onInit(); // v5.5.534: SDK3 CRITICAL
     this.log('3-Gang Dimmer Driver v5.5.534 initialized');
     // v5.13.3: Register flow card action handlers

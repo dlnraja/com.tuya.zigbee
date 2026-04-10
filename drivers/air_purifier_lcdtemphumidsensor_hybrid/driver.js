@@ -16,6 +16,7 @@ class AirPurifierDriver extends ZigBeeDriver {
   }
 
   async onInit() {
+    this.homey.flow.getTriggerCard('air_purifier_lcdtemphumidsensor_hybrid_air_purifier_pm25_changed');
     this.log('Air Purifier Driver initialized');
     const triggers = ['air_purifier_turned_on', 'air_purifier_turned_off', 'air_purifier_pm25_changed'];
     for (const id of triggers) {

@@ -21,6 +21,7 @@ class WirelessSwitchDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    this.homey.flow.getTriggerCard('switch_wireless_button_pressed');
     this.log('WirelessSwitchDriver v5.5.581 initialized');
     this._registerFlowCards();
   }

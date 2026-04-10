@@ -16,7 +16,10 @@ class WallRemote4Gang2Driver extends Driver{
     }
   }
 
-  async onInit(){this.log('wall_remote_4_gang_2 driver init');}
+  async onInit() {
+    this.log('wall_remote_4_gang_2 driver init');
+    this.homey.flow.getTriggerCard('wall_remote_4_gang_buttons_2');
+  }
 }
 
 module.exports=WallRemote4Gang2Driver;

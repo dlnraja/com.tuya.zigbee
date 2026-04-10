@@ -21,6 +21,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    this.homey.flow.getTriggerCard('button_pressed');
     this.log('curtain_motor driver v5.5.571 initialized');
     this._registerFlowCards();
   }

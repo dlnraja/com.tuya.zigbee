@@ -17,7 +17,9 @@
     "measure_power",
     "meter_power",
     "measure_current",
-    "measure_voltage"
+    "measure_voltage",
+    "measure_radio_stability",
+    "measure_maintenance_score"
   ],
   "capabilitiesOptions": {
     "alarm_generic": {
@@ -139,5 +141,78 @@
         ]
       }
     ]
-  }
+  },
+  "settings": [
+    {
+      "id": "enable_software_child_lock",
+      "type": "checkbox",
+      "label": {
+        "en": "Software Child Lock",
+        "fr": "Sécurité Enfant Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Prevents manual state changes on the device",
+        "fr": "Empêche les changements d'état manuels sur l'appareil"
+      }
+    },
+    {
+      "id": "auto_off_duration",
+      "type": "number",
+      "label": {
+        "en": "Auto-Off Timer (Minutes)",
+        "fr": "Minuterie Auto-Off (Minutes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 1440,
+      "hint": {
+        "en": "Turn off automatically after X minutes (0 = disabled)",
+        "fr": "S'éteint après X minutes (0 = désactivé)"
+      }
+    },
+    {
+      "id": "enable_vacation_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "Vacation Mode (Presence Sim)",
+        "fr": "Mode Vacances (Simulation Présence)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Randomly toggle device during evenings to simulate presence",
+        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+      }
+    },
+    {
+      "id": "emulated_motion_hold",
+      "type": "number",
+      "label": {
+        "en": "Emulated Motion Hold (Seconds)",
+        "fr": "Maintien Mouvement Émulé (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 3600,
+      "hint": {
+        "en": "Keep motion 'ON' for X seconds after hardware clears",
+        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+      }
+    },
+    {
+      "id": "double_click_interval",
+      "type": "number",
+      "label": {
+        "en": "Double Click Interval (ms)",
+        "fr": "Intervalle Double-Clic (ms)"
+      },
+      "value": 400,
+      "min": 100,
+      "max": 1000,
+      "hint": {
+        "en": "Software emulation for single-action buttons",
+        "fr": "Émulation logicielle pour boutons à action unique"
+      }
+    }
+  ]
 }

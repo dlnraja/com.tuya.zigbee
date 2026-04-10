@@ -9,6 +9,10 @@ const Homey = require('homey');
 class WeatherStationOutdoorDriver extends Homey.Driver {
 
   async onInit() {
+    this.homey.flow.getTriggerCard('weather_station_outdoor_battery_low');
+    this.homey.flow.getTriggerCard('weather_station_outdoor_pressure_changed');
+    this.homey.flow.getTriggerCard('weather_station_outdoor_outdoor_humidity_changed');
+    this.homey.flow.getTriggerCard('weather_station_outdoor_outdoor_temperature_changed');
     this.log('WeatherStationOutdoorDriver v5.5.581 initialized');
     this._registerFlowCards();
   }
