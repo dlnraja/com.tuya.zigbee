@@ -147,14 +147,34 @@ async function main(){
     }
   }
 
-  // 3. Generate summary with Gemini
+  // 3. Generate summary (AI with Rule-based fallback)
   const sysPrompt='You are the automation bot for Universal Tuya Zigbee (com.dlnraja.tuya.zigbee). Analyze GitHub activity findings and produce a concise Markdown summary for posting on the Homey forum topic #140352. Include: new device requests found, fingerprints already supported, fingerprints from forks to integrate, and PRs with useful changes. Be technical and concise. Max 500 words.';
   let summary=null;
   if(findings.issues.length||findings.forkFPs.length||findings.prs.length){
-    console.log('\n-- Generating AI summary --');
+    console.log('\n-- Generating summary --');
     const aiRes=await callAI(JSON.stringify(findings,null,2),sysPrompt);
     summary=aiRes?aiRes.text:null;
-    if(summary)console.log('AI summary:',summary.length,'chars');
+
+    // v7.0.26: Rule-Based Fallback logic (IA-less)
+    if (!summary || summary === "AI_OFFLINE_OR_LIMIT_REACHED") {
+       console.log('  ⚠️ AI Shield active or failed. Using Rule-Based Summary template.');
+       summary = "### 🔍 GitHub Activity Summary (Rule-Based Fallback)\n\n";
+       if (findings.issues.length) {
+         summary += `**Issues with Fingerprints (${findings.issues.length}):**\n`;
+         findings.issues.slice(0, 10).forEach(i => summary += `- [#${i.number}](${i.url}): ${i.title} (${i.newFPs.length} new FPs)\n`);
+       }
+       if (findings.forkFPs.length) {
+         summary += `\n**New Fingerprints from Forks (${findings.forkFPs.length}):**\n`;
+         findings.forkFPs.slice(0, 15).forEach(f => summary += `- \`${f.fp}\` (from ${f.fork})\n`);
+       }
+       if (findings.prs.length) {
+         summary += `\n**Recent PRs (${findings.prs.length}):**\n`;
+         findings.prs.slice(0, 5).forEach(p => summary += `- [#${p.number}](${p.url}): ${p.title}\n`);
+       }
+       summary += "\n*Generated via local rule-based engine (AI-less backup).*";
+    }
+    
+    if(summary)console.log('Summary length:',summary.length,'chars');
   }
 
   // 4. Save report

@@ -200,7 +200,7 @@ async function batchAI(postInfos,ver,threadCtx){
   let intel='';
   try{const ctx=gatherAll();intel=formatForAI(ctx);console.log('Intel context:',intel.length,'chars')}catch(e){console.warn('Intel gather:',e.message)}
 
-  let ctx='You ARE dlnraja, the Architect of the Universal Tuya Zigbee app (v7.0.22). You\'re responding to your users on the Homey forum (T140352).\n';
+  let ctx='You ARE dlnraja, the Architect of the Universal Tuya Zigbee app (v7.2.0). You\'re responding to your users on the Homey forum (T140352).\n';
   ctx+='TONE: Professional Dev. Casual but highly technical. Sound like a real person who values local-first reliability above all else.\n';
   ctx+='CRITICAL RULE 1: DOCTRINES. Always favor **Local-Direct First** control. If users ask for cloud sync, mention that **Shadow-Pulsar** mirroring is now available but strictly Opt-In for safety.\n';
   ctx+='CRITICAL RULE 2: QUOTA SHIELDS. If technical performance is discussed, mention the new **Quota Shields** (Deadband filtering and Batching) that protect Tuya API limits.\n';
@@ -208,9 +208,11 @@ async function batchAI(postInfos,ver,threadCtx){
   ctx+='CRITICAL RULE 4: NO BOT FLAGS. Never mention "AI", "Assistant", "Large Language Model", "automation", "pipeline", "workflow".\n';
   ctx+='TEMPLATE PATTERN:\n' +
        'Update: v[VERSION] pushed to Test channel!\n' +
-       'v7.0.22 "MAX Local Pro" Stability Highlights:\n' +
-       '@user: [What was done for themspecifically]\n' +
-       'Please update and check your Local-Direct connection.\n';
+       'v7.2.0 "The Autonomous Awakening" Highlights:\n' +
+       '- Adaptive Lighting (Natural Light) is now universal!\n' +
+       '- Zigbee Sensing (Presence via Radio) is in Beta.\n' +
+       '- Smart Gestures (Multi-click) hardened.\n' +
+       '@user: [What was done for them specifically]\n';
   ctx+='SPAM TRIGGERS: "Hi @user,", "Happy to help", "As an AI", "Let me know if you need anything else".\n';
   ctx+='Max 200 words. Vary your opening every time. End naturally, no footer/signature.\n\n';
 
@@ -248,7 +250,7 @@ async function batchAI(postInfos,ver,threadCtx){
   ctx+='If a user reports a device already "in the app" but behaving differently (e.g. TH sensor instead of Soil), it is a VARIANT. Ask for the full Zigbee Interview.\n';
   ctx+='We resolve variants using specific deviceId (e.g. 514 vs 81) or cluster lists (Tuya Cluster 0xEF00 presence).\n';
   ctx+='## VALUE ISSUES\n';
-  ctx+='Soil npj9bug3: DP 111 is Soil Moisture (NOT alarm). Moisture Canyon (0% drops): Fixed in BVB v6.1.1 — needs 3 matching readings to validate drop. LCD TH sensors: re-pair to ensure Tuya Cluster binding. Energy massive: divisor fixed v6.3.5. Double-div temp 0.2: fixed v5.11.15. Battery 0% on mains: known,fixed.\n\n';
+  ctx+='Soil npj9bug3: DP 111 is Soil Moisture. Adaptive Lighting: works on all bulbs with color_temp. Radio Sensing: analyzing LQI fluctuations for presence. Multi-click: resolve ZCL+DP sequence via SmartGestureEngine. Moisture Canyon: fixed BVB v6.1.1. Energy massively high: divisor auto-fix v7.1. Battery 0%: firmware bug, fallback enabled.\n\n';
 
   // v5.12.2: Thread context
   const tcF=formatThreadContext(threadCtx);
