@@ -75,11 +75,17 @@ async function fetchNewPosts(tid,since){
 }
 
 // Anti-spam: check if we already replied recently in this topic
-function checkCooldown(state,tid){
+function checkCooldown(state,tid,latestPostId){
   const log=state.replyLog||[];
   const recent=log.filter(e=>e.tid===tid&&Date.now()-new Date(e.ts).getTime()<REPLY_COOLDOWN_MS);
   if(recent.length){
     console.log('  ⏳ Cooldown: replied to T'+tid+' '+Math.round((Date.now()-new Date(recent[0].ts).getTime())/60000)+'m ago');
+    return false;
+  }
+  // v7.2.2: Hard Post-ID Duplicate Check (Fail Loop Prevention)
+  const alreadyReplied = log.find(e => e.postId === latestPostId);
+  if (alreadyReplied) {
+    console.log(`  🚫 Fail Loop Shield: Already replied to post #${latestPostId}. Terminating.`);
     return false;
   }
   return true;
@@ -322,7 +328,8 @@ async function main(){
     console.log('  Device:',devPosts.length,'/',fr.posts.length);
     if(!devPosts.length){state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
     // Anti-spam: skip if we already replied recently (per-topic cooldown)
-    if(!checkCooldown(state,tid)){state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
+    const latestPostToReplyTo = devPosts[devPosts.length - 1].post.id;
+    if(!checkCooldown(state,tid,latestPostToReplyTo)){state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
     // Anti-spam: skip if global cooldown active (shared with post-forum-update.js)
     if(!checkGlobalCooldown()){state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
     // Anti-spam: skip if our own reply already exists in the fetched batch
