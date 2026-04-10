@@ -28,7 +28,7 @@ const currentVersion = appJson.version;
 
 // Get latest 10 versions (sorted descending)
 const versions = Object.keys(changelog)
-                .sort((a, b) => {
+                        .sort((a, b) => {
     const partsA = a.split('.').map(v => parseInt(v, 10) || 0);
     const partsB = b.split('.').map(v => parseInt(v, 10) || 0);
     for (let i = 0; i < 3; i++) {
@@ -92,4 +92,4 @@ if (startIdx !== -1) {
 fs.writeFileSync(readmePath, readme);
 console.log(`✅ README updated with ${versions.length} changelog entries`);
 console.log(`   Current version: v${currentVersion}`);
-console.log(`   Latest in changelog: v${versions[0]}`)
+console.log(`   Latest in changelog: v${versions[0]}`);

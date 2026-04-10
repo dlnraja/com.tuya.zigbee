@@ -1,0 +1,13 @@
+{
+  "id": "button_triple_clicked",
+  "title": {
+    "en": "Button was triple-clicked (Software)",
+    "fr": "Bouton triple-cliqué (Logiciel)"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device"
+    }
+  ]
+}

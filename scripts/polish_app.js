@@ -256,10 +256,65 @@ function enrichPowerRatings() {
                     "min": 100,
                     "max": 1000,
                     "hint": { "en": "Software emulation for single-action buttons", "fr": "Émulation logicielle pour boutons à action unique" }
+                },
+                {
+                    "id": "inching_duration",
+                    "type": "number",
+                    "label": { "en": "Inching Duration (Secs)", "fr": "Durée Inching (Secondes)" },
+                    "value": 0,
+                    "min": 0,
+                    "max": 60,
+                    "step": 0.1,
+                    "hint": { "en": "Automatically turn off after X seconds (Pulse mode)", "fr": "S'éteint automatiquement après X secondes (mode Impulsion)" }
+                },
+                {
+                    "id": "enable_state_recovery",
+                    "type": "checkbox",
+                    "label": { "en": "Software State Recovery", "fr": "Récupération d'État Logicielle" },
+                    "value": false,
+                    "hint": { "en": "Restore previous ON/OFF state after power failure", "fr": "Restore l'état précédent après une coupure de courant" }
+                },
+                {
+                    "id": "enable_soft_transitions",
+                    "type": "checkbox",
+                    "label": { "en": "Soft transitions (Fade)", "fr": "Transitions douces (Fade)" },
+                    "value": false,
+                    "hint": { "en": "Enable software-simulated smooth transitions (Lights/Dim)", "fr": "Active les transitions douces simulées (Lumières/Variateurs)" }
+                },
+                {
+                    "id": "maintenance_threshold",
+                    "type": "number",
+                    "label": { "en": "Maintenance Alert Threshold", "fr": "Seuil Alerte Maintenance" },
+                    "value": 30,
+                    "min": 0,
+                    "max": 100,
+                    "hint": { "en": "Alert if health score drops below this value", "fr": "Alerte si le score de santé descend sous cette valeur" }
                 }
             ];
             
-            // Special Settings for Mains/Lights
+            // Special Settings for Lights
+            if (driverName.includes('bulb') || driverName.includes('led_strip')) {
+                smartFeatureSettings.push({
+                    "id": "enable_circadian_lighting",
+                    "type": "checkbox",
+                    "label": { "en": "Circadian Lighting (Adaptive CT)", "fr": "Éclairage Circadien (CT Adaptatif)" },
+                    "value": false,
+                    "hint": { "en": "Automatically adjust color temperature based on time of day", "fr": "Ajuste automatiquement la température de couleur au cours de la journée" }
+                });
+            }
+
+            // Special Settings for Climate
+            if (driverName.includes('thermostat') || driverName.includes('radiator') || driverName.includes('climate')) {
+                smartFeatureSettings.push({
+                    "id": "enable_tpi_regulation",
+                    "type": "checkbox",
+                    "label": { "en": "Adaptive TPI Regulation", "fr": "Régulation TPI Adaptative" },
+                    "value": false,
+                    "hint": { "en": "Use advanced software-based heating cycles (more precise)", "fr": "Utilise des cycles de chauffe logiciels avancés (plus précis)" }
+                });
+            }
+            
+            // Special Settings for Mains
             if (compose.energy && compose.energy.mains === true) {
                 smartFeatureSettings.push({
                     "id": "overload_threshold",
