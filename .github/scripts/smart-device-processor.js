@@ -70,10 +70,26 @@ async function main(){
       '[{deviceType,suggestedDriver,productId,dpMappings:[{dp,capability,type,divisor}],capabilities:[],quirks:[],confidence:0-100}]. NULL if insufficient data.';
     const input=batch.map(d=>({fp:d.fp,pids:[...d.pids],src:d.src.slice(0,3),dps:d.dps.slice(0,10),interviewHint:d.interviews[0]?.title||''}));
     const res=await callAI(JSON.stringify(input),sys,{maxTokens:1500});
-    if(!res){report.skipped.push(...batch.map(d=>d.fp));continue}
-    console.log('  AI via',res.model);
+    
     let analyses=null;
-    try{const m=res.text.match(/\[[\s\S]*\]/);analyses=m?JSON.parse(m[0]):null}catch{}
+    if(!res || res.text === "AI_OFFLINE_OR_LIMIT_REACHED") {
+       console.log('  ⚠️ AI Shield active or failed. Using Heuristic Safe-Mapping.');
+       analyses = batch.map(d => {
+          const t = ((d.interviewHint||'') + ' ' + d.fp).toLowerCase();
+          let drv = 'generic_tuya';
+          let type = 'unknown';
+          if (t.includes('light') || t.includes('bulb')) { drv = 'light_bulb'; type = 'light'; }
+          else if (t.includes('sensor') || t.includes('pir') || t.includes('motion')) { drv = 'motion_sensor'; type = 'sensor'; }
+          else if (t.includes('plug') || t.includes('socket')) { drv = 'plug_smart'; type = 'plug'; }
+          else if (t.includes('curtain') || t.includes('blind') || t.includes('motor')) { drv = 'curtain_motor'; type = 'curtain'; }
+          else if (t.includes('switch')) { drv = 'switch_1gang'; type = 'switch'; }
+          return { deviceType: type, suggestedDriver: drv, productId: d.pids[0]||null, confidence: 50, dpMappings: [], source: 'heuristic-fallback' };
+       });
+    } else {
+       console.log('  AI via',res.model);
+       try{const m=res.text.match(/\[[\s\S]*\]/);analyses=m?JSON.parse(m[0]):null}catch{}
+    }
+    
     if(!analyses){report.skipped.push(...batch.map(d=>d.fp));continue}
     for(let i=0;i<batch.length;i++){
       const dev=batch[i],ai=analyses[i];
