@@ -29,7 +29,8 @@
     ],
     "mains": true,
     "approximation": {
-      "usageConstant": 0.7
+      "usageOff": 0.7,
+      "usageOn": 100
     }
   },
   "subDevices": [],

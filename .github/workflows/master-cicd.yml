@@ -73,7 +73,7 @@ jobs:
       - name: Homey Validate
         run: npx homey app validate --level publish
 
-      # ⚙️ Thinking Opus 4.6: Autonomous Maintenance Guard
+      # ⚙️ Thinking Nexus Autonomous: Autonomous Maintenance Guard
       - name: 🛡️ Autonomous Maintenance Guard (Flows + Broadening)
         run: |
           echo "=== 🛡️ Checking Composite Identities & Wildcards ==="
@@ -84,6 +84,16 @@ jobs:
           node scripts/analysis/audit_all_flow_cards.js
           node scripts/maintenance/fleet-repair-flows.js
           node scripts/legacy/fix_all_flow_issues.js || true
+
+      # ⚙️ Thinking Nexus Autonomous: Fleet Support Hardening
+      - name: 🛡️ v7.2.5 Hardening & Box-Parity Audit
+        run: |
+          echo "=== 🧠 Verifying Intelligent Compensation Layer ==="
+          node scripts/polish_app.js --dry-run
+          
+          echo "=== 📶 Zigbee Cluster Coherence Check ==="
+          # Check for forbidden legacy descriptors
+          grep -r "tuyaAttributes" drivers/ --exclude-dir=node_modules && (echo "❌ Regressive Tuya descriptor found!" && exit 1) || echo "✅ Clean modern ZCL confirmed."
 
   publish-and-promote:
     name: 🚀 Publish & Promote

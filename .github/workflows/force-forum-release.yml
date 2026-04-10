@@ -1,4 +1,4 @@
-name: 🚀 FORCE FORUM RELEASE v7.2.0
+name: 🚀 FORCE FORUM RELEASE v7.2.5
 on:
   workflow_dispatch:
 
@@ -18,12 +18,12 @@ jobs:
           cache: 'npm'
       - run: npm ci --prefer-offline --no-audit || npm install
       
-      - name: 📣 Post v7.2.0 Update
+      - name: 📣 Post v7.2.5 Update
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          CHANGELOG: "v7.2.0: The Autonomous Awakening. Implemented Universal Adaptive Lighting, Zigbee Radio Sensing, and Smart Gestures. [FORCE RELEASE]"
-          APP_VERSION: "7.2.0"
+          CHANGELOG: "v7.2.5: Nexus Awakening. Software-defined Premium Features: Circadian Lighting, Adaptive TPI Heating, Soft Transitions, and Nexus Hardening. [FORCE RELEASE]"
+          APP_VERSION: "7.2.5"
           FORCE_POST: "true"
         run: node .github/scripts/post-forum-update.js
         

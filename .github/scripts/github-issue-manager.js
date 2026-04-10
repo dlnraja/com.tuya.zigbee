@@ -286,7 +286,7 @@ async function processIssue(repo,issue,state,report,extData){
     if(!imageCtx){const ci=extractImages(c.body||'');if(ci.length){const sa2=await analyzeScreenshot(ci[0],'github comment');imageCtx=sa2?formatForAIContext(sa2):''}}
   }
 
-  // Respond if not already responded (SILENT for external repos as per Thinking Opus 4.6 mandate)
+  // Respond if not already responded (SILENT for external repos as per Nexus Autonomous mandate)
   if(!hasBot){
     if (repo !== OWN) {
       console.log(`  [SILENT-TRIAGE] Analysis complete for #${issue.number} on ${repo}. Skipping public comment.`);

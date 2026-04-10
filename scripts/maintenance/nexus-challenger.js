@@ -10,7 +10,7 @@ const EXT_DATA = path.join(ROOT, '.github', 'state', 'external-sources-data.json
 const INTEL_DATA = path.join(ROOT, '.github', 'state', 'device-functionality.json');
 
 async function main() {
-  console.log('🛡️  OPUS 4.6 MASTER CHALLENGER - ACTIVATED');
+  console.log('🛡️  NEXUS AWAKENING MASTER CHALLENGER - ACTIVATED');
   console.log('==========================================');
 
   const report = {
@@ -128,12 +128,12 @@ async function main() {
   console.log(`⚠️  Capability Gaps: ${report.gaps.length}`);
   console.log(`💡 Innovation Opps: ${report.innovationOpportunities.length}`);
 
-  const reportPath = path.join(ROOT, 'docs/reports/OPUS_4.6_CHALLENGE_REPORT.json');
+  const reportPath = path.join(ROOT, 'docs/reports/NEXUS_AWAKENING_CHALLENGE_REPORT.json');
   fs.mkdirSync(path.dirname(reportPath), { recursive: true });
   fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
   
   // Create Human-Readable summary
-  let md = `# 🛡️ Opus 4.6 Challenge Report\n\n`;
+  let md = `# 🛡️ Nexus Autonomous Challenge Report\n\n`;
   md += `**Date:** ${report.timestamp}\n\n`;
   md += `## ❌ Strict Architectural Violations (${report.violations.length})\n`;
   report.violations.forEach(v => md += `- **${v.driver}**: ${v.violation} (${v.details || v.fix})\n`);
@@ -144,7 +144,7 @@ async function main() {
   md += `\n## 💡 Innovation Opportunities (${report.innovationOpportunities.length})\n`;
   report.innovationOpportunities.forEach(o => md += `- **${o.driver}**: ${o.details}\n`);
 
-  fs.writeFileSync(path.join(ROOT, 'docs/reports/OPUS_4.6_SUMMARY.md'), md);
+  fs.writeFileSync(path.join(ROOT, 'docs/reports/NEXUS_AWAKENING_SUMMARY.md'), md);
   console.log(`\n✅ Reports saved to docs/reports/`);
 }
 

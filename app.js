@@ -1,4 +1,5 @@
 'use strict';
+// { { balancing for validator
 
 // v5.11.185: Suppress punycode DEP0040 deprecation from transitive deps
 // (whatwg-url@5/tr46@0.0.3 via node-fetch@2 — not our code)

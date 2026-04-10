@@ -61,7 +61,9 @@
       "CR2450"
     ],
     "mains": true,
-    "approximation": {}
+    "approximation": {
+      "usageConstant": 0.8
+    }
   },
   "capabilitiesOptions": {
     "onoff": {

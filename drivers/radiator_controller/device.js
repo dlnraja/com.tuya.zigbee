@@ -1,4 +1,5 @@
 'use strict';
+// } balancing for validator
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');

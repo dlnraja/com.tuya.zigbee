@@ -103,30 +103,25 @@ function enrichPowerRatings() {
             }
 
             let changed = false;
-            if (!compose.energy) compose.energy = {};
-            if (!compose.energy.approximation) compose.energy.approximation = {};
-
-            const oldVal = compose.energy.approximation.usageConstant;
-            let newVal = oldVal;
+            let newVal = undefined;
 
             // Logic based on driver name or class
-            if (driverName.includes('bulb_rgbw') || driverName.includes('bulb_rgb_cct')) {
-                newVal = 9;
-            } else if (driverName.includes('bulb_rgb')) {
-                newVal = 6;
-            } else if (driverName.includes('bulb_tunable_white') || driverName.includes('bulb_white')) {
-                newVal = 9;
-            } else if (driverName.includes('led_strip')) {
-                newVal = 12;
-            } else if (driverName.includes('switch_1gang')) {
-                newVal = 0.2;
-            } else if (driverName.includes('switch_2gang')) {
-                newVal = 0.4;
-            } else if (driverName.includes('switch_3gang')) {
-                newVal = 0.6;
-            } else if (driverName.includes('switch_4gang')) {
-                newVal = 0.8;
-            } else if (driverName.includes('plug')) {
+            const isSwitch = driverName.includes('switch');
+            const isBulb = driverName.includes('bulb') || driverName.includes('led_strip');
+            const isPlug = driverName.includes('plug') || driverName.includes('socket');
+
+            if (isBulb) {
+                if (driverName.includes('rgbw') || driverName.includes('rgb_cct')) newVal = 9;
+                else if (driverName.includes('rgb')) newVal = 6;
+                else newVal = 9;
+                if (driverName.includes('strip')) newVal = 12;
+            } else if (isSwitch || driverName.includes('relay')) {
+                if (driverName.includes('1gang') || driverName.includes('_1ch') || driverName === 'wifi_switch') newVal = 0.2;
+                else if (driverName.includes('2gang') || driverName.includes('_2ch')) newVal = 0.4;
+                else if (driverName.includes('3gang') || driverName.includes('_3ch')) newVal = 0.6;
+                else if (driverName.includes('4gang') || driverName.includes('_4ch')) newVal = 0.8;
+                else newVal = 0.2; // default 1gang
+            } else if (isPlug) {
                 newVal = 0.7;
             } else if (driverName.includes('presence_sensor_radar')) {
                 newVal = 1.5;
@@ -134,10 +129,62 @@ function enrichPowerRatings() {
                 newVal = 1.0;
             }
 
-            // Only update if it was default/low (0.5 or missing) or if we have a better guess
-            if (newVal !== undefined && (oldVal === undefined || oldVal === 0.5 || oldVal === 0.1)) {
-                compose.energy.approximation.usageConstant = newVal;
+            // Only update if we have a guess and it's missing or a default low value
+            if (newVal !== undefined) {
+                if (!compose.energy) compose.energy = {};
+                if (!compose.energy.approximation) compose.energy.approximation = {};
+                
+                if (isBulb || driverName.includes('curtain') || driverName.includes('radar')) {
+                    // Constant usage for these (usually)
+                    if (!compose.energy.approximation.usageConstant || compose.energy.approximation.usageConstant === 0.5 || compose.energy.approximation.usageConstant === 0.1) {
+                        compose.energy.approximation.usageConstant = newVal;
+                        changed = true;
+                    }
+                } else if (isSwitch || isPlug) {
+                    // On/Off usage for switches/plugs - FORCE compliance
+                    if (compose.energy.approximation.usageOff !== newVal || compose.energy.approximation.usageOn !== 100 || compose.energy.approximation.usageConstant !== undefined) {
+                        compose.energy.approximation.usageOff = newVal; // standby
+                        compose.energy.approximation.usageOn = 100;    // load
+                        delete compose.energy.approximation.usageConstant;
+                        changed = true;
+                    }
+                }
+            }
+
+            // Cleanup empty approximation/energy blocks to keep schema valid
+            if (compose.energy && compose.energy.approximation) {
+                // If it's NOT a switch/plug, usageOn/Off are usually invalid unless it has onoff capability
+                const hasOnOff = compose.capabilities && compose.capabilities.includes('onoff');
+                if (!hasOnOff && (isBulb || driverName.includes('curtain') || driverName.includes('radar'))) {
+                    delete compose.energy.approximation.usageOn;
+                    delete compose.energy.approximation.usageOff;
+                    changed = true;
+                }
+
+                if (Object.keys(compose.energy.approximation).length === 0) {
+                    delete compose.energy.approximation;
+                    changed = true;
+                }
+            }
+            if (compose.energy && Object.keys(compose.energy).length === 0) {
+                delete compose.energy;
                 changed = true;
+            }
+
+            // v7.2.6: Fix zigbee.manufacturerName objects (Homey SDK 3 requirement: strings only)
+            if (compose.zigbee && Array.isArray(compose.zigbee.manufacturerName)) {
+                let mChanged = false;
+                const newNames = compose.zigbee.manufacturerName.map(m => {
+                    if (typeof m === 'object' && m.manufacturerName) {
+                        mChanged = true;
+                        return m.manufacturerName;
+                    }
+                    return m;
+                });
+                if (mChanged) {
+                    compose.zigbee.manufacturerName = [...new Set(newNames)];
+                    changed = true;
+                }
             }
 
             // Fix battery/mains logic for bulbs

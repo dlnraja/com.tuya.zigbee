@@ -3,7 +3,7 @@ const path = require('path');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      RULE 21 COMPLIANCE LINTER v1.0.0 (Thinking Opus 4.6)                    ║
+ * ║      RULE 21 COMPLIANCE LINTER v1.0.0 (Thinking Nexus Autonomous)                    ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  Ensures multi-gang Flow cards use capability filters instead of driver_ids.  ║
  * ║  Prevents "unlinked" flow cards when new variants (hybrid/prefixed) are added. ║

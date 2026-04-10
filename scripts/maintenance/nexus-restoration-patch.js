@@ -7,11 +7,11 @@ const path = require('path');
 const ROOT = path.join(__dirname, '../..');
 
 /**
- * OPUS 4.6 RESTORATION PATCH
+ * NEXUS AWAKENING RESTORATION PATCH
  * Focus: Correcting defects identified in forum reports and advanced audits.
  */
 async function main() {
-  console.log('🛡️  OPUS 4.6 RESTORATION PATCH - STARTING');
+  console.log('🛡️  NEXUS AWAKENING RESTORATION PATCH - STARTING');
   console.log('==========================================');
 
   // 1. Fix Contact Sensor missing manufacturer (Issue #9)

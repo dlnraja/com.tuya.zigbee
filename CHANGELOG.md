@@ -4,30 +4,30 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.1.0] - 2026-04-09
-## [7.2.0] - 2026-04-10
+## [7.2.5] - 2026-04-10
+### 🚀 Nexus Awakening (Stable Release)
+- **Stable Software-defined Premium Features**: Circadian Lighting, Adaptive TPI Heating, and Soft Transitions.
+- **Nexus Hardening**: Fleet-wide schema enrichment for energy approximations and Zigbee identifiers.
+- **CI/CD Nexus Orchestrator**: Hardened autonomous maintenance pipeline with AI-fallback modes.
 
+## [7.2.0] - 2026-04-10
+### 🧠 The Autonomous Awakening (Nexus Orchestration)
+- **Virtual Energy Engine**: Automatically calculates power (W) and energy (kWh) for all switches, plugs, and lights based on state and nominal power.
+- **Radio-Based Presence Sensing**: Beta feature that infers presence by monitoring Zigbee signal (LQI/RSSI) fluctuations.
+- **Nexus Collision Resolver**: Proactive CI/CD identification of fingerprint collisions.
+- **Improved Adaptive Lighting**: Enhanced Natural Light support with biological clock presets.
+
+## [7.1.0] - 2026-04-09
 ### 🚀 Omni-Sync Architecture (Autonomous Maintenance)
 - **Unified Mapping Intelligence**: Centralized DP mapping database shared across all drivers.
-- **Autonomous Sync Engine**: Weekly automated synchronization of fingerprints and mappings from **Zigbee2MQTT** (Tuya, Sonoff, Danfoss) and **ZHA** referentials.
-- **Safe Auto-Migration Queue**: Intelligent detection of better-suited drivers with a secure migration queue to prevent crashes and respect user preferences.
-- **Enriched Dynamic Parsing**: Universal DP parser now resolves string-based transforms from the live database.
+- **Autonomous Sync Engine**: Weekly automated synchronization of fingerprints and mappings from Z2M and ZHA referentials.
+- **Safe Auto-Migration Queue**: Intelligent detection of better-suited drivers with secure migration paths.
+- **Enriched Dynamic Parsing**: Universal DP parser now resolves transforms from the live database.
 
 ### Bug Fixes & Improvements
-- Fixed `safeAddCapability` to prevent SDK 3 crashes when capabilities already exist.
-- Updated `SourceCredits.js` tracking for all external data sources.
+- Fixed `safeAddCapability` to prevent SDK 3 crashes.
 - Improved `DriverMappingLoader` with versioning and last-updated tracking.
-### 🧠 The Autonomous Awakening (Nexus Orchestration)
-- **Virtual Energy Engine**: Automatically calculates power (W) and energy (kWh) for all switches, plugs, and lights based on state and nominal power when hardware metering is missing.
-- **Radio-Based Presence Sensing**: Beta feature that infers presence by monitoring Zigbee signal (LQI/RSSI) fluctuations. Static devices (bulbs/plugs) can now detect movement in their immediate radio environment.
-- **Nexus Collision Resolver**: Automated CI/CD pipeline that proactively identifies and fixes device fingerprint collisions, ensuring unique and stable device routing.
-- **Improved Adaptive Lighting**: Enhanced Natural Light support with biological clock presets and deeper Zigbee 3.0 cluster integration.
-
-### Bug Fixes & Improvements
 - Resolved fingerprint collisions between `air_purifier`, `climate_sensor`, and `remote_button` drivers.
-- Automated technical power calculation (`nominal_power`) for 305+ drivers based on hardware composition (LED count, relay class).
-- Hardened `CapabilityManagerMixin` with intelligent energy report suppression and improved bizarre value blocking.
-- SDK 3 Compliance: Final audit of flow card ID collisions and manifest structure validation.
 
 ---
 

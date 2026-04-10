@@ -189,6 +189,15 @@ jobs:
             console.log('Switch/socket drivers: '+switchDrivers+', with TX fallback: '+withFallback);
           "
 
+      - name: 🛡️ v7.2.5 Hardening & Box-Parity Audit
+        run: |
+          echo "=== 🧠 Verifying Intelligent Compensation Layer ==="
+          node scripts/polish_app.js --dry-run
+          
+          echo "=== 📶 Zigbee Cluster Coherence Check ==="
+          # Check for forbidden legacy descriptors
+          grep -r "tuyaAttributes" drivers/ --exclude-dir=node_modules && (echo "❌ Regressive Tuya descriptor found!" && exit 1) || echo "✅ Clean modern ZCL confirmed."
+
       - name: 🔍 Validate (npx primary)
         run: npx homey app validate --level ${{ inputs.level || 'publish' }}
 

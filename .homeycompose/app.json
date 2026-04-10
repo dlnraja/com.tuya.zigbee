@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "7.1.0",
+  "version": "7.2.5",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -13,10 +13,10 @@
     "fr": "Universal Tuya"
   },
   "description": {
-    "en": "Autonomous Tuya engine with Z2M/ZHA cross-sync & self-healing",
-    "nl": "Autonome Tuya-engine met Z2M/ZHA cross-sync & zelfgenezing",
-    "de": "Autonome Tuya-Engine mit Z2M/ZHA-Cross-Sync & Selbstheilung",
-    "fr": "Moteur Tuya autonome avec cross-sync Z2M/ZHA & auto-réparation"
+    "en": "Autonomous Tuya engine (Nexus Awakening): Circadian Lighting, Adaptive TPI, Z2M/ZHA cross-sync & self-healing",
+    "nl": "Autonome Tuya-engine (Nexus Awakening): Circadien-verlichting, Adaptieve TPI, Z2M / ZHA cross-sync & zelfgenezing",
+    "de": "Autonome Tuya-Engine (Nexus Awakening): Zirkadiane Beleuchtung, Adaptive TPI, Z2M/ZHA-Cross-Sync & Selbstheilung",
+    "fr": "Moteur Tuya autonome (Nexus Awakening) : Éclairage Circadien, TPI Adaptatif, cross-sync Z2M/ZHA & auto-réparation"
   },
   "tags": {
     "en": [

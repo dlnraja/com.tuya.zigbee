@@ -25,8 +25,7 @@
     "batteries": [
       "CR2450"
     ],
-    "mains": true,
-    "approximation": {}
+    "mains": true
   },
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",

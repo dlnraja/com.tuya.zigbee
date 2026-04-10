@@ -8,7 +8,7 @@ const ROOT = path.join(__dirname, '../..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
 
 async function main() {
-  console.log('🛠️  MASTER FLOW-LINKAGE PATCHER - OPUS 4.6');
+  console.log('🛠️  MASTER FLOW-LINKAGE PATCHER - NEXUS AWAKENING');
   console.log('==========================================');
 
   const drivers = fs.readdirSync(DRIVERS_DIR).filter(d => fs.statSync(path.join(DRIVERS_DIR, d)).isDirectory());

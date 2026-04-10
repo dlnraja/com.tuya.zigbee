@@ -30,7 +30,10 @@
     "batteries": [
       "CR2032"
     ],
-    "approximation": {}
+    "approximation": {
+      "usageOff": 0.2,
+      "usageOn": 100
+    }
   },
   "zigbee": {
     "manufacturerName": [],

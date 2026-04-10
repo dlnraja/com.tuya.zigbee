@@ -335,6 +335,8 @@
     ]
   },
   "energy": {
-    "approximation": {}
+    "approximation": {
+      "usageConstant": 0.6
+    }
   }
 }

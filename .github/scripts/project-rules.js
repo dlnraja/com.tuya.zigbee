@@ -103,7 +103,7 @@ const PROJECT_RULES = [
 '- "Could not get device by ID" string errors on Wireless Buttons: FIXED!',
 '- Flow Card Unlinking on Hybrid Drivers: FIXED via Rule 21 (Capability-based filters).',
 '',
-'### ARCHITECTURAL SHIELD (Thinking Opus 4.6)',
+'### ARCHITECTURAL SHIELD (Nexus Autonomous)',
 '- **Rule 21 (Interoperability)**: Flow cards for multi-gang MUST filter by `capabilities` (e.g. `onoff.gang2`) instead of `driver_id` to ensure compatibility across hybrid/prefixed variants.',
 '- **Rule 22 (Legacy Anchor)**: NEVER remove fingerprints from legacy drivers when migrating to new ones; preserve as "Legacy Anchors" to prevent breaking thousands of existing units.',
 '- **Rule 23 (Generic Mixins)**: Standardize Tuya patterns (like 0xFC11 for Woolley) into global mixins rather than per-driver code.',

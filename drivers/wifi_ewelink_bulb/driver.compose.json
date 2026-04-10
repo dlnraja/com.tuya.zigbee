@@ -406,7 +406,9 @@
     }
   },
   "energy": {
-    "approximation": {},
-    "mains": true
+    "mains": true,
+    "approximation": {
+      "usageConstant": 9
+    }
   }
 }

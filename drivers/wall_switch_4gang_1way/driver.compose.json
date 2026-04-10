@@ -12,8 +12,7 @@
   "energy": {
     "approximation": {
       "usageOn": 100,
-      "usageOff": 1,
-      "usageConstant": 0.8
+      "usageOff": 0.8
     }
   },
   "platforms": [
