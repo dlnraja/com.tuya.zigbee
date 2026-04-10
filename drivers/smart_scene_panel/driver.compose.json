@@ -1,7 +1,10 @@
 {
   "name": {
     "en": "Smart Scene Panel",
-    "fr": "Panneau Scène Intelligent"
+    "fr": "Panneau de Scène Intelligent",
+    "nl": "Slimme Scène Paneel",
+    "de": "Intelligentes Szenenpanel",
+    "es": "Panel de Escena Inteligente"
   },
   "class": "socket",
   "capabilities": [

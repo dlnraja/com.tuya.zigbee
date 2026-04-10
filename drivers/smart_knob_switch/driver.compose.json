@@ -2,7 +2,11 @@
   "id": "smart_knob_switch",
   "name": {
     "en": "Smart Knob Switch",
-    "sv": "Smart knappdimmer"
+    "sv": "Smart knappdimmer",
+    "fr": "Interrupteur à bouton intelligent",
+    "nl": "Slimme knop schakelaar",
+    "de": "Intelligenter Drehschalter",
+    "es": "Interruptor de perilla inteligente"
   },
   "class": "remote",
   "platforms": [

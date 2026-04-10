@@ -1,7 +1,11 @@
 {
   "id": "smart_remote_4_buttons",
   "name": {
-    "en": "4 button Smart Remote Controller"
+    "en": "4 button Smart Remote Controller",
+    "fr": "Télécommande intelligente à 4 boutons",
+    "nl": "Slimme afstandsbediening met 4 knoppen",
+    "de": "4-Tasten Smart Remote Controller",
+    "es": "Control remoto inteligente de 4 botones"
   },
   "class": "remote",
   "platforms": [
