@@ -28,7 +28,8 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
   _registerFlowCards() {
     const safeRegister = (type, id, handler) => {
       try {
-        const card = type === 'condition' ? this.homey.flow.getConditionCard(id) : this.homey.flow.getActionCard(id);
+        const card = type === 'condition' ?
+      this.homey.flow.getConditionCard(id) : this.homey.flow.getActionCard(id)
         if (card) {
           card.registerRunListener(handler);
           this.log(`[FLOW] ✅ ${id}`);

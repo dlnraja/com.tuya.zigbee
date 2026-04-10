@@ -12,7 +12,8 @@ class WaterTankMonitorDriver extends Homey.Driver {
     this.log('Liquid Level Sensor driver initializing...');
 
     const safeGetTrigger = (id) => {
-      try { return (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getTriggerCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); }
+      try { return
+      this.homey.flow.getTriggerCard(id) ; }
       catch (e) { this.log(`[FLOW] Trigger '${id}' not defined`); return null; }
     };
 
@@ -23,7 +24,7 @@ class WaterTankMonitorDriver extends Homey.Driver {
 
     // Condition: fill level above threshold
     try {
-      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('water_tank_monitor_level_above'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
+      this.homey.flow.getConditionCard('water_tank_monitor_level_above')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const pct = args.device.getCapabilityValue('measure_water_percentage') || 0;
@@ -33,7 +34,7 @@ class WaterTankMonitorDriver extends Homey.Driver {
 
     // Condition: liquid state is
     try {
-      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('water_tank_monitor_state_is'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
+      this.homey.flow.getConditionCard('water_tank_monitor_state_is')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device._lastState === args.state;

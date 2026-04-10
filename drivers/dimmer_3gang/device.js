@@ -134,14 +134,14 @@ class Dimmer3GangDevice extends ZigBeeDevice {
         const id = value
           ? `dimmer_3gang_physical_gang${gang}_on`
           : `dimmer_3gang_physical_gang${gang}_off`;
-        this.homey.flow.getTriggerCard().trigger(this, {}, {}).catch(() => {});
+        this.homey.flow._getFlowCard('value')
       } else if (dimMap[dp]) {
         const gang = dimMap[dp];
         const up = lastValue !== undefined && value > lastValue;
         const id = up
           ? `dimmer_3gang_physical_gang${gang}_brightness_increased`
           : `dimmer_3gang_physical_gang${gang}_brightness_decreased`;
-        this.homey.flow.getTriggerCard().trigger(this, { brightness: Math.round(value * 100) }, {}).catch(() => {});
+        this.homey.flow._getFlowCard('up').trigger(this, { brightness: Math.round(value * 100) }, {}).catch(() => {});
       }
     } catch (err) {
       this.error('[DIMMER-3G] Flow trigger error:', err.message);

@@ -214,7 +214,8 @@
       "_TZ3000_u3oupgdy",
       "_TZ3000_wkr3jqmr",
       "_TZ3000_imaccztn",
-      "_TZ3000_mmkbptmx"
+      "_TZ3000_mmkbptmx",
+      "_TZ3000_ltt60asa"
     ]
   },
   "images": {
@@ -893,8 +894,20 @@
             "name": "action",
             "type": "dropdown",
             "values": [
-              { "id": "on", "label": { "en": "On", "fr": "On" } },
-              { "id": "off", "label": { "en": "Off", "fr": "Off" } }
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "fr": "On"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Off"
+                }
+              }
             ]
           }
         ]
@@ -910,8 +923,20 @@
             "name": "action",
             "type": "dropdown",
             "values": [
-              { "id": "on", "label": { "en": "On", "fr": "On" } },
-              { "id": "off", "label": { "en": "Off", "fr": "Off" } }
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "fr": "On"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Off"
+                }
+              }
             ]
           }
         ]
@@ -927,8 +952,20 @@
             "name": "action",
             "type": "dropdown",
             "values": [
-              { "id": "on", "label": { "en": "On", "fr": "On" } },
-              { "id": "off", "label": { "en": "Off", "fr": "Off" } }
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "fr": "On"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Off"
+                }
+              }
             ]
           }
         ]
@@ -944,8 +981,20 @@
             "name": "action",
             "type": "dropdown",
             "values": [
-              { "id": "on", "label": { "en": "On", "fr": "On" } },
-              { "id": "off", "label": { "en": "Off", "fr": "Off" } }
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "fr": "On"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Off"
+                }
+              }
             ]
           }
         ]

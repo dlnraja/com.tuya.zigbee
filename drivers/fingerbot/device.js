@@ -1,9 +1,9 @@
 'use strict';
 
 const { Cluster, BoundCluster } = require('zigbee-clusters');
-const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
-const TuyaOnOffCluster = require('../../lib/TuyaOnOffCluster');
-const TuyaSpecificClusterDevice = require('../../lib/TuyaSpecificClusterDevice');
+const TuyaSpecificCluster = require('../../lib/tuya/TuyaSpecificCluster');
+const TuyaOnOffCluster = require('../../lib/clusters/TuyaOnOffCluster');
+const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
 const { getDataValue } = require('../../lib/TuyaHelpers');
 const { V1_FINGER_BOT_DATA_POINTS } = require('../../lib/tuya/TuyaDataPointsJohan');
 
@@ -519,7 +519,8 @@ class FingerBot extends TuyaSpecificClusterDevice {
    */
   _triggerFlowCard(id, tokens = {}, state = {}) {
     try {
-      const card = (() => { try { return this.homey.flow.getTriggerCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+      const card =
+      this._getFlowCard(id)
       if (card) {
         card.trigger(this, tokens, state)
           .catch(err => this.error(`Failed to trigger flow card "${id}"`, err));

@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "7.0.22",
+  "version": "7.1.0",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -13,10 +13,10 @@
     "fr": "Universal Tuya"
   },
   "description": {
-    "en": "Every Tuya device under one roof, 100% local",
-    "nl": "Elk Tuya-apparaat onder één dak, 100% lokaal",
-    "de": "Jedes Tuya-Gerät unter einem Dach, 100% lokal",
-    "fr": "Chaque appareil Tuya sous un même toit, 100% local"
+    "en": "Autonomous Tuya engine with Z2M/ZHA cross-sync & self-healing",
+    "nl": "Autonome Tuya-engine met Z2M/ZHA cross-sync & zelfgenezing",
+    "de": "Autonome Tuya-Engine mit Z2M/ZHA-Cross-Sync & Selbstheilung",
+    "fr": "Moteur Tuya autonome avec cross-sync Z2M/ZHA & auto-réparation"
   },
   "tags": {
     "en": [

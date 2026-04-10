@@ -39,18 +39,18 @@ class ClimateSensorDriver extends ZigBeeDriver {
       // ═══════════════════════════════════════════════════════════════
       // TRIGGER CARDS - IDs must match driver.flow.compose.json
       // ═══════════════════════════════════════════════════════════════
-      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('climate_sensor_temperature_changed'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
-      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('climate_sensor_humidity_changed'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
-      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('climate_sensor_battery_low'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
-      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('climate_sensor_temperature_alarm_high'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
-      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('climate_sensor_temperature_alarm_low'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
-      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('climate_sensor_humidity_alarm_high'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
-      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('climate_sensor_humidity_alarm_low'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      this.homey.flow.getTriggerCard('climate_sensor_temperature_changed')
+      this.homey.flow.getTriggerCard('climate_sensor_humidity_changed')
+      this.homey.flow.getTriggerCard('climate_sensor_battery_low')
+      this.homey.flow.getTriggerCard('climate_sensor_temperature_alarm_high')
+      this.homey.flow.getTriggerCard('climate_sensor_temperature_alarm_low')
+      this.homey.flow.getTriggerCard('climate_sensor_humidity_alarm_high')
+      this.homey.flow.getTriggerCard('climate_sensor_humidity_alarm_low')
 
       // ═══════════════════════════════════════════════════════════════
       // CONDITION CARDS - with device validation
       // ═══════════════════════════════════════════════════════════════
-      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('climate_sensor_temperature_above'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      this.homey.flow.getConditionCard('climate_sensor_temperature_above')
       this.tempAboveCondition?.registerRunListener(async (args) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');
@@ -59,8 +59,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
         const temp = args.device.getCapabilityValue('measure_temperature');
         return temp !== null && temp > args.temp;
       });
-
-      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('climate_sensor_temperature_below'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      this.homey.flow.getConditionCard('climate_sensor_temperature_below')
       this.tempBelowCondition?.registerRunListener(async (args) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');
@@ -69,8 +68,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
         const temp = args.device.getCapabilityValue('measure_temperature');
         return temp !== null && temp < args.temp;
       });
-
-      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('climate_sensor_humidity_above'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      this.homey.flow.getConditionCard('climate_sensor_humidity_above')
       this.humidityAboveCondition?.registerRunListener(async (args) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');
@@ -79,8 +77,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
         const humidity = args.device.getCapabilityValue('measure_humidity');
         return humidity !== null && humidity > args.humidity;
       });
-
-      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('climate_sensor_humidity_below'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      this.homey.flow.getConditionCard('climate_sensor_humidity_below')
       this.humidityBelowCondition?.registerRunListener(async (args) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');

@@ -28,7 +28,7 @@ class VibrationSensorDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Vibration is/is not detected
     try {
-      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('vibration_sensor_is_vibrating'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
+      this.homey.flow.getConditionCard('vibration_sensor_is_vibrating')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_vibration') === true;
@@ -38,7 +38,7 @@ class VibrationSensorDriver extends ZigBeeDriver {
 
     // CONDITION: Battery above threshold
     try {
-      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('vibration_sensor_battery_above'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
+      this.homey.flow.getConditionCard('vibration_sensor_battery_above')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
@@ -49,7 +49,7 @@ class VibrationSensorDriver extends ZigBeeDriver {
 
     // CONDITION: Vibration active
     try {
-      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('vibration_sensor_vibration_active'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
+      this.homey.flow.getConditionCard('vibration_sensor_vibration_active')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_vibration') === true;
@@ -59,7 +59,7 @@ class VibrationSensorDriver extends ZigBeeDriver {
 
     // CONDITION: Tamper active
     try {
-      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('vibration_sensor_tamper_active'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
+      this.homey.flow.getConditionCard('vibration_sensor_tamper_active')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_tamper') === true;

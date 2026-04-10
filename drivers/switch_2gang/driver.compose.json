@@ -819,11 +819,17 @@
             "values": [
               {
                 "id": "on",
-                "label": { "en": "On", "fr": "On" }
+                "label": {
+                  "en": "On",
+                  "fr": "On"
+                }
               },
               {
                 "id": "off",
-                "label": { "en": "Off", "fr": "Off" }
+                "label": {
+                  "en": "Off",
+                  "fr": "Off"
+                }
               }
             ]
           }
@@ -842,11 +848,17 @@
             "values": [
               {
                 "id": "on",
-                "label": { "en": "On", "fr": "On" }
+                "label": {
+                  "en": "On",
+                  "fr": "On"
+                }
               },
               {
                 "id": "off",
-                "label": { "en": "Off", "fr": "Off" }
+                "label": {
+                  "en": "Off",
+                  "fr": "Off"
+                }
               }
             ]
           }

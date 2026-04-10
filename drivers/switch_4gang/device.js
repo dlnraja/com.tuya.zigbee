@@ -247,7 +247,8 @@ class Switch4GangDevice extends BaseClass {
         if (isPhysical && (mode === 'auto' || mode === 'both')) {
           const flowId = `switch_4gang_physical_gang${gangNum}_${value ? 'on' : 'off'}`;
           try {
-            const card = (() => { try { return this.homey.flow.getTriggerCard(flowId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+            const card =
+      this._getFlowCard(flowId)
             if (card) await card.trigger(this, { gang: gangNum, state: value }, {}).catch(() => {});
             this.log(`[BSEED-4G] 🔘 Physical G${gangNum} ${value ? 'ON' : 'OFF'}`);
           } catch (e) { }
@@ -256,7 +257,8 @@ class Switch4GangDevice extends BaseClass {
         if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
           const sceneId = `switch_4gang_gang${gangNum}_scene`;
           try {
-            const card = (() => { try { return this.homey.flow.getTriggerCard(sceneId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+            const card =
+      this._getFlowCard(sceneId)
             if (card) await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
             this.log(`[BSEED-4G] 🎬 Scene G${gangNum} ${value ? 'on' : 'off'}`);
           } catch (e) { }
@@ -326,7 +328,7 @@ class Switch4GangDevice extends BaseClass {
       if (isPhysical && (mode === 'auto' || mode === 'both')) {
         const flowId = `switch_4gang_physical_gang${dpId}_${boolVal ? 'on' : 'off'}`;
         try {
-          (() => { try { return this.homey.flow.getTriggerCard(flowId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().trigger(this, { gang: dpId, state: boolVal }, {})
+          this._getFlowCard(flowId).trigger(this, { gang: dpId, state: boolVal }, {})
             .catch(() => {});
           this.log(`[BSEED-4G] 🔘 Physical G${dpId} ${boolVal ? 'ON' : 'OFF'} (via Tuya DP: ${flowId})`);
         } catch (e) { /* card missing */ }
@@ -335,7 +337,7 @@ class Switch4GangDevice extends BaseClass {
       if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
         const sceneId = `switch_4gang_gang${dpId}_scene`;
         try {
-          (() => { try { return this.homey.flow.getTriggerCard(sceneId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().trigger(this, { action: boolVal ? 'on' : 'off' }, {})
+          this._getFlowCard(sceneId).trigger(this, { action: boolVal ? 'on' : 'off' }, {})
             .catch(() => {});
           this.log(`[BSEED-4G] 🎬 Scene G${dpId} ${boolVal ? 'on' : 'off'} (via Tuya DP: ${sceneId})`);
         } catch (e) { /* card missing */ }

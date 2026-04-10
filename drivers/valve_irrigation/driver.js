@@ -20,7 +20,7 @@ class ValveIrrigationDriver extends ZigBeeDriver {
   async onInit() {
     this.log('ValveIrrigationDriver initialized');
     // v5.13.3: Register flow card action handlers
-    const reg=(id,fn)=>{try{(() => { try { return this.homey.flow.getActionCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().registerRunListener(fn);}catch(e){this.log('[Flow]',id,e.message);}};
+    const reg=(id,fn)=>{try{this.homey.flow.getActionCard(id).registerRunListener(fn);}catch(e){this.log('[Flow]',id,e.message);}};
     reg('valve_irrigation_turn_on',async({device})=>{await device.triggerCapabilityListener('onoff',true);return true;});
     reg('valve_irrigation_turn_off',async({device})=>{await device.triggerCapabilityListener('onoff',false);return true;});
     reg('valve_irrigation_toggle',async({device})=>{const v=device.getCapabilityValue('onoff');await device.triggerCapabilityListener('onoff',!v);return true;});

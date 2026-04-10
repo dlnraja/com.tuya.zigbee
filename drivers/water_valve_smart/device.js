@@ -87,7 +87,8 @@ class WaterValveSmartDevice extends HybridPlugBase {
     // Helper to trigger flow cards safely
     const triggerCard = async (id, tokens = {}, state = {}) => {
       try {
-        const card = this.homey.flow.getTriggerCard(id);
+        const card =
+      this._getFlowCard(id)
         if (card) {
           await card.trigger(this, tokens, state);
         }

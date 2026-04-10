@@ -181,7 +181,6 @@ function resolveConflict(conflict, drivers) {
   }
 
   // Rule 1.5: climate_sensor is a catch-all — loses to ANY specialized driver
-  // climate_sensor has TS0601 which matches almost everything via cartesian product
   if (drvNames.includes('climate_sensor') && drvNames.length === 2) {
     const other = drvNames.find(d => d !== 'climate_sensor');
     const otherCat = drivers.get(other)?.category || 'unknown';
@@ -195,6 +194,19 @@ function resolveConflict(conflict, drivers) {
         return removals;
       }
     }
+  }
+
+  // Rule 1.10: TS0601 (Catch-all) deprioritization
+  // If we have a conflict between TS0601 and a specific model ID (like TS0502B or TS0001)
+  // The specific model ID driver SHOULD WIN if it exists.
+  if (pid.toUpperCase() === 'TS0601' && drvNames.some(d => CATEGORY[d] !== 'diy' && d !== 'generic_tuya')) {
+     const specialized = drvNames.find(d => CATEGORY[d] !== 'diy' && d !== 'generic_tuya' && d !== 'universal_fallback');
+     if (specialized) {
+        for (const loser of drvNames.filter(d => d !== specialized)) {
+           removals.push({ driver: loser, mfr, reason: 'TS0601 conflict: specialized driver ' + specialized + ' wins' });
+        }
+        return removals;
+     }
   }
 
   // Rule 1.6: Same-gang switch variants (switch_Xgang vs wall_switch_Xgang_1way)

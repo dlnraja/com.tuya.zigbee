@@ -47,12 +47,12 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
         if (mode !== 'magic') this.setCapabilityValue('onoff', value).catch(() => {});
         if (isPhys && (mode === 'auto' || mode === 'both')) {
           const fid = 'wall_switch_4gang_1way_turned_' + (value ? 'on' : 'off');
-          (() => { try { return this.homey.flow.getTriggerCard(fid); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().trigger(this, {}, {}).catch(() => {});
+      this._getFlowCard(fid)
           const pgid = `wall_switch_4gang_1way_physical_gang${gn}_` + (value ? 'on' : 'off');
-          (() => { try { return this.homey.flow.getTriggerCard(pgid); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().trigger(this, {}, {}).catch(() => {});
+      this._getFlowCard(pgid)
         }
         if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-          (() => { try { return this.homey.flow.getTriggerCard('wall_switch_4gang_1way_gang' + gn + '_scene'); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+      this._getFlowCard('wall_switch_4gang_1way_gang' + gn + '_scene').trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {})
         }
       }
     });
@@ -126,7 +126,7 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
       const isPhys = !this._appCommandPending?.gang1;
       // v5.12.4: Removed 'auto' physical gang trigger - PhysicalButtonMixin handles it (fixes BSEED double-trigger)
       if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-        (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('wall_switch_4gang_1way_gang1_scene'); } catch(e) { return null; } })(); } catch(e) { return null; } })()?.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+      this._getFlowCard('wall_switch_4gang_1way_gang1_scene')?.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {})
         this.log(`[SCENE] Gang 1 scene: ${value ? 'on' : 'off'}`);
       }
     };

@@ -17,7 +17,7 @@ class PetFeederDriver extends Driver {
   async onInit() {
     this.log('Pet Feeder driver initialized');
     // v5.13.3: Flow card handlers
-      (() => { try { return (() => { try { return this.homey.flow.getActionCard('pet_feeder_feed_now'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      this.homey.flow.getActionCard('pet_feeder_feed_now')
   }
 }
 module.exports = PetFeederDriver;

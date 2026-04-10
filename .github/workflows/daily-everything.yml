@@ -17,8 +17,8 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: daily-everything
-  cancel-in-progress: true
+  group: homey-app-store-delivery
+  cancel-in-progress: false
 
 defaults:
   run:
@@ -79,10 +79,10 @@ jobs:
             echo "::warning::Pipeline intelligence: RULE_BASED (IA-less / Cloudless-First mode)"
           fi
 
-      - name: 🛡️ Zigbee Signature Audit
-        run: node scripts/ci/signature-audit.js
       - name: Install dependencies
         run: npm ci --prefer-offline --no-audit || npm install
+      - name: 🛡️ Zigbee Signature Audit
+        run: node scripts/ci/signature-audit.js
       - name: Save START_SHA
         run: echo "START_SHA=$(git rev-parse HEAD)" >> $GITHUB_ENV
       - name: App stats
@@ -97,6 +97,24 @@ jobs:
           echo "fps=$F" >> $GITHUB_OUTPUT
           echo "multi_driver=$MD" >> $GITHUB_OUTPUT
           echo "App v$V | $D drivers | $F FPs | $MD multi-driver mfrs"
+
+      - name: "0b. Performance Benchmark (Static)"
+        id: benchmark
+        run: |
+          echo "### 📊 Performance Benchmark" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| Drivers | ${{ steps.stats.outputs.drivers }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Fingerprints | ${{ steps.stats.outputs.fps }} |" >> $GITHUB_STEP_SUMMARY
+          SIZE=$(du -sh . | cut -f1)
+          echo "| Repo Size | $SIZE |" >> $GITHUB_STEP_SUMMARY
+          IMG_COUNT=$(find drivers -name "*.png" | wc -l)
+          echo "| Images | $IMG_COUNT |" >> $GITHUB_STEP_SUMMARY
+          LARGE_IMG=$(find drivers -name "*.png" -size +200k | wc -l)
+          echo "| Large Images (>200k) | $LARGE_IMG |" >> $GITHUB_STEP_SUMMARY
+          if [ "$LARGE_IMG" -gt 0 ]; then
+             echo "::warning::Found $LARGE_IMG images over 200KB. Run 'npm run images' locally."
+          fi
 
       # ===== 0. ONE-TIME: Delete duplicate/spam forum posts =====
       - name: "0. Forum Cleanup (one-time)"
@@ -156,47 +174,13 @@ jobs:
           SCAN_FORKS: "true"
         run: node .github/scripts/triage-upstream-enhanced.js
 
-      # ===== 3ba. UNIVERSAL STABILITY & NEXUS ORCHESTRATION (v7.0.21) =====
+      # ===== 3ba. UNIVERSAL STABILITY & NEXUS ORCHESTRATION (v7.0.22) =====
       - name: "3ba. Nexus Orchestrator (Triage + Self-Heal + Audit)"
         id: nexus
         continue-on-error: true
-        run: |
-          echo "=== 🧠 Launching Nexus Orchestrator v2.0 ==="
-          node scripts/maintenance/autonomous-maintenance-orchestrator.js
-          
-          echo "=== 🛡️ Stability Normalization (Clusters + Case) ==="
-          node scripts/automation/relax-manifest-clusters.js || true
-          node scripts/automation/manifest-caseless-processor.js || true
-
-      # ===== 3bb. GITHUB: Parallel Bot Cleanup (Fast resolution) =====
-      - name: "3bb. Parallel Bot Cleanup (v5.12.35)"
-        id: bot_cleanup
-        continue-on-error: true
-        timeout-minutes: 10
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-        run: node scripts/automation/parallel-bot-handler.js
-
-      # ===== 3bc. GITHUB: Global Fingerprint Deduplication & Conflict Check =====
-      - name: "3bc. Global Fingerprint Deduplication & Conflict Check"
-        id: dedupe_fp
-        continue-on-error: true
-        run: |
-          node scripts/automation/deduplicate-fingerprints.js
-          if [ "${{ inputs.dry_run }}" = "true" ]; then
-            node scripts/automation/fix-fingerprint-conflicts.js --report-only
-          else
-            node scripts/automation/fix-fingerprint-conflicts.js --auto-fix || node scripts/automation/fix-fingerprint-conflicts.js --report-only
-          fi
-
-      # ===== 3bd. GITHUB: Smart PR Auto-Merger (Approve + Merge + Fix Conflicts) =====
-      - name: "3bd. Smart PR Auto-Merger (v5.13.0)"
-        id: pr_merger
-        continue-on-error: true
-        timeout-minutes: 15
-        env:
-          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-        run: node scripts/automation/pr-auto-merger.js
+        run: node scripts/maintenance/autonomous-maintenance-orchestrator.js
 
       # ===== 3b. GITHUB: Comprehensive scan (forks+PRs+issues) =====
       - name: "3b. Comprehensive GitHub Scan"
@@ -707,66 +691,59 @@ jobs:
         timeout-minutes: 15
         run: node .github/scripts/translate-all.js || true
 
-      # ===== 11. COMMIT: All state + docs + changelogs =====
-      - name: "11. Commit all changes"
+      # ===== 11. BUMP & COMMIT & PUBLISH (UNIFIED) =====
+      - name: "11a. Generate Daily Changelog"
+        id: changelog_gen
+        if: always()
+        run: node .github/scripts/generate-daily-changelog.js || echo "changelog=Automated maintenance" >> $GITHUB_OUTPUT
+
+      - name: "11b. Version Bump (Patch)"
+        if: always() && github.event_name != 'workflow_dispatch'
+        id: bump
+        uses: athombv/github-action-homey-app-version@v1 # v1
+        with:
+          version: patch
+          changelog: ${{ steps.changelog_gen.outputs.changelog }}
+
+      - name: "11c. Unified Commit"
         id: commit
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for f in .github/state/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null || { echo "::warning::Bad JSON: $f"; git checkout -- "$f" 2>/dev/null; }; done
-          git add -A diagnostics/ .github/state/ drivers/ lib/ docs/ 2>/dev/null || git add -A
-          VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
-          D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
-          F=$(node -e "const g=require('path').join('.','drivers');const fs=require('fs');let c=0;for(const d of fs.readdirSync(g)){try{const j=JSON.parse(fs.readFileSync(g+'/'+d+'/driver.compose.json','utf8'));c+=(j.zigbee?.manufacturerName?.length||0)}catch{}}console.log(c)" 2>/dev/null || echo '?')
-          FILES=$(git diff --cached --name-only | wc -l)
-          git diff --cached --quiet || git commit -m "v${VER}: ${D} drivers, ${F} FPs — ${FILES} file(s) updated [skip ci]"
-          git pull --rebase origin master || true
-          git push || true
+          
+          # Sync package.json version
+          NEW_VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "${{ steps.stats.outputs.version }}")
+          node -e "const f=require('fs'),a=require('./app.json'),p=JSON.parse(f.readFileSync('package.json','utf8'));p.version=a.version;f.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n');"
+          
+          # Clean up bad JSON memory files
+          for f in .github/state/*.json; do 
+            node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null || rm "$f"; 
+          done
+          
+          git add -A .github/state/ drivers/ lib/ docs/ app.json package.json .homeychangelog.json 2>/dev/null || true
+          
+          if git diff --cached --quiet; then
+            echo "ℹ️ No changes to commit"
+          else
+            git commit -m "v${NEW_VER}: daily autonomous update [skip ci]"
+            git pull --rebase origin master
+            git push origin master
+          fi
 
       # ===== 12. VALIDATE + PUBLISH =====
       - name: "12. Validate"
         if: always()
         continue-on-error: true
-        uses: athombv/github-action-homey-app-validate@002b7273c2b86032cb20d9bf25a67c8daca13f2c # v1
+        uses: athombv/github-action-homey-app-validate@v1 # v1
         with:
           level: publish
-
-      - name: "11.5 Generating Dynamic Changelog"
-        id: changelog_gen
-        continue-on-error: true
-        if: steps.commit.outcome == 'success'
-        run: node .github/scripts/generate-daily-changelog.js
-
-      # CRITICAL: Bump version BEFORE publishing — without this, Athom rejects
-      # duplicate versions and the app never updates on the test channel
-      - name: "12a. Bump version (patch)"
-        if: steps.commit.outcome == 'success'
-        id: bump
-        continue-on-error: true
-        uses: athombv/github-action-homey-app-version@986685b4903efabc9531248b2fdc9734223ff9f3 # v1
-        with:
-          version: patch
-          changelog: ${{ steps.changelog_gen.outputs.changelog || 'Automated updates and bug fixes' }}
-
-      - name: "12a2. Sync package.json + push version bump"
-        if: steps.bump.outcome == 'success'
-        run: |
-          node -e "const f=require('fs'),a=require('./app.json'),p=JSON.parse(f.readFileSync('package.json','utf8'));p.version=a.version;f.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n');console.log('Synced package.json to v'+a.version);"
-          NEW_VER=$(node -p "require('./app.json').version")
-          echo "new_version=$NEW_VER" >> $GITHUB_OUTPUT
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add app.json package.json .homeychangelog.json 2>/dev/null || git add -A
-          git diff --cached --quiet || git commit -m "v${NEW_VER}: daily version bump [skip ci]"
-          git push origin HEAD || true
-          echo "Bumped to v${NEW_VER}"
 
       - name: "12b. Publish to Homey"
         if: steps.bump.outcome == 'success'
         continue-on-error: true
         id: pub
-        uses: athombv/github-action-homey-app-publish@48be66b7f2f870c22b6117d7bb84dfa06c4fc309 # v1
+        uses: athombv/github-action-homey-app-publish@v1 # v1
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 

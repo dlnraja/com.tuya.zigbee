@@ -824,8 +824,20 @@
             "name": "action",
             "type": "dropdown",
             "values": [
-              { "id": "on", "label": { "en": "On", "fr": "On" } },
-              { "id": "off", "label": { "en": "Off", "fr": "Off" } }
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "fr": "On"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Off"
+                }
+              }
             ]
           }
         ]
@@ -841,8 +853,20 @@
             "name": "action",
             "type": "dropdown",
             "values": [
-              { "id": "on", "label": { "en": "On", "fr": "On" } },
-              { "id": "off", "label": { "en": "Off", "fr": "Off" } }
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "fr": "On"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Off"
+                }
+              }
             ]
           }
         ]
@@ -858,8 +882,20 @@
             "name": "action",
             "type": "dropdown",
             "values": [
-              { "id": "on", "label": { "en": "On", "fr": "On" } },
-              { "id": "off", "label": { "en": "Off", "fr": "Off" } }
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "fr": "On"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Off"
+                }
+              }
             ]
           }
         ]

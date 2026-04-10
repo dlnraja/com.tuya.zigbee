@@ -52,10 +52,10 @@ jobs:
       github.event_name == 'schedule' && github.event.schedule == '0 4 * * 1,4' ||
       github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'github-only')
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/checkout@v5 # v5
         with:
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+      - uses: actions/setup-node@v5 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
@@ -76,7 +76,7 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run || 'true' }}
           GEMINI_MAX_TIER: "1"
         run: node .github/scripts/github-scanner.js
-      - name: Commit state
+      - name: Commit state (Robust)
         if: always()
         run: |
           git config user.name "github-actions[bot]"
@@ -86,9 +86,15 @@ jobs:
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           if [ "$CODE_FILES" -gt 0 ]; then
             git commit -m "v${VER}: processed issues/PRs, ${CODE_FILES} file(s) [skip ci]"
-            for i in 1 2 3 4 5; do
-              git pull --rebase origin master || git rebase --abort
-              if git push; then break; fi
+            
+            # Intelligent Push with Retry/Rebase
+            MAX_RETRIES=5
+            RETRY_COUNT=0
+            until [ $RETRY_COUNT -ge $MAX_RETRIES ]
+            do
+              git pull --rebase origin master && git push origin master && break
+              RETRY_COUNT=$((RETRY_COUNT+1))
+              echo "::warning::Push failed, retrying ($RETRY_COUNT/$MAX_RETRIES)..."
               sleep $((RANDOM % 10 + 5))
             done
           else
@@ -103,10 +109,10 @@ jobs:
       github.event_name == 'schedule' && github.event.schedule == '0 4 * * 1,4' ||
       github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'enrichment-only')
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/checkout@v5 # v5
         with:
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+      - uses: actions/setup-node@v5 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
@@ -178,7 +184,7 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           GEMINI_MAX_TIER: "1"
         run: node .github/scripts/sync-sdk3-docs.js
-      - name: Commit state
+      - name: Commit state (Robust)
         if: always()
         run: |
           git config user.name "github-actions[bot]"
@@ -189,9 +195,15 @@ jobs:
           F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
           if [ "$CODE_FILES" -gt 0 ]; then
             git commit -m "Enrichment v${VER}: ${F} FPs cross-referenced Z2M/ZHA/forum, ${CODE_FILES} file(s) [skip ci]"
-            for i in 1 2 3 4 5; do
-              git pull --rebase origin master || git rebase --abort
-              if git push; then break; fi
+            
+            # Intelligent Push with Retry/Rebase
+            MAX_RETRIES=5
+            RETRY_COUNT=0
+            until [ $RETRY_COUNT -ge $MAX_RETRIES ]
+            do
+              git pull --rebase origin master && git push origin master && break
+              RETRY_COUNT=$((RETRY_COUNT+1))
+              echo "::warning::Push failed, retrying ($RETRY_COUNT/$MAX_RETRIES)..."
               sleep $((RANDOM % 10 + 5))
             done
           else
@@ -209,9 +221,9 @@ jobs:
         github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'forum-update-only')
       )
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: actions/checkout@v5 # v5
       - run: git pull origin master || true
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+      - uses: actions/setup-node@v5 # v5
         with:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install

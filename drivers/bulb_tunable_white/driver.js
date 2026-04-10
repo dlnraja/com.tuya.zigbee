@@ -28,7 +28,7 @@ class BulbTunableDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is on
     try {
-      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('bulb_tunable_white_bulb_tunable_is_on'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
+      this.homey.flow.getConditionCard('bulb_tunable_white_bulb_tunable_is_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -38,7 +38,7 @@ class BulbTunableDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      (() => { try { return (() => { try { return this.homey.flow.getActionCard('bulb_tunable_white_bulb_tunable_turn_on'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
+      this.homey.flow.getActionCard('bulb_tunable_white_bulb_tunable_turn_on')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -50,7 +50,7 @@ class BulbTunableDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      (() => { try { return (() => { try { return this.homey.flow.getActionCard('bulb_tunable_white_bulb_tunable_turn_off'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
+      this.homey.flow.getActionCard('bulb_tunable_white_bulb_tunable_turn_off')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -62,7 +62,7 @@ class BulbTunableDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      (() => { try { return (() => { try { return this.homey.flow.getActionCard('bulb_tunable_white_bulb_tunable_toggle'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
+      this.homey.flow.getActionCard('bulb_tunable_white_bulb_tunable_toggle')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
@@ -75,7 +75,7 @@ class BulbTunableDriver extends ZigBeeDriver {
 
     // ACTION: Set brightness
     try {
-      (() => { try { return (() => { try { return this.homey.flow.getActionCard('bulb_tunable_white_bulb_tunable_set_dim'); } catch(e) { return null; } })(); } catch(e) { return null; } })()
+      this.homey.flow.getActionCard('bulb_tunable_white_bulb_tunable_set_dim')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('dim', args.brightness);

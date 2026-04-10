@@ -94,7 +94,8 @@ class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_wall_7gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
             try {
-              const card = (() => { try { return this.homey.flow.getTriggerCard(flowId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+              const card =
+      this._getFlowCard(flowId)
               if (card) await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
               this.log(`[SWITCH-7G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
             } catch (e) { }
@@ -102,7 +103,8 @@ class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
             const sceneFlowId = `switch_wall_7gang_gang${epNum}_scene`;
             try {
-              const card = (() => { try { return this.homey.flow.getTriggerCard(sceneFlowId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+              const card =
+      this._getFlowCard(sceneFlowId)
               if (card) await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
               this.log(`[SWITCH-7G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
             } catch (e) { }

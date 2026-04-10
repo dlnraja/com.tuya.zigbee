@@ -26,8 +26,9 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
         this.setCapabilityValue('onoff', s).catch(() => {});
         const id = s ? 'air_purifier_lcdtemphumidsensor_hybrid_air_purifier_turned_on' : 'air_purifier_lcdtemphumidsensor_hybrid_air_purifier_turned_off';
         try {
-          const card = (() => { try { return this.homey.flow.getTriggerCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
-          if (card) await card.trigger(this, {}, {}).catch(() => {});
+          const card =
+      this._getFlowCard(id)
+          if (card) await card
         } catch (e) {}
       }
     } else if (data.dp === DP.pm25) {
@@ -36,7 +37,8 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
         this._lastPm25 = pm;
         this.setCapabilityValue('measure_pm25', pm).catch(() => {});
         try {
-          const card = (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('air_purifier_lcdtemphumidsensor_hybrid_air_purifier_pm25_changed'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+          const card =
+      this._getFlowCard('air_purifier_lcdtemphumidsensor_hybrid_air_purifier_pm25_changed')
           if (card) await card.trigger(this, { pm25: pm }, {}).catch(() => {});
         } catch (e) {}
       }

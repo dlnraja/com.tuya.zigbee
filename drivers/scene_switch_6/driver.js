@@ -21,9 +21,9 @@ class SceneSwitch6Driver extends ZigBeeDriver {
     this.log('SceneSwitch6Driver initialized');
 
     // Register flow triggers with button argument
-      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('scene_switch_6_button_pressed'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
-      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('scene_switch_6_button_double_press'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
-      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('scene_switch_6_button_long_press'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      this.homey.flow.getTriggerCard('scene_switch_6_button_pressed')
+      this.homey.flow.getTriggerCard('scene_switch_6_button_double_press')
+      this.homey.flow.getTriggerCard('scene_switch_6_button_long_press')
 
     // Register argument filters
     this._buttonPressedTrigger.registerRunListener(async (args, state) => args.button === state.button);

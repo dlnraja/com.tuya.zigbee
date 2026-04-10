@@ -61,11 +61,22 @@ async function main() {
   process.env.DRY_RUN = 'false';
   run('node scripts/maintenance/master-self-heal.js', 'Ph3: Master Self-Healing Engine (v2.1)');
 
+  // PHASE 3b: Global Fingerprint Deduplication & Conflict Check
+  run('node scripts/automation/deduplicate-fingerprints.js', 'Ph3b: Global Fingerprint Deduplication');
+  run('node scripts/automation/fix-fingerprint-conflicts.js --auto-fix', 'Ph3c: Fingerprint Conflict Resolver');
+
+  // PHASE 3d: Parallel Bot Cleanup (v5.12.35)
+  run('node scripts/automation/parallel-bot-handler.js', 'Ph3d: Parallel Bot Response Cleanup');
+
   // PHASE 4: Architectural Hardening (Zero-Defect Audit)
   run('node scripts/maintenance/zero-defect-architect-audit.js', 'Ph4: Zero-Defect Architect Audit');
 
   // PHASE 4b: Smart PR Auto-Merging (Opus 4.6 Integration)
   run('node scripts/automation/pr-auto-merger.js', 'Ph4b: Smart PR Auto-Merger (Approve + Merge + Self-Heal)');
+
+  // PHASE 4c: Stability Normalization (Clusters + Case)
+  run('node scripts/automation/relax-manifest-clusters.js', 'Ph4c: Manifest Cluster Relaxation');
+  run('node scripts/automation/manifest-caseless-processor.js', 'Ph4d: Manifest Case-Insensitivity Audit');
 
   // PHASE 5: Integrity Verification
   console.log('\n🔍 [VALIDATION] Verifying app integrity...');

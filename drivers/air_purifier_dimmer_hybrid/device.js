@@ -80,9 +80,7 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(HybridLightBase) {
       this._lastOnoffState = v;
       if (isPhysical) {
         const id = v ? 'air_purifier_dimmer_hybrid_dimmer_wall_1gang_physical_on' : 'air_purifier_dimmer_hybrid_dimmer_wall_1gang_physical_off';
-        try {
-          (() => { try { return this.homey.flow.getTriggerCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().trigger(this, {}, {}).catch(() => {});
-        } catch (e) { /* card missing */ }
+        this._getFlowCard(id)
       }
     } else if (dpId === 2 || dpId === 101) {
       const dim = this.getCapabilityValue('dim');
@@ -91,9 +89,7 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(HybridLightBase) {
       this._lastDimValue = dim;
       if (isPhysical && oldDim !== null) {
         const id = increased ? 'air_purifier_dimmer_hybrid_dimmer_wall_1gang_physical_brightness_up' : 'air_purifier_dimmer_hybrid_dimmer_wall_1gang_physical_brightness_down';
-        try {
-          (() => { try { return this.homey.flow.getTriggerCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })().trigger(this, { brightness: Math.round(dim * 100) }, {}).catch(() => {});
-        } catch (e) { /* card missing */ }
+        this._getFlowCard(id).trigger(this, { brightness: Math.round(dim * 100) }, {}).catch(() => {})
       }
     }
   }

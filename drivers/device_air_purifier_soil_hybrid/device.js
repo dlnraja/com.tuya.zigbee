@@ -473,7 +473,8 @@ class SoilSensorDevice extends TuyaHybridDevice {
   _initFlowTriggers() {
     // v5.8.72: Safe flow card getter — prevents onNodeInit crash if card missing
     const safeGetTrigger = (id) => {
-      try { return this.homey.flow.getTriggerCard(id); }
+      try { return
+      this._getFlowCard(id) }
       catch (e) { this.log(`[SOIL] ⚠️ Flow trigger '${id}' not available: ${e.message}`); return null; }
     };
 

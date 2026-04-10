@@ -81,7 +81,8 @@ class GenericDIYDevice extends ZigBeeDevice {
   // ═══════════════════════════════════════════════════════════
 
   _triggerFlow(flowId, tokens = {}) {
-    const card = (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getTriggerCard(flowId); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+    const card =
+      this._getFlowCard(flowId) ;
     if (card) {
       card.trigger(this, tokens, {}).catch(e => this.error(`[DIY] Flow ${flowId}: ${e.message}`));
       this.log(`[DIY] 🔔 Flow: ${flowId}`, tokens);
@@ -140,7 +141,7 @@ class GenericDIYDevice extends ZigBeeDevice {
 
   _registerFlowActions() {
     // Identify action
-      (() => { try { return (() => { try { return this.homey.flow.getActionCard('generic_diy_identify'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      this._getFlowCard('generic_diy_identify', 'action')
       const ep = this.zclNode?.endpoints?.[1];
       if (ep?.clusters?.identify) {
         await ep.clusters.identify.identify({ identifyTime: 5 });
@@ -149,20 +150,19 @@ class GenericDIYDevice extends ZigBeeDevice {
     });
 
     // Turn on/off endpoint actions
-      (() => { try { return (() => { try { return this.homey.flow.getActionCard('generic_diy_turn_on_endpoint'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      this._getFlowCard('generic_diy_turn_on_endpoint', 'action')
       const ep = this.zclNode?.endpoints?.[endpoint];
       if (ep?.clusters?.onOff) await ep.clusters.onOff.setOn();
       return true;
     });
-
-      (() => { try { return (() => { try { return this.homey.flow.getActionCard('generic_diy_turn_off_endpoint'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      this._getFlowCard('generic_diy_turn_off_endpoint', 'action')
       const ep = this.zclNode?.endpoints?.[endpoint];
       if (ep?.clusters?.onOff) await ep.clusters.onOff.setOff();
       return true;
     });
 
     // Set dim level
-      (() => { try { return (() => { try { return this.homey.flow.getActionCard('generic_diy_set_dim'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      this._getFlowCard('generic_diy_set_dim', 'action')
       const ep = this.zclNode?.endpoints?.[1];
       if (ep?.clusters?.levelControl) {
         await ep.clusters.levelControl.moveToLevel({ level: Math.round(level * 254), transitionTime: 0 });

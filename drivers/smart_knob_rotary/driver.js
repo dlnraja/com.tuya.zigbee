@@ -13,31 +13,31 @@ class SmartKnobRotaryDriver extends Homey.Driver {
 
   _registerFlowCards() {
     // Rotate left trigger
-      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_rotate_left'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      this.homey.flow.getTriggerCard('smart_knob_rotary_rotate_left')
       .registerRunListener(async (args, state) => true);
 
     // Rotate right trigger
-      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_rotate_right'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      this.homey.flow.getTriggerCard('smart_knob_rotary_rotate_right')
       .registerRunListener(async (args, state) => true);
 
     // Button pressed trigger
-      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_pressed'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      this.homey.flow.getTriggerCard('smart_knob_rotary_pressed')
       .registerRunListener(async (args, state) => true);
 
     // Single press trigger
-      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_single_press'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      this.homey.flow.getTriggerCard('smart_knob_rotary_single_press')
       .registerRunListener(async (args, state) => true);
 
     // Double press trigger
-      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_double_press'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      this.homey.flow.getTriggerCard('smart_knob_rotary_double_press')
       .registerRunListener(async (args, state) => true);
 
     // Long press trigger
-      (() => { try { return (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_long_press'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      this.homey.flow.getTriggerCard('smart_knob_rotary_long_press')
       .registerRunListener(async (args, state) => true);
 
     // Brightness condition
-      (() => { try { return (() => { try { return this.homey.flow.getConditionCard('smart_knob_rotary_brightness_above'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
+      this.homey.flow.getConditionCard('smart_knob_rotary_brightness_above')
       .registerRunListener(async (args, state) => {
         const device = args.device;
         if (device && device.hasCapability('dim')) {

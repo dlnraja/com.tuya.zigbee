@@ -144,9 +144,9 @@ class RadiatorControllerDevice extends ZigBeeDevice {
     // Safe flow card getter to prevent crashes on missing cards
     const safeGetCard = (type, id) => {
       try {
-        if (type === 'trigger') return (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getTriggerCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
-        if (type === 'condition') return (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getConditionCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
-        if (type === 'action') return (() => { try { return (() => { try { return (() => { try { return (() => { try { return this.homey.flow.getActionCard(id); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })(); } catch (e) { this.error('[FLOW-SAFE] Failed to load card:', e.message); return null; } })();
+        if (type === 'trigger') return this._getFlowCard(id);
+        if (type === 'condition') return this._getFlowCard(id, 'condition');
+        if (type === 'action') return this._getFlowCard(id, 'action');
       } catch (e) {
         this.log(`[FLOW] Card '${id}' not available: ${e.message}`);
       }
@@ -195,14 +195,11 @@ class RadiatorControllerDevice extends ZigBeeDevice {
     this.log(`🔥 Set radiator power: ${value}`);
 
     try {
-      // Logique inversée pour radiateurs fil pilote
-      // ON = Arrêt signal, OFF = Signal actif
-      const moduleState = !value; // Inversion automatique
-
-      if (this.zclNode?.endpoints?.[1]?.clusters?.onOff) {
+      const onOffCluster = this.getSafeCluster('onOff');
+      if (onOffCluster) {
         await (moduleState ?
-          this.zclNode.endpoints[1].clusters.onOff.setOn() :
-          this.zclNode.endpoints[1].clusters.onOff.setOff()
+          onOffCluster.setOn() :
+          onOffCluster.setOff()
         );
       }
 
@@ -371,19 +368,20 @@ class RadiatorControllerDevice extends ZigBeeDevice {
 
   async _pulseRelay(state, duration) {
     try {
-      if (this.zclNode?.endpoints?.[1]?.clusters?.onOff) {
+      const onOffCluster = this.getSafeCluster('onOff');
+      if (onOffCluster) {
         // Activer relais
         if (state) {
-          await this.zclNode.endpoints[1].clusters.onOff.setOn();
+          await onOffCluster.setOn();
         } else {
-          await this.zclNode.endpoints[1].clusters.onOff.setOff();
+          await onOffCluster.setOff();
         }
 
         // Maintenir état pendant durée
         await this._delay(duration);
 
         // Retour état neutre (Confort = OFF pour logique inversée)
-        await this.zclNode.endpoints[1].clusters.onOff.setOff();
+        await onOffCluster.setOff();
       }
     } catch (error) {
       this.error('🚨 Erreur pulse relais:', error);
@@ -502,9 +500,14 @@ class RadiatorControllerDevice extends ZigBeeDevice {
     } catch (e) {
       this.log('[TimeSync] Tuya fallback failed:', e.message);
     }
+  /**
+   * getSafeCluster - Defensive fallback for cluster access
+   */
+  getSafeCluster(clusterId, endpointId = 1) {
+    const { getSafeCluster } = require('../../lib/Util');
+    return getSafeCluster(this, clusterId, endpointId);
   }
 
 }
 
 module.exports = RadiatorControllerDevice;
-

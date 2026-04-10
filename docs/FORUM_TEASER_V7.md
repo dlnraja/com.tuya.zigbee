@@ -31,8 +31,14 @@ Tired of seeing your humidity or battery drop to 0% for one second and ruining y
 
 #### ⚙️ 5. CI/CD Auto-DevOps (For the 13,000+ Fingerprints)
 With so many Tuya variants, manual updates are impossible. I’ve overhauled the GitHub CI/CD pipeline. 
-* Lorsque nous ajoutons de nouveaux `manufacturerNames`, un script automatisé gère l'injection. 
+* Lorsque nous ajoutons de nouveaux `manufacturerNames`, un script automatisé gère l'inclusion. 
 * Avant toute publication, un **JSON Schema Validator (`ajv-cli`)** audite chaque `driver.compose.json` par rapport au schéma officiel SDK 3 d'Athom pour garantir 0 crash au déploiement.
+
+#### 🤖 6. The "Omni-Sync" Intelligence Engine (Autonomous Enrichment)
+This is the heart of v7.1. The app is no longer static; it now learns from the community:
+* **Z2M & ZHA Cross-Sync:** Every week, my server fetches the latest DataPoint (DP) mappings from the Zigbee2MQTT and ZHA repositories. This knowledge is pushed to your app's internal database.
+* **Autonomous Capability Injection:** If a specific device is unknown but our database has its DP mappings, the app will **inject** the missing capabilities dynamically at runtime.
+* **Safe Auto-Migration Queue:** If you pair a device with the "Universal" driver, and the app later discovers it has a dedicated, optimized driver, it will automatically add it to your **Migration Queue** and guide you through the switch.
 
 ---
 
