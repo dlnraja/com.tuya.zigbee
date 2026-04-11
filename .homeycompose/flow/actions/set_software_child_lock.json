@@ -4,6 +4,10 @@
     "en": "Set Software Child Lock",
     "fr": "Définir Sécurité Enfant Logicielle"
   },
+  "titleFormatted": {
+    "en": "Set Software Child Lock to [[locked]]",
+    "fr": "Définir Sécurité Enfant à [[locked]]"
+  },
   "args": [
     {
       "name": "device",

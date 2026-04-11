@@ -425,6 +425,7 @@ const CapabilityManagerMixin = {
       }
 
       // v7.3.0: Enhanced type mapping including device-specific cards
+      // v7.2.10: Removed deprecated device_* types (SDK 3 does not expose getDevice*Card)
       const typeMap = {
         'trigger': 'getTriggerCard',
         'getTriggerCard': 'getTriggerCard',
@@ -432,13 +433,6 @@ const CapabilityManagerMixin = {
         'getConditionCard': 'getConditionCard',
         'action': 'getActionCard',
         'getActionCard': 'getActionCard',
-        // Device-specific variants
-        'device_trigger': 'getDeviceTriggerCard',
-        'getDeviceTriggerCard': 'getDeviceTriggerCard',
-        'device_condition': 'getDeviceConditionCard',
-        'getDeviceConditionCard': 'getDeviceConditionCard',
-        'device_action': 'getDeviceActionCard',
-        'getDeviceActionCard': 'getDeviceActionCard'
       };
       
       let method = typeMap[type];
