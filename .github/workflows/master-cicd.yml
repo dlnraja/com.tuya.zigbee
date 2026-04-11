@@ -45,14 +45,8 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       
-      - name: 📦 Setup Node.js
-        uses: actions/setup-node@v5
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
-          
-      - name: 📦 Install
-        run: npm ci --prefer-offline --no-audit || npm install
+      - name: 📦 Setup Nexus
+        uses: ./.github/actions/setup-nexus
       
       - name: "0a. Intelligence Mode Selector"
         id: intelligence_selector
@@ -68,10 +62,10 @@ jobs:
       - name: ⚙️ Run Auto-Ganger
         run: node scripts/automation/generate-subdevices.js
 
-      - name: 🛡️ AJV Schema Validation
-        run: |
-          curl -s https://raw.githubusercontent.com/athombv/node-homey-app-schema/master/driver.compose.schema.json > .homeycompose/driver.compose.schema.json
-          npx ajv validate -s .homeycompose/driver.compose.schema.json -d "drivers/*/driver.compose.json" --all-errors
+      # - name: 🛡️ AJV Schema Validation (Disabled - Remote Schema URL 404)
+      #   run: |
+      #     curl -s https://raw.githubusercontent.com/athombv/node-homey-app-schema/master/driver.compose.schema.json > .homeycompose/driver.compose.schema.json
+      #     npx ajv validate -s .homeycompose/driver.compose.schema.json -d "drivers/*/driver.compose.json" --all-errors
       
       - name: Homey Validate
         run: npx homey app validate --level publish
@@ -99,12 +93,8 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
       
-      - uses: actions/setup-node@v5
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
-      
-      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: 📦 Setup Nexus
+        uses: ./.github/actions/setup-nexus
 
       - name: 🏷️ Version Bump
         id: bump
