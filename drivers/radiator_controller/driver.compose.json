@@ -467,7 +467,7 @@
   "flow": {
     "triggers": [
       {
-        "id": "radiator_mode_changed",
+        "id": "radiator_controller_radiator_mode_changed",
         "title": {
           "en": "Heating mode changed",
           "fr": "Mode chauffage changé"
@@ -484,7 +484,7 @@
         ]
       },
       {
-        "id": "pilot_signal_sent",
+        "id": "radiator_controller_pilot_signal_sent",
         "title": {
           "en": "Pilot wire signal sent",
           "fr": "Signal fil pilote envoyé"
@@ -499,25 +499,18 @@
             "example": "confort"
           }
         ]
-      },
-      {
-        "id": "radio_presence_detected",
-        "title": {
-          "en": "Radio sensing presence detected",
-          "fr": "Présence détectée par radio (LQI)"
-        }
       }
     ],
     "conditions": [
       {
-        "id": "radiator_is_heating",
+        "id": "radiator_controller_radiator_is_heating",
         "title": {
           "en": "Radiator !{{is|isn't}} heating",
           "fr": "Radiateur !{{chauffe|ne chauffe pas}}"
         }
       },
       {
-        "id": "heating_mode_is",
+        "id": "radiator_controller_heating_mode_is",
         "title": {
           "en": "Heating mode !{{is|isn't}} [[mode]]",
           "fr": "Mode chauffage !{{est|n'est pas}} [[mode]]"
@@ -554,18 +547,11 @@
             ]
           }
         ]
-      },
-      {
-        "id": "is_radio_presence_detected",
-        "title": {
-          "en": "Radio presence is detected",
-          "fr": "Présence radio détectée"
-        }
       }
     ],
     "actions": [
       {
-        "id": "set_heating_mode",
+        "id": "radiator_controller_set_heating_mode",
         "title": {
           "en": "Set heating mode to [[mode]]",
           "fr": "Régler mode chauffage sur [[mode]]"
@@ -616,7 +602,7 @@
         ]
       },
       {
-        "id": "send_pilot_signal",
+        "id": "radiator_controller_send_pilot_signal",
         "title": {
           "en": "Send pilot wire signal [[signal]]",
           "fr": "Envoyer signal fil pilote [[signal]]"
@@ -655,7 +641,7 @@
         ]
       },
       {
-        "id": "set_temperature_offset",
+        "id": "radiator_controller_set_temperature_offset",
         "title": {
           "en": "Set temperature offset",
           "nl": "Temperatuur offset instellen",
@@ -679,37 +665,6 @@
             "max": 5,
             "step": 0.5,
             "label": "°C"
-          }
-        ]
-      },
-      {
-        "id": "calibrate_virtual_energy",
-        "title": {
-          "en": "Calibrate virtual energy",
-          "fr": "Calibrer l'énergie virtuelle"
-        },
-        "args": [
-          {
-            "name": "watts",
-            "type": "number",
-            "placeholder": {
-              "en": "Nominal Watts",
-              "fr": "Watts nominaux"
-            }
-          }
-        ]
-      },
-      {
-        "id": "set_sensing_threshold",
-        "title": {
-          "en": "Set radio sensing sensitivity",
-          "fr": "Régler la détection radio"
-        },
-        "args": [
-          {
-            "name": "threshold",
-            "type": "number",
-            "placeholder": "2-50"
           }
         ]
       }

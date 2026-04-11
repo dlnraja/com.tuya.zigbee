@@ -831,56 +831,8 @@
     }
   ],
   "flow": {
-    "triggers": [
-      {
-        "id": "radio_presence_detected",
-        "title": {
-          "en": "Radio sensing presence detected",
-          "fr": "PrÃƒÆ’Ã‚Â©sence dÃƒÆ’Ã‚Â©tectÃƒÆ’Ã‚Â©e par radio (LQI)"
-        }
-      }
-    ],
-    "conditions": [
-      {
-        "id": "is_radio_presence_detected",
-        "title": {
-          "en": "Radio presence is detected",
-          "fr": "PrÃƒÆ’Ã‚Â©sence radio dÃƒÆ’Ã‚Â©tectÃƒÆ’Ã‚Â©e"
-        }
-      }
-    ],
-    "actions": [
-      {
-        "id": "calibrate_virtual_energy",
-        "title": {
-          "en": "Calibrate virtual energy",
-          "fr": "Calibrer l'ÃƒÆ’Ã‚Â©nergie virtuelle"
-        },
-        "args": [
-          {
-            "name": "watts",
-            "type": "number",
-            "placeholder": {
-              "en": "Nominal Watts",
-              "fr": "Watts nominaux"
-            }
-          }
-        ]
-      },
-      {
-        "id": "set_sensing_threshold",
-        "title": {
-          "en": "Set radio sensing sensitivity",
-          "fr": "RÃƒÆ’Ã‚Â©gler la dÃƒÆ’Ã‚Â©tection radio"
-        },
-        "args": [
-          {
-            "name": "threshold",
-            "type": "number",
-            "placeholder": "2-50"
-          }
-        ]
-      }
-    ]
+    "triggers": [],
+    "conditions": [],
+    "actions": []
   }
 }

@@ -54,7 +54,7 @@
   "flow": {
     "actions": [
       {
-        "id": "curtain_calibrate",
+        "id": "air_purifier_curtain_hybrid_curtain_calibrate",
         "title": {
           "en": "Calibrate curtain motor",
           "nl": "Kalibreer gordijnmotor"
@@ -69,7 +69,7 @@
         }
       },
       {
-        "id": "curtain_reset_position",
+        "id": "air_purifier_curtain_hybrid_curtain_reset_position",
         "title": {
           "en": "Reset position to 0%",
           "nl": "Reset positie naar 0%"
@@ -84,7 +84,7 @@
         }
       },
       {
-        "id": "curtain_hold",
+        "id": "air_purifier_curtain_hybrid_curtain_hold",
         "title": {
           "en": "Hold curtain position",
           "nl": "Gordijn positie vasthouden",
@@ -100,7 +100,7 @@
         }
       },
       {
-        "id": "curtain_open_partial",
+        "id": "air_purifier_curtain_hybrid_curtain_open_partial",
         "title": {
           "en": "Open curtain partially",
           "nl": "Gordijn gedeeltelijk openen",
@@ -121,57 +121,10 @@
             "labelMultiplier": 1
           }
         ]
-      },
-      {
-        "id": "calibrate_virtual_energy",
-        "title": {
-          "en": "Calibrate virtual energy",
-          "fr": "Calibrer l'énergie virtuelle"
-        },
-        "args": [
-          {
-            "name": "watts",
-            "type": "number",
-            "placeholder": {
-              "en": "Nominal Watts",
-              "fr": "Watts nominaux"
-            }
-          }
-        ]
-      },
-      {
-        "id": "set_sensing_threshold",
-        "title": {
-          "en": "Set radio sensing sensitivity",
-          "fr": "Régler la détection radio"
-        },
-        "args": [
-          {
-            "name": "threshold",
-            "type": "number",
-            "placeholder": "2-50"
-          }
-        ]
       }
     ],
-    "triggers": [
-      {
-        "id": "radio_presence_detected",
-        "title": {
-          "en": "Radio sensing presence detected",
-          "fr": "Présence détectée par radio (LQI)"
-        }
-      }
-    ],
-    "conditions": [
-      {
-        "id": "is_radio_presence_detected",
-        "title": {
-          "en": "Radio presence is detected",
-          "fr": "Présence radio détectée"
-        }
-      }
-    ]
+    "triggers": [],
+    "conditions": []
   },
   "maintenanceActions": [
     {

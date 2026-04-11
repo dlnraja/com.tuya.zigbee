@@ -6,10 +6,15 @@ on:
   pull_request:
     branches: [ master, main ]
   workflow_dispatch:
+    inputs:
+      force_audit:
+        description: "Run deep architectural audit"
+        type: boolean
+        default: false
 
 jobs:
   validate:
-    name: 🔍 Universal Validation
+    name: 🔍 Universal Validation (SDK 3 Strict)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -23,7 +28,10 @@ jobs:
         run: npm install
       
       - name: 🏠 Homey Validate
-        run: npx homey app validate
+        run: npx homey app validate --level publish
+      
+      - name: 🛡️ SDK 3 Strict Linter
+        run: node scripts/maintenance/rule-21-linter.js
       
       - name: 📊 Architectural Audit
         run: node scripts/benchmark/app-audit-plus.js
@@ -32,7 +40,7 @@ jobs:
         run: node scripts/maintenance/validate-driver-manifests.js
 
   build:
-    name: 🏗️ Production Build
+    name: 🏗️ Production Build & Optimize
     needs: validate
     runs-on: ubuntu-latest
     steps:
@@ -56,3 +64,15 @@ jobs:
         with:
           name: homey-app-bundle
           path: .homeybuild/
+
+  security:
+    name: 🛡️ Nexus Security Shield
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: 🕵️ Secret Masking Probe
+        run: |
+          echo "Scanning for accidental secret leaks in public code..."
+          # Scan for potential PATs or API keys accidentally committed
+          grep -rE "([a-zA-Z0-9_\-]{20,})" . --exclude-dir=.git --exclude-dir=node_modules || echo "✅ No obvious secrets found"

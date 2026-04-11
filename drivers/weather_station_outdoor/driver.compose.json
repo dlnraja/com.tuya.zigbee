@@ -309,84 +309,8 @@
     }
   ],
   "flow": {
-    "triggers": [
-      {
-        "id": "weather_station_outdoor_outdoor_temperature_changed",
-        "title": {
-          "en": "Weather Station Outdoor Outdoor Temperature Changed",
-          "fr": "Weather Station Outdoor Outdoor Temperature Changed"
-        }
-      },
-      {
-        "id": "weather_station_outdoor_outdoor_humidity_changed",
-        "title": {
-          "en": "Weather Station Outdoor Outdoor Humidity Changed",
-          "fr": "Weather Station Outdoor Outdoor Humidity Changed"
-        }
-      },
-      {
-        "id": "weather_station_outdoor_pressure_changed",
-        "title": {
-          "en": "Weather Station Outdoor Pressure Changed",
-          "fr": "Weather Station Outdoor Pressure Changed"
-        }
-      },
-      {
-        "id": "weather_station_outdoor_battery_low",
-        "title": {
-          "en": "Weather Station Outdoor Battery Low",
-          "fr": "Weather Station Outdoor Battery Low"
-        }
-      },
-      {
-        "id": "radio_presence_detected",
-        "title": {
-          "en": "Radio sensing presence detected",
-          "fr": "Présence détectée par radio (LQI)"
-        }
-      }
-    ],
-    "conditions": [
-      {
-        "id": "is_radio_presence_detected",
-        "title": {
-          "en": "Radio presence is detected",
-          "fr": "Présence radio détectée"
-        }
-      }
-    ],
-    "actions": [
-      {
-        "id": "calibrate_virtual_energy",
-        "title": {
-          "en": "Calibrate virtual energy",
-          "fr": "Calibrer l'énergie virtuelle"
-        },
-        "args": [
-          {
-            "name": "watts",
-            "type": "number",
-            "placeholder": {
-              "en": "Nominal Watts",
-              "fr": "Watts nominaux"
-            }
-          }
-        ]
-      },
-      {
-        "id": "set_sensing_threshold",
-        "title": {
-          "en": "Set radio sensing sensitivity",
-          "fr": "Régler la détection radio"
-        },
-        "args": [
-          {
-            "name": "threshold",
-            "type": "number",
-            "placeholder": "2-50"
-          }
-        ]
-      }
-    ]
+    "triggers": [],
+    "conditions": [],
+    "actions": []
   }
 }

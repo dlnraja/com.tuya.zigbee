@@ -279,8 +279,6 @@ class Button4GangDevice extends ButtonDevice {
    * v5.5.617: Handle device wake (cold boot recovery via onEndDeviceAnnounce)
    */
   async onEndDeviceAnnounce() {
-    await super.onEndDeviceAnnounce();
-
     this.log('[BUTTON4-MODE] 📡 Device announced (wake/rejoin) - re-applying mode + re-binding...');
     this._modeVerified = false;
 
@@ -1248,8 +1246,8 @@ class Button4GangDevice extends ButtonDevice {
       if (typeof endpoint.bind === 'function') {
         try {
           // Try standard bind with cluster ID
-          await endpoint.bind(57344, coordinatorAddress);
-          this.log('[BUTTON4-BIND] ✅ Standard bind succeeded for cluster 57344');
+          await endpoint.bind('tuyaE000').catch(() => endpoint.bind(57344));
+          this.log('[BUTTON4-BIND] ✅ Standard bind succeeded for cluster tuyaE000');
           return;
         } catch (bindErr) {
           this.log(`[BUTTON4-BIND] ℹ️ Standard bind failed (expected for unknown cluster): ${bindErr.message}`);

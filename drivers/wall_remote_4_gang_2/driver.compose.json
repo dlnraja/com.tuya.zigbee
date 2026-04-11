@@ -139,64 +139,9 @@
     }
   },
   "flow": {
-    "triggers": [
-      {
-        "id": "wall_remote_4_gang_buttons_2",
-        "title": {
-          "en": "Wall Remote 4 Gang Buttons 2",
-          "fr": "Wall Remote 4 Gang Buttons 2"
-        }
-      },
-      {
-        "id": "radio_presence_detected",
-        "title": {
-          "en": "Radio sensing presence detected",
-          "fr": "Présence détectée par radio (LQI)"
-        }
-      }
-    ],
-    "conditions": [
-      {
-        "id": "is_radio_presence_detected",
-        "title": {
-          "en": "Radio presence is detected",
-          "fr": "Présence radio détectée"
-        }
-      }
-    ],
-    "actions": [
-      {
-        "id": "calibrate_virtual_energy",
-        "title": {
-          "en": "Calibrate virtual energy",
-          "fr": "Calibrer l'énergie virtuelle"
-        },
-        "args": [
-          {
-            "name": "watts",
-            "type": "number",
-            "placeholder": {
-              "en": "Nominal Watts",
-              "fr": "Watts nominaux"
-            }
-          }
-        ]
-      },
-      {
-        "id": "set_sensing_threshold",
-        "title": {
-          "en": "Set radio sensing sensitivity",
-          "fr": "Régler la détection radio"
-        },
-        "args": [
-          {
-            "name": "threshold",
-            "type": "number",
-            "placeholder": "2-50"
-          }
-        ]
-      }
-    ]
+    "triggers": [],
+    "conditions": [],
+    "actions": []
   },
   "settings": [
     {

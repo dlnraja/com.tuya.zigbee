@@ -149,78 +149,9 @@
     }
   ],
   "flow": {
-    "triggers": [
-      {
-        "id": "smart_knob_rotary_hybrid_rotate_left",
-        "title": {
-          "en": "Smart Knob Rotary Hybrid Rotate Left",
-          "fr": "Smart Knob Rotary Hybrid Rotate Left"
-        }
-      },
-      {
-        "id": "smart_knob_rotary_hybrid_rotate_right",
-        "title": {
-          "en": "Smart Knob Rotary Hybrid Rotate Right",
-          "fr": "Smart Knob Rotary Hybrid Rotate Right"
-        }
-      },
-      {
-        "id": "smart_knob_rotary_hybrid_pressed",
-        "title": {
-          "en": "Smart Knob Rotary Hybrid Pressed",
-          "fr": "Smart Knob Rotary Hybrid Pressed"
-        }
-      },
-      {
-        "id": "radio_presence_detected",
-        "title": {
-          "en": "Radio sensing presence detected",
-          "fr": "Présence détectée par radio (LQI)"
-        }
-      }
-    ],
-    "conditions": [
-      {
-        "id": "is_radio_presence_detected",
-        "title": {
-          "en": "Radio presence is detected",
-          "fr": "Présence radio détectée"
-        }
-      }
-    ],
-    "actions": [
-      {
-        "id": "calibrate_virtual_energy",
-        "title": {
-          "en": "Calibrate virtual energy",
-          "fr": "Calibrer l'énergie virtuelle"
-        },
-        "args": [
-          {
-            "name": "watts",
-            "type": "number",
-            "placeholder": {
-              "en": "Nominal Watts",
-              "fr": "Watts nominaux"
-            }
-          }
-        ]
-      },
-      {
-        "id": "set_sensing_threshold",
-        "title": {
-          "en": "Set radio sensing sensitivity",
-          "fr": "Régler la détection radio"
-        },
-        "args": [
-          {
-            "name": "threshold",
-            "type": "number",
-            "placeholder": "2-50"
-          }
-        ]
-      }
-    ]
+    "triggers": [],
+    "conditions": [],
+    "actions": []
   },
   "settings": [
     {

@@ -785,70 +785,8 @@
     }
   ],
   "flow": {
-    "triggers": [
-      {
-        "id": "sensor_motion_presence_hybrid_presence_detected",
-        "title": {
-          "en": "Sensor Motion Presence Hybrid Presence Detected",
-          "fr": "Sensor Motion Presence Hybrid Presence Detected"
-        }
-      },
-      {
-        "id": "sensor_motion_presence_hybrid_presence_cleared",
-        "title": {
-          "en": "Sensor Motion Presence Hybrid Presence Cleared",
-          "fr": "Sensor Motion Presence Hybrid Presence Cleared"
-        }
-      },
-      {
-        "id": "radio_presence_detected",
-        "title": {
-          "en": "Radio sensing presence detected",
-          "fr": "Présence détectée par radio (LQI)"
-        }
-      }
-    ],
-    "conditions": [
-      {
-        "id": "is_radio_presence_detected",
-        "title": {
-          "en": "Radio presence is detected",
-          "fr": "Présence radio détectée"
-        }
-      }
-    ],
-    "actions": [
-      {
-        "id": "calibrate_virtual_energy",
-        "title": {
-          "en": "Calibrate virtual energy",
-          "fr": "Calibrer l'énergie virtuelle"
-        },
-        "args": [
-          {
-            "name": "watts",
-            "type": "number",
-            "placeholder": {
-              "en": "Nominal Watts",
-              "fr": "Watts nominaux"
-            }
-          }
-        ]
-      },
-      {
-        "id": "set_sensing_threshold",
-        "title": {
-          "en": "Set radio sensing sensitivity",
-          "fr": "Régler la détection radio"
-        },
-        "args": [
-          {
-            "name": "threshold",
-            "type": "number",
-            "placeholder": "2-50"
-          }
-        ]
-      }
-    ]
+    "triggers": [],
+    "conditions": [],
+    "actions": []
   }
 }
