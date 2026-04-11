@@ -69,93 +69,9 @@
     }
   },
   "flow": {
-    "triggers": [
-      {
-        "id": "pet_feeder_fed",
-        "title": {
-          "en": "Pet was fed",
-          "fr": "Animal nourri",
-          "nl": "Huisdier is gevoerd",
-          "de": "Tier wurde gefüttert"
-        }
-      },
-      {
-        "id": "pet_feeder_food_low",
-        "title": {
-          "en": "Food level is low",
-          "fr": "Niveau de nourriture bas",
-          "nl": "Voerniveau is laag",
-          "de": "Futterniveau ist niedrig"
-        }
-      },
-      {
-        "id": "radio_presence_detected",
-        "title": {
-          "en": "Radio sensing presence detected",
-          "fr": "Présence détectée par radio (LQI)"
-        }
-      }
-    ],
-    "conditions": [
-      {
-        "id": "pet_feeder_food_ok",
-        "title": {
-          "en": "Food level !{{is|isn't}} OK",
-          "fr": "Niveau nourriture !{{est|n'est pas}} OK",
-          "nl": "Voerniveau !{{is|is niet}} OK",
-          "de": "Futterniveau !{{ist|ist nicht}} OK"
-        }
-      },
-      {
-        "id": "is_radio_presence_detected",
-        "title": {
-          "en": "Radio presence is detected",
-          "fr": "Présence radio détectée"
-        }
-      }
-    ],
-    "actions": [
-      {
-        "id": "pet_feeder_feed_now",
-        "title": {
-          "en": "Feed now",
-          "fr": "Distribuer maintenant",
-          "nl": "Nu voeren",
-          "de": "Jetzt füttern"
-        }
-      },
-      {
-        "id": "calibrate_virtual_energy",
-        "title": {
-          "en": "Calibrate virtual energy",
-          "fr": "Calibrer l'énergie virtuelle"
-        },
-        "args": [
-          {
-            "name": "watts",
-            "type": "number",
-            "placeholder": {
-              "en": "Nominal Watts",
-              "fr": "Watts nominaux"
-            }
-          }
-        ]
-      },
-      {
-        "id": "set_sensing_threshold",
-        "title": {
-          "en": "Set radio sensing sensitivity",
-          "fr": "Régler la détection radio"
-        },
-        "args": [
-          {
-            "name": "threshold",
-            "type": "number",
-            "placeholder": "2-50"
-          }
-        ]
-      }
-    ]
+    "triggers": [],
+    "conditions": [],
+    "actions": []
   },
   "images": {
     "small": "drivers/pet_feeder/assets/images/small.png",

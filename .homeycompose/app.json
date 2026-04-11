@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "7.2.6",
+  "version": "7.2.9",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -96,6 +96,7 @@
   "bugs": {
     "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
   },
+  "settings": "settings/index.html",
   "brandColor": "#00E6A0",
   "homeyCommunityTopicId": 140352,
   "source": "https://github.com/dlnraja/com.tuya.zigbee"
