@@ -1,0 +1,301 @@
+{
+  "timestamp": "2026-01-20T10:40:16.643Z",
+  "totalRemoved": 48,
+  "totalAdded": 1,
+  "changes": [
+    {
+      "action": "remove",
+      "driver": "climate_sensor",
+      "mfr": "_TZE200_cirvgep4",
+      "reason": "belongs to lcdtemphumidsensor"
+    },
+    {
+      "action": "remove",
+      "driver": "contact_sensor",
+      "mfr": "_TZE200_cirvgep4",
+      "reason": "belongs to lcdtemphumidsensor"
+    },
+    {
+      "action": "remove",
+      "driver": "curtain_motor",
+      "mfr": "_TZE200_cirvgep4",
+      "reason": "belongs to lcdtemphumidsensor"
+    },
+    {
+      "action": "remove",
+      "driver": "dimmer_wall_1gang",
+      "mfr": "_TZE200_cirvgep4",
+      "reason": "belongs to lcdtemphumidsensor"
+    },
+    {
+      "action": "remove",
+      "driver": "ir_blaster",
+      "mfr": "_TZE200_cirvgep4",
+      "reason": "belongs to lcdtemphumidsensor"
+    },
+    {
+      "action": "remove",
+      "driver": "motion_sensor",
+      "mfr": "_TZE200_cirvgep4",
+      "reason": "belongs to lcdtemphumidsensor"
+    },
+    {
+      "action": "remove",
+      "driver": "plug_smart",
+      "mfr": "_TZE200_cirvgep4",
+      "reason": "belongs to lcdtemphumidsensor"
+    },
+    {
+      "action": "remove",
+      "driver": "radiator_valve",
+      "mfr": "_TZE200_cirvgep4",
+      "reason": "belongs to lcdtemphumidsensor"
+    },
+    {
+      "action": "remove",
+      "driver": "switch_1gang",
+      "mfr": "_TZE200_cirvgep4",
+      "reason": "belongs to lcdtemphumidsensor"
+    },
+    {
+      "action": "remove",
+      "driver": "switch_2gang",
+      "mfr": "_TZE200_cirvgep4",
+      "reason": "belongs to lcdtemphumidsensor"
+    },
+    {
+      "action": "remove",
+      "driver": "switch_3gang",
+      "mfr": "_TZE200_cirvgep4",
+      "reason": "belongs to lcdtemphumidsensor"
+    },
+    {
+      "action": "remove",
+      "driver": "switch_4gang",
+      "mfr": "_TZE200_cirvgep4",
+      "reason": "belongs to lcdtemphumidsensor"
+    },
+    {
+      "action": "remove",
+      "driver": "thermostat_tuya_dp",
+      "mfr": "_TZE200_cirvgep4",
+      "reason": "belongs to lcdtemphumidsensor"
+    },
+    {
+      "action": "remove",
+      "driver": "climate_sensor",
+      "mfr": "_TZE200_a8sdabtg",
+      "reason": "belongs to lcdtemphumidsensor"
+    },
+    {
+      "action": "remove",
+      "driver": "radiator_controller",
+      "mfr": "_TZE200_locansqn",
+      "reason": "belongs to radiator_valve"
+    },
+    {
+      "action": "remove",
+      "driver": "thermostat_tuya_dp",
+      "mfr": "_TZE200_locansqn",
+      "reason": "belongs to radiator_valve"
+    },
+    {
+      "action": "remove",
+      "driver": "air_purifier",
+      "mfr": "_TZE200_dwcarsat",
+      "reason": "belongs to air_quality_comprehensive"
+    },
+    {
+      "action": "remove",
+      "driver": "air_quality_co2",
+      "mfr": "_TZE200_dwcarsat",
+      "reason": "belongs to air_quality_comprehensive"
+    },
+    {
+      "action": "remove",
+      "driver": "formaldehyde_sensor",
+      "mfr": "_TZE200_dwcarsat",
+      "reason": "belongs to air_quality_comprehensive"
+    },
+    {
+      "action": "remove",
+      "driver": "humidifier",
+      "mfr": "_TZE200_dwcarsat",
+      "reason": "belongs to air_quality_comprehensive"
+    },
+    {
+      "action": "remove",
+      "driver": "air_purifier",
+      "mfr": "_TZE204_dwcarsat",
+      "reason": "belongs to air_quality_comprehensive"
+    },
+    {
+      "action": "remove",
+      "driver": "humidifier",
+      "mfr": "_TZE204_dwcarsat",
+      "reason": "belongs to air_quality_comprehensive"
+    },
+    {
+      "action": "remove",
+      "driver": "air_quality_comprehensive",
+      "mfr": "_TZE200_8ygsuhe1",
+      "reason": "belongs to air_quality_co2"
+    },
+    {
+      "action": "remove",
+      "driver": "climate_sensor",
+      "mfr": "_TZE200_8ygsuhe1",
+      "reason": "belongs to air_quality_co2"
+    },
+    {
+      "action": "remove",
+      "driver": "ir_blaster",
+      "mfr": "_TZE200_8ygsuhe1",
+      "reason": "belongs to air_quality_co2"
+    },
+    {
+      "action": "remove",
+      "driver": "button_wireless_3",
+      "mfr": "_TZ3000_gjnozsaz",
+      "reason": "belongs to button_emergency_sos"
+    },
+    {
+      "action": "remove",
+      "driver": "plug_energy_monitor",
+      "mfr": "_TZ3000_gjnozsaz",
+      "reason": "belongs to button_emergency_sos"
+    },
+    {
+      "action": "remove",
+      "driver": "plug_smart",
+      "mfr": "_TZ3000_gjnozsaz",
+      "reason": "belongs to button_emergency_sos"
+    },
+    {
+      "action": "remove",
+      "driver": "switch_1gang",
+      "mfr": "_TZ3000_gjnozsaz",
+      "reason": "belongs to button_emergency_sos"
+    },
+    {
+      "action": "remove",
+      "driver": "switch_2gang",
+      "mfr": "_TZ3000_gjnozsaz",
+      "reason": "belongs to button_emergency_sos"
+    },
+    {
+      "action": "remove",
+      "driver": "switch_3gang",
+      "mfr": "_TZ3000_gjnozsaz",
+      "reason": "belongs to button_emergency_sos"
+    },
+    {
+      "action": "remove",
+      "driver": "switch_4gang",
+      "mfr": "_TZ3000_gjnozsaz",
+      "reason": "belongs to button_emergency_sos"
+    },
+    {
+      "action": "remove",
+      "driver": "switch_plug_1",
+      "mfr": "_TZ3000_gjnozsaz",
+      "reason": "belongs to button_emergency_sos"
+    },
+    {
+      "action": "remove",
+      "driver": "climate_sensor",
+      "mfr": "_TZ3000_p6ju8myv",
+      "reason": "belongs to button_emergency_sos"
+    },
+    {
+      "action": "remove",
+      "driver": "contact_sensor",
+      "mfr": "_TZ3000_p6ju8myv",
+      "reason": "belongs to button_emergency_sos"
+    },
+    {
+      "action": "remove",
+      "driver": "motion_sensor",
+      "mfr": "_TZ3000_p6ju8myv",
+      "reason": "belongs to button_emergency_sos"
+    },
+    {
+      "action": "remove",
+      "driver": "water_leak_sensor",
+      "mfr": "_TZ3000_p6ju8myv",
+      "reason": "belongs to button_emergency_sos"
+    },
+    {
+      "action": "remove",
+      "driver": "ceiling_fan",
+      "mfr": "_TZE200_r32ctezx",
+      "reason": "belongs to fan_controller"
+    },
+    {
+      "action": "remove",
+      "driver": "switch_wall_8gang",
+      "mfr": "_TZE200_r32ctezx",
+      "reason": "belongs to fan_controller"
+    },
+    {
+      "action": "remove",
+      "driver": "ceiling_fan",
+      "mfr": "_TZE204_r32ctezx",
+      "reason": "belongs to fan_controller"
+    },
+    {
+      "action": "remove",
+      "driver": "switch_wall_8gang",
+      "mfr": "_TZE204_r32ctezx",
+      "reason": "belongs to fan_controller"
+    },
+    {
+      "action": "remove",
+      "driver": "ceiling_fan",
+      "mfr": "_TZE200_dzuqwsyg",
+      "reason": "belongs to fan_controller"
+    },
+    {
+      "action": "remove",
+      "driver": "ir_blaster",
+      "mfr": "_TZE200_dzuqwsyg",
+      "reason": "belongs to fan_controller"
+    },
+    {
+      "action": "remove",
+      "driver": "radiator_valve",
+      "mfr": "_TZE200_dzuqwsyg",
+      "reason": "belongs to fan_controller"
+    },
+    {
+      "action": "remove",
+      "driver": "thermostat_tuya_dp",
+      "mfr": "_TZE200_dzuqwsyg",
+      "reason": "belongs to fan_controller"
+    },
+    {
+      "action": "remove",
+      "driver": "ir_blaster",
+      "mfr": "_TZE204_dzuqwsyg",
+      "reason": "belongs to fan_controller"
+    },
+    {
+      "action": "remove",
+      "driver": "air_purifier",
+      "mfr": "_TZE200_mja3fuja",
+      "reason": "belongs to humidifier"
+    },
+    {
+      "action": "remove",
+      "driver": "air_purifier",
+      "mfr": "_TZE204_mja3fuja",
+      "reason": "belongs to humidifier"
+    },
+    {
+      "action": "add",
+      "driver": "lcdtemphumidsensor",
+      "mfr": "_TZE200_a8sdabtg",
+      "reason": "missing from correct driver"
+    }
+  ]
+}
