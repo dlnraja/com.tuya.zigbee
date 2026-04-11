@@ -64,16 +64,15 @@
   "connectivity": [
     "zigbee"
   ],
-  "energy": {
-    "batteries": [
-      "CR2032",
-      "AAA",
-      "AA",
-      "CR2",
-      "CR123A"
-    ],
-    "approximation": {}
-  },
+    "energy": {
+      "batteries": [
+        "CR2032",
+        "AAA",
+        "AA",
+        "CR2",
+        "CR123A"
+      ]
+    },
   "zigbee": {
     "manufacturerName": [
       "Aqara",

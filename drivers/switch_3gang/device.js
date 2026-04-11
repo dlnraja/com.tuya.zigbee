@@ -55,7 +55,6 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
     try {
       // v6.0: Robust initialization with error recovery
       
-
       // Continue with driver-specific setup
       try {
         if (this.isZclOnlyDevice) {
@@ -65,7 +64,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           return;
         }
         await super.onNodeInit({ zclNode });
-    this.initPhysicalButtonDetection(); // rule-19 injected
+
         await this.initPhysicalButtonDetection(zclNode);
         await this.initVirtualButtons();
         this.log('[SWITCH-3G] v7.0.12 - Physical button detection enabled');
@@ -87,6 +86,9 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
    * Enhanced with physical button flow triggers (packetninja technique)
    */
   async _initZclOnlyMode(zclNode) {
+    // v7.2.5: Ensure all gang capabilities are present (HOBEIAN fix)
+    await this._migrateCapabilities().catch(e => this.log(`[BSEED-3G] ⚠️ Migrate: ${e.message}`));
+
     this._zclState = {
       lastState: { 1: null, 2: null, 3: null },
       pending: { 1: false, 2: false, 3: false },
@@ -146,8 +148,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_3gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
             try {
-              const card =
-      this._getFlowCard(flowId)
+              const card = this._getFlowCard(flowId);
               if (card) await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
               this.log(`[BSEED-3G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
             } catch (e) { }
@@ -155,8 +156,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
             const sceneId = `switch_3gang_gang${epNum}_scene`;
             try {
-              const card =
-      this._getFlowCard(sceneId)
+              const card = this._getFlowCard(sceneId);
               if (card) await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
               this.log(`[BSEED-3G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
             } catch (e) { }
@@ -234,4 +234,3 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
   }
 }
 module.exports = Switch3GangDevice;
-

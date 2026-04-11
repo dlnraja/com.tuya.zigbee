@@ -1246,8 +1246,8 @@ class Button4GangDevice extends ButtonDevice {
       if (typeof endpoint.bind === 'function') {
         try {
           // Try standard bind with cluster ID
-          await endpoint.bind(57344, coordinatorAddress);
-          this.log('[BUTTON4-BIND] ✅ Standard bind succeeded for cluster 57344');
+          await endpoint.bind('tuyaE000').catch(() => endpoint.bind(57344));
+          this.log('[BUTTON4-BIND] ✅ Standard bind succeeded for cluster tuyaE000');
           return;
         } catch (bindErr) {
           this.log(`[BUTTON4-BIND] ℹ️ Standard bind failed (expected for unknown cluster): ${bindErr.message}`);

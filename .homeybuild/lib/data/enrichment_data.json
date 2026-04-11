@@ -1,0 +1,1636 @@
+{
+  "timestamp": "2025-11-29T13:05:18.102Z",
+  "zigbee2mqtt": {
+    "manufacturers": [
+      "TELINK",
+      "ZG-204ZE",
+      "ZGAF-205L",
+      "Zbeacon",
+      "_TZ3000_2uollq9d",
+      "_TZ3000_abrsvsou",
+      "_TZ3000_cehuw1lw",
+      "_TZ3000_mw1pqqqt",
+      "_TZ3000_zl1kmjqx",
+      "_TZ3210_emqmwtym",
+      "_TZE200_hl0ss9oa",
+      "_TZE200_khah2lkr",
+      "_TZE200_lvkk0hdg",
+      "_TZE200_y4mdop0b",
+      "_TZE284_6ocnqlhn"
+    ],
+    "modelIds": [
+      "CK-BL702-MWS-01(7016)",
+      "TLSR82xx",
+      "TS0003",
+      "TS004F",
+      "TS011F",
+      "TS0202",
+      "TS0203",
+      "TS0225",
+      "TS0601",
+      "ZG-102Z",
+      "ZG-204Z",
+      "ZG-222Z",
+      "ZG-301Z",
+      "ZG-305Z"
+    ],
+    "vendors": [
+      "A-OK",
+      "ACMELEC",
+      "AVATTO",
+      "Aldi",
+      "AlecoAir",
+      "Alutech",
+      "Arteco",
+      "Aubess",
+      "BSEED",
+      "BTF-Lighting",
+      "Bandi",
+      "Benexmart",
+      "Beok",
+      "Binthen",
+      "BlitzWolf",
+      "COOLO",
+      "CR Smart Home",
+      "Cleverio",
+      "ClickSmart+",
+      "Cloud Even",
+      "Connecte",
+      "Coswall",
+      "Dongguan Daying Electornics Technology",
+      "Dongguan Pinjia Technology Co.,LTD.",
+      "EKF",
+      "ELECTSMART",
+      "ETOP",
+      "Earda",
+      "Echos",
+      "Ekaza",
+      "ElectSmart",
+      "Emos",
+      "Evolveo",
+      "FORIA",
+      "Feconn",
+      "GIEX",
+      "Girier",
+      "HOBEIAN",
+      "HOCH",
+      "Haozee",
+      "HeatHUB",
+      "Heiman",
+      "Homcloud",
+      "Immax",
+      "KnockautX",
+      "LEDRON",
+      "LELLKI",
+      "LSC Smart Connect",
+      "Larkkey",
+      "LeapMMW",
+      "Lerlink",
+      "Lidl",
+      "Linkoze",
+      "Liwokit",
+      "Loginovo",
+      "Lonsonho",
+      "LoraTap",
+      "MODEMIX",
+      "MakeGood",
+      "Manhot",
+      "MatSee Plus",
+      "Mercator Ikuü",
+      "Milfra",
+      "Moes",
+      "Mumubiz",
+      "NEO",
+      "Nedis",
+      "Norklmes",
+      "Nova Digital",
+      "Novato",
+      "OWON",
+      "OXT",
+      "Ourtop",
+      "Oz Smart Things",
+      "Powernity",
+      "Quoya",
+      "Ronco",
+      "S366",
+      "SHOJZJ",
+      "SMATRUL",
+      "SODA",
+      "SUTON",
+      "Samotech",
+      "Saswell",
+      "Scimagic",
+      "Senoro",
+      "Silvercrest",
+      "Smart9",
+      "Somgoms",
+      "Spacetronik",
+      "THALEOS",
+      "TNCE",
+      "TUYATEC",
+      "Teekar",
+      "Telink",
+      "Tervix",
+      "Tesla Smart",
+      "Tongou",
+      "Tuya",
+      "Unknown/id3.pl",
+      "UseeLink",
+      "VIKEFON",
+      "Videosec",
+      "Vizo",
+      "Vrey",
+      "WDYK",
+      "Wenzhi",
+      "Wenzhou Taiye Electric",
+      "Woox",
+      "XOCA",
+      "Yushun",
+      "ZSVIOT",
+      "ZYXH",
+      "Zemismart",
+      "Zorro Alert",
+      "eWeLink",
+      "iAlarm",
+      "iHseno"
+    ],
+    "models": [
+      "07732B",
+      "07732L",
+      "14153706L",
+      "1gang N-ZLWSM01",
+      "228WZH",
+      "2CT",
+      "2gang N-ZLWSM01",
+      "3012732",
+      "378RT",
+      "3gang N-ZLWSM01",
+      "4500990",
+      "4500991",
+      "4500992",
+      "4500993",
+      "A5C-21F7-01",
+      "AE-669K",
+      "AE-940K",
+      "AETZ01_AC",
+      "AM/R-Sm",
+      "AM25",
+      "AM43",
+      "AT8510-TY",
+      "ATMS100133Z",
+      "ATMS10013Z3",
+      "ATMS1601Z",
+      "ATMS1602Z",
+      "AVATTO_TRV06",
+      "BAB-1413_Pro",
+      "BAC-003",
+      "BCM100D",
+      "BCM500DS-TYZ",
+      "BDS03G1",
+      "BLE-YL01",
+      "BOT-R15W",
+      "BW-IS2",
+      "BW-IS4",
+      "BW-SHP13",
+      "BW-SHP15",
+      "BX82-TYZ1",
+      "C03Z",
+      "C3007",
+      "CK-BL702-AL-01",
+      "CK-BL702-AL-01_1",
+      "CMA30651",
+      "CS-201Z",
+      "CS-AJ-DE2U-ZG-11",
+      "CSP041",
+      "CSP042",
+      "CSP043",
+      "CSP051",
+      "CSP052",
+      "CSPGM2075PW",
+      "CTL-R1-TY-Zigbee",
+      "CV01A",
+      "Cloud Even",
+      "D3-DPWK-TY",
+      "DAC2161C",
+      "DCR-CO",
+      "DCR-RQJ",
+      "DS-1450WN",
+      "DT82LEMA-1.2N",
+      "E220-KR4N0Z0-HA",
+      "EA4161C-BI",
+      "EDM-1ZAA-EU",
+      "EDM-1ZAB-EU",
+      "EDM-1ZBA-EU",
+      "EDM-1ZBB-EU",
+      "EKAC-T3095Z",
+      "EPJ-ZB",
+      "ERS-10TZBVK-AA",
+      "EST-120Z",
+      "ESW-2ZAA-EU",
+      "ESW-OZAA-EU",
+      "ETT-8",
+      "Eco-4160",
+      "F00MB00-04-1",
+      "F00XN00-04-1",
+      "F00YK04-18-1",
+      "F3-Pro",
+      "FE-GU10-5W",
+      "FZB-1",
+      "Fan+Light-01",
+      "GDC311ZBQ1",
+      "GDKES-01TZXD",
+      "GDKES-02TZXD",
+      "GDKES-03TZXD",
+      "GDKES-04TZXD",
+      "GTZ08",
+      "GX03",
+      "HA-08 THERMO",
+      "HHST001",
+      "HS2SA-1",
+      "HT-08",
+      "HT-10",
+      "HY-SZLUMPIR",
+      "HY08WE",
+      "HY368",
+      "HY369RT",
+      "HY607W-3A",
+      "HZ-WT02",
+      "Heat M30",
+      "IH-K009",
+      "IH-K663",
+      "IH012-RT01",
+      "IH012-RT02",
+      "JM-TRH-ZGB-V1",
+      "KCTW1Z",
+      "KRC-103",
+      "L122CB63H11A9.0W",
+      "LCZ030",
+      "LKMSZ001",
+      "LKWSZ211",
+      "LXZB-ZB-09A",
+      "LYAI-14",
+      "M11Z",
+      "M2805EGBZTN",
+      "M3TYW-2.0-13",
+      "M515EGB",
+      "M515EGBZTN",
+      "M515EGZT",
+      "M8Pro",
+      "M9-zigbee-SL",
+      "M9Pro",
+      "MB60L-ZG-ZT-TY",
+      "ME167",
+      "ME167_1",
+      "ME168",
+      "ME201WZ",
+      "MG-GPO04ZSLP",
+      "MG-ZG01W",
+      "MG-ZG02W",
+      "MG-ZG03W",
+      "MG-ZG04W/B/G",
+      "MIR-HE200-TY",
+      "MIUCOT10Z",
+      "MKS-CM-W5",
+      "MOD037",
+      "MOD048",
+      "MS-105-M",
+      "MS-105B",
+      "MS-108ZR",
+      "MTD085-ZB",
+      "MTD285-ZB",
+      "MTG075-ZB-RL",
+      "Mercurio-3",
+      "NAS-PS09B2",
+      "NAS-WS02B0",
+      "NFZB-03",
+      "P5630S",
+      "PA-44Z",
+      "PC311-Z-TY",
+      "PC321-Z-TY",
+      "PJ-1203A",
+      "PJ-MGW1203",
+      "PJ-ZSW01",
+      "PJ3201A",
+      "PLUG-001SPB2",
+      "PN16",
+      "PN6",
+      "PO-BOCO-ELEC",
+      "PO-THCO-EAU",
+      "PRO-900Z",
+      "PS080",
+      "PS580",
+      "QS-Zigbee-D04",
+      "QS-Zigbee-S05-L",
+      "QS-Zigbee-SEC01-DC",
+      "QS-Zigbee-SEC01-U",
+      "QS-Zigbee-SEC02-U",
+      "R3 Smart Switch",
+      "R7054",
+      "RB-SRAIN01",
+      "RC-MCB",
+      "RD24G01",
+      "RH3040",
+      "RM28-LE",
+      "RMDZB-1PNL63",
+      "RR400ZB",
+      "RSH-HS06",
+      "RT_ZCZ03Z",
+      "S-LUX-ZB",
+      "S366",
+      "S8",
+      "S9E27LED9W-RGB-Z",
+      "S9TSZGB",
+      "SA12IZL",
+      "SAS936RHB-7-Z03",
+      "SC400",
+      "SDM01",
+      "SDM01V1.5",
+      "SDM02V1",
+      "SGS02Z",
+      "SM-AW713Z",
+      "SM-PW801EZ",
+      "SM-SO306E/K/M",
+      "SM0001",
+      "SM0201",
+      "SM0202",
+      "SM0212",
+      "SM301Z",
+      "SMA02P",
+      "SMD4106W-RGB-ZB",
+      "SMD9300",
+      "SMOAL024",
+      "SNTZ007",
+      "SNTZ009",
+      "SP02-ZB001",
+      "SP400ZB",
+      "SPBS01G",
+      "SPM01",
+      "SPM01V2",
+      "SPM01V2.5",
+      "SPM02",
+      "SPM02V2",
+      "SPM02V2.5",
+      "SPM02V3",
+      "SS100",
+      "SS600ZB",
+      "SS9600ZB",
+      "SSW01",
+      "SSW04",
+      "SSWD01",
+      "STB3L-125-ZJ",
+      "STB3L-125/ZJ",
+      "SWP86-01OG",
+      "SWS6TZ-WHITE",
+      "SWTZ21",
+      "SWTZ22",
+      "SWTZ23",
+      "SWTZ25",
+      "SWTZ27",
+      "SZR07U",
+      "SZT06 V2.0",
+      "Senoro.Win v2",
+      "T2-Z67/T2-W67",
+      "TAC7361C BI",
+      "TE-1Z",
+      "TGM50-ZB",
+      "TGR85-ZB",
+      "THE01860A",
+      "THS317-ET-TY",
+      "TLC2206",
+      "TLSR82xx_2btn_remote",
+      "TM001-ZA/TM081",
+      "TMZ02L-16A-B",
+      "TMZ02L-16A-W",
+      "TO-Q-SA1",
+      "TO-Q-SYS-JZT",
+      "TOQCB2-80",
+      "TOWSMR1",
+      "TR-M3Z",
+      "TRV06",
+      "TRV06-1",
+      "TRV06-AT",
+      "TRV601",
+      "TRV602",
+      "TRV602Z",
+      "TRV603-WZ",
+      "TS0001",
+      "TS0001_1_gang_switch",
+      "TS0001_fingerbot",
+      "TS0001_power",
+      "TS0001_switch_1_gang",
+      "TS0001_switch_module",
+      "TS0001_switch_module_1",
+      "TS0001_switch_module_2",
+      "TS0002",
+      "TS0002_basic",
+      "TS0002_limited",
+      "TS0002_power",
+      "TS0003",
+      "TS0003_3_gang_switch",
+      "TS0003_switch_3_gang",
+      "TS0003_switch_3_gang_with_backlight",
+      "TS0003_switch_module_1",
+      "TS0003_switch_module_2",
+      "TS0003_switch_module_3",
+      "TS0004",
+      "TS0004_fan_light_switch",
+      "TS0004_switch_module",
+      "TS0004_switch_module_2",
+      "TS0006",
+      "TS000F_power",
+      "TS0011",
+      "TS0011_switch_module",
+      "TS0012",
+      "TS0012_switch_module",
+      "TS0013",
+      "TS0013_switch_module",
+      "TS0014",
+      "TS0026",
+      "TS0041",
+      "TS0041A",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS0046",
+      "TS0049",
+      "TS004F",
+      "TS004F_6_button",
+      "TS0052",
+      "TS0052_2",
+      "TS0101",
+      "TS0105",
+      "TS0108",
+      "TS0111",
+      "TS0111_valve",
+      "TS0115",
+      "TS011F",
+      "TS011F_1",
+      "TS011F_2_gang_2_usb_wall",
+      "TS011F_2_gang_power",
+      "TS011F_2_gang_wall",
+      "TS011F_3_gang",
+      "TS011F_4",
+      "TS011F_5",
+      "TS011F_din_smart_relay",
+      "TS011F_din_smart_relay_polling",
+      "TS011F_plug",
+      "TS011F_plug_1",
+      "TS011F_plug_2",
+      "TS011F_plug_3",
+      "TS011F_quad_power1",
+      "TS011F_socket_module",
+      "TS011F_switch_5_gang",
+      "TS011F_wall_outlet",
+      "TS011F_with_threshold",
+      "TS0121_plug",
+      "TS0201",
+      "TS0202",
+      "TS0202_1",
+      "TS0202_2",
+      "TS0202_3",
+      "TS0203",
+      "TS0203_1",
+      "TS0204",
+      "TS0205",
+      "TS0207",
+      "TS0207_repeater",
+      "TS0207_water_leak_detector",
+      "TS020C",
+      "TS0210",
+      "TS0215A_remote",
+      "TS0215A_sos",
+      "TS0216",
+      "TS0218",
+      "TS0222",
+      "TS0222_light",
+      "TS0222_solar_light",
+      "TS0222_temperature_humidity",
+      "TS0224",
+      "TS0301",
+      "TS030F",
+      "TS0501A",
+      "TS0501B",
+      "TS0501B_dimmer",
+      "TS0501B_dimmer_2",
+      "TS0502A",
+      "TS0502B",
+      "TS0503A",
+      "TS0503B",
+      "TS0504A",
+      "TS0504B",
+      "TS0505",
+      "TS0505A",
+      "TS0505A_led",
+      "TS0505B_1",
+      "TS0505B_2",
+      "TS0505B_3",
+      "TS0601_3_phase_clamp_meter",
+      "TS0601_3_phase_clamp_meter_relay",
+      "TS0601_3gang_rkbxtclc",
+      "TS0601_4gang_7ytnacie",
+      "TS0601_GTZ10",
+      "TS0601_air_quality_sensor",
+      "TS0601_bidirectional_energy meter",
+      "TS0601_co2_sensor",
+      "TS0601_contact_temperature_humidity_sensor",
+      "TS0601_cover_1",
+      "TS0601_cover_10",
+      "TS0601_cover_11",
+      "TS0601_cover_2",
+      "TS0601_cover_3",
+      "TS0601_cover_4",
+      "TS0601_cover_5",
+      "TS0601_cover_6",
+      "TS0601_cover_7",
+      "TS0601_cover_8",
+      "TS0601_cover_9",
+      "TS0601_cover_with_1_switch",
+      "TS0601_cover_with_2_switch",
+      "TS0601_dimmer_1_gang_1",
+      "TS0601_dimmer_1_gang_2",
+      "TS0601_dimmer_1_gang_3",
+      "TS0601_dimmer_2",
+      "TS0601_dimmer_3",
+      "TS0601_dimmer_4",
+      "TS0601_dimmer_5",
+      "TS0601_dimmer_knob",
+      "TS0601_din",
+      "TS0601_din_1",
+      "TS0601_din_2",
+      "TS0601_din_3",
+      "TS0601_din_4",
+      "TS0601_fan_5_levels_and_light_switch",
+      "TS0601_fan_and_light_switch",
+      "TS0601_fan_switch",
+      "TS0601_floor_thermostat",
+      "TS0601_garage_door_opener",
+      "TS0601_gas_sensor_1",
+      "TS0601_gas_sensor_2",
+      "TS0601_gas_sensor_3",
+      "TS0601_gas_sensor_4",
+      "TS0601_human_presence",
+      "TS0601_human_presence_sensor",
+      "TS0601_illuminance_temperature_humidity_sensor_1",
+      "TS0601_illuminance_temperature_humidity_sensor_2",
+      "TS0601_knob_dimmer_switch",
+      "TS0601_light",
+      "TS0601_motion_sensor",
+      "TS0601_pir",
+      "TS0601_rcbo",
+      "TS0601_smart_air_house_keeper",
+      "TS0601_smart_human_presence_sensor_1",
+      "TS0601_smoke_1",
+      "TS0601_smoke_3",
+      "TS0601_smoke_4",
+      "TS0601_smoke_5",
+      "TS0601_smoke_6",
+      "TS0601_smoke_co",
+      "TS0601_soil",
+      "TS0601_soil_2",
+      "TS0601_soil_3",
+      "TS0601_switch",
+      "TS0601_switch_10",
+      "TS0601_switch_12",
+      "TS0601_switch_1_gang",
+      "TS0601_switch_2_gang",
+      "TS0601_switch_3_gang",
+      "TS0601_switch_4_gang_1",
+      "TS0601_switch_4_gang_2",
+      "TS0601_switch_5_gang",
+      "TS0601_switch_6_gang",
+      "TS0601_switch_8",
+      "TS0601_switch_8_2",
+      "TS0601_temperature_humidity_co2_sensor",
+      "TS0601_temperature_humidity_sensor_1",
+      "TS0601_temperature_humidity_sensor_2",
+      "TS0601_temperature_humidity_sensor_3",
+      "TS0601_temperature_humidity_sensor_4",
+      "TS0601_thermostat",
+      "TS0601_thermostat_1",
+      "TS0601_thermostat_14",
+      "TS0601_thermostat_2",
+      "TS0601_thermostat_3",
+      "TS0601_thermostat_4",
+      "TS0601_thermostat_5",
+      "TS0601_thermostat_thermosphere",
+      "TS0601_vibration_sensor",
+      "TS0601_water_meter",
+      "TS0601_water_sensor",
+      "TS0601_water_switch",
+      "TS0601_water_valve",
+      "TS0603",
+      "TS0726_1_gang_scene_switch",
+      "TS0726_2_gang",
+      "TS0726_2_gang_scene_switch",
+      "TS0726_3_gang",
+      "TS0726_3_gang_scene_switch",
+      "TS0726_4_gang",
+      "TS0726_4_gang_scene_switch",
+      "TS0726_4_gang_switch_and_2_scene",
+      "TS0726_multi_1_gang",
+      "TS0726_multi_3_gang",
+      "TS0726_multi_4_gang",
+      "TS0726_switch_4g_2s",
+      "TS0901",
+      "TS1101_dimmer_module_1ch",
+      "TS1101_dimmer_module_2ch",
+      "TS110E_1gang_1",
+      "TS110E_1gang_2",
+      "TS110E_2gang_1",
+      "TS110E_2gang_2",
+      "TS130F",
+      "TSL-SEN-DOOR",
+      "TSL-SEN-GAS",
+      "TSL-SEN-SMOKE",
+      "TSL-TRV-TV01ZG",
+      "TSL-TRV-TV05ZG",
+      "TT001ZAV20",
+      "TV01-ZB",
+      "TV02-Zigbee",
+      "TV05-ZG curve",
+      "TV06-Zigbee",
+      "TVR01",
+      "TW-03",
+      "TWC-R01",
+      "TY-ZPR06",
+      "TYBAC-006",
+      "TYONOFFTS",
+      "TYSCENECUBE",
+      "TYZGTH1CH-D1RF",
+      "TYZGTH4CH-D1RF",
+      "TYZS1L",
+      "TZE284_4cqhd2ha",
+      "TZE284_6teua268",
+      "U86KCJ-ZP",
+      "U86KWF-ZPSJ",
+      "VR-X712U-0013",
+      "VZ-222S",
+      "WHD02",
+      "WLS-100z",
+      "WP33-EU",
+      "WS-EUB1-ZG",
+      "WS-SY-EURD",
+      "WS-SY-EURD-WH-MS",
+      "WS-US-ZB",
+      "WSD500A",
+      "WZ-M100",
+      "X5H-GB-B",
+      "X701",
+      "X702",
+      "X706U",
+      "XFY-CGQ-ZIGB",
+      "XZ-AKT101",
+      "Y1_IN",
+      "YG400A",
+      "YS-MT750",
+      "YSR-MINI-Z",
+      "YXZBRB58",
+      "YXZBSL",
+      "YY-LT500",
+      "ZA03",
+      "ZB-DG03",
+      "ZB-Sm",
+      "ZBLC1E14",
+      "ZBN-JT-63",
+      "ZBRC10WT",
+      "ZBSM10WT",
+      "ZBWS40WT",
+      "ZC-W1",
+      "ZD82TN",
+      "ZG-101Z",
+      "ZG-101Z/D",
+      "ZG-102Z",
+      "ZG-102ZA",
+      "ZG-102ZL",
+      "ZG-102ZM",
+      "ZG-103Z",
+      "ZG-204Z",
+      "ZG-204ZE",
+      "ZG-204ZH",
+      "ZG-204ZK",
+      "ZG-204ZL",
+      "ZG-204ZM",
+      "ZG-204ZV",
+      "ZG-205Z",
+      "ZG-205Z/A",
+      "ZG-205ZL",
+      "ZG-222Z",
+      "ZG-223Z",
+      "ZG-225Z",
+      "ZG-227ZL",
+      "ZG-301Z",
+      "ZG-302ZM",
+      "ZG-303Z",
+      "ZG-305Z",
+      "ZG-WK-DA-Wh-Zigbee",
+      "ZGB-WS-EU",
+      "ZHT-002",
+      "ZJSB9-80Z",
+      "ZJSBL7-100Z",
+      "ZM-104-M",
+      "ZM-35H-Q",
+      "ZM-CSW002-D_switch",
+      "ZM-sui1",
+      "ZM79E-DT",
+      "ZM85EL-1Z",
+      "ZN231392",
+      "ZN2S-RS02E",
+      "ZP-301Z",
+      "ZPIR-10",
+      "ZPV-01",
+      "ZR360CDB",
+      "ZS-300Z",
+      "ZS-301Z",
+      "ZS-EUD_1gang",
+      "ZS-EUD_2gang",
+      "ZS-EUD_3gang",
+      "ZS-TYG3-SM-21Z",
+      "ZS-TYG3-SM-31Z",
+      "ZS-TYG3-SM-41Z",
+      "ZS-TYG3-SM-61Z",
+      "ZS-US2-BK-MS",
+      "ZS-USD",
+      "ZS06",
+      "ZSQB-SMB-ZB",
+      "ZSS-QY-SSD-A-EN",
+      "ZSTY-SM-1DMZG-EU",
+      "ZSTY-SM-1SRZG-EU",
+      "ZT-SY-EU-G-4S-WH-MS",
+      "ZTH05Z",
+      "ZTRV-ZX-TV02",
+      "ZTS02",
+      "ZWT-100-16A",
+      "ZWT07",
+      "ZWT198/ZWT100-BH",
+      "ZY-M100-24G",
+      "ZY-M100-24GV2",
+      "ZY-M100-24GV3",
+      "ZY-M100-S_1",
+      "ZY-M100-S_2",
+      "ZY-M100-S_3",
+      "ZYXH_switch_24",
+      "ZY_HPS01",
+      "Zigbee Socket",
+      "_TZ3000_h1ipgkwn",
+      "_TZ3000_mw1pqqqt",
+      "_TZ3000_pgq7ormg",
+      "_TZE204_3regm3h6",
+      "_TZE204_q9xty0ad",
+      "_TZE284_6kijc7nd",
+      "_TZE284_z5jz7wpo",
+      "gq8b1uv",
+      "iH-F001",
+      "iHSW02",
+      "rtsc11r"
+    ],
+    "datapoints": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      21,
+      26,
+      29,
+      101,
+      102,
+      103
+    ],
+    "stats": {
+      "totalManufacturers": 15,
+      "totalModelIds": 14,
+      "totalVendors": 118,
+      "totalModels": 627,
+      "totalDescriptions": 491,
+      "totalDatapoints": 23
+    }
+  },
+  "ota": {
+    "total": 790,
+    "tuya": [
+      {
+        "fileVersion": 18100225
+      },
+      {
+        "modelId": "MHO-C401N",
+        "fileVersion": 19083265
+      },
+      {
+        "manufacturerName": [
+          "_TZ3210_ngqk6jia"
+        ],
+        "fileVersion": 70
+      },
+      {
+        "manufacturerName": [
+          "_TZ3000_cjrngdr3"
+        ],
+        "fileVersion": 78
+      },
+      {
+        "manufacturerName": [
+          "_TZE200_kds0pmmv",
+          "_TZE200_ckud7u2l",
+          "_TZE200_cwnjrr72",
+          "_TZE200_ywdxldoj",
+          "_TZE200_cpmgn2cf"
+        ],
+        "fileVersion": 87
+      },
+      {
+        "manufacturerName": [
+          "_TZ3000_1dd0d5yi"
+        ],
+        "fileVersion": 71
+      },
+      {
+        "fileVersion": 10
+      },
+      {
+        "fileVersion": 57
+      },
+      {
+        "modelId": "HC-SLM-1",
+        "fileVersion": 10205
+      },
+      {
+        "manufacturerName": [
+          "_TZ3000_x3ewpzyr"
+        ],
+        "fileVersion": 74
+      },
+      {
+        "modelId": "MHOC401-z",
+        "fileVersion": 19279873
+      },
+      {
+        "manufacturerName": [
+          "_TZ3000_w0qqde0g",
+          "_TZ3000_dksbtrzs",
+          "_TZ3000_fukaa7nc"
+        ],
+        "fileVersion": 82
+      },
+      {
+        "modelId": "CGDK2",
+        "fileVersion": 19345409
+      },
+      {
+        "modelId": "MHOC122-z",
+        "fileVersion": 19345409
+      },
+      {
+        "modelId": "MHO-C401N-z",
+        "fileVersion": 19410945
+      },
+      {
+        "modelId": "MHOC401N-z",
+        "fileVersion": 19410945
+      },
+      {
+        "modelId": "ZTH05-z",
+        "fileVersion": 19410945
+      },
+      {
+        "modelId": "ZY-ZTH02z",
+        "fileVersion": 19410945
+      },
+      {
+        "modelId": "ZG227-z",
+        "fileVersion": 19410945
+      },
+      {
+        "modelId": "4512766",
+        "manufacturerName": [
+          "Namron"
+        ],
+        "fileVersion": 13
+      },
+      {
+        "modelId": "TS011F",
+        "fileVersion": 192
+      },
+      {
+        "modelId": "MHO-C401-z",
+        "manufacturerName": [
+          "MiaoMiaoCe"
+        ],
+        "fileVersion": 19476481
+      },
+      {
+        "modelId": "CGG1-z",
+        "manufacturerName": [
+          "Qingping"
+        ],
+        "fileVersion": 19476481
+      },
+      {
+        "modelId": "CGDK2-z",
+        "manufacturerName": [
+          "Qingping"
+        ],
+        "fileVersion": 19476481
+      },
+      {
+        "modelId": "CGG1N-z",
+        "manufacturerName": [
+          "Qingping"
+        ],
+        "fileVersion": 19476481
+      },
+      {
+        "modelId": "MHO-C401N-z",
+        "manufacturerName": [
+          "MiaoMiaoCe"
+        ],
+        "fileVersion": 19476481
+      },
+      {
+        "modelId": "LYWSD03MMC-z",
+        "manufacturerName": [
+          "Xiaomi"
+        ],
+        "fileVersion": 19476481
+      },
+      {
+        "modelId": "MHO-C122-z",
+        "manufacturerName": [
+          "MiaoMiaoCe"
+        ],
+        "fileVersion": 19476481
+      },
+      {
+        "modelId": "MJWSD06MMC-z",
+        "manufacturerName": [
+          "Xiaomi"
+        ],
+        "fileVersion": 19476481
+      },
+      {
+        "modelId": "TS0201-z",
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "fileVersion": 19476481
+      },
+      {
+        "modelId": "ZTH03-z",
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "fileVersion": 19476481
+      },
+      {
+        "modelId": "ZTH01-z",
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "fileVersion": 19476481
+      },
+      {
+        "modelId": "ZTH02-z",
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "fileVersion": 19476481
+      },
+      {
+        "modelId": "TH03-z",
+        "manufacturerName": [
+          "Sonoff"
+        ],
+        "fileVersion": 19476481
+      },
+      {
+        "modelId": "LKTMZL02-z",
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "fileVersion": 19476481
+      },
+      {
+        "modelId": "TH05-z",
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "fileVersion": 19476481
+      },
+      {
+        "modelId": "ZY-ZTH02-z",
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "fileVersion": 19476481
+      },
+      {
+        "modelId": "ZY-ZTH01-z",
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "fileVersion": 19476481
+      },
+      {
+        "modelId": "ZG-227Z-z",
+        "manufacturerName": [
+          "Tuya"
+        ],
+        "fileVersion": 19476481
+      },
+      {
+        "modelId": "ZG303Z-z",
+        "manufacturerName": [
+          "Sonoff"
+        ],
+        "fileVersion": 19476481
+      }
+    ],
+    "xiaomi": [
+      {
+        "fileVersion": 19055488
+      },
+      {
+        "fileVersion": 4
+      },
+      {
+        "fileVersion": 15
+      },
+      {
+        "fileVersion": 8
+      },
+      {
+        "fileVersion": 3
+      },
+      {
+        "fileVersion": 5
+      },
+      {
+        "fileVersion": 1
+      },
+      {
+        "fileVersion": 3
+      },
+      {
+        "fileVersion": 4
+      },
+      {
+        "fileVersion": 4
+      },
+      {
+        "fileVersion": 6
+      },
+      {
+        "fileVersion": 6
+      },
+      {
+        "modelId": "lumi.curtain.hagl07",
+        "fileVersion": 48
+      },
+      {
+        "modelId": "lumi.switch.n1aeu1",
+        "fileVersion": 2839
+      },
+      {
+        "modelId": "lumi.switch.b1nacn02",
+        "fileVersion": 65
+      },
+      {
+        "modelId": "lumi.switch.b1naus01",
+        "fileVersion": 31
+      },
+      {
+        "modelId": "lumi.plug.maus01",
+        "fileVersion": 17
+      },
+      {
+        "modelId": "lumi.switch.b2nacn02",
+        "fileVersion": 66
+      },
+      {
+        "modelId": "lumi.curtain.aq2",
+        "fileVersion": 33
+      },
+      {
+        "modelId": "lumi.light.rgbac1",
+        "fileVersion": 28
+      },
+      {
+        "modelId": "lumi.airmonitor.acn01",
+        "fileVersion": 29
+      },
+      {
+        "modelId": "lumi.curtain",
+        "fileVersion": 36
+      },
+      {
+        "modelId": "lumi.light.aqcn02",
+        "fileVersion": 34
+      },
+      {
+        "modelId": "lumi.curtain.agl001",
+        "fileVersion": 6168
+      },
+      {
+        "modelId": "lumi.motion.ac01",
+        "fileVersion": 54
+      },
+      {
+        "modelId": "lumi.switch.acn029",
+        "fileVersion": 1380147
+      },
+      {
+        "modelId": "lumi.switch.acn030",
+        "fileVersion": 1380147
+      },
+      {
+        "modelId": "lumi.switch.acn031",
+        "fileVersion": 1380147
+      },
+      {
+        "modelId": "lumi.remote.cagl02",
+        "fileVersion": 25
+      },
+      {
+        "modelId": "lumi.switch.b2lc04",
+        "fileVersion": 23
+      },
+      {
+        "modelId": "lumi.switch.b1lc04",
+        "fileVersion": 23
+      },
+      {
+        "modelId": "lumi.switch.n3acn3",
+        "fileVersion": 33
+      },
+      {
+        "modelId": "lumi.ctrl_86plug.aq1",
+        "fileVersion": 94
+      },
+      {
+        "modelId": "lumi.airm.fhac01",
+        "fileVersion": 26
+      },
+      {
+        "modelId": "lumi.curtain.acn002",
+        "fileVersion": 3870
+      },
+      {
+        "modelId": "lumi.remote.b1acn02",
+        "fileVersion": 31
+      },
+      {
+        "modelId": "aqara.feeder.acn001",
+        "fileVersion": 9761
+      },
+      {
+        "modelId": "lumi.sensor_ht.agl02",
+        "fileVersion": 29
+      },
+      {
+        "modelId": "lumi.magnet.agl02",
+        "fileVersion": 30
+      },
+      {
+        "modelId": "lumi.motion.agl04",
+        "fileVersion": 27
+      },
+      {
+        "modelId": "lumi.motion.ac02",
+        "fileVersion": 10
+      },
+      {
+        "modelId": "lumi.ctrl_ln2.aq1",
+        "fileVersion": 95
+      },
+      {
+        "modelId": "lumi.ctrl_ln1.aq1",
+        "fileVersion": 95
+      },
+      {
+        "modelId": "lumi.motion.agl02",
+        "fileVersion": 37
+      },
+      {
+        "modelId": "lumi.airrtc.agl001",
+        "fileVersion": 2590
+      },
+      {
+        "modelId": "lumi.sensor_gas.acn02",
+        "fileVersion": 17
+      },
+      {
+        "modelId": "lumi.light.acn132",
+        "fileVersion": 672539
+      },
+      {
+        "modelId": "lumi.curtain.vagl02",
+        "fileVersion": 41
+      },
+      {
+        "modelId": "lumi.light.acn003",
+        "fileVersion": 29
+      },
+      {
+        "modelId": "lumi.light.acn128",
+        "fileVersion": 22
+      },
+      {
+        "modelId": "lumi.light.acn014",
+        "fileVersion": 40
+      },
+      {
+        "modelId": "lumi.dimmer.acn004",
+        "fileVersion": 24
+      },
+      {
+        "modelId": "lumi.light.acn024",
+        "fileVersion": 41
+      },
+      {
+        "modelId": "lumi.light.acn026",
+        "fileVersion": 41
+      },
+      {
+        "modelId": "lumi.light.acn031",
+        "fileVersion": 26
+      },
+      {
+        "modelId": "lumi.switch.n4acn4",
+        "fileVersion": 62
+      },
+      {
+        "modelId": "lumi.switch.n0agl1",
+        "fileVersion": 30
+      },
+      {
+        "modelId": "lumi.dimmer.rcbac1",
+        "fileVersion": 34
+      },
+      {
+        "modelId": "lumi.switch.acn059",
+        "fileVersion": 34
+      },
+      {
+        "modelId": "lumi.switch.acn058",
+        "fileVersion": 34
+      },
+      {
+        "modelId": "lumi.switch.acn057",
+        "fileVersion": 34
+      },
+      {
+        "modelId": "lumi.switch.acn056",
+        "fileVersion": 34
+      },
+      {
+        "modelId": "lumi.switch.acn055",
+        "fileVersion": 34
+      },
+      {
+        "modelId": "lumi.switch.acn054",
+        "fileVersion": 34
+      },
+      {
+        "modelId": "lumi.switch.acn049",
+        "fileVersion": 34
+      },
+      {
+        "modelId": "lumi.switch.acn048",
+        "fileVersion": 34
+      },
+      {
+        "modelId": "lumi.switch.n1acn1",
+        "fileVersion": 58
+      },
+      {
+        "modelId": "lumi.light.cbacn1",
+        "fileVersion": 43
+      },
+      {
+        "modelId": "lumi.light.acn004",
+        "fileVersion": 31
+      },
+      {
+        "modelId": "lumi.curtain.acn003",
+        "fileVersion": 8479
+      },
+      {
+        "modelId": "lumi.plug.macn01",
+        "fileVersion": 36
+      },
+      {
+        "modelId": "lumi.plug.maeu01",
+        "fileVersion": 45
+      },
+      {
+        "modelId": "lumi.plug.sacn03",
+        "fileVersion": 38
+      },
+      {
+        "modelId": "lumi.plug.sacn02",
+        "fileVersion": 52
+      },
+      {
+        "modelId": "lumi.switch.b3n01",
+        "fileVersion": 28
+      },
+      {
+        "modelId": "lumi.switch.n2acn1",
+        "fileVersion": 59
+      },
+      {
+        "modelId": "lumi.switch.n3acn1",
+        "fileVersion": 59
+      },
+      {
+        "modelId": "lumi.switch.b2nacn01",
+        "fileVersion": 28
+      },
+      {
+        "modelId": "lumi.ctrl_86plug",
+        "fileVersion": 11
+      },
+      {
+        "modelId": "lumi.plug.aq1",
+        "fileVersion": 30
+      },
+      {
+        "modelId": "lumi.ctrl_ln1",
+        "fileVersion": 32
+      },
+      {
+        "modelId": "lumi.ctrl_ln2",
+        "fileVersion": 32
+      },
+      {
+        "modelId": "lumi.curtain.hagl04",
+        "fileVersion": 24
+      },
+      {
+        "modelId": "lumi.ctrl_neutral1",
+        "fileVersion": 22
+      },
+      {
+        "modelId": "lumi.ctrl_neutral2",
+        "fileVersion": 22
+      },
+      {
+        "modelId": "lumi.lock.acn02",
+        "fileVersion": 9
+      },
+      {
+        "modelId": "lumi.lock.aq1",
+        "fileVersion": 19
+      },
+      {
+        "modelId": "lumi.lock",
+        "fileVersion": 13
+      },
+      {
+        "modelId": "lumi.ctrl_rgb.es1",
+        "fileVersion": 30
+      },
+      {
+        "modelId": "lumi.airrtc.tcpco2ecn01",
+        "fileVersion": 12
+      },
+      {
+        "modelId": "lumi.airrtc.tcpecn02",
+        "fileVersion": 12
+      },
+      {
+        "modelId": "lumi.flood.agl02",
+        "fileVersion": 18
+      },
+      {
+        "modelId": "lumi.light.cwopcn01",
+        "fileVersion": 25
+      },
+      {
+        "modelId": "lumi.light.cwopcn02",
+        "fileVersion": 25
+      },
+      {
+        "modelId": "lumi.light.cwopcn03",
+        "fileVersion": 25
+      },
+      {
+        "modelId": "lumi.plug.mmeu01",
+        "fileVersion": 22
+      },
+      {
+        "modelId": "lumi.relay.c4acn01",
+        "fileVersion": 20
+      },
+      {
+        "modelId": "lumi.remote.b286acn03",
+        "fileVersion": 21
+      },
+      {
+        "modelId": "lumi.sen_ill.agl01",
+        "fileVersion": 27
+      },
+      {
+        "modelId": "lumi.sen_ill.mgl01",
+        "fileVersion": 18
+      },
+      {
+        "modelId": "lumi.switch.b1laus01",
+        "fileVersion": 32
+      },
+      {
+        "modelId": "lumi.switch.b1nacn01",
+        "fileVersion": 26
+      },
+      {
+        "modelId": "lumi.switch.b2laus01",
+        "fileVersion": 32
+      },
+      {
+        "modelId": "lumi.vibration.agl01",
+        "fileVersion": 25
+      },
+      {
+        "modelId": "lumi.switch.l3acn3",
+        "fileVersion": 27
+      },
+      {
+        "modelId": "lumi.ctrl_dimmer3.es1",
+        "fileVersion": 30
+      },
+      {
+        "modelId": "lumi.ctrl_dualchn.es1",
+        "fileVersion": 30
+      },
+      {
+        "modelId": "lumi.airrtc.tcpecn01",
+        "fileVersion": 30
+      },
+      {
+        "modelId": "lumi.ctrl_hvac.es1",
+        "fileVersion": 30
+      },
+      {
+        "modelId": "lumi.plug",
+        "fileVersion": 92
+      },
+      {
+        "modelId": "lumi.relay.c2acn01",
+        "fileVersion": 47
+      },
+      {
+        "modelId": "lumi.switch.b1lacn01",
+        "fileVersion": 32
+      },
+      {
+        "modelId": "lumi.switch.b2lacn01",
+        "fileVersion": 32
+      },
+      {
+        "modelId": "lumi.switch.b3l01",
+        "fileVersion": 33
+      },
+      {
+        "modelId": "lumi.switch.n0acn2",
+        "fileVersion": 39
+      },
+      {
+        "modelId": "lumi.eemeter.zbtecn01",
+        "fileVersion": 35
+      },
+      {
+        "modelId": "PECLS01",
+        "fileVersion": 5
+      },
+      {
+        "modelId": "lumi.switch.b1nc01",
+        "fileVersion": 29
+      },
+      {
+        "modelId": "lumi.switch.b2nc01",
+        "fileVersion": 29
+      },
+      {
+        "fileVersion": 25
+      },
+      {
+        "fileVersion": 25
+      },
+      {
+        "fileVersion": 3872
+      },
+      {
+        "manufacturerName": [
+          "LiXee"
+        ],
+        "fileVersion": 17
+      },
+      {
+        "manufacturerName": [
+          "LiXee"
+        ],
+        "fileVersion": 17
+      },
+      {
+        "modelId": "LYWSD03MMC-z",
+        "manufacturerName": [
+          "Xiaomi"
+        ],
+        "fileVersion": 19476481
+      },
+      {
+        "modelId": "MJWSD06MMC-z",
+        "manufacturerName": [
+          "Xiaomi"
+        ],
+        "fileVersion": 19476481
+      },
+      {
+        "fileVersion": 40
+      },
+      {
+        "modelId": "lumi.sensor_smoke.acn03",
+        "fileVersion": 21
+      },
+      {
+        "modelId": "lumi.light.acn032",
+        "fileVersion": 27
+      },
+      {
+        "modelId": "lumi.sensor_occupy.agl1",
+        "fileVersion": 29
+      },
+      {
+        "modelId": "lumi.switch.acn047",
+        "fileVersion": 33
+      },
+      {
+        "fileVersion": 6
+      },
+      {
+        "fileVersion": 9
+      },
+      {
+        "fileVersion": 10
+      },
+      {
+        "fileVersion": 9
+      },
+      {
+        "fileVersion": 4
+      }
+    ]
+  },
+  "zha": {
+    "dpMappings": {},
+    "quirksClasses": [
+      "TuyaTimePayload",
+      "TuyaDPType",
+      "TuyaDatapointData",
+      "TuyaCommand",
+      "TuyaManufCluster",
+      "TuyaManufClusterAttributes",
+      "TuyaOnOff",
+      "TuyaManufacturerClusterOnOff",
+      "TuyaSwitch",
+      "TuyaDimmerSwitch",
+      "TuyaThermostatCluster",
+      "TuyaUserInterfaceCluster",
+      "TuyaLocalCluster",
+      "TuyaNoBindPowerConfigurationCluster",
+      "TuyaPowerConfigurationCluster",
+      "TuyaPowerConfigurationCluster2AAA",
+      "TuyaPowerConfigurationCluster2AA",
+      "TuyaPowerConfigurationCluster3AA",
+      "TuyaPowerConfigurationCluster4AA",
+      "TuyaPowerConfigurationClusterOther",
+      "TuyaThermostat",
+      "TuyaZBOnOffAttributeCluster",
+      "TuyaSmartRemoteOnOffCluster",
+      "TuyaZBMeteringCluster",
+      "TuyaZBMeteringClusterWithUnit",
+      "TuyaZBElectricalMeasurement",
+      "TuyaZBE000Cluster",
+      "TuyaZBExternalSwitchTypeCluster",
+      "TuyaZB1888Cluster",
+      "TuyaManufacturerWindowCover",
+      "TuyaWindowCoverControl",
+      "TuyaWindowCover",
+      "TuyaManufacturerLevelControl",
+      "TuyaLevelControl",
+      "TuyaNewManufCluster"
+    ],
+    "totalClasses": 58
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-04-09T10:41:25.363Z",
+  "devices": [],
+  "unmatchedFPs": [],
+  "errors": [
+    {
+      "err": "IAS Zone enrollment incomplete. Remove and re-add device if sensor not respondin",
+      "source": "gmail"
+    },
+    {
+      "err": "this.homey.flow.getDeviceConditionCard is not a function",
+      "source": "gmail"
+    },
+    {
+      "err": "Initializing Driver air_quality_comprehensive: TypeError: this.homey.flow.getDev",
+      "source": "gmail"
+    },
+    {
+      "err": "Initializing Driver din_rail_meter: TypeError: this.homey.flow.getDeviceConditio",
+      "source": "gmail"
+    },
+    {
+      "err": "message for rain sensor:",
+      "source": "gmail"
+    },
+    {
+      "err": "on contact sensor for me !",
+      "source": "gmail"
+    },
+    {
+      "err": "could not get device by ID.",
+      "source": "gmail"
+    }
+  ],
+  "sources": {
+    "gmail": 56
+  }
+}

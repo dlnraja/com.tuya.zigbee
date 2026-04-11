@@ -1,0 +1,474 @@
+{
+  "legitimate": [
+    {
+      "id": "TS0201",
+      "reason": "Temperature/Humidity sensor (peut être standalone ou combiné)",
+      "drivers": [
+        "drivers\\air_quality_co2\\driver.compose.json",
+        "drivers\\climate_sensor\\driver.compose.json",
+        "drivers\\lcdtemphumidsensor\\driver.compose.json",
+        "drivers\\plug_energy_monitor\\driver.compose.json"
+      ],
+      "count": 4
+    },
+    {
+      "id": "TS0601",
+      "reason": "Multi-fonction Tuya (curtains, thermostats, air quality, etc.)",
+      "drivers": [
+        "drivers\\air_quality_co2\\driver.compose.json",
+        "drivers\\air_quality_comprehensive\\driver.compose.json",
+        "drivers\\button_wireless\\driver.compose.json",
+        "drivers\\button_wireless_1\\driver.compose.json",
+        "drivers\\button_wireless_2\\driver.compose.json",
+        "drivers\\button_wireless_3\\driver.compose.json",
+        "drivers\\button_wireless_4\\driver.compose.json",
+        "drivers\\ceiling_fan\\driver.compose.json",
+        "drivers\\climate_sensor\\driver.compose.json",
+        "drivers\\contact_sensor\\driver.compose.json",
+        "drivers\\co_sensor\\driver.compose.json",
+        "drivers\\curtain_motor\\driver.compose.json",
+        "drivers\\curtain_motor_tilt\\driver.compose.json",
+        "drivers\\dimmer_3gang\\driver.compose.json",
+        "drivers\\dimmer_dual_channel\\driver.compose.json",
+        "drivers\\dimmer_wall_1gang\\driver.compose.json",
+        "drivers\\doorbell\\driver.compose.json",
+        "drivers\\door_controller\\driver.compose.json",
+        "drivers\\energy_meter_3phase\\driver.compose.json",
+        "drivers\\formaldehyde_sensor\\driver.compose.json",
+        "drivers\\gas_detector\\driver.compose.json",
+        "drivers\\gas_sensor\\driver.compose.json",
+        "drivers\\gateway_zigbee_bridge\\driver.compose.json",
+        "drivers\\generic_tuya\\driver.compose.json",
+        "drivers\\hvac_air_conditioner\\driver.compose.json",
+        "drivers\\hvac_dehumidifier\\driver.compose.json",
+        "drivers\\ir_blaster\\driver.compose.json",
+        "drivers\\led_strip\\driver.compose.json",
+        "drivers\\led_strip_advanced\\driver.compose.json",
+        "drivers\\led_strip_rgbw\\driver.compose.json",
+        "drivers\\lock_smart\\driver.compose.json",
+        "drivers\\motion_sensor\\driver.compose.json",
+        "drivers\\motion_sensor_radar_mmwave\\driver.compose.json",
+        "drivers\\plug_energy_monitor\\driver.compose.json",
+        "drivers\\plug_smart\\driver.compose.json",
+        "drivers\\power_meter\\driver.compose.json",
+        "drivers\\presence_sensor_radar\\driver.compose.json",
+        "drivers\\radiator_controller\\driver.compose.json",
+        "drivers\\radiator_valve\\driver.compose.json",
+        "drivers\\rain_sensor\\driver.compose.json",
+        "drivers\\scene_switch_4\\driver.compose.json",
+        "drivers\\shutter_roller_controller\\driver.compose.json",
+        "drivers\\siren\\driver.compose.json",
+        "drivers\\smart_heater\\driver.compose.json",
+        "drivers\\smart_heater_controller\\driver.compose.json",
+        "drivers\\smart_rcbo\\driver.compose.json",
+        "drivers\\smoke_detector_advanced\\driver.compose.json",
+        "drivers\\soil_sensor\\driver.compose.json",
+        "drivers\\switch_1gang\\driver.compose.json",
+        "drivers\\switch_2gang\\driver.compose.json",
+        "drivers\\switch_3gang\\driver.compose.json",
+        "drivers\\switch_4gang\\driver.compose.json",
+        "drivers\\switch_wall_6gang\\driver.compose.json",
+        "drivers\\thermostat_4ch\\driver.compose.json",
+        "drivers\\thermostat_tuya_dp\\driver.compose.json",
+        "drivers\\usb_outlet_advanced\\driver.compose.json",
+        "drivers\\valve_irrigation\\driver.compose.json",
+        "drivers\\vibration_sensor\\driver.compose.json",
+        "drivers\\water_leak_sensor\\driver.compose.json",
+        "drivers\\water_tank_monitor\\driver.compose.json",
+        "drivers\\water_valve_smart\\driver.compose.json",
+        "drivers\\weather_station_outdoor\\driver.compose.json"
+      ],
+      "count": 62
+    },
+    {
+      "id": "TS0005",
+      "reason": "5-gang switch",
+      "drivers": [
+        "drivers\\air_quality_comprehensive\\driver.compose.json",
+        "drivers\\switch_4gang\\driver.compose.json"
+      ],
+      "count": 2
+    },
+    {
+      "id": "TS0006",
+      "reason": "6-gang switch",
+      "drivers": [
+        "drivers\\air_quality_comprehensive\\driver.compose.json",
+        "drivers\\switch_1gang\\driver.compose.json",
+        "drivers\\switch_4gang\\driver.compose.json"
+      ],
+      "count": 3
+    },
+    {
+      "id": "TS0218",
+      "reason": "Emergency button",
+      "drivers": [
+        "drivers\\button_emergency_sos\\driver.compose.json",
+        "drivers\\plug_smart\\driver.compose.json"
+      ],
+      "count": 2
+    },
+    {
+      "id": "TS0041",
+      "reason": "1-button controller (différents usages)",
+      "drivers": [
+        "drivers\\button_wireless\\driver.compose.json",
+        "drivers\\button_wireless_1\\driver.compose.json",
+        "drivers\\switch_1gang\\driver.compose.json"
+      ],
+      "count": 3
+    },
+    {
+      "id": "TS0042",
+      "reason": "2-button controller (scene vs switch)",
+      "drivers": [
+        "drivers\\button_wireless\\driver.compose.json",
+        "drivers\\button_wireless_2\\driver.compose.json"
+      ],
+      "count": 2
+    },
+    {
+      "id": "TS0043",
+      "reason": "3-button controller",
+      "drivers": [
+        "drivers\\button_wireless\\driver.compose.json",
+        "drivers\\button_wireless_3\\driver.compose.json"
+      ],
+      "count": 2
+    },
+    {
+      "id": "TS0044",
+      "reason": "4-button controller",
+      "drivers": [
+        "drivers\\button_wireless\\driver.compose.json",
+        "drivers\\button_wireless_4\\driver.compose.json",
+        "drivers\\scene_switch_4\\driver.compose.json"
+      ],
+      "count": 3
+    },
+    {
+      "id": "TS0046",
+      "reason": "6-button controller",
+      "drivers": [
+        "drivers\\button_wireless_6\\driver.compose.json",
+        "drivers\\scene_switch_6\\driver.compose.json",
+        "drivers\\switch_1gang\\driver.compose.json"
+      ],
+      "count": 3
+    },
+    {
+      "id": "TS0222",
+      "reason": "Multi-sensor (temp+humidity+occupancy)",
+      "drivers": [
+        "drivers\\climate_sensor\\driver.compose.json",
+        "drivers\\motion_sensor\\driver.compose.json"
+      ],
+      "count": 2
+    },
+    {
+      "id": "TS0225",
+      "reason": "Multi-sensor avancé",
+      "drivers": [
+        "drivers\\climate_sensor\\driver.compose.json",
+        "drivers\\motion_sensor_radar_mmwave\\driver.compose.json",
+        "drivers\\presence_sensor_radar\\driver.compose.json"
+      ],
+      "count": 3
+    },
+    {
+      "id": "TS0203",
+      "reason": "Contact sensor (door/window)",
+      "drivers": [
+        "drivers\\contact_sensor\\driver.compose.json",
+        "drivers\\scene_switch_1\\driver.compose.json"
+      ],
+      "count": 2
+    },
+    {
+      "id": "TS0210",
+      "reason": "Contact sensor vibration",
+      "drivers": [
+        "drivers\\contact_sensor\\driver.compose.json",
+        "drivers\\motion_sensor\\driver.compose.json",
+        "drivers\\vibration_sensor\\driver.compose.json"
+      ],
+      "count": 3
+    },
+    {
+      "id": "TS0302",
+      "reason": "Curtain motor",
+      "drivers": [
+        "drivers\\curtain_motor\\driver.compose.json",
+        "drivers\\switch_1gang\\driver.compose.json"
+      ],
+      "count": 2
+    },
+    {
+      "id": "TS0111",
+      "reason": "Dimmer switch",
+      "drivers": [
+        "drivers\\dimmer_wall_1gang\\driver.compose.json",
+        "drivers\\plug_smart\\driver.compose.json"
+      ],
+      "count": 2
+    },
+    {
+      "id": "TS0001",
+      "reason": "1-gang switch/relay (différents types)",
+      "drivers": [
+        "drivers\\module_mini_switch\\driver.compose.json",
+        "drivers\\plug_smart\\driver.compose.json",
+        "drivers\\radiator_controller\\driver.compose.json",
+        "drivers\\switch_1gang\\driver.compose.json"
+      ],
+      "count": 4
+    },
+    {
+      "id": "TS0011",
+      "reason": "1-gang switch (différent du TS0001)",
+      "drivers": [
+        "drivers\\module_mini_switch\\driver.compose.json",
+        "drivers\\radiator_controller\\driver.compose.json",
+        "drivers\\switch_1gang\\driver.compose.json",
+        "drivers\\thermostat_tuya_dp\\driver.compose.json"
+      ],
+      "count": 4
+    },
+    {
+      "id": "TS0202",
+      "reason": "Motion sensor (différents modèles)",
+      "drivers": [
+        "drivers\\motion_sensor\\driver.compose.json",
+        "drivers\\motion_sensor_radar_mmwave\\driver.compose.json"
+      ],
+      "count": 2
+    },
+    {
+      "id": "TS0121",
+      "reason": "Smart plug with metering",
+      "drivers": [
+        "drivers\\plug_energy_monitor\\driver.compose.json",
+        "drivers\\plug_smart\\driver.compose.json",
+        "drivers\\usb_outlet_advanced\\driver.compose.json"
+      ],
+      "count": 3
+    },
+    {
+      "id": "TS0115",
+      "reason": "Power strip",
+      "drivers": [
+        "drivers\\plug_smart\\driver.compose.json",
+        "drivers\\usb_outlet_advanced\\driver.compose.json"
+      ],
+      "count": 2
+    },
+    {
+      "id": "TS0002",
+      "reason": "2-gang switch/relay",
+      "drivers": [
+        "drivers\\radiator_controller\\driver.compose.json",
+        "drivers\\switch_1gang\\driver.compose.json",
+        "drivers\\switch_2gang\\driver.compose.json",
+        "drivers\\usb_dongle_dual_repeater\\driver.compose.json"
+      ],
+      "count": 4
+    },
+    {
+      "id": "TS0012",
+      "reason": "2-gang switch",
+      "drivers": [
+        "drivers\\radiator_controller\\driver.compose.json",
+        "drivers\\switch_1gang\\driver.compose.json",
+        "drivers\\switch_2gang\\driver.compose.json"
+      ],
+      "count": 3
+    },
+    {
+      "id": "TS0003",
+      "reason": "3-gang switch",
+      "drivers": [
+        "drivers\\switch_1gang\\driver.compose.json",
+        "drivers\\switch_2gang\\driver.compose.json",
+        "drivers\\switch_3gang\\driver.compose.json"
+      ],
+      "count": 3
+    },
+    {
+      "id": "TS0004",
+      "reason": "4-gang switch",
+      "drivers": [
+        "drivers\\switch_1gang\\driver.compose.json",
+        "drivers\\switch_3gang\\driver.compose.json",
+        "drivers\\switch_4gang\\driver.compose.json"
+      ],
+      "count": 3
+    }
+  ],
+  "needsReview": [
+    {
+      "id": "TS0207",
+      "drivers": [
+        "drivers\\rain_sensor\\driver.compose.json",
+        "drivers\\water_leak_sensor\\driver.compose.json"
+      ],
+      "count": 2,
+      "recommendation": "Vérifier si les drivers sont réellement différents"
+    },
+    {
+      "id": "TS0013",
+      "drivers": [
+        "drivers\\switch_1gang\\driver.compose.json",
+        "drivers\\switch_3gang\\driver.compose.json"
+      ],
+      "count": 2,
+      "recommendation": "Vérifier si les drivers sont réellement différents"
+    },
+    {
+      "id": "TS0014",
+      "drivers": [
+        "drivers\\switch_1gang\\driver.compose.json",
+        "drivers\\switch_4gang\\driver.compose.json"
+      ],
+      "count": 2,
+      "recommendation": "Vérifier si les drivers sont réellement différents"
+    }
+  ],
+  "shouldFix": [
+    {
+      "id": "_TZ3210_pagajpog",
+      "drivers": [
+        "drivers\\bulb_rgbw\\driver.compose.json",
+        "drivers\\dimmer_dual_channel\\driver.compose.json"
+      ],
+      "count": 2,
+      "recommendation": "Manufacturer ID devrait être unique par variant"
+    },
+    {
+      "id": "_TZ3000_0ghwhypc",
+      "drivers": [
+        "drivers\\climate_sensor\\driver.compose.json",
+        "drivers\\switch_1gang\\driver.compose.json"
+      ],
+      "count": 2,
+      "recommendation": "Manufacturer ID devrait être unique par variant"
+    },
+    {
+      "id": "_TZ3000_0hkmcrza",
+      "drivers": [
+        "drivers\\climate_sensor\\driver.compose.json",
+        "drivers\\plug_smart\\driver.compose.json"
+      ],
+      "count": 2,
+      "recommendation": "Manufacturer ID devrait être unique par variant"
+    },
+    {
+      "id": "_TZ3000_7ysdnebc",
+      "drivers": [
+        "drivers\\dimmer_dual_channel\\driver.compose.json",
+        "drivers\\dimmer_wall_1gang\\driver.compose.json"
+      ],
+      "count": 2,
+      "recommendation": "Manufacturer ID devrait être unique par variant"
+    },
+    {
+      "id": "_TZE204_ikvncluo",
+      "drivers": [
+        "drivers\\ir_blaster\\driver.compose.json",
+        "drivers\\presence_sensor_radar\\driver.compose.json",
+        "drivers\\water_tank_monitor\\driver.compose.json"
+      ],
+      "count": 3,
+      "recommendation": "Manufacturer ID devrait être unique par variant"
+    },
+    {
+      "id": "_TZ3000_18ejxno0",
+      "drivers": [
+        "drivers\\plug_smart\\driver.compose.json",
+        "drivers\\switch_1gang\\driver.compose.json"
+      ],
+      "count": 2,
+      "recommendation": "Manufacturer ID devrait être unique par variant"
+    },
+    {
+      "id": "_TZE200_aoclfnxz",
+      "drivers": [
+        "drivers\\radiator_valve\\driver.compose.json",
+        "drivers\\smart_heater_controller\\driver.compose.json"
+      ],
+      "count": 2,
+      "recommendation": "Manufacturer ID devrait être unique par variant"
+    },
+    {
+      "id": "_TZE200_b6wax7g0",
+      "drivers": [
+        "drivers\\radiator_valve\\driver.compose.json",
+        "drivers\\smart_heater_controller\\driver.compose.json"
+      ],
+      "count": 2,
+      "recommendation": "Manufacturer ID devrait être unique par variant"
+    },
+    {
+      "id": "_TZE200_c88teujp",
+      "drivers": [
+        "drivers\\radiator_valve\\driver.compose.json",
+        "drivers\\smart_heater_controller\\driver.compose.json"
+      ],
+      "count": 2,
+      "recommendation": "Manufacturer ID devrait être unique par variant"
+    },
+    {
+      "id": "_TZE200_hue3yfsn",
+      "drivers": [
+        "drivers\\radiator_valve\\driver.compose.json",
+        "drivers\\smart_heater_controller\\driver.compose.json"
+      ],
+      "count": 2,
+      "recommendation": "Manufacturer ID devrait être unique par variant"
+    },
+    {
+      "id": "_TZE204_aoclfnxz",
+      "drivers": [
+        "drivers\\radiator_valve\\driver.compose.json",
+        "drivers\\smart_heater_controller\\driver.compose.json"
+      ],
+      "count": 2,
+      "recommendation": "Manufacturer ID devrait être unique par variant"
+    },
+    {
+      "id": "_TZ3000_excgg5kb",
+      "drivers": [
+        "drivers\\switch_3gang\\driver.compose.json",
+        "drivers\\switch_4gang\\driver.compose.json"
+      ],
+      "count": 2,
+      "recommendation": "Manufacturer ID devrait être unique par variant"
+    },
+    {
+      "id": "_TZE284_c8ipbljq",
+      "drivers": [
+        "drivers\\switch_3gang\\driver.compose.json",
+        "drivers\\switch_wall_6gang\\driver.compose.json"
+      ],
+      "count": 2,
+      "recommendation": "Manufacturer ID devrait être unique par variant"
+    },
+    {
+      "id": "_TZE200_81isopgh",
+      "drivers": [
+        "drivers\\water_tank_monitor\\driver.compose.json",
+        "drivers\\water_valve_smart\\driver.compose.json"
+      ],
+      "count": 2,
+      "recommendation": "Manufacturer ID devrait être unique par variant"
+    },
+    {
+      "id": "_TZE200_htnnfasr",
+      "drivers": [
+        "drivers\\water_tank_monitor\\driver.compose.json",
+        "drivers\\water_valve_smart\\driver.compose.json"
+      ],
+      "count": 2,
+      "recommendation": "Manufacturer ID devrait être unique par variant"
+    }
+  ]
+}

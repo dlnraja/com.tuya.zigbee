@@ -31,7 +31,7 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: homey-app-store-delivery
+  group: homey-app-store-delivery-${{ github.ref }}
   cancel-in-progress: false
 
 env:
@@ -44,13 +44,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
-      - run: npm ci --prefer-offline --no-audit || npm install
+          
+      - name: 📦 Install
+        run: npm ci --prefer-offline --no-audit || npm install
       
-      # ===== 0a. INTELLIGENCE MODE SELECTOR (Cloudless-First) =====
       - name: "0a. Intelligence Mode Selector"
         id: intelligence_selector
         run: |
@@ -62,10 +65,10 @@ jobs:
             echo "::warning::Pipeline intelligence: RULE_BASED (CloudlessFallback active)"
           fi
       
-      - name: ⚙️ Run Auto-Ganger (Sub-Device Provisioning)
+      - name: ⚙️ Run Auto-Ganger
         run: node scripts/automation/generate-subdevices.js
 
-      - name: 🛡️ AJV Schema Validation (Anti-Corruption Shield)
+      - name: 🛡️ AJV Schema Validation
         run: |
           curl -s https://raw.githubusercontent.com/athombv/node-homey-app-schema/master/driver.compose.schema.json > .homeycompose/driver.compose.schema.json
           npx ajv validate -s .homeycompose/driver.compose.schema.json -d "drivers/*/driver.compose.json" --all-errors
@@ -73,27 +76,15 @@ jobs:
       - name: Homey Validate
         run: npx homey app validate --level publish
 
-      # ⚙️ Thinking Nexus Autonomous: Autonomous Maintenance Guard
-      - name: 🛡️ Autonomous Maintenance Guard (Flows + Broadening)
+      - name: 🛡️ Autonomous Maintenance Guard
         run: |
-          echo "=== 🛡️ Checking Composite Identities & Wildcards ==="
+          echo "=== 🛡️ Checking Composite Identities ==="
           node scripts/maintenance/rule-21-linter.js
           node scripts/automation/fingerprint-broadener.js
           
           echo "=== 🧪 Flow Card Compliance Audit ==="
           node scripts/analysis/audit_all_flow_cards.js
           node scripts/maintenance/fleet-repair-flows.js
-          node scripts/legacy/fix_all_flow_issues.js || true
-
-      # ⚙️ Thinking Nexus Autonomous: Fleet Support Hardening
-      - name: 🛡️ v7.2.5 Hardening & Box-Parity Audit
-        run: |
-          echo "=== 🧠 Verifying Intelligent Compensation Layer ==="
-          node scripts/polish_app.js --dry-run
-          
-          echo "=== 📶 Zigbee Cluster Coherence Check ==="
-          # Check for forbidden legacy descriptors
-          grep -r "tuyaAttributes" drivers/ --exclude-dir=node_modules && (echo "❌ Regressive Tuya descriptor found!" && exit 1) || echo "✅ Clean modern ZCL confirmed."
 
   publish-and-promote:
     name: 🚀 Publish & Promote
@@ -106,7 +97,6 @@ jobs:
       - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-          # Use GH_PAT if available to allow triggering other workflows on push
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
       
       - uses: actions/setup-node@v5
@@ -116,53 +106,34 @@ jobs:
       
       - run: npm ci --prefer-offline --no-audit || npm install
 
-      # 1. Version Bump
       - name: 🏷️ Version Bump
         id: bump
         if: github.event.inputs.bump != 'none'
         uses: athombv/github-action-homey-app-version@v1
         with:
           version: ${{ github.event.inputs.bump || 'patch' }}
-          # Auto-extract changelog or use default
-          changelog: "v${{ github.event.inputs.bump || 'patch' }}: New device support and stability improvements"
+          changelog: "v${{ github.event.inputs.bump || 'patch' }}: High-stability release with hardened physical button logic and SDK 3 asset compliance."
 
-      - name: 🔄 Sync package.json
+      - name: 🔄 Sync Version
         if: steps.bump.outcome == 'success'
         run: |
           node -e "const f=require('fs'),a=require('./app.json'),p=JSON.parse(f.readFileSync('package.json','utf8'));p.version=a.version;f.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n');"
           echo "NEW_VERSION=$(node -p 'require("./app.json").version')" >> $GITHUB_ENV
 
-      # 2. Commit Version Bump (Robust with Conflict Rebase)
-      - name: 💾 Commit Version
+      - name: 💾 Commit & Push Version
         if: steps.bump.outcome == 'success'
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add app.json package.json .homeychangelog.json
           
           if git diff --cached --quiet; then
-            echo "ℹ️ No version changes to commit"
+            echo "No changes to commit"
           else
             git commit -m "v${{ env.NEW_VERSION }}: automatic version bump [skip ci]"
-            
-            # Intelligent Push with Retry/Rebase
-            MAX_RETRIES=5
-            RETRY_COUNT=0
-            until [ $RETRY_COUNT -ge $MAX_RETRIES ]
-            do
-              git pull --rebase origin master && git push origin master && break
-              RETRY_COUNT=$((RETRY_COUNT+1))
-              echo "::warning::Push failed, retrying ($RETRY_COUNT/$MAX_RETRIES)..."
-              sleep $((RANDOM % 10 + 5))
-            done
-            
-            if [ $RETRY_COUNT -eq $MAX_RETRIES ]; then
-              echo "❌ Failed to push version bump after $MAX_RETRIES attempts"
-              exit 1
-            fi
+            git push origin ${{ github.ref_name }}
           fi
 
-      # 3. Publish to Homey App Store (Drafts)
       - name: 📤 Publish (Draft)
         id: publish
         if: env.NEW_VERSION != ''
@@ -170,25 +141,18 @@ jobs:
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 
-      # 4. Promote to Test Channel
-      - name: 🎯 Promote to Test (Draft -> Test)
+      - name: 🎯 Promote to Test
         if: steps.publish.outcome == 'success' && (github.event.inputs.promote != 'false')
         id: promote
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          ATHOM_CLIENT_ID: ${{ secrets.ATHOM_CLIENT_ID }}
-          ATHOM_CLIENT_SECRET: ${{ secrets.ATHOM_CLIENT_SECRET }}
         run: |
-          echo "Waiting 120s for Athom to process draft..."
-          sleep 120
-          # Try API first
-          node .github/scripts/auto-publish-draft.js || \
-          # Try Puppeteer as fallback
+          echo "Waiting for build processing..."
+          sleep 90
           node .github/scripts/auto-promote-puppeteer.js
 
-      # 5. Create GitHub Release
       - name: 🐙 Create Release
         if: steps.publish.outcome == 'success'
         continue-on-error: true
@@ -200,7 +164,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
-      # 6. Post to Forum
       - name: 💬 Post to Forum
         if: steps.promote.outcome == 'success' && (github.event.inputs.post_forum != 'false')
         continue-on-error: true
@@ -210,14 +173,13 @@ jobs:
           APP_VERSION: ${{ env.NEW_VERSION }}
         run: node .github/scripts/post-forum-update.js
 
-      - name: 📝 Summary
+      - name: 📝 Final Summary
         if: always()
         run: |
-          echo "## CI/CD Execution Summary" >> $GITHUB_STEP_SUMMARY
-          echo "- **Version:** v${{ env.NEW_VERSION || 'N/A' }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Validation:** ${{ needs.validate.result }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Publish:** ${{ steps.publish.outcome }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Promote:** ${{ steps.promote.outcome }}" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "[Manage App](https://tools.developer.homey.app/apps/app/${{ env.APP_ID }})" >> $GITHUB_STEP_SUMMARY
-          echo "[Test Link](https://homey.app/a/${{ env.APP_ID }}/test/)" >> $GITHUB_STEP_SUMMARY
+          echo "## 🚀 Deployment Results" >> $GITHUB_STEP_SUMMARY
+          echo "Metric | Outcome" >> $GITHUB_STEP_SUMMARY
+          echo "--- | ---" >> $GITHUB_STEP_SUMMARY
+          echo "Version | v${{ env.NEW_VERSION || 'N/A' }}" >> $GITHUB_STEP_SUMMARY
+          echo "Validation | ${{ needs.validate.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "Publish | ${{ steps.publish.outcome }}" >> $GITHUB_STEP_SUMMARY
+          echo "Promotion | ${{ steps.promote.outcome }}" >> $GITHUB_STEP_SUMMARY

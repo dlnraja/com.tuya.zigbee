@@ -22,7 +22,10 @@
     "approximation": {
       "usageConstant": 9
     },
-    "mains": true
+    "mains": true,
+    "batteries": [
+      "CR2450"
+    ]
   },
   "zigbee": {
     "manufacturerName": [
@@ -119,7 +122,8 @@
       "_TZ3210_3mpwqzuu",
       "_TZ3210_pagajpog",
       "_TZ3210_4ubylghk",
-      "_TZ3000_7ysdnebc"
+      "_TZ3000_7ysdnebc",
+      "_TZ3210_zdrhqmo0"
     ],
     "productId": [
       "A19 W 10 YEAR",
@@ -171,7 +175,8 @@
       "ts110e",
       "ts110f",
       "zbt-dimmablelight",
-      "TS0501"
+      "TS0501",
+      "TS0502B"
     ],
     "endpoints": {
       "1": {

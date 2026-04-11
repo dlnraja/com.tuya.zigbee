@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect x="35" y="20" width="30" height="60" rx="5" fill="#4A90D9" stroke="#2E5A8E" stroke-width="2"/>
+  <rect x="42" y="70" width="16" height="20" rx="2" fill="#2E5A8E"/>
+  <circle cx="50" cy="35" r="8" fill="#FFD93D" stroke="#E6B800" stroke-width="2">
+    <animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite"/>
+  </circle>
+  <text x="50" y="95" text-anchor="middle" font-size="8" fill="#333">5 sec</text>
+</svg>
