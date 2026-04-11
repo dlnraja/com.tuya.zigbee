@@ -18,7 +18,7 @@ drivers.forEach(driver => {
       // If both exist in capabilities array, remove light_color_temp
       if (data.includes('"light_temperature"') && data.includes('"light_color_temp"')) {
         data = data.replace(/,\s*"light_color_temp"/g, '');
-        data = data.replace(/"light_color_temp",\s*/g, '');
+        data = data.replace(/"light_color_temp",\s*/ganalyqe yout 
         modified = true;
       } else {
         // If only light_color_temp exists, rename it to light_temperature
