@@ -108,6 +108,10 @@
           "en": "Auto-Off Timer triggered",
           "fr": "Minuterie Auto-Off déclenchée"
         },
+        "titleFormatted": {
+          "en": "Auto-Off Timer triggered on [[device]]",
+          "fr": "Minuterie Auto-Off déclenchée sur [[device]]"
+        },
         "args": [
           {
             "name": "device",
@@ -121,6 +125,10 @@
           "en": "Button was triple-clicked (Software)",
           "fr": "Bouton triple-cliqué (Logiciel)"
         },
+        "titleFormatted": {
+          "en": "[[device]] button was triple-clicked",
+          "fr": "Bouton de [[device]] triple-cliqué"
+        },
         "args": [
           {
             "name": "device",
@@ -133,6 +141,10 @@
         "title": {
           "en": "Overload detected (Safety Cutoff)",
           "fr": "Surcharge détectée (Coupure Sécurité)"
+        },
+        "titleFormatted": {
+          "en": "Overload detected on [[device]]",
+          "fr": "Surcharge détectée sur [[device]]"
         },
         "args": [
           {
@@ -157,6 +169,10 @@
         "title": {
           "en": "Radio Presence Sensing Detected",
           "fr": "Présence Radio Détectée (Inferred)"
+        },
+        "titleFormatted": {
+          "en": "Radio Presence detected on [[device]]",
+          "fr": "Présence Radio détectée sur [[device]]"
         },
         "hint": {
           "en": "Triggered when human movement is inferred from Zigbee signal fluctuations",
@@ -63959,6 +63975,10 @@
         "title": {
           "en": "Set Software Child Lock",
           "fr": "Définir Sécurité Enfant Logicielle"
+        },
+        "titleFormatted": {
+          "en": "Set Software Child Lock to [[locked]]",
+          "fr": "Définir Sécurité Enfant à [[locked]]"
         },
         "args": [
           {

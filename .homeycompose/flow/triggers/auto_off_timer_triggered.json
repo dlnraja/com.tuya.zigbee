@@ -4,6 +4,10 @@
     "en": "Auto-Off Timer triggered",
     "fr": "Minuterie Auto-Off déclenchée"
   },
+  "titleFormatted": {
+    "en": "Auto-Off Timer triggered on [[device]]",
+    "fr": "Minuterie Auto-Off déclenchée sur [[device]]"
+  },
   "args": [
     {
       "name": "device",

@@ -4,6 +4,10 @@
     "en": "Radio Presence Sensing Detected",
     "fr": "Présence Radio Détectée (Inferred)"
   },
+  "titleFormatted": {
+    "en": "Radio Presence detected on [[device]]",
+    "fr": "Présence Radio détectée sur [[device]]"
+  },
   "hint": {
     "en": "Triggered when human movement is inferred from Zigbee signal fluctuations",
     "fr": "Déclenché quand un mouvement est déduit des fluctuations du signal Zigbee"

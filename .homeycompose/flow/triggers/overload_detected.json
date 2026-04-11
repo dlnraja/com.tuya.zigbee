@@ -4,6 +4,10 @@
     "en": "Overload detected (Safety Cutoff)",
     "fr": "Surcharge détectée (Coupure Sécurité)"
   },
+  "titleFormatted": {
+    "en": "Overload detected on [[device]]",
+    "fr": "Surcharge détectée sur [[device]]"
+  },
   "args": [
     {
       "name": "device",
