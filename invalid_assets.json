@@ -1,0 +1,1832 @@
+[
+  {
+    "driver": "air_purifier",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\air_purifier\\assets\\images\\large.png"
+  },
+  {
+    "driver": "air_purifier_climate_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\air_purifier_climate_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "air_purifier_curtain_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\air_purifier_curtain_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "air_purifier_dimmer_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\air_purifier_dimmer_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "air_purifier_din_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\air_purifier_din_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "air_purifier_lcdtemphumidsensor_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\air_purifier_lcdtemphumidsensor_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "air_purifier_motion_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\air_purifier_motion_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "air_purifier_presence_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\air_purifier_presence_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "air_purifier_quality_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\air_purifier_quality_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "air_purifier_sensor_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\air_purifier_sensor_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "air_purifier_siren_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\air_purifier_siren_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "air_purifier_soil_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\air_purifier_soil_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "air_purifier_switch_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\air_purifier_switch_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "air_quality_co2",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\air_quality_co2\\assets\\images\\large.png"
+  },
+  {
+    "driver": "air_quality_comprehensive",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\air_quality_comprehensive\\assets\\images\\large.png"
+  },
+  {
+    "driver": "air_quality_comprehensive_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\air_quality_comprehensive_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "blaster_remote_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\blaster_remote_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "bulb_dimmable",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\bulb_dimmable\\assets\\images\\large.png"
+  },
+  {
+    "driver": "bulb_dimmable_dimmer_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\bulb_dimmable_dimmer_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "bulb_rgb",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\bulb_rgb\\assets\\images\\large.png"
+  },
+  {
+    "driver": "bulb_rgbw",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\bulb_rgbw\\assets\\images\\large.png"
+  },
+  {
+    "driver": "bulb_rgb_led_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\bulb_rgb_led_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "bulb_rgb_rgbw_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\bulb_rgb_rgbw_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "bulb_tunable_white",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\bulb_tunable_white\\assets\\images\\large.png"
+  },
+  {
+    "driver": "bulb_white",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\bulb_white\\assets\\images\\large.png"
+  },
+  {
+    "driver": "button_emergency_sos",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_emergency_sos\\assets\\images\\large.png"
+  },
+  {
+    "driver": "button_wireless",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless\\assets\\images\\large.png"
+  },
+  {
+    "driver": "button_wireless_1",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless_1\\assets\\images\\large.png"
+  },
+  {
+    "driver": "button_wireless_2",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless_2\\assets\\images\\large.png"
+  },
+  {
+    "driver": "button_wireless_3",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless_3\\assets\\images\\large.png"
+  },
+  {
+    "driver": "button_wireless_4",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless_4\\assets\\images\\large.png"
+  },
+  {
+    "driver": "button_wireless_6",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless_6\\assets\\images\\large.png"
+  },
+  {
+    "driver": "button_wireless_8",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless_8\\assets\\images\\large.png"
+  },
+  {
+    "driver": "button_wireless_fingerbot_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless_fingerbot_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "button_wireless_plug_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless_plug_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "button_wireless_scene_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless_scene_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "button_wireless_smart_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless_smart_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "button_wireless_switch_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless_switch_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "button_wireless_usb_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless_usb_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "button_wireless_valve_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless_valve_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "button_wireless_wall_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\button_wireless_wall_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "ceiling_fan",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\ceiling_fan\\assets\\images\\large.png"
+  },
+  {
+    "driver": "climate_sensor",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\climate_sensor\\assets\\images\\large.png"
+  },
+  {
+    "driver": "climate_sensor_dimmer_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\climate_sensor_dimmer_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "climate_sensor_gas_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\climate_sensor_gas_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "climate_sensor_plug_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\climate_sensor_plug_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "climate_sensor_presence_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\climate_sensor_presence_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "climate_sensor_smart_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\climate_sensor_smart_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "climate_sensor_switch_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\climate_sensor_switch_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "contact_sensor",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\contact_sensor\\assets\\images\\large.png"
+  },
+  {
+    "driver": "contact_sensor_curtain_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\contact_sensor_curtain_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "contact_sensor_dimmer_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\contact_sensor_dimmer_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "contact_sensor_plug_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\contact_sensor_plug_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "contact_sensor_switch_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\contact_sensor_switch_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "contact_sensor_zigbee_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\contact_sensor_zigbee_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "co_sensor",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\co_sensor\\assets\\images\\large.png"
+  },
+  {
+    "driver": "curtain_motor",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\curtain_motor\\assets\\images\\large.png"
+  },
+  {
+    "driver": "curtain_motor_shutter_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\curtain_motor_shutter_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "curtain_motor_tilt",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\curtain_motor_tilt\\assets\\images\\large.png"
+  },
+  {
+    "driver": "curtain_motor_tilt_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\curtain_motor_tilt_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "curtain_motor_wall_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\curtain_motor_wall_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_air_purifier_din_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_air_purifier_din_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_air_purifier_floor_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_air_purifier_floor_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_air_purifier_humidifier_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_air_purifier_humidifier_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_air_purifier_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_air_purifier_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_air_purifier_motion_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_air_purifier_motion_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_air_purifier_plug_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_air_purifier_plug_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_air_purifier_presence_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_air_purifier_presence_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_air_purifier_quality_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_air_purifier_quality_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_air_purifier_radiator_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_air_purifier_radiator_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_air_purifier_siren_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_air_purifier_siren_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_air_purifier_smart_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_air_purifier_smart_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_air_purifier_smoke_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_air_purifier_smoke_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_air_purifier_soil_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_air_purifier_soil_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_air_purifier_thermostat_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_air_purifier_thermostat_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_air_purifier_water_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_air_purifier_water_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_din_rail_meter_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_din_rail_meter_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_floor_heating_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_floor_heating_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_floor_heating_thermostat_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_floor_heating_thermostat_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_generic_tuya_universal_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_generic_tuya_universal_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_plug_energy_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_plug_energy_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_plug_energy_monitor_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_plug_energy_monitor_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_plug_smart_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_plug_smart_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_plug_smart_water_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_plug_smart_water_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_radiator_valve_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_radiator_valve_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "device_radiator_valve_smart_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\device_radiator_valve_smart_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "dimmer_3gang",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\dimmer_3gang\\assets\\images\\large.png"
+  },
+  {
+    "driver": "dimmer_dual_channel",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\dimmer_dual_channel\\assets\\images\\large.png"
+  },
+  {
+    "driver": "dimmer_dual_channel_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\dimmer_dual_channel_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "dimmer_ts110e",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\dimmer_ts110e\\assets\\images\\large.png"
+  },
+  {
+    "driver": "dimmer_wall_1gang",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\dimmer_wall_1gang\\assets\\images\\large.png"
+  },
+  {
+    "driver": "dimmer_wall_plug_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\dimmer_wall_plug_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "dimmer_wall_switch_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\dimmer_wall_switch_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "dimmer_wall_water_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\dimmer_wall_water_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "din_rail_meter",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\din_rail_meter\\assets\\images\\large.png"
+  },
+  {
+    "driver": "din_rail_switch",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\din_rail_switch\\assets\\images\\large.png"
+  },
+  {
+    "driver": "diy_custom_zigbee",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\diy_custom_zigbee\\assets\\images\\large.png"
+  },
+  {
+    "driver": "doorbell",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\doorbell\\assets\\images\\large.png"
+  },
+  {
+    "driver": "door_controller",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\door_controller\\assets\\images\\large.png"
+  },
+  {
+    "driver": "door_controller_garage_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\door_controller_garage_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "energy_meter_3phase",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\energy_meter_3phase\\assets\\images\\large.png"
+  },
+  {
+    "driver": "fan_controller",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\fan_controller\\assets\\images\\large.png"
+  },
+  {
+    "driver": "fingerbot",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\fingerbot\\assets\\images\\large.png"
+  },
+  {
+    "driver": "fingerbot_switch_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\fingerbot_switch_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "fingerprint_lock",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\fingerprint_lock\\assets\\images\\large.png"
+  },
+  {
+    "driver": "floor_heating_thermostat",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\floor_heating_thermostat\\assets\\images\\large.png"
+  },
+  {
+    "driver": "formaldehyde_sensor",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\formaldehyde_sensor\\assets\\images\\large.png"
+  },
+  {
+    "driver": "garage_door",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\garage_door\\assets\\images\\large.png"
+  },
+  {
+    "driver": "garage_door_opener",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\garage_door_opener\\assets\\images\\large.png"
+  },
+  {
+    "driver": "gas_detector",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\gas_detector\\assets\\images\\large.png"
+  },
+  {
+    "driver": "gas_sensor",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\gas_sensor\\assets\\images\\large.png"
+  },
+  {
+    "driver": "gateway_zigbee_bridge",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\gateway_zigbee_bridge\\assets\\images\\large.png"
+  },
+  {
+    "driver": "generic_diy",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\generic_diy\\assets\\images\\large.png"
+  },
+  {
+    "driver": "generic_tuya",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\generic_tuya\\assets\\images\\large.png"
+  },
+  {
+    "driver": "handheld_remote_4_buttons",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\handheld_remote_4_buttons\\assets\\images\\large.png"
+  },
+  {
+    "driver": "humidifier",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\humidifier\\assets\\images\\large.png"
+  },
+  {
+    "driver": "hvac_air_conditioner",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\hvac_air_conditioner\\assets\\images\\large.png"
+  },
+  {
+    "driver": "hvac_controller",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\hvac_controller\\assets\\images\\large.png"
+  },
+  {
+    "driver": "hvac_dehumidifier",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\hvac_dehumidifier\\assets\\images\\large.png"
+  },
+  {
+    "driver": "illuminance_sensor",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\illuminance_sensor\\assets\\images\\large.png"
+  },
+  {
+    "driver": "ir_blaster",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\ir_blaster\\assets\\images\\large.png"
+  },
+  {
+    "driver": "ir_remote",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\ir_remote\\assets\\images\\large.png"
+  },
+  {
+    "driver": "lcdtemphumidsensor",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\lcdtemphumidsensor\\assets\\images\\large.png"
+  },
+  {
+    "driver": "lcdtemphumidsensor_plug_energy_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\lcdtemphumidsensor_plug_energy_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "led_controller_cct",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\led_controller_cct\\assets\\images\\large.png"
+  },
+  {
+    "driver": "led_controller_dimmable",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\led_controller_dimmable\\assets\\images\\large.png"
+  },
+  {
+    "driver": "led_controller_rgb",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\led_controller_rgb\\assets\\images\\large.png"
+  },
+  {
+    "driver": "led_strip",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\led_strip\\assets\\images\\large.png"
+  },
+  {
+    "driver": "led_strip_advanced",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\led_strip_advanced\\assets\\images\\large.png"
+  },
+  {
+    "driver": "led_strip_rgbw",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\led_strip_rgbw\\assets\\images\\large.png"
+  },
+  {
+    "driver": "light_bulb_rgb_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\light_bulb_rgb_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "light_bulb_rgb_led_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\light_bulb_rgb_led_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\light_bulb_rgb_rgbw_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "light_sensor_outdoor",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\light_sensor_outdoor\\assets\\images\\large.png"
+  },
+  {
+    "driver": "lock_smart",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\lock_smart\\assets\\images\\large.png"
+  },
+  {
+    "driver": "module_mini_switch",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\module_mini_switch\\assets\\images\\large.png"
+  },
+  {
+    "driver": "module_mini_switch_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\module_mini_switch_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "motion_sensor",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_sensor\\assets\\images\\large.png"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_sensor_2\\assets\\images\\large.png"
+  },
+  {
+    "driver": "motion_sensor_radar_mmwave",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_sensor_radar_mmwave\\assets\\images\\large.png"
+  },
+  {
+    "driver": "motion_sensor_switch_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\motion_sensor_switch_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "pet_feeder",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\pet_feeder\\assets\\images\\large.png"
+  },
+  {
+    "driver": "pet_feeder_zigbee",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\pet_feeder_zigbee\\assets\\images\\large.png"
+  },
+  {
+    "driver": "plug_energy_monitor",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\plug_energy_monitor\\assets\\images\\large.png"
+  },
+  {
+    "driver": "plug_energy_monitor_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\plug_energy_monitor_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "plug_smart",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\plug_smart\\assets\\images\\large.png"
+  },
+  {
+    "driver": "plug_smart_switch_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\plug_smart_switch_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "pool_pump",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\pool_pump\\assets\\images\\large.png"
+  },
+  {
+    "driver": "power_clamp_meter",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\power_clamp_meter\\assets\\images\\large.png"
+  },
+  {
+    "driver": "power_meter",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\power_meter\\assets\\images\\large.png"
+  },
+  {
+    "driver": "presence_sensor_ceiling",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\presence_sensor_ceiling\\assets\\images\\large.png"
+  },
+  {
+    "driver": "presence_sensor_radar",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\presence_sensor_radar\\assets\\images\\large.png"
+  },
+  {
+    "driver": "radiator_controller",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\radiator_controller\\assets\\images\\large.png"
+  },
+  {
+    "driver": "radiator_valve",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\radiator_valve\\assets\\images\\large.png"
+  },
+  {
+    "driver": "radiator_valve_zigbee",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\radiator_valve_zigbee\\assets\\images\\large.png"
+  },
+  {
+    "driver": "radiator_wifi_tuya",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\radiator_wifi_tuya\\assets\\images\\large.png"
+  },
+  {
+    "driver": "rain_sensor",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\rain_sensor\\assets\\images\\large.png"
+  },
+  {
+    "driver": "remote_button_emergency_sos_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\remote_button_emergency_sos_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "remote_button_wireless_handheld_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\remote_button_wireless_handheld_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "remote_button_wireless_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\remote_button_wireless_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "remote_button_wireless_plug_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\remote_button_wireless_plug_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "remote_button_wireless_scene_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\remote_button_wireless_scene_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "remote_button_wireless_smart_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\remote_button_wireless_smart_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "remote_button_wireless_usb_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\remote_button_wireless_usb_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "remote_button_wireless_valve_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\remote_button_wireless_valve_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "remote_button_wireless_wall_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\remote_button_wireless_wall_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "remote_dimmer",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\remote_dimmer\\assets\\images\\large.png"
+  },
+  {
+    "driver": "scene_switch_1",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_switch_1\\assets\\images\\large.png"
+  },
+  {
+    "driver": "scene_switch_2",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_switch_2\\assets\\images\\large.png"
+  },
+  {
+    "driver": "scene_switch_3",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_switch_3\\assets\\images\\large.png"
+  },
+  {
+    "driver": "scene_switch_4",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_switch_4\\assets\\images\\large.png"
+  },
+  {
+    "driver": "scene_switch_6",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_switch_6\\assets\\images\\large.png"
+  },
+  {
+    "driver": "scene_switch_wall_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\scene_switch_wall_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "sensor_climate_contact_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_climate_contact_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "sensor_climate_lcdtemphumidsensor_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_climate_lcdtemphumidsensor_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "sensor_climate_motion_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_climate_motion_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "sensor_climate_presence_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_climate_presence_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "sensor_climate_smart_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_climate_smart_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_climate_temphumidsensor_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "sensor_contact_motion_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_contact_motion_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "sensor_contact_plug_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_contact_plug_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "sensor_contact_presence_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_contact_presence_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "sensor_contact_rain_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_contact_rain_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "sensor_contact_water_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_contact_water_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "sensor_contact_zigbee_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_contact_zigbee_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "sensor_gas_presence_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_gas_presence_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "sensor_lcdtemphumidsensor_soil_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_lcdtemphumidsensor_soil_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "sensor_motion_presence_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_motion_presence_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "sensor_motion_radar_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_motion_radar_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "sensor_presence_radar_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_presence_radar_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "shutter_roller_controller",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\shutter_roller_controller\\assets\\images\\large.png"
+  },
+  {
+    "driver": "siren",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\siren\\assets\\images\\large.png"
+  },
+  {
+    "driver": "sirentemphumidsensor",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sirentemphumidsensor\\assets\\images\\large.png"
+  },
+  {
+    "driver": "siren_sirentemphumidsensor_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\siren_sirentemphumidsensor_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "smart_breaker",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_breaker\\assets\\images\\large.png"
+  },
+  {
+    "driver": "smart_button_switch",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_button_switch\\assets\\images\\large.png"
+  },
+  {
+    "driver": "smart_heater",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_heater\\assets\\images\\large.png"
+  },
+  {
+    "driver": "smart_heater_controller",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_heater_controller\\assets\\images\\large.png"
+  },
+  {
+    "driver": "smart_knob",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_knob\\assets\\images\\large.png"
+  },
+  {
+    "driver": "smart_knob_rotary",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_knob_rotary\\assets\\images\\large.png"
+  },
+  {
+    "driver": "smart_knob_rotary_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_knob_rotary_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "smart_knob_switch",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_knob_switch\\assets\\images\\large.png"
+  },
+  {
+    "driver": "smart_knob_switch_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_knob_switch_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "smart_lcd_thermostat",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_lcd_thermostat\\assets\\images\\large.png"
+  },
+  {
+    "driver": "smart_rcbo",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_rcbo\\assets\\images\\large.png"
+  },
+  {
+    "driver": "smart_remote_1_button",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_remote_1_button\\assets\\images\\large.png"
+  },
+  {
+    "driver": "smart_remote_1_button_2",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_remote_1_button_2\\assets\\images\\large.png"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_remote_4_buttons\\assets\\images\\large.png"
+  },
+  {
+    "driver": "smart_scene_panel",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_scene_panel\\assets\\images\\large.png"
+  },
+  {
+    "driver": "smoke_detector_advanced",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smoke_detector_advanced\\assets\\images\\large.png"
+  },
+  {
+    "driver": "soil_sensor",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\soil_sensor\\assets\\images\\large.png"
+  },
+  {
+    "driver": "switch_1gang",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_1gang\\assets\\images\\large.png"
+  },
+  {
+    "driver": "switch_2gang",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_2gang\\assets\\images\\large.png"
+  },
+  {
+    "driver": "switch_3gang",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_3gang\\assets\\images\\large.png"
+  },
+  {
+    "driver": "switch_4gang",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_4gang\\assets\\images\\large.png"
+  },
+  {
+    "driver": "switch_dimmer_1gang",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_dimmer_1gang\\assets\\images\\large.png"
+  },
+  {
+    "driver": "switch_hybrid",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_hybrid\\assets\\images\\large.png"
+  },
+  {
+    "driver": "switch_plug_1",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_plug_1\\assets\\images\\large.png"
+  },
+  {
+    "driver": "switch_plug_2",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_plug_2\\assets\\images\\large.png"
+  },
+  {
+    "driver": "switch_temp_sensor",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_temp_sensor\\assets\\images\\large.png"
+  },
+  {
+    "driver": "switch_wall_5gang",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_wall_5gang\\assets\\images\\large.png"
+  },
+  {
+    "driver": "switch_wall_6gang",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_wall_6gang\\assets\\images\\large.png"
+  },
+  {
+    "driver": "switch_wall_7gang",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_wall_7gang\\assets\\images\\large.png"
+  },
+  {
+    "driver": "switch_wall_8gang",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_wall_8gang\\assets\\images\\large.png"
+  },
+  {
+    "driver": "switch_wireless",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\switch_wireless\\assets\\images\\large.png"
+  },
+  {
+    "driver": "temphumidsensor",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\temphumidsensor\\assets\\images\\large.png"
+  },
+  {
+    "driver": "thermostat_4ch",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\thermostat_4ch\\assets\\images\\large.png"
+  },
+  {
+    "driver": "thermostat_tuya_dp",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\thermostat_tuya_dp\\assets\\images\\large.png"
+  },
+  {
+    "driver": "universal_fallback",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\universal_fallback\\assets\\images\\large.png"
+  },
+  {
+    "driver": "universal_zigbee",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\universal_zigbee\\assets\\images\\large.png"
+  },
+  {
+    "driver": "usb_dongle_dual_repeater",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\usb_dongle_dual_repeater\\assets\\images\\large.png"
+  },
+  {
+    "driver": "usb_dongle_triple",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\usb_dongle_triple\\assets\\images\\large.png"
+  },
+  {
+    "driver": "usb_outlet_advanced",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\usb_outlet_advanced\\assets\\images\\large.png"
+  },
+  {
+    "driver": "valve_irrigation",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\valve_irrigation\\assets\\images\\large.png"
+  },
+  {
+    "driver": "valve_single",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\valve_single\\assets\\images\\large.png"
+  },
+  {
+    "driver": "vibration_sensor",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\vibration_sensor\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wall_curtain_switch",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_curtain_switch\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wall_dimmer_1gang_1way",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_dimmer_1gang_1way\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wall_remote_1_gang",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_remote_1_gang\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wall_remote_2_gang",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_remote_2_gang\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wall_remote_3_gang",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_remote_3_gang\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wall_remote_4_gang",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_remote_4_gang\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wall_remote_4_gang_2",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_remote_4_gang_2\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wall_remote_4_gang_3",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_remote_4_gang_3\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_remote_6_gang\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wall_switch_1gang_1way",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_switch_1gang_1way\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wall_switch_2gang_1way",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_switch_2gang_1way\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wall_switch_3gang_1way",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_switch_3gang_1way\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wall_switch_4gang_1way",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_switch_4gang_1way\\assets\\images\\large.png"
+  },
+  {
+    "driver": "water_leak_sensor",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\water_leak_sensor\\assets\\images\\large.png"
+  },
+  {
+    "driver": "water_tank_monitor",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\water_tank_monitor\\assets\\images\\large.png"
+  },
+  {
+    "driver": "water_valve_garden",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\water_valve_garden\\assets\\images\\large.png"
+  },
+  {
+    "driver": "water_valve_smart",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\water_valve_smart\\assets\\images\\large.png"
+  },
+  {
+    "driver": "weather_station_outdoor",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\weather_station_outdoor\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_air_purifier",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_air_purifier\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_air_quality",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_air_quality\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_camera",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_camera\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_cover",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_cover\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_dehumidifier",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_dehumidifier\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_dimmer",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_dimmer\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_doorbell",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_doorbell\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_door_lock",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_door_lock\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_ewelink_bulb",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_ewelink_bulb\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_ewelink_dimmer",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_ewelink_dimmer\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_ewelink_fan",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_ewelink_fan\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_ewelink_led",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_ewelink_led\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_ewelink_plug",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_ewelink_plug\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_ewelink_pow",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_ewelink_pow\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_ewelink_switch",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_ewelink_switch\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_ewelink_switch_2ch",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_ewelink_switch_2ch\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_ewelink_switch_4ch",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_ewelink_switch_4ch\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_ewelink_th",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_ewelink_th\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_fan",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_fan\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_garage_door",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_garage_door\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_generic",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_generic\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_heater",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_heater\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_humidifier",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_humidifier\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_ir_remote",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_ir_remote\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_led_strip",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_led_strip\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_light",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_light\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_pet_feeder",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_pet_feeder\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_plug",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_plug\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_power_strip",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_power_strip\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_robot_vacuum",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_robot_vacuum\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_sensor",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_sensor\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_siren",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_siren\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_sonoff_basicr4",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_sonoff_basicr4\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_sonoff_dualr3",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_sonoff_dualr3\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_sonoff_micro",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_sonoff_micro\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_sonoff_minir3",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_sonoff_minir3\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_sonoff_minir4",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_sonoff_minir4\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_sonoff_pow_elite",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_sonoff_pow_elite\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_sonoff_smate2",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_sonoff_smate2\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_sonoff_thr316d",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_sonoff_thr316d\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_sonoff_tx_1ch",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_sonoff_tx_1ch\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_sonoff_tx_2ch",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_sonoff_tx_2ch\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_sonoff_tx_3ch",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_sonoff_tx_3ch\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_switch",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_switch\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_switch_2gang",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_switch_2gang\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_switch_3gang",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_switch_3gang\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_switch_4gang",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_switch_4gang\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_thermostat",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_thermostat\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_water_tank_monitor",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_water_tank_monitor\\assets\\images\\large.png"
+  },
+  {
+    "driver": "wifi_water_valve",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_water_valve\\assets\\images\\large.png"
+  },
+  {
+    "driver": "zigbee_repeater",
+    "width": 300,
+    "height": 300,
+    "path": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\zigbee_repeater\\assets\\images\\large.png"
+  }
+]

@@ -58,7 +58,6 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
     // causing "Missing Capability Listener: onoff" for standard Tuya DP 2-gang switches
     // (Forum: Rikjes #1676, _TZ3000_jl7qyupf)
     await super.onNodeInit({ zclNode });
-    this.initPhysicalButtonDetection(); // rule-19 injected
     
 
     // v5.5.26: Setup power measurement for ZCL devices
@@ -169,7 +168,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
 
       if (typeof meteringCluster.on === 'function') {
         // Current summation delivered (kWh)
-        meteringCluster.on('attr.currentSummationDelivered', (value) => {
+        meteringCluster.on('attr.current summation delivered', (value) => {
           const kwh = value / 1000; // Typically in Wh
           this.log(`[ZCL-DATA] switch.energy raw=${value} → ${kwh}kWh`);
           if (this.hasCapability('meter_power')) {
@@ -306,6 +305,9 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
    * Enhanced with physical button flow triggers (packetninja technique)
    */
   async _initZclOnlyMode(zclNode) {
+    // v7.2.5: Ensure all gang capabilities are present (HOBEIAN fix)
+    await this._migrateCapabilities().catch(e => this.log(`[BSEED-2G] ⚠️ Migrate: ${e.message}`));
+
     // v5.13.2: Unified listener registration (Capability + Flow Cards)
     // Inherited from HybridSwitchBase, handles ZCL/DP fallback automatically
     this._registerCapabilityListeners();
@@ -365,8 +367,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_2gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
             try {
-              const card =
-      this._getFlowCard(flowId)
+              const card = this._getFlowCard(flowId);
               if (card) await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
               this.log(`[BSEED-2G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
             } catch (e) { }
@@ -374,8 +375,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
             const sceneId = `switch_2gang_gang${epNum}_scene`;
             try {
-              const card =
-      this._getFlowCard(sceneId)
+              const card = this._getFlowCard(sceneId);
               if (card) await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
               this.log(`[BSEED-2G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
             } catch (e) { }
@@ -454,4 +454,3 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
 }
 
 module.exports = Switch2GangDevice;
-

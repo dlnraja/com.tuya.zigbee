@@ -676,6 +676,9 @@ class Button1GangDevice extends ButtonDevice {
    * Sleepy devices only accept commands when awake
    */
   async onEndDeviceAnnounce() {
+    // v7.3.0: Call parent handler to re-bind standard clusters
+    await super.onEndDeviceAnnounce();
+
     this.log('[BUTTON1] 📡 Device announced (wake/rejoin)');
     
     // Try to bind onOff cluster when device wakes

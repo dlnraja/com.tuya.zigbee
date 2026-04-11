@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "7.2.5",
+  "version": "7.2.6",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -63968,7 +63968,7 @@
           },
           {
             "name": "locked",
-            "type": "boolean"
+            "type": "checkbox"
           }
         ]
       },
@@ -91635,9 +91635,7 @@
       "capabilities": [
         "dim",
         "measure_pm25",
-        "onoff",
-        "measure_radio_stability",
-        "measure_maintenance_score"
+        "onoff"
       ],
       "capabilitiesOptions": {
         "dim": {
@@ -91731,7 +91729,6 @@
           "_TZ3000_ywagc4rj",
           "_TZ3000_itnrsufe",
           "_TZ3000_bjawzodf",
-          "_TZ3210_ncw88jfq",
           "_TZE200_bjawzodf",
           "_TZE200_zl1kmjqx",
           "_TZE200_locansqn",
@@ -91813,15 +91810,12 @@
           "_TZ3000_zl1kmjqx",
           "_TZ3000_6uzkisv2",
           "_TZE204_yjjdcqsq",
-          "_TZE200_vvmbj46n",
-          "_TZE200_yjjdcqsq",
           "_TZE200_utkemkbs",
           "_TZE204_upagmta9",
           "_TZE204_utkemkbs",
           "_TZE204_9yapgbuv",
           "_TZE200_cirvgep4",
           "_TZE204_cirvgep4",
-          "_TZE200_9yapgbuv",
           "_TZE200_sur6q7ko",
           "_TZE200_hue3yfsn",
           "_TZE200_husqqvux",
@@ -91912,14 +91906,6 @@
         }
       },
       "maintenanceActions": [
-        {
-          "id": "ota_check",
-          "title": {
-            "en": "Check Zigbee OTA Update",
-            "fr": "Vérifier MàJ OTA",
-            "nl": "Controleer op OTA-updates"
-          }
-        },
         {
           "id": "ota_check",
           "title": {
@@ -92178,45 +92164,15 @@
           "_TZ3000_BJAWZODF",
           "_TZ3000_DOWJ6GYI",
           "_TZ3000_F2BW0B6K",
-          "_TZ3000_FIE1DPKM",
           "_TZ3000_ITNRSUFE",
           "_TZ3000_QAAYSLLP",
           "_TZ3000_RUSU2VZB",
           "_TZ3000_YD2E749Y",
-          "_TZ3000_YWAGC4RJ",
-          "_TZ3210_NCW88JFQ",
-          "_tyzb01_a476raq2",
-          "_tyzb01_ftdkanlj",
-          "_tyzb01_hjsgdkfl",
-          "_tyzb01_kvwjujy9",
-          "_tz2000_a476raq2",
-          "_tz2000_xogb73am",
-          "_tz3000_0s1izerx",
-          "_tz3000_8ybe88nf",
-          "_tz3000_akqdg6g7",
-          "_tz3000_bguser20",
-          "_tz3000_bjawzodf",
-          "_tz3000_dowj6gyi",
-          "_tz3000_f2bw0b6k",
-          "_tz3000_fie1dpkm",
-          "_tz3000_itnrsufe",
-          "_tz3000_qaaysllp",
-          "_tz3000_rusu2vzb",
-          "_tz3000_yd2e749y",
-          "_tz3000_ywagc4rj",
-          "_tz3210_ncw88jfq"
+          "_TZ3000_YWAGC4RJ"
         ],
         "productId": [
-          "TS0201",
           "TS0601",
-          "ts0201",
-          "ts0601",
-          "RH3052",
-          "TS0222",
-          "TY0201",
-          "rh3052",
-          "ts0222",
-          "ty0201"
+          "ts0601"
         ],
         "endpoints": {
           "1": {
@@ -99940,7 +99896,10 @@
         "approximation": {
           "usageConstant": 9
         },
-        "mains": true
+        "mains": true,
+        "batteries": [
+          "CR2450"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -100037,7 +99996,8 @@
           "_TZ3210_3mpwqzuu",
           "_TZ3210_pagajpog",
           "_TZ3210_4ubylghk",
-          "_TZ3000_7ysdnebc"
+          "_TZ3000_7ysdnebc",
+          "_TZ3210_zdrhqmo0"
         ],
         "productId": [
           "A19 W 10 YEAR",
@@ -100089,7 +100049,8 @@
           "ts110e",
           "ts110f",
           "zbt-dimmablelight",
-          "TS0501"
+          "TS0501",
+          "TS0502B"
         ],
         "endpoints": {
           "1": {
@@ -100931,7 +100892,10 @@
         "approximation": {
           "usageConstant": 9
         },
-        "mains": true
+        "mains": true,
+        "batteries": [
+          "CR2032"
+        ]
       },
       "zigbee": {
         "manufacturerName": [],
@@ -101535,7 +101499,10 @@
         "approximation": {
           "usageConstant": 6
         },
-        "mains": true
+        "mains": true,
+        "batteries": [
+          "CR2032"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -102415,7 +102382,10 @@
         "approximation": {
           "usageConstant": 6
         },
-        "mains": true
+        "mains": true,
+        "batteries": [
+          "CR2450"
+        ]
       },
       "zigbee": {
         "manufacturerName": [],
@@ -103144,7 +103114,10 @@
         "approximation": {
           "usageConstant": 6
         },
-        "mains": true
+        "mains": true,
+        "batteries": [
+          "CR2450"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -103872,7 +103845,10 @@
         "approximation": {
           "usageConstant": 9
         },
-        "mains": true
+        "mains": true,
+        "batteries": [
+          "CR2450"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -104586,7 +104562,10 @@
         "approximation": {
           "usageConstant": 9
         },
-        "mains": true
+        "mains": true,
+        "batteries": [
+          "CR2450"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -104625,7 +104604,6 @@
           "_TZ3210_DXRJKPI6",
           "_TZ3210_H1ZVCPWD",
           "_TZ3210_INVESBER",
-          "_TZ3210_IYSTCADI",
           "_TZ3210_JKBDRVVF",
           "_TZ3210_KSQWLZ9V",
           "_TZ3210_LEZKAFXF",
@@ -104673,7 +104651,6 @@
           "_tz3210_dxrjkpi6",
           "_tz3210_h1zvcpwd",
           "_tz3210_invesber",
-          "_tz3210_iystcadi",
           "_tz3210_jkbdrvvf",
           "_tz3210_ksqwlz9v",
           "_tz3210_lezkafxf",
@@ -105329,7 +105306,10 @@
         "approximation": {
           "usageConstant": 9
         },
-        "mains": true
+        "mains": true,
+        "batteries": [
+          "CR2450"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -107254,14 +107234,14 @@
     {
       "name": {
         "en": "1-Buttons Wireless Controller",
-        "fr": "1-Boutons Contrôleur Sans Fil",
+        "fr": "1-Boutons ContrÃ´leur Sans Fil",
         "nl": "1-Knoppen Draadloze Controller",
         "de": "1-Tasten Drahtlos-Controller",
         "it": "1-Pulsanti Controller Wireless",
-        "sv": "1-Knappar Trådlös Kontroller",
-        "no": "1-Knapper Trådløs Kontroller",
-        "es": "1-Botones Controlador Inalámbrico",
-        "da": "1-Knapper Trådløs Controller"
+        "sv": "1-Knappar TrÃ¥dlÃ¶s Kontroller",
+        "no": "1-Knapper TrÃ¥dlÃ¸s Kontroller",
+        "es": "1-Botones Controlador InalÃ¡mbrico",
+        "da": "1-Knapper TrÃ¥dlÃ¸s Controller"
       },
       "class": "sensor",
       "capabilities": [
@@ -107287,10 +107267,10 @@
             "nl": "Batterij",
             "de": "Batterie",
             "it": "Batteria",
-            "sv": "Trådlös",
-            "no": "Trådløs",
+            "sv": "TrÃ¥dlÃ¶s",
+            "no": "TrÃ¥dlÃ¸s",
             "es": "Controlador",
-            "da": "Trådløs"
+            "da": "TrÃ¥dlÃ¸s"
           }
         }
       },
@@ -107305,9 +107285,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "SNZB-01M",
-          "SONOFF",
-          "sonoff",
           "eWeLink",
           "ewelink",
           "_TYZB01_1XKTOPX6",
@@ -107333,7 +107310,6 @@
           "_TZ3000_PESZEJY7",
           "_TZ3000_SSP0MAQM",
           "_TZ3000_URI7BER7",
-          "_TZ3000_URI7OADN",
           "_TZ3000_VN88EZAR",
           "_TZ3000_XKWALGNE",
           "_TZ3210_3ULG9KPO",
@@ -107362,7 +107338,6 @@
           "_tz3000_peszejy7",
           "_tz3000_ssp0maqm",
           "_tz3000_uri7ber7",
-          "_tz3000_uri7oadn",
           "_tz3000_vn88ezar",
           "_tz3000_xkwalgne",
           "_tz3210_3ulg9kpo",
@@ -107400,11 +107375,6 @@
           "RWL020",
           "RWL021",
           "RWL022",
-          "SNZB-01",
-          "SNZB-01M",
-          "SNZB-01P",
-          "TS0041",
-          "TS0041A",
           "WXKG01LM",
           "WXKG02LM",
           "WXKG03LM",
@@ -107427,11 +107397,6 @@
           "rwl020",
           "rwl021",
           "rwl022",
-          "snzb-01",
-          "snzb-01m",
-          "snzb-01p",
-          "ts0041",
-          "ts0041a",
           "wxkg01lm",
           "wxkg02lm",
           "wxkg03lm",
@@ -107453,14 +107418,14 @@
           "image": "/drivers/button_wireless_1/assets/learnmode.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
+            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
+            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
+            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
+            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
+            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
+            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
+            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
+            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement"
           }
         }
       },
@@ -107489,7 +107454,7 @@
               "id": "auto",
               "label": {
                 "en": "Auto Detect",
-                "fr": "Détection Automatique"
+                "fr": "DÃ©tection Automatique"
               }
             },
             {
@@ -107516,7 +107481,7 @@
           ],
           "hint": {
             "en": "Select power source manually or use auto-detection",
-            "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+            "fr": "SÃ©lectionnez la source d'alimentation manuellement ou utilisez la dÃ©tection automatique"
           }
         },
         {
@@ -107532,7 +107497,7 @@
               "id": "auto",
               "label": {
                 "en": "Auto Detect",
-                "fr": "Détection Automatique"
+                "fr": "DÃ©tection Automatique"
               }
             },
             {
@@ -107573,7 +107538,7 @@
           ],
           "hint": {
             "en": "Select battery type manually or use auto-detection based on voltage",
-            "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+            "fr": "SÃ©lectionnez le type de batterie manuellement ou utilisez la dÃ©tection automatique basÃ©e sur la tension"
           }
         },
         {
@@ -107589,7 +107554,7 @@
           "step": 5,
           "hint": {
             "en": "Trigger low battery warning when below this percentage",
-            "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+            "fr": "DÃ©clencher l'alerte batterie faible en dessous de ce pourcentage"
           }
         },
         {
@@ -107605,7 +107570,7 @@
           "step": 5,
           "hint": {
             "en": "Trigger critical battery warning when below this percentage",
-            "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+            "fr": "DÃ©clencher l'alerte batterie critique en dessous de ce pourcentage"
           }
         },
         {
@@ -107618,7 +107583,7 @@
           "value": true,
           "hint": {
             "en": "Send flow notifications for battery events",
-            "fr": "Envoyer des notifications de flow pour les événements de batterie"
+            "fr": "Envoyer des notifications de flow pour les Ã©vÃ©nements de batterie"
           }
         },
         {
@@ -107634,7 +107599,7 @@
           "step": 1,
           "hint": {
             "en": "How often to request battery status updates",
-            "fr": "Fréquence de demande des mises à jour d'état de batterie"
+            "fr": "FrÃ©quence de demande des mises Ã  jour d'Ã©tat de batterie"
           }
         },
         {
@@ -107642,7 +107607,7 @@
           "type": "dropdown",
           "label": {
             "en": "Energy Optimization Mode",
-            "fr": "Mode Optimisation Énergétique"
+            "fr": "Mode Optimisation Ã‰nergÃ©tique"
           },
           "value": "balanced",
           "values": [
@@ -107650,27 +107615,27 @@
               "id": "performance",
               "label": {
                 "en": "Performance (More responsive)",
-                "fr": "Performance (Plus réactif)"
+                "fr": "Performance (Plus rÃ©actif)"
               }
             },
             {
               "id": "balanced",
               "label": {
                 "en": "Balanced",
-                "fr": "Équilibré"
+                "fr": "Ã‰quilibrÃ©"
               }
             },
             {
               "id": "power_saving",
               "label": {
                 "en": "Power Saving (Longer battery)",
-                "fr": "Économie d'énergie (Batterie plus longue)"
+                "fr": "Ã‰conomie d'Ã©nergie (Batterie plus longue)"
               }
             }
           ],
           "hint": {
             "en": "Balance between responsiveness and battery life",
-            "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+            "fr": "Ã‰quilibre entre rÃ©activitÃ© et durÃ©e de vie de la batterie"
           }
         },
         {
@@ -107683,7 +107648,7 @@
           "value": false,
           "hint": {
             "en": "Display raw battery voltage in device settings",
-            "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+            "fr": "Afficher la tension brute de la batterie dans les paramÃ¨tres du pÃ©riphÃ©rique"
           }
         },
         {
@@ -107696,7 +107661,7 @@
           "value": true,
           "hint": {
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
-            "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+            "fr": "Estimer la consommation quand la mesure rÃ©elle n'est pas disponible (appareils AC/DC seulement)"
           }
         },
         {
@@ -107708,7 +107673,7 @@
           },
           "hint": {
             "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+            "fr": "Le mode ScÃ¨ne permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de dÃ©tecter et basculer automatiquement."
           },
           "value": "auto",
           "values": [
@@ -107716,14 +107681,14 @@
               "id": "auto",
               "label": {
                 "en": "Auto-Detect",
-                "fr": "Détection Auto"
+                "fr": "DÃ©tection Auto"
               }
             },
             {
               "id": "scene",
               "label": {
                 "en": "Scene Mode (Multi-press)",
-                "fr": "Mode Scène (Multi-clics)"
+                "fr": "Mode ScÃ¨ne (Multi-clics)"
               }
             },
             {
@@ -107740,12 +107705,12 @@
           "type": "checkbox",
           "label": {
             "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
+            "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
           },
           "value": false,
           "hint": {
             "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+            "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
           }
         },
         {
@@ -107753,7 +107718,7 @@
           "type": "number",
           "label": {
             "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
+            "fr": "SensibilitÃ© PrÃ©sence Radio"
           },
           "value": 15,
           "min": 5,
@@ -107768,12 +107733,12 @@
           "type": "checkbox",
           "label": {
             "en": "Software Child Lock",
-            "fr": "Sécurité Enfant Logicielle"
+            "fr": "SÃ©curitÃ© Enfant Logicielle"
           },
           "value": false,
           "hint": {
             "en": "Prevents manual state changes on the device",
-            "fr": "Empêche les changements d'état manuels sur l'appareil"
+            "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil"
           }
         },
         {
@@ -107788,7 +107753,7 @@
           "max": 1440,
           "hint": {
             "en": "Turn off automatically after X minutes (0 = disabled)",
-            "fr": "S'éteint après X minutes (0 = désactivé)"
+            "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)"
           }
         },
         {
@@ -107796,12 +107761,12 @@
           "type": "checkbox",
           "label": {
             "en": "Vacation Mode (Presence Sim)",
-            "fr": "Mode Vacances (Simulation Présence)"
+            "fr": "Mode Vacances (Simulation PrÃ©sence)"
           },
           "value": false,
           "hint": {
             "en": "Randomly toggle device during evenings to simulate presence",
-            "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+            "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence"
           }
         },
         {
@@ -107809,14 +107774,14 @@
           "type": "number",
           "label": {
             "en": "Emulated Motion Hold (Seconds)",
-            "fr": "Maintien Mouvement Émulé (Secondes)"
+            "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
           },
           "value": 0,
           "min": 0,
           "max": 3600,
           "hint": {
             "en": "Keep motion 'ON' for X seconds after hardware clears",
-            "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+            "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel"
           }
         },
         {
@@ -107831,7 +107796,7 @@
           "max": 1000,
           "hint": {
             "en": "Software emulation for single-action buttons",
-            "fr": "Émulation logicielle pour boutons à action unique"
+            "fr": "Ã‰mulation logicielle pour boutons Ã  action unique"
           }
         },
         {
@@ -107846,7 +107811,7 @@
           "max": 4000,
           "hint": {
             "en": "Cut power if consumption exceeds this value (0 = disabled)",
-            "fr": "Coupure si la consommation dépasse cette valeur (0 = désactivé)"
+            "fr": "Coupure si la consommation dÃ©passe cette valeur (0 = dÃ©sactivÃ©)"
           }
         },
         {
@@ -107854,7 +107819,7 @@
           "type": "number",
           "label": {
             "en": "Inching Duration (Secs)",
-            "fr": "Durée Inching (Secondes)"
+            "fr": "DurÃ©e Inching (Secondes)"
           },
           "value": 0,
           "min": 0,
@@ -107862,7 +107827,7 @@
           "step": 0.1,
           "hint": {
             "en": "Automatically turn off after X seconds (Pulse mode)",
-            "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+            "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)"
           }
         },
         {
@@ -107870,12 +107835,12 @@
           "type": "checkbox",
           "label": {
             "en": "Software State Recovery",
-            "fr": "Récupération d'État Logicielle"
+            "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
           },
           "value": false,
           "hint": {
             "en": "Restore previous ON/OFF state after power failure",
-            "fr": "Restore l'état précédent après une coupure de courant"
+            "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant"
           }
         },
         {
@@ -107888,7 +107853,7 @@
           "value": false,
           "hint": {
             "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-            "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+            "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)"
           }
         },
         {
@@ -107903,7 +107868,7 @@
           "max": 100,
           "hint": {
             "en": "Alert if health score drops below this value",
-            "fr": "Alerte si le score de santé descend sous cette valeur"
+            "fr": "Alerte si le score de santÃ© descend sous cette valeur"
           }
         }
       ],
@@ -107931,7 +107896,7 @@
           "id": "ota_check",
           "title": {
             "en": "Check Zigbee OTA Update",
-            "fr": "Vérifier MàJ OTA",
+            "fr": "VÃ©rifier MÃ J OTA",
             "nl": "Controleer op OTA-updates"
           }
         }
@@ -107942,7 +107907,7 @@
             "id": "radio_presence_detected",
             "title": {
               "en": "Radio sensing presence detected",
-              "fr": "Présence détectée par radio (LQI)"
+              "fr": "PrÃ©sence dÃ©tectÃ©e par radio (LQI)"
             }
           }
         ],
@@ -107951,7 +107916,7 @@
             "id": "is_radio_presence_detected",
             "title": {
               "en": "Radio presence is detected",
-              "fr": "Présence radio détectée"
+              "fr": "PrÃ©sence radio dÃ©tectÃ©e"
             }
           }
         ],
@@ -107960,7 +107925,7 @@
             "id": "calibrate_virtual_energy",
             "title": {
               "en": "Calibrate virtual energy",
-              "fr": "Calibrer l'énergie virtuelle"
+              "fr": "Calibrer l'Ã©nergie virtuelle"
             },
             "args": [
               {
@@ -107977,7 +107942,7 @@
             "id": "set_sensing_threshold",
             "title": {
               "en": "Set radio sensing sensitivity",
-              "fr": "Régler la détection radio"
+              "fr": "RÃ©gler la dÃ©tection radio"
             },
             "args": [
               {
@@ -107994,14 +107959,14 @@
     {
       "name": {
         "en": "2-Buttons Wireless Controller",
-        "fr": "2-Boutons Contrôleur Sans Fil",
+        "fr": "2-Boutons ContrÃƒÆ’Ã‚Â´leur Sans Fil",
         "nl": "2-Knoppen Draadloze Controller",
         "de": "2-Tasten Drahtlos-Controller",
         "it": "2-Pulsanti Controller Wireless",
-        "sv": "2-Knappar Trådlös Kontroller",
-        "no": "2-Knapper Trådløs Kontroller",
-        "es": "2-Botones Controlador Inalámbrico",
-        "da": "2-Knapper Trådløs Controller"
+        "sv": "2-Knappar TrÃƒÆ’Ã‚Â¥dlÃƒÆ’Ã‚Â¶s Kontroller",
+        "no": "2-Knapper TrÃƒÆ’Ã‚Â¥dlÃƒÆ’Ã‚Â¸s Kontroller",
+        "es": "2-Botones Controlador InalÃƒÆ’Ã‚Â¡mbrico",
+        "da": "2-Knapper TrÃƒÆ’Ã‚Â¥dlÃƒÆ’Ã‚Â¸s Controller"
       },
       "class": "sensor",
       "capabilities": [
@@ -108056,15 +108021,12 @@
           "_tyzb01_hlla45kx",
           "_tyzb01_iuepbmpv",
           "_TZ3210_7jnk7l3k",
-          "_TZ3000_uwkja6z1",
           "_TZ3000_kdi2o9m6",
-          "_TZ3000_ew31dmgx",
           "_TZ3000_dpo1ysak",
           "_TZ3000_plyvnuf5",
           "_TZ3000_hyfvrar3",
           "_TZ3000_cymsnfvf",
           "_TZ3000_upjrsxh1",
-          "_TZ3000_wamqdr3f",
           "_TZ3000_qeuvnohg",
           "_TZ3000_1H2X4AKH",
           "_TZ3000_1OBWWNMQ",
@@ -108075,7 +108037,6 @@
           "_TZ3000_D0YPG4O2",
           "_TZ3000_DKSBTRZS",
           "_TZ3000_DPO1YSAK",
-          "_TZ3000_EW31DMGX",
           "_TZ3000_FQ1SXFRJ",
           "_TZ3000_FUKAA7NC",
           "_TZ3000_GZNH2XLA",
@@ -108087,11 +108048,8 @@
           "_TZ3000_QEUVNOHG",
           "_TZ3000_QOUS95ZH",
           "_TZ3000_UPJRSXH1",
-          "_TZ3000_UWKJA6Z1",
           "_TZ3000_VMPBYGS5",
-          "_TZ3000_WAMQDR3F",
           "_TZ3000_XR7ITFXQ",
-          "_TZ3000_wzmuk9ai",
           "_tyzb01_hlla45kx",
           "_tyzb01_iuepbmpv",
           "_tz3000_1h2x4akh",
@@ -108103,7 +108061,6 @@
           "_tz3000_d0ypg4o2",
           "_tz3000_dksbtrzs",
           "_tz3000_dpo1ysak",
-          "_tz3000_ew31dmgx",
           "_tz3000_fq1sxfrj",
           "_tz3000_fukaa7nc",
           "_tz3000_gznh2xla",
@@ -108115,11 +108072,8 @@
           "_tz3000_qeuvnohg",
           "_tz3000_qous95zh",
           "_tz3000_upjrsxh1",
-          "_tz3000_uwkja6z1",
           "_tz3000_vmpbygs5",
-          "_tz3000_wamqdr3f",
           "_tz3000_xr7itfxq",
-          "_tz3000_wzmuk9ai",
           "_TZ3210_j4pdtz9v",
           "_TZ3210_dse8ogfy",
           "_TZ3210_232nryqh",
@@ -108239,7 +108193,6 @@
           "_TYZB02_key8kk7r",
           "_TZ3000_qzjcsmar",
           "_TZ3000_rrjr1q0u",
-          "_TZ3000_w8jwkczz",
           "_TZ3000_gbm10jnj",
           "_TZ3000_yw5tvzsk",
           "_TZ3000_sj7jbgks",
@@ -108354,14 +108307,14 @@
           "image": "/drivers/button_wireless_2/assets/learnmode.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
+            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â  ce que la LED clignote rapidement",
+            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â  ce que la LED clignote rapidement",
+            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â  ce que la LED clignote rapidement",
+            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â  ce que la LED clignote rapidement",
+            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â  ce que la LED clignote rapidement",
+            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â  ce que la LED clignote rapidement",
+            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â  ce que la LED clignote rapidement",
+            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â  ce que la LED clignote rapidement"
           }
         }
       },
@@ -108390,7 +108343,7 @@
               "id": "auto",
               "label": {
                 "en": "Auto Detect",
-                "fr": "Détection Automatique"
+                "fr": "DÃƒÆ’Ã‚Â©tection Automatique"
               }
             },
             {
@@ -108417,7 +108370,7 @@
           ],
           "hint": {
             "en": "Select power source manually or use auto-detection",
-            "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+            "fr": "SÃƒÆ’Ã‚Â©lectionnez la source d'alimentation manuellement ou utilisez la dÃƒÆ’Ã‚Â©tection automatique"
           }
         },
         {
@@ -108433,7 +108386,7 @@
               "id": "auto",
               "label": {
                 "en": "Auto Detect",
-                "fr": "Détection Automatique"
+                "fr": "DÃƒÆ’Ã‚Â©tection Automatique"
               }
             },
             {
@@ -108474,7 +108427,7 @@
           ],
           "hint": {
             "en": "Select battery type manually or use auto-detection based on voltage",
-            "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+            "fr": "SÃƒÆ’Ã‚Â©lectionnez le type de batterie manuellement ou utilisez la dÃƒÆ’Ã‚Â©tection automatique basÃƒÆ’Ã‚Â©e sur la tension"
           }
         },
         {
@@ -108490,7 +108443,7 @@
           "step": 5,
           "hint": {
             "en": "Trigger low battery warning when below this percentage",
-            "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+            "fr": "DÃƒÆ’Ã‚Â©clencher l'alerte batterie faible en dessous de ce pourcentage"
           }
         },
         {
@@ -108506,7 +108459,7 @@
           "step": 5,
           "hint": {
             "en": "Trigger critical battery warning when below this percentage",
-            "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+            "fr": "DÃƒÆ’Ã‚Â©clencher l'alerte batterie critique en dessous de ce pourcentage"
           }
         },
         {
@@ -108519,7 +108472,7 @@
           "value": true,
           "hint": {
             "en": "Send flow notifications for battery events",
-            "fr": "Envoyer des notifications de flow pour les événements de batterie"
+            "fr": "Envoyer des notifications de flow pour les ÃƒÆ’Ã‚Â©vÃƒÆ’Ã‚Â©nements de batterie"
           }
         },
         {
@@ -108535,7 +108488,7 @@
           "step": 1,
           "hint": {
             "en": "How often to request battery status updates",
-            "fr": "Fréquence de demande des mises à jour d'état de batterie"
+            "fr": "FrÃƒÆ’Ã‚Â©quence de demande des mises ÃƒÆ’Ã‚Â  jour d'ÃƒÆ’Ã‚Â©tat de batterie"
           }
         },
         {
@@ -108543,7 +108496,7 @@
           "type": "dropdown",
           "label": {
             "en": "Energy Optimization Mode",
-            "fr": "Mode Optimisation Énergétique"
+            "fr": "Mode Optimisation ÃƒÆ’Ã¢â‚¬Â°nergÃƒÆ’Ã‚Â©tique"
           },
           "value": "balanced",
           "values": [
@@ -108551,27 +108504,27 @@
               "id": "performance",
               "label": {
                 "en": "Performance (More responsive)",
-                "fr": "Performance (Plus réactif)"
+                "fr": "Performance (Plus rÃƒÆ’Ã‚Â©actif)"
               }
             },
             {
               "id": "balanced",
               "label": {
                 "en": "Balanced",
-                "fr": "Équilibré"
+                "fr": "ÃƒÆ’Ã¢â‚¬Â°quilibrÃƒÆ’Ã‚Â©"
               }
             },
             {
               "id": "power_saving",
               "label": {
                 "en": "Power Saving (Longer battery)",
-                "fr": "Économie d'énergie (Batterie plus longue)"
+                "fr": "ÃƒÆ’Ã¢â‚¬Â°conomie d'ÃƒÆ’Ã‚Â©nergie (Batterie plus longue)"
               }
             }
           ],
           "hint": {
             "en": "Balance between responsiveness and battery life",
-            "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+            "fr": "ÃƒÆ’Ã¢â‚¬Â°quilibre entre rÃƒÆ’Ã‚Â©activitÃƒÆ’Ã‚Â© et durÃƒÆ’Ã‚Â©e de vie de la batterie"
           }
         },
         {
@@ -108584,7 +108537,7 @@
           "value": false,
           "hint": {
             "en": "Display raw battery voltage in device settings",
-            "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+            "fr": "Afficher la tension brute de la batterie dans les paramÃƒÆ’Ã‚Â¨tres du pÃƒÆ’Ã‚Â©riphÃƒÆ’Ã‚Â©rique"
           }
         },
         {
@@ -108597,7 +108550,7 @@
           "value": true,
           "hint": {
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
-            "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+            "fr": "Estimer la consommation quand la mesure rÃƒÆ’Ã‚Â©elle n'est pas disponible (appareils AC/DC seulement)"
           }
         },
         {
@@ -108609,7 +108562,7 @@
           },
           "hint": {
             "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+            "fr": "Le mode ScÃƒÆ’Ã‚Â¨ne permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de dÃƒÆ’Ã‚Â©tecter et basculer automatiquement."
           },
           "value": "auto",
           "values": [
@@ -108617,14 +108570,14 @@
               "id": "auto",
               "label": {
                 "en": "Auto-Detect",
-                "fr": "Détection Auto"
+                "fr": "DÃƒÆ’Ã‚Â©tection Auto"
               }
             },
             {
               "id": "scene",
               "label": {
                 "en": "Scene Mode (Multi-press)",
-                "fr": "Mode Scène (Multi-clics)"
+                "fr": "Mode ScÃƒÆ’Ã‚Â¨ne (Multi-clics)"
               }
             },
             {
@@ -108641,12 +108594,12 @@
           "type": "checkbox",
           "label": {
             "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
+            "fr": "Activer la DÃƒÆ’Ã‚Â©tection de PrÃƒÆ’Ã‚Â©sence Radio"
           },
           "value": false,
           "hint": {
             "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+            "fr": "DÃƒÆ’Ã‚Â©duit la prÃƒÆ’Ã‚Â©sence des fluctuations du signal Zigbee (BETA)"
           }
         },
         {
@@ -108654,7 +108607,7 @@
           "type": "number",
           "label": {
             "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
+            "fr": "SensibilitÃƒÆ’Ã‚Â© PrÃƒÆ’Ã‚Â©sence Radio"
           },
           "value": 15,
           "min": 5,
@@ -108669,12 +108622,12 @@
           "type": "checkbox",
           "label": {
             "en": "Software Child Lock",
-            "fr": "Sécurité Enfant Logicielle"
+            "fr": "SÃƒÆ’Ã‚Â©curitÃƒÆ’Ã‚Â© Enfant Logicielle"
           },
           "value": false,
           "hint": {
             "en": "Prevents manual state changes on the device",
-            "fr": "Empêche les changements d'état manuels sur l'appareil"
+            "fr": "EmpÃƒÆ’Ã‚Âªche les changements d'ÃƒÆ’Ã‚Â©tat manuels sur l'appareil"
           }
         },
         {
@@ -108689,7 +108642,7 @@
           "max": 1440,
           "hint": {
             "en": "Turn off automatically after X minutes (0 = disabled)",
-            "fr": "S'éteint après X minutes (0 = désactivé)"
+            "fr": "S'ÃƒÆ’Ã‚Â©teint aprÃƒÆ’Ã‚Â¨s X minutes (0 = dÃƒÆ’Ã‚Â©sactivÃƒÆ’Ã‚Â©)"
           }
         },
         {
@@ -108697,12 +108650,12 @@
           "type": "checkbox",
           "label": {
             "en": "Vacation Mode (Presence Sim)",
-            "fr": "Mode Vacances (Simulation Présence)"
+            "fr": "Mode Vacances (Simulation PrÃƒÆ’Ã‚Â©sence)"
           },
           "value": false,
           "hint": {
             "en": "Randomly toggle device during evenings to simulate presence",
-            "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+            "fr": "Actionne l'appareil alÃƒÆ’Ã‚Â©atoirement le soir pour simuler une prÃƒÆ’Ã‚Â©sence"
           }
         },
         {
@@ -108710,14 +108663,14 @@
           "type": "number",
           "label": {
             "en": "Emulated Motion Hold (Seconds)",
-            "fr": "Maintien Mouvement Émulé (Secondes)"
+            "fr": "Maintien Mouvement ÃƒÆ’Ã¢â‚¬Â°mulÃƒÆ’Ã‚Â© (Secondes)"
           },
           "value": 0,
           "min": 0,
           "max": 3600,
           "hint": {
             "en": "Keep motion 'ON' for X seconds after hardware clears",
-            "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+            "fr": "Garde le mouvement 'ON' pendant X secondes aprÃƒÆ’Ã‚Â¨s le reset matÃƒÆ’Ã‚Â©riel"
           }
         },
         {
@@ -108732,7 +108685,7 @@
           "max": 1000,
           "hint": {
             "en": "Software emulation for single-action buttons",
-            "fr": "Émulation logicielle pour boutons à action unique"
+            "fr": "ÃƒÆ’Ã¢â‚¬Â°mulation logicielle pour boutons ÃƒÆ’Ã‚Â  action unique"
           }
         },
         {
@@ -108747,7 +108700,7 @@
           "max": 4000,
           "hint": {
             "en": "Cut power if consumption exceeds this value (0 = disabled)",
-            "fr": "Coupure si la consommation dépasse cette valeur (0 = désactivé)"
+            "fr": "Coupure si la consommation dÃƒÆ’Ã‚Â©passe cette valeur (0 = dÃƒÆ’Ã‚Â©sactivÃƒÆ’Ã‚Â©)"
           }
         },
         {
@@ -108755,7 +108708,7 @@
           "type": "number",
           "label": {
             "en": "Inching Duration (Secs)",
-            "fr": "Durée Inching (Secondes)"
+            "fr": "DurÃƒÆ’Ã‚Â©e Inching (Secondes)"
           },
           "value": 0,
           "min": 0,
@@ -108763,7 +108716,7 @@
           "step": 0.1,
           "hint": {
             "en": "Automatically turn off after X seconds (Pulse mode)",
-            "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+            "fr": "S'ÃƒÆ’Ã‚Â©teint automatiquement aprÃƒÆ’Ã‚Â¨s X secondes (mode Impulsion)"
           }
         },
         {
@@ -108771,12 +108724,12 @@
           "type": "checkbox",
           "label": {
             "en": "Software State Recovery",
-            "fr": "Récupération d'État Logicielle"
+            "fr": "RÃƒÆ’Ã‚Â©cupÃƒÆ’Ã‚Â©ration d'ÃƒÆ’Ã¢â‚¬Â°tat Logicielle"
           },
           "value": false,
           "hint": {
             "en": "Restore previous ON/OFF state after power failure",
-            "fr": "Restore l'état précédent après une coupure de courant"
+            "fr": "Restore l'ÃƒÆ’Ã‚Â©tat prÃƒÆ’Ã‚Â©cÃƒÆ’Ã‚Â©dent aprÃƒÆ’Ã‚Â¨s une coupure de courant"
           }
         },
         {
@@ -108789,7 +108742,7 @@
           "value": false,
           "hint": {
             "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-            "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+            "fr": "Active les transitions douces simulÃƒÆ’Ã‚Â©es (LumiÃƒÆ’Ã‚Â¨res/Variateurs)"
           }
         },
         {
@@ -108804,7 +108757,7 @@
           "max": 100,
           "hint": {
             "en": "Alert if health score drops below this value",
-            "fr": "Alerte si le score de santé descend sous cette valeur"
+            "fr": "Alerte si le score de santÃƒÆ’Ã‚Â© descend sous cette valeur"
           }
         }
       ],
@@ -108832,7 +108785,7 @@
           "id": "ota_check",
           "title": {
             "en": "Check Zigbee OTA Update",
-            "fr": "Vérifier MàJ OTA",
+            "fr": "VÃƒÆ’Ã‚Â©rifier MÃƒÆ’Ã‚Â J OTA",
             "nl": "Controleer op OTA-updates"
           }
         }
@@ -108843,7 +108796,7 @@
             "id": "radio_presence_detected",
             "title": {
               "en": "Radio sensing presence detected",
-              "fr": "Présence détectée par radio (LQI)"
+              "fr": "PrÃƒÆ’Ã‚Â©sence dÃƒÆ’Ã‚Â©tectÃƒÆ’Ã‚Â©e par radio (LQI)"
             }
           }
         ],
@@ -108852,7 +108805,7 @@
             "id": "is_radio_presence_detected",
             "title": {
               "en": "Radio presence is detected",
-              "fr": "Présence radio détectée"
+              "fr": "PrÃƒÆ’Ã‚Â©sence radio dÃƒÆ’Ã‚Â©tectÃƒÆ’Ã‚Â©e"
             }
           }
         ],
@@ -108861,7 +108814,7 @@
             "id": "calibrate_virtual_energy",
             "title": {
               "en": "Calibrate virtual energy",
-              "fr": "Calibrer l'énergie virtuelle"
+              "fr": "Calibrer l'ÃƒÆ’Ã‚Â©nergie virtuelle"
             },
             "args": [
               {
@@ -108878,7 +108831,7 @@
             "id": "set_sensing_threshold",
             "title": {
               "en": "Set radio sensing sensitivity",
-              "fr": "Régler la détection radio"
+              "fr": "RÃƒÆ’Ã‚Â©gler la dÃƒÆ’Ã‚Â©tection radio"
             },
             "args": [
               {
@@ -109609,14 +109562,14 @@
     {
       "name": {
         "en": "4-Buttons Wireless Controller",
-        "fr": "4-Boutons Contrôleur Sans Fil",
+        "fr": "4-Boutons ContrÃ´leur Sans Fil",
         "nl": "4-Knoppen Draadloze Controller",
         "de": "4-Tasten Drahtlos-Controller",
         "it": "4-Pulsanti Controller Wireless",
-        "sv": "4-Knappar Trådlös Kontroller",
-        "no": "4-Knapper Trådløs Kontroller",
-        "es": "4-Botones Controlador Inalámbrico",
-        "da": "4-Knapper Trådløs Controller"
+        "sv": "4-Knappar TrÃ¥dlÃ¶s Kontroller",
+        "no": "4-Knapper TrÃ¥dlÃ¸s Kontroller",
+        "es": "4-Botones Controlador InalÃ¡mbrico",
+        "da": "4-Knapper TrÃ¥dlÃ¸s Controller"
       },
       "class": "sensor",
       "capabilities": [
@@ -109691,7 +109644,6 @@
           "_TZ3000_BGTZM4NY",
           "_TZ3000_CZUYT8LZ",
           "_TZ3000_DZIAICT4",
-          "_TZ3000_EE8NRT2L",
           "_TZ3000_ET7AFZXZ",
           "_TZ3000_FJT5218M",
           "_TZ3000_J61X9RXN",
@@ -109707,6 +109659,8 @@
           "_TZ3000_UAA99ARV",
           "_TZ3000_UFHTXR59",
           "_TZ3000_URI7EZ8U",
+          "_TZ3000_URI7OADN",
+          "_tz3000_uri7oadn",
           "_TZ3000_VDFWJOPK",
           "_TZ3000_VP6CLF9D",
           "_TZ3000_W4THIANR",
@@ -109731,7 +109685,6 @@
           "_tz3000_bgtzm4ny",
           "_tz3000_czuyt8lz",
           "_tz3000_dziaict4",
-          "_tz3000_ee8nrt2l",
           "_tz3000_et7afzxz",
           "_tz3000_fjt5218m",
           "_tz3000_j61x9rxn",
@@ -109773,7 +109726,6 @@
           "_TZ3000_ja5osu5g",
           "_TZ3000_vp6clf9d",
           "_TZ3000_ufhtxr59",
-          "_TZ3000_ee8nrt2l",
           "_TZ3000_a4xycprs",
           "_TZ3000_xabckq1v",
           "_TZ3000_nuombroo",
@@ -109804,14 +109756,14 @@
           "image": "/drivers/button_wireless_4/assets/learnmode.svg",
           "instruction": {
             "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement",
-            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
+            "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
+            "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
+            "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
+            "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
+            "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
+            "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
+            "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
+            "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement"
           }
         },
         "endpoints": {
@@ -109876,7 +109828,7 @@
               "id": "auto",
               "label": {
                 "en": "Auto Detect",
-                "fr": "Détection Automatique"
+                "fr": "DÃ©tection Automatique"
               }
             },
             {
@@ -109903,7 +109855,7 @@
           ],
           "hint": {
             "en": "Select power source manually or use auto-detection",
-            "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+            "fr": "SÃ©lectionnez la source d'alimentation manuellement ou utilisez la dÃ©tection automatique"
           }
         },
         {
@@ -109919,7 +109871,7 @@
               "id": "auto",
               "label": {
                 "en": "Auto Detect",
-                "fr": "Détection Automatique"
+                "fr": "DÃ©tection Automatique"
               }
             },
             {
@@ -109960,7 +109912,7 @@
           ],
           "hint": {
             "en": "Select battery type manually or use auto-detection based on voltage",
-            "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+            "fr": "SÃ©lectionnez le type de batterie manuellement ou utilisez la dÃ©tection automatique basÃ©e sur la tension"
           }
         },
         {
@@ -109976,7 +109928,7 @@
           "step": 5,
           "hint": {
             "en": "Trigger low battery warning when below this percentage",
-            "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+            "fr": "DÃ©clencher l'alerte batterie faible en dessous de ce pourcentage"
           }
         },
         {
@@ -109992,7 +109944,7 @@
           "step": 5,
           "hint": {
             "en": "Trigger critical battery warning when below this percentage",
-            "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+            "fr": "DÃ©clencher l'alerte batterie critique en dessous de ce pourcentage"
           }
         },
         {
@@ -110005,7 +109957,7 @@
           "value": true,
           "hint": {
             "en": "Send flow notifications for battery events",
-            "fr": "Envoyer des notifications de flow pour les événements de batterie"
+            "fr": "Envoyer des notifications de flow pour les Ã©vÃ©nements de batterie"
           }
         },
         {
@@ -110021,7 +109973,7 @@
           "step": 1,
           "hint": {
             "en": "How often to request battery status updates",
-            "fr": "Fréquence de demande des mises à jour d'état de batterie"
+            "fr": "FrÃ©quence de demande des mises Ã  jour d'Ã©tat de batterie"
           }
         },
         {
@@ -110029,7 +109981,7 @@
           "type": "dropdown",
           "label": {
             "en": "Energy Optimization Mode",
-            "fr": "Mode Optimisation Énergétique"
+            "fr": "Mode Optimisation Ã‰nergÃ©tique"
           },
           "value": "balanced",
           "values": [
@@ -110037,27 +109989,27 @@
               "id": "performance",
               "label": {
                 "en": "Performance (More responsive)",
-                "fr": "Performance (Plus réactif)"
+                "fr": "Performance (Plus rÃ©actif)"
               }
             },
             {
               "id": "balanced",
               "label": {
                 "en": "Balanced",
-                "fr": "Équilibré"
+                "fr": "Ã‰quilibrÃ©"
               }
             },
             {
               "id": "power_saving",
               "label": {
                 "en": "Power Saving (Longer battery)",
-                "fr": "Économie d'énergie (Batterie plus longue)"
+                "fr": "Ã‰conomie d'Ã©nergie (Batterie plus longue)"
               }
             }
           ],
           "hint": {
             "en": "Balance between responsiveness and battery life",
-            "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+            "fr": "Ã‰quilibre entre rÃ©activitÃ© et durÃ©e de vie de la batterie"
           }
         },
         {
@@ -110070,7 +110022,7 @@
           "value": false,
           "hint": {
             "en": "Display raw battery voltage in device settings",
-            "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+            "fr": "Afficher la tension brute de la batterie dans les paramÃ¨tres du pÃ©riphÃ©rique"
           }
         },
         {
@@ -110083,7 +110035,7 @@
           "value": true,
           "hint": {
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
-            "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+            "fr": "Estimer la consommation quand la mesure rÃ©elle n'est pas disponible (appareils AC/DC seulement)"
           }
         },
         {
@@ -110105,7 +110057,7 @@
           "value": false,
           "hint": {
             "en": "Log all Tuya DP data for troubleshooting",
-            "fr": "Logger toutes les données Tuya DP pour diagnostic"
+            "fr": "Logger toutes les donnÃ©es Tuya DP pour diagnostic"
           }
         },
         {
@@ -110130,7 +110082,7 @@
           },
           "hint": {
             "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-            "fr": "Le mode Scène permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de détecter et basculer automatiquement."
+            "fr": "Le mode ScÃ¨ne permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de dÃ©tecter et basculer automatiquement."
           },
           "value": "auto",
           "values": [
@@ -110138,14 +110090,14 @@
               "id": "auto",
               "label": {
                 "en": "Auto-Detect",
-                "fr": "Détection Auto"
+                "fr": "DÃ©tection Auto"
               }
             },
             {
               "id": "scene",
               "label": {
                 "en": "Scene Mode (Multi-press)",
-                "fr": "Mode Scène (Multi-clics)"
+                "fr": "Mode ScÃ¨ne (Multi-clics)"
               }
             },
             {
@@ -110162,12 +110114,12 @@
           "type": "checkbox",
           "label": {
             "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
+            "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
           },
           "value": false,
           "hint": {
             "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+            "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
           }
         },
         {
@@ -110175,7 +110127,7 @@
           "type": "number",
           "label": {
             "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
+            "fr": "SensibilitÃ© PrÃ©sence Radio"
           },
           "value": 15,
           "min": 5,
@@ -110190,12 +110142,12 @@
           "type": "checkbox",
           "label": {
             "en": "Software Child Lock",
-            "fr": "Sécurité Enfant Logicielle"
+            "fr": "SÃ©curitÃ© Enfant Logicielle"
           },
           "value": false,
           "hint": {
             "en": "Prevents manual state changes on the device",
-            "fr": "Empêche les changements d'état manuels sur l'appareil"
+            "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil"
           }
         },
         {
@@ -110210,7 +110162,7 @@
           "max": 1440,
           "hint": {
             "en": "Turn off automatically after X minutes (0 = disabled)",
-            "fr": "S'éteint après X minutes (0 = désactivé)"
+            "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)"
           }
         },
         {
@@ -110218,12 +110170,12 @@
           "type": "checkbox",
           "label": {
             "en": "Vacation Mode (Presence Sim)",
-            "fr": "Mode Vacances (Simulation Présence)"
+            "fr": "Mode Vacances (Simulation PrÃ©sence)"
           },
           "value": false,
           "hint": {
             "en": "Randomly toggle device during evenings to simulate presence",
-            "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+            "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence"
           }
         },
         {
@@ -110231,14 +110183,14 @@
           "type": "number",
           "label": {
             "en": "Emulated Motion Hold (Seconds)",
-            "fr": "Maintien Mouvement Émulé (Secondes)"
+            "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
           },
           "value": 0,
           "min": 0,
           "max": 3600,
           "hint": {
             "en": "Keep motion 'ON' for X seconds after hardware clears",
-            "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+            "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel"
           }
         },
         {
@@ -110253,7 +110205,7 @@
           "max": 1000,
           "hint": {
             "en": "Software emulation for single-action buttons",
-            "fr": "Émulation logicielle pour boutons à action unique"
+            "fr": "Ã‰mulation logicielle pour boutons Ã  action unique"
           }
         },
         {
@@ -110268,7 +110220,7 @@
           "max": 4000,
           "hint": {
             "en": "Cut power if consumption exceeds this value (0 = disabled)",
-            "fr": "Coupure si la consommation dépasse cette valeur (0 = désactivé)"
+            "fr": "Coupure si la consommation dÃ©passe cette valeur (0 = dÃ©sactivÃ©)"
           }
         },
         {
@@ -110276,7 +110228,7 @@
           "type": "number",
           "label": {
             "en": "Inching Duration (Secs)",
-            "fr": "Durée Inching (Secondes)"
+            "fr": "DurÃ©e Inching (Secondes)"
           },
           "value": 0,
           "min": 0,
@@ -110284,7 +110236,7 @@
           "step": 0.1,
           "hint": {
             "en": "Automatically turn off after X seconds (Pulse mode)",
-            "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+            "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)"
           }
         },
         {
@@ -110292,12 +110244,12 @@
           "type": "checkbox",
           "label": {
             "en": "Software State Recovery",
-            "fr": "Récupération d'État Logicielle"
+            "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
           },
           "value": false,
           "hint": {
             "en": "Restore previous ON/OFF state after power failure",
-            "fr": "Restore l'état précédent après une coupure de courant"
+            "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant"
           }
         },
         {
@@ -110310,7 +110262,7 @@
           "value": false,
           "hint": {
             "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-            "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+            "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)"
           }
         },
         {
@@ -110325,7 +110277,7 @@
           "max": 100,
           "hint": {
             "en": "Alert if health score drops below this value",
-            "fr": "Alerte si le score de santé descend sous cette valeur"
+            "fr": "Alerte si le score de santÃ© descend sous cette valeur"
           }
         }
       ],
@@ -110347,7 +110299,7 @@
           "id": "ota_check",
           "title": {
             "en": "Check Zigbee OTA Update",
-            "fr": "Vérifier MàJ OTA",
+            "fr": "VÃ©rifier MÃ J OTA",
             "nl": "Controleer op OTA-updates"
           }
         }
@@ -110358,7 +110310,7 @@
             "id": "radio_presence_detected",
             "title": {
               "en": "Radio sensing presence detected",
-              "fr": "Présence détectée par radio (LQI)"
+              "fr": "PrÃ©sence dÃ©tectÃ©e par radio (LQI)"
             }
           }
         ],
@@ -110367,7 +110319,7 @@
             "id": "is_radio_presence_detected",
             "title": {
               "en": "Radio presence is detected",
-              "fr": "Présence radio détectée"
+              "fr": "PrÃ©sence radio dÃ©tectÃ©e"
             }
           }
         ],
@@ -110376,7 +110328,7 @@
             "id": "calibrate_virtual_energy",
             "title": {
               "en": "Calibrate virtual energy",
-              "fr": "Calibrer l'énergie virtuelle"
+              "fr": "Calibrer l'Ã©nergie virtuelle"
             },
             "args": [
               {
@@ -110393,7 +110345,7 @@
             "id": "set_sensing_threshold",
             "title": {
               "en": "Set radio sensing sensitivity",
-              "fr": "Régler la détection radio"
+              "fr": "RÃ©gler la dÃ©tection radio"
             },
             "args": [
               {
@@ -117778,7 +117730,7 @@
         "measure_temperature.probe": {
           "title": {
             "en": "Probe Temperature",
-            "fr": "Température Sonde",
+            "fr": "TempÃ©rature Sonde",
             "nl": "Sonde Temperatuur",
             "de": "Sondentemperatur"
           }
@@ -117818,17 +117770,14 @@
           "_TZ3000_88IQNHVD",
           "_TZ3000_8UAOILU9",
           "_TZ3000_9KBBFEHO",
-          "_TZ3000_A33RW7OU",
           "_TZ3000_AMQUDJR0",
           "_TZ3000_AQQCRPTJ",
-          "_TZ3000_AU2O5E6Q",
           "_TZ3000_B1Q8KWMH",
           "_TZ3000_BKFE0BAB",
           "_TZ3000_BMHWNL7S",
           "_TZ3000_BZZGVET0",
           "_TZ3000_C8ZFAD4A",
           "_TZ3000_CEPLRHNU",
-          "_TZ3000_CQLNSWN0",
           "_TZ3000_CYGCAXVV",
           "_TZ3000_DVQT7QRW",
           "_TZ3000_EGQ7Y6PR",
@@ -117882,12 +117831,10 @@
           "_TZ3000_NSA76JAI",
           "_TZ3000_NUENZETQ",
           "_TZ3000_OCUNFVBH",
-          "_TZ3000_OKOHWWAP",
           "_TZ3000_OS0WY3VH",
           "_TZ3000_OVYAISIP",
           "_TZ3000_P26FLEK3",
           "_TZ3000_PIUENSVR",
-          "_TZ3000_PJB1UA0M",
           "_TZ3000_PK8TGTDB",
           "_TZ3000_QAA59ZQD",
           "_TZ3000_QMI1CFUQ",
@@ -117940,7 +117887,6 @@
           "_TZ3210_PWAUW3G2",
           "_TZ3210_S9LUMFHN",
           "_TZ3210_Y5ZTGA9R",
-          "_TZ3210_ncw88jfq",
           "_TZ3290_JXVZQATWGSAQZX1U",
           "_TZ3290_LYPNQVLEM5EQ1REE",
           "_TZ3290_RLKMY85Q4PZOXOBL",
@@ -118088,7 +118034,6 @@
           "_TZE200_MX6U6L4Y",
           "_TZE200_N1AAUWB4",
           "_TZE200_N5FXYYJW",
-          "_TZE200_N8DLJORX",
           "_TZE200_N9CLPSHT",
           "_TZE200_NA5QLZOW",
           "_TZE200_NE4PIKWM",
@@ -118627,7 +118572,6 @@
           "_tz3210_alxkwn0h",
           "_tz3210_fgwhjm9j",
           "_tz3210_m3mxv66l",
-          "_tz3210_ncw88jfq",
           "_tz3210_pfbzs1an",
           "_tz3210_pwauw3g2",
           "_tz3210_s9lumfhn",
@@ -119213,16 +119157,16 @@
         {
           "type": "group",
           "label": {
-            "en": "🌡️ Calibration (v5.5.28)",
-            "fr": "🌡️ Calibration (v5.5.28)"
+            "en": "ðŸŒ¡ï¸ Calibration (v5.5.28)",
+            "fr": "ðŸŒ¡ï¸ Calibration (v5.5.28)"
           },
           "children": [
             {
               "id": "temperature_calibration",
               "type": "number",
               "label": {
-                "en": "Temperature Offset (°C)",
-                "fr": "Décalage Température (°C)"
+                "en": "Temperature Offset (Â°C)",
+                "fr": "DÃ©calage TempÃ©rature (Â°C)"
               },
               "value": 0,
               "min": -10,
@@ -119230,7 +119174,7 @@
               "step": 0.1,
               "hint": {
                 "en": "Add or subtract from temperature reading. Use positive value if sensor reads too low.",
-                "fr": "Ajouter ou soustraire de la température lue. Valeur positive si capteur lit trop bas."
+                "fr": "Ajouter ou soustraire de la tempÃ©rature lue. Valeur positive si capteur lit trop bas."
               }
             },
             {
@@ -119238,7 +119182,7 @@
               "type": "number",
               "label": {
                 "en": "Humidity Offset (%)",
-                "fr": "Décalage Humidité (%)"
+                "fr": "DÃ©calage HumiditÃ© (%)"
               },
               "value": 0,
               "min": -20,
@@ -119246,7 +119190,7 @@
               "step": 1,
               "hint": {
                 "en": "Add or subtract from humidity reading. Use positive value if sensor reads too low.",
-                "fr": "Ajouter ou soustraire de l'humidité lue. Valeur positive si capteur lit trop bas."
+                "fr": "Ajouter ou soustraire de l'humiditÃ© lue. Valeur positive si capteur lit trop bas."
               }
             },
             {
@@ -119254,7 +119198,7 @@
               "type": "dropdown",
               "label": {
                 "en": "Decimal Precision",
-                "fr": "Précision"
+                "fr": "PrÃ©cision"
               },
               "value": "1",
               "hint": {
@@ -119264,13 +119208,13 @@
                 {
                   "id": "1",
                   "label": {
-                    "en": "1 decimal (20.5°C)"
+                    "en": "1 decimal (20.5Â°C)"
                   }
                 },
                 {
                   "id": "2",
                   "label": {
-                    "en": "2 decimals (20.53°C)"
+                    "en": "2 decimals (20.53Â°C)"
                   }
                 }
               ]
@@ -119280,10 +119224,10 @@
         {
           "type": "group",
           "label": {
-            "en": "🕒 Time Sync (v5.5.384)",
-            "fr": "🕒 Sync Heure (v5.5.384)",
-            "nl": "🕒 Tijdsync (v5.5.384)",
-            "de": "🕒 Zeitsync (v5.5.384)"
+            "en": "ðŸ•’ Time Sync (v5.5.384)",
+            "fr": "ðŸ•’ Sync Heure (v5.5.384)",
+            "nl": "ðŸ•’ Tijdsync (v5.5.384)",
+            "de": "ðŸ•’ Zeitsync (v5.5.384)"
           },
           "children": [
             {
@@ -119298,79 +119242,79 @@
               "value": "auto",
               "hint": {
                 "en": "Select time sync format. Auto works for most devices. Change only if clock shows wrong time.",
-                "fr": "Format de synchronisation. Auto fonctionne pour la plupart. Changer si l'heure affichée est incorrecte.",
+                "fr": "Format de synchronisation. Auto fonctionne pour la plupart. Changer si l'heure affichÃ©e est incorrecte.",
                 "nl": "Selecteer tijdsync formaat. Auto werkt voor de meeste apparaten.",
-                "de": "Zeitsync-Format wählen. Auto funktioniert für die meisten Geräte."
+                "de": "Zeitsync-Format wÃ¤hlen. Auto funktioniert fÃ¼r die meisten GerÃ¤te."
               },
               "values": [
                 {
                   "id": "auto",
                   "label": {
-                    "en": "🔄 Auto-detect (recommended)",
-                    "fr": "🔄 Auto-détection (recommandé)"
+                    "en": "ðŸ”„ Auto-detect (recommended)",
+                    "fr": "ðŸ”„ Auto-dÃ©tection (recommandÃ©)"
                   }
                 },
                 {
                   "id": "tuya_timestamp",
                   "label": {
-                    "en": "📺 LCD Sensor (8-byte epoch 2000)",
-                    "fr": "📺 Capteur LCD (8 octets epoch 2000)"
+                    "en": "ðŸ“º LCD Sensor (8-byte epoch 2000)",
+                    "fr": "ðŸ“º Capteur LCD (8 octets epoch 2000)"
                   }
                 },
                 {
                   "id": "tuya_ts_unix",
                   "label": {
-                    "en": "📺 LCD Sensor Unix (8-byte epoch 1970)",
-                    "fr": "📺 Capteur LCD Unix (8 octets epoch 1970)"
+                    "en": "ðŸ“º LCD Sensor Unix (8-byte epoch 1970)",
+                    "fr": "ðŸ“º Capteur LCD Unix (8 octets epoch 1970)"
                   }
                 },
                 {
                   "id": "tuya_standard",
                   "label": {
-                    "en": "📅 Tuya Standard (7-byte local)",
-                    "fr": "📅 Tuya Standard (7 octets local)"
+                    "en": "ðŸ“… Tuya Standard (7-byte local)",
+                    "fr": "ðŸ“… Tuya Standard (7 octets local)"
                   }
                 },
                 {
                   "id": "tuya_utc_string",
                   "label": {
-                    "en": "📅 Tuya UTC (7-byte UTC)",
-                    "fr": "📅 Tuya UTC (7 octets UTC)"
+                    "en": "ðŸ“… Tuya UTC (7-byte UTC)",
+                    "fr": "ðŸ“… Tuya UTC (7 octets UTC)"
                   }
                 },
                 {
                   "id": "tuya_mcu",
                   "label": {
-                    "en": "🔧 Tuya MCU (9-byte with header)",
-                    "fr": "🔧 Tuya MCU (9 octets avec header)"
+                    "en": "ðŸ”§ Tuya MCU (9-byte with header)",
+                    "fr": "ðŸ”§ Tuya MCU (9 octets avec header)"
                   }
                 },
                 {
                   "id": "tuya_extended",
                   "label": {
-                    "en": "🌍 Tuya Extended (9-byte + timezone)",
-                    "fr": "🌍 Tuya Étendu (9 octets + fuseau)"
+                    "en": "ðŸŒ Tuya Extended (9-byte + timezone)",
+                    "fr": "ðŸŒ Tuya Ã‰tendu (9 octets + fuseau)"
                   }
                 },
                 {
                   "id": "tuya_full_tz",
                   "label": {
-                    "en": "🌍 Tuya Full TZ (10-byte + DST)",
-                    "fr": "🌍 Tuya Full TZ (10 octets + DST)"
+                    "en": "ðŸŒ Tuya Full TZ (10-byte + DST)",
+                    "fr": "ðŸŒ Tuya Full TZ (10 octets + DST)"
                   }
                 },
                 {
                   "id": "zigbee_2000",
                   "label": {
-                    "en": "⏱️ Zigbee 2000 (4-byte epoch 2000)",
-                    "fr": "⏱️ Zigbee 2000 (4 octets epoch 2000)"
+                    "en": "â±ï¸ Zigbee 2000 (4-byte epoch 2000)",
+                    "fr": "â±ï¸ Zigbee 2000 (4 octets epoch 2000)"
                   }
                 },
                 {
                   "id": "unix_1970",
                   "label": {
-                    "en": "⏱️ Unix 1970 (4-byte epoch 1970)",
-                    "fr": "⏱️ Unix 1970 (4 octets epoch 1970)"
+                    "en": "â±ï¸ Unix 1970 (4-byte epoch 1970)",
+                    "fr": "â±ï¸ Unix 1970 (4 octets epoch 1970)"
                   }
                 }
               ]
@@ -119387,65 +119331,65 @@
               "value": "auto",
               "hint": {
                 "en": "Override timezone. Use Auto to use Homey's timezone. Manual override for devices that don't handle DST.",
-                "fr": "Forcer le fuseau. Auto utilise celui de Homey. Manuel pour appareils sans gestion heure d'été.",
+                "fr": "Forcer le fuseau. Auto utilise celui de Homey. Manuel pour appareils sans gestion heure d'Ã©tÃ©.",
                 "nl": "Overschrijf tijdzone. Auto gebruikt Homey's tijdzone.",
-                "de": "Zeitzone überschreiben. Auto verwendet Homey's Zeitzone."
+                "de": "Zeitzone Ã¼berschreiben. Auto verwendet Homey's Zeitzone."
               },
               "values": [
                 {
                   "id": "auto",
                   "label": {
-                    "en": "🔄 Auto (Homey timezone)",
-                    "fr": "🔄 Auto (fuseau Homey)"
+                    "en": "ðŸ”„ Auto (Homey timezone)",
+                    "fr": "ðŸ”„ Auto (fuseau Homey)"
                   }
                 },
                 {
                   "id": "utc",
                   "label": {
-                    "en": "🌐 UTC (GMT+0)",
-                    "fr": "🌐 UTC (GMT+0)"
+                    "en": "ðŸŒ UTC (GMT+0)",
+                    "fr": "ðŸŒ UTC (GMT+0)"
                   }
                 },
                 {
                   "id": "gmt+1",
                   "label": {
-                    "en": "🇪🇺 GMT+1 (CET)",
-                    "fr": "🇪🇺 GMT+1 (Paris hiver)"
+                    "en": "ðŸ‡ªðŸ‡º GMT+1 (CET)",
+                    "fr": "ðŸ‡ªðŸ‡º GMT+1 (Paris hiver)"
                   }
                 },
                 {
                   "id": "gmt+2",
                   "label": {
-                    "en": "🇪🇺 GMT+2 (CEST/EET)",
-                    "fr": "🇪🇺 GMT+2 (Paris été)"
+                    "en": "ðŸ‡ªðŸ‡º GMT+2 (CEST/EET)",
+                    "fr": "ðŸ‡ªðŸ‡º GMT+2 (Paris Ã©tÃ©)"
                   }
                 },
                 {
                   "id": "gmt+3",
                   "label": {
-                    "en": "🇷🇺 GMT+3 (Moscow)",
-                    "fr": "🇷🇺 GMT+3 (Moscou)"
+                    "en": "ðŸ‡·ðŸ‡º GMT+3 (Moscow)",
+                    "fr": "ðŸ‡·ðŸ‡º GMT+3 (Moscou)"
                   }
                 },
                 {
                   "id": "gmt-5",
                   "label": {
-                    "en": "🇺🇸 GMT-5 (EST)",
-                    "fr": "🇺🇸 GMT-5 (New York)"
+                    "en": "ðŸ‡ºðŸ‡¸ GMT-5 (EST)",
+                    "fr": "ðŸ‡ºðŸ‡¸ GMT-5 (New York)"
                   }
                 },
                 {
                   "id": "gmt-8",
                   "label": {
-                    "en": "🇺🇸 GMT-8 (PST)",
-                    "fr": "🇺🇸 GMT-8 (Los Angeles)"
+                    "en": "ðŸ‡ºðŸ‡¸ GMT-8 (PST)",
+                    "fr": "ðŸ‡ºðŸ‡¸ GMT-8 (Los Angeles)"
                   }
                 },
                 {
                   "id": "gmt+8",
                   "label": {
-                    "en": "🇨🇳 GMT+8 (China)",
-                    "fr": "🇨🇳 GMT+8 (Chine)"
+                    "en": "ðŸ‡¨ðŸ‡³ GMT+8 (China)",
+                    "fr": "ðŸ‡¨ðŸ‡³ GMT+8 (Chine)"
                   }
                 }
               ]
@@ -119455,18 +119399,18 @@
         {
           "type": "group",
           "label": {
-            "en": "🔔 Alarm Thresholds (E002)",
-            "fr": "🔔 Seuils d'alarme (E002)",
-            "nl": "🔔 Alarm drempels (E002)"
+            "en": "ðŸ”” Alarm Thresholds (E002)",
+            "fr": "ðŸ”” Seuils d'alarme (E002)",
+            "nl": "ðŸ”” Alarm drempels (E002)"
           },
           "children": [
             {
               "id": "alarm_temp_max",
               "type": "number",
               "label": {
-                "en": "Max Temperature Alarm (°C)",
-                "nl": "Max temperatuur alarm (°C)",
-                "fr": "Alarme température max (°C)"
+                "en": "Max Temperature Alarm (Â°C)",
+                "nl": "Max temperatuur alarm (Â°C)",
+                "fr": "Alarme tempÃ©rature max (Â°C)"
               },
               "hint": {
                 "en": "Device will trigger alarm when temperature exceeds this value (E002 cluster, not all devices support this)",
@@ -119481,9 +119425,9 @@
               "id": "alarm_temp_min",
               "type": "number",
               "label": {
-                "en": "Min Temperature Alarm (°C)",
-                "nl": "Min temperatuur alarm (°C)",
-                "fr": "Alarme température min (°C)"
+                "en": "Min Temperature Alarm (Â°C)",
+                "nl": "Min temperatuur alarm (Â°C)",
+                "fr": "Alarme tempÃ©rature min (Â°C)"
               },
               "hint": {
                 "en": "Device will trigger alarm when temperature drops below this value",
@@ -119500,7 +119444,7 @@
               "label": {
                 "en": "Max Humidity Alarm (%)",
                 "nl": "Max luchtvochtigheid alarm (%)",
-                "fr": "Alarme humidité max (%)"
+                "fr": "Alarme humiditÃ© max (%)"
               },
               "hint": {
                 "en": "Device will trigger alarm when humidity exceeds this value",
@@ -119517,7 +119461,7 @@
               "label": {
                 "en": "Min Humidity Alarm (%)",
                 "nl": "Min luchtvochtigheid alarm (%)",
-                "fr": "Alarme humidité min (%)"
+                "fr": "Alarme humiditÃ© min (%)"
               },
               "hint": {
                 "en": "Device will trigger alarm when humidity drops below this value",
@@ -119533,8 +119477,8 @@
         {
           "type": "group",
           "label": {
-            "en": "🧪 Debug (Expert)",
-            "fr": "🧪 Debug (Expert)"
+            "en": "ðŸ§ª Debug (Expert)",
+            "fr": "ðŸ§ª Debug (Expert)"
           },
           "children": [
             {
@@ -119546,8 +119490,8 @@
               },
               "value": false,
               "hint": {
-                "en": "⚠️ EXPERT ONLY: Test all ZCL Time sync methods on device startup. May drain battery if used frequently.",
-                "fr": "⚠️ EXPERT UNIQUEMENT: Teste toutes les méthodes sync ZCL Time au démarrage. Peut vider la batterie si utilisé fréquemment."
+                "en": "âš ï¸ EXPERT ONLY: Test all ZCL Time sync methods on device startup. May drain battery if used frequently.",
+                "fr": "âš ï¸ EXPERT UNIQUEMENT: Teste toutes les mÃ©thodes sync ZCL Time au dÃ©marrage. Peut vider la batterie si utilisÃ© frÃ©quemment."
               }
             }
           ]
@@ -119567,10 +119511,10 @@
                 "nl": "Temperatuur correctie"
               },
               "hint": {
-                "en": "Adjust sensor reading (±10°C)",
-                "nl": "Pas meetwaarde aan (±10°C)"
+                "en": "Adjust sensor reading (Â±10Â°C)",
+                "nl": "Pas meetwaarde aan (Â±10Â°C)"
               },
-              "units": "°C",
+              "units": "Â°C",
               "value": 0,
               "min": -10,
               "max": 10,
@@ -119584,8 +119528,8 @@
                 "nl": "Luchtvochtigheid correctie"
               },
               "hint": {
-                "en": "Adjust sensor reading (±30%)",
-                "nl": "Pas meetwaarde aan (±30%)"
+                "en": "Adjust sensor reading (Â±30%)",
+                "nl": "Pas meetwaarde aan (Â±30%)"
               },
               "units": "%",
               "value": 0,
@@ -119628,12 +119572,12 @@
           "type": "checkbox",
           "label": {
             "en": "Enable Radio Presence Sensing",
-            "fr": "Activer la Détection de Présence Radio"
+            "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
           },
           "value": false,
           "hint": {
             "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+            "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
           }
         },
         {
@@ -119641,7 +119585,7 @@
           "type": "number",
           "label": {
             "en": "Radio Presence Sensitivity",
-            "fr": "Sensibilité Présence Radio"
+            "fr": "SensibilitÃ© PrÃ©sence Radio"
           },
           "value": 15,
           "min": 5,
@@ -119656,12 +119600,12 @@
           "type": "checkbox",
           "label": {
             "en": "Software Child Lock",
-            "fr": "Sécurité Enfant Logicielle"
+            "fr": "SÃ©curitÃ© Enfant Logicielle"
           },
           "value": false,
           "hint": {
             "en": "Prevents manual state changes on the device",
-            "fr": "Empêche les changements d'état manuels sur l'appareil"
+            "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil"
           }
         },
         {
@@ -119676,7 +119620,7 @@
           "max": 1440,
           "hint": {
             "en": "Turn off automatically after X minutes (0 = disabled)",
-            "fr": "S'éteint après X minutes (0 = désactivé)"
+            "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)"
           }
         },
         {
@@ -119684,12 +119628,12 @@
           "type": "checkbox",
           "label": {
             "en": "Vacation Mode (Presence Sim)",
-            "fr": "Mode Vacances (Simulation Présence)"
+            "fr": "Mode Vacances (Simulation PrÃ©sence)"
           },
           "value": false,
           "hint": {
             "en": "Randomly toggle device during evenings to simulate presence",
-            "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+            "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence"
           }
         },
         {
@@ -119697,14 +119641,14 @@
           "type": "number",
           "label": {
             "en": "Emulated Motion Hold (Seconds)",
-            "fr": "Maintien Mouvement Émulé (Secondes)"
+            "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
           },
           "value": 0,
           "min": 0,
           "max": 3600,
           "hint": {
             "en": "Keep motion 'ON' for X seconds after hardware clears",
-            "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+            "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel"
           }
         },
         {
@@ -119719,7 +119663,7 @@
           "max": 1000,
           "hint": {
             "en": "Software emulation for single-action buttons",
-            "fr": "Émulation logicielle pour boutons à action unique"
+            "fr": "Ã‰mulation logicielle pour boutons Ã  action unique"
           }
         },
         {
@@ -119734,7 +119678,7 @@
           "max": 4000,
           "hint": {
             "en": "Cut power if consumption exceeds this value (0 = disabled)",
-            "fr": "Coupure si la consommation dépasse cette valeur (0 = désactivé)"
+            "fr": "Coupure si la consommation dÃ©passe cette valeur (0 = dÃ©sactivÃ©)"
           }
         },
         {
@@ -119742,7 +119686,7 @@
           "type": "number",
           "label": {
             "en": "Inching Duration (Secs)",
-            "fr": "Durée Inching (Secondes)"
+            "fr": "DurÃ©e Inching (Secondes)"
           },
           "value": 0,
           "min": 0,
@@ -119750,7 +119694,7 @@
           "step": 0.1,
           "hint": {
             "en": "Automatically turn off after X seconds (Pulse mode)",
-            "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+            "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)"
           }
         },
         {
@@ -119758,12 +119702,12 @@
           "type": "checkbox",
           "label": {
             "en": "Software State Recovery",
-            "fr": "Récupération d'État Logicielle"
+            "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
           },
           "value": false,
           "hint": {
             "en": "Restore previous ON/OFF state after power failure",
-            "fr": "Restore l'état précédent après une coupure de courant"
+            "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant"
           }
         },
         {
@@ -119776,7 +119720,7 @@
           "value": false,
           "hint": {
             "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-            "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+            "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)"
           }
         },
         {
@@ -119791,7 +119735,7 @@
           "max": 100,
           "hint": {
             "en": "Alert if health score drops below this value",
-            "fr": "Alerte si le score de santé descend sous cette valeur"
+            "fr": "Alerte si le score de santÃ© descend sous cette valeur"
           }
         },
         {
@@ -119799,12 +119743,12 @@
           "type": "checkbox",
           "label": {
             "en": "Adaptive TPI Regulation",
-            "fr": "Régulation TPI Adaptative"
+            "fr": "RÃ©gulation TPI Adaptative"
           },
           "value": false,
           "hint": {
             "en": "Use advanced software-based heating cycles (more precise)",
-            "fr": "Utilise des cycles de chauffe logiciels avancés (plus précis)"
+            "fr": "Utilise des cycles de chauffe logiciels avancÃ©s (plus prÃ©cis)"
           }
         }
       ],
@@ -119824,7 +119768,7 @@
           "id": "ota_check",
           "title": {
             "en": "Check Zigbee OTA Update",
-            "fr": "Vérifier MàJ OTA",
+            "fr": "VÃ©rifier MÃ J OTA",
             "nl": "Controleer op OTA-updates"
           }
         }
@@ -119835,7 +119779,7 @@
             "id": "radio_presence_detected",
             "title": {
               "en": "Radio sensing presence detected",
-              "fr": "Présence détectée par radio (LQI)"
+              "fr": "PrÃ©sence dÃ©tectÃ©e par radio (LQI)"
             }
           }
         ],
@@ -119844,7 +119788,7 @@
             "id": "is_radio_presence_detected",
             "title": {
               "en": "Radio presence is detected",
-              "fr": "Présence radio détectée"
+              "fr": "PrÃ©sence radio dÃ©tectÃ©e"
             }
           }
         ],
@@ -119853,7 +119797,7 @@
             "id": "calibrate_virtual_energy",
             "title": {
               "en": "Calibrate virtual energy",
-              "fr": "Calibrer l'énergie virtuelle"
+              "fr": "Calibrer l'Ã©nergie virtuelle"
             },
             "args": [
               {
@@ -119870,7 +119814,7 @@
             "id": "set_sensing_threshold",
             "title": {
               "en": "Set radio sensing sensitivity",
-              "fr": "Régler la détection radio"
+              "fr": "RÃ©gler la dÃ©tection radio"
             },
             "args": [
               {
@@ -124783,7 +124727,8 @@
           "_tze284_2baujqot",
           "_tze284_nklqjk62",
           "_tze284_u8ouaqsz",
-          "zbeacon"
+          "zbeacon",
+          "TUYATEC-g3gl6cgy"
         ],
         "productId": [
           "3300-S",
@@ -129534,7 +129479,6 @@
           "_TZB210_YATKPUHA",
           "_TZE200_2IMWYIGP",
           "_TZE200_5NLDLE7W",
-          "_TZE200_5SBEBBZS",
           "_TZE200_5ZBP6J0U",
           "_TZE200_68NVBI09",
           "_TZE200_9CAXNA4S",
@@ -129548,14 +129492,10 @@
           "_TZE200_CQTAMHH5",
           "_TZE200_DF04GHRB",
           "_TZE200_DQ8BU0PT",
-          "_TZE200_EEGNWOYW",
-          "_TZE200_FCTWHUGX",
           "_TZE200_FDTJUW7U",
-          "_TZE200_FZO2POCS",
           "_TZE200_GAJ531W3",
           "_TZE200_GO3TVSWY",
           "_TZE200_ICKA1CLH",
-          "_TZE200_IOSSYXRA",
           "_TZE200_J1XL73IW",
           "_TZE200_JHKTTPLM",
           "_TZE200_KCCDZAEO",
@@ -129567,7 +129507,6 @@
           "_TZE200_NKOABG8W",
           "_TZE200_NV6NXO0C",
           "_TZE200_NW1R9HP6",
-          "_TZE200_OL5JLKKR",
           "_TZE200_P6VZ3WZT",
           "_TZE200_PW7MJI0L",
           "_TZE200_QOY0EKBD",
@@ -129733,7 +129672,22 @@
           "_tze284_lnyz4a6v",
           "_tze284_uqfph8ah",
           "_tze284_waa352qv",
-          "_tze600_ogyg1y6b"
+          "_tze600_ogyg1y6b",
+          "_TZE200_bjzrowv2",
+          "_TZE200_4vobcgd3",
+          "_TZE200_nogaemzt",
+          "_TZE200_pk0sfzvr",
+          "_TZE200_nueqqe6k",
+          "_TZE200_xaabybja",
+          "_TZE200_rmymn92d",
+          "_TZE200_3i3exuay",
+          "_TZE200_hsgrhjpf",
+          "_TZE200_68nvbio9",
+          "_TZE204_1fuxihti",
+          "_TZE200_yia0p3tr",
+          "_TZE200_cf1sl3tj",
+          "_TZE200_9p5xmj5r",
+          "_TZE204_xu4a5rhj"
         ],
         "productId": [
           "AM02",
@@ -146279,13 +146233,23 @@
           "_TZ3210_PAGAJPOG",
           "_TZE200_E3OITDYU",
           "_TZE200_ZENJ4LXV",
-          "_tze200_zenj4lxv"
+          "_tze200_zenj4lxv",
+          "_TZ3210_wdexaypg",
+          "_TZ3210_3mpwqzuu",
+          "_TZ3210_4ubylghk",
+          "_TZ3000_7ysdnebc",
+          "_TZE204_zenj4lxv",
+          "_TZE204_bxoo2swd",
+          "_TZE200_gwkapsoq",
+          "_TZE200_fjjbhx9d"
         ],
         "productId": [
           "TS0601",
           "TS1101",
           "ts0601",
-          "ts1101"
+          "ts1101",
+          "TS110F",
+          "TS110E"
         ],
         "endpoints": {
           "1": {
@@ -147358,7 +147322,19 @@
           "_tze284_nqqylykc",
           "_tze284_nzns7udm",
           "_tze284_xpvamyfz",
-          "_tze284_znvwzxkq"
+          "_tze284_znvwzxkq",
+          "_TZ3210_ngqk6jia",
+          "_TZ3210_weaqkhab",
+          "_TZ3210_k1msuvg6",
+          "_TZ3000_mgusv51k",
+          "_TZE200_ip2akl4w",
+          "_TZE200_1agwnems",
+          "_TZE200_579lguh2",
+          "_TZE200_vucankjx",
+          "_TZE200_4mh6tyyo",
+          "_TZE204_n9ctkb6j",
+          "_TZE204_9qhuzgo0",
+          "_TZE204_dcnsggvz"
         ],
         "productId": [
           "TS0052",
@@ -153869,13 +153845,18 @@
         "mains": true
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3210_j4pdtz9v",
+          "_TZ3210_pwj6vuj9",
+          "_TZ3210_d3m9v8p6"
+        ],
         "productId": [
           "TS0001",
           "TS0001_FINGERBOT",
           "TS0001_fingerbot",
           "ts0001",
-          "ts0001_fingerbot"
+          "ts0001_fingerbot",
+          "TS0001_FINGER"
         ],
         "endpoints": {
           "1": {
@@ -162504,6 +162485,8 @@
           "_TZE200_9yapgbuv",
           "_TZE200_vvmbj46n",
           "_TZE200_yjjdcqsq",
+          "_TZ3210_ncw88jfq",
+          "_tz3210_ncw88jfq",
           "_tz3000_bgsigers"
         ],
         "productId": [
@@ -163637,7 +163620,8 @@
           "_TZ3210_IYSTCADI",
           "_TZB210_3DXBG9KS",
           "_tz3210_iystcadi",
-          "_tzb210_3dxbg9ks"
+          "_tzb210_3dxbg9ks",
+          "_TZ3210_invesber"
         ],
         "productId": [
           "TRI-C1ZR",
@@ -163648,7 +163632,8 @@
           "tri-c1zr",
           "tri-k1zr",
           "ts0501b",
-          "ts0601_led"
+          "ts0601_led",
+          "TS0502B"
         ],
         "endpoints": {
           "1": {
@@ -164202,7 +164187,10 @@
         "approximation": {
           "usageConstant": 12
         },
-        "mains": true
+        "mains": true,
+        "batteries": [
+          "CR2450"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -164211,14 +164199,16 @@
           "_TZ3210_QUINZF3W",
           "_tz3000_w58g68s3",
           "_tz3210_aavhaadb",
-          "_tz3210_quinzf3w"
+          "_tz3210_quinzf3w",
+          "_TZE200_s8gkrkxk"
         ],
         "productId": [
           "TS0505B",
           "TS0601_STRIP",
           "TS0601_strip",
           "ts0505b",
-          "ts0601_strip"
+          "ts0601_strip",
+          "TS0601"
         ],
         "endpoints": {
           "1": {
@@ -164799,7 +164789,10 @@
         "approximation": {
           "usageConstant": 12
         },
-        "mains": true
+        "mains": true,
+        "batteries": [
+          "CR2450"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -165392,7 +165385,10 @@
         "approximation": {
           "usageConstant": 12
         },
-        "mains": true
+        "mains": true,
+        "batteries": [
+          "CR2450"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -166040,7 +166036,10 @@
         "approximation": {
           "usageConstant": 6
         },
-        "mains": true
+        "mains": true,
+        "batteries": [
+          "CR2450"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -166790,7 +166789,10 @@
         "approximation": {
           "usageConstant": 6
         },
-        "mains": true
+        "mains": true,
+        "batteries": [
+          "CR2450"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -167536,7 +167538,10 @@
         "approximation": {
           "usageConstant": 6
         },
-        "mains": true
+        "mains": true,
+        "batteries": [
+          "CR2450"
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -173944,20 +173949,19 @@
       ],
       "energy": {
         "approximation": {
-          "usageOff": 0.7,
-          "usageOn": 100
+          "usageConstant": 0.7
         }
       },
       "zigbee": {
         "manufacturerName": [
           "CK-BL702-SWP-01(7020)",
           "E-WELINK",
-          "EWELINK",
-          "eWeLink",
-          "ewelink",
           "SONOFF",
+          "Sonoff",
           "sonoff",
-          "_TYZB01_HLLA45KX",
+          "EWELINK",
+          "EweLink",
+          "ewelink",
           "_TYZB01_MTUNWANM",
           "_TZ3000_1HWJUTGO",
           "_TZ3000_2IIIMQS9",
@@ -173976,12 +173980,10 @@
           "_TZ3000_DD8WWZCY",
           "_TZ3000_DLHHRHS8",
           "_TZ3000_DLUG3KBC",
-          "_TZ3000_DPO1YSAK",
           "_TZ3000_GAZJNGJL",
           "_TZ3000_GDYJFVGM",
           "_TZ3000_HELYQDVS",
           "_TZ3000_HHIODEZ3",
-          "_TZ3000_HYFVRAR3",
           "_TZ3000_I8L0NQDU",
           "_TZ3000_IBEFEICF",
           "_TZ3000_IKSASDBV",
@@ -174002,7 +174004,6 @@
           "_TZ3000_OIYMH3QU",
           "_TZ3000_PS3DMATO",
           "_TZ3000_PVLVOXVT",
-          "_TZ3000_QEUVNOHG",
           "_TZ3000_QIUTUT5Y",
           "_TZ3000_QLMNXMAC",
           "_TZ3000_RAVIYUVK",
@@ -174012,7 +174013,6 @@
           "_TZ3000_RTCRRVIA",
           "_TZ3000_SGB0XHWN",
           "_TZ3000_U1RKAJSR",
-          "_TZ3000_UPJRSXH1",
           "_TZ3000_UWAORT14",
           "_TZ3000_UWKJA6Z1",
           "_TZ3000_V1PDXUQQ",
@@ -174053,7 +174053,6 @@
           "_TZE284_DAPWRYY7",
           "_TZE284_DCNSGGVZ",
           "_TZN3000_CFNPRAB5",
-          "_tyzb01_hlla45kx",
           "_tyzb01_mtunwanm",
           "_tz3000_1hwjutgo",
           "_tz3000_2iiimqs9",
@@ -174072,12 +174071,10 @@
           "_tz3000_dd8wwzcy",
           "_tz3000_dlhhrhs8",
           "_tz3000_dlug3kbc",
-          "_tz3000_dpo1ysak",
           "_tz3000_gazjngjl",
           "_tz3000_gdyjfvgm",
           "_tz3000_helyqdvs",
           "_tz3000_hhiodez3",
-          "_tz3000_hyfvrar3",
           "_tz3000_i8l0nqdu",
           "_tz3000_ibefeicf",
           "_tz3000_iksasdbv",
@@ -174098,7 +174095,6 @@
           "_tz3000_oiymh3qu",
           "_tz3000_ps3dmato",
           "_tz3000_pvlvoxvt",
-          "_tz3000_qeuvnohg",
           "_tz3000_qiutut5y",
           "_tz3000_qlmnxmac",
           "_tz3000_raviyuvk",
@@ -174108,7 +174104,6 @@
           "_tz3000_rtcrrvia",
           "_tz3000_sgb0xhwn",
           "_tz3000_u1rkajsr",
-          "_tz3000_upjrsxh1",
           "_tz3000_uwaort14",
           "_tz3000_uwkja6z1",
           "_tz3000_v1pdxuqq",
@@ -174160,18 +174155,12 @@
           "LUMI.PLUG.MACN01",
           "LUMI.PLUG.MAEU01",
           "LUMI.PLUG.MMEU01",
-          "S26R2ZB",
-          "S31 LITE ZB",
-          "S31 Lite zb",
           "S31ZB",
-          "S40LITE",
           "S40ZBTPB",
           "S40ZBTPF",
           "S40ZBTPG",
           "S60ZBTPE",
-          "S60ZBTPF",
           "S60ZBTPF-R2",
-          "S60ZBTPG",
           "SA-028-1",
           "SA-029-1",
           "SNZB-06P",
@@ -174184,9 +174173,7 @@
           "SPMZBR2",
           "TRADFRI CONTROL OUTLET",
           "TRADFRI control outlet",
-          "TS011F",
           "TS0121",
-          "TS0601",
           "TSO121",
           "Z111PL0H-1JX",
           "ZBMINIL2",
@@ -174201,17 +174188,12 @@
           "lumi.plug.macn01",
           "lumi.plug.maeu01",
           "lumi.plug.mmeu01",
-          "s26r2zb",
-          "s31 lite zb",
           "s31zb",
-          "s40lite",
           "s40zbtpb",
           "s40zbtpf",
           "s40zbtpg",
           "s60zbtpe",
-          "s60zbtpf",
           "s60zbtpf-r2",
-          "s60zbtpg",
           "sa-028-1",
           "sa-029-1",
           "snzb-06p",
@@ -174223,9 +174205,7 @@
           "spm01",
           "spmzbr2",
           "tradfri control outlet",
-          "ts011f",
           "ts0121",
-          "ts0601",
           "tso121",
           "z111pl0h-1jx",
           "zbminil2"
@@ -174234,7 +174214,7 @@
           "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
           "instruction": {
             "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã  ce que la LED clignote."
           }
         },
         "endpoints": {
@@ -174256,7 +174236,7 @@
           "value": true,
           "hint": {
             "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
-            "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+            "fr": "Estimer la consommation quand la mesure rÃ©elle n'est pas disponible (appareils AC/DC seulement)"
           }
         },
         {
@@ -174264,29 +174244,29 @@
           "type": "dropdown",
           "label": {
             "en": "Power Measurement Scale",
-            "fr": "Échelle Mesure Puissance"
+            "fr": "Ã‰chelle Mesure Puissance"
           },
           "value": "1",
           "values": [
             {
               "id": "0.1",
               "label": {
-                "en": "÷10",
-                "fr": "÷10"
+                "en": "Ã·10",
+                "fr": "Ã·10"
               }
             },
             {
               "id": "1",
               "label": {
-                "en": "×1 (Default)",
-                "fr": "×1 (Par défaut)"
+                "en": "Ã—1 (Default)",
+                "fr": "Ã—1 (Par dÃ©faut)"
               }
             },
             {
               "id": "10",
               "label": {
-                "en": "×10",
-                "fr": "×10"
+                "en": "Ã—10",
+                "fr": "Ã—10"
               }
             }
           ],
@@ -174300,29 +174280,29 @@
           "type": "dropdown",
           "label": {
             "en": "Voltage Measurement Scale",
-            "fr": "Échelle Mesure Tension"
+            "fr": "Ã‰chelle Mesure Tension"
           },
           "value": "1",
           "values": [
             {
               "id": "0.1",
               "label": {
-                "en": "÷10",
-                "fr": "÷10"
+                "en": "Ã·10",
+                "fr": "Ã·10"
               }
             },
             {
               "id": "1",
               "label": {
-                "en": "×1 (Default)",
-                "fr": "×1 (Par défaut)"
+                "en": "Ã—1 (Default)",
+                "fr": "Ã—1 (Par dÃ©faut)"
               }
             },
             {
               "id": "10",
               "label": {
-                "en": "×10",
-                "fr": "×10"
+                "en": "Ã—10",
+                "fr": "Ã—10"
               }
             }
           ],
@@ -174336,29 +174316,29 @@
           "type": "dropdown",
           "label": {
             "en": "Current Measurement Scale",
-            "fr": "Échelle Mesure Courant"
+            "fr": "Ã‰chelle Mesure Courant"
           },
           "value": "1",
           "values": [
             {
               "id": "0.1",
               "label": {
-                "en": "÷10",
-                "fr": "÷10"
+                "en": "Ã·10",
+                "fr": "Ã·10"
               }
             },
             {
               "id": "1",
               "label": {
-                "en": "×1 (Default)",
-                "fr": "×1 (Par défaut)"
+                "en": "Ã—1 (Default)",
+                "fr": "Ã—1 (Par dÃ©faut)"
               }
             },
             {
               "id": "10",
               "label": {
-                "en": "×10",
-                "fr": "×10"
+                "en": "Ã—10",
+                "fr": "Ã—10"
               }
             }
           ],
@@ -174372,35 +174352,35 @@
           "type": "dropdown",
           "label": {
             "en": "Energy (kWh) Scale",
-            "fr": "Échelle Énergie (kWh)"
+            "fr": "Ã‰chelle Ã‰nergie (kWh)"
           },
           "value": "1",
           "values": [
             {
               "id": "0.1",
               "label": {
-                "en": "÷10",
-                "fr": "÷10"
+                "en": "Ã·10",
+                "fr": "Ã·10"
               }
             },
             {
               "id": "1",
               "label": {
-                "en": "×1 (Default)",
-                "fr": "×1 (Par défaut)"
+                "en": "Ã—1 (Default)",
+                "fr": "Ã—1 (Par dÃ©faut)"
               }
             },
             {
               "id": "10",
               "label": {
-                "en": "×10",
-                "fr": "×10"
+                "en": "Ã—10",
+                "fr": "Ã—10"
               }
             }
           ],
           "hint": {
             "en": "Adjust if total energy (kWh) readings are way off.",
-            "fr": "Ajuster si l'énergie totale (kWh) est incorrecte."
+            "fr": "Ajuster si l'Ã©nergie totale (kWh) est incorrecte."
           }
         },
         {
@@ -174468,12 +174448,12 @@
           "type": "checkbox",
           "label": {
             "en": "Software Child Lock",
-            "fr": "Sécurité Enfant Logicielle"
+            "fr": "SÃ©curitÃ© Enfant Logicielle"
           },
           "value": false,
           "hint": {
             "en": "Prevents manual state changes on the device",
-            "fr": "Empêche les changements d'état manuels sur l'appareil"
+            "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil"
           }
         },
         {
@@ -174488,7 +174468,7 @@
           "max": 1440,
           "hint": {
             "en": "Turn off automatically after X minutes (0 = disabled)",
-            "fr": "S'éteint après X minutes (0 = désactivé)"
+            "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)"
           }
         },
         {
@@ -174496,12 +174476,12 @@
           "type": "checkbox",
           "label": {
             "en": "Vacation Mode (Presence Sim)",
-            "fr": "Mode Vacances (Simulation Présence)"
+            "fr": "Mode Vacances (Simulation PrÃ©sence)"
           },
           "value": false,
           "hint": {
             "en": "Randomly toggle device during evenings to simulate presence",
-            "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+            "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence"
           }
         },
         {
@@ -174509,14 +174489,14 @@
           "type": "number",
           "label": {
             "en": "Emulated Motion Hold (Seconds)",
-            "fr": "Maintien Mouvement Émulé (Secondes)"
+            "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
           },
           "value": 0,
           "min": 0,
           "max": 3600,
           "hint": {
             "en": "Keep motion 'ON' for X seconds after hardware clears",
-            "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+            "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel"
           }
         },
         {
@@ -174531,7 +174511,7 @@
           "max": 1000,
           "hint": {
             "en": "Software emulation for single-action buttons",
-            "fr": "Émulation logicielle pour boutons à action unique"
+            "fr": "Ã‰mulation logicielle pour boutons Ã  action unique"
           }
         },
         {
@@ -174539,7 +174519,7 @@
           "type": "number",
           "label": {
             "en": "Inching Duration (Secs)",
-            "fr": "Durée Inching (Secondes)"
+            "fr": "DurÃ©e Inching (Secondes)"
           },
           "value": 0,
           "min": 0,
@@ -174547,7 +174527,7 @@
           "step": 0.1,
           "hint": {
             "en": "Automatically turn off after X seconds (Pulse mode)",
-            "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+            "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)"
           }
         },
         {
@@ -174555,12 +174535,12 @@
           "type": "checkbox",
           "label": {
             "en": "Software State Recovery",
-            "fr": "Récupération d'État Logicielle"
+            "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
           },
           "value": false,
           "hint": {
             "en": "Restore previous ON/OFF state after power failure",
-            "fr": "Restore l'état précédent après une coupure de courant"
+            "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant"
           }
         },
         {
@@ -174573,7 +174553,7 @@
           "value": false,
           "hint": {
             "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-            "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+            "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)"
           }
         },
         {
@@ -174588,7 +174568,7 @@
           "max": 100,
           "hint": {
             "en": "Alert if health score drops below this value",
-            "fr": "Alerte si le score de santé descend sous cette valeur"
+            "fr": "Alerte si le score de santÃ© descend sous cette valeur"
           }
         }
       ],
@@ -174628,7 +174608,7 @@
           "id": "ota_check",
           "title": {
             "en": "Check Zigbee OTA Update",
-            "fr": "Vérifier MàJ OTA",
+            "fr": "VÃ©rifier MÃ J OTA",
             "nl": "Controleer op OTA-updates"
           }
         }
@@ -174639,7 +174619,7 @@
             "id": "radio_presence_detected",
             "title": {
               "en": "Radio sensing presence detected",
-              "fr": "Présence détectée par radio (LQI)"
+              "fr": "PrÃ©sence dÃ©tectÃ©e par radio (LQI)"
             }
           }
         ],
@@ -174648,7 +174628,7 @@
             "id": "is_radio_presence_detected",
             "title": {
               "en": "Radio presence is detected",
-              "fr": "Présence radio détectée"
+              "fr": "PrÃ©sence radio dÃ©tectÃ©e"
             }
           }
         ],
@@ -174657,7 +174637,7 @@
             "id": "calibrate_virtual_energy",
             "title": {
               "en": "Calibrate virtual energy",
-              "fr": "Calibrer l'énergie virtuelle"
+              "fr": "Calibrer l'Ã©nergie virtuelle"
             },
             "args": [
               {
@@ -174674,7 +174654,7 @@
             "id": "set_sensing_threshold",
             "title": {
               "en": "Set radio sensing sensitivity",
-              "fr": "Régler la détection radio"
+              "fr": "RÃ©gler la dÃ©tection radio"
             },
             "args": [
               {
@@ -185460,9 +185440,7 @@
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_DFGBTUB0",
-          "_TZ3000_W8JWKCZZ",
-          "_tz3000_dfgbtub0",
-          "_tz3000_w8jwkczz"
+          "_tz3000_dfgbtub0"
         ],
         "productId": [
           "TS0042",
@@ -225444,23 +225422,17 @@
           "Eco-DIM",
           "EcoDim",
           "Eurotronic",
-          "GIRIER",
           "Heiman",
           "IKEA of Sweden",
           "LIDL Home",
-          "LUMI",
           "Legrand",
           "Moes",
           "Philips",
           "Robb SMARRT",
-          "SONOFF",
           "Schneider Electric",
           "Signify Netherlands B.V.",
           "Silvercrest",
-          "Sonoff",
           "Sunricher",
-          "TUYA",
-          "Tuya",
           "Xiaomi",
           "Zemismart",
           "_TYZB01_",

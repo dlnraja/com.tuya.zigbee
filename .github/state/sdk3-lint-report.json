@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-04-09T04:06:44.544Z",
+  "timestamp": "2026-04-11T15:34:47.972Z",
   "driversScanned": 20,
-  "staticIssues": 28,
+  "staticIssues": 26,
   "autoFixed": 0,
   "aiSuggestions": 0,
   "aiApplied": 0,
@@ -51,9 +51,7 @@
     {
       "driver": "air_purifier_presence_hybrid",
       "issues": [
-        "sdk3-await-capability",
-        "sdk3-flow-card-unsafe",
-        "sdk3-trigger-card-no-try"
+        "sdk3-await-capability"
       ]
     },
     {
@@ -66,7 +64,6 @@
       "driver": "air_purifier_sensor_hybrid",
       "issues": [
         "sdk3-await-capability",
-        "sdk3-case-sensitive-fingerprint",
         "sdk3-dp-variant-awareness"
       ]
     },
@@ -117,6 +114,7 @@
     {
       "driver": "bulb_dimmable",
       "issues": [
+        "sdk3-missing-energy-batteries",
         "sdk3-case-sensitive-fingerprint"
       ]
     },

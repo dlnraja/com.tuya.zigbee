@@ -110,8 +110,23 @@ class FingerBotTimeBoundCluster extends BoundCluster {
 class FingerBot extends TuyaSpecificClusterDevice {
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
+    this.log('Initializing FingerBot device...');
+    
+    // v7.2.4: CRITICAL — Register listeners BEFORE super.onNodeInit()
+    // This ensures capability listeners are active even if initialization timeouts
+    this._suppressUntil = 0;
+    this._ignoreOnOffReportsUntil = 0;
+    this._lastBatteryLowState = false;
+    this._lastRemotePressAt = 0;
+    this._guiPulseTimeout = null;
+    this._timeBoundCluster = null;
+
+    this._registerOnOffHandling(zclNode);
+    this._registerTuyaListeners(zclNode);
+    this._registerTimeBoundCluster(zclNode);
+
     try {
+      // --- Attribute Reporting Configuration ---
       await this.configureAttributeReporting([
         {
           cluster: 'genPowerCfg',
@@ -120,43 +135,22 @@ class FingerBot extends TuyaSpecificClusterDevice {
           maxInterval: 43200,
           minChange: 2,
         }
-      ]);
-      this.log('Attribute reporting configured successfully');
-    } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
+      ]).catch(err => this.log('Attribute reporting config failed:', err.message));
 
-    await super.onNodeInit({ zclNode });
+      await super.onNodeInit({ zclNode });
 
-    this.log('Initializing FingerBot device...');
-    this.printNode();
+      this.printNode();
 
-    this._suppressUntil = 0;
-    this._ignoreOnOffReportsUntil = 0;
-    this._lastBatteryLowState = false;
-    this._lastRemotePressAt = 0;
-    this._guiPulseTimeout = null;
-    this._timeBoundCluster = null;
-
-    try {
       await zclNode.endpoints[1].clusters.basic.readAttributes([
-        'manufacturerName',
-        'zclVersion',
-        'appVersion',
-        'modelId',
-        'powerSource',
-        'attributeReportingStatus',
-      ]);
+        'manufacturerName', 'zclVersion', 'appVersion', 'modelId', 'powerSource', 'attributeReportingStatus',
+      ]).catch(err => this.error('Error reading attributes:', err));
+
+      // Apply current settings once on init.
+      await this.applyConfiguredSettings({ includeMode: true });
+
     } catch (err) {
-      this.error('Error when reading device attributes:', err);
+      this.error('FingerBot initialization error:', err.message);
     }
-
-    this._registerOnOffHandling(zclNode);
-    this._registerTuyaListeners(zclNode);
-    this._registerTimeBoundCluster(zclNode);
-
-    // Apply current settings once on init.
-    await this.applyConfiguredSettings({ includeMode: true });
 
     this.log('FingerBot initialization complete.');
   }

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect x="20" y="25" width="60" height="45" rx="5" fill="#FFF" stroke="#333" stroke-width="2"/>
+  <path d="M30 45 Q35 35 40 45 Q45 55 50 45 Q55 35 60 45 Q65 55 70 45" stroke="#FF5722" stroke-width="3" fill="none"/>
+  <path d="M30 55 Q35 45 40 55 Q45 65 50 55 Q55 45 60 55 Q65 65 70 55" stroke="#FF7043" stroke-width="3" fill="none"/>
+  <circle cx="50" cy="80" r="4" fill="#4CAF50"/>
+  <text x="50" y="95" text-anchor="middle" font-size="7" fill="#666">Hold reset 10s</text>
+</svg>

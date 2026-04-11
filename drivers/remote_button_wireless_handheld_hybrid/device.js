@@ -279,6 +279,9 @@ class Button4GangDevice extends ButtonDevice {
    * v5.5.617: Handle device wake (cold boot recovery via onEndDeviceAnnounce)
    */
   async onEndDeviceAnnounce() {
+    // v7.3.0: Call parent handler to re-bind standard clusters
+    await super.onEndDeviceAnnounce();
+
     this.log('[BUTTON4-MODE] 📡 Device announced (wake/rejoin) - re-applying mode + re-binding...');
     this._modeVerified = false;
 

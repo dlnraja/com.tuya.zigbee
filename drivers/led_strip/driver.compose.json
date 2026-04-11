@@ -20,7 +20,10 @@
     "approximation": {
       "usageConstant": 12
     },
-    "mains": true
+    "mains": true,
+    "batteries": [
+      "CR2450"
+    ]
   },
   "zigbee": {
     "manufacturerName": [
@@ -29,14 +32,16 @@
       "_TZ3210_QUINZF3W",
       "_tz3000_w58g68s3",
       "_tz3210_aavhaadb",
-      "_tz3210_quinzf3w"
+      "_tz3210_quinzf3w",
+      "_TZE200_s8gkrkxk"
     ],
     "productId": [
       "TS0505B",
       "TS0601_STRIP",
       "TS0601_strip",
       "ts0505b",
-      "ts0601_strip"
+      "ts0601_strip",
+      "TS0601"
     ],
     "endpoints": {
       "1": {

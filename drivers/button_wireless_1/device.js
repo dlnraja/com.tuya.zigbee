@@ -678,6 +678,9 @@ class Button1GangDevice extends ButtonDevice {
   async onEndDeviceAnnounce() {
     this.log('[BUTTON1] 📡 Device announced (wake/rejoin)');
     
+    // v7.3.0: Call parent handler to re-bind standard clusters
+    await super.onEndDeviceAnnounce();
+
     // Try to bind onOff cluster when device wakes
     if (this._zclNode && !this._onOffBound) {
       this.log('[BUTTON1] 🔄 Attempting onOff binding on wake...');

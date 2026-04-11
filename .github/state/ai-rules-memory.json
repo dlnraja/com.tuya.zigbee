@@ -4,9 +4,9 @@
       "id": "sdk3-await-capability",
       "desc": "setCapabilityValue() calls should be awaited.",
       "severity": "info",
-      "count": 43,
+      "count": 65,
       "firstSeen": "2026-04-04T17:57:49.240Z",
-      "lastSeen": "2026-04-09T03:57:07.506Z",
+      "lastSeen": "2026-04-11T15:25:07.441Z",
       "files": [
         "air_purifier",
         "air_quality_co2",
@@ -41,9 +41,9 @@
       "id": "sdk3-battery-conflict",
       "desc": "NEVER combine measure_battery + alarm_battery. SDK v3 creates duplicate UI/Flow Cards. Use runtime adaptation via UnifiedBatteryHandler.",
       "severity": "error",
-      "count": 111,
+      "count": 113,
       "firstSeen": "2026-04-04T21:17:00.000Z",
-      "lastSeen": "2026-04-09T03:57:07.498Z",
+      "lastSeen": "2026-04-11T15:25:07.387Z",
       "files": [
         "RESOLVED: 108 drivers had both caps, reverted to measure_battery only",
         "air_purifier_siren_hybrid"
@@ -143,9 +143,9 @@
       "id": "sdk3-case-sensitive-fingerprint",
       "desc": "Fingerprint in enrichment data uses UPPERCASE (e.g., _TZE200_PAY2BYAX). Tuya fingerprints must be lowercase to match correctly.",
       "severity": "warn",
-      "count": 33,
+      "count": 51,
       "firstSeen": "2026-04-05T22:20:34.331Z",
-      "lastSeen": "2026-04-09T03:57:07.506Z",
+      "lastSeen": "2026-04-11T15:25:07.441Z",
       "files": [
         "air_quality_co2",
         "air_quality_comprehensive",
@@ -191,9 +191,9 @@
       "id": "sdk3-mains-has-battery",
       "desc": "Device has mainsPowered=true but compose still declares battery capability. Runtime handler will fix, but compose is misleading.",
       "severity": "warn",
-      "count": 10,
+      "count": 16,
       "firstSeen": "2026-04-05T22:20:34.336Z",
-      "lastSeen": "2026-04-09T03:57:07.503Z",
+      "lastSeen": "2026-04-11T15:25:07.426Z",
       "files": [
         "air_quality_comprehensive",
         "ceiling_fan",
@@ -205,28 +205,31 @@
       "id": "sdk3-missing-energy-batteries",
       "desc": "Driver declares measure_battery capability but driver.compose.json is missing energy.batteries array. SDK3 validation will fail.",
       "severity": "error",
-      "count": 3,
+      "count": 7,
       "firstSeen": "2026-04-07T03:58:16.622Z",
-      "lastSeen": "2026-04-07T03:58:16.624Z",
+      "lastSeen": "2026-04-11T15:25:07.430Z",
       "files": [
         "air_purifier_climate_hybrid",
         "air_purifier_lcdtemphumidsensor_hybrid",
-        "air_purifier_motion_hybrid"
+        "air_purifier_motion_hybrid",
+        "bulb_dimmable",
+        "bulb_dimmable_dimmer_hybrid",
+        "bulb_rgb"
       ]
     },
     {
       "id": "sdk3-dp-variant-awareness",
       "desc": "DP mapping has no variant-awareness comment. Same DP can serve different functions across _TZE200/_TZE204/_TZE284 variants. Consider adding variant notes.",
       "severity": "info",
-      "count": 3,
+      "count": 5,
       "firstSeen": "2026-04-07T03:58:16.630Z",
-      "lastSeen": "2026-04-09T03:57:07.497Z",
+      "lastSeen": "2026-04-11T15:25:07.382Z",
       "files": [
         "air_purifier_sensor_hybrid"
       ]
     }
   ],
-  "lastRun": "2026-04-09T03:57:07.470Z",
-  "totalRuns": 10,
-  "totalIssues": 255
+  "lastRun": "2026-04-11T15:25:07.173Z",
+  "totalRuns": 12,
+  "totalIssues": 309
 }

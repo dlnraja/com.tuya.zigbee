@@ -43,8 +43,6 @@ const ZCL_ONLY_MANUFACTURERS_4G = [
 
 // v5.8.92: Manufacturers whose firmware broadcasts ZCL to ALL endpoints
 // Fix: Use Tuya DP commands (DP1-4) for individual gang control
-// v5.9.14: REMOVED _TZ3002_pzao9ls1 — diag 1c9a24c2 proves per-EP ZCL works fine,
-// Tuya DP was ignored (device is ZCL-only), breaking virtual buttons completely
 const FORCE_TUYA_DP_4G = [];
 
 const BaseClass = typeof HybridSwitchBase === 'function' 
@@ -70,9 +68,6 @@ class Switch4GangDevice extends BaseClass {
 
   async onNodeInit({ zclNode }) {
     try {
-      // v6.0: Robust initialization with error recovery
-      
-
       // Continue with driver-specific setup
       try {
         if (this.isZclOnlyDevice) {
@@ -83,21 +78,19 @@ class Switch4GangDevice extends BaseClass {
         }
 
         await super.onNodeInit({ zclNode });
-    this.initPhysicalButtonDetection(); // rule-19 injected
-    
 
         // v5.5.896: Physical button detection (single/double/long/triple)
-        await this.initPhysicalButtonDetection?.(zclNode);
+        await this.initPhysicalButtonDetection(zclNode);
 
         // v5.5.412: Initialize virtual buttons
-        await this.initVirtualButtons?.();
+        await this.initVirtualButtons();
 
         this.log('[SWITCH-4G] v5.5.921 - Physical button detection enabled');
       } catch (setupErr) {
         this.log('[SWITCH-4G] Setup warning:', setupErr.message);
       }
 
-      this.log('[SWITCH-4G] ✅ v6.0 - Initialized with error recovery');
+      this.log('[SWITCH-4G] ✅ Initialized with error recovery');
     } catch (err) {
       this.error('[SWITCH-4G] ❌ CRITICAL INIT ERROR:', err.message);
       this.error('[SWITCH-4G] Stack:', err.stack);
@@ -114,6 +107,9 @@ class Switch4GangDevice extends BaseClass {
    *   Fix: manually instantiate onOff cluster using Cluster.getCluster(6).
    */
   async _initZclOnlyMode(zclNode) {
+    // v7.2.5: Ensure all gang capabilities are present (HOBEIAN fix)
+    await this._migrateCapabilities().catch(e => this.log(`[BSEED-4G] ⚠️ Migrate: ${e.message}`));
+
     // v5.9.15: Init lastState from capabilities (not null) — prevents first
     // periodic heartbeat report from triggering false physical flow cards
     const cs = (ep) => { try { return this.getCapabilityValue(ep === 1 ? 'onoff' : `onoff.gang${ep}`); } catch { return null; } };
@@ -127,26 +123,16 @@ class Switch4GangDevice extends BaseClass {
     this._isZclOnlyMode = true; // v5.5.993: Flag for VirtualButtonMixin direct ZCL
 
     // v5.8.39: Ensure onOff cluster exists on EP2-4 even if Homey interview missed it
-    // Root cause: Endpoint constructor only creates clusters from descriptor.inputClusters.
-    // If interview didn't include cluster 6 in EP2-4 descriptors, the cluster is never created.
-    // Fix: Use Cluster.getCluster(6) to get the OnOff class and instantiate it manually.
     this._ensureOnOffClusters(zclNode);
 
     // v5.9.23: GROUP ISOLATION — remove all Zigbee group memberships from each EP
-    // Root cause (diag 945448b9, Z2M #27167, ZHA #2443): TS0726 firmware broadcasts
-    // ZCL onOff commands to ALL endpoints. If endpoints share a Zigbee group, the device
-    // routes commands through that group internally. Removing group memberships forces
-    // per-endpoint command routing.
     await this._removeGroupMemberships(zclNode);
 
     // v5.9.23: Track which gang was last commanded by the app
-    // Used to filter broadcast reports for non-commanded gangs
     this._lastCommandedGang = null;
     this._lastCommandTime = 0;
 
-    // v5.8.51: Explicit binding for EP1-4 onOff clusters (TS0726 BSEED fix - Hartmut_Dunker)
-    // Root cause: TS0726 doesn't send attr reports for EP2-4 without explicit binding.
-    // The requiresExplicitBinding flag from PhysicalButtonMixin is not checked in ZCL-only path.
+    // v5.8.51: Explicit binding for EP1-4 onOff clusters (TS0726 BSEED fix)
     await this._bindAllEndpoints(zclNode);
 
     // v5.5.999: Helper to get onOff cluster from endpoint with multiple lookup strategies
@@ -156,46 +142,11 @@ class Switch4GangDevice extends BaseClass {
       return ep.clusters.onOff || ep.clusters.genOnOff || ep.clusters[6] || ep.clusters['6'];
     };
 
-    // v5.8.26: Helper to get Tuya cluster on EP1 for DP fallback (BSEED EP2-4 fix)
-    const getTuyaCluster = () => {
-      const ep1 = this._zclNode?.endpoints?.[1];
-      if (!ep1?.clusters) return null;
-      return ep1.clusters.tuya || ep1.clusters.manuSpecificTuya ||
-             ep1.clusters[0xEF00] || ep1.clusters['61184'];
-    };
-
-    // v5.8.26: Send Tuya DP bool command for gangs without ZCL onOff
-    const sendTuyaDPBool = async (dpId, value) => {
-      const tuyaCluster = getTuyaCluster();
-      if (!tuyaCluster) {
-        this.log(`[BSEED-4G] ⚠️ No Tuya cluster on EP1 for DP${dpId}`);
-        return false;
-      }
-      const dataBuffer = Buffer.from([value ? 1 : 0]);
-      try {
-        if (typeof tuyaCluster.datapoint === 'function') {
-          await tuyaCluster.datapoint({ dp: dpId, datatype: 1, data: dataBuffer });
-        } else if (typeof tuyaCluster.sendData === 'function') {
-          await tuyaCluster.sendData({ dp: dpId, value: value ? 1 : 0, dataType: 1 });
-        } else {
-          this.log('[BSEED-4G] ⚠️ No DP send method on Tuya cluster');
-          return false;
-        }
-        this.log(`[BSEED-4G] ✅ Tuya DP${dpId} = ${value} sent`);
-        return true;
-      } catch (err) {
-        this.log(`[BSEED-4G] ❌ Tuya DP${dpId} send failed: ${err.message}`);
-        return false;
-      }
-    };
-    this._sendTuyaDPBool = sendTuyaDPBool;
-
     // v5.13.2: Unified listener registration (Capability + Flow Cards)
     // Inherited from HybridSwitchBase, handles ZCL/DP fallback automatically
     this._registerCapabilityListeners();
 
     // v5.7.38: Setup attribute listeners for available endpoints
-    // Also setup delayed retry for endpoints where cluster isn't ready yet
     const setupEndpointListener = (epNum, retryCount = 0) => {
       const onOff = getOnOffCluster(epNum);
       if (!onOff || typeof onOff.on !== 'function') {
@@ -203,9 +154,7 @@ class Switch4GangDevice extends BaseClass {
           this.log(`[BSEED-4G] EP${epNum} cluster not ready, retry ${retryCount + 1}/3 in 2s`);
           setTimeout(() => setupEndpointListener(epNum, retryCount + 1), 2000);
         } else {
-          this.log(`[BSEED-4G] EP${epNum} no ZCL attr listener after 3 retries - using Tuya DP for gang ${epNum}`);
-          this._dpFallbackGangs = this._dpFallbackGangs || new Set();
-          this._dpFallbackGangs.add(epNum);
+          this.log(`[BSEED-4G] EP${epNum} no ZCL attr listener after 3 retries`);
         }
         return;
       }
@@ -213,11 +162,7 @@ class Switch4GangDevice extends BaseClass {
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
       const gangNum = epNum; // Capture for closure
       onOff.on('attr.onOff', async (value) => {
-        // v5.9.15: Skip periodic heartbeat reports (value unchanged = not a press)
-        // BSEED TS0726 sends attr reports every 5 min confirming current state
         if (this._zclState.lastState[gangNum] === value) return;
-
-        // v5.9.15: Dedup rapid duplicate reports (< 1s apart, same gang)
         const now = Date.now();
         if (now - (this._zclState.lastReport[gangNum] || 0) < 1000) return;
         this._zclState.lastReport[gangNum] = now;
@@ -236,19 +181,15 @@ class Switch4GangDevice extends BaseClass {
         this._zclState.lastState[gangNum] = value;
         this.setCapabilityValue(capName, value).catch(() => {});
 
-        // v5.12.5: Scene mode support (ported from wall_switch_4gang_1way)
         const mode = this.sceneMode;
         if (mode === 'magic') {
-          // Magic mode: don't update capability, only fire scene trigger
-          // Revert the capability change made above
           this.setCapabilityValue(capName, !value).catch(() => {});
         }
 
         if (isPhysical && (mode === 'auto' || mode === 'both')) {
           const flowId = `switch_4gang_physical_gang${gangNum}_${value ? 'on' : 'off'}`;
           try {
-            const card =
-      this._getFlowCard(flowId)
+            const card = this._getFlowCard(flowId);
             if (card) await card.trigger(this, { gang: gangNum, state: value }, {}).catch(() => {});
             this.log(`[BSEED-4G] 🔘 Physical G${gangNum} ${value ? 'ON' : 'OFF'}`);
           } catch (e) { }
@@ -257,8 +198,7 @@ class Switch4GangDevice extends BaseClass {
         if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
           const sceneId = `switch_4gang_gang${gangNum}_scene`;
           try {
-            const card =
-      this._getFlowCard(sceneId)
+            const card = this._getFlowCard(sceneId);
             if (card) await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
             this.log(`[BSEED-4G] 🎬 Scene G${gangNum} ${value ? 'on' : 'off'}`);
           } catch (e) { }
@@ -272,209 +212,43 @@ class Switch4GangDevice extends BaseClass {
       setupEndpointListener(epNum);
     }
 
-    // v5.8.26: Setup Tuya DP listener for gangs that fell back to DP mode
-    this._setupTuyaDPListener(zclNode);
-
     await this.initVirtualButtons?.();
     this.log('[SWITCH-4G] ✅ BSEED ZCL-only mode ready (packetninja technique)');
   }
 
   /**
-   * v5.8.26: Setup Tuya DP listener on EP1 cluster 0xEF00 for gangs using DP fallback
-   * Handles incoming DP reports for physical button detection on EP2-4
-   */
-  _setupTuyaDPListener(zclNode) {
-    const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1?.clusters) return;
-
-    const tuyaCluster = ep1.clusters.tuya || ep1.clusters.manuSpecificTuya ||
-                        ep1.clusters[0xEF00] || ep1.clusters['61184'];
-    if (!tuyaCluster) {
-      this.log('[BSEED-4G] No Tuya cluster on EP1 for DP listener');
-      return;
-    }
-
-    // Listen for datapoint reports (DP1-4 = gang states)
-    const handleDPReport = (dpId, value) => {
-      if (dpId < 1 || dpId > 4) return;
-      const boolVal = value === 1 || value === true;
-      // v5.9.15: Skip heartbeat reports (unchanged state)
-      if (this._zclState.lastState[dpId] === boolVal) return;
-      const now = Date.now();
-      if (now - (this._zclState.lastReport[dpId] || 0) < 1000) return;
-      this._zclState.lastReport[dpId] = now;
-
-      const capName = dpId === 1 ? 'onoff' : `onoff.gang${dpId}`;
-      const isPhysical = !this._zclState.pending[dpId];
-      // v5.9.23: Broadcast filter for Tuya DP path
-      const isBroadcast = !isPhysical && this._lastCommandedGang
-        && dpId !== this._lastCommandedGang
-        && (now - this._lastCommandTime) < 2000;
-      if (isBroadcast) {
-        this.log(`[BSEED-4G] DP${dpId}: ${boolVal} FILTERED (broadcast from G${this._lastCommandedGang})`);
-        return;
-      }
-      this.log(`[BSEED-4G] Tuya DP${dpId} report: ${boolVal} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
-
-      this._zclState.lastState[dpId] = boolVal;
-      this.setCapabilityValue(capName, boolVal).catch(() => {});
-
-      // v5.12.5: Scene mode support (Tuya DP path)
-      const mode = this.sceneMode;
-      if (mode === 'magic') {
-        this.setCapabilityValue(capName, !boolVal).catch(() => {});
-      }
-
-      if (isPhysical && (mode === 'auto' || mode === 'both')) {
-        const flowId = `switch_4gang_physical_gang${dpId}_${boolVal ? 'on' : 'off'}`;
-        try {
-          this._getFlowCard(flowId).trigger(this, { gang: dpId, state: boolVal }, {})
-            .catch(() => {});
-          this.log(`[BSEED-4G] 🔘 Physical G${dpId} ${boolVal ? 'ON' : 'OFF'} (via Tuya DP: ${flowId})`);
-        } catch (e) { /* card missing */ }
-      }
-
-      if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-        const sceneId = `switch_4gang_gang${dpId}_scene`;
-        try {
-          this._getFlowCard(sceneId).trigger(this, { action: boolVal ? 'on' : 'off' }, {})
-            .catch(() => {});
-          this.log(`[BSEED-4G] 🎬 Scene G${dpId} ${boolVal ? 'on' : 'off'} (via Tuya DP: ${sceneId})`);
-        } catch (e) { /* card missing */ }
-      }
-    };
-
-    // Try multiple listener patterns for Tuya cluster
-    if (typeof tuyaCluster.on === 'function') {
-      tuyaCluster.on('datapoint', (frame) => {
-        if (frame?.dp !== undefined && frame?.data !== undefined) {
-          const val = frame.data.length === 1 ? frame.data[0] : frame.data;
-          handleDPReport(frame.dp, val);
-        }
-      });
-      tuyaCluster.on('response', (frame) => {
-        if (frame?.dp !== undefined && frame?.data !== undefined) {
-          const val = frame.data.length === 1 ? frame.data[0] : frame.data;
-          handleDPReport(frame.dp, val);
-        }
-      });
-      this.log('[BSEED-4G] Tuya DP listener registered on EP1 cluster 0xEF00');
-    }
-  }
-
-  /**
-   * Handle capability changes and trigger appropriate flow cards
-   */
-  async _onCapabilityChanged(capability, value, gang) {
-    try {
-      this.log(`[SWITCH-4G] Gang ${gang} ${capability}: ${value}`);
-
-      // Get the appropriate trigger from driver
-      const triggerName = `switch_4gang_gang${gang}_turned_${value ? 'on' : 'off'}`;
-      const trigger = this.driver[`gang${gang}${value ? 'On' : 'Off'}Trigger`];
-
-      if (trigger) {
-        await trigger.trigger(this, {
-          gang: gang,
-          state: value
-        }, {});
-        this.log(`[SWITCH-4G] 🎯 Triggered flow: ${triggerName}`);
-      } else {
-        this.log(`[SWITCH-4G] ⚠️ Flow trigger not found: ${triggerName}`);
-      }
-
-    } catch (err) {
-      this.log('[SWITCH-4G] ⚠️ Error triggering flow:', err.message);
-    }
-  }
-
-  /**
-   * Override setCapabilityValue to also trigger flows for external changes
-   * v5.5.962: Added deduplication to prevent duplicate flow triggers
-   */
-  async setCapabilityValue(capability, value) {
-    const oldValue = this.getCapabilityValue(capability);
-    await super.setCapabilityValue(capability, value);
-
-    // Only trigger if value actually changed (and not ZCL-only mode which has its own triggers)
-    if (oldValue !== value && !this.isZclOnlyDevice) {
-      let gang = 1;
-      if (capability === 'onoff.gang2') gang = 2;
-      else if (capability === 'onoff.gang3') gang = 3;
-      else if (capability === 'onoff.gang4') gang = 4;
-
-      if (['onoff', 'onoff.gang2', 'onoff.gang3', 'onoff.gang4'].includes(capability)) {
-        // v5.5.962: Deduplicate flow triggers (500ms window)
-        const dedupKey = `${capability}_${value}`;
-        const now = Date.now();
-        if (this._lastFlowTrigger?.[dedupKey] && now - this._lastFlowTrigger[dedupKey] < 500) {
-          return; // Skip duplicate trigger
-        }
-        this._lastFlowTrigger = this._lastFlowTrigger || {};
-        this._lastFlowTrigger[dedupKey] = now;
-        
-        await this._onCapabilityChanged(capability, value, gang);
-      }
-    }
-  }
-
-  /**
    * v5.8.39: Ensure onOff cluster exists on all 4 endpoints.
-   * Root cause (diag 83af3e29): Homey interview may not discover onOff (cluster 6)
-   * on EP2-4 for BSEED TS0726. The Endpoint constructor only creates clusters from
-   * descriptor.inputClusters, so if cluster 6 wasn't in the descriptor, the cluster
-   * object is never created and all commands fail with "onOff cluster not found".
-   *
-   * Fix: Use Cluster.getCluster(6) from zigbee-clusters to get the OnOff class,
-   * then manually instantiate it on endpoints where it's missing.
    */
   _ensureOnOffClusters(zclNode) {
     try {
       const { Cluster } = require('zigbee-clusters');
-      // v5.8.47: Try both string name and numeric ID for maximum compatibility
       const OnOffCluster = Cluster.getCluster('onOff') || Cluster.getCluster(6);
-      if (!OnOffCluster) {
-        this.log('[BSEED-4G] ⚠️ OnOff cluster class not found in registry');
-        return;
-      }
+      if (!OnOffCluster) return;
 
       for (const epNum of [1, 2, 3, 4]) {
         const ep = zclNode?.endpoints?.[epNum];
-        if (!ep) {
-          this.log(`[BSEED-4G] ⚠️ EP${epNum} endpoint does not exist`);
-          continue;
-        }
+        if (!ep) continue;
         if (!ep.clusters) ep.clusters = {};
 
-        // Check if onOff already exists under any key
         const existing = ep.clusters.onOff || ep.clusters.genOnOff
           || ep.clusters[6] || ep.clusters['6'];
-        if (existing) {
-          this.log(`[BSEED-4G] EP${epNum} onOff cluster already present`);
-          continue;
-        }
+        if (existing) continue;
 
-        // v5.8.47: Manually instantiate onOff cluster - try multiple constructor patterns
         let clusterInstance = null;
         try {
           clusterInstance = new OnOffCluster(ep);
         } catch (e1) {
-          try { clusterInstance = new OnOffCluster({ endpoint: ep }); } catch (e2) {
-            this.log(`[BSEED-4G] ⚠️ EP${epNum} cluster construction failed: ${e1.message}`);
-          }
+          try { clusterInstance = new OnOffCluster({ endpoint: ep }); } catch (e2) { }
         }
         if (clusterInstance) {
-          // v5.8.47: Store under multiple keys for reliable lookup
           const name = OnOffCluster.NAME || 'onOff';
           ep.clusters[name] = clusterInstance;
           if (!ep.clusters[6]) ep.clusters[6] = clusterInstance;
           if (!ep.clusters['6']) ep.clusters['6'] = clusterInstance;
-          this.log(`[BSEED-4G] ✅ EP${epNum} onOff cluster CREATED manually (interview missed it)`);
+          this.log(`[BSEED-4G] ✅ EP${epNum} onOff cluster CREATED manually`);
         }
       }
-    } catch (err) {
-      this.log(`[BSEED-4G] ⚠️ _ensureOnOffClusters error: ${err.message}`);
-    }
+    } catch (err) { }
   }
 
   /**
@@ -486,21 +260,18 @@ class Switch4GangDevice extends BaseClass {
         const ep = zclNode?.endpoints?.[epNum];
         if (!ep?.clusters) continue;
         const g = ep.clusters.groups || ep.clusters.genGroups || ep.clusters[4] || ep.clusters['4'];
-        if (!g) { this.log(`[BSEED-4G] EP${epNum} no groups cluster`); continue; }
+        if (!g) continue;
         const fn = g.removeAll || g.removeAllGroups;
         if (typeof fn === 'function') {
-          await fn.call(g).catch(e => this.log(`[BSEED-4G] EP${epNum} removeAll warn: ${e.message}`));
+          await fn.call(g).catch(() => {});
           this.log(`[BSEED-4G] EP${epNum} ✅ Group memberships removed`);
-        } else {
-          this.log(`[BSEED-4G] EP${epNum} ⚠️ No removeAll on groups`);
         }
-      } catch (err) { this.log(`[BSEED-4G] EP${epNum} group err: ${err.message}`); }
+      } catch (err) { }
     }
   }
 
   /**
-   * v5.8.51: Explicitly bind onOff cluster on all endpoints (TS0726 BSEED fix)
-   * Without binding, the device won't send attribute reports for EP2-4.
+   * v5.8.51: Explicitly bind onOff cluster on all endpoints
    */
   async _bindAllEndpoints(zclNode) {
     for (const epNum of [1, 2, 3, 4]) {
@@ -509,21 +280,12 @@ class Switch4GangDevice extends BaseClass {
         if (!ep?.clusters) continue;
         const onOff = ep.clusters.onOff || ep.clusters.genOnOff || ep.clusters[6] || ep.clusters['6'];
         if (onOff && typeof onOff.bind === 'function') {
-          await onOff.bind().catch(e => this.log(`[BSEED-4G] EP${epNum} bind warn: ${e.message}`));
+          await onOff.bind().catch(() => {});
           this.log(`[BSEED-4G] EP${epNum} onOff cluster bound`);
-        } else {
-          this.log(`[BSEED-4G] EP${epNum} no bindable onOff cluster`);
         }
-      } catch (err) {
-        this.log(`[BSEED-4G] EP${epNum} bind error: ${err.message}`);
-      }
+      } catch (err) { }
     }
 
-    // v5.8.79: Configure attribute reporting DIRECTLY on cluster instances
-    // Root cause (Hartmut_Dunker): this.configureAttributeReporting() is a Homey SDK3
-    // high-level method that resolves clusters from endpoint descriptors. If Homey interview
-    // missed onOff on EP2-4, the SDK3 lookup fails with status NOT_FOUND.
-    // Fix: call configureReporting() on each cluster instance directly.
     for (const epNum of [1, 2, 3, 4]) {
       try {
         const ep = zclNode?.endpoints?.[epNum];
@@ -532,19 +294,14 @@ class Switch4GangDevice extends BaseClass {
         if (onOff && typeof onOff.configureReporting === 'function') {
           await onOff.configureReporting({
             onOff: { minInterval: 0, maxInterval: 300, minChange: 1 }
-          }).catch(e => this.log(`[BSEED-4G] EP${epNum} report cfg warn: ${e.message}`));
+          }).catch(() => {});
           this.log(`[BSEED-4G] EP${epNum} ✅ Attr reporting configured directly`);
-        } else {
-          this.log(`[BSEED-4G] EP${epNum} ⚠️ No configureReporting method on cluster`);
         }
-      } catch (err) {
-        this.log(`[BSEED-4G] EP${epNum} ⚠️ Report cfg error: ${err.message}`);
-      }
+      } catch (err) { }
     }
   }
 
   onDeleted() {
-    // ZCL-only cleanup
     if (this._zclState?.timeout) {
       for (const epNum of [1, 2, 3, 4]) {
         if (this._zclState.timeout[epNum]) clearTimeout(this._zclState.timeout[epNum]);
@@ -554,4 +311,3 @@ class Switch4GangDevice extends BaseClass {
   }
 }
 module.exports = Switch4GangDevice;
-

@@ -210,6 +210,9 @@ class IrBlasterDevice extends ZigBeeDevice {
           this._handleLearningStatusChange(status);
         });
 
+        // v7.2.5: Explicitly bind cluster to coordinator to receive learned codes
+        await irControlCluster.bind().catch(e => this.log(`[IR-SETUP] Bind E004 warning: ${e.message}`));
+
         // Listen for learned code attribute
         irControlCluster.on('attr.lastLearnedIRCode', (code) => {
           this._handleLearnedCode(code);
@@ -244,6 +247,9 @@ class IrBlasterDevice extends ZigBeeDevice {
       if (irTransmitCluster) {
         this.log('[IR-SETUP] ✅ ZosungIRTransmit cluster (0xED00) available');
         this._irTransmitCluster = irTransmitCluster;
+
+        // v7.2.5: Explicitly bind cluster to coordinator
+        await irTransmitCluster.bind().catch(e => this.log(`[IR-SETUP] Bind ED00 warning: ${e.message}`));
 
         // Setup transmit protocol listeners
         this._setupTransmitProtocol(irTransmitCluster);

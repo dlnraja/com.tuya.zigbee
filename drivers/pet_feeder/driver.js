@@ -22,13 +22,10 @@ class PetFeederDriver extends Driver {
     this.homey.flow.getTriggerCard('pet_feeder_fed');
     this.log('Pet Feeder driver initialized');
     // v5.13.3: Flow card handlers
-<<<<<<< HEAD
-      this.homey.flow.getActionCard('pet_feeder_feed_now')
-||||||| parent of 5373b92b80 (feat: Autonomous Awakening v7.2.5 Hardening (Smart Emulation & Health Scaling))
-      (() => { try { return (() => { try { return this.homey.flow.getActionCard('pet_feeder_feed_now'); } catch(e) { return null; } })(); } catch(e) { return null; } })();
-=======
-    this.homey.flow.getActionCard('pet_feeder_feed_now');
->>>>>>> 5373b92b80 (feat: Autonomous Awakening v7.2.5 Hardening (Smart Emulation & Health Scaling))
+    this.homey.flow.getActionCard('pet_feeder_feed_now').registerRunListener(async (args, state) => {
+      await args.device.triggerCapabilityListener('onoff', true);
+      return true;
+    });
   }
 }
 module.exports = PetFeederDriver;

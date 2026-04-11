@@ -22,7 +22,10 @@
     "approximation": {
       "usageConstant": 9
     },
-    "mains": true
+    "mains": true,
+    "batteries": [
+      "CR2450"
+    ]
   },
   "zigbee": {
     "manufacturerName": [
