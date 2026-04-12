@@ -123,7 +123,8 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "v${{ env.NEW_VERSION }}: automatic version bump [skip ci]"
-            git push origin ${{ github.ref_name }}
+            git pull --rebase origin ${{ github.ref_name }}
+            git push origin HEAD:${{ github.ref_name }}
           fi
 
       - name: 📤 Publish (Draft)

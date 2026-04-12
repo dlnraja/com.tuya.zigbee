@@ -82,9 +82,9 @@
     "punycode": "^2.3.1"
   },
   "devDependencies": {
+    "@octokit/rest": "^22.0.1",
     "ajv": "^8.17.1",
     "ajv-cli": "^5.0.0",
-    "@octokit/rest": "^22.0.1",
     "axios": "^1.12.2",
     "canvas": "^3.2.0",
     "chai": "^4.3.10",
@@ -93,7 +93,7 @@
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.3.2",
     "glob": "^13.0.6",
-    "homey": "^3.12.2",
+    "homey": "^4.1.1",
     "imapflow": "^1.0.171",
     "js-yaml": "^4.1.1",
     "mocha": "^10.8.2",

@@ -5,12 +5,8 @@ const crypto = require('crypto');
 const fse = require('fs-extra');
 
 module.exports = class Util {
-
   static md5(input) {
-    return crypto
-      .createHash('md5')
-      .update(input)
-      .digest('hex');
+    return crypto.createHash('md5').update(input).digest('hex');
   }
 
   static ellipsis(str) {
@@ -40,5 +36,4 @@ module.exports = class Util {
 
     return mac;
   }
-
 };

@@ -32,7 +32,6 @@ const util = require('util');
 const url = require('url');
 
 const fse = require('fs-extra');
-const _ = require('underscore');
 const deepmerge = require('deepmerge');
 const objectPath = require('object-path');
 const HomeyLib = require('homey-lib');
@@ -42,13 +41,13 @@ const Log = require('./Log');
 const readFileAsync = util.promisify(fs.readFile);
 const writeFileAsync = util.promisify(fs.writeFile);
 const readdirAsync = util.promisify(fs.readdir);
+const mkdirAsync = util.promisify(fs.mkdir);
 
 const deepClone = (object) => JSON.parse(JSON.stringify(object));
 
 const FLOW_TYPES = ['triggers', 'conditions', 'actions'];
 
 class HomeyCompose {
-
   // Temporary simpler api
   static async build({ appPath, usesModules }) {
     const compose = new HomeyCompose(appPath, usesModules);
@@ -58,6 +57,37 @@ class HomeyCompose {
   constructor(appPath, usesModules) {
     this._appPath = appPath;
     this._usesModules = usesModules;
+  }
+
+  // Create homey compose directory structure
+  static async createComposeDirectories({ appPath }) {
+    const dirs = [
+      '.homeycompose',
+      path.join('.homeycompose', 'flow'),
+      path.join('.homeycompose', 'flow', 'triggers'),
+      path.join('.homeycompose', 'flow', 'conditions'),
+      path.join('.homeycompose', 'flow', 'actions'),
+      path.join('.homeycompose', 'drivers'),
+      path.join('.homeycompose', 'drivers', 'templates'),
+      path.join('.homeycompose', 'drivers', 'settings'),
+      path.join('.homeycompose', 'capabilities'),
+      path.join('.homeycompose', 'discovery'),
+      path.join('.homeycompose', 'locales'),
+      path.join('.homeycompose', 'screensavers'),
+      path.join('.homeycompose', 'signals'),
+      path.join('.homeycompose', 'signals', '433'),
+      path.join('.homeycompose', 'signals', '868'),
+      path.join('.homeycompose', 'signals', 'ir'),
+    ];
+
+    for (let i = 0; i < dirs.length; i++) {
+      const dir = dirs[i];
+      try {
+        await mkdirAsync(path.join(appPath, dir));
+      } catch (err) {
+        Log(err);
+      }
+    }
   }
 
   async run() {
@@ -165,12 +195,13 @@ class HomeyCompose {
           ...driverJson,
 
           // Merge capabilitiesOptions for each capability separately
-          capabilitiesOptions: (templateJson.capabilitiesOptions || driverJson.capabilitiesOptions)
-            ? {
-              ...templateJson.capabilitiesOptions,
-              ...driverJson.capabilitiesOptions,
-            }
-            : undefined,
+          capabilitiesOptions:
+            templateJson.capabilitiesOptions || driverJson.capabilitiesOptions
+              ? {
+                  ...templateJson.capabilitiesOptions,
+                  ...driverJson.capabilitiesOptions,
+                }
+              : undefined,
         };
       }
 
@@ -201,7 +232,9 @@ class HomeyCompose {
 
       // merge pair
       try {
-        driverJson.pair = await this._getJsonFile(path.join(this._appPath, 'drivers', driverId, 'driver.pair.compose.json'));
+        driverJson.pair = await this._getJsonFile(
+          path.join(this._appPath, 'drivers', driverId, 'driver.pair.compose.json'),
+        );
       } catch (err) {
         if (err.code !== 'ENOENT') throw new Error(err);
       }
@@ -247,7 +280,7 @@ class HomeyCompose {
           // set pair options
           if (driverJson.$pairOptions) {
             for (const [id, options] of Object.entries(driverJson.$pairOptions)) {
-              const view = _.findWhere(driverJson.pair, { id });
+              const view = driverJson.pair.find((candidate) => candidate.id === id);
               if (view) {
                 view.options = view.options || {};
                 Object.assign(view.options, options);
@@ -259,7 +292,9 @@ class HomeyCompose {
 
       // merge repair
       try {
-        driverJson.repair = await this._getJsonFile(path.join(this._appPath, 'drivers', driverId, 'driver.repair.compose.json'));
+        driverJson.repair = await this._getJsonFile(
+          path.join(this._appPath, 'drivers', driverId, 'driver.repair.compose.json'),
+        );
       } catch (err) {
         if (err.code !== 'ENOENT') throw new Error(err);
       }
@@ -305,7 +340,7 @@ class HomeyCompose {
           // set repair options
           if (driverJson.$repairOptions) {
             for (const [id, options] of Object.entries(driverJson.$repairOptions)) {
-              const view = _.findWhere(driverJson.repair, { id });
+              const view = driverJson.repair.find((candidate) => candidate.id === id);
               if (view) {
                 view.options = view.options || {};
                 Object.assign(view.options, options);
@@ -337,9 +372,9 @@ class HomeyCompose {
       }
 
       if (
-        typeof driverJson.$flow === 'object'
-        && driverJson.$flow !== null
-        && !Array.isArray(driverJson.$flow)
+        typeof driverJson.$flow === 'object' &&
+        driverJson.$flow !== null &&
+        !Array.isArray(driverJson.$flow)
       ) {
         for (let i = 0; i < FLOW_TYPES.length; i++) {
           const type = FLOW_TYPES[i];
@@ -447,8 +482,8 @@ class HomeyCompose {
 
     // store last found zwave parameter index
     if (
-      Object.prototype.hasOwnProperty.call(obj, 'zwave')
-      && Object.prototype.hasOwnProperty.call(obj.zwave, 'index')
+      Object.prototype.hasOwnProperty.call(obj, 'zwave') &&
+      Object.prototype.hasOwnProperty.call(obj.zwave, 'index')
     ) {
       zwaveParameterIndex = obj.zwave.index;
     }
@@ -666,13 +701,15 @@ class HomeyCompose {
 
           // Capability.title
           if (capability.title) {
-            this._appJson.capabilities[capabilityId].title = this._appJson.capabilities[capabilityId].title ?? {};
+            this._appJson.capabilities[capabilityId].title =
+              this._appJson.capabilities[capabilityId].title ?? {};
             this._appJson.capabilities[capabilityId].title[appLocaleId] = capability.title;
           }
 
           // Capability.units
           if (capability.units) {
-            this._appJson.capabilities[capabilityId].units = this._appJson.capabilities[capabilityId].units ?? {};
+            this._appJson.capabilities[capabilityId].units =
+              this._appJson.capabilities[capabilityId].units ?? {};
             this._appJson.capabilities[capabilityId].units[appLocaleId] = capability.units;
           }
         }
@@ -696,19 +733,27 @@ class HomeyCompose {
           if (driver.capabilitiesOptions) {
             appJsonDriver.capabilitiesOptions = appJsonDriver.capabilitiesOptions ?? {};
 
-            for (const [capabilityId, capabilityOptions] of Object.entries(driver.capabilitiesOptions)) {
+            for (const [capabilityId, capabilityOptions] of Object.entries(
+              driver.capabilitiesOptions,
+            )) {
               // Driver.capabilitiesOptions[<capabilityId>].title
               if (capabilityOptions.title) {
-                appJsonDriver.capabilitiesOptions[capabilityId] = appJsonDriver.capabilitiesOptions[capabilityId] ?? {};
-                appJsonDriver.capabilitiesOptions[capabilityId].title = appJsonDriver.capabilitiesOptions[capabilityId].title ?? {};
-                appJsonDriver.capabilitiesOptions[capabilityId].title[appLocaleId] = capabilityOptions.title;
+                appJsonDriver.capabilitiesOptions[capabilityId] =
+                  appJsonDriver.capabilitiesOptions[capabilityId] ?? {};
+                appJsonDriver.capabilitiesOptions[capabilityId].title =
+                  appJsonDriver.capabilitiesOptions[capabilityId].title ?? {};
+                appJsonDriver.capabilitiesOptions[capabilityId].title[appLocaleId] =
+                  capabilityOptions.title;
               }
 
               // Driver.capabilitiesOptions[<capabilityId>].units
               if (capabilityOptions.units) {
-                appJsonDriver.capabilitiesOptions[capabilityId] = appJsonDriver.capabilitiesOptions[capabilityId] ?? {};
-                appJsonDriver.capabilitiesOptions[capabilityId].units = appJsonDriver.capabilitiesOptions[capabilityId].units ?? {};
-                appJsonDriver.capabilitiesOptions[capabilityId].units[appLocaleId] = capabilityOptions.units;
+                appJsonDriver.capabilitiesOptions[capabilityId] =
+                  appJsonDriver.capabilitiesOptions[capabilityId] ?? {};
+                appJsonDriver.capabilitiesOptions[capabilityId].units =
+                  appJsonDriver.capabilitiesOptions[capabilityId].units ?? {};
+                appJsonDriver.capabilitiesOptions[capabilityId].units[appLocaleId] =
+                  capabilityOptions.units;
               }
             }
           }
@@ -718,7 +763,9 @@ class HomeyCompose {
           ['pair', 'repair'].forEach((pairType) => {
             if (driver[pairType]) {
               for (const [viewId, view] of Object.entries(driver[pairType])) {
-                const appJsonDriverView = appJsonDriver[pairType].find((view) => view.id === viewId);
+                const appJsonDriverView = appJsonDriver[pairType].find(
+                  (view) => view.id === viewId,
+                );
                 if (!appJsonDriverView) continue;
 
                 if (view.options) {
@@ -771,7 +818,9 @@ class HomeyCompose {
               // Driver.settings[].values
               if (setting.values) {
                 for (const [valueId, value] of Object.entries(setting.values)) {
-                  const appJsonDriverSettingValue = appJsonDriverSetting.values.find((value) => value.id === valueId);
+                  const appJsonDriverSettingValue = appJsonDriverSetting.values.find(
+                    (value) => value.id === valueId,
+                  );
                   if (!appJsonDriverSettingValue) continue;
 
                   // Driver.settings[].values[].label
@@ -792,21 +841,29 @@ class HomeyCompose {
 
                 // Driver.zwave.learnmode.instruction
                 if (driver.zwave.learnmode?.instruction) {
-                  appJsonDriver.zwave.learnmode.instruction[appLocaleId] = driver.zwave.learnmode.instruction;
+                  appJsonDriver.zwave.learnmode.instruction[appLocaleId] =
+                    driver.zwave.learnmode.instruction;
                 }
               }
 
               // Driver.zwave.associationGroupsOptions
               if (driver.zwave.associationGroupsOptions) {
-                appJsonDriver.zwave.associationGroupsOptions = appJsonDriver.zwave.associationGroupsOptions ?? {};
+                appJsonDriver.zwave.associationGroupsOptions =
+                  appJsonDriver.zwave.associationGroupsOptions ?? {};
 
-                for (const [associationGroupId, associationGroup] of Object.entries(driver.zwave.associationGroupsOptions)) {
-                  appJsonDriver.zwave.associationGroupsOptions[associationGroupId] = appJsonDriver.zwave.associationGroupsOptions[associationGroupId] ?? {};
+                for (const [associationGroupId, associationGroup] of Object.entries(
+                  driver.zwave.associationGroupsOptions,
+                )) {
+                  appJsonDriver.zwave.associationGroupsOptions[associationGroupId] =
+                    appJsonDriver.zwave.associationGroupsOptions[associationGroupId] ?? {};
 
                   // Driver.zwave.associationGroupsOptions[].hint
                   if (associationGroup.hint) {
-                    appJsonDriver.zwave.associationGroupsOptions[associationGroupId].hint = appJsonDriver.zwave.associationGroupsOptions[associationGroupId].hint ?? {};
-                    appJsonDriver.zwave.associationGroupsOptions[associationGroupId].hint[appLocaleId] = associationGroup.hint;
+                    appJsonDriver.zwave.associationGroupsOptions[associationGroupId].hint =
+                      appJsonDriver.zwave.associationGroupsOptions[associationGroupId].hint ?? {};
+                    appJsonDriver.zwave.associationGroupsOptions[associationGroupId].hint[
+                      appLocaleId
+                    ] = associationGroup.hint;
                   }
                 }
               }
@@ -815,13 +872,18 @@ class HomeyCompose {
               if (driver.zwave.multiChannelNodes) {
                 appJsonDriver.zwave.multiChannelNodes = appJsonDriver.zwave.multiChannelNodes ?? {};
 
-                for (const [multiChannelNodeId, multiChannelNode] of Object.entries(driver.zwave.multiChannelNodes)) {
-                  appJsonDriver.zwave.multiChannelNodes[multiChannelNodeId] = appJsonDriver.zwave.multiChannelNodes[multiChannelNodeId] ?? {};
+                for (const [multiChannelNodeId, multiChannelNode] of Object.entries(
+                  driver.zwave.multiChannelNodes,
+                )) {
+                  appJsonDriver.zwave.multiChannelNodes[multiChannelNodeId] =
+                    appJsonDriver.zwave.multiChannelNodes[multiChannelNodeId] ?? {};
 
                   // Driver.zwave.multiChannelNodes[].name
                   if (multiChannelNode.name) {
-                    appJsonDriver.zwave.multiChannelNodes[multiChannelNodeId].name = appJsonDriver.zwave.multiChannelNodes[multiChannelNodeId].name ?? {};
-                    appJsonDriver.zwave.multiChannelNodes[multiChannelNodeId].name[appLocaleId] = multiChannelNode.name;
+                    appJsonDriver.zwave.multiChannelNodes[multiChannelNodeId].name =
+                      appJsonDriver.zwave.multiChannelNodes[multiChannelNodeId].name ?? {};
+                    appJsonDriver.zwave.multiChannelNodes[multiChannelNodeId].name[appLocaleId] =
+                      multiChannelNode.name;
                   }
                 }
               }
@@ -836,7 +898,8 @@ class HomeyCompose {
 
                 // Driver.zigbee.learnmode.instruction
                 if (driver.zigbee.learnmode?.instruction) {
-                  appJsonDriver.zigbee.learnmode.instruction[appLocaleId] = driver.zigbee.learnmode.instruction;
+                  appJsonDriver.zigbee.learnmode.instruction[appLocaleId] =
+                    driver.zigbee.learnmode.instruction;
                 }
               }
             }
@@ -850,7 +913,8 @@ class HomeyCompose {
 
                 // Driver.matter.learnmode.instruction
                 if (driver.matter.learnmode?.instruction) {
-                  appJsonDriver.matter.learnmode.instruction[appLocaleId] = driver.matter.learnmode.instruction;
+                  appJsonDriver.matter.learnmode.instruction[appLocaleId] =
+                    driver.matter.learnmode.instruction;
                 }
               }
             }
@@ -866,7 +930,9 @@ class HomeyCompose {
           if (!appLocale.$flow[flowType]) return;
 
           for (const [cardId, card] of Object.entries(appLocale.$flow[flowType])) {
-            const appJsonFlowCard = this._appJson.flow?.[flowType]?.find((card) => card.id === cardId);
+            const appJsonFlowCard = this._appJson.flow?.[flowType]?.find(
+              (card) => card.id === cardId,
+            );
             if (!appJsonFlowCard) continue;
 
             // Card.title
@@ -914,7 +980,9 @@ class HomeyCompose {
                 // Card.args[].values
                 if (arg.values) {
                   for (const [valueId, value] of Object.entries(arg.values)) {
-                    const appJsonFlowCardArgValue = appJsonFlowCardArg.values.find((value) => value.id === valueId);
+                    const appJsonFlowCardArgValue = appJsonFlowCardArg.values.find(
+                      (value) => value.id === valueId,
+                    );
                     if (!appJsonFlowCardArgValue) continue;
 
                     // Card.args[].values[].title
@@ -930,7 +998,9 @@ class HomeyCompose {
             // Card.tokens
             if (card.tokens) {
               for (const [tokenId, token] of Object.entries(card.tokens)) {
-                const appJsonFlowCardToken = appJsonFlowCard.tokens.find((token) => token.name === tokenId);
+                const appJsonFlowCardToken = appJsonFlowCard.tokens.find(
+                  (token) => token.name === tokenId,
+                );
                 if (!appJsonFlowCardToken) continue;
 
                 // Card.tokens[].title
@@ -967,7 +1037,9 @@ class HomeyCompose {
           // Widget.settings
           if (widget.settings) {
             for (const [settingId, setting] of Object.entries(widget.settings)) {
-              const appJsonWidgetSetting = appJsonWidget.settings.find((setting) => setting.id === settingId);
+              const appJsonWidgetSetting = appJsonWidget.settings.find(
+                (setting) => setting.id === settingId,
+              );
               if (!appJsonWidgetSetting) continue;
 
               // Widget.settings[<settingId>].title
@@ -985,7 +1057,9 @@ class HomeyCompose {
               // Widget.settings[<settingId>].values
               if (setting.values) {
                 for (const [valueId, value] of Object.entries(setting.values)) {
-                  const appJsonWidgetSettingValue = appJsonWidgetSetting.values.find((value) => value.id === valueId);
+                  const appJsonWidgetSettingValue = appJsonWidgetSetting.values.find(
+                    (value) => value.id === valueId,
+                  );
                   if (!appJsonWidgetSettingValue) continue;
 
                   // Widget.settings[<settingId>].values[<valueId>].title
@@ -1103,7 +1177,6 @@ class HomeyCompose {
 
     return fileJson;
   }
-
 }
 
 module.exports = HomeyCompose;

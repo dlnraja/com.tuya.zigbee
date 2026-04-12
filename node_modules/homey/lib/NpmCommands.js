@@ -9,7 +9,6 @@ const Log = require('./Log');
 const exec = util.promisify(childProcess.exec);
 
 class NpmCommands {
-
   /**
    * Execute npm install for a given packageId or array of packageIds.
    * @param {string[]} packages - List of packages that should be installed (e.g. ['request'] or ['request@1.2.3'])
@@ -52,7 +51,6 @@ class NpmCommands {
       .map((filePath) => path.relative(appPath, filePath))
       .filter((filePath) => filePath !== '');
   }
-
 }
 
 module.exports = NpmCommands;

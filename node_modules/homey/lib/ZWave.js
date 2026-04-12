@@ -3,120 +3,115 @@
 const https = require('https');
 const colors = require('colors');
 const inquirer = require('inquirer');
-const fetch = require('node-fetch');
 const Log = require('./Log');
 
 class ZWave {
-
   static async autocompleteDriver() {
     const zwaveJson = {};
     const settingsJson = [];
 
-    if (true) {
-      // The z-wavealliance.org API is currently unreliable, ask all properties from the user.
-      const { manufacturerId } = await inquirer.prompt([
-        {
-          type: 'input',
-          name: 'manufacturerId',
-          message: 'What is the Manufacturer ID (in decimal)?',
-        },
-      ]);
+    // The z-wavealliance.org API is currently unreliable, ask all properties from the user.
+    const { manufacturerId } = await inquirer.prompt([
+      {
+        type: 'input',
+        name: 'manufacturerId',
+        message: 'What is the Manufacturer ID (in decimal)?',
+      },
+    ]);
 
-      if (!manufacturerId) {
-        throw new Error('Manufacturer ID is required');
-      }
-
-      zwaveJson.manufacturerId = parseInt(manufacturerId, 10);
-
-      const { productTypeId } = await inquirer.prompt([
-        {
-          type: 'input',
-          name: 'productTypeId',
-          message: 'What is the Product Type ID (in decimal)? If multiple, separate by comma.',
-        },
-      ]);
-
-      if (!productTypeId) {
-        throw new Error('Product Type ID is required');
-      }
-
-      zwaveJson.productTypeId = productTypeId.split(',').map((id) => parseInt(id.trim(), 10));
-
-      const { productId } = await inquirer.prompt([
-        {
-          type: 'input',
-          name: 'productId',
-          message: 'What is the Product ID (in decimal)? If multiple, separate by comma.',
-        },
-      ]);
-
-      if (!productId) {
-        throw new Error('Product ID is required');
-      }
-
-      zwaveJson.productId = productId.split(',').map((id) => parseInt(id.trim(), 10));
-
-      const { sigmaAllianceProductId } = await inquirer.prompt([
-        {
-          type: 'input',
-          name: 'sigmaAllianceProductId',
-          message: 'What is the Z-Wave Alliance Product ID? Leave empty if unknown.',
-        },
-      ]);
-
-      if (sigmaAllianceProductId) {
-        zwaveJson.zwaveAllianceProductId = sigmaAllianceProductId;
-      }
-
-      const { sigmaAllianceProductDocumentation } = await inquirer.prompt([
-        {
-          type: 'input',
-          name: 'sigmaAllianceProductDocumentation',
-          message: 'What is the Z-Wave Alliance Product Documentation URL? Leave empty if unknown.',
-        },
-      ]);
-
-      if (sigmaAllianceProductDocumentation) {
-        zwaveJson.zwaveAllianceProductDocumentation = sigmaAllianceProductDocumentation;
-      }
-
-      const { inclusionDescription } = await inquirer.prompt([
-        {
-          type: 'input',
-          name: 'inclusionDescription',
-          message: 'Enter a short description on how to enable inclusion mode. Leave empty if unknown.',
-        },
-      ]);
-
-      if (inclusionDescription) {
-        zwaveJson.learnmode = {
-          instruction: {
-            en: inclusionDescription,
-          },
-        };
-      }
-
-      const { exclusionDescription } = await inquirer.prompt([
-        {
-          type: 'input',
-          name: 'exclusionDescription',
-          message: 'Enter a short description on how to enable exclusion mode. Leave empty if unknown.',
-        },
-      ]);
-
-      if (exclusionDescription) {
-        zwaveJson.unlearnmode = {
-          instruction: {
-            en: exclusionDescription,
-          },
-        };
-      }
-
-      Log.success(`See the developer documentation at ${colors.underline('https://apps.developer.homey.app/wireless/z-wave')} on how to configure associationGroups and device settings.`);
-
-      return { zwave: zwaveJson, settings: settingsJson };
+    if (!manufacturerId) {
+      throw new Error('Manufacturer ID is required');
     }
 
+    zwaveJson.manufacturerId = parseInt(manufacturerId, 10);
+
+    const { productTypeId } = await inquirer.prompt([
+      {
+        type: 'input',
+        name: 'productTypeId',
+        message: 'What is the Product Type ID (in decimal)? If multiple, separate by comma.',
+      },
+    ]);
+
+    if (!productTypeId) {
+      throw new Error('Product Type ID is required');
+    }
+
+    zwaveJson.productTypeId = productTypeId.split(',').map((id) => parseInt(id.trim(), 10));
+
+    const { productId } = await inquirer.prompt([
+      {
+        type: 'input',
+        name: 'productId',
+        message: 'What is the Product ID (in decimal)? If multiple, separate by comma.',
+      },
+    ]);
+
+    if (!productId) {
+      throw new Error('Product ID is required');
+    }
+
+    zwaveJson.productId = productId.split(',').map((id) => parseInt(id.trim(), 10));
+
+    const { sigmaAllianceProductId } = await inquirer.prompt([
+      {
+        type: 'input',
+        name: 'sigmaAllianceProductId',
+        message: 'What is the Z-Wave Alliance Product ID? Leave empty if unknown.',
+      },
+    ]);
+
+    if (sigmaAllianceProductId) {
+      zwaveJson.zwaveAllianceProductId = sigmaAllianceProductId;
+    }
+
+    const { sigmaAllianceProductDocumentation } = await inquirer.prompt([
+      {
+        type: 'input',
+        name: 'sigmaAllianceProductDocumentation',
+        message: 'What is the Z-Wave Alliance Product Documentation URL? Leave empty if unknown.',
+      },
+    ]);
+
+    if (sigmaAllianceProductDocumentation) {
+      zwaveJson.zwaveAllianceProductDocumentation = sigmaAllianceProductDocumentation;
+    }
+
+    const { inclusionDescription } = await inquirer.prompt([
+      {
+        type: 'input',
+        name: 'inclusionDescription',
+        message:
+          'Enter a short description on how to enable inclusion mode. Leave empty if unknown.',
+      },
+    ]);
+
+    if (inclusionDescription) {
+      zwaveJson.learnmode = {
+        instruction: {
+          en: inclusionDescription,
+        },
+      };
+    }
+
+    const { exclusionDescription } = await inquirer.prompt([
+      {
+        type: 'input',
+        name: 'exclusionDescription',
+        message:
+          'Enter a short description on how to enable exclusion mode. Leave empty if unknown.',
+      },
+    ]);
+
+    if (exclusionDescription) {
+      zwaveJson.unlearnmode = {
+        instruction: {
+          en: exclusionDescription,
+        },
+      };
+    }
+
+    /*
     const { hasSigmaId } = await inquirer.prompt([
       {
         type: 'confirm',
@@ -275,25 +270,77 @@ class ZWave {
         settingsJson.push(settingObj);
       });
     }
+    */
+
+    Log.success(
+      `See the developer documentation at ${colors.underline('https://apps.developer.homey.app/wireless/z-wave')} on how to configure associationGroups and device settings.`,
+    );
 
     return { zwave: zwaveJson, settings: settingsJson };
   }
 
   static async getSigmaDetails(sigmaId) {
-    const agent = new https.Agent({
-      rejectUnauthorized: false,
-    });
-
     try {
-      const response = await fetch(`https://products.z-wavealliance.org/Products/${sigmaId}/JSON`, { agent });
-      if (!response.ok) throw new Error(response.statusText);
-      const json = await response.json();
-      return json;
+      return await ZWave._fetchJsonWithInsecureTls(
+        `https://products.z-wavealliance.org/Products/${sigmaId}/JSON`,
+      );
     } catch (err) {
       throw new Error('Invalid Sigma Product ID');
     }
   }
 
+  static async _fetchJsonWithInsecureTls(url) {
+    return new Promise((resolve, reject) => {
+      let settled = false;
+      const settleReject = (error) => {
+        if (settled) return;
+        settled = true;
+        reject(error);
+      };
+      const settleResolve = (value) => {
+        if (settled) return;
+        settled = true;
+        resolve(value);
+      };
+
+      const request = https.get(
+        url,
+        {
+          rejectUnauthorized: false,
+        },
+        (response) => {
+          let data = '';
+
+          response.setEncoding('utf8');
+          response.on('data', (chunk) => {
+            data += chunk;
+          });
+          response.on('error', (error) => {
+            request.destroy(error);
+            settleReject(error);
+          });
+          response.on('aborted', () => {
+            const error = new Error('Response aborted');
+            request.destroy(error);
+            settleReject(error);
+          });
+          response.on('end', () => {
+            if (!response.statusCode || response.statusCode < 200 || response.statusCode >= 300) {
+              return settleReject(new Error(response.statusMessage || 'Request failed'));
+            }
+
+            try {
+              return settleResolve(JSON.parse(data));
+            } catch (error) {
+              return settleReject(error);
+            }
+          });
+        },
+      );
+
+      request.on('error', settleReject);
+    });
+  }
 }
 
 module.exports = ZWave;

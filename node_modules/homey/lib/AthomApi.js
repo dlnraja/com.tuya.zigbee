@@ -5,28 +5,29 @@ const os = require('os');
 
 const inquirer = require('inquirer');
 const colors = require('colors');
-const _ = require('underscore');
-const fetch = require('node-fetch');
 const express = require('express');
 const open = require('open');
-const {
-  AthomCloudAPI,
-  HomeyAPI,
-  APIErrorHomeyOffline,
-} = require('homey-api');
+const { AthomCloudAPI, APIErrorHomeyOffline, HomeyAPI } = require('homey-api');
 const AthomCloudAPIToken = require('homey-api/lib/AthomCloudAPI/Token');
 
 const AthomApiStorage = require('./AthomApiStorage');
 const Log = require('./Log');
 const Settings = require('../services/Settings');
-const {
-  ATHOM_API_CLIENT_ID,
-  ATHOM_API_CLIENT_SECRET,
-  ATHOM_API_LOGIN_URL,
-} = require('../config');
+const { ATHOM_API_CLIENT_ID, ATHOM_API_CLIENT_SECRET, ATHOM_API_LOGIN_URL } = require('../config');
+
+function getPreferredActiveHomeyStrategy(homey) {
+  if (homey.platform === HomeyAPI.PLATFORMS.CLOUD) {
+    return [HomeyAPI.DISCOVERY_STRATEGIES.CLOUD];
+  }
+
+  return [
+    HomeyAPI.DISCOVERY_STRATEGIES.LOCAL_SECURE,
+    HomeyAPI.DISCOVERY_STRATEGIES.LOCAL,
+    HomeyAPI.DISCOVERY_STRATEGIES.REMOTE_FORWARDED,
+  ];
+}
 
 class AthomApi {
-
   constructor() {
     this._api = null;
     this._user = null;
@@ -44,11 +45,11 @@ class AthomApi {
       // Authenticate with Personal Access Token (PAT) if provided
       ...(process.env.HOMEY_PAT
         ? {
-          autoRefreshTokens: false,
-          token: new AthomCloudAPIToken({
-            access_token: process.env.HOMEY_PAT,
-          }),
-        }
+            autoRefreshTokens: false,
+            token: new AthomCloudAPIToken({
+              access_token: process.env.HOMEY_PAT,
+            }),
+          }
         : {}),
     });
   }
@@ -74,7 +75,7 @@ class AthomApi {
     }
 
     // Ensure the user is logged in
-    if (!await this._api.isLoggedIn()) {
+    if (!(await this._api.isLoggedIn())) {
       await this.login();
     }
 
@@ -96,10 +97,9 @@ class AthomApi {
 
     const url = `${ATHOM_API_LOGIN_URL}?port=${port}&clientId=${ATHOM_API_CLIENT_ID}`;
     Log(colors.bold('To log in with your Athom Account, please visit', colors.underline.cyan(url)));
-    open(url).catch((err) => { });
+    open(url).catch((err) => {});
 
     const code = await Promise.race([
-
       // Input code automatically by webserver
       Promise.resolve().then(async () => {
         const codePromise = new Promise((resolve) => {
@@ -115,24 +115,29 @@ class AthomApi {
       }),
 
       // Input code manually
-      inquirer.prompt([
-        {
-          type: 'text',
-          name: 'receivedCode',
-          message: 'Paste the code:',
-        },
-      ]).then(({ receivedCode }) => {
-        if (!receivedCode) {
-          throw new Error('Invalid code!');
-        }
-        return receivedCode;
-      }),
+      inquirer
+        .prompt([
+          {
+            type: 'text',
+            name: 'receivedCode',
+            message: 'Paste the code:',
+          },
+        ])
+        .then(({ receivedCode }) => {
+          if (!receivedCode) {
+            throw new Error('Invalid code!');
+          }
+          return receivedCode;
+        }),
 
       new Promise((resolve, reject) => {
-        setTimeout(() => {
-          Log('');
-          reject(new Error('Timeout getting authorization code!'));
-        }, 1000 * 60 * 5); // 5 minutes
+        setTimeout(
+          () => {
+            Log('');
+            reject(new Error('Timeout getting authorization code!'));
+          },
+          1000 * 60 * 5,
+        ); // 5 minutes
       }),
     ]);
 
@@ -143,7 +148,9 @@ class AthomApi {
     try {
       const profile = await this.getProfile();
 
-      Log.success(`You are now logged in as ${profile.firstname} ${profile.lastname} <${profile.email}>`);
+      Log.success(
+        `You are now logged in as ${profile.firstname} ${profile.lastname} <${profile.email}>`,
+      );
     } catch (err) {
       Log.error(`Invalid Account Token, please try again:${err.stack}`);
     }
@@ -170,15 +177,12 @@ class AthomApi {
     throw new Error(`Homey Not Found: ${homeyId}`);
   }
 
-  async getHomeys({
-    cache = true,
-    local = true,
-  } = {}) {
+  async getHomeys({ cache = true, local = true } = {}) {
     if (cache && this._homeys) return this._homeys;
 
     await this._initApi();
 
-    this._user = this._user || await this.getProfile();
+    this._user = this._user || (await this.getProfile());
     this._homeys = await this._user.getHomeys();
 
     // find USB connected Homeys
@@ -194,17 +198,17 @@ class AthomApi {
             ip = ip.join('.');
 
             const res = await fetch(`http://${ip}/api/manager/webserver/ping`, {
-              timeout: 1000,
+              signal: AbortSignal.timeout(1000),
             });
 
             const homeyId = res.headers.get('x-homey-id');
             if (!homeyId) continue;
 
-            const homey = _.findWhere(this._homeys, { id: homeyId });
+            const homey = this._homeys.find((candidate) => candidate.id === homeyId);
             if (homey) {
               homey.usb = ip;
             }
-          } catch (err) { }
+          } catch (err) {}
         }
       }
     }
@@ -220,19 +224,12 @@ class AthomApi {
       }
 
       const homey = await this.getHomey(activeHomey.id);
-      const homeyApi = await homey.authenticate({
-        strategy: homey.platform === HomeyAPI.PLATFORMS.CLOUD
-          ? [
-            HomeyAPI.DISCOVERY_STRATEGIES.CLOUD,
-          ]
-          : [
-            HomeyAPI.DISCOVERY_STRATEGIES.LOCAL,
-            HomeyAPI.DISCOVERY_STRATEGIES.LOCAL_SECURE,
-            HomeyAPI.DISCOVERY_STRATEGIES.REMOTE_FORWARDED,
-          ],
-      }).catch((err) => {
+      const strategy = getPreferredActiveHomeyStrategy(homey);
+      const homeyApi = await homey.authenticate({ strategy }).catch((err) => {
         if (err instanceof APIErrorHomeyOffline) {
-          throw new Error(`${homey.name} (${homey.id}) seems to be offline. Are you sure you're in the same LAN network?`);
+          throw new Error(
+            `${homey.name} (${homey.id}) seems to be offline. Are you sure you're in the same local network?`,
+          );
         }
         throw err;
       });
@@ -250,8 +247,12 @@ class AthomApi {
     return this._activeHomey;
   }
 
-  async setActiveHomey({ id, name }) {
-    return Settings.set('activeHomey', { id, name });
+  async setActiveHomey({ id, name, platform }) {
+    return Settings.set('activeHomey', { id, name, platform });
+  }
+
+  async getSelectedHomey() {
+    return Settings.get('activeHomey');
   }
 
   async unsetActiveHomey() {
@@ -270,9 +271,9 @@ class AthomApi {
     let activeHomey;
 
     if (typeof id === 'string') {
-      activeHomey = _.findWhere(homeys, { _id: id });
+      activeHomey = homeys.find((homey) => homey._id === id);
     } else if (typeof name === 'string') {
-      activeHomey = _.findWhere(homeys, { name });
+      activeHomey = homeys.find((homey) => homey.name === name);
     } else {
       const answers = await inquirer.prompt([
         {
@@ -288,6 +289,7 @@ class AthomApi {
               value: {
                 name: homey.name,
                 id: homey.id,
+                platform: homey.platform,
               },
               name: homey.name,
             })),
@@ -317,7 +319,6 @@ class AthomApi {
     await this._initApi();
     return this._api.createDelegationToken(opts);
   }
-
 }
 
 module.exports = AthomApi;

@@ -1,19 +1,15 @@
 'use strict';
 
-const fetch = require('node-fetch');
 const colors = require('colors');
 const Table = require('cli-table');
 
 const Log = require('./Log');
 const Settings = require('../services/Settings');
-const {
-  ATHOM_CLI_MESSAGE_URL,
-} = require('../config');
+const { ATHOM_CLI_MESSAGE_URL } = require('../config');
 
 const CACHE_HOURS = 12;
 
 class AthomMessage {
-
   async notify() {
     try {
       const now = new Date();
@@ -26,7 +22,9 @@ class AthomMessage {
 
       const hours = Math.abs(now - lastCheck) / 36e5;
       if (hours > CACHE_HOURS) {
-        const res = await fetch(ATHOM_CLI_MESSAGE_URL, { timeout: 1000 });
+        const res = await fetch(ATHOM_CLI_MESSAGE_URL, {
+          signal: AbortSignal.timeout(1000),
+        });
         if (!res.ok) return undefined;
 
         const json = await res.json();
@@ -51,19 +49,20 @@ class AthomMessage {
         table.push([message]);
         Log(table.toString());
       }
-    } catch (err) { }
+    } catch (err) {}
   }
 
   static formatMessage(message) {
     message = message.split(' ');
-    message = message.map((word, i) => {
-      if ((i + 1) % 7 === 0) return `${word}\n`;
-      return `${word} `;
-    }).map((word) => colors.cyan(word));
+    message = message
+      .map((word, i) => {
+        if ((i + 1) % 7 === 0) return `${word}\n`;
+        return `${word} `;
+      })
+      .map((word) => colors.cyan(word));
     message = message.join('');
     return message;
   }
-
 }
 
 module.exports = AthomMessage;

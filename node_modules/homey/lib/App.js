@@ -1,5 +1,3 @@
-/* eslint-disable no-process-exit */
-
 'use strict';
 
 const os = require('os');
@@ -25,14 +23,13 @@ const ignoreWalk = require('ignore-walk');
 const fse = require('fs-extra');
 const filesize = require('filesize');
 const querystring = require('querystring');
-const fetch = require('node-fetch');
-const Docker = require('dockerode');
 const getPort = require('get-port');
 const SocketIOServer = require('socket.io');
 const SocketIOClient = require('socket.io-client');
 const express = require('express');
 const childProcess = require('child_process');
-const isWsl = require('is-wsl');
+const OpenAI = require('openai');
+const PQueue = require('p-queue').default;
 
 const AthomApi = require('../services/AthomApi');
 const Settings = require('../services/Settings');
@@ -42,6 +39,7 @@ const HomeyCompose = require('./HomeyCompose');
 const GitCommands = require('./GitCommands');
 const NpmCommands = require('./NpmCommands');
 const ZWave = require('./ZWave');
+const DockerHelper = require('./DockerHelper');
 
 const exec = promisify(childProcess.exec);
 const statAsync = promisify(fs.stat);
@@ -57,7 +55,6 @@ const INVALID_CHARACTERS = /[^a-zA-Z0-9-_]/g;
 const FLOW_TYPES = ['triggers', 'conditions', 'actions'];
 
 class App {
-
   constructor(appPath) {
     this.path = path.resolve(appPath);
     this._homeyBuildPath = path.join(this.path, '.homeybuild');
@@ -102,12 +99,16 @@ class App {
         const { stdout } = await exec('npx tsc --showConfig');
         tsconfig = JSON.parse(stdout);
       } catch (error) {
-        throw new Error('Tsconfig validation failed: unable to read configuration from `npx tsc --showConfig`.');
+        throw new Error(
+          'Tsconfig validation failed: unable to read configuration from `npx tsc --showConfig`.',
+        );
       }
       const actualOutDir = tsconfig.compilerOptions?.outDir;
       const expectedOutDir = './.homeybuild';
       if (actualOutDir !== expectedOutDir) {
-        throw new Error(`Expected \`outDir\` to be \`${expectedOutDir}\`, but found \`${actualOutDir || 'undefined'}\``);
+        throw new Error(
+          `Expected \`outDir\` to be \`${expectedOutDir}\`, but found \`${actualOutDir || 'undefined'}\``,
+        );
       }
       await exec('npm run build', { cwd: appPath });
 
@@ -127,6 +128,37 @@ class App {
     process.once('SIGINT', callback); // CTRL+C
     process.once('SIGQUIT', callback); // Keyboard quit
     process.once('SIGTERM', callback); // `kill` command
+  }
+
+  async _getLocalFileResponse({ serverPort, assetPath }) {
+    const res = await fetch(`http://localhost:${serverPort}${assetPath}`);
+    const headers = {
+      'Content-Type': res.headers.get('Content-Type') || undefined,
+      'X-Homey-Hash': res.headers.get('X-Homey-Hash') || undefined,
+    };
+    const body = Buffer.from(await res.arrayBuffer());
+
+    return {
+      status: res.status,
+      headers,
+      body,
+    };
+  }
+
+  async _uploadBuildArchive({ url, method, headers, archiveStream, size }) {
+    const response = await fetch(url, {
+      method,
+      headers: {
+        'Content-Length': size,
+        ...headers,
+      },
+      body: archiveStream,
+      duplex: 'half',
+    });
+
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
   }
 
   async validate({ level = 'debug' } = {}) {
@@ -153,7 +185,8 @@ class App {
     await this.preprocess();
 
     const valid = await this._validate();
-    if (valid !== true) throw new Error('The app is not valid, please fix the validation issues first.');
+    if (valid !== true)
+      throw new Error('The app is not valid, please fix the validation issues first.');
 
     Log.success('App built successfully');
   }
@@ -170,7 +203,9 @@ class App {
 
     // Homey Cloud does not support running apps remotely.
     if (homey.platform === 'cloud' && remote === true) {
-      throw new Error('Homey Cloud does not support running apps remotely. Try again without --remote.');
+      throw new Error(
+        'Homey Cloud does not support running apps remotely. Try again without --remote.',
+      );
     }
 
     // Force remote for Homey Pro (2016 — 2019)
@@ -183,6 +218,7 @@ class App {
         homey,
         clean,
         skipBuild,
+        dockerSocketPath,
       });
     }
 
@@ -196,11 +232,7 @@ class App {
     });
   }
 
-  async runRemote({
-    homey,
-    clean,
-    skipBuild,
-  }) {
+  async runRemote({ homey, clean, skipBuild, dockerSocketPath, findLinks }) {
     homey.devkit.on('std', this._onStd.bind(this));
     homey.devkit.on('disconnect', () => {
       Log.error('Connection has been lost, attempting to reconnect...');
@@ -218,6 +250,8 @@ class App {
       clean,
       skipBuild,
       debug: true,
+      dockerSocketPath,
+      findLinks,
     });
 
     if (clean) {
@@ -225,52 +259,39 @@ class App {
     }
 
     Log.success(`Running \`${this._session.appId}\`, press CTRL+C to quit`);
-    Log.info(` — Profile your app's performance at https://go.athom.com/app-profiling?homey=${homey.id}&app=${this._session.appId}`);
+    Log.info(
+      ` — Profile your app's performance at https://go.athom.com/app-profiling?homey=${homey.id}&app=${this._session.appId}`,
+    );
     Log('─────────────── Logging stdout & stderr ───────────────');
 
     App.monitorCtrlC(this._onCtrlC.bind(this));
   }
 
-  async runDocker({
-    homey,
-    clean,
-    skipBuild,
-    linkModules,
-    network,
-    dockerSocketPath,
-  }) {
-    // Prepare Docker
-    const dockerOptions = {};
-    if (dockerSocketPath) {
-      dockerOptions.socketPath = dockerSocketPath;
-    }
-    const docker = new Docker(dockerOptions);
-    await docker.ping().catch((err) => {
-      Log.info(err.message);
-      let dockerUrl;
-      switch (os.platform()) {
-        case 'darwin': {
-          dockerUrl = 'https://docs.docker.com/docker-for-mac/install/';
-          break;
-        }
-        case 'win32': {
-          dockerUrl = 'https://docs.docker.com/docker-for-windows/install/';
-          break;
-        }
-        default: {
-          dockerUrl = 'https://docs.docker.com/desktop/';
-        }
-      }
-
-      throw new Error(`Could not connect to Docker. Is it running?\nIf you haven't installed Docker yet, please download & install it first:\n\n   ${dockerUrl}`);
-    });
-
-    // Build the App
+  async buildForLocalRunner(skipBuild) {
     if (skipBuild) {
       Log(colors.yellow('\n⚠ Skipping build steps!\n'));
     } else {
       await this.preprocess();
     }
+  }
+
+  static collectRunnerEnv(inspectPort) {
+    return {
+      HOMEY_APP_RUNNER_DEVMODE: process.env.HOMEY_APP_RUNNER_DEVMODE === '1',
+      HOMEY_APP_RUNNER_PATH: process.env.HOMEY_APP_RUNNER_PATH, // e.g. /Users/username/Git/homey-app-runner/src
+      HOMEY_APP_RUNNER_CMD: ['node', `--inspect=0.0.0.0:${inspectPort}`, 'index.js'],
+      HOMEY_APP_RUNNER_ID:
+        process.env.HOMEY_APP_RUNNER_ID || 'ghcr.io/athombv/homey-app-runner:latest',
+      HOMEY_APP_RUNNER_SDK_PATH: process.env.HOMEY_APP_RUNNER_SDK_PATH, // e.g. /Users/username/Git/node-homey-apps-sdk-v3
+    };
+  }
+
+  async runDocker({ homey, clean, skipBuild, linkModules, network, dockerSocketPath, findLinks }) {
+    // Prepare Docker
+    const docker = await DockerHelper.ensureDocker({ dockerSocketPath });
+
+    // Build the App
+    await this.buildForLocalRunner(skipBuild, { dockerSocketPath, findLinks });
 
     // Validate the App
     const valid = await this._validate();
@@ -279,18 +300,18 @@ class App {
     const manifest = App.getManifest({ appPath: this.path });
 
     // Install the App
-    Log.success('Creating Remote Debug Session...');
-    const {
-      sessionId,
-    } = await homey.devkit.installApp({
-      clean,
-      manifest,
-    }).catch((err) => {
-      if (err.cause && err.cause.error) {
-        err.message = err.cause.error;
-      }
-      throw err;
-    });
+    Log.success('Creating Remote Session...');
+    const { sessionId } = await homey.devkit
+      .installApp({
+        clean,
+        manifest,
+      })
+      .catch((err) => {
+        if (err.cause && err.cause.error) {
+          err.message = err.cause.error;
+        }
+        throw err;
+      });
 
     const baseUrl = await homey.baseUrl;
     const socketUrl = `${baseUrl}/devkit`;
@@ -299,61 +320,6 @@ class App {
     const inspectPort = await getPort({
       port: getPort.makeRange(9229, 9229 + 100),
     });
-
-    const HOMEY_APP_RUNNER_DEVMODE = process.env.HOMEY_APP_RUNNER_DEVMODE === '1';
-    const HOMEY_APP_RUNNER_PATH = process.env.HOMEY_APP_RUNNER_PATH; // e.g. /Users/username/Git/homey-app-runner/src
-    const HOMEY_APP_RUNNER_CMD = ['node', `--inspect=0.0.0.0:${inspectPort}`, 'index.js'];
-    const HOMEY_APP_RUNNER_ID = process.env.HOMEY_APP_RUNNER_ID || 'ghcr.io/athombv/homey-app-runner:latest';
-    const HOMEY_APP_RUNNER_SDK_PATH = process.env.HOMEY_APP_RUNNER_SDK_PATH; // e.g. /Users/username/Git/node-homey-apps-sdk-v3
-
-    // Download Image
-    if (!process.env.HOMEY_APP_RUNNER_ID) {
-      let pull = false;
-
-      // Check if the image exists
-      const images = await docker.listImages();
-      const image = images.find((image) => Array.isArray(image.RepoTags) && image.RepoTags.includes(HOMEY_APP_RUNNER_ID));
-      if (!image) pull = true;
-
-      // Only pull periodically
-      const now = new Date();
-      let lastCheck = await Settings.get('dockerPullHomeyAppRunnerLastCheck');
-      if (lastCheck === null) {
-        lastCheck = new Date(1970, 1, 1);
-      } else {
-        lastCheck = new Date(lastCheck);
-      }
-
-      const hours = Math.abs(now - lastCheck) / 36e5;
-      if (hours > 12) pull = true;
-
-      if (pull) {
-        await Settings.set('dockerPullHomeyAppRunnerLastCheck', now.toString());
-
-        Log.success('Downloading Docker Image...');
-        await new Promise((resolve, reject) => {
-          docker.pull(HOMEY_APP_RUNNER_ID, {}, (err, stream) => {
-            if (err) return reject(err);
-            docker.modem.followProgress(stream, (err) => {
-              if (err) return reject(err);
-              return resolve();
-            }, ({ id, status, progressDetail }) => {
-              if (progressDetail && progressDetail.total) {
-                if (id) {
-                  Log.info(` — [${id}] ${status} ${Math.round((progressDetail.current / progressDetail.total) * 100)}%`);
-                } else {
-                  Log.info(` — ${status} ${Math.round((progressDetail.current / progressDetail.total) * 100)}%`);
-                }
-              } else if (id) {
-                Log.info(` — [${id}] ${status}`);
-              } else {
-                Log.info(` — ${status}`);
-              }
-            });
-          });
-        });
-      }
-    }
 
     // Get Environment Variables
     Log.success('Preparing Environment Variables...');
@@ -373,7 +339,6 @@ class App {
           Log('───────────────────────────────────────────────────────');
 
           await Promise.all([
-
             // Uninstall the App
             Promise.resolve().then(async () => {
               Log.success(`Uninstalling \`${manifest.id}\`...`);
@@ -386,24 +351,7 @@ class App {
             }),
 
             // Delete the Container
-            Promise.resolve().then(async () => {
-              Log.success('Removing container...');
-              const containers = await docker.listContainers({
-                all: true,
-              });
-              const container = containers.find((container) => {
-                return container['Labels']['com.athom.session'] === sessionId;
-              });
-
-              if (container) {
-                const containerInstance = docker.getContainer(container['Id']);
-                await containerInstance.stop().catch(() => { });
-                await containerInstance.wait().catch(() => { });
-                await containerInstance.remove().catch(() => { });
-              }
-
-              Log.success('Removed container');
-            }),
+            DockerHelper.deleteContainerBySessionId(sessionId),
           ]).catch((err) => {
             Log.error(err.message || err.toString());
           });
@@ -413,18 +361,8 @@ class App {
       return cleanupPromise;
     };
 
-    const containers = await docker.listContainers({
-      all: true,
-    });
-
-    for (const container of containers) {
-      if (container['Labels']['com.athom.app-id'] === manifest.id) {
-        const containerInstance = docker.getContainer(container['Id']);
-        await containerInstance.stop().catch(() => { });
-        await containerInstance.wait().catch(() => { });
-        await containerInstance.remove().catch(() => { });
-      }
-    }
+    // Delete already existing containers
+    await DockerHelper.deleteContainerByManifestAppId(manifest.id);
 
     // Monitor CTRL+C
     let exiting = false;
@@ -435,7 +373,7 @@ class App {
 
       exiting = true;
       cleanup()
-        .catch(() => { })
+        .catch(() => {})
         .finally(() => {
           process.exit(0);
         });
@@ -526,39 +464,39 @@ class App {
             });
         })
         .on('event', ({ event, data }, callback) => {
-          homeyIOPromise.then((homeyIO) => {
-            homeyIO.emit('event', {
-              homeyId: homey.id,
-              event,
-              data,
-            }, callback);
-          }).catch((err) => callback(err));
+          homeyIOPromise
+            .then((homeyIO) => {
+              homeyIO.emit(
+                'event',
+                {
+                  homeyId: homey.id,
+                  event,
+                  data,
+                },
+                callback,
+              );
+            })
+            .catch((err) => callback(err));
         })
         .on('getFile', ({ path }, callback) => {
-          Promise.resolve().then(async () => {
-            const res = await fetch(`http://localhost:${serverPort}${path}`);
-            const headers = {
-              'Content-Type': res.headers.get('Content-Type') || undefined,
-              'X-Homey-Hash': res.headers.get('X-Homey-Hash') || undefined,
-            };
-            const body = await res.buffer();
-
-            return {
-              status: res.status,
-              headers,
-              body,
-            };
-          })
+          Promise.resolve()
+            .then(() => this._getLocalFileResponse({ serverPort, assetPath: path }))
             .then((result) => callback(null, result))
             .catch((error) => callback(error.message || error.toString()));
         })
         .on('getImage', ({ ...args }, callback) => {
-          homeyIOPromise.then((homeyIO) => {
-            homeyIO.emit('getImage', {
-              homeyId: homey.id,
-              ...args,
-            }, callback);
-          }).catch((err) => callback(err));
+          homeyIOPromise
+            .then((homeyIO) => {
+              homeyIO.emit(
+                'getImage',
+                {
+                  homeyId: homey.id,
+                  ...args,
+                },
+                callback,
+              );
+            })
+            .catch((err) => callback(err));
         });
     });
 
@@ -578,39 +516,51 @@ class App {
 
           // Override 'Homey.api.getLocalUrl'.
           // Homey Pro returns the Docker-host, but Homey CLI is not running on the same machine.
-          if (props.type === 'request' && props.uri === 'homey:manager:api' && props.event === 'getLocalUrl') {
+          if (
+            props.type === 'request' &&
+            props.uri === 'homey:manager:api' &&
+            props.event === 'getLocalUrl'
+          ) {
             return homey.baseUrl
               .then((result) => callback(null, result))
               .catch((err) => callback(err));
           }
 
-          return clientIO.emit('event', {
-            sessionId,
-            ...props,
-          }, callback);
+          return clientIO.emit(
+            'event',
+            {
+              sessionId,
+              ...props,
+            },
+            callback,
+          );
         })
-        .emit('createClient', ({
-          homeyId: homey.id,
-          homeyVersion: homey.version,
-          homeyPlatform: homey.platform,
-          homeyPlatformVersion: homey.platformVersion,
-          homeyPlatformFeatures: HomeyLibUtil.getPlatformLocalFeatures(homey.model),
-          homeyLanguage: homey.language,
-        }), (err) => {
-          if (err) {
-            Log.error('App Crashed. Stack Trace:');
-            Log.error(err);
+        .emit(
+          'createClient',
+          {
+            homeyId: homey.id,
+            homeyVersion: homey.version,
+            homeyPlatform: homey.platform,
+            homeyPlatformVersion: homey.platformVersion,
+            homeyPlatformFeatures: HomeyLibUtil.getPlatformLocalFeatures(homey.model),
+            homeyLanguage: homey.language,
+          },
+          (err) => {
+            if (err) {
+              Log.error('App Crashed. Stack Trace:');
+              Log.error(err);
 
-            exiting = true;
-            cleanup()
-              .catch(() => { })
-              .finally(() => {
-                process.exit(0);
-              });
-            return homeyIOReject(err);
-          }
-          return homeyIOResolve(socket);
-        });
+              exiting = true;
+              cleanup()
+                .catch(() => {})
+                .finally(() => {
+                  process.exit(0);
+                });
+              return homeyIOReject(err);
+            }
+            return homeyIOResolve(socket);
+          },
+        );
     });
 
     // Add Icon Hashes to Manifest
@@ -619,22 +569,26 @@ class App {
 
     // Driver Icon Hashes
     if (Array.isArray(manifest.drivers)) {
-      await Promise.all(manifest.drivers.map(async (driver) => {
-        const iconPath = path.join(this.path, 'drivers', driver.id, 'assets', 'icon.svg');
-        if (await fse.pathExists(iconPath)) {
-          driver.iconHash = await Util.getFileHash(iconPath);
-        }
-      }));
+      await Promise.all(
+        manifest.drivers.map(async (driver) => {
+          const iconPath = path.join(this.path, 'drivers', driver.id, 'assets', 'icon.svg');
+          if (await fse.pathExists(iconPath)) {
+            driver.iconHash = await Util.getFileHash(iconPath);
+          }
+        }),
+      );
     }
 
     // Capability Icon Hashes
     if (manifest.capabilities) {
-      await Promise.all(Object.values(manifest.capabilities).map(async (capability) => {
-        if (capability.icon) {
-          const iconPath = path.join(this.path, capability.icon);
-          capability.iconHash = await Util.getFileHash(iconPath);
-        }
-      }));
+      await Promise.all(
+        Object.values(manifest.capabilities).map(async (capability) => {
+          if (capability.icon) {
+            const iconPath = path.join(this.path, capability.icon);
+            capability.iconHash = await Util.getFileHash(iconPath);
+          }
+        }),
+      );
     }
 
     // Settings
@@ -646,15 +600,19 @@ class App {
     Log.success(`Starting \`${manifest.id}@${manifest.version}\` remotely...`);
     await Promise.race([
       new Promise((resolve, reject) => {
-        clientIO.emit('start', {
-          sessionId,
-          manifest,
-          homeyId: homey.id,
-          appId: manifest.id,
-        }, (err) => {
-          if (err) return reject(new Error(err));
-          return resolve();
-        });
+        clientIO.emit(
+          'start',
+          {
+            sessionId,
+            manifest,
+            homeyId: homey.id,
+            appId: manifest.id,
+          },
+          (err) => {
+            if (err) return reject(new Error(err));
+            return resolve();
+          },
+        );
       }),
       new Promise((_, reject) => {
         setTimeout(() => {
@@ -688,7 +646,9 @@ class App {
       fse.watch(userdataDir, (_, filename) => {
         if (userdataDirWarned === false) {
           userdataDirWarned = true;
-          Log.warning('Warning: The /userdata folder is not synced with Homey Pro while developing.\nAfter running the app from the Homey App Store, your /userdata may be out of sync.');
+          Log.warning(
+            'Warning: The /userdata folder is not synced with Homey Pro while developing.\nAfter running the app from the Homey App Store, your /userdata may be out of sync.',
+          );
         }
 
         Log.info(`Modified: ${path.join(userdataDir, filename)}`);
@@ -699,29 +659,103 @@ class App {
     }
 
     // Create & Run Container
-    // eslint-disable-next-line no-nested-ternary
-    const host = (process.platform === 'linux')
-      ? isWsl // Windows Subsystem for Linux
-        ? await new Promise((resolve, reject) => {
-          childProcess.exec('wsl.exe hostname -I | awk \'{print $1;}\'', (err, stdout) => {
-            if (err) return reject(err);
-            return resolve(stdout.trim());
-          });
-        })
-        : process.env.DOCKER_HOST_GATEWAY || '172.17.0.1'
-      : 'host.docker.internal';
+    await this.startRunnerContainer(
+      sessionId,
+      manifest,
+      env,
+      serverPort,
+      inspectPort,
+      network,
+      homey,
+      tmpDir,
+      userdataDir,
+      linkModules,
+      docker,
+    );
+
+    await cleanup();
+    process.exit(0);
+  }
+
+  async startRunnerContainer(
+    sessionId,
+    manifest,
+    env,
+    serverPort,
+    inspectPort,
+    network,
+    homey,
+    tmpDir,
+    userdataDir,
+    linkModules,
+    docker,
+  ) {
+    const {
+      HOMEY_APP_RUNNER_DEVMODE,
+      HOMEY_APP_RUNNER_PATH,
+      HOMEY_APP_RUNNER_CMD,
+      HOMEY_APP_RUNNER_ID,
+      HOMEY_APP_RUNNER_SDK_PATH,
+    } = App.collectRunnerEnv(inspectPort);
+
+    // Download Image (if there is no local override)
+    if (!process.env.HOMEY_APP_RUNNER_ID) {
+      // Check if the image exists, or needs refresh pull
+      if (
+        !(await DockerHelper.imageExists(HOMEY_APP_RUNNER_ID)) ||
+        (await DockerHelper.imageNeedPull(HOMEY_APP_RUNNER_ID))
+      ) {
+        await DockerHelper.imagePull(HOMEY_APP_RUNNER_ID);
+      }
+    }
+
+    const host = await DockerHelper.determineHost();
+
+    const containerEnv = [
+      'APP_PATH=/app',
+      `APP_ENV=${JSON.stringify(env)}`,
+      `SERVER=ws://${host}:${serverPort}`,
+      'DEBUG=1',
+    ];
+
+    if (HOMEY_APP_RUNNER_DEVMODE) {
+      containerEnv.push('DEVMODE=1');
+    }
+
+    const containerBinds = [`${this._homeyBuildPath}:/app:ro,z`];
+
+    if (HOMEY_APP_RUNNER_PATH !== undefined) {
+      containerBinds.push(`${HOMEY_APP_RUNNER_PATH}:/homey-app-runner:ro,z`);
+    }
+
+    if (HOMEY_APP_RUNNER_SDK_PATH !== undefined) {
+      containerBinds.push(
+        `${HOMEY_APP_RUNNER_SDK_PATH}:/homey-app-runner/node_modules/@athombv/homey-apps-sdk-v3:ro,z`,
+      );
+    }
+
+    // Mount /userdata & /tmp for platform local
+    if (homey.platform === 'local') {
+      containerBinds.push(`${tmpDir}:/tmp:rw,z`, `${userdataDir}:/userdata:rw,z`);
+    }
+
+    // Link Node.js modules as Docker binds.
+    // Note that we need to read the `name` from the module's package.json to create a correct path.
+    containerBinds.push(
+      `${path.join(this._homeyBuildPath, 'node_modules')}:/app/node_modules/:rw,z`,
+      ...linkModules
+        .split(',')
+        .filter((linkModule) => !!linkModule)
+        .map((linkModule) => {
+          const linkedModulePath = linkModule.trim();
+          const { name } = fse.readJSONSync(path.join(linkedModulePath, 'package.json'));
+          return `${linkedModulePath}:/app/node_modules/${name}`;
+        }),
+    );
 
     const createOpts = {
       name: `homey-app-runner-${sessionId}-${manifest.id}-v${manifest.version}`,
-      Env: [
-        'APP_PATH=/app',
-        `APP_ENV=${JSON.stringify(env)}`,
-        `SERVER=ws://${host}:${serverPort}`,
-        'DEBUG=1',
-        ...(HOMEY_APP_RUNNER_DEVMODE
-          ? ['DEVMODE=1']
-          : []),
-      ],
+      Env: containerEnv,
       ExposedPorts: {
         [`${inspectPort}/tcp`]: {},
       },
@@ -730,43 +764,19 @@ class App {
         'com.athom.port': String(serverPort),
         'com.athom.app-id': manifest.id,
         'com.athom.app-version': manifest.version,
+        'com.athom.app-runtime': manifest.runtime,
       },
       HostConfig: {
         ReadonlyRootfs: true,
         NetworkMode: network,
         PortBindings: {
-          [`${inspectPort}/tcp`]: [{
-            HostPort: String(inspectPort),
-          }],
+          [`${inspectPort}/tcp`]: [
+            {
+              HostPort: String(inspectPort),
+            },
+          ],
         },
-        Binds: [
-          ...(HOMEY_APP_RUNNER_PATH
-            ? [`${HOMEY_APP_RUNNER_PATH}:/homey-app-runner:ro,z`]
-            : []),
-          ...(HOMEY_APP_RUNNER_SDK_PATH
-            ? [`${HOMEY_APP_RUNNER_SDK_PATH}:/homey-app-runner/node_modules/@athombv/homey-apps-sdk-v3:ro,z`]
-            : []),
-          `${this._homeyBuildPath}:/app:ro,z`,
-
-          // Mount /userdata & /tmp for Homey Pro
-          ...(homey.platform === 'local'
-            ? [
-              `${tmpDir}:/tmp:rw,z`,
-              `${userdataDir}:/userdata:rw,z`,
-            ]
-            : []),
-
-          // Link Node.js modules as Docker binds.
-          // Note that we need to read the `name` from the module's package.json to create a correct path.
-          `${path.join(this._homeyBuildPath, 'node_modules')}:/app/node_modules/:rw,z`,
-          ...(linkModules.split(',')
-            .filter((linkModule) => !!linkModule)
-            .map((linkModule) => {
-              const linkedModulePath = linkModule.trim();
-              const { name } = fse.readJSONSync(path.join(linkedModulePath, 'package.json'));
-              return `${linkedModulePath}:/app/node_modules/${name}`;
-            })),
-        ],
+        Binds: containerBinds,
       },
     };
 
@@ -802,19 +812,13 @@ $ sudo systemctl restart docker
     }
 
     await docker.run(HOMEY_APP_RUNNER_ID, HOMEY_APP_RUNNER_CMD, passThrough, createOpts);
-
-    await cleanup();
-    process.exit(0);
   }
 
-  async install({
-    homey,
-    clean = false,
-    skipBuild = false,
-    debug = false,
-  } = {}) {
+  async install({ homey, clean = false, skipBuild = false, debug = false } = {}) {
     if (homey.platform === 'cloud') {
-      throw new Error('Installing apps is not available on Homey Cloud.\nPlease run your app instead.');
+      throw new Error(
+        'Installing apps is not available on Homey Cloud.\nPlease run your app instead.',
+      );
     }
 
     if (skipBuild) {
@@ -829,9 +833,7 @@ $ sudo systemctl restart docker
     Log.success('Packing Homey App...');
 
     const app = await this._getPackStream({
-      appPath: skipBuild
-        ? this.path
-        : this._homeyBuildPath,
+      appPath: skipBuild ? this.path : this._homeyBuildPath,
     });
     const env = await this._getEnv();
 
@@ -854,9 +856,7 @@ $ sudo systemctl restart docker
     }
   }
 
-  async preprocess({
-    copyAppProductionDependencies = true,
-  } = {}) {
+  async preprocess({ copyAppProductionDependencies = true } = {}) {
     if (App.hasHomeyCompose({ appPath: this.path }) === false) {
       // Note: this checks that we are in a valid homey app folder
       App.getManifest({ appPath: this.path });
@@ -912,7 +912,10 @@ $ sudo systemctl restart docker
           packageJsonData.type = 'module';
 
           // Write to build folder.
-          await fs.promises.writeFile(path.join(this._homeyBuildPath, 'package.json'), JSON.stringify(packageJsonData, null, 2));
+          await fs.promises.writeFile(
+            path.join(this._homeyBuildPath, 'package.json'),
+            JSON.stringify(packageJsonData, null, 2),
+          );
         } catch (err) {
           Log.error('Error reading the file', err);
         }
@@ -959,20 +962,141 @@ $ sudo systemctl restart docker
           const imageLight = sharp(previewLightPath);
           const imageDark = sharp(previewDarkPath);
 
-          await fs.promises.mkdir(path.join(this._homeyBuildPath, 'widgets', widgetId, '__assets__'), { recursive: true });
+          await fs.promises.mkdir(
+            path.join(this._homeyBuildPath, 'widgets', widgetId, '__assets__'),
+            { recursive: true },
+          );
           await Promise.all([
-            fs.promises.copyFile(previewLightPath, path.join(this._homeyBuildPath, 'widgets', widgetId, '__assets__', 'preview-light.png')),
-            imageLight.resize(128, 128).toFile(path.join(this._homeyBuildPath, 'widgets', widgetId, '__assets__', 'preview-light@1x.png')),
-            imageLight.resize(192, 192).toFile(path.join(this._homeyBuildPath, 'widgets', widgetId, '__assets__', 'preview-light@1.5x.png')),
-            imageLight.resize(256, 256).toFile(path.join(this._homeyBuildPath, 'widgets', widgetId, '__assets__', 'preview-light@2x.png')),
-            imageLight.resize(384, 384).toFile(path.join(this._homeyBuildPath, 'widgets', widgetId, '__assets__', 'preview-light@3x.png')),
-            imageLight.resize(512, 512).toFile(path.join(this._homeyBuildPath, 'widgets', widgetId, '__assets__', 'preview-light@4x.png')),
-            fs.promises.copyFile(previewDarkPath, path.join(this._homeyBuildPath, 'widgets', widgetId, '__assets__', 'preview-dark.png')),
-            imageDark.resize(128, 128).toFile(path.join(this._homeyBuildPath, 'widgets', widgetId, '__assets__', 'preview-dark@1x.png')),
-            imageDark.resize(192, 192).toFile(path.join(this._homeyBuildPath, 'widgets', widgetId, '__assets__', 'preview-dark@1.5x.png')),
-            imageDark.resize(256, 256).toFile(path.join(this._homeyBuildPath, 'widgets', widgetId, '__assets__', 'preview-dark@2x.png')),
-            imageDark.resize(384, 384).toFile(path.join(this._homeyBuildPath, 'widgets', widgetId, '__assets__', 'preview-dark@3x.png')),
-            imageDark.resize(512, 512).toFile(path.join(this._homeyBuildPath, 'widgets', widgetId, '__assets__', 'preview-dark@4x.png')),
+            fs.promises.copyFile(
+              previewLightPath,
+              path.join(
+                this._homeyBuildPath,
+                'widgets',
+                widgetId,
+                '__assets__',
+                'preview-light.png',
+              ),
+            ),
+            imageLight
+              .resize(128, 128)
+              .toFile(
+                path.join(
+                  this._homeyBuildPath,
+                  'widgets',
+                  widgetId,
+                  '__assets__',
+                  'preview-light@1x.png',
+                ),
+              ),
+            imageLight
+              .resize(192, 192)
+              .toFile(
+                path.join(
+                  this._homeyBuildPath,
+                  'widgets',
+                  widgetId,
+                  '__assets__',
+                  'preview-light@1.5x.png',
+                ),
+              ),
+            imageLight
+              .resize(256, 256)
+              .toFile(
+                path.join(
+                  this._homeyBuildPath,
+                  'widgets',
+                  widgetId,
+                  '__assets__',
+                  'preview-light@2x.png',
+                ),
+              ),
+            imageLight
+              .resize(384, 384)
+              .toFile(
+                path.join(
+                  this._homeyBuildPath,
+                  'widgets',
+                  widgetId,
+                  '__assets__',
+                  'preview-light@3x.png',
+                ),
+              ),
+            imageLight
+              .resize(512, 512)
+              .toFile(
+                path.join(
+                  this._homeyBuildPath,
+                  'widgets',
+                  widgetId,
+                  '__assets__',
+                  'preview-light@4x.png',
+                ),
+              ),
+            fs.promises.copyFile(
+              previewDarkPath,
+              path.join(
+                this._homeyBuildPath,
+                'widgets',
+                widgetId,
+                '__assets__',
+                'preview-dark.png',
+              ),
+            ),
+            imageDark
+              .resize(128, 128)
+              .toFile(
+                path.join(
+                  this._homeyBuildPath,
+                  'widgets',
+                  widgetId,
+                  '__assets__',
+                  'preview-dark@1x.png',
+                ),
+              ),
+            imageDark
+              .resize(192, 192)
+              .toFile(
+                path.join(
+                  this._homeyBuildPath,
+                  'widgets',
+                  widgetId,
+                  '__assets__',
+                  'preview-dark@1.5x.png',
+                ),
+              ),
+            imageDark
+              .resize(256, 256)
+              .toFile(
+                path.join(
+                  this._homeyBuildPath,
+                  'widgets',
+                  widgetId,
+                  '__assets__',
+                  'preview-dark@2x.png',
+                ),
+              ),
+            imageDark
+              .resize(384, 384)
+              .toFile(
+                path.join(
+                  this._homeyBuildPath,
+                  'widgets',
+                  widgetId,
+                  '__assets__',
+                  'preview-dark@3x.png',
+                ),
+              ),
+            imageDark
+              .resize(512, 512)
+              .toFile(
+                path.join(
+                  this._homeyBuildPath,
+                  'widgets',
+                  widgetId,
+                  '__assets__',
+                  'preview-dark@4x.png',
+                ),
+              ),
           ]);
         } catch (error) {
           throw error;
@@ -996,11 +1120,12 @@ $ sudo systemctl restart docker
       return;
     }
 
-    const dependencies = await NpmCommands.getProductionDependencies({ appPath: this.path })
-      .catch((error) => {
+    const dependencies = await NpmCommands.getProductionDependencies({ appPath: this.path }).catch(
+      (error) => {
         Log.error(error.message);
         throw new Error('This error may be fixed by running `npm install` in your app.');
-      });
+      },
+    );
 
     for (const filePath of dependencies) {
       const fullSrc = path.join(this.path, filePath);
@@ -1098,7 +1223,9 @@ $ sudo systemctl restart docker
 
       for (const [languageCode, changelog] of Object.entries(text)) {
         if (!validLocales.includes(languageCode)) {
-          throw new Error(`Invalid language code: ${languageCode}. Valid codes are: ${validLocales.join(', ')}`);
+          throw new Error(
+            `Invalid language code: ${languageCode}. Valid codes are: ${validLocales.join(', ')}`,
+          );
         }
 
         changelogJson[version][languageCode] = changelog;
@@ -1115,7 +1242,10 @@ $ sudo systemctl restart docker
   }
 
   async commit(changelog) {
-    if (await GitCommands.isGitInstalled() && await GitCommands.isGitRepo({ path: this.path })) {
+    if (
+      (await GitCommands.isGitInstalled()) &&
+      (await GitCommands.isGitRepo({ path: this.path }))
+    ) {
       // Check whether only app.json or also .homeycompose/app.json needs to be committed
       const commitFiles = [];
       commitFiles.push(path.join(this.path, 'app.json'));
@@ -1146,23 +1276,34 @@ $ sudo systemctl restart docker
       // Commit the changes
       await this._commitChanges(true, hasChangelog, commitFiles, version, changelog, true);
     } else {
-      throw new Error('A git executable or repository was not found, could not commit version bump');
+      throw new Error(
+        'A git executable or repository was not found, could not commit version bump',
+      );
     }
   }
 
-  async _commitChanges(bumpedVersion, updatedChangelog, commitFiles, appVersion, changelog, skipCommitQuestion = false) {
+  async _commitChanges(
+    bumpedVersion,
+    updatedChangelog,
+    commitFiles,
+    appVersion,
+    changelog,
+    skipCommitQuestion = false,
+  ) {
     let createdGitTag = false;
     // Only commit and tag if version is bumped
     if (bumpedVersion) {
       // First ask if version bump is desired
-      const shouldCommit = skipCommitQuestion || await inquirer.prompt([
-        {
-          type: 'confirm',
-          name: 'value',
-          message: `Do you want to commit the version bump ${updatedChangelog ? 'and updated changelog' : ''}?`,
-          default: true,
-        },
-      ]);
+      const shouldCommit =
+        skipCommitQuestion ||
+        (await inquirer.prompt([
+          {
+            type: 'confirm',
+            name: 'value',
+            message: `Do you want to commit the version bump ${updatedChangelog ? 'and updated changelog' : ''}?`,
+            default: true,
+          },
+        ]));
 
       // Check if commit is desired
       if (skipCommitQuestion || shouldCommit.value) {
@@ -1174,15 +1315,21 @@ $ sudo systemctl restart docker
             message: `Bump version to v${appVersion}`,
             description: `Changelog: ${changelog['en']}`,
           });
-          Log.success(`Committed ${commitFiles.map((i) => i.replace(`${this.path}/`, ''))
-            .join(', and ')} with version bump`);
+          Log.success(
+            `Committed ${commitFiles
+              .map((i) => i.replace(`${this.path}/`, ''))
+              .join(', and ')} with version bump`,
+          );
         } else {
           await this._git.commitFiles({
             files: commitFiles,
             message: `Bump version to v${appVersion}`,
           });
-          Log.success(`Committed ${commitFiles.map((i) => i.replace(`${this.path}/`, ''))
-            .join(', and ')} with version bump`);
+          Log.success(
+            `Committed ${commitFiles
+              .map((i) => i.replace(`${this.path}/`, ''))
+              .join(', and ')} with version bump`,
+          );
         }
 
         try {
@@ -1204,7 +1351,7 @@ $ sudo systemctl restart docker
       }
     }
 
-    if (await this._git.hasRemoteOrigin() && bumpedVersion) {
+    if ((await this._git.hasRemoteOrigin()) && bumpedVersion) {
       const answers = await inquirer.prompt([
         {
           type: 'confirm',
@@ -1226,7 +1373,7 @@ $ sudo systemctl restart docker
     }
   }
 
-  async publish() {
+  async publish({ findLinks, dockerSocketPath } = {}) {
     const undos = {
       version: null,
     };
@@ -1234,8 +1381,11 @@ $ sudo systemctl restart docker
     try {
       const env = await this._getEnv();
 
-      if (await GitCommands.isGitInstalled() && await GitCommands.isGitRepo({ path: this.path })) {
-        if (await this._git.hasUncommittedChanges() && process.env.HOMEY_HEADLESS !== '1') {
+      if (
+        (await GitCommands.isGitInstalled()) &&
+        (await GitCommands.isGitRepo({ path: this.path }))
+      ) {
+        if ((await this._git.hasUncommittedChanges()) && process.env.HOMEY_HEADLESS !== '1') {
           const { shouldContinue } = await inquirer.prompt([
             {
               type: 'confirm',
@@ -1256,10 +1406,7 @@ $ sudo systemctl restart docker
         // Log.error(error);
       }
 
-      const {
-        id: appId,
-        name: appName,
-      } = manifest;
+      const { id: appId, name: appName } = manifest;
       let { version: appVersion } = manifest;
 
       const versionBumpChoices = {
@@ -1287,16 +1434,17 @@ $ sudo systemctl restart docker
       };
 
       // First ask if version bump is desired
-      const shouldUpdateVersion = (process.env.HOMEY_HEADLESS === '1')
-        ? { value: false }
-        : await inquirer.prompt([
-          {
-            type: 'confirm',
-            name: 'value',
-            message: `Do you want to update your app's version number? (current v${appVersion})`,
-            default: true,
-          },
-        ]);
+      const shouldUpdateVersion =
+        process.env.HOMEY_HEADLESS === '1'
+          ? { value: false }
+          : await inquirer.prompt([
+              {
+                type: 'confirm',
+                name: 'value',
+                message: `Do you want to update your app's version number? (current v${appVersion})`,
+                default: true,
+              },
+            ]);
       let shouldUpdateVersionTo = null;
 
       // If version bump is desired ask for patch/minor/major
@@ -1330,14 +1478,13 @@ $ sudo systemctl restart docker
         bumpedVersion = true;
       }
 
-      await this.preprocess();
+      await this.preprocess({ findLinks, dockerSocketPath });
 
       const profile = await AthomApi.getProfile();
-      const level = profile.roleIds.includes('app_developer_trusted')
-        ? 'verified'
-        : 'publish';
+      const level = profile.roleIds.includes('app_developer_trusted') ? 'verified' : 'publish';
       const valid = await this._validate({ level });
-      if (valid !== true) throw new Error('The app is not valid, please fix the validation issues first.');
+      if (valid !== true)
+        throw new Error('The app is not valid, please fix the validation issues first.');
 
       delete undos.version;
 
@@ -1387,7 +1534,9 @@ $ sudo systemctl restart docker
       const en = await readFileAsync(path.join(this.path, 'README.txt'))
         .then((buf) => buf.toString())
         .catch((err) => {
-          throw new Error('Missing file `/README.txt`. Please provide a README for your app. The contents of this file will be visible in the App Store.');
+          throw new Error(
+            'Missing file `/README.txt`. Please provide a README for your app. The contents of this file will be visible in the App Store.',
+          );
         });
 
       const readme = { en };
@@ -1405,8 +1554,9 @@ $ sudo systemctl restart docker
             // Check language code against homey-lib supported language codes
             if (getAppLocales().includes(languageCode)) {
               // Read contents of file into readme object
-              readme[languageCode] = await readFileAsync(path.join(this.path, file.name))
-                .then((buf) => buf.toString());
+              readme[languageCode] = await readFileAsync(path.join(this.path, file.name)).then(
+                (buf) => buf.toString(),
+              );
             }
           }
         }
@@ -1423,12 +1573,7 @@ $ sudo systemctl restart docker
       }
 
       const athomAppsApi = new AthomAppsAPI();
-      const {
-        url,
-        method,
-        headers,
-        buildId,
-      } = await athomAppsApi.createBuild({
+      const { url, method, headers, buildId } = await athomAppsApi.createBuild({
         $token: await AthomApi.createDelegationToken({
           audience: 'apps',
         }),
@@ -1447,25 +1592,33 @@ $ sudo systemctl restart docker
       Log.success(`Created Build ID ${buildId}`);
       Log.success(`Uploading ${appId}@${appVersion}...`);
 
-      await fetch(url, {
+      await this._uploadBuildArchive({
+        url,
         method,
-        headers: {
-          'Content-Length': size,
-          ...headers,
-        },
-        body: archiveStream,
-      }).then(async (res) => {
-        if (!res.ok) {
-          throw new Error(res.statusText);
-        }
+        headers,
+        archiveStream,
+        size,
       });
 
       // Commit the version bump and/or changelog to Git if the current path is a repo
-      if (await GitCommands.isGitInstalled() && await GitCommands.isGitRepo({ path: this.path })) {
-        await this._commitChanges(bumpedVersion, updatedChangelog, commitFiles, appVersion, changelog);
+      if (
+        (await GitCommands.isGitInstalled()) &&
+        (await GitCommands.isGitRepo({ path: this.path }))
+      ) {
+        await this._commitChanges(
+          bumpedVersion,
+          updatedChangelog,
+          commitFiles,
+          appVersion,
+          changelog,
+        );
       }
       Log.success(`App ${appId}@${appVersion} successfully uploaded.`);
-      Log(colors.white(`\nVisit https://tools.developer.homey.app/apps/app/${appId}/build/${buildId} to publish your app.`));
+      Log(
+        colors.white(
+          `\nVisit https://tools.developer.homey.app/apps/app/${appId}/build/${buildId} to publish your app.`,
+        ),
+      );
     } catch (error) {
       for (const undo of Object.values(undos)) {
         if (undo === null) continue;
@@ -1480,7 +1633,6 @@ $ sudo systemctl restart docker
   }
 
   _onStd(std) {
-    if (this._exiting) return;
     if (!this._session || std.session !== this._session.session) return;
     if (this._std[std.id]) return;
 
@@ -1518,28 +1670,28 @@ $ sudo systemctl restart docker
     }
   }
 
-  async _getPackStream({
-    appPath = this._homeyBuildPath,
-  } = {}) {
+  async _getPackStream({ appPath = this._homeyBuildPath } = {}) {
     let appSize = 0;
     let numFiles = 0;
 
-    const tmpFile = await tmp.file();
+    const tmpFile = await tmp.file({ postfix: '.tgz' });
 
     await pipeline(
-      tar.pack(appPath, {
-        dereference: true,
-        map(header) {
-          if (header.type === 'file') numFiles += 1;
-        },
-        ignore(name) {
-          if (name.startsWith('.')) return true;
-          if (name.includes('/.git/')) return true;
-          return false;
-        },
-      }).on('data', (chunk) => {
-        appSize += chunk.length;
-      }),
+      tar
+        .pack(appPath, {
+          dereference: true,
+          map(header) {
+            if (header.type === 'file') numFiles += 1;
+          },
+          ignore(name) {
+            if (name.startsWith('.')) return true;
+            if (name.includes('/.git/')) return true;
+            return false;
+          },
+        })
+        .on('data', (chunk) => {
+          appSize += chunk.length;
+        }),
       zlib.createGzip(),
       fs.createWriteStream(tmpFile.path),
     );
@@ -1577,7 +1729,7 @@ $ sudo systemctl restart docker
       'node_modules',
     ];
     // Add a "file" containing our default ignore rules for dotfiles, env.json and node_modules
-    walker.onReadIgnoreFile(DEFAULT_IGNORE_RULES_FILE, ignoreRules.join('\r\n'), () => { });
+    walker.onReadIgnoreFile(DEFAULT_IGNORE_RULES_FILE, ignoreRules.join('\r\n'), () => {});
 
     const fileEntries = await new Promise((resolve, reject) => {
       walker.on('done', resolve).on('error', reject).start();
@@ -1595,7 +1747,7 @@ $ sudo systemctl restart docker
     try {
       await fse.ensureDir(driverPath);
     } catch (error) {
-      throw new Error('Your app doesn\'t contain any drivers!');
+      throw new Error("Your app doesn't contain any drivers!");
     }
 
     const folderContents = await readDirAsync(driverPath, { withFileTypes: true });
@@ -1611,10 +1763,14 @@ $ sudo systemctl restart docker
   }
 
   async migrateToCompose() {
-    if (App.hasHomeyCompose({ appPath: this.path })) throw new Error('You already have the Compose enabled, no need to run this command.');
+    if (App.hasHomeyCompose({ appPath: this.path }))
+      throw new Error('You already have the Compose enabled, no need to run this command.');
 
     // Check if the current folder is a git repo. If it is, check for uncommitted changes.
-    if (await GitCommands.isGitInstalled() && await GitCommands.isGitRepo({ path: this.path })) {
+    if (
+      (await GitCommands.isGitInstalled()) &&
+      (await GitCommands.isGitRepo({ path: this.path }))
+    ) {
       if (await this._git.hasUncommittedChanges()) {
         throw new Error('Please commit changes first!');
       }
@@ -1631,7 +1787,7 @@ $ sudo systemctl restart docker
     }
 
     try {
-      if (!await fse.exists(this._homeyComposePath)) await mkdirAsync(this._homeyComposePath);
+      if (!(await fse.exists(this._homeyComposePath))) await mkdirAsync(this._homeyComposePath);
     } catch (err) {
       Log.error('Error creating folder', this._homeyComposePath, err);
     }
@@ -1707,7 +1863,8 @@ $ sudo systemctl restart docker
     // Flow seperation
     if (appFlowJson) {
       try {
-        if (!await fse.exists(path.join(this._homeyComposePath, 'flow'))) await mkdirAsync(path.join(this._homeyComposePath, 'flow'));
+        if (!(await fse.exists(path.join(this._homeyComposePath, 'flow'))))
+          await mkdirAsync(path.join(this._homeyComposePath, 'flow'));
       } catch (err) {
         Log('Error creating folder', err);
       }
@@ -1716,7 +1873,8 @@ $ sudo systemctl restart docker
         if (!appFlowJson[type]) return; // Return when this type is not found in the JSON.
 
         try {
-          if (!await fse.exists(path.join(this._homeyComposePath, 'flow', type))) await mkdirAsync(path.join(this._homeyComposePath, 'flow', type));
+          if (!(await fse.exists(path.join(this._homeyComposePath, 'flow', type))))
+            await mkdirAsync(path.join(this._homeyComposePath, 'flow', type));
         } catch (err) {
           Log.error('Error creating folder', err);
         }
@@ -1740,7 +1898,8 @@ $ sudo systemctl restart docker
     if (appJson.capabilities) {
       // Create capabilities folder
       try {
-        if (!await fse.exists(path.join(this._homeyComposePath, 'capabilities'))) await mkdirAsync(path.join(this._homeyComposePath, 'capabilities'));
+        if (!(await fse.exists(path.join(this._homeyComposePath, 'capabilities'))))
+          await mkdirAsync(path.join(this._homeyComposePath, 'capabilities'));
       } catch (err) {
         Log('Error creating folder', err);
       }
@@ -1762,7 +1921,8 @@ $ sudo systemctl restart docker
 
     if (appJson.discovery) {
       try {
-        if (!await fse.exists(path.join(this._homeyComposePath, 'discovery'))) await mkdirAsync(path.join(this._homeyComposePath, 'discovery'));
+        if (!(await fse.exists(path.join(this._homeyComposePath, 'discovery'))))
+          await mkdirAsync(path.join(this._homeyComposePath, 'discovery'));
       } catch (err) {
         Log.error('Error creating folder', err);
       }
@@ -1796,14 +1956,13 @@ $ sudo systemctl restart docker
   }
 
   async _askComposeMigration() {
-    const answers = await inquirer.prompt(
-      {
-        type: 'confirm',
-        name: 'switch_compose',
-        message: 'Do you want to use Homey compose? It will split the app.json file into separate files for Drivers, Flow Cards and Discovery Strategies.',
-        default: true,
-      },
-    );
+    const answers = await inquirer.prompt({
+      type: 'confirm',
+      name: 'switch_compose',
+      message:
+        'Do you want to use Homey compose? It will split the app.json file into separate files for Drivers, Flow Cards and Discovery Strategies.',
+      default: true,
+    });
 
     return answers.switch_compose;
   }
@@ -1826,43 +1985,17 @@ $ sudo systemctl restart docker
       {
         type: 'input',
         name: 'driverName',
-        message: 'What is your Driver\'s Name?',
+        message: "What is your Driver's Name?",
         validate: (input) => input.length > 0,
       },
     ]);
 
-    const {
-      driverId,
-      driverClass,
-      driverCapabilities,
-    } = await inquirer.prompt([
-      {
-        type: 'input',
-        name: 'driverId',
-        message: 'What is your Driver\'s ID?',
-        default: () => {
-          let name = driverName;
-          name = name.toLowerCase();
-          name = name.replace(/ /g, '-');
-          name = name.replace(INVALID_CHARACTERS, '');
-          return name;
-        },
-        validate: (input) => {
-          if (input.match(INVALID_CHARACTERS)) {
-            throw new Error('Invalid characters: only use letters, numbers, minus (-) and underscore (_)');
-          }
-
-          if (fs.existsSync(path.join(this.path, 'drivers', input))) {
-            throw new Error('Driver directory already exists!');
-          }
-
-          return true;
-        },
-      },
+    const { driverId, driverClass, driverCapabilities } = await inquirer.prompt([
+      this.getDriverIdPrompt(driverName),
       {
         type: 'list',
         name: 'driverClass',
-        message: 'What is your Driver\'s Device Class?',
+        message: "What is your Driver's Device Class?",
         choices: () => {
           const classes = HomeyLibDevice.getClasses();
           return Object.keys(classes)
@@ -1882,7 +2015,7 @@ $ sudo systemctl restart docker
       {
         type: 'checkbox',
         name: 'driverCapabilities',
-        message: 'What are your Driver\'s Capabilities?',
+        message: "What are your Driver's Capabilities?",
         choices: () => {
           const capabilities = HomeyLibDevice.getCapabilities();
           return Object.keys(capabilities)
@@ -1933,36 +2066,23 @@ $ sudo systemctl restart docker
       matter: driverWireless.matter,
     };
 
-    await writeFileAsync(path.join(driverPath, 'driver.compose.json'), JSON.stringify(driverJson, false, 2));
+    await writeFileAsync(
+      path.join(driverPath, 'driver.compose.json'),
+      JSON.stringify(driverJson, false, 2),
+    );
 
     if (driverWireless.settings) {
-      await writeFileAsync(path.join(driverPath, 'driver.settings.compose.json'), JSON.stringify(driverWireless.settings, false, 2));
+      await writeFileAsync(
+        path.join(driverPath, 'driver.settings.compose.json'),
+        JSON.stringify(driverWireless.settings, false, 2),
+      );
     }
 
     const templatePath = path.join(__dirname, '..', 'assets', 'templates', 'app', 'drivers');
 
     // Matter devices do not need a device/driver file. As apps cannot add functionality to Matter devices.
     if (!driverWireless.matter) {
-      if (App.usesModules({ appPath: this.path })) {
-        await copyFileAsync(
-          path.join(templatePath, 'driver.mjs'),
-          path.join(driverPath, 'driver.js'),
-        );
-        await copyFileAsync(
-          path.join(templatePath, 'device.mjs'),
-          path.join(driverPath, 'device.js'),
-        );
-      } else {
-        const fileExtension = App.usesTypeScript({ appPath: this.path }) ? '.ts' : '.js';
-        await copyFileAsync(
-          path.join(templatePath, `driver${fileExtension}`),
-          path.join(driverPath, `driver${fileExtension}`),
-        );
-        await copyFileAsync(
-          path.join(templatePath, `device${fileExtension}`),
-          path.join(driverPath, `device${fileExtension}`),
-        );
-      }
+      await this.copyDriverAndDeviceTemplate(templatePath, driverPath);
     }
 
     await fse.ensureDir(path.join(driverPath, 'assets'));
@@ -1971,49 +2091,116 @@ $ sudo systemctl restart docker
 
     switch (driverJson.connectivity[0]) {
       case 'infrared': {
-        Log(`\n\tLearn more about Infrared app development at: ${colors.underline('https://apps.developer.homey.app/wireless/infrared')}\n`);
+        Log(
+          `\n\tLearn more about Infrared app development at: ${colors.underline('https://apps.developer.homey.app/wireless/infrared')}\n`,
+        );
         break;
       }
 
       case 'rf433':
       case 'rf868': {
-        Log(`\n\tLearn more about 433 Mhz/868 Mhz app development at: ${colors.underline('https://apps.developer.homey.app/wireless/rf-433mhz-868mhz')}\n`);
+        Log(
+          `\n\tLearn more about 433 Mhz/868 Mhz app development at: ${colors.underline('https://apps.developer.homey.app/wireless/rf-433mhz-868mhz')}\n`,
+        );
         break;
       }
 
       case 'ble': {
-        Log(`\n\tLearn more about BLE app development at: ${colors.underline('https://apps.developer.homey.app/wireless/bluetooth')}\n`);
+        Log(
+          `\n\tLearn more about BLE app development at: ${colors.underline('https://apps.developer.homey.app/wireless/bluetooth')}\n`,
+        );
         break;
       }
 
       case 'zigbee': {
-        Log(`\n\tLearn more about Zigbee app development at: ${colors.underline('https://apps.developer.homey.app/wireless/zigbee')}\n`);
+        Log(
+          `\n\tLearn more about Zigbee app development at: ${colors.underline('https://apps.developer.homey.app/wireless/zigbee')}\n`,
+        );
         break;
       }
 
       case 'zwave': {
-        Log(`\n\tLearn more about Z-Wave app development at: ${colors.underline('https://apps.developer.homey.app/wireless/z-wave')}\n`);
+        Log(
+          `\n\tLearn more about Z-Wave app development at: ${colors.underline('https://apps.developer.homey.app/wireless/z-wave')}\n`,
+        );
         break;
       }
 
       case 'cloud': {
-        Log(`\n\tLearn more about OAuth2 app development at: ${colors.underline('https://apps.developer.homey.app/cloud/oauth2')}\n`);
+        Log(
+          `\n\tLearn more about OAuth2 app development at: ${colors.underline('https://apps.developer.homey.app/cloud/oauth2')}\n`,
+        );
         break;
       }
 
       case 'lan': {
-        Log(`\n\tLearn more about LAN app development at: ${colors.underline('https://apps.developer.homey.app/wireless/wi-fi')}\n`);
+        Log(
+          `\n\tLearn more about LAN app development at: ${colors.underline('https://apps.developer.homey.app/wireless/wi-fi')}\n`,
+        );
         break;
       }
 
       case 'matter': {
-        Log(`\n\tLearn more about Matter app development at: ${colors.underline('https://apps.developer.homey.app/wireless/matter')}\n`);
+        Log(
+          `\n\tLearn more about Matter app development at: ${colors.underline('https://apps.developer.homey.app/wireless/matter')}\n`,
+        );
         break;
       }
 
       default: {
         break;
       }
+    }
+  }
+
+  getDriverIdPrompt(driverName) {
+    return {
+      type: 'input',
+      name: 'driverId',
+      message: "What is your Driver's ID?",
+      default: () => {
+        let name = driverName;
+        name = name.toLowerCase();
+        name = name.replace(/ /g, '-');
+        name = name.replace(INVALID_CHARACTERS, '');
+        return name;
+      },
+      validate: (input) => {
+        if (input.match(INVALID_CHARACTERS)) {
+          throw new Error(
+            'Invalid characters: only use letters, numbers, minus (-) and underscore (_)',
+          );
+        }
+
+        if (fs.existsSync(path.join(this.path, 'drivers', input))) {
+          throw new Error('Driver directory already exists!');
+        }
+
+        return true;
+      },
+    };
+  }
+
+  async copyDriverAndDeviceTemplate(templatePath, driverPath) {
+    if (App.usesModules({ appPath: this.path })) {
+      await copyFileAsync(
+        path.join(templatePath, 'driver.mjs'),
+        path.join(driverPath, 'driver.js'),
+      );
+      await copyFileAsync(
+        path.join(templatePath, 'device.mjs'),
+        path.join(driverPath, 'device.js'),
+      );
+    } else {
+      const fileExtension = App.usesTypeScript({ appPath: this.path }) ? '.ts' : '.js';
+      await copyFileAsync(
+        path.join(templatePath, `driver${fileExtension}`),
+        path.join(driverPath, `driver${fileExtension}`),
+      );
+      await copyFileAsync(
+        path.join(templatePath, `device${fileExtension}`),
+        path.join(driverPath, `device${fileExtension}`),
+      );
     }
   }
 
@@ -2050,7 +2237,7 @@ $ sudo systemctl restart docker
         ]);
 
         if (shouldInstallRFDriver) {
-          await NpmCommands.install(['homey-rfdriver'], { appPath: this.path });
+          await this.installRfLibrary();
         }
 
         return {
@@ -2069,7 +2256,7 @@ $ sudo systemctl restart docker
         ]);
 
         if (shouldInstallRFDriver) {
-          await NpmCommands.install(['homey-rfdriver'], { appPath: this.path });
+          await this.installRfLibrary();
         }
 
         return {
@@ -2088,7 +2275,7 @@ $ sudo systemctl restart docker
         ]);
 
         if (shouldInstallRFDriver) {
-          await NpmCommands.install(['homey-rfdriver'], { appPath: this.path });
+          await this.installRfLibrary();
         }
 
         return {
@@ -2108,7 +2295,7 @@ $ sudo systemctl restart docker
         ]);
 
         if (shouldInstallZigbeeDriver) {
-          await NpmCommands.install(['homey-zigbeedriver'], { appPath: this.path });
+          await this.installZigbeeLibrary();
         }
 
         return {
@@ -2127,7 +2314,7 @@ $ sudo systemctl restart docker
         ]);
 
         if (shouldInstallZwaveDriver) {
-          await NpmCommands.install(['homey-zwavedriver'], { appPath: this.path });
+          await this.installZWaveLibrary();
         }
 
         const { zwave, settings } = await ZWave.autocompleteDriver();
@@ -2150,7 +2337,7 @@ $ sudo systemctl restart docker
         ]);
 
         if (shouldInstallOAuth2App) {
-          await NpmCommands.install(['homey-oauth2app'], { appPath: this.path });
+          await this.installOAuth2Library();
         }
 
         return {
@@ -2170,7 +2357,8 @@ $ sudo systemctl restart docker
             type: 'confirm',
             name: 'createDiscovery',
             default: false,
-            message: 'Do you want to create a Discovery strategy to find your device automatically in the LAN?',
+            message:
+              'Do you want to create a Discovery strategy to find your device automatically in the LAN?',
           },
         ]);
 
@@ -2185,12 +2373,14 @@ $ sudo systemctl restart docker
       }
 
       case 'matter': {
-        const { isBridgedDevice } = await inquirer.prompt([{
-          type: 'confirm',
-          name: 'isBridgedDevice',
-          default: false,
-          message: 'Is this a Matter device connected through a Matter bridge?',
-        }]);
+        const { isBridgedDevice } = await inquirer.prompt([
+          {
+            type: 'confirm',
+            name: 'isBridgedDevice',
+            default: false,
+            message: 'Is this a Matter device connected through a Matter bridge?',
+          },
+        ]);
 
         const driver = {
           platforms: ['local'],
@@ -2296,6 +2486,22 @@ $ sudo systemctl restart docker
     }
   }
 
+  async installRfLibrary() {
+    await NpmCommands.install(['homey-rfdriver'], { appPath: this.path });
+  }
+
+  async installZigbeeLibrary() {
+    await NpmCommands.install(['homey-zigbeedriver'], { appPath: this.path });
+  }
+
+  async installZWaveLibrary() {
+    await NpmCommands.install(['homey-zwavedriver'], { appPath: this.path });
+  }
+
+  async installOAuth2Library() {
+    await NpmCommands.install(['homey-oauth2app'], { appPath: this.path });
+  }
+
   async changeDriverCapabilities() {
     if (App.hasHomeyCompose({ appPath: this.path }) === false) {
       if (await this._askComposeMigration()) {
@@ -2318,7 +2524,12 @@ $ sudo systemctl restart docker
       },
     ]);
 
-    const driverJsonPath = path.join(this.path, 'drivers', selectedDriverAnswer.driverId, 'driver.compose.json');
+    const driverJsonPath = path.join(
+      this.path,
+      'drivers',
+      selectedDriverAnswer.driverId,
+      'driver.compose.json',
+    );
 
     let driverJson;
     try {
@@ -2338,7 +2549,7 @@ $ sudo systemctl restart docker
       {
         type: 'checkbox',
         name: 'capabilities',
-        message: 'What are your Driver\'s Capabilities?',
+        message: "What are your Driver's Capabilities?",
         choices: () => {
           const capabilities = HomeyLibDevice.getCapabilities();
           return Object.keys(capabilities)
@@ -2453,7 +2664,7 @@ $ sudo systemctl restart docker
       {
         type: 'input',
         name: 'flowId',
-        message: 'What is your Flow Card\'s ID?',
+        message: "What is your Flow Card's ID?",
         default: () => {
           let name = flowTitle;
           name = name.toLowerCase();
@@ -2463,11 +2674,15 @@ $ sudo systemctl restart docker
         },
         validate: (input) => {
           if (input.match(INVALID_CHARACTERS)) {
-            throw new Error('Invalid characters: only use letters, numbers, minus (-) and underscore (_)');
+            throw new Error(
+              'Invalid characters: only use letters, numbers, minus (-) and underscore (_)',
+            );
           }
 
           // Check if the flow entry already exists in the .homeycompose/flow folder
-          if (fs.existsSync(path.join(this.path, '.homeycompose', 'flow', flowType, `${input}.json`))) {
+          if (
+            fs.existsSync(path.join(this.path, '.homeycompose', 'flow', flowType, `${input}.json`))
+          ) {
             throw new Error('Flow already exists!');
           }
 
@@ -2478,9 +2693,7 @@ $ sudo systemctl restart docker
 
     const flowArguments = await App._questionFlowArguments();
 
-    const flowTokens = flowType === 'triggers'
-      ? await App._questionFlowTokens()
-      : [];
+    const flowTokens = flowType === 'triggers' ? await App._questionFlowTokens() : [];
 
     const { confirm } = await inquirer.prompt([
       {
@@ -2556,7 +2769,9 @@ $ sudo systemctl restart docker
           message: 'What is the name of your argument?',
           validate: async (input) => {
             if (input.match(INVALID_CHARACTERS)) {
-              throw new Error('Invalid characters: only use letters, numbers, minus (-) and underscore (_)');
+              throw new Error(
+                'Invalid characters: only use letters, numbers, minus (-) and underscore (_)',
+              );
             }
 
             return true;
@@ -2567,7 +2782,9 @@ $ sudo systemctl restart docker
       flowCardArgument.type = argumentType;
       flowCardArgument.name = argumentName;
 
-      if (['text', 'autocomplete', 'number', 'date', 'time', 'device'].includes(flowCardArgument.type)) {
+      if (
+        ['text', 'autocomplete', 'number', 'date', 'time', 'device'].includes(flowCardArgument.type)
+      ) {
         const { argumentPlaceholder } = await inquirer.prompt([
           {
             type: 'input',
@@ -2723,7 +2940,7 @@ $ sudo systemctl restart docker
         {
           type: 'input',
           name: 'tokenName',
-          message: 'What is your token\'s ID?',
+          message: "What is your token's ID?",
           default: () => {
             let name = tokenTitle;
             name = name.toLowerCase();
@@ -2733,7 +2950,9 @@ $ sudo systemctl restart docker
           },
           validate: async (input) => {
             if (input.match(INVALID_CHARACTERS)) {
-              throw new Error('Invalid characters: only use letters, numbers, minus (-) and underscore (_)');
+              throw new Error(
+                'Invalid characters: only use letters, numbers, minus (-) and underscore (_)',
+              );
             }
 
             return true;
@@ -2785,7 +3004,10 @@ $ sudo systemctl restart docker
     if (fs.existsSync(flowFolder) === false) await mkdirAsync(flowFolder);
     if (fs.existsSync(flowPath) === false) await mkdirAsync(flowPath);
 
-    await writeFileAsync(path.join(flowPath, `${flowJson.id}.json`), JSON.stringify(flowJson.manifest, false, 2));
+    await writeFileAsync(
+      path.join(flowPath, `${flowJson.id}.json`),
+      JSON.stringify(flowJson.manifest, false, 2),
+    );
 
     Log.success(`Flow created in \`${flowPath}\``);
   }
@@ -2806,18 +3028,16 @@ $ sudo systemctl restart docker
       {
         type: 'input',
         name: 'widgetName',
-        message: 'What is your Widgets\'s Name?',
+        message: "What is your Widget's Name?",
         validate: (input) => input.length > 0,
       },
     ]);
 
-    const {
-      widgetId,
-    } = await inquirer.prompt([
+    const { widgetId } = await inquirer.prompt([
       {
         type: 'input',
         name: 'widgetId',
-        message: 'What is your Widgets\'s ID?',
+        message: "What is your Widget's ID?",
         default: () => {
           let name = widgetName;
           name = name.toLowerCase();
@@ -2827,7 +3047,9 @@ $ sudo systemctl restart docker
         },
         validate: (input) => {
           if (input.match(INVALID_CHARACTERS)) {
-            throw new Error('Invalid characters: only use letters, numbers, minus (-) and underscore (_)');
+            throw new Error(
+              'Invalid characters: only use letters, numbers, minus (-) and underscore (_)',
+            );
           }
 
           if (fs.existsSync(path.join(this.path, 'widgets', input))) {
@@ -2850,6 +3072,12 @@ $ sudo systemctl restart docker
     if (!confirm) return;
 
     const widgetPath = path.join(this.path, 'widgets', widgetId);
+    await this.copyWidgetTemplate(widgetPath, widgetName);
+
+    Log.success(`Widget created in \`${widgetPath}\``);
+  }
+
+  async copyWidgetTemplate(widgetPath, widgetName) {
     await fse.ensureDir(widgetPath);
 
     const widgetJson = {
@@ -2876,17 +3104,30 @@ $ sudo systemctl restart docker
       },
     };
 
-    await writeFileAsync(path.join(widgetPath, 'widget.compose.json'), JSON.stringify(widgetJson, false, 2));
+    await writeFileAsync(
+      path.join(widgetPath, 'widget.compose.json'),
+      JSON.stringify(widgetJson, false, 2),
+    );
 
     const templatePath = path.join(__dirname, '..', 'assets', 'templates', 'app', 'widgets');
     await fse.ensureDir(path.join(widgetPath, 'public'));
-    await copyFileAsync(path.join(templatePath, 'public/index.html'), path.join(widgetPath, 'public/index.html'));
-    await copyFileAsync(path.join(templatePath, 'public/homey-logo.png'), path.join(widgetPath, 'public/homey-logo.png'));
+    await copyFileAsync(
+      path.join(templatePath, 'public/index.html'),
+      path.join(widgetPath, 'public/index.html'),
+    );
+    await copyFileAsync(
+      path.join(templatePath, 'public/homey-logo.png'),
+      path.join(widgetPath, 'public/homey-logo.png'),
+    );
     await copyFileAsync(path.join(templatePath, 'api.js'), path.join(widgetPath, 'api.js'));
-    await copyFileAsync(path.join(templatePath, 'preview-dark.png'), path.join(widgetPath, 'preview-dark.png'));
-    await copyFileAsync(path.join(templatePath, 'preview-light.png'), path.join(widgetPath, 'preview-light.png'));
-
-    Log.success(`Widget created in \`${widgetPath}\``);
+    await copyFileAsync(
+      path.join(templatePath, 'preview-dark.png'),
+      path.join(widgetPath, 'preview-dark.png'),
+    );
+    await copyFileAsync(
+      path.join(templatePath, 'preview-light.png'),
+      path.join(widgetPath, 'preview-light.png'),
+    );
   }
 
   async createDiscoveryStrategy() {
@@ -2956,8 +3197,16 @@ $ sudo systemctl restart docker
           name: 'mac',
           message: 'Enter a full MAC address or the first three bytes',
           validate: async (input) => {
-            if (input.length === 17 && input.search(/^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/) === 0) return true;
-            if (input.length === 8 && input.search(/^([0-9A-Fa-f]{2}[:-]){2}([0-9A-Fa-f]{2})$/) === 0) return true;
+            if (
+              input.length === 17 &&
+              input.search(/^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/) === 0
+            )
+              return true;
+            if (
+              input.length === 8 &&
+              input.search(/^([0-9A-Fa-f]{2}[:-]){2}([0-9A-Fa-f]{2})$/) === 0
+            )
+              return true;
 
             return false;
           },
@@ -2999,7 +3248,8 @@ $ sudo systemctl restart docker
           {
             type: 'input',
             name: 'id',
-            message: 'What is the indentifier to indentify the device? For example, \'name\' or \'txt.id\'',
+            message:
+              "What is the identifier to identify the device? For example, 'name' or 'txt.id'",
             validate: (input) => {
               return input.length > 0;
             },
@@ -3033,10 +3283,13 @@ $ sudo systemctl restart docker
           {
             type: 'input',
             name: 'id',
-            message: 'What is the indentifier to indentify the device? For example, \'name\' or \'headers.usn\'',
+            message:
+              "What is the identifier to identify the device? For example, 'name' or 'headers.usn'",
             validate: (input) => {
               if (input.match(INVALID_CHARACTERS)) {
-                throw new Error('Invalid characters: only use letters, numbers, minus (-) and underscore (_)');
+                throw new Error(
+                  'Invalid characters: only use letters, numbers, minus (-) and underscore (_)',
+                );
               }
               return true;
             },
@@ -3084,62 +3337,27 @@ $ sudo systemctl restart docker
     if (!confirmCreate.confirm) return;
 
     // Check if the folder already exists, if not create it
-    if (!await fse.exists(discoveryPath)) await mkdirAsync(discoveryPath);
+    if (!(await fse.exists(discoveryPath))) await mkdirAsync(discoveryPath);
 
-    await writeFileAsync(path.join(discoveryPath, `${discoveryBase.title}.json`), JSON.stringify(discoveryJson, false, 2));
+    await writeFileAsync(
+      path.join(discoveryPath, `${discoveryBase.title}.json`),
+      JSON.stringify(discoveryJson, false, 2),
+    );
 
     Log.success(`Discovery strategy created in \`${discoveryPath}\``);
   }
 
-  static async create({ appPath: cwd }) {
+  static async create({ appPath: cwd, globalAnswers }) {
     const stat = await statAsync(cwd);
     if (!stat.isDirectory()) {
       throw new Error('Invalid path, must be a directory');
     }
 
-    const answers = await inquirer.prompt([
-      {
-        type: 'input',
-        name: 'appName',
-        message: 'What is your app\'s name?',
-        default: 'My App',
-        validate: (input) => input.length > 0,
-      },
-      {
-        type: 'input',
-        name: 'appDescription',
-        message: 'What is your app\'s description?',
-        default: 'Adds support for MyBrand devices.',
-        validate: (input) => input.length > 0,
-      },
-      {
-        type: 'input',
-        name: 'id',
-        message: 'What is your app\'s unique ID?',
-        default: 'com.company.myapp',
-        validate: (input) => {
-          return HomeyLibApp.isValidId(input);
-        },
-      },
-      {
-        type: 'checkbox',
-        name: 'platforms',
-        message: 'What platforms will your app support?',
-        choices: [
-          { name: 'Homey Pro', value: 'local', checked: true },
-          { name: 'Homey Cloud', value: 'cloud' },
-        ],
-      },
-      {
-        type: 'list',
-        name: 'category',
-        message: 'What is your app\'s category?',
-        choices: HomeyLibApp.getCategories(),
-      },
+    const localAnswers = await inquirer.prompt([
       {
         type: 'confirm',
-        name: 'typescript',
-        message: 'Use TypeScript?',
+        name: 'github-workflows',
+        message: 'Use GitHub workflows to validate, update version, and publish your app?',
         default: false,
       },
       {
@@ -3150,23 +3368,20 @@ $ sudo systemctl restart docker
       },
       {
         type: 'confirm',
-        name: 'github-workflows',
-        message: 'Use GitHub workflows to validate, update version, and publish your app?',
-        default: false,
-      },
-      {
-        type: 'confirm',
-        name: 'license',
-        message: 'Use standard license for Homey Apps (GPL3)?',
-        default: true,
-      },
-      {
-        type: 'confirm',
         name: 'confirm',
         message: 'Seems good?',
         default: true,
       },
     ]);
+
+    // Combine global and local answers
+    const answers = {
+      ...globalAnswers,
+      ...localAnswers,
+    };
+
+    // Add already known answer (inserting it here will make it more readable and understandable when using)
+    answers.typescript = answers['programming-language'] === 'typescript';
 
     if (!answers.confirm) return;
 
@@ -3197,6 +3412,7 @@ $ sudo systemctl restart docker
       version: '1.0.0',
       compatibility: '>=12.4.0',
       sdk: 3,
+      runtime: 'nodejs',
       platforms: answers.platforms,
       name: { en: answers.appName },
       description: { en: answers.appDescription },
@@ -3215,34 +3431,10 @@ $ sudo systemctl restart docker
         name: `${profile.firstname} ${profile.lastname}`,
         email: profile.email,
       };
-    } catch (err) { }
+    } catch (err) {}
 
     // make dirs
-    const dirs = [
-      'locales',
-      'drivers',
-      'assets',
-      path.join('assets', 'images'),
-    ];
-
-    // Append the homeycompose dir
-    dirs.push('.homeycompose');
-    dirs.push(path.join('.homeycompose', 'flow'));
-    dirs.push(path.join('.homeycompose', 'flow', 'triggers'));
-    dirs.push(path.join('.homeycompose', 'flow', 'conditions'));
-    dirs.push(path.join('.homeycompose', 'flow', 'actions'));
-    dirs.push(path.join('.homeycompose', 'drivers'));
-    dirs.push(path.join('.homeycompose', 'drivers', 'templates'));
-    dirs.push(path.join('.homeycompose', 'drivers', 'settings'));
-    dirs.push(path.join('.homeycompose', 'capabilities'));
-    dirs.push(path.join('.homeycompose', 'discovery'));
-    dirs.push(path.join('.homeycompose', 'locales'));
-    dirs.push(path.join('.homeycompose', 'screensavers'));
-    dirs.push(path.join('.homeycompose', 'signals'));
-    dirs.push(path.join('.homeycompose', 'signals', '433'));
-    dirs.push(path.join('.homeycompose', 'signals', '868'));
-    dirs.push(path.join('.homeycompose', 'signals', 'ir'));
-
+    const dirs = ['locales', 'drivers', 'assets', path.join('assets', 'images')];
     for (let i = 0; i < dirs.length; i++) {
       const dir = dirs[i];
       try {
@@ -3252,32 +3444,41 @@ $ sudo systemctl restart docker
       }
     }
 
+    await HomeyCompose.createComposeDirectories({ appPath });
+
     if (answers.typescript) {
       await NpmCommands.installDev(['typescript'], { appPath });
     }
 
     if (answers.eslint) {
-      await NpmCommands.installDev([
-        'eslint@^7.32.0',
-        'eslint-config-athom',
-      ], { appPath });
+      await NpmCommands.installDev(['eslint@^7.32.0', 'eslint-config-athom'], { appPath });
 
       const eslintConfig = {
         extends: 'athom/homey-app',
       };
-      await writeFileAsync(path.join(appPath, '.eslintrc.json'), JSON.stringify(eslintConfig, false, 2));
+      await writeFileAsync(
+        path.join(appPath, '.eslintrc.json'),
+        JSON.stringify(eslintConfig, false, 2),
+      );
     }
 
     if (answers['github-workflows']) {
       await App.addGitHubWorkflows({ appPath });
     }
 
-    await writeFileAsync(path.join(appPath, '.homeycompose', 'app.json'), JSON.stringify(appJson, false, 2));
+    await writeFileAsync(
+      path.join(appPath, '.homeycompose', 'app.json'),
+      JSON.stringify(appJson, false, 2),
+    );
 
     const generatedAppManifestWarning = {
       _comment: 'This file is generated. Please edit .homeycompose/app.json instead.',
+      ...appJson,
     };
-    await writeFileAsync(path.join(appPath, 'app.json'), JSON.stringify(generatedAppManifestWarning, false, 2));
+    await writeFileAsync(
+      path.join(appPath, 'app.json'),
+      JSON.stringify(generatedAppManifestWarning, false, 2),
+    );
 
     await writeFileAsync(path.join(appPath, 'locales', 'en.json'), JSON.stringify({}, false, 2));
     await writeFileAsync(path.join(appPath, 'README.txt'), `${appJson.description.en}\n`);
@@ -3290,12 +3491,11 @@ $ sudo systemctl restart docker
 
     // copy files
     const templatePath = path.join(__dirname, '..', 'assets', 'templates', 'app');
-    const files = [
-      path.join('assets', 'icon.svg'),
-    ];
+    const files = [path.join('assets', 'icon.svg')];
 
     // eslint-disable-next-line no-constant-condition
-    if (false) { // Add question.
+    if (false) {
+      // Add question.
       await copyFileAsync(path.join(templatePath, 'app.mjs'), path.join(appPath, 'app.js'));
     } else {
       files.push(answers.typescript ? 'app.ts' : packageJson.main);
@@ -3323,23 +3523,245 @@ $ sudo systemctl restart docker
 /.homeybuild/`;
 
     await writeFileAsync(path.join(appPath, '.gitignore'), gitIgnore.toString());
-    await writeFileAsync(path.join(appPath, '.homeychangelog.json'), JSON.stringify({
-      [appJson.version]: {
-        en: 'First version!',
-      },
-    }, false, 2));
+    await writeFileAsync(
+      path.join(appPath, '.homeychangelog.json'),
+      JSON.stringify(
+        {
+          [appJson.version]: {
+            en: 'First version!',
+          },
+        },
+        false,
+        2,
+      ),
+    );
 
     Log.success(`App created in \`${appPath}\``);
-    Log(`\nLearn more about Homey app development at: ${colors.underline('https://apps.developer.homey.app')}\n`);
+    Log(
+      `\nLearn more about Homey app development at: ${colors.underline('https://apps.developer.homey.app')}\n`,
+    );
+  }
+
+  skipFolderForOpenAI(file) {
+    return file === 'locales' || file === 'node_modules' || file === '.homeybuild';
+  }
+
+  async translateWithOpenAI({
+    languages = [],
+    apiKey = process.env.OPENAI_API_KEY,
+    model = 'gpt-4o',
+    file = null,
+  }) {
+    // Validate languages
+    if (languages.includes('en')) {
+      throw new Error('You cannot translate to English, as it is the default language.');
+    }
+
+    // Validate API Key
+    if (!apiKey) {
+      throw new Error(`Missing OPENAI_API_KEY in the environment variables. Try running 'OPENAI_API_KEY="..." homey app translate'.
+
+You can create an API Key on https://platform.openai.com/api-keys.`);
+    }
+
+    // Create OpenAI instance
+    const openai = new OpenAI({ apiKey });
+    const pqueue = new PQueue({ concurrency: 10 });
+
+    // Find & translate all .json files recursively
+    const jsonFiles = new Set();
+
+    if (file) {
+      if (!file.endsWith('.json')) {
+        throw new Error('--file only supports a .json file.');
+      }
+
+      jsonFiles.add(file);
+    } else {
+      if (App.hasHomeyCompose({ appPath: this.path })) {
+        jsonFiles.add(path.join(this.path, '.homeycompose', 'app.json'));
+      } else {
+        jsonFiles.add(path.join(this.path, 'app.json'));
+      }
+
+      const walkSync = async (dir) => {
+        const files = await fs.promises.readdir(dir);
+        await Promise.all(
+          files.map(async (file) => {
+            const filePath = `${dir}/${file}`;
+            const fileStats = await fs.promises.stat(filePath);
+
+            if (fileStats.isDirectory()) {
+              if (this.skipFolderForOpenAI(file)) {
+                return;
+              }
+
+              await walkSync(filePath);
+            }
+
+            if (dir === this.path) {
+              // Skip root directory files
+              return;
+            }
+
+            if (fileStats.isFile() && filePath.endsWith('.json')) {
+              if (file.startsWith('.')) return;
+
+              jsonFiles.add(path.normalize(filePath));
+            }
+          }),
+        );
+      };
+
+      await walkSync(this.path);
+    }
+
+    Log(`Found ${jsonFiles.size} JSON files to translate...`);
+
+    await Promise.all(
+      [...jsonFiles].map(async (file) => {
+        return pqueue.add(async () => {
+          try {
+            const content = await fs.promises.readFile(file, 'utf8');
+
+            const chatResult = await openai.chat.completions.create({
+              model,
+              messages: [
+                {
+                  role: 'user',
+                  content: `
+This JSON structure may or may note have JSON Objects with "en", "nl", etc. as keys. We call them translation objects.
+Your job is to translate these to the following languages: ${languages.join(', ')}
+These are your constraints:
+— Only translate objects where an "en" property is present. Use "en" as the base translation.
+— Don't overwrite a key if one of these already exists. For example "nl".
+— Never translate IDs between [[ and ]].
+— Tone of voice: casual, friendly, helpful.
+— Always return the original file exactly as submitted. The only changes may be newly added languages.
+— Only output the new JSON file. No text. Don't format it as JSON. Don't output === START FILE ===.
+
+=== START FILE ===
+${content}`,
+                },
+              ],
+            });
+
+            await fs.promises.writeFile(
+              file,
+              JSON.stringify(JSON.parse(chatResult.choices[0].message.content), false, 2),
+            );
+
+            Log(`✅ Translated ${file}`);
+          } catch (err) {
+            Log(`❌ Error translating ${file}`);
+            Log(err);
+          }
+        });
+      }),
+    );
+
+    if (file) return;
+
+    // Translate /locales/en.json to /locales/{language}.json
+    const enLocalePath = path.join(this.path, 'locales', 'en.json');
+    const enLocalePathExists = !!(await fs.promises.stat(enLocalePath).catch(() => null));
+    if (enLocalePathExists) {
+      const enLocale = await fs.promises.readFile(enLocalePath, 'utf8');
+
+      await Promise.all(
+        Object.values(languages).map(async (language) => {
+          return pqueue.add(async () => {
+            const translatedLocalePath = path.join(this.path, 'locales', `${language}.json`);
+
+            try {
+              const translationExists = !!(await fs.promises
+                .stat(translatedLocalePath)
+                .catch(() => null));
+              if (translationExists) return;
+
+              const chatResult = await openai.chat.completions.create({
+                model,
+                messages: [
+                  {
+                    role: 'user',
+                    content: `
+      This JSON structure is a translation file for a Homey App.
+      Your job is to translate this file to the following language: ${language}
+      These are your constraints:
+      — Tone of voice: casual, friendly, helpful.
+      — Only change the values that are strings. Never add, remove or change keys.
+      — Only output the new JSON file. No text. Don't format it as JSON. Don't output === START FILE ===.
+
+      === START FILE ===
+      ${enLocale}`,
+                  },
+                ],
+              });
+              await fs.promises.writeFile(
+                translatedLocalePath,
+                JSON.stringify(JSON.parse(chatResult.choices[0].message.content), false, 2),
+              );
+              Log(`✅ Translated ${translatedLocalePath}`);
+            } catch (err) {
+              Log(`❌ Error translating ${translatedLocalePath}`);
+              Log(err);
+            }
+          });
+        }),
+      );
+    }
+
+    // Translate README.txt
+    const readme = await fs.promises.readFile(path.join(this.path, 'README.txt'), 'utf8');
+    await Promise.all(
+      Object.values(languages).map(async (language) => {
+        return pqueue.add(async () => {
+          const translatedReadmePath = path.join(this.path, `README.${language}.txt`);
+
+          try {
+            const translationExists = !!(await fs.promises
+              .stat(translatedReadmePath)
+              .catch(() => null));
+            if (translationExists) return;
+
+            const chatResult = await openai.chat.completions.create({
+              model,
+              messages: [
+                {
+                  role: 'user',
+                  content: `       
+This text is a description of an integration published on the Homey App Store.
+Your job is to translate this text to the following language: ${language}
+These are your constraints:
+— Tone of voice: casual, friendly, helpful.
+— Only output the new text. No other words. Don't format it. Don't output === START FILE ===.
+
+=== START FILE ===
+${readme}`,
+                },
+              ],
+            });
+
+            await fs.promises.writeFile(
+              translatedReadmePath,
+              chatResult.choices[0].message.content,
+            );
+            Log(`✅ Translated ${translatedReadmePath}`);
+          } catch (err) {
+            Log(`❌ Error translating ${translatedReadmePath}`);
+            Log(err);
+          }
+        });
+      }),
+    );
   }
 
   static async addTypes({ appPath, useTs }) {
     if (useTs) {
-      await NpmCommands.installDev([
-        '@types/homey@npm:homey-apps-sdk-v3-types',
-        '@types/node',
-        '@tsconfig/node16',
-      ], { appPath });
+      await NpmCommands.installDev(
+        ['@types/homey@npm:homey-apps-sdk-v3-types', '@types/node', '@tsconfig/node16'],
+        { appPath },
+      );
 
       const tsConfigJson = {
         extends: '@tsconfig/node16/tsconfig.json',
@@ -3349,36 +3771,44 @@ $ sudo systemctl restart docker
         },
       };
 
-      await writeFileAsync(path.join(appPath, 'tsconfig.json'), JSON.stringify(tsConfigJson, false, 2));
+      await writeFileAsync(
+        path.join(appPath, 'tsconfig.json'),
+        JSON.stringify(tsConfigJson, false, 2),
+      );
     } else {
-      await NpmCommands.installDev([
-        '@types/homey@npm:homey-apps-sdk-v3-types',
-      ], { appPath });
+      await NpmCommands.installDev(['@types/homey@npm:homey-apps-sdk-v3-types'], { appPath });
     }
   }
 
   static async addGitHubWorkflows({ appPath }) {
-    const workflowsPath = path.join(__dirname, '..', 'assets', 'templates', 'app', '.github', 'workflows');
+    const workflowsPath = path.join(
+      __dirname,
+      '..',
+      'assets',
+      'templates',
+      'app',
+      '.github',
+      'workflows',
+    );
     const targetPath = path.join(appPath, '.github', 'workflows');
     const workflows = ['homey-app-publish.yml', 'homey-app-validate.yml', 'homey-app-version.yml'];
     await fse.ensureDir(targetPath);
     for (const file of workflows) {
-      await copyFileAsync(
-        path.join(workflowsPath, file),
-        path.join(targetPath, file),
-      );
+      await copyFileAsync(path.join(workflowsPath, file), path.join(targetPath, file));
     }
     Log.success(`Added GitHub Workflows: ${workflows.join(', ')}.`);
-    Log.info('Make sure to add the HOMEY_PAT secret to your GitHub repository, the personal access token can be found at https://tools.developer.homey.app/me.');
+    Log.info(
+      'Make sure to add the HOMEY_PAT secret to your GitHub repository, the personal access token can be found at https://tools.developer.homey.app/me.',
+    );
   }
 
   static hasHomeyCompose({ appPath }) {
     const hasComposeFolder = fs.existsSync(path.join(appPath, '.homeycompose'));
 
     if (
-      hasComposeFolder
-      && !this.__warnedAboutMissingHomeyComposeManifest
-      && !fs.existsSync(path.join(appPath, '.homeycompose/app.json'))
+      hasComposeFolder &&
+      !this.__warnedAboutMissingHomeyComposeManifest &&
+      !fs.existsSync(path.join(appPath, '.homeycompose/app.json'))
     ) {
       Log.warning('Warning: Could not find a Homey Compose app.json manifest!');
       Log.warning('Using the generated app.json in the root of your app is supported for now,');
@@ -3395,11 +3825,14 @@ $ sudo systemctl restart docker
       const manifest = fse.readJSONSync(manifestPath);
 
       if (
-        Object.prototype.hasOwnProperty.call(manifest, 'id') === false
-        || Object.prototype.hasOwnProperty.call(manifest, 'version') === false
-        || Object.prototype.hasOwnProperty.call(manifest, 'compatibility') === false
-        || Object.prototype.hasOwnProperty.call(manifest, 'name') === false) {
-        throw new Error('Found \'app.json\' file does not contain the required properties for a valid Homey app!');
+        Object.prototype.hasOwnProperty.call(manifest, 'id') === false ||
+        Object.prototype.hasOwnProperty.call(manifest, 'version') === false ||
+        Object.prototype.hasOwnProperty.call(manifest, 'compatibility') === false ||
+        Object.prototype.hasOwnProperty.call(manifest, 'name') === false
+      ) {
+        throw new Error(
+          "Found 'app.json' file does not contain the required properties for a valid Homey app!",
+        );
       }
 
       return manifest;
@@ -3412,6 +3845,37 @@ $ sudo systemctl restart docker
     return App.getManifest({ appPath: path.join(appPath, '.homeycompose') });
   }
 
+  async installDependencies() {
+    await exec('npm install');
+
+    Log.success('Installed dependencies');
+    await this.listDependencies();
+  }
+
+  async addDependencies({ dependencies, dev = false }) {
+    const command = dev ? 'npm install -D' : 'npm install';
+    await exec(`${command} ${dependencies.join(' ')}`);
+
+    let successMessage = 'Added packages';
+    if (dev) successMessage += ' for development';
+    Log.success(successMessage);
+    await this.listDependencies();
+  }
+
+  async removeDependencies({ dependencies, dev = false }) {
+    const command = dev ? 'npm uninstall -D' : 'npm uninstall';
+    await exec(`${command} ${dependencies.join(' ')}`);
+
+    let successMessage = 'Removed packages';
+    if (dev) successMessage += ' for development';
+    Log.success(successMessage);
+    await this.listDependencies();
+  }
+
+  async listDependencies() {
+    const result = await exec('npm list');
+    Log(result.stdout);
+  }
 }
 
 module.exports = App;

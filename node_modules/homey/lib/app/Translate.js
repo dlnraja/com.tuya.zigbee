@@ -8,8 +8,20 @@ const App = require('../App');
 const Log = require('../Log');
 
 class Translate {
-
-  static LANGUAGES_TRANSLATE = ['nl', 'da', 'de', 'es', 'fr', 'it', 'no', 'sv', 'pl', 'ru', 'ko', 'ar'];
+  static LANGUAGES_TRANSLATE = [
+    'nl',
+    'da',
+    'de',
+    'es',
+    'fr',
+    'it',
+    'no',
+    'sv',
+    'pl',
+    'ru',
+    'ko',
+    'ar',
+  ];
   static LANGUAGES = ['en', ...Translate.LANGUAGES_TRANSLATE];
 
   constructor({ appPath }) {
@@ -65,38 +77,44 @@ You can create an API Key on https://platform.openai.com/api-keys.`);
     const appName = this._getAppName(manifest.name);
 
     // Start translation
-    await Promise.all([...jsonFiles].map(async (file) => {
-      return this._pqueue.add(async () => {
-        try {
-          await this._translateFile(file, languages, appName);
-        } catch (err) {
-          Log(`❌ Error translating ${file}`);
-          Log(err);
-        }
-      });
-    }));
+    await Promise.all(
+      [...jsonFiles].map(async (file) => {
+        return this._pqueue.add(async () => {
+          try {
+            await this._translateFile(file, languages, appName);
+          } catch (err) {
+            Log(`❌ Error translating ${file}`);
+            Log(err);
+          }
+        });
+      }),
+    );
 
     if (file) return;
 
     // Translate /locales/en.json to /locales/{language}.json
     const enLocalePath = path.join(this._appPath, 'locales', 'en.json');
-    const enLocalePathExists = !!await fs.promises.stat(enLocalePath).catch(() => null);
+    const enLocalePathExists = !!(await fs.promises.stat(enLocalePath).catch(() => null));
     if (enLocalePathExists) {
       const enLocale = await fs.promises.readFile(enLocalePath, 'utf8');
 
-      await Promise.all(Object.values(languages).map(async (language) => {
-        return this._pqueue.add(async () => {
-          const translatedLocalePath = path.join(this._appPath, 'locales', `${language}.json`);
+      await Promise.all(
+        Object.values(languages).map(async (language) => {
+          return this._pqueue.add(async () => {
+            const translatedLocalePath = path.join(this._appPath, 'locales', `${language}.json`);
 
-          try {
-            const translationExists = !!await fs.promises.stat(translatedLocalePath).catch(() => null);
-            if (translationExists) return;
+            try {
+              const translationExists = !!(await fs.promises
+                .stat(translatedLocalePath)
+                .catch(() => null));
+              if (translationExists) return;
 
-            const chatResult = await this._openai.chat.completions.create({
-              model: this._model,
-              messages: [{
-                role: 'user',
-                content: `
+              const chatResult = await this._openai.chat.completions.create({
+                model: this._model,
+                messages: [
+                  {
+                    role: 'user',
+                    content: `
       This JSON structure is a translation file for a Homey App.
       Your job is to translate this file to the following language: ${language}
       These are your constraints:
@@ -106,35 +124,44 @@ You can create an API Key on https://platform.openai.com/api-keys.`);
 
       === START FILE ===
       ${enLocale}`,
-              }],
-            });
-            await fs.promises.writeFile(translatedLocalePath, JSON.stringify(JSON.parse(chatResult.choices[0].message.content), false, 2));
-            Log(`✅ Translated ${translatedLocalePath}`);
-          } catch (err) {
-            Log(`❌ Error translating ${translatedLocalePath}`);
-            Log(err);
-          }
-        });
-      }));
+                  },
+                ],
+              });
+              await fs.promises.writeFile(
+                translatedLocalePath,
+                JSON.stringify(JSON.parse(chatResult.choices[0].message.content), false, 2),
+              );
+              Log(`✅ Translated ${translatedLocalePath}`);
+            } catch (err) {
+              Log(`❌ Error translating ${translatedLocalePath}`);
+              Log(err);
+            }
+          });
+        }),
+      );
     }
 
     // Translate README.txt
     const readmePath = path.join(this._appPath, 'README.txt');
-    const readmePathExists = !!await fs.promises.stat(readmePath).catch(() => null);
+    const readmePathExists = !!(await fs.promises.stat(readmePath).catch(() => null));
     if (readmePathExists) {
       const readme = await fs.promises.readFile(readmePath, 'utf8');
-      await Promise.all(Object.values(languages).map(async (language) => {
-        return this._pqueue.add(async () => {
-          const translatedReadmePath = path.join(this._appPath, `README.${language}.txt`);
-          try {
-            const translationExists = !!await fs.promises.stat(translatedReadmePath).catch(() => null);
-            if (translationExists) return;
+      await Promise.all(
+        Object.values(languages).map(async (language) => {
+          return this._pqueue.add(async () => {
+            const translatedReadmePath = path.join(this._appPath, `README.${language}.txt`);
+            try {
+              const translationExists = !!(await fs.promises
+                .stat(translatedReadmePath)
+                .catch(() => null));
+              if (translationExists) return;
 
-            const chatResult = await this._openai.chat.completions.create({
-              model: this._model,
-              messages: [{
-                role: 'user',
-                content: `       
+              const chatResult = await this._openai.chat.completions.create({
+                model: this._model,
+                messages: [
+                  {
+                    role: 'user',
+                    content: `       
 This text is a description of an integration published on the Homey App Store.
 Your job is to translate this text to the following language: ${language}
 These are your constraints:
@@ -143,45 +170,52 @@ These are your constraints:
 
 === START FILE ===
 ${readme}`,
-              }],
-            });
+                  },
+                ],
+              });
 
-            await fs.promises.writeFile(translatedReadmePath, chatResult.choices[0].message.content);
-            Log(`✅ Translated ${translatedReadmePath}`);
-          } catch (err) {
-            Log(`❌ Error translating ${translatedReadmePath}`);
-            Log(err);
-          }
-        });
-      }));
+              await fs.promises.writeFile(
+                translatedReadmePath,
+                chatResult.choices[0].message.content,
+              );
+              Log(`✅ Translated ${translatedReadmePath}`);
+            } catch (err) {
+              Log(`❌ Error translating ${translatedReadmePath}`);
+              Log(err);
+            }
+          });
+        }),
+      );
     }
   }
 
   async _walkSync(dir, jsonFiles) {
     const files = await fs.promises.readdir(dir);
-    await Promise.all(files.map(async (file) => {
-      const filePath = `${dir}/${file}`;
-      const fileStats = await fs.promises.stat(filePath);
+    await Promise.all(
+      files.map(async (file) => {
+        const filePath = `${dir}/${file}`;
+        const fileStats = await fs.promises.stat(filePath);
 
-      if (fileStats.isDirectory()) {
-        if (file === 'locales') return;
-        if (file === 'node_modules') return;
-        if (file === '.homeybuild') return;
+        if (fileStats.isDirectory()) {
+          if (file === 'locales') return;
+          if (file === 'node_modules') return;
+          if (file === '.homeybuild') return;
 
-        await this._walkSync(filePath, jsonFiles);
-      }
+          await this._walkSync(filePath, jsonFiles);
+        }
 
-      if (dir === this._appPath) {
-        // Skip root directory files
-        return;
-      }
+        if (dir === this._appPath) {
+          // Skip root directory files
+          return;
+        }
 
-      if (fileStats.isFile() && filePath.endsWith('.json')) {
-        if (file.startsWith('.')) return;
+        if (fileStats.isFile() && filePath.endsWith('.json')) {
+          if (file.startsWith('.')) return;
 
-        jsonFiles.add(path.normalize(filePath));
-      }
-    }));
+          jsonFiles.add(path.normalize(filePath));
+        }
+      }),
+    );
   }
 
   /**
@@ -216,9 +250,7 @@ ${readme}`,
 
       for (const key of keys) {
         const newPath = [...path, key];
-        tasks.push(
-          ...this._extractTranslationTasks(obj[key], newPath, languages),
-        );
+        tasks.push(...this._extractTranslationTasks(obj[key], newPath, languages));
       }
     }
 
@@ -293,9 +325,7 @@ ${readme}`,
 
       if (current[key] === undefined || current[key] === null || typeof current[key] !== 'object') {
         throw new Error(
-          `Invalid path: "${path
-            .slice(0, i + 1)
-            .join('.')}" does not exist or is not an object`,
+          `Invalid path: "${path.slice(0, i + 1).join('.')}" does not exist or is not an object`,
         );
       }
 
@@ -366,9 +396,7 @@ ${readme}`,
 
       if (current[key] === undefined || current[key] === null || typeof current[key] !== 'object') {
         throw new Error(
-          `Invalid path: "${path
-            .slice(0, i + 1)
-            .join('.')}" does not exist or is not an object`,
+          `Invalid path: "${path.slice(0, i + 1).join('.')}" does not exist or is not an object`,
         );
       }
 
@@ -417,7 +445,6 @@ ${readme}`,
 
     return null;
   }
-
 }
 
 module.exports = Translate;

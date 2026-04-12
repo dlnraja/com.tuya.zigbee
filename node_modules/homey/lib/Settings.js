@@ -13,7 +13,6 @@ const writeFileAsync = util.promisify(fs.writeFile);
 const mkdirAsync = util.promisify(fs.mkdir);
 
 class Settings {
-
   constructor() {
     this._settings = null;
     this._settingsPath = this.getSettingsPath();
@@ -79,7 +78,6 @@ class Settings {
   async unset(key) {
     return this.set(key, null);
   }
-
 }
 
 module.exports = Settings;

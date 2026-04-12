@@ -6,10 +6,9 @@ const colors = require('colors');
 module.exports = (...props) => {
   // Replace every prop's symbols to platform-specific symbols
   for (const [key, value] of Object.entries(props)) {
-    props[key] = figures(value instanceof Error ? (value.message || value.toString()) : value);
+    props[key] = figures(value instanceof Error ? value.message || value.toString() : value);
   }
 
-  // eslint-disable-next-line no-console
   console.log(...props);
 };
 
