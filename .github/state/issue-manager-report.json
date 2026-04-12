@@ -1,4483 +1,4483 @@
 {
-  "timestamp": "2026-04-12T09:10:06.267Z",
+  "timestamp": "2026-04-12T09:40:01.168Z",
   "appVersion": "7.2.12",
-  "responded": 0,
-  "closed": 1,
+  "responded": 1,
+  "closed": 0,
   "labeled": 0,
-  "issuesProcessed": 12,
+  "issuesProcessed": 5,
   "prsProcessed": 0,
-  "skipped": 11,
+  "skipped": 4,
   "newFingerprints": [
     {
       "fp": "_TYZB01_hlla45kx + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_hlla45kx + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_hlla45kx + TS0601",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_hlla45kx + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_hlla45kx + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_hlla45kx + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_hlla45kx + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_hlla45kx + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_hlla45kx + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_iuepbmpv + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_iuepbmpv + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_iuepbmpv + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_iuepbmpv + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_iuepbmpv + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_iuepbmpv + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_iuepbmpv + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_iuepbmpv + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_uwkja6z1 + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_uwkja6z1 + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_uwkja6z1 + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_uwkja6z1 + TS0601",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_uwkja6z1 + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_uwkja6z1 + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_uwkja6z1 + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_uwkja6z1 + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_uwkja6z1 + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_uwkja6z1 + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_uwkja6z1 + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_ew31dmgx + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_ew31dmgx + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_ew31dmgx + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_ew31dmgx + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_ew31dmgx + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_ew31dmgx + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_ew31dmgx + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_ew31dmgx + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_ew31dmgx + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_ew31dmgx + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_ew31dmgx + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wamqdr3f + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wamqdr3f + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wamqdr3f + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wamqdr3f + TS0601",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wamqdr3f + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wamqdr3f + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wamqdr3f + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wamqdr3f + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wamqdr3f + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wamqdr3f + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wamqdr3f + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_mw1pqqqt + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_mw1pqqqt + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_mw1pqqqt + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_mw1pqqqt + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_mw1pqqqt + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_mw1pqqqt + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_mw1pqqqt + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_mw1pqqqt + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_mw1pqqqt + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_mw1pqqqt + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_2uollq9d + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_2uollq9d + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_2uollq9d + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_2uollq9d + TS0601",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_2uollq9d + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_2uollq9d + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_2uollq9d + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_2uollq9d + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_2uollq9d + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_2uollq9d + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_2uollq9d + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_hl0ss9oa + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_hl0ss9oa + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_hl0ss9oa + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_hl0ss9oa + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_hl0ss9oa + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_hl0ss9oa + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_hl0ss9oa + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_hl0ss9oa + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_hl0ss9oa + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_y4mdop0b + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_y4mdop0b + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_y4mdop0b + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_y4mdop0b + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_y4mdop0b + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_y4mdop0b + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_y4mdop0b + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_y4mdop0b + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_y4mdop0b + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_6ocnqlhn + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_6ocnqlhn + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_6ocnqlhn + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_6ocnqlhn + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_6ocnqlhn + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_6ocnqlhn + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_6ocnqlhn + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_6ocnqlhn + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_6ocnqlhn + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_6ocnqlhn + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_lvkk0hdg + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_lvkk0hdg + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_lvkk0hdg + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_lvkk0hdg + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_lvkk0hdg + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_lvkk0hdg + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_lvkk0hdg + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_lvkk0hdg + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_lvkk0hdg + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_lvkk0hdg + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_lvkk0hdg + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_lvkk0hdg + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_emqmwtym + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_emqmwtym + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_emqmwtym + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_emqmwtym + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_emqmwtym + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_emqmwtym + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_emqmwtym + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_emqmwtym + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_emqmwtym + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_emqmwtym + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_emqmwtym + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_emqmwtym + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_khah2lkr + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_khah2lkr + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_khah2lkr + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_khah2lkr + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_khah2lkr + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_khah2lkr + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_khah2lkr + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_khah2lkr + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_khah2lkr + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_khah2lkr + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_0ints6wl + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_0ints6wl + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_0ints6wl + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_0ints6wl + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_0ints6wl + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_0ints6wl + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_0ints6wl + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_0ints6wl + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_0ints6wl + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_0ints6wl + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_yzr43ayq + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_yzr43ayq + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_yzr43ayq + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_yzr43ayq + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_yzr43ayq + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_yzr43ayq + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_yzr43ayq + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_yzr43ayq + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_yzr43ayq + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_yzr43ayq + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_cq8lu23i + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_cq8lu23i + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_cq8lu23i + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_cq8lu23i + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_cq8lu23i + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_cq8lu23i + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_cq8lu23i + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_cq8lu23i + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_cq8lu23i + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_4pm4pekt + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_4pm4pekt + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_4pm4pekt + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_4pm4pekt + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_4pm4pekt + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_4pm4pekt + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_4pm4pekt + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_4pm4pekt + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_4pm4pekt + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_8se38w3c + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_8se38w3c + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_8se38w3c + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_8se38w3c + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_8se38w3c + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_8se38w3c + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_8se38w3c + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_8se38w3c + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_8se38w3c + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_8se38w3c + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_81yrt3lo + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_81yrt3lo + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_81yrt3lo + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_81yrt3lo + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_81yrt3lo + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_81yrt3lo + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_81yrt3lo + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_81yrt3lo + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_81yrt3lo + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_81yrt3lo + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_81yrt3lo + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_81yrt3lo + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_lqmvrwa2 + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_lqmvrwa2 + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_lqmvrwa2 + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_lqmvrwa2 + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_lqmvrwa2 + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_lqmvrwa2 + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_lqmvrwa2 + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_lqmvrwa2 + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_lqmvrwa2 + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_lqmvrwa2 + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_isw9u95y + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_isw9u95y + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_isw9u95y + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_isw9u95y + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_isw9u95y + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_isw9u95y + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_isw9u95y + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_isw9u95y + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_isw9u95y + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_isw9u95y + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_yupc0pb7 + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_yupc0pb7 + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_yupc0pb7 + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_yupc0pb7 + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_yupc0pb7 + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_yupc0pb7 + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_yupc0pb7 + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_yupc0pb7 + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_yupc0pb7 + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_yupc0pb7 + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wol32olt + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wol32olt + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wol32olt + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wol32olt + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wol32olt + TS0601",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wol32olt + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wol32olt + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wol32olt + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wol32olt + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wol32olt + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wol32olt + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wol32olt + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_wol32olt + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_996rpfy6 + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_996rpfy6 + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_996rpfy6 + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_996rpfy6 + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_996rpfy6 + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_996rpfy6 + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_996rpfy6 + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_996rpfy6 + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_996rpfy6 + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_996rpfy6 + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_996rpfy6 + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_996rpfy6 + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_udyjylt7 + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_udyjylt7 + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_udyjylt7 + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_udyjylt7 + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_udyjylt7 + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_udyjylt7 + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_udyjylt7 + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_udyjylt7 + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_udyjylt7 + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_udyjylt7 + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_udyjylt7 + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_udyjylt7 + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_timx9ivq + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_timx9ivq + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_timx9ivq + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_timx9ivq + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_timx9ivq + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_timx9ivq + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_timx9ivq + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_timx9ivq + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_timx9ivq + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_timx9ivq + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_timx9ivq + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_timx9ivq + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_rid8lzvo + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_rid8lzvo + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_rid8lzvo + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_rid8lzvo + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_rid8lzvo + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_rid8lzvo + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_rid8lzvo + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_rid8lzvo + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_rid8lzvo + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_rid8lzvo + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_rid8lzvo + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_rid8lzvo + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_t3vvhrmh + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_t3vvhrmh + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_t3vvhrmh + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_t3vvhrmh + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_t3vvhrmh + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_t3vvhrmh + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_t3vvhrmh + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_t3vvhrmh + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_t3vvhrmh + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_t3vvhrmh + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_vuwtqx0t + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_vuwtqx0t + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_vuwtqx0t + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_vuwtqx0t + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_vuwtqx0t + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_vuwtqx0t + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_vuwtqx0t + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_vuwtqx0t + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_vuwtqx0t + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_vuwtqx0t + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_vuwtqx0t + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_vuwtqx0t + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_vuwtqx0t + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_vuwtqx0t + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_vuwtqx0t + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_vuwtqx0t + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_vuwtqx0t + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_vuwtqx0t + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_vuwtqx0t + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_vuwtqx0t + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_vuwtqx0t + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_vuwtqx0t + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_vuwtqx0t + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_vuwtqx0t + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_jt50ea5d + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_jt50ea5d + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_jt50ea5d + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_jt50ea5d + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_jt50ea5d + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_jt50ea5d + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_jt50ea5d + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_jt50ea5d + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_jt50ea5d + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_jt50ea5d + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_jt50ea5d + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_jt50ea5d + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_ajlu4cud + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_ajlu4cud + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_ajlu4cud + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_ajlu4cud + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_ajlu4cud + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_ajlu4cud + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_ajlu4cud + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_ajlu4cud + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_ajlu4cud + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_ajlu4cud + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_zpvusbtv + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_zpvusbtv + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_zpvusbtv + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_zpvusbtv + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_zpvusbtv + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_zpvusbtv + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_zpvusbtv + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_zpvusbtv + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_zpvusbtv + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_zpvusbtv + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_rkbxtclc + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_rkbxtclc + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_rkbxtclc + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_rkbxtclc + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_rkbxtclc + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_rkbxtclc + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_rkbxtclc + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_rkbxtclc + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_rkbxtclc + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_rkbxtclc + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_7ytnacie + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_7ytnacie + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_7ytnacie + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_7ytnacie + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_7ytnacie + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_7ytnacie + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_7ytnacie + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_7ytnacie + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_7ytnacie + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_7ytnacie + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_jowhpxop + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_jowhpxop + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_jowhpxop + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_jowhpxop + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_jowhpxop + TS0601",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_jowhpxop + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_jowhpxop + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_jowhpxop + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_jowhpxop + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_jowhpxop + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_jowhpxop + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_jowhpxop + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_jowhpxop + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_3ulg9kpo + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_3ulg9kpo + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_3ulg9kpo + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_3ulg9kpo + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_3ulg9kpo + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_3ulg9kpo + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_3ulg9kpo + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_3ulg9kpo + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_3ulg9kpo + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_3ulg9kpo + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_3ulg9kpo + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_3ulg9kpo + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_qyflbnbj + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_qyflbnbj + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_qyflbnbj + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_qyflbnbj + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_qyflbnbj + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_qyflbnbj + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_qyflbnbj + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_qyflbnbj + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_qyflbnbj + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_qyflbnbj + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_qyflbnbj + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_qyflbnbj + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_qyflbnbj + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_qyflbnbj + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_qyflbnbj + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_qyflbnbj + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_qyflbnbj + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_qyflbnbj + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_qyflbnbj + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_qyflbnbj + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_mfamvsdb + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_mfamvsdb + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_mfamvsdb + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_mfamvsdb + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_mfamvsdb + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_mfamvsdb + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_mfamvsdb + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_mfamvsdb + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_mfamvsdb + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_mfamvsdb + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_dhke3p9w + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_dhke3p9w + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_dhke3p9w + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_dhke3p9w + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_dhke3p9w + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_dhke3p9w + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_dhke3p9w + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_dhke3p9w + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_dhke3p9w + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_dhke3p9w + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_dhke3p9w + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_dhke3p9w + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_dhke3p9w + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_dhke3p9w + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_dhke3p9w + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_dhke3p9w + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_dhke3p9w + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_dhke3p9w + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_dhke3p9w + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_dhke3p9w + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_9yapgbuv + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_9yapgbuv + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_9yapgbuv + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_9yapgbuv + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_9yapgbuv + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_9yapgbuv + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_9yapgbuv + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_9yapgbuv + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_9yapgbuv + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_9yapgbuv + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_utkemkbs + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_utkemkbs + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_utkemkbs + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_utkemkbs + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_utkemkbs + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_utkemkbs + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_utkemkbs + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_utkemkbs + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_utkemkbs + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_utkemkbs + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_d7lpruvi + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_d7lpruvi + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_d7lpruvi + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_d7lpruvi + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_d7lpruvi + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_d7lpruvi + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_d7lpruvi + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_d7lpruvi + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_d7lpruvi + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_d7lpruvi + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_upagmta9 + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_upagmta9 + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_upagmta9 + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_upagmta9 + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_upagmta9 + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_upagmta9 + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_upagmta9 + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_upagmta9 + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_upagmta9 + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_upagmta9 + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_jygvp6fk + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_jygvp6fk + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_jygvp6fk + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_jygvp6fk + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_jygvp6fk + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_jygvp6fk + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_jygvp6fk + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_jygvp6fk + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_jygvp6fk + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_jygvp6fk + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_yjjdcqsq + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_yjjdcqsq + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_yjjdcqsq + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_yjjdcqsq + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_yjjdcqsq + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_yjjdcqsq + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_yjjdcqsq + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_yjjdcqsq + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_yjjdcqsq + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_yjjdcqsq + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_d7lpruvi + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_d7lpruvi + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_d7lpruvi + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_d7lpruvi + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_d7lpruvi + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_d7lpruvi + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_d7lpruvi + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_d7lpruvi + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_d7lpruvi + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_d7lpruvi + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_hdyjyqjm + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_hdyjyqjm + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_hdyjyqjm + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_hdyjyqjm + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_hdyjyqjm + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_hdyjyqjm + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_hdyjyqjm + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_hdyjyqjm + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_hdyjyqjm + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_hdyjyqjm + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_d7lpruvi + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_d7lpruvi + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_d7lpruvi + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_d7lpruvi + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_d7lpruvi + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_d7lpruvi + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_d7lpruvi + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_d7lpruvi + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_d7lpruvi + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_d7lpruvi + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_upagmta9 + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_upagmta9 + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_upagmta9 + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_upagmta9 + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_upagmta9 + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_upagmta9 + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_upagmta9 + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_upagmta9 + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_upagmta9 + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_upagmta9 + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ksz749x8 + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ksz749x8 + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ksz749x8 + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ksz749x8 + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ksz749x8 + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ksz749x8 + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ksz749x8 + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ksz749x8 + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ksz749x8 + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ksz749x8 + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_1wnh8bqp + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_1wnh8bqp + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_1wnh8bqp + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_1wnh8bqp + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_1wnh8bqp + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_1wnh8bqp + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_1wnh8bqp + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_1wnh8bqp + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_1wnh8bqp + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_1wnh8bqp + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_1wnh8bqp + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_1wnh8bqp + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_1wnh8bqp + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_1wnh8bqp + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_1wnh8bqp + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_1wnh8bqp + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_1wnh8bqp + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_1wnh8bqp + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_1wnh8bqp + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_1wnh8bqp + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_s1xgth2u + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_s1xgth2u + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_s1xgth2u + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_s1xgth2u + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_s1xgth2u + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_s1xgth2u + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_s1xgth2u + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_s1xgth2u + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_s1xgth2u + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_s1xgth2u + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_t3xd7l44 + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_t3xd7l44 + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_t3xd7l44 + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_t3xd7l44 + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_t3xd7l44 + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_t3xd7l44 + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_t3xd7l44 + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_t3xd7l44 + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_t3xd7l44 + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_t3xd7l44 + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_kdqrazmy + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_kdqrazmy + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_kdqrazmy + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_kdqrazmy + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_kdqrazmy + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_kdqrazmy + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_kdqrazmy + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_kdqrazmy + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_kdqrazmy + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_kdqrazmy + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_9ern5sfh + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_9ern5sfh + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_9ern5sfh + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_9ern5sfh + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_9ern5sfh + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_9ern5sfh + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_9ern5sfh + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_9ern5sfh + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_9ern5sfh + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_9ern5sfh + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_vvmbj46n + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_vvmbj46n + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_vvmbj46n + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_vvmbj46n + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_vvmbj46n + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_vvmbj46n + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_vvmbj46n + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_vvmbj46n + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_vvmbj46n + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_vvmbj46n + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_w6n8jeuu + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_w6n8jeuu + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_w6n8jeuu + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_w6n8jeuu + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_w6n8jeuu + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_w6n8jeuu + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_w6n8jeuu + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_w6n8jeuu + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_w6n8jeuu + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_w6n8jeuu + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_cwyqwqbf + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_cwyqwqbf + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_cwyqwqbf + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_cwyqwqbf + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_cwyqwqbf + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_cwyqwqbf + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_cwyqwqbf + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_cwyqwqbf + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_cwyqwqbf + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_cwyqwqbf + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_nvups4nh + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_nvups4nh + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_nvups4nh + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_nvups4nh + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_nvups4nh + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_nvups4nh + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_nvups4nh + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_nvups4nh + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_nvups4nh + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_nvups4nh + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_vzqtvljm + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_vzqtvljm + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_vzqtvljm + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_vzqtvljm + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_vzqtvljm + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_vzqtvljm + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_vzqtvljm + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_vzqtvljm + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_vzqtvljm + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_vzqtvljm + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_c2fmom5z + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_c2fmom5z + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_c2fmom5z + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_c2fmom5z + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_c2fmom5z + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_c2fmom5z + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_c2fmom5z + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_c2fmom5z + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_c2fmom5z + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_c2fmom5z + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_yvx5lh6k + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_yvx5lh6k + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_yvx5lh6k + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_yvx5lh6k + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_yvx5lh6k + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_yvx5lh6k + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_yvx5lh6k + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_yvx5lh6k + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_yvx5lh6k + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_yvx5lh6k + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_8b9zpaav + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_8b9zpaav + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_8b9zpaav + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_8b9zpaav + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_8b9zpaav + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_8b9zpaav + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_8b9zpaav + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_8b9zpaav + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_8b9zpaav + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_8b9zpaav + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_8b9zpaav + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_8b9zpaav + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_it9utkro + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_it9utkro + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_it9utkro + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_it9utkro + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_it9utkro + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_it9utkro + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_it9utkro + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_it9utkro + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_it9utkro + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_it9utkro + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_it9utkro + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_it9utkro + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_rbbx5mfq + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_rbbx5mfq + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_rbbx5mfq + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_rbbx5mfq + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_rbbx5mfq + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_rbbx5mfq + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_rbbx5mfq + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_rbbx5mfq + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_rbbx5mfq + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_rbbx5mfq + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_rbbx5mfq + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_rbbx5mfq + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_rbbx5mfq + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_rbbx5mfq + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_rbbx5mfq + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_rbbx5mfq + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_rbbx5mfq + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_rbbx5mfq + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_rbbx5mfq + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_rbbx5mfq + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_dwcarsat + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_dwcarsat + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_dwcarsat + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_dwcarsat + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_dwcarsat + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_dwcarsat + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_dwcarsat + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_dwcarsat + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_dwcarsat + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_dwcarsat + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_dwcarsat + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_dwcarsat + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_dwcarsat + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_dwcarsat + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_dwcarsat + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_dwcarsat + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_dwcarsat + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_dwcarsat + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_dwcarsat + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_dwcarsat + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_dwcarsat + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_dwcarsat + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_blfcpsxz + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_blfcpsxz + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_blfcpsxz + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_blfcpsxz + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_blfcpsxz + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_blfcpsxz + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_blfcpsxz + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_blfcpsxz + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_blfcpsxz + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_blfcpsxz + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_ogkdpgy2 + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_ogkdpgy2 + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_ogkdpgy2 + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_ogkdpgy2 + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_ogkdpgy2 + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_ogkdpgy2 + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_ogkdpgy2 + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_ogkdpgy2 + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_ogkdpgy2 + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_ogkdpgy2 + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_3ejwxpmu + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_3ejwxpmu + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_3ejwxpmu + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_3ejwxpmu + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_3ejwxpmu + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_3ejwxpmu + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_3ejwxpmu + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_3ejwxpmu + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_3ejwxpmu + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_3ejwxpmu + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_3ejwxpmu + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_3ejwxpmu + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_3ejwxpmu + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_3ejwxpmu + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_3ejwxpmu + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_3ejwxpmu + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_3ejwxpmu + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_3ejwxpmu + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_3ejwxpmu + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_3ejwxpmu + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ogkdpgy2 + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ogkdpgy2 + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ogkdpgy2 + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ogkdpgy2 + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ogkdpgy2 + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ogkdpgy2 + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ogkdpgy2 + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ogkdpgy2 + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ogkdpgy2 + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ogkdpgy2 + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_7bztmfm1 + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_7bztmfm1 + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_7bztmfm1 + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_7bztmfm1 + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_7bztmfm1 + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_7bztmfm1 + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_7bztmfm1 + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_7bztmfm1 + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_7bztmfm1 + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_7bztmfm1 + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_7bztmfm1 + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_7bztmfm1 + TS0003",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_7bztmfm1 + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_7bztmfm1 + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_7bztmfm1 + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_7bztmfm1 + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_7bztmfm1 + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_7bztmfm1 + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_7bztmfm1 + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_7bztmfm1 + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "HOBEIAN + TS0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "HOBEIAN + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "HOBEIAN + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "HOBEIAN + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "HOBEIAN + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "HOBEIAN + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "HOBEIAN + TS011F",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "HOBEIAN + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "HOBEIAN + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "HOBEIAN + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "HOBEIAN + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE + TY0201",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_ + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_ + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_ + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_ + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_ + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_ + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_ + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TYZB01_ + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_ + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_ + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_ + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_ + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_ + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_ + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_ + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3000_ + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_ + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_ + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_ + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_ + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_ + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_ + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_ + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZ3210_ + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_ + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_ + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_ + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_ + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_ + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_ + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_ + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE200_ + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE204_ + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_ + TS0121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_ + TS0225",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_ + Arteco",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_ + CK-BL702-MWS-01",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_ + CK-BL702-MWS-01(7016)",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_ + TSO121",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_ + sensor",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     },
     {
       "fp": "_TZE284_ + switch",
-      "source": "dlnraja/com.tuya.zigbee#241",
+      "source": "dlnraja/com.tuya.zigbee#242",
       "type": "feature"
     }
   ],
-  "evolutionSummary": "In the recent project evolution, a total of 894 new feature proposals (FPs) were identified, significantly enhancing device compatibility. Notably, the discovery of multiple devices associated with the \"_TYZB01_hlla45kx\" model, including the TS0201, TS0225, and CK-BL702-MWS-01, among others, has expanded our device ecosystem. \n\nThroughout the project, 12 issues were processed, leading to the resolution of critical bugs and improvements in functionality. However, no pull requests (PRs) were processed during this period, indicating a potential area for increased collaboration and code contributions.\n\nThe primary action items moving forward include prioritizing the integration of the newly discovered devices into the existing framework and addressing the backlog of open PRs to enhance project momentum. Continued monitoring of device compatibility and user feedback will be essential to ensure the project's success and adaptability in a rapidly evolving tech landscape."
+  "evolutionSummary": "In the latest project evolution, we discovered 894 new feature pairs (FPs) related to the device model _TYZB01_hlla45kx, primarily sourced from issue dlnraja/com.tuya.zigbee#242. Notable new devices include the TS0201, TS0225, TS0601, Arteco, CK-BL702-MWS-01, and TY0201, among others. \n\nThroughout this period, we processed a total of 5 issues, although no pull requests (PRs) were closed. The focus on resolving issues has led to significant advancements in device compatibility and functionality. \n\nAction items moving forward include addressing the remaining open issues and prioritizing the integration of the newly discovered devices into the system. Continued collaboration and feedback from the community will be essential to enhance the project's development and ensure robust support for the newly identified devices."
 }
