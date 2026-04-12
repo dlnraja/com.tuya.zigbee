@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-12T07:22:40.621Z",
+  "ts": "2026-04-12T08:13:58.670Z",
   "currentCount": 7375,
   "src": {
     "johan": {
@@ -18893,7 +18893,7 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 54,
+      "issueCount": 51,
       "prCount": 4,
       "deviceRequests": [
         {
@@ -18978,27 +18978,6 @@
             "_TZE200_3ejwxpmu",
             "_TZE204_3ejwxpmu",
             "_TZE204_ogkdpgy2"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 206,
-          "title": "[Zigbee USB Plug 3 Gang] TS0003 - _TZ3210_n0wbkysi",
-          "mfrs": [
-            "_TZ3210_n0wbkysi",
-            "_TZ3210_n0wbkysi",
-            "_TZ3210_n0wbkysi"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 200,
-          "title": "Temperature and Humidity LCD sensor",
-          "mfrs": [
-            "_TZ3210_ncw88jfq",
-            "_TZ3210_ncw88jfq",
-            "_TZ3210_ncw88jfq",
-            "_TZ3210_ncw88jfq"
           ]
         },
         {
@@ -19167,6 +19146,26 @@
           "title": "Bug report - [Short description] _TZ3000_bgsigers - TS0201 sensors stopped working",
           "mfrs": [
             "_TZ3000_bgsigers"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1343,
+          "title": "Device Request - 10G 4 in 1 human motionsensor  - _TZE200_rhgsbacq / TS0601",
+          "mfrs": [
+            "_TZE200_rhgsbacq",
+            "_TZE200_rhgsbacq",
+            "_TZE200_rhgsbacq"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1341,
+          "title": "Device Request - Tuya Smart Plant sensor - _TZE284_aao3yzhs / TS0601",
+          "mfrs": [
+            "_TZE284_aao3yzhs",
+            "_TZE284_aao3yzhs",
+            "_TZE284_aao3yzhs"
           ]
         }
       ]
