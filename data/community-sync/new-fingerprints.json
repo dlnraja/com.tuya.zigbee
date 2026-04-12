@@ -216,15 +216,6 @@
     "driver": "motion_sensor"
   },
   {
-    "mfr": "_TZE284_8se38w3c",
-    "productId": "TS0601",
-    "model": "TZ-ZT01_GA4",
-    "description": "Temperature & humidity Sensor with external probe",
-    "vendor": "Tuya",
-    "source": "Z2M",
-    "driver": "climate_sensor"
-  },
-  {
     "mfr": "_TZE204_81yrt3lo",
     "productId": null,
     "source": "Z2M",
