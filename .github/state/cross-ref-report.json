@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-04T06:30:05.787Z",
+  "ts": "2026-04-12T05:04:53.918Z",
   "correlations": [],
   "actionable": [
     {
@@ -73,6 +73,10 @@
   ],
   "flowAudit": [
     {
+      "driver": "energy_meter_3phase",
+      "actions": 1
+    },
+    {
       "driver": "fan_controller",
       "actions": 7
     },
@@ -81,22 +85,54 @@
       "actions": 7
     },
     {
-      "driver": "radiator_controller",
-      "actions": 4
+      "driver": "power_clamp_meter",
+      "actions": 1
+    },
+    {
+      "driver": "power_meter",
+      "actions": 1
     },
     {
       "driver": "wifi_camera",
       "actions": 3
     },
     {
+      "driver": "wifi_generic",
+      "actions": 1
+    },
+    {
       "driver": "wifi_heater",
       "actions": 2
+    },
+    {
+      "driver": "wifi_led_strip",
+      "actions": 1
+    },
+    {
+      "driver": "wifi_power_strip",
+      "actions": 1
+    },
+    {
+      "driver": "wifi_switch",
+      "actions": 1
+    },
+    {
+      "driver": "wifi_thermostat",
+      "actions": 1
     }
   ],
   "mainsBatteryIssues": [
+    "air_purifier_soil_hybrid",
     "air_quality_comprehensive",
+    "air_quality_comprehensive_hybrid",
+    "blaster_remote_hybrid",
     "ceiling_fan",
-    "climate_sensor",
+    "climate_sensor_gas_hybrid",
+    "climate_sensor_smart_hybrid",
+    "device_air_purifier_quality_hybrid",
+    "device_air_purifier_smoke_hybrid",
+    "device_air_purifier_soil_hybrid",
+    "device_din_rail_meter_hybrid",
     "formaldehyde_sensor",
     "gas_detector",
     "gas_sensor",
@@ -104,8 +140,13 @@
     "hvac_dehumidifier",
     "ir_blaster",
     "ir_remote",
+    "plug_energy_monitor_hybrid",
+    "sensor_climate_contact_hybrid",
+    "sensor_climate_smart_hybrid",
+    "sensor_lcdtemphumidsensor_soil_hybrid",
     "smart_heater",
     "smoke_detector_advanced",
-    "soil_sensor"
+    "soil_sensor",
+    "thermostat_4ch"
   ]
 }
