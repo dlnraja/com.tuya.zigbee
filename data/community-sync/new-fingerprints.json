@@ -1,24 +1,5 @@
 [
   {
-    "mfr": "_TZ3210_7jnk7l3k",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "double_power_point",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Internal-Audit"
-  },
-  {
     "mfr": "_TYZB01_hlla45kx",
     "productId": [
       "TS011F"
@@ -76,97 +57,7 @@
     "source": "Internal-Audit"
   },
   {
-    "mfr": "_TZ3000_kdi2o9m6",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "plug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Internal-Audit"
-  },
-  {
     "mfr": "_TZ3000_ew31dmgx",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "plug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Internal-Audit"
-  },
-  {
-    "mfr": "_TZ3000_dpo1ysak",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "plug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Internal-Audit"
-  },
-  {
-    "mfr": "_TZ3000_plyvnuf5",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "plug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Internal-Audit"
-  },
-  {
-    "mfr": "_TZ3000_hyfvrar3",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "plug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Internal-Audit"
-  },
-  {
-    "mfr": "_TZ3000_cymsnfvf",
-    "productId": [
-      "TS011F"
-    ],
-    "driver": "plug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff",
-    "source": "Internal-Audit"
-  },
-  {
-    "mfr": "_TZ3000_upjrsxh1",
     "productId": [
       "TS011F"
     ],
@@ -196,27 +87,6 @@
     "source": "Internal-Audit"
   },
   {
-    "mfr": "_TZ3000_qeuvnohg",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartPlug_DinRail",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Internal-Audit"
-  },
-  {
     "mfr": "_TYZB01_iuepbmpv",
     "productId": [
       "TS0121",
@@ -238,7 +108,7 @@
     "source": "Internal-Audit"
   },
   {
-    "mfr": "_TZ3000_dpo1ysak",
+    "mfr": "_TZ3000_wzmuk9ai",
     "productId": [
       "TS0121",
       "TSO121",
@@ -3028,12 +2898,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_ltt60asa",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_liygxtcq",
     "productId": null,
     "source": "Z2M",
@@ -4018,12 +3882,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_hyfvrar3",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_v1pdxuqq",
     "productId": null,
     "source": "Z2M",
@@ -4721,12 +4579,6 @@
   },
   {
     "mfr": "_TZ3210_vbfp8eyv",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_qeuvnohg",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -7367,6 +7219,12 @@
   },
   {
     "mfr": "_TZE284_who1jxwd",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZE284_hdml1aav",
     "productId": null,
     "source": "Z2M",
     "driver": null

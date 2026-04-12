@@ -1,6 +1,6 @@
 {
-  "ts": "2026-04-10T03:46:18.010Z",
-  "currentCount": 7147,
+  "ts": "2026-04-12T01:17:52.519Z",
+  "currentCount": 7139,
   "src": {
     "johan": {
       "count": 650,
@@ -18893,26 +18893,18 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 53,
-      "prCount": 5,
+      "issueCount": 54,
+      "prCount": 4,
       "deviceRequests": [
         {
           "repo": "dlnraja/com.tuya.zigbee",
-          "num": 217,
-          "title": "[Auto] 1199 new fingerprints from community (2026-04)",
+          "num": 237,
+          "title": "[Auto] 1189 new fingerprints from community (2026-04)",
           "mfrs": [
-            "_TZ3210_7jnk7l3k",
             "_TZ3000_uwkja6z1",
-            "_TZ3000_kdi2o9m6",
             "_TZ3000_ew31dmgx",
-            "_TZ3000_dpo1ysak",
-            "_TZ3000_plyvnuf5",
-            "_TZ3000_hyfvrar3",
-            "_TZ3000_cymsnfvf",
-            "_TZ3000_upjrsxh1",
             "_TZ3000_wamqdr3f",
-            "_TZ3000_qeuvnohg",
-            "_TZ3000_dpo1ysak",
+            "_TZ3000_wzmuk9ai",
             "_TZ3000_mw1pqqqt",
             "_TZ3000_2uollq9d",
             "_TZE200_hl0ss9oa",
@@ -18977,7 +18969,15 @@
             "_TZE204_yvx5lh6k",
             "_TZE284_8b9zpaav",
             "_TZE284_it9utkro",
-            "_TZE200_rbbx5mfq"
+            "_TZE200_rbbx5mfq",
+            "_TZE204_rbbx5mfq",
+            "_TZE200_dwcarsat",
+            "_TZE204_dwcarsat",
+            "_TZE200_blfcpsxz",
+            "_TZE200_ogkdpgy2",
+            "_TZE200_3ejwxpmu",
+            "_TZE204_3ejwxpmu",
+            "_TZE204_ogkdpgy2"
           ]
         },
         {
@@ -18999,6 +18999,16 @@
             "_TZ3210_ncw88jfq",
             "_TZ3210_ncw88jfq",
             "_TZ3210_ncw88jfq"
+          ]
+        },
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 184,
+          "title": "Device Request - Temperature &humidity sensor with external probe - Shenzen New Green Energy Techologies Co ltd / _TZE284_8se38w3c TS0601",
+          "mfrs": [
+            "_TZE284_8se38w3c",
+            "_TZE284_8se38w3c",
+            "_TZE284_8se38w3c"
           ]
         },
         {
@@ -19158,40 +19168,11 @@
           "mfrs": [
             "_TZ3000_bgsigers"
           ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1343,
-          "title": "Device Request - 10G 4 in 1 human motionsensor  - _TZE200_rhgsbacq / TS0601",
-          "mfrs": [
-            "_TZE200_rhgsbacq",
-            "_TZE200_rhgsbacq",
-            "_TZE200_rhgsbacq"
-          ]
         }
       ]
     }
   },
   "newFps": [
-    {
-      "mfr": "_TZ3210_7jnk7l3k",
-      "productId": [
-        "TS011F"
-      ],
-      "driver": "double_power_point",
-      "deviceType": "socket",
-      "capabilities": [
-        "onoff",
-        "measure_power",
-        "meter_power",
-        "measure_current",
-        "measure_voltage"
-      ],
-      "hasBattery": false,
-      "vendor": null,
-      "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-      "source": "Internal-Audit"
-    },
     {
       "mfr": "_TYZB01_hlla45kx",
       "productId": [
@@ -19250,97 +19231,7 @@
       "source": "Internal-Audit"
     },
     {
-      "mfr": "_TZ3000_kdi2o9m6",
-      "productId": [
-        "TS011F"
-      ],
-      "driver": "plug",
-      "deviceType": "socket",
-      "capabilities": [
-        "onoff"
-      ],
-      "hasBattery": false,
-      "vendor": null,
-      "description": "onoff",
-      "source": "Internal-Audit"
-    },
-    {
       "mfr": "_TZ3000_ew31dmgx",
-      "productId": [
-        "TS011F"
-      ],
-      "driver": "plug",
-      "deviceType": "socket",
-      "capabilities": [
-        "onoff"
-      ],
-      "hasBattery": false,
-      "vendor": null,
-      "description": "onoff",
-      "source": "Internal-Audit"
-    },
-    {
-      "mfr": "_TZ3000_dpo1ysak",
-      "productId": [
-        "TS011F"
-      ],
-      "driver": "plug",
-      "deviceType": "socket",
-      "capabilities": [
-        "onoff"
-      ],
-      "hasBattery": false,
-      "vendor": null,
-      "description": "onoff",
-      "source": "Internal-Audit"
-    },
-    {
-      "mfr": "_TZ3000_plyvnuf5",
-      "productId": [
-        "TS011F"
-      ],
-      "driver": "plug",
-      "deviceType": "socket",
-      "capabilities": [
-        "onoff"
-      ],
-      "hasBattery": false,
-      "vendor": null,
-      "description": "onoff",
-      "source": "Internal-Audit"
-    },
-    {
-      "mfr": "_TZ3000_hyfvrar3",
-      "productId": [
-        "TS011F"
-      ],
-      "driver": "plug",
-      "deviceType": "socket",
-      "capabilities": [
-        "onoff"
-      ],
-      "hasBattery": false,
-      "vendor": null,
-      "description": "onoff",
-      "source": "Internal-Audit"
-    },
-    {
-      "mfr": "_TZ3000_cymsnfvf",
-      "productId": [
-        "TS011F"
-      ],
-      "driver": "plug",
-      "deviceType": "socket",
-      "capabilities": [
-        "onoff"
-      ],
-      "hasBattery": false,
-      "vendor": null,
-      "description": "onoff",
-      "source": "Internal-Audit"
-    },
-    {
-      "mfr": "_TZ3000_upjrsxh1",
       "productId": [
         "TS011F"
       ],
@@ -19370,27 +19261,6 @@
       "source": "Internal-Audit"
     },
     {
-      "mfr": "_TZ3000_qeuvnohg",
-      "productId": [
-        "TS0121",
-        "TSO121",
-        "TS011F"
-      ],
-      "driver": "smartPlug_DinRail",
-      "deviceType": "socket",
-      "capabilities": [
-        "onoff",
-        "measure_power",
-        "meter_power",
-        "measure_current",
-        "measure_voltage"
-      ],
-      "hasBattery": false,
-      "vendor": null,
-      "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-      "source": "Internal-Audit"
-    },
-    {
       "mfr": "_TYZB01_iuepbmpv",
       "productId": [
         "TS0121",
@@ -19412,7 +19282,7 @@
       "source": "Internal-Audit"
     },
     {
-      "mfr": "_TZ3000_dpo1ysak",
+      "mfr": "_TZ3000_wzmuk9ai",
       "productId": [
         "TS0121",
         "TSO121",
@@ -22202,12 +22072,6 @@
       "driver": null
     },
     {
-      "mfr": "_TZ3000_ltt60asa",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
       "mfr": "_TZ3000_liygxtcq",
       "productId": null,
       "source": "Z2M",
@@ -23192,12 +23056,6 @@
       "driver": null
     },
     {
-      "mfr": "_TZ3000_hyfvrar3",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
       "mfr": "_TZ3000_v1pdxuqq",
       "productId": null,
       "source": "Z2M",
@@ -23895,12 +23753,6 @@
     },
     {
       "mfr": "_TZ3210_vbfp8eyv",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZ3000_qeuvnohg",
       "productId": null,
       "source": "Z2M",
       "driver": null
@@ -26541,6 +26393,12 @@
     },
     {
       "mfr": "_TZE284_who1jxwd",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
+      "mfr": "_TZE284_hdml1aav",
       "productId": null,
       "source": "Z2M",
       "driver": null
@@ -46656,6 +46514,6 @@
       "driver": null
     }
   ],
-  "newCount": 1199,
+  "newCount": 1189,
   "enrichedCount": 2151
 }
