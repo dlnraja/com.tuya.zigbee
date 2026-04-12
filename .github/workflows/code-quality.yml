@@ -37,6 +37,7 @@ jobs:
     name: AI Intelligence Check
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v5
       - name: 🤖 AI Orchestrator Health
         run: node .github/scripts/ai-helper.js --check-health
 
