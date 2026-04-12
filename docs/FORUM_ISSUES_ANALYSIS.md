@@ -352,7 +352,7 @@ NEEDS INFO: Ricardo_Lenior presence wrong caps — needs fingerprint.
 ## Forum p70-72 Scan (2026-02-17)
 RESOLVED: Cam button OK v5.9.14. Tividor TS0044 single OK.
 PERSISTENT: Hartmut TS0726 4-gang virtual=all. Lasse_K contact regression v5.9.x.
-NEW: Tividor double/long press NOT working. Piotr TS0002 _TZ3000_cauq1okq 2-gang=1. lemon TS0203 _TZ3000_okohwwap+Zbeacon=generic. JJ10 presence distance=humidity + WiFi settings blank (diag:32709eaf, log spam fixed v5.11.13). H_van_Barneveld WiFi liquid level request.
+NEW: Tividor double/long press NOT working. Piotr TS0002 _TZ3000_cauq1okq 2-gang=1. lemon TS0203 _TZ3000_okohwwap+Zbeacon=generic. JJ10 presence distance=humidity + WiFi settings blank (diag:32709eaf, log spam fixed v5.11.13) [FIXED v7.2.12 added to SensorConfigs]. H_van_Barneveld WiFi liquid level request [FIXED v7.2.12 added flow cards].
 
 ## GitHub Issues (2026-02-17)
 GH#124: _TZ3000_fllyghyj+b4awzgct case — ALREADY FIXED.

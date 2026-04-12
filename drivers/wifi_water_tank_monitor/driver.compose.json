@@ -378,8 +378,89 @@
     }
   ],
   "flow": {
-    "triggers": [],
-    "conditions": [],
+    "triggers": [
+      {
+        "id": "wifi_water_tank_monitor_state_changed",
+        "title": {
+          "en": "Liquid state changed"
+        },
+        "tokens": [
+          {
+            "name": "state",
+            "type": "string",
+            "title": {
+              "en": "State"
+            }
+          }
+        ]
+      },
+      {
+        "id": "wifi_water_tank_monitor_level_changed",
+        "title": {
+          "en": "Water level changed"
+        },
+        "tokens": [
+          {
+            "name": "level",
+            "type": "number",
+            "title": {
+              "en": "Level (%)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "wifi_water_tank_monitor_low",
+        "title": {
+          "en": "Water level is low"
+        }
+      },
+      {
+        "id": "wifi_water_tank_monitor_high",
+        "title": {
+          "en": "Water level is high"
+        }
+      }
+    ],
+    "conditions": [
+      {
+        "id": "wifi_water_tank_monitor_level_above",
+        "title": {
+          "en": "Water level is above threshold"
+        },
+        "args": [
+          {
+            "name": "level",
+            "type": "number",
+            "title": {
+              "en": "Level (%)"
+            },
+            "min": 0,
+            "max": 100
+          }
+        ]
+      },
+      {
+        "id": "wifi_water_tank_monitor_state_is",
+        "title": {
+          "en": "Liquid state is"
+        },
+        "args": [
+          {
+            "name": "state",
+            "type": "dropdown",
+            "title": {
+              "en": "State"
+            },
+            "values": [
+              { "id": "normal", "label": { "en": "Normal" } },
+              { "id": "low", "label": { "en": "Low" } },
+              { "id": "high", "label": { "en": "High" } }
+            ]
+          }
+        ]
+      }
+    ],
     "actions": []
   }
 }

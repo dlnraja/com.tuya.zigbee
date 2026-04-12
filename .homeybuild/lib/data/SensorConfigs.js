@@ -75,6 +75,29 @@ const SENSOR_CONFIGS = {
       106: { cap: 'measure_luminance', type: 'lux_direct' },
       110: { cap: 'measure_battery', divisor: 1 },
     }
+  },
+  'TZE200_CRQ3R3LA': {
+    sensors: ['_TZE200_crq3r3la', '_TZE204_crq3r3la', '_TZE200_gkfbdvyx', '_TZE204_gkfbdvyx'],
+    battery: false,
+    mainsPowered: true,
+    noTemperature: true,
+    noHumidity: true,
+    dpMap: {
+      1: { cap: 'alarm_motion', type: 'presence_enum_gkfbdvyx', enumMap: { 0: false, 1: true, 2: true } },
+      2: { cap: null, internal: 'move_sensitivity' },
+      3: { cap: null, internal: 'detection_distance_min', divisor: 100 },
+      4: { cap: null, internal: 'detection_distance_max', divisor: 100 },
+      9: { cap: 'measure_luminance.distance', divisor: 100 },
+      101: { cap: null, internal: 'distance_tracking' },
+      102: { cap: null, internal: 'presence_sensitivity' },
+      103: { cap: 'measure_luminance', type: 'lux_direct' },
+      104: { cap: 'alarm_motion', type: 'presence_enum_gkfbdvyx', enumMap: { 0: false, 1: true, 2: true } },
+      105: { cap: null, internal: 'fading_time' },
+    }
+  },
+  'DEFAULT': {
+    sensors: [],
+    dpMap: {}
   }
 };
 
