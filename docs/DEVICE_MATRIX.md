@@ -46,7 +46,7 @@
 | button_wireless_valve_hybrid | 2 | - | button.1, button.2, measure_battery... |
 | button_wireless_wall_hybrid | 0 | TS0003, TS0013, TS0043, ts0003, ts0013, ts0043, TS0001, TS0011, ts0001, ts0011, TS0002, TS0012, TS0042, ts0002, ts0012, ts0042 | button.1, button.2, measure_battery... |
 | ceiling_fan | 4 | TS0601, TS0601_FAN, TS0601_fan, ts0601, ts0601_fan | dim, onoff, dim.speed... |
-| climate_sensor | 1426 | CK-TLSR8656-SS5-01(7014), LUMI.SENSOR_HT, LUMI.SENSOR_HT.AGL02, LUMI.WEATHER, RH3052, SM0201, SNZB-02, SNZB-02D, SNZB-02DR2, SNZB-02LD, SNZB-02P, SNZB-02WD, TH01, THS317-ET, TS0201, TS0222, TS0601, TY0201, WSDCGQ01LM, WSDCGQ11LM, WSDCGQ12LM, ZG-227Z, ZG-227ZL, ZG-303Z, ck-tlsr8656-ss5-01(7014), lumi.sensor_ht, lumi.sensor_ht.agl02, lumi.weather, rh3052, sm0201, snzb-02, snzb-02d, snzb-02dr2, snzb-02ld, snzb-02p, snzb-02wd, th01, ths317-et, ts0201, ts0222, ts0601, ty0201, wsdcgq01lm, wsdcgq11lm, wsdcgq12lm, zg-227z, zg-227zl, zg-303z | measure_battery, measure_humidity, measure_temperature... |
+| climate_sensor | 1427 | CK-TLSR8656-SS5-01(7014), LUMI.SENSOR_HT, LUMI.SENSOR_HT.AGL02, LUMI.WEATHER, RH3052, SM0201, SNZB-02, SNZB-02D, SNZB-02DR2, SNZB-02LD, SNZB-02P, SNZB-02WD, TH01, THS317-ET, TS0201, TS0222, TS0601, TY0201, WSDCGQ01LM, WSDCGQ11LM, WSDCGQ12LM, ZG-227Z, ZG-227ZL, ZG-303Z, ck-tlsr8656-ss5-01(7014), lumi.sensor_ht, lumi.sensor_ht.agl02, lumi.weather, rh3052, sm0201, snzb-02, snzb-02d, snzb-02dr2, snzb-02ld, snzb-02p, snzb-02wd, th01, ths317-et, ts0201, ts0222, ts0601, ty0201, wsdcgq01lm, wsdcgq11lm, wsdcgq12lm, zg-227z, zg-227zl, zg-303z | measure_battery, measure_humidity, measure_temperature... |
 | climate_sensor_dimmer_hybrid | 2 | - | dim, onoff, measure_power... |
 | climate_sensor_gas_hybrid | 0 | TS0601, ts0601 | alarm_generic, alarm_co, alarm_co2... |
 | climate_sensor_plug_hybrid | 0 | TS0601, ts0601 | onoff, measure_power, meter_power... |
@@ -262,6 +262,6 @@
 | zigbee_repeater | 10 | TS0207, ts0207 | measure_radio_stability, measure_maintenance_score |
 
 ---
-**Total:** 258 drivers, 8252 manufacturer IDs
+**Total:** 258 drivers, 8253 manufacturer IDs
 
-*Generated: 2026-04-12T20:40:00.621Z*
+*Generated: 2026-04-12T22:04:55.425Z*
