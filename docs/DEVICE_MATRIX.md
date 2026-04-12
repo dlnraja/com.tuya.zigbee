@@ -52,7 +52,7 @@
 | climate_sensor_smart_hybrid | 2 | - | onoff.gang1, onoff.gang2, onoff.gang3... |
 | climate_sensor_switch_hybrid | 2 | - | onoff, measure_battery, measure_power... |
 | co_sensor | 8 | TS0601, TS0601_CO, TS0601_co, ts0601, ts0601_co | alarm_co, measure_battery, measure_co... |
-| contact_sensor | 265 | 3300-S, 3300-s, 3320-L, 3320-l, CK-TLSR8656-SS5-01(7003), DOORWINDOW-SENSOR-ZB3.0, DS01, DoorWindow-Sensor-ZB3.0, E1603/E1702, LUMI.MAGNET.AC01, LUMI.MAGNET.AGL02, LUMI.SENSOR_MAGNET, LUMI.SENSOR_MAGNET.AQ2, MCCGQ01LM, MCCGQ11LM, MCCGQ12LM, MCCGQ14LM, MCT-340 E, Q9MPFHW, RH3001, SNZB-04, SNZB-04P, SNZB-04PR2, SNZB-04R2, TRADFRI OPEN/CLOSE REMOTE, TRADFRI open/close remote, TS0021, TS0203, TS0207, TS0601, TY0203, ZG-102Z, ZG-102ZL, ck-tlsr8656-ss5-01(7003), doorwindow-sensor-zb3.0, ds01, e1603/e1702, lumi.magnet.ac01, lumi.magnet.agl02, lumi.sensor_magnet, lumi.sensor_magnet.aq2, mccgq01lm, mccgq11lm, mccgq12lm, mccgq14lm, mct-340 e, q9mpfhw, rh3001, snzb-04, snzb-04p, snzb-04pr2, snzb-04r2, tradfri open/close remote, ts0021, ts0203, ts0207, ts0601, ty0203, zg-102z, zg-102zl | alarm_contact, alarm_tamper, measure_battery... |
+| contact_sensor | 266 | 3300-S, 3300-s, 3320-L, 3320-l, CK-TLSR8656-SS5-01(7003), DOORWINDOW-SENSOR-ZB3.0, DS01, DoorWindow-Sensor-ZB3.0, E1603/E1702, LUMI.MAGNET.AC01, LUMI.MAGNET.AGL02, LUMI.SENSOR_MAGNET, LUMI.SENSOR_MAGNET.AQ2, MCCGQ01LM, MCCGQ11LM, MCCGQ12LM, MCCGQ14LM, MCT-340 E, Q9MPFHW, RH3001, SNZB-04, SNZB-04P, SNZB-04PR2, SNZB-04R2, TRADFRI OPEN/CLOSE REMOTE, TRADFRI open/close remote, TS0021, TS0203, TS0207, TS0601, TY0203, ZG-102Z, ZG-102ZL, ck-tlsr8656-ss5-01(7003), doorwindow-sensor-zb3.0, ds01, e1603/e1702, lumi.magnet.ac01, lumi.magnet.agl02, lumi.sensor_magnet, lumi.sensor_magnet.aq2, mccgq01lm, mccgq11lm, mccgq12lm, mccgq14lm, mct-340 e, q9mpfhw, rh3001, snzb-04, snzb-04p, snzb-04pr2, snzb-04r2, tradfri open/close remote, ts0021, ts0203, ts0207, ts0601, ty0203, zg-102z, zg-102zl | alarm_contact, alarm_tamper, measure_battery... |
 | contact_sensor_curtain_hybrid | 2 | - | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | contact_sensor_dimmer_hybrid | 2 | - | alarm_contact, measure_battery, alarm_tamper... |
 | contact_sensor_plug_hybrid | 0 | TS0601, ts0601 | onoff, measure_power, meter_power... |
@@ -82,7 +82,7 @@
 | device_floor_heating_hybrid | 2 | TS0601, ts0601 | target_temperature, measure_temperature, measure_temperature.floor... |
 | device_floor_heating_thermostat_hybrid | 0 | TS0601, ts0601 | target_temperature, measure_temperature, measure_temperature.floor... |
 | device_generic_tuya_universal_hybrid | 24 | TS0601, ts0601 | measure_battery, measure_temperature, measure_humidity... |
-| device_plug_energy_hybrid | 2 | S26R2ZB, S31 LITE ZB, S31 Lite zb, S40LITE, S60ZBTPF, S60ZBTPG, TS011F, s26r2zb, s31 lite zb, s40lite, s60zbtpf, s60zbtpg, ts011f, TS0601, ts0601 | onoff, measure_power, meter_power... |
+| device_plug_energy_hybrid | 1 | S26R2ZB, S31 LITE ZB, S31 Lite zb, S40LITE, S60ZBTPF, S60ZBTPG, TS011F, s26r2zb, s31 lite zb, s40lite, s60zbtpf, s60zbtpg, ts011f, TS0601, ts0601 | onoff, measure_power, meter_power... |
 | device_plug_energy_monitor_hybrid | 1 | s31zb, zbminil2 | onoff, measure_power, meter_power... |
 | device_plug_smart_hybrid | 8 | TS0049, ts0049, TS0101 | onoff, measure_power, meter_power... |
 | device_plug_smart_water_hybrid | 0 | TS0049, ts0049 | onoff, measure_power, meter_power... |
@@ -260,4 +260,4 @@
 ---
 **Total:** 254 drivers, 7719 manufacturer IDs
 
-*Generated: 2026-04-12T01:28:08.491Z*
+*Generated: 2026-04-12T02:22:14.640Z*
