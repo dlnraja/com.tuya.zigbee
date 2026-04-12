@@ -22,6 +22,13 @@ class RadiatorControllerDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    this.homey.flow.getActionCard('radiator_controller_set_temperature_offset');
+    this.homey.flow.getActionCard('radiator_controller_send_pilot_signal');
+    this.homey.flow.getActionCard('radiator_controller_set_heating_mode');
+    this.homey.flow.getConditionCard('radiator_controller_heating_mode_is');
+    this.homey.flow.getConditionCard('radiator_controller_radiator_is_heating');
+    this.homey.flow.getTriggerCard('radiator_controller_pilot_signal_sent');
+    this.homey.flow.getTriggerCard('radiator_controller_radiator_mode_changed');
     this.log('RadiatorControllerDriver v5.5.476 initialized');
 
     try {
