@@ -32,6 +32,7 @@ class TuyaGasSensorTs0601Driver extends ZigBeeDriver {
   
   
   
+  
   }
 
   _registerFlowCards() {

@@ -20,6 +20,7 @@ class WallDimmer1Gang1WayDriver extends Homey.Driver {
   
   
   
+  
   }
 
   _registerFlowCards() {

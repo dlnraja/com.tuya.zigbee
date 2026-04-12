@@ -30,6 +30,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
   
   
   
+  
   }
 
   _registerFlowCards() {

@@ -30,6 +30,7 @@ class WirelessSwitchDriver extends ZigBeeDriver {
   
   
   
+  
   }
 
   _registerFlowCards() {

@@ -30,6 +30,7 @@ class WiFiDimmerDriver extends TuyaLocalDriver {
   
   
   
+  
   }
 }
 

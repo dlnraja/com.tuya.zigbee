@@ -30,6 +30,7 @@ class MiniSwitchDriver extends ZigBeeDriver {
   
   
   
+  
   }
 
   _registerFlowCards() {

@@ -44,6 +44,7 @@ class IrBlasterDriver extends ZigBeeDriver {
     
   
   
+  
   } catch (err) {
       this.error('Failed to register actions (non-fatal):', err.message);
     }

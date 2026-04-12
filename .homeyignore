@@ -1,0 +1,23 @@
+# Nexus Awakening Exclusions
+# Dev-only files that power CI/CD and automation but are NOT for production
+
+.github/
+.vscode/
+.git/
+.gitignore
+.homeycompose/
+.homeyignore
+node_modules/
+scripts/
+skills/
+_proxima/
+_tests/
+test/
+docs/
+rules/
+package-lock.json
+*.md
+
+# Large assets that might be generated but not needed in production
+assets/raw_icons/
+assets/backups/

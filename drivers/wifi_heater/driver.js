@@ -30,6 +30,7 @@ class WiFiHeaterDriver extends TuyaLocalDriver {
   
   
   
+  
   }
 }
 

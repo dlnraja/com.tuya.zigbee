@@ -31,6 +31,7 @@ class SmartScenePanelDriver extends ZigBeeDriver {
     
   
   
+  
   });
 
     // Switch changed triggers (1-4)

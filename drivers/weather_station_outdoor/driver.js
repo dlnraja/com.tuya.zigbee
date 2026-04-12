@@ -21,6 +21,7 @@ class WeatherStationOutdoorDriver extends Homey.Driver {
   
   
   
+  
   }
 
   _registerFlowCards() {

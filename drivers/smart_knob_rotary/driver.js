@@ -16,6 +16,7 @@ class SmartKnobRotaryDriver extends Homey.Driver {
   
   
   
+  
   }
 
   _registerFlowCards() {

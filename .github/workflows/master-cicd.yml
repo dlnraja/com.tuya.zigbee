@@ -58,6 +58,15 @@ jobs:
             echo "PIPELINE_MODE=RULE_BASED" >> $GITHUB_ENV
             echo "::warning::Pipeline intelligence: RULE_BASED (CloudlessFallback active)"
           fi
+
+      - name: "0b. 🧠 AI Risk Assessment"
+        if: env.PIPELINE_MODE == 'AI_ORCHESTRATED'
+        id: risk_assessment
+        run: |
+          echo "Analyzing commit delta for architectural risks..."
+          # Analyze the last few commits for critical patterns
+          node .github/scripts/ai-helper.js --action assess_risk --commits 10
+
       
       - name: ⚙️ Run Auto-Ganger
         run: node scripts/automation/generate-subdevices.js

@@ -32,6 +32,7 @@ class SceneSwitch4Driver extends ZigBeeDriver {
   
   
   
+  
   }
 
   _registerFlowCards() {

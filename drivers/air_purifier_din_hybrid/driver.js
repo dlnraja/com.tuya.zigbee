@@ -26,6 +26,7 @@ class DinRailSwitchDriver extends Driver {
     const reg=(id,fn)=>{try{this.homey.flow.getActionCard(id).registerRunListener(fn);
   
   
+  
   }catch(e){this.log('[Flow]',id,e.message);}};
     reg('din_rail_switch_turn_on',async({device})=>{await device.triggerCapabilityListener('onoff',true);return true;});
     reg('din_rail_switch_turn_off',async({device})=>{await device.triggerCapabilityListener('onoff',false);return true;});

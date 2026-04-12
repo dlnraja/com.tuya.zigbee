@@ -30,6 +30,7 @@ class TuyaDoorbellDriver extends ZigBeeDriver {
   
   
   
+  
   }
 
   _registerFlowCards() {

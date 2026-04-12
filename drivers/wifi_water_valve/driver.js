@@ -30,6 +30,7 @@ class WiFiWaterValveDriver extends TuyaLocalDriver {
   
   
   
+  
   }
 }
 

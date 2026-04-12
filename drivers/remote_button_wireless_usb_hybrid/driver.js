@@ -34,6 +34,7 @@ class USBHubDualDriver extends ZigBeeDriver {
     const r=(i,fn)=>{try{this.homey.flow.getActionCard(i).registerRunListener(fn);
   
   
+  
   }catch(e){this.log('[Flow]',i,e.message);}};
     r('usb_dongle_dual_repeater_turn_on',async({device})=>{await device.triggerCapabilityListener('onoff',true);return true;});
     r('usb_dongle_dual_repeater_turn_off',async({device})=>{await device.triggerCapabilityListener('onoff',false);return true;});

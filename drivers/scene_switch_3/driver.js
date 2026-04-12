@@ -38,6 +38,7 @@ class SceneSwitch3Driver extends ZigBeeDriver {
   
   
   
+  
   }
 
   triggerButtonPressed(device, button) {

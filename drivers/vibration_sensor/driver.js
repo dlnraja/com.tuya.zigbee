@@ -30,6 +30,7 @@ class VibrationSensorDriver extends ZigBeeDriver {
   
   
   
+  
   }
 
   _registerFlowCards() {

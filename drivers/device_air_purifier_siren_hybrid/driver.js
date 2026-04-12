@@ -31,6 +31,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
   
   
   
+  
   }
 
   /**

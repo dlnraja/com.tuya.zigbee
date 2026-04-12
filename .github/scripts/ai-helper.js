@@ -360,4 +360,41 @@ function localFallback(){}
 
 module.exports={callAI,callAIEnsemble,splitTaskAndCombine,analyzeImage,sleep,localFallback,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost,getAIBudget,classifyTask};
 
-if(process.argv.includes('--check-health')){ Object.keys(process.env).forEach(k=>{ if(k.endsWith('_API_KEY')||k==='HF_TOKEN') console.log('✅ Found '+k); }); process.exit(0); }
+async function main() {
+  const args = process.argv.slice(2);
+  if (args.includes('--check-health')) {
+    Object.keys(process.env).forEach(k => { if (k.endsWith('_API_KEY') || k === 'HF_TOKEN') console.log('✅ Found ' + k); });
+    return;
+  }
+  
+  const actionIdx = args.indexOf('--action');
+  if (actionIdx !== -1) {
+    const action = args[actionIdx + 1];
+    if (action === 'assess_risk') {
+      const commits = args[args.indexOf('--commits') + 1] || 1;
+      console.log(`🛡️ Assessing risk for last ${commits} commits...`);
+      // Simulating git log fetch
+      const diff = require('child_process').execSync(`git diff HEAD~${commits}..HEAD`).toString();
+      const prompt = `Analyze this git diff for architectural risks, SDK 3 non-compliance, and regression patterns. 
+      Focus on Tuya specific bugs like:
+      - Semicolon insertion errors in IIFEs
+      - Missing flow card .trigger() calls
+      - Concurrent device registration crashes
+      - Large image size requirements (500x500+)
+      
+      Diff:
+      ${diff.substring(0, 15000)}`; // Token limit safety
+      
+      const res = await callAI(prompt, "You are a Senior SDK 3 Architect. Assess deployment risk as LOW, MEDIUM, or HIGH. Provide reasoning.");
+      console.log(res.text);
+      if (res.text.includes('HIGH')) process.exit(1);
+    }
+  }
+}
+
+if (require.main === module) {
+  main().catch(err => {
+    console.error('❌ AI Helper Error:', err);
+    process.exit(1);
+  });
+}

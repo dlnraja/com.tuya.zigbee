@@ -27,6 +27,7 @@ class AirPurifierDriver extends ZigBeeDriver {
       this.homey.flow.getTriggerCard(id) 
   
   
+  
   } catch (e) { this.error(`Trigger ${id}: ${e.message}`); }
     }
     try {

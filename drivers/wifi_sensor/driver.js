@@ -30,6 +30,7 @@ class WiFiSensorDriver extends TuyaLocalDriver {
   
   
   
+  
   }
 }
 

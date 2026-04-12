@@ -30,6 +30,7 @@ class WiFiAirPurifierDriver extends TuyaLocalDriver {
   
   
   
+  
   }
 }
 

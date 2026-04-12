@@ -29,6 +29,7 @@ class WiFiCameraDriver extends TuyaLocalDriver {
   
   
   
+  
   }
 }
 

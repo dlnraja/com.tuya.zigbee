@@ -30,6 +30,7 @@ class AirQualityCO2Driver extends ZigBeeDriver {
   
   
   
+  
   }
 
   _registerFlowCards() {

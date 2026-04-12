@@ -12,6 +12,7 @@ class RadiatorWifiTuyaDriver extends Homey.Driver {
   
   
   
+  
   }
 
   async onPair(session) {

@@ -33,6 +33,7 @@ class WiFiSwitchDriver extends TuyaLocalDriver {
   
   
   
+  
   }
 }
 

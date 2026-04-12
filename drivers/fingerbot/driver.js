@@ -29,6 +29,7 @@ class FingerbotDriver extends ZigBeeDriver {
       try { this.homey.flow[type](id).registerRunListener(fn); 
   
   
+  
   }
       catch (e) { this.log(`[Flow] ${id} skip: ${e.message}`); }
     };

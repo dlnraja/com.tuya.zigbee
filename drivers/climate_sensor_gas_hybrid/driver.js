@@ -30,6 +30,7 @@ class GasDetectorDriver extends ZigBeeDriver {
   
   
   
+  
   }
 
   _registerFlowCards() {

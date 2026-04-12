@@ -30,6 +30,7 @@ class WiFiDoorLockDriver extends TuyaLocalDriver {
   
   
   
+  
   }
 }
 

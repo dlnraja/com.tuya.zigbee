@@ -29,6 +29,7 @@ class WiFiLedStripDriver extends TuyaLocalDriver {
   
   
   
+  
   }
 }
 module.exports = WiFiLedStripDriver;

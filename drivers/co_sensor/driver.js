@@ -30,6 +30,7 @@ class CoSensorDriver extends ZigBeeDriver {
   
   
   
+  
   }
 
   _registerFlowCards() {
