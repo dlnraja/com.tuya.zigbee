@@ -13,7 +13,7 @@
  *  1. sdk3-phantom-methods   — Replace getDeviceConditionCard/getDeviceActionCard
  *  2. fingerprint-case       — Lowercase ALL fingerprints in driver.compose.json
  *  3. probe-dedup-static     — Remove measure_temperature.probe from pure-ZCL drivers
- *  4. flow-card-try-catch    — Wrap bare getDeviceTriggerCard in try-catch
+ *  4. flow-card-try-catch    — Wrap bare getTriggerCard in try-catch
  *  5. energy-batteries       — Add energy.batteries if measure_battery is declared
  *  6. multigang-flow-routing — Replace raw ZCL onOff.setOn() with triggerCapabilityListener
  *  7. dp-variant-doc         — Flag DP mappings missing variant comments
@@ -26,7 +26,7 @@
  *  14. logic-case-audit       — Flag suspected case-sensitive comparisons
  *  15. this-prefix-safety     — Replace global SDK method calls with 'this.' (ReferenceError prevention)
  *  16. defensive-get-device   — Inject defensive getDeviceById override in drivers
- *  29. safe-flow-lookup       — Wrap getDeviceTriggerCard in try-catch
+ *  29. safe-flow-lookup       — Wrap getTriggerCard in try-catch
  *  30. wifi-qr-stability      — Enforce larger QR codes and regional schema in WiFi drivers
  */
 'use strict';

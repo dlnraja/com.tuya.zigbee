@@ -426,7 +426,7 @@ To properly handle multi-gang, hybrid Tuya/ZCL routers, and buttons across ALL l
 3. PHYSICAL STATE ARRIVAL (Device -> Homey):
    - When state arrives horizontally from the device either via ZCL Report (this.zclNode...on('attr')) or Custom Tuya DP (_handleTuyaDatapoint), check this._appCommandPending.
    - If _appCommandPending === true: This is a bidirectional ACK of the virtual command. Do nothing except this.setCapabilityValue.
-   - If _appCommandPending !== true: THIS IS A PHYSICAL BUTTON PRESS / REAL WORLD EVENT. Trigger this.homey.flow.getDeviceTriggerCard('turned_on_physical_gangX').trigger(this)!
+   - If _appCommandPending !== true: THIS IS A PHYSICAL BUTTON PRESS / REAL WORLD EVENT. Trigger this.homey.flow.getTriggerCard('turned_on_physical_gangX').trigger(this)!
 4. RAW / STREAM / CUSTOM FALLBACKS:
    - For heavily customized tuples (e.g. TS004F/Scene buttons), catch raw commands via this.zclNode.on('rawCommand').
    - Before acting, translate the raw endpoint and cluster command directly into a normalized triggerCapabilityListener or a direct Flow trigger! This unifies the execution pipe.
