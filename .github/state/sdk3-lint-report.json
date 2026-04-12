@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-04-11T15:34:47.972Z",
+  "timestamp": "2026-04-12T04:12:16.586Z",
   "driversScanned": 20,
-  "staticIssues": 26,
-  "autoFixed": 0,
+  "staticIssues": 24,
+  "autoFixed": 1,
   "aiSuggestions": 0,
   "aiApplied": 0,
   "dryRun": false,
@@ -19,6 +19,12 @@
       "issues": [
         "sdk3-await-capability",
         "sdk3-case-sensitive-fingerprint"
+      ]
+    },
+    {
+      "driver": "air_purifier_contact_hybrid",
+      "issues": [
+        "tuya-climate-safe-set"
       ]
     },
     {
@@ -114,20 +120,12 @@
     {
       "driver": "bulb_dimmable",
       "issues": [
-        "sdk3-missing-energy-batteries",
         "sdk3-case-sensitive-fingerprint"
       ]
     },
     {
       "driver": "bulb_dimmable_dimmer_hybrid",
       "issues": []
-    },
-    {
-      "driver": "bulb_rgb",
-      "issues": [
-        "sdk3-await-capability",
-        "sdk3-case-sensitive-fingerprint"
-      ]
     }
   ],
   "memoryPatterns": 15
