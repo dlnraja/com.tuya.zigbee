@@ -1,15 +1,15 @@
 # Monthly Tuya Zigbee Report - 2026-04
 
-*Generated: 2026-04-12T03:39:42.325Z*
+*Generated: 2026-04-12T04:39:43.027Z*
 
 ## 📊 Architectural Health [v7.0.22]
 
 | Metric | Value | Status |
 |--------|-------|--------|
-| Total Drivers | 305 | ✅ |
-| Manufacturer IDs | 247270 | ✅ |
-| Collisions | 169 | ⚠️ |
-| v7 Architectural Debt | 305 legacy drivers | 🛠️ |
+| Total Drivers | 309 | ✅ |
+| Manufacturer IDs | 255126 | ✅ |
+| Collisions | 1404 | ⚠️ |
+| v7 Architectural Debt | 309 legacy drivers | 🛠️ |
 | PR Auto-Merger | Active | 🛡️ |
 | Community Responder | Template Ready | 🤖 |
 
@@ -17,28 +17,28 @@
 
 | ID | Drivers |
 |----|--------|
-| `_TZE200_s8gkrkxk|TS0601` | air_purifier, led_strip |
-| `_TZE200_bjzrowv2|TS0601` | air_purifier, curtain_motor |
-| `_TZE200_bjzrowv2|ts0601` | air_purifier, curtain_motor |
-| `_TZE200_4vobcgd3|TS0601` | air_purifier, curtain_motor |
-| `_TZE200_4vobcgd3|ts0601` | air_purifier, curtain_motor |
-| `_TZE200_nogaemzt|TS0601` | air_purifier, curtain_motor |
-| `_TZE200_nogaemzt|ts0601` | air_purifier, curtain_motor |
-| `_TZE200_pk0sfzvr|TS0601` | air_purifier, curtain_motor |
-| `_TZE200_pk0sfzvr|ts0601` | air_purifier, curtain_motor |
-| `_TZE200_nueqqe6k|TS0601` | air_purifier, curtain_motor |
-| `_TZE200_nueqqe6k|ts0601` | air_purifier, curtain_motor |
-| `_TZE200_xaabybja|TS0601` | air_purifier, curtain_motor |
-| `_TZE200_xaabybja|ts0601` | air_purifier, curtain_motor |
-| `_TZE200_rmymn92d|TS0601` | air_purifier, curtain_motor |
-| `_TZE200_rmymn92d|ts0601` | air_purifier, curtain_motor |
-| `_TZE200_3i3exuay|TS0601` | air_purifier, curtain_motor |
-| `_TZE200_3i3exuay|ts0601` | air_purifier, curtain_motor |
-| `_TZE200_hsgrhjpf|TS0601` | air_purifier, curtain_motor |
-| `_TZE200_hsgrhjpf|ts0601` | air_purifier, curtain_motor |
-| `_TZE200_68nvbio9|TS0601` | air_purifier, curtain_motor |
+| `_tze200_5zbp6j0u|TS0601` | air_purifier, curtain_motor |
+| `_tze200_5zbp6j0u|ts0601` | air_purifier, curtain_motor |
+| `_tze200_nkoabg8w|TS0601` | air_purifier, curtain_motor |
+| `_tze200_nkoabg8w|ts0601` | air_purifier, curtain_motor |
+| `_tze200_xuzcvlku|TS0601` | air_purifier, curtain_motor |
+| `_tze200_xuzcvlku|ts0601` | air_purifier, curtain_motor |
+| `_tze200_r0jdjrvi|TS0601` | air_purifier, curtain_motor |
+| `_tze200_r0jdjrvi|ts0601` | air_purifier, curtain_motor |
+| `_tze200_fdtjuw7u|TS0601` | air_purifier, curtain_motor |
+| `_tze200_fdtjuw7u|ts0601` | air_purifier, curtain_motor |
+| `_tze200_zpzndjez|TS0601` | air_purifier, curtain_motor |
+| `_tze200_zpzndjez|ts0601` | air_purifier, curtain_motor |
+| `_tze200_wmcdj3aq|TS0601` | air_purifier, curtain_motor |
+| `_tze200_wmcdj3aq|ts0601` | air_purifier, curtain_motor |
+| `_tze200_cowvfni3|TS0601` | air_purifier, curtain_motor |
+| `_tze200_cowvfni3|ts0601` | air_purifier, curtain_motor |
+| `_tze200_rddyvrci|TS0601` | air_purifier, curtain_motor |
+| `_tze200_rddyvrci|ts0601` | air_purifier, curtain_motor |
+| `_tze200_zah67ekd|TS0601` | air_purifier, curtain_motor |
+| `_tze200_zah67ekd|ts0601` | air_purifier, curtain_motor |
 
-*...and 149 more*
+*...and 1384 more*
 
 ## 📋 Action Items
 
