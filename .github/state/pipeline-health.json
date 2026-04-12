@@ -1,13 +1,6 @@
 {
   "runs": [
     {
-      "ts": "2026-03-29T07:00:26.938Z",
-      "wf": "Nightly Auto-Process",
-      "stale": 0,
-      "missing": 0,
-      "alerts": 0
-    },
-    {
       "ts": "2026-03-30T07:10:23.897Z",
       "wf": "Nightly Auto-Process",
       "stale": 0,
@@ -209,10 +202,17 @@
       "stale": 0,
       "missing": 0,
       "alerts": 0
+    },
+    {
+      "ts": "2026-04-12T07:54:06.522Z",
+      "wf": "Sunday Master Automation",
+      "stale": 0,
+      "missing": 0,
+      "alerts": 0
     }
   ],
   "alerts": [],
-  "lastRun": "2026-04-10T03:10:30.261Z",
+  "lastRun": "2026-04-12T07:54:06.522Z",
   "fileHealth": {
     "nightly-state.json": {
       "ok": true,
@@ -227,7 +227,7 @@
     "pattern-data.json": {
       "ok": true,
       "ageH": 0,
-      "size": 7280
+      "size": 7705
     },
     "resolver-state.json": {
       "ok": true,
@@ -237,7 +237,7 @@
     "issue-manager-state.json": {
       "ok": true,
       "ageH": 0,
-      "size": 18127
+      "size": 18267
     },
     "github-state.json": {
       "ok": true,
