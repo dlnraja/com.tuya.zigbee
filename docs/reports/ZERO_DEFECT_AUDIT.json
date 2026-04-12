@@ -2,13 +2,13 @@
 <<<<<<< HEAD
   "timestamp": "2026-04-10T02:53:28.816Z",
   "driversChecked": 305,
-||||||| parent of 579b162b37 (v7.2.0: The Autonomous Awakening. Implemented Adaptive Lighting, Radio Sensing, Smart Gestures, and High-Performance Nexus Orchestration. [skip ci])
+||||||| parent of 579b162b37 (v7.2.0: The Autonomous Awakening. Implemented Adaptive Lighting, Radio Sensing, Smart Gestures, and High-Performance Hybrid Engine Orchestration. [skip ci])
   "timestamp": "2026-04-09T08:05:16.991Z",
   "driversChecked": 304,
 =======
   "timestamp": "2026-04-09T20:05:05.155Z",
   "driversChecked": 305,
->>>>>>> 579b162b37 (v7.2.0: The Autonomous Awakening. Implemented Adaptive Lighting, Radio Sensing, Smart Gestures, and High-Performance Nexus Orchestration. [skip ci])
+>>>>>>> 579b162b37 (v7.2.0: The Autonomous Awakening. Implemented Adaptive Lighting, Radio Sensing, Smart Gestures, and High-Performance Hybrid Engine Orchestration. [skip ci])
   "collisions": [
     {
       "id": "_TZE200_S8GKRKXK|TS0601",
@@ -7540,7 +7540,7 @@
     },
     {
       "id": "SONOFF|TS011F",
-||||||| parent of 579b162b37 (v7.2.0: The Autonomous Awakening. Implemented Adaptive Lighting, Radio Sensing, Smart Gestures, and High-Performance Nexus Orchestration. [skip ci])
+||||||| parent of 579b162b37 (v7.2.0: The Autonomous Awakening. Implemented Adaptive Lighting, Radio Sensing, Smart Gestures, and High-Performance Hybrid Engine Orchestration. [skip ci])
       "id": "EWELINK|TS0601",
 =======
       "id": "_TZ3000_LTT60ASA|TS0601",
@@ -7789,7 +7789,7 @@
     },
     {
       "id": "SONOFF|TS011F",
->>>>>>> 579b162b37 (v7.2.0: The Autonomous Awakening. Implemented Adaptive Lighting, Radio Sensing, Smart Gestures, and High-Performance Nexus Orchestration. [skip ci])
+>>>>>>> 579b162b37 (v7.2.0: The Autonomous Awakening. Implemented Adaptive Lighting, Radio Sensing, Smart Gestures, and High-Performance Hybrid Engine Orchestration. [skip ci])
       "drivers": [
         "plug_energy_monitor",
         "universal_zigbee"

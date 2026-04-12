@@ -17,7 +17,7 @@
 - Capabilities are only REMOVED after a 7-day silent window.
 
 ## R5: CI/CD Harmony
-- All specialized workflows (triage, sync, promo) must be orchestrated by the Nexus Workflows.
+- All specialized workflows (triage, sync, promo) must be orchestrated by the Hybrid Engine Workflows.
 - Use `concurrency: global-cicd` to prevent SDK collisions.
 
 ## R6: High-End Parity (Philips Hue+)
@@ -42,7 +42,7 @@
 - Capabilities are only REMOVED after a 7-day silent window.
 
 ## R5: CI/CD Harmony
-- All specialized workflows (triage, sync, promo) must be orchestrated by the Nexus Workflows.
+- All specialized workflows (triage, sync, promo) must be orchestrated by the Hybrid Engine Workflows.
 - Use `concurrency: global-cicd` to prevent SDK collisions.
 
 ## R6: High-End Parity (Philips Hue+)

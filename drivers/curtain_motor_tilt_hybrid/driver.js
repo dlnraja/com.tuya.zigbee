@@ -36,46 +36,46 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // ACTION: Set position
     try {
-
+      this.homey.flow.getActionCard('curtain_motor_set_windowcoverings_set')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('windowcoverings_set', args.position);
           return true;
         });
-      this.log('[FLOW] ✅ curtain_motor_set_windowcoverings_set');
+      this.log('[FLOW] ✅ Registered: curtain_motor_set_windowcoverings_set');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
     // ACTION: Open
     try {
-
+      this.homey.flow.getConditionCard('curtain_motor_windowcoverings_open')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('windowcoverings_set', 1);
           return true;
         });
-      this.log('[FLOW] ✅ curtain_motor_windowcoverings_open');
+      this.log('[FLOW] ✅ Registered: curtain_motor_windowcoverings_open');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
     // ACTION: Close
     try {
-
+      this.homey.flow.getConditionCard('curtain_motor_windowcoverings_close')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('windowcoverings_set', 0);
           return true;
         });
-      this.log('[FLOW] ✅ curtain_motor_windowcoverings_close');
+      this.log('[FLOW] ✅ Registered: curtain_motor_windowcoverings_close');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
     // ACTION: Set brightness/dim
     try {
-
+      this.homey.flow.getActionCard('curtain_motor_set_dim')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('dim', args.brightness);
           return true;
         });
-      this.log('[FLOW] ✅ curtain_motor_set_dim');
+      this.log('[FLOW] ✅ Registered: curtain_motor_set_dim');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
     this.log('[FLOW]  Curtain motor flow cards registered');

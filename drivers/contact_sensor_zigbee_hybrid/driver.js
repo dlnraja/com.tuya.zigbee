@@ -36,23 +36,23 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Door/window is/is not open
     try {
-
+      this.homey.flow.getConditionCard('contact_sensor_is_open')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_contact') === true;
         });
-      this.log('[FLOW] ✅ contact_sensor_is_open');
+      this.log('[FLOW] ✅ Registered: contact_sensor_is_open');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
     // CONDITION: Battery above threshold
     try {
-
+      this.homey.flow.getConditionCard('contact_sensor_battery_above')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
           return battery > (args.threshold || 20);
         });
-      this.log('[FLOW] ✅ contact_sensor_battery_above');
+      this.log('[FLOW] ✅ Registered: contact_sensor_battery_above');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
     this.log('[FLOW]  Contact sensor flow cards registered');

@@ -1,4 +1,4 @@
-# 🖼️ Nexus Image Rebranding Log
+# 🖼️ Hybrid Engine Image Rebranding Log
 
 **Execution Date:** 2026-04-10T07:12:42.629Z
 

@@ -52,7 +52,7 @@ class FingerbotDriver extends ZigBeeDriver {
     });
     reg('getConditionCard', 'fingerbot_is_on', async ({ device }) => {
       return device.getCapabilityValue('onoff') === true;
-    });
+      });
   }
 
 }

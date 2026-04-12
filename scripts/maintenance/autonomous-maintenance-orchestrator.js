@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║  AUTONOMOUS MAINTENANCE ORCHESTRATOR v2.0 "The Nexus Brain"                  ║
+ * ║  AUTONOMOUS MAINTENANCE ORCHESTRATOR v2.0 "The Hybrid Engine Brain"                  ║
  * ║  The "Brain" of the Universal Tuya Zigbee App maintenance pipeline.          ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  v2.0: Deep Thinking Architectural Health & Zero-Defect Gating               ║
@@ -46,7 +46,7 @@ function run(cmd, desc, abortOnError = false) {
 
 async function main() {
   const startTime = Date.now();
-  console.log('--- 🧠 Universal Tuya Nexus Orchestrator Session ---');
+  console.log('--- 🧠 Universal Tuya Hybrid Engine Orchestrator Session ---');
   
   const state = fs.existsSync(STATE_FILE) ? JSON.parse(fs.readFileSync(STATE_FILE, 'utf8')) : { lastRun: 0, errors: [] };
 
@@ -71,7 +71,7 @@ async function main() {
   // PHASE 4: Architectural Hardening (Zero-Defect Audit)
   run('node scripts/maintenance/zero-defect-architect-audit.js', 'Ph4: Zero-Defect Architect Audit');
 
-  // PHASE 4b: Smart PR Auto-Merging (Nexus Autonomous Integration)
+  // PHASE 4b: Smart PR Auto-Merging (Autonomous Engine Reimplementation Integration)
   run('node scripts/automation/pr-auto-merger.js', 'Ph4b: Smart PR Auto-Merger (Approve + Merge + Self-Heal)');
 
   // PHASE 4c: Stability Normalization (Clusters + Case)
@@ -93,7 +93,7 @@ async function main() {
 
   fs.writeFileSync(STATE_FILE, JSON.stringify(report, null, 2));
   
-  console.log(`\n--- 🏁 Nexus Session Complete (${duration}s) ---`);
+  console.log(`\n--- 🏁 Hybrid Engine Session Complete (${duration}s) ---`);
   if (!isValid) process.exit(0); // Proceed but with warnings
 }
 

@@ -2,7 +2,7 @@
 'use strict';
 
 /**
- * Nexus Reliability Engine (NRE)
+ * Hybrid Engine Reliability Engine (NRE)
  * - Assigns reliability scores to drivers based on:
  *   1. Forum sentiment (mentions of "offline", "not working", "broken")
  *   2. Support ticket volume (if reachable)
@@ -18,7 +18,7 @@ const RELIABILITY_FILE = path.join(__dirname, '../../.github/state/reliability-m
 const DRIVERS_DIR = path.join(__dirname, '../../drivers');
 
 function calculateReliability() {
-    console.log('🏁 Starting Nexus Reliability Engine...');
+    console.log('🏁 Starting Hybrid Engine Reliability Engine...');
     
     if (!fs.existsSync(INTEL_FILE)) {
         console.warn('⚠️ No forum intel found. Using default metrics.');

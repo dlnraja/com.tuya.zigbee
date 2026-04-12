@@ -8,7 +8,7 @@ const DRIVERS_DIR = path.join(__dirname, '../../drivers');
 const globalIds = new Map();
 let conflictFound = false;
 
-console.log('=== Nexus Manifest Collision Detector ===');
+console.log('=== Hybrid Engine Manifest Collision Detector ===');
 
 function checkDir(dir) {
     const files = fs.readdirSync(dir);

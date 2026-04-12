@@ -16,7 +16,11 @@ class SmartRemote1Button2Driver extends Driver{
     }
   }
 
-  async onInit(){this.log('smart_remote_1_button_2 driver init');}
+  async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+this.log('smart_remote_1_button_2 driver init');}
 }
 
 module.exports=SmartRemote1Button2Driver;

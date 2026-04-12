@@ -62,8 +62,8 @@ class SwitchWall8gangDriver extends ZigBeeDriver {
 
     gangs.forEach(gang => {
       try {
-
-          .registerRunListener(async (args) => {
+      this.homey.flow.getActionCard('set_backlight')
+        .registerRunListener(async (args) => {
             if (!args.device) return false;
             return args.device.getCapabilityValue(capMap[gang]) === true;
           });
@@ -71,35 +71,35 @@ class SwitchWall8gangDriver extends ZigBeeDriver {
       } catch (err) { this.log(`[FLOW] ⚠️ gang${gang}_is_on: ${err.message}`); }
 
       try {
-
-          .registerRunListener(async (args) => {
+      this.homey.flow.getConditionCard('turn_on_gang${gang}')
+        .registerRunListener(async (args) => {
             if (!args.device) return false;
             await args.device.triggerCapabilityListener(capMap[gang], true);
             return true;
           });
-        this.log(`[FLOW] ✅ turn_on_gang${gang}`);
+        this.log(`[FLOW] ✅ Registered: ${id}`);
       } catch (err) { this.log(`[FLOW] ⚠️ turn_on_gang${gang}: ${err.message}`); }
 
       try {
-
-          .registerRunListener(async (args) => {
+      this.homey.flow.getConditionCard('turn_off_gang${gang}')
+        .registerRunListener(async (args) => {
             if (!args.device) return false;
             await args.device.triggerCapabilityListener(capMap[gang], false);
             return true;
           });
-        this.log(`[FLOW] ✅ turn_off_gang${gang}`);
+        this.log(`[FLOW] ✅ Registered: ${id}`);
       } catch (err) { this.log(`[FLOW] ⚠️ turn_off_gang${gang}: ${err.message}`); }
 
       // v5.5.930: Toggle action
       try {
-
-          .registerRunListener(async (args) => {
+      this.homey.flow.getConditionCard('toggle_gang${gang}')
+        .registerRunListener(async (args) => {
             if (!args.device) return false;
             const current = args.device.getCapabilityValue(capMap[gang]);
             await args.device.triggerCapabilityListener(capMap[gang], !current);
             return true;
           });
-        this.log(`[FLOW] ✅ toggle_gang${gang}`);
+        this.log(`[FLOW] ✅ Registered: ${id}`);
       } catch (err) { this.log(`[FLOW] ⚠️ toggle_gang${gang}: ${err.message}`); }
     });
 
@@ -111,32 +111,32 @@ class SwitchWall8gangDriver extends ZigBeeDriver {
           await args.device.setBacklightMode(args.mode);
           return true;
         });
-      this.log('[FLOW] ✅ set_backlight');
+      this.log('[FLOW] ✅ Registered: set_backlight');
     } catch (err) { this.log(`[FLOW] ⚠️ set_backlight: ${err.message}`); }
 
     try {
-
+      this.homey.flow.getActionCard('set_backlight_color')
         .registerRunListener(async (args) => {
           if (!args.device || !args.state || !args.color) return false;
           await args.device.setBacklightColor(args.state, args.color);
           return true;
         });
-      this.log('[FLOW] ✅ set_backlight_color');
+      this.log('[FLOW] ✅ Registered: set_backlight_color');
     } catch (err) { this.log(`[FLOW] ⚠️ set_backlight_color: ${err.message}`); }
 
     try {
-
+      this.homey.flow.getActionCard('set_backlight_brightness')
         .registerRunListener(async (args) => {
           if (!args.device || args.brightness === undefined) return false;
           await args.device.setBacklightBrightness(args.brightness);
           return true;
         });
-      this.log('[FLOW] ✅ set_backlight_brightness');
+      this.log('[FLOW] ✅ Registered: set_backlight_brightness');
     } catch (err) { this.log(`[FLOW] ⚠️ set_backlight_brightness: ${err.message}`); }
 
     // v5.5.930: All on/off actions
     try {
-
+      this.homey.flow.getConditionCard('turn_on_all')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           for (const cap of Object.values(capMap)) {
@@ -145,11 +145,11 @@ class SwitchWall8gangDriver extends ZigBeeDriver {
           }
           return true;
         });
-      this.log('[FLOW] ✅ turn_on_all');
+      this.log('[FLOW] ✅ Registered: turn_on_all');
     } catch (err) { this.log(`[FLOW] ⚠️ turn_on_all: ${err.message}`); }
 
     try {
-
+      this.homey.flow.getConditionCard('turn_off_all')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           for (const cap of Object.values(capMap)) {
@@ -158,7 +158,7 @@ class SwitchWall8gangDriver extends ZigBeeDriver {
           }
           return true;
         });
-      this.log('[FLOW] ✅ turn_off_all');
+      this.log('[FLOW] ✅ Registered: turn_off_all');
     } catch (err) { this.log(`[FLOW] ⚠️ turn_off_all: ${err.message}`); }
 
     

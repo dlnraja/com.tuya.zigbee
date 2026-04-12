@@ -16,7 +16,11 @@ class WallCurtainSwitchDriver extends Driver{
     }
   }
 
-  async onInit(){this.log('wall_curtain_switch driver init');}
+  async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+this.log('wall_curtain_switch driver init');}
 }
 
 module.exports=WallCurtainSwitchDriver;

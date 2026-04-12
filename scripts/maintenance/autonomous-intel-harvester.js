@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║  AUTONOMOUS INTEL HARVESTER v1.0.0 (Thinking Nexus Autonomous inspired)              ║
+ * ║  AUTONOMOUS INTEL HARVESTER v1.0.0 (Thinking Reimplementation Engine inspired)              ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  Going beyond ManufacturerNames. Harvesting "Smart Ideas & Methods"          ║
  * ║  from the entire fork ecosystem (ascending & descending).                     ║
@@ -39,7 +39,7 @@ function gh(cmd) {
 }
 
 async function main() {
-  console.log('🧠 Starting Autonomous Intel Harvester (Nexus Autonomous Mode)...');
+  console.log('🧠 Starting Autonomous Intel Harvester (Autonomous Engine Reimplementation Mode)...');
 
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
   if (!fs.existsSync(path.dirname(REPORT_FILE))) fs.mkdirSync(path.dirname(REPORT_FILE), { recursive: true });
@@ -173,7 +173,7 @@ async function main() {
 
   // 4. Generate Intellectual Enrichment Report
   console.log('  → Generating Intellectual Enrichment Report...');
-  let md = `# Intellectual Enrichment Report (Thinking Nexus Autonomous)\n`;
+  let md = `# Intellectual Enrichment Report (Thinking Reimplementation Engine)\n`;
   md += `*Generated: ${harvest.timestamp} | Forks Analyzed: ${harvest.forksAnalyzed}*\n\n`;
 
   md += `## 🏗️ Structural Innovations (New Files)\n`;

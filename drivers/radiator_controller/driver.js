@@ -27,35 +27,27 @@ class RadiatorControllerDriver extends ZigBeeDriver {
     this._flowCardsRegistered = true;
 
     try {
+      const driverId = 'radiator_controller';
+
       // Register flow triggers
-      this._radiator_mode_changedTrigger =
-
-      this._pilot_signal_sentTrigger =
-
+      this._radiator_mode_changedTrigger = this.homey.flow.getTriggerCard(`${driverId}_radiator_mode_changed`);
+      this._pilot_signal_sentTrigger = this.homey.flow.getTriggerCard(`${driverId}_pilot_signal_sent`);
       
       // Register flow conditions
-      this._radiator_is_heatingCondition =
-
-      this._heating_mode_isCondition =
-
+      this._radiator_is_heatingCondition = this.homey.flow.getConditionCard(`${driverId}_radiator_is_heating`);
+      this._heating_mode_isCondition = this.homey.flow.getConditionCard(`${driverId}_heating_mode_is`);
       
       // Register flow actions
-      this._set_heating_modeAction =
-
+      this._set_heating_modeAction = this.homey.flow.getActionCard(`${driverId}_set_heating_mode`);
       if (this._set_heating_modeAction) {
         this._set_heating_modeAction.registerRunListener(async (args) => {
-          const { device 
-  
-  
-  
-  } = args;
+          const { device } = args;
           // TODO: Implement action logic
           return true;
         });
       }
       
-      this._send_pilot_signalAction =
-
+      this._send_pilot_signalAction = this.homey.flow.getActionCard(`${driverId}_send_pilot_signal`);
       if (this._send_pilot_signalAction) {
         this._send_pilot_signalAction.registerRunListener(async (args) => {
           const { device } = args;
@@ -64,8 +56,7 @@ class RadiatorControllerDriver extends ZigBeeDriver {
         });
       }
       
-      this._set_temperature_offsetAction =
-
+      this._set_temperature_offsetAction = this.homey.flow.getActionCard(`${driverId}_set_temperature_offset`);
       if (this._set_temperature_offsetAction) {
         this._set_temperature_offsetAction.registerRunListener(async (args) => {
           const { device } = args;

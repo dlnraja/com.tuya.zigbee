@@ -41,18 +41,18 @@ class GenericTuyaDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Battery above
     try {
-
+      this.homey.flow.getConditionCard('generic_tuya_battery_above')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
           return battery > (args.level || 20);
         });
-      this.log('[FLOW] ✅ generic_tuya_battery_above');
+      this.log('[FLOW] ✅ Registered: generic_tuya_battery_above');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
     // ACTION: Request DP
     try {
-
+      this.homey.flow.getConditionCard('generic_tuya_request_dp')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           try {
@@ -62,7 +62,7 @@ class GenericTuyaDriver extends ZigBeeDriver {
             return true;
           } catch (err) { return true; }
         });
-      this.log('[FLOW] ✅ generic_tuya_request_dp');
+      this.log('[FLOW] ✅ Registered: generic_tuya_request_dp');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
     this.log('[FLOW]  Generic Tuya flow cards registered');

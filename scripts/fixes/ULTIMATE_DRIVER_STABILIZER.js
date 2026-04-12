@@ -7,7 +7,7 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..', '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
 
-console.log('🚀 [ULTIMATE-STABILIZER-V3] Nexus Awakening Deep Remediation...');
+console.log('🚀 [ULTIMATE-STABILIZER-V3] Universal Engine Reimplementation Deep Remediation...');
 
 function getFiles(dir, suffix) {
   let results = [];

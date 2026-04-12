@@ -154,35 +154,35 @@ class Switch4GangDriver extends ZigBeeDriver {
 
       // v5.5.930: LED backlight flow cards
       try {
-
-          .registerRunListener(this._safeAction(async (args) => {
+      this.homey.flow.getActionCard('switch_4gang_set_backlight')
+        .registerRunListener(this._safeAction(async (args) => {
             await args.device.setBacklightMode(args.mode);
           }));
-        this.log('[FLOW] ✅ switch_4gang_set_backlight');
+        this.log('[FLOW] ✅ Registered: switch_4gang_set_backlight');
       } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
 
       try {
-
-          .registerRunListener(this._safeAction(async (args) => {
+      this.homey.flow.getActionCard('switch_4gang_set_backlight_color')
+        .registerRunListener(this._safeAction(async (args) => {
             await args.device.setBacklightColor(args.state, args.color);
           }));
-        this.log('[FLOW] ✅ switch_4gang_set_backlight_color');
+        this.log('[FLOW] ✅ Registered: switch_4gang_set_backlight_color');
       } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
 
       try {
-
-          .registerRunListener(this._safeAction(async (args) => {
+      this.homey.flow.getActionCard('switch_4gang_set_backlight_brightness')
+        .registerRunListener(this._safeAction(async (args) => {
             await args.device.setBacklightBrightness(args.brightness);
           }));
-        this.log('[FLOW] ✅ switch_4gang_set_backlight_brightness');
+        this.log('[FLOW] ✅ Registered: switch_4gang_set_backlight_brightness');
       } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
 
       // v5.12.0: Toggle per gang + all on/off
       const caps = ['onoff', 'onoff.gang2', 'onoff.gang3', 'onoff.gang4'];
       ['gang1', 'gang2', 'gang3', 'gang4'].forEach((gang, idx) => {
         try {
-
-            .registerRunListener(this._safeAction(async (args) => {
+      this.homey.flow.getActionCard('switch_4gang_set_scene_mode')
+        .registerRunListener(this._safeAction(async (args) => {
               const cap = caps[idx];
               const v = args.device.getCapabilityValue(cap);
               await args.device._setGangOnOff(idx + 1, !v).catch(() => {});
@@ -222,7 +222,7 @@ class Switch4GangDriver extends ZigBeeDriver {
           .registerRunListener(this._safeAction(async (args) => {
             await args.device.setSceneMode(args.mode);
           }));
-        this.log('[FLOW] ✅ switch_4gang_set_scene_mode');
+        this.log('[FLOW] ✅ Registered: switch_4gang_set_scene_mode');
       } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
 
       this.log('4-Gang Switch Driver v5.12.5 ✅ Flow cards registered');

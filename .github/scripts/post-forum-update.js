@@ -130,7 +130,7 @@ async function main(){
         console.log('  🤖 Ghostwriter: organic merge...');
         const contentToHumanize = `CURRENT POST CONTENT:\n${lastOwn.raw.replace(/<!-- bot-update -->/g, '')}\n\nNEW RELEASE UPDATE:\n${raw}`;
         const humanizePrompt = `You ARE dlnraja, the solo developer. You are updating your latest forum post to announce v${ver}.
-1. INTEGRATION: Rewrite the entire post to weave the NEW RELEASE UPDATE into the CURRENT CONTENT organically. Mention the "Nexus Awakening" v7.2.5 milestone and the new "Nexus Visual Ecosystem" imagery for all drivers if this is the first mention of it.
+1. INTEGRATION: Rewrite the entire post to weave the NEW RELEASE UPDATE into the CURRENT CONTENT organically. Mention the "Universal Engine Reimplementation" v7.2.5 milestone and the new "Hybrid Engine Visual Ecosystem" imagery for all drivers if this is the first mention of it.
 2. STYLE: Casual, direct, short sentences. Developer-to-developer tone. No corporate fluff.
 3. STRUCTURE: Use paragraphs. No bullet lists for the main text.
 4. VERSIONING: Keep the "Update: v[VERSION] pushed to Test!" line at the top of the newest section.

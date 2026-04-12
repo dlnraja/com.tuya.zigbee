@@ -29,7 +29,7 @@ function polishChangelogs() {
         // Add 7.2.0 details if missing
         if (!changelogJson['7.2.0'] || !changelogJson['7.2.0'].en || changelogJson['7.2.0'].en.length < 50) {
             changelogJson['7.2.0'] = {
-                en: "The Autonomous Awakening: Adaptive Lighting (Natural Light), Zigbee Radio Sensing (Presence), Smart High-Fidelity Gestures, and Nexus Maintenance Orchestration for autonomous fleet healing."
+                en: "The Autonomous Awakening: Adaptive Lighting (Natural Light), Zigbee Radio Sensing (Presence), Smart High-Fidelity Gestures, and Engine Maintenance Orchestration for autonomous fleet healing."
             };
         }
 

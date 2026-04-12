@@ -1,5 +1,9 @@
 'use strict';
 const EweLinkLocalDriver=require('../../lib/ewelink-local/EweLinkLocalDriver');
-class D extends EweLinkLocalDriver{async onInit(){await super.onInit();this.log('[EWE-PLUG-DRV] Ready');}}
+class D extends EweLinkLocalDriver{async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+await super.onInit();this.log('[EWE-PLUG-DRV] Ready');}}
 module.exports=D;
 

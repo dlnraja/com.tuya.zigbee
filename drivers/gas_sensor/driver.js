@@ -40,7 +40,7 @@ class TuyaGasSensorTs0601Driver extends ZigBeeDriver {
     // CONDITION: Gas is/is not detected
     // ═══════════════════════════════════════════════════════════════════════
     try {
-
+      this.homey.flow.getConditionCard('gas_sensor_gas_detected')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_gas') === true;
@@ -54,7 +54,7 @@ class TuyaGasSensorTs0601Driver extends ZigBeeDriver {
     // CONDITION: CO is/is not detected
     // ═══════════════════════════════════════════════════════════════════════
     try {
-
+      this.homey.flow.getConditionCard('gas_sensor_co_detected')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_co') === true;
@@ -68,7 +68,7 @@ class TuyaGasSensorTs0601Driver extends ZigBeeDriver {
     // CONDITION: Gas level is/is not above threshold
     // ═══════════════════════════════════════════════════════════════════════
     try {
-
+      this.homey.flow.getConditionCard('gas_sensor_level_above')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const level = args.device.getCapabilityValue('measure_gas') || 0;
@@ -83,7 +83,7 @@ class TuyaGasSensorTs0601Driver extends ZigBeeDriver {
     // ACTION: Mute alarm
     // ═══════════════════════════════════════════════════════════════════════
     try {
-
+      this.homey.flow.getActionCard('gas_sensor_mute_alarm')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           try {
@@ -105,7 +105,7 @@ class TuyaGasSensorTs0601Driver extends ZigBeeDriver {
     // ACTION: Self-test
     // ═══════════════════════════════════════════════════════════════════════
     try {
-
+      this.homey.flow.getActionCard('gas_sensor_self_test')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           try {

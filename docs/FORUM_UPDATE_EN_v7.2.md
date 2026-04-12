@@ -19,9 +19,9 @@ Sick of "ghost" triggers or missing that triple-click?
 - **High-Fidelity**: 100% accurate Single, Double, Triple clicks and Holds.
 - **Deduplication**: We correlate ZCL and Tuya DP signals in real-time. Even the most "chatty" remotes won't trigger your flows twice. 
 
-### 🔩 Nexus Orchestration & Self-Heal
+### 🔩 Hybrid Engine Orchestration & Self-Heal
 The app is now **SENTIENT** (well, almost).
-- **Daily Repair**: Every night at 2 AM, our Nexus agent audits every device.
+- **Daily Repair**: Every night at 2 AM, our Hybrid Engine agent audits every device.
 - **Omni-Sync**: We automatically pull the latest fingerprints and DP mappings from Z2M and ZHA databases. You're always up to date.
 
 ### 🛡️ Under the Hood (Geek Stuff)
@@ -56,9 +56,9 @@ Sick of "ghost" triggers or missing that triple-click?
 - **High-Fidelity**: 100% accurate Single, Double, Triple clicks and Holds.
 - **Deduplication**: We correlate ZCL and Tuya DP signals in real-time. Even the most "chatty" remotes won't trigger your flows twice. 
 
-### 🔩 Nexus Orchestration & Self-Heal
+### 🔩 Hybrid Engine Orchestration & Self-Heal
 The app is now **SENTIENT** (well, almost).
-- **Daily Repair**: Every night at 2 AM, our Nexus agent audits every device.
+- **Daily Repair**: Every night at 2 AM, our Hybrid Engine agent audits every device.
 - **Omni-Sync**: We automatically pull the latest fingerprints and DP mappings from Z2M and ZHA databases. You're always up to date.
 
 ### 🔌 Virtual Energy Engine (World-Class Insights)

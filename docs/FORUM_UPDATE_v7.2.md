@@ -15,7 +15,7 @@ Une mise à jour majeure vient d'être déployée sur le canal de test (v7.2.0).
 3. **🎯 Smart Gesture Engine** :
    Détection haute fidélité des Single, Double, et Triple Clicks ainsi que des pressions longues (Hold). Fini les déclenchements multiples ou les ratés sur les interrupteurs hybrides.
 
-4. **🔩 Orchestration Nexus** :
+4. **🔩 Orchestration Hybrid Engine** :
    L'application s'auto-répare désormais chaque nuit. Vos flux corrompus (Flow Cards) et vos capacités manquantes sont automatiquement restaurés par notre agent de maintenance.
 
 5. **🛡️ Dé-duplication de Flux** :
@@ -47,7 +47,7 @@ Une mise à jour majeure vient d'être déployée sur le canal de test (v7.2.0).
 3. **🎯 Smart Gesture Engine** :
    Détection haute fidélité des Single, Double, et Triple Clicks ainsi que des pressions longues (Hold). Fini les déclenchements multiples ou les ratés sur les interrupteurs hybrides.
 
-4. **🔩 Orchestration Nexus** :
+4. **🔩 Orchestration Hybrid Engine** :
    L'application s'auto-répare désormais chaque nuit. Vos flux corrompus (Flow Cards) et vos capacités manquantes sont automatiquement restaurés par notre agent de maintenance.
 
 5. **🛡️ Dé-duplication de Flux** :

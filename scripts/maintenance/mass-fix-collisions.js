@@ -81,6 +81,6 @@ function fixDir(dir) {
     }
 }
 
-console.log('=== Nexus Mass Collision Fixer ===');
+console.log('=== Hybrid Engine Mass Collision Fixer ===');
 fixDir(DRIVERS_DIR);
 console.log('=== Fix Complete ===');

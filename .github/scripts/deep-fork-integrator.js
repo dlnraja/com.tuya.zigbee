@@ -165,7 +165,7 @@ async function scanForkDeep(fork,local,results){
           codeSize:code.length,forkDPs:dpNums,ourDPs});
       }
 
-      // v7.0.22: Smarts Detection (Nexus Autonomous Engine)
+      // v7.0.22: Smarts Detection (Autonomous Engine Reimplementation Engine)
       const intelMatch = code.match(/(calibration|offset|correction|retry|backoff|multiplier|divisor|scale|limit|protection|memory|inching)/gi);
       if(intelMatch && intelMatch.length > 2){
         const uniqueIntels = [...new Set(intelMatch.map(m => m.toLowerCase()))];

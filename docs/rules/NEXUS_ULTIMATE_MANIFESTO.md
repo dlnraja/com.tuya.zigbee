@@ -38,4 +38,4 @@ The project utilizes the following autonomous scripts:
 - **Masking**: IDs, IP addresses, and User names are stripped at the edge.
 
 ---
-*Version: 7.2.14 | Build: Nexus Awakening | Author: dlnraja & Antigravity*
+*Version: 7.2.14 | Build: Universal Engine Reimplementation | Author: dlnraja & Antigravity*

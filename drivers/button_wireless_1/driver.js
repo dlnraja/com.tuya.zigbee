@@ -49,16 +49,11 @@ class Button1GangDriver extends ZigBeeDriver {
 
       for (const triggerId of mainTriggers) {
         try {
-          const card =
-      this.homey.flow.getTriggerCard(triggerId) ;
+          const card = this.homey.flow.getTriggerCard(triggerId);
           if (card) {
             card.registerRunListener(async (args, state) => {
               if (!args.device) {
-                this.error(`[FLOW] Device not found for ${triggerId
-  
-  
-  
-  }`);
+                this.error(`[FLOW] Device not found for ${triggerId}`);
                 return false;
               }
               return true;
@@ -79,8 +74,7 @@ class Button1GangDriver extends ZigBeeDriver {
 
       for (const triggerId of button1Triggers) {
         try {
-          const card =
-      this.homey.flow.getTriggerCard(triggerId) ;
+          const card = this.homey.flow.getTriggerCard(triggerId);
           if (card) {
             card.registerRunListener(async (args, state) => {
               if (!args.device) {
@@ -98,13 +92,12 @@ class Button1GangDriver extends ZigBeeDriver {
 
       // Battery trigger
       try {
-        // 
+        const batteryCard = this.homey.flow.getTriggerCard('battery_alarm_low');
         if (batteryCard) {
           batteryCard.registerRunListener(async (args, state) => {
             if (!args.device) return false;
             return true;
           });
-          // 
         }
       } catch (e) {
         // Optional

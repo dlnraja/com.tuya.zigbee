@@ -130,7 +130,7 @@ async function main() {
     console.log('=================================');
     
     let stats = { updated: 0, skipped: 0, errors: 0 };
-    let log = '# 🖼️ Nexus Image Rebranding Log\n\n';
+    let log = '# 🖼️ Hybrid Engine Image Rebranding Log\n\n';
     log += `**Execution Date:** ${new Date().toISOString()}\n\n`;
     log += '| Driver | Category | Image Used | Status |\n';
     log += '|--------|----------|------------|--------|\n';

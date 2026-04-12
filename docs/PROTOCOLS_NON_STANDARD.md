@@ -1,5 +1,5 @@
 # 🧬 Non-Standard Protocols & Tuya MCU Deep Dive
-*Version: Thinking Nexus Autonomous Enhanced*
+*Version: Thinking Reimplementation Engine Enhanced*
 
 ## 1. Tuya Zigbee-to-MCU (RX/TX)
 Tuya Zigbee modules (TYZS, ZS3L, etc.) often act as transparent UART bridges to a main Microcontroller (MCU). 
