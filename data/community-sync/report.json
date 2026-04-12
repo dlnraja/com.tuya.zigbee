@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-12T18:50:50.824Z",
+  "ts": "2026-04-12T19:13:12.747Z",
   "currentCount": 7389,
   "src": {
     "johan": {
@@ -19589,6 +19589,15 @@
         },
         {
           "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1364,
+          "title": "Device Request - Smart switch - _TZ3000_gwkzibhs /TS004F",
+          "mfrs": [
+            "_TZ3000_gwkzibhs",
+            "_TZ3000_gwkzibhs"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
           "num": 1363,
           "title": "Device Request - ZIGBEE Soil moister sensor - _TZE284_hdml1aav / [TS0601]",
           "mfrs": [
@@ -19676,17 +19685,6 @@
           "mfrs": [
             "_TZ3000_kxaow5ki",
             "_TZ3000_kxaow5ki"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1351,
-          "title": "Device Request - [PIR Motion Brightness] - [_TZE284_bquwrqh1] / [TS0601]",
-          "mfrs": [
-            "_TZE284_bquwrqh1",
-            "_TZE284_bquwrqh1",
-            "_TZE284_bquwrqh1",
-            "_TZE284_bquwrqh1"
           ]
         }
       ]
