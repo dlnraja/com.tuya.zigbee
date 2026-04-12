@@ -2,7 +2,7 @@
 
 | Driver | Manufacturers | Products | Capabilities |
 |--------|---------------|----------|-------------|
-| air_purifier | 325 | RH3052, TS0201, TS0222, TS0601, TS0601_AIR_PURIFIER, TS0601_air_purifier, TY0201, rh3052, ts0201, ts0222, ts0601, ts0601_air_purifier, ty0201 | dim, measure_pm25, onoff |
+| air_purifier | 327 | RH3052, TS0201, TS0222, TS0601, TS0601_AIR_PURIFIER, TS0601_air_purifier, TY0201, rh3052, ts0201, ts0222, ts0601, ts0601_air_purifier, ty0201 | dim, measure_pm25, onoff |
 | air_purifier_climate_hybrid | 51 | TS0601, ts0601 | onoff, dim, measure_pm25... |
 | air_purifier_contact_hybrid | 1 | TS0601, ts0601 | alarm_contact, alarm_tamper, measure_battery... |
 | air_purifier_curtain_hybrid | 30 | TS0601, ts0601 | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
@@ -31,7 +31,7 @@
 | bulb_white | 4 | TS0501, ts0501 | dim, light_hue, light_saturation... |
 | button_emergency_sos | 81 | TS0215, TS0215A, TS0218, TS0601, ZBPB10BK, ts0215, ts0215a, ts0218, ts0601, zbpb10bk | alarm_generic, measure_battery, measure_radio_stability... |
 | button_wireless | 8 | CK-TLSR8656-SS5-01(7000), SNZB-01, SNZB-01M, SNZB-01P, TS0040, WB-01, WB01, ck-tlsr8656-ss5-01(7000), snzb-01, snzb-01m, snzb-01p, ts0040, wb-01, wb01 | measure_battery, measure_radio_stability, measure_maintenance_score |
-| button_wireless_1 | 81 | 3450-L, 3450-l, E1524/E1810, E1743, E1744, E1812, E2001/E2002, E2123, LUMI.REMOTE.B1ACN01, LUMI.SENSOR_SWITCH, LUMI.SENSOR_SWITCH.AQ2, LUMI.SENSOR_SWITCH.AQ3, ROM001, RWL020, RWL021, RWL022, WXKG01LM, WXKG02LM, WXKG03LM, WXKG06LM, WXKG07LM, WXKG11LM, WXKG12LM, ZG-101ZL, e1524/e1810, e1743, e1744, e1812, e2001/e2002, e2123, lumi.remote.b1acn01, lumi.sensor_switch, lumi.sensor_switch.aq2, lumi.sensor_switch.aq3, rom001, rwl020, rwl021, rwl022, wxkg01lm, wxkg02lm, wxkg03lm, wxkg06lm, wxkg07lm, wxkg11lm, wxkg12lm, zg-101zl | button.1, measure_battery, measure_radio_stability... |
+| button_wireless_1 | 82 | 3450-L, 3450-l, E1524/E1810, E1743, E1744, E1812, E2001/E2002, E2123, LUMI.REMOTE.B1ACN01, LUMI.SENSOR_SWITCH, LUMI.SENSOR_SWITCH.AQ2, LUMI.SENSOR_SWITCH.AQ3, ROM001, RWL020, RWL021, RWL022, WXKG01LM, WXKG02LM, WXKG03LM, WXKG06LM, WXKG07LM, WXKG11LM, WXKG12LM, ZG-101ZL, e1524/e1810, e1743, e1744, e1812, e2001/e2002, e2123, lumi.remote.b1acn01, lumi.sensor_switch, lumi.sensor_switch.aq2, lumi.sensor_switch.aq3, rom001, rwl020, rwl021, rwl022, wxkg01lm, wxkg02lm, wxkg03lm, wxkg06lm, wxkg07lm, wxkg11lm, wxkg12lm, zg-101zl | button.1, measure_battery, measure_radio_stability... |
 | button_wireless_2 | 410 | TS0001, TS0001_FINGERBOT, TS0001_fingerbot, TS0002, TS0003, TS000F, TS0011, TS0012, TS0013, TS0042, TS0043, TS0111, ts0001, ts0001_fingerbot, ts0002, ts0003, ts000f, ts0011, ts0012, ts0013, ts0042, ts0043, ts0111, TS011F, TS0121, TSO121 | button.1, button.2, measure_battery... |
 | button_wireless_3 | 20 | TS0043, ts0043 | button.1, button.2, button.3... |
 | button_wireless_4 | 122 | SNZB-01M, TS0014, TS0044, TS004F, snzb-01m, ts0014, ts0044, ts004f | button.1, button.2, button.3... |
@@ -46,7 +46,7 @@
 | button_wireless_valve_hybrid | 2 | - | button.1, button.2, measure_battery... |
 | button_wireless_wall_hybrid | 0 | TS0003, TS0013, TS0043, ts0003, ts0013, ts0043, TS0001, TS0011, ts0001, ts0011, TS0002, TS0012, TS0042, ts0002, ts0012, ts0042 | button.1, button.2, measure_battery... |
 | ceiling_fan | 4 | TS0601, TS0601_FAN, TS0601_fan, ts0601, ts0601_fan | dim, onoff, dim.speed... |
-| climate_sensor | 1424 | CK-TLSR8656-SS5-01(7014), LUMI.SENSOR_HT, LUMI.SENSOR_HT.AGL02, LUMI.WEATHER, RH3052, SM0201, SNZB-02, SNZB-02D, SNZB-02DR2, SNZB-02LD, SNZB-02P, SNZB-02WD, TH01, THS317-ET, TS0201, TS0222, TS0601, TY0201, WSDCGQ01LM, WSDCGQ11LM, WSDCGQ12LM, ZG-227Z, ZG-227ZL, ZG-303Z, ck-tlsr8656-ss5-01(7014), lumi.sensor_ht, lumi.sensor_ht.agl02, lumi.weather, rh3052, sm0201, snzb-02, snzb-02d, snzb-02dr2, snzb-02ld, snzb-02p, snzb-02wd, th01, ths317-et, ts0201, ts0222, ts0601, ty0201, wsdcgq01lm, wsdcgq11lm, wsdcgq12lm, zg-227z, zg-227zl, zg-303z | measure_battery, measure_humidity, measure_temperature... |
+| climate_sensor | 1426 | CK-TLSR8656-SS5-01(7014), LUMI.SENSOR_HT, LUMI.SENSOR_HT.AGL02, LUMI.WEATHER, RH3052, SM0201, SNZB-02, SNZB-02D, SNZB-02DR2, SNZB-02LD, SNZB-02P, SNZB-02WD, TH01, THS317-ET, TS0201, TS0222, TS0601, TY0201, WSDCGQ01LM, WSDCGQ11LM, WSDCGQ12LM, ZG-227Z, ZG-227ZL, ZG-303Z, ck-tlsr8656-ss5-01(7014), lumi.sensor_ht, lumi.sensor_ht.agl02, lumi.weather, rh3052, sm0201, snzb-02, snzb-02d, snzb-02dr2, snzb-02ld, snzb-02p, snzb-02wd, th01, ths317-et, ts0201, ts0222, ts0601, ty0201, wsdcgq01lm, wsdcgq11lm, wsdcgq12lm, zg-227z, zg-227zl, zg-303z | measure_battery, measure_humidity, measure_temperature... |
 | climate_sensor_dimmer_hybrid | 2 | - | dim, onoff, measure_power... |
 | climate_sensor_gas_hybrid | 0 | TS0601, ts0601 | alarm_generic, alarm_co, alarm_co2... |
 | climate_sensor_plug_hybrid | 0 | TS0601, ts0601 | onoff, measure_power, meter_power... |
@@ -157,9 +157,9 @@
 | power_clamp_meter | 14 | TS0601, TS0601_CLAMP, TS0601_clamp, ts0601, ts0601_clamp | measure_power, meter_power, measure_current... |
 | power_meter | 10 | TS0601, TS0601_METER, TS0601_meter, ts0601, ts0601_meter | measure_power, meter_power, measure_voltage... |
 | presence_sensor_ceiling | 10 | TS0601, TS0601_CEILING, TS0601_ceiling, ts0601, ts0601_ceiling | alarm_motion, onoff, measure_luminance... |
-| presence_sensor_radar | 174 | CK-BL702-MWS-01, CK-BL702-MWS-01(7016), MG1_5RZ, SNZB-06P, SZLMR10, TS0225, TS0601, ZG-204ZE, ZG-204ZH, ZG-204ZK, ZG-204ZL, ZG-204ZM, ZG-204ZQ, ZG-204ZV, ZG-205Z, ZG-205ZL, ZG-302ZL, ZG-302ZM, ZP-301Z, ck-bl702-mws-01, ck-bl702-mws-01(7016), mg1_5rz, snzb-06p, szlmr10, ts0601, ts0225, zg-204ze, zg-204zh, zg-204zk, zg-204zl, zg-204zm, zg-204zq, zg-204zv, zg-205z, zg-205zl, zg-302zl, zg-302zm, zp-301z | alarm_motion, measure_luminance, measure_temperature... |
+| presence_sensor_radar | 177 | CK-BL702-MWS-01, CK-BL702-MWS-01(7016), MG1_5RZ, SNZB-06P, SZLMR10, TS0225, TS0601, ZG-204ZE, ZG-204ZH, ZG-204ZK, ZG-204ZL, ZG-204ZM, ZG-204ZQ, ZG-204ZV, ZG-205Z, ZG-205ZL, ZG-302ZL, ZG-302ZM, ZP-301Z, ck-bl702-mws-01, ck-bl702-mws-01(7016), mg1_5rz, snzb-06p, szlmr10, ts0601, ts0225, zg-204ze, zg-204zh, zg-204zk, zg-204zl, zg-204zm, zg-204zq, zg-204zv, zg-205z, zg-205zl, zg-302zl, zg-302zm, zp-301z | alarm_motion, measure_luminance, measure_temperature... |
 | radiator_controller | 10 | TS0601, TS0601_RAD, TS0601_rad, ts0601, ts0601_rad | onoff, target_temperature, measure_temperature... |
-| radiator_valve | 338 | 014G2461, 014G2463, 014g2461, 014g2463, ETRV0100, LUMI.AIRRTC.AGL001, LUMI.AIRRTC.VRFEGL01, SEA801-ZIGBEE, SEA801-Zigbee, SPZB0001, SPZB0003, STZB402, STZB403, TRV601, TRV602, TRVZB, TS0601, TV01-ZB, TV02-ZB, ZEN-01, Zen-01, eTRV0100, etrv0100, lumi.airrtc.agl001, lumi.airrtc.vrfegl01, sea801-zigbee, spzb0001, spzb0003, stzb402, stzb403, trv601, trv602, trvzb, ts0601, tv01-zb, tv02-zb, zen-01 | target_temperature, measure_temperature, thermostat_mode... |
+| radiator_valve | 340 | 014G2461, 014G2463, 014g2461, 014g2463, ETRV0100, LUMI.AIRRTC.AGL001, LUMI.AIRRTC.VRFEGL01, SEA801-ZIGBEE, SEA801-Zigbee, SPZB0001, SPZB0003, STZB402, STZB403, TRV601, TRV602, TRVZB, TS0601, TV01-ZB, TV02-ZB, ZEN-01, Zen-01, eTRV0100, etrv0100, lumi.airrtc.agl001, lumi.airrtc.vrfegl01, sea801-zigbee, spzb0001, spzb0003, stzb402, stzb403, trv601, trv602, trvzb, ts0601, tv01-zb, tv02-zb, zen-01 | target_temperature, measure_temperature, thermostat_mode... |
 | radiator_valve_zigbee | 6 | TS0601, ts0601 | target_temperature, measure_temperature, thermostat_mode... |
 | rain_sensor | 16 | TS0207, TS0207_RAIN, TS0207_rain, TS0601, ZG-222Z, ZG-223Z, ts0207, ts0207_rain, ts0601, zg-222z, zg-223z | alarm_water, measure_humidity, measure_battery... |
 | remote_button_emergency_sos_hybrid | 2 | - | button.1, button.2, button.3... |
@@ -175,7 +175,7 @@
 | scene_switch_1 | 6 | TS0601_SCENE1, TS0601_scene1, ts0601_scene1 | button.1, measure_battery, measure_radio_stability... |
 | scene_switch_2 | 2 | TS0042, TS0601_SCENE2, TS0601_scene2, TS0726, ts0042, ts0601_scene2, ts0726 | button.1, button.2, measure_battery... |
 | scene_switch_3 | 4 | TS0043, TS0601_SCENE3, TS0601_scene3, TS0726, ts0043, ts0601_scene3, ts0726 | button.1, button.2, button.3... |
-| scene_switch_4 | 22 | ERS-10TZBVK-AA, TS0601, ZG-101ZS, ers-10tzbvk-aa, ts0601, zg-101zs | button.1, button.2, button.3... |
+| scene_switch_4 | 20 | ERS-10TZBVK-AA, TS0601, ZG-101ZS, ers-10tzbvk-aa, ts0601, zg-101zs | button.1, button.2, button.3... |
 | scene_switch_6 | 2 | TS0601_SCENE6, TS0601_scene6, ts0601_scene6 | button.1, button.2, button.3... |
 | scene_switch_wall_hybrid | 0 | TS0042, TS0043, ts0042, ts0043 | button.1, button.2, measure_battery... |
 | sensor_climate_contact_hybrid | 14 | ZG-227Z, zg-227z, TS0601, ts0601 | measure_temperature, measure_humidity, measure_battery... |
@@ -203,7 +203,7 @@
 | smart_button_switch | 0 | TS0041, ts0041 | button.1, measure_battery, measure_radio_stability... |
 | smart_heater | 4 | TS0601, TS0601_HEATER, TS0601_heater, ts0601, ts0601_heater | onoff, target_temperature, thermostat_mode... |
 | smart_heater_controller | 10 | TS0601, TS0601_HEATCTRL, TS0601_heatctrl, ts0601, ts0601_heatctrl | onoff, target_temperature, measure_temperature... |
-| smart_knob | 8 | ERS-10TZBVK-AA, TS004F, ers-10tzbvk-aa, ts004f | button, dim, measure_battery... |
+| smart_knob | 9 | ERS-10TZBVK-AA, TS004F, ers-10tzbvk-aa, ts004f | button, dim, measure_battery... |
 | smart_knob_rotary | 6 | ERS-10TZBVK-AA, TS004F, ZG-101ZD, ers-10tzbvk-aa, ts004f, zg-101zd | button.rotate_left, button.rotate_right, button.press... |
 | smart_knob_rotary_hybrid | 0 | TS004F, ts004f | button.rotate_left, button.rotate_right, button.press... |
 | smart_knob_switch | 0 | TS004F, ts004f | dim, alarm_battery, measure_radio_stability... |
@@ -216,9 +216,9 @@
 | smart_scene_panel | 4 | TS0601, ts0601 | onoff.gang1, onoff.gang2, onoff.gang3... |
 | smoke_detector_advanced | 67 | GS361A-H04, HS1SA, HS3SA, JTYJ-GD-01LM/BW, LUMI.SENSOR_SMOKE, NAS-SD02B0, PG-S11Z, SA12IZL, SD8SC_00.00.03.12TC, SMSZB-120, SSSQS01LM, TS0205, TS0601, YG400A, gs361a-h04, hs1sa, hs3sa, jtyj-gd-01lm/bw, lumi.sensor_smoke, nas-sd02b0, pg-s11z, sa12izl, sd8sc_00.00.03.12tc, smszb-120, sssqs01lm, ts0205, ts0601, yg400a | alarm_smoke, measure_battery, measure_temperature... |
 | soil_sensor | 49 | ARTECO, Arteco, CS-201Z, TS0601, ZG-303Z, arteco, cs-201z, ts0601, zg-303z | measure_humidity.soil, measure_temperature, measure_humidity... |
-| switch_1gang | 510 | 01MINIZB, 01minizb, BASICZBR3, S26R2ZB, S31ZB, TS0001, TS0001_POWER, TS0001_SWITCH, TS0001_SWITCH_MODULE, TS0001_power, TS0001_switch, TS0001_switch_module, TS000F, TS0011, TS0101, TS011F, TS0601, TS0726, TS4100, ZBM5-1C-120, ZBM5-2C-120, ZBM5-3C-120, ZBMINI, ZBMINIL2, ZBMINIL2-R2, ZBMINIR, ZBMINIR2, ZBMINIR2-R2, ZG-301Z, ZG-302Z1, basiczbr3, s26r2zb, s31zb, ts0001, ts0001_power, ts0001_switch, ts0001_switch_module, ts000f, ts0011, ts0101, ts011f, ts0601, ts0726, ts4100, zbm5-1c-120, zbm5-2c-120, zbm5-3c-120, zbmini, zbminil2, zbminil2-r2, zbminir, zbminir2, zbminir2-r2, zg-301z, zg-302z1 | onoff, measure_battery, measure_power... |
-| switch_2gang | 136 | TS0002, TS0002_POWER, TS0002_SWITCH_MODULE, TS0002_power, TS0002_switch_module, TS0003, TS0012, TS0013, ZG-302Z2, ZG-305Z, ts0002, ts0002_power, ts0002_switch_module, ts0003, ts0012, ts0013, zg-302z2, zg-305z | onoff, onoff.gang2, measure_power... |
-| switch_3gang | 120 | TS0003, TS0003_POWER, TS0003_SWITCH_MODULE, TS0003_power, TS0003_switch_module, TS0013, TS0601, ZG-302Z3, ts0003, ts0003_power, ts0003_switch_module, ts0013, ts0601, zg-302z3 | onoff, onoff.gang2, onoff.gang3... |
+| switch_1gang | 529 | 01MINIZB, 01minizb, BASICZBR3, S26R2ZB, S31ZB, TS0001, TS0001_POWER, TS0001_SWITCH, TS0001_SWITCH_MODULE, TS0001_power, TS0001_switch, TS0001_switch_module, TS000F, TS0011, TS0101, TS011F, TS0601, TS0726, TS4100, ZBM5-1C-120, ZBM5-2C-120, ZBM5-3C-120, ZBMINI, ZBMINIL2, ZBMINIL2-R2, ZBMINIR, ZBMINIR2, ZBMINIR2-R2, ZG-301Z, ZG-302Z1, basiczbr3, s26r2zb, s31zb, ts0001, ts0001_power, ts0001_switch, ts0001_switch_module, ts000f, ts0011, ts0101, ts011f, ts0601, ts0726, ts4100, zbm5-1c-120, zbm5-2c-120, zbm5-3c-120, zbmini, zbminil2, zbminil2-r2, zbminir, zbminir2, zbminir2-r2, zg-301z, zg-302z1 | onoff, measure_battery, measure_power... |
+| switch_2gang | 137 | TS0002, TS0002_POWER, TS0002_SWITCH_MODULE, TS0002_power, TS0002_switch_module, TS0003, TS0012, TS0013, ZG-302Z2, ZG-305Z, ts0002, ts0002_power, ts0002_switch_module, ts0003, ts0012, ts0013, zg-302z2, zg-305z | onoff, onoff.gang2, measure_power... |
+| switch_3gang | 122 | TS0003, TS0003_POWER, TS0003_SWITCH_MODULE, TS0003_power, TS0003_switch_module, TS0013, TS0601, ZG-302Z3, ts0003, ts0003_power, ts0003_switch_module, ts0013, ts0601, zg-302z3 | onoff, onoff.gang2, onoff.gang3... |
 | switch_4gang | 159 | JZ-ZB-004, TS0004, TS0004_POWER, TS0004_SWITCH_MODULE, TS0004_power, TS0004_switch_module, TS0014, TS0601, jz-zb-004, ts0004, ts0004_power, ts0004_switch_module, ts0014, ts0601 | onoff, onoff.gang2, onoff.gang3... |
 | switch_dimmer_1gang | 4 | TS0601, ts0601 | onoff, dim, measure_radio_stability... |
 | switch_hybrid | 2 | TS011F, TS0601, TS0726, ts011f, ts0601, ts0726 | onoff, onoff.gang2, measure_power... |
@@ -230,7 +230,7 @@
 | switch_wall_7gang | 4 | TS0007, ts0007 | onoff, onoff.gang2, onoff.gang3... |
 | switch_wall_8gang | 10 | TS0601, TS0601_8GANG, TS0601_8gang, ts0601, ts0601_8gang | onoff, onoff.gang2, onoff.gang3... |
 | switch_wireless | 4 | TS0601_WIRELESSSW, TS0601_wirelesssw, ts0601_wirelesssw | alarm_generic, measure_battery, measure_radio_stability... |
-| temphumidsensor | 2 | CK-TLSR8656-SS5-01(7014), RH3052, SNTZ003, TS0201, TY0201, ZG-227Z, ck-tlsr8656-ss5-01(7014), rh3052, sntz003, ts0201, ty0201, zg-227z | measure_temperature, measure_humidity, measure_battery... |
+| temphumidsensor | 4 | CK-TLSR8656-SS5-01(7014), RH3052, SNTZ003, TS0201, TY0201, ZG-227Z, ck-tlsr8656-ss5-01(7014), rh3052, sntz003, ts0201, ty0201, zg-227z | measure_temperature, measure_humidity, measure_battery... |
 | thermostat_4ch | 2 | TS0601, TS0601_THERMO4CH, TS0601_thermo4ch, ts0601, ts0601_thermo4ch | onoff, onoff.ch2, onoff.ch3... |
 | thermostat_tuya_dp | 126 | TS0601, TS0601_THERMO, TS0601_thermo, ts0601, ts0601_thermo | target_temperature, measure_temperature, thermostat_mode... |
 | universal_fallback | 34 | Q9MPFHW, TS0001, TS0002, TS0003, TS0004, TS0005, TS0006, TS0011, TS0012, TS0013, TS0014, TS0015, TS0041, TS0042, TS0043, TS0044, TS0045, TS0046, TS0047, TS0048, TS004F, TS0101, TS0111, TS011F, TS0121, TS0201, TS0204, TS0205, TS0206, TS0207, TS0208, TS0209, TS0210, TS0211, TS0212, TS0215, TS0215A, TS0216, TS0216A, TS0218, TS0222, TS0225, TS0301, TS0302, TS0303, TS0304, TS0401, TS0402, TS0501, TS0501A, TS0501B, TS0502, TS0502A, TS0502B, TS0503, TS0503A, TS0503B, TS0504, TS0504A, TS0504B, TS0505, TS0505A, TS0505B, TS0601, TS110E, TS110F, TS130F, q9mpfhw, ts0001, ts0002, ts0003, ts0004, ts0005, ts0006, ts0011, ts0012, ts0013, ts0014, ts0015, ts0041, ts0042, ts0043, ts0044, ts0045, ts0046, ts0047, ts0048, ts004f, ts0101, ts0111, ts011f, ts0121, ts0201, ts0204, ts0205, ts0206, ts0207, ts0208, ts0209, ts0210, ts0211, ts0212, ts0215, ts0215a, ts0216, ts0216a, ts0218, ts0222, ts0225, ts0301, ts0302, ts0303, ts0304, ts0401, ts0402, ts0501, ts0501a, ts0501b, ts0502, ts0502a, ts0502b, ts0503, ts0503a, ts0503b, ts0504, ts0504a, ts0504b, ts0505, ts0505a, ts0505b, ts0601, ts110e, ts110f, ts130f | measure_battery, measure_radio_stability, measure_maintenance_score |
@@ -250,7 +250,7 @@
 | wall_remote_4_gang_2 | 0 | TS004F, ts004f | button.1, button.2, button.3... |
 | wall_remote_4_gang_3 | 0 | TS0044, ts0044 | button.1, button.2, button.3... |
 | wall_remote_6_gang | 0 | TS0046, ts0046 | button.1, button.2, button.3... |
-| wall_switch_1gang_1way | 6 | TS0001, TS0011, ts0001, ts0011 | onoff, measure_radio_stability, measure_maintenance_score |
+| wall_switch_1gang_1way | 8 | TS0001, TS0011, ts0001, ts0011 | onoff, measure_radio_stability, measure_maintenance_score |
 | wall_switch_2gang_1way | 8 | TS0002, TS0012, TS0042, ts0002, ts0012, ts0042 | onoff, measure_radio_stability, measure_maintenance_score |
 | wall_switch_3gang_1way | 14 | TS0003, TS0013, TS0043, ts0003, ts0013, ts0043 | onoff, measure_radio_stability, measure_maintenance_score |
 | wall_switch_4gang_1way | 4 | TS0726, ts0726 | onoff, measure_radio_stability, measure_maintenance_score |
@@ -262,6 +262,6 @@
 | zigbee_repeater | 10 | TS0207, ts0207 | measure_radio_stability, measure_maintenance_score |
 
 ---
-**Total:** 258 drivers, 8217 manufacturer IDs
+**Total:** 258 drivers, 8252 manufacturer IDs
 
-*Generated: 2026-04-12T08:34:29.727Z*
+*Generated: 2026-04-12T08:58:47.600Z*

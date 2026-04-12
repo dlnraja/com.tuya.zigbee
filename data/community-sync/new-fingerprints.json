@@ -108,27 +108,6 @@
     "source": "Internal-Audit"
   },
   {
-    "mfr": "_TZ3000_wzmuk9ai",
-    "productId": [
-      "TS0121",
-      "TSO121",
-      "TS011F"
-    ],
-    "driver": "smartplug",
-    "deviceType": "socket",
-    "capabilities": [
-      "onoff",
-      "measure_power",
-      "meter_power",
-      "measure_current",
-      "measure_voltage"
-    ],
-    "hasBattery": false,
-    "vendor": null,
-    "description": "onoff, measure_power, meter_power, measure_current, measure_voltage",
-    "source": "Internal-Audit"
-  },
-  {
     "mfr": "_TZ3000_mw1pqqqt",
     "productId": "TS0003",
     "model": "_TZ3000_mw1pqqqt",
@@ -349,12 +328,6 @@
   },
   {
     "mfr": "_TZ3210_jowhpxop",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_pjb1ua0m",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -2256,12 +2229,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZ3000_bgsigers",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZ3000_3zofvcaa",
     "productId": null,
     "source": "Z2M",
@@ -2299,12 +2266,6 @@
   },
   {
     "mfr": "_TZ3000_gazjngjl",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_mrpevh8p",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -3072,12 +3033,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE284_gaj531w3",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE200_rsj5pu8y",
     "productId": null,
     "source": "Z2M",
@@ -3199,12 +3154,6 @@
   },
   {
     "mfr": "_TZE200_zvo63cmo",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE204_r0jdjrvi",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -4434,12 +4383,6 @@
     "driver": null
   },
   {
-    "mfr": "_TZE284_xnbkhhdr",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
     "mfr": "_TZE204_oh8y8pv8",
     "productId": null,
     "source": "Z2M",
@@ -4711,12 +4654,6 @@
   },
   {
     "mfr": "_TZE200_hkdl5fmv",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZ3000_402vrq2i",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -6859,12 +6796,6 @@
   },
   {
     "mfr": "_TZE200_grgol3xp",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_rhgsbacq",
     "productId": null,
     "source": "Z2M",
     "driver": null

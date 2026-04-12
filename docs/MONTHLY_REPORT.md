@@ -1,14 +1,14 @@
 # Monthly Tuya Zigbee Report - 2026-04
 
-*Generated: 2026-04-12T08:34:29.771Z*
+*Generated: 2026-04-12T08:58:47.642Z*
 
 ## 📊 Architectural Health [v7.0.22]
 
 | Metric | Value | Status |
 |--------|-------|--------|
 | Total Drivers | 309 | ✅ |
-| Manufacturer IDs | 255126 | ✅ |
-| Collisions | 1404 | ⚠️ |
+| Manufacturer IDs | 256533 | ✅ |
+| Collisions | 1468 | ⚠️ |
 | v7 Architectural Debt | 309 legacy drivers | 🛠️ |
 | PR Auto-Merger | Active | 🛡️ |
 | Community Responder | Template Ready | 🤖 |
@@ -17,28 +17,28 @@
 
 | ID | Drivers |
 |----|--------|
-| `_tze200_5zbp6j0u|TS0601` | air_purifier, curtain_motor |
-| `_tze200_5zbp6j0u|ts0601` | air_purifier, curtain_motor |
-| `_tze200_nkoabg8w|TS0601` | air_purifier, curtain_motor |
-| `_tze200_nkoabg8w|ts0601` | air_purifier, curtain_motor |
-| `_tze200_xuzcvlku|TS0601` | air_purifier, curtain_motor |
-| `_tze200_xuzcvlku|ts0601` | air_purifier, curtain_motor |
-| `_tze200_r0jdjrvi|TS0601` | air_purifier, curtain_motor |
-| `_tze200_r0jdjrvi|ts0601` | air_purifier, curtain_motor |
-| `_tze200_fdtjuw7u|TS0601` | air_purifier, curtain_motor |
-| `_tze200_fdtjuw7u|ts0601` | air_purifier, curtain_motor |
-| `_tze200_zpzndjez|TS0601` | air_purifier, curtain_motor |
-| `_tze200_zpzndjez|ts0601` | air_purifier, curtain_motor |
-| `_tze200_wmcdj3aq|TS0601` | air_purifier, curtain_motor |
-| `_tze200_wmcdj3aq|ts0601` | air_purifier, curtain_motor |
-| `_tze200_cowvfni3|TS0601` | air_purifier, curtain_motor |
-| `_tze200_cowvfni3|ts0601` | air_purifier, curtain_motor |
-| `_tze200_rddyvrci|TS0601` | air_purifier, curtain_motor |
-| `_tze200_rddyvrci|ts0601` | air_purifier, curtain_motor |
-| `_tze200_zah67ekd|TS0601` | air_purifier, curtain_motor |
-| `_tze200_zah67ekd|ts0601` | air_purifier, curtain_motor |
+| `_tyzb01_a476raq2|TS0601` | air_purifier, air_purifier_climate_hybrid |
+| `_tyzb01_a476raq2|ts0601` | air_purifier, air_purifier_climate_hybrid |
+| `_tyzb01_ftdkanlj|TS0601` | air_purifier, air_purifier_climate_hybrid |
+| `_tyzb01_ftdkanlj|ts0601` | air_purifier, air_purifier_climate_hybrid |
+| `_tyzb01_hjsgdkfl|TS0601` | air_purifier, air_purifier_climate_hybrid |
+| `_tyzb01_hjsgdkfl|ts0601` | air_purifier, air_purifier_climate_hybrid |
+| `_tyzb01_kvwjujy9|TS0601` | air_purifier, air_purifier_climate_hybrid |
+| `_tyzb01_kvwjujy9|ts0601` | air_purifier, air_purifier_climate_hybrid |
+| `_tz2000_a476raq2|TS0601` | air_purifier, air_purifier_climate_hybrid |
+| `_tz2000_a476raq2|ts0601` | air_purifier, air_purifier_climate_hybrid |
+| `_tz2000_xogb73am|TS0601` | air_purifier, air_purifier_climate_hybrid |
+| `_tz2000_xogb73am|ts0601` | air_purifier, air_purifier_climate_hybrid |
+| `_tz3000_0s1izerx|TS0601` | air_purifier, air_purifier_climate_hybrid |
+| `_tz3000_0s1izerx|ts0601` | air_purifier, air_purifier_climate_hybrid |
+| `_tz3000_6uzkisv2|RH3052` | air_purifier, climate_sensor |
+| `_tz3000_6uzkisv2|TS0201` | air_purifier, climate_sensor |
+| `_tz3000_6uzkisv2|TS0222` | air_purifier, climate_sensor |
+| `_tz3000_6uzkisv2|TS0601` | air_purifier, climate_sensor |
+| `_tz3000_6uzkisv2|TY0201` | air_purifier, climate_sensor |
+| `_tz3000_6uzkisv2|rh3052` | air_purifier, climate_sensor |
 
-*...and 1384 more*
+*...and 1448 more*
 
 ## 📋 Action Items
 
