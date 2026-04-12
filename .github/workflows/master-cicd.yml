@@ -134,9 +134,10 @@ jobs:
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 
-      - name: 🎯 Promote to Test
+      - name: 🎯 Promote to Test (Puppeteer)
         if: steps.publish.outcome == 'success' && (github.event.inputs.promote != 'false')
-        id: promote
+        id: promote_puppeteer
+        continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
@@ -144,7 +145,15 @@ jobs:
         run: |
           echo "Waiting for build processing..."
           sleep 90
+          npm install puppeteer --no-save
           node .github/scripts/auto-promote-puppeteer.js
+
+      - name: 🎯 Promote to Test (API Fallback)
+        if: steps.publish.outcome == 'success' && (github.event.inputs.promote != 'false') && steps.promote_puppeteer.outcome != 'success'
+        id: promote_api
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/auto-publish-draft.js
 
       - name: 🐙 Create Release
         if: steps.publish.outcome == 'success'
@@ -158,7 +167,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
       - name: 💬 Post to Forum
-        if: steps.promote.outcome == 'success' && (github.event.inputs.post_forum != 'false')
+        if: (steps.promote_puppeteer.outcome == 'success' || steps.promote_api.outcome == 'success') && (github.event.inputs.post_forum != 'false')
         continue-on-error: true
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
@@ -175,4 +184,5 @@ jobs:
           echo "Version | v${{ env.NEW_VERSION || 'N/A' }}" >> $GITHUB_STEP_SUMMARY
           echo "Validation | ${{ needs.validate.result }}" >> $GITHUB_STEP_SUMMARY
           echo "Publish | ${{ steps.publish.outcome }}" >> $GITHUB_STEP_SUMMARY
-          echo "Promotion | ${{ steps.promote.outcome }}" >> $GITHUB_STEP_SUMMARY
+          echo "Promotion (Puppeteer) | ${{ steps.promote_puppeteer.outcome || 'skipped' }}" >> $GITHUB_STEP_SUMMARY
+          echo "Promotion (API) | ${{ steps.promote_api.outcome || 'skipped' }}" >> $GITHUB_STEP_SUMMARY
