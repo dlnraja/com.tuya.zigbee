@@ -83,7 +83,7 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
         const direction = stepMode === 0 ? 'up' : 'down';
         try {
       this._getFlowCard('smart_knob_rotated')?.trigger(this, { direction, level: pct }, {}).catch(() => {})
-      this._getFlowCard('smart_knob_level_changed')
+      this._getFlowCard('smart_knob_level_changed')?.trigger(this, {}, {}).catch(this.error || console.error)
         } catch (e) { /* card missing */ }
       });
     }
@@ -111,7 +111,7 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
 
     const card = { single: 'smart_knob_single_press', double: 'smart_knob_double_press', long: 'smart_knob_long_press' }[pressType];
     if (card) {
-      this._getFlowCard(card)
+      this._getFlowCard(card)?.trigger(this, {}, {}).catch(this.error || console.error)
     }
   }
 

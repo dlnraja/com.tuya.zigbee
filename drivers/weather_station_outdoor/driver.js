@@ -9,18 +9,24 @@ const Homey = require('homey');
 class WeatherStationOutdoorDriver extends Homey.Driver {
 
   async onInit() {
-    this.homey.flow.getTriggerCard('weather_station_outdoor_battery_low');
-    this.homey.flow.getTriggerCard('weather_station_outdoor_pressure_changed');
-    this.homey.flow.getTriggerCard('weather_station_outdoor_outdoor_humidity_changed');
-    this.homey.flow.getTriggerCard('weather_station_outdoor_outdoor_temperature_changed');
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+
+
+
     this.log('WeatherStationOutdoorDriver v5.5.581 initialized');
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
     // CONDITION: Outdoor temp above
     try {
-      this.homey.flow.getConditionCard('weather_station_outdoor_outdoor_temp_above')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const temp = args.device.getCapabilityValue('measure_temperature') || 0;
@@ -31,7 +37,7 @@ class WeatherStationOutdoorDriver extends Homey.Driver {
 
     // CONDITION: Outdoor temp below
     try {
-      this.homey.flow.getConditionCard('weather_station_outdoor_outdoor_temp_below')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const temp = args.device.getCapabilityValue('measure_temperature') || 0;
@@ -42,7 +48,7 @@ class WeatherStationOutdoorDriver extends Homey.Driver {
 
     // CONDITION: Pressure rising
     try {
-      this.homey.flow.getConditionCard('weather_station_outdoor_pressure_rising')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const trend = args.device.getStoreValue('pressure_trend') || 'stable';
@@ -53,7 +59,7 @@ class WeatherStationOutdoorDriver extends Homey.Driver {
 
     // CONDITION: Pressure falling
     try {
-      this.homey.flow.getConditionCard('weather_station_outdoor_pressure_falling')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const trend = args.device.getStoreValue('pressure_trend') || 'stable';

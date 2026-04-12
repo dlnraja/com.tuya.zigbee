@@ -17,7 +17,14 @@ class LCDTempHumidSensorDriver extends ZigBeeDriver {
   }
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('LCD Temp Humid Sensor driver initialized');
+  
+  
+  
   }
 }
 

@@ -382,17 +382,17 @@ class WiFiCameraDevice extends Homey.Device {
   _registerFlowCards() {
     try {
       const privacyCard =
-      this._getFlowCard('wifi_camera_set_privacy', 'action')
+      this._getFlowCard('wifi_camera_set_privacy')?.trigger(this, {}, {}).catch(this.error || console.error)
       privacyCard.registerRunListener(async (args) => {
         await this._setDP(DP.PRIVACY_MODE, args.mode === 'on');
       });
       const nvCard =
-      this._getFlowCard('wifi_camera_set_night_vision', 'action')
+      this._getFlowCard('wifi_camera_set_night_vision')?.trigger(this, {}, {}).catch(this.error || console.error)
       nvCard.registerRunListener(async (args) => {
         await this._setDP(DP.NIGHT_VISION, parseInt(args.mode, 10));
       });
       const ptzCard =
-      this._getFlowCard('wifi_camera_ptz_move', 'action')
+      this._getFlowCard('wifi_camera_ptz_move')?.trigger(this, {}, {}).catch(this.error || console.error)
       ptzCard.registerRunListener(async (args) => {
         await this._setDP(DP.PTZ_CONTROL, args.direction);
         setTimeout(() => this._setDP(DP.PTZ_STOP, true).catch(() => {}), 1000);

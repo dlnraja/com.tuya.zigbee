@@ -17,9 +17,16 @@ class PowerClampMeterDriver extends Driver {
   }
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('Power Clamp Meter driver initialized');
     // v5.13.3: Flow card handlers
-      this.homey.flow.getActionCard('power_clamp_meter_reset_meter')
+
+  
+  
+  
   }
 }
 

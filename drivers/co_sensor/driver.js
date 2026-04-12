@@ -21,14 +21,21 @@ class CoSensorDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('CoSensorDriver v5.5.570 initialized');
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
     // CONDITION: CO is/is not detected
     try {
-      this.homey.flow.getConditionCard('co_sensor_co_detected')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_co') === true;
@@ -38,7 +45,7 @@ class CoSensorDriver extends ZigBeeDriver {
 
     // CONDITION: CO level above threshold
     try {
-      this.homey.flow.getConditionCard('co_sensor_co_above')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const level = args.device.getCapabilityValue('measure_co') || 0;
@@ -49,7 +56,7 @@ class CoSensorDriver extends ZigBeeDriver {
 
     // CONDITION: Battery above threshold
     try {
-      this.homey.flow.getConditionCard('co_sensor_battery_above')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
@@ -60,7 +67,7 @@ class CoSensorDriver extends ZigBeeDriver {
 
     // ACTION: Test alarm
     try {
-      this.homey.flow.getActionCard('co_sensor_test_alarm')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           try {

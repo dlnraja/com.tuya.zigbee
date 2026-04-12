@@ -17,7 +17,14 @@ class IlluminanceSensorDriver extends Driver {
   }
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('Illuminance Sensor driver initialized');
+  
+  
+  
   }
 }
 

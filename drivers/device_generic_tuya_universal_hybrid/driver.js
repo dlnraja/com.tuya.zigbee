@@ -25,15 +25,22 @@ class GenericTuyaDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('Generic Tuya Driver v5.5.583 initialized');
     this.log('This driver handles unknown TS0601 devices with auto-discovery');
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
     // CONDITION: Battery above
     try {
-      this.homey.flow.getConditionCard('generic_tuya_battery_above')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
@@ -44,7 +51,7 @@ class GenericTuyaDriver extends ZigBeeDriver {
 
     // ACTION: Request DP
     try {
-      this.homey.flow.getActionCard('generic_tuya_request_dp')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           try {

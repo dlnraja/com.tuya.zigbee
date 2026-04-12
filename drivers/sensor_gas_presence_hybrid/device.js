@@ -1913,12 +1913,12 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       if (detected) {
         // v5.5.926: Fixed flow card IDs - must match driver.flow.compose.json
         // Trigger: sensor_gas_presence_hybrid_presence_sensor_radar_presence_detected
-        this._getFlowCard('sensor_gas_presence_hybrid_presence_sensor_radar_presence_detected')
+        this._getFlowCard('sensor_gas_presence_hybrid_presence_sensor_radar_presence_detected')?.trigger(this, {}, {}).catch(this.error || console.error)
         this.log('[RADAR-FLOW] ✅ Triggered: sensor_gas_presence_hybrid_presence_sensor_radar_presence_detected');
       } else {
         // v5.5.926: Fixed flow card IDs - must match driver.flow.compose.json
         // Trigger: sensor_gas_presence_hybrid_presence_sensor_radar_presence_cleared
-        this._getFlowCard('sensor_gas_presence_hybrid_presence_sensor_radar_presence_cleared')
+        this._getFlowCard('sensor_gas_presence_hybrid_presence_sensor_radar_presence_cleared')?.trigger(this, {}, {}).catch(this.error || console.error)
         this.log('[RADAR-FLOW] ✅ Triggered: sensor_gas_presence_hybrid_presence_sensor_radar_presence_cleared');
       }
     } catch (err) {

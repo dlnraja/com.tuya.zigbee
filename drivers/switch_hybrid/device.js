@@ -365,7 +365,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
             const flowId = `switch_2gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
             try {
               const card =
-      this._getFlowCard(flowId)
+      this._getFlowCard(flowId)?.trigger(this, {}, {}).catch(this.error || console.error)
               if (card) await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
               this.log(`[BSEED-2G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
             } catch (e) { }
@@ -374,7 +374,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
             const sceneId = `switch_2gang_gang${epNum}_scene`;
             try {
               const card =
-      this._getFlowCard(sceneId)
+      this._getFlowCard(sceneId)?.trigger(this, {}, {}).catch(this.error || console.error)
               if (card) await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
               this.log(`[BSEED-2G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
             } catch (e) { }

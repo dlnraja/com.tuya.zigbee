@@ -3,15 +3,22 @@ const Homey = require('homey');
 
 class WaterValveGardenDriver extends Homey.Driver {
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('WaterValveGardenDriver v5.9.21 initialized');
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
     const safeRegister = (type, id, handler) => {
       try {
         const card = type === 'condition' ?
-      this.homey.flow.getConditionCard(id) : this.homey.flow.getActionCard(id)
+
         if (card) card.registerRunListener(handler);
       } catch (e) { this.log(`[FLOW] Failed to register ${id}: ${e.message}`); }
     };

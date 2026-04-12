@@ -1,4 +1,4 @@
-name: MASTER CI/CD Pipeline
+name: "🌌 NEXUS AWAKENING — Master CI/CD"
 
 on:
   push:
@@ -70,9 +70,13 @@ jobs:
       - name: Homey Validate
         run: npx homey app validate --level publish
 
-      - name: 🛡️ Autonomous Maintenance Guard
+      - name: "🧪 Autonomous Self-Healing Audit"
         continue-on-error: true
         run: |
+          echo "### 🌌 Nexus Proxima Intelligence" >> $GITHUB_STEP_SUMMARY
+          echo "Running fleet-wide stabilization..." >> $GITHUB_STEP_SUMMARY
+          node scripts/fixes/ULTIMATE_DRIVER_STABILIZER.js
+          
           echo "=== 🛡️ Checking Composite Identities ==="
           node scripts/maintenance/rule-21-linter.js
           node scripts/automation/fingerprint-broadener.js

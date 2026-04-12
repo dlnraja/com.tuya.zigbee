@@ -21,14 +21,21 @@ class ZbbridgeDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('ZbbridgeDriver v5.5.582 initialized');
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
     // CONDITION: Is connected
     try {
-      this.homey.flow.getConditionCard('gateway_zigbee_bridge_is_connected')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getAvailable() === true;
@@ -38,7 +45,7 @@ class ZbbridgeDriver extends ZigBeeDriver {
 
     // ACTION: Permit join
     try {
-      this.homey.flow.getActionCard('gateway_zigbee_bridge_permit_join')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           this.log('[FLOW] Permit join requested');
@@ -49,7 +56,7 @@ class ZbbridgeDriver extends ZigBeeDriver {
 
     // ACTION: Disable join
     try {
-      this.homey.flow.getActionCard('gateway_zigbee_bridge_disable_join')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           this.log('[FLOW] Disable join requested');

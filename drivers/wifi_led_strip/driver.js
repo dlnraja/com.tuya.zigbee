@@ -16,8 +16,19 @@ class WiFiLedStripDriver extends TuyaLocalDriver {
 
   async onInit() {
     await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    
     // v5.13.3: Flow card handlers
-      this.homey.flow.getActionCard('wifi_led_strip_set_color')
+
+  
+  
+  
   }
 }
 module.exports = WiFiLedStripDriver;

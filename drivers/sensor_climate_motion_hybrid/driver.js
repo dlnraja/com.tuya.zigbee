@@ -23,27 +23,38 @@ class MotionSensorDriver extends ZigBeeDriver {
 
   async onInit() {
     await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    
     this.log('MotionSensorDriver v5.5.564 initializing...');
 
     try {
       // ═══════════════════════════════════════════════════════════════
       // TRIGGER CARDS - All triggers from driver.flow.compose.json
       // ═══════════════════════════════════════════════════════════════
-      this.homey.flow.getTriggerCard('motion_sensor_motion_detected')
-      this.homey.flow.getTriggerCard('motion_sensor_motion_cleared')
-      this.homey.flow.getTriggerCard('motion_sensor_battery_low')
-      this.homey.flow.getTriggerCard('motion_sensor_battery_changed')
-      this.homey.flow.getTriggerCard('motion_sensor_lux_changed')
+
+
+
+
+
 
       // ═══════════════════════════════════════════════════════════════
       // CONDITION CARDS - with device validation
       // ═══════════════════════════════════════════════════════════════
-      this.homey.flow.getConditionCard('motion_sensor_motion_active')
+
       this.motionActiveCondition?.registerRunListener(async (args) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');
           return false;
-        }
+        
+  
+  
+  }
         return args.device.getCapabilityValue('alarm_motion') === true;
       });
 

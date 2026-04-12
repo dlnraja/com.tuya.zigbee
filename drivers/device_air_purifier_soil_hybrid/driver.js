@@ -28,6 +28,10 @@ class SoilSensorDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('╔══════════════════════════════════════════════════════════════╗');
     this.log('║    SOIL SENSOR DRIVER v5.5.564 - SAFE FLOW REGISTRATION     ║');
     this.log('╚══════════════════════════════════════════════════════════════╝');
@@ -39,8 +43,11 @@ class SoilSensorDriver extends ZigBeeDriver {
     const safeGetTrigger = (id) => {
       try {
         return
-      this.homey.flow.getTriggerCard(id)
-      } catch (e) {
+
+      
+  
+  
+  } catch (e) {
         this.log(`[FLOW] Trigger '${id}' not defined - skipping`);
         return null;
       }
@@ -49,7 +56,7 @@ class SoilSensorDriver extends ZigBeeDriver {
     const safeGetCondition = (id) => {
       try {
         return
-      this.homey.flow.getConditionCard(id)
+
       } catch (e) {
         this.log(`[FLOW] Condition '${id}' not defined - skipping`);
         return null;

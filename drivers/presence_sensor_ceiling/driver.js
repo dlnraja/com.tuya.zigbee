@@ -18,12 +18,23 @@ class CeilingPresenceSensorDriver extends ZigBeeDriver {
 
   async onInit() {
     await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    
     this.log('Ceiling Presence Sensor Driver v5.13.3 initialized');
 
     // v5.13.3: Register flow card action handlers
     const reg = (id, fn) => {
       try {
-      this.homey.flow.getActionCard(id).registerRunListener(fn) }
+      this.homey.flow.getActionCard(id).registerRunListener(fn) 
+  
+  
+  }
       catch (e) { this.log('[Flow]', id, e.message); }
     };
     reg('presence_sensor_ceiling_turn_on', async ({ device }) => { await device.triggerCapabilityListener('onoff', true); return true; });

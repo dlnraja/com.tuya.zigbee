@@ -23,14 +23,20 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
 
 
   async onInit() {
-    this.homey.flow.getTriggerCard('wall_switch_2gang_1way_gang2_scene');
-    this.homey.flow.getTriggerCard('wall_switch_2gang_1way_gang1_scene');
-    this.homey.flow.getTriggerCard('wall_switch_2gang_1way_physical_gang2_off');
-    this.homey.flow.getTriggerCard('wall_switch_2gang_1way_physical_gang2_on');
-    this.homey.flow.getTriggerCard('wall_switch_2gang_1way_physical_gang1_off');
-    this.homey.flow.getTriggerCard('wall_switch_2gang_1way_physical_gang1_on');
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+
+
+
+
+
     this.log('Wall Switch 2-Gang 1-Way Driver initialized');
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
@@ -49,7 +55,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set backlight mode
     try {
-      this.homey.flow.getActionCard(`${P}_set_backlight`)
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setBacklightMode(args.mode);
@@ -60,7 +66,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set scene mode
     try {
-      this.homey.flow.getActionCard(`${P}_set_scene_mode`)
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSceneMode(args.mode);
@@ -134,7 +140,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set power-on behavior (v5.11.30)
     try {
-      this.homey.flow.getActionCard(`${P}_set_power_on_behavior`)
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ power_on_behavior: args.mode });
@@ -150,7 +156,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set external switch type (v5.11.30)
     try {
-      this.homey.flow.getActionCard(`${P}_set_switch_mode`)
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ switch_mode: args.mode });

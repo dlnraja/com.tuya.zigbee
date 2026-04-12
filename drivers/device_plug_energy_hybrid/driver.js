@@ -21,15 +21,22 @@ class PlugSmartDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('PlugSmartDriver v5.5.570 initialized');
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
     // CONDITION: Plug is/is not on
     try {
       (() => { try { return
-      this.homey.flow.getConditionCard('plug_smart_is_on') } catch(e) { return null; } })()
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -40,7 +47,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     // ACTION: Turn on
     try {
       (() => { try { return
-      this.homey.flow.getActionCard('plug_smart_turn_on') } catch(e) { return null; } })()
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -53,7 +60,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     // ACTION: Turn off
     try {
       (() => { try { return
-      this.homey.flow.getActionCard('plug_smart_turn_off') } catch(e) { return null; } })()
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -66,7 +73,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     // ACTION: Toggle
     try {
       (() => { try { return
-      this.homey.flow.getActionCard('plug_smart_toggle') } catch(e) { return null; } })()
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
@@ -80,7 +87,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     // ACTION: Turn on after delay
     try {
       (() => { try { return
-      this.homey.flow.getActionCard('plug_smart_turn_on_delay') } catch(e) { return null; } })()
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const delay = (args.delay || 10) * 1000;
@@ -93,7 +100,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     // ACTION: Turn off after delay
     try {
       (() => { try { return
-      this.homey.flow.getActionCard('plug_smart_turn_off_delay') } catch(e) { return null; } })()
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const delay = (args.delay || 10) * 1000;

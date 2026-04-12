@@ -411,7 +411,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
 
     // Trigger flow card
       const rotateLeftTrigger =
-      this._getFlowCard('smart_knob_rotary_hybrid_rotate_left')
+      this._getFlowCard('smart_knob_rotary_hybrid_rotate_left')?.trigger(this, {}, {}).catch(this.error || console.error)
     if (rotateLeftTrigger) {
       await rotateLeftTrigger.trigger(this, { 
         brightness: Math.round(this._simulatedBrightness * 100) 
@@ -431,7 +431,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
 
     // Trigger flow card
       const rotateRightTrigger =
-      this._getFlowCard('smart_knob_rotary_hybrid_rotate_right')
+      this._getFlowCard('smart_knob_rotary_hybrid_rotate_right')?.trigger(this, {}, {}).catch(this.error || console.error)
     if (rotateRightTrigger) {
       await rotateRightTrigger.trigger(this, { 
         brightness: Math.round(this._simulatedBrightness * 100) 
@@ -451,7 +451,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
 
     // Trigger generic flow card with action token
     try {
-      this._getFlowCard('smart_knob_rotary_hybrid_pressed')
+      this._getFlowCard('smart_knob_rotary_hybrid_pressed')?.trigger(this, {}, {}).catch(this.error || console.error)
     } catch (e) { /* ignore */ }
 
     // v5.7.11: Trigger specific flow cards based on action type
@@ -467,7 +467,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     if (specificCardId) {
       try {
         await
-      this._getFlowCard(specificCardId)
+      this._getFlowCard(specificCardId)?.trigger(this, {}, {}).catch(this.error || console.error)
         this.log(`[FLOW] ✅ Triggered ${specificCardId}`);
       } catch (e) { /* ignore */ }
     }

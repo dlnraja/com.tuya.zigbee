@@ -17,7 +17,14 @@ class TuyaComprehensiveAirMonitorDriver extends ZigBeeDriver {
   }
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('TuyaComprehensiveAirMonitorDriver initialized');
+  
+  
+  
   }
 }
 

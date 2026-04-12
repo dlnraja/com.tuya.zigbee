@@ -18,9 +18,16 @@ class Thermostat4chDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('Thermostat4chDriver initialized');
     // v5.13.3: Register flow card action handlers
-    const reg=(id,fn)=>{try{this.homey.flow.getActionCard(id).registerRunListener(fn);}catch(e){this.log('[Flow]',id,e.message);}};
+    const reg=(id,fn)=>{try{this.homey.flow.getActionCard(id).registerRunListener(fn);
+  
+  
+  }catch(e){this.log('[Flow]',id,e.message);}};
     reg('thermostat_4ch_turn_on',async({device})=>{await device.triggerCapabilityListener('onoff',true);return true;});
     reg('thermostat_4ch_turn_off',async({device})=>{await device.triggerCapabilityListener('onoff',false);return true;});
     reg('thermostat_4ch_toggle',async({device})=>{const v=device.getCapabilityValue('onoff');await device.triggerCapabilityListener('onoff',!v);return true;});

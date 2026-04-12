@@ -20,24 +20,34 @@ class Dimmer3GangDriver extends ZigBeeDriver {
   }
 
   async onInit() {
-    this.homey.flow.getTriggerCard('dimmer_3gang_gang3_scene');
-    this.homey.flow.getTriggerCard('dimmer_3gang_gang2_scene');
-    this.homey.flow.getTriggerCard('dimmer_3gang_gang1_scene');
-    this.homey.flow.getTriggerCard('dimmer_3gang_physical_gang3_off');
-    this.homey.flow.getTriggerCard('dimmer_3gang_physical_gang3_on');
-    this.homey.flow.getTriggerCard('dimmer_3gang_physical_gang2_off');
-    this.homey.flow.getTriggerCard('dimmer_3gang_physical_gang2_on');
-    this.homey.flow.getTriggerCard('dimmer_3gang_physical_gang1_off');
-    this.homey.flow.getTriggerCard('dimmer_3gang_physical_gang1_on');
-    await super.onInit(); // v5.5.534: SDK3 CRITICAL
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+
+
+
+
+
+
+
+
+     // v5.5.534: SDK3 CRITICAL
     this.log('3-Gang Dimmer Driver v5.5.534 initialized');
     // v5.13.3: Register flow card action handlers
     const reg = (id, fn) => { try {
-      this.homey.flow.getActionCard(id).registerRunListener(fn) } catch (e) { this.log('[Flow]', id, e.message); } };
+      this.homey.flow.getActionCard(id).registerRunListener(fn) 
+  
+  
+  } catch (e) { this.log('[Flow]', id, e.message); } };
     reg('dimmer_3gang_turn_on', async ({ device }) => { await device.triggerCapabilityListener('onoff', true); return true; });
     // v5.13.3: Condition handler
-      this.homey.flow.getConditionCard('dimmer_3gang_is_on')
-      this.homey.flow.getActionCard('dimmer_3gang_set_brightness')
+
+
 
     reg('dimmer_3gang_turn_off', async ({ device }) => { await device.triggerCapabilityListener('onoff', false); return true; });
     reg('dimmer_3gang_toggle', async ({ device }) => { const v = device.getCapabilityValue('onoff'); await device.triggerCapabilityListener('onoff', !v); return true; });

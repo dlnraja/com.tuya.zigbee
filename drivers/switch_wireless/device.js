@@ -53,8 +53,8 @@ class SwitchWirelessDevice extends HybridSwitchBase {
       const c = { single: 'switch_wireless_single_press', double: 'switch_wireless_double_press', long: 'switch_wireless_long_press' }[pressType];
       if (c) {
         try {
-      this._getFlowCard(c)
-      this._getFlowCard('switch_wireless_button_pressed')
+      this._getFlowCard(c)?.trigger(this, {}, {}).catch(this.error || console.error)
+      this._getFlowCard('switch_wireless_button_pressed')?.trigger(this, {}, {}).catch(this.error || console.error)
         } catch (e) { /* card missing */ }
       }
       return;

@@ -21,14 +21,21 @@ class AirQualityCO2Driver extends ZigBeeDriver {
 
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('AirQualityCO2Driver v5.5.584 initialized');
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
     // CONDITION: CO2 above
     try {
-      this.homey.flow.getConditionCard('air_quality_co2_co2_above')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const co2 = args.device.getCapabilityValue('measure_co2') || 0;
@@ -39,7 +46,7 @@ class AirQualityCO2Driver extends ZigBeeDriver {
 
     // CONDITION: CO2 below
     try {
-      this.homey.flow.getConditionCard('air_quality_co2_co2_below')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const co2 = args.device.getCapabilityValue('measure_co2') || 0;
@@ -50,7 +57,7 @@ class AirQualityCO2Driver extends ZigBeeDriver {
 
     // CONDITION: Air quality good
     try {
-      this.homey.flow.getConditionCard('air_quality_co2_air_quality_good')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const co2 = args.device.getCapabilityValue('measure_co2') || 0;

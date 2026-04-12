@@ -22,16 +22,25 @@ class UsbOutletAdvancedDriver extends ZigBeeDriver {
 
 
   async onInit() {
-    this.homey.flow.getTriggerCard('usb_outlet_button_pressed');
-    this.log('UsbOutletAdvancedDriver v5.5.575 initializing...');
     await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    this.log('UsbOutletAdvancedDriver v5.5.575 initializing...');
+    
 
     // Safe flow card registration helper
     const safeGetTrigger = (id) => {
       try {
-        return
-      this.homey.flow.getTriggerCard(id) ;
-      } catch (e) {
+        return this.homey.flow.getTriggerCard(id) ;
+      
+  
+  
+  } catch (e) {
         this.log(`[FLOW] Trigger '${id}' not defined - skipping`);
         return null;
       }
@@ -54,7 +63,7 @@ class UsbOutletAdvancedDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is on
     try {
-      this.homey.flow.getConditionCard('usb_outlet_advanced_is_on')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -64,7 +73,7 @@ class UsbOutletAdvancedDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      this.homey.flow.getActionCard('usb_outlet_advanced_turn_on')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -76,7 +85,7 @@ class UsbOutletAdvancedDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      this.homey.flow.getActionCard('usb_outlet_advanced_turn_off')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -88,7 +97,7 @@ class UsbOutletAdvancedDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      this.homey.flow.getActionCard('usb_outlet_advanced_toggle')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');

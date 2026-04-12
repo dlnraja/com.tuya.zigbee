@@ -21,14 +21,21 @@ class RadiatorValveDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('RadiatorValveDriver v5.5.572 initialized');
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
     // ACTION: Set target temperature
     try {
-      this.homey.flow.getActionCard('radiator_valve_set_target_temperature')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('target_temperature', args.temperature);

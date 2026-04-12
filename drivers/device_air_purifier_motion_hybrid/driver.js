@@ -16,14 +16,21 @@ class AirPurifierDriver extends ZigBeeDriver {
   }
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('Air Purifier Driver initialized');
     
     const safeRegister = (type, id, handler) => {
       try {
         const card = type === 'trigger' ?
-      this.homey.flow.getActionCard(id) : this.homey.flow.getTriggerCard(id)
+
         if (card && handler) card.registerRunListener(handler);
-      } catch (e) { this.error(`[FLOW] Failed to register ${id}: ${e.message}`); }
+      
+  
+  
+  } catch (e) { this.error(`[FLOW] Failed to register ${id}: ${e.message}`); }
     };
 
     // Pre-cache triggers

@@ -21,14 +21,21 @@ class DoorControllerDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('DoorControllerDriver v5.5.575 initialized');
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
     // CONDITION: Door is open
     try {
-      this.homey.flow.getConditionCard('door_controller_is_open')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_contact') === true;
@@ -38,7 +45,7 @@ class DoorControllerDriver extends ZigBeeDriver {
 
     // CONDITION: Door is locked
     try {
-      this.homey.flow.getConditionCard('door_controller_is_locked')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('locked') === true;
@@ -48,7 +55,7 @@ class DoorControllerDriver extends ZigBeeDriver {
 
     // ACTION: Open door
     try {
-      this.homey.flow.getActionCard('door_controller_open')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -60,7 +67,7 @@ class DoorControllerDriver extends ZigBeeDriver {
 
     // ACTION: Close door
     try {
-      this.homey.flow.getActionCard('door_controller_close')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -72,7 +79,7 @@ class DoorControllerDriver extends ZigBeeDriver {
 
     // ACTION: Lock door
     try {
-      this.homey.flow.getActionCard('door_controller_lock')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('locked', true);
@@ -83,7 +90,7 @@ class DoorControllerDriver extends ZigBeeDriver {
 
     // ACTION: Unlock door
     try {
-      this.homey.flow.getActionCard('door_controller_unlock')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('locked', false);

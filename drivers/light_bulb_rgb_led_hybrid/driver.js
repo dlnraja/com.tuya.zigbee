@@ -26,6 +26,14 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
 
   async onInit() {
     await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    
     this.log('SmartBulbRgbDriver v5.5.574 initialized');
 
     // Register all flow cards
@@ -38,12 +46,15 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
     this._registerSetColorTempKelvinAction();
 
     this.log('[RGB-DRIVER] ✅ Flow cards registered');
+  
+  
+  
   }
 
   _registerFlowCards() {
     // CONDITION: Is on/off
     try {
-      this.homey.flow.getConditionCard('bulb_rgb_smart_bulb_rgb_is_on')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -53,7 +64,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      this.homey.flow.getActionCard('bulb_rgb_smart_bulb_rgb_turn_on')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -65,7 +76,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      this.homey.flow.getActionCard('bulb_rgb_smart_bulb_rgb_turn_off')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -77,7 +88,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      this.homey.flow.getActionCard('bulb_rgb_smart_bulb_rgb_toggle')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
@@ -90,7 +101,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
 
     // ACTION: Set brightness
     try {
-      this.homey.flow.getActionCard('bulb_rgb_smart_bulb_rgb_set_dim')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('dim', args.brightness);
@@ -109,7 +120,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
   _registerSetColorTempKelvinAction() {
     try {
       const action =
-      this.homey.flow.getActionCard('set_color_temp_kelvin')
+
       if (!action) return;
 
       action.registerRunListener(async (args) => {

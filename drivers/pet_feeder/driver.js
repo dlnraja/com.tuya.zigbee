@@ -15,11 +15,18 @@ class PetFeederDriver extends Driver {
   }
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.homey.flow.getConditionCard('pet_feeder_food_ok').registerRunListener(async (args, state) => {
       return args.device.getCapabilityValue('alarm_generic') === false;
-    });
-    this.homey.flow.getTriggerCard('pet_feeder_food_low');
-    this.homey.flow.getTriggerCard('pet_feeder_fed');
+    
+  
+  
+  });
+
+
     this.log('Pet Feeder driver initialized');
     // v5.13.3: Flow card handlers
     this.homey.flow.getActionCard('pet_feeder_feed_now').registerRunListener(async (args, state) => {

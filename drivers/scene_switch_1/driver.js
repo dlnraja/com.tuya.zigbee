@@ -18,15 +18,22 @@ class SceneSwitch1Driver extends ZigBeeDriver {
 
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('SceneSwitch1Driver initialized');
 
     // Register flow triggers
-      this.homey.flow.getTriggerCard('scene_switch_1_button_pressed')
-      this.homey.flow.getTriggerCard('scene_switch_1_button_double_press')
-      this.homey.flow.getTriggerCard('scene_switch_1_button_long_press')
-      this.homey.flow.getTriggerCard('scene_switch_1_battery_changed')
+
+
+
+
 
     this.log('SceneSwitch1Driver flow triggers registered');
+  
+  
+  
   }
 
   triggerButtonPressed(device) {

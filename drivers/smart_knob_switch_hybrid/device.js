@@ -67,14 +67,14 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
         this.setCapabilityValue('dim', dim).catch(() => {});
         this.log('[KNOB] Level:', pct + '%');
         const trigger =
-      this._getFlowCard('smart_knob_rotated')
+      this._getFlowCard('smart_knob_rotated')?.trigger(this, {}, {}).catch(this.error || console.error)
         if (trigger) trigger.trigger(this, { level: pct }, {}).catch(() => {});
       });
       level.on('commandMove', ({ moveMode, rate }) => {
         const direction = moveMode === 0 ? 'up' : 'down';
         this.log('[KNOB] Move ' + direction + ' rate:' + rate);
         const trigger =
-      this._getFlowCard('smart_knob_rotated_direction')
+      this._getFlowCard('smart_knob_rotated_direction')?.trigger(this, {}, {}).catch(this.error || console.error)
         if (trigger) trigger.trigger(this, { direction, level: this.getCapabilityValue('dim') ? Math.round(this.getCapabilityValue('dim') * 100) : 0 }, {}).catch(() => {});
       });
       level.on('commandStep', ({ stepMode, stepSize }) => {
@@ -86,10 +86,10 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
         this.log('[KNOB] Step to:', pct + '%');
         const direction = stepMode === 0 ? 'up' : 'down';
         const triggerDir =
-      this._getFlowCard('smart_knob_rotated_direction')
+      this._getFlowCard('smart_knob_rotated_direction')?.trigger(this, {}, {}).catch(this.error || console.error)
         if (triggerDir) triggerDir.trigger(this, { direction, level: pct }, {}).catch(() => {});
         const triggerRot =
-      this._getFlowCard('smart_knob_rotated')
+      this._getFlowCard('smart_knob_rotated')?.trigger(this, {}, {}).catch(this.error || console.error)
         if (triggerRot) triggerRot.trigger(this, { level: pct }, {}).catch(() => {});
       });
     }
@@ -114,13 +114,13 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
     this.setCapabilityValue('button', true).catch(() => {});
     this.log(`[KNOB] 🔘 ${pressType.toUpperCase()} press`);
     const mainTrigger =
-      this._getFlowCard('smart_knob_pressed')
+      this._getFlowCard('smart_knob_pressed')?.trigger(this, {}, {}).catch(this.error || console.error)
     if (mainTrigger) mainTrigger.trigger(this, { press_type: pressType }, {}).catch(() => {});
     
     const specificId = { single: 'smart_knob_single_press', double: 'smart_knob_double_press', long: 'smart_knob_long_press' }[pressType];
     if (specificId) {
       const specTrigger =
-      this._getFlowCard(specificId, 'trigger')
+      this._getFlowCard(specificId)?.trigger(this, {}, {}).catch(this.error || console.error)
       if (specTrigger) specTrigger
     }
   }

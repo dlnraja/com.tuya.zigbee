@@ -21,14 +21,21 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('PlugEnergyMonitorDriver v5.5.572 initialized');
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
     // CONDITION: Plug is on/off
     try {
-      this.homey.flow.getConditionCard('plug_energy_monitor_is_on')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -38,7 +45,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // CONDITION: Power above threshold
     try {
-      this.homey.flow.getConditionCard('plug_energy_monitor_power_above')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const power = args.device.getCapabilityValue('measure_power') || 0;
@@ -49,7 +56,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // CONDITION: Energy above threshold
     try {
-      this.homey.flow.getConditionCard('plug_energy_monitor_energy_above')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const energy = args.device.getCapabilityValue('meter_power') || 0;
@@ -60,7 +67,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      this.homey.flow.getActionCard('plug_energy_monitor_turn_on')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -72,7 +79,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      this.homey.flow.getActionCard('plug_energy_monitor_turn_off')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -84,7 +91,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      this.homey.flow.getActionCard('plug_energy_monitor_toggle')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
@@ -97,7 +104,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // ACTION: Reset energy meter
     try {
-      this.homey.flow.getActionCard('plug_energy_monitor_reset_meter')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('meter_power', 0);

@@ -26,7 +26,15 @@ class Button1GangDriver extends ZigBeeDriver {
 
 
   async onInit() {
-    await super.onInit(); // v5.5.533: SDK3 CRITICAL - must call super first!
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+     // v5.5.533: SDK3 CRITICAL - must call super first!
     this.log('Button1GangDriver v5.5.533 initialized');
 
     // v5.5.533: Register flow cards with CORRECT IDs matching driver.flow.compose.json
@@ -46,7 +54,10 @@ class Button1GangDriver extends ZigBeeDriver {
           if (card) {
             card.registerRunListener(async (args, state) => {
               if (!args.device) {
-                this.error(`[FLOW] Device not found for ${triggerId}`);
+                this.error(`[FLOW] Device not found for ${triggerId
+  
+  
+  }`);
                 return false;
               }
               return true;

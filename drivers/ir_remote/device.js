@@ -310,12 +310,12 @@ class IRRemoteDevice extends ZigBeeDevice {
 
       // Trigger flow
       const trigger =
-      this._getFlowCard('ir_code_received')
+      this._getFlowCard('ir_code_received')?.trigger(this, {}, {}).catch(this.error || console.error)
       if (trigger) {
         trigger.trigger(this, { ir_code: keyCode }, {})
           .catch(err => this.error('[IR-RX] Flow trigger err:', err.message));
       } else {
-      this._getFlowCard('ir_code_received')
+      this._getFlowCard('ir_code_received')?.trigger(this, {}, {}).catch(this.error || console.error)
           .catch(err => this.error('[IR-RX] Flow trigger fallback err:', err.message));
       }
 

@@ -18,7 +18,14 @@ class GenericDIYDriver extends Driver {
 
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('Generic DIY Zigbee Driver initialized');
+  
+  
+  
   }
 
   async onPairListDevices() {

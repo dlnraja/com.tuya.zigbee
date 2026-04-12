@@ -61,13 +61,13 @@ class SosEmergencyButtonDevice extends BaseHybridDevice {
            // v7.1.0: Safe flow trigger for double press
            const doubleCard = this._getFlowCard('button_emergency_sos_double_pressed');
            if (doubleCard) {
-             doubleCard
+             doubleCard.trigger(this, {}, {}).catch(this.error);
            }
            
            // v7.1.0: Safe flow trigger for long press
            const longCard = this._getFlowCard('button_emergency_sos_long_pressed');
            if (longCard) {
-             longCard
+             longCard.trigger(this, {}, {}).catch(this.error);
            }
 
            this._handleAlarm({ source: 'tuya-dp13', value });
@@ -82,9 +82,9 @@ class SosEmergencyButtonDevice extends BaseHybridDevice {
     this.setCapabilityValue('alarm_generic', true).catch(() => {});
     
     // v7.1.0: Safe flow trigger for generic press
-    const pressCard = this._getFlowCard('button_emergency_sos_pressed');
+    const pressCard = this._getFlowCard('button_emergency_sos_pressed', 'trigger');
     if (pressCard) {
-      pressCard
+      pressCard.trigger(this, {}, {}).catch(this.error);
     }
     
     // Auto reset

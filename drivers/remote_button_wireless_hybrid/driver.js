@@ -5,39 +5,46 @@ const Homey = require('homey');
 class RemoteButtonWirelessHybridDriver extends Homey.Driver {
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('Remote Button Wireless Hybrid driver initialized');
 
     // Register flow cards
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
     // Rotate left trigger
-    this.homey.flow.getTriggerCard('remote_button_wireless_hybrid_rotate_left')
+
       .registerRunListener(async (args, state) => true);
 
     // Rotate right trigger
-    this.homey.flow.getTriggerCard('remote_button_wireless_hybrid_rotate_right')
+
       .registerRunListener(async (args, state) => true);
 
     // Button pressed trigger
-    this.homey.flow.getTriggerCard('remote_button_wireless_hybrid_press')
+
       .registerRunListener(async (args, state) => true);
 
     // Single press trigger
-    this.homey.flow.getTriggerCard('remote_button_wireless_hybrid_single_press')
+
       .registerRunListener(async (args, state) => true);
 
     // Double press trigger
-    this.homey.flow.getTriggerCard('remote_button_wireless_hybrid_double_press')
+
       .registerRunListener(async (args, state) => true);
 
     // Long press trigger
-    this.homey.flow.getTriggerCard('remote_button_wireless_hybrid_long_press')
+
       .registerRunListener(async (args, state) => true);
 
     // Brightness condition
-    this.homey.flow.getConditionCard('remote_button_wireless_hybrid_brightness_above')
+
       .registerRunListener(async (args, state) => {
         const device = args.device;
         if (device && device.hasCapability('dim')) {

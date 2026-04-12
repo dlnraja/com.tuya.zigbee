@@ -47,9 +47,9 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
         if (mode !== 'magic') this.setCapabilityValue('onoff', value).catch(() => {});
         if (isPhys && (mode === 'auto' || mode === 'both')) {
           const fid = 'wall_switch_4gang_1way_turned_' + (value ? 'on' : 'off');
-      this._getFlowCard(fid)
+      this._getFlowCard(fid)?.trigger(this, {}, {}).catch(this.error || console.error)
           const pgid = `wall_switch_4gang_1way_physical_gang${gn}_` + (value ? 'on' : 'off');
-      this._getFlowCard(pgid)
+      this._getFlowCard(pgid)?.trigger(this, {}, {}).catch(this.error || console.error)
         }
         if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
       this._getFlowCard('wall_switch_4gang_1way_gang' + gn + '_scene').trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {})

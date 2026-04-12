@@ -21,14 +21,21 @@ class FormaldehydeSensorDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('FormaldehydeSensorDriver v5.5.582 initialized');
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
     // CONDITION: Formaldehyde above
     try {
-      this.homey.flow.getConditionCard('formaldehyde_sensor_formaldehyde_above')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const level = args.device.getCapabilityValue('measure_formaldehyde') || 0;
@@ -39,7 +46,7 @@ class FormaldehydeSensorDriver extends ZigBeeDriver {
 
     // CONDITION: Air quality good
     try {
-      this.homey.flow.getConditionCard('formaldehyde_sensor_air_quality_good')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const formaldehyde = args.device.getCapabilityValue('measure_formaldehyde') || 0;

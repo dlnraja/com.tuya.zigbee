@@ -21,15 +21,21 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
 
   async onInit() {
-    this.homey.flow.getTriggerCard('curtain_motor_shutter_hybrid_button_pressed');
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('curtain_motor driver v5.5.571 initialized');
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
     // ACTION: Set position
     try {
-      this.homey.flow.getActionCard('curtain_motor_set_windowcoverings_set')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('windowcoverings_set', args.position);
@@ -40,7 +46,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
     // ACTION: Open
     try {
-      this.homey.flow.getActionCard('curtain_motor_windowcoverings_open')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('windowcoverings_set', 1);
@@ -51,7 +57,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
     // ACTION: Close
     try {
-      this.homey.flow.getActionCard('curtain_motor_windowcoverings_close')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('windowcoverings_set', 0);
@@ -62,7 +68,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
     // ACTION: Set brightness/dim
     try {
-      this.homey.flow.getActionCard('curtain_motor_set_dim')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('dim', args.brightness);

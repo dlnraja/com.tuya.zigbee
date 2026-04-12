@@ -21,14 +21,21 @@ class TuyaDoorbellDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('TuyaDoorbellDriver v5.5.571 initialized');
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
     // CONDITION: Battery above threshold
     try {
-      this.homey.flow.getConditionCard('doorbell_battery_above')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
@@ -39,7 +46,7 @@ class TuyaDoorbellDriver extends ZigBeeDriver {
 
     // ACTION: Ring chime
     try {
-      this.homey.flow.getActionCard('doorbell_ring_chime')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           try {

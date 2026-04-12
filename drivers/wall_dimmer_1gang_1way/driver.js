@@ -5,6 +5,10 @@ const Homey = require('homey');
 class WallDimmer1Gang1WayDriver extends Homey.Driver {
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('Wall Dimmer 1-Gang 1-Way Driver has been initialized');
 
     // v5.5.776: Flow cards are auto-registered by homeycompose from driver.flow.compose.json
@@ -13,12 +17,15 @@ class WallDimmer1Gang1WayDriver extends Homey.Driver {
 
     // Register backlight control flow card
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
     // ACTION: Set backlight mode
     try {
-      this.homey.flow.getActionCard('wall_dimmer_1gang_1way_set_backlight')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const backlightValue = parseInt(args.mode, 10);

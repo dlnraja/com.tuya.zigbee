@@ -80,7 +80,7 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(HybridLightBase) {
       this._lastOnoffState = v;
       if (isPhysical) {
         const id = v ? 'dimmer_wall_1gang_physical_on' : 'dimmer_wall_1gang_physical_off';
-      this._getFlowCard(id)
+      this._getFlowCard(id)?.trigger(this, {}, {}).catch(this.error || console.error)
       }
     } else if (dpId === 2 || dpId === 101) {
       const dim = this.getCapabilityValue('dim');

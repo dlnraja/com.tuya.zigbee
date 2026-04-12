@@ -21,15 +21,22 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('ThermostatTuyaDpDriver v5.5.573 initialized');
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
     // CONDITION: Is heating
     try {
       (() => { try { return
-      this.homey.flow.getConditionCard('thermostat_tuya_dp_is_heating') } catch(e) { return null; } })()
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('tuya_thermostat_heating') === true;
@@ -40,7 +47,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     // CONDITION: Temperature above target
     try {
       (() => { try { return
-      this.homey.flow.getConditionCard('thermostat_tuya_dp_temperature_above_target') } catch(e) { return null; } })()
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('measure_temperature') || 0;
@@ -53,7 +60,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     // CONDITION: Temperature below target
     try {
       (() => { try { return
-      this.homey.flow.getConditionCard('thermostat_tuya_dp_temperature_below_target') } catch(e) { return null; } })()
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('measure_temperature') || 0;
@@ -66,7 +73,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     // CONDITION: Mode is
     try {
       (() => { try { return
-      this.homey.flow.getConditionCard('thermostat_tuya_dp_mode_is') } catch(e) { return null; } })()
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const mode = args.device.getCapabilityValue('tuya_thermostat_mode');
@@ -78,7 +85,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     // ACTION: Set target temperature
     try {
       (() => { try { return
-      this.homey.flow.getActionCard('thermostat_tuya_dp_set_target_temperature') } catch(e) { return null; } })()
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('target_temperature', args.temperature);
@@ -90,7 +97,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     // ACTION: Set mode
     try {
       (() => { try { return
-      this.homey.flow.getActionCard('thermostat_tuya_dp_set_mode') } catch(e) { return null; } })()
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('tuya_thermostat_mode', args.mode);
@@ -102,7 +109,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     // ACTION: Increase temperature
     try {
       (() => { try { return
-      this.homey.flow.getActionCard('thermostat_tuya_dp_increase_temperature') } catch(e) { return null; } })()
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('target_temperature') || 20;
@@ -115,7 +122,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     // ACTION: Decrease temperature
     try {
       (() => { try { return
-      this.homey.flow.getActionCard('thermostat_tuya_dp_decrease_temperature') } catch(e) { return null; } })()
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('target_temperature') || 20;

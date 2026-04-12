@@ -16,8 +16,15 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
   }
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('Switch Dimmer 1-Gang Driver initialized');
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
@@ -30,7 +37,7 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
     ];
     for (const id of triggers) {
       try {
-      this.homey.flow.getTriggerCard(id)
+
         this.log(`Trigger: ${id}`);
       } catch (err) {
         this.error(`Failed trigger ${id}: ${err.message}`);
@@ -39,7 +46,7 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
 
     // Action: set brightness
     try {
-      this.homey.flow.getActionCard('switch_dimmer_1gang_set_brightness')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const dim = args.brightness / 100;
@@ -53,7 +60,7 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
 
     // Action: turn on
     try {
-      this.homey.flow.getActionCard('switch_dimmer_1gang_turn_on')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -64,7 +71,7 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
 
     // Action: turn off
     try {
-      this.homey.flow.getActionCard('switch_dimmer_1gang_turn_off')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -75,7 +82,7 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
 
     // Action: toggle
     try {
-      this.homey.flow.getActionCard('switch_dimmer_1gang_toggle')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const cur = args.device.getCapabilityValue('onoff');

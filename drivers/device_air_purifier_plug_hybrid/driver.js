@@ -21,15 +21,22 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('PlugEnergyMonitorDriver v5.5.572 initialized');
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
     const safeRegister = (type, id, handler) => {
       try {
         const card = type === 'condition' ?
-      this.homey.flow.getConditionCard(id) : this.homey.flow.getActionCard(id)
+
         if (card) {
           card.registerRunListener(handler);
           this.log(`[FLOW] ✅ ${id}`);

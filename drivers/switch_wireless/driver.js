@@ -21,15 +21,21 @@ class WirelessSwitchDriver extends ZigBeeDriver {
 
 
   async onInit() {
-    this.homey.flow.getTriggerCard('switch_wireless_button_pressed');
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('WirelessSwitchDriver v5.5.581 initialized');
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
     // CONDITION: Is on
     try {
-      this.homey.flow.getConditionCard('switch_wireless_is_on')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -39,7 +45,7 @@ class WirelessSwitchDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      this.homey.flow.getActionCard('switch_wireless_turn_on')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -51,7 +57,7 @@ class WirelessSwitchDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      this.homey.flow.getActionCard('switch_wireless_turn_off')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -63,7 +69,7 @@ class WirelessSwitchDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      this.homey.flow.getActionCard('switch_wireless_toggle')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');

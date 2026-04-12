@@ -4,7 +4,14 @@ const Homey = require('homey');
 
 class RadiatorWifiTuyaDriver extends Homey.Driver {
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('WiFi Tuya Radiator Driver initialized');
+  
+  
+  
   }
 
   async onPair(session) {

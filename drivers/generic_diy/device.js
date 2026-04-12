@@ -141,7 +141,7 @@ class GenericDIYDevice extends ZigBeeDevice {
 
   _registerFlowActions() {
     // Identify action
-      this._getFlowCard('generic_diy_identify', 'action')
+      this._getFlowCard('generic_diy_identify')?.trigger(this, {}, {}).catch(this.error || console.error)
       const ep = this.zclNode?.endpoints?.[1];
       if (ep?.clusters?.identify) {
         await ep.clusters.identify.identify({ identifyTime: 5 });
@@ -150,19 +150,19 @@ class GenericDIYDevice extends ZigBeeDevice {
     });
 
     // Turn on/off endpoint actions
-      this._getFlowCard('generic_diy_turn_on_endpoint', 'action')
+      this._getFlowCard('generic_diy_turn_on_endpoint')?.trigger(this, {}, {}).catch(this.error || console.error)
       const ep = this.zclNode?.endpoints?.[endpoint];
       if (ep?.clusters?.onOff) await ep.clusters.onOff.setOn();
       return true;
     });
-      this._getFlowCard('generic_diy_turn_off_endpoint', 'action')
+      this._getFlowCard('generic_diy_turn_off_endpoint')?.trigger(this, {}, {}).catch(this.error || console.error)
       const ep = this.zclNode?.endpoints?.[endpoint];
       if (ep?.clusters?.onOff) await ep.clusters.onOff.setOff();
       return true;
     });
 
     // Set dim level
-      this._getFlowCard('generic_diy_set_dim', 'action')
+      this._getFlowCard('generic_diy_set_dim')?.trigger(this, {}, {}).catch(this.error || console.error)
       const ep = this.zclNode?.endpoints?.[1];
       if (ep?.clusters?.levelControl) {
         await ep.clusters.levelControl.moveToLevel({ level: Math.round(level * 254), transitionTime: 0 });

@@ -18,11 +18,18 @@ class FingerbotDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('FingerbotDriver v5.13.3 initialized');
 
     // v5.13.3: Register flow card action/condition handlers (#162)
     const reg = (type, id, fn) => {
-      try { this.homey.flow[type](id).registerRunListener(fn); }
+      try { this.homey.flow[type](id).registerRunListener(fn); 
+  
+  
+  }
       catch (e) { this.log(`[Flow] ${id} skip: ${e.message}`); }
     };
 

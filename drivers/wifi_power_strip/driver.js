@@ -16,8 +16,19 @@ class WiFiPowerStripDriver extends TuyaLocalDriver {
 
   async onInit() {
     await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    
     // v5.13.3: Flow card handlers
-      this.homey.flow.getActionCard('wifi_power_strip_set_socket')
+
+  
+  
+  
   }
 }
 module.exports = WiFiPowerStripDriver;

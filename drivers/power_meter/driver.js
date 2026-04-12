@@ -17,9 +17,16 @@ class PowerMeterDriver extends Driver {
   }
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('Power Meter driver initialized');
     // v5.13.3: Flow card handlers
-      this.homey.flow.getActionCard('power_meter_reset_meter')
+
+  
+  
+  
   }
 }
 

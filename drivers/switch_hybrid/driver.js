@@ -21,15 +21,22 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('Tuya Zigbee 2-Gang Switch Driver v5.5.570 initialized');
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
     // CONDITIONS
     ['gang1', 'gang2'].forEach((gang, idx) => {
       try {
-        this.homey.flow.getConditionCard(`switch_2gang_${gang}_is_on`)
+
           .registerRunListener(async (args) => {
             if (!args.device) return false;
             const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
@@ -42,7 +49,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     // ACTIONS
     ['gang1', 'gang2'].forEach((gang, idx) => {
       try {
-        this.homey.flow.getActionCard(`switch_2gang_turn_on_${gang}`)
+
           .registerRunListener(async (args) => {
             if (!args.device) return false;
             const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
@@ -54,7 +61,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
       try {
-        this.homey.flow.getActionCard(`switch_2gang_turn_off_${gang}`)
+
           .registerRunListener(async (args) => {
             if (!args.device) return false;
             const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
@@ -67,7 +74,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
       // v5.5.906: Toggle actions
       try {
-        this.homey.flow.getActionCard(`switch_2gang_toggle_${gang}`)
+
           .registerRunListener(async (args) => {
             if (!args.device) return false;
             const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
@@ -81,7 +88,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
     // v5.5.906: All-gangs actions
     try {
-      this.homey.flow.getActionCard('switch_2gang_turn_on_all')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -95,7 +102,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
     try {
-      this.homey.flow.getActionCard('switch_2gang_turn_off_all')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -110,7 +117,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
     // v5.5.930: LED backlight flow cards
     try {
-      this.homey.flow.getActionCard('switch_2gang_set_backlight')
+
         .registerRunListener(async (args) => {
           if (!args.device || !args.mode) return false;
           await args.device.setBacklightMode(args.mode);
@@ -120,7 +127,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
     try {
-      this.homey.flow.getActionCard('switch_2gang_set_backlight_color')
+
         .registerRunListener(async (args) => {
           if (!args.device || !args.state || !args.color) return false;
           await args.device.setBacklightColor(args.state, args.color);
@@ -130,7 +137,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
 
     try {
-      this.homey.flow.getActionCard('switch_2gang_set_backlight_brightness')
+
         .registerRunListener(async (args) => {
           if (!args.device || args.brightness === undefined) return false;
           await args.device.setBacklightBrightness(args.brightness);
@@ -142,7 +149,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     this.log('[FLOW] Scene mode setup');
     // v5.12.5: Scene mode action
     try {
-      this.homey.flow.getActionCard('switch_2gang_set_scene_mode')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSceneMode(args.mode);

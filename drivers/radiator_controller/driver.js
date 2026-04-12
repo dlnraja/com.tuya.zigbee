@@ -22,41 +22,39 @@ class RadiatorControllerDriver extends ZigBeeDriver {
 
 
   async onInit() {
-    this.homey.flow.getActionCard('radiator_controller_set_temperature_offset');
-    this.homey.flow.getActionCard('radiator_controller_send_pilot_signal');
-    this.homey.flow.getActionCard('radiator_controller_set_heating_mode');
-    this.homey.flow.getConditionCard('radiator_controller_heating_mode_is');
-    this.homey.flow.getConditionCard('radiator_controller_radiator_is_heating');
-    this.homey.flow.getTriggerCard('radiator_controller_pilot_signal_sent');
-    this.homey.flow.getTriggerCard('radiator_controller_radiator_mode_changed');
-    this.log('RadiatorControllerDriver v5.5.476 initialized');
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
 
     try {
       // Register flow triggers
       this._radiator_mode_changedTrigger =
-        this.homey.flow.getTriggerCard('radiator_mode_changed');
+
       this._pilot_signal_sentTrigger =
-        this.homey.flow.getTriggerCard('pilot_signal_sent');
+
       
       // Register flow conditions
       this._radiator_is_heatingCondition =
-        this.homey.flow.getConditionCard('radiator_is_heating');
+
       this._heating_mode_isCondition =
-        this.homey.flow.getConditionCard('heating_mode_is');
+
       
       // Register flow actions
       this._set_heating_modeAction =
-        this.homey.flow.getActionCard('set_heating_mode');
+
       if (this._set_heating_modeAction) {
         this._set_heating_modeAction.registerRunListener(async (args) => {
-          const { device } = args;
+          const { device 
+  
+  
+  } = args;
           // TODO: Implement action logic
           return true;
         });
       }
       
       this._send_pilot_signalAction =
-        this.homey.flow.getActionCard('send_pilot_signal');
+
       if (this._send_pilot_signalAction) {
         this._send_pilot_signalAction.registerRunListener(async (args) => {
           const { device } = args;
@@ -66,7 +64,7 @@ class RadiatorControllerDriver extends ZigBeeDriver {
       }
       
       this._set_temperature_offsetAction =
-        this.homey.flow.getActionCard('set_temperature_offset');
+
       if (this._set_temperature_offsetAction) {
         this._set_temperature_offsetAction.registerRunListener(async (args) => {
           const { device } = args;

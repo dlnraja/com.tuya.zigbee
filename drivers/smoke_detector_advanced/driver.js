@@ -29,11 +29,18 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('SmartSmokeDetectorAdvancedDriver v5.5.568 initialized');
     this.log('🔥 FIX: Flow card run listeners registered (Jolink forum report)');
 
     // Register flow card run listeners
     this._registerFlowCards();
+  
+  
+  
   }
 
   /**
@@ -46,7 +53,7 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
     // ═══════════════════════════════════════════════════════════════════════
     try {
       const smokeDetectedCondition =
-      this.homey.flow.getConditionCard('smoke_detector_advanced_smoke_detected')
+
       smokeDetectedCondition.registerRunListener(async (args) => {
         const device = args.device;
         if (!device) {
@@ -67,7 +74,7 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
     // ═══════════════════════════════════════════════════════════════════════
     try {
       const batteryAboveCondition =
-      this.homey.flow.getConditionCard('smoke_detector_advanced_battery_above')
+
       batteryAboveCondition.registerRunListener(async (args) => {
         const device = args.device;
         if (!device) {
@@ -90,7 +97,7 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
     // ═══════════════════════════════════════════════════════════════════════
     try {
       const testAlarmAction =
-      this.homey.flow.getActionCard('smoke_detector_advanced_test_alarm')
+
       testAlarmAction.registerRunListener(async (args) => {
         const device = args.device;
         if (!device) {

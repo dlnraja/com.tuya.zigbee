@@ -21,29 +21,35 @@ class SwitchWall7gangDriver extends ZigBeeDriver {
 
 
   async onInit() {
-    this.homey.flow.getTriggerCard('switch_wall_7gang_gang7_scene');
-    this.homey.flow.getTriggerCard('switch_wall_7gang_gang6_scene');
-    this.homey.flow.getTriggerCard('switch_wall_7gang_gang5_scene');
-    this.homey.flow.getTriggerCard('switch_wall_7gang_gang4_scene');
-    this.homey.flow.getTriggerCard('switch_wall_7gang_gang3_scene');
-    this.homey.flow.getTriggerCard('switch_wall_7gang_gang2_scene');
-    this.homey.flow.getTriggerCard('switch_wall_7gang_gang1_scene');
-    this.homey.flow.getTriggerCard('switch_wall_7gang_physical_gang7_off');
-    this.homey.flow.getTriggerCard('switch_wall_7gang_physical_gang7_on');
-    this.homey.flow.getTriggerCard('switch_wall_7gang_physical_gang6_off');
-    this.homey.flow.getTriggerCard('switch_wall_7gang_physical_gang6_on');
-    this.homey.flow.getTriggerCard('switch_wall_7gang_physical_gang5_off');
-    this.homey.flow.getTriggerCard('switch_wall_7gang_physical_gang5_on');
-    this.homey.flow.getTriggerCard('switch_wall_7gang_physical_gang4_off');
-    this.homey.flow.getTriggerCard('switch_wall_7gang_physical_gang4_on');
-    this.homey.flow.getTriggerCard('switch_wall_7gang_physical_gang3_off');
-    this.homey.flow.getTriggerCard('switch_wall_7gang_physical_gang3_on');
-    this.homey.flow.getTriggerCard('switch_wall_7gang_physical_gang2_off');
-    this.homey.flow.getTriggerCard('switch_wall_7gang_physical_gang2_on');
-    this.homey.flow.getTriggerCard('switch_wall_7gang_physical_gang1_off');
-    this.homey.flow.getTriggerCard('switch_wall_7gang_physical_gang1_on');
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     this.log('SwitchWall7gangDriver v5.5.587 initialized');
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
@@ -52,7 +58,7 @@ class SwitchWall7gangDriver extends ZigBeeDriver {
 
     gangs.forEach(gang => {
       try {
-        this.homey.flow.getConditionCard(`switch_wall_7gang_gang${gang}_is_on`)
+
           .registerRunListener(async (args) => {
             if (!args.device) return false;
             return args.device.getCapabilityValue(capMap[gang]) === true;
@@ -61,7 +67,7 @@ class SwitchWall7gangDriver extends ZigBeeDriver {
       } catch (err) { this.log(`[FLOW] ⚠️ gang${gang}_is_on: ${err.message}`); }
 
       try {
-        this.homey.flow.getActionCard(`switch_wall_7gang_turn_on_gang${gang}`)
+
           .registerRunListener(async (args) => {
             if (!args.device) return false;
             await args.device.triggerCapabilityListener(capMap[gang], true);
@@ -71,7 +77,7 @@ class SwitchWall7gangDriver extends ZigBeeDriver {
       } catch (err) { this.log(`[FLOW] ⚠️ turn_on_gang${gang}: ${err.message}`); }
 
       try {
-        this.homey.flow.getActionCard(`switch_wall_7gang_turn_off_gang${gang}`)
+
           .registerRunListener(async (args) => {
             if (!args.device) return false;
             await args.device.triggerCapabilityListener(capMap[gang], false);
@@ -82,7 +88,7 @@ class SwitchWall7gangDriver extends ZigBeeDriver {
 
       // v5.5.930: Toggle action
       try {
-        this.homey.flow.getActionCard(`switch_wall_7gang_toggle_gang${gang}`)
+
           .registerRunListener(async (args) => {
             if (!args.device) return false;
             const current = args.device.getCapabilityValue(capMap[gang]);
@@ -95,7 +101,7 @@ class SwitchWall7gangDriver extends ZigBeeDriver {
 
     // v5.5.930: LED backlight flow cards
     try {
-      this.homey.flow.getActionCard('switch_wall_7gang_set_backlight')
+
         .registerRunListener(async (args) => {
           if (!args.device || !args.mode) return false;
           await args.device.setBacklightMode(args.mode);
@@ -105,7 +111,7 @@ class SwitchWall7gangDriver extends ZigBeeDriver {
     } catch (err) { this.log(`[FLOW] ⚠️ set_backlight: ${err.message}`); }
 
     try {
-      this.homey.flow.getActionCard('switch_wall_7gang_set_backlight_color')
+
         .registerRunListener(async (args) => {
           if (!args.device || !args.state || !args.color) return false;
           await args.device.setBacklightColor(args.state, args.color);
@@ -115,7 +121,7 @@ class SwitchWall7gangDriver extends ZigBeeDriver {
     } catch (err) { this.log(`[FLOW] ⚠️ set_backlight_color: ${err.message}`); }
 
     try {
-      this.homey.flow.getActionCard('switch_wall_7gang_set_backlight_brightness')
+
         .registerRunListener(async (args) => {
           if (!args.device || args.brightness === undefined) return false;
           await args.device.setBacklightBrightness(args.brightness);
@@ -126,7 +132,7 @@ class SwitchWall7gangDriver extends ZigBeeDriver {
 
     // v5.5.930: All on/off actions
     try {
-      this.homey.flow.getActionCard('switch_wall_7gang_turn_on_all')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           for (const cap of Object.values(capMap)) {
@@ -139,7 +145,7 @@ class SwitchWall7gangDriver extends ZigBeeDriver {
     } catch (err) { this.log(`[FLOW] ⚠️ turn_on_all: ${err.message}`); }
 
     try {
-      this.homey.flow.getActionCard('switch_wall_7gang_turn_off_all')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           for (const cap of Object.values(capMap)) {
@@ -154,7 +160,7 @@ class SwitchWall7gangDriver extends ZigBeeDriver {
     
     // v5.12.5: Scene mode action
     try {
-      this.homey.flow.getActionCard('switch_wall_7gang_set_scene_mode')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSceneMode(args.mode);

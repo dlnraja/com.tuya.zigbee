@@ -18,7 +18,18 @@ class WiFiDimmerDriver extends TuyaLocalDriver {
 
   async onInit() {
     await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    
     this.log('[WIFI-DIMMER-DRV] Driver initialized');
+  
+  
+  
   }
 }
 

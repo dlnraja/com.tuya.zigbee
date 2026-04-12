@@ -21,14 +21,21 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
 
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('RollerShutterControllerDriver v5.5.575 initialized');
     this._registerFlowCards();
+  
+  
+  
   }
 
   _registerFlowCards() {
     // CONDITION: Is open
     try {
-      this.homey.flow.getConditionCard('shutter_roller_controller_is_open')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const pos = args.device.getCapabilityValue('windowcoverings_set') || 0;
@@ -39,7 +46,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
 
     // CONDITION: Position above
     try {
-      this.homey.flow.getConditionCard('shutter_roller_controller_position_above')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const pos = args.device.getCapabilityValue('windowcoverings_set') || 0;
@@ -50,7 +57,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
 
     // CONDITION: Is moving
     try {
-      this.homey.flow.getConditionCard('shutter_roller_controller_is_moving')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const state = args.device.getCapabilityValue('windowcoverings_state');
@@ -61,7 +68,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
 
     // ACTION: Open
     try {
-      this.homey.flow.getActionCard('shutter_roller_controller_open')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('windowcoverings_set', 1);
@@ -72,7 +79,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
 
     // ACTION: Close
     try {
-      this.homey.flow.getActionCard('shutter_roller_controller_close')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('windowcoverings_set', 0);
@@ -83,7 +90,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
 
     // ACTION: Stop
     try {
-      this.homey.flow.getActionCard('shutter_roller_controller_stop')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('windowcoverings_state', 'idle');
@@ -94,7 +101,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
 
     // ACTION: Set position
     try {
-      this.homey.flow.getActionCard('shutter_roller_controller_set_position')
+
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('windowcoverings_set', (args.position || 50) / 100);
