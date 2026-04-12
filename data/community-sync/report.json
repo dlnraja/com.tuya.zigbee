@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-12T11:56:14.112Z",
+  "ts": "2026-04-12T12:13:11.603Z",
   "currentCount": 7389,
   "src": {
     "johan": {
@@ -19001,6 +19001,17 @@
         },
         {
           "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1362,
+          "title": "Device Request - [Device name] - [manufacturerName] / [modelId]",
+          "mfrs": [
+            "_TZE284_iadro9bf",
+            "_TZE284_iadro9bf",
+            "_TZE284_iadro9bf",
+            "_TZE284_iadro9bf"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
           "num": 1361,
           "title": "Device Request - [Zigbee 3.9 remote] - [MiBoxer] / [FUT089Z]",
           "mfrs": [
@@ -19156,16 +19167,6 @@
             "_TZE200_rhgsbacq",
             "_TZE200_rhgsbacq",
             "_TZE200_rhgsbacq"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1341,
-          "title": "Device Request - Tuya Smart Plant sensor - _TZE284_aao3yzhs / TS0601",
-          "mfrs": [
-            "_TZE284_aao3yzhs",
-            "_TZE284_aao3yzhs",
-            "_TZE284_aao3yzhs"
           ]
         }
       ]

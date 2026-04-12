@@ -264,4 +264,4 @@
 ---
 **Total:** 258 drivers, 8252 manufacturer IDs
 
-*Generated: 2026-04-12T11:23:47.222Z*
+*Generated: 2026-04-12T12:13:10.921Z*
