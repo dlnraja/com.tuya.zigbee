@@ -48,17 +48,12 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_PCQJMCUD",
-      "_TZE200_sh1btaba",
-      "_TZ3000_tzvbimpq",
       "_tz3000_pcqjmcud",
-      "_tz3000_tzvbimpq",
-      "_tze200_sh1btaba"
+      "_tze200_sh1btaba",
+      "_tz3000_tzvbimpq"
     ],
     "productId": [
-      "TS0041",
       "ts0041",
-      "TS004F",
       "ts004f"
     ],
     "endpoints": {

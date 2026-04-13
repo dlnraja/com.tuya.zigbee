@@ -45,11 +45,6 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_DNZ2ZHQD",
-      "_TZE200_MP902OM5",
-      "_TZE200_SUS6CLYH",
-      "_TZE204_B6WAX7G0",
-      "_TZE204_C88TEUJP",
       "_tze200_dnz2zhqd",
       "_tze200_mp902om5",
       "_tze200_sus6clyh",
@@ -57,9 +52,6 @@
       "_tze204_c88teujp"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_HEATCTRL",
-      "TS0601_heatctrl",
       "ts0601",
       "ts0601_heatctrl"
     ],

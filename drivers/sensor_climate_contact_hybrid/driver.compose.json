@@ -37,13 +37,6 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_85CZD6FY",
-      "_TZ3000_BPKIJO14",
-      "_TZ3000_GSZJT2XX",
-      "_TZ3000_M0VAAZAB",
-      "_TZ3000_MISW04HQ",
-      "_TZ3000_UFTTKLSZ",
-      "_TZ3000_WLQUQIIZ",
       "_tz3000_85czd6fy",
       "_tz3000_bpkijo14",
       "_tz3000_gszjt2xx",
@@ -53,9 +46,7 @@
       "_tz3000_wlquqiiz"
     ],
     "productId": [
-      "ZG-227Z",
       "zg-227z",
-      "TS0601",
       "ts0601"
     ],
     "endpoints": {

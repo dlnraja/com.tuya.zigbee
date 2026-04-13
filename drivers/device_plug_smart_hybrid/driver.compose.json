@@ -29,21 +29,14 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_CJFMU5HE",
-      "_TZ3000_KZ1ANOI8",
       "_tz3000_cjfmu5he",
       "_tz3000_kz1anoi8",
-      "_TZ3210_eymunffl",
-      "_TZ3000_cjfmu5he",
-      "_TZ3000_kz1anoi8",
-      "_TZ3000_mq4wujmp",
       "_tz3210_eymunffl",
       "_tz3000_mq4wujmp"
     ],
     "productId": [
-      "TS0049",
       "ts0049",
-      "TS0101"
+      "ts0101"
     ],
     "learnmode": {
       "image": "/drivers/plug_smart/assets/learnmode.svg",

@@ -38,11 +38,6 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_DTZZIY1E",
-      "_TZE204_DTZZIY1E",
-      "_TZE204_SBYX0LM6",
-      "_TZE204_UXLLNYWP",
-      "_TZE204_YENSYA2C",
       "_tze200_dtzziy1e",
       "_tze204_dtzziy1e",
       "_tze204_sbyx0lm6",
@@ -50,9 +45,6 @@
       "_tze204_yensya2c"
     ],
     "productId": [
-      "TS0601",
-      "TS0601_CEILING",
-      "TS0601_ceiling",
       "ts0601",
       "ts0601_ceiling"
     ],

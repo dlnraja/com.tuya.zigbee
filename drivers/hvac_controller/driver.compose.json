@@ -51,17 +51,12 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZE200_CFCZGBSS",
-      "_TZE200_R32CTEZX",
-      "_TZE204_R32CTEZX",
-      "_TZE284_CFCZGBSS",
       "_tze200_cfczgbss",
       "_tze200_r32ctezx",
       "_tze204_r32ctezx",
       "_tze284_cfczgbss"
     ],
     "productId": [
-      "TS0601",
       "ts0601"
     ],
     "endpoints": {

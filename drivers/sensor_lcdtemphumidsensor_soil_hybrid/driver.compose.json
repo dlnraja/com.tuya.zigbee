@@ -70,13 +70,10 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_TZE284_HDML1AAV",
-      "_TZE284_OITAVOV2",
       "_tze284_hdml1aav",
       "_tze284_oitavov2"
     ],
     "productId": [
-      "TS0601",
       "ts0601"
     ],
     "endpoints": {
