@@ -374,7 +374,18 @@ async function main() {
       const commits = args[args.indexOf('--commits') + 1] || 1;
       console.log(`🛡️ Assessing risk for last ${commits} commits...`);
       // Simulating git log fetch
-      const diff = require('child_process').execSync(`git diff HEAD~${commits}..HEAD`).toString();
+      let diff = "";
+      try {
+        diff = require('child_process').execSync(`git diff HEAD~${commits}..HEAD`).toString();
+      } catch (e) {
+        console.log(`⚠️  Could not fetch diff for last ${commits} commits (maybe history is too short). Trying root diff...`);
+        try {
+          diff = require('child_process').execSync(`git diff $(git rev-list --max-parents=0 HEAD)..HEAD`).toString();
+        } catch (e2) {
+          console.log(`⚠️  Root diff failed. Using simple HEAD diff.`);
+          diff = require('child_process').execSync(`git diff HEAD`).toString();
+        }
+      }
       const prompt = `Analyze this git diff for architectural risks, SDK 3 non-compliance, and regression patterns. 
       Focus on Tuya specific bugs like:
       - Semicolon insertion errors in IIFEs
