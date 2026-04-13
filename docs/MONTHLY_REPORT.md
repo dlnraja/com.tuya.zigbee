@@ -1,14 +1,14 @@
 # Monthly Tuya Zigbee Report - 2026-04
 
-*Generated: 2026-04-13T13:15:48.753Z*
+*Generated: 2026-04-13T15:17:35.128Z*
 
 ## 📊 Architectural Health [v7.0.22]
 
 | Metric | Value | Status |
 |--------|-------|--------|
 | Total Drivers | 319 | ✅ |
-| Manufacturer IDs | 257857 | ✅ |
-| Collisions | 2918 | ⚠️ |
+| Manufacturer IDs | 68459 | ✅ |
+| Collisions | 1592 | ⚠️ |
 | v7 Architectural Debt | 319 legacy drivers | 🛠️ |
 | PR Auto-Merger | Active | 🛡️ |
 | Community Responder | Template Ready | 🤖 |
@@ -17,28 +17,28 @@
 
 | ID | Drivers |
 |----|--------|
-| `_tz3000_i8jfiezr|TS0601` | air_purifier, climate_sensor_switch_hybrid |
-| `_tz3000_i8jfiezr|ts0601` | air_purifier, climate_sensor_switch_hybrid |
-| `_tyzb01_a476raq2|RH3052` | air_purifier, air_purifier_climate_hybrid |
-| `_tyzb01_a476raq2|TS0201` | air_purifier, air_purifier_climate_hybrid |
-| `_tyzb01_a476raq2|TS0222` | air_purifier, air_purifier_climate_hybrid |
-| `_tyzb01_a476raq2|TS0601` | air_purifier, air_purifier_climate_hybrid, device_air_purifier_climate_hybrid |
-| `_tyzb01_a476raq2|TY0201` | air_purifier, air_purifier_climate_hybrid |
-| `_tyzb01_a476raq2|rh3052` | air_purifier, air_purifier_climate_hybrid |
-| `_tyzb01_a476raq2|ts0201` | air_purifier, air_purifier_climate_hybrid |
-| `_tyzb01_a476raq2|ts0222` | air_purifier, air_purifier_climate_hybrid |
-| `_tyzb01_a476raq2|ts0601` | air_purifier, air_purifier_climate_hybrid, device_air_purifier_climate_hybrid |
-| `_tyzb01_a476raq2|ty0201` | air_purifier, air_purifier_climate_hybrid |
-| `_tyzb01_ftdkanlj|RH3052` | air_purifier, air_purifier_climate_hybrid |
-| `_tyzb01_ftdkanlj|TS0201` | air_purifier, air_purifier_climate_hybrid |
-| `_tyzb01_ftdkanlj|TS0222` | air_purifier, air_purifier_climate_hybrid |
-| `_tyzb01_ftdkanlj|TS0601` | air_purifier, air_purifier_climate_hybrid, device_air_purifier_climate_hybrid |
-| `_tyzb01_ftdkanlj|TY0201` | air_purifier, air_purifier_climate_hybrid |
-| `_tyzb01_ftdkanlj|rh3052` | air_purifier, air_purifier_climate_hybrid |
-| `_tyzb01_ftdkanlj|ts0201` | air_purifier, air_purifier_climate_hybrid |
-| `_tyzb01_ftdkanlj|ts0222` | air_purifier, air_purifier_climate_hybrid |
+| `tuyatec-1g3tawnp|rh3052` | air_purifier, air_purifier_climate_hybrid |
+| `tuyatec-1g3tawnp|ts0201` | air_purifier, air_purifier_climate_hybrid |
+| `tuyatec-1g3tawnp|ts0222` | air_purifier, air_purifier_climate_hybrid |
+| `tuyatec-1g3tawnp|ts0601` | air_purifier, air_purifier_climate_hybrid |
+| `tuyatec-1g3tawnp|ty0201` | air_purifier, air_purifier_climate_hybrid |
+| `tuyatec-1uxx9cci|rh3052` | air_purifier, air_purifier_climate_hybrid |
+| `tuyatec-1uxx9cci|ts0201` | air_purifier, air_purifier_climate_hybrid |
+| `tuyatec-1uxx9cci|ts0222` | air_purifier, air_purifier_climate_hybrid |
+| `tuyatec-1uxx9cci|ts0601` | air_purifier, air_purifier_climate_hybrid |
+| `tuyatec-1uxx9cci|ty0201` | air_purifier, air_purifier_climate_hybrid |
+| `tuyatec-bfq2i2sy|rh3052` | air_purifier, air_purifier_climate_hybrid |
+| `tuyatec-bfq2i2sy|ts0201` | air_purifier, air_purifier_climate_hybrid |
+| `tuyatec-bfq2i2sy|ts0222` | air_purifier, air_purifier_climate_hybrid |
+| `tuyatec-bfq2i2sy|ts0601` | air_purifier, air_purifier_climate_hybrid |
+| `tuyatec-bfq2i2sy|ty0201` | air_purifier, air_purifier_climate_hybrid |
+| `tuyatec-haoiuwzy|rh3052` | air_purifier, air_purifier_climate_hybrid |
+| `tuyatec-haoiuwzy|ts0201` | air_purifier, air_purifier_climate_hybrid |
+| `tuyatec-haoiuwzy|ts0222` | air_purifier, air_purifier_climate_hybrid |
+| `tuyatec-haoiuwzy|ts0601` | air_purifier, air_purifier_climate_hybrid |
+| `tuyatec-haoiuwzy|ty0201` | air_purifier, air_purifier_climate_hybrid |
 
-*...and 2898 more*
+*...and 1572 more*
 
 ## 📋 Action Items
 
