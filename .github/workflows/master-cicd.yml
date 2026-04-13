@@ -78,8 +78,11 @@ jobs:
       #     curl -s https://raw.githubusercontent.com/athombv/node-homey-app-schema/master/driver.compose.schema.json > .homeycompose/driver.compose.schema.json
       #     npx ajv validate -s .homeycompose/driver.compose.schema.json -d "drivers/*/driver.compose.json" --all-errors
       
-      - name: Homey Validate
-        run: npx homey app validate --level publish
+      - name: 🖼️ FLEET-WIDE IMAGE STABILIZATION
+        run: node scripts/maintenance/ensure-500x500-images.js
+      
+      - name: Homey Validate (Recursive Auto-Fix)
+        run: node scripts/maintenance/recursive-validator.js
 
       - name: "🧪 Autonomous Self-Healing Audit"
         continue-on-error: true
