@@ -54,7 +54,7 @@
 | climate_sensor_smart_hybrid | 1 | - | onoff.gang1, onoff.gang2, onoff.gang3... |
 | climate_sensor_switch_hybrid | 2 | ts0601 | onoff, measure_battery, measure_power... |
 | co_sensor | 4 | ts0601, ts0601_co | alarm_co, measure_battery, measure_co... |
-| contact_sensor | 130 | 3300-s, 3320-l, ck-tlsr8656-ss5-01(7003), doorwindow-sensor-zb3.0, ds01, e1603/e1702, lumi.magnet.ac01, lumi.magnet.agl02, lumi.sensor_magnet, lumi.sensor_magnet.aq2, mccgq01lm, mccgq11lm, mccgq12lm, mccgq14lm, mct-340 e, q9mpfhw, rh3001, snzb-04, snzb-04p, snzb-04pr2, snzb-04r2, tradfri open/close remote, ts0021, ts0203, ts0207, ts0601, ty0203, zg-102z, zg-102zl | alarm_contact, alarm_tamper, measure_battery... |
+| contact_sensor | 131 | 3300-s, 3320-l, ck-tlsr8656-ss5-01(7003), doorwindow-sensor-zb3.0, ds01, e1603/e1702, lumi.magnet.ac01, lumi.magnet.agl02, lumi.sensor_magnet, lumi.sensor_magnet.aq2, mccgq01lm, mccgq11lm, mccgq12lm, mccgq14lm, mct-340 e, q9mpfhw, rh3001, snzb-04, snzb-04p, snzb-04pr2, snzb-04r2, tradfri open/close remote, ts0021, ts0203, ts0207, ts0601, ty0203, zg-102z, zg-102zl | alarm_contact, alarm_tamper, measure_battery... |
 | contact_sensor_curtain_hybrid | 1 | - | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | contact_sensor_dimmer_hybrid | 1 | - | alarm_contact, measure_battery, alarm_tamper... |
 | contact_sensor_plug_hybrid | 0 | ts0601 | onoff, measure_power, meter_power... |
@@ -272,6 +272,6 @@
 | zigbee_repeater | 5 | ts0207 | measure_radio_stability, measure_maintenance_score |
 
 ---
-**Total:** 268 drivers, 4488 manufacturer IDs
+**Total:** 268 drivers, 4489 manufacturer IDs
 
-*Generated: 2026-04-13T20:39:09.262Z*
+*Generated: 2026-04-13T21:52:04.034Z*
