@@ -352,7 +352,7 @@ class Button4GangDevice extends ButtonDevice {
               button = Math.floor(sceneId / 10) + 1;
               actualScene = sceneId % 10;
               this.log(`[BUTTON4-SCENE] 🧭 Compressed Mapping: scene ${sceneId} -> button ${button}, action ${actualScene}`);
-            } else if (sceneId > 1 && ep === 1 && sceneId <= 4) {
+            } else if (sceneId >= 1 && ep === 1 && sceneId <= 4) {
               // Some use 1=Btn1, 2=Btn2...
               button = sceneId;
               actualScene = 0; // Single press
