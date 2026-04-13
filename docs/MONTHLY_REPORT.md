@@ -1,14 +1,14 @@
 # Monthly Tuya Zigbee Report - 2026-04
 
-*Generated: 2026-04-13T18:14:26.092Z*
+*Generated: 2026-04-13T18:46:20.378Z*
 
 ## 📊 Architectural Health [v7.0.22]
 
 | Metric | Value | Status |
 |--------|-------|--------|
 | Total Drivers | 319 | ✅ |
-| Manufacturer IDs | 68459 | ✅ |
-| Collisions | 1592 | ⚠️ |
+| Manufacturer IDs | 68467 | ✅ |
+| Collisions | 1593 | ⚠️ |
 | v7 Architectural Debt | 319 legacy drivers | 🛠️ |
 | PR Auto-Merger | Active | 🛡️ |
 | Community Responder | Template Ready | 🤖 |
@@ -38,7 +38,7 @@
 | `tuyatec-haoiuwzy|ts0601` | air_purifier, air_purifier_climate_hybrid |
 | `tuyatec-haoiuwzy|ty0201` | air_purifier, air_purifier_climate_hybrid |
 
-*...and 1572 more*
+*...and 1573 more*
 
 ## 📋 Action Items
 

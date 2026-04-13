@@ -17,7 +17,7 @@
 | air_purifier_soil_hybrid | 0 | ts0601 | measure_humidity.soil, measure_temperature, measure_humidity... |
 | air_purifier_switch_hybrid | 0 | ts0601 | onoff, measure_battery, measure_power... |
 | air_quality_co2 | 4 | ts0601, ts0601_co2 | measure_co2, measure_temperature, measure_humidity... |
-| air_quality_comprehensive | 14 | ts0005, ts0006, ts0601 | measure_co2, measure_pm25, measure_pm10... |
+| air_quality_comprehensive | 16 | ts0005, ts0006, ts0601 | measure_co2, measure_pm25, measure_pm10... |
 | air_quality_comprehensive_hybrid | 0 | ts0601 | measure_co2, measure_pm25, measure_pm10... |
 | blaster_remote_hybrid | 1 | ts1201 | button.learn_ir, ir_learned_code, ir_send_code... |
 | bulb_dimmable | 21 | a19 w 10 year, br30 w 10 year, gl-b-001z, led1623g12, led1649c5, led1836g9, lwb004, lwb006, lwb010, lwb014, par38 w 10 year, plug 01, rb 165, rb 175 w, rs 125, ts0052, ts0501a, ts0501b, ts1101, ts110e, ts110f, zbt-dimmablelight, ts0501, ts0502b | dim, light_hue, light_mode... |
@@ -224,7 +224,7 @@
 | smart_remote_4_buttons | 1 | - | button.1, button.2, button.3... |
 | smart_scene_panel | 2 | ts0601 | onoff.gang1, onoff.gang2, onoff.gang3... |
 | smoke_detector_advanced | 32 | gs361a-h04, hs1sa, hs3sa, jtyj-gd-01lm/bw, lumi.sensor_smoke, nas-sd02b0, pg-s11z, sa12izl, sd8sc_00.00.03.12tc, smszb-120, sssqs01lm, ts0205, ts0601, yg400a | alarm_smoke, measure_battery, measure_temperature... |
-| soil_sensor | 25 | arteco, cs-201z, ts0601, zg-303z | measure_humidity.soil, measure_temperature, measure_humidity... |
+| soil_sensor | 26 | arteco, cs-201z, ts0601, zg-303z | measure_humidity.soil, measure_temperature, measure_humidity... |
 | switch_1gang | 261 | 01minizb, basiczbr3, s26r2zb, s31zb, ts0001, ts0001_power, ts0001_switch, ts0001_switch_module, ts000f, ts0011, ts0101, ts011f, ts0601, ts0726, ts4100, zbm5-1c-120, zbm5-2c-120, zbm5-3c-120, zbmini, zbminil2, zbminil2-r2, zbminir, zbminir2, zbminir2-r2, zg-301z, zg-302z1 | onoff, measure_battery, measure_power... |
 | switch_2gang | 68 | ts0002, ts0002_power, ts0002_switch_module, ts0003, ts0012, ts0013, zg-302z2, zg-305z | onoff, onoff.gang2, measure_power... |
 | switch_3gang | 61 | ts0003, ts0003_power, ts0003_switch_module, ts0013, ts0601, zg-302z3 | onoff, onoff.gang2, onoff.gang3... |
@@ -272,6 +272,6 @@
 | zigbee_repeater | 5 | ts0207 | measure_radio_stability, measure_maintenance_score |
 
 ---
-**Total:** 268 drivers, 4485 manufacturer IDs
+**Total:** 268 drivers, 4488 manufacturer IDs
 
-*Generated: 2026-04-13T18:14:26.045Z*
+*Generated: 2026-04-13T18:46:20.336Z*
