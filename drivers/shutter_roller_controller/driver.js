@@ -31,6 +31,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
   
   
   
+  
   }
 
   _registerFlowCards() {

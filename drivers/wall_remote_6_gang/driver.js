@@ -20,7 +20,8 @@ class WallRemote6GangDriver extends Driver{
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-this.log('wall_remote_6_gang driver init');}
+this.log('wall_remote_6_gang driver init');
+  }
 }
 
 module.exports=WallRemote6GangDriver;

@@ -42,6 +42,7 @@ class WiFiSwitch4gangDriver extends TuyaLocalDriver {
   
   
   
+  
   }
 }
 

@@ -31,6 +31,7 @@ class WiFiHumidifierDriver extends TuyaLocalDriver {
   
   
   
+  
   }
 }
 

@@ -30,7 +30,8 @@ class IRRemoteDriver extends Driver {
         const device = args.device;
         if (!device) throw new Error('No device');
         await device._sendIR(args.ir_code);
-      });
+      
+  });
 
     // Action: Start learning
     this.homey.flow.getActionCard('learn_ir_code')

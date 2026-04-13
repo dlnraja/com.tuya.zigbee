@@ -30,6 +30,7 @@ class WiFiPowerStripDriver extends TuyaLocalDriver {
   
   
   
+  
   }
 }
 module.exports = WiFiPowerStripDriver;

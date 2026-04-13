@@ -38,6 +38,7 @@ class WallSwitch4Gang1WayDriver extends ZigBeeDriver {
   
   
   
+  
   }
 
   _registerFlowCards() {

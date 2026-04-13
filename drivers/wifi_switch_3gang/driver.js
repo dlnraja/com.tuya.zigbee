@@ -39,6 +39,7 @@ class WiFiSwitch3gangDriver extends TuyaLocalDriver {
   
   
   
+  
   }
 }
 

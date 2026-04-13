@@ -51,6 +51,7 @@ class SwitchWall7gangDriver extends ZigBeeDriver {
   
   
   
+  
   }
 
   _registerFlowCards() {

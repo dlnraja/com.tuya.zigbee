@@ -31,6 +31,7 @@ class CeilingFanDriver extends ZigBeeDriver {
   
   
   
+  
   }
 
   _registerFlowCards() {

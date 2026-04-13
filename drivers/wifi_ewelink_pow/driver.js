@@ -4,6 +4,11 @@ class D extends EweLinkLocalDriver{async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-await super.onInit();this.log('[EWE-POW-DRV] Ready');}}
+
+    
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+this.log('[EWE-POW-DRV] Ready');
+  }}
 module.exports=D;
 

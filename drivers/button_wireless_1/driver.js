@@ -53,7 +53,8 @@ class Button1GangDriver extends ZigBeeDriver {
           if (card) {
             card.registerRunListener(async (args, state) => {
               if (!args.device) {
-                this.error(`[FLOW] Device not found for ${triggerId}`);
+                this.error(`[FLOW] Device not found for ${triggerId
+  }`);
                 return false;
               }
               return true;

@@ -33,6 +33,7 @@ class WiFiThermostatDriver extends TuyaLocalDriver {
   
   
   
+  
   }
 }
 

@@ -36,6 +36,7 @@ class WiFiSwitch2gangDriver extends TuyaLocalDriver {
   
   
   
+  
   }
 }
 

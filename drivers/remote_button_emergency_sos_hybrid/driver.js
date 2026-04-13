@@ -20,7 +20,8 @@ class SmartRemote4ButtonsDriver extends Driver{
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-this.log('smart_remote_4_buttons driver init');}
+this.log('smart_remote_4_buttons driver init');
+  }
 }
 
 module.exports=SmartRemote4ButtonsDriver;

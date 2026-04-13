@@ -32,6 +32,7 @@ class WiFiSirenDriver extends TuyaLocalDriver {
   
   
   
+  
   }catch(e){this.log('[Flow]',i,e.message);}};
     r('wifi_siren_activate',async({device})=>{await device.triggerCapabilityListener('onoff',true);return true;});
     r('wifi_siren_deactivate',async({device})=>{await device.triggerCapabilityListener('onoff',false);return true;});

@@ -26,6 +26,7 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
   
   
   
+  
   }
 
   _registerFlowCards() {

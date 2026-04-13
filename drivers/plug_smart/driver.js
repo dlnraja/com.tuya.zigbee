@@ -31,6 +31,7 @@ class PlugSmartDriver extends ZigBeeDriver {
   
   
   
+  
   }
 
   _registerFlowCards() {

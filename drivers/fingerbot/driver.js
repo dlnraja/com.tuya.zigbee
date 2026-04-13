@@ -30,6 +30,7 @@ class FingerbotDriver extends ZigBeeDriver {
   
   
   
+  
   }
       catch (e) { this.log(`[Flow] ${id} skip: ${e.message}`); }
     };

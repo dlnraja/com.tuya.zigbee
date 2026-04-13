@@ -28,6 +28,7 @@ class SmartScenePanelDriver extends ZigBeeDriver {
   
   
   
+  
   } catch(e) { return null; } })();
     sceneTrigger.registerRunListener(async (args, state) => {
       return !args.scene || args.scene === state.scene;

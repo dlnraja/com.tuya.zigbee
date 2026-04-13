@@ -31,6 +31,7 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
   
   
   
+  
   }
 
   _registerFlowCards() {

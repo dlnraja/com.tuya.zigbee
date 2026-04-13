@@ -39,6 +39,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
   
   
   
+  
   }
 
   _registerFlowCards() {

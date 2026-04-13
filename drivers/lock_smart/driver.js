@@ -31,6 +31,7 @@ class LockSmartDriver extends ZigBeeDriver {
   
   
   
+  
   }
 
   _registerFlowCards() {

@@ -1,7 +1,7 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "7.2.14",
-  "description": "Universal Tuya Zigbee - Local-first control with AI automation",
+  "version": "22.0.0",
+  "description": "Universal Tuya Zigbee App",
   "main": "app.js",
   "scripts": {
     "postbuild": "node scripts/maintenance/fix-large-images.js",

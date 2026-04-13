@@ -31,6 +31,7 @@ class WiFiIrRemoteDriver extends TuyaLocalDriver {
   
   
   
+  
   }
 }
 

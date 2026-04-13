@@ -67,6 +67,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
   
   
   
+  
   }
         const temp = args.device.getCapabilityValue('measure_temperature');
         return temp !== null && temp > args.temp;

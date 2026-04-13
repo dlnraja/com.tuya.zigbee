@@ -20,7 +20,8 @@ class SmartKnobSwitchDriver extends Driver{
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-this.log('smart_knob_switch driver init');}
+this.log('smart_knob_switch driver init');
+  }
 }
 
 module.exports=SmartKnobSwitchDriver;

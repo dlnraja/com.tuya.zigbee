@@ -30,7 +30,8 @@ class RadiatorControllerDriver extends ZigBeeDriver {
       const driverId = 'radiator_controller';
 
       // Register flow triggers
-      this._radiator_mode_changedTrigger = this.homey.flow.getTriggerCard(`${driverId}_radiator_mode_changed`);
+      this._radiator_mode_changedTrigger = this.homey.flow.getTriggerCard(`${driverId
+  }_radiator_mode_changed`);
       this._pilot_signal_sentTrigger = this.homey.flow.getTriggerCard(`${driverId}_pilot_signal_sent`);
       
       // Register flow conditions

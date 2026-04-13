@@ -20,7 +20,8 @@ class HandheldRemote4ButtonsDriver extends Driver{
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-this.log('handheld_remote_4_buttons driver init');}
+this.log('handheld_remote_4_buttons driver init');
+  }
 }
 
 module.exports=HandheldRemote4ButtonsDriver;

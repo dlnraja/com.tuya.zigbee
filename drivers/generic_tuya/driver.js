@@ -36,6 +36,7 @@ class GenericTuyaDriver extends ZigBeeDriver {
   
   
   
+  
   }
 
   _registerFlowCards() {
