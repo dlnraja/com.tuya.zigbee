@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-13T08:32:30.767Z",
+  "ts": "2026-04-13T08:37:04.172Z",
   "currentCount": 7390,
   "src": {
     "johan": {
@@ -19001,6 +19001,15 @@
         },
         {
           "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1365,
+          "title": "Device Request - [MOES Wireless Button Switch] - [_TZ3000_kaflzta4] / [TS004F]",
+          "mfrs": [
+            "_TZ3000_kaflzta4",
+            "_TZ3000_kaflzta4"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
           "num": 1364,
           "title": "Device Request - Smart switch - _TZ3000_gwkzibhs /TS004F",
           "mfrs": [
@@ -19158,16 +19167,6 @@
           "title": "Add time sync support and fix LCD temp/humidity sensor",
           "mfrs": [
             "_TZE200_locansqn"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1345,
-          "title": "Device Request - AVATTO Smart thermostat WT198 - _TZE284_xnbkhhdr / TS0601",
-          "mfrs": [
-            "_TZE284_xnbkhhdr",
-            "_TZE284_xnbkhhdr",
-            "_TZE284_xnbkhhdr"
           ]
         }
       ]
