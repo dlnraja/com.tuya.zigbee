@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-13T15:53:06.071Z",
+  "ts": "2026-04-13T16:24:08.506Z",
   "currentCount": 3597,
   "src": {
     "johan": {
@@ -19001,6 +19001,17 @@
         },
         {
           "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1366,
+          "title": "Support request: TS0001 – _TZ3000_0t4zjtia (1-gang switch)",
+          "mfrs": [
+            "_TZ3000_0t4zjtia",
+            "_TZ3000_0t4zjtia",
+            "_TZ3000_0t4zjtia",
+            "_TZ3000_0t4zjtia"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
           "num": 1365,
           "title": "Device Request - [MOES Wireless Button Switch] - [_TZ3000_kaflzta4] / [TS004F]",
           "mfrs": [
@@ -19159,14 +19170,6 @@
             "_TZE204_dwcarsat",
             "_TZE200_vrcfo4i0",
             "_TZ3000_zutizvyk"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1346,
-          "title": "Add time sync support and fix LCD temp/humidity sensor",
-          "mfrs": [
-            "_TZE200_locansqn"
           ]
         }
       ]
