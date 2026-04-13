@@ -15,7 +15,10 @@
     "measure_maintenance_score"
   ],
   "zigbee": {
-    "productId": [],
+    "productId": [
+      "TS0601",
+      "ts0601"
+    ],
     "learnmode": {
       "image": "/drivers/switch_1gang/assets/learnmode.svg",
       "instruction": {
@@ -24,7 +27,8 @@
     },
     "manufacturerName": [
       "_TZ3000_I8JFIEZR",
-      "_tz3000_i8jfiezr"
+      "_tz3000_i8jfiezr",
+      "_tz3000_mrpevh8p"
     ],
     "endpoints": {
       "1": {

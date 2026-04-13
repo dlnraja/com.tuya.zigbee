@@ -1,0 +1,237 @@
+'use strict';
+
+const { ZigBeeDriver } = require('homey-zigbeedriver');
+
+/**
+ * v5.5.562: CRITICAL FIX - "Could not get device by id" error prevention
+ * - Conditions now return false instead of throwing when device missing
+ * - Actions now return silently instead of throwing when device missing
+ * - Added try-catch wrappers to prevent error propagation to Homey
+ *
+ * v5.5.506: Fixed flow card registration with proper error handling
+ */
+class Switch4GangDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
+
+  /**
+   * Safe wrapper for condition handlers - returns false if device invalid
+   */
+  _safeCondition(handler) {
+    return async (args) => {
+      try {
+        if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
+          this.log('[FLOW] Condition: Device not available (deleted/re-paired?)');
+          return false;
+        }
+        return await handler(args);
+      } catch (err) {
+        this.error('[FLOW] Condition error:', err.message);
+        return false;
+      }
+    };
+  }
+
+  /**
+   * Safe wrapper for action handlers - returns silently if device invalid
+   */
+  _safeAction(handler) {
+    return async (args) => {
+      try {
+        if (!args?.device || typeof args.device.triggerCapabilityListener !== 'function') {
+          this.log('[FLOW] Action: Device not available (deleted/re-paired?)');
+          return;
+        }
+        await handler(args);
+      } catch (err) {
+        this.error('[FLOW] Action error:', err.message);
+      }
+    };
+  }
+
+  async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+
+
+
+
+
+
+
+
+
+
+
+    this.log('4-Gang Switch Driver v5.5.562 initializing...');
+    
+
+    try {
+      // Register flow card triggers for each gang
+
+
+
+
+
+
+
+
+
+      // Register flow card conditions - v5.5.562: using safe wrapper
+
+      this.gang1IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
+        return args.device.getCapabilityValue('onoff') === true;
+      
+  
+  
+  
+  }));
+
+      this.gang2IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
+        return args.device.getCapabilityValue('onoff.gang2') === true;
+      }));
+
+      this.gang3IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
+        return args.device.getCapabilityValue('onoff.gang3') === true;
+      }));
+
+      this.gang4IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
+        return args.device.getCapabilityValue('onoff.gang4') === true;
+      }));
+
+      // Register flow card actions - v5.5.562: using safe wrapper
+
+      this.gang1OnAction.registerRunListener(this._safeAction(async (args) => {
+        await args.device._setGangOnOff(1, true).catch(() => {});
+        await args.device.setCapabilityValue('onoff', true).catch(() => {});
+      }));
+
+      this.gang1OffAction.registerRunListener(this._safeAction(async (args) => {
+        await args.device._setGangOnOff(1, false).catch(() => {});
+        await args.device.setCapabilityValue('onoff', false).catch(() => {});
+      }));
+
+      this.gang2OnAction.registerRunListener(this._safeAction(async (args) => {
+        await args.device.triggerCapabilityListener('onoff.gang2', true);
+      }));
+
+      this.gang2OffAction.registerRunListener(this._safeAction(async (args) => {
+        await args.device.triggerCapabilityListener('onoff.gang2', false);
+      }));
+
+      this.gang3OnAction.registerRunListener(this._safeAction(async (args) => {
+        await args.device.triggerCapabilityListener('onoff.gang3', true);
+      }));
+
+      this.gang3OffAction.registerRunListener(this._safeAction(async (args) => {
+        await args.device.triggerCapabilityListener('onoff.gang3', false);
+      }));
+
+      this.gang4OnAction.registerRunListener(this._safeAction(async (args) => {
+        await args.device.triggerCapabilityListener('onoff.gang4', true);
+      }));
+
+      this.gang4OffAction.registerRunListener(this._safeAction(async (args) => {
+        await args.device.triggerCapabilityListener('onoff.gang4', false);
+      }));
+
+      // v5.5.930: LED backlight flow cards
+      try {
+      this.homey.flow.getActionCard('switch_4gang_set_backlight')
+        .registerRunListener(this._safeAction(async (args) => {
+            await args.device.setBacklightMode(args.mode);
+          }));
+        this.log('[FLOW] ✅ Registered: switch_4gang_set_backlight');
+      } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
+
+      try {
+      this.homey.flow.getActionCard('switch_4gang_set_backlight_color')
+        .registerRunListener(this._safeAction(async (args) => {
+            await args.device.setBacklightColor(args.state, args.color);
+          }));
+        this.log('[FLOW] ✅ Registered: switch_4gang_set_backlight_color');
+      } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
+
+      try {
+      this.homey.flow.getActionCard('switch_4gang_set_backlight_brightness')
+        .registerRunListener(this._safeAction(async (args) => {
+            await args.device.setBacklightBrightness(args.brightness);
+          }));
+        this.log('[FLOW] ✅ Registered: switch_4gang_set_backlight_brightness');
+      } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
+
+      // v5.12.0: Toggle per gang + all on/off
+      const caps = ['onoff', 'onoff.gang2', 'onoff.gang3', 'onoff.gang4'];
+      ['gang1', 'gang2', 'gang3', 'gang4'].forEach((gang, idx) => {
+        try {
+      this.homey.flow.getActionCard('switch_4gang_set_scene_mode')
+        .registerRunListener(this._safeAction(async (args) => {
+              const cap = caps[idx];
+              const v = args.device.getCapabilityValue(cap);
+              await args.device._setGangOnOff(idx + 1, !v).catch(() => {});
+              await args.device.setCapabilityValue(cap, !v).catch(() => {});
+            }));
+        } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
+      });
+
+      try {
+
+          .registerRunListener(this._safeAction(async (args) => {
+            for (const cap of caps) {
+              if (args.device.hasCapability(cap)) await args.device._setGangOnOff(idx + 1, true).catch(() => {});
+              await args.device.setCapabilityValue(cap, true).catch(() => {});
+            }
+          }));
+      } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
+
+      try {
+
+          .registerRunListener(this._safeAction(async (args) => {
+            for (const cap of caps) {
+              if (args.device.hasCapability(cap)) await args.device._setGangOnOff(idx + 1, false).catch(() => {});
+              await args.device.setCapabilityValue(cap, false).catch(() => {});
+            }
+          }));
+      } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
+
+      // v5.12.5: Scene mode triggers + action (ported from wall_switch_4gang_1way)
+      for (const g of [1, 2, 3, 4]) {
+        try {
+      this.homey.flow.getTriggerCard(`switch_4gang_gang${g}_scene`) } catch (e) { this.log(`[FLOW] scene G${g}: ${e.message}`); }
+      }
+
+      try {
+
+          .registerRunListener(this._safeAction(async (args) => {
+            await args.device.setSceneMode(args.mode);
+          }));
+        this.log('[FLOW] ✅ Registered: switch_4gang_set_scene_mode');
+      } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
+
+      this.log('4-Gang Switch Driver v5.12.5 ✅ Flow cards registered');
+    } catch (err) {
+      this.error('4-Gang Switch Driver flow card registration failed:', err.message);
+    }
+  }
+
+}
+
+module.exports = Switch4GangDriver;
+

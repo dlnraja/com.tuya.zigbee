@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-04-12T04:12:16.586Z",
+  "timestamp": "2026-04-13T04:16:40.698Z",
   "driversScanned": 20,
-  "staticIssues": 24,
-  "autoFixed": 1,
+  "staticIssues": 23,
+  "autoFixed": 0,
   "aiSuggestions": 0,
   "aiApplied": 0,
   "dryRun": false,
@@ -23,9 +23,7 @@
     },
     {
       "driver": "air_purifier_contact_hybrid",
-      "issues": [
-        "tuya-climate-safe-set"
-      ]
+      "issues": []
     },
     {
       "driver": "air_purifier_curtain_hybrid",

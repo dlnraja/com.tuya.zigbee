@@ -32,7 +32,12 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_tyzb01_cbiezpds",
+      "_tze200_9yapgbuv",
+      "_tze200_yjjdcqsq",
+      "_tz3000_bgsigers"
+    ],
     "productId": [
       "TS0201",
       "TS0601",
