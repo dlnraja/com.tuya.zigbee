@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-14T13:10:21.493Z",
+  "ts": "2026-04-14T13:53:14.466Z",
   "currentCount": 3337,
   "src": {
     "johan": {
@@ -19011,6 +19011,17 @@
         },
         {
           "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1371,
+          "title": "Support request: TS0001 – _TZ3000_wpueorev (Water valve actuator)",
+          "mfrs": [
+            "_TZ3000_wpueorev",
+            "_TZ3000_wpueorev",
+            "_TZ3000_wpueorev",
+            "_TZ3000_wpueorev"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
           "num": 1370,
           "title": "Support request: TS0011 – _TZ3000_hafsqare (1‑gang wall switch, mains powered)",
           "mfrs": [
@@ -19171,17 +19182,6 @@
           "mfrs": [
             "_TZ3000_kxaow5ki",
             "_TZ3000_kxaow5ki"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1351,
-          "title": "Device Request - [PIR Motion Brightness] - [_TZE284_bquwrqh1] / [TS0601]",
-          "mfrs": [
-            "_TZE284_bquwrqh1",
-            "_TZE284_bquwrqh1",
-            "_TZE284_bquwrqh1",
-            "_TZE284_bquwrqh1"
           ]
         }
       ]
