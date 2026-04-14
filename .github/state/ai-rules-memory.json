@@ -4,9 +4,9 @@
       "id": "sdk3-await-capability",
       "desc": "setCapabilityValue() calls should be awaited.",
       "severity": "info",
-      "count": 85,
+      "count": 95,
       "firstSeen": "2026-04-04T17:57:49.240Z",
-      "lastSeen": "2026-04-13T04:07:02.845Z",
+      "lastSeen": "2026-04-14T04:02:19.092Z",
       "files": [
         "air_purifier",
         "air_quality_co2",
@@ -41,9 +41,9 @@
       "id": "sdk3-battery-conflict",
       "desc": "NEVER combine measure_battery + alarm_battery. SDK v3 creates duplicate UI/Flow Cards. Use runtime adaptation via UnifiedBatteryHandler.",
       "severity": "error",
-      "count": 115,
+      "count": 116,
       "firstSeen": "2026-04-04T21:17:00.000Z",
-      "lastSeen": "2026-04-13T04:07:02.840Z",
+      "lastSeen": "2026-04-14T04:02:19.087Z",
       "files": [
         "RESOLVED: 108 drivers had both caps, reverted to measure_battery only",
         "air_purifier_siren_hybrid"
@@ -192,9 +192,9 @@
       "id": "sdk3-mains-has-battery",
       "desc": "Device has mainsPowered=true but compose still declares battery capability. Runtime handler will fix, but compose is misleading.",
       "severity": "warn",
-      "count": 22,
+      "count": 25,
       "firstSeen": "2026-04-05T22:20:34.336Z",
-      "lastSeen": "2026-04-13T04:07:02.845Z",
+      "lastSeen": "2026-04-14T04:02:19.092Z",
       "files": [
         "air_quality_comprehensive",
         "ceiling_fan",
@@ -222,15 +222,15 @@
       "id": "sdk3-dp-variant-awareness",
       "desc": "DP mapping has no variant-awareness comment. Same DP can serve different functions across _TZE200/_TZE204/_TZE284 variants. Consider adding variant notes.",
       "severity": "info",
-      "count": 7,
+      "count": 8,
       "firstSeen": "2026-04-07T03:58:16.630Z",
-      "lastSeen": "2026-04-13T04:07:02.839Z",
+      "lastSeen": "2026-04-14T04:02:19.086Z",
       "files": [
         "air_purifier_sensor_hybrid"
       ]
     }
   ],
-  "lastRun": "2026-04-13T04:07:02.815Z",
-  "totalRuns": 14,
-  "totalIssues": 356
+  "lastRun": "2026-04-14T04:02:19.066Z",
+  "totalRuns": 15,
+  "totalIssues": 371
 }

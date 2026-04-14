@@ -13,10 +13,7 @@
     "measure_maintenance_score"
   ],
   "zigbee": {
-    "productId": [
-      "ts0001",
-      "ts0011"
-    ],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/switch_1gang/assets/learnmode.svg",
       "instruction": {

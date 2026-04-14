@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-04-13T04:16:40.698Z",
+  "timestamp": "2026-04-14T04:11:56.697Z",
   "driversScanned": 20,
-  "staticIssues": 23,
+  "staticIssues": 15,
   "autoFixed": 0,
   "aiSuggestions": 0,
   "aiApplied": 0,
@@ -10,15 +10,13 @@
     {
       "driver": "air_purifier",
       "issues": [
-        "sdk3-await-capability",
-        "sdk3-case-sensitive-fingerprint"
+        "sdk3-await-capability"
       ]
     },
     {
       "driver": "air_purifier_climate_hybrid",
       "issues": [
-        "sdk3-await-capability",
-        "sdk3-case-sensitive-fingerprint"
+        "sdk3-await-capability"
       ]
     },
     {
@@ -36,8 +34,7 @@
     {
       "driver": "air_purifier_din_hybrid",
       "issues": [
-        "sdk3-await-capability",
-        "sdk3-case-sensitive-fingerprint"
+        "sdk3-await-capability"
       ]
     },
     {
@@ -60,9 +57,7 @@
     },
     {
       "driver": "air_purifier_quality_hybrid",
-      "issues": [
-        "sdk3-case-sensitive-fingerprint"
-      ]
+      "issues": []
     },
     {
       "driver": "air_purifier_sensor_hybrid",
@@ -90,15 +85,12 @@
     },
     {
       "driver": "air_quality_co2",
-      "issues": [
-        "sdk3-case-sensitive-fingerprint"
-      ]
+      "issues": []
     },
     {
       "driver": "air_quality_comprehensive",
       "issues": [
-        "sdk3-mains-has-battery",
-        "sdk3-case-sensitive-fingerprint"
+        "sdk3-mains-has-battery"
       ]
     },
     {
@@ -111,15 +103,12 @@
       "driver": "blaster_remote_hybrid",
       "issues": [
         "sdk3-await-capability",
-        "sdk3-mains-has-battery",
-        "sdk3-case-sensitive-fingerprint"
+        "sdk3-mains-has-battery"
       ]
     },
     {
       "driver": "bulb_dimmable",
-      "issues": [
-        "sdk3-case-sensitive-fingerprint"
-      ]
+      "issues": []
     },
     {
       "driver": "bulb_dimmable_dimmer_hybrid",

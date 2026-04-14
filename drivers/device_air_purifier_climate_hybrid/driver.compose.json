@@ -32,27 +32,28 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tyzb01_a476raq2",
-      "_tyzb01_ftdkanlj",
-      "_tyzb01_hjsgdkfl",
-      "_tyzb01_kvwjujy9",
-      "_tz2000_a476raq2",
-      "_tz2000_xogb73am",
-      "_tz3000_0s1izerx",
-      "_tz3000_8ybe88nf",
-      "_tz3000_akqdg6g7",
-      "_tz3000_bguser20",
-      "_tz3000_bjawzodf",
-      "_tz3000_dowj6gyi",
-      "_tz3000_f2bw0b6k",
-      "_tz3000_itnrsufe",
-      "_tz3000_qaaysllp",
-      "_tz3000_rusu2vzb",
-      "_tz3000_yd2e749y",
-      "_tz3000_ywagc4rj"
+      "tuyatec-1g3tawnp",
+      "tuyatec-1uxx9cci",
+      "tuyatec-bfq2i2sy",
+      "tuyatec-haoiuwzy",
+      "tuyatec-abkehqus",
+      "tuyatec-gqhxixyk",
+      "tuyatec-ojmxeikg",
+      "tuyatec-ojmxeikq",
+      "tuyatec-prhs1rsd",
+      "tuyatec-qun7vq14",
+      "tuyatec-riuj5xzs",
+      "tuyatec-v3uxbuxy",
+      "tuyatec-vmgh3fxd",
+      "tuyatec-yg5dcbfu",
+      "tuyatec-g3gl6cgy"
     ],
     "productId": [
-      "ts0601"
+      "ts0601",
+      "rh3052",
+      "ts0201",
+      "ts0222",
+      "ty0201"
     ],
     "endpoints": {
       "1": {

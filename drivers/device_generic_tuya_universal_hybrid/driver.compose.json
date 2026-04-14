@@ -44,33 +44,33 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "aqara",
-      "aubess",
-      "avatto",
       "blitzwolf",
       "bseed",
       "bw-",
       "girier",
-      "heiman",
       "ikea",
       "lidl",
       "lonsonho",
       "lumi",
-      "moes",
       "nas-",
       "neo",
-      "philips",
       "signify",
-      "silvercrest",
       "smartthings",
       "tradfri",
       "tuya",
       "woox",
-      "xiaomi",
-      "zemismart"
+      "bitron",
+      "danfoss",
+      "eurotronic",
+      "ikea of sweden",
+      "legrand",
+      "schneider electric",
+      "signify netherlands b.v.",
+      "sunricher"
     ],
     "productId": [
-      "ts0601"
+      "ts0601",
+      "ts0203"
     ],
     "endpoints": {
       "1": {
