@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Device Air Purifier Water Hybrid",
-    "nl": "Hybride luchtzuiveraar met water",
-    "fr": "Purificateur d'air hybride à eau",
-    "de": "Luftreiniger Wasser Hybrid",
-    "es": "Purificador de aire híbrido de agua"
+    "en": "Device Air Purifier Water",
+    "nl": "luchtzuiveraar met water",
+    "fr": "Purificateur d'air à eau",
+    "de": "Luftreiniger Wasser",
+    "es": "Purificador de aire de agua"
   },
   "class": "sensor",
   "capabilities": [
@@ -74,9 +74,7 @@
     "xlarge": "drivers/water_tank_monitor/assets/images/xlarge.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tze200_ojzhk75b"
-    ],
+    "manufacturerName": [],
     "productId": [],
     "endpoints": {
       "1": {

@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Sensor Lcdtemphumidsensor Soil Hybrid",
-    "nl": "Sensor Lcdtemphumidsensor Bodem Hybride",
-    "fr": "Capteur Lcdtemphumide Sol Hybride",
-    "de": "Sensor Lcdtempfeuchtesensor Boden Hybrid",
-    "es": "Sensor Lcdtemphumidsensor Suelo Híbrido"
+    "en": "Sensor Lcdtemphumidsensor Soil",
+    "nl": "Sensor Lcdtemphumidsensor Bodem",
+    "fr": "Capteur Lcdtemphumide Sol",
+    "de": "Sensor Lcdtempfeuchtesensor Boden",
+    "es": "Sensor Lcdtemphumidsensor Suelo"
   },
   "class": "sensor",
   "capabilities": [
@@ -69,10 +69,9 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "_tze284_oitavov2"
-    ],
+    "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "endpoints": {

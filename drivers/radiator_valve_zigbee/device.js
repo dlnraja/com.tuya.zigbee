@@ -1,6 +1,6 @@
 'use strict';
 
-const HybridThermostatBase = require('../../lib/devices/HybridThermostatBase');
+const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
@@ -14,7 +14,7 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  * - Multi-manufacturer support (Tuya, Moes, Saswell, etc.)
  */
 
-class RadiatorValveZigbeeDevice extends HybridThermostatBase {
+class RadiatorValveZigbeeDevice extends UnifiedThermostatBase {
   get supportsScheduler() { return true; }
   get supportsBoost() { return true; }
   get supportsEcoMode() { return true; }

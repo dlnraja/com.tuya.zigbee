@@ -1,17 +1,17 @@
 'use strict';
-const HybridThermostatBase = require('../../lib/devices/HybridThermostatBase');
+const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      THERMOSTAT / TRV - v5.5.129 FIXED (extends HybridThermostatBase)       ║
+ * ║      THERMOSTAT / TRV - v5.5.129 FIXED (extends UnifiedThermostatBase)       ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  HybridThermostatBase handles: target_temperature listener, ZCL Thermostat  ║
+ * ║  UnifiedThermostatBase handles: target_temperature listener, ZCL Thermostat  ║
  * ║  This class ONLY: dpMappings                                                ║
  * ║  DPs: 1-9,13-17,24,35,36,101 | ZCL: 513,516,1,EF00                         ║
  * ║  Variants: Beca, Beok, Moes, AVATTO TRV, Saswell                           ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class ThermostatTuyaDPDevice extends HybridThermostatBase {
+class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
 
   get mainsPowered() { return false; }
 

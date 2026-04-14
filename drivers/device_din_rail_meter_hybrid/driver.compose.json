@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Device Din Rail Meter Hybrid",
-    "nl": "Hybride DIN-rail meter",
-    "fr": "Compteur Hybride sur Rail DIN",
+    "en": "Device Din Rail Meter",
+    "nl": "DIN-rail meter",
+    "fr": "Compteur sur Rail DIN",
     "de": "Hybridzähler auf DIN-Schiene",
-    "es": "Medidor Híbrido de Carril DIN"
+    "es": "Medidor de Carril DIN"
   },
   "class": "fan",
   "capabilities": [
@@ -54,7 +54,7 @@
     },
     "dim.speed": {
       "title": {
-        "en": " speed"
+        "en": "speed"
       }
     },
     "meter_power.exported": {
@@ -89,6 +89,7 @@
       "_tze204_nslr42tt"
     ],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "endpoints": {

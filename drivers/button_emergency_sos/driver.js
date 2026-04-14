@@ -27,13 +27,15 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
 
-    this._longPressCard = this.homey.flow.getTriggerCard('button_emergency_sos_long_pressed');
-    this._doublePressCard = this.homey.flow.getTriggerCard('button_emergency_sos_double_pressed');
+    this._longPressCard = (() => { try { return this.homey.flow.getTriggerCard('button_emergency_sos_long_pressed'); 
+  
+  } catch(e) { return null; } })();
+    this._doublePressCard = (() => { try { return this.homey.flow.getTriggerCard('button_emergency_sos_double_pressed'); } catch(e) { return null; } })();
     this.log('SosEmergencyButtonDriver v5.5.832 initialized');
     
     // v5.5.832: Register flow trigger card with registerRunListener
     try {
-      this._sosFlowCard = this.homey.flow.getTriggerCard('button_emergency_sos_pressed');
+      this._sosFlowCard = (() => { try { return this.homey.flow.getTriggerCard('button_emergency_sos_pressed'); } catch(e) { return null; } })();
       if (this._sosFlowCard) {
         this._sosFlowCard.registerRunListener(async (args, state) => {
           this.log('[FLOW] 🎯 RunListener called - returning true');
@@ -72,7 +74,7 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
     } else {
       // Fallback: try to get card again
       try {
-        const card = this.homey.flow.getTriggerCard('button_emergency_sos_pressed');
+        const card = (() => { try { return this.homey.flow.getTriggerCard('button_emergency_sos_pressed'); } catch(e) { return null; } })();
         if (card) {
           await card.trigger(device, tokens, state);
           this.log('[FLOW] ✅ button_emergency_sos_pressed triggered (fallback)!');

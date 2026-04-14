@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Sensor Contact Water Hybrid",
-    "nl": "Sensor Contact Water Hybride",
-    "fr": "Capteur de Contact Eau Hybride",
-    "de": "Sensor Kontakt Wasser Hybrid",
-    "es": "Sensor de Contacto Agua Híbrido"
+    "en": "Sensor Contact Water",
+    "nl": "Sensor Contact Water",
+    "fr": "Capteur de Contact Eau",
+    "de": "Sensor Kontakt Wasser",
+    "es": "Sensor de Contacto Agua"
   },
   "class": "sensor",
   "capabilities": [
@@ -29,6 +29,9 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "Q9MPFHW",
+      "TS0207",
+      "TS0601",
       "q9mpfhw",
       "ts0207",
       "ts0601"

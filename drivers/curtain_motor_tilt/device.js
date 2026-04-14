@@ -1,7 +1,7 @@
 'use strict';
-const HybridCoverBase = require('../../lib/devices/HybridCoverBase');
+const UnifiedCoverBase = require('../../lib/devices/UnifiedCoverBase');
 
-class CurtainMotorTiltDevice extends HybridCoverBase {
+class CurtainMotorTiltDevice extends UnifiedCoverBase {
   get coverCapabilities() { return ['windowcoverings_state', 'windowcoverings_set', 'windowcoverings_tilt_set']; }
   async onNodeInit({ zclNode }) {
     // --- Attribute Reporting Configuration (auto-generated) ---

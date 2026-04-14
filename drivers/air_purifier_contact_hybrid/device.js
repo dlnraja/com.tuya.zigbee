@@ -1,8 +1,8 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { setupSonoffSensor, handleSonoffSensorSettings } = require('../../lib/mixins/SonoffSensorMixin');
-// v5.11.99: IASZoneManager removed — HybridSensorBase handles IAS enrollment+inversion
+// v5.11.99: IASZoneManager removed — UnifiedSensorBase handles IAS enrollment+inversion
 // v5.12.0: FIX Lasse_K #802 — IEEEAddressManager (7 methods) for CIE write + warn hybrid devices
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -38,7 +38,7 @@ const DEBOUNCE = {
  * ║  - Solution: Filter repeated states + longer debounce + state validation    ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class ContactSensorDevice extends HybridSensorBase {
+class ContactSensorDevice extends UnifiedSensorBase {
 
   get mainsPowered() { return false; }
 
@@ -280,7 +280,7 @@ class ContactSensorDevice extends HybridSensorBase {
    */
   async setCapabilityValue(capability, value) {
     if (capability === 'alarm_contact') {
-      // v5.11.5: For IAS events, HybridSensorBase already applied correct inversion
+      // v5.11.5: For IAS events, UnifiedSensorBase already applied correct inversion
       // (manufacturer defaults XOR user settings including reverse_alarm)
       // Only apply device-level inversion for non-IAS events (Tuya DP)
       const isIAS = this._iasOriginatedAlarm;

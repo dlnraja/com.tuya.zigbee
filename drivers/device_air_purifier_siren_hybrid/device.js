@@ -1,5 +1,5 @@
 'use strict';
-const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
+const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -9,7 +9,7 @@ const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
  * ║  Features: alarm, volume, duration, melody, strobe                           ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class SirenDevice extends HybridPlugBase {
+class SirenDevice extends UnifiedPlugBase {
 
   get plugCapabilities() {
     return ['onoff', 'measure_battery', 'measure_temperature', 'measure_humidity'];

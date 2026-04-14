@@ -18,15 +18,24 @@
   ],
   "zigbee": {
     "productId": [
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS000F",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS011F",
+      "ts0001",
       "ts0002",
       "ts0003",
-      "ts0012",
-      "ts0013",
-      "ts011f",
-      "ts0001",
       "ts000f",
       "ts0011",
-      "ts0014"
+      "ts0012",
+      "ts0013",
+      "ts0014",
+      "ts011f"
     ],
     "learnmode": {
       "image": "/drivers/switch_2gang/assets/learnmode.svg",
@@ -728,11 +737,11 @@
     }
   ],
   "name": {
-    "en": "Button Wireless Switch Hybrid",
-    "nl": "Draadloze Hybride Schakelaar",
-    "fr": "Interrupteur Hybride Sans Fil",
-    "de": "Drahtloser Hybrid-Schalter",
-    "es": "Interruptor Híbrido Inalámbrico"
+    "en": "Button Wireless Switch",
+    "nl": "Draadloze Schakelaar",
+    "fr": "Interrupteur Sans Fil",
+    "de": "Drahtloser -Schalter",
+    "es": "Interruptor Inalámbrico"
   },
   "platforms": [
     "local"
@@ -755,27 +764,27 @@
     },
     "button.toggle_1": {
       "title": {
-        "en": " 1"
+        "en": "1"
       }
     },
     "button.toggle_2": {
       "title": {
-        "en": " 2"
+        "en": "2"
       }
     },
     "button.identify": {
       "title": {
-        "en": " identify"
+        "en": "identify"
       }
     },
     "button.1": {
       "title": {
-        "en": " 1"
+        "en": "1"
       }
     },
     "button.2": {
       "title": {
-        "en": " 2"
+        "en": "2"
       }
     }
   },

@@ -32,12 +32,14 @@ class VibrationSensorDriver extends ZigBeeDriver {
   
   
   
+  
+  
   }
 
   _registerFlowCards() {
     // CONDITION: Vibration is/is not detected
     try {
-      this.homey.flow.getConditionCard('vibration_sensor_is_vibrating')
+      (() => { try { return this.homey.flow.getConditionCard('vibration_sensor_is_vibrating'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_vibration') === true;
@@ -47,7 +49,7 @@ class VibrationSensorDriver extends ZigBeeDriver {
 
     // CONDITION: Battery above threshold
     try {
-      this.homey.flow.getConditionCard('vibration_sensor_battery_above')
+      (() => { try { return this.homey.flow.getConditionCard('vibration_sensor_battery_above'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
@@ -58,7 +60,7 @@ class VibrationSensorDriver extends ZigBeeDriver {
 
     // CONDITION: Vibration active
     try {
-      this.homey.flow.getConditionCard('vibration_sensor_vibration_active')
+      (() => { try { return this.homey.flow.getConditionCard('vibration_sensor_vibration_active'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_vibration') === true;
@@ -68,7 +70,7 @@ class VibrationSensorDriver extends ZigBeeDriver {
 
     // CONDITION: Tamper active
     try {
-      this.homey.flow.getConditionCard('vibration_sensor_tamper_active')
+      (() => { try { return this.homey.flow.getConditionCard('vibration_sensor_tamper_active'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_tamper') === true;

@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Sensor Motion Presence Hybrid",
-    "nl": "Hybride bewegingssensor",
-    "fr": "Capteur de présence hybride",
+    "en": "Sensor Motion Presence",
+    "nl": "bewegingssensor",
+    "fr": "Capteur de présence",
     "de": "Hybridbewegungsmelder",
-    "es": "Sensor de presencia híbrido"
+    "es": "Sensor de presencia"
   },
   "class": "sensor",
   "capabilities": [
@@ -38,6 +38,7 @@
       "_tze200_bj9m6v91"
     ],
     "productId": [
+      "TS0225",
       "ts0225"
     ],
     "learnmode": {

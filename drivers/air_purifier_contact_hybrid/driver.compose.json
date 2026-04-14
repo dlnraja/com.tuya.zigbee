@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Air Purifier Contact Hybrid",
-    "nl": "Air Purifier Contact Hybrid",
-    "fr": "Air Purifier Contact Hybrid"
+    "en": "Air Purifier Contact",
+    "nl": "Air Purifier Contact",
+    "fr": "Air Purifier Contact"
   },
   "class": "sensor",
   "capabilities": [
@@ -29,6 +29,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "learnmode": {

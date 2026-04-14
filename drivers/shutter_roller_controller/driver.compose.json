@@ -26,10 +26,9 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tze204_guvc7pdy"
-    ],
+    "manufacturerName": [],
     "productId": [
+      "TS0601_SHUTTER",
       "ts0601_shutter"
     ],
     "endpoints": {

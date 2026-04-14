@@ -1,14 +1,14 @@
 'use strict';
-const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
  * WALL SWITCH 1-GANG 1-WAY - v5.8.95 Bidirectional fix
- * HybridSwitchBase._setGangOnOff() now calls markAppCommand() centrally.
+ * UnifiedSwitchBase._setGangOnOff() now calls markAppCommand() centrally.
  * Compatible with BSEED devices: _TZ3000_blhvsaqf, _TZ3000_ysdv91bk
  */
-class WallSwitch1Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
+class WallSwitch1Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
 
   get gangCount() { return 1; }
 
@@ -26,7 +26,7 @@ class WallSwitch1Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
 
   async onNodeInit({ zclNode }) {
     // v5.8.95: Removed broken _setupPhysicalButtonFlowDetection + _markAppCommand.
-    // HybridSwitchBase._setGangOnOff() now calls PhysicalButtonMixin.markAppCommand() centrally.
+    // UnifiedSwitchBase._setGangOnOff() now calls PhysicalButtonMixin.markAppCommand() centrally.
     await super.onNodeInit({ zclNode });
     this.initPhysicalButtonDetection(); // rule-19 injected
     this._registerCapabilityListeners(); // rule-12a injected

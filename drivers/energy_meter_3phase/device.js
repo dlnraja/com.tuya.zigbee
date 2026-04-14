@@ -1,7 +1,7 @@
 'use strict';
-const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
+const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 
-class EnergyMeter3PhaseDevice extends HybridPlugBase {
+class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
   get plugCapabilities() { return ['measure_power', 'meter_power', 'measure_voltage', 'measure_current']; }
   async onNodeInit({ zclNode }) {
     // --- Attribute Reporting Configuration (auto-generated) ---

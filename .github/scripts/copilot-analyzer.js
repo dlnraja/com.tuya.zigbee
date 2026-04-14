@@ -22,7 +22,7 @@ CRITICAL RULES:
 SDK v3 BATTERY & ENERGY RULES:
 - NEVER combine measure_battery + alarm_battery on same device (SDK v3 violation: duplicate UI/Flow Cards)
 - Compose declares measure_battery as possibility; UnifiedBatteryHandler adapts at RUNTIME
-- Power source varies per variant! Same manufacturerName can be battery, mains, kinetic, hybrid, or ALL at once
+- Power source varies per variant! Same manufacturerName can be battery, mains, kinetic, unified, or ALL at once
 - Battery % sources: ZCL genPowerCfg (cluster 0x0001 / div 2) OR Tuya DP 4,10,14,15,21,100-105
 - Voltage sources: DPs 33,35,247 (convert via discharge curve: CR2032, AA, Li-ion)
 - IAS Zone Status bit 3 = boolean low-battery alarm

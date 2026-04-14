@@ -27,34 +27,34 @@ function generateResponse(type, data) {
     
     if (type === 'issue') {
         template = `👋 Hello @${user || 'contributor'},
-
-🛡️ **Architect Review [v7.0.22]**
+ 
+🛡️ **Architect Review [v7.4.4]**
 Thank you for reporting this regarding the **${deviceName || 'Tuya device'}**. This item has been logged into our triage pipeline.
-
+ 
 **Technical Status**: ${status.toUpperCase()}
 **Architectural Context**:
-- This driver operates under our **Local-Direct First** doctrine.
-- If you are experiencing state delays, ensure you are testing via local control before checking cloud mirrors.
+- This driver operates under our **Universal Unified Engine** (v7.4.4+) doctrine.
+- **Stability Fix**: This version includes the global remediation for SDK 3 flow card crashes.
 - We are currently verifying the DP mappings against our industrial schema.
-
-${status === 'fixed' ? '✅ **Resolution**: This has been solved in the latest v7.0.x build. Please update through the Homey App Store (Test channel).' : 'Stay tuned for the next autonomous maintenance pulse.'}
-
+ 
+${status === 'fixed' ? '✅ **Resolution**: This has been solved in the latest v7.4.4 build. Please update through the Homey App Store (Test channel).' : 'Stay tuned for the next autonomous maintenance pulse.'}
+ 
 *— dlnraja Tuya Maintenance Bot*`;
     } 
     else if (type === 'forum_new_device') {
         template = `🚀 **New Device Support Integration: ${deviceName || 'Tuya Device'}**
-
-We are pleased to announce that the **${deviceName}** is now officially supported in **MAX Local Pro v7.0**.
-
+ 
+We are pleased to announce that the **${deviceName}** is now officially supported in **Universal Tuya Unified Engine v7.4.4**.
+ 
 **What makes this integration different?**
 1. **Local-Protocol Native**: Controlled 100% locally via Homey Pro. 
-2. **SDK 3 Compliance**: Built using the latest Athom standards for zero-crash stability.
+2. **SDK 3 Compliance**: Built using the latest Athom standards and our Zero-Defect remediation.
 3. **Multi-Gang Ready**: Optimized state reporting ensures no Flow collisions.
-
+ 
 **How to test?**
-Install the 'Test' version from the Homey App Store: https://homey.app/a/com.tuya.zigbee/test/
-
-*Join the v7 revolution: Total control, Zero cloud lag.*`;
+Install the 'Test' version from the Homey App Store: https://homey.app/a/com.dlnraja.tuya.zigbee/test/
+ 
+*Total control, Zero cloud lag, Refactored for Stability.*`;
     }
 
     return template;

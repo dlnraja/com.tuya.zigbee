@@ -453,9 +453,24 @@
               "en": "State"
             },
             "values": [
-              { "id": "normal", "label": { "en": "Normal" } },
-              { "id": "low", "label": { "en": "Low" } },
-              { "id": "high", "label": { "en": "High" } }
+              {
+                "id": "normal",
+                "label": {
+                  "en": "Normal"
+                }
+              },
+              {
+                "id": "low",
+                "label": {
+                  "en": "Low"
+                }
+              },
+              {
+                "id": "high",
+                "label": {
+                  "en": "High"
+                }
+              }
             ]
           }
         ]

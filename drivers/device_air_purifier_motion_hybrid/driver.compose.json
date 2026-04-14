@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Device Air Purifier Motion Hybrid",
-    "nl": "Luchtzuiveraar hybride met beweging",
-    "fr": "Purificateur d'air hybride à mouvement",
-    "de": "Luftreiniger Hybrid mit Bewegung",
-    "es": "Purificador de aire híbrido con movimiento"
+    "en": "Device Air Purifier Motion",
+    "nl": "Luchtzuiveraar met beweging",
+    "fr": "Purificateur d'air à mouvement",
+    "de": "Luftreiniger mit Bewegung",
+    "es": "Purificador de aire con movimiento"
   },
   "class": "fan",
   "capabilities": [
@@ -35,6 +35,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "endpoints": {

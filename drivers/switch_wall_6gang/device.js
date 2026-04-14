@@ -1,5 +1,5 @@
 'use strict';
-const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
@@ -12,7 +12,7 @@ const ZCL_ONLY_MANUFACTURERS_6G = [
   '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk', '_TZ3000_hafsqare'
 ];
 
-class Switch6GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
+class Switch6GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
   get gangCount() { return 6; }
 
   get sceneMode() { return this.getSetting('scene_mode') || 'auto'; }

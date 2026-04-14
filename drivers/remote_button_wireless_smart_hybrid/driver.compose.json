@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Remote Button Wireless Smart Hybrid",
-    "nl": "Draadloze Slimme Hybride Afstandsbediening",
-    "fr": "Bouton Télécommande Sans Fil Intelligent Hybride",
-    "de": "Kabelloser Smart Hybrid Fernbedienung",
-    "es": "Botón Remoto Inalámbrico Híbrido Inteligente"
+    "en": "Remote Button Wireless Smart",
+    "nl": "Draadloze Slimme Afstandsbediening",
+    "fr": "Bouton Télécommande Sans Fil Intelligent",
+    "de": "Kabelloser Smart Fernbedienung",
+    "es": "Botón Remoto Inalámbrico Inteligente"
   },
   "class": "sensor",
   "capabilities": [
@@ -51,6 +51,8 @@
       "_tz3000_tzvbimpq"
     ],
     "productId": [
+      "TS0041",
+      "TS004F",
       "ts0041",
       "ts004f"
     ],

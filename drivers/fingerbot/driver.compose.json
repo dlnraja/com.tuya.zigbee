@@ -34,13 +34,16 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3210_pwj6vuj9",
-      "_tz3210_d3m9v8p6"
+      "_tz3210_d3m9v8p6",
+      "_tz3210_pwj6vuj9"
     ],
     "productId": [
+      "TS0001",
+      "TS0001_FINGER",
+      "TS0001_FINGERBOT",
       "ts0001",
-      "ts0001_fingerbot",
-      "ts0001_finger"
+      "ts0001_finger",
+      "ts0001_fingerbot"
     ],
     "endpoints": {
       "1": {
@@ -73,7 +76,7 @@
   "capabilitiesOptions": {
     "button.push": {
       "title": {
-        "en": " push"
+        "en": "push"
       }
     }
   },

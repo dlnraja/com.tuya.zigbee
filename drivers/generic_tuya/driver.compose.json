@@ -212,6 +212,9 @@
       "zigbee2mqtt"
     ],
     "productId": [
+      "TS0203",
+      "TS0601",
+      "TS0601_GENERIC",
       "ts0203",
       "ts0601",
       "ts0601_generic"
@@ -227,8 +230,8 @@
     "learnmode": {
       "image": "/drivers/generic_tuya/assets/learnmode.svg",
       "instruction": {
-        "en": "Generic Tuya TS0601 device.\n\n1. Press and hold the reset button for 5+ seconds\n2. The LED should start blinking\n3. The device will be detected automatically\n\nNote: This is a fallback driver for unknown TS0601 devices. Data points will be auto-discovered.",
-        "fr": "Appareil Tuya TS0601 générique.\n\n1. Appuyez et maintenez le bouton reset pendant 5+ secondes\n2. La LED devrait clignoter\n3. L'appareil sera détecté automatiquement\n\nNote: Driver de secours pour TS0601 inconnus. Les points de données seront auto-découverts."
+        "en": "Generic Tuya TS0601 device. 1. Press and hold the reset button for 5+ seconds\n2. The LED should start blinking\n3. The device will be detected automatically Note: This is a fallback driver for unknown TS0601 devices. Data points will be auto-discovered.",
+        "fr": "Appareil Tuya TS0601 générique. 1. Appuyez et maintenez le bouton reset pendant 5+ secondes\n2. La LED devrait clignoter\n3. L'appareil sera détecté automatiquement Note: Driver de secours pour TS0601 inconnus. Les points de données seront auto-découverts."
       }
     }
   },

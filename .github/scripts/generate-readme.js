@@ -68,7 +68,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
-- **Hybrid mode** — auto-detects whether a device speaks Tuya DP or standard ZCL
+- **Unified mode** — auto-detects whether a device speaks Tuya DP or standard ZCL
 - **Smart battery** — voltage-based fallback when devices don't report percentage
 - **${fmt(flowTotal)}+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
 - **SDK3** — built on the latest Homey platform
@@ -160,7 +160,7 @@ ${clTable}
 | **Lights** | RGB, RGBW, CCT bulbs, LED strips | ZCL |
 | **Plugs & Sockets** | Smart plugs, energy monitors, power strips | ZCL + Tuya DP |
 | **Sensors** | Temp/humidity, motion, contact, water leak, smoke, air quality | ZCL + Tuya DP |
-| **Presence Radars** | mmWave, PIR+radar hybrid, HOBEIAN ZG-204ZM | ZCL + Tuya DP |
+| **Presence Radars** | mmWave, PIR+radar unified, HOBEIAN ZG-204ZM | ZCL + Tuya DP |
 | **Thermostats & TRVs** | Radiator valves, floor heating, AVATTO, Moes | Tuya DP |
 | **Covers** | Curtain motors, roller blinds, garage doors | Tuya DP + ZCL |
 | **Buttons & Remotes** | Scene switches (1-4 button), SOS buttons, rotary | ZCL |
@@ -180,7 +180,7 @@ ${clTable}
 \`\`\`
 Homey Pro
   \u2514\u2500 Universal Tuya Zigbee App (SDK3)
-       \u251c\u2500 Hybrid Protocol Engine
+       \u251c\u2500 Unified Protocol Engine
        \u2502    \u251c\u2500 Tuya DP (Cluster 0xEF00) \u2500 DP1-DP255 data points
        \u2502    \u2514\u2500 Standard ZCL \u2500 onOff, levelControl, colorControl, etc.
        \u251c\u2500 DeviceProfileRegistry (149 profiles)

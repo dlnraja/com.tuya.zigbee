@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Contact Sensor Plug Hybrid",
-    "nl": "Hybride contactsensor",
-    "fr": "Capteur de contact hybride",
-    "de": "Hybrid-Kontaktsensor",
-    "es": "Sensor de contacto híbrido"
+    "en": "Contact Sensor Plug",
+    "nl": "contactsensor",
+    "fr": "Capteur de contact",
+    "de": "-Kontaktsensor",
+    "es": "Sensor de contacto"
   },
   "class": "socket",
   "capabilities": [
@@ -33,6 +33,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "learnmode": {

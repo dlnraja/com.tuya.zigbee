@@ -6,7 +6,7 @@ const combined=(stderr||"")+" "+(stdout||"")+" "+(driver||"")+" "+JSON.stringify
 const issues=[];
 for(const p of KB.CRITICAL_PATTERNS){if(p.rx.test(combined)){issues.push({type:p.id,pattern:p.rx.toString(),fix:p.fix,priority:p.severity||"critical",action:p.action,file:p.file,...p});}}
 const protocol=KB.detectProtocol(combined,driver);
-if(protocol.critical_timing){issues.push({type:"timing_critical",fix:"IAS+Tuya hybrid - setup DP listeners before magic packet",priority:"critical",protocol:protocol.type,requires:protocol.requires});}
+if(protocol.critical_timing){issues.push({type:"timing_critical",fix:"IAS+Tuya unified - setup DP listeners before magic packet",priority:"critical",protocol:protocol.type,requires:protocol.requires});}
 if(/NO_VALUES|no.*data|not.*reporting|stuck.*value/i.test(combined)){
 if(driver&&driver.includes("radar"))issues.push({type:"radar_no_values",fix:"Magic packet timing + forced DP poll + IAS enrollment retry",priority:"critical",file:"presence_sensor_radar/device.js"});
 if(driver&&driver.includes("sensor"))issues.push({type:"sensor_stuck",fix:"Check dpMappings divisor + ProductValueValidator ranges",priority:"high"});

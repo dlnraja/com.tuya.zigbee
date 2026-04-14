@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Sensor Contact Climate Hybrid",
-    "nl": "Sensor Contact Climate Hybrid",
-    "fr": "Sensor Contact Climate Hybrid"
+    "en": "Sensor Contact Climate",
+    "nl": "Sensor Contact Climate",
+    "fr": "Sensor Contact Climate"
   },
   "class": "sensor",
   "capabilities": [
@@ -36,6 +36,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "endpoints": {

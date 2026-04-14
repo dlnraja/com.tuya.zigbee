@@ -42,8 +42,8 @@
 **Most affected:** `vision` (2x), `_TZE` (2x), `_TZE204_` (2x), `TS0601` (2x), `router` (2x), `_TZE204_qyr2m29i` (1x), `MOES` (1x), `Moes` (1x), `test` (1x), `_TZE204_clrdrnya` (1x)
 
 ### Inverted Sensor State (1 reports)
-**Fix:** Add manufacturerName to invertedByDefault in HybridSensorBase.js + device.js
-**Files:** `lib/devices/HybridSensorBase.js`, `drivers/{driver}/device.js`
+**Fix:** Add manufacturerName to invertedByDefault in UnifiedSensorBase.js + device.js
+**Files:** `lib/devices/UnifiedSensorBase.js`, `drivers/{driver}/device.js`
 **Most affected:** `_TZE200_wfxuhoea` (1x), `deconz` (1x), `vision` (1x), `_TZE` (1x), `_TZE200_` (1x), `TS0601` (1x)
 
 ### Wrong Voltage (1 reports)

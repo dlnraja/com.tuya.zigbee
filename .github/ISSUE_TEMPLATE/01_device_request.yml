@@ -41,7 +41,7 @@ body:
         - Battery
         - Mains (AC)
         - USB
-        - Hybrid (Battery + Mains)
+        - Unified (Battery + Mains)
         - Unknown
     validations:
       required: true

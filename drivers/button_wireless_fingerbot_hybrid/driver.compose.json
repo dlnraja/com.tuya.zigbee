@@ -17,6 +17,8 @@
   ],
   "zigbee": {
     "productId": [
+      "TS0001",
+      "TS0001_FINGERBOT",
       "ts0001",
       "ts0001_fingerbot"
     ],
@@ -26,9 +28,7 @@
         "en": "Turn the switch on/off 3 times quickly"
       }
     },
-    "manufacturerName": [
-      "_tz3210_j4pdtz9v"
-    ],
+    "manufacturerName": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -821,11 +821,11 @@
     }
   ],
   "name": {
-    "en": "Button Wireless Fingerbot Hybrid",
-    "nl": "Draadloze Fingerbot Hybrid Knop",
-    "fr": "Bouton Sans Fil Fingerbot Hybride",
-    "de": "Drahtloser Fingerbot Hybrid Knopf",
-    "es": "Botón Inalámbrico Fingerbot Híbrido"
+    "en": "Button Wireless Fingerbot",
+    "nl": "Draadloze Fingerbot Knop",
+    "fr": "Bouton Sans Fil Fingerbot",
+    "de": "Drahtloser Fingerbot Knopf",
+    "es": "Botón Inalámbrico Fingerbot"
   },
   "platforms": [
     "local"
@@ -843,27 +843,27 @@
     },
     "button.toggle": {
       "title": {
-        "en": " toggle"
+        "en": "toggle"
       }
     },
     "button.identify": {
       "title": {
-        "en": " identify"
+        "en": "identify"
       }
     },
     "button.push": {
       "title": {
-        "en": " push"
+        "en": "push"
       }
     },
     "button.1": {
       "title": {
-        "en": " 1"
+        "en": "1"
       }
     },
     "button.2": {
       "title": {
-        "en": " 2"
+        "en": "2"
       }
     }
   },

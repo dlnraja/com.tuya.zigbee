@@ -32,6 +32,8 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
   
   
   
+  
+  
   }
 
   _registerFlowCards() {

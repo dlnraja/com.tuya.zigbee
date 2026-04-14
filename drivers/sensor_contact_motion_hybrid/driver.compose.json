@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Sensor Contact Motion Hybrid",
-    "nl": "Hybride Bewegingscontactsensor",
-    "fr": "Capteur de Contact de Mouvement Hybride",
+    "en": "Sensor Contact Motion",
+    "nl": "Bewegingscontactsensor",
+    "fr": "Capteur de Contact de Mouvement",
     "de": "Hybridbewegungskontaktsensor",
-    "es": "Sensor de Contacto de Movimiento Híbrido"
+    "es": "Sensor de Contacto de Movimiento"
   },
   "class": "sensor",
   "capabilities": [
@@ -29,9 +29,7 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_o4mkahkc"
-    ],
+    "manufacturerName": [],
     "productId": [],
     "learnmode": {
       "image": "/drivers/motion_sensor/assets/learnmode.svg",

@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Device Air Purifier Plug Hybrid",
-    "nl": "Hybride Luchtzuiveraar Stekker",
-    "fr": "Prise Hybride Purificateur d'Air",
-    "de": "Hybrid Luftreiniger Steckdose",
-    "es": "Enchufe Híbrido Purificador de Aire"
+    "en": "Device Air Purifier Plug",
+    "nl": "Luchtzuiveraar Stekker",
+    "fr": "Prise Purificateur d'Air",
+    "de": "Luftreiniger Steckdose",
+    "es": "Enchufe Purificador de Aire"
   },
   "class": "socket",
   "capabilities": [
@@ -27,6 +27,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "learnmode": {

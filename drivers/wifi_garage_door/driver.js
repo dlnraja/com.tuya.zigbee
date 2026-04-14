@@ -32,6 +32,8 @@ class WiFiGarageDoorDriver extends TuyaLocalDriver {
   
   
   
+  
+  
   }
 }
 

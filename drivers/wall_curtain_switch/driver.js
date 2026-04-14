@@ -21,6 +21,8 @@ class WallCurtainSwitchDriver extends Driver{
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
 this.log('wall_curtain_switch driver init');
+  
+  
   }
 }
 

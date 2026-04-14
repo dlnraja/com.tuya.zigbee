@@ -1,4 +1,4 @@
-name: "🌠 NEXUS GALAXY ORCHESTRATOR — Daily"
+name: "🌌 UNIFIED ENGINE — Daily Galaxy Orchestrator"
 
 on:
   schedule:
@@ -174,9 +174,9 @@ jobs:
           SCAN_FORKS: "true"
         run: node .github/scripts/triage-upstream-enhanced.js
 
-      # ===== 3ba. UNIVERSAL STABILITY & NEXUS ORCHESTRATION (v7.2.5) =====
-      - name: "3ba. Nexus Orchestrator (Triage + Self-Heal + Audit)"
-        id: nexus
+      # ===== 3ba. UNIVERSAL STABILITY & UNIFIED ORCHESTRATION (v7.2.5) =====
+      - name: "3ba. Unified Orchestrator (Triage + Self-Heal + Audit)"
+        id: unified
         continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
@@ -279,17 +279,17 @@ jobs:
           # Rules: Inheritance check, Safe Flow Card usage, Physical Button Hardening
           node scripts/maintenance/stability-audit.js || true
 
-          echo "=== 🛡️ Rule 28: Composite Identity & Wildcard Broadening (Thinking Nexus Autonomous) ==="
+          echo "=== 🛡️ Rule 28: Composite Identity & Wildcard Broadening (Thinking Unified Autonomous) ==="
           node scripts/automation/fingerprint-broadener.js || true
           
-          echo "=== 🧊 Nexus Autonomous: Master Flow-Linkage Patcher ==="
+          echo "=== 🧊 Unified Autonomous: Master Flow-Linkage Patcher ==="
           node scripts/maintenance/master-flow-patcher.js
 
-          echo "=== 🌱 Nexus Autonomous: Autonomous Evolution Engine ==="
+          echo "=== 🌱 Unified Autonomous: Autonomous Evolution Engine ==="
           node scripts/maintenance/autonomous-evolution-engine.js
 
-          echo "=== 🖼️ Nexus Visual Rebranding Engine (Autonomous) ==="
-          node scripts/automation/apply-premium-nexus-images.js || true
+          echo "=== 🖼️ Unified Visual Rebranding Engine (Autonomous) ==="
+          node scripts/automation/apply-premium-unified-images.js || true
 
           if [ -f FLOW_CARDS_AUDIT_REPORT.json ]; then
             node scripts/legacy/fix_all_flow_issues.js || true
@@ -826,7 +826,7 @@ jobs:
           retention-days: 7
           if-no-files-found: ignore
 
-      # 📣 Forum Announcement (Nexus Awareness)
+      # 📣 Forum Announcement (Unified Awareness)
       - name: 💬 Post to Forum
         if: always()
         continue-on-error: true
@@ -920,7 +920,7 @@ jobs:
           echo "| 13c | Promote Puppeteer | ${{ steps.promote_node.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 14 | Forum Update | — |" >> $GITHUB_STEP_SUMMARY
           echo "| 14b | Deploy Device Finder | — |" >> $GITHUB_STEP_SUMMARY
-          echo "| 15 | **Nexus Intelligence** | ${{ steps.autonomous_maint.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 15 | **Unified Intelligence** | ${{ steps.autonomous_maint.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Total: 35 automation steps** | [Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee) | [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/)" >> $GITHUB_STEP_SUMMARY
 

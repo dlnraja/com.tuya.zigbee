@@ -72,14 +72,14 @@ function checkValidJSON() {
 // Discovered: switch_2gang was missing this → "Missing Capability Listener: onoff"
 // ═══════════════════════════════════════════════════════════════════════════════
 function checkSuperOnNodeInit() {
-  console.log('\n📋 Check 2: super.onNodeInit() in HybridSwitchBase subclasses...');
+  console.log('\n📋 Check 2: super.onNodeInit() in UnifiedSwitchBase subclasses...');
 
-  // Drivers that extend HybridSwitchBase and MUST call super.onNodeInit()
+  // Drivers that extend UnifiedSwitchBase and MUST call super.onNodeInit()
   const switchDrivers = fs.readdirSync(DRIVERS_DIR).filter(d => {
     const deviceFile = path.join(DRIVERS_DIR, d, 'device.js');
     if (!fs.existsSync(deviceFile)) return false;
     const content = fs.readFileSync(deviceFile, 'utf8');
-    return content.includes('HybridSwitchBase') || content.includes('HybridCoverBase');
+    return content.includes('UnifiedSwitchBase') || content.includes('UnifiedCoverBase');
   });
 
   for (const driver of switchDrivers) {
@@ -174,7 +174,7 @@ function checkDuplicateFingerprints() {
     const uniqueDrivers = [...new Set(drvs)];
     if (uniqueDrivers.length > 1) {
       const [mfr, pid] = key.split('|');
-      error('GLOBAL', `TRUE COLLISION: FP '${mfr}' with '${pid}' exists in multiple drivers: ${uniqueDrivers.join(', ')}. SDK matches both! You MUST move this into a new combined hybrid category folder (e.g. switch_dimmer_custom) to prevent random routing!`);
+      error('GLOBAL', `TRUE COLLISION: FP '${mfr}' with '${pid}' exists in multiple drivers: ${uniqueDrivers.join(', ')}. SDK matches both! You MUST move this into a new combined unified category folder (e.g. switch_dimmer_custom) to prevent random routing!`);
       dupCount++;
     }
   }
@@ -224,7 +224,7 @@ function checkFlowCards() {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// CHECK 6: HybridSwitchBase/PlugBase subclasses with defensive init wrapping
+// CHECK 6: UnifiedSwitchBase/PlugBase subclasses with defensive init wrapping
 // v5.11.182: Root cause of "Driver Not Initialized" (Wiosenna_26, Rikjes)
 // ═══════════════════════════════════════════════════════════════════════════════
 function checkDefensiveInit() {
@@ -234,7 +234,7 @@ function checkDefensiveInit() {
     const deviceFile = path.join(DRIVERS_DIR, d, 'device.js');
     if (!fs.existsSync(deviceFile)) return false;
     const content = fs.readFileSync(deviceFile, 'utf8');
-    return content.includes('HybridSwitchBase') || content.includes('HybridPlugBase');
+    return content.includes('UnifiedSwitchBase') || content.includes('UnifiedPlugBase');
   });
 
   for (const driver of drivers) {

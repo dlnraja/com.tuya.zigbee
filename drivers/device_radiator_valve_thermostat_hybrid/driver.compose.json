@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Device Radiator Valve Thermostat Hybrid",
-    "nl": "Device Radiator Valve Thermostat Hybrid",
-    "fr": "Device Radiator Valve Thermostat Hybrid"
+    "en": "Device Radiator Valve Thermostat",
+    "nl": "Device Radiator Valve Thermostat",
+    "fr": "Device Radiator Valve Thermostat"
   },
   "class": "thermostat",
   "capabilities": [
@@ -24,6 +24,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "endpoints": {

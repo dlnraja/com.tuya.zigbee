@@ -815,11 +815,11 @@
     }
   ],
   "name": {
-    "en": "Plug Smart Switch Hybrid",
-    "nl": "Slimme Hybride Schakelaar",
-    "fr": "Interrupteur Intelligent Hybride",
-    "de": "Intelligenter Hybrid-Schalter",
-    "es": "Interruptor Híbrido Inteligente"
+    "en": "Plug Smart Switch",
+    "nl": "Slimme Schakelaar",
+    "fr": "Interrupteur Intelligent",
+    "de": "Intelligenter -Schalter",
+    "es": "Interruptor Inteligente"
   },
   "platforms": [
     "local"
@@ -837,12 +837,12 @@
     },
     "button.toggle": {
       "title": {
-        "en": " toggle"
+        "en": "toggle"
       }
     },
     "button.identify": {
       "title": {
-        "en": " identify"
+        "en": "identify"
       }
     }
   },

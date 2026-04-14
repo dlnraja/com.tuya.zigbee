@@ -1,14 +1,14 @@
 'use strict';
 
 // v5.5.530: Fix "Class extends value undefined" error
-let HybridSwitchBase;
+let UnifiedSwitchBase;
 try {
-  HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
-  if (!HybridSwitchBase) throw new Error('HybridSwitchBase is undefined');
+  UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
+  if (!UnifiedSwitchBase) throw new Error('UnifiedSwitchBase is undefined');
 } catch (e) {
-  console.error('[switch_4gang] HybridSwitchBase load failed:', e.message);
+  console.error('[switch_4gang] UnifiedSwitchBase load failed:', e.message);
   const { ZigBeeDevice } = require('homey-zigbeedriver');
-  HybridSwitchBase = ZigBeeDevice;
+  UnifiedSwitchBase = ZigBeeDevice;
 }
 
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
@@ -45,9 +45,9 @@ const ZCL_ONLY_MANUFACTURERS_4G = [
 // Fix: Use Tuya DP commands (DP1-4) for individual gang control
 const FORCE_TUYA_DP_4G = [];
 
-const BaseClass = typeof HybridSwitchBase === 'function' 
-  ? PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) 
-  : HybridSwitchBase;
+const BaseClass = typeof UnifiedSwitchBase === 'function' 
+  ? PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) 
+  : UnifiedSwitchBase;
 
 class Switch4GangDevice extends BaseClass {
   get gangCount() { return 4; }
@@ -78,6 +78,7 @@ class Switch4GangDevice extends BaseClass {
         }
 
         await super.onNodeInit({ zclNode });
+    this.initPhysicalButtonDetection(); // rule-19 injected
 
         // v5.5.896: Physical button detection (single/double/long/triple)
         await this.initPhysicalButtonDetection(zclNode);
@@ -143,7 +144,7 @@ class Switch4GangDevice extends BaseClass {
     };
 
     // v5.13.2: Unified listener registration (Capability + Flow Cards)
-    // Inherited from HybridSwitchBase, handles ZCL/DP fallback automatically
+    // Inherited from UnifiedSwitchBase, handles ZCL/DP fallback automatically
     this._registerCapabilityListeners();
 
     // v5.7.38: Setup attribute listeners for available endpoints

@@ -1,14 +1,14 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
  * Ceiling Presence Sensor Device - v7.0.x (MAX Local)
  * 
- * Re-architected to use HybridSensorBase for better Tuya DP stability
+ * Re-architected to use UnifiedSensorBase for better Tuya DP stability
  * and dual-protocol support.
  */
-class CeilingPresenceSensorDevice extends HybridSensorBase {
+class CeilingPresenceSensorDevice extends UnifiedSensorBase {
 
   /** 230V Mains powered */
   get mainsPowered() { return true; }
@@ -38,6 +38,7 @@ class CeilingPresenceSensorDevice extends HybridSensorBase {
     
     // Initialize base hybrid logic
     await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected
 
     // Register onoff listener for relay control
     this.registerCapabilityListener('onoff', async (value) => {

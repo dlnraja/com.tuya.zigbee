@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Sensor Motion Radar Hybrid",
-    "nl": "Hybride Bewegingsradarsensor",
-    "fr": "Capteur de Mouvement Radar Hybride",
+    "en": "Sensor Motion Radar",
+    "nl": "Bewegingsradarsensor",
+    "fr": "Capteur de Mouvement Radar",
     "de": "Hybridbewegungsmeldersensor",
-    "es": "Sensor Híbrido de Movimiento por Radar"
+    "es": "Sensor de Movimiento por Radar"
   },
   "class": "sensor",
   "capabilities": [
@@ -28,9 +28,7 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "_tze200_ttcovulf"
-    ],
+    "manufacturerName": [],
     "endpoints": {
       "1": {
         "clusters": [

@@ -17,6 +17,7 @@
   ],
   "zigbee": {
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "learnmode": {
@@ -818,11 +819,11 @@
     }
   ],
   "name": {
-    "en": "Contact Sensor Switch Hybrid",
-    "nl": "Hybride contactsensor schakelaar",
-    "fr": "Interrupteur de capteur de contact hybride",
-    "de": "Hybrid-Kontaktsensor-Schalter",
-    "es": "Interruptor de sensor de contacto híbrido"
+    "en": "Contact Sensor Switch",
+    "nl": "contactsensor schakelaar",
+    "fr": "Interrupteur de capteur de contact",
+    "de": "-Kontaktsensor-Schalter",
+    "es": "Interruptor de sensor de contacto"
   },
   "platforms": [
     "local"
@@ -840,12 +841,12 @@
     },
     "button.toggle": {
       "title": {
-        "en": " toggle"
+        "en": "toggle"
       }
     },
     "button.identify": {
       "title": {
-        "en": " identify"
+        "en": "identify"
       }
     }
   },

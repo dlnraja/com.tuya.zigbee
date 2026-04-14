@@ -32,6 +32,8 @@ class WiFiLightDriver extends TuyaLocalDriver {
   
   
   
+  
+  
   }
 }
 

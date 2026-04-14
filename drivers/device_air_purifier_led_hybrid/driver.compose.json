@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Device Air Purifier Led Hybrid",
-    "nl": "Device Air Purifier Led Hybrid",
-    "fr": "Device Air Purifier Led Hybrid"
+    "en": "Device Air Purifier Led",
+    "nl": "Device Air Purifier Led",
+    "fr": "Device Air Purifier Led"
   },
   "class": "light",
   "capabilities": [
@@ -28,6 +28,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "endpoints": {

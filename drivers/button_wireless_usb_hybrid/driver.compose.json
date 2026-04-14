@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Button Wireless Usb Hybrid",
-    "nl": "Draadloze USB-hybride knop",
-    "fr": "Bouton sans fil USB hybride",
+    "en": "Button Wireless Usb",
+    "nl": "Draadloze USB- knop",
+    "fr": "Bouton sans fil USB",
     "de": "Drahtloser USB-Hybridknopf",
-    "es": "Botón inalámbrico USB híbrido"
+    "es": "Botón inalámbrico USB"
   },
   "class": "socket",
   "capabilities": [
@@ -47,12 +47,12 @@
     },
     "button.1": {
       "title": {
-        "en": " 1"
+        "en": "1"
       }
     },
     "button.2": {
       "title": {
-        "en": " 2"
+        "en": "2"
       }
     }
   },

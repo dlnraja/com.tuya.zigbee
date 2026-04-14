@@ -1,9 +1,9 @@
 {
   "name": {
-    "en": "Light Bulb Rgb Hybrid",
-    "nl": "Rgb Hybride Lamp",
-    "fr": "Ampoule Rgb Hybride",
-    "de": "Rgb Hybrid Glühbirne",
+    "en": "Light Bulb Rgb",
+    "nl": "Rgb Lamp",
+    "fr": "Ampoule Rgb",
+    "de": "Rgb Glühbirne",
     "es": "Bombilla Rgb Híbrida"
   },
   "class": "light",
@@ -50,9 +50,12 @@
       }
     },
     "productId": [
+      "TS0504B",
+      "TS0505A",
+      "TS0505B",
+      "ts0504b",
       "ts0505a",
-      "ts0505b",
-      "ts0504b"
+      "ts0505b"
     ],
     "capabilities": {
       "light_color_temp": {

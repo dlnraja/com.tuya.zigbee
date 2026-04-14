@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Air Purifier Din Hybrid",
-    "nl": "Luchtreiniger Din Hybrid",
-    "fr": "Purificateur d'air Din Hybride",
-    "de": "Luftreiniger Din Hybrid",
-    "es": "Purificador de aire Din Híbrido"
+    "en": "Air Purifier Din",
+    "nl": "Luchtreiniger Din",
+    "fr": "Purificateur d'air Din",
+    "de": "Luftreiniger Din",
+    "es": "Purificador de aire Din"
   },
   "class": "socket",
   "capabilities": [
@@ -35,9 +35,7 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tze200_aqnazj70"
-    ],
+    "manufacturerName": [],
     "productId": [],
     "endpoints": {
       "1": {

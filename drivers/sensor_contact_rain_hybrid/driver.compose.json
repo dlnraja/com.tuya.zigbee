@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Sensor Contact Rain Hybrid",
-    "nl": "Sensor Contact Regen Hybride",
-    "fr": "Capteur de Contact Pluie Hybride",
-    "de": "Sensor Kontakt Regen Hybrid",
-    "es": "Sensor de Contacto de Lluvia Híbrido"
+    "en": "Sensor Contact Rain",
+    "nl": "Sensor Contact Regen",
+    "fr": "Capteur de Contact Pluie",
+    "de": "Sensor Kontakt Regen",
+    "es": "Sensor de Contacto de Lluvia"
   },
   "class": "sensor",
   "capabilities": [
@@ -28,10 +28,10 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "_tze200_u6x1zyv2"
-    ],
+    "manufacturerName": [],
     "productId": [
+      "TS0207",
+      "TS0601",
       "ts0207",
       "ts0601"
     ],

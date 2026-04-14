@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Sensor Lcdtemphumidsensor Temphumidsensor Hybrid",
-    "nl": "Sensor Lcdtemphumidsensor Temphumidsensor Hybrid",
-    "fr": "Sensor Lcdtemphumidsensor Temphumidsensor Hybrid"
+    "en": "Sensor Lcdtemphumidsensor Temphumidsensor",
+    "nl": "Sensor Lcdtemphumidsensor Temphumidsensor",
+    "fr": "Sensor Lcdtemphumidsensor Temphumidsensor"
   },
   "class": "sensor",
   "capabilities": [
@@ -19,10 +19,10 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tze200_vvmbj46n"
-    ],
+    "manufacturerName": [],
     "productId": [
+      "TS0201",
+      "TY0201",
       "ts0201",
       "ty0201"
     ],

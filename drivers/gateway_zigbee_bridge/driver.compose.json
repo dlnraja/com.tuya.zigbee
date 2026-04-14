@@ -23,10 +23,9 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_o1jzcxou"
-    ],
+    "manufacturerName": [],
     "productId": [
+      "TS0601_GW",
       "ts0601_gw"
     ],
     "endpoints": {

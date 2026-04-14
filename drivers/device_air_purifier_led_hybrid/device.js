@@ -1,11 +1,11 @@
 'use strict';
 
-const HybridLightBase = require('../../lib/devices/HybridLightBase');
+const UnifiedLightBase = require('../../lib/devices/UnifiedLightBase');
 
 /**
  * LED Strip Device - v5.3.64 SIMPLIFIED
  */
-class LEDStripDevice extends HybridLightBase {
+class LEDStripDevice extends UnifiedLightBase {
 
   get lightCapabilities() {
     return ['onoff', 'dim', 'light_hue', 'light_saturation'];

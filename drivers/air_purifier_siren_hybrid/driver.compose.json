@@ -1,18 +1,17 @@
 {
   "id": "sirentemphumidsensor",
   "name": {
-    "en": "Air Purifier Siren Hybrid",
-    "nl": "Luchtzuiveraar Sirene Hybride",
-    "fr": "Système hybride de sirène purificateur d'air",
-    "de": "Luftreiniger Sirene Hybrid",
-    "es": "Purificador de aire Sirena Híbrido"
+    "en": "Air Purifier Siren",
+    "nl": "Luchtzuiveraar Sirene",
+    "fr": "Système de sirène purificateur d'air",
+    "de": "Luftreiniger Sirene",
+    "es": "Purificador de aire Sirena"
   },
   "class": "other",
   "capabilities": [
     "onoff",
     "measure_temperature",
     "measure_humidity",
-    "alarm_battery",
     "alarm_siren",
     "alarm_motion",
     "measure_battery",
@@ -46,6 +45,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "endpoints": {

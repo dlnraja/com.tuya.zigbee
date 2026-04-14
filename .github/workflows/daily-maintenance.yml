@@ -38,8 +38,8 @@ jobs:
       - name: 2. Enforce Fingerprint Hygiene
         run: node scripts/maintenance/enforce-fingerprint-rules.js
 
-      - name: 3. Heal Hybrid Flow Cards
-        run: node scripts/maintenance/heal-hybrid-flows.js
+      - name: 3. Heal Unified Flow Cards
+        run: node scripts/maintenance/heal-unified-flows.js
 
       - name: 4. SDK v3 Smart Linter (AI Fixes)
         continue-on-error: true

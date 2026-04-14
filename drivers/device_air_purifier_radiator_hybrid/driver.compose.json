@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Device Air Purifier Radiator Hybrid",
-    "nl": "Hybride luchtzuiveraar met radiator",
-    "fr": "Purificateur d'air hybride avec radiateur",
-    "de": "Hybrid-Luftreiniger mit Heizkörper",
-    "es": "Purificador de aire híbrido con radiador"
+    "en": "Device Air Purifier Radiator",
+    "nl": "luchtzuiveraar met radiator",
+    "fr": "Purificateur d'air avec radiateur",
+    "de": "-Luftreiniger mit Heizkörper",
+    "es": "Purificador de aire con radiador"
   },
   "class": "thermostat",
   "capabilities": [
@@ -32,6 +32,7 @@
       "_tze284_gaj531w3"
     ],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "learnmode": {

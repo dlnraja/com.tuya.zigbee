@@ -40,6 +40,8 @@ class SceneSwitch6Driver extends ZigBeeDriver {
   
   
   
+  
+  
   }
 
   triggerButtonPressed(device, button) {

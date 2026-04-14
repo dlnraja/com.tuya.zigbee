@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Climate Sensor Gas Hybrid",
-    "nl": "Klimaatsensor gas hybride",
-    "fr": "Capteur de climat hybride à gaz",
-    "de": "Klimasensor Gas-Hybrid",
-    "es": "Sensor de clima híbrido de gas"
+    "en": "Climate Sensor Gas",
+    "nl": "Klimaatsensor gas",
+    "fr": "Capteur de climat à gaz",
+    "de": "Klimasensor Gas-",
+    "es": "Sensor de clima de gas"
   },
   "class": "sensor",
   "capabilities": [
@@ -46,6 +46,7 @@
       }
     },
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "endpoints": {

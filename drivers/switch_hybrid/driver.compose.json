@@ -17,6 +17,9 @@
   ],
   "zigbee": {
     "productId": [
+      "TS011F",
+      "TS0601",
+      "TS0726",
       "ts011f",
       "ts0601",
       "ts0726"
@@ -722,11 +725,11 @@
     }
   ],
   "name": {
-    "en": "Switch Hybrid",
-    "nl": "Hybride Schakelaar",
-    "fr": "Interrupteur Hybride",
-    "de": "Hybrid-Schalter",
-    "es": "Interruptor Híbrido"
+    "en": "Switch",
+    "nl": "Schakelaar",
+    "fr": "Interrupteur",
+    "de": "-Schalter",
+    "es": "Interruptor"
   },
   "platforms": [
     "local"
@@ -749,22 +752,22 @@
     },
     "button.toggle_1": {
       "title": {
-        "en": " 1"
+        "en": "1"
       }
     },
     "button.toggle_2": {
       "title": {
-        "en": " 2"
+        "en": "2"
       }
     },
     "button.identify": {
       "title": {
-        "en": " identify"
+        "en": "identify"
       }
     },
     "button.toggle": {
       "title": {
-        "en": " toggle"
+        "en": "toggle"
       }
     }
   },

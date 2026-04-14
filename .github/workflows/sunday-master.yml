@@ -605,9 +605,9 @@ jobs:
           DISCOURSE_API_USERNAME: 'dlnraja'
           DISCOURSE_URL: 'https://community.homey.app'
         run: node .github/scripts/bot-self-audit.js
-      - name: "🖼️ Nexus Visual Rebranding"
+      - name: "🖼️ Unified Visual Rebranding"
         continue-on-error: true
-        run: node scripts/automation/apply-premium-nexus-images.js || true
+        run: node scripts/automation/apply-premium-unified-images.js || true
       - name: Commit smart processor + intelligence changes
         run: |
           git config user.name "github-actions[bot]"
@@ -644,9 +644,9 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
           MAX_GH_CALLS: "100"
         run: node .github/scripts/master-ai-battle.js
-      - name: "🖼️ Nexus Visual Rebranding"
+      - name: "🖼️ Unified Visual Rebranding"
         continue-on-error: true
-        run: node scripts/automation/apply-premium-nexus-images.js || true
+        run: node scripts/automation/apply-premium-unified-images.js || true
       - name: Commit AI battle changes
         run: |
           git config user.name "github-actions[bot]"
@@ -757,7 +757,7 @@ jobs:
           sleep 30
           node .github/scripts/auto-promote-puppeteer.js
 
-      # 📣 Forum Announcement (Nexus Awareness)
+      # 📣 Forum Announcement (Unified Awareness)
       - name: 💬 Post to Forum
         if: always()
         continue-on-error: true

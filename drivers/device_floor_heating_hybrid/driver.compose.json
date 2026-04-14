@@ -1,9 +1,9 @@
 {
   "name": {
-    "en": "Device Floor Heating Hybrid",
-    "nl": "Hybride vloerverwarming",
-    "fr": "Chauffage de sol hybride",
-    "de": "Hybrid Fußbodenheizung",
+    "en": "Device Floor Heating",
+    "nl": "vloerverwarming",
+    "fr": "Chauffage de sol",
+    "de": "Fußbodenheizung",
     "es": "Calefacción por suelo radiante híbrida"
   },
   "class": "thermostat",
@@ -53,10 +53,9 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tze200_rufdtfyv"
-    ],
+    "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "endpoints": {

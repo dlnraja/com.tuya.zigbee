@@ -1,9 +1,9 @@
 {
   "name": {
-    "en": "Remote Button Wireless Scene Hybrid",
-    "nl": "Draadloze Afstandsbediening Scene Hybrid",
-    "fr": "Bouton Télécommande Sans Fil Scène Hybride",
-    "de": "Drahtlose Fernbedienung Szenen Hybrid",
+    "en": "Remote Button Wireless Scene",
+    "nl": "Draadloze Afstandsbediening Scene",
+    "fr": "Bouton Télécommande Sans Fil Scène",
+    "de": "Drahtlose Fernbedienung Szenen",
     "es": "Botón Remoto Inalámbrico Escena Híbrida"
   },
   "class": "sensor",
@@ -53,6 +53,8 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0042",
+      "TS0043",
       "ts0042",
       "ts0043"
     ],

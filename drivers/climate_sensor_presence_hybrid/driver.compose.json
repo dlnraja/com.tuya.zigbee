@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Climate Sensor Presence Hybrid",
-    "nl": "Klimaatsensor Aanwezigheid Hybride",
-    "fr": "Capteur de Climat Présence Hybride",
-    "de": "Klimasensor Präsenz Hybrid",
-    "es": "Sensor Climático de Presencia Híbrido"
+    "en": "Climate Sensor Presence",
+    "nl": "Klimaatsensor Aanwezigheid",
+    "fr": "Capteur de Climat Présence",
+    "de": "Klimasensor Präsenz",
+    "es": "Sensor Climático de Presencia"
   },
   "class": "sensor",
   "capabilities": [
@@ -54,22 +54,22 @@
     },
     "button.toggle_1": {
       "title": {
-        "en": " 1"
+        "en": "1"
       }
     },
     "button.toggle_2": {
       "title": {
-        "en": " 2"
+        "en": "2"
       }
     },
     "button.toggle_3": {
       "title": {
-        "en": " 3"
+        "en": "3"
       }
     },
     "button.identify": {
       "title": {
-        "en": " identify"
+        "en": "identify"
       }
     }
   },
@@ -77,6 +77,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "learnmode": {

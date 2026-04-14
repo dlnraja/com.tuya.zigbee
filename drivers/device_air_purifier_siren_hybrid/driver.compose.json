@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Device Air Purifier Siren Hybrid",
-    "nl": "Hybride luchtzuiveraar met sirene",
-    "fr": "Système hybride de purification d'air avec sirène",
-    "de": "Hybrid-Luftreiniger mit Sirene",
-    "es": "Purificador de aire híbrido con sirena"
+    "en": "Device Air Purifier Siren",
+    "nl": "luchtzuiveraar met sirene",
+    "fr": "Système de purification d'air avec sirène",
+    "de": "-Luftreiniger mit Sirene",
+    "es": "Purificador de aire con sirena"
   },
   "class": "other",
   "capabilities": [
@@ -28,9 +28,8 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tze204_t1blo2bj",
-      "_tyst11_d0yu2xgi",
-      "_tze200_d0yu2xgi"
+      "_tze200_d0yu2xgi",
+      "_tze204_t1blo2bj"
     ],
     "productId": [],
     "learnmode": {

@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Climate Sensor Plug Hybrid",
-    "nl": "Hybride Klimaatsensor Plug",
-    "fr": "Prise Hybride de Capteur Climatique",
-    "de": "Hybrid-Klimasensor-Stecker",
-    "es": "Enchufe Híbrido de Sensor Climático"
+    "en": "Climate Sensor Plug",
+    "nl": "Klimaatsensor Plug",
+    "fr": "Prise de Capteur Climatique",
+    "de": "-Klimasensor-Stecker",
+    "es": "Enchufe de Sensor Climático"
   },
   "class": "socket",
   "capabilities": [
@@ -32,6 +32,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "learnmode": {

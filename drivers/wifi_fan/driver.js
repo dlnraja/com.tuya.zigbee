@@ -32,6 +32,8 @@ class WiFiFanDriver extends TuyaLocalDriver {
   
   
   
+  
+  
   }
 }
 

@@ -485,7 +485,7 @@ async function staleSweep(repo,items,isPR,state,report){
       
       let humanReason = reason;
       if(reason.includes('User confirmed fix')) humanReason = "Glad to hear it's working! I'll close this now.";
-      else if(reason.includes('Auto-closed owner')) humanReason = "Closing this automated task as it has been processed and deployed into our universal/hybrid fallbacks.";
+      else if(reason.includes('Auto-closed owner')) humanReason = "Closing this automated task as it has been processed and deployed into our universal/unified fallbacks.";
       else humanReason = "Closing this tracking item.";
       
       const closeBody=TAG+'\n'+humanReason+' Feel free to drop a new comment or reopen if you run into any more issues or need further help! 👋';

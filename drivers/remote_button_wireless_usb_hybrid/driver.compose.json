@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Remote Button Wireless Usb Hybrid",
-    "nl": "Draadloze Usb Hybride Afstandsbediening",
-    "fr": "Bouton Télécommande Sans Fil Usb Hybride",
-    "de": "Drahtlose Usb Hybrid Fernbedienung",
-    "es": "Botón Remoto Inalámbrico Usb Híbrido"
+    "en": "Remote Button Wireless Usb",
+    "nl": "Draadloze Usb Afstandsbediening",
+    "fr": "Bouton Télécommande Sans Fil Usb",
+    "de": "Drahtlose Usb Fernbedienung",
+    "es": "Botón Remoto Inalámbrico Usb"
   },
   "class": "socket",
   "capabilities": [
@@ -47,12 +47,12 @@
     },
     "button.1": {
       "title": {
-        "en": " 1"
+        "en": "1"
       }
     },
     "button.2": {
       "title": {
-        "en": " 2"
+        "en": "2"
       }
     }
   },
@@ -68,6 +68,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0002",
       "ts0002"
     ],
     "endpoints": {

@@ -21,6 +21,8 @@ class WallRemote4Gang3Driver extends Driver{
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
 this.log('wall_remote_4_gang_3 driver init');
+  
+  
   }
 }
 

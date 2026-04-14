@@ -1,8 +1,8 @@
 'use strict';
 
-const BaseHybridDevice = require('../../lib/devices/BaseHybridDevice');
+const BaseUnifiedDevice = require('../../lib/devices/BaseUnifiedDevice');
 
-class SosEmergencyButtonDevice extends BaseHybridDevice {
+class SosEmergencyButtonDevice extends BaseUnifiedDevice {
 
   async onNodeInit({ zclNode }) {
     this.zclNode = zclNode;

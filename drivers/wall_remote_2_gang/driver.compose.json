@@ -57,6 +57,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0042",
       "ts0042"
     ],
     "endpoints": {
@@ -75,7 +76,7 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Press the left button for aprox 10 seconds (the LED should start blinking). A tile for each button will be created. "
+        "en": "Press the left button for aprox 10 seconds (the LED should start blinking). A tile for each button will be created."
       }
     }
   },

@@ -22,7 +22,7 @@ jobs:
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          CHANGELOG: "v7.2.5: Nexus Awakening. Software-defined Premium Features: Circadian Lighting, Adaptive TPI Heating, Soft Transitions, and Nexus Hardening. [FORCE RELEASE]"
+          CHANGELOG: "v7.2.5: Unified Awakening. Software-defined Premium Features: Circadian Lighting, Adaptive TPI Heating, Soft Transitions, and Unified Hardening. [FORCE RELEASE]"
           APP_VERSION: "7.2.5"
           FORCE_POST: "true"
         run: node .github/scripts/post-forum-update.js

@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Remote Button Wireless Wall Hybrid",
+    "en": "Remote Button Wireless Wall",
     "nl": "Draadloze Muurhybride Afstandsbediening",
-    "fr": "Bouton Télécommande Sans Fil Hybride",
+    "fr": "Bouton Télécommande Sans Fil",
     "de": "Drahtloser Wandhybrid-Fernbedienung",
-    "es": "Botón Remoto Inalámbrico Híbrido"
+    "es": "Botón Remoto Inalámbrico"
   },
   "class": "sensor",
   "capabilities": [
@@ -49,18 +49,30 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
-      "ts0041",
-      "ts0043",
-      "ts0044",
-      "ts0046",
-      "ts004f",
-      "ts0042",
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS0046",
+      "TS004F",
       "ts0001",
       "ts0002",
       "ts0003",
       "ts0011",
       "ts0012",
-      "ts0013"
+      "ts0013",
+      "ts0041",
+      "ts0042",
+      "ts0043",
+      "ts0044",
+      "ts0046",
+      "ts004f"
     ],
     "endpoints": {
       "1": {

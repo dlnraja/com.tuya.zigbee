@@ -9,6 +9,8 @@ class D extends EweLinkLocalDriver{async onInit() {
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
 this.log('[EWE-DIMMER-DRV] Ready');
+  
+  
   }}
 module.exports=D;
 

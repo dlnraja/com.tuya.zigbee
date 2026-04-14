@@ -1,98 +1,98 @@
 # Community Intelligence Report
-*Generated: 2026-04-09T08:05:00.628Z*
+*Generated: 2026-04-14T09:34:11.287Z*
 
-## Open Issues (6)
+## Open Issues (5)
 
-### [#211] [Auto] 2140 new fingerprints from community (2026-04)
-*Author: app/github-actions | Created: 2026-04-09T04:34:40Z*
+### [#258] [Auto] 2143 new fingerprints from community (2026-04)
+*Author: app/github-actions | Created: 2026-04-14T05:09:57Z*
 
 **Body:**
-## 🌐 Monthly Community Sync Found 2140 New Fingerprints
+## 🌐 Monthly Community Sync Found 2143 New Fingerprints
 
 | Manufacturer ID | Product ID | Device Type | Source | Vendor | Capabilities |
 |---|---|---|---|---|---|
-| `_TZE200_s8gkrkxk` | TS0601 | christmas_lights | Johan | - | onoff, dim, light_hue |
-| `_TZ3000_vd43bbfq` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |
-| `_TZ3000_1dd0d5yi` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |
-| `_TZ3000_ke7pzj5d` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |
-| `_TZ3000_fccpjz5z` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |
-| `_TZ3000_4uuaja4a` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |
-| `_TZ3000_zirycpws` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |
-| `_TZ3000_femsaaua` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |
-| `_TZ3000_e3vhyirx` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |
-| `_TZ3000_jwv3cwak` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |
-| `_TZ3210_dwytrmda` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |
-| `_TZ3210_ol1uhvza` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |
-| `_TZ3000_eg7awg6a` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |
-| `_TZ3000_eafaa66e` | TS130F | curtain_module | Johan | - | windowcoverings_set, windowcoverings_state |
-| `_TZ3000_j1xl73iw` | TS130F | curtain_module_2_gang | Johan | - | windowcoverings_set, windowcoverings_state |
-| `_TZ3000_l6iqph4f` | TS130F | curtain_module_2_gang | Johan | - | windowcoverings_set, windowcoverings_state |
-| `_TZE200_5zbp6j0u` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_bjzrowv2` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_nkoabg8w` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_xuzcvlku` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_4vobcgd3` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_nogaemzt` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_r0jdjrvi` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_pk0sfzvr` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_fdtjuw7u` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_zpzndjez` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_wmcdj3aq` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_cowvfni3` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_rddyvrci` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_nueqqe6k` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_xaabybja` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_rmymn92d` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_3i3exuay` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_zah67ekd` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_hsgrhjpf` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_68nvbio9` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_pw7mji0l` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_uj3f4wr5` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE204_1fuxihti` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_axgvo9jh` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_gaj531w3` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_yia0p3tr` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_nw1r9hp6` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_cf1sl3tj` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE200_9p5xmj5r` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZE204_xu4a5rhj` | TS0601 | curtain_motor | Johan | - | windowcoverings_set |
-| `_TZ3210_invesber` | TS0502B | dimmable_led_strip | Johan | - | - |
-| `_TZ3210_zdrhqmo0` | TS0502B | dimmable_recessed_led | Johan | - | - |
-| `_TYZB01_qezuin6k` | TS110F,TS110E,TS0052 | dimmer_1_gang | Johan | - | onoff, dim |
-| `_TZ3210_ngqk6jia` | TS110F,TS110E,TS0052 | dimmer_1_gang | Johan | - | onoff, dim |
-| `_TZ3000_ktuoyvt5` | TS110F,TS110E,TS0052 | dimmer_1_gang | Johan | - | onoff, dim |
-| `_TZ3210_zxbtub8r` | TS110F,TS110E,TS0052 | dimmer_1_gang | Johan | - | onoff, dim |
-| `_TZ3210_weaqkhab` | TS110F,TS110E,TS0052 | dimmer_1_gang | Johan | - | onoff, dim |
-| `_TZ3210_k1msuvg6` | TS110F,TS110E,TS0052 | dimmer_1_gang | Johan | - | onoff, dim |
-| `_TZ3000_mgusv51k` | TS110F,TS110E,TS0052 | dimmer_1_gang | Johan | - | onoff, dim |
-| `_TZ3210_ngqk6jia` | TS110E | dimmer_1_gang_2 | Johan | - | onoff, dim |
-| `_TZE200_la2c2uo9` | TS0601 | dimmer_1_gang_tuya | Johan | - | onoff, dim |
-| `_TZE204_hlx9tnzb` | TS0601 | dimmer_1_gang_tuya | Johan | - | onoff, dim |
-| `_TZE200_ip2akl4w` | TS0601 | dimmer_1_gang_tuya | Johan | - | onoff, dim |
-| `_TZE200_1agwnems` | TS0601 | dimmer_1_gang_tuya | Johan | - | onoff, dim |
-| `_TZE200_579lguh2` | TS0601 | dimmer_1_gang_tuya | Johan | - | onoff, dim |
-| `_TZE200_vucankjx` | TS0601 | dimmer_1_gang_tuya | Johan | - | onoff, dim |
-| `_TZE200_4mh6tyyo` | TS0601 | dimmer_1_gang_tuya | Johan | - | onoff, dim |
-| `_TZE204_n9ctkb6j` | TS0601 | dimmer_1_gang_tuya | Johan | - | onoff, dim |
-| `_TZE204_9qhuzgo0` | TS0601 | dimmer_1_gang_tuya | Johan | - | onoff, dim |
-| `_TZE204_dcnsggvz` | TS0601 | dimmer_1_gang_tuya | Johan | - | onoff, dim |
-| `_TZE204_5cuocqty` | TS0601 | dimmer_1_gang_tuya | Johan | - | onoff, dim |
-| `_TYZB01_v8gtiaed` | TS110F,TS110E,TS1101 | dimmer_2_gang | Johan | - | onoff, dim |
-| `_TZ3000_92chsky7` | TS110F,TS110E,TS1101 | dimmer_2_gang | Johan | - | onoff, dim |
-| `_TZ3210_wdexaypg` | TS110F,TS110E,TS1101 | dimmer_2_gang | Johan | - | onoff, dim |
-| `_TZ3210_3mpwqzuu` | TS110F,TS110E,TS1101 | dimmer_2_gang | Johan | - | onoff, dim |
-| `_TZ3210_pagajpog` | TS110F,TS110E,TS1101 | dimmer_2_gang | Johan | - | onoff, dim |
-| `_TZ3210_4ubylghk` | TS110F,TS110E,TS1101 | dimmer_2_gang | Johan | - | onoff, dim |
-| `_TZ3000_7ysdnebc` | TS110F,TS110E,TS1101 | dimmer_2_gang | Johan | - | onoff, dim |
-| `_TZE200_e3oitdyu` | TS0601 | dimmer_2_gang_tuya | Johan | - | onoff, dim |
-| `_TZE204_zenj4lxv` | TS0601 | dimmer_2_gang_tuya | Johan | - | onoff, dim |
-| `_TZE204_bxoo2swd` | TS0601 | dimmer_2_gang_tuya | Johan | - | onoff, dim |
-| `_TZE200_gwkapsoq` | TS0601 | dimmer_2_gang_tuya | Johan | - | onoff, dim |
-| `_TZE200_fjjbhx9d` | TS0601 | dimmer_2_gang_tuya | Johan | - | onoff, dim |
-| `TUYATEC-g3gl6cgy` | RH3001,TS0203,SNZB-04 | doorwindowsensor | Johan | - | alarm_contact, alarm_battery |
+| `_TZE200_s8gkrkxk` | TS0601 | christmas_lights | Internal-Audit | - | onoff, dim, light_hue |
+| `_TZ3000_vd43bbfq` | TS130F | curtain_module | Internal-Audit | - | windowcoverings_set, windowcoverings_state |
+| `_TZ3000_1dd0d5yi` | TS130F | curtain_module | Internal-Audit | - | windowcoverings_set, windowcoverings_state |
+| `_TZ3000_ke7pzj5d` | TS130F | curtain_module | Internal-Audit | - | windowcoverings_set, windowcoverings_state |
+| `_TZ3000_fccpjz5z` | TS130F | curtain_module | Internal-Audit | - | windowcoverings_set, windowcoverings_state |
+| `_TZ3000_4uuaja4a` | TS130F | curtain_module | Internal-Audit | - | windowcoverings_set, windowcoverings_state |
+| `_TZ3000_zirycpws` | TS130F | curtain_module | Internal-Audit | - | windowcoverings_set, windowcoverings_state |
+| `_TZ3000_femsaaua` | TS130F | curtain_module | Internal-Audit | - | windowcoverings_set, windowcoverings_state |
+| `_TZ3000_e3vhyirx` | TS130F | curtain_module | Internal-Audit | - | windowcoverings_set, windowcoverings_state |
+| `_TZ3000_jwv3cwak` | TS130F | curtain_module | Internal-Audit | - | windowcoverings_set, windowcoverings_state |
+| `_TZ3210_dwytrmda` | TS130F | curtain_module | Internal-Audit | - | windowcoverings_set, windowcoverings_state |
+| `_TZ3210_ol1uhvza` | TS130F | curtain_module | Internal-Audit | - | windowcoverings_set, windowcoverings_state |
+| `_TZ3000_eg7awg6a` | TS130F | curtain_module | Internal-Audit | - | windowcoverings_set, windowcoverings_state |
+| `_TZ3000_eafaa66e` | TS130F | curtain_module | Internal-Audit | - | windowcoverings_set, windowcoverings_state |
+| `_TZ3000_j1xl73iw` | TS130F | curtain_module_2_gang | Internal-Audit | - | windowcoverings_set, windowcoverings_state |
+| `_TZ3000_l6iqph4f` | TS130F | curtain_module_2_gang | Internal-Audit | - | windowcoverings_set, windowcoverings_state |
+| `_TZE200_5zbp6j0u` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_bjzrowv2` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_nkoabg8w` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_xuzcvlku` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_4vobcgd3` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_nogaemzt` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_r0jdjrvi` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_pk0sfzvr` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_fdtjuw7u` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_zpzndjez` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_wmcdj3aq` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_cowvfni3` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_rddyvrci` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_nueqqe6k` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_xaabybja` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_rmymn92d` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_3i3exuay` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_zah67ekd` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_hsgrhjpf` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_68nvbio9` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_pw7mji0l` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_uj3f4wr5` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE204_1fuxihti` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_axgvo9jh` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_gaj531w3` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_yia0p3tr` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_nw1r9hp6` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_cf1sl3tj` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE200_9p5xmj5r` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZE204_xu4a5rhj` | TS0601 | curtain_motor | Internal-Audit | - | windowcoverings_set |
+| `_TZ3210_invesber` | TS0502B | dimmable_led_strip | Internal-Audit | - | - |
+| `_TZ3210_zdrhqmo0` | TS0502B | dimmable_recessed_led | Internal-Audit | - | - |
+| `_TYZB01_qezuin6k` | TS110F,TS110E,TS0052 | dimmer_1_gang | Internal-Audit | - | onoff, dim |
+| `_TZ3210_ngqk6jia` | TS110F,TS110E,TS0052 | dimmer_1_gang | Internal-Audit | - | onoff, dim |
+| `_TZ3000_ktuoyvt5` | TS110F,TS110E,TS0052 | dimmer_1_gang | Internal-Audit | - | onoff, dim |
+| `_TZ3210_zxbtub8r` | TS110F,TS110E,TS0052 | dimmer_1_gang | Internal-Audit | - | onoff, dim |
+| `_TZ3210_weaqkhab` | TS110F,TS110E,TS0052 | dimmer_1_gang | Internal-Audit | - | onoff, dim |
+| `_TZ3210_k1msuvg6` | TS110F,TS110E,TS0052 | dimmer_1_gang | Internal-Audit | - | onoff, dim |
+| `_TZ3000_mgusv51k` | TS110F,TS110E,TS0052 | dimmer_1_gang | Internal-Audit | - | onoff, dim |
+| `_TZ3210_ngqk6jia` | TS110E | dimmer_1_gang_2 | Internal-Audit | - | onoff, dim |
+| `_TZE200_la2c2uo9` | TS0601 | dimmer_1_gang_tuya | Internal-Audit | - | onoff, dim |
+| `_TZE204_hlx9tnzb` | TS0601 | dimmer_1_gang_tuya | Internal-Audit | - | onoff, dim |
+| `_TZE200_ip2akl4w` | TS0601 | dimmer_1_gang_tuya | Internal-Audit | - | onoff, dim |
+| `_TZE200_1agwnems` | TS0601 | dimmer_1_gang_tuya | Internal-Audit | - | onoff, dim |
+| `_TZE200_579lguh2` | TS0601 | dimmer_1_gang_tuya | Internal-Audit | - | onoff, dim |
+| `_TZE200_vucankjx` | TS0601 | dimmer_1_gang_tuya | Internal-Audit | - | onoff, dim |
+| `_TZE200_4mh6tyyo` | TS0601 | dimmer_1_gang_tuya | Internal-Audit | - | onoff, dim |
+| `_TZE204_n9ctkb6j` | TS0601 | dimmer_1_gang_tuya | Internal-Audit | - | onoff, dim |
+| `_TZE204_9qhuzgo0` | TS0601 | dimmer_1_gang_tuya | Internal-Audit | - | onoff, dim |
+| `_TZE204_dcnsggvz` | TS0601 | dimmer_1_gang_tuya | Internal-Audit | - | onoff, dim |
+| `_TZE204_5cuocqty` | TS0601 | dimmer_1_gang_tuya | Internal-Audit | - | onoff, dim |
+| `_TYZB01_v8gtiaed` | TS110F,TS110E,TS1101 | dimmer_2_gang | Internal-Audit | - | onoff, dim |
+| `_TZ3000_92chsky7` | TS110F,TS110E,TS1101 | dimmer_2_gang | Internal-Audit | - | onoff, dim |
+| `_TZ3210_wdexaypg` | TS110F,TS110E,TS1101 | dimmer_2_gang | Internal-Audit | - | onoff, dim |
+| `_TZ3210_3mpwqzuu` | TS110F,TS110E,TS1101 | dimmer_2_gang | Internal-Audit | - | onoff, dim |
+| `_TZ3210_pagajpog` | TS110F,TS110E,TS1101 | dimmer_2_gang | Internal-Audit | - | onoff, dim |
+| `_TZ3210_4ubylghk` | TS110F,TS110E,TS1101 | dimmer_2_gang | Internal-Audit | - | onoff, dim |
+| `_TZ3000_7ysdnebc` | TS110F,TS110E,TS1101 | dimmer_2_gang | Internal-Audit | - | onoff, dim |
+| `_TZE200_e3oitdyu` | TS0601 | dimmer_2_gang_tuya | Internal-Audit | - | onoff, dim |
+| `_TZE204_zenj4lxv` | TS0601 | dimmer_2_gang_tuya | Internal-Audit | - | onoff, dim |
+| `_TZE204_bxoo2swd` | TS0601 | dimmer_2_gang_tuya | Internal-Audit | - | onoff, dim |
+| `_TZE200_gwkapsoq` | TS0601 | dimmer_2_gang_tuya | Internal-Audit | - | onoff, dim |
+| `_TZE200_fjjbhx9d` | TS0601 | dimmer_2_gang_tuya | Internal-Audit | - | onoff, dim |
+| `TUYATEC-g3gl6cgy` | RH3001,TS0203,SNZB-04 | doorwindowsensor | Internal-Audit | - | alarm_contact, alarm_battery |
 
-*...and 2060 more*
+*...and 2063 more*
 
 ### Sources
 - Zigbee2MQTT tuya.ts (mfr+pid+vendor+description)
@@ -101,29 +101,28 @@
 - Homey Forums
 
 ### Statistics
-- Total new: 2140
+- Total new: 2143
 - With productId: 656
 - With vendor: 15
-- Battery devices: 275
+- Battery devices: 273
 
 *Auto-generated by monthly community sync v5.12.1*
 
 **Comments (2):**
 > **dlnraja:** <!-- tuya-issue-manager -->
-> Hey there! Thanks for the update on the new fingerprints. It's great to see so many devices being recognized! 
+> Thanks for the update on the new fingerprints! It looks like we have a significant number of new entries to review. I appreciate the detailed breakdown of the manufacturer IDs, product IDs, and capabilities.
 > 
-> If you encounter any issues with multi-gang bindings or capabilities, please remember to completely delete the affected device from Homey, re-pair it, and recreate your flow cards. This is important because Homey caches capabilities at pairing, and this step helps ensure everything works smoothly.
+> From what I can see, several of the curtain modules are showing as supported, which is great news for users looking to integrate those devices. However, it seems like many of the other fingerprints are not yet supported. 
 > 
-> If you're missing sensor readings or have any specific concerns, feel free to share the app logs showing the DP numbers. That'll help me investigate further.
+> To move forward, I’ll need to dive deeper into the specifics of these unsupported devices. If you have any logs or additional details about the devices in question, that would be super helpful for troubleshooting and ensuring we can provide the best support possible.
 > 
-> Let me know if you need anything else or have more questions!
+> Let’s keep the momentum going! If you have any specific devices you’re particularly interested in or if there are any issues you’re facing, feel free to share, and I’ll make sure to investigate further. Thanks again for your contribution!
 
 > **github-actions:** <!-- tuya-triage-bot -->
-> Hi! Fingerprint(s) found in [Universal Tuya Zigbee](https://github.com/dlnraja/com.tuya.zigbee) **v7.0.10**.
+> Hi! Fingerprint(s) found in [Universal Tuya Zigbee](https://github.com/dlnraja/com.tuya.zigbee) **v22.0.0**.
 > 
 > | Fingerprint | Driver(s) |
 > |---|---|
-> | `_TZE200_s8gkrkxk+TS0601` | **device_air_purifier_hybrid** |
 > | `_TZ3000_vd43bbfq+TS0601` | **curtain_motor** |
 > | `_TZ3000_1dd0d5yi+TS0601` | **curtain_motor** |
 > | `_TZ3000_ke7pzj5d+TS0601` | **curtain_motor** |
@@ -139,18 +138,23 @@
 > | `_TZ3000_eafaa66e+TS0601` | **curtain_motor** |
 > | `_TZ3000_j1xl73iw+TS0601` | **curtain_motor** |
 > | `_TZ3000_l6iqph4f+TS0601` | **curtain_motor** |
+> | `_TZE200_bjzrowv2+TS0601` | **air_purifier_curtain_hybrid** |
+> | `_TZE200_68nvbio9+TS0601` | **air_purifier_curtain_hybrid** |
+> | `_TZE200_cf1sl3tj+TS0601` | **air_purifier_curtain_hybrid** |
+> | `_TZE204_xu4a5rhj+TS0601` | **air_purifier_curtain_hybrid** |
 > | `_TZ3210_invesber+TS0601` | **dimmer_wall_1gang** |
 > | `_TZ3210_zdrhqmo0+TS0601` | **dimmer_wall_1gang** |
 > | `_TZ3210_ngqk6jia+TS0601` | **dimmer_wall_water_hybrid** |
 > | `_TZ3210_weaqkhab+TS0601` | **dimmer_wall_water_hybrid** |
-> | `_TZ3210_k1msuvg6` | **bulb_rgb** |
-> | `_TZ3210_wdexaypg` | **bulb_rgbw** |
+> | `_TZ3210_k1msuvg6+TS0052` | **bulb_dimmable_dimmer_hybrid** |
+> | `_TZ3000_mgusv51k+TS0601` | **climate_sensor** |
+> | `_TZE200_ip2akl4w+TS0601` | **air_purifier_dimmer_hybrid** |
+> | `_TZE200_4mh6tyyo+TS0601` | **air_purifier_dimmer_hybrid** |
+> | `_TZE204_n9ctkb6j+TS0601` | **air_purifier_dimmer_hybrid** |
+> | `_TZ3210_wdexaypg+TS0052` | **bulb_dimmable_dimmer_hybrid** |
 > | `_TZ3210_4ubylghk+TS0502B` | **bulb_tunable_white** |
-> | `TUYATEC-g3gl6cgy+TS0601` | **air_purifier_climate_hybrid** |
-> | `TUYA+TS0601` | **device_generic_tuya_universal_hybrid** |
-> | `TUYATEC+TS0601` | **universal_fallback** |
-> | `_TYZB+TS0601` | **universal_fallback** |
-> | `_TZE+TS0601` | **universal_fallback** |
+> | `TUYATEC-g3gl6cgy+TS0601` | **device_air_purifier_climate_hybrid** |
+> | `tuya+TS0601` | **device_generic_tuya_universal_hybrid** |
 > 
 > ### :inbox_tray: Install
 > - **[Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)**
@@ -164,9 +168,6 @@
 > 
 > ### :link: Links
 > - [Forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352) | [GitHub](https://github.com/dlnraja/com.tuya.zigbee) | [Report Issue](https://github.com/dlnraja/com.tuya.zigbee/issues)
-> 
-> **Code investigation for `_TZE200_s8gkrkxk+TS0601`** (null):
-> - FP not found
 > 
 > **Code investigation for `_TZ3000_vd43bbfq+TS0601`** (null):
 > - FP not found
@@ -213,6 +214,18 @@
 > **Code investigation for `_TZ3000_l6iqph4f+TS0601`** (null):
 > - FP not found
 > 
+> **Code investigation for `_TZE200_bjzrowv2+TS0601`** (null):
+> - FP not found
+> 
+> **Code investigation for `_TZE200_68nvbio9+TS0601`** (null):
+> - FP not found
+> 
+> **Code investigation for `_TZE200_cf1sl3tj+TS0601`** (null):
+> - FP not found
+> 
+> **Code investigation for `_TZE204_xu4a5rhj+TS0601`** (null):
+> - FP not found
+> 
 > **Code investigation for `_TZ3210_invesber+TS0601`** (null):
 > - FP not found
 > 
@@ -225,8 +238,23 @@
 > **Code investigation for `_TZ3210_weaqkhab+TS0601`** (null):
 > - FP not found
 > 
-> **Code investigation for `_TZ3210_k1msuvg6`** (bulb_rgb):
-> - GETDATA-MFR-BUG:device uses getData() without getSetting fallback
+> **Code investigation for `_TZ3210_k1msuvg6+TS0052`** (null):
+> - FP not found
+> 
+> **Code investigation for `_TZ3000_mgusv51k+TS0601`** (null):
+> - FP not found
+> 
+> **Code investigation for `_TZE200_ip2akl4w+TS0601`** (null):
+> - FP not found
+> 
+> **Code investigation for `_TZE200_4mh6tyyo+TS0601`** (null):
+> - FP not found
+> 
+> **Code investigation for `_TZE204_n9ctkb6j+TS0601`** (null):
+> - FP not found
+> 
+> **Code investigation for `_TZ3210_wdexaypg+TS0052`** (null):
+> - FP not found
 > 
 > **Code investigation for `_TZ3210_4ubylghk+TS0502B`** (null):
 > - FP not found
@@ -234,21 +262,12 @@
 > **Code investigation for `TUYATEC-g3gl6cgy+TS0601`** (null):
 > - FP not found
 > 
-> **Code investigation for `TUYA+TS0601`** (null):
-> - FP not found
-> 
-> **Code investigation for `TUYATEC+TS0601`** (null):
-> - FP not found
-> 
-> **Code investigation for `_TYZB+TS0601`** (null):
-> - FP not found
-> 
-> **Code investigation for `_TZE+TS0601`** (null):
+> **Code investigation for `tuya+TS0601`** (null):
 > - FP not found
 > 
 > ---
 > 
-> Hi! The fingerprint(s) `_TZE200_5zbp6j0u`, `_TZE200_bjzrowv2`, `_TZE200_nkoabg8w`, `_TZE200_xuzcvlku`, `_TZE200_4vobcgd3`, `_TZE200_nogaemzt`, `_TZE200_r0jdjrvi`, `_TZE200_pk0sfzvr`, `_TZE200_fdtjuw7u`, `_TZE200_zpzndjez`, `_TZE200_wmcdj3aq`, `_TZE200_cowvfni3`, `_TZE200_rddyvrci`, `_TZE200_nueqqe6k`, `_TZE200_xaabybja`, `_TZE200_rmymn92d`, `_TZE200_3i3exuay`, `_TZE200_zah67ekd`, `_TZE200_hsgrhjpf`, `_TZE200_68nvbio9`, `_TZE200_pw7mji0l`, `_TZE200_uj3f4wr5`, `_TZE204_1fuxihti`, `_TZE200_axgvo9jh`, `_TZE200_gaj531w3`, `_TZE200_yia0p3tr`, `_TZE200_nw1r9hp6`, `_TZE200_cf1sl3tj`, `_TZE200_9p5xmj5r`, `_TZE204_xu4a5rhj`, `_TYZB01_qezuin6k`, `_TZ3000_ktuoyvt5`, `_TZ3210_zxbtub8r`, `_TZ3000_mgusv51k`, `_TZE200_la2c2uo9`, `_TZE204_hlx9tnzb`, `_TZE200_ip2akl4w`, `_TZE200_1agwnems`, `_TZE200_579lguh2`, `_TZE200_vucankjx`, `_TZE200_4mh6tyyo`, `_TZE204_n9ctkb6j`, `_TZE204_9qhuzgo0`, `_TZE204_dcnsggvz`, `_TZE204_5cuocqty`, `_TYZB01_v8gtiaed`, `_TZ3000_92chsky7`, `_TZ3210_3mpwqzuu`, `_TZ3210_pagajpog`, `_TZ3000_7ysdnebc`, `_TZE200_e3oitdyu`, `_TZE204_zenj4lxv`, `_TZE204_bxoo2swd`, `_TZE200_gwkapsoq`, `_TZE200_fjjbhx9d` are **not yet in our database**. Logged for the next release.
+> Hi! The fingerprint(s) `_TZE200_s8gkrkxk`, `_TZE200_5zbp6j0u`, `_TZE200_nkoabg8w`, `_TZE200_xuzcvlku`, `_TZE200_4vobcgd3`, `_TZE200_nogaemzt`, `_TZE200_r0jdjrvi`, `_TZE200_pk0sfzvr`, `_TZE200_fdtjuw7u`, `_TZE200_zpzndjez`, `_TZE200_wmcdj3aq`, `_TZE200_cowvfni3`, `_TZE200_rddyvrci`, `_TZE200_nueqqe6k`, `_TZE200_xaabybja`, `_TZE200_rmymn92d`, `_TZE200_3i3exuay`, `_TZE200_zah67ekd`, `_TZE200_hsgrhjpf`, `_TZE200_pw7mji0l`, `_TZE200_uj3f4wr5`, `_TZE204_1fuxihti`, `_TZE200_axgvo9jh`, `_TZE200_gaj531w3`, `_TZE200_yia0p3tr`, `_TZE200_nw1r9hp6`, `_TZE200_9p5xmj5r`, `_TYZB01_qezuin6k`, `_TZ3000_ktuoyvt5`, `_TZ3210_zxbtub8r`, `_TZE200_la2c2uo9`, `_TZE204_hlx9tnzb`, `_TZE200_1agwnems`, `_TZE200_579lguh2`, `_TZE200_vucankjx`, `_TZE204_9qhuzgo0`, `_TZE204_dcnsggvz`, `_TZE204_5cuocqty`, `_TYZB01_v8gtiaed`, `_TZ3000_92chsky7`, `_TZ3210_3mpwqzuu`, `_TZ3210_pagajpog`, `_TZ3000_7ysdnebc`, `_TZE200_e3oitdyu`, `_TZE204_zenj4lxv`, `_TZE204_bxoo2swd`, `_TZE200_gwkapsoq`, `_TZE200_fjjbhx9d` are **not yet in our database**. Logged for the next release.
 > 
 > ### :mag: To speed up support, please provide:
 > 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app) (select device > Interview)
@@ -258,1419 +277,6 @@
 > 
 > ### :inbox_tray: Try our fork (may already work with similar devices)
 > - **[Install](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)** | **[Forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352)** | **[GitHub](https://github.com/dlnraja/com.tuya.zigbee)**
-
----
-
-### [#206] [Zigbee USB Plug 3 Gang] TS0003 - _TZ3210_n0wbkysi
-*Author: cristianoisaac | Created: 2026-04-08T15:57:58Z*
-
-**Body:**
-### Brand & Model
-
-Generic
-
-### Where Purchased
-
-https://pt.aliexpress.com/item/1005007279741443.html
-
-### Power Source
-
-Mains (AC)
-
-### Zigbee Fingerprint (MANDATORY)
-
-```yaml
-"manufacturerName": "_TZ3210_n0wbkysi"
-"modelId": "TS0003",
-"endpoints": {
-    "ieeeAddress": "xx:xx:xx:xx:xx:xx:xx:xx",
-    "networkAddress": 61212,
-    "modelId": "TS0003",
-    "manufacturerName": "_TZ3210_n0wbkysi",
-    "endpointDescriptors": [
-      {
-        "endpointId": 1,
-        "applicationProfileId": 260,
-        "applicationDeviceId": 256,
-        "applicationDeviceVersion": 0,
-        "_reserved1": 1,
-        "inputClusters": [
-          3,
-          4,
-          5,
-          6,
-          57344,
-          57345,
-          0
-        ],
-        "outputClusters": [
-          25,
-          10
-        ],
-        "nwkAddrOfInterest": 61212,
-        "_reserved": 0,
-        "status": "ZSuccess"
-      },
-      {
-        "endpointId": 2,
-        "applicationProfileId": 260,
-        "applicationDeviceId": 256,
-        "applicationDeviceVersion": 0,
-        "_reserved1": 1,
-        "inputClusters": [
-          4,
-          5,
-          6,
-          57344,
-          57345
-        ],
-        "outputClusters": [],
-        "nwkAddrOfInterest": 61212,
-        "_reserved": 0,
-        "status": "ZSuccess"
-      },
-      {
-        "endpointId": 3,
-        "applicationProfileId": 260,
-        "applicationDeviceId": 256,
-        "applicationDeviceVersion": 0,
-        "_reserved1": 1,
-        "inputClusters": [
-          4,
-          5,
-          6,
-          57344,
-          57345
-        ],
-        "outputClusters": [],
-        "nwkAddrOfInterest": 61212,
-        "_reserved": 0,
-        "status": "ZSuccess"
-      },
-      {
-        "endpointId": 242,
-        "applicationProfileId": 41440,
-        "applicationDeviceId": 97,
-        "applicationDeviceVersion": 0,
-        "_reserved1": 0,
-        "inputClusters": [],
-        "outputClusters": [
-          33
-        ],
-        "nwkAddrOfInterest": 61212,
-        "_reserved": 0,
-        "status": "ZSuccess"
-      }
-    ],
-    "deviceType": "router",
-    "receiveWhenIdle": true,
-    "capabilities": {
-      "alternatePANCoordinator": false,
-      "deviceType": true,
-      "powerSourceMains": true,
-      "receiveWhenIdle": true,
-      "security": false,
-      "allocateAddress": true
-    },
-    "extendedEndpointDescriptors": {
-      "1": {
-        "clusters": {
-          "identify": {
-            "attributes": [
-              {
-                "acl": [
-                  "readable",
-                  "writable"
-                ],
-                "id": 0,
-                "dataTypeId": 33,
-                "name": "identifyTime",
-                "value": 0
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 65533,
-                "dataTypeId": 33,
-                "name": "clusterRevision",
-                "value": 1
-              }
-            ],
-            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
-            "commandsReceived": "UNSUP_GENERAL_COMMAND"
-          },
-          "groups": {
-            "attributes": [
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 0,
-                "dataTypeId": 24,
-                "name": "nameSupport",
-                "value": {
-                  "type": "Buffer",
-                  "data": [
-                    0
-                  ]
-                }
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 65533,
-                "dataTypeId": 33,
-                "name": "clusterRevision",
-                "value": 1
-              }
-            ],
-            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
-            "commandsReceived": "UNSUP_GENERAL_COMMAND"
-          },
-          "scenes": {
-            "attributes": [
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 0,
-                "dataTypeId": 32
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 1,
-                "dataTypeId": 32
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 2,
-                "dataTypeId": 32
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 3,
-                "dataTypeId": 16
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 4,
-                "dataTypeId": 24
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 65533,
-                "dataTypeId": 33,
-                "name": "clusterRevision",
-                "value": 1
-              }
-            ],
-            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
-            "commandsReceived": "UNSUP_GENERAL_COMMAND"
-          },
-          "onOff": {
-            "attributes": [
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 0,
-                "dataTypeId": 16,
-                "name": "onOff",
-                "value": false,
-                "reportingConfiguration": {
-                  "direction": "reported",
-                  "attributeDataType": 16,
-                  "minInterval": 0,
-                  "maxInterval": 900,
-                  "status": "SUCCESS"
-                }
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 16384,
-                "dataTypeId": 16
-              },
-              {
-                "acl": [
-                  "readable",
-                  "writable"
-                ],
-                "id": 16385,
-                "dataTypeId": 33,
-                "name": "onTime",
-                "value": 0
-              },
-              {
-                "acl": [
-                  "readable",
-                  "writable"
-                ],
-                "id": 16386,
-                "dataTypeId": 33,
-                "name": "offWaitTime",
-                "value": 0
-              },
-              {
-                "acl": [
-                  "readable",
-                  "writable"
-                ],
-                "id": 16387,
-                "dataTypeId": 48
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 65533,
-                "dataTypeId": 33,
-                "name": "clusterRevision",
-                "value": 1
-              },
-              {
-                "acl": [
-                  "readable",
-                  "writable"
-                ],
-                "id": 32770,
-                "dataTypeId": 48
-              }
-            ],
-            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
-            "commandsReceived": "UNSUP_GENERAL_COMMAND"
-          },
-          "basic": {
-            "attributes": [
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 0,
-                "dataTypeId": 32,
-                "name": "zclVersion",
-                "value": 3
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 1,
-                "dataTypeId": 32,
-                "name": "appVersion",
-                "value": 74
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 2,
-                "dataTypeId": 32,
-                "name": "stackVersion",
-                "value": 2
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 3,
-                "dataTypeId": 32,
-                "name": "hwVersion",
-                "value": 1
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 4,
-                "dataTypeId": 66,
-                "name": "manufacturerName",
-                "value": "_TZ3210_n0wbkysi"
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 5,
-                "dataTypeId": 66,
-                "name": "modelId",
-                "value": "TS0003"
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 7,
-                "dataTypeId": 48,
-                "name": "powerSource",
-                "value": "mains"
-              },
-              {
-                "acl": [
-                  "readable",
-                  "writable"
-                ],
-                "id": 18,
-                "dataTypeId": 16,
-                "name": "deviceEnabled",
-                "value": true
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 65533,
-                "dataTypeId": 33,
-                "name": "clusterRevision",
-                "value": 1
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 65534,
-                "dataTypeId": 48,
-                "name": "attributeReportingStatus",
-                "value": "PENDING"
-              },
-              {
-                "acl": [
-                  "writable"
-                ],
-                "id": 65502,
-                "dataTypeId": 32
-              }
-            ],
-            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
-            "commandsReceived": "UNSUP_GENERAL_COMMAND"
-          }
-        },
-        "bindings": {
-          "ota": {
-            "attributes": [
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 0,
-                "dataTypeId": 240,
-                "name": "upgradeServerID",
-                "value": "ff:ff:ff:ff:ff:ff:ff:ff"
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 1,
-                "dataTypeId": 35,
-                "name": "fileOffset",
-                "value": 4294967295
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 2,
-                "dataTypeId": 35,
-                "name": "currentFileVersion",
-                "value": 1241657345
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 3,
-                "dataTypeId": 33,
-                "name": "currentZigBeeStackVersion",
-                "value": 2
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 4,
-                "dataTypeId": 35,
-                "name": "downloadedFileVersion",
-                "value": 4294967295
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 5,
-                "dataTypeId": 33,
-                "name": "downloadedZigBeeStackVersion",
-                "value": 65535
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 6,
-                "dataTypeId": 48,
-                "name": "imageUpgradeStatus",
-                "value": "normal"
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 7,
-                "dataTypeId": 33,
-                "name": "manufacturerID",
-                "value": 4417
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 8,
-                "dataTypeId": 33,
-                "name": "imageTypeID",
-                "value": 65535
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 9,
-                "dataTypeId": 33,
-                "name": "minimumBlockPeriod",
-                "value": 0
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 65533,
-                "dataTypeId": 33,
-                "name": "clusterRevision",
-                "value": 1
-              }
-            ],
-            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
-            "commandsReceived": "UNSUP_GENERAL_COMMAND"
-          },
-          "time": {
-            "attributes": [
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 0,
-                "dataTypeId": 226
-              },
-              {
-                "acl": [
-                  "readable",
-                  "writable"
-                ],
-                "id": 1,
-                "dataTypeId": 24
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 7,
-                "dataTypeId": 35
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 65533,
-                "dataTypeId": 33,
-                "name": "clusterRevision",
-                "value": 1
-              }
-            ],
-            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
-            "commandsReceived": "UNSUP_GENERAL_COMMAND"
-          }
-        }
-      },
-      "2": {
-        "clusters": {
-          "groups": {
-            "attributes": [
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 0,
-                "dataTypeId": 24,
-                "name": "nameSupport",
-                "value": {
-                  "type": "Buffer",
-                  "data": [
-                    0
-                  ]
-                }
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 65533,
-                "dataTypeId": 33,
-                "name": "clusterRevision",
-                "value": 1
-              }
-            ],
-            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
-            "commandsReceived": "UNSUP_GENERAL_COMMAND"
-          },
-          "scenes": {
-            "attributes": [
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 0,
-                "dataTypeId": 32
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 1,
-                "dataTypeId": 32
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 2,
-                "dataTypeId": 32
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 3,
-                "dataTypeId": 16
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 4,
-                "dataTypeId": 24
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 65533,
-                "dataTypeId": 33,
-                "name": "clusterRevision",
-                "value": 1
-              }
-            ],
-            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
-            "commandsReceived": "UNSUP_GENERAL_COMMAND"
-          },
-          "onOff": {
-            "attributes": [
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 0,
-                "dataTypeId": 16,
-                "name": "onOff",
-                "value": false,
-                "reportingConfiguration": {
-                  "direction": "reported",
-                  "attributeDataType": 16,
-                  "minInterval": 0,
-                  "maxInterval": 900,
-                  "status": "SUCCESS"
-                }
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 16384,
-                "dataTypeId": 16
-              },
-              {
-                "acl": [
-                  "readable",
-                  "writable"
-                ],
-                "id": 16385,
-                "dataTypeId": 33,
-                "name": "onTime",
-                "value": 0
-              },
-              {
-                "acl": [
-                  "readable",
-                  "writable"
-                ],
-                "id": 16386,
-                "dataTypeId": 33,
-                "name": "offWaitTime",
-                "value": 0
-              },
-              {
-                "acl": [
-                  "readable",
-                  "writable"
-                ],
-                "id": 16387,
-                "dataTypeId": 48
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 65533,
-                "dataTypeId": 33,
-                "name": "clusterRevision",
-                "value": 1
-              }
-            ],
-            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
-            "commandsReceived": "UNSUP_GENERAL_COMMAND"
-          }
-        },
-        "bindings": {}
-      },
-      "3": {
-        "clusters": {
-          "groups": {
-            "attributes": [
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 0,
-                "dataTypeId": 24,
-                "name": "nameSupport",
-                "value": {
-                  "type": "Buffer",
-                  "data": [
-                    0
-                  ]
-                }
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 65533,
-                "dataTypeId": 33,
-                "name": "clusterRevision",
-                "value": 1
-              }
-            ],
-            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
-            "commandsReceived": "UNSUP_GENERAL_COMMAND"
-          },
-          "scenes": {
-            "attributes": [
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 0,
-                "dataTypeId": 32
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 1,
-                "dataTypeId": 32
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 2,
-                "dataTypeId": 32
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 3,
-                "dataTypeId": 16
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 4,
-                "dataTypeId": 24
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 65533,
-                "dataTypeId": 33,
-                "name": "clusterRevision",
-                "value": 1
-              }
-            ],
-            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
-            "commandsReceived": "UNSUP_GENERAL_COMMAND"
-          },
-          "onOff": {
-            "attributes": [
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 0,
-                "dataTypeId": 16,
-                "name": "onOff",
-                "value": false,
-                "reportingConfiguration": {
-                  "direction": "reported",
-                  "attributeDataType": 16,
-                  "minInterval": 0,
-                  "maxInterval": 900,
-                  "status": "SUCCESS"
-                }
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 16384,
-                "dataTypeId": 16
-              },
-              {
-                "acl": [
-                  "readable",
-                  "writable"
-                ],
-                "id": 16385,
-                "dataTypeId": 33,
-                "name": "onTime",
-                "value": 0
-              },
-              {
-                "acl": [
-                  "readable",
-                  "writable"
-                ],
-                "id": 16386,
-                "dataTypeId": 33,
-                "name": "offWaitTime",
-                "value": 0
-              },
-              {
-                "acl": [
-                  "readable",
-                  "writable"
-                ],
-                "id": 16387,
-                "dataTypeId": 48
-              },
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 65533,
-                "dataTypeId": 33,
-                "name": "clusterRevision",
-                "value": 1
-              }
-            ],
-            "commandsGenerated": "UNSUP_GENERAL_COMMAND",
-            "commandsReceived": "UNSUP_GENERAL_COMMAND"
-          }
-        },
-        "bindings": {}
-      },
-      "242": {
-        "clusters": {},
-        "bindings": {}
-      }
-    }
-```
-
-### TS0601 DP List (if applicable)
-
-```yaml
-
-```
-
-### Zigbee2MQTT Link
-
-https://www.zigbee2mqtt.io/devices/TZ3000_mw1pqqqt.html
-
-### Home Assistant / ZHA Link
-
-_No response_
-
-### Expected Capabilities
-
-- Smart plug: onoff (each one of 3 gangs)
-- onoff timer
-- Restore State After Power Lost
-
-### Pairing Logs / Notes
-
-- Device requires 5 seconds long press to reset
-
-### Checklist
-
-- [x] I have searched existing issues (no duplicate)
-- [x] I have provided complete Zigbee fingerprint
-- [x] I understand this app is for LOCAL Zigbee control (not cloud/WiFi)
-- [x] I am willing to test the driver when created
-
-**Comments (4):**
-> **github-actions:** ## Fingerprint Cross-Reference
-> 
-> | Manufacturer | Driver Match |
-> |---|---|
-> 
-> | _TZ3210_n0wbkysi | NOT FOUND |
-> 
-> ---
-> *Auto-generated by crossref workflow*
-
-> **github-actions:** <!-- tuya-triage-bot -->
-> Hey! I've peeked into the fingerprints shared here. Here's what I found:
-> 
-> ### ✅ Driver Status
-> Already supported in v7.0.10:
-> 
-> - `TS0003` → **unknown**
-> - `TS0601` → **unknown**
-> 
-> ### 🚧 Driver Enrichment
-> Not supported yet: `_TZ3210_n0wbkysi`
-> 
-> I've added these to the internal research queue for the next release. If you can share a [Developer Tools interview](https://tools.developer.homey.app), especially the **External State** and **Endpoints** tabs, that helps me map the data points correctly.
-> 
-> *Side note:* This app also has 50 Tuya WiFi models with local LAN control - check the [forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352) if you have those too.
-> 
-> ---
-> [Test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · [Forum thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352) · [Developer Tools](https://tools.developer.homey.app)
-
-> **dlnraja:** <!-- tuya-issue-manager -->
-> Hey @cristianoisaac, thanks for the detailed report! I see that your Zigbee USB Plug 3 Gang (TS0003) isn't functioning as expected. Given the multi-gang nature of this device, I recommend completely deleting it from Homey, re-pairing it, and then recreating your flow cards. This is crucial since Homey caches capabilities at pairing, and we want to ensure everything is fresh.
-> 
-> Also, if you're missing any specific sensor readings, could you share the app logs showing the DP numbers? That'll help me dig deeper into the issue. I'll check the compatibility with the current drivers and see if there's anything we can do to improve support for your device. 
-> 
-> Let me know how it goes!
-
-> **github-actions:** ## Fingerprint Cross-Reference
-> 
-> | Manufacturer | Driver Match |
-> |---|---|
-> 
-> | _TZ3210_n0wbkysi | NOT FOUND |
-> 
-> ---
-> *Auto-generated by crossref workflow*
-
----
-
-### [#200] Temperature and Humidity LCD sensor
-*Author: tencoo | Created: 2026-04-06T19:37:39Z*
-
-**Body:**
-## Basic Info
-- **Brand**:  Generic / TNCE?
-- **Model** (printed on label): No visible lables.
-- **Manufacturer Name** (from Homey dev tools): _TZ3210_ncw88jfq
-- **Model ID** (e.g., TS0601, TS0011, TS011F): TS0201
-- **Purchase Link** (Amazon/AliExpress): https://www.amazon.com.au/Temperature-Humidity-Thermometer-Hygrometer-Compatible/dp/B0CJV7R1HG?th=1
-
-## Evidence
-### Required
-- [x ] Photos attached (device label + device itself)
-- [x] Zigbee interview / cluster list (copy/paste below)
-- [ ] Pairing logs attached
-
-### Optional but Helpful
-- **Zigbee2MQTT link** (if device is supported there):  **https://www.zigbee2mqtt.io/devices/TNCE_CLIMATE.html**
-- **Home Assistant link** (if device is supported there): 
-- **For TS0601 devices**: DP list with values (see logs during operation)
-
-### Zigbee Interview
-```
-
-  "ids": {
-    "modelId": "TS0201",
-    "manufacturerName": "_TZ3210_ncw88jfq"
-  },
-  "endpoints": {
-    "ieeeAddress": "a4:c1:38:44:27:3f:bd:d2",
-    "networkAddress": 16361,
-    "modelId": "TS0201",
-    "manufacturerName": "_TZ3210_ncw88jfq",
-    "endpointDescriptors": [
-      {
-        "status": "SUCCESS",
-        "nwkAddrOfInterest": 16361,
-        "_reserved": 22,
-        "endpointId": 1,
-        "applicationProfileId": 260,
-        "applicationDeviceId": 770,
-        "applicationDeviceVersion": 0,
-        "_reserved1": 1,
-        "inputClusters": [
-          1,
-          1026,
-          1029,
-          61184,
-          0
-        ],
-        "outputClusters": [
-          25,
-          10
-        ]
-      }
-    ],
-    "deviceType": "enddevice",
-    "receiveWhenIdle": false,
-    "capabilities": {
-      "alternatePANCoordinator": false,
-      "deviceType": false,
-      "powerSourceMains": false,
-      "receiveWhenIdle": false,
-      "security": false,
-      "allocateAddress": true
-    },
-    "extendedEndpointDescriptors": {
-      "1": {
-        "clusters": {
-          "powerConfiguration": {
-            "attributes": [
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 0,
-                "dataTypeId": 33,
-                "reportingConfiguration": {
-                  "status": "NOT_FOUND",
-                  "direction": "reported"
-                }
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 32,
-                "dataTypeId": 32,
-                "name": "batteryVoltage",
-                "value": 29,
-                "reportingConfiguration": {
-                  "status": "NOT_FOUND",
-                  "direction": "reported"
-                }
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 33,
-                "dataTypeId": 32,
-                "name": "batteryPercentageRemaining",
-                "value": 156,
-                "reportingConfiguration": {
-                  "status": "NOT_FOUND",
-                  "direction": "reported"
-                }
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 65533,
-                "dataTypeId": 33,
-                "name": "clusterRevision",
-                "value": 1,
-                "reportingConfiguration": {
-                  "status": "NOT_FOUND",
-                  "direction": "reported"
-                }
-              }
-            ]
-          },
-          "temperatureMeasurement": {
-            "attributes": [
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 0,
-                "dataTypeId": 41,
-                "name": "measuredValue",
-                "value": 2480,
-                "reportingConfiguration": {
-                  "direction": "reported",
-                  "attributeDataType": 41,
-                  "minInterval": 60,
-                  "maxInterval": 1800,
-                  "minChange": 50,
-                  "status": "SUCCESS"
-                }
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 1,
-                "dataTypeId": 41,
-                "name": "minMeasuredValue",
-                "value": 2350,
-                "reportingConfiguration": {
-                  "status": "NOT_FOUND",
-                  "direction": "reported"
-                }
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 2,
-                "dataTypeId": 41,
-                "name": "maxMeasuredValue",
-                "value": 2740,
-                "reportingConfiguration": {
-                  "status": "NOT_FOUND",
-                  "direction": "reported"
-                }
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 65533,
-                "dataTypeId": 33,
-                "name": "clusterRevision",
-                "value": 2,
-                "reportingConfiguration": {
-                  "status": "NOT_FOUND",
-                  "direction": "reported"
-                }
-              }
-            ]
-          },
-          "relativeHumidity": {
-            "attributes": [
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 0,
-                "dataTypeId": 33,
-                "name": "measuredValue",
-                "value": 156,
-                "reportingConfiguration": {
-                  "direction": "reported",
-                  "attributeDataType": 33,
-                  "minInterval": 60,
-                  "maxInterval": 1800,
-                  "minChange": 50,
-                  "status": "SUCCESS"
-                }
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 1,
-                "dataTypeId": 33,
-                "name": "minMeasuredValue",
-                "value": 156,
-                "reportingConfiguration": {
-                  "status": "NOT_FOUND",
-                  "direction": "reported"
-                }
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 2,
-                "dataTypeId": 33,
-                "name": "maxMeasuredValue",
-                "value": 5330,
-                "reportingConfiguration": {
-                  "status": "NOT_FOUND",
-                  "direction": "reported"
-                }
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 65533,
-                "dataTypeId": 33,
-                "name": "clusterRevision",
-                "value": 2,
-                "reportingConfiguration": {
-                  "status": "NOT_FOUND",
-                  "direction": "reported"
-                }
-              }
-            ]
-          },
-          "basic": {
-            "attributes": [
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 0,
-                "dataTypeId": 32,
-                "name": "zclVersion",
-                "value": 3
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 1,
-                "dataTypeId": 32,
-                "name": "appVersion",
-                "value": 131
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 2,
-                "dataTypeId": 32,
-                "name": "stackVersion",
-                "value": 0
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 3,
-                "dataTypeId": 32,
-                "name": "hwVersion",
-                "value": 1
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 4,
-                "dataTypeId": 66,
-                "name": "manufacturerName",
-                "value": "_TZ3210_ncw88jfq"
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 5,
-                "dataTypeId": 66,
-                "name": "modelId",
-                "value": "TS0201"
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 6,
-                "dataTypeId": 66,
-                "name": "dateCode",
-                "value": ""
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 7,
-                "dataTypeId": 48,
-                "name": "powerSource",
-                "value": "battery"
-              },
-              {
-                "acl": [
-                  "readable",
-                  "writable",
-                  "reportable"
-                ],
-                "id": 65502,
-                "dataTypeId": 32
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 65533,
-                "dataTypeId": 33,
-                "name": "clusterRevision",
-                "value": 2
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 65534,
-                "dataTypeId": 48,
-                "name": "attributeReportingStatus",
-                "value": "PENDING"
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 65506,
-                "dataTypeId": 32
-              },
-              {
-                "acl": [
-                  "readable",
-                  "reportable"
-                ],
-                "id": 65507,
-                "dataTypeId": 72
-              }
-            ]
-          }
-        },
-        "bindings": {
-          "ota": {},
-          "time": {
-            "attributes": [
-              {
-                "acl": [
-                  "readable"
-                ],
-                "id": 65533,
-                "dataTypeId": 33,
-                "name": "clusterRevision",
-                "value": 1
-              }
-            ]
-          }
-        }
-      }
-    }
-  }
-
-```
-
-## Expected Behavior
-**What capabilities do you expect?**
-- [ ] On/Off
-- [ ] Dimming
-- [X] Temperature measurement
-- [X] Humidity measurement
-- [ ] Contact sensor
-- [ ] Motion sensor
-- [ ] Cover position (curtain/blind)
-- [ ] Thermostat controls
-- [ ] Energy metering
-- [X] Other: Battery status
-
-**Describe the device's function**:
-Temperature and humidity sensor with LCD display.
-
-## Additional Context
-Any other information that might help (device quirks, special modes, pairing issues, etc.):
-
-![Image](https://github.com/user-attachments/assets/28ba6505-808d-4783-b5ef-2e8cc9a6a442)
-![Image](https://github.com/user-attachments/assets/d2acb69c-a05a-4e6e-a417-c93e58ea6137)
----
-
-### ⚡ Quick Tips
-- **Photos**: Make sure the label is clearly visible
-- **Logs**: Enable logs in Homey app settings before pairing
-- **Reset**: Most devices require 3-5 seconds press to reset (LED blinks)
-- **Distance**: Pair within 1 meter of Homey for best results
-
-
-**Comments (3):**
-> **github-actions:** <!-- tuya-triage-bot -->
-> Hey! I've peeked into the fingerprints shared here. Here's what I found:
-> 
-> ### ✅ Driver Status
-> Already supported in v5.12.3:
-> 
-> - `_TZ3210_ncw88jfq` → **climate_sensor**, **gas_detector**
-> - `TS0601` → **unknown**
-> - `TS0011` → **unknown**
-> - `TS011F` → **unknown**
-> - `TS0201` → **unknown**
-> 
-> **Tip:** For climate sensors, remember you can adjust the **Temperature/Humidity Offset** in Device Settings if the readings are slightly off.
-> 
-> 🚀 **Testing:** Install the [test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/), **remove and re-pair** the device. If it still shows as unknown, send me a diagnostic report ID.
-> 
-> ---
-> [Test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · [Forum thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352) · [Developer Tools](https://tools.developer.homey.app)
-
-> **tencoo:** Hi, tried to remove and re-pair the devices, but not recognized. Diag ID: d341343d-f85f-4f0c-9b06-5a3bc9cee9eb.
-> I do however see a mention of version v5.12.3, but the link leads me to the test version v5.11.206 and thats the version i have installed. How do i get the newer test version?
-> 
-> Edit: Never mind, i saw the forum post about publishing issues, I will wait.
-> 
-> Thanks for your great effort in the community!
-> 
-> Regards
-> Fredrik
-> 
-> 
-
-> **dlnraja:** <!-- tuya-issue-manager -->
-> Hey @tencoo, thanks for the detailed report! I see that your TS0201 isn't functioning as expected. Since this device is showing up with a new fingerprint, it might not be fully supported yet.
-> 
-> To dig deeper, could you please provide the pairing logs? They’ll help me identify any missing DPs or capabilities. Also, if you're experiencing issues with missing readings, sharing the app logs with the DP numbers would be super helpful.
-> 
-> As a heads up, if we find that the device needs a fix related to multi-gang bindings or capabilities, you’ll need to completely delete the device, re-pair it, and recreate any flow cards, since Homey caches capabilities at pairing.
-> 
-> I’ll check the Zigbee interview you provided and see what we can do. Looking forward to your logs!
 
 ---
 
@@ -1691,7 +297,7 @@ https://github.com/dlnraja/com.tuya.zigbee/blob/722cb3c6f8c018920f9d2d23999836b0
 
 
 
-**Comments (7):**
+**Comments (8):**
 > **dlnraja:** <!-- tuya-issue-manager -->
 > Hey @john1v,
 > 
@@ -1733,6 +339,608 @@ https://github.com/dlnraja/com.tuya.zigbee/blob/722cb3c6f8c018920f9d2d23999836b0
 > > 2. **Diagnostic Report ID** from device settings
 
 > **john1v:** I create report 9152fd7d-795c-4395-8fc4-e0d97eb25c5b
+
+> **github-actions:** <!-- tuya-triage-bot -->
+> I see these fingerprints are mapped in the Universal Tuya Zigbee app(https://github.com/dlnraja/com.tuya.zigbee) v7.2.12: `dlnraja` → **generic_diy**, `eWeLink+CK-BL702-SWP-01(7020)` → **plug_energy_monitor**, `CK-BL702-SWP-01(7020)+CK-BL702-SWP-01(7020)` → **plug_energy_monitor**.
+> 
+> Grab it here: https://homey.app/a/com.dlnraja.tuya.zigbee/test/
+> 
+> Remove and re-pair after installing. If something's off, drop a diagnostic report ID on the [forum thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352).
+
+---
+
+### [#184] Device Request - Temperature &humidity sensor with external probe - Shenzen New Green Energy Techologies Co ltd / _TZE284_8se38w3c TS0601
+*Author: pemikalsen-sudo | Created: 2026-04-02T09:43:07Z*
+
+**Body:**
+## 📱 Basic Information
+
+**Brand & Model**: Temperature &humidity sensor with external probe
+**Purchase Link**:  https://www.aliexpress.com/item/1005011541019564.html?spm=a2g0o.order_list.order_list_main.4.54131802dwTFsPhttps://www.aliexpress.com/item/1005011541019564.html?spm=a2g0o.order_list.order_list_main.4.54131802dwTFsP
+**Power Source**: [X] Battery / [ ] Mains
+**Current Status**: [ ] Not pairing / [X] Pairs but missing features / [ ] Not working at all
+
+---
+
+## 🔍 Zigbee Fingerprint (MANDATORY)
+
+Please provide this information from Homey Developer Tools:
+
+**Manufacturer Name**: `_TZ____`    "_TZE284_8se38w3c"
+**Model ID**: `TS____`    "TS0601"
+**Endpoints**: `[ ]`  
+**Clusters**: `[ ]`
+
+### How to Get Fingerprint:
+1. Pair device with Homey
+2. Go to Developer Tools → Devices → [Your Device]
+3. Click "Advanced" tab
+4. Screenshot OR copy the information above
+
+**Screenshot or fingerprint data**:
+```
+Paste fingerprint here
+"ids": {
+"modelId": "TS0601",
+"manufacturerName": "_TZE284_8se38w3c"
+},
+"endpoints": {
+"endpointDescriptors": [
+{
+"endpointId": 1,
+"applicationProfileId": 260,
+"applicationDeviceId": 81,
+"applicationDeviceVersion": 0,
+"_reserved1": 1,
+"inputClusters": [
+4,
+5,
+61184,
+0,
+60672
+],
+"outputClusters": [
+25,
+10
+]
+}
+],
+"endpoints": {
+"1": {
+"clusters": {
+"groups": {
+"attributes": [
+{
+"acl": [
+"readable",
+"reportable"
+],
+"id": 0,
+"name": "nameSupport",
+"value": {
+"type": "Buffer",
+"data": [
+0
+]
+},
+"reportingConfiguration": {
+"status": "NOT_FOUND",
+"direction": "reported"
+}
+},
+{
+"acl": [
+"readable",
+"reportable"
+],
+"id": 65533,
+"name": "clusterRevision",
+"value": 2,
+"reportingConfiguration": {
+"status": "NOT_FOUND",
+"direction": "reported"
+}
+}
+]
+},
+"scenes": {
+"attributes": [
+{
+"acl": [
+"readable",
+"reportable"
+],
+"id": 0,
+"reportingConfiguration": {
+"status": "NOT_FOUND",
+"direction": "reported"
+}
+},
+{
+"acl": [
+"readable",
+"reportable"
+],
+"id": 1,
+"reportingConfiguration": {
+"status": "NOT_FOUND",
+"direction": "reported"
+}
+},
+{
+"acl": [
+"readable",
+"reportable"
+],
+"id": 2,
+"reportingConfiguration": {
+"status": "NOT_FOUND",
+"direction": "reported"
+}
+},
+{
+"acl": [
+"readable",
+"reportable"
+],
+"id": 3,
+"reportingConfiguration": {
+"status": "NOT_FOUND",
+"direction": "reported"
+}
+},
+{
+"acl": [
+"readable",
+"reportable"
+],
+"id": 4,
+"reportingConfiguration": {
+"status": "NOT_FOUND",
+"direction": "reported"
+}
+},
+{
+"acl": [
+"readable",
+"reportable"
+],
+"id": 65533,
+"name": "clusterRevision",
+"value": 2,
+"reportingConfiguration": {
+"status": "NOT_FOUND",
+"direction": "reported"
+}
+}
+]
+},
+"basic": {
+"attributes": [
+{
+"acl": [
+"readable",
+"reportable"
+],
+"id": 0,
+"name": "zclVersion",
+"value": 3
+},
+{
+"acl": [
+"readable",
+"reportable"
+],
+"id": 1,
+"name": "appVersion",
+"value": 77
+},
+{
+"acl": [
+"readable",
+"reportable"
+],
+"id": 2,
+"name": "stackVersion",
+"value": 0
+},
+{
+"acl": [
+"readable",
+"reportable"
+],
+"id": 3,
+"name": "hwVersion",
+"value": 1
+},
+{
+"acl": [
+"readable",
+"reportable"
+],
+"id": 4,
+"name": "manufacturerName",
+"value": "_TZE284_8se38w3c"
+},
+{
+"acl": [
+"readable",
+"reportable"
+],
+"id": 5,
+"name": "modelId",
+"value": "TS0601"
+},
+{
+"acl": [
+"readable",
+"reportable"
+],
+"id": 6,
+"name": "dateCode",
+"value": ""
+},
+{
+"acl": [
+"readable",
+"reportable"
+],
+"id": 7,
+"name": "powerSource",
+"value": "battery"
+},
+{
+"acl": [
+"readable",
+"writable",
+"reportable"
+],
+"id": 65502
+},
+{
+"acl": [
+"readable",
+"reportable"
+],
+"id": 65533,
+"name": "clusterRevision",
+"value": 2
+},
+{
+"acl": [
+"readable",
+"reportable"
+],
+"id": 65534,
+"name": "attributeReportingStatus",
+"value": "PENDING"
+},
+{
+"acl": [
+"readable",
+"reportable"
+],
+"id": 65506
+},
+{
+"acl": [
+"readable",
+"reportable"
+],
+"id": 65507
+},
+{
+"acl": [
+"readable",
+"writable",
+"reportable"
+],
+"id": 65487
+}
+]
+}
+},
+"bindings": {
+"ota": {
+"attributes": [
+{
+"acl": [
+"readable"
+],
+"id": 0
+},
+{
+"acl": [
+"readable"
+],
+"id": 1
+},
+{
+"acl": [
+"readable"
+],
+"id": 2
+},
+{
+"acl": [
+"readable"
+],
+"id": 3
+},
+{
+"acl": [
+"readable"
+],
+"id": 4
+},
+{
+"acl": [
+"readable"
+],
+"id": 5
+},
+{
+"acl": [
+"readable"
+],
+"id": 6
+},
+{
+"acl": [
+"readable"
+],
+"id": 7
+},
+{
+"acl": [
+"readable"
+],
+"id": 8
+},
+{
+"acl": [
+"readable"
+],
+"id": 9
+},
+{
+"acl": [
+"readable"
+],
+"id": 65533,
+"name": "clusterRevision",
+"value": 3
+}
+]
+},
+"time": {
+"attributes": [
+{
+"acl": [
+"readable"
+],
+"id": 65533,
+"name": "clusterRevision",
+"value": 1
+}
+]
+}
+}
+}
+}
+}
+```
+
+---
+
+## 📊 TS0601 Data Points (if applicable)
+
+If your device uses model `TS0601`, please provide DP mappings:
+
+| DP ID | Function | Example Value | Read/Write |
+|-------|----------|---------------|------------|
+| 1     | (e.g., switch) | true/false | RW |
+| 4     | (e.g., battery) | 87 (%) | R |
+| ...   | ... | ... | ... |
+
+---
+
+## 🔗 References
+
+**Zigbee2MQTT**: (link if exists)  
+**Home Assistant/ZHA**: (link if exists)  
+**Other documentation**: (any other helpful links)
+
+---
+
+## ✨ Expected Capabilities
+
+What features should work? Check all that apply:
+
+- [ ] On/Off
+- [ ] Brightness/Dim
+- [X] Temperature
+- [X] Humidity
+- [ ] Motion detection
+- [ ] Contact sensor
+- [X] Battery level
+- [ ] Energy monitoring (power, current, voltage)
+- [ ] Other: _________
+
+---
+
+## 📝 Additional Notes
+
+Any other relevant information (e.g., specific modes, known issues, etc.)
+Pairs OK as Climate sensor, but Homey does not receive any data.
+
+**Comments (16):**
+> **github-actions:** ## Fingerprint Cross-Reference
+> 
+> | Manufacturer | Driver Match |
+> |---|---|
+> 
+> | ${MFR}\ | climate_sensor |
+> 
+> ---
+> *Auto-generated by crossref workflow*
+
+> **github-actions:** <!-- tuya-triage-bot -->
+> Fingerprint(s) found in v5.11.154:
+> 
+> - `_TZE284_8se38w3c` → **climate_sensor**
+> - `TS0601` → **unknown**
+> 
+> Install the [test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/), **remove the device, and re-pair** so it picks up the correct driver.
+> 
+> **If the device still shows as unknown or doesn't work**, please share a diagnostic report ID and a [Developer Tools interview](https://tools.developer.homey.app) — we will investigate and fix it.
+> 
+> [Test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · [Forum thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352) · [Developer Tools](https://tools.developer.homey.app)
+
+> **dlnraja:** <!-- tuya-issue-manager -->
+> Hey @pemikalsen-sudo,
+> 
+> Thanks for the detailed info on the TS0601! I see that it’s supported, and we can use the `climate_sensor` driver for it. Since you mentioned it pairs but is missing features, I’ll need to dig into the specific DPs that are not reporting correctly.
+> 
+> Could you check the app logs for any DP numbers related to temperature and humidity readings? That’ll help me pinpoint what’s going wrong. Also, if you have any specific features that are missing, let me know!
+> 
+> Once I have that info, I can make the necessary adjustments to ensure everything works smoothly. Appreciate your help in getting this sorted!
+
+> **pemikalsen-sudo:** Diagnostic report ID:dd9c1925-2d4b-4c2f-9b1b-2e2c379a563f
+> 
+> I am getting no data fra the sensor. Missing, temperature and humidity as well as battery status.
+> 
+> Thankyou. Off course I will check the apps logs for any DP numbers, but could you please tell me how to obtain this?
+
+> **pemikalsen-sudo:** Hello again.
+> 
+> I think I have found the DP numbers... Have a look at the bottom of this under tuyaDatapoints:
+> 
+> {
+>     fingerprint: [{modelID: "TS0601", manufacturerName: "_TZE284_8se38w3c"}],
+>     model: "TZ-ZT01_GA4",
+>     vendor: "Tuya",
+>     description: "Temperature & humidity Sensor with external probe",
+>     extend: [tuya.modernExtend.tuyaBase({dp: true})],
+>     exposes: [
+>         e.temperature(),
+>         e.numeric("temperature_probe", ea.STATE).withUnit("°C").withDescription("Probe temperature"),
+>         e.humidity(),
+>         tuya.exposes.batteryState(),
+>     ],
+>     meta: {
+>         tuyaDatapoints: [
+>             [1, "temperature", tuya.valueConverter.divideBy10],
+>             [2, "humidity", tuya.valueConverter.raw],
+>             [3, "battery_state", tuya.valueConverter.batteryState],
+>             [38, "temperature_probe", tuya.valueConverter.divideBy10],
+>         ],
+>     },
+> },
+> 
+> (Got this one from this URL: https://community.home-assistant.io/t/ts0601-by-tze284-8se38w3c-not-showing-sensor-data/986172/3)
+
+> **pemikalsen-sudo:** I also found this information:
+> 
+> from zhaquirks.tuya.builder import  TuyaQuirkBuilder
+> from zigpy.quirks.v2 import EntityPlatform, EntityType
+> from zigpy.quirks.v2.homeassistant.sensor import SensorDeviceClass
+> from zigpy.quirks.v2.homeassistant import UnitOfTemperature
+> import zigpy.types as t
+> 
+> #Tuya battery status enum mapping.
+> class BatteryStatus(t.enum8):
+>     Empty = 0x00
+>     Low = 0x01
+>     Full = 0x02
+> 
+> (
+>     TuyaQuirkBuilder("_TZE284_8se38w3c", "TS0601") 
+>     .tuya_temperature(dp_id=1, scale=10)
+>     .tuya_humidity(dp_id=2)
+>     # Battery status enum
+>     .tuya_enum(
+>         dp_id=3,
+>         attribute_name="battery",
+>         enum_class=BatteryStatus,
+>         translation_key="battery",
+>         fallback_name="Battery",
+>         entity_type=EntityType.DIAGNOSTIC,
+>         entity_platform=EntityPlatform.SENSOR,
+>     )
+>     #.tuya_battery(dp_id=4) # duplicate of dp 3 for some reason
+>     # External temperature probe
+>     .tuya_sensor(
+>         dp_id=38,
+>         attribute_name="temperature_probe",
+>         type=t.int16s,
+>         multiplier=0.1,
+>         device_class=SensorDeviceClass.TEMPERATURE,
+>         entity_type=EntityType.STANDARD,
+>         unit=UnitOfTemperature.CELSIUS,
+>         translation_key="temperature_probe",
+>         fallback_name="Temperature Probe",
+>     )
+>     .skip_configuration()
+>     .add_to_registry()
+> )
+> 
+> From this URL: https://github.com/zigpy/zha-device-handlers/issues/4653
+
+> **pemikalsen-sudo:** Seems like it has 2 x temperature sensors, one internal (DP 1) and one in the external cable/probe (DP38):
+> 
+> tuyaDatapoints: [
+> [1, "temperature", tuya.valueConverter.divideBy10],
+> [2, "humidity", tuya.valueConverter.raw],
+> [3, "battery_state", tuya.valueConverter.batteryState],
+> [38, "temperature_probe", tuya.valueConverter.divideBy10]
+> 
+> It is very important for me to get the readings from the external proble.
+
+> **dlnraja:** <!-- diag-resolver -->
+> ### Set mainsPowered=true and remove measure_battery in onNodeInit
+> 
+> **Action:** remove_battery_capability
+> 
+> **Version:** v5.11.154
+> 
+
+> **pemikalsen-sudo:** Hello.
+> I have made an app diagnostic report for your app. I got this reference number: 7849d214-b61d-4a40-9f73-9362d7895f38
+
+> **dlnraja:** Resolved: _TZE284_8se38w3c (TS0601) is supported in the climate_sensor driver. Please pair your device and it should be detected automatically. If you have issues, try removing and re-pairing.
+
+> **pemikalsen-sudo:** Thankyou very much.
+> I did remove the _TZE284_8se38w3c (TS0601) temp/hum sensor, but today I can not manage to re-pair it. I have the Universal Tuya Test app installed in version 5.11.192.
+> It times out after showing "Adding device".... 
+> When initiating pairing i choose Add device, then "Universal Tuya" and Climate Sensor.
+> I have also tried to uninstall the app and install i back several times.
+> Something I do wrong?
+
+> **github-actions:** <!-- tuya-reopen-bot -->
+> This issue has been **automatically reopened** because @pemikalsen-sudo posted a new comment.
+> It will be reviewed in the next automation cycle.
+> 
+> > If your device is still not working, please share:
+> > 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app)
+> > 2. **Diagnostic Report ID** from device settings
+
+> **github-actions:** All fingerprints supported in v5.11.191. Closing as resolved.
+
+> **pemikalsen-sudo:** Hello.
+> 
+> Tried to add this temperature sensor with external proble again today. It adds as a zigbee device without any driver. Universal Tuyja 7.0.22 is installed.
+
+> **github-actions:** <!-- tuya-reopen-bot -->
+> This issue has been **automatically reopened** because @pemikalsen-sudo posted a new comment.
+> It will be reviewed in the next automation cycle.
+> 
+> > If your device is still not working, please share:
+> > 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app)
+> > 2. **Diagnostic Report ID** from device settings
+
+> **pemikalsen-sudo:** Diagnostic ID: e5565457-cb7f-4477-b614-eb7fa56f03bb
+> 
 
 ---
 

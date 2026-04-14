@@ -1,5 +1,5 @@
 'use strict';
-const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
+const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
@@ -44,7 +44,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  *
  * ═══════════════════════════════════════════════════════════════════════════
  */
-class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlugBase)) {
+class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
 
   get plugCapabilities() {
     return ['onoff', 'onoff.socket2', 'onoff.usb1', 'onoff.usb2', 'onoff.led'];

@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Dimmer Wall Water Hybrid",
-    "nl": "Dimmer Wand Water Hybride",
-    "fr": "Variateur Mural Eau Hybride",
-    "de": "Dimmer Wand Wasser Hybrid",
-    "es": "Atenuador de Pared Agua Híbrido"
+    "en": "Dimmer Wall Water",
+    "nl": "Dimmer Wand Water",
+    "fr": "Variateur Mural Eau",
+    "de": "Dimmer Wand Wasser",
+    "es": "Atenuador de Pared Agua"
   },
   "class": "light",
   "capabilities": [
@@ -27,11 +27,9 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3210_ngqk6jia",
-      "_tz3210_weaqkhab"
-    ],
+    "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "learnmode": {

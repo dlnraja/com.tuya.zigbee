@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Device Floor Heating Thermostat Hybrid",
-    "nl": "Hybride thermostaat voor vloerverwarming",
-    "fr": "Thermostat hybride pour chauffage au sol",
+    "en": "Device Floor Heating Thermostat",
+    "nl": "thermostaat voor vloerverwarming",
+    "fr": "Thermostat pour chauffage au sol",
     "de": "Hybrider Thermostat für Fußbodenheizung",
-    "es": "Termostato híbrido para calefacción por suelo radiante"
+    "es": "Termostato para calefacción por suelo radiante"
   },
   "class": "thermostat",
   "capabilities": [
@@ -55,6 +55,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "endpoints": {

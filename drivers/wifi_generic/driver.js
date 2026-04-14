@@ -32,6 +32,8 @@ class WiFiGenericDriver extends TuyaLocalDriver {
   
   
   
+  
+  
   }
 }
 module.exports = WiFiGenericDriver;

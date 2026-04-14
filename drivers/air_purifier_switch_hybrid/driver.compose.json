@@ -16,6 +16,7 @@
   ],
   "zigbee": {
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "learnmode": {
@@ -817,11 +818,11 @@
     }
   ],
   "name": {
-    "en": "Air Purifier Switch Hybrid",
-    "nl": "Luchtzuiveraar Schakelaar Hybride",
-    "fr": "Interrupteur de Purificateur d'Air Hybride",
-    "de": "Luftreiniger Schalter Hybrid",
-    "es": "Interruptor de Purificador de Aire Híbrido"
+    "en": "Air Purifier Switch",
+    "nl": "Luchtzuiveraar Schakelaar",
+    "fr": "Interrupteur de Purificateur d'Air",
+    "de": "Luftreiniger Schalter",
+    "es": "Interruptor de Purificador de Aire"
   },
   "platforms": [
     "local"
@@ -839,12 +840,12 @@
     },
     "button.toggle": {
       "title": {
-        "en": " toggle"
+        "en": "toggle"
       }
     },
     "button.identify": {
       "title": {
-        "en": " identify"
+        "en": "identify"
       }
     }
   },

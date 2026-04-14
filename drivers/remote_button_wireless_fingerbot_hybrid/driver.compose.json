@@ -17,6 +17,8 @@
   ],
   "zigbee": {
     "productId": [
+      "TS0001",
+      "TS0001_FINGERBOT",
       "ts0001",
       "ts0001_fingerbot"
     ],
@@ -819,9 +821,9 @@
     }
   ],
   "name": {
-    "en": "Remote Button Wireless Fingerbot Hybrid",
-    "nl": "Remote Button Wireless Fingerbot Hybrid",
-    "fr": "Remote Button Wireless Fingerbot Hybrid"
+    "en": "Remote Button Wireless Fingerbot",
+    "nl": "Remote Button Wireless Fingerbot",
+    "fr": "Remote Button Wireless Fingerbot"
   },
   "platforms": [
     "local"
@@ -839,27 +841,27 @@
     },
     "button.toggle": {
       "title": {
-        "en": " toggle"
+        "en": "toggle"
       }
     },
     "button.identify": {
       "title": {
-        "en": " identify"
+        "en": "identify"
       }
     },
     "button.push": {
       "title": {
-        "en": " push"
+        "en": "push"
       }
     },
     "button.1": {
       "title": {
-        "en": " 1"
+        "en": "1"
       }
     },
     "button.2": {
       "title": {
-        "en": " 2"
+        "en": "2"
       }
     }
   },

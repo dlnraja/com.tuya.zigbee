@@ -36,13 +36,13 @@ const SYM=[
 const detectSym=t=>SYM.filter(s=>s.rx.test(t||""));
 function detectProtocol(text,driver){
 const matches=KB.PROTOCOL_PATTERNS.filter(p=>p.rx.test(text||"")).map(p=>p.protocol);
-if(matches.includes("hybrid"))return"hybrid";
-if(matches.includes("tuya_dp")&&matches.includes("ias"))return"hybrid";
+if(matches.includes("unified"))return"unified";
+if(matches.includes("tuya_dp")&&matches.includes("ias"))return"unified";
 if(matches.includes("tuya_dp"))return"tuya_dp";
 if(matches.includes("ias"))return"ias";
 if(matches.includes("zcl_only"))return"zcl";
-if(driver&&driver.includes("radar"))return"hybrid";
-if(driver&&driver.includes("presence"))return"hybrid";
+if(driver&&driver.includes("radar"))return"unified";
+if(driver&&driver.includes("presence"))return"unified";
 return"unknown";
 }
 function buildIdx(){
@@ -116,7 +116,7 @@ let profileNote="";
 if(pd&&issueUser){try{const det=pd.detectFromGitHub(issueUser,"");if(det.isReturning&&det.pending)profileNote="\n> **Your pending issue:** "+det.pending.note+"\n"}catch{}}
 const drvList=fpResults.map(f=>"`"+f.fp+"` -> **"+f.drivers.join(", ")+"**").join("\n- ");
 let protocolNote="";
-if(protocol==="hybrid")protocolNote="\n> **Protocol:** Hybrid device (IAS Zone + Tuya DP). Magic packet timing and enrollment crucial.\n";
+if(protocol==="unified")protocolNote="\n> **Protocol:** Unified device (IAS Zone + Tuya DP). Magic packet timing and enrollment crucial.\n";
 else if(protocol==="tuya_dp")protocolNote="\n> **Protocol:** Tuya DP (cluster 0xEF00). Ensure DP listeners active.\n";
 else if(protocol==="ias")protocolNote="\n> **Protocol:** IAS Zone. Enrollment and zone listeners required.\n";
 return TAG+"\n### Auto-resolved by Diagnostic Resolver\n\n"+profileNote+

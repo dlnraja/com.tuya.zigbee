@@ -103,6 +103,8 @@ class Switch4GangDriver extends ZigBeeDriver {
   
   
   
+  
+  
   }));
 
       this.gang2IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
@@ -155,7 +157,7 @@ class Switch4GangDriver extends ZigBeeDriver {
 
       // v5.5.930: LED backlight flow cards
       try {
-      this.homey.flow.getActionCard('switch_4gang_set_backlight')
+      (() => { try { return this.homey.flow.getActionCard('switch_4gang_set_backlight'); } catch(e) { return null; } })()
         .registerRunListener(this._safeAction(async (args) => {
             await args.device.setBacklightMode(args.mode);
           }));
@@ -163,7 +165,7 @@ class Switch4GangDriver extends ZigBeeDriver {
       } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
 
       try {
-      this.homey.flow.getActionCard('switch_4gang_set_backlight_color')
+      (() => { try { return this.homey.flow.getActionCard('switch_4gang_set_backlight_color'); } catch(e) { return null; } })()
         .registerRunListener(this._safeAction(async (args) => {
             await args.device.setBacklightColor(args.state, args.color);
           }));
@@ -171,7 +173,7 @@ class Switch4GangDriver extends ZigBeeDriver {
       } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
 
       try {
-      this.homey.flow.getActionCard('switch_4gang_set_backlight_brightness')
+      (() => { try { return this.homey.flow.getActionCard('switch_4gang_set_backlight_brightness'); } catch(e) { return null; } })()
         .registerRunListener(this._safeAction(async (args) => {
             await args.device.setBacklightBrightness(args.brightness);
           }));
@@ -182,7 +184,7 @@ class Switch4GangDriver extends ZigBeeDriver {
       const caps = ['onoff', 'onoff.gang2', 'onoff.gang3', 'onoff.gang4'];
       ['gang1', 'gang2', 'gang3', 'gang4'].forEach((gang, idx) => {
         try {
-      this.homey.flow.getActionCard('switch_4gang_set_scene_mode')
+      (() => { try { return this.homey.flow.getActionCard('switch_4gang_set_scene_mode'); } catch(e) { return null; } })()
         .registerRunListener(this._safeAction(async (args) => {
               const cap = caps[idx];
               const v = args.device.getCapabilityValue(cap);

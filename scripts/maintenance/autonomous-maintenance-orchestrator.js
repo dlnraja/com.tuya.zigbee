@@ -68,15 +68,15 @@ async function main() {
   // PHASE 3d: Parallel Bot Cleanup (v5.12.35)
   run('node scripts/automation/parallel-bot-handler.js', 'Ph3d: Parallel Bot Response Cleanup');
 
-  // PHASE 4: Architectural Hardening (Zero-Defect Audit)
-  run('node scripts/maintenance/zero-defect-architect-audit.js', 'Ph4: Zero-Defect Architect Audit');
+  // PHASE 4: Architectural Hardening & Visual Excellence
+  run('node scripts/maintenance/ensure-500x500-images.js', 'Ph4: Image Resolution Stabilization (500x500)');
+  run('node scripts/fixes/CLEAN_HYBRID_NOMENCLATURE_V2.js', 'Ph4b: Branding Cleanup (Unified Transition)');
+  run('node scripts/maintenance/harden-driver-identification.js', 'Ph4c: Driver Identification Hardening');
+  run('node scripts/maintenance/zero-defect-architect-audit.js', 'Ph4d: Zero-Defect Architect Audit');
 
-  // PHASE 4b: Smart PR Auto-Merging (Autonomous Engine Reimplementation Integration)
-  run('node scripts/automation/pr-auto-merger.js', 'Ph4b: Smart PR Auto-Merger (Approve + Merge + Self-Heal)');
-
-  // PHASE 4c: Stability Normalization (Clusters + Case)
-  run('node scripts/automation/relax-manifest-clusters.js', 'Ph4c: Manifest Cluster Relaxation');
-  run('node scripts/automation/manifest-caseless-processor.js', 'Ph4d: Manifest Case-Insensitivity Audit');
+  // PHASE 4e: Stability Normalization (Clusters + Case)
+  run('node scripts/automation/relax-manifest-clusters.js', 'Ph4e: Manifest Cluster Relaxation');
+  run('node scripts/automation/manifest-caseless-processor.js', 'Ph4f: Manifest Case-Insensitivity Audit');
 
   // PHASE 5: Integrity Verification
   console.log('\n🔍 [VALIDATION] Verifying app integrity...');

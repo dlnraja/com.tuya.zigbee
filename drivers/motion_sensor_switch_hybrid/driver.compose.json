@@ -820,11 +820,11 @@
     }
   ],
   "name": {
-    "en": "Motion Sensor Switch Hybrid",
-    "nl": "Hybride Bewegingssensor Schakelaar",
-    "fr": "Interrupteur Hybride de Détection de Mouvement",
-    "de": "Hybrid Bewegungsmelder Schalter",
-    "es": "Interruptor Híbrido de Sensor de Movimiento"
+    "en": "Motion Sensor Switch",
+    "nl": "Bewegingssensor Schakelaar",
+    "fr": "Interrupteur de Détection de Mouvement",
+    "de": "Bewegungsmelder Schalter",
+    "es": "Interruptor de Sensor de Movimiento"
   },
   "platforms": [
     "local"
@@ -842,12 +842,12 @@
     },
     "button.toggle": {
       "title": {
-        "en": " toggle"
+        "en": "toggle"
       }
     },
     "button.identify": {
       "title": {
-        "en": " identify"
+        "en": "identify"
       }
     }
   },

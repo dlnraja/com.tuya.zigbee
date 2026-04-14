@@ -22,6 +22,7 @@
   ],
   "zigbee": {
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "endpoints": {
@@ -732,9 +733,9 @@
     }
   ],
   "name": {
-    "en": "Gas Sensor Switch Hybrid",
-    "nl": "Gas Sensor Switch Hybrid",
-    "fr": "Gas Sensor Switch Hybrid"
+    "en": "Gas Sensor Switch",
+    "nl": "Gas Sensor Switch",
+    "fr": "Gas Sensor Switch"
   },
   "platforms": [
     "local"
@@ -769,27 +770,27 @@
     },
     "button.toggle_1": {
       "title": {
-        "en": " 1"
+        "en": "1"
       }
     },
     "button.toggle_2": {
       "title": {
-        "en": " 2"
+        "en": "2"
       }
     },
     "button.toggle_3": {
       "title": {
-        "en": " 3"
+        "en": "3"
       }
     },
     "button.toggle_4": {
       "title": {
-        "en": " 4"
+        "en": "4"
       }
     },
     "button.identify": {
       "title": {
-        "en": " identify"
+        "en": "identify"
       }
     }
   },

@@ -39,8 +39,6 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_0ht8dnxj",
-      "_tz3000_8gs8h2e4",
       "_tz3000_jr2atpww",
       "_tz3000_kqvb8qa8",
       "_tz3000_krajfo4p",
@@ -48,7 +46,6 @@
       "_tz3000_tx5b5gp3",
       "_tz3000_ya9ekqwp",
       "_tz3000_zhhcsbrz",
-      "_tze200_dwcarsat",
       "_tze200_nnrfa68v",
       "_tze200_sh1899z7",
       "_tze204_nnrfa68v",
@@ -56,6 +53,9 @@
       "_tze284_it9utkro"
     ],
     "productId": [
+      "TS0005",
+      "TS0006",
+      "TS0601",
       "ts0005",
       "ts0006",
       "ts0601"

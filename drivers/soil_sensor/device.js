@@ -1,6 +1,6 @@
 'use strict';
 
-const TuyaHybridDevice = require('../../lib/devices/TuyaHybridDevice');
+const TuyaUnifiedDevice = require('../../lib/devices/TuyaUnifiedDevice');
 const BatteryCalculator = require('../../lib/battery/BatteryCalculator');
 const { getAppVersionPrefixed } = require('../../lib/utils/AppVersion');
 const { SoilMoistureInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
@@ -17,7 +17,7 @@ const { SoilMoistureInference, BatteryInference } = require('../../lib/Intellige
  * ║                                                                              ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
- * ║  Uses TuyaHybridDevice base class with proper:                               ║
+ * ║  Uses TuyaUnifiedDevice base class with proper:                               ║
  * ║  - tuyaCluster handlers (Tuya DP reception via 0xEF00)                       ║
  * ║  - cluster handlers (Zigbee standard reception)                              ║
  * ║  - tuyaBoundCluster (Tuya DP commands to device)                             ║
@@ -39,7 +39,7 @@ const { SoilMoistureInference, BatteryInference } = require('../../lib/Intellige
  * ║                                                                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class SoilSensorDevice extends TuyaHybridDevice {
+class SoilSensorDevice extends TuyaUnifiedDevice {
 
   /** Battery powered */
   get mainsPowered() { return false; }
@@ -558,7 +558,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
 
   /**
    * Request DPs when device wakes up
-   * Called automatically by TuyaHybridDevice when data is received
+   * Called automatically by TuyaUnifiedDevice when data is received
    */
   async onWakeUp() {
     this.log('[SOIL] Device woke up - requesting all DPs');

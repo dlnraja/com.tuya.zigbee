@@ -29,6 +29,8 @@ class AirPurifierDriver extends ZigBeeDriver {
   
   
   
+  
+  
   } catch (e) { this.error(`Trigger ${id}: ${e.message}`); }
     }
     try {

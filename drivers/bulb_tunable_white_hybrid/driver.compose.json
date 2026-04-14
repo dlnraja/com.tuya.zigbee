@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Bulb Tunable White Hybrid",
-    "nl": "Bulb Tunable White Hybrid",
-    "fr": "Bulb Tunable White Hybrid"
+    "en": "Bulb Tunable White",
+    "nl": "Bulb Tunable White",
+    "fr": "Bulb Tunable White"
   },
   "class": "light",
   "capabilities": [
@@ -28,6 +28,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0502B",
       "ts0502b"
     ],
     "endpoints": {

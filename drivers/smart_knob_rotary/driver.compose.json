@@ -82,11 +82,12 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_csflgqj2",
-      "_tz3000_gwkzibhs",
-      "_tz3000_ugi8ky6u"
+      "_tz3000_csflgqj2"
     ],
     "productId": [
+      "ERS-10TZBVK-AA",
+      "TS004F",
+      "ZG-101ZD",
       "ers-10tzbvk-aa",
       "ts004f",
       "zg-101zd"
@@ -106,10 +107,10 @@
     },
     "learnmode": {
       "instruction": {
-        "en": "Press and hold the button for 10 seconds until LED flashes rapidly, then release.\n\nNote: Some models require pressing the button 5 times quickly.",
-        "fr": "Appuyez et maintenez le bouton pendant 10 secondes jusqu'à ce que la LED clignote rapidement.\n\nRemarque: Certains modèles nécessitent d'appuyer 5 fois rapidement.",
-        "nl": "Houd de knop 10 seconden ingedrukt tot de LED snel knippert.\n\nOpmerking: Sommige modellen vereisen 5 keer snel drukken.",
-        "de": "Halten Sie die Taste 10 Sekunden gedrückt, bis die LED schnell blinkt.\n\nHinweis: Einige Modelle erfordern 5 schnelle Tastendrücke."
+        "en": "Press and hold the button for 10 seconds until LED flashes rapidly, then release. Note: Some models require pressing the button 5 times quickly.",
+        "fr": "Appuyez et maintenez le bouton pendant 10 secondes jusqu'à ce que la LED clignote rapidement. Remarque: Certains modèles nécessitent d'appuyer 5 fois rapidement.",
+        "nl": "Houd de knop 10 seconden ingedrukt tot de LED snel knippert. Opmerking: Sommige modellen vereisen 5 keer snel drukken.",
+        "de": "Halten Sie die Taste 10 Sekunden gedrückt, bis die LED schnell blinkt. Hinweis: Einige Modelle erfordern 5 schnelle Tastendrücke."
       }
     }
   },

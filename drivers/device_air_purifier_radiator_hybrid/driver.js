@@ -32,12 +32,14 @@ class RadiatorValveDriver extends ZigBeeDriver {
   
   
   
+  
+  
   }
 
   _registerFlowCards() {
     // ACTION: Set target temperature
     try {
-      this.homey.flow.getActionCard('radiator_valve_set_target_temperature')
+      (() => { try { return this.homey.flow.getActionCard('radiator_valve_set_target_temperature'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('target_temperature', args.temperature);

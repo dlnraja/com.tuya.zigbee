@@ -80,7 +80,7 @@ body:
         - Battery (CR2450)
         - Battery (AAA/AA)
         - Battery (built-in rechargeable)
-        - Hybrid (AC + battery backup)
+        - Unified (AC + battery backup)
     validations:
       required: true
 

@@ -25,7 +25,9 @@ class IRRemoteDriver extends Driver {
     this.log('Zigbee IR Remote driver initialized');
 
     // Action: Send IR code
-    this.homey.flow.getActionCard('send_ir_code')
+    (() => { try { return this.homey.flow.getActionCard('send_ir_code'); 
+  
+  } catch(e) { return null; } })()
       .registerRunListener(async (args) => {
         const device = args.device;
         if (!device) throw new Error('No device');
@@ -34,7 +36,7 @@ class IRRemoteDriver extends Driver {
   });
 
     // Action: Start learning
-    this.homey.flow.getActionCard('learn_ir_code')
+    (() => { try { return this.homey.flow.getActionCard('learn_ir_code'); } catch(e) { return null; } })()
       .registerRunListener(async (args) => {
         const device = args.device;
         if (!device) throw new Error('No device');

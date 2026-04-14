@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Button Wireless Smart Hybrid",
-    "nl": "Draadloze Slimme Hybride Knop",
-    "fr": "Bouton Intelligent Hybride Sans Fil",
+    "en": "Button Wireless Smart",
+    "nl": "Draadloze Slimme Knop",
+    "fr": "Bouton Intelligent Sans Fil",
     "de": "Drahtloser Intelligenter Hybridknopf",
-    "es": "Botón Híbrido Inteligente Inalámbrico"
+    "es": "Botón Inteligente Inalámbrico"
   },
   "class": "sensor",
   "capabilities": [
@@ -48,10 +48,11 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_pcqjmcud",
       "_tze200_sh1btaba"
     ],
     "productId": [
+      "TS0041",
+      "TS004F",
       "ts0041",
       "ts004f"
     ],

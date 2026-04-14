@@ -9,7 +9,7 @@ function getCode(fp){
   const dd=path.join(DDIR,d[0]);let dev='',base='',compose='';
   try{dev=fs.readFileSync(path.join(dd,'device.js'),'utf8')}catch{}
   try{compose=fs.readFileSync(path.join(dd,'driver.compose.json'),'utf8')}catch{}
-  const bm=dev.match(/require\(['"]([^'"]*(?:Hybrid|Base)[^'"]*)['"]\)/);
+  const bm=dev.match(/require\(['"]([^'"]*(?:Unified|Base)[^'"]*)['"]\)/);
   if(bm)try{base=fs.readFileSync(path.resolve(dd,bm[1]+'.js'),'utf8')}catch{}
   return{driver:d[0],dev,base,compose};
 }

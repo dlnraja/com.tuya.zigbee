@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Air Purifier Dimmer Hybrid",
-    "nl": "Hybride Lichtsensor Luchtreiniger",
-    "fr": "Dimmer Hybride Purificateur d'Air",
-    "de": "Hybrid Dimmer Luftreiniger",
-    "es": "Atenuador Híbrido Purificador de Aire"
+    "en": "Air Purifier Dimmer",
+    "nl": "Lichtsensor Luchtreiniger",
+    "fr": "Dimmer Purificateur d'Air",
+    "de": "Dimmer Luftreiniger",
+    "es": "Atenuador Purificador de Aire"
   },
   "class": "light",
   "capabilities": [
@@ -26,12 +26,9 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tze200_ip2akl4w",
-      "_tze200_4mh6tyyo",
-      "_tze204_n9ctkb6j"
-    ],
+    "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "learnmode": {

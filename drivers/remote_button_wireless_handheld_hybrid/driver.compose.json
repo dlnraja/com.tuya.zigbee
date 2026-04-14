@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Remote Button Wireless Handheld Hybrid",
-    "nl": "Draadloze hybride handknop",
-    "fr": "Bouton sans fil hybride portable",
-    "de": "Kabellose hybride Handtaste",
-    "es": "Botón inalámbrico híbrido de mano"
+    "en": "Remote Button Wireless Handheld",
+    "nl": "Draadloze handknop",
+    "fr": "Bouton sans fil portable",
+    "de": "Kabellose Handtaste",
+    "es": "Botón inalámbrico de mano"
   },
   "class": "sensor",
   "capabilities": [
@@ -70,9 +70,7 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_u3nv1jwk"
-    ],
+    "manufacturerName": [],
     "productId": [],
     "learnmode": {
       "image": "/drivers/button_wireless_4/assets/learnmode.svg",
@@ -367,7 +365,7 @@
         "en": "Tuya Datapoint Configuration",
         "fr": "Configuration Tuya Datapoint"
       },
-      "value": "{\n  \"1\": \"button_1_action\",\n  \"2\": \"button_2_action\",\n  \"3\": \"button_3_action\",\n  \"4\": \"button_4_action\",\n  \"101\": \"battery_percentage\"\n}"
+      "value": "{ \"1\": \"button_1_action\", \"2\": \"button_2_action\", \"3\": \"button_3_action\", \"4\": \"button_4_action\", \"101\": \"battery_percentage\"\n}"
     },
     {
       "id": "dp_debug_mode",

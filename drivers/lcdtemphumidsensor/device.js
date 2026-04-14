@@ -1,6 +1,6 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
  * LCD Temperature & Humidity Sensor Device - v5.4.3
@@ -8,10 +8,10 @@ const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
  * For TS0201 LCD display temperature/humidity sensors
  * Manufacturers: _TYZB01_*, _TZ2000_*
  *
- * Uses HybridSensorBase for full ZCL + Tuya DP support
+ * Uses UnifiedSensorBase for full ZCL + Tuya DP support
  * Supports: Temperature, Humidity, Battery
  */
-class LCDTempHumidSensorDevice extends HybridSensorBase {
+class LCDTempHumidSensorDevice extends UnifiedSensorBase {
 
   /** Battery powered */
   get mainsPowered() { return false; }

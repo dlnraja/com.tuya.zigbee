@@ -1,6 +1,6 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const TuyaTimeManager = require('../../lib/TuyaTimeManager');
 const TuyaDeviceClassifier = require('../../lib/TuyaDeviceClassifier');
 const TuyaEpochDetector = require('../../lib/TuyaEpochDetector');
@@ -77,7 +77,7 @@ const BATTERY_THROTTLE_MS = 300000; // 5 minutes minimum between updates
  * ║                                                                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class ClimateSensorDevice extends HybridSensorBase {
+class ClimateSensorDevice extends UnifiedSensorBase {
 
   /** Battery powered */
   get mainsPowered() { return false; }
@@ -495,7 +495,7 @@ class ClimateSensorDevice extends HybridSensorBase {
     });
     this._batteryInference = new BatteryInference(this);
 
-    // Call parent initialization (HybridSensorBase sets up ALL listeners)
+    // Call parent initialization (UnifiedSensorBase sets up ALL listeners)
     await super.onNodeInit({ zclNode });
     this._registerCapabilityListeners(); // rule-12a injected
 
@@ -959,7 +959,7 @@ class ClimateSensorDevice extends HybridSensorBase {
 
   /**
    * v5.5.440: Send Tuya DP command for LCD time sync
-   * Based on HybridCoverBase implementation
+   * Based on UnifiedCoverBase implementation
    */
   async _sendTuyaDP(dpId, value, dataType = 'value') {
     try {

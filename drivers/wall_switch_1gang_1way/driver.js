@@ -32,6 +32,8 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
   
   
   
+  
+  
   }
 
   /**
@@ -78,7 +80,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
           if (!args.device) return false;
           this.log(`Flow: Setting backlight mode to ${args.mode}`);
 
-          // Use HybridSwitchBase's setBacklightMode method
+          // Use UnifiedSwitchBase's setBacklightMode method
           await args.device.setBacklightMode(args.mode);
 
           // Update the setting in Homey

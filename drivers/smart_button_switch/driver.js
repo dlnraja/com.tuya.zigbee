@@ -21,6 +21,8 @@ class SmartButtonSwitchDriver extends Driver{
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
 this.log('smart_button_switch driver init');
+  
+  
   }
 }
 

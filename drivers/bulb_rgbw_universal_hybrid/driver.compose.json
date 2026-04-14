@@ -1,9 +1,9 @@
 {
   "id": "universal_zigbee",
   "name": {
-    "en": "Bulb Rgbw Universal Hybrid",
-    "nl": "Bulb Rgbw Universal Hybrid",
-    "fr": "Bulb Rgbw Universal Hybrid"
+    "en": "Bulb Rgbw Universal",
+    "nl": "Bulb Rgbw Universal",
+    "fr": "Bulb Rgbw Universal"
   },
   "class": "other",
   "capabilities": [
@@ -77,6 +77,11 @@
       "ewelink"
     ],
     "productId": [
+      "CK-BL702-AL-01(7009_Z102LG03-1)",
+      "TS0504A",
+      "TS0504B",
+      "TS0505A",
+      "TS0505B",
       "ck-bl702-al-01(7009_z102lg03-1)",
       "ts0504a",
       "ts0504b",
@@ -87,18 +92,6 @@
       "1": {
         "clusters": [
           0,
-          3,
-          4,
-          5,
-          6,
-          8,
-          25,
-          1024,
-          1026,
-          1029,
-          1280,
-          2820,
-          2821,
           61184
         ]
       }

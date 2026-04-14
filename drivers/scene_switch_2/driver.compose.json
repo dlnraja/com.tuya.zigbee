@@ -34,10 +34,11 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3002_6ahhkwyh"
-    ],
+    "manufacturerName": [],
     "productId": [
+      "TS0042",
+      "TS0601_SCENE2",
+      "TS0726",
       "ts0042",
       "ts0601_scene2",
       "ts0726"

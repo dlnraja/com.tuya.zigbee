@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Device Air Purifier Presence Hybrid",
-    "nl": "Hybride luchtzuiveraar met aanwezigheid",
-    "fr": "Purificateur d'air hybride de présence",
-    "de": "Hybrid-Luftreiniger mit Anwesenheit",
-    "es": "Purificador de aire híbrido de presencia"
+    "en": "Device Air Purifier Presence",
+    "nl": "luchtzuiveraar met aanwezigheid",
+    "fr": "Purificateur d'air de présence",
+    "de": "-Luftreiniger mit Anwesenheit",
+    "es": "Purificador de aire de presencia"
   },
   "class": "sensor",
   "capabilities": [
@@ -38,6 +38,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "learnmode": {

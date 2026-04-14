@@ -16,6 +16,7 @@
   ],
   "zigbee": {
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "learnmode": {
@@ -830,11 +831,11 @@
     }
   ],
   "name": {
-    "en": "Climate Sensor Switch Hybrid",
-    "nl": "Hybride Klimaatsensor Schakelaar",
-    "fr": "Interrupteur Hybride de Capteur Climatique",
-    "de": "Hybrid Klimasensor Schalter",
-    "es": "Interruptor Híbrido de Sensor Climático"
+    "en": "Climate Sensor Switch",
+    "nl": "Klimaatsensor Schakelaar",
+    "fr": "Interrupteur de Capteur Climatique",
+    "de": "Klimasensor Schalter",
+    "es": "Interruptor de Sensor Climático"
   },
   "platforms": [
     "local"
@@ -852,12 +853,12 @@
     },
     "button.toggle": {
       "title": {
-        "en": " toggle"
+        "en": "toggle"
       }
     },
     "button.identify": {
       "title": {
-        "en": " identify"
+        "en": "identify"
       }
     }
   },

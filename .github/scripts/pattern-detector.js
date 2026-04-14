@@ -12,8 +12,8 @@ const STATE_DIR=path.join(__dirname,'..','state');
 const PATTERNS=[
   {id:'inversion',name:'Inverted Sensor State',
    regex:/invert|reversed|wrong.*(open|closed|state)|open.*when.*closed|closed.*when.*open|backward|opposite/i,
-   fixHint:'Add manufacturerName to invertedByDefault in HybridSensorBase.js + device.js',
-   files:['lib/devices/HybridSensorBase.js','drivers/{driver}/device.js']},
+   fixHint:'Add manufacturerName to invertedByDefault in UnifiedSensorBase.js + device.js',
+   files:['lib/devices/UnifiedSensorBase.js','drivers/{driver}/device.js']},
   {id:'battery',name:'False Battery Alert / Missing Battery',
    regex:/battery.*(0|null|\?|unknown|false|always|100|mains)|mains.*battery|usb.*battery|powered.*battery/i,
    fixHint:'Set `get mainsPowered() { return true; }` and remove measure_battery in onNodeInit',

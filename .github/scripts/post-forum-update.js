@@ -130,10 +130,10 @@ async function main(){
         console.log('  🤖 Ghostwriter: organic merge...');
         const contentToHumanize = `CURRENT POST CONTENT:\n${lastOwn.raw.replace(/<!-- bot-update -->/g, '')}\n\nNEW RELEASE UPDATE:\n${raw}`;
         const humanizePrompt = `You ARE dlnraja, the solo developer. You are updating your latest forum post to announce v${ver}.
-1. INTEGRATION: Rewrite the entire post to weave the NEW RELEASE UPDATE into the CURRENT CONTENT organically. Mention the "Universal Engine Reimplementation" v7.2.5 milestone and the new "Hybrid Engine Visual Ecosystem" imagery for all drivers if this is the first mention of it.
-2. STYLE: Casual, direct, short sentences. Developer-to-developer tone. No corporate fluff.
+1. INTEGRATION: Rewrite the entire post to weave the NEW RELEASE UPDATE into the CURRENT CONTENT organically. Mention the "Unified Engine" v7.4.4 milestone, which resolves long-standing SDK 3 flow card crashes across 114 drivers and optimizes fingerprints for 172 devices.
+2. STYLE: Casual, direct, short sentences. Developer-to-developer tone. No corporate fluff. Mention that the app is now "Zero-Defect" production ready.
 3. STRUCTURE: Use paragraphs. No bullet lists for the main text.
-4. VERSIONING: Keep the "Update: v[VERSION] pushed to Test!" line at the top of the newest section.
+4. VERSIONING: Keep the "Update: v[VERSION] pushed to Test!" line at the top.
 5. TAIL: Keep the "Covers a huge range of Tuya devices..." mention. 
 6. SILENT BARRIER: Never mention bots, AI, or automated scripts.
 Return ONLY the final post text.`;

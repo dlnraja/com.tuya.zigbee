@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Sensor Gas Presence Hybrid",
-    "nl": "Hybride Gasaanwezigheidssensor",
-    "fr": "Capteur de Présence de Gaz Hybride",
-    "de": "Hybrid-Gaspräsenzsensor",
-    "es": "Sensor Híbrido de Presencia de Gas"
+    "en": "Sensor Gas Presence",
+    "nl": "Gasaanwezigheidssensor",
+    "fr": "Capteur de Présence de Gaz",
+    "de": "-Gaspräsenzsensor",
+    "es": "Sensor de Presencia de Gas"
   },
   "class": "sensor",
   "capabilities": [
@@ -38,9 +38,7 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "_tze200_2aaelwxk"
-    ],
+    "manufacturerName": [],
     "productId": [],
     "learnmode": {
       "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",

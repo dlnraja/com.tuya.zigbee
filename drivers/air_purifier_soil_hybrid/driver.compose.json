@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Air Purifier Soil Hybrid",
-    "nl": "Luchtreiniger hybride voor de bodem",
-    "fr": "Purificateur d'air hybride de sol",
-    "de": "Luftreiniger Boden Hybrid",
-    "es": "Purificador de aire híbrido de suelo"
+    "en": "Air Purifier Soil",
+    "nl": "Luchtreiniger voor de bodem",
+    "fr": "Purificateur d'air de sol",
+    "de": "Luftreiniger Boden",
+    "es": "Purificador de aire de suelo"
   },
   "class": "sensor",
   "capabilities": [
@@ -74,6 +74,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "endpoints": {

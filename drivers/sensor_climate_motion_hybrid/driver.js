@@ -56,6 +56,8 @@ class MotionSensorDriver extends ZigBeeDriver {
   
   
   
+  
+  
   }
         return args.device.getCapabilityValue('alarm_motion') === true;
       });

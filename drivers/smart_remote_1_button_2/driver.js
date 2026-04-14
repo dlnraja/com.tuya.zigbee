@@ -21,6 +21,8 @@ class SmartRemote1Button2Driver extends Driver{
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
 this.log('smart_remote_1_button_2 driver init');
+  
+  
   }
 }
 

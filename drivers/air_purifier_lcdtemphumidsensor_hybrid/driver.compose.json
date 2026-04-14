@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Air Purifier Lcdtemphumidsensor Hybrid",
-    "nl": "Luchtzuiveraar Lcdtemphumidsensor Hybride",
-    "fr": "Purificateur d'air Lcdtemphumidsensor Hybride",
-    "de": "Luftreiniger Lcdtemphumidsensor Hybrid",
-    "es": "Purificador de aire Lcdtemphumidsensor Híbrido"
+    "en": "Air Purifier Lcdtemphumidsensor",
+    "nl": "Luchtzuiveraar Lcdtemphumidsensor",
+    "fr": "Purificateur d'air Lcdtemphumidsensor",
+    "de": "Luftreiniger Lcdtemphumidsensor",
+    "es": "Purificador de aire Lcdtemphumidsensor"
   },
   "class": "fan",
   "capabilities": [
@@ -35,6 +35,8 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0201",
+      "TS0601",
       "ts0201",
       "ts0601"
     ],

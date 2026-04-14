@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Sensor Contact Zigbee Hybrid",
-    "nl": "Zigbee Hybride Contactsensor",
-    "fr": "Capteur de Contact Zigbee Hybride",
-    "de": "Zigbee Hybrid Kontaktsensor",
-    "es": "Sensor de Contacto Zigbee Híbrido"
+    "en": "Sensor Contact Zigbee",
+    "nl": "Zigbee Contactsensor",
+    "fr": "Capteur de Contact Zigbee",
+    "de": "Zigbee Kontaktsensor",
+    "es": "Sensor de Contacto Zigbee"
   },
   "class": "sensor",
   "capabilities": [
@@ -28,6 +28,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0207",
       "ts0207"
     ],
     "learnmode": {

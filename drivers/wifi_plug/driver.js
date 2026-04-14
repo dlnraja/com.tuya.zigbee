@@ -32,6 +32,8 @@ class WiFiPlugDriver extends TuyaLocalDriver {
   
   
   
+  
+  
   }
 }
 

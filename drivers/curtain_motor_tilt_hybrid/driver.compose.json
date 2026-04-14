@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Curtain Motor Tilt Hybrid",
-    "nl": "Gordijnmotor Tilt Hybride",
-    "fr": "Moteur de Rideau Hybride à Inclinaison",
-    "de": "Vorhangmotor Tilt Hybrid",
-    "es": "Motor de Cortina Híbrido con Inclinación"
+    "en": "Curtain Motor Tilt",
+    "nl": "Gordijnmotor Tilt",
+    "fr": "Moteur de Rideau à Inclinaison",
+    "de": "Vorhangmotor Tilt",
+    "es": "Motor de Cortina con Inclinación"
   },
   "class": "windowcoverings",
   "capabilities": [
@@ -57,14 +57,10 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tze200_5sbebbzs",
-      "_tze200_eegnwoyw",
-      "_tze200_fctwhugx",
-      "_tze200_fzo2pocs",
-      "_tze200_iossyxra",
-      "_tze200_ol5jlkkr"
+      "_tze200_iossyxra"
     ],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "endpoints": {

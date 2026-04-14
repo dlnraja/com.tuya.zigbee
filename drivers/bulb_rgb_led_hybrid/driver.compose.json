@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Bulb Rgb Led Hybrid",
-    "nl": "Bulb Rgb Led Hybride",
-    "fr": "Ampoule Rgb Led Hybride",
+    "en": "Bulb Rgb Led",
+    "nl": "Bulb Rgb Led",
+    "fr": "Ampoule Rgb Led",
     "de": "RGB-LED-Hybridlampe",
     "es": "Bombilla Rgb Led Híbrida"
   },
@@ -50,6 +50,7 @@
       }
     },
     "productId": [
+      "TS0505B",
       "ts0505b"
     ],
     "capabilities": {

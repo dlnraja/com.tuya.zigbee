@@ -19,6 +19,9 @@
       "_tze200_vrjkcam9"
     ],
     "productId": [
+      "TS0001",
+      "TS0601",
+      "TS0601_VALVE",
       "ts0001",
       "ts0601",
       "ts0601_valve"
@@ -62,7 +65,7 @@
   "capabilitiesOptions": {
     "dim.valve": {
       "title": {
-        "en": " valve"
+        "en": "valve"
       }
     }
   },

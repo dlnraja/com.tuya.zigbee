@@ -53,10 +53,9 @@
     "xlarge": "drivers/usb_dongle_triple/assets/images/xlarge.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_mw1pqqqt"
-    ],
+    "manufacturerName": [],
     "productId": [
+      "TS0003",
       "ts0003"
     ],
     "endpoints": {

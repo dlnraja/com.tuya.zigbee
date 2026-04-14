@@ -1,9 +1,9 @@
 {
   "name": {
-    "en": "Light Bulb Rgb Led Hybrid",
-    "nl": "Lichtbulb Rgb Led Hybride",
-    "fr": "Ampoule Rgb Led Hybride",
-    "de": "Lampen Rgb Led Hybrid",
+    "en": "Light Bulb Rgb Led",
+    "nl": "Lichtbulb Rgb Led",
+    "fr": "Ampoule Rgb Led",
+    "de": "Lampen Rgb Led",
     "es": "Bombilla Rgb Led Híbrida"
   },
   "class": "light",
@@ -53,6 +53,7 @@
       }
     },
     "productId": [
+      "TS0505B",
       "ts0505b"
     ],
     "capabilities": {

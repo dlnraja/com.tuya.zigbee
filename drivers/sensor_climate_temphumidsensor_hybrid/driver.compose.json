@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Sensor Climate Temphumidsensor Hybrid",
-    "nl": "Sensor Klimaat TempHumiSensor Hybride",
-    "fr": "Capteur Climat TempHumidCapteur Hybride",
-    "de": "Sensor Klimaat TempHumiSensor Hybrid",
-    "es": "Sensor Clima TempHumiSensor Híbrido"
+    "en": "Sensor Climate Temphumidsensor",
+    "nl": "Sensor Klimaat TempHumiSensor",
+    "fr": "Capteur Climat TempHumidCapteur",
+    "de": "Sensor Klimaat TempHumiSensor",
+    "es": "Sensor Clima TempHumiSensor"
   },
   "class": "sensor",
   "capabilities": [
@@ -49,14 +49,11 @@
       "tuyatec-v3uxbuxy",
       "tuyatec-vmgh3fxd",
       "tuyatec-yg5dcbfu",
-      "_tz3000_8ybe88nf",
-      "_tz3000_bguser20",
-      "_tz3000_f2bw0b6k",
-      "_tz3000_fie1dpkm",
-      "_tz3000_i8jfiezr",
-      "_tz3210_ncw88jfq"
+      "_tz3000_i8jfiezr"
     ],
     "productId": [
+      "CK-TLSR8656-SS5-01(7014)",
+      "ZG-227Z",
       "ck-tlsr8656-ss5-01(7014)",
       "zg-227z"
     ],

@@ -1,6 +1,6 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const IASZoneManager = require('../../lib/managers/IASZoneManager');
 const { MotionLuxInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 
@@ -20,7 +20,7 @@ const VALIDATION = {
 };
 
 /**
- * Motion Sensor Device - HybridSensorBase implementation
+ * Motion Sensor Device - UnifiedSensorBase implementation
  *
  * v5.5.806: FORUM FIX - Continuous illuminance reporting (independent of motion)
  * v5.5.317: INTELLIGENT INFERENCE - Infer motion from lux changes when PIR fails
@@ -45,7 +45,7 @@ const VALIDATION = {
  * Supports: Fantem ZB003-x, Immax 07502L, Generic Tuya Multisensor
  * Source: https://community.home-assistant.io/t/tuya-zigbee-multi-sensor-4-in-1/409780
  */
-class MotionSensorDevice extends HybridSensorBase {
+class MotionSensorDevice extends UnifiedSensorBase {
 
   get mainsPowered() { return false; }
 
@@ -167,7 +167,7 @@ class MotionSensorDevice extends HybridSensorBase {
    * Solution: Return PERMISSIVE profile for variants - let DPs determine capabilities
    */
   _getManufacturerProfile() {
-    // v5.8.53: Use comprehensive fallback chain (matching BaseHybridDevice._detectProtocol)
+    // v5.8.53: Use comprehensive fallback chain (matching BaseUnifiedDevice._detectProtocol)
     // Root cause (diag e2148e06): getData()?.manufacturerName was undefined for _TZE200_3towulqd
     // v5.8.77: Added zclNode + cached sources — fixes DEFAULT profile on first init
     const mfr = this.getSetting?.('zb_manufacturer_name')
@@ -721,7 +721,7 @@ class MotionSensorDevice extends HybridSensorBase {
     // Request temp/humidity/battery DPs for TS0601 devices that don't send automatically
     await this._setupTuyaDPPolling(zclNode);
 
-    // v5.5.292: Flow triggers now handled by HybridSensorBase._triggerCustomFlowsIfNeeded()
+    // v5.5.292: Flow triggers now handled by UnifiedSensorBase._triggerCustomFlowsIfNeeded()
     // v5.8.8: For ZCL-only variants, bind clusters so device sends reports to Homey
     if (this._isZclOnlyVariant) {
       const ep1 = zclNode?.endpoints?.[1];
@@ -1094,7 +1094,7 @@ class MotionSensorDevice extends HybridSensorBase {
         // v5.5.299: Mark device as awake on ANY motion event
         this._markDeviceAwake();
 
-        // v5.5.17: Use universal parser from HybridSensorBase
+        // v5.5.17: Use universal parser from UnifiedSensorBase
         const parsed = this._parseIASZoneStatus(payload?.zoneStatus);
         let motion = parsed.alarm1 || parsed.alarm2;
 

@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Sensor Presence Radar Hybrid",
-    "nl": "Hybrid Radar Aanwezigheidssensor",
-    "fr": "Capteur de Présence Radar Hybride",
-    "de": "Hybrid-Radar-Präsenzsensor",
-    "es": "Sensor de Presencia Radar Híbrido"
+    "en": "Sensor Presence Radar",
+    "nl": "Radar Aanwezigheidssensor",
+    "fr": "Capteur de Présence Radar",
+    "de": "-Radar-Präsenzsensor",
+    "es": "Sensor de Presencia Radar"
   },
   "class": "sensor",
   "capabilities": [
@@ -39,11 +39,16 @@
       "hobeian"
     ],
     "productId": [
+      "TS0203",
+      "TS0225",
+      "ZG-204ZL",
+      "ZG-204ZM",
+      "ZG-204ZV",
       "ts0203",
+      "ts0225",
       "zg-204zl",
       "zg-204zm",
-      "zg-204zv",
-      "ts0225"
+      "zg-204zv"
     ],
     "learnmode": {
       "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",

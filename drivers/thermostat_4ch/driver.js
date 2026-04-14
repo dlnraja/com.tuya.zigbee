@@ -29,6 +29,8 @@ class Thermostat4chDriver extends ZigBeeDriver {
   
   
   
+  
+  
   }catch(e){this.log('[Flow]',id,e.message);}};
     reg('thermostat_4ch_turn_on',async({device})=>{await device.triggerCapabilityListener('onoff',true);return true;});
     reg('thermostat_4ch_turn_off',async({device})=>{await device.triggerCapabilityListener('onoff',false);return true;});

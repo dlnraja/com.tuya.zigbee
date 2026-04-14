@@ -1,7 +1,7 @@
 'use strict';
-const HybridThermostatBase = require('../../lib/devices/HybridThermostatBase');
+const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
 
-class Thermostat4ChDevice extends HybridThermostatBase {
+class Thermostat4ChDevice extends UnifiedThermostatBase {
   get mainsPowered() { return true; }
   async onNodeInit({ zclNode }) {
     // --- Homey Time Sync for TRV/LCD/Thermostat devices ---

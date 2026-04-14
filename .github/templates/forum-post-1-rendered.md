@@ -71,7 +71,7 @@ v5.11.29: Removed one-shot fix-post-now script and workflow to streamline the de
 ## :gear: Key Features
 
 - :house: **100% local** — no cloud needed
-- :repeat: **Hybrid protocol** — Tuya DP + ZCL
+- :repeat: **Unified protocol** — Tuya DP + ZCL
 - :detective: **Auto-detection** — sets up capabilities automatically
 - :joystick: **Physical button detection** — flow triggers on wall press
 - :zap: **Energy monitoring** — power, voltage, current

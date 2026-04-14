@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Climate Sensor Smart Hybrid",
-    "nl": "Slimme Hybride Klimaatsensor",
-    "fr": "Capteur Climatique Intelligent Hybride",
-    "de": "Intelligenter Hybrid-Klimasensor",
-    "es": "Sensor Climático Híbrido Inteligente"
+    "en": "Climate Sensor Smart",
+    "nl": "Slimme Klimaatsensor",
+    "fr": "Capteur Climatique Intelligent",
+    "de": "Intelligenter -Klimasensor",
+    "es": "Sensor Climático Inteligente"
   },
   "class": "socket",
   "capabilities": [
@@ -45,9 +45,7 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tze284_7zazvlyn"
-    ],
+    "manufacturerName": [],
     "productId": [],
     "endpoints": {
       "1": {

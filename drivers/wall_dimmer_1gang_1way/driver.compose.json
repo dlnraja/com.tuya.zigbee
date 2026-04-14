@@ -36,10 +36,14 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tzb210_g01ie5wu",
       "_tzb210_zxbtub8r"
     ],
     "productId": [
+      "EDM-1ZBA-EU",
+      "TRI-C1ZR",
+      "TRI-K1ZR",
+      "TS004F",
+      "TS0501B",
       "edm-1zba-eu",
       "tri-c1zr",
       "tri-k1zr",
@@ -56,8 +60,8 @@
     },
     "learnmode": {
       "instruction": {
-        "en": "Toggle the switch to start pairing.\n\nIf pairing does not automatically start, try resetting the device by holding the button for 10 seconds until the LED flashes rapidly.",
-        "nl": "Schakel de schakelaar om te beginnen met koppelen.\n\nAls het koppelen niet automatisch start, probeer het apparaat te resetten door de knop 10 seconden ingedrukt te houden totdat de LED snel knippert."
+        "en": "Toggle the switch to start pairing. If pairing does not automatically start, try resetting the device by holding the button for 10 seconds until the LED flashes rapidly.",
+        "nl": "Schakel de schakelaar om te beginnen met koppelen. Als het koppelen niet automatisch start, probeer het apparaat te resetten door de knop 10 seconden ingedrukt te houden totdat de LED snel knippert."
       }
     }
   },

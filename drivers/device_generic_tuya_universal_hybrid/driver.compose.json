@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Device Generic Tuya Universal Hybrid",
-    "nl": "Algemeen Tuya Universeel Hybride Apparaat",
-    "fr": "Appareil Générique Tuya Universel Hybride",
-    "de": "Gerät Generic Tuya Universal Hybrid",
-    "es": "Dispositivo Genérico Tuya Universal Híbrido"
+    "en": "Device Generic Tuya Universal",
+    "nl": "Algemeen Tuya Universeel Apparaat",
+    "fr": "Appareil Générique Tuya Universel",
+    "de": "Gerät Generic Tuya Universal",
+    "es": "Dispositivo Genérico Tuya Universal"
   },
   "class": "other",
   "images": {
@@ -44,33 +44,35 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "bitron",
       "blitzwolf",
       "bseed",
       "bw-",
+      "danfoss",
+      "eurotronic",
       "girier",
       "ikea",
+      "ikea of sweden",
+      "legrand",
       "lidl",
       "lonsonho",
       "lumi",
       "nas-",
       "neo",
+      "schneider electric",
       "signify",
+      "signify netherlands b.v.",
       "smartthings",
+      "sunricher",
       "tradfri",
       "tuya",
-      "woox",
-      "bitron",
-      "danfoss",
-      "eurotronic",
-      "ikea of sweden",
-      "legrand",
-      "schneider electric",
-      "signify netherlands b.v.",
-      "sunricher"
+      "woox"
     ],
     "productId": [
-      "ts0601",
-      "ts0203"
+      "TS0203",
+      "TS0601",
+      "ts0203",
+      "ts0601"
     ],
     "endpoints": {
       "1": {
@@ -83,8 +85,8 @@
     "learnmode": {
       "image": "/drivers/generic_tuya/assets/learnmode.svg",
       "instruction": {
-        "en": "Generic Tuya TS0601 device.\n\n1. Press and hold the reset button for 5+ seconds\n2. The LED should start blinking\n3. The device will be detected automatically\n\nNote: This is a fallback driver for unknown TS0601 devices. Data points will be auto-discovered.",
-        "fr": "Appareil Tuya TS0601 générique.\n\n1. Appuyez et maintenez le bouton reset pendant 5+ secondes\n2. La LED devrait clignoter\n3. L'appareil sera détecté automatiquement\n\nNote: Driver de secours pour TS0601 inconnus. Les points de données seront auto-découverts."
+        "en": "Generic Tuya TS0601 device. 1. Press and hold the reset button for 5+ seconds\n2. The LED should start blinking\n3. The device will be detected automatically Note: This is a fallback driver for unknown TS0601 devices. Data points will be auto-discovered.",
+        "fr": "Appareil Tuya TS0601 générique. 1. Appuyez et maintenez le bouton reset pendant 5+ secondes\n2. La LED devrait clignoter\n3. L'appareil sera détecté automatiquement Note: Driver de secours pour TS0601 inconnus. Les points de données seront auto-découverts."
       }
     }
   },

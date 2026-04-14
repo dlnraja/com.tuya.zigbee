@@ -33,6 +33,8 @@ class WiFiCoverDriver extends TuyaLocalDriver {
   
   
   
+  
+  
   }catch(e){this.log('[Flow]',i,e.message);}};
     r('wifi_cover_open',async({device})=>{await device.triggerCapabilityListener('windowcoverings_state','up');return true;});
     r('wifi_cover_close',async({device})=>{await device.triggerCapabilityListener('windowcoverings_state','down');return true;});

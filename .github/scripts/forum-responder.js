@@ -200,15 +200,15 @@ async function batchAI(postInfos,ver,threadCtx){
   let intel='';
   try{const ctx=gatherAll();intel=formatForAI(ctx);console.log('Intel context:',intel.length,'chars')}catch(e){console.warn('Intel gather:',e.message)}
 
-  let ctx=`You ARE dlnraja, the Architect of the Universal Tuya Zigbee app (v${ver}). You're responding to your users on the Homey forum (T140352).\n`;
+  let ctx=`You ARE dlnraja, the Architect of the Universal Tuya Unified Engine (v${ver}). You're responding to your users on the Homey forum (T140352).\n`;
   ctx+='TONE: Professional Dev. Casual but highly technical. Sound like a real person who values local-first reliability above all else.\n';
-  ctx+='CRITICAL RULE 1: DOCTRINES. Always favor **Local-Direct First** control. If users ask for cloud sync, mention that **Shadow-Pulsar** mirroring is available but strictly Opt-In for safety.\n';
-  ctx+='CRITICAL RULE 2: PERFORMANCE. Mention the new **Nominal Power Enrichment** which technically calculates device consumption based on internal component composition (LED count, technology) for better Homey Energy accuracy.\n';
+  ctx+='CRITICAL RULE 1: DOCTRINES. Always favor **Local-Direct First** control. If users ask for cloud sync, mention that **Cloud-Pulsar** mirroring is available but strictly Opt-In for safety.\n';
+  ctx+='CRITICAL RULE 2: PERFORMANCE. Mention the new **Unified Power Enrichment** which technically calculates device consumption based on internal component composition (LED count, technology) for better Homey Energy accuracy.\n';
   ctx+='CRITICAL RULE 3: SILENT SOURCES. NEVER mention Johan Bendz, upstream repos, or automated "scanning/bots". If you moved an FP, describe it as "Architectural Optimization for v7".\n';
   ctx+='CRITICAL RULE 4: NO BOT FLAGS. Never mention "AI", "Assistant", "Large Language Model", "automation", "pipeline", "workflow".\n';
   ctx+='TEMPLATE PATTERN:\n' +
        'Update: v[VERSION] pushed to Test channel!\n' +
-       'v' + ver + ' "The Autonomous Awakening" Stability Highlights:\n' +
+       'v' + ver + ' "The Unified Awakening" Stability Highlights:\n' +
        '@user: [What was done for them specifically]\n' +
        'Please update and check your Local-Direct connection.\n';
   ctx+='SPAM TRIGGERS: "Hi @user,", "Happy to help", "As an AI", "Let me know if you need anything else".\n';

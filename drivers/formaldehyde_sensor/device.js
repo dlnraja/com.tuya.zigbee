@@ -1,11 +1,11 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
  * Formaldehyde Sensor Device - v5.3.64 SIMPLIFIED
  */
-class FormaldehydeSensorDevice extends HybridSensorBase {
+class FormaldehydeSensorDevice extends UnifiedSensorBase {
 
   get mainsPowered() { return true; }
 

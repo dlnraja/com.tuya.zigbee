@@ -1,6 +1,6 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // v5.5.793: VALIDATION CONSTANTS - Centralized thresholds for data validation
@@ -532,7 +532,7 @@ function transformDistance(value, divisor = 100, manufacturerName = '', deviceId
   return result;
 }
 
-class PresenceSensorRadarDevice extends HybridSensorBase {
+class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
   /**
    * v5.5.277: Get manufacturerName with multiple fallback methods
@@ -1363,7 +1363,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
   /**
    * v5.5.304: ENHANCED Tuya response handler with presence=null workaround
-   * - Coordinate with HybridSensorBase to avoid dual processing
+   * - Coordinate with UnifiedSensorBase to avoid dual processing
    * - Only handle special presence DPs locally (1, 105, 112)
    * - v5.5.304: DISTANCE-BASED PRESENCE INFERENCE for firmware bug workaround
    * - v5.5.364: AUTO-DISCOVERY integration for unknown devices
@@ -1465,8 +1465,8 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       }
     }
 
-    // v5.5.310: FIXED - Handle DP12 and DP103 locally, NOT via HybridSensorBase!
-    // Problem: HybridSensorBase universal profile maps DP103 to temperature, not lux
+    // v5.5.310: FIXED - Handle DP12 and DP103 locally, NOT via UnifiedSensorBase!
+    // Problem: UnifiedSensorBase universal profile maps DP103 to temperature, not lux
     // Solution: Handle lux DPs (12, 102, 103) directly here using local dpMap config
     // Note: config and dpMap already declared above for static mapping check
 
@@ -1589,10 +1589,10 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       return;
     }
 
-    // Only filter DPs that HybridSensorBase handles for settings (NOT capabilities!)
+    // Only filter DPs that UnifiedSensorBase handles for settings (NOT capabilities!)
     const HYBRIDSENSOR_SETTINGS_DPS = [2, 15]; // settings only, NOT temp/humidity/battery
     if (HYBRIDSENSOR_SETTINGS_DPS.includes(dpId) && !dpMap[dpId]?.cap) {
-      // Let HybridSensorBase handle settings DPs only
+      // Let UnifiedSensorBase handle settings DPs only
       return;
     }
 
@@ -1799,7 +1799,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
   }
 
-  // v5.8.50: Using centralized presence logic from HybridSensorBase
+  // v5.8.50: Using centralized presence logic from UnifiedSensorBase
   
   async _setupZclClusters(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];

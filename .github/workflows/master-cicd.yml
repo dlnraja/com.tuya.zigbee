@@ -1,4 +1,4 @@
-name: "🌌 NEXUS AWAKENING — Master CI/CD"
+name: "🌌 UNIFIED AWAKENING — Master CI/CD"
 
 on:
   push:
@@ -47,8 +47,8 @@ jobs:
         with:
           fetch-depth: 0
       
-      - name: 📦 Setup Nexus
-        uses: ./.github/actions/setup-nexus
+      - name: 📦 Setup Unified
+        uses: ./.github/actions/setup-unified
       
       - name: "0a. Intelligence Mode Selector"
         id: intelligence_selector
@@ -84,20 +84,14 @@ jobs:
       - name: Homey Validate (Recursive Auto-Fix)
         run: node scripts/maintenance/recursive-validator.js
 
-      - name: "🧪 Autonomous Self-Healing Audit"
+      - name: "🧪 Autonomous Maintenance & Stabilization"
         continue-on-error: true
+        env:
+          DRY_RUN: 'false'
         run: |
-          echo "### 🌌 Nexus Proxima Intelligence" >> $GITHUB_STEP_SUMMARY
-          echo "Running fleet-wide stabilization..." >> $GITHUB_STEP_SUMMARY
-          node scripts/fixes/ULTIMATE_DRIVER_STABILIZER.js
-          
-          echo "=== 🛡️ Checking Composite Identities ==="
-          node scripts/maintenance/rule-21-linter.js
-          node scripts/automation/fingerprint-broadener.js
-          
-          echo "=== 🧪 Flow Card Compliance Audit ==="
-          node scripts/analysis/audit_all_flow_cards.js
-          node scripts/maintenance/fleet-repair-flows.js
+          echo "### 🌌 Unified Engine Intelligence" >> $GITHUB_STEP_SUMMARY
+          echo "Running fleet-wide stabilization via Orchestrator..." >> $GITHUB_STEP_SUMMARY
+          node scripts/maintenance/autonomous-maintenance-orchestrator.js
 
 
   publish-and-promote:
@@ -113,8 +107,8 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
       
-      - name: 📦 Setup Nexus
-        uses: ./.github/actions/setup-nexus
+      - name: 📦 Setup Unified
+        uses: ./.github/actions/setup-unified
 
       - name: 🏷️ Version Bump
         id: bump

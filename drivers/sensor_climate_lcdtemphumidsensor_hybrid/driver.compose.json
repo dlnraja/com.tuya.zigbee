@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Sensor Climate Lcdtemphumidsensor Hybrid",
-    "nl": "Sensor Klimaat Lcdtemphumidsensor Hybride",
-    "fr": "Capteur Climat Lcdtemphumidsenseur Hybride",
-    "de": "Sensor Klimaat Lcdtemphumidsensor Hybrid",
-    "es": "Sensor Clima Lcdtemphumidsensor Híbrido"
+    "en": "Sensor Climate Lcdtemphumidsensor",
+    "nl": "Sensor Klimaat Lcdtemphumidsensor",
+    "fr": "Capteur Climat Lcdtemphumidsenseur",
+    "de": "Sensor Klimaat Lcdtemphumidsensor",
+    "es": "Sensor Clima Lcdtemphumidsensor"
   },
   "class": "sensor",
   "capabilities": [
@@ -34,6 +34,9 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0201",
+      "TS0601",
+      "TY0201",
       "ts0201",
       "ts0601",
       "ty0201"

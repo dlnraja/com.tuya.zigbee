@@ -1,7 +1,7 @@
 'use strict';
-const HybridLightBase = require('../../lib/devices/HybridLightBase');
+const UnifiedLightBase = require('../../lib/devices/UnifiedLightBase');
 
-class CeilingFanDevice extends HybridLightBase {
+class CeilingFanDevice extends UnifiedLightBase {
   get mainsPowered() { return true; }
   get lightCapabilities() { return ['onoff', 'dim']; }
 

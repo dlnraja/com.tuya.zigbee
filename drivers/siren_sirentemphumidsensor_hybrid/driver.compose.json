@@ -1,11 +1,11 @@
 {
   "id": "sirentemphumidsensor",
   "name": {
-    "en": "Siren Sirentemphumidsensor Hybrid",
-    "nl": "Siren Sirentemphumidsensor Hybride",
-    "fr": "Siren Sirentemphumidsensor Hybride",
-    "de": "Siren Sirentemphumidsensor Hybrid",
-    "es": "Siren Sirentemphumidsensor Híbrido"
+    "en": "Siren Sirentemphumidsensor",
+    "nl": "Siren Sirentemphumidsensor",
+    "fr": "Siren Sirentemphumidsensor",
+    "de": "Siren Sirentemphumidsensor",
+    "es": "Siren Sirentemphumidsensor"
   },
   "class": "other",
   "capabilities": [
@@ -44,6 +44,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "endpoints": {

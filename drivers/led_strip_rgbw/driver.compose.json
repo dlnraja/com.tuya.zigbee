@@ -36,11 +36,11 @@
       "_tz3210_95txyzbx",
       "_tz3210_a5fxguxr",
       "_tz3210_eejm8dcr",
-      "_tz3210_iystcadi",
       "_tz3210_sroezl0s",
       "_tz3210_trm3l2aw"
     ],
     "productId": [
+      "TS0601_STRIP_RGBW",
       "ts0601_strip_rgbw"
     ],
     "endpoints": {
@@ -295,7 +295,7 @@
         "en": "Tuya Datapoint Configuration",
         "fr": "Configuration Tuya Datapoint"
       },
-      "value": "{\n  \"20\": \"led_mode\",\n  \"21\": \"color_data\",\n  \"24\": \"scene_mode\",\n  \"25\": \"countdown_timer\"\n}"
+      "value": "{ \"20\": \"led_mode\", \"21\": \"color_data\", \"24\": \"scene_mode\", \"25\": \"countdown_timer\"\n}"
     },
     {
       "id": "dp_debug_mode",

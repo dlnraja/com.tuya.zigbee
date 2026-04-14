@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Button Wireless Wall Hybrid",
+    "en": "Button Wireless Wall",
     "nl": "Draadloze wandhybride knop",
-    "fr": "Bouton sans fil mural hybride",
+    "fr": "Bouton sans fil mural",
     "de": "Drahtloser Wandhybridknopf",
-    "es": "Botón híbrido de pared inalámbrico"
+    "es": "Botón de pared inalámbrico"
   },
   "class": "sensor",
   "capabilities": [
@@ -54,14 +54,22 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
-      "ts0003",
-      "ts0013",
-      "ts0043",
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0042",
+      "TS0043",
       "ts0001",
-      "ts0011",
       "ts0002",
+      "ts0003",
+      "ts0011",
       "ts0012",
-      "ts0042"
+      "ts0013",
+      "ts0042",
+      "ts0043"
     ],
     "endpoints": {
       "1": {

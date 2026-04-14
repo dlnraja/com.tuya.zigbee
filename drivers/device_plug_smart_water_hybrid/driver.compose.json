@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Device Plug Smart Water Hybrid",
-    "nl": "Slimme Water Hybride Stekker",
-    "fr": "Prise Intelligente Eau Hybride",
-    "de": "Intelligente Wasser Hybrid Steckdose",
-    "es": "Enchufe Inteligente Agua Híbrido"
+    "en": "Device Plug Smart Water",
+    "nl": "Slimme Water Stekker",
+    "fr": "Prise Intelligente Eau",
+    "de": "Intelligente Wasser Steckdose",
+    "es": "Enchufe Inteligente Agua"
   },
   "class": "socket",
   "capabilities": [
@@ -30,6 +30,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0049",
       "ts0049"
     ],
     "learnmode": {

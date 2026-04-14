@@ -1,9 +1,9 @@
 {
   "name": {
-    "en": "Device Radiator Valve Smart Hybrid",
-    "nl": "Slimme Hybride Radiatorkraan",
-    "fr": "Vanne de Radiateur Intelligente Hybride",
-    "de": "Intelligentes Hybrid-Radiatorventil",
+    "en": "Device Radiator Valve Smart",
+    "nl": "Slimme Radiatorkraan",
+    "fr": "Vanne de Radiateur Intelligente",
+    "de": "Intelligentes -Radiatorventil",
     "es": "Válvula de Radiador Inteligente Híbrida"
   },
   "class": "thermostat",
@@ -28,6 +28,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "learnmode": {

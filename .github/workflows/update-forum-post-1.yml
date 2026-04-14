@@ -1,4 +1,4 @@
-name: Update Forum Post #1
+name: "🌌 UNIFIED ENGINE — Update Forum Post #1"
 on:
   workflow_dispatch:
   push:
@@ -42,5 +42,5 @@ jobs:
             echo "No HOMEY_EMAIL, skipping"
             exit 0
           fi
-          node .github/scripts/update-post-1.js
+          node .github/scripts/update-forum-first-post.js
 

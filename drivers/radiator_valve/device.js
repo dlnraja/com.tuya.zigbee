@@ -1,5 +1,5 @@
 'use strict';
-const HybridThermostatBase = require('../../lib/devices/HybridThermostatBase');
+const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const setupSonoffTRVZB = require('../../lib/mixins/SonoffTRVZBMixin');
@@ -8,14 +8,14 @@ const setupSonoffTRVZB = require('../../lib/mixins/SonoffTRVZBMixin');
  * ╔══════════════════════════════════════════════════════════════════════════════╗
  * ║      RADIATOR VALVE (TRV) - v5.6.0 + Bidirectional Buttons                  ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  HybridThermostatBase handles: target_temperature listener                  ║
+ * ║  UnifiedThermostatBase handles: target_temperature listener                  ║
  * ║  This class: dpMappings + ZCL thermostat + onoff/mode listeners            ║
  * ║  Profile A (Standard): DPs 1-10,13-15,101-109 - MOES, SEA-ICON             ║
  * ║  Profile B (ME167): DPs 2-5,7,35,36,39,47 - AVATTO ME167/TRV06             ║
  * ║  v5.6.0: Added bidirectional virtual buttons for mode/boost/child_lock     ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridThermostatBase)) {
+class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedThermostatBase)) {
 
   get mainsPowered() { return false; }
 

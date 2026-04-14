@@ -1,9 +1,9 @@
 {
   "name": {
-    "en": "Air Purifier Curtain Hybrid",
-    "nl": "Luchtzuiverende Gordijn Hybride",
-    "fr": "Rideau Hybride Purificateur d'Air",
-    "de": "Luftreiniger Vorhang Hybrid",
+    "en": "Air Purifier Curtain",
+    "nl": "Luchtzuiverende Gordijn",
+    "fr": "Rideau Purificateur d'Air",
+    "de": "Luftreiniger Vorhang",
     "es": "Cortina Híbrida Purificadora de Aire"
   },
   "class": "windowcoverings",
@@ -20,14 +20,9 @@
     "measure_maintenance_score"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_tze200_bjzrowv2",
-      "_tze200_68nvbio9",
-      "_tze200_cf1sl3tj",
-      "_tze204_xu4a5rhj",
-      "_tze204_r0jdjrvi"
-    ],
+    "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "endpoints": {

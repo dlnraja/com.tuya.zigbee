@@ -32,6 +32,8 @@ class WiFiRobotVacuumDriver extends TuyaLocalDriver {
   
   
   
+  
+  
   }
 }
 

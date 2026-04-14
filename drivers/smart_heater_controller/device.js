@@ -1,6 +1,6 @@
 'use strict';
 
-const HybridThermostatBase = require('../../lib/devices/HybridThermostatBase');
+const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
 
 /**
  * Smart Heater Controller - Zigbee Equivalent of WiFi Heater Modules
@@ -28,7 +28,7 @@ const HybridThermostatBase = require('../../lib/devices/HybridThermostatBase');
  * - DP 102: Overheat protection
  * - DP 103: Temperature calibration
  */
-class SmartHeaterControllerDevice extends HybridThermostatBase {
+class SmartHeaterControllerDevice extends UnifiedThermostatBase {
 
   async onNodeInit({ zclNode }) {
     // --- Homey Time Sync for TRV/LCD/Thermostat devices ---

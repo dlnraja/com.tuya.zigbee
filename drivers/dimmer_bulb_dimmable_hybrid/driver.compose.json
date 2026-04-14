@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Dimmer Bulb Dimmable Hybrid",
-    "nl": "Dimmer Bulb Dimmable Hybrid",
-    "fr": "Dimmer Bulb Dimmable Hybrid"
+    "en": "Dimmer Bulb Dimmable",
+    "nl": "Dimmer Bulb Dimmable",
+    "fr": "Dimmer Bulb Dimmable"
   },
   "class": "light",
   "capabilities": [
@@ -29,6 +29,10 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0052",
+      "TS1101",
+      "TS110E",
+      "TS110F",
       "ts0052",
       "ts1101",
       "ts110e",

@@ -2,14 +2,14 @@
 
 // v5.5.295: Fix "Class extends value undefined" stderr error
 // Use try-catch to handle potential circular dependency issues
-let HybridCoverBase;
+let UnifiedCoverBase;
 try {
-  HybridCoverBase = require('../../lib/devices/HybridCoverBase');
+  UnifiedCoverBase = require('../../lib/devices/UnifiedCoverBase');
 } catch (error) {
-  // Fallback to direct ZigBeeDevice if HybridCoverBase fails
-  console.error('[CURTAIN_MOTOR] Failed to load HybridCoverBase, using ZigBeeDevice fallback:', error.message);
+  // Fallback to direct ZigBeeDevice if UnifiedCoverBase fails
+  console.error('[CURTAIN_MOTOR] Failed to load UnifiedCoverBase, using ZigBeeDevice fallback:', error.message);
   const { ZigBeeDevice } = require('homey-zigbeedriver');
-  HybridCoverBase = ZigBeeDevice;
+  UnifiedCoverBase = ZigBeeDevice;
 }
 
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
@@ -25,7 +25,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * ║  Variants: GIRIER, Lonsonho, Zemismart, MOES, Longsam                      ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCoverBase)) {
+class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedCoverBase)) {
 
   // v5.5.322: Auto-detect power source - battery curtain robots use 3xAA
   get mainsPowered() {
@@ -310,7 +310,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCo
   }
 
   // v5.5.935: REMOVED broken _sendTuyaDP override
-  // Parent HybridCoverBase._sendTuyaDP() handles all DP communication correctly
+  // Parent UnifiedCoverBase._sendTuyaDP() handles all DP communication correctly
   // The override was causing "tuya.datapoint: value is an unexpected property" errors
 }
 

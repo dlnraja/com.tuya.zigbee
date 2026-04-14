@@ -1,9 +1,9 @@
 {
   "name": {
-    "en": "Bulb Rgb Rgbw Hybrid",
-    "nl": "Bulb Rgb Rgbw Hybride",
-    "fr": "Ampoule Rgb Rgbw Hybride",
-    "de": "Glühbirne Rgb Rgbw Hybrid",
+    "en": "Bulb Rgb Rgbw",
+    "nl": "Bulb Rgb Rgbw",
+    "fr": "Ampoule Rgb Rgbw",
+    "de": "Glühbirne Rgb Rgbw",
     "es": "Bombilla Rgb Rgbw Híbrida"
   },
   "class": "light",
@@ -28,9 +28,7 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_gek6snaj"
-    ],
+    "manufacturerName": [],
     "endpoints": {
       "1": {
         "clusters": [

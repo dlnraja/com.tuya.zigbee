@@ -57,7 +57,7 @@ Search by manufacturer name (`_TZ3000_...`) or model ID (`TS0001`, `TS0601`...).
 ## :gear: Key Features
 
 - **100% local** — no cloud, no internet
-- **Hybrid protocol** — Tuya DP + ZCL auto-detect
+- **Unified protocol** — Tuya DP + ZCL auto-detect
 - **Physical button detection** — wall press triggers
 - **Energy monitoring** — W, V, A, kWh
 - **Smart battery** — CR2032/AA/Li-ion curves

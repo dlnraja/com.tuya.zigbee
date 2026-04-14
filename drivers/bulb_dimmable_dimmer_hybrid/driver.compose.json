@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Bulb Dimmable Dimmer Hybrid",
-    "nl": "Dimbare Dimmer Hybride Lamp",
-    "fr": "Ampoule Dimmable Dimmer Hybride",
-    "de": "Dimmbare Dimmer Hybrid Lampe",
-    "es": "Bombilla Regulable Dimmer Híbrido"
+    "en": "Bulb Dimmable Dimmer",
+    "nl": "Dimbare Dimmer Lamp",
+    "fr": "Ampoule Dimmable Dimmer",
+    "de": "Dimmbare Dimmer Lampe",
+    "es": "Bombilla Regulable Dimmer"
   },
   "class": "light",
   "capabilities": [
@@ -29,15 +29,12 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3210_ngqk6jia",
-      "_tz3210_weaqkhab",
-      "_tz3210_k1msuvg6",
-      "_tz3000_mgusv51k",
-      "_tz3210_wdexaypg",
-      "_tz3210_4ubylghk"
-    ],
+    "manufacturerName": [],
     "productId": [
+      "TS0052",
+      "TS1101",
+      "TS110E",
+      "TS110F",
       "ts0052",
       "ts1101",
       "ts110e",

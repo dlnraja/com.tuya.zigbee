@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Dimmer Wall Plug Hybrid",
-    "nl": "Dimmer Wandstopcontact Hybride",
-    "fr": "Prise Murale Dimmer Hybride",
-    "de": "Dimmer Wandstecker Hybrid",
-    "es": "Enchufe de Pared Regulable Híbrido"
+    "en": "Dimmer Wall Plug",
+    "nl": "Dimmer Wandstopcontact",
+    "fr": "Prise Murale Dimmer",
+    "de": "Dimmer Wandstecker",
+    "es": "Enchufe de Pared Regulable"
   },
   "class": "socket",
   "capabilities": [
@@ -29,13 +29,9 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tz3000_kdi2o9m6",
-      "_tz3210_5ct6e7ye",
-      "_tz3210_8n4dn1ne",
-      "_tz3210_urjf5u18"
-    ],
+    "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "learnmode": {

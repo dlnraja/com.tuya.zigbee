@@ -1,5 +1,5 @@
 'use strict';
-const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
@@ -17,7 +17,7 @@ const ZCL_ONLY_MANUFACTURERS_3G = [
   '_TZ3000_hafsqare', '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt'
 ];
 
-class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
+class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
   get gangCount() { return 3; }
 
   get sceneMode() { return this.getSetting('scene_mode') || 'auto'; }
@@ -63,6 +63,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           return;
         }
         await super.onNodeInit({ zclNode });
+    this.initPhysicalButtonDetection(); // rule-19 injected
 
         await this.initPhysicalButtonDetection(zclNode);
         await this.initVirtualButtons();
@@ -109,7 +110,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
     };
 
     // v5.13.2: Unified listener registration (Capability + Flow Cards)
-    // Inherited from HybridSwitchBase, handles ZCL/DP fallback automatically
+    // Inherited from UnifiedSwitchBase, handles ZCL/DP fallback automatically
     this._registerCapabilityListeners();
 
     // Setup attribute listeners for physical button detection

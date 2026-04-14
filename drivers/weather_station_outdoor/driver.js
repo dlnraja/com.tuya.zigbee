@@ -23,12 +23,14 @@ class WeatherStationOutdoorDriver extends Homey.Driver {
   
   
   
+  
+  
   }
 
   _registerFlowCards() {
     // CONDITION: Outdoor temp above
     try {
-      this.homey.flow.getConditionCard('weather_station_outdoor_outdoor_temp_above')
+      (() => { try { return this.homey.flow.getConditionCard('weather_station_outdoor_outdoor_temp_above'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const temp = args.device.getCapabilityValue('measure_temperature') || 0;
@@ -39,7 +41,7 @@ class WeatherStationOutdoorDriver extends Homey.Driver {
 
     // CONDITION: Outdoor temp below
     try {
-      this.homey.flow.getConditionCard('weather_station_outdoor_outdoor_temp_below')
+      (() => { try { return this.homey.flow.getConditionCard('weather_station_outdoor_outdoor_temp_below'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const temp = args.device.getCapabilityValue('measure_temperature') || 0;
@@ -50,7 +52,7 @@ class WeatherStationOutdoorDriver extends Homey.Driver {
 
     // CONDITION: Pressure rising
     try {
-      this.homey.flow.getActionCard('weather_station_outdoor_pressure_rising')
+      (() => { try { return this.homey.flow.getActionCard('weather_station_outdoor_pressure_rising'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const trend = args.device.getStoreValue('pressure_trend') || 'stable';
@@ -61,7 +63,7 @@ class WeatherStationOutdoorDriver extends Homey.Driver {
 
     // CONDITION: Pressure falling
     try {
-      this.homey.flow.getActionCard('weather_station_outdoor_pressure_falling')
+      (() => { try { return this.homey.flow.getActionCard('weather_station_outdoor_pressure_falling'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const trend = args.device.getStoreValue('pressure_trend') || 'stable';

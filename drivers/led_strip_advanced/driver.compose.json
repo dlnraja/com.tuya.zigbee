@@ -28,8 +28,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_oboryztc",
-      "_tz3210_iystcadi"
+      "_tz3000_oboryztc"
     ],
     "endpoints": {
       "1": {
@@ -52,6 +51,7 @@
       }
     },
     "productId": [
+      "TS0601_STRIP_ADV",
       "ts0601_strip_adv"
     ]
   },

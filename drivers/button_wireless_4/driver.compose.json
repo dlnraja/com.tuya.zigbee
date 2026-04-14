@@ -73,28 +73,18 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_tyzb01_bagt1e4o",
       "_tyzb01_qm6djpta",
-      "_tz3000_11pg3ima",
-      "_tz3000_4fjiwweb",
-      "_tz3000_5tqxpine",
-      "_tz3000_a4xycprs",
       "_tz3000_abci1hiu",
-      "_tz3000_b3mgfu0d",
-      "_tz3000_bgtzm4ny",
-      "_tz3000_czuyt8lz",
-      "_tz3000_dziaict4",
-      "_tz3000_et7afzxz",
       "_tz3000_fjt5218m",
-      "_tz3000_j61x9rxn",
       "_tz3000_j70oanab",
+      "_tz3000_jcspr0tp",
       "_tz3000_kaflzta4",
-      "_tz3000_kfu8zapd",
       "_tz3000_lxw3kcw2",
-      "_tz3000_mh9px7cq",
-      "_tz3000_nuombroo",
       "_tz3000_r0pmi2p3",
       "_tz3000_rrjr1dsk",
       "_tz3000_sqw3qqtc",
+      "_tz3000_u3nv1jwk",
       "_tz3000_uaa99arv",
       "_tz3000_ufhtxr59",
       "_tz3000_uri7ez8u",
@@ -103,27 +93,21 @@
       "_tz3000_vp6clf9d",
       "_tz3000_w4thianr",
       "_tz3000_w8jwkczz",
+      "_tz3000_wkai4ga5",
       "_tz3000_xkh6oajz",
       "_tz3000_xwuveizv",
       "_tz3000_yesuiipb",
       "_tz3000_zgyzgdua",
       "_tz3000_zszzgweg",
-      "_tz3040_fwxuzcf4",
       "_tz3290_785fbxik",
-      "_tz3290_ixd9mvv4",
       "_tz3290_nkpxapoz",
-      "_tz3290_yyax9ajf",
-      "_tz3000_u3nv1jwk",
-      "_tz3000_abrsvsou",
-      "_tz3000_qja6nq5z",
-      "_tz3000_ixla93vd",
-      "_tz3000_uri7ongn",
-      "_tz3000_xabckq1v",
-      "_tz3000_wkai4ga5",
-      "_tz3000_jcspr0tp",
-      "_tyzb01_bagt1e4o"
+      "_tz3290_yyax9ajf"
     ],
     "productId": [
+      "SNZB-01M",
+      "TS0014",
+      "TS0044",
+      "TS004F",
       "snzb-01m",
       "ts0014",
       "ts0044",
@@ -133,14 +117,14 @@
       "image": "/drivers/button_wireless_4/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
-        "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
-        "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
-        "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
-        "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
-        "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
-        "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
-        "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement"
+        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
+        "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
+        "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
+        "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
+        "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
+        "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
+        "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
+        "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement"
       }
     },
     "endpoints": {
@@ -350,7 +334,7 @@
       "step": 1,
       "hint": {
         "en": "How often to request battery status updates",
-        "fr": "FrÃ©quence de demande des mises Ã  jour d'Ã©tat de batterie"
+        "fr": "FrÃ©quence de demande des mises Ã jour d'Ã©tat de batterie"
       }
     },
     {
@@ -422,7 +406,7 @@
         "en": "Tuya Datapoint Configuration",
         "fr": "Configuration Tuya Datapoint"
       },
-      "value": "{\n  \"1\": \"button_1_action\",\n  \"2\": \"button_2_action\",\n  \"3\": \"button_3_action\",\n  \"4\": \"button_4_action\",\n  \"101\": \"battery_percentage\"\n}"
+      "value": "{ \"1\": \"button_1_action\", \"2\": \"button_2_action\", \"3\": \"button_3_action\", \"4\": \"button_4_action\", \"101\": \"battery_percentage\"\n}"
     },
     {
       "id": "dp_debug_mode",
@@ -582,7 +566,7 @@
       "max": 1000,
       "hint": {
         "en": "Software emulation for single-action buttons",
-        "fr": "Ã‰mulation logicielle pour boutons Ã  action unique"
+        "fr": "Ã‰mulation logicielle pour boutons Ã action unique"
       }
     },
     {

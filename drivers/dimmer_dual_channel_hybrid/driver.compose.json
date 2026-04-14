@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Dimmer Dual Channel Hybrid",
-    "nl": "Dimmer Dubbel Kanaal Hybride",
-    "fr": "Variateur à Double Canal Hybride",
-    "de": "Dimmer Dual-Kanal Hybrid",
-    "es": "Atenuador de Doble Canal Híbrido"
+    "en": "Dimmer Dual Channel",
+    "nl": "Dimmer Dubbel Kanaal",
+    "fr": "Variateur à Double Canal",
+    "de": "Dimmer Dual-Kanal",
+    "es": "Atenuador de Doble Canal"
   },
   "class": "light",
   "capabilities": [
@@ -29,6 +29,8 @@
       "_tze200_bxoo2swd"
     ],
     "productId": [
+      "TS0601",
+      "TS1101",
       "ts0601",
       "ts1101"
     ],

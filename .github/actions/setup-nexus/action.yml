@@ -1,5 +1,5 @@
-name: 'Setup Nexus'
-description: 'Standardized Node.js and dependencies setup for Nexus'
+name: 'Setup Unified'
+description: 'Standardized Node.js and dependencies setup for Unified'
 inputs:
   node-version:
     description: 'Node.js version'

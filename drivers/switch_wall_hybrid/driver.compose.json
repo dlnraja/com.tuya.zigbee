@@ -815,9 +815,9 @@
     }
   ],
   "name": {
-    "en": "Switch Wall Hybrid",
-    "nl": "Switch Wall Hybrid",
-    "fr": "Switch Wall Hybrid"
+    "en": "Switch Wall",
+    "nl": "Switch Wall",
+    "fr": "Switch Wall"
   },
   "platforms": [
     "local"
@@ -835,12 +835,12 @@
     },
     "button.toggle": {
       "title": {
-        "en": " toggle"
+        "en": "toggle"
       }
     },
     "button.identify": {
       "title": {
-        "en": " identify"
+        "en": "identify"
       }
     }
   },

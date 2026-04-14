@@ -32,12 +32,14 @@ class LedStripDriver extends ZigBeeDriver {
   
   
   
+  
+  
   }
 
   _registerFlowCards() {
     // CONDITION: Is on/off
     try {
-      this.homey.flow.getConditionCard('led_strip_led_strip_is_on')
+      (() => { try { return this.homey.flow.getConditionCard('led_strip_led_strip_is_on'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -47,7 +49,7 @@ class LedStripDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      this.homey.flow.getConditionCard('led_strip_led_strip_turn_on')
+      (() => { try { return this.homey.flow.getConditionCard('led_strip_led_strip_turn_on'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -59,7 +61,7 @@ class LedStripDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      this.homey.flow.getConditionCard('led_strip_led_strip_turn_off')
+      (() => { try { return this.homey.flow.getConditionCard('led_strip_led_strip_turn_off'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -71,7 +73,7 @@ class LedStripDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      this.homey.flow.getConditionCard('led_strip_led_strip_toggle')
+      (() => { try { return this.homey.flow.getConditionCard('led_strip_led_strip_toggle'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');

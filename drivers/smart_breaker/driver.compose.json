@@ -31,12 +31,11 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tze200_hkdl5fmv",
-      "_tze200_wbhaespm",
-      "_tze204_68nvbio9",
-      "_tze204_wbhaespm"
+      "_tze204_68nvbio9"
     ],
     "productId": [
+      "TS0601",
+      "TS0601_BREAKER",
       "ts0601",
       "ts0601_breaker"
     ],

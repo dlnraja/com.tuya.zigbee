@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Air Purifier Quality Hybrid",
-    "nl": "Luchtreiniger kwaliteit hybride",
-    "fr": "Purificateur d'air qualité hybride",
-    "de": "Luftreiniger Qualitäts-Hybrid",
-    "es": "Purificador de aire calidad híbrido"
+    "en": "Air Purifier Quality",
+    "nl": "Luchtreiniger kwaliteit",
+    "fr": "Purificateur d'air qualité",
+    "de": "Luftreiniger Qualitäts-",
+    "es": "Purificador de aire calidad"
   },
   "class": "sensor",
   "capabilities": [
@@ -70,7 +70,6 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tze200_9cxuhakf",
       "_tz2000_avdnvykf",
       "_tz2000_hjsgdkfl"
     ],

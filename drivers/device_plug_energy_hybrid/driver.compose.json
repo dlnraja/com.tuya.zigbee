@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Device Plug Energy Hybrid",
-    "nl": "Energie Hybride Stekker",
-    "fr": "Prise Énergétique Hybride",
-    "de": "Hybrid Energie Stecker",
-    "es": "Enchufe Energético Híbrido"
+    "en": "Device Plug Energy",
+    "nl": "Energie Stekker",
+    "fr": "Prise Énergétique",
+    "de": "Energie Stecker",
+    "es": "Enchufe Energético"
   },
   "class": "socket",
   "capabilities": [
@@ -32,6 +32,11 @@
       "ewelink"
     ],
     "productId": [
+      "S26R2ZB",
+      "S31 LITE ZB",
+      "S40LITE",
+      "S60ZBTPF",
+      "S60ZBTPG",
       "s26r2zb",
       "s31 lite zb",
       "s40lite",

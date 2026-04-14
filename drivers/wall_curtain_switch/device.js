@@ -1,19 +1,19 @@
 'use strict';
 
-let HybridCoverBase;
+let UnifiedCoverBase;
 try {
-  HybridCoverBase = require('../../lib/devices/HybridCoverBase');
+  UnifiedCoverBase = require('../../lib/devices/UnifiedCoverBase');
 } catch (e) {
   const { ZigBeeDevice } = require('homey-zigbeedriver');
-  HybridCoverBase = ZigBeeDevice;
+  UnifiedCoverBase = ZigBeeDevice;
 }
 
-class WallCurtainSwitchDevice extends HybridCoverBase {
+class WallCurtainSwitchDevice extends UnifiedCoverBase {
   async onNodeInit({ zclNode }) {
     this.log('[WALL_CURTAIN_SWITCH] init');
 
     // v5.13.1: CRITICAL FIX — must call super to initialize protocol detection,
-    // Tuya DP, capability migration, and ZCL fallbacks from HybridCoverBase
+    // Tuya DP, capability migration, and ZCL fallbacks from UnifiedCoverBase
     await super.onNodeInit({ zclNode }).catch(e =>
       this.log('[WALL_CURTAIN_SWITCH] super.onNodeInit warn:', e.message)
     );

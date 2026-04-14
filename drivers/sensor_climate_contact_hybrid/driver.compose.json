@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Sensor Climate Contact Hybrid",
-    "nl": "Sensor Klimaat Contact Hybride",
-    "fr": "Capteur Climatique Contact Hybride",
-    "de": "Sensor Klimakontakt Hybrid",
-    "es": "Sensor Climático de Contacto Híbrido"
+    "en": "Sensor Climate Contact",
+    "nl": "Sensor Klimaat Contact",
+    "fr": "Capteur Climatique Contact",
+    "de": "Sensor Klimakontakt",
+    "es": "Sensor Climático de Contacto"
   },
   "class": "sensor",
   "capabilities": [
@@ -38,8 +38,10 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
-      "zg-227z",
-      "ts0601"
+      "TS0601",
+      "ZG-227Z",
+      "ts0601",
+      "zg-227z"
     ],
     "endpoints": {
       "1": {

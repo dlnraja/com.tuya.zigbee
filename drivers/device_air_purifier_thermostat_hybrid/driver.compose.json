@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Device Air Purifier Thermostat Hybrid",
-    "nl": "Hybride Luchtzuiveraar Thermostaat",
-    "fr": "Thermostat Hybride Purificateur d'Air",
-    "de": "Hybrid-Luftreiniger-Thermostat",
-    "es": "Termostato Híbrido Purificador de Aire"
+    "en": "Device Air Purifier Thermostat",
+    "nl": "Luchtzuiveraar Thermostaat",
+    "fr": "Thermostat Purificateur d'Air",
+    "de": "-Luftreiniger-Thermostat",
+    "es": "Termostato Purificador de Aire"
   },
   "class": "thermostat",
   "capabilities": [
@@ -28,6 +28,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "endpoints": {

@@ -32,12 +32,14 @@ class SmartBulbDimmerDriver extends ZigBeeDriver {
   
   
   
+  
+  
   }
 
   _registerFlowCards() {
     // CONDITION: Is on/off
     try {
-      this.homey.flow.getConditionCard('bulb_dimmable_smart_bulb_dimmer_is_on')
+      (() => { try { return this.homey.flow.getConditionCard('bulb_dimmable_smart_bulb_dimmer_is_on'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -47,7 +49,7 @@ class SmartBulbDimmerDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      this.homey.flow.getConditionCard('bulb_dimmable_smart_bulb_dimmer_turn_on')
+      (() => { try { return this.homey.flow.getConditionCard('bulb_dimmable_smart_bulb_dimmer_turn_on'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -59,7 +61,7 @@ class SmartBulbDimmerDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      this.homey.flow.getConditionCard('bulb_dimmable_smart_bulb_dimmer_turn_off')
+      (() => { try { return this.homey.flow.getConditionCard('bulb_dimmable_smart_bulb_dimmer_turn_off'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -71,7 +73,7 @@ class SmartBulbDimmerDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      this.homey.flow.getConditionCard('bulb_dimmable_smart_bulb_dimmer_toggle')
+      (() => { try { return this.homey.flow.getConditionCard('bulb_dimmable_smart_bulb_dimmer_toggle'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
@@ -84,7 +86,7 @@ class SmartBulbDimmerDriver extends ZigBeeDriver {
 
     // ACTION: Set brightness
     try {
-      this.homey.flow.getActionCard('bulb_dimmable_smart_bulb_dimmer_set_dim')
+      (() => { try { return this.homey.flow.getActionCard('bulb_dimmable_smart_bulb_dimmer_set_dim'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('dim', args.brightness);

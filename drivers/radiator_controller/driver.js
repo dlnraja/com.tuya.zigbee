@@ -30,16 +30,18 @@ class RadiatorControllerDriver extends ZigBeeDriver {
       const driverId = 'radiator_controller';
 
       // Register flow triggers
-      this._radiator_mode_changedTrigger = this.homey.flow.getTriggerCard(`${driverId
-  }_radiator_mode_changed`);
-      this._pilot_signal_sentTrigger = this.homey.flow.getTriggerCard(`${driverId}_pilot_signal_sent`);
+      this._radiator_mode_changedTrigger = this._getFlowCard(`${driverId
+  
+  
+  }_radiator_mode_changed`, 'trigger');
+      this._pilot_signal_sentTrigger = this._getFlowCard(`${driverId}_pilot_signal_sent`, 'trigger');
       
       // Register flow conditions
-      this._radiator_is_heatingCondition = this.homey.flow.getConditionCard(`${driverId}_radiator_is_heating`);
-      this._heating_mode_isCondition = this.homey.flow.getConditionCard(`${driverId}_heating_mode_is`);
+      this._radiator_is_heatingCondition = this._getFlowCard(`${driverId}_radiator_is_heating`, 'condition');
+      this._heating_mode_isCondition = this._getFlowCard(`${driverId}_heating_mode_is`, 'condition');
       
       // Register flow actions
-      this._set_heating_modeAction = this.homey.flow.getActionCard(`${driverId}_set_heating_mode`);
+      this._set_heating_modeAction = this._getFlowCard(`${driverId}_set_heating_mode`, 'action');
       if (this._set_heating_modeAction) {
         this._set_heating_modeAction.registerRunListener(async (args) => {
           const { device } = args;
@@ -48,7 +50,7 @@ class RadiatorControllerDriver extends ZigBeeDriver {
         });
       }
       
-      this._send_pilot_signalAction = this.homey.flow.getActionCard(`${driverId}_send_pilot_signal`);
+      this._send_pilot_signalAction = this._getFlowCard(`${driverId}_send_pilot_signal`, 'action');
       if (this._send_pilot_signalAction) {
         this._send_pilot_signalAction.registerRunListener(async (args) => {
           const { device } = args;
@@ -57,7 +59,7 @@ class RadiatorControllerDriver extends ZigBeeDriver {
         });
       }
       
-      this._set_temperature_offsetAction = this.homey.flow.getActionCard(`${driverId}_set_temperature_offset`);
+      this._set_temperature_offsetAction = this._getFlowCard(`${driverId}_set_temperature_offset`, 'action');
       if (this._set_temperature_offsetAction) {
         this._set_temperature_offsetAction.registerRunListener(async (args) => {
           const { device } = args;

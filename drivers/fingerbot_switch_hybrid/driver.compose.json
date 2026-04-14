@@ -16,6 +16,7 @@
   ],
   "zigbee": {
     "productId": [
+      "TS0001",
       "ts0001"
     ],
     "learnmode": {
@@ -817,11 +818,11 @@
     }
   ],
   "name": {
-    "en": "Fingerbot Switch Hybrid",
-    "nl": "Fingerbot Schakelaar Hybride",
-    "fr": "Interrupteur Fingerbot Hybride",
-    "de": "Fingerbot Schalter Hybrid",
-    "es": "Interruptor Fingerbot Híbrido"
+    "en": "Fingerbot Switch",
+    "nl": "Fingerbot Schakelaar",
+    "fr": "Interrupteur Fingerbot",
+    "de": "Fingerbot Schalter",
+    "es": "Interruptor Fingerbot"
   },
   "platforms": [
     "local"
@@ -839,17 +840,17 @@
     },
     "button.toggle": {
       "title": {
-        "en": " toggle"
+        "en": "toggle"
       }
     },
     "button.identify": {
       "title": {
-        "en": " identify"
+        "en": "identify"
       }
     },
     "button.push": {
       "title": {
-        "en": " push"
+        "en": "push"
       }
     }
   },

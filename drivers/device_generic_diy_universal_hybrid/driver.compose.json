@@ -1,9 +1,9 @@
 {
   "id": "universal_zigbee",
   "name": {
-    "en": "Device Generic Diy Universal Hybrid",
-    "nl": "Device Generic Diy Universal Hybrid",
-    "fr": "Device Generic Diy Universal Hybrid"
+    "en": "Device Generic Diy Universal",
+    "nl": "Device Generic Diy Universal",
+    "fr": "Device Generic Diy Universal"
   },
   "class": "other",
   "capabilities": [
@@ -79,6 +79,12 @@
       "schneider electric"
     ],
     "productId": [
+      "TS0026",
+      "TS0041A",
+      "TS0052",
+      "TS0105",
+      "TS0224",
+      "TS0901",
       "ts0026",
       "ts0041a",
       "ts0052",
@@ -90,18 +96,6 @@
       "1": {
         "clusters": [
           0,
-          3,
-          4,
-          5,
-          6,
-          8,
-          25,
-          1024,
-          1026,
-          1029,
-          1280,
-          2820,
-          2821,
           61184
         ]
       }

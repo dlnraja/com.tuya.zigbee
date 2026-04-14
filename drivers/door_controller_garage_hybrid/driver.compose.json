@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Door Controller Garage Hybrid",
-    "nl": "Deurcontroller Garage Hybride",
-    "fr": "Contrôleur de Porte Garage Hybride",
-    "de": "Türsteuerung Garage Hybrid",
-    "es": "Controlador de Puerta Garage Híbrido"
+    "en": "Door Controller Garage",
+    "nl": "Deurcontroller Garage",
+    "fr": "Contrôleur de Porte Garage",
+    "de": "Türsteuerung Garage",
+    "es": "Controlador de Puerta Garage"
   },
   "class": "lock",
   "capabilities": [
@@ -26,10 +26,9 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tze204_nklqjk62"
-    ],
+    "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "endpoints": {

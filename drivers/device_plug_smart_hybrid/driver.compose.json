@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Device Plug Smart Hybrid",
-    "nl": "Slimme Hybride Stekker",
-    "fr": "Prise Intelligente Hybride",
+    "en": "Device Plug Smart",
+    "nl": "Slimme Stekker",
+    "fr": "Prise Intelligente",
     "de": "Intelligente Hybridsteckdose",
-    "es": "Enchufe Inteligente Híbrido"
+    "es": "Enchufe Inteligente"
   },
   "class": "socket",
   "capabilities": [
@@ -30,11 +30,12 @@
   "zigbee": {
     "manufacturerName": [
       "_tz3000_cjfmu5he",
-      "_tz3000_kz1anoi8",
-      "_tz3210_eymunffl",
-      "_tz3000_mq4wujmp"
+      "_tz3000_mq4wujmp",
+      "_tz3210_eymunffl"
     ],
     "productId": [
+      "TS0049",
+      "TS0101",
       "ts0049",
       "ts0101"
     ],

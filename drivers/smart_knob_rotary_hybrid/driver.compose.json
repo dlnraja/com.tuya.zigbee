@@ -1,9 +1,9 @@
 {
   "name": {
-    "en": "Smart Knob Rotary Hybrid",
-    "nl": "Slimme Rotonde Hybrid",
-    "fr": "Bouton Rotatif Hybride Intelligent",
-    "de": "Intelligenter Drehknopf Hybrid",
+    "en": "Smart Knob Rotary",
+    "nl": "Slimme Rotonde",
+    "fr": "Bouton Rotatif Intelligent",
+    "de": "Intelligenter Drehknopf",
     "es": "Perilla Rotativa Híbrida Inteligente"
   },
   "class": "sensor",
@@ -71,22 +71,22 @@
     },
     "button.1": {
       "title": {
-        "en": " 1"
+        "en": "1"
       }
     },
     "button.2": {
       "title": {
-        "en": " 2"
+        "en": "2"
       }
     },
     "button.3": {
       "title": {
-        "en": " 3"
+        "en": "3"
       }
     },
     "button.4": {
       "title": {
-        "en": " 4"
+        "en": "4"
       }
     }
   },
@@ -108,6 +108,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS004F",
       "ts004f"
     ],
     "endpoints": {
@@ -125,10 +126,10 @@
     },
     "learnmode": {
       "instruction": {
-        "en": "Press and hold the button for 10 seconds until LED flashes rapidly, then release.\n\nNote: Some models require pressing the button 5 times quickly.",
-        "fr": "Appuyez et maintenez le bouton pendant 10 secondes jusqu'à ce que la LED clignote rapidement.\n\nRemarque: Certains modèles nécessitent d'appuyer 5 fois rapidement.",
-        "nl": "Houd de knop 10 seconden ingedrukt tot de LED snel knippert.\n\nOpmerking: Sommige modellen vereisen 5 keer snel drukken.",
-        "de": "Halten Sie die Taste 10 Sekunden gedrückt, bis die LED schnell blinkt.\n\nHinweis: Einige Modelle erfordern 5 schnelle Tastendrücke."
+        "en": "Press and hold the button for 10 seconds until LED flashes rapidly, then release. Note: Some models require pressing the button 5 times quickly.",
+        "fr": "Appuyez et maintenez le bouton pendant 10 secondes jusqu'à ce que la LED clignote rapidement. Remarque: Certains modèles nécessitent d'appuyer 5 fois rapidement.",
+        "nl": "Houd de knop 10 seconden ingedrukt tot de LED snel knippert. Opmerking: Sommige modellen vereisen 5 keer snel drukken.",
+        "de": "Halten Sie die Taste 10 Sekunden gedrückt, bis die LED schnell blinkt. Hinweis: Einige Modelle erfordern 5 schnelle Tastendrücke."
       }
     }
   },

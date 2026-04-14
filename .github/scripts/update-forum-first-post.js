@@ -74,7 +74,7 @@ function buildPost(stats,changelog,ghSummary){
   const ico={socket:'🔌',light:'💡',sensor:'📡',thermostat:'🌡️',windowcoverings:'🪟',lock:'🔐',fan:'🌀',doorbell:'🔔',remote:'🎮',button:'🔘',other:'📦',homealarm:'🚨',heater:'🔥',garagedoor:'🚗'};
   const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
   let md='';
-  md+='# 🏠 Universal Tuya Zigbee v'+stats.version+'\n\n';
+  md+='# 🏠 Universal Tuya Unified Engine v'+stats.version+'\n\n';
   md+='> **'+stats.drivers+' drivers** · **'+stats.fps+'+ fingerprints** · Updated '+date+'\n\n';
   md+='Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.\n\n';
   md+='## Install\n\n';

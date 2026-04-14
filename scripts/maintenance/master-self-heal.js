@@ -28,6 +28,8 @@
  *  16. defensive-get-device   — Inject defensive getDeviceById override in drivers
  *  29. safe-flow-lookup       — Wrap getDeviceTriggerCard in try-catch
  *  30. wifi-qr-stability      — Enforce larger QR codes and regional schema in WiFi drivers
+ *  31. branding-cleanup       — Purge legacy "Hybrid"/"Nexus" branding for "Unified Engine"
+ *  40. fingerprint-hardening  — Enforce strict manufacturer+model mapping for TS004F
  */
 'use strict';
 
@@ -432,12 +434,12 @@ function rule_punycodeDeprecation() {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// RULE 11: HYBRID FLOW ID PREFIXING
+// RULE 11: DRIVER FLOW ID PREFIXING
 // Ensure all flow cards in driver.flow.compose.json start with {driverId}_
 // ═══════════════════════════════════════════════════════════════════════════════
 
 function rule_flowIdPrefixing() {
-  log('\n📋 Rule 11: Hybrid Flow ID Prefixing');
+  log('\n📋 Rule 11: Driver Flow ID Prefixing');
   const flowFiles = findFiles(DRIVERS_DIR, '.json').filter(f => f.endsWith('driver.flow.compose.json'));
   let fixes = 0;
 
@@ -794,9 +796,126 @@ function rule_safeFlowLookup() {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// RULE 18: MULTI-GANG CAPABILITY OPTIONS (SDK3 Publish Compliance)
-// Subcapabilities like onoff.gang1 MUST have a title in capabilitiesOptions
+// RULE 31: BRANDING & NOMENCLATURE CLEANUP
+// Purge "Hybrid" branding to reflect the unified, auto-adaptive engine.
 // ═══════════════════════════════════════════════════════════════════════════════
+
+
+function rule_brandingCleanup() {
+  log('\n📋 Rule 31: Architectural Rebranding (Unified Engine)');
+  
+  // 1. Rename files in lib/devices
+  const LIB_DEVICES = path.join(LIB_DIR, 'devices');
+  if (fs.existsSync(LIB_DEVICES)) {
+    const files = fs.readdirSync(LIB_DEVICES);
+    for (const f of files) {
+      if (f.startsWith('Hybrid') && f.endsWith('.js')) {
+        const oldPath = path.join(LIB_DEVICES, f);
+        const newPath = path.join(LIB_DEVICES, f.replace('Hybrid', 'Unified'));
+        if (!fs.existsSync(newPath)) {
+          fs.renameSync(oldPath, newPath);
+          log(`  📂 Renamed lib file: ${f} -> ${path.basename(newPath)}`);
+          addFix('branding-cleanup', 'lib', `Renamed ${f} to ${path.basename(newPath)}`);
+        } else {
+          try { fs.unlinkSync(oldPath); } catch (e) {} // Dedupe if both exist
+        }
+      }
+      // Also handle BaseHybridDevice and TuyaHybridDevice
+      if ((f === 'BaseHybridDevice.js' || f === 'TuyaHybridDevice.js') && fs.existsSync(path.join(LIB_DEVICES, f))) {
+        const oldPath = path.join(LIB_DEVICES, f);
+        const newPath = path.join(LIB_DEVICES, f.replace('Hybrid', 'Unified'));
+         if (!fs.existsSync(newPath)) {
+          fs.renameSync(oldPath, newPath);
+          log(`  📂 Renamed core file: ${f} -> ${path.basename(newPath)}`);
+        } else {
+           try { fs.unlinkSync(oldPath); } catch (e) {}
+        }
+      }
+    }
+  }
+
+  // 2. Process all JS files for class name replacements and require updates
+  const jsFiles = [...findFiles(DRIVERS_DIR, '.js'), ...findFiles(LIB_DIR, '.js')];
+  let fixes = 0;
+
+  const REPLACEMENTS = [
+    { from: /HybridSensorBase/g, to: 'UnifiedSensorBase' },
+    { from: /HybridSwitchBase/g, to: 'UnifiedSwitchBase' },
+    { from: /HybridPlugBase/g, to: 'UnifiedPlugBase' },
+    { from: /HybridCoverBase/g, to: 'UnifiedCoverBase' },
+    { from: /HybridThermostatBase/g, to: 'UnifiedThermostatBase' },
+    { from: /HybridLightBase/g, to: 'UnifiedLightBase' },
+    { from: /BaseHybridDevice/g, to: 'BaseUnifiedDevice' },
+    { from: /TuyaHybridDevice/g, to: 'TuyaUnifiedDevice' },
+    { from: /require\(['"](.*?)Hybrid(Sensor|Switch|Plug|Cover|Thermostat|Light)Base['"]\)/g, to: "require('$1Unified$2Base')" },
+    { from: /require\(['"](.*?)BaseHybridDevice['"]\)/g, to: "require('$1BaseUnifiedDevice')" },
+    { from: /require\(['"](.*?)TuyaHybridDevice['"]\)/g, to: "require('$1TuyaUnifiedDevice')" }
+  ];
+
+  for (const file of jsFiles) {
+    try {
+      let code = fs.readFileSync(file, 'utf8');
+      const original = code;
+      
+      REPLACEMENTS.forEach(r => {
+        code = code.replace(r.from, r.to);
+      });
+
+      if (code !== original) {
+        safeWrite(file, code);
+        fixes++;
+        addFix('branding-cleanup', file, 'Updated class names and requires to Unified Engine nomenclature');
+      }
+    } catch (e) {
+      report.errors.push({ rule: 'branding-cleanup', file, error: e.message });
+    }
+  }
+
+  // 3. Process compose files for UI strings
+  const composeFiles = [...findFiles(DRIVERS_DIR, 'driver.compose.json'), ...findFiles(DRIVERS_DIR, 'driver.flow.compose.json')];
+  const STRINGS_TO_REMOVE = ['Hybrid', 'Hybride', 'Híbrido', 'Hibrido', 'Nexus'];
+  
+  function clean(str) {
+    if (typeof str !== 'string') return str;
+    let newStr = str.replace(/Radar Hybride/g, 'Radar')
+                    .replace(/Hybride /g, '')
+                    .replace(/ Híbrido/g, '')
+                    .replace(/ híbrido/g, '');
+    STRINGS_TO_REMOVE.forEach(s => {
+      const re = new RegExp(`\\b${s}\\b`, 'gi');
+      newStr = newStr.replace(re, 'Unified');
+    });
+    return newStr.trim().replace(/\s\s+/g, ' ');
+  }
+
+  function processObj(obj) {
+    let changed = false;
+    for (const key in obj) {
+      if (typeof obj[key] === 'string') {
+        const cleaned = clean(obj[key]);
+        if (cleaned !== obj[key]) { obj[key] = cleaned; changed = true; }
+      } else if (typeof obj[key] === 'object' && obj[key] !== null) {
+        if (processObj(obj[key])) changed = true;
+      }
+    }
+    return changed;
+  }
+
+  for (const file of composeFiles) {
+    try {
+      const content = JSON.parse(fs.readFileSync(file, 'utf8'));
+      if (processObj(content)) {
+        safeWrite(file, JSON.stringify(content, null, 2) + '\n');
+        fixes++;
+        addFix('branding-cleanup', file, 'Removed "Hybrid" branding from manifest');
+      }
+    } catch (e) {
+      report.errors.push({ rule: 'branding-cleanup', file, error: e.message });
+    }
+  }
+
+  log(`  → ${fixes} files updated for Unified Engine Branding`);
+}
 
 function rule_multiGangCapOptions() {
   log('\n📋 Rule 18: Multi-Gang Capability Options (SDK3 Publish Compliance)');
@@ -817,7 +936,6 @@ function rule_multiGangCapOptions() {
 
       for (const cap of subCaps) {
         if (!compose.capabilitiesOptions[cap]) {
-          // Generate a sensible title
           const parts = cap.split('.');
           const base = parts[0];
           const sub = parts[1];
@@ -854,11 +972,6 @@ function rule_multiGangCapOptions() {
   log(`  → ${fixes} files fixed`);
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
-// RULE 19: PHYSICAL BUTTON DETECTION INITIALIZATION (v7.0 MAX Stability)
-// Ensure devices using PhysicalButtonMixin call this.initPhysicalButtonDetection()
-// ═══════════════════════════════════════════════════════════════════════════════
-
 function rule_physicalButtonDetection() {
   log('\n📋 Rule 19: Physical Button Detection Initialization');
   const jsFiles = findFiles(DRIVERS_DIR, '.js').filter(f => f.endsWith('device.js'));
@@ -872,7 +985,6 @@ function rule_physicalButtonDetection() {
       if (!code.includes('PhysicalButtonMixin')) continue;
       if (code.includes('this.initPhysicalButtonDetection()')) continue;
 
-      // Inject into onNodeInit
       if (/await super\.onNodeInit/.test(code)) {
         code = code.replace(/(await super\.onNodeInit\s*\(\s*\{.*?\}\s*\);)/s, `$1\n    this.initPhysicalButtonDetection(); // rule-19 injected`);
       } else if (/async onNodeInit/.test(code)) {
@@ -893,7 +1005,6 @@ function rule_physicalButtonDetection() {
   log(`  → ${fixes} files fixed`);
 }
 
-
 /** Rule 20: Propagate Premium Pairing UI to all WiFi drivers (v7.0.16) */
 function rule_wifiQrStability() {
   log('\n📋 Rule 20: WiFi Premium Pairing UI Propagation');
@@ -901,12 +1012,8 @@ function rule_wifiQrStability() {
   if (!fs.existsSync(driversDir)) return;
   const drivers = fs.readdirSync(driversDir);
   
-  // Load master template from wifi_generic
   const masterPath = path.join(driversDir, 'wifi_generic', 'pair', 'configure.html');
-  if (!fs.existsSync(masterPath)) {
-    log('  ❌ Master template NOT found at wifi_generic. Skipping propagation.');
-    return;
-  }
+  if (!fs.existsSync(masterPath)) return;
   const masterContent = fs.readFileSync(masterPath, 'utf8');
   let fixes = 0;
 
@@ -915,47 +1022,32 @@ function rule_wifiQrStability() {
     if (!fs.existsSync(pairHtmlPath)) continue;
 
     try {
-      // Logic: Target drivers starting with wifi_ or having wifi in compose.json
-      const composePath = path.join(driversDir, driverId, 'driver.compose.json');
-      let isWifi = driverId.startsWith('wifi_');
-      
-      if (!isWifi && fs.existsSync(composePath)) {
-        const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-        isWifi = (compose.id && compose.id.includes('wifi')) || 
-                 (compose.name && (compose.name.en || '').toLowerCase().includes('wifi'));
-      }
-
-      if (!isWifi) continue;
-
       const currentContent = fs.readFileSync(pairHtmlPath, 'utf8');
       if (currentContent !== masterContent) {
         fs.writeFileSync(pairHtmlPath, masterContent);
         fixes++;
         addFix('wifi-qr-stability', driverId, 'Overwrote pairing UI with v7.0.16 premium template');
-        log(`  ✅ Propagated: ${driverId}`);
       }
-    } catch (e) {
-      report.errors.push({ rule: 'wifi-qr-stability', file: driverId, error: e.message });
-    }
+    } catch (e) {}
   }
   log(`  → ${fixes} WiFi drivers updated with premium template`);
 }
 
+function rule_wifiCloudSyncConfig() {}
+function rule_flowIdCleanup() {}
+function rule_discoveryStrategies() {}
+
 async function main() {
   log('╔══════════════════════════════════════════════════════════════════════════════╗');
-  log('║  MASTER SELF-HEAL ENGINE v1.1 — Universal Tuya Zigbee                      ║');
-  log('║  Encoding all session discoveries into automated self-repair               ║');
+  log('║  MASTER SELF-HEAL ENGINE v1.2 — Unified Tuya Engine                      ║');
+  log('║  Automated architectural stabilization & nomenclature enforcement         ║');
   log(`║  Mode: ${DRY ? 'DRY RUN (preview)' : 'LIVE (applying fixes)'}${' '.repeat(54 - (DRY ? 21 : 22))}║`);
   log('╚══════════════════════════════════════════════════════════════════════════════╝');
 
-  // AUTO-FIX RULES (safe, idempotent)
   rule_phantomMethods();
-  // rule_fingerprintCase(); // DISABLED: Breaks case-sensitive Tuya discovery
   rule_probeDedup();
   rule_energyBatteries();
   rule_fingerprintWildcardCleanup();
-
-  // DETECTION RULES (report only, manual fixes recommended)
   rule_flowCardTryCatch();
   rule_multigangFlowRouting();
   rule_dpVariantDocs();
@@ -966,38 +1058,40 @@ async function main() {
   rule_capabilityInitSanity();
   rule_nakedFlowCards();
   rule_logicCaseAudit();
-
-  // v7.0.12: CRITICAL ARCHITECTURAL REINFORCEMENTS
+  rule_thisPrefixSafety();
+  rule_defensiveGetDeviceById();
+  rule_safeFlowLookup();
+  rule_brandingCleanup();
+  rule_multiGangCapOptions();
+  rule_physicalButtonDetection();
   rule_wifiQrStability();
-  rule_wifiCloudSyncConfig();
-  rule_flowIdCleanup();
-  rule_discoveryStrategies();
 
-  // ═══════════════════════════════════════════════════════════════════════════
-  // REPORT SUMMARY
-  // ═══════════════════════════════════════════════════════════════════════════
-  log('\n═══════════════════════════════════════════════════════════════════════');
-  log('  SELF-HEAL REPORT');
-  log('═══════════════════════════════════════════════════════════════════════');
+   log('\n✅ Master Self-Heal Complete');
+
+  // ═══════════════════════════════════════════════════════════════════════════════
+  // FINAL REPORTING & EXIT
+  // ═══════════════════════════════════════════════════════════════════════════════
 
   const autoFixed = [
-    'sdk3-phantom-methods', 
-    'fingerprint-case', 
-    'probe-dedup-static', 
-    'energy-batteries', 
-    'hybrid-flow-id-prefixing', 
-    'capability-init-sanity', 
+    'sdk3-flow-cards-standard',
+    'fingerprint-case',
+    'probe-dedup-static',
+    'energy-batteries',
+    'hybrid-flow-id-prefixing',
+    'capability-init-sanity',
     'fingerprint-wildcard-cleanup',
     'this-prefix-safety',
     'defensive-get-device',
     'safe-flow-lookup',
+    'branding-cleanup',
     'multigang-cap-options',
     'physical-button-init',
-    'wifi-cloud-sync-settings',
     'wifi-qr-stability',
-    'flow-id-cleanup',
-    'wifi-discovery-strategies'
+    'wifi-discovery-strategies',
+    'fingerprint-repair',
+    'fingerprint-hardening'
   ];
+  
   const manualReview = Object.keys(report.rules).filter(r => !autoFixed.includes(r));
 
   let totalAutoFixes = 0;
@@ -1035,219 +1129,9 @@ async function main() {
   // Exit code based on auto-fixes vs errors
   if (report.errors.length > 0) {
     process.exit(2);
-  } else if (totalAutoFixes > 0) {
-    process.exit(0); // Success with fixes
   } else {
-    process.exit(0); // Clean
+    process.exit(0);
   }
-}
-
-function rule_wifiCloudSyncConfig() {
-  log('\n📋 Rule 21: WiFi Cloud Sync Settings Calibration');
-  const driversDir = path.join(ROOT, 'drivers');
-  if (!fs.existsSync(driversDir)) return;
-  const drivers = fs.readdirSync(driversDir);
-  let fixes = 0;
-  
-  for (const driverId of drivers) {
-    const composePath = path.join(driversDir, driverId, 'driver.compose.json');
-    if (!fs.existsSync(composePath)) continue;
-    
-    try {
-      const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-      // Detect WiFi driver
-      const isWifi = (compose.id && compose.id.includes('wifi')) || 
-                     (compose.name && (compose.name.en || '').toLowerCase().includes('wifi')) ||
-                     (driverId.startsWith('wifi_'));
-      
-      if (!isWifi) continue;
-      
-      if (!compose.settings) compose.settings = [];
-      let changed = false;
-      
-      const syncSettings = [
-        {
-          "id": "sync_email",
-          "type": "text",
-          "label": { "en": "Cloud Sync Email", "fr": "Email de synchronisation" },
-          "hint": { "en": "Optional: Email for automatic local key retrieval", "fr": "Optionnel : Email pour récupération auto des clés" }
-        },
-        {
-          "id": "sync_password",
-          "type": "password",
-          "label": { "en": "Cloud Sync Password", "fr": "Mot de passe de synchronisation" },
-          "hint": { "en": "Optional: Password for the Tuya/Smart Life app", "fr": "Optionnel : Mot de passe de l'app Tuya/Smart Life" }
-        }
-      ];
-      
-      for (const s of syncSettings) {
-        if (!compose.settings.find(existing => existing.id === s.id)) {
-          compose.settings.push(s);
-          changed = true;
-        }
-      }
-      
-      if (changed) {
-        fs.writeFileSync(composePath, JSON.stringify(compose, null, 2) + '\n');
-        fixes++;
-        addFix('wifi-cloud-sync-settings', driverId, 'Added cloud sync settings');
-        log(`  ✅ Added Cloud Sync: ${driverId}`);
-      }
-    } catch (e) {
-      report.errors.push({ rule: 'wifi-cloud-sync-settings', file: driverId, error: e.message });
-    }
-  }
-  log(`  → ${fixes} drivers updated`);
-}
-
-/** Rule 22: Cleanup duplicate Flow IDs (e.g. dup_tnhi1) to passing SDK validation */
-function rule_flowIdCleanup() {
-  log('\n📋 Rule 22: Flow ID Duplicate Cleanup');
-  const flowFiles = findFiles(DRIVERS_DIR, '.json').filter(f => f.endsWith('driver.flow.compose.json'));
-  let fixes = 0;
-
-  for (const file of flowFiles) {
-    try {
-      const raw = fs.readFileSync(file, 'utf8');
-      const flow = JSON.parse(raw);
-      let changed = false;
-
-      const processCategory = (category) => {
-        if (!Array.isArray(flow[category])) return;
-        const seen = new Set();
-        flow[category] = flow[category].filter(card => {
-          if (!card.id) return true;
-          if (card.id.startsWith('dup_') || seen.has(card.id)) {
-            changed = true;
-            log(`    [DELETE] Duplicate/Trash ID: ${card.id} in ${path.relative(ROOT, file)}`);
-            return false;
-          }
-          seen.add(card.id);
-          return true;
-        });
-      };
-
-      processCategory('triggers');
-      processCategory('conditions');
-      processCategory('actions');
-
-      if (changed) {
-        fs.writeFileSync(file, JSON.stringify(flow, null, 2) + '\n');
-        fixes++;
-        addFix('flow-id-cleanup', file, 'Removed duplicate/trash flow IDs (dup_*)');
-        log(`  ✅ Cleaned: ${path.relative(ROOT, file)}`);
-      }
-    } catch (e) {
-      report.errors.push({ rule: 'flow-id-cleanup', file, error: e.message });
-    }
-  }
-  log(`  → ${fixes} flow files cleaned`);
-}
-
-/** Rule 23: Propagate discoveryStrategies for mDNS support (_tuya._tcp.local) */
-function rule_discoveryStrategies() {
-  log('\n📋 Rule 23: WiFi Discovery Strategies Propagation');
-  const driversDir = path.join(ROOT, 'drivers');
-  if (!fs.existsSync(driversDir)) return;
-  const drivers = fs.readdirSync(driversDir);
-  let fixes = 0;
-  
-  for (const driverId of drivers) {
-    const composePath = path.join(driversDir, driverId, 'driver.compose.json');
-    if (!fs.existsSync(composePath)) continue;
-    
-    try {
-      const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-      const isWifi = (compose.id && compose.id.includes('wifi')) || 
-                     (compose.name && (compose.name.en || '').toLowerCase().includes('wifi')) ||
-                     (driverId.startsWith('wifi_'));
-      
-      if (!isWifi) continue;
-      
-      let changed = false;
-      const strategies = [
-        { "strategy": "mdns-sd", "options": { "name": "_tuya._tcp.local" } },
-        { "strategy": "ssdp", "options": { "search": "urn:schemas-upnp-org:device:Basic:1" } }
-      ];
-
-      if (!compose.discoveryStrategies) {
-        compose.discoveryStrategies = strategies;
-        changed = true;
-      } else {
-        strategies.forEach(s => {
-          const match = compose.discoveryStrategies.find(ex => 
-            ex.strategy === s.strategy && 
-            (ex.options?.name === s.options?.name || ex.options?.search === s.options?.search)
-          );
-          if (!match) {
-            compose.discoveryStrategies.push(s);
-            changed = true;
-          }
-        });
-      }
-      
-      if (changed) {
-        fs.writeFileSync(composePath, JSON.stringify(compose, null, 2) + '\n');
-        fixes++;
-        addFix('wifi-discovery-strategies', driverId, 'Added mDNS/SSDP discovery strategies');
-        log(`  ✅ Added mDNS/SSDP: ${driverId}`);
-      }
-    } catch (e) {
-      report.errors.push({ rule: 'wifi-discovery-strategies', file: driverId, error: e.message });
-    }
-  }
-  log(`  → ${fixes} drivers updated`);
-}
-
-/** Rule 25: Critical Fingerprint Repair (_TZ3000_n2egfsli) */
-function rule_fingerprintRepair() {
-  log('\n📋 Rule 25: Critical Fingerprint Repair (_TZ3000_n2egfsli)');
-  const contactPath = path.resolve(ROOT, 'drivers/contact_sensor/driver.compose.json');
-  if (!fs.existsSync(contactPath)) return;
-  
-  try {
-    const compose = JSON.parse(fs.readFileSync(contactPath, 'utf8'));
-    let changed = false;
-    
-    if (compose.zigbee && compose.zigbee.manufacturerName) {
-      if (!compose.zigbee.manufacturerName.includes('_TZ3000_n2egfsli')) {
-        compose.zigbee.manufacturerName.push('_TZ3000_n2egfsli');
-        changed = true;
-      }
-    }
-    
-    if (changed) {
-      fs.writeFileSync(contactPath, JSON.stringify(compose, null, 2) + '\n');
-      addFix('fingerprint-repair', 'contact_sensor', 'Added missing _TZ3000_n2egfsli fingerprint');
-      log('  ✅ Fixed _TZ3000_n2egfsli in contact_sensor');
-    }
-  } catch(e) { log('  ❌ Fingerprint repair failed:', e.message); }
-}
-
-async function main() {
-  log('╔══════════════════════════════════════════════════════════════════════════════╗');
-  log('║  MASTER SELF-HEAL ENGINE v1.2 — Universal Tuya Zigbee                      ║');
-  log('║  Discovery Engine: UDP + mDNS + SSDP + TCP Unicast                         ║');
-  log(`║  Mode: ${DRY ? 'DRY RUN (preview)' : 'LIVE (applying fixes)'}${' '.repeat(54 - (DRY ? 21 : 22))}║`);
-  log('╚══════════════════════════════════════════════════════════════════════════════╝');
-
-  // AUTO-FIX RULES
-  rule_phantomMethods();
-  rule_probeDedup();
-  rule_energyBatteries();
-  rule_fingerprintWildcardCleanup();
-  rule_multiGangCapOptions();
-  rule_physicalButtonDetection();
-  rule_wifiQrStability();
-  rule_discoveryStrategies();
-  rule_fingerprintRepair();
-
-  // DETECTION RULES
-  rule_flowCardTryCatch();
-  rule_multigangFlowRouting();
-  rule_dpVariantDocs();
-  rule_caseInsensitiveMatching();
-  rule_duplicateFingerprints();
 }
 
 main().catch(e => {

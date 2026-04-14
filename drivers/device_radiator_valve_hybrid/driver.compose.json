@@ -1,9 +1,9 @@
 {
   "name": {
-    "en": "Device Radiator Valve Hybrid",
-    "nl": "Hybride Radiatorkraan",
-    "fr": "Vanne de Radiateur Hybride",
-    "de": "Hybrid-Radiatorventil",
+    "en": "Device Radiator Valve",
+    "nl": "Radiatorkraan",
+    "fr": "Vanne de Radiateur",
+    "de": "-Radiatorventil",
     "es": "Válvula de Radiador Híbrida"
   },
   "class": "thermostat",
@@ -26,12 +26,9 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_tze200_p3dbf6qs",
-      "_tze200_rxq4iti9",
-      "_tze284_xnbkhhdr"
-    ],
+    "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "learnmode": {

@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Remote Button Wireless Plug Hybrid",
-    "nl": "Draadloze Hybrid Stekker met Afstandsbediening",
-    "fr": "Prise Hybride Sans Fil avec Bouton Télécommande",
-    "de": "Drahtloser Hybrid-Stecker mit Fernbedienung",
-    "es": "Enchufe Híbrido Inalámbrico con Botón Remoto"
+    "en": "Remote Button Wireless Plug",
+    "nl": "Draadloze Stekker met Afstandsbediening",
+    "fr": "Prise Sans Fil avec Bouton Télécommande",
+    "de": "Drahtloser -Stecker mit Fernbedienung",
+    "es": "Enchufe Inalámbrico con Botón Remoto"
   },
   "class": "socket",
   "capabilities": [
@@ -32,6 +32,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0111",
       "ts0111"
     ],
     "learnmode": {
@@ -430,12 +431,12 @@
   "capabilitiesOptions": {
     "button.1": {
       "title": {
-        "en": " 1"
+        "en": "1"
       }
     },
     "button.2": {
       "title": {
-        "en": " 2"
+        "en": "2"
       }
     }
   },

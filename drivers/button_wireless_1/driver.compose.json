@@ -53,13 +53,11 @@
   "zigbee": {
     "manufacturerName": [
       "ewelink",
-      "_tyzb01_1xktopx6",
-      "_tyzb01_4qw4rl1u",
       "_tyzb02_keyjqthh",
       "_tz3000_0cxtpylt",
       "_tz3000_22ugzkme",
       "_tz3000_5bpeda8u",
-      "_tz3000_6km7djcm",
+      "_tz3000_8rppvwda",
       "_tz3000_adndolvx",
       "_tz3000_arfwfgre",
       "_tz3000_axpdxqgu",
@@ -69,30 +67,48 @@
       "_tz3000_ebar5p3z",
       "_tz3000_f97vq5mn",
       "_tz3000_fkp5zyho",
+      "_tz3000_itb0omhv",
+      "_tz3000_ja5osu5g",
       "_tz3000_ke_x0oo3",
       "_tz3000_kxaow5ki",
-      "_tz3000_mrpevh8p",
       "_tz3000_nxdziqzc",
       "_tz3000_peszejy7",
-      "_tz3000_ssp0maqm",
+      "_tz3000_pzui3skt",
+      "_tz3000_q68478x7",
+      "_tz3000_tk3s5tyg",
       "_tz3000_uri7ber7",
       "_tz3000_vn88ezar",
       "_tz3000_xkwalgne",
-      "_tz3210_3ulg9kpo",
-      "_tz3210_amleyeej",
-      "_tz3290_rlkmy85q4pzoxobl",
-      "_tz3000_fa9mlvja",
       "_tz3000_yj6k7vfo",
-      "_tz3000_qgwcxxws",
-      "_tz3000_tk3s5tyg",
-      "_tz3000_pzui3skt",
-      "_tz3000_itb0omhv",
-      "_tz3000_8rppvwda",
-      "_tz3000_4upl1fcj",
-      "_tz3000_q68478x7"
+      "_tz3210_amleyeej"
     ],
     "productId": [
+      "3450-L",
       "3450-l",
+      "E1524/E1810",
+      "E1743",
+      "E1744",
+      "E1812",
+      "E2001/E2002",
+      "E2123",
+      "LUMI.REMOTE.B1ACN01",
+      "LUMI.SENSOR_SWITCH",
+      "LUMI.SENSOR_SWITCH.AQ2",
+      "LUMI.SENSOR_SWITCH.AQ3",
+      "ROM001",
+      "RWL020",
+      "RWL021",
+      "RWL022",
+      "TS0041",
+      "TS004F",
+      "WXKG01LM",
+      "WXKG02LM",
+      "WXKG03LM",
+      "WXKG06LM",
+      "WXKG07LM",
+      "WXKG11LM",
+      "WXKG12LM",
+      "ZG-101ZL",
       "e1524/e1810",
       "e1743",
       "e1744",
@@ -107,6 +123,8 @@
       "rwl020",
       "rwl021",
       "rwl022",
+      "ts0041",
+      "ts004f",
       "wxkg01lm",
       "wxkg02lm",
       "wxkg03lm",
@@ -128,14 +146,14 @@
       "image": "/drivers/button_wireless_1/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
-        "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
-        "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
-        "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
-        "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
-        "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
-        "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement",
-        "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã  ce que la LED clignote rapidement"
+        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
+        "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
+        "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
+        "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
+        "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
+        "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
+        "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
+        "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement"
       }
     }
   },
@@ -309,7 +327,7 @@
       "step": 1,
       "hint": {
         "en": "How often to request battery status updates",
-        "fr": "FrÃ©quence de demande des mises Ã  jour d'Ã©tat de batterie"
+        "fr": "FrÃ©quence de demande des mises Ã jour d'Ã©tat de batterie"
       }
     },
     {
@@ -506,7 +524,7 @@
       "max": 1000,
       "hint": {
         "en": "Software emulation for single-action buttons",
-        "fr": "Ã‰mulation logicielle pour boutons Ã  action unique"
+        "fr": "Ã‰mulation logicielle pour boutons Ã action unique"
       }
     },
     {

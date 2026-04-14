@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Dimmer Air Purifier Hybrid",
-    "nl": "Dimmer Air Purifier Hybrid",
-    "fr": "Dimmer Air Purifier Hybrid"
+    "en": "Dimmer Air Purifier",
+    "nl": "Dimmer Air Purifier",
+    "fr": "Dimmer Air Purifier"
   },
   "class": "light",
   "capabilities": [
@@ -26,6 +26,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "learnmode": {

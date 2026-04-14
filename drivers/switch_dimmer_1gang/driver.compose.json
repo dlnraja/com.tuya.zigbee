@@ -36,10 +36,13 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_tze200_3p5ydos3",
       "_tze204_3z6hca0q",
+      "_tze204_n9ctkb6j",
       "_tze284_4ar89tr1"
     ],
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "endpoints": {
@@ -52,8 +55,8 @@
     },
     "learnmode": {
       "instruction": {
-        "en": "Toggle the switch to start pairing.\n\nIf pairing does not automatically start, try resetting the device by holding the button for 10 seconds until the LED flashes rapidly.",
-        "nl": "Schakel de schakelaar om te beginnen met koppelen.\n\nAls het koppelen niet automatisch start, probeer het apparaat te resetten door de knop 10 seconden ingedrukt te houden totdat de LED snel knippert."
+        "en": "Toggle the switch to start pairing. If pairing does not automatically start, try resetting the device by holding the button for 10 seconds until the LED flashes rapidly.",
+        "nl": "Schakel de schakelaar om te beginnen met koppelen. Als het koppelen niet automatisch start, probeer het apparaat te resetten door de knop 10 seconden ingedrukt te houden totdat de LED snel knippert."
       }
     }
   },

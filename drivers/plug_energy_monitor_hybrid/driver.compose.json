@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Plug Energy Monitor Hybrid",
-    "nl": "Hybride energie-monitor voor stekker",
-    "fr": "Moniteur d'énergie hybride pour prise",
+    "en": "Plug Energy Monitor",
+    "nl": "energie-monitor voor stekker",
+    "fr": "Moniteur d'énergie pour prise",
     "de": "Hybrider Energie-Monitor für Steckdose",
-    "es": "Monitor de energía híbrido para enchufe"
+    "es": "Monitor de energía para enchufe"
   },
   "class": "sensor",
   "capabilities": [
@@ -49,10 +49,15 @@
       "_tz3000_ew31dmgx"
     ],
     "productId": [
-      "ts0601",
+      "S26R2ZB",
+      "S31ZB",
+      "TS011F",
+      "TS0601",
+      "ZBMINIL2",
       "s26r2zb",
       "s31zb",
       "ts011f",
+      "ts0601",
       "zbminil2"
     ],
     "endpoints": {

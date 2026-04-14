@@ -33,12 +33,14 @@ class Dimmer1gangDriver extends ZigBeeDriver {
   
   
   
+  
+  
   }
 
   _registerFlowCards() {
     // CONDITION: Is on
     try {
-      this.homey.flow.getConditionCard('dimmer_wall_1gang_dimmer_1gang_is_on')
+      (() => { try { return this.homey.flow.getConditionCard('dimmer_wall_1gang_dimmer_1gang_is_on'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
@@ -48,7 +50,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      this.homey.flow.getConditionCard('dimmer_wall_1gang_dimmer_1gang_turn_on')
+      (() => { try { return this.homey.flow.getConditionCard('dimmer_wall_1gang_dimmer_1gang_turn_on'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -60,7 +62,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      this.homey.flow.getConditionCard('dimmer_wall_1gang_dimmer_1gang_turn_off')
+      (() => { try { return this.homey.flow.getConditionCard('dimmer_wall_1gang_dimmer_1gang_turn_off'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -72,7 +74,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      this.homey.flow.getConditionCard('dimmer_wall_1gang_dimmer_1gang_toggle')
+      (() => { try { return this.homey.flow.getConditionCard('dimmer_wall_1gang_dimmer_1gang_toggle'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
@@ -85,7 +87,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
 
     // ACTION: Set brightness
     try {
-      this.homey.flow.getActionCard('dimmer_wall_1gang_dimmer_1gang_set_dim')
+      (() => { try { return this.homey.flow.getActionCard('dimmer_wall_1gang_dimmer_1gang_set_dim'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('dim', args.brightness);
@@ -96,7 +98,7 @@ class Dimmer1gangDriver extends ZigBeeDriver {
 
     // ACTION: Set brightness with transition
     try {
-      this.homey.flow.getActionCard('dimmer_wall_1gang_dimmer_1gang_set_dim_with_transition')
+      (() => { try { return this.homey.flow.getActionCard('dimmer_wall_1gang_dimmer_1gang_set_dim_with_transition'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('dim', args.brightness, { transition: args.transition });

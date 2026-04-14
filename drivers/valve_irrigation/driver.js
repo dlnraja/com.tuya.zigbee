@@ -29,6 +29,8 @@ class ValveIrrigationDriver extends ZigBeeDriver {
   
   
   
+  
+  
   }catch(e){this.log('[Flow]',id,e.message);}};
     reg('valve_irrigation_turn_on',async({device})=>{await device.triggerCapabilityListener('onoff',true);return true;});
     reg('valve_irrigation_turn_off',async({device})=>{await device.triggerCapabilityListener('onoff',false);return true;});

@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Smart Knob Switch Hybrid",
-    "nl": "Slimme Knop Schakelaar Hybride",
-    "fr": "Interrupteur à bouton intelligent hybride",
-    "de": "Smart Knopf Schalter Hybrid",
-    "es": "Interruptor de Perilla Inteligente Híbrido"
+    "en": "Smart Knob Switch",
+    "nl": "Slimme Knop Schakelaar",
+    "fr": "Interrupteur à bouton intelligent",
+    "de": "Smart Knopf Schalter",
+    "es": "Interruptor de Perilla Inteligente"
   },
   "class": "sensor",
   "capabilities": [
@@ -37,6 +37,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS004F",
       "ts004f"
     ],
     "endpoints": {

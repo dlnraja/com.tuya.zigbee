@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Remote Button Wireless Valve Hybrid",
-    "nl": "Draadloze hybride klep met afstandsbediening",
-    "fr": "Vanne hybride sans fil à bouton distant",
+    "en": "Remote Button Wireless Valve",
+    "nl": "Draadloze klep met afstandsbediening",
+    "fr": "Vanne sans fil à bouton distant",
     "de": "Drahtloser Hybridventil mit Fernbedienung",
     "es": "Válvula híbrida inalámbrica con botón remoto"
   },
@@ -44,7 +44,7 @@
     },
     "dim.valve": {
       "title": {
-        "en": " valve"
+        "en": "valve"
       }
     }
   },
@@ -60,6 +60,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0001",
       "ts0001"
     ],
     "endpoints": {

@@ -148,7 +148,7 @@ function gatherAll(){
 
   // 19. Recent Discoveries (Session Insights)
   ctx.discoveries = `
-  1. Multi-Gang Routing (Homey v3): Base classes like HybridSwitchBase MANUALLY route endpoints (this.zclNode.endpoints[gang]). The missing { endpoint: X } mapped capability initialization is NOT a bug and won't crash Homey because the underlying ZCL commands are explicitly addressed.
+  1. Multi-Gang Routing (Homey v3): Base classes like UnifiedSwitchBase MANUALLY route endpoints (this.zclNode.endpoints[gang]). The missing { endpoint: X } mapped capability initialization is NOT a bug and won't crash Homey because the underlying ZCL commands are explicitly addressed.
   2. Energy Calibration: Users have direct control via UI using 'power_scale', 'voltage_scale', 'current_scale', and 'meter_power_scale' (kWh) inside plug_energy_monitor and plug_smart. Always advise them to fine-tune these multipliers if values are /10 or /100 off, since firmwares drastically differ across variants.
   3. SDK Migration: getDeviceConditionCard(), getDeviceTriggerCard() and getDeviceActionCard() are DEPRECATED (non-existent) in SDK v3. They MUST be replaced entirely by getConditionCard(), getTriggerCard() and getActionCard() to fix 'not a function' crashes.
   `;

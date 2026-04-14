@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Light Bulb Tunable White Hybrid",
-    "nl": "Light Bulb Tunable White Hybrid",
-    "fr": "Light Bulb Tunable White Hybrid"
+    "en": "Light Bulb Tunable White",
+    "nl": "Light Bulb Tunable White",
+    "fr": "Light Bulb Tunable White"
   },
   "class": "light",
   "capabilities": [
@@ -28,6 +28,7 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0502B",
       "ts0502b"
     ],
     "endpoints": {

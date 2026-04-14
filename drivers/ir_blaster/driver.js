@@ -46,6 +46,8 @@ class IrBlasterDriver extends ZigBeeDriver {
   
   
   
+  
+  
   } catch (err) {
       this.error('Failed to register actions (non-fatal):', err.message);
     }
@@ -261,7 +263,7 @@ class IrBlasterDriver extends ZigBeeDriver {
     for (const btn of tvButtons) {
       try {
         const card =
-      this.homey.flow.getActionCard(`ir_blaster_${btn}`) ;
+      this._getFlowCard(`ir_blaster_${btn}`, 'action') ;
         card.registerRunListener(async (args) => {
           const d = args.device;
           if (!d || !d._learnedCodes) return false;

@@ -1,7 +1,7 @@
 'use strict';
-const HybridThermostatBase = require('../../lib/devices/HybridThermostatBase');
+const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
 
-class HVACAirConditionerDevice extends HybridThermostatBase {
+class HVACAirConditionerDevice extends UnifiedThermostatBase {
   get mainsPowered() { return true; }
   get thermostatCapabilities() { return ['onoff', 'target_temperature', 'measure_temperature', 'thermostat_mode']; }
   async onNodeInit({ zclNode }) {

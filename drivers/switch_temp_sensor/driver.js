@@ -15,6 +15,8 @@ class SwitchTempSensorDriver extends Homey.Driver {
   
   
   
+  
+  
   }catch(e){this.log('[Flow]',i,e.message);}};
     r('switch_temp_sensor_turn_on',async({device})=>{await device.triggerCapabilityListener('onoff',true);return true;});
     r('switch_temp_sensor_turn_off',async({device})=>{await device.triggerCapabilityListener('onoff',false);return true;});

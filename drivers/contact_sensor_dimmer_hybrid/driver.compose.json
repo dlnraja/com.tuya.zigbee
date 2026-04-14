@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Contact Sensor Dimmer Hybrid",
-    "nl": "Contactsensor dimmer hybride",
-    "fr": "Capteur de contact dimmer hybride",
-    "de": "Kontakt-Sensor Dimmer Hybrid",
-    "es": "Sensor de contacto regulador híbrido"
+    "en": "Contact Sensor Dimmer",
+    "nl": "Contactsensor dimmer",
+    "fr": "Capteur de contact dimmer",
+    "de": "Kontakt-Sensor Dimmer",
+    "es": "Sensor de contacto regulador"
   },
   "class": "sensor",
   "capabilities": [
@@ -29,9 +29,7 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "_tz3210_jowhpxop"
-    ],
+    "manufacturerName": [],
     "productId": [],
     "learnmode": {
       "image": "/drivers/contact_sensor/assets/learnmode.svg",

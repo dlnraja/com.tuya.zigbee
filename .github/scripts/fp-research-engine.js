@@ -261,7 +261,7 @@ async function researchFP(fp,opts={}){
   let isOnlyGeneric = false;
   if(idx.mIdx.has(fp)){
     const matchingDrivers = idx.mIdx.get(fp);
-    const specificDriver = matchingDrivers.find(d => d !== 'device_generic_tuya_universal_hybrid' && d !== 'universal_fallback' && d !== 'generic_tuya');
+    const specificDriver = matchingDrivers.find(d => d !== 'device_generic_tuya_universal_unified' && d !== 'universal_fallback' && d !== 'generic_tuya');
     if(specificDriver) {
       result.driver=specificDriver;result.driverExists=true;result.sources.push('local');result.confidence=100;return result;
     }

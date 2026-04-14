@@ -34,8 +34,8 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       
-      - name: 📦 Setup Nexus
-        uses: ./.github/actions/setup-nexus
+      - name: 📦 Setup Unified
+        uses: ./.github/actions/setup-unified
       
       - name: "0a. Intelligence Mode Selector (Cloudless-First)"
         id: intelligence_selector

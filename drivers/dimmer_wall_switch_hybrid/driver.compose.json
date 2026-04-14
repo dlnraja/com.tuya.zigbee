@@ -17,6 +17,7 @@
   ],
   "zigbee": {
     "productId": [
+      "TS0601",
       "ts0601"
     ],
     "learnmode": {
@@ -25,11 +26,7 @@
         "en": "Turn the switch on/off 3 times quickly"
       }
     },
-    "manufacturerName": [
-      "_tz3000_7ed9cqgi",
-      "_tz3210_2dfy6tol",
-      "_tz3210_tfxwxklq"
-    ],
+    "manufacturerName": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -721,11 +718,11 @@
     }
   ],
   "name": {
-    "en": "Dimmer Wall Switch Hybrid",
-    "nl": "Hybride dimmer wandschakelaar",
-    "fr": "Interrupteur mural dimmable hybride",
+    "en": "Dimmer Wall Switch",
+    "nl": "dimmer wandschakelaar",
+    "fr": "Interrupteur mural dimmable",
     "de": "Hybrider Dimmer-Wandschalter",
-    "es": "Interruptor de pared híbrido regulable"
+    "es": "Interruptor de pared regulable"
   },
   "platforms": [
     "local"
@@ -748,17 +745,17 @@
     },
     "button.toggle_1": {
       "title": {
-        "en": " 1"
+        "en": "1"
       }
     },
     "button.toggle_2": {
       "title": {
-        "en": " 2"
+        "en": "2"
       }
     },
     "button.identify": {
       "title": {
-        "en": " identify"
+        "en": "identify"
       }
     }
   },

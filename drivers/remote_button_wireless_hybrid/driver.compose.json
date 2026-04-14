@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Remote Button Wireless Hybrid",
-    "nl": "Draadloze hybride afstandsbedieningsknop",
-    "fr": "Bouton de télécommande sans fil hybride",
-    "de": "Drahtlose Hybrid-Fernbedienungstaste",
-    "es": "Botón de control remoto inalámbrico híbrido"
+    "en": "Remote Button Wireless",
+    "nl": "Draadloze afstandsbedieningsknop",
+    "fr": "Bouton de télécommande sans fil",
+    "de": "Drahtlose -Fernbedienungstaste",
+    "es": "Botón de control remoto inalámbrico"
   },
   "class": "sensor",
   "capabilities": [
@@ -68,7 +68,7 @@
     },
     "button.1": {
       "title": {
-        "en": " 1"
+        "en": "1"
       }
     }
   },
@@ -91,29 +91,42 @@
     "manufacturerName": [
       "sonoff",
       "_tz3000_an5rjiwd",
-      "_tz3000_fa9mlvja",
-      "_tz3000_qgwcxxws",
-      "_tz3000_yj6k7vfo",
-      "_tz3000_tk3s5tyg",
-      "_tz3000_tzvbimpq"
+      "_tz3000_tzvbimpq",
+      "_tz3000_yj6k7vfo"
     ],
     "productId": [
-      "ts004f",
-      "ts0041",
-      "ts0043",
-      "ts0044",
-      "ts0046",
+      "SNZB-01",
+      "SNZB-01M",
+      "SNZB-01P",
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0041",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS0046",
+      "TS004F",
+      "TS0111",
       "snzb-01",
-      "snzb-01p",
       "snzb-01m",
-      "ts0042",
-      "ts0111",
-      "ts0002",
+      "snzb-01p",
       "ts0001",
+      "ts0002",
       "ts0003",
       "ts0011",
       "ts0012",
-      "ts0013"
+      "ts0013",
+      "ts0041",
+      "ts0042",
+      "ts0043",
+      "ts0044",
+      "ts0046",
+      "ts004f",
+      "ts0111"
     ],
     "endpoints": {
       "1": {
@@ -130,10 +143,10 @@
     },
     "learnmode": {
       "instruction": {
-        "en": "Press and hold the button for 10 seconds until LED flashes rapidly, then release.\n\nNote: Some models require pressing the button 5 times quickly.",
-        "fr": "Appuyez et maintenez le bouton pendant 10 secondes jusqu'à ce que la LED clignote rapidement.\n\nRemarque: Certains modèles nécessitent d'appuyer 5 fois rapidement.",
-        "nl": "Houd de knop 10 seconden ingedrukt tot de LED snel knippert.\n\nOpmerking: Sommige modellen vereisen 5 keer snel drukken.",
-        "de": "Halten Sie die Taste 10 Sekunden gedrückt, bis die LED schnell blinkt.\n\nHinweis: Einige Modelle erfordern 5 schnelle Tastendrücke."
+        "en": "Press and hold the button for 10 seconds until LED flashes rapidly, then release. Note: Some models require pressing the button 5 times quickly.",
+        "fr": "Appuyez et maintenez le bouton pendant 10 secondes jusqu'à ce que la LED clignote rapidement. Remarque: Certains modèles nécessitent d'appuyer 5 fois rapidement.",
+        "nl": "Houd de knop 10 seconden ingedrukt tot de LED snel knippert. Opmerking: Sommige modellen vereisen 5 keer snel drukken.",
+        "de": "Halten Sie die Taste 10 Sekunden gedrückt, bis die LED schnell blinkt. Hinweis: Einige Modelle erfordern 5 schnelle Tastendrücke."
       }
     }
   },

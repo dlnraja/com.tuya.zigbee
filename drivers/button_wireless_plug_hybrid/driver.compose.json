@@ -1,10 +1,10 @@
 {
   "name": {
-    "en": "Button Wireless Plug Hybrid",
-    "nl": "Draadloze Hybride Stekker met Knop",
-    "fr": "Prise Hybride Sans Fil avec Bouton",
-    "de": "Drahtloser Hybrid-Stecker mit Taste",
-    "es": "Enchufe Híbrido Inalámbrico con Botón"
+    "en": "Button Wireless Plug",
+    "nl": "Draadloze Stekker met Knop",
+    "fr": "Prise Sans Fil avec Bouton",
+    "de": "Drahtloser -Stecker mit Taste",
+    "es": "Enchufe Inalámbrico con Botón"
   },
   "class": "socket",
   "capabilities": [
@@ -32,10 +32,14 @@
   "zigbee": {
     "manufacturerName": [],
     "productId": [
+      "TS0111",
+      "TS011F",
+      "TS0121",
+      "TSO121",
+      "ts0111",
       "ts011f",
       "ts0121",
-      "tso121",
-      "ts0111"
+      "tso121"
     ],
     "learnmode": {
       "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
@@ -433,12 +437,12 @@
   "capabilitiesOptions": {
     "button.1": {
       "title": {
-        "en": " 1"
+        "en": "1"
       }
     },
     "button.2": {
       "title": {
-        "en": " 2"
+        "en": "2"
       }
     }
   },
