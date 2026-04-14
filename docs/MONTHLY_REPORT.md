@@ -1,15 +1,15 @@
 # Monthly Tuya Zigbee Report - 2026-04
 
-*Generated: 2026-04-14T04:01:37.983Z*
+*Generated: 2026-04-14T05:08:50.756Z*
 
 ## 📊 Architectural Health [v7.0.22]
 
 | Metric | Value | Status |
 |--------|-------|--------|
-| Total Drivers | 319 | ✅ |
-| Manufacturer IDs | 68496 | ✅ |
-| Collisions | 1593 | ⚠️ |
-| v7 Architectural Debt | 319 legacy drivers | 🛠️ |
+| Total Drivers | 322 | ✅ |
+| Manufacturer IDs | 60873 | ✅ |
+| Collisions | 2 | ⚠️ |
+| v7 Architectural Debt | 322 legacy drivers | 🛠️ |
 | PR Auto-Merger | Active | 🛡️ |
 | Community Responder | Template Ready | 🤖 |
 
@@ -17,28 +17,8 @@
 
 | ID | Drivers |
 |----|--------|
-| `tuyatec-1g3tawnp|rh3052` | air_purifier, air_purifier_climate_hybrid |
-| `tuyatec-1g3tawnp|ts0201` | air_purifier, air_purifier_climate_hybrid |
-| `tuyatec-1g3tawnp|ts0222` | air_purifier, air_purifier_climate_hybrid |
-| `tuyatec-1g3tawnp|ts0601` | air_purifier, air_purifier_climate_hybrid |
-| `tuyatec-1g3tawnp|ty0201` | air_purifier, air_purifier_climate_hybrid |
-| `tuyatec-1uxx9cci|rh3052` | air_purifier, air_purifier_climate_hybrid |
-| `tuyatec-1uxx9cci|ts0201` | air_purifier, air_purifier_climate_hybrid |
-| `tuyatec-1uxx9cci|ts0222` | air_purifier, air_purifier_climate_hybrid |
-| `tuyatec-1uxx9cci|ts0601` | air_purifier, air_purifier_climate_hybrid |
-| `tuyatec-1uxx9cci|ty0201` | air_purifier, air_purifier_climate_hybrid |
-| `tuyatec-bfq2i2sy|rh3052` | air_purifier, air_purifier_climate_hybrid |
-| `tuyatec-bfq2i2sy|ts0201` | air_purifier, air_purifier_climate_hybrid |
-| `tuyatec-bfq2i2sy|ts0222` | air_purifier, air_purifier_climate_hybrid |
-| `tuyatec-bfq2i2sy|ts0601` | air_purifier, air_purifier_climate_hybrid |
-| `tuyatec-bfq2i2sy|ty0201` | air_purifier, air_purifier_climate_hybrid |
-| `tuyatec-haoiuwzy|rh3052` | air_purifier, air_purifier_climate_hybrid |
-| `tuyatec-haoiuwzy|ts0201` | air_purifier, air_purifier_climate_hybrid |
-| `tuyatec-haoiuwzy|ts0222` | air_purifier, air_purifier_climate_hybrid |
-| `tuyatec-haoiuwzy|ts0601` | air_purifier, air_purifier_climate_hybrid |
-| `tuyatec-haoiuwzy|ty0201` | air_purifier, air_purifier_climate_hybrid |
-
-*...and 1573 more*
+| `_tz3000_tzvbimpq|ts004f` | remote_button_wireless_hybrid, remote_button_wireless_smart_hybrid |
+| `_tz3000_tzvbimpq|ts0041` | remote_button_wireless_hybrid, remote_button_wireless_smart_hybrid |
 
 ## 📋 Action Items
 
