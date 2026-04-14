@@ -2683,3 +2683,59 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 | _TZ3000_ew31dmgx + Arteco | dlnraja/com.tuya.zigbee#213 | feature |
 | _TZ3000_ew31dmgx + CK-BL702-MWS-01 | dlnraja/com.tuya.zigbee#213 | feature |
 | _TZ3000_ew31dmgx + CK-BL702-MWS-01(7016) | dlnraja/com.tuya.zigbee#213 | feature |
+
+
+## Auto-discovered from GitHub (2026-04-14)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZE200_s8gkrkxk + TS0601 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZE200_s8gkrkxk + TS0502B | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZE200_s8gkrkxk + TS0052 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZE200_s8gkrkxk + TS1101 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZE200_s8gkrkxk + TS0203 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZE200_s8gkrkxk + RH3001 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZE200_s8gkrkxk + SNZB-04 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZE200_s8gkrkxk + TS110E | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZE200_s8gkrkxk + TS110F | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZE200_s8gkrkxk + TS130F | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZE200_s8gkrkxk + dimmer | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZE200_s8gkrkxk + light | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZE200_s8gkrkxk + sensor | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZE200_s8gkrkxk + aabybja | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZE200_s8gkrkxk + mcdj3aq | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZE200_s8gkrkxk + owvfni3 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_vd43bbfq + TS0502B | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_vd43bbfq + TS0052 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_vd43bbfq + TS1101 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_vd43bbfq + TS0203 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_vd43bbfq + RH3001 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_vd43bbfq + SNZB-04 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_vd43bbfq + TS110E | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_vd43bbfq + TS110F | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_vd43bbfq + dimmer | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_vd43bbfq + light | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_vd43bbfq + sensor | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_vd43bbfq + aabybja | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_vd43bbfq + mcdj3aq | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_vd43bbfq + owvfni3 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_1dd0d5yi + TS0502B | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_1dd0d5yi + TS0052 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_1dd0d5yi + TS1101 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_1dd0d5yi + TS0203 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_1dd0d5yi + RH3001 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_1dd0d5yi + SNZB-04 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_1dd0d5yi + TS110E | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_1dd0d5yi + TS110F | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_1dd0d5yi + dimmer | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_1dd0d5yi + light | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_1dd0d5yi + sensor | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_1dd0d5yi + aabybja | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_1dd0d5yi + mcdj3aq | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_1dd0d5yi + owvfni3 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_ke7pzj5d + TS0502B | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_ke7pzj5d + TS0052 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_ke7pzj5d + TS1101 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_ke7pzj5d + TS0203 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_ke7pzj5d + RH3001 | dlnraja/com.tuya.zigbee#258 | feature |
+| _TZ3000_ke7pzj5d + SNZB-04 | dlnraja/com.tuya.zigbee#258 | feature |
