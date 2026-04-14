@@ -68,13 +68,28 @@ async function runRecursiveValidation(maxRetries = 5) {
       }
     }
 
-    // Check for other common errors
-    if (filteredOutput.includes('Validation Error')) {
-      log('🚨 A non-image Validation Error occurred.');
+    // Look for Duplicate Flow Card errors
+    const duplicateFlowMatch = filteredOutput.match(/Found multiple Flow card ([^ ]+) with the id "([^"]+)"/);
+    if (duplicateFlowMatch) {
+      const type = duplicateFlowMatch[1]; // triggers/conditions/actions
+      const cardId = duplicateFlowMatch[2];
+      log(`🚨 Detected duplicate Flow card ${type} ID: "${cardId}"`);
+      log(`🔎 Searching for occurrences in drivers...`);
+      
+      // We don't auto-fix this yet because it's risky, but we report it clearly
+      log(`⚠️ Manual intervention required for duplicate ID: ${cardId}`);
     }
 
-    log('⚠️ No auto-fixable image error detected. Filtered Output:');
-    console.log(filteredOutput);
+    // Check for other common errors
+    if (filteredOutput.includes('Validation Error') || filteredOutput.includes('Found multiple Flow card')) {
+      log('🚨 A critical Validation Error occurred.');
+      log('------- Filtered Output Start -------');
+      console.log(filteredOutput);
+      log('------- Filtered Output End -------');
+    } else {
+      log('⚠️ No auto-fixable image error detected. Output:');
+      console.log(filteredOutput);
+    }
     break;
   }
 
