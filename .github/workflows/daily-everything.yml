@@ -25,7 +25,7 @@ defaults:
     shell: bash
 
 env:
-  NODE_VERSION: "22"
+  NODE_VERSION: "20"
 
 jobs:
   everything:
@@ -174,13 +174,19 @@ jobs:
           SCAN_FORKS: "true"
         run: node .github/scripts/triage-upstream-enhanced.js
 
-      # ===== 3ba. UNIVERSAL STABILITY & UNIFIED ORCHESTRATION (v7.2.5) =====
-      - name: "3ba. Unified Orchestrator (Triage + Self-Heal + Audit)"
+      # ===== 3ba. UNIFIED SUPERIOR INTELLIGENCE (v7.4.5) =====
+      - name: "3ba. Superior Orchestrator (Triage + Genesis Self-Heal + Audit)"
         id: unified
         continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-        run: node scripts/maintenance/autonomous-maintenance-orchestrator.js
+        run: |
+           echo "### 🌌 Unified Superior Intelligence" >> $GITHUB_STEP_SUMMARY
+           node scripts/maintenance/autonomous-maintenance-orchestrator.js
+           node scripts/maintenance/superior-audit.js
+           if [ -f SUPERIOR_AUDIT_REPORT.md ]; then
+             cat SUPERIOR_AUDIT_REPORT.md >> $GITHUB_STEP_SUMMARY
+           fi
 
       # ===== 3b. GITHUB: Comprehensive scan (forks+PRs+issues) =====
       - name: "3b. Comprehensive GitHub Scan"
@@ -668,16 +674,14 @@ jobs:
           MAX_GH_CALLS: "100"
         run: node .github/scripts/master-ai-battle.js
 
-      # ===== 10o. AUTONOMOUS MAINTENANCE ORCHESTRATOR (v1.1.0) =====
-      - name: "10o. Autonomous Maintenance Orchestrator"
+      # ===== 10o. AUTONOMOUS EVOLUTION (Logic Cleanup) =====
+      - name: "10o. Autonomous Evolution Cleanup"
         id: autonomous_maint
         if: always()
         continue-on-error: true
-        env:
-          DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: |
-          echo "=== 🧠 Running Autonomous Maintenance Loop ==="
-          node scripts/maintenance/autonomous-maintenance-orchestrator.js
+          echo "=== 🧬 Final Evolution Cleanup ==="
+          node scripts/maintenance/autonomous-evolution-engine.js
 
       # ===== 10p. PIPELINE HEALTH CHECK =====
       - name: "10p. Pipeline Health Check"

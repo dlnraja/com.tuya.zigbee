@@ -35,7 +35,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  NODE_VERSION: "22"
+  NODE_VERSION: "20"
   APP_ID: "com.dlnraja.tuya.zigbee"
 
 jobs:
@@ -81,6 +81,13 @@ jobs:
       - name: 🖼️ FLEET-WIDE IMAGE STABILIZATION
         run: node scripts/maintenance/ensure-500x500-images.js
       
+      - name: 🕵️ SUPERIOR ARCHITECTURAL AUDIT
+        run: |
+          node scripts/maintenance/superior-audit.js
+          if [ -f SUPERIOR_AUDIT_REPORT.md ]; then
+            cat SUPERIOR_AUDIT_REPORT.md >> $GITHUB_STEP_SUMMARY
+          fi
+      
       - name: Homey Validate (Recursive Auto-Fix)
         run: node scripts/maintenance/recursive-validator.js
 
@@ -116,7 +123,7 @@ jobs:
         uses: athombv/github-action-homey-app-version@v1
         with:
           version: ${{ github.event.inputs.bump || 'patch' }}
-          changelog: "v${{ github.event.inputs.bump || 'patch' }}: High-stability release with hardened physical button logic and SDK 3 asset compliance."
+          changelog: "v${{ github.event.inputs.bump || 'patch' }}: 🌌 UNIFIED ENGINE v7.4.5 - Superior Genesis Intelligence & Architectural Hardening."
 
       - name: 🔄 Sync Version
         if: steps.bump.outcome == 'success'
@@ -156,7 +163,7 @@ jobs:
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
         run: |
           echo "Waiting for build processing..."
-          sleep 90
+          sleep 150
           npm install puppeteer --no-save
           node .github/scripts/auto-promote-puppeteer.js
 

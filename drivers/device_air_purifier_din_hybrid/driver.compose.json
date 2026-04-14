@@ -285,5 +285,8 @@
     "triggers": [],
     "conditions": [],
     "actions": []
+  },
+  "energy": {
+    "cumulative": true
   }
 }

@@ -11,6 +11,9 @@
     "da": "DIN-skinne Energimåler"
   },
   "class": "sensor",
+  "energy": {
+    "cumulative": true
+  },
   "capabilities": [
     "measure_power",
     "meter_power",

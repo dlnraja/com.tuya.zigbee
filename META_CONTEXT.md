@@ -1,5 +1,30 @@
 # 🧠 UNIVERSAL TUYA — AI System Context & Map
 
+### 🧠 Superior Intelligence Ecosystem (v7.4.5+)
+
+The app now uses a multi-layered intelligence approach to handle the diversity of Tuya hardware:
+
+### 1. Genesis Orchestrator (`lib/GenesisOrchestrator.js`)
+*   **Purpose**: Centralized "Truth Engine" for device definitions.
+*   **Precedence**: Local Driver Overrides > `driver-mapping-database.json` > Passive Heuristic Fallbacks.
+*   **Rule**: ALL new device logic should be registered in the JSON database rather than hardcoded in drivers.
+
+### 2. Autonomous Intelligence Gate (`lib/AutonomousIntelligenceGate.js`)
+*   **Purpose**: Runtime heuristic learning and self-correction.
+*   **Behavior**: Scores incoming DPs based on value patterns (e.g., 20-30 = Temperature).
+*   **Self-Healing**: Automatically re-maps capabilities if high-confidence heuristics contradict the current database entry.
+
+### 3. Superior Audit Gate (`scripts/maintenance/superior-audit.js`)
+*   **Purpose**: CI/CD structural integrity verification.
+*   **Checks**: Fingerprint conflicts, SDK 3 casing, Energy dashboard compliance.
+*   **Requirement**: Must pass with 0 conflicts for any production release.
+
+## 🛠️ Zero-Defect Maintenance Rules
+1.  **Lower-Case Manufacturers**: All fingerprints in `driver.compose.json` MUST be lowercase for standard matching.
+2.  **Flattened Flow Cards**: Use `homey:manager:flow-card:id` syntax only.
+3.  **Parallel Init**: Use `Promise.all` in `onNodeInit` for non-dependent managers.
+4.  **Energy Objects**: All metering devices MUST define an `energy` object with `cumulative: true`.
+
 ## 🌌 Project Vision
 Creating a **Zero-Defect, high-performance Zigbee Engine** for Tuya devices on Homey Pro (SDK 3).
 Proprietary branding (Nexus/Proxima) has been generalized to **Unified Engine**.
