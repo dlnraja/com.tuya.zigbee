@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-14T13:53:14.466Z",
+  "ts": "2026-04-14T14:00:57.011Z",
   "currentCount": 3337,
   "src": {
     "johan": {
@@ -18903,9 +18903,17 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 51,
+      "issueCount": 52,
       "prCount": 4,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 260,
+          "title": "[Device] Insoma Two Way Irrigation Valve (Zigbee)",
+          "mfrs": [
+            "_TZE284_fhvpaltk"
+          ]
+        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 259,
@@ -19173,15 +19181,6 @@
             "_TZ3000_v4l4b0lp",
             "_TZ3000_v4l4b0lp",
             "_TZ3000_v4l4b0lp"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1352,
-          "title": "Device Request: TS0041 1‑button wireless switch (_TZ3000_kxaow5ki)",
-          "mfrs": [
-            "_TZ3000_kxaow5ki",
-            "_TZ3000_kxaow5ki"
           ]
         }
       ]
