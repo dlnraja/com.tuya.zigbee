@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-14T10:16:40.902Z",
+  "ts": "2026-04-14T10:41:42.763Z",
   "currentCount": 3337,
   "src": {
     "johan": {
@@ -19011,6 +19011,28 @@
         },
         {
           "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1370,
+          "title": "Support request: TS0011 – _TZ3000_hafsqare (1‑gang wall switch, mains powered)",
+          "mfrs": [
+            "_TZ3000_hafsqare",
+            "_TZ3000_hafsqare",
+            "_TZ3000_hafsqare",
+            "_TZ3000_hafsqare"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1369,
+          "title": "Device Request - [Device name] - [mSupport request: TS0012 – _TZ3000_e98krvvk (2‑gang switch, two real loads)anufacturerName] / [modelId]",
+          "mfrs": [
+            "_TZ3000_e98krvvk",
+            "_TZ3000_e98krvvk",
+            "_TZ3000_e98krvvk",
+            "_TZ3000_e98krvvk"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
           "num": 1368,
           "title": "Support request: TS0004 – _TZ3000_enmfaave (4‑gang switch)",
           "mfrs": [
@@ -19160,25 +19182,6 @@
             "_TZE284_bquwrqh1",
             "_TZE284_bquwrqh1",
             "_TZE284_bquwrqh1"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1350,
-          "title": "added TS110E driver for",
-          "mfrs": [
-            "_TZ3210_ngqk6jia",
-            "_TZ3210_weaqkhab",
-            "_TZ3210_ngqk6jia",
-            "_TZ3210_ngqk6jia"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1349,
-          "title": "​[Device Request] Add support for TS004F Smart Knob Dimmer (_TZ3000_402vrq2i) - [Device name] - [manufacturerName] / [modelId]",
-          "mfrs": [
-            "_TZ3000_402vrq2i"
           ]
         }
       ]
