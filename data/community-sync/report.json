@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-14T06:31:33.260Z",
+  "ts": "2026-04-14T06:48:34.871Z",
   "currentCount": 3337,
   "src": {
     "johan": {
@@ -19011,6 +19011,17 @@
         },
         {
           "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1368,
+          "title": "Support request: TS0004 – _TZ3000_enmfaave (4‑gang switch)",
+          "mfrs": [
+            "_TZ3000_enmfaave",
+            "_TZ3000_enmfaave",
+            "_TZ3000_enmfaave",
+            "_TZ3000_enmfaave"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
           "num": 1367,
           "title": "Support request: TS0002 – _TZ3000_ptjcjise (2‑gang switch)",
           "mfrs": [
@@ -19168,17 +19179,6 @@
           "title": "​[Device Request] Add support for TS004F Smart Knob Dimmer (_TZ3000_402vrq2i) - [Device name] - [manufacturerName] / [modelId]",
           "mfrs": [
             "_TZ3000_402vrq2i"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1348,
-          "title": "Device Request - [Device name] - [manufacturerName] / [modelId]",
-          "mfrs": [
-            "_TZ3210_xzhnra8x",
-            "_TZ3210_xzhnra8x",
-            "_TZ3210_xzhnra8x",
-            "_TZ3210_xzhnra8x"
           ]
         }
       ]
