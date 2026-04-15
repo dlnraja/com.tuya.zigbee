@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-15T07:16:24.698Z",
+  "ts": "2026-04-15T07:56:32.785Z",
   "currentCount": 2864,
   "src": {
     "johan": {
@@ -18908,9 +18908,52 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 52,
+      "issueCount": 53,
       "prCount": 5,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 267,
+          "title": "[Verify] 307 new fingerprints found",
+          "mfrs": [
+            "_TZ2000_a476raq2",
+            "_TZ2000_xogb73am",
+            "_TZ2000_avdnvykf",
+            "_TZ2000_hjsgdkfl",
+            "_TZE200_5zbp6j0u",
+            "_TZE200_bjzrowv2",
+            "_TZE200_nkoabg8w",
+            "_TZE200_xuzcvlku",
+            "_TZE200_4vobcgd3",
+            "_TZE200_nogaemzt",
+            "_TZE200_r0jdjrvi",
+            "_TZE200_pk0sfzvr",
+            "_TZE200_fdtjuw7u",
+            "_TZE200_zpzndjez",
+            "_TZE200_wmcdj3aq",
+            "_TZE200_cowvfni3",
+            "_TZE200_rddyvrci",
+            "_TZE200_nueqqe6k",
+            "_TZE200_xaabybja",
+            "_TZE200_rmymn92d",
+            "_TZE200_3i3exuay",
+            "_TZE200_zah67ekd",
+            "_TZE200_hsgrhjpf",
+            "_TZE200_68nvbio9",
+            "_TZE200_pw7mji0l",
+            "_TZE200_uj3f4wr5",
+            "_TZE204_1fuxihti",
+            "_TZE200_axgvo9jh",
+            "_TZE200_gaj531w3",
+            "_TZE200_yia0p3tr",
+            "_TZE200_nw1r9hp6",
+            "_TZE200_cf1sl3tj",
+            "_TZE200_9p5xmj5r",
+            "_TZE204_xu4a5rhj",
+            "_TZ3000_ebar6ljy",
+            "_TZ3000_2mbfxlzr"
+          ]
+        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 265,
@@ -19176,16 +19219,6 @@
             "_TZE284_8se38w3c",
             "_TZE284_8se38w3c",
             "_TZE284_8se38w3c"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1353,
-          "title": "Device Request - Tuya 3-gang wall switch - _TZ3000_v4l4b0lp / TS0003",
-          "mfrs": [
-            "_TZ3000_v4l4b0lp",
-            "_TZ3000_v4l4b0lp",
-            "_TZ3000_v4l4b0lp"
           ]
         }
       ]
