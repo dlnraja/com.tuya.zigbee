@@ -17,6 +17,213 @@
   },
   {
     "driver": "contact_sensor",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "doorwindowsensor"
+  },
+  {
+    "driver": "contact_sensor",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "doorwindowsensor_2"
+  },
+  {
+    "driver": "water_leak_sensor",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "flood_sensor"
+  },
+  {
+    "driver": "lcdtemphumidsensor",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "pirsensor"
+  },
+  {
+    "driver": "rain_sensor",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery",
+      "alarm_cleaning",
+      "measure_luminance",
+      "measure_luminance.20min",
+      "measure_luminance.daily_max",
+      "measure_voltage.rain"
+    ],
+    "src": "rain_sensor"
+  },
+  {
+    "driver": "temphumidsensor",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "temphumidsensor"
+  },
+  {
+    "driver": "contact_sensor",
+    "fork": "telenut/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "doorwindowsensor"
+  },
+  {
+    "driver": "contact_sensor",
+    "fork": "telenut/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "doorwindowsensor_2"
+  },
+  {
+    "driver": "water_leak_sensor",
+    "fork": "telenut/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "flood_sensor"
+  },
+  {
+    "driver": "lcdtemphumidsensor",
+    "fork": "telenut/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "telenut/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "telenut/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "pirsensor"
+  },
+  {
+    "driver": "rain_sensor",
+    "fork": "telenut/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery",
+      "alarm_cleaning",
+      "measure_luminance",
+      "measure_luminance.20min",
+      "measure_luminance.daily_max",
+      "measure_voltage.rain"
+    ],
+    "src": "rain_sensor"
+  },
+  {
+    "driver": "temphumidsensor",
+    "fork": "telenut/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "temphumidsensor"
+  },
+  {
+    "driver": "contact_sensor",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "doorwindowsensor"
+  },
+  {
+    "driver": "contact_sensor",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "doorwindowsensor_2"
+  },
+  {
+    "driver": "water_leak_sensor",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "flood_sensor"
+  },
+  {
+    "driver": "lcdtemphumidsensor",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "pirsensor"
+  },
+  {
+    "driver": "rain_sensor",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery",
+      "alarm_cleaning",
+      "measure_luminance",
+      "measure_luminance.20min",
+      "measure_luminance.daily_max",
+      "measure_voltage.rain"
+    ],
+    "src": "rain_sensor"
+  },
+  {
+    "driver": "temphumidsensor",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "temphumidsensor"
+  },
+  {
+    "driver": "contact_sensor",
     "fork": "pkuijpers/com.tuya.zigbee",
     "newCaps": [
       "alarm_battery"
@@ -30,14 +237,6 @@
       "alarm_battery"
     ],
     "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "pkuijpers/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
   },
   {
     "driver": "water_leak_sensor",
@@ -54,6 +253,14 @@
       "alarm_battery"
     ],
     "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "motion_sensor_2"
   },
   {
     "driver": "motion_sensor",
@@ -75,6 +282,14 @@
       "measure_voltage.rain"
     ],
     "src": "rain_sensor"
+  },
+  {
+    "driver": "sirentemphumidsensor",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newCaps": [
+      "measure_battery"
+    ],
+    "src": "sirentemphumidsensor"
   },
   {
     "driver": "temphumidsensor",
@@ -101,14 +316,6 @@
     "src": "doorwindowsensor_2"
   },
   {
-    "driver": "fingerbot",
-    "fork": "bmalkow/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
     "driver": "water_leak_sensor",
     "fork": "bmalkow/com.tuya.zigbee",
     "newCaps": [
@@ -123,6 +330,14 @@
       "alarm_battery"
     ],
     "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "motion_sensor_2"
   },
   {
     "driver": "motion_sensor",
@@ -144,6 +359,14 @@
       "measure_voltage.rain"
     ],
     "src": "rain_sensor"
+  },
+  {
+    "driver": "sirentemphumidsensor",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newCaps": [
+      "measure_battery"
+    ],
+    "src": "sirentemphumidsensor"
   },
   {
     "driver": "temphumidsensor",
@@ -170,14 +393,6 @@
     "src": "doorwindowsensor_2"
   },
   {
-    "driver": "fingerbot",
-    "fork": "baschte/de.baschte.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
     "driver": "water_leak_sensor",
     "fork": "baschte/de.baschte.tuya.zigbee",
     "newCaps": [
@@ -192,6 +407,14 @@
       "alarm_battery"
     ],
     "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "motion_sensor_2"
   },
   {
     "driver": "motion_sensor",
@@ -213,6 +436,14 @@
       "measure_voltage.rain"
     ],
     "src": "rain_sensor"
+  },
+  {
+    "driver": "sirentemphumidsensor",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newCaps": [
+      "measure_battery"
+    ],
+    "src": "sirentemphumidsensor"
   },
   {
     "driver": "temphumidsensor",
@@ -239,14 +470,6 @@
     "src": "doorwindowsensor_2"
   },
   {
-    "driver": "fingerbot",
-    "fork": "tomkusz/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
     "driver": "water_leak_sensor",
     "fork": "tomkusz/com.tuya.zigbee",
     "newCaps": [
@@ -261,6 +484,14 @@
       "alarm_battery"
     ],
     "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "motion_sensor_2"
   },
   {
     "driver": "motion_sensor",
@@ -282,6 +513,14 @@
       "measure_voltage.rain"
     ],
     "src": "rain_sensor"
+  },
+  {
+    "driver": "sirentemphumidsensor",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newCaps": [
+      "measure_battery"
+    ],
+    "src": "sirentemphumidsensor"
   },
   {
     "driver": "temphumidsensor",
@@ -308,14 +547,6 @@
     "src": "doorwindowsensor_2"
   },
   {
-    "driver": "fingerbot",
-    "fork": "Mmaaikel/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
     "driver": "water_leak_sensor",
     "fork": "Mmaaikel/com.tuya.zigbee",
     "newCaps": [
@@ -330,6 +561,14 @@
       "alarm_battery"
     ],
     "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "motion_sensor_2"
   },
   {
     "driver": "motion_sensor",
@@ -377,14 +616,6 @@
     "src": "doorwindowsensor_2"
   },
   {
-    "driver": "fingerbot",
-    "fork": "hendriksenremco/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
     "driver": "water_leak_sensor",
     "fork": "hendriksenremco/com.tuya.zigbee",
     "newCaps": [
@@ -401,6 +632,14 @@
     "src": "lcdtemphumidsensor"
   },
   {
+    "driver": "motion_sensor_2",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
     "driver": "motion_sensor",
     "fork": "hendriksenremco/com.tuya.zigbee",
     "newCaps": [
@@ -422,6 +661,14 @@
     "src": "rain_sensor"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newCaps": [
+      "measure_battery"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
     "driver": "temphumidsensor",
     "fork": "hendriksenremco/com.tuya.zigbee",
     "newCaps": [
@@ -446,14 +693,6 @@
     "src": "doorwindowsensor_2"
   },
   {
-    "driver": "fingerbot",
-    "fork": "sebastianbrand01/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
     "driver": "water_leak_sensor",
     "fork": "sebastianbrand01/com.tuya.zigbee",
     "newCaps": [
@@ -470,6 +709,14 @@
     "src": "lcdtemphumidsensor"
   },
   {
+    "driver": "motion_sensor_2",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
     "driver": "motion_sensor",
     "fork": "sebastianbrand01/com.tuya.zigbee",
     "newCaps": [
@@ -491,6 +738,14 @@
     "src": "rain_sensor"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newCaps": [
+      "measure_battery"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
     "driver": "temphumidsensor",
     "fork": "sebastianbrand01/com.tuya.zigbee",
     "newCaps": [
@@ -515,14 +770,6 @@
     "src": "doorwindowsensor_2"
   },
   {
-    "driver": "fingerbot",
-    "fork": "kodalissri/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
     "driver": "water_leak_sensor",
     "fork": "kodalissri/com.tuya.zigbee",
     "newCaps": [
@@ -539,6 +786,14 @@
     "src": "lcdtemphumidsensor"
   },
   {
+    "driver": "motion_sensor_2",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
     "driver": "motion_sensor",
     "fork": "kodalissri/com.tuya.zigbee",
     "newCaps": [
@@ -560,6 +815,14 @@
     "src": "rain_sensor"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newCaps": [
+      "measure_battery"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
     "driver": "temphumidsensor",
     "fork": "kodalissri/com.tuya.zigbee",
     "newCaps": [
@@ -584,14 +847,6 @@
     "src": "doorwindowsensor_2"
   },
   {
-    "driver": "fingerbot",
-    "fork": "SietzeM/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
     "driver": "water_leak_sensor",
     "fork": "SietzeM/com.tuya.zigbee",
     "newCaps": [
@@ -608,6 +863,14 @@
     "src": "lcdtemphumidsensor"
   },
   {
+    "driver": "motion_sensor_2",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
     "driver": "motion_sensor",
     "fork": "SietzeM/com.tuya.zigbee",
     "newCaps": [
@@ -629,6 +892,14 @@
     "src": "rain_sensor"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newCaps": [
+      "measure_battery"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
     "driver": "temphumidsensor",
     "fork": "SietzeM/com.tuya.zigbee",
     "newCaps": [
@@ -653,14 +924,6 @@
     "src": "doorwindowsensor_2"
   },
   {
-    "driver": "fingerbot",
-    "fork": "theswim/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
     "driver": "water_leak_sensor",
     "fork": "theswim/com.tuya.zigbee",
     "newCaps": [
@@ -677,6 +940,14 @@
     "src": "lcdtemphumidsensor"
   },
   {
+    "driver": "motion_sensor_2",
+    "fork": "theswim/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
     "driver": "motion_sensor",
     "fork": "theswim/com.tuya.zigbee",
     "newCaps": [
@@ -698,6 +969,14 @@
     "src": "rain_sensor"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "theswim/com.tuya.zigbee",
+    "newCaps": [
+      "measure_battery"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
     "driver": "temphumidsensor",
     "fork": "theswim/com.tuya.zigbee",
     "newCaps": [
@@ -722,14 +1001,6 @@
     "src": "doorwindowsensor_2"
   },
   {
-    "driver": "fingerbot",
-    "fork": "willarentz/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
     "driver": "water_leak_sensor",
     "fork": "willarentz/com.tuya.zigbee",
     "newCaps": [
@@ -746,6 +1017,14 @@
     "src": "lcdtemphumidsensor"
   },
   {
+    "driver": "motion_sensor_2",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
     "driver": "motion_sensor",
     "fork": "willarentz/com.tuya.zigbee",
     "newCaps": [
@@ -767,6 +1046,14 @@
     "src": "rain_sensor"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newCaps": [
+      "measure_battery"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
     "driver": "temphumidsensor",
     "fork": "willarentz/com.tuya.zigbee",
     "newCaps": [
@@ -791,14 +1078,6 @@
     "src": "doorwindowsensor_2"
   },
   {
-    "driver": "fingerbot",
-    "fork": "kindberg95/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
     "driver": "water_leak_sensor",
     "fork": "kindberg95/com.tuya.zigbee",
     "newCaps": [
@@ -815,6 +1094,14 @@
     "src": "lcdtemphumidsensor"
   },
   {
+    "driver": "motion_sensor_2",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
     "driver": "motion_sensor",
     "fork": "kindberg95/com.tuya.zigbee",
     "newCaps": [
@@ -836,6 +1123,14 @@
     "src": "rain_sensor"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newCaps": [
+      "measure_battery"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
     "driver": "temphumidsensor",
     "fork": "kindberg95/com.tuya.zigbee",
     "newCaps": [
@@ -860,14 +1155,6 @@
     "src": "doorwindowsensor_2"
   },
   {
-    "driver": "fingerbot",
-    "fork": "Peter-Celica/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
     "driver": "water_leak_sensor",
     "fork": "Peter-Celica/com.tuya.zigbee",
     "newCaps": [
@@ -884,6 +1171,14 @@
     "src": "lcdtemphumidsensor"
   },
   {
+    "driver": "motion_sensor_2",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
     "driver": "motion_sensor",
     "fork": "Peter-Celica/com.tuya.zigbee",
     "newCaps": [
@@ -905,6 +1200,14 @@
     "src": "rain_sensor"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newCaps": [
+      "measure_battery"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
     "driver": "temphumidsensor",
     "fork": "Peter-Celica/com.tuya.zigbee",
     "newCaps": [
@@ -929,14 +1232,6 @@
     "src": "doorwindowsensor_2"
   },
   {
-    "driver": "fingerbot",
-    "fork": "script0803/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
     "driver": "water_leak_sensor",
     "fork": "script0803/com.tuya.zigbee",
     "newCaps": [
@@ -953,6 +1248,14 @@
     "src": "lcdtemphumidsensor"
   },
   {
+    "driver": "motion_sensor_2",
+    "fork": "script0803/com.tuya.zigbee",
+    "newCaps": [
+      "alarm_battery"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
     "driver": "motion_sensor",
     "fork": "script0803/com.tuya.zigbee",
     "newCaps": [
@@ -974,1810 +1277,16 @@
     "src": "rain_sensor"
   },
   {
-    "driver": "temphumidsensor",
+    "driver": "sirentemphumidsensor",
     "fork": "script0803/com.tuya.zigbee",
     "newCaps": [
-      "alarm_battery"
+      "measure_battery"
     ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "IsaacNZ2/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "IsaacNZ2/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "IsaacNZ2/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "IsaacNZ2/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "IsaacNZ2/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "IsaacNZ2/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "IsaacNZ2/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
+    "src": "sirentemphumidsensor"
   },
   {
     "driver": "temphumidsensor",
-    "fork": "IsaacNZ2/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "jievie2000/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "jievie2000/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "jievie2000/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "jievie2000/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "jievie2000/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "jievie2000/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "jievie2000/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "jievie2000/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "AlfredMBG/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "AlfredMBG/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "AlfredMBG/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "AlfredMBG/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "AlfredMBG/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "AlfredMBG/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "AlfredMBG/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "AlfredMBG/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "mayconbordin/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "mayconbordin/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "mayconbordin/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "mayconbordin/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "mayconbordin/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "mayconbordin/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "mayconbordin/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "mayconbordin/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "cmanl/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "cmanl/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "cmanl/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "cmanl/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "cmanl/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "cmanl/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "cmanl/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "cmanl/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "tannerchung/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "tannerchung/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "tannerchung/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "tannerchung/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "tannerchung/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "tannerchung/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "tannerchung/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "tannerchung/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "lima92/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "lima92/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "lima92/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "lima92/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "lima92/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "lima92/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "lima92/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "lima92/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "Melectro1/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "Melectro1/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "Melectro1/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "Melectro1/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "Melectro1/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "Melectro1/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "Melectro1/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "Melectro1/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "guestus/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "guestus/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "guestus/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "guestus/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "guestus/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "guestus/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "guestus/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "guestus/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "crimson7O/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "crimson7O/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "crimson7O/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "crimson7O/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "crimson7O/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "crimson7O/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "crimson7O/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "crimson7O/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "adamel2006/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "adamel2006/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "adamel2006/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "adamel2006/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "adamel2006/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "adamel2006/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "adamel2006/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "adamel2006/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "hapylestat/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "hapylestat/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "hapylestat/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "hapylestat/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "hapylestat/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "hapylestat/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "hapylestat/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "hapylestat/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "gpmachado/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "gpmachado/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "gpmachado/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "gpmachado/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "gas_detector",
-    "fork": "gpmachado/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_problem"
-    ],
-    "src": "gas_detector"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "gpmachado/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "gpmachado/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "gpmachado/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "gpmachado/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "YuriEstevan/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "YuriEstevan/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "YuriEstevan/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "YuriEstevan/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "YuriEstevan/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "YuriEstevan/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "YuriEstevan/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "YuriEstevan/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "dvdkroft/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "dvdkroft/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "dvdkroft/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "dvdkroft/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "dvdkroft/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "dvdkroft/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "dvdkroft/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "dvdkroft/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "FinnKje/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "FinnKje/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "FinnKje/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "FinnKje/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "FinnKje/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "FinnKje/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "FinnKje/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "FinnKje/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "TKGHill/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "TKGHill/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "TKGHill/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "TKGHill/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "TKGHill/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "TKGHill/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "TKGHill/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "TKGHill/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "artisare/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "artisare/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "artisare/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "artisare/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "artisare/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "artisare/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "artisare/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "artisare/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "semolex/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "semolex/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "semolex/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "semolex/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "semolex/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "semolex/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "semolex/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "semolex/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "snorro80/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "snorro80/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "snorro80/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "snorro80/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "snorro80/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "snorro80/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "snorro80/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "snorro80/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "dirkg173/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "dirkg173/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "dirkg173/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "dirkg173/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "dirkg173/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "dirkg173/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "dirkg173/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "dirkg173/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "mikberg/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "mikberg/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "mikberg/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "mikberg/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "mikberg/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "mikberg/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "mikberg/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "mikberg/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "mkoslacz/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "mkoslacz/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "mkoslacz/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "mkoslacz/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "mkoslacz/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "mkoslacz/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "mkoslacz/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "mkoslacz/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "chernals/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "chernals/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "chernals/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "chernals/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "chernals/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "chernals/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "chernals/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "chernals/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "evervondel/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "evervondel/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "evervondel/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "evervondel/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "evervondel/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "evervondel/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "evervondel/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "evervondel/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "temphumidsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "gtrolo/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "gtrolo/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "doorwindowsensor_2"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "gtrolo/com.tuya.zigbee",
-    "newCaps": [
-      "finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "gtrolo/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "lcdtemphumidsensor",
-    "fork": "gtrolo/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "lcdtemphumidsensor"
-  },
-  {
-    "driver": "motion_sensor",
-    "fork": "gtrolo/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery"
-    ],
-    "src": "pirsensor"
-  },
-  {
-    "driver": "rain_sensor",
-    "fork": "gtrolo/com.tuya.zigbee",
-    "newCaps": [
-      "alarm_battery",
-      "alarm_cleaning",
-      "measure_luminance",
-      "measure_luminance.20min",
-      "measure_luminance.daily_max",
-      "measure_voltage.rain"
-    ],
-    "src": "rain_sensor"
-  },
-  {
-    "driver": "temphumidsensor",
-    "fork": "gtrolo/com.tuya.zigbee",
+    "fork": "script0803/com.tuya.zigbee",
     "newCaps": [
       "alarm_battery"
     ],

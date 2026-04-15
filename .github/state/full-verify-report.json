@@ -1,18 +1,18 @@
 {
-  "timestamp": "2026-03-11T07:56:23.079Z",
-  "forksScanned": 167,
+  "timestamp": "2026-04-15T07:56:09.546Z",
+  "forksScanned": 169,
   "applied": {
-    "totalMfrs": 136,
-    "totalPids": 17,
-    "driversModified": 12
+    "totalMfrs": 312,
+    "totalPids": 9,
+    "driversModified": 33
   },
-  "fpGaps": 518,
-  "capGaps": 323,
-  "clusterGaps": 282,
-  "flowGaps": 78,
+  "fpGaps": 596,
+  "capGaps": 151,
+  "clusterGaps": 272,
+  "flowGaps": 268,
   "dpGaps": 0,
   "settingsGaps": 0,
-  "newDrivers": 3726,
+  "newDrivers": 1317,
   "prFinds": 0,
   "issueFinds": 0
 }

@@ -33,7 +33,9 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZ3000_iszegwpd"
+    ],
     "productId": [
       "TS0046",
       "ts0046"

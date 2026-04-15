@@ -1,5 +1,518 @@
 [
   {
+    "driver": "handheld_remote_4_buttons",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newTriggers": [
+      "handheld_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "handheld_remote_4_buttons"
+  },
+  {
+    "driver": "siren",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newTriggers": [
+      "siren_alarm"
+    ],
+    "newConditions": [],
+    "newActions": [
+      "siren_alarm_state",
+      "siren_alarm_duration",
+      "siren_volume_setting",
+      "siren_alarm_tune"
+    ],
+    "src": "siren"
+  },
+  {
+    "driver": "sirentemphumidsensor",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newTriggers": [
+      "alarm_siren"
+    ],
+    "newConditions": [],
+    "newActions": [
+      "alarm_state",
+      "alarm_duration",
+      "siren_volume",
+      "alarm_tune"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "smart_button_switch",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_button_switch_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_button_switch"
+  },
+  {
+    "driver": "smart_knob_switch",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_knob_switch_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_knob_switch"
+  },
+  {
+    "driver": "smart_remote_1_button",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button"
+  },
+  {
+    "driver": "smart_remote_1_button_2",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button_2"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_4_buttons"
+  },
+  {
+    "driver": "wall_curtain_switch",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newTriggers": [],
+    "newConditions": [],
+    "newActions": [
+      "wall_move_open",
+      "wall_move_close"
+    ],
+    "src": "wall_curtain_switch"
+  },
+  {
+    "driver": "wall_remote_1_gang",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_1_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_1_gang"
+  },
+  {
+    "driver": "wall_remote_2_gang",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_2_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_2_gang"
+  },
+  {
+    "driver": "wall_remote_3_gang",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_3_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_3_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang_2",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_2"
+  },
+  {
+    "driver": "wall_remote_4_gang_3",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_3"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_3"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_6_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_6_gang"
+  },
+  {
+    "driver": "handheld_remote_4_buttons",
+    "fork": "telenut/com.tuya.zigbee",
+    "newTriggers": [
+      "handheld_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "handheld_remote_4_buttons"
+  },
+  {
+    "driver": "siren",
+    "fork": "telenut/com.tuya.zigbee",
+    "newTriggers": [
+      "siren_alarm"
+    ],
+    "newConditions": [],
+    "newActions": [
+      "siren_alarm_state",
+      "siren_alarm_duration",
+      "siren_volume_setting",
+      "siren_alarm_tune"
+    ],
+    "src": "siren"
+  },
+  {
+    "driver": "sirentemphumidsensor",
+    "fork": "telenut/com.tuya.zigbee",
+    "newTriggers": [
+      "alarm_siren"
+    ],
+    "newConditions": [],
+    "newActions": [
+      "alarm_state",
+      "alarm_duration",
+      "siren_volume",
+      "alarm_tune"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "smart_button_switch",
+    "fork": "telenut/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_button_switch_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_button_switch"
+  },
+  {
+    "driver": "smart_knob_switch",
+    "fork": "telenut/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_knob_switch_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_knob_switch"
+  },
+  {
+    "driver": "smart_remote_1_button",
+    "fork": "telenut/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button"
+  },
+  {
+    "driver": "smart_remote_1_button_2",
+    "fork": "telenut/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button_2"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "fork": "telenut/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_4_buttons"
+  },
+  {
+    "driver": "wall_curtain_switch",
+    "fork": "telenut/com.tuya.zigbee",
+    "newTriggers": [],
+    "newConditions": [],
+    "newActions": [
+      "wall_move_open",
+      "wall_move_close"
+    ],
+    "src": "wall_curtain_switch"
+  },
+  {
+    "driver": "wall_remote_1_gang",
+    "fork": "telenut/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_1_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_1_gang"
+  },
+  {
+    "driver": "wall_remote_2_gang",
+    "fork": "telenut/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_2_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_2_gang"
+  },
+  {
+    "driver": "wall_remote_3_gang",
+    "fork": "telenut/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_3_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_3_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang",
+    "fork": "telenut/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang_2",
+    "fork": "telenut/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_2"
+  },
+  {
+    "driver": "wall_remote_4_gang_3",
+    "fork": "telenut/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_3"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_3"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "fork": "telenut/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_6_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_6_gang"
+  },
+  {
+    "driver": "handheld_remote_4_buttons",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newTriggers": [
+      "handheld_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "handheld_remote_4_buttons"
+  },
+  {
+    "driver": "siren",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newTriggers": [
+      "siren_alarm"
+    ],
+    "newConditions": [],
+    "newActions": [
+      "siren_alarm_state",
+      "siren_alarm_duration",
+      "siren_volume_setting",
+      "siren_alarm_tune"
+    ],
+    "src": "siren"
+  },
+  {
+    "driver": "sirentemphumidsensor",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newTriggers": [
+      "alarm_siren"
+    ],
+    "newConditions": [],
+    "newActions": [
+      "alarm_state",
+      "alarm_duration",
+      "siren_volume",
+      "alarm_tune"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "smart_button_switch",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_button_switch_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_button_switch"
+  },
+  {
+    "driver": "smart_knob_switch",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_knob_switch_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_knob_switch"
+  },
+  {
+    "driver": "smart_remote_1_button",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button"
+  },
+  {
+    "driver": "smart_remote_1_button_2",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button_2"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_4_buttons"
+  },
+  {
+    "driver": "wall_curtain_switch",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newTriggers": [],
+    "newConditions": [],
+    "newActions": [
+      "wall_move_open",
+      "wall_move_close"
+    ],
+    "src": "wall_curtain_switch"
+  },
+  {
+    "driver": "wall_remote_1_gang",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_1_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_1_gang"
+  },
+  {
+    "driver": "wall_remote_2_gang",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_2_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_2_gang"
+  },
+  {
+    "driver": "wall_remote_3_gang",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_3_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_3_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang_2",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_2"
+  },
+  {
+    "driver": "wall_remote_4_gang_3",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_3"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_3"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_6_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_6_gang"
+  },
+  {
     "driver": "fingerbot",
     "fork": "pkuijpers/com.tuya.zigbee",
     "newTriggers": [],
@@ -8,6 +521,16 @@
       "set_finger_bot_mode"
     ],
     "src": "fingerbot"
+  },
+  {
+    "driver": "handheld_remote_4_buttons",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newTriggers": [
+      "handheld_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "handheld_remote_4_buttons"
   },
   {
     "driver": "siren",
@@ -23,6 +546,152 @@
       "siren_alarm_tune"
     ],
     "src": "siren"
+  },
+  {
+    "driver": "sirentemphumidsensor",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newTriggers": [
+      "alarm_siren"
+    ],
+    "newConditions": [],
+    "newActions": [
+      "alarm_state",
+      "alarm_duration",
+      "siren_volume",
+      "alarm_tune"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "smart_button_switch",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_button_switch_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_button_switch"
+  },
+  {
+    "driver": "smart_knob_switch",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_knob_switch_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_knob_switch"
+  },
+  {
+    "driver": "smart_remote_1_button",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button"
+  },
+  {
+    "driver": "smart_remote_1_button_2",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button_2"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_4_buttons"
+  },
+  {
+    "driver": "wall_curtain_switch",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newTriggers": [],
+    "newConditions": [],
+    "newActions": [
+      "wall_move_open",
+      "wall_move_close"
+    ],
+    "src": "wall_curtain_switch"
+  },
+  {
+    "driver": "wall_remote_1_gang",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_1_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_1_gang"
+  },
+  {
+    "driver": "wall_remote_2_gang",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_2_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_2_gang"
+  },
+  {
+    "driver": "wall_remote_3_gang",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_3_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_3_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang_2",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_2"
+  },
+  {
+    "driver": "wall_remote_4_gang_3",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_3"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_3"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_6_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_6_gang"
   },
   {
     "driver": "fingerbot",
@@ -35,6 +704,16 @@
     "src": "fingerbot"
   },
   {
+    "driver": "handheld_remote_4_buttons",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newTriggers": [
+      "handheld_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "handheld_remote_4_buttons"
+  },
+  {
     "driver": "siren",
     "fork": "bmalkow/com.tuya.zigbee",
     "newTriggers": [
@@ -50,6 +729,152 @@
     "src": "siren"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newTriggers": [
+      "alarm_siren"
+    ],
+    "newConditions": [],
+    "newActions": [
+      "alarm_state",
+      "alarm_duration",
+      "siren_volume",
+      "alarm_tune"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "smart_button_switch",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_button_switch_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_button_switch"
+  },
+  {
+    "driver": "smart_knob_switch",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_knob_switch_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_knob_switch"
+  },
+  {
+    "driver": "smart_remote_1_button",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button"
+  },
+  {
+    "driver": "smart_remote_1_button_2",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button_2"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_4_buttons"
+  },
+  {
+    "driver": "wall_curtain_switch",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newTriggers": [],
+    "newConditions": [],
+    "newActions": [
+      "wall_move_open",
+      "wall_move_close"
+    ],
+    "src": "wall_curtain_switch"
+  },
+  {
+    "driver": "wall_remote_1_gang",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_1_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_1_gang"
+  },
+  {
+    "driver": "wall_remote_2_gang",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_2_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_2_gang"
+  },
+  {
+    "driver": "wall_remote_3_gang",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_3_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_3_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang_2",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_2"
+  },
+  {
+    "driver": "wall_remote_4_gang_3",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_3"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_3"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_6_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_6_gang"
+  },
+  {
     "driver": "fingerbot",
     "fork": "baschte/de.baschte.tuya.zigbee",
     "newTriggers": [],
@@ -58,6 +883,16 @@
       "set_finger_bot_mode"
     ],
     "src": "fingerbot"
+  },
+  {
+    "driver": "handheld_remote_4_buttons",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newTriggers": [
+      "handheld_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "handheld_remote_4_buttons"
   },
   {
     "driver": "siren",
@@ -73,6 +908,152 @@
       "siren_alarm_tune"
     ],
     "src": "siren"
+  },
+  {
+    "driver": "sirentemphumidsensor",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newTriggers": [
+      "alarm_siren"
+    ],
+    "newConditions": [],
+    "newActions": [
+      "alarm_state",
+      "alarm_duration",
+      "siren_volume",
+      "alarm_tune"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "smart_button_switch",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newTriggers": [
+      "smart_button_switch_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_button_switch"
+  },
+  {
+    "driver": "smart_knob_switch",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newTriggers": [
+      "smart_knob_switch_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_knob_switch"
+  },
+  {
+    "driver": "smart_remote_1_button",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button"
+  },
+  {
+    "driver": "smart_remote_1_button_2",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button_2"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_4_buttons"
+  },
+  {
+    "driver": "wall_curtain_switch",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newTriggers": [],
+    "newConditions": [],
+    "newActions": [
+      "wall_move_open",
+      "wall_move_close"
+    ],
+    "src": "wall_curtain_switch"
+  },
+  {
+    "driver": "wall_remote_1_gang",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_1_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_1_gang"
+  },
+  {
+    "driver": "wall_remote_2_gang",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_2_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_2_gang"
+  },
+  {
+    "driver": "wall_remote_3_gang",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_3_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_3_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang_2",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_2"
+  },
+  {
+    "driver": "wall_remote_4_gang_3",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_3"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_3"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_6_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_6_gang"
   },
   {
     "driver": "fingerbot",
@@ -85,6 +1066,16 @@
     "src": "fingerbot"
   },
   {
+    "driver": "handheld_remote_4_buttons",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newTriggers": [
+      "handheld_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "handheld_remote_4_buttons"
+  },
+  {
     "driver": "siren",
     "fork": "tomkusz/com.tuya.zigbee",
     "newTriggers": [
@@ -100,14 +1091,160 @@
     "src": "siren"
   },
   {
-    "driver": "fingerbot",
-    "fork": "Mmaaikel/com.tuya.zigbee",
+    "driver": "sirentemphumidsensor",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newTriggers": [
+      "alarm_siren"
+    ],
+    "newConditions": [],
+    "newActions": [
+      "alarm_state",
+      "alarm_duration",
+      "siren_volume",
+      "alarm_tune"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "smart_button_switch",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_button_switch_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_button_switch"
+  },
+  {
+    "driver": "smart_knob_switch",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_knob_switch_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_knob_switch"
+  },
+  {
+    "driver": "smart_remote_1_button",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button"
+  },
+  {
+    "driver": "smart_remote_1_button_2",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button_2"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_4_buttons"
+  },
+  {
+    "driver": "wall_curtain_switch",
+    "fork": "tomkusz/com.tuya.zigbee",
     "newTriggers": [],
     "newConditions": [],
     "newActions": [
-      "set_finger_bot_mode"
+      "wall_move_open",
+      "wall_move_close"
     ],
-    "src": "fingerbot"
+    "src": "wall_curtain_switch"
+  },
+  {
+    "driver": "wall_remote_1_gang",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_1_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_1_gang"
+  },
+  {
+    "driver": "wall_remote_2_gang",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_2_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_2_gang"
+  },
+  {
+    "driver": "wall_remote_3_gang",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_3_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_3_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang_2",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_2"
+  },
+  {
+    "driver": "wall_remote_4_gang_3",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_3"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_3"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_6_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_6_gang"
+  },
+  {
+    "driver": "handheld_remote_4_buttons",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newTriggers": [
+      "handheld_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "handheld_remote_4_buttons"
   },
   {
     "driver": "siren",
@@ -123,6 +1260,152 @@
       "siren_alarm_tune"
     ],
     "src": "siren"
+  },
+  {
+    "driver": "sirentemphumidsensor",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newTriggers": [
+      "alarm_siren"
+    ],
+    "newConditions": [],
+    "newActions": [
+      "alarm_state",
+      "alarm_duration",
+      "siren_volume",
+      "alarm_tune"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "smart_button_switch",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_button_switch_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_button_switch"
+  },
+  {
+    "driver": "smart_knob_switch",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_knob_switch_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_knob_switch"
+  },
+  {
+    "driver": "smart_remote_1_button",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button"
+  },
+  {
+    "driver": "smart_remote_1_button_2",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button_2"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_4_buttons"
+  },
+  {
+    "driver": "wall_curtain_switch",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newTriggers": [],
+    "newConditions": [],
+    "newActions": [
+      "wall_move_open",
+      "wall_move_close"
+    ],
+    "src": "wall_curtain_switch"
+  },
+  {
+    "driver": "wall_remote_1_gang",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_1_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_1_gang"
+  },
+  {
+    "driver": "wall_remote_2_gang",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_2_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_2_gang"
+  },
+  {
+    "driver": "wall_remote_3_gang",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_3_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_3_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang_2",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_2"
+  },
+  {
+    "driver": "wall_remote_4_gang_3",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_3"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_3"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_6_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_6_gang"
   },
   {
     "driver": "fingerbot",
@@ -135,6 +1418,16 @@
     "src": "fingerbot"
   },
   {
+    "driver": "handheld_remote_4_buttons",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newTriggers": [
+      "handheld_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "handheld_remote_4_buttons"
+  },
+  {
     "driver": "siren",
     "fork": "hendriksenremco/com.tuya.zigbee",
     "newTriggers": [
@@ -150,6 +1443,152 @@
     "src": "siren"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newTriggers": [
+      "alarm_siren"
+    ],
+    "newConditions": [],
+    "newActions": [
+      "alarm_state",
+      "alarm_duration",
+      "siren_volume",
+      "alarm_tune"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "smart_button_switch",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_button_switch_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_button_switch"
+  },
+  {
+    "driver": "smart_knob_switch",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_knob_switch_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_knob_switch"
+  },
+  {
+    "driver": "smart_remote_1_button",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button"
+  },
+  {
+    "driver": "smart_remote_1_button_2",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button_2"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_4_buttons"
+  },
+  {
+    "driver": "wall_curtain_switch",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newTriggers": [],
+    "newConditions": [],
+    "newActions": [
+      "wall_move_open",
+      "wall_move_close"
+    ],
+    "src": "wall_curtain_switch"
+  },
+  {
+    "driver": "wall_remote_1_gang",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_1_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_1_gang"
+  },
+  {
+    "driver": "wall_remote_2_gang",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_2_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_2_gang"
+  },
+  {
+    "driver": "wall_remote_3_gang",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_3_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_3_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang_2",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_2"
+  },
+  {
+    "driver": "wall_remote_4_gang_3",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_3"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_3"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_6_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_6_gang"
+  },
+  {
     "driver": "fingerbot",
     "fork": "sebastianbrand01/com.tuya.zigbee",
     "newTriggers": [],
@@ -158,6 +1597,16 @@
       "set_finger_bot_mode"
     ],
     "src": "fingerbot"
+  },
+  {
+    "driver": "handheld_remote_4_buttons",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newTriggers": [
+      "handheld_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "handheld_remote_4_buttons"
   },
   {
     "driver": "siren",
@@ -173,6 +1622,152 @@
       "siren_alarm_tune"
     ],
     "src": "siren"
+  },
+  {
+    "driver": "sirentemphumidsensor",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newTriggers": [
+      "alarm_siren"
+    ],
+    "newConditions": [],
+    "newActions": [
+      "alarm_state",
+      "alarm_duration",
+      "siren_volume",
+      "alarm_tune"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "smart_button_switch",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_button_switch_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_button_switch"
+  },
+  {
+    "driver": "smart_knob_switch",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_knob_switch_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_knob_switch"
+  },
+  {
+    "driver": "smart_remote_1_button",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button"
+  },
+  {
+    "driver": "smart_remote_1_button_2",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button_2"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_4_buttons"
+  },
+  {
+    "driver": "wall_curtain_switch",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newTriggers": [],
+    "newConditions": [],
+    "newActions": [
+      "wall_move_open",
+      "wall_move_close"
+    ],
+    "src": "wall_curtain_switch"
+  },
+  {
+    "driver": "wall_remote_1_gang",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_1_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_1_gang"
+  },
+  {
+    "driver": "wall_remote_2_gang",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_2_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_2_gang"
+  },
+  {
+    "driver": "wall_remote_3_gang",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_3_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_3_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang_2",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_2"
+  },
+  {
+    "driver": "wall_remote_4_gang_3",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_3"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_3"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_6_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_6_gang"
   },
   {
     "driver": "fingerbot",
@@ -185,6 +1780,16 @@
     "src": "fingerbot"
   },
   {
+    "driver": "handheld_remote_4_buttons",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newTriggers": [
+      "handheld_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "handheld_remote_4_buttons"
+  },
+  {
     "driver": "siren",
     "fork": "kodalissri/com.tuya.zigbee",
     "newTriggers": [
@@ -200,6 +1805,152 @@
     "src": "siren"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newTriggers": [
+      "alarm_siren"
+    ],
+    "newConditions": [],
+    "newActions": [
+      "alarm_state",
+      "alarm_duration",
+      "siren_volume",
+      "alarm_tune"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "smart_button_switch",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_button_switch_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_button_switch"
+  },
+  {
+    "driver": "smart_knob_switch",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_knob_switch_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_knob_switch"
+  },
+  {
+    "driver": "smart_remote_1_button",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button"
+  },
+  {
+    "driver": "smart_remote_1_button_2",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button_2"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_4_buttons"
+  },
+  {
+    "driver": "wall_curtain_switch",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newTriggers": [],
+    "newConditions": [],
+    "newActions": [
+      "wall_move_open",
+      "wall_move_close"
+    ],
+    "src": "wall_curtain_switch"
+  },
+  {
+    "driver": "wall_remote_1_gang",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_1_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_1_gang"
+  },
+  {
+    "driver": "wall_remote_2_gang",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_2_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_2_gang"
+  },
+  {
+    "driver": "wall_remote_3_gang",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_3_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_3_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang_2",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_2"
+  },
+  {
+    "driver": "wall_remote_4_gang_3",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_3"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_3"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_6_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_6_gang"
+  },
+  {
     "driver": "fingerbot",
     "fork": "SietzeM/com.tuya.zigbee",
     "newTriggers": [],
@@ -208,6 +1959,16 @@
       "set_finger_bot_mode"
     ],
     "src": "fingerbot"
+  },
+  {
+    "driver": "handheld_remote_4_buttons",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newTriggers": [
+      "handheld_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "handheld_remote_4_buttons"
   },
   {
     "driver": "siren",
@@ -223,6 +1984,152 @@
       "siren_alarm_tune"
     ],
     "src": "siren"
+  },
+  {
+    "driver": "sirentemphumidsensor",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newTriggers": [
+      "alarm_siren"
+    ],
+    "newConditions": [],
+    "newActions": [
+      "alarm_state",
+      "alarm_duration",
+      "siren_volume",
+      "alarm_tune"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "smart_button_switch",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_button_switch_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_button_switch"
+  },
+  {
+    "driver": "smart_knob_switch",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_knob_switch_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_knob_switch"
+  },
+  {
+    "driver": "smart_remote_1_button",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button"
+  },
+  {
+    "driver": "smart_remote_1_button_2",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button_2"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_4_buttons"
+  },
+  {
+    "driver": "wall_curtain_switch",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newTriggers": [],
+    "newConditions": [],
+    "newActions": [
+      "wall_move_open",
+      "wall_move_close"
+    ],
+    "src": "wall_curtain_switch"
+  },
+  {
+    "driver": "wall_remote_1_gang",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_1_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_1_gang"
+  },
+  {
+    "driver": "wall_remote_2_gang",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_2_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_2_gang"
+  },
+  {
+    "driver": "wall_remote_3_gang",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_3_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_3_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang_2",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_2"
+  },
+  {
+    "driver": "wall_remote_4_gang_3",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_3"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_3"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_6_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_6_gang"
   },
   {
     "driver": "fingerbot",
@@ -235,6 +2142,16 @@
     "src": "fingerbot"
   },
   {
+    "driver": "handheld_remote_4_buttons",
+    "fork": "theswim/com.tuya.zigbee",
+    "newTriggers": [
+      "handheld_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "handheld_remote_4_buttons"
+  },
+  {
     "driver": "siren",
     "fork": "theswim/com.tuya.zigbee",
     "newTriggers": [
@@ -250,6 +2167,152 @@
     "src": "siren"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "theswim/com.tuya.zigbee",
+    "newTriggers": [
+      "alarm_siren"
+    ],
+    "newConditions": [],
+    "newActions": [
+      "alarm_state",
+      "alarm_duration",
+      "siren_volume",
+      "alarm_tune"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "smart_button_switch",
+    "fork": "theswim/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_button_switch_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_button_switch"
+  },
+  {
+    "driver": "smart_knob_switch",
+    "fork": "theswim/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_knob_switch_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_knob_switch"
+  },
+  {
+    "driver": "smart_remote_1_button",
+    "fork": "theswim/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button"
+  },
+  {
+    "driver": "smart_remote_1_button_2",
+    "fork": "theswim/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button_2"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "fork": "theswim/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_4_buttons"
+  },
+  {
+    "driver": "wall_curtain_switch",
+    "fork": "theswim/com.tuya.zigbee",
+    "newTriggers": [],
+    "newConditions": [],
+    "newActions": [
+      "wall_move_open",
+      "wall_move_close"
+    ],
+    "src": "wall_curtain_switch"
+  },
+  {
+    "driver": "wall_remote_1_gang",
+    "fork": "theswim/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_1_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_1_gang"
+  },
+  {
+    "driver": "wall_remote_2_gang",
+    "fork": "theswim/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_2_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_2_gang"
+  },
+  {
+    "driver": "wall_remote_3_gang",
+    "fork": "theswim/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_3_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_3_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang",
+    "fork": "theswim/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang_2",
+    "fork": "theswim/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_2"
+  },
+  {
+    "driver": "wall_remote_4_gang_3",
+    "fork": "theswim/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_3"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_3"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "fork": "theswim/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_6_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_6_gang"
+  },
+  {
     "driver": "fingerbot",
     "fork": "willarentz/com.tuya.zigbee",
     "newTriggers": [],
@@ -258,6 +2321,16 @@
       "set_finger_bot_mode"
     ],
     "src": "fingerbot"
+  },
+  {
+    "driver": "handheld_remote_4_buttons",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newTriggers": [
+      "handheld_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "handheld_remote_4_buttons"
   },
   {
     "driver": "siren",
@@ -273,6 +2346,152 @@
       "siren_alarm_tune"
     ],
     "src": "siren"
+  },
+  {
+    "driver": "sirentemphumidsensor",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newTriggers": [
+      "alarm_siren"
+    ],
+    "newConditions": [],
+    "newActions": [
+      "alarm_state",
+      "alarm_duration",
+      "siren_volume",
+      "alarm_tune"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "smart_button_switch",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_button_switch_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_button_switch"
+  },
+  {
+    "driver": "smart_knob_switch",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_knob_switch_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_knob_switch"
+  },
+  {
+    "driver": "smart_remote_1_button",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button"
+  },
+  {
+    "driver": "smart_remote_1_button_2",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button_2"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_4_buttons"
+  },
+  {
+    "driver": "wall_curtain_switch",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newTriggers": [],
+    "newConditions": [],
+    "newActions": [
+      "wall_move_open",
+      "wall_move_close"
+    ],
+    "src": "wall_curtain_switch"
+  },
+  {
+    "driver": "wall_remote_1_gang",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_1_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_1_gang"
+  },
+  {
+    "driver": "wall_remote_2_gang",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_2_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_2_gang"
+  },
+  {
+    "driver": "wall_remote_3_gang",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_3_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_3_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang_2",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_2"
+  },
+  {
+    "driver": "wall_remote_4_gang_3",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_3"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_3"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_6_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_6_gang"
   },
   {
     "driver": "fingerbot",
@@ -285,6 +2504,16 @@
     "src": "fingerbot"
   },
   {
+    "driver": "handheld_remote_4_buttons",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newTriggers": [
+      "handheld_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "handheld_remote_4_buttons"
+  },
+  {
     "driver": "siren",
     "fork": "kindberg95/com.tuya.zigbee",
     "newTriggers": [
@@ -300,6 +2529,152 @@
     "src": "siren"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newTriggers": [
+      "alarm_siren"
+    ],
+    "newConditions": [],
+    "newActions": [
+      "alarm_state",
+      "alarm_duration",
+      "siren_volume",
+      "alarm_tune"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "smart_button_switch",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_button_switch_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_button_switch"
+  },
+  {
+    "driver": "smart_knob_switch",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_knob_switch_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_knob_switch"
+  },
+  {
+    "driver": "smart_remote_1_button",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button"
+  },
+  {
+    "driver": "smart_remote_1_button_2",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button_2"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_4_buttons"
+  },
+  {
+    "driver": "wall_curtain_switch",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newTriggers": [],
+    "newConditions": [],
+    "newActions": [
+      "wall_move_open",
+      "wall_move_close"
+    ],
+    "src": "wall_curtain_switch"
+  },
+  {
+    "driver": "wall_remote_1_gang",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_1_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_1_gang"
+  },
+  {
+    "driver": "wall_remote_2_gang",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_2_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_2_gang"
+  },
+  {
+    "driver": "wall_remote_3_gang",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_3_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_3_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang"
+  },
+  {
+    "driver": "wall_remote_4_gang_2",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_2"
+  },
+  {
+    "driver": "wall_remote_4_gang_3",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_4_gang_buttons_3"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_4_gang_3"
+  },
+  {
+    "driver": "wall_remote_6_gang",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newTriggers": [
+      "wall_remote_6_gang_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "wall_remote_6_gang"
+  },
+  {
     "driver": "fingerbot",
     "fork": "Peter-Celica/com.tuya.zigbee",
     "newTriggers": [],
@@ -310,6 +2685,16 @@
     "src": "fingerbot"
   },
   {
+    "driver": "handheld_remote_4_buttons",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newTriggers": [
+      "handheld_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "handheld_remote_4_buttons"
+  },
+  {
     "driver": "siren",
     "fork": "Peter-Celica/com.tuya.zigbee",
     "newTriggers": [
@@ -325,654 +2710,149 @@
     "src": "siren"
   },
   {
-    "driver": "fingerbot",
-    "fork": "script0803/com.tuya.zigbee",
+    "driver": "sirentemphumidsensor",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newTriggers": [
+      "alarm_siren"
+    ],
+    "newConditions": [],
+    "newActions": [
+      "alarm_state",
+      "alarm_duration",
+      "siren_volume",
+      "alarm_tune"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "smart_button_switch",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_button_switch_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_button_switch"
+  },
+  {
+    "driver": "smart_knob_switch",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_knob_switch_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_knob_switch"
+  },
+  {
+    "driver": "smart_remote_1_button",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button"
+  },
+  {
+    "driver": "smart_remote_1_button_2",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_1_button_2"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_1_button_2"
+  },
+  {
+    "driver": "smart_remote_4_buttons",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newTriggers": [
+      "smart_remote_4_buttons"
+    ],
+    "newConditions": [],
+    "newActions": [],
+    "src": "smart_remote_4_buttons"
+  },
+  {
+    "driver": "wall_curtain_switch",
+    "fork": "Peter-Celica/com.tuya.zigbee",
     "newTriggers": [],
     "newConditions": [],
     "newActions": [
-      "set_finger_bot_mode"
+      "wall_move_open",
+      "wall_move_close"
     ],
-    "src": "fingerbot"
+    "src": "wall_curtain_switch"
   },
   {
-    "driver": "siren",
-    "fork": "script0803/com.tuya.zigbee",
+    "driver": "wall_remote_1_gang",
+    "fork": "Peter-Celica/com.tuya.zigbee",
     "newTriggers": [
-      "siren_alarm"
+      "wall_remote_1_gang_buttons"
     ],
     "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
+    "newActions": [],
+    "src": "wall_remote_1_gang"
   },
   {
-    "driver": "fingerbot",
-    "fork": "IsaacNZ2/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "IsaacNZ2/com.tuya.zigbee",
+    "driver": "wall_remote_2_gang",
+    "fork": "Peter-Celica/com.tuya.zigbee",
     "newTriggers": [
-      "siren_alarm"
+      "wall_remote_2_gang_buttons"
     ],
     "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
+    "newActions": [],
+    "src": "wall_remote_2_gang"
   },
   {
-    "driver": "fingerbot",
-    "fork": "jievie2000/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "jievie2000/com.tuya.zigbee",
+    "driver": "wall_remote_3_gang",
+    "fork": "Peter-Celica/com.tuya.zigbee",
     "newTriggers": [
-      "siren_alarm"
+      "wall_remote_3_gang_buttons"
     ],
     "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
+    "newActions": [],
+    "src": "wall_remote_3_gang"
   },
   {
-    "driver": "fingerbot",
-    "fork": "AlfredMBG/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "AlfredMBG/com.tuya.zigbee",
+    "driver": "wall_remote_4_gang",
+    "fork": "Peter-Celica/com.tuya.zigbee",
     "newTriggers": [
-      "siren_alarm"
+      "wall_remote_4_gang_buttons"
     ],
     "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
+    "newActions": [],
+    "src": "wall_remote_4_gang"
   },
   {
-    "driver": "fingerbot",
-    "fork": "mayconbordin/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "mayconbordin/com.tuya.zigbee",
+    "driver": "wall_remote_4_gang_2",
+    "fork": "Peter-Celica/com.tuya.zigbee",
     "newTriggers": [
-      "siren_alarm"
+      "wall_remote_4_gang_buttons_2"
     ],
     "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
+    "newActions": [],
+    "src": "wall_remote_4_gang_2"
   },
   {
-    "driver": "fingerbot",
-    "fork": "cmanl/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "cmanl/com.tuya.zigbee",
+    "driver": "wall_remote_4_gang_3",
+    "fork": "Peter-Celica/com.tuya.zigbee",
     "newTriggers": [
-      "siren_alarm"
+      "wall_remote_4_gang_buttons_3"
     ],
     "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
+    "newActions": [],
+    "src": "wall_remote_4_gang_3"
   },
   {
-    "driver": "fingerbot",
-    "fork": "tannerchung/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "tannerchung/com.tuya.zigbee",
+    "driver": "wall_remote_6_gang",
+    "fork": "Peter-Celica/com.tuya.zigbee",
     "newTriggers": [
-      "siren_alarm"
+      "wall_remote_6_gang_buttons"
     ],
     "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "lima92/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "lima92/com.tuya.zigbee",
-    "newTriggers": [
-      "siren_alarm"
-    ],
-    "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "Melectro1/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "Melectro1/com.tuya.zigbee",
-    "newTriggers": [
-      "siren_alarm"
-    ],
-    "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "guestus/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "guestus/com.tuya.zigbee",
-    "newTriggers": [
-      "siren_alarm"
-    ],
-    "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "crimson7O/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "crimson7O/com.tuya.zigbee",
-    "newTriggers": [
-      "siren_alarm"
-    ],
-    "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "adamel2006/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "adamel2006/com.tuya.zigbee",
-    "newTriggers": [
-      "siren_alarm"
-    ],
-    "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "hapylestat/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "hapylestat/com.tuya.zigbee",
-    "newTriggers": [
-      "siren_alarm"
-    ],
-    "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "gpmachado/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "gpmachado/com.tuya.zigbee",
-    "newTriggers": [
-      "siren_alarm"
-    ],
-    "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune",
-      "siren_beep"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "YuriEstevan/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "YuriEstevan/com.tuya.zigbee",
-    "newTriggers": [
-      "siren_alarm"
-    ],
-    "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "dvdkroft/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "dvdkroft/com.tuya.zigbee",
-    "newTriggers": [
-      "siren_alarm"
-    ],
-    "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "FinnKje/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "FinnKje/com.tuya.zigbee",
-    "newTriggers": [
-      "siren_alarm"
-    ],
-    "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "TKGHill/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "TKGHill/com.tuya.zigbee",
-    "newTriggers": [
-      "siren_alarm"
-    ],
-    "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "artisare/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "artisare/com.tuya.zigbee",
-    "newTriggers": [
-      "siren_alarm"
-    ],
-    "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "semolex/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "semolex/com.tuya.zigbee",
-    "newTriggers": [
-      "siren_alarm"
-    ],
-    "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "snorro80/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "snorro80/com.tuya.zigbee",
-    "newTriggers": [
-      "siren_alarm"
-    ],
-    "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "dirkg173/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "dirkg173/com.tuya.zigbee",
-    "newTriggers": [
-      "siren_alarm"
-    ],
-    "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "mikberg/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "mikberg/com.tuya.zigbee",
-    "newTriggers": [
-      "siren_alarm"
-    ],
-    "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "mkoslacz/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "mkoslacz/com.tuya.zigbee",
-    "newTriggers": [
-      "siren_alarm"
-    ],
-    "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "chernals/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "chernals/com.tuya.zigbee",
-    "newTriggers": [
-      "siren_alarm"
-    ],
-    "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "evervondel/com.tuya.zigbee",
-    "newTriggers": [],
-    "newConditions": [],
-    "newActions": [
-      "set_finger_bot_mode"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "siren",
-    "fork": "evervondel/com.tuya.zigbee",
-    "newTriggers": [
-      "siren_alarm"
-    ],
-    "newConditions": [],
-    "newActions": [
-      "siren_alarm_state",
-      "siren_alarm_duration",
-      "siren_volume_setting",
-      "siren_alarm_tune"
-    ],
-    "src": "siren"
+    "newActions": [],
+    "src": "wall_remote_6_gang"
   }
 ]

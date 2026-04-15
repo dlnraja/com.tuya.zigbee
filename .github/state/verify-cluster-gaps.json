@@ -1,1653 +1,131 @@
 [
   {
     "driver": "curtain_motor",
-    "fork": "pkuijpers/com.tuya.zigbee",
+    "fork": "finnamu/com.tuya.zigbee",
     "newClusters": [
       "10",
       "4",
-      "5"
+      "5",
+      "258"
     ],
     "src": "curtain_motor"
   },
   {
     "driver": "contact_sensor",
-    "fork": "pkuijpers/com.tuya.zigbee",
+    "fork": "finnamu/com.tuya.zigbee",
     "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "pkuijpers/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "pkuijpers/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "pkuijpers/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "pkuijpers/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "pkuijpers/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "bmalkow/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "bmalkow/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "bmalkow/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "bmalkow/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "bmalkow/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "bmalkow/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "bmalkow/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "baschte/de.baschte.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "baschte/de.baschte.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "baschte/de.baschte.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "baschte/de.baschte.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "baschte/de.baschte.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "baschte/de.baschte.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "baschte/de.baschte.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "tomkusz/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "tomkusz/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "tomkusz/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "tomkusz/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "tomkusz/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "tomkusz/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "tomkusz/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "Mmaaikel/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "Mmaaikel/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "Mmaaikel/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "Mmaaikel/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "Mmaaikel/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "Mmaaikel/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "Mmaaikel/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "hendriksenremco/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "hendriksenremco/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "hendriksenremco/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "hendriksenremco/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "hendriksenremco/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "hendriksenremco/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "hendriksenremco/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "sebastianbrand01/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "sebastianbrand01/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "sebastianbrand01/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "sebastianbrand01/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "sebastianbrand01/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "sebastianbrand01/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "sebastianbrand01/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "kodalissri/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "kodalissri/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "kodalissri/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "kodalissri/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "kodalissri/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "kodalissri/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "kodalissri/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "SietzeM/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "SietzeM/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "SietzeM/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "SietzeM/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "SietzeM/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "SietzeM/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "SietzeM/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "theswim/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "theswim/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "theswim/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "theswim/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "theswim/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "theswim/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "theswim/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "willarentz/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "willarentz/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "willarentz/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "willarentz/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "willarentz/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "willarentz/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "willarentz/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "kindberg95/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "kindberg95/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "kindberg95/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "kindberg95/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "kindberg95/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "kindberg95/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "kindberg95/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "Peter-Celica/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "Peter-Celica/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "Peter-Celica/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "Peter-Celica/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "Peter-Celica/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "Peter-Celica/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "Peter-Celica/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "script0803/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "script0803/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "script0803/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "script0803/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "script0803/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "script0803/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "script0803/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "IsaacNZ2/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "IsaacNZ2/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "IsaacNZ2/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "IsaacNZ2/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "IsaacNZ2/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "IsaacNZ2/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "IsaacNZ2/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "jievie2000/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "jievie2000/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "jievie2000/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "jievie2000/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "jievie2000/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "jievie2000/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "jievie2000/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "AlfredMBG/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "AlfredMBG/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "AlfredMBG/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "AlfredMBG/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "AlfredMBG/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "AlfredMBG/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "AlfredMBG/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "mayconbordin/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "mayconbordin/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "mayconbordin/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "mayconbordin/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "mayconbordin/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "mayconbordin/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "mayconbordin/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "cmanl/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "cmanl/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "cmanl/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "cmanl/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "cmanl/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "cmanl/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "cmanl/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "tannerchung/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "tannerchung/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "tannerchung/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "tannerchung/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "tannerchung/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "tannerchung/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "tannerchung/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "lima92/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "lima92/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "lima92/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "lima92/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "lima92/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "lima92/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "lima92/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "Melectro1/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "Melectro1/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "Melectro1/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "Melectro1/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "Melectro1/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "Melectro1/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "Melectro1/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "guestus/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "guestus/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "guestus/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "guestus/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "guestus/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "guestus/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "guestus/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "crimson7O/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "crimson7O/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "crimson7O/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "crimson7O/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "crimson7O/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "crimson7O/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "crimson7O/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "adamel2006/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "adamel2006/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "adamel2006/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "adamel2006/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "adamel2006/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "adamel2006/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "adamel2006/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "hapylestat/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "hapylestat/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "hapylestat/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "hapylestat/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "siren",
-    "fork": "hapylestat/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "siren"
-  },
-  {
-    "driver": "switch_2gang",
-    "fork": "hapylestat/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_2_gang"
-  },
-  {
-    "driver": "switch_3gang",
-    "fork": "hapylestat/com.tuya.zigbee",
-    "newClusters": [
-      "4",
-      "5"
-    ],
-    "src": "switch_3_gang"
-  },
-  {
-    "driver": "curtain_motor",
-    "fork": "gpmachado/com.tuya.zigbee",
-    "newClusters": [
-      "10",
-      "4",
-      "5"
-    ],
-    "src": "curtain_motor"
-  },
-  {
-    "driver": "contact_sensor",
-    "fork": "gpmachado/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "doorwindowsensor"
-  },
-  {
-    "driver": "fingerbot",
-    "fork": "gpmachado/com.tuya.zigbee",
-    "newClusters": [
-      "61184"
-    ],
-    "src": "fingerbot"
-  },
-  {
-    "driver": "water_leak_sensor",
-    "fork": "gpmachado/com.tuya.zigbee",
-    "newClusters": [
-      "3"
-    ],
-    "src": "flood_sensor"
-  },
-  {
-    "driver": "gas_detector",
-    "fork": "gpmachado/com.tuya.zigbee",
-    "newClusters": [
+      "1",
       "3",
-      "2821"
+      "1280"
     ],
-    "src": "gas_detector"
+    "src": "doorwindowsensor"
+  },
+  {
+    "driver": "contact_sensor",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "doorwindowsensor_2"
+  },
+  {
+    "driver": "fingerbot",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newClusters": [
+      "6"
+    ],
+    "src": "fingerbot"
+  },
+  {
+    "driver": "water_leak_sensor",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "3",
+      "1280"
+    ],
+    "src": "flood_sensor"
   },
   {
     "driver": "lcdtemphumidsensor",
-    "fork": "gpmachado/com.tuya.zigbee",
+    "fork": "finnamu/com.tuya.zigbee",
     "newClusters": [
-      "57346"
+      "1",
+      "1026",
+      "1029"
     ],
     "src": "lcdtemphumidsensor"
   },
   {
+    "driver": "motion_sensor",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "motion_sensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1024",
+      "1280"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "pirsensor"
+  },
+  {
+    "driver": "rain_sensor",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280",
+      "61184"
+    ],
+    "src": "rain_sensor"
+  },
+  {
     "driver": "siren",
-    "fork": "gpmachado/com.tuya.zigbee",
+    "fork": "finnamu/com.tuya.zigbee",
     "newClusters": [
       "4",
-      "5"
+      "5",
+      "61184"
     ],
     "src": "siren"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "switch_1gang",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_1_gang"
+  },
+  {
     "driver": "switch_2gang",
-    "fork": "gpmachado/com.tuya.zigbee",
+    "fork": "finnamu/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -1656,7 +134,7 @@
   },
   {
     "driver": "switch_3gang",
-    "fork": "gpmachado/com.tuya.zigbee",
+    "fork": "finnamu/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -1664,51 +142,142 @@
     "src": "switch_3_gang"
   },
   {
+    "driver": "temphumidsensor",
+    "fork": "finnamu/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "temphumidsensor"
+  },
+  {
     "driver": "curtain_motor",
-    "fork": "YuriEstevan/com.tuya.zigbee",
+    "fork": "telenut/com.tuya.zigbee",
     "newClusters": [
       "10",
       "4",
-      "5"
+      "5",
+      "258"
     ],
     "src": "curtain_motor"
   },
   {
     "driver": "contact_sensor",
-    "fork": "YuriEstevan/com.tuya.zigbee",
+    "fork": "telenut/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "doorwindowsensor"
   },
   {
-    "driver": "fingerbot",
-    "fork": "YuriEstevan/com.tuya.zigbee",
+    "driver": "contact_sensor",
+    "fork": "telenut/com.tuya.zigbee",
     "newClusters": [
-      "61184"
+      "1",
+      "1280"
+    ],
+    "src": "doorwindowsensor_2"
+  },
+  {
+    "driver": "fingerbot",
+    "fork": "telenut/com.tuya.zigbee",
+    "newClusters": [
+      "6"
     ],
     "src": "fingerbot"
   },
   {
     "driver": "water_leak_sensor",
-    "fork": "YuriEstevan/com.tuya.zigbee",
+    "fork": "telenut/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "flood_sensor"
   },
   {
+    "driver": "lcdtemphumidsensor",
+    "fork": "telenut/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "telenut/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "motion_sensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "telenut/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1024",
+      "1280"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "telenut/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "pirsensor"
+  },
+  {
+    "driver": "rain_sensor",
+    "fork": "telenut/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280",
+      "61184"
+    ],
+    "src": "rain_sensor"
+  },
+  {
     "driver": "siren",
-    "fork": "YuriEstevan/com.tuya.zigbee",
+    "fork": "telenut/com.tuya.zigbee",
     "newClusters": [
       "4",
-      "5"
+      "5",
+      "61184"
     ],
     "src": "siren"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "telenut/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "switch_1gang",
+    "fork": "telenut/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_1_gang"
+  },
+  {
     "driver": "switch_2gang",
-    "fork": "YuriEstevan/com.tuya.zigbee",
+    "fork": "telenut/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -1717,7 +286,7 @@
   },
   {
     "driver": "switch_3gang",
-    "fork": "YuriEstevan/com.tuya.zigbee",
+    "fork": "telenut/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -1725,51 +294,142 @@
     "src": "switch_3_gang"
   },
   {
+    "driver": "temphumidsensor",
+    "fork": "telenut/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "temphumidsensor"
+  },
+  {
     "driver": "curtain_motor",
-    "fork": "dvdkroft/com.tuya.zigbee",
+    "fork": "Robsta86/com.tuya.zigbee",
     "newClusters": [
       "10",
       "4",
-      "5"
+      "5",
+      "258"
     ],
     "src": "curtain_motor"
   },
   {
     "driver": "contact_sensor",
-    "fork": "dvdkroft/com.tuya.zigbee",
+    "fork": "Robsta86/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "doorwindowsensor"
   },
   {
-    "driver": "fingerbot",
-    "fork": "dvdkroft/com.tuya.zigbee",
+    "driver": "contact_sensor",
+    "fork": "Robsta86/com.tuya.zigbee",
     "newClusters": [
-      "61184"
+      "1",
+      "1280"
+    ],
+    "src": "doorwindowsensor_2"
+  },
+  {
+    "driver": "fingerbot",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newClusters": [
+      "6"
     ],
     "src": "fingerbot"
   },
   {
     "driver": "water_leak_sensor",
-    "fork": "dvdkroft/com.tuya.zigbee",
+    "fork": "Robsta86/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "flood_sensor"
   },
   {
+    "driver": "lcdtemphumidsensor",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "motion_sensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1024",
+      "1280"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "pirsensor"
+  },
+  {
+    "driver": "rain_sensor",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280",
+      "61184"
+    ],
+    "src": "rain_sensor"
+  },
+  {
     "driver": "siren",
-    "fork": "dvdkroft/com.tuya.zigbee",
+    "fork": "Robsta86/com.tuya.zigbee",
     "newClusters": [
       "4",
-      "5"
+      "5",
+      "61184"
     ],
     "src": "siren"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "switch_1gang",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_1_gang"
+  },
+  {
     "driver": "switch_2gang",
-    "fork": "dvdkroft/com.tuya.zigbee",
+    "fork": "Robsta86/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -1778,7 +438,7 @@
   },
   {
     "driver": "switch_3gang",
-    "fork": "dvdkroft/com.tuya.zigbee",
+    "fork": "Robsta86/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -1786,51 +446,142 @@
     "src": "switch_3_gang"
   },
   {
+    "driver": "temphumidsensor",
+    "fork": "Robsta86/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "temphumidsensor"
+  },
+  {
     "driver": "curtain_motor",
-    "fork": "FinnKje/com.tuya.zigbee",
+    "fork": "pkuijpers/com.tuya.zigbee",
     "newClusters": [
       "10",
       "4",
-      "5"
+      "5",
+      "258"
     ],
     "src": "curtain_motor"
   },
   {
     "driver": "contact_sensor",
-    "fork": "FinnKje/com.tuya.zigbee",
+    "fork": "pkuijpers/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "doorwindowsensor"
   },
   {
-    "driver": "fingerbot",
-    "fork": "FinnKje/com.tuya.zigbee",
+    "driver": "contact_sensor",
+    "fork": "pkuijpers/com.tuya.zigbee",
     "newClusters": [
-      "61184"
+      "1",
+      "1280"
+    ],
+    "src": "doorwindowsensor_2"
+  },
+  {
+    "driver": "fingerbot",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newClusters": [
+      "6"
     ],
     "src": "fingerbot"
   },
   {
     "driver": "water_leak_sensor",
-    "fork": "FinnKje/com.tuya.zigbee",
+    "fork": "pkuijpers/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "flood_sensor"
   },
   {
+    "driver": "lcdtemphumidsensor",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "motion_sensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1024",
+      "1280"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "pirsensor"
+  },
+  {
+    "driver": "rain_sensor",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280",
+      "61184"
+    ],
+    "src": "rain_sensor"
+  },
+  {
     "driver": "siren",
-    "fork": "FinnKje/com.tuya.zigbee",
+    "fork": "pkuijpers/com.tuya.zigbee",
     "newClusters": [
       "4",
-      "5"
+      "5",
+      "61184"
     ],
     "src": "siren"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "switch_1gang",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_1_gang"
+  },
+  {
     "driver": "switch_2gang",
-    "fork": "FinnKje/com.tuya.zigbee",
+    "fork": "pkuijpers/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -1839,7 +590,7 @@
   },
   {
     "driver": "switch_3gang",
-    "fork": "FinnKje/com.tuya.zigbee",
+    "fork": "pkuijpers/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -1847,51 +598,142 @@
     "src": "switch_3_gang"
   },
   {
+    "driver": "temphumidsensor",
+    "fork": "pkuijpers/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "temphumidsensor"
+  },
+  {
     "driver": "curtain_motor",
-    "fork": "TKGHill/com.tuya.zigbee",
+    "fork": "bmalkow/com.tuya.zigbee",
     "newClusters": [
       "10",
       "4",
-      "5"
+      "5",
+      "258"
     ],
     "src": "curtain_motor"
   },
   {
     "driver": "contact_sensor",
-    "fork": "TKGHill/com.tuya.zigbee",
+    "fork": "bmalkow/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "doorwindowsensor"
   },
   {
-    "driver": "fingerbot",
-    "fork": "TKGHill/com.tuya.zigbee",
+    "driver": "contact_sensor",
+    "fork": "bmalkow/com.tuya.zigbee",
     "newClusters": [
-      "61184"
+      "1",
+      "1280"
+    ],
+    "src": "doorwindowsensor_2"
+  },
+  {
+    "driver": "fingerbot",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newClusters": [
+      "6"
     ],
     "src": "fingerbot"
   },
   {
     "driver": "water_leak_sensor",
-    "fork": "TKGHill/com.tuya.zigbee",
+    "fork": "bmalkow/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "flood_sensor"
   },
   {
+    "driver": "lcdtemphumidsensor",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "motion_sensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1024",
+      "1280"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "pirsensor"
+  },
+  {
+    "driver": "rain_sensor",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280",
+      "61184"
+    ],
+    "src": "rain_sensor"
+  },
+  {
     "driver": "siren",
-    "fork": "TKGHill/com.tuya.zigbee",
+    "fork": "bmalkow/com.tuya.zigbee",
     "newClusters": [
       "4",
-      "5"
+      "5",
+      "61184"
     ],
     "src": "siren"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "switch_1gang",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_1_gang"
+  },
+  {
     "driver": "switch_2gang",
-    "fork": "TKGHill/com.tuya.zigbee",
+    "fork": "bmalkow/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -1900,7 +742,7 @@
   },
   {
     "driver": "switch_3gang",
-    "fork": "TKGHill/com.tuya.zigbee",
+    "fork": "bmalkow/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -1908,51 +750,142 @@
     "src": "switch_3_gang"
   },
   {
+    "driver": "temphumidsensor",
+    "fork": "bmalkow/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "temphumidsensor"
+  },
+  {
     "driver": "curtain_motor",
-    "fork": "artisare/com.tuya.zigbee",
+    "fork": "baschte/de.baschte.tuya.zigbee",
     "newClusters": [
       "10",
       "4",
-      "5"
+      "5",
+      "258"
     ],
     "src": "curtain_motor"
   },
   {
     "driver": "contact_sensor",
-    "fork": "artisare/com.tuya.zigbee",
+    "fork": "baschte/de.baschte.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "doorwindowsensor"
   },
   {
-    "driver": "fingerbot",
-    "fork": "artisare/com.tuya.zigbee",
+    "driver": "contact_sensor",
+    "fork": "baschte/de.baschte.tuya.zigbee",
     "newClusters": [
-      "61184"
+      "1",
+      "1280"
+    ],
+    "src": "doorwindowsensor_2"
+  },
+  {
+    "driver": "fingerbot",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newClusters": [
+      "6"
     ],
     "src": "fingerbot"
   },
   {
     "driver": "water_leak_sensor",
-    "fork": "artisare/com.tuya.zigbee",
+    "fork": "baschte/de.baschte.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "flood_sensor"
   },
   {
+    "driver": "lcdtemphumidsensor",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "motion_sensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1024",
+      "1280"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "pirsensor"
+  },
+  {
+    "driver": "rain_sensor",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280",
+      "61184"
+    ],
+    "src": "rain_sensor"
+  },
+  {
     "driver": "siren",
-    "fork": "artisare/com.tuya.zigbee",
+    "fork": "baschte/de.baschte.tuya.zigbee",
     "newClusters": [
       "4",
-      "5"
+      "5",
+      "61184"
     ],
     "src": "siren"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "switch_1gang",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_1_gang"
+  },
+  {
     "driver": "switch_2gang",
-    "fork": "artisare/com.tuya.zigbee",
+    "fork": "baschte/de.baschte.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -1961,7 +894,7 @@
   },
   {
     "driver": "switch_3gang",
-    "fork": "artisare/com.tuya.zigbee",
+    "fork": "baschte/de.baschte.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -1969,51 +902,142 @@
     "src": "switch_3_gang"
   },
   {
+    "driver": "temphumidsensor",
+    "fork": "baschte/de.baschte.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "temphumidsensor"
+  },
+  {
     "driver": "curtain_motor",
-    "fork": "semolex/com.tuya.zigbee",
+    "fork": "tomkusz/com.tuya.zigbee",
     "newClusters": [
       "10",
       "4",
-      "5"
+      "5",
+      "258"
     ],
     "src": "curtain_motor"
   },
   {
     "driver": "contact_sensor",
-    "fork": "semolex/com.tuya.zigbee",
+    "fork": "tomkusz/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "doorwindowsensor"
   },
   {
-    "driver": "fingerbot",
-    "fork": "semolex/com.tuya.zigbee",
+    "driver": "contact_sensor",
+    "fork": "tomkusz/com.tuya.zigbee",
     "newClusters": [
-      "61184"
+      "1",
+      "1280"
+    ],
+    "src": "doorwindowsensor_2"
+  },
+  {
+    "driver": "fingerbot",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newClusters": [
+      "6"
     ],
     "src": "fingerbot"
   },
   {
     "driver": "water_leak_sensor",
-    "fork": "semolex/com.tuya.zigbee",
+    "fork": "tomkusz/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "flood_sensor"
   },
   {
+    "driver": "lcdtemphumidsensor",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "motion_sensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1024",
+      "1280"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "pirsensor"
+  },
+  {
+    "driver": "rain_sensor",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280",
+      "61184"
+    ],
+    "src": "rain_sensor"
+  },
+  {
     "driver": "siren",
-    "fork": "semolex/com.tuya.zigbee",
+    "fork": "tomkusz/com.tuya.zigbee",
     "newClusters": [
       "4",
-      "5"
+      "5",
+      "61184"
     ],
     "src": "siren"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "switch_1gang",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_1_gang"
+  },
+  {
     "driver": "switch_2gang",
-    "fork": "semolex/com.tuya.zigbee",
+    "fork": "tomkusz/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -2022,7 +1046,7 @@
   },
   {
     "driver": "switch_3gang",
-    "fork": "semolex/com.tuya.zigbee",
+    "fork": "tomkusz/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -2030,51 +1054,142 @@
     "src": "switch_3_gang"
   },
   {
+    "driver": "temphumidsensor",
+    "fork": "tomkusz/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "temphumidsensor"
+  },
+  {
     "driver": "curtain_motor",
-    "fork": "snorro80/com.tuya.zigbee",
+    "fork": "Mmaaikel/com.tuya.zigbee",
     "newClusters": [
       "10",
       "4",
-      "5"
+      "5",
+      "258"
     ],
     "src": "curtain_motor"
   },
   {
     "driver": "contact_sensor",
-    "fork": "snorro80/com.tuya.zigbee",
+    "fork": "Mmaaikel/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "doorwindowsensor"
   },
   {
-    "driver": "fingerbot",
-    "fork": "snorro80/com.tuya.zigbee",
+    "driver": "contact_sensor",
+    "fork": "Mmaaikel/com.tuya.zigbee",
     "newClusters": [
-      "61184"
+      "1",
+      "1280"
+    ],
+    "src": "doorwindowsensor_2"
+  },
+  {
+    "driver": "fingerbot",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newClusters": [
+      "6"
     ],
     "src": "fingerbot"
   },
   {
     "driver": "water_leak_sensor",
-    "fork": "snorro80/com.tuya.zigbee",
+    "fork": "Mmaaikel/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "flood_sensor"
   },
   {
+    "driver": "lcdtemphumidsensor",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "motion_sensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1024",
+      "1280"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "pirsensor"
+  },
+  {
+    "driver": "rain_sensor",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280",
+      "61184"
+    ],
+    "src": "rain_sensor"
+  },
+  {
     "driver": "siren",
-    "fork": "snorro80/com.tuya.zigbee",
+    "fork": "Mmaaikel/com.tuya.zigbee",
     "newClusters": [
       "4",
-      "5"
+      "5",
+      "61184"
     ],
     "src": "siren"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "switch_1gang",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_1_gang"
+  },
+  {
     "driver": "switch_2gang",
-    "fork": "snorro80/com.tuya.zigbee",
+    "fork": "Mmaaikel/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -2083,7 +1198,7 @@
   },
   {
     "driver": "switch_3gang",
-    "fork": "snorro80/com.tuya.zigbee",
+    "fork": "Mmaaikel/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -2091,51 +1206,142 @@
     "src": "switch_3_gang"
   },
   {
+    "driver": "temphumidsensor",
+    "fork": "Mmaaikel/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "temphumidsensor"
+  },
+  {
     "driver": "curtain_motor",
-    "fork": "dirkg173/com.tuya.zigbee",
+    "fork": "hendriksenremco/com.tuya.zigbee",
     "newClusters": [
       "10",
       "4",
-      "5"
+      "5",
+      "258"
     ],
     "src": "curtain_motor"
   },
   {
     "driver": "contact_sensor",
-    "fork": "dirkg173/com.tuya.zigbee",
+    "fork": "hendriksenremco/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "doorwindowsensor"
   },
   {
-    "driver": "fingerbot",
-    "fork": "dirkg173/com.tuya.zigbee",
+    "driver": "contact_sensor",
+    "fork": "hendriksenremco/com.tuya.zigbee",
     "newClusters": [
-      "61184"
+      "1",
+      "1280"
+    ],
+    "src": "doorwindowsensor_2"
+  },
+  {
+    "driver": "fingerbot",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newClusters": [
+      "6"
     ],
     "src": "fingerbot"
   },
   {
     "driver": "water_leak_sensor",
-    "fork": "dirkg173/com.tuya.zigbee",
+    "fork": "hendriksenremco/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "flood_sensor"
   },
   {
+    "driver": "lcdtemphumidsensor",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "motion_sensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1024",
+      "1280"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "pirsensor"
+  },
+  {
+    "driver": "rain_sensor",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280",
+      "61184"
+    ],
+    "src": "rain_sensor"
+  },
+  {
     "driver": "siren",
-    "fork": "dirkg173/com.tuya.zigbee",
+    "fork": "hendriksenremco/com.tuya.zigbee",
     "newClusters": [
       "4",
-      "5"
+      "5",
+      "61184"
     ],
     "src": "siren"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "switch_1gang",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_1_gang"
+  },
+  {
     "driver": "switch_2gang",
-    "fork": "dirkg173/com.tuya.zigbee",
+    "fork": "hendriksenremco/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -2144,7 +1350,7 @@
   },
   {
     "driver": "switch_3gang",
-    "fork": "dirkg173/com.tuya.zigbee",
+    "fork": "hendriksenremco/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -2152,51 +1358,142 @@
     "src": "switch_3_gang"
   },
   {
+    "driver": "temphumidsensor",
+    "fork": "hendriksenremco/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "temphumidsensor"
+  },
+  {
     "driver": "curtain_motor",
-    "fork": "mikberg/com.tuya.zigbee",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
     "newClusters": [
       "10",
       "4",
-      "5"
+      "5",
+      "258"
     ],
     "src": "curtain_motor"
   },
   {
     "driver": "contact_sensor",
-    "fork": "mikberg/com.tuya.zigbee",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "doorwindowsensor"
   },
   {
-    "driver": "fingerbot",
-    "fork": "mikberg/com.tuya.zigbee",
+    "driver": "contact_sensor",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
     "newClusters": [
-      "61184"
+      "1",
+      "1280"
+    ],
+    "src": "doorwindowsensor_2"
+  },
+  {
+    "driver": "fingerbot",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newClusters": [
+      "6"
     ],
     "src": "fingerbot"
   },
   {
     "driver": "water_leak_sensor",
-    "fork": "mikberg/com.tuya.zigbee",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "flood_sensor"
   },
   {
+    "driver": "lcdtemphumidsensor",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "motion_sensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1024",
+      "1280"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "pirsensor"
+  },
+  {
+    "driver": "rain_sensor",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280",
+      "61184"
+    ],
+    "src": "rain_sensor"
+  },
+  {
     "driver": "siren",
-    "fork": "mikberg/com.tuya.zigbee",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
     "newClusters": [
       "4",
-      "5"
+      "5",
+      "61184"
     ],
     "src": "siren"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "switch_1gang",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_1_gang"
+  },
+  {
     "driver": "switch_2gang",
-    "fork": "mikberg/com.tuya.zigbee",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -2205,7 +1502,7 @@
   },
   {
     "driver": "switch_3gang",
-    "fork": "mikberg/com.tuya.zigbee",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -2213,51 +1510,142 @@
     "src": "switch_3_gang"
   },
   {
+    "driver": "temphumidsensor",
+    "fork": "sebastianbrand01/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "temphumidsensor"
+  },
+  {
     "driver": "curtain_motor",
-    "fork": "mkoslacz/com.tuya.zigbee",
+    "fork": "kodalissri/com.tuya.zigbee",
     "newClusters": [
       "10",
       "4",
-      "5"
+      "5",
+      "258"
     ],
     "src": "curtain_motor"
   },
   {
     "driver": "contact_sensor",
-    "fork": "mkoslacz/com.tuya.zigbee",
+    "fork": "kodalissri/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "doorwindowsensor"
   },
   {
-    "driver": "fingerbot",
-    "fork": "mkoslacz/com.tuya.zigbee",
+    "driver": "contact_sensor",
+    "fork": "kodalissri/com.tuya.zigbee",
     "newClusters": [
-      "61184"
+      "1",
+      "1280"
+    ],
+    "src": "doorwindowsensor_2"
+  },
+  {
+    "driver": "fingerbot",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newClusters": [
+      "6"
     ],
     "src": "fingerbot"
   },
   {
     "driver": "water_leak_sensor",
-    "fork": "mkoslacz/com.tuya.zigbee",
+    "fork": "kodalissri/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "flood_sensor"
   },
   {
+    "driver": "lcdtemphumidsensor",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "motion_sensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1024",
+      "1280"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "pirsensor"
+  },
+  {
+    "driver": "rain_sensor",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280",
+      "61184"
+    ],
+    "src": "rain_sensor"
+  },
+  {
     "driver": "siren",
-    "fork": "mkoslacz/com.tuya.zigbee",
+    "fork": "kodalissri/com.tuya.zigbee",
     "newClusters": [
       "4",
-      "5"
+      "5",
+      "61184"
     ],
     "src": "siren"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "switch_1gang",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_1_gang"
+  },
+  {
     "driver": "switch_2gang",
-    "fork": "mkoslacz/com.tuya.zigbee",
+    "fork": "kodalissri/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -2266,7 +1654,7 @@
   },
   {
     "driver": "switch_3gang",
-    "fork": "mkoslacz/com.tuya.zigbee",
+    "fork": "kodalissri/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -2274,51 +1662,142 @@
     "src": "switch_3_gang"
   },
   {
+    "driver": "temphumidsensor",
+    "fork": "kodalissri/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "temphumidsensor"
+  },
+  {
     "driver": "curtain_motor",
-    "fork": "chernals/com.tuya.zigbee",
+    "fork": "SietzeM/com.tuya.zigbee",
     "newClusters": [
       "10",
       "4",
-      "5"
+      "5",
+      "258"
     ],
     "src": "curtain_motor"
   },
   {
     "driver": "contact_sensor",
-    "fork": "chernals/com.tuya.zigbee",
+    "fork": "SietzeM/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "doorwindowsensor"
   },
   {
-    "driver": "fingerbot",
-    "fork": "chernals/com.tuya.zigbee",
+    "driver": "contact_sensor",
+    "fork": "SietzeM/com.tuya.zigbee",
     "newClusters": [
-      "61184"
+      "1",
+      "1280"
+    ],
+    "src": "doorwindowsensor_2"
+  },
+  {
+    "driver": "fingerbot",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newClusters": [
+      "6"
     ],
     "src": "fingerbot"
   },
   {
     "driver": "water_leak_sensor",
-    "fork": "chernals/com.tuya.zigbee",
+    "fork": "SietzeM/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "flood_sensor"
   },
   {
+    "driver": "lcdtemphumidsensor",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "motion_sensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1024",
+      "1280"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "pirsensor"
+  },
+  {
+    "driver": "rain_sensor",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280",
+      "61184"
+    ],
+    "src": "rain_sensor"
+  },
+  {
     "driver": "siren",
-    "fork": "chernals/com.tuya.zigbee",
+    "fork": "SietzeM/com.tuya.zigbee",
     "newClusters": [
       "4",
-      "5"
+      "5",
+      "61184"
     ],
     "src": "siren"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "switch_1gang",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_1_gang"
+  },
+  {
     "driver": "switch_2gang",
-    "fork": "chernals/com.tuya.zigbee",
+    "fork": "SietzeM/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -2327,7 +1806,7 @@
   },
   {
     "driver": "switch_3gang",
-    "fork": "chernals/com.tuya.zigbee",
+    "fork": "SietzeM/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -2335,51 +1814,142 @@
     "src": "switch_3_gang"
   },
   {
+    "driver": "temphumidsensor",
+    "fork": "SietzeM/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "temphumidsensor"
+  },
+  {
     "driver": "curtain_motor",
-    "fork": "evervondel/com.tuya.zigbee",
+    "fork": "theswim/com.tuya.zigbee",
     "newClusters": [
       "10",
       "4",
-      "5"
+      "5",
+      "258"
     ],
     "src": "curtain_motor"
   },
   {
     "driver": "contact_sensor",
-    "fork": "evervondel/com.tuya.zigbee",
+    "fork": "theswim/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "doorwindowsensor"
   },
   {
-    "driver": "fingerbot",
-    "fork": "evervondel/com.tuya.zigbee",
+    "driver": "contact_sensor",
+    "fork": "theswim/com.tuya.zigbee",
     "newClusters": [
-      "61184"
+      "1",
+      "1280"
+    ],
+    "src": "doorwindowsensor_2"
+  },
+  {
+    "driver": "fingerbot",
+    "fork": "theswim/com.tuya.zigbee",
+    "newClusters": [
+      "6"
     ],
     "src": "fingerbot"
   },
   {
     "driver": "water_leak_sensor",
-    "fork": "evervondel/com.tuya.zigbee",
+    "fork": "theswim/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "flood_sensor"
   },
   {
+    "driver": "lcdtemphumidsensor",
+    "fork": "theswim/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "theswim/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "motion_sensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "theswim/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1024",
+      "1280"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "theswim/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "pirsensor"
+  },
+  {
+    "driver": "rain_sensor",
+    "fork": "theswim/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280",
+      "61184"
+    ],
+    "src": "rain_sensor"
+  },
+  {
     "driver": "siren",
-    "fork": "evervondel/com.tuya.zigbee",
+    "fork": "theswim/com.tuya.zigbee",
     "newClusters": [
       "4",
-      "5"
+      "5",
+      "61184"
     ],
     "src": "siren"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "theswim/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "switch_1gang",
+    "fork": "theswim/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_1_gang"
+  },
+  {
     "driver": "switch_2gang",
-    "fork": "evervondel/com.tuya.zigbee",
+    "fork": "theswim/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -2388,7 +1958,7 @@
   },
   {
     "driver": "switch_3gang",
-    "fork": "evervondel/com.tuya.zigbee",
+    "fork": "theswim/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -2396,51 +1966,142 @@
     "src": "switch_3_gang"
   },
   {
+    "driver": "temphumidsensor",
+    "fork": "theswim/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "temphumidsensor"
+  },
+  {
     "driver": "curtain_motor",
-    "fork": "gtrolo/com.tuya.zigbee",
+    "fork": "willarentz/com.tuya.zigbee",
     "newClusters": [
       "10",
       "4",
-      "5"
+      "5",
+      "258"
     ],
     "src": "curtain_motor"
   },
   {
     "driver": "contact_sensor",
-    "fork": "gtrolo/com.tuya.zigbee",
+    "fork": "willarentz/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "doorwindowsensor"
   },
   {
-    "driver": "fingerbot",
-    "fork": "gtrolo/com.tuya.zigbee",
+    "driver": "contact_sensor",
+    "fork": "willarentz/com.tuya.zigbee",
     "newClusters": [
-      "61184"
+      "1",
+      "1280"
+    ],
+    "src": "doorwindowsensor_2"
+  },
+  {
+    "driver": "fingerbot",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newClusters": [
+      "6"
     ],
     "src": "fingerbot"
   },
   {
     "driver": "water_leak_sensor",
-    "fork": "gtrolo/com.tuya.zigbee",
+    "fork": "willarentz/com.tuya.zigbee",
     "newClusters": [
-      "3"
+      "1",
+      "3",
+      "1280"
     ],
     "src": "flood_sensor"
   },
   {
+    "driver": "lcdtemphumidsensor",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "motion_sensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1024",
+      "1280"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "pirsensor"
+  },
+  {
+    "driver": "rain_sensor",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280",
+      "61184"
+    ],
+    "src": "rain_sensor"
+  },
+  {
     "driver": "siren",
-    "fork": "gtrolo/com.tuya.zigbee",
+    "fork": "willarentz/com.tuya.zigbee",
     "newClusters": [
       "4",
-      "5"
+      "5",
+      "61184"
     ],
     "src": "siren"
   },
   {
+    "driver": "sirentemphumidsensor",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "switch_1gang",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_1_gang"
+  },
+  {
     "driver": "switch_2gang",
-    "fork": "gtrolo/com.tuya.zigbee",
+    "fork": "willarentz/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
@@ -2449,11 +2110,477 @@
   },
   {
     "driver": "switch_3gang",
-    "fork": "gtrolo/com.tuya.zigbee",
+    "fork": "willarentz/com.tuya.zigbee",
     "newClusters": [
       "4",
       "5"
     ],
     "src": "switch_3_gang"
+  },
+  {
+    "driver": "temphumidsensor",
+    "fork": "willarentz/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "temphumidsensor"
+  },
+  {
+    "driver": "curtain_motor",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newClusters": [
+      "10",
+      "4",
+      "5",
+      "258"
+    ],
+    "src": "curtain_motor"
+  },
+  {
+    "driver": "contact_sensor",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "3",
+      "1280"
+    ],
+    "src": "doorwindowsensor"
+  },
+  {
+    "driver": "contact_sensor",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "doorwindowsensor_2"
+  },
+  {
+    "driver": "fingerbot",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newClusters": [
+      "6"
+    ],
+    "src": "fingerbot"
+  },
+  {
+    "driver": "water_leak_sensor",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "3",
+      "1280"
+    ],
+    "src": "flood_sensor"
+  },
+  {
+    "driver": "lcdtemphumidsensor",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "motion_sensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1024",
+      "1280"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "pirsensor"
+  },
+  {
+    "driver": "rain_sensor",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280",
+      "61184"
+    ],
+    "src": "rain_sensor"
+  },
+  {
+    "driver": "siren",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5",
+      "61184"
+    ],
+    "src": "siren"
+  },
+  {
+    "driver": "sirentemphumidsensor",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "switch_1gang",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_1_gang"
+  },
+  {
+    "driver": "switch_2gang",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_2_gang"
+  },
+  {
+    "driver": "switch_3gang",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_3_gang"
+  },
+  {
+    "driver": "temphumidsensor",
+    "fork": "kindberg95/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "temphumidsensor"
+  },
+  {
+    "driver": "curtain_motor",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newClusters": [
+      "10",
+      "4",
+      "5",
+      "258"
+    ],
+    "src": "curtain_motor"
+  },
+  {
+    "driver": "contact_sensor",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "3",
+      "1280"
+    ],
+    "src": "doorwindowsensor"
+  },
+  {
+    "driver": "contact_sensor",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "doorwindowsensor_2"
+  },
+  {
+    "driver": "fingerbot",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newClusters": [
+      "6"
+    ],
+    "src": "fingerbot"
+  },
+  {
+    "driver": "water_leak_sensor",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "3",
+      "1280"
+    ],
+    "src": "flood_sensor"
+  },
+  {
+    "driver": "lcdtemphumidsensor",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "motion_sensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1024",
+      "1280"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "pirsensor"
+  },
+  {
+    "driver": "rain_sensor",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280",
+      "61184"
+    ],
+    "src": "rain_sensor"
+  },
+  {
+    "driver": "siren",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5",
+      "61184"
+    ],
+    "src": "siren"
+  },
+  {
+    "driver": "sirentemphumidsensor",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "switch_1gang",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_1_gang"
+  },
+  {
+    "driver": "switch_2gang",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_2_gang"
+  },
+  {
+    "driver": "switch_3gang",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_3_gang"
+  },
+  {
+    "driver": "temphumidsensor",
+    "fork": "Peter-Celica/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "temphumidsensor"
+  },
+  {
+    "driver": "curtain_motor",
+    "fork": "script0803/com.tuya.zigbee",
+    "newClusters": [
+      "10",
+      "4",
+      "5",
+      "258"
+    ],
+    "src": "curtain_motor"
+  },
+  {
+    "driver": "contact_sensor",
+    "fork": "script0803/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "3",
+      "1280"
+    ],
+    "src": "doorwindowsensor"
+  },
+  {
+    "driver": "contact_sensor",
+    "fork": "script0803/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "doorwindowsensor_2"
+  },
+  {
+    "driver": "fingerbot",
+    "fork": "script0803/com.tuya.zigbee",
+    "newClusters": [
+      "6"
+    ],
+    "src": "fingerbot"
+  },
+  {
+    "driver": "water_leak_sensor",
+    "fork": "script0803/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "3",
+      "1280"
+    ],
+    "src": "flood_sensor"
+  },
+  {
+    "driver": "lcdtemphumidsensor",
+    "fork": "script0803/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "lcdtemphumidsensor"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "script0803/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "motion_sensor"
+  },
+  {
+    "driver": "motion_sensor_2",
+    "fork": "script0803/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1024",
+      "1280"
+    ],
+    "src": "motion_sensor_2"
+  },
+  {
+    "driver": "motion_sensor",
+    "fork": "script0803/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280"
+    ],
+    "src": "pirsensor"
+  },
+  {
+    "driver": "rain_sensor",
+    "fork": "script0803/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1280",
+      "61184"
+    ],
+    "src": "rain_sensor"
+  },
+  {
+    "driver": "siren",
+    "fork": "script0803/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5",
+      "61184"
+    ],
+    "src": "siren"
+  },
+  {
+    "driver": "sirentemphumidsensor",
+    "fork": "script0803/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "sirentemphumidsensor"
+  },
+  {
+    "driver": "switch_1gang",
+    "fork": "script0803/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_1_gang"
+  },
+  {
+    "driver": "switch_2gang",
+    "fork": "script0803/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_2_gang"
+  },
+  {
+    "driver": "switch_3gang",
+    "fork": "script0803/com.tuya.zigbee",
+    "newClusters": [
+      "4",
+      "5"
+    ],
+    "src": "switch_3_gang"
+  },
+  {
+    "driver": "temphumidsensor",
+    "fork": "script0803/com.tuya.zigbee",
+    "newClusters": [
+      "1",
+      "1026",
+      "1029"
+    ],
+    "src": "temphumidsensor"
   }
 ]
