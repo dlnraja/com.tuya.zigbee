@@ -1,14 +1,14 @@
 # Monthly Tuya Zigbee Report - 2026-04
 
-*Generated: 2026-04-15T07:56:32.316Z*
+*Generated: 2026-04-15T08:31:30.196Z*
 
 ## 📊 Architectural Health [v7.0.22]
 
 | Metric | Value | Status |
 |--------|-------|--------|
 | Total Drivers | 323 | ✅ |
-| Manufacturer IDs | 109033 | ✅ |
-| Collisions | 26 | ⚠️ |
+| Manufacturer IDs | 116819 | ✅ |
+| Collisions | 32 | ⚠️ |
 | v7 Architectural Debt | 323 legacy drivers | 🛠️ |
 | PR Auto-Merger | Active | 🛡️ |
 | Community Responder | Template Ready | 🤖 |
@@ -17,14 +17,17 @@
 
 | ID | Drivers |
 |----|--------|
+| `_tyzb01_qm6djpta|TS0215A` | button_emergency_sos, smart_remote_4_buttons |
 | `_tz3000_csflgqj2|TS004F` | button_wireless_1, smart_knob_rotary |
 | `_tz3000_csflgqj2|ts004f` | button_wireless_1, smart_knob_rotary |
+| `_tz3000_tk3s5tyg|TS0041` | button_wireless_1, wall_remote_1_gang |
 | `_tz3000_uri7ber7|TS004F` | button_wireless_1, smart_knob |
 | `_tz3000_uri7ber7|ts004f` | button_wireless_1, smart_knob |
 | `_tz3000_yj6k7vfo|TS0041` | button_wireless_1, remote_button_wireless_hybrid |
 | `_tz3000_yj6k7vfo|TS004F` | button_wireless_1, remote_button_wireless_hybrid |
 | `_tz3000_yj6k7vfo|ts0041` | button_wireless_1, remote_button_wireless_hybrid |
 | `_tz3000_yj6k7vfo|ts004f` | button_wireless_1, remote_button_wireless_hybrid |
+| `_tz3000_wptayaqr|TS130F` | curtain_motor, wall_curtain_switch |
 | `legrand|TS0026` | device_generic_diy_universal_hybrid, generic_diy |
 | `legrand|TS0041A` | device_generic_diy_universal_hybrid, generic_diy |
 | `legrand|TS0052` | device_generic_diy_universal_hybrid, generic_diy |
@@ -34,11 +37,8 @@
 | `legrand|ts0026` | device_generic_diy_universal_hybrid, generic_diy |
 | `legrand|ts0041a` | device_generic_diy_universal_hybrid, generic_diy |
 | `legrand|ts0052` | device_generic_diy_universal_hybrid, generic_diy |
-| `legrand|ts0105` | device_generic_diy_universal_hybrid, generic_diy |
-| `legrand|ts0224` | device_generic_diy_universal_hybrid, generic_diy |
-| `legrand|ts0901` | device_generic_diy_universal_hybrid, generic_diy |
 
-*...and 6 more*
+*...and 12 more*
 
 ## 📋 Action Items
 

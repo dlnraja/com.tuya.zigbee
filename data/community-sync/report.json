@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-15T08:03:33.269Z",
+  "ts": "2026-04-15T08:31:30.689Z",
   "currentCount": 3171,
   "src": {
     "johan": {
@@ -18908,9 +18908,87 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 53,
+      "issueCount": 54,
       "prCount": 5,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 268,
+          "title": "[Auto] 1724 new fingerprints from community (2026-04)",
+          "mfrs": [
+            "_TZE200_s8gkrkxk",
+            "_TZ3000_vd43bbfq",
+            "_TZ3000_1dd0d5yi",
+            "_TZ3000_ke7pzj5d",
+            "_TZ3000_fccpjz5z",
+            "_TZ3000_4uuaja4a",
+            "_TZ3000_zirycpws",
+            "_TZ3000_femsaaua",
+            "_TZ3000_e3vhyirx",
+            "_TZ3000_jwv3cwak",
+            "_TZ3210_dwytrmda",
+            "_TZ3210_ol1uhvza",
+            "_TZ3000_eg7awg6a",
+            "_TZ3000_eafaa66e",
+            "_TZ3000_j1xl73iw",
+            "_TZ3000_l6iqph4f",
+            "_TZ3210_invesber",
+            "_TZ3210_zdrhqmo0",
+            "_TZ3210_ngqk6jia",
+            "_TZ3000_ktuoyvt5",
+            "_TZ3210_zxbtub8r",
+            "_TZ3210_weaqkhab",
+            "_TZ3210_k1msuvg6",
+            "_TZ3000_mgusv51k",
+            "_TZ3210_ngqk6jia",
+            "_TZE200_la2c2uo9",
+            "_TZE204_hlx9tnzb",
+            "_TZE200_ip2akl4w",
+            "_TZE200_1agwnems",
+            "_TZE200_579lguh2",
+            "_TZE200_vucankjx",
+            "_TZE200_4mh6tyyo",
+            "_TZE204_n9ctkb6j",
+            "_TZE204_9qhuzgo0",
+            "_TZE204_dcnsggvz",
+            "_TZE204_5cuocqty",
+            "_TZ3000_92chsky7",
+            "_TZ3210_wdexaypg",
+            "_TZ3210_3mpwqzuu",
+            "_TZ3210_pagajpog",
+            "_TZ3210_4ubylghk",
+            "_TZ3000_7ysdnebc",
+            "_TZE200_e3oitdyu",
+            "_TZE204_zenj4lxv",
+            "_TZE204_bxoo2swd",
+            "_TZE200_gwkapsoq",
+            "_TZE200_fjjbhx9d",
+            "_TZ3000_zgrffiwg",
+            "_TZ3000_bpkijo14",
+            "_TZ3000_uvti8nkd",
+            "_TZ3210_7jnk7l3k",
+            "_TZ3000_qaaysllp",
+            "_TZ3210_huzkzqyk",
+            "_TZE200_bjawzodf",
+            "_TZE200_zl1kmjqx",
+            "_TZE200_locansqn",
+            "_TZE200_bq5c8xfe",
+            "_TZE200_qyflbnbj",
+            "_TZE200_vs0skpuc",
+            "_TZE200_44af8vyi",
+            "_TZ3000_uwkja6z1",
+            "_TZ3000_pnzfdr9y",
+            "_TZ3000_br3laukf",
+            "_TZ3000_mmtwjmaq",
+            "_TZ3000_kmh5qpmb",
+            "_TZ3000_msl6wxk9",
+            "_TZ3000_mcxw5ehu",
+            "_TZ3000_otvn3lne",
+            "_TZ3000_6ygjfyll",
+            "_TZ3040_6ygjfyll",
+            "_TZ3040_bb6xaihh"
+          ]
+        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 267,
@@ -19209,16 +19287,6 @@
             "_TZE204_bvfld3xc",
             "_TZE204_bvfld3xc",
             "_TZE204_bvfld3xc"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1354,
-          "title": "Device Request - Temperature &humidity sensor with external probe - Shenzen New Green Energy Techologies Co ltd  /\t_TZE284_8se38w3c\tTS0601",
-          "mfrs": [
-            "_TZE284_8se38w3c",
-            "_TZE284_8se38w3c",
-            "_TZE284_8se38w3c"
           ]
         }
       ]
