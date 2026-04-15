@@ -2795,3 +2795,59 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 | zigbee2mqtt + generic | JohanBendz/com.tuya.zigbee#1365 | device_request |
 | tuya + TS004F | JohanBendz/com.tuya.zigbee#1365 | device_request |
 | tuya + generic | JohanBendz/com.tuya.zigbee#1365 | device_request |
+
+
+## Auto-discovered from GitHub (2026-04-15)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZ2000_a476raq2 + sensor | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZ2000_a476raq2 + aabybja | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZ2000_a476raq2 + mcdj3aq | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZ2000_a476raq2 + owvfni3 | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZ2000_xogb73am + sensor | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZ2000_xogb73am + aabybja | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZ2000_xogb73am + mcdj3aq | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZ2000_xogb73am + owvfni3 | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZ2000_avdnvykf + sensor | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZ2000_avdnvykf + aabybja | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZ2000_avdnvykf + mcdj3aq | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZ2000_avdnvykf + owvfni3 | dlnraja/com.tuya.zigbee#267 | feature |
+| _TYZB01_a476raq2 + sensor | dlnraja/com.tuya.zigbee#267 | feature |
+| _TYZB01_a476raq2 + aabybja | dlnraja/com.tuya.zigbee#267 | feature |
+| _TYZB01_a476raq2 + mcdj3aq | dlnraja/com.tuya.zigbee#267 | feature |
+| _TYZB01_a476raq2 + owvfni3 | dlnraja/com.tuya.zigbee#267 | feature |
+| _TYZB01_hjsgdkfl + sensor | dlnraja/com.tuya.zigbee#267 | feature |
+| _TYZB01_hjsgdkfl + aabybja | dlnraja/com.tuya.zigbee#267 | feature |
+| _TYZB01_hjsgdkfl + mcdj3aq | dlnraja/com.tuya.zigbee#267 | feature |
+| _TYZB01_hjsgdkfl + owvfni3 | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZ2000_hjsgdkfl + sensor | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZ2000_hjsgdkfl + aabybja | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZ2000_hjsgdkfl + mcdj3aq | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZ2000_hjsgdkfl + owvfni3 | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_5zbp6j0u + sensor | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_5zbp6j0u + aabybja | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_5zbp6j0u + mcdj3aq | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_5zbp6j0u + owvfni3 | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_bjzrowv2 + sensor | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_bjzrowv2 + aabybja | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_bjzrowv2 + mcdj3aq | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_bjzrowv2 + owvfni3 | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_nkoabg8w + sensor | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_nkoabg8w + aabybja | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_nkoabg8w + mcdj3aq | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_nkoabg8w + owvfni3 | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_xuzcvlku + sensor | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_xuzcvlku + aabybja | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_xuzcvlku + mcdj3aq | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_xuzcvlku + owvfni3 | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_4vobcgd3 + sensor | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_4vobcgd3 + aabybja | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_4vobcgd3 + mcdj3aq | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_4vobcgd3 + owvfni3 | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_nogaemzt + sensor | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_nogaemzt + aabybja | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_nogaemzt + mcdj3aq | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_nogaemzt + owvfni3 | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_r0jdjrvi + sensor | dlnraja/com.tuya.zigbee#267 | feature |
+| _TZE200_r0jdjrvi + aabybja | dlnraja/com.tuya.zigbee#267 | feature |
