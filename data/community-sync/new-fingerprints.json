@@ -1619,6 +1619,24 @@
     "source": "Internal-Audit"
   },
   {
+    "mfr": "_TZ3000_n2egfsli",
+    "productId": [
+      "RH3001",
+      "TS0203",
+      "SNZB-04"
+    ],
+    "driver": "doorwindowsensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "alarm_contact",
+      "alarm_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "alarm_contact, alarm_battery",
+    "source": "Internal-Audit"
+  },
+  {
     "mfr": "_TZ3000_7d8yme6f",
     "productId": [
       "RH3001",
@@ -11102,6 +11120,12 @@
     "driver": null
   },
   {
+    "mfr": "_TZ3000_n2egfsli",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
     "mfr": "_TZ3000_yfekcy3n",
     "productId": null,
     "source": "Z2M",
@@ -19551,12 +19575,6 @@
   },
   {
     "mfr": "_TZE200_jsaqgakf",
-    "productId": null,
-    "source": "Z2M",
-    "driver": null
-  },
-  {
-    "mfr": "_TZE200_u6x1zyv2",
     "productId": null,
     "source": "Z2M",
     "driver": null

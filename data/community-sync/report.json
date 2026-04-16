@@ -1,6 +1,6 @@
 {
-  "ts": "2026-04-14T19:45:40.074Z",
-  "currentCount": 3337,
+  "ts": "2026-04-16T21:16:25.542Z",
+  "currentCount": 2867,
   "src": {
     "johan": {
       "count": 650,
@@ -18908,13 +18908,13 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 53,
-      "prCount": 4,
+      "issueCount": 51,
+      "prCount": 5,
       "deviceRequests": [
         {
           "repo": "dlnraja/com.tuya.zigbee",
-          "num": 262,
-          "title": "[Auto] 2144 new fingerprints from community (2026-04)",
+          "num": 272,
+          "title": "[Auto] 1724 new fingerprints from community (2026-04)",
           "mfrs": [
             "_TZE200_s8gkrkxk",
             "_TZ3000_vd43bbfq",
@@ -18932,36 +18932,6 @@
             "_TZ3000_eafaa66e",
             "_TZ3000_j1xl73iw",
             "_TZ3000_l6iqph4f",
-            "_TZE200_5zbp6j0u",
-            "_TZE200_bjzrowv2",
-            "_TZE200_nkoabg8w",
-            "_TZE200_xuzcvlku",
-            "_TZE200_4vobcgd3",
-            "_TZE200_nogaemzt",
-            "_TZE200_r0jdjrvi",
-            "_TZE200_pk0sfzvr",
-            "_TZE200_fdtjuw7u",
-            "_TZE200_zpzndjez",
-            "_TZE200_wmcdj3aq",
-            "_TZE200_cowvfni3",
-            "_TZE200_rddyvrci",
-            "_TZE200_nueqqe6k",
-            "_TZE200_xaabybja",
-            "_TZE200_rmymn92d",
-            "_TZE200_3i3exuay",
-            "_TZE200_zah67ekd",
-            "_TZE200_hsgrhjpf",
-            "_TZE200_68nvbio9",
-            "_TZE200_pw7mji0l",
-            "_TZE200_uj3f4wr5",
-            "_TZE204_1fuxihti",
-            "_TZE200_axgvo9jh",
-            "_TZE200_gaj531w3",
-            "_TZE200_yia0p3tr",
-            "_TZE200_nw1r9hp6",
-            "_TZE200_cf1sl3tj",
-            "_TZE200_9p5xmj5r",
-            "_TZE204_xu4a5rhj",
             "_TZ3210_invesber",
             "_TZ3210_zdrhqmo0",
             "_TZ3210_ngqk6jia",
@@ -18992,91 +18962,31 @@
             "_TZE204_zenj4lxv",
             "_TZE204_bxoo2swd",
             "_TZE200_gwkapsoq",
-            "_TZE200_fjjbhx9d"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 261,
-          "title": "[Auto] 2143 new fingerprints from community (2026-04)",
-          "mfrs": [
-            "_TZE200_s8gkrkxk",
-            "_TZ3000_vd43bbfq",
-            "_TZ3000_1dd0d5yi",
-            "_TZ3000_ke7pzj5d",
-            "_TZ3000_fccpjz5z",
-            "_TZ3000_4uuaja4a",
-            "_TZ3000_zirycpws",
-            "_TZ3000_femsaaua",
-            "_TZ3000_e3vhyirx",
-            "_TZ3000_jwv3cwak",
-            "_TZ3210_dwytrmda",
-            "_TZ3210_ol1uhvza",
-            "_TZ3000_eg7awg6a",
-            "_TZ3000_eafaa66e",
-            "_TZ3000_j1xl73iw",
-            "_TZ3000_l6iqph4f",
-            "_TZE200_5zbp6j0u",
-            "_TZE200_bjzrowv2",
-            "_TZE200_nkoabg8w",
-            "_TZE200_xuzcvlku",
-            "_TZE200_4vobcgd3",
-            "_TZE200_nogaemzt",
-            "_TZE200_r0jdjrvi",
-            "_TZE200_pk0sfzvr",
-            "_TZE200_fdtjuw7u",
-            "_TZE200_zpzndjez",
-            "_TZE200_wmcdj3aq",
-            "_TZE200_cowvfni3",
-            "_TZE200_rddyvrci",
-            "_TZE200_nueqqe6k",
-            "_TZE200_xaabybja",
-            "_TZE200_rmymn92d",
-            "_TZE200_3i3exuay",
-            "_TZE200_zah67ekd",
-            "_TZE200_hsgrhjpf",
-            "_TZE200_68nvbio9",
-            "_TZE200_pw7mji0l",
-            "_TZE200_uj3f4wr5",
-            "_TZE204_1fuxihti",
-            "_TZE200_axgvo9jh",
-            "_TZE200_gaj531w3",
-            "_TZE200_yia0p3tr",
-            "_TZE200_nw1r9hp6",
-            "_TZE200_cf1sl3tj",
-            "_TZE200_9p5xmj5r",
-            "_TZE204_xu4a5rhj",
-            "_TZ3210_invesber",
-            "_TZ3210_zdrhqmo0",
-            "_TZ3210_ngqk6jia",
-            "_TZ3000_ktuoyvt5",
-            "_TZ3210_zxbtub8r",
-            "_TZ3210_weaqkhab",
-            "_TZ3210_k1msuvg6",
-            "_TZ3000_mgusv51k",
-            "_TZ3210_ngqk6jia",
-            "_TZE200_la2c2uo9",
-            "_TZE204_hlx9tnzb",
-            "_TZE200_ip2akl4w",
-            "_TZE200_1agwnems",
-            "_TZE200_579lguh2",
-            "_TZE200_vucankjx",
-            "_TZE200_4mh6tyyo",
-            "_TZE204_n9ctkb6j",
-            "_TZE204_9qhuzgo0",
-            "_TZE204_dcnsggvz",
-            "_TZE204_5cuocqty",
-            "_TZ3000_92chsky7",
-            "_TZ3210_wdexaypg",
-            "_TZ3210_3mpwqzuu",
-            "_TZ3210_pagajpog",
-            "_TZ3210_4ubylghk",
-            "_TZ3000_7ysdnebc",
-            "_TZE200_e3oitdyu",
-            "_TZE204_zenj4lxv",
-            "_TZE204_bxoo2swd",
-            "_TZE200_gwkapsoq",
-            "_TZE200_fjjbhx9d"
+            "_TZE200_fjjbhx9d",
+            "_TZ3000_zgrffiwg",
+            "_TZ3000_bpkijo14",
+            "_TZ3000_uvti8nkd",
+            "_TZ3210_7jnk7l3k",
+            "_TZ3000_qaaysllp",
+            "_TZ3210_huzkzqyk",
+            "_TZE200_bjawzodf",
+            "_TZE200_zl1kmjqx",
+            "_TZE200_locansqn",
+            "_TZE200_bq5c8xfe",
+            "_TZE200_qyflbnbj",
+            "_TZE200_vs0skpuc",
+            "_TZE200_44af8vyi",
+            "_TZ3000_uwkja6z1",
+            "_TZ3000_pnzfdr9y",
+            "_TZ3000_br3laukf",
+            "_TZ3000_mmtwjmaq",
+            "_TZ3000_kmh5qpmb",
+            "_TZ3000_msl6wxk9",
+            "_TZ3000_mcxw5ehu",
+            "_TZ3000_otvn3lne",
+            "_TZ3000_6ygjfyll",
+            "_TZ3040_6ygjfyll",
+            "_TZ3040_bb6xaihh"
           ]
         },
         {
@@ -19104,6 +19014,14 @@
           "mfrs": [
             "_TZ3000_v4l4b0lp",
             "_TZ3000_v4l4b0lp"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1372,
+          "title": "add another motion sensor",
+          "mfrs": [
+            "_TZE200_mgxy2d9f"
           ]
         },
         {
@@ -20869,6 +20787,24 @@
     },
     {
       "mfr": "_TZ3000_bzxloft",
+      "productId": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ],
+      "driver": "doorwindowsensor",
+      "deviceType": "sensor",
+      "capabilities": [
+        "alarm_contact",
+        "alarm_battery"
+      ],
+      "hasBattery": true,
+      "vendor": null,
+      "description": "alarm_contact, alarm_battery",
+      "source": "Internal-Audit"
+    },
+    {
+      "mfr": "_TZ3000_n2egfsli",
       "productId": [
         "RH3001",
         "TS0203",
@@ -30369,6 +30305,12 @@
       "driver": null
     },
     {
+      "mfr": "_TZ3000_n2egfsli",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
       "mfr": "_TZ3000_yfekcy3n",
       "productId": null,
       "source": "Z2M",
@@ -38818,12 +38760,6 @@
     },
     {
       "mfr": "_TZE200_jsaqgakf",
-      "productId": null,
-      "source": "Z2M",
-      "driver": null
-    },
-    {
-      "mfr": "_TZE200_u6x1zyv2",
       "productId": null,
       "source": "Z2M",
       "driver": null
@@ -59311,6 +59247,6 @@
       "driver": null
     }
   ],
-  "newCount": 2144,
+  "newCount": 2145,
   "enrichedCount": 2154
 }
