@@ -1,0 +1,463 @@
+{
+  "name": {
+    "en": "Smart Plug 2-Gang",
+    "fr": "Prise Connectée 2 Gangs",
+    "nl": "Schakelaardoos 2",
+    "de": "Schaltersteckdose 2"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "onoff.outlet2",
+    "measure_power",
+    "meter_power",
+    "measure_battery",
+    "measure_radio_stability",
+    "measure_maintenance_score"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_tz3000_zloso4jk"
+    ],
+    "productId": [
+      "TS0122",
+      "ts0122"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/switch_plug_2/assets/images/small.png",
+    "large": "drivers/switch_plug_2/assets/images/large.png",
+    "xlarge": "drivers/switch_plug_2/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ],
+    "mains": true,
+    "approximation": {
+      "usageOff": 0.2,
+      "usageOn": 100
+    }
+  },
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Outlet 1",
+        "fr": "Prise 1"
+      }
+    },
+    "onoff.outlet2": {
+      "title": {
+        "en": "Outlet 2",
+        "fr": "Prise 2"
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Device Type Configuration",
+        "fr": "Configuration Type d'Appareil"
+      },
+      "children": [
+        {
+          "id": "device_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Connected Device Type",
+            "fr": "Type d'Appareil Connecté"
+          },
+          "hint": {
+            "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
+            "fr": "Sélectionnez le type d'appareil connecté à ce module. Radiateur inversera la logique MARCHE/ARRÊT."
+          },
+          "value": "light",
+          "values": [
+            {
+              "id": "light",
+              "label": {
+                "en": "💡 Éclairage",
+                "fr": "💡 Éclairage"
+              }
+            },
+            {
+              "id": "outdoor_light",
+              "label": {
+                "en": "🏡 Éclairage extérieur",
+                "fr": "🏡 Éclairage extérieur"
+              }
+            },
+            {
+              "id": "radiator",
+              "label": {
+                "en": "🔥 Radiateur (fil pilote)",
+                "fr": "🔥 Radiateur (fil pilote)"
+              }
+            },
+            {
+              "id": "water_heater",
+              "label": {
+                "en": "🚿 Chauffe-eau / Cumulus",
+                "fr": "🚿 Chauffe-eau / Cumulus"
+              }
+            },
+            {
+              "id": "boiler",
+              "label": {
+                "en": "🏠 Chaudière",
+                "fr": "🏠 Chaudière"
+              }
+            },
+            {
+              "id": "underfloor_heating",
+              "label": {
+                "en": "🦶 Plancher chauffant",
+                "fr": "🦶 Plancher chauffant"
+              }
+            },
+            {
+              "id": "fan",
+              "label": {
+                "en": "🌀 Ventilateur / VMC",
+                "fr": "🌀 Ventilateur / VMC"
+              }
+            },
+            {
+              "id": "ac",
+              "label": {
+                "en": "❄️ Climatisation",
+                "fr": "❄️ Climatisation"
+              }
+            },
+            {
+              "id": "extractor",
+              "label": {
+                "en": "💨 Extracteur / Hotte",
+                "fr": "💨 Extracteur / Hotte"
+              }
+            },
+            {
+              "id": "shutter",
+              "label": {
+                "en": "🪟 Volet roulant / Store",
+                "fr": "🪟 Volet roulant / Store"
+              }
+            },
+            {
+              "id": "gate",
+              "label": {
+                "en": "🚗 Portail / Garage",
+                "fr": "🚗 Portail / Garage"
+              }
+            },
+            {
+              "id": "door_lock",
+              "label": {
+                "en": "🔐 Gâche / Serrure",
+                "fr": "🔐 Gâche / Serrure"
+              }
+            },
+            {
+              "id": "pump",
+              "label": {
+                "en": "💧 Pompe",
+                "fr": "💧 Pompe"
+              }
+            },
+            {
+              "id": "irrigation",
+              "label": {
+                "en": "🌱 Arrosage",
+                "fr": "🌱 Arrosage"
+              }
+            },
+            {
+              "id": "pool",
+              "label": {
+                "en": "🏊 Équipement piscine",
+                "fr": "🏊 Équipement piscine"
+              }
+            },
+            {
+              "id": "socket",
+              "label": {
+                "en": "🔌 Prise commandée",
+                "fr": "🔌 Prise commandée"
+              }
+            },
+            {
+              "id": "appliance",
+              "label": {
+                "en": "🧺 Électroménager",
+                "fr": "🧺 Électroménager"
+              }
+            },
+            {
+              "id": "coffee_machine",
+              "label": {
+                "en": "☕ Machine à café",
+                "fr": "☕ Machine à café"
+              }
+            },
+            {
+              "id": "alarm",
+              "label": {
+                "en": "🚨 Alarme / Sirène",
+                "fr": "🚨 Alarme / Sirène"
+              }
+            },
+            {
+              "id": "camera",
+              "label": {
+                "en": "📹 Caméra",
+                "fr": "📹 Caméra"
+              }
+            },
+            {
+              "id": "tv",
+              "label": {
+                "en": "📺 TV / Écran",
+                "fr": "📺 TV / Écran"
+              }
+            },
+            {
+              "id": "audio",
+              "label": {
+                "en": "🔊 Audio / Hifi",
+                "fr": "🔊 Audio / Hifi"
+              }
+            },
+            {
+              "id": "fountain",
+              "label": {
+                "en": "⛲ Fontaine",
+                "fr": "⛲ Fontaine"
+              }
+            },
+            {
+              "id": "CR2450",
+              "label": {
+                "en": "⚙️ Autre appareil",
+                "fr": "⚙️ Autre appareil"
+              }
+            }
+          ]
+        },
+        {
+          "id": "invert_logic_manual",
+          "type": "checkbox",
+          "label": {
+            "en": "Manual Logic Inversion",
+            "fr": "Inversion Logique Manuelle"
+          },
+          "hint": {
+            "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
+            "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
+          },
+          "value": false
+        }
+      ]
+    },
+    {
+      "id": "enable_radio_sensing",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Radio Presence Sensing",
+        "fr": "Activer la Détection de Présence Radio"
+      },
+      "value": false,
+      "hint": {
+        "en": "Infer presence from Zigbee signal fluctuations (BETA)",
+        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+      }
+    },
+    {
+      "id": "radio_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Radio Presence Sensitivity",
+        "fr": "Sensibilité Présence Radio"
+      },
+      "value": 15,
+      "min": 5,
+      "max": 50,
+      "hint": {
+        "en": "LQI variance threshold (higher = less sensitive)",
+        "fr": "Seuil de variance LQI (plus haut = moins sensible)"
+      }
+    },
+    {
+      "id": "enable_software_child_lock",
+      "type": "checkbox",
+      "label": {
+        "en": "Software Child Lock",
+        "fr": "Sécurité Enfant Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Prevents manual state changes on the device",
+        "fr": "Empêche les changements d'état manuels sur l'appareil"
+      }
+    },
+    {
+      "id": "auto_off_duration",
+      "type": "number",
+      "label": {
+        "en": "Auto-Off Timer (Minutes)",
+        "fr": "Minuterie Auto-Off (Minutes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 1440,
+      "hint": {
+        "en": "Turn off automatically after X minutes (0 = disabled)",
+        "fr": "S'éteint après X minutes (0 = désactivé)"
+      }
+    },
+    {
+      "id": "enable_vacation_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "Vacation Mode (Presence Sim)",
+        "fr": "Mode Vacances (Simulation Présence)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Randomly toggle device during evenings to simulate presence",
+        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+      }
+    },
+    {
+      "id": "emulated_motion_hold",
+      "type": "number",
+      "label": {
+        "en": "Emulated Motion Hold (Seconds)",
+        "fr": "Maintien Mouvement Émulé (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 3600,
+      "hint": {
+        "en": "Keep motion 'ON' for X seconds after hardware clears",
+        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+      }
+    },
+    {
+      "id": "double_click_interval",
+      "type": "number",
+      "label": {
+        "en": "Double Click Interval (ms)",
+        "fr": "Intervalle Double-Clic (ms)"
+      },
+      "value": 400,
+      "min": 100,
+      "max": 1000,
+      "hint": {
+        "en": "Software emulation for single-action buttons",
+        "fr": "Émulation logicielle pour boutons à action unique"
+      }
+    },
+    {
+      "id": "inching_duration",
+      "type": "number",
+      "label": {
+        "en": "Inching Duration (Secs)",
+        "fr": "Durée Inching (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 60,
+      "step": 0.1,
+      "hint": {
+        "en": "Automatically turn off after X seconds (Pulse mode)",
+        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+      }
+    },
+    {
+      "id": "enable_state_recovery",
+      "type": "checkbox",
+      "label": {
+        "en": "Software State Recovery",
+        "fr": "Récupération d'État Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Restore previous ON/OFF state after power failure",
+        "fr": "Restore l'état précédent après une coupure de courant"
+      }
+    },
+    {
+      "id": "overload_threshold",
+      "type": "number",
+      "label": {
+        "en": "Overload Protection (Watts)",
+        "fr": "Protection Surcharge (Watts)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 4000,
+      "hint": {
+        "en": "Cut power if consumption exceeds this value (0 = disabled)",
+        "fr": "Coupure si la consommation dépasse cette valeur (0 = désactivé)"
+      }
+    },
+    {
+      "id": "enable_soft_transitions",
+      "type": "checkbox",
+      "label": {
+        "en": "Soft transitions (Fade)",
+        "fr": "Transitions douces (Fade)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable software-simulated smooth transitions (Lights/Dim)",
+        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+      }
+    },
+    {
+      "id": "maintenance_threshold",
+      "type": "number",
+      "label": {
+        "en": "Maintenance Alert Threshold",
+        "fr": "Seuil Alerte Maintenance"
+      },
+      "value": 30,
+      "min": 0,
+      "max": 100,
+      "hint": {
+        "en": "Alert if health score drops below this value",
+        "fr": "Alerte si le score de santé descend sous cette valeur"
+      }
+    }
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_sensor_temp_changed",
+      "title": {
+        "en": "Temperature changed"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Temperature changed"
+      }
+    },
+    {
+      "id": "wifi_sensor_hum_changed",
+      "title": {
+        "en": "Humidity changed"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Humidity changed"
+      }
+    }
+  ],
+  "conditions": [],
+  "actions": []
+}

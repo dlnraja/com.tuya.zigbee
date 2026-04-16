@@ -1,0 +1,12 @@
+{
+  "type": "boolean",
+  "title": {
+    "en": "Stop",
+    "fr": "Arrêter",
+    "nl": "Stoppen"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "button",
+  "insights": false
+}

@@ -1,0 +1,577 @@
+{
+  "triggers": [
+    {
+      "id": "switch_hybrid_switch_2gang_gang1_turned_on_switch_hybrid",
+      "title": {
+        "en": "Gang 1 turned on",
+        "fr": "Gang 1 allumé",
+        "nl": "Gang 1 aangezet",
+        "de": "Gang 1 eingeschaltet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 1 turned on",
+        "fr": "Gang 1 allumé",
+        "nl": "Gang 1 aangezet",
+        "de": "Gang 1 eingeschaltet"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_gang1_turned_off_switch_hybrid",
+      "title": {
+        "en": "Gang 1 turned off",
+        "fr": "Gang 1 éteint",
+        "nl": "Gang 1 uitgezet",
+        "de": "Gang 1 ausgeschaltet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 1 turned off",
+        "fr": "Gang 1 éteint",
+        "nl": "Gang 1 uitgezet",
+        "de": "Gang 1 ausgeschaltet"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_gang2_turned_on_switch_hybrid",
+      "title": {
+        "en": "Gang 2 turned on",
+        "fr": "Gang 2 allumé",
+        "nl": "Gang 2 aangezet",
+        "de": "Gang 2 eingeschaltet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 2 turned on",
+        "fr": "Gang 2 allumé",
+        "nl": "Gang 2 aangezet",
+        "de": "Gang 2 eingeschaltet"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_gang2_turned_off_switch_hybrid",
+      "title": {
+        "en": "Gang 2 turned off",
+        "fr": "Gang 2 éteint",
+        "nl": "Gang 2 uitgezet",
+        "de": "Gang 2 ausgeschaltet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 2 turned off",
+        "fr": "Gang 2 éteint",
+        "nl": "Gang 2 uitgezet",
+        "de": "Gang 2 ausgeschaltet"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_physical_gang1_on_switch_hybrid",
+      "title": {
+        "en": "Physical button gang 1 ON",
+        "fr": "Bouton physique gang 1 ON",
+        "nl": "Fysieke knop gang 1 AAN",
+        "de": "Physische Taste gang 1 EIN"
+      },
+      "hint": {
+        "en": "Triggers only when physical button turns ON gang 1",
+        "fr": "Se déclenche uniquement quand le bouton physique allume gang 1",
+        "nl": "Triggert alleen wanneer fysieke knop gang 1 inschakelt",
+        "de": "Wird nur ausgelöst, wenn physische Taste gang 1 einschaltet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical button gang 1 ON",
+        "fr": "Bouton physique gang 1 ON",
+        "nl": "Fysieke knop gang 1 AAN",
+        "de": "Physische Taste gang 1 EIN"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_physical_gang1_off_switch_hybrid",
+      "title": {
+        "en": "Physical button gang 1 OFF",
+        "fr": "Bouton physique gang 1 OFF",
+        "nl": "Fysieke knop gang 1 UIT",
+        "de": "Physische Taste gang 1 AUS"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical button gang 1 OFF",
+        "fr": "Bouton physique gang 1 OFF",
+        "nl": "Fysieke knop gang 1 UIT",
+        "de": "Physische Taste gang 1 AUS"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_physical_gang2_on_switch_hybrid",
+      "title": {
+        "en": "Physical button gang 2 ON",
+        "fr": "Bouton physique gang 2 ON",
+        "nl": "Fysieke knop gang 2 AAN",
+        "de": "Physische Taste gang 2 EIN"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical button gang 2 ON",
+        "fr": "Bouton physique gang 2 ON",
+        "nl": "Fysieke knop gang 2 AAN",
+        "de": "Physische Taste gang 2 EIN"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_physical_gang2_off_switch_hybrid",
+      "title": {
+        "en": "Physical button gang 2 OFF",
+        "fr": "Bouton physique gang 2 OFF",
+        "nl": "Fysieke knop gang 2 UIT",
+        "de": "Physische Taste gang 2 AUS"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Physical button gang 2 OFF",
+        "fr": "Bouton physique gang 2 OFF",
+        "nl": "Fysieke knop gang 2 UIT",
+        "de": "Physische Taste gang 2 AUS"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_turned_on_switch_hybrid",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_turned_off_switch_hybrid",
+      "title": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_power_changed_switch_hybrid",
+      "title": {
+        "en": "Power changed",
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed",
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_gang1_scene_switch_hybrid",
+      "title": {
+        "en": "Gang 1 scene triggered"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 1 scene triggered"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_gang2_scene_switch_hybrid",
+      "title": {
+        "en": "Gang 2 scene triggered"
+      },
+      "args": [],
+      "tokens": [
+        {
+          "name": "action",
+          "type": "string",
+          "title": {
+            "en": "Action"
+          },
+          "example": {
+            "en": "on"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "Gang 2 scene triggered"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_gangX_scene",
+      "title": {
+        "en": "Dynamic card switch_2gang_gangX_scene"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Dynamic card switch_2gang_gangX_scene"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "switch_hybrid_switch_2gang_gang1_is_on_switch_hybrid",
+      "title": {
+        "en": "Gang 1 is !{{on|off}}",
+        "fr": "Gang 1 est !{{allumé|éteint}}",
+        "nl": "Gang 1 is !{{aan|uit}}",
+        "de": "Gang 1 ist !{{ein|aus}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 1 is !{{on|off}}",
+        "fr": "Gang 1 est !{{allumé|éteint}}",
+        "nl": "Gang 1 is !{{aan|uit}}",
+        "de": "Gang 1 ist !{{ein|aus}}"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_gang2_is_on_switch_hybrid",
+      "title": {
+        "en": "Gang 2 is !{{on|off}}",
+        "fr": "Gang 2 est !{{allumé|éteint}}",
+        "nl": "Gang 2 is !{{aan|uit}}",
+        "de": "Gang 2 ist !{{ein|aus}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Gang 2 is !{{on|off}}",
+        "fr": "Gang 2 est !{{allumé|éteint}}",
+        "nl": "Gang 2 is !{{aan|uit}}",
+        "de": "Gang 2 ist !{{ein|aus}}"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_is_on_switch_hybrid",
+      "title": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "switch_hybrid_switch_2gang_turn_on_gang1_switch_hybrid",
+      "title": {
+        "en": "Turn on gang 1",
+        "fr": "Allumer gang 1",
+        "nl": "Gang 1 aanzetten",
+        "de": "Gang 1 einschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on gang 1",
+        "fr": "Allumer gang 1",
+        "nl": "Gang 1 aanzetten",
+        "de": "Gang 1 einschalten"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_turn_off_gang1_switch_hybrid",
+      "title": {
+        "en": "Turn off gang 1",
+        "fr": "Éteindre gang 1",
+        "nl": "Gang 1 uitzetten",
+        "de": "Gang 1 ausschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off gang 1",
+        "fr": "Éteindre gang 1",
+        "nl": "Gang 1 uitzetten",
+        "de": "Gang 1 ausschalten"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_turn_on_gang2_switch_hybrid",
+      "title": {
+        "en": "Turn on gang 2",
+        "fr": "Allumer gang 2",
+        "nl": "Gang 2 aanzetten",
+        "de": "Gang 2 einschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on gang 2",
+        "fr": "Allumer gang 2",
+        "nl": "Gang 2 aanzetten",
+        "de": "Gang 2 einschalten"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_turn_off_gang2_switch_hybrid",
+      "title": {
+        "en": "Turn off gang 2",
+        "fr": "Éteindre gang 2",
+        "nl": "Gang 2 uitzetten",
+        "de": "Gang 2 ausschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off gang 2",
+        "fr": "Éteindre gang 2",
+        "nl": "Gang 2 uitzetten",
+        "de": "Gang 2 ausschalten"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_toggle_gang1_switch_hybrid",
+      "title": {
+        "en": "Toggle gang 1",
+        "fr": "Basculer gang 1",
+        "nl": "Gang 1 wisselen",
+        "de": "Gang 1 umschalten"
+      },
+      "hint": {
+        "en": "Toggle the state of gang 1 (on→off, off→on)",
+        "fr": "Basculer l'état du gang 1",
+        "nl": "Wissel de status van gang 1",
+        "de": "Status von Gang 1 umschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle gang 1",
+        "fr": "Basculer gang 1",
+        "nl": "Gang 1 wisselen",
+        "de": "Gang 1 umschalten"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_toggle_gang2_switch_hybrid",
+      "title": {
+        "en": "Toggle gang 2",
+        "fr": "Basculer gang 2",
+        "nl": "Gang 2 wisselen",
+        "de": "Gang 2 umschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle gang 2",
+        "fr": "Basculer gang 2",
+        "nl": "Gang 2 wisselen",
+        "de": "Gang 2 umschalten"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_turn_on_all_switch_hybrid",
+      "title": {
+        "en": "Turn on all gangs",
+        "fr": "Allumer tous les gangs",
+        "nl": "Alle gangs aanzetten",
+        "de": "Alle Gangs einschalten"
+      },
+      "hint": {
+        "en": "Turn on both gang 1 and gang 2",
+        "fr": "Allumer gang 1 et gang 2",
+        "nl": "Gang 1 en gang 2 aanzetten",
+        "de": "Gang 1 und Gang 2 einschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on all gangs",
+        "fr": "Allumer tous les gangs",
+        "nl": "Alle gangs aanzetten",
+        "de": "Alle Gangs einschalten"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_turn_off_all_switch_hybrid",
+      "title": {
+        "en": "Turn off all gangs",
+        "fr": "Éteindre tous les gangs",
+        "nl": "Alle gangs uitzetten",
+        "de": "Alle Gangs ausschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off all gangs",
+        "fr": "Éteindre tous les gangs",
+        "nl": "Alle gangs uitzetten",
+        "de": "Alle Gangs ausschalten"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_set_backlight_switch_hybrid",
+      "title": {
+        "en": "Set LED backlight mode",
+        "fr": "Définir le mode rétroéclairage LED",
+        "nl": "LED achtergrondverlichting instellen",
+        "de": "LED-Hintergrundbeleuchtung einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set LED backlight to [[mode]]",
+        "fr": "Définir le rétroéclairage sur [[mode]]",
+        "nl": "Stel LED achtergrondverlichting in op [[mode]]",
+        "de": "LED-Hintergrundbeleuchtung auf [[mode]] setzen"
+      },
+      "hint": {
+        "en": "Control the switch LED indicator (requires Tuya DP15 support)",
+        "fr": "Contrôle l'indicateur LED (nécessite Tuya DP15)",
+        "nl": "Beheer de schakelaar LED indicator (vereist Tuya DP15)",
+        "de": "Steuert die Schalter-LED-Anzeige (erfordert Tuya DP15)"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "mode",
+          "title": {
+            "en": "Mode",
+            "fr": "Mode",
+            "nl": "Modus",
+            "de": "Modus"
+          },
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Off",
+                "fr": "Éteint",
+                "nl": "Uit",
+                "de": "Aus"
+              }
+            },
+            {
+              "id": "normal",
+              "label": {
+                "en": "Normal (LED when ON)",
+                "fr": "Normal (LED quand allumé)",
+                "nl": "Normaal (LED bij AAN)",
+                "de": "Normal (LED bei EIN)"
+              }
+            },
+            {
+              "id": "inverted",
+              "label": {
+                "en": "Inverted (LED when OFF)",
+                "fr": "Inversé (LED quand éteint)",
+                "nl": "Omgekeerd (LED bij UIT)",
+                "de": "Invertiert (LED bei AUS)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_turn_on_switch_hybrid",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_turn_off_switch_hybrid",
+      "title": {
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_toggle_switch_hybrid",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      }
+    },
+    {
+      "id": "switch_hybrid_switch_2gang_set_scene_mode_switch_hybrid",
+      "title": {
+        "en": "Set scene mode"
+      },
+      "titleFormatted": {
+        "en": "Set scene mode to [[mode]]"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto (Normal + flows)"
+              }
+            },
+            {
+              "id": "magic",
+              "label": {
+                "en": "Magic (Scene only)"
+              }
+            },
+            {
+              "id": "both",
+              "label": {
+                "en": "Both (Load + scene)"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

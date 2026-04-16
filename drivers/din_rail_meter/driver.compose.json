@@ -1,0 +1,318 @@
+{
+  "name": {
+    "en": "DIN Rail Energy Meter",
+    "fr": "Compteur DIN Rail",
+    "nl": "DIN Rail Energiemeter",
+    "de": "DIN-Schienen Energiezähler",
+    "it": "Contatore DIN Rail",
+    "sv": "DIN-skena Energimätare",
+    "no": "DIN-skinne Energimåler",
+    "es": "Medidor DIN Rail",
+    "da": "DIN-skinne Energimåler"
+  },
+  "class": "sensor",
+  "energy": {
+    "cumulative": true,
+    "cumulativeImportedCapability": "meter_power",
+    "cumulativeExportedCapability": "meter_power.exported"
+  },
+  "capabilities": [
+    "measure_power",
+    "meter_power",
+    "measure_voltage",
+    "measure_current",
+    "meter_power.exported",
+    "measure_radio_stability",
+    "measure_maintenance_score"
+  ],
+  "capabilitiesOptions": {
+    "measure_power": {
+      "title": {
+        "en": "Power",
+        "fr": "Puissance"
+      },
+      "units": "W"
+    },
+    "meter_power": {
+      "title": {
+        "en": "Energy Consumed",
+        "fr": "Énergie Consommée"
+      },
+      "units": "kWh"
+    },
+    "meter_power.exported": {
+      "title": {
+        "en": "Energy Exported",
+        "fr": "Énergie Exportée"
+      },
+      "units": "kWh"
+    },
+    "measure_voltage": {
+      "title": {
+        "en": "Voltage",
+        "fr": "Tension"
+      },
+      "units": "V"
+    },
+    "measure_current": {
+      "title": {
+        "en": "Current",
+        "fr": "Courant"
+      },
+      "units": "A"
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Measurement Settings",
+        "fr": "Paramètres de Mesure"
+      },
+      "children": [
+        {
+          "id": "power_scale",
+          "type": "dropdown",
+          "label": {
+            "en": "Power Scale",
+            "fr": "Échelle Puissance"
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0.1",
+              "label": {
+                "en": "÷10",
+                "fr": "÷10"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "×1 (Default)",
+                "fr": "×1 (Par défaut)"
+              }
+            },
+            {
+              "id": "10",
+              "label": {
+                "en": "×10",
+                "fr": "×10"
+              }
+            }
+          ]
+        },
+        {
+          "id": "bidirectional",
+          "type": "checkbox",
+          "label": {
+            "en": "Bidirectional (Solar)",
+            "fr": "Bidirectionnel (Solaire)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Enable for solar/grid meters",
+            "fr": "Activer pour compteurs solaires"
+          }
+        }
+      ]
+    },
+    {
+      "id": "enable_software_child_lock",
+      "type": "checkbox",
+      "label": {
+        "en": "Software Child Lock",
+        "fr": "Sécurité Enfant Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Prevents manual state changes on the device",
+        "fr": "Empêche les changements d'état manuels sur l'appareil"
+      }
+    },
+    {
+      "id": "auto_off_duration",
+      "type": "number",
+      "label": {
+        "en": "Auto-Off Timer (Minutes)",
+        "fr": "Minuterie Auto-Off (Minutes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 1440,
+      "hint": {
+        "en": "Turn off automatically after X minutes (0 = disabled)",
+        "fr": "S'éteint après X minutes (0 = désactivé)"
+      }
+    },
+    {
+      "id": "enable_vacation_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "Vacation Mode (Presence Sim)",
+        "fr": "Mode Vacances (Simulation Présence)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Randomly toggle device during evenings to simulate presence",
+        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+      }
+    },
+    {
+      "id": "emulated_motion_hold",
+      "type": "number",
+      "label": {
+        "en": "Emulated Motion Hold (Seconds)",
+        "fr": "Maintien Mouvement Émulé (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 3600,
+      "hint": {
+        "en": "Keep motion 'ON' for X seconds after hardware clears",
+        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+      }
+    },
+    {
+      "id": "double_click_interval",
+      "type": "number",
+      "label": {
+        "en": "Double Click Interval (ms)",
+        "fr": "Intervalle Double-Clic (ms)"
+      },
+      "value": 400,
+      "min": 100,
+      "max": 1000,
+      "hint": {
+        "en": "Software emulation for single-action buttons",
+        "fr": "Émulation logicielle pour boutons à action unique"
+      }
+    },
+    {
+      "id": "inching_duration",
+      "type": "number",
+      "label": {
+        "en": "Inching Duration (Secs)",
+        "fr": "Durée Inching (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 60,
+      "step": 0.1,
+      "hint": {
+        "en": "Automatically turn off after X seconds (Pulse mode)",
+        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+      }
+    },
+    {
+      "id": "enable_state_recovery",
+      "type": "checkbox",
+      "label": {
+        "en": "Software State Recovery",
+        "fr": "Récupération d'État Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Restore previous ON/OFF state after power failure",
+        "fr": "Restore l'état précédent après une coupure de courant"
+      }
+    },
+    {
+      "id": "enable_soft_transitions",
+      "type": "checkbox",
+      "label": {
+        "en": "Soft transitions (Fade)",
+        "fr": "Transitions douces (Fade)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable software-simulated smooth transitions (Lights/Dim)",
+        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+      }
+    },
+    {
+      "id": "maintenance_threshold",
+      "type": "number",
+      "label": {
+        "en": "Maintenance Alert Threshold",
+        "fr": "Seuil Alerte Maintenance"
+      },
+      "value": 30,
+      "min": 0,
+      "max": 100,
+      "hint": {
+        "en": "Alert if health score drops below this value",
+        "fr": "Alerte si le score de santé descend sous cette valeur"
+      }
+    }
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_tze200_81yrt3lo",
+      "_tze200_ac0fhfiq",
+      "_tze200_cjbofhxw",
+      "_tze200_davzgqq0",
+      "_tze200_ipxszdhv",
+      "_tze200_lzriup1j",
+      "_tze204_2dpa3fqj",
+      "_tze204_byzdayie",
+      "_tze204_davzgqq0",
+      "_tze204_fsb6zw01",
+      "_tze204_ipxszdhv",
+      "_tze204_shkxsgis",
+      "_tze284_2dpa3fqj"
+    ],
+    "productId": [
+      "SDM01-3Z1",
+      "SDM02-2Z1",
+      "SPM01-1Z2",
+      "SPM02-3Z3",
+      "TS0601",
+      "sdm01-3z1",
+      "sdm02-2z1",
+      "spm01-1z2",
+      "spm02-3z3",
+      "ts0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press the pairing button on the meter for 5 seconds until LED blinks rapidly",
+        "fr": "Appuyez sur le bouton d'appairage du compteur pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/din_rail_meter/assets/images/small.png",
+    "large": "drivers/din_rail_meter/assets/images/large.png",
+    "xlarge": "drivers/din_rail_meter/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  }
+}

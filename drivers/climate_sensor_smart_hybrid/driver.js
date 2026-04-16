@@ -1,0 +1,74 @@
+'use strict';
+
+const { ZigBeeDriver } = require('homey-zigbeedriver');
+
+class SmartScenePanelDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
+  async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    this.log('SmartScenePanelDriver initialized');
+
+    // Scene activated trigger with scene filter
+    const sceneTrigger = (() => { try { return this.homey.flow.getTriggerCard('climate_sensor_smart_hybrid_smart_scene_panel_scene_activated'); 
+  
+  } catch(e) { return null; } })();
+    if (sceneTrigger) {
+      sceneTrigger.registerRunListener(async (args, state) => {
+        return !args.scene || args.scene === state.scene;
+      
+  });
+    }
+
+    // Switch changed triggers (1-4)
+    for (let g = 1; g <= 4; g++) {
+      try {
+        const card = this._getFlowCard(`smart_scene_panel_switch_${g}_changed`, 'trigger');
+        if (card) {
+          card.registerRunListener(async () => true);
+        }
+      } catch (err) {
+        this.error(`[FLOW] Failed to register switch_${g}_changed:`, err.message);
+      }
+    }
+
+    // Action cards: set switch
+    for (let g = 1; g <= 4; g++) {
+      try {
+        const card = this._getFlowCard(`smart_scene_panel_set_switch_${g}`, 'action');
+        if (card) {
+          card.registerRunListener(async (args) => {
+            if (args.device) {
+              await args.device.triggerCapabilityListener(`onoff.gang${g}`, args.state);
+              if (args.device.sendDP) {
+                await args.device.sendDP(23 + g, 1, args.state ? 1 : 0);
+              }
+            }
+            return true;
+          });
+        }
+      } catch (err) {
+        this.error(`[FLOW] Failed to register set_switch_${g}:`, err.message);
+      }
+    }
+
+    this.log('SmartScenePanelDriver flow cards registered');
+  }
+}
+
+module.exports = SmartScenePanelDriver;
+

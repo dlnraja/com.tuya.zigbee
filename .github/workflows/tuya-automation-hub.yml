@@ -1,0 +1,271 @@
+name: Tuya Automation Hub
+
+on:
+  schedule:
+    - cron: '0 4 * * 1,4'  # Mon/Thu deep scan
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Which scanners to run'
+        type: choice
+        default: 'all'
+        options:
+          - all
+          - forum-only
+          - github-only
+          - enrichment-only
+          - forum-update-only
+          - nightly-process
+      dry_run:
+        description: 'Dry run (no posts)'
+        type: boolean
+        default: true
+      topics:
+        description: 'Forum topic IDs'
+        type: string
+        default: '140352,26439,146735,89271,54018'
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: tuya-automation
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  # forum-responder: REMOVED — now handled exclusively by forum-auto-responder.yml (2x/day)
+  # This prevents triple-posting from hub + responder + sunday workflows
+
+  github-scanner:
+    name: GitHub Scanner
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: |
+      github.event_name == 'schedule' && github.event.schedule == '0 4 * * 1,4' ||
+      github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'github-only')
+    steps:
+      - uses: actions/checkout@v5 # v5
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v5 # v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Run GitHub Scanner
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN || '' }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY || '' }}
+          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY || '' }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY || '' }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
+          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
+          DRY_RUN: ${{ inputs.dry_run || 'true' }}
+          GEMINI_MAX_TIER: "1"
+        run: node .github/scripts/github-scanner.js
+      - name: Commit state (Robust)
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/state/ drivers/ lib/ app.json .homeycompose/ || true
+          CODE_FILES=$(git diff --cached --name-only | grep -E '^drivers/|^lib/|^app\.json|^\.homeycompose/' | wc -l || echo 0)
+          VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
+          if [ "$CODE_FILES" -gt 0 ]; then
+            git commit -m "v${VER}: processed issues/PRs, ${CODE_FILES} file(s) [skip ci]"
+            
+            # Intelligent Push with Retry/Rebase
+            MAX_RETRIES=5
+            RETRY_COUNT=0
+            until [ $RETRY_COUNT -ge $MAX_RETRIES ]
+            do
+              git pull --rebase origin master && git push origin master && break
+              RETRY_COUNT=$((RETRY_COUNT+1))
+              echo "::warning::Push failed, retrying ($RETRY_COUNT/$MAX_RETRIES)..."
+              sleep $((RANDOM % 10 + 5))
+            done
+          else
+            echo "No changes to commit for GitHub Scanner."
+          fi
+
+  enrichment-scanner:
+    name: Enrichment Scanner
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    if: |
+      github.event_name == 'schedule' && github.event.schedule == '0 4 * * 1,4' ||
+      github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'enrichment-only')
+    steps:
+      - uses: actions/checkout@v5 # v5
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v5 # v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Run Enrichment Scanner
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN || '' }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY || '' }}
+          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY || '' }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY || '' }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
+          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
+          GEMINI_MAX_TIER: "1"
+        run: node .github/scripts/enrichment-scanner.js
+      - name: Scan Public APIs (davemachado/public-api)
+        continue-on-error: true
+        run: node .github/scripts/scan-public-apis.js
+      - name: Run Commercial Descriptions Scraper (Aliexpress/Tuya)
+        continue-on-error: true
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY || '' }}
+          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY || '' }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY || '' }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
+          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
+          GEMINI_MAX_TIER: "1"
+        run: node .github/scripts/manufacturer-scraper.js
+      - name: Run Tuya WiFi Local Automation Deep Researcher
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || '' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN || '' }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY || '' }}
+          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY || '' }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY || '' }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
+          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
+          GEMINI_MAX_TIER: "1"
+        run: node .github/scripts/tuya-wifi-local-researcher.js
+      - name: Run Diagnostic Auto Resolver & Crash Fixer
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/diagnostic-auto-resolver.js
+      - name: Monthly Homey SDK 3 Reference Sync
+        continue-on-error: true
+        if: github.event.schedule == '0 4 1 * *' || github.event_name == 'workflow_dispatch'
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_MAX_TIER: "1"
+        run: node .github/scripts/sync-sdk3-docs.js
+      - name: Commit state (Robust)
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/state/ drivers/ lib/ app.json .homeycompose/ || true
+          CODE_FILES=$(git diff --cached --name-only | grep -E '^drivers/|^lib/|^app\.json|^\.homeycompose/' | wc -l || echo 0)
+          VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
+          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
+          if [ "$CODE_FILES" -gt 0 ]; then
+            git commit -m "Enrichment v${VER}: ${F} FPs cross-referenced Z2M/ZHA/forum, ${CODE_FILES} file(s) [skip ci]"
+            
+            # Intelligent Push with Retry/Rebase
+            MAX_RETRIES=5
+            RETRY_COUNT=0
+            until [ $RETRY_COUNT -ge $MAX_RETRIES ]
+            do
+              git pull --rebase origin master && git push origin master && break
+              RETRY_COUNT=$((RETRY_COUNT+1))
+              echo "::warning::Push failed, retrying ($RETRY_COUNT/$MAX_RETRIES)..."
+              sleep $((RANDOM % 10 + 5))
+            done
+          else
+            echo "No changes to commit for Enrichment Scanner."
+          fi
+
+  forum-update:
+    name: Forum Status Update
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [github-scanner, enrichment-scanner]
+    if: |
+      always() && (
+        github.event_name == 'schedule' && github.event.schedule == '0 4 * * 1,4' ||
+        github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'forum-update-only')
+      )
+    steps:
+      - uses: actions/checkout@v5 # v5
+      - run: git pull origin master || true
+      - uses: actions/setup-node@v5 # v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      
+      - name: App stats
+        id: stats
+        run: |
+          V=$(node -p "require('./app.json').version")
+          echo "version=$V" >> $GITHUB_OUTPUT
+          echo "NEW_VERSION=$V" >> $GITHUB_ENV
+
+      # forum-updater.js REMOVED — duplicate forum poster (post-forum-update.js in publish.yml is the sole source)
+      - name: Forum Summary (skipped)
+        run: echo "Forum updates handled by post-forum-update.js on publish only"
+
+      # ===== DRAFT → TEST (Puppeteer + API fallback) =====
+      - name: Install Puppeteer
+        continue-on-error: true
+        run: npm install puppeteer --no-save
+      - name: "Tier 1: Promote via Browser (Puppeteer)"
+        id: promote_puppeteer
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: node .github/scripts/auto-promote-puppeteer.js
+      - name: "Tier 2: Promote via API (fallback)"
+        if: steps.promote_puppeteer.outcome != 'success'
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: |
+          if [ -z "$HOMEY_PAT" ]; then exit 0; fi
+          node .github/scripts/auto-publish-draft.js || true
+
+      # 📣 Forum Announcement (Unified Awareness)
+      - name: 💬 Post to Forum
+        if: always()
+        continue-on-error: true
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          APP_VERSION: ${{ env.NEW_VERSION }}
+        run: node .github/scripts/post-forum-update.js

@@ -1,0 +1,1389 @@
+{
+  "matched": 1192,
+  "missing": 49,
+  "existingMfrs": 3546,
+  "byType": {
+    "sensor_climate": 7,
+    "TS0601": 4,
+    "sensor_safety": 2,
+    "unknown": 6,
+    "TS0001": 2,
+    "thermostat": 2,
+    "button": 1,
+    "light": 4,
+    "cover": 1,
+    "TS0215A": 1,
+    "sensor_presence": 10,
+    "switch_multi": 4,
+    "TS0004": 1,
+    "switch": 1,
+    "sensor_contact": 1,
+    "other": 2
+  },
+  "missingDetails": [
+    {
+      "m": "_TZE284_9yapgbuv",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 1,
+          "n": "temperature"
+        },
+        {
+          "d": 2,
+          "n": "humidity"
+        },
+        {
+          "d": 3,
+          "n": "battery_state"
+        },
+        {
+          "d": 9,
+          "n": "temperature_unit"
+        }
+      ]
+    },
+    {
+      "m": "_TZE284_8b9zpaav",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 2,
+          "n": "co2"
+        },
+        {
+          "d": 18,
+          "n": "temperature"
+        },
+        {
+          "d": 19,
+          "n": "humidity"
+        },
+        {
+          "d": 21,
+          "n": "voc"
+        },
+        {
+          "d": 22,
+          "n": "formaldehyd"
+        }
+      ]
+    },
+    {
+      "m": "_TZE284_it9utkro",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 2,
+          "n": "co2"
+        },
+        {
+          "d": 18,
+          "n": "temperature"
+        },
+        {
+          "d": 19,
+          "n": "humidity"
+        },
+        {
+          "d": 20,
+          "n": "co2"
+        },
+        {
+          "d": 21,
+          "n": "voc"
+        },
+        {
+          "d": 22,
+          "n": "formaldehyd"
+        }
+      ]
+    },
+    {
+      "m": "_TZE204_dwcarsat",
+      "mid": "TS0601",
+      "dp": null
+    },
+    {
+      "m": "_TZE200_ioxkjvuz",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 1,
+          "n": "gas"
+        },
+        {
+          "d": 9,
+          "n": "self_test_result"
+        },
+        {
+          "d": 16,
+          "n": "preheat"
+        }
+      ]
+    },
+    {
+      "m": "_TZ3210_ph1joc22",
+      "mid": "TS011F",
+      "dp": null
+    },
+    {
+      "m": "_TZ3000_trdx8uxs",
+      "mid": "TS0001",
+      "dp": null
+    },
+    {
+      "m": "_TZ3000_gdsvhfao",
+      "mid": "TS0001",
+      "dp": null
+    },
+    {
+      "m": "_TZE284_noixx2uz",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 2,
+          "n": "preset"
+        },
+        {
+          "d": 3,
+          "n": "running_state"
+        },
+        {
+          "d": 4,
+          "n": "current_heating_setpoint"
+        },
+        {
+          "d": 5,
+          "n": "local_temperature"
+        },
+        {
+          "d": 6,
+          "n": "battery"
+        },
+        {
+          "d": 7,
+          "n": "child_lock"
+        },
+        {
+          "d": 28,
+          "n": "schedule_monday"
+        },
+        {
+          "d": 29,
+          "n": "schedule_tuesday"
+        },
+        {
+          "d": 30,
+          "n": "schedule_wednesday"
+        },
+        {
+          "d": 31,
+          "n": "schedule_thursday"
+        },
+        {
+          "d": 32,
+          "n": "schedule_friday"
+        },
+        {
+          "d": 33,
+          "n": "schedule_saturday"
+        },
+        {
+          "d": 34,
+          "n": "schedule_sunday"
+        }
+      ]
+    },
+    {
+      "m": "_TZE284_2baujqot",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 23,
+          "n": "action"
+        },
+        {
+          "d": 3,
+          "n": "battery"
+        }
+      ]
+    },
+    {
+      "m": "_TZE284_68utemio",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 1,
+          "n": "state"
+        },
+        {
+          "d": 2,
+          "n": "brightness"
+        },
+        {
+          "d": 3,
+          "n": "min_brightness"
+        },
+        {
+          "d": 4,
+          "n": "light_type"
+        },
+        {
+          "d": 5,
+          "n": "max_brightness"
+        },
+        {
+          "d": 6,
+          "n": "countdown"
+        },
+        {
+          "d": 14,
+          "n": "power_on_behavior"
+        },
+        {
+          "d": 21,
+          "n": "backlight_mode"
+        }
+      ]
+    },
+    {
+      "m": "_TZE200_dcnsggvz",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 1,
+          "n": "state"
+        },
+        {
+          "d": 2,
+          "n": "brightness"
+        },
+        {
+          "d": 3,
+          "n": "min_brightness"
+        },
+        {
+          "d": 4,
+          "n": "light_type"
+        },
+        {
+          "d": 4,
+          "n": "light_type"
+        },
+        {
+          "d": 5,
+          "n": "max_brightness"
+        },
+        {
+          "d": 6,
+          "n": "countdown"
+        },
+        {
+          "d": 14,
+          "n": "power_on_behavior"
+        },
+        {
+          "d": 57,
+          "n": "switch_type"
+        }
+      ]
+    },
+    {
+      "m": "_TZE210_inpjmc0h",
+      "mid": "TS0301",
+      "dp": [
+        {
+          "d": 109,
+          "n": "state_bottom"
+        },
+        {
+          "d": 101,
+          "n": "position_bottom"
+        },
+        {
+          "d": 102,
+          "n": "position_bottom"
+        },
+        {
+          "d": 1,
+          "n": "state_top"
+        },
+        {
+          "d": 2,
+          "n": "position_top"
+        },
+        {
+          "d": 3,
+          "n": "position_top"
+        },
+        {
+          "d": 13,
+          "n": "battery"
+        }
+      ]
+    },
+    {
+      "m": "_TZ3000_8utxxtzr",
+      "mid": "TS0215A",
+      "dp": null
+    },
+    {
+      "m": "_TZE204_debczeci",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 1,
+          "n": "presence"
+        },
+        {
+          "d": 4,
+          "n": "battery"
+        },
+        {
+          "d": 9,
+          "n": "sensitivity"
+        },
+        {
+          "d": 10,
+          "n": "delay_time"
+        }
+      ]
+    },
+    {
+      "m": "_TZE284_pzm3wab5",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 1,
+          "n": "presence"
+        },
+        {
+          "d": 2,
+          "n": "move_sensitivity"
+        },
+        {
+          "d": 4,
+          "n": "detection_distance_max"
+        },
+        {
+          "d": 9,
+          "n": "distance"
+        },
+        {
+          "d": 101,
+          "n": "presence_timeout"
+        },
+        {
+          "d": 102,
+          "n": "illuminance"
+        },
+        {
+          "d": 103,
+          "n": "presence_sensitivity"
+        },
+        {
+          "d": 104,
+          "n": "state"
+        },
+        {
+          "d": 105,
+          "n": "living_room"
+        },
+        {
+          "d": 106,
+          "n": "bedroom"
+        },
+        {
+          "d": 107,
+          "n": "bathroom"
+        },
+        {
+          "d": 108,
+          "n": "sleep"
+        },
+        {
+          "d": 109,
+          "n": "radar_switch"
+        }
+      ]
+    },
+    {
+      "m": "_TZE284_twybxdzl",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 1,
+          "n": "presence"
+        },
+        {
+          "d": 2,
+          "n": "move_sensitivity"
+        },
+        {
+          "d": 4,
+          "n": "detection_distance_max"
+        },
+        {
+          "d": 9,
+          "n": "distance"
+        },
+        {
+          "d": 101,
+          "n": "presence_timeout"
+        },
+        {
+          "d": 102,
+          "n": "illuminance"
+        },
+        {
+          "d": 103,
+          "n": "presence_sensitivity"
+        },
+        {
+          "d": 104,
+          "n": "state"
+        },
+        {
+          "d": 105,
+          "n": "living_room"
+        },
+        {
+          "d": 106,
+          "n": "bedroom"
+        },
+        {
+          "d": 107,
+          "n": "bathroom"
+        },
+        {
+          "d": 108,
+          "n": "sleep"
+        },
+        {
+          "d": 109,
+          "n": "radar_switch"
+        }
+      ]
+    },
+    {
+      "m": "_TZE284_hgeqeyuv",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 1,
+          "n": "presence"
+        },
+        {
+          "d": 2,
+          "n": "move_sensitivity"
+        },
+        {
+          "d": 4,
+          "n": "detection_distance_max"
+        },
+        {
+          "d": 9,
+          "n": "distance"
+        },
+        {
+          "d": 101,
+          "n": "presence_timeout"
+        },
+        {
+          "d": 102,
+          "n": "illuminance"
+        },
+        {
+          "d": 103,
+          "n": "presence_sensitivity"
+        },
+        {
+          "d": 104,
+          "n": "state"
+        },
+        {
+          "d": 105,
+          "n": "living_room"
+        },
+        {
+          "d": 106,
+          "n": "bedroom"
+        },
+        {
+          "d": 107,
+          "n": "bathroom"
+        },
+        {
+          "d": 108,
+          "n": "sleep"
+        },
+        {
+          "d": 109,
+          "n": "radar_switch"
+        }
+      ]
+    },
+    {
+      "m": "_TZE284_hodyryli",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 1,
+          "n": "temperature"
+        },
+        {
+          "d": 2,
+          "n": "humidity"
+        },
+        {
+          "d": 3,
+          "n": "battery_state"
+        },
+        {
+          "d": 38,
+          "n": "external_temperature"
+        }
+      ]
+    },
+    {
+      "m": "_TZ3290_jxvzqatwgsaqzx1u",
+      "mid": "TS1201",
+      "dp": null
+    },
+    {
+      "m": "_TZ3290_lypnqvlem5eq1ree",
+      "mid": "TS1201",
+      "dp": null
+    },
+    {
+      "m": "_TZ3290_nba3knpsarkawgnt",
+      "mid": "TS1201",
+      "dp": null
+    },
+    {
+      "m": "_TZE200_juzago6i",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 1,
+          "n": "presence"
+        },
+        {
+          "d": 4,
+          "n": "battery"
+        },
+        {
+          "d": 12,
+          "n": "illuminance"
+        },
+        {
+          "d": 101,
+          "n": "detection_distance"
+        },
+        {
+          "d": 103,
+          "n": "fading_time"
+        },
+        {
+          "d": 104,
+          "n": "last_time"
+        },
+        {
+          "d": 105,
+          "n": "static_detection_sensitivity"
+        },
+        {
+          "d": 106,
+          "n": "motion_detection_sensitivity"
+        }
+      ]
+    },
+    {
+      "m": "_TZE284_ikul00sx",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 1,
+          "n": "fan_state"
+        },
+        {
+          "d": 6,
+          "n": "fan_speed"
+        },
+        {
+          "d": 104,
+          "n": "state"
+        },
+        {
+          "d": 105,
+          "n": "brightness"
+        }
+      ]
+    },
+    {
+      "m": "_TZE204_ad2jkxwh",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 1,
+          "n": "state_l1"
+        },
+        {
+          "d": 2,
+          "n": "state_l2"
+        },
+        {
+          "d": 3,
+          "n": "state_l3"
+        },
+        {
+          "d": 4,
+          "n": "state_l4"
+        },
+        {
+          "d": 5,
+          "n": "state_l5"
+        },
+        {
+          "d": 6,
+          "n": "state_l6"
+        }
+      ]
+    },
+    {
+      "m": "_TZE204_72bewjky",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 1,
+          "n": "state_l1"
+        },
+        {
+          "d": 2,
+          "n": "state_l2"
+        },
+        {
+          "d": 3,
+          "n": "state_l3"
+        },
+        {
+          "d": 4,
+          "n": "state_l4"
+        },
+        {
+          "d": 5,
+          "n": "state_l5"
+        },
+        {
+          "d": 6,
+          "n": "state_l6"
+        }
+      ]
+    },
+    {
+      "m": "TZE204_7sjncirf",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 1,
+          "n": "state_l1"
+        },
+        {
+          "d": 2,
+          "n": "state_l2"
+        },
+        {
+          "d": 3,
+          "n": "state_l3"
+        },
+        {
+          "d": 4,
+          "n": "state_l4"
+        },
+        {
+          "d": 5,
+          "n": "state_l5"
+        },
+        {
+          "d": 6,
+          "n": "state_l6"
+        }
+      ]
+    },
+    {
+      "m": "_TZ3000_pl5v1yyy",
+      "mid": "TS011F",
+      "dp": null
+    },
+    {
+      "m": "_TZE204_w2vunxzm",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 101,
+          "n": "pressure"
+        },
+        {
+          "d": 8,
+          "n": "temperature"
+        },
+        {
+          "d": 102,
+          "n": "display_brightness"
+        }
+      ]
+    },
+    {
+      "m": "_TZ3000_tyg4yiat",
+      "mid": "TS0004",
+      "dp": null
+    },
+    {
+      "m": "_TZE204_tuhfx7tf",
+      "mid": "TS0601",
+      "dp": null
+    },
+    {
+      "m": "_TZE284_tre6haif",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 1,
+          "n": "occupancy"
+        },
+        {
+          "d": 4,
+          "n": "battery"
+        },
+        {
+          "d": 9,
+          "n": "pir_sensitivity"
+        }
+      ]
+    },
+    {
+      "m": "_TZE284_q22avxbv",
+      "mid": "TS0601",
+      "dp": null
+    },
+    {
+      "m": "_TZE284_mxujdmxo",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 1,
+          "n": "liquid_state"
+        },
+        {
+          "d": 2,
+          "n": "liquid_depth"
+        },
+        {
+          "d": 5,
+          "n": "power_level"
+        },
+        {
+          "d": 7,
+          "n": "max_set"
+        },
+        {
+          "d": 8,
+          "n": "mini_set"
+        },
+        {
+          "d": 21,
+          "n": "liquid_depth_max"
+        },
+        {
+          "d": 22,
+          "n": "liquid_level_percent"
+        },
+        {
+          "d": 103,
+          "n": "version"
+        }
+      ]
+    },
+    {
+      "m": "_TZE200_tgeqdjgk",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 102,
+          "n": "state"
+        },
+        {
+          "d": 121,
+          "n": "state_l1"
+        },
+        {
+          "d": 122,
+          "n": "state_l2"
+        },
+        {
+          "d": 131,
+          "n": "switch_mode_l1"
+        },
+        {
+          "d": 132,
+          "n": "switch_mode_l2"
+        },
+        {
+          "d": 103,
+          "n": "brightness"
+        },
+        {
+          "d": 107,
+          "n": "color_temp"
+        },
+        {
+          "d": 105,
+          "n": "adjustment_mode"
+        },
+        {
+          "d": 106,
+          "n": "power_on_behavior"
+        },
+        {
+          "d": 111,
+          "n": "action"
+        },
+        {
+          "d": 112,
+          "n": "action"
+        },
+        {
+          "d": 141,
+          "n": "mode"
+        }
+      ]
+    },
+    {
+      "m": "B3876M9",
+      "mid": "ZP-301Z",
+      "dp": [
+        {
+          "d": 1,
+          "n": "presence"
+        },
+        {
+          "d": 14,
+          "n": "battery_value"
+        },
+        {
+          "d": 20,
+          "n": "illuminance"
+        },
+        {
+          "d": 100,
+          "n": "brightness_value"
+        },
+        {
+          "d": 101,
+          "n": "illuminance_trigger"
+        },
+        {
+          "d": 102,
+          "n": "presence_time"
+        },
+        {
+          "d": 103,
+          "n": "presence_delay"
+        },
+        {
+          "d": 104,
+          "n": "detection_cycle"
+        }
+      ]
+    },
+    {
+      "m": "_TZE204_wc2w9t1s",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 1,
+          "n": "system_mode"
+        },
+        {
+          "d": 2,
+          "n": "preset"
+        },
+        {
+          "d": 10,
+          "n": "frost"
+        },
+        {
+          "d": 16,
+          "n": "current_heating_setpoint"
+        },
+        {
+          "d": 18,
+          "n": "min_temperature_limit"
+        },
+        {
+          "d": 19,
+          "n": "max_temperature_limit"
+        },
+        {
+          "d": 24,
+          "n": "local_temperature"
+        },
+        {
+          "d": 40,
+          "n": "child_lock"
+        },
+        {
+          "d": 65,
+          "n": "schedule_monday"
+        },
+        {
+          "d": 66,
+          "n": "schedule_tuesday"
+        },
+        {
+          "d": 67,
+          "n": "schedule_wednesday"
+        },
+        {
+          "d": 68,
+          "n": "schedule_thursday"
+        },
+        {
+          "d": 69,
+          "n": "schedule_friday"
+        },
+        {
+          "d": 70,
+          "n": "schedule_saturday"
+        },
+        {
+          "d": 71,
+          "n": "schedule_sunday"
+        },
+        {
+          "d": 107,
+          "n": "battery"
+        },
+        {
+          "d": 109,
+          "n": "local_temperature_calibration"
+        },
+        {
+          "d": 112,
+          "n": "deadzone_temperature"
+        },
+        {
+          "d": 116,
+          "n": "eco_temperature"
+        }
+      ]
+    },
+    {
+      "m": "_TZE284_roujjevx",
+      "mid": "TS0601",
+      "dp": null
+    },
+    {
+      "m": "_TZE284_vceqncho",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 1,
+          "n": "occupancy"
+        },
+        {
+          "d": 101,
+          "n": "presence_distance"
+        },
+        {
+          "d": 102,
+          "n": "presence_sensitivity"
+        },
+        {
+          "d": 103,
+          "n": "radar_switch"
+        },
+        {
+          "d": 104,
+          "n": "pir_sensitivity"
+        },
+        {
+          "d": 105,
+          "n": "delay_time"
+        },
+        {
+          "d": 107,
+          "n": "led_switch"
+        },
+        {
+          "d": 108,
+          "n": "illuminance"
+        },
+        {
+          "d": 109,
+          "n": "battery"
+        }
+      ]
+    },
+    {
+      "m": "_TZE284_who1jxwd",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 1,
+          "n": "occupancy"
+        },
+        {
+          "d": 101,
+          "n": "presence_distance"
+        },
+        {
+          "d": 102,
+          "n": "presence_sensitivity"
+        },
+        {
+          "d": 103,
+          "n": "radar_switch"
+        },
+        {
+          "d": 104,
+          "n": "pir_sensitivity"
+        },
+        {
+          "d": 105,
+          "n": "delay_time"
+        },
+        {
+          "d": 107,
+          "n": "led_switch"
+        },
+        {
+          "d": 108,
+          "n": "illuminance"
+        },
+        {
+          "d": 109,
+          "n": "battery"
+        }
+      ]
+    },
+    {
+      "m": "DHT0001",
+      "mid": "Excellux",
+      "dp": [
+        {
+          "d": 4,
+          "n": "battery"
+        },
+        {
+          "d": 5,
+          "n": "temperature"
+        },
+        {
+          "d": 101,
+          "n": "sampling_interval"
+        },
+        {
+          "d": 114,
+          "n": "temperature_calibration"
+        },
+        {
+          "d": 115,
+          "n": "temperature_v0_set"
+        },
+        {
+          "d": 116,
+          "n": "temperature_v1_set"
+        },
+        {
+          "d": 117,
+          "n": "temperature_warning"
+        },
+        {
+          "d": 118,
+          "n": "humidity"
+        },
+        {
+          "d": 119,
+          "n": "humidity_calibration"
+        },
+        {
+          "d": 120,
+          "n": "humidity_v0_set"
+        },
+        {
+          "d": 121,
+          "n": "humidity_v1_set"
+        },
+        {
+          "d": 122,
+          "n": "humidity_warning"
+        }
+      ]
+    },
+    {
+      "m": "DHTA001",
+      "mid": "Excellux",
+      "dp": [
+        {
+          "d": 4,
+          "n": "battery"
+        },
+        {
+          "d": 5,
+          "n": "temperature"
+        },
+        {
+          "d": 101,
+          "n": "sampling_interval"
+        },
+        {
+          "d": 114,
+          "n": "temperature_calibration"
+        },
+        {
+          "d": 115,
+          "n": "temperature_v0_set"
+        },
+        {
+          "d": 116,
+          "n": "temperature_v1_set"
+        },
+        {
+          "d": 117,
+          "n": "temperature_warning"
+        },
+        {
+          "d": 118,
+          "n": "humidity"
+        },
+        {
+          "d": 119,
+          "n": "humidity_calibration"
+        },
+        {
+          "d": 120,
+          "n": "humidity_v0_set"
+        },
+        {
+          "d": 121,
+          "n": "humidity_v1_set"
+        },
+        {
+          "d": 122,
+          "n": "humidity_warning"
+        }
+      ]
+    },
+    {
+      "m": "NTCHT01",
+      "mid": "Excellux",
+      "dp": null
+    },
+    {
+      "m": "PIRIV01",
+      "mid": "Excellux",
+      "dp": [
+        {
+          "d": 4,
+          "n": "battery"
+        },
+        {
+          "d": 1,
+          "n": "presence_state"
+        },
+        {
+          "d": 3,
+          "n": "vibration"
+        },
+        {
+          "d": 6,
+          "n": "vibration_sensitivity"
+        },
+        {
+          "d": 20,
+          "n": "illumiance"
+        },
+        {
+          "d": 101,
+          "n": "sampling_interval"
+        },
+        {
+          "d": 104,
+          "n": "illumiance_v0"
+        },
+        {
+          "d": 105,
+          "n": "illumiance_v1"
+        },
+        {
+          "d": 106,
+          "n": "illumiance_calibration"
+        },
+        {
+          "d": 107,
+          "n": "illumiance_warning"
+        }
+      ]
+    },
+    {
+      "m": "CAT0001",
+      "mid": "Excellux",
+      "dp": [
+        {
+          "d": 4,
+          "n": "battery"
+        },
+        {
+          "d": 7,
+          "n": "contact"
+        },
+        {
+          "d": 3,
+          "n": "vibration"
+        },
+        {
+          "d": 6,
+          "n": "vibration_sensitivity"
+        }
+      ]
+    },
+    {
+      "m": "DSS0010",
+      "mid": "Excellux",
+      "dp": [
+        {
+          "d": 4,
+          "n": "battery"
+        }
+      ]
+    },
+    {
+      "m": "VABRATE",
+      "mid": "Excellux",
+      "dp": [
+        {
+          "d": 4,
+          "n": "battery"
+        },
+        {
+          "d": 3,
+          "n": "vibration"
+        },
+        {
+          "d": 6,
+          "n": "vibration_sensitivity"
+        }
+      ]
+    },
+    {
+      "m": "_TZE284_hdml1aav",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 3,
+          "n": "soil_moisture"
+        },
+        {
+          "d": 5,
+          "n": "temperature"
+        },
+        {
+          "d": 15,
+          "n": "battery"
+        },
+        {
+          "d": 101,
+          "n": "humidity"
+        },
+        {
+          "d": 102,
+          "n": "illuminance"
+        },
+        {
+          "d": 103,
+          "n": "report_period"
+        },
+        {
+          "d": 104,
+          "n": "soil_calibration"
+        },
+        {
+          "d": 105,
+          "n": "humidity_calibration"
+        },
+        {
+          "d": 106,
+          "n": "illuminance_calibration"
+        },
+        {
+          "d": 107,
+          "n": "temperature_calibration"
+        },
+        {
+          "d": 110,
+          "n": "soil_warning"
+        },
+        {
+          "d": 111,
+          "n": "water_warning"
+        },
+        {
+          "d": 112,
+          "n": "soil_fertility"
+        },
+        {
+          "d": 113,
+          "n": "soil_fertility_calibration"
+        },
+        {
+          "d": 114,
+          "n": "soil_fertility_set_v0"
+        },
+        {
+          "d": 115,
+          "n": "soil_fertility_set_v1"
+        },
+        {
+          "d": 116,
+          "n": "soil_fertility_warning"
+        }
+      ]
+    },
+    {
+      "m": "_TZE204_qaxkdgyt",
+      "mid": "TS0601",
+      "dp": [
+        {
+          "d": 1,
+          "n": "gas"
+        },
+        {
+          "d": 2,
+          "n": "gas_value"
+        },
+        {
+          "d": 18,
+          "n": "carbon_monoxide"
+        },
+        {
+          "d": 19,
+          "n": "co"
+        },
+        {
+          "d": 16,
+          "n": "silence"
+        },
+        {
+          "d": 9,
+          "n": "self_test"
+        },
+        {
+          "d": 11,
+          "n": "fault"
+        }
+      ]
+    }
+  ]
+}

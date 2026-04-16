@@ -1,0 +1,182 @@
+{
+  "triggers": [
+    {
+      "id": "generic_tuya_measure_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      }
+    },
+    {
+      "id": "generic_tuya_measure_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity (%)",
+            "fr": "Humidité (%)"
+          },
+          "example": 65
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      }
+    },
+    {
+      "id": "generic_tuya_dp_received",
+      "title": {
+        "en": "Data Point received",
+        "fr": "Point de données reçu"
+      },
+      "tokens": [
+        {
+          "name": "dp",
+          "type": "number",
+          "title": {
+            "en": "DP Number",
+            "fr": "Numéro DP"
+          },
+          "example": 1
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "title": {
+            "en": "Value",
+            "fr": "Valeur"
+          },
+          "example": "100"
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Data Point received",
+        "fr": "Point de données reçu"
+      }
+    },
+    {
+      "id": "generic_tuya_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
+    },
+    {
+      "id": "generic_tuya_temp_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      }
+    },
+    {
+      "id": "generic_tuya_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geändert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geändert"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "generic_tuya_battery_above",
+      "title": {
+        "en": "Battery is above...",
+        "fr": "Batterie au-dessus de..."
+      },
+      "titleFormatted": {
+        "en": "Battery is above [[level]]%",
+        "fr": "Batterie au-dessus de [[level]]%"
+      },
+      "args": [
+        {
+          "name": "level",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "title": {
+            "en": "Level (%)",
+            "fr": "Niveau (%)"
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "generic_tuya_request_dp",
+      "title": {
+        "en": "Request Data Point",
+        "fr": "Demander Point de Données"
+      },
+      "titleFormatted": {
+        "en": "Request DP [[dp]]",
+        "fr": "Demander DP [[dp]]"
+      },
+      "args": [
+        {
+          "name": "dp",
+          "type": "number",
+          "min": 1,
+          "max": 255,
+          "step": 1,
+          "title": {
+            "en": "DP Number",
+            "fr": "Numéro DP"
+          }
+        }
+      ]
+    }
+  ]
+}

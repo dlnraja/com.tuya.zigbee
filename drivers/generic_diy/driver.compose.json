@@ -1,0 +1,434 @@
+{
+  "name": {
+    "en": "Universal Tuya Engine — Genesis Edition",
+    "fr": "Moteur Tuya Universel — Édition Genesis",
+    "nl": "Universele Tuya Engine — Genesis Editie",
+    "de": "Universelles Tuya Engine — Genesis Edition"
+  },
+  "class": "other",
+  "images": {
+    "small": "drivers/generic_diy/assets/images/small.png",
+    "large": "drivers/generic_diy/assets/images/large.png",
+    "xlarge": "drivers/generic_diy/assets/images/xlarge.png"
+  },
+  "capabilities": [
+    "measure_battery",
+    "measure_radio_stability",
+    "measure_maintenance_score"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ],
+    "approximation": {
+      "usageConstant": 1
+    },
+    "mains": true
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "legrand",
+      "bosch",
+      "d5x84yu",
+      "dln",
+      "dln-diy",
+      "dlnraja",
+      "efekta",
+      "lumi router",
+      "netatmo",
+      "niko",
+      "niko nv",
+      "rbsh",
+      "schneider",
+      "se",
+      "slzb",
+      "sonoffzigbee",
+      "ti router",
+      "ti.router",
+      "wiser",
+      "zig-a-zig-ah",
+      "zigfred"
+    ],
+    "productId": [
+      "0X8040",
+      "0x8040",
+      "BASICZBR3",
+      "BATTERY SWITCH, 1 BUTTON",
+      "BATTERY SWITCH, 2 BUTTONS",
+      "BSP-EZ2",
+      "BSP-FZ2",
+      "BUTTON",
+      "CC2530",
+      "CC2531",
+      "CC2652",
+      "CUSTOM",
+      "DIY",
+      "EFEKTA",
+      "ESP32",
+      "ET093WRG",
+      "ET093WRO",
+      "ETRV0100",
+      "ETRV0101",
+      "ETRV0103",
+      "MAKER",
+      "PTVO",
+      "RELAY",
+      "ROUTER",
+      "S26R2ZB",
+      "S31ZB",
+      "S40ZBTPB",
+      "SENSOR",
+      "SNZB-01",
+      "SNZB-01P",
+      "SNZB-02",
+      "SNZB-02P",
+      "SNZB-03",
+      "SNZB-03P",
+      "SNZB-04",
+      "SNZB-04P",
+      "SNZB-06P",
+      "SWITCH",
+      "TRV001",
+      "TRV003",
+      "TS0026",
+      "TS0041A",
+      "TS0052",
+      "TS0105",
+      "TS0224",
+      "TS0901",
+      "ZBMINI",
+      "ZBMINIL2",
+      "ZIGSTAR",
+      "basiczbr3",
+      "battery switch, 1 button",
+      "battery switch, 2 buttons",
+      "bsp-ez2",
+      "bsp-fz2",
+      "button",
+      "cc2530",
+      "cc2531",
+      "cc2652",
+      "custom",
+      "diy",
+      "efekta",
+      "esp32",
+      "et093wrg",
+      "et093wro",
+      "etrv0100",
+      "etrv0101",
+      "etrv0103",
+      "maker",
+      "ptvo",
+      "relay",
+      "router",
+      "s26r2zb",
+      "s31zb",
+      "s40zbtpb",
+      "sensor",
+      "snzb-01",
+      "snzb-01p",
+      "snzb-02",
+      "snzb-02p",
+      "snzb-03",
+      "snzb-03p",
+      "snzb-04",
+      "snzb-04p",
+      "snzb-06p",
+      "switch",
+      "trv001",
+      "trv003",
+      "ts0026",
+      "ts0041a",
+      "ts0052",
+      "ts0105",
+      "ts0224",
+      "ts0901",
+      "zbmini",
+      "zbminil2",
+      "zigstar"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "🌌 Universal Tuya Engine (Genesis Edition)\n\n1. Put your device in pairing mode (usually hold the physical button for 5-10 seconds until the LED flashes).\n2. For coordinators or routers (Zbeacon, SLZB-06, Tuya Router): Ensure the device is powered and within range.\n3. For Legrand/Netatmo: Use the master wireless switch or remote and press 'home' while tapping the device.\n\nCapabilities and flow cards will be dynamically mapped via the Genesis Orchestrator.",
+        "fr": "🌌 Moteur Tuya Universel (Édition Genesis)\n\n1. Mettez votre appareil en mode appairage (maintenez le bouton physique 5-10s jusqu'au clignotement).\n2. Pour coordinateurs ou routeurs (Zbeacon, SLZB-06): Vérifiez que l'appareil est alimenté.\n3. Pour Legrand/Netatmo: Utilisez l'interrupteur maître sans fil et maintenez 'home' tout en tapotant l'appareil.\n\nLes capacités et cartes de flux seront mappées dynamiquement par l'Orchestrateur Genesis."
+      }
+    }
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "🔧 Device Information",
+        "fr": "🔧 Informations Appareil"
+      },
+      "children": [
+        {
+          "id": "diy_manufacturer_name",
+          "type": "label",
+          "label": {
+            "en": "Manufacturer",
+            "fr": "Fabricant"
+          },
+          "value": "DIY"
+        },
+        {
+          "id": "diy_model_id",
+          "type": "label",
+          "label": {
+            "en": "Model ID",
+            "fr": "ID Modèle"
+          },
+          "value": "Unknown"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "📡 Discovered Clusters",
+        "fr": "📡 Clusters Découverts"
+      },
+      "children": [
+        {
+          "id": "discovered_clusters",
+          "type": "label",
+          "label": {
+            "en": "ZCL Clusters",
+            "fr": "Clusters ZCL"
+          },
+          "value": "Scanning..."
+        },
+        {
+          "id": "discovered_capabilities",
+          "type": "label",
+          "label": {
+            "en": "Capabilities Added",
+            "fr": "Capacités Ajoutées"
+          },
+          "value": "None yet"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "⚙️ Advanced",
+        "fr": "⚙️ Avancé"
+      },
+      "children": [
+        {
+          "id": "force_rescan",
+          "type": "checkbox",
+          "label": {
+            "en": "Force Cluster Rescan",
+            "fr": "Forcer Rescan Clusters"
+          },
+          "value": false,
+          "hint": {
+            "en": "Enable to rescan clusters on next init",
+            "fr": "Activer pour rescanner les clusters au prochain démarrage"
+          }
+        }
+      ]
+    },
+    {
+      "id": "enable_radio_sensing",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Radio Presence Sensing",
+        "fr": "Activer la Détection de Présence Radio"
+      },
+      "value": false,
+      "hint": {
+        "en": "Infer presence from Zigbee signal fluctuations (BETA)",
+        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+      }
+    },
+    {
+      "id": "radio_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Radio Presence Sensitivity",
+        "fr": "Sensibilité Présence Radio"
+      },
+      "value": 15,
+      "min": 5,
+      "max": 50,
+      "hint": {
+        "en": "LQI variance threshold (higher = less sensitive)",
+        "fr": "Seuil de variance LQI (plus haut = moins sensible)"
+      }
+    },
+    {
+      "id": "enable_software_child_lock",
+      "type": "checkbox",
+      "label": {
+        "en": "Software Child Lock",
+        "fr": "Sécurité Enfant Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Prevents manual state changes on the device",
+        "fr": "Empêche les changements d'état manuels sur l'appareil"
+      }
+    },
+    {
+      "id": "auto_off_duration",
+      "type": "number",
+      "label": {
+        "en": "Auto-Off Timer (Minutes)",
+        "fr": "Minuterie Auto-Off (Minutes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 1440,
+      "hint": {
+        "en": "Turn off automatically after X minutes (0 = disabled)",
+        "fr": "S'éteint après X minutes (0 = désactivé)"
+      }
+    },
+    {
+      "id": "enable_vacation_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "Vacation Mode (Presence Sim)",
+        "fr": "Mode Vacances (Simulation Présence)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Randomly toggle device during evenings to simulate presence",
+        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+      }
+    },
+    {
+      "id": "emulated_motion_hold",
+      "type": "number",
+      "label": {
+        "en": "Emulated Motion Hold (Seconds)",
+        "fr": "Maintien Mouvement Émulé (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 3600,
+      "hint": {
+        "en": "Keep motion 'ON' for X seconds after hardware clears",
+        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+      }
+    },
+    {
+      "id": "double_click_interval",
+      "type": "number",
+      "label": {
+        "en": "Double Click Interval (ms)",
+        "fr": "Intervalle Double-Clic (ms)"
+      },
+      "value": 400,
+      "min": 100,
+      "max": 1000,
+      "hint": {
+        "en": "Software emulation for single-action buttons",
+        "fr": "Émulation logicielle pour boutons à action unique"
+      }
+    },
+    {
+      "id": "overload_threshold",
+      "type": "number",
+      "label": {
+        "en": "Overload Protection (Watts)",
+        "fr": "Protection Surcharge (Watts)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 4000,
+      "hint": {
+        "en": "Cut power if consumption exceeds this value (0 = disabled)",
+        "fr": "Coupure si la consommation dépasse cette valeur (0 = désactivé)"
+      }
+    },
+    {
+      "id": "inching_duration",
+      "type": "number",
+      "label": {
+        "en": "Inching Duration (Secs)",
+        "fr": "Durée Inching (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 60,
+      "step": 0.1,
+      "hint": {
+        "en": "Automatically turn off after X seconds (Pulse mode)",
+        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+      }
+    },
+    {
+      "id": "enable_state_recovery",
+      "type": "checkbox",
+      "label": {
+        "en": "Software State Recovery",
+        "fr": "Récupération d'État Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Restore previous ON/OFF state after power failure",
+        "fr": "Restore l'état précédent après une coupure de courant"
+      }
+    },
+    {
+      "id": "enable_soft_transitions",
+      "type": "checkbox",
+      "label": {
+        "en": "Soft transitions (Fade)",
+        "fr": "Transitions douces (Fade)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable software-simulated smooth transitions (Lights/Dim)",
+        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+      }
+    },
+    {
+      "id": "maintenance_threshold",
+      "type": "number",
+      "label": {
+        "en": "Maintenance Alert Threshold",
+        "fr": "Seuil Alerte Maintenance"
+      },
+      "value": 30,
+      "min": 0,
+      "max": 100,
+      "hint": {
+        "en": "Alert if health score drops below this value",
+        "fr": "Alerte si le score de santé descend sous cette valeur"
+      }
+    }
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  }
+}

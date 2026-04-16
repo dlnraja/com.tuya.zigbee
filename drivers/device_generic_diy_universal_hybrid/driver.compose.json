@@ -1,0 +1,251 @@
+{
+  "id": "universal_zigbee",
+  "name": {
+    "en": "Device Generic Diy Universal",
+    "nl": "Device Generic Diy Universal",
+    "fr": "Device Generic Diy Universal"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_luminance",
+    "alarm_motion",
+    "alarm_contact",
+    "alarm_water",
+    "measure_battery",
+    "measure_power",
+    "measure_voltage",
+    "measure_current",
+    "meter_power",
+    "light_hue",
+    "light_saturation",
+    "light_temperature",
+    "light_mode",
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "target_temperature",
+    "thermostat_mode",
+    "tuya_dp_value",
+    "tuya_dp_string",
+    "tuya_dp_raw",
+    "tuya_cluster_event",
+    "measure_radio_stability",
+    "measure_maintenance_score"
+  ],
+  "capabilitiesOptions": {
+    "tuya_dp_value": {
+      "title": {
+        "en": "Last DP Value (Numeric)"
+      }
+    },
+    "tuya_dp_string": {
+      "title": {
+        "en": "Last DP String"
+      }
+    },
+    "tuya_dp_raw": {
+      "title": {
+        "en": "Last Raw DP (Hex)"
+      }
+    },
+    "tuya_cluster_event": {
+      "title": {
+        "en": "Last Cluster Event"
+      }
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AAA",
+      "AA",
+      "CR2",
+      "CR123A"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "danfoss",
+      "legrand",
+      "schneider electric"
+    ],
+    "productId": [
+      "TS0026",
+      "TS0041A",
+      "TS0052",
+      "TS0105",
+      "TS0224",
+      "TS0901",
+      "ts0026",
+      "ts0041a",
+      "ts0052",
+      "ts0105",
+      "ts0224",
+      "ts0901"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/universal_zigbee/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press the pairing button on your Zigbee device until it enters pairing mode.",
+        "fr": "Appuyez sur le bouton d'appairage de votre appareil Zigbee jusqu'à ce qu'il passe en mode appairage."
+      }
+    }
+  },
+  "images": {
+    "large": "/drivers/universal_zigbee/assets/images/large.png",
+    "small": "/drivers/universal_zigbee/assets/images/small.png",
+    "xlarge": "/drivers/universal_zigbee/assets/images/xlarge.png"
+  },
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  },
+  "settings": [
+    {
+      "id": "enable_software_child_lock",
+      "type": "checkbox",
+      "label": {
+        "en": "Software Child Lock",
+        "fr": "Sécurité Enfant Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Prevents manual state changes on the device",
+        "fr": "Empêche les changements d'état manuels sur l'appareil"
+      }
+    },
+    {
+      "id": "auto_off_duration",
+      "type": "number",
+      "label": {
+        "en": "Auto-Off Timer (Minutes)",
+        "fr": "Minuterie Auto-Off (Minutes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 1440,
+      "hint": {
+        "en": "Turn off automatically after X minutes (0 = disabled)",
+        "fr": "S'éteint après X minutes (0 = désactivé)"
+      }
+    },
+    {
+      "id": "enable_vacation_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "Vacation Mode (Presence Sim)",
+        "fr": "Mode Vacances (Simulation Présence)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Randomly toggle device during evenings to simulate presence",
+        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+      }
+    },
+    {
+      "id": "emulated_motion_hold",
+      "type": "number",
+      "label": {
+        "en": "Emulated Motion Hold (Seconds)",
+        "fr": "Maintien Mouvement Émulé (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 3600,
+      "hint": {
+        "en": "Keep motion 'ON' for X seconds after hardware clears",
+        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+      }
+    },
+    {
+      "id": "double_click_interval",
+      "type": "number",
+      "label": {
+        "en": "Double Click Interval (ms)",
+        "fr": "Intervalle Double-Clic (ms)"
+      },
+      "value": 400,
+      "min": 100,
+      "max": 1000,
+      "hint": {
+        "en": "Software emulation for single-action buttons",
+        "fr": "Émulation logicielle pour boutons à action unique"
+      }
+    },
+    {
+      "id": "inching_duration",
+      "type": "number",
+      "label": {
+        "en": "Inching Duration (Secs)",
+        "fr": "Durée Inching (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 60,
+      "step": 0.1,
+      "hint": {
+        "en": "Automatically turn off after X seconds (Pulse mode)",
+        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+      }
+    },
+    {
+      "id": "enable_state_recovery",
+      "type": "checkbox",
+      "label": {
+        "en": "Software State Recovery",
+        "fr": "Récupération d'État Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Restore previous ON/OFF state after power failure",
+        "fr": "Restore l'état précédent après une coupure de courant"
+      }
+    },
+    {
+      "id": "enable_soft_transitions",
+      "type": "checkbox",
+      "label": {
+        "en": "Soft transitions (Fade)",
+        "fr": "Transitions douces (Fade)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable software-simulated smooth transitions (Lights/Dim)",
+        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+      }
+    },
+    {
+      "id": "maintenance_threshold",
+      "type": "number",
+      "label": {
+        "en": "Maintenance Alert Threshold",
+        "fr": "Seuil Alerte Maintenance"
+      },
+      "value": 30,
+      "min": 0,
+      "max": 100,
+      "hint": {
+        "en": "Alert if health score drops below this value",
+        "fr": "Alerte si le score de santé descend sous cette valeur"
+      }
+    }
+  ]
+}

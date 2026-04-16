@@ -1,0 +1,22 @@
+{
+  "id": "INT-021",
+  "deviceName": "HOBEIAN ZG-102Z Contact Sensor",
+  "manufacturerName": "HOBEIAN",
+  "productId": "ZG-102Z",
+  "source": "Forum Page 40",
+  "user": "Lasse_K",
+  "status": "fixed",
+  "priority": "high",
+  "driver": "contact_sensor",
+  "deviceType": "enddevice",
+  "powerSource": "battery",
+  "inputClusters": [0, 3, 1280, 61184, 1],
+  "iasZoneType": "contactSwitch",
+  "symptoms": ["Device not sending IAS Zone notifications"],
+  "rootCause": "CIE address not enrolled - device shows 00:00:00:00:00:00:00:00",
+  "fix": {
+    "applied": true,
+    "version": "5.5.791",
+    "description": "Force-write CIE address + 3-step enrollment (write CIE → enrollResponse → verify)"
+  }
+}

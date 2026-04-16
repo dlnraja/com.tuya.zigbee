@@ -1,0 +1,161 @@
+# Johan SDK3 Auto-Sync — v1.0.0
+# Clones JohanBendz SDK3 branch, compares FPs + DPs with ours,
+# auto-adds safe missing FPs, detects DP gaps, creates PR.
+# Runs weekly (Wed 05:00 UTC) + manual trigger.
+
+name: "Johan SDK3 Auto-Sync"
+
+on:
+  schedule:
+    - cron: '0 5 * * 3'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (no PR created)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: johan-sdk3-sync
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  sync:
+    name: "Sync Johan SDK3"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    env:
+      # === AI providers — circular chain (ai-helper.js) ===
+      GOOGLE_API_KEY: "${{ secrets.GOOGLE_API_KEY }}"
+      OPENAI_API_KEY: "${{ secrets.OPENAI_API_KEY }}"
+      DEEPSEEK_API_KEY: "${{ secrets.DEEPSEEK_API_KEY || '' }}"
+      GROQ_API_KEY: "${{ secrets.GROQ_API_KEY || '' }}"
+      HF_TOKEN: "${{ secrets.HF_TOKEN || '' }}"
+      MISTRAL_API_KEY: "${{ secrets.MISTRAL_API_KEY || '' }}"
+      OPENROUTER_API_KEY: "${{ secrets.OPENROUTER_API_KEY || '' }}"
+      CEREBRAS_API_KEY: "${{ secrets.CEREBRAS_API_KEY || '' }}"
+      TOGETHER_API_KEY: "${{ secrets.TOGETHER_API_KEY || '' }}"
+      KIMI_API_KEY: "${{ secrets.KIMI_API_KEY || '' }}"
+
+
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: Run SDK3 sync
+        id: sync
+        run: node .github/scripts/sync-johan-sdk3.js
+
+
+      - name: Auto-scaffold missing drivers
+        id: scaffold
+        continue-on-error: true
+        run: node .github/scripts/auto-driver-scaffold.js
+
+      - name: Driver conflict audit
+        id: audit
+        continue-on-error: true
+        run: node .github/scripts/driver-conflict-audit.js
+      - name: Validate JSON
+        if: steps.sync.outputs.has_changes == 'true'
+        run: |
+          echo "Validating driver.compose.json files..."
+          FAIL=0
+          for f in drivers/*/driver.compose.json; do
+            if ! node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))"; then
+              echo "FAIL: $f"
+              FAIL=1
+            fi
+          done
+          if [ "$FAIL" = "1" ]; then echo "JSON validation failed!"; exit 1; fi
+          echo "All JSON valid."
+
+      - name: Validate Homey App (publish)
+        run: npx homey app validate --level publish
+
+      - name: Create Pull Request
+        if: (steps.sync.outputs.has_changes == 'true' || steps.scaffold.outputs.has_changes == 'true') && inputs.dry_run != true
+        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "auto: sync Johan SDK3 FPs (${{ steps.sync.outputs.added }} added) [skip ci]"
+          title: "Johan SDK3 Sync — ${{ steps.sync.outputs.added }} FPs added, ${{ steps.sync.outputs.gaps }} DP gaps"
+          body: |
+            ## Automated Johan SDK3 Sync
+
+            ### Fingerprints
+            - **Added**: ${{ steps.sync.outputs.added }} new FPs auto-matched to existing drivers
+            - **DP gaps**: ${{ steps.sync.outputs.gaps }} drivers with missing Tuya DP mappings
+            - **New Johan drivers**: ${{ steps.sync.outputs.new_drivers }} (not in our codebase)
+
+            ### Auto-Scaffold
+            - **Scaffolded**: ${{ steps.scaffold.outputs.scaffolded || '0' }} new drivers created
+            - **FPs added**: ${{ steps.scaffold.outputs.fps_added || '0' }} uncovered FPs added to existing drivers
+            - **Conflicts**: ${{ steps.scaffold.outputs.conflicts || '0' }} cross-class PID conflicts
+
+            ### Conflict Audit
+            - **High severity**: ${{ steps.audit.outputs.high_conflicts || '0' }} cross-class PID conflicts
+            - **MFR conflicts**: ${{ steps.audit.outputs.mfr_conflicts || '0' }} real risk duplicates
+            - **Split suggestions**: ${{ steps.audit.outputs.split_suggestions || '0' }}
+
+            ### Report
+            See `.github/state/johan-sdk3-sync.json`, `driver-scaffold-report.json`, `driver-conflict-audit.json`
+
+            ### Review checklist
+            - [ ] Verify new FPs are in the correct drivers
+            - [ ] Review scaffolded drivers (need device.js DP mappings)
+            - [ ] Check DP gaps — may need manual device.js edits
+            - [ ] Review conflict audit — split drivers if needed
+            - [ ] Validate with `npx homey app validate`
+          branch: auto/johan-sdk3-sync
+          labels: fingerprints,automated,upstream
+          delete-branch: true
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "## Johan SDK3 Sync Results"
+            echo "- FPs added: ${{ steps.sync.outputs.added || '0' }}"
+            echo "- DP gaps: ${{ steps.sync.outputs.gaps || '0' }}"
+            echo "- New drivers: ${{ steps.sync.outputs.new_drivers || '0' }}"
+            echo "- Scaffolded: ${{ steps.scaffold.outputs.scaffolded || '0' }}"
+            echo "- FPs added (scaffold): ${{ steps.scaffold.outputs.fps_added || '0' }}"
+            echo "- High conflicts: ${{ steps.audit.outputs.high_conflicts || '0' }}"
+            echo "- Split suggestions: ${{ steps.audit.outputs.split_suggestions || '0' }}"
+            if [ -f .github/state/johan-sdk3-sync.json ]; then
+              echo '```json'
+              cat .github/state/johan-sdk3-sync.json | node -e "d=require('fs').readFileSync('/dev/stdin','utf8');try{console.log(JSON.stringify(JSON.parse(d).summary,null,2))}catch{console.log(d)}"
+              echo '```'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v4
+        with:
+          name: johan-sdk3-sync-report
+          path: |
+            .github/state/johan-sdk3-sync.json
+            .github/state/driver-scaffold-report.json
+            .github/state/driver-conflict-audit.json
+          retention-days: 30
+

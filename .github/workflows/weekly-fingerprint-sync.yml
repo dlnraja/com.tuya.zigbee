@@ -1,0 +1,203 @@
+# Weekly Fingerprint Sync - v5.11.107
+# Fetches latest fingerprints from Z2M/ZHA, compares with local drivers,
+# auto-adds safe Tuya _T* and SONOFF/eWeLink patterns, and creates PR for review.
+# Runs every Monday at 06:00 UTC.
+# Forum sources: 140352 (dlnraja), 26439 (JohanBendz), 146735 (Tuya Smart Life), 89271 (Device Archive)
+
+name: "🌌 UNIFIED ENGINE — Weekly Fingerprint Sync"
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (no changes committed)'
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: weekly-fingerprint-sync
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  sync:
+    name: "Fetch & Sync Fingerprints"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      pull-requests: write
+
+    env:
+      # === AI providers — circular chain (ai-helper.js) ===
+      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
+      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
+      CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
+      TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
+      KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
+
+
+    steps:
+      - uses: actions/checkout@v5 # v5
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v5 # v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      # Step 1: Fetch fingerprints from Z2M sources
+      - name: Fetch Z2M fingerprints
+        run: node scripts/automation/fetch-z2m-fingerprints.js
+
+      # Step 1.5: Sync Z2M DataPoint Mappings (v7.0 Enriched)
+      - name: Sync Z2M DP Mappings
+        run: node .github/scripts/sync-z2m-mappings.js
+
+      - name: Scan JohanBendz full repo
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/scan-johan-full.js
+
+      - name: Johan SDK3 Auto-Sync (FPs + DPs)
+        continue-on-error: true
+        run: node .github/scripts/sync-johan-sdk3.js
+
+      # Step 2: Auto-add safe Tuya + SONOFF/eWeLink patterns
+      - name: Auto-add safe fingerprints
+        if: inputs.dry_run != true
+        run: node scripts/automation/auto-add-fingerprints.js
+
+      - name: Auto-add (dry run)
+        if: inputs.dry_run == true
+        run: node scripts/automation/auto-add-fingerprints.js --dry-run
+
+      # Step 3: Validate all JSON
+      - name: Validate JSON
+        run: |
+          echo "Validating driver.compose.json files..."
+          FAIL=0
+          for f in drivers/*/driver.compose.json; do
+            if ! node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))"; then
+              echo "FAIL: $f"
+              FAIL=1
+            fi
+          done
+          if [ "$FAIL" = "1" ]; then echo "JSON validation failed!"; exit 1; fi
+          echo "All JSON valid."
+
+      # Step 3.5: Homey app publish-level validation
+      - name: Validate Homey App (publish)
+        run: npx homey app validate --level publish
+
+      # Step 3.5a: Case-consistency check (_TZe200 vs _TZE200)
+      - name: Check FP case consistency
+        run: |
+          echo "Checking for case-inconsistent FPs..."
+          BAD=$(grep -rohE '"_TZ[a-z][0-9]{3}_[^"]*"' drivers/*/driver.compose.json || true)
+          if [ -n "$BAD" ]; then echo "::warning::Case-inconsistent FPs found: $BAD"; fi
+
+      # Step 3.5b: Duplicate FP+PID check
+      - name: Check duplicate FP+PID combos
+        run: |
+          node -e "
+          const fs=require('fs'),p=require('path');
+          const map={};
+          for(const d of fs.readdirSync('drivers')){
+            const f=p.join('drivers',d,'driver.compose.json');
+            if(!fs.existsSync(f))continue;
+            try{const j=JSON.parse(fs.readFileSync(f,'utf8'));
+            const ms=j.zigbee?.manufacturerName||[];
+            const ps=j.zigbee?.productId||[];
+            for(const m of ms)for(const pid of ps){
+              const k=m+'|'+pid;
+              if(!map[k])map[k]=[];
+              map[k].push(d);
+            }}catch{}
+          }
+          let dupes=0;
+          for(const[k,ds] of Object.entries(map)){
+            if(ds.length>1){console.log('::warning::Duplicate '+k+' in: '+ds.join(', '));dupes++}
+          }
+          console.log('Duplicate combos: '+dupes);
+          "
+
+      # Step 3.5c: Detect and auto-fix fingerprint conflicts
+      - name: Fix fingerprint conflicts
+        run: |
+          echo "Running fingerprint conflict resolver..."
+          node scripts/automation/fix-fingerprint-conflicts.js
+          echo "Conflict resolution complete."
+
+      # Step 4: Check for changes
+      - name: Check changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No fingerprint changes detected."
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            ADDED=$(git diff --numstat -- 'drivers/*/driver.compose.json' | awk '{s+=$1}END{print s+0}')
+            echo "lines_added=$ADDED" >> $GITHUB_OUTPUT
+            echo "Detected $ADDED lines of fingerprint changes."
+          fi
+
+      # Step 5: Create PR with changes
+      - name: Create Pull Request
+        if: steps.changes.outputs.changed == 'true' && inputs.dry_run != true
+        uses: peter-evans/create-pull-request@c5a7806660adbe173f04e3e038b0ccdcd758773c # v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Weekly FP sync $(date +%Y-%m-%d): auto-added safe Tuya + SONOFF patterns from Z2M/ZHA"
+          title: "Weekly Fingerprint Sync (${{ steps.changes.outputs.lines_added }} new lines)"
+          body: |
+            ## Automated Weekly Fingerprint Sync
+
+            This PR was auto-generated by the weekly fingerprint sync workflow.
+
+            ### What changed
+            - Fetched latest fingerprints from Z2M (tuya, sonoff, danfoss, schneider, legrand, bosch, ikea, xiaomi)
+            - Auto-added safe Tuya _T* and SONOFF/eWeLink (SNZB-*, ZBMINI*, S31ZB, TRVZB, SWV-*) patterns to appropriate drivers
+            - All JSON validated
+
+            ### Reports
+            See data/community-sync/sync-report.md for full details.
+            See .github/state/johan-full-scan.json for Johan code pattern analysis.
+            See data/community-sync/missing-fingerprints.json for non-Tuya items needing manual review.
+
+            ### Review checklist
+            - [ ] Check new fingerprints are in the correct drivers
+            - [ ] Verify no duplicate entries
+            - [ ] Validate app with npx homey app validate
+            - [ ] Check soil_sensor for new _TZE284/_TZE200 variants with extra DPs (fertilizer/EC)
+          branch: auto/weekly-fingerprint-sync
+          labels: fingerprints,automated
+          delete-branch: true
+
+      # Step 6: Upload artifacts
+      - name: Upload sync reports
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v4
+        with:
+          name: fingerprint-sync-report
+          path: data/community-sync/
+          retention-days: 30
+

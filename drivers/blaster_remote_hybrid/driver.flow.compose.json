@@ -1,0 +1,72 @@
+{
+  "triggers": [
+    {
+      "id": "blaster_remote_hybrid_ir_remote_code_learned",
+      "title": {
+        "en": "An IR code was learned",
+        "fr": "Un code IR a été appris"
+      },
+      "tokens": [
+        {
+          "name": "ir_code",
+          "type": "string",
+          "title": {
+            "en": "IR Code",
+            "fr": "Code IR"
+          }
+        }
+      ],
+      "titleFormatted": {
+        "en": "An IR code was learned",
+        "fr": "Un code IR a été appris"
+      }
+    },
+    {
+      "id": "blaster_remote_hybrid_ir_code_received",
+      "title": {
+        "en": "ir code received"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "ir code received"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "blaster_remote_hybrid_ir_remote_send_code",
+      "title": {
+        "en": "Send an IR code",
+        "fr": "Envoyer un code IR"
+      },
+      "titleFormatted": {
+        "en": "Send IR code [[ir_code]]",
+        "fr": "Envoyer code IR [[ir_code]]"
+      },
+      "args": [
+        {
+          "name": "ir_code",
+          "type": "text",
+          "title": {
+            "en": "IR Code (base64)",
+            "fr": "Code IR (base64)"
+          },
+          "placeholder": {
+            "en": "Paste the learned IR code here"
+          }
+        }
+      ]
+    },
+    {
+      "id": "blaster_remote_hybrid_ir_remote_start_learning",
+      "title": {
+        "en": "Start learning an IR code",
+        "fr": "Commencer l'apprentissage d'un code IR"
+      },
+      "titleFormatted": {
+        "en": "Start learning an IR code",
+        "fr": "Commencer l'apprentissage d'un code IR"
+      }
+    }
+  ]
+}

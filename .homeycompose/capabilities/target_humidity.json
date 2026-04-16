@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Target Humidity",
+    "nl": "Doelluchtvochtigheid",
+    "de": "Ziel-Luftfeuchtigkeit",
+    "fr": "Humidité cible"
+  },
+  "units": {
+    "en": "%"
+  },
+  "getable": true,
+  "setable": true,
+  "uiComponent": "thermostat",
+  "min": 0,
+  "max": 100,
+  "step": 5,
+  "decimals": 0
+}

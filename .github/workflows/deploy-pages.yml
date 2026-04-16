@@ -1,0 +1,67 @@
+name: "Deploy Device Finder to GitHub Pages"
+
+on:
+  schedule:
+    - cron: '0 9 * * *'  # Daily 09:00 UTC — keep Device Finder updated
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Daily Everything Pipeline"]
+    types: [completed]
+  push:
+    branches: [master, main]
+    paths:
+      - 'drivers/*/driver.compose.json'
+      - '.github/scripts/generate-device-finder.js'
+      - '.github/scripts/device-finder-*.js'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: Collect Device Data
+        continue-on-error: true
+        run: node .github/scripts/device-finder-collect.js
+
+      - name: Generate Device Finder
+        run: node .github/scripts/generate-device-finder.js
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
+        with:
+          path: .github/pages-build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
+

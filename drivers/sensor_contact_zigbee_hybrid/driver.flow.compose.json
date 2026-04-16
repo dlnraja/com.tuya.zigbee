@@ -1,0 +1,266 @@
+{
+  "triggers": [
+    {
+      "id": "sensor_contact_zigbee_hybrid_contact_sensor_opened",
+      "highlight": true,
+      "title": {
+        "en": "Door/window opened",
+        "nl": "Deur/raam geopend",
+        "fr": "Porte/fenêtre ouverte",
+        "de": "Tür/Fenster geöffnet"
+      },
+      "titleFormatted": {
+        "en": "The door or window was opened",
+        "nl": "De deur of het raam werd geopend",
+        "fr": "La porte ou fenêtre a été ouverte",
+        "de": "Die Tür oder das Fenster wurde geöffnet"
+      },
+      "hint": {
+        "en": "Triggers when the magnet separates from the sensor",
+        "nl": "Triggert wanneer de magneet van de sensor wordt gescheiden",
+        "fr": "Se déclenche quand l'aimant se sépare du capteur",
+        "de": "Wird ausgelöst, wenn der Magnet vom Sensor getrennt wird"
+      },
+      "args": []
+    },
+    {
+      "id": "sensor_contact_zigbee_hybrid_contact_sensor_closed",
+      "title": {
+        "en": "Door/window closed",
+        "nl": "Deur/raam gesloten",
+        "fr": "Porte/fenêtre fermée",
+        "de": "Tür/Fenster geschlossen"
+      },
+      "hint": {
+        "en": "Triggers when the magnet contacts the sensor",
+        "nl": "Triggert wanneer de magneet de sensor raakt",
+        "fr": "Se déclenche quand l'aimant touche le capteur",
+        "de": "Wird ausgelöst, wenn der Magnet den Sensor berührt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Door/window closed",
+        "nl": "Deur/raam gesloten",
+        "fr": "Porte/fenêtre fermée",
+        "de": "Tür/Fenster geschlossen"
+      }
+    },
+    {
+      "id": "sensor_contact_zigbee_hybrid_contact_sensor_tamper_true",
+      "title": {
+        "en": "Tamper alert",
+        "nl": "Sabotage alarm",
+        "fr": "Alerte sabotage",
+        "de": "Manipulationsalarm"
+      },
+      "hint": {
+        "en": "Triggers when the sensor has been tampered with",
+        "nl": "Triggert wanneer er met de sensor is geknoeid",
+        "fr": "Se déclenche quand le capteur a été saboté",
+        "de": "Wird ausgelöst, wenn der Sensor manipuliert wurde"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alert",
+        "nl": "Sabotage alarm",
+        "fr": "Alerte sabotage",
+        "de": "Manipulationsalarm"
+      }
+    },
+    {
+      "id": "sensor_contact_zigbee_hybrid_contact_sensor_battery_changed",
+      "title": {
+        "en": "Battery level changed",
+        "nl": "Batterijniveau veranderd",
+        "fr": "Niveau batterie changé",
+        "de": "Batteriestand geändert"
+      },
+      "titleFormatted": {
+        "en": "Battery level changed to [[battery]]%",
+        "nl": "Batterijniveau veranderd naar [[battery]]%",
+        "fr": "Niveau batterie changé à [[battery]]%",
+        "de": "Batteriestand geändert zu [[battery]]%"
+      },
+      "tokens": [
+        {
+          "name": "battery",
+          "type": "number",
+          "title": {
+            "en": "Battery (%)",
+            "nl": "Batterij (%)",
+            "fr": "Batterie (%)",
+            "de": "Batterie (%)"
+          },
+          "example": 75
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "sensor_contact_zigbee_hybrid_contact_sensor_battery_low",
+      "title": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      },
+      "hint": {
+        "en": "Triggers when battery drops below threshold",
+        "nl": "Triggert wanneer de batterij onder de drempel zakt",
+        "fr": "Se déclenche quand la batterie passe sous le seuil",
+        "de": "Wird ausgelöst, wenn die Batterie unter den Schwellenwert fällt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      }
+    },
+    {
+      "id": "sensor_contact_zigbee_hybrid_contact_sensor_left_open",
+      "title": {
+        "en": "Left open for duration",
+        "nl": "Te lang open gelaten",
+        "fr": "Resté ouvert trop longtemps",
+        "de": "Zu lange offen gelassen"
+      },
+      "titleFormatted": {
+        "en": "Left open for [[duration]] minutes",
+        "nl": "Meer dan [[duration]] minuten open",
+        "fr": "Ouvert depuis [[duration]] minutes",
+        "de": "Seit [[duration]] Minuten offen"
+      },
+      "hint": {
+        "en": "Triggers when the sensor has been open for the specified duration",
+        "nl": "Triggert wanneer de sensor langer dan de opgegeven tijd open is",
+        "fr": "Se déclenche quand le capteur est ouvert depuis la durée spécifiée",
+        "de": "Wird ausgelöst, wenn der Sensor länger als die angegebene Dauer offen ist"
+      },
+      "tokens": [
+        {
+          "name": "duration",
+          "type": "number",
+          "title": {
+            "en": "Duration (min)",
+            "nl": "Duur (min)",
+            "fr": "Durée (min)",
+            "de": "Dauer (min)"
+          },
+          "example": 5
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "sensor_contact_zigbee_hybrid_contact_sensor_contact_alarm",
+      "title": {
+        "en": "Contact changed",
+        "fr": "Contact changé",
+        "nl": "Contact gewijzigd",
+        "de": "Kontakt geändert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Contact changed",
+        "fr": "Contact changé",
+        "nl": "Contact gewijzigd",
+        "de": "Kontakt geändert"
+      }
+    },
+    {
+      "id": "sensor_contact_zigbee_hybrid_contact_sensor_tamper_alarm",
+      "title": {
+        "en": "Tamper alarm",
+        "fr": "Alarme sabotage",
+        "nl": "Sabotagealarm",
+        "de": "Manipulationsalarm"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alarm",
+        "fr": "Alarme sabotage",
+        "nl": "Sabotagealarm",
+        "de": "Manipulationsalarm"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "sensor_contact_zigbee_hybrid_contact_sensor_is_open",
+      "title": {
+        "en": "Door/window !{{is|is not}} open",
+        "nl": "Deur/raam !{{is|is niet}} open",
+        "fr": "Porte/fenêtre !{{est|n'est pas}} ouverte",
+        "de": "Tür/Fenster !{{ist|ist nicht}} offen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Door/window !{{is|is not}} open",
+        "nl": "Deur/raam !{{is|is niet}} open",
+        "fr": "Porte/fenêtre !{{est|n'est pas}} ouverte",
+        "de": "Tür/Fenster !{{ist|ist nicht}} offen"
+      }
+    },
+    {
+      "id": "sensor_contact_zigbee_hybrid_contact_sensor_battery_above",
+      "title": {
+        "en": "Battery !{{is|is not}} above",
+        "nl": "Batterij !{{is|is niet}} boven",
+        "fr": "Batterie !{{est|n'est pas}} au-dessus de",
+        "de": "Batterie !{{ist|ist nicht}} über"
+      },
+      "titleFormatted": {
+        "en": "Battery !{{is|is not}} above [[threshold]]%",
+        "nl": "Batterij !{{is|is niet}} boven [[threshold]]%",
+        "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%",
+        "de": "Batterie !{{ist|ist nicht}} über [[threshold]]%"
+      },
+      "args": [
+        {
+          "name": "threshold",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "placeholder": {
+            "en": "20"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sensor_contact_zigbee_hybrid_contact_sensor_contact_open",
+      "title": {
+        "en": "Contact !{{is|is not}} open",
+        "fr": "Contact !{{est|n'est pas}} ouvert",
+        "nl": "Contact !{{is|is niet}} open",
+        "de": "Kontakt !{{ist|ist nicht}} offen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Contact !{{is|is not}} open",
+        "fr": "Contact !{{est|n'est pas}} ouvert",
+        "nl": "Contact !{{is|is niet}} open",
+        "de": "Kontakt !{{ist|ist nicht}} offen"
+      }
+    },
+    {
+      "id": "sensor_contact_zigbee_hybrid_contact_sensor_tamper_active",
+      "title": {
+        "en": "Tamper !{{is|is not}} active",
+        "fr": "Sabotage !{{est|n'est pas}} actif",
+        "nl": "Sabotage !{{is|is niet}} actief",
+        "de": "Manipulation !{{ist|ist nicht}} aktiv"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper !{{is|is not}} active",
+        "fr": "Sabotage !{{est|n'est pas}} actif",
+        "nl": "Sabotage !{{is|is niet}} actief",
+        "de": "Manipulation !{{ist|ist nicht}} aktiv"
+      }
+    }
+  ]
+}

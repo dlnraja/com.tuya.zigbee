@@ -1,0 +1,40 @@
+{
+  "interviewDate": "2026-02-25",
+  "source": "Desktop interview file",
+  "ids": {
+    "modelId": "TS0601",
+    "manufacturerName": "_TZE284_vvmbj46n"
+  },
+  "ieeeAddress": "a4:c1:38:ac:ed:30:d7:a5",
+  "networkAddress": 30202,
+  "deviceType": "enddevice",
+  "powerSource": "battery",
+  "applicationDeviceId": 81,
+  "endpoints": [1],
+  "inputClusters": [4, 5, 61184, 0, 60672],
+  "outputClusters": [25, 10],
+  "protocol": "tuya_dp",
+  "clusters": {
+    "groups": { "clusterRevision": 2 },
+    "scenes": { "clusterRevision": 2 },
+    "basic": {
+      "zclVersion": 3,
+      "appVersion": 77,
+      "stackVersion": 0,
+      "hwVersion": 1,
+      "powerSource": "battery",
+      "attributeReportingStatus": "PENDING"
+    }
+  },
+  "bindings": ["ota", "time"],
+  "driver": "climate_sensor",
+  "status": "supported",
+  "notes": "Battery-powered soil/moisture sensor. Uses Tuya DP cluster 61184. Paired as climate_sensor (TS0601 in productId list). Similar to _TZE284_oitavov2.",
+  "analysis": {
+    "hasTuyaDP": true,
+    "hasIasZone": false,
+    "hasEnergyMonitoring": false,
+    "isRouter": false,
+    "isSleepy": true
+  }
+}

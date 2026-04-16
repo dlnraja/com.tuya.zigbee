@@ -1,0 +1,3182 @@
+{
+  "timestamp": "2026-04-06T09:32:54.599Z",
+  "structure": {
+    "analysis": {
+      "add_missing_ids.js": {
+        "classes": [],
+        "methods": [
+          "main"
+        ],
+        "requires": [
+          "fs",
+          "path",
+          "https"
+        ],
+        "version": null
+      },
+      "audit_all_flow_cards.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "audit_complete_advanced.js": {
+        "classes": [],
+        "methods": [
+          "scanDirectory",
+          "callback",
+          "scanDirectory",
+          "scanDirectory",
+          "scanDirectory"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "audit_drivers.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "audit_manufacturer_ids.js": {
+        "classes": [],
+        "methods": [
+          "runFullAudit"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "categorize_by_pattern.js": {
+        "classes": [],
+        "methods": [
+          "scanDrivers",
+          "scanDrivers"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "deep_search.js": {
+        "classes": [],
+        "methods": [
+          "main"
+        ],
+        "requires": [
+          "fs",
+          "path",
+          "https"
+        ],
+        "version": null
+      },
+      "extract_removed.js": {
+        "classes": [],
+        "methods": [
+          "scanDrivers",
+          "scanDrivers"
+        ],
+        "requires": [
+          "child_process",
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "find_true_orphans.js": {
+        "classes": [],
+        "methods": [
+          "scanDrivers",
+          "scanDrivers"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fix_dual_case_compatibility.js": {
+        "classes": [
+          "DualCaseCompatibilityFixer"
+        ],
+        "methods": [
+          "constructor",
+          "fixAllDrivers",
+          "fixDriverFile",
+          "generateReport"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": "v5.5.297"
+      },
+      "fix_manufacturer_case.js": {
+        "classes": [
+          "ManufacturerCaseFixer"
+        ],
+        "methods": [
+          "constructor",
+          "fixAllDrivers",
+          "fixDriverFile",
+          "generateReport"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "flow_analysis_patterns.js": {
+        "classes": [
+          "FlowAnalyzer"
+        ],
+        "methods": [
+          "constructor",
+          "analyzeAllFlows",
+          "analyzeFlowFile",
+          "analyzeFlowPatterns",
+          "detectInconsistencies",
+          "generateOptimizations",
+          "optimizeSwitchFlows",
+          "optimizeButtonFlows",
+          "optimizeSensorFlows",
+          "optimizeLightFlows",
+          "extractFlowType",
+          "proposeFlowOptimizations",
+          "generateReport",
+          "saveDetailedReport"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": "v5.5.295"
+      },
+      "flow_emergency_fixer.js": {
+        "classes": [
+          "FlowEmergencyFixer"
+        ],
+        "methods": [
+          "constructor",
+          "fixAllDuplicates",
+          "fixMultiGangDriver",
+          "extractGangCount",
+          "fixMultiGangFlows",
+          "fixFlowSection",
+          "identifyBaseFlowType",
+          "extractBaseTypeFromGangId",
+          "isMultiGangFlow",
+          "createGangSpecificFlow",
+          "createAllOnCondition",
+          "createAllOffCondition",
+          "ensureUniqueId",
+          "generateFixReport"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": "v5.5.295"
+      },
+      "flow_optimizer_intelligent.js": {
+        "classes": [
+          "IntelligentFlowOptimizer"
+        ],
+        "methods": [
+          "constructor",
+          "optimizeAllFlows",
+          "createBackup",
+          "copyFlowFiles",
+          "loadAnalysisReport",
+          "optimizeByCategory",
+          "findDriversByCategory",
+          "optimizeDriverFlows",
+          "applyIntelligentOptimization",
+          "optimizeFlowArray",
+          "findMatchingPattern",
+          "extractBaseAction",
+          "applyPatternWithFallback",
+          "applyFallbackOptimization",
+          "simplifyFlowId",
+          "fixInconsistentIds",
+          "groupInconsistenciesByDriver",
+          "fixDriverInconsistencies",
+          "generateCorrectedId",
+          "mergeWithIntelligentFallback",
+          "generateOptimizationReport"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": "v5.5.295"
+      },
+      "forum_analysis_complete.js": {
+        "classes": [
+          "HomeyForumAnalysisComplete"
+        ],
+        "methods": [
+          "constructor",
+          "initializeForumIssues",
+          "initializeMultiSourceResearch",
+          "generateSolutions",
+          "_onSceneCommand",
+          "_configureIlluminanceReporting",
+          "onNodeInit",
+          "analyzeAndReport",
+          "saveDetailedReport"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": "v5.5.295"
+      },
+      "research_orphans.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path",
+          "https"
+        ],
+        "version": null
+      },
+      "restore_and_fix_flows.js": {
+        "classes": [
+          "FlowRestorerAndFixer"
+        ],
+        "methods": [
+          "constructor",
+          "restoreAndFix",
+          "findLatestBackup",
+          "restoreFromBackup",
+          "copyFlowFilesRecursive",
+          "applyConservativeFixes",
+          "applyConservativeFixToFile",
+          "applyConservativeIdFix",
+          "getFixReason",
+          "detectDuplicatesOnly",
+          "generateReport"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": "v5.5.295"
+      },
+      "smart_categorize.js": {
+        "classes": [],
+        "methods": [
+          "main"
+        ],
+        "requires": [
+          "fs",
+          "path",
+          "https"
+        ],
+        "version": null
+      }
+    },
+    "automation": {
+      "audit-capabilities.js": {
+        "classes": [],
+        "methods": [
+          "log",
+          "summary"
+        ],
+        "requires": [
+          "../lib/drivers",
+          "../lib/logger"
+        ],
+        "version": null
+      },
+      "audit-flowcards.js": {
+        "classes": [],
+        "methods": [
+          "log",
+          "log",
+          "log",
+          "log",
+          "log",
+          "auditAppFlowCards",
+          "auditDriverFlowCards"
+        ],
+        "requires": [
+          "fs",
+          "path",
+          "../lib/drivers",
+          "../lib/logger"
+        ],
+        "version": null
+      },
+      "auto-add-fingerprints.js": {
+        "classes": [],
+        "methods": [
+          "main"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": "v5.9.0"
+      },
+      "auto-replace-images.js": {
+        "classes": [],
+        "methods": [
+          "return",
+          "main"
+        ],
+        "requires": [
+          "fs'),path=require('path'),https=require('https",
+          "sharp'),crypto=require('crypto"
+        ],
+        "version": null
+      },
+      "crossref-user-issues.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "deduplicate-fingerprints.js": {
+        "classes": [],
+        "methods": [
+          "writeDriverJson",
+          "main"
+        ],
+        "requires": [
+          "fs",
+          "path",
+          "../lib/drivers"
+        ],
+        "version": "v1.1.0"
+      },
+      "fetch-z2m-fingerprints.js": {
+        "classes": [],
+        "methods": [
+          "main"
+        ],
+        "requires": [
+          "fs",
+          "path",
+          "https"
+        ],
+        "version": "v5.9.0"
+      },
+      "fix-fingerprint-conflicts.js": {
+        "classes": [],
+        "methods": [
+          "main"
+        ],
+        "requires": [
+          "fs",
+          "path",
+          "../lib/drivers"
+        ],
+        "version": "v5.12.0"
+      },
+      "generate-matrix.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "../lib/drivers",
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "lint-collisions.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "../lib/drivers"
+        ],
+        "version": null
+      },
+      "manifest-caseless-processor.js": {
+        "classes": [],
+        "methods": [
+          "walk",
+          "processFile",
+          "walk"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": "v1.1.0"
+      },
+      "mass-resolve-fps.js": {
+        "classes": [],
+        "methods": [
+          "main"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "monthly-scan.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": "v5.7.48"
+      },
+      "parallel-bot-handler.js": {
+        "classes": [],
+        "methods": [
+          "exec",
+          "resolve",
+          "main"
+        ],
+        "requires": [
+          "child_process"
+        ],
+        "version": "v1.0.0"
+      },
+      "pr-auto-merger.js": {
+        "classes": [],
+        "methods": [
+          "mergeKeys",
+          "mergeKeys",
+          "gh",
+          "gh",
+          "execSync",
+          "execSync",
+          "execSync",
+          "execSync",
+          "execSync",
+          "execSync",
+          "execSync",
+          "execSync",
+          "execSync",
+          "gh",
+          "execSync",
+          "execSync",
+          "execSync",
+          "main"
+        ],
+        "requires": [
+          "child_process",
+          "fs",
+          "path"
+        ],
+        "version": "v1.0.0"
+      },
+      "project-mapper.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": "v1.0.0"
+      },
+      "recover-fingerprint-case.js": {
+        "classes": [],
+        "methods": [
+          "walk",
+          "processFile",
+          "walk"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "relax-manifest-clusters.js": {
+        "classes": [],
+        "methods": [
+          "walk",
+          "processFile",
+          "walk"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": "v1.0.0"
+      },
+      "sync-changelog-readme.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "validate-drivers.js": {
+        "classes": [],
+        "methods": [
+          "log",
+          "log",
+          "log",
+          "log",
+          "log",
+          "validateDriver"
+        ],
+        "requires": [
+          "fs",
+          "path",
+          "../lib/drivers",
+          "../lib/logger"
+        ],
+        "version": null
+      },
+      "_homed_crossref.js": {
+        "classes": [],
+        "methods": [
+          "main"
+        ],
+        "requires": [
+          "https'),fs=require('fs'),path=require('path"
+        ],
+        "version": null
+      }
+    },
+    "community-sync": {
+      "compare-fingerprints.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs'), path = require('path"
+        ],
+        "version": "v5.12.1"
+      },
+      "extract-johan.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs'), path = require('path'), {execSync} = require('child_process"
+        ],
+        "version": "v5.12.1"
+      },
+      "extract-z2m.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "https'), fs = require('fs'), path = require('path"
+        ],
+        "version": "v5.7.46"
+      },
+      "generate-report.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs'), path = require('path"
+        ],
+        "version": "v5.12.1"
+      },
+      "parse-issues.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "https"
+        ],
+        "version": null
+      },
+      "sync-all.js": {
+        "classes": [],
+        "methods": [
+          "main"
+        ],
+        "requires": [
+          "fs",
+          "path",
+          "./compare-fingerprints",
+          "./extract-johan",
+          "./extract-z2m",
+          "./parse-issues"
+        ],
+        "version": "v5.7.46"
+      }
+    },
+    "data": {},
+    "legacy": {
+      "add-fps.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs'), p = require('path"
+        ],
+        "version": null
+      },
+      "add-zha-fps.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs'),p=require('path"
+        ],
+        "version": null
+      },
+      "add_closed_issues_ids.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "add_github_ids.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "add_lowercase_ids.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "analyze_remaining_duplicates.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "apply-pr-improvements.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": "v5.5.780"
+      },
+      "apply_advanced_patterns.js": {
+        "classes": [],
+        "methods": [
+          "applyAdvancedPatterns"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "apply_forum_improvements.js": {
+        "classes": [],
+        "methods": [
+          "applyImprovements"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "apply_forum_zigbee_fixes.js": {
+        "classes": [],
+        "methods": [
+          "applyAllFixes"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "apply_intelligent_restoration.js": {
+        "classes": [],
+        "methods": [
+          "restoreDriver"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "apply_phase2_enrichment.js": {
+        "classes": [],
+        "methods": [
+          "enrichDriver"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "check_deleted_legitimate_shares.js": {
+        "classes": [],
+        "methods": [
+          "analyzeDriver",
+          "scanAllDrivers"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "cleanup_backups.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [],
+        "version": null
+      },
+      "clean_manufacturer_ids.js": {
+        "classes": [],
+        "methods": [
+          "main"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "comprehensive_forum_github_sync.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "enrich_from_community_reports.js": {
+        "classes": [],
+        "methods": [
+          "enrichDriver"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "final_conflict_resolution.js": {
+        "classes": [],
+        "methods": [
+          "resolve"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fix-critical-duplicates-v2.js": {
+        "classes": [],
+        "methods": [
+          "removeFromWrongDrivers",
+          "removeFromDriver",
+          "ensureInDriver",
+          "ensureInDriver",
+          "main"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fix-lowercase-fingerprints.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fix-true-duplicates.js": {
+        "classes": [],
+        "methods": [
+          "main"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": "v5.5.701"
+      },
+      "fix_all_duplicates.js": {
+        "classes": [],
+        "methods": [
+          "processCards",
+          "processCards",
+          "processCards"
+        ],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix_all_flow_issues.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fix_all_issues_intelligent.js": {
+        "classes": [],
+        "methods": [
+          "processDriver",
+          "scanDrivers"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fix_all_warnings_setcapability.js": {
+        "classes": [],
+        "methods": [
+          "scanDirectory",
+          "fixSetCapabilityValue",
+          "scanDirectory",
+          "scanDirectory"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fix_compose_files.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path",
+          "glob"
+        ],
+        "version": null
+      },
+      "fix_driver_images.js": {
+        "classes": [],
+        "methods": [
+          "backupExistingImages",
+          "ensureBackupDir",
+          "main"
+        ],
+        "requires": [
+          "fs",
+          "path",
+          "https",
+          "http",
+          "canvas"
+        ],
+        "version": "v1.0.0"
+      },
+      "fix_final_lib_warnings.js": {
+        "classes": [],
+        "methods": [
+          "applyFixes"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fix_flow_ids.js": {
+        "classes": [],
+        "methods": [
+          "fixFlowCards",
+          "fixFlowCards",
+          "fixFlowCards"
+        ],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix_missing_flow_registrations.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fix_remaining_duplicates.js": {
+        "classes": [],
+        "methods": [
+          "removeManufacturerId"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fix_remaining_flow_issues.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fix_remaining_warnings_math.js": {
+        "classes": [],
+        "methods": [
+          "applyFixes"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "resolve_real_conflicts.js": {
+        "classes": [],
+        "methods": [
+          "getDriverPriority",
+          "applyResolutions"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "restore_all_and_verify_conflicts.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "restore_manufacturer_names.js": {
+        "classes": [],
+        "methods": [
+          "analyzeDriver",
+          "scanAllDrivers"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "scan_all_community_sources.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": "v5.6.434"
+      },
+      "temp_radar.js": {
+        "classes": [
+          "radarSensor"
+        ],
+        "methods": [
+          "onNodeInit",
+          "updatePosition",
+          "onDeleted",
+          "onSettings",
+          "onIlluminanceMeasuredAttributeReport",
+          "onIASZoneStatusChangeNotification"
+        ],
+        "requires": [
+          "zigbee-clusters",
+          "../../lib/TuyaSpecificCluster",
+          "../../lib/TuyaSpecificClusterDevice"
+        ],
+        "version": null
+      },
+      "temp_siren.js": {
+        "classes": [
+          "siren"
+        ],
+        "methods": [
+          "onNodeInit",
+          "processResponse",
+          "processReporting",
+          "processDatapoint",
+          "onDeleted",
+          "onSettings",
+          "sendAlarmVolume",
+          "sendAlarmDuration",
+          "sendAlarmTune"
+        ],
+        "requires": [
+          "zigbee-clusters",
+          "../../lib/TuyaSpecificCluster",
+          "../../lib/TuyaSpecificClusterDevice"
+        ],
+        "version": null
+      },
+      "temp_sirentemphumid.js": {
+        "classes": [
+          "sensortemphumidsensor"
+        ],
+        "methods": [
+          "onNodeInit",
+          "processResponse",
+          "reportHumidityCapacity",
+          "reportTemperatureCapacity",
+          "reportBatteryPercentageCapacity",
+          "reportAlarmBatteryCapacity",
+          "processReporting",
+          "processDatapoint",
+          "onDeleted",
+          "onSettings",
+          "sendAlarmVolume",
+          "sendAlarmDuration",
+          "sendAlarmTune",
+          "findVolumeByTuyaValue"
+        ],
+        "requires": [
+          "zigbee-clusters",
+          "../../lib/TuyaSpecificCluster",
+          "../../lib/TuyaSpecificClusterDevice"
+        ],
+        "version": null
+      },
+      "verify_current_conflicts.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "verify_legitimate_duplicates.js": {
+        "classes": [],
+        "methods": [
+          "scanDrivers"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "wg-dev-climate.js": {
+        "classes": [
+          "D",
+          "D",
+          "D"
+        ],
+        "methods": [
+          "w",
+          "w",
+          "w"
+        ],
+        "requires": [
+          "fs'),p=require('path'),B=p.resolve('drivers",
+          "../../lib/tuya-local/TuyaLocalDevice",
+          "../../lib/tuya-local/TuyaLocalDevice",
+          "../../lib/tuya-local/TuyaLocalDevice"
+        ],
+        "version": null
+      },
+      "wg-dev-cover.js": {
+        "classes": [
+          "D"
+        ],
+        "methods": [
+          "w"
+        ],
+        "requires": [
+          "fs'),p=require('path'),B=p.resolve('drivers",
+          "../../lib/tuya-local/TuyaLocalDevice"
+        ],
+        "version": null
+      },
+      "wg-dev-light.js": {
+        "classes": [
+          "D",
+          "D"
+        ],
+        "methods": [
+          "w",
+          "w"
+        ],
+        "requires": [
+          "fs'),p=require('path'),B=p.resolve('drivers",
+          "../../lib/tuya-local/TuyaLocalDevice",
+          "../../lib/tuya-local/TuyaLocalDevice"
+        ],
+        "version": null
+      },
+      "wg-dev-misc.js": {
+        "classes": [
+          "D",
+          "D",
+          "D",
+          "D",
+          "D",
+          "D"
+        ],
+        "methods": [
+          "w",
+          "w",
+          "w",
+          "w",
+          "w",
+          "w"
+        ],
+        "requires": [
+          "fs'),p=require('path'),B=p.resolve('drivers",
+          "../../lib/tuya-local/TuyaLocalDevice",
+          "../../lib/tuya-local/TuyaLocalDevice",
+          "../../lib/tuya-local/TuyaLocalDevice",
+          "../../lib/tuya-local/TuyaLocalDevice",
+          "../../lib/tuya-local/TuyaLocalDevice",
+          "../../lib/tuya-local/TuyaLocalDevice"
+        ],
+        "version": null
+      },
+      "wg-dev-plug.js": {
+        "classes": [
+          "WiFiPlugDevice"
+        ],
+        "methods": [
+          "w",
+          "onInit"
+        ],
+        "requires": [
+          "fs'),p=require('path'),B=p.resolve('drivers",
+          "../../lib/tuya-local/TuyaLocalDevice"
+        ],
+        "version": null
+      },
+      "wg-dev-sec.js": {
+        "classes": [
+          "D",
+          "D",
+          "D"
+        ],
+        "methods": [
+          "w",
+          "w",
+          "w"
+        ],
+        "requires": [
+          "fs'),p=require('path'),B=p.resolve('drivers",
+          "../../lib/tuya-local/TuyaLocalDevice",
+          "../../lib/tuya-local/TuyaLocalDevice",
+          "../../lib/tuya-local/TuyaLocalDevice"
+        ],
+        "version": null
+      },
+      "wg-dev-switches.js": {
+        "classes": [
+          "WiFiSwitchDevice",
+          "WiFiSwitch2GangDevice",
+          "WiFiSwitch3GangDevice",
+          "WiFiSwitch4GangDevice"
+        ],
+        "methods": [
+          "w",
+          "w",
+          "w",
+          "w"
+        ],
+        "requires": [
+          "fs'),p=require('path'),B=p.resolve('drivers",
+          "../../lib/tuya-local/TuyaLocalDevice",
+          "../../lib/tuya-local/TuyaLocalDevice",
+          "../../lib/tuya-local/TuyaLocalDevice",
+          "../../lib/tuya-local/TuyaLocalDevice"
+        ],
+        "version": null
+      },
+      "wg-dev1.js": {
+        "classes": [],
+        "methods": [
+          "onInit",
+          "_setupFlows",
+          "_fireFlowTriggers"
+        ],
+        "requires": [
+          "fs'),p=require('path'),B=p.resolve('drivers",
+          "../../lib/tuya-local/TuyaLocalDevice"
+        ],
+        "version": null
+      },
+      "wg-flow1.js": {
+        "classes": [],
+        "methods": [
+          "w",
+          "w",
+          "w",
+          "w",
+          "w",
+          "w"
+        ],
+        "requires": [
+          "fs'),p=require('path'),B=p.resolve('drivers"
+        ],
+        "version": null
+      },
+      "wg-flow2.js": {
+        "classes": [],
+        "methods": [
+          "w",
+          "w",
+          "w",
+          "w",
+          "w",
+          "w",
+          "w"
+        ],
+        "requires": [
+          "fs'),p=require('path'),B=p.resolve('drivers"
+        ],
+        "version": null
+      },
+      "wg-flow3.js": {
+        "classes": [],
+        "methods": [
+          "w",
+          "w",
+          "w",
+          "w",
+          "w",
+          "w",
+          "w"
+        ],
+        "requires": [
+          "fs'),p=require('path'),B=p.resolve('drivers"
+        ],
+        "version": null
+      },
+      "wg1.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs'),p=require('path'),B=p.resolve('drivers"
+        ],
+        "version": null
+      },
+      "wg2.js": {
+        "classes": [],
+        "methods": [
+          "w",
+          "w",
+          "w",
+          "w",
+          "w",
+          "w",
+          "w",
+          "w",
+          "w"
+        ],
+        "requires": [
+          "./wg1"
+        ],
+        "version": null
+      },
+      "wg3.js": {
+        "classes": [],
+        "methods": [
+          "w",
+          "w",
+          "w",
+          "w",
+          "w",
+          "w",
+          "w",
+          "w",
+          "w",
+          "w",
+          "w"
+        ],
+        "requires": [
+          "./wg1"
+        ],
+        "version": null
+      },
+      "wifi-gen-drivers.js": {
+        "classes": [],
+        "methods": [
+          "onInit"
+        ],
+        "requires": [
+          "fs",
+          "path",
+          "../../lib/tuya-local/TuyaLocalDriver"
+        ],
+        "version": null
+      },
+      "wifi-setup-dirs.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      }
+    },
+    "lib": {
+      "drivers.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fetch.js": {
+        "classes": [],
+        "methods": [
+          "reject",
+          "reject",
+          "attempt"
+        ],
+        "requires": [
+          "https"
+        ],
+        "version": null
+      },
+      "logger.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [],
+        "version": null
+      }
+    },
+    "maintenance": {
+      "auto-resolve-collisions.js": {
+        "classes": [],
+        "methods": [
+          "createHybridDriver"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "cleanup-failed-runs.js": {
+        "classes": [],
+        "methods": [
+          "run",
+          "run",
+          "main"
+        ],
+        "requires": [
+          "child_process"
+        ],
+        "version": null
+      },
+      "enforce-fingerprint-rules.js": {
+        "classes": [],
+        "methods": [
+          "enforceRules"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fix-empty-remote-caps.js": {
+        "classes": [],
+        "methods": [
+          "main"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fix-large-images.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fix-unsafe-flow-cards.js": {
+        "classes": [],
+        "methods": [
+          "main"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "heal-hybrid-flows.js": {
+        "classes": [],
+        "methods": [
+          "healHybrids"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "inject-alarm-battery.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "inject-attribute-reporting.js": {
+        "classes": [],
+        "methods": [
+          "require",
+          "main"
+        ],
+        "requires": [
+          "fs",
+          "path",
+          "os').tmpdir(), 'attr-report-check-' + Date.now() + '.js",
+          "child_process"
+        ],
+        "version": null
+      },
+      "inject-ondeleted.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "inject-time-sync.js": {
+        "classes": [
+          "drivers"
+        ],
+        "methods": [
+          "_tuyaTimeSyncFallback",
+          "main"
+        ],
+        "requires": [
+          "fs",
+          "path",
+          "../../lib/ZigbeeTimeSync"
+        ],
+        "version": null
+      },
+      "master-self-heal.js": {
+        "classes": [],
+        "methods": [
+          "findFiles",
+          "log",
+          "log",
+          "safeWrite",
+          "addFix",
+          "log",
+          "log",
+          "log",
+          "safeWrite",
+          "addFix",
+          "log",
+          "log",
+          "log",
+          "safeWrite",
+          "addFix",
+          "log",
+          "log",
+          "log",
+          "addFix",
+          "log",
+          "log",
+          "safeWrite",
+          "addFix",
+          "log",
+          "log",
+          "log",
+          "addFix",
+          "log",
+          "log",
+          "log",
+          "addFix",
+          "log",
+          "log",
+          "addFix",
+          "log",
+          "log",
+          "addFix",
+          "log",
+          "log",
+          "log",
+          "addFix",
+          "log",
+          "log",
+          "log",
+          "log",
+          "log",
+          "log",
+          "log",
+          "rule_phantomMethods",
+          "rule_fingerprintCase",
+          "rule_probeDedup",
+          "rule_energyBatteries",
+          "rule_flowCardTryCatch",
+          "rule_multigangFlowRouting",
+          "rule_dpVariantDocs",
+          "rule_caseInsensitiveMatching",
+          "rule_duplicateFingerprints",
+          "rule_punycodeDeprecation",
+          "log",
+          "log",
+          "log",
+          "log",
+          "log",
+          "log",
+          "log",
+          "log",
+          "log",
+          "log",
+          "log",
+          "main"
+        ],
+        "requires": [
+          "fs",
+          "path",
+          "punycode"
+        ],
+        "version": null
+      },
+      "restore-battery-caps.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "revert-alarm-battery-conflict.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "sdk3-smart-linter.js": {
+        "classes": [],
+        "methods": [
+          "execSync",
+          "execSync",
+          "execSync",
+          "recordPattern",
+          "recordPattern",
+          "execSync",
+          "saveMemory",
+          "main"
+        ],
+        "requires": [
+          "fs",
+          "path",
+          "child_process",
+          "os').tmpdir(), 'sdk3-lint-check-' + Date.now() + '.js"
+        ],
+        "version": "v1.0.0"
+      },
+      "sync-app-json.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      }
+    },
+    "regen-images.js": {
+      "classes": [],
+      "methods": [],
+      "requires": [
+        "fs'),path=require('path'),sharp=require('sharp"
+      ],
+      "version": null
+    },
+    "sync": {
+      "crawl-blakadder.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "./lib/fetch",
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "crawl-deconz.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "./lib/fetch",
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "crawl-z2m.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "./lib/fetch",
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "crawl-zha.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "./lib/fetch",
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "cross-ref.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs'),path=require('path"
+        ],
+        "version": null
+      },
+      "cross-reference.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "./lib/drivers",
+          "./lib/device-types",
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "cross-z2m.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs'),path=require('path"
+        ],
+        "version": null
+      },
+      "data": {},
+      "extract-current.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs'),path=require('path"
+        ],
+        "version": null
+      },
+      "lib": {
+        "device-types.js": {
+          "classes": [],
+          "methods": [],
+          "requires": [],
+          "version": null
+        },
+        "drivers.js": {
+          "classes": [],
+          "methods": [],
+          "requires": [
+            "../../lib/drivers"
+          ],
+          "version": null
+        },
+        "fetch.js": {
+          "classes": [],
+          "methods": [
+            "reject",
+            "reject",
+            "attempt"
+          ],
+          "requires": [
+            "https"
+          ],
+          "version": null
+        }
+      },
+      "run.js": {
+        "classes": [],
+        "methods": [
+          "run"
+        ],
+        "requires": [
+          "./crawl-z2m",
+          "./crawl-zha",
+          "./crawl-blakadder",
+          "./crawl-deconz",
+          "./cross-reference"
+        ],
+        "version": null
+      },
+      "z2m-sync.js": {
+        "classes": [],
+        "methods": [
+          "main"
+        ],
+        "requires": [
+          "https'),fs=require('fs'),path=require('path"
+        ],
+        "version": null
+      },
+      "zha-sync.js": {
+        "classes": [],
+        "methods": [
+          "main"
+        ],
+        "requires": [
+          "https'),fs=require('fs'),p=require('path"
+        ],
+        "version": null
+      }
+    },
+    "temp": {
+      "add-all-endpoints.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "add-psi-require.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "../helpers/PowerSourceIntelligence",
+          "../helpers/ManufacturerNameHelper"
+        ],
+        "version": null
+      },
+      "add-require.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "../helpers/PowerSourceIntelligence');"
+        ],
+        "version": null
+      },
+      "analyze-all-dps.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "analyze-endpoints.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "analyze-ts0601-deep.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "check-170-zcl.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "check-appjson.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "check-appjson2.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "check-battery-manager.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "check-fp-duplicates.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "check-hybrid-init.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "check-hybrid-mains.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "check-hybrid.js": {
+        "classes": [
+          "properties"
+        ],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "check-issue-170.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "check-listener-order.js": {
+        "classes": [],
+        "methods": [
+          "walk",
+          "walk"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "check-listener-order2.js": {
+        "classes": [],
+        "methods": [
+          "walk",
+          "walk"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "check-sanitize.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "check-sensor-base.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "check-soil-endpoints.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "check-soil.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "check-switch-fps.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "check-syntax-2g.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "check-syntax.js": {
+        "classes": [],
+        "methods": [
+          "walk"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "check-ts0601-switches.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "check-workflow.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "check-workflow2.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "check.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "check2.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "clean-changelog.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "clean-homeychangelog.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "create-adaptive-dp.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "create-automation-docs.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "./intelligent-bug-detector.js",
+          "./adaptive-dp-detector.js"
+        ],
+        "version": "v5.12.3"
+      },
+      "create-bug-patterns.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": "v5.11.136"
+      },
+      "create-button-doc.js": {
+        "classes": [
+          "combining"
+        ],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": "v5.5.999"
+      },
+      "create-intelligent-triage.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": "v5.11.114"
+      },
+      "create-power-intel.js": {
+        "classes": [
+          "PowerSourceIntelligence"
+        ],
+        "methods": [],
+        "requires": [
+          "fs",
+          "./ManufacturerNameHelper",
+          "./DeviceDataHelper"
+        ],
+        "version": null
+      },
+      "create-radiator-images.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "create-radiator-wifi.js": {
+        "classes": [
+          "RadiatorWifiTuyaDevice",
+          "RadiatorWifiTuyaDriver"
+        ],
+        "methods": [
+          "onInit",
+          "_processData",
+          "onTargetTemperatureChange",
+          "onModeChange",
+          "onOnOffChange",
+          "_startHeartbeat",
+          "_scheduleReconnect",
+          "onSettings",
+          "onDeleted",
+          "clearInterval",
+          "clearTimeout",
+          "onInit",
+          "onPair"
+        ],
+        "requires": [
+          "fs",
+          "path",
+          "homey",
+          "tuyapi",
+          "homey"
+        ],
+        "version": null
+      },
+      "create-scene-doc.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "create-search.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "https",
+          "https",
+          "fs"
+        ],
+        "version": null
+      },
+      "create-summary.js": {
+        "classes": [],
+        "methods": [
+          "onNodeInit"
+        ],
+        "requires": [
+          "fs"
+        ],
+        "version": "v5.5.999"
+      },
+      "create-trv-capabilities.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "create-trv-zigbee.js": {
+        "classes": [
+          "RadiatorValveZigbeeDevice"
+        ],
+        "methods": [
+          "onNodeInit",
+          "onTargetTemperatureChange",
+          "onModeChange",
+          "onBoostModeChange",
+          "onWindowDetectionChange",
+          "onChildLockChange",
+          "setSchedule"
+        ],
+        "requires": [
+          "fs",
+          "path",
+          "../../lib/devices/HybridThermostatBase",
+          "../../lib/utils/CaseInsensitiveMatcher"
+        ],
+        "version": null
+      },
+      "create-workflows.js": {
+        "classes": [
+          "DPLearningSystem"
+        ],
+        "methods": [
+          "constructor",
+          "loadPatterns",
+          "observeDP",
+          "predictCapability",
+          "savePatterns"
+        ],
+        "requires": [
+          "fs",
+          "./intelligent-bug-detector.js",
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "deep-clean-changelog.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "disable-autoclose-bug.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "disable-autoclose-comments.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "disable-autoclose.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "enhance-comments.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "enhance-detector.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": "v6.0.0"
+      },
+      "enhance-variant.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "extract-dp-deep.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "find-battery.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "find-changelogs.js": {
+        "classes": [],
+        "methods": [
+          "findChangelogs",
+          "findChangelogs"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "find-injection.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "find-ts0601.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fix-170.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix-174.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix-3g-syntax.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix-3g-syntax2.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix-3gang-array.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix-bot-language.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix-bot-logic.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix-capability-icons.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fix-condition-card.js": {
+        "classes": [],
+        "methods": [
+          "walk",
+          "walk"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fix-copilot-prompt.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix-dlnraja.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix-duplicates.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix-endpoints.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fix-flow-actions.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fix-flows.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix-forum-bots.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix-listener-order.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fix-missing-endpoints.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fix-multi-gang.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix-owner-detect.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix-soil-endpoints.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix-switch-2gang.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": "v5.5.43"
+      },
+      "fix-syntax-1.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix-syntax-2.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": "v5.12.5"
+      },
+      "fix-syntax-2g-2.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": "v5.5.930"
+      },
+      "fix-syntax-2g.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": "v5.12.5"
+      },
+      "fix-syntax-3.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix-syntax-3g.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": "v5.5.930"
+      },
+      "fix-syntax-4.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix-syntax-4g.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": "v5.5.930"
+      },
+      "fix-syntax-5.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": "v5.5.930"
+      },
+      "fix-upstream-owner.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix-validation.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "fix.js": {
+        "classes": [],
+        "methods": [
+          "fixFile",
+          "fixFile",
+          "fixFile",
+          "fixFile"
+        ],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix2.js": {
+        "classes": [],
+        "methods": [
+          "fixFile",
+          "fixFile",
+          "fixFile",
+          "fixFile"
+        ],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "fix_mains.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "glob"
+        ],
+        "version": null
+      },
+      "fix_titles.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "glob"
+        ],
+        "version": null
+      },
+      "inject-psi-call.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "inject.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "integrate-copilot-bug.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "fs",
+          "fs');\\nconst { getCopilotAnalysis } = require('./copilot-analyzer.js"
+        ],
+        "version": null
+      },
+      "integrate-copilot.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "fs",
+          "fs');\\nconst { getCopilotAnalysis } = require('./copilot-analyzer.js"
+        ],
+        "version": null
+      },
+      "integrate-intelligent-detection.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path",
+          "./intelligent-bug-detector.js",
+          "./intelligent-bug-detector.js",
+          "./intelligent-bug-detector.js"
+        ],
+        "version": null
+      },
+      "remove-endpoints-targeted.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "remove-hardcoded-battery.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "sanitize-fetch.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "sanitize-imap.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "search-besterm.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "https"
+        ],
+        "version": null
+      },
+      "search-forum-johan.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "https",
+          "fs"
+        ],
+        "version": null
+      },
+      "search-forum-johan2.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "https"
+        ],
+        "version": null
+      },
+      "test-extract.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "./.github/scripts/load-fingerprints.js"
+        ],
+        "version": null
+      },
+      "test-extract2.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "./.github/scripts/load-fingerprints.js"
+        ],
+        "version": null
+      },
+      "test-extract3.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "./.github/scripts/load-fingerprints.js"
+        ],
+        "version": null
+      },
+      "test-fp.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "test-gmail-parser.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path",
+          "./.github/scripts/gmail-imap-reader"
+        ],
+        "version": null
+      },
+      "update-changelog.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "update-crossref.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "update-docs.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "update-dp.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "update-dp101.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "update-dp2.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "update-dp3.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "update-dp4.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "update-dp5.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "update-hybrid-device.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "../helpers/PowerSourceIntelligence"
+        ],
+        "version": "v5.11.16"
+      },
+      "update-imap-timeout.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "update-imap.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "update-imap2.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "update-regex.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "update-sensor-base.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "../helpers/PowerSourceIntelligence"
+        ],
+        "version": "v5.12.2"
+      },
+      "update-soil.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "update-soil2.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "update-triage.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "update-triage2.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      },
+      "update-yml.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs"
+        ],
+        "version": null
+      }
+    },
+    "temp_clean_climate.js": {
+      "classes": [],
+      "methods": [],
+      "requires": [
+        "fs",
+        "path"
+      ],
+      "version": null
+    },
+    "validation": {
+      "audit-anti-generic.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": "v5.5.779"
+      },
+      "check-driver-collisions.js": {
+        "classes": [],
+        "methods": [],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      },
+      "check-pairing-collisions.js": {
+        "classes": [],
+        "methods": [
+          "main"
+        ],
+        "requires": [
+          "fs",
+          "path"
+        ],
+        "version": null
+      }
+    },
+    "_add_fingerprints.js": {
+      "classes": [],
+      "methods": [],
+      "requires": [
+        "fs",
+        "path"
+      ],
+      "version": null
+    },
+    "_audit_dimmer2.js": {
+      "classes": [],
+      "methods": [],
+      "requires": [
+        "fs",
+        "path"
+      ],
+      "version": null
+    },
+    "_audit_dimmer_cover.js": {
+      "classes": [],
+      "methods": [],
+      "requires": [
+        "fs",
+        "path"
+      ],
+      "version": null
+    },
+    "_audit_dp.js": {
+      "classes": [],
+      "methods": [],
+      "requires": [
+        "fs",
+        "path"
+      ],
+      "version": null
+    },
+    "_audit_drivers_deep.js": {
+      "classes": [],
+      "methods": [],
+      "requires": [
+        "fs",
+        "path"
+      ],
+      "version": null
+    },
+    "_audit_scene_flows.js": {
+      "classes": [],
+      "methods": [],
+      "requires": [
+        "fs",
+        "path"
+      ],
+      "version": null
+    },
+    "_check_driver_issues.js": {
+      "classes": [],
+      "methods": [],
+      "requires": [
+        "fs",
+        "path"
+      ],
+      "version": null
+    },
+    "_check_fp.js": {
+      "classes": [],
+      "methods": [],
+      "requires": [
+        "fs",
+        "path"
+      ],
+      "version": null
+    },
+    "_check_mains.js": {
+      "classes": [],
+      "methods": [],
+      "requires": [
+        "fs",
+        "path"
+      ],
+      "version": null
+    },
+    "_check_titleformatted.js": {
+      "classes": [],
+      "methods": [],
+      "requires": [
+        "fs",
+        "path"
+      ],
+      "version": null
+    },
+    "_collision_detail.js": {
+      "classes": [],
+      "methods": [],
+      "requires": [
+        "fs",
+        "path"
+      ],
+      "version": null
+    },
+    "_final_validate.js": {
+      "classes": [],
+      "methods": [
+        "walk",
+        "walkJS"
+      ],
+      "requires": [
+        "fs",
+        "path"
+      ],
+      "version": null
+    },
+    "_fix_all_scene.js": {
+      "classes": [],
+      "methods": [],
+      "requires": [
+        "fs",
+        "path"
+      ],
+      "version": null
+    },
+    "_fix_scene.js": {
+      "classes": [],
+      "methods": [],
+      "requires": [
+        "fs",
+        "path"
+      ],
+      "version": null
+    },
+    "_fix_scene2.js": {
+      "classes": [],
+      "methods": [],
+      "requires": [
+        "fs",
+        "path"
+      ],
+      "version": null
+    },
+    "_scan_fp.js": {
+      "classes": [],
+      "methods": [],
+      "requires": [
+        "fs",
+        "path"
+      ],
+      "version": null
+    },
+    "_scan_fp2.js": {
+      "classes": [],
+      "methods": [],
+      "requires": [
+        "fs",
+        "path"
+      ],
+      "version": null
+    },
+    "_validate_all.js": {
+      "classes": [],
+      "methods": [],
+      "requires": [
+        "fs",
+        "path",
+        ") && !c.includes(\"'use strict'\") && !c.includes('\"use strict\""
+      ],
+      "version": null
+    },
+    "_verify_prs.js": {
+      "classes": [],
+      "methods": [],
+      "requires": [
+        "fs",
+        "path"
+      ],
+      "version": null
+    }
+  }
+}

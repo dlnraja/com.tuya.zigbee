@@ -1,0 +1,61 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_switch_2gang_g1_on",
+      "title": {
+        "en": "Gang 1 turned on"
+      },
+      "titleFormatted": {
+        "en": "Gang 1 turned on"
+      }
+    },
+    {
+      "id": "wifi_switch_2gang_g1_off",
+      "title": {
+        "en": "Gang 1 turned off"
+      },
+      "titleFormatted": {
+        "en": "Gang 1 turned off"
+      }
+    },
+    {
+      "id": "wifi_switch_2gang_g2_on",
+      "title": {
+        "en": "Gang 2 turned on"
+      },
+      "titleFormatted": {
+        "en": "Gang 2 turned on"
+      }
+    },
+    {
+      "id": "wifi_switch_2gang_g2_off",
+      "title": {
+        "en": "Gang 2 turned off"
+      },
+      "titleFormatted": {
+        "en": "Gang 2 turned off"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "wifi_switch_2gang_g1_is_on",
+      "title": {
+        "en": "Gang 1 is on"
+      },
+      "titleFormatted": {
+        "en": "Gang 1 is on"
+      }
+    },
+    {
+      "id": "wifi_switch_2gang_g2_is_on",
+      "title": {
+        "en": "Gang 2 is on"
+      },
+      "titleFormatted": {
+        "en": "Gang 2 is on"
+      }
+    }
+  ],
+  "actions": []
+}

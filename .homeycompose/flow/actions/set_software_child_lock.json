@@ -1,0 +1,22 @@
+{
+  "id": "set_software_child_lock",
+  "title": {
+    "en": "Set Software Child Lock",
+    "fr": "Définir Sécurité Enfant Logicielle"
+  },
+  "titleFormatted": {
+    "en": "Set Software Child Lock to [[locked]]",
+    "fr": "Définir Sécurité Enfant à [[locked]]"
+  },
+  "args": [
+    {
+      "name": "device",
+      "type": "device",
+      "filter": "driver_id=switch_1gang|driver_id=switch_2gang|driver_id=switch_3gang|driver_id=switch_4gang|driver_id=plug"
+    },
+    {
+      "name": "locked",
+      "type": "checkbox"
+    }
+  ]
+}

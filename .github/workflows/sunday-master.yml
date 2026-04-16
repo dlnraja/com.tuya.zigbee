@@ -1,0 +1,816 @@
+# Universal Tuya Zigbee - Sunday Master Automation
+# Orchestrates all Sunday jobs: triage, fork scan, forum scan
+# Runs every Sunday at 07:00 UTC, triggers child workflows
+
+name: "Sunday Master Automation"
+
+on:
+  # schedule: disabled to avoid annoying users
+  # - cron: '0 7 * * 0'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (no comments/issues created)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: sunday-master
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: "22"
+  SHADOW_MODE: "true"
+
+jobs:
+  stats:
+    name: "Collect App Stats"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      version: ${{ steps.s.outputs.version }}
+      drivers: ${{ steps.s.outputs.drivers }}
+      fps: ${{ steps.s.outputs.fps }}
+    env:
+      # === AI providers — circular chain (ai-helper.js) ===
+      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
+      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
+      CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
+      TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
+      KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
+
+    steps:
+      - uses: actions/checkout@v5
+      - id: s
+        run: |
+          V=$(node -p "require('./app.json').version")
+          D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          F=$(node -e "const g=require('path').join('.','drivers');const fs=require('fs');let c=0;for(const d of fs.readdirSync(g)){try{const j=JSON.parse(fs.readFileSync(g+'/'+d+'/driver.compose.json','utf8'));c+=(j.zigbee?.manufacturerName?.length||0)}catch{}}console.log(c)" 2>/dev/null || echo '?')
+          echo "version=$V" >> $GITHUB_OUTPUT
+          echo "drivers=$D" >> $GITHUB_OUTPUT
+          echo "fps=$F" >> $GITHUB_OUTPUT
+          echo "## App Stats" >> $GITHUB_STEP_SUMMARY
+          echo "- Version: $V" >> $GITHUB_STEP_SUMMARY
+          echo "- Drivers: $D" >> $GITHUB_STEP_SUMMARY
+          echo "- Fingerprints: $F" >> $GITHUB_STEP_SUMMARY
+
+  triage-johanbendz:
+    name: "Triage JohanBendz"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Run triage
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          TARGET_REPO: JohanBendz/com.tuya.zigbee
+          APP_VERSION: ${{ needs.stats.outputs.version }}
+          DRIVER_COUNT: ${{ needs.stats.outputs.drivers }}
+          FP_COUNT: ${{ needs.stats.outputs.fps }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/triage-run.js
+
+  triage-dlnraja:
+    name: "Triage dlnraja"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Run triage
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          TARGET_REPO: dlnraja/com.tuya.zigbee
+          APP_VERSION: ${{ needs.stats.outputs.version }}
+          DRIVER_COUNT: ${{ needs.stats.outputs.drivers }}
+          FP_COUNT: ${{ needs.stats.outputs.fps }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/triage-run.js
+
+  scan-forks:
+    name: "Full Fork Verification + Scan"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Full fork verification (clusters+flows+DPs+caps+FPs)
+        id: fork_scan
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          node .github/scripts/full-fork-verifier.js
+          node .github/scripts/deep-fork-integrator.js || true
+          node .github/scripts/scan-forks-recursive.js || true
+          if [ -s /tmp/new_fork_fps.json ]; then
+            echo "has_new_fps=true" >> $GITHUB_OUTPUT
+          fi
+      - if: steps.fork_scan.outputs.has_new_fps == 'true'
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7
+        with:
+          script: |
+            const fs=require('fs');
+            const raw=JSON.parse(fs.readFileSync('/tmp/new_fork_fps.json','utf8'));
+            const entries=Array.isArray(raw)?raw:Object.entries(raw);
+            if(!entries.length)return;
+            // Dedup: check for existing open issue with same title pattern
+            const {data:existing}=await github.rest.issues.listForRepo({
+              owner:context.repo.owner,repo:context.repo.repo,
+              state:'open',labels:'auto-scan',per_page:10
+            });
+            const dupTitle=`[Auto] ${entries.length} new fingerprints from forks`;
+            if(existing.some(i=>i.title===dupTitle)){
+              console.log('Issue already exists:',dupTitle);return;
+            }
+            const rows=entries.slice(0,50).map(([fp,info])=>{
+              const fork=info.fork||info[1]?.fork||'?';
+              const driver=info.driver||info[1]?.driver||'?';
+              return `| \`${fp}\` | ${fork} | ${driver} |`;
+            }).join('\n');
+            await github.rest.issues.create({
+              owner:context.repo.owner,repo:context.repo.repo,
+              title:dupTitle,
+              body:`## New fingerprints\n| FP | Fork | Driver |\n|---|---|---|\n${rows}\n\n_See .github/state/fork-new-drivers.json and fork-dp-finds.json for full deep integration report._`,
+              labels:['enhancement','auto-scan']
+            });
+
+  cross-driver-gaps:
+    name: "Cross-Driver Gap Check"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Run gap detection
+        run: node .github/scripts/cross-driver-gap.js
+
+  scan-forum:
+    name: "Scan Forum"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - uses: actions/cache@a7833574556fa59680c1b7cb190c1735db73ebf0 # v4
+        with:
+          path: /tmp/last_forum_post.txt
+          key: forum-${{ github.run_number }}
+          restore-keys: forum-
+      - name: Run forum scan
+        id: forum_scan
+        env:
+          LAST_POST_FILE: /tmp/last_forum_post.txt
+        run: |
+          node .github/scripts/scan-forum.js
+          if [ -s /tmp/forum_issues.json ]; then
+            echo "has_issues=true" >> $GITHUB_OUTPUT
+          fi
+      - if: steps.forum_scan.outputs.has_issues == 'true'
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7
+        with:
+          script: |
+            const fs=require('fs');
+            const issues=JSON.parse(fs.readFileSync('/tmp/forum_issues.json','utf8'));
+            if(!issues.length)return;
+            // Dedup: check for existing open issue with same title pattern
+            const dupTitle=`[Forum] ${issues.length} device request(s) from forum`;
+            const {data:existing}=await github.rest.issues.listForRepo({
+              owner:context.repo.owner,repo:context.repo.repo,
+              state:'open',labels:'forum-request',per_page:10
+            });
+            if(existing.some(i=>i.title===dupTitle)){
+              console.log('Issue already exists:',dupTitle);return;
+            }
+            const rows=issues.map(i=>
+              `| ${i.user} | ${i.date} | #${i.postNum} | \`${i.missing.join('`,`')}\` |`).join('\n');
+            await github.rest.issues.create({
+              owner:context.repo.owner,repo:context.repo.repo,
+              title:dupTitle,
+              body:`## Forum requests\n| User | Date | Post | Missing |\n|---|---|---|---|\n${rows}`,
+              labels:['enhancement','forum-request']
+            });
+
+  # forum-respond: REMOVED — now handled exclusively by forum-auto-responder.yml (2x/day)
+  # This was causing duplicate replies alongside hub + dedicated responder workflows
+
+  gmail-diagnostics:
+    name: "Gmail Diagnostics"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Run Gmail diagnostics
+        continue-on-error: true
+        env:
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: node .github/scripts/fetch-gmail-diagnostics.js
+
+  device-diagnostics:
+    name: "Homey Device Diagnostics"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Run device diagnostics
+        continue-on-error: true
+        env:
+          HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/homey-device-diagnostics.js
+
+  external-sources:
+    name: "Smart Device Scanner (11 sources)"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: "11-source scan (Z2M+ZHA+Blakadder+deCONZ+Hubitat+HOMEd+SmartThings+HA Forum+Local)"
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: node .github/scripts/external-sources-scanner.js
+
+  github-scanner:
+    name: "GitHub Activity Scanner"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Scan GitHub activity
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node .github/scripts/github-scanner.js
+
+  github-issue-manager:
+    name: "GitHub Issue Manager"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Manage issues
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          STALE_DAYS: "30"
+          MAX_ITEMS: "100"
+          INCLUDE_CLOSED: "true"
+          REPOS: "dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee"
+        run: node .github/scripts/github-issue-manager.js
+
+  forum-activity:
+    name: "Forum Activity Scraper"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Scrape forum activity
+        continue-on-error: true
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          FORUM_USERNAME: dlnraja
+        run: node .github/scripts/forum-activity-scraper.js
+
+  johanbendz-full:
+    name: "JohanBendz Full Scanner"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Scan JohanBendz
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: node .github/scripts/scan-johan-full.js
+
+  comprehensive-scan:
+    name: "Comprehensive GitHub Scan"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Comprehensive scan (forks+PRs+issues)
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: node .github/scripts/comprehensive-github-scan.js
+      - name: PR/Issue FP Scan
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: node .github/scripts/scan-prs-issues.js
+
+  ecosystem-scan:
+    name: "Tuya Ecosystem Scanner"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: "Scan Tuya ecosystem repos (Drenso, jurgenheine, heszegi, rebtor, forks)"
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/scan-tuya-ecosystem.js
+
+  forum-cleanup:
+    name: "Forum Spam Scan + Cleanup"
+    needs: stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Spam scan
+        continue-on-error: true
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: node .github/scripts/forum-scan-spam.js
+      - name: Cleanup (edit-based)
+        continue-on-error: true
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/forum-cleanup-edit.js || true
+
+  diagnostic-resolver:
+    name: "Diagnostic Auto-Resolver"
+    needs: [gmail-diagnostics, device-diagnostics, github-issue-manager, scan-forum, comprehensive-scan]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: "Pattern Detector (feed resolver)"
+        continue-on-error: true
+        run: node .github/scripts/pattern-detector.js
+      - name: "Cross-ref all diags+patterns → auto-resolve issues/PRs"
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/diagnostic-auto-resolver.js
+      - name: "Resolution Summary"
+        continue-on-error: true
+        run: node .github/scripts/resolution-summary.js
+      - name: "Pipeline Health Check"
+        continue-on-error: true
+        run: node .github/scripts/pipeline-health.js
+      - name: Commit resolver changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for f in .github/state/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null || { echo "::warning::Bad JSON: $f"; git checkout -- "$f" 2>/dev/null; }; done
+          git add .github/state/ 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "Resolved issues + patterns update [skip ci]"
+          git pull --rebase origin master || true
+          git push || true
+
+  enrichment:
+    name: "Smart Enrichment (DP-aware)"
+    needs: [scan-forum, external-sources, github-scanner]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: "DP-aware enrichment with device functionality profiles"
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: node .github/scripts/enrichment-scanner.js
+
+  fp-research:
+    name: "FP Research Engine (Deep Classify)"
+    needs: [enrichment, scan-forks, gmail-diagnostics, github-issue-manager, forum-activity]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: "Deep classify FPs via Z2M/Blakadder/CompScan"
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          AUTO_ADD: ${{ inputs.dry_run == 'true' && 'false' || 'true' }}
+        run: node .github/scripts/fp-research-engine.js
+
+  variant-scanner:
+    name: "Variant Scanner (Variants + PIDs)"
+    needs: [fp-research]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: "Auto-discover variants + PIDs from Z2M/Blakadder/GitHub"
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/variant-scanner.js
+
+  deep-researcher:
+    name: "Issue Deep Researcher (PRs+Issues)"
+    needs: [variant-scanner]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: "Deep research ALL open PRs/issues variants+PIDs"
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/issue-deep-researcher.js
+
+  smart-processor:
+    name: "Smart Device Processor (AI Brain)"
+    needs: [deep-researcher]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: "Cross-reference ALL sources + AI device implementation"
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          # Optional AI fallbacks (GROQ, HF, MISTRAL, DEEPSEEK) — see .github/SECRETS.md
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/smart-device-processor.js
+      - name: "Auto-Learn Fingerprints"
+        continue-on-error: true
+        timeout-minutes: 3
+        run: node .github/scripts/auto-learn-fingerprints.js
+      - name: "Pattern Detector"
+        continue-on-error: true
+        timeout-minutes: 5
+        run: node .github/scripts/pattern-detector.js
+      - name: "Resolution Summary"
+        continue-on-error: true
+        run: node .github/scripts/resolution-summary.js
+      - name: "Reply Self-Audit"
+        continue-on-error: true
+        timeout-minutes: 10
+        env:
+          DISCOURSE_API_USERNAME: 'dlnraja'
+          DISCOURSE_URL: 'https://community.homey.app'
+        run: node .github/scripts/bot-self-audit.js
+      - name: "🖼️ Unified Visual Rebranding"
+        continue-on-error: true
+        run: node scripts/automation/apply-premium-unified-images.js || true
+      - name: Commit smart processor + intelligence changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for f in .github/state/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null || { echo "::warning::Bad JSON: $f"; git checkout -- "$f" 2>/dev/null; }; done
+          git add -A
+          git diff --cached --quiet || git commit -m "Updated patterns and state [skip ci]"
+          git pull --rebase origin master || true
+          git push || true
+
+  ai-battle:
+    name: "Master AI Battle Orchestrator"
+    needs: [smart-processor, scan-forks, gmail-diagnostics, enrichment]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: "Run AI Battle (multi-AI + all sources)"
+        continue-on-error: true
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          # Optional AI fallbacks (GROQ, DEEPSEEK, MISTRAL, CEREBRAS, TOGETHER, OPENROUTER, KIMI)
+          # Not yet configured — see .github/SECRETS.md
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          MAX_GH_CALLS: "100"
+        run: node .github/scripts/master-ai-battle.js
+      - name: "🖼️ Unified Visual Rebranding"
+        continue-on-error: true
+        run: node scripts/automation/apply-premium-unified-images.js || true
+      - name: Commit AI battle changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for f in .github/state/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null || { echo "::warning::Bad JSON: $f"; git checkout -- "$f" 2>/dev/null; }; done
+          git add -A drivers/ .github/state/
+          git diff --cached --quiet || git commit -m "New device variants + driver updates [skip ci]"
+          git pull --rebase origin master || true
+          git push || true
+
+  generate-changelog:
+    name: "AI Changelog Generation"
+    needs: [scan-forum, gmail-diagnostics, device-diagnostics, enrichment, smart-processor, ai-battle]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Generate AI Changelog
+        continue-on-error: true
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/generate-ai-changelog.js
+      - name: Commit changelog updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add CHANGELOG.md README.md .homeychangelog.json
+          git diff --cached --quiet || git commit -m "docs: changelog update [skip ci]"
+          git pull --rebase origin master || true
+          git push || true
+
+  update-forum-thread:
+    name: "Update Forum First Post"
+    needs: [generate-changelog]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: master
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+      - name: Update first post of forum thread
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/update-forum-first-post.js
+  promote-to-test:
+    name: "Promote Draft to Test"
+    needs: [generate-changelog, update-forum-thread]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      # Tier 1: Browser automation (Puppeteer) — the ONLY reliable method
+      # Athom has no public API for draft→test, only the web UI works.
+      - name: "Install Puppeteer"
+        continue-on-error: true
+        run: npm install puppeteer --no-save
+      - name: "Tier 1: Promote via Browser (Puppeteer)"
+        id: puppeteer
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/auto-promote-puppeteer.js
+
+      # Tier 2: API attempt (usually fails — kept as fallback)
+      - name: "Tier 2: Promote via API (fallback)"
+        id: api
+        if: steps.puppeteer.outcome != 'success'
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/auto-publish-draft.js
+
+      # Tier 3: Retry Puppeteer after 30s
+      - name: "Tier 3: Verify retry (Puppeteer)"
+        if: steps.puppeteer.outcome != 'success' && steps.api.outcome != 'success'
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: |
+          sleep 30
+          node .github/scripts/auto-promote-puppeteer.js
+
+      # 📣 Forum Announcement (Unified Awareness)
+      - name: 💬 Post to Forum
+        if: always()
+        continue-on-error: true
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          APP_VERSION: ${{ needs.stats.outputs.version }}
+        run: node .github/scripts/post-forum-update.js
+
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v4
+        with:
+          name: sunday-promote-screenshots
+          path: screenshots/
+          retention-days: 7
+          if-no-files-found: ignore
+
+  summary:
+    name: "Weekly Summary"
+    needs: [triage-johanbendz, triage-dlnraja, scan-forks, cross-driver-gaps, scan-forum, gmail-diagnostics, device-diagnostics, external-sources, github-scanner, github-issue-manager, forum-activity, johanbendz-full, comprehensive-scan, ecosystem-scan, forum-cleanup, diagnostic-resolver, enrichment, smart-processor, generate-changelog, update-forum-thread, promote-to-test]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - run: |
+          FAILS=0
+          for R in "${{ needs.triage-johanbendz.result }}" "${{ needs.triage-dlnraja.result }}" "${{ needs.scan-forks.result }}" "${{ needs.scan-forum.result }}" "${{ needs.gmail-diagnostics.result }}" "${{ needs.device-diagnostics.result }}" "${{ needs.smart-processor.result }}" "${{ needs.diagnostic-resolver.result }}" "${{ needs.promote-to-test.result }}"; do [ "$R" = "failure" ] && FAILS=$((FAILS+1)); done
+          if [ "$FAILS" -eq 0 ]; then STATUS="All Healthy"; else STATUS="$FAILS failure(s)"; fi
+          echo "## Sunday Automation Complete — $STATUS" >> $GITHUB_STEP_SUMMARY
+          echo "- JohanBendz triage: ${{ needs.triage-johanbendz.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- dlnraja triage: ${{ needs.triage-dlnraja.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Full Fork Verification: ${{ needs.scan-forks.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Cross-driver gaps: ${{ needs.cross-driver-gaps.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Forum scan: ${{ needs.scan-forum.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Forum respond: handled by forum-auto-responder.yml" >> $GITHUB_STEP_SUMMARY
+          echo "- Gmail diagnostics: ${{ needs.gmail-diagnostics.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Device diagnostics: ${{ needs.device-diagnostics.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- External sources: ${{ needs.external-sources.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Enrichment: ${{ needs.enrichment.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Smart Processor: ${{ needs.smart-processor.result }}**" >> $GITHUB_STEP_SUMMARY
+          echo "- AI Changelog: ${{ needs.generate-changelog.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- GitHub scanner: ${{ needs.github-scanner.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- GitHub issue manager: ${{ needs.github-issue-manager.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Forum activity: ${{ needs.forum-activity.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- JohanBendz full: ${{ needs.johanbendz-full.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Forum first post: ${{ needs.update-forum-thread.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Comprehensive scan: ${{ needs.comprehensive-scan.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Ecosystem scan: ${{ needs.ecosystem-scan.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Forum cleanup: ${{ needs.forum-cleanup.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Diagnostic Resolver: ${{ needs.diagnostic-resolver.result }}**" >> $GITHUB_STEP_SUMMARY
+          echo "- **Promote to Test: ${{ needs.promote-to-test.result }}**" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "[Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY
+

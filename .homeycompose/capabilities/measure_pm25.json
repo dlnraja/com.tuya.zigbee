@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "PM2.5"
+  },
+  "units": {
+    "en": "µg/m³"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "insights": true
+}

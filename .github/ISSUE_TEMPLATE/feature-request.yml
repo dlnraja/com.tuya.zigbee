@@ -1,0 +1,131 @@
+name: ✨ Feature Request
+description: Suggest a new feature or enhancement
+title: "[Feature] "
+labels: ["enhancement", "needs-review"]
+assignees:
+  - dlnraja
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Thank you for your suggestion!
+        
+        Feature requests help improve the app for everyone.
+        Please describe your idea clearly.
+        
+        **Before submitting:**
+        - Check if this feature was already requested
+        - Consider if this fits the app's scope (local Zigbee control)
+
+  - type: dropdown
+    id: feature-type
+    attributes:
+      label: Feature Type
+      description: What kind of enhancement is this?
+      options:
+        - New capability (e.g., color control, scenes)
+        - Improved pairing experience
+        - Better flow cards
+        - UI/UX improvement
+        - Performance optimization
+        - Documentation
+        - Developer tools
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What problem would this feature solve?
+      placeholder: |
+        Currently there's no way to control RGB color from flows for Tuya RGB bulbs.
+        Users have to manually adjust color in the device settings.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: How do you envision this feature working?
+      placeholder: |
+        Add a flow action card "Set color" that accepts:
+        - Hue (0-360)
+        - Saturation (0-100)
+        - Brightness (0-100)
+        
+        This would map to Tuya DP 24 (color hex).
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Have you considered other solutions?
+      placeholder: |
+        - Using separate apps for color control (but loses local control benefits)
+        - Creating advanced flows with logic cards (too complex for users)
+    validations:
+      required: false
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples
+      description: Links to similar implementations in other apps/platforms
+      placeholder: |
+        - Zigbee2MQTT has this: https://www.zigbee2mqtt.io/guide/usage/exposes.html
+        - Philips Hue app does it like this: [screenshot]
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority (Your Opinion)
+      description: How important is this to you?
+      options:
+        - Critical - Blocking my use case
+        - High - Would significantly improve experience
+        - Medium - Nice to have
+        - Low - Minor improvement
+    validations:
+      required: true
+
+  - type: textarea
+    id: affected-devices
+    attributes:
+      label: Affected Devices
+      description: Which devices would benefit from this feature?
+      placeholder: |
+        - All RGB bulbs (e.g., MOES ZLD-RCW)
+        - LED strips
+        - Any device with DP 24 (color control)
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Anything else relevant (screenshots, mockups, etc.)
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched for similar feature requests
+          required: true
+        - label: This feature aligns with local Zigbee control
+          required: true
+        - label: I'm willing to help test this feature
+          required: false
+        - label: I can provide technical details if needed
+          required: false

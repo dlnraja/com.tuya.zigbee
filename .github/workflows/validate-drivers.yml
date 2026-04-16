@@ -1,0 +1,53 @@
+name: Validate Drivers (Enhanced)
+
+on:
+  push:
+    paths:
+      - 'drivers/**'
+      - 'lib/**'
+  pull_request:
+    paths:
+      - 'drivers/**'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          npm ci || npm install
+
+      - name: Validate Homey SDK Constraints
+        run: |
+          npx homey app validate --level publish
+
+      - name: Validate Multi-instance Endpoints & Constraints
+        run: |
+          echo "Checking capabilities mapping to endpoints recursively..."
+          node .github/scripts/deep-code-audit.js || true
+
+      - name: Validate DP Mappings & Orphan DPs
+        run: |
+          node .github/scripts/dp-learning-system.js || true
+
+      - name: Validate Tuya Magic Spell & Energy Scaling
+        run: |
+          node scripts/automation/validate-magic-spell.js
+
+      - name: Recursive Device Variance Testing
+        run: |
+          echo "Recursive test of manufacturer variants for device IDs"
+          node .github/scripts/full-fork-verifier.js || true
