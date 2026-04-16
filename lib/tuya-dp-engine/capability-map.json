@@ -1,0 +1,341 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-10-16",
+  "description": "Mapping between Homey capabilities and Tuya Data Points",
+  
+  "capabilities": {
+    "onoff": {
+      "description": "On/Off control",
+      "dp": 1,
+      "type": "bool",
+      "converter": "onoff",
+      "writable": true,
+      "reportable": true
+    },
+    
+    "dim": {
+      "description": "Dimming level (0-1)",
+      "dp": 2,
+      "type": "value",
+      "converter": "dim",
+      "min": 0,
+      "max": 1000,
+      "writable": true,
+      "reportable": true,
+      "notes": "Tuya uses 0-1000, Homey uses 0-1"
+    },
+    
+    "measure_power": {
+      "description": "Active power consumption in watts",
+      "dp": 19,
+      "type": "value",
+      "converter": "power",
+      "scale": 10,
+      "unit": "W",
+      "writable": false,
+      "reportable": true,
+      "notes": "DP value in deciwatts (W * 10)"
+    },
+    
+    "measure_current": {
+      "description": "Current in amperes",
+      "dp": 18,
+      "type": "value",
+      "converter": "current",
+      "scale": 1000,
+      "unit": "A",
+      "writable": false,
+      "reportable": true,
+      "notes": "DP value in milliamperes (A * 1000)"
+    },
+    
+    "measure_voltage": {
+      "description": "Voltage in volts",
+      "dp": 20,
+      "type": "value",
+      "converter": "voltage",
+      "scale": 10,
+      "unit": "V",
+      "writable": false,
+      "reportable": true,
+      "notes": "DP value in decivolts (V * 10)"
+    },
+    
+    "meter_power": {
+      "description": "Cumulative energy consumption",
+      "dp": 17,
+      "type": "value",
+      "converter": "energy",
+      "scale": 100,
+      "unit": "kWh",
+      "writable": false,
+      "reportable": true,
+      "notes": "DP value in Wh/100"
+    },
+    
+    "measure_temperature": {
+      "description": "Temperature in Celsius",
+      "dp": [1, 3, 13, 18],
+      "type": "value",
+      "converter": "temperature",
+      "scale": 10,
+      "unit": "°C",
+      "writable": false,
+      "reportable": true,
+      "notes": "Multiple DP options, scale typically 10"
+    },
+    
+    "measure_humidity": {
+      "description": "Relative humidity percentage",
+      "dp": [2, 14, 19],
+      "type": "value",
+      "converter": "humidity",
+      "scale": 10,
+      "unit": "%",
+      "writable": false,
+      "reportable": true,
+      "notes": "Multiple DP options, scale typically 10"
+    },
+    
+    "measure_co2": {
+      "description": "CO2 concentration",
+      "dp": 2,
+      "type": "value",
+      "converter": "co2",
+      "unit": "ppm",
+      "writable": false,
+      "reportable": true
+    },
+    
+    "measure_luminance": {
+      "description": "Light level in lux",
+      "dp": 12,
+      "type": "value",
+      "converter": "illuminance",
+      "unit": "lux",
+      "writable": false,
+      "reportable": true
+    },
+    
+    "measure_battery": {
+      "description": "Battery level percentage",
+      "dp": [15, 14],
+      "type": "value",
+      "converter": "battery",
+      "unit": "%",
+      "writable": false,
+      "reportable": true,
+      "notes": "Cluster-based alternative: powerConfiguration cluster"
+    },
+    
+    "target_temperature": {
+      "description": "Target temperature setpoint",
+      "dp": 2,
+      "type": "value",
+      "converter": "temperature",
+      "scale": 10,
+      "unit": "°C",
+      "min": 50,
+      "max": 300,
+      "writable": true,
+      "reportable": true,
+      "notes": "Range depends on device (5-30°C typical)"
+    },
+    
+    "thermostat_mode": {
+      "description": "Thermostat operating mode",
+      "dp": 1,
+      "type": "enum",
+      "converter": "enum",
+      "writable": true,
+      "reportable": true,
+      "mapping": {
+        "0": "off",
+        "1": "heat",
+        "2": "cool",
+        "3": "auto"
+      }
+    },
+    
+    "windowcoverings_state": {
+      "description": "Cover state (open/close/stop)",
+      "dp": 1,
+      "type": "enum",
+      "converter": "enum",
+      "writable": true,
+      "reportable": true,
+      "mapping": {
+        "0": "stop",
+        "1": "open",
+        "2": "close"
+      }
+    },
+    
+    "windowcoverings_set": {
+      "description": "Cover position (0-1)",
+      "dp": 2,
+      "type": "value",
+      "converter": "cover",
+      "min": 0,
+      "max": 100,
+      "writable": true,
+      "reportable": true,
+      "notes": "Tuya: 0=closed 100=open, Homey: 0=closed 1=open"
+    },
+    
+    "light_hue": {
+      "description": "Color hue (0-1)",
+      "dp": 5,
+      "type": "value",
+      "converter": "hue",
+      "min": 0,
+      "max": 360,
+      "writable": true,
+      "reportable": true,
+      "notes": "Tuya uses 0-360 degrees"
+    },
+    
+    "light_saturation": {
+      "description": "Color saturation (0-1)",
+      "dp": 6,
+      "type": "value",
+      "converter": "saturation",
+      "min": 0,
+      "max": 1000,
+      "writable": true,
+      "reportable": true,
+      "notes": "Tuya uses 0-1000"
+    },
+    
+    "light_temperature": {
+      "description": "Color temperature in mireds",
+      "dp": 4,
+      "type": "value",
+      "converter": "colorTemperature",
+      "min": 0,
+      "max": 1000,
+      "writable": true,
+      "reportable": true,
+      "notes": "Tuya proprietary scale, not standard mireds"
+    },
+    
+    "light_mode": {
+      "description": "Light mode (white/color)",
+      "dp": 3,
+      "type": "enum",
+      "converter": "enum",
+      "writable": true,
+      "reportable": true,
+      "mapping": {
+        "0": "white",
+        "1": "color",
+        "2": "scene"
+      }
+    },
+    
+    "alarm_motion": {
+      "description": "Motion detected",
+      "cluster": 1280,
+      "type": "bool",
+      "writable": false,
+      "reportable": true,
+      "notes": "IAS Zone cluster"
+    },
+    
+    "alarm_contact": {
+      "description": "Contact open/close",
+      "cluster": 1280,
+      "type": "bool",
+      "writable": false,
+      "reportable": true,
+      "notes": "IAS Zone cluster"
+    },
+    
+    "alarm_water": {
+      "description": "Water leak detected",
+      "dp": 15,
+      "type": "bool",
+      "converter": "bool",
+      "writable": false,
+      "reportable": true
+    },
+    
+    "alarm_smoke": {
+      "description": "Smoke detected",
+      "cluster": 1280,
+      "type": "bool",
+      "writable": false,
+      "reportable": true,
+      "notes": "IAS Zone cluster"
+    },
+    
+    "button": {
+      "description": "Button press",
+      "cluster": 6,
+      "type": "trigger",
+      "writable": false,
+      "reportable": true,
+      "notes": "OnOff cluster commands"
+    }
+  },
+  
+  "dp_types": {
+    "0x00": {
+      "name": "DP_TYPE_RAW",
+      "description": "Raw byte array"
+    },
+    "0x01": {
+      "name": "DP_TYPE_BOOL",
+      "description": "Boolean (true/false)"
+    },
+    "0x02": {
+      "name": "DP_TYPE_VALUE",
+      "description": "Integer value (4 bytes)"
+    },
+    "0x03": {
+      "name": "DP_TYPE_STRING",
+      "description": "String"
+    },
+    "0x04": {
+      "name": "DP_TYPE_ENUM",
+      "description": "Enumeration (0, 1, 2...)"
+    },
+    "0x05": {
+      "name": "DP_TYPE_BITMAP",
+      "description": "Bitmap (flags)"
+    }
+  },
+  
+  "common_patterns": {
+    "onoff_dim": {
+      "description": "Basic on/off with dimming",
+      "dps": [1, 2],
+      "capabilities": ["onoff", "dim"]
+    },
+    "energy_monitoring": {
+      "description": "Comprehensive energy monitoring",
+      "dps": [17, 18, 19, 20],
+      "capabilities": ["meter_power", "measure_current", "measure_power", "measure_voltage"]
+    },
+    "climate_sensor": {
+      "description": "Temperature and humidity sensor",
+      "dps": [1, 2],
+      "capabilities": ["measure_temperature", "measure_humidity"]
+    },
+    "rgb_light": {
+      "description": "RGB color control",
+      "dps": [1, 2, 3, 4, 5, 6],
+      "capabilities": ["onoff", "dim", "light_mode", "light_temperature", "light_hue", "light_saturation"]
+    },
+    "thermostat": {
+      "description": "Basic thermostat",
+      "dps": [1, 2, 3],
+      "capabilities": ["thermostat_mode", "target_temperature", "measure_temperature"]
+    },
+    "multi_gang": {
+      "description": "Multi-gang switch pattern",
+      "dps": [1, 2, 3, 4, 5, 6],
+      "capabilities": ["onoff", "onoff.gang2", "onoff.gang3", "onoff.gang4", "onoff.gang5", "onoff.gang6"]
+    }
+  }
+}

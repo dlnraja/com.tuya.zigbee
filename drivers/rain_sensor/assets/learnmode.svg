@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="40" cy="35" r="15" fill="#FFEB3B" stroke="#FFC107" stroke-width="2"/>
+  <path d="M60 50 Q55 35 70 35 Q85 35 85 50 Q85 65 70 65 L45 65 Q35 65 35 55 Q35 45 50 45 Q55 45 60 50" fill="#ECEFF1" stroke="#90A4AE" stroke-width="2"/>
+  <path d="M40 75 L40 85 M50 75 L50 82 M60 75 L60 85" stroke="#2196F3" stroke-width="2" stroke-linecap="round"/>
+  <text x="50" y="95" text-anchor="middle" font-size="7" fill="#666">Hold reset 5s</text>
+</svg>

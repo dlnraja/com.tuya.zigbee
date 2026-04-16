@@ -1,0 +1,601 @@
+{
+  "triggers": [
+    {
+      "id": "button_wireless_8_button_8gang_button_pressed",
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé"
+      },
+      "titleFormatted": {
+        "en": "Button [[button]] pressed",
+        "fr": "Bouton [[button]] appuyé"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_double_press",
+      "title": {
+        "en": "Button double-pressed",
+        "fr": "Bouton double-cliqué"
+      },
+      "titleFormatted": {
+        "en": "Button [[button]] double-pressed",
+        "fr": "Bouton [[button]] double-cliqué"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_long_press",
+      "title": {
+        "en": "Button long-pressed",
+        "fr": "Bouton pressé longtemps"
+      },
+      "titleFormatted": {
+        "en": "Button [[button]] long-pressed",
+        "fr": "Bouton [[button]] pressé longtemps"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_multi_press",
+      "title": {
+        "en": "Button multi-pressed",
+        "fr": "Bouton multi-cliqué"
+      },
+      "titleFormatted": {
+        "en": "Button [[button]] pressed [[count]] times",
+        "fr": "Bouton [[button]] appuyé [[count]] fois"
+      },
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton"
+          },
+          "example": "1"
+        },
+        {
+          "name": "count",
+          "type": "number",
+          "title": {
+            "en": "Press count",
+            "fr": "Nombre de pressions"
+          },
+          "example": 3
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_1_pressed",
+      "title": {
+        "en": "Button 1 pressed",
+        "fr": "Bouton 1 appuyé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 pressed",
+        "fr": "Bouton 1 appuyé"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_1_double",
+      "title": {
+        "en": "Button 1 double-pressed",
+        "fr": "Bouton 1 double-cliqué"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 double-pressed",
+        "fr": "Bouton 1 double-cliqué"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_1_long",
+      "title": {
+        "en": "Button 1 long-pressed",
+        "fr": "Bouton 1 pressé longtemps"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 long-pressed",
+        "fr": "Bouton 1 pressé longtemps"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_2_pressed",
+      "title": {
+        "en": "Button 2 pressed",
+        "fr": "Bouton 2 appuyé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 2 pressed",
+        "fr": "Bouton 2 appuyé"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_2_double",
+      "title": {
+        "en": "Button 2 double-pressed",
+        "fr": "Bouton 2 double-cliqué"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 2 double-pressed",
+        "fr": "Bouton 2 double-cliqué"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_2_long",
+      "title": {
+        "en": "Button 2 long-pressed",
+        "fr": "Bouton 2 pressé longtemps"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 2 long-pressed",
+        "fr": "Bouton 2 pressé longtemps"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_3_pressed",
+      "title": {
+        "en": "Button 3 pressed",
+        "fr": "Bouton 3 appuyé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 3 pressed",
+        "fr": "Bouton 3 appuyé"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_3_double",
+      "title": {
+        "en": "Button 3 double-pressed",
+        "fr": "Bouton 3 double-cliqué"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 3 double-pressed",
+        "fr": "Bouton 3 double-cliqué"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_3_long",
+      "title": {
+        "en": "Button 3 long-pressed",
+        "fr": "Bouton 3 pressé longtemps"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 3 long-pressed",
+        "fr": "Bouton 3 pressé longtemps"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_4_pressed",
+      "title": {
+        "en": "Button 4 pressed",
+        "fr": "Bouton 4 appuyé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 4 pressed",
+        "fr": "Bouton 4 appuyé"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_4_double",
+      "title": {
+        "en": "Button 4 double-pressed",
+        "fr": "Bouton 4 double-cliqué"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 4 double-pressed",
+        "fr": "Bouton 4 double-cliqué"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_4_long",
+      "title": {
+        "en": "Button 4 long-pressed",
+        "fr": "Bouton 4 pressé longtemps"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 4 long-pressed",
+        "fr": "Bouton 4 pressé longtemps"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_5_pressed",
+      "title": {
+        "en": "Button 5 pressed",
+        "fr": "Bouton 5 appuyé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 5 pressed",
+        "fr": "Bouton 5 appuyé"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_5_double",
+      "title": {
+        "en": "Button 5 double-pressed",
+        "fr": "Bouton 5 double-cliqué"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 5 double-pressed",
+        "fr": "Bouton 5 double-cliqué"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_5_long",
+      "title": {
+        "en": "Button 5 long-pressed",
+        "fr": "Bouton 5 pressé longtemps"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 5 long-pressed",
+        "fr": "Bouton 5 pressé longtemps"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_6_pressed",
+      "title": {
+        "en": "Button 6 pressed",
+        "fr": "Bouton 6 appuyé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 6 pressed",
+        "fr": "Bouton 6 appuyé"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_6_double",
+      "title": {
+        "en": "Button 6 double-pressed",
+        "fr": "Bouton 6 double-cliqué"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 6 double-pressed",
+        "fr": "Bouton 6 double-cliqué"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_6_long",
+      "title": {
+        "en": "Button 6 long-pressed",
+        "fr": "Bouton 6 pressé longtemps"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 6 long-pressed",
+        "fr": "Bouton 6 pressé longtemps"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_7_pressed",
+      "title": {
+        "en": "Button 7 pressed",
+        "fr": "Bouton 7 appuyé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 7 pressed",
+        "fr": "Bouton 7 appuyé"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_7_double",
+      "title": {
+        "en": "Button 7 double-pressed",
+        "fr": "Bouton 7 double-cliqué"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 7 double-pressed",
+        "fr": "Bouton 7 double-cliqué"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_7_long",
+      "title": {
+        "en": "Button 7 long-pressed",
+        "fr": "Bouton 7 pressé longtemps"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 7 long-pressed",
+        "fr": "Bouton 7 pressé longtemps"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_8_pressed",
+      "title": {
+        "en": "Button 8 pressed",
+        "fr": "Bouton 8 appuyé"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 8 pressed",
+        "fr": "Bouton 8 appuyé"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_8_double",
+      "title": {
+        "en": "Button 8 double-pressed",
+        "fr": "Bouton 8 double-cliqué"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 8 double-pressed",
+        "fr": "Bouton 8 double-cliqué"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_8_long",
+      "title": {
+        "en": "Button 8 long-pressed",
+        "fr": "Bouton 8 pressé longtemps"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 8 long-pressed",
+        "fr": "Bouton 8 pressé longtemps"
+      }
+    },
+    {
+      "id": "button_wireless_8_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_1_triple",
+      "title": {
+        "en": "Button 1 triple-pressed",
+        "fr": "Bouton 1 triple-appui"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 triple-pressed",
+        "fr": "Bouton 1 triple-appui"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_1_release",
+      "title": {
+        "en": "Button 1 released",
+        "fr": "Bouton 1 relache"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 released",
+        "fr": "Bouton 1 relache"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_2_triple",
+      "title": {
+        "en": "Button 2 triple-pressed",
+        "fr": "Bouton 2 triple-appui"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 2 triple-pressed",
+        "fr": "Bouton 2 triple-appui"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_2_release",
+      "title": {
+        "en": "Button 2 released",
+        "fr": "Bouton 2 relache"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 2 released",
+        "fr": "Bouton 2 relache"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_3_triple",
+      "title": {
+        "en": "Button 3 triple-pressed",
+        "fr": "Bouton 3 triple-appui"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 3 triple-pressed",
+        "fr": "Bouton 3 triple-appui"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_3_release",
+      "title": {
+        "en": "Button 3 released",
+        "fr": "Bouton 3 relache"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 3 released",
+        "fr": "Bouton 3 relache"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_4_triple",
+      "title": {
+        "en": "Button 4 triple-pressed",
+        "fr": "Bouton 4 triple-appui"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 4 triple-pressed",
+        "fr": "Bouton 4 triple-appui"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_4_release",
+      "title": {
+        "en": "Button 4 released",
+        "fr": "Bouton 4 relache"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 4 released",
+        "fr": "Bouton 4 relache"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_5_triple",
+      "title": {
+        "en": "Button 5 triple-pressed",
+        "fr": "Bouton 5 triple-appui"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 5 triple-pressed",
+        "fr": "Bouton 5 triple-appui"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_5_release",
+      "title": {
+        "en": "Button 5 released",
+        "fr": "Bouton 5 relache"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 5 released",
+        "fr": "Bouton 5 relache"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_6_triple",
+      "title": {
+        "en": "Button 6 triple-pressed",
+        "fr": "Bouton 6 triple-appui"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 6 triple-pressed",
+        "fr": "Bouton 6 triple-appui"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_6_release",
+      "title": {
+        "en": "Button 6 released",
+        "fr": "Bouton 6 relache"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 6 released",
+        "fr": "Bouton 6 relache"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_7_triple",
+      "title": {
+        "en": "Button 7 triple-pressed",
+        "fr": "Bouton 7 triple-appui"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 7 triple-pressed",
+        "fr": "Bouton 7 triple-appui"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_7_release",
+      "title": {
+        "en": "Button 7 released",
+        "fr": "Bouton 7 relache"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 7 released",
+        "fr": "Bouton 7 relache"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_8_triple",
+      "title": {
+        "en": "Button 8 triple-pressed",
+        "fr": "Bouton 8 triple-appui"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 8 triple-pressed",
+        "fr": "Bouton 8 triple-appui"
+      }
+    },
+    {
+      "id": "button_wireless_8_button_8gang_button_8_release",
+      "title": {
+        "en": "Button 8 released",
+        "fr": "Bouton 8 relache"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 8 released",
+        "fr": "Bouton 8 relache"
+      }
+    }
+  ]
+}

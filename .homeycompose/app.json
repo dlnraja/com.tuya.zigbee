@@ -1,0 +1,102 @@
+{
+  "id": "com.dlnraja.tuya.zigbee",
+  "version": "7.4.5",
+  "compatibility": ">=12.2.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Universal Tuya",
+    "nl": "Universal Tuya",
+    "de": "Universal Tuya",
+    "fr": "Universal Tuya"
+  },
+  "description": {
+    "en": "Universal Tuya Unified Engine: High-performance local-first control, self-healing fleet stability & adaptive lighting",
+    "nl": "Universele Tuya Unified Engine: Hoogwaardige lokale bediening, zelfherstellende vlootstabiliteit & adaptieve verlichting",
+    "de": "Universelle Tuya Unified Engine: Leistungsstarke lokale Steuerung, selbstheilende Flottenstabilität & adaptive Beleuchtung",
+    "fr": "Moteur Tuya Unified Engine : Contrôle local haute performance, auto-réparation de la flotte & éclairage adaptatif"
+  },
+  "tags": {
+    "en": [
+      "tuya",
+      "smart home",
+      "switch",
+      "sensor",
+      "thermostat",
+      "light",
+      "cover",
+      "plug",
+      "lock",
+      "dimmer"
+    ],
+    "nl": [
+      "tuya",
+      "schakelaar",
+      "sensor",
+      "thermostaat",
+      "lamp",
+      "rolluik",
+      "stekker",
+      "slot",
+      "dimmer"
+    ],
+    "de": [
+      "tuya",
+      "schalter",
+      "sensor",
+      "thermostat",
+      "licht",
+      "rollladen",
+      "steckdose",
+      "schloss",
+      "dimmer"
+    ],
+    "fr": [
+      "tuya",
+      "interrupteur",
+      "capteur",
+      "thermostat",
+      "lumière",
+      "volet",
+      "prise",
+      "serrure",
+      "variateur"
+    ]
+  },
+  "category": "appliances",
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Dylan Rajasekaram",
+    "email": "dlnraja@gmail.com"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Dylan Rajasekaram",
+        "email": "dlnraja@gmail.com"
+      }
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "dlnraja"
+      }
+    }
+  },
+  "support": "mailto:dlnraja@gmail.com",
+  "homepage": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352",
+  "bugs": {
+    "url": "https://github.com/dlnraja/com.tuya.zigbee/issues"
+  },
+  "brandColor": "#00E6A0",
+  "homeyCommunityTopicId": 140352,
+  "source": "https://github.com/dlnraja/com.tuya.zigbee"
+}

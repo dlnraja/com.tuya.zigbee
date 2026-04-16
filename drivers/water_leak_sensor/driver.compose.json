@@ -1,0 +1,610 @@
+{
+  "name": {
+    "en": "Water Leak Sensor",
+    "fr": "Water Leak Sensor",
+    "nl": "Waterlek Sensor",
+    "de": "Wasserlecksensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_water",
+    "measure_battery",
+    "alarm_tamper",
+    "measure_radio_stability",
+    "measure_maintenance_score"
+  ],
+  "capabilitiesOptions": {
+    "alarm_water": {
+      "title": {
+        "en": "Water Detected",
+        "fr": "Eau Détectée"
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ],
+    "approximation": {
+      "usageConstant": 0.5
+    },
+    "mains": true
+  },
+  "subDevices": [],
+  "zigbee": {
+    "manufacturerName": [
+      "tuyatec-bduz1xxp",
+      "tuyatec-h4wnrtck",
+      "tuyatec-ktev3uwq",
+      "_tyzb01_o63ssaah",
+      "_tyzb01_sqmd19i1",
+      "_tyzb01_ttvdudvx",
+      "_tz3000_0ghwhypc",
+      "_tz3000_0s9gukzt",
+      "_tz3000_1adss9de",
+      "_tz3000_2wcynpml",
+      "_tz3000_4qaowtdo",
+      "_tz3000_abaplimj",
+      "_tz3000_amis43tj",
+      "_tz3000_awvmkayh",
+      "_tz3000_bfopm9ga",
+      "_tz3000_bzt33cyu",
+      "_tz3000_c8bqthpo",
+      "_tz3000_eit8c5cs",
+      "_tz3000_fvm13j8w",
+      "_tz3000_fxjo6gfe",
+      "_tz3000_g92baclx",
+      "_tz3000_hzlsaltw",
+      "_tz3000_ikuxinvo",
+      "_tz3000_js34cuma",
+      "_tz3000_jsfzkftc",
+      "_tz3000_k4ej3ww2",
+      "_tz3000_kqvb5akv",
+      "_tz3000_kstbkt6a",
+      "_tz3000_kyakwbf8",
+      "_tz3000_kyb656no",
+      "_tz3000_mkhkxx1p",
+      "_tz3000_mqiev3jk",
+      "_tz3000_mugyhz0q",
+      "_tz3000_o9f2zqln",
+      "_tz3000_ocjlo4ea",
+      "_tz3000_q8r0bbvy",
+      "_tz3000_qaabwu5c",
+      "_tz3000_qdmnmddg",
+      "_tz3000_qhozxs2b",
+      "_tz3000_qlai3277",
+      "_tz3000_qnejhcsu",
+      "_tz3000_qorepo2x",
+      "_tz3000_rurvxhcx",
+      "_tz3000_sgpbz53b",
+      "_tz3000_sq510a",
+      "_tz3000_t6jriawg",
+      "_tz3000_tgddllx4",
+      "_tz3000_upgcbody",
+      "_tz3000_v8gtiaed",
+      "_tz3000_x3ewpzyr",
+      "_tz3000_xkap8wtb",
+      "_tz3210_p68kms0l",
+      "_tz3210_tgvtvdoc",
+      "_tze200_jthf7vb6",
+      "_tze204_lw5ny7tp",
+      "_tze204_qq9mpfhw",
+      "_tze284_2qx7sivb",
+      "_tze284_8sejxcue",
+      "_tze284_aghfucwi"
+    ],
+    "productId": [
+      "3315-S",
+      "3315-SEU",
+      "3315-s",
+      "3315-seu",
+      "CK-TLSR8656-SS5-01(7019)",
+      "HS1WL",
+      "LS21001",
+      "LUMI.SENSOR_WLEAK.AQ1",
+      "Q9MPFHW",
+      "SJCGQ11LM",
+      "SJCGQ12LM",
+      "SJCGQ13LM",
+      "SNZB-05",
+      "SNZB-05P",
+      "SQ510A",
+      "TS0207",
+      "TS0601",
+      "ZG-222Z",
+      "ZG-223Z",
+      "_TZ3000_EIT6L5",
+      "_TZ3000_K4EJ3WW2",
+      "_TZ3000_KYB656NO",
+      "_tz3000_eit6l5",
+      "_tz3000_k4ej3ww2",
+      "_tz3000_kyb656no",
+      "ck-tlsr8656-ss5-01(7019)",
+      "hs1wl",
+      "ls21001",
+      "lumi.sensor_wleak.aq1",
+      "q9mpfhw",
+      "sjcgq11lm",
+      "sjcgq12lm",
+      "sjcgq13lm",
+      "snzb-05",
+      "snzb-05p",
+      "sq510a",
+      "ts0207",
+      "ts0601",
+      "zg-222z",
+      "zg-223z"
+    ],
+    "learnmode": {
+      "image": "/drivers/water_leak_sensor/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    },
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "power_source",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Source",
+        "fr": "Source d'Alimentation"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "ac",
+          "label": {
+            "en": "AC Powered",
+            "fr": "Alimentation Secteur"
+          }
+        },
+        {
+          "id": "dc",
+          "label": {
+            "en": "DC Powered",
+            "fr": "Alimentation DC"
+          }
+        },
+        {
+          "id": "battery",
+          "label": {
+            "en": "Battery Powered",
+            "fr": "Sur Batterie"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select power source manually or use auto-detection",
+        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+      }
+    },
+    {
+      "id": "battery_type",
+      "type": "dropdown",
+      "label": {
+        "en": "Battery Type",
+        "fr": "Type de Batterie"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "CR2032",
+          "label": {
+            "en": "CR2032",
+            "fr": "CR2032 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "CR2450",
+          "label": {
+            "en": "CR2450",
+            "fr": "CR2450 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA",
+            "fr": "AAA"
+          }
+        },
+        {
+          "id": "AA",
+          "label": {
+            "en": "AA",
+            "fr": "AA"
+          }
+        },
+        {
+          "id": "CR123A",
+          "label": {
+            "en": "CR123A",
+            "fr": "CR123A"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select battery type manually or use auto-detection based on voltage",
+        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+      }
+    },
+    {
+      "id": "battery_low_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold",
+        "fr": "Seuil Batterie Faible (%)"
+      },
+      "value": 20,
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "hint": {
+        "en": "Trigger low battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "battery_critical_threshold",
+      "type": "number",
+      "label": {
+        "en": "Critical Battery Threshold",
+        "fr": "Seuil Batterie Critique (%)"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "hint": {
+        "en": "Trigger critical battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "enable_battery_notifications",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Battery Notifications",
+        "fr": "Activer Notifications Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Send flow notifications for battery events",
+        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+      }
+    },
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval",
+        "fr": "Intervalle Rapport Batterie (heures)"
+      },
+      "value": 24,
+      "min": 1,
+      "max": 168,
+      "step": 1,
+      "hint": {
+        "en": "How often to request battery status updates",
+        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+      }
+    },
+    {
+      "id": "optimization_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy Optimization Mode",
+        "fr": "Mode Optimisation Énergétique"
+      },
+      "value": "balanced",
+      "values": [
+        {
+          "id": "performance",
+          "label": {
+            "en": "Performance (More responsive)",
+            "fr": "Performance (Plus réactif)"
+          }
+        },
+        {
+          "id": "balanced",
+          "label": {
+            "en": "Balanced",
+            "fr": "Équilibré"
+          }
+        },
+        {
+          "id": "power_saving",
+          "label": {
+            "en": "Power Saving (Longer battery)",
+            "fr": "Économie d'énergie (Batterie plus longue)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Balance between responsiveness and battery life",
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+      }
+    },
+    {
+      "id": "show_voltage",
+      "type": "checkbox",
+      "label": {
+        "en": "Show Battery Voltage",
+        "fr": "Afficher Tension Batterie"
+      },
+      "value": false,
+      "hint": {
+        "en": "Display raw battery voltage in device settings",
+        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+      }
+    },
+    {
+      "id": "enable_power_estimation",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Power Estimation",
+        "fr": "Activer Estimation Puissance"
+      },
+      "value": true,
+      "hint": {
+        "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+      }
+    },
+    {
+      "id": "invert_alarm",
+      "type": "checkbox",
+      "label": {
+        "en": "🔄 Invert Water Alarm",
+        "fr": "🔄 Inverser Alarme Eau",
+        "nl": "🔄 Inverteer Wateralarm",
+        "de": "🔄 Wasseralarm Invertieren"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable if water detection shows opposite state (wet=dry, dry=wet). Lasse_K forum fix.",
+        "fr": "Activer si la détection d'eau affiche l'état inverse (mouillé=sec, sec=mouillé)"
+      }
+    },
+    {
+      "id": "enable_radio_sensing",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Radio Presence Sensing",
+        "fr": "Activer la Détection de Présence Radio"
+      },
+      "value": false,
+      "hint": {
+        "en": "Infer presence from Zigbee signal fluctuations (BETA)",
+        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+      }
+    },
+    {
+      "id": "radio_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Radio Presence Sensitivity",
+        "fr": "Sensibilité Présence Radio"
+      },
+      "value": 15,
+      "min": 5,
+      "max": 50,
+      "hint": {
+        "en": "LQI variance threshold (higher = less sensitive)",
+        "fr": "Seuil de variance LQI (plus haut = moins sensible)"
+      }
+    },
+    {
+      "id": "enable_software_child_lock",
+      "type": "checkbox",
+      "label": {
+        "en": "Software Child Lock",
+        "fr": "Sécurité Enfant Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Prevents manual state changes on the device",
+        "fr": "Empêche les changements d'état manuels sur l'appareil"
+      }
+    },
+    {
+      "id": "auto_off_duration",
+      "type": "number",
+      "label": {
+        "en": "Auto-Off Timer (Minutes)",
+        "fr": "Minuterie Auto-Off (Minutes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 1440,
+      "hint": {
+        "en": "Turn off automatically after X minutes (0 = disabled)",
+        "fr": "S'éteint après X minutes (0 = désactivé)"
+      }
+    },
+    {
+      "id": "enable_vacation_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "Vacation Mode (Presence Sim)",
+        "fr": "Mode Vacances (Simulation Présence)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Randomly toggle device during evenings to simulate presence",
+        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+      }
+    },
+    {
+      "id": "emulated_motion_hold",
+      "type": "number",
+      "label": {
+        "en": "Emulated Motion Hold (Seconds)",
+        "fr": "Maintien Mouvement Émulé (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 3600,
+      "hint": {
+        "en": "Keep motion 'ON' for X seconds after hardware clears",
+        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+      }
+    },
+    {
+      "id": "double_click_interval",
+      "type": "number",
+      "label": {
+        "en": "Double Click Interval (ms)",
+        "fr": "Intervalle Double-Clic (ms)"
+      },
+      "value": 400,
+      "min": 100,
+      "max": 1000,
+      "hint": {
+        "en": "Software emulation for single-action buttons",
+        "fr": "Émulation logicielle pour boutons à action unique"
+      }
+    },
+    {
+      "id": "overload_threshold",
+      "type": "number",
+      "label": {
+        "en": "Overload Protection (Watts)",
+        "fr": "Protection Surcharge (Watts)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 4000,
+      "hint": {
+        "en": "Cut power if consumption exceeds this value (0 = disabled)",
+        "fr": "Coupure si la consommation dépasse cette valeur (0 = désactivé)"
+      }
+    },
+    {
+      "id": "inching_duration",
+      "type": "number",
+      "label": {
+        "en": "Inching Duration (Secs)",
+        "fr": "Durée Inching (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 60,
+      "step": 0.1,
+      "hint": {
+        "en": "Automatically turn off after X seconds (Pulse mode)",
+        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+      }
+    },
+    {
+      "id": "enable_state_recovery",
+      "type": "checkbox",
+      "label": {
+        "en": "Software State Recovery",
+        "fr": "Récupération d'État Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Restore previous ON/OFF state after power failure",
+        "fr": "Restore l'état précédent après une coupure de courant"
+      }
+    },
+    {
+      "id": "enable_soft_transitions",
+      "type": "checkbox",
+      "label": {
+        "en": "Soft transitions (Fade)",
+        "fr": "Transitions douces (Fade)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable software-simulated smooth transitions (Lights/Dim)",
+        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+      }
+    },
+    {
+      "id": "maintenance_threshold",
+      "type": "number",
+      "label": {
+        "en": "Maintenance Alert Threshold",
+        "fr": "Seuil Alerte Maintenance"
+      },
+      "value": 30,
+      "min": 0,
+      "max": 100,
+      "hint": {
+        "en": "Alert if health score drops below this value",
+        "fr": "Alerte si le score de santé descend sous cette valeur"
+      }
+    }
+  ],
+  "images": {
+    "small": "drivers/water_leak_sensor/assets/images/small.png",
+    "large": "drivers/water_leak_sensor/assets/images/large.png",
+    "xlarge": "drivers/water_leak_sensor/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  }
+}

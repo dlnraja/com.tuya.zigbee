@@ -1,0 +1,34 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_door_lock_wifi_lock_locked",
+      "title": {
+        "en": "Locked"
+      },
+      "titleFormatted": {
+        "en": "Locked"
+      }
+    },
+    {
+      "id": "wifi_door_lock_wifi_lock_unlocked",
+      "title": {
+        "en": "Unlocked"
+      },
+      "titleFormatted": {
+        "en": "Unlocked"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "wifi_door_lock_wifi_lock_is_locked",
+      "title": {
+        "en": "Is locked"
+      },
+      "titleFormatted": {
+        "en": "Is locked"
+      }
+    }
+  ],
+  "actions": []
+}

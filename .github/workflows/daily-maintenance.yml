@@ -1,0 +1,75 @@
+name: Daily Self-Healing Maintenance
+
+on:
+  schedule:
+    - cron: '0 3 * * *'  # 3:00 AM UTC every day
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: daily-maintenance
+  cancel-in-progress: true
+
+jobs:
+  heal:
+    name: Self-Heal & Validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: 1. Resolve Driver Collisions
+        run: node scripts/maintenance/auto-resolve-collisions.js
+
+      - name: 2. Enforce Fingerprint Hygiene
+        run: node scripts/maintenance/enforce-fingerprint-rules.js
+
+      - name: 3. Heal Unified Flow Cards
+        run: node scripts/maintenance/heal-unified-flows.js
+
+      - name: 4. SDK v3 Smart Linter (AI Fixes)
+        continue-on-error: true
+        run: node scripts/maintenance/sdk3-smart-linter.js --fix --all
+
+      - name: 5. Deep Driver Audit
+        run: node scripts/maintenance/_audit_drivers_deep.js || true
+
+      - name: 6. Final Validation
+        run: node scripts/_validate_all.js
+
+      - name: Commit & Push Changes (Robust)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "v${VER}: daily self-healing (collisions + hygiene + flows + linter) [skip ci]"
+            
+            # Intelligent Push with Retry/Rebase
+            MAX_RETRIES=5
+            RETRY_COUNT=0
+            until [ $RETRY_COUNT -ge $MAX_RETRIES ]
+            do
+              git pull --rebase origin master && git push origin master && break
+              RETRY_COUNT=$((RETRY_COUNT+1))
+              echo "::warning::Push failed, retrying ($RETRY_COUNT/$MAX_RETRIES)..."
+              sleep $((RANDOM % 10 + 5))
+            done
+          fi

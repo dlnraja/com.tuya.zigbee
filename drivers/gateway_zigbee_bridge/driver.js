@@ -1,0 +1,76 @@
+'use strict';
+
+const { ZigBeeDriver } = require('homey-zigbeedriver');
+
+/**
+ * v5.5.582: CRITICAL FIX - Flow card run listeners were missing
+ */
+class ZbbridgeDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
+
+  async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    this.log('ZbbridgeDriver v5.5.582 initialized');
+    this._registerFlowCards();
+  
+  
+  
+  
+  
+  
+  
+  }
+
+  _registerFlowCards() {
+    // CONDITION: Is connected
+    try {
+      (() => { try { return this.homey.flow.getConditionCard('gateway_zigbee_bridge_is_connected'); } catch(e) { return null; } })()
+        .registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getAvailable() === true;
+        });
+      this.log('[FLOW] ✅ Registered: gateway_zigbee_bridge_is_connected');
+    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+
+    // ACTION: Permit join
+    try {
+      (() => { try { return this.homey.flow.getConditionCard('gateway_zigbee_bridge_permit_join'); } catch(e) { return null; } })()
+        .registerRunListener(async (args) => {
+          if (!args.device) return false;
+          this.log('[FLOW] Permit join requested');
+          return true;
+        });
+      this.log('[FLOW] ✅ Registered: gateway_zigbee_bridge_permit_join');
+    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+
+    // ACTION: Disable join
+    try {
+      (() => { try { return this.homey.flow.getConditionCard('gateway_zigbee_bridge_disable_join'); } catch(e) { return null; } })()
+        .registerRunListener(async (args) => {
+          if (!args.device) return false;
+          this.log('[FLOW] Disable join requested');
+          return true;
+        });
+      this.log('[FLOW] ✅ Registered: gateway_zigbee_bridge_disable_join');
+    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+
+    this.log('[FLOW]  Zigbee bridge flow cards registered');
+  }
+}
+
+module.exports = ZbbridgeDriver;

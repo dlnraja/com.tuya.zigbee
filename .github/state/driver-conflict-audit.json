@@ -1,0 +1,5237 @@
+{
+  "timestamp": "2026-04-09T08:30:34.418Z",
+  "pidConflicts": [
+    {
+      "pid": "TS004F",
+      "drivers": [
+        "button_wireless_4",
+        "button_wireless_smart_hybrid",
+        "remote_button_wireless_hybrid",
+        "remote_button_wireless_smart_hybrid",
+        "remote_button_wireless_wall_hybrid",
+        "smart_knob",
+        "smart_knob_rotary",
+        "smart_knob_rotary_hybrid",
+        "smart_knob_switch",
+        "smart_knob_switch_hybrid",
+        "smart_remote_1_button",
+        "wall_dimmer_1gang_1way",
+        "wall_remote_4_gang_2"
+      ],
+      "classes": [
+        "sensor",
+        "remote",
+        "socket"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_fingerbot_hybrid",
+        "button_wireless_switch_hybrid",
+        "button_wireless_wall_hybrid",
+        "fingerbot",
+        "fingerbot_switch_hybrid",
+        "remote_button_wireless_valve_hybrid",
+        "remote_button_wireless_wall_hybrid",
+        "switch_1gang",
+        "valve_single",
+        "wall_switch_1gang_1way"
+      ],
+      "classes": [
+        "sensor",
+        "socket",
+        "button",
+        "thermostat"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS0043",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_3",
+        "button_wireless_scene_hybrid",
+        "button_wireless_wall_hybrid",
+        "remote_button_wireless_hybrid",
+        "remote_button_wireless_scene_hybrid",
+        "remote_button_wireless_wall_hybrid",
+        "scene_switch_3",
+        "scene_switch_wall_hybrid",
+        "wall_remote_3_gang",
+        "wall_switch_3gang_1way"
+      ],
+      "classes": [
+        "sensor",
+        "remote",
+        "socket"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS0042",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_scene_hybrid",
+        "button_wireless_wall_hybrid",
+        "remote_button_wireless_hybrid",
+        "remote_button_wireless_scene_hybrid",
+        "remote_button_wireless_wall_hybrid",
+        "scene_switch_2",
+        "scene_switch_wall_hybrid",
+        "wall_remote_2_gang",
+        "wall_switch_2gang_1way"
+      ],
+      "classes": [
+        "sensor",
+        "remote",
+        "socket"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_plug_hybrid",
+        "button_wireless_switch_hybrid",
+        "device_plug_energy_hybrid",
+        "device_plug_energy_monitor_hybrid",
+        "plug_energy_monitor",
+        "plug_energy_monitor_hybrid",
+        "plug_smart",
+        "switch_1gang",
+        "switch_hybrid"
+      ],
+      "classes": [
+        "socket",
+        "sensor"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS0207",
+      "drivers": [
+        "contact_sensor",
+        "contact_sensor_zigbee_hybrid",
+        "rain_sensor",
+        "sensor_contact_rain_hybrid",
+        "sensor_contact_water_hybrid",
+        "sensor_contact_zigbee_hybrid",
+        "usb_dongle_dual_repeater",
+        "water_leak_sensor",
+        "zigbee_repeater"
+      ],
+      "classes": [
+        "sensor",
+        "socket",
+        "other"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS0002",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_switch_hybrid",
+        "button_wireless_wall_hybrid",
+        "remote_button_wireless_usb_hybrid",
+        "remote_button_wireless_wall_hybrid",
+        "switch_2gang",
+        "usb_dongle_dual_repeater",
+        "wall_switch_2gang_1way"
+      ],
+      "classes": [
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS0003",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_switch_hybrid",
+        "button_wireless_wall_hybrid",
+        "remote_button_wireless_wall_hybrid",
+        "switch_2gang",
+        "switch_3gang",
+        "usb_dongle_triple",
+        "wall_switch_3gang_1way"
+      ],
+      "classes": [
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "air_purifier_climate_hybrid",
+        "air_purifier_lcdtemphumidsensor_hybrid",
+        "climate_sensor",
+        "lcdtemphumidsensor",
+        "sensor_climate_lcdtemphumidsensor_hybrid",
+        "temphumidsensor"
+      ],
+      "classes": [
+        "fan",
+        "sensor"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS0505B",
+      "drivers": [
+        "bulb_rgb",
+        "bulb_rgb_led_hybrid",
+        "bulb_rgbw",
+        "led_strip",
+        "light_bulb_rgb_hybrid",
+        "light_bulb_rgb_led_hybrid",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "classes": [
+        "light"
+      ],
+      "crossClass": false,
+      "severity": "medium"
+    },
+    {
+      "pid": "TS0013",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_switch_hybrid",
+        "button_wireless_wall_hybrid",
+        "remote_button_wireless_wall_hybrid",
+        "switch_2gang",
+        "switch_3gang",
+        "wall_switch_3gang_1way"
+      ],
+      "classes": [
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "air_purifier_climate_hybrid",
+        "climate_sensor",
+        "lcdtemphumidsensor",
+        "sensor_climate_lcdtemphumidsensor_hybrid",
+        "temphumidsensor"
+      ],
+      "classes": [
+        "fan",
+        "sensor"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS0041",
+      "drivers": [
+        "button_wireless_1",
+        "button_wireless_smart_hybrid",
+        "remote_button_wireless_hybrid",
+        "remote_button_wireless_smart_hybrid",
+        "remote_button_wireless_wall_hybrid",
+        "smart_button_switch"
+      ],
+      "classes": [
+        "sensor",
+        "remote"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_switch_hybrid",
+        "button_wireless_wall_hybrid",
+        "remote_button_wireless_wall_hybrid",
+        "switch_1gang",
+        "wall_switch_1gang_1way"
+      ],
+      "classes": [
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS0012",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_switch_hybrid",
+        "button_wireless_wall_hybrid",
+        "remote_button_wireless_wall_hybrid",
+        "switch_2gang",
+        "wall_switch_2gang_1way"
+      ],
+      "classes": [
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS0044",
+      "drivers": [
+        "button_wireless_4",
+        "handheld_remote_4_buttons",
+        "remote_button_wireless_hybrid",
+        "remote_button_wireless_wall_hybrid",
+        "wall_remote_4_gang",
+        "wall_remote_4_gang_3"
+      ],
+      "classes": [
+        "sensor",
+        "remote"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "S26R2ZB",
+      "drivers": [
+        "device_plug_energy_hybrid",
+        "device_plug_energy_monitor_hybrid",
+        "plug_energy_monitor",
+        "plug_energy_monitor_hybrid",
+        "plug_smart",
+        "switch_1gang"
+      ],
+      "classes": [
+        "socket",
+        "sensor"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "ZBMINIL2",
+      "drivers": [
+        "device_plug_energy_monitor_hybrid",
+        "module_mini_switch",
+        "module_mini_switch_hybrid",
+        "plug_energy_monitor",
+        "plug_energy_monitor_hybrid",
+        "switch_1gang"
+      ],
+      "classes": [
+        "socket",
+        "sensor"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS0726",
+      "drivers": [
+        "scene_switch_2",
+        "scene_switch_3",
+        "switch_1gang",
+        "switch_hybrid",
+        "switch_wall_6gang",
+        "wall_switch_4gang_1way"
+      ],
+      "classes": [
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "air_purifier_climate_hybrid",
+        "climate_sensor",
+        "illuminance_sensor",
+        "light_sensor_outdoor"
+      ],
+      "classes": [
+        "fan",
+        "sensor"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS1101",
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_dimmable_dimmer_hybrid",
+        "dimmer_dual_channel",
+        "dimmer_dual_channel_hybrid",
+        "dimmer_wall_1gang"
+      ],
+      "classes": [
+        "light"
+      ],
+      "crossClass": false,
+      "severity": "medium"
+    },
+    {
+      "pid": "TS0049",
+      "drivers": [
+        "device_plug_smart_hybrid",
+        "device_plug_smart_water_hybrid",
+        "plug_smart",
+        "valve_irrigation",
+        "water_valve_garden"
+      ],
+      "classes": [
+        "socket",
+        "thermostat",
+        "other"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "air_purifier_climate_hybrid",
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "classes": [
+        "fan",
+        "sensor"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS1201",
+      "drivers": [
+        "blaster_remote_hybrid",
+        "climate_sensor",
+        "ir_blaster",
+        "ir_remote"
+      ],
+      "classes": [
+        "remote",
+        "sensor"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS110E",
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_dimmable_dimmer_hybrid",
+        "dimmer_ts110e",
+        "dimmer_wall_1gang"
+      ],
+      "classes": [
+        "light"
+      ],
+      "crossClass": false,
+      "severity": "medium"
+    },
+    {
+      "pid": "TS0504B",
+      "drivers": [
+        "bulb_rgb",
+        "bulb_rgbw",
+        "light_bulb_rgb_hybrid",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "classes": [
+        "light"
+      ],
+      "crossClass": false,
+      "severity": "medium"
+    },
+    {
+      "pid": "TS0505A",
+      "drivers": [
+        "bulb_rgb",
+        "bulb_rgbw",
+        "light_bulb_rgb_hybrid",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "classes": [
+        "light"
+      ],
+      "crossClass": false,
+      "severity": "medium"
+    },
+    {
+      "pid": "SNZB-01M",
+      "drivers": [
+        "button_wireless",
+        "button_wireless_1",
+        "button_wireless_4",
+        "remote_button_wireless_hybrid"
+      ],
+      "classes": [
+        "button",
+        "sensor"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug_hybrid",
+        "plug_smart",
+        "remote_button_wireless_plug_hybrid"
+      ],
+      "classes": [
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS0046",
+      "drivers": [
+        "button_wireless_6",
+        "remote_button_wireless_hybrid",
+        "remote_button_wireless_wall_hybrid",
+        "wall_remote_6_gang"
+      ],
+      "classes": [
+        "sensor",
+        "remote"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "ZG-227Z",
+      "drivers": [
+        "climate_sensor",
+        "sensor_climate_contact_hybrid",
+        "sensor_climate_temphumidsensor_hybrid",
+        "temphumidsensor"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false,
+      "severity": "medium"
+    },
+    {
+      "pid": "TS0203",
+      "drivers": [
+        "contact_sensor",
+        "device_generic_tuya_universal_hybrid",
+        "presence_sensor_radar",
+        "sensor_presence_radar_hybrid"
+      ],
+      "classes": [
+        "sensor",
+        "other"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "S31 LITE ZB",
+      "drivers": [
+        "device_plug_energy_hybrid",
+        "device_plug_energy_monitor_hybrid",
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false,
+      "severity": "medium"
+    },
+    {
+      "pid": "S40LITE",
+      "drivers": [
+        "device_plug_energy_hybrid",
+        "device_plug_energy_monitor_hybrid",
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false,
+      "severity": "medium"
+    },
+    {
+      "pid": "S60ZBTPF",
+      "drivers": [
+        "device_plug_energy_hybrid",
+        "device_plug_energy_monitor_hybrid",
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false,
+      "severity": "medium"
+    },
+    {
+      "pid": "S60ZBTPG",
+      "drivers": [
+        "device_plug_energy_hybrid",
+        "device_plug_energy_monitor_hybrid",
+        "plug_energy_monitor",
+        "plug_smart"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false,
+      "severity": "medium"
+    },
+    {
+      "pid": "S31ZB",
+      "drivers": [
+        "device_plug_energy_monitor_hybrid",
+        "plug_energy_monitor",
+        "plug_energy_monitor_hybrid",
+        "switch_1gang"
+      ],
+      "classes": [
+        "socket",
+        "sensor"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS0225",
+      "drivers": [
+        "gas_sensor",
+        "motion_sensor",
+        "presence_sensor_radar",
+        "sensor_motion_presence_hybrid"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false,
+      "severity": "medium"
+    },
+    {
+      "pid": "TS0052",
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_dimmable_dimmer_hybrid",
+        "dimmer_wall_1gang"
+      ],
+      "classes": [
+        "light"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "TS0501B",
+      "drivers": [
+        "bulb_dimmable",
+        "led_controller_dimmable",
+        "wall_dimmer_1gang_1way"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS110F",
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_dimmable_dimmer_hybrid",
+        "dimmer_wall_1gang"
+      ],
+      "classes": [
+        "light"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "SNZB-01",
+      "drivers": [
+        "button_wireless",
+        "button_wireless_1",
+        "remote_button_wireless_hybrid"
+      ],
+      "classes": [
+        "button",
+        "sensor"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "SNZB-01P",
+      "drivers": [
+        "button_wireless",
+        "button_wireless_1",
+        "remote_button_wireless_hybrid"
+      ],
+      "classes": [
+        "button",
+        "sensor"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS0001_FINGERBOT",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_fingerbot_hybrid",
+        "fingerbot"
+      ],
+      "classes": [
+        "sensor",
+        "socket",
+        "button"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_switch_hybrid",
+        "switch_1gang"
+      ],
+      "classes": [
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS0014",
+      "drivers": [
+        "button_wireless_4",
+        "button_wireless_switch_hybrid",
+        "switch_4gang"
+      ],
+      "classes": [
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "CK-TLSR8656-SS5-01(7014)",
+      "drivers": [
+        "climate_sensor",
+        "sensor_climate_temphumidsensor_hybrid",
+        "temphumidsensor"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "sensor_contact_water_hybrid",
+        "water_leak_sensor"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "ERS-10TZBVK-AA",
+      "drivers": [
+        "scene_switch_4",
+        "smart_knob",
+        "smart_knob_rotary"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "TS0121",
+      "drivers": [
+        "button_wireless_plug_hybrid",
+        "plug_energy_monitor"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "TSO121",
+      "drivers": [
+        "button_wireless_plug_hybrid",
+        "plug_energy_monitor"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "ZG-303Z",
+      "drivers": [
+        "climate_sensor",
+        "soil_sensor"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "TS0301",
+      "drivers": [
+        "curtain_motor",
+        "gas_sensor"
+      ],
+      "classes": [
+        "windowcoverings",
+        "sensor"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TRI-C1ZR",
+      "drivers": [
+        "led_controller_dimmable",
+        "wall_dimmer_1gang_1way"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TRI-K1ZR",
+      "drivers": [
+        "led_controller_dimmable",
+        "wall_dimmer_1gang_1way"
+      ],
+      "classes": [
+        "light",
+        "socket"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "01MINIZB",
+      "drivers": [
+        "module_mini_switch",
+        "switch_1gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "ZBM5-1C-120",
+      "drivers": [
+        "module_mini_switch",
+        "switch_1gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "ZBMINI",
+      "drivers": [
+        "module_mini_switch",
+        "switch_1gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "ZBMINIL2-R2",
+      "drivers": [
+        "module_mini_switch",
+        "switch_1gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "ZBMINIR",
+      "drivers": [
+        "module_mini_switch",
+        "switch_1gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "ZBMINIR2",
+      "drivers": [
+        "module_mini_switch",
+        "switch_1gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "ZBMINIR2-R2",
+      "drivers": [
+        "module_mini_switch",
+        "switch_1gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "SNZB-06P",
+      "drivers": [
+        "plug_energy_monitor",
+        "presence_sensor_radar"
+      ],
+      "classes": [
+        "socket",
+        "sensor"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS0101",
+      "drivers": [
+        "plug_smart",
+        "switch_1gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "ZG-204ZL",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_presence_radar_hybrid"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "ZG-204ZM",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_presence_radar_hybrid"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "ZG-204ZV",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_presence_radar_hybrid"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "ZG-222Z",
+      "drivers": [
+        "rain_sensor",
+        "water_leak_sensor"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "ZG-223Z",
+      "drivers": [
+        "rain_sensor",
+        "water_leak_sensor"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    }
+  ],
+  "mfrConflicts": [],
+  "caseCollisions": [
+    {
+      "norm": "_tz2000_avdnvykf",
+      "variants": [
+        "_TZ2000_AVDNVYKF",
+        "_tz2000_avdnvykf"
+      ],
+      "drivers": [
+        "air_purifier_climate_hybrid",
+        "air_purifier_quality_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz2000_hjsgdkfl",
+      "variants": [
+        "_TZ2000_HJSGDKFL",
+        "_tz2000_hjsgdkfl"
+      ],
+      "drivers": [
+        "air_purifier_climate_hybrid",
+        "air_purifier_quality_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_8ybe88nf",
+      "variants": [
+        "_TZ3000_8YBE88NF",
+        "_tz3000_8ybe88nf"
+      ],
+      "drivers": [
+        "air_purifier_climate_hybrid",
+        "sensor_climate_temphumidsensor_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_bguser20",
+      "variants": [
+        "_TZ3000_BGUSER20",
+        "_tz3000_bguser20"
+      ],
+      "drivers": [
+        "air_purifier_climate_hybrid",
+        "sensor_climate_temphumidsensor_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_f2bw0b6k",
+      "variants": [
+        "_TZ3000_F2BW0B6K",
+        "_tz3000_f2bw0b6k"
+      ],
+      "drivers": [
+        "air_purifier_climate_hybrid",
+        "sensor_climate_temphumidsensor_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_fie1dpkm",
+      "variants": [
+        "_TZ3000_FIE1DPKM",
+        "_tz3000_fie1dpkm"
+      ],
+      "drivers": [
+        "air_purifier_climate_hybrid",
+        "sensor_climate_temphumidsensor_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_i8jfiezr",
+      "variants": [
+        "_TZ3000_I8JFIEZR",
+        "_tz3000_i8jfiezr"
+      ],
+      "drivers": [
+        "air_purifier_climate_hybrid",
+        "climate_sensor_switch_hybrid",
+        "sensor_climate_temphumidsensor_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_huzkzqyk",
+      "variants": [
+        "_TZ3210_HUZKZQYK",
+        "_tz3210_huzkzqyk"
+      ],
+      "drivers": [
+        "air_purifier_climate_hybrid",
+        "climate_sensor_dimmer_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_ncw88jfq",
+      "variants": [
+        "_TZ3210_NCW88JFQ",
+        "_tz3210_ncw88jfq"
+      ],
+      "drivers": [
+        "air_purifier_climate_hybrid",
+        "sensor_climate_temphumidsensor_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tze200_aqnazj70",
+      "variants": [
+        "_TZE200_AQNAZJ70",
+        "_tze200_aqnazj70"
+      ],
+      "drivers": [
+        "air_purifier_din_hybrid",
+        "device_air_purifier_din_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tze200_9cxuhakf",
+      "variants": [
+        "_TZE200_9CXUHAKF",
+        "_tze200_9cxuhakf"
+      ],
+      "drivers": [
+        "air_purifier_quality_hybrid",
+        "device_air_purifier_quality_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tze200_ttcovulf",
+      "variants": [
+        "_TZE200_TTCOVULF",
+        "_tze200_ttcovulf"
+      ],
+      "drivers": [
+        "air_purifier_sensor_hybrid",
+        "sensor_motion_radar_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_0ht8dnxj",
+      "variants": [
+        "_TZ3000_0HT8DNXJ",
+        "_tz3000_0ht8dnxj"
+      ],
+      "drivers": [
+        "air_quality_comprehensive",
+        "remote_button_wireless_smart_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_7dcddnye",
+      "variants": [
+        "_TZ3000_7DCDDNYE",
+        "_tz3000_7dcddnye"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_rgb"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_9cpuaca6",
+      "variants": [
+        "_TZ3000_9CPUACA6",
+        "_tz3000_9cpuaca6"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "light_bulb_rgb_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_9evm3otq",
+      "variants": [
+        "_TZ3000_9EVM3OTQ",
+        "_tz3000_9evm3otq"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "switch_1gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_as7eqiri",
+      "variants": [
+        "_TZ3000_AS7EQIRI",
+        "_tz3000_as7eqiri"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_fbja4q6h",
+      "variants": [
+        "_TZ3000_FBJA4Q6H",
+        "_tz3000_fbja4q6h"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_hcm1fqxe",
+      "variants": [
+        "_TZ3000_HCM1FQXE",
+        "_tz3000_hcm1fqxe"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_j2w1dw29",
+      "variants": [
+        "_TZ3000_J2W1DW29",
+        "_tz3000_j2w1dw29"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "contact_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_juq7i1fr",
+      "variants": [
+        "_TZ3000_JUQ7I1FR",
+        "_tz3000_juq7i1fr"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "climate_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_keabpigb",
+      "variants": [
+        "_TZ3000_KEABPIGB",
+        "_tz3000_keabpigb"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid",
+        "switch_1gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_kihkx3cq",
+      "variants": [
+        "_TZ3000_KIHKX3CQ",
+        "_tz3000_kihkx3cq"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_lzfwt5qx",
+      "variants": [
+        "_TZ3000_LZFWT5QX",
+        "_tz3000_lzfwt5qx"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_m6u3q8jy",
+      "variants": [
+        "_TZ3000_M6U3Q8JY",
+        "_tz3000_m6u3q8jy"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_nbnmw9nc",
+      "variants": [
+        "_TZ3000_NBNMW9NC",
+        "_tz3000_nbnmw9nc"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "contact_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_nosnx7im",
+      "variants": [
+        "_TZ3000_NOSNX7IM",
+        "_tz3000_nosnx7im"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "climate_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_tqlv4yz4",
+      "variants": [
+        "_TZ3000_TQLV4YZ4",
+        "_tz3000_tqlv4yz4"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_u5u4cakc",
+      "variants": [
+        "_TZ3000_U5U4CAKC",
+        "_tz3000_u5u4cakc"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid",
+        "remote_button_wireless_plug_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_vzopcetz",
+      "variants": [
+        "_TZ3000_VZOPCETZ",
+        "_tz3000_vzopcetz"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid",
+        "remote_button_wireless_plug_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_w2ug5kgu",
+      "variants": [
+        "_TZ3000_W2UG5KGU",
+        "_tz3000_w2ug5kgu"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_x2fqbdun",
+      "variants": [
+        "_TZ3000_X2FQBDUN",
+        "_tz3000_x2fqbdun"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_0c4np92r",
+      "variants": [
+        "_TZ3210_0C4NP92R",
+        "_tz3210_0c4np92r"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_0fc3g9sq",
+      "variants": [
+        "_TZ3210_0FC3G9SQ",
+        "_tz3210_0fc3g9sq"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_1agihf3z",
+      "variants": [
+        "_TZ3210_1AGIHF3Z",
+        "_tz3210_1agihf3z"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_bcplf4ds",
+      "variants": [
+        "_TZ3210_BCPLF4DS",
+        "_tz3210_bcplf4ds"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_dbilpfqk",
+      "variants": [
+        "_TZ3210_DBILPFQK",
+        "_tz3210_dbilpfqk"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "curtain_motor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_dxrjkpi6",
+      "variants": [
+        "_TZ3210_DXRJKPI6",
+        "_tz3210_dxrjkpi6"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_dxroobu3",
+      "variants": [
+        "_TZ3210_DXROOBU3",
+        "_tz3210_dxroobu3"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "curtain_motor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_h1zvcpwd",
+      "variants": [
+        "_TZ3210_H1ZVCPWD",
+        "_tz3210_h1zvcpwd"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_jkbdrvvf",
+      "variants": [
+        "_TZ3210_JKBDRVVF",
+        "_tz3210_jkbdrvvf"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_lezkafxf",
+      "variants": [
+        "_TZ3210_LEZKAFXF",
+        "_tz3210_lezkafxf"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_lmqquxus",
+      "variants": [
+        "_TZ3210_LMQQUXUS",
+        "_tz3210_lmqquxus"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_rbgfkwbl",
+      "variants": [
+        "_TZ3210_RBGFKWBL",
+        "_tz3210_rbgfkwbl"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_sroezl0s",
+      "variants": [
+        "_TZ3210_SROEZL0S",
+        "_tz3210_sroezl0s"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "led_strip_rgbw",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_taw0fc13",
+      "variants": [
+        "_TZ3210_TAW0FC13",
+        "_tz3210_taw0fc13"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_wuheyhvm",
+      "variants": [
+        "_TZ3210_WUHEYHVM",
+        "_tz3210_wuheyhvm"
+      ],
+      "drivers": [
+        "bulb_dimmable",
+        "bulb_tunable_white",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_12sxjap4",
+      "variants": [
+        "_TZ3000_12SXJAP4",
+        "_tz3000_12sxjap4"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_6zvw8ham",
+      "variants": [
+        "_TZ3000_6ZVW8HAM",
+        "_tz3000_6zvw8ham"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "contact_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_h1jnz6l8",
+      "variants": [
+        "_TZ3000_H1JNZ6L8",
+        "_tz3000_h1jnz6l8"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "switch_1gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_hlijwsai",
+      "variants": [
+        "_TZ3000_HLIJWSAI",
+        "_tz3000_hlijwsai"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_keabpigv",
+      "variants": [
+        "_TZ3000_KEABPIGV",
+        "_tz3000_keabpigv"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_obacbukl",
+      "variants": [
+        "_TZ3000_OBACBUKL",
+        "_tz3000_obacbukl"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "led_controller_cct"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_qzjcsmar",
+      "variants": [
+        "_TZ3000_QZJCSMAR",
+        "_tz3000_qzjcsmar"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "remote_button_wireless_hybrid",
+        "scene_switch_1"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_0zabbfax",
+      "variants": [
+        "_TZ3210_0ZABBFAX",
+        "_tz3210_0zabbfax"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_4ubylghk",
+      "variants": [
+        "_TZ3210_4UBYLGHK",
+        "_tz3210_4ubylghk"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "bulb_tunable_white"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_778drfdt",
+      "variants": [
+        "_TZ3210_778DRFDT",
+        "_tz3210_778drfdt"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "curtain_motor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_95txyzbx",
+      "variants": [
+        "_TZ3210_95TXYZBX",
+        "_tz3210_95txyzbx"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "led_strip_rgbw"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_c2iwpxf1",
+      "variants": [
+        "_TZ3210_C2IWPXF1",
+        "_tz3210_c2iwpxf1"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "bulb_tunable_white"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_ddigca5n",
+      "variants": [
+        "_TZ3210_DDIGCA5N",
+        "_tz3210_ddigca5n"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "plug_energy_monitor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_dse8ogfy",
+      "variants": [
+        "_TZ3210_DSE8OGFY",
+        "_tz3210_dse8ogfy"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "button_wireless_fingerbot_hybrid",
+        "smoke_detector_advanced"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_emqmwtym",
+      "variants": [
+        "_TZ3210_EMQMWTYM",
+        "_tz3210_emqmwtym"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "din_rail_meter"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_guijtl8k",
+      "variants": [
+        "_TZ3210_GUIJTL8K",
+        "_tz3210_guijtl8k"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "dimmer_wall_1gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_jlf1nepw",
+      "variants": [
+        "_TZ3210_JLF1NEPW",
+        "_tz3210_jlf1nepw"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "plug_energy_monitor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_k1pe6ibm",
+      "variants": [
+        "_TZ3210_K1PE6IBM",
+        "_tz3210_k1pe6ibm"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "dimmer_wall_1gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_rwmitwj4",
+      "variants": [
+        "_TZ3210_RWMITWJ4",
+        "_tz3210_rwmitwj4"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "plug_energy_monitor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_vfwhhldz",
+      "variants": [
+        "_TZ3210_VFWHHLDZ",
+        "_tz3210_vfwhhldz"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "dimmer_wall_1gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_ysfo0wla",
+      "variants": [
+        "_TZ3210_YSFO0WLA",
+        "_tz3210_ysfo0wla"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "dimmer_wall_1gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tzb210_0bkzabht",
+      "variants": [
+        "_TZB210_0BKZABHT",
+        "_tzb210_0bkzabht"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "bulb_tunable_white",
+        "curtain_motor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tzb210_ayx58ft5",
+      "variants": [
+        "_TZB210_AYX58FT5",
+        "_tzb210_ayx58ft5"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "bulb_tunable_white",
+        "curtain_motor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tzb210_eiwanbeb",
+      "variants": [
+        "_TZB210_EIWANBEB",
+        "_tzb210_eiwanbeb"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "bulb_tunable_white",
+        "curtain_motor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tzb210_g01ie5wu",
+      "variants": [
+        "_TZB210_G01IE5WU",
+        "_tzb210_g01ie5wu"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "wall_dimmer_1gang_1way"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tzb210_lmqquxus",
+      "variants": [
+        "_TZB210_LMQQUXUS",
+        "_tzb210_lmqquxus"
+      ],
+      "drivers": [
+        "bulb_rgb",
+        "curtain_motor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_gek6snaj",
+      "variants": [
+        "_TZ3000_GEK6SNAJ",
+        "_tz3000_gek6snaj"
+      ],
+      "drivers": [
+        "bulb_rgb_rgbw_hybrid",
+        "light_bulb_rgb_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_7hcgjxpc",
+      "variants": [
+        "_TZ3000_7HCGJXPC",
+        "_tz3000_7hcgjxpc"
+      ],
+      "drivers": [
+        "bulb_rgbw",
+        "curtain_motor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_bwlvyjwk",
+      "variants": [
+        "_TZ3000_BWLVYJWK",
+        "_tz3000_bwlvyjwk"
+      ],
+      "drivers": [
+        "bulb_rgbw",
+        "contact_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_quqaeew6",
+      "variants": [
+        "_TZ3000_QUQAEEW6",
+        "_tz3000_quqaeew6"
+      ],
+      "drivers": [
+        "bulb_rgbw",
+        "climate_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_taspddvq",
+      "variants": [
+        "_TZ3000_TASPDDVQ",
+        "_tz3000_taspddvq"
+      ],
+      "drivers": [
+        "bulb_rgbw",
+        "contact_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_th6zqqy6",
+      "variants": [
+        "_TZ3000_TH6ZQQY6",
+        "_tz3000_th6zqqy6"
+      ],
+      "drivers": [
+        "bulb_rgbw",
+        "contact_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_wr6g6olr",
+      "variants": [
+        "_TZ3000_WR6G6OLR",
+        "_tz3000_wr6g6olr"
+      ],
+      "drivers": [
+        "bulb_rgbw",
+        "climate_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_frm6149r",
+      "variants": [
+        "_TZ3210_FRM6149R",
+        "_tz3210_frm6149r"
+      ],
+      "drivers": [
+        "bulb_rgbw",
+        "curtain_motor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_jtifm80b",
+      "variants": [
+        "_TZ3210_JTIFM80B",
+        "_tz3210_jtifm80b"
+      ],
+      "drivers": [
+        "bulb_rgbw",
+        "curtain_motor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_p9ao60da",
+      "variants": [
+        "_TZ3210_P9AO60DA",
+        "_tz3210_p9ao60da"
+      ],
+      "drivers": [
+        "bulb_rgbw",
+        "led_controller_cct"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_rkgngb5o",
+      "variants": [
+        "_TZ3210_RKGNGB5O",
+        "_tz3210_rkgngb5o"
+      ],
+      "drivers": [
+        "bulb_rgbw",
+        "dimmer_wall_1gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_s9lumfhn",
+      "variants": [
+        "_TZ3210_S9LUMFHN",
+        "_tz3210_s9lumfhn"
+      ],
+      "drivers": [
+        "bulb_rgbw",
+        "climate_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_umi6vbsz",
+      "variants": [
+        "_TZ3210_UMI6VBSZ",
+        "_tz3210_umi6vbsz"
+      ],
+      "drivers": [
+        "bulb_rgbw",
+        "contact_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_xwqng7ol",
+      "variants": [
+        "_TZ3210_XWQNG7OL",
+        "_tz3210_xwqng7ol"
+      ],
+      "drivers": [
+        "bulb_rgbw",
+        "curtain_motor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_zbabx9wh",
+      "variants": [
+        "_TZ3210_ZBABX9WH",
+        "_tz3210_zbabx9wh"
+      ],
+      "drivers": [
+        "bulb_rgbw",
+        "contact_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_49qchf10",
+      "variants": [
+        "_TZ3000_49QCHF10",
+        "_tz3000_49qchf10"
+      ],
+      "drivers": [
+        "bulb_tunable_white",
+        "dimmer_wall_1gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_5fkufhn1",
+      "variants": [
+        "_TZ3000_5FKUFHN1",
+        "_tz3000_5fkufhn1"
+      ],
+      "drivers": [
+        "bulb_tunable_white",
+        "climate_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_8uaoilu9",
+      "variants": [
+        "_TZ3000_8UAOILU9",
+        "_tz3000_8uaoilu9"
+      ],
+      "drivers": [
+        "bulb_tunable_white",
+        "climate_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_g1glzzfk",
+      "variants": [
+        "_TZ3000_G1GLZZFK",
+        "_tz3000_g1glzzfk"
+      ],
+      "drivers": [
+        "bulb_tunable_white",
+        "climate_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_oborybow",
+      "variants": [
+        "_TZ3000_OBORYBOW",
+        "_tz3000_oborybow"
+      ],
+      "drivers": [
+        "bulb_tunable_white",
+        "dimmer_wall_1gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_rylaozuc",
+      "variants": [
+        "_TZ3000_RYLAOZUC",
+        "_tz3000_rylaozuc"
+      ],
+      "drivers": [
+        "bulb_tunable_white",
+        "contact_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_zw7wr5uo",
+      "variants": [
+        "_TZ3000_ZW7WR5UO",
+        "_tz3000_zw7wr5uo"
+      ],
+      "drivers": [
+        "bulb_tunable_white",
+        "climate_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_invesber",
+      "variants": [
+        "_TZ3210_INVESBER",
+        "_tz3210_invesber"
+      ],
+      "drivers": [
+        "bulb_tunable_white",
+        "dimmer_wall_1gang",
+        "light_bulb_rgb_led_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_iystcadi",
+      "variants": [
+        "_TZ3210_IYSTCADI",
+        "_tz3210_iystcadi"
+      ],
+      "drivers": [
+        "bulb_tunable_white",
+        "dimmer_wall_1gang",
+        "led_controller_cct",
+        "led_controller_dimmable",
+        "led_controller_rgb",
+        "led_strip_advanced",
+        "led_strip_rgbw",
+        "light_bulb_rgb_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_zdrhqmo0",
+      "variants": [
+        "_TZ3210_ZDRHQMO0",
+        "_tz3210_zdrhqmo0"
+      ],
+      "drivers": [
+        "bulb_tunable_white",
+        "dimmer_wall_1gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_oboryztc",
+      "variants": [
+        "_TZ3000_OBORYZTC",
+        "_tz3000_oboryztc"
+      ],
+      "drivers": [
+        "bulb_white",
+        "led_strip_advanced"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_nxdziqzc",
+      "variants": [
+        "_TZ3000_NXDZIQZC",
+        "_tz3000_nxdziqzc"
+      ],
+      "drivers": [
+        "button_emergency_sos",
+        "button_wireless_1"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_peszejy7",
+      "variants": [
+        "_TZ3000_PESZEJY7",
+        "_tz3000_peszejy7"
+      ],
+      "drivers": [
+        "button_emergency_sos",
+        "button_wireless_1",
+        "scene_switch_1"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_ssp0maqm",
+      "variants": [
+        "_TZ3000_SSP0MAQM",
+        "_tz3000_ssp0maqm"
+      ],
+      "drivers": [
+        "button_emergency_sos",
+        "button_wireless_1"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_arfwfgoa",
+      "variants": [
+        "_TZ3000_ARFWFGOA",
+        "_tz3000_arfwfgoa"
+      ],
+      "drivers": [
+        "button_wireless",
+        "button_wireless_2"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tyzb02_keyjqthh",
+      "variants": [
+        "_TYZB02_KEYJQTHH",
+        "_tyzb02_keyjqthh"
+      ],
+      "drivers": [
+        "button_wireless_1",
+        "switch_1gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_6km7djcm",
+      "variants": [
+        "_TZ3000_6KM7DJCM",
+        "_tz3000_6km7djcm"
+      ],
+      "drivers": [
+        "button_wireless_1",
+        "climate_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_csflgqj2",
+      "variants": [
+        "_TZ3000_CSFLGQJ2",
+        "_tz3000_csflgqj2"
+      ],
+      "drivers": [
+        "button_wireless_1",
+        "smart_knob_rotary"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_mrpevh8p",
+      "variants": [
+        "_TZ3000_MRPEVH8P",
+        "_tz3000_mrpevh8p"
+      ],
+      "drivers": [
+        "button_wireless_1",
+        "climate_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_uri7ber7",
+      "variants": [
+        "_TZ3000_URI7BER7",
+        "_tz3000_uri7ber7"
+      ],
+      "drivers": [
+        "button_wireless_1",
+        "smart_knob"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_vn88ezar",
+      "variants": [
+        "_TZ3000_VN88EZAR",
+        "_tz3000_vn88ezar"
+      ],
+      "drivers": [
+        "button_wireless_1",
+        "climate_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_3ulg9kpo",
+      "variants": [
+        "_TZ3210_3ULG9KPO",
+        "_tz3210_3ulg9kpo"
+      ],
+      "drivers": [
+        "button_wireless_1",
+        "contact_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3290_rlkmy85q4pzoxobl",
+      "variants": [
+        "_TZ3290_RLKMY85Q4PZOXOBL",
+        "_tz3290_rlkmy85q4pzoxobl"
+      ],
+      "drivers": [
+        "button_wireless_1",
+        "climate_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tyzb01_hlla45kx",
+      "variants": [
+        "_TYZB01_HLLA45KX",
+        "_tyzb01_hlla45kx"
+      ],
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tyzb01_iuepbmpv",
+      "variants": [
+        "_TYZB01_IUEPBMPV",
+        "_tyzb01_iuepbmpv"
+      ],
+      "drivers": [
+        "button_wireless_2",
+        "lcdtemphumidsensor_plug_energy_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_1h2x4akh",
+      "variants": [
+        "_TZ3000_1H2X4AKH",
+        "_tz3000_1h2x4akh"
+      ],
+      "drivers": [
+        "button_wireless_2",
+        "ceiling_fan"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_1obwwnmq",
+      "variants": [
+        "_TZ3000_1OBWWNMQ",
+        "_tz3000_1obwwnmq"
+      ],
+      "drivers": [
+        "button_wireless_2",
+        "motion_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_88iqnhvd",
+      "variants": [
+        "_TZ3000_88IQNHVD",
+        "_tz3000_88iqnhvd"
+      ],
+      "drivers": [
+        "button_wireless_2",
+        "climate_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_cphmq0q7",
+      "variants": [
+        "_TZ3000_CPHMQ0Q7",
+        "_tz3000_cphmq0q7"
+      ],
+      "drivers": [
+        "button_wireless_2",
+        "radiator_valve"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_cymsnfvf",
+      "variants": [
+        "_TZ3000_CYMSNFVF",
+        "_tz3000_cymsnfvf"
+      ],
+      "drivers": [
+        "button_wireless_2",
+        "module_mini_switch_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_dksbtrzs",
+      "variants": [
+        "_TZ3000_DKSBTRZS",
+        "_tz3000_dksbtrzs"
+      ],
+      "drivers": [
+        "button_wireless_2",
+        "radiator_valve"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_dpo1ysak",
+      "variants": [
+        "_TZ3000_DPO1YSAK",
+        "_tz3000_dpo1ysak"
+      ],
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_ew31dmgx",
+      "variants": [
+        "_TZ3000_EW31DMGX",
+        "_tz3000_ew31dmgx"
+      ],
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_fukaa7nc",
+      "variants": [
+        "_TZ3000_FUKAA7NC",
+        "_tz3000_fukaa7nc"
+      ],
+      "drivers": [
+        "button_wireless_2",
+        "climate_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_gznh2xla",
+      "variants": [
+        "_TZ3000_GZNH2XLA",
+        "_tz3000_gznh2xla"
+      ],
+      "drivers": [
+        "button_wireless_2",
+        "radiator_valve"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_hyfvrar3",
+      "variants": [
+        "_TZ3000_HYFVRAR3",
+        "_tz3000_hyfvrar3"
+      ],
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_jak16dll",
+      "variants": [
+        "_TZ3000_JAK16DLL",
+        "_tz3000_jak16dll"
+      ],
+      "drivers": [
+        "button_wireless_2",
+        "climate_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_kdi2o9m6",
+      "variants": [
+        "_TZ3000_KDI2O9M6",
+        "_tz3000_kdi2o9m6"
+      ],
+      "drivers": [
+        "button_wireless_2",
+        "dimmer_wall_plug_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_mraovvmm",
+      "variants": [
+        "_TZ3000_MRAOVVMM",
+        "_tz3000_mraovvmm"
+      ],
+      "drivers": [
+        "button_wireless_2",
+        "switch_wall_5gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_qeuvnohg",
+      "variants": [
+        "_TZ3000_QEUVNOHG",
+        "_tz3000_qeuvnohg"
+      ],
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_upjrsxh1",
+      "variants": [
+        "_TZ3000_UPJRSXH1",
+        "_tz3000_upjrsxh1"
+      ],
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_uwkja6z1",
+      "variants": [
+        "_TZ3000_UWKJA6Z1",
+        "_tz3000_uwkja6z1"
+      ],
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_vmpbygs5",
+      "variants": [
+        "_TZ3000_VMPBYGS5",
+        "_tz3000_vmpbygs5"
+      ],
+      "drivers": [
+        "button_wireless_2",
+        "module_mini_switch"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_wamqdr3f",
+      "variants": [
+        "_TZ3000_WAMQDR3F",
+        "_tz3000_wamqdr3f"
+      ],
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_wzmuk9ai",
+      "variants": [
+        "_TZ3000_wzmuk9ai",
+        "_tz3000_wzmuk9ai",
+        "_TZ3000_WZMUK9AI"
+      ],
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_bi6lpsew",
+      "variants": [
+        "_TZ3000_BI6LPSEW",
+        "_tz3000_bi6lpsew"
+      ],
+      "drivers": [
+        "button_wireless_3",
+        "switch_2gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_iy2c3n6p",
+      "variants": [
+        "_TZ3000_IY2C3N6P",
+        "_tz3000_iy2c3n6p"
+      ],
+      "drivers": [
+        "button_wireless_3",
+        "plug_energy_monitor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_w3c7ouru",
+      "variants": [
+        "_TZ3000_W3C7OURU",
+        "_tz3000_w3c7ouru"
+      ],
+      "drivers": [
+        "button_wireless_3",
+        "switch_1gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tyzb01_qm6djpta",
+      "variants": [
+        "_TYZB01_QM6DJPTA",
+        "_tyzb01_qm6djpta"
+      ],
+      "drivers": [
+        "button_wireless_4",
+        "remote_button_emergency_sos_hybrid",
+        "smart_remote_4_buttons"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_5tqxpine",
+      "variants": [
+        "_TZ3000_5TQXPINE",
+        "_tz3000_5tqxpine"
+      ],
+      "drivers": [
+        "button_wireless_4",
+        "scene_switch_4"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_abci1hiu",
+      "variants": [
+        "_TZ3000_ABCI1HIU",
+        "_tz3000_abci1hiu"
+      ],
+      "drivers": [
+        "button_wireless_4",
+        "radiator_valve"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_czuyt8lz",
+      "variants": [
+        "_TZ3000_CZUYT8LZ",
+        "_tz3000_czuyt8lz"
+      ],
+      "drivers": [
+        "button_wireless_4",
+        "plug_energy_monitor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_fjt5218m",
+      "variants": [
+        "_TZ3000_FJT5218M",
+        "_tz3000_fjt5218m"
+      ],
+      "drivers": [
+        "button_wireless_4",
+        "switch_1gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_kaflzta4",
+      "variants": [
+        "_TZ3000_KAFLZTA4",
+        "_tz3000_kaflzta4"
+      ],
+      "drivers": [
+        "button_wireless_4",
+        "climate_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_r0pmi2p3",
+      "variants": [
+        "_TZ3000_R0PMI2P3",
+        "_tz3000_r0pmi2p3"
+      ],
+      "drivers": [
+        "button_wireless_4",
+        "switch_1gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_w8jwkczz",
+      "variants": [
+        "_TZ3000_W8JWKCZZ",
+        "_tz3000_w8jwkczz"
+      ],
+      "drivers": [
+        "button_wireless_4",
+        "remote_button_wireless_scene_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_xwuveizv",
+      "variants": [
+        "_TZ3000_XWUVEIZV",
+        "_tz3000_xwuveizv"
+      ],
+      "drivers": [
+        "button_wireless_4",
+        "switch_1gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_zgyzgdua",
+      "variants": [
+        "_TZ3000_ZGYZGDUA",
+        "_tz3000_zgyzgdua"
+      ],
+      "drivers": [
+        "button_wireless_4",
+        "scene_switch_4"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3040_fwxuzcf4",
+      "variants": [
+        "_TZ3040_FWXUZCF4",
+        "_tz3040_fwxuzcf4"
+      ],
+      "drivers": [
+        "button_wireless_4",
+        "motion_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3290_785fbxik",
+      "variants": [
+        "_TZ3290_785FBXIK",
+        "_tz3290_785fbxik"
+      ],
+      "drivers": [
+        "button_wireless_4",
+        "ir_blaster"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3290_ixd9mvv4",
+      "variants": [
+        "_TZ3290_IXD9MVV4",
+        "_tz3290_ixd9mvv4"
+      ],
+      "drivers": [
+        "button_wireless_4",
+        "water_valve_garden"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3290_nkpxapoz",
+      "variants": [
+        "_TZ3290_NKPXAPOZ",
+        "_tz3290_nkpxapoz"
+      ],
+      "drivers": [
+        "button_wireless_4",
+        "ir_blaster"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3290_yyax9ajf",
+      "variants": [
+        "_TZ3290_YYAX9AJF",
+        "_tz3290_yyax9ajf"
+      ],
+      "drivers": [
+        "button_wireless_4",
+        "ir_blaster"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_5f43h46b",
+      "variants": [
+        "_TZ3000_5F43H46B",
+        "_tz3000_5f43h46b"
+      ],
+      "drivers": [
+        "button_wireless_usb_hybrid",
+        "din_rail_switch",
+        "remote_button_wireless_usb_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_j9568h44",
+      "variants": [
+        "_TZ3000_J9568H44",
+        "_tz3000_j9568h44"
+      ],
+      "drivers": [
+        "button_wireless_valve_hybrid",
+        "remote_button_wireless_valve_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_3u4hripk",
+      "variants": [
+        "_TZ3000_3U4HRIPK",
+        "_tz3000_3u4hripk"
+      ],
+      "drivers": [
+        "climate_sensor",
+        "remote_button_wireless_wall_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_402vrq2i",
+      "variants": [
+        "_TZ3000_402VRQ2I",
+        "_tz3000_402vrq2i"
+      ],
+      "drivers": [
+        "climate_sensor",
+        "smart_knob"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_7jx5ypra",
+      "variants": [
+        "_TZ3000_7JX5YPRA",
+        "_tz3000_7jx5ypra"
+      ],
+      "drivers": [
+        "climate_sensor",
+        "remote_button_wireless_wall_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_f09j9qjb",
+      "variants": [
+        "_TZ3000_F09J9QJB",
+        "_tz3000_f09j9qjb"
+      ],
+      "drivers": [
+        "climate_sensor",
+        "wall_switch_3gang_1way"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_g9g2xnch",
+      "variants": [
+        "_TZ3000_G9G2XNCH",
+        "_tz3000_g9g2xnch"
+      ],
+      "drivers": [
+        "climate_sensor",
+        "smart_knob"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_ovyaisip",
+      "variants": [
+        "_TZ3000_OVYAISIP",
+        "_tz3000_ovyaisip"
+      ],
+      "drivers": [
+        "climate_sensor",
+        "wall_switch_1gang_1way"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_pk8tgtdb",
+      "variants": [
+        "_TZ3000_PK8TGTDB",
+        "_tz3000_pk8tgtdb"
+      ],
+      "drivers": [
+        "climate_sensor",
+        "wall_switch_1gang_1way"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_r0o2dahu",
+      "variants": [
+        "_TZ3000_R0O2DAHU",
+        "_tz3000_r0o2dahu"
+      ],
+      "drivers": [
+        "climate_sensor",
+        "smart_knob"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_ugi8ky6u",
+      "variants": [
+        "_TZ3000_UGI8KY6U",
+        "_tz3000_ugi8ky6u"
+      ],
+      "drivers": [
+        "climate_sensor",
+        "smart_knob_rotary"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_vjhcenzo",
+      "variants": [
+        "_TZ3000_VJHCENZO",
+        "_tz3000_vjhcenzo"
+      ],
+      "drivers": [
+        "climate_sensor",
+        "wall_switch_3gang_1way"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_w05exif3",
+      "variants": [
+        "_TZ3000_W05EXIF3",
+        "_tz3000_w05exif3"
+      ],
+      "drivers": [
+        "climate_sensor",
+        "remote_button_wireless_wall_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_yervjnlj",
+      "variants": [
+        "_TZ3000_YERVJNLJ",
+        "_tz3000_yervjnlj"
+      ],
+      "drivers": [
+        "climate_sensor",
+        "wall_switch_3gang_1way"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tze284_7zazvlyn",
+      "variants": [
+        "_TZE284_7ZAZVLYN",
+        "_tze284_7zazvlyn"
+      ],
+      "drivers": [
+        "climate_sensor_smart_hybrid",
+        "sensor_climate_smart_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_2dlwlvex",
+      "variants": [
+        "_TZ3000_2DLWLVEX",
+        "_tz3000_2dlwlvex"
+      ],
+      "drivers": [
+        "contact_sensor",
+        "remote_button_wireless_wall_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_do6txrcw",
+      "variants": [
+        "_TZ3000_DO6TXRCW",
+        "_tz3000_do6txrcw"
+      ],
+      "drivers": [
+        "contact_sensor",
+        "illuminance_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_fa9mlvja",
+      "variants": [
+        "_TZ3000_FA9MLVJA",
+        "_tz3000_fa9mlvja"
+      ],
+      "drivers": [
+        "contact_sensor",
+        "remote_button_wireless_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_p8alo7qa",
+      "variants": [
+        "_TZ3000_P8ALO7QA",
+        "_tz3000_p8alo7qa"
+      ],
+      "drivers": [
+        "contact_sensor",
+        "remote_button_wireless_wall_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_s8r1qoyq",
+      "variants": [
+        "_TZ3000_S8R1QOYQ",
+        "_tz3000_s8r1qoyq"
+      ],
+      "drivers": [
+        "contact_sensor",
+        "remote_button_wireless_wall_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_wyhuocal",
+      "variants": [
+        "_TZ3000_WYHUOCAL",
+        "_tz3000_wyhuocal"
+      ],
+      "drivers": [
+        "contact_sensor",
+        "remote_button_wireless_wall_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_wptayaqr",
+      "variants": [
+        "_TZ3000_WPTAYAQR",
+        "_tz3000_wptayaqr"
+      ],
+      "drivers": [
+        "contact_sensor_curtain_hybrid",
+        "curtain_motor_wall_hybrid",
+        "wall_curtain_switch"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tzb210_3zfp8mki",
+      "variants": [
+        "_TZB210_3ZFP8MKI",
+        "_tzb210_3zfp8mki"
+      ],
+      "drivers": [
+        "curtain_motor",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tzb210_417ikxay",
+      "variants": [
+        "_TZB210_417IKXAY",
+        "_tzb210_417ikxay"
+      ],
+      "drivers": [
+        "curtain_motor",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tzb210_gj0ccsar",
+      "variants": [
+        "_TZB210_GJ0CCSAR",
+        "_tzb210_gj0ccsar"
+      ],
+      "drivers": [
+        "curtain_motor",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tzb210_rs0ufzwg",
+      "variants": [
+        "_TZB210_RS0UFZWG",
+        "_tzb210_rs0ufzwg"
+      ],
+      "drivers": [
+        "curtain_motor",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tzb210_ue01a0s2",
+      "variants": [
+        "_TZB210_UE01A0S2",
+        "_tzb210_ue01a0s2"
+      ],
+      "drivers": [
+        "curtain_motor",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tzb210_w9hcix2r",
+      "variants": [
+        "_TZB210_W9HCIX2R",
+        "_tzb210_w9hcix2r"
+      ],
+      "drivers": [
+        "curtain_motor",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tzb210_wxazcmsh",
+      "variants": [
+        "_TZB210_WXAZCMSH",
+        "_tzb210_wxazcmsh"
+      ],
+      "drivers": [
+        "curtain_motor",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tzb210_wy1pyu1q",
+      "variants": [
+        "_TZB210_WY1PYU1Q",
+        "_tzb210_wy1pyu1q"
+      ],
+      "drivers": [
+        "curtain_motor",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tzb210_yatkpuha",
+      "variants": [
+        "_TZB210_YATKPUHA",
+        "_tzb210_yatkpuha"
+      ],
+      "drivers": [
+        "curtain_motor",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tze204_guvc7pdy",
+      "variants": [
+        "_TZE204_GUVC7PDY",
+        "_tze204_guvc7pdy"
+      ],
+      "drivers": [
+        "curtain_motor_shutter_hybrid",
+        "shutter_roller_controller"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tze200_shkxsgis",
+      "variants": [
+        "_TZE200_SHKXSGIS",
+        "_tze200_shkxsgis"
+      ],
+      "drivers": [
+        "device_air_purifier_din_hybrid",
+        "device_air_purifier_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tze200_mja3fuja",
+      "variants": [
+        "_TZE200_MJA3FUJA",
+        "_tze200_mja3fuja"
+      ],
+      "drivers": [
+        "device_air_purifier_humidifier_hybrid",
+        "device_air_purifier_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tze200_kly8gjlz",
+      "variants": [
+        "_TZE200_KLY8GJLZ",
+        "_tze200_kly8gjlz"
+      ],
+      "drivers": [
+        "device_air_purifier_hybrid",
+        "device_air_purifier_smart_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tze200_ojzhk75b",
+      "variants": [
+        "_TZE200_OJZHK75B",
+        "_tze200_ojzhk75b"
+      ],
+      "drivers": [
+        "device_air_purifier_hybrid",
+        "device_air_purifier_water_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tze204_t1blo2bj",
+      "variants": [
+        "_TZE204_T1BLO2BJ",
+        "_tze204_t1blo2bj"
+      ],
+      "drivers": [
+        "device_air_purifier_hybrid",
+        "device_air_purifier_siren_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_fvh3pjaz",
+      "variants": [
+        "_TZ3000_FVH3PJAZ",
+        "_tz3000_fvh3pjaz"
+      ],
+      "drivers": [
+        "dimmer_wall_1gang",
+        "remote_button_wireless_wall_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_rrjr1q0u",
+      "variants": [
+        "_TZ3000_RRJR1Q0U",
+        "_tz3000_rrjr1q0u"
+      ],
+      "drivers": [
+        "dimmer_wall_1gang",
+        "remote_button_wireless_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_eejm8dcr",
+      "variants": [
+        "_TZ3210_EEJM8DCR",
+        "_tz3210_eejm8dcr"
+      ],
+      "drivers": [
+        "dimmer_wall_1gang",
+        "led_strip_rgbw",
+        "light_bulb_rgb_led_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_tk3s5tyg",
+      "variants": [
+        "_TZ3000_TK3S5TYG",
+        "_tz3000_tk3s5tyg"
+      ],
+      "drivers": [
+        "gas_sensor",
+        "remote_button_wireless_hybrid",
+        "wall_remote_1_gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_o1jzcxou",
+      "variants": [
+        "_TZ3000_O1JZCXOU",
+        "_tz3000_o1jzcxou"
+      ],
+      "drivers": [
+        "gateway_zigbee_bridge",
+        "plug_energy_monitor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tyzb01_4mdqxxnn",
+      "variants": [
+        "_TYZB01_4MDQXXNN",
+        "_tyzb01_4mdqxxnn"
+      ],
+      "drivers": [
+        "illuminance_sensor",
+        "switch_1gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tyzb01_m6ec2pgj",
+      "variants": [
+        "_TYZB01_M6EC2PGJ",
+        "_tyzb01_m6ec2pgj"
+      ],
+      "drivers": [
+        "illuminance_sensor",
+        "switch_1gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_riwp3k79",
+      "variants": [
+        "_TZ3000_RIWP3K79",
+        "_tz3000_riwp3k79"
+      ],
+      "drivers": [
+        "led_controller_cct",
+        "light_bulb_rgb_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3210_r0xgkft5",
+      "variants": [
+        "_TZ3210_R0XGKFT5",
+        "_tz3210_r0xgkft5"
+      ],
+      "drivers": [
+        "led_controller_cct",
+        "light_bulb_rgb_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tzb210_endmggws",
+      "variants": [
+        "_TZB210_ENDMGGWS",
+        "_tzb210_endmggws"
+      ],
+      "drivers": [
+        "led_controller_cct",
+        "light_bulb_rgb_rgbw_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_i8l0nqdu",
+      "variants": [
+        "_TZ3000_I8L0NQDU",
+        "_tz3000_i8l0nqdu"
+      ],
+      "drivers": [
+        "light_bulb_rgb_led_hybrid",
+        "plug_energy_monitor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_dku2cfsc",
+      "variants": [
+        "_TZ3000_DKU2CFSC",
+        "_tz3000_dku2cfsc"
+      ],
+      "drivers": [
+        "remote_button_wireless_hybrid",
+        "switch_1gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_ja5osu5g",
+      "variants": [
+        "_TZ3000_JA5OSU5G",
+        "_tz3000_ja5osu5g"
+      ],
+      "drivers": [
+        "remote_button_wireless_hybrid",
+        "smart_remote_1_button_2"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_yirp2pgd",
+      "variants": [
+        "_TZ3000_YIRP2PGD",
+        "_tz3000_yirp2pgd"
+      ],
+      "drivers": [
+        "remote_button_wireless_hybrid",
+        "switch_1gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_typdpbpg",
+      "variants": [
+        "_TZ3000_TYPDPBPG",
+        "_tz3000_typdpbpg"
+      ],
+      "drivers": [
+        "remote_button_wireless_plug_hybrid",
+        "switch_plug_1"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_zloso4jk",
+      "variants": [
+        "_TZ3000_ZLOSO4JK",
+        "_tz3000_zloso4jk"
+      ],
+      "drivers": [
+        "remote_button_wireless_plug_hybrid",
+        "switch_plug_2"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_dfgbtub0",
+      "variants": [
+        "_TZ3000_DFGBTUB0",
+        "_tz3000_dfgbtub0"
+      ],
+      "drivers": [
+        "remote_button_wireless_scene_hybrid",
+        "switch_wireless"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_hhiodade",
+      "variants": [
+        "_TZ3000_HHIODADE",
+        "_tz3000_hhiodade"
+      ],
+      "drivers": [
+        "remote_button_wireless_wall_hybrid",
+        "smoke_detector_advanced"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_tkusjmue",
+      "variants": [
+        "_TZ3000_TKUSJMUE",
+        "_tz3000_tkusjmue"
+      ],
+      "drivers": [
+        "scene_switch_1",
+        "switch_1gang"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_gszjt2xx",
+      "variants": [
+        "_TZ3000_GSZJT2XX",
+        "_tz3000_gszjt2xx"
+      ],
+      "drivers": [
+        "sensor_climate_contact_hybrid",
+        "sensor_contact_zigbee_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_m0vaazab",
+      "variants": [
+        "_TZ3000_M0VAAZAB",
+        "_tz3000_m0vaazab"
+      ],
+      "drivers": [
+        "sensor_climate_contact_hybrid",
+        "sensor_contact_zigbee_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_misw04hq",
+      "variants": [
+        "_TZ3000_MISW04HQ",
+        "_tz3000_misw04hq"
+      ],
+      "drivers": [
+        "sensor_climate_contact_hybrid",
+        "sensor_contact_zigbee_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_ufttklsz",
+      "variants": [
+        "_TZ3000_UFTTKLSZ",
+        "_tz3000_ufttklsz"
+      ],
+      "drivers": [
+        "sensor_climate_contact_hybrid",
+        "sensor_contact_zigbee_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_wlquqiiz",
+      "variants": [
+        "_TZ3000_WLQUQIIZ",
+        "_tz3000_wlquqiiz"
+      ],
+      "drivers": [
+        "sensor_climate_contact_hybrid",
+        "sensor_contact_zigbee_hybrid"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_blhvsaqf",
+      "variants": [
+        "_TZ3000_BLHVSAQF",
+        "_tz3000_blhvsaqf"
+      ],
+      "drivers": [
+        "switch_1gang",
+        "wall_switch_2gang_1way",
+        "wall_switch_3gang_1way"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_mw1pqqqt",
+      "variants": [
+        "_TZ3000_MW1PQQQT",
+        "_tz3000_mw1pqqqt"
+      ],
+      "drivers": [
+        "switch_1gang",
+        "usb_dongle_triple"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3218_7fiyo3kv",
+      "variants": [
+        "_TZ3218_7FIYO3KV",
+        "_tz3218_7fiyo3kv"
+      ],
+      "drivers": [
+        "switch_1gang",
+        "switch_temp_sensor"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_xk5udnd6",
+      "variants": [
+        "_TZ3000_XK5UDND6",
+        "_tz3000_xk5udnd6"
+      ],
+      "drivers": [
+        "switch_4gang",
+        "wall_switch_2gang_1way",
+        "wall_switch_3gang_1way"
+      ],
+      "risk": "medium"
+    },
+    {
+      "norm": "_tz3000_bseed",
+      "variants": [
+        "_TZ3000_BSEED",
+        "_tz3000_bseed"
+      ],
+      "drivers": [
+        "wall_switch_2gang_1way",
+        "wall_switch_3gang_1way"
+      ],
+      "risk": "medium"
+    }
+  ],
+  "orphans": [
+    {
+      "driver": "air_purifier_curtain_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0601",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "air_purifier_dimmer_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0601",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "air_purifier_din_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZE200_AQNAZJ70",
+        "_tze200_aqnazj70"
+      ]
+    },
+    {
+      "driver": "air_purifier_lcdtemphumidsensor_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0201",
+        "TS0601",
+        "ts0201",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "air_purifier_motion_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0601",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "air_purifier_presence_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0601",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "air_purifier_quality_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZE200_9CXUHAKF",
+        "_TZ2000_AVDNVYKF",
+        "_TZ2000_HJSGDKFL",
+        "_tze200_9cxuhakf",
+        "_tz2000_avdnvykf",
+        "_tz2000_hjsgdkfl"
+      ]
+    },
+    {
+      "driver": "air_purifier_sensor_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZE200_TTCOVULF",
+        "_tze200_ttcovulf"
+      ]
+    },
+    {
+      "driver": "air_purifier_siren_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0601",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "air_purifier_soil_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0601",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "air_purifier_switch_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0601",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "air_quality_comprehensive_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0601",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "bulb_dimmable_dimmer_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0052",
+        "TS1101",
+        "TS110E",
+        "TS110F",
+        "ts0052",
+        "ts1101",
+        "ts110e",
+        "ts110f"
+      ]
+    },
+    {
+      "driver": "bulb_rgb_led_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0505B",
+        "ts0505b"
+      ]
+    },
+    {
+      "driver": "bulb_rgb_rgbw_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZ3000_GEK6SNAJ",
+        "_tz3000_gek6snaj"
+      ]
+    },
+    {
+      "driver": "button_wireless_plug_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS011F",
+        "TS0121",
+        "TSO121",
+        "ts011f",
+        "ts0121",
+        "tso121",
+        "TS0111",
+        "ts0111"
+      ]
+    },
+    {
+      "driver": "button_wireless_usb_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZ3000_5F43H46B",
+        "_tz3000_5f43h46b"
+      ]
+    },
+    {
+      "driver": "button_wireless_valve_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZ3000_J9568H44",
+        "_tz3000_j9568h44"
+      ]
+    },
+    {
+      "driver": "button_wireless_wall_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0003",
+        "TS0013",
+        "TS0043",
+        "ts0003",
+        "ts0013",
+        "ts0043",
+        "TS0001",
+        "TS0011",
+        "ts0001",
+        "ts0011",
+        "TS0002",
+        "TS0012",
+        "TS0042",
+        "ts0002",
+        "ts0012",
+        "ts0042"
+      ]
+    },
+    {
+      "driver": "climate_sensor_dimmer_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZ3210_HUZKZQYK",
+        "_tz3210_huzkzqyk"
+      ]
+    },
+    {
+      "driver": "climate_sensor_gas_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0601",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "climate_sensor_plug_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0601",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "climate_sensor_smart_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZE284_7ZAZVLYN",
+        "_tze284_7zazvlyn"
+      ]
+    },
+    {
+      "driver": "climate_sensor_switch_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZ3000_I8JFIEZR",
+        "_tz3000_i8jfiezr"
+      ]
+    },
+    {
+      "driver": "contact_sensor_curtain_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZ3000_WPTAYAQR",
+        "_tz3000_wptayaqr"
+      ]
+    },
+    {
+      "driver": "contact_sensor_dimmer_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZ3210_JOWHPXOP",
+        "_tz3210_jowhpxop"
+      ]
+    },
+    {
+      "driver": "contact_sensor_plug_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0601",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "contact_sensor_switch_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZ3000_6OABGTZV",
+        "_tz3000_6oabgtzv"
+      ]
+    },
+    {
+      "driver": "contact_sensor_zigbee_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0207",
+        "ts0207"
+      ]
+    },
+    {
+      "driver": "curtain_motor_wall_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZ3000_WPTAYAQR",
+        "_tz3000_wptayaqr"
+      ]
+    },
+    {
+      "driver": "device_air_purifier_din_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZE200_SHKXSGIS",
+        "_TZE200_AQNAZJ70",
+        "_tze200_shkxsgis",
+        "_tze200_aqnazj70"
+      ]
+    },
+    {
+      "driver": "device_air_purifier_floor_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0601",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "device_air_purifier_humidifier_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZE200_MJA3FUJA",
+        "_tze200_mja3fuja"
+      ]
+    },
+    {
+      "driver": "device_air_purifier_plug_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0601",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "device_air_purifier_radiator_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0601",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "device_air_purifier_siren_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZE204_T1BLO2BJ",
+        "_TYST11_D0YU2XGI",
+        "_TZE200_D0YU2XGI",
+        "_tze204_t1blo2bj",
+        "_tyst11_d0yu2xgi",
+        "_tze200_d0yu2xgi"
+      ]
+    },
+    {
+      "driver": "device_air_purifier_smart_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZE200_KLY8GJLZ",
+        "_tze200_kly8gjlz"
+      ]
+    },
+    {
+      "driver": "device_air_purifier_smoke_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0601",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "device_air_purifier_thermostat_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0601",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "device_air_purifier_water_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZE200_OJZHK75B",
+        "_tze200_ojzhk75b"
+      ]
+    },
+    {
+      "driver": "device_floor_heating_thermostat_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0601",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "device_plug_smart_water_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0049",
+        "ts0049"
+      ]
+    },
+    {
+      "driver": "device_radiator_valve_smart_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0601",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "dimmer_ts110e",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS110E",
+        "ts110e"
+      ]
+    },
+    {
+      "driver": "fingerbot",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0001",
+        "TS0001_FINGERBOT",
+        "TS0001_fingerbot",
+        "ts0001",
+        "ts0001_fingerbot"
+      ]
+    },
+    {
+      "driver": "fingerbot_switch_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0001",
+        "ts0001"
+      ]
+    },
+    {
+      "driver": "handheld_remote_4_buttons",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0044",
+        "ts0044"
+      ]
+    },
+    {
+      "driver": "motion_sensor_2",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0601",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "motion_sensor_switch_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TYZB01_DR6SDUKA",
+        "_tyzb01_dr6sduka"
+      ]
+    },
+    {
+      "driver": "plug_smart_switch_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZ3000_PNZFDR9Y",
+        "_tz3000_pnzfdr9y"
+      ]
+    },
+    {
+      "driver": "radiator_wifi_tuya",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "remote_button_emergency_sos_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TYZB01_QM6DJPTA",
+        "_tyzb01_qm6djpta"
+      ]
+    },
+    {
+      "driver": "remote_button_wireless_handheld_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZ3000_U3NV1JWK",
+        "_tz3000_u3nv1jwk"
+      ]
+    },
+    {
+      "driver": "scene_switch_wall_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0042",
+        "TS0043",
+        "ts0042",
+        "ts0043"
+      ]
+    },
+    {
+      "driver": "sensor_climate_lcdtemphumidsensor_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0201",
+        "TS0601",
+        "TY0201",
+        "ts0201",
+        "ts0601",
+        "ty0201"
+      ]
+    },
+    {
+      "driver": "sensor_climate_motion_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZ3000_KMH5QPMB",
+        "_tz3000_kmh5qpmb"
+      ]
+    },
+    {
+      "driver": "sensor_climate_presence_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "HOBEIAN"
+      ]
+    },
+    {
+      "driver": "sensor_contact_motion_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZ3000_O4MKAHKC",
+        "_tz3000_o4mkahkc"
+      ]
+    },
+    {
+      "driver": "sensor_contact_presence_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "HOBEIAN"
+      ]
+    },
+    {
+      "driver": "sensor_contact_rain_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0207",
+        "TS0601",
+        "ts0207",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "sensor_contact_water_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "Q9MPFHW",
+        "TS0207",
+        "TS0601",
+        "q9mpfhw",
+        "ts0207",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "sensor_gas_presence_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZE200_2AAELWXK",
+        "_tze200_2aaelwxk"
+      ]
+    },
+    {
+      "driver": "sensor_motion_radar_hybrid",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZE200_TTCOVULF",
+        "_tze200_ttcovulf"
+      ]
+    },
+    {
+      "driver": "siren_sirentemphumidsensor_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0601",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "sirentemphumidsensor",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0601",
+        "ts0601"
+      ]
+    },
+    {
+      "driver": "smart_button_switch",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0041",
+        "ts0041"
+      ]
+    },
+    {
+      "driver": "smart_knob_rotary_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS004F",
+        "ts004f"
+      ]
+    },
+    {
+      "driver": "smart_knob_switch",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS004F",
+        "ts004f"
+      ]
+    },
+    {
+      "driver": "smart_knob_switch_hybrid",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS004F",
+        "ts004f"
+      ]
+    },
+    {
+      "driver": "smart_remote_1_button",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS004F",
+        "ts004f"
+      ]
+    },
+    {
+      "driver": "smart_remote_1_button_2",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZ3000_JA5OSU5G",
+        "_tz3000_ja5osu5g"
+      ]
+    },
+    {
+      "driver": "smart_remote_4_buttons",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TYZB01_QM6DJPTA",
+        "_tyzb01_qm6djpta"
+      ]
+    },
+    {
+      "driver": "wall_curtain_switch",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZ3000_WPTAYAQR",
+        "_tz3000_wptayaqr"
+      ]
+    },
+    {
+      "driver": "wall_remote_1_gang",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZ3000_TK3S5TYG",
+        "_tz3000_tk3s5tyg"
+      ]
+    },
+    {
+      "driver": "wall_remote_3_gang",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0043",
+        "ts0043"
+      ]
+    },
+    {
+      "driver": "wall_remote_4_gang",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0044",
+        "ts0044"
+      ]
+    },
+    {
+      "driver": "wall_remote_4_gang_2",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS004F",
+        "ts004f"
+      ]
+    },
+    {
+      "driver": "wall_remote_4_gang_3",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0044",
+        "ts0044"
+      ]
+    },
+    {
+      "driver": "wall_remote_6_gang",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0046",
+        "ts0046"
+      ]
+    },
+    {
+      "driver": "wifi_air_purifier",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_air_quality",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_camera",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_cover",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_dehumidifier",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_dimmer",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_door_lock",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_doorbell",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_bulb",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_dimmer",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_fan",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_led",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_plug",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_pow",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_switch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_switch_2ch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_switch_4ch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_th",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_fan",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_garage_door",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_generic",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_heater",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_humidifier",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ir_remote",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_led_strip",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_light",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_pet_feeder",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_plug",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_power_strip",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_robot_vacuum",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sensor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_siren",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_basicr4",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_dualr3",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_micro",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_minir3",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_minir4",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_pow_elite",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_smate2",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_thr316d",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_tx_1ch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_tx_2ch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_tx_3ch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_switch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_switch_2gang",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_switch_3gang",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_switch_4gang",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_thermostat",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_water_tank_monitor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_water_valve",
+      "reason": "no_fingerprints"
+    }
+  ],
+  "splitSuggestions": [
+    {
+      "pid": "TS004F",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_4",
+          "button_wireless_smart_hybrid",
+          "remote_button_wireless_hybrid",
+          "remote_button_wireless_smart_hybrid",
+          "remote_button_wireless_wall_hybrid",
+          "smart_knob",
+          "smart_knob_rotary",
+          "smart_knob_rotary_hybrid",
+          "smart_knob_switch_hybrid"
+        ],
+        "remote": [
+          "smart_knob_switch",
+          "smart_remote_1_button",
+          "wall_remote_4_gang_2"
+        ],
+        "socket": [
+          "wall_dimmer_1gang_1way"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0001",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_2",
+          "button_wireless_wall_hybrid",
+          "remote_button_wireless_valve_hybrid",
+          "remote_button_wireless_wall_hybrid"
+        ],
+        "socket": [
+          "button_wireless_fingerbot_hybrid",
+          "button_wireless_switch_hybrid",
+          "fingerbot_switch_hybrid",
+          "switch_1gang",
+          "wall_switch_1gang_1way"
+        ],
+        "button": [
+          "fingerbot"
+        ],
+        "thermostat": [
+          "valve_single"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0043",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_2",
+          "button_wireless_3",
+          "button_wireless_scene_hybrid",
+          "button_wireless_wall_hybrid",
+          "remote_button_wireless_hybrid",
+          "remote_button_wireless_scene_hybrid",
+          "remote_button_wireless_wall_hybrid",
+          "scene_switch_3",
+          "scene_switch_wall_hybrid"
+        ],
+        "remote": [
+          "wall_remote_3_gang"
+        ],
+        "socket": [
+          "wall_switch_3gang_1way"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0042",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_2",
+          "button_wireless_scene_hybrid",
+          "button_wireless_wall_hybrid",
+          "remote_button_wireless_hybrid",
+          "remote_button_wireless_scene_hybrid",
+          "remote_button_wireless_wall_hybrid",
+          "scene_switch_2",
+          "scene_switch_wall_hybrid"
+        ],
+        "remote": [
+          "wall_remote_2_gang"
+        ],
+        "socket": [
+          "wall_switch_2gang_1way"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS011F",
+      "splitBy": {
+        "socket": [
+          "button_wireless_plug_hybrid",
+          "button_wireless_switch_hybrid",
+          "device_plug_energy_hybrid",
+          "device_plug_energy_monitor_hybrid",
+          "plug_energy_monitor",
+          "plug_smart",
+          "switch_1gang",
+          "switch_hybrid"
+        ],
+        "sensor": [
+          "plug_energy_monitor_hybrid"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0207",
+      "splitBy": {
+        "sensor": [
+          "contact_sensor",
+          "contact_sensor_zigbee_hybrid",
+          "rain_sensor",
+          "sensor_contact_rain_hybrid",
+          "sensor_contact_water_hybrid",
+          "sensor_contact_zigbee_hybrid",
+          "water_leak_sensor"
+        ],
+        "socket": [
+          "usb_dongle_dual_repeater"
+        ],
+        "other": [
+          "zigbee_repeater"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0002",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_2",
+          "button_wireless_wall_hybrid",
+          "remote_button_wireless_wall_hybrid"
+        ],
+        "socket": [
+          "button_wireless_switch_hybrid",
+          "remote_button_wireless_usb_hybrid",
+          "switch_2gang",
+          "usb_dongle_dual_repeater",
+          "wall_switch_2gang_1way"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0003",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_2",
+          "button_wireless_wall_hybrid",
+          "remote_button_wireless_wall_hybrid"
+        ],
+        "socket": [
+          "button_wireless_switch_hybrid",
+          "switch_2gang",
+          "switch_3gang",
+          "usb_dongle_triple",
+          "wall_switch_3gang_1way"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0201",
+      "splitBy": {
+        "fan": [
+          "air_purifier",
+          "air_purifier_climate_hybrid",
+          "air_purifier_lcdtemphumidsensor_hybrid"
+        ],
+        "sensor": [
+          "climate_sensor",
+          "lcdtemphumidsensor",
+          "sensor_climate_lcdtemphumidsensor_hybrid",
+          "temphumidsensor"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0013",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_2",
+          "button_wireless_wall_hybrid",
+          "remote_button_wireless_wall_hybrid"
+        ],
+        "socket": [
+          "button_wireless_switch_hybrid",
+          "switch_2gang",
+          "switch_3gang",
+          "wall_switch_3gang_1way"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TY0201",
+      "splitBy": {
+        "fan": [
+          "air_purifier",
+          "air_purifier_climate_hybrid"
+        ],
+        "sensor": [
+          "climate_sensor",
+          "lcdtemphumidsensor",
+          "sensor_climate_lcdtemphumidsensor_hybrid",
+          "temphumidsensor"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0041",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_1",
+          "button_wireless_smart_hybrid",
+          "remote_button_wireless_hybrid",
+          "remote_button_wireless_smart_hybrid",
+          "remote_button_wireless_wall_hybrid"
+        ],
+        "remote": [
+          "smart_button_switch"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0011",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_2",
+          "button_wireless_wall_hybrid",
+          "remote_button_wireless_wall_hybrid"
+        ],
+        "socket": [
+          "button_wireless_switch_hybrid",
+          "switch_1gang",
+          "wall_switch_1gang_1way"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0012",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_2",
+          "button_wireless_wall_hybrid",
+          "remote_button_wireless_wall_hybrid"
+        ],
+        "socket": [
+          "button_wireless_switch_hybrid",
+          "switch_2gang",
+          "wall_switch_2gang_1way"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0044",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_4",
+          "remote_button_wireless_hybrid",
+          "remote_button_wireless_wall_hybrid"
+        ],
+        "remote": [
+          "handheld_remote_4_buttons",
+          "wall_remote_4_gang",
+          "wall_remote_4_gang_3"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "S26R2ZB",
+      "splitBy": {
+        "socket": [
+          "device_plug_energy_hybrid",
+          "device_plug_energy_monitor_hybrid",
+          "plug_energy_monitor",
+          "plug_smart",
+          "switch_1gang"
+        ],
+        "sensor": [
+          "plug_energy_monitor_hybrid"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "ZBMINIL2",
+      "splitBy": {
+        "socket": [
+          "device_plug_energy_monitor_hybrid",
+          "module_mini_switch",
+          "module_mini_switch_hybrid",
+          "plug_energy_monitor",
+          "switch_1gang"
+        ],
+        "sensor": [
+          "plug_energy_monitor_hybrid"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0726",
+      "splitBy": {
+        "sensor": [
+          "scene_switch_2",
+          "scene_switch_3"
+        ],
+        "socket": [
+          "switch_1gang",
+          "switch_hybrid",
+          "switch_wall_6gang",
+          "wall_switch_4gang_1way"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0222",
+      "splitBy": {
+        "fan": [
+          "air_purifier",
+          "air_purifier_climate_hybrid"
+        ],
+        "sensor": [
+          "climate_sensor",
+          "illuminance_sensor",
+          "light_sensor_outdoor"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0049",
+      "splitBy": {
+        "socket": [
+          "device_plug_smart_hybrid",
+          "device_plug_smart_water_hybrid",
+          "plug_smart"
+        ],
+        "thermostat": [
+          "valve_irrigation"
+        ],
+        "other": [
+          "water_valve_garden"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "RH3052",
+      "splitBy": {
+        "fan": [
+          "air_purifier",
+          "air_purifier_climate_hybrid"
+        ],
+        "sensor": [
+          "climate_sensor",
+          "temphumidsensor"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS1201",
+      "splitBy": {
+        "remote": [
+          "blaster_remote_hybrid",
+          "ir_blaster",
+          "ir_remote"
+        ],
+        "sensor": [
+          "climate_sensor"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "SNZB-01M",
+      "splitBy": {
+        "button": [
+          "button_wireless"
+        ],
+        "sensor": [
+          "button_wireless_1",
+          "button_wireless_4",
+          "remote_button_wireless_hybrid"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0111",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_2"
+        ],
+        "socket": [
+          "button_wireless_plug_hybrid",
+          "plug_smart",
+          "remote_button_wireless_plug_hybrid"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0046",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_6",
+          "remote_button_wireless_hybrid",
+          "remote_button_wireless_wall_hybrid"
+        ],
+        "remote": [
+          "wall_remote_6_gang"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0203",
+      "splitBy": {
+        "sensor": [
+          "contact_sensor",
+          "presence_sensor_radar",
+          "sensor_presence_radar_hybrid"
+        ],
+        "other": [
+          "device_generic_tuya_universal_hybrid"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "S31ZB",
+      "splitBy": {
+        "socket": [
+          "device_plug_energy_monitor_hybrid",
+          "plug_energy_monitor",
+          "switch_1gang"
+        ],
+        "sensor": [
+          "plug_energy_monitor_hybrid"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0501B",
+      "splitBy": {
+        "light": [
+          "bulb_dimmable",
+          "led_controller_dimmable"
+        ],
+        "socket": [
+          "wall_dimmer_1gang_1way"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "SNZB-01",
+      "splitBy": {
+        "button": [
+          "button_wireless"
+        ],
+        "sensor": [
+          "button_wireless_1",
+          "remote_button_wireless_hybrid"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "SNZB-01P",
+      "splitBy": {
+        "button": [
+          "button_wireless"
+        ],
+        "sensor": [
+          "button_wireless_1",
+          "remote_button_wireless_hybrid"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0001_FINGERBOT",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_2"
+        ],
+        "socket": [
+          "button_wireless_fingerbot_hybrid"
+        ],
+        "button": [
+          "fingerbot"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS000F",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_2"
+        ],
+        "socket": [
+          "button_wireless_switch_hybrid",
+          "switch_1gang"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0014",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_4"
+        ],
+        "socket": [
+          "button_wireless_switch_hybrid",
+          "switch_4gang"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0301",
+      "splitBy": {
+        "windowcoverings": [
+          "curtain_motor"
+        ],
+        "sensor": [
+          "gas_sensor"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TRI-C1ZR",
+      "splitBy": {
+        "light": [
+          "led_controller_dimmable"
+        ],
+        "socket": [
+          "wall_dimmer_1gang_1way"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TRI-K1ZR",
+      "splitBy": {
+        "light": [
+          "led_controller_dimmable"
+        ],
+        "socket": [
+          "wall_dimmer_1gang_1way"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "SNZB-06P",
+      "splitBy": {
+        "socket": [
+          "plug_energy_monitor"
+        ],
+        "sensor": [
+          "presence_sensor_radar"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    }
+  ],
+  "pairingAudit": [
+    {
+      "driver": "air_purifier_din_hybrid",
+      "risk": "high",
+      "reason": "Tuya MCU (_TZE) driver missing productId triggers (risky generic matching)"
+    },
+    {
+      "driver": "air_purifier_quality_hybrid",
+      "risk": "high",
+      "reason": "Tuya MCU (_TZE) driver missing productId triggers (risky generic matching)"
+    },
+    {
+      "driver": "air_purifier_sensor_hybrid",
+      "risk": "high",
+      "reason": "Tuya MCU (_TZE) driver missing productId triggers (risky generic matching)"
+    },
+    {
+      "driver": "climate_sensor_smart_hybrid",
+      "risk": "high",
+      "reason": "Tuya MCU (_TZE) driver missing productId triggers (risky generic matching)"
+    },
+    {
+      "driver": "device_air_purifier_din_hybrid",
+      "risk": "high",
+      "reason": "Tuya MCU (_TZE) driver missing productId triggers (risky generic matching)"
+    },
+    {
+      "driver": "device_air_purifier_humidifier_hybrid",
+      "risk": "high",
+      "reason": "Tuya MCU (_TZE) driver missing productId triggers (risky generic matching)"
+    },
+    {
+      "driver": "device_air_purifier_siren_hybrid",
+      "risk": "high",
+      "reason": "Tuya MCU (_TZE) driver missing productId triggers (risky generic matching)"
+    },
+    {
+      "driver": "device_air_purifier_smart_hybrid",
+      "risk": "high",
+      "reason": "Tuya MCU (_TZE) driver missing productId triggers (risky generic matching)"
+    },
+    {
+      "driver": "device_air_purifier_water_hybrid",
+      "risk": "high",
+      "reason": "Tuya MCU (_TZE) driver missing productId triggers (risky generic matching)"
+    },
+    {
+      "driver": "sensor_gas_presence_hybrid",
+      "risk": "high",
+      "reason": "Tuya MCU (_TZE) driver missing productId triggers (risky generic matching)"
+    },
+    {
+      "driver": "sensor_motion_radar_hybrid",
+      "risk": "high",
+      "reason": "Tuya MCU (_TZE) driver missing productId triggers (risky generic matching)"
+    }
+  ],
+  "summary": {
+    "totalDrivers": 304,
+    "pidConflicts": 69,
+    "highSeverity": 37,
+    "mfrConflicts": 0,
+    "orphans": 129,
+    "splitSuggestions": 37
+  }
+}

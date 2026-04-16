@@ -1,0 +1,623 @@
+{
+  "name": {
+    "en": "Sensor Motion Presence Hybrid",
+    "nl": "Sensor Motion Presence Hybrid",
+    "fr": "Sensor Motion Presence Hybrid"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_motion",
+    "measure_luminance",
+    "measure_temperature",
+    "measure_humidity",
+    "alarm_human",
+    "measure_battery",
+    "measure_luminance.distance",
+    "alarm_tamper"
+  ],
+  "capabilitiesOptions": {
+    "measure_luminance.distance": {
+      "title": {
+        "en": "Detection Distance",
+        "fr": "Distance de Détection",
+        "nl": "Detectieafstand",
+        "de": "Erkennungsdistanz"
+      },
+      "units": {
+        "en": "m"
+      }
+    }
+  },
+  "subDevices": [],
+  "zigbee": {
+    "manufacturerName": [
+      "_TZE284_BQUWRQH1",
+      "_tze284_bquwrqh1"
+    ],
+    "productId": [
+      "TS0225",
+      "TS0601",
+      "ts0225",
+      "ts0601"
+    ],
+    "learnmode": {
+      "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+      }
+    },
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    }
+  },
+  "settings": [
+    {
+      "id": "power_source",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Source",
+        "fr": "Source d'Alimentation"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "ac",
+          "label": {
+            "en": "AC Powered",
+            "fr": "Alimentation Secteur"
+          }
+        },
+        {
+          "id": "dc",
+          "label": {
+            "en": "DC Powered",
+            "fr": "Alimentation DC"
+          }
+        },
+        {
+          "id": "battery",
+          "label": {
+            "en": "Battery Powered",
+            "fr": "Sur Batterie"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select power source manually or use auto-detection",
+        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+      }
+    },
+    {
+      "id": "battery_type",
+      "type": "dropdown",
+      "label": {
+        "en": "Battery Type",
+        "fr": "Type de Batterie"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "Détection Automatique"
+          }
+        },
+        {
+          "id": "CR2032",
+          "label": {
+            "en": "CR2032",
+            "fr": "CR2032 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "CR2450",
+          "label": {
+            "en": "CR2450",
+            "fr": "CR2450 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA",
+            "fr": "AAA"
+          }
+        },
+        {
+          "id": "AA",
+          "label": {
+            "en": "AA",
+            "fr": "AA"
+          }
+        },
+        {
+          "id": "CR123A",
+          "label": {
+            "en": "CR123A",
+            "fr": "CR123A"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select battery type manually or use auto-detection based on voltage",
+        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+      }
+    },
+    {
+      "id": "battery_low_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold",
+        "fr": "Seuil Batterie Faible (%)"
+      },
+      "value": 20,
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "hint": {
+        "en": "Trigger low battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "battery_critical_threshold",
+      "type": "number",
+      "label": {
+        "en": "Critical Battery Threshold",
+        "fr": "Seuil Batterie Critique (%)"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "hint": {
+        "en": "Trigger critical battery warning when below this percentage",
+        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "enable_battery_notifications",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Battery Notifications",
+        "fr": "Activer Notifications Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Send flow notifications for battery events",
+        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+      }
+    },
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval",
+        "fr": "Intervalle Rapport Batterie (heures)"
+      },
+      "value": 24,
+      "min": 1,
+      "max": 168,
+      "step": 1,
+      "hint": {
+        "en": "How often to request battery status updates",
+        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+      }
+    },
+    {
+      "id": "optimization_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy Optimization Mode",
+        "fr": "Mode Optimisation Énergétique"
+      },
+      "value": "balanced",
+      "values": [
+        {
+          "id": "performance",
+          "label": {
+            "en": "Performance (More responsive)",
+            "fr": "Performance (Plus réactif)"
+          }
+        },
+        {
+          "id": "balanced",
+          "label": {
+            "en": "Balanced",
+            "fr": "Équilibré"
+          }
+        },
+        {
+          "id": "power_saving",
+          "label": {
+            "en": "Power Saving (Longer battery)",
+            "fr": "Économie d'énergie (Batterie plus longue)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Balance between responsiveness and battery life",
+        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+      }
+    },
+    {
+      "id": "show_voltage",
+      "type": "checkbox",
+      "label": {
+        "en": "Show Battery Voltage",
+        "fr": "Afficher Tension Batterie"
+      },
+      "value": false,
+      "hint": {
+        "en": "Display raw battery voltage in device settings",
+        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+      }
+    },
+    {
+      "id": "enable_power_estimation",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Power Estimation",
+        "fr": "Activer Estimation Puissance"
+      },
+      "value": true,
+      "hint": {
+        "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+      }
+    },
+    {
+      "id": "invert_presence",
+      "type": "checkbox",
+      "label": {
+        "en": "Invert Presence Detection",
+        "fr": "Inverser Détection Présence"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable if presence shows active when room is empty and inactive when occupied (firmware bug workaround)",
+        "fr": "Activer si la présence indique actif quand la pièce est vide et inactif quand occupée (contournement bug firmware)"
+      }
+    },
+    {
+      "id": "motion_detection_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Motion Detection Mode",
+        "fr": "Mode de Détection",
+        "nl": "Bewegingsdetectie Modus",
+        "de": "Bewegungserkennungsmodus"
+      },
+      "value": "1",
+      "values": [
+        {
+          "id": "0",
+          "label": {
+            "en": "PIR Only",
+            "fr": "PIR Uniquement",
+            "nl": "Alleen PIR",
+            "de": "Nur PIR"
+          }
+        },
+        {
+          "id": "1",
+          "label": {
+            "en": "PIR + Radar (Recommended)",
+            "fr": "PIR + Radar (Recommandé)",
+            "nl": "PIR + Radar (Aanbevolen)",
+            "de": "PIR + Radar (Empfohlen)"
+          }
+        },
+        {
+          "id": "2",
+          "label": {
+            "en": "Radar Only",
+            "fr": "Radar Uniquement",
+            "nl": "Alleen Radar",
+            "de": "Nur Radar"
+          }
+        }
+      ],
+      "hint": {
+        "en": "ZG-204ZM: Select detection method (PIR for motion, Radar for presence)",
+        "fr": "ZG-204ZM: Sélectionner la méthode de détection (PIR pour mouvement, Radar pour présence)"
+      }
+    },
+    {
+      "id": "motion_detection_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Motion Sensitivity",
+        "fr": "Sensibilité Mouvement",
+        "nl": "Bewegingsgevoeligheid",
+        "de": "Bewegungsempfindlichkeit"
+      },
+      "value": 5,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "hint": {
+        "en": "ZG-204ZM: PIR/Radar motion sensitivity (0=lowest, 10=highest)",
+        "fr": "ZG-204ZM: Sensibilité PIR/Radar (0=minimum, 10=maximum)"
+      }
+    },
+    {
+      "id": "large_motion_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Large Motion Sensitivity",
+        "fr": "Sensibilité Grand Mouvement"
+      },
+      "value": 5,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "hint": {
+        "en": "ZG-204ZM: Sensitivity for detecting large movements like walking (0=lowest, 10=highest)",
+        "fr": "ZG-204ZM: Sensibilité pour détecter les grands mouvements comme marcher (0=min, 10=max)"
+      }
+    },
+    {
+      "id": "large_motion_distance",
+      "type": "number",
+      "label": {
+        "en": "Large Motion Distance",
+        "fr": "Distance Grand Mouvement"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "units": "m",
+      "hint": {
+        "en": "ZG-204ZM: Maximum distance for detecting large movements (0-10 meters)",
+        "fr": "ZG-204ZM: Distance maximale pour détecter les grands mouvements (0-10 mètres)"
+      }
+    },
+    {
+      "id": "static_detection_distance",
+      "type": "number",
+      "label": {
+        "en": "Static Detection Distance",
+        "fr": "Distance Détection Statique",
+        "nl": "Statische Detectie Afstand",
+        "de": "Statische Erkennungsdistanz"
+      },
+      "value": 6,
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "units": "m",
+      "hint": {
+        "en": "ZG-204ZM: Maximum distance for detecting stationary persons (0-6 meters)",
+        "fr": "ZG-204ZM: Distance maximale pour détecter les personnes immobiles (0-6 mètres)"
+      }
+    },
+    {
+      "id": "static_detection_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Static Detection Sensitivity",
+        "fr": "Sensibilité Détection Statique",
+        "nl": "Statische Detectie Gevoeligheid",
+        "de": "Statische Erkennungsempfindlichkeit"
+      },
+      "value": 5,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "hint": {
+        "en": "ZG-204ZM: Sensitivity for detecting stationary persons (0=lowest, 10=highest)",
+        "fr": "ZG-204ZM: Sensibilité pour détecter les personnes immobiles (0=minimum, 10=maximum)"
+      }
+    },
+    {
+      "id": "small_detection_distance",
+      "type": "number",
+      "label": {
+        "en": "Small Motion Distance",
+        "fr": "Distance Petit Mouvement"
+      },
+      "value": 6,
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "units": "m",
+      "hint": {
+        "en": "ZG-204ZM: Maximum distance for detecting micro-movements like breathing (0-6 meters)",
+        "fr": "ZG-204ZM: Distance maximale pour détecter les micro-mouvements comme la respiration (0-6 mètres)"
+      }
+    },
+    {
+      "id": "small_detection_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Small Motion Sensitivity",
+        "fr": "Sensibilité Petit Mouvement"
+      },
+      "value": 5,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "hint": {
+        "en": "ZG-204ZM: Sensitivity for detecting micro-movements like breathing (0=lowest, 10=highest)",
+        "fr": "ZG-204ZM: Sensibilité pour détecter les micro-mouvements (0=minimum, 10=maximum)"
+      }
+    },
+    {
+      "id": "fading_time",
+      "type": "number",
+      "label": {
+        "en": "Presence Keep Time",
+        "fr": "Temps de Maintien Présence",
+        "nl": "Aanwezigheid Vasthoudtijd",
+        "de": "Anwesenheit Haltezeit"
+      },
+      "value": 90,
+      "min": 0,
+      "max": 28800,
+      "step": 10,
+      "units": "s",
+      "hint": {
+        "en": "ZG-204ZM: How long presence stays active after last detection (seconds)",
+        "fr": "ZG-204ZM: Durée de maintien de la présence après dernière détection (secondes)"
+      }
+    },
+    {
+      "id": "radar_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Radar Sensitivity",
+        "fr": "Sensibilité Radar"
+      },
+      "value": 5,
+      "min": 1,
+      "max": 9,
+      "step": 1,
+      "hint": {
+        "en": "Radar detection sensitivity (1=lowest, 9=highest)",
+        "fr": "Sensibilité radar (1=min, 9=max)"
+      }
+    },
+    {
+      "id": "min_range",
+      "type": "number",
+      "label": {
+        "en": "Minimum Detection Range",
+        "fr": "Portée Minimale"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "units": "m",
+      "hint": {
+        "en": "Minimum detection range (0-10m)",
+        "fr": "Portée minimale de détection (0-10m)"
+      }
+    },
+    {
+      "id": "max_range",
+      "type": "number",
+      "label": {
+        "en": "Maximum Detection Range",
+        "fr": "Portée Maximale"
+      },
+      "value": 6,
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "units": "m",
+      "hint": {
+        "en": "Maximum detection range (0-10m)",
+        "fr": "Portée maximale de détection (0-10m)"
+      }
+    },
+    {
+      "id": "detection_delay",
+      "type": "number",
+      "label": {
+        "en": "Detection Delay",
+        "fr": "Délai de Détection"
+      },
+      "value": 1,
+      "min": 0,
+      "max": 10,
+      "step": 0.1,
+      "units": "s",
+      "hint": {
+        "en": "Delay before presence is reported (0-10s)",
+        "fr": "Délai avant signalement de présence (0-10s)"
+      }
+    },
+    {
+      "id": "indicator",
+      "type": "checkbox",
+      "label": {
+        "en": "LED Indicator",
+        "fr": "Indicateur LED",
+        "nl": "LED Indicator",
+        "de": "LED-Anzeige"
+      },
+      "value": true,
+      "hint": {
+        "en": "Enable/disable the LED indicator on the sensor",
+        "fr": "Activer/désactiver l'indicateur LED"
+      }
+    }
+  ],
+  "images": {
+    "small": "drivers/presence_sensor_radar/assets/images/small.png",
+    "large": "drivers/presence_sensor_radar/assets/images/large.png",
+    "xlarge": "drivers/presence_sensor_radar/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ],
+    "approximation": {
+      "usageConstant": 0.5
+    },
+    "mains": true
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "sensor_motion_presence_hybrid_presence_detected",
+        "title": {
+          "en": "Sensor Motion Presence Hybrid Presence Detected",
+          "fr": "Sensor Motion Presence Hybrid Presence Detected"
+        }
+      }
+    ]
+  }
+}

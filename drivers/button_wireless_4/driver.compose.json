@@ -1,0 +1,673 @@
+{
+  "name": {
+    "en": "4-Buttons Wireless Controller",
+    "fr": "4-Boutons ContrÃ´leur Sans Fil",
+    "nl": "4-Knoppen Draadloze Controller",
+    "de": "4-Tasten Drahtlos-Controller",
+    "it": "4-Pulsanti Controller Wireless",
+    "sv": "4-Knappar TrÃ¥dlÃ¶s Kontroller",
+    "no": "4-Knapper TrÃ¥dlÃ¸s Kontroller",
+    "es": "4-Botones Controlador InalÃ¡mbrico",
+    "da": "4-Knapper TrÃ¥dlÃ¸s Controller"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "button.1",
+    "button.2",
+    "button.3",
+    "button.4",
+    "measure_battery",
+    "measure_radio_stability",
+    "measure_maintenance_score"
+  ],
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1"
+      },
+      "getable": false,
+      "setable": true
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2"
+      },
+      "getable": false,
+      "setable": true
+    },
+    "button.3": {
+      "title": {
+        "en": "Button 3",
+        "fr": "Bouton 3"
+      },
+      "getable": false,
+      "setable": true
+    },
+    "button.4": {
+      "title": {
+        "en": "Button 4",
+        "fr": "Bouton 4"
+      },
+      "getable": false,
+      "setable": true
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "CR2450"
+    ],
+    "approximation": {
+      "usageConstant": 0.5
+    },
+    "mains": true
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tyzb01_bagt1e4o",
+      "_tyzb01_qm6djpta",
+      "_tz3000_abci1hiu",
+      "_tz3000_fjt5218m",
+      "_tz3000_j70oanab",
+      "_tz3000_jcspr0tp",
+      "_tz3000_kaflzta4",
+      "_tz3000_lxw3kcw2",
+      "_tz3000_r0pmi2p3",
+      "_tz3000_rrjr1dsk",
+      "_tz3000_sqw3qqtc",
+      "_tz3000_u3nv1jwk",
+      "_tz3000_uaa99arv",
+      "_tz3000_ufhtxr59",
+      "_tz3000_uri7ez8u",
+      "_tz3000_uri7oadn",
+      "_tz3000_vdfwjopk",
+      "_tz3000_vp6clf9d",
+      "_tz3000_w4thianr",
+      "_tz3000_w8jwkczz",
+      "_tz3000_wkai4ga5",
+      "_tz3000_xkh6oajz",
+      "_tz3000_xwuveizv",
+      "_tz3000_yesuiipb",
+      "_tz3000_zgyzgdua",
+      "_tz3000_zszzgweg",
+      "_tz3290_785fbxik",
+      "_tz3290_nkpxapoz",
+      "_tz3290_yyax9ajf"
+    ],
+    "productId": [
+      "SNZB-01M",
+      "TS0014",
+      "TS0044",
+      "TS004F",
+      "snzb-01m",
+      "ts0014",
+      "ts0044",
+      "ts004f"
+    ],
+    "learnmode": {
+      "image": "/drivers/button_wireless_4/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
+        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
+        "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
+        "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
+        "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
+        "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
+        "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
+        "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement",
+        "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement"
+      }
+    },
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          1,
+          5,
+          6,
+          18,
+          57344
+        ]
+      },
+      "2": {
+        "clusters": [
+          0,
+          6,
+          18,
+          57344
+        ]
+      },
+      "3": {
+        "clusters": [
+          0,
+          6,
+          18,
+          57344
+        ]
+      },
+      "4": {
+        "clusters": [
+          0,
+          6,
+          18,
+          57344
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/button_wireless_4/assets/images/small.png",
+    "large": "drivers/button_wireless_4/assets/images/large.png",
+    "xlarge": "drivers/button_wireless_4/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "settings": [
+    {
+      "id": "power_source",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Source",
+        "fr": "Source d'Alimentation"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "DÃ©tection Automatique"
+          }
+        },
+        {
+          "id": "ac",
+          "label": {
+            "en": "AC Powered",
+            "fr": "Alimentation Secteur"
+          }
+        },
+        {
+          "id": "dc",
+          "label": {
+            "en": "DC Powered",
+            "fr": "Alimentation DC"
+          }
+        },
+        {
+          "id": "battery",
+          "label": {
+            "en": "Battery Powered",
+            "fr": "Sur Batterie"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select power source manually or use auto-detection",
+        "fr": "SÃ©lectionnez la source d'alimentation manuellement ou utilisez la dÃ©tection automatique"
+      }
+    },
+    {
+      "id": "battery_type",
+      "type": "dropdown",
+      "label": {
+        "en": "Battery Type",
+        "fr": "Type de Batterie"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "DÃ©tection Automatique"
+          }
+        },
+        {
+          "id": "CR2032",
+          "label": {
+            "en": "CR2032",
+            "fr": "CR2032 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "CR2450",
+          "label": {
+            "en": "CR2450",
+            "fr": "CR2450 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA",
+            "fr": "AAA"
+          }
+        },
+        {
+          "id": "AA",
+          "label": {
+            "en": "AA",
+            "fr": "AA"
+          }
+        },
+        {
+          "id": "CR123A",
+          "label": {
+            "en": "CR123A",
+            "fr": "CR123A"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select battery type manually or use auto-detection based on voltage",
+        "fr": "SÃ©lectionnez le type de batterie manuellement ou utilisez la dÃ©tection automatique basÃ©e sur la tension"
+      }
+    },
+    {
+      "id": "battery_low_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold",
+        "fr": "Seuil Batterie Faible (%)"
+      },
+      "value": 20,
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "hint": {
+        "en": "Trigger low battery warning when below this percentage",
+        "fr": "DÃ©clencher l'alerte batterie faible en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "battery_critical_threshold",
+      "type": "number",
+      "label": {
+        "en": "Critical Battery Threshold",
+        "fr": "Seuil Batterie Critique (%)"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "hint": {
+        "en": "Trigger critical battery warning when below this percentage",
+        "fr": "DÃ©clencher l'alerte batterie critique en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "enable_battery_notifications",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Battery Notifications",
+        "fr": "Activer Notifications Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Send flow notifications for battery events",
+        "fr": "Envoyer des notifications de flow pour les Ã©vÃ©nements de batterie"
+      }
+    },
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval",
+        "fr": "Intervalle Rapport Batterie (heures)"
+      },
+      "value": 24,
+      "min": 1,
+      "max": 168,
+      "step": 1,
+      "hint": {
+        "en": "How often to request battery status updates",
+        "fr": "FrÃ©quence de demande des mises Ã jour d'Ã©tat de batterie"
+      }
+    },
+    {
+      "id": "optimization_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy Optimization Mode",
+        "fr": "Mode Optimisation Ã‰nergÃ©tique"
+      },
+      "value": "balanced",
+      "values": [
+        {
+          "id": "performance",
+          "label": {
+            "en": "Performance (More responsive)",
+            "fr": "Performance (Plus rÃ©actif)"
+          }
+        },
+        {
+          "id": "balanced",
+          "label": {
+            "en": "Balanced",
+            "fr": "Ã‰quilibrÃ©"
+          }
+        },
+        {
+          "id": "power_saving",
+          "label": {
+            "en": "Power Saving (Longer battery)",
+            "fr": "Ã‰conomie d'Ã©nergie (Batterie plus longue)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Balance between responsiveness and battery life",
+        "fr": "Ã‰quilibre entre rÃ©activitÃ© et durÃ©e de vie de la batterie"
+      }
+    },
+    {
+      "id": "show_voltage",
+      "type": "checkbox",
+      "label": {
+        "en": "Show Battery Voltage",
+        "fr": "Afficher Tension Batterie"
+      },
+      "value": false,
+      "hint": {
+        "en": "Display raw battery voltage in device settings",
+        "fr": "Afficher la tension brute de la batterie dans les paramÃ¨tres du pÃ©riphÃ©rique"
+      }
+    },
+    {
+      "id": "enable_power_estimation",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Power Estimation",
+        "fr": "Activer Estimation Puissance"
+      },
+      "value": true,
+      "hint": {
+        "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+        "fr": "Estimer la consommation quand la mesure rÃ©elle n'est pas disponible (appareils AC/DC seulement)"
+      }
+    },
+    {
+      "id": "tuya_dp_configuration",
+      "type": "label",
+      "label": {
+        "en": "Tuya Datapoint Configuration",
+        "fr": "Configuration Tuya Datapoint"
+      },
+      "value": "{ \"1\": \"button_1_action\", \"2\": \"button_2_action\", \"3\": \"button_3_action\", \"4\": \"button_4_action\", \"101\": \"battery_percentage\"\n}"
+    },
+    {
+      "id": "dp_debug_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "DP Debug Mode",
+        "fr": "Mode Debug DP"
+      },
+      "value": false,
+      "hint": {
+        "en": "Log all Tuya DP data for troubleshooting",
+        "fr": "Logger toutes les donnÃ©es Tuya DP pour diagnostic"
+      }
+    },
+    {
+      "id": "enable_time_sync",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Time Sync",
+        "fr": "Activer Synchro Heure"
+      },
+      "value": true,
+      "hint": {
+        "en": "Sync device time with Homey",
+        "fr": "Synchroniser l'heure du device avec Homey"
+      }
+    },
+    {
+      "id": "button_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Operating Mode",
+        "fr": "Mode de fonctionnement"
+      },
+      "hint": {
+        "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
+        "fr": "Le mode ScÃ¨ne permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de dÃ©tecter et basculer automatiquement."
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto-Detect",
+            "fr": "DÃ©tection Auto"
+          }
+        },
+        {
+          "id": "scene",
+          "label": {
+            "en": "Scene Mode (Multi-press)",
+            "fr": "Mode ScÃ¨ne (Multi-clics)"
+          }
+        },
+        {
+          "id": "dimmer",
+          "label": {
+            "en": "Dimmer Mode",
+            "fr": "Mode Variateur"
+          }
+        }
+      ]
+    },
+    {
+      "id": "enable_radio_sensing",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Radio Presence Sensing",
+        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
+      },
+      "value": false,
+      "hint": {
+        "en": "Infer presence from Zigbee signal fluctuations (BETA)",
+        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
+      }
+    },
+    {
+      "id": "radio_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Radio Presence Sensitivity",
+        "fr": "SensibilitÃ© PrÃ©sence Radio"
+      },
+      "value": 15,
+      "min": 5,
+      "max": 50,
+      "hint": {
+        "en": "LQI variance threshold (higher = less sensitive)",
+        "fr": "Seuil de variance LQI (plus haut = moins sensible)"
+      }
+    },
+    {
+      "id": "enable_software_child_lock",
+      "type": "checkbox",
+      "label": {
+        "en": "Software Child Lock",
+        "fr": "SÃ©curitÃ© Enfant Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Prevents manual state changes on the device",
+        "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil"
+      }
+    },
+    {
+      "id": "auto_off_duration",
+      "type": "number",
+      "label": {
+        "en": "Auto-Off Timer (Minutes)",
+        "fr": "Minuterie Auto-Off (Minutes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 1440,
+      "hint": {
+        "en": "Turn off automatically after X minutes (0 = disabled)",
+        "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)"
+      }
+    },
+    {
+      "id": "enable_vacation_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "Vacation Mode (Presence Sim)",
+        "fr": "Mode Vacances (Simulation PrÃ©sence)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Randomly toggle device during evenings to simulate presence",
+        "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence"
+      }
+    },
+    {
+      "id": "emulated_motion_hold",
+      "type": "number",
+      "label": {
+        "en": "Emulated Motion Hold (Seconds)",
+        "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 3600,
+      "hint": {
+        "en": "Keep motion 'ON' for X seconds after hardware clears",
+        "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel"
+      }
+    },
+    {
+      "id": "double_click_interval",
+      "type": "number",
+      "label": {
+        "en": "Double Click Interval (ms)",
+        "fr": "Intervalle Double-Clic (ms)"
+      },
+      "value": 400,
+      "min": 100,
+      "max": 1000,
+      "hint": {
+        "en": "Software emulation for single-action buttons",
+        "fr": "Ã‰mulation logicielle pour boutons Ã action unique"
+      }
+    },
+    {
+      "id": "overload_threshold",
+      "type": "number",
+      "label": {
+        "en": "Overload Protection (Watts)",
+        "fr": "Protection Surcharge (Watts)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 4000,
+      "hint": {
+        "en": "Cut power if consumption exceeds this value (0 = disabled)",
+        "fr": "Coupure si la consommation dÃ©passe cette valeur (0 = dÃ©sactivÃ©)"
+      }
+    },
+    {
+      "id": "inching_duration",
+      "type": "number",
+      "label": {
+        "en": "Inching Duration (Secs)",
+        "fr": "DurÃ©e Inching (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 60,
+      "step": 0.1,
+      "hint": {
+        "en": "Automatically turn off after X seconds (Pulse mode)",
+        "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)"
+      }
+    },
+    {
+      "id": "enable_state_recovery",
+      "type": "checkbox",
+      "label": {
+        "en": "Software State Recovery",
+        "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Restore previous ON/OFF state after power failure",
+        "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant"
+      }
+    },
+    {
+      "id": "enable_soft_transitions",
+      "type": "checkbox",
+      "label": {
+        "en": "Soft transitions (Fade)",
+        "fr": "Transitions douces (Fade)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable software-simulated smooth transitions (Lights/Dim)",
+        "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)"
+      }
+    },
+    {
+      "id": "maintenance_threshold",
+      "type": "number",
+      "label": {
+        "en": "Maintenance Alert Threshold",
+        "fr": "Seuil Alerte Maintenance"
+      },
+      "value": 30,
+      "min": 0,
+      "max": 100,
+      "hint": {
+        "en": "Alert if health score drops below this value",
+        "fr": "Alerte si le score de santÃ© descend sous cette valeur"
+      }
+    }
+  ],
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "VÃ©rifier MÃ J OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  }
+}

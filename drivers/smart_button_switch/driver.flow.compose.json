@@ -1,0 +1,59 @@
+{
+  "triggers": [
+    {
+      "id": "smart_button_switch_button_1gang_button_1_pressed",
+      "title": {
+        "fr": "Bouton appuyé",
+        "en": "Button pressed"
+      },
+      "titleFormatted": {
+        "fr": "Bouton appuyé",
+        "en": "Button pressed"
+      }
+    },
+    {
+      "id": "smart_button_switch_button_1gang_button_1_double",
+      "title": {
+        "fr": "Bouton double-appui",
+        "en": "Button double-pressed"
+      },
+      "titleFormatted": {
+        "fr": "Bouton double-appui",
+        "en": "Button double-pressed"
+      }
+    },
+    {
+      "id": "smart_button_switch_button_1gang_button_1_long",
+      "title": {
+        "fr": "Bouton appui long",
+        "en": "Button long-pressed"
+      },
+      "titleFormatted": {
+        "fr": "Bouton appui long",
+        "en": "Button long-pressed"
+      }
+    },
+    {
+      "id": "smart_button_switch_button_1gang_button_1_triple",
+      "title": {
+        "fr": "Bouton triple-appui",
+        "en": "Button triple-pressed"
+      },
+      "titleFormatted": {
+        "fr": "Bouton triple-appui",
+        "en": "Button triple-pressed"
+      }
+    },
+    {
+      "id": "smart_button_switch_button_1gang_button_1_release",
+      "title": {
+        "fr": "Bouton relâché",
+        "en": "Button released"
+      },
+      "titleFormatted": {
+        "fr": "Bouton relâché",
+        "en": "Button released"
+      }
+    }
+  ]
+}

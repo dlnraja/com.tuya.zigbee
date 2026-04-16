@@ -1,0 +1,143 @@
+{
+  "triggers": [
+    {
+      "id": "sensor_climate_smart_hybrid_climate_sensor_smart_hybrid_smart_scene_panel_scene_activated",
+      "title": {
+        "en": "Scene activated"
+      },
+      "titleFormatted": {
+        "en": "Scene [[scene]] activated"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "scene",
+          "values": [
+            {
+              "id": "5",
+              "label": {
+                "en": "Scene 5"
+              }
+            },
+            {
+              "id": "6",
+              "label": {
+                "en": "Scene 6"
+              }
+            },
+            {
+              "id": "7",
+              "label": {
+                "en": "Scene 7"
+              }
+            },
+            {
+              "id": "8",
+              "label": {
+                "en": "Scene 8"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sensor_climate_smart_hybrid_climate_sensor_smart_hybrid_smart_scene_panel_switch_1_changed",
+      "title": {
+        "en": "Switch 1 changed"
+      },
+      "titleFormatted": {
+        "en": "Switch 1 changed"
+      }
+    },
+    {
+      "id": "sensor_climate_smart_hybrid_climate_sensor_smart_hybrid_smart_scene_panel_switch_2_changed",
+      "title": {
+        "en": "Switch 2 changed"
+      },
+      "titleFormatted": {
+        "en": "Switch 2 changed"
+      }
+    },
+    {
+      "id": "sensor_climate_smart_hybrid_climate_sensor_smart_hybrid_smart_scene_panel_switch_3_changed",
+      "title": {
+        "en": "Switch 3 changed"
+      },
+      "titleFormatted": {
+        "en": "Switch 3 changed"
+      }
+    },
+    {
+      "id": "sensor_climate_smart_hybrid_climate_sensor_smart_hybrid_smart_scene_panel_switch_4_changed",
+      "title": {
+        "en": "Switch 4 changed"
+      },
+      "titleFormatted": {
+        "en": "Switch 4 changed"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "sensor_climate_smart_hybrid_climate_sensor_smart_hybrid_smart_scene_panel_set_switch_1",
+      "title": {
+        "en": "Set switch 1"
+      },
+      "titleFormatted": {
+        "en": "Set switch 1 to [[state]]"
+      },
+      "args": [
+        {
+          "type": "checkbox",
+          "name": "state"
+        }
+      ]
+    },
+    {
+      "id": "sensor_climate_smart_hybrid_climate_sensor_smart_hybrid_smart_scene_panel_set_switch_2",
+      "title": {
+        "en": "Set switch 2"
+      },
+      "titleFormatted": {
+        "en": "Set switch 2 to [[state]]"
+      },
+      "args": [
+        {
+          "type": "checkbox",
+          "name": "state"
+        }
+      ]
+    },
+    {
+      "id": "sensor_climate_smart_hybrid_climate_sensor_smart_hybrid_smart_scene_panel_set_switch_3",
+      "title": {
+        "en": "Set switch 3"
+      },
+      "titleFormatted": {
+        "en": "Set switch 3 to [[state]]"
+      },
+      "args": [
+        {
+          "type": "checkbox",
+          "name": "state"
+        }
+      ]
+    },
+    {
+      "id": "sensor_climate_smart_hybrid_climate_sensor_smart_hybrid_smart_scene_panel_set_switch_4",
+      "title": {
+        "en": "Set switch 4"
+      },
+      "titleFormatted": {
+        "en": "Set switch 4 to [[state]]"
+      },
+      "args": [
+        {
+          "type": "checkbox",
+          "name": "state"
+        }
+      ]
+    }
+  ]
+}

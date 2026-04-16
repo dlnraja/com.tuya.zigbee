@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- SOS Emergency Button Icon -->
+  <!-- Outer ring (alarm indicator) -->
+  <circle cx="50" cy="50" r="45" fill="none" stroke="#CC0000" stroke-width="3" opacity="0.3"/>
+  <circle cx="50" cy="50" r="42" fill="none" stroke="#CC0000" stroke-width="2" opacity="0.5"/>
+
+  <!-- Main button body -->
+  <circle cx="50" cy="50" r="38" fill="#E53935" stroke="#B71C1C" stroke-width="2"/>
+
+  <!-- Button highlight (3D effect) -->
+  <ellipse cx="50" cy="42" rx="28" ry="20" fill="url(#buttonGradient)" opacity="0.4"/>
+
+  <!-- SOS Text -->
+  <text x="50" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF" stroke="#000000" stroke-width="0.5">SOS</text>
+
+  <!-- Small indicator light -->
+  <circle cx="50" cy="25" r="4" fill="#FFEB3B" stroke="#FFC107" stroke-width="1"/>
+
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="buttonGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+</svg>

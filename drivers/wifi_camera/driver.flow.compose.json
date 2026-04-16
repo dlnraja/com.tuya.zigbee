@@ -1,0 +1,129 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_camera_motion_detected",
+      "title": {
+        "en": "Motion detected"
+      },
+      "titleFormatted": {
+        "en": "Motion detected"
+      }
+    },
+    {
+      "id": "wifi_camera_motion_cleared",
+      "title": {
+        "en": "Motion cleared"
+      },
+      "titleFormatted": {
+        "en": "Motion cleared"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "wifi_camera_set_privacy",
+      "title": {
+        "en": "Set privacy mode"
+      },
+      "titleFormatted": {
+        "en": "Set privacy mode to [[mode]]"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "mode",
+          "values": [
+            {
+              "id": "on",
+              "label": {
+                "en": "Privacy ON (camera off)"
+              }
+            },
+            {
+              "id": "off",
+              "label": {
+                "en": "Privacy OFF (camera on)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wifi_camera_set_night_vision",
+      "title": {
+        "en": "Set night vision"
+      },
+      "titleFormatted": {
+        "en": "Set night vision to [[mode]]"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "mode",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Auto"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "Off"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "On"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wifi_camera_ptz_move",
+      "title": {
+        "en": "PTZ move camera"
+      },
+      "titleFormatted": {
+        "en": "PTZ move camera [[direction]]"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "direction",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Up"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Right"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "Down"
+              }
+            },
+            {
+              "id": "6",
+              "label": {
+                "en": "Left"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

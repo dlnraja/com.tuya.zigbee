@@ -1,0 +1,44 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_switch_turned_on",
+      "title": {
+        "en": "Turned on"
+      },
+      "titleFormatted": {
+        "en": "Turned on"
+      }
+    },
+    {
+      "id": "wifi_switch_turned_off",
+      "title": {
+        "en": "Turned off"
+      },
+      "titleFormatted": {
+        "en": "Turned off"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "wifi_switch_is_on",
+      "title": {
+        "en": "Is on"
+      },
+      "titleFormatted": {
+        "en": "Is on"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "wifi_switch_toggle",
+      "title": {
+        "en": "Toggle on/off"
+      },
+      "titleFormatted": {
+        "en": "Toggle on/off"
+      }
+    }
+  ]
+}

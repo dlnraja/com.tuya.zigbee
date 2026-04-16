@@ -1,0 +1,302 @@
+{
+  "triggers": [
+    {
+      "id": "scene_switch_wall_hybrid_scene_switch_2_button_pressed_scene_switch_wall_hybrid",
+      "title": {
+        "en": "Button pressed",
+        "fr": "Bouton appuyé",
+        "nl": "Knop ingedrukt",
+        "de": "Taste gedrückt"
+      },
+      "titleFormatted": {
+        "en": "Button [[button]] pressed",
+        "fr": "Bouton [[button]] appuyé",
+        "nl": "Knop [[button]] ingedrukt",
+        "de": "Taste [[button]] gedrückt"
+      },
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
+          "values": [
+            {
+              "id": "1",
+              "label": {
+                "en": "Button 1"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Button 2"
+              }
+            }
+          ]
+        }
+      ],
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
+          "example": "1"
+        }
+      ]
+    },
+    {
+      "id": "scene_switch_wall_hybrid_scene_switch_2_button_double_press_scene_switch_wall_hybrid",
+      "title": {
+        "en": "Button double-pressed",
+        "fr": "Bouton double-cliqué",
+        "nl": "Knop dubbel ingedrukt",
+        "de": "Taste doppelt gedrückt"
+      },
+      "titleFormatted": {
+        "en": "Button [[button]] double-pressed",
+        "fr": "Bouton [[button]] double-cliqué",
+        "nl": "Knop [[button]] dubbel ingedrukt",
+        "de": "Taste [[button]] doppelt gedrückt"
+      },
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
+          "values": [
+            {
+              "id": "1",
+              "label": {
+                "en": "Button 1"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Button 2"
+              }
+            }
+          ]
+        }
+      ],
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
+          "example": "1"
+        }
+      ]
+    },
+    {
+      "id": "scene_switch_wall_hybrid_scene_switch_2_button_long_press_scene_switch_wall_hybrid",
+      "title": {
+        "en": "Button long-pressed",
+        "fr": "Bouton appui long",
+        "nl": "Knop lang ingedrukt",
+        "de": "Taste lang gedrückt"
+      },
+      "titleFormatted": {
+        "en": "Button [[button]] long-pressed",
+        "fr": "Bouton [[button]] appui long",
+        "nl": "Knop [[button]] lang ingedrukt",
+        "de": "Taste [[button]] lang gedrückt"
+      },
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
+          "values": [
+            {
+              "id": "1",
+              "label": {
+                "en": "Button 1"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Button 2"
+              }
+            }
+          ]
+        }
+      ],
+      "tokens": [
+        {
+          "name": "button",
+          "type": "string",
+          "title": {
+            "en": "Button",
+            "fr": "Bouton",
+            "nl": "Knop",
+            "de": "Taste"
+          },
+          "example": "1"
+        }
+      ]
+    },
+    {
+      "id": "scene_switch_wall_hybrid_scene_switch_2_battery_low_scene_switch_wall_hybrid",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
+    },
+    {
+      "id": "scene_switch_wall_hybrid_scene_switch_2_button_2gang_button_1_pressed_scene_switch_wall_hybrid",
+      "title": {
+        "en": "Button 1 pressed",
+        "fr": "Bouton 1 appuye"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 pressed",
+        "fr": "Bouton 1 appuye"
+      }
+    },
+    {
+      "id": "scene_switch_wall_hybrid_scene_switch_2_button_2gang_button_1_double_scene_switch_wall_hybrid",
+      "title": {
+        "en": "Button 1 double-pressed",
+        "fr": "Bouton 1 double-appui"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 double-pressed",
+        "fr": "Bouton 1 double-appui"
+      }
+    },
+    {
+      "id": "scene_switch_wall_hybrid_scene_switch_2_button_2gang_button_1_long_scene_switch_wall_hybrid",
+      "title": {
+        "en": "Button 1 long-pressed",
+        "fr": "Bouton 1 appui long"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 long-pressed",
+        "fr": "Bouton 1 appui long"
+      }
+    },
+    {
+      "id": "scene_switch_wall_hybrid_scene_switch_2_button_2gang_button_1_triple_scene_switch_wall_hybrid",
+      "title": {
+        "en": "Button 1 triple-pressed",
+        "fr": "Bouton 1 triple-appui"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 triple-pressed",
+        "fr": "Bouton 1 triple-appui"
+      }
+    },
+    {
+      "id": "scene_switch_wall_hybrid_scene_switch_2_button_2gang_button_1_release_scene_switch_wall_hybrid",
+      "title": {
+        "en": "Button 1 released",
+        "fr": "Bouton 1 relache"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 released",
+        "fr": "Bouton 1 relache"
+      }
+    },
+    {
+      "id": "scene_switch_wall_hybrid_scene_switch_2_button_2gang_button_2_pressed_scene_switch_wall_hybrid",
+      "title": {
+        "en": "Button 2 pressed",
+        "fr": "Bouton 2 appuye"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 2 pressed",
+        "fr": "Bouton 2 appuye"
+      }
+    },
+    {
+      "id": "scene_switch_wall_hybrid_scene_switch_2_button_2gang_button_2_double_scene_switch_wall_hybrid",
+      "title": {
+        "en": "Button 2 double-pressed",
+        "fr": "Bouton 2 double-appui"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 2 double-pressed",
+        "fr": "Bouton 2 double-appui"
+      }
+    },
+    {
+      "id": "scene_switch_wall_hybrid_scene_switch_2_button_2gang_button_2_long_scene_switch_wall_hybrid",
+      "title": {
+        "en": "Button 2 long-pressed",
+        "fr": "Bouton 2 appui long"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 2 long-pressed",
+        "fr": "Bouton 2 appui long"
+      }
+    },
+    {
+      "id": "scene_switch_wall_hybrid_scene_switch_2_button_2gang_button_2_triple_scene_switch_wall_hybrid",
+      "title": {
+        "en": "Button 2 triple-pressed",
+        "fr": "Bouton 2 triple-appui"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 2 triple-pressed",
+        "fr": "Bouton 2 triple-appui"
+      }
+    },
+    {
+      "id": "scene_switch_wall_hybrid_scene_switch_2_button_2gang_button_2_release_scene_switch_wall_hybrid",
+      "title": {
+        "en": "Button 2 released",
+        "fr": "Bouton 2 relache"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 2 released",
+        "fr": "Bouton 2 relache"
+      }
+    }
+  ]
+}

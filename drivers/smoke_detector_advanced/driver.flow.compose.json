@@ -1,0 +1,280 @@
+{
+  "triggers": [
+    {
+      "id": "smoke_detector_advanced_alarm_smoke_true",
+      "highlight": true,
+      "title": {
+        "en": "Smoke detected",
+        "nl": "Rook gedetecteerd",
+        "fr": "Fumée détectée",
+        "de": "Rauch erkannt"
+      },
+      "titleFormatted": {
+        "en": "Smoke alarm triggered!",
+        "nl": "Rookalarm geactiveerd!",
+        "fr": "Alarme fumée déclenchée !",
+        "de": "Rauchalarm ausgelöst!"
+      },
+      "hint": {
+        "en": "Triggers when smoke is detected - CRITICAL SAFETY ALERT",
+        "nl": "Triggert wanneer rook wordt gedetecteerd - KRITIEKE VEILIGHEIDSMELDING",
+        "fr": "Se déclenche quand de la fumée est détectée - ALERTE DE SÉCURITÉ CRITIQUE",
+        "de": "Wird ausgelöst, wenn Rauch erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
+      },
+      "args": []
+    },
+    {
+      "id": "smoke_detector_advanced_alarm_smoke_false",
+      "title": {
+        "en": "Smoke cleared",
+        "nl": "Rook opgeheven",
+        "fr": "Fumée dissipée",
+        "de": "Rauch verschwunden"
+      },
+      "hint": {
+        "en": "Triggers when smoke is no longer detected",
+        "nl": "Triggert wanneer er geen rook meer wordt gedetecteerd",
+        "fr": "Se déclenche quand la fumée n'est plus détectée",
+        "de": "Wird ausgelöst, wenn kein Rauch mehr erkannt wird"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Smoke cleared",
+        "nl": "Rook opgeheven",
+        "fr": "Fumée dissipée",
+        "de": "Rauch verschwunden"
+      }
+    },
+    {
+      "id": "smoke_detector_advanced_alarm_tamper_true",
+      "title": {
+        "en": "Tamper alert",
+        "nl": "Sabotage alarm",
+        "fr": "Alerte sabotage",
+        "de": "Manipulationsalarm"
+      },
+      "hint": {
+        "en": "Triggers when the detector has been tampered with",
+        "nl": "Triggert wanneer er met de detector is geknoeid",
+        "fr": "Se déclenche quand le détecteur a été saboté",
+        "de": "Wird ausgelöst, wenn der Melder manipuliert wurde"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alert",
+        "nl": "Sabotage alarm",
+        "fr": "Alerte sabotage",
+        "de": "Manipulationsalarm"
+      }
+    },
+    {
+      "id": "smoke_detector_advanced_battery_low",
+      "title": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      },
+      "hint": {
+        "en": "Triggers when battery drops below threshold - Replace battery soon!",
+        "nl": "Triggert wanneer de batterij onder de drempel zakt - Vervang binnenkort de batterij!",
+        "fr": "Se déclenche quand la batterie passe sous le seuil - Remplacez la batterie bientôt !",
+        "de": "Wird ausgelöst, wenn die Batterie unter den Schwellenwert fällt - Batterie bald ersetzen!"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      }
+    },
+    {
+      "id": "smoke_detector_advanced_test_triggered",
+      "title": {
+        "en": "Test button pressed",
+        "nl": "Testknop ingedrukt",
+        "fr": "Bouton test pressé",
+        "de": "Testtaste gedrückt"
+      },
+      "hint": {
+        "en": "Triggers when the test button is pressed on the detector",
+        "nl": "Triggert wanneer de testknop op de detector wordt ingedrukt",
+        "fr": "Se déclenche quand le bouton test est pressé sur le détecteur",
+        "de": "Wird ausgelöst, wenn die Testtaste am Melder gedrückt wird"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Test button pressed",
+        "nl": "Testknop ingedrukt",
+        "fr": "Bouton test pressé",
+        "de": "Testtaste gedrückt"
+      }
+    },
+    {
+      "id": "smoke_detector_advanced_smoke_alarm",
+      "title": {
+        "en": "Smoke detected",
+        "fr": "Fumée détectée",
+        "nl": "Rook gedetecteerd",
+        "de": "Rauch erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Smoke detected",
+        "fr": "Fumée détectée",
+        "nl": "Rook gedetecteerd",
+        "de": "Rauch erkannt"
+      }
+    },
+    {
+      "id": "smoke_detector_advanced_temp_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      }
+    },
+    {
+      "id": "smoke_detector_advanced_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geändert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geändert"
+      }
+    },
+    {
+      "id": "smoke_detector_advanced_tamper_alarm",
+      "title": {
+        "en": "Tamper alarm",
+        "fr": "Alarme sabotage",
+        "nl": "Sabotagealarm",
+        "de": "Manipulationsalarm"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alarm",
+        "fr": "Alarme sabotage",
+        "nl": "Sabotagealarm",
+        "de": "Manipulationsalarm"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "smoke_detector_advanced_smoke_detected",
+      "title": {
+        "en": "Smoke !{{is|is not}} detected",
+        "nl": "Rook !{{is|is niet}} gedetecteerd",
+        "fr": "Fumée !{{est|n'est pas}} détectée",
+        "de": "Rauch !{{ist|ist nicht}} erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Smoke !{{is|is not}} detected",
+        "nl": "Rook !{{is|is niet}} gedetecteerd",
+        "fr": "Fumée !{{est|n'est pas}} détectée",
+        "de": "Rauch !{{ist|ist nicht}} erkannt"
+      }
+    },
+    {
+      "id": "smoke_detector_advanced_battery_above",
+      "title": {
+        "en": "Battery !{{is|is not}} above",
+        "nl": "Batterij !{{is|is niet}} boven",
+        "fr": "Batterie !{{est|n'est pas}} au-dessus de",
+        "de": "Batterie !{{ist|ist nicht}} über"
+      },
+      "titleFormatted": {
+        "en": "Battery !{{is|is not}} above [[threshold]]%",
+        "nl": "Batterij !{{is|is niet}} boven [[threshold]]%",
+        "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%",
+        "de": "Batterie !{{ist|ist nicht}} über [[threshold]]%"
+      },
+      "args": [
+        {
+          "name": "threshold",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "placeholder": {
+            "en": "20"
+          }
+        }
+      ]
+    },
+    {
+      "id": "smoke_detector_advanced_smoke_active",
+      "title": {
+        "en": "Smoke !{{is|is not}} detected",
+        "fr": "Fumée !{{est|n'est pas}} détectée",
+        "nl": "Rook !{{is|is niet}} gedetecteerd",
+        "de": "Rauch !{{ist|ist nicht}} erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Smoke !{{is|is not}} detected",
+        "fr": "Fumée !{{est|n'est pas}} détectée",
+        "nl": "Rook !{{is|is niet}} gedetecteerd",
+        "de": "Rauch !{{ist|ist nicht}} erkannt"
+      }
+    },
+    {
+      "id": "smoke_detector_advanced_tamper_active",
+      "title": {
+        "en": "Tamper !{{is|is not}} active",
+        "fr": "Sabotage !{{est|n'est pas}} actif",
+        "nl": "Sabotage !{{is|is niet}} actief",
+        "de": "Manipulation !{{ist|ist nicht}} aktiv"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper !{{is|is not}} active",
+        "fr": "Sabotage !{{est|n'est pas}} actif",
+        "nl": "Sabotage !{{is|is niet}} actief",
+        "de": "Manipulation !{{ist|ist nicht}} aktiv"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "smoke_detector_advanced_test_alarm",
+      "title": {
+        "en": "Test the alarm",
+        "nl": "Test het alarm",
+        "fr": "Tester l'alarme",
+        "de": "Alarm testen"
+      },
+      "titleFormatted": {
+        "en": "Test the smoke alarm",
+        "nl": "Test het rookalarm",
+        "fr": "Tester l'alarme fumée",
+        "de": "Rauchalarm testen"
+      },
+      "hint": {
+        "en": "Triggers a test on the smoke detector (if supported by device)",
+        "nl": "Start een test op de rookmelder (indien ondersteund door apparaat)",
+        "fr": "Déclenche un test sur le détecteur de fumée (si supporté par l'appareil)",
+        "de": "Löst einen Test am Rauchmelder aus (falls vom Gerät unterstützt)"
+      },
+      "args": []
+    }
+  ]
+}

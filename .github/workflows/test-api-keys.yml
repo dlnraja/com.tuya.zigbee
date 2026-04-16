@@ -1,0 +1,99 @@
+name: "Test AI API Keys Health"
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0' # Weekly on Sunday
+
+jobs:
+  test-apis:
+    name: Check AI API Keys
+    runs-on: ubuntu-latest
+    env:
+      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+      TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
+      KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Test API Endpoints
+        run: |
+          cat << 'EOF' > test-apis.js
+          const fetchT = (url, opts) => {
+            const ac = new AbortController();
+            const tid = setTimeout(() => ac.abort(), 10000);
+            return fetch(url, { ...opts, signal: ac.signal }).finally(() => clearTimeout(tid));
+          };
+
+          const check = async (name, url, headers, body) => {
+            try {
+              const r = await fetchT(url, { method: 'POST', headers, body: JSON.stringify(body) });
+              if (r.ok) {
+                console.log(`✅ [${name}] is ACTIVE and functional.`);
+                return true;
+              } else {
+                console.log(`❌ [${name}] failed with status: ${r.status}`);
+                return false;
+              }
+            } catch(e) {
+              console.log(`❌ [${name}] error: ${e.message}`);
+              return false;
+            }
+          };
+
+          (async () => {
+            const results = {};
+            const keys = {
+              'OpenRouter': process.env.OPENROUTER_API_KEY,
+              'HuggingFace': process.env.HF_TOKEN,
+              'Cerebras': process.env.CEREBRAS_API_KEY,
+              'Together': process.env.TOGETHER_API_KEY,
+              'Groq': process.env.GROQ_API_KEY,
+              'DeepSeek': process.env.DEEPSEEK_API_KEY,
+              'Gemini': process.env.GOOGLE_API_KEY,
+              'OpenAI': process.env.OPENAI_API_KEY,
+              'Mistral': process.env.MISTRAL_API_KEY,
+              'Kimi': process.env.KIMI_API_KEY
+            };
+
+            const msgs = [{role:"user", content:"Hi"}];
+
+            if (keys['OpenRouter']) await check('OpenRouter', 'https://openrouter.ai/api/v1/chat/completions', {'Authorization':'Bearer '+keys['OpenRouter'],'Content-Type':'application/json'}, {model:'meta-llama/llama-3.1-8b-instruct:free', messages:msgs, max_tokens:5});
+            if (keys['HuggingFace']) await check('HuggingFace', 'https://router.huggingface.co/v1/chat/completions', {'Authorization':'Bearer '+keys['HuggingFace'],'Content-Type':'application/json'}, {model:'meta-llama/Llama-3.1-8B-Instruct', messages:msgs, max_tokens:5});
+            if (keys['Cerebras']) await check('Cerebras', 'https://api.cerebras.ai/v1/chat/completions', {'Authorization':'Bearer '+keys['Cerebras'],'Content-Type':'application/json'}, {model:'llama3.1-70b', messages:msgs, max_tokens:5});
+            if (keys['Together']) await check('Together', 'https://api.together.xyz/v1/chat/completions', {'Authorization':'Bearer '+keys['Together'],'Content-Type':'application/json'}, {model:'meta-llama/Llama-3.3-70B-Instruct-Turbo-Free', messages:msgs, max_tokens:5});
+            if (keys['Groq']) await check('Groq', 'https://api.groq.com/openai/v1/chat/completions', {'Authorization':'Bearer '+keys['Groq'],'Content-Type':'application/json'}, {model:'llama-3.3-70b-versatile', messages:msgs, max_tokens:5});
+            if (keys['DeepSeek']) await check('DeepSeek', 'https://api.deepseek.com/chat/completions', {'Authorization':'Bearer '+keys['DeepSeek'],'Content-Type':'application/json'}, {model:'deepseek-chat', messages:msgs, max_tokens:5});
+            
+            if (keys['Gemini']) {
+              try {
+                const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${keys['Gemini']}`, {
+                  method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({contents:[{parts:[{text:"Hi"}]}], generationConfig:{maxOutputTokens:5}})
+                });
+                if (r.ok) console.log(`✅ [Gemini] is ACTIVE and functional.`);
+                else console.log(`❌ [Gemini] failed: ${r.status}`);
+              } catch(e) { console.log(`❌ [Gemini] error: ${e.message}`); }
+            }
+
+            if (keys['OpenAI']) await check('OpenAI', 'https://api.openai.com/v1/chat/completions', {'Authorization':'Bearer '+keys['OpenAI'],'Content-Type':'application/json'}, {model:'gpt-3.5-turbo', messages:msgs, max_tokens:5});
+            if (keys['Mistral']) await check('Mistral', 'https://api.mistral.ai/v1/chat/completions', {'Authorization':'Bearer '+keys['Mistral'],'Content-Type':'application/json'}, {model:'open-mistral-nemo', messages:msgs, max_tokens:5});
+            if (keys['Kimi']) await check('Kimi', 'https://api.moonshot.cn/v1/chat/completions', {'Authorization':'Bearer '+keys['Kimi'],'Content-Type':'application/json'}, {model:'moonshot-v1-8k', messages:msgs, max_tokens:5});
+
+            console.log("Health check completed.");
+          })();
+          EOF
+
+          node test-apis.js

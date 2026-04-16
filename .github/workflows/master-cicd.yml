@@ -1,0 +1,208 @@
+name: "🌌 UNIFIED AWAKENING — Master CI/CD"
+
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: 'Version bump'
+        required: true
+        default: 'patch'
+        type: choice
+        options: [patch, minor, major, none]
+      promote:
+        description: 'Promote to test channel'
+        type: boolean
+        default: true
+      post_forum:
+        description: 'Post update to Homey Forum'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: homey-app-store-delivery-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: "20"
+  APP_ID: "com.dlnraja.tuya.zigbee"
+  SHADOW_MODE: "true"
+
+jobs:
+  validate:
+    name: 🛡️ Validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      
+      - name: 📦 Setup Unified
+        uses: ./.github/actions/setup-unified
+      
+      - name: "0a. Intelligence Mode Selector"
+        id: intelligence_selector
+        run: |
+          if [ -n "${{ secrets.GOOGLE_API_KEY }}" ]; then
+            echo "PIPELINE_MODE=AI_ORCHESTRATED" >> $GITHUB_ENV
+            echo "::notice::Pipeline intelligence: AI_ORCHESTRATED"
+          else
+            echo "PIPELINE_MODE=RULE_BASED" >> $GITHUB_ENV
+            echo "::warning::Pipeline intelligence: RULE_BASED (CloudlessFallback active)"
+          fi
+
+      - name: "0b. 🧠 AI Risk Assessment"
+        if: env.PIPELINE_MODE == 'AI_ORCHESTRATED'
+        id: risk_assessment
+        run: |
+          echo "Analyzing commit delta for architectural risks..."
+          # Analyze the last few commits for critical patterns
+          node .github/scripts/ai-helper.js --action assess_risk --commits 10
+
+      
+      - name: ⚙️ Run Auto-Ganger
+        run: node scripts/automation/generate-subdevices.js
+
+      # - name: 🛡️ AJV Schema Validation (Disabled - Remote Schema URL 404)
+      #   run: |
+      #     curl -s https://raw.githubusercontent.com/athombv/node-homey-app-schema/master/driver.compose.schema.json > .homeycompose/driver.compose.schema.json
+      #     npx ajv validate -s .homeycompose/driver.compose.schema.json -d "drivers/*/driver.compose.json" --all-errors
+      
+      - name: 🖼️ FLEET-WIDE IMAGE STABILIZATION
+        run: node scripts/maintenance/ensure-500x500-images.js
+      
+      - name: 🕵️ SUPERIOR ARCHITECTURAL AUDIT
+        run: |
+          node scripts/maintenance/superior-audit.js
+          if [ -f SUPERIOR_AUDIT_REPORT.md ]; then
+            cat SUPERIOR_AUDIT_REPORT.md >> $GITHUB_STEP_SUMMARY
+          fi
+      
+      - name: Homey Validate (Recursive Auto-Fix)
+        run: node scripts/maintenance/recursive-validator.js
+
+      - name: "🧪 Autonomous Maintenance & Stabilization"
+        continue-on-error: true
+        env:
+          DRY_RUN: 'false'
+        run: |
+          echo "### 🌌 Unified Engine Intelligence" >> $GITHUB_STEP_SUMMARY
+          echo "Running fleet-wide stabilization via Orchestrator..." >> $GITHUB_STEP_SUMMARY
+          node scripts/maintenance/autonomous-maintenance-orchestrator.js
+
+
+  publish-and-promote:
+    name: 🚀 Publish & Promote
+    needs: validate
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'push' && !contains(github.event.head_commit.message, '[skip ci]'))
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+      
+      - name: 📦 Setup Unified
+        uses: ./.github/actions/setup-unified
+
+      - name: 🏷️ Version Bump
+        id: bump
+        if: github.event.inputs.bump != 'none'
+        uses: athombv/github-action-homey-app-version@v1
+        with:
+          version: ${{ github.event.inputs.bump || 'patch' }}
+          changelog: "v${{ github.event.inputs.bump || 'patch' }}: 🌌 UNIFIED ENGINE v7.4.5 - Superior Genesis Intelligence & Architectural Hardening."
+
+      - name: 🔄 Sync Version
+        if: steps.bump.outcome == 'success'
+        run: |
+          node -e "const f=require('fs'),a=require('./app.json'),p=JSON.parse(f.readFileSync('package.json','utf8'));p.version=a.version;f.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n');"
+          echo "NEW_VERSION=$(node -p 'require("./app.json").version')" >> $GITHUB_ENV
+
+      - name: 💾 Commit & Push Version
+        if: steps.bump.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add app.json package.json .homeychangelog.json
+          
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "v${{ env.NEW_VERSION }}: automatic version bump [skip ci]"
+            git pull --rebase origin ${{ github.ref_name }}
+            git push origin HEAD:${{ github.ref_name }}
+          fi
+
+      - name: 📤 Publish (Draft)
+        id: publish
+        if: env.NEW_VERSION != ''
+        uses: athombv/github-action-homey-app-publish@v1
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+
+      - name: 🎯 Promote to Test (Puppeteer)
+        if: steps.publish.outcome == 'success' && (github.event.inputs.promote != 'false')
+        id: promote_puppeteer
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: |
+          echo "Waiting for build processing..."
+          sleep 150
+          npm install puppeteer --no-save
+          node .github/scripts/auto-promote-puppeteer.js
+
+      - name: 🎯 Promote to Test (API Fallback)
+        if: steps.publish.outcome == 'success' && (github.event.inputs.promote != 'false') && steps.promote_puppeteer.outcome != 'success'
+        id: promote_api
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/auto-publish-draft.js
+
+      - name: 🐙 Create Release
+        if: steps.publish.outcome == 'success'
+        continue-on-error: true
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ env.NEW_VERSION }}
+          name: v${{ env.NEW_VERSION }}
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: 💬 Post to Forum
+        if: (steps.promote_puppeteer.outcome == 'success' || steps.promote_api.outcome == 'success') && (github.event.inputs.post_forum != 'false')
+        continue-on-error: true
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          APP_VERSION: ${{ env.NEW_VERSION }}
+        run: node .github/scripts/post-forum-update.js
+
+      - name: 📝 Final Summary
+        if: always()
+        run: |
+          echo "## 🚀 Deployment Results" >> $GITHUB_STEP_SUMMARY
+          echo "Metric | Outcome" >> $GITHUB_STEP_SUMMARY
+          echo "--- | ---" >> $GITHUB_STEP_SUMMARY
+          echo "Version | v${{ env.NEW_VERSION || 'N/A' }}" >> $GITHUB_STEP_SUMMARY
+          echo "Validation | ${{ needs.validate.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "Publish | ${{ steps.publish.outcome }}" >> $GITHUB_STEP_SUMMARY
+          echo "Promotion (Puppeteer) | ${{ steps.promote_puppeteer.outcome || 'skipped' }}" >> $GITHUB_STEP_SUMMARY
+          echo "Promotion (API) | ${{ steps.promote_api.outcome || 'skipped' }}" >> $GITHUB_STEP_SUMMARY

@@ -1,0 +1,68 @@
+name: Auto Discovery from Forums & Z2M (Enhanced)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  discover-devices:
+    runs-on: ubuntu-latest
+    env:
+      # === AI providers — circular chain (ai-helper.js) ===
+      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
+      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
+      CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
+      TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
+      KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 18
+
+      - name: Fetch Zigbee2MQTT Database & External Sources
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm ci || npm install
+          node .github/scripts/external-sources-scanner.js || true
+
+      - name: Cross-reference Missing Devices & PR Analysis
+        id: crossref
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Comparing forum requested IDs against Z2M implementations..."
+          node .github/scripts/cross-ref-intelligence.js || true
+          node .github/scripts/scan-prs-issues.js || true
+
+      - name: Generate Driver Skeleton
+        run: |
+          echo "Generating driver skeletons based on Z2M DP mappings..."
+          node .github/scripts/auto-driver-scaffold.js || true
+
+      - name: Commit Discovery Inteligente
+        run: |
+          git config user.name "unified-agent[bot]"
+          git config user.email "unified-agent@users.noreply.github.com"
+          git add -A .github/state/ drivers/
+          if git diff --cached --quiet; then
+            echo "No new intelligence discovered"
+          else
+            git commit -m "🤖 Unified Discovery: New device intelligence & skeletons [skip ci]"
+            git push origin master
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,39 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_led_strip_turned_on",
+      "title": {
+        "en": "Light turned on"
+      },
+      "titleFormatted": {
+        "en": "Light turned on"
+      }
+    },
+    {
+      "id": "wifi_led_strip_turned_off",
+      "title": {
+        "en": "Light turned off"
+      },
+      "titleFormatted": {
+        "en": "Light turned off"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "wifi_led_strip_set_color",
+      "title": {
+        "en": "Set color"
+      },
+      "titleFormatted": {
+        "en": "Set color to [[color]]"
+      },
+      "args": [
+        {
+          "name": "color",
+          "type": "color"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "number",
+  "title": {
+    "en": "VOC"
+  },
+  "units": {
+    "en": "ppb"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "insights": true
+}

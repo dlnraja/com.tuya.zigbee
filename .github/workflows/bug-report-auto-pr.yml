@@ -1,0 +1,87 @@
+name: "Bug Report Auto-PR"
+
+on:
+  issues:
+    types: [opened, labeled]
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: "Issue number to process"
+        type: number
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: bug-pr-${{ github.event.issue.number || inputs.issue_number }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  process-bug:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.action == 'labeled' && github.event.label.name == 'auto-fix') ||
+      (github.event.action == 'opened' && contains(github.event.issue.labels.*.name, 'bug'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      # === AI providers — circular chain (ai-helper.js) ===
+      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
+      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
+      CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
+      TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
+      KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
+
+    steps:
+      - uses: actions/checkout@v5 # v5
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v5 # v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: Process Bug Report
+        id: bug
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          ISSUE_NUMBER: ${{ github.event.issue.number || inputs.issue_number }}
+        run: node .github/scripts/bug-report-processor.js
+
+      - name: Create Fix Branch and PR
+        if: steps.bug.outputs.has_fix == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          ISSUE=${{ github.event.issue.number || inputs.issue_number }}
+          BRANCH="fix/issue-${ISSUE}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add -A
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "fix: auto-fix for #${ISSUE} — ${{ steps.bug.outputs.summary }}"
+          git push origin "$BRANCH"
+          gh pr create -R dlnraja/com.tuya.zigbee \
+            --title "fix: #${ISSUE} — ${{ steps.bug.outputs.summary }}" \
+            --body "Auto-generated fix for #${ISSUE}\n\n${{ steps.bug.outputs.details }}\n\nCloses #${ISSUE}" \
+            --base master \
+            --head "$BRANCH" \
+            --label "auto-fix,bug"

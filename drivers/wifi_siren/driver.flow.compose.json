@@ -1,0 +1,43 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_siren_alarm_on",
+      "title": {
+        "en": "Alarm activated"
+      },
+      "titleFormatted": {
+        "en": "Alarm activated"
+      }
+    },
+    {
+      "id": "wifi_siren_alarm_off",
+      "title": {
+        "en": "Alarm deactivated"
+      },
+      "titleFormatted": {
+        "en": "Alarm deactivated"
+      }
+    }
+  ],
+  "conditions": [],
+  "actions": [
+    {
+      "id": "wifi_siren_activate",
+      "title": {
+        "en": "Activate siren"
+      },
+      "titleFormatted": {
+        "en": "Activate siren"
+      }
+    },
+    {
+      "id": "wifi_siren_deactivate",
+      "title": {
+        "en": "Deactivate siren"
+      },
+      "titleFormatted": {
+        "en": "Deactivate siren"
+      }
+    }
+  ]
+}

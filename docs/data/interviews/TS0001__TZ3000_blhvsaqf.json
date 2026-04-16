@@ -1,0 +1,11 @@
+{
+  "id": "INT-019",
+  "deviceName": "BSEED 1-Gang Wall Switch",
+  "manufacturerName": "_TZ3000_blhvsaqf",
+  "productId": "TS0001",
+  "source": "JohanBendz #1339, dlnraja #104",
+  "user": "pjmpessers",
+  "status": "fixed",
+  "driver": "switch_1gang",
+  "notes": "ZCL-only device, PR #116 packetninja support"
+}

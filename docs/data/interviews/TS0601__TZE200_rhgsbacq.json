@@ -1,0 +1,14 @@
+{
+  "id": "INT-016",
+  "deviceName": "10G 4 in 1 Human Motion Sensor",
+  "manufacturerName": "_TZE200_rhgsbacq",
+  "productId": "TS0601",
+  "source": "JohanBendz #1343",
+  "user": "cvh1111",
+  "status": "new_device_request",
+  "priority": "medium",
+  "driver": "presence_sensor_radar",
+  "inputClusters": [0, 3, 1280, 61184, 1026, 1029, 1, 1024],
+  "capabilities": ["motion", "temperature", "humidity", "illuminance", "battery"],
+  "notes": "Has IAS Zone, temperature, humidity, illuminance clusters - hybrid ZCL+DP device"
+}

@@ -1,0 +1,228 @@
+# Universal Tuya Zigbee - Code Quality Checks
+# v5.8.88 - Updated 2026-02-10
+# Checks for common bugs and code patterns
+
+name: 🔍 Code Quality Check
+
+on:
+  schedule:
+    - cron: '0 3 * * 1'  # Weekly Monday 03:00 UTC
+  pull_request:
+    branches: [master, main]
+  push:
+    branches: [master, main]
+    paths:
+      - '**.js'
+      - 'drivers/**/*.json'
+      - '.homeycompose/**/*.json'
+      - 'app.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: code-quality-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  ai:
+    name: AI Intelligence Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: 🤖 AI Orchestrator Health
+        run: node .github/scripts/ai-helper.js --check-health
+
+  quality:
+    name: 🔧 Quality Checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: 🔍 Validate Homey App (publish)
+        id: homey_validate
+        env:
+          NODE_OPTIONS: "--no-deprecation"
+        run: |
+          if npx homey app validate --level publish 2>&1; then
+            echo "result=✅ Passed" >> $GITHUB_OUTPUT
+            echo "✅ Homey app validate passed" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "result=❌ Failed" >> $GITHUB_OUTPUT
+            echo "❌ homey app validate --level publish FAILED" >> $GITHUB_STEP_SUMMARY
+            exit 1
+          fi
+
+      - name: 🔍 Check Common Bugs
+        run: |
+          echo "## 🔍 Code Quality" >> $GITHUB_STEP_SUMMARY
+
+          npm ci
+          # Settings keys bug
+          if grep -rq "zb_modelId\|zb_manufacturerName" lib/ drivers/ --include="*.js" 2>/dev/null; then
+            echo "❌ Wrong settings keys (use zb_model_id)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "✅ Settings keys OK" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          # Flow card bug
+          if grep -rq "titleFormatted.*\[\[device\]\]" drivers/ --include="*.json" 2>/dev/null; then
+            echo "❌ titleFormatted [[device]] bug" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "✅ Flow cards OK" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          # Import bug
+          if grep -rq "require.*TuyaZigbeeDriver" drivers/ --include="*.js" 2>/dev/null; then
+            echo "❌ Wrong TuyaZigbeeDriver import" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "✅ Imports OK" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: 🔍 Check getDevice*Card vs get*Card (SDK3 Spec)
+        run: |
+          # Homey SDK v3 prefers getTriggerCard, getConditionCard, getActionCard
+          # getDevice*Card was causing 'is not a function' in recent Homey versions
+          WRONG_METHOD=$(grep -rnE "getDevice(Trigger|Condition|Action)Card" drivers/ lib/ --include="*.js" 2>/dev/null | wc -l || true)
+          if [ "$WRONG_METHOD" -gt 0 ]; then
+            echo "❌ Found $WRONG_METHOD uses of deprecated getDevice*Card methods. Use get*Card instead." >> $GITHUB_STEP_SUMMARY
+            exit 1
+          else
+            echo "✅ Flow card methods (SDK3 compliant) OK" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: 🔍 Deep Bug Checks
+        run: |
+          echo "### Deep Checks" >> $GITHUB_STEP_SUMMARY
+          BAD=$(grep -rl "require.*lib/TuyaZigbeeDevice'" drivers/ --include="*.js" 2>/dev/null | wc -l || true)
+          [ "$BAD" -gt 0 ] && echo "❌ Wrong TuyaZigbeeDevice path ($BAD files)" >> $GITHUB_STEP_SUMMARY || echo "✅ Import paths OK" >> $GITHUB_STEP_SUMMARY
+          DUP=$(grep -rohE '"_T[^"]+"' drivers/*/driver.compose.json 2>/dev/null | sort | uniq -d | wc -l || true)
+          [ "$DUP" -gt 0 ] && echo "⚠️ $DUP duplicate fingerprints across drivers" >> $GITHUB_STEP_SUMMARY || echo "✅ No duplicate FPs" >> $GITHUB_STEP_SUMMARY
+
+      - name: 🔄 Critical Guards
+        run: |
+          echo "### Guards" >> $GITHUB_STEP_SUMMARY
+          grep -q '_inConfigureAttrReportingLegacy' lib/zigbee/ZigbeeHelpers.js 2>/dev/null && echo "✅ Recursion guard" >> $GITHUB_STEP_SUMMARY || echo "❌ Recursion guard missing" >> $GITHUB_STEP_SUMMARY
+
+      - name: 🖼️ Driver Images
+        run: |
+          echo "### Images" >> $GITHUB_STEP_SUMMARY
+          for d in drivers/*/; do DR=$(basename "$d"); for S in small large xlarge; do if [ ! -f "$d/assets/images/$S.png" ]; then echo "❌ $DR: $S.png" >> $GITHUB_STEP_SUMMARY; fi; done; done
+          echo "✅ Image check done" >> $GITHUB_STEP_SUMMARY
+
+      - name: 🌡️ Sensor Checks
+        run: |
+          echo "### Sensor Checks" >> $GITHUB_STEP_SUMMARY
+          for d in soil_sensor air_quality temp_hum_sensor; do
+            [ -f "drivers/$d/device.js" ] && grep -q "_handleDP" "drivers/$d/device.js" 2>/dev/null \
+              && echo "✅ $d DP OK" >> $GITHUB_STEP_SUMMARY \
+              || echo "⚠️ $d no DP" >> $GITHUB_STEP_SUMMARY
+          done
+
+      - name: 🔍 Manifest & Discovery Validation
+        run: |
+          echo "### Manifest & Discovery" >> $GITHUB_STEP_SUMMARY
+          # Check for tuya_wifi strategy in app.json
+          if ! grep -q "tuya_wifi" app.json 2>/dev/null; then
+            echo "❌ app.json is missing tuya_wifi discovery strategy!" >> $GITHUB_STEP_SUMMARY
+            exit 1
+          fi
+          # JSON Validation for all manifests
+          FAIL=0
+          for f in drivers/*/driver.compose.json .homeycompose/**/*.json app.json; do
+            if [ -f "$f" ]; then
+              if ! node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null; then
+                echo "❌ Invalid JSON: $f" >> $GITHUB_STEP_SUMMARY
+                FAIL=1
+              fi
+            fi
+          done
+          [ $FAIL -eq 0 ] && echo "✅ All manifests (JSON) are valid" >> $GITHUB_STEP_SUMMARY || exit 1
+
+      - name: 🔋 Battery & Energy Auto-Healing (SDK 3)
+        run: |
+          echo "### Battery & Energy Audit" >> $GITHUB_STEP_SUMMARY
+          # Run deduplication before validation
+          node scripts/ci/check-flow-ids.js
+          
+          # Fix energy manifests for SDK 3
+          node scripts/ci/smart-energy-fixer.js
+          
+          # Audit BVB (Bizarre Value Blocking)
+          node scripts/automation/bvb-impact-report.js || echo "BVB Audit failed" >> $GITHUB_STEP_SUMMARY
+          
+          echo "✅ Battery & Energy auto-healing complete" >> $GITHUB_STEP_SUMMARY
+
+      - name: 🛡️ Sensor Fallback Safety Check
+        run: |
+          echo "### Fallbacks Strategy Check" >> $GITHUB_STEP_SUMMARY
+          grep -rq "HOBEIAN_10G_MULTI_FALLBACK" drivers/ 2>/dev/null && { echo "❌ Dangerous HOBEIAN_10G_MULTI_FALLBACK fallback detected. Use ZG204ZM instead." >> $GITHUB_STEP_SUMMARY; exit 1; } || echo "✅ Fallback safety verified" >> $GITHUB_STEP_SUMMARY
+
+      - name: 🔑 Empty Fingerprint Check
+        run: |
+          echo "### Empty Fingerprint Check" >> $GITHUB_STEP_SUMMARY
+          EMPTY=0
+          for f in drivers/*/driver.compose.json; do
+            DRIVER=$(basename "$(dirname "$f")")
+            RESULT=$(node -e "const c=JSON.parse(require('fs').readFileSync('$f','utf8'));const z=c.zigbee;if(z&&(!z.manufacturerName||!z.manufacturerName.length||!z.productId||!z.productId.length))console.log('EMPTY')" 2>/dev/null || true)
+            if [ "$RESULT" = "EMPTY" ]; then
+              echo "⚠️ $DRIVER: empty manufacturerName or productId" >> $GITHUB_STEP_SUMMARY
+              EMPTY=$((EMPTY+1))
+            fi
+          done
+          [ $EMPTY -eq 0 ] && echo "✅ All drivers have fingerprints" >> $GITHUB_STEP_SUMMARY
+
+      - name: �🔍 Dead Code Detection
+        run: |
+          echo "### Dead Code" >> $GITHUB_STEP_SUMMARY
+          DEAD=0
+          for f in lib/*.js; do
+            NAME=$(basename "$f" .js)
+            if grep -q '@deprecated' "$f" 2>/dev/null; then
+              REFS=$(grep -rl "$NAME" lib/ drivers/ --include='*.js' 2>/dev/null | grep -v "$f" | wc -l || true)
+              if [ "$REFS" -eq 0 ]; then
+                echo "⚠️ Deprecated + unused: $f" >> $GITHUB_STEP_SUMMARY
+                DEAD=$((DEAD+1))
+              fi
+            fi
+          done
+          [ $DEAD -eq 0 ] && echo "✅ No dead code found" >> $GITHUB_STEP_SUMMARY || echo "$DEAD deprecated file(s) can be removed" >> $GITHUB_STEP_SUMMARY
+
+      - name: � SDK Compliance
+        run: |
+          echo "### SDK Compliance" >> $GITHUB_STEP_SUMMARY
+          PAREN=$(node -e "const fs=require('fs'),p=require('path');let c=0;for(const d of fs.readdirSync('drivers')){const f=p.join('drivers',d,'driver.flow.compose.json');if(!fs.existsSync(f))continue;const j=JSON.parse(fs.readFileSync(f,'utf8'));for(const t of['triggers','conditions','actions'])for(const cd of(j[t]||[]))if((cd.title?.en||'').includes('('))c++;}console.log(c)")
+          [ "$PAREN" -gt 0 ] && echo "❌ $PAREN flow titles with parentheses" >> $GITHUB_STEP_SUMMARY || echo "✅ No parentheses in titles" >> $GITHUB_STEP_SUMMARY
+          NOTF=$(node -e "const fs=require('fs'),p=require('path');let c=0;for(const d of fs.readdirSync('drivers')){const f=p.join('drivers',d,'driver.flow.compose.json');if(!fs.existsSync(f))continue;const j=JSON.parse(fs.readFileSync(f,'utf8'));for(const t of['triggers','conditions','actions'])for(const cd of(j[t]||[]))if(!cd.titleFormatted&&cd.title)c++;}console.log(c)")
+          [ "$NOTF" -gt 0 ] && echo "⚠️ $NOTF cards missing titleFormatted" >> $GITHUB_STEP_SUMMARY || echo "✅ All cards have titleFormatted" >> $GITHUB_STEP_SUMMARY
+          [ -f README.txt ] && echo "✅ README.txt present" >> $GITHUB_STEP_SUMMARY || echo "⚠️ Missing README.txt" >> $GITHUB_STEP_SUMMARY
+
+      - name: �📊 Stats
+        run: |
+          DRIVERS=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          MFRS=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
+          FLOWCARDS=$(grep -c '"id":' drivers/*/driver.flow.compose.json 2>/dev/null | awk -F: '{sum+=$2} END {print sum}' || true)
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Count |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Drivers | $DRIVERS |" >> $GITHUB_STEP_SUMMARY
+          echo "| Manufacturer IDs | $MFRS |" >> $GITHUB_STEP_SUMMARY
+          echo "| Flow Cards | $FLOWCARDS |" >> $GITHUB_STEP_SUMMARY
+
+      - name: 👮 Enforce Windsurf Rules
+        run: node .github/scripts/enforce-rules.js
+

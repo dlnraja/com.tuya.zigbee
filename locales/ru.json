@@ -1,0 +1,167 @@
+{
+  "capabilities": {
+    "measure_battery": {
+      "title": "Батарея",
+      "units": "%"
+    },
+    "alarm_generic": {
+      "title": "Тревога"
+    },
+    "alarm_motion": {
+      "title": "Движение"
+    },
+    "alarm_contact": {
+      "title": "Контакт"
+    },
+    "alarm_water": {
+      "title": "Утечка воды"
+    },
+    "alarm_smoke": {
+      "title": "Дым"
+    },
+    "alarm_co": {
+      "title": "CO"
+    },
+    "alarm_co2": {
+      "title": "CO₂"
+    },
+    "alarm_tamper": {
+      "title": "Взлом"
+    },
+    "alarm_vibration": {
+      "title": "Вибрация"
+    },
+    "onoff": {
+      "title": "Питание"
+    },
+    "dim": {
+      "title": "Яркость",
+      "units": "%"
+    },
+    "light_hue": {
+      "title": "Оттенок"
+    },
+    "light_saturation": {
+      "title": "Насыщенность"
+    },
+    "light_temperature": {
+      "title": "Цветовая температура"
+    },
+    "light_mode": {
+      "title": "Режим освещения"
+    },
+    "measure_temperature": {
+      "title": "Температура",
+      "units": "°C"
+    },
+    "measure_humidity": {
+      "title": "Влажность",
+      "units": "%"
+    },
+    "measure_pressure": {
+      "title": "Давление",
+      "units": "мбар"
+    },
+    "measure_co2": {
+      "title": "CO₂",
+      "units": "ppm"
+    },
+    "measure_pm25": {
+      "title": "PM2.5",
+      "units": "мкг/м³"
+    },
+    "measure_voc": {
+      "title": "ЛОС",
+      "units": "ppb"
+    },
+    "measure_luminance": {
+      "title": "Освещённость",
+      "units": "люкс"
+    },
+    "measure_power": {
+      "title": "Мощность",
+      "units": "Вт"
+    },
+    "measure_voltage": {
+      "title": "Напряжение",
+      "units": "В"
+    },
+    "measure_current": {
+      "title": "Ток",
+      "units": "А"
+    },
+    "meter_power": {
+      "title": "Энергия",
+      "units": "кВтч"
+    },
+    "target_temperature": {
+      "title": "Целевая температура",
+      "units": "°C"
+    },
+    "windowcoverings_state": {
+      "title": "Шторы",
+      "values": {
+        "up": "Вверх",
+        "idle": "Стоп",
+        "down": "Вниз"
+      }
+    },
+    "windowcoverings_set": {
+      "title": "Позиция",
+      "units": "%"
+    },
+    "button": {
+      "title": "Кнопка"
+    }
+  },
+  "settings": {
+    "power_source": {
+      "label": "Источник питания",
+      "hint": "Выберите источник питания вручную или используйте автоопределение"
+    },
+    "battery_type": {
+      "label": "Тип батареи",
+      "hint": "Выберите тип батареи вручную или используйте автоопределение по напряжению"
+    },
+    "battery_low_threshold": {
+      "label": "Порог низкого заряда (%)",
+      "hint": "Предупреждение о низком заряде батареи ниже этого процента"
+    },
+    "battery_critical_threshold": {
+      "label": "Порог критического заряда (%)",
+      "hint": "Предупреждение о критическом заряде батареи ниже этого процента"
+    },
+    "enable_battery_notifications": {
+      "label": "Включить уведомления о батарее",
+      "hint": "Отправлять flow-уведомления о событиях батареи"
+    },
+    "battery_report_interval": {
+      "label": "Интервал отчёта о батарее (часы)",
+      "hint": "Как часто запрашивать обновления состояния батареи"
+    },
+    "optimization_mode": {
+      "label": "Режим оптимизации энергии",
+      "hint": "Баланс между отзывчивостью и временем работы батареи"
+    },
+    "show_voltage": {
+      "label": "Показать напряжение батареи",
+      "hint": "Показать необработанное напряжение батареи в настройках устройства"
+    },
+    "enable_power_estimation": {
+      "label": "Включить оценку мощности",
+      "hint": "Оценивать потребление, когда реальное измерение недоступно (только AC/DC устройства)"
+    }
+  },
+  "tabs": {
+    "general": "Общие",
+    "advanced": "Расширенные",
+    "about": "О программе"
+  },
+  "common": {
+    "save": "Сохранить",
+    "cancel": "Отмена",
+    "ok": "OK",
+    "delete": "Удалить",
+    "edit": "Редактировать"
+  }
+}

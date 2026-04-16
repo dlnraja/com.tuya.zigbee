@@ -1,0 +1,86 @@
+name: 🛡️ Unified CI/CD Orchestrator
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+  workflow_dispatch:
+    inputs:
+      force_audit:
+        description: "Run deep architectural audit"
+        type: boolean
+        default: false
+
+jobs:
+  validate:
+    name: 🔍 Universal Validation (SDK 3 Strict)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci || npm install
+      
+      - name: 🏠 Homey Validate
+        run: npx homey app validate --level publish
+      
+      - name: 🛡️ SDK 3 Strict Linter
+        run: node scripts/maintenance/rule-21-linter.js
+      
+      - name: 📊 Architectural Audit & Performance Benchmark
+        run: node scripts/benchmark/app-audit-plus.js
+      
+      - name: 🧹 Metadata Consistency Check
+        run: node scripts/maintenance/validate-driver-manifests.js
+
+  build:
+    name: 🏗️ Production Build & Optimize
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci || npm install
+      
+      - name: 👷 Homey Build
+        run: npx homey app build
+      
+      - name: 🖼️ Fix Large Images
+        run: node scripts/maintenance/fix-large-images.js
+      
+      - name: 🧪 Regression Verification
+        run: |
+          echo "Verifying presence of critical stability hooks..."
+          grep -q "_throttleMotionSpam" drivers/sensor_presence_radar_unified/device.js && echo "✅ Radar Hook Active"
+          grep -q "Smart Divisor" lib/devices/UnifiedSensorBase.js && echo "✅ Smart Divisor Active"
+      
+      - name: 📦 Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: homey-app-bundle
+          path: .homeybuild/
+
+  security:
+    name: 🛡️ Unified Security Shield
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: 🕵️ Contextual Secret Masking
+        run: |
+          echo "Scanning for leak patterns in production-ready files..."
+          # Scan for PATs, API Keys, and raw developer emails
+          grep -rriE "HOMEY_PAT|GOOGLE_API_KEY|OPENAI_API_KEY" . --exclude-dir=.git --exclude-dir=node_modules && exit 1 || echo "✅ No critical secrets detected"
+

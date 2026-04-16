@@ -1,0 +1,693 @@
+{
+  "class": "heater",
+  "capabilities": [
+    "onoff",
+    "target_temperature",
+    "measure_temperature",
+    "thermostat_mode",
+    "measure_radio_stability",
+    "measure_maintenance_score"
+  ],
+  "zigbee": {
+    "productId": [
+      "TS0601",
+      "TS0601_RAD",
+      "ts0601",
+      "ts0601_rad"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/radiator_controller/assets/learnmode.svg",
+      "instruction": {
+        "en": "Turn the switch on/off 3 times quickly",
+        "fr": "Allumer/éteindre l'interrupteur 3 fois rapidement"
+      }
+    },
+    "manufacturerName": [
+      "_tze200_3regm3h6",
+      "_tze200_eekpf0ft",
+      "_tze200_pcdmj88b",
+      "_tze204_2ekuz3dz"
+    ]
+  },
+  "images": {
+    "small": "drivers/radiator_controller/assets/images/small.png",
+    "large": "drivers/radiator_controller/assets/images/large.png",
+    "xlarge": "drivers/radiator_controller/assets/images/xlarge.png"
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Radiator Configuration",
+        "fr": "Configuration Radiateur"
+      },
+      "children": [
+        {
+          "id": "pilot_wire_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Pilot Wire Type",
+            "fr": "Type Fil Pilote"
+          },
+          "hint": {
+            "en": "Select the type of pilot wire system used by your electric radiator",
+            "fr": "Sélectionnez le type de système fil pilote de votre radiateur électrique"
+          },
+          "value": "standard_6_orders",
+          "values": [
+            {
+              "id": "standard_6_orders",
+              "label": {
+                "en": "🔥 Standard 6 Orders (Confort/Eco/Hors-Gel/Arrêt/Confort-1/Confort-2)",
+                "fr": "🔥 Standard 6 Ordres (Confort/Eco/Hors-Gel/Arrêt/Confort-1/Confort-2)"
+              }
+            },
+            {
+              "id": "standard_4_orders",
+              "label": {
+                "en": "⚡ Standard 4 Orders (Confort/Eco/Hors-Gel/Arrêt)",
+                "fr": "⚡ Standard 4 Ordres (Confort/Eco/Hors-Gel/Arrêt)"
+              }
+            },
+            {
+              "id": "simple_on_off",
+              "label": {
+                "en": "🔌 Simple ON/OFF",
+                "fr": "🔌 Simple MARCHE/ARRÊT"
+              }
+            }
+          ]
+        },
+        {
+          "id": "diode_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Diode Configuration",
+            "fr": "Configuration Diode"
+          },
+          "hint": {
+            "en": "Hardware diode setup for pilot wire control (1N4007 recommended)",
+            "fr": "Configuration matérielle diode pour contrôle fil pilote (1N4007 recommandée)"
+          },
+          "value": "single_1n4007",
+          "values": [
+            {
+              "id": "single_1n4007",
+              "label": {
+                "en": "🔴 Single 1N4007 (Mono-directional)",
+                "fr": "🔴 Simple 1N4007 (Mono-directionnel)"
+              }
+            },
+            {
+              "id": "dual_1n4007",
+              "label": {
+                "en": "🔴🔴 Dual 1N4007 (Bi-directional)",
+                "fr": "🔴🔴 Double 1N4007 (Bi-directionnel)"
+              }
+            },
+            {
+              "id": "none",
+              "label": {
+                "en": "⚪ No Diode (Direct connection)",
+                "fr": "⚪ Pas de Diode (Connexion directe)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "heating_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Default Heating Mode",
+            "fr": "Mode Chauffage par Défaut"
+          },
+          "value": "confort",
+          "values": [
+            {
+              "id": "confort",
+              "label": {
+                "en": "🏠 Confort (100%)",
+                "fr": "🏠 Confort (100%)"
+              }
+            },
+            {
+              "id": "eco",
+              "label": {
+                "en": "🌱 Éco (-3°C/4°C)",
+                "fr": "🌱 Éco (-3°C/4°C)"
+              }
+            },
+            {
+              "id": "confort_minus_1",
+              "label": {
+                "en": "🌡️ Confort -1°C",
+                "fr": "🌡️ Confort -1°C"
+              }
+            },
+            {
+              "id": "confort_minus_2",
+              "label": {
+                "en": "❄️ Confort -2°C",
+                "fr": "❄️ Confort -2°C"
+              }
+            },
+            {
+              "id": "anti_freeze",
+              "label": {
+                "en": "🧊 Hors-Gel (7°C)",
+                "fr": "🧊 Hors-Gel (7°C)"
+              }
+            },
+            {
+              "id": "off",
+              "label": {
+                "en": "⛔ Arrêt",
+                "fr": "⛔ Arrêt"
+              }
+            }
+          ]
+        },
+        {
+          "id": "enable_scheduling",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Smart Scheduling",
+            "fr": "Activer Programmation Intelligente"
+          },
+          "hint": {
+            "en": "Allow automatic mode switching based on time and presence",
+            "fr": "Permettre le changement automatique de mode selon l'heure et la présence"
+          },
+          "value": false
+        },
+        {
+          "id": "disable_power_monitoring",
+          "type": "checkbox",
+          "label": {
+            "en": "Disable Energy Monitoring",
+            "fr": "Désactiver Surveillance Énergétique"
+          },
+          "hint": {
+            "en": "Radiators with pilot wire don't provide accurate energy readings",
+            "fr": "Les radiateurs avec fil pilote ne fournissent pas de mesures énergétiques précises"
+          },
+          "value": true
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Advanced Settings",
+        "fr": "Paramètres Avancés"
+      },
+      "children": [
+        {
+          "id": "signal_duration_ms",
+          "type": "number",
+          "label": {
+            "en": "Signal Duration (ms)",
+            "fr": "Durée Signal (ms)"
+          },
+          "hint": {
+            "en": "Duration of pilot wire signal pulses (typically 500-2000ms)",
+            "fr": "Durée des impulsions signal fil pilote (typiquement 500-2000ms)"
+          },
+          "value": 1000,
+          "min": 100,
+          "max": 5000,
+          "step": 100
+        },
+        {
+          "id": "signal_interval_s",
+          "type": "number",
+          "label": {
+            "en": "Signal Interval (seconds)",
+            "fr": "Intervalle Signal (secondes)"
+          },
+          "hint": {
+            "en": "Time between pilot wire signals (typically 5-60 seconds)",
+            "fr": "Temps entre les signaux fil pilote (typiquement 5-60 secondes)"
+          },
+          "value": 30,
+          "min": 5,
+          "max": 300,
+          "step": 5
+        },
+        {
+          "id": "override_thermostat",
+          "type": "checkbox",
+          "label": {
+            "en": "Override Radiator Thermostat",
+            "fr": "Forcer Thermostat Radiateur"
+          },
+          "hint": {
+            "en": "Force radiator to ignore its internal thermostat (advanced users only)",
+            "fr": "Forcer le radiateur à ignorer son thermostat interne (utilisateurs avancés uniquement)"
+          },
+          "value": false
+        },
+        {
+          "id": "debug_logging",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Debug Logging",
+            "fr": "Activer Logs Debug"
+          },
+          "hint": {
+            "en": "Log detailed pilot wire signals for troubleshooting",
+            "fr": "Enregistrer les signaux fil pilote détaillés pour dépannage"
+          },
+          "value": false
+        }
+      ]
+    },
+    {
+      "id": "enable_software_child_lock",
+      "type": "checkbox",
+      "label": {
+        "en": "Software Child Lock",
+        "fr": "Sécurité Enfant Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Prevents manual state changes on the device",
+        "fr": "Empêche les changements d'état manuels sur l'appareil"
+      }
+    },
+    {
+      "id": "auto_off_duration",
+      "type": "number",
+      "label": {
+        "en": "Auto-Off Timer (Minutes)",
+        "fr": "Minuterie Auto-Off (Minutes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 1440,
+      "hint": {
+        "en": "Turn off automatically after X minutes (0 = disabled)",
+        "fr": "S'éteint après X minutes (0 = désactivé)"
+      }
+    },
+    {
+      "id": "enable_vacation_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "Vacation Mode (Presence Sim)",
+        "fr": "Mode Vacances (Simulation Présence)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Randomly toggle device during evenings to simulate presence",
+        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+      }
+    },
+    {
+      "id": "emulated_motion_hold",
+      "type": "number",
+      "label": {
+        "en": "Emulated Motion Hold (Seconds)",
+        "fr": "Maintien Mouvement Émulé (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 3600,
+      "hint": {
+        "en": "Keep motion 'ON' for X seconds after hardware clears",
+        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+      }
+    },
+    {
+      "id": "double_click_interval",
+      "type": "number",
+      "label": {
+        "en": "Double Click Interval (ms)",
+        "fr": "Intervalle Double-Clic (ms)"
+      },
+      "value": 400,
+      "min": 100,
+      "max": 1000,
+      "hint": {
+        "en": "Software emulation for single-action buttons",
+        "fr": "Émulation logicielle pour boutons à action unique"
+      }
+    },
+    {
+      "id": "inching_duration",
+      "type": "number",
+      "label": {
+        "en": "Inching Duration (Secs)",
+        "fr": "Durée Inching (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 60,
+      "step": 0.1,
+      "hint": {
+        "en": "Automatically turn off after X seconds (Pulse mode)",
+        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+      }
+    },
+    {
+      "id": "enable_state_recovery",
+      "type": "checkbox",
+      "label": {
+        "en": "Software State Recovery",
+        "fr": "Récupération d'État Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Restore previous ON/OFF state after power failure",
+        "fr": "Restore l'état précédent après une coupure de courant"
+      }
+    },
+    {
+      "id": "enable_soft_transitions",
+      "type": "checkbox",
+      "label": {
+        "en": "Soft transitions (Fade)",
+        "fr": "Transitions douces (Fade)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable software-simulated smooth transitions (Lights/Dim)",
+        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+      }
+    },
+    {
+      "id": "maintenance_threshold",
+      "type": "number",
+      "label": {
+        "en": "Maintenance Alert Threshold",
+        "fr": "Seuil Alerte Maintenance"
+      },
+      "value": 30,
+      "min": 0,
+      "max": 100,
+      "hint": {
+        "en": "Alert if health score drops below this value",
+        "fr": "Alerte si le score de santé descend sous cette valeur"
+      }
+    },
+    {
+      "id": "enable_tpi_regulation",
+      "type": "checkbox",
+      "label": {
+        "en": "Adaptive TPI Regulation",
+        "fr": "Régulation TPI Adaptative"
+      },
+      "value": false,
+      "hint": {
+        "en": "Use advanced software-based heating cycles (more precise)",
+        "fr": "Utilise des cycles de chauffe logiciels avancés (plus précis)"
+      }
+    }
+  ],
+  "name": {
+    "en": "Electric Radiator Controller (Pilot Wire)",
+    "fr": "Contrôleur Radiateur Électrique (Fil Pilote)",
+    "nl": "Radiator Controller",
+    "de": "Heizkörpersteuerung"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Radiator Power",
+        "fr": "Alimentation Radiateur"
+      },
+      "preventInsights": false
+    },
+    "target_temperature": {
+      "title": {
+        "en": "Target Temperature",
+        "fr": "Température Cible"
+      },
+      "min": 5,
+      "max": 30,
+      "step": 0.5,
+      "units": {
+        "en": "°C"
+      }
+    },
+    "thermostat_mode": {
+      "title": {
+        "en": "Heating Mode",
+        "fr": "Mode Chauffage"
+      },
+      "preventInsights": false
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageConstant": 1500
+    }
+  },
+  "flow": {
+    "triggers": [
+      {
+        "id": "radiator_controller_radiator_mode_changed",
+        "title": {
+          "en": "Heating mode changed",
+          "fr": "Mode chauffage changé"
+        },
+        "tokens": [
+          {
+            "name": "mode",
+            "type": "string",
+            "title": {
+              "en": "Mode"
+            },
+            "example": "confort"
+          }
+        ]
+      },
+      {
+        "id": "radiator_controller_pilot_signal_sent",
+        "title": {
+          "en": "Pilot wire signal sent",
+          "fr": "Signal fil pilote envoyé"
+        },
+        "tokens": [
+          {
+            "name": "signal_type",
+            "type": "string",
+            "title": {
+              "en": "Signal Type"
+            },
+            "example": "confort"
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "radiator_controller_radiator_is_heating",
+        "title": {
+          "en": "Radiator !{{is|isn't}} heating",
+          "fr": "Radiateur !{{chauffe|ne chauffe pas}}"
+        }
+      },
+      {
+        "id": "radiator_controller_heating_mode_is",
+        "title": {
+          "en": "Heating mode !{{is|isn't}} [[mode]]",
+          "fr": "Mode chauffage !{{est|n'est pas}} [[mode]]"
+        },
+        "args": [
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "values": [
+              {
+                "id": "confort",
+                "title": {
+                  "en": "Confort"
+                }
+              },
+              {
+                "id": "eco",
+                "title": {
+                  "en": "Éco"
+                }
+              },
+              {
+                "id": "anti_freeze",
+                "title": {
+                  "en": "Hors-Gel"
+                }
+              },
+              {
+                "id": "off",
+                "title": {
+                  "en": "Arrêt"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "radiator_controller_set_heating_mode",
+        "title": {
+          "en": "Set heating mode to [[mode]]",
+          "fr": "Régler mode chauffage sur [[mode]]"
+        },
+        "args": [
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "values": [
+              {
+                "id": "confort",
+                "title": {
+                  "en": "🏠 Confort"
+                }
+              },
+              {
+                "id": "eco",
+                "title": {
+                  "en": "🌱 Éco"
+                }
+              },
+              {
+                "id": "confort_minus_1",
+                "title": {
+                  "en": "🌡️ Confort -1°C"
+                }
+              },
+              {
+                "id": "confort_minus_2",
+                "title": {
+                  "en": "❄️ Confort -2°C"
+                }
+              },
+              {
+                "id": "anti_freeze",
+                "title": {
+                  "en": "🧊 Hors-Gel"
+                }
+              },
+              {
+                "id": "off",
+                "title": {
+                  "en": "⛔ Arrêt"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "radiator_controller_send_pilot_signal",
+        "title": {
+          "en": "Send pilot wire signal [[signal]]",
+          "fr": "Envoyer signal fil pilote [[signal]]"
+        },
+        "args": [
+          {
+            "type": "dropdown",
+            "name": "signal",
+            "values": [
+              {
+                "id": "confort",
+                "title": {
+                  "en": "Confort (0V)"
+                }
+              },
+              {
+                "id": "eco",
+                "title": {
+                  "en": "Éco (230V neg)"
+                }
+              },
+              {
+                "id": "anti_freeze",
+                "title": {
+                  "en": "Hors-Gel (230V pos)"
+                }
+              },
+              {
+                "id": "off",
+                "title": {
+                  "en": "Arrêt (230V alt)"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "radiator_controller_set_temperature_offset",
+        "title": {
+          "en": "Set temperature offset",
+          "nl": "Temperatuur offset instellen",
+          "fr": "Définir offset température",
+          "de": "Temperatur-Offset einstellen"
+        },
+        "titleFormatted": {
+          "en": "Set temperature offset to [[offset]]°C",
+          "nl": "Stel temperatuur offset in op [[offset]]°C",
+          "fr": "Définir offset température à [[offset]]°C"
+        },
+        "hint": {
+          "en": "Adjust the temperature reading by adding an offset value",
+          "nl": "Pas de temperatuurmeting aan door een offset toe te voegen"
+        },
+        "args": [
+          {
+            "name": "offset",
+            "type": "range",
+            "min": -5,
+            "max": 5,
+            "step": 0.5,
+            "label": "°C"
+          }
+        ]
+      }
+    ]
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "radiator_setup"
+      }
+    },
+    {
+      "id": "radiator_setup",
+      "template": "template_radiator_setup"
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

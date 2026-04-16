@@ -1,0 +1,220 @@
+{
+  "triggers": [
+    {
+      "id": "air_purifier_quality_hybrid_air_quality_co2_co2_level_changed",
+      "title": {
+        "en": "CO2 level changed",
+        "fr": "Niveau CO2 changé"
+      },
+      "tokens": [
+        {
+          "name": "co2",
+          "type": "number",
+          "title": {
+            "en": "CO2 (ppm)",
+            "fr": "CO2 (ppm)"
+          },
+          "example": 800
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "CO2 level changed",
+        "fr": "Niveau CO2 changé"
+      }
+    },
+    {
+      "id": "air_purifier_quality_hybrid_air_quality_co2_co2_alert_on",
+      "title": {
+        "en": "CO2 alert triggered",
+        "fr": "Alerte CO2 déclenchée"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "CO2 alert triggered",
+        "fr": "Alerte CO2 déclenchée"
+      }
+    },
+    {
+      "id": "air_purifier_quality_hybrid_air_quality_co2_co2_alert_off",
+      "title": {
+        "en": "CO2 returned to normal",
+        "fr": "CO2 revenu à la normale"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "CO2 returned to normal",
+        "fr": "CO2 revenu à la normale"
+      }
+    },
+    {
+      "id": "air_purifier_quality_hybrid_air_quality_co2_air_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "°C",
+            "fr": "°C"
+          },
+          "example": 22
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      }
+    },
+    {
+      "id": "air_purifier_quality_hybrid_air_quality_co2_air_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "%",
+            "fr": "%"
+          },
+          "example": 50
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      }
+    },
+    {
+      "id": "air_purifier_quality_hybrid_air_quality_co2_pm25_changed",
+      "title": {
+        "en": "PM2.5 level changed",
+        "fr": "Niveau PM2.5 changé"
+      },
+      "tokens": [
+        {
+          "name": "pm25",
+          "type": "number",
+          "title": {
+            "en": "µg/m³",
+            "fr": "µg/m³"
+          },
+          "example": 25
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "PM2.5 level changed",
+        "fr": "Niveau PM2.5 changé"
+      }
+    },
+    {
+      "id": "air_purifier_quality_hybrid_air_quality_co2_temp_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      }
+    },
+    {
+      "id": "air_purifier_quality_hybrid_air_quality_co2_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geändert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geändert"
+      }
+    },
+    {
+      "id": "air_purifier_quality_hybrid_air_quality_co2_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "air_purifier_quality_hybrid_air_quality_co2_co2_above",
+      "title": {
+        "en": "CO2 level is above",
+        "fr": "Niveau CO2 supérieur à"
+      },
+      "titleFormatted": {
+        "en": "CO2 level is above [[co2]] ppm",
+        "fr": "Niveau CO2 supérieur à [[co2]] ppm"
+      },
+      "args": [
+        {
+          "name": "co2",
+          "type": "number",
+          "min": 400,
+          "max": 5000
+        }
+      ]
+    },
+    {
+      "id": "air_purifier_quality_hybrid_air_quality_co2_co2_below",
+      "title": {
+        "en": "CO2 level is below",
+        "fr": "Niveau CO2 inférieur à"
+      },
+      "titleFormatted": {
+        "en": "CO2 level is below [[co2]] ppm",
+        "fr": "Niveau CO2 inférieur à [[co2]] ppm"
+      },
+      "args": [
+        {
+          "name": "co2",
+          "type": "number",
+          "min": 400,
+          "max": 5000
+        }
+      ]
+    },
+    {
+      "id": "air_purifier_quality_hybrid_air_quality_co2_air_quality_good",
+      "title": {
+        "en": "Air quality is good",
+        "fr": "Qualité air bonne"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Air quality is good",
+        "fr": "Qualité air bonne"
+      }
+    }
+  ]
+}

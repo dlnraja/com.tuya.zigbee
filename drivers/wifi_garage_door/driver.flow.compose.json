@@ -1,0 +1,34 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_garage_door_wifi_garage_opened",
+      "title": {
+        "en": "Garage opened"
+      },
+      "titleFormatted": {
+        "en": "Garage opened"
+      }
+    },
+    {
+      "id": "wifi_garage_door_wifi_garage_closed",
+      "title": {
+        "en": "Garage closed"
+      },
+      "titleFormatted": {
+        "en": "Garage closed"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "wifi_garage_door_wifi_garage_is_open",
+      "title": {
+        "en": "Garage is open"
+      },
+      "titleFormatted": {
+        "en": "Garage is open"
+      }
+    }
+  ],
+  "actions": []
+}

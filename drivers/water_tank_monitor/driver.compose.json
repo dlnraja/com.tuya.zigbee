@@ -1,0 +1,360 @@
+{
+  "name": {
+    "en": "Liquid Level Sensor",
+    "fr": "Capteur Niveau Liquide",
+    "nl": "Vloeistofniveau Sensor",
+    "de": "Flussigkeitsstandsensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_water_level",
+    "measure_water_percentage",
+    "alarm_water_low",
+    "alarm_water_high",
+    "alarm_water",
+    "alarm_battery",
+    "measure_radio_stability",
+    "measure_maintenance_score"
+  ],
+  "capabilitiesOptions": {
+    "measure_water_level": {
+      "title": {
+        "en": "Liquid Depth",
+        "fr": "Profondeur Liquide",
+        "nl": "Vloeistofdiepte",
+        "de": "Flussigkeitstiefe"
+      }
+    },
+    "measure_water_percentage": {
+      "title": {
+        "en": "Fill Level",
+        "fr": "Niveau Remplissage",
+        "nl": "Vulniveau",
+        "de": "Fullstand"
+      }
+    },
+    "alarm_water_low": {
+      "title": {
+        "en": "Low Level Alert",
+        "fr": "Alerte Niveau Bas",
+        "nl": "Laag Niveau Alarm",
+        "de": "Niedrigstand Alarm"
+      }
+    },
+    "alarm_water_high": {
+      "title": {
+        "en": "High Level Alert",
+        "fr": "Alerte Niveau Haut",
+        "nl": "Hoog Niveau Alarm",
+        "de": "Hochstand Alarm"
+      }
+    },
+    "alarm_water": {
+      "title": {
+        "en": "Level Alert",
+        "fr": "Alerte Niveau",
+        "nl": "Niveau Alarm",
+        "de": "Standmeldung"
+      }
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "images": {
+    "small": "drivers/water_tank_monitor/assets/images/small.png",
+    "large": "drivers/water_tank_monitor/assets/images/large.png",
+    "xlarge": "drivers/water_tank_monitor/assets/images/xlarge.png"
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tze200_8ygqkfpo",
+      "_tze200_do4ckv7k",
+      "_tze200_rgfzq1fl",
+      "_tze200_wcnjrsjf",
+      "_tze204_htnnfasr",
+      "_tze204_lvkk0hdg",
+      "_tze284_lvkk0hdg",
+      "_tze284_mxujdmxo"
+    ],
+    "productId": [
+      "TS0601",
+      "TS0601_TANK",
+      "ts0601",
+      "ts0601_tank"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    }
+  },
+  "energy": {
+    "batteries": [
+      "AAA",
+      "AA",
+      "CR123A"
+    ]
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Tank Configuration",
+        "fr": "Configuration Reservoir",
+        "nl": "Tank Configuratie",
+        "de": "Tank Konfiguration"
+      },
+      "children": [
+        {
+          "id": "installation_height",
+          "type": "number",
+          "label": {
+            "en": "Installation Height (mm)",
+            "fr": "Hauteur Installation (mm)",
+            "nl": "Installatiehoogte (mm)",
+            "de": "Installationshohe (mm)"
+          },
+          "hint": {
+            "en": "Distance from sensor to tank bottom in mm (DP19, 10-4000)"
+          },
+          "value": 2000,
+          "min": 10,
+          "max": 4000,
+          "step": 1,
+          "units": "mm"
+        },
+        {
+          "id": "liquid_depth_max",
+          "type": "number",
+          "label": {
+            "en": "Sensor to Full Line (mm)",
+            "fr": "Capteur a Ligne Pleine (mm)",
+            "nl": "Sensor naar Vol Lijn (mm)",
+            "de": "Sensor bis Volllinie (mm)"
+          },
+          "hint": {
+            "en": "Height from sensor to liquid surface when full (DP21, 10-4000)"
+          },
+          "value": 200,
+          "min": 10,
+          "max": 4000,
+          "step": 1,
+          "units": "mm"
+        },
+        {
+          "id": "max_set",
+          "type": "number",
+          "label": {
+            "en": "Max Alarm Level (%)",
+            "fr": "Niveau Alarme Max (%)",
+            "nl": "Max Alarm Niveau (%)",
+            "de": "Max Alarm Niveau (%)"
+          },
+          "hint": {
+            "en": "High level alarm threshold percentage (DP7, 0-100)"
+          },
+          "value": 100,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "units": "%"
+        },
+        {
+          "id": "min_set",
+          "type": "number",
+          "label": {
+            "en": "Min Alarm Level (%)",
+            "fr": "Niveau Alarme Min (%)",
+            "nl": "Min Alarm Niveau (%)",
+            "de": "Min Alarm Niveau (%)"
+          },
+          "hint": {
+            "en": "Low level alarm threshold percentage (DP8, 0-100)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "units": "%"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Device Information",
+        "fr": "Informations Appareil",
+        "nl": "Apparaat Informatie",
+        "de": "Gerateinformation"
+      },
+      "children": [
+        {
+          "id": "device_model_id",
+          "type": "label",
+          "label": {
+            "en": "Zigbee Model"
+          },
+          "value": ""
+        },
+        {
+          "id": "device_manufacturer",
+          "type": "label",
+          "label": {
+            "en": "Manufacturer"
+          },
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "enable_software_child_lock",
+      "type": "checkbox",
+      "label": {
+        "en": "Software Child Lock",
+        "fr": "Sécurité Enfant Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Prevents manual state changes on the device",
+        "fr": "Empêche les changements d'état manuels sur l'appareil"
+      }
+    },
+    {
+      "id": "auto_off_duration",
+      "type": "number",
+      "label": {
+        "en": "Auto-Off Timer (Minutes)",
+        "fr": "Minuterie Auto-Off (Minutes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 1440,
+      "hint": {
+        "en": "Turn off automatically after X minutes (0 = disabled)",
+        "fr": "S'éteint après X minutes (0 = désactivé)"
+      }
+    },
+    {
+      "id": "enable_vacation_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "Vacation Mode (Presence Sim)",
+        "fr": "Mode Vacances (Simulation Présence)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Randomly toggle device during evenings to simulate presence",
+        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+      }
+    },
+    {
+      "id": "emulated_motion_hold",
+      "type": "number",
+      "label": {
+        "en": "Emulated Motion Hold (Seconds)",
+        "fr": "Maintien Mouvement Émulé (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 3600,
+      "hint": {
+        "en": "Keep motion 'ON' for X seconds after hardware clears",
+        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+      }
+    },
+    {
+      "id": "double_click_interval",
+      "type": "number",
+      "label": {
+        "en": "Double Click Interval (ms)",
+        "fr": "Intervalle Double-Clic (ms)"
+      },
+      "value": 400,
+      "min": 100,
+      "max": 1000,
+      "hint": {
+        "en": "Software emulation for single-action buttons",
+        "fr": "Émulation logicielle pour boutons à action unique"
+      }
+    },
+    {
+      "id": "inching_duration",
+      "type": "number",
+      "label": {
+        "en": "Inching Duration (Secs)",
+        "fr": "Durée Inching (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 60,
+      "step": 0.1,
+      "hint": {
+        "en": "Automatically turn off after X seconds (Pulse mode)",
+        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+      }
+    },
+    {
+      "id": "enable_state_recovery",
+      "type": "checkbox",
+      "label": {
+        "en": "Software State Recovery",
+        "fr": "Récupération d'État Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Restore previous ON/OFF state after power failure",
+        "fr": "Restore l'état précédent après une coupure de courant"
+      }
+    },
+    {
+      "id": "enable_soft_transitions",
+      "type": "checkbox",
+      "label": {
+        "en": "Soft transitions (Fade)",
+        "fr": "Transitions douces (Fade)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable software-simulated smooth transitions (Lights/Dim)",
+        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+      }
+    },
+    {
+      "id": "maintenance_threshold",
+      "type": "number",
+      "label": {
+        "en": "Maintenance Alert Threshold",
+        "fr": "Seuil Alerte Maintenance"
+      },
+      "value": 30,
+      "min": 0,
+      "max": 100,
+      "hint": {
+        "en": "Alert if health score drops below this value",
+        "fr": "Alerte si le score de santé descend sous cette valeur"
+      }
+    }
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  }
+}

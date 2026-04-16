@@ -1,0 +1,628 @@
+{
+  "timestamp": "2026-04-16T07:35:48.286Z",
+  "totalFiles": 0,
+  "totalFixes": 150,
+  "rules": {
+    "dp-variant-docs": {
+      "count": 14,
+      "files": [
+        {
+          "file": "drivers\\air_purifier_sensor_hybrid\\device.js",
+          "detail": "Multiple TZE prefixes without variant documentation"
+        },
+        {
+          "file": "drivers\\button_wireless_plug_hybrid\\device.js",
+          "detail": "Multiple TZE prefixes without variant documentation"
+        },
+        {
+          "file": "drivers\\device_air_purifier_plug_hybrid\\device.js",
+          "detail": "Multiple TZE prefixes without variant documentation"
+        },
+        {
+          "file": "drivers\\device_air_purifier_radiator_hybrid\\device.js",
+          "detail": "Multiple TZE prefixes without variant documentation"
+        },
+        {
+          "file": "drivers\\device_radiator_valve_hybrid\\device.js",
+          "detail": "Multiple TZE prefixes without variant documentation"
+        },
+        {
+          "file": "drivers\\device_radiator_valve_smart_hybrid\\device.js",
+          "detail": "Multiple TZE prefixes without variant documentation"
+        },
+        {
+          "file": "drivers\\dimmer_wall_plug_hybrid\\device.js",
+          "detail": "Multiple TZE prefixes without variant documentation"
+        },
+        {
+          "file": "drivers\\lcdtemphumidsensor_plug_energy_hybrid\\device.js",
+          "detail": "Multiple TZE prefixes without variant documentation"
+        },
+        {
+          "file": "drivers\\motion_sensor_radar_mmwave\\device.js",
+          "detail": "Multiple TZE prefixes without variant documentation"
+        },
+        {
+          "file": "drivers\\plug_energy_monitor\\device.js",
+          "detail": "Multiple TZE prefixes without variant documentation"
+        },
+        {
+          "file": "drivers\\radiator_valve\\device.js",
+          "detail": "Multiple TZE prefixes without variant documentation"
+        },
+        {
+          "file": "drivers\\remote_button_wireless_plug_hybrid\\device.js",
+          "detail": "Multiple TZE prefixes without variant documentation"
+        },
+        {
+          "file": "drivers\\sensor_motion_radar_hybrid\\device.js",
+          "detail": "Multiple TZE prefixes without variant documentation"
+        },
+        {
+          "file": "drivers\\water_valve_smart\\device.js",
+          "detail": "Multiple TZE prefixes without variant documentation"
+        }
+      ]
+    },
+    "duplicate-fingerprints": {
+      "count": 133,
+      "files": [
+        {
+          "file": "drivers",
+          "detail": "_tz2000_avdnvykf found in: air_purifier, air_purifier_quality_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz2000_hjsgdkfl found in: air_purifier, air_purifier_quality_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_huzkzqyk found in: air_purifier, climate_sensor_dimmer_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_d0yu2xgi found in: air_purifier, device_air_purifier_siren_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_i8jfiezr found in: air_purifier_climate_hybrid, sensor_climate_temphumidsensor_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_9evm3otq found in: bulb_dimmable, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_12sxjap4 found in: bulb_rgb, led_strip_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_6zvw8ham found in: bulb_rgb, contact_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_h1jnz6l8 found in: bulb_rgb, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_hlijwsai found in: bulb_rgb, led_strip_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_keabpigv found in: bulb_rgb, led_strip_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_qzjcsmar found in: bulb_rgb, scene_switch_1"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_0zabbfax found in: bulb_rgb, led_strip_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_95txyzbx found in: bulb_rgb, led_strip_rgbw"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_k1pe6ibm found in: bulb_rgb, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "sonoff found in: bulb_rgbw, plug_energy_monitor, remote_button_wireless_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_rkgngb5o found in: bulb_rgbw, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "ewelink found in: bulb_rgbw_universal_hybrid, button_wireless_1, device_plug_energy_hybrid, device_plug_energy_monitor_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_oboryztc found in: bulb_white, led_strip_advanced"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_qm6djpta found in: button_emergency_sos, button_wireless_4, remote_button_emergency_sos_hybrid, smart_remote_4_buttons"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_nxdziqzc found in: button_emergency_sos, button_wireless_1"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_peszejy7 found in: button_emergency_sos, button_wireless_1, scene_switch_1"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_arfwfgoa found in: button_wireless, button_wireless_2"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb02_keyjqthh found in: button_wireless_1, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_8rppvwda found in: button_wireless_1, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_csflgqj2 found in: button_wireless_1, smart_knob_rotary"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_itb0omhv found in: button_wireless_1, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_pzui3skt found in: button_wireless_1, contact_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_q68478x7 found in: button_wireless_1, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_tk3s5tyg found in: button_wireless_1, gas_sensor, wall_remote_1_gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_uri7ber7 found in: button_wireless_1, smart_knob"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_vn88ezar found in: button_wireless_1, climate_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_yj6k7vfo found in: button_wireless_1, remote_button_wireless_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_iuepbmpv found in: button_wireless_2, lcdtemphumidsensor_plug_energy_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_1h2x4akh found in: button_wireless_2, ceiling_fan"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_88iqnhvd found in: button_wireless_2, climate_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_cymsnfvf found in: button_wireless_2, module_mini_switch_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_dksbtrzs found in: button_wireless_2, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_fukaa7nc found in: button_wireless_2, climate_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_gznh2xla found in: button_wireless_2, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_jak16dll found in: button_wireless_2, climate_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_mraovvmm found in: button_wireless_2, switch_wall_5gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_vmpbygs5 found in: button_wireless_2, module_mini_switch"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zmy1waw6 found in: button_wireless_2, climate_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_bi6lpsew found in: button_wireless_3, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_famkxci2 found in: button_wireless_3, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_w3c7ouru found in: button_wireless_3, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_abci1hiu found in: button_wireless_4, radiator_valve"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_fjt5218m found in: button_wireless_4, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_jcspr0tp found in: button_wireless_4, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_kaflzta4 found in: button_wireless_4, climate_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_r0pmi2p3 found in: button_wireless_4, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_w8jwkczz found in: button_wireless_4, wall_remote_3_gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_xwuveizv found in: button_wireless_4, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_zgyzgdua found in: button_wireless_4, scene_switch_4"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3290_785fbxik found in: button_wireless_4, ir_blaster"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3290_nkpxapoz found in: button_wireless_4, ir_blaster"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3290_yyax9ajf found in: button_wireless_4, ir_blaster"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_iszegwpd found in: button_wireless_6, scene_switch_6"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_5f43h46b found in: button_wireless_usb_hybrid, din_rail_switch"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_f09j9qjb found in: climate_sensor, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_mq4wujmp found in: climate_sensor, device_plug_smart_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_ovyaisip found in: climate_sensor, wall_switch_1gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_pk8tgtdb found in: climate_sensor, wall_switch_1gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_vjhcenzo found in: climate_sensor, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_yervjnlj found in: climate_sensor, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_wptayaqr found in: contact_sensor_curtain_hybrid, curtain_motor, curtain_motor_wall_hybrid, wall_curtain_switch"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tzb000_yqjaollc found in: curtain_motor, generic_tuya, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "tuyatec-1g3tawnp found in: device_air_purifier_climate_hybrid, sensor_climate_temphumidsensor_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "tuyatec-1uxx9cci found in: device_air_purifier_climate_hybrid, sensor_climate_temphumidsensor_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "tuyatec-abkehqus found in: device_air_purifier_climate_hybrid, sensor_climate_temphumidsensor_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "tuyatec-bfq2i2sy found in: device_air_purifier_climate_hybrid, sensor_climate_temphumidsensor_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "tuyatec-g3gl6cgy found in: device_air_purifier_climate_hybrid, sensor_climate_temphumidsensor_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "tuyatec-gqhxixyk found in: device_air_purifier_climate_hybrid, sensor_climate_temphumidsensor_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "tuyatec-haoiuwzy found in: device_air_purifier_climate_hybrid, sensor_climate_temphumidsensor_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "tuyatec-ojmxeikg found in: device_air_purifier_climate_hybrid, sensor_climate_temphumidsensor_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "tuyatec-ojmxeikq found in: device_air_purifier_climate_hybrid, sensor_climate_temphumidsensor_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "tuyatec-prhs1rsd found in: device_air_purifier_climate_hybrid, sensor_climate_temphumidsensor_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "tuyatec-qun7vq14 found in: device_air_purifier_climate_hybrid, sensor_climate_temphumidsensor_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "tuyatec-riuj5xzs found in: device_air_purifier_climate_hybrid, sensor_climate_temphumidsensor_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "tuyatec-v3uxbuxy found in: device_air_purifier_climate_hybrid, sensor_climate_temphumidsensor_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "tuyatec-vmgh3fxd found in: device_air_purifier_climate_hybrid, sensor_climate_temphumidsensor_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "tuyatec-yg5dcbfu found in: device_air_purifier_climate_hybrid, sensor_climate_temphumidsensor_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "danfoss found in: device_generic_diy_universal_hybrid, device_generic_tuya_universal_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "legrand found in: device_generic_diy_universal_hybrid, device_generic_tuya_universal_hybrid, generic_diy"
+        },
+        {
+          "file": "drivers",
+          "detail": "schneider electric found in: device_generic_diy_universal_hybrid, device_generic_tuya_universal_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "smartthings found in: device_generic_tuya_universal_hybrid, diy_custom_zigbee"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_eymunffl found in: device_plug_smart_hybrid, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_eejm8dcr found in: dimmer_wall_1gang, led_strip_rgbw, light_bulb_rgb_led_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_invesber found in: dimmer_wall_1gang, light_bulb_rgb_led_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "diyruz found in: diy_custom_zigbee, generic_tuya"
+        },
+        {
+          "file": "drivers",
+          "detail": "dresden elektronik found in: diy_custom_zigbee, generic_tuya"
+        },
+        {
+          "file": "drivers",
+          "detail": "phoscon found in: diy_custom_zigbee, generic_tuya"
+        },
+        {
+          "file": "drivers",
+          "detail": "popp found in: diy_custom_zigbee, generic_tuya"
+        },
+        {
+          "file": "drivers",
+          "detail": "zigbee2mqtt found in: diy_custom_zigbee, generic_tuya"
+        },
+        {
+          "file": "drivers",
+          "detail": "bosch found in: generic_diy, generic_tuya"
+        },
+        {
+          "file": "drivers",
+          "detail": "se found in: generic_diy, generic_tuya"
+        },
+        {
+          "file": "drivers",
+          "detail": "wiser found in: generic_diy, generic_tuya"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_u6x1zyv2 found in: generic_tuya, motion_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_tzvbimpq found in: generic_tuya, remote_button_wireless_hybrid, remote_button_wireless_smart_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze284_hdml1aav found in: lcdtemphumidsensor, soil_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_sroezl0s found in: led_strip_rgbw, light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_as7eqiri found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_fbja4q6h found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_hcm1fqxe found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_keabpigb found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_kihkx3cq found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_lzfwt5qx found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_m6u3q8jy found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_tqlv4yz4 found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_u5u4cakc found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_w2ug5kgu found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_x2fqbdun found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_0c4np92r found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_0fc3g9sq found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_1agihf3z found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_bcplf4ds found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_dxrjkpi6 found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_h1zvcpwd found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_jkbdrvvf found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_lezkafxf found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_lmqquxus found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_rbgfkwbl found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_taw0fc13 found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_wuheyhvm found in: light_bulb_dimmable_tunable_hybrid, light_bulb_rgb_rgbw_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_dr6sduka found in: motion_sensor, motion_sensor_switch_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_kmh5qpmb found in: motion_sensor, sensor_climate_motion_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_pnzfdr9y found in: plug_smart, plug_smart_switch_hybrid"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_tkusjmue found in: scene_switch_1, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "hobeian found in: sensor_climate_presence_hybrid, sensor_climate_temphumidsensor_hybrid, sensor_contact_presence_hybrid, sensor_presence_radar_hybrid, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_xk5udnd6 found in: switch_4gang, wall_switch_2gang_1way, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_blhvsaqf found in: switch_wall_hybrid, wall_switch_2gang_1way, wall_switch_3gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_bseed found in: wall_switch_2gang_1way, wall_switch_3gang_1way"
+        }
+      ]
+    },
+    "logic-case-audit": {
+      "count": 2,
+      "files": [
+        {
+          "file": ".homeybuild\\lib\\diagnostics\\DeviceHealth.js",
+          "detail": "Suspected case-sensitive comparison of manufacturerName"
+        },
+        {
+          "file": "lib\\diagnostics\\DeviceHealth.js",
+          "detail": "Suspected case-sensitive comparison of manufacturerName"
+        }
+      ]
+    },
+    "safe-flow-lookup": {
+      "count": 1,
+      "files": [
+        {
+          "file": "drivers\\air_quality_comprehensive\\driver.js",
+          "detail": "Wrapped Flow card lookups in try-catch."
+        }
+      ]
+    }
+  },
+  "errors": []
+}

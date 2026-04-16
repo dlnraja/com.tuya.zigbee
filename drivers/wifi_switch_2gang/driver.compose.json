@@ -1,0 +1,401 @@
+{
+  "name": {
+    "en": "WiFi 2-Gang Switch"
+  },
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "onoff.gang2",
+    "measure_radio_stability",
+    "measure_maintenance_score"
+  ],
+  "pair": [
+    {
+      "id": "configure",
+      "navigation": {
+        "next": "list_devices"
+      }
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "prev": "configure"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "repair": [
+    {
+      "id": "configure"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Tuya Local"
+      },
+      "children": [
+        {
+          "id": "device_id",
+          "type": "text",
+          "label": {
+            "en": "Device ID"
+          },
+          "value": ""
+        },
+        {
+          "id": "local_key",
+          "type": "text",
+          "label": {
+            "en": "Local Key"
+          },
+          "value": ""
+        },
+        {
+          "id": "ip",
+          "type": "text",
+          "label": {
+            "en": "IP"
+          },
+          "value": ""
+        },
+        {
+          "id": "protocol_version",
+          "type": "dropdown",
+          "label": {
+            "en": "Protocol"
+          },
+          "value": "3.3",
+          "values": [
+            {
+              "id": "3.1",
+              "label": {
+                "en": "3.1"
+              }
+            },
+            {
+              "id": "3.3",
+              "label": {
+                "en": "3.3"
+              }
+            },
+            {
+              "id": "3.4",
+              "label": {
+                "en": "3.4"
+              }
+            },
+            {
+              "id": "3.5",
+              "label": {
+                "en": "3.5"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sync_email",
+      "type": "text",
+      "label": {
+        "en": "Cloud Sync Email",
+        "fr": "Email de synchronisation"
+      },
+      "hint": {
+        "en": "Optional: Email for automatic local key retrieval",
+        "fr": "Optionnel : Email pour récupération auto des clés"
+      }
+    },
+    {
+      "id": "sync_password",
+      "type": "password",
+      "label": {
+        "en": "Cloud Sync Password",
+        "fr": "Mot de passe de synchronisation"
+      },
+      "hint": {
+        "en": "Optional: Password for the Tuya/Smart Life app",
+        "fr": "Optionnel : Mot de passe de l'app Tuya/Smart Life"
+      }
+    },
+    {
+      "id": "enable_software_child_lock",
+      "type": "checkbox",
+      "label": {
+        "en": "Software Child Lock",
+        "fr": "Sécurité Enfant Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Prevents manual state changes on the device",
+        "fr": "Empêche les changements d'état manuels sur l'appareil"
+      }
+    },
+    {
+      "id": "auto_off_duration",
+      "type": "number",
+      "label": {
+        "en": "Auto-Off Timer (Minutes)",
+        "fr": "Minuterie Auto-Off (Minutes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 1440,
+      "hint": {
+        "en": "Turn off automatically after X minutes (0 = disabled)",
+        "fr": "S'éteint après X minutes (0 = désactivé)"
+      }
+    },
+    {
+      "id": "enable_vacation_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "Vacation Mode (Presence Sim)",
+        "fr": "Mode Vacances (Simulation Présence)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Randomly toggle device during evenings to simulate presence",
+        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+      }
+    },
+    {
+      "id": "emulated_motion_hold",
+      "type": "number",
+      "label": {
+        "en": "Emulated Motion Hold (Seconds)",
+        "fr": "Maintien Mouvement Émulé (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 3600,
+      "hint": {
+        "en": "Keep motion 'ON' for X seconds after hardware clears",
+        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+      }
+    },
+    {
+      "id": "double_click_interval",
+      "type": "number",
+      "label": {
+        "en": "Double Click Interval (ms)",
+        "fr": "Intervalle Double-Clic (ms)"
+      },
+      "value": 400,
+      "min": 100,
+      "max": 1000,
+      "hint": {
+        "en": "Software emulation for single-action buttons",
+        "fr": "Émulation logicielle pour boutons à action unique"
+      }
+    },
+    {
+      "id": "inching_duration",
+      "type": "number",
+      "label": {
+        "en": "Inching Duration (Secs)",
+        "fr": "Durée Inching (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 60,
+      "step": 0.1,
+      "hint": {
+        "en": "Automatically turn off after X seconds (Pulse mode)",
+        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+      }
+    },
+    {
+      "id": "enable_state_recovery",
+      "type": "checkbox",
+      "label": {
+        "en": "Software State Recovery",
+        "fr": "Récupération d'État Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Restore previous ON/OFF state after power failure",
+        "fr": "Restore l'état précédent après une coupure de courant"
+      }
+    },
+    {
+      "id": "enable_soft_transitions",
+      "type": "checkbox",
+      "label": {
+        "en": "Soft transitions (Fade)",
+        "fr": "Transitions douces (Fade)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable software-simulated smooth transitions (Lights/Dim)",
+        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+      }
+    },
+    {
+      "id": "maintenance_threshold",
+      "type": "number",
+      "label": {
+        "en": "Maintenance Alert Threshold",
+        "fr": "Seuil Alerte Maintenance"
+      },
+      "value": 30,
+      "min": 0,
+      "max": 100,
+      "hint": {
+        "en": "Alert if health score drops below this value",
+        "fr": "Alerte si le score de santé descend sous cette valeur"
+      }
+    }
+  ],
+  "images": {
+    "small": "drivers/wifi_switch_2gang/assets/images/small.png",
+    "large": "drivers/wifi_switch_2gang/assets/images/large.png",
+    "xlarge": "drivers/wifi_switch_2gang/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "lan"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Switch 1"
+      }
+    },
+    "onoff.gang2": {
+      "title": {
+        "en": "Switch 2"
+      }
+    }
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "discoveryStrategies": [
+    {
+      "strategy": "mdns-sd",
+      "options": {
+        "name": "_tuya._tcp.local"
+      }
+    },
+    {
+      "strategy": "ssdp",
+      "options": {
+        "search": "urn:schemas-upnp-org:device:Basic:1"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "wifi_switch_2gang_physical_gang1_on",
+        "title": {
+          "en": "Gang 1 turned on (physical)",
+          "fr": "Gang 1 allumé (physique)"
+        }
+      },
+      {
+        "id": "wifi_switch_2gang_physical_gang1_off",
+        "title": {
+          "en": "Gang 1 turned off (physical)",
+          "fr": "Gang 1 allumé (éteint) (physique)"
+        }
+      },
+      {
+        "id": "wifi_switch_2gang_physical_gang2_on",
+        "title": {
+          "en": "Gang 2 turned on (physical)",
+          "fr": "Gang 2 allumé (physique)"
+        }
+      },
+      {
+        "id": "wifi_switch_2gang_physical_gang2_off",
+        "title": {
+          "en": "Gang 2 turned off (physical)",
+          "fr": "Gang 2 allumé (éteint) (physique)"
+        }
+      },
+      {
+        "id": "wifi_switch_2gang_gang1_scene",
+        "title": {
+          "en": "Gang 1 scene trigger",
+          "fr": "Déclencheur de scène Gang 1"
+        },
+        "args": [
+          {
+            "name": "action",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "fr": "On"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Off"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_2gang_gang2_scene",
+        "title": {
+          "en": "Gang 2 scene trigger",
+          "fr": "Déclencheur de scène Gang 2"
+        },
+        "args": [
+          {
+            "name": "action",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "on",
+                "label": {
+                  "en": "On",
+                  "fr": "On"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Off"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "conditions": [],
+    "actions": []
+  },
+  "energy": {
+    "approximation": {
+      "usageOff": 0.4,
+      "usageOn": 100
+    }
+  }
+}

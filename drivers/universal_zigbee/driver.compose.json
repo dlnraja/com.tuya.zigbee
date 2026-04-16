@@ -1,0 +1,466 @@
+{
+  "id": "universal_zigbee",
+  "name": {
+    "en": "Generic Zigbee Device",
+    "fr": "Appareil Zigbee Générique",
+    "nl": "Universeel Zigbee-apparaat",
+    "de": "Universelles Zigbee-Gerät"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_temperature",
+    "measure_humidity",
+    "measure_luminance",
+    "alarm_motion",
+    "alarm_contact",
+    "alarm_water",
+    "measure_battery",
+    "measure_power",
+    "measure_voltage",
+    "measure_current",
+    "meter_power",
+    "light_hue",
+    "light_saturation",
+    "light_temperature",
+    "light_mode",
+    "windowcoverings_set",
+    "windowcoverings_state",
+    "target_temperature",
+    "thermostat_mode",
+    "tuya_dp_value",
+    "tuya_dp_string",
+    "tuya_dp_raw",
+    "tuya_cluster_event",
+    "measure_radio_stability",
+    "measure_maintenance_score"
+  ],
+  "capabilitiesOptions": {
+    "tuya_dp_value": {
+      "title": {
+        "en": "Last DP Value (Numeric)"
+      }
+    },
+    "tuya_dp_string": {
+      "title": {
+        "en": "Last DP String"
+      }
+    },
+    "tuya_dp_raw": {
+      "title": {
+        "en": "Last Raw DP (Hex)"
+      }
+    },
+    "tuya_cluster_event": {
+      "title": {
+        "en": "Last Cluster Event"
+      }
+    }
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032",
+      "AAA",
+      "AA",
+      "CR2",
+      "CR123A"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "eco-dim",
+      "ecodim",
+      "lidl home",
+      "robb smarrt",
+      "_tyzb01_",
+      "_tyzb02_",
+      "_tz3000_",
+      "_tz3000_ox96m1m4",
+      "_tz3000_vm9p7o5f",
+      "_tz3210_",
+      "_tze200_",
+      "_tze204_",
+      "_tze284_"
+    ],
+    "productId": [
+      "005F0C3B",
+      "005f0c3b",
+      "5P1VJ8R",
+      "5p1vj8r",
+      "6DFGETQ",
+      "6dfgetq",
+      "AABYBJA",
+      "CK-BL702-AL-01",
+      "CK-BL702-AL-01(7009_Z102LG03-1)",
+      "CK-BL702-AL-01(7009_Z102LG04-1)",
+      "CK-BL702-AL-01(7009_Z102LG04-2)",
+      "D3-DPWK-TY",
+      "E220-KR4N0Z0-HA",
+      "ERS-10TZBVK-AA",
+      "FNB54-WTS08ML1.0",
+      "GQ8B1UV",
+      "HY0017",
+      "HY0080",
+      "IH012-RT01",
+      "JZ-ZB-004",
+      "KJINTBL",
+      "MCDJ3AQ",
+      "MCDJ3AQ\\U0000",
+      "OWVFNI3",
+      "OWVFNI3\\U0000",
+      "Q9MPFHW",
+      "QNAZJ70",
+      "RH3040",
+      "RH3052",
+      "SM0001",
+      "SM0202",
+      "SM0212",
+      "SNTZ003",
+      "SNTZ009",
+      "TS0001",
+      "TS0002",
+      "TS0003",
+      "TS0004",
+      "TS0006",
+      "TS0011",
+      "TS0012",
+      "TS0013",
+      "TS0014",
+      "TS0026",
+      "TS0041",
+      "TS0041A",
+      "TS0042",
+      "TS0043",
+      "TS0044",
+      "TS0046",
+      "TS0049",
+      "TS0052",
+      "TS0105",
+      "TS0111",
+      "TS0115",
+      "TS011E",
+      "TS011F",
+      "TS0201",
+      "TS0202",
+      "TS0203",
+      "TS0204",
+      "TS0205",
+      "TS0207",
+      "TS0207_WATER_LEAK_DETECTOR",
+      "TS020C",
+      "TS0210",
+      "TS0216",
+      "TS0218",
+      "TS0224",
+      "TS0301",
+      "TS030F",
+      "TS0501",
+      "TS0502A",
+      "TS0502B",
+      "TS0503A",
+      "TS0503B",
+      "TS0504A",
+      "TS0504B",
+      "TS0505",
+      "TS0505A",
+      "TS0505B",
+      "TS0505B_1",
+      "TS0601",
+      "TS0601_COVER_1",
+      "TS0601_SMOKE_4",
+      "TS0601_SWITCH",
+      "TS0601_SWITCH_1_GANG",
+      "TS0601_SWITCH_2_GANG",
+      "TS0601_SWITCH_3_GANG",
+      "TS0901",
+      "TS130F",
+      "TT001ZAV20",
+      "TY0201",
+      "TYZS1L",
+      "U1RKTY3",
+      "U86KCJ-ZP",
+      "U86KWF-ZPSJ",
+      "ZG-101ZD",
+      "ZG-102Z",
+      "ZG-102ZL",
+      "ZG-103Z",
+      "ZG-204Z",
+      "ZG-204ZL",
+      "ZG-204ZM",
+      "ZG-222Z",
+      "ZG-225Z",
+      "ZG-227Z",
+      "ZG-227ZL",
+      "ZG-302Z1",
+      "ZG-302Z2",
+      "ZG-302Z3",
+      "aabybja",
+      "ck-bl702-al-01",
+      "ck-bl702-al-01(7009_z102lg03-1)",
+      "ck-bl702-al-01(7009_z102lg04-1)",
+      "ck-bl702-al-01(7009_z102lg04-2)",
+      "d3-dpwk-ty",
+      "e220-kr4n0z0-ha",
+      "ers-10tzbvk-aa",
+      "fnb54-wts08ml1.0",
+      "gq8b1uv",
+      "hy0017",
+      "hy0080",
+      "ih012-rt01",
+      "jz-zb-004",
+      "kjintbl",
+      "mcdj3aq",
+      "mcdj3aq\\u0000",
+      "owvfni3",
+      "owvfni3\\u0000",
+      "q9mpfhw",
+      "qnazj70",
+      "rh3040",
+      "rh3052",
+      "sm0001",
+      "sm0202",
+      "sm0212",
+      "sntz003",
+      "sntz009",
+      "ts0001",
+      "ts0002",
+      "ts0003",
+      "ts0004",
+      "ts0006",
+      "ts0011",
+      "ts0012",
+      "ts0013",
+      "ts0014",
+      "ts0026",
+      "ts0041",
+      "ts0041a",
+      "ts0042",
+      "ts0043",
+      "ts0044",
+      "ts0046",
+      "ts0049",
+      "ts0052",
+      "ts0105",
+      "ts0111",
+      "ts0115",
+      "ts011e",
+      "ts011f",
+      "ts0201",
+      "ts0202",
+      "ts0203",
+      "ts0204",
+      "ts0205",
+      "ts0207",
+      "ts0207_water_leak_detector",
+      "ts020c",
+      "ts0210",
+      "ts0216",
+      "ts0218",
+      "ts0224",
+      "ts0301",
+      "ts030f",
+      "ts0501",
+      "ts0502a",
+      "ts0502b",
+      "ts0503a",
+      "ts0503b",
+      "ts0504a",
+      "ts0504b",
+      "ts0505",
+      "ts0505a",
+      "ts0505b",
+      "ts0505b_1",
+      "ts0601",
+      "ts0601_cover_1",
+      "ts0601_smoke_4",
+      "ts0601_switch",
+      "ts0601_switch_1_gang",
+      "ts0601_switch_2_gang",
+      "ts0601_switch_3_gang",
+      "ts0901",
+      "ts130f",
+      "tt001zav20",
+      "ty0201",
+      "tyzs1l",
+      "u1rkty3",
+      "u86kcj-zp",
+      "u86kwf-zpsj",
+      "zg-101zd",
+      "zg-102z",
+      "zg-102zl",
+      "zg-103z",
+      "zg-204z",
+      "zg-204zl",
+      "zg-204zm",
+      "zg-222z",
+      "zg-225z",
+      "zg-227z",
+      "zg-227zl",
+      "zg-302z1",
+      "zg-302z2",
+      "zg-302z3"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "image": "/drivers/universal_zigbee/assets/learnmode.svg",
+      "instruction": {
+        "en": "Press the pairing button on your Zigbee device until it enters pairing mode.",
+        "fr": "Appuyez sur le bouton d'appairage de votre appareil Zigbee jusqu'à ce qu'il passe en mode appairage."
+      }
+    }
+  },
+  "images": {
+    "large": "/drivers/universal_zigbee/assets/images/large.png",
+    "small": "/drivers/universal_zigbee/assets/images/small.png",
+    "xlarge": "/drivers/universal_zigbee/assets/images/xlarge.png"
+  },
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  },
+  "settings": [
+    {
+      "id": "enable_software_child_lock",
+      "type": "checkbox",
+      "label": {
+        "en": "Software Child Lock",
+        "fr": "Sécurité Enfant Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Prevents manual state changes on the device",
+        "fr": "Empêche les changements d'état manuels sur l'appareil"
+      }
+    },
+    {
+      "id": "auto_off_duration",
+      "type": "number",
+      "label": {
+        "en": "Auto-Off Timer (Minutes)",
+        "fr": "Minuterie Auto-Off (Minutes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 1440,
+      "hint": {
+        "en": "Turn off automatically after X minutes (0 = disabled)",
+        "fr": "S'éteint après X minutes (0 = désactivé)"
+      }
+    },
+    {
+      "id": "enable_vacation_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "Vacation Mode (Presence Sim)",
+        "fr": "Mode Vacances (Simulation Présence)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Randomly toggle device during evenings to simulate presence",
+        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+      }
+    },
+    {
+      "id": "emulated_motion_hold",
+      "type": "number",
+      "label": {
+        "en": "Emulated Motion Hold (Seconds)",
+        "fr": "Maintien Mouvement Émulé (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 3600,
+      "hint": {
+        "en": "Keep motion 'ON' for X seconds after hardware clears",
+        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+      }
+    },
+    {
+      "id": "double_click_interval",
+      "type": "number",
+      "label": {
+        "en": "Double Click Interval (ms)",
+        "fr": "Intervalle Double-Clic (ms)"
+      },
+      "value": 400,
+      "min": 100,
+      "max": 1000,
+      "hint": {
+        "en": "Software emulation for single-action buttons",
+        "fr": "Émulation logicielle pour boutons à action unique"
+      }
+    },
+    {
+      "id": "inching_duration",
+      "type": "number",
+      "label": {
+        "en": "Inching Duration (Secs)",
+        "fr": "Durée Inching (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 60,
+      "step": 0.1,
+      "hint": {
+        "en": "Automatically turn off after X seconds (Pulse mode)",
+        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+      }
+    },
+    {
+      "id": "enable_state_recovery",
+      "type": "checkbox",
+      "label": {
+        "en": "Software State Recovery",
+        "fr": "Récupération d'État Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Restore previous ON/OFF state after power failure",
+        "fr": "Restore l'état précédent après une coupure de courant"
+      }
+    },
+    {
+      "id": "enable_soft_transitions",
+      "type": "checkbox",
+      "label": {
+        "en": "Soft transitions (Fade)",
+        "fr": "Transitions douces (Fade)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable software-simulated smooth transitions (Lights/Dim)",
+        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+      }
+    },
+    {
+      "id": "maintenance_threshold",
+      "type": "number",
+      "label": {
+        "en": "Maintenance Alert Threshold",
+        "fr": "Seuil Alerte Maintenance"
+      },
+      "value": 30,
+      "min": 0,
+      "max": 100,
+      "hint": {
+        "en": "Alert if health score drops below this value",
+        "fr": "Alerte si le score de santé descend sous cette valeur"
+      }
+    }
+  ]
+}

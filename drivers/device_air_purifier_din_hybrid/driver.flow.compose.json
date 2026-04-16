@@ -1,0 +1,117 @@
+{
+  "triggers": [
+    {
+      "id": "device_air_purifier_din_hybrid_din_rail_meter_power_changed",
+      "title": {
+        "en": "Power changed",
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed",
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
+      }
+    },
+    {
+      "id": "device_air_purifier_din_hybrid_din_rail_meter_voltage_changed",
+      "title": {
+        "en": "Voltage changed",
+        "fr": "Tension changée"
+      },
+      "tokens": [
+        {
+          "name": "voltage",
+          "type": "number",
+          "title": {
+            "en": "Voltage (V)"
+          },
+          "example": 230
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Voltage changed",
+        "fr": "Tension changée"
+      }
+    },
+    {
+      "id": "device_air_purifier_din_hybrid_din_rail_meter_current_changed",
+      "title": {
+        "en": "Current changed",
+        "fr": "Courant changé"
+      },
+      "tokens": [
+        {
+          "name": "current",
+          "type": "number",
+          "title": {
+            "en": "Current (A)"
+          },
+          "example": 0.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Current changed",
+        "fr": "Courant changé"
+      }
+    },
+    {
+      "id": "device_air_purifier_din_hybrid_din_rail_meter_energy_changed",
+      "title": {
+        "en": "Energy consumption changed",
+        "fr": "Consommation changée"
+      },
+      "tokens": [
+        {
+          "name": "energy",
+          "type": "number",
+          "title": {
+            "en": "Energy (kWh)"
+          },
+          "example": 10
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Energy consumption changed",
+        "fr": "Consommation changée"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "device_air_purifier_din_hybrid_din_rail_meter_power_above",
+      "title": {
+        "en": "Power !{{is|is not}} above"
+      },
+      "titleFormatted": {
+        "en": "Power !{{is|is not}} above [[power]] W"
+      },
+      "args": [
+        {
+          "name": "power",
+          "type": "number",
+          "min": 0,
+          "max": 10000,
+          "step": 10
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "device_air_purifier_din_hybrid_din_rail_meter_reset_meter",
+      "title": {
+        "en": "Reset energy meter"
+      },
+      "titleFormatted": {
+        "en": "Reset energy meter"
+      }
+    }
+  ]
+}

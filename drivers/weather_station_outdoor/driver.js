@@ -1,0 +1,79 @@
+'use strict';
+
+const Homey = require('homey');
+
+/**
+ * v5.8.20: FIX MODULE_NOT_FOUND ./rgb - Use Homey.Driver instead of ZigBeeDriver
+ * v5.5.581: CRITICAL FIX - Flow card run listeners were missing
+ */
+class WeatherStationOutdoorDriver extends Homey.Driver {
+
+  async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+
+
+
+    this.log('WeatherStationOutdoorDriver v5.5.581 initialized');
+    this._registerFlowCards();
+  
+  
+  
+  
+  
+  
+  
+  }
+
+  _registerFlowCards() {
+    // CONDITION: Outdoor temp above
+    try {
+      (() => { try { return this.homey.flow.getConditionCard('weather_station_outdoor_outdoor_temp_above'); } catch(e) { return null; } })()
+        .registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const temp = args.device.getCapabilityValue('measure_temperature') || 0;
+          return temp > (args.temperature || 20);
+        });
+      this.log('[FLOW] ✅ Registered: weather_station_outdoor_outdoor_temp_above');
+    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+
+    // CONDITION: Outdoor temp below
+    try {
+      (() => { try { return this.homey.flow.getConditionCard('weather_station_outdoor_outdoor_temp_below'); } catch(e) { return null; } })()
+        .registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const temp = args.device.getCapabilityValue('measure_temperature') || 0;
+          return temp < (args.temperature || 5);
+        });
+      this.log('[FLOW] ✅ Registered: weather_station_outdoor_outdoor_temp_below');
+    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+
+    // CONDITION: Pressure rising
+    try {
+      (() => { try { return this.homey.flow.getActionCard('weather_station_outdoor_pressure_rising'); } catch(e) { return null; } })()
+        .registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const trend = args.device.getStoreValue('pressure_trend') || 'stable';
+          return trend === 'rising';
+        });
+      this.log('[FLOW] ✅ Registered: weather_station_outdoor_pressure_rising');
+    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+
+    // CONDITION: Pressure falling
+    try {
+      (() => { try { return this.homey.flow.getActionCard('weather_station_outdoor_pressure_falling'); } catch(e) { return null; } })()
+        .registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const trend = args.device.getStoreValue('pressure_trend') || 'stable';
+          return trend === 'falling';
+        });
+      this.log('[FLOW] ✅ Registered: weather_station_outdoor_pressure_falling');
+    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+
+    this.log('[FLOW]  Weather station flow cards registered');
+  }
+}
+
+module.exports = WeatherStationOutdoorDriver;
