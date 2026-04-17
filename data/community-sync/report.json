@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-17T11:10:23.340Z",
+  "ts": "2026-04-17T11:35:20.282Z",
   "currentCount": 2867,
   "src": {
     "johan": {
@@ -18908,9 +18908,20 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 52,
+      "issueCount": 53,
       "prCount": 6,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 275,
+          "title": "_TZE200_xlppj4f5 Immax NEO Smart Water Timer still does not work",
+          "mfrs": [
+            "_TZE200_xlppj4f5",
+            "_TZE200_xlppj4f5",
+            "_TZE200_xlppj4f5",
+            "_TZE200_xlppj4f5"
+          ]
+        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 273,
@@ -19242,16 +19253,6 @@
             "_TZ3210_mt5xjoy6",
             "_TZ3210_mt5xjoy6",
             "_TZ3210_mt5xjoy6"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1355,
-          "title": "Device Request - Zigbee human presence sensor - Tuya / zy-zhps01-24g",
-          "mfrs": [
-            "_TZE204_bvfld3xc",
-            "_TZE204_bvfld3xc",
-            "_TZE204_bvfld3xc"
           ]
         }
       ]
