@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-17T12:03:33.362Z",
+  "ts": "2026-04-17T12:35:12.970Z",
   "currentCount": 2867,
   "src": {
     "johan": {
@@ -21429,6 +21429,23 @@
       "source": "Internal-Audit"
     },
     {
+      "mfr": "zbeacon",
+      "productId": [
+        "DS01"
+      ],
+      "driver": "doorwindowsensor_4",
+      "deviceType": "sensor",
+      "capabilities": [
+        "alarm_contact",
+        "alarm_battery",
+        "measure_battery"
+      ],
+      "hasBattery": true,
+      "vendor": null,
+      "description": "alarm_contact, alarm_battery, measure_battery",
+      "source": "Internal-Audit"
+    },
+    {
       "mfr": "_TZ3210_7jnk7l3k",
       "productId": [
         "TS011F"
@@ -25573,21 +25590,6 @@
         "TS0115"
       ],
       "driver": "socket_power_strip_four",
-      "deviceType": "socket",
-      "capabilities": [
-        "onoff"
-      ],
-      "hasBattery": false,
-      "vendor": null,
-      "description": "onoff",
-      "source": "Internal-Audit"
-    },
-    {
-      "mfr": "LELLKI",
-      "productId": [
-        "JZ-ZB-004"
-      ],
-      "driver": "socket_power_strip_four_three",
       "deviceType": "socket",
       "capabilities": [
         "onoff"
