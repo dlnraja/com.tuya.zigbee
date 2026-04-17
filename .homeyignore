@@ -10,10 +10,7 @@ node_modules/nyc
 node_modules/ajv
 node_modules/axios
 node_modules/js-yaml
-scripts/ai
-scripts/images
-scripts/intelligence
-scripts/automation
+scripts
 docs
 test
 *.md
@@ -25,6 +22,7 @@ scratch
 .memory
 .agents
 .windsurf
+.gemini
 package-lock.json
 .gitignore
 .homeyignore

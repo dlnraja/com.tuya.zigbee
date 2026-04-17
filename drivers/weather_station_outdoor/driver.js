@@ -30,47 +30,55 @@ class WeatherStationOutdoorDriver extends Homey.Driver {
   _registerFlowCards() {
     // CONDITION: Outdoor temp above
     try {
-      (() => { try { return this.homey.flow.getConditionCard('weather_station_outdoor_outdoor_temp_above'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('weather_station_outdoor_outdoor_temp_above');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const temp = args.device.getCapabilityValue('measure_temperature') || 0;
           return temp > (args.temperature || 20);
         });
-      this.log('[FLOW] ✅ Registered: weather_station_outdoor_outdoor_temp_above');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+        this.log('[FLOW] ✅ Registered: weather_station_outdoor_outdoor_temp_above');
+      }
+    } catch (err) { this.log(`[FLOW] ⚠️ weather_station_outdoor_outdoor_temp_above: ${err.message}`); }
 
     // CONDITION: Outdoor temp below
     try {
-      (() => { try { return this.homey.flow.getConditionCard('weather_station_outdoor_outdoor_temp_below'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('weather_station_outdoor_outdoor_temp_below');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const temp = args.device.getCapabilityValue('measure_temperature') || 0;
           return temp < (args.temperature || 5);
         });
-      this.log('[FLOW] ✅ Registered: weather_station_outdoor_outdoor_temp_below');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+        this.log('[FLOW] ✅ Registered: weather_station_outdoor_outdoor_temp_below');
+      }
+    } catch (err) { this.log(`[FLOW] ⚠️ weather_station_outdoor_outdoor_temp_below: ${err.message}`); }
 
     // CONDITION: Pressure rising
     try {
-      (() => { try { return this.homey.flow.getActionCard('weather_station_outdoor_pressure_rising'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('weather_station_outdoor_pressure_rising');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const trend = args.device.getStoreValue('pressure_trend') || 'stable';
           return trend === 'rising';
         });
-      this.log('[FLOW] ✅ Registered: weather_station_outdoor_pressure_rising');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+        this.log('[FLOW] ✅ Registered: weather_station_outdoor_pressure_rising');
+      }
+    } catch (err) { this.log(`[FLOW] ⚠️ weather_station_outdoor_pressure_rising: ${err.message}`); }
 
     // CONDITION: Pressure falling
     try {
-      (() => { try { return this.homey.flow.getActionCard('weather_station_outdoor_pressure_falling'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('weather_station_outdoor_pressure_falling');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const trend = args.device.getStoreValue('pressure_trend') || 'stable';
           return trend === 'falling';
         });
-      this.log('[FLOW] ✅ Registered: weather_station_outdoor_pressure_falling');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+        this.log('[FLOW] ✅ Registered: weather_station_outdoor_pressure_falling');
+      }
+    } catch (err) { this.log(`[FLOW] ⚠️ weather_station_outdoor_pressure_falling: ${err.message}`); }
 
     this.log('[FLOW]  Weather station flow cards registered');
   }

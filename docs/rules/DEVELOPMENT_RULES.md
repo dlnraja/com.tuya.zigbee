@@ -40,10 +40,12 @@ Only remove a fingerprint if it causes WRONG driver matching:
 - **No wildcards** in manufacturerName (e.g., `_TZE284_*` is INVALID).
 - All flow cards must be registered in both `driver.flow.compose.json` AND compiled into `app.json`.
 
-### 4. Case-Insensitive Matching
-- **Enforcement**: ALL `manufacturerName` and `productId` comparisons MUST be case-insensitive across the entire engine.
-- **Implementation**: Use `lib/tuya/UniversalTuyaParser.js` for normalization or `.toLowerCase()` before any dictionary lookup.
-- **Fingerprints**: While code is case-insensitive, best practice is to include the exact discovered casing in `driver.compose.json` to assist the Homey matching engine.
+### 4. Case-Less & Sanitization Standards (ZERO-TOLERANCE)
+- **Architectural Mandate**: ALL comparisons involving `manufacturerName`, `modelId`, or `productId` MUST be case-insensitive AND sanitized.
+- **Implementation**: ONLY use `lib/utils/CaseInsensitiveMatcher.js`. Manual `.toLowerCase()`, `.toUpperCase()`, or `.trim()` on these fields in driver or maintenance logic is EXPLICITLY FORBIDDEN.
+- **Invisible Character Cleanup**: We must proactively eliminate null bytes (`\0`), control characters, and non-breaking spaces that frequently corrupt Tuya firmware reports.
+- **Standards Enforcement**: Maintenance scripts like `zero-defect-architect-audit.js` will automatically reject any code or manifest that uses raw string comparisons or contains unsanitized invisible characters.
+- **Fingerprints**: While logic is case-insensitive, keep exact discovered casing in `driver.compose.json` for reference, but acknowledge that the matching engine is case-less.
 
 ### 5. Sleepy Battery Devices
 TS0601 battery devices use **passive mode**:

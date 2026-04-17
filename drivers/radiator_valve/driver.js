@@ -37,18 +37,29 @@ class RadiatorValveDriver extends ZigBeeDriver {
   }
 
   _registerFlowCards() {
-    // ACTION: Set target temperature
-    try {
-      (() => { try { return this.homey.flow.getActionCard('radiator_valve_set_target_temperature'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-          if (!args.device) return false;
-          await args.device.triggerCapabilityListener('target_temperature', args.temperature);
-          return true;
-        });
-      this.log('[FLOW] ✅ Registered: radiator_valve_set_target_temperature');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+    const actions = [
+      'radiator_valve_set_target_temperature',
+      'radiator_valve_set_temperature'
+    ];
 
-    this.log('[FLOW]  Radiator valve flow cards registered');
+    for (const cardId of actions) {
+      try {
+        const card = this.homey.flow.getActionCard(cardId);
+        if (card) {
+          card.registerRunListener(async (args) => {
+            if (!args.device) return false;
+            const capability = cardId.includes('target') ? 'target_temperature' : 'target_temperature'; // Both map to target for TRVs
+            await args.device.triggerCapabilityListener(capability, args.temperature || args.target_temperature || args.value);
+            return true;
+          });
+          this.log(`[FLOW] ✅ Registered action: ${cardId}`);
+        }
+      } catch (err) {
+        this.log(`[FLOW] ⚠️ Could not register action ${cardId}: ${err.message}`);
+      }
+    }
+
+    this.log('[FLOW] Radiator valve flow cards registered');
   }
 }
 

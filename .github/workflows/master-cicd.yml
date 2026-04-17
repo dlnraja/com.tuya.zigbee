@@ -81,6 +81,9 @@ jobs:
       - name: 🖼️ FLEET-WIDE IMAGE STABILIZATION
         run: node scripts/maintenance/ensure-500x500-images.js
       
+      - name: 📉 IMAGE MINIMIZATION (App Store Compliance)
+        run: node scripts/maintenance/clean-images.js
+
       - name: 🕵️ SUPERIOR ARCHITECTURAL AUDIT
         run: |
           node scripts/maintenance/superior-audit.js
@@ -96,7 +99,7 @@ jobs:
           node scripts/maintenance/zero-defect-architect-audit.js
           if [ -f docs/reports/ZERO_DEFECT_AUDIT.json ]; then
             echo "### 🛡️ Zero Defect Audit Summary" >> $GITHUB_STEP_SUMMARY
-            node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json'); console.log('| Metric | Count | \n| --- | --- | \n| Drivers Checked | ' + r.driversChecked + ' | \n| NaN Safety Warnings | ' + r.naNSafetyCheck.length + ' | \n| ID Collisions | ' + r.collisions.length + ' | \n| SDK Deprecations | ' + r.sdkDeprecations.length + ' | \n| Button Logic Issues | ' + r.buttonLogicFailures.length + ' |');" >> $GITHUB_STEP_SUMMARY
+            node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json'); console.log('| Metric | Count | \n| --- | --- | \n| Drivers Checked | ' + r.driversChecked + ' | \n| NaN Safety Warnings | ' + r.naNSafetyCheck.length + ' | \n| ID Collisions | ' + r.collisions.length + ' | \n| SDK Deprecations | ' + r.sdkDeprecations.length + ' | \n| Button Logic Issues | ' + r.buttonLogicFailures.length + ' | \n| Intelligent Inversions | ' + (require('./lib/data/SensorConfigs.js').TZE284_IADRO9BF ? '1 [TZE284]' : '0') + ' |');" >> $GITHUB_STEP_SUMMARY
             
             # Fail if there are critical violations
             node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json'); if(r.naNSafetyCheck.length > 0) { console.error('FAILED: ' + r.naNSafetyCheck.length + ' NaN safety warnings detected!'); process.exit(1); }"
@@ -161,7 +164,10 @@ jobs:
           fi
 
       - name: 🏗️ Pre-build (Fix Bug #366)
-        run: npm ci && npx homey app build
+        run: |
+          npm ci
+          node scripts/shadow_sanitizer.js
+          npx homey app build
 
       - name: 📤 Silent Publish (Shadow Mode)
         id: publish

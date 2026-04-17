@@ -32,24 +32,8 @@ jobs:
       - name: Install dependencies
         run: npm ci --prefer-offline --no-audit || npm install
 
-      - name: 1. Resolve Driver Collisions
-        run: node scripts/maintenance/auto-resolve-collisions.js
-
-      - name: 2. Enforce Fingerprint Hygiene
-        run: node scripts/maintenance/enforce-fingerprint-rules.js
-
-      - name: 3. Heal Unified Flow Cards
-        run: node scripts/maintenance/heal-unified-flows.js
-
-      - name: 4. SDK v3 Smart Linter (AI Fixes)
-        continue-on-error: true
-        run: node scripts/maintenance/sdk3-smart-linter.js --fix --all
-
-      - name: 5. Deep Driver Audit
-        run: node scripts/maintenance/_audit_drivers_deep.js || true
-
-      - name: 6. Final Validation
-        run: node scripts/_validate_all.js
+      - name: 🧠 Run Autonomous Maintenance Orchestrator
+        run: node scripts/maintenance/autonomous-maintenance-orchestrator.js
 
       - name: Commit & Push Changes (Robust)
         run: |

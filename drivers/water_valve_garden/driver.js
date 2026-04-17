@@ -21,8 +21,7 @@ class WaterValveGardenDriver extends Homey.Driver {
   _registerFlowCards() {
     const safeRegister = (type, id, handler) => {
       try {
-        const card = type === 'condition' ?
-
+        const card = type === 'condition' ? this.homey.flow.getConditionCard(id) : this.homey.flow.getActionCard(id);
         if (card) card.registerRunListener(handler);
       } catch (e) { this.log(`[FLOW] Failed to register ${id}: ${e.message}`); }
     };

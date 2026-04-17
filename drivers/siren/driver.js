@@ -45,9 +45,10 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // CONDITION: Siren is/is not sounding
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      const sirenCondition =
+      const sirenCondition = this.homey.flow.getConditionCard('siren_is_sounding');
 
-      sirenCondition.registerRunListener(async (args) => {
+      if (sirenCondition) {
+        sirenCondition.registerRunListener(async (args) => {
         const device = args.device;
         if (!device) {
           this.log('[FLOW] Condition: Device not available');
@@ -66,9 +67,10 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Turn on siren
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      const turnOnAction =
+      const turnOnAction = this.homey.flow.getActionCard('siren_turn_on');
 
-      turnOnAction.registerRunListener(async (args) => {
+      if (turnOnAction) {
+        turnOnAction.registerRunListener(async (args) => {
         const device = args.device;
         if (!device) {
           this.log('[FLOW] Action: Device not available');
@@ -97,9 +99,10 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Turn off siren
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      const turnOffAction =
+      const turnOffAction = this.homey.flow.getActionCard('siren_turn_off');
 
-      turnOffAction.registerRunListener(async (args) => {
+      if (turnOffAction) {
+        turnOffAction.registerRunListener(async (args) => {
         const device = args.device;
         if (!device) {
           this.log('[FLOW] Action: Device not available');
@@ -128,9 +131,10 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Set volume
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      const setVolumeAction =
+      const setVolumeAction = this.homey.flow.getActionCard('siren_set_volume');
 
-      setVolumeAction.registerRunListener(async (args) => {
+      if (setVolumeAction) {
+        setVolumeAction.registerRunListener(async (args) => {
         const device = args.device;
         if (!device) {
           this.log('[FLOW] Action: Device not available');
@@ -161,9 +165,10 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Set duration
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      const setDurationAction =
+      const setDurationAction = this.homey.flow.getActionCard('siren_set_duration');
 
-      setDurationAction.registerRunListener(async (args) => {
+      if (setDurationAction) {
+        setDurationAction.registerRunListener(async (args) => {
         const device = args.device;
         if (!device) {
           this.log('[FLOW] Action: Device not available');
@@ -192,9 +197,10 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Set melody
     // ═══════════════════════════════════════════════════════════════════════
     try {
-      const setMelodyAction =
+      const setMelodyAction = this.homey.flow.getActionCard('siren_set_melody');
 
-      setMelodyAction.registerRunListener(async (args) => {
+      if (setMelodyAction) {
+        setMelodyAction.registerRunListener(async (args) => {
         const device = args.device;
         if (!device) return false;
         const melody = parseInt(args.melody, 10) || 0;

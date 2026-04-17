@@ -1,4 +1,6 @@
 'use strict';
+const initStartTime = Date.now();
+
 const { safeDivide, safeMultiply, safeParse } = require('./lib/utils/tuyaUtils.js');
 
 // { { balancing for validator
@@ -23,23 +25,23 @@ const { EventEmitter } = require('events');
 EventEmitter.defaultMaxListeners = 50;
 
 const Homey = require('homey');
-const { registerCustomClusters } = require('./lib/zigbee / registerClusters');
-const FlowCardManager = require('./lib/flow / FlowCardManager');
-const UniversalFlowCardLoader = require('./lib/flow / UniversalFlowCardLoader');
-const CapabilityManager = require('./lib/utils / CapabilityManager');
-const AdvancedAnalytics = require('./lib/analytics / AdvancedAnalytics');
-const SmartDeviceDiscovery = require('./lib/discovery / SmartDeviceDiscovery');
-const PerformanceOptimizer = require('./lib/performance / PerformanceOptimizer');
-const UnknownDeviceHandler = require('./lib/helpers / UnknownDeviceHandler');
-const SystemLogsCollector = require('./lib/diagnostics / SystemLogsCollector');
-const DeviceIdentificationDatabase = require('./lib/helpers / DeviceIdentificationDatabase');
-const DiagnosticAPI = require('./lib/diagnostics / DiagnosticAPI');
-const { LogBuffer } = require('./lib/utils / LogBuffer');
-const SuggestionEngine = require('./lib/smartadapt / SuggestionEngine');
-const { processMigrationQueue } = require('./lib/utils / migration-queue'); // ✅ FIX CRITIQUE
-const OTAUpdateManager = require('./lib/ota / OTAUpdateManager'); // 📦 OTA Firmware Updates
-const QuirksDatabase = require('./lib/quirks / QuirksDatabase'); // 🔧 Device Quirks
-const EmergencyDeviceFix = require('./lib/emergency / EmergencyDeviceFix'); // 🚨 Emergency Fix System
+const { registerCustomClusters } = require('./lib/zigbee/registerClusters');
+const FlowCardManager = require('./lib/flow/FlowCardManager');
+const UniversalFlowCardLoader = require('./lib/flow/UniversalFlowCardLoader');
+const CapabilityManager = require('./lib/utils/CapabilityManager');
+const AdvancedAnalytics = require('./lib/analytics/AdvancedAnalytics');
+const SmartDeviceDiscovery = require('./lib/discovery/SmartDeviceDiscovery');
+const PerformanceOptimizer = require('./lib/performance/PerformanceOptimizer');
+const UnknownDeviceHandler = require('./lib/helpers/UnknownDeviceHandler');
+const SystemLogsCollector = require('./lib/diagnostics/SystemLogsCollector');
+const DeviceIdentificationDatabase = require('./lib/helpers/DeviceIdentificationDatabase');
+const DiagnosticAPI = require('./lib/diagnostics/DiagnosticAPI');
+const { LogBuffer } = require('./lib/utils/LogBuffer');
+const SuggestionEngine = require('./lib/smartadapt/SuggestionEngine');
+const { processMigrationQueue } = require('./lib/utils/migration-queue'); // ✅ FIX CRITIQUE
+const OTAUpdateManager = require('./lib/ota/OTAUpdateManager'); // 📦 OTA Firmware Updates
+const QuirksDatabase = require('./lib/quirks/QuirksDatabase'); // 🔧 Device Quirks
+const EmergencyDeviceFix = require('./lib/emergency/EmergencyDeviceFix'); // 🚨 Emergency Fix System
 // NOTE: Database updates are handled by GitHub Actions ONLY, NOT at runtime
 // See: .github / workflows/MASTER-intelligent-enrichment.yml
 const SourceCredits = require('./lib/data / SourceCredits'); // 📜 Source attributions
@@ -136,6 +138,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
       }
     });
 
+    this.initStartTime = Date.now();
     if (this._flowCardsRegistered) {
       this.log('⏭️  Flow cards already registered');
       return;
@@ -248,7 +251,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
     // Wait for all non-critical init tasks
     Promise.all(initTasks).then(() => {
-      const startupTime = ((Date.now() -safeParse(initStartTime), 1000)).toFixed(2);
+      const startupTime = ((Date.now() - (this.initStartTime || Date.now())) / 1000).toFixed(2);
       this.log(`🚀 All auxiliary managers initialized in ${startupTime}s`);
     }).catch(err => {
       this.error('⚠️ Parallel initialization error:', err.message);

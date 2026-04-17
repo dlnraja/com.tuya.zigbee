@@ -81,9 +81,13 @@ async function main() {
 
   // PHASE 4: Architectural Hardening & Visual Excellence
   run('node scripts/maintenance/ensure-500x500-images.js', 'Ph4: Image Resolution Stabilization (500x500)');
+  run('node scripts/maintenance/clean-images.js', 'Ph4a: Image Size Minimization (App Store Compliance)');
   run('node scripts/fixes/CLEAN_HYBRID_NOMENCLATURE_V2.js', 'Ph4b: Branding Cleanup (Unified Transition)');
   run('node scripts/maintenance/harden-driver-identification.js', 'Ph4c: Driver Identification Hardening');
   run('node scripts/maintenance/zero-defect-architect-audit.js', 'Ph4d: Zero-Defect Architect Audit');
+
+  // PHASE 4g: Radar-Specific Architecture Integrity
+  run('node -e "const r=require(\'./lib/data/SensorConfigs.js\'); if(!r.TZE284_IADRO9BF) { console.error(\'FAIL: Radar config missing!\'); process.exit(1); }"', 'Ph4g: Radar Config Integrity Verification');
 
   // PHASE 4e: Stability Normalization (Clusters + Case)
   run('node scripts/automation/relax-manifest-clusters.js', 'Ph4e: Manifest Cluster Relaxation');
