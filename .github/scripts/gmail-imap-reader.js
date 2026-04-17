@@ -14,7 +14,7 @@ function aggressiveSanitize(text) {
   clean = clean.replace(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z0-9_-]+)/gi, '[REDACTED_EMAIL]');
   
   // 2. Remove IP addresses (IPv4)
-  clean = clean.replace(/(?:[0-9]{1,3}.){3}[0-9]{1,3}/g, '[REDACTED_IP]');
+  clean = clean.replace(/(?:[0-9]{1,3}.){3}[0-9]{1,3}/g, '[REDACTED_IP]');
   
   // 3. Remove common phone number patterns
   clean = clean.replace(/\+?([0-9]{1,3})?[-. ]?\(?([0-9]{1,4})\)?[-. ]?[0-9]{1,4}[-. ]?[0-9]{1,4}[-. ]?[0-9]{1,9}/g, function(match) {

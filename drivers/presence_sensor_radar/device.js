@@ -1324,6 +1324,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
     let dpId = data.dp || data.dpId || data.datapoint;
 
+    // v5.15.0: Process DP through Intelligence Gate
+    if (this._intelGate) {
+      const rawVal = this._parseBufferValue(data.value || data.data);
+      this._intelGate.process(dpId, rawVal);
+    }
+
+
     // v5.8.39: Handle COMPOUND DP frames (3reality multi-DP-in-one)
     // When data.length (declared DP size) < actual buffer, slice and parse sub-DPs
     const rawBuf = data.data || data.value;
@@ -1586,121 +1593,6 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         this._handlePresenceWithDebounce(presenceValue, dpId);
         return;
       }
-    }
-
-    // v5.11.4: Only log "unknown DP" if dpMap doesn't already handle it
-    // Fixes noisy DP106 logs for HOBEIAN_ZG204ZM and other configs where dpMap handles lux/settings
-    if (!dpMap[dpId]) {
-      this.log(`[RADAR] 📡 DP${dpId} = ${value} (unknown DP, please report to developer)`);
-    }
-  }
-
-  /**
-   * v5.5.315: Detect firmware version for firmware-specific handling
-   * Different firmware versions have different bugs (appVersion 74 vs 78)
-   */
-  async _detectFirmwareVersion(zclNode) {
-    try {
-      const ep1 = zclNode?.endpoints?.[1];
-      const basicCluster = ep1?.clusters?.basic;
-
-      if (basicCluster?.readAttributes) {
-        const attrs = await basicCluster.readAttributes(['appVersion', 'stackVersion', 'hwVersion']).catch(() => ({}));
-        const appVersion = attrs?.appVersion;
-
-        if (appVersion && this._presenceInference) {
-          this._presenceInference.setFirmwareInfo(appVersion);
-          this.log(`[RADAR] 📱 Detected firmware: appVersion=${appVersion}`);
-
-          // Store for reference
-          this._firmwareAppVersion = appVersion;
-        }
-      }
-    } catch (e) {
-      this.log(`[RADAR] ⚠️ Could not detect firmware version: ${e.message}`);
-    }
-  }
-
-  /**
-   * v5.5.315: Handle distance DP with INTELLIGENT presence inference
-   * Uses IntelligentPresenceInference engine to calculate presence from multiple sources
-   */
-  _handleDistanceWithPresenceInference(rawDistance) {
-    const config = this._getSensorConfig();
-    const useDistanceInference = config.useDistanceInference || false;
-
-    // Always update distance capability
-    const divisor = config.dpMap?.[9]?.divisor || 100;
-    const distanceMeters = safeDivide(rawDistance, divisor);
-    this.setCapabilityValue('measure_luminance.distance', parseFloat(distanceMeters)).catch(() => { });
-    this.log(`[RADAR] 📏 Distance: ${distanceMeters}m (raw: ${rawDistance})`);
-
-    // v5.5.315: Feed distance to intelligent inference engine
-    if (this._presenceInference) {
-      const inferredPresence = this._presenceInference.updateDistance(distanceMeters);
-      const confidence = this._presenceInference.getConfidence();
-      const currentPresence = this.getCapabilityValue('alarm_motion');
-
-      // Update presence if inference differs from current state
-      if (inferredPresence !== currentPresence && confidence >= 40) {
-        this.log(`[RADAR] 🧠 INTELLIGENT INFERENCE: presence=${inferredPresence} (confidence: ${confidence}%)`);
-        this._handlePresenceWithDebounce(inferredPresence, 9);
-      }
-      this._updatePresenceTimestamp();
-      return;
-    }
-
-    // v5.5.304: Legacy PRESENCE INFERENCE from distance (fallback)
-    if (useDistanceInference) {
-      const maxRange = this._lastMaxRange || 6;
-      const inferredPresence = distanceMeters > 0 && distanceMeters < maxRange;
-      const currentPresence = this.getCapabilityValue('alarm_motion');
-
-      if (inferredPresence !== currentPresence) {
-        this.log(`[RADAR] 🎯 DISTANCE INFERENCE: presence=${inferredPresence} (distance=${distanceMeters}m, max=${maxRange}m)`);
-        this._handlePresenceWithDebounce(inferredPresence, 9);
-      }
-      this._updatePresenceTimestamp();
-    }
-  }
-
-  /**
-   * v5.5.315: Feed lux value to intelligent inference engine
-   * Rapid lux changes indicate safeDivide(movement, presence)
-   */
-  _feedLuxToInference(luxValue) {
-    if (this._presenceInference) {
-      const inferredPresence = this._presenceInference.updateLux(luxValue);
-      const confidence = this._presenceInference.getConfidence();
-      const currentPresence = this.getCapabilityValue('alarm_motion');
-
-      // Only update from lux if high confidence and state differs
-      if (inferredPresence !== currentPresence && confidence >= 50) {
-        this.log(`[RADAR] 🧠 LUX-BASED INFERENCE: presence=${inferredPresence} (confidence: ${confidence}%)`);
-        this._handlePresenceWithDebounce(inferredPresence, 104); // Use DP104 as source
-      }
-    }
-  }
-
-  /**
-   * v5.5.279: Parse presence value from any format
-   * Returns safeDivide(true, false) or null if invalid
-   */
-  _parsePresenceValue(value) {
-    // Boolean
-    if (typeof value === 'boolean') return value;
-    // Enum: 0=none, 1=presence, 2=motion
-    if (typeof value === 'number') {
-      if (value === 0) return false;
-      if (value === 1 || value === 2) return true;
-    }
-    // String
-    if (value === 'presence' || value === 'motion' || value === 'true') return true;
-    if (value === 'none' || value === 'false') return false;
-    return null;
-  }
-
-  /**
    * v5.5.902: FORUM FIX - Enhanced stuck detection for motion spam
    * _TZE284_iadro9bf sends motion=YES every 20s even without presence
    * v5.5.357: Original throttle + v5.5.902: Stuck pattern detection

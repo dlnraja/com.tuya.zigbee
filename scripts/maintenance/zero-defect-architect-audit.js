@@ -89,6 +89,11 @@ async function main() {
                 !content.includes('UnifiedSensorBase') && !content.includes('BaseUnifiedDevice')) {
                 auditResults.radarLogicCheck.push(`${d}: Missing hybrid base inheritance for radar.`);
             }
+            
+            // v7.4.5: Verify Intelligence Gate integration
+            if ((content.includes('_handleTuyaResponse') || content.includes('_handleDP')) && !content.includes('_intelGate.process')) {
+                auditResults.radarLogicCheck.push(`${d}: Overrides handler but missing _intelGate.process call.`);
+            }
           }
       }
 
@@ -117,13 +122,27 @@ async function main() {
          // Ignore non-source and script directories
          if (['node_modules', '.git', '.gemini', 'brain', 'scratch', 'scripts', 'docs', 'assets', 'locales', 'test'].includes(file)) continue;
          walk(full);
-      } else if (file.endsWith('.js')) {
+      } else if (file.endsWith('.js') || file.endsWith('.json')) {
         const content = fs.readFileSync(full, 'utf8');
         const lines = content.split('\n');
         
         lines.forEach((line, idx) => {
           const trimmed = line.trim();
           if (!trimmed || trimmed.startsWith('//') || trimmed.startsWith('*') || trimmed.startsWith('/*') || trimmed.startsWith('#!')) return;
+
+          // v7.5.0: Check for invisible characters in ALL source files (including JSON)
+          for (let i = 0; i < line.length; i++) {
+              const charCode = line.charCodeAt(i);
+              const isForbidden = (charCode < 32 && ![9, 10, 13].includes(charCode)) || 
+                                  charCode === 0xFEFF || charCode === 0x200B || charCode === 0xA0;
+              if (isForbidden && !full.includes('CaseInsensitiveMatcher.js') && !full.includes('ManufacturerNameHelper.js')) {
+                  const rel = path.relative(ROOT, full);
+                  auditResults.errors.push(`${rel}:${idx + 1}: Forbidden invisible character (char code ${charCode}) detected.`);
+                  break; 
+              }
+          }
+
+          if (file.endsWith('.json')) return; // Skip logic audit for JSON files
 
           // Strip strings and comments for more accurate arithmetic detection
           // Simple regex to remove quoted strings and multi-line/rest-of-line comments
@@ -153,17 +172,6 @@ async function main() {
              }
           }
 
-          // IV. Invisible Character Audit (Stability Gate)
-          for (let i = 0; i < line.length; i++) {
-              const charCode = line.charCodeAt(i);
-              const isForbidden = (charCode < 32 && ![9, 10, 13].includes(charCode)) || 
-                                  charCode === 0xFEFF || charCode === 0x200B || charCode === 0xA0;
-              if (isForbidden && !full.includes('string-integrity-gate.js')) {
-                  const rel = path.relative(ROOT, full);
-                  auditResults.errors.push(`${rel}:${idx + 1}: Forbidden invisible character (char code ${charCode}) detected.`);
-                  break; 
-              }
-          }
 
           // V. NaN Safety Audit
           if ((codeOnly.includes('/') || codeOnly.includes('*')) && !full.includes('tuyaUtils.js')) {

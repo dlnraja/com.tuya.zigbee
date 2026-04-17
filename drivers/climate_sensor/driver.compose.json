@@ -439,8 +439,8 @@
     {
       "type": "group",
       "label": {
-        "en": "ðŸŒ¡ï¸ Calibration (v5.5.28)",
-        "fr": "ðŸŒ¡ï¸ Calibration (v5.5.28)"
+        "en": "ðŸŒ¡ï¸ Calibration (v5.5.28)",
+        "fr": "ðŸŒ¡ï¸ Calibration (v5.5.28)"
       },
       "children": [
         {
@@ -574,29 +574,29 @@
             {
               "id": "tuya_extended",
               "label": {
-                "en": "ðŸŒ Tuya Extended (9-byte + timezone)",
-                "fr": "ðŸŒ Tuya Ã‰tendu (9 octets + fuseau)"
+                "en": "ðŸŒ Tuya Extended (9-byte + timezone)",
+                "fr": "ðŸŒ Tuya Ã‰tendu (9 octets + fuseau)"
               }
             },
             {
               "id": "tuya_full_tz",
               "label": {
-                "en": "ðŸŒ Tuya Full TZ (10-byte + DST)",
-                "fr": "ðŸŒ Tuya Full TZ (10 octets + DST)"
+                "en": "ðŸŒ Tuya Full TZ (10-byte + DST)",
+                "fr": "ðŸŒ Tuya Full TZ (10 octets + DST)"
               }
             },
             {
               "id": "zigbee_2000",
               "label": {
-                "en": "â±ï¸ Zigbee 2000 (4-byte epoch 2000)",
-                "fr": "â±ï¸ Zigbee 2000 (4 octets epoch 2000)"
+                "en": "â±ï¸ Zigbee 2000 (4-byte epoch 2000)",
+                "fr": "â±ï¸ Zigbee 2000 (4 octets epoch 2000)"
               }
             },
             {
               "id": "unix_1970",
               "label": {
-                "en": "â±ï¸ Unix 1970 (4-byte epoch 1970)",
-                "fr": "â±ï¸ Unix 1970 (4 octets epoch 1970)"
+                "en": "â±ï¸ Unix 1970 (4-byte epoch 1970)",
+                "fr": "â±ï¸ Unix 1970 (4 octets epoch 1970)"
               }
             }
           ]
@@ -628,8 +628,8 @@
             {
               "id": "utc",
               "label": {
-                "en": "ðŸŒ UTC (GMT+0)",
-                "fr": "ðŸŒ UTC (GMT+0)"
+                "en": "ðŸŒ UTC (GMT+0)",
+                "fr": "ðŸŒ UTC (GMT+0)"
               }
             },
             {
@@ -772,8 +772,8 @@
           },
           "value": false,
           "hint": {
-            "en": "âš ï¸ EXPERT ONLY: Test all ZCL Time sync methods on device startup. May drain battery if used frequently.",
-            "fr": "âš ï¸ EXPERT UNIQUEMENT: Teste toutes les mÃ©thodes sync ZCL Time au dÃ©marrage. Peut vider la batterie si utilisÃ© frÃ©quemment."
+            "en": "âš ï¸ EXPERT ONLY: Test all ZCL Time sync methods on device startup. May drain battery if used frequently.",
+            "fr": "âš ï¸ EXPERT UNIQUEMENT: Teste toutes les mÃ©thodes sync ZCL Time au dÃ©marrage. Peut vider la batterie si utilisÃ© frÃ©quemment."
           }
         }
       ]

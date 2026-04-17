@@ -1,13 +1,15 @@
-name: Close Stale Issues
+name: 'Stale'
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '30 1 * * *'
+
 jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/stale@v9
         with:
-          days-before-stale: -1 # Désactivation du marquage
+          days-before-stale: -1 # Désactivation de la péremption
           days-before-close: -1 # Désactivation de la fermeture
-          exempt-issues-labels: '*' # Exempte tous les tickets
+          exempt-issues-labels: '*' # Exempte TOUS les tickets
+          exempt-pr-labels: '*'
