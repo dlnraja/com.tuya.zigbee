@@ -1,15 +1,15 @@
 # Monthly Tuya Zigbee Report - 2026-04
 
-*Generated: 2026-04-14T19:45:39.565Z*
+*Generated: 2026-04-17T11:59:39.051Z*
 
 ## 📊 Architectural Health [v7.0.22]
 
 | Metric | Value | Status |
 |--------|-------|--------|
-| Total Drivers | 322 | ✅ |
-| Manufacturer IDs | 60873 | ✅ |
-| Collisions | 2 | ⚠️ |
-| v7 Architectural Debt | 322 legacy drivers | 🛠️ |
+| Total Drivers | 323 | ✅ |
+| Manufacturer IDs | 109051 | ✅ |
+| Collisions | 26 | ⚠️ |
+| v7 Architectural Debt | 323 legacy drivers | 🛠️ |
 | PR Auto-Merger | Active | 🛡️ |
 | Community Responder | Template Ready | 🤖 |
 
@@ -17,8 +17,28 @@
 
 | ID | Drivers |
 |----|--------|
-| `_tz3000_tzvbimpq|ts004f` | remote_button_wireless_hybrid, remote_button_wireless_smart_hybrid |
-| `_tz3000_tzvbimpq|ts0041` | remote_button_wireless_hybrid, remote_button_wireless_smart_hybrid |
+| `_tz3000_csflgqj2|TS004F` | button_wireless_1, smart_knob_rotary |
+| `_tz3000_csflgqj2|ts004f` | button_wireless_1, smart_knob_rotary |
+| `_tz3000_uri7ber7|TS004F` | button_wireless_1, smart_knob |
+| `_tz3000_uri7ber7|ts004f` | button_wireless_1, smart_knob |
+| `_tz3000_yj6k7vfo|TS0041` | button_wireless_1, remote_button_wireless_hybrid |
+| `_tz3000_yj6k7vfo|TS004F` | button_wireless_1, remote_button_wireless_hybrid |
+| `_tz3000_yj6k7vfo|ts0041` | button_wireless_1, remote_button_wireless_hybrid |
+| `_tz3000_yj6k7vfo|ts004f` | button_wireless_1, remote_button_wireless_hybrid |
+| `legrand|TS0026` | device_generic_diy_universal_hybrid, generic_diy |
+| `legrand|TS0041A` | device_generic_diy_universal_hybrid, generic_diy |
+| `legrand|TS0052` | device_generic_diy_universal_hybrid, generic_diy |
+| `legrand|TS0105` | device_generic_diy_universal_hybrid, generic_diy |
+| `legrand|TS0224` | device_generic_diy_universal_hybrid, generic_diy |
+| `legrand|TS0901` | device_generic_diy_universal_hybrid, generic_diy |
+| `legrand|ts0026` | device_generic_diy_universal_hybrid, generic_diy |
+| `legrand|ts0041a` | device_generic_diy_universal_hybrid, generic_diy |
+| `legrand|ts0052` | device_generic_diy_universal_hybrid, generic_diy |
+| `legrand|ts0105` | device_generic_diy_universal_hybrid, generic_diy |
+| `legrand|ts0224` | device_generic_diy_universal_hybrid, generic_diy |
+| `legrand|ts0901` | device_generic_diy_universal_hybrid, generic_diy |
+
+*...and 6 more*
 
 ## 📋 Action Items
 
