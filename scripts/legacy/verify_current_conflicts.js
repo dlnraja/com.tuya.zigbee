@@ -1,3 +1,4 @@
+const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
 'use strict';
 
@@ -108,7 +109,7 @@ const verification = verifyConflicts(allDrivers);
 
 console.log('📊 RÉSUMÉ:\n');
 console.log(`   Total paires (manufacturerName, productId): ${verification.totalPairs}`);
-console.log(`   Paires légitimes: ${verification.legitimatePairs} (${(verification.legitimatePairs / verification.totalPairs * 100).toFixed(1)}%)`);
+console.log(`   Paires légitimes: ${verification.legitimatePairs} (${(verification.legitimatePairs/verification.totalPairs * 100).toFixed(1)}%)`);
 console.log(`   Conflits réels: ${verification.conflictPairs}\n`);
 
 if (verification.conflicts.length === 0) {

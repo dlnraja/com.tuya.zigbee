@@ -17,7 +17,7 @@
       "user": "dlnraja",
       "date": "2026-02-18T13:04:02Z",
       "fps": [],
-      "excerpt": "Hi! 👋\n\nThis device is **already supported** in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) (Universal Tuya Zigbee fork) — **v5.11.14** with 138 drivers and 5,579+ fingerprints.\n\n**Install the latest test version:**\nhttps://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\n**Community forum for support:**\nhttps://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352\n\nAfter installing, delete and re-pair your device. If it still doesn't work, please share a **diagnostic report ID** (device Settings > Create diagnostic report) and a **Homey Developer Tools interview** (https://tools.developer.homey.app)."
+      "excerpt": "Hi! 👋\n\nThis device is **already supported** in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) (Universal Tuya Zigbee fork) — **v5.11.14** with 138 drivers and 5,579+ fingerprints.\n\n**Install the latest test version:**\nhttps:
     },
     {
       "user": "dlnraja",
@@ -26,7 +26,7 @@
         "_TZ3210_s8lvbbu",
         "_TZ3210_s8lvbbuc"
       ],
-      "excerpt": "<!-- tuya-triage-bot -->\nHi! This device is **already supported** in the [Universal Tuya Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee) v5.11.13 (102 drivers, 29000+ fingerprints).\n\n- `_TZ3210_s8lvbbu` -> **bulb_rgb** driver\n- `_TZ3210_s8lvbbuc` -> **bulb_rgb** driver\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\nAfter installing, delete and re-pair your device. If issues persist, share a diagnostic report ID on the [test forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352)."
+      "excerpt": "<!-- tuya-triage-bot -->\nHi! This device is **already supported** in the [Universal Tuya Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee) v5.11.13 (102 drivers, 29000+ fingerprints).\n\n- `_TZ3210_s8lvbbu` -> **bulb_rgb** driver\n- `_TZ3210_s8lvbbuc` -> **bulb_rgb** driver\n\n**Install:** https:
     }
   ],
   "aiAnalysis": "```json\n{\n  \"manufacturerName\": \"_TZ3210_s8lvbbuc\",\n  \"productId\": \"_TZ3210_s8lvbbu\",\n  \"deviceType\": \"router\",\n  \"capabilities\": {\n    \"alternatePANCoordinator\": false,\n    \"deviceType\": true,\n    \"powerSourceMains\": true,\n    \"receiveWhenIdle\": true,\n    \"security\": false,\n    \"allocateAddress\": true\n  },\n  \"errors\": [],\n  \"DPs\": {\n    \"endpoints\": [\n      {\n        \"endpointId\": 1,\n        \"inputClusters\": [\n          3,\n          4,\n          5,\n          6,\n          4096,\n          8,\n          768,\n          61184,\n          0\n        ],\n        \"outputClusters\": [\n          25,\n          10\n        ]\n      },\n      {\n        \"endpointId\": 242,\n        \"inputClusters\": [],\n        \"outputClusters\": [\n          33\n        ]\n      }\n    ]\n  }\n}\n```",

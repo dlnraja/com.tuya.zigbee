@@ -30,15 +30,13 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_ovyaisip",
-      "_tz3000_pk8tgtdb",
-      "_tz3000_vw40zqp4"
+      "_TZ3000_OVYAISIP",
+      "_TZ3000_PK8TGTDB",
+      "_TZ3000_VW40ZQP4"
     ],
     "productId": [
       "TS0001",
-      "TS0011",
-      "ts0001",
-      "ts0011"
+      "TS0011"
     ],
     "endpoints": {
       "1": {

@@ -29,19 +29,14 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "ewelink"
+      "EWELINK"
     ],
     "productId": [
       "S26R2ZB",
       "S31 LITE ZB",
       "S40LITE",
       "S60ZBTPF",
-      "S60ZBTPG",
-      "s26r2zb",
-      "s31 lite zb",
-      "s40lite",
-      "s60zbtpf",
-      "s60zbtpg"
+      "S60ZBTPG"
     ],
     "learnmode": {
       "image": "/drivers/plug_smart/assets/learnmode.svg",

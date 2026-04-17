@@ -1,4 +1,6 @@
 'use strict';
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 
 const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 
@@ -204,8 +206,8 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       105: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },
 
       // Temperature (CONFIDENCE: 0)
-      1: { capability: 'measure_temperature', parser: v => v / 10, confidence: 1 }, // Some devices
-      3: { capability: 'measure_temperature', parser: v => v / 10, confidence: 0 }, // Soil sensor
+      1: { capability: 'measure_temperature', parser: v => safeParse(v, 10), confidence: 1 }, // Some devices
+      3: { capability: 'measure_temperature', parser: v => safeParse(v, 10), confidence: 0 }, // Soil sensor
 
       // Humidity (CONFIDENCE: 0)
       2: { capability: 'measure_humidity', parser: v => v, confidence: 0 },
@@ -215,7 +217,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       1: { capability: 'alarm_motion', parser: v => !!v, confidence: 0 },
 
       // Voltage (CONFIDENCE: 1 - USB/Mains devices)
-      247: { capability: 'measure_voltage', parser: v => v / 1000, confidence: 1 },
+      247: { capability: 'measure_voltage', parser: v => safeParse(v, 1000), confidence: 1 },
     };
 
     const mapping = DP_MAP[dp];

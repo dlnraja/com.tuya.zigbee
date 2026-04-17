@@ -27,10 +27,10 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_arfwfgoa",
-      "_tz3000_lq01",
-      "_tz3000_wqxwpita",
-      "_tz3400_key8kk7r"
+      "_TZ3000_ARFWFGOA",
+      "_TZ3000_LQ01",
+      "_TZ3000_WQXWPITA",
+      "_TZ3400_KEY8KK7R"
     ],
     "productId": [
       "CK-TLSR8656-SS5-01(7000)",
@@ -39,14 +39,7 @@
       "SNZB-01P",
       "TS0040",
       "WB-01",
-      "WB01",
-      "ck-tlsr8656-ss5-01(7000)",
-      "snzb-01",
-      "snzb-01m",
-      "snzb-01p",
-      "ts0040",
-      "wb-01",
-      "wb01"
+      "WB01"
     ],
     "endpoints": {
       "1": {

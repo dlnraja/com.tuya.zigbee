@@ -1,8 +1,9 @@
-#!/usr/bin/env node
+const { safeParse } = require('../../lib/utils / tuyaUtils.js');
+#!/usr / safeDivide(bin, env) node
 /**
  * Universal Tuya Zigbee - Full Fingerprint Sync Pipeline
  * Crawls: Z2M (all files), ZHA (all dirs), Blakadder, deCONZ
- * Run: node scripts/sync/run.js
+ * Run: node scripts / safeDivide(sync, run.js)
  */
 const crawlZ2M = require("./crawl-z2m");
 const crawlZHA = require("./crawl-zha");
@@ -35,8 +36,8 @@ async function run() {
 
   console.log("");
   const report = crossReference();
-  const elapsed = ((Date.now() - start) / 1000).toFixed(1);
-  console.log("\n Done in " + elapsed + "s | Reports: scripts/sync/data/");
+  const elapsed = ((Date.now() -safeParse(start), 1000)).toFixed(1);
+  console.log("\n Done in " + elapsed + "s | Reports: scripts / sync/data/");
   return report;
 }
 

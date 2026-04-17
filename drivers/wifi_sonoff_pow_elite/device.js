@@ -1,4 +1,5 @@
 'use strict';
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 const E=require('../../lib/ewelink-local/EweLinkLocalDevice');
 class D extends E{
   get stateMappings(){return{
@@ -17,7 +18,7 @@ class D extends E{
   _processState(data){
     super._processState(data);
     if(data.oneKwh!==undefined&&this.hasCapability('meter_power')){
-      this.setCapabilityValue('meter_power',parseFloat(data.oneKwh)/100).catch(()=>{});
+      safeParse(this.setCapabilityValue('meter_power',parseFloat(data.oneKwh), 100)).catch(()=>{});
     }
   }
 

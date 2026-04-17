@@ -4,7 +4,7 @@
 
 ### Multi-AI Gateway — One API, All Models
 
-[![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](https://github.com/Zen4-bit/Core Reimplementation/releases)
+[![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](https:
 [![License](https://img.shields.io/badge/license-Personal%20Use-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows-lightgrey.svg)]()
 [![MCP Tools](https://img.shields.io/badge/MCP%20Tools-45%2B-orange.svg)]()

@@ -1,4 +1,5 @@
 'use strict';
+const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
@@ -37,7 +38,7 @@ class HumidifierDevice extends ZigBeeDevice {
     });
 
     this.registerCapabilityListener('dim', async (value) => {
-      const level = Math.round(value * 3); // 0=off, 1=low, 2=medium, 3=high
+      const level =Math.round(safeMultiply(value, 3)); // 0=off, 1=low, 2=medium, 3=high
       await tuyaCluster.datapoint({ dp: 5, datatype: 4, value: level });
     });
 
@@ -57,7 +58,7 @@ class HumidifierDevice extends ZigBeeDevice {
     this.log(`[DP${dp}] = ${value}`);
 
     switch (dp) {
-    case 1: // On/Off
+    case 1: //On/Off
       this.setCapabilityValue('onoff', !!value).catch(this.error);
       break;
 
@@ -74,7 +75,7 @@ class HumidifierDevice extends ZigBeeDevice {
       break;
 
     case 5: // Mist level (0-3)
-      const dim = value / 3;
+      const dim = safeParse(value, 3);
       this.setCapabilityValue('dim', dim).catch(this.error);
       break;
 

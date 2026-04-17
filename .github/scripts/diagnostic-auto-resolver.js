@@ -1,3 +1,4 @@
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 #!/usr/bin/env node
 "use strict";
 const fs=require("fs"),path=require("path");
@@ -117,7 +118,7 @@ if(pd&&issueUser){try{const det=pd.detectFromGitHub(issueUser,"");if(det.isRetur
 const drvList=fpResults.map(f=>"`"+f.fp+"` -> **"+f.drivers.join(", ")+"**").join("\n- ");
 let protocolNote="";
 if(protocol==="unified")protocolNote="\n> **Protocol:** Unified device (IAS Zone + Tuya DP). Magic packet timing and enrollment crucial.\n";
-else if(protocol==="tuya_dp")protocolNote="\n> **Protocol:** Tuya DP (cluster 0xEF00). Ensure DP listeners active.\n";
+else if(protocol==="tuya_dp")protocolNote="\n> **Protocol:** Tuya DP (cluster CLUSTERS.TUYA_EF00). Ensure DP listeners active.\n";
 else if(protocol==="ias")protocolNote="\n> **Protocol:** IAS Zone. Enrollment and zone listeners required.\n";
 return TAG+"\n### Auto-resolved by Diagnostic Resolver\n\n"+profileNote+
 "All fingerprints in this "+(isPR?"PR":"issue")+" found in **Universal Tuya Zigbee v"+appVer+"**:\n- "+drvList+"\n\n"+

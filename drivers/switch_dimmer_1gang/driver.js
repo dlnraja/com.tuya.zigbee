@@ -1,4 +1,6 @@
 'use strict';
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class SwitchDimmer1GangDriver extends ZigBeeDriver {
@@ -53,7 +55,7 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
 
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          const dim = args.brightness / 100;
+          const dim = safeParse(args.brightness, 100);
           await args.device.triggerCapabilityListener('dim', dim);
           return true;
         });

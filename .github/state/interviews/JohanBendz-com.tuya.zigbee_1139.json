@@ -16,7 +16,7 @@
       "user": "dlnraja",
       "date": "2026-02-18T13:10:30Z",
       "fps": [],
-      "excerpt": "Hi! 👋\n\nThis device is **already supported** in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) (Universal Tuya Zigbee fork) — **v5.11.14** with 138 drivers and 5,579+ fingerprints.\n\n**Install the latest test version:**\nhttps://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\n**Community forum for support:**\nhttps://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352\n\nAfter installing, delete and re-pair your device. If it still doesn't work, please share a **diagnostic report ID** and a **Homey Developer Tools interview** (https://tools.developer.homey.app)."
+      "excerpt": "Hi! 👋\n\nThis device is **already supported** in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) (Universal Tuya Zigbee fork) — **v5.11.14** with 138 drivers and 5,579+ fingerprints.\n\n**Install the latest test version:**\nhttps:
     }
   ],
   "aiAnalysis": "```json\n{\n  \"manufacturerName\": \"_TZ3000_o4mkahkc\",\n  \"productId\": \"TS0202\",\n  \"DPs\": {\n    \"inputClusters\": [1, 1280, 3, 0],\n    \"outputClusters\": [4096, 6, 25, 10]\n  },\n  \"capabilities\": {\n    \"alternatePANCoordinator\": false,\n    \"deviceType\": false,\n    \"powerSourceMains\": false,\n    \"receiveWhenIdle\": false,\n    \"security\": false,\n    \"allocateAddress\": true\n  },\n  \"errors\": null,\n  \"deviceType\": \"enddevice\",\n  \"deviceName\": \"Tuya Zigbee PIR Bewegingssensor\",\n  \"deviceModel\": \"TS0202\",\n  \"deviceDescription\": \"Tuya Zigbee PIR Bewegingssensor\",\n  \"linkToDeviceImage\": \"https://www.url-to-images.com\"\n}\n```",

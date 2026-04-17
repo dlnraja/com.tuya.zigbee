@@ -89,10 +89,10 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "sonoff",
-      "_tz3000_an5rjiwd",
-      "_tz3000_tzvbimpq",
-      "_tz3000_yj6k7vfo"
+      "SONOFF",
+      "_TZ3000_AN5RJIWD",
+      "_TZ3000_TZVBIMPQ",
+      "_TZ3000_YJ6K7VFO"
     ],
     "productId": [
       "SNZB-01",
@@ -104,29 +104,11 @@
       "TS0011",
       "TS0012",
       "TS0013",
-      "TS0041",
       "TS0042",
       "TS0043",
       "TS0044",
       "TS0046",
-      "TS004F",
-      "TS0111",
-      "snzb-01",
-      "snzb-01m",
-      "snzb-01p",
-      "ts0001",
-      "ts0002",
-      "ts0003",
-      "ts0011",
-      "ts0012",
-      "ts0013",
-      "ts0041",
-      "ts0042",
-      "ts0043",
-      "ts0044",
-      "ts0046",
-      "ts004f",
-      "ts0111"
+      "TS0111"
     ],
     "endpoints": {
       "1": {

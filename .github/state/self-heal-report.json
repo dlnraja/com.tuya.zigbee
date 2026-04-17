@@ -1,8 +1,17 @@
 {
-  "timestamp": "2026-04-16T07:35:48.286Z",
+  "timestamp": "2026-04-17T11:23:26.520Z",
   "totalFiles": 0,
-  "totalFixes": 150,
+  "totalFixes": 153,
   "rules": {
+    "flow-card-try-catch": {
+      "count": 1,
+      "files": [
+        {
+          "file": "lib\\mixins\\CapabilityManagerMixin.js",
+          "detail": "Line 440: getDeviceTriggerCard without try-catch"
+        }
+      ]
+    },
     "dp-variant-docs": {
       "count": 14,
       "files": [
@@ -145,7 +154,7 @@
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_qm6djpta found in: button_emergency_sos, button_wireless_4, remote_button_emergency_sos_hybrid, smart_remote_4_buttons"
+          "detail": "_tyzb01_qm6djpta found in: button_emergency_sos, button_wireless_4, remote_button_emergency_sos_hybrid"
         },
         {
           "file": "drivers",
@@ -333,7 +342,7 @@
         },
         {
           "file": "drivers",
-          "detail": "_tz3000_wptayaqr found in: contact_sensor_curtain_hybrid, curtain_motor, curtain_motor_wall_hybrid, wall_curtain_switch"
+          "detail": "_tz3000_wptayaqr found in: contact_sensor_curtain_hybrid, curtain_motor"
         },
         {
           "file": "drivers",
@@ -585,7 +594,7 @@
         },
         {
           "file": "drivers",
-          "detail": "hobeian found in: sensor_climate_presence_hybrid, sensor_climate_temphumidsensor_hybrid, sensor_contact_presence_hybrid, sensor_presence_radar_hybrid, switch_3gang"
+          "detail": "hobeian found in: sensor_climate_presence_hybrid, sensor_climate_temphumidsensor_hybrid, sensor_presence_radar_hybrid, switch_3gang"
         },
         {
           "file": "drivers",
@@ -602,12 +611,8 @@
       ]
     },
     "logic-case-audit": {
-      "count": 2,
+      "count": 1,
       "files": [
-        {
-          "file": ".homeybuild\\lib\\diagnostics\\DeviceHealth.js",
-          "detail": "Suspected case-sensitive comparison of manufacturerName"
-        },
         {
           "file": "lib\\diagnostics\\DeviceHealth.js",
           "detail": "Suspected case-sensitive comparison of manufacturerName"
@@ -615,11 +620,28 @@
       ]
     },
     "safe-flow-lookup": {
-      "count": 1,
+      "count": 3,
       "files": [
         {
           "file": "drivers\\air_quality_comprehensive\\driver.js",
           "detail": "Wrapped Flow card lookups in try-catch."
+        },
+        {
+          "file": "drivers\\din_rail_meter\\driver.js",
+          "detail": "Wrapped Flow card lookups in try-catch."
+        },
+        {
+          "file": "drivers\\switch_dimmer_1gang\\device.js",
+          "detail": "Wrapped Flow card lookups in try-catch."
+        }
+      ]
+    },
+    "branding-cleanup": {
+      "count": 1,
+      "files": [
+        {
+          "file": "drivers\\generic_diy\\driver.compose.json",
+          "detail": "Removed \"Hybrid\" branding from manifest"
         }
       ]
     }

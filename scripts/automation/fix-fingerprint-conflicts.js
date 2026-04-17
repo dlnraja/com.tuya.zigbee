@@ -140,8 +140,9 @@ function findConflicts(drivers) {
   const exactMap = new Map(); // mfr|pid -> [driverName]
   for (const [name, d] of drivers) {
     for (const m of d.mfrs) {
-      for (const p of d.pids) {
-        const key = m.toLowerCase() + '|' + p;
+      const pids = d.pids.size > 0 ? Array.from(d.pids) : ['*'];
+      for (const p of pids) {
+        const key = m.toLowerCase() + '|' + (p || '*');
         if (!exactMap.has(key)) exactMap.set(key, []);
         exactMap.get(key).push(name);
       }

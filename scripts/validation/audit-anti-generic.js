@@ -1,4 +1,5 @@
 'use strict';
+const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 /**
  * ANTI-GENERIC AUDIT SCRIPT v5.5.779
  * 
@@ -148,7 +149,7 @@ console.log(`Safe: ${safe} | Risky: ${risky} | Critical: ${critical}`);
 console.log(`MFR+PID Collisions: ${collisions}`);
 console.log(`Blocking Drivers: ${blockingDrivers}`);
 
-const score = Math.round((safe / total) * 100);
+const score = Math.round((safeDivide(safe, total)) * 100);
 console.log(`\nAnti-Generic Score: ${score}%`);
 
 if (score >= 95) {

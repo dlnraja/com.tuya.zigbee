@@ -26,6 +26,8 @@ async function main() {
     buttonLogicFailures: [],
     sdkDeprecations: [],
     radarLogicCheck: [],
+    numericConstantViolations: [],
+    naNSafetyCheck: [],
     errors: []
   };
 
@@ -83,7 +85,8 @@ async function main() {
           const devicePath = path.join(DRIVERS_DIR, d, 'device.js');
           if (fs.existsSync(devicePath)) {
             const content = fs.readFileSync(devicePath, 'utf8');
-            if (!content.includes('HybridSensorBase') && !content.includes('BaseHybridDevice')) {
+            if (!content.includes('HybridSensorBase') && !content.includes('BaseHybridDevice') && 
+                !content.includes('UnifiedSensorBase') && !content.includes('BaseUnifiedDevice')) {
                 auditResults.radarLogicCheck.push(`${d}: Missing hybrid base inheritance for radar.`);
             }
           }
@@ -102,31 +105,100 @@ async function main() {
     }
   }
 
-  // 4. SDK 3 DEPRECATION AUDIT (Project-wide)
-  console.log('🔍 Scanning for SDK 3 Deprecations...');
+  // 4. PROJECT-WIDE AUDIT (SDK, NaN, Constants)
+  console.log('🔍 Executing Project-Wide Integrity Scan...');
+  
   const walk = (dir) => {
     if (!fs.existsSync(dir)) return;
     const files = fs.readdirSync(dir);
     for (const file of files) {
       const full = path.join(dir, file);
       if (fs.statSync(full).isDirectory()) {
-         if (file !== 'node_modules' && file !== '.git' && file !== '.gemini' && file !== 'brain' && file !== 'scratch') walk(full);
+         // Ignore non-source and script directories
+         if (['node_modules', '.git', '.gemini', 'brain', 'scratch', 'scripts', 'docs', 'assets', 'locales', 'test'].includes(file)) continue;
+         walk(full);
       } else if (file.endsWith('.js')) {
         const content = fs.readFileSync(full, 'utf8');
         const lines = content.split('\n');
+        
         lines.forEach((line, idx) => {
-          // Check for legacy getDevice/getDeviceById patterns on homey.drivers
-          if (line.includes('drivers.getDevice(') || line.includes('drivers.getDeviceById(') || line.includes('getDriver(') && line.includes('.getDevice(')) {
+          const trimmed = line.trim();
+          if (!trimmed || trimmed.startsWith('//') || trimmed.startsWith('*') || trimmed.startsWith('/*') || trimmed.startsWith('#!')) return;
+
+          // Strip strings and comments for more accurate arithmetic detection
+          // Simple regex to remove quoted strings and multi-line/rest-of-line comments
+          const codeOnly = line
+            .replace(/\r/g, '') // Remove CRLF artifacts
+            .replace(/\/\/.*$/, '') // Remove trailing comments
+            .replace(/(['"`])((?:\\.|(?!\1).)*?)\1/g, '$1$1') // Replace string content with empty quotes (handles escapes)
+            .replace(/\/[^*].*?\/[gimy]*(?=[.,);]|$)/g, ' '); // Heuristic to strip regex literals (not starting with *)
+
+          // I. SDK 3 DEPRECATION AUDIT
+          if (codeOnly.includes('drivers.getDevice(') || codeOnly.includes('drivers.getDeviceById(') || (codeOnly.includes('getDriver(') && codeOnly.includes('.getDevice('))) {
             const rel = path.relative(ROOT, full);
-            auditResults.sdkDeprecations.push(`${rel}:${idx + 1}: ${line.trim().substring(0, 100)}`);
+            auditResults.sdkDeprecations.push(`${rel}:${idx + 1}: ${trimmed.substring(0, 100)}`);
+          }
+
+          // II. Numeric Cluster Constant Audit
+          if ((codeOnly.includes('0xEF00')) && !full.includes('ZigbeeConstants.js') && !codeOnly.includes('CLUSTERS.TUYA_EF00')) {
+             const rel = path.relative(ROOT, full);
+             auditResults.numericConstantViolations.push(`${rel}:${idx + 1}: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00`);
+          }
+
+          if ((codeOnly.includes('manufacturerName') || codeOnly.includes('modelId') || codeOnly.includes('productId')) && 
+              (codeOnly.includes('===') || codeOnly.includes('==') || codeOnly.includes('toLowerCase()') || codeOnly.includes('toUpperCase()') || codeOnly.includes('.includes('))) {
+             if (!full.includes('CaseInsensitiveMatcher.js') && !full.includes('ManufacturerNameHelper.js') && !full.includes('zero-defect-architect-audit.js') && !codeOnly.includes('CI.')) {
+                const rel = path.relative(ROOT, full);
+                auditResults.errors.push(`${rel}:${idx + 1}: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.`);
+             }
+          }
+
+          // IV. Invisible Character Audit (Stability Gate)
+          for (let i = 0; i < line.length; i++) {
+              const charCode = line.charCodeAt(i);
+              const isForbidden = (charCode < 32 && ![9, 10, 13].includes(charCode)) || 
+                                  charCode === 0xFEFF || charCode === 0x200B || charCode === 0xA0;
+              if (isForbidden && !full.includes('string-integrity-gate.js')) {
+                  const rel = path.relative(ROOT, full);
+                  auditResults.errors.push(`${rel}:${idx + 1}: Forbidden invisible character (char code ${charCode}) detected.`);
+                  break; 
+              }
+          }
+
+          // V. NaN Safety Audit
+          if ((codeOnly.includes('/') || codeOnly.includes('*')) && !full.includes('tuyaUtils.js')) {
+             // Exclude lines already using safe utilities
+             if (!codeOnly.includes('safeParse') && 
+                 !codeOnly.includes('safeDivide') && 
+                 !codeOnly.includes('safeMultiply') && 
+                 !codeOnly.includes('Number.isNaN')) {
+                
+                // Exclude common non-arithmetic patterns and safe constants
+                const isImportExport = codeOnly.match(/^\s*(import|export)\s+\*/);
+                const isDocBlock = codeOnly.includes('*/'); // Should be stripped but just in case
+                const isTemplateLiteral = trimmed.includes('${') && trimmed.includes('}');
+                
+                // v7.5.0: Permit constant scaling (Time sync, units)
+                const isSafeConstant = codeOnly.match(/(\*\s*(1000|60|100|3600|24))|(\/\s*(1000|100|10|2))/);
+                const isMathRandom = codeOnly.includes('Math.random()');
+
+                if (!isImportExport && !isDocBlock && !isSafeConstant && !isMathRandom) {
+                  // Heuristic: If it's a division/multiplication by an identifier, literal or accessor
+                  // Matches: x / y, 10 / 2, this.val * 5, etc.
+                  // Avoid matches like: somePath/*, nested/* comments
+                  if (codeOnly.match(/[a-zA-Z0-9_$\].)]\s*[\/*](?!\s*\*)\s*[a-zA-Z0-9_$0-9.]+/)) {
+                     const rel = path.relative(ROOT, full);
+                     auditResults.naNSafetyCheck.push(`${rel}:${idx+1}: Potential unchecked division/multiplication (NaN risk)`);
+                  }
+                }
+             }
           }
         });
       }
     }
   };
-  walk(path.join(ROOT, 'lib'));
-  walk(path.join(ROOT, 'drivers'));
-  walk(ROOT); // Scan root files like app.js
+  
+  walk(ROOT);
 
   // 5. REPORT GENERATION
   console.log('\n📊 Audit Report Summary:');
@@ -135,6 +207,8 @@ async function main() {
   console.log(`- Button Logic Issues: ${auditResults.buttonLogicFailures.length}`);
   console.log(`- SDK Deprecations: ${auditResults.sdkDeprecations.length}`);
   console.log(`- Radar Logic Issues: ${auditResults.radarLogicCheck.length}`);
+  console.log(`- Numeric Constant Violations: ${auditResults.numericConstantViolations.length}`);
+  console.log(`- NaN Safety Warnings: ${auditResults.naNSafetyCheck.length}`);
   
   if (auditResults.collisions.length > 0) {
     console.log('\n⚠️ COLLISION ALERT:');

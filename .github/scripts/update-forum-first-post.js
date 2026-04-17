@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 'use strict';
+
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
+
 const fs=require('fs'),path=require('path');
 const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
@@ -78,7 +81,7 @@ function buildPost(stats,changelog,ghSummary){
   md+='> **'+stats.drivers+' drivers** · **'+stats.fps+'+ fingerprints** · Updated '+date+'\n\n';
   md+='Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.\n\n';
   md+='## Install\n\n';
-  md+='**Stable:** [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/) · **Test:** [Test Channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · **Source:** [GitHub](https://github.com/dlnraja/com.tuya.zigbee)\n\n';
+  md+='**Stable:** [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/) · **Test:** [Test Channel](https:
   md+='## What\'s New (v'+stats.version+')\n\n';
   md+=changelog.replace(/^v[\d.]+:\s*/,'')+'\n\n';
 
@@ -90,7 +93,7 @@ function buildPost(stats,changelog,ghSummary){
   md+='\n[Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) — search by fingerprint\n';
 
   md+='\n## Features\n\n';
-  md+='- **Tuya DP protocol** (0xEF00/TS0601) + **Standard ZCL** clusters\n';
+  md+='- **Tuya DP protocol** (CLUSTERS.TUYA_EF00/TS0601) + **Standard ZCL** clusters\n';
   md+='- Physical button detection · Virtual buttons · LED backlight control\n';
   md+='- Energy monitoring (W/V/A) · Air quality sensors (CO₂/VOC/PM2.5/HCHO)\n';
   md+='- Covers & curtains with tilt · TRVs · Dimmers · IR blasters\n';
@@ -110,7 +113,7 @@ function buildPost(stats,changelog,ghSummary){
 
   md+='## ☕ Support the Project\n\n';
   md+='This app is free and open-source. If it\'s useful to you, a small donation helps keep it going:\n\n';
-  md+='**PayPal:** [paypal.me/dlnraja](https://paypal.me/dlnraja) · **Revolut:** [revolut.me/dylanoul](https://revolut.me/dylanoul)\n\n';
+  md+='**PayPal:** [paypal.me/dlnraja](https://paypal.me/dlnraja) · **Revolut:** [revolut.me/dylanoul](https:
 
   md+='---\n*Last updated '+date+' — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*\n';
   return md;

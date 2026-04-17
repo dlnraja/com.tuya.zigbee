@@ -16,7 +16,7 @@
       "user": "dlnraja",
       "date": "2026-02-18T13:04:33Z",
       "fps": [],
-      "excerpt": "Hi! 👋\n\nThis device is **already supported** in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) (Universal Tuya Zigbee fork) — **v5.11.14** with 138 drivers and 5,579+ fingerprints.\n\n**Install the latest test version:**\nhttps://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\n**Community forum for support:**\nhttps://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352\n\nAfter installing, delete and re-pair your device. If it still doesn't work, please share a **diagnostic report ID** (device Settings > Create diagnostic report) and a **Homey Developer Tools interview** (https://tools.developer.homey.app)."
+      "excerpt": "Hi! 👋\n\nThis device is **already supported** in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) (Universal Tuya Zigbee fork) — **v5.11.14** with 138 drivers and 5,579+ fingerprints.\n\n**Install the latest test version:**\nhttps:
     },
     {
       "user": "dlnraja",
@@ -24,13 +24,13 @@
       "fps": [
         "_TZ3000_cet6ch1r"
       ],
-      "excerpt": "<!-- tuya-triage-bot -->\nHi! This device is **already supported** in the [Universal Tuya Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee) v5.11.13 (102 drivers, 29000+ fingerprints).\n\n- `_TZ3000_cet6ch1r` -> **climate_sensor** driver\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\nAfter installing, delete and re-pair your device. If issues persist, share a diagnostic report ID on the [test forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352)."
+      "excerpt": "<!-- tuya-triage-bot -->\nHi! This device is **already supported** in the [Universal Tuya Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee) v5.11.13 (102 drivers, 29000+ fingerprints).\n\n- `_TZ3000_cet6ch1r` -> **climate_sensor** driver\n\n**Install:** https:
     },
     {
       "user": "dlnraja",
       "date": "2026-03-02T03:30:24Z",
       "fps": [],
-      "excerpt": "LoraTap SC400ZB-EU curtain switches are supported in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) v5.11 if the Zigbee fingerprint matches a Tuya manufacturer name. Please provide a device interview from https://tools.developer.homey.app to confirm the exact fingerprint. Install: https://homey.app/a/com.dlnraja.tuya.zigbee/test/"
+      "excerpt": "LoraTap SC400ZB-EU curtain switches are supported in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) v5.11 if the Zigbee fingerprint matches a Tuya manufacturer name. Please provide a device interview from https:
     }
   ],
   "aiAnalysis": "```json\n{\n  \"manufacturerName\": \"_TZ3000_cet6ch1r\",\n  \"productId\": \"TS130F\",\n  \"DPs\": {\n    \"endpoints\": [\n      {\n        \"endpointId\": 1,\n        \"inputClusters\": [4, 5, 6, 258, 57345, 0],\n        \"outputClusters\": [25, 10]\n      },\n      {\n        \"endpointId\": 2,\n        \"inputClusters\": [4, 5, 6, 258, 57345],\n        \"outputClusters\": []\n      },\n      {\n        \"endpointId\": 242,\n        \"inputClusters\": [],\n        \"outputClusters\": [33]\n      }\n    ]\n  },\n  \"capabilities\": {\n    \"alternatePANCoordinator\": false,\n    \"deviceType\": true,\n    \"powerSourceMains\": true,\n    \"receiveWhenIdle\": true,\n    \"security\": false,\n    \"allocateAddress\": true\n  },\n  \"errors\": [],\n  \"deviceType\": \"router\",\n  \"ieeeAddress\": \"a4:c1:38:e6:14:91:fc:d0\",\n  \"networkAddress\": 51205\n}\n```",

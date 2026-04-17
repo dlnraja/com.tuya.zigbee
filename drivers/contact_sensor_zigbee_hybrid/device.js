@@ -1,4 +1,6 @@
 'use strict';
+const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { setupSonoffSensor, handleSonoffSensorSettings } = require('../../lib/mixins/SonoffSensorMixin');
@@ -166,7 +168,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
     const userReverse = this.getSetting('reverse_alarm') || false;
     this._invertContact = userInvert || userReverse;
     this._userExplicitInvert = this._invertContact;
-    this._debounceMs = (this.getSetting('debounce_time') || DEBOUNCE.DEFAULT_MS / 1000) * 1000;
+    this._debounceMs = (this.getSetting('debounce_time') || safeParse(DEBOUNCE.DEFAULT_MS,safeMultiply(1000)), 1000);
     this._lastBatteryReportTime = 0; // v5.5.793: Battery throttling
 
     // v5.5.344: Get manufacturer for problematic device detection
@@ -186,7 +188,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
     // v5.12.2: Added _TZE200_pay2byax (ZG-102ZL reversed contact)
     const invertedByDefault = [
       // v5.12.1: REMOVED HOBEIAN — Lasse_K #1592 'always ja': standard TS0203 IAS bit0=1=open maps directly to alarm_contact=true, no inversion needed
-      // 'HOBEIAN',  // DO NOT INVERT — causes stuck alarm_contact=true when closed
+      // 'HOBEIAN',  
       '_TZ3000_26fmupbb',  // Known inverted
       '_TZ3000_n2egfsli',  // Known inverted
       '_TZ3000_oxslv1c9',  // Known inverted
@@ -339,7 +341,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
           const keepAliveWindow = timeSinceLastChange >= DEBOUNCE.KEEP_ALIVE_MIN_MS && timeSinceLastChange <= DEBOUNCE.KEEP_ALIVE_MAX_MS;
 
           if (keepAliveWindow) {
-            this.log(`[CONTACT] 🚫 BLOCKED: Likely 1-hour keep-alive false "closed" (${Math.round(timeSinceLastChange / 60000)}min since open)`);
+            this.log(`[CONTACT] 🚫 BLOCKED: Likely 1-hour keep-alive false "closed" (${Math.round(timeSinceLastChange/1, 60000))}min since open)`);
             return; // Ignore this false state change completely
           }
 
@@ -357,7 +359,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
             state.lastChangeTime = Date.now();
             state.iasMessageCount = 0;
             await super.setCapabilityValue(capability, finalValue).catch(() => { });
-          }, this._debounceMs * 2);
+          },safeMultiply(this._debounceMs, 2));
 
           return;
         }

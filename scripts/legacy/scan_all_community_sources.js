@@ -1,3 +1,4 @@
+const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
 'use strict';
 
@@ -153,7 +154,7 @@ const ALL_SOURCES = {
       },
       {
         number: 1166,
-        title: 'Add support for Tuya PIR sensor TS0202 / _TZ3000_c8ozah8n',
+        title: 'Add support for Tuya PIR sensor TS0202/_TZ3000_c8ozah8n',
         author: 'chernals',
         date: '2025-02-18',
         status: 'open',

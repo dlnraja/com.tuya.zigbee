@@ -1,4 +1,6 @@
 'use strict';
+const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
@@ -54,7 +56,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const pos = args.device.getCapabilityValue('windowcoverings_set') || 0;
-          return (pos * 100) > (args.position || 50);
+return safeMultiply((pos, 100)) > (args.position || 50);
         });
       this.log('[FLOW] ✅ Registered: shutter_roller_controller_position_above');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
@@ -108,7 +110,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
       (() => { try { return this.homey.flow.getActionCard('shutter_roller_controller_set_position'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('windowcoverings_set', (args.position || 50) / 100);
+          await args.device.triggerCapabilityListener('windowcoverings_set', (args.position ||safeParse(50), 100));
           return true;
         });
       this.log('[FLOW] ✅ Registered: shutter_roller_controller_set_position');

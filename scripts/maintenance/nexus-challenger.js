@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 'use strict';
 
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
+
+
 const fs = require('fs');
 const path = require('path');
 
@@ -109,7 +112,7 @@ async function main() {
 
     // E. INNOVATION OPPORTUNITY (Power Monitoring)
     if (drvId.includes('switch') || drvId.includes('plug')) {
-       if (!caps.includes('measure_power') && deviceJs.includes('0xEF00')) {
+       if (!caps.includes('measure_power') && deviceJs.includes(CLUSTERS.TUYA_EF00)) {
           const hasPowerIntel = mfrs.some(m => extIntel.allDevices?.find(d => d.fp === m && (d.caps?.includes('power') || d.dps?.includes(6))));
           if (hasPowerIntel) {
             report.innovationOpportunities.push({

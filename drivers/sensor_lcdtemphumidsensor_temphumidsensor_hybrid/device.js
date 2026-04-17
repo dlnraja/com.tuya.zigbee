@@ -1,11 +1,12 @@
 'use strict';
+const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
  * LCD Temperature & Humidity Sensor Device - v5.4.3
  *
- * For TS0201 LCD display temperature/humidity sensors
+ * For TS0201 LCD display safeDivide(temperature, humidity) sensors
  * Manufacturers: _TYZB01_*, _TZ2000_*
  *
  * Uses UnifiedSensorBase for full ZCL + Tuya DP support
@@ -53,7 +54,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
     // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.
     try {
       const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
-      this._timeSync = new ZigbeeTimeSync(this, { throttleMs: 6 * 60 * 60 * 1000 });
+      this._timeSync = new ZigbeeTimeSync(this, { throttleMs:safeMultiply(6, 60) * 60 * 1000 });
       
       // Initial sync after 10 seconds (let device settle)
       this.homey.setTimeout(async () => {
@@ -80,7 +81,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
         } catch (e) {
           this.log('[TimeSync] Periodic sync failed:', e.message);
         }
-      }, 6 * 60 * 60 * 1000);
+      },safeMultiply(6, 60) * 60 * 1000);
     } catch (e) {
       this.log('[TimeSync] Time sync init failed (non-critical):', e.message);
     }
@@ -141,8 +142,8 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
   }
 
   /**
-   * Tuya EF00 time sync fallback (DP 0x24 / decimal 36)
-   * Sends current time with timezone offset for Tuya-native thermostat/TRV devices.
+   * Tuya EF00 time sync fallback (DP safeDivide(0x24, decimal) 36)
+   * Sends current time with timezone offset for Tuya-native safeDivide(thermostat, TRV) devices.
    */
   async _tuyaTimeSyncFallback() {
     try {
@@ -155,7 +156,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
       try {
         const tz = this.homey.clock.getTimezone();
         const tzDate = new Date(now.toLocaleString('en-US', { timeZone: tz }));
-        utcOffset = Math.round((tzDate - now) / 3600000);
+        utcOffset = Math.round((tzDate -safeParse(now), 3600000));
       } catch (e) { /* use UTC */ }
 
       // Tuya time format: [year-2000, month, day, hour, minute, second, weekday(0=Mon)]

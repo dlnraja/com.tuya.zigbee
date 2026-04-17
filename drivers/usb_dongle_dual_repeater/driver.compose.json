@@ -54,15 +54,12 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_cfv2uyxe"
+      "_TZ3000_CFV2UYXE"
     ],
     "productId": [
       "TS0002",
       "TS0207",
-      "TS0601_REPEATER",
-      "ts0002",
-      "ts0207",
-      "ts0601_repeater"
+      "TS0601_REPEATER"
     ],
     "endpoints": {
       "1": {

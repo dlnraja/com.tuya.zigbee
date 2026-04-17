@@ -1,8 +1,13 @@
 'use strict';
+const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
-const ButtonDevice = require('../../lib/devices/ButtonDevice');
-const { includesCI, containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
-const { resolve: resolvePressType, PRESS_MAP } = require('../../lib/utils/TuyaPressTypeMap');
+
+const { CLUSTERS } = require('../../lib/constants / ZigbeeConstants.js');
+
+
+const ButtonDevice = require('../../lib/devices / ButtonDevice');
+const { includesCI, containsCI } = require('../../lib/utils / CaseInsensitiveMatcher');
+const { resolve: resolvePressType, PRESS_MAP } = require('../../lib/utils / TuyaPressTypeMap');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -12,12 +17,12 @@ const { resolve: resolvePressType, PRESS_MAP } = require('../../lib/utils/TuyaPr
  * ║  v5.5.379: CRITICAL FIX - TS004F Scene Mode Switching                        ║
  * ║  - TS004F has TWO modes: Dimmer (default) and Scene                         ║
  * ║  - Dimmer mode: Only single press works, uses levelControl cluster          ║
- * ║  - Scene mode: Single/double/long work, uses scenes cluster                 ║
+ * ║  - Scene mode: Single / safeDivide(double, long) work, uses scenes cluster                 ║
  * ║  - Mode controlled by: Cluster 6 (onOff), Attribute 0x8004                  ║
  * ║  - Value 0 = Dimmer mode, Value 1 = Scene mode                              ║
  * ║  - Research: SmartThings, Z2M #7158, ZHA #1372                              ║
  * ║                                                                              ║
- * ║  STRUCTURE TS0044/TS004F:                                                    ║
+ * ║  STRUCTURE safeDivide(TS0044, TS004F):                                                    ║
  * ║  EP1: Button 1 (scenes, onOff, powerCfg, groups)                             ║
  * ║  EP2: Button 2 (scenes, onOff, groups)                                       ║
  * ║  EP3: Button 3 (scenes, onOff, groups)                                       ║
@@ -272,7 +277,7 @@ class Button4GangDevice extends ButtonDevice {
           }
         }
       }
-    }, 5 * 60 * 1000); // 5 minutes
+    },safeMultiply(5, 60) * 1000); // 5 minutes
   }
 
   /**
@@ -448,7 +453,7 @@ class Button4GangDevice extends ButtonDevice {
 
         // v5.8.47: MOES TS0044/TS004F dimmer mode fix - levelControl cluster detection
         // When in dimmer mode (default after battery change), buttons send
-        // moveWithOnOff/stepWithOnOff/stop on levelControl cluster (8) instead of scenes
+        // moveWithOnOff / stepWithOnOff/stop on levelControl cluster (8) instead of scenes
         const levelCluster = endpoint.clusters?.levelControl || endpoint.clusters?.genLevelCtrl || endpoint.clusters?.[8];
         if (levelCluster) {
           if (typeof levelCluster.on === 'function') {
@@ -490,7 +495,7 @@ class Button4GangDevice extends ButtonDevice {
       this.log('[BUTTON4-PHYSICAL] 🔄 Scenes, MultistateInput, OnOff, and LevelControl listeners active');
 
       // v5.5.367: MOES ESW-0ZAA-EU FIX - Setup Tuya DP button detection
-      // Some MOES devices use Tuya cluster (0xEF00) for physical button presses
+      // Some MOES devices use Tuya cluster (CLUSTERS.TUYA_EF00) for physical button presses
       await this._setupTuyaDPButtonDetection(zclNode);
 
       // v5.5.714: MOES _TZ3000_zgyzgdua FIX - Setup cluster 0xE000 (57344) button detection
@@ -504,8 +509,8 @@ class Button4GangDevice extends ButtonDevice {
 
   /**
    * v5.5.367: MOES ESW-0ZAA-EU FIX - Tuya DP button detection
-   * Some MOES 4-button devices send button presses via Tuya cluster (0xEF00)
-   * instead of standard ZCL scenes/onOff commands
+   * Some MOES 4-button devices send button presses via Tuya cluster (CLUSTERS.TUYA_EF00)
+   * instead of standard ZCL safeDivide(scenes, onOff) commands
    *
    * Common Tuya DP patterns for buttons:
    * - DP 1-4: Button 1-4 press events
@@ -515,9 +520,9 @@ class Button4GangDevice extends ButtonDevice {
     try {
       const tuyaCluster = zclNode?.endpoints?.[1]?.clusters?.tuya
         || zclNode?.endpoints?.[1]?.clusters?.manuSpecificTuya
-        || zclNode?.endpoints?.[1]?.clusters?.[61184]
-        || zclNode?.endpoints?.[1]?.clusters?.['61184']
-        || zclNode?.endpoints?.[1]?.clusters?.['0xEF00'];
+        || zclNode?.endpoints?.[1]?.clusters?.[CLUSTERS.TUYA_EF00]
+        || zclNode?.endpoints?.[1]?.clusters?.['CLUSTERS.TUYA_EF00']
+        || zclNode?.endpoints?.[1]?.clusters?.[CLUSTERS.TUYA_EF00];
 
       if (!tuyaCluster) {
         this.log('[BUTTON4-TUYA-DP] ℹ️ No Tuya cluster found - using ZCL only');
@@ -642,7 +647,7 @@ class Button4GangDevice extends ButtonDevice {
       // v5.5.758: Import TuyaE000BoundCluster for receiving button presses
       let TuyaE000BoundCluster;
       try {
-        TuyaE000BoundCluster = require('../../lib/clusters/TuyaE000BoundCluster');
+        TuyaE000BoundCluster = require('../../lib/clusters / TuyaE000BoundCluster');
       } catch (e) {
         this.log('[BUTTON4-E000] ⚠️ Could not load TuyaE000BoundCluster:', e.message);
         return;
@@ -687,7 +692,7 @@ class Button4GangDevice extends ButtonDevice {
       }
 
       // v5.5.758: Also setup onOff command listeners as fallback
-      // Some TS0044 variants send commandOn/commandOff/commandToggle on onOff cluster
+      // Some TS0044 variants send commandOn / commandOff/commandToggle on onOff cluster
       // v5.7.52: CRITICAL FIX - Add deduplication to prevent ghost presses from periodic reports
       this._e000OnOffDedup = {}; // Track last command time per endpoint
       
@@ -724,10 +729,10 @@ class Button4GangDevice extends ButtonDevice {
 
           // v5.12.1: FIX _TZ3000_u3nv1jwk TS0044 buttons not recognized
           // BoundCluster intercepts frames BEFORE cluster.on('commandOn') fires,
-          // so we MUST handle standard setOn/setOff/toggle here (not just 0xFD).
+          // so we MUST handle standard setOn / setOff/toggle here (not just 0xFD).
           // Z2M: TS0044 sends setOn=single, setOff=double, toggle=long per endpoint.
           try {
-            const OnOffBC = require('../../lib/clusters/OnOffBoundCluster');
+            const OnOffBC = require('../../lib/clusters / OnOffBoundCluster');
             const curEp = ep;
             const dedupOnOff = this._e000OnOffDedup;
             const safeHandle = async (cmdName, pressType, p) => {
@@ -754,7 +759,7 @@ class Button4GangDevice extends ButtonDevice {
               onToggle: (p) => safeHandle('toggle', 'long', p),
             });
             endpoint.bind('onOff', bc);
-            this.log(`[BUTTON4-BC] ✅ OnOff BoundCluster bound on EP${ep} (single/double/long + 0xFD)`);
+            this.log(`[BUTTON4-BC] ✅ OnOff BoundCluster bound on EP${ep}(single/double, long + 0xFD)`);
           } catch (e) {
             this.log(`[BUTTON4-BC] ⚠️ EP${ep}: ${e.message}`);
           }
@@ -775,7 +780,7 @@ class Button4GangDevice extends ButtonDevice {
         if (e000Cluster && typeof e000Cluster.on === 'function') {
           this.log(`[BUTTON4-E000] 📡 EP${ep} - Setting up tuyaE000 cluster listeners...`);
           
-          // v5.8.54: Listen for ALL cmd events (cmd0-cmd6, cmdFD/FE/FF)
+          // v5.8.54: Listen for ALL cmd events (cmd0-cmd6, cmdFD / FE/FF)
           // Previous version only had buttonPress(0x00) + buttonEvent(0x01) with
           // rigid uint8 args - SDK silently dropped frames with other cmd IDs
           const cmdNames = ['cmd0','cmd1','cmd2','cmd3','cmd4','cmd5','cmd6','cmdFD','cmdFE','cmdFF'];
@@ -1000,7 +1005,7 @@ class Button4GangDevice extends ButtonDevice {
         if (typeof this._powerCluster.on === 'function') {
           this._powerCluster.on('attr.batteryPercentageRemaining', async (value) => {
             if (value !== undefined && value !== 255 && value !== 0) {
-              const battery = Math.round(value / 2);
+              const battery = Math.round(safeParse(value, 2));
               this.log(`[BUTTON4-BATTERY] ✅ Battery report: ${battery}%`);
               await this._updateBattery(battery);
             }
@@ -1008,9 +1013,9 @@ class Button4GangDevice extends ButtonDevice {
 
           this._powerCluster.on('attr.batteryVoltage', async (value) => {
             if (value !== undefined && value > 0) {
-              const voltage = value / 10;
+              const voltage = safeParse(value, 10);
               // CR2032/CR2450: 3.0V=100%, 2.0V=0%
-              const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
+              const battery = Math.min(100, Math.max(0,Math.round(safeMultiply((voltage - 2.0), 100))));
               this.log(`[BUTTON4-BATTERY] ✅ Battery from voltage: ${voltage}V → ${battery}%`);
               await this._updateBattery(battery);
             }
@@ -1075,12 +1080,12 @@ class Button4GangDevice extends ButtonDevice {
       if (attrs?.batteryPercentageRemaining !== undefined &&
         attrs.batteryPercentageRemaining !== 255 &&
         attrs.batteryPercentageRemaining !== 0) {
-        const battery = Math.round(attrs.batteryPercentageRemaining / 2);
+        const battery = Math.round(safeParse(attrs.batteryPercentageRemaining, 2));
         this.log(`[BUTTON4-BATTERY] 📊 Battery read success: ${battery}%`);
         await this._updateBattery(battery);
       } else if (attrs?.batteryVoltage !== undefined && attrs.batteryVoltage > 0) {
-        const voltage = attrs.batteryVoltage / 10;
-        const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
+        const voltage = safeParse(attrs.batteryVoltage, 10);
+        const battery = Math.min(100, Math.max(0,Math.round(safeMultiply((voltage - 2.0), 100))));
         this.log(`[BUTTON4-BATTERY] 📊 Battery from voltage: ${voltage}V → ${battery}%`);
         await this._updateBattery(battery);
       } else {
@@ -1126,8 +1131,8 @@ class Button4GangDevice extends ButtonDevice {
     try {
       const tuyaCluster = zclNode?.endpoints?.[1]?.clusters?.tuya
         || zclNode?.endpoints?.[1]?.clusters?.manuSpecificTuya
-        || zclNode?.endpoints?.[1]?.clusters?.[61184]
-        || zclNode?.endpoints?.[1]?.clusters?.['61184'];
+        || zclNode?.endpoints?.[1]?.clusters?.[CLUSTERS.TUYA_EF00]
+        || zclNode?.endpoints?.[1]?.clusters?.['CLUSTERS.TUYA_EF00'];
 
       if (tuyaCluster && typeof tuyaCluster.on === 'function') {
         this.log('[BUTTON4-BATTERY] 🔋 Setting up Tuya DP battery fallback...');
@@ -1146,10 +1151,10 @@ class Button4GangDevice extends ButtonDevice {
               if (value <= 100) {
                 battery = value; // Direct percentage
               } else if (value <= 200) {
-                battery = Math.round(value / 2); // Doubled percentage
+                battery = Math.round(safeParse(value, 2)); // Doubled percentage
               } else if (value <= 3200) {
                 // Voltage in mV (CR2032: 3000mV = 100%, 2000mV = 0%)
-                battery = Math.min(100, Math.max(0, Math.round((value - 2000) / 10)));
+                battery = Math.min(100, Math.max(0, Math.round(safeParse(value - 2000, 10))));
               }
             }
 

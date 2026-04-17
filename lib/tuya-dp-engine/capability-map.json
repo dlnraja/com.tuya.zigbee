@@ -276,6 +276,27 @@
       "writable": false,
       "reportable": true,
       "notes": "OnOff cluster commands"
+    },
+    
+    "measure_moisture": {
+      "description": "Soil moisture percentage",
+      "dp": [2, 10], 
+      "type": "value",
+      "converter": "humidity",
+      "scale": 1,
+      "unit": "%",
+      "writable": false,
+      "reportable": true
+    },
+    
+    "measure_conductivity": {
+      "description": "Soil conductivity (EC)",
+      "dp": 101,
+      "type": "value",
+      "converter": "value",
+      "unit": "us/cm",
+      "writable": false,
+      "reportable": true
     }
   },
   

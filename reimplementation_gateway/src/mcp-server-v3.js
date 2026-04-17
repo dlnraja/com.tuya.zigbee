@@ -1,3 +1,4 @@
+const { safeDivide, safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
 // Core Reimplementation MCP Server v3 — talks to the Electron app over TCP IPC
 
@@ -229,7 +230,7 @@ class AIProvider {
         this.name = name;
         this.ipc = ipcClient;
         this.cache = new Map();
-        this.cacheTimeout = 5 * 60 * 1000; // 5 minutes
+        this.cacheTimeout =safeMultiply(5, 60) * 1000; // 5 minutes
     }
 
     async ensureInitialized() {

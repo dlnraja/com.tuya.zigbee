@@ -15,6 +15,7 @@ on:
 jobs:
   validate:
     name: 🔍 Universal Validation (SDK 3 Strict)
+    if: github.actor != 'github-actions[bot]' && github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -38,6 +39,9 @@ jobs:
       
       - name: 🧹 Metadata Consistency Check
         run: node scripts/maintenance/validate-driver-manifests.js
+      
+      - name: 🌌 ZERO DEFECT ARCHITECT AUDIT
+        run: node scripts/maintenance/zero-defect-architect-audit.js
 
   build:
     name: 🏗️ Production Build & Optimize

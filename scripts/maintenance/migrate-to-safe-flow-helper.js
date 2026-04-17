@@ -20,7 +20,7 @@ function processFile(filePath) {
   }
 
   // Pattern 2: Comment with ID right before empty call
-  // Match: // Trigger: some_id; [optional other stuff] this.homey.flow.getTriggerCard()
+  // Match: 
   const commentIdRegex = /\/\/.*(Trigger|Condition|Action):\s*([\w_-]+)[\s\S]{1,100}?(this\.)?homey\.flow\.get(Trigger|Condition|Action)Card\(\)/g;
   if (commentIdRegex.test(content)) {
     content = content.replace(commentIdRegex, (match, ctype, id, prefix, type) => {

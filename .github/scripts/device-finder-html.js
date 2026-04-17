@@ -57,7 +57,7 @@ function page(D,t,v,R){return`<!DOCTYPE html>
 </div>
 <div class="grid" id="grid">${D.map(d=>card(d,R)).join('')}</div>
 <div class="footer">
-<p>Generated ${new Date().toISOString().split('T')[0]} | <a href="${R}">GitHub</a> | <a href="https://homey.app/a/com.dlnraja.tuya.zigbee/test/">Install Test</a> | <a href="https://community.homey.app/t/140352">Forum</a></p>
+<p>Generated ${new Date().toISOString().split('T')[0]} | <a href="${R}">GitHub</a> | <a href="https://homey.app/a/com.dlnraja.tuya.zigbee/test/">Install Test</a> | <a href="https:
 <p>Data auto-updated daily by CI/CD pipeline</p>
 </div>
 <script>${js()}</script>

@@ -1,4 +1,6 @@
 'use strict';
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
@@ -30,7 +32,7 @@ class PoolPumpDevice extends ZigBeeDevice {
     const emCluster = ep1.clusters?.electricalMeasurement || ep1.clusters?.[2820];
     if (emCluster && this.hasCapability('measure_power')) {
       emCluster.on('attr.activePower', (value) => {
-        this.setCapabilityValue('measure_power', value / 10).catch(this.error);
+        this.setCapabilityValue('measure_power', safeParse(value, 10)).catch(this.error);
       });
     }
   }
@@ -62,7 +64,7 @@ class PoolPumpDevice extends ZigBeeDevice {
       break;
     case 101:
       if (this.hasCapability('meter_power')) {
-        this.setCapabilityValue('meter_power', value / 100).catch(this.error);
+        this.setCapabilityValue('meter_power', safeParse(value, 100)).catch(this.error);
       }
       break;
     }

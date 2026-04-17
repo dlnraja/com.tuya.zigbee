@@ -1,9 +1,11 @@
 'use strict';
 
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const IASAlarmFallback = require('../../lib/IASAlarmFallback');
 const IASZoneManager = require('../../lib/managers/IASZoneManager');
 const { getModelId, getManufacturer } = require('../../lib/helpers/DeviceDataHelper');
+const { equalsCI, startsWithCI } = require('../../lib/utils/CaseInsensitiveMatcher.js');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -171,21 +173,15 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
     const mfr = getManufacturer(this) || '';
     const modelId = getModelId(this) || '';
 
-    // Try exact match first
-    if (WATER_SENSOR_PROFILES[mfr]) {
-      return { ...WATER_SENSOR_PROFILES[mfr], matchedBy: 'manufacturerName', mfr };
-    }
-
-    // Try lowercase match
-    const mfrLower = mfr.toLowerCase();
+    // Try exact or case-insensitive match
     for (const [key, profile] of Object.entries(WATER_SENSOR_PROFILES)) {
-      if (key.toLowerCase() === mfrLower) {
-        return { ...profile, matchedBy: 'manufacturerName_lowercase', mfr };
+      if (equalsCI(key, mfr)) {
+        return { ...profile, matchedBy: 'manufacturerName_CI', mfr };
       }
     }
 
     // Try partial match for _TZ3000_* pattern (case-insensitive)
-    if (mfr.toLowerCase().startsWith('_tz3000_')) {
+    if (startsWithCI(mfr, '_tz3000_')) {
       return {
         ...WATER_SENSOR_PROFILES['default'],
         type: 'ias_zone',
@@ -195,7 +191,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
     }
 
     // Try partial match for _TZE* pattern (Tuya DP, case-insensitive)
-    if (mfr.toLowerCase().startsWith('_tze')) {
+    if (startsWithCI(mfr, '_tze')) {
       return {
         ...WATER_SENSOR_PROFILES['default'],
         type: 'tuya_dp',
@@ -248,14 +244,13 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
     // Get device profile before parent init
     this._deviceProfile = this._getDeviceProfile();
 
-    // v5.5.713: Check for invert_alarm setting (Lasse_K forum fix)
+    // v5.5.735: Check for invert_alarm setting (Lasse_K forum fix)
     this._invertAlarm = this.getSetting('invert_alarm') || false;
 
     await super.onNodeInit({ zclNode });
     this._registerCapabilityListeners(); // rule-12a injected
 
     // v5.8.28: CRITICAL FIX - IAS Zone enrollment (Lasse_K forum 'inactivated' fix)
-    // IASZoneManager.enrollIASZone() was defined but NEVER called, causing sensors to stay notEnrolled
     try {
       const iasManager = new IASZoneManager(this);
       await iasManager.enrollIASZone();
@@ -283,56 +278,35 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
     this.log('╚══════════════════════════════════════════════════════════════╝');
     this.log('');
 
-    // Warn about known problematic devices
-    if (profile.knownIssues && profile.knownIssues.length > 0) {
-      this.log(`[WATER] ⚠️ Known issues for this device: ${profile.knownIssues.join(', ')}`);
-    }
-
     // v5.5.803: FORUM #1166 FIX - Initialize IAS Alarm Fallback for ALL water leak sensors
-    // Previously only enabled for IAS Zone type devices, but many sensors need this fallback
-    // to ensure alarms are properly detected via polling when notifications fail
     this._iasFallback = new IASAlarmFallback(this, {
-      pollInterval: 30000, // Poll every 30s for water leak detection
+      pollInterval: 30000, 
       useTuyaMirror: true
     });
     await this._iasFallback.init().catch(e => {
       this.log(`[WATER] ⚠️ IAS Fallback init failed: ${e.message}`);
     });
-    this.log('[WATER] ✅ IAS Alarm Fallback enabled for ALL water sensors (v5.5.803)');
     
-    // v5.5.918: FORUM FIX - Delayed secondary read for sleepy sensors
-    // Some water sensors need extra time after pairing before they respond
+    // v5.5.918: FORUM FIX - Delayed secondary read
     this.homey.setTimeout(async () => {
       try {
-        this.log('[WATER] 📖 Delayed secondary alarm read (5s post-init)...');
         await this._forceInitialAlarmRead(zclNode);
       } catch (e) {
         this.log(`[WATER] ⚠️ Secondary read failed: ${e.message}`);
       }
     }, 5000);
 
-    // v5.5.803: FORUM #1166 FIX - Force initial alarm state read
+    // v5.5.803: Force initial alarm state read
     await this._forceInitialAlarmRead(zclNode);
 
     this.log(`[WATER] ✅ Water leak sensor ready (invert: ${this._invertAlarm})`);
   }
 
-  /**
-   * v5.5.803: FORUM #1166 FIX - Force initial alarm state read
-   * Some water sensors don't send notifications, only respond to reads
-   * This ensures we get the current state immediately after pairing
-   */
   async _forceInitialAlarmRead(zclNode) {
     try {
-      this.log('[WATER] 📖 Forcing initial alarm state read...');
-      
       const ep = zclNode?.endpoints?.[1];
-      if (!ep) {
-        this.log('[WATER] ⚠️ No endpoint 1 for initial read');
-        return;
-      }
+      if (!ep) return;
 
-      // Try IAS Zone cluster first
       const iasCluster = ep.clusters?.iasZone || ep.clusters?.ssIasZone || ep.clusters?.[0x0500];
       if (iasCluster?.readAttributes) {
         try {
@@ -340,29 +314,21 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
             iasCluster.readAttributes(['zoneStatus', 'zoneState']),
             new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 5000))
           ]);
-          
-          this.log('[WATER] 📖 Initial IAS read:', JSON.stringify(attrs));
-          
           if (attrs?.zoneStatus !== undefined) {
-            // v5.11.16 FIX Lasse_K: Route through _handleIASZoneStatus for proper XOR inversion
-            this.log(`[WATER] 📊 Initial zoneStatus raw: ${JSON.stringify(attrs.zoneStatus)}`);
             if (typeof this._handleIASZoneStatus === 'function') {
               this._handleIASZoneStatus(attrs.zoneStatus);
             }
-            this.log('[WATER] ✅ Initial alarm routed through IAS handler');
           }
         } catch (e) {
           this.log(`[WATER] ⚠️ Initial IAS read failed: ${e.message}`);
         }
       }
 
-      // Also try Tuya DP query for TS0601 devices
-      if (this._deviceProfile?.type === 'tuya_dp' || this._deviceProfile?.matchedBy?.includes('_TZE')) {
+      if (this._deviceProfile?.type === 'tuya_dp' || startsWithCI(this._deviceProfile?.mfr, '_TZE')) {
         try {
-          const tuyaCluster = ep.clusters?.['tuya'] || ep.clusters?.[0xEF00] || ep.clusters?.[61184];
+          const tuyaCluster = ep.clusters?.['tuya'] || ep.clusters?.[CLUSTERS.TUYA_EF00];
           if (tuyaCluster?.dataQuery) {
             await tuyaCluster.dataQuery({}).catch(() => {});
-            this.log('[WATER] 📤 Sent Tuya DP query for initial state');
           }
         } catch (e) {
           this.log(`[WATER] ⚠️ Tuya DP query failed: ${e.message}`);
@@ -373,49 +339,33 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
     }
   }
 
-  /**
-   * v5.5.713: Handle settings changes (Lasse_K forum fix)
-   */
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     if (changedKeys.includes('invert_alarm')) {
       this._invertAlarm = newSettings.invert_alarm;
-      this.log(`[WATER] Invert setting changed to: ${this._invertAlarm}`);
-      // Toggle current displayed state — use super to bypass invert override
       const current = this.getCapabilityValue('alarm_water');
       if (current !== null) {
         await super.setCapabilityValue('alarm_water', !current).catch(() => { });
       }
     }
     if (super.onSettings) {
-      await super.onSettings({ oldSettings, newSettings, changedKeys }).catch(e => this.error('[WATER] super.onSettings error:', e.message));
+      await super.onSettings({ oldSettings, newSettings, changedKeys });
     }
   }
 
-  /**
-   * v5.5.713: Override setCapabilityValue to apply inversion for alarm_water (Lasse_K forum fix)
-   */
   async setCapabilityValue(capability, value) {
     if (capability === 'alarm_water') {
-      // v5.11.5: Skip inversion for IAS events — UnifiedSensorBase already applied it
-      // Prevents double-inversion bug (Lasse_K forum)
       const isIAS = this._iasOriginatedWaterAlarm;
       this._iasOriginatedWaterAlarm = false;
       if (this._invertAlarm && !isIAS) {
-        const invertedValue = !value;
-        this.log(`[WATER] 🔄 Inverting alarm: ${value} → ${invertedValue}`);
-        return super.setCapabilityValue(capability, invertedValue);
+        return super.setCapabilityValue(capability, !value);
       }
     }
     return super.setCapabilityValue(capability, value);
   }
 
   async onDeleted() {
-    if (this._iasFallback) {
-      this._iasFallback.destroy();
-    }
-    if (super.onDeleted) {
-      await super.onDeleted();
-    }
+    if (this._iasFallback) this._iasFallback.destroy();
+    if (super.onDeleted) await super.onDeleted();
   }
 }
 

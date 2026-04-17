@@ -1,3 +1,4 @@
+const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
 'use strict';
 const { fetchWithRetry } = require('./retry-helper');
@@ -7,7 +8,7 @@ async function dashboardFallback(ver, log) {
   log = log || console.log;
   const em = process.env.HOMEY_EMAIL, pw = process.env.HOMEY_PASSWORD;
   if (!em || !pw) {
-    log('  No credentials for dashboard (HOMEY_EMAIL / HOMEY_PASSWORD missing)');
+    log('  No credentials for dashboard (HOMEY_EMAIL/HOMEY_PASSWORD missing)');
     return false;
   }
 

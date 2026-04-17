@@ -1,4 +1,5 @@
 'use strict';
+const { safeParse, safeDivide } = require('../../lib/utils/tuyaUtils.js');
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
@@ -36,7 +37,7 @@ class RemoteDimmerDevice extends ZigBeeDevice {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    this.log('[RemoteDimmer] Init — Lidl HG06323 / TS1001');
+    this.log('[RemoteDimmer] Init — Lidl HG06323/TS1001');
 
     // Store device info
     try {
@@ -84,7 +85,7 @@ class RemoteDimmerDevice extends ZigBeeDevice {
       const powerCfg = zclNode.endpoints[1].clusters.powerConfiguration;
       if (powerCfg) {
         powerCfg.on('attr.batteryPercentageRemaining', (value) => {
-          const pct = Math.round(value / 2);
+          const pct = Math.round(safeParse(value, 2));
           this.log('[RemoteDimmer] Battery:', pct, '%');
           this.setCapabilityValue('measure_battery', pct).catch(this.error);
           this.setCapabilityValue('alarm_battery', pct < 20).catch(this.error);
@@ -131,7 +132,7 @@ class RemoteDimmerDevice extends ZigBeeDevice {
     if (cardId) {
       const tokens = { action };
       if (payload.stepSize !== undefined) tokens.step_size = payload.stepSize;
-      if (payload.level !== undefined) tokens.level = Math.round((payload.level / 254) * 100);
+      if (payload.level !== undefined) tokens.level = Math.round((safeParse(payload.level, 254)) * 100);
       if (payload.rate !== undefined) tokens.rate = payload.rate;
       if (payload.sceneId !== undefined) tokens.scene_id = payload.sceneId;
 

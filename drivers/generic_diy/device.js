@@ -1,4 +1,6 @@
 'use strict';
+const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const CapabilityManagerMixin = require('../../lib/mixins/CapabilityManagerMixin');
@@ -174,7 +176,7 @@ class GenericDIYDevice extends ZigBeeDevice {
     this._getFlowCard('generic_diy_set_dim')?.registerRunListener(async ({ level }) => {
       const ep = this.zclNode?.endpoints?.[1];
       if (ep?.clusters?.levelControl) {
-        await ep.clusters.levelControl.moveToLevel({ level: Math.round(level * 254), transitionTime: 0 });
+        await ep.clusters.levelControl.moveToLevel({ level:Math.round(safeMultiply(level, 254)), transitionTime: 0 });
       }
       return true;
     });
@@ -234,17 +236,17 @@ class GenericDIYDevice extends ZigBeeDevice {
       // Level cluster
       else if (clusterId === 0x0008) {
         this.registerCapabilityListener(cap, async (v) => {
-          await cluster.moveToLevel({ level: Math.round(v * 254), transitionTime: 0 });
+          await cluster.moveToLevel({ level:Math.round(safeMultiply(v, 254)), transitionTime: 0 });
         });
-        cluster.on('attr.currentLevel', (v) => this._safeSetCapability(cap, v / 254).catch(() => {}));
+        cluster.on('attr.currentLevel', (v) => this._safeSetCapability(cap, safeParse(v, 254)).catch(() => {}));
       }
       // Temperature
       else if (clusterId === 0x0402) {
-        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, v / 100).catch(() => {}));
+        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, safeParse(v, 100)).catch(() => {}));
       }
       // Humidity
       else if (clusterId === 0x0405) {
-        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, v / 100).catch(() => {}));
+        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, safeParse(v, 100)).catch(() => {}));
       }
       // Illuminance
       else if (clusterId === 0x0400) {
@@ -256,7 +258,7 @@ class GenericDIYDevice extends ZigBeeDevice {
       }
       // Battery
       else if (clusterId === 0x0001) {
-        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, v / 2).catch(() => {}));
+        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, safeParse(v, 2)).catch(() => {}));
       }
       // Contact
       else if (clusterId === 0x0500) {
@@ -264,7 +266,7 @@ class GenericDIYDevice extends ZigBeeDevice {
       }
       // Pressure
       else if (clusterId === 0x0403) {
-        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, v / 10).catch(() => {}));
+        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, safeParse(v, 10)).catch(() => {}));
       }
       // Analog
       else if (clusterId === 0x000C) {
@@ -276,17 +278,17 @@ class GenericDIYDevice extends ZigBeeDevice {
       // Thermostat
       else if (clusterId === 0x0201) {
         this.registerCapabilityListener(cap, async (v) => {
-          await cluster.write({ occupiedHeatingSetpoint: Math.round(v * 100) });
+          await cluster.write({ occupiedHeatingSetpoint:Math.round(safeMultiply(v, 100)) });
         });
-        cluster.on('attr.occupiedHeatingSetpoint', (v) => this._safeSetCapability(cap, v / 100).catch(() => {}));
+        cluster.on('attr.occupiedHeatingSetpoint', (v) => this._safeSetCapability(cap, safeParse(v, 100)).catch(() => {}));
         cluster.on('attr.localTemperature', (v) => {
-          if (v !== -32768) this._safeSetCapability('measure_temperature', v / 100).catch(() => {});
+          if (v !== -32768) this._safeSetCapability('measure_temperature', safeParse(v, 100)).catch(() => {});
         });
       }
       // Other measurement clusters
       else if (map.attr) {
         cluster.on(`attr.${map.attr}`, (v) => {
-          const val = map.div ? v / map.div : v;
+          const val = map.div ? safeDivide(v, map.div) : v;
           this._safeSetCapability(cap, val).catch(() => {});
         });
       }

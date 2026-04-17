@@ -1,32 +1,7 @@
 # Universal Tuya Zigbee - Architecture Reference
 
 > **App**: `com.dlnraja.tuya.zigbee` | **SDK**: Homey SDK3 | **Entry**: `app.js`
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
-> **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
+> **318+ drivers** | **22,400+ fingerprints** | Zigbee + WiFi
 
 ---
 
@@ -130,7 +105,12 @@ DP Payload: [status:1][transId:1][dp:1][type:1][lenHi:1][lenLo:1][data:N]
 | 0x03 | Gw->Dev | dataQuery (query all DPs) |
 | 0x10 | Gw->Dev | mcuVersionRequest |
 | 0x11 | Dev->Gw | mcuVersionResponse |
-| 0x24 | Both | mcuSyncTime |
+| 0x24 | Both | mcuSyncTime (10-byte seq-aware) |
+
+**mcuSyncTime (0x24) Standard**:
+- **Format**: `[seq:2][UTC:4][Local:4]` (10 bytes)
+- **Rule**: GW MUST echo the `seqNum` from the device request.
+- **PayloadSize**: 10 (Critical for modern TZE284 firmware).
 
 DP Types: 0=Raw, 1=Bool, 2=Value(4B), 3=String, 4=Enum, 5=Bitmap
 
@@ -560,3 +540,38 @@ Utility and maintenance scripts:
 | `lib/tuya/EnrichedDPMappings.js` | 51KB | DP enrichment DB |
 | `lib/managers/SmartDriverAdaptation.js` | 48KB | Runtime adaptation |
 | `app.js` | 43KB | App entry point |
+
+---
+
+## 26. Identity Resolution Resilience
+
+To handle manufacturer variations and accidental case sensitivity issues, the identity resolution engine now implements:
+- **Case-Insensitive Normalization**: All `manufacturerName` and `productId` lookups are normalized to lowercase before matching.
+- **Composite Identity Mapping**: Uses `lib/tuya/UniversalTuyaParser.js` to resolve manufacturer names across all internal logic.
+
+## 27. Tuya EF00 Time Sync (10-byte Standard)
+
+Modern Tuya devices (specifically TZE284 LCD clocks) require a specific time sync response:
+- **Unified Method**: `_respondToTimeSync(sequenceNumber)` in `BaseHybridDevice`.
+- **Logic**: Delegated to `lib/tuya/TuyaTimeSync.js`.
+- **Compatibility**: Supports both direct cluster calls and `TuyaEF00Manager` routing.
+
+## 28. Data Sanitization (NaN Hardening)
+
+Autonomous data processing pipelines now include floating-point sanitization:
+- **Rule**: `SemanticConverter.js` and `AdaptiveDataParser.js` must validate numeric output.
+- **NaN Prevention**: Non-numeric results from divisors or scaling are blocked before reaching `setCapabilityValue` to prevent Homey interface crashes.
+
+## 29. CI/CD Silencing & Zero-Defect Maintenance
+
+To maintain a "Zero-Defect" state without polluting public activity logs, the CI/CD pipeline implements:
+- **Actor-Based Filtering**: Workflows (`unified-ci.yml`, `code-quality.yml`) exclude automated bot activity (e.g., `dependabot`, `github-actions`) from status reporting.
+- **Silent Maintenance**: Autonomous maintenance scripts (e.g., `weekly-fingerprint-sync.yml`) execute in the background with silenced logging for minor metadata updates.
+- **Stale-Bot Neutralization**: Disabled automated closure of issues to preserve community research context.
+
+## 30. TZE284 Fertilizer Sensor Implementation
+
+Specific handling for the `_TZE284_hdml1aav` fertilizer sensor:
+- **Exhaustive DP Mapping**: DP3 (Moisture), DP4 (EC/Fertility), DP5 (Temp), DP15 (Battery), DP101 (Air Humidity), DP102 (Luminance), DP112 (Soil Fertility).
+- **Sub-Capability Pattern**: Uses `measure_humidity.soil` for moisture to distinguish from air `measure_humidity`.
+- **Adaptive Conversion**: Temperature logic automatically detects scale variant (÷10 or ÷100) via `SoilSensorDevice.js` override.

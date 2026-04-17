@@ -25,14 +25,12 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_1h2x4akh",
-      "_tz3210_t46srmxd"
+      "_TZ3000_1H2X4AKH",
+      "_TZ3210_T46SRMXD"
     ],
     "productId": [
       "TS0601",
-      "TS0601_FAN",
-      "ts0601",
-      "ts0601_fan"
+      "TS0601_FAN"
     ],
     "learnmode": {
       "image": "/drivers/ceiling_fan/assets/learnmode.svg",

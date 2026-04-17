@@ -1,4 +1,5 @@
 'use strict';
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { ensureManufacturerSettings } = require('../../lib/helpers/ManufacturerNameHelper');
 
@@ -37,7 +38,7 @@ class WaterValveGardenDevice extends ZigBeeDevice {
     const pwrCfg = ep?.clusters?.powerConfiguration;
     if (pwrCfg) {
       pwrCfg.on('attr.batteryPercentageRemaining', (v) => {
-        const pct = Math.min(100, Math.round(v / 2));
+        const pct = Math.min(100, Math.round(safeParse(v, 2)));
         this.log('[VALVE-GARDEN] battery: ' + pct + '%');
         this.setCapabilityValue('measure_battery', pct).catch(this.error);
       });

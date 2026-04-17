@@ -20,19 +20,14 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tzb210_3dxbg9ks"
+      "_TZB210_3DXBG9KS"
     ],
     "productId": [
       "TRI-C1ZR",
       "TRI-K1ZR",
       "TS0501B",
       "TS0502B",
-      "TS0601_LED",
-      "tri-c1zr",
-      "tri-k1zr",
-      "ts0501b",
-      "ts0502b",
-      "ts0601_led"
+      "TS0601_LED"
     ],
     "endpoints": {
       "1": {

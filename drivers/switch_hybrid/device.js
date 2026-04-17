@@ -1,19 +1,21 @@
 'use strict';
-const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const { safeParse } = require('../../lib/utils / tuyaUtils.js');
+
+const UnifiedSwitchBase = require('../../lib/devices / UnifiedSwitchBase');
+const VirtualButtonMixin = require('../../lib/mixins / VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins / PhysicalButtonMixin');
 const { CLUSTER } = require('zigbee-clusters');
-const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+const { includesCI } = require('../../lib/utils / CaseInsensitiveMatcher');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
  * ║      2-GANG SWITCH - v5.9.23 + ZCL-Only Mode (BSEED)                       ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  Features:                                                                   ║
- * ║  - 2 endpoints On/Off (EP1, EP2)                                            ║
+ * ║  - 2 endpoints safeDivide(On, Off) (EP1, EP2)                                            ║
  * ║  - Power measurement via electricalMeasurement (0x0B04)                     ║
  * ║  - Energy metering via metering (0x0702)                                    ║
- * ║  - Physical button detection: single/double/long/triple per gang            ║
+ * ║  - Physical button detection: single / double/long / triple per gang            ║
  * ║  - BSEED ZCL-only mode: _TZ3000_l9brjwau (Pieter_Pessers forum)             ║
  * ║  v5.9.23: GROUP ISOLATION FIX — remove group memberships + broadcast filter║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
@@ -63,7 +65,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     // v5.5.26: Setup power measurement for ZCL devices
     await this._setupPowerMeasurement(zclNode);
 
-    // v5.5.896: Initialize physical button detection (single/double/long/triple)
+    // v5.5.896: Initialize physical button detection (single / double/long / triple)
     await this.initPhysicalButtonDetection(zclNode);
 
     // v5.5.412: Initialize virtual buttons
@@ -122,7 +124,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       if (typeof elecCluster.on === 'function') {
         // Active Power (W)
         elecCluster.on('attr.activePower', (value) => {
-          const watts = value / 10; // Typically in 0.1W units
+          const watts = safeParse(value, 10); // Typically in 0.1W units
           this.log(`[ZCL-DATA] switch.power raw=${value} → ${watts}W`);
           if (this.hasCapability('measure_power')) {
             this.setCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });
@@ -131,7 +133,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
         // RMS Voltage (V)
         elecCluster.on('attr.rmsVoltage', (value) => {
-          const volts = value / 10; // Typically in 0.1V units
+          const volts = safeParse(value, 10); // Typically in 0.1V units
           this.log(`[ZCL-DATA] switch.voltage raw=${value} → ${volts}V`);
           if (this.hasCapability('measure_voltage')) {
             this.setCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });
@@ -140,7 +142,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
         // RMS Current (A)
         elecCluster.on('attr.rmsCurrent', (value) => {
-          const amps = value / 1000; // Typically in mA
+          const amps = safeParse(value, 1000); // Typically in mA
           this.log(`[ZCL-DATA] switch.current raw=${value} → ${amps}A`);
           if (this.hasCapability('measure_current')) {
             this.setCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });
@@ -169,7 +171,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       if (typeof meteringCluster.on === 'function') {
         // Current summation delivered (kWh)
         meteringCluster.on('attr.currentSummationDelivered', (value) => {
-          const kwh = value / 1000; // Typically in Wh
+          const kwh = safeParse(value, 1000); // Typically in Wh
           this.log(`[ZCL-DATA] switch.energy raw=${value} → ${kwh}kWh`);
           if (this.hasCapability('meter_power')) {
             this.setCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
@@ -267,13 +269,13 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       ]).catch(() => ({}));
 
       if (attrs.activePower != null && this.hasCapability('measure_power')) {
-        this.setCapabilityValue('measure_power', parseFloat(attrs.activePower) / 10).catch(() => { });
+        this.setCapabilityValue('measure_power',safeParse(parseFloat(attrs.activePower), 10)).catch(() => { });
       }
       if (attrs.rmsVoltage != null && this.hasCapability('measure_voltage')) {
-        this.setCapabilityValue('measure_voltage', parseFloat(attrs.rmsVoltage) / 10).catch(() => { });
+        this.setCapabilityValue('measure_voltage',safeParse(parseFloat(attrs.rmsVoltage), 10)).catch(() => { });
       }
       if (attrs.rmsCurrent != null && this.hasCapability('measure_current')) {
-        this.setCapabilityValue('measure_current', parseFloat(attrs.rmsCurrent) / 1000).catch(() => { });
+        this.setCapabilityValue('measure_current',safeParse(parseFloat(attrs.rmsCurrent), 1000)).catch(() => { });
       }
       this.log('[SWITCH-2G] Initial electrical values read');
     } catch (e) {
@@ -291,7 +293,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       ]).catch(() => ({}));
 
       if (attrs.currentSummationDelivered != null && this.hasCapability('meter_power')) {
-        this.setCapabilityValue('meter_power', attrs.currentSummationDelivered / 1000).catch(() => { });
+        this.setCapabilityValue('meter_power', safeParse(attrs.currentSummationDelivered, 1000)).catch(() => { });
       }
       this.log('[SWITCH-2G] Initial metering values read');
     } catch (e) {

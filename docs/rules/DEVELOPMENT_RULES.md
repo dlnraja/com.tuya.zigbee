@@ -41,15 +41,22 @@ Only remove a fingerprint if it causes WRONG driver matching:
 - All flow cards must be registered in both `driver.flow.compose.json` AND compiled into `app.json`.
 
 ### 4. Case-Insensitive Matching
-- **Enforcement**: All `manufacturerName` and `productId` comparisons must be case-insensitive.
-- **Best Practice**: Use `ManufacturerVariationManager.includesCI(mfr)` or `.toLowerCase()` before comparisons.
-- **Fingerprints**: Include both casing variants in `driver.compose.json` when encountered in the field.
+- **Enforcement**: ALL `manufacturerName` and `productId` comparisons MUST be case-insensitive across the entire engine.
+- **Implementation**: Use `lib/tuya/UniversalTuyaParser.js` for normalization or `.toLowerCase()` before any dictionary lookup.
+- **Fingerprints**: While code is case-insensitive, best practice is to include the exact discovered casing in `driver.compose.json` to assist the Homey matching engine.
 
 ### 5. Sleepy Battery Devices
 TS0601 battery devices use **passive mode**:
 - Cluster 0xEF00 may not be directly accessible
 - Data reports when device wakes (up to 24h for first report)
 - This is EXPECTED BEHAVIOR, not a bug
+
+### 6. Tuya Time Sync (10-byte Standard) - NEW
+Modern Tuya devices (TZE284 series) require precise timing responses:
+- **Payload Format**: `[seq:2][UTC:4][Local:4]` (10 bytes total).
+- **Sequence Number**: The GW MUST extract and echo the `seqNum` from the device's request frame (Cmd 0x24).
+- **Implementation**: Use the unified `_respondToTimeSync(sequenceNumber)` method in `BaseHybridDevice` which delegates to `TuyaTimeSync.js`.
+- **Warning**: Sending only 8 bytes or an incorrect sequence number will cause time sync to fail and the device to remain in an unconfigured state.
 
 ---
 

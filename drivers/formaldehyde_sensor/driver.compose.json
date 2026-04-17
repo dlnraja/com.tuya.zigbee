@@ -28,13 +28,11 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_tze200_mce9kjpm"
+      "_TZE200_MCE9KJPM"
     ],
     "productId": [
       "TS0601",
-      "TS0601_HCHO",
-      "ts0601",
-      "ts0601_hcho"
+      "TS0601_HCHO"
     ],
     "endpoints": {
       "1": {

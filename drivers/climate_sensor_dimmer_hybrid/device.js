@@ -1,4 +1,6 @@
 'use strict';
+const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 const UnifiedLightBase = require('../../lib/devices/UnifiedLightBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
@@ -24,7 +26,7 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
   get dpMappings() {
     return {
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
-      2: { capability: 'dim', transform: (v) => Math.max(0.01, Math.min(1, v / 1000)) },
+      2: { capability: 'dim', transform: (v) => Math.max(0.01, Math.min(1, safeParse(v, 1000))) },
       3: { capability: null, internal: 'min_brightness', writable: true },
       4: { capability: null, internal: 'max_brightness', writable: true },
       5: { capability: null, internal: 'dimmer_mode', writable: true },
@@ -89,7 +91,7 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
       this._lastDimValue = dim;
       if (isPhysical && oldDim !== null) {
         const id = increased ? 'dimmer_wall_1gang_physical_brightness_up' : 'dimmer_wall_1gang_physical_brightness_down';
-      this._getFlowCard(id).trigger(this, { brightness: Math.round(dim * 100) }, {}).catch(() => {})
+      this._getFlowCard(id).trigger(this, { brightness:Math.round(safeMultiply(dim, 100)) }, {}).catch(() => {})
       }
     }
   }

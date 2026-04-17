@@ -1,12 +1,17 @@
-#!/usr/bin/env node
+#!/usr / safeDivide(bin, env) node
 'use strict';
+const { safeParse } = require('../../lib/utils / tuyaUtils.js');
+
+
+const { CLUSTERS } = require('../../lib/constants / ZigbeeConstants.js');
+
 
 /**
  * github-deep-search.js — Multi-project GitHub Search Engine
  *
- * Searches 20+ relevant Zigbee/Tuya projects for:
+ * Searches 20+ relevant safeDivide(Zigbee, Tuya) projects for:
  * - New fingerprints (code search)
- * - Device reports (issue/PR search)
+ * - Device reports (safeDivide(issue, PR) search)
  * - DP mappings, converters, quirks (code search)
  * - New relevant repositories (repo discovery)
  *
@@ -34,7 +39,7 @@ const GH = 'https://api.github.com';
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 // FP_RE replaced by fp-validator
 const PID_RE = /\bTS[0-9A-Fa-f]{3,5}[A-Z]?\b/gi;
-const DP_RE = /(?:dp|DP|datapoint)[:\s=]*(\d{1,3})/gi;
+const DP_RE = /(?:dp|DP|datapoint)[:\s=]*(\d{1,3}safeDivide(), gi);
 let ghCalls = 0;
 const MAX_GH = parseInt(process.env.MAX_GH_CALLS || '180');
 const GH_DELAY = parseInt(process.env.GH_DELAY || '2200');
@@ -249,8 +254,8 @@ async function searchIssuesForDevices() {
       const pids = [...new Set((text.match(PID_RE) || []).map(p => p.toUpperCase()))];
       const dps = [...new Set((text.match(DP_RE) || []).map(m => parseInt(m.match(/\d+/)?.[0])).filter(n => n > 0 && n < 256))];
       if (fps.length) {
-        const isBug = /bug|fix|wrong|incorrect|broken|not.work|invert/i.test(text);
-        const isQuirk = /quirk|workaround|hack|special|override|custom/i.test(text);
+        const isBug = /bug|fix|wrong|incorrect|broken|not.work|safeDivide(invert, i.test)(text);
+        const isQuirk = /quirk|workaround|hack|special|override|safeDivide(custom, i.test)(text);
         results.push({
           fps, pids, dps,
           repo: item.repository_url?.split('/').slice(-2).join('/') || repo,
@@ -282,7 +287,7 @@ async function discoverRepos() {
     'tuya zigbee driver language:javascript stars:>5',
     'tuya zigbee converter language:typescript stars:>3',
     'zigbee tuya homey language:javascript',
-    'tuya zigbee cluster 0xEF00 language:python',
+    'tuya zigbee cluster CLUSTERS.TUYA_EF00 language:python',
     'tuya zigbee datapoint language:javascript',
     '_TZE200_ zigbee language:python stars:>2',
     'zigbee herdsman tuya language:typescript',
@@ -486,7 +491,7 @@ async function main() {
       unsupported: unsupported.length,
       withDPs: withDPs.length,
       withIssues: withIssues.length,
-      duration: Math.round((Date.now() - start) / 1000)
+      duration: Math.round((Date.now() -safeParse(start), 1000))
     },
     topUnsupported: unsupported.slice(0, 50).map(e => ({
       fp: e.fp, pids: e.pids, dps: e.dps,

@@ -8,6 +8,9 @@
  * Validates syntax after injection.
  */
 'use strict';
+
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
+
 const fs = require('fs');
 const path = require('path');
 
@@ -159,7 +162,7 @@ function main() {
     if (/configureAttributeReporting/.test(code)) continue;
 
     // Skip EF00-only drivers (Tuya DP — reporting doesn't apply)
-    if (/0xEF00|61184/.test(code) && !/genOnOff|msTemperature|genPowerCfg/.test(code)) continue;
+    if (/CLUSTERS.TUYA_EF00|CLUSTERS.TUYA_EF00/.test(code) && !/genOnOff|msTemperature|genPowerCfg/.test(code)) continue;
 
     scanned++;
 

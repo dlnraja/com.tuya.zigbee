@@ -1,78 +1,105 @@
 {
-  "timestamp": "2026-04-14T09:34:32.286Z",
-  "driversChecked": 322,
-  "collisions": [
-    {
-      "id": "_TZ3000_CSFLGQJ2|TS004F",
-      "drivers": [
-        "button_wireless_1",
-        "smart_knob_rotary"
-      ]
-    },
-    {
-      "id": "_TZ3000_URI7BER7|TS004F",
-      "drivers": [
-        "button_wireless_1",
-        "smart_knob"
-      ]
-    },
-    {
-      "id": "_TZ3000_YJ6K7VFO|TS0041",
-      "drivers": [
-        "button_wireless_1",
-        "remote_button_wireless_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3000_YJ6K7VFO|TS004F",
-      "drivers": [
-        "button_wireless_1",
-        "remote_button_wireless_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3000_WPTAYAQR|*",
-      "drivers": [
-        "contact_sensor_curtain_hybrid",
-        "curtain_motor_wall_hybrid",
-        "wall_curtain_switch"
-      ]
-    },
-    {
-      "id": "_TYZB01_QM6DJPTA|*",
-      "drivers": [
-        "remote_button_emergency_sos_hybrid",
-        "smart_remote_4_buttons"
-      ]
-    },
-    {
-      "id": "_TZ3000_TZVBIMPQ|TS0041",
-      "drivers": [
-        "remote_button_wireless_hybrid",
-        "remote_button_wireless_smart_hybrid"
-      ]
-    },
-    {
-      "id": "_TZ3000_TZVBIMPQ|TS004F",
-      "drivers": [
-        "remote_button_wireless_hybrid",
-        "remote_button_wireless_smart_hybrid"
-      ]
-    },
-    {
-      "id": "HOBEIAN|*",
-      "drivers": [
-        "sensor_climate_presence_hybrid",
-        "sensor_contact_presence_hybrid"
-      ]
-    }
-  ],
-  "buttonLogicFailures": [
-    "button_emergency_sos: overrides onNodeInit without calling super.onNodeInit"
-  ],
-  "sdkDeprecations": [
-    "scripts\\maintenance\\zero-defect-architect-audit.js:119: if (line.includes('drivers.getDevice(') || line.includes('drivers.getDeviceById(') || line.includes("
-  ],
+  "timestamp": "2026-04-17T11:52:21.401Z",
+  "driversChecked": 323,
+  "collisions": [],
+  "buttonLogicFailures": [],
+  "sdkDeprecations": [],
   "radarLogicCheck": [],
-  "errors": []
+  "numericConstantViolations": [],
+  "naNSafetyCheck": [],
+  "errors": [
+    "drivers\\air_purifier_presence_hybrid\\device.js:126: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\button_wireless_4\\device.js:638: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\button_wireless_4\\device.js:639: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\climate_sensor_presence_hybrid\\device.js:124: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\climate_sensor_presence_hybrid\\device.js:132: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\climate_sensor_presence_hybrid\\device.js:380: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\device_air_purifier_presence_hybrid\\device.js:126: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\diy_custom_zigbee\\device.js:110: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\diy_custom_zigbee\\device.js:111: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\motion_sensor\\device.js:816: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\presence_sensor_radar\\device.js:126: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\remote_button_wireless_handheld_hybrid\\device.js:624: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\remote_button_wireless_handheld_hybrid\\device.js:625: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\sensor_climate_motion_hybrid\\device.js:816: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\sensor_climate_presence_hybrid\\device.js:126: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\sensor_contact_climate_hybrid\\device.js:275: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\sensor_contact_climate_hybrid\\device.js:295: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\sensor_contact_climate_hybrid\\device.js:312: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\sensor_contact_climate_hybrid\\device.js:342: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\sensor_contact_climate_hybrid\\device.js:1457: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\sensor_contact_motion_hybrid\\device.js:816: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\sensor_contact_presence_hybrid\\device.js:126: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\sensor_gas_presence_hybrid\\device.js:126: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\sensor_motion_presence_hybrid\\device.js:126: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "drivers\\sensor_presence_radar_hybrid\\device.js:126: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\adapters\\Z2MConverterAdapter.js:291: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\adapters\\Z2MConverterAdapter.js:292: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\adapters\\ZHAQuirkAdapter.js:271: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\battery\\UnifiedBatteryHandler.js:173: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\clusters\\TuyaSpecificCluster.js:379: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\converters\\TuyaDeviceDefinitions.js:332: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\detectors\\BseedDetector.js:40: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\devices\\ButtonDevice.js:561: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\devices\\UnifiedThermostatBase.js:177: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\diagnostics\\DeviceDiagnostics.js:121: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\drivers\\BaseZigBeeDriver.js:83: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\helpers\\DeviceHintsDatabase.js:481: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\helpers\\DeviceIdentificationDatabase.js:264: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\helpers\\DeviceIdentificationDatabase.js:281: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\helpers\\DeviceIdentificationDatabase.js:330: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\helpers\\DeviceIdentificationDatabase.js:339: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\helpers\\device_helpers.js:303: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\helpers\\device_helpers.js:373: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\managers\\AutonomousMigrationManager.js:148: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\managers\\PowerSourceDetector.js:66: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\managers\\PowerSourceDetector.js:67: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\managers\\PowerSourceDetector.js:179: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\managers\\PowerSourceDetector.js:180: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\managers\\SmartDriverAdaptation.js:663: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\ManufacturerVariationManager.js:915: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\NewDevices2025.js:245: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\NewDevices2025.js:263: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\NewDevices2025.js:312: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\NewDevices2025.js:316: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\ota\\TuyaXiaomiOTAProvider.js:222: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\ProductValueValidator.js:297: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\protocol\\IntelligentProtocolRouter.js:277: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\protocol\\KnownProtocolsDatabase.js:314: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\protocol\\ZigbeeProtocolComplete.js:701: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\protocol\\ZigbeeProtocolComplete.js:744: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\protocol\\ZigbeeProtocolComplete.js:752: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\protocol\\ZigbeeProtocolComplete.js:767: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\tuya\\DeviceFingerprintDB.js:1964: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\tuya\\DeviceFingerprintDB.js:1976: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\tuya\\DeviceFingerprintDB.js:2051: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\tuya\\TS0601_EMERGENCY_FIX.js:106: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\tuya\\TuyaDataPointsZ2M.js:1332: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\tuya\\TuyaDataPointsZ2M.js:1354: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\tuya\\TuyaDPDatabase.js:260: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\tuya\\TuyaDPDatabase.js:261: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\tuya\\TuyaDPDeviceHelper.js:37: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\tuya\\TuyaDPDeviceHelper.js:38: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\tuya\\TuyaProfiles.js:137: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\tuya\\TuyaTimeSync.js:280: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\tuya\\TuyaTimeSync.js:281: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\tuya\\TuyaTimeSyncFormats.js:624: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\tuya\\TuyaTimeSyncFormats.js:633: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\tuya-engine\\index.js:28: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\tuya-engine\\index.js:29: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\TuyaDeviceClassifier.js:8: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\TuyaRtcDetector.js:84: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\TuyaRtcDetector.js:93: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\UniversalDataHandler.js:232: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\UniversalIasDevice.js:66: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\UniversalIasDevice.js:68: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\utils\\DriverMappingLoader.js:1048: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\zigbee\\ExoticQuirkEngine.js:149: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\zigbee\\GreenPowerManager.js:204: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\zigbee\\GreenPowerManager.js:209: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\zigbee\\MatterCompatibilityLayer.js:335: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\zigbee\\ZigbeeHealthMonitor.js:122: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\zigbee\\ZigpyIntegration.js:135: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\zigbee\\ZigpyIntegration.js:136: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper."
+  ]
 }

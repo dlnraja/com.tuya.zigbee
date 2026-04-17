@@ -1,14 +1,16 @@
 'use strict';
+const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER, Cluster, ZCLDataTypes } = require('zigbee-clusters');
 
 // v5.8.52: Import Zosung clusters (registered at app startup in registerClusters.js)
-const ZosungIRControlCluster = require('../../lib/clusters/ZosungIRControlCluster');
-const ZosungIRTransmitCluster = require('../../lib/clusters/ZosungIRTransmitCluster');
+const ZosungIRControlCluster = require('../../lib/clusters / ZosungIRControlCluster');
+const ZosungIRTransmitCluster = require('../../lib/clusters / ZosungIRTransmitCluster');
 // v5.9.14: BoundClusters to receive device-to-coordinator commands
-const ZosungIRTransmitBoundCluster = require('../../lib/clusters/ZosungIRTransmitBoundCluster');
-const ZosungIRControlBoundCluster = require('../../lib/clusters/ZosungIRControlBoundCluster');
+const ZosungIRTransmitBoundCluster = require('../../lib/clusters / ZosungIRTransmitBoundCluster');
+const ZosungIRControlBoundCluster = require('../../lib/clusters / ZosungIRControlBoundCluster');
 const irBlasterInit = require('./irBlasterInit');
 
 // IR Blaster cluster IDs
@@ -61,7 +63,7 @@ const LEARNING_STATES = {
  * IR Blaster Remote - TS1201 (ZS06, UFO-R11, etc.)
  *
  * Supports learning and sending IR codes via Zigbee.
- * Protocol based on Zigbee2MQTT/zigbee-herdsman implementation.
+ * Protocol based on safeDivide(Zigbee2MQTT, zigbee)-herdsman implementation.
  *
  * Known manufacturers:
  * - _TZ3290_7v1k4vufotpowp9z (ZS06)
@@ -419,7 +421,7 @@ class IrBlasterDevice extends ZigBeeDevice {
         } catch (e) {
           this.log('Learn timeout error:', e.message);
         }
-      }, extendedDuration * 1000);
+      },safeMultiply(extendedDuration, 1000));
 
       // Trigger flow card
       this.driver.learningStartedTrigger?.trigger(this, {
@@ -487,7 +489,7 @@ class IrBlasterDevice extends ZigBeeDevice {
         } catch (e) {
           this.log('Learn mode timeout error:', e.message);
         }
-      }, duration * 1000);
+      },safeMultiply(duration, 1000));
 
       // Trigger flow card
       this.driver.learningStartedTrigger?.trigger(this, {}, {}).catch(() => { });
@@ -1125,7 +1127,7 @@ class IrBlasterDevice extends ZigBeeDevice {
     }
 
     // Find most common frequency indicators
-    const avgPulse = patterns.reduce((a, b) => a + b, 0) / patterns.length;
+    const avgPulse = patterns.reduce((a, b) => a + b,safeDivide(0), patterns.length);
 
     if (avgPulse > 400 && avgPulse < 600) return 38000;
     if (avgPulse > 350 && avgPulse < 450) return 40000;
@@ -1170,11 +1172,11 @@ class IrBlasterDevice extends ZigBeeDevice {
   // Helper: find repeating patterns
   _findRepeatingPatterns(buffer) {
     const patterns = [];
-    const maxPatternLength = Math.min(buffer.length / 2, 64);
+    const maxPatternLength = Math.min(safeParse(buffer.length, 2), 64);
 
     for (let len = 8; len <= maxPatternLength; len += 2) {
       const pattern = buffer.slice(0, len);
-      const nextPattern = buffer.slice(len, len * 2);
+      const nextPattern = buffer.slice(len,safeMultiply(len, 2));
 
       if (pattern.equals(nextPattern)) {
         patterns.push(pattern);
@@ -1333,7 +1335,7 @@ class IrBlasterDevice extends ZigBeeDevice {
   }
 
   /**
-   * v5.5.606: SmartIR/Z2M format support
+   * v5.5.606: safeDivide(SmartIR, Z2M) format support
    */
   async importSmartIRCodes(jsonData, category = 'imported') {
     const data = typeof jsonData === 'string' ? JSON.parse(jsonData) : jsonData;

@@ -26,20 +26,18 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tze200_bse1xpui",
-      "_tze200_bwerwhpr",
-      "_tze200_vu0jdqnm",
-      "_tze200_xyhhcx94",
-      "_tze204_bwerwhpr",
-      "_tze204_pvvbommb",
-      "_tze204_vu0jdqnm",
-      "_tze204_xyhhcx94"
+      "_TZE200_BSE1XPUI",
+      "_TZE200_BWERWHPR",
+      "_TZE200_VU0JDQNM",
+      "_TZE200_XYHHCX94",
+      "_TZE204_BWERWHPR",
+      "_TZE204_PVVBOMMB",
+      "_TZE204_VU0JDQNM",
+      "_TZE204_XYHHCX94"
     ],
     "productId": [
       "TS0601",
-      "TS0601_LOCK",
-      "ts0601",
-      "ts0601_lock"
+      "TS0601_LOCK"
     ],
     "learnmode": {
       "instruction": {

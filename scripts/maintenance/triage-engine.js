@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 'use strict';
 
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
+
+
 /**
  * triage-engine.js - v2.0.0 "Universal Task Divider"
  * 
@@ -117,7 +120,7 @@ async function main() {
         }
 
         // Radar/mWave Check
-        if (clusters.includes(0xEF00) && driverId.includes('motion') && !driverId.includes('radar')) {
+        if (clusters.includes(CLUSTERS.TUYA_EF00) && driverId.includes('motion') && !driverId.includes('radar')) {
            const mfrs = manifest.zigbee?.manufacturerName || [];
            if (mfrs.some(m => /_TZE20[04]/.test(m))) {
               console.log(`  [INFO] ${driverId}: Multi-gang radar detected in motion driver. Recommendation: Upgrade to HybridSensorBase.`);

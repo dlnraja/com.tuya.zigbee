@@ -124,4 +124,4 @@ Fork → branch → add fingerprints → `homey app install` → PR
 | **Revolut** | [revolut.me/dylanoul](https://revolut.me/dylanoul) |
 
 ---
-*Built by [Dylan](https://github.com/dlnraja) — based on the original work of [JohanBendz](https://github.com/JohanBendz/com.tuya.zigbee)*
+*Built by [Dylan](https://github.com/dlnraja) — based on the original work of [JohanBendz](https:

@@ -1,4 +1,6 @@
 'use strict';
+const CI = require('../../lib/utils/CaseInsensitiveMatcher');
+const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
@@ -52,7 +54,7 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
       const mfr = this.getSetting('zb_manufacturer_name') || '';
       
       // Only for TS004F devices
-      if (!modelId.includes('TS004F')) {
+      if (!CI.includesCI(modelId, 'TS004F')) {
         this.log('[TS004F] Not a TS004F device, skipping scene mode enable');
         return;
       }
@@ -112,7 +114,7 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
         // Read initial battery value
         const batteryStatus = await powerCluster.readAttributes(['batteryPercentageRemaining']).catch(() => null);
         if (batteryStatus && batteryStatus.batteryPercentageRemaining !== undefined) {
-          const batteryValue = Math.round(batteryStatus.batteryPercentageRemaining / 2);
+          const batteryValue = Math.round(safeParse(batteryStatus.batteryPercentageRemaining, 2));
           await this.setCapabilityValue('measure_battery', batteryValue).catch(this.error);
           this.log('Battery level:', batteryValue, '%');
         }
@@ -379,7 +381,7 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
   }
 
   async _handleRotationStep(direction, stepSize) {
-    const delta = direction === 'up' ? (stepSize / 254) : -(stepSize / 254);
+    const delta = direction === 'up' ? (safeParse(stepSize, 254)) : -(safeParse(stepSize, 254));
     this._updateSimulatedBrightness(delta);
 
     if (direction === 'up') {
@@ -396,7 +398,7 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
       this.setCapabilityValue('dim', this._simulatedBrightness).catch(this.error);
     }
     
-    this.log('Simulated brightness:', Math.round(this._simulatedBrightness * 100), '%');
+    this.log('Simulated brightness:',Math.round(safeMultiply(this._simulatedBrightness, 100)), '%');
   }
 
   async _triggerRotateLeft() {
@@ -413,7 +415,7 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
     const rotateLeftTrigger = (() => { try { return this.homey.flow.getTriggerCard('remote_button_wireless_hybrid_rotate_left'); } catch(e) { return null; } })();
     if (rotateLeftTrigger) {
       await rotateLeftTrigger.trigger(this, { 
-        brightness: Math.round(this._simulatedBrightness * 100) 
+        brightness:Math.round(safeMultiply(this._simulatedBrightness, 100)) 
       }).catch(this.error);
     }
   }
@@ -432,7 +434,7 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
     const rotateRightTrigger = (() => { try { return this.homey.flow.getTriggerCard('remote_button_wireless_hybrid_rotate_right'); } catch(e) { return null; } })();
     if (rotateRightTrigger) {
       await rotateRightTrigger.trigger(this, { 
-        brightness: Math.round(this._simulatedBrightness * 100) 
+        brightness:Math.round(safeMultiply(this._simulatedBrightness, 100)) 
       }).catch(this.error);
     }
   }

@@ -1,4 +1,9 @@
 'use strict';
+const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
+
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
+
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
@@ -7,7 +12,7 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
  * ║      3-GANG DIMMER - v5.5.829 (Tuya DP-based)                               ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  MOES 3-Gang Dimmer - _TZE204_1v1dxkck / TS0601                              ║
- * ║  Uses Tuya cluster 0xEF00 for control                                        ║
+ * ║  Uses Tuya cluster CLUSTERS.TUYA_EF00 for control                                        ║
  * ║                                                                              ║
  * ║  DP Mapping (from Z2M/forum research):                                       ║
  * ║  - DP1: Switch 1 (bool)      - DP2: Dimmer 1 (0-1000)                        ║
@@ -26,13 +31,13 @@ class Dimmer3GangDevice extends ZigBeeDevice {
     return {
       // Gang 1
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
-      2: { capability: 'dim', transform: (v) => Math.max(0.01, Math.min(1, v / 1000)) },
+      2: { capability: 'dim', transform: (v) => Math.max(0.01, Math.min(1, safeParse(v, 1000))) },
       // Gang 2
       7: { capability: 'onoff.channel2', transform: (v) => v === 1 || v === true },
-      8: { capability: 'dim.channel2', transform: (v) => Math.max(0.01, Math.min(1, v / 1000)) },
+      8: { capability: 'dim.channel2', transform: (v) => Math.max(0.01, Math.min(1, safeParse(v, 1000))) },
       // Gang 3
       15: { capability: 'onoff.channel3', transform: (v) => v === 1 || v === true },
-      16: { capability: 'dim.channel3', transform: (v) => Math.max(0.01, Math.min(1, v / 1000)) },
+      16: { capability: 'dim.channel3', transform: (v) => Math.max(0.01, Math.min(1, safeParse(v, 1000))) },
     };
   }
 
@@ -62,8 +67,8 @@ class Dimmer3GangDevice extends ZigBeeDevice {
 
       // Try to get Tuya cluster
       const tuyaCluster = endpoint.clusters['tuya'] ||
-        endpoint.clusters[61184] ||
-        endpoint.clusters['61184'];
+        endpoint.clusters[CLUSTERS.TUYA_EF00] ||
+        endpoint.clusters['CLUSTERS.TUYA_EF00'];
 
       if (tuyaCluster && typeof tuyaCluster.on === 'function') {
         tuyaCluster.on('response', this._handleTuyaResponse.bind(this));
@@ -141,7 +146,7 @@ class Dimmer3GangDevice extends ZigBeeDevice {
         const id = up
           ? `dimmer_3gang_physical_gang${gang}_brightness_increased`
           : `dimmer_3gang_physical_gang${gang}_brightness_decreased`;
-        this.homey.flow._getFlowCard('up').trigger(this, { brightness: Math.round(value * 100) }, {}).catch(() => {});
+        this.homey.flow._getFlowCard('up').trigger(this, { brightness:Math.round(safeMultiply(value, 100)) }, {}).catch(() => {});
       }
     } catch (err) {
       this.error('[DIMMER-3G] Flow trigger error:', err.message);
@@ -160,7 +165,7 @@ class Dimmer3GangDevice extends ZigBeeDevice {
     if (this.hasCapability('dim')) {
       this.registerCapabilityListener('dim', async (value) => {
         this._markAppCommand(); // v5.5.829
-        await this._sendTuyaDP(2, Math.round(value * 1000), 'value');
+        await this._sendTuyaDP(2,Math.round(safeMultiply(value, 1000)), 'value');
       });
     }
 
@@ -175,7 +180,7 @@ class Dimmer3GangDevice extends ZigBeeDevice {
     if (this.hasCapability('dim.channel2')) {
       this.registerCapabilityListener('dim.channel2', async (value) => {
         this._markAppCommand(); // v5.5.829
-        await this._sendTuyaDP(8, Math.round(value * 1000), 'value');
+        await this._sendTuyaDP(8,Math.round(safeMultiply(value, 1000)), 'value');
       });
     }
 
@@ -190,7 +195,7 @@ class Dimmer3GangDevice extends ZigBeeDevice {
     if (this.hasCapability('dim.channel3')) {
       this.registerCapabilityListener('dim.channel3', async (value) => {
         this._markAppCommand(); // v5.5.829
-        await this._sendTuyaDP(16, Math.round(value * 1000), 'value');
+        await this._sendTuyaDP(16,Math.round(safeMultiply(value, 1000)), 'value');
       });
     }
   }
@@ -204,8 +209,8 @@ class Dimmer3GangDevice extends ZigBeeDevice {
       }
 
       const tuyaCluster = endpoint.clusters['tuya'] ||
-        endpoint.clusters[61184] ||
-        endpoint.clusters['61184'];
+        endpoint.clusters[CLUSTERS.TUYA_EF00] ||
+        endpoint.clusters['CLUSTERS.TUYA_EF00'];
 
       if (!tuyaCluster) {
         this.error('[DIMMER-3G] No Tuya cluster found');
@@ -213,7 +218,7 @@ class Dimmer3GangDevice extends ZigBeeDevice {
       }
 
       // Build Tuya DP payload
-      const seqNum = Math.floor(Math.random() * 65535);
+      const seqNum =safeMultiply(Math.floor(Math.random(), 65535));
       let dataBuffer;
 
       if (type === 'bool') {

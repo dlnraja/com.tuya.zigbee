@@ -35,6 +35,7 @@ concurrency:
 
 env:
   NODE_VERSION: "22"
+  SHADOW_MODE: "true"
 
 defaults:
   run:
@@ -262,7 +263,7 @@ jobs:
 
       # 📣 Forum Announcement (Unified Awareness)
       - name: 💬 Post to Forum
-        if: always()
+        if: always() && env.SHADOW_MODE != 'true'
         continue-on-error: true
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}

@@ -66,23 +66,21 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3210_guijtl8k",
-      "_tz3210_hquixjeg",
-      "_tze200_7bztmfm1",
-      "_tze200_rbbx5mfq",
-      "_tze200_ywagc4rj",
-      "_tze204_7bztmfm1",
-      "_tze204_a8sdabtg",
-      "_tze204_ogkdpgy2",
-      "_tze204_rbbx5mfq",
-      "_tze204_ywagc4rj",
-      "_tze204_zl1kmjqx"
+      "_TZ3210_GUIJTL8K",
+      "_TZ3210_HQUIXJEG",
+      "_TZE200_7BZTMFM1",
+      "_TZE200_RBBX5MFQ",
+      "_TZE200_YWAGC4RJ",
+      "_TZE204_7BZTMFM1",
+      "_TZE204_A8SDABTG",
+      "_TZE204_OGKDPGY2",
+      "_TZE204_RBBX5MFQ",
+      "_TZE204_YWAGC4RJ",
+      "_TZE204_ZL1KMJQX"
     ],
     "productId": [
       "TS0601",
-      "TS0601_CO2",
-      "ts0601",
-      "ts0601_co2"
+      "TS0601_CO2"
     ],
     "endpoints": {
       "1": {

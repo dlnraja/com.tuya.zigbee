@@ -21,23 +21,18 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_dowstjba",
-      "_tz3000_ottf8uox",
-      "_tz3000_rdh96mrd",
-      "_tz3000_v1v0578s",
-      "_tz3000_vax66fba",
-      "_tz3000_xr5m6p9y",
-      "_tze284_hdml1aav"
+      "_TZ3000_DOWSTJBA",
+      "_TZ3000_OTTF8UOX",
+      "_TZ3000_RDH96MRD",
+      "_TZ3000_V1V0578S",
+      "_TZ3000_VAX66FBA",
+      "_TZ3000_XR5M6P9Y",
+      "_TZE284_HDML1AAV"
     ],
     "productId": [
       "TS0201",
-      "TS0601",
       "TS0601_LCD",
-      "TY0201",
-      "ts0201",
-      "ts0601",
-      "ts0601_lcd",
-      "ty0201"
+      "TY0201"
     ],
     "endpoints": {
       "1": {

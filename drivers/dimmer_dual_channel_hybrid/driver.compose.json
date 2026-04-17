@@ -25,14 +25,12 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "_tz3210_tkkb1ym8",
-      "_tze200_bxoo2swd"
+      "_TZ3210_TKKB1YM8",
+      "_TZE200_BXOO2SWD"
     ],
     "productId": [
       "TS0601",
-      "TS1101",
-      "ts0601",
-      "ts1101"
+      "TS1101"
     ],
     "endpoints": {
       "1": {

@@ -35,9 +35,7 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "hobeian"
-    ],
+    "manufacturerName": [],
     "productId": [],
     "learnmode": {
       "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",

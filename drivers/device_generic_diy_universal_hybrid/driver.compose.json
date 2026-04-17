@@ -74,9 +74,9 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "danfoss",
-      "legrand",
-      "schneider electric"
+      "DANFOSS",
+      "LEGRAND",
+      "SCHNEIDER ELECTRIC"
     ],
     "productId": [
       "TS0026",
@@ -84,13 +84,7 @@
       "TS0052",
       "TS0105",
       "TS0224",
-      "TS0901",
-      "ts0026",
-      "ts0041a",
-      "ts0052",
-      "ts0105",
-      "ts0224",
-      "ts0901"
+      "TS0901"
     ],
     "endpoints": {
       "1": {

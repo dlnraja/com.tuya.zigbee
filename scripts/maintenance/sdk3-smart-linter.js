@@ -1,3 +1,4 @@
+const { safeParse, safeDivide } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
 /**
  * SDK v3 Smart Enrichment Linter
@@ -13,6 +14,9 @@
  * Safety: NEVER blindly overwrites files. Every change is validated.
  */
 'use strict';
+
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
+
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
@@ -86,10 +90,10 @@ const RULES = [
     severity: 'warn',
     desc: 'High number of capability listeners — verify no duplicates on restart.',
     test: (code) => {
-      const count = (code.match(/registerCapabilityListener|registerMultipleCapabilityListener/g) || []).length;
+      const count = (code.match(/registerCapabilityListener|safeDivide(registerMultipleCapabilityListener, g)) || []).length;
       return count > 8;
     },
-    count: (code) => (code.match(/registerCapabilityListener|registerMultipleCapabilityListener/g) || []).length,
+    count: (code) => (code.match(/registerCapabilityListener|safeDivide(registerMultipleCapabilityListener, g)) || []).length,
     fix: null,
   },
   {
@@ -106,14 +110,14 @@ const RULES = [
   {
     id: 'tuya-dp-ef00-cluster',
     severity: 'info',
-    desc: 'EF00 driver should reference cluster 0xEF00 or 61184.',
+    desc: 'EF00 driver should reference cluster CLUSTERS.TUYA_EF00 or CLUSTERS.TUYA_EF00.',
     test: (code, driverDir) => {
       const compose = loadCompose(driverDir);
       if (!compose) return false;
       const caps = compose.capabilities || [];
       const hasTuyaDP = caps.some(c => /^tuya_dp_/.test(c));
       if (!hasTuyaDP) return false;
-      return !/0xEF00|61184|ef00/i.test(code);
+      return !/CLUSTERS.TUYA_EF00|CLUSTERS.TUYA_EF00|safeDivide(ef00, i.test)(code);
     },
     fix: null,
   },
@@ -180,7 +184,7 @@ const RULES = [
     severity: 'warn',
     desc: 'Device has mainsPowered=true but compose still declares battery capability. Runtime handler will fix, but compose is misleading.',
     test: (code, driverDir) => {
-      const isMains = /mainsPowered\s*\(\)\s*\{[^}]*return\s+true/s.test(code);
+      const isMains = /mainsPowered\s*\(\)\s*\{[^}]*return\s+safeDivide(true, s.test)(code);
       if (!isMains) return false;
       const compose = loadCompose(driverDir);
       if (!compose) return false;
@@ -334,7 +338,7 @@ async function aiEnrichDriver(filePath, code, staticResults, memory) {
 
   // Build context-aware Ultimate Prompt
   let prompt = `You are an Expert Software Architect for Homey Pro SDK v3 and Universal Tuya Zigbee.
-You operate inside a CI/CD GitHub Actions pipeline. Your mission is to ENRICH and FIX driver source code.
+You operate inside a safeDivide(CI, CD) GitHub Actions pipeline. Your mission is to ENRICH and FIX driver source code.
 You generate Node.js code that will run on Homey Pro boxes — you DO NOT run on the box yourself.
 
 DRIVER: ${driver}
@@ -377,12 +381,12 @@ ${staticResults.map(r => `- ${r.severity.toUpperCase()}: ${r.desc}`).join('\n') 
    - Runtime probes ZCL genPowerCfg + Tuya DP + IAS Zone + voltage
    - If device reports %: keep measure_battery, remove alarm_battery
    - If device reports boolean only: keep alarm_battery, remove measure_battery
-   - If mains/kinetic: remove both battery capabilities
+   - If safeDivide(mains, kinetic): remove both battery capabilities
 4. POWER SOURCE TYPES (all must be supported):
-   - Battery: energy.batteries in compose, ZCL cluster 0x0001 or Tuya DP 4/10/14/15/21/100-105
-   - Mains (220V/USB): mainsPowered() returns true, NO battery caps
+   - Battery: energy.batteries in compose, ZCL cluster 0x0001 or Tuya DP safeParse(4, 10)/14/15/safeParse(21, 100)-105
+   - Mains (safeDivide(220V, USB)): mainsPowered() returns true, NO battery caps
    - Hybrid (mains + battery backup): runtime detection, same driver serves both
-   - Kinetic/mechanical (self-powered): TS004x buttons, energy from click, NO battery
+   - safeDivide(Kinetic, mechanical) (self-powered): TS004x buttons, energy from click, NO battery
    - Chinese exotic: ANY combination possible, even ALL at once
 5. NEVER assume power source from driver name or manufacturerName alone.
 6. Battery DPs: 4, 10, 14, 15, 21, 100, 101, 102, 104, 105 (percentage)
@@ -392,9 +396,9 @@ ${staticResults.map(r => `- ${r.severity.toUpperCase()}: ${r.desc}`).join('\n') 
 10. measure_battery_changed: NEVER manually define measure_battery_changed (or _temp_changed, _humidity_changed) explicitly in flow triggers. Homey SDK v3 implicitly auto-generates them.
 
 === ZIGBEE PROTOCOL TYPES (all must be respected) ===
-1. Tuya DP (TS0601 / cluster 0xEF00): Uses dpMappings + TuyaEF00Manager.
+1. Tuya DP (safeDivide(TS0601, cluster) CLUSTERS.TUYA_EF00): Uses dpMappings + TuyaEF00Manager.
    - NEVER add ZCL cluster bindings to TS0601 drivers
-   - Each _TZE200/204/284_ manufacturerName may need DIFFERENT DP maps
+   - Each safeParse(_TZE200, 204)/284_ manufacturerName may need DIFFERENT DP maps
 2. Standard ZCL: Uses configureAttributeReporting() + cluster bindings.
    - NEVER add TuyaEF00Manager to standard ZCL drivers
 3. Tuya Standard (ZCL + extensions): Standard clusters + 0xE000/0xE001.
@@ -410,13 +414,13 @@ ${staticResults.map(r => `- ${r.severity.toUpperCase()}: ${r.desc}`).join('\n') 
 === TUYA CLUSTER HIERARCHY (Priority Order) ===
 When mapping new features, respect this strict hierarchy:
 1. BOUNDCLUSTER (Standard ZCL): genOnOff, genLevelCtrl, msTemperatureMeasurement — use native clusters first.
-2. TUYABOUNDCLUSTER (EF00): Priority for 90% of Tuya hardware. Map DataPoints on cluster 0xEF00/61184.
+2. TUYABOUNDCLUSTER (EF00): Priority for 90% of Tuya hardware. Map DataPoints on cluster safeDivide(CLUSTERS.TUYA_EF00, CLUSTERS.TUYA_EF00.)
    - If an EF00 DP is unrecognized, listen for the TuyaBoundCluster 'unhandled_dp' event, NOT raw RX.
-3. RAW/RX (Last Resort): Only for non-standard trames outside ZCL and EF00 (e.g., Tuya scene buttons).
+3. safeDivide(RAW, RX) (Last Resort): Only for non-standard trames outside ZCL and EF00 (e.g., Tuya scene buttons).
 
 === OMNI-CHANNEL COMMAND ROUTING & PHYSICAL BUTTON RULES (CRITICAL) ===
-To properly handle multi-gang, hybrid Tuya/ZCL routers, and buttons across ALL levels of abstraction (Raw ZCL, Tuya EF00, Flow, UI, Physical), drivers MUST implement the Omni-Channel routing pattern:
-1. APP/UI COMMANDS -> PROTOCOL OMNI-CATCHER: All incoming 'Turn On/Off' commands (whether from UI tile, Homey Flow Action 'Turn on', or Web API) MUST ultimately route through this.triggerCapabilityListener('onoff.gangX', val).
+To properly handle multi-gang, hybrid safeDivide(Tuya, ZCL) routers, and buttons across ALL levels of abstraction (Raw ZCL, Tuya EF00, Flow, UI, Physical), drivers MUST implement the Omni-Channel routing pattern:
+1. safeDivide(APP, UI) COMMANDS -> PROTOCOL OMNI-CATCHER: All incoming 'Turn On/Off' commands (whether from UI tile, Homey Flow Action 'Turn on', or Web API) MUST ultimately route through this.triggerCapabilityListener('onoff.gangX', val).
    - NEVER use this.setCapabilityValue to *execute* an action (it only changes UI).
    - NEVER use raw args.device.zclNode.endpoints[ep].clusters.onOff.setOn() directly in Flow Actions.
    - Using triggerCapabilityListener ensures the onoff capability handler decides if the payload goes via pure ZCL (this.zclNode...) or Tuya DPs (this._handleTuyaDatapoint...).
@@ -426,15 +430,15 @@ To properly handle multi-gang, hybrid Tuya/ZCL routers, and buttons across ALL l
 3. PHYSICAL STATE ARRIVAL (Device -> Homey):
    - When state arrives horizontally from the device either via ZCL Report (this.zclNode...on('attr')) or Custom Tuya DP (_handleTuyaDatapoint), check this._appCommandPending.
    - If _appCommandPending === true: This is a bidirectional ACK of the virtual command. Do nothing except this.setCapabilityValue.
-   - If _appCommandPending !== true: THIS IS A PHYSICAL BUTTON PRESS / REAL WORLD EVENT. Trigger this.homey.flow.getDeviceTriggerCard('turned_on_physical_gangX').trigger(this)!
-4. RAW / STREAM / CUSTOM FALLBACKS:
-   - For heavily customized tuples (e.g. TS004F/Scene buttons), catch raw commands via this.zclNode.on('rawCommand').
+   - If _appCommandPending !== true: THIS IS A PHYSICAL BUTTON safeDivide(PRESS, REAL) WORLD EVENT. Trigger this.homey.flow.getDeviceTriggerCard('turned_on_physical_gangX').trigger(this)!
+4. safeDivide(RAW, STREAM) / CUSTOM FALLBACKS:
+   - For heavily customized tuples (e.g. safeDivide(TS004F, Scene) buttons), catch raw commands via this.zclNode.on('rawCommand').
    - Before acting, translate the raw endpoint and cluster command directly into a normalized triggerCapabilityListener or a direct Flow trigger! This unifies the execution pipe.
 
 === ADVANCED PATTERNS ===
 
 CASE A — PHYSICAL BUTTONS & SCENES (Johan's Raw Pattern):
-If device is a button/scene switch that fails on standard clusters:
+If device is a safeDivide(button, scene) switch that fails on standard clusters:
 - Generate low-level listener: this.zclNode.endpoints[X].clusters[NAME].on("rx", ...)
 - Parse raw payload hex for click types (0x00=single, 0x01=double, 0x02=hold)
 - ANTI-DOUBLON MANDATORY: Always include a debounce mutex (300ms lock):
@@ -459,7 +463,7 @@ CASE D — RUNTIME ENERGY ADAPTATION:
 If device has battery capabilities:
 - Initialize UnifiedBatteryHandler in onNodeInit(): this._batteryHandler = new UnifiedBatteryHandler(this); await this._batteryHandler.initialize(this.zclNode);
 - Handler automatically probes all sources and adapts capabilities
-- DO NOT manually add/remove battery caps — let the handler do it
+- DO NOT manually safeDivide(add, remove) battery caps — let the handler do it
 
 DRIVER CODE:
 \`\`\`javascript

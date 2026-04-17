@@ -1,4 +1,6 @@
 'use strict';
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class AirPurifierDriver extends ZigBeeDriver {
@@ -37,7 +39,7 @@ class AirPurifierDriver extends ZigBeeDriver {
 
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('dim', args.speed / 100);
+          await args.device.triggerCapabilityListener('dim', safeParse(args.speed, 100));
           return true;
         });
     } catch (e) { this.error('Action set_fan_speed:', e.message); }
@@ -71,7 +73,7 @@ class AirPurifierDriver extends ZigBeeDriver {
 
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('dim', args.brightness / 100);
+          await args.device.triggerCapabilityListener('dim', safeParse(args.brightness, 100));
           return true;
         });
     } catch (e) { this.error('Action set_brightness:', e.message); }

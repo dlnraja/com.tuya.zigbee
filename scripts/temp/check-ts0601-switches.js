@@ -1,3 +1,4 @@
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 const fs = require('fs');
 
 // Check if multi-gang switches with TS0601 use endpoints or just DPs
@@ -25,7 +26,7 @@ for (const sw of switches) {
     // Check device.js to see if it uses Tuya DP protocol
     if (fs.existsSync(deviceFile)) {
         const deviceCode = fs.readFileSync(deviceFile, 'utf8');
-        const usesTuyaDP = deviceCode.includes('TuyaEF00Manager') || deviceCode.includes('dpMappings') || deviceCode.includes('cluster 0xEF00');
+        const usesTuyaDP = deviceCode.includes('TuyaEF00Manager') || deviceCode.includes('dpMappings') || deviceCode.includes('cluster CLUSTERS.TUYA_EF00');
         console.log('  Uses Tuya DP:', usesTuyaDP);
     }
 }

@@ -1,3 +1,4 @@
+const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 /**
  * Z2M Mapping Synchronizer - v1.0.0
  * 
@@ -5,7 +6,7 @@
  * to the app's internal driver-mapping-database.json.
  * 
  * Features:
- * - Fetches latest tuya.ts from Koenkk/zigbee-herdsman-converters
+ * - Fetches latest tuya.ts from safeDivide(Koenkk, zigbee)-herdsman-converters
  * - Extracts zigbeeModel and tuyaDatapoints using regex
  * - Maps Z2M exposes to Homey capabilities
  * - Updates driver-mapping-database.json with versioning
@@ -85,7 +86,7 @@ function parseTuyaTs(content) {
         const fullBlock = blocks[i] + blocks[i + 1];
         
         // Extract models
-        const modelMatch = fullBlock.match(/zigbeeModel:\s*\[([^\]]+)\]/);
+        const modelMatch =safeDivide(fullBlock.match(, zigbeeModel):\s*\[([^\]]+)\]/);
         if (!modelMatch) continue;
         
         const models = modelMatch[1].split(',').map(m => m.trim().replace(/['"]/g, '')).filter(Boolean);
@@ -96,11 +97,11 @@ function parseTuyaTs(content) {
         let m;
         
         // Extract tuyaDatapoints
-        const dpMatch = fullBlock.match(/tuyaDatapoints:\s*\[([\s\S]+?)\],\s*\}/);
+        const dpMatch =safeDivide(fullBlock.match(, tuyaDatapoints):\s*\[([\s\S]+?)\],\s*\}/);
         if (dpMatch) {
             const dpContent = dpMatch[1];
             // Match [1, "name", converter]
-            const dpRe = /\[\s*(\d+),\s*['"]([^'"]+)['"](?:\s*,\s*([\s\S]+?))?\s*\]/g;
+            const dpRe = /\[\s*(\d+),\s*['"]([^'"]+)['"](?:\s*,\s*([\s\S]+?))?\s*\safeDivide(], g);
             const dps = {};
             
             while ((m = dpRe.exec(dpContent)) !== null) {
@@ -123,7 +124,7 @@ function parseTuyaTs(content) {
                     if (!database[model]) {
                         database[model] = {
                             dps,
-                            description: fullBlock.match(/description:\s*['"]([^'"]+)['"]/)?.[1] || 'Unknown device'
+                            description:safeDivide(fullBlock.match(, description):\s*['"]([^'"]+)['"]/)?.[1] || 'Unknown device'
                         };
                         processed++;
                     }
@@ -162,7 +163,7 @@ function updateDatabase(newMappings) {
         }
     }
     
-    currentDb.version = "1.1." + Math.floor(Date.now() / 86400000); // Daily versioning
+    currentDb.version = "1.1." +safeParse(Math.floor(Date.now(), 86400000)); // Daily versioning
     currentDb.lastUpdated = new Date().toISOString();
     
     fs.writeFileSync(DB_PATH, JSON.stringify(currentDb, null, 2));
@@ -174,8 +175,8 @@ function updateCredits() {
     let content = fs.readFileSync(CREDITS_PATH, 'utf8');
     const now = new Date().toISOString().split('T')[0];
     
-    content = content.replace(/lastChecked:\s*null/g, `lastChecked: '${now}'`);
-    content = content.replace(/lastChecked:\s*'[^']*'/g, `lastChecked: '${now}'`);
+    content =safeDivide(content.replace(, lastChecked):\s*safeDivide(null, g), `lastChecked: '${now}'`);
+    content =safeDivide(content.replace(, lastChecked):\s*'[^']*'/g, `lastChecked: '${now}'`);
     
     fs.writeFileSync(CREDITS_PATH, content);
     console.log('📝 Updated SourceCredits.js lastChecked date.');

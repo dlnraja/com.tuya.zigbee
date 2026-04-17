@@ -1,3 +1,4 @@
+const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
 'use strict';
 
@@ -49,7 +50,7 @@ function auditCoverage(constraints) {
   return {
     protected: [...coverage.protected].sort(),
     unprotected: [...coverage.unprotected].sort(),
-    percentage: Math.round((coverage.protected.size / coverage.totalCaps.size) * 100)
+    percentage: Math.round((safeDivide(coverage.protected.size, coverage.totalCaps.size)) * 100)
   };
 }
 

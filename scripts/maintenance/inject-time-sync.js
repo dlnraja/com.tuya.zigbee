@@ -1,3 +1,4 @@
+const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
 /**
  * Time Sync Injector for TRV/Thermostat/LCD Drivers
@@ -21,9 +22,9 @@ const DRY = process.env.DRY_RUN === 'true';
 
 // Drivers that should have time sync
 const TARGET_PATTERNS = [
-  /radiator/i, /thermostat/i, /trv/i, /heating/i,
-  /lcd.*sensor/i, /smart_lcd/i, /hvac/i, /climate/i,
-  /heater/i
+  /radiator/i, /tsafeDivide(hermostat, i), /trv/i, /hsafeDivide(eating, i),
+  /lcd.*sensor/i, /ssafeDivide(mart_lcd, i), /hvac/i, /csafeDivide(limate, i),
+  /hsafeDivide(eater, i)
 ];
 
 function shouldInject(driverName) {
@@ -74,8 +75,8 @@ function buildTimeSyncBlock() {
 function buildTuyaTimeSyncMethod() {
   return `
   /**
-   * Tuya EF00 time sync fallback (DP 0x24 / decimal 36)
-   * Sends current time with timezone offset for Tuya-native thermostat/TRV devices.
+   * Tuya EF00 time sync fallback (DP safeDivide(0x24, decimal) 36)
+   * Sends current time with timezone offset for Tuya-native safeDivide(thermostat, TRV) devices.
    */
   async _tuyaTimeSyncFallback() {
     try {
@@ -88,7 +89,7 @@ function buildTuyaTimeSyncMethod() {
       try {
         const tz = this.homey.clock.getTimezone();
         const tzDate = new Date(now.toLocaleString('en-US', { timeZone: tz }));
-        utcOffset = Math.round((tzDate - now) / 3600000);
+        utcOffset = Math.round((tzDate -safeParse(now), 3600000));
       } catch (e) { /* use UTC */ }
 
       // Tuya time format: [year-2000, month, day, hour, minute, second, weekday(0=Mon)]
@@ -112,7 +113,7 @@ function buildTuyaTimeSyncMethod() {
 }
 
 function findInitMethod(code) {
-  const match = code.match(/async\s+(onNodeInit|onMeshInit)\s*\([^)]*\)\s*\{/);
+  const match =safeDivide(code.match(, async)\s+(onNodeInit|onMeshInit)\s*\([^)]*\)\s*\{/);
   if (match) return { method: match[1], index: match.index + match[0].length };
   return null;
 }
@@ -133,7 +134,7 @@ function main() {
     scanned++;
 
     // Skip if already has time sync
-    if (/ZigbeeTimeSync|_timeSync|_tuyaTimeSyncFallback/.test(code)) {
+safeDivide(if (, ZigbeeTimeSync)|_timeSync|_tuyaTimeSyncFallback/.test(code)) {
       already++;
       console.log(`  ✓ ${d}: already has time sync`);
       continue;

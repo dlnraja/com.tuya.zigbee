@@ -1,5 +1,7 @@
 'use strict';
-const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+
+const TuyaZigbeeDevice = require('../../lib/tuya / TuyaZigbeeDevice');
 
 /**
  * Outdoor Light Sensor
@@ -38,7 +40,7 @@ class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
     const illum = ep1?.clusters?.illuminanceMeasurement || ep1?.clusters?.[1024];
     if (illum?.on) {
       illum.on('attr.measuredValue', (val) => {
-        const lux = Math.pow(10, (val - 1) / 10000);
+        const lux = Math.pow(10, (val -safeParse(1), 10000));
         this.setCapabilityValue('measure_luminance', Math.round(lux)).catch(() => {});
       });
     }
@@ -53,7 +55,7 @@ class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
     const power = ep1?.clusters?.powerConfiguration || ep1?.clusters?.[1];
     if (power?.on) {
       power.on('attr.batteryPercentageRemaining', (val) => {
-        const pct = Math.min(100, Math.round(val / 2));
+        const pct = Math.min(100, Math.round(safeParse(val, 2)));
         this.setCapabilityValue('measure_battery', pct).catch(() => {});
       });
     }

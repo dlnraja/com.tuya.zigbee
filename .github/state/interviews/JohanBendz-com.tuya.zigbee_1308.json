@@ -16,7 +16,7 @@
       "user": "dlnraja",
       "date": "2026-02-18T13:05:04Z",
       "fps": [],
-      "excerpt": "Hi! 👋\n\nThis device is **already supported** in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) (Universal Tuya Zigbee fork) — **v5.11.14** with 138 drivers and 5,579+ fingerprints.\n\n**Install the latest test version:**\nhttps://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\n**Community forum for support:**\nhttps://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352\n\nAfter installing, delete and re-pair your device. If it still doesn't work, please share a **diagnostic report ID** (device Settings > Create diagnostic report) and a **Homey Developer Tools interview** (https://tools.developer.homey.app)."
+      "excerpt": "Hi! 👋\n\nThis device is **already supported** in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) (Universal Tuya Zigbee fork) — **v5.11.14** with 138 drivers and 5,579+ fingerprints.\n\n**Install the latest test version:**\nhttps:
     },
     {
       "user": "dlnraja",
@@ -24,7 +24,7 @@
       "fps": [
         "_TZ3040_wqmtjsyk"
       ],
-      "excerpt": "<!-- tuya-triage-bot -->\nHi! This device is **already supported** in the [Universal Tuya Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee) v5.11.13 (102 drivers, 29000+ fingerprints).\n\n- `_TZ3040_wqmtjsyk` -> **motion_sensor** driver\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\nAfter installing, delete and re-pair your device. If issues persist, share a diagnostic report ID on the [test forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352)."
+      "excerpt": "<!-- tuya-triage-bot -->\nHi! This device is **already supported** in the [Universal Tuya Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee) v5.11.13 (102 drivers, 29000+ fingerprints).\n\n- `_TZ3040_wqmtjsyk` -> **motion_sensor** driver\n\n**Install:** https:
     }
   ],
   "aiAnalysis": "```json\n{\n  \"manufacturerName\": \"_TZ3040_wqmtjsyk\",\n  \"productId\": \"TS0202\",\n  \"deviceName\": \"LIGHTEU®, Milight Miboxer Zigbee3.0 PIR Infrared Motion Sensor\",\n  \"deviceDescription\": \"PIR motion sensor\",\n  \"imageLink\": \"https://m.media-amazon.com/images/I/41f81KM1GBL._SX522_.jpg\",\n  \"deviceType\": \"enddevice\",\n  \"ids\": {\n    \"modelId\": \"TS0202\",\n    \"manufacturerName\": \"_TZ3040_wqmtjsyk\"\n  },\n  \"endpoints\": {\n    \"ieeeAddress\": \"a4:c1:38:53:bd:f2:44:c0\",\n    \"networkAddress\": 8984,\n    \"endpointDescriptors\": [\n      {\n        \"status\": \"SUCCESS\",\n        \"nwkAddrOfInterest\": 8984,\n        \"endpointId\": 1,\n        \"applicationProfileId\": 260,\n        \"applicationDeviceId\": 1026,\n        \"applicationDeviceVersion\": 0,\n        \"inputClusters\": [\n          1,\n          3,\n          4,\n          1280,\n          0\n        ],\n        \"outputClusters\": [\n          4,\n          6,\n          4096,\n          25,\n          10\n        ]\n      }\n    ],\n    \"capabilities\": {\n      \"alternatePANCoordinator\": false,\n      \"deviceType\": false,\n      \"powerSourceMains\": false,\n      \"receiveWhenIdle\": false,\n      \"security\": false,\n      \"allocateAddress\": true\n    }\n  }\n}\n```",

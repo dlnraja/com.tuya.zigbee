@@ -1,4 +1,6 @@
 'use strict';
+const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
@@ -53,7 +55,7 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
         .registerRunListener(async (args) => {
           if (!args.device) return false;
           const dim = args.device.getCapabilityValue('dim') || 0;
-          return (dim * 100) > args.level;
+return safeMultiply((dim, 100)) > args.level;
         });
       this.log('[FLOW] ✅ Registered: dimmer_dual_channel_dim_above');
     } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
@@ -100,7 +102,7 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
       (() => { try { return this.homey.flow.getActionCard('dimmer_dual_channel_set_dim'); } catch(e) { return null; } })()
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('dim', args.level / 100);
+          await args.device.triggerCapabilityListener('dim', safeParse(args.level, 100));
           return true;
         });
       this.log('[FLOW] ✅ Registered: dimmer_dual_channel_set_dim');

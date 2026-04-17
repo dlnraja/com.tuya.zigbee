@@ -28,12 +28,12 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_tz3218_awarhusb",
-      "_tz3218_t9ynfz",
-      "_tz3218_t9ynfz4x",
-      "_tze200_rhgsbacq",
-      "_tze284_0wfzacel",
-      "_tze284_zy6wjm01"
+      "_TZ3218_AWARHUSB",
+      "_TZ3218_T9YNFZ",
+      "_TZ3218_T9YNFZ4X",
+      "_TZE200_RHGSBACQ",
+      "_TZE284_0WFZACEL",
+      "_TZE284_ZY6WJM01"
     ],
     "endpoints": {
       "1": {
@@ -52,9 +52,7 @@
     },
     "productId": [
       "TS0601",
-      "TS0601_MMWAVE",
-      "ts0601",
-      "ts0601_mmwave"
+      "TS0601_MMWAVE"
     ]
   },
   "settings": [

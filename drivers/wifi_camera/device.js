@@ -1,4 +1,5 @@
 'use strict';
+const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 // v5.12.8: WiFi Camera Device - Tuya IPC with local control + RTSP/snapshot streaming
 // Stream methods: Cloud RTSP (Tuya IoT API), Direct LAN RTSP, Snapshot-only
 // Homey Pro v12.12.0+ auto-converts RTSP to WebRTC via built-in proxy
@@ -198,7 +199,7 @@ class WiFiCameraDevice extends Homey.Device {
       if (s.stream_method === 'lan_rtsp' && s.rtsp_url) {
         // Security: validate RTSP URL protocol
         if (!/^rtsps?:\/\//i.test(s.rtsp_url)) {
-          this.error('[WIFI-CAM] Invalid RTSP URL - must start with rtsp:// or rtsps://');
+          this.error('[WIFI-CAM] Invalid RTSP URL - must start with rtsp:// or rtsps:
           return;
         }
         // Direct LAN RTSP
