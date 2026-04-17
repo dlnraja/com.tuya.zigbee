@@ -16,7 +16,7 @@
       "user": "dlnraja",
       "date": "2026-02-18T13:04:32Z",
       "fps": [],
-      "excerpt": "Hi! 👋\n\nThis device is **already supported** in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) (Universal Tuya Zigbee fork) — **v5.11.14** with 138 drivers and 5,579+ fingerprints.\n\n**Install the latest test version:**\nhttps://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\n**Community forum for support:**\nhttps://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352\n\nAfter installing, delete and re-pair your device. If it still doesn't work, please share a **diagnostic report ID** (device Settings > Create diagnostic report) and a **Homey Developer Tools interview** (https://tools.developer.homey.app)."
+      "excerpt": "Hi! 👋\n\nThis device is **already supported** in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) (Universal Tuya Zigbee fork) — **v5.11.14** with 138 drivers and 5,579+ fingerprints.\n\n**Install the latest test version:**\nhttps:
     },
     {
       "user": "dlnraja",
@@ -24,13 +24,13 @@
       "fps": [
         "_TZE284_81yrt3lo"
       ],
-      "excerpt": "<!-- tuya-triage-bot -->\nHi! This device is **already supported** in the [Universal Tuya Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee) v5.11.13 (102 drivers, 29000+ fingerprints).\n\n- `_TZE284_81yrt3lo` -> **plug_energy_monitor** driver\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\nAfter installing, delete and re-pair your device. If issues persist, share a diagnostic report ID on the [test forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352)."
+      "excerpt": "<!-- tuya-triage-bot -->\nHi! This device is **already supported** in the [Universal Tuya Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee) v5.11.13 (102 drivers, 29000+ fingerprints).\n\n- `_TZE284_81yrt3lo` -> **plug_energy_monitor** driver\n\n**Install:** https:
     },
     {
       "user": "dlnraja",
       "date": "2026-03-02T03:30:38Z",
       "fps": [],
-      "excerpt": "MatSee Plus PJ-1203A energy monitors are typically TS011F devices. These are supported in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) v5.11 — plug_energy_monitor driver. Please provide the exact Zigbee fingerprint (manufacturerName) from a device interview at https://tools.developer.homey.app. Install: https://homey.app/a/com.dlnraja.tuya.zigbee/test/"
+      "excerpt": "MatSee Plus PJ-1203A energy monitors are typically TS011F devices. These are supported in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) v5.11 — plug_energy_monitor driver. Please provide the exact Zigbee fingerprint (manufacturerName) from a device interview at https:
     }
   ],
   "aiAnalysis": "```json\n{\n  \"manufacturerName\": \"_TZE284_81yrt3lo\",\n  \"productId\": \"TS0601\",\n  \"DPs\": {\n    \"endpoints\": [\n      {\n        \"endpointId\": 1,\n        \"inputClusters\": [4, 5, 61184, 0, 60672],\n        \"outputClusters\": [25, 10]\n      },\n      {\n        \"endpointId\": 242,\n        \"inputClusters\": [],\n        \"outputClusters\": [33]\n      }\n    ]\n  },\n  \"capabilities\": {\n    \"alternatePANCoordinator\": false,\n    \"deviceType\": true,\n    \"powerSourceMains\": true,\n    \"receiveWhenIdle\": true,\n    \"security\": false,\n    \"allocateAddress\": true\n  },\n  \"errors\": null,\n  \"deviceType\": \"router\",\n  \"deviceName\": \"MatSee Plus\",\n  \"deviceModel\": \"PJ-1203A\",\n  \"deviceDescription\": \"Electricity Energy Monitor\",\n  \"linkToDeviceImage\": \"https://www.url-to-images.com\"\n}\n```",

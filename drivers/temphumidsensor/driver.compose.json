@@ -21,7 +21,9 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_jnhu1llv"
+      "_TZ3000_JNHU1LLV",
+      "_TZ3000_tzvbimpq",
+      "_TZB000_yqjaollc"
     ],
     "productId": [
       "CK-TLSR8656-SS5-01(7014)",
@@ -29,13 +31,7 @@
       "SNTZ003",
       "TS0201",
       "TY0201",
-      "ZG-227Z",
-      "ck-tlsr8656-ss5-01(7014)",
-      "rh3052",
-      "sntz003",
-      "ts0201",
-      "ty0201",
-      "zg-227z"
+      "ZG-227Z"
     ],
     "endpoints": {
       "1": {

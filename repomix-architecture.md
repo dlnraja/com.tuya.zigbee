@@ -91948,7 +91948,7 @@ const crypto = require('crypto');
 
 const DANGEROUS_PATTERNS = [
   /[\x00-\x08\x0B\x0C\x0E-\x1F]/g,  // Control characters
-  /\.\.\//g,                            // Path traversal
+  /\.\.\//g,                            
   /[<>'"`;|&$(){}]/g,                   // Shell/HTML injection
   /__proto__|constructor|prototype/gi,   // Prototype pollution
   /javascript:/gi,                       // XSS vectors
@@ -100720,7 +100720,7 @@ class TuyaSpecificCluster extends Cluster {
 
       // ═══════════════════════════════════════════════════════════════════
       // v5.5.89: CRITICAL COMMANDS FOR TZE284 DEVICES
-      // Source: https://github.com/Koenkk/zigbee2mqtt/issues/26078
+      // Source: https:
       // These commands trigger the device to start reporting data!
       // ═══════════════════════════════════════════════════════════════════
 
@@ -104693,7 +104693,7 @@ module.exports = SENSOR_CONFIGS;
 
 // ═══════════════════════════════════════════════════════════════════════════
 // AUTO-GENERATED FROM ZIGBEE2MQTT (2025-11-29)
-// Source: https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts
+// Source: https:
 // Total: 1347 manufacturer IDs
 // ═══════════════════════════════════════════════════════════════════════════
 
@@ -115584,7 +115584,7 @@ class TuyaUnifiedDevice extends BaseUnifiedDevice {
 
     // ═══════════════════════════════════════════════════════════════════════
     // v5.5.93: Z2M MAGIC PACKET - Read basic cluster FIRST to get device info
-    // Source: https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/lib/tuya.ts
+    // Source: https:
     // configureMagicPacket reads basic cluster attributes before anything else
     // ═══════════════════════════════════════════════════════════════════════
     let modelId = '';
@@ -115623,7 +115623,7 @@ class TuyaUnifiedDevice extends BaseUnifiedDevice {
 
     // ═══════════════════════════════════════════════════════════════════════
     // v5.5.93: Z2M dataQuery - Send immediately to start device reporting
-    // Source: https://github.com/Koenkk/zigbee2mqtt/issues/26078
+    // Source: https:
     // ALL Tuya TS0601 devices need this to start reporting data!
     // ═══════════════════════════════════════════════════════════════════════
     await this._sendZ2MMagicPacket(zclNode);
@@ -115795,7 +115795,7 @@ class TuyaUnifiedDevice extends BaseUnifiedDevice {
 
     // ═══════════════════════════════════════════════════════════════════════
     // PRIORITY 0: LOW-LEVEL NODE handleFrame (CRITICAL FOR TS0601)
-    // Reference: https://apps.developer.homey.app/wireless/zigbee#3-zigbee-api
+    // Reference: https:
     // This is the ONLY reliable way to receive frames from clusters not
     // declared by the device during interview (like 0xEF00 on TS0601)
     // ═══════════════════════════════════════════════════════════════════════
@@ -115807,7 +115807,7 @@ class TuyaUnifiedDevice extends BaseUnifiedDevice {
 
     // ═══════════════════════════════════════════════════════════════════════
     // PRIORITY 1: BoundCluster (Official Athom SDK pattern)
-    // Reference: https://athombv.github.io/node-zigbee-clusters/
+    // Reference: https:
     // ═══════════════════════════════════════════════════════════════════════
     try {
       await this._setupTuyaBoundCluster(endpoint);
@@ -119829,7 +119829,7 @@ const VALIDATION = {
 };
 
 // v5.5.848: SDK3 COMPLIANCE CONSTANTS - Per Homey Developer Documentation
-// Source: https://apps.developer.homey.app/wireless/zigbee
+// Source: https:
 const SDK3_COMPLIANCE = {
   // Don't communicate with nodes in onInit/onNodeInit - Zigbee may not be ready
   INIT_COMMUNICATION_DELAY_MS: 2000,
@@ -121336,7 +121336,7 @@ class UnifiedSensorBase extends BaseUnifiedDevice {
 
     // ═══════════════════════════════════════════════════════════════════════
     // v5.5.807: SDK3 COMPLIANT IAS ZONE ENROLLMENT
-    // Per Homey SDK3 docs: https://apps.developer.homey.app/wireless/zigbee
+    // Per Homey SDK3 docs: https:
     // - Homey v8.1.1+ auto-writes CIE address during pairing (step 2 of commissioning)
     // - Apps must handle Zone Enroll Request and respond with Zone Enroll Response
     // - Use method assignment (onZoneEnrollRequest = fn), not event listener
@@ -140868,8 +140868,8 @@ module.exports = RobustInitializer;
  * Combine TOUT intelligemment pour générer capabilities Homey optimales
  */
 
-// const TuyaDataPointParser = require('./TuyaDataPointParser'); // Use TuyaDPParser instead
-// const EnergyCapabilityDetector = require('./EnergyCapabilityDetector'); // Integrated in main detector
+// const TuyaDataPointParser = require('./TuyaDataPointParser'); 
+// const EnergyCapabilityDetector = require('./EnergyCapabilityDetector'); 
 
 // Importer les mappings du projet
 let TuyaUniversalMapping;
@@ -151829,7 +151829,7 @@ class PowerSourceDetector {
       'usb_outlet',
 
       // Moteurs (généralement secteur, parfois batterie rechargeable)
-      // 'curtain_motor', // AMBIGU - peut être batterie rechargeable
+      // 'curtain_motor', 
 
       // HVAC
       'hvac_',
@@ -172678,7 +172678,7 @@ const DEVICE_FINGERPRINTS = {
 
   // ═══════════════════════════════════════════════════════════════════════════
   // AUTO-GENERATED FROM ZIGBEE2MQTT (2025-11-29)
-  // Source: https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts
+  // Source: https:
   // Total: 1347 manufacturer IDs
   // ═══════════════════════════════════════════════════════════════════════════
 
@@ -189929,7 +189929,7 @@ class UniversalTimeSync {
     this.options = {
       syncInterval: options.syncInterval || DEFAULT_SYNC_INTERVAL,
       // v5.5.171: CRITICAL FIX - Default to Tuya/Zigbee epoch (2000), NOT Unix epoch!
-      // Source: https://github.com/Koenkk/zigbee2mqtt/issues/30054
+      // Source: https:
       // Most Tuya devices expect timestamps since 2000-01-01, not 1970-01-01
       useUnixEpoch: options.useUnixEpoch === true, // Default: Zigbee/Tuya epoch (2000)
       verbose: options.verbose || false,
@@ -208855,7 +208855,7 @@ const ClusterMap = require('./zigbee-cluster-map');
 // ============================================
 
 // Au lieu de:
-// this.registerCapability('measure_battery', 'powerConfiguration'); // [ERROR] NaN error
+// this.registerCapability('measure_battery', 'powerConfiguration'); 
 
 // Utilisez:
 this.registerCapability('measure_battery', ClusterMap.POWER_CONFIGURATION); // [OK] = 1
@@ -208963,7 +208963,7 @@ this.registerCapability('custom_tuya_dp', ClusterMap.get('TUYA_PROPRIETARY'));
 const CLUSTER = require('zigbee-clusters');
 
 // Au lieu de:
-// this.registerCapability('onoff', CLUSTER.ON_OFF.ID); // Peut causer NaN
+// this.registerCapability('onoff', CLUSTER.ON_OFF.ID); 
 
 // Utilisez:
 this.registerCapability('onoff', ClusterMap.resolve(CLUSTER.ON_OFF)); // [OK] Safe
@@ -209019,12 +209019,12 @@ function debugClusters() {
 // ============================================
 
 // AVANT (v3.0.25 et antérieur):
-// this.registerCapability('measure_battery', 'powerConfiguration'); // [ERROR] NaN
-// this.registerCapability('measure_temperature', 'temperatureMeasurement'); // [ERROR] NaN
+// this.registerCapability('measure_battery', 'powerConfiguration'); 
+// this.registerCapability('measure_temperature', 'temperatureMeasurement'); 
 
 // APRÈS (v3.0.26+):
-// this.registerCapability('measure_battery', 1); // [OK] Fonctionne mais pas flexible
-// this.registerCapability('measure_temperature', 1026); // [OK] Fonctionne mais pas flexible
+// this.registerCapability('measure_battery', 1); 
+// this.registerCapability('measure_temperature', 1026); 
 
 // MAINTENANT (v3.0.30+):
 this.registerCapability('measure_battery', ClusterMap.POWER_CONFIGURATION); // [OK] Meilleur
@@ -300498,7 +300498,7 @@ class ManufacturerVariationManager {
 
     // ═══════════════════════════════════════════════════════════════
     // LIDL SILVERCREST - Reports energy in Wh instead of kWh
-    // Source: https://github.com/Koenkk/zigbee2mqtt/issues/14356
+    // Source: https:
     // ManufacturerNames: _TZ3000_ynmowqk2, _TZ3000_kdi2o9m6, _TZ3000_g5xawfcq
     // ═══════════════════════════════════════════════════════════════
     const LIDL_SILVERCREST_IDS = [
@@ -300513,7 +300513,7 @@ class ManufacturerVariationManager {
 
     // ═══════════════════════════════════════════════════════════════
     // NOUS A1Z - Standard Tuya scaling
-    // Source: https://www.zigbee2mqtt.io/devices/A1Z.html
+    // Source: https:
     // ═══════════════════════════════════════════════════════════════
     const NOUS_IDS = [
       '_TZ3000_cphmq0q7', '_TZ3000_ew3ldmgx', '_TZ3000_dpo1ysak',
@@ -300527,7 +300527,7 @@ class ManufacturerVariationManager {
 
     // ═══════════════════════════════════════════════════════════════
     // BLITZWOLF BW-SHP13 - Some versions have broken reporting
-    // Source: https://www.zigbee2mqtt.io/devices/TS011F_plug_1.html
+    // Source: https:
     // Needs polling instead of automatic reporting
     // ═══════════════════════════════════════════════════════════════
     const BLITZWOLF_IDS = [
@@ -300583,7 +300583,7 @@ class ManufacturerVariationManager {
 
     // ═══════════════════════════════════════════════════════════════
     // ZEMISMART - High power plugs (30A) with different scaling
-    // Source: https://github.com/Koenkk/zigbee2mqtt/issues/12437
+    // Source: https:
     // ═══════════════════════════════════════════════════════════════
     const ZEMISMART_IDS = [
       '_TZ3000_f1bapcit', '_TZ3000_1h2x4akh', '_TZ3000_okaz9tjs'
@@ -300893,7 +300893,7 @@ const PRESENCE_SENSOR_DPS = {
   },
 
   // v5.5.821: HOBEIAN 10G Multi-sensor from PR #1306
-  // Source: https://github.com/kkossev/Hubitat/blob/deviceProfileV4/Drivers/Tuya%20Zigbee%20mmWave%20Sensor/deviceProfilesV4_mmWave.json
+  // Source: https:
   HOBEIAN_10G: {
     1: { capability: 'alarm_motion', converter: 'boolean', type: 'BOOL', name: 'presence' },
     9: { capability: null, converter: 'raw', type: 'VALUE', name: 'sensitivity', min: 1, max: 9 },
@@ -303573,7 +303573,7 @@ class TuyaEF00Manager extends EventEmitter {
     const dpMappings = {
       // Soil Sensor DPs
       1: 'measure_temperature',   // Temperature (°C * 10) - most common
-      // 1: 'alarm_motion',       // Motion (bool) - for PIR sensors - handled by driver override
+      // 1: 'alarm_motion',       
       2: 'measure_humidity',       // Humidity (% * 10) OR sensitivity for PIR
       3: 'measure_temperature',    // Soil temperature (°C * 10)
       5: 'measure_humidity',       // Soil moisture (% * 10) - SOIL SENSOR CRITICAL!
@@ -304523,7 +304523,7 @@ const UNIVERSAL_DP_PATTERNS = {
 
   // ═══════════════════════════════════════════════════════════════════════════════════════
   // DP101-DP109 - RADAR / PRESENCE SENSOR (ZG-204ZM, mmWave, etc.)
-  // Source: https://github.com/Koenkk/zigbee2mqtt/issues/21919
+  // Source: https:
   // ═══════════════════════════════════════════════════════════════════════════════════════
   101: {
     capability: 'alarm_motion', transform: v => v > 0, pattern: 'motion-state',

@@ -37,7 +37,6 @@ concurrency:
 env:
   NODE_VERSION: "20"
   APP_ID: "com.dlnraja.tuya.zigbee"
-  SHADOW_MODE: "true"
 
 jobs:
   validate:
@@ -89,6 +88,20 @@ jobs:
             cat SUPERIOR_AUDIT_REPORT.md >> $GITHUB_STEP_SUMMARY
           fi
       
+      - name: 🛡️ STRING INTEGRITY & INVISIBLE CHARACTER AUDIT
+        run: node scripts/maintenance/string-integrity-gate.js
+      
+      - name: 🌌 ZERO DEFECT ARCHITECT AUDIT
+        run: |
+          node scripts/maintenance/zero-defect-architect-audit.js
+          if [ -f docs/reports/ZERO_DEFECT_AUDIT.json ]; then
+            echo "### 🛡️ Zero Defect Audit Summary" >> $GITHUB_STEP_SUMMARY
+            node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json'); console.log('| Metric | Count | \n| --- | --- | \n| Drivers Checked | ' + r.driversChecked + ' | \n| NaN Safety Warnings | ' + r.naNSafetyCheck.length + ' | \n| ID Collisions | ' + r.collisions.length + ' | \n| SDK Deprecations | ' + r.sdkDeprecations.length + ' | \n| Button Logic Issues | ' + r.buttonLogicFailures.length + ' |');" >> $GITHUB_STEP_SUMMARY
+            
+            # Fail if there are critical violations
+            node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json'); if(r.naNSafetyCheck.length > 0) { console.error('FAILED: ' + r.naNSafetyCheck.length + ' NaN safety warnings detected!'); process.exit(1); }"
+          fi
+
       - name: Homey Validate (Recursive Auto-Fix)
         run: node scripts/maintenance/recursive-validator.js
 
@@ -147,10 +160,13 @@ jobs:
             git push origin HEAD:${{ github.ref_name }}
           fi
 
-      - name: 📤 Publish (Draft)
+      - name: 🏗️ Pre-build (Fix Bug #366)
+        run: npm ci && npx homey app build
+
+      - name: 📤 Silent Publish (Shadow Mode)
         id: publish
         if: env.NEW_VERSION != ''
-        uses: athombv/github-action-homey-app-publish@v1
+        uses: athombv/github-action-homey-app-publish@master
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 

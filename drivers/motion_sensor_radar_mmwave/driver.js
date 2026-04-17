@@ -1,4 +1,5 @@
 'use strict';
+const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
@@ -113,8 +114,8 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
           if (!args.device) return false;
           try {
             if (args.device._tuyaEF00Manager) {
-              await args.device._tuyaEF00Manager.sendDatapoint(3, Math.round((args.min || 0) * 100), 'value');
-              await args.device._tuyaEF00Manager.sendDatapoint(4, Math.round((args.max || 6) * 100), 'value');
+              await safeMultiply(args.device._tuyaEF00Manager.sendDatapoint(3, Math.round((args.min || 0), 100)), 'value');
+              await safeMultiply(args.device._tuyaEF00Manager.sendDatapoint(4, Math.round((args.max || 6), 100)), 'value');
             }
             return true;
           } catch (err) { return true; }

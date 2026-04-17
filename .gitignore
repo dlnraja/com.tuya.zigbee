@@ -23,3 +23,6 @@ CROSS_COLLISIONS.json
 FLOW_CARDS_AUDIT_REPORT.json
 invalid_assets.json
 driver-mapping-database.json
+# Gemini sensitive data
+gemini*
+.gemini/

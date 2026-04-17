@@ -39,11 +39,11 @@ function buildSupportedMsg(found){
     return '`'+m+'` → **'+drivers[0]+'**';
   });
   const fpList=parts.length===1?parts[0]:parts.join(', ');
-  return `I see these fingerprints are mapped in the Universal Tuya Zigbee app(https://github.com/dlnraja/com.tuya.zigbee) v${VER}: ${fpList}.\n\nGrab it here: https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\nRemove and re-pair after installing. If something's off, drop a diagnostic report ID on the [forum thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352).`;
+  return `I see these fingerprints are mapped in the Universal Tuya Zigbee app(https://github.com/dlnraja/com.tuya.zigbee) v${VER}: ${fpList}.\n\nGrab it here: https:
 }
 
 function buildUnsupportedMsg(missing){
-  return `\`${missing.join('`, `')}\` ${missing.length===1?'isn\'t':'aren\'t'} in the database yet — logged for the next release.\n\nA [device interview](https://tools.developer.homey.app) would help speed things up. Z2M/ZHA pages or [Blakadder](https://zigbee.blakadder.com) links are useful too.\n\nProgress updates on the [forum thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352).`;
+  return `\`${missing.join('`, `')}\` ${missing.length===1?'isn\'t':'aren\'t'} in the database yet — logged for the next release.\n\nA [device interview](https://tools.developer.homey.app) would help speed things up. Z2M/ZHA pages or [Blakadder](https:
 }
 
 function buildPRMsg(found,missing){

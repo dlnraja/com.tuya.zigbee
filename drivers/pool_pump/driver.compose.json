@@ -20,15 +20,13 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "_tze200_ruavtjnq",
-      "_tze204_k6jhsr0q",
-      "_tze204_ruavtjnq"
+      "_TZE200_RUAVTJNQ",
+      "_TZE204_K6JHSR0Q",
+      "_TZE204_RUAVTJNQ"
     ],
     "productId": [
       "TS0601",
-      "TS0601_POOL",
-      "ts0601",
-      "ts0601_pool"
+      "TS0601_POOL"
     ],
     "endpoints": {
       "1": {

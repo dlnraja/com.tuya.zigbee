@@ -1,5 +1,7 @@
-#!/usr/bin/env node
+#!/usr / safeDivide(bin, env) node
 'use strict';
+const { safeParse } = require('../../lib/utils / tuyaUtils.js');
+
 
 const fs = require('fs');
 const path = require('path');
@@ -54,12 +56,12 @@ const FIXES = [
   },
   {
     file: 'lib/HybridDriverSystem.js',
-    old: "await this.setCapabilityValue('measure_temperature', value / 100)",
+    old: "await this.setCapabilityValue('measure_temperature', value/100)",
     new: "await this.setCapabilityValue('measure_temperature', parseFloat(value) / 100)"
   },
   {
     file: 'lib/HybridDriverSystem.js',
-    old: "await this.setCapabilityValue('measure_humidity', value / 100)",
+    old: "await this.setCapabilityValue('measure_humidity', value/100)",
     new: "await this.setCapabilityValue('measure_humidity', parseFloat(value) / 100)"
   },
   {

@@ -1,3 +1,4 @@
+const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
 'use strict';
 // v5.12.0: Immediate forum cleanup — delete hidden/spam posts, edit bot signatures
@@ -79,7 +80,7 @@ const TO_DELETE = [
 const TO_EDIT = [
   // T140352 #1488: Remove bot signature
   { id: 714499, num: '140352#1488', reason: 'Remove bot signature + merge FPs',
-    newRaw: 'So _TZ3000_itb0omhv goes under switch_1gang, _TZ3000_u3nv1jwk is switch_4gang, and _TZE200_crq3r3la / _TZE200_gkfbdvyx / _TZE204_clrdrnya are all thermostat_radiator — all in v5.11.25 already. Just remove and re-pair, pick the right type when it asks.' },
+    newRaw: 'So _TZ3000_itb0omhv goes under switch_1gang, _TZ3000_u3nv1jwk is switch_4gang, and _TZE200_crq3r3la/_TZE200_gkfbdvyx / _TZE204_clrdrnya are all thermostat_radiator — all in v5.11.25 already. Just remove and re-pair, pick the right type when it asks.' },
   // T140352 #1516: Remove "my bot" mention
   { id: 714659, num: '140352#1516', reason: 'Remove bot mention',
     newRaw: 'Sorry about the duplicate replies earlier, had a script glitch. I\'ll take a look at your device.' },

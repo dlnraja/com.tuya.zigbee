@@ -1,8 +1,8 @@
 'use strict';
 
-const { Driver } = require('homey');
+const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
 
-class DinRailMeterDriver extends Driver {
+class DinRailMeterDriver extends BaseZigBeeDriver {
   /**
    * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
    * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
@@ -25,13 +25,13 @@ class DinRailMeterDriver extends Driver {
     
     // Register triggers from driver.flow.compose.json
     try {
-      this._powerChangedTrigger = this.homey.flow.getTriggerCard('din_rail_meter_power_changed');
-      this._voltageChangedTrigger = this.homey.flow.getTriggerCard('din_rail_meter_voltage_changed');
-      this._currentChangedTrigger = this.homey.flow.getTriggerCard('din_rail_meter_current_changed');
-      this._energyChangedTrigger = this.homey.flow.getTriggerCard('din_rail_meter_energy_changed');
+      this._powerChangedTrigger = this._getFlowCard('din_rail_meter_power_changed', 'trigger');
+      this._voltageChangedTrigger = this._getFlowCard('din_rail_meter_voltage_changed', 'trigger');
+      this._currentChangedTrigger = this._getFlowCard('din_rail_meter_current_changed', 'trigger');
+      this._energyChangedTrigger = this._getFlowCard('din_rail_meter_energy_changed', 'trigger');
       
       // Register condition
-      this._powerAboveCondition = this.homey.flow.getConditionCard('din_rail_meter_power_above');
+      this._powerAboveCondition = this._getFlowCard('din_rail_meter_power_above', 'condition');
       if (this._powerAboveCondition) {
         this._powerAboveCondition.registerRunListener(async (args, state) => {
           if (args.device && typeof args.device.getCapabilityValue === 'function') {

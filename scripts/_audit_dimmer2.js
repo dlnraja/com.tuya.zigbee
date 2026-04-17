@@ -1,3 +1,4 @@
+const { CLUSTERS } = require('../lib/constants/ZigbeeConstants.js');
 const fs = require('fs');
 const path = require('path');
 const d = 'drivers';
@@ -12,7 +13,7 @@ dimmers.forEach(dr => {
   const hasLevel = c.includes('genLevelCtrl') || c.includes('levelControl');
   const hasDim = c.includes("'dim'") || c.includes('"dim"');
   const hasDP = c.match(/get dpMappings/);
-  const hasTuya = c.includes('EF00') || c.includes('0xEF00') || c.includes('tuya');
+  const hasTuya = c.includes('EF00') || c.includes(CLUSTERS.TUYA_EF00) || c.includes('tuya');
   console.log('[DIMMER] ' + dr + ': ZCL-level=' + hasLevel + ' dim-cap=' + hasDim + ' dpMappings=' + !!hasDP + ' tuya=' + hasTuya);
   
   // Check for duplicate DPs

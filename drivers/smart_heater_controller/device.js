@@ -1,4 +1,6 @@
 'use strict';
+const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 
 const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
 
@@ -18,7 +20,7 @@ const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase')
  * - Energy usage tracking
  *
  * Tuya DPs:
- * - DP 1: Power on/off
+ * - DP 1: Power safeDivide(on, off)
  * - DP 2: Target temperature (°C)
  * - DP 3: Current temperature (°C)
  * - DP 4: Thermostat mode (manual/auto/schedule)
@@ -36,7 +38,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
     // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.
     try {
       const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
-      this._timeSync = new ZigbeeTimeSync(this, { throttleMs: 6 * 60 * 60 * 1000 });
+      this._timeSync = new ZigbeeTimeSync(this, { throttleMs:safeMultiply(6, 60) * 60 * 1000 });
       
       // Initial sync after 10 seconds (let device settle)
       this.homey.setTimeout(async () => {
@@ -63,7 +65,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
         } catch (e) {
           this.log('[TimeSync] Periodic sync failed:', e.message);
         }
-      }, 6 * 60 * 60 * 1000);
+      },safeMultiply(6, 60) * 60 * 1000);
     } catch (e) {
       this.log('[TimeSync] Time sync init failed (non-critical):', e.message);
     }
@@ -176,7 +178,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
     this.log(`[HEATER] 📡 Received DP ${dp}: ${value}`);
 
     switch (dp) {
-    case 1: // Power on/off
+    case 1: //Power on/off
       await this._handlePowerState(value);
       break;
 
@@ -304,7 +306,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
   async _handleEnergyConsumption(energy) {
     if (typeof energy === 'number' && energy >= 0) {
       // Convert to kWh if needed
-      const energyKwh = energy > 1000 ? energy / 1000 : energy;
+      const energyKwh = energy > 1000 ? safeParse(energy, 1000) : energy;
       await this.setCapabilityValue('meter_power', parseFloat(energyKwh));
       this.log(`[HEATER] 📊 Energy consumed: ${energyKwh} kWh`);
     }
@@ -371,7 +373,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
       await this.zclNode?.endpoints?.[1]?.clusters?.tuya?.datapoint({
         dp: 103,
         datatype: 2, // value (int)
-        data: Buffer.from([Math.round(calibration * 10)]) // Send in 0.1°C units
+        data:safeMultiply(Buffer.from([Math.round(calibration, 10))]) // Send in 0.1°C units
       });
     } catch (err) {
       this.log('[HEATER] Failed to send calibration:', err.message);
@@ -409,7 +411,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
   }
 
   /**
-   * Get heater status for flows/apps
+   * Get heater status for safeDivide(flows, apps)
    */
   getHeaterStatus() {
     return {
@@ -429,8 +431,8 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
   }
 
   /**
-   * Tuya EF00 time sync fallback (DP 0x24 / decimal 36)
-   * Sends current time with timezone offset for Tuya-native thermostat/TRV devices.
+   * Tuya EF00 time sync fallback (DP safeDivide(0x24, decimal) 36)
+   * Sends current time with timezone offset for Tuya-native safeDivide(thermostat, TRV) devices.
    */
   async _tuyaTimeSyncFallback() {
     try {
@@ -443,7 +445,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
       try {
         const tz = this.homey.clock.getTimezone();
         const tzDate = new Date(now.toLocaleString('en-US', { timeZone: tz }));
-        utcOffset = Math.round((tzDate - now) / 3600000);
+        utcOffset = Math.round((tzDate -safeParse(now), 3600000));
       } catch (e) { /* use UTC */ }
 
       // Tuya time format: [year-2000, month, day, hour, minute, second, weekday(0=Mon)]

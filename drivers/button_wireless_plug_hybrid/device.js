@@ -1,4 +1,5 @@
 'use strict';
+const { safeDivide, safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const { getDeviceConfig, transformDpValue, ENERGY_CONFIGS } = require('../../lib/configs/IntelligentDeviceConfig');
@@ -171,9 +172,9 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
     const currentScale = parseFloat(this.getSetting?.('current_scale')) || 1;
     
     return {
-      power: baseDivisors.power / powerScale,
-      voltage: baseDivisors.voltage / voltageScale,
-      current: baseDivisors.current / currentScale
+      power: safeDivide(baseDivisors.power, powerScale),
+      voltage: safeDivide(baseDivisors.voltage, voltageScale),
+      current: safeDivide(baseDivisors.current, currentScale)
     };
   }
 
@@ -356,7 +357,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
         if (zclAttrs.power) {
           const pDiv = this.zclEnergyDivisors.power;
           elecCluster.on('attr.activePower', (value) => {
-            const power = value / pDiv;
+            const power = safeDivide(value, pDiv);
             this.log(`[ENERGY-ZCL] Power: ${power}W (raw=${value} div=${pDiv})`);
             this.setCapabilityValue('measure_power', parseFloat(Math.max(0, power))).catch(() => { });
           });
@@ -366,7 +367,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
         if (zclAttrs.voltage) {
           const vDiv = this.zclEnergyDivisors.voltage;
           elecCluster.on('attr.rmsVoltage', (value) => {
-            const voltage = value / vDiv;
+            const voltage = safeDivide(value, vDiv);
             this.log(`[ENERGY-ZCL] Voltage: ${voltage}V (raw=${value} div=${vDiv})`);
             this.setCapabilityValue('measure_voltage', parseFloat(voltage)).catch(() => { });
           });
@@ -376,7 +377,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
         if (zclAttrs.current) {
           const cDiv = this.zclEnergyDivisors.current;
           elecCluster.on('attr.rmsCurrent', (value) => {
-            const current = value / cDiv;
+            const current = safeDivide(value, cDiv);
             this.log(`[ENERGY-ZCL] Current: ${current}A (raw=${value} div=${cDiv})`);
             this.setCapabilityValue('measure_current', parseFloat(current)).catch(() => { });
           });
@@ -409,7 +410,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
       const parseE = (v) => {
         const raw = typeof v === 'object' ? v[0] || 0 : v;
         const eScale = parseFloat(this.getSetting?.('meter_power_scale')) || 1;
-        return (raw / baseEDiv) * eScale;
+        return (safeDivide(raw, baseEDiv)) * eScale;
       };
       if (mc && zclAttrs.energy) {
         if (mc.on) {

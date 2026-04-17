@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 'use strict';
+
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
+
 /**
  * External Sources Scanner - Comprehensive scan of ALL Zigbee community sources
  * - Z2M converters (full device DB) + issues + PRs
@@ -322,7 +325,7 @@ function scanLocalDrivers(){
       if(fs.existsSync(df)){
         const src=fs.readFileSync(df,'utf8');
         dps=extractDPs(src);
-        hasEF00=/0xEF00|61184|EF00|TuyaSpecific/i.test(src);
+        hasEF00=/CLUSTERS.TUYA_EF00|CLUSTERS.TUYA_EF00|EF00|TuyaSpecific/i.test(src);
         hasDPMappings=/dpMappings|dp_mappings|dataPoints/i.test(src);
       }
       // Emit one entry per mfr×pid pair — same mfr with different pids = different device!

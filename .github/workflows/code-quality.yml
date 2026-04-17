@@ -35,6 +35,7 @@ env:
 jobs:
   ai:
     name: AI Intelligence Check
+    if: github.actor != 'github-actions[bot]' && github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -43,6 +44,7 @@ jobs:
 
   quality:
     name: 🔧 Quality Checks
+    if: github.actor != 'github-actions[bot]' && github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -226,3 +228,13 @@ jobs:
       - name: 👮 Enforce Windsurf Rules
         run: node .github/scripts/enforce-rules.js
 
+      - name: 🌌 ZERO DEFECT ARCHITECT AUDIT
+        run: |
+          node scripts/maintenance/zero-defect-architect-audit.js
+          if [ -f docs/reports/ZERO_DEFECT_AUDIT.json ]; then
+            echo "### 🌌 Zero Defect Architect Audit" >> $GITHUB_STEP_SUMMARY
+            node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json'); console.log('| Metric | Count |\n| --- | --- |\n| Drivers Checked | ' + r.driversChecked + ' |\n| NaN Safety Warnings | ' + r.naNSafetyCheck.length + ' |\n| ID Collisions | ' + r.collisions.length + ' |\n| SDK Deprecations | ' + r.sdkDeprecations.length + ' |\n| Button Logic Issues | ' + r.buttonLogicFailures.length + ' |');" >> $GITHUB_STEP_SUMMARY
+            
+            # Fail on NaN safety warnings or Logic failures
+            node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json'); if(r.naNSafetyCheck.length > 0 || r.buttonLogicFailures.length > 0) process.exit(1);"
+          fi

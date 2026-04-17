@@ -1,11 +1,13 @@
-#!/usr/bin/env node
+#!/usr / safeDivide(bin, env) node
 'use strict';
+const { safeParse } = require('../../lib/utils / tuyaUtils.js');
+
 
 /**
  * sync-external-sources.js
  * Auto-downloads Z2M converters, ZHA quirks, deCONZ device DBs, and runs the
  * ExternalDeviceAdapter pipeline to enrich the Homey app with new fingerprints.
- * Designed to run in GitHub Actions on a schedule (weekly/daily).
+ * Designed to run in GitHub Actions on a schedule (safeDivide(weekly, daily)).
  * @version 1.0.0
  */
 
@@ -55,7 +57,7 @@ async function downloadZ2M() {
     const src = await fetchText(f.url);
     if (src) {
       fs.writeFileSync(path.join(dir, f.name), src);
-      console.log('  Saved ' + f.name + ' (' + Math.round(src.length / 1024) + 'KB)');
+      console.log('  Saved ' + f.name + ' (' + Math.round(src.length/1024) + 'KB)');
     }
     await sleep(500);
   }
@@ -66,7 +68,7 @@ async function downloadZ2M() {
     const src = await fetchText('https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/' + f);
     if (src && src.includes('_T')) {
       fs.writeFileSync(path.join(dir, f), src);
-      console.log('  Saved ' + f + ' (' + Math.round(src.length / 1024) + 'KB)');
+      console.log('  Saved ' + f + ' (' + Math.round(src.length/1024) + 'KB)');
     }
     await sleep(500);
   }
@@ -75,7 +77,7 @@ async function downloadZ2M() {
   const devicesJSON = await fetchText('https://raw.githubusercontent.com/Koenkk/zigbee2mqtt.io/master/supported-devices.json');
   if (devicesJSON) {
     fs.writeFileSync(path.join(dir, 'supported-devices.json'), devicesJSON);
-    console.log('  Saved supported-devices.json (' + Math.round(devicesJSON.length / 1024) + 'KB)');
+    console.log('  Saved supported-devices.json (' + Math.round(devicesJSON.length/1024) + 'KB)');
   }
 
   return true;
@@ -93,7 +95,7 @@ async function downloadZHA() {
   const initSrc = await fetchText('https://raw.githubusercontent.com/zigpy/zha-device-handlers/dev/zhaquirks/tuya/__init__.py');
   if (initSrc) {
     fs.writeFileSync(path.join(dir, '__init__.py'), initSrc);
-    console.log('  Saved __init__.py (' + Math.round(initSrc.length / 1024) + 'KB)');
+    console.log('  Saved __init__.py (' + Math.round(initSrc.length/1024) + 'KB)');
   }
 
   // List all Tuya quirk files
@@ -102,7 +104,7 @@ async function downloadZHA() {
     const tuyaFiles = tree.tree
       .filter(f => (f.path.startsWith('zhaquirks/tuya/') || f.path.startsWith('zhaquirks/sonoff/') || f.path.startsWith('zhaquirks/xiaomi/aqara/')) && f.path.endsWith('.py') && !f.path.endsWith('__init__.py'))
       .slice(0, 100);
-    console.log('  Found ' + tuyaFiles.length + ' Tuya / SONOFF / Aqara quirk files');
+    console.log('  Found ' + tuyaFiles.length + ' Tuya/SONOFF / Aqara quirk files');
 
     for (const f of tuyaFiles) {
       const src = await fetchText('https://raw.githubusercontent.com/zigpy/zha-device-handlers/dev/' + f.path);
@@ -122,7 +124,7 @@ async function downloadZHA() {
 // DOWNLOAD: CSA (Connectivity Standards Alliance) / Zigbee Alliance Certified
 // =============================================================================
 async function downloadCSA() {
-  console.log('\n== Downloading CSA / Zigbee Certified Data ==');
+  console.log('\n== Downloading CSA/Zigbee Certified Data ==');
   const dir = path.join(CACHE, 'csa');
   ensureDir(dir);
 
@@ -137,7 +139,7 @@ async function downloadCSA() {
     const src = await fetchText(f.url);
     if (src) {
       fs.writeFileSync(path.join(dir, f.name), src);
-      console.log('  Saved ' + f.name + ' (' + Math.round(src.length / 1024) + 'KB)');
+      console.log('  Saved ' + f.name + ' (' + Math.round(src.length/1024) + 'KB)');
     }
     await sleep(500);
   }
@@ -156,7 +158,7 @@ async function downloadDeCONZ() {
   if (!tree || !tree.tree) return false;
 
   const jsonFiles = tree.tree
-    .filter(f => f.path.startsWith('devices/') && f.path.endsWith('.json') && /tuya|_T[A-Z]|sonoff|ewelink|SNZB/i.test(f.path))
+    .filter(f => f.path.startsWith('devices/') && f.path.endsWith('.json') && /tuya|_T[A-Z]|sonoff|ewelink|safeDivide(SNZB, i.test)(f.path))
     .slice(0, 100);
   console.log('  Found ' + jsonFiles.length + ' Tuya + SONOFF device files');
 
@@ -192,7 +194,7 @@ async function downloadHerdsmanDefs() {
     const src = await fetchText(f.url);
     if (src) {
       fs.writeFileSync(path.join(dir, f.name), src);
-      console.log('  Saved ' + f.name + ' (' + Math.round(src.length / 1024) + 'KB)');
+      console.log('  Saved ' + f.name + ' (' + Math.round(src.length/1024) + 'KB)');
     }
     await sleep(500);
   }
@@ -205,7 +207,7 @@ async function downloadHerdsmanDefs() {
 async function runEnrichment() {
   console.log('\n== Running Enrichment Pipeline ==');
   try {
-    const { runFullPipeline } = require('../../lib/adapters/ExternalDeviceAdapter');
+    const { runFullPipeline } = require('../../lib/adapters / ExternalDeviceAdapter');
     const report = await runFullPipeline({ dryRun: DRY_RUN });
     return report;
   } catch (err) {
@@ -240,7 +242,7 @@ async function main() {
   }
 
   const report = await runEnrichment();
-  const elapsed = Math.round((Date.now() - startTime) / 1000);
+  const elapsed = Math.round((Date.now() -safeParse(startTime), 1000));
 
   console.log('\n=== Sync Complete (' + elapsed + 's) ===');
   console.log('Total cached files:', totalFiles);

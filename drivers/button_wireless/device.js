@@ -1,4 +1,5 @@
 'use strict';
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
@@ -72,7 +73,7 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
         ]).catch(() => null);
         
         if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
-          const battery = Math.round(attrs.batteryPercentageRemaining / 2);
+          const battery = Math.round(safeParse(attrs.batteryPercentageRemaining, 2));
           this.log(`[BUTTON-WIRELESS] 🔋 Battery: ${battery}%`);
           if (this.hasCapability('measure_battery')) {
             await this._safeSetCapability('measure_battery', battery).catch(() => {});

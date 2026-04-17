@@ -16,7 +16,7 @@
       "user": "dlnraja",
       "date": "2026-02-18T13:23:31Z",
       "fps": [],
-      "excerpt": "Hi! 👋\n\nThis device is **already supported** in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) (Universal Tuya Zigbee fork) — **v5.11.14** with 138 drivers and 5,579+ fingerprints.\n\n**Install the latest test version:**\nhttps://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\n**Community forum for support:**\nhttps://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352\n\nAfter installing, delete and re-pair your device. If it still doesn't work, please share a **diagnostic report ID** and a **Homey Developer Tools interview** (https://tools.developer.homey.app)."
+      "excerpt": "Hi! 👋\n\nThis device is **already supported** in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) (Universal Tuya Zigbee fork) — **v5.11.14** with 138 drivers and 5,579+ fingerprints.\n\n**Install the latest test version:**\nhttps:
     }
   ],
   "aiAnalysis": "```json\n{\n  \"manufacturerName\": \"_TYZB01_geepvxsy\",\n  \"productId\": \"ZSS-X-PIRL-C-MS\",\n  \"deviceType\": \"ZigBee Smart PIR Motion Sensor\",\n  \"capabilities\": {\n    \"modelId\": \"TS0202\",\n    \"endpoints\": {\n      \"1\": {\n        \"inputClusters\": [0, 1, 1280],\n        \"outputClusters\": [25, 10],\n        \"attributes\": {\n          \"zclVersion\": 3,\n          \"appVersion\": 68,\n          \"stackVersion\": 0,\n          \"hwVersion\": 1\n        }\n      },\n      \"2\": {\n        \"inputClusters\": [1024],\n        \"outputClusters\": []\n      }\n    }\n  },\n  \"errors\": []\n}\n```",

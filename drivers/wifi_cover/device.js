@@ -1,4 +1,6 @@
 'use strict';
+const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
 class WiFiCoverDevice extends TuyaLocalDevice {
@@ -16,10 +18,10 @@ class WiFiCoverDevice extends TuyaLocalDevice {
           return 'stop';
         } },
       '2': { capability: 'windowcoverings_set', writable: true,
-        transform: (v) => v / 100,
-        reverseTransform: (v) => Math.round(v * 100) },
+        transform: (v) => safeParse(v, 100),
+        reverseTransform: (v) =>Math.round(safeMultiply(v, 100)) },
       '3': { capability: 'windowcoverings_set',
-        transform: (v) => v / 100 },
+        transform: (v) => safeParse(v, 100) },
       '5': { capability: null },
       '7': { capability: null },
       '12': { capability: null },

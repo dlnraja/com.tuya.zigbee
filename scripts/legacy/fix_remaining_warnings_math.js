@@ -1,5 +1,7 @@
-#!/usr/bin/env node
+#!/usr / safeDivide(bin, env) node
 'use strict';
+const { safeParse } = require('../../lib/utils / tuyaUtils.js');
+
 
 const fs = require('fs');
 const path = require('path');
@@ -19,13 +21,13 @@ const FIXES = [
   {
     file: 'drivers/air_quality_co2/device.js',
     line: 109,
-    old: "this.setCapabilityValue('measure_temperature', v / 100)",
+    old: "this.setCapabilityValue('measure_temperature', v/100)",
     new: "this.setCapabilityValue('measure_temperature', parseFloat(v) / 100)"
   },
   {
     file: 'drivers/air_quality_co2/device.js',
     line: 113,
-    old: "this.setCapabilityValue('measure_humidity', v / 100)",
+    old: "this.setCapabilityValue('measure_humidity', v/100)",
     new: "this.setCapabilityValue('measure_humidity', parseFloat(v) / 100)"
   },
   {
@@ -55,13 +57,13 @@ const FIXES = [
   {
     file: 'drivers/plug_smart/device.js',
     line: 73,
-    old: "this.setCapabilityValue('measure_voltage', v / 10)",
+    old: "this.setCapabilityValue('measure_voltage', v/10)",
     new: "this.setCapabilityValue('measure_voltage', parseFloat(v) / 10)"
   },
   {
     file: 'drivers/plug_smart/device.js',
     line: 74,
-    old: "this.setCapabilityValue('measure_current', v / 1000)",
+    old: "this.setCapabilityValue('measure_current', v/1000)",
     new: "this.setCapabilityValue('measure_current', parseFloat(v) / 1000)"
   },
   {
@@ -79,7 +81,7 @@ const FIXES = [
   {
     file: 'drivers/radiator_valve/device.js',
     line: 63,
-    old: "this.setCapabilityValue('measure_temperature', v / 100)",
+    old: "this.setCapabilityValue('measure_temperature', v/100)",
     new: "this.setCapabilityValue('measure_temperature', parseFloat(v) / 100)"
   },
   {
@@ -97,19 +99,19 @@ const FIXES = [
   {
     file: 'drivers/switch_2gang/device.js',
     line: 233,
-    old: "this.setCapabilityValue('measure_power', attrs.activePower / 10)",
+    old: "this.setCapabilityValue('measure_power', attrs.activePower/10)",
     new: "this.setCapabilityValue('measure_power', parseFloat(attrs.activePower) / 10)"
   },
   {
     file: 'drivers/switch_2gang/device.js',
     line: 236,
-    old: "this.setCapabilityValue('measure_voltage', attrs.rmsVoltage / 10)",
+    old: "this.setCapabilityValue('measure_voltage', attrs.rmsVoltage/10)",
     new: "this.setCapabilityValue('measure_voltage', parseFloat(attrs.rmsVoltage) / 10)"
   },
   {
     file: 'drivers/switch_2gang/device.js',
     line: 239,
-    old: "this.setCapabilityValue('measure_current', attrs.rmsCurrent / 1000)",
+    old: "this.setCapabilityValue('measure_current', attrs.rmsCurrent/1000)",
     new: "this.setCapabilityValue('measure_current', parseFloat(attrs.rmsCurrent) / 1000)"
   },
   {
@@ -157,7 +159,7 @@ const FIXES = [
   {
     file: 'lib/devices/HybridThermostatBase.js',
     line: 204,
-    old: "this.setCapabilityValue('measure_temperature', v / 100)",
+    old: "this.setCapabilityValue('measure_temperature', v/100)",
     new: "this.setCapabilityValue('measure_temperature', parseFloat(v) / 100)"
   }
 ];

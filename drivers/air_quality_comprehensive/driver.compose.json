@@ -39,26 +39,25 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_jr2atpww",
-      "_tz3000_kqvb8qa8",
-      "_tz3000_krajfo4p",
-      "_tz3000_m7wtqkfw",
-      "_tz3000_tx5b5gp3",
-      "_tz3000_ya9ekqwp",
-      "_tz3000_zhhcsbrz",
-      "_tze200_nnrfa68v",
-      "_tze200_sh1899z7",
-      "_tze204_nnrfa68v",
-      "_tze284_8b9zpaav",
-      "_tze284_it9utkro"
+      "_TZ3000_JR2ATPWW",
+      "_TZ3000_KQVB8QA8",
+      "_TZ3000_KRAJFO4P",
+      "_TZ3000_M7WTQKFW",
+      "_TZ3000_TX5B5GP3",
+      "_TZ3000_YA9EKQWP",
+      "_TZ3000_ZHHCSBRZ",
+      "_TZE200_NNRFA68V",
+      "_TZE200_SH1899Z7",
+      "_TZE200_u6x1zyv2",
+      "_TZE204_NNRFA68V",
+      "_TZE284_8B9ZPAAV",
+      "_TZE284_hdml1aav",
+      "_TZE284_IT9UTKRO"
     ],
     "productId": [
       "TS0005",
       "TS0006",
-      "TS0601",
-      "ts0005",
-      "ts0006",
-      "ts0601"
+      "TS0601"
     ],
     "learnmode": {
       "image": "/drivers/air_quality_comprehensive/assets/learnmode.svg",

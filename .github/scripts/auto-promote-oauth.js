@@ -166,7 +166,7 @@ async function promoteWithSdk(apiTk) {
 }
 async function promoteRaw(apiTk) {
   const hd={Authorization:'Bearer '+apiTk,Accept:'application/json'};
-  const urls=['https://apps-api.athom.com/api/v1/app/'+APP+'/build','https://apps-api.athom.com/api/v1/app/'+APP+'/builds','https://apps-api.athom.com/api/v1/app/'+APP];
+  const urls=['https://apps-api.athom.com/api/v1/app/'+APP+'/build','https:
   let r,ok=false;
   for(const u of urls){r=await fetch(u,{headers:hd});const st=r.status;log('  GET '+u.split(APP)[1]+' → '+st);if(st===401){const t=await r.text().catch(()=>'');log('    401: '+t.slice(0,200))}if(r.ok){ok=true;break}}
   if(!ok){const t=await r.text().catch(()=>'');log('  '+t);throw new Error('builds '+r.status+': '+t)}

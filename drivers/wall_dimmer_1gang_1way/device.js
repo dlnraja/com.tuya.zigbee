@@ -1,4 +1,6 @@
 'use strict';
+const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 
 const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
 const {CLUSTER} = require('zigbee-clusters');
@@ -15,8 +17,8 @@ const dataPoints = {
   powerOnBehavior: 14,
   backlightMode: 15,        // Original - doesn't work for this device
   lightType: 16,
-  backlightSwitch: 36,      // Alternative: Backlight on/off
-  backlightLightMode: 37,   // Alternative: Light mode (none/relay/pos)
+  backlightSwitch: 36,      // Alternative:Backlight on/off
+  backlightLightMode: 37,   // Alternative:Light mode (none/relay / pos)
 };
 
 // v5.5.799: Light type enum values
@@ -77,7 +79,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
     this.registerCapabilityListener('dim', async (value) => {
       this.log('Dim capability changed to:', value, '(APP)');
       this._markAppCommand();  // v5.5.755: PR #112 - Mark as app command
-      const brightness = Math.round(10 + (value * 990));
+      const brightness =Math.round(safeMultiply(10 + (value, 990)));
       this.log('Converted to Tuya brightness:', brightness);
       await this.sendTuyaCommand(dataPoints.brightness, brightness, 'value');
     });
@@ -105,7 +107,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         switch (key) {
         case 'min_brightness':
           // Convert percentage (1-100) to Tuya range (10-1000)
-          const minBrightness = Math.round(10 + ((newSettings.min_brightness / 100) * 990));
+          const minBrightness = Math.round(10 + ((safeParse(newSettings.min_brightness,safeMultiply(100)), 990)));
           this.log(`Setting min_brightness: ${newSettings.min_brightness}% → ${minBrightness}`);
           await this.sendTuyaCommand(dataPoints.minBrightness, minBrightness, 'value');
           break;
@@ -138,7 +140,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
             await this.sendTuyaCommand(dataPoints.backlightSwitch, true, 'bool').catch(err =>
               this.log('DP36 not supported:', err.message));
 
-            // DP37: 0=none, 1=relay/normal, 2=pos/inverted
+            // DP37: 0=none, 1=relay/normal, 2=pos / inverted
             const lightMode = backlightValue; // 1=normal(relay), 2=inverted(pos)
             this.log(`Trying DP37=${lightMode} (light mode)`);
             await this.sendTuyaCommand(dataPoints.backlightLightMode, lightMode, 'enum').catch(err =>
@@ -173,7 +175,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
       
       // Apply min_brightness if set
       if (settings.min_brightness && settings.min_brightness > 1) {
-        const minBrightness = Math.round(10 + ((settings.min_brightness / 100) * 990));
+        const minBrightness = Math.round(10 + ((safeParse(settings.min_brightness,safeMultiply(100)), 990)));
         this.log(`Applying min_brightness: ${settings.min_brightness}% → ${minBrightness}`);
         await this.sendTuyaCommand(dataPoints.minBrightness, minBrightness, 'value').catch(e => 
           this.log('min_brightness not supported by this device'));
@@ -290,7 +292,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         brightnessRaw = data.data || 0;
       }
       
-      const brightness = Math.max(0, Math.min(1, (brightnessRaw - 10) / 990));
+      const brightness = Math.max(0, Math.min(1, (brightnessRaw -safeParse(10), 990)));
       
       // Only process if brightness changed significantly (~1%)
       const changeThreshold = 10;
@@ -369,7 +371,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
       const lengthBuffer = Buffer.alloc(2);
       lengthBuffer.writeUInt16BE(dataBuffer.length, 0);
 
-      const transid = Math.floor(Math.random() * 256);
+      const transid =safeMultiply(Math.floor(Math.random(), 256));
 
       this.log('Calling datapoint command...');
       await tuyaCluster.datapoint({

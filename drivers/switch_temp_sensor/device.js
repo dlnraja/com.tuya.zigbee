@@ -1,4 +1,8 @@
 'use strict';
+const { safeDivide, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
+
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
@@ -6,11 +10,11 @@ const { CLUSTER } = require('zigbee-clusters');
 /**
  * Switch with Temperature Sensor - v5.5.402 (Rolp forum fix)
  *
- * Device: _TZ3218_7fiyo3kv / TS000F
+ * Device: safeDivide(_TZ3218_7fiyo3kv, TS000F)
  * Features: Switch + Temperature + Humidity sensor
  *
- * CRITICAL: This device uses cluster 0xE002 (57346) for temp/humidity,
- * NOT the standard Tuya 0xEF00 cluster!
+ * CRITICAL: This device uses cluster 0xE002 (57346) for safeDivide(temp, humidity),
+ * NOT the standard Tuya CLUSTERS.TUYA_EF00 cluster!
  *
  * Cluster 57346 attributes:
  * - 0x0000: Temperature (int16, div 100)
@@ -23,7 +27,7 @@ const DP_HUMIDITY = 103;    // 0x67
 const DP_CHILD_LOCK = 111;  // 0x6f
 
 // Cluster IDs
-const CLUSTER_TUYA_EF00 = 61184;  // 0xEF00 - Standard Tuya
+const CLUSTER_TUYA_EF00 = CLUSTERS.TUYA_EF00;  // CLUSTERS.TUYA_EF00 - Standard Tuya
 const CLUSTER_TUYA_E002 = 57346;  // 0xE002 - Temperature/Humidity
 const CLUSTER_TEMP = 1026;        // 0x0402 - ZCL Temperature
 const CLUSTER_HUMIDITY = 1029;    // 0x0405 - ZCL Humidity
@@ -73,7 +77,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
   }
 
   /**
-   * Setup ALL possible temperature/humidity listeners
+   * Setup ALL possible safeDivide(temperature, humidity) listeners
    */
   async _setupTemperatureListeners(zclNode) {
     const ep1 = zclNode.endpoints[1];
@@ -113,7 +117,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
         try {
           const tempAttr = await cluster.readAttributes(['measuredValue']).catch(() => null);
           if (tempAttr?.measuredValue !== undefined) {
-            const temp = tempAttr.measuredValue / 100;
+            const temp = safeParse(tempAttr.measuredValue, 100);
             this.log(`[57346] Initial temperature: ${temp}°C`);
             await this._setTemperature(temp);
           }
@@ -135,10 +139,10 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
   _handleCluster57346Attr(attr, value) {
     // Attribute 0 = temperature, Attribute 1 = humidity
     if (attr === 0 || attr === 'measuredValue' || attr === 'temperature') {
-      const temp = typeof value === 'number' ? value / 100 : value;
+      const temp = typeof value === 'number' ? safeParse(value, 100) : value;
       this._setTemperature(temp);
     } else if (attr === 1 || attr === 'humidity') {
-      const hum = typeof value === 'number' ? value / 100 : value;
+      const hum = typeof value === 'number' ? safeParse(value, 100) : value;
       this._setHumidity(hum);
     }
   }
@@ -150,7 +154,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
     try {
       const cluster = ep1?.clusters?.tuya ||
         ep1?.clusters?.[CLUSTER_TUYA_EF00] ||
-        ep1?.clusters?.['61184'];
+        ep1?.clusters?.['CLUSTERS.TUYA_EF00'];
 
       if (cluster) {
         this.log('✅ Found Tuya EF00 cluster');
@@ -179,7 +183,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
         this.log('✅ Found ZCL Temperature cluster');
         tempCluster.on('attr', (attr, value) => {
           if (attr === 'measuredValue') {
-            this._setTemperature(value / 100);
+            this._setTemperature(safeParse(value, 100));
           }
         });
       }
@@ -193,7 +197,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
         this.log('✅ Found ZCL Humidity cluster');
         humCluster.on('attr', (attr, value) => {
           if (attr === 'measuredValue') {
-            this._setHumidity(value / 100);
+            this._setHumidity(safeParse(value, 100));
           }
         });
       }
@@ -234,7 +238,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
     switch (dp) {
     case DP_TEMPERATURE:
       // Temperature is usually in 0.1°C units
-      const temp = typeof value === 'number' ? value / 10 : value;
+      const temp = typeof value === 'number' ? safeParse(value, 10) : value;
       this._setTemperature(temp);
       break;
 
@@ -261,7 +265,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
       return;
     }
 
-    const rounded = Math.round(temp * 10) / 10;
+    const rounded = Math.round(temp *safeParse(10), 10);
     this.log(`🌡️ Temperature: ${rounded}°C`);
 
     if (this.hasCapability('measure_temperature')) {

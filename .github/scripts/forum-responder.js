@@ -1,3 +1,4 @@
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 const fs=require('fs'),path=require('path');
 if (process.env.SHADOW_MODE === 'true' || process.env.DRY_RUN === 'true') {
   console.log('SHADOW MODE ACTIVE: Deactivating Forum Responder (Urgently Requested)');
@@ -251,7 +252,7 @@ async function batchAI(postInfos,ver,threadCtx){
   ctx+='## SIGNATURE INTELLIGENCE\n';
   ctx+='Tuya manufacturerName is NOT unique. Always use (manufacturerName + productId + deviceId) for matching.\n';
   ctx+='If a user reports a device already "in the app" but behaving differently (e.g. TH sensor instead of Soil), it is a VARIANT. Ask for the full Zigbee Interview.\n';
-  ctx+='We resolve variants using specific deviceId (e.g. 514 vs 81) or cluster lists (Tuya Cluster 0xEF00 presence).\n';
+  ctx+='We resolve variants using specific deviceId (e.g. 514 vs 81) or cluster lists (Tuya Cluster CLUSTERS.TUYA_EF00 presence).\n';
   ctx+='## VALUE ISSUES\n';
   ctx+='Soil npj9bug3: DP 111 is Soil Moisture (NOT alarm). Moisture Canyon (0% drops): Fixed in BVB v7 — needs 3 matching readings to validate drop. LCD TH sensors: re-pair to ensure Tuya Cluster binding. Energy massive: divisor fixed in v7. Double-div temp: fixed. Battery 0% on mains: known, fixed.\n\n';
 

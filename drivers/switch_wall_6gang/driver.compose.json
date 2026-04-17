@@ -72,22 +72,19 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "tze204_7sjncirf",
-      "_tz3000_cziew6eu",
-      "_tze200_tz32mtza",
-      "_tze204_72bewjky",
-      "_tze204_ad2jkxwh",
-      "_tze204_tz32mtza",
-      "_tze284_g1enhdsi",
-      "_tze284_tz32mtza"
+      "TZE204_7SJNCIRF",
+      "_TZ3000_CZIEW6EU",
+      "_TZE200_TZ32MTZA",
+      "_TZE204_72BEWJKY",
+      "_TZE204_AD2JKXWH",
+      "_TZE204_TZ32MTZA",
+      "_TZE284_G1ENHDSI",
+      "_TZE284_TZ32MTZA"
     ],
     "productId": [
       "TS0016",
       "TS0601",
-      "TS0726",
-      "ts0016",
-      "ts0601",
-      "ts0726"
+      "TS0726"
     ],
     "learnmode": {
       "image": "/drivers/switch_wall_6gang/assets/learnmode.svg",

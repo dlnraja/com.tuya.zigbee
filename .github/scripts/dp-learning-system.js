@@ -1,3 +1,4 @@
+const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 
 // .github/scripts/dp-learning-system.js
 // Machine learning-inspired DP pattern recognition
@@ -59,7 +60,7 @@ class DPLearningSystem {
     );
     
     this.knownPatterns[key].commonCapability = mostCommon;
-    this.knownPatterns[key].confidence = capCounts[mostCommon] / capabilities.length;
+    this.knownPatterns[key].confidence = safeDivide(capCounts[mostCommon], capabilities.length);
   }
   
   predictCapability(dp, dataType, driverType) {

@@ -1,8 +1,8 @@
 'use strict';
 
-const { ZigBeeDriver } = require('homey-zigbeedriver');
+const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
 
-class TuyaComprehensiveAirMonitorDriver extends ZigBeeDriver {
+class TuyaComprehensiveAirMonitorDriver extends BaseZigBeeDriver {
   /**
    * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
    * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
@@ -26,16 +26,16 @@ class TuyaComprehensiveAirMonitorDriver extends ZigBeeDriver {
     // Register flow cards from driver.flow.compose.json (SDK3 standard methods)
     try {
       // Triggers
-      this._temperatureChangedTrigger = this.homey.flow.getTriggerCard('air_quality_comprehensive_comprehensive_air_monitor_measure_temperature_changed');
-      this._humidityChangedTrigger = this.homey.flow.getTriggerCard('air_quality_comprehensive_comprehensive_air_monitor_measure_humidity_changed');
-      this._tempChangedTrigger = this.homey.flow.getTriggerCard('air_quality_comprehensive_temp_changed');
-      this._humidityChangedTrigger2 = this.homey.flow.getTriggerCard('air_quality_comprehensive_humidity_changed');
-      this._batteryLowTrigger = this.homey.flow.getTriggerCard('air_quality_comprehensive_battery_low');
+      this._temperatureChangedTrigger = this._getFlowCard('air_quality_comprehensive_comprehensive_air_monitor_measure_temperature_changed', 'trigger');
+      this._humidityChangedTrigger = this._getFlowCard('air_quality_comprehensive_comprehensive_air_monitor_measure_humidity_changed', 'trigger');
+      this._tempChangedTrigger = this._getFlowCard('air_quality_comprehensive_temp_changed', 'trigger');
+      this._humidityChangedTrigger2 = this._getFlowCard('air_quality_comprehensive_humidity_changed', 'trigger');
+      this._batteryLowTrigger = this._getFlowCard('air_quality_comprehensive_battery_low', 'trigger');
       
       // Conditions
-      this._co2AboveCondition = this.homey.flow.getConditionCard('air_quality_comprehensive_co2_above');
-      this._tempAboveCondition = this.homey.flow.getConditionCard('air_quality_comprehensive_temp_above');
-      this._humidityAboveCondition = this.homey.flow.getConditionCard('air_quality_comprehensive_humidity_above');
+      this._co2AboveCondition = this._getFlowCard('air_quality_comprehensive_co2_above', 'condition');
+      this._tempAboveCondition = this._getFlowCard('air_quality_comprehensive_temp_above', 'condition');
+      this._humidityAboveCondition = this._getFlowCard('air_quality_comprehensive_humidity_above', 'condition');
       
       this.log('Air quality comprehensive flow cards registered successfully');
     } catch (error) {

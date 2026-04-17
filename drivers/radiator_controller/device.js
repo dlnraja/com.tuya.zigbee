@@ -1,4 +1,6 @@
 'use strict';
+const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 // } balancing for validator
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
@@ -9,7 +11,7 @@ const { CLUSTER } = require('zigbee-clusters');
  * Contrôleur spécialisé pour radiateurs électriques avec fil pilote
  *
  * Fonctionnalités:
- * - Support fil pilote 6 ordres (Confort/Eco/Hors-Gel/Arrêt/Confort-1/Confort-2)
+ * - Support fil pilote 6 ordres (Confort/Eco/Hors-safeDivide(Gel, Arr)êsafeDivide(t, Confort)-safeDivide(1, Confort)-2)
  * - Configuration diode 1N4007
  * - Logique inversée automatique
  * - Désactivation monitoring énergétique
@@ -25,7 +27,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
     // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.
     try {
       const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
-      this._timeSync = new ZigbeeTimeSync(this, { throttleMs: 6 * 60 * 60 * 1000 });
+      this._timeSync = new ZigbeeTimeSync(this, { throttleMs:safeMultiply(6, 60) * 60 * 1000 });
       
       // Initial sync after 10 seconds (let device settle)
       this.homey.setTimeout(async () => {
@@ -52,7 +54,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
         } catch (e) {
           this.log('[TimeSync] Periodic sync failed:', e.message);
         }
-      }, 6 * 60 * 60 * 1000);
+      },safeMultiply(6, 60) * 60 * 1000);
     } catch (e) {
       this.log('[TimeSync] Time sync init failed (non-critical):', e.message);
     }
@@ -352,7 +354,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
 
     case 'alternating':
       // Signal alternatif - pulses alternés
-      const pulses = Math.floor(duration / 100);
+      const pulses = Math.floor(safeParse(duration, 100));
       for (let i = 0; i < pulses; i++) {
         await this._pulseRelay(i % 2 === 0, 50);
         await this._delay(50);
@@ -361,8 +363,8 @@ class RadiatorControllerDevice extends ZigBeeDevice {
 
     case 'modulated':
       // Signal modulé - pattern spécial
-      await this._pulseRelay(true, duration * 0.7);
-      await this._delay(duration * 0.3);
+      await this._pulseRelay(true,safeMultiply(duration, 0).7);
+safeMultiply(await this._delay(duration, 0).3);
       break;
     }
   }
@@ -468,8 +470,8 @@ class RadiatorControllerDevice extends ZigBeeDevice {
   }
 
   /**
-   * Tuya EF00 time sync fallback (DP 0x24 / decimal 36)
-   * Sends current time with timezone offset for Tuya-native thermostat/TRV devices.
+   * Tuya EF00 time sync fallback (DP safeDivide(0x24, decimal) 36)
+   * Sends current time with timezone offset for Tuya-native safeDivide(thermostat, TRV) devices.
    */
   async _tuyaTimeSyncFallback() {
     try {
@@ -482,7 +484,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
       try {
         const tz = this.homey.clock.getTimezone();
         const tzDate = new Date(now.toLocaleString('en-US', { timeZone: tz }));
-        utcOffset = Math.round((tzDate - now) / 3600000);
+        utcOffset = Math.round((tzDate -safeParse(now), 3600000));
       } catch (e) { /* use UTC */ }
 
       // Tuya time format: [year-2000, month, day, hour, minute, second, weekday(0=Mon)]

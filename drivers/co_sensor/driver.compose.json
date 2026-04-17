@@ -23,16 +23,14 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_nbm3pjii",
-      "_tze200_aycxwiau",
-      "_tze200_pbdlrmfb",
-      "_tze204_pbdlrmfb"
+      "_TZ3000_NBM3PJII",
+      "_TZE200_AYCXWIAU",
+      "_TZE200_PBDLRMFB",
+      "_TZE204_PBDLRMFB"
     ],
     "productId": [
       "TS0601",
-      "TS0601_CO",
-      "ts0601",
-      "ts0601_co"
+      "TS0601_CO"
     ],
     "endpoints": {
       "1": {

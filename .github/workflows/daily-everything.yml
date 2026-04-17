@@ -1,9 +1,9 @@
 name: "🌌 UNIFIED ENGINE — Daily Galaxy Orchestrator"
 
 on:
-  # schedule: disabled to avoid annoying users
-  # - cron: '0 2 * * *'    # Full overnight scan
-  # - cron: '0 14 * * *'   # Afternoon catch-up scan
+  schedule:
+    - cron: '0 2 * * *'    # Full overnight scan at 02:00 UTC
+    - cron: '0 14 * * *'   # Afternoon catch-up scan
   workflow_dispatch:
     inputs:
       dry_run:
@@ -133,7 +133,7 @@ jobs:
 
       # ===== 1. FORUM: Scan + Intel (replies shadowed) =====
       - name: "1. Forum Scan + Intel (no replies)"
-        if: false
+        if: success() || failure()
         id: forum_scan
         continue-on-error: true
         timeout-minutes: 10
@@ -151,7 +151,7 @@ jobs:
 
       # ===== 2. GITHUB: Triage + Respond + Close (SHADOWED) =====
       - name: "2. GitHub Issues & PRs Manager"
-        if: false
+        if: success() || failure()
         id: github_mgr
         continue-on-error: true
         timeout-minutes: 15
@@ -164,7 +164,7 @@ jobs:
 
       # ===== 3. GITHUB: Upstream Triage (JohanBendz + forks) =====
       - name: "3. Upstream Triage"
-        if: false
+        if: success() || failure()
         id: upstream
         continue-on-error: true
         timeout-minutes: 15
@@ -208,7 +208,7 @@ jobs:
 
       # ===== 4. GITHUB: Scanner (both repos, AI summary) =====
       - name: "4. GitHub Activity Scanner"
-        if: false
+        if: success() || failure()
         id: gh_scanner
         continue-on-error: true
         timeout-minutes: 10

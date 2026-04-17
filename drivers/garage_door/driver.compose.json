@@ -33,16 +33,14 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_e3wzdxcx",
-      "_tz3000_sj7xocbp",
-      "_tze200_3jbslzh4",
-      "_tze204_3jbslzh4"
+      "_TZ3000_E3WZDXCX",
+      "_TZ3000_SJ7XOCBP",
+      "_TZE200_3JBSLZH4",
+      "_TZE204_3JBSLZH4"
     ],
     "productId": [
       "TS0601",
-      "TS0601_GARAGE",
-      "ts0601",
-      "ts0601_garage"
+      "TS0601_GARAGE"
     ],
     "endpoints": {
       "1": {

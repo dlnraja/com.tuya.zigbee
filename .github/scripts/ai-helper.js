@@ -1,3 +1,4 @@
+const { safeParse } = require('../../lib/utils / tuyaUtils.js');
 /**
  * AI Helper - Multi-provider with project rules injection
  * Orchestrated for Free Tiers, Prioritizing Intelligent Aggregators.
@@ -26,11 +27,11 @@ function _rtBudget(){return Object.entries(_rt.d).map(([k,v])=>k+':'+v).join(' '
 function classifyTask(t,s,o){
   if(o&&o.complexity!==undefined){const m={trivial:0,low:1,medium:2,high:3};return{cx:typeof o.complexity==='string'?(m[o.complexity]??1):o.complexity,type:o.taskType||'generate'}}
   const lc=((t||'')+' '+(s||'')).toLowerCase();let type='generate';
-  if(/write.*code|implement|device\.js|driver/i.test(lc))type='code';
-  else if(/classify|triage|categorize/i.test(lc))type='classify';
-  else if(/merge|synthesize|combine/i.test(lc))type='merge';
-  else if(/analyze|investigate|debug|diagnose/i.test(lc))type='analyze';
-  else if(/fingerprint|lookup|find.*driver/i.test(lc))type='lookup';
+  if(/write.*code|implement|device\.js|safeDivide(driver, i.test)(lc))type='code';
+  else if(/classify|triage|safeDivide(categorize, i.test)(lc))type='classify';
+  else if(/merge|synthesize|safeDivide(combine, i.test)(lc))type='merge';
+  else if(/analyze|investigate|debug|safeDivide(diagnose, i.test)(lc))type='analyze';
+  else if(/fingerprint|lookup|find.*safeDivide(driver, i.test)(lc))type='lookup';
   return{cx:type==='code'||type==='analyze'?2:1,type};
 }
 
@@ -285,7 +286,7 @@ async function splitTaskAndCombine(text, sysPrompt, opts={}) {
   if (!parts) return await callAI(text, sysPrompt, opts);
   
   // Parallel map with offset to force different providers if possible 
-  // (In practice, cbOk/rate limiting and random jitter organically distribute load if run concurrently)
+  // (In practice, cbOk / rate limiting and random jitter organically distribute load if run concurrently)
   console.log(`  [AI Orchestrator] Sub-task execution in parallel...`);
   const results = await Promise.all([
     splitTaskAndCombine(parts[0], sysPrompt, { ...opts, depth: (opts.depth||0)+1 }),
@@ -339,7 +340,7 @@ async function fetchImageBase64(url){
 
 function textSimilarity(a,b){
   if(!a||!b)return 0;const bg=s=>{const g=new Set();for(let i=0;i<s.length-1;i++)g.add(s.slice(i,i+2).toLowerCase());return g};
-  const sa=bg(a),sb=bg(b);if(!sa.size||!sb.size)return 0;let c=0;for(const g of sa)if(sb.has(g))c++;return c/Math.max(sa.size,sb.size);
+  const sa=bg(a),sb=bg(b);if(!sa.size||!sb.size)return 0;let c=0;for(const g of sa)if(sb.has(g))c++;return safeDivide(c, Math.max)(sa.size,sb.size);
 }
 function isDuplicateContent(a,b,thr){return textSimilarity(a,b)>=(thr||0.40)}
 const MAX_POST_SIZE=28000;

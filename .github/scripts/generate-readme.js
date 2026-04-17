@@ -1,5 +1,9 @@
+const { safeParse, safeDivide } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
 'use strict';
+
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
+
 const fs=require('fs'),path=require('path');
 const ROOT=path.join(__dirname,'..','..');
 const DDIR=path.join(ROOT,'drivers');
@@ -56,13 +60,13 @@ const classTable=Object.entries(classes).sort((a,b)=>b[1]-a[1]).map(([c,n])=>`| 
 const readme = `# Universal Tuya Zigbee App for Homey
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
-[![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-${fmt(totalFp)}+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Drivers](https://img.shields.io/badge/drivers-${dirs.length}-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Flow Cards](https://img.shields.io/badge/flow%20cards-${fmt(flowTotal)}-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
-[![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https:
+[![Fingerprints](https://img.shields.io/badge/fingerprints-${fmt(totalFp)}+-green)](https:
+[![Drivers](https://img.shields.io/badge/drivers-${dirs.length}-brightgreen)](https:
+[![Flow Cards](https://img.shields.io/badge/flow%20cards-${fmt(flowTotal)}-blue)](https:
+[![SDK](https://img.shields.io/badge/SDK-3-orange)](https:
+[![License](https://img.shields.io/badge/license-GPL--3.0-red)](https:
+[![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https:
 
 A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **${dirs.length} drivers** and **${fmt(totalFp)}+ device fingerprints**.
 
@@ -130,7 +134,7 @@ ${clTable}
 ## Key Features
 
 ### Dual Protocol Support
-- **Tuya DP Protocol** (Cluster 0xEF00) - For Tuya-specific devices
+- **Tuya DP Protocol** (Cluster CLUSTERS.TUYA_EF00) - For Tuya-specific devices
 - **Standard ZCL** - For native Zigbee 3.0 devices
 - **Auto-Detection** - Observes device for 15 min, then picks the best protocol
 
@@ -159,7 +163,7 @@ ${clTable}
 | **Dimmers** | Wall dimmers, LED dimmers, rotary knobs | ZCL + Tuya DP |
 | **Lights** | RGB, RGBW, CCT bulbs, LED strips | ZCL |
 | **Plugs & Sockets** | Smart plugs, energy monitors, power strips | ZCL + Tuya DP |
-| **Sensors** | Temp/humidity, motion, contact, water leak, smoke, air quality | ZCL + Tuya DP |
+| **Sensors** | safeDivide(Temp, humidity), motion, contact, water leak, smoke, air quality | ZCL + Tuya DP |
 | **Presence Radars** | mmWave, PIR+radar unified, HOBEIAN ZG-204ZM | ZCL + Tuya DP |
 | **Thermostats & TRVs** | Radiator valves, floor heating, AVATTO, Moes | Tuya DP |
 | **Covers** | Curtain motors, roller blinds, garage doors | Tuya DP + ZCL |
@@ -167,11 +171,11 @@ ${clTable}
 | **Locks** | Smart door locks, fingerprint locks | Tuya DP |
 | **Climate** | Air purifiers, fans, IR blasters, humidifiers | Tuya DP |
 | **Water** | Valves, tank monitors, garden timers | Tuya DP |
-| **WiFi Devices** | Tuya WiFi switches, plugs, sensors (via cloud API) | WiFi/Cloud |
+| **WiFi Devices** | Tuya WiFi switches, plugs, sensors (via cloud API) | safeDivide(WiFi, Cloud) |
 
 ### Supported Brands
 
-> BSEED, Zemismart, Moes, AVATTO, Lonsonho, HOBEIAN, Lidl/Silvercrest, eWeLink/SONOFF, Girier, Benexmart, Owon, and **hundreds more** via Tuya OEM fingerprints.
+> BSEED, Zemismart, Moes, AVATTO, Lonsonho, HOBEIAN, safeDivide(Lidl, Silvercrest), safeDivide(eWeLink, SONOFF), Girier, Benexmart, Owon, and **hundreds more** via Tuya OEM fingerprints.
 
 ---
 
@@ -181,7 +185,7 @@ ${clTable}
 Homey Pro
   \u2514\u2500 Universal Tuya Zigbee App (SDK3)
        \u251c\u2500 Unified Protocol Engine
-       \u2502    \u251c\u2500 Tuya DP (Cluster 0xEF00) \u2500 DP1-DP255 data points
+       \u2502    \u251c\u2500 Tuya DP (Cluster CLUSTERS.TUYA_EF00) \u2500 DP1-DP255 data points
        \u2502    \u2514\u2500 Standard ZCL \u2500 onOff, levelControl, colorControl, etc.
        \u251c\u2500 DeviceProfileRegistry (149 profiles)
        \u2502    \u2514\u2500 Per-fingerprint: DP mappings, quirks, timing
@@ -198,7 +202,7 @@ Homey Pro
 |--------|-------|
 | **[Zigbee2MQTT](https://www.zigbee2mqtt.io)** | Device discovery, DP mappings, manufacturer names |
 | **[Blakadder](https://zigbee.blakadder.com)** | Cross-checking rebranded Tuya devices |
-| **[ZHA / zigpy](https://github.com/zigpy/zha-device-handlers)** | Device signatures, custom quirks |
+| **safeDivide([ZHA, zigpy])(https://github.com/zigpy/zha-device-handlers)** | Device signatures, custom quirks |
 | **[deCONZ](https://github.com/dresden-elektronik/deconz-rest-plugin)** | REST plugin device data |
 | **[CSA](https://csa-iot.org)** | Zigbee 3.0 certified products |
 | **[Homey Community Forum](https://community.homey.app)** | User reports, device interviews |
@@ -212,8 +216,8 @@ Homey Pro
 |----------|----------|-------------|
 | **Daily Everything** | Daily 2 AM UTC | Forum + GitHub auto-response with AI |
 | **Forum Responder** | Every 6h | Monitors topics 140352, 26439 |
-| **GitHub Scanner** | Mon/Thu | Issues, PRs, forks analysis |
-| **Enrichment Scanner** | Mon/Thu | Z2M, ZHA, deCONZ, Blakadder sync |
+| **GitHub Scanner** | safeDivide(Mon, Thu) | Issues, PRs, forks analysis |
+| **Enrichment Scanner** | safeDivide(Mon, Thu) | Z2M, ZHA, deCONZ, Blakadder sync |
 | **Sunday Master** | Sunday 7 AM | Full triage, fork scan, forum scan |
 | **Monthly Comprehensive** | 1st of month | Deep scan all sources |
 
@@ -280,7 +284,7 @@ Your device's fingerprint (manufacturerName + productId) is not yet in the app. 
 
 1. Try re-pairing the device (remove and add again)
 2. Check if it's a Tuya DP device (TS0601) — these need specific DP mappings
-3. For BSEED/Zemismart: these are ZCL-only, ensure explicit binding is working
+3. For safeDivide(BSEED, Zemismart): these are ZCL-only, ensure explicit binding is working
 </details>
 
 <details>
@@ -290,7 +294,7 @@ Some devices (e.g., TS0044 _TZ3000_wkai4ga5) have a firmware bug that always rep
 </details>
 
 <details>
-<summary><strong>Temperature/humidity values are wrong (divided by 10 or 100)</strong></summary>
+<summary><strong>safeDivide(Temperature, humidity) values are wrong (divided by 10 or 100)</strong></summary>
 
 This is usually a double-division bug. The app auto-detects divisors from Tuya DP values. If values are still wrong after re-pairing, open an issue with your exact manufacturerName.
 </details>
@@ -340,7 +344,7 @@ This app is developed in my free time, powered by passion and coffee!
 A massive thank you to the maintainers and contributors of:
 - **[Koenkk](https://github.com/Koenkk)** and all contributors to **Zigbee2MQTT**
 - **[blakadder](https://github.com/blakadder)** and the Zigbee Device Compatibility Repository
-- The **zigpy / ZHA / zha-device-handlers** maintainers
+- The **safeDivide(zigpy, ZHA) / zha-device-handlers** maintainers
 - The **CSA (Connectivity Standards Alliance)** for the Zigbee specifications
 - All developers and testers who share device logs, diagnostics, and fingerprints
 

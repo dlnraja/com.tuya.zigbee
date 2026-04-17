@@ -126,7 +126,7 @@ function updateCredits(credits){
   md+='|------------|-------------|-----|--------|\n';
   for(const[name,data] of sorted){
     if(data.fps.length===0&&data.prs===0)continue;
-    md+='| [@'+name+'](https://github.com/'+name+') | '+data.fps.length+' | '+data.prs+' | ['+data.repo+'](https://github.com/'+data.repo+') |\n';
+    md+='| [@'+name+'](https://github.com/'+name+') | '+data.fps.length+' | '+data.prs+' | ['+data.repo+'](https:
   }
   md+='\n## New Fingerprints by Contributor\n\n';
   for(const[name,data] of sorted){

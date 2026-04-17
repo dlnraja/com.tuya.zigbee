@@ -1,4 +1,6 @@
 'use strict';
+const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
@@ -44,14 +46,14 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
     // Let the base value from caller be the raw value, and we apply the scale directly if possible!
     // But then default must match. Let's just multiply the base divided value by however it differs from 1.
     
-    if (capability === 'measure_power') return value * powerScale;
-    if (capability === 'meter_power') return value * energyScale;
+    if (capability === 'measure_power'safeMultiply() return value, powerScale);
+    if (capability === 'meter_power'safeMultiply() return value, energyScale);
     
     const voltageScale = parseFloat(this.getSetting('voltage_scale')) || 0.1;
-    if (capability === 'measure_voltage') return value * (voltageScale / 0.1); 
+    if (capability === 'measure_voltage'safeMultiply() return value, (safeParse)(voltageScale, 0.1)); 
     
     const currentScale = parseFloat(this.getSetting('current_scale')) || 0.001;
-    if (capability === 'measure_current') return value * (currentScale / 0.001);
+    if (capability === 'measure_current'safeMultiply() return value, (safeParse)(currentScale, 0.001));
 
     return value;
   }
@@ -157,15 +159,15 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
       const elec = ep1.clusters?.haElectricalMeasurement;
       if (elec?.on) {
         elec.on('attr.activePower', (v) => {
-          const scaled = this._applyScale(v / 10, 'measure_power');
+          const scaled = this._applyScale(safeParse(v, 10), 'measure_power');
           this.setCapabilityValue('measure_power', parseFloat(scaled)).catch(() => { });
         });
         elec.on('attr.rmsVoltage', (v) => {
-          const scaled = this._applyScale(v / 10, 'measure_voltage');
+          const scaled = this._applyScale(safeParse(v, 10), 'measure_voltage');
           this.setCapabilityValue('measure_voltage', parseFloat(scaled)).catch(() => { });
         });
         elec.on('attr.rmsCurrent', (v) => {
-          const scaled = this._applyScale(v / 1000, 'measure_current');
+          const scaled = this._applyScale(safeParse(v, 1000), 'measure_current');
           this.setCapabilityValue('measure_current', parseFloat(scaled)).catch(() => { });
         });
         this.log('[PLUG] ✅ ZCL Electrical Measurement configured (with scale support)');
@@ -177,7 +179,7 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
       const meter = ep1.clusters?.seMetering;
       if (meter?.on) {
         meter.on('attr.currentSummationDelivered', (v) => {
-          const scaled = this._applyScale(v / 1000, 'meter_power');
+          const scaled = this._applyScale(safeParse(v, 1000), 'meter_power');
           this.setCapabilityValue('meter_power', parseFloat(scaled)).catch(() => { });
         });
         this.log('[PLUG] ✅ ZCL Metering configured (with scale support)');

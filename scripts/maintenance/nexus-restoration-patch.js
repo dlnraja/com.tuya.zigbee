@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 'use strict';
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 
 const fs = require('fs');
 const path = require('path');
@@ -53,7 +55,7 @@ function patchButton4Gang() {
             let actualScene = sceneId;
             
             if (sceneId >= 10 && ep === 1) {
-              button = Math.floor(sceneId / 10) + 1;
+              button = Math.floor(safeParse(sceneId, 10)) + 1;
               actualScene = sceneId % 10;
               this.log(\`[BUTTON4-SCENE] 🧭 Compressed Mapping: scene \${sceneId} -> button \${button}, action \${actualScene}\`);
             } else if (sceneId > 1 && ep === 1 && sceneId <= 4) {

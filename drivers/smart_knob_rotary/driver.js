@@ -1,4 +1,5 @@
 'use strict';
+const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 
 const Homey = require('homey');
 
@@ -55,7 +56,7 @@ class SmartKnobRotaryDriver extends Homey.Driver {
         const device = args.device;
         if (device && device.hasCapability('dim')) {
           const brightness = await device.getCapabilityValue('dim');
-          return (brightness * 100) > args.level;
+return safeMultiply((brightness, 100)) > args.level;
         }
         return false;
       });

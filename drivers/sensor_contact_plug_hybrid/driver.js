@@ -1,4 +1,5 @@
 'use strict';
+const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
@@ -94,7 +95,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          const delay = (args.delay || 10) * 1000;
+          const delay = safeMultiply((args.delay || 10), 1000);
           setTimeout(() => args.device.triggerCapabilityListener('onoff', true).catch(() => {}), delay);
           return true;
         });
@@ -107,7 +108,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          const delay = (args.delay || 10) * 1000;
+          const delay = safeMultiply((args.delay || 10), 1000);
           setTimeout(() => args.device.triggerCapabilityListener('onoff', false).catch(() => {}), delay);
           return true;
         });

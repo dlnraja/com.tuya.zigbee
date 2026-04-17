@@ -24,7 +24,7 @@
         "_TZE204_9mjy74mp",
         "_TZ3002_pzao9ls1"
       ],
-      "excerpt": "<!-- tuya-triage-bot -->\n**Already supported** in v5.11.17:\n\n| Fingerprint | Driver(s) |\n|---|---|\n| `_TZ3000_tzvbimpq` | **button_wireless_2** |\n| `_TZ3000_zgyzgdua` | **button_wireless_4**, **scene_switch_4** |\n| `_TZE204_9mjy74mp` | **thermostat_tuya_dp** |\n| `_TZ3002_pzao9ls1` | **switch_4gang** |\n\n### Links\n- **[Install test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)**\n- **[Forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352)**\n- **[Developer Tools](https://tools.developer.homey.app)** (interviews & diagnostics)\n\n> After installing, **remove and re-pair** your device. If issues persist, share a diagnostic report ID on the [Forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352)."
+      "excerpt": "<!-- tuya-triage-bot -->\n**Already supported** in v5.11.17:\n\n| Fingerprint | Driver(s) |\n|---|---|\n| `_TZ3000_tzvbimpq` | **button_wireless_2** |\n| `_TZ3000_zgyzgdua` | **button_wireless_4**, **scene_switch_4** |\n| `_TZE204_9mjy74mp` | **thermostat_tuya_dp** |\n| `_TZ3002_pzao9ls1` | **switch_4gang** |\n\n### Links\n- **[Install test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)**\n- **[Forum](https:
     },
     {
       "user": "dlnraja",

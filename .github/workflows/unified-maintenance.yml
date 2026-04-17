@@ -36,8 +36,8 @@ jobs:
       - name: 🔍 ZCL/DP Signature Audit
         run: node scripts/ci/signature-audit.js
         
-      - name: 🧹 PR/Issue Cleanup
-        run: node scripts/maintenance/auto-close-supported.js # Consolidated from standalone yml
+      # - name: 🧹 PR/Issue Cleanup
+      #   run: node scripts/maintenance/auto-close-supported.js # Consolidated from standalone yml
         
       - name: 🔄 Stats & Metadata Update
         run: node scripts/maintenance/update-readme-stats.js

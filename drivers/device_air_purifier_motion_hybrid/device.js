@@ -1,4 +1,6 @@
 'use strict';
+const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
 const DP = { state: 1, pm25: 2, mode: 3, speed: 4, filter: 5, childLock: 7, brightness: 8 };
 
@@ -11,7 +13,7 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
       await this.sendTuyaCommand(DP.state, v, 'bool');
     });
     this.registerCapabilityListener('dim', async (v) => {
-      await this.sendTuyaCommand(DP.speed, Math.round(v * 100), 'value');
+      await this.sendTuyaCommand(DP.speed,Math.round(safeMultiply(v, 100)), 'value');
     });
     this.log('Air Purifier ready');
   }
@@ -36,7 +38,7 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
       }
     } else if (data.dp === DP.speed) {
       const spd = typeof v === 'number' ? v : parseInt(v);
-      this.setCapabilityValue('dim', spd / 100).catch(() => {});
+      this.setCapabilityValue('dim', safeParse(spd, 100)).catch(() => {});
     }
   }
 

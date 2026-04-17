@@ -1,4 +1,5 @@
 'use strict';
+const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const GlobalTimeSyncEngine = require('../../lib/tuya/GlobalTimeSyncEngine');
@@ -65,7 +66,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
       }, 5000);
       
       // Periodic sync every 4 hours for battery sensors
-      this._timeSyncEngine.schedulePeriodicSync(zclNode, 4 * 60 * 60 * 1000);
+      this._timeSyncEngine.schedulePeriodicSync(zclNode,safeMultiply(4, 60) * 60 * 1000);
     } catch (e) {
       this.log('[LCD] ⚠️ Time sync engine failed:', e.message);
     }

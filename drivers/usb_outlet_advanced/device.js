@@ -1,4 +1,6 @@
 'use strict';
+const { safeDivide, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
@@ -14,8 +16,8 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * ═══════════════════════════════════════════════════════════════════════════
  *
  * 1. POWER MEASUREMENT DIVISORS:
- *    - Most models: Power /10, Current /1000, Voltage /10, Energy /100
- *    - Some models may use different divisors (e.g., Power /100 or direct values)
+ *    - Most models: safeParse(Power, 10), safeParse(Current, 1000), safeParse(Voltage, 10), safeParse(Energy, 100)
+ *    - Some models may use different divisors (e.g., safeParse(Power, 100) or direct values)
  *    - If power readings seem incorrect (10x or 100x off), check device firmware
  *    - Alternative DPs: 104 (power), 105 (current), 106 (voltage)
  *
@@ -342,18 +344,18 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
       break;
     case 16:
     case 104: // Power (W)
-      this.log(`[ZCL-DATA] USB_outlet.power raw=${rawValue} converted=${rawValue / 10}W`);
+      this.log(`[ZCL-DATA] USB_outlet.power raw=${rawValue} converted=${rawValue/10}W`);
       break;
     case 17:
     case 105: // Current (A)
-      this.log(`[ZCL-DATA] USB_outlet.current raw=${rawValue} converted=${rawValue / 1000}A`);
+      this.log(`[ZCL-DATA] USB_outlet.current raw=${rawValue} converted=${rawValue/1000}A`);
       break;
     case 18:
     case 106: // Voltage (V)
-      this.log(`[ZCL-DATA] USB_outlet.voltage raw=${rawValue} converted=${rawValue / 10}V`);
+      this.log(`[ZCL-DATA] USB_outlet.voltage raw=${rawValue} converted=${rawValue/10}V`);
       break;
     case 19: // Energy (kWh)
-      this.log(`[ZCL-DATA] USB_outlet.energy raw=${rawValue} converted=${rawValue / 100}kWh`);
+      this.log(`[ZCL-DATA] USB_outlet.energy raw=${rawValue} converted=${rawValue/100}kWh`);
       break;
     case 102:
     case 103:

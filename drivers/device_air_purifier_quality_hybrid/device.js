@@ -46,7 +46,7 @@ class AirQualityComprehensiveDevice extends UnifiedSensorBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this._registerCapabilityListeners(); // rule-12a injected    // Prevents false low-battery alerts (e.g. _TZE200_8ygsuhe1 Smart Airbox is USB-powered)
+    this._registerCapabilityListeners(); // rule-12a injected    
     if (this.mainsPowered && this.hasCapability('measure_battery')) {this.log('[AIR-QUALITY] 🔌 Mains-powered: removed measure_battery');
     }
 

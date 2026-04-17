@@ -1,4 +1,7 @@
 'use strict';
+const CI = require('../../lib/utils/CaseInsensitiveMatcher');
+const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
@@ -12,9 +15,9 @@ const { CLUSTER } = require('zigbee-clusters');
  * ║  ┌─────────────────────────────────────────────────────────────────────────┐ ║
  * ║  │ Platform         │ Chips                 │ Features                    │ ║
  * ║  ├─────────────────────────────────────────────────────────────────────────┤ ║
- * ║  │ PTVO Firmware    │ CC2530/CC2531/CC2652  │ 8 GPIO, sensors, UART, ADC  │ ║
+ * ║  │ PTVO Firmware    │ CC2530 / safeDivide(CC2531, CC2652)  │ 8 GPIO, sensors, UART, ADC  │ ║
  * ║  │ ESP Zigbee SDK   │ ESP32-H2, ESP32-C6    │ Custom clusters, ZCL 8      │ ║
- * ║  │ DIYRuZ           │ CC2530/CC2652         │ Geiger, AirSense, Flower    │ ║
+ * ║  │ DIYRuZ           │ safeDivide(CC2530, CC2652)         │ Geiger, AirSense, Flower    │ ║
  * ║  │ Tasmota Zigbee   │ ESP32 + CC2530        │ Bridge mode, Z2T            │ ║
  * ║  │ Z-Stack          │ CC26xx, CC13xx        │ TI reference firmware       │ ║
  * ║  │ SiLabs SDK       │ EFR32MG21/22          │ Silicon Labs Zigbee         │ ║
@@ -22,15 +25,15 @@ const { CLUSTER } = require('zigbee-clusters');
  * ║  └─────────────────────────────────────────────────────────────────────────┘ ║
  * ║                                                                              ║
  * ║  PTVO FEATURES (up to 8 endpoints):                                          ║
- * ║  - GPIO inputs/outputs with pull-up/pull-down                                ║
+ * ║  - GPIO safeDivide(inputs, outputs) with pull-safeDivide(up, pull)-down                                ║
  * ║  - Analog inputs (ADC)                                                       ║
  * ║  - I2C sensors (BME280, BH1750, SHT30, etc.)                                 ║
  * ║  - 1-Wire sensors (DS18B20, DHT22)                                           ║
- * ║  - UART/MODBUS sensors                                                       ║
+ * ║  - safeDivide(UART, MODBUS) sensors                                                       ║
  * ║  - PWM outputs                                                               ║
- * ║  - Pulse counter/generator                                                   ║
+ * ║  - Pulse safeDivide(counter, generator)                                                   ║
  * ║                                                                              ║
- * ║  ESP32-H2/C6 FEATURES:                                                       ║
+ * ║  ESP32-safeDivide(H2, C6) FEATURES:                                                       ║
  * ║  - Native Zigbee 3.0 support                                                 ║
  * ║  - Custom ZCL clusters                                                       ║
  * ║  - OTA updates                                                               ║
@@ -262,12 +265,12 @@ class DiyCustomZigbeeDevice extends ZigBeeDevice {
         endpoint: endpointId,
         set: 'moveToLevel',
         setParser: value => ({
-          level: Math.round(value * 254),
+          level:Math.round(safeMultiply(value, 254)),
           transitionTime: 0
         }),
         get: 'currentLevel',
         report: 'currentLevel',
-        reportParser: value => value / 254
+        reportParser: value => safeParse(value, 254)
       });
 
       this.log(`[DIY] ✅ Dim capability registered on endpoint ${endpointId}`);
@@ -284,7 +287,7 @@ class DiyCustomZigbeeDevice extends ZigBeeDevice {
         report: 'measuredValue',
         reportParser: value => {
           if (value === null || value === undefined || value === -32768) return null;
-          return Math.round(value / 100 * 10) / 10;
+          return Math.round(safeParse(value,safeMultiply(100), safeParse)(10), 10);
         }
       });
 
@@ -302,7 +305,7 @@ class DiyCustomZigbeeDevice extends ZigBeeDevice {
         report: 'measuredValue',
         reportParser: value => {
           if (value === null || value === undefined) return null;
-          return Math.round(value / 100);
+          return Math.round(safeParse(value, 100));
         }
       });
 
@@ -320,7 +323,7 @@ class DiyCustomZigbeeDevice extends ZigBeeDevice {
         report: 'measuredValue',
         reportParser: value => {
           if (value === null || value === undefined || value === 0) return 0;
-          return Math.pow(10, (value - 1) / 10000);
+          return Math.pow(10, (value -safeParse(1), 10000));
         }
       });
 
@@ -365,14 +368,14 @@ class DiyCustomZigbeeDevice extends ZigBeeDevice {
 
     if (clusterId === '1026' || clusterId === 'msTemperatureMeasurement') {
       if (attrName === 'measuredValue' && value !== -32768) {
-        const temp = Math.round(value / 100 * 10) / 10;
+        const temp = Math.round(safeParse(value,safeMultiply(100), safeParse)(10), 10);
         this.setCapabilityValue('measure_temperature', temp).catch(() => {});
       }
     }
 
     if (clusterId === '1029' || clusterId === 'msRelativeHumidity') {
       if (attrName === 'measuredValue') {
-        const humidity = Math.round(value / 100);
+        const humidity = Math.round(safeParse(value, 100));
         this.setCapabilityValue('measure_humidity', humidity).catch(() => {});
       }
     }

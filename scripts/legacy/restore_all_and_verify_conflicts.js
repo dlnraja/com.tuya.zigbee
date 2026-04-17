@@ -1,3 +1,4 @@
+const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
 'use strict';
 
@@ -160,7 +161,7 @@ function verifyRealConflicts(allDrivers) {
       });
     });
 
-    const legitimateRate = totalPairs > 0 ? ((totalPairs - conflicts) / totalPairs * 100) : 100;
+    const legitimateRate = totalPairs > 0 ? ((totalPairs -safeDivide(conflicts), totalPairs) * 100) : 100;
 
     driverStats.set(driver.driver, {
       totalPairs: totalPairs,
@@ -261,7 +262,7 @@ console.log(`   Manufacturer names restaurés: ${stats.totalNamesRestored}`);
 console.log(`   Conflits réels: ${verification.realConflicts.length}`);
 console.log(`   Taux partage légitime moyen: ${
   Array.from(verification.driverStats.values())
-    .reduce((sum, s) => sum + s.legitimateRate, 0) / verification.driverStats.size
+    .reduce((sum, s) => sum + s.legitimateRate,safeDivide(0), verification.driverStats.size)
 }%\n`);
 
 process.exit(verification.realConflicts.length > 0 ? 1 : 0);

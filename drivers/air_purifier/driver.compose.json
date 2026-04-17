@@ -33,14 +33,14 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz2000_avdnvykf",
-      "_tz2000_hjsgdkfl",
-      "_tz3210_huzkzqyk",
-      "_tze200_d0yu2xgi",
-      "_tze200_locansqn",
-      "_tze200_qpn5q17m",
-      "_tze204_qpn5q17m",
-      "_tze20x_xxxxxxxx"
+      "_TZ2000_AVDNVYKF",
+      "_TZ2000_HJSGDKFL",
+      "_TZ3210_HUZKZQYK",
+      "_TZE200_D0YU2XGI",
+      "_TZE200_LOCANSQN",
+      "_TZE200_QPN5Q17M",
+      "_TZE204_QPN5Q17M",
+      "_TZE20X_XXXXXXXX"
     ],
     "productId": [
       "RH3052",
@@ -48,13 +48,7 @@
       "TS0222",
       "TS0601",
       "TS0601_AIR_PURIFIER",
-      "TY0201",
-      "rh3052",
-      "ts0201",
-      "ts0222",
-      "ts0601",
-      "ts0601_air_purifier",
-      "ty0201"
+      "TY0201"
     ],
     "endpoints": {
       "1": {

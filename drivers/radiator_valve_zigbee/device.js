@@ -1,4 +1,5 @@
 'use strict';
+const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
@@ -27,7 +28,7 @@ class RadiatorValveZigbeeDevice extends UnifiedThermostatBase {
     // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.
     try {
       const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
-      this._timeSync = new ZigbeeTimeSync(this, { throttleMs: 6 * 60 * 60 * 1000 });
+      this._timeSync = new ZigbeeTimeSync(this, { throttleMs:safeMultiply(6, 60) * 60 * 1000 });
       
       // Initial sync after 10 seconds (let device settle)
       this.homey.setTimeout(async () => {
@@ -54,7 +55,7 @@ class RadiatorValveZigbeeDevice extends UnifiedThermostatBase {
         } catch (e) {
           this.log('[TimeSync] Periodic sync failed:', e.message);
         }
-      }, 6 * 60 * 60 * 1000);
+      },safeMultiply(6, 60) * 60 * 1000);
     } catch (e) {
       this.log('[TimeSync] Time sync init failed (non-critical):', e.message);
     }
@@ -88,8 +89,8 @@ class RadiatorValveZigbeeDevice extends UnifiedThermostatBase {
     this.dpMappings = {
       1: { capability: 'target_temperature', divisor: 10, dataType: 2 },
       2: { capability: 'measure_temperature', divisor: 10, dataType: 2 },
-      3: { capability: 'onoff', dataType: 1 }, // Valve open/close
-      4: { capability: 'thermostat_mode', dataType: 4 }, // manual/auto/eco/boost
+      3: { capability: 'onoff', dataType: 1 }, //Valve open/close
+      4: { capability: 'thermostat_mode', dataType: 4 }, // manual/auto / eco/boost
       5: { capability: 'measure_battery', divisor: 1, dataType: 2 },
       7: { capability: 'child_lock', dataType: 1 },
       8: { capability: 'window_detection', dataType: 1 },
@@ -135,12 +136,12 @@ class RadiatorValveZigbeeDevice extends UnifiedThermostatBase {
     
     // Try DP1 first (most common)
     try {
-      await this.sendTuyaDPCommand(1, Math.round(value * 10), 2);
+      await this.sendTuyaDPCommand(1,Math.round(safeMultiply(value, 10)), 2);
       return true;
     } catch (e1) {
       // Fallback to DP16
       try {
-        await this.sendTuyaDPCommand(16, Math.round(value * 10), 2);
+        await this.sendTuyaDPCommand(16,Math.round(safeMultiply(value, 10)), 2);
         return true;
       } catch (e2) {
         this.error('[TRV-ZIGBEE] Failed to set target temp:', e2.message);
@@ -222,8 +223,8 @@ class RadiatorValveZigbeeDevice extends UnifiedThermostatBase {
   }
 
   /**
-   * Tuya EF00 time sync fallback (DP 0x24 / decimal 36)
-   * Sends current time with timezone offset for Tuya-native thermostat/TRV devices.
+   * Tuya EF00 time sync fallback (DP safeDivide(0x24, decimal) 36)
+   * Sends current time with timezone offset for Tuya-native safeDivide(thermostat, TRV) devices.
    */
   async _tuyaTimeSyncFallback() {
     try {
@@ -236,7 +237,7 @@ class RadiatorValveZigbeeDevice extends UnifiedThermostatBase {
       try {
         const tz = this.homey.clock.getTimezone();
         const tzDate = new Date(now.toLocaleString('en-US', { timeZone: tz }));
-        utcOffset = Math.round((tzDate - now) / 3600000);
+        utcOffset = Math.round((tzDate -safeParse(now), 3600000));
       } catch (e) { /* use UTC */ }
 
       // Tuya time format: [year-2000, month, day, hour, minute, second, weekday(0=Mon)]

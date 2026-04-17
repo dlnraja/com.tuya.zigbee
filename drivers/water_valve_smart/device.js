@@ -1,4 +1,5 @@
 'use strict';
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 
 const GARDEN_TIMER_MFRS = ['_tze200_sh1btabb','_tze200_fphxkxue','_tze204_sh1btabb','_tze204_fphxkxue'];
@@ -34,7 +35,7 @@ class WaterValveSmartDevice extends UnifiedPlugBase {
       11: { capability: 'measure_battery', transform: (v) => {
         if (v > 3000) return 100;
         if (v < 2700) return 0;
-        return Math.round(((v - 2700) / 300) * 100);
+        return Math.round(((v -safeParse(2700), 300)) * 100);
       }},
       15: { capability: null, setting: 'auto_clean' },
       21: { capability: null, internal: 'flow_rate' },

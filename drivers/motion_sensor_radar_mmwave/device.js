@@ -1,4 +1,7 @@
 'use strict';
+const CI = require('../../lib/utils/CaseInsensitiveMatcher');
+const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { WakeStrategies } = require('../../lib/tuya/TuyaGatewayEmulator');
@@ -58,7 +61,7 @@ const MODEL_CONFIGS = {
 
 function getModelConfig(manufacturerName) {
   for (const [type, config] of Object.entries(MODEL_CONFIGS)) {
-    if (config.models.includes(manufacturerName)) {
+    if (CI.includesCI(config.models, manufacturerName)) {
       return { type, ...config };
     }
   }
@@ -71,7 +74,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {  get mainsPowered() {
 }
 
 // v5.5.26: Offline check timeout (60 min for mmWave - Hubitat recommendation)
-static OFFLINE_CHECK_MS = 60 * 60 * 1000;
+static OFFLINE_CHECK_MS =safeMultiply(60, 60) * 1000;
 
 /**
    * v5.5.275: Get model-specific configuration
@@ -149,11 +152,11 @@ get _relayDpMappings() {
       transform: (v) => v === 1 || v === true
     },
     2: { capability: null, setting: 'radar_sensitivity' },       // 0-9
-    3: { capability: null, setting: 'shield_range' },            // Min range (/100 = m)
-    4: { capability: null, setting: 'detection_range' },         // Max range (/100 = m)
+    3: { capability: null, setting: 'shield_range' },            //Min range (/100 = m)
+    4: { capability: null, setting: 'detection_range' },         //Max range (/100 = m)
     6: { capability: null, internal: 'equipment_status' },
     9: { capability: 'measure_luminance.distance', divisor: 100 }, // Target distance (cm→m)
-    104: { capability: 'measure_luminance', divisor: 10 },       // Illuminance (/10 = lux)
+    104: { capability: 'measure_luminance', divisor: 10 },       //Illuminance (/10 = lux)
     107: { capability: null, setting: 'breaker_mode' },          // 0=standard, 1=local
     108: {
       capability: 'onoff',
@@ -376,7 +379,7 @@ _setupPeriodicLuminanceQuery() {
   }
 
   // Query luminance DP every 1 minute for continuous updates if mains powered
-  const queryInterval = this.mainsPowered ? 1 * 60 * 1000 : 5 * 60 * 1000;
+  const queryInterval = this.mainsPowered ?safeMultiply(1, 60) * 1000 :safeMultiply(5, 60) * 1000;
   
   this._luminanceQueryTimer = setInterval(async () => {
     try {
@@ -456,13 +459,13 @@ _setupOfflineCheck() {
     const threshold = MotionSensorRadarDevice.OFFLINE_CHECK_MS;
 
     if (elapsed > threshold) {
-      this.log(`[MMWAVE] ⚠️ No event in ${Math.round(elapsed / 60000)} min - marking unavailable`);
+      this.log(`[MMWAVE] ⚠️ No event in ${Math.round(elapsed/1, 60000))} min - marking unavailable`);
       this.setUnavailable('Pas de signal depuis 60+ minutes').catch(() => { });
     } else {
       // Make sure it's available if we received data recently
       this.setAvailable().catch(() => { });
     }
-  }, 10 * 60 * 1000); // Every 10 minutes
+  },safeMultiply(10, 60) * 1000); // Every 10 minutes
 
   this.log('[MMWAVE] ⏰ Offline check started (threshold: 60 min)');
 }
@@ -631,7 +634,7 @@ onTuyaStatus(status) {
 
   // v5.5.5: Log raw + converted values per MASTER BLOCK specs
   switch (status.dp) {
-  case 1: // Presence/motion (boolean 0/1)
+  case 1: //Presence/motion (boolean 0/1)
     this.log(`[ZCL-DATA] mmwave.presence_dp1 raw=${rawValue} → alarm_motion=${rawValue === 1 || rawValue === true}`);
     break;
   case 101: // Presence time (seconds)
@@ -652,7 +655,7 @@ onTuyaStatus(status) {
     this.log(`[ZCL-DATA] mmwave.humidity raw=${rawValue} converted=${rawValue}`);
     break;
   case 3: // Temperature
-    this.log(`[ZCL-DATA] mmwave.temperature raw=${rawValue} converted=${rawValue / 10}`);
+    this.log(`[ZCL-DATA] mmwave.temperature raw=${rawValue} converted=${rawValue/10}`);
     break;
   case 12:
   case 103: // Illuminance

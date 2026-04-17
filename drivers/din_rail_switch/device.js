@@ -1,4 +1,6 @@
 'use strict';
+const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
@@ -62,21 +64,21 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeD
 
       if (this.hasCapability('measure_power')) {
         emCluster.on('attr.activePower', (value) => {
-          const power = value / 10;
+          const power = safeParse(value, 10);
           this.setCapabilityValue('measure_power', power).catch(this.error);
         });
       }
 
       if (this.hasCapability('measure_voltage')) {
         emCluster.on('attr.rmsVoltage', (value) => {
-          const voltage = value / 10;
+          const voltage = safeParse(value, 10);
           this.setCapabilityValue('measure_voltage', voltage).catch(this.error);
         });
       }
 
       if (this.hasCapability('measure_current')) {
         emCluster.on('attr.rmsCurrent', (value) => {
-          const current = value / 1000;
+          const current = safeParse(value, 1000);
           this.setCapabilityValue('measure_current', current).catch(this.error);
         });
       }
@@ -85,7 +87,7 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeD
     const meteringCluster = ep1.clusters?.metering || ep1.clusters?.[1794];
     if (meteringCluster && this.hasCapability('meter_power')) {
       meteringCluster.on('attr.currentSummationDelivered', (value) => {
-        const energy = value / 1000;
+        const energy = safeParse(value, 1000);
         this.setCapabilityValue('meter_power', energy).catch(this.error);
       });
     }
@@ -116,15 +118,15 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeD
     this.log(`[DP${dp}] Value: ${value}`);
 
     switch (dp) {
-    case 1: // On/Off state
+    case 1: //On/Off state
     case 16:
       this.setCapabilityValue('onoff', !!value).catch(this.error);
       break;
 
-    case 17: // Total current (A * 1000)
+    case 17: //Total current (A*1000)
     case 20:
       if (this.hasCapability('measure_current')) {
-        this.setCapabilityValue('measure_current', value / 1000).catch(this.error);
+        this.setCapabilityValue('measure_current', safeParse(value, 1000)).catch(this.error);
       }
       break;
 
@@ -134,15 +136,15 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeD
       }
       break;
 
-    case 19: // Voltage (V * 10)
+    case 19: //Voltage (V*10)
       if (this.hasCapability('measure_voltage')) {
-        this.setCapabilityValue('measure_voltage', value / 10).catch(this.error);
+        this.setCapabilityValue('measure_voltage', safeParse(value, 10)).catch(this.error);
       }
       break;
 
-    case 101: // Energy (kWh * 100)
+    case 101: //Energy (kWh*100)
       if (this.hasCapability('meter_power')) {
-        this.setCapabilityValue('meter_power', value / 100).catch(this.error);
+        this.setCapabilityValue('meter_power', safeParse(value, 100)).catch(this.error);
       }
       break;
     }

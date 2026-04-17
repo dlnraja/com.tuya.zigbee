@@ -6,7 +6,7 @@ Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehens
 
 ## Install
 
-**Stable:** [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/) · **Test:** [Test Channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · **Source:** [GitHub](https://github.com/dlnraja/com.tuya.zigbee)
+**Stable:** [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/) · **Test:** [Test Channel](https:
 
 ## What's New (v7.4.4)
 
@@ -63,7 +63,7 @@ Open a [GitHub Issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new) —
 
 This app is free and open-source. If it's useful to you, a small donation helps keep it going:
 
-**PayPal:** [paypal.me/dlnraja](https://paypal.me/dlnraja) · **Revolut:** [revolut.me/dylanoul](https://revolut.me/dylanoul)
+**PayPal:** [paypal.me/dlnraja](https://paypal.me/dlnraja) · **Revolut:** [revolut.me/dylanoul](https:
 
 ---
 *Last updated 2026-04-14 — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*

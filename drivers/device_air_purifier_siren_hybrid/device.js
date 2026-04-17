@@ -1,4 +1,6 @@
 'use strict';
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 
 /**
@@ -30,7 +32,7 @@ class SirenDevice extends UnifiedPlugBase {
       // v5.5.130: VOLUME & SOUND from Zigbee2MQTT
       // ═══════════════════════════════════════════════════════════════════
       // Volume (0=low, 1=medium, 2=high or 0-100)
-      5: { capability: 'volume_set', transform: (v) => ({ 0: 0.33, 1: 0.66, 2: 1.0 }[v] ?? (v / 100)) },
+      5: { capability: 'volume_set', transform: (v) => ({ 0: 0.33, 1: 0.66, 2: 1.0 }[v] ?? (safeParse(v, 100))) },
       // Duration (60-3600 seconds)
       7: { capability: null, setting: 'duration', writable: true },
       // Melody/Ringtone (melody_1 to melody_5)
@@ -48,7 +50,7 @@ class SirenDevice extends UnifiedPlugBase {
       // ENVIRONMENTAL (some sirens have T/H sensors)
       // ═══════════════════════════════════════════════════════════════════
       104: { capability: 'onoff', transform: (v) => !!v },
-      116: { capability: 'volume_set', transform: (v) => ({ 0: 0.33, 1: 0.66, 2: 1.0 }[v] ?? (v / 100)) },
+      116: { capability: 'volume_set', transform: (v) => ({ 0: 0.33, 1: 0.66, 2: 1.0 }[v] ?? (safeParse(v, 100))) },
       103: { capability: null, setting: 'duration', writable: true },
       101: { capability: 'measure_temperature', divisor: 10 },
       102: { capability: 'measure_humidity', divisor: 1 },

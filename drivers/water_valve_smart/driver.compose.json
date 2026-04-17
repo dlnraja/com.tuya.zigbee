@@ -47,21 +47,21 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_8n7lqbm0",
-      "_tz3000_ctftgjwb",
-      "_tz3000_g8n1n7lg",
-      "_tz3000_udl7uyd2",
-      "_tz3000_yz38gdra",
-      "_tz3218_7fiyo3kv",
-      "_tz3290_ixd9mvv4",
-      "_tze200_r32ctezx",
-      "_tze200_yltivvzb",
-      "_tze204_r32ctezx",
-      "_tze204_wt66haax",
-      "_tze284_7zazvlyn",
-      "_tze284_ajlu4cud",
-      "_tze284_idn2htgu",
-      "_tze284_wt66haax"
+      "_TZ3000_8N7LQBM0",
+      "_TZ3000_CTFTGJWB",
+      "_TZ3000_G8N1N7LG",
+      "_TZ3000_UDL7UYD2",
+      "_TZ3000_YZ38GDRA",
+      "_TZ3218_7FIYO3KV",
+      "_TZ3290_IXD9MVV4",
+      "_TZE200_R32CTEZX",
+      "_TZE200_YLTIVVZB",
+      "_TZE204_R32CTEZX",
+      "_TZE204_WT66HAAX",
+      "_TZE284_7ZAZVLYN",
+      "_TZE284_AJLU4CUD",
+      "_TZE284_IDN2HTGU",
+      "_TZE284_WT66HAAX"
     ],
     "learnmode": {
       "image": "/drivers/water_valve_smart/assets/learnmode.svg",
@@ -77,14 +77,7 @@
       "SWV-ZNE",
       "SWV-ZNU",
       "TS0601",
-      "TS0601_WATERVALVE",
-      "swv-zfe",
-      "swv-zfu",
-      "swv-zn",
-      "swv-zne",
-      "swv-znu",
-      "ts0601",
-      "ts0601_watervalve"
+      "TS0601_WATERVALVE"
     ],
     "endpoints": {
       "1": {

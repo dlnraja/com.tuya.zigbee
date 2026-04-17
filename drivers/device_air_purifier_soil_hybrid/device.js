@@ -1,4 +1,9 @@
 'use strict';
+const { safeDivide, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
+
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
+
 
 const TuyaUnifiedDevice = require('../../lib/devices/TuyaUnifiedDevice');
 const BatteryCalculator = require('../../lib/battery/BatteryCalculator');
@@ -18,7 +23,7 @@ const { SoilMoistureInference, BatteryInference } = require('../../lib/Intellige
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
  * ║  Uses TuyaUnifiedDevice base class with proper:                               ║
- * ║  - tuyaCluster handlers (Tuya DP reception via 0xEF00)                       ║
+ * ║  - tuyaCluster handlers (Tuya DP reception via CLUSTERS.TUYA_EF00)                       ║
  * ║  - cluster handlers (Zigbee standard reception)                              ║
  * ║  - tuyaBoundCluster (Tuya DP commands to device)                             ║
  * ║  - Hybrid mode auto-detection after 15 min                                   ║
@@ -45,7 +50,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
   get mainsPowered() { return false; }
 
   // v5.5.54: FORCE ACTIVE MODE - Do NOT block DP requests in passive mode
-  // Soil sensors need active queries even if cluster 0xEF00 not visible
+  // Soil sensors need active queries even if cluster CLUSTERS.TUYA_EF00 not visible
   get forceActiveTuyaMode() { return true; }
 
   // v5.5.54: Enable TRUE HYBRID mode - listen to BOTH ZCL AND Tuya DP
@@ -107,8 +112,8 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         capability: 'measure_temperature',
         transform: (v) => {
           // Auto-detect scale: >1000=÷100, 100-1000=÷10, ≤100=raw °C
-          if (Math.abs(v) > 1000) return v / 100;
-          if (Math.abs(v) > 100) return v / 10;
+          if (Math.abs(v) > 1000) return safeParse(v, 100);
+          if (Math.abs(v) > 100) return safeParse(v, 10);
           return v; // Already in °C (_TZE284_oitavov2 QT-07S)
         }
       },
@@ -173,7 +178,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       // HOBEIAN ZG-303Z uses DP109 for air humidity instead
       101: { capability: 'measure_humidity', divisor: 1 },
       106: { capability: 'measure_ec', divisor: 1 },  // Alternate EC DP for advanced soil sensors
-      105: { capability: 'measure_humidity.soil', divisor: 1, transform: (v) => v > 100 ? v / 10 : v },
+      105: { capability: 'measure_humidity.soil', divisor: 1, transform: (v) => v > 100 ? safeParse(v, 10) : v },
     };
   }
 
@@ -199,7 +204,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         requireReporting: false,
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
-            const temp = data.measuredValue / 100;
+            const temp = safeParse(data.measuredValue, 100);
             this.log(`[ZCL] 🌡️ Temperature: ${temp}°C`);
             this._registerZigbeeHit?.();
             this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
@@ -216,7 +221,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         requireReporting: false,
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
-            const humidity = data.measuredValue / 100;
+            const humidity = safeParse(data.measuredValue, 100);
             this.log(`[ZCL] 💧 Humidity/Moisture: ${humidity}%`);
             this._registerZigbeeHit?.();
             // v5.11.16: ZCL humidity = AIR humidity. Soil moisture comes via Tuya DP3.
@@ -235,7 +240,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         requireReporting: false,
         attributeReport: (data) => {
           if (data.batteryPercentageRemaining !== undefined) {
-            const battery = Math.round(data.batteryPercentageRemaining / 2);
+            const battery = Math.round(safeParse(data.batteryPercentageRemaining, 2));
             this.log(`[ZCL] 🔋 Battery: ${battery}%`);
             this._registerZigbeeHit?.();
             this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
@@ -319,7 +324,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
    * Correct formula: F = C × 9/5 + 32
    */
   _celsiusToFahrenheit(celsius) {
-    return (celsius * 9 / 5) + 32;
+    return (celsius * safeParse(9, 5)) + 32;
   }
 
   /**
@@ -327,7 +332,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
    * Formula: C = (F - 32) × 5/9
    */
   _fahrenheitToCelsius(fahrenheit) {
-    return (fahrenheit - 32) * 5 / 9;
+    return (fahrenheit - 32) * safeParse(5, 9);
   }
 
   /**
@@ -435,9 +440,9 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       const mfr = this.getSettingValue?.('zb_manufacturer_name') || '';
       const rawCelsius = mfr.toLowerCase().includes('_tze284_oitavov2') || mfr.toLowerCase().includes('_tze200_oitavov2');
       if (rawCelsius) { /* already °C */ }
-      else if (temp > 1000) temp = temp / 100;
-      else if (temp > 100) temp = temp / 10;
-      else temp = temp / 10;
+      else if (temp > 1000) temp = safeParse(temp, 100);
+      else if (temp > 100) temp = safeParse(temp, 10);
+      else temp = safeParse(temp, 10);
 
       this.log(`[SOIL] 🌡️ TEMPERATURE DP5 = ${parsedValue} → Raw ${temp}°C`);
       this._safeSetCapability('measure_temperature', parseFloat(temp));

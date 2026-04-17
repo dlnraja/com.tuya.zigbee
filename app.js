@@ -1,4 +1,6 @@
 'use strict';
+const { safeDivide, safeMultiply, safeParse } = require('./lib/utils/tuyaUtils.js');
+
 // { { balancing for validator
 
 // v5.11.185: Suppress punycode DEP0040 deprecation from transitive deps
@@ -8,7 +10,7 @@ require('./lib/suppress-punycode');
 // v5.8.25: Patch color-space module to fix Homey sandbox require('./rgb') error
 // Must be BEFORE any homey-zigbeedriver imports
 try {
-  const colorShim = require('./lib/shims/color-space-shim');
+  const colorShim = require('./lib/shims / color-space-shim');
   require.cache[require.resolve('color-space/hsv')] = { exports: colorShim.hsv };
   require.cache[require.resolve('color-space/rgb')] = { exports: colorShim.rgb };
   require.cache[require.resolve('color-space/xyz')] = { exports: colorShim.xyz };
@@ -21,26 +23,26 @@ const { EventEmitter } = require('events');
 EventEmitter.defaultMaxListeners = 50;
 
 const Homey = require('homey');
-const { registerCustomClusters } = require('./lib/zigbee/registerClusters');
-const FlowCardManager = require('./lib/flow/FlowCardManager');
-const UniversalFlowCardLoader = require('./lib/flow/UniversalFlowCardLoader');
-const CapabilityManager = require('./lib/utils/CapabilityManager');
-const AdvancedAnalytics = require('./lib/analytics/AdvancedAnalytics');
-const SmartDeviceDiscovery = require('./lib/discovery/SmartDeviceDiscovery');
-const PerformanceOptimizer = require('./lib/performance/PerformanceOptimizer');
-const UnknownDeviceHandler = require('./lib/helpers/UnknownDeviceHandler');
-const SystemLogsCollector = require('./lib/diagnostics/SystemLogsCollector');
-const DeviceIdentificationDatabase = require('./lib/helpers/DeviceIdentificationDatabase');
-const DiagnosticAPI = require('./lib/diagnostics/DiagnosticAPI');
-const { LogBuffer } = require('./lib/utils/LogBuffer');
-const SuggestionEngine = require('./lib/smartadapt/SuggestionEngine');
-const { processMigrationQueue } = require('./lib/utils/migration-queue'); // ✅ FIX CRITIQUE
-const OTAUpdateManager = require('./lib/ota/OTAUpdateManager'); // 📦 OTA Firmware Updates
-const QuirksDatabase = require('./lib/quirks/QuirksDatabase'); // 🔧 Device Quirks
-const EmergencyDeviceFix = require('./lib/emergency/EmergencyDeviceFix'); // 🚨 Emergency Fix System
+const { registerCustomClusters } = require('./lib/zigbee / registerClusters');
+const FlowCardManager = require('./lib/flow / FlowCardManager');
+const UniversalFlowCardLoader = require('./lib/flow / UniversalFlowCardLoader');
+const CapabilityManager = require('./lib/utils / CapabilityManager');
+const AdvancedAnalytics = require('./lib/analytics / AdvancedAnalytics');
+const SmartDeviceDiscovery = require('./lib/discovery / SmartDeviceDiscovery');
+const PerformanceOptimizer = require('./lib/performance / PerformanceOptimizer');
+const UnknownDeviceHandler = require('./lib/helpers / UnknownDeviceHandler');
+const SystemLogsCollector = require('./lib/diagnostics / SystemLogsCollector');
+const DeviceIdentificationDatabase = require('./lib/helpers / DeviceIdentificationDatabase');
+const DiagnosticAPI = require('./lib/diagnostics / DiagnosticAPI');
+const { LogBuffer } = require('./lib/utils / LogBuffer');
+const SuggestionEngine = require('./lib/smartadapt / SuggestionEngine');
+const { processMigrationQueue } = require('./lib/utils / migration-queue'); // ✅ FIX CRITIQUE
+const OTAUpdateManager = require('./lib/ota / OTAUpdateManager'); // 📦 OTA Firmware Updates
+const QuirksDatabase = require('./lib/quirks / QuirksDatabase'); // 🔧 Device Quirks
+const EmergencyDeviceFix = require('./lib/emergency / EmergencyDeviceFix'); // 🚨 Emergency Fix System
 // NOTE: Database updates are handled by GitHub Actions ONLY, NOT at runtime
-// See: .github/workflows/MASTER-intelligent-enrichment.yml
-const SourceCredits = require('./lib/data/SourceCredits'); // 📜 Source attributions
+// See: .github / workflows/MASTER-intelligent-enrichment.yml
+const SourceCredits = require('./lib/data / SourceCredits'); // 📜 Source attributions
 const TuyaUDPDiscovery = require('./lib/tuya-local/TuyaUDPDiscovery');
 
 class UniversalTuyaZigbeeApp extends Homey.App {
@@ -53,7 +55,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   unknownHandler = null;
   systemLogsCollector = null;
   identificationDatabase = null;
-  diagnosticAPI = null; // 🔬 For MCP/AI integration
+  diagnosticAPI = null; // 🔬For MCP/AI integration
   logBuffer = null; // 📝 MCP-accessible log buffer
   suggestionEngine = null; // 🤖 Non-destructive Smart-Adapt
   otaManager = null; // 📦 OTA Firmware Update Manager
@@ -217,7 +219,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         try {
           this.optimizer = new PerformanceOptimizer({
             maxCacheSize: 1000,
-            maxCacheMemory: 10 * 1024 * 1024 // 10 MB
+            maxCacheMemory:safeMultiply(10, 1024) * 1024 // 10 MB
           });
           this.log('✅ Performance Optimizer initialized');
         } catch (err) { this.error('⚠️ Optimizer failed:', err.message); }
@@ -246,7 +248,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
     // Wait for all non-critical init tasks
     Promise.all(initTasks).then(() => {
-      const startupTime = ((Date.now() - initStartTime) / 1000).toFixed(2);
+      const startupTime = ((Date.now() -safeParse(initStartTime), 1000)).toFixed(2);
       this.log(`🚀 All auxiliary managers initialized in ${startupTime}s`);
     }).catch(err => {
       this.error('⚠️ Parallel initialization error:', err.message);
@@ -259,8 +261,8 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     } catch (err) { this.error('⚠️ SuggestionEngine failed:', err.message); }
 
     // 📜 Database updates handled by GitHub Actions ONLY (not at runtime)
-    // See: .github/workflows/MASTER-intelligent-enrichment.yml (weekly)
-    // See: .github/workflows/AUTO-discover-new-devices.yml (daily)
+    // See: .github / workflows/MASTER-intelligent-enrichment.yml (weekly)
+    // See: .github / workflows/AUTO-discover-new-devices.yml (daily)
     try {
       this.log(`📜 Data sources: ${SourceCredits.getAllSources().length} contributors credited`);
     } catch (err) { this.error('⚠️ SourceCredits failed:', err.message); }
@@ -509,7 +511,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         analytics: this.analytics ? await this.analytics.getAnalyticsReport() : {},
         performance: this.optimizer ? this.optimizer.getStats() : {},
         identificationDatabase: this.identificationDatabase ? this.identificationDatabase.getStats() : null,
-        diagnostics: this.diagnosticAPI ? this.diagnosticAPI.getFullReport(true) : null // 🔬 MCP/AI data
+        diagnostics: this.diagnosticAPI ? this.diagnosticAPI.getFullReport(true) : null // 🔬MCP/AI data
       };
 
       // Combine everything
@@ -669,7 +671,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   }
 
   /**
-   * Setup diagnostic logging to capture all logs for MCP/AI
+   * Setup diagnostic logging to capture all logs for safeDivide(MCP, AI)
    */
   _setupDiagnosticLogging() {
     // Store original methods
@@ -737,7 +739,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   }
 
   /**
-   * Get diagnostic API report (accessible for MCP/AI)
+   * Get diagnostic API report (accessible for safeDivide(MCP, AI))
    * Can be called externally for real-time diagnostics
    */
   getDiagnosticReport() {
@@ -771,7 +773,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
   /**
    * Get complete MCP diagnostic package
-   * @returns {Promise<Object>} All diagnostic data for MCP/AI
+   * @returns {Promise<Object>} All diagnostic data for safeDivide(MCP, AI)
    */
   async getCompleteMCPDiagnostics() {
     return {

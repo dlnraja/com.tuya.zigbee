@@ -1,4 +1,6 @@
 'use strict';
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 
 // v5.5.295: Fix "Class extends value undefined" stderr error
 // Use try-catch to handle potential circular dependency issues
@@ -40,14 +42,14 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   get dpMappings() {
     return {
       1: { capability: 'windowcoverings_state', transform: (v) => v === 0 || v === 'open' ? 'up' : v === 2 || v === 'close' ? 'down' : 'idle' },
-      2: { capability: 'windowcoverings_set', transform: (v) => v / 100 },
-      3: { capability: 'dim', transform: (v) => v / 100 },
+      2: { capability: 'windowcoverings_set', transform: (v) => safeParse(v, 100) },
+      3: { capability: 'dim', transform: (v) => safeParse(v, 100) },
       4: { capability: null, internal: 'mode', writable: true },
       5: { capability: null, internal: 'reverse', writable: true },
       6: { capability: null, internal: 'border' },
       7: { capability: null, internal: 'position_reached' },
       8: { capability: 'moving', transform: (v) => v === 1 || v === 2 || v === 'opening' || v === 'closing' },
-      9: { capability: 'windowcoverings_tilt_set', transform: (v) => v / 100 },
+      9: { capability: 'windowcoverings_tilt_set', transform: (v) => safeParse(v, 100) },
       10: { capability: null, internal: 'speed', writable: true },
       12: { capability: null, internal: 'backlight', writable: true },
       13: { capability: 'measure_battery', divisor: 1 },

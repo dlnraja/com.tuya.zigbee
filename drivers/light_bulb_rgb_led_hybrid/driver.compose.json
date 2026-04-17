@@ -29,8 +29,8 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3210_eejm8dcr",
-      "_tz3210_invesber"
+      "_TZ3210_EEJM8DCR",
+      "_TZ3210_INVESBER"
     ],
     "endpoints": {
       "1": {
@@ -53,8 +53,7 @@
       }
     },
     "productId": [
-      "TS0505B",
-      "ts0505b"
+      "TS0505B"
     ],
     "capabilities": {
       "light_color_temp": {

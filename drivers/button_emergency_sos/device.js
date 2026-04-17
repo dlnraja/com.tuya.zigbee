@@ -1,11 +1,12 @@
 'use strict';
 
 const BaseUnifiedDevice = require('../../lib/devices/BaseUnifiedDevice');
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants');
 
 class SosEmergencyButtonDevice extends BaseUnifiedDevice {
 
   async onNodeInit({ zclNode }) {
-    this.zclNode = zclNode;
+    await super.onNodeInit({ zclNode });
     this.log('[SOS] Initializing...');
 
     // Standard capability check
@@ -49,7 +50,7 @@ class SosEmergencyButtonDevice extends BaseUnifiedDevice {
 
   async _setupTuyaDP() {
     const ep1 = this.zclNode?.endpoints?.[1];
-    const tuya = ep1?.clusters?.tuya || ep1?.clusters?.[61184];
+    const tuya = ep1?.clusters?.tuya || ep1?.clusters?.[CLUSTERS.TUYA_EF00];
     if (tuya) {
       tuya.on('datapoint', (dp, value) => {
         if (dp === 1 || dp === 14) this._handleAlarm({ source: 'tuya', dp, value });

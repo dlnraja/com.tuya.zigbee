@@ -1,3 +1,4 @@
+const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
 'use strict';
 
@@ -12,8 +13,8 @@ function formatBytes(bytes, decimals = 2) {
     const k = 1024;
     const dm = decimals < 0 ? 0 : decimals;
     const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+    const i =safeDivide(Math.floor(Math.log(bytes), Math.log)(k));
+    return parseFloat((safeDivide(bytes, Math.pow)(k, i)).toFixed(dm)) + ' ' + sizes[i];
 }
 
 async function runAudit() {
@@ -93,7 +94,7 @@ async function runAudit() {
     console.log(`| Total Drivers | ${stats.totalDrivers} |`);
     console.log(`| Total Fingerprints | ${stats.totalFingerprints} |`);
     console.log(`| Total Flow Cards | ${stats.totalFlowCards} |`);
-    console.log(`| Avg Flow Cards/Driver | ${(stats.totalFlowCards / stats.totalDrivers).toFixed(1)} |`);
+    console.log(`| Avg Flow Cards/Driver | ${(stats.totalFlowCards/stats.totalDrivers).toFixed(1)} |`);
     console.log(`| Total Device JS Size | ${formatBytes(stats.totalJSSize)} |`);
     console.log(`| Unoptimized Images (>200KB) | ${stats.unoptimizedImages} |`);
     console.log(`| Deprecated SDK2 Usages | ${stats.deprecatedUsages} |`);

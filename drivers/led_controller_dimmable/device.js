@@ -1,4 +1,9 @@
 'use strict';
+const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
+
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
+
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
@@ -24,7 +29,7 @@ const TUYA_DP = {
  * Fixes Issue #83: xSondreBx - WoodUpp LED Driver
  *
  * v5.3.77 CHANGES:
- * - CRITICAL: Added TUYA DP support (cluster 0xEF00)
+ * - CRITICAL: Added TUYA DP support (cluster CLUSTERS.TUYA_EF00)
  * - Device uses Tuya DataPoints for dimming, NOT standard ZCL!
  * - DP 1 = On/Off, DP 2 = Brightness (0-1000)
  * - 10 dimming strategies including Tuya DP
@@ -44,7 +49,7 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
     this.log('║    LED CONTROLLER DIMMABLE (Single Channel) - v5.3.77       ║');
     this.log('║    Fixes Issue #83: WoodUpp 24V LED Driver                  ║');
     this.log('╠══════════════════════════════════════════════════════════════╣');
-    this.log('║ ✅ TUYA DP support (cluster 0xEF00) - CRITICAL FIX          ║');
+    this.log('║ ✅ TUYA DP support (cluster CLUSTERS.TUYA_EF00) - CRITICAL FIX          ║');
     this.log('║ ✅ 10 dimming strategies for maximum compatibility          ║');
     this.log('║ ✅ Ultra-verbose logging for diagnostics                    ║');
     this.log('╚══════════════════════════════════════════════════════════════╝');
@@ -62,7 +67,7 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
     // Log cluster availability with detailed info
     this.log(`[LED] onOff cluster: ${this._onOffCluster ? '✅' : '❌'}`);
     this.log(`[LED] levelControl cluster: ${this._levelCluster ? '✅' : '❌'}`);
-    this.log(`[LED] TUYA cluster (0xEF00): ${this._tuyaCluster ? '✅ FOUND!' : '❌'}`);
+    this.log(`[LED] TUYA cluster (CLUSTERS.TUYA_EF00): ${this._tuyaCluster ? '✅ FOUND!' : '❌'}`);
 
     // Log available methods on levelControl cluster
     if (this._levelCluster) {
@@ -97,7 +102,7 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
       if (!endpoint) return;
 
       // Try to get Tuya cluster
-      const tuyaCluster = endpoint.clusters['tuya'] || endpoint.clusters[61184];
+      const tuyaCluster = endpoint.clusters['tuya'] || endpoint.clusters[CLUSTERS.TUYA_EF00];
       if (tuyaCluster) {
         this._tuyaCluster = tuyaCluster;
         this.log('[LED] ✅ Tuya cluster found, setting up DP listener...');
@@ -126,7 +131,7 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
         this.setCapabilityValue('onoff', !!value).catch(this.error);
       } else if (dp === TUYA_DP.BRIGHTNESS) {
         // Tuya brightness is typically 0-1000
-        const dim = Math.max(0, Math.min(1, value / 1000));
+        const dim = Math.max(0, Math.min(1, safeParse(value, 1000)));
         this.setCapabilityValue('dim', parseFloat(dim)).catch(this.error);
       }
     }
@@ -144,7 +149,7 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
     // Level attribute listener
     if (this._levelCluster) {
       this._levelCluster.on('attr.currentLevel', (value) => {
-        const dim = Math.max(0, Math.min(1, value / 254));
+        const dim = Math.max(0, Math.min(1, safeParse(value, 254)));
         this.log(`[LED] currentLevel attribute changed: ${value} → dim=${dim}`);
         this.setCapabilityValue('dim', parseFloat(dim)).catch(this.error);
       });
@@ -178,17 +183,17 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
     this.registerCapabilityListener('dim', async (value, opts) => {
       this.log('');
       this.log('┌─────────────────────────────────────────────────────────────┐');
-      this.log(`│ 💡 DIM COMMAND: ${Math.round(value * 100)}%`);
+      this.log(`│ 💡 DIM COMMAND: ${Math.round(safeMultiply(value, 100))}%`);
       this.log('└─────────────────────────────────────────────────────────────┘');
 
-      const level = Math.max(1, Math.min(254, Math.round(value * 254)));
-      const tuyaBrightness = Math.max(10, Math.min(1000, Math.round(value * 1000))); // Tuya uses 0-1000
+      const level = Math.max(1, Math.min(254,Math.round(safeMultiply(value, 254))));
+      const tuyaBrightness = Math.max(10, Math.min(1000,Math.round(safeMultiply(value, 1000)))); // Tuya uses 0-1000
       this.log(`[LED] Target level: ${level} (ZCL 0-254) / ${tuyaBrightness} (Tuya 0-1000)`);
 
-      // Build strategies array - TUYA DP FIRST since device has cluster 0xEF00
+      // Build strategies array - TUYA DP FIRST since device has cluster CLUSTERS.TUYA_EF00
       const strategies = [];
 
-      // TUYA DP strategies (PRIORITY - device has 0xEF00 cluster!)
+      // TUYA DP strategies (PRIORITY - device has CLUSTERS.TUYA_EF00 cluster!)
       if (this._tuyaCluster) {
         // Strategy 1: Tuya DP brightness (0-1000)
         strategies.push({
@@ -347,7 +352,7 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
       if (this._levelCluster) {
         const levelAttrs = await this._levelCluster.readAttributes(['currentLevel']).catch(() => ({}));
         if (levelAttrs.currentLevel !== undefined) {
-          const dim = Math.max(0, Math.min(1, levelAttrs.currentLevel / 254));
+          const dim = Math.max(0, Math.min(1, safeParse(levelAttrs.currentLevel, 254)));
           await this.setCapabilityValue('dim', parseFloat(dim)).catch(() => { });
           this.log(`[LED] Initial level: ${levelAttrs.currentLevel} → dim=${dim}`);
         }

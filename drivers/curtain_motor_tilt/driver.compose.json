@@ -17,18 +17,16 @@
   ],
   "zigbee": {
     "manufacturerName": [
-      "_tze200_7eue9vhc",
-      "_tze200_a8zrneee",
-      "_tze200_ergbiejo",
-      "_tze200_lwlvaony",
-      "_tze200_pk29mnl3",
-      "_tze200_sbordckq"
+      "_TZE200_7EUE9VHC",
+      "_TZE200_A8ZRNEEE",
+      "_TZE200_ERGBIEJO",
+      "_TZE200_LWLVAONY",
+      "_TZE200_PK29MNL3",
+      "_TZE200_SBORDCKQ"
     ],
     "productId": [
       "TS0601",
-      "TS0601_CURTAIN_TILT",
-      "ts0601",
-      "ts0601_curtain_tilt"
+      "TS0601_CURTAIN_TILT"
     ],
     "endpoints": {
       "1": {

@@ -13,6 +13,8 @@
  */
 
 'use strict';
+const { safeParse, safeDivide } = require('../lib/utils/tuyaUtils.js');
+
 
 const { execSync } = require('child_process');
 const path = require('path');
@@ -60,12 +62,21 @@ async function main() {
   // PHASE 3: Autonomous Repair (Self-Healing)
   process.env.DRY_RUN = 'false';
   run('node scripts/maintenance/master-self-heal.js', 'Ph3: Master Self-Healing Engine (v2.1)');
+  run('node scripts/maintenance/autonomous-caseless-fixer.js', 'Ph3b: Autonomous Caseless Architecture Fixer');
+  
+  // PHASE 3-Remediation: Hardening Gaps (Numeric & NaN)
+  run('node scripts/remediation/resolve-numeric-violations.js', 'Ph3-R1: Numeric Constant Hardening');
+  run('node scripts/remediation/resolve-numeric-literals.js', 'Ph3-R1b: Cluster Literal Migration (EF00)');
+  run('node scripts/remediation/resolve-nan-risks.js', 'Ph3-R2: NaN Risk Remediation (Constants)');
+  run('node scripts/remediation/resolve-variable-nan-risks.js', 'Ph3-R2b: NaN Risk Hardening (Variables)');
+  run('node scripts/remediation/resolve-manifest-collisions.js', 'Ph3-R3: Manifest Collision Resolver');
 
   // PHASE 3b: Global Fingerprint Deduplication & Conflict Check
   run('node scripts/automation/deduplicate-fingerprints.js', 'Ph3b: Global Fingerprint Deduplication');
   run('node scripts/automation/fix-fingerprint-conflicts.js --auto-fix', 'Ph3c: Fingerprint Conflict Resolver');
+  run('node scripts/automation/extract-local-keys.js', 'Ph3d: Local Key Extraction Ingestion');
 
-  // PHASE 3d: Parallel Bot Cleanup (v5.12.35)
+  // PHASE 3e: Parallel Bot Cleanup (v5.12.35)
   run('node scripts/automation/parallel-bot-handler.js', 'Ph3d: Parallel Bot Response Cleanup');
 
   // PHASE 4: Architectural Hardening & Visual Excellence
@@ -83,7 +94,7 @@ async function main() {
   const isValid = run('npx homey app validate --level publish', 'Ph5: Homey SDK3 Validation Audit');
 
   // PHASE 6: Report Generation
-  const duration = ((Date.now() - startTime) / 1000).toFixed(1);
+  const duration = safeDivide(Date.now() - startTime, 1000).toFixed(1);
   const report = {
     lastRun: Date.now(),
     duration,
@@ -101,4 +112,3 @@ main().catch(e => {
   console.error('Fatal nexus orchestrator error:', e);
   process.exit(1);
 });
-

@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 'use strict';
+
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
+
 const fs=require('fs'),path=require('path');
 const SD=path.join(__dirname,'..','state');
 const PROFILE={DEV:'developer',POWER:'power-user',END:'end-user'};
@@ -10,7 +13,7 @@ function detectFromGitHub(username,issueBody){
   const t=(issueBody||'');
   signals.hasInterview=/endpointDescriptors|inputClusters|outputClusters/.test(t);
   signals.hasJSON=/^\s*\{[\s\S]{50,}\}/m.test(t);
-  signals.hasClusters=/cluster\s*0x|cluster\s*\d{4,5}|0xEF00|61184/i.test(t);
+  signals.hasClusters=/cluster\s*0x|cluster\s*\d{4,5}|CLUSTERS.TUYA_EF00|CLUSTERS.TUYA_EF00/i.test(t);
   signals.hasDPref=/\bDP\s*\d+|datapoint|tuya\s*DP/i.test(t);
   signals.hasCodeBlock=/```[\s\S]{20,}```/.test(t);
   signals.mentionsZ2M=/zigbee2mqtt|z2m/i.test(t);
@@ -36,7 +39,7 @@ function detectFromForum(username,postText){
   let score=0;
   if(/diagnostic\s*report|diag\s*id|[a-f0-9]{8}/i.test(t))score+=1;
   if(/interview|endpointDescriptors/i.test(t))score+=2;
-  if(/cluster|0xEF00|DP\s*\d+/i.test(t))score+=3;
+  if(/cluster|CLUSTERS.TUYA_EF00|DP\s*\d+/i.test(t))score+=3;
   if(/re-?pair|remove\s+and\s+add/i.test(t))score+=1;
   if(/flow|trigger|condition|action/i.test(t))score+=1;
   const exp=loadExp();

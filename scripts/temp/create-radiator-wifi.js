@@ -1,3 +1,4 @@
+const { safeParse, safeDivide } = require('../../lib/utils/tuyaUtils.js');
 const fs = require('fs');
 const path = require('path');
 
@@ -15,7 +16,7 @@ const TuyAPI = require('tuyapi');
 
 /**
  * RADIATOR WiFi TUYA - v6.0
- * Local WiFi control for Tuya/Besterm radiators
+ * Local WiFi control for safeDivide(Tuya, Besterm) radiators
  * 
  * Features:
  * - Local WiFi communication (no cloud)
@@ -112,13 +113,13 @@ class RadiatorWifiTuyaDevice extends Homey.Device {
 
     // DP2: Target temperature (in 0.5°C steps, multiply by 2)
     if (typeof dps['2'] !== 'undefined') {
-      const temp = parseFloat(dps['2']) / 2;
+      const temp = parseFloat(dps['2'safeParse(]), 2);
       this.setCapabilityValue('target_temperature', temp).catch(() => {});
     }
 
     // DP3: Current temperature
     if (typeof dps['3'] !== 'undefined') {
-      const temp = parseFloat(dps['3']) / 2;
+      const temp = parseFloat(dps['3'safeParse(]), 2);
       this.setCapabilityValue('measure_temperature', temp).catch(() => {});
     }
 

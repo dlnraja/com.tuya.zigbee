@@ -9,6 +9,7 @@ A4. Battery check order: test <=100 FIRST then <=200 (wrong order = unreachable 
 A5. Double-inversion: IAS+alarm_contact both invert = back to original. Invert ONCE only
 A6. Imports: require('../../lib/tuya/TuyaZigbeeDevice') NOT require('../../lib/TuyaZigbeeDevice')
 A7. Mixin order: PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
+A8. NaN Sanitization: Validate numeric reports in SemanticConverter to prevent NaN crashes.
 
 ## B. BSEED ZCL-ONLY RULES
 
@@ -48,8 +49,9 @@ F1. Fingerprint = manufacturerName + productId COMBINED (both must match)
 F2. Same mfr in multiple drivers is NORMAL (different productIds)
 F3. TRUE collision = same mfr + same productId in incompatible drivers
 F4. TS0601 collisions are inherent to Tuya architecture (2094 remaining)
-F5. Case-insensitive: include both _TZE200_ and _tze200_ variants
+F5. Case-Insensitive: normalize ALL lookups via UniversalTuyaParser (Rule 24)
 F6. No wildcards in SDK3: _TZE284_* is INVALID
+F7. Fingerprint collisions: TS0601 collisions are inherent; use mfr+pid combination.
 
 ## G. MULTI-GANG SWITCHES
 
@@ -90,3 +92,4 @@ K2. Types: 0=Raw 1=Bool 2=Value 3=String 4=Enum 5=Bitmap
 K3. DP values may need division: temp/10, hum/10, battery/2
 K4. Some manufacturers send raw C (no division needed) - check per fingerprint
 K5. Multi-DP frames: single report contains multiple DPs, parse ALL of them
+K6. Time Sync (0x24): 10-byte payload `[seq:2][UTC:4][Local:4]`. Echo `seqNum` from request!

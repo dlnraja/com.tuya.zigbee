@@ -74,19 +74,14 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "ewelink"
+      "EWELINK"
     ],
     "productId": [
       "CK-BL702-AL-01(7009_Z102LG03-1)",
       "TS0504A",
       "TS0504B",
       "TS0505A",
-      "TS0505B",
-      "ck-bl702-al-01(7009_z102lg03-1)",
-      "ts0504a",
-      "ts0504b",
-      "ts0505a",
-      "ts0505b"
+      "TS0505B"
     ],
     "endpoints": {
       "1": {

@@ -13,7 +13,7 @@ function isOwnerPost(it) {
 }
 `;
 
-content = content.replace('// Issues\nconst issues', insert + '// Issues\nconst issues');
+content = content.replace('// Issues\nconst issues', insert + '
 content = content.replace('if(alreadyTriaged){', 'if(alreadyTriaged||isOwnerPost(it)){');
 content = content.replace('if(alreadyTriaged2){', 'if(alreadyTriaged2||isOwnerPost(pr)){');
 

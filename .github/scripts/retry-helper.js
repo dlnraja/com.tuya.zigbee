@@ -1,4 +1,6 @@
 'use strict';
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 // v5.12.4 — Robust rate-limit handling for Discourse + GitHub APIs
 // Features: throttled queue, exponential backoff, CSRF auto-refresh,
 // Discourse DELETE spacing, GitHub X-RateLimit header parsing
@@ -104,7 +106,7 @@ async function fetchWithRetry(url, opts = {}, ro = {}) {
         const retryAfter = r.headers.get('retry-after');
         if (retryAfter && i < retries) {
           const w = Math.min((parseInt(retryAfter, 10) || 60) * 1000, maxDelay);
-          console.log('  [' + (label || 'retry') + '] 403 rate-limit, wait ' + Math.round(w / 1000) + 's');
+          console.log('  [' + (label || 'retry') + '] 403 rate-limit, wait ' + Math.round(w/1000) + 's');
           await sleep(w);
           continue;
         }
@@ -132,10 +134,10 @@ async function fetchWithRetry(url, opts = {}, ro = {}) {
         // Add jitter + ensure minimum 60s
         waitMs = Math.max(waitMs, 60000) + Math.random() * 10000;
         waitMs = Math.min(waitMs, maxDelay);
-        console.log('  [' + (label || 'retry') + '] 429 rate-limited, wait ' + Math.round(waitMs / 1000) + 's (' + (i + 1) + '/' + retries + ')');
+        console.log('  [' + (label || 'retry') + '] 429 rate-limited, wait ' + Math.round(waitMs/1000) + 's (' + (i + 1) + '/' + retries + ')');
         // Also increase spacing for this queue to avoid hitting limit again
         const q = getQueue(qName);
-        q.minSpacing = Math.max(q.minSpacing, waitMs / 2);
+        q.minSpacing = Math.max(q.minSpacing, safeParse(waitMs, 2));
         await sleep(waitMs);
         // Refresh CSRF if Discourse (token may expire during long waits)
         if (qName === 'discourse' && csrfRefresh && authRef) {
@@ -150,7 +152,7 @@ async function fetchWithRetry(url, opts = {}, ro = {}) {
       // === 5xx: Server error ===
       if (r.status >= 500 && i < retries) {
         const d = Math.min(baseDelay * 2 ** i + Math.random() * 1000, maxDelay);
-        console.log('  [' + (label || 'retry') + '] HTTP ' + r.status + ', wait ' + Math.round(d / 1000) + 's (' + (i + 1) + '/' + retries + ')');
+        console.log('  [' + (label || 'retry') + '] HTTP ' + r.status + ', wait ' + Math.round(d/1000) + 's (' + (i + 1) + '/' + retries + ')');
         await sleep(d);
         continue;
       }
@@ -162,7 +164,7 @@ async function fetchWithRetry(url, opts = {}, ro = {}) {
         if (remaining <= 5 && reset > 0) {
           const waitMs = Math.max(0, reset * 1000 - Date.now()) + 1000;
           if (waitMs < 300000) { // max 5 min wait
-            console.log('  [' + (label || 'github') + '] Only ' + remaining + ' requests left, wait ' + Math.round(waitMs / 1000) + 's for reset');
+            console.log('  [' + (label || 'github') + '] Only ' + remaining + ' requests left, wait ' + Math.round(waitMs/1000) + 's for reset');
             await sleep(waitMs);
           }
         }
@@ -172,7 +174,7 @@ async function fetchWithRetry(url, opts = {}, ro = {}) {
     } catch (e) {
       if (i < retries) {
         const d = Math.min(baseDelay * 2 ** i + Math.random() * 1000, maxDelay);
-        console.log('  [' + (label || 'retry') + '] ' + e.name + ': ' + (e.message || '').substring(0, 80) + ', wait ' + Math.round(d / 1000) + 's (' + (i + 1) + '/' + retries + ')');
+        console.log('  [' + (label || 'retry') + '] ' + e.name + ': ' + (e.message || '').substring(0, 80) + ', wait ' + Math.round(d/1000) + 's (' + (i + 1) + '/' + retries + ')');
         await sleep(d);
       } else throw e;
     }
@@ -186,7 +188,7 @@ async function retryAsync(fn, ro = {}) {
     try { return await fn(); } catch (e) {
       if (i < retries) {
         const d = Math.min(baseDelay * 2 ** i + Math.random() * 500, maxDelay);
-        console.log('  [' + (label || 'retry') + '] ' + (e.message || e) + ', wait ' + Math.round(d / 1000) + 's');
+        console.log('  [' + (label || 'retry') + '] ' + (e.message || e) + ', wait ' + Math.round(d/1000) + 's');
         await sleep(d);
       } else throw e;
     }
@@ -213,7 +215,7 @@ async function processBatch(items, handler, opts = {}) {
         const result = await handler(item, idx);
         if (result === 'skip') { skip++; }
         else if (result === 'rate_limited') {
-          console.log(`  [${label}] Rate limited at item ${idx + 1}/${items.length}, pausing ${rateLimitPause / 1000}s...`);
+          console.log(`  [${label}] Rate limited at item ${idx + 1}/${items.length}, pausing ${rateLimitPause/1000}s...`);
           await sleep(rateLimitPause);
           // Increase pause for next hit
           rateLimitPause = Math.min(rateLimitPause * 1.5, 300000);
@@ -225,7 +227,7 @@ async function processBatch(items, handler, opts = {}) {
       } catch (e) {
         if (attempt < maxRetries) {
           const d = 5000 * (attempt + 1);
-          console.log(`  [${label}] Error on item ${idx + 1}, retry in ${d / 1000}s: ${e.message}`);
+          console.log(`  [${label}] Error on item ${idx + 1}, retry in ${d/1000}s: ${e.message}`);
           await sleep(d);
         } else {
           fail++;

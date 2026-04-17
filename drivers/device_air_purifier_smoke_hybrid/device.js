@@ -1,4 +1,7 @@
 'use strict';
+
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
+
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
@@ -229,11 +232,11 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
         const clusterIds = Object.keys(ep1.clusters || {});
         this.log(`[SMOKE-ADV] 📡 Endpoint 1 clusters: ${clusterIds.join(', ') || 'none'}`);
 
-        // Check for Tuya cluster (0xEF00 = 61184)
-        if (ep1.clusters?.tuya || ep1.clusters?.[61184]) {
-          this.log('[SMOKE-ADV] ✅ Tuya cluster 0xEF00 (61184) FOUND - DP communication available');
+        // Check for Tuya cluster (CLUSTERS.TUYA_EF00 = CLUSTERS.TUYA_EF00)
+        if (ep1.clusters?.tuya || ep1.clusters?.[CLUSTERS.TUYA_EF00]) {
+          this.log('[SMOKE-ADV] ✅ Tuya cluster CLUSTERS.TUYA_EF00 (CLUSTERS.TUYA_EF00) FOUND - DP communication available');
         } else {
-          this.log('[SMOKE-ADV] ⚠️ Tuya cluster 0xEF00 NOT found - may use IAS Zone instead');
+          this.log('[SMOKE-ADV] ⚠️ Tuya cluster CLUSTERS.TUYA_EF00 NOT found - may use IAS Zone instead');
         }
 
         // Check for IAS Zone (0x0500 = 1280)

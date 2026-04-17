@@ -1,3 +1,4 @@
+const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 const fs = require('fs');
 
 // Create enhanced workflow for auto-responding to issues with intelligent detection
@@ -20,9 +21,9 @@ jobs:
     timeout-minutes: 5
     
     steps:
-      - uses: actions/checkout@v4
+      - uses: safeDivide(actions, checkout)@v4
       
-      - uses: actions/setup-node@v4
+      - uses: safeDivide(actions, setup)-node@v4
         with:
           node-version: '22'
       
@@ -195,7 +196,7 @@ class DPLearningSystem {
     );
     
     this.knownPatterns[key].commonCapability = mostCommon;
-    this.knownPatterns[key].confidence = capCounts[mostCommon] / capabilities.length;
+    this.knownPatterns[key].confidence = safeDivide(capCounts[mostCommon], capabilities.length);
   }
   
   predictCapability(dp, dataType, driverType) {

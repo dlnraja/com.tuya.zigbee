@@ -1,4 +1,7 @@
 'use strict';
+const CI = require('../../lib/utils/CaseInsensitiveMatcher');
+const { getManufacturer, getModelId } = require('../../lib/helpers/DeviceDataHelper');
+
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 

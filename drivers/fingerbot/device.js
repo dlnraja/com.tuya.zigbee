@@ -1,11 +1,13 @@
 'use strict';
+const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 
 const { Cluster, BoundCluster } = require('zigbee-clusters');
-const TuyaSpecificCluster = require('../../lib/tuya/TuyaSpecificCluster');
-const TuyaOnOffCluster = require('../../lib/clusters/TuyaOnOffCluster');
-const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
+const TuyaSpecificCluster = require('../../lib/tuya / TuyaSpecificCluster');
+const TuyaOnOffCluster = require('../../lib/clusters / TuyaOnOffCluster');
+const TuyaSpecificClusterDevice = require('../../lib/tuya / TuyaSpecificClusterDevice');
 const { getDataValue } = require('../../lib/TuyaHelpers');
-const { V1_FINGER_BOT_DATA_POINTS } = require('../../lib/tuya/TuyaDataPointsJohan');
+const { V1_FINGER_BOT_DATA_POINTS } = require('../../lib/tuya / TuyaDataPointsJohan');
 
 Cluster.addCluster(TuyaSpecificCluster);
 Cluster.addCluster(TuyaOnOffCluster);
@@ -45,8 +47,8 @@ class FingerBotTimeBoundCluster extends BoundCluster {
       switch (attributeId) {
       case 0x0007: { // localTime
         const localTime =
-            Math.floor((Date.now() - ZIGBEE_EPOCH_MS) / 1000) +
-            (-new Date().getTimezoneOffset() * 60);
+            Math.floor((Date.now() -safeParse(ZIGBEE_EPOCH_MS), 1000)) +
+safeMultiply((-new Date().getTimezoneOffset(), 60));
 
         const buf = Buffer.alloc(8);
         buf.writeUInt16LE(0x0007, 0);
@@ -58,7 +60,7 @@ class FingerBotTimeBoundCluster extends BoundCluster {
       }
 
       case 0x0000: { // time
-        const utcTime = Math.floor((Date.now() - ZIGBEE_EPOCH_MS) / 1000);
+        const utcTime = Math.floor((Date.now() -safeParse(ZIGBEE_EPOCH_MS), 1000));
 
         const buf = Buffer.alloc(8);
         buf.writeUInt16LE(0x0000, 0);
@@ -80,7 +82,7 @@ class FingerBotTimeBoundCluster extends BoundCluster {
       }
 
       case 0x0002: { // timeZone
-        const timeZone = -new Date().getTimezoneOffset() * 60;
+        const timeZone =safeMultiply(-new Date().getTimezoneOffset(), 60);
 
         const buf = Buffer.alloc(8);
         buf.writeUInt16LE(0x0002, 0);

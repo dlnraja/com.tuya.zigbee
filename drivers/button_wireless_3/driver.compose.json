@@ -70,18 +70,17 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_bczr4e10",
-      "_tz3000_bi6lpsew",
-      "_tz3000_famkxci2",
-      "_tz3000_mjwg6a52",
-      "_tz3000_mutfmn4u",
-      "_tz3000_ngsph3oj",
-      "_tz3000_uyjmm0et",
-      "_tz3000_w3c7ouru"
+      "_TZ3000_BCZR4E10",
+      "_TZ3000_BI6LPSEW",
+      "_TZ3000_FAMKXCI2",
+      "_TZ3000_MJWG6A52",
+      "_TZ3000_MUTFMN4U",
+      "_TZ3000_NGSPH3OJ",
+      "_TZ3000_UYJMM0ET",
+      "_TZ3000_W3C7OURU"
     ],
     "productId": [
-      "TS0043",
-      "ts0043"
+      "TS0043"
     ],
     "learnmode": {
       "image": "/drivers/button_wireless_3/assets/learnmode.svg",

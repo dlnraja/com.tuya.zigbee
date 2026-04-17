@@ -74,19 +74,18 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "aqara",
-      "aubess",
-      "avatto",
-      "heiman",
-      "moes",
-      "philips",
-      "silvercrest",
-      "xiaomi",
-      "zemismart"
+      "AQARA",
+      "AUBESS",
+      "AVATTO",
+      "HEIMAN",
+      "MOES",
+      "PHILIPS",
+      "SILVERCREST",
+      "XIAOMI",
+      "ZEMISMART"
     ],
     "productId": [
-      "TS0601",
-      "ts0601"
+      "TS0601"
     ],
     "endpoints": {
       "1": {

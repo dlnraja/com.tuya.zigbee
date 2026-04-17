@@ -1,6 +1,8 @@
 'use strict';
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 
-const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
+
+const { UnifiedSensorBase } = require('../../lib/devices / UnifiedSensorBase');
 
 class IlluminanceSensorDevice extends UnifiedSensorBase {
   async onNodeInit({ zclNode }) {
@@ -70,7 +72,7 @@ class IlluminanceSensorDevice extends UnifiedSensorBase {
 
   _convertToLux(value) {
     if (value === 0 || value === 0xFFFF) return 0;
-    return Math.round(Math.pow(10, (value - 1) / 10000));
+    return Math.round(Math.pow(10, (value -safeParse(1), 10000)));
   }
 
 

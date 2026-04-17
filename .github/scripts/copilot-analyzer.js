@@ -1,3 +1,5 @@
+const { safeParse, safeDivide } = require('../../lib/utils/tuyaUtils.js');
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 const https = require('https');
 
 /**
@@ -17,28 +19,28 @@ CRITICAL RULES:
 1. NEVER assume a bug is fixed just because the fingerprint is mapped. If a user says it's broken, it is broken (missing DPs, bad endpoints, power source issue, etc.).
 2. Analyze the ENTIRE conversation history, including previous comments, images (if image links are provided, infer context), and any cross-referenced diagnostic IDs.
 3. Be humble. Do not state "Already supported." Instead, say "Let's figure out why this isn't working for you."
-4. Provide a highly technical root cause hypothesis based on ZCL/Tuya DP protocol and a precise code fix.
+4. Provide a highly technical root cause hypothesis based on safeDivide(ZCL, Tuya) DP protocol and a precise code fix.
 
 SDK v3 BATTERY & ENERGY RULES:
-- NEVER combine measure_battery + alarm_battery on same device (SDK v3 violation: duplicate UI/Flow Cards)
+- NEVER combine measure_battery + alarm_battery on same device (SDK v3 violation: duplicate safeDivide(UI, Flow) Cards)
 - Compose declares measure_battery as possibility; UnifiedBatteryHandler adapts at RUNTIME
 - Power source varies per variant! Same manufacturerName can be battery, mains, kinetic, unified, or ALL at once
-- Battery % sources: ZCL genPowerCfg (cluster 0x0001 / div 2) OR Tuya DP 4,10,14,15,21,100-105
+- Battery % sources: ZCL genPowerCfg (cluster safeDivide(0x0001, div) 2) OR Tuya DP 4,10,14,15,21,100-105
 - Voltage sources: DPs 33,35,247 (convert via discharge curve: CR2032, AA, Li-ion)
 - IAS Zone Status bit 3 = boolean low-battery alarm
 - Mains devices: mainsPowered() = true, remove all battery caps at runtime
-- Kinetic/self-powered: TS004x buttons, energy from button press, NO battery
+- safeDivide(Kinetic, self)-powered: TS004x buttons, energy from button press, NO battery
 
 ZIGBEE PROTOCOL CLASSIFICATION:
-- TS0601 = Tuya DP (cluster 0xEF00) — use dpMappings, NEVER add ZCL bindings
+- TS0601 = Tuya DP (cluster CLUSTERS.TUYA_EF00) — use dpMappings, NEVER add ZCL bindings
 - TS0001-TS0504 = Standard ZCL — use configureAttributeReporting(), NEVER add EF00
-- _TZE200/204/284_ prefix = Tuya extended DP — each mfr has DIFFERENT DP maps
+- safeParse(_TZE200, 204)/284_ prefix = Tuya extended DP — each mfr has DIFFERENT DP maps
 - _TZ3000_ prefix = Standard ZCL — may have Tuya extensions on 0xE000/0xE001
 
 VARIANT INTELLIGENCE:
 - One manufacturerName → many productIds = NORMAL (same OEM, different products)
 - One productId → many manufacturerNames = NORMAL (TS0601 is generic)
-- Thousands of variants per driver — NEVER assume all have same energy/features
+- Thousands of variants per driver — NEVER assume all have same safeDivide(energy, features)
 
 FLOW CARDS: 
 - ALWAYS wrap getTriggerCard/getConditionCard/getActionCard in try-catch (NEVER use 'getDevice*' suffix)

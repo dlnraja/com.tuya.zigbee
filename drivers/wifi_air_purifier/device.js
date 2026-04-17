@@ -1,4 +1,6 @@
 'use strict';
+const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
 class WiFiAirPurifierDevice extends TuyaLocalDevice {
@@ -8,8 +10,8 @@ class WiFiAirPurifierDevice extends TuyaLocalDevice {
       '2':  { capability: 'measure_pm25' },
       '3':  { capability: null },
       '4':  { capability: 'dim', writable: true,
-        transform: (v) => Math.max(0, Math.min(1, v / 100)),
-        reverseTransform: (v) => Math.round(v * 100) },
+        transform: (v) => Math.max(0, Math.min(1, safeParse(v, 100))),
+        reverseTransform: (v) =>Math.round(safeMultiply(v, 100)) },
       '5':  { capability: null },
       '6':  { capability: null },
       '11': { capability: null },

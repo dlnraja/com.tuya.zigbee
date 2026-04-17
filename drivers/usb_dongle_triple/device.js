@@ -1,4 +1,6 @@
 'use strict';
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
@@ -128,13 +130,13 @@ class UsbDongleTripleDevice extends ZigBeeDevice {
 
     if (electrical) {
       electrical.on('attr.activePower', v => {
-        if (this.hasCapability('measure_power')) this.setCapabilityValue('measure_power', v / 10).catch(this.error);
+        if (this.hasCapability('measure_power')) this.setCapabilityValue('measure_power', safeParse(v, 10)).catch(this.error);
       });
       electrical.on('attr.rmsVoltage', v => {
-        if (this.hasCapability('measure_voltage')) this.setCapabilityValue('measure_voltage', v / 10).catch(this.error);
+        if (this.hasCapability('measure_voltage')) this.setCapabilityValue('measure_voltage', safeParse(v, 10)).catch(this.error);
       });
       electrical.on('attr.rmsCurrent', v => {
-        if (this.hasCapability('measure_current')) this.setCapabilityValue('measure_current', v / 1000).catch(this.error);
+        if (this.hasCapability('measure_current')) this.setCapabilityValue('measure_current', safeParse(v, 1000)).catch(this.error);
       });
       await electrical.configureReporting({
         activePower: { minInterval: 10, maxInterval: 300, minChange: 1 },
@@ -142,21 +144,21 @@ class UsbDongleTripleDevice extends ZigBeeDevice {
         rmsCurrent: { minInterval: 10, maxInterval: 300, minChange: 10 },
       }).catch(e => this.log('[USB_TRIPLE] electrical reporting failed:', e.message));
       electrical.readAttributes(['activePower', 'rmsVoltage', 'rmsCurrent']).then(d => {
-        if (d?.activePower != null && this.hasCapability('measure_power')) this.setCapabilityValue('measure_power', d.activePower / 10).catch(this.error);
-        if (d?.rmsVoltage != null && this.hasCapability('measure_voltage')) this.setCapabilityValue('measure_voltage', d.rmsVoltage / 10).catch(this.error);
-        if (d?.rmsCurrent != null && this.hasCapability('measure_current')) this.setCapabilityValue('measure_current', d.rmsCurrent / 1000).catch(this.error);
+        if (d?.activePower != null && this.hasCapability('measure_power')) this.setCapabilityValue('measure_power', safeParse(d.activePower, 10)).catch(this.error);
+        if (d?.rmsVoltage != null && this.hasCapability('measure_voltage')) this.setCapabilityValue('measure_voltage', safeParse(d.rmsVoltage, 10)).catch(this.error);
+        if (d?.rmsCurrent != null && this.hasCapability('measure_current')) this.setCapabilityValue('measure_current', safeParse(d.rmsCurrent, 1000)).catch(this.error);
       }).catch(() => {});
     }
 
     if (metering) {
       metering.on('attr.currentSummationDelivered', v => {
-        if (this.hasCapability('meter_power')) this.setCapabilityValue('meter_power', v / 1000).catch(this.error);
+        if (this.hasCapability('meter_power')) this.setCapabilityValue('meter_power', safeParse(v, 1000)).catch(this.error);
       });
       await metering.configureReporting({
         currentSummationDelivered: { minInterval: 60, maxInterval: 3600, minChange: 1 }
       }).catch(e => this.log('[USB_TRIPLE] metering reporting failed:', e.message));
       metering.readAttributes(['currentSummationDelivered']).then(d => {
-        if (d?.currentSummationDelivered != null && this.hasCapability('meter_power')) this.setCapabilityValue('meter_power', d.currentSummationDelivered / 1000).catch(this.error);
+        if (d?.currentSummationDelivered != null && this.hasCapability('meter_power')) this.setCapabilityValue('meter_power', safeParse(d.currentSummationDelivered, 1000)).catch(this.error);
       }).catch(() => {});
     }
   }

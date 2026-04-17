@@ -2,4 +2,4 @@ Fingerprint(s) found in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com
 
 Grab the latest test version here: https://homey.app/a/com.dlnraja.tuya.zigbee/test/
 
-After installing, remove and re-pair your device. If something's off, drop a diagnostic report ID or a [device interview](https://tools.developer.homey.app) on the [forum thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352) and I'll take a look.
+After installing, remove and re-pair your device. If something's off, drop a diagnostic report ID or a [device interview](https://tools.developer.homey.app) on the [forum thread](https:

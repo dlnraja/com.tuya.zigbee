@@ -1,4 +1,5 @@
 'use strict';
+const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
@@ -38,7 +39,7 @@ class Thermostat4chDriver extends ZigBeeDriver {
     reg('thermostat_4ch_set_temperature',async({device,...args})=>{
       if(args.temperature!==undefined){
         await device.setCapabilityValue('target_temperature',args.temperature);
-        if(typeof device.sendTuyaDP==='function') await device.sendTuyaDP(2,'value',Math.round(args.temperature*10));
+        if(typeof device.sendTuyaDP==='function') await device.sendTuyaDP(2,'value',Math.round(safeMultiply(args.temperature, 10));
       }
       return true;
     });

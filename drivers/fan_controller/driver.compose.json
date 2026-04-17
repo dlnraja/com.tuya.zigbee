@@ -30,28 +30,26 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_9hv6kpds",
-      "_tz3000_cpyisd3c",
-      "_tz3000_hk7bcqhu",
-      "_tz3000_hk7wdzrv",
-      "_tz3210_lzqq3u4r",
-      "_tz3210_x1mdzm6o",
-      "_tze200_a5zyjdpn",
-      "_tze200_fvldku9h",
-      "_tze200_kds0prmv",
-      "_tze204_2jnoy8dj",
-      "_tze204_a5zyjdpn",
-      "_tze204_fvldku9h",
-      "_tze204_kds0prmv",
-      "_tze284_4hdbt6rn",
-      "_tze284_ikul00sx",
-      "_tze284_pglpvdar"
+      "_TZ3000_9HV6KPDS",
+      "_TZ3000_CPYISD3C",
+      "_TZ3000_HK7BCQHU",
+      "_TZ3000_HK7WDZRV",
+      "_TZ3210_LZQQ3U4R",
+      "_TZ3210_X1MDZM6O",
+      "_TZE200_A5ZYJDPN",
+      "_TZE200_FVLDKU9H",
+      "_TZE200_KDS0PRMV",
+      "_TZE204_2JNOY8DJ",
+      "_TZE204_A5ZYJDPN",
+      "_TZE204_FVLDKU9H",
+      "_TZE204_KDS0PRMV",
+      "_TZE284_4HDBT6RN",
+      "_TZE284_IKUL00SX",
+      "_TZE284_PGLPVDAR"
     ],
     "productId": [
       "TS0601",
-      "TS0601_FANCTRL",
-      "ts0601",
-      "ts0601_fanctrl"
+      "TS0601_FANCTRL"
     ],
     "endpoints": {
       "1": {

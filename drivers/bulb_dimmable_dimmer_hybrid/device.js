@@ -1,4 +1,6 @@
 'use strict';
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 
 const UnifiedLightBase = require('../../lib/devices/UnifiedLightBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
@@ -21,7 +23,7 @@ class DimmableBulbDevice extends VirtualButtonMixin(UnifiedLightBase) {
   get dpMappings() {
     return {
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
-      2: { capability: 'dim', transform: (v) => Math.max(0.01, v / 1000) },
+      2: { capability: 'dim', transform: (v) => Math.max(0.01, safeParse(v, 1000)) },
       3: { capability: null, internal: 'min_brightness', writable: true },
       4: { capability: null, internal: 'countdown', writable: true },
       21: { capability: null, internal: 'power_on_behavior', writable: true },

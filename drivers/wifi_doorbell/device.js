@@ -1,4 +1,5 @@
 'use strict';
+const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
 class WiFiDoorbellDevice extends TuyaLocalDevice {

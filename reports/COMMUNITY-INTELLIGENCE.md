@@ -164,10 +164,10 @@
 > 1. Open **[Homey Developer Tools](https://tools.developer.homey.app)**
 > 2. Select your device > **Interview** > copy the full JSON output
 > 3. Go to device settings > **Diagnostics** > copy the report ID
-> 4. Post both on our **[Forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352)** or open an **[Issue](https://github.com/dlnraja/com.tuya.zigbee/issues)**
+> 4. Post both on our **[Forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352)** or open an **[Issue](https:
 > 
 > ### :link: Links
-> - [Forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352) | [GitHub](https://github.com/dlnraja/com.tuya.zigbee) | [Report Issue](https://github.com/dlnraja/com.tuya.zigbee/issues)
+> - [Forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352) | [GitHub](https:
 > 
 > **Code investigation for `_TZ3000_vd43bbfq+TS0601`** (null):
 > - FP not found
@@ -276,7 +276,7 @@
 > 4. **Product link** (AliExpress, Amazon, manufacturer)
 > 
 > ### :inbox_tray: Try our fork (may already work with similar devices)
-> - **[Install](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)** | **[Forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352)** | **[GitHub](https://github.com/dlnraja/com.tuya.zigbee)**
+> - **[Install](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)** | **[Forum](https:
 
 ---
 
@@ -356,7 +356,7 @@ https://github.com/dlnraja/com.tuya.zigbee/blob/722cb3c6f8c018920f9d2d23999836b0
 ## 📱 Basic Information
 
 **Brand & Model**: Temperature &humidity sensor with external probe
-**Purchase Link**:  https://www.aliexpress.com/item/1005011541019564.html?spm=a2g0o.order_list.order_list_main.4.54131802dwTFsPhttps://www.aliexpress.com/item/1005011541019564.html?spm=a2g0o.order_list.order_list_main.4.54131802dwTFsP
+**Purchase Link**:  https://www.aliexpress.com/item/1005011541019564.html?spm=a2g0o.order_list.order_list_main.4.54131802dwTFsPhttps:
 **Power Source**: [X] Battery / [ ] Mains
 **Current Status**: [ ] Not pairing / [X] Pairs but missing features / [ ] Not working at all
 
@@ -795,7 +795,7 @@ Pairs OK as Climate sensor, but Homey does not receive any data.
 > 
 > **If the device still shows as unknown or doesn't work**, please share a diagnostic report ID and a [Developer Tools interview](https://tools.developer.homey.app) — we will investigate and fix it.
 > 
-> [Test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · [Forum thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352) · [Developer Tools](https://tools.developer.homey.app)
+> [Test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · [Forum thread](https:
 
 > **dlnraja:** <!-- tuya-issue-manager -->
 > Hey @pemikalsen-sudo,
@@ -1000,7 +1000,7 @@ _No response_
 > 
 > All fingerprints are already supported — install the [test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/), remove the device, and re-pair it.
 > 
-> [Test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · [Forum thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352) · [Developer Tools](https://tools.developer.homey.app)
+> [Test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · [Forum thread](https:
 
 > **Ssssneak:** Hi, thanks for the update! 
 > I installed v5.11.138 and re-paired the device. I have a precise bug report regarding the Flow cards for this specific fingerprint (_TZ3000_v4l4b0lp).

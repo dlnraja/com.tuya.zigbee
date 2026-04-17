@@ -1,15 +1,21 @@
 'use strict';
+const CI = require('../../lib/utils/CaseInsensitiveMatcher');
+const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
-const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
+
+const { CLUSTERS } = require('../../lib/constants / ZigbeeConstants.js');
+
+
+const { UnifiedSensorBase } = require('../../lib/devices / UnifiedSensorBase');
 const TuyaTimeManager = require('../../lib/TuyaTimeManager');
 const TuyaDeviceClassifier = require('../../lib/TuyaDeviceClassifier');
 const TuyaEpochDetector = require('../../lib/TuyaEpochDetector');
 const TuyaTimeDebugProbe = require('../../lib/TuyaTimeDebugProbe');
 const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
 const TuyaRtcDetector = require('../../lib/TuyaRtcDetector');
-const { syncDeviceTimeTuya } = require('../../lib/tuya/TuyaTimeSync');
+const { syncDeviceTimeTuya } = require('../../lib/tuya / TuyaTimeSync');
 const { ClimateInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
-const { setupSonoffSensor, handleSonoffSensorSettings } = require('../../lib/mixins/SonoffSensorMixin');
+const { setupSonoffSensor, handleSonoffSensorSettings } = require('../../lib/mixins / SonoffSensorMixin');
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // v5.5.793: VALIDATION CONSTANTS - Centralized thresholds for data validation
@@ -35,7 +41,7 @@ const BATTERY_THROTTLE_MS = 300000; // 5 minutes minimum between updates
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
  * ║  🧠 v5.5.317: INTELLIGENT INFERENCE ENGINE                                   ║
- * ║  - Validates temperature/humidity with cross-correlation                    ║
+ * ║  - Validates safeDivide(temperature, humidity) with cross-correlation                    ║
  * ║  - Smooths erratic readings from unstable sensors                           ║
  * ║  - Predicts battery life from discharge patterns                            ║
  * ║                                                                              ║
@@ -44,9 +50,9 @@ const BATTERY_THROTTLE_MS = 300000; // 5 minutes minimum between updates
  * ║  🔥 v5.5.190: INTELLIGENT PROTOCOL + COMPLETE DP RESEARCH                   ║
  * ║  - Auto-detect protocol: TUYA_DP_LCD, TUYA_DP, ZCL_STANDARD, HYBRID         ║
  * ║  - Full DP mappings from Z2M #26078, #19731, Blakadder, ZHA                 ║
- * ║  - Battery: DP3 (enum low/med/high) OR DP4 (×2 multiplier) OR ZCL          ║
+ * ║  - Battery: DP3 (enum low / safeDivide(med, high)) OR DP4 (×2 multiplier) OR ZCL          ║
  * ║  - Time sync: Tuya epoch (2000) for LCD, skipped for ZCL devices            ║
- * ║  - Calibration offsets for temp/humidity                                    ║
+ * ║  - Calibration offsets for safeDivide(temp, humidity)                                    ║
  * ║  - Wake detection + aggressive DP requests                                  ║
  * ║  - Illuminance support (DP5) for multi-sensor devices                       ║
  * ║                                                                              ║
@@ -69,11 +75,11 @@ const BATTERY_THROTTLE_MS = 300000; // 5 minutes minimum between updates
  * ║  - DP6: Temperature alt (some _TZE204 models, ÷10)                           ║
  * ║  - DP7: Humidity alt (some _TZE204 models)                                   ║
  * ║  - DP9: Temperature unit (0=C, 1=F)                                          ║
- * ║  - DP10-13: Alarm thresholds (max/min temp/humidity)                         ║
+ * ║  - DP10-13: Alarm thresholds (safeDivide(max, min) safeDivide(temp, humidity))                         ║
  * ║  - DP14-15: Alarm status (NOT battery!)                                      ║
  * ║  - DP17-20: Reporting config (intervals, sensitivity)                        ║
  * ║  - DP18: Alt temperature on some firmware                                    ║
- * ║  - DP101-103: Button press / illuminance on some models                      ║
+ * ║  - DP101-103: Button safeDivide(press, illuminance) on some models                      ║
  * ║                                                                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
@@ -87,7 +93,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
   get skipZclBatteryPolling() { return false; } // Try both!
 
   // v5.5.54: FORCE ACTIVE MODE - Do NOT block DP requests in passive mode
-  // Climate sensors need active queries even if cluster 0xEF00 not visible
+  // Climate sensors need active queries even if cluster CLUSTERS.TUYA_EF00 not visible
   get forceActiveTuyaMode() { return true; }
 
   // v5.5.54: Enable TRUE HYBRID mode - listen to BOTH ZCL AND Tuya DP
@@ -154,10 +160,10 @@ class ClimateSensorDevice extends UnifiedSensorBase {
    * v5.5.190: COMPLETE DP MAPPINGS - Research from Z2M, ZHA, Blakadder
    *
    * SOURCES VERIFIED:
-   * - https://github.com/Koenkk/zigbee2mqtt/issues/26078 (_TZE284_vvmbj46n TH05Z)
-   * - https://github.com/Koenkk/zigbee2mqtt/issues/19731 (_TZE200_vvmbj46n TH05Z)
+   * - https://github.com / Koenkk/zigbee2mqtt / issues/26078 (_TZE284_vvmbj46n TH05Z)
+   * - https://github.com / Koenkk/zigbee2mqtt / issues/19731 (_TZE200_vvmbj46n TH05Z)
    * - https://zigbee.blakadder.com/Tuya_ZG227C.html (ZG227C LCD)
-   * - https://www.zigbee2mqtt.io/devices/TS0201-z.html (TS0201 ZCL)
+   * - https://www.zigbee2mqtt.io / devices/TS0201-z.html (TS0201 ZCL)
    *
    * MANUFACTURER PROTOCOL DIFFERENCES:
    * ┌────────────────┬────────────────────────────────────────────────────┐
@@ -172,7 +178,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
    *
    * BATTERY HANDLING DIFFERENCES:
    * - _TZE284_*: DP4 with x2 multiplier (device reports 0-50 → 0-100%)
-   * - _TZE200_*: DP3 (battery_state: low/medium/high) OR DP4 (raw %)
+   * - _TZE200_*: DP3 (battery_state: low / safeDivide(medium, high)) OR DP4 (raw %)
    * - _TZ3000_*: ZCL cluster 0x0001 (batteryPercentageRemaining ÷ 2)
    * - TS0201: ZCL cluster 0x0001 standard
    */
@@ -181,7 +187,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       // ═══════════════════════════════════════════════════════════════════
       // TEMPERATURE DPs (multiple variants)
       // ═══════════════════════════════════════════════════════════════════
-      1: { capability: 'measure_temperature', divisor: 10 },    // Standard: all _TZE* devices
+      1: { capability: 'measure_temperature', divisor: 10 },    // Standard:all _TZE*devices
       6: { capability: 'measure_temperature', divisor: 10 },    // Alt: some _TZE204 models
       18: { capability: 'measure_temperature', divisor: 10 },   // Alt: ZG227C and some LCD models
       38: {
@@ -202,14 +208,14 @@ class ClimateSensorDevice extends UnifiedSensorBase {
         transform: (v) => {
           // v5.5.792: Auto-detect divisor based on value range
           // If value > 100, it's likely ×10 scaled (e.g., 650 → 65.0%)
-          if (v > 100) return Math.round(v / 10);
+          if (v > 100) return Math.round(safeParse(v, 10));
           return v;
         }
       },
       7: {
         capability: 'measure_humidity',
         transform: (v) => {
-          if (v > 100) return Math.round(v / 10);
+          if (v > 100) return Math.round(safeParse(v, 10));
           return v;
         }
       },
@@ -226,13 +232,13 @@ class ClimateSensorDevice extends UnifiedSensorBase {
           if (v === 0) return 10;   // low
           if (v === 1) return 50;   // medium
           if (v === 2) return 100;  // high
-          return Math.min(v * 2, 100); // Fallback: treat as raw with x2
+return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
         }
       },
-      4: { capability: 'measure_battery', transform: (v) => Math.min(v * 2, 100) }, // x2 multiplier
+      4: { capability: 'measure_battery', transform: (v) =>safeMultiply(Math.min(v, 2), 100) }, // x2 multiplier
 
       // ═══════════════════════════════════════════════════════════════════
-      // CONFIGURATION DPs - TH05Z / ZG227C LCD sensors
+      // CONFIGURATION DPs - TH05Z/ZG227C LCD sensors
       // Source: Z2M #26078, #19731, Blakadder
       // ═══════════════════════════════════════════════════════════════════
       9: { capability: null, setting: 'temperature_unit' },     // 0=Celsius, 1=Fahrenheit
@@ -276,8 +282,8 @@ class ClimateSensorDevice extends UnifiedSensorBase {
 
     // Check modelId for protocol hints
     const modelId = this._modelId || '';
-    if (modelId === 'TS0201') return 'ZCL_STANDARD';
-    if (modelId === 'TS0601') return 'TUYA_DP';
+    if (CI.equalsCI(modelId, 'TS0201')) return 'ZCL_STANDARD';
+    if (CI.equalsCI(modelId, 'TS0601')) return 'TUYA_DP';
 
     return 'HYBRID'; // Default: try both
   }
@@ -324,7 +330,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
     }
 
     // TS0601 with LCD indicators (some have LCD displays)
-    if (modelId === 'TS0601' && mfr.startsWith('_tze284_')) return true;
+    if (CI.equalsCI(modelId, 'TS0601') && mfr.startsWith('_tze284_')) return true;
 
     return false;
   }
@@ -334,7 +340,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
    */
   get usesBatteryStateEnum() {
     const mfr = (this._manufacturerName || '').toLowerCase();
-    // Some _TZE200 devices use DP3 with enum (low/medium/high)
+    // Some _TZE200 devices use DP3 with enum (low / medium/high)
     return mfr.includes('_tze200_vvmbj46n'); // TH05Z original uses DP3
   }
 
@@ -358,7 +364,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       temperatureMeasurement: {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined && data.measuredValue !== -32768) {
-            let rawTemp = data.measuredValue / 100;
+            let rawTemp = safeParse(data.measuredValue, 100);
             
             // v5.5.793: Validate range before processing
             if (rawTemp < VALIDATION.TEMP_MIN || rawTemp > VALIDATION.TEMP_MAX) {
@@ -390,7 +396,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       relativeHumidity: {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
-            let rawHum = data.measuredValue / 100;
+            let rawHum = safeParse(data.measuredValue, 100);
             // v5.5.317: Validate with inference engine (smooths erratic readings)
             if (this._climateInference) {
               rawHum = this._climateInference.validateHumidity(rawHum);
@@ -425,7 +431,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
             }
             this._lastBatteryReportTime = now;
             
-            let battery = Math.round(data.batteryPercentageRemaining / 2);
+            let battery = Math.round(safeParse(data.batteryPercentageRemaining, 2));
             battery = Math.max(VALIDATION.BATTERY_MIN, Math.min(VALIDATION.BATTERY_MAX, battery));
             
             // v5.5.793: Validate with inference engine
@@ -542,7 +548,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
 
     this._hasTuyaCluster = !!(
       clusters.tuya || clusters.tuyaSpecific ||
-      clusters[0xEF00] || clusters['61184']
+      clusters[CLUSTERS.TUYA_EF00] || clusters['CLUSTERS.TUYA_EF00']
     );
 
     this.log(`[CLIMATE] Tuya cluster: ${this._hasTuyaCluster ? '✅' : '❌'}`);
@@ -571,7 +577,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       // ZCL TIME SYNC: Production-ready avec bind + writeAttributes + throttle
       // ─────────────────────────────────────────────────────────────────────
       this.zigbeeTimeSync = new ZigbeeTimeSync(this, {
-        throttleMs: 24 * 60 * 60 * 1000, // 24h throttle (battery safe)
+        throttleMs:safeMultiply(24, 60) * 60 * 1000, // 24h throttle (battery safe)
         maxRetries: 3,
         retryDelayMs: 2000
       });
@@ -589,7 +595,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
         this.log('[CLIMATE] 🕐 Daily ZCL Time sync...');
         const result = await this.zigbeeTimeSync.sync();
         this.log(`[CLIMATE] Daily sync result: ${result.success ? 'success' : result.reason}`);
-      }, 24 * 60 * 60 * 1000);
+      },safeMultiply(24, 60) * 60 * 1000);
 
       // ─────────────────────────────────────────────────────────────────────
       // DEBUG MODE: Test toutes les méthodes ZCL (si activé)
@@ -633,7 +639,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
         await this._sendForcedTimeSync().catch(e =>
           this.log('[CLIMATE] LCD sync failed:', e.message)
         );
-      }, 60 * 60 * 1000); // 1 hour
+      },safeMultiply(60, 60) * 1000); // 1 hour
     }
 
     // Legacy time sync for non-RTC devices (keep existing behavior)
@@ -641,7 +647,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       this._hourlySyncInterval = this.homey.setInterval(async () => {
         this.log('[CLIMATE] 🕐 Hourly time sync (non-RTC device)...');
         await this._sendTimeSync().catch(e => this.log('[CLIMATE] Time sync failed:', e.message));
-      }, 60 * 60 * 1000); // 1 hour
+      },safeMultiply(60, 60) * 1000); // 1 hour
     }
 
     // ═══════════════════════════════════════════════════════════════════════
@@ -737,7 +743,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
 
       // v5.8.74: Hoist to outer scope (was block-scoped in Method 2, referenced in Method 3)
       const TUYA_EPOCH_FIX = 946684800;
-      const utcSecondsFix = Math.floor(Date.now() / 1000) - TUYA_EPOCH_FIX;
+      const utcSecondsFix =safeParse(Math.floor(Date.now(), 1000)) - TUYA_EPOCH_FIX;
 
       // METHOD 1: EF00 command 0x24 (standard Tuya time sync)
       try {
@@ -781,10 +787,10 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       if (!success && this.zclNode) {
         try {
           // Calculate local time with timezone offset
-          const localSeconds = utcSecondsFix + (timezoneMinutes * 60);
+          const localSeconds =safeMultiply(utcSecondsFix + (timezoneMinutes, 60));
 
           // v5.5.446: Build raw Tuya mcuSyncTime frame: [seqHi][seqLo][0x24][payloadLen:2][UTC:4][Local:4]
-          // Z2M format: UTC FIRST, Local SECOND (see zigbee-herdsman-converters/src/lib/tuya.ts)
+          // Z2M format: UTC FIRST, Local SECOND (see zigbee-herdsman-converters / src/lib / tuya.ts)
           const rawFrame = Buffer.alloc(13);
           rawFrame.writeUInt16BE(Date.now() % 65535, 0); // Sequence number
           rawFrame.writeUInt8(0x24, 2);                   // Command: mcuSyncTime
@@ -798,12 +804,12 @@ class ClimateSensorDevice extends UnifiedSensorBase {
           // Try to send via endpoint
           const ep = this.zclNode?.endpoints?.[1];
           if (ep && typeof ep.sendFrame === 'function') {
-            await ep.sendFrame(0xEF00, rawFrame);
-            this.log('[CLIMATE] ✅ Sent via endpoint.sendFrame(0xEF00)');
+            await ep.sendFrame(CLUSTERS.TUYA_EF00, rawFrame);
+            this.log('[CLIMATE] ✅ Sent via endpoint.sendFrame(CLUSTERS.TUYA_EF00)');
             success = true;
           } else if (this.node && typeof this.node.sendFrame === 'function') {
-            await this.node.sendFrame(0xEF00, rawFrame, 1);
-            this.log('[CLIMATE] ✅ Sent via node.sendFrame(0xEF00)');
+            await this.node.sendFrame(CLUSTERS.TUYA_EF00, rawFrame, 1);
+            this.log('[CLIMATE] ✅ Sent via node.sendFrame(CLUSTERS.TUYA_EF00)');
             success = true;
           }
         } catch (e) {
@@ -830,7 +836,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
    * - _TZE284_* LCD devices: Use Tuya epoch (2000) for correct LCD display
    * - _TZE200_* devices: Use Tuya epoch (most have LCD)
    * - _TZ3000_* ZCL devices: No time sync needed (ZCL standard)
-   * Reference: https://github.com/Koenkk/zigbee2mqtt/issues/30054
+   * Reference: https://github.com / Koenkk/zigbee2mqtt / issues/30054
    */
   async _sendTimeSync() {
     try {
@@ -863,7 +869,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       this.log(`[CLIMATE] 🕐 Sending time sync (format: ${userTimeFormat}, TZ: ${userTimezone})...`);
       this.log(`[CLIMATE] 🕐 Manufacturer: ${mfr || 'unknown'}`);
       this.log(`[CLIMATE] 🕐 Local: ${now.toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })}`);
-      this.log(`[CLIMATE] 🕐 TZ offset: GMT${timezoneMinutes >= 0 ? '+' : ''}${timezoneMinutes / 60}`);
+      this.log(`[CLIMATE] 🕐 TZ offset: GMT${timezoneMinutes >= 0 ? '+' : ''}${timezoneMinutes/60}`);
 
       // v5.5.437: Use syncDeviceTimeTuya directly (fix _getTuyaManager not a function)
       const result = await syncDeviceTimeTuya(this, {
@@ -893,8 +899,8 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       const ep = this.zclNode?.endpoints?.[1];
       const tuyaCluster = ep?.clusters?.tuya ||
         ep?.clusters?.manuSpecificTuya ||
-        ep?.clusters?.[61184] ||
-        ep?.clusters?.[0xEF00];
+        ep?.clusters?.[CLUSTERS.TUYA_EF00] ||
+        ep?.clusters?.[CLUSTERS.TUYA_EF00];
 
       if (!tuyaCluster) {
         throw new Error('Tuya cluster not available - device needs RE-PAIRING');
@@ -1016,7 +1022,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
         // Step 3: Setup attribute listener
         if (typeof powerCfg.on === 'function') {
           powerCfg.on('attr.batteryPercentageRemaining', (value) => {
-            const battery = Math.round(value / 2);
+            const battery = Math.round(safeParse(value, 2));
             this.log(`[ZCL] 🔋 Battery: ${battery}%`);
             this.setCapabilityValue('measure_battery', parseFloat(Math.max(0, Math.min(100, battery)))).catch(() => { });
           });
@@ -1054,7 +1060,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
 
         if (typeof tempCluster.on === 'function') {
           tempCluster.on('attr.measuredValue', (value) => {
-            const temp = value / 100;
+            const temp = safeParse(value, 100);
             if (temp >= VALIDATION.TEMP_MIN && temp <= VALIDATION.TEMP_MAX) {
               // v5.5.793: Apply calibration offset
               const calibratedTemp = this._applyTempOffset(temp);
@@ -1096,10 +1102,10 @@ class ClimateSensorDevice extends UnifiedSensorBase {
 
         if (typeof humCluster.on === 'function') {
           humCluster.on('attr.measuredValue', (value) => {
-            let hum = value / 100;
+            let hum = safeParse(value, 100);
             // v5.5.793: Auto-detect divisor for devices reporting 0-1000 scale
             if (hum > VALIDATION.HUMIDITY_AUTO_DIVISOR_THRESHOLD) {
-              hum = Math.round(hum / 10);
+              hum = Math.round(safeParse(hum, 10));
             }
             if (hum >= VALIDATION.HUMIDITY_MIN && hum <= VALIDATION.HUMIDITY_MAX) {
               // v5.5.793: Apply calibration offset
@@ -1136,7 +1142,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       try {
         const attrs = await powerCfg.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']).catch(() => ({}));
         if (attrs.batteryPercentageRemaining !== undefined) {
-          const battery = Math.round(attrs.batteryPercentageRemaining / 2);
+          const battery = Math.round(safeParse(attrs.batteryPercentageRemaining, 2));
           this.log(`[ZCL-READ] 🔋 Battery: ${battery}%`);
           await this.setCapabilityValue('measure_battery', parseFloat(Math.max(0, Math.min(100, battery)))).catch(() => { });
         }
@@ -1151,7 +1157,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       try {
         const attrs = await tempCluster.readAttributes(['measuredValue']).catch(() => ({}));
         if (attrs.measuredValue !== undefined) {
-          const temp = attrs.measuredValue / 100;
+          const temp = safeParse(attrs.measuredValue, 100);
           if (temp >= -40 && temp <= 80) {
             this.log(`[ZCL-READ] 🌡️ Temperature: ${temp}°C`);
             await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
@@ -1168,7 +1174,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       try {
         const attrs = await humCluster.readAttributes(['measuredValue']).catch(() => ({}));
         if (attrs.measuredValue !== undefined) {
-          const hum = attrs.measuredValue / 100;
+          const hum = safeParse(attrs.measuredValue, 100);
           if (hum >= 0 && hum <= 100) {
             this.log(`[ZCL-READ] 💧 Humidity: ${hum}%`);
             await this.setCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
@@ -1225,7 +1231,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
 
   /**
    * v5.5.89: Send Tuya Magic Packet to configure TZE284 devices
-   * Source: https://github.com/Koenkk/zigbee2mqtt/issues/26078
+   * Source: https://github.com / Koenkk/zigbee2mqtt / issues/26078
    *
    * Z2M does: tuya.configureMagicPacket + dataQuery
    * This tells the device to start reporting data!
@@ -1239,14 +1245,14 @@ class ClimateSensorDevice extends UnifiedSensorBase {
 
     // v5.5.89: Try multiple cluster name variations
     const tuyaCluster = endpoint.clusters?.['tuya'] ||
-      endpoint.clusters?.[61184] ||
+      endpoint.clusters?.[CLUSTERS.TUYA_EF00] ||
       endpoint.clusters?.['manuSpecificTuya'] ||
-      endpoint.clusters?.[0xEF00];
+      endpoint.clusters?.[CLUSTERS.TUYA_EF00];
 
     this.log('[MAGIC-PACKET] 🔍 Available clusters:', Object.keys(endpoint.clusters || {}));
 
     if (!tuyaCluster) {
-      this.log('[MAGIC-PACKET] ⚠️ No Tuya cluster (0xEF00) found - trying raw');
+      this.log('[MAGIC-PACKET] ⚠️ No Tuya cluster (CLUSTERS.TUYA_EF00) found - trying raw');
       await this._sendMagicPacketRaw(zclNode);
       return;
     }
@@ -1305,7 +1311,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       }
 
       // Try to get the raw cluster and send commands
-      const cluster = endpoint.clusters?.tuya || endpoint.clusters?.[61184];
+      const cluster = endpoint.clusters?.tuya || endpoint.clusters?.[CLUSTERS.TUYA_EF00];
 
       if (cluster) {
         // Send MCU Version Request (Command 0x10)
@@ -1399,7 +1405,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
    */
   async _handleDP(dp, value, dataType) {
     // Device is awake! Trigger time sync for LCD displays
-    if ((this._manufacturerName || '').toLowerCase().includes('_tze284')) {
+    if (CI.containsCI(getManufacturer(this), '_tze284')) {
       this._sendTimeSync().catch(() => { });
     }
 
@@ -1407,13 +1413,13 @@ class ClimateSensorDevice extends UnifiedSensorBase {
     // DP5=temperature(÷10), DP3=soil_moisture(%), DP15=battery(%)
     if (this._isSoilSensor()) {
       if (dp === 5) {
-        const temp = this._applyTempOffset(value / 10);
+        const temp = this._applyTempOffset(safeParse(value, 10));
         this.log(`[SOIL] DP5 temperature raw=${value} → ${temp}°C`);
         await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => {});
         return;
       }
       if (dp === 3) {
-        const moisture = value > 100 ? Math.round(value / 10) : value;
+        const moisture = value > 100 ? Math.round(safeParse(value, 10)) : value;
         this.log(`[SOIL] DP3 soil_moisture raw=${value} → ${moisture}%`);
         await this.setCapabilityValue('measure_humidity', moisture).catch(() => {});
         return;
@@ -1431,12 +1437,12 @@ class ClimateSensorDevice extends UnifiedSensorBase {
 
     if (dp === 1 || dp === 6 || dp === 18) {
       // Temperature DPs - apply offset after division
-      const rawTemp = value / 10;
-      processedValue = this._applyTempOffset(rawTemp) * 10; // Scale back for parent processing
+      const rawTemp = safeParse(value, 10);
+      processedValue =safeMultiply(this._applyTempOffset(rawTemp), 10); // Scale back for parent processing
     } else if (dp === 2 || dp === 7 || dp === 103) {
       // v5.11.26: FIX #1328 - auto-divisor before offset (raw value may be >100 e.g. 435=43.5%)
       let hum = value;
-      if (hum > 100) hum = Math.round(hum / 10);
+      if (hum > 100) hum = Math.round(safeParse(hum, 10));
       processedValue = this._applyHumOffset(hum);
     }
 
@@ -1451,7 +1457,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
     const mfr = (this._manufacturerName || '').toLowerCase();
     return ['_tze284_oitavov2', '_tze200_myd45weu', '_tze200_ga1maeof',
       '_tze200_9cqcpkgb', '_tze204_myd45weu', '_tze284_myd45weu',
-      '_tze200_2se8efxh'].some(s => mfr.includes(s));
+      '_tze200_2se8efxh'].some(s => CI.containsCI(mfr, s));
   }
 
   /**
@@ -1481,22 +1487,22 @@ class ClimateSensorDevice extends UnifiedSensorBase {
     // v5.5.190: Log with calibration info
     switch (dp) {
     case 1: // Temperature (standard) ÷10
-      const temp1 = this._applyTempOffset(rawValue / 10);
+      const temp1 = this._applyTempOffset(safeParse(rawValue, 10));
       this.log(`[CLIMATE-DP] DP1 temperature raw=${rawValue} → ${temp1}°C`);
       break;
     case 18: // Temperature (alt) ÷10
     case 6: // Temperature (some _TZE204 models)
-      const tempAlt = this._applyTempOffset(rawValue / 10);
+      const tempAlt = this._applyTempOffset(safeParse(rawValue, 10));
       this.log(`[CLIMATE-DP] DP${dp} temperature_alt raw=${rawValue} → ${tempAlt}°C`);
       break;
     case 2: // Humidity (standard)
-      const hum2raw = rawValue > 100 ? Math.round(rawValue / 10) : rawValue;
+      const hum2raw = rawValue > 100 ? Math.round(safeParse(rawValue, 10)) : rawValue;
       const hum2 = this._applyHumOffset(hum2raw);
       this.log(`[CLIMATE-DP] DP2 humidity raw=${rawValue} → ${hum2}%`);
       break;
     case 7: // Humidity (some _TZE204 models)
     case 103: // Humidity (alt)
-      const humAltRaw = rawValue > 100 ? Math.round(rawValue / 10) : rawValue;
+      const humAltRaw = rawValue > 100 ? Math.round(safeParse(rawValue, 10)) : rawValue;
       const humAlt = this._applyHumOffset(humAltRaw);
       this.log(`[CLIMATE-DP] DP${dp} humidity_alt raw=${rawValue} → ${humAlt}%`);
       break;
@@ -1505,11 +1511,11 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       if (rawValue === 0) bat3 = 10;      // low
       else if (rawValue === 1) bat3 = 50; // medium
       else if (rawValue === 2) bat3 = 100; // high
-      else bat3 = Math.min(rawValue * 2, 100);
+      else bat3 =safeMultiply(Math.min(rawValue, 2), 100);
       this.log(`[CLIMATE-DP] DP3 battery_state raw=${rawValue} → ${bat3}% (enum: 0=low, 1=med, 2=high)`);
       break;
     case 4: // Battery (standard with ×2 multiplier)
-      const batConverted = Math.min(rawValue * 2, 100);
+      const batConverted =safeMultiply(Math.min(rawValue, 2), 100);
       this.log(`[CLIMATE-DP] DP4 battery raw=${rawValue} → ${batConverted}% (×2 multiplier)`);
       break;
     case 5: // Illuminance (some models)
@@ -1589,10 +1595,10 @@ class ClimateSensorDevice extends UnifiedSensorBase {
 
       const attrs = {};
       if (changedKeys.includes('alarm_temp_max')) {
-        attrs.alarmTemperatureMax = Math.round(newSettings.alarm_temp_max * 10);
+        attrs.alarmTemperatureMax =Math.round(safeMultiply(newSettings.alarm_temp_max, 10));
       }
       if (changedKeys.includes('alarm_temp_min')) {
-        attrs.alarmTemperatureMin = Math.round(newSettings.alarm_temp_min * 10);
+        attrs.alarmTemperatureMin =Math.round(safeMultiply(newSettings.alarm_temp_min, 10));
       }
       if (changedKeys.includes('alarm_humidity_max')) {
         attrs.alarmHumidityMax = Math.round(newSettings.alarm_humidity_max);
