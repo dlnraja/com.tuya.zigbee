@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-18T11:12:29.228Z",
+  "ts": "2026-04-18T11:30:15.168Z",
   "currentCount": 2867,
   "src": {
     "johan": {
@@ -18908,9 +18908,20 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 53,
+      "issueCount": 54,
       "prCount": 6,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 276,
+          "title": "Smart Solar Soil Sensor",
+          "mfrs": [
+            "_TZE284_rqcuwlsa",
+            "_TZE284_rqcuwlsa",
+            "_TZE284_rqcuwlsa",
+            "_TZE284_rqcuwlsa"
+          ]
+        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 275,
@@ -19243,16 +19254,6 @@
             "_TZE284_ne4pikwm",
             "_TZE284_ne4pikwm",
             "_TZE284_ne4pikwm"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1359,
-          "title": "Device request: Nedis Zigbee 2-Gang Dimmer (ZBWD20RD / TS110E)",
-          "mfrs": [
-            "_TZ3210_mt5xjoy6",
-            "_TZ3210_mt5xjoy6",
-            "_TZ3210_mt5xjoy6"
           ]
         }
       ]
