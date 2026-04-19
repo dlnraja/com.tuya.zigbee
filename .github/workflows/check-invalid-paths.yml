@@ -1,0 +1,87 @@
+name: Check Invalid Paths
+
+on:
+  push:
+    paths:
+      - '**.js'
+      - '**.json'
+      - '**.ts'
+  pull_request:
+    paths:
+      - '**.js'
+      - '**.json'
+      - '**.ts'
+  schedule:
+    - cron: '0 6 * * *'  # Daily at 6 AM UTC
+
+jobs:
+  check-paths:
+    name: Validate require/import paths
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: npm install --ignore-scripts
+      
+      - name: Run Invalid Path Scanner
+        id: scanner
+        run: |
+          echo "🔍 Running Invalid Path Scanner..."
+          echo ""
+          
+          # Count files to scan
+          FILE_COUNT=$(find . -type f \( -name "*.js" -o -name "*.json" -o -name "*.ts" \) \
+            ! -path "*/node_modules/*" \
+            ! -path "*/.git/*" \
+            ! -path "*/.homey/*" \
+            ! -path "*/dist/*" \
+            ! -path "*/build/*" | wc -l)
+          echo "Files to scan: $FILE_COUNT"
+          
+          # Run the maintenance script
+          node scripts/maintenance/check_invalid_paths.js
+          
+        continue-on-error: false
+      
+      - name: Report scan results
+        if: always()
+        run: |
+          if [ -f .path-scan-results.json ]; then
+            echo "## Path Scan Results" >> $GITHUB_STEP_SUMMARY
+            cat .path-scan-results.json >> $GITHUB_STEP_SUMMARY
+          else
+            echo "## Path Scan: No issues found ✅" >> $GITHUB_STEP_SUMMARY
+          fi
+      
+      - name: Upload scan artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: path-scan-report
+          path: |
+            .path-scan-results.json
+            scripts/maintenance/check_invalid_paths.js
+          retention-days: 30
+      
+      - name: Create GitHub Issue on failure
+        if: failure() && github.event_name == 'schedule'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: "⚠️ Invalid Paths Detected in Codebase",
+              body: "The daily scan detected invalid paths (spaces in require/import statements) that could cause crashes.\n\nPlease review and fix these issues.\n\n*This issue was auto-created by the daily maintenance scan.*",
+              labels: ["bug", "maintenance"]
+            })

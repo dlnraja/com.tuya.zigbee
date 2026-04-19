@@ -1,7 +1,2821 @@
 {
-  "timestamp": "2026-04-19T22:20:08.523Z",
+  "timestamp": "2026-04-19T23:32:24.544Z",
   "driversChecked": 323,
   "collisions": [
+    {
+      "id": "_TZE200_5ZBP6J0U|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_BJZROWV2|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_NKOABG8W|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_XUZCVLKU|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_4VOBCGD3|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_NOGAEMZT|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_R0JDJRVI|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_PK0SFZVR|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_FDTJUW7U|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_ZPZNDJEZ|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_WMCDJ3AQ|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_COWVFNI3|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_RDDYVRCI|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_NUEQQE6K|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_XAABYBJA|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_RMYMN92D|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_3I3EXUAY|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_HSGRHJPF|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_UJ3F4WR5|TS0601",
+      "drivers": [
+        "air_purifier",
+        "curtain_motor"
+      ]
+    },
+    {
+      "id": "_TZE204_1FUXIHTI|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_AXGVO9JH|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_GAJ531W3|TS0601",
+      "drivers": [
+        "air_purifier",
+        "contact_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_YIA0P3TR|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_IP2AKL4W|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_1AGWNEMS|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_579LGUH2|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_VUCANKJX|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_N9CTKB6J|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_dimmer_1gang"
+      ]
+    },
+    {
+      "id": "_TZE204_9QHUZGO0|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ]
+    },
+    {
+      "id": "TUYATEC-G3GL6CGY|RH3052",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-G3GL6CGY|TS0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-G3GL6CGY|TS0222",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-G3GL6CGY|TS0601",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-G3GL6CGY|TY0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-BFQ2I2SY|RH3052",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-BFQ2I2SY|TS0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-BFQ2I2SY|TS0222",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-BFQ2I2SY|TS0601",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-BFQ2I2SY|TY0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-ABKEHQUS|RH3052",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-ABKEHQUS|TS0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-ABKEHQUS|TS0222",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-ABKEHQUS|TS0601",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-ABKEHQUS|TY0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_QAAYSLLP|TS0601",
+      "drivers": [
+        "air_purifier",
+        "contact_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_YD2E749Y|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_YD2E749Y|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_YD2E749Y|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_YD2E749Y|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_YD2E749Y|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_ITNRSUFE|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_wireless"
+      ]
+    },
+    {
+      "id": "_TZ3000_BJAWZODF|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_BJAWZODF|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_BJAWZODF|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_BJAWZODF|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_BJAWZODF|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_BJAWZODF|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_wireless"
+      ]
+    },
+    {
+      "id": "_TZE200_ZL1KMJQX|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_wireless"
+      ]
+    },
+    {
+      "id": "_TZE200_BQ5C8XFE|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_wireless"
+      ]
+    },
+    {
+      "id": "_TZE200_QYFLBNBJ|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_QYFLBNBJ|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_QYFLBNBJ|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_QYFLBNBJ|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_QYFLBNBJ|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_VS0SKPUC|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_VS0SKPUC|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_VS0SKPUC|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_VS0SKPUC|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_VS0SKPUC|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_44AF8VYI|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_wireless"
+      ]
+    },
+    {
+      "id": "_TZE200_TTCOVULF|TS0601",
+      "drivers": [
+        "air_purifier",
+        "gas_sensor"
+      ]
+    },
+    {
+      "id": "_TZE201_ZTC6GGYL|TS0601",
+      "drivers": [
+        "air_purifier",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "id": "_TZE202_ZTC6GGYL|TS0601",
+      "drivers": [
+        "air_purifier",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "id": "_TZE203_ZTC6GGYL|TS0601",
+      "drivers": [
+        "air_purifier",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "id": "_TZE204_ZTC6GGYL|TS0601",
+      "drivers": [
+        "air_purifier",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "id": "_TZE204_7GCLUKJS|TS0601",
+      "drivers": [
+        "air_purifier",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "id": "_TZE204_SXM7L9XA|TS0601",
+      "drivers": [
+        "air_purifier",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "id": "_TZE204_IJXVKHD0|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TYST11_D0YU2XGI|TS0601",
+      "drivers": [
+        "air_purifier",
+        "siren"
+      ]
+    },
+    {
+      "id": "_TZE200_YVX5LH6K|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_YVX5LH6K|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_YVX5LH6K|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_YVX5LH6K|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_YVX5LH6K|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_8YGSUHE1|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_8YGSUHE1|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_8YGSUHE1|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_8YGSUHE1|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_8YGSUHE1|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_MJA3FUJA|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_MJA3FUJA|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_MJA3FUJA|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_MJA3FUJA|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_MJA3FUJA|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_RYFMQ5RL|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_RYFMQ5RL|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_RYFMQ5RL|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_RYFMQ5RL|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_RYFMQ5RL|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_C2FMOM5Z|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_C2FMOM5Z|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_C2FMOM5Z|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_C2FMOM5Z|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_C2FMOM5Z|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_NTCY3XU1|TS0601",
+      "drivers": [
+        "air_purifier",
+        "smoke_detector_advanced"
+      ]
+    },
+    {
+      "id": "_TZE200_M9SKFCTM|TS0601",
+      "drivers": [
+        "air_purifier",
+        "smoke_detector_advanced"
+      ]
+    },
+    {
+      "id": "_TZE200_RCCXOX8P|TS0601",
+      "drivers": [
+        "air_purifier",
+        "smoke_detector_advanced"
+      ]
+    },
+    {
+      "id": "_TZE200_VZEKYI4C|TS0601",
+      "drivers": [
+        "air_purifier",
+        "smoke_detector_advanced"
+      ]
+    },
+    {
+      "id": "_TZE200_T5P1VJ8R|TS0601",
+      "drivers": [
+        "air_purifier",
+        "smoke_detector_advanced"
+      ]
+    },
+    {
+      "id": "_TZE200_UEBOJRAA|TS0601",
+      "drivers": [
+        "air_purifier",
+        "smoke_detector_advanced"
+      ]
+    },
+    {
+      "id": "_TZE200_YH7AOAHI|TS0601",
+      "drivers": [
+        "air_purifier",
+        "smoke_detector_advanced"
+      ]
+    },
+    {
+      "id": "_TZE284_AAO3YZHS|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ]
+    },
+    {
+      "id": "_TZE284_SGABHWA6|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ]
+    },
+    {
+      "id": "_TZE284_G2E6CPNW|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ]
+    },
+    {
+      "id": "TUYATEC-YG5DCBFU|RH3052",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-YG5DCBFU|TS0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-YG5DCBFU|TS0222",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-YG5DCBFU|TS0601",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-YG5DCBFU|TY0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-PRHS1RSD|RH3052",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-PRHS1RSD|TS0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-PRHS1RSD|TS0222",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-PRHS1RSD|TS0601",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-PRHS1RSD|TY0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-GQHXIXYK|RH3052",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-GQHXIXYK|TS0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-GQHXIXYK|TS0222",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-GQHXIXYK|TS0601",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-GQHXIXYK|TY0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-VMGH3FXD|RH3052",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-VMGH3FXD|TS0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-VMGH3FXD|TS0222",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-VMGH3FXD|TS0601",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-VMGH3FXD|TY0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-OJMXEIKG|RH3052",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-OJMXEIKG|TS0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-OJMXEIKG|TS0222",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-OJMXEIKG|TS0601",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-OJMXEIKG|TY0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-OJMXEIKQ|RH3052",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-OJMXEIKQ|TS0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-OJMXEIKQ|TS0222",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-OJMXEIKQ|TS0601",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-OJMXEIKQ|TY0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-1G3TAWNP|RH3052",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-1G3TAWNP|TS0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-1G3TAWNP|TS0222",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-1G3TAWNP|TS0601",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-1G3TAWNP|TY0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_I8JFIEZR|RH3052",
+      "drivers": [
+        "air_purifier",
+        "air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_I8JFIEZR|TS0201",
+      "drivers": [
+        "air_purifier",
+        "air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_I8JFIEZR|TS0222",
+      "drivers": [
+        "air_purifier",
+        "air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_I8JFIEZR|TS0601",
+      "drivers": [
+        "air_purifier",
+        "air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_I8JFIEZR|TY0201",
+      "drivers": [
+        "air_purifier",
+        "air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-V3UXBUXY|RH3052",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-V3UXBUXY|TS0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-V3UXBUXY|TS0222",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-V3UXBUXY|TS0601",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-V3UXBUXY|TY0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_BGUSER20|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_BGUSER20|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_BGUSER20|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_BGUSER20|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_BGUSER20|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_8YBE88NF|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_8YBE88NF|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_8YBE88NF|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_8YBE88NF|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_8YBE88NF|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_FIE1DPKM|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_FIE1DPKM|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_FIE1DPKM|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_FIE1DPKM|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_FIE1DPKM|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "TUYATEC-RIUJ5XZS|RH3052",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-RIUJ5XZS|TS0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-RIUJ5XZS|TS0222",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-RIUJ5XZS|TS0601",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-RIUJ5XZS|TY0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-1UXX9CCI|RH3052",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-1UXX9CCI|TS0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-1UXX9CCI|TS0222",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-1UXX9CCI|TS0601",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-1UXX9CCI|TY0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_F2BW0B6K|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_F2BW0B6K|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_F2BW0B6K|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_F2BW0B6K|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_F2BW0B6K|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "TUYATEC-HAOIUWZY|RH3052",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-HAOIUWZY|TS0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-HAOIUWZY|TS0222",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-HAOIUWZY|TS0601",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-HAOIUWZY|TY0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_DOWJ6GYI|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_DOWJ6GYI|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_DOWJ6GYI|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_DOWJ6GYI|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_DOWJ6GYI|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_0S1IZERX|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_0S1IZERX|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_0S1IZERX|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_0S1IZERX|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_0S1IZERX|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "TUYATEC-QUN7VQ14|RH3052",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-QUN7VQ14|TS0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-QUN7VQ14|TS0222",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-QUN7VQ14|TS0601",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "TUYATEC-QUN7VQ14|TY0201",
+      "drivers": [
+        "air_purifier",
+        "device_air_purifier_climate_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_AKQDG6G7|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_AKQDG6G7|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_AKQDG6G7|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_AKQDG6G7|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_AKQDG6G7|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_FLLYGHYJ|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_FLLYGHYJ|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_FLLYGHYJ|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_FLLYGHYJ|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_FLLYGHYJ|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_XR3HTD96|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_XR3HTD96|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_XR3HTD96|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_XR3HTD96|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_XR3HTD96|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_SAIQCN0Y|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_SAIQCN0Y|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_SAIQCN0Y|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_SAIQCN0Y|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_SAIQCN0Y|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_A8SDABTG|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_A8SDABTG|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_A8SDABTG|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_A8SDABTG|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_A8SDABTG|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_ZL1KMJQX|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_ZL1KMJQX|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_ZL1KMJQX|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_ZL1KMJQX|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_ZL1KMJQX|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_6UZKISV2|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_6UZKISV2|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_6UZKISV2|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_6UZKISV2|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_6UZKISV2|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_YJJDCQSQ|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_YJJDCQSQ|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_YJJDCQSQ|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_YJJDCQSQ|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_YJJDCQSQ|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_VVMBJ46N|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_VVMBJ46N|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_VVMBJ46N|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_VVMBJ46N|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_VVMBJ46N|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_YJJDCQSQ|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_YJJDCQSQ|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_YJJDCQSQ|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_YJJDCQSQ|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_YJJDCQSQ|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_UTKEMKBS|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_UTKEMKBS|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_UTKEMKBS|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_UTKEMKBS|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_UTKEMKBS|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_UPAGMTA9|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_UPAGMTA9|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_UPAGMTA9|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_UPAGMTA9|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_UPAGMTA9|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_UTKEMKBS|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_UTKEMKBS|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_UTKEMKBS|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_UTKEMKBS|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_UTKEMKBS|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_9YAPGBUV|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_9YAPGBUV|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_9YAPGBUV|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_9YAPGBUV|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_9YAPGBUV|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_CIRVGEP4|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_CIRVGEP4|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_CIRVGEP4|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_CIRVGEP4|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_CIRVGEP4|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_CIRVGEP4|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_CIRVGEP4|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_CIRVGEP4|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_CIRVGEP4|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_CIRVGEP4|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_9YAPGBUV|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_9YAPGBUV|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_9YAPGBUV|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_9YAPGBUV|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_9YAPGBUV|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_3P5YDOS3|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_dimmer_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_EBWGZDQQ|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_CTQ0K47X|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_9I9DT8IS|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_DFXKCOTS|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_W4CRYH2I|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_OJZHK75B|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_SWAAMSOY|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_VEVC4C6G|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_GBAGOILO|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_JWSJBXJS|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZE200_JTHF7VB6|TS0601",
+      "drivers": [
+        "air_purifier",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3210_INVESBER|TS0052",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3210_INVESBER|TS1101",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3210_INVESBER|TS110E",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3210_INVESBER|TS110F",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3210_ZDRHQMO0|TS0052",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3210_ZDRHQMO0|TS1101",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3210_ZDRHQMO0|TS110E",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3210_ZDRHQMO0|TS110F",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_FSIEPNRH|TS0601",
+      "drivers": [
+        "button_emergency_sos",
+        "switch_wireless"
+      ]
+    },
+    {
+      "id": "_TZ3000_P6JU8MYV|TS0601",
+      "drivers": [
+        "button_emergency_sos",
+        "switch_wireless"
+      ]
+    },
+    {
+      "id": "_TZ3000_EO3DTTWE|TS0601",
+      "drivers": [
+        "button_emergency_sos",
+        "switch_wireless"
+      ]
+    },
+    {
+      "id": "_TZ3000_KDI2O9M6|TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_KDI2O9M6|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_KDI2O9M6|TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_EW31DMGX|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor_hybrid"
+      ]
+    },
+    {
+      "id": "_TZ3000_WAMQDR3F|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ]
+    },
+    {
+      "id": "_TZ3000_WAMQDR3F|TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ]
+    },
+    {
+      "id": "_TZ3000_WAMQDR3F|TSO121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ]
+    },
+    {
+      "id": "_TZ3000_CAYEPV1A|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_CAYEPV1A|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_CAYEPV1A|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_CAYEPV1A|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_LEPZUHTO|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_LEPZUHTO|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_LEPZUHTO|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_LEPZUHTO|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_QYSTBCJG|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_QYSTBCJG|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_QYSTBCJG|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_QYSTBCJG|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_3OOAZ3NG|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ]
+    },
+    {
+      "id": "_TZ3000_3OOAZ3NG|TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ]
+    },
+    {
+      "id": "_TZ3000_3OOAZ3NG|TSO121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ]
+    },
+    {
+      "id": "_TZ3000_G5XAWFCQ|TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_G5XAWFCQ|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_G5XAWFCQ|TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_RDTIXBNU|TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_RDTIXBNU|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_RDTIXBNU|TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_CPHMQ0Q7|TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_CPHMQ0Q7|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_CPHMQ0Q7|TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_W0QQDE0G|TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_W0QQDE0G|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_W0QQDE0G|TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_TYPDPDPG|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "usb_outlet_advanced"
+      ]
+    },
+    {
+      "id": "_TZ3000_AMDYMR7L|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ]
+    },
+    {
+      "id": "_TZ3000_AMDYMR7L|TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ]
+    },
+    {
+      "id": "_TZ3000_AMDYMR7L|TSO121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ]
+    },
+    {
+      "id": "_TZ3000_1OBWWNMQ|TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_1OBWWNMQ|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_1OBWWNMQ|TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_VZOPCETZ|TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_VZOPCETZ|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_VZOPCETZ|TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_JI4ARAAR|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_JI4ARAAR|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_JI4ARAAR|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_JI4ARAAR|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_QMI1CFUQ|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_QMI1CFUQ|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_QMI1CFUQ|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_QMI1CFUQ|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_TQLV4UG4|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_TQLV4UG4|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_TQLV4UG4|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_TQLV4UG4|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_PRITS6G4|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_PRITS6G4|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_PRITS6G4|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_PRITS6G4|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_FISB3AJO|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_FISB3AJO|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_FISB3AJO|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_FISB3AJO|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_ODZOIOVU|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_ODZOIOVU|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_ODZOIOVU|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_ODZOIOVU|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_LVHY15IX|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_LVHY15IX|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_LVHY15IX|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_LVHY15IX|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_4O16JDCA|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_4O16JDCA|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_4O16JDCA|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_4O16JDCA|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_TVUARKSA|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_TVUARKSA|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_TVUARKSA|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_TVUARKSA|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_DFGBTUB0|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_DFGBTUB0|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_DFGBTUB0|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_DFGBTUB0|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_W8JWKCZZ|TS0043",
+      "drivers": [
+        "button_wireless_2",
+        "wall_remote_3_gang"
+      ]
+    },
     {
       "id": "_TZ3210_D3M9V8P6|TS0001",
       "drivers": [
@@ -29,6 +2843,447 @@
         "button_wireless_fingerbot_hybrid",
         "fingerbot"
       ]
+    },
+    {
+      "id": "_TZE284_RQCUWLSA|TS0601",
+      "drivers": [
+        "climate_sensor",
+        "soil_sensor"
+      ]
+    },
+    {
+      "id": "_TZE284_RQCUWLSA|ZG-303Z",
+      "drivers": [
+        "climate_sensor",
+        "soil_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3210_TGVTVDOC|Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3210_TGVTVDOC|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3210_TGVTVDOC|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TYZB01_SQMD19I1|Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TYZB01_SQMD19I1|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TYZB01_SQMD19I1|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_T6JRIAWG|Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_T6JRIAWG|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_T6JRIAWG|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_KYB656NO|Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_KYB656NO|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_KYB656NO|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_0S9GUKZT|Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_0S9GUKZT|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_0S9GUKZT|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_KSTBKT6A|Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_KSTBKT6A|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_KSTBKT6A|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_MUGYHZ0Q|Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_MUGYHZ0Q|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_MUGYHZ0Q|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_UPGCBODY|Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_UPGCBODY|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_UPGCBODY|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_K4EJ3WW2|Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_K4EJ3WW2|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_K4EJ3WW2|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_OCJLO4EA|Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_OCJLO4EA|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_OCJLO4EA|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_AWVMKAYH|Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_AWVMKAYH|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_AWVMKAYH|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_M0VAAZAB|EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_M0VAAZAB|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_5K5VH43T|EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_5K5VH43T|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_UFTTKLSZ|EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_UFTTKLSZ|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_GSZJT2XX|EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_GSZJT2XX|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_NKKL7UZV|EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_NKKL7UZV|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_NLSSZMZL|EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_NLSSZMZL|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_MISW04HQ|EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_MISW04HQ|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_WLQUQIIZ|EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_WLQUQIIZ|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ]
+    },
+    {
+      "id": "_TZ3000_PNZFDR9Y|TS0049",
+      "drivers": [
+        "device_plug_smart_hybrid",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_PNZFDR9Y|TS0101",
+      "drivers": [
+        "device_plug_smart_hybrid",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_BR3LAUKF|TS0049",
+      "drivers": [
+        "device_plug_smart_hybrid",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZ3000_BR3LAUKF|TS0101",
+      "drivers": [
+        "device_plug_smart_hybrid",
+        "plug_smart"
+      ]
+    },
+    {
+      "id": "_TZE200_2AAELWXK|TS0225",
+      "drivers": [
+        "gas_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "id": "_TZE200_2AAELWXK|TS0601",
+      "drivers": [
+        "gas_sensor",
+        "presence_sensor_radar"
+      ]
+    },
+    {
+      "id": "_TZ3000_MMKBPTMX|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_4gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_WKR3JQMR|TS0601",
+      "drivers": [
+        "switch_4gang",
+        "switch_hybrid"
+      ]
+    },
+    {
+      "id": "_TYZB01_VKWRYFDR|TS0115",
+      "drivers": [
+        "universal_zigbee",
+        "usb_outlet_advanced"
+      ]
+    },
+    {
+      "id": "_TYZB01_VKWRYFDR|TS011F",
+      "drivers": [
+        "universal_zigbee",
+        "usb_outlet_advanced"
+      ]
+    },
+    {
+      "id": "_TYZB01_VKWRYFDR|TS0601",
+      "drivers": [
+        "universal_zigbee",
+        "usb_outlet_advanced"
+      ]
+    },
+    {
+      "id": "_TZE284_FHVPALTK|TS0601",
+      "drivers": [
+        "valve_dual_irrigation",
+        "valve_irrigation"
+      ]
     }
   ],
   "buttonLogicFailures": [],
@@ -37,6 +3292,18 @@
   "numericConstantViolations": [],
   "naNSafetyCheck": [],
   "errors": [
+    ".homeybuild\\drivers\\device_air_purifier_presence_hybrid\\device.js:126: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    ".homeybuild\\drivers\\remote_button_wireless_handheld_hybrid\\device.js:624: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    ".homeybuild\\drivers\\remote_button_wireless_handheld_hybrid\\device.js:625: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    ".homeybuild\\drivers\\sensor_climate_motion_hybrid\\device.js:816: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    ".homeybuild\\drivers\\sensor_contact_climate_hybrid\\device.js:275: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    ".homeybuild\\drivers\\sensor_contact_climate_hybrid\\device.js:295: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    ".homeybuild\\drivers\\sensor_contact_climate_hybrid\\device.js:312: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    ".homeybuild\\drivers\\sensor_contact_climate_hybrid\\device.js:342: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    ".homeybuild\\drivers\\sensor_contact_climate_hybrid\\device.js:1457: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    ".homeybuild\\drivers\\sensor_contact_motion_hybrid\\device.js:816: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    ".homeybuild\\drivers\\sensor_contact_presence_hybrid\\device.js:126: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    ".homeybuild\\drivers\\sensor_gas_presence_hybrid\\device.js:126: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\lib\\TuyaRtcDetector.js:84: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\lib\\TuyaRtcDetector.js:93: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\lib\\UniversalIasDevice.js:66: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
