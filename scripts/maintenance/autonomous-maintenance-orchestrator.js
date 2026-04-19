@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║  AUTONOMOUS MAINTENANCE ORCHESTRATOR v2.0 "The Hybrid Engine Brain"                  ║
- * ║  The "Brain" of the Universal Tuya Zigbee App maintenance pipeline.          ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  v2.0: Deep Thinking Architectural Health & Zero-Defect Gating               ║
- * ║  1. Intelligent Gating: Avoid redundant runs                                 ║
- * ║  2. Architectural Triage: Task Divider v2.0 integration                       ║
- * ║  3. Self-Healing: Master Engine v2.1                                         ║
- * ║  4. Zero-Defect Audit: Regression detection                                  ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *   AUTONOMOUS MAINTENANCE ORCHESTRATOR v2.0 "The Hybrid Engine Brain"                  
+ *   The "Brain" of the Universal Tuya Zigbee App maintenance pipeline.          
+ * 
+ *   v2.0: Deep Thinking Architectural Health & Zero-Defect Gating               
+ *   1. Intelligent Gating: Avoid redundant runs                                 
+ *   2. Architectural Triage: Task Divider v2.0 integration                       
+ *   3. Self-Healing: Master Engine v2.1                                         
+ *   4. Zero-Defect Audit: Regression detection                                  
+ * 
  */
 
 'use strict';
@@ -31,15 +31,15 @@ if (!fs.existsSync(path.dirname(STATE_FILE))) {
 function log(msg) { console.log(`[NEXUS] ${msg}`); }
 
 function run(cmd, desc, abortOnError = false) {
-  console.log(`\n🚀 [TASK] ${desc}`);
+  console.log(`\n [TASK] ${desc}`);
   console.log(`> ${cmd}`);
   try {
     execSync(cmd, { cwd: ROOT, encoding: 'utf8', stdio: 'inherit' });
     return true;
   } catch (e) {
-    console.error(`❌ [ERR] Task failed: ${desc}`);
+    console.error(` [ERR] Task failed: ${desc}`);
     if (abortOnError) {
-      console.error('🛑 [FATAL] Aborting pipeline due to critical failure.');
+      console.error(' [FATAL] Aborting pipeline due to critical failure.');
       process.exit(1);
     }
     return false;
@@ -48,7 +48,7 @@ function run(cmd, desc, abortOnError = false) {
 
 async function main() {
   const startTime = Date.now();
-  console.log('--- 🧠 Universal Tuya Hybrid Engine Orchestrator Session ---');
+  console.log('---  Universal Tuya Hybrid Engine Orchestrator Session ---');
   
   const state = fs.existsSync(STATE_FILE) ? JSON.parse(fs.readFileSync(STATE_FILE, 'utf8')) : { lastRun: 0, errors: [] };
 
@@ -94,7 +94,7 @@ async function main() {
   run('node scripts/automation/manifest-caseless-processor.js', 'Ph4f: Manifest Case-Insensitivity Audit');
 
   // PHASE 5: Integrity Verification
-  console.log('\n🔍 [VALIDATION] Verifying app integrity...');
+  console.log('\n [VALIDATION] Verifying app integrity...');
   const isValid = run('npx homey app validate --level publish', 'Ph5: Homey SDK3 Validation Audit');
 
   // PHASE 6: Report Generation
@@ -108,7 +108,7 @@ async function main() {
 
   fs.writeFileSync(STATE_FILE, JSON.stringify(report, null, 2));
   
-  console.log(`\n--- 🏁 Hybrid Engine Session Complete (${duration}s) ---`);
+  console.log(`\n---  Hybrid Engine Session Complete (${duration}s) ---`);
   if (!isValid) process.exit(0); // Proceed but with warnings
 }
 

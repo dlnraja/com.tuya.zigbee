@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔍 AUDIT COMPLET AVANCÉ SDK3 - ANALYSE INTELLIGENTE\n');
+console.log(' AUDIT COMPLET AVANCÉ SDK3 - ANALYSE INTELLIGENTE\n');
 
 const ROOT = path.join(__dirname, '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -263,14 +263,14 @@ function analyzeFile(filePath) {
 }
 
 // EXÉCUTION
-console.log('📂 Scanning drivers/...\n');
+console.log(' Scanning drivers/...\n');
 scanDirectory(DRIVERS_DIR, analyzeFile);
 
-console.log('📂 Scanning lib/...\n');
+console.log(' Scanning lib/...\n');
 scanDirectory(LIB_DIR, analyzeFile);
 
 // ANALYSE DUPLICATES MANUFACTURER IDs
-console.log('🔍 Analysing manufacturer ID duplicates...\n');
+console.log(' Analysing manufacturer ID duplicates...\n');
 const manufacturerMap = {};
 scanDirectory(DRIVERS_DIR, (filePath) => {
   if (filePath.includes('driver.compose.json')) {
@@ -333,7 +333,7 @@ const reportPath = path.join(ROOT, 'AUDIT_ADVANCED_REPORT.json');
 fs.writeFileSync(reportPath, JSON.stringify(report, null, 2), 'utf8');
 
 // AFFICHAGE RÉSUMÉ
-console.log('\n📊 RÉSUMÉ AUDIT:\n');
+console.log('\n RÉSUMÉ AUDIT:\n');
 console.log(`   Version: ${report.version}`);
 console.log(`   Drivers: ${report.stats.totalDrivers}`);
 console.log(`   Fichiers: ${report.stats.totalFiles}`);
@@ -341,17 +341,17 @@ console.log(`   Issues critiques: ${report.stats.criticalIssues}`);
 console.log(`   Warnings: ${report.stats.warningIssues}`);
 console.log(`   Info: ${report.stats.infoIssues}\n`);
 
-console.log('📋 TOP ISSUES:\n');
+console.log(' TOP ISSUES:\n');
 if (report.stats.criticalIssues > 0) {
-  console.log(`   🔴 ${report.stats.criticalIssues} CRITIQUES à corriger immédiatement`);
+  console.log(`    ${report.stats.criticalIssues} CRITIQUES à corriger immédiatement`);
 }
 if (report.stats.warningIssues > 0) {
-  console.log(`   ⚠️  ${report.stats.warningIssues} warnings à examiner`);
+  console.log(`     ${report.stats.warningIssues} warnings à examiner`);
 }
 if (report.stats.infoIssues > 0) {
-  console.log(`   ℹ️  ${report.stats.infoIssues} infos (enrichissement possible)`);
+  console.log(`     ${report.stats.infoIssues} infos (enrichissement possible)`);
 }
 
-console.log(`\n✅ Rapport sauvegardé: ${reportPath}\n`);
+console.log(`\n Rapport sauvegardé: ${reportPath}\n`);
 
 process.exit(report.stats.criticalIssues > 0 ? 1 : 0);

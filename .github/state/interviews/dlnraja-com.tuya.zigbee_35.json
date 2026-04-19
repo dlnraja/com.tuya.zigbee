@@ -16,13 +16,13 @@
       "user": "dlnraja",
       "date": "2025-11-14T20:09:38Z",
       "fps": [],
-      "excerpt": "📝 **Status:** MOES CO detector (TS0601 Tuya EF00) requires specialized DataPoint parsing. Will add support in v4.9.335. Device uses cluster 0xEF00 and needs DP mapping for CO detection. Tracking for implementation."
+      "excerpt": " **Status:** MOES CO detector (TS0601 Tuya EF00) requires specialized DataPoint parsing. Will add support in v4.9.335. Device uses cluster 0xEF00 and needs DP mapping for CO detection. Tracking for implementation."
     },
     {
       "user": "dlnraja",
       "date": "2025-11-27T00:21:01Z",
       "fps": [],
-      "excerpt": "✅ SUPPORTED in v5.1.0\n\nMOES CO detector (TS0601) supported.\n\n**Location:** drivers/gas_detector and drivers/gas_sensor\n\nCO detection uses standard Tuya DP protocol (DP 1 for alarm state)."
+      "excerpt": " SUPPORTED in v5.1.0\n\nMOES CO detector (TS0601) supported.\n\n**Location:** drivers/gas_detector and drivers/gas_sensor\n\nCO detection uses standard Tuya DP protocol (DP 1 for alarm state)."
     }
   ],
   "aiAnalysis": "Here's the structured device information extracted from the provided GitHub issue:\n\n```json\n{\n  \"manufacturerName\": \"_TZE284_rjxqso4a\",\n  \"productId\": \"TS0601\",\n  \"deviceType\": \"CO Sensor\",\n  \"powerSource\": \"battery\",\n  \"fingerprint\": \"_TZE28",

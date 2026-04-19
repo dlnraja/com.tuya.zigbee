@@ -23,10 +23,10 @@
       "title": "CO"
     },
     "alarm_co2": {
-      "title": "CO₂"
+      "title": "CO"
     },
     "alarm_tamper": {
-      "title": "Sabotaż"
+      "title": "Sabota"
     },
     "alarm_vibration": {
       "title": "Wibracje"
@@ -35,11 +35,11 @@
       "title": "Zasilanie"
     },
     "dim": {
-      "title": "Jasność",
+      "title": "Jasno",
       "units": "%"
     },
     "light_hue": {
-      "title": "Odcień"
+      "title": "Odcie"
     },
     "light_saturation": {
       "title": "Nasycenie"
@@ -48,22 +48,22 @@
       "title": "Temperatura barwowa"
     },
     "light_mode": {
-      "title": "Tryb światła"
+      "title": "Tryb wiata"
     },
     "measure_temperature": {
       "title": "Temperatura",
       "units": "°C"
     },
     "measure_humidity": {
-      "title": "Wilgotność",
+      "title": "Wilgotno",
       "units": "%"
     },
     "measure_pressure": {
-      "title": "Ciśnienie",
+      "title": "Cinienie",
       "units": "mbar"
     },
     "measure_co2": {
-      "title": "CO₂",
+      "title": "CO",
       "units": "ppm"
     },
     "measure_pm25": {
@@ -75,7 +75,7 @@
       "units": "ppb"
     },
     "measure_luminance": {
-      "title": "Jasność",
+      "title": "Jasno",
       "units": "lux"
     },
     "measure_power": {
@@ -83,11 +83,11 @@
       "units": "W"
     },
     "measure_voltage": {
-      "title": "Napięcie",
+      "title": "Napicie",
       "units": "V"
     },
     "measure_current": {
-      "title": "Prąd",
+      "title": "Prd",
       "units": "A"
     },
     "meter_power": {
@@ -101,9 +101,9 @@
     "windowcoverings_state": {
       "title": "Rolety",
       "values": {
-        "up": "W górę",
+        "up": "W gór",
         "idle": "Stop",
-        "down": "W dół"
+        "down": "W dó"
       }
     },
     "windowcoverings_set": {
@@ -116,40 +116,40 @@
   },
   "settings": {
     "power_source": {
-      "label": "Źródło zasilania",
-      "hint": "Wybierz źródło zasilania ręcznie lub użyj automatycznego wykrywania"
+      "label": "ródo zasilania",
+      "hint": "Wybierz ródo zasilania rcznie lub uyj automatycznego wykrywania"
     },
     "battery_type": {
       "label": "Typ baterii",
-      "hint": "Wybierz typ baterii ręcznie lub użyj automatycznego wykrywania na podstawie napięcia"
+      "hint": "Wybierz typ baterii rcznie lub uyj automatycznego wykrywania na podstawie napicia"
     },
     "battery_low_threshold": {
       "label": "Próg niskiego poziomu baterii (%)",
-      "hint": "Wyzwól ostrzeżenie o niskim poziomie baterii poniżej tego procentu"
+      "hint": "Wyzwól ostrzeenie o niskim poziomie baterii poniej tego procentu"
     },
     "battery_critical_threshold": {
       "label": "Próg krytycznego poziomu baterii (%)",
-      "hint": "Wyzwól ostrzeżenie o krytycznym poziomie baterii poniżej tego procentu"
+      "hint": "Wyzwól ostrzeenie o krytycznym poziomie baterii poniej tego procentu"
     },
     "enable_battery_notifications": {
-      "label": "Włącz powiadomienia o baterii",
-      "hint": "Wysyłaj powiadomienia flow dla zdarzeń baterii"
+      "label": "Wcz powiadomienia o baterii",
+      "hint": "Wysyaj powiadomienia flow dla zdarze baterii"
     },
     "battery_report_interval": {
-      "label": "Interwał raportu baterii (godziny)",
-      "hint": "Jak często żądać aktualizacji stanu baterii"
+      "label": "Interwa raportu baterii (godziny)",
+      "hint": "Jak czsto da aktualizacji stanu baterii"
     },
     "optimization_mode": {
       "label": "Tryb optymalizacji energii",
-      "hint": "Równowaga między responsywnością a czasem pracy baterii"
+      "hint": "Równowaga midzy responsywnoci a czasem pracy baterii"
     },
     "show_voltage": {
-      "label": "Pokaż napięcie baterii",
-      "hint": "Wyświetl surowe napięcie baterii w ustawieniach urządzenia"
+      "label": "Poka napicie baterii",
+      "hint": "Wywietl surowe napicie baterii w ustawieniach urzdzenia"
     },
     "enable_power_estimation": {
-      "label": "Włącz szacowanie mocy",
-      "hint": "Szacuj zużycie, gdy rzeczywisty pomiar nie jest dostępny (tylko urządzenia AC/DC)"
+      "label": "Wcz szacowanie mocy",
+      "hint": "Szacuj zuycie, gdy rzeczywisty pomiar nie jest dostpny (tylko urzdzenia AC/DC)"
     }
   },
   "tabs": {
@@ -161,7 +161,7 @@
     "save": "Zapisz",
     "cancel": "Anuluj",
     "ok": "OK",
-    "delete": "Usuń",
+    "delete": "Usu",
     "edit": "Edytuj"
   }
 }

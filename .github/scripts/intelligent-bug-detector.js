@@ -17,19 +17,19 @@ const BUG_PATTERNS = {
       if (text.includes('ts0601')) score += 15;
       return score;
     },
-    response: `🌱 **Soil Sensor Connection Issue Detected**
+    response: ` **Soil Sensor Connection Issue Detected**
 
 This appears to be a known soil sensor pairing issue. Here are targeted solutions:
 
 **For _TZE284 variants with DP109/DP112 (fertility support):**
-✅ **Fixed in v5.11.114+** - Added DP109/DP112 support for fertilizer measurements
-✅ **Fixed in v5.11.136+** - Removed restrictive endpoints causing pairing failures
+ **Fixed in v5.11.114+** - Added DP109/DP112 support for fertilizer measurements
+ **Fixed in v5.11.136+** - Removed restrictive endpoints causing pairing failures
 
 **Quick fix steps:**
 1. Update app to latest version (v5.11.136+)
 2. Remove sensor from Homey completely
 3. Reset sensor: Hold button 5+ seconds until LED blinks rapidly  
-4. Re-pair in "Add Device" → "Tuya Zigbee" → "Soil Sensor"
+4. Re-pair in "Add Device"  "Tuya Zigbee"  "Soil Sensor"
 5. Keep sensor within 2m of Homey during pairing
 
 **If still failing:**
@@ -39,7 +39,7 @@ This appears to be a known soil sensor pairing issue. Here are targeted solution
 
 **Diagnostics needed if issue persists:**
 Please provide full diagnostic report:
-- Settings → Advanced → Report issue
+- Settings  Advanced  Report issue
 - Screenshot of exact pairing error
 - Battery level percentage
 
@@ -56,7 +56,7 @@ This helps us identify new variants or edge cases.`
       if (text.includes('button.push') || text.includes('onoff')) score += 20;
       return score;
     },
-    response: `🤖 **Fingerbot Capability Listener Issue Detected**
+    response: ` **Fingerbot Capability Listener Issue Detected**
 
 This was a **known bug fixed in v5.12.3**.
 
@@ -64,9 +64,9 @@ This was a **known bug fixed in v5.12.3**.
 Heavy initialization in \`TuyaZigbeeDevice.onNodeInit()\` could crash before capability listeners were registered, causing "Missing Capability Listener" errors.
 
 **Solution implemented in v5.12.3:**
-✅ Capability listeners now registered **BEFORE** super.onNodeInit()
-✅ Prevents initialization crash from blocking listener setup
-✅ Battery status reporting also fixed
+ Capability listeners now registered **BEFORE** super.onNodeInit()
+ Prevents initialization crash from blocking listener setup
+ Battery status reporting also fixed
 
 **To resolve your issue:**
 1. **Update** app to v5.12.3+ (or latest test version)
@@ -92,7 +92,7 @@ If issue persists after updating and re-pairing, please provide:
       if (text.includes('pairing') && text.includes('fail')) score += 10;
       return score;
     },
-    response: `⚡ **TS0601 Binding Failure Detected**
+    response: ` **TS0601 Binding Failure Detected**
 
 This was **fixed in v6.0** thanks to @Robsta86's contribution (PR #180)!
 
@@ -100,9 +100,9 @@ This was **fixed in v6.0** thanks to @Robsta86's contribution (PR #180)!
 TS0601 devices (Tuya DP protocol) reject standard ZCL bindings [1, 1280, 1030] with zdoInvalidEndpoint error.
 
 **Solution in v6.0:**
-✅ Changed bindings to \`[61184]\` (Tuya DP cluster only)
-✅ Tested with _TZE204_sxm7l9xa and _TZE204_qasjif9e
-✅ Applies to ALL TS0601 devices (presence sensors, soil sensors, etc.)
+ Changed bindings to \`[61184]\` (Tuya DP cluster only)
+ Tested with _TZE204_sxm7l9xa and _TZE204_qasjif9e
+ Applies to ALL TS0601 devices (presence sensors, soil sensors, etc.)
 
 **To fix:**
 1. Update to **v6.0+** (or latest test version)
@@ -128,12 +128,12 @@ The fix is automatic in v6.0+.`
       if (text.includes('switch_2gang') || text.includes('switch_3gang')) score += 20;
       return score;
     },
-    response: `🔌 **Multi-Gang Switch Flow Card Issue Detected**
+    response: ` **Multi-Gang Switch Flow Card Issue Detected**
 
 **v6.0 improvements for multi-gang switches:**
-✅ Comprehensive error recovery in onNodeInit()
-✅ Graceful degradation prevents total device failure
-✅ Better logging for diagnosis
+ Comprehensive error recovery in onNodeInit()
+ Graceful degradation prevents total device failure
+ Better logging for diagnosis
 
 **Common causes:**
 
@@ -151,7 +151,7 @@ The fix is automatic in v6.0+.`
    - Update to v6.0+ for improved error recovery
 
 **Diagnosis steps:**
-1. Check device capabilities: Settings → Advanced → Capabilities
+1. Check device capabilities: Settings  Advanced  Capabilities
 2. Verify app version is v6.0+
 3. Check Homey logs for initialization errors
 
@@ -173,7 +173,7 @@ Please provide diagnostic report if issue persists after updating.`
       if (text.includes('initialization') && text.includes('error')) score += 30;
       return score;
     },
-    response: `🚨 **"Driver Not Initialized" Error**
+    response: ` **"Driver Not Initialized" Error**
 
 This critical issue was **fixed in v6.0** (March 2026).
 
@@ -181,10 +181,10 @@ This critical issue was **fixed in v6.0** (March 2026).
 Exception in onNodeInit() prevented device initialization, leaving device in broken state.
 
 **v6.0 Solution:**
-✅ Comprehensive try-catch in all multi-gang switches
-✅ Non-fatal error handling - device remains partially functional
-✅ Clear user messaging via setUnavailable()
-✅ Enhanced logging for diagnostics
+ Comprehensive try-catch in all multi-gang switches
+ Non-fatal error handling - device remains partially functional
+ Clear user messaging via setUnavailable()
+ Enhanced logging for diagnostics
 
 **Affected drivers (all fixed in v6.0):**
 - switch_2gang, switch_3gang, switch_4gang

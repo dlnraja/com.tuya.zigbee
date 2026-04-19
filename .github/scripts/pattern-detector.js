@@ -1,7 +1,7 @@
 const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
 'use strict';
-// v5.11.27: Pattern Detector — scans forum state + GitHub issues for recurring patterns
+// v5.11.27: Pattern Detector  scans forum state + GitHub issues for recurring patterns
 // Detects: inversion reports, battery issues, double-division, pairing failures, unknown devices
 // Generates actionable fix suggestions and priority lists
 const fs=require('fs'),path=require('path');
@@ -21,7 +21,7 @@ const PATTERNS=[
    files:['drivers/{driver}/device.js']},
   {id:'double_div',name:'Double Division (wrong sensor values)',
    regex:/temp.*(0\.\d|wrong|half|double)|humidity.*(0\.\d|wrong)|value.*(wrong|half|too low|divided)/i,
-   fixHint:'Check TuyaEF00Manager.js:1912 — skip auto-convert when dpMappings has divisor !== 1',
+   fixHint:'Check TuyaEF00Manager.js:1912  skip auto-convert when dpMappings has divisor !== 1',
    files:['lib/tuya/TuyaEF00Manager.js']},
   {id:'pairing',name:'Pairing Failure',
    regex:/can.t.*(pair|add|find|detect)|won.t.*pair|pair.*fail|not.*found.*pair|unknown.*safeDivide(device, i),

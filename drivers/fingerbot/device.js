@@ -114,7 +114,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
   async onNodeInit({ zclNode }) {
     this.log('Initializing FingerBot device...');
     
-    // v7.2.4: CRITICAL — Register listeners BEFORE super.onNodeInit()
+    // v7.2.4: CRITICAL  Register listeners BEFORE super.onNodeInit()
     // This ensures capability listeners are active even if initialization timeouts
     this._suppressUntil = 0;
     this._ignoreOnOffReportsUntil = 0;

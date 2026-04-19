@@ -36,14 +36,14 @@ function postComment(num,body){
 function buildSupportedMsg(found){
   const parts=found.map(([m,d])=>{
     const drivers=Array.isArray(d)?d:[d];
-    return '`'+m+'` → **'+drivers[0]+'**';
+    return '`'+m+'`  **'+drivers[0]+'**';
   });
   const fpList=parts.length===1?parts[0]:parts.join(', ');
   return `I see these fingerprints are mapped in the Universal Tuya Zigbee app(https://github.com/dlnraja/com.tuya.zigbee) v${VER}: ${fpList}.\n\nGrab it here: https:
 }
 
 function buildUnsupportedMsg(missing){
-  return `\`${missing.join('`, `')}\` ${missing.length===1?'isn\'t':'aren\'t'} in the database yet — logged for the next release.\n\nA [device interview](https://tools.developer.homey.app) would help speed things up. Z2M/ZHA pages or [Blakadder](https:
+  return `\`${missing.join('`, `')}\` ${missing.length===1?'isn\'t':'aren\'t'} in the database yet  logged for the next release.\n\nA [device interview](https://tools.developer.homey.app) would help speed things up. Z2M/ZHA pages or [Blakadder](https:
 }
 
 function buildPRMsg(found,missing){
@@ -81,7 +81,7 @@ for(const it of issues){
   const alreadyTriaged=wasTriaged(it.number);
   if(alreadyTriaged||isOwnerPost(it)){
     iTriaged++;
-    // v5.11.47: Stale sweep — close already-triaged items where all FPs are supported
+    // v5.11.47: Stale sweep  close already-triaged items where all FPs are supported
     const mfrs2=extractMfrFromText(`${it.title||''} ${it.body||''}`);
     const allSupp2=mfrs2.length>0&&mfrs2.every(m=>fps.has(m));
     if(allSupp2&&!DRY&&CAN_CLOSE){
@@ -103,7 +103,7 @@ for(const it of issues){
   if(found.length&&!missing.length) msg=buildSupportedMsg(found);
   else if(missing.length&&!found.length) msg=buildUnsupportedMsg(missing);
   else if(found.length&&missing.length){
-    msg=buildSupportedMsg(found)+`\n\n---\n\`${missing.join('\`, \`')}\` ${missing.length===1?'isn\'t':'aren\'t'} in there yet — logged for next release.`;
+    msg=buildSupportedMsg(found)+`\n\n---\n\`${missing.join('\`, \`')}\` ${missing.length===1?'isn\'t':'aren\'t'} in there yet  logged for next release.`;
   }
   if(msg){postComment(it.number,msg);iCommented++;}
   // Auto-close if ALL FPs supported (only on own repo)
@@ -120,7 +120,7 @@ for(const pr of prs){
   const alreadyTriaged2=wasTriaged(pr.number);
   if(alreadyTriaged2||isOwnerPost(pr)){
     pTriaged++;
-    // v5.11.47: Stale sweep — close already-triaged PRs where all FPs supported
+    // v5.11.47: Stale sweep  close already-triaged PRs where all FPs supported
     const mfrs3=extractMfrFromText(`${pr.title||''} ${pr.body||''}`);
     const allSupp3=mfrs3.length>0&&mfrs3.every(m=>fps.has(m));
     if(allSupp3&&!DRY&&CAN_CLOSE){

@@ -1,7 +1,7 @@
-name: 'Stale'
+name: 'Stale (DISABLED - Shadow Mode)'
 on:
-  schedule:
-    - cron: '30 1 * * *'
+  # Schedule disabled for Shadow Mode - manual execution only
+  workflow_dispatch:
 
 jobs:
   stale:
@@ -9,7 +9,9 @@ jobs:
     steps:
       - uses: actions/stale@v9
         with:
-          days-before-stale: -1 # Désactivation de la péremption
-          days-before-close: -1 # Désactivation de la fermeture
-          exempt-issues-labels: '*' # Exempte TOUS les tickets
+          days-before-stale: -1 # Disabled
+          days-before-close: -1 # Disabled
+          exempt-issues-labels: '*' # Exempt ALL tickets
           exempt-pr-labels: '*'
+          stale-issue-message: 'This issue has been marked as stale (Shadow Mode - No automatic actions)'
+          stale-pr-message: 'This PR has been marked as stale (Shadow Mode - No automatic actions)'

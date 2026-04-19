@@ -35,7 +35,7 @@ async function handleComment(context) {
       owner: context.repo.owner,
       repo: context.repo.repo,
       issue_number: issue.number,
-      body: '✅ Thank you for providing diagnostics! This helps tremendously. I will review and respond shortly.'
+      body: ' Thank you for providing diagnostics! This helps tremendously. I will review and respond shortly.'
     });
   }
   
@@ -52,7 +52,7 @@ async function handleComment(context) {
       owner: context.repo.owner,
       repo: context.repo.repo,
       issue_number: issue.number,
-      body: '🎉 Great to hear it\'s working! I\'ll close this issue. Feel free to reopen if you encounter any other problems.'
+      body: ' Great to hear it\'s working! I\'ll close this issue. Feel free to reopen if you encounter any other problems.'
     });
     
     await context.octokit.issues.update({
@@ -77,7 +77,7 @@ async function handleComment(context) {
       owner: context.repo.owner,
       repo: context.repo.repo,
       issue_number: issue.number,
-      body: `⚠️ Sorry to hear the issue persists. This has been escalated for deeper investigation. Please ensure you've provided:
+      body: ` Sorry to hear the issue persists. This has been escalated for deeper investigation. Please ensure you've provided:
 
 - Full diagnostic report
 - App version number
@@ -100,7 +100,7 @@ function analyzeCommentForDiagnostics(comment, issueContext) {
 
   if (hasDiagId) {
     let response = `<!-- diag-resolver-v6 -->
-### 🔍 Diagnostic Report Received
+###  Diagnostic Report Received
 
 Thank you for providing the diagnostic ID. 
 
@@ -110,12 +110,12 @@ Thank you for providing the diagnostic ID.
     if (mentionsRadiator) {
       response += `**Note on Radiators/TRVs:** In v6.0, we introduced comprehensive Zigbee TRV and local WiFi Tuya Radiator drivers (including Besterm support). Please ensure you are on the latest test version and re-pair your device to access full features like scheduling, boost, and local control.
 
-👉 [Install Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)`;
+ [Install Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)`;
       label = 'radiator-update-needed';
     } else if (mentionsBattery) {
       response += `**Note on Battery/Power Issues:** Version 6.0 includes **PowerSourceIntelligence**, which dynamically detects if a device is on battery or mains. If you are seeing incorrect battery capabilities, updating to the test version and re-pairing or restarting the app should resolve this.
 
-👉 [Install Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)`;
+ [Install Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)`;
       label = 'power-intel-update-needed';
     } else {
       response += `The report has been logged and will be cross-referenced with your issue during the next automated triage run.`;

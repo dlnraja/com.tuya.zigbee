@@ -162,8 +162,8 @@ async function main(){
 
     // v7.0.26: Rule-Based Fallback logic (IA-less)
     if (!summary || summary === "AI_OFFLINE_OR_LIMIT_REACHED") {
-       console.log('  ⚠️ AI Shield active or failed. Using Rule-Based Summary template.');
-       summary = "### 🔍 GitHub Activity Summary (Rule-Based Fallback)\n\n";
+       console.log('   AI Shield active or failed. Using Rule-Based Summary template.');
+       summary = "###  GitHub Activity Summary (Rule-Based Fallback)\n\n";
        if (findings.issues.length) {
          summary += `**Issues with Fingerprints (${findings.issues.length}):**\n`;
          findings.issues.slice(0, 10).forEach(i => summary += `- [#${i.number}](${i.url}): ${i.title} (${i.newFPs.length} new FPs)\n`);

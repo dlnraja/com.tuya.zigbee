@@ -7,7 +7,7 @@
 *Author: app/github-actions | Created: 2026-04-14T05:09:57Z*
 
 **Body:**
-## 🌐 Monthly Community Sync Found 2143 New Fingerprints
+##  Monthly Community Sync Found 2143 New Fingerprints
 
 | Manufacturer ID | Product ID | Device Type | Source | Vendor | Capabilities |
 |---|---|---|---|---|---|
@@ -114,9 +114,9 @@
 > 
 > From what I can see, several of the curtain modules are showing as supported, which is great news for users looking to integrate those devices. However, it seems like many of the other fingerprints are not yet supported. 
 > 
-> To move forward, I’ll need to dive deeper into the specifics of these unsupported devices. If you have any logs or additional details about the devices in question, that would be super helpful for troubleshooting and ensuring we can provide the best support possible.
+> To move forward, Ill need to dive deeper into the specifics of these unsupported devices. If you have any logs or additional details about the devices in question, that would be super helpful for troubleshooting and ensuring we can provide the best support possible.
 > 
-> Let’s keep the momentum going! If you have any specific devices you’re particularly interested in or if there are any issues you’re facing, feel free to share, and I’ll make sure to investigate further. Thanks again for your contribution!
+> Lets keep the momentum going! If you have any specific devices youre particularly interested in or if there are any issues youre facing, feel free to share, and Ill make sure to investigate further. Thanks again for your contribution!
 
 > **github-actions:** <!-- tuya-triage-bot -->
 > Hi! Fingerprint(s) found in [Universal Tuya Zigbee](https://github.com/dlnraja/com.tuya.zigbee) **v22.0.0**.
@@ -341,7 +341,7 @@ https://github.com/dlnraja/com.tuya.zigbee/blob/722cb3c6f8c018920f9d2d23999836b0
 > **john1v:** I create report 9152fd7d-795c-4395-8fc4-e0d97eb25c5b
 
 > **github-actions:** <!-- tuya-triage-bot -->
-> I see these fingerprints are mapped in the Universal Tuya Zigbee app(https://github.com/dlnraja/com.tuya.zigbee) v7.2.12: `dlnraja` → **generic_diy**, `eWeLink+CK-BL702-SWP-01(7020)` → **plug_energy_monitor**, `CK-BL702-SWP-01(7020)+CK-BL702-SWP-01(7020)` → **plug_energy_monitor**.
+> I see these fingerprints are mapped in the Universal Tuya Zigbee app(https://github.com/dlnraja/com.tuya.zigbee) v7.2.12: `dlnraja`  **generic_diy**, `eWeLink+CK-BL702-SWP-01(7020)`  **plug_energy_monitor**, `CK-BL702-SWP-01(7020)+CK-BL702-SWP-01(7020)`  **plug_energy_monitor**.
 > 
 > Grab it here: https://homey.app/a/com.dlnraja.tuya.zigbee/test/
 > 
@@ -353,7 +353,7 @@ https://github.com/dlnraja/com.tuya.zigbee/blob/722cb3c6f8c018920f9d2d23999836b0
 *Author: pemikalsen-sudo | Created: 2026-04-02T09:43:07Z*
 
 **Body:**
-## 📱 Basic Information
+##  Basic Information
 
 **Brand & Model**: Temperature &humidity sensor with external probe
 **Purchase Link**:  https://www.aliexpress.com/item/1005011541019564.html?spm=a2g0o.order_list.order_list_main.4.54131802dwTFsPhttps:
@@ -362,7 +362,7 @@ https://github.com/dlnraja/com.tuya.zigbee/blob/722cb3c6f8c018920f9d2d23999836b0
 
 ---
 
-## 🔍 Zigbee Fingerprint (MANDATORY)
+##  Zigbee Fingerprint (MANDATORY)
 
 Please provide this information from Homey Developer Tools:
 
@@ -373,7 +373,7 @@ Please provide this information from Homey Developer Tools:
 
 ### How to Get Fingerprint:
 1. Pair device with Homey
-2. Go to Developer Tools → Devices → [Your Device]
+2. Go to Developer Tools  Devices  [Your Device]
 3. Click "Advanced" tab
 4. Screenshot OR copy the information above
 
@@ -733,7 +733,7 @@ Paste fingerprint here
 
 ---
 
-## 📊 TS0601 Data Points (if applicable)
+##  TS0601 Data Points (if applicable)
 
 If your device uses model `TS0601`, please provide DP mappings:
 
@@ -745,7 +745,7 @@ If your device uses model `TS0601`, please provide DP mappings:
 
 ---
 
-## 🔗 References
+##  References
 
 **Zigbee2MQTT**: (link if exists)  
 **Home Assistant/ZHA**: (link if exists)  
@@ -753,7 +753,7 @@ If your device uses model `TS0601`, please provide DP mappings:
 
 ---
 
-## ✨ Expected Capabilities
+##  Expected Capabilities
 
 What features should work? Check all that apply:
 
@@ -769,7 +769,7 @@ What features should work? Check all that apply:
 
 ---
 
-## 📝 Additional Notes
+##  Additional Notes
 
 Any other relevant information (e.g., specific modes, known issues, etc.)
 Pairs OK as Climate sensor, but Homey does not receive any data.
@@ -788,21 +788,21 @@ Pairs OK as Climate sensor, but Homey does not receive any data.
 > **github-actions:** <!-- tuya-triage-bot -->
 > Fingerprint(s) found in v5.11.154:
 > 
-> - `_TZE284_8se38w3c` → **climate_sensor**
-> - `TS0601` → **unknown**
+> - `_TZE284_8se38w3c`  **climate_sensor**
+> - `TS0601`  **unknown**
 > 
 > Install the [test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/), **remove the device, and re-pair** so it picks up the correct driver.
 > 
-> **If the device still shows as unknown or doesn't work**, please share a diagnostic report ID and a [Developer Tools interview](https://tools.developer.homey.app) — we will investigate and fix it.
+> **If the device still shows as unknown or doesn't work**, please share a diagnostic report ID and a [Developer Tools interview](https://tools.developer.homey.app)  we will investigate and fix it.
 > 
 > [Test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · [Forum thread](https:
 
 > **dlnraja:** <!-- tuya-issue-manager -->
 > Hey @pemikalsen-sudo,
 > 
-> Thanks for the detailed info on the TS0601! I see that it’s supported, and we can use the `climate_sensor` driver for it. Since you mentioned it pairs but is missing features, I’ll need to dig into the specific DPs that are not reporting correctly.
+> Thanks for the detailed info on the TS0601! I see that its supported, and we can use the `climate_sensor` driver for it. Since you mentioned it pairs but is missing features, Ill need to dig into the specific DPs that are not reporting correctly.
 > 
-> Could you check the app logs for any DP numbers related to temperature and humidity readings? That’ll help me pinpoint what’s going wrong. Also, if you have any specific features that are missing, let me know!
+> Could you check the app logs for any DP numbers related to temperature and humidity readings? Thatll help me pinpoint whats going wrong. Also, if you have any specific features that are missing, let me know!
 > 
 > Once I have that info, I can make the necessary adjustments to ensure everything works smoothly. Appreciate your help in getting this sorted!
 
@@ -995,10 +995,10 @@ _No response_
 > **github-actions:** <!-- tuya-triage-bot -->
 > These are already supported in v5.11.138:
 > 
-> - `_TZ3000_v4l4b0lp` → **switch_3gang**
-> - `TS0003` → **unknown**
+> - `_TZ3000_v4l4b0lp`  **switch_3gang**
+> - `TS0003`  **unknown**
 > 
-> All fingerprints are already supported — install the [test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/), remove the device, and re-pair it.
+> All fingerprints are already supported  install the [test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/), remove the device, and re-pair it.
 > 
 > [Test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · [Forum thread](https:
 
@@ -1029,7 +1029,7 @@ _No response_
 > 
 > In the meantime, if you have any app logs showing the DP numbers when you try to use the Flow cards, that would be super helpful for troubleshooting. Just share those here when you can!
 > 
-> Thanks for your patience, and I’ll keep you updated on the progress!
+> Thanks for your patience, and Ill keep you updated on the progress!
 
 > **dlnraja:** <!-- diag-resolver -->
 > ### Auto-resolved by Diagnostic Resolver
@@ -1095,7 +1095,7 @@ _No response_
 > > Let me know if you can extract the required DP numbers from this one.
 > > Thanks!
 > >
-> > —
+> > 
 > > Reply to this email directly, view it on GitHub
 > > <https://github.com/dlnraja/com.tuya.zigbee/issues/170?email_source=notifications&email_token=ACKLTUWCWA2C6NXNBO5AZQD4TAX3BA5CNFSNUABFM5UWIORPF5TWS5BNNB2WEL2JONZXKZKDN5WW2ZLOOQXTIMJUHA3TINZXGAY2M4TFMFZW63VHNVSW45DJN5XKKZLWMVXHJLDGN5XXIZLSL5RWY2LDNM#issuecomment-4148747701>,
 > > or unsubscribe
@@ -1205,7 +1205,7 @@ _No response_
 > 
 > Feel free to reopen if still relevant.
 
-> **dlnraja:** ### ✅ Fixed in v6.0.0
+> **dlnraja:** ###  Fixed in v6.0.0
 > 
 > **Root Cause:** Device _TZ3000_v4l4b0lp was not recognized as ZCL-only mode switch, causing incorrect endpoint/DP handling.
 > 
@@ -1248,11 +1248,11 @@ _No response_
 > > 2. **Diagnostic Report ID** from device settings
 
 > **dlnraja:** <!-- copilot-analysis -->
-> ### 🤖 Assistant AI Analysis & Fix Plan
+> ###  Assistant AI Analysis & Fix Plan
 > 
 > Hi @Ssssneak,
 > 
-> First of all, I want to deeply apologize for this critical regression. You are absolutely right—forcing the `_TZ3000_v4l4b0lp` into the BSEED ZCL-only mode completely broke your device. I have removed the auto-close behavior from our bots so this issue stays open until you confirm it is perfectly fixed.
+> First of all, I want to deeply apologize for this critical regression. You are absolutely rightforcing the `_TZ3000_v4l4b0lp` into the BSEED ZCL-only mode completely broke your device. I have removed the auto-close behavior from our bots so this issue stays open until you confirm it is perfectly fixed.
 > 
 > **Deep Root Cause Analysis:**
 > I have reviewed the entire flow:
@@ -1268,7 +1268,7 @@ _No response_
 
 > **Ssssneak:** @dlnraja - Thank you so much for the detailed explanation and the deep root cause analysis! I really appreciate your hard work on this and for taking ownership of the bug. 
 > 
-> I'm looking forward to v6.0.1 with great anticipation! 😉 I will test it and report back as soon as it's available. Thanks again!
+> I'm looking forward to v6.0.1 with great anticipation!  I will test it and report back as soon as it's available. Thanks again!
 
 > **dlnraja:** Hey @Ssssneak,
 > 
@@ -1278,7 +1278,7 @@ _No response_
 > 
 > Once we have that info, we can work on getting those individual gang controls working as expected. Appreciate your help!
 
-> **Ssssneak:** @dlnraja - I think our messages crossed paths! 😉 
+> **Ssssneak:** @dlnraja - I think our messages crossed paths!  
 > 
 > I actually provided the full raw Zigbee Interview JSON in a comment just a little bit higher up in this thread. 
 > 
@@ -1322,9 +1322,9 @@ _No response_
 > > 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app)
 > > 2. **Diagnostic Report ID** from device settings
 
-> **dlnraja:** ### ✅ Fixed in the local branch!
+> **dlnraja:** ###  Fixed in the local branch!
 > 
-> @Ssssneak - You were absolutely right! 🎯 The silent failure was happening because the multi-gang Flow Action cards inside the \wall_switch_*_1way\ drivers were bypassing Homey's capability abstraction and directly attempting to invoke ZCL callbacks (\^Gwait onOff.setOn()\). 
+> @Ssssneak - You were absolutely right!  The silent failure was happening because the multi-gang Flow Action cards inside the \wall_switch_*_1way\ drivers were bypassing Homey's capability abstraction and directly attempting to invoke ZCL callbacks (\^Gwait onOff.setOn()\). 
 > 
 > Because your specific standard router device handles Tuya custom DP tunneling fallback for its sub-gangs through \TuyaZigbeeDevice\ (which does not instantiate pure independent ZCL \onOff\ Endpoint Clusters for Endpoints 2 and 3 natively out of the box), these generic ZCL calls vanished into the void!
 > 
@@ -1335,7 +1335,7 @@ _No response_
 
 > **dlnraja:** The unlinked flow cards for the 3-gang switch (TS0003) have been resolved by implementing the missing 	riggerCapabilityListener core shim and rectifying the sub-capability mapping logic in v5.12.0. This ensures all gangs now correctly trigger flows when toggled via the app or physical button. Please remove and re-pair your device to pick up the updated capability mapping. Thanks for your patience!
 
-> **Ssssneak:** @dlnraja - We have a tiny new issue after the update! 😅
+> **Ssssneak:** @dlnraja - We have a tiny new issue after the update! 
 > 
 > I updated the app, removed the switch, and tried to re-pair it. However, the device is no longer recognized by the Universal Tuya Zigbee app at all. It now pairs directly as a generic "Basic Zigbee Device" natively by Homey (showing the default 'Z' Zigbee icons in Flows, with no multi-gang options).
 > 
@@ -1353,11 +1353,11 @@ _No response_
 > > 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app)
 > > 2. **Diagnostic Report ID** from device settings
 
-> **dlnraja:** Salut @late4marshmellow ! 👋 J'ai de super nouvelles : j'ai implémenté le 'Tuya Magic Spell' directement dans la classe de base des interrupteurs hybrides. 
+> **dlnraja:** Salut @late4marshmellow !  J'ai de super nouvelles : j'ai implémenté le 'Tuya Magic Spell' directement dans la classe de base des interrupteurs hybrides. 
 > 
-> Cela force la lecture des attributs genBasic au démarrage, ce qui réveille le reporting des gangs 2 et 3 sur les modèles TS0003 comme le tien (_TZ3000_v4l4b0lp). Plus besoin de patch manuel par driver, c'est maintenant géré proprement et nativement pour tous les interrupteurs multiprises récalcitrants ! 🪄
+> Cela force la lecture des attributs genBasic au démarrage, ce qui réveille le reporting des gangs 2 et 3 sur les modèles TS0003 comme le tien (_TZ3000_v4l4b0lp). Plus besoin de patch manuel par driver, c'est maintenant géré proprement et nativement pour tous les interrupteurs multiprises récalcitrants ! 
 > 
-> La version v7.0.x arrive sur le canal Test avec ce correctif. Un immense merci pour ton aide et ta patience sur ce bug ! On ferme la boucle ici. 🎉
+> La version v7.0.x arrive sur le canal Test avec ce correctif. Un immense merci pour ton aide et ta patience sur ce bug ! On ferme la boucle ici. 
 
 > **Ssssneak:** @dlnraja - I just did a clean test on v7.0.9. Unfortunately, the device is not recognized by the app at all during pairing. It falls back completely to Homey's generic "Basic Zigbee Device" (with the black 'Z' icon).
 > 
@@ -1374,7 +1374,7 @@ _No response_
 > > 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app)
 > > 2. **Diagnostic Report ID** from device settings
 
-> **dlnraja:** I have broken everything late yesterday night 😭😭
+> **dlnraja:** I have broken everything late yesterday night 
 > 
 > I will fix asap .
 > 
@@ -1398,7 +1398,7 @@ _No response_
 > > actually mapped anywhere in the current v7.0.9 code? The app is totally
 > > blind to it right now.
 > >
-> > —
+> > 
 > > Reply to this email directly, view it on GitHub
 > > <https://github.com/dlnraja/com.tuya.zigbee/issues/170#issuecomment-4197498280>,
 > > or unsubscribe
@@ -1409,11 +1409,11 @@ _No response_
 > >
 > 
 
-> **Ssssneak:** @dlnraja - No worries at all, get some coffee first! ☕ 
+> **Ssssneak:** @dlnraja - No worries at all, get some coffee first!  
 > 
 > If it helps save you some time tracking it down: since the device drops straight to Homey's generic "Basic Zigbee Device" during pairing, the Homey Zigbee core isn't matching the fingerprint with your app anymore. 
 > 
-> Could you do a quick check in the `driver.compose.json` (or `app.json`) specifically for the `switch_3gang` driver? It’s highly likely that `_TZ3000_v4l4b0lp` just got completely wiped from the `zigbee.manufacturerName` array when you were removing it from the BSEED list, and it never made it into the standard array.
+> Could you do a quick check in the `driver.compose.json` (or `app.json`) specifically for the `switch_3gang` driver? Its highly likely that `_TZ3000_v4l4b0lp` just got completely wiped from the `zigbee.manufacturerName` array when you were removing it from the BSEED list, and it never made it into the standard array.
 > 
 > Another quick thought: if your new "Magic Spell" base class intercepts the pairing/discovery phase, maybe it's accidentally filtering out or rejecting standard TS0003 manufacturer names now?
 > 
@@ -1421,7 +1421,7 @@ _No response_
 
 > **late4marshmellow:** @dlnraja
 > 
-> Just a heads-up related to the duplicate Flow card ID fix — It looks like something went wrong when my submitted PR was merged/applied.
+> Just a heads-up related to the duplicate Flow card ID fix  It looks like something went wrong when my submitted PR was merged/applied.
 > 
 > The original problem was ~70 duplicate Flow card trigger IDs (from the heal-hybrid-flows.js script copying IDs verbatim from source drivers into hybrid drivers), which caused:
 > 
@@ -1429,9 +1429,9 @@ _No response_
 > 
 > The fix in my PR renamed the IDs in the hybrid drivers to be driver-specific (e.g. curtain_motor_wall_hybrid_button_pressed) so they're globally unique.
 > 
-> However, in the current v7.0.9 the situation is significantly worse — running the same check now shows 513 duplicate flow card IDs, meaning the daily self-healing script (heal-hybrid-flows.js) ran again after the fix and regenerated all the duplicates (plus many new ones for the new hybrid drivers added since).
+> However, in the current v7.0.9 the situation is significantly worse  running the same check now shows 513 duplicate flow card IDs, meaning the daily self-healing script (heal-hybrid-flows.js) ran again after the fix and regenerated all the duplicates (plus many new ones for the new hybrid drivers added since).
 > 
-> The root cause that needs fixing is the script itself — it needs to prefix generated IDs with the driver name, otherwise it will just keep recreating the problem every night. Something like:
+> The root cause that needs fixing is the script itself  it needs to prefix generated IDs with the driver name, otherwise it will just keep recreating the problem every night. Something like:
 > 
 > ```
 > // Instead of copying the ID as-is:
@@ -1458,13 +1458,13 @@ Currently on v5.11.118
 > **dlnraja:** Please tell me witch devices and send me an diag log and do an interview ZigBee please. 
 
 > **github-actions:** <!-- tuya-triage-bot -->
-> Already in the [Universal Tuya Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee) v5.11.138: `dlnraja` → **generic_diy**.
+> Already in the [Universal Tuya Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee) v5.11.138: `dlnraja`  **generic_diy**.
 > 
 > Grab it here: https://homey.app/a/com.dlnraja.tuya.zigbee/test/
 > 
 > Remove and re-pair after installing. If something's off, drop a diagnostic report ID on the [forum thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352).
 
-> **dlnraja:** ### ✅ Fixed in v6.0.0
+> **dlnraja:** ###  Fixed in v6.0.0
 > 
 > The 'Missing Capability Listener' error on initialization was a timing issue where the device was sending state reports before the driver had fully registered its listeners in the code.
 > 
@@ -1480,16 +1480,16 @@ Currently on v5.11.118
 
 > **dalobalo:** Hi @dlnraja,
 > 
-> I can confirm that it’s possible to activate the Fingerbot (click motion only).
+> I can confirm that its possible to activate the Fingerbot (click motion only).
 > 
-> Unfortunately, battery status and flows are not available since the device is added as a generic Zigbee unit with “no supported app” (as Homey reports).
+> Unfortunately, battery status and flows are not available since the device is added as a generic Zigbee unit with no supported app (as Homey reports).
 > 
 > It would be great to also support additional actions such as:
-> 	•	Push (two states)
-> 	•	Click (including multiple clicks, e.g. X times)
-> 	•	Push and hold (for X seconds)
+> 		Push (two states)
+> 		Click (including multiple clicks, e.g. X times)
+> 		Push and hold (for X seconds)
 > 
-> At the moment, it’s limited to operating a single button press. It would also be nice if the icon could be changed to the same used in Johans app
+> At the moment, its limited to operating a single button press. It would also be nice if the icon could be changed to the same used in Johans app
 
 > **github-actions:** <!-- tuya-reopen-bot -->
 > This issue has been **automatically reopened** because @dalobalo posted a new comment.

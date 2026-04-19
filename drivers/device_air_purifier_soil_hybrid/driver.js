@@ -32,9 +32,9 @@ class SoilSensorDriver extends ZigBeeDriver {
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
 
-    this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║    SOIL SENSOR DRIVER v5.5.564 - SAFE FLOW REGISTRATION     ║');
-    this.log('╚══════════════════════════════════════════════════════════════╝');
+    this.log('');
+    this.log('    SOIL SENSOR DRIVER v5.5.564 - SAFE FLOW REGISTRATION     ');
+    this.log('');
 
     // Track IEEE addresses to prevent duplicates
     this._registeredIeeeAddresses = new Set();
@@ -144,7 +144,7 @@ class SoilSensorDriver extends ZigBeeDriver {
       this._tempChangedTrigger, this._batteryLowTrigger].filter(Boolean).length;
     const conditions = [moistureBelowCondition, moistureAboveCondition, tempAboveCondition, 
       needsWaterCondition, batteryAboveCondition].filter(Boolean).length;
-    this.log(`Soil Sensor ✅ ${triggers} triggers + ${conditions} conditions registered`);
+    this.log(`Soil Sensor  ${triggers} triggers + ${conditions} conditions registered`);
   }
 
   /**
@@ -167,19 +167,19 @@ class SoilSensorDriver extends ZigBeeDriver {
 
       // CRITICAL: Skip ANY device with subDeviceId
       if (device.data?.subDeviceId !== undefined) {
-        this.log(`[PAIR] 🚫 BLOCKING sub-device: subDeviceId=${device.data.subDeviceId}`);
+        this.log(`[PAIR]  BLOCKING sub-device: subDeviceId=${device.data.subDeviceId}`);
         continue;
       }
 
       // Skip if we've already seen this IEEE address
       if (ieee && seenIeeeAddresses.has(ieee)) {
-        this.log(`[PAIR] 🚫 Skipping duplicate device for IEEE ${ieee}`);
+        this.log(`[PAIR]  Skipping duplicate device for IEEE ${ieee}`);
         continue;
       }
 
       // Skip if already registered in this driver
       if (ieee && this._registeredIeeeAddresses?.has(ieee)) {
-        this.log(`[PAIR] 🚫 Device already registered: IEEE ${ieee}`);
+        this.log(`[PAIR]  Device already registered: IEEE ${ieee}`);
         continue;
       }
 
@@ -188,10 +188,10 @@ class SoilSensorDriver extends ZigBeeDriver {
       }
 
       filteredDevices.push(device);
-      this.log(`[PAIR] ✅ Added device: ${device.name || 'Soil Sensor'} (IEEE: ${ieee || 'unknown'})`);
+      this.log(`[PAIR]  Added device: ${device.name || 'Soil Sensor'} (IEEE: ${ieee || 'unknown'})`);
     }
 
-    this.log(`[PAIR] Filtered: ${devices.length} → ${filteredDevices.length} devices`);
+    this.log(`[PAIR] Filtered: ${devices.length}  ${filteredDevices.length} devices`);
     return filteredDevices;
   }
 

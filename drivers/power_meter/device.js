@@ -50,7 +50,7 @@ class PowerMeterDevice extends UnifiedPlugBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[POWER-METER] ✅ Ready');
+    this.log('[POWER-METER]  Ready');
   }
 
 

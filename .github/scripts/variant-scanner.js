@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 /**
- * Variant Scanner v1.0 — Auto-discover ALL variants + productIds.
+ * Variant Scanner v1.0  Auto-discover ALL variants + productIds.
  * Sources: Z2M raw, Blakadder, GitHub Search API, comp scan. All FREE.
  */
 const fs=require('fs'),path=require('path');
@@ -92,7 +92,7 @@ async function scanVariants(idx){
     const v=await verifyVariant(variant);
     if(v.ok){if(addToDriver(driver,variant,v.pid||null,idx.meta))added++;
       res.push({known,variant,driver,pid:v.pid,src:v.src});
-      console.log('  +',variant,'→',driver,'['+v.src+']')}
+      console.log('  +',variant,'',driver,'['+v.src+']')}
     if(ghCalls>=MAX_GH)break;
   }
   console.log('Variants added:',added);return res;
@@ -110,7 +110,7 @@ async function scanPIDs(idx){
     const r=await discoverPID(fp);
     if(r&&r.pid){if(addToDriver(driver,null,r.pid,idx.meta))added++;
       res.push({fp,driver,pid:r.pid,src:r.src});
-      console.log('  PID',fp,'→',r.pid,'['+r.src+']')}
+      console.log('  PID',fp,'',r.pid,'['+r.src+']')}
     if(ghCalls>=MAX_GH)break;
   }
   console.log('PIDs discovered:',res.length);return res;
@@ -135,7 +135,7 @@ async function scanNewFPs(idx){
     if(r.driver&&r.confidence>=60){
       if(addToDriver(r.driver,fp,r.pid||null,idx.meta))
         res.push({fp,driver:r.driver,pid:r.pid,confidence:r.confidence,method:r.method});
-      console.log('  +',fp,'→',r.driver,'('+r.confidence+'%)');
+      console.log('  +',fp,'',r.driver,'('+r.confidence+'%)');
     }
     if(ghCalls>=MAX_GH)break;
   }
@@ -177,7 +177,7 @@ async function main(){
     md+='| New FPs resolved | '+newFPs.length+' |\n';
     md+='| GH API calls | '+ghCalls+'/'+MAX_GH+' |\n';
     if(variants.length){md+='\n### Variants\n';
-      for(const v of variants.slice(0,20))md+='- `'+v.variant+'` → **'+v.driver+'** ['+v.src+']\n'}
+      for(const v of variants.slice(0,20))md+='- `'+v.variant+'`  **'+v.driver+'** ['+v.src+']\n'}
     fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,md);
   }
 }

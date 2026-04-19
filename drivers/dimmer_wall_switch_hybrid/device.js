@@ -8,17 +8,17 @@ const { CLUSTER } = require('zigbee-clusters');
 const { includesCI } = require('../../lib/utils / CaseInsensitiveMatcher');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      2-GANG SWITCH - v5.9.23 + ZCL-Only Mode (BSEED)                       ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Features:                                                                   ║
- * ║  - 2 endpoints safeDivide(On, Off) (EP1, EP2)                                            ║
- * ║  - Power measurement via electricalMeasurement (0x0B04)                     ║
- * ║  - Energy metering via metering (0x0702)                                    ║
- * ║  - Physical button detection: single / double/long / triple per gang            ║
- * ║  - BSEED ZCL-only mode: _TZ3000_l9brjwau (Pieter_Pessers forum)             ║
- * ║  v5.9.23: GROUP ISOLATION FIX — remove group memberships + broadcast filter║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       2-GANG SWITCH - v5.9.23 + ZCL-Only Mode (BSEED)                       
+ * 
+ *   Features:                                                                   
+ *   - 2 endpoints safeDivide(On, Off) (EP1, EP2)                                            
+ *   - Power measurement via electricalMeasurement (0x0B04)                     
+ *   - Energy metering via metering (0x0702)                                    
+ *   - Physical button detection: single / double/long / triple per gang            
+ *   - BSEED ZCL-only mode: _TZ3000_l9brjwau (Pieter_Pessers forum)             
+ *   v5.9.23: GROUP ISOLATION FIX  remove group memberships + broadcast filter
+ * 
  */
 
 // ZCL-Only manufacturers (no Tuya DP) - forum: Pieter_Pessers BSEED 2-gang
@@ -46,7 +46,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
   async onNodeInit({ zclNode }) {
     if (this.isZclOnlyDevice) {
-      this.log('[SWITCH-2G] 🔵 ZCL-ONLY MODE (BSEED)');
+      this.log('[SWITCH-2G]  ZCL-ONLY MODE (BSEED)');
       await this._initZclOnlyMode(zclNode);
       return;
     }
@@ -54,7 +54,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     // v5.5.43: Cleanup orphan capabilities
     await this._cleanupOrphanCapabilities();
 
-    // v5.13.1: CRITICAL FIX — Call super.onNodeInit() to register capability listeners
+    // v5.13.1: CRITICAL FIX  Call super.onNodeInit() to register capability listeners
     // Without this, UnifiedSwitchBase._registerCapabilityListeners() never fires,
     // causing "Missing Capability Listener: onoff" for standard Tuya DP 2-gang switches
     // (Forum: Rikjes #1676, _TZ3000_jl7qyupf)
@@ -89,7 +89,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
     for (const cap of currentCaps) {
       if (!validCaps.includes(cap)) {
-        this.log(`[SWITCH-2G] ⚠️ Removing orphan capability: ${cap}`);
+        this.log(`[SWITCH-2G]  Removing orphan capability: ${cap}`);
         await this.removeCapability(cap).catch(e => {
           this.log(`[SWITCH-2G] Failed to remove ${cap}: ${e.message}`);
         });
@@ -108,23 +108,23 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       return;
     }
 
-    // ═══════════════════════════════════════════════════════════════════
+    // 
     // electricalMeasurement cluster (0x0B04) - Power, Voltage, Current
-    // ═══════════════════════════════════════════════════════════════════
+    // 
     const elecCluster = endpoint.clusters.electricalMeasurement
       || endpoint.clusters.haElectricalMeasurement
       || endpoint.clusters[0x0B04]
       || endpoint.clusters['2820'];
 
     if (elecCluster) {
-      this.log('[SWITCH-2G] ✅ electricalMeasurement cluster found');
+      this.log('[SWITCH-2G]  electricalMeasurement cluster found');
 
       // Setup attribute reporting listeners
       if (typeof elecCluster.on === 'function') {
         // Active Power (W)
         elecCluster.on('attr.activePower', (value) => {
           const watts = safeParse(value, 10); // Typically in 0.1W units
-          this.log(`[ZCL-DATA] switch.power raw=${value} → ${watts}W`);
+          this.log(`[ZCL-DATA] switch.power raw=${value}  ${watts}W`);
           if (this.hasCapability('measure_power')) {
             this.setCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });
           }
@@ -133,7 +133,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         // RMS Voltage (V)
         elecCluster.on('attr.rmsVoltage', (value) => {
           const volts = safeParse(value, 10); // Typically in 0.1V units
-          this.log(`[ZCL-DATA] switch.voltage raw=${value} → ${volts}V`);
+          this.log(`[ZCL-DATA] switch.voltage raw=${value}  ${volts}V`);
           if (this.hasCapability('measure_voltage')) {
             this.setCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });
           }
@@ -142,7 +142,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         // RMS Current (A)
         elecCluster.on('attr.rmsCurrent', (value) => {
           const amps = safeParse(value, 1000); // Typically in mA
-          this.log(`[ZCL-DATA] switch.current raw=${value} → ${amps}A`);
+          this.log(`[ZCL-DATA] switch.current raw=${value}  ${amps}A`);
           if (this.hasCapability('measure_current')) {
             this.setCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });
           }
@@ -156,22 +156,22 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       this._readElectricalAttributes(elecCluster);
     }
 
-    // ═══════════════════════════════════════════════════════════════════
+    // 
     // Metering cluster (0x0702) - Energy (kWh)
-    // ═══════════════════════════════════════════════════════════════════
+    // 
     const meteringCluster = endpoint.clusters.metering
       || endpoint.clusters.seMetering
       || endpoint.clusters[0x0702]
       || endpoint.clusters['1794'];
 
     if (meteringCluster) {
-      this.log('[SWITCH-2G] ✅ metering cluster found');
+      this.log('[SWITCH-2G]  metering cluster found');
 
       if (typeof meteringCluster.on === 'function') {
         // Current summation delivered (kWh)
         meteringCluster.on('attr.currentSummationDelivered', (value) => {
           const kwh = safeParse(value, 1000); // Typically in Wh
-          this.log(`[ZCL-DATA] switch.energy raw=${value} → ${kwh}kWh`);
+          this.log(`[ZCL-DATA] switch.energy raw=${value}  ${kwh}kWh`);
           if (this.hasCapability('meter_power')) {
             this.setCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
           }
@@ -217,12 +217,12 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           minChange: 10
         }
       ]);
-      this.log('[SWITCH-2G] ✅ electricalMeasurement reporting configured');
+      this.log('[SWITCH-2G]  electricalMeasurement reporting configured');
     } catch (e) {
       const msg = e?.message || String(e);
       // Retry if Zigbee is starting up (max 3 retries)
       if ((msg.includes('Zigbee') || msg.includes('démarrage') || msg.includes('starting')) && retryCount < 3) {
-        this.log(`[SWITCH-2G] ⏰ Zigbee starting, will retry electrical reporting in 60s (attempt ${retryCount + 1}/3)`);
+        this.log(`[SWITCH-2G]  Zigbee starting, will retry electrical reporting in 60s (attempt ${retryCount + 1}/3)`);
         this.homey.setTimeout(() => this._configureElectricalReporting(retryCount + 1), 60000);
       } else {
         this.log('[SWITCH-2G] electricalMeasurement reporting failed:', msg);
@@ -245,12 +245,12 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           minChange: 1
         }
       ]);
-      this.log('[SWITCH-2G] ✅ metering reporting configured');
+      this.log('[SWITCH-2G]  metering reporting configured');
     } catch (e) {
       const msg = e?.message || String(e);
       // Retry if Zigbee is starting up (max 3 retries)
       if ((msg.includes('Zigbee') || msg.includes('démarrage') || msg.includes('starting')) && retryCount < 3) {
-        this.log(`[SWITCH-2G] ⏰ Zigbee starting, will retry metering reporting in 60s (attempt ${retryCount + 1}/3)`);
+        this.log(`[SWITCH-2G]  Zigbee starting, will retry metering reporting in 60s (attempt ${retryCount + 1}/3)`);
         this.homey.setTimeout(() => this._configureMeteringReporting(retryCount + 1), 60000);
       } else {
         this.log('[SWITCH-2G] metering reporting failed:', msg);
@@ -314,7 +314,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     this._zclNode = zclNode;
     this._isZclOnlyMode = true; // v5.5.993: Flag for VirtualButtonMixin direct ZCL
 
-    // v5.9.23: GROUP ISOLATION — remove all Zigbee group memberships per EP
+    // v5.9.23: GROUP ISOLATION  remove all Zigbee group memberships per EP
     await this._removeGroupMemberships(zclNode);
 
     // v5.9.23: Track which gang was last commanded by the app
@@ -400,18 +400,18 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
             const flowId = `switch_2gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
             this.homey.flow._getFlowCard('flowId').trigger(this, { gang: epNum, state: value }, {})
               .catch(() => {});
-            this.log(`[BSEED-2G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+            this.log(`[BSEED-2G]  Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
           }
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
             this.homey.flow._getFlowCard('flowId').trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
-            this.log(`[BSEED-2G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
+            this.log(`[BSEED-2G]  Scene G${epNum} ${value ? 'on' : 'off'}`);
           }
         }
       });
       this.log(`[BSEED-2G] EP${epNum} attr listener registered`);
     }
 
-    // v5.8.72: PacketNinja pattern — configure onOff reporting per endpoint
+    // v5.8.72: PacketNinja pattern  configure onOff reporting per endpoint
     for (const epNum of [1, 2]) {
       const onOff = getOnOffCluster(epNum);
       if (onOff && typeof onOff.configureReporting === 'function') {
@@ -419,14 +419,14 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           await onOff.configureReporting({
             onOff: { minInterval: 0, maxInterval: 300, minChange: 1 }
           });
-          this.log(`[BSEED-2G] ✅ EP${epNum} onOff reporting configured`);
+          this.log(`[BSEED-2G]  EP${epNum} onOff reporting configured`);
         } catch (err) {
           this.log(`[BSEED-2G] EP${epNum} configureReporting failed: ${err.message}`);
         }
       }
     }
 
-    // v5.8.72: PacketNinja pattern — read initial onOff state per endpoint
+    // v5.8.72: PacketNinja pattern  read initial onOff state per endpoint
     for (const epNum of [1, 2]) {
       const onOff = getOnOffCluster(epNum);
       if (onOff && typeof onOff.readAttributes === 'function') {
@@ -445,7 +445,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     }
 
     await this.initVirtualButtons?.();
-    this.log('[SWITCH-2G] ✅ BSEED ZCL-only mode ready (packetninja v990+v5.8.72)');
+    this.log('[SWITCH-2G]  BSEED ZCL-only mode ready (packetninja v990+v5.8.72)');
   }
 
   /**

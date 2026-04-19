@@ -373,9 +373,9 @@ async _configureIlluminanceReporting() {
       }
     });
 
-    this.log('✅ Illuminance reporting configured for continuous updates');
+    this.log(' Illuminance reporting configured for continuous updates');
   } catch (error) {
-    this.log('❌ Failed to configure illuminance reporting:', error.message);
+    this.log(' Failed to configure illuminance reporting:', error.message);
   }
 }`
           },
@@ -407,12 +407,12 @@ async onNodeInit() {
    * Analyse et génère le rapport complet
    */
   async analyzeAndReport() {
-    console.log('🔍 HOMEY COMMUNITY FORUM ANALYSIS COMPLETE');
-    console.log('═'.repeat(80));
+    console.log(' HOMEY COMMUNITY FORUM ANALYSIS COMPLETE');
+    console.log(''.repeat(80));
 
     this.generateSolutions();
 
-    console.log('\n📋 FORUM ISSUES IDENTIFIED:');
+    console.log('\n FORUM ISSUES IDENTIFIED:');
     this.forumIssues.forEach((issue, index) => {
       console.log(`${index + 1}. ${issue.title}`);
       console.log(`   Severity: ${issue.severity.toUpperCase()}`);
@@ -420,7 +420,7 @@ async onNodeInit() {
       console.log(`   Impact: ${issue.impact}`);
     });
 
-    console.log('\n🔬 MULTI-SOURCE RESEARCH SUMMARY:');
+    console.log('\n MULTI-SOURCE RESEARCH SUMMARY:');
     for (const [issueId, research] of this.multiSourceResearch.entries()) {
       console.log(`\n${issueId.toUpperCase()}:`);
       console.log(`- Sources researched: ${research.sources.length}`);
@@ -429,7 +429,7 @@ async onNodeInit() {
       console.log(`- Confidence: ${research.confidence}%`);
     }
 
-    console.log('\n💡 SOLUTIONS GENERATED:');
+    console.log('\n SOLUTIONS GENERATED:');
     for (const [solutionId, solution] of this.solutions.entries()) {
       console.log(`\n${solution.title}:`);
       console.log(`- Priority: ${solution.priority.toUpperCase()}`);
@@ -467,9 +467,9 @@ async onNodeInit() {
     };
 
     fs.writeFileSync('homey_forum_analysis_complete.json', JSON.stringify(report, null, 2));
-    console.log('\n💾 Detailed report saved: homey_forum_analysis_complete.json');
+    console.log('\n Detailed report saved: homey_forum_analysis_complete.json');
 
-    console.log('\n✅ ANALYSIS COMPLETE - READY FOR IMPLEMENTATION');
+    console.log('\n ANALYSIS COMPLETE - READY FOR IMPLEMENTATION');
     console.log(`Total sources researched: ${report.summary.totalSourcesResearched}`);
     console.log(`Average solution confidence: ${report.summary.averageConfidence.toFixed(1)}%`);
   }

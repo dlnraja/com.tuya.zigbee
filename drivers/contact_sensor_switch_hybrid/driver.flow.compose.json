@@ -293,10 +293,10 @@
         "de": "Umschalten"
       },
       "hint": {
-        "en": "Toggle the switch state (on→off, off→on)",
-        "fr": "Basculer l'état (on→off, off→on)",
-        "nl": "Wissel de status (aan→uit, uit→aan)",
-        "de": "Status umschalten (ein→aus, aus→ein)"
+        "en": "Toggle the switch state (onoff, offon)",
+        "fr": "Basculer l'état (onoff, offon)",
+        "nl": "Wissel de status (aanuit, uitaan)",
+        "de": "Status umschalten (einaus, ausein)"
       },
       "args": [],
       "titleFormatted": {

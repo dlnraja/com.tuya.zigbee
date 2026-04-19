@@ -7,39 +7,41 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║     DIY CUSTOM ZIGBEE DEVICE - v5.5.719                                      ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║                                                                              ║
- * ║  SUPPORTED FIRMWARES & PLATFORMS:                                            ║
- * ║  ┌─────────────────────────────────────────────────────────────────────────┐ ║
- * ║  │ Platform         │ Chips                 │ Features                    │ ║
- * ║  ├─────────────────────────────────────────────────────────────────────────┤ ║
- * ║  │ PTVO Firmware    │ CC2530 / safeDivide(CC2531, CC2652)  │ 8 GPIO, sensors, UART, ADC  │ ║
- * ║  │ ESP Zigbee SDK   │ ESP32-H2, ESP32-C6    │ Custom clusters, ZCL 8      │ ║
- * ║  │ DIYRuZ           │ safeDivide(CC2530, CC2652)         │ Geiger, AirSense, Flower    │ ║
- * ║  │ Tasmota Zigbee   │ ESP32 + CC2530        │ Bridge mode, Z2T            │ ║
- * ║  │ Z-Stack          │ CC26xx, CC13xx        │ TI reference firmware       │ ║
- * ║  │ SiLabs SDK       │ EFR32MG21/22          │ Silicon Labs Zigbee         │ ║
- * ║  │ nRF Connect      │ nRF52840              │ Nordic Zigbee               │ ║
- * ║  └─────────────────────────────────────────────────────────────────────────┘ ║
- * ║                                                                              ║
- * ║  PTVO FEATURES (up to 8 endpoints):                                          ║
- * ║  - GPIO safeDivide(inputs, outputs) with pull-safeDivide(up, pull)-down                                ║
- * ║  - Analog inputs (ADC)                                                       ║
- * ║  - I2C sensors (BME280, BH1750, SHT30, etc.)                                 ║
- * ║  - 1-Wire sensors (DS18B20, DHT22)                                           ║
- * ║  - safeDivide(UART, MODBUS) sensors                                                       ║
- * ║  - PWM outputs                                                               ║
- * ║  - Pulse safeDivide(counter, generator)                                                   ║
- * ║                                                                              ║
- * ║  ESP32-safeDivide(H2, C6) FEATURES:                                                       ║
- * ║  - Native Zigbee 3.0 support                                                 ║
- * ║  - Custom ZCL clusters                                                       ║
- * ║  - OTA updates                                                               ║
- * ║  - Low power modes                                                           ║
- * ║                                                                              ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *      DIY CUSTOM ZIGBEE DEVICE - v5.5.719                                      
+ * 
+ *                                                                               
+ *   SUPPORTED FIRMWARES & PLATFORMS:                                            
+ *    
+ *    Platform          Chips                  Features                     
+ *    
+ *    PTVO Firmware     CC2530 / safeDivide(CC2531, CC2652)   8 GPIO, sensors, UART, ADC   
+ *    ESP Zigbee SDK    ESP32-H2, ESP32-C6     Custom clusters, ZCL 8       
+ *    DIYRuZ            safeDivide(CC2530, CC2652)          Geiger, AirSense, Flower     
+ *    Tasmota Zigbee    ESP32 + CC2530         Bridge mode, Z2T             
+ *    Z-Stack           CC26xx, CC13xx         TI reference firmware        
+ *    SiLabs SDK        EFR32MG21/22           Silicon Labs Zigbee          
+ *    nRF Connect       nRF52840               Nordic Zigbee                
+ *    
+ *                                                                               
+ *   PTVO FEATURES (up to 8 endpoints):                                          
+ *   - GPIO safeDivide(inputs, outputs) with pull-safeDivide(up, pull)-down                                
+ *   - Analog inputs (ADC)                                                       
+ *   - I2C sensors (BME280, BH1750, SHT30, etc.)                                 
+ *   - 1-Wire sensors (DS18B20, DHT22)                                           
+ *   - safeDivide(UART, MODBUS) sensors                                                       
+ *   - PWM outputs                                                               
+ *   - Pulse safeDivide(counter, generator)                                                   
+ *   -                                                                            
+ *                                                                               
+ *   ESP32-safeDivide(H2, C6) FEATURES:                                                       
+ *   - Native Zigbee 3.0 support                                                 
+ *   - Custom ZCL clusters                                                       
+ *   - OTA updates                                                               
+ *   - Low power modes                                                           
+ *   -                                                                            
+ *                                                                               
+ * 
  */
 class DiyCustomZigbeeDevice extends ZigBeeDevice {
 
@@ -75,10 +77,10 @@ class DiyCustomZigbeeDevice extends ZigBeeDevice {
     }
 
     this.log('');
-    this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║     DIY CUSTOM ZIGBEE DEVICE v5.5.719                        ║');
-    this.log('║   PTVO | ESP32-H2 | CC2530 | DIYRuZ | Custom ZCL             ║');
-    this.log('╚══════════════════════════════════════════════════════════════╝');
+    this.log('');
+    this.log('     DIY CUSTOM ZIGBEE DEVICE v5.5.719                        ');
+    this.log('   PTVO | ESP32-H2 | CC2530 | DIYRuZ | Custom ZCL             ');
+    this.log('');
 
     this.zclNode = zclNode;
 
@@ -103,12 +105,12 @@ class DiyCustomZigbeeDevice extends ZigBeeDevice {
     // Setup cluster listeners
     await this._setupClusterListeners();
 
-    this.log('[DIY] ✅ Device initialized successfully');
+    this.log('[DIY]  Device initialized successfully');
   }
 
   _detectFirmwareType(manufacturerName = '', productId = '') {
-    const mfr = manufacturerName.toLowerCase();
-    const pid = productId.toLowerCase();
+    const mfr = CI.normalize(manufacturerName);
+    const pid = CI.normalize(productId);
 
     if (mfr.includes('ptvo') || pid.includes('ptvo')) return 'PTVO';
     if (mfr.includes('esp32') || mfr.includes('espressif')) return 'ESP32';
@@ -253,7 +255,7 @@ class DiyCustomZigbeeDevice extends ZigBeeDevice {
         reportParser: value => value === true || value === 1 || value === 'on'
       });
 
-      this.log(`[DIY] ✅ OnOff capability registered on endpoint ${endpointId}`);
+      this.log(`[DIY]  OnOff capability registered on endpoint ${endpointId}`);
     } catch (e) {
       this.log(`[DIY] OnOff setup error: ${e.message}`);
     }
@@ -273,7 +275,7 @@ class DiyCustomZigbeeDevice extends ZigBeeDevice {
         reportParser: value => safeParse(value, 254)
       });
 
-      this.log(`[DIY] ✅ Dim capability registered on endpoint ${endpointId}`);
+      this.log(`[DIY]  Dim capability registered on endpoint ${endpointId}`);
     } catch (e) {
       this.log(`[DIY] Dim setup error: ${e.message}`);
     }
@@ -291,7 +293,7 @@ class DiyCustomZigbeeDevice extends ZigBeeDevice {
         }
       });
 
-      this.log(`[DIY] ✅ Temperature capability registered on endpoint ${endpointId}`);
+      this.log(`[DIY]  Temperature capability registered on endpoint ${endpointId}`);
     } catch (e) {
       this.log(`[DIY] Temperature setup error: ${e.message}`);
     }
@@ -309,7 +311,7 @@ class DiyCustomZigbeeDevice extends ZigBeeDevice {
         }
       });
 
-      this.log(`[DIY] ✅ Humidity capability registered on endpoint ${endpointId}`);
+      this.log(`[DIY]  Humidity capability registered on endpoint ${endpointId}`);
     } catch (e) {
       this.log(`[DIY] Humidity setup error: ${e.message}`);
     }
@@ -327,7 +329,7 @@ class DiyCustomZigbeeDevice extends ZigBeeDevice {
         }
       });
 
-      this.log(`[DIY] ✅ Illuminance capability registered on endpoint ${endpointId}`);
+      this.log(`[DIY]  Illuminance capability registered on endpoint ${endpointId}`);
     } catch (e) {
       this.log(`[DIY] Illuminance setup error: ${e.message}`);
     }

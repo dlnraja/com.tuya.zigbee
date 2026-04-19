@@ -8,7 +8,7 @@ const ROOT = path.join(__dirname, '../..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
 
 async function main() {
-  console.log('🛠️  MASTER FLOW-LINKAGE PATCHER - NEXUS AWAKENING');
+  console.log('  MASTER FLOW-LINKAGE PATCHER - NEXUS AWAKENING');
   console.log('==========================================');
 
   const drivers = fs.readdirSync(DRIVERS_DIR).filter(d => fs.statSync(path.join(DRIVERS_DIR, d)).isDirectory());
@@ -76,11 +76,11 @@ async function main() {
 
     if (modified) {
       fs.writeFileSync(composePath, JSON.stringify(compose, null, 2));
-      console.log(`✅ Patched ${drvId}: Added missing flow linkages for ${count} gangs.`);
+      console.log(` Patched ${drvId}: Added missing flow linkages for ${count} gangs.`);
     }
   }
 
-  console.log('\n✨ Flow linkage synchronization complete.');
+  console.log('\n Flow linkage synchronization complete.');
 }
 
 main().catch(console.error);

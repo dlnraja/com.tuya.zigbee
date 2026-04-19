@@ -38,28 +38,28 @@
 
 ```
 com.dlnraja.tuya.zigbee/
-├── drivers/                    # 83 device drivers
-│   ├── switch_1gang/          # Switches
-│   ├── plug_smart/            # Plugs
-│   ├── bulb_rgb/              # Lights
-│   ├── climate_sensor/        # Sensors
-│   ├── motion_sensor/         # Motion
-│   ├── thermostat_tuya_dp/    # Thermostats
-│   ├── curtain_motor/         # Covers
-│   ├── smoke_detector_*/      # Alarms
-│   ├── generic_tuya/          # Generic (priority 10)
-│   └── zigbee_universal/      # Catch-all (priority 5)
-├── automation/                 # Automation scripts
-│   ├── MASTER_APPLY_ALL_RULES.js
-│   ├── DETECT_COLLISIONS.js
-│   ├── RESOLVE_COLLISIONS.js
-│   ├── EXHAUSTIVE_ENRICHMENT.js
-│   ├── SAFE_AUDIT.js
-│   └── FETCH_ALL_ZIGBEE.js
-├── lib/                        # Shared libraries
-├── assets/                     # App images
-├── locales/                    # Translations
-└── DEV_NOTES.md               # This file
+ drivers/                    # 83 device drivers
+    switch_1gang/          # Switches
+    plug_smart/            # Plugs
+    bulb_rgb/              # Lights
+    climate_sensor/        # Sensors
+    motion_sensor/         # Motion
+    thermostat_tuya_dp/    # Thermostats
+    curtain_motor/         # Covers
+    smoke_detector_*/      # Alarms
+    generic_tuya/          # Generic (priority 10)
+    zigbee_universal/      # Catch-all (priority 5)
+ automation/                 # Automation scripts
+    MASTER_APPLY_ALL_RULES.js
+    DETECT_COLLISIONS.js
+    RESOLVE_COLLISIONS.js
+    EXHAUSTIVE_ENRICHMENT.js
+    SAFE_AUDIT.js
+    FETCH_ALL_ZIGBEE.js
+ lib/                        # Shared libraries
+ assets/                     # App images
+ locales/                    # Translations
+ DEV_NOTES.md               # This file
 ```
 
 ---
@@ -68,12 +68,12 @@ com.dlnraja.tuya.zigbee/
 
 | Script | Purpose | Safe |
 |--------|---------|------|
-| `MASTER_APPLY_ALL_RULES.js` | Apply ALL rules in one pass | ✅ |
-| `DETECT_COLLISIONS.js` | Find HIGH/MEDIUM collisions | ✅ |
-| `RESOLVE_COLLISIONS.js` | Resolve by priority system | ⚠️ |
-| `EXHAUSTIVE_ENRICHMENT.js` | Add all productIds from Z2M | ⚠️ |
-| `SAFE_AUDIT.js` | Read-only analysis | ✅ |
-| `FETCH_ALL_ZIGBEE.js` | Fetch all Z2M manufacturers | ⚠️ |
+| `MASTER_APPLY_ALL_RULES.js` | Apply ALL rules in one pass |  |
+| `DETECT_COLLISIONS.js` | Find HIGH/MEDIUM collisions |  |
+| `RESOLVE_COLLISIONS.js` | Resolve by priority system |  |
+| `EXHAUSTIVE_ENRICHMENT.js` | Add all productIds from Z2M |  |
+| `SAFE_AUDIT.js` | Read-only analysis |  |
+| `FETCH_ALL_ZIGBEE.js` | Fetch all Z2M manufacturers |  |
 
 ### Usage
 
@@ -138,10 +138,10 @@ Homey selects a driver using:
 ## 5.2. The Sacred Couple Rule
 
 ```json
-// ❌ WRONG - manufacturerName alone
+//  WRONG - manufacturerName alone
 "manufacturerName": ["_TZ3000_abcde"]
 
-// ✅ CORRECT - coupled with productId
+//  CORRECT - coupled with productId
 "manufacturerName": ["_TZ3000_abcde"],
 "productId": ["TS011F", "TS0001"]
 ```
@@ -152,7 +152,7 @@ Homey selects a driver using:
 2. **Community data** (SECONDARY) - Forum posts, crash reports
 3. **Z2M / ZHA** (TERTIARY) - Hints only, never sole source
 
-> **If Homey and Z2M disagree → Homey wins.**
+> **If Homey and Z2M disagree  Homey wins.**
 
 ---
 
@@ -171,7 +171,7 @@ TS0601 is a **GENERIC** productId used for COMPLETELY DIFFERENT devices:
 ## Catastrophe Scenario
 
 ```json
-// ❌ CATASTROPHE - Adding TS0601 alone to motion sensor
+//  CATASTROPHE - Adding TS0601 alone to motion sensor
 // drivers/motion_sensor/driver.compose.json
 {
   "zigbee": {
@@ -186,7 +186,7 @@ TS0601 is a **GENERIC** productId used for COMPLETELY DIFFERENT devices:
 ## Safe Structure
 
 ```json
-// ✅ SAFE - TS0601 coupled with specific manufacturers
+//  SAFE - TS0601 coupled with specific manufacturers
 // drivers/thermostat_tuya_dp/driver.compose.json
 {
   "zigbee": {
@@ -240,20 +240,20 @@ Confirm `manufacturerName + productId` using:
 | Alarm | `iasZone`, `iasWd` |
 | Cover | `windowCovering` |
 
-**If clusters don't match → DO NOT assign**
+**If clusters don't match  DO NOT assign**
 
 ## Pillar 3: Anti-Collision Check
 
 Before saving:
 - Scan ALL drivers
 - Ensure `(manufacturerName + productId)` is UNIQUE
-- If conflict exists → STOP and resolve
+- If conflict exists  STOP and resolve
 
 ---
 
 # 8. Category Placement
 
-## Category → Folder Mapping
+## Category  Folder Mapping
 
 | Category | Clusters | Folder Pattern |
 |----------|----------|----------------|
@@ -273,7 +273,7 @@ Before saving:
 1. Determine device CATEGORY from clusters & DPs
 2. Select correct DRIVER FOLDER
 3. Verify category matches driver purpose
-4. **If mismatch → DO NOT assign**
+4. **If mismatch  DO NOT assign**
 
 ---
 
@@ -310,12 +310,12 @@ Before saving:
 
 > **When adding productId, list MUST be EXHAUSTIVE.**
 
-### ❌ Forbidden
+###  Forbidden
 ```json
 "productId": ["TS0601"]  // Single entry = risky
 ```
 
-### ✅ Required
+###  Required
 ```json
 "productId": ["TS0601", "TS0601_v2", "TS0601_climate"]
 // ALL known variants for this device family
@@ -337,7 +337,7 @@ If adding productId to a driver that had NONE:
 ```json
 // BEFORE: Works "by chance" for many variants
 "manufacturerName": ["_TZ3000_abcde"]
-// No productId → Homey accepts ALL modelIds
+// No productId  Homey accepts ALL modelIds
 
 // AFTER: Too restrictive!
 "productId": ["TS011F"]
@@ -374,7 +374,7 @@ Before saving ANY change:
 |---------|---------|-----------|
 | Single productId | `["TS0601"]` | Missing variants |
 | Mixing types | `["TS0601", "_TZE200_xxx"]` | _TZE is manufacturerName! |
-| Removing mfr | 10 → 3 manufacturers | Lost devices |
+| Removing mfr | 10  3 manufacturers | Lost devices |
 | Wrong category | Smoke in Light driver | Collision |
 
 ---
@@ -412,15 +412,15 @@ Before ANY change, verify:
 ### Protection Non-Régression
 - JAMAIS supprimer de manufacturerName existant
 - JAMAIS réduire la compatibilité
-- En cas de doute → GARDER
+- En cas de doute  GARDER
 
 ### Ordre de Priorité
 ```
-1️⃣ CATÉGORIE → Quel type d'appareil?
-2️⃣ DOSSIER → Où le placer?
-3️⃣ MANUFACTURERNAME → Expansion maximale
-4️⃣ PRODUCTID → Exhaustif mais sûr
-5️⃣ VALIDATION → Pas de collision
+1 CATÉGORIE  Quel type d'appareil?
+2 DOSSIER  Où le placer?
+3 MANUFACTURERNAME  Expansion maximale
+4 PRODUCTID  Exhaustif mais sûr
+5 VALIDATION  Pas de collision
 ```
 
 ### Principe d'Or
@@ -432,29 +432,29 @@ Before ANY change, verify:
 # Quick Reference Card
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│              FINGERPRINTING QUICK REFERENCE                  │
-├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│  ✅ DO:                                                      │
-│     • Always use (manufacturerName + productId) pair         │
-│     • Expand manufacturerName MAXIMALLY                      │
-│     • Expand productId EXHAUSTIVELY                          │
-│     • Check 3 pillars before any change                      │
-│     • Run DETECT_COLLISIONS.js after changes                 │
-│                                                              │
-│  ❌ DON'T:                                                   │
-│     • Add TS0601 alone                                       │
-│     • Remove existing manufacturerNames                      │
-│     • Mix manufacturerName in productId array                │
-│     • Add single productId without checking variants         │
-│     • Place device in wrong category                         │
-│                                                              │
-│  🔧 COMMANDS:                                                │
-│     node automation/MASTER_APPLY_ALL_RULES.js               │
-│     node automation/SAFE_AUDIT.js [driver_name]             │
-│     node automation/DETECT_COLLISIONS.js                    │
-│     npx homey app validate --level publish                  │
-│                                                              │
-└─────────────────────────────────────────────────────────────┘
+
+              FINGERPRINTING QUICK REFERENCE                  
+
+                                                              
+   DO:                                                      
+      Always use (manufacturerName + productId) pair         
+      Expand manufacturerName MAXIMALLY                      
+      Expand productId EXHAUSTIVELY                          
+      Check 3 pillars before any change                      
+      Run DETECT_COLLISIONS.js after changes                 
+                                                              
+   DON'T:                                                   
+      Add TS0601 alone                                       
+      Remove existing manufacturerNames                      
+      Mix manufacturerName in productId array                
+      Add single productId without checking variants         
+      Place device in wrong category                         
+                                                              
+   COMMANDS:                                                
+     node automation/MASTER_APPLY_ALL_RULES.js               
+     node automation/SAFE_AUDIT.js [driver_name]             
+     node automation/DETECT_COLLISIONS.js                    
+     npx homey app validate --level publish                  
+                                                              
+
 ```

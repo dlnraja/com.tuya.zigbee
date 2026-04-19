@@ -1,61 +1,61 @@
-# 🌐 ANALYSE EXHAUSTIVE COMMUNAUTÉ - JANVIER 2026
+#  ANALYSE EXHAUSTIVE COMMUNAUTÉ - JANVIER 2026
 
 **Sources:** Forum Homey (pages 1-45), GitHub issues/PRs, Images utilisateurs, Diagnostic logs
 
-## 📊 RÉSUMÉ EXÉCUTIF
+##  RÉSUMÉ EXÉCUTIF
 
 ### Phase 1 Complétée (Commit 9900df496d)
-- ✅ 19 Manufacturer IDs ajoutés
-- ✅ 4 Drivers flow triggers fixes
-- ✅ Validation + Build réussis
+-  19 Manufacturer IDs ajoutés
+-  4 Drivers flow triggers fixes
+-  Validation + Build réussis
 
 ### Phase 2 En Cours
-- 🔍 Analyse messages forum complets
-- 🔍 Images devices utilisateurs
-- 🔍 Diagnostic reports
-- 🔍 GitHub issues/PRs
+-  Analyse messages forum complets
+-  Images devices utilisateurs
+-  Diagnostic reports
+-  GitHub issues/PRs
 
 ---
 
-## 🐛 PROBLÈMES FORUM IDENTIFIÉS
+##  PROBLÈMES FORUM IDENTIFIÉS
 
-### 1. Presence Sensor (_TZE204_ztqnh5cg) - Page 45/46 - ✅ FIXED
+### 1. Presence Sensor (_TZE204_ztqnh5cg) - Page 45/46 -  FIXED
 **User:** tlink
 **Problem:** Flow triggers ne déclenchent pas (presence_detected, presence_cleared)
 **Device:** TS0601, _TZE204_ztqnh5cg
-**Status:** ✅ FIXED - Flow registration ajouté dans driver.js (commit efcce36261)
+**Status:**  FIXED - Flow registration ajouté dans driver.js (commit efcce36261)
 **Version Fixed:** 5.5.435
 
-### 2. ZG-204ZM Presence Sensor - Page 43 - ⚠️ PARTIAL
+### 2. ZG-204ZM Presence Sensor - Page 43 -  PARTIAL
 **Problem:** "Battery spam gone but no motion detection, no data"
 **Device:** Tuya ZG-204ZM PIR + 24Ghz
 **Missing:** static_detection_distance property
 **Action Required:** Vérifier DP mappings pour ZG-204ZM variant
 
-### 3. Smart Switch No Progress - Page 45 - 🔍 INVESTIGATING
+### 3. Smart Switch No Progress - Page 45 -  INVESTIGATING
 **User:** Cam
 **Problem:** "Not seeing any progress with smart switch" v5.6.434
 **Action Required:** Plus d'infos nécessaires (manufacturer ID, diagnostic log)
 
-### 4. Unknown Device Image - Page 43 - 🔍 NEED INFO
+### 4. Unknown Device Image - Page 43 -  NEED INFO
 **User:** blutch32
 **Image:** IMG_0277.jpeg (device photo)
 **Status:** Waiting manufacturer/model info from user
 
-### 5. PJ-1203A Energy Meter - Page 44 - ✅ ADDED
+### 5. PJ-1203A Energy Meter - Page 44 -  ADDED
 **Device:** _TZE204_81yrt3lo, TS0601
-**Status:** ✅ Manufacturer ID ajouté à power_meter driver
+**Status:**  Manufacturer ID ajouté à power_meter driver
 **Capabilities:** measure_power, measure_voltage, measure_current, meter_power
 
-### 6. eWeLink Temperature Sensor - Page 42 - ✅ ADDED
+### 6. eWeLink Temperature Sensor - Page 42 -  ADDED
 **Device:** CK-TLSR8656-SS5-01(7014), manufacturerName: "eWeLink"
-**Status:** ✅ Manufacturer ID ajouté à climate_sensor driver
+**Status:**  Manufacturer ID ajouté à climate_sensor driver
 **Capabilities:** measure_temperature, measure_humidity, measure_battery
 **Clusters:** 1026 (temp), 1029 (humidity), standard ZCL
 
 ---
 
-## 📋 DEVICES MANQUANTS / À TRAITER
+##  DEVICES MANQUANTS / À TRAITER
 
 ### High Priority
 
@@ -83,7 +83,7 @@
 
 ---
 
-## 🔧 CORRECTIONS TECHNIQUES APPLIQUÉES
+##  CORRECTIONS TECHNIQUES APPLIQUÉES
 
 ### Flow Triggers Registration (4 Drivers)
 
@@ -119,7 +119,7 @@ this._presenceIsDetectedCondition.registerRunListener(async (args) => {
 
 ---
 
-## 📈 MANUFACTURER IDs ENRICHISSEMENT
+##  MANUFACTURER IDs ENRICHISSEMENT
 
 ### Drivers Enrichis (9)
 
@@ -139,7 +139,7 @@ this._presenceIsDetectedCondition.registerRunListener(async (args) => {
 
 ---
 
-## 🎯 ACTIONS PHASE 2 REQUISES
+##  ACTIONS PHASE 2 REQUISES
 
 ### Immédiat
 
@@ -179,12 +179,12 @@ this._presenceIsDetectedCondition.registerRunListener(async (args) => {
 
 ---
 
-## 📊 MÉTRIQUES QUALITÉ
+##  MÉTRIQUES QUALITÉ
 
 ### Coverage Amélioré
 - Presence sensors: +5.5% coverage
 - Climate sensors: +0.09% coverage (huge base)
-- Power meters: +300% coverage (1 → 4)
+- Power meters: +300% coverage (1  4)
 - Contact sensors: +2.2% coverage
 
 ### Flow Triggers Fixed
@@ -193,13 +193,13 @@ this._presenceIsDetectedCondition.registerRunListener(async (args) => {
 - Impact: ~15-20% users concernés
 
 ### User Satisfaction
-- ✅ Forum #886: Problem solved
-- ⚠️ Page 43: Partial (ZG-204ZM)
-- 🔍 Page 45: Investigating
+-  Forum #886: Problem solved
+-  Page 43: Partial (ZG-204ZM)
+-  Page 45: Investigating
 
 ---
 
-## 🔗 RÉFÉRENCES
+##  RÉFÉRENCES
 
 ### Forum Pages Analysées
 - Pages 1-46 (toutes scannées)
@@ -218,7 +218,7 @@ this._presenceIsDetectedCondition.registerRunListener(async (args) => {
 
 ---
 
-## 📝 NOTES TECHNIQUES
+##  NOTES TECHNIQUES
 
 ### Pattern Manufacturer IDs
 - **_TZ3000_**: Motion, contact, switches (>2000 variants)
@@ -236,23 +236,23 @@ this._presenceIsDetectedCondition.registerRunListener(async (args) => {
 
 ---
 
-## 🎉 ACCOMPLISSEMENTS
+##  ACCOMPLISSEMENTS
 
 ### Phase 1 (Commit 9900df496d)
-✅ 19 Manufacturer IDs enriched
-✅ 4 Flow triggers drivers fixed
-✅ 3 New devices supported (PJ-1203A, CK-TLSR8656, variants)
-✅ Validation + Build successful
-✅ Production ready
+ 19 Manufacturer IDs enriched
+ 4 Flow triggers drivers fixed
+ 3 New devices supported (PJ-1203A, CK-TLSR8656, variants)
+ Validation + Build successful
+ Production ready
 
 ### Phase 2 En Cours
-🔍 Analyse forum exhaustive
-🔍 GitHub issues/PRs review
-🔍 User follow-ups
-🔍 ZG-204ZM investigation
+ Analyse forum exhaustive
+ GitHub issues/PRs review
+ User follow-ups
+ ZG-204ZM investigation
 
-**Status:** ✅ Phase 1 Complete | 🔄 Phase 2 In Progress
+**Status:**  Phase 1 Complete |  Phase 2 In Progress
 
-**Version:** 5.5.434 → 5.5.435
+**Version:** 5.5.434  5.5.435
 **Date:** 10 janvier 2026
 **Commit:** 9900df496d

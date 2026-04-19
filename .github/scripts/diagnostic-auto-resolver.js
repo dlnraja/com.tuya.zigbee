@@ -26,10 +26,10 @@ const saveSt=s=>{fs.mkdirSync(SD,{recursive:true});fs.writeFileSync(SF,JSON.stri
 const exFP=_vFP;
 const exPID=t=>[...new Set((t||"").match(/\bTS[0-9]{4}[A-Z]?\b/g)||[])];
 const SYM=[
-{id:"volt",rx:/voltage.*(wrong|high|2\d{3})/i,fix:"Voltage divisor fixed — update+re-pair"},
-{id:"temp",rx:/temp.*(null|missing|stuck)/i,fix:"DP mapping fixed — update+re-pair"},
-{id:"ring",rx:/ring.*(wrong|value)|alarm.*(wrong|stuck)/i,fix:"Alarm DP updated — re-pair"},
-{id:"energy",rx:/power.*(wrong|crazy)|kwh.*(wrong)/i,fix:"Energy divisor fixed — re-pair"},
+{id:"volt",rx:/voltage.*(wrong|high|2\d{3})/i,fix:"Voltage divisor fixed  update+re-pair"},
+{id:"temp",rx:/temp.*(null|missing|stuck)/i,fix:"DP mapping fixed  update+re-pair"},
+{id:"ring",rx:/ring.*(wrong|value)|alarm.*(wrong|stuck)/i,fix:"Alarm DP updated  re-pair"},
+{id:"energy",rx:/power.*(wrong|crazy)|kwh.*(wrong)/i,fix:"Energy divisor fixed  re-pair"},
 {id:"zero",rx:/stuck.*(0|zero)/i,fix:"Remove+re-pair device"},
 {id:"invert",rx:/invert|reversed|wrong.*(open|closed)/i,fix:"Check Invert in device settings"},
 ...KB.CRITICAL_PATTERNS.map(p=>({id:p.id,rx:p.rx,fix:p.fix}))
@@ -125,7 +125,7 @@ return TAG+"\n### Auto-resolved by Diagnostic Resolver\n\n"+profileNote+
 "**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n"+
 "Remove and re-pair your device after installing.\n\n"+
 protocolNote+
-(fpResults.some(f=>f.drivers.length>1)?"> Note: Some fingerprints map to multiple drivers — the correct driver is determined by the **productId** (e.g. TS0001, TS0002).\n\n":"")+
+(fpResults.some(f=>f.drivers.length>1)?"> Note: Some fingerprints map to multiple drivers  the correct driver is determined by the **productId** (e.g. TS0001, TS0002).\n\n":"")+
 (isDelay?"> **Delay fix (v"+appVer+"+):** Devices now send dataQuery immediately on init. Update and re-pair to fix.\n\n":"")+
 (syms.length?"\n**Detected issues:**\n"+syms.map(s=>"- "+s.fix).join("\n")+"\n\n":"")+
 "**Troubleshooting:** https://github.com/"+OWN+"/wiki/Troubleshooting\n\n"+

@@ -6,12 +6,12 @@
  * IMPORTANT RULE: ManufacturerNames CAN be in multiple drivers IF they have different productIds!
  * 
  * Example VALID configuration:
- *   - _TZ3000_abc + TS0001 → switch_1gang ✅
- *   - _TZ3000_abc + TS0002 → switch_2gang ✅ (same mfr, DIFFERENT productId)
+ *   - _TZ3000_abc + TS0001  switch_1gang 
+ *   - _TZ3000_abc + TS0002  switch_2gang  (same mfr, DIFFERENT productId)
  * 
  * Example INVALID (TRUE duplicate):
- *   - _TZ3000_abc + TS0001 → switch_1gang ❌
- *   - _TZ3000_abc + TS0001 → bulb_rgb ❌ (same mfr, SAME productId, DIFFERENT incompatible drivers)
+ *   - _TZ3000_abc + TS0001  switch_1gang 
+ *   - _TZ3000_abc + TS0001  bulb_rgb  (same mfr, SAME productId, DIFFERENT incompatible drivers)
  * 
  * This script ONLY removes TRUE duplicates where:
  *   1. Same manufacturerName
@@ -64,7 +64,7 @@ function areDriversCompatible(driver1, driver2) {
 }
 
 function main() {
-  console.log('🔍 Scanning for TRUE duplicates (same mfr + same productId in incompatible drivers)...\n');
+  console.log(' Scanning for TRUE duplicates (same mfr + same productId in incompatible drivers)...\n');
   
   // Collect all mfr+productId combinations from all drivers
   const comboMap = new Map(); // "mfr|productId" -> [{driverId, filePath}]
@@ -135,18 +135,18 @@ function main() {
   console.log(`Found ${trueDuplicates.length} TRUE duplicates (same mfr+productId in incompatible drivers)\n`);
   
   if (trueDuplicates.length === 0) {
-    console.log('✅ No TRUE duplicates found! ManufacturerNames are correctly distributed.');
+    console.log(' No TRUE duplicates found! ManufacturerNames are correctly distributed.');
     console.log('   (Same mfr in multiple drivers is OK when productIds differ)');
     return;
   }
   
   // Report TRUE duplicates
-  console.log('📋 TRUE DUPLICATES (need manual review):');
-  console.log('─'.repeat(80));
+  console.log(' TRUE DUPLICATES (need manual review):');
+  console.log(''.repeat(80));
   
   for (const dup of trueDuplicates) {
     console.log(`\n${dup.mfr} + ${dup.productId}`);
-    console.log(`  → ${dup.drivers.join(', ')}`);
+    console.log(`   ${dup.drivers.join(', ')}`);
   }
   
   // Save report
@@ -162,8 +162,8 @@ function main() {
     JSON.stringify(report, null, 2)
   );
   
-  console.log('\n\n📊 Report saved to scripts/true-duplicates-report.json');
-  console.log('\n⚠️  These TRUE duplicates need MANUAL review to determine correct driver.');
+  console.log('\n\n Report saved to scripts/true-duplicates-report.json');
+  console.log('\n  These TRUE duplicates need MANUAL review to determine correct driver.');
 }
 
 main();

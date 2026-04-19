@@ -17,7 +17,7 @@ function walk(dir, callback) {
 
 let fixedTotal = 0;
 
-console.log('🔥 Starting BRUTE FORCE SDK3 STABILIZER...');
+console.log(' Starting BRUTE FORCE SDK3 STABILIZER...');
 
 walk(DRIVERS_DIR, (filePath) => {
   let content = fs.readFileSync(filePath, 'utf8');
@@ -84,4 +84,4 @@ walk(DRIVERS_DIR, (filePath) => {
   }
 });
 
-console.log(`\n✅ BRUTE FORCE STABILIZER FINISHED. Fixed ${fixedTotal} files.`);
+console.log(`\n BRUTE FORCE STABILIZER FINISHED. Fixed ${fixedTotal} files.`);

@@ -39,10 +39,10 @@ function findComposeFiles(dir) {
 findComposeFiles(driversDir);
 
 if (duplicates.length > 0) {
-  console.log('❌ Found duplicate Flow card IDs:');
+  console.log(' Found duplicate Flow card IDs:');
   duplicates.forEach(id => {
     console.log(`- ${id}: found in drivers [${allIds[id].join(', ')}]`);
   });
 } else {
-  console.log('✅ No duplicate Flow card IDs found.');
+  console.log(' No duplicate Flow card IDs found.');
 }

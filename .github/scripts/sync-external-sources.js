@@ -25,7 +25,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 async function fetchText(url, headers) {
   try {
     const r = await fetchWithRetry(url, { headers: headers || { 'User-Agent': 'tuya-sync' } }, { retries: 3, label: 'sync' });
-    if (!r.ok) { console.log('  WARN: ' + url + ' → ' + r.status); return null; }
+    if (!r.ok) { console.log('  WARN: ' + url + '  ' + r.status); return null; }
     return r.text();
   } catch (e) { console.log('  ERR: ' + url + ': ' + e.message); return null; }
 }

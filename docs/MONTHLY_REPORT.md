@@ -2,18 +2,18 @@
 
 *Generated: 2026-04-19T21:24:19.520Z*
 
-## 📊 Architectural Health [v7.0.22]
+##  Architectural Health [v7.0.22]
 
 | Metric | Value | Status |
 |--------|-------|--------|
-| Total Drivers | 323 | ✅ |
-| Manufacturer IDs | 53844 | ✅ |
-| Collisions | 0 | ✅ |
-| v7 Architectural Debt | 323 legacy drivers | 🛠️ |
-| PR Auto-Merger | Active | 🛡️ |
-| Community Responder | Template Ready | 🤖 |
+| Total Drivers | 323 |  |
+| Manufacturer IDs | 53844 |  |
+| Collisions | 0 |  |
+| v7 Architectural Debt | 323 legacy drivers |  |
+| PR Auto-Merger | Active |  |
+| Community Responder | Template Ready |  |
 
-## 📋 Action Items
+##  Action Items
 
 - [ ] Review collision report
 - [ ] Check forum for new device requests

@@ -4,19 +4,19 @@
 
 ```
 PAIRING TIME
-├── onPairListDevices()     → Liste devices disponibles
-├── onPair()                → Session de pairing active
-└── [Device selected]       → Création instance
+ onPairListDevices()      Liste devices disponibles
+ onPair()                 Session de pairing active
+ [Device selected]        Création instance
 
 DEVICE INIT
-├── constructor()           → NE PAS utiliser pour logique
-├── onInit()               → Init générale (non-Zigbee)
-└── onNodeInit({zclNode})  → ⭐ POINT D'ENTRÉE PRINCIPAL
+ constructor()            NE PAS utiliser pour logique
+ onInit()                Init générale (non-Zigbee)
+ onNodeInit({zclNode})    POINT D'ENTRÉE PRINCIPAL
 
 POST-INIT (dans onNodeInit)
-├── registerCapability()    → Lier cap → cluster ZCL
-├── zclNode.endpoints[x].clusters.xxx.on() → Listeners
-└── setTimeout/setInterval → Enrichissement différé
+ registerCapability()     Lier cap  cluster ZCL
+ zclNode.endpoints[x].clusters.xxx.on()  Listeners
+ setTimeout/setInterval  Enrichissement différé
 ```
 
 ## HOOKS À UTILISER
@@ -52,14 +52,14 @@ this.registerCapability('measure_temperature', CLUSTER.TEMPERATURE_MEASUREMENT);
 ## ANTI-PATTERNS (INTERDITS)
 
 ```javascript
-// ❌ JAMAIS dans onNodeInit
+//  JAMAIS dans onNodeInit
 throw new Error('Missing cluster');
 if (!cluster) return this.setUnavailable();
 
-// ❌ JAMAIS au pairing
+//  JAMAIS au pairing
 if (!this.hasCapability('required_cap')) reject();
 
-// ✅ TOUJOURS
+//  TOUJOURS
 try { await action(); } catch(e) { this.log('warn', e); }
 ```
 

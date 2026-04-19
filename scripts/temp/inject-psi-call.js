@@ -11,7 +11,7 @@ const searchString = `    // Hybrid mode state
 
 const replaceString = `    // v6.0: Intelligent Power Source Detection
     this.log('');
-    this.log('🔋 Detecting power source...');
+    this.log(' Detecting power source...');
     await PowerSourceIntelligence.applyCapabilities(this, zclNode);
 
     // Hybrid mode state
@@ -22,7 +22,7 @@ if (content.includes('PowerSourceIntelligence.applyCapabilities')) {
 } else if (content.includes(searchString)) {
   content = content.replace(searchString, replaceString);
   fs.writeFileSync(file, content);
-  console.log('✅ Added PowerSourceIntelligence.applyCapabilities to TuyaHybridDevice.js');
+  console.log(' Added PowerSourceIntelligence.applyCapabilities to TuyaHybridDevice.js');
 } else {
-  console.log('❌ Could not find injection point');
+  console.log(' Could not find injection point');
 }

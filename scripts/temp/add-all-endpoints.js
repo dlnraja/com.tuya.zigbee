@@ -47,12 +47,12 @@ for (const driver of drivers) {
       };
       
       fs.writeFileSync(composeFile, JSON.stringify(data, null, 2) + '\n');
-      console.log(`✅ ${driver}`);
+      console.log(` ${driver}`);
       fixed++;
     }
   } catch (e) {
-    console.error(`❌ ${driver}: ${e.message}`);
+    console.error(` ${driver}: ${e.message}`);
   }
 }
 
-console.log(`\n✅ Added endpoints to ${fixed} drivers`);
+console.log(`\n Added endpoints to ${fixed} drivers`);

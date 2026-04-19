@@ -67,7 +67,7 @@ async function main(){
     if(sysInfo)log('Firmware: '+(sysInfo.homeyVersion||sysInfo.softwareVersion||'?'));
     if(unmatched.length){
       log('\n**Unmatched fingerprints (not in our DB):**');
-      for(const u of unmatched)log('- `'+u.mfr+'` / `'+u.model+'` — '+u.name+(u.online?' (online)':' (offline)'));
+      for(const u of unmatched)log('- `'+u.mfr+'` / `'+u.model+'`  '+u.name+(u.online?' (online)':' (offline)'));
     }
     const offline=tuyaDevs.filter(d=>!d.available);
     if(offline.length)log('\nOffline Tuya devices: '+offline.length);

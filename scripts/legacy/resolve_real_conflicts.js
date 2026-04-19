@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔧 RÉSOLUTION CONFLITS RÉELS (manufacturerName + productId identiques)\n');
+console.log(' RÉSOLUTION CONFLITS RÉELS (manufacturerName + productId identiques)\n');
 
 const ROOT = path.join(__dirname, '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -108,7 +108,7 @@ function applyResolutions(resolutions) {
     const composeFile = path.join(DRIVERS_DIR, driverName, 'driver.compose.json');
 
     if (!fs.existsSync(composeFile)) {
-      console.log(`   ⚠️  ${driverName}: fichier non trouvé`);
+      console.log(`     ${driverName}: fichier non trouvé`);
       return;
     }
 
@@ -147,20 +147,20 @@ function applyResolutions(resolutions) {
         stats.filesModified++;
         stats.pairsRemoved += removed;
 
-        console.log(`   ✅ ${driverName}: ${originalManuNames.length} → ${newManuNames.length} (-${removed} conflits)`);
+        console.log(`    ${driverName}: ${originalManuNames.length}  ${newManuNames.length} (-${removed} conflits)`);
       }
 
     } catch (e) {
-      console.error(`   ❌ ${driverName}:`, e.message);
+      console.error(`    ${driverName}:`, e.message);
     }
   });
 }
 
 // EXÉCUTION
-console.log('📂 Chargement analyse conflits...\n');
+console.log(' Chargement analyse conflits...\n');
 
 if (!fs.existsSync(ANALYSIS_FILE)) {
-  console.error('❌ Fichier FULL_RESTORATION_CONFLICTS_ANALYSIS.json non trouvé');
+  console.error(' Fichier FULL_RESTORATION_CONFLICTS_ANALYSIS.json non trouvé');
   console.error('   Exécutez d\'abord: node scripts/restore_all_and_verify_conflicts.js\n');
   process.exit(1);
 }
@@ -168,46 +168,46 @@ if (!fs.existsSync(ANALYSIS_FILE)) {
 const analysis = JSON.parse(fs.readFileSync(ANALYSIS_FILE, 'utf8'));
 const conflicts = analysis.conflicts || [];
 
-console.log(`📊 ${conflicts.length} conflits réels à résoudre\n`);
+console.log(` ${conflicts.length} conflits réels à résoudre\n`);
 
 if (conflicts.length === 0) {
-  console.log('✅ AUCUN CONFLIT À RÉSOUDRE!\n');
+  console.log(' AUCUN CONFLIT À RÉSOUDRE!\n');
   process.exit(0);
 }
 
-console.log('🎯 Résolution conflits par priorité driver...\n');
+console.log(' Résolution conflits par priorité driver...\n');
 
 const resolutions = resolveConflicts(conflicts);
 stats.conflictsResolved = conflicts.length;
 
-console.log('📋 TOP 20 RÉSOLUTIONS:\n');
+console.log(' TOP 20 RÉSOLUTIONS:\n');
 resolutions.slice(0, 20).forEach(r => {
   console.log(`   ${r.manufacturerName} + ${r.productId}:`);
-  console.log(`      ✅ GARDE: ${r.winner} (priorité ${r.winnerPriority})`);
-  console.log(`      ❌ RETIRE: ${r.losers.join(', ')}`);
+  console.log(`       GARDE: ${r.winner} (priorité ${r.winnerPriority})`);
+  console.log(`       RETIRE: ${r.losers.join(', ')}`);
   console.log();
 });
 
-console.log('\n🔧 Application résolutions...\n');
+console.log('\n Application résolutions...\n');
 
 applyResolutions(resolutions);
 
 // RAPPORT
-console.log('\n\n📊 RAPPORT RÉSOLUTION:\n');
+console.log('\n\n RAPPORT RÉSOLUTION:\n');
 console.log(`   Conflits résolus: ${stats.conflictsResolved}`);
 console.log(`   Fichiers modifiés: ${stats.filesModified}`);
 console.log(`   Paires retirées: ${stats.pairsRemoved}`);
 console.log(`   Backups créés: ${stats.backupsCreated}\n`);
 
 if (stats.filesModified > 0) {
-  console.log('✅ CONFLITS RÉSOLUS\n');
+  console.log(' CONFLITS RÉSOLUS\n');
 
-  console.log('💡 STRATÉGIE APPLIQUÉE:');
+  console.log(' STRATÉGIE APPLIQUÉE:');
   console.log('   - Driver le plus SPÉCIFIQUE garde la paire (manufacturerName, productId)');
   console.log('   - Sensors spécialisés > Switches > Plugs génériques');
   console.log('   - Exemple: climate_sensor garde, switch_1gang retire\n');
 
-  console.log('🎯 PROCHAINES ÉTAPES:');
+  console.log(' PROCHAINES ÉTAPES:');
   console.log('   1. Vérifier: node scripts/restore_all_and_verify_conflicts.js');
   console.log('   2. Valider: homey app validate --level publish');
   console.log('   3. Build: homey app build\n');
@@ -216,6 +216,6 @@ if (stats.filesModified > 0) {
 // Sauvegarder résolutions
 const resolutionsFile = path.join(ROOT, 'CONFLICTS_RESOLUTIONS.json');
 fs.writeFileSync(resolutionsFile, JSON.stringify(resolutions, null, 2), 'utf8');
-console.log(`✅ Résolutions sauvegardées: ${resolutionsFile}\n`);
+console.log(` Résolutions sauvegardées: ${resolutionsFile}\n`);
 
 process.exit(0);

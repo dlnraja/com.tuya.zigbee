@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Universal Tuya — CI/CD Pipeline Monitor (Local Dashboard)
+ * Universal Tuya  CI/CD Pipeline Monitor (Local Dashboard)
  * Monitors GitHub Actions and Homey Test Channel status
  */
 'use strict';
@@ -11,7 +11,7 @@ const path = require('path');
 const REPO = 'dlnraja/com.tuya.zigbee';
 const APP_ID = 'com.dlnraja.tuya.zigbee';
 
-function log(m) { console.log(`[MONITOR] ${new Date().toLocaleTimeString()} — ${m}`); }
+function log(m) { console.log(`[MONITOR] ${new Date().toLocaleTimeString()}  ${m}`); }
 
 async function checkGitHub() {
     try {

@@ -51,10 +51,10 @@ class GenericDIYDevice extends ZigBeeDevice {
   }
 
   async onNodeInit({ zclNode }) {
-    this.log('[DIY] ═══════════════════════════════════════');
+    this.log('[DIY] ');
     this.log('[DIY] UNIVERSAL GENERIC ENGINE v7.4.5');
     this.log(`[DIY] Identity: ${this.getName()}`);
-    this.log('[DIY] ═══════════════════════════════════════');
+    this.log('[DIY] ');
 
     this.zclNode = zclNode;
     this._caps = [];
@@ -92,18 +92,18 @@ class GenericDIYDevice extends ZigBeeDevice {
     // Register flow card actions (Fixing broken syntax from legacy version)
     this._registerFlowActions();
 
-    this.log(`[DIY] ✅ Discovery complete: ${this._caps.length} capabilities found`);
+    this.log(`[DIY]  Discovery complete: ${this._caps.length} capabilities found`);
   }
 
-  // ═══════════════════════════════════════════════════════════
+  // 
   // FLOW CARD TRIGGERS
-  // ═══════════════════════════════════════════════════════════
+  // 
 
   _triggerFlow(flowId, tokens = {}) {
     const card = this._getFlowCard(flowId);
     if (card) {
       card.trigger(this, tokens, {}).catch(e => this.error(`[DIY] Flow ${flowId}: ${e.message}`));
-      this.log(`[DIY] 🔔 Flow: ${flowId}`, tokens);
+      this.log(`[DIY]  Flow: ${flowId}`, tokens);
     }
   }
 
@@ -144,9 +144,9 @@ class GenericDIYDevice extends ZigBeeDevice {
     this._triggerFlow('generic_diy_analog_changed', { endpoint, value });
   }
 
-  // ═══════════════════════════════════════════════════════════
+  // 
   // FLOW CARD ACTIONS
-  // ═══════════════════════════════════════════════════════════
+  // 
 
   _registerFlowActions() {
     // Identify
@@ -182,9 +182,9 @@ class GenericDIYDevice extends ZigBeeDevice {
     });
   }
 
-  // ═══════════════════════════════════════════════════════════
+  // 
   // BUTTON DETECTION
-  // ═══════════════════════════════════════════════════════════
+  // 
 
   async _setupButtonDetection(zclNode) {
     for (const [epId, ep] of Object.entries(zclNode.endpoints || {})) {

@@ -37,9 +37,9 @@ class WeatherStationOutdoorDriver extends Homey.Driver {
           const temp = args.device.getCapabilityValue('measure_temperature') || 0;
           return temp > (args.temperature || 20);
         });
-        this.log('[FLOW] ✅ Registered: weather_station_outdoor_outdoor_temp_above');
+        this.log('[FLOW]  Registered: weather_station_outdoor_outdoor_temp_above');
       }
-    } catch (err) { this.log(`[FLOW] ⚠️ weather_station_outdoor_outdoor_temp_above: ${err.message}`); }
+    } catch (err) { this.log(`[FLOW]  weather_station_outdoor_outdoor_temp_above: ${err.message}`); }
 
     // CONDITION: Outdoor temp below
     try {
@@ -50,9 +50,9 @@ class WeatherStationOutdoorDriver extends Homey.Driver {
           const temp = args.device.getCapabilityValue('measure_temperature') || 0;
           return temp < (args.temperature || 5);
         });
-        this.log('[FLOW] ✅ Registered: weather_station_outdoor_outdoor_temp_below');
+        this.log('[FLOW]  Registered: weather_station_outdoor_outdoor_temp_below');
       }
-    } catch (err) { this.log(`[FLOW] ⚠️ weather_station_outdoor_outdoor_temp_below: ${err.message}`); }
+    } catch (err) { this.log(`[FLOW]  weather_station_outdoor_outdoor_temp_below: ${err.message}`); }
 
     // CONDITION: Pressure rising
     try {
@@ -63,9 +63,9 @@ class WeatherStationOutdoorDriver extends Homey.Driver {
           const trend = args.device.getStoreValue('pressure_trend') || 'stable';
           return trend === 'rising';
         });
-        this.log('[FLOW] ✅ Registered: weather_station_outdoor_pressure_rising');
+        this.log('[FLOW]  Registered: weather_station_outdoor_pressure_rising');
       }
-    } catch (err) { this.log(`[FLOW] ⚠️ weather_station_outdoor_pressure_rising: ${err.message}`); }
+    } catch (err) { this.log(`[FLOW]  weather_station_outdoor_pressure_rising: ${err.message}`); }
 
     // CONDITION: Pressure falling
     try {
@@ -76,9 +76,9 @@ class WeatherStationOutdoorDriver extends Homey.Driver {
           const trend = args.device.getStoreValue('pressure_trend') || 'stable';
           return trend === 'falling';
         });
-        this.log('[FLOW] ✅ Registered: weather_station_outdoor_pressure_falling');
+        this.log('[FLOW]  Registered: weather_station_outdoor_pressure_falling');
       }
-    } catch (err) { this.log(`[FLOW] ⚠️ weather_station_outdoor_pressure_falling: ${err.message}`); }
+    } catch (err) { this.log(`[FLOW]  weather_station_outdoor_pressure_falling: ${err.message}`); }
 
     this.log('[FLOW]  Weather station flow cards registered');
   }

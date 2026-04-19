@@ -72,11 +72,11 @@ function mapFile(filePath) {
   return map;
 }
 
-console.log('🌊 Mapping project (Windsurf AI Cascade style)...');
+console.log(' Mapping project (Windsurf AI Cascade style)...');
 const projectMap = {
   timestamp: new Date().toISOString(),
   structure: mapDirectory(ROOT)
 };
 
 fs.writeFileSync(MAPPING_FILE, JSON.stringify(projectMap, null, 2));
-console.log('✅ Mapping saved to .windsurf-cascade-map.json');
+console.log(' Mapping saved to .windsurf-cascade-map.json');

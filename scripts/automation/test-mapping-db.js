@@ -12,19 +12,19 @@ async function test() {
     
     console.log(`\nTest 1: ${pid} / ${mfr}`);
     if (info) {
-        console.log(`  ✅ Found: ${info.name} (Driver: ${info.driver})`);
+        console.log(`   Found: ${info.name} (Driver: ${info.driver})`);
         console.log(`  Capabilities: ${info.capabilities.join(', ')}`);
     } else {
-        console.log('  ❌ Not found');
+        console.log('   Not found');
     }
 
     // Test Case 2: Manufacturer only
     const info2 = DriverMappingLoader.getDeviceInfo('UNKNOWN', '_TZE200_7BZTMFM1');
     console.log(`\nTest 2: UNKNOWN / ${mfr}`);
     if (info2) {
-        console.log(`  ✅ Found (MFR fallback): ${info2.name} (Driver: ${info2.driver})`);
+        console.log(`   Found (MFR fallback): ${info2.name} (Driver: ${info2.driver})`);
     } else {
-        console.log('  ❌ Not found');
+        console.log('   Not found');
     }
 
     // Test Case 3: Recommended driver

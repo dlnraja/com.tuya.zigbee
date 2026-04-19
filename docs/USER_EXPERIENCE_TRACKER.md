@@ -1,11 +1,11 @@
 # User Experience Tracker - Universal Tuya Zigbee
 
-> ⚠️ **IMPORTANT**: This file MUST be read and updated at EVERY Windsurf AI session.
+>  **IMPORTANT**: This file MUST be read and updated at EVERY Windsurf AI session.
 > It tracks user feedback, known issues, and fixes for each driver.
 
 ---
 
-## 📊 Quick Stats (Updated: 2026-02-21)
+##  Quick Stats (Updated: 2026-02-21)
 
 | Metric | Value |
 |--------|-------|
@@ -18,20 +18,20 @@
 
 ---
 
-## 🔴 CRITICAL ISSUES (User Reported)
+##  CRITICAL ISSUES (User Reported)
 
 ### 1. Button Devices Not Responding After Update
 - **Affected Drivers**: `button_wireless_4`, `button_wireless_1/2/3/6/8`, `button_emergency_sos`
 - **Root Cause**: Cluster bindings only applied during pairing
 - **Solution**: Users must **RE-PAIR** devices after updating
-- **Status**: ✅ Fixed in v5.5.763+ → confirmed working v5.9.14 (Cam)
+- **Status**:  Fixed in v5.5.763+  confirmed working v5.9.14 (Cam)
 - **Forum Reports**: Cam (Jan 2026), multiple users
 
 ### 2. SOS Button "No IAS Zone cluster found"
 - **Affected Drivers**: `button_emergency_sos`
 - **Root Cause**: Missing cluster bindings in driver.compose.json
 - **Solution**: Added IAS Zone (1280), IAS ACE (1281), Tuya (61184) bindings
-- **Status**: ✅ Fixed in v5.5.767
+- **Status**:  Fixed in v5.5.767
 - **Forum Reports**: Peter_van_Werkhoven, Cam
 
 ### 3. TS0044 MOES 4-Button No Response
@@ -39,18 +39,18 @@
 - **Manufacturer IDs**: `_TZ3000_zgyzgdua`, `_TZ3000_wkai4ga5`, `_TZ3000_5tqxpine`
 - **Root Cause**: E000 BoundCluster not configured on first pairing
 - **Solution**: Always setup cluster 57344 binding
-- **Status**: ✅ Fixed in v5.5.762+
+- **Status**:  Fixed in v5.5.762+
 - **Z2M Reference**: https://www.zigbee2mqtt.io/devices/TS0044.html
 
 ### 4. Smart Button Paired as Wrong Driver
 - **Issue**: Devices pairing to motion_sensor instead of button driver
 - **Root Cause**: Manufacturer ID overlap or user selection error
 - **Solution**: Delete device, RE-PAIR with correct driver
-- **Status**: ⚠️ User action required
+- **Status**:  User action required
 
 ---
 
-## 🟡 KNOWN ISSUES (Monitoring)
+##  KNOWN ISSUES (Monitoring)
 
 ### 5. Battery Reporting Delayed (24h)
 - **Affected Drivers**: All battery-powered devices
@@ -63,23 +63,23 @@
 - **Affected Drivers**: `motion_sensor`, `contact_sensor`, `water_leak_sensor`
 - **Behavior**: Enrollment timeout when device is asleep
 - **Solution**: Press device button/trigger sensor, then enrollment completes
-- **Status**: ⚠️ Expected behavior for sleepy devices
+- **Status**:  Expected behavior for sleepy devices
 
 ### 7. Curtain Motor Position Not Updating
 - **Affected Drivers**: `curtain_motor`, `curtain_motor_tilt`
 - **Manufacturer IDs**: `_TZ3000_bs93npae` (TS130F)
 - **Root Cause**: Missing windowCovering cluster binding
 - **Solution**: Added cluster 258 binding in v5.5.763
-- **Status**: ✅ Fixed (RE-PAIR required)
+- **Status**:  Fixed (RE-PAIR required)
 
 ### 8. driver-mapping-database.json Not Found
 - **Error**: `[DRIVER-MAPPING] Database file not found: /app/driver-mapping-database.json`
 - **Source**: DriverMappingLoader.js optional file
-- **Status**: ✅ Fixed in v5.5.768 - Removed error log for optional file
+- **Status**:  Fixed in v5.5.768 - Removed error log for optional file
 
 ---
 
-## 🟢 RECENTLY FIXED
+##  RECENTLY FIXED
 
 | Version | Driver | Issue | Fix |
 |---------|--------|-------|-----|
@@ -97,7 +97,7 @@
 
 ---
 
-## 📚 DRIVER REFERENCE (Z2M/ZHA Sources)
+##  DRIVER REFERENCE (Z2M/ZHA Sources)
 
 ### Button Devices
 
@@ -125,7 +125,7 @@
 
 ---
 
-## 🔧 CLUSTER REFERENCE
+##  CLUSTER REFERENCE
 
 | Cluster ID | Name | Usage |
 |------------|------|-------|
@@ -142,7 +142,7 @@
 
 ---
 
-## 📝 USER ACTION CHECKLIST
+##  USER ACTION CHECKLIST
 
 When users report issues, ask for:
 
@@ -155,7 +155,7 @@ When users report issues, ask for:
 
 ---
 
-## 🔄 SESSION LOG
+##  SESSION LOG
 
 ### 2026-01-24 Session (Continued)
 - [x] Fixed button_emergency_sos cluster bindings
@@ -183,7 +183,7 @@ When users report issues, ask for:
 
 ---
 
-## 📌 IMPORTANT LINKS
+##  IMPORTANT LINKS
 
 - **Forum (dlnraja)**: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352
 - **Forum (JohanBendz)**: https://community.homey.app/t/app-pro-tuya-zigbee-app/26439

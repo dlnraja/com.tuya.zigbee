@@ -80,7 +80,7 @@ async function generateChangelog(ctx){
     '  "appDescription": "Updated app.json description in English (max 200 chars, include driver/FP counts)"\n'+
     '}';
 
-  const sysPrompt='You write changelogs for a Homey Zigbee app. Write like a real developer — short, specific, no corporate fluff. Say what actually changed. \nCRITICAL RULES:\n1. ONLY mention driver enrichments (new fingerprints, new devices, capabilities added) and bug fixes directly affecting users.\n2. EVERYTHING ELSE MUST REMAIN SILENT. NEVER mention: internal improvements, optimizations, CI/CD, GitHub, bots, AI, workflows, scanning, infrastructure, or refactoring.\n3. Skip any commits that are not explicitly about a driver, fingerprint, or device fix.\n4. Do not use filler words.';
+  const sysPrompt='You write changelogs for a Homey Zigbee app. Write like a real developer  short, specific, no corporate fluff. Say what actually changed. \nCRITICAL RULES:\n1. ONLY mention driver enrichments (new fingerprints, new devices, capabilities added) and bug fixes directly affecting users.\n2. EVERYTHING ELSE MUST REMAIN SILENT. NEVER mention: internal improvements, optimizations, CI/CD, GitHub, bots, AI, workflows, scanning, infrastructure, or refactoring.\n3. Skip any commits that are not explicitly about a driver, fingerprint, or device fix.\n4. Do not use filler words.';
   const ai=await callAI(prompt,sysPrompt,{maxTokens:2048});
   if(!ai)return null;
   try{const j=ai.text.match(/\{[\s\S]*\}/);return j?JSON.parse(j[0]):null;}
@@ -175,7 +175,7 @@ async function main(){
   if(ctx.githubResults)console.log('GitHub:',ctx.githubResults.count,'responses');
   if(ctx.gmailDiag)console.log('Gmail:',ctx.gmailDiag.count,'emails, new FPs:',ctx.gmailDiag.newFPs?.length||0);
 
-  if(!ctx.commits.length){console.log('No new commits — skipping changelog');return;}
+  if(!ctx.commits.length){console.log('No new commits  skipping changelog');return;}
 
   // Try AI first, fallback to template
   let cl=await generateChangelog(ctx);

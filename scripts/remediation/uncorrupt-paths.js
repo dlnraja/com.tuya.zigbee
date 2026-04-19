@@ -46,12 +46,12 @@ const walk = (dir) => {
 
       if (content !== originalContent) {
         fs.writeFileSync(full, content);
-        console.log(`✅ Un-corrupted: ${path.relative(ROOT, full)}`);
+        console.log(` Un-corrupted: ${path.relative(ROOT, full)}`);
       }
     }
   }
 };
 
-console.log('🚀 Starting path un-corruption...');
+console.log(' Starting path un-corruption...');
 walk(ROOT);
-console.log('🎉 Done.');
+console.log(' Done.');

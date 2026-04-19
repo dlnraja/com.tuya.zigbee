@@ -17,7 +17,7 @@ const path = require('path');
 const DDIR = path.join(process.cwd(), 'drivers');
 const DRY = process.env.DRY_RUN === 'true';
 
-// Mapping: capability → cluster + attribute + reporting config
+// Mapping: capability  cluster + attribute + reporting config
 const REPORTING_MAP = {
   'measure_temperature': {
     cluster: 'msTemperatureMeasurement',
@@ -161,7 +161,7 @@ function main() {
     // Skip if already has reporting
     if (/configureAttributeReporting/.test(code)) continue;
 
-    // Skip EF00-only drivers (Tuya DP — reporting doesn't apply)
+    // Skip EF00-only drivers (Tuya DP  reporting doesn't apply)
     if (/CLUSTERS.TUYA_EF00|CLUSTERS.TUYA_EF00/.test(code) && !/genOnOff|msTemperature|genPowerCfg/.test(code)) continue;
 
     scanned++;
@@ -179,16 +179,16 @@ function main() {
     const newCode = code.substring(0, init.index) + block + code.substring(init.index);
 
     if (!syntaxCheck(newCode)) {
-      console.log(`  ❌ ${d}: syntax check failed after injection — SKIPPING`);
+      console.log(`   ${d}: syntax check failed after injection  SKIPPING`);
       errors++;
       continue;
     }
 
     if (DRY) {
-      console.log(`  📋 ${d}: would inject ${sensorCaps.length} reporting config(s)`);
+      console.log(`   ${d}: would inject ${sensorCaps.length} reporting config(s)`);
     } else {
       fs.writeFileSync(devFile, newCode);
-      console.log(`  ✅ ${d}: injected ${sensorCaps.length} reporting config(s)`);
+      console.log(`   ${d}: injected ${sensorCaps.length} reporting config(s)`);
     }
     injected++;
   }

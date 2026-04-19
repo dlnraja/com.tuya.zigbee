@@ -6,22 +6,22 @@
 
 ---
 
-## 📁 Structure des Modules
+##  Structure des Modules
 
 ```
 lib/
-├── devices/           ← Classes de base pour drivers
-├── battery/           ← Gestion batterie ultra-précise
-├── tuya/              ← Gestion Tuya EF00/DP
-├── protocol/          ← Auto-détection protocole
-├── clusters/          ← Clusters personnalisés
-├── zigbee/            ← Enregistrement clusters
-└── utils/             ← Utilitaires
+ devices/            Classes de base pour drivers
+ battery/            Gestion batterie ultra-précise
+ tuya/               Gestion Tuya EF00/DP
+ protocol/           Auto-détection protocole
+ clusters/           Clusters personnalisés
+ zigbee/             Enregistrement clusters
+ utils/              Utilitaires
 ```
 
 ---
 
-## 🔧 devices/ - Classes de Base
+##  devices/ - Classes de Base
 
 ### TuyaHybridDevice.js (v5.5.46)
 **Classe de base pour TOUS les devices hybrides Tuya/Zigbee**
@@ -60,15 +60,15 @@ class MyDevice extends TuyaHybridDevice {
 ```
 
 **Fonctionnalités:**
-- ✅ Mode hybride (Tuya + Zigbee simultanés)
-- ✅ Auto-décision après 15 min
-- ✅ Listeners directs sur `clusters.tuya`
-- ✅ Raw frame parser fallback
-- ✅ Intégration BatteryCalculator
+-  Mode hybride (Tuya + Zigbee simultanés)
+-  Auto-décision après 15 min
+-  Listeners directs sur `clusters.tuya`
+-  Raw frame parser fallback
+-  Intégration BatteryCalculator
 
 ---
 
-## 🔋 battery/ - Gestion Batterie Ultra-Précise
+##  battery/ - Gestion Batterie Ultra-Précise
 
 ### BatteryCalculator.js (v5.5.47)
 **Calcul batterie avec courbes de décharge non-linéaires**
@@ -82,9 +82,9 @@ const percent = BatteryCalculator.calculate(rawValue, {
   chemistry: BatteryCalculator.CHEMISTRY.CR2032,
 });
 
-// Conversion voltage → % avec courbe
+// Conversion voltage  % avec courbe
 const percent = BatteryCalculator.voltageToPercentCurve(2.85, 'cr2032');
-// → 70% (et non 85% en linéaire!)
+//  70% (et non 85% en linéaire!)
 ```
 
 **4 Méthodes de calcul:**
@@ -107,7 +107,7 @@ Base de données locale des profils batterie par manufacturerName.
 
 ---
 
-## 📡 tuya/ - Gestion Tuya EF00
+##  tuya/ - Gestion Tuya EF00
 
 ### TuyaSpecificCluster.js
 **Cluster 0xEF00 avec NAME='tuya'**
@@ -126,7 +126,7 @@ Base de données locale des 2100+ devices Tuya.
 
 ---
 
-## 🔄 protocol/ - Auto-Détection
+##  protocol/ - Auto-Détection
 
 ### KnownProtocolsDatabase.js
 Référentiel LOCAL des protocoles connus (pas d'internet!).
@@ -136,7 +136,7 @@ Auto-détection avec fallback après 15 minutes.
 
 ---
 
-## 📋 Usage Standard
+##  Usage Standard
 
 ```javascript
 // Pour un nouveau driver capteur:
@@ -154,10 +154,10 @@ class MySensor extends TuyaHybridDevice {
 
 ---
 
-## 📌 Standards de Code
+##  Standards de Code
 
-- ✅ Toutes les données LOCALES (pas d'internet)
-- ✅ Auto-apprentissage après 15 min
-- ✅ Pas de polling agressif (batterie!)
-- ✅ JSDoc complet
-- ✅ Logs structurés `[MODULE]`
+-  Toutes les données LOCALES (pas d'internet)
+-  Auto-apprentissage après 15 min
+-  Pas de polling agressif (batterie!)
+-  JSDoc complet
+-  Logs structurés `[MODULE]`

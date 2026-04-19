@@ -46,15 +46,15 @@ function audit() {
       
       if (driversWithEmptyPids.length > 0) {
         collisionCount++;
-        console.log(`\n❌ Collision for [${mfr}]:`);
+        console.log(`\n Collision for [${mfr}]:`);
         occurrences.forEach(o => {
-          console.log(`  - Driver: ${o.driverId} | PIDs: [${o.pids.join(', ')}] ${o.pids.length === 0 ? '⚠️ (Greedy/Catch-all)' : ''}`);
+          console.log(`  - Driver: ${o.driverId} | PIDs: [${o.pids.join(', ')}] ${o.pids.length === 0 ? ' (Greedy/Catch-all)' : ''}`);
         });
         
         if (driversWithEmptyPids.length === occurrences.length) {
-          console.log('  👉 CRITICAL: All drivers are catch-all for this manufacturer. Homey matching will be non-deterministic.');
+          console.log('   CRITICAL: All drivers are catch-all for this manufacturer. Homey matching will be non-deterministic.');
         } else if (driversWithEmptyPids.length > 0) {
-           console.log(`  👉 WARNING: Driver(s) [${driversWithEmptyPids.map(d=>d.driverId).join(', ')}] will steal devices from others due to empty productId array.`);
+           console.log(`   WARNING: Driver(s) [${driversWithEmptyPids.map(d=>d.driverId).join(', ')}] will steal devices from others due to empty productId array.`);
         }
       } else {
         // All have PIDs, check for overlaps
@@ -69,7 +69,7 @@ function audit() {
 
         if (overlaps.length > 0) {
           collisionCount++;
-          console.log(`\n❌ Direct PID Overlap for [${mfr}]:`);
+          console.log(`\n Direct PID Overlap for [${mfr}]:`);
           console.log(`  - Overlapping PIDs: [${[...new Set(overlaps)].join(', ')}]`);
           occurrences.forEach(o => {
             console.log(`  - Driver: ${o.driverId} | PIDs: [${o.pids.join(', ')}]`);
@@ -80,7 +80,7 @@ function audit() {
   }
 
   if (collisionCount === 0) {
-    console.log('\n✅ No fingerprint collisions detected.');
+    console.log('\n No fingerprint collisions detected.');
   } else {
     console.log(`\nFound ${collisionCount} manufacturer collisions.`);
   }

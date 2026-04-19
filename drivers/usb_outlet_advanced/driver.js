@@ -2,15 +2,7 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.575: CRITICAL FIX - Added missing condition/action run listeners
- * v5.5.556: Safe flow card registration - no stderr on missing cards
- */
 class UsbOutletAdvancedDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -20,99 +12,73 @@ class UsbOutletAdvancedDriver extends ZigBeeDriver {
     }
   }
 
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
-    
-    if (this._flowCardsRegistered) return;
-    this._flowCardsRegistered = true;
-
     this.log('UsbOutletAdvancedDriver v5.5.575 initializing...');
-    
-
-    // Safe flow card registration helper
-    const safeGetTrigger = (id) => {
-      try {
-        return this.homey.flow.getTriggerCard(id) ;
-      
-  
-  
-  
-  
-  
-  
-  } catch (e) {
-        this.log(`[FLOW] Trigger '${id}' not defined - skipping`);
-        return null;
-      }
-    };
-
-    // Register trigger cards
-    this._turnedOnTrigger = safeGetTrigger('usb_outlet_advanced_turned_on');
-    this._turnedOffTrigger = safeGetTrigger('usb_outlet_advanced_turned_off');
-    this._powerChangedTrigger = safeGetTrigger('usb_outlet_advanced_measure_power_changed');
-    this._voltageChangedTrigger = safeGetTrigger('usb_outlet_advanced_measure_voltage_changed');
-    this._currentChangedTrigger = safeGetTrigger('usb_outlet_advanced_measure_current_changed');
-    this._meterChangedTrigger = safeGetTrigger('usb_outlet_advanced_meter_power_changed');
-
-    // v5.5.575: Register condition and action run listeners
     this._registerFlowCards();
-
-    this.log('UsbOutletAdvancedDriver v5.5.575 ✅ Flow cards registered');
   }
 
   _registerFlowCards() {
-    // CONDITION: Is on
+    // TRIGGERS
+    try { this.homey.flow.getTriggerCard('usb_outlet_advanced_usb_outlet_button_pressed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('usb_outlet_advanced_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('usb_outlet_advanced_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('usb_outlet_advanced_measure_power_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('usb_outlet_advanced_measure_voltage_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('usb_outlet_advanced_measure_current_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('usb_outlet_advanced_meter_power_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('usb_outlet_advanced_power_changed'); } catch (e) {}
+
+    // CONDITIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('usb_outlet_advanced_is_on'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('usb_outlet_advanced_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
-      this.log('[FLOW] ✅ Registered: usb_outlet_advanced_is_on');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition usb_outlet_advanced_is_on: ${err.message}`); }
 
-    // ACTION: Turn on
+    // ACTIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('usb_outlet_advanced_turn_on'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('usb_outlet_advanced_turn_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, true).catch(() => {});
-          await args.device.setCapabilityValue('onoff', true).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: usb_outlet_advanced_turn_on');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action usb_outlet_advanced_turn_on: ${err.message}`); }
 
-    // ACTION: Turn off
     try {
-      (() => { try { return this.homey.flow.getConditionCard('usb_outlet_advanced_turn_off'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('usb_outlet_advanced_turn_off');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, false).catch(() => {});
-          await args.device.setCapabilityValue('onoff', false).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: usb_outlet_advanced_turn_off');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action usb_outlet_advanced_turn_off: ${err.message}`); }
 
-    // ACTION: Toggle
     try {
-      (() => { try { return this.homey.flow.getConditionCard('usb_outlet_advanced_toggle'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('usb_outlet_advanced_toggle');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
-          await args.device._setGangOnOff(1, !current).catch(() => {});
-          await args.device.setCapabilityValue('onoff', !current).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: usb_outlet_advanced_toggle');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action usb_outlet_advanced_toggle: ${err.message}`); }
+
+    this.log('[FLOW] All flow cards registered');
   }
 }
 
 module.exports = UsbOutletAdvancedDriver;
-

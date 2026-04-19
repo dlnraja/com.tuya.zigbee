@@ -64,11 +64,11 @@ function fixDir(dir) {
 
             if (modified) {
                 fs.writeFileSync(composePath, JSON.stringify(compose, null, 2));
-                console.log(`✅ Fixed ${composePath}`);
+                console.log(` Fixed ${composePath}`);
             }
 
         } catch (e) {
-            console.error(`❌ Error fixing ${dir}:`, e.message);
+            console.error(` Error fixing ${dir}:`, e.message);
         }
     }
 

@@ -2,14 +2,7 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.570: CRITICAL FIX - Flow card run listeners were missing
- */
 class VibrationSensorDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -19,66 +12,37 @@ class VibrationSensorDriver extends ZigBeeDriver {
     }
   }
 
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
 
-    this.log('VibrationSensorDriver v5.5.570 initialized');
+    this.log('VibrationSensorDriver initialized');
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
   _registerFlowCards() {
-    // CONDITION: Vibration is/is not detected
-    try {
-      (() => { try { return this.homey.flow.getConditionCard('vibration_sensor_is_vibrating'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-          if (!args.device) return false;
-          return args.device.getCapabilityValue('alarm_vibration') === true;
-        });
-      this.log('[FLOW] ✅ Registered: vibration_sensor_is_vibrating');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+    const P = 'vibration_sensor';
+    const conditions = ['is_vibrating', 'battery_above', 'vibration_active', 'tamper_active'];
 
-    // CONDITION: Battery above threshold
-    try {
-      (() => { try { return this.homey.flow.getConditionCard('vibration_sensor_battery_above'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-          if (!args.device) return false;
-          const battery = args.device.getCapabilityValue('measure_battery') || 0;
-          return battery > (args.threshold || 20);
-        });
-      this.log('[FLOW] ✅ Registered: vibration_sensor_battery_above');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    // CONDITION: Vibration active
-    try {
-      (() => { try { return this.homey.flow.getConditionCard('vibration_sensor_vibration_active'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-          if (!args.device) return false;
-          return args.device.getCapabilityValue('alarm_vibration') === true;
-        });
-      this.log('[FLOW] ✅ Registered: vibration_sensor_vibration_active');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    // CONDITION: Tamper active
-    try {
-      (() => { try { return this.homey.flow.getConditionCard('vibration_sensor_tamper_active'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-          if (!args.device) return false;
-          return args.device.getCapabilityValue('alarm_tamper') === true;
-        });
-      this.log('[FLOW] ✅ Registered: vibration_sensor_tamper_active');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    this.log('[FLOW]  Vibration sensor flow cards registered (v5.11.47)');
+    conditions.forEach(cond => {
+      try {
+        const id = `${P}_${cond}`;
+        const card = this.homey.flow.getConditionCard(id);
+        if (card) {
+          card.registerRunListener(async (args) => {
+            if (!args.device) return false;
+            if (cond === 'battery_above') {
+              const battery = args.device.getCapabilityValue('measure_battery') || 0;
+              return battery > (args.threshold || 20);
+            }
+            const cap = cond.includes('vibrat') ? 'alarm_vibration' : 'alarm_tamper';
+            return args.device.getCapabilityValue(cap) === true;
+          });
+          this.log(`[FLOW] Registered: ${id}`);
+        }
+      } catch (err) { this.error(`Condition ${cond} failed:`, err.message); }
+    });
   }
 }
 

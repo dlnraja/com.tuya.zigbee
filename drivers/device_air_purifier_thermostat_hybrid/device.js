@@ -3,14 +3,14 @@ const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUti
 const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      safeDivide(THERMOSTAT, TRV) - v5.5.129 FIXED (extends UnifiedThermostatBase)       ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  UnifiedThermostatBase handles: target_temperature listener, ZCL Thermostat  ║
- * ║  This class ONLY: dpMappings                                                ║
- * ║  DPs: 1-9,13-17,24,35,36,101 | ZCL: 513,516,1,EF00                         ║
- * ║  Variants: Beca, Beok, Moes, AVATTO TRV, Saswell                           ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       safeDivide(THERMOSTAT, TRV) - v5.5.129 FIXED (extends UnifiedThermostatBase)       
+ * 
+ *   UnifiedThermostatBase handles: target_temperature listener, ZCL Thermostat  
+ *   This class ONLY: dpMappings                                                
+ *   DPs: 1-9,13-17,24,35,36,101 | ZCL: 513,516,1,EF00                         
+ *   Variants: Beca, Beok, Moes, AVATTO TRV, Saswell                           
+ * 
  */
 class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
 
@@ -111,7 +111,7 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
     // Parent handles ALL: target_temperature listener, ZCL Thermostat
     await super.onNodeInit({ zclNode });
     this.log('[THERMOSTAT] v5.5.129 - DPs: 1-9,13-17,24,35,36,101 | ZCL: 513,516,1,EF00');
-    this.log('[THERMOSTAT] ✅ Ready');
+    this.log('[THERMOSTAT]  Ready');
   }
 
 

@@ -11,7 +11,7 @@ if (!content.includes('PowerSourceIntelligence')) {
   content = content.replace(insertAfter, insertAfter + '\n' + requireLine);
   
   fs.writeFileSync(file, content);
-  console.log('✅ Added PowerSourceIntelligence require to TuyaHybridDevice.js');
+  console.log(' Added PowerSourceIntelligence require to TuyaHybridDevice.js');
 } else {
   console.log('Already has PowerSourceIntelligence require');
 }

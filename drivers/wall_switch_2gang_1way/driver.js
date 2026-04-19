@@ -4,7 +4,7 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 /**
  * Wall Switch 2-Gang 1-Way Driver (BSEED Sub-Device)
- * v5.8.73: PacketNinja sub-device architecture — each gang = separate Homey device card
+ * v5.8.73: PacketNinja sub-device architecture  each gang = separate Homey device card
  * Sub-device support configured via driver.compose.json "devices" section
  */
 class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
@@ -58,25 +58,27 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
     }
 
     // ACTION: Set backlight mode
-    try {
-
-        .registerRunListener(async (args) => {
+    try {  const card = this.homey.flow.getActionCard('set_backlight');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setBacklightMode(args.mode);
           await args.device.setSettings({ backlight_mode: args.mode }).catch(() => {});
           return true;
         });
+      }
     } catch (err) { this.error('Action set_backlight:', err.message); }
 
     // ACTION: Set scene mode
-    try {
-
-        .registerRunListener(async (args) => {
+    try {  const card = this.homey.flow.getActionCard('set_scene_mode');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSceneMode(args.mode);
           await args.device.setSettings({ scene_mode: args.mode }).catch(() => {});
           return true;
         });
+      }
     } catch (err) { this.error('Action set_scene_mode:', err.message); }
 
     // ACTION: Virtual control (sub-device arch: each device = 1 gang, onoff controls its gang)
@@ -144,8 +146,8 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set power-on behavior (v5.11.30)
     try {
-
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('wall_switch_2gang_1way_set_power_on_behavior card:');
+      if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ power_on_behavior: args.mode });
           const pobValue = { off: 0, on: 1, memory: 2 }[args.mode] ?? 2;
@@ -160,8 +162,8 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set external switch type (v5.11.30)
     try {
-
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('wall_switch_2gang_1way_set_power_on_behavior card:');
+      if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ switch_mode: args.mode });
           const smValue = { toggle: 0, state: 1, momentary: 2 }[args.mode] ?? 0;
@@ -172,7 +174,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
         });
     } catch (err) { this.log('set_switch_mode card:', err.message); }
 
-    this.log(`✅ ${P}: ${triggers.length} triggers + ${simpleActions.length + gangActions.length + 2} actions registered`);
+    this.log(` ${P}: ${triggers.length} triggers + ${simpleActions.length + gangActions.length + 2} actions registered`);
   }
 
 }

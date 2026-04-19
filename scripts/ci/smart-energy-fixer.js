@@ -2,7 +2,7 @@
 const fs = require('fs');
 const glob = require('glob').sync;
 
-console.log('🤖 Smart Energy Fixer - Scanning drivers for SDK 3 validation issues...');
+console.log(' Smart Energy Fixer - Scanning drivers for SDK 3 validation issues...');
 
 let fixed = 0;
 glob('drivers/**/driver.compose.json').forEach(f => {
@@ -11,7 +11,7 @@ glob('drivers/**/driver.compose.json').forEach(f => {
   try {
     t = JSON.parse(fs.readFileSync(f, 'utf8'));
   } catch (e) {
-    console.error(`❌ Parse error in ${f}: ${e.message}`);
+    console.error(` Parse error in ${f}: ${e.message}`);
     return;
   }
   
@@ -39,9 +39,9 @@ glob('drivers/**/driver.compose.json').forEach(f => {
 
   if (changed) {
     fs.writeFileSync(f, JSON.stringify(t, null, 2) + '\n');
-    console.log(`✅ Fixed SDK 3 Energy array for ${f}`);
+    console.log(` Fixed SDK 3 Energy array for ${f}`);
     fixed++;
   }
 });
 
-console.log(`🎉 Smart Energy Fixer completed. Fixed ${fixed} drivers.`);
+console.log(` Smart Energy Fixer completed. Fixed ${fixed} drivers.`);

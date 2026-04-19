@@ -4,8 +4,8 @@
  * Fix Critical Duplicates v2 - Based on GitHub Issues and Forum Research
  * 
  * ROOT CAUSES IDENTIFIED:
- * 1. Same manufacturerName+productId in INCOMPATIBLE drivers → wrong device pairing
- * 2. Devices pair to wrong driver → capabilities don't match → no data
+ * 1. Same manufacturerName+productId in INCOMPATIBLE drivers  wrong device pairing
+ * 2. Devices pair to wrong driver  capabilities don't match  no data
  * 3. TS0601 devices need Tuya DP handling, but some are in ZCL-only drivers
  * 
  * FIXES:
@@ -78,17 +78,17 @@ let totalAdded = 0;
 const changes = [];
 
 function main() {
-  console.log('🔧 Critical Duplicates Fix v2 - Based on GitHub/Forum Research\n');
+  console.log(' Critical Duplicates Fix v2 - Based on GitHub/Forum Research\n');
   
   // Step 1: Remove manufacturerNames from wrong drivers
-  console.log('📋 Step 1: Removing manufacturerNames from wrong drivers...\n');
+  console.log(' Step 1: Removing manufacturerNames from wrong drivers...\n');
   
   for (const [mfr, correctDriver] of Object.entries(CORRECT_DRIVER_MAP)) {
     removeFromWrongDrivers(mfr, correctDriver);
   }
   
   // Step 2: Remove known incompatible assignments
-  console.log('\n📋 Step 2: Removing incompatible assignments...\n');
+  console.log('\n Step 2: Removing incompatible assignments...\n');
   
   for (const [driver, mfrs] of Object.entries(INCOMPATIBLE_ASSIGNMENTS)) {
     for (const mfr of mfrs) {
@@ -97,7 +97,7 @@ function main() {
   }
   
   // Step 3: Add missing manufacturerNames from GitHub issues
-  console.log('\n📋 Step 3: Adding missing manufacturerNames from GitHub issues...\n');
+  console.log('\n Step 3: Adding missing manufacturerNames from GitHub issues...\n');
   
   // From GitHub issue #1063 - _TZE200_a8sdabtg needs to be in lcdtemphumidsensor
   ensureInDriver('lcdtemphumidsensor', '_TZE200_a8sdabtg');
@@ -106,9 +106,9 @@ function main() {
   ensureInDriver('radiator_valve', '_TZE200_locansqn');
   
   // Summary
-  console.log('\n' + '═'.repeat(60));
-  console.log('📊 SUMMARY');
-  console.log('═'.repeat(60));
+  console.log('\n' + ''.repeat(60));
+  console.log(' SUMMARY');
+  console.log(''.repeat(60));
   console.log(`Total removed: ${totalRemoved}`);
   console.log(`Total added: ${totalAdded}`);
   console.log(`Drivers modified: ${new Set(changes.map(c => c.driver)).size}`);
@@ -126,7 +126,7 @@ function main() {
     JSON.stringify(report, null, 2)
   );
   
-  console.log('\n✅ Report saved to scripts/critical-duplicates-fix-v2-report.json');
+  console.log('\n Report saved to scripts/critical-duplicates-fix-v2-report.json');
 }
 
 function removeFromWrongDrivers(mfr, correctDriver) {
@@ -144,7 +144,7 @@ function removeFromWrongDrivers(mfr, correctDriver) {
       
       const idx = mfrs.findIndex(m => m.toLowerCase() === mfr.toLowerCase());
       if (idx !== -1) {
-        console.log(`  ❌ Removing ${mfr} from ${folder} (correct: ${correctDriver})`);
+        console.log(`   Removing ${mfr} from ${folder} (correct: ${correctDriver})`);
         mfrs.splice(idx, 1);
         compose.zigbee.manufacturerName = mfrs;
         fs.writeFileSync(composePath, JSON.stringify(compose, null, 2));
@@ -167,7 +167,7 @@ function removeFromDriver(driver, mfr) {
     
     const idx = mfrs.findIndex(m => m.toLowerCase() === mfr.toLowerCase());
     if (idx !== -1) {
-      console.log(`  ❌ Removing ${mfr} from ${driver} (incompatible)`);
+      console.log(`   Removing ${mfr} from ${driver} (incompatible)`);
       mfrs.splice(idx, 1);
       compose.zigbee.manufacturerName = mfrs;
       fs.writeFileSync(composePath, JSON.stringify(compose, null, 2));
@@ -182,7 +182,7 @@ function removeFromDriver(driver, mfr) {
 function ensureInDriver(driver, mfr) {
   const composePath = path.join(driversDir, driver, 'driver.compose.json');
   if (!fs.existsSync(composePath)) {
-    console.log(`  ⚠️ Driver ${driver} not found, skipping ${mfr}`);
+    console.log(`   Driver ${driver} not found, skipping ${mfr}`);
     return;
   }
   
@@ -192,14 +192,14 @@ function ensureInDriver(driver, mfr) {
     
     const exists = mfrs.some(m => m.toLowerCase() === mfr.toLowerCase());
     if (!exists) {
-      console.log(`  ✅ Adding ${mfr} to ${driver}`);
+      console.log(`   Adding ${mfr} to ${driver}`);
       mfrs.push(mfr);
       compose.zigbee.manufacturerName = mfrs;
       fs.writeFileSync(composePath, JSON.stringify(compose, null, 2));
       totalAdded++;
       changes.push({ action: 'add', driver, mfr, reason: 'missing from correct driver' });
     } else {
-      console.log(`  ✓ ${mfr} already in ${driver}`);
+      console.log(`   ${mfr} already in ${driver}`);
     }
   } catch (err) {
     console.error(`Error processing ${driver}:`, err.message);

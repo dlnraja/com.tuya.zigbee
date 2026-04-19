@@ -63,7 +63,7 @@ async function main() {
       fs.writeFileSync(composePath, JSON.stringify(compose, null, 2));
     } catch (e) {}
   }
-  console.log('✅ All drivers updated with Smart Flow Cards & Metadata.');
+  console.log(' All drivers updated with Smart Flow Cards & Metadata.');
 }
 
 main().catch(console.error);

@@ -21,22 +21,22 @@
 ## 2. Architecture Matérielle "Tuya MCU"
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                     DISPOSITIF TS0601                           │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  ┌─────────────────┐     UART      ┌─────────────────────────┐ │
-│  │   MODULE ZIGBEE │◄─────────────►│     MCU APPLICATIF      │ │
-│  │  (Silicon Labs/ │               │                         │ │
-│  │   Telink)       │               │  - Pilote LCD           │ │
-│  │                 │               │  - Interface capteur    │ │
-│  │  Clusters:      │               │  - Gestion boutons      │ │
-│  │  - Basic (0x00) │               │  - Surveillance batterie│ │
-│  │  - Power (0x01) │               │  - Logique Data Points  │ │
-│  │  - Tuya (0xEF00)│               │                         │ │
-│  └─────────────────┘               └─────────────────────────┘ │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
+
+                     DISPOSITIF TS0601                           
+
+                                                                 
+       UART       
+     MODULE ZIGBEE      MCU APPLICATIF       
+    (Silicon Labs/                                          
+     Telink)                        - Pilote LCD            
+                                    - Interface capteur     
+    Clusters:                       - Gestion boutons       
+    - Basic (0x00)                  - Surveillance batterie 
+    - Power (0x01)                  - Logique Data Points   
+    - Tuya (0xEF00)                                         
+                  
+                                                                 
+
 ```
 
 **Principe**: Le module Zigbee agit comme un **tunnel transparent** - il encapsule les paquets série du MCU en trames Zigbee sans les interpréter.
@@ -58,8 +58,8 @@
 
 | Command | ID | Direction | Description |
 |---------|-----|-----------|-------------|
-| Status Report | 0x01 | Device → Coordinator | Rapport d'état DP |
-| Data Set | 0x02 | Coordinator → Device | Configuration DP |
+| Status Report | 0x01 | Device  Coordinator | Rapport d'état DP |
+| Data Set | 0x02 | Coordinator  Device | Configuration DP |
 | **Time Sync** | **0x24** | Bidirectionnel | **Synchronisation horloge** |
 
 ---
@@ -70,9 +70,9 @@
 
 | DP | Fonction | Type | Échelle | Notes |
 |----|----------|------|---------|-------|
-| **1** | Température | Valeur | ÷10 | 255 → 25.5°C |
+| **1** | Température | Valeur | ÷10 | 255  25.5°C |
 | **2** | Humidité | Valeur | ×1 | 0-100% |
-| **4** | Batterie | Valeur | ×2 | Device rapporte 0-50 → 0-100% |
+| **4** | Batterie | Valeur | ×2 | Device rapporte 0-50  0-100% |
 
 ### 4.2 DPs de Configuration
 
@@ -90,10 +90,10 @@
 
 | DP | Fonction | Type | Plage | Impact Batterie |
 |----|----------|------|-------|-----------------|
-| **17** | Intervalle rapport temp | Valeur | 1-120 min | ⚡ Critique |
-| **18** | Intervalle rapport hum | Valeur | 1-120 min | ⚡ Critique |
-| **19** | Sensibilité temp | Valeur | ÷10 (0.3-1.0°C) | ⚡ Modéré |
-| **20** | Sensibilité hum | Valeur | 3-10% | ⚡ Modéré |
+| **17** | Intervalle rapport temp | Valeur | 1-120 min |  Critique |
+| **18** | Intervalle rapport hum | Valeur | 1-120 min |  Critique |
+| **19** | Sensibilité temp | Valeur | ÷10 (0.3-1.0°C) |  Modéré |
+| **20** | Sensibilité hum | Valeur | 3-10% |  Modéré |
 
 ### 4.4 Configuration Recommandée (Autonomie Maximale)
 
@@ -117,7 +117,7 @@ Différence = 946 684 800 secondes (30 ans)
 
 Si coordinateur envoie: 1 735 000 000 (Unix 2025)
 Et device attend: époque 2000
-Résultat affiché: 2000 + 55 ans = 2055 ❌
+Résultat affiché: 2000 + 55 ans = 2055 
 ```
 
 ### 5.2 Détection Automatique
@@ -137,10 +137,10 @@ const utcTimestamp = needsTuyaEpoch
 ### 5.3 Format du Payload Time Sync (8 octets)
 
 ```
-┌────────────────────────────────────────────┐
-│ Octets 0-3: UTC Timestamp (Big Endian)     │
-│ Octets 4-7: Local Timestamp (Big Endian)   │
-└────────────────────────────────────────────┘
+
+ Octets 0-3: UTC Timestamp (Big Endian)     
+ Octets 4-7: Local Timestamp (Big Endian)   
+
 
 Exemple pour 2026-01-19 13:00:00 CET (UTC+1):
 - UTC (époque 2000): 0x31A2B3C4
@@ -154,21 +154,21 @@ Exemple pour 2026-01-19 13:00:00 CET (UTC+1):
 ### 6.1 Cycle de Vie
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    TIMELINE TYPIQUE                          │
-├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│  SLEEP ──────────────────────────────────────────── SLEEP   │
-│    │                                                    │    │
-│    ▼                                                    ▼    │
-│  [WAKE] ─► Envoie DP1,DP2,DP4 ─► Attend ACK ─► [SLEEP]      │
-│    │                                                         │
-│    └── Si delta > sensibilité OU timer expiré               │
-│                                                              │
-│  Durée éveil: ~100ms à 2s                                   │
-│  Durée sleep: DP17 minutes (défaut: 5-60 min)               │
-│                                                              │
-└─────────────────────────────────────────────────────────────┘
+
+                    TIMELINE TYPIQUE                          
+
+                                                              
+  SLEEP  SLEEP   
+                                                            
+                                                            
+  [WAKE]  Envoie DP1,DP2,DP4  Attend ACK  [SLEEP]      
+                                                             
+     Si delta > sensibilité OU timer expiré               
+                                                              
+  Durée éveil: ~100ms à 2s                                   
+  Durée sleep: DP17 minutes (défaut: 5-60 min)               
+                                                              
+
 ```
 
 ### 6.2 Implications

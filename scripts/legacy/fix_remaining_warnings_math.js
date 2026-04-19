@@ -6,7 +6,7 @@ const { safeParse } = require('../../lib/utils / tuyaUtils.js');
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔧 CORRECTION WARNINGS RESTANTS - Expressions mathématiques\n');
+console.log(' CORRECTION WARNINGS RESTANTS - Expressions mathématiques\n');
 
 const ROOT = path.join(__dirname, '..');
 
@@ -183,7 +183,7 @@ function applyFixes() {
     const filePath = path.join(ROOT, relativeFile);
 
     if (!fs.existsSync(filePath)) {
-      console.log(`   ⚠️  Fichier non trouvé: ${relativeFile}`);
+      console.log(`     Fichier non trouvé: ${relativeFile}`);
       return;
     }
 
@@ -211,27 +211,27 @@ function applyFixes() {
         fs.writeFileSync(filePath, content, 'utf8');
         stats.filesModified++;
 
-        console.log(`   ✅ ${relativeFile} (${fixes.length} corrections)`);
+        console.log(`    ${relativeFile} (${fixes.length} corrections)`);
       }
 
     } catch (e) {
-      console.error(`   ❌ Erreur ${relativeFile}:`, e.message);
+      console.error(`    Erreur ${relativeFile}:`, e.message);
     }
   });
 }
 
 // EXÉCUTION
-console.log('🎯 Application corrections expressions mathématiques...\n');
+console.log(' Application corrections expressions mathématiques...\n');
 applyFixes();
 
-console.log('\n\n📊 RAPPORT CORRECTIONS:\n');
+console.log('\n\n RAPPORT CORRECTIONS:\n');
 console.log(`   Fichiers modifiés: ${stats.filesModified}`);
 console.log(`   Lignes corrigées: ${stats.linesFixed}`);
 console.log(`   Backups créés: ${stats.backupsCreated}\n`);
 
 if (stats.filesModified > 0) {
-  console.log('✅ CORRECTIONS APPLIQUÉES\n');
-  console.log('🎯 PROCHAINES ÉTAPES:');
+  console.log(' CORRECTIONS APPLIQUÉES\n');
+  console.log(' PROCHAINES ÉTAPES:');
   console.log('   1. Relancer audit: node scripts/audit_complete_advanced.js');
   console.log('   2. Valider: homey app validate --level publish');
   console.log('   3. Build: homey app build\n');

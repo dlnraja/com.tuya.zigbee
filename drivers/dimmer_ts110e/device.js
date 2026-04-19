@@ -93,7 +93,7 @@ class TuyaDimmerTS110E extends ZigBeeDevice {
             }
         }
 
-        this.log("TS110E Dimmer initialized successfully! 🚀");
+        this.log("TS110E Dimmer initialized successfully! ");
     }
 
     onDeleted() {

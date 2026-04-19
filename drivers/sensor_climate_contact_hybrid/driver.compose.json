@@ -54,8 +54,8 @@
     {
       "type": "group",
       "label": {
-        "en": "🌡️ Calibration (v5.5.28)",
-        "fr": "🌡️ Calibration (v5.5.28)"
+        "en": " Calibration (v5.5.28)",
+        "fr": " Calibration (v5.5.28)"
       },
       "children": [
         {
@@ -121,10 +121,10 @@
     {
       "type": "group",
       "label": {
-        "en": "🕒 Time Sync (v5.5.384)",
-        "fr": "🕒 Sync Heure (v5.5.384)",
-        "nl": "🕒 Tijdsync (v5.5.384)",
-        "de": "🕒 Zeitsync (v5.5.384)"
+        "en": " Time Sync (v5.5.384)",
+        "fr": " Sync Heure (v5.5.384)",
+        "nl": " Tijdsync (v5.5.384)",
+        "de": " Zeitsync (v5.5.384)"
       },
       "children": [
         {
@@ -147,71 +147,71 @@
             {
               "id": "auto",
               "label": {
-                "en": "🔄 Auto-detect (recommended)",
-                "fr": "🔄 Auto-détection (recommandé)"
+                "en": " Auto-detect (recommended)",
+                "fr": " Auto-détection (recommandé)"
               }
             },
             {
               "id": "tuya_timestamp",
               "label": {
-                "en": "📺 LCD Sensor (8-byte epoch 2000)",
-                "fr": "📺 Capteur LCD (8 octets epoch 2000)"
+                "en": " LCD Sensor (8-byte epoch 2000)",
+                "fr": " Capteur LCD (8 octets epoch 2000)"
               }
             },
             {
               "id": "tuya_ts_unix",
               "label": {
-                "en": "📺 LCD Sensor Unix (8-byte epoch 1970)",
-                "fr": "📺 Capteur LCD Unix (8 octets epoch 1970)"
+                "en": " LCD Sensor Unix (8-byte epoch 1970)",
+                "fr": " Capteur LCD Unix (8 octets epoch 1970)"
               }
             },
             {
               "id": "tuya_standard",
               "label": {
-                "en": "📅 Tuya Standard (7-byte local)",
-                "fr": "📅 Tuya Standard (7 octets local)"
+                "en": " Tuya Standard (7-byte local)",
+                "fr": " Tuya Standard (7 octets local)"
               }
             },
             {
               "id": "tuya_utc_string",
               "label": {
-                "en": "📅 Tuya UTC (7-byte UTC)",
-                "fr": "📅 Tuya UTC (7 octets UTC)"
+                "en": " Tuya UTC (7-byte UTC)",
+                "fr": " Tuya UTC (7 octets UTC)"
               }
             },
             {
               "id": "tuya_mcu",
               "label": {
-                "en": "🔧 Tuya MCU (9-byte with header)",
-                "fr": "🔧 Tuya MCU (9 octets avec header)"
+                "en": " Tuya MCU (9-byte with header)",
+                "fr": " Tuya MCU (9 octets avec header)"
               }
             },
             {
               "id": "tuya_extended",
               "label": {
-                "en": "🌍 Tuya Extended (9-byte + timezone)",
-                "fr": "🌍 Tuya Étendu (9 octets + fuseau)"
+                "en": " Tuya Extended (9-byte + timezone)",
+                "fr": " Tuya Étendu (9 octets + fuseau)"
               }
             },
             {
               "id": "tuya_full_tz",
               "label": {
-                "en": "🌍 Tuya Full TZ (10-byte + DST)",
-                "fr": "🌍 Tuya Full TZ (10 octets + DST)"
+                "en": " Tuya Full TZ (10-byte + DST)",
+                "fr": " Tuya Full TZ (10 octets + DST)"
               }
             },
             {
               "id": "zigbee_2000",
               "label": {
-                "en": "⏱️ Zigbee 2000 (4-byte epoch 2000)",
-                "fr": "⏱️ Zigbee 2000 (4 octets epoch 2000)"
+                "en": " Zigbee 2000 (4-byte epoch 2000)",
+                "fr": " Zigbee 2000 (4 octets epoch 2000)"
               }
             },
             {
               "id": "unix_1970",
               "label": {
-                "en": "⏱️ Unix 1970 (4-byte epoch 1970)",
-                "fr": "⏱️ Unix 1970 (4 octets epoch 1970)"
+                "en": " Unix 1970 (4-byte epoch 1970)",
+                "fr": " Unix 1970 (4 octets epoch 1970)"
               }
             }
           ]
@@ -236,57 +236,57 @@
             {
               "id": "auto",
               "label": {
-                "en": "🔄 Auto (Homey timezone)",
-                "fr": "🔄 Auto (fuseau Homey)"
+                "en": " Auto (Homey timezone)",
+                "fr": " Auto (fuseau Homey)"
               }
             },
             {
               "id": "utc",
               "label": {
-                "en": "🌐 UTC (GMT+0)",
-                "fr": "🌐 UTC (GMT+0)"
+                "en": " UTC (GMT+0)",
+                "fr": " UTC (GMT+0)"
               }
             },
             {
               "id": "gmt+1",
               "label": {
-                "en": "🇪🇺 GMT+1 (CET)",
-                "fr": "🇪🇺 GMT+1 (Paris hiver)"
+                "en": " GMT+1 (CET)",
+                "fr": " GMT+1 (Paris hiver)"
               }
             },
             {
               "id": "gmt+2",
               "label": {
-                "en": "🇪🇺 GMT+2 (CEST/EET)",
-                "fr": "🇪🇺 GMT+2 (Paris été)"
+                "en": " GMT+2 (CEST/EET)",
+                "fr": " GMT+2 (Paris été)"
               }
             },
             {
               "id": "gmt+3",
               "label": {
-                "en": "🇷🇺 GMT+3 (Moscow)",
-                "fr": "🇷🇺 GMT+3 (Moscou)"
+                "en": " GMT+3 (Moscow)",
+                "fr": " GMT+3 (Moscou)"
               }
             },
             {
               "id": "gmt-5",
               "label": {
-                "en": "🇺🇸 GMT-5 (EST)",
-                "fr": "🇺🇸 GMT-5 (New York)"
+                "en": " GMT-5 (EST)",
+                "fr": " GMT-5 (New York)"
               }
             },
             {
               "id": "gmt-8",
               "label": {
-                "en": "🇺🇸 GMT-8 (PST)",
-                "fr": "🇺🇸 GMT-8 (Los Angeles)"
+                "en": " GMT-8 (PST)",
+                "fr": " GMT-8 (Los Angeles)"
               }
             },
             {
               "id": "gmt+8",
               "label": {
-                "en": "🇨🇳 GMT+8 (China)",
-                "fr": "🇨🇳 GMT+8 (Chine)"
+                "en": " GMT+8 (China)",
+                "fr": " GMT+8 (Chine)"
               }
             }
           ]
@@ -296,9 +296,9 @@
     {
       "type": "group",
       "label": {
-        "en": "🔔 Alarm Thresholds (E002)",
-        "fr": "🔔 Seuils d'alarme (E002)",
-        "nl": "🔔 Alarm drempels (E002)"
+        "en": " Alarm Thresholds (E002)",
+        "fr": " Seuils d'alarme (E002)",
+        "nl": " Alarm drempels (E002)"
       },
       "children": [
         {
@@ -374,8 +374,8 @@
     {
       "type": "group",
       "label": {
-        "en": "🧪 Debug (Expert)",
-        "fr": "🧪 Debug (Expert)"
+        "en": " Debug (Expert)",
+        "fr": " Debug (Expert)"
       },
       "children": [
         {
@@ -387,8 +387,8 @@
           },
           "value": false,
           "hint": {
-            "en": "⚠️ EXPERT ONLY: Test all ZCL Time sync methods on device startup. May drain battery if used frequently.",
-            "fr": "⚠️ EXPERT UNIQUEMENT: Teste toutes les méthodes sync ZCL Time au démarrage. Peut vider la batterie si utilisé fréquemment."
+            "en": " EXPERT ONLY: Test all ZCL Time sync methods on device startup. May drain battery if used frequently.",
+            "fr": " EXPERT UNIQUEMENT: Teste toutes les méthodes sync ZCL Time au démarrage. Peut vider la batterie si utilisé fréquemment."
           }
         }
       ]

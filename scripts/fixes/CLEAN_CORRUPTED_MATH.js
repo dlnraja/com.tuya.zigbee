@@ -46,12 +46,12 @@ function walk(dir) {
       }
       if (changed) {
         fs.writeFileSync(fullPath, content);
-        console.log(`✅ Fixed corruption in ${fullPath}`);
+        console.log(` Fixed corruption in ${fullPath}`);
       }
     }
   }
 }
 
-console.log('🚀 Starting Math Corruption Cleanup...');
+console.log(' Starting Math Corruption Cleanup...');
 walk(path.join(process.cwd(), 'lib'));
-console.log('🏁 Cleanup Complete.');
+console.log(' Cleanup Complete.');

@@ -4,11 +4,11 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      VALVE SINGLE - v5.6.0 + Bidirectional Buttons                          ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Smart valve with bidirectional physical/virtual button support             ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       VALVE SINGLE - v5.6.0 + Bidirectional Buttons                          
+ * 
+ *   Smart valve with bidirectional physical/virtual button support             
+ * 
  */
 class ValveSingleDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
   get plugCapabilities() { return ['onoff']; }
@@ -43,7 +43,7 @@ class ValveSingleDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPl
     await this.initPhysicalButtonDetection(zclNode);
     await this.initVirtualButtons();
 
-    this.log('[VALVE] v5.6.0 ✅ Ready with bidirectional buttons');
+    this.log('[VALVE] v5.6.0  Ready with bidirectional buttons');
   }
 
   _markAppCommand() {

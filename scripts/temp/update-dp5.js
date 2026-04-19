@@ -3,7 +3,7 @@ let txt = fs.readFileSync('drivers/soil_sensor/device.js', 'utf8');
 
 const injection = "\n" +
 "    if (dp === 112) {\n" +
-"      this.log('[SOIL] 🧪 SOIL FERTILITY DP112 = ' + parsedValue + ' μS/cm');\n" +
+"      this.log('[SOIL]  SOIL FERTILITY DP112 = ' + parsedValue + ' S/cm');\n" +
 "      if (this.hasCapability('measure_conductivity')) {\n" +
 "        this.setCapabilityValue('measure_conductivity', parseFloat(parsedValue)).catch(()=>{});\n" +
 "      }\n" +

@@ -117,7 +117,7 @@ async function main() {
     const driverPath = path.join(__dirname, 'drivers', driver, 'driver.compose.json');
 
     if (!fs.existsSync(driverPath)) {
-      console.log(`⚠️ Driver ${driver} not found, skipping ${ids.length} IDs`);
+      console.log(` Driver ${driver} not found, skipping ${ids.length} IDs`);
       continue;
     }
 
@@ -138,12 +138,12 @@ async function main() {
         // Sort manufacturerName array
         data.zigbee.manufacturerName.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
         fs.writeFileSync(driverPath, JSON.stringify(data, null, 2) + '\n');
-        console.log(`✅ ${driver}: Added ${added} IDs`);
+        console.log(` ${driver}: Added ${added} IDs`);
       } else {
-        console.log(`⏭️ ${driver}: All IDs already present`);
+        console.log(` ${driver}: All IDs already present`);
       }
     } catch (err) {
-      console.log(`❌ ${driver}: Error - ${err.message}`);
+      console.log(` ${driver}: Error - ${err.message}`);
     }
   }
 

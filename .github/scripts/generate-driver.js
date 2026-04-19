@@ -36,7 +36,7 @@ async function findOrEnrichDriver(manufacturerName, typeHint) {
                 const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
                 const mfrs = compose.zigbee?.manufacturerName || [];
                 if (mfrs.includes(manufacturerName)) {
-                    console.log(`✅ ${manufacturerName} already exists in driver: ${d}`);
+                    console.log(` ${manufacturerName} already exists in driver: ${d}`);
                     return;
                 }
                 
@@ -54,10 +54,10 @@ async function findOrEnrichDriver(manufacturerName, typeHint) {
         if (!compose.zigbee.manufacturerName.includes(manufacturerName)) {
             compose.zigbee.manufacturerName.push(manufacturerName);
             fs.writeFileSync(foundDriver, JSON.stringify(compose, null, 2));
-            console.log(`✅ Appended ${manufacturerName} to ${foundDriver}`);
+            console.log(` Appended ${manufacturerName} to ${foundDriver}`);
         }
     } else {
-        console.log(`❌ No suitable driver found to enrich for hint ${typeHint}. Creation mode needed.`);
+        console.log(` No suitable driver found to enrich for hint ${typeHint}. Creation mode needed.`);
     }
 }
 

@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔍 VÉRIFICATION MANUFACTURER NAMES SUPPRIMÉS (légitimes vs incorrects)\n');
+console.log(' VÉRIFICATION MANUFACTURER NAMES SUPPRIMÉS (légitimes vs incorrects)\n');
 
 const ROOT = path.join(__dirname, '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -48,7 +48,7 @@ function analyzeDriver(driverName) {
     const deletedManuNames = [...backupManuNames].filter(m => !currentManuNames.has(m));
 
     if (deletedManuNames.length > 0) {
-      console.log(`\n📦 ${driverName}:`);
+      console.log(`\n ${driverName}:`);
       console.log(`   Manufacturer names supprimés: ${deletedManuNames.length}`);
       console.log(`   ProductIds conservés: ${[...currentProductIds].join(', ')}`);
 
@@ -79,28 +79,28 @@ function scanAllDrivers() {
   });
 }
 
-console.log('📂 Analyzing backups vs current state...\n');
+console.log(' Analyzing backups vs current state...\n');
 scanAllDrivers();
 
-console.log('\n\n📊 CONCLUSION:\n');
-console.log('✅ Règle Zigbee respectée:');
+console.log('\n\n CONCLUSION:\n');
+console.log(' Règle Zigbee respectée:');
 console.log('   - Un device = (manufacturerName, productId) paire unique');
-console.log('   - LÉGITIME: Même manufacturerName, productIds différents ✅');
-console.log('   - PROBLÈME: Même (manufacturerName, productId) paire 🔴\n');
+console.log('   - LÉGITIME: Même manufacturerName, productIds différents ');
+console.log('   - PROBLÈME: Même (manufacturerName, productId) paire \n');
 
-console.log('✅ État actuel après nettoyage:');
+console.log(' État actuel après nettoyage:');
 console.log('   - 0 manufacturer names partagés entre drivers');
 console.log('   - Chaque driver a ses propres manufacturer names uniques');
 console.log('   - Aucun risque de conflit lors du pairing\n');
 
-console.log('💡 ANALYSE:');
+console.log(' ANALYSE:');
 console.log('   Le nettoyage a peut-être été TROP conservateur');
 console.log('   Il est CORRECT qu\'un manufacturerName soit partagé SI:');
 console.log('      - Les productIds sont différents');
 console.log('      - Les devices sont des variants (ex: TS0041 dans button_wireless_1 ET switch_1gang)');
 console.log('   Cela permet de détecter correctement les devices multi-fonctions\n');
 
-console.log('🎯 RECOMMANDATION:');
+console.log(' RECOMMANDATION:');
 console.log('   L\'état actuel est SÉCURITAIRE mais peut-être SUR-OPTIMISÉ');
 console.log('   Les productIds assurent la distinction entre devices');
 console.log('   Pas besoin de restaurer les manufacturer names supprimés SAUF si:');

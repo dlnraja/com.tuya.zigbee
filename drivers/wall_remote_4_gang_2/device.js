@@ -9,7 +9,7 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 class wall_remote_4_gang_2 extends TuyaZigbeeDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('🎨 Initializing 4 Gang Wall Remote (Type 2)...');
+    this.log(' Initializing 4 Gang Wall Remote (Type 2)...');
     
     // Call parent to setup raw frame fallbacks
     await super.onNodeInit({ zclNode });
@@ -20,7 +20,7 @@ class wall_remote_4_gang_2 extends TuyaZigbeeDevice {
       });
     }
     
-    this.log('✅ Remote Initialized');
+    this.log(' Remote Initialized');
   }
 
   /**

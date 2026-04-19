@@ -2,14 +2,7 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.570: CRITICAL FIX - Flow card run listeners were missing
- */
 class TuyaZigbeeDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -19,153 +12,101 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     }
   }
 
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
-
-
-
-
-
-    this.log('Tuya Zigbee 2-Gang Switch Driver v5.5.570 initialized');
+    this.log('Tuya Zigbee 2-Gang Switch Driver initialized');
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
   _registerFlowCards() {
+    const P = 'switch_2gang';
+    const gangs = ['gang1', 'gang2'];
+    
+    // TRIGGERS (Ensure they are accessible)
+    gangs.forEach(gang => {
+      ['turned_on', 'turned_off', 'physical_on', 'physical_off', 'scene'].forEach(type => {
+        try {
+          const id = type === 'scene' ? `${P}_${gang}_scene` : 
+                    type.startsWith('physical') ? `${P}_physical_${gang}_${type.split('_')[1]}` :
+                    `${P}_${gang}_${type}`;
+          this.homey.flow.getTriggerCard(id);
+        } catch (e) {}
+      });
+    });
+
     // CONDITIONS
-    ['gang1', 'gang2'].forEach((gang, idx) => {
+    gangs.forEach((gang, idx) => {
       try {
-      (() => { try { return this.homey.flow.getConditionCard('switch_2gang_turn_on_all'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+        const id = `${P}_${gang}_is_on`;
+        const card = this.homey.flow.getConditionCard(id);
+        if (card) {
+          card.registerRunListener(async (args) => {
             if (!args.device) return false;
             const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
             return args.device.getCapabilityValue(cap) === true;
           });
-        this.log(`[FLOW] ✅ switch_2gang_${gang}_is_on`);
-      } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+        }
+      } catch (err) { this.error(`Condition ${gang} failed:`, err.message); }
     });
 
     // ACTIONS
-    ['gang1', 'gang2'].forEach((gang, idx) => {
+    gangs.forEach((gang, idx) => {
       try {
-      (() => { try { return this.homey.flow.getConditionCard('switch_2gang_turn_on_${gang}'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-            if (!args.device) return false;
-            const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
-            try { await args.device.triggerCapabilityListener(cap, true); } catch(e) {}
-            return true;
-          });
-        this.log(`[FLOW] ✅ Registered: ${id}`);
-      } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-      try {
-      (() => { try { return this.homey.flow.getConditionCard('switch_2gang_turn_off_${gang}'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-            if (!args.device) return false;
-            const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
-            try { await args.device.triggerCapabilityListener(cap, false); } catch(e) {}
-            return true;
-          });
-        this.log(`[FLOW] ✅ Registered: ${id}`);
-      } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-      // v5.5.906: Toggle actions
-      try {
-      (() => { try { return this.homey.flow.getConditionCard('switch_2gang_toggle_${gang}'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-            if (!args.device) return false;
-            const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
-            const current = args.device.getCapabilityValue(cap);
-            await args.device.setCapabilityValue(cap, !current);
-            return true;
-          });
-        this.log(`[FLOW] ✅ Registered: ${id}`);
-      } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+        const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
+        ['turn_on', 'turn_off', 'toggle'].forEach(action => {
+          try {
+            const id = `${P}_${action}_${gang}`;
+            const card = this.homey.flow.getActionCard(id);
+            if (card) {
+              card.registerRunListener(async (args) => {
+                if (!args.device) return false;
+                let val = action === 'turn_on' ? true : (action === 'turn_off' ? false : !args.device.getCapabilityValue(cap));
+                await args.device.triggerCapabilityListener(cap, val);
+                return true;
+              });
+            }
+          } catch (e) {}
+        });
+      } catch (err) { this.error(`Actions ${gang} failed:`, err.message); }
     });
 
-    // v5.5.906: All-gangs actions
-    try {
+    // All-gangs actions
+    ['turn_on_all', 'turn_off_all'].forEach(action => {
+      try {
+        const card = this.homey.flow.getActionCard(`${P}_${action}`);
+        if (card) {
+          card.registerRunListener(async (args) => {
+            if (!args.device) return false;
+            for (let i = 1; i <= 2; i++) {
+              const cap = i === 1 ? 'onoff' : `onoff.gang${i}`;
+              if (args.device.hasCapability(cap)) {
+                await args.device.triggerCapabilityListener(cap, action === 'turn_on_all').catch(() => {});
+              }
+            }
+            return true;
+          });
+        }
+      } catch (e) {}
+    });
 
-        .registerRunListener(async (args) => {
-          if (!args.device) return false;
-          await args.device._setGangOnOff(1, true).catch(() => {});
-          await args.device.setCapabilityValue('onoff', true).catch(() => {});
-          if (args.device.hasCapability('onoff.gang2')) {
-            await args.device.triggerCapabilityListener('onoff.gang2', true);
-          }
-          return true;
-        });
-      this.log('[FLOW] ✅ Registered: switch_2gang_turn_on_all');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    try {
-      (() => { try { return this.homey.flow.getConditionCard('switch_2gang_turn_off_all'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-          if (!args.device) return false;
-          await args.device._setGangOnOff(1, false).catch(() => {});
-          await args.device.setCapabilityValue('onoff', false).catch(() => {});
-          if (args.device.hasCapability('onoff.gang2')) {
-            await args.device.triggerCapabilityListener('onoff.gang2', false);
-          }
-          return true;
-        });
-      this.log('[FLOW] ✅ Registered: switch_2gang_turn_off_all');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    // v5.5.930: LED backlight flow cards
-    try {
-      (() => { try { return this.homey.flow.getActionCard('switch_2gang_set_backlight'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-          if (!args.device || !args.mode) return false;
-          await args.device.setBacklightMode(args.mode);
-          return true;
-        });
-      this.log('[FLOW] ✅ Registered: switch_2gang_set_backlight');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    try {
-      (() => { try { return this.homey.flow.getActionCard('switch_2gang_set_backlight_color'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-          if (!args.device || !args.state || !args.color) return false;
-          await args.device.setBacklightColor(args.state, args.color);
-          return true;
-        });
-      this.log('[FLOW] ✅ Registered: switch_2gang_set_backlight_color');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    try {
-      (() => { try { return this.homey.flow.getActionCard('switch_2gang_set_backlight_brightness'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-          if (!args.device || args.brightness === undefined) return false;
-          await args.device.setBacklightBrightness(args.brightness);
-          return true;
-        });
-      this.log('[FLOW] ✅ Registered: switch_2gang_set_backlight_brightness');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    this.log('[FLOW] Scene mode setup');
-    // v5.12.5: Scene mode action
-    try {
-
-        .registerRunListener(async (args) => {
-          if (!args.device) return false;
-          await args.device.setSceneMode(args.mode);
-          return true;
-        });
-      this.log('[FLOW] \u2705 switch_2gang_set_scene_mode');
-    } catch (err) { this.log('[FLOW] \u26A0\uFE0F ' + err.message); }
-
-    this.log('[FLOW] 2-Gang switch flow cards registered (v5.5.930)');
+    // SETTINGS ACTIONS
+    [{ id: 'set_backlight', fn: 'setBacklightMode' }, { id: 'set_scene_mode', fn: 'setSceneMode' }].forEach(act => {
+      try {
+        const card = this.homey.flow.getActionCard(`${P}_${act.id}`);
+        if (card) {
+          card.registerRunListener(async (args) => {
+            if (!args.device) return false;
+            if (typeof args.device[act.fn] === 'function') {
+              await args.device[act.fn](args.mode || args.value);
+              return true;
+            }
+            return false;
+          });
+        }
+      } catch (err) { this.error(`Action ${act.id} failed:`, err.message); }
+    });
   }
 }
 

@@ -1,6 +1,6 @@
 const { safeDivide, safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
-// Core Reimplementation MCP Server v3 — talks to the Electron app over TCP IPC
+// Core Reimplementation MCP Server v3  talks to the Electron app over TCP IPC
 
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
@@ -1192,16 +1192,16 @@ server.tool(
             names.forEach((name, i) => {
                 const response = results[i];
                 const label = name.charAt(0).toUpperCase() + name.slice(1);
-                const divider = '═'.repeat(60);
+                const divider = ''.repeat(60);
                 if (response && response.error) {
-                    sections.push(`\n${divider}\n## ${label} Response\n${divider}\n\n❌ Error: ${response.error}\n`);
+                    sections.push(`\n${divider}\n## ${label} Response\n${divider}\n\n Error: ${response.error}\n`);
                 } else {
                     const text = typeof response === 'string' ? response : (response?.response || response?.text || JSON.stringify(response));
                     sections.push(`\n${divider}\n## ${label} Response\n${divider}\n\n${text}\n`);
                 }
             });
 
-            const formattedOutput = `# Ask All AIs — ${names.length} Providers\n` + sections.join('\n');
+            const formattedOutput = `# Ask All AIs  ${names.length} Providers\n` + sections.join('\n');
 
             return toolResponse(formattedOutput);
         } catch (err) {
@@ -1238,16 +1238,16 @@ server.tool(
             const sections = [];
             for (const [name, response] of Object.entries(results)) {
                 const label = name.charAt(0).toUpperCase() + name.slice(1);
-                const divider = '═'.repeat(60);
+                const divider = ''.repeat(60);
                 if (response && response.error) {
-                    sections.push(`\n${divider}\n## ${label} Response\n${divider}\n\n❌ Error: ${response.error}\n`);
+                    sections.push(`\n${divider}\n## ${label} Response\n${divider}\n\n Error: ${response.error}\n`);
                 } else {
                     const text = typeof response === 'string' ? response : (response?.response || response?.text || JSON.stringify(response));
                     sections.push(`\n${divider}\n## ${label} Response\n${divider}\n\n${text}\n`);
                 }
             }
 
-            const formattedOutput = `# AI Comparison — ${useProviders.length} Providers\nQuestion: ${question}\n` + sections.join('\n');
+            const formattedOutput = `# AI Comparison  ${useProviders.length} Providers\nQuestion: ${question}\n` + sections.join('\n');
 
             return toolResponse(formattedOutput);
         } catch (err) {

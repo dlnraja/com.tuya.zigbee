@@ -56,10 +56,10 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
     }
 
     this.log('');
-    this.log('╔═══════════════════════════════════════════════════════════════════╗');
-    this.log('║      GENERIC TUYA TS0601 - AUTO-ADAPTIVE v5.3.57                  ║');
-    this.log('║      🔄 Dynamic Capability + Flow Card System                     ║');
-    this.log('╚═══════════════════════════════════════════════════════════════════╝');
+    this.log('');
+    this.log('      GENERIC TUYA TS0601 - AUTO-ADAPTIVE v5.3.57                  ');
+    this.log('       Dynamic Capability + Flow Card System                     ');
+    this.log('');
 
     // Mark as unknown device for special handling
     await this.setStoreValue('tuya_unknown', true).catch(() => { });
@@ -91,11 +91,11 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
 
     // Log auto-adaptive status
     const status = this.getAutoAdaptiveStatus();
-    this.log('[GENERIC] 🔄 Auto-Adaptive Status:');
+    this.log('[GENERIC]  Auto-Adaptive Status:');
     this.log(`[GENERIC]    Discovered DPs: ${status.discoveries.length}`);
     this.log(`[GENERIC]    Capabilities: ${status.capabilities.join(', ')}`);
 
-    this.log('[GENERIC] ✅ Initialization complete - auto-adapting to device data');
+    this.log('[GENERIC]  Initialization complete - auto-adapting to device data');
   }
 
   /**
@@ -103,7 +103,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
    */
   async _handleDeviceSpecificDP(dpId, value, mapping) {
     // Log discovery for unknown devices
-    this.log(`[GENERIC] 📊 DP${dpId} → ${mapping.capability} = ${value}`);
+    this.log(`[GENERIC]  DP${dpId}  ${mapping.capability} = ${value}`);
 
     // Store discovery timestamp
     await this.setStoreValue(`dp_${dpId}_discovered`, Date.now()).catch(() => { });
@@ -165,7 +165,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
   async _handleDiscoveredDP(data) {
     const { dp, value, type } = data;
 
-    this.log(`[GENERIC] 📦 Discovered DP${dp} = ${JSON.stringify(value)} (type: ${type})`);
+    this.log(`[GENERIC]  Discovered DP${dp} = ${JSON.stringify(value)} (type: ${type})`);
 
     // Track the DP
     this._discoveredDPs.set(dp, {
@@ -222,7 +222,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
 
     const mapping = DP_MAP[dp];
     if (!mapping) {
-      this.log(`[GENERIC] ℹ️ Unknown DP${dp} - stored for analysis (CONFIDENCE: 2)`);
+      this.log(`[GENERIC]  Unknown DP${dp} - stored for analysis (CONFIDENCE: 2)`);
       await this.setStoreValue(`unknown_dp_${dp}`, { value, type, timestamp: Date.now() }).catch(() => { });
       return;
     }
@@ -232,7 +232,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
 
     // Add capability if missing
     if (!this.hasCapability(capability)) {
-      this.log(`[GENERIC] ➕ Adding capability ${capability} (CONFIDENCE: ${confidence} - ${confidenceLabel})`);
+      this.log(`[GENERIC]  Adding capability ${capability} (CONFIDENCE: ${confidence} - ${confidenceLabel})`);
       await this.addCapability(capability).catch(err => {
         this.error(`[GENERIC] Cannot add ${capability}:`, err.message);
         return;
@@ -243,7 +243,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
     try {
       const parsedValue = parser(value);
       await this.setCapabilityValue(capability, parsedValue);
-      this.log(`[GENERIC] ✅ DP${dp} → ${capability} = ${parsedValue} (CONFIDENCE: ${confidence})`);
+      this.log(`[GENERIC]  DP${dp}  ${capability} = ${parsedValue} (CONFIDENCE: ${confidence})`);
 
       // Emit event for flow triggers
       this._getFlowCard(`generic_tuya_${capability}_changed`) ?.trigger(this, {
@@ -268,7 +268,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
     // Common DPs to query
     const commonDPs = [1, 2, 3, 4, 5, 10, 14, 15, 101, 102, 247];
 
-    this.log(`[GENERIC] 🔍 Requesting common DPs: [${commonDPs.join(', ')}]`);
+    this.log(`[GENERIC]  Requesting common DPs: [${commonDPs.join(', ')}]`);
 
     for (const dp of commonDPs) {
       try {
@@ -280,7 +280,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       }
     }
 
-    this.log('[GENERIC] ✅ DP discovery requests sent');
+    this.log('[GENERIC]  DP discovery requests sent');
   }
 
   /**

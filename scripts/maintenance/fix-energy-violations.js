@@ -22,7 +22,7 @@ driversToFix.forEach(driverId => {
     if (!compose.energy) {
       compose.energy = { cumulative: true };
       fs.writeFileSync(composePath, JSON.stringify(compose, null, 2));
-      console.log(`✅ Fixed energy object in ${driverId}`);
+      console.log(` Fixed energy object in ${driverId}`);
     }
   }
 });

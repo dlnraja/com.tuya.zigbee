@@ -52,7 +52,7 @@ function fixBrokenCode(filePath) {
 
     if (content !== original) {
         fs.writeFileSync(filePath, content);
-        console.log(`✅ Repaired: ${path.relative(DRIVERS_DIR, filePath)}`);
+        console.log(` Repaired: ${path.relative(DRIVERS_DIR, filePath)}`);
         return true;
     }
     return false;
@@ -77,6 +77,6 @@ function scanDir(dir) {
     return repairedCounter;
 }
 
-console.log('🚀 Starting Fleet-wide IIFE Repair V2...');
+console.log(' Starting Fleet-wide IIFE Repair V2...');
 const totalRepaired = scanDir(DRIVERS_DIR);
-console.log(`\n🎉 Repair complete! Total files fixed: ${totalRepaired}`);
+console.log(`\n Repair complete! Total files fixed: ${totalRepaired}`);

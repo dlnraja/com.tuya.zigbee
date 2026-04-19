@@ -200,7 +200,7 @@ function createHybridDriver() {
     }
   }
 
-  console.log('\n✅ Collision resolution complete!');
+  console.log('\n Collision resolution complete!');
 }
 
 createHybridDriver();

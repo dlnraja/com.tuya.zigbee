@@ -30,7 +30,7 @@ class CeilingFanDevice extends UnifiedLightBase {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    await super.onNodeInit({ zclNode });this.log('[FAN] ✅ Ready');
+    await super.onNodeInit({ zclNode });this.log('[FAN]  Ready');
   }
 
 

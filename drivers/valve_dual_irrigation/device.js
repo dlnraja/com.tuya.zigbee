@@ -3,13 +3,13 @@
 const BaseUnifiedDevice = require('../../lib/devices/BaseUnifiedDevice');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      DUAL IRRIGATION VALVE - Unified Engine Protocol                         ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Supports: _TZE284_fhvpaltk, _TZE284_eaet5qt5 (Insoma Two-Way)                ║
- * ║  DPs: 1=V1 ON/OFF, 2=V2 ON/OFF, 13=Countdown1, 14=Countdown2,                 ║
- * ║       25=Duration1, 26=Duration2, 59=Battery, 104=Status1, 105=Status2        ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       DUAL IRRIGATION VALVE - Unified Engine Protocol                         
+ * 
+ *   Supports: _TZE284_fhvpaltk, _TZE284_eaet5qt5 (Insoma Two-Way)                
+ *   DPs: 1=V1 ON/OFF, 2=V2 ON/OFF, 13=Countdown1, 14=Countdown2,                 
+ *        25=Duration1, 26=Duration2, 59=Battery, 104=Status1, 105=Status2        
+ * 
  */
 class ValveDualIrrigationDevice extends BaseUnifiedDevice {
 
@@ -49,7 +49,7 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
       await this.sendDP(2, value ? true : false, 'bool');
     });
 
-    this.log('[VALVE-2] ✅ Ready (Dual Engine v7.4.4)');
+    this.log('[VALVE-2]  Ready (Dual Engine v7.4.4)');
   }
 
   // Override sendDP to ensure tuyaEF00Manager is used
@@ -57,7 +57,7 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
     if (this.tuyaEF00Manager) {
       return this.tuyaEF00Manager.sendDP(dp, value, type);
     }
-    this.error('[VALVE-2] ❌ Error: tuyaEF00Manager not initialized');
+    this.error('[VALVE-2]  Error: tuyaEF00Manager not initialized');
     throw new Error('tuya_manager_not_found');
   }
 }

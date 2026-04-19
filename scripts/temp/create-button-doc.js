@@ -128,7 +128,7 @@ const ZCL_ONLY_MANUFACTURERS_2G = [
 ### Hybrid Mode
 - Supports BOTH ZCL and Tuya DP
 - ProtocolAutoOptimizer decides best path
-- Fallback chain: ZCL → Tuya DP → Direct value set
+- Fallback chain: ZCL  Tuya DP  Direct value set
 
 ## Common Issues & Solutions
 
@@ -165,4 +165,4 @@ const ZCL_ONLY_MANUFACTURERS_2G = [
 `;
 
 fs.writeFileSync('docs/BIDIRECTIONAL_BUTTONS.md', doc);
-console.log('✅ Created docs/BIDIRECTIONAL_BUTTONS.md');
+console.log(' Created docs/BIDIRECTIONAL_BUTTONS.md');

@@ -13,7 +13,7 @@ const path = require('path');
 const ROOT = process.cwd();
 
 async function main() {
-    console.log('🚀 Starting Zero-Defect Integrity Restoration...');
+    console.log(' Starting Zero-Defect Integrity Restoration...');
 
     const walk = (dir) => {
         const files = fs.readdirSync(dir);
@@ -30,7 +30,7 @@ async function main() {
 
     walk(ROOT);
 
-    console.log('\n✅ Integrity Restoration Complete.');
+    console.log('\n Integrity Restoration Complete.');
 }
 
 function restoreFile(filePath) {

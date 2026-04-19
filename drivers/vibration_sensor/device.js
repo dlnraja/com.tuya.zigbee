@@ -53,7 +53,7 @@ class VibrationSensorDevice extends UnifiedSensorBase {
       await this.removeCapability('alarm_generic.vibration').catch(() => {});
       if (!this.hasCapability('alarm_vibration')) await this.addCapability('alarm_vibration').catch(() => {});
       if (v != null) await this.setCapabilityValue('alarm_vibration', v).catch(() => {});
-      this.log('[VIBRATION] Migrated alarm_generic.vibration → alarm_vibration');
+      this.log('[VIBRATION] Migrated alarm_generic.vibration  alarm_vibration');
     }
     await this.removeCapability('alarm_motion').catch(() => {});
     await this.removeCapability('alarm_generic').catch(() => {});
@@ -62,7 +62,7 @@ class VibrationSensorDevice extends UnifiedSensorBase {
 
     await super.onNodeInit({ zclNode });
     this._registerCapabilityListeners(); // rule-12a injected
-    this.log('[VIBRATION] ✅ Vibration sensor v5.11.47 ready');
+    this.log('[VIBRATION]  Vibration sensor v5.11.47 ready');
   }
 
 

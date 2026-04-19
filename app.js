@@ -6,7 +6,7 @@ const { safeDivide, safeMultiply, safeParse } = require('./lib/utils/tuyaUtils.j
 // { { balancing for validator
 
 // v5.11.185: Suppress punycode DEP0040 deprecation from transitive deps
-// (whatwg-url@5/tr46@0.0.3 via node-fetch@2 — not our code)
+// (whatwg-url@5/tr46@0.0.3 via node-fetch@2  not our code)
 require('./lib/suppress-punycode');
 
 // v5.8.25: Patch color-space module to fix Homey sandbox require('./rgb') error
@@ -38,13 +38,13 @@ const DeviceIdentificationDatabase = require('./lib/helpers/DeviceIdentification
 const DiagnosticAPI = require('./lib/diagnostics/DiagnosticAPI');
 const { LogBuffer } = require('./lib/utils/LogBuffer');
 const SuggestionEngine = require('./lib/smartadapt/SuggestionEngine');
-const { processMigrationQueue } = require('./lib/utils/migration-queue'); // ✅ FIX CRITIQUE
-const OTAUpdateManager = require('./lib/ota/OTAUpdateManager'); // 📦 OTA Firmware Updates
-const QuirksDatabase = require('./lib/quirks/QuirksDatabase'); // 🔧 Device Quirks
-const EmergencyDeviceFix = require('./lib/emergency/EmergencyDeviceFix'); // 🚨 Emergency Fix System
+const { processMigrationQueue } = require('./lib/utils/migration-queue'); //  FIX CRITIQUE
+const OTAUpdateManager = require('./lib/ota/OTAUpdateManager'); //  OTA Firmware Updates
+const QuirksDatabase = require('./lib/quirks/QuirksDatabase'); //  Device Quirks
+const EmergencyDeviceFix = require('./lib/emergency/EmergencyDeviceFix'); //  Emergency Fix System
 // NOTE: Database updates are handled by GitHub Actions ONLY, NOT at runtime
 // See: .github / workflows/MASTER-intelligent-enrichment.yml
-const SourceCredits = require('./lib/data / SourceCredits'); // 📜 Source attributions
+const SourceCredits = require('./lib/data / SourceCredits'); //  Source attributions
 const TuyaUDPDiscovery = require('./lib/tuya-local/TuyaUDPDiscovery');
 
 class UniversalTuyaZigbeeApp extends Homey.App {
@@ -57,16 +57,16 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   unknownHandler = null;
   systemLogsCollector = null;
   identificationDatabase = null;
-  diagnosticAPI = null; // 🔬For MCP/AI integration
-  logBuffer = null; // 📝 MCP-accessible log buffer
-  suggestionEngine = null; // 🤖 Non-destructive Smart-Adapt
-  otaManager = null; // 📦 OTA Firmware Update Manager
-  quirksDatabase = null; // 🔧 Device Quirks Database
-  _tuyaUDPDiscovery = null; // 📡 Tuya WiFi UDP Discovery
+  diagnosticAPI = null; // For MCP/AI integration
+  logBuffer = null; //  MCP-accessible log buffer
+  suggestionEngine = null; //  Non-destructive Smart-Adapt
+  otaManager = null; //  OTA Firmware Update Manager
+  quirksDatabase = null; //  Device Quirks Database
+  _tuyaUDPDiscovery = null; //  Tuya WiFi UDP Discovery
   // NOTE: Database updates handled by GitHub Actions, not at runtime
-  developerDebugMode = false; // 🔍 AUDIT V2: Contrôle verbosity logs
-  experimentalSmartAdapt = false; // ⚠️ AUDIT V2: Modifications capabilities opt-in
-  experimentalCloudMirror = false; // 🪞 v7.0.22: Zigbee-to-Cloud mirroring opt-in
+  developerDebugMode = false; //  AUDIT V2: Contrôle verbosity logs
+  experimentalSmartAdapt = false; //  AUDIT V2: Modifications capabilities opt-in
+  experimentalCloudMirror = false; //  v7.0.22: Zigbee-to-Cloud mirroring opt-in
 
 
   /**
@@ -80,12 +80,12 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     try {
       const card = this.homey.flow.getTriggerCard(id);
       if (!card) {
-        this.log(`[FLOW-SAFE] ⚠️ Trigger card not found: ${id}`);
+        this.log(`[FLOW-SAFE]  Trigger card not found: ${id}`);
         return null;
       }
       return card;
     } catch (e) {
-      this.log(`[FLOW-SAFE] ❌ getTriggerCard crashed for ${id}: ${e.message}`);
+      this.log(`[FLOW-SAFE]  getTriggerCard crashed for ${id}: ${e.message}`);
       return null;
     }
   }
@@ -97,12 +97,12 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     try {
       const card = this.homey.flow.getConditionCard(id);
       if (!card) {
-        this.log(`[FLOW-SAFE] ⚠️ Condition card not found: ${id}`);
+        this.log(`[FLOW-SAFE]  Condition card not found: ${id}`);
         return null;
       }
       return card;
     } catch (e) {
-      this.log(`[FLOW-SAFE] ❌ getConditionCard crashed for ${id}: ${e.message}`);
+      this.log(`[FLOW-SAFE]  getConditionCard crashed for ${id}: ${e.message}`);
       return null;
     }
   }
@@ -114,12 +114,12 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     try {
       const card = this.homey.flow.getActionCard(id);
       if (!card) {
-        this.log(`[FLOW-SAFE] ⚠️ Action card not found: ${id}`);
+        this.log(`[FLOW-SAFE]  Action card not found: ${id}`);
         return null;
       }
       return card;
     } catch (e) {
-      this.log(`[FLOW-SAFE] ❌ getActionCard crashed for ${id}: ${e.message}`);
+      this.log(`[FLOW-SAFE]  getActionCard crashed for ${id}: ${e.message}`);
       return null;
     }
   }
@@ -140,72 +140,72 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
     this.initStartTime = Date.now();
     if (this._flowCardsRegistered) {
-      this.log('⏭️  Flow cards already registered');
+      this.log('  Flow cards already registered');
       return;
     }
 
     this._flowCardsRegistered = true;
 
     this.log('Universal Tuya Zigbee App is initializing...');
-    this.log(`📊 Mode: ${this.developerDebugMode ? 'DEVELOPER (verbose)' : 'PRODUCTION (minimal logs)'}`);
-    this.log(`🤖 Smart-Adapt: ${this.experimentalSmartAdapt ? 'EXPERIMENTAL (modifies)' : 'READ-ONLY (safe)'}`);
-    this.log(`🪞 Cloud Mirror: ${this.experimentalCloudMirror ? 'ENABLED (experimental)' : 'DISABLED (safe-local)'}`);
-    this.log(`🔧 MaxListeners: ${EventEmitter.defaultMaxListeners} (prevents warnings with many devices)`);
+    this.log(` Mode: ${this.developerDebugMode ? 'DEVELOPER (verbose)' : 'PRODUCTION (minimal logs)'}`);
+    this.log(` Smart-Adapt: ${this.experimentalSmartAdapt ? 'EXPERIMENTAL (modifies)' : 'READ-ONLY (safe)'}`);
+    this.log(` Cloud Mirror: ${this.experimentalCloudMirror ? 'ENABLED (experimental)' : 'DISABLED (safe-local)'}`);
+    this.log(` MaxListeners: ${EventEmitter.defaultMaxListeners} (prevents warnings with many devices)`);
 
     // Initialize CapabilityManager for safe capability creation
     this.capabilityManager = new CapabilityManager(this.homey);
-    this.log('✅ CapabilityManager initialized');
+    this.log(' CapabilityManager initialized');
 
     // v7.0.22: Initialize Shadow-Pulsar singleton
     const TuyaShadowPulsar = require('./lib/tuya-local/TuyaShadowPulsar');
     TuyaShadowPulsar.setEnabled(this.experimentalCloudMirror);
 
-    // 🤖 Initialize Intelligent Device Identification Database
+    //  Initialize Intelligent Device Identification Database
     // Scans ALL drivers and builds comprehensive ID database
     this.identificationDatabase = new DeviceIdentificationDatabase(this.homey);
     try {
       await this.identificationDatabase.buildDatabase();
-      this.log('✅ Intelligent Device Identification Database built');
+      this.log(' Intelligent Device Identification Database built');
     } catch (err) {
-      this.error('⚠️ Device ID Database build failed (non-critical):', err.message);
+      this.error(' Device ID Database build failed (non-critical):', err.message);
     }
 
     // CRITICAL: Register custom Zigbee clusters FIRST
     // This must happen before any devices initialize
     try {
       registerCustomClusters(this);
-      this.log('✅ Custom Zigbee clusters registered');
+      this.log(' Custom Zigbee clusters registered');
     } catch (err) {
-      this.error('❌ Failed to register custom clusters:', err);
+      this.error(' Failed to register custom clusters:', err);
     }
 
     // Register ALL flow cards (+33 nouveaux!)
     try {
       this.flowCardManager = new FlowCardManager(this.homey);
       this.flowCardManager.registerAll();
-      this.log('✅ Flow cards registered (+33 nouveaux)');
+      this.log(' Flow cards registered (+33 nouveaux)');
     } catch (err) {
-      this.error('⚠️ FlowCardManager failed (non-critical):', err.message);
+      this.error(' FlowCardManager failed (non-critical):', err.message);
     }
 
     // v5.5.597: Universal Flow Card Loader for sub-capabilities and generic DP
     try {
       this.universalFlowLoader = new UniversalFlowCardLoader(this.homey);
       await this.universalFlowLoader.initialize();
-      this.log('✅ Universal Flow Card Loader initialized (sub-capabilities + DP)');
+      this.log(' Universal Flow Card Loader initialized (sub-capabilities + DP)');
     } catch (err) {
-      this.error('⚠️ Universal Flow Loader failed (non-critical):', err.message);
+      this.error(' Universal Flow Loader failed (non-critical):', err.message);
     }
 
-    // 🚀 v7.0.22: Sub-manager initialization (Parallelized for Performance)
+    //  v7.0.22: Sub-manager initialization (Parallelized for Performance)
     const initTasks = [
       // Advanced Analytics
       (async () => {
         try {
           this.analytics = new AdvancedAnalytics(this.homey);
           await this.analytics.initialize();
-          this.log('✅ Advanced Analytics initialized');
-        } catch (err) { this.error('⚠️ Analytics failed:', err.message); }
+          this.log(' Advanced Analytics initialized');
+        } catch (err) { this.error(' Analytics failed:', err.message); }
       })(),
 
       // Smart Device Discovery
@@ -213,8 +213,8 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         try {
           this.discovery = new SmartDeviceDiscovery(this.homey);
           await this.discovery.initialize();
-          this.log('✅ Smart Device Discovery initialized');
-        } catch (err) { this.error('⚠️ Discovery failed:', err.message); }
+          this.log(' Smart Device Discovery initialized');
+        } catch (err) { this.error(' Discovery failed:', err.message); }
       })(),
 
       // Performance Optimizer
@@ -224,8 +224,8 @@ class UniversalTuyaZigbeeApp extends Homey.App {
             maxCacheSize: 1000,
             maxCacheMemory:safeMultiply(10, 1024) * 1024 // 10 MB
           });
-          this.log('✅ Performance Optimizer initialized');
-        } catch (err) { this.error('⚠️ Optimizer failed:', err.message); }
+          this.log(' Performance Optimizer initialized');
+        } catch (err) { this.error(' Optimizer failed:', err.message); }
       })(),
 
       // Diagnostic & Logs (Safe to run in parallel)
@@ -235,8 +235,8 @@ class UniversalTuyaZigbeeApp extends Homey.App {
           this.systemLogsCollector = new SystemLogsCollector(this.homey);
           this.diagnosticAPI = new DiagnosticAPI(this);
           this.logBuffer = new LogBuffer(this.homey);
-          this.log('✅ Diagnostic Suite initialized');
-        } catch (err) { this.error('⚠️ Diagnostic Suite failed:', err.message); }
+          this.log(' Diagnostic Suite initialized');
+        } catch (err) { this.error(' Diagnostic Suite failed:', err.message); }
       })(),
 
       // OTA & Quirks
@@ -244,46 +244,46 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         try {
           this.otaManager = new OTAUpdateManager(this.homey);
           this.quirksDatabase = QuirksDatabase;
-          this.log('✅ OTA & Quirks initialized');
-        } catch (err) { this.error('⚠️ OTA/Quirks failed:', err.message); }
+          this.log(' OTA & Quirks initialized');
+        } catch (err) { this.error(' OTA/Quirks failed:', err.message); }
       })()
     ];
 
     // Wait for all non-critical init tasks
     Promise.all(initTasks).then(() => {
       const startupTime = ((Date.now() - (this.initStartTime || Date.now())) / 1000).toFixed(2);
-      this.log(`🚀 All auxiliary managers initialized in ${startupTime}s`);
+      this.log(` All auxiliary managers initialized in ${startupTime}s`);
     }).catch(err => {
-      this.error('⚠️ Parallel initialization error:', err.message);
+      this.error(' Parallel initialization error:', err.message);
     });
 
-    // 🤖 Initialize SuggestionEngine for non-destructive Smart-Adapt (Needs LogBuffer)
+    //  Initialize SuggestionEngine for non-destructive Smart-Adapt (Needs LogBuffer)
     try {
       this.suggestionEngine = new SuggestionEngine(this.homey, this.logBuffer);
-      this.log('✅ SuggestionEngine initialized');
-    } catch (err) { this.error('⚠️ SuggestionEngine failed:', err.message); }
+      this.log(' SuggestionEngine initialized');
+    } catch (err) { this.error(' SuggestionEngine failed:', err.message); }
 
-    // 📜 Database updates handled by GitHub Actions ONLY (not at runtime)
+    //  Database updates handled by GitHub Actions ONLY (not at runtime)
     // See: .github / workflows/MASTER-intelligent-enrichment.yml (weekly)
     // See: .github / workflows/AUTO-discover-new-devices.yml (daily)
     try {
-      this.log(`📜 Data sources: ${SourceCredits.getAllSources().length} contributors credited`);
-    } catch (err) { this.error('⚠️ SourceCredits failed:', err.message); }
-    this.log('ℹ️ Database updates: GitHub Actions only (no runtime fetches)');
+      this.log(` Data sources: ${SourceCredits.getAllSources().length} contributors credited`);
+    } catch (err) { this.error(' SourceCredits failed:', err.message); }
+    this.log(' Database updates: GitHub Actions only (no runtime fetches)');
 
-    // 🔧 Initialize Quirks Database
+    //  Initialize Quirks Database
     try {
       this.quirksDatabase = QuirksDatabase;
-      this.log('✅ Quirks Database initialized');
-    } catch (err) { this.error('⚠️ Quirks failed:', err.message); }
+      this.log(' Quirks Database initialized');
+    } catch (err) { this.error(' Quirks failed:', err.message); }
 
-    // 📡 Initialize Tuya WiFi UDP Discovery
+    //  Initialize Tuya WiFi UDP Discovery
     try {
       this._tuyaUDPDiscovery = new TuyaUDPDiscovery({ log: this.log.bind(this) });
       await this._tuyaUDPDiscovery.start();
-      this.log('✅ Tuya WiFi UDP Discovery started (ports 6666/6667)');
+      this.log(' Tuya WiFi UDP Discovery started (ports 6666/6667)');
     } catch (err) {
-      this.log('⚠️ Tuya UDP Discovery failed (non-critical):', err.message);
+      this.log(' Tuya UDP Discovery failed (non-critical):', err.message);
     }
 
     // DISABLED: SDK3 doesn't allow overriding this.log (read-only property)
@@ -292,8 +292,8 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
     // v5.8.45: Removed registerFlowCards() and registerOTAFlowCards()
     // All 87+ phantom flow card registrations were never defined in app.json
-    // DP/sub-capability cards → UniversalFlowCardLoader
-    // Switch/plug cards → FlowCardManager
+    // DP/sub-capability cards  UniversalFlowCardLoader
+    // Switch/plug cards  FlowCardManager
 
     // v5.8.46: Manual OTA Checker action card
     try {
@@ -320,23 +320,23 @@ class UniversalTuyaZigbeeApp extends Homey.App {
           return false;
         }
       });
-      this.log('✅ Registered OTA Update Manual Check flow card');
+      this.log(' Registered OTA Update Manual Check flow card');
     } catch (err) {
-      this.error('⚠️ Could not register OTA check card:', err.message);
+      this.error(' Could not register OTA check card:', err.message);
     }
 
     // Initialize Homey Insights
     try {
       await this.initializeInsights();
-    } catch (err) { this.error('⚠️ Insights failed:', err.message); }
+    } catch (err) { this.error(' Insights failed:', err.message); }
 
-    this.log('✅ Universal Tuya Zigbee App has been initialized');
-    this.log('🚀 Advanced systems: Analytics, Discovery, Performance, OTA, Quirks, System Logs, Intelligent ID Database');
+    this.log(' Universal Tuya Zigbee App has been initialized');
+    this.log(' Advanced systems: Analytics, Discovery, Performance, OTA, Quirks, System Logs, Intelligent ID Database');
 
     // Log capability stats
     try {
       const stats = this.capabilityManager?.getStats() || {};
-      this.log(`📊 Capabilities managed: ${stats.created || 0}`);
+      this.log(` Capabilities managed: ${stats.created || 0}`);
     } catch (err) { /* non-critical */ }
 
     // v5.3.63: Scan for phantom sub-devices and mark them unavailable
@@ -345,8 +345,8 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     // v5.3.68: Clear old migration queue on startup (prevents notification spam)
     this._clearMigrationQueue();
 
-    // ✅ FIX CRITIQUE: Worker migration queue (60s delay) - DISABLED in v5.3.68
-    // Migration notifications were confusing users with "undefined → soil_sensor"
+    //  FIX CRITIQUE: Worker migration queue (60s delay) - DISABLED in v5.3.68
+    // Migration notifications were confusing users with "undefined  soil_sensor"
     // Users should delete phantom devices manually instead
     /*
     setTimeout(() => {
@@ -363,7 +363,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   async _clearMigrationQueue() {
     try {
       await this.homey.settings.set('__migration_queue__', []);
-      this.log('[MIGRATION] ✅ Migration queue cleared');
+      this.log('[MIGRATION]  Migration queue cleared');
     } catch (err) {
       this.log('[MIGRATION] Could not clear queue:', err.message);
     }
@@ -380,12 +380,12 @@ class UniversalTuyaZigbeeApp extends Homey.App {
       const deviceName = device?.getName?.() || 'Unknown';
       const subDeviceId = deviceData?.subDeviceId;
 
-      this.error(`[PHANTOM] ❌ Phantom device detected: "${deviceName}" (subDeviceId: ${subDeviceId})`);
-      this.error('[PHANTOM] ❌ SDK3 cannot delete devices programmatically!');
-      this.error('[PHANTOM] ❌ User must delete this device manually from Homey app');
+      this.error(`[PHANTOM]  Phantom device detected: "${deviceName}" (subDeviceId: ${subDeviceId})`);
+      this.error('[PHANTOM]  SDK3 cannot delete devices programmatically!');
+      this.error('[PHANTOM]  User must delete this device manually from Homey app');
 
       // Mark as unavailable with clear message
-      await device.setUnavailable('❌ PHANTOM - Supprimez manuellement dans l\'app Homey').catch(() => { });
+      await device.setUnavailable(' PHANTOM - Supprimez manuellement dans l\'app Homey').catch(() => { });
 
       return true;
     } catch (err) {
@@ -403,21 +403,21 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
   /**
    * Process migration queue worker
-   * ✅ FIX: Exécute les migrations en queue de manière sécurisée
+   *  FIX: Exécute les migrations en queue de manière sécurisée
    */
   async processMigrations() {
     try {
-      this.log('[MIGRATION-WORKER] 🔄 Starting...');
+      this.log('[MIGRATION-WORKER]  Starting...');
       const processed = await processMigrationQueue(this.homey);
-      this.log(`[MIGRATION-WORKER] ✅ Processed ${processed} migrations`);
+      this.log(`[MIGRATION-WORKER]  Processed ${processed} migrations`);
 
-      // 🚨 v5.2.30: Run emergency device fix after migrations
-      this.log('[EMERGENCY-FIX] 🚨 Running emergency device fixes...');
+      //  v5.2.30: Run emergency device fix after migrations
+      this.log('[EMERGENCY-FIX]  Running emergency device fixes...');
       const fixResults = await EmergencyDeviceFix.runAll(this.homey);
-      this.log(`[EMERGENCY-FIX] ✅ Fixed: migrations=${fixResults.migrationFixed}, devices=${fixResults.devicesFixed}, DPs=${fixResults.dpRequestsSent}`);
+      this.log(`[EMERGENCY-FIX]  Fixed: migrations=${fixResults.migrationFixed}, devices=${fixResults.devicesFixed}, DPs=${fixResults.dpRequestsSent}`);
 
     } catch (err) {
-      this.error('[MIGRATION-WORKER] ❌ Error:', err.message);
+      this.error('[MIGRATION-WORKER]  Error:', err.message);
     }
   }
 
@@ -427,7 +427,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
    */
   async _scanForPhantomDevices() {
     try {
-      this.log('[PHANTOM-SCAN] 🔍 Scanning for phantom sub-devices...');
+      this.log('[PHANTOM-SCAN]  Scanning for phantom sub-devices...');
 
       const drivers = this.homey.drivers.getDrivers();
       let phantomCount = 0;
@@ -466,12 +466,12 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
             if (hasSubDeviceId && isNoSubDeviceDriver) {
               phantomCount++;
-              this.log(`[PHANTOM-SCAN] ⚠️ PHANTOM: ${device.getName?.()} (subDeviceId: ${data.subDeviceId})`);
+              this.log(`[PHANTOM-SCAN]  PHANTOM: ${device.getName?.()} (subDeviceId: ${data.subDeviceId})`);
 
               // Mark as unavailable with clear message
               if (typeof device.setUnavailable === 'function') {
                 device.setUnavailable(
-                  `⚠️ Appareil fantôme (subDevice ${data.subDeviceId}). Supprimez cet appareil.`
+                  ` Appareil fantôme (subDevice ${data.subDeviceId}). Supprimez cet appareil.`
                 ).catch(() => { });
               }
             } else {
@@ -484,11 +484,11 @@ class UniversalTuyaZigbeeApp extends Homey.App {
       }
 
       if (phantomCount > 0) {
-        this.log(`[PHANTOM-SCAN] ⚠️ Found ${phantomCount} phantom devices - marked as unavailable`);
-        this.log(`[PHANTOM-SCAN] ✅ ${realCount} real devices OK`);
-        this.log(`[PHANTOM-SCAN] ℹ️ User should DELETE phantom devices from Homey app`);
+        this.log(`[PHANTOM-SCAN]  Found ${phantomCount} phantom devices - marked as unavailable`);
+        this.log(`[PHANTOM-SCAN]  ${realCount} real devices OK`);
+        this.log(`[PHANTOM-SCAN]  User should DELETE phantom devices from Homey app`);
       } else {
-        this.log(`[PHANTOM-SCAN] ✅ No phantom devices found (${realCount} devices OK)`);
+        this.log(`[PHANTOM-SCAN]  No phantom devices found (${realCount} devices OK)`);
       }
     } catch (err) {
       this.error('[PHANTOM-SCAN] Error:', err.message);
@@ -500,7 +500,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
    * This method is called by Homey when generating diagnostic reports
    */
   async onDiagnostic() {
-    this.log('📊 Generating diagnostic report with system logs...');
+    this.log(' Generating diagnostic report with system logs...');
 
     try {
       // Collect all system logs
@@ -514,28 +514,28 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         analytics: this.analytics ? await this.analytics.getAnalyticsReport() : {},
         performance: this.optimizer ? this.optimizer.getStats() : {},
         identificationDatabase: this.identificationDatabase ? this.identificationDatabase.getStats() : null,
-        diagnostics: this.diagnosticAPI ? this.diagnosticAPI.getFullReport(true) : null // 🔬MCP/AI data
+        diagnostics: this.diagnosticAPI ? this.diagnosticAPI.getFullReport(true) : null // MCP/AI data
       };
 
       // Combine everything
       const report = [
-        '═'.repeat(80),
-        '📊 UNIVERSAL TUYA ZIGBEE - COMPREHENSIVE DIAGNOSTIC REPORT',
-        '═'.repeat(80),
+        ''.repeat(80),
+        ' UNIVERSAL TUYA ZIGBEE - COMPREHENSIVE DIAGNOSTIC REPORT',
+        ''.repeat(80),
         '',
         `Generated: ${new Date().toISOString()}`,
         `App: ${appInfo.appId} v${appInfo.version}`,
         '',
-        '─'.repeat(80),
-        '📱 APP-SPECIFIC INFORMATION',
-        '─'.repeat(80),
+        ''.repeat(80),
+        ' APP-SPECIFIC INFORMATION',
+        ''.repeat(80),
         `Capabilities Created: ${appInfo.capabilities.created || 0}`,
         `Capabilities Cached: ${appInfo.capabilities.cached || 0}`,
         '',
         appInfo.identificationDatabase ? [
-          '─'.repeat(80),
-          '🤖 INTELLIGENT DEVICE IDENTIFICATION DATABASE',
-          '─'.repeat(80),
+          ''.repeat(80),
+          ' INTELLIGENT DEVICE IDENTIFICATION DATABASE',
+          ''.repeat(80),
           `Device Types: ${appInfo.identificationDatabase.deviceTypes || 0}`,
           `Total Manufacturer IDs: ${appInfo.identificationDatabase.totalManufacturerIds || 0}`,
           `Total Product IDs: ${appInfo.identificationDatabase.totalProductIds || 0}`,
@@ -544,9 +544,9 @@ class UniversalTuyaZigbeeApp extends Homey.App {
           ''
         ].join('\n') : '',
         appInfo.diagnostics ? [
-          '─'.repeat(80),
-          '🔬 DIAGNOSTIC API - MCP/AI INTEGRATION',
-          '─'.repeat(80),
+          ''.repeat(80),
+          ' DIAGNOSTIC API - MCP/AI INTEGRATION',
+          ''.repeat(80),
           `Total Logs: ${appInfo.diagnostics.diagnostics.summary.totalLogs || 0}`,
           `Total Errors: ${appInfo.diagnostics.diagnostics.summary.totalErrors || 0}`,
           `Total Devices: ${appInfo.diagnostics.diagnostics.summary.totalDevices || 0}`,
@@ -570,17 +570,17 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         ].join('\n') : '',
         systemLogsReport,
         '',
-        '═'.repeat(80),
+        ''.repeat(80),
         'END OF DIAGNOSTIC REPORT',
-        '═'.repeat(80)
+        ''.repeat(80)
       ].join('\n');
 
-      this.log('✅ Diagnostic report generated successfully');
+      this.log(' Diagnostic report generated successfully');
 
       return report;
 
     } catch (err) {
-      this.error('❌ Failed to generate diagnostic report:', err);
+      this.error(' Failed to generate diagnostic report:', err);
       return `Error generating diagnostic report: ${err.message}`;
     }
   }
@@ -653,9 +653,9 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         return String(hist[args.dp]) === String(args.value);
       });
 
-      this.log('✅ v5.12.2: Universal flow cards registered (10 cards)');
+      this.log(' v5.12.2: Universal flow cards registered (10 cards)');
     } catch (e) {
-      this.log('⚠️ Universal flow cards error: ' + e.message);
+      this.log(' Universal flow cards error: ' + e.message);
     }
   }
 
@@ -695,7 +695,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
       else if (message.includes('FLOW')) category = 'FLOW';
       else if (message.includes('BATTERY')) category = 'BATTERY';
 
-      if (message.includes('⚠️') || message.includes('WARN')) level = 'WARN';
+      if (message.includes('') || message.includes('WARN')) level = 'WARN';
 
       // Add to diagnostic API
       if (this.diagnosticAPI) {
@@ -797,7 +797,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
    * Initialize Homey Insights
    */
   async initializeInsights() {
-    this.log('📊 Initializing Homey Insights...');
+    this.log(' Initializing Homey Insights...');
 
     try {
       // Battery health insight
@@ -848,9 +848,9 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         decimals: 0
       }).catch(() => { });
 
-      this.log('✅ Homey Insights initialized (6 logs)');
+      this.log(' Homey Insights initialized (6 logs)');
     } catch (err) {
-      this.error('⚠️  Error initializing insights:', err.message);
+      this.error('  Error initializing insights:', err.message);
     }
   }
 
@@ -870,23 +870,23 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
       if (key === 'developer_debug_mode') {
         this.developerDebugMode = this.homey.settings.get('developer_debug_mode');
-        this.log(`🔍 [AUDIT V2] Developer Debug Mode: ${this.developerDebugMode ? 'ENABLED (verbose)' : 'DISABLED (minimal)'}`);
+        this.log(` [AUDIT V2] Developer Debug Mode: ${this.developerDebugMode ? 'ENABLED (verbose)' : 'DISABLED (minimal)'}`);
       }
 
       if (key === 'experimental_smart_adapt') {
         this.experimentalSmartAdapt = this.homey.settings.get('experimental_smart_adapt');
-        this.log(`🤖 [AUDIT V2] Experimental Smart-Adapt: ${this.experimentalSmartAdapt ? 'ENABLED (modifies capabilities)' : 'DISABLED (read-only)'}`);
+        this.log(` [AUDIT V2] Experimental Smart-Adapt: ${this.experimentalSmartAdapt ? 'ENABLED (modifies capabilities)' : 'DISABLED (read-only)'}`);
 
         // Warn user if enabling experimental mode
         if (this.experimentalSmartAdapt) {
-          this.log('⚠️  WARNING: Experimental Smart-Adapt will MODIFY device capabilities!');
-          this.log('⚠️  Only enable if you understand the risks.');
+          this.log('  WARNING: Experimental Smart-Adapt will MODIFY device capabilities!');
+          this.log('  Only enable if you understand the risks.');
         }
       }
 
       if (key === 'experimental_cloud_mirror') {
         this.experimentalCloudMirror = this.homey.settings.get('experimental_cloud_mirror');
-        this.log(`🪞 [v7.0.22] Experimental Cloud Mirror: ${this.experimentalCloudMirror ? 'ENABLED' : 'DISABLED'}`);
+        this.log(` [v7.0.22] Experimental Cloud Mirror: ${this.experimentalCloudMirror ? 'ENABLED' : 'DISABLED'}`);
         TuyaShadowPulsar.setEnabled(this.experimentalCloudMirror);
       }
     });

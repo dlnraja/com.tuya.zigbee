@@ -5,7 +5,7 @@
  * A conflict = same manufacturerName + productId in multiple drivers.
  *
  * Resolution strategy:
- * 1. TS0726 → only switch_4gang (BSEED 4-gang product)
+ * 1. TS0726  only switch_4gang (BSEED 4-gang product)
  * 2. Cross-category conflicts: keep mfr in most specialized driver
  * 3. Same-category: keep in driver with matching non-TS0601 productId
  * 4. generic_diy vs diy_custom_zigbee: keep in diy_custom_zigbee
@@ -181,7 +181,7 @@ function resolveConflict(conflict, drivers) {
     return removals;
   }
 
-  // Rule 1.5: climate_sensor is a catch-all — loses to ANY specialized driver
+  // Rule 1.5: climate_sensor is a catch-all  loses to ANY specialized driver
   if (drvNames.includes('climate_sensor') && drvNames.length === 2) {
     const other = drvNames.find(d => d !== 'climate_sensor');
     const otherCat = drivers.get(other)?.category || 'unknown';
@@ -211,7 +211,7 @@ function resolveConflict(conflict, drivers) {
   }
 
   // Rule 1.6: Same-gang switch variants (switch_Xgang vs wall_switch_Xgang_1way)
-  // These are legitimate overlaps — same device, different wiring. Keep both.
+  // These are legitimate overlaps  same device, different wiring. Keep both.
   const switchPairs = [
     ['switch_1gang', 'wall_switch_1gang_1way'],
     ['switch_2gang', 'wall_switch_2gang_1way'],
@@ -238,15 +238,15 @@ function resolveConflict(conflict, drivers) {
     }
   }
 
-  // Rule 1.8: bulb_rgb vs bulb_rgbw — keep both (intentional feature overlap)
+  // Rule 1.8: bulb_rgb vs bulb_rgbw  keep both (intentional feature overlap)
   if (drvNames.includes('bulb_rgb') && drvNames.includes('bulb_rgbw') && drvNames.length === 2) {
     return []; // intentional overlap
   }
 
-  // Rule 1.9: temphumidsensor vs lcdtemphumidsensor — climate_sensor loses to both
+  // Rule 1.9: temphumidsensor vs lcdtemphumidsensor  climate_sensor loses to both
   // But between themselves, keep both (LCD vs non-LCD variant)
 
-  // Rule 2: Cross-category conflicts — most specialized wins
+  // Rule 2: Cross-category conflicts  most specialized wins
   const categories = drvNames.map(d => ({
     name: d,
     cat: drivers.get(d)?.category || 'unknown',
@@ -274,7 +274,7 @@ function resolveConflict(conflict, drivers) {
     return removals;
   }
 
-  // Rule 3: Same-category radar — presence_sensor_radar wins
+  // Rule 3: Same-category radar  presence_sensor_radar wins
   if (uniqueCats.size === 1 && categories[0].cat === 'radar') {
     const pri = ['presence_sensor_radar', 'presence_sensor_ceiling'];
     const winner = drvNames.find(d => pri.includes(d));
@@ -380,7 +380,7 @@ function main() {
   }
 
   console.log(`\nTotal fingerprints removed: ${totalRemoved}`);
-  if (DRY_RUN) console.log('(DRY RUN — no files modified)');
+  if (DRY_RUN) console.log('(DRY RUN  no files modified)');
 
   // Re-check conflicts after fix
   if (!DRY_RUN && totalRemoved > 0) {

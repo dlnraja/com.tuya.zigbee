@@ -28,7 +28,7 @@ flowFiles.forEach(file => {
     
     if (changed) {
       fs.writeFileSync(file, JSON.stringify(content, null, 2));
-      console.log(`✅ Fixed: ${file}`);
+      console.log(` Fixed: ${file}`);
     }
     
   } catch (err) {
@@ -36,4 +36,4 @@ flowFiles.forEach(file => {
   }
 });
 
-console.log('\n✅ Done!');
+console.log('\n Done!');

@@ -13,44 +13,44 @@ const { resolve: resolvePressType, PRESS_MAP } = require('../../lib/utils/TuyaPr
 let OnOffBoundCluster = null;
 try {
   OnOffBoundCluster = require('../../lib/clusters/OnOffBoundCluster');
-  console.log('[BUTTON1] ✅ OnOffBoundCluster loaded');
+  console.log('[BUTTON1]  OnOffBoundCluster loaded');
 } catch (e) {
-  console.log('[BUTTON1] ⚠️ OnOffBoundCluster not available:', e.message);
+  console.log('[BUTTON1]  OnOffBoundCluster not available:', e.message);
 }
 
 // v5.5.823: TS004F Smart Knob FIX (GitHub #113) - Import LevelControlBoundCluster for rotary dimmer
 let LevelControlBoundCluster = null;
 try {
   LevelControlBoundCluster = require('../../lib/clusters/LevelControlBoundCluster');
-  console.log('[BUTTON1] ✅ LevelControlBoundCluster loaded');
+  console.log('[BUTTON1]  LevelControlBoundCluster loaded');
 } catch (e) {
-  console.log('[BUTTON1] ⚠️ LevelControlBoundCluster not available:', e.message);
+  console.log('[BUTTON1]  LevelControlBoundCluster not available:', e.message);
 }
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║     BUTTON 1 GANG - v5.5.823 + TS004F SMART KNOB FIX (GitHub #113)         ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║                                                                              ║
- * ║  v5.5.823: TS004F Smart Knob Dimmer support (GitHub #113)                   ║
- * ║  - Added LevelControlBoundCluster for rotary dimmer commands                 ║
- * ║  - Supports step/move/stop commands from rotary knobs                        ║
- * ║  - _TZ3000_gwkzibhs Smart Knob Scene Switch                                  ║
- * ║                                                                              ║
- * ║  v5.5.376: FIX for "No Action detected" - Added IAS ACE support             ║
- * ║  - IAS ACE cluster (1281) for SOS/Emergency buttons (TS0215A)               ║
- * ║  - commandEmergency, panic, arm, disarm event handling                       ║
- * ║                                                                              ║
- * ║  v5.5.371: Enhanced physical button detection                                ║
- * ║  - Multiple event listener patterns for SDK3 compatibility                   ║
- * ║  - Tuya DP fallback for non-ZCL button events                               ║
- * ║                                                                              ║
- * ║  STRUCTURE TS0041/TS004F:                                                    ║
- * ║  EP1: Button 1 (scenes, onOff, powerCfg, groups, levelControl)              ║
- * ║                                                                              ║
- * ║  ACTIONS: single, double, hold, rotate_left, rotate_right                    ║
- * ║                                                                              ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *      BUTTON 1 GANG - v5.5.823 + TS004F SMART KNOB FIX (GitHub #113)         
+ * 
+ *                                                                               
+ *   v5.5.823: TS004F Smart Knob Dimmer support (GitHub #113)                   
+ *   - Added LevelControlBoundCluster for rotary dimmer commands                 
+ *   - Supports step/move/stop commands from rotary knobs                        
+ *   - _TZ3000_gwkzibhs Smart Knob Scene Switch                                  
+ *                                                                               
+ *   v5.5.376: FIX for "No Action detected" - Added IAS ACE support             
+ *   - IAS ACE cluster (1281) for SOS/Emergency buttons (TS0215A)               
+ *   - commandEmergency, panic, arm, disarm event handling                       
+ *                                                                               
+ *   v5.5.371: Enhanced physical button detection                                
+ *   - Multiple event listener patterns for SDK3 compatibility                   
+ *   - Tuya DP fallback for non-ZCL button events                               
+ *                                                                               
+ *   STRUCTURE TS0041/TS004F:                                                    
+ *   EP1: Button 1 (scenes, onOff, powerCfg, groups, levelControl)              
+ *                                                                               
+ *   ACTIONS: single, double, hold, rotate_left, rotate_right                    
+ *                                                                               
+ * 
  */
 class Button1GangDevice extends ButtonDevice {
 
@@ -77,17 +77,17 @@ class Button1GangDevice extends ButtonDevice {
     }
 
     this._zclNode = zclNode;
-    this.log('═══════════════════════════════════════════════════════════════');
-    this.log('[BUTTON1] 🔘 Button1GangDevice v5.5.823 initializing...');
+    this.log('');
+    this.log('[BUTTON1]  Button1GangDevice v5.5.823 initializing...');
     this.log('[BUTTON1] FIX: TS004F Smart Knob + Forum fixes');
-    this.log('═══════════════════════════════════════════════════════════════');
+    this.log('');
 
     // Set button count BEFORE calling super
     this.buttonCount = 1;
 
     // Log available endpoints for debugging
     const availableEndpoints = Object.keys(zclNode?.endpoints || {});
-    this.log(`[BUTTON1] 📡 Available endpoints: ${availableEndpoints.join(', ')}`);
+    this.log(`[BUTTON1]  Available endpoints: ${availableEndpoints.join(', ')}`);
 
     // Initialize ButtonDevice (handles basic button detection + battery)
     await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
@@ -106,12 +106,12 @@ class Button1GangDevice extends ButtonDevice {
     // v5.5.371: Setup battery reporting listener
     await this._setupBatteryReporting(zclNode);
 
-    // v5.9.8: Raw frame interceptor — SDK drops unknown cluster frames like E000
+    // v5.9.8: Raw frame interceptor  SDK drops unknown cluster frames like E000
     // Fix: GH#124 Lalla80111 _TZ3000_b4awzgct TS0041 buttons not working
     await this._setupRawFrameInterceptor(zclNode);
 
-    this.log('[BUTTON1] ✅ Button1GangDevice initialized - 1 button ready');
-    this.log('═══════════════════════════════════════════════════════════════');
+    this.log('[BUTTON1]  Button1GangDevice initialized - 1 button ready');
+    this.log('');
   }
 
   /**
@@ -125,7 +125,7 @@ class Button1GangDevice extends ButtonDevice {
    * - Need multiple listener patterns for SDK3 compatibility
    */
   async _setupEnhancedPhysicalButtonDetection(zclNode) {
-    this.log('[BUTTON1-PHYSICAL] 🔧 Setting up enhanced physical button detection...');
+    this.log('[BUTTON1-PHYSICAL]  Setting up enhanced physical button detection...');
 
     const manufacturerName = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
     this.log(`[BUTTON1-PHYSICAL] Manufacturer: ${manufacturerName}`);
@@ -133,7 +133,7 @@ class Button1GangDevice extends ButtonDevice {
     try {
       const endpoint = zclNode?.endpoints?.[1];
       if (!endpoint) {
-        this.log('[BUTTON1-PHYSICAL] ⚠️ Endpoint 1 not found');
+        this.log('[BUTTON1-PHYSICAL]  Endpoint 1 not found');
         return;
       }
 
@@ -143,11 +143,11 @@ class Button1GangDevice extends ButtonDevice {
       // v5.5.371: SCENES CLUSTER - Multiple event patterns
       const scenesCluster = endpoint.clusters?.scenes || endpoint.clusters?.genScenes || endpoint.clusters?.[5];
       if (scenesCluster && typeof scenesCluster.on === 'function') {
-        this.log('[BUTTON1-PHYSICAL] 📡 Setting up enhanced scene listeners...');
+        this.log('[BUTTON1-PHYSICAL]  Setting up enhanced scene listeners...');
 
         const handleSceneRecall = async (sceneId) => {
           const pressType = pressTypeMap[sceneId] || 'single';
-          this.log(`[BUTTON1-SCENE] 🔘 Button 1 ${pressType.toUpperCase()} (scene ${sceneId})`);
+          this.log(`[BUTTON1-SCENE]  Button 1 ${pressType.toUpperCase()} (scene ${sceneId})`);
           await this.triggerButtonPress(1, pressType);
         };
 
@@ -165,17 +165,17 @@ class Button1GangDevice extends ButtonDevice {
           await handleSceneRecall(sceneId);
         });
 
-        this.log('[BUTTON1-PHYSICAL] ✅ Enhanced scene listeners configured');
+        this.log('[BUTTON1-PHYSICAL]  Enhanced scene listeners configured');
       }
 
       // v5.5.371: MULTISTATE INPUT CLUSTER - For Tuya variants
       const multistateCluster = endpoint.clusters?.multistateInput || endpoint.clusters?.genMultistateInput || endpoint.clusters?.[18];
       if (multistateCluster && typeof multistateCluster.on === 'function') {
-        this.log('[BUTTON1-PHYSICAL] 📡 Setting up multistateInput listeners...');
+        this.log('[BUTTON1-PHYSICAL]  Setting up multistateInput listeners...');
 
         const handleMultistate = async (value) => {
           const pressType = pressTypeMap[value] || 'single';
-          this.log(`[BUTTON1-MULTISTATE] 🔘 Button 1 ${pressType.toUpperCase()} (multistate ${value})`);
+          this.log(`[BUTTON1-MULTISTATE]  Button 1 ${pressType.toUpperCase()} (multistate ${value})`);
           await this.triggerButtonPress(1, pressType);
         };
 
@@ -199,13 +199,13 @@ class Button1GangDevice extends ButtonDevice {
           }
         });
 
-        this.log('[BUTTON1-PHYSICAL] ✅ MultistateInput listeners configured');
+        this.log('[BUTTON1-PHYSICAL]  MultistateInput listeners configured');
       }
 
       // v5.5.371: ONOFF CLUSTER COMMANDS - For command-based buttons
       const onOffCluster = endpoint.clusters?.onOff || endpoint.clusters?.genOnOff || endpoint.clusters?.[6];
       if (onOffCluster && typeof onOffCluster.on === 'function') {
-        this.log('[BUTTON1-PHYSICAL] 📡 Setting up enhanced onOff command listeners...');
+        this.log('[BUTTON1-PHYSICAL]  Setting up enhanced onOff command listeners...');
 
         // v5.5.500: HOBEIAN ZG-101ZL DUAL MODE SUPPORT
         // The device has TWO modes (switch with triple-click):
@@ -223,7 +223,7 @@ class Button1GangDevice extends ButtonDevice {
         // - off = long press
 
         onOffCluster.on('command', async (commandName, commandPayload) => {
-          this.log(`[BUTTON1-ONOFF] 🎯 COMMAND RECEIVED: ${commandName}`, commandPayload);
+          this.log(`[BUTTON1-ONOFF]  COMMAND RECEIVED: ${commandName}`, commandPayload);
 
           // v5.5.500: EVENT MODE mapping (default mode)
           // This is what Z2M's fz.on_off_action uses
@@ -249,10 +249,10 @@ class Button1GangDevice extends ButtonDevice {
           let pressType = eventModeMap[commandName] || commandModeMap[commandName];
 
           if (pressType) {
-            this.log(`[BUTTON1-ONOFF] 🔘 Button 1 ${pressType.toUpperCase()} (${commandName})`);
+            this.log(`[BUTTON1-ONOFF]  Button 1 ${pressType.toUpperCase()} (${commandName})`);
             await this.triggerButtonPress(1, pressType);
           } else {
-            this.log(`[BUTTON1-ONOFF] ⚠️ Unknown command: ${commandName}`);
+            this.log(`[BUTTON1-ONOFF]  Unknown command: ${commandName}`);
             // Fallback: trigger single press for any unknown command
             await this.triggerButtonPress(1, 'single');
           }
@@ -260,33 +260,33 @@ class Button1GangDevice extends ButtonDevice {
 
         // v5.5.500: Additional command listeners for different SDK event names
         onOffCluster.on('commandOn', async (payload) => {
-          this.log('[BUTTON1-ONOFF] 🔘 commandOn event (EVENT MODE: single)');
+          this.log('[BUTTON1-ONOFF]  commandOn event (EVENT MODE: single)');
           await this.triggerButtonPress(1, 'single');
         });
 
         onOffCluster.on('commandOff', async (payload) => {
-          this.log('[BUTTON1-ONOFF] 🔘 commandOff event (EVENT MODE: double)');
+          this.log('[BUTTON1-ONOFF]  commandOff event (EVENT MODE: double)');
           await this.triggerButtonPress(1, 'double');
         });
 
         onOffCluster.on('commandToggle', async (payload) => {
-          this.log('[BUTTON1-ONOFF] 🔘 commandToggle event (EVENT MODE: long)');
+          this.log('[BUTTON1-ONOFF]  commandToggle event (EVENT MODE: long)');
           await this.triggerButtonPress(1, 'long');
         });
 
         // v5.5.500: Direct command name listeners
         onOffCluster.on('toggle', async () => {
-          this.log('[BUTTON1-ONOFF] 🔘 toggle event (COMMAND MODE: single)');
+          this.log('[BUTTON1-ONOFF]  toggle event (COMMAND MODE: single)');
           await this.triggerButtonPress(1, 'single');
         });
 
         onOffCluster.on('on', async () => {
-          this.log('[BUTTON1-ONOFF] 🔘 on event (COMMAND MODE: double)');
+          this.log('[BUTTON1-ONOFF]  on event (COMMAND MODE: double)');
           await this.triggerButtonPress(1, 'double');
         });
 
         onOffCluster.on('off', async () => {
-          this.log('[BUTTON1-ONOFF] 🔘 off event (COMMAND MODE: long)');
+          this.log('[BUTTON1-ONOFF]  off event (COMMAND MODE: long)');
           await this.triggerButtonPress(1, 'long');
         });
 
@@ -308,7 +308,7 @@ class Button1GangDevice extends ButtonDevice {
           if (this._lastOnOffState !== null && value === this._lastOnOffState && timeSinceLastEvent > 60000) {
             const secs = safeParse(timeSinceLastEvent, 1000);
             if ([300,600,900,1800,3600].some(i => Math.abs(secs-i) < safeParse(i, 10))) {
-              this.log(`[BUTTON1-ONOFF] ⏭️ Ignored: periodic (~${Math.round(secs)}s)`);
+              this.log(`[BUTTON1-ONOFF]  Ignored: periodic (~${Math.round(secs)}s)`);
               this._lastOnOffTime = now;
               return;
             }
@@ -316,7 +316,7 @@ class Button1GangDevice extends ButtonDevice {
 
           // Ignore initial state report within first 3 seconds of init
           if (this._lastOnOffState === null && timeSinceInit < 3000) {
-            this.log('[BUTTON1-ONOFF] ℹ️ Initial state stored (not triggering)');
+            this.log('[BUTTON1-ONOFF]  Initial state stored (not triggering)');
             this._lastOnOffState = value;
             this._lastOnOffTime = now;
             return;
@@ -324,14 +324,14 @@ class Button1GangDevice extends ButtonDevice {
 
           // Debounce rapid duplicates (<100ms)
           if (this._lastOnOffState === value && timeSinceLastEvent < 100) {
-            this.log('[BUTTON1-ONOFF] ⏭️ Debounced duplicate');
+            this.log('[BUTTON1-ONOFF]  Debounced duplicate');
             return;
           }
 
           this._lastOnOffState = value;
           this._lastOnOffTime = now;
 
-          this.log(`[BUTTON1-ONOFF] 🔘 HOBEIAN button press detected: ${value}`);
+          this.log(`[BUTTON1-ONOFF]  HOBEIAN button press detected: ${value}`);
           await this.triggerButtonPress(1, 'single');
         });
 
@@ -344,7 +344,7 @@ class Button1GangDevice extends ButtonDevice {
             if (this._lastOnOffState !== null && attributes.onOff === this._lastOnOffState && timeSinceLastEvent > 60000) {
               const secs = safeParse(timeSinceLastEvent, 1000);
               if ([300,600,900,1800,3600].some(i => Math.abs(secs-i) < safeParse(i, 10))) {
-                this.log(`[BUTTON1-ONOFF] ⏭️ Ignored report: periodic (~${Math.round(secs)}s)`);
+                this.log(`[BUTTON1-ONOFF]  Ignored report: periodic (~${Math.round(secs)}s)`);
                 this._lastOnOffTime = now;
                 return;
               }
@@ -357,12 +357,12 @@ class Button1GangDevice extends ButtonDevice {
             this._lastOnOffState = attributes.onOff;
             this._lastOnOffTime = now;
 
-            this.log(`[BUTTON1-ONOFF] 🔘 HOBEIAN report button press: ${attributes.onOff}`);
+            this.log(`[BUTTON1-ONOFF]  HOBEIAN report button press: ${attributes.onOff}`);
             await this.triggerButtonPress(1, 'single');
           }
         });
 
-        this.log('[BUTTON1-PHYSICAL] ✅ Enhanced onOff command + attribute listeners configured');
+        this.log('[BUTTON1-PHYSICAL]  Enhanced onOff command + attribute listeners configured');
       }
 
       // v5.5.371: IAS ZONE CLUSTER - For button devices with iasZone
@@ -370,7 +370,7 @@ class Button1GangDevice extends ButtonDevice {
       // Keep-alive messages occur at regular intervals (30min/1hour) and should not trigger button press
       const iasZoneCluster = endpoint.clusters?.iasZone || endpoint.clusters?.ssIasZone || endpoint.clusters?.[1280];
       if (iasZoneCluster && typeof iasZoneCluster.on === 'function') {
-        this.log('[BUTTON1-PHYSICAL] 📡 Setting up IAS Zone listeners with keep-alive filter...');
+        this.log('[BUTTON1-PHYSICAL]  Setting up IAS Zone listeners with keep-alive filter...');
 
         // v5.5.480: Track IAS Zone events to filter keep-alive vs real button presses
         this._lastIasZoneTime = 0;
@@ -390,7 +390,7 @@ class Button1GangDevice extends ButtonDevice {
           if (zoneStatus !== undefined && (zoneStatus & 0x01)) {
             // Debounce: ignore if same status within 5 seconds (keep-alive filter)
             if (this._iasZoneLastStatus === zoneStatus && timeSinceLast < this._iasZoneDebounceMs) {
-              this.log('[BUTTON1-IASZONE] ⏭️ Debounced (same status within 5s - likely keep-alive)');
+              this.log('[BUTTON1-IASZONE]  Debounced (same status within 5s - likely keep-alive)');
               return;
             }
 
@@ -402,7 +402,7 @@ class Button1GangDevice extends ButtonDevice {
             );
 
             if (isLikelyKeepAlive && this._iasZoneLastStatus === zoneStatus) {
-              this.log('[BUTTON1-IASZONE] 🚫 BLOCKED: Likely keep-alive message (30/60min interval)');
+              this.log('[BUTTON1-IASZONE]  BLOCKED: Likely keep-alive message (30/60min interval)');
               this._lastIasZoneTime = now;
               return;
             }
@@ -410,7 +410,7 @@ class Button1GangDevice extends ButtonDevice {
             this._lastIasZoneTime = now;
             this._iasZoneLastStatus = zoneStatus;
 
-            this.log('[BUTTON1-IASZONE] 🔘 Button 1 SINGLE (IAS Zone alarm - real press)');
+            this.log('[BUTTON1-IASZONE]  Button 1 SINGLE (IAS Zone alarm - real press)');
             await this.triggerButtonPress(1, 'single');
           }
         };
@@ -423,44 +423,44 @@ class Button1GangDevice extends ButtonDevice {
           await handleIasZoneEvent(payload, 'statusChangeNotification');
         });
 
-        this.log('[BUTTON1-PHYSICAL] ✅ IAS Zone listeners configured with keep-alive filter');
+        this.log('[BUTTON1-PHYSICAL]  IAS Zone listeners configured with keep-alive filter');
       }
 
       // v5.5.376: IAS ACE CLUSTER - For SOS/Emergency buttons (TS0215A)
       // These buttons use IAS ACE cluster (1281) with commandEmergency
       const iasAceCluster = endpoint.clusters?.iasAce || endpoint.clusters?.ssIasAce || endpoint.clusters?.[1281];
       if (iasAceCluster && typeof iasAceCluster.on === 'function') {
-        this.log('[BUTTON1-PHYSICAL] 📡 Setting up IAS ACE listeners (SOS button)...');
+        this.log('[BUTTON1-PHYSICAL]  Setting up IAS ACE listeners (SOS button)...');
 
         // Emergency command = SOS button press
         iasAceCluster.on('emergency', async (payload) => {
-          this.log('[BUTTON1-IASACE] 🆘 EMERGENCY command received:', payload);
+          this.log('[BUTTON1-IASACE]  EMERGENCY command received:', payload);
           await this.triggerButtonPress(1, 'single');
         });
 
         iasAceCluster.on('commandEmergency', async (payload) => {
-          this.log('[BUTTON1-IASACE] 🆘 commandEmergency received:', payload);
+          this.log('[BUTTON1-IASACE]  commandEmergency received:', payload);
           await this.triggerButtonPress(1, 'single');
         });
 
         // Panic command = double press on some SOS buttons
         iasAceCluster.on('panic', async (payload) => {
-          this.log('[BUTTON1-IASACE] 🆘 PANIC command received:', payload);
+          this.log('[BUTTON1-IASACE]  PANIC command received:', payload);
           await this.triggerButtonPress(1, 'double');
         });
 
         // Arm/Disarm commands used by some remote buttons
         iasAceCluster.on('arm', async (payload) => {
-          this.log('[BUTTON1-IASACE] 🔒 ARM command:', payload);
+          this.log('[BUTTON1-IASACE]  ARM command:', payload);
           await this.triggerButtonPress(1, 'single');
         });
 
         iasAceCluster.on('disarm', async (payload) => {
-          this.log('[BUTTON1-IASACE] 🔓 DISARM command:', payload);
+          this.log('[BUTTON1-IASACE]  DISARM command:', payload);
           await this.triggerButtonPress(1, 'double');
         });
 
-        this.log('[BUTTON1-PHYSICAL] ✅ IAS ACE listeners configured (SOS/Emergency support)');
+        this.log('[BUTTON1-PHYSICAL]  IAS ACE listeners configured (SOS/Emergency support)');
       }
 
       // v5.5.371: TUYA DP CLUSTER - For Tuya-specific devices
@@ -474,10 +474,10 @@ class Button1GangDevice extends ButtonDevice {
       // v5.5.457: HOBEIAN CLUSTER 57345 (0xE001) - Tuya button-specific cluster
       await this._setupHobeianCluster(zclNode);
 
-      this.log('[BUTTON1-PHYSICAL] ✅ Enhanced physical button detection configured');
+      this.log('[BUTTON1-PHYSICAL]  Enhanced physical button detection configured');
 
     } catch (error) {
-      this.log('[BUTTON1-PHYSICAL] ❌ Setup error:', error.message);
+      this.log('[BUTTON1-PHYSICAL]  Setup error:', error.message);
     }
   }
 
@@ -494,33 +494,33 @@ class Button1GangDevice extends ButtonDevice {
       const hobeianCluster = endpoint.clusters?.[57345] || endpoint.clusters?.['57345'];
 
       if (hobeianCluster && typeof hobeianCluster.on === 'function') {
-        this.log('[BUTTON1-HOBEIAN] 📡 Setting up HOBEIAN cluster 0xE001 listeners...');
+        this.log('[BUTTON1-HOBEIAN]  Setting up HOBEIAN cluster 0xE001 listeners...');
 
         // Listen for any events from this cluster
         hobeianCluster.on('report', async (data) => {
-          this.log('[BUTTON1-HOBEIAN] 📡 Report:', data);
+          this.log('[BUTTON1-HOBEIAN]  Report:', data);
           const value = data?.value ?? data?.[0] ?? 0;
           await this.triggerButtonPress(1, resolvePressType(value, 'HOBEIAN-report'));
         });
 
         hobeianCluster.on('response', async (data) => {
-          this.log('[BUTTON1-HOBEIAN] 📡 Response:', data);
+          this.log('[BUTTON1-HOBEIAN]  Response:', data);
           const value = data?.value ?? data?.data ?? 0;
           await this.triggerButtonPress(1, resolvePressType(value, 'HOBEIAN-response'));
         });
 
         // Generic command listener
         hobeianCluster.on('command', async (commandName, payload) => {
-          this.log(`[BUTTON1-HOBEIAN] 📡 Command ${commandName}:`, payload);
+          this.log(`[BUTTON1-HOBEIAN]  Command ${commandName}:`, payload);
           await this.triggerButtonPress(1, 'single');
         });
 
-        this.log('[BUTTON1-HOBEIAN] ✅ HOBEIAN cluster 0xE001 listeners configured');
+        this.log('[BUTTON1-HOBEIAN]  HOBEIAN cluster 0xE001 listeners configured');
       } else {
-        this.log('[BUTTON1-HOBEIAN] ℹ️ Cluster 57345 (0xE001) not found');
+        this.log('[BUTTON1-HOBEIAN]  Cluster 57345 (0xE001) not found');
       }
     } catch (err) {
-      this.log('[BUTTON1-HOBEIAN] ⚠️ Setup error:', err.message);
+      this.log('[BUTTON1-HOBEIAN]  Setup error:', err.message);
     }
   }
 
@@ -532,14 +532,14 @@ class Button1GangDevice extends ButtonDevice {
       if (!ep) return;
       const bc = new E000({ device: this, onButtonPress: async (b, p) => {
         const pt = resolvePressType(p, 'BUTTON1-E000');
-        this.log(`[BUTTON1-E000] 🔘 ${pt} (btn=${b})`);
+        this.log(`[BUTTON1-E000]  ${pt} (btn=${b})`);
         await this.triggerButtonPress(1, pt);
       }});
       bc.endpoint = 1;
       if (!ep.bindings) ep.bindings = {};
       ep.bindings['tuyaE000'] = bc;
-      this.log('[BUTTON1-E000] ✅ BoundCluster EP1');
-    } catch (e) { this.log('[BUTTON1-E000] ℹ️ skip:', e.message); }
+      this.log('[BUTTON1-E000]  BoundCluster EP1');
+    } catch (e) { this.log('[BUTTON1-E000]  skip:', e.message); }
   }
 
   // v5.9.8: Raw frame interceptor (GH#124 _TZ3000_b4awzgct fix)
@@ -554,8 +554,8 @@ class Button1GangDevice extends ButtonDevice {
         }
         return orig(epId, cId, frame, meta);
       };
-      this.log('[BUTTON1-RAW] ✅ Frame interceptor ready');
-    } catch (e) { this.log(`[BUTTON1-RAW] ⚠️ ${e.message}`); }
+      this.log('[BUTTON1-RAW]  Frame interceptor ready');
+    } catch (e) { this.log(`[BUTTON1-RAW]  ${e.message}`); }
   }
 
   _parseRawE000Frame(ep, frame) {
@@ -565,25 +565,25 @@ class Button1GangDevice extends ButtonDevice {
       this.log(`[BUTTON1-RAW] cmdId=${cmdId} data=${data?.toString?.('hex') || '-'}`);
       if (cmdId >= 0 && cmdId <= 5) {
         const pt = resolvePressType(data?.[0], 'BUTTON1-RAW-cmd');
-        this.log(`[BUTTON1-RAW] 🔘 ${pt} (cmdId)`);
+        this.log(`[BUTTON1-RAW]  ${pt} (cmdId)`);
         this.triggerButtonPress(1, pt);
         return;
       }
       if (data && data.length >= 2) {
         const pt = resolvePressType(data[1], 'BUTTON1-RAW-data');
-        this.log(`[BUTTON1-RAW] 🔘 ${pt} (data)`);
+        this.log(`[BUTTON1-RAW]  ${pt} (data)`);
         this.triggerButtonPress(1, pt);
         return;
       }
       if (data && data.length === 1) {
         const pt = resolvePressType(data[0], 'BUTTON1-RAW-byte');
-        this.log(`[BUTTON1-RAW] 🔘 ${pt} (byte)`);
+        this.log(`[BUTTON1-RAW]  ${pt} (byte)`);
         this.triggerButtonPress(1, pt);
         return;
       }
-      this.log('[BUTTON1-RAW] 🔘 single (fallback)');
+      this.log('[BUTTON1-RAW]  single (fallback)');
       this.triggerButtonPress(1, 'single');
-    } catch (e) { this.log(`[BUTTON1-RAW] ⚠️ ${e.message}`); }
+    } catch (e) { this.log(`[BUTTON1-RAW]  ${e.message}`); }
   }
 
   /**
@@ -604,12 +604,12 @@ class Button1GangDevice extends ButtonDevice {
     // Root cause: Button devices send onOff COMMANDS (client-to-server). These go to
     // endpoint.bindings['onOff'] (BoundCluster), NOT endpoint.clusters['onOff'].
     // Without BoundCluster, frames are silently dropped with 'binding_unavailable'.
-    this.log(`[BUTTON1-BIND] 🔗 Setting up universal onOff binding (${manufacturerName})...`);
+    this.log(`[BUTTON1-BIND]  Setting up universal onOff binding (${manufacturerName})...`);
 
     try {
       const endpoint = zclNode?.endpoints?.[1];
       if (!endpoint) {
-        this.log('[BUTTON1-BIND] ⚠️ Endpoint 1 not found');
+        this.log('[BUTTON1-BIND]  Endpoint 1 not found');
         return;
       }
 
@@ -618,30 +618,30 @@ class Button1GangDevice extends ButtonDevice {
       // We need a BoundCluster to intercept these incoming commands
       if (OnOffBoundCluster && typeof endpoint.bind === 'function' && !this._onOffBoundClusterInstalled) {
         try {
-          this.log('[BUTTON1-BIND] 🔗 Installing OnOffBoundCluster to receive commands...');
+          this.log('[BUTTON1-BIND]  Installing OnOffBoundCluster to receive commands...');
           
           const boundCluster = new OnOffBoundCluster({
             onSetOn: (p) => {
               // v5.9.20: Handle Tuya cmd 0xFD multi-press
               if (p?.cmdId === 0xFD) {
                 const action = resolvePressType(p.scene ?? 0, 'BUTTON1-0xFD');
-                this.log(`[BUTTON1-0xFD] pressType=${p.scene} → ${action}`);
+                this.log(`[BUTTON1-0xFD] pressType=${p.scene}  ${action}`);
                 this.triggerButtonPress(1, action);
                 return;
               }
-              this.log('[BUTTON1-BOUND] 🔘 ON command received (EVENT MODE: single)');
+              this.log('[BUTTON1-BOUND]  ON command received (EVENT MODE: single)');
               this.triggerButtonPress(1, 'single');
             },
             onSetOff: () => {
-              this.log('[BUTTON1-BOUND] 🔘 OFF command received (EVENT MODE: double)');
+              this.log('[BUTTON1-BOUND]  OFF command received (EVENT MODE: double)');
               this.triggerButtonPress(1, 'double');
             },
             onToggle: () => {
-              this.log('[BUTTON1-BOUND] 🔘 TOGGLE command received (EVENT MODE: long)');
+              this.log('[BUTTON1-BOUND]  TOGGLE command received (EVENT MODE: long)');
               this.triggerButtonPress(1, 'long');
             },
             onWithTimedOff: (payload) => {
-              this.log('[BUTTON1-BOUND] 🔘 onWithTimedOff received:', payload);
+              this.log('[BUTTON1-BOUND]  onWithTimedOff received:', payload);
               this.triggerButtonPress(1, 'single');
             }
           });
@@ -649,31 +649,31 @@ class Button1GangDevice extends ButtonDevice {
           // Bind to onOff cluster name (cluster 6)
           endpoint.bind('onOff', boundCluster);
           this._onOffBoundClusterInstalled = true;
-          this.log('[BUTTON1-BIND] ✅ OnOffBoundCluster installed successfully!');
-          this.log('[BUTTON1-BIND] 📡 Now listening for ON/OFF/TOGGLE commands from device');
+          this.log('[BUTTON1-BIND]  OnOffBoundCluster installed successfully!');
+          this.log('[BUTTON1-BIND]  Now listening for ON/OFF/TOGGLE commands from device');
           
         } catch (boundErr) {
-          this.log(`[BUTTON1-BIND] ⚠️ BoundCluster install failed: ${boundErr.message}`);
+          this.log(`[BUTTON1-BIND]  BoundCluster install failed: ${boundErr.message}`);
         }
       }
 
       // Fallback: Try regular cluster binding
       const onOffCluster = endpoint.clusters?.onOff || endpoint.clusters?.genOnOff || endpoint.clusters?.[6];
-      // v5.11.16: Fire-and-forget bind (don't block init on sleepy battery buttons — SkiMattie #1446)
+      // v5.11.16: Fire-and-forget bind (don't block init on sleepy battery buttons  SkiMattie #1446)
       if (onOffCluster && typeof onOffCluster.bind === 'function') {
         onOffCluster.bind().then(() => {
           this._onOffBound = true;
-          this.log('[BUTTON1-BIND] ✅ OnOff cluster bound (fallback method)');
+          this.log('[BUTTON1-BIND]  OnOff cluster bound (fallback method)');
         }).catch(() => {});
       }
 
       // Store for later use
       this._onOffCluster = onOffCluster;
 
-      this.log('[BUTTON1-BIND] ✅ Universal onOff binding setup complete');
+      this.log('[BUTTON1-BIND]  Universal onOff binding setup complete');
 
     } catch (err) {
-      this.log('[BUTTON1-BIND] ⚠️ Setup error:', err.message);
+      this.log('[BUTTON1-BIND]  Setup error:', err.message);
     }
   }
 
@@ -685,11 +685,11 @@ class Button1GangDevice extends ButtonDevice {
     // v7.3.0: Call parent handler to re-bind standard clusters
     await super.onEndDeviceAnnounce();
 
-    this.log('[BUTTON1] 📡 Device announced (wake/rejoin)');
+    this.log('[BUTTON1]  Device announced (wake/rejoin)');
     
     // Try to bind onOff cluster when device wakes
     if (this._zclNode && !this._onOffBound) {
-      this.log('[BUTTON1] 🔄 Attempting onOff binding on wake...');
+      this.log('[BUTTON1]  Attempting onOff binding on wake...');
       await this._setupOnOffBinding(this._zclNode);
     }
   }
@@ -706,29 +706,29 @@ class Button1GangDevice extends ButtonDevice {
         || zclNode?.endpoints?.[1]?.clusters?.[CLUSTERS.TUYA_EF00];
 
       if (!tuyaCluster) {
-        this.log('[BUTTON1-TUYA-DP] ℹ️ No Tuya cluster found - using ZCL only');
+        this.log('[BUTTON1-TUYA-DP]  No Tuya cluster found - using ZCL only');
         return;
       }
 
-      this.log('[BUTTON1-TUYA-DP] 🔧 Setting up Tuya DP button detection...');
+      this.log('[BUTTON1-TUYA-DP]  Setting up Tuya DP button detection...');
 
       if (typeof tuyaCluster.on === 'function') {
         tuyaCluster.on('response', async (data) => {
           const dp = data?.dp ?? data?.dataPointId ?? data?.dpId;
           const value = data?.data ?? data?.value ?? data?.raw?.[0] ?? 0;
 
-          this.log(`[BUTTON1-TUYA-DP] 📡 DP${dp} = ${value}`, data);
+          this.log(`[BUTTON1-TUYA-DP]  DP${dp} = ${value}`, data);
 
           // DP 1 typically is button 1 press
           if (dp === 1) {
             const pressType = resolvePressType(value, 'BUTTON1-DP');
-            this.log(`[BUTTON1-TUYA-DP] 🔘 Button 1 ${pressType.toUpperCase()} (DP${dp}=${value})`);
+            this.log(`[BUTTON1-TUYA-DP]  Button 1 ${pressType.toUpperCase()} (DP${dp}=${value})`);
             await this.triggerButtonPress(1, pressType);
           }
         });
 
         tuyaCluster.on('report', async (data) => {
-          this.log('[BUTTON1-TUYA-DP] 📡 Report event:', data);
+          this.log('[BUTTON1-TUYA-DP]  Report event:', data);
           const dp = data?.dp ?? data?.dataPointId ?? data?.dpId;
           const value = data?.data ?? data?.value ?? 0;
           if (dp === 1) {
@@ -745,10 +745,10 @@ class Button1GangDevice extends ButtonDevice {
           }
         });
 
-        this.log('[BUTTON1-TUYA-DP] ✅ Tuya DP button detection configured');
+        this.log('[BUTTON1-TUYA-DP]  Tuya DP button detection configured');
       }
     } catch (err) {
-      this.log('[BUTTON1-TUYA-DP] ⚠️ Setup error:', err.message);
+      this.log('[BUTTON1-TUYA-DP]  Setup error:', err.message);
     }
   }
 
@@ -762,12 +762,12 @@ class Button1GangDevice extends ButtonDevice {
         || zclNode?.endpoints?.[1]?.clusters?.[1];
 
       if (this._powerCluster && typeof this._powerCluster.on === 'function') {
-        this.log('[BUTTON1-BATTERY] 🔋 Setting up battery reporting...');
+        this.log('[BUTTON1-BATTERY]  Setting up battery reporting...');
 
         this._powerCluster.on('attr.batteryPercentageRemaining', async (value) => {
           if (value !== undefined && value !== 255 && value !== 0) {
             const battery = Math.round(safeParse(value, 2));
-            this.log(`[BUTTON1-BATTERY] ✅ Battery report: ${battery}%`);
+            this.log(`[BUTTON1-BATTERY]  Battery report: ${battery}%`);
             // v5.5.519: Check capability exists before setting (fix HOBEIAN AC-powered button error)
             if (this.hasCapability('measure_battery')) {
               await this._updateBattery(battery).catch(() => { });
@@ -779,7 +779,7 @@ class Button1GangDevice extends ButtonDevice {
           if (value !== undefined && value > 0) {
             const voltage = safeParse(value, 10);
             const battery = Math.min(100, Math.max(0,Math.round(safeMultiply((voltage - 2.0), 100))));
-            this.log(`[BUTTON1-BATTERY] ✅ Battery from voltage: ${voltage}V → ${battery}%`);
+            this.log(`[BUTTON1-BATTERY]  Battery from voltage: ${voltage}V  ${battery}%`);
             // v5.5.519: Check capability exists before setting
             if (this.hasCapability('measure_battery')) {
               await this._updateBattery(battery).catch(() => { });
@@ -787,10 +787,10 @@ class Button1GangDevice extends ButtonDevice {
           }
         });
 
-        this.log('[BUTTON1-BATTERY] ✅ Battery listeners registered');
+        this.log('[BUTTON1-BATTERY]  Battery listeners registered');
       }
     } catch (err) {
-      this.log('[BUTTON1-BATTERY] ⚠️ Battery setup error:', err.message);
+      this.log('[BUTTON1-BATTERY]  Battery setup error:', err.message);
     }
   }
 
@@ -810,7 +810,7 @@ class Button1GangDevice extends ButtonDevice {
           const attrs = await this._powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']);
           if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
             const battery = Math.round(safeParse(attrs.batteryPercentageRemaining, 2));
-            this.log(`[BUTTON1-BATTERY] 📊 Battery read on wake: ${battery}%`);
+            this.log(`[BUTTON1-BATTERY]  Battery read on wake: ${battery}%`);
             // v5.5.519: Check capability exists before setting
             if (this.hasCapability('measure_battery')) {
               await this._updateBattery(battery).catch(() => { });
@@ -830,7 +830,7 @@ class Button1GangDevice extends ButtonDevice {
    */
   async _setupLevelControlBinding(zclNode) {
     if (!LevelControlBoundCluster) {
-      this.log('[BUTTON1-LEVEL] ⚠️ LevelControlBoundCluster not available');
+      this.log('[BUTTON1-LEVEL]  LevelControlBoundCluster not available');
       return;
     }
 
@@ -846,51 +846,51 @@ class Button1GangDevice extends ButtonDevice {
       return;
     }
 
-    this.log('[BUTTON1-LEVEL] 🎛️ Setting up LevelControl for Smart Knob...');
+    this.log('[BUTTON1-LEVEL]  Setting up LevelControl for Smart Knob...');
 
     try {
       const endpoint = zclNode?.endpoints?.[1];
       if (!endpoint) {
-        this.log('[BUTTON1-LEVEL] ⚠️ Endpoint 1 not found');
+        this.log('[BUTTON1-LEVEL]  Endpoint 1 not found');
         return;
       }
 
       // Install LevelControlBoundCluster to receive rotation commands
       const levelControlBoundCluster = new LevelControlBoundCluster({
         onStep: async ({ mode, stepSize }) => {
-          this.log(`[BUTTON1-LEVEL] 🔄 Step ${mode} (size: ${stepSize})`);
+          this.log(`[BUTTON1-LEVEL]  Step ${mode} (size: ${stepSize})`);
           const pressType = mode === 'up' ? 'rotate_right' : 'rotate_left';
           await this.triggerButtonPress(1, pressType);
         },
         onStepWithOnOff: async ({ mode, stepSize }) => {
-          this.log(`[BUTTON1-LEVEL] 🔄 StepWithOnOff ${mode} (size: ${stepSize})`);
+          this.log(`[BUTTON1-LEVEL]  StepWithOnOff ${mode} (size: ${stepSize})`);
           const pressType = mode === 'up' ? 'rotate_right' : 'rotate_left';
           await this.triggerButtonPress(1, pressType);
         },
         onMove: async ({ moveMode, rate }) => {
-          this.log(`[BUTTON1-LEVEL] 🔄 Move ${moveMode} (rate: ${rate})`);
+          this.log(`[BUTTON1-LEVEL]  Move ${moveMode} (rate: ${rate})`);
           const pressType = moveMode === 'up' ? 'rotate_right' : 'rotate_left';
           await this.triggerButtonPress(1, pressType);
         },
         onMoveWithOnOff: async ({ moveMode, rate }) => {
-          this.log(`[BUTTON1-LEVEL] 🔄 MoveWithOnOff ${moveMode} (rate: ${rate})`);
+          this.log(`[BUTTON1-LEVEL]  MoveWithOnOff ${moveMode} (rate: ${rate})`);
           const pressType = moveMode === 'up' ? 'rotate_right' : 'rotate_left';
           await this.triggerButtonPress(1, pressType);
         },
         onStop: async () => {
-          this.log('[BUTTON1-LEVEL] 🛑 Stop (rotation released)');
+          this.log('[BUTTON1-LEVEL]  Stop (rotation released)');
         },
         onStopWithOnOff: async () => {
-          this.log('[BUTTON1-LEVEL] 🛑 StopWithOnOff (rotation released)');
+          this.log('[BUTTON1-LEVEL]  StopWithOnOff (rotation released)');
         },
       });
 
       // Bind the cluster
       endpoint.bind('levelControl', levelControlBoundCluster);
-      this.log('[BUTTON1-LEVEL] ✅ LevelControlBoundCluster installed for Smart Knob');
+      this.log('[BUTTON1-LEVEL]  LevelControlBoundCluster installed for Smart Knob');
 
     } catch (err) {
-      this.log('[BUTTON1-LEVEL] ⚠️ LevelControl setup error:', err.message);
+      this.log('[BUTTON1-LEVEL]  LevelControl setup error:', err.message);
     }
   }
 

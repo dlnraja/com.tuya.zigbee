@@ -24,10 +24,10 @@ class SceneSwitch3Device extends ButtonDevice {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    this.log('[SCENE-3] 🔘 v5.8.16 - Initializing with E000 support...');
+    this.log('[SCENE-3]  v5.8.16 - Initializing with E000 support...');
     await super.onNodeInit({ zclNode });
     await this._setupE000Detection(zclNode);
-    this.log('[SCENE-3] ✅ Ready');
+    this.log('[SCENE-3]  Ready');
   }
 
   async _setupE000Detection(zclNode) {

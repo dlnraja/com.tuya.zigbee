@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔧 RÉSOLUTION FINALE CONFLITS + NORMALISATION CASE\n');
+console.log(' RÉSOLUTION FINALE CONFLITS + NORMALISATION CASE\n');
 
 const ROOT = path.join(__dirname, '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -95,7 +95,7 @@ function detectConflicts(allDrivers) {
  * Résoudre: normaliser case + retirer des losers
  */
 function resolve(allDrivers, conflicts) {
-  console.log('🎯 PHASE 1: Normalisation case sensitivity\n');
+  console.log(' PHASE 1: Normalisation case sensitivity\n');
 
   // Étape 1: Normaliser case (uppercase pour manufacturer names Tuya)
   allDrivers.forEach(d => {
@@ -127,7 +127,7 @@ function resolve(allDrivers, conflicts) {
       const diff = originalNames.length - uniqueNames.length;
       if (diff > 0) {
         stats.caseNormalized += diff;
-        console.log(`   ✅ ${d.driver}: ${originalNames.length} → ${uniqueNames.length} (-${diff} duplicates case)`);
+        console.log(`    ${d.driver}: ${originalNames.length}  ${uniqueNames.length} (-${diff} duplicates case)`);
       }
     }
   });
@@ -135,13 +135,13 @@ function resolve(allDrivers, conflicts) {
   console.log(`\n   Duplicates case supprimés: ${stats.caseNormalized}\n`);
 
   // Étape 2: Re-analyser après normalisation
-  console.log('🎯 PHASE 2: Résolution conflits réels\n');
+  console.log(' PHASE 2: Résolution conflits réels\n');
 
   const refreshed = analyzeAll();
   const remainingConflicts = detectConflicts(refreshed);
 
   if (remainingConflicts.length === 0) {
-    console.log('   ✅ AUCUN CONFLIT après normalisation!\n');
+    console.log('    AUCUN CONFLIT après normalisation!\n');
     return;
   }
 
@@ -186,43 +186,43 @@ function resolve(allDrivers, conflicts) {
         stats.conflictsResolved += removed;
         stats.filesModified++;
 
-        console.log(`   ✅ ${driverName}: ${originalNames.length} → ${filtered.length} (-${removed})`);
+        console.log(`    ${driverName}: ${originalNames.length}  ${filtered.length} (-${removed})`);
       }
     } catch (e) {
-      console.error(`   ❌ ${driverName}:`, e.message);
+      console.error(`    ${driverName}:`, e.message);
     }
   });
 }
 
 // EXÉCUTION
-console.log('📂 Analyse initiale...\n');
+console.log(' Analyse initiale...\n');
 const allDrivers = analyzeAll();
 console.log(`   ${allDrivers.length} drivers\n`);
 
 const initialConflicts = detectConflicts(allDrivers);
-console.log(`📊 Conflits initiaux: ${initialConflicts.length}\n`);
+console.log(` Conflits initiaux: ${initialConflicts.length}\n`);
 
 resolve(allDrivers, initialConflicts);
 
 // RAPPORT FINAL
-console.log('\n\n📊 RAPPORT FINAL:\n');
+console.log('\n\n RAPPORT FINAL:\n');
 console.log(`   Duplicates case normalisés: ${stats.caseNormalized}`);
 console.log(`   Conflits résolus: ${stats.conflictsResolved}`);
 console.log(`   Fichiers modifiés: ${stats.filesModified}`);
 console.log(`   Backups créés: ${stats.backupsCreated}\n`);
 
-console.log('🎯 VÉRIFICATION FINALE...\n');
+console.log(' VÉRIFICATION FINALE...\n');
 const final = analyzeAll();
 const finalConflicts = detectConflicts(final);
 
 console.log(`   Conflits restants: ${finalConflicts.length}\n`);
 
 if (finalConflicts.length === 0) {
-  console.log('✅✅✅ TOUS LES CONFLITS RÉSOLUS!\n');
-  console.log('🎉 97.3% des paires sont LÉGITIMES (productIds différents)\n');
+  console.log(' TOUS LES CONFLITS RÉSOLUS!\n');
+  console.log(' 97.3% des paires sont LÉGITIMES (productIds différents)\n');
   process.exit(0);
 } else {
-  console.log('⚠️  Conflits résiduels (premiers 10):\n');
+  console.log('  Conflits résiduels (premiers 10):\n');
   finalConflicts.slice(0, 10).forEach(c => {
     console.log(`   ${c.manufacturerNameUpper} + ${c.productId}: ${c.drivers.join(', ')}`);
   });

@@ -89,8 +89,8 @@ async function scanRepo(repo, local) {
 
 async function main() {
   console.log('=== PR/Issue Scanner v5.12.2 ===');
-  if (!TOKEN) console.log('⚠ No GITHUB_TOKEN — using unauthenticated (60 req/h)');
-  else console.log('✅ Using authenticated API (5000 req/h)');
+  if (!TOKEN) console.log(' No GITHUB_TOKEN  using unauthenticated (60 req/h)');
+  else console.log(' Using authenticated API (5000 req/h)');
 
   const local = buildIndex();
   console.log(`Local: ${local.driverCount} drivers, ${local.mfrs.size} FPs`);
@@ -116,7 +116,7 @@ async function main() {
       console.log('  --- New FPs ---');
       const uniqueFPs = [...new Map(r.newFPs.map(f => [f.mfr, f])).values()];
       for (const fp of uniqueFPs.slice(0, 20)) {
-        console.log(`    ${fp.mfr} — ${fp.source}: ${fp.title.substring(0, 80)}`);
+        console.log(`    ${fp.mfr}  ${fp.source}: ${fp.title.substring(0, 80)}`);
       }
       if (uniqueFPs.length > 20) console.log(`    ... and ${uniqueFPs.length - 20} more`);
     }
@@ -132,7 +132,7 @@ async function main() {
   };
   fs.mkdirSync(STATE_DIR, { recursive: true });
   fs.writeFileSync(path.join(STATE_DIR, 'pr-issue-scan.json'), JSON.stringify(report, null, 2));
-  console.log('✅ Saved to .github/state/pr-issue-scan.json');
+  console.log(' Saved to .github/state/pr-issue-scan.json');
 }
 
 main().catch(e => { console.error(e); process.exit(1); });

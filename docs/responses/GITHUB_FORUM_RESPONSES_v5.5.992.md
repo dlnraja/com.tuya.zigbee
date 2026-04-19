@@ -1,6 +1,6 @@
 # GitHub & Forum Responses - Universal Tuya Zigbee v5.5.993+
 
-## 🔧 FIXES IMPLEMENTED IN v5.5.993+
+##  FIXES IMPLEMENTED IN v5.5.993+
 
 ---
 
@@ -85,11 +85,11 @@ return {
 ```
 
 **All Fixes Applied:**
-1. ✅ **Humidity *10 Multiplier**: DP4 now multiplies by 10 (9 → 90%)
-2. ✅ **Temperature**: DP3 divides by 10 for correct reading
-3. ✅ **Battery**: DP12 now correctly mapped to battery (was luminance!)
-4. ✅ **Luminance**: DP9 for lux reading
-5. ✅ **Distance Removed**: Already removed in v5.5.892
+1.  **Humidity *10 Multiplier**: DP4 now multiplies by 10 (9  90%)
+2.  **Temperature**: DP3 divides by 10 for correct reading
+3.  **Battery**: DP12 now correctly mapped to battery (was luminance!)
+4.  **Luminance**: DP9 for lux reading
+5.  **Distance Removed**: Already removed in v5.5.892
 
 **Capabilities Added Upfront** (permissive mode):
 - measure_temperature
@@ -121,7 +121,7 @@ Hi Pieter,
 - Added `TS0003` to `switch_2gang/driver.compose.json` productId list
 
 **For LED Backlight Control:**
-Go to device settings → "LED Backlight Mode" → Options: Off, Normal, Inverted
+Go to device settings  "LED Backlight Mode"  Options: Off, Normal, Inverted
 
 This uses DP15 (Tuya DP) or ZCL attribute 0x8001 depending on firmware.
 
@@ -193,7 +193,7 @@ Hi Manuel,
 - DP1: On/off
 
 **Troubleshooting:**
-1. Check device settings → ensure correct temperature range
+1. Check device settings  ensure correct temperature range
 2. Try setting temperature via Homey app
 3. Check logs for `[THERMOSTAT]` messages
 4. If still not working, please provide a diagnostic report
@@ -240,7 +240,7 @@ Hi Lasse_K,
 - If still not working, check IAS Zone enrollment status in logs
 
 **Contact Sensor:**
-- Go to device settings → Enable "Invert Contact State" checkbox
+- Go to device settings  Enable "Invert Contact State" checkbox
 - Or: Enable "Reverse alarm logic" if available
 - HOBEIAN ZG-102Z was removed from auto-invert list in v5.5.776 per your feedback
 

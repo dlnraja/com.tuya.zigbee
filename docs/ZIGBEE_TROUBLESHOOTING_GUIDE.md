@@ -1,4 +1,4 @@
-# 🔧 Guide de Dépannage Zigbee - Universal Tuya Zigbee
+#  Guide de Dépannage Zigbee - Universal Tuya Zigbee
 
 ## Table des Matières
 1. [Problèmes de Pairing](#1-problèmes-de-pairing)
@@ -98,8 +98,8 @@ await this.tuyaEF00Manager?.queryAllDPs();
 **Problème :** L'appareil est contrôlable depuis l'app mais les changements physiques ne déclenchent pas les Flows.
 
 **Symptômes :**
-- Contrôle OK depuis Homey → device
-- Appui physique → rien dans Homey
+- Contrôle OK depuis Homey  device
+- Appui physique  rien dans Homey
 - Flow triggers jamais activés
 
 **Ce que fait l'app :**
@@ -228,23 +228,23 @@ async initialize() {
    - App logs
 
 2. **Dans l'app :**
-   - Settings → Enable Debug Logging
+   - Settings  Enable Debug Logging
    - Diagnostics Report (dans settings device)
 
 ### 3.2 Interprétation des Logs
 
 **Si ça ne paire pas :**
 ```
-[PAIRING] Device appeared briefly then left → Magic Spell manquant
-[PAIRING] No response from device → Timeout/sleepy device
-[PAIRING] Rejected by network → Limite children atteinte
+[PAIRING] Device appeared briefly then left  Magic Spell manquant
+[PAIRING] No response from device  Timeout/sleepy device
+[PAIRING] Rejected by network  Limite children atteinte
 ```
 
 **Si les Flows ne marchent pas :**
 ```
-# Pas de log du tout → Reporting pas configuré (device ne parle pas)
-[TUYA-DP] Received DP1 = true → OK, device parle
-[FLOW] Trigger not found → Flow card ID incorrect
+# Pas de log du tout  Reporting pas configuré (device ne parle pas)
+[TUYA-DP] Received DP1 = true  OK, device parle
+[FLOW] Trigger not found  Flow card ID incorrect
 ```
 
 ### 3.3 Commandes de Debug
@@ -270,15 +270,15 @@ Homey.zigbee.getState().then(console.log);
 L'app utilise une architecture hybride intelligente :
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                    Device Init                          │
-├─────────────────────────────────────────────────────────┤
-│  1. PermissiveMatchingEngine (pair first, identify later)
-│  2. TuyaEF00Manager (cluster 0xEF00 for TS0601)
-│  3. MultiEndpointManager (all endpoints configured)
-│  4. ReportingConfig (automatic reporting setup)
-│  5. DataRecoveryManager (periodic data refresh)
-└─────────────────────────────────────────────────────────┘
+
+                    Device Init                          
+
+  1. PermissiveMatchingEngine (pair first, identify later)
+  2. TuyaEF00Manager (cluster 0xEF00 for TS0601)
+  3. MultiEndpointManager (all endpoints configured)
+  4. ReportingConfig (automatic reporting setup)
+  5. DataRecoveryManager (periodic data refresh)
+
 ```
 
 ### 4.2 Fichiers Clés
@@ -300,7 +300,7 @@ _setupPassiveListener() {
   // N'envoie PAS de commandes actives
   // Attend que le device se réveille et envoie des données
   this.device.log('[TUYA-PASSIVE] Mode passif activé');
-  this.device.log('[TUYA-PASSIVE] ℹ️ Device will report when it wakes up');
+  this.device.log('[TUYA-PASSIVE]  Device will report when it wakes up');
 }
 ```
 

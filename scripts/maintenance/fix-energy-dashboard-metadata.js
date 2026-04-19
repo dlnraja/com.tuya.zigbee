@@ -27,7 +27,7 @@ driversToFix.forEach(driverId => {
         compose.energy.cumulativeExportedCapability = "meter_power.exported";
       }
       fs.writeFileSync(composePath, JSON.stringify(compose, null, 2));
-      console.log(`✅ Fixed energy metadata in ${driverId}`);
+      console.log(` Fixed energy metadata in ${driverId}`);
     }
   }
 });

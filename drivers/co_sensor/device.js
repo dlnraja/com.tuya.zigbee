@@ -41,7 +41,7 @@ class COSensorDevice extends UnifiedSensorBase {
 
     await super.onNodeInit({ zclNode });
     this._registerCapabilityListeners(); // rule-12a injected
-    this.log('[CO] ✅ CO sensor ready');
+    this.log('[CO]  CO sensor ready');
   }
 
 

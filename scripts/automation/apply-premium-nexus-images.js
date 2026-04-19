@@ -126,11 +126,11 @@ async function processImage(sourcePath, targetDir) {
 }
 
 async function main() {
-    console.log('🖼️  NEXUS IMAGE REBRANDING ENGINE');
+    console.log('  NEXUS IMAGE REBRANDING ENGINE');
     console.log('=================================');
     
     let stats = { updated: 0, skipped: 0, errors: 0 };
-    let log = '# 🖼️ Hybrid Engine Image Rebranding Log\n\n';
+    let log = '#  Hybrid Engine Image Rebranding Log\n\n';
     log += `**Execution Date:** ${new Date().toISOString()}\n\n`;
     log += '| Driver | Category | Image Used | Status |\n';
     log += '|--------|----------|------------|--------|\n';
@@ -176,21 +176,21 @@ async function main() {
             try {
                 const ok = await processImage(sourceImg, targetDir);
                 if (ok) {
-                    console.log(`  ✅ ${drv} -> ${matchedKey}`);
-                    log += `| ${drv} | ${matchedKey} | ${MASTER_IMAGES[matchedKey]} | ✅ Updated |\n`;
+                    console.log(`   ${drv} -> ${matchedKey}`);
+                    log += `| ${drv} | ${matchedKey} | ${MASTER_IMAGES[matchedKey]} |  Updated |\n`;
                     stats.updated++;
                 } else {
-                    console.warn(`  ⚠️  Source missing for ${matchedKey} (${drv}) - Expected: ${sourceImg}`);
-                    log += `| ${drv} | ${matchedKey} | - | ⚠️ Missing Source |\n`;
+                    console.warn(`    Source missing for ${matchedKey} (${drv}) - Expected: ${sourceImg}`);
+                    log += `| ${drv} | ${matchedKey} | - |  Missing Source |\n`;
                     stats.errors++;
                 }
             } catch (err) {
-                console.error(`  ❌ Error processing ${drv}:`, err.message);
-                log += `| ${drv} | ${matchedKey} | - | ❌ Error: ${err.message} |\n`;
+                console.error(`   Error processing ${drv}:`, err.message);
+                log += `| ${drv} | ${matchedKey} | - |  Error: ${err.message} |\n`;
                 stats.errors++;
             }
         } else {
-            log += `| ${drv} | - | - | ⏭️ Skipped (No match) |\n`;
+            log += `| ${drv} | - | - |  Skipped (No match) |\n`;
             stats.skipped++;
         }
     }
@@ -198,9 +198,9 @@ async function main() {
     fs.mkdirSync(path.join(ROOT, 'REPORTS'), { recursive: true });
     fs.writeFileSync(LOG_FILE, log);
     
-    console.log('\n✨ Rebranding Complete.');
-    console.log(`📊 Updated: ${stats.updated} | Skipped: ${stats.skipped} | Errors: ${stats.errors}`);
-    console.log(`📄 Report saved to REPORTS/IMAGE_REBRANDING_LOG.md`);
+    console.log('\n Rebranding Complete.');
+    console.log(` Updated: ${stats.updated} | Skipped: ${stats.skipped} | Errors: ${stats.errors}`);
+    console.log(` Report saved to REPORTS/IMAGE_REBRANDING_LOG.md`);
 }
 
 main().catch(console.error);

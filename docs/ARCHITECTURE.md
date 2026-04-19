@@ -62,18 +62,18 @@ Each driver lives in `drivers/{type}/` with:
 
 `
 Homey.Device (SDK3)
-  └── ZigBeeDevice (homey-zigbeedriver)
-        └── TuyaZigbeeDevice (lib/tuya/TuyaZigbeeDevice.js)
-              └── TuyaHybridDevice (lib/devices/TuyaHybridDevice.js)
-                    └── BaseHybridDevice (lib/devices/BaseHybridDevice.js) [182KB - master base]
-                          ├── HybridSwitchBase (lib/devices/HybridSwitchBase.js)
-                          │     └── + PhysicalButtonMixin + VirtualButtonMixin
-                          ├── HybridSensorBase (lib/devices/HybridSensorBase.js) [207KB - largest]
-                          ├── HybridCoverBase (lib/devices/HybridCoverBase.js)
-                          ├── HybridLightBase (lib/devices/HybridLightBase.js)
-                          ├── HybridPlugBase (lib/devices/HybridPlugBase.js)
-                          ├── HybridThermostatBase (lib/devices/HybridThermostatBase.js)
-                          └── ButtonDevice (lib/devices/ButtonDevice.js) [80KB]
+   ZigBeeDevice (homey-zigbeedriver)
+         TuyaZigbeeDevice (lib/tuya/TuyaZigbeeDevice.js)
+               TuyaHybridDevice (lib/devices/TuyaHybridDevice.js)
+                     BaseHybridDevice (lib/devices/BaseHybridDevice.js) [182KB - master base]
+                           HybridSwitchBase (lib/devices/HybridSwitchBase.js)
+                                + PhysicalButtonMixin + VirtualButtonMixin
+                           HybridSensorBase (lib/devices/HybridSensorBase.js) [207KB - largest]
+                           HybridCoverBase (lib/devices/HybridCoverBase.js)
+                           HybridLightBase (lib/devices/HybridLightBase.js)
+                           HybridPlugBase (lib/devices/HybridPlugBase.js)
+                           HybridThermostatBase (lib/devices/HybridThermostatBase.js)
+                           ButtonDevice (lib/devices/ButtonDevice.js) [80KB]
 `
 
 ### Key Base Classes

@@ -160,7 +160,7 @@ fs.writeFileSync(
   JSON.stringify(frostProtectionTemp, null, 2)
 );
 
-console.log('✅ Created 6 custom capabilities for TRV:');
+console.log(' Created 6 custom capabilities for TRV:');
 console.log('   - window_detection');
 console.log('   - boost_mode');
 console.log('   - valve_position');

@@ -1,7 +1,7 @@
 const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
 'use strict';
-// v5.12.0: Forum Spam Scanner — identifies all dlnraja posts that need cleanup
+// v5.12.0: Forum Spam Scanner  identifies all dlnraja posts that need cleanup
 // Detects: hidden/flagged, consecutive, bot signatures, duplicates, system-triggered
 // Run: HOMEY_EMAIL=xxx HOMEY_PASSWORD=yyy node .github/scripts/forum-scan-spam.js
 // Or:  HOMEY_EMAIL=x HOMEY_PASSWORD=y node .github/scripts/forum-scan-spam.js
@@ -39,7 +39,7 @@ const BOT_PATTERNS = [
 
 // Patterns for raw FP dumps (nightly processor spam)
 const FP_DUMP_PATTERNS = [
-  /^`_T[ZE]\d{3}_[a-z0-9]+`\s*→/m,
+  /^`_T[ZE]\d{3}_[a-z0-9]+`\s*/m,
   /manufacturerName.*safeDivide(productId, i),
   /\{.*"zigbee".*"manufacturerName"/,
 ];
@@ -65,7 +65,7 @@ async function fetchAllPosts(topicId, auth) {
   try {
     const r = await fetchWithRetry(url, { headers: getHeaders(auth) }, { retries: 2, label: 'topic' });
     if (!r.ok) {
-      console.log(`  ✗ T${topicId}: HTTP ${r.status}`);
+      console.log(`   T${topicId}: HTTP ${r.status}`);
       return posts;
     }
     const data = await r.json();
@@ -92,7 +92,7 @@ async function fetchAllPosts(topicId, auth) {
       } catch (e) { /* skip chunk */ }
     }
   } catch (e) {
-    console.log(`  ✗ T${topicId}: ${e.message}`);
+    console.log(`   T${topicId}: ${e.message}`);
   }
   
   return posts;
@@ -130,7 +130,7 @@ function analyzePost(post, prevPost, allMyPosts) {
     issues.push({
       type: 'CONSECUTIVE',
       severity: 'high',
-      reason: `Consecutive post after #${prevPost.post_number} — should edit previous instead`,
+      reason: `Consecutive post after #${prevPost.post_number}  should edit previous instead`,
       action: 'merge_or_delete'
     });
   }
@@ -154,7 +154,7 @@ function analyzePost(post, prevPost, allMyPosts) {
       issues.push({
         type: 'FP_DUMP',
         severity: 'high',
-        reason: 'Raw fingerprint dump — nightly processor spam',
+        reason: 'Raw fingerprint dump  nightly processor spam',
         action: 'delete'
       });
       break;
@@ -207,10 +207,10 @@ async function main() {
   const auth = await getForumAuth();
     if(auth&&auth.type==='session')auth=await refreshCsrf(auth);
   if (!auth) {
-    console.error('❌ No auth available. Set HOMEY_EMAIL + HOMEY_PASSWORD or HOMEY_EMAIL');
+    console.error(' No auth available. Set HOMEY_EMAIL + HOMEY_PASSWORD or HOMEY_EMAIL');
     process.exit(1);
   }
-  console.log('✅ Auth:', auth.type);
+  console.log(' Auth:', auth.type);
   
   const allMyPosts = [];
   const allIssues = [];
@@ -265,25 +265,25 @@ async function main() {
   const toMerge = allIssues.filter(p => p.issues.some(i => i.action === 'merge_or_delete') && !p.issues.some(i => i.action === 'delete'));
   const toReview = allIssues.filter(p => p.issues.every(i => i.action === 'review'));
   
-  console.log(`\n🗑️  TO DELETE: ${toDelete.length}`);
+  console.log(`\n  TO DELETE: ${toDelete.length}`);
   for (const p of toDelete) {
-    console.log(`  T${p.topic}#${p.postNumber} (id=${p.postId}) ${p.hidden ? '[HIDDEN] ' : ''}— ${p.issues.map(i => i.reason).join('; ')}`);
+    console.log(`  T${p.topic}#${p.postNumber} (id=${p.postId}) ${p.hidden ? '[HIDDEN] ' : ''} ${p.issues.map(i => i.reason).join('; ')}`);
     console.log(`    Preview: ${p.textPreview}`);
   }
   
-  console.log(`\n✏️  TO EDIT (remove bot signature): ${toEdit.length}`);
+  console.log(`\n  TO EDIT (remove bot signature): ${toEdit.length}`);
   for (const p of toEdit) {
-    console.log(`  T${p.topic}#${p.postNumber} (id=${p.postId}) — ${p.issues.map(i => i.reason).join('; ')}`);
+    console.log(`  T${p.topic}#${p.postNumber} (id=${p.postId})  ${p.issues.map(i => i.reason).join('; ')}`);
   }
   
-  console.log(`\n🔀 TO MERGE/DELETE (consecutive): ${toMerge.length}`);
+  console.log(`\n TO MERGE/DELETE (consecutive): ${toMerge.length}`);
   for (const p of toMerge) {
-    console.log(`  T${p.topic}#${p.postNumber} (id=${p.postId}) — ${p.issues.map(i => i.reason).join('; ')}`);
+    console.log(`  T${p.topic}#${p.postNumber} (id=${p.postId})  ${p.issues.map(i => i.reason).join('; ')}`);
   }
   
-  console.log(`\n👀 TO REVIEW: ${toReview.length}`);
+  console.log(`\n TO REVIEW: ${toReview.length}`);
   for (const p of toReview) {
-    console.log(`  T${p.topic}#${p.postNumber} (id=${p.postId}) — ${p.issues.map(i => i.reason).join('; ')}`);
+    console.log(`  T${p.topic}#${p.postNumber} (id=${p.postId})  ${p.issues.map(i => i.reason).join('; ')}`);
   }
   
   // Check which posts from previous cleanup have already been processed
@@ -296,7 +296,7 @@ async function main() {
     714499, 714659, 714607
   ]);
   const newIssues = allIssues.filter(p => !prevCleanup.has(p.postId));
-  console.log(`\n📊 NEW issues (not in previous cleanup): ${newIssues.length}`);
+  console.log(`\n NEW issues (not in previous cleanup): ${newIssues.length}`);
   
   // Save scan results
   const report = {
@@ -313,7 +313,7 @@ async function main() {
   
   fs.mkdirSync(STATE_DIR, { recursive: true });
   fs.writeFileSync(path.join(STATE_DIR, 'spam-scan-results.json'), JSON.stringify(report, null, 2));
-  console.log(`\n✅ Results saved to .github/state/spam-scan-results.json`);
+  console.log(`\n Results saved to .github/state/spam-scan-results.json`);
   
   // Generate cleanup script additions
   if (newIssues.length > 0) {

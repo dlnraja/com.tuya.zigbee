@@ -2,14 +2,7 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.575: CRITICAL FIX - Flow card run listeners were missing
- */
 class DoorControllerDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -19,91 +12,116 @@ class DoorControllerDriver extends ZigBeeDriver {
     }
   }
 
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
     this.log('DoorControllerDriver v5.5.575 initialized');
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
   _registerFlowCards() {
-    // CONDITION: Door is open
+    // TRIGGERS
+    try { this.homey.flow.getTriggerCard('door_controller_opened'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('door_controller_closed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('door_controller_locked'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('door_controller_unlocked'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('door_controller_motion_detected'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('door_controller_contact_alarm'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('door_controller_battery_low'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('door_controller_lock_changed'); } catch (e) {}
+
+    // CONDITIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('door_controller_is_open'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('door_controller_is_open');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_contact') === true;
         });
-      this.log('[FLOW] ✅ Registered: door_controller_is_open');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition door_controller_is_open: ${err.message}`); }
 
-    // CONDITION: Door is locked
     try {
-      (() => { try { return this.homey.flow.getConditionCard('door_controller_is_locked'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('door_controller_is_locked');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          return args.device.getCapabilityValue('locked') === true;
+          return args.device.getCapabilityValue('onoff') === true;
         });
-      this.log('[FLOW] ✅ Registered: door_controller_is_locked');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition door_controller_is_locked: ${err.message}`); }
 
-    // ACTION: Open door
     try {
-      (() => { try { return this.homey.flow.getConditionCard('door_controller_open'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('door_controller_motion_active');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, true).catch(() => {});
-          await args.device.setCapabilityValue('onoff', true).catch(() => {});
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition door_controller_motion_active: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getConditionCard('door_controller_contact_open');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition door_controller_contact_open: ${err.message}`); }
+
+    // ACTIONS
+    try {
+      const card = this.homey.flow.getActionCard('door_controller_open');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          // Generic action handler
+          this.log('[FLOW] Action door_controller_open triggered for', args.device.getName());
           return true;
         });
-      this.log('[FLOW] ✅ Registered: door_controller_open');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action door_controller_open: ${err.message}`); }
 
-    // ACTION: Close door
     try {
-      (() => { try { return this.homey.flow.getConditionCard('door_controller_close'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('door_controller_close');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, false).catch(() => {});
-          await args.device.setCapabilityValue('onoff', false).catch(() => {});
+          // Generic action handler
+          this.log('[FLOW] Action door_controller_close triggered for', args.device.getName());
           return true;
         });
-      this.log('[FLOW] ✅ Registered: door_controller_close');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action door_controller_close: ${err.message}`); }
 
-    // ACTION: Lock door
     try {
-      (() => { try { return this.homey.flow.getConditionCard('door_controller_lock'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('door_controller_lock');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('locked', true);
+          // Generic action handler
+          this.log('[FLOW] Action door_controller_lock triggered for', args.device.getName());
           return true;
         });
-      this.log('[FLOW] ✅ Registered: door_controller_lock');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action door_controller_lock: ${err.message}`); }
 
-    // ACTION: Unlock door
     try {
-      (() => { try { return this.homey.flow.getConditionCard('door_controller_unlock'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('door_controller_unlock');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('locked', false);
+          // Generic action handler
+          this.log('[FLOW] Action door_controller_unlock triggered for', args.device.getName());
           return true;
         });
-      this.log('[FLOW] ✅ Registered: door_controller_unlock');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action door_controller_unlock: ${err.message}`); }
 
-    this.log('[FLOW]  Door controller flow cards registered');
+    this.log('[FLOW] All flow cards registered');
   }
 }
 

@@ -2,12 +2,12 @@
 'use strict';
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      PARALLEL BOT HANDLER - v1.0.0                                          ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Comment and Close all bot-generated issues and PRs across repositories    ║
- * ║  Runs parallelized (max 5 at a time) to save time in daily everything.      ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       PARALLEL BOT HANDLER - v1.0.0                                          
+ * 
+ *   Comment and Close all bot-generated issues and PRs across repositories    
+ *   Runs parallelized (max 5 at a time) to save time in daily everything.      
+ * 
  */
 
 const { execSync, exec } = require('child_process');
@@ -67,7 +67,7 @@ async function runRepo(repo) {
         console.log(`  [BATCH] #${item.number} (${item.type}) by ${item.author.login}`);
         
         // v7.0.22: Architect-Level Context-Aware Resolution
-        const comment = `🛡️ **Autonomous Maintenance Layer (v7.0.22)** 
+        const comment = ` **Autonomous Maintenance Layer (v7.0.22)** 
 The ${item.type} [#${item.number}] by ${item.author.login} has been analyzed via our industrial triage pipeline.
 
 **Resolution Summary**:
@@ -82,9 +82,9 @@ Closing this item to maintain fleet-wide manifest integrity. *Automated via dlnr
           await pExec(`gh ${item.type} comment "${item.number}" --repo "${repo}" --body "${comment}"`);
           // Close
           await pExec(`gh ${item.type} close "${item.number}" --repo "${repo}"`);
-          console.log(`  ✅ Resolved #${item.number}`);
+          console.log(`   Resolved #${item.number}`);
         } catch (e) {
-          console.error(`  ❌ Failed to resolve #${item.number}: ${e.message}`);
+          console.error(`   Failed to resolve #${item.number}: ${e.message}`);
         }
       }));
     }

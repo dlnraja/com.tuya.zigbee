@@ -76,7 +76,7 @@ function processFile(filePath) {
 
   if (changed) {
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2) + '\n');
-    console.log(`✅ Cleaned nomenclature in: ${path.relative(ROOT, filePath)}`);
+    console.log(` Cleaned nomenclature in: ${path.relative(ROOT, filePath)}`);
     return true;
   }
   return false;
@@ -94,6 +94,6 @@ function walk(dir) {
   }
 }
 
-console.log('🚀 Starting Global Nomenclature Cleanup (Removing "Hybrid")...');
+console.log(' Starting Global Nomenclature Cleanup (Removing "Hybrid")...');
 walk(DRIVERS_DIR);
-console.log('✨ Nomenclature cleanup complete.');
+console.log(' Nomenclature cleanup complete.');

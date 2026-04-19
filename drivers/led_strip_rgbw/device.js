@@ -21,7 +21,7 @@ class LEDStripRGBWDevice extends UnifiedLightBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[LED-RGBW] ✅ Ready');
+    this.log('[LED-RGBW]  Ready');
   }
 
 

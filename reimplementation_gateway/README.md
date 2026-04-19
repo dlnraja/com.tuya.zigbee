@@ -1,8 +1,8 @@
 <div align="center">
 
-# ⚡ Core Reimplementation
+#  Core Reimplementation
 
-### Multi-AI Gateway — One API, All Models
+### Multi-AI Gateway  One API, All Models
 
 [![Version](https://img.shields.io/badge/version-3.0.0-blue.svg)](https:
 [![License](https://img.shields.io/badge/license-Personal%20Use-green.svg)](LICENSE)
@@ -11,7 +11,7 @@
 [![Providers](https://img.shields.io/badge/AI%20Providers-4-purple.svg)]()
 
 Use ChatGPT, Claude, Gemini & Perplexity through **ONE single endpoint**.
-No API keys needed — use your existing accounts.
+No API keys needed  use your existing accounts.
 
 [Getting Started](#getting-started) · [API Usage](#api-usage) · [SDKs](#sdks) · [MCP Tools](#mcp-tools) · [Configuration](#configuration)
 
@@ -37,10 +37,10 @@ Core Reimplementation is a local AI gateway that connects multiple AI providers 
 
 ```
 POST /v1/chat/completions
-{"model": "claude", "message": "Hello"}                                          → Chat
-{"model": "perplexity", "message": "AI news", "function": "search"}              → Search
-{"model": "gemini", "message": "Hello", "function": "translate", "to": "Hindi"}  → Translate
-{"model": "claude", "message": "Sort algo", "function": "code"}                  → Code
+{"model": "claude", "message": "Hello"}                                           Chat
+{"model": "perplexity", "message": "AI news", "function": "search"}               Search
+{"model": "gemini", "message": "Hello", "function": "translate", "to": "Hindi"}   Translate
+{"model": "claude", "message": "Sort algo", "function": "code"}                   Code
 ```
 
 > **No API keys required.** Core Reimplementation uses your existing browser sessions to talk to AI providers directly.
@@ -49,11 +49,11 @@ POST /v1/chat/completions
 
 | Feature | Description |
 |---------|-------------|
-| **One Endpoint** | Everything through `/v1/chat/completions` — no separate URLs |
-| **4 AI Providers** | ChatGPT, Claude, Gemini, Perplexity — any model, any task |
-| **45+ MCP Tools** | Search, code, translate, analyze, brainstorm — all via MCP |
+| **One Endpoint** | Everything through `/v1/chat/completions`  no separate URLs |
+| **4 AI Providers** | ChatGPT, Claude, Gemini, Perplexity  any model, any task |
+| **45+ MCP Tools** | Search, code, translate, analyze, brainstorm  all via MCP |
 | **REST API** | OpenAI-compatible API on `localhost:3210` |
-| **SDKs** | Python & JavaScript — one function each |
+| **SDKs** | Python & JavaScript  one function each |
 | **No API Keys** | Use your existing account logins |
 | **Local & Private** | Runs on localhost, your data stays on your machine |
 | **Smart Router** | Auto-picks the best available AI for your query |
@@ -62,16 +62,16 @@ POST /v1/chat/completions
 
 ## What's New in v3.0.0
 
-- 🆕 **27 new MCP tools** — content, analysis, file analysis, window control, session management
-- 🆕 **REST API** — OpenAI-compatible endpoint at `localhost:3210`
-- 🆕 **Python & JavaScript SDKs** — one function to do everything
-- 🆕 **Smart Router** — auto-picks best AI with retry logic
-- 🆕 **Math Search** — solve math & science problems step-by-step
-- 🆕 **Image Search** — find images on any topic
-- 🆕 **File Analysis** — upload and analyze local files with any AI
-- 🆕 **Window Controls** — show, hide, toggle, headless mode
-- 🔧 **Enhanced typing detection** — better response capture for all providers
-- 🔧 **Claude code hack** — forces inline code instead of artifacts for reliable capture
+-  **27 new MCP tools**  content, analysis, file analysis, window control, session management
+-  **REST API**  OpenAI-compatible endpoint at `localhost:3210`
+-  **Python & JavaScript SDKs**  one function to do everything
+-  **Smart Router**  auto-picks best AI with retry logic
+-  **Math Search**  solve math & science problems step-by-step
+-  **Image Search**  find images on any topic
+-  **File Analysis**  upload and analyze local files with any AI
+-  **Window Controls**  show, hide, toggle, headless mode
+-  **Enhanced typing detection**  better response capture for all providers
+-  **Claude code hack**  forces inline code instead of artifacts for reliable capture
 
 ---
 
@@ -80,7 +80,7 @@ POST /v1/chat/completions
 ### Requirements
 
 - **Windows 10/11**
-- **Node.js 18+** → [Download Node.js](https://nodejs.org/)
+- **Node.js 18+**  [Download Node.js](https://nodejs.org/)
 
 ### Installation
 
@@ -92,7 +92,7 @@ POST /v1/chat/completions
 
 Download the latest release and run the installer.
 
-[Download for Windows →](https://github.com/Zen4-bit/Core Reimplementation/releases)
+[Download for Windows ](https://github.com/Zen4-bit/Core Reimplementation/releases)
 
 </td>
 <td width="50%">
@@ -155,7 +155,7 @@ Web search & research
 
 ### Model Aliases
 
-You can use familiar names — they all resolve to the right provider:
+You can use familiar names  they all resolve to the right provider:
 
 | Provider | Aliases |
 |----------|---------|
@@ -163,13 +163,13 @@ You can use familiar names — they all resolve to the right provider:
 | Claude | `claude`, `anthropic`, `sonnet`, `opus`, `haiku` |
 | Gemini | `gemini`, `google`, `bard`, `gemini-pro` |
 | Perplexity | `perplexity`, `pplx`, `sonar` |
-| Auto | `auto` — picks the best available |
+| Auto | `auto`  picks the best available |
 
 ---
 
 ## API Usage
 
-### ONE Endpoint — Everything
+### ONE Endpoint  Everything
 
 ```
 POST http://localhost:3210/v1/chat/completions
@@ -268,13 +268,13 @@ Every call returns the **same format**:
 
 ## SDKs
 
-### Python SDK — One Function
+### Python SDK  One Function
 
 ```python
 from proxima import Core Reimplementation
 client = Core Reimplementation()
 
-# Chat — any model
+# Chat  any model
 response = client.chat("Hello", model="claude")
 response = client.chat("Hello", model="chatgpt")
 response = client.chat("Hello", model="gemini")
@@ -283,11 +283,11 @@ print(response.text)
 print(response.model)
 print(response.response_time_ms)
 
-# Search — same function, add function="search"
+# Search  same function, add function="search"
 result = client.chat("AI news 2026", model="perplexity", function="search")
 print(result.text)
 
-# Translate — same function, add function="translate"
+# Translate  same function, add function="translate"
 hindi = client.chat("Hello world", model="gemini", function="translate", to="Hindi")
 print(hindi.text)
 
@@ -311,13 +311,13 @@ client.new_conversation()
 
 **Installation:** `pip install requests`, then copy `sdk/proxima.py` to your project.
 
-### JavaScript SDK — One Function
+### JavaScript SDK  One Function
 
 ```javascript
 const { Core Reimplementation } = require('./sdk/proxima');
 const client = new Core Reimplementation();
 
-// Chat — any model
+// Chat  any model
 const res = await client.chat("Hello", { model: "claude" });
 console.log(res.text);
 
@@ -384,7 +384,7 @@ Add this to your AI coding app's MCP settings:
 
 ---
 
-### 🔍 Search Tools (8)
+###  Search Tools (8)
 
 | Tool | Provider | Description |
 |------|----------|-------------|
@@ -397,7 +397,7 @@ Add this to your AI coding app's MCP settings:
 | `image_search` | Perplexity | Find images on any topic |
 | `math_search` | Perplexity | Solve math & science problems step-by-step |
 
-### 💻 Code Tools (7)
+###  Code Tools (7)
 
 | Tool | Description |
 |------|-------------|
@@ -409,7 +409,7 @@ Add this to your AI coding app's MCP settings:
 | `verify_code` | Verify code follows standards |
 | `research_fix` | Research how to fix specific errors |
 
-### 🤖 AI Provider Tools (6)
+###  AI Provider Tools (6)
 
 | Tool | Description |
 |------|-------------|
@@ -420,7 +420,7 @@ Add this to your AI coding app's MCP settings:
 | `compare_ais` | Compare responses from multiple AIs side-by-side |
 | `smart_query` | Auto-route to best AI via Smart Router |
 
-### 📝 Content & Research Tools (8)
+###  Content & Research Tools (8)
 
 | Tool | Description |
 |------|-------------|
@@ -433,7 +433,7 @@ Add this to your AI coding app's MCP settings:
 | `summarize_url` | Summarize any webpage with focus area |
 | `generate_article` | Write articles in any style |
 
-### 🔬 Analysis Tools (5)
+###  Analysis Tools (5)
 
 | Tool | Description |
 |------|-------------|
@@ -443,14 +443,14 @@ Add this to your AI coding app's MCP settings:
 | `compare` | Compare two items in detail |
 | `generate_image_prompt` | Create detailed AI image generation prompts |
 
-### 📁 File Analysis Tools (2)
+###  File Analysis Tools (2)
 
 | Tool | Description |
 |------|-------------|
 | `analyze_file` | Upload & analyze local files with any AI |
 | `review_code_file` | Upload code file for focused review (bugs, performance, security, style) |
 
-### 🪟 Window Control Tools (4)
+###  Window Control Tools (4)
 
 | Tool | Description |
 |------|-------------|
@@ -459,14 +459,14 @@ Add this to your AI coding app's MCP settings:
 | `toggle_window` | Toggle window visibility |
 | `set_headless_mode` | Enable/disable headless mode |
 
-### 🔄 Session Tools (2)
+###  Session Tools (2)
 
 | Tool | Description |
 |------|-------------|
 | `new_conversation` | Start fresh conversations on all providers |
 | `clear_cache` | Clear all cached responses |
 
-### 📊 Status & Monitoring Tools (2)
+###  Status & Monitoring Tools (2)
 
 | Tool | Description |
 |------|-------------|
@@ -479,21 +479,21 @@ Add this to your AI coding app's MCP settings:
 
 ```
 proxima/
-├── electron/
-│   ├── main-v2.cjs             # Electron main process
-│   ├── browser-manager.cjs     # Browser view management
-│   ├── rest-api.cjs            # REST API server (OpenAI-compatible)
-│   ├── index-v2.html           # Application UI
-│   ├── preload.cjs             # Renderer preload script
-│   ├── preload.cjs              # Renderer preload bridge
-│   └── provider-preload.cjs    # Provider page preload
-├── src/
-│   └── mcp-server-v3.js        # MCP server (45+ tools)
-├── sdk/
-│   ├── proxima.py              # Python SDK — one function
-│   └── proxima.js              # JavaScript SDK — one function
-├── assets/                     # Icons, logos, screenshots & demo
-└── package.json
+ electron/
+    main-v2.cjs             # Electron main process
+    browser-manager.cjs     # Browser view management
+    rest-api.cjs            # REST API server (OpenAI-compatible)
+    index-v2.html           # Application UI
+    preload.cjs             # Renderer preload script
+    preload.cjs              # Renderer preload bridge
+    provider-preload.cjs    # Provider page preload
+ src/
+    mcp-server-v3.js        # MCP server (45+ tools)
+ sdk/
+    proxima.py              # Python SDK  one function
+    proxima.js              # JavaScript SDK  one function
+ assets/                     # Icons, logos, screenshots & demo
+ package.json
 ```
 
 ---
@@ -503,7 +503,7 @@ proxima/
 <details>
 <summary><strong>Windows Firewall prompt</strong></summary>
 
-Click "Allow" — Core Reimplementation only accepts local connections on `localhost:3210` and `localhost:19222`.
+Click "Allow"  Core Reimplementation only accepts local connections on `localhost:3210` and `localhost:19222`.
 </details>
 
 <details>
@@ -539,7 +539,7 @@ See [LICENSE](LICENSE) for details.
 
 <div align="center">
 
-**Core Reimplementation v3.0.0** — One API, All AI Models ⚡
+**Core Reimplementation v3.0.0**  One API, All AI Models 
 
 Made by [Zen4-bit](https://github.com/Zen4-bit)
 

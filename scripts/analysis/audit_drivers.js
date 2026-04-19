@@ -18,8 +18,8 @@ const drivers = fs.readdirSync(driversDir).filter(d => {
   return fs.existsSync(driverPath);
 });
 
-console.log(`\n🔍 DRIVER AUDIT - Scanning ${drivers.length} drivers...\n`);
-console.log('═'.repeat(70));
+console.log(`\n DRIVER AUDIT - Scanning ${drivers.length} drivers...\n`);
+console.log(''.repeat(70));
 
 for (const driver of drivers) {
   const composePath = path.join(driversDir, driver, 'driver.compose.json');
@@ -64,8 +64,8 @@ for (const driver of drivers) {
 }
 
 // Check for manufacturerName conflicts (same mfr+productId in multiple drivers)
-console.log('\n📊 MANUFACTURERNAME ANALYSIS\n');
-console.log('─'.repeat(70));
+console.log('\n MANUFACTURERNAME ANALYSIS\n');
+console.log(''.repeat(70));
 
 let conflictCount = 0;
 for (const [mfr, entries] of mfrMap) {
@@ -76,9 +76,9 @@ for (const [mfr, entries] of mfrMap) {
     
     if (allProductIds.length !== uniqueProductIds.length) {
       // Potential conflict - same productId in multiple drivers
-      console.log(`⚠️  ${mfr}`);
+      console.log(`  ${mfr}`);
       for (const entry of entries) {
-        console.log(`   └─ ${entry.driver}: [${entry.productIds.slice(0, 5).join(', ')}${entry.productIds.length > 5 ? '...' : ''}]`);
+        console.log(`    ${entry.driver}: [${entry.productIds.slice(0, 5).join(', ')}${entry.productIds.length > 5 ? '...' : ''}]`);
       }
       conflictCount++;
     }
@@ -86,44 +86,44 @@ for (const [mfr, entries] of mfrMap) {
 }
 
 if (conflictCount === 0) {
-  console.log('✅ No manufacturerName+productId conflicts detected');
+  console.log(' No manufacturerName+productId conflicts detected');
 }
 
 // Report issues
-console.log('\n🚨 ISSUES FOUND\n');
-console.log('─'.repeat(70));
+console.log('\n ISSUES FOUND\n');
+console.log(''.repeat(70));
 
 const highIssues = issues.filter(i => i.severity === 'HIGH');
 const mediumIssues = issues.filter(i => i.severity === 'MEDIUM');
 
 if (highIssues.length > 0) {
-  console.log('\n❌ HIGH SEVERITY:');
+  console.log('\n HIGH SEVERITY:');
   for (const i of highIssues) {
     console.log(`   ${i.driver}: ${i.issue}`);
   }
 }
 
 if (mediumIssues.length > 0) {
-  console.log('\n⚠️  MEDIUM SEVERITY:');
+  console.log('\n  MEDIUM SEVERITY:');
   for (const i of mediumIssues) {
     console.log(`   ${i.driver}: ${i.issue}`);
   }
 }
 
 if (issues.length === 0) {
-  console.log('✅ No critical issues found');
+  console.log(' No critical issues found');
 }
 
 // universal_fallback check
-console.log('\n🛡️  UNIVERSAL_FALLBACK STATUS\n');
-console.log('─'.repeat(70));
+console.log('\n  UNIVERSAL_FALLBACK STATUS\n');
+console.log(''.repeat(70));
 
 const fallbackPath = path.join(driversDir, 'universal_fallback', 'driver.compose.json');
 if (fs.existsSync(fallbackPath)) {
   const fallback = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
   const mfr = fallback.zigbee?.manufacturerName || [];
   const pids = fallback.zigbee?.productId || [];
-  console.log(`✅ universal_fallback exists`);
+  console.log(` universal_fallback exists`);
   console.log(`   manufacturerName prefixes: ${mfr.length}`);
   console.log(`   productId patterns: ${pids.length}`);
   
@@ -131,20 +131,20 @@ if (fs.existsSync(fallbackPath)) {
   const tuyaPrefixes = ['_TZE200_', '_TZE204_', '_TZE284_', '_TZ3000_', '_TZ3210_'];
   const hasTuyaPrefixes = tuyaPrefixes.every(p => mfr.includes(p));
   if (hasTuyaPrefixes) {
-    console.log(`   ✅ All Tuya prefixes covered`);
+    console.log(`    All Tuya prefixes covered`);
   } else {
-    console.log(`   ⚠️  Missing some Tuya prefixes`);
+    console.log(`     Missing some Tuya prefixes`);
   }
 } else {
-  console.log('❌ universal_fallback MISSING - CRITICAL');
+  console.log(' universal_fallback MISSING - CRITICAL');
 }
 
 // Summary
-console.log('\n' + '═'.repeat(70));
-console.log('📋 SUMMARY');
-console.log('═'.repeat(70));
+console.log('\n' + ''.repeat(70));
+console.log(' SUMMARY');
+console.log(''.repeat(70));
 console.log(`Total drivers: ${drivers.length}`);
 console.log(`High severity issues: ${highIssues.length}`);
 console.log(`Medium severity issues: ${mediumIssues.length}`);
 console.log(`ManufacturerName conflicts: ${conflictCount}`);
-console.log('═'.repeat(70) + '\n');
+console.log(''.repeat(70) + '\n');

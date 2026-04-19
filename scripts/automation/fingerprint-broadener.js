@@ -56,9 +56,9 @@ function harvestFPs() {
 }
 
 function processBroadening() {
-    console.log('🚀 [Broadener] Starting v7.0.25 High-Frequency Wildcard injection...');
+    console.log(' [Broadener] Starting v7.0.25 High-Frequency Wildcard injection...');
     const knownFPs = harvestFPs();
-    console.log(`🔍 [Broadener] Harvested ${knownFPs.length} variants.`);
+    console.log(` [Broadener] Harvested ${knownFPs.length} variants.`);
 
     // 1. Group by Chipset Prefix (Rule 2 optimization)
     const chipsets = {
@@ -122,15 +122,15 @@ function processBroadening() {
 
             if (updated) {
                 fs.writeFileSync(cp, JSON.stringify(j, null, 2) + '\n');
-                console.log(`✅ [Broadener] Broadened ${driver} with ${pid} and new variants.`);
+                console.log(` [Broadener] Broadened ${driver} with ${pid} and new variants.`);
             }
         } catch (err) {
-            console.error(`❌ [Broadener] Failed ${driver}:`, err.message);
+            console.error(` [Broadener] Failed ${driver}:`, err.message);
         }
     });
 
     // 4. Cleanup and PR Ready
-    console.log('🔄 [Broadener] Wildcard integration complete.');
+    console.log(' [Broadener] Wildcard integration complete.');
 }
 
 processBroadening();

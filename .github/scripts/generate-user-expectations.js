@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-// v5.11.29: generate-user-expectations.js — Dynamic user/device tracking + decision reference
+// v5.11.29: generate-user-expectations.js  Dynamic user/device tracking + decision reference
 // Reads: drivers, .homeychangelog.json, app.json, all .github/state/*.json, interviews
 // Outputs: docs/rules/USER_DEVICE_EXPECTATIONS.md + .github/state/expectations-ref.json
 // Other scripts CONSULT expectations-ref.json before making driver/device decisions
@@ -244,12 +244,12 @@ const pending = [
   { user: 'Cam', device: '`_TZ3000_5bpeda8u` TS0041', status: 'NEEDS DIAG', note: 'Update v5.11.25 + re-pair + diag' },
   { user: 'Freddyboy', device: '`_TZ3000_zgyzgdua` TS0044', status: 'NEEDS DIAG', note: 'Update v5.11.25 + re-pair + diag' },
   { user: 'Lasse_K', device: 'ZG-102Z contact', status: 'FIXED v5.11.26', note: 'HOBEIAN re-added to invertedByDefault (#1513/#1515). User needs to re-pair.' },
-  { user: 'FrankP', device: 'IR remote learning mode', status: 'NEW BUG', note: 'Learning button turns off immediately (diag b6635c8c) — #1471' },
-  { user: 'Peter_Kawa', device: 'Soil sensor capability', status: 'ENHANCEMENT', note: 'Change measure_humidity.soil → measure_moisture (standard cap) — #1473' },
+  { user: 'FrankP', device: 'IR remote learning mode', status: 'NEW BUG', note: 'Learning button turns off immediately (diag b6635c8c)  #1471' },
+  { user: 'Peter_Kawa', device: 'Soil sensor capability', status: 'ENHANCEMENT', note: 'Change measure_humidity.soil  measure_moisture (standard cap)  #1473' },
   { user: '7Hills', device: '`_TZE204_clrdrnya` WZ-235-ZB-RL RELAY', status: 'FIXED v5.12.0', note: 'RELAY model config removes battery/temp/humidity, adds relay onoff. User needs to re-pair. #1482/#1517' },
   { user: 'Domingoso', device: '`_TZE200_xlppj4f5` Immax water timer', status: 'FIXED', note: 'FP exists in valve_irrigation. Paired as climate_sensor before FP added. Re-pair fixes. GH#135' },
   { user: 'Hartmut_Dunker', device: 'BSEED TS0726 4-gang', status: 'FIXED v5.11.29', note: 'writeAttributes per-EP fix. Diag: 9803c61a. User needs to re-pair. #1520/#1523' },
-  { user: 'JJ10', device: 'Radar sensor', status: 'DEFERRED', note: 'Lux/distance/temp incorrect — needs OEM-specific DP mapping' },
+  { user: 'JJ10', device: 'Radar sensor', status: 'DEFERRED', note: 'Lux/distance/temp incorrect  needs OEM-specific DP mapping' },
   { user: 'Piotr', device: '`_TZ3000_cauq1okq` TS0002', status: 'UNFIXABLE', note: 'Device firmware dual-toggle (Z2M #14750)' },
   { user: 'Ricardo_Lenior', device: 'Ceiling presence 230v', status: 'NEEDS FP', note: 'Only has diag ID, no fingerprint' },
   { user: 'G4nd41f', device: '`_TZE204_qasjif9e` TS0601 radar', status: 'SUPPORTED', note: 'ADVANCED model config. T89271#654' },
@@ -261,7 +261,7 @@ const pending = [
 // --- Build GitHub issues table ---
 const ghIssues = [
   { num: 137, author: 'Pollepa/Slawek_Pe', desc: '`_TZ3210_w0qqde0g` voltage divisor 10x low', status: 'FIXED v5.11.25' },
-  { num: 135, author: 'Domingoso', desc: '`_TZE200_xlppj4f5` wrong driver (climate→valve)', status: 'FIXED v5.11.25' },
+  { num: 135, author: 'Domingoso', desc: '`_TZE200_xlppj4f5` wrong driver (climatevalve)', status: 'FIXED v5.11.25' },
   { num: 136, author: 'auto', desc: '17 new community FPs', status: 'NEEDS INTERVIEWS' },
   { num: 133, author: 'auto', desc: '13 new community FPs', status: 'NEEDS INTERVIEWS' },
   { num: 128, author: 'Wuma68', desc: '`_TZE204_nklqjk62` garage door', status: 'FP EXISTS' },
@@ -288,32 +288,32 @@ try { forumState = JSON.parse(fs.readFileSync(path.join(SD, 'forum-state.json'),
 // --- Decision Reference: Best implementation choices (avoid repeating mistakes) ---
 const decisions = [
   { device: 'USB Zigbee Dongle (USB-powered relay)', driver: 'usb_outlet_advanced',
-    wrongDriver: 'switch_2gang', reason: 'USB-powered device, not a wall switch — needs mainsPowered=true, no battery cap',
+    wrongDriver: 'switch_2gang', reason: 'USB-powered device, not a wall switch  needs mainsPowered=true, no battery cap',
     research: 'Confirmed via Z2M, device interview shows USB power source, not battery/mains switch',
     ver: '5.11.25' },
   { device: 'BSEED TS0726 4-gang (_TZ3002_pzao9ls1)', driver: 'switch_4gang (ZCL-only)',
     wrongDriver: 'wall_switch_4gang_1way', reason: 'FW broadcasts ZCL cmds to all EPs; fix: writeAttributes per-EP',
-    research: 'Z2M #27167, ZHA #2443, ZHA #1580 — confirmed across 3 platforms',
+    research: 'Z2M #27167, ZHA #2443, ZHA #1580  confirmed across 3 platforms',
     ver: '5.11.29' },
   { device: 'HOBEIAN ZG-102Z Contact Sensor', driver: 'contact_sensor',
-    wrongDriver: 'N/A', reason: 'Mfr name mismatch — device reports different mfr than expected, needs interview',
+    wrongDriver: 'N/A', reason: 'Mfr name mismatch  device reports different mfr than expected, needs interview',
     research: 'Lasse_K persistent issue #1463-#1476, FP exists but device sends different mfr',
     ver: '5.11.16' },
   { device: 'Mains-powered sensors (_TZE200_8ygsuhe1 Smart Airbox)', driver: 'air_quality_sensor',
-    wrongDriver: 'N/A', reason: 'USB-powered but has measure_battery — remove battery cap, set mainsPowered=true',
+    wrongDriver: 'N/A', reason: 'USB-powered but has measure_battery  remove battery cap, set mainsPowered=true',
     research: 'ProductValueValidator CO2 min changed from 300 to 0 for warmup values',
     ver: '5.11.15' },
   { device: 'TS0601 Tuya DP multi-gang switches', driver: 'switch_Ngang',
-    wrongDriver: 'N/A', reason: 'Check if device is ZCL-only or Tuya DP — use interview to determine protocol',
+    wrongDriver: 'N/A', reason: 'Check if device is ZCL-only or Tuya DP  use interview to determine protocol',
     research: 'BSEED/Zemismart are ZCL-only despite TS0601 modelId, Tuya DP ignored',
     ver: '5.9.14' },
   { device: 'Immax NEO Smart Water Timer (_TZE200_xlppj4f5)', driver: 'valve_irrigation',
-    wrongDriver: 'climate_sensor', reason: 'Both have TS0601 productId — but FP only in valve_irrigation. Re-pair fixes.',
-    research: 'GH#135 Domingoso — paired before FP was added to correct driver',
+    wrongDriver: 'climate_sensor', reason: 'Both have TS0601 productId  but FP only in valve_irrigation. Re-pair fixes.',
+    research: 'GH#135 Domingoso  paired before FP was added to correct driver',
     ver: '5.11.25' },
   { device: 'WZ-235-ZB-RL Wenzhi mmWave + Relay (_TZE204_clrdrnya)', driver: 'motion_sensor_radar_mmwave (RELAY)',
     wrongDriver: 'N/A', reason: '230V mains-powered, no battery/temp/humidity. RELAY config removes wrong caps + adds onoff relay.',
-    research: '7Hills #1482 — powerSource=mains, DP108=relay, DP104=lux, DP9=distance',
+    research: '7Hills #1482  powerSource=mains, DP108=relay, DP104=lux, DP9=distance',
     ver: '5.12.0' },
 ];
 
@@ -333,7 +333,7 @@ const bseedZCL = ['_TZ3000_l9brjwau', '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk', '_
 const fmt = n => typeof n === 'number' ? n.toLocaleString('en-US') : n;
 
 const profilesTable = userProfiles.map(p => {
-  const tl = p.timeline.map(t => `v${t.ver}: ${t.fix}`).join(' → ');
+  const tl = p.timeline.map(t => `v${t.ver}: ${t.fix}`).join('  ');
   return `### ${p.name} (${p.fixes} fixes)\n**Devices**: ${p.devices}\n**Status**: ${p.status}\n**Timeline**: ${tl}\n`;
 }).join('\n');
 
@@ -346,11 +346,11 @@ const ghTable = ghIssues.map(i =>
 ).join('\n');
 
 const fpVerification = `**Verified**: ${verifiedFPs.length} fingerprints from user reports found in drivers\n` +
-  (missingFPs.length > 0 ? `**Missing** (${missingFPs.length}): \`${missingFPs.join('`, `')}\`\n` : '**Missing**: 0 — all user-reported fingerprints are supported\n');
+  (missingFPs.length > 0 ? `**Missing** (${missingFPs.length}): \`${missingFPs.join('`, `')}\`\n` : '**Missing**: 0  all user-reported fingerprints are supported\n');
 
-const md = `# User Device Expectations — Universal Tuya Zigbee
+const md = `# User Device Expectations  Universal Tuya Zigbee
 
-<!-- AUTO-GENERATED by generate-user-expectations.js — Do not edit manually -->
+<!-- AUTO-GENERATED by generate-user-expectations.js  Do not edit manually -->
 <!-- Nightly scan sections are preserved and merged automatically -->
 
 [![Version](https://img.shields.io/badge/version-v${ver}-blue)]()
@@ -399,7 +399,7 @@ ${recentCL}
 
 ## Nightly Auto-Scan History
 
-<!-- NIGHTLY_START — Preserved from nightly-processor.js -->
+<!-- NIGHTLY_START  Preserved from nightly-processor.js -->
 
 ${nightlySections || '_No nightly scans recorded yet._'}
 
@@ -429,7 +429,7 @@ ${decisions.map(d => `| ${d.device} | **${d.driver}** | ${d.wrongDriver} | ${d.r
 
 ## Recurring Patterns (Auto-detected)
 
-${patternData.suggestions?.length ? patternData.suggestions.map(s => `- **${s.pattern}** (${s.count} reports, ${s.priority} priority): ${s.fix}`).join('\n') : '_No patterns detected yet — run pattern-detector.js_'}
+${patternData.suggestions?.length ? patternData.suggestions.map(s => `- **${s.pattern}** (${s.count} reports, ${s.priority} priority): ${s.fix}`).join('\n') : '_No patterns detected yet  run pattern-detector.js_'}
 
 ---
 
@@ -470,12 +470,12 @@ ${bseedZCL.join(', ')}
 | **Battery always null/\\"?\\"** | RE-PAIR device (bindings set at pair time), wait 4h for wake cycle |
 | **Flow cards not working** | Update app to v${ver}, recreate flow, check driver flow cards |
 | **Unknown Zigbee device** | Send diagnostic + interview, check fingerprint case, RE-PAIR |
-| **Temp shows 0.2 instead of 20.6** | Double-division bug — fixed in v5.11.15+ |
-| **Low battery on mains device** | Device needs \`mainsPowered\` flag — report to GitHub |
+| **Temp shows 0.2 instead of 20.6** | Double-division bug  fixed in v5.11.15+ |
+| **Low battery on mains device** | Device needs \`mainsPowered\` flag  report to GitHub |
 
 ---
 
-*Auto-generated on ${date} from v${ver} — ${fmt(stats.fps || allFPs.size)}+ fingerprints across ${stats.drivers || dirs.length} drivers*
+*Auto-generated on ${date} from v${ver}  ${fmt(stats.fps || allFPs.size)}+ fingerprints across ${stats.drivers || dirs.length} drivers*
 `;
 
 // --- Write MD file ---

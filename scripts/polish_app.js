@@ -49,7 +49,7 @@ function polishChangelogs() {
         }
 
         fs.writeFileSync(changelogJsonPath, JSON.stringify(sortedJson, null, 2));
-        console.log('✅ .homeychangelog.json polished and sorted.');
+        console.log(' .homeychangelog.json polished and sorted.');
     }
 
     if (fs.existsSync(changelogMdPath)) {
@@ -79,7 +79,7 @@ function polishChangelogs() {
         // Final cleaning of multiple empty lines
         let cleaned = newLines.join('\n').replace(/\n{3,}/g, '\n\n');
         fs.writeFileSync(changelogMdPath, cleaned);
-        console.log('✅ CHANGELOG.md polished (duplicates removed).');
+        console.log(' CHANGELOG.md polished (duplicates removed).');
     }
 }
 
@@ -403,11 +403,11 @@ function enrichPowerRatings() {
 
             if (changed) {
                 fs.writeFileSync(composePath, JSON.stringify(compose, null, 2));
-                // console.log(`✅ ${driverName}: power=${newVal}W`);
+                // console.log(` ${driverName}: power=${newVal}W`);
             }
         }
     }
-    console.log('✅ All driver energy profiles enriched.');
+    console.log(' All driver energy profiles enriched.');
 }
 
 /**
@@ -434,7 +434,7 @@ function fixSyncScript() {
         content = content.replace("| Version | Feature |", "| Version | Changes |");
         
         fs.writeFileSync(syncScriptPath, content);
-        console.log('✅ sync-changelog-readme.js script fixed.');
+        console.log(' sync-changelog-readme.js script fixed.');
     }
 }
 

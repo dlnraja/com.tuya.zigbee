@@ -1,11 +1,11 @@
 # Official Homey GitHub Actions Workflows
 
 **Last Updated:** 2025-10-13  
-**Status:** ✅ Production Ready
+**Status:**  Production Ready
 
 ---
 
-## 🎯 Active Workflows
+##  Active Workflows
 
 ### 1. **homey-official-publish.yml** (PRIMARY)
 
@@ -13,9 +13,9 @@
 **Purpose:** Official Homey App Store publication
 
 **Uses Official GitHub Actions:**
-- ✅ [`athombv/github-action-homey-app-validate@master`](https://github.com/marketplace/actions/homey-app-validate)
-- ✅ [`athombv/github-action-homey-app-version@master`](https://github.com/marketplace/actions/homey-app-update-version)
-- ✅ [`athombv/github-action-homey-app-publish@master`](https://github.com/marketplace/actions/homey-app-publish)
+-  [`athombv/github-action-homey-app-validate@master`](https://github.com/marketplace/actions/homey-app-validate)
+-  [`athombv/github-action-homey-app-version@master`](https://github.com/marketplace/actions/homey-app-update-version)
+-  [`athombv/github-action-homey-app-publish@master`](https://github.com/marketplace/actions/homey-app-publish)
 
 **Jobs:**
 1. **Validate** - Runs `homey app validate --level publish`
@@ -36,8 +36,8 @@
 **Purpose:** Validation without publishing
 
 **Validation Levels:**
-- ✅ `publish` - Required for App Store
-- ✅ `verified` - Required for verified developers
+-  `publish` - Required for App Store
+-  `verified` - Required for verified developers
 
 **Use Case:** Pre-merge validation in PRs
 
@@ -61,7 +61,7 @@
 
 ---
 
-## 📚 Documentation Reference
+##  Documentation Reference
 
 **Official Homey SDK Documentation:**
 - **Publishing Guide:** https://apps-sdk-v3.developer.homey.app/App%20Store/Publishing
@@ -75,11 +75,11 @@
 
 ---
 
-## 🔧 Configuration
+##  Configuration
 
 ### Required Secrets
 
-Go to: **Repository Settings → Secrets and variables → Actions**
+Go to: **Repository Settings  Secrets and variables  Actions**
 
 | Secret Name | Description | How to Get |
 |-------------|-------------|------------|
@@ -93,7 +93,7 @@ Go to: **Repository Settings → Secrets and variables → Actions**
 
 ---
 
-## 🚀 Usage
+##  Usage
 
 ### Automatic Publication (Recommended)
 
@@ -106,10 +106,10 @@ git push origin master
 ```
 
 The workflow will automatically:
-1. ✅ Validate the app
-2. ✅ Increment version (patch)
-3. ✅ Publish to Homey App Store
-4. ✅ Create changelog
+1.  Validate the app
+2.  Increment version (patch)
+3.  Publish to Homey App Store
+4.  Create changelog
 
 ### Manual Publication
 
@@ -129,27 +129,27 @@ For pull requests:
 
 ---
 
-## 📊 Workflow Execution Flow
+##  Workflow Execution Flow
 
 ```mermaid
 graph TD
     A[Push to master] --> B[Validate Job]
     B --> C{Validation OK?}
     C -->|Yes| D[Update Version Job]
-    C -->|No| E[❌ Fail - Fix errors]
+    C -->|No| E[ Fail - Fix errors]
     D --> F[Increment patch version]
     F --> G[Commit version change]
     G --> H[Publish Job]
     H --> I[Pull latest changes]
     I --> J[Publish to Homey App Store]
     J --> K{Publish OK?}
-    K -->|Yes| L[✅ Success - App published]
-    K -->|No| M[❌ Fail - Check logs]
+    K -->|Yes| L[ Success - App published]
+    K -->|No| M[ Fail - Check logs]
 ```
 
 ---
 
-## 🎯 Validation Levels
+##  Validation Levels
 
 ### Debug Level
 ```bash
@@ -163,7 +163,7 @@ homey app validate --level debug
 ```bash
 homey app validate --level publish
 ```
-- ✅ Required for Homey App Store
+-  Required for Homey App Store
 - All images, brandColor, category required
 - Used in workflows
 
@@ -171,13 +171,13 @@ homey app validate --level publish
 ```bash
 homey app validate --level verified
 ```
-- ✅ Required for verified developers
+-  Required for verified developers
 - Additional requirements: platforms, connectivity, support
 - Used for Homey Cloud compatibility
 
 ---
 
-## 🔍 Troubleshooting
+##  Troubleshooting
 
 ### Workflow Fails at Validate
 
@@ -220,15 +220,15 @@ git push origin master
 
 ---
 
-## 📋 Migration from Old Workflows
+##  Migration from Old Workflows
 
 ### Old Workflows (Disabled)
 
 The following workflows have been replaced:
-- ❌ `auto-publish-complete.yml.disabled`
-- ❌ `homey-app-store.yml.disabled`
-- ❌ `homey-publish-simple.yml`
-- ❌ `auto-driver-publish.yml`
+-  `auto-publish-complete.yml.disabled`
+-  `homey-app-store.yml.disabled`
+-  `homey-publish-simple.yml`
+-  `auto-driver-publish.yml`
 
 **Why replaced?**
 - Used custom scripts instead of official actions
@@ -238,15 +238,15 @@ The following workflows have been replaced:
 
 ### New Approach (Active)
 
-- ✅ Uses official Athom GitHub Actions
-- ✅ Maintained and updated by Athom
-- ✅ Simpler configuration
-- ✅ Better error messages
-- ✅ Automatic version management
+-  Uses official Athom GitHub Actions
+-  Maintained and updated by Athom
+-  Simpler configuration
+-  Better error messages
+-  Automatic version management
 
 ---
 
-## 📈 Success Metrics
+##  Success Metrics
 
 ### Expected Results
 
@@ -266,13 +266,13 @@ After push to `master`:
 - https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee
 
 **Expected Status:**
-- ✅ Green checkmarks on all jobs
-- ✅ New version visible in dashboard
-- ✅ App available for testing
+-  Green checkmarks on all jobs
+-  New version visible in dashboard
+-  App available for testing
 
 ---
 
-## 🛠 Advanced Configuration
+##  Advanced Configuration
 
 ### Custom Changelog
 
@@ -282,9 +282,9 @@ Edit `changelog` in `homey-official-publish.yml`:
 changelog: |
   v${{ needs.version.outputs.version }} - Your custom changelog
   
-  ✅ New features
-  🐛 Bug fixes
-  ⚡ Performance improvements
+   New features
+   Bug fixes
+   Performance improvements
 ```
 
 ### Version Type
@@ -310,7 +310,7 @@ publish:
 
 ---
 
-## 📞 Support
+##  Support
 
 ### Official Resources
 
@@ -325,7 +325,7 @@ publish:
 
 ---
 
-## ✅ Checklist Before First Run
+##  Checklist Before First Run
 
 - [ ] `HOMEY_TOKEN` secret added to repository
 - [ ] App validated locally: `homey app validate --level publish`
@@ -338,5 +338,5 @@ publish:
 ---
 
 **Last Validation:** 2025-10-13  
-**Status:** ✅ Production Ready  
+**Status:**  Production Ready  
 **Workflow Version:** v1.0.0

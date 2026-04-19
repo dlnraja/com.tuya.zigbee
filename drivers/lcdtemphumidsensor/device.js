@@ -68,7 +68,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
       // Periodic sync every 4 hours for battery sensors
       this._timeSyncEngine.schedulePeriodicSync(zclNode,safeMultiply(4, 60) * 60 * 1000);
     } catch (e) {
-      this.log('[LCD] ⚠️ Time sync engine failed:', e.message);
+      this.log('[LCD]  Time sync engine failed:', e.message);
     }
 
     // --- Attribute Reporting Configuration ---
@@ -97,15 +97,15 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
         }
       ]);
     } catch (err) {
-      this.log('[LCD] ℹ️ Attribute reporting config skipped (using DP polling/reports)');
+      this.log('[LCD]  Attribute reporting config skipped (using DP polling/reports)');
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[LCD] ✅ LCD Sensor ready (Universal Sync Engine active)');
+    this.log('[LCD]  LCD Sensor ready (Universal Sync Engine active)');
   }
 
   onTuyaStatus(status) {
-    this.log('[LCD] 📥 Data received:', JSON.stringify(status));
+    this.log('[LCD]  Data received:', JSON.stringify(status));
     super.onTuyaStatus(status);
   }
 }

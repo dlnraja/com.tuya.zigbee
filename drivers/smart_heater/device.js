@@ -73,7 +73,7 @@ class SmartHeaterDevice extends UnifiedThermostatBase {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    await super.onNodeInit({ zclNode });this.log('[HEATER] ✅ Ready');
+    await super.onNodeInit({ zclNode });this.log('[HEATER]  Ready');
   }
 
 

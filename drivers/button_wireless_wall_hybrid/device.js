@@ -14,16 +14,16 @@ const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap'
 class Button2GangDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('╔═══════════════════════════════════════════════════════════════════╗');
-    this.log('║           BUTTON 2-GANG v5.8.16 - E000 ENHANCED                   ║');
-    this.log('╚═══════════════════════════════════════════════════════════════════╝');
+    this.log('');
+    this.log('           BUTTON 2-GANG v5.8.16 - E000 ENHANCED                   ');
+    this.log('');
 
     this.buttonCount = 2;
     await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
     await this._setupE000Detection(zclNode);
     await this._setupExtraDetection(zclNode);
     await this._setupRawFrameInterceptor(zclNode);
-    this.log('[INIT] ✅ Button2GangDevice initialized - 2 buttons ready');
+    this.log('[INIT]  Button2GangDevice initialized - 2 buttons ready');
   }
 
   async _setupExtraDetection(zclNode) {
@@ -61,7 +61,7 @@ class Button2GangDevice extends ButtonDevice {
 
   async _setupE000Detection(zclNode) {
     const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
-    this.log(`[BUTTON2-E000] 🔧 Setting up E000 detection (mfr: ${mfr || 'unknown'})`);
+    this.log(`[BUTTON2-E000]  Setting up E000 detection (mfr: ${mfr || 'unknown'})`);
     this._e000Dedup = {};
 
     for (let ep = 1; ep <= 2; ep++) {
@@ -71,20 +71,20 @@ class Button2GangDevice extends ButtonDevice {
       // v5.8.16: Try registered tuyaE000 cluster
       const e000Cluster = endpoint.clusters?.tuyaE000 || endpoint.clusters?.[57344];
       if (e000Cluster && typeof e000Cluster.on === 'function') {
-        this.log(`[BUTTON2-E000] 📡 EP${ep} tuyaE000 cluster available`);
+        this.log(`[BUTTON2-E000]  EP${ep} tuyaE000 cluster available`);
         // v5.8.54: Listen for ALL cmd events (cmd0-cmd6, cmdFD/FE/FF)
         // Previous buttonPress(0x00) with uint8 args silently dropped other cmd IDs
         const cmdNames = ['cmd0','cmd1','cmd2','cmd3','cmd4','cmd5','cmd6','cmdFD','cmdFE','cmdFF'];
         for (const cmdName of cmdNames) {
           e000Cluster.on(cmdName, async ({ data }) => {
-            this.log(`[BUTTON2-E000] 📥 EP${ep} ${cmdName}: data=${data?.toString?.('hex')}`);
+            this.log(`[BUTTON2-E000]  EP${ep} ${cmdName}: data=${data?.toString?.('hex')}`);
             let btn = ep, press = 'single';
             if (data && data.length >= 2 && data[0] >= 1 && data[0] <= 2) {
               btn = data[0]; press = resolvePressType(data[1], 'BTN2-E000');
             } else if (data && data.length >= 1) {
               press = resolvePressType(data[0], 'BTN2-E000');
             }
-            this.log(`[BUTTON2-E000] 🔘 Button ${btn} ${press.toUpperCase()}`);
+            this.log(`[BUTTON2-E000]  Button ${btn} ${press.toUpperCase()}`);
             await this.triggerButtonPress(btn, press);
           });
         }
@@ -97,7 +97,7 @@ class Button2GangDevice extends ButtonDevice {
           const now = Date.now();
           if (now - (this._e000Dedup[`${ep}_${cmd}`] || 0) < 500) return;
           this._e000Dedup[`${ep}_${cmd}`] = now;
-          this.log(`[BUTTON2-E000] 🔘 EP${ep} ${cmd} → Button ${ep} ${type}`);
+          this.log(`[BUTTON2-E000]  EP${ep} ${cmd}  Button ${ep} ${type}`);
           await this.triggerButtonPress(ep, type);
         };
         onOff.on('commandOn', () => handle('on', 'single'));
@@ -115,7 +115,7 @@ class Button2GangDevice extends ButtonDevice {
           }
         } catch(e) { this.log(`[BUTTON2-0xFD] ${e.message}`); }
 
-        this.log(`[BUTTON2-E000] ✅ EP${ep} onOff listeners ready`);
+        this.log(`[BUTTON2-E000]  EP${ep} onOff listeners ready`);
       }
     }
 
@@ -133,17 +133,17 @@ class Button2GangDevice extends ButtonDevice {
           device: this,
           onButtonPress: async (button, pressType) => {
             const btn = (button >= 1 && button <= 2) ? button : ep;
-            this.log(`[BUTTON2-E000] 🔘 BoundCluster EP${ep} → Button ${btn} ${pressType}`);
+            this.log(`[BUTTON2-E000]  BoundCluster EP${ep}  Button ${btn} ${pressType}`);
             await this.triggerButtonPress(btn, pressType);
           }
         });
         bc.endpoint = ep;
         if (!endpoint.bindings) endpoint.bindings = {};
         endpoint.bindings['tuyaE000'] = bc;
-        this.log(`[BUTTON2-E000] ✅ BoundCluster EP${ep} ready`);
+        this.log(`[BUTTON2-E000]  BoundCluster EP${ep} ready`);
       }
     } catch (e) {
-      this.log('[BUTTON2-E000] ℹ️ BoundCluster not available');
+      this.log('[BUTTON2-E000]  BoundCluster not available');
     }
   }
 
@@ -162,8 +162,8 @@ class Button2GangDevice extends ButtonDevice {
         }
         return orig(epId, cId, f, m);
       };
-      this.log('[BUTTON2-RAW] ✅ Ready');
-    } catch (e) { this.log(`[BUTTON2-RAW] ⚠️ ${e.message}`); }
+      this.log('[BUTTON2-RAW]  Ready');
+    } catch (e) { this.log(`[BUTTON2-RAW]  ${e.message}`); }
   }
 
   async onDeleted() {

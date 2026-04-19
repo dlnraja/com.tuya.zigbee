@@ -6,15 +6,15 @@ const lines = content.split('\n');
 const fixedLines = [];
 
 for (let i = 0; i < lines.length; i++) {
-  if (lines[i].includes("this.log('[FLOW] 🎉")) {
+  if (lines[i].includes("this.log('[FLOW] ")) {
     if (!lines[i].includes("');") && !lines[i].includes('");')) {
-      fixedLines.push("    this.log('[FLOW] 🎉 Scene mode setup');");
+      fixedLines.push("    this.log('[FLOW]  Scene mode setup');");
     } else {
       fixedLines.push(lines[i]);
     }
   } else if (lines[i].includes("4-Gang switch flow cards registered (v5.5.930)');")) {
     if (!lines[i].includes("this.log")) {
-      fixedLines.push("    this.log('[FLOW] 🎉 4-Gang switch flow cards registered (v5.5.930)');");
+      fixedLines.push("    this.log('[FLOW]  4-Gang switch flow cards registered (v5.5.930)');");
     } else {
       fixedLines.push(lines[i]);
     }
@@ -24,4 +24,4 @@ for (let i = 0; i < lines.length; i++) {
 }
 
 fs.writeFileSync(file, fixedLines.join('\n'));
-console.log('✅ Fixed syntax error in switch_4gang/driver.js');
+console.log(' Fixed syntax error in switch_4gang/driver.js');

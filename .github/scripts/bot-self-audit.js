@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-// v5.11.29: Reply Self-Audit — checks past replies for accuracy against current driver DB
+// v5.11.29: Reply Self-Audit  checks past replies for accuracy against current driver DB
 // Detects: "not found" for now-supported devices, wrong driver suggestions, stale info
 // Also detects: hidden/flagged posts, consecutive messages, bot signatures
 const fs=require('fs'),path=require('path');
@@ -151,11 +151,11 @@ async function main(){
   const issues=auditReplies(replies);
   // Add hidden/consecutive/botSig issues
   for(const h of hiddenPosts)issues.push({topic:h.topic,post:h.post,user:'dlnraja',date:h.date,
-    warnings:['POST HIDDEN by community (spam flag) — id='+h.id],corrected:null});
+    warnings:['POST HIDDEN by community (spam flag)  id='+h.id],corrected:null});
   for(const c of consecutivePosts)issues.push({topic:c.topic,post:c.post,user:'dlnraja',date:c.date,
-    warnings:['CONSECUTIVE dlnraja post — should edit previous instead'],corrected:null});
+    warnings:['CONSECUTIVE dlnraja post  should edit previous instead'],corrected:null});
   for(const b of botSignaturePosts)issues.push({topic:b.topic,post:b.post,user:'dlnraja',date:b.date,
-    warnings:['OLD BOT SIGNATURE still present — edit to remove'],corrected:null});
+    warnings:['OLD BOT SIGNATURE still present  edit to remove'],corrected:null});
   // Save hidden posts state for cleanup
   if(hiddenPosts.length||consecutivePosts.length||botSignaturePosts.length){
     const auditState={date:new Date().toISOString(),hiddenPosts,consecutivePosts,botSignaturePosts};
@@ -165,7 +165,7 @@ async function main(){
 
   for(const i of issues){
     console.log('  T'+i.topic+' #'+i.post+' @'+i.user+':');
-    for(const w of i.warnings)console.log('    ⚠',w);
+    for(const w of i.warnings)console.log('    ',w);
   }
 
   const report=generateReport(issues,replies.length);

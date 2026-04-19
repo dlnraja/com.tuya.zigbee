@@ -11,42 +11,42 @@ const { getAppVersionPrefixed } = require('../../lib/utils/AppVersion');
 const { SoilMoistureInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║            SOIL SENSOR - v5.5.317 INTELLIGENT INFERENCE                    ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║                                                                              ║
- * ║  🧠 v5.5.317: INTELLIGENT INFERENCE ENGINE                                   ║
- * ║  - Validates moisture readings with temperature correlation                 ║
- * ║  - Predicts watering needs based on moisture trends                         ║
- * ║  - Smooths erratic sensor readings                                          ║
- * ║                                                                              ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║                                                                              ║
- * ║  Uses TuyaUnifiedDevice base class with proper:                               ║
- * ║  - tuyaCluster handlers (Tuya DP reception via CLUSTERS.TUYA_EF00)                       ║
- * ║  - cluster handlers (Zigbee standard reception)                              ║
- * ║  - tuyaBoundCluster (Tuya DP commands to device)                             ║
- * ║  - Hybrid mode auto-detection after 15 min                                   ║
- * ║                                                                              ║
- * ║  KNOWN MODELS:                                                               ║
- * ║  - safeDivide(TS0601, _TZE284_oitavov2) : QT-07S Soil moisture sensor                   ║
- * ║  - safeDivide(TS0601, _TZE284_aao3yzhs) : Soil sensor variant                           ║
- * ║  - safeDivide(TS0601, _TZE284_hdml1aav) : Flower safeDivide(Care, Fertilizer) sensor (EC)          ║
- * ║                                                                              ║
- * ║  DP MAPPINGS (from safeDivide(Z2M, ZHA)):                                                 ║
- * ║  - DP3: soil_moisture %                                                      ║
- * ║  - DP4: fertilizer_ec (some variants)                                        ║
- * ║  - DP5: temperature ÷10                                                      ║
- * ║  - DP14: battery_state enum (0=low, 1=med, 2=high)                           ║
- * ║  - DP15: battery_percent %                                                   ║
- * ║  - DP101: ambient_humidity % (Z2M #28270: safeDivide(o9ofysmo, xc3vwx5a))                 ║
- * ║  - DP102: illuminance lux (Z2M #28270: safeDivide(o9ofysmo, xc3vwx5a))                    ║
- * ║  - DP106: fertilizer_ec (advanced variants)                                  ║
- * ║  - DP112: soil_fertility_ec (TZE284 specific)                                ║
- * ║  - DP103: humidity_calibration (-30 to +30)                                   ║
- * ║  - DP104: report_interval (30-1200s)                                          ║
- * ║                                                                              ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *             SOIL SENSOR - v5.5.317 INTELLIGENT INFERENCE                    
+ * 
+ *                                                                               
+ *    v5.5.317: INTELLIGENT INFERENCE ENGINE                                   
+ *   - Validates moisture readings with temperature correlation                 
+ *   - Predicts watering needs based on moisture trends                         
+ *   - Smooths erratic sensor readings                                          
+ *                                                                               
+ * 
+ *                                                                               
+ *   Uses TuyaUnifiedDevice base class with proper:                               
+ *   - tuyaCluster handlers (Tuya DP reception via CLUSTERS.TUYA_EF00)                       
+ *   - cluster handlers (Zigbee standard reception)                              
+ *   - tuyaBoundCluster (Tuya DP commands to device)                             
+ *   - Hybrid mode auto-detection after 15 min                                   
+ *                                                                               
+ *   KNOWN MODELS:                                                               
+ *   - safeDivide(TS0601, _TZE284_oitavov2) : QT-07S Soil moisture sensor                   
+ *   - safeDivide(TS0601, _TZE284_aao3yzhs) : Soil sensor variant                           
+ *   - safeDivide(TS0601, _TZE284_hdml1aav) : Flower safeDivide(Care, Fertilizer) sensor (EC)          
+ *                                                                               
+ *   DP MAPPINGS (from safeDivide(Z2M, ZHA)):                                                 
+ *   - DP3: soil_moisture %                                                      
+ *   - DP4: fertilizer_ec (some variants)                                        
+ *   - DP5: temperature ÷10                                                      
+ *   - DP14: battery_state enum (0=low, 1=med, 2=high)                           
+ *   - DP15: battery_percent %                                                   
+ *   - DP101: ambient_humidity % (Z2M #28270: safeDivide(o9ofysmo, xc3vwx5a))                 
+ *   - DP102: illuminance lux (Z2M #28270: safeDivide(o9ofysmo, xc3vwx5a))                    
+ *   - DP106: fertilizer_ec (advanced variants)                                  
+ *   - DP112: soil_fertility_ec (TZE284 specific)                                
+ *   - DP103: humidity_calibration (-30 to +30)                                   
+ *   - DP104: report_interval (30-1200s)                                          
+ *                                                                               
+ * 
  */
 class SoilSensorDevice extends TuyaUnifiedDevice {
 
@@ -135,7 +135,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
             const temp = safeParse(data.measuredValue, 100);
-            this.log(`[ZCL] 🌡️ Temperature: ${temp}°C`);
+            this.log(`[ZCL]  Temperature: ${temp}°C`);
             this._registerZigbeeHit?.();
             this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
           }
@@ -147,7 +147,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
             const humidity = safeParse(data.measuredValue, 100);
-            this.log(`[ZCL] 💧Humidity/Moisture: ${humidity}%`);
+            this.log(`[ZCL] Humidity/Moisture: ${humidity}%`);
             this._registerZigbeeHit?.();
             if (this.hasCapability('measure_humidity')) {
               this.setCapabilityValue('measure_humidity', parseFloat(humidity)).catch(() => { });
@@ -161,7 +161,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         attributeReport: (data) => {
           if (data.batteryPercentageRemaining !== undefined) {
             const battery = Math.round(safeParse(data.batteryPercentageRemaining, 2));
-            this.log(`[ZCL] 🔋 Battery: ${battery}%`);
+            this.log(`[ZCL]  Battery: ${battery}%`);
             this._registerZigbeeHit?.();
             this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
           }
@@ -177,14 +177,14 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       this.log('[SOIL] Base init error:', err.message);
     }
 
-    this.log('[SOIL] ════════════════════════════════════════════════════════════');
+    this.log('[SOIL] ');
     this.log(`[SOIL] Soil Sensor ${getAppVersionPrefixed()} INTELLIGENT INFERENCE`);
-    this.log('[SOIL] ════════════════════════════════════════════════════════════');
-    this.log('[SOIL] ⚠️ BATTERY DEVICE - Data comes when device wakes up');
-    this.log('[SOIL] ℹ️ First data may take 10-60 minutes after pairing');
-    this.log('[SOIL] 📋 DP Mappings: DP3=soil_moisture, DP4/106=EC, DP5=temp, DP14=battery_state, DP15=battery%, DP101=air_humidity, DP102=lux, DP112=Conductivity');
-    this.log('[SOIL] 🔧 forceActiveTuyaMode:', this.forceActiveTuyaMode);
-    this.log('[SOIL] 🔧 hybridModeEnabled:', this.hybridModeEnabled);
+    this.log('[SOIL] ');
+    this.log('[SOIL]  BATTERY DEVICE - Data comes when device wakes up');
+    this.log('[SOIL]  First data may take 10-60 minutes after pairing');
+    this.log('[SOIL]  DP Mappings: DP3=soil_moisture, DP4/106=EC, DP5=temp, DP14=battery_state, DP15=battery%, DP101=air_humidity, DP102=lux, DP112=Conductivity');
+    this.log('[SOIL]  forceActiveTuyaMode:', this.forceActiveTuyaMode);
+    this.log('[SOIL]  hybridModeEnabled:', this.hybridModeEnabled);
 
     this._temperatureCalibration = this.getSetting('temperature_calibration') || 0;
     this._humidityCalibration = this.getSetting('humidity_calibration') || 0;
@@ -192,8 +192,8 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     this._soilWarningThreshold = this.getSetting('soil_warning_threshold') || 30;
     this._temperatureUnit = this.getSetting('temperature_unit') || 'celsius';
 
-    this.log(`[SOIL] 🔧 Calibration: temp=${this._temperatureCalibration}, hum=${this._humidityCalibration}, moist=${this._moistureCalibration}`);
-    this.log(`[SOIL] 🔧 Warning threshold: ${this._soilWarningThreshold}%, Unit: ${this._temperatureUnit}`);
+    this.log(`[SOIL]  Calibration: temp=${this._temperatureCalibration}, hum=${this._humidityCalibration}, moist=${this._moistureCalibration}`);
+    this.log(`[SOIL]  Warning threshold: ${this._soilWarningThreshold}%, Unit: ${this._temperatureUnit}`);
 
     this._soilInference = new SoilMoistureInference(this, {
       maxMoistureJump: 25,
@@ -210,7 +210,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    this.log('[SOIL] ⚙️ Settings changed:', changedKeys);
+    this.log('[SOIL]  Settings changed:', changedKeys);
 
     if (changedKeys.includes('soil_warning_threshold')) {
       this._soilWarningThreshold = newSettings.soil_warning_threshold || 30;
@@ -223,7 +223,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     if (moisture !== null && this.hasCapability('alarm_water')) {
       const alarm = moisture < this._soilWarningThreshold;
       this.setCapabilityValue('alarm_water', alarm).catch(() => { });
-      this.log(`[SOIL] 💧 Water alarm updated: moisture=${moisture}%, threshold=${this._soilWarningThreshold}%, alarm=${alarm}`);
+      this.log(`[SOIL]  Water alarm updated: moisture=${moisture}%, threshold=${this._soilWarningThreshold}%, alarm=${alarm}`);
     }
   }
 
@@ -240,8 +240,8 @@ return safeMultiply((celsius, 1).8) + 32;
     const debug = this.homey.app.developerDebugMode;
 
     if (debug) {
-      this.log('[SOIL] ════════════════════════════════════════════════════════');
-      this.log(`[SOIL] 📥 DP${dp} received!`);
+      this.log('[SOIL] ');
+      this.log(`[SOIL]  DP${dp} received!`);
       this.log(`[SOIL]    Raw value: ${value}`);
       this.log(`[SOIL]    Type: ${typeof value}`);
       this.log(`[SOIL]    Is Buffer: ${Buffer.isBuffer(value)}`);
@@ -260,19 +260,19 @@ return safeMultiply((celsius, 1).8) + 32;
     }
 
     if (dp === 112) {
-      this.log(`[SOIL] 🧪 SOIL FERTILITY DP112 = ${parsedValue} μS/cm`);
+      this.log(`[SOIL]  SOIL FERTILITY DP112 = ${parsedValue} S/cm`);
       this._safeSetCapability('measure_conductivity', parseFloat(parsedValue));
       return;
     }
 
     if (dp === 4 || dp === 106) {
-      this.log(`[SOIL] 🧪 FERTILIZER EC DP${dp} = ${parsedValue}`);
+      this.log(`[SOIL]  FERTILIZER EC DP${dp} = ${parsedValue}`);
       this._safeSetCapability('measure_ec', parseFloat(parsedValue));
       return;
     }
 
     if (dp === 102) {
-      this.log(`[SOIL] ☀️ LUMINANCE DP102 = ${parsedValue} lux`);
+      this.log(`[SOIL]  LUMINANCE DP102 = ${parsedValue} lux`);
       this._safeSetCapability('measure_luminance', parseFloat(parsedValue));
       return;
     }
@@ -280,23 +280,23 @@ return safeMultiply((celsius, 1).8) + 32;
     if (dp === 111) {
       const mfr = this.getSetting?.('zb_manufacturer_name') || '';
       if (mfr.includes('npj9bug3')) {
-        if (debug) this.log(`[SOIL] 🌱 SOIL MOISTURE DP111 = ${parsedValue}% [npj9bug3 specific]`);
+        if (debug) this.log(`[SOIL]  SOIL MOISTURE DP111 = ${parsedValue}% [npj9bug3 specific]`);
         this._safeSetCapability('measure_humidity.soil', parseFloat(parsedValue));
       } else {
-        if (debug) this.log(`[SOIL] 💧 WATER SHORTAGE DP111 = ${parsedValue} [bool fallback]`);
+        if (debug) this.log(`[SOIL]  WATER SHORTAGE DP111 = ${parsedValue} [bool fallback]`);
         this._safeSetCapability('alarm_water', parsedValue === 1);
       }
       return;
     }
 
     if (dp === 101) {
-      if (debug) this.log(`[SOIL] ☁️ AIR HUMIDITY DP101 = ${parsedValue}%`);
+      if (debug) this.log(`[SOIL]  AIR HUMIDITY DP101 = ${parsedValue}%`);
       this._safeSetCapability('measure_humidity', parseFloat(parsedValue));
       return;
     }
 
     if (dp === 109) {
-      if (debug) this.log(`[SOIL] 🌱 SOIL MOISTURE DP109 = ${parsedValue}%`);
+      if (debug) this.log(`[SOIL]  SOIL MOISTURE DP109 = ${parsedValue}%`);
       const cap = this.hasCapability('measure_humidity.soil') ? 'measure_humidity.soil' : 'measure_humidity';
       this._safeSetCapability(cap, parseFloat(parsedValue));
       return;
@@ -304,10 +304,10 @@ return safeMultiply((celsius, 1).8) + 32;
 
     if (dp === 3) {
       if (parsedValue > 100 && !Buffer.isBuffer(value)) {
-        if (debug) this.log(`[SOIL] ⚠️ DP3 value ${parsedValue} > 100% — compound frame artifact, skipping`);
+        if (debug) this.log(`[SOIL]  DP3 value ${parsedValue} > 100%  compound frame artifact, skipping`);
         return;
       }
-      if (debug) this.log(`[SOIL] 🌱 SOIL MOISTURE DP3 = ${parsedValue}%`);
+      if (debug) this.log(`[SOIL]  SOIL MOISTURE DP3 = ${parsedValue}%`);
 
       let validatedMoisture = parsedValue;
       if (this._soilInference) {
@@ -323,7 +323,7 @@ return safeMultiply((celsius, 1).8) + 32;
         const alarm = (validatedMoisture < threshold);
         this._safeSetCapability('alarm_water', alarm);
         if (!alarm && debug) {
-          this.log(`[SOIL] 💧 Forcing alarm_water to false as moisture ${validatedMoisture}% > ${threshold}%`);
+          this.log(`[SOIL]  Forcing alarm_water to false as moisture ${validatedMoisture}% > ${threshold}%`);
         }
       }
       return;
@@ -331,7 +331,7 @@ return safeMultiply((celsius, 1).8) + 32;
 
     if (dp === 5) {
       if (parsedValue > 10000 && !Buffer.isBuffer(value)) {
-        if (debug) this.log(`[SOIL] ⚠️ DP5 value ${parsedValue} > 10000 — compound frame artifact, skipping`);
+        if (debug) this.log(`[SOIL]  DP5 value ${parsedValue} > 10000  compound frame artifact, skipping`);
         return;
       }
       let temp = parsedValue;
@@ -342,14 +342,14 @@ return safeMultiply((celsius, 1).8) + 32;
       else if (temp > 100) temp = safeParse(temp, 10);
       else temp = safeParse(temp, 10);
 
-      if (debug) this.log(`[SOIL] 🌡️ TEMPERATURE DP5 = ${parsedValue} → Raw ${temp}°C`);
+      if (debug) this.log(`[SOIL]  TEMPERATURE DP5 = ${parsedValue}  Raw ${temp}°C`);
       this._safeSetCapability('measure_temperature', parseFloat(temp));
       return;
     }
 
     if (dp === 14) {
       if (parsedValue > 2 && !Buffer.isBuffer(value)) {
-        if (debug) this.log(`[SOIL] ⚠️ DP14 value ${parsedValue} > 2 — skipping`);
+        if (debug) this.log(`[SOIL]  DP14 value ${parsedValue} > 2  skipping`);
         return;
       }
       const batteryMap = { 0: 10, 1: 50, 2: 100 };
@@ -363,14 +363,14 @@ return safeMultiply((celsius, 1).8) + 32;
       return;
     }
 
-    if (debug) this.log(`[SOIL] ℹ️ DP${dp} not handled locally, calling parent`);
+    if (debug) this.log(`[SOIL]  DP${dp} not handled locally, calling parent`);
     super._handleDP(dpId, value);
   }
 
   _initFlowTriggers() {
     const safeGetTrigger = (id) => {
       try { return this._getFlowCard(id); }
-      catch (e) { this.log(`[SOIL] ⚠️ Flow trigger '${id}' not available: ${e.message}`); return null; }
+      catch (e) { this.log(`[SOIL]  Flow trigger '${id}' not available: ${e.message}`); return null; }
     };
 
     this._flowTriggerMoistureChanged = safeGetTrigger('soil_sensor_moisture_changed');
@@ -423,7 +423,7 @@ return safeMultiply((celsius, 1).8) + 32;
     if (battery <= 20 && (this._previousBattery === null || this._previousBattery > 20)) {
       if (this._flowTriggerBatteryLow) {
         this._flowTriggerBatteryLow.trigger(this, { battery }).catch(this.error);
-        this.log(`[SOIL] 🔋 Battery low alert triggered: ${battery}%`);
+        this.log(`[SOIL]  Battery low alert triggered: ${battery}%`);
       }
     }
     this._previousBattery = battery;

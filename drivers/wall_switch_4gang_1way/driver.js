@@ -2,11 +2,7 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class WallSwitch4Gang1WayDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
+class WallSwitch4Gang extends ZigBeeDriver {
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -20,165 +16,79 @@ class WallSwitch4Gang1WayDriver extends ZigBeeDriver {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
-
-
-
-
-
-
-
-
-
-
-
-    this.log('Wall Switch 4-Gang 1-Way Driver initialized');
+    this.log('WallSwitch4Gang 1-way Driver initialized');
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
   _registerFlowCards() {
     const P = 'wall_switch_4gang_1way';
-    const triggers = [
-      `${P}_turned_on`, `${P}_turned_off`,
-      `${P}_physical_gang1_on`, `${P}_physical_gang1_off`,
-      `${P}_physical_gang2_on`, `${P}_physical_gang2_off`,
-      `${P}_physical_gang3_on`, `${P}_physical_gang3_off`,
-      `${P}_physical_gang4_on`, `${P}_physical_gang4_off`,
-      `${P}_gang1_scene`, `${P}_gang2_scene`, `${P}_gang3_scene`, `${P}_gang4_scene`
-    ];
-    for (const id of triggers) {
+    const gangs = ['gang1', 'gang2', 'gang3', 'gang4'];
+    
+    // TRIGGERS (Ensure they are accessible)
+    gangs.forEach(gang => {
+      ['turned_on', 'turned_off', 'physical_on', 'physical_off', 'scene'].forEach(type => {
+        try {
+          const id = type === 'scene' ? `${P}_${gang}_scene` : 
+                    type.startsWith('physical') ? `${P}_physical_${gang}_${type.split('_')[1]}` :
+                    `${P}_${gang}_${type}`;
+          this.homey.flow.getTriggerCard(id);
+        } catch (e) {}
+      });
+    });
+
+    // CONDITIONS
+    gangs.forEach((gang, idx) => {
       try {
-      this.homey.flow.getTriggerCard(id) } catch (e) { this.error(`Trigger ${id}: ${e.message}`); }
-    }
+        const id = `${P}_${gang}_is_on`;
+        const card = this.homey.flow.getConditionCard(id);
+        if (card) {
+          card.registerRunListener(async (args) => {
+            if (!args.device) return false;
+            const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
+            return args.device.getCapabilityValue(cap) === true;
+          });
+        }
+      } catch (err) { this.error(`Condition ${gang} failed:`, err.message); }
+    });
 
-    try {
-
-        .registerRunListener(async (args) => {
-          if (!args.device) return false;
-          await args.device.setBacklightMode(args.mode);
-          await args.device.setSettings({ backlight_mode: args.mode }).catch(() => {});
-          return true;
-        });
-    } catch (err) { this.error('Action set_backlight:', err.message); }
-
-    try {
-
-        .registerRunListener(async (args) => {
-          if (!args.device) return false;
-          await args.device.setSceneMode(args.mode);
-          await args.device.setSettings({ scene_mode: args.mode }).catch(() => {});
-          return true;
-        });
-    } catch (err) { this.error('Action set_scene_mode:', err.message); }
-
-    // Virtual control (sub-device arch: each device = 1 gang)
-    const simpleActions = [
-      { id: `${P}_turn_on`, fn: async (d) => { await d.triggerCapabilityListener('onoff', true); } },
-      { id: `${P}_turn_off`, fn: async (d) => { await d.triggerCapabilityListener('onoff', false); } },
-      { id: `${P}_toggle`, fn: async (d) => { const v = d.getCapabilityValue('onoff'); await d.triggerCapabilityListener('onoff', !v); } },
-    ];
-    // Per-gang: control specific endpoint via zclNode
-    const gangActions = [
-      { id: `${P}_turn_on_gang1`, ep: 1, val: true },
-      { id: `${P}_turn_off_gang1`, ep: 1, val: false },
-      { id: `${P}_toggle_gang1`, ep: 1, val: 'toggle' },
-      { id: `${P}_turn_on_gang2`, ep: 2, val: true },
-      { id: `${P}_turn_off_gang2`, ep: 2, val: false },
-      { id: `${P}_toggle_gang2`, ep: 2, val: 'toggle' },
-      { id: `${P}_turn_on_gang3`, ep: 3, val: true },
-      { id: `${P}_turn_off_gang3`, ep: 3, val: false },
-      { id: `${P}_toggle_gang3`, ep: 3, val: 'toggle' },
-      { id: `${P}_turn_on_gang4`, ep: 4, val: true },
-      { id: `${P}_turn_off_gang4`, ep: 4, val: false },
-      { id: `${P}_toggle_gang4`, ep: 4, val: 'toggle' },
-    ];
-    for (const { id, fn } of simpleActions) {
+    // ACTIONS
+    gangs.forEach((gang, idx) => {
       try {
-        this.homey.flow.getActionCard(id).registerRunListener(async (args) => {
-          if (!args.device) return false;
-          await fn(args.device);
-          return true;
-        });
-      } catch (err) { this.error(`Action ${id}: ${err.message}`); }
-    }
-        for (const { id, ep, val } of gangActions) {
-      try {
-        this.homey.flow.getActionCard(id).registerRunListener(async (args) => {
-          if (!args.device) return false;
-          const cap = ep === 1 ? 'onoff' : ('onoff.gang' + ep);
+        const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
+        ['turn_on', 'turn_off', 'toggle'].forEach(action => {
           try {
-            if (val === 'toggle') {
-              await args.device.triggerCapabilityListener(cap, !args.device.getCapabilityValue(cap));
-            } else {
-              await args.device.triggerCapabilityListener(cap, val);
+            const id = `${P}_${action}_${gang}`;
+            const card = this.homey.flow.getActionCard(id);
+            if (card) {
+              card.registerRunListener(async (args) => {
+                if (!args.device) return false;
+                let val = action === 'turn_on' ? true : (action === 'turn_off' ? false : !args.device.getCapabilityValue(cap));
+                await args.device.triggerCapabilityListener(cap, val);
+                return true;
+              });
             }
-          } catch(e) {
-            args.device.error('Flow Action Error:', e);
-          }
-          return true;
+          } catch (e) {}
         });
-      } catch (err) { this.error(`Action ${id}: ${err.message}`); }
-    }
-        for (const { id, val } of [
-      { id: `${P}_turn_on_all`, val: true },
-      { id: `${P}_turn_off_all`, val: false },
-    ]) {
+      } catch (err) { this.error(`Actions ${gang} failed:`, err.message); }
+    });
+
+    // SETTINGS ACTIONS
+    [{ id: 'set_backlight', fn: 'setBacklightMode' }, { id: 'set_scene_mode', fn: 'setSceneMode' }].forEach(act => {
       try {
-        this.homey.flow.getActionCard(id).registerRunListener(async (args) => {
-          if (!args.device) return false;
-          // Determine the number of gangs from P (e.g. 'switch_3gang' -> 3)
-          let numGangs = 1;
-          const match = P.match(/^switch_(\d+)gang$/);
-          if (match) numGangs = parseInt(match[1], 10);
-          for (let ep = 1; ep <= numGangs; ep++) {
-            const cap = ep === 1 ? 'onoff' : ('onoff.gang' + ep);
-            try { await args.device.triggerCapabilityListener(cap, val); } catch(e) {}
-          }
-          return true;
-        });
-      } catch (err) { this.error(`Action ${id}: ${err.message}`); }
-    }
-
-    // ACTION: Set power-on behavior (v5.11.30)
-    try {
-
-        .registerRunListener(async (args) => {
-          if (!args.device) return false;
-          await args.device.setSettings({ power_on_behavior: args.mode });
-          const pobValue = { off: 0, on: 1, memory: 2 }[args.mode] ?? 2;
-          if (typeof args.device._writeE001Attribute === 'function') {
-            await args.device._writeE001Attribute('powerOnBehavior', pobValue);
-          } else if (typeof args.device._sendTuyaDP === 'function') {
-            await args.device._sendTuyaDP(14, pobValue, 'enum');
-          }
-          return true;
-        });
-    } catch (err) { this.log('set_power_on_behavior card:', err.message); }
-
-    // ACTION: Set external switch type (v5.11.30)
-    try {
-
-        .registerRunListener(async (args) => {
-          if (!args.device) return false;
-          await args.device.setSettings({ switch_mode: args.mode });
-          const smValue = { toggle: 0, state: 1, momentary: 2 }[args.mode] ?? 0;
-          if (typeof args.device._writeE001Attribute === 'function') {
-            await args.device._writeE001Attribute('switchMode', smValue);
-          }
-          return true;
-        });
-    } catch (err) { this.log('set_switch_mode card:', err.message); }
-
-    this.log(`✅ ${P}: ${triggers.length} triggers + ${simpleActions.length + gangActions.length + 2} actions registered`);
+        const card = this.homey.flow.getActionCard(`${P}_${act.id}`);
+        if (card) {
+          card.registerRunListener(async (args) => {
+            if (!args.device) return false;
+            if (typeof args.device[act.fn] === 'function') {
+              await args.device[act.fn](args.mode || args.value);
+              return true;
+            }
+            return false;
+          });
+        }
+      } catch (err) { this.error(`Action ${act.id} failed:`, err.message); }
+    });
   }
 }
 
-module.exports = WallSwitch4Gang1WayDriver;
-
+module.exports = WallSwitch4Gang;

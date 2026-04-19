@@ -27,7 +27,7 @@ const TARGETS = [
 ];
 
 async function main() {
-    console.log('🩹 Running Final Surgical Integrity Fixer v2...');
+    console.log(' Running Final Surgical Integrity Fixer v2...');
 
     const walk = (dir) => {
         const files = fs.readdirSync(dir);
@@ -45,7 +45,7 @@ async function main() {
     walk(path.join(ROOT, 'drivers'));
     walk(path.join(ROOT, 'lib'));
 
-    console.log('\n✅ Final Fixes Applied.');
+    console.log('\n Final Fixes Applied.');
 }
 
 function processFile(fullPath) {

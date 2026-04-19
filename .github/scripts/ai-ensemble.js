@@ -42,7 +42,7 @@ function pickForTask(taskType,count){
 async function qc(name,t,s,mx,taskType){
   const pr=P[name];if(!pr)return null;
   const key=_gk(pr);if(!key)return null;
-  if(!_budgetOk(name)){console.log('  [Ens] '+name+' daily cap reached — skipping (zero billing)');return null}
+  if(!_budgetOk(name)){console.log('  [Ens] '+name+' daily cap reached  skipping (zero billing)');return null}
   
   // Gemini: custom API format
   if(pr.custom && name==='gemini'){

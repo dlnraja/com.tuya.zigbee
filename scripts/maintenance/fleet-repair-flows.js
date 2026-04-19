@@ -31,7 +31,7 @@ function findFiles(dir, suffix) {
   return results;
 }
 
-console.log('🚀 Starting Fleet Flow Repair (JS Version)...');
+console.log(' Starting Fleet Flow Repair (JS Version)...');
 
 const jsFiles = SEARCH_DIRS.reduce((acc, dir) => acc.concat(findFiles(dir, '.js')), []);
 
@@ -92,11 +92,11 @@ jsFiles.forEach(file => {
   if (content !== original) {
     fs.writeFileSync(file, content, 'utf8');
     stats.filesFixed++;
-    console.log(`✅ Fixed: ${path.relative(ROOT, file)}`);
+    console.log(` Fixed: ${path.relative(ROOT, file)}`);
   }
 });
 
-console.log('\n📊 Repair Results:');
+console.log('\n Repair Results:');
 console.log(`   Files Processed: ${stats.filesProcessed}`);
 console.log(`   Files Fixed:     ${stats.filesFixed}`);
-console.log('\n✨ Fleet Flow Repair Complete!');
+console.log('\n Fleet Flow Repair Complete!');

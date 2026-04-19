@@ -28,7 +28,7 @@ class DoorControllerDevice extends UnifiedPlugBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[DOOR-CTRL] ✅ Ready');
+    this.log('[DOOR-CTRL]  Ready');
   }
 
 

@@ -36,7 +36,7 @@ const NEW_SETTINGS = [
 ];
 
 function injectSettings() {
-  console.log('🚀 Injecting Autonomous Features settings into all drivers...');
+  console.log(' Injecting Autonomous Features settings into all drivers...');
   
   const drivers = fs.readdirSync(DRIVERS_DIR).filter(f => fs.statSync(path.join(DRIVERS_DIR, f)).isDirectory());
   
@@ -63,11 +63,11 @@ function injectSettings() {
       fs.writeFileSync(composeFile, JSON.stringify(compose, null, 2) + '\n');
       successCount++;
     } catch (e) {
-      console.error(`  ❌ Error in ${driver}: ${e.message}`);
+      console.error(`   Error in ${driver}: ${e.message}`);
     }
   });
   
-  console.log(`\n✨ Injected settings into ${successCount} drivers.`);
+  console.log(`\n Injected settings into ${successCount} drivers.`);
 }
 
 injectSettings();

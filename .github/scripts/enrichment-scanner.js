@@ -208,7 +208,7 @@ async function main(){
   try{const ff=path.join(__dirname,'..','state','device-functionality.json');
     if(fs.existsSync(ff)){funcData=JSON.parse(fs.readFileSync(ff,'utf8'));
       console.log('Loaded device functionality:',funcData.total,'devices,',funcData.withDPs,'with DPs')}}catch{}
-  // Merge DP/cap data — use composite key fp|pid (same mfr can have different DPs per productId!)
+  // Merge DP/cap data  use composite key fp|pid (same mfr can have different DPs per productId!)
   if(funcData?.profiles){
     const profMap=new Map();
     for(const p of funcData.profiles){profMap.set(p.fp+'|'+(p.pid||'?'),p);if(!profMap.has(p.fp))profMap.set(p.fp,p)}
@@ -218,17 +218,17 @@ async function main(){
     }
   }
 
-  // 5. Smart AI analysis with DP→capability mappings
+  // 5. Smart AI analysis with DPcapability mappings
   let aiPlan=null;
   if(uniqueNew.length>0){
     const withDPs=uniqueNew.filter(f=>f.dps?.length>0);
     const sysPrompt='Tuya Zigbee expert for Universal Tuya Zigbee Homey app. For each new device:\n'+
       '1. Classify device type (switch, sensor, thermostat, cover, dimmer, etc.)\n'+
       '2. Suggest existing Homey driver to add fingerprint to\n'+
-      '3. If DPs available: map each DP to Homey capability (e.g. DP1→onoff, DP2→measure_temperature/10, DP3→target_temperature)\n'+
+      '3. If DPs available: map each DP to Homey capability (e.g. DP1onoff, DP2measure_temperature/10, DP3target_temperature)\n'+
       '4. Note any quirks, inversions, or special handling needed\n'+
       'Known bugs to watch: double-division (if dpMappings has divisor, skip auto-convert), humidity>100%=divide raw by 10, mains-powered devices must NOT have measure_battery.\n'+
-      'Output markdown table: | FP | Type | Driver | DPs→Capabilities | Quirks |';
+      'Output markdown table: | FP | Type | Driver | DPsCapabilities | Quirks |';
     const input=uniqueNew.slice(0,25).map(f=>({
       fp:f.fp,sources:f.sources||[f.source],pid:f.pid||null,
       vendor:f.vendor||null,deviceType:f.deviceType||null,name:f.name||null,
@@ -260,9 +260,9 @@ async function main(){
     md+='| Z2M Issues | '+z2mIssues.length+' | '+z2mNew.length+' |\n';
     md+='| ZHA Issues | '+zhaIssues.length+' | '+zhaNew.length+' |\n';
     md+='| Blakadder | '+blakadder.length+' | '+blakNew.length+' |\n';
-    md+='| Gmail Diagnostics | — | '+uniqueNew.filter(f=>f.source==='gmail-diag').length+' |\n';
-    md+='| Forum Requests | — | '+uniqueNew.filter(f=>f.source==='forum-request').length+' |\n';
-    md+='| Device Interviews | — | '+uniqueNew.filter(f=>f.source==='interview').length+' |\n';
+    md+='| Gmail Diagnostics |  | '+uniqueNew.filter(f=>f.source==='gmail-diag').length+' |\n';
+    md+='| Forum Requests |  | '+uniqueNew.filter(f=>f.source==='forum-request').length+' |\n';
+    md+='| Device Interviews |  | '+uniqueNew.filter(f=>f.source==='interview').length+' |\n';
     md+='| **Total unique** | | **'+uniqueNew.length+'** |\n';
     if(aiPlan)md+='\n### Integration Plan\n'+aiPlan+'\n';
     fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,md);

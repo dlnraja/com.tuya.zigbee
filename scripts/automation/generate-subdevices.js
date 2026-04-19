@@ -18,7 +18,7 @@ const multiGangDefinitions = {
     // Add specific high-volume drivers here
 };
 
-console.log('🚀 [Auto-Ganger] Starting dynamic SDK 3 sub-capability generation...');
+console.log(' [Auto-Ganger] Starting dynamic SDK 3 sub-capability generation...');
 
 const DRIVERS_DIR = path.join(__dirname, '../../drivers');
 
@@ -52,14 +52,14 @@ Object.entries(multiGangDefinitions).forEach(([driverName, config]) => {
             if (JSON.stringify(manifest.capabilities) !== JSON.stringify(merged)) {
                 manifest.capabilities = merged;
                 fs.writeFileSync(composePath, JSON.stringify(manifest, null, 2) + '\n');
-                console.log(`✅ [Auto-Ganger] ${driverName} updated to ${config.count} gangs: [${merged.join(', ')}]`);
+                console.log(` [Auto-Ganger] ${driverName} updated to ${config.count} gangs: [${merged.join(', ')}]`);
             } else {
-                console.log(`ℹ️ [Auto-Ganger] ${driverName} already up-to-date.`);
+                console.log(` [Auto-Ganger] ${driverName} already up-to-date.`);
             }
         } catch (e) {
-            console.error(`❌ [Auto-Ganger] Failed to process ${driverName}:`, e.message);
+            console.error(` [Auto-Ganger] Failed to process ${driverName}:`, e.message);
         }
     } else {
-        console.warn(`⚠️ [Auto-Ganger] Driver folder not found: ${driverName}`);
+        console.warn(` [Auto-Ganger] Driver folder not found: ${driverName}`);
     }
 });

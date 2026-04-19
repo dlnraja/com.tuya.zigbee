@@ -65,13 +65,13 @@ async function main() {
   const report = auditCoverage(constraints);
   console.log(`Coverage: ${report.percentage}% (${report.protected.length}/${report.protected.length + report.unprotected.length} capabilities)`);
   
-  let md = '### 🛡️ BVB Protection Health\n';
+  let md = '###  BVB Protection Health\n';
   md += `| Metric | Value |\n|--------|-------|\n`;
   md += `| Protected Capabilities | ${report.protected.length} |\n`;
   md += `| Unprotected | ${report.unprotected.length} |\n`;
   md += `| Safety Coverage | ${report.percentage}% |\n\n`;
 
-  md += '#### ⚠️ Unprotected Critical Targets\n';
+  md += '####  Unprotected Critical Targets\n';
   const critical = ['measure_voltage', 'measure_current', 'measure_power', 'meter_power', 'measure_luminance'];
   for (const c of critical) {
     if (report.unprotected.includes(c)) {

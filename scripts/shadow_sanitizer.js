@@ -1,60 +1,52 @@
+#!/usr/bin/env node
 'use strict';
-
 /**
- * SHADOW SANITIZER v1.0.0
- * 
- * Recursive sanitizer to strip non-printable characters (invisible characters, BOM, null bytes)
- * from all .js and .json files in the repository.
- * 
- * Prevents "Unexpected token" errors caused by copy-pasting code from forums/IMAP.
+ * SANITIZER SCRIPT
+ * Shadow Mode - removes Zero-Width Characters and BOMs from manifests.
+ * Prevents Homey parser crashes.
  */
-
 const fs = require('fs');
 const path = require('path');
 
-const excludeDirs = ['.git', 'node_modules', '.homeybuild', '.homeycompose', 'assets'];
-const includeExts = ['.js', '.json', '.md'];
+const DIRECTORIES_TO_SCAN = [
+  path.join(__dirname, '..'), // app.json
+  path.join(__dirname, '..', 'drivers') // all driver manifests
+];
+
+// Regex for invisible characters: Zero Width Space (\u200B), BOM (\uFEFF), LTR Override (\u202D), etc.
+const INVISIBLE_CHARS_REGEX = /[\u200B\uFEFF\u202D\u200E\u200F\u202A-\u202E]/g;
 
 function sanitizeFile(filePath) {
   try {
-    const originalContent = fs.readFileSync(filePath, 'utf8');
-    
-    // Pattern: Strip all non-ASCII printable chars except \n, \r, \t, and extended ASCII (latin)
-    // Specifically targets: \u200B (Zero Width Space), \uFEFF (BOM), \0 (Null), etc.
-    // Range: \x20-\x7E (Standard Printable), \x0A\x0D\x09 (CR/LF/Tab)
-    // We allow \xA0-\xFF for latin characters commonly found in locales
-    const sanitizedContent = originalContent.replace(/[^\x20-\x7E\n\r\t\xA0-\xFF]/g, '');
-
-    if (originalContent !== sanitizedContent) {
-      console.log(`[SANITIZER] 🧹 Cleaned: ${filePath}`);
-      fs.writeFileSync(filePath, sanitizedContent, 'utf8');
-      return true;
+    if (!fs.existsSync(filePath)) return;
+    const content = fs.readFileSync(filePath, 'utf8');
+    if (INVISIBLE_CHARS_REGEX.test(content)) {
+      console.log(`[SANITIZER] Cleaning ${filePath}...`);
+      const cleaned = content.replace(INVISIBLE_CHARS_REGEX, '');
+      fs.writeFileSync(filePath, cleaned, 'utf8');
     }
   } catch (err) {
-    console.error(`[SANITIZER] ❌ Failed to process ${filePath}:`, err.message);
+    console.error(`[SANITIZER] Error reading ${filePath}:`, err.message);
   }
-  return false;
 }
 
-function walkDir(dir) {
+function scanDirectory(dir) {
+  if (!fs.existsSync(dir)) return;
   const files = fs.readdirSync(dir);
-  files.forEach(file => {
+  for (const file of files) {
     const fullPath = path.join(dir, file);
     const stat = fs.statSync(fullPath);
-
-    if (stat.isDirectory()) {
-      if (!excludeDirs.includes(file)) {
-        walkDir(fullPath);
-      }
-    } else {
-      if (includeExts.includes(path.extname(file))) {
-        sanitizeFile(fullPath);
-      }
+    if (stat.isDirectory() && dir.includes('drivers')) {
+      // It's a driver dir
+      scanDirectory(fullPath);
+    } else if (file.endsWith('.json')) { // Focus on JSON manifests
+      sanitizeFile(fullPath);
     }
-  });
+  }
 }
 
-const targetDir = path.join(__dirname, '..');
-console.log(`[SANITIZER] 🚀 Starting recursion in: ${targetDir}`);
-walkDir(targetDir);
-console.log('[SANITIZER] ✅ Done.');
+console.log('[SANITIZER] Running invisible character wipe...');
+for (const dir of DIRECTORIES_TO_SCAN) {
+  scanDirectory(dir);
+}
+console.log('[SANITIZER] Complete.');

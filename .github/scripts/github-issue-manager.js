@@ -43,7 +43,7 @@ function loadForumData(){try{return JSON.parse(fs.readFileSync(path.join(__dirna
 function findVariants(fp,ext){if(!ext||!ext.allDevices)return[];const pfx=fp.substring(0,fp.lastIndexOf('_'));return ext.allDevices.filter(d=>d.fp.startsWith(pfx)&&d.fp!==fp).slice(0,10)}
 function findBugs(fp,ext){if(!ext||!ext.bugs)return[];return ext.bugs.filter(b=>b.fp===fp)}
 
-// Cross-post to forum — DISABLED to stop spam (was causing 17+ edits to same post)
+// Cross-post to forum  DISABLED to stop spam (was causing 17+ edits to same post)
 // GitHub issues are tracked on GitHub; forum is for user discussion only.
 async function crossPostForum(msg){
   console.log('    [DISABLED] Forum cross-post skipped (anti-spam). Content:',msg.slice(0,100));
@@ -80,7 +80,7 @@ function markProcessed(state,repo,num){if(!state.processed.includes(repo+'#'+num
 
 // Classify issue with AI
 async function classifyIssue(issue,fpResults){
-  const prompt='Classify this GitHub issue for a Zigbee device app. RULE: What a user reports is absolute truth — never contradict their observations, investigate instead. If user says device does not work, classify as bug_report even if FP is supported. Return ONLY a JSON object: {"type":"device_request|bug_report|feature|question|duplicate|stale|resolved","priority":"high|medium|low","shouldClose":true/false,"closeReason":"string or null","labels":["label1"],"summary":"one line"}';
+  const prompt='Classify this GitHub issue for a Zigbee device app. RULE: What a user reports is absolute truth  never contradict their observations, investigate instead. If user says device does not work, classify as bug_report even if FP is supported. Return ONLY a JSON object: {"type":"device_request|bug_report|feature|question|duplicate|stale|resolved","priority":"high|medium|low","shouldClose":true/false,"closeReason":"string or null","labels":["label1"],"summary":"one line"}';
   const text='Issue #'+issue.number+' by @'+(issue.user?.login||'?')+':\nTitle: '+issue.title+'\nBody: '+(issue.body||'').slice(0,1500)+'\nFingerprints: '+JSON.stringify(fpResults)+'\nDays since update: '+daysSince(issue.updated_at)+'\nState: '+issue.state;
   const ai=await callAI(text,prompt,{maxTokens:512,complexity:'low'});
   if(!ai)return null;
@@ -94,7 +94,7 @@ async function generateResponse(issue,fpResults,classification,variants,bugs,ima
     forumUrl:'https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352',
     devTools:'https://tools.developer.homey.app',githubUrl:'https:
     referenceDocs: ['docs/rules/DEVELOPMENT_RULES.md', 'docs/rules/CRITICAL_MISTAKES.md', 'https://apps.developer.homey.app/']};
-  let prompt='You are Dylan, the Architect of Universal Tuya Zigbee "MAX Local Pro" (v'+appVer+'). Write a professional GitHub comment. Casual tone, say "I" naturally. ABSOLUTE RULE: What a user reports is truth — never contradict their observations, always investigate. Consult Homey SDK docs and local docs for technical advice. \n\n**v7 PRO-TIPS**:\n1. **Doctrine**: We are 100% **Local-Direct First**. \n2. **Shadow-Pulsar**: If cloud sync is asked, mention the safe opt-in mirroring.\n3. **SDK 3 Compliance**: All drivers are built to Athom industrial standards. \n4. **Multi-Gang**: If sub-device issues, user MUST delete and re-pair (Dot-Notation cache issue).\n5. **Logs**: If missing EC/VOC/Fertilizer data, ask for app logs for DP extraction.\n\n**Protocol d\'Humilité**: Be extremely modest. Credit Johan Bendz for the foundation. Don\'t over-promise features. Be honest about bugs. Say "I\'ll try my best" rather than "It will be fixed".\n\nNO bot/automated/AI/scanning/pipeline/workflow references, NO signature footer.';
+  let prompt='You are Dylan, the Architect of Universal Tuya Zigbee "MAX Local Pro" (v'+appVer+'). Write a professional GitHub comment. Casual tone, say "I" naturally. ABSOLUTE RULE: What a user reports is truth  never contradict their observations, always investigate. Consult Homey SDK docs and local docs for technical advice. \n\n**v7 PRO-TIPS**:\n1. **Doctrine**: We are 100% **Local-Direct First**. \n2. **Shadow-Pulsar**: If cloud sync is asked, mention the safe opt-in mirroring.\n3. **SDK 3 Compliance**: All drivers are built to Athom industrial standards. \n4. **Multi-Gang**: If sub-device issues, user MUST delete and re-pair (Dot-Notation cache issue).\n5. **Logs**: If missing EC/VOC/Fertilizer data, ask for app logs for DP extraction.\n\n**Protocol d\'Humilité**: Be extremely modest. Credit Johan Bendz for the foundation. Don\'t over-promise features. Be honest about bugs. Say "I\'ll try my best" rather than "It will be fixed".\n\nNO bot/automated/AI/scanning/pipeline/workflow references, NO signature footer.';
   let profileCtx='';try{const det=detectFromGitHub(issue.user?.login||'',issue.body||'');profileCtx=buildPromptContext(det)}catch{}
   prompt+='\n'+profileCtx+'Context: '+JSON.stringify(ctx);
   let text='Issue: '+issue.title+'\nBy: @'+(issue.user?.login||'?')+'\nBody: '+(issue.body||'').slice(0,2000)+'\nFP results: '+JSON.stringify(fpResults)+'\nClassification: '+JSON.stringify(classification)+'\nVariants from Z2M/ZHA/Blakadder: '+JSON.stringify(variants||[])+'\nAssociated bugs: '+JSON.stringify(bugs||[]);
@@ -106,7 +106,7 @@ async function generateResponse(issue,fpResults,classification,variants,bugs,ima
   return ai?TAG+'\n'+ai.text:null;
 }
 
-// v5.11.27: Fast-path — detect empty-template issues (no actual device data)
+// v5.11.27: Fast-path  detect empty-template issues (no actual device data)
 function isEmptyTemplate(issue){
   const t=(issue.title||'');
   return(t.includes('[Device name]')&&t.includes('[manufacturerName]'))||(t.includes('[manufacturerName]')&&t.includes('[modelId]')&&!/_T[A-Z]/.test(issue.body||''));
@@ -120,7 +120,7 @@ function buildFastResponse(issue,fpResults,repo,allSupported){if(hasUserSymptoms
   let det;try{det=detectFromGitHub(issue.user?.login||'',issue.body||'')}catch{det={profile:'end-user'}}
   let msg=TAG+'\n';
   if(allSupported&&fpResults.length){
-    const driverList=fpResults.map(f=>'`'+f.fp+'` → **'+f.drivers.join(', ')+'**').join(', ');
+    const driverList=fpResults.map(f=>'`'+f.fp+'`  **'+f.drivers.join(', ')+'**').join(', ');
     if(det.isReturning&&det.pending)msg+='Update: '+det.pending.note+'\n\n';
     msg+='The fingerprint(s) listed above are officially supported in the **v7.0 MAX Local Pro** build.\n\n';
     msg+='**Action Required**:\n1. Install the latest test version: https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n2. **Remove and re-pair** your device (required to bind the new v7 architectural mixins).\n\n';
@@ -206,7 +206,7 @@ async function processIssue(repo,issue,state,report,extData){
       if(fast){
         await ghPost('/repos/'+repo+'/issues/'+issue.number+'/comments',{body:fast});
         report.responded++;
-        console.log('  #'+issue.number+' [FAST-SUPPORTED] '+allFPs.join(',')+' → '+existingFPs.map(f=>f.drivers[0]).join(','));
+        console.log('  #'+issue.number+' [FAST-SUPPORTED] '+allFPs.join(',')+'  '+existingFPs.map(f=>f.drivers[0]).join(','));
       }
     }else{
       console.log('  #'+issue.number+' [ALREADY TRIAGED] '+allFPs.join(','));
@@ -215,7 +215,7 @@ async function processIssue(repo,issue,state,report,extData){
     await sleep(RATE_SLEEP);return;
   }
 
-  // v5.11.28: Research engine — deep classify new FPs before AI (saves budget)
+  // v5.11.28: Research engine  deep classify new FPs before AI (saves budget)
   let researchResults=[];
   if(newFPs.length){
     const eng=getResearch();
@@ -235,7 +235,7 @@ async function processIssue(repo,issue,state,report,extData){
     const b=findBugs(fp,extData);if(b.length){bugs.push(...b);console.log('    Bugs for '+fp+': '+b.length)}
   }
 
-  // Classify with AI (only for issues that need it — new FPs or bugs)
+  // Classify with AI (only for issues that need it  new FPs or bugs)
   const classification=await classifyIssue(issue,fpResults);
   if(!classification){console.log('  Skip #'+issue.number+' (AI classify failed)');return}
   console.log('  #'+issue.number+' ['+classification.type+'/'+classification.priority+'] '+issue.title?.slice(0,60));
@@ -256,7 +256,7 @@ async function processIssue(repo,issue,state,report,extData){
     }
   }
 
-  // v5.11.26: Bug investigation — code-level analysis (like #110 double-divisor fix)
+  // v5.11.26: Bug investigation  code-level analysis (like #110 double-divisor fix)
   let bugFindings=[];
   if(classification.type==='bug_report'&&existingFPs.length){
     for(const fp of existingFPs){
@@ -304,7 +304,7 @@ async function processIssue(repo,issue,state,report,extData){
         console.log('    Responded');report.responded++;
         // Cross-post to forum for device requests
         if(classification.type==='device_request'||newFPs.length){
-          const forumMsg='**GitHub #'+issue.number+'** — '+issue.title+'\nFPs: '+allFPs.map(f=>'`'+f+'`').join(', ')+(variants.length?' | Variants: '+variants.flatMap(v=>v.variants).slice(0,5).map(v=>v.fp).join(', '):'')+'\n[View issue](https://github.com/'+repo+'/issues/'+issue.number+')';
+          const forumMsg='**GitHub #'+issue.number+'**  '+issue.title+'\nFPs: '+allFPs.map(f=>'`'+f+'`').join(', ')+(variants.length?' | Variants: '+variants.flatMap(v=>v.variants).slice(0,5).map(v=>v.fp).join(', '):'')+'\n[View issue](https://github.com/'+repo+'/issues/'+issue.number+')';
           await crossPostForum(forumMsg);
         }
         // Cross-ref to other repo
@@ -314,7 +314,7 @@ async function processIssue(repo,issue,state,report,extData){
     await sleep(RATE_SLEEP);
   }
 
-  // Close stale/resolved issues (OWN repo only — forks are read-only sources)
+  // Close stale/resolved issues (OWN repo only  forks are read-only sources)
   if(repo===OWN&&classification.shouldClose&&issue.state==='open'&&classification.type!=='bug_report'){
     const age=daysSince(issue.updated_at);
     if(age>=STALE_DAYS||classification.type==='resolved'||classification.type==='duplicate'){
@@ -336,7 +336,7 @@ async function processIssue(repo,issue,state,report,extData){
     const isBugIssue=classification&&classification.type==='bug_report';
     const hasClose=lastBody.includes('closing')||lastBody.includes('fingerprint')||lastBody.includes('install test')||lastBody.includes('all fp');
     if(isOwner&&((!isBugIssue&&allSupp)||hasClose)){
-      const reason='Triaged by '+lastUser+(allSupp?' — all FPs found in v'+appVer:' — addressed');
+      const reason='Triaged by '+lastUser+(allSupp?'  all FPs found in v'+appVer:'  addressed');
       await ghPost('/repos/'+repo+'/issues/'+issue.number+'/labels',{labels:['awaiting-verification']});
       console.log('    VERIFY-REQUESTED (owner):',reason)
     }
@@ -383,13 +383,13 @@ async function processPR(repo,pr,state,report,extData){
     }
     let msg=TAG+'\n';
     if(isUp){
-      msg+='Hi! 👋 Thanks for this contribution.\n\n';
-      msg+='These fingerprints have been **integrated into [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee)** — the actively maintained Universal Tuya Zigbee fork (v'+appVer+', '+fps.size+'+ fingerprints).\n\n';
+      msg+='Hi!  Thanks for this contribution.\n\n';
+      msg+='These fingerprints have been **integrated into [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee)**  the actively maintained Universal Tuya Zigbee fork (v'+appVer+', '+fps.size+'+ fingerprints).\n\n';
     }else{
       msg+='Thanks for the PR!\n\n';
     }
-    if(fpResults.filter(f=>f.supported).length)msg+='**Fingerprint(s) found** in v'+appVer+':\n'+fpResults.filter(f=>f.supported).map(f=>'- `'+f.fp+'` → **'+f.drivers.join(', ')+'**').join('\n')+'\n\n';
-    if(newFPs.length)msg+='**New** — will integrate:\n'+newFPs.map(fp=>'- `'+fp+'`').join('\n')+'\n\n';
+    if(fpResults.filter(f=>f.supported).length)msg+='**Fingerprint(s) found** in v'+appVer+':\n'+fpResults.filter(f=>f.supported).map(f=>'- `'+f.fp+'`  **'+f.drivers.join(', ')+'**').join('\n')+'\n\n';
+    if(newFPs.length)msg+='**New**  will integrate:\n'+newFPs.map(fp=>'- `'+fp+'`').join('\n')+'\n\n';
     if(isUp){
       msg+='**Install the test version:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n';
       msg+='After installing, remove and re-pair your device so it picks up the correct driver.\n\n';
@@ -424,7 +424,7 @@ async function processPR(repo,pr,state,report,extData){
   await sleep(Math.max(RATE_SLEEP-1000,2000));
 }
 
-// v5.11.47: Stale Sweep — re-check open items already processed for closing (no AI needed)
+// v5.11.47: Stale Sweep  re-check open items already processed for closing (no AI needed)
 // IMPORTANT: Only close on OWN repo (dlnraja). Forks/upstream are read-only sources.
 async function staleSweep(repo,items,isPR,state,report){
   if(repo!==OWN){console.log('  [SWEEP] Skip '+repo+' (read-only source, no closing)');return 0}
@@ -492,7 +492,7 @@ async function staleSweep(repo,items,isPR,state,report){
       else if(reason.includes('Auto-closed owner')) humanReason = "Closing this automated task as it has been processed and deployed into our universal/unified fallbacks.";
       else humanReason = "Closing this tracking item.";
       
-      const closeBody=TAG+'\n'+humanReason+' Feel free to drop a new comment or reopen if you run into any more issues or need further help! 👋';
+      const closeBody=TAG+'\n'+humanReason+' Feel free to drop a new comment or reopen if you run into any more issues or need further help! ';
       
       await ghPost('/repos/'+repo+'/issues/'+item.number+'/comments',{body:closeBody});
       const endpoint=isPR?'/repos/'+repo+'/pulls/'+item.number:'/repos/'+repo+'/issues/'+item.number;
@@ -626,7 +626,7 @@ async function main(){
             const endpoint='/repos/'+repo+'/issues/'+item.number;
             const ok=await ghPatch(endpoint,{state:'open'});
             if(ok){
-               await ghPost(endpoint+'/comments',{body:TAG+'\nRe-opening this automatically because @'+lastUser+' just posted a comment. Looking into it! 👋'});
+               await ghPost(endpoint+'/comments',{body:TAG+'\nRe-opening this automatically because @'+lastUser+' just posted a comment. Looking into it! '});
                console.log(`    Successfully re-opened ${key}`);
             }
           }
@@ -634,7 +634,7 @@ async function main(){
       }
     }
 
-    // v5.11.47: Stale Sweep — close open items we already responded to
+    // v5.11.47: Stale Sweep  close open items we already responded to
     console.log('\n  == Stale Sweep: '+repo+' ==');
     const issueSweep=await staleSweep(repo,realIssues,false,state,report);
     const prSweep=await staleSweep(repo,allPRs,true,state,report);

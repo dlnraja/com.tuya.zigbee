@@ -40,4 +40,4 @@ function walk(dir) {
 }
 
 walk(searchDir);
-console.log(`\n✅ Checked for capability listener order`);
+console.log(`\n Checked for capability listener order`);

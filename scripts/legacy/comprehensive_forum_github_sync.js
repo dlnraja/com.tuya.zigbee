@@ -205,7 +205,7 @@ const comprehensiveDevices = {
 function addIdsToDriver(driverName, newIds) {
   const filePath = path.join(driversDir, driverName, 'driver.compose.json');
   if (!fs.existsSync(filePath)) {
-    console.log(`  ❌ Driver not found: ${driverName}`);
+    console.log(`   Driver not found: ${driverName}`);
     return { added: 0, driver: driverName };
   }
 
@@ -214,12 +214,12 @@ function addIdsToDriver(driverName, newIds) {
   try {
     data = JSON.parse(content);
   } catch (e) {
-    console.log(`  ❌ Parse error: ${driverName}`);
+    console.log(`   Parse error: ${driverName}`);
     return { added: 0, driver: driverName, error: 'parse' };
   }
 
   if (!data.zigbee || !data.zigbee.manufacturerName) {
-    console.log(`  ❌ No manufacturerName: ${driverName}`);
+    console.log(`   No manufacturerName: ${driverName}`);
     return { added: 0, driver: driverName, error: 'no_mfname' };
   }
 
@@ -240,19 +240,19 @@ function addIdsToDriver(driverName, newIds) {
       a.toLowerCase().localeCompare(b.toLowerCase())
     );
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
-    console.log(`  ✅ ${driverName}: +${added} IDs`);
-    addedIds.forEach(id => console.log(`     → ${id}`));
+    console.log(`   ${driverName}: +${added} IDs`);
+    addedIds.forEach(id => console.log(`      ${id}`));
   } else {
-    console.log(`  ⚪ ${driverName}: All IDs present`);
+    console.log(`   ${driverName}: All IDs present`);
   }
 
   return { added, driver: driverName, ids: addedIds };
 }
 
-console.log('\n╔══════════════════════════════════════════════════════════════╗');
-console.log('║  COMPREHENSIVE FORUM + GITHUB SYNC                           ║');
-console.log('║  Sources: Forums + Issues + PRs + Forks + Z2M                ║');
-console.log('╚══════════════════════════════════════════════════════════════╝\n');
+console.log('\n');
+console.log('  COMPREHENSIVE FORUM + GITHUB SYNC                           ');
+console.log('  Sources: Forums + Issues + PRs + Forks + Z2M                ');
+console.log('\n');
 
 let totalAdded = 0;
 const results = [];
@@ -263,9 +263,9 @@ for (const [driver, ids] of Object.entries(comprehensiveDevices)) {
   totalAdded += result.added;
 }
 
-console.log('\n╔══════════════════════════════════════════════════════════════╗');
-console.log(`║  TOTAL: +${totalAdded} manufacturer IDs added                          ║`);
-console.log('╚══════════════════════════════════════════════════════════════╝\n');
+console.log('\n');
+console.log(`  TOTAL: +${totalAdded} manufacturer IDs added                          `);
+console.log('\n');
 
 // Summary
 const modified = results.filter(r => r.added > 0);

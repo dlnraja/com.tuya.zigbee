@@ -4,15 +4,15 @@ const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { AirQualityInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      AIR QUALITY CO2 SENSOR - v5.5.317 INTELLIGENT INFERENCE                ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  🧠 v5.5.317: Cross-validates CO2/VOC readings for accuracy                  ║
- * ║  UnifiedSensorBase handles: Tuya DP, battery                                 ║
- * ║  This class: dpMappings + ZCL temp/humidity listeners (specific to CO2)     ║
- * ║  DPs: 1,2,14,15,18,19,21-23 | ZCL: 1026,1029,1,EF00                        ║
- * ║  Variants: _TZE200_ywagc4rj, _TZE200_zl1kmjqx                               ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       AIR QUALITY CO2 SENSOR - v5.5.317 INTELLIGENT INFERENCE                
+ * 
+ *    v5.5.317: Cross-validates CO2/VOC readings for accuracy                  
+ *   UnifiedSensorBase handles: Tuya DP, battery                                 
+ *   This class: dpMappings + ZCL temp/humidity listeners (specific to CO2)     
+ *   DPs: 1,2,14,15,18,19,21-23 | ZCL: 1026,1029,1,EF00                        
+ *   Variants: _TZE200_ywagc4rj, _TZE200_zl1kmjqx                               
+ * 
  */
 class AirQualityCO2Device extends UnifiedSensorBase {
 
@@ -103,7 +103,7 @@ class AirQualityCO2Device extends UnifiedSensorBase {
     // Setup ZCL temp/humidity (specific to air quality sensors)
     await this._setupAirQualityZCL(zclNode);
 
-    this.log('[CO2] ✅ Ready with cross-validation');
+    this.log('[CO2]  Ready with cross-validation');
   }
 
   /**
@@ -118,7 +118,7 @@ class AirQualityCO2Device extends UnifiedSensorBase {
     // Calculate and log AQI
     const aqi = this._airQualityInference.calculateAQI();
     if (aqi !== null) {
-      this.log(`[CO2] 🌬️ Air Quality Index: ${aqi} (CO2: ${validatedCO2}ppm)`);
+      this.log(`[CO2]  Air Quality Index: ${aqi} (CO2: ${validatedCO2}ppm)`);
     }
 
     return validatedCO2;

@@ -16,7 +16,7 @@ const HYBRID_DRIVERS_TO_CLEAN = [
 ];
 
 async function main() {
-  console.log('🧹 Deduplicating Hybrid Fingerprints...');
+  console.log(' Deduplicating Hybrid Fingerprints...');
   
   // 1. Build a map of "Specific" fingerprints
   const specificFps = new Map(); // "mfr|pid" -> driverId
@@ -69,7 +69,7 @@ async function main() {
     }
   }
   
-  console.log('✅ Deduplication complete.');
+  console.log(' Deduplication complete.');
 }
 
 main().catch(console.error);

@@ -15,7 +15,7 @@ const ROOT = process.cwd();
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
 
 function main() {
-  console.log('=== 🛠️ Tuya Magic Spell & SDK v3 Validation Audit ===');
+  console.log('===  Tuya Magic Spell & SDK v3 Validation Audit ===');
   
   const drivers = fs.readdirSync(DRIVERS_DIR).filter(d => {
     const p = path.join(DRIVERS_DIR, d, 'device.js');
@@ -35,13 +35,13 @@ function main() {
 
     // 5. SDK v3 Flow Card Compliance (Critical for v7.0.0 stability)
     if (/\.getDevice(Trigger|Condition|Action)Card\s*\(/.test(content)) {
-      console.error(`❌ [${d}] Using DEPRECATED SDK v2 flow card getter! Must use getTriggerCard, getConditionCard, or getActionCard.`);
+      console.error(` [${d}] Using DEPRECATED SDK v2 flow card getter! Must use getTriggerCard, getConditionCard, or getActionCard.`);
       errors++;
     }
 
     // 6. Optional: Check for missing try-catch around flow cards
     if (/\.get(Trigger|Condition|Action)Card\s*\(/.test(content) && !/try\s*\{/.test(content)) {
-      console.warn(`⚠️ [${d}] Flow card accessed without try-catch. If the card is missing from app.json, the app will CRASH.`);
+      console.warn(` [${d}] Flow card accessed without try-catch. If the card is missing from app.json, the app will CRASH.`);
       warnings++;
     }
   }

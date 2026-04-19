@@ -17,7 +17,7 @@ if (fs.existsSync(envFile)) {
 const { getForumAuth, refreshCsrf, fmtCk, FORUM } = require('./forum-auth');
 const { fetchWithRetry, processBatch, sleep } = require('./retry-helper');
 
-// Posts that failed DELETE due to rate limiting — EDIT them instead
+// Posts that failed DELETE due to rate limiting  EDIT them instead
 const TO_EDIT = [
   { id: 700472, num: '140352#1120', reason: 'Consecutive FP dump' },
   { id: 698945, num: '140352#1017', reason: 'Duplicate' },
@@ -70,9 +70,9 @@ async function main() {
       headers: getHeaders(authRef.auth, true),
       body: JSON.stringify({ post: { raw: CLEAN_TEXT } })
     }, { retries: 3, label: 'edit', csrfRefresh: refreshCsrf, authRef });
-    if (r.ok) { console.log('  ✓ Cleaned'); return 'ok'; }
-    if (r.status === 404) { console.log('  ○ Already gone'); return 'skip'; }
-    console.log(`  ✗ Failed: ${r.status}`); return 'ok';
+    if (r.ok) { console.log('   Cleaned'); return 'ok'; }
+    if (r.status === 404) { console.log('   Already gone'); return 'skip'; }
+    console.log(`   Failed: ${r.status}`); return 'ok';
   }, { spacing: 3000, label: 'cleanup-edit', maxRetries: 2, rateLimitPause: 60000 });
 
   console.log(`\n=== Done: ${result.ok} cleaned, ${result.skip} skipped, ${result.fail} failed ===`);

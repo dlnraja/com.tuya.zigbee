@@ -23,7 +23,7 @@ class SonoffMinir4 extends EweLinkLocalDevice {
   _registerCapListeners() {
     // v7.0.0: Unified command pattern with error handling
     this.registerCapabilityListener('onoff', async (value) => {
-      this.log(`[MINIR4] ⚡ Command: ${value ? 'ON' : 'OFF'}`);
+      this.log(`[MINIR4]  Command: ${value ? 'ON' : 'OFF'}`);
       try {
         await this._client.setSwitch(value);
       } catch (err) {

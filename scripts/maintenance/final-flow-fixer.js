@@ -77,7 +77,7 @@ const allDrivers = walk(DDIR);
 let count = 0;
 allDrivers.forEach(f => {
   if (processFile(f)) {
-    console.log(`✅ Fixed: ${path.relative(process.cwd(), f)}`);
+    console.log(` Fixed: ${path.relative(process.cwd(), f)}`);
     count++;
   }
 });

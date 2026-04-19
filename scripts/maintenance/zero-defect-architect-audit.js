@@ -2,12 +2,12 @@
 'use strict';
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      ZERO DEFECT ARCHITECT AUDIT - v1.0.0                                    ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Senior Architect Tool for Universal Tuya Stability.                          ║
- * ║  Performs deep analysis of drivers, manifests, and core logic.                ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       ZERO DEFECT ARCHITECT AUDIT - v1.0.0                                    
+ * 
+ *   Senior Architect Tool for Universal Tuya Stability.                          
+ *   Performs deep analysis of drivers, manifests, and core logic.                
+ * 
  */
 
 const fs = require('fs');
@@ -17,7 +17,7 @@ const ROOT = path.join(__dirname, '../..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
 
 async function main() {
-  console.log('🚀 Starting Zero Defect Architect Audit...');
+  console.log(' Starting Zero Defect Architect Audit...');
   
   const auditResults = {
     timestamp: new Date().toISOString(),
@@ -32,7 +32,7 @@ async function main() {
   };
 
   // 1. MANIFEST CASE & ID COLLISION AUDIT
-  console.log('\n🔍 Auditing Manifest Case & ID Collisions...');
+  console.log('\n Auditing Manifest Case & ID Collisions...');
   const idToDrivers = new Map(); // "mfr|pid" -> [driverIds]
   
   const drivers = fs.readdirSync(DRIVERS_DIR).filter(d => fs.statSync(path.join(DRIVERS_DIR, d)).isDirectory());
@@ -111,7 +111,7 @@ async function main() {
   }
 
   // 4. PROJECT-WIDE AUDIT (SDK, NaN, Constants)
-  console.log('🔍 Executing Project-Wide Integrity Scan...');
+  console.log(' Executing Project-Wide Integrity Scan...');
   
   const walk = (dir) => {
     if (!fs.existsSync(dir)) return;
@@ -179,7 +179,8 @@ async function main() {
              if (!codeOnly.includes('safeParse') && 
                  !codeOnly.includes('safeDivide') && 
                  !codeOnly.includes('safeMultiply') && 
-                 !codeOnly.includes('Number.isNaN')) {
+                 !codeOnly.includes('Number.isNaN') &&
+                 !codeOnly.includes('Number.isFinite')) {
                 
                 // Exclude common non-arithmetic patterns and safe constants
                 const isImportExport = codeOnly.match(/^\s*(import|export)\s+\*/);
@@ -209,7 +210,7 @@ async function main() {
   walk(ROOT);
 
   // 5. REPORT GENERATION
-  console.log('\n📊 Audit Report Summary:');
+  console.log('\n Audit Report Summary:');
   console.log(`- Drivers Checked: ${auditResults.driversChecked}`);
   console.log(`- ID Collisions: ${auditResults.collisions.length}`);
   console.log(`- Button Logic Issues: ${auditResults.buttonLogicFailures.length}`);
@@ -219,13 +220,13 @@ async function main() {
   console.log(`- NaN Safety Warnings: ${auditResults.naNSafetyCheck.length}`);
   
   if (auditResults.collisions.length > 0) {
-    console.log('\n⚠️ COLLISION ALERT:');
+    console.log('\n COLLISION ALERT:');
     auditResults.collisions.slice(0, 5).forEach(c => console.log(`  - ${c.id}: [${c.drivers.join(', ')}]`));
   }
 
   const reportPath = path.join(ROOT, 'docs/reports/ZERO_DEFECT_AUDIT.json');
   fs.writeFileSync(reportPath, JSON.stringify(auditResults, null, 2));
-  console.log(`\n✅ Detailed report saved to: ${reportPath}`);
+  console.log(`\n Detailed report saved to: ${reportPath}`);
 }
 
 main().catch(console.error);

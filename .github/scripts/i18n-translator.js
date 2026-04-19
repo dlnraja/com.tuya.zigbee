@@ -36,9 +36,9 @@ async function translateDriver(driverPath) {
     // In the future: iterate through flow cards, etc.
     if (needsUpdate) {
         fs.writeFileSync(driverPath, JSON.stringify(data, null, 2));
-        console.log('✅ Translations updated successfully!');
+        console.log(' Translations updated successfully!');
     } else {
-        console.log('✅ Translations already complete or AI unavailable.');
+        console.log(' Translations already complete or AI unavailable.');
     }
 }
 

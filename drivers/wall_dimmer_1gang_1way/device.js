@@ -39,9 +39,9 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
 
   async onNodeInit({zclNode}) {
 
-    this.log('════════════════════════════════════════');
+    this.log('');
     this.log('WallDimmer1Gang1Way onNodeInit STARTING');
-    this.log('════════════════════════════════════════');
+    this.log('');
     
     this.printNode();
 
@@ -90,9 +90,9 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
     // v5.5.799: Apply saved settings after init (with delay for device stability)
     setTimeout(() => this._applyInitialSettings(), 3000);
 
-    this.log('════════════════════════════════════════');
+    this.log('');
     this.log('SwitchDimmer1Gang onNodeInit COMPLETE');
-    this.log('════════════════════════════════════════');
+    this.log('');
   }
   
   /**
@@ -100,7 +100,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
    * Implements min_brightness, power_on_behavior, light_type settings
    */
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    this.log('⚙️ Settings changed:', changedKeys);
+    this.log(' Settings changed:', changedKeys);
     
     for (const key of changedKeys) {
       try {
@@ -108,7 +108,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         case 'min_brightness':
           // Convert percentage (1-100) to Tuya range (10-1000)
           const minBrightness = Math.round(10 + ((safeParse(newSettings.min_brightness,safeMultiply(100)), 990)));
-          this.log(`Setting min_brightness: ${newSettings.min_brightness}% → ${minBrightness}`);
+          this.log(`Setting min_brightness: ${newSettings.min_brightness}%  ${minBrightness}`);
           await this.sendTuyaCommand(dataPoints.minBrightness, minBrightness, 'value');
           break;
             
@@ -171,12 +171,12 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
     
     try {
       const settings = this.getSettings();
-      this.log('📋 Applying initial settings:', settings);
+      this.log(' Applying initial settings:', settings);
       
       // Apply min_brightness if set
       if (settings.min_brightness && settings.min_brightness > 1) {
         const minBrightness = Math.round(10 + ((safeParse(settings.min_brightness,safeMultiply(100)), 990)));
-        this.log(`Applying min_brightness: ${settings.min_brightness}% → ${minBrightness}`);
+        this.log(`Applying min_brightness: ${settings.min_brightness}%  ${minBrightness}`);
         await this.sendTuyaCommand(dataPoints.minBrightness, minBrightness, 'value').catch(e => 
           this.log('min_brightness not supported by this device'));
       }
@@ -266,7 +266,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
       
       // Only process if state actually changed (heartbeat filter)
       if (this._lastOnoffState !== state) {
-        this.log(`State changed: ${this._lastOnoffState} → ${state} (${isPhysicalPress ? 'PHYSICAL' : 'APP'})`);
+        this.log(`State changed: ${this._lastOnoffState}  ${state} (${isPhysicalPress ? 'PHYSICAL' : 'APP'})`);
         
         this._lastOnoffState = state;
         this.setCapabilityValue('onoff', state).catch(this.error);
@@ -297,7 +297,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
       // Only process if brightness changed significantly (~1%)
       const changeThreshold = 10;
       if (this._lastBrightnessValue === null || Math.abs(brightnessRaw - this._lastBrightnessValue) >= changeThreshold) {
-        this.log(`Brightness changed: ${this._lastBrightnessValue} → ${brightnessRaw} (${brightness.toFixed(2)}) (${isPhysicalPress ? 'PHYSICAL' : 'APP'})`);
+        this.log(`Brightness changed: ${this._lastBrightnessValue}  ${brightnessRaw} (${brightness.toFixed(2)}) (${isPhysicalPress ? 'PHYSICAL' : 'APP'})`);
         
         const brightnessIncreased = this._lastBrightnessValue !== null && brightnessRaw > this._lastBrightnessValue;
         const brightnessDecreased = this._lastBrightnessValue !== null && brightnessRaw < this._lastBrightnessValue;
@@ -329,9 +329,9 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         throw new Error('Tuya cluster not available');
       }
 
-      this.log('════════════════════════════════════════');
+      this.log('');
       this.log(`Sending Tuya command: DP ${dp} = ${value} (${type})`);
-      this.log('════════════════════════════════════════');
+      this.log('');
 
       let dataBuffer;
       let datatype;
@@ -383,7 +383,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         data: dataBuffer,
       });
 
-      this.log('✅ Tuya command sent successfully');
+      this.log(' Tuya command sent successfully');
 
     } catch (err) {
       this.error('Failed to send Tuya command:', err);

@@ -62,14 +62,14 @@ function main() {
   for (const d of remotes) {
     const composeFile = path.join(DDIR, d, 'driver.compose.json');
     if (!fs.existsSync(composeFile)) {
-      console.log(`  ⚠ ${d}: compose file not found`);
+      console.log(`   ${d}: compose file not found`);
       continue;
     }
     
     const compose = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
     
     if (compose.capabilities && compose.capabilities.length > 0) {
-      console.log(`  ℹ ${d}: already has capabilities, skipping`);
+      console.log(`   ${d}: already has capabilities, skipping`);
       continue;
     }
     
@@ -78,7 +78,7 @@ function main() {
     compose.capabilitiesOptions = { ...(compose.capabilitiesOptions || {}), ...opts };
     
     fs.writeFileSync(composeFile, JSON.stringify(compose, null, 2) + '\n');
-    console.log(`  ✅ ${d}: added ${caps.length} capabilities (${caps.join(', ')})`);
+    console.log(`   ${d}: added ${caps.length} capabilities (${caps.join(', ')})`);
     fixed++;
   }
   

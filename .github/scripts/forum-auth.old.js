@@ -43,7 +43,7 @@ async function ssoLogin(em,pw){
   return{csrf:cd.csrf,cookies:fc};
 }
 async function getForumAuth(){
-  // DISCOURSE_API_KEY removed — session auth only
+  // DISCOURSE_API_KEY removed  session auth only
   const em=process.env.HOMEY_EMAIL,pw=process.env.HOMEY_PASSWORD;
   if(em&&pw){
     for(let i=0;i<3;i++){

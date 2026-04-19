@@ -5,24 +5,24 @@ const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      SMOKE DETECTOR ADVANCED - v5.5.503 DIAGNOSTIC LOGGING                  ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  v5.5.503: Enhanced diagnostic logging for Martijn report                    ║
- * ║  - Added manufacturer name logging at init                                   ║
- * ║  - Enhanced DP reception logging with hex dump                               ║
- * ║  - Added Tuya cluster detection logging                                      ║
- * ║                                                                              ║
- * ║  v5.5.401: CRITICAL PAIRING FIX (Jolink forum report)                        ║
- * ║  - Added fastInitMode for sleepy battery devices                             ║
- * ║  - Deferred complex initialization to prevent pairing timeout                ║
- * ║  - IAS Zone enrollment prioritized for immediate alarm detection             ║
- * ║                                                                              ║
- * ║  v5.5.380: Added cluster 0xED00 (60672) for TZE284 smoke detectors          ║
- * ║  Source: https://www.zigbee2mqtt.io/devices/TS0601_smoke_5.html             ║
- * ║  Features: smoke, tamper, battery, fault_alarm, silence, alarm              ║
- * ║  Supported: _TZE284_rccxox8p, _TZE200_rccxox8p, _TZE204_rccxox8p, etc.      ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       SMOKE DETECTOR ADVANCED - v5.5.503 DIAGNOSTIC LOGGING                  
+ * 
+ *   v5.5.503: Enhanced diagnostic logging for Martijn report                    
+ *   - Added manufacturer name logging at init                                   
+ *   - Enhanced DP reception logging with hex dump                               
+ *   - Added Tuya cluster detection logging                                      
+ *                                                                               
+ *   v5.5.401: CRITICAL PAIRING FIX (Jolink forum report)                        
+ *   - Added fastInitMode for sleepy battery devices                             
+ *   - Deferred complex initialization to prevent pairing timeout                
+ *   - IAS Zone enrollment prioritized for immediate alarm detection             
+ *                                                                               
+ *   v5.5.380: Added cluster 0xED00 (60672) for TZE284 smoke detectors          
+ *   Source: https://www.zigbee2mqtt.io/devices/TS0601_smoke_5.html             
+ *   Features: smoke, tamper, battery, fault_alarm, silence, alarm              
+ *   Supported: _TZE284_rccxox8p, _TZE200_rccxox8p, _TZE204_rccxox8p, etc.      
+ * 
  */
 class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
   get mainsPowered() { return false; }
@@ -47,11 +47,11 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
    */
   get dpMappings() {
     return {
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // SMOKE ALARM (DP 1) - CRITICAL!
       // v5.5.408: Some devices report 0=ALARM, others report 1=ALARM
       // Transform handles BOTH patterns for maximum compatibility
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       1: {
         capability: 'alarm_smoke',
         transform: (v, device) => {
@@ -73,7 +73,7 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
           }
 
           if (device) {
-            device.log?.(`[SMOKE] 🔥 Smoke alarm: ${isAlarm ? '🚨 TRIGGERED!' : '✅ clear'}`);
+            device.log?.(`[SMOKE]  Smoke alarm: ${isAlarm ? ' TRIGGERED!' : ' clear'}`);
             // v5.5.955: Trigger flow cards (Jolink forum fix)
             const triggerId = isAlarm ? 'smoke_detector_advanced_alarm_smoke_true' : 'smoke_detector_advanced_alarm_smoke_false';
             device.driver?.homey?.flow?.getTriggerCard?.(triggerId)?.trigger(device, {}).catch(() => {});
@@ -82,16 +82,16 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
         }
       },
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // ENVIRONMENTAL (DP 2, 3) - Only some models have these
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       2: { capability: 'measure_temperature', divisor: 10, optional: true },
       3: { capability: 'measure_humidity', divisor: 1, optional: true },
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // TAMPER (DP 4) - Many variants use DP4 for tamper, NOT battery!
       // v5.5.408: Detect tamper vs battery based on value pattern
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       4: {
         capability: null, // Dynamic - could be tamper or battery
         transform: (v, device) => {
@@ -125,17 +125,17 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
         }
       },
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // BATTERY LOW (DP 14) - Some use this for battery_low state
       // v5.5.408: 0 = low battery, 2 = full (from Z2M #12622)
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       14: {
         capability: 'measure_battery',
         transform: (v, device) => {
           // 0 = low, 1 = medium(?), 2 = full
           const batteryMap = { 0: 10, 1: 50, 2: 100 };
           const battery = batteryMap[v] ?? (v > 2 ? v : 50);
-          if (device) device.log?.(`[SMOKE] DP14 battery state: ${v} → ${battery}%`);
+          if (device) device.log?.(`[SMOKE] DP14 battery state: ${v}  ${battery}%`);
           return battery;
         }
       },
@@ -143,10 +143,10 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
       // Alternative battery DP
       15: { capability: 'measure_battery', divisor: 1 },
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // FAULT & CONTROL FEATURES (v5.5.529: Enhanced Z2M compatibility)
       // Sources: Zigbee2MQTT TS0601_smoke_1-5 definitions
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       11: { 
         capability: null, 
         internal: 'fault_alarm',
@@ -215,37 +215,37 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
     const modelId = this.getSetting?.('zb_model_id') || this.getData()?.modelId || 'UNKNOWN';
     const deviceId = this.getData()?.id || 'UNKNOWN';
 
-    this.log('[SMOKE-ADV] ════════════════════════════════════════════════════════════');
-    this.log('[SMOKE-ADV] ✅ Smart Smoke Detector Advanced v5.5.503 Ready');
-    this.log(`[SMOKE-ADV] 📋 ManufacturerName: "${mfr}"`);
-    this.log(`[SMOKE-ADV] 📋 ModelId: "${modelId}"`);
-    this.log(`[SMOKE-ADV] 📋 DeviceId: "${deviceId}"`);
+    this.log('[SMOKE-ADV] ');
+    this.log('[SMOKE-ADV]  Smart Smoke Detector Advanced v5.5.503 Ready');
+    this.log(`[SMOKE-ADV]  ManufacturerName: "${mfr}"`);
+    this.log(`[SMOKE-ADV]  ModelId: "${modelId}"`);
+    this.log(`[SMOKE-ADV]  DeviceId: "${deviceId}"`);
     this.log('[SMOKE-ADV] DP Mappings: smoke(1), temp(2), humidity(3), tamper/battery(4), battery(14,15)');
-    this.log('[SMOKE-ADV] ⚠️ NOTE: This is a SLEEPY battery device');
-    this.log('[SMOKE-ADV] ⚠️ Smoke alarm will only report when triggered or during wake cycle');
-    this.log('[SMOKE-ADV] ════════════════════════════════════════════════════════════');
+    this.log('[SMOKE-ADV]  NOTE: This is a SLEEPY battery device');
+    this.log('[SMOKE-ADV]  Smoke alarm will only report when triggered or during wake cycle');
+    this.log('[SMOKE-ADV] ');
 
     // v5.5.503: Log available clusters for diagnostics
     try {
       const ep1 = zclNode?.endpoints?.[1];
       if (ep1) {
         const clusterIds = Object.keys(ep1.clusters || {});
-        this.log(`[SMOKE-ADV] 📡 Endpoint 1 clusters: ${clusterIds.join(', ') || 'none'}`);
+        this.log(`[SMOKE-ADV]  Endpoint 1 clusters: ${clusterIds.join(', ') || 'none'}`);
 
         // Check for Tuya cluster (CLUSTERS.TUYA_EF00 = CLUSTERS.TUYA_EF00)
         if (ep1.clusters?.tuya || ep1.clusters?.[CLUSTERS.TUYA_EF00]) {
-          this.log('[SMOKE-ADV] ✅ Tuya cluster CLUSTERS.TUYA_EF00 (CLUSTERS.TUYA_EF00) FOUND - DP communication available');
+          this.log('[SMOKE-ADV]  Tuya cluster CLUSTERS.TUYA_EF00 (CLUSTERS.TUYA_EF00) FOUND - DP communication available');
         } else {
-          this.log('[SMOKE-ADV] ⚠️ Tuya cluster CLUSTERS.TUYA_EF00 NOT found - may use IAS Zone instead');
+          this.log('[SMOKE-ADV]  Tuya cluster CLUSTERS.TUYA_EF00 NOT found - may use IAS Zone instead');
         }
 
         // Check for IAS Zone (0x0500 = 1280)
         if (ep1.clusters?.iasZone || ep1.clusters?.[1280]) {
-          this.log('[SMOKE-ADV] ✅ IAS Zone cluster 0x0500 (1280) FOUND');
+          this.log('[SMOKE-ADV]  IAS Zone cluster 0x0500 (1280) FOUND');
         }
       }
     } catch (e) {
-      this.log(`[SMOKE-ADV] ⚠️ Could not enumerate clusters: ${e.message}`);
+      this.log(`[SMOKE-ADV]  Could not enumerate clusters: ${e.message}`);
     }
 
     // v5.5.503: Store manufacturer for DP transform logic
@@ -255,11 +255,11 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
     try {
       const iasZoneCluster = zclNode?.endpoints?.[1]?.clusters?.iasZone || zclNode?.endpoints?.[1]?.clusters?.[1280];
       if (iasZoneCluster) {
-        this.log('[SMOKE-ADV] 🔥 Setting up IAS Zone for smoke alarm...');
+        this.log('[SMOKE-ADV]  Setting up IAS Zone for smoke alarm...');
         
         // Register for zone status changes (smoke alarm)
         iasZoneCluster.on('attr.zoneStatus', (zoneStatus) => {
-          this.log(`[SMOKE-ADV] 🚨 IAS Zone status: ${zoneStatus}`);
+          this.log(`[SMOKE-ADV]  IAS Zone status: ${zoneStatus}`);
           // Bit 0 = Alarm1 (smoke detected)
           const smokeAlarm = !!(zoneStatus & 0x0001);
           // Bit 2 = Tamper
@@ -290,7 +290,7 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
         this._performIASZoneEnrollment(zclNode);
       }
     } catch (e) {
-      this.log(`[SMOKE-ADV] ⚠️ IAS Zone setup error: ${e.message}`);
+      this.log(`[SMOKE-ADV]  IAS Zone setup error: ${e.message}`);
     }
   }
 
@@ -316,9 +316,9 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
         this.log(`[SMOKE-ADV] Enrolling IAS Zone with CIE: ${ieeeAddress}`);
         try {
           await iasZone.writeAttributes({ iasCieAddress: ieeeAddress });
-          this.log('[SMOKE-ADV] ✅ IAS Zone CIE address written');
+          this.log('[SMOKE-ADV]  IAS Zone CIE address written');
         } catch (e) {
-          this.log(`[SMOKE-ADV] ⚠️ CIE write failed: ${e.message}`);
+          this.log(`[SMOKE-ADV]  CIE write failed: ${e.message}`);
         }
       }
     } catch (e) {

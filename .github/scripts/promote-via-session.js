@@ -26,7 +26,7 @@ async function promoteViaBrowserSession(page, log, dry, capturedToken) {
   for (const ep of ['build','builds','']) {
     try {
       const r=await fetch(`${BASE}/app/${APP}/${ep}`,{headers:h});
-      log('  [SessAPI] GET '+ep+' → '+r.status);
+      log('  [SessAPI] GET '+ep+'  '+r.status);
       if(r.ok){const d=await r.json();builds=Array.isArray(d)?d:(d.builds||null);if(builds)break;}
     } catch(e){log('  [SessAPI] '+e.message);}
   }
@@ -54,7 +54,7 @@ async function promoteViaBrowserSession(page, log, dry, capturedToken) {
       try{
         const r=await fetch(u,{method:m,headers:{...h,'Content-Type':'application/json'},body:JSON.stringify(body)});
         const txt=r.ok?'':(' '+((await r.text().catch(()=>''))+'').slice(0,120));
-        log('  [SessAPI] '+m+' '+u.split('/build/')[1]+' body='+JSON.stringify(body)+' → '+r.status+txt);
+        log('  [SessAPI] '+m+' '+u.split('/build/')[1]+' body='+JSON.stringify(body)+'  '+r.status+txt);
         if(r.ok){log('  [SessAPI] Promoted!');return true;}
       }catch(e){log('  [SessAPI] err: '+e.message);}
     }

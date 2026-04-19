@@ -18,7 +18,7 @@ const TuyAPI = require('tuyapi');
 
 class RadiatorWifiTuyaDevice extends Homey.Device {
   async onInit() {
-    this.log('[RADIATOR-WIFI] 🔥 Initializing WiFi Tuya radiator...');
+    this.log('[RADIATOR-WIFI]  Initializing WiFi Tuya radiator...');
     
     // Device settings
     const settings = this.getSettings();
@@ -45,12 +45,12 @@ class RadiatorWifiTuyaDevice extends Homey.Device {
 
     // Setup event handlers
     this.tuya.on('connected', () => {
-      this.log('[RADIATOR-WIFI] ✅ Connected to device');
+      this.log('[RADIATOR-WIFI]  Connected to device');
       this.setAvailable().catch(() => {});
     });
 
     this.tuya.on('disconnected', () => {
-      this.log('[RADIATOR-WIFI] ⚠️ Disconnected from device');
+      this.log('[RADIATOR-WIFI]  Disconnected from device');
       this.setUnavailable('Device disconnected').catch(() => {});
       this._scheduleReconnect();
     });
@@ -60,12 +60,12 @@ class RadiatorWifiTuyaDevice extends Homey.Device {
     });
 
     this.tuya.on('data', (data) => {
-      this.log('[RADIATOR-WIFI] 📊 Received data:', JSON.stringify(data));
+      this.log('[RADIATOR-WIFI]  Received data:', JSON.stringify(data));
       this._processData(data);
     });
 
     this.tuya.on('dp-refresh', (data) => {
-      this.log('[RADIATOR-WIFI] 🔄 DP refresh:', JSON.stringify(data));
+      this.log('[RADIATOR-WIFI]  DP refresh:', JSON.stringify(data));
       this._processData(data);
     });
 
@@ -87,7 +87,7 @@ class RadiatorWifiTuyaDevice extends Homey.Device {
     // Start heartbeat
     this._startHeartbeat();
 
-    this.log('[RADIATOR-WIFI] ✅ Initialized');
+    this.log('[RADIATOR-WIFI]  Initialized');
   }
 
   _processData(data) {

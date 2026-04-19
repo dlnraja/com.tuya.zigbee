@@ -24,7 +24,7 @@ function checkDir(dir) {
                     if (flow[type]) {
                         flow[type].forEach(item => {
                             if (globalIds.has(item.id)) {
-                                console.error(`❌ CONFLICT: Flow ID [${item.id}] duplicated in:`);
+                                console.error(` CONFLICT: Flow ID [${item.id}] duplicated in:`);
                                 console.error(`   1. ${globalIds.get(item.id)}`);
                                 console.error(`   2. ${fullPath}`);
                                 conflictFound = true;
@@ -35,7 +35,7 @@ function checkDir(dir) {
                     }
                 });
             } catch (e) {
-                console.error(`⚠️ Error parsing ${fullPath}:`, e.message);
+                console.error(` Error parsing ${fullPath}:`, e.message);
             }
         }
     }
@@ -44,9 +44,9 @@ function checkDir(dir) {
 checkDir(DRIVERS_DIR);
 
 if (conflictFound) {
-    console.error('\n❌ Build aborted: Flow ID collisions detected.');
+    console.error('\n Build aborted: Flow ID collisions detected.');
     process.exit(1);
 } else {
-    console.log('✅ Manifest integrity verified. No Flow ID collisions found.');
+    console.log(' Manifest integrity verified. No Flow ID collisions found.');
     process.exit(0);
 }

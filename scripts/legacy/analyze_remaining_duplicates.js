@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔍 ANALYSE DUPLICATES RESTANTS - DÉTERMINATION LÉGITIMITÉ\n');
+console.log(' ANALYSE DUPLICATES RESTANTS - DÉTERMINATION LÉGITIMITÉ\n');
 
 const ROOT = path.join(__dirname, '..');
 const AUDIT_FILE = path.join(ROOT, 'AUDIT_ADVANCED_REPORT.json');
@@ -42,7 +42,7 @@ const LEGITIMATE_SHARED_PRODUCTS = {
 const audit = JSON.parse(fs.readFileSync(AUDIT_FILE, 'utf8'));
 const criticalIssues = audit.issues.manufacturerIds.filter(i => i.severity === 'CRITICAL');
 
-console.log(`📊 Total duplicates critiques: ${criticalIssues.length}\n`);
+console.log(` Total duplicates critiques: ${criticalIssues.length}\n`);
 
 const analysis = {
   legitimate: [],
@@ -81,40 +81,40 @@ criticalIssues.forEach(issue => {
   }
 });
 
-console.log('✅ DUPLICATES LÉGITIMES (Product IDs multi-usage):\n');
+console.log(' DUPLICATES LÉGITIMES (Product IDs multi-usage):\n');
 analysis.legitimate.forEach(item => {
   console.log(`   ${item.id} (${item.count} drivers)`);
   console.log(`      Raison: ${item.reason}`);
   console.log(`      Drivers: ${item.drivers.map(d => path.basename(path.dirname(d))).join(', ')}\n`);
 });
 
-console.log('\n⚠️  DUPLICATES À EXAMINER:\n');
+console.log('\n  DUPLICATES À EXAMINER:\n');
 analysis.needsReview.forEach(item => {
   console.log(`   ${item.id} (${item.count} drivers)`);
   console.log(`      ${item.recommendation}`);
   console.log(`      Drivers: ${item.drivers.map(d => path.basename(path.dirname(d))).join(', ')}\n`);
 });
 
-console.log('\n🔴 DUPLICATES À CORRIGER:\n');
+console.log('\n DUPLICATES À CORRIGER:\n');
 analysis.shouldFix.forEach(item => {
   console.log(`   ${item.id} (${item.count} drivers)`);
   console.log(`      ${item.recommendation}`);
   console.log(`      Drivers: ${item.drivers.map(d => path.basename(path.dirname(d))).join(', ')}\n`);
 });
 
-console.log('\n📊 RÉSUMÉ:\n');
-console.log(`   ✅ Légitimes: ${analysis.legitimate.length}`);
-console.log(`   ⚠️  À examiner: ${analysis.needsReview.length}`);
-console.log(`   🔴 À corriger: ${analysis.shouldFix.length}\n`);
+console.log('\n RÉSUMÉ:\n');
+console.log(`    Légitimes: ${analysis.legitimate.length}`);
+console.log(`     À examiner: ${analysis.needsReview.length}`);
+console.log(`    À corriger: ${analysis.shouldFix.length}\n`);
 
 // Sauvegarder analyse
 const analysisFile = path.join(ROOT, 'DUPLICATES_ANALYSIS.json');
 fs.writeFileSync(analysisFile, JSON.stringify(analysis, null, 2), 'utf8');
-console.log(`✅ Analyse sauvegardée: ${analysisFile}\n`);
+console.log(` Analyse sauvegardée: ${analysisFile}\n`);
 
 // Recommandations
 if (analysis.shouldFix.length > 0) {
-  console.log('🎯 ACTIONS RECOMMANDÉES:\n');
+  console.log(' ACTIONS RECOMMANDÉES:\n');
   console.log(`   1. Examiner manuellement les ${analysis.shouldFix.length} manufacturer IDs dupliqués`);
   console.log('   2. Vérifier si ce sont des variants du même device');
   console.log('   3. Si oui, fusionner dans un seul driver');

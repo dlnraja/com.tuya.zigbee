@@ -18,10 +18,10 @@ const RELIABILITY_FILE = path.join(__dirname, '../../.github/state/reliability-m
 const DRIVERS_DIR = path.join(__dirname, '../../drivers');
 
 function calculateReliability() {
-    console.log('🏁 Starting Hybrid Engine Reliability Engine...');
+    console.log(' Starting Hybrid Engine Reliability Engine...');
     
     if (!fs.existsSync(INTEL_FILE)) {
-        console.warn('⚠️ No forum intel found. Using default metrics.');
+        console.warn(' No forum intel found. Using default metrics.');
         return;
     }
 
@@ -73,11 +73,11 @@ function calculateReliability() {
     fs.mkdirSync(path.dirname(RELIABILITY_FILE), { recursive: true });
     fs.writeFileSync(RELIABILITY_FILE, JSON.stringify(driverMetrics, null, 2));
     
-    console.log(`✅ Reliability Audit Complete. ${Object.keys(driverMetrics).length} drivers assessed.`);
+    console.log(` Reliability Audit Complete. ${Object.keys(driverMetrics).length} drivers assessed.`);
     
     const critical = Object.entries(driverMetrics).filter(([_, m]) => m.status === 'CRITICAL');
     if (critical.length > 0) {
-        console.log(`🚨 CRITICAL DRIVERS DETECTED: ${critical.map(([n]) => n).join(', ')}`);
+        console.log(` CRITICAL DRIVERS DETECTED: ${critical.map(([n]) => n).join(', ')}`);
         // In a real pipeline, this would trigger a 'Deep Repair' workflow
     }
 }

@@ -178,7 +178,7 @@ Object.entries(PR_IMPROVEMENTS).forEach(([driverName, improvements]) => {
   const driverPath = path.join(DRIVERS_DIR, driverName, 'driver.compose.json');
   
   if (!fs.existsSync(driverPath)) {
-    console.log(`⚠️ Driver not found: ${driverName}`);
+    console.log(` Driver not found: ${driverName}`);
     stats.errors.push(`Driver not found: ${driverName}`);
     return;
   }
@@ -199,7 +199,7 @@ Object.entries(PR_IMPROVEMENTS).forEach(([driverName, improvements]) => {
         currentMfrs.push(mfr);
         stats.manufacturerNamesAdded++;
         updated = true;
-        console.log(`✅ ${driverName}: Added manufacturerName "${mfr}"`);
+        console.log(` ${driverName}: Added manufacturerName "${mfr}"`);
       }
     });
     
@@ -210,7 +210,7 @@ Object.entries(PR_IMPROVEMENTS).forEach(([driverName, improvements]) => {
         currentPids.push(pid);
         stats.productIdsAdded++;
         updated = true;
-        console.log(`✅ ${driverName}: Added productId "${pid}"`);
+        console.log(` ${driverName}: Added productId "${pid}"`);
       }
     });
     
@@ -223,7 +223,7 @@ Object.entries(PR_IMPROVEMENTS).forEach(([driverName, improvements]) => {
     }
     
   } catch (err) {
-    console.log(`❌ Error processing ${driverName}: ${err.message}`);
+    console.log(` Error processing ${driverName}: ${err.message}`);
     stats.errors.push(`${driverName}: ${err.message}`);
   }
 });
@@ -240,4 +240,4 @@ if (stats.errors.length > 0) {
   stats.errors.forEach(e => console.log(`  - ${e}`));
 }
 
-console.log('\n✅ PR improvements applied successfully!');
+console.log('\n PR improvements applied successfully!');

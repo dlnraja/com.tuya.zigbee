@@ -8,7 +8,7 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  * 3-GANG SWITCH - v5.9.23 + ZCL-Only Mode (BSEED)
  * Physical button detection: single/double/long/triple per gang
  * BSEED ZCL-only mode: _TZ3000_qkixdnon (Pieter_Pessers forum)
- * v5.9.23: GROUP ISOLATION FIX — remove group memberships + broadcast filter
+ * v5.9.23: GROUP ISOLATION FIX  remove group memberships + broadcast filter
  */
 
 // ZCL-Only manufacturers (no Tuya DP) - forum: Pieter_Pessers BSEED 3-gang
@@ -57,7 +57,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       // Continue with driver-specific setup
       try {
         if (this.isZclOnlyDevice) {
-          this.log('[SWITCH-3G] 🔵 ZCL-ONLY MODE (BSEED)');
+          this.log('[SWITCH-3G]  ZCL-ONLY MODE (BSEED)');
           this.zclNode = zclNode; // v5.13.2: CRITICAL - ensure zclNode is set for base class
           await this._initZclOnlyMode(zclNode);
           return;
@@ -72,9 +72,9 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         this.log('[SWITCH-3G] Setup warning:', setupErr.message);
       }
 
-      this.log('[SWITCH-3G] ✅ v6.0 - Initialized with error recovery');
+      this.log('[SWITCH-3G]  v6.0 - Initialized with error recovery');
     } catch (err) {
-      this.error('[SWITCH-3G] ❌ CRITICAL INIT ERROR:', err.message);
+      this.error('[SWITCH-3G]  CRITICAL INIT ERROR:', err.message);
       this.error('[SWITCH-3G] Stack:', err.stack);
       this.setUnavailable('Driver initialization incomplete - try removing and re-pairing').catch(() => {});
     }
@@ -87,7 +87,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
    */
   async _initZclOnlyMode(zclNode) {
     // v7.2.5: Ensure all gang capabilities are present (HOBEIAN fix)
-    await this._migrateCapabilities().catch(e => this.log(`[BSEED-3G] ⚠️ Migrate: ${e.message}`));
+    await this._migrateCapabilities().catch(e => this.log(`[BSEED-3G]  Migrate: ${e.message}`));
 
     this._zclState = {
       lastState: { 1: null, 2: null, 3: null },
@@ -97,7 +97,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     this._zclNode = zclNode;
     this._isZclOnlyMode = true; // v5.5.993: Flag for VirtualButtonMixin direct ZCL
 
-    // v5.9.23: GROUP ISOLATION — remove all Zigbee group memberships per EP
+    // v5.9.23: GROUP ISOLATION  remove all Zigbee group memberships per EP
     await this._removeGroupMemberships(zclNode);
 
     // v5.9.23: Track which gang was last commanded by the app
@@ -150,7 +150,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
             try {
               const card = this._getFlowCard(flowId);
               if (card) await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
-              this.log(`[BSEED-3G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+              this.log(`[BSEED-3G]  Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
             } catch (e) { }
           }
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
@@ -158,7 +158,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
             try {
               const card = this._getFlowCard(sceneId);
               if (card) await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
-              this.log(`[BSEED-3G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
+              this.log(`[BSEED-3G]  Scene G${epNum} ${value ? 'on' : 'off'}`);
             } catch (e) { }
           }
         }
@@ -166,7 +166,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       this.log(`[BSEED-3G] EP${epNum} attr listener registered`);
     }
 
-    // v5.8.72: PacketNinja pattern — configure onOff reporting per endpoint
+    // v5.8.72: PacketNinja pattern  configure onOff reporting per endpoint
     for (const epNum of [1, 2, 3]) {
       const onOff = getOnOffCluster(epNum);
       if (onOff && typeof onOff.configureReporting === 'function') {
@@ -174,14 +174,14 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           await onOff.configureReporting({
             onOff: { minInterval: 0, maxInterval: 300, minChange: 1 }
           });
-          this.log(`[BSEED-3G] ✅ EP${epNum} onOff reporting configured`);
+          this.log(`[BSEED-3G]  EP${epNum} onOff reporting configured`);
         } catch (err) {
           this.log(`[BSEED-3G] EP${epNum} configureReporting failed: ${err.message}`);
         }
       }
     }
 
-    // v5.8.72: PacketNinja pattern — read initial onOff state per endpoint
+    // v5.8.72: PacketNinja pattern  read initial onOff state per endpoint
     for (const epNum of [1, 2, 3]) {
       const onOff = getOnOffCluster(epNum);
       if (onOff && typeof onOff.readAttributes === 'function') {
@@ -200,7 +200,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     }
 
     await this.initVirtualButtons?.();
-    this.log('[SWITCH-3G] ✅ BSEED ZCL-only mode ready (packetninja v990+v5.8.72)');
+    this.log('[SWITCH-3G]  BSEED ZCL-only mode ready (packetninja v990+v5.8.72)');
   }
 
   /**

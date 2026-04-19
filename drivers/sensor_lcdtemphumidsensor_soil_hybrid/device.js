@@ -11,38 +11,38 @@ const { getAppVersionPrefixed } = require('../../lib/utils/AppVersion');
 const { SoilMoistureInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║            SOIL SENSOR - v5.5.317 INTELLIGENT INFERENCE                    ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║                                                                              ║
- * ║  🧠 v5.5.317: INTELLIGENT INFERENCE ENGINE                                   ║
- * ║  - Validates moisture readings with temperature correlation                 ║
- * ║  - Predicts watering needs based on moisture trends                         ║
- * ║  - Smooths erratic sensor readings                                          ║
- * ║                                                                              ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║                                                                              ║
- * ║  Uses TuyaUnifiedDevice base class with proper:                               ║
- * ║  - tuyaCluster handlers (Tuya DP reception via CLUSTERS.TUYA_EF00)                       ║
- * ║  - cluster handlers (Zigbee standard reception)                              ║
- * ║  - tuyaBoundCluster (Tuya DP commands to device)                             ║
- * ║  - Hybrid mode auto-detection after 15 min                                   ║
- * ║                                                                              ║
- * ║  KNOWN MODELS:                                                               ║
- * ║  - TS0601 / _TZE284_oitavov2 : QT-07S Soil moisture sensor                   ║
- * ║  - TS0601 / _TZE284_aao3yzhs : Soil sensor variant                           ║
- * ║                                                                              ║
- * ║  DP MAPPINGS (from Z2M/ZHA):                                                 ║
- * ║  - DP3: soil_moisture %                                                      ║
- * ║  - DP5: temperature ÷10                                                      ║
- * ║  - DP14: battery_state enum (0=low, 1=med, 2=high)                           ║
- * ║  - DP15: battery_percent %                                                   ║
- * ║  - DP101: ambient_humidity % (Z2M #28270: o9ofysmo/xc3vwx5a)                 ║
- * ║  - DP102: illuminance lux (Z2M #28270: o9ofysmo/xc3vwx5a)                    ║
- * ║  - DP103: humidity_calibration (-30 to +30)                                   ║
- * ║  - DP104: report_interval (30-1200s)                                          ║
- * ║                                                                              ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *             SOIL SENSOR - v5.5.317 INTELLIGENT INFERENCE                    
+ * 
+ *                                                                               
+ *    v5.5.317: INTELLIGENT INFERENCE ENGINE                                   
+ *   - Validates moisture readings with temperature correlation                 
+ *   - Predicts watering needs based on moisture trends                         
+ *   - Smooths erratic sensor readings                                          
+ *                                                                               
+ * 
+ *                                                                               
+ *   Uses TuyaUnifiedDevice base class with proper:                               
+ *   - tuyaCluster handlers (Tuya DP reception via CLUSTERS.TUYA_EF00)                       
+ *   - cluster handlers (Zigbee standard reception)                              
+ *   - tuyaBoundCluster (Tuya DP commands to device)                             
+ *   - Hybrid mode auto-detection after 15 min                                   
+ *                                                                               
+ *   KNOWN MODELS:                                                               
+ *   - TS0601 / _TZE284_oitavov2 : QT-07S Soil moisture sensor                   
+ *   - TS0601 / _TZE284_aao3yzhs : Soil sensor variant                           
+ *                                                                               
+ *   DP MAPPINGS (from Z2M/ZHA):                                                 
+ *   - DP3: soil_moisture %                                                      
+ *   - DP5: temperature ÷10                                                      
+ *   - DP14: battery_state enum (0=low, 1=med, 2=high)                           
+ *   - DP15: battery_percent %                                                   
+ *   - DP101: ambient_humidity % (Z2M #28270: o9ofysmo/xc3vwx5a)                 
+ *   - DP102: illuminance lux (Z2M #28270: o9ofysmo/xc3vwx5a)                    
+ *   - DP103: humidity_calibration (-30 to +30)                                   
+ *   - DP104: report_interval (30-1200s)                                          
+ *                                                                               
+ * 
  */
 class SoilSensorDevice extends TuyaUnifiedDevice {
 
@@ -99,54 +99,54 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
    */
   get dpMappings() {
     return {
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // SOIL MOISTURE - DP3 (main sensor value) - Hobeian ZG-303Z
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       3: { capability: 'measure_humidity.soil', divisor: 1 },
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // TEMPERATURE - DP5 (soil/ambient temperature)
       // Some devices report ×10, others ×100 - auto-detect
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       5: {
         capability: 'measure_temperature',
         transform: (v) => {
-          // Auto-detect scale: >1000=÷100, 100-1000=÷10, ≤100=raw °C
+          // Auto-detect scale: >1000=÷100, 100-1000=÷10, 100=raw °C
           if (Math.abs(v) > 1000) return safeParse(v, 100);
           if (Math.abs(v) > 100) return safeParse(v, 10);
           return v; // Already in °C (_TZE284_oitavov2 QT-07S)
         }
       },
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // AIR HUMIDITY - DP109 (Hobeian ZG-303Z specific)
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       109: { capability: 'measure_humidity', divisor: 1 },
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // BATTERY - DP15 (percentage)
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       15: { capability: 'measure_battery', divisor: 1 },
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // DP14: BATTERY STATE (standard Tuya soil sensors per Z2M)
       // Z2M: [14, 'battery_state', tuya.valueConverter.batteryState]
-      // Enum: 0=low, 1=medium, 2=high → converted in _handleDP
+      // Enum: 0=low, 1=medium, 2=high  converted in _handleDP
       // Note: Handled directly in _handleDP for proper battery conversion
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       14: { capability: 'measure_battery', transform: (v) => ({ 0: 10, 1: 50, 2: 100 }[v] ?? v) },
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // TEMPERATURE UNIT - DP9 (Hobeian) / DP2 (QT-07S)
       // 0=Celsius, 1=Fahrenheit - stored internally, not a capability
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       9: { capability: null, internal: 'temperature_unit' },
       2: { capability: null, internal: 'temperature_unit' },
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // v5.5.406: RESEARCH-BASED DPs from Z2M issue #23260, #27501
       // _TZE284_sgabhwa6, _TZE284_oitavov2 variants
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // v5.9.22: Z2M #28270 - DP102=illuminance for _TZE284_o9ofysmo/_TZE284_xc3vwx5a
       
       102: { capability: 'measure_luminance', divisor: 1 },
@@ -169,9 +169,9 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       113: { capability: null, setting: 'soil_fertility_calibration', min: -1000, max: 1000 },
       114: { capability: null, setting: 'soil_fertility_warning_setting', min: 0, max: 5000 },
       115: { capability: null, setting: 'soil_fertility_warning_v1', min: 0, max: 5000 },
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // FALLBACK DPs for other soil sensor variants
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       1: { capability: 'measure_temperature', divisor: 10 },  // Some variants
       4: { capability: 'measure_ec', divisor: 1 },             // EC/fertilizer (GitHub #150 _TZE284_hdml1aav)
       // v5.9.22: Z2M #28270 - DP101=ambient_humidity for _TZE284_o9ofysmo/_TZE284_xc3vwx5a
@@ -195,34 +195,34 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
    */
   get clusterHandlers() {
     return {
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // TEMPERATURE - ZCL standard cluster (0x0402)
       // Value is in 0.01°C units, divide by 100
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       temperatureMeasurement: {
         requireBinding: false,
         requireReporting: false,
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
             const temp = safeParse(data.measuredValue, 100);
-            this.log(`[ZCL] 🌡️ Temperature: ${temp}°C`);
+            this.log(`[ZCL]  Temperature: ${temp}°C`);
             this._registerZigbeeHit?.();
             this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
           }
         }
       },
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // HUMIDITY - ZCL standard cluster (0x0405)
       // Value is in 0.01% units, divide by 100
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       relativeHumidity: {
         requireBinding: false,
         requireReporting: false,
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
             const humidity = safeParse(data.measuredValue, 100);
-            this.log(`[ZCL] 💧 Humidity/Moisture: ${humidity}%`);
+            this.log(`[ZCL]  Humidity/Moisture: ${humidity}%`);
             this._registerZigbeeHit?.();
             // v5.11.16: ZCL humidity = AIR humidity. Soil moisture comes via Tuya DP3.
             if (this.hasCapability('measure_humidity')) {
@@ -232,16 +232,16 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         }
       },
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // BATTERY - ZCL standard cluster (0x0001)
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       powerConfiguration: {
         requireBinding: false,
         requireReporting: false,
         attributeReport: (data) => {
           if (data.batteryPercentageRemaining !== undefined) {
             const battery = Math.round(safeParse(data.batteryPercentageRemaining, 2));
-            this.log(`[ZCL] 🔋 Battery: ${battery}%`);
+            this.log(`[ZCL]  Battery: ${battery}%`);
             this._registerZigbeeHit?.();
             this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
           }
@@ -258,14 +258,14 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       this.log('[SOIL] Base init error:', err.message);
     }
 
-    this.log('[SOIL] ════════════════════════════════════════════════════════════');
+    this.log('[SOIL] ');
     this.log(`[SOIL] Soil Sensor ${getAppVersionPrefixed()} INTELLIGENT INFERENCE`);
-    this.log('[SOIL] ════════════════════════════════════════════════════════════');
-    this.log('[SOIL] ⚠️ BATTERY DEVICE - Data comes when device wakes up');
-    this.log('[SOIL] ℹ️ First data may take 10-60 minutes after pairing');
-    this.log('[SOIL] 📋 DP Mappings: DP3=soil_moisture, DP5=temp, DP14=battery_state, DP15=battery%, DP101=air_humidity, DP102=lux');
-    this.log('[SOIL] 🔧 forceActiveTuyaMode:', this.forceActiveTuyaMode);
-    this.log('[SOIL] 🔧 hybridModeEnabled:', this.hybridModeEnabled);
+    this.log('[SOIL] ');
+    this.log('[SOIL]  BATTERY DEVICE - Data comes when device wakes up');
+    this.log('[SOIL]  First data may take 10-60 minutes after pairing');
+    this.log('[SOIL]  DP Mappings: DP3=soil_moisture, DP5=temp, DP14=battery_state, DP15=battery%, DP101=air_humidity, DP102=lux');
+    this.log('[SOIL]  forceActiveTuyaMode:', this.forceActiveTuyaMode);
+    this.log('[SOIL]  hybridModeEnabled:', this.hybridModeEnabled);
 
     // v5.5.334: Load settings for calibration and thresholds (Hobeian PR#6)
     this._temperatureCalibration = this.getSetting('temperature_calibration') || 0;
@@ -274,8 +274,8 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     this._soilWarningThreshold = this.getSetting('soil_warning_threshold') || 30;
     this._temperatureUnit = this.getSetting('temperature_unit') || 'celsius';
 
-    this.log(`[SOIL] 🔧 Calibration: temp=${this._temperatureCalibration}, hum=${this._humidityCalibration}, moist=${this._moistureCalibration}`);
-    this.log(`[SOIL] 🔧 Warning threshold: ${this._soilWarningThreshold}%, Unit: ${this._temperatureUnit}`);
+    this.log(`[SOIL]  Calibration: temp=${this._temperatureCalibration}, hum=${this._humidityCalibration}, moist=${this._moistureCalibration}`);
+    this.log(`[SOIL]  Warning threshold: ${this._soilWarningThreshold}%, Unit: ${this._temperatureUnit}`);
 
     // v5.5.317: Initialize intelligent inference engines
     this._soilInference = new SoilMoistureInference(this, {
@@ -299,7 +299,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
    * Note: Calibration is now handled automatically by the base class.
    */
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    this.log('[SOIL] ⚙️ Settings changed:', changedKeys);
+    this.log('[SOIL]  Settings changed:', changedKeys);
 
     if (changedKeys.includes('soil_warning_threshold')) {
       this._soilWarningThreshold = newSettings.soil_warning_threshold || 30;
@@ -315,7 +315,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     if (moisture !== null && this.hasCapability('alarm_water')) {
       const alarm = moisture < this._soilWarningThreshold;
       this.setCapabilityValue('alarm_water', alarm).catch(() => { });
-      this.log(`[SOIL] 💧 Water alarm updated: moisture=${moisture}%, threshold=${this._soilWarningThreshold}%, alarm=${alarm}`);
+      this.log(`[SOIL]  Water alarm updated: moisture=${moisture}%, threshold=${this._soilWarningThreshold}%, alarm=${alarm}`);
     }
   }
 
@@ -348,8 +348,8 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     const dp = Number(dpId);
 
     // Log ALL DPs for soil sensor debugging
-    this.log('[SOIL] ════════════════════════════════════════════════════════');
-    this.log(`[SOIL] 📥 DP${dp} received!`);
+    this.log('[SOIL] ');
+    this.log(`[SOIL]  DP${dp} received!`);
     this.log(`[SOIL]    Raw value: ${value}`);
     this.log(`[SOIL]    Type: ${typeof value}`);
     this.log(`[SOIL]    Is Buffer: ${Buffer.isBuffer(value)}`);
@@ -367,15 +367,15 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       this.log(`[SOIL]    Parsed from Buffer: ${parsedValue}`);
     }
 
-    // ═══════════════════════════════════════════════════════════════════════
+    // 
     // DIRECT CAPABILITY SETTING for critical DPs
     // This bypasses any potential issues in parent handler
-    // ═══════════════════════════════════════════════════════════════════════
+    // 
 
     
     
     if (dp === 112) {
-      this.log(`[SOIL] 🧪 SOIL FERTILITY DP112 = ${parsedValue} μS/cm`);
+      this.log(`[SOIL]  SOIL FERTILITY DP112 = ${parsedValue} S/cm`);
       this._safeSetCapability('measure_conductivity', parseFloat(parsedValue));
       return;
     }
@@ -383,31 +383,31 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     if (dp === 111) {
       const mfr = this.getSetting?.('zb_manufacturer_name') || '';
       if (mfr.includes('npj9bug3')) {
-        this.log(`[SOIL] 🌱 SOIL MOISTURE DP111 = ${parsedValue}% [npj9bug3 specific]`);
+        this.log(`[SOIL]  SOIL MOISTURE DP111 = ${parsedValue}% [npj9bug3 specific]`);
         this._safeSetCapability('measure_humidity.soil', parseFloat(parsedValue));
       } else {
-        this.log(`[SOIL] 💧 WATER SHORTAGE DP111 = ${parsedValue} [bool fallback]`);
+        this.log(`[SOIL]  WATER SHORTAGE DP111 = ${parsedValue} [bool fallback]`);
         this._safeSetCapability('alarm_water', parsedValue === 1);
       }
       return;
     }
     if (dp === 101) {
-      this.log(`[SOIL] ☁️ AIR HUMIDITY DP101 = ${parsedValue}%`);
+      this.log(`[SOIL]  AIR HUMIDITY DP101 = ${parsedValue}%`);
       this._safeSetCapability('measure_humidity', parseFloat(parsedValue));
       return;
     }
     if (dp === 109) {
-      this.log(`[SOIL] 🌱 SOIL MOISTURE DP109 = ${parsedValue}%`);
+      this.log(`[SOIL]  SOIL MOISTURE DP109 = ${parsedValue}%`);
       let cap = this.hasCapability('measure_humidity.soil') ? 'measure_humidity.soil' : 'measure_humidity';
       this._safeSetCapability(cap, parseFloat(parsedValue));
       return;
     }
     if (dp === 3) {
       if (parsedValue > 100 && !Buffer.isBuffer(value)) {
-        this.log(`[SOIL] ⚠️ DP3 value ${parsedValue} > 100% — compound frame artifact, skipping`);
+        this.log(`[SOIL]  DP3 value ${parsedValue} > 100%  compound frame artifact, skipping`);
         return;
       }
-      this.log(`[SOIL] 🌱 SOIL MOISTURE DP3 = ${parsedValue}%`);
+      this.log(`[SOIL]  SOIL MOISTURE DP3 = ${parsedValue}%`);
 
       let validatedMoisture = parsedValue;
       if (this._soilInference) {
@@ -425,7 +425,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         const alarm = (validatedMoisture < threshold);
         this._safeSetCapability('alarm_water', alarm);
         if (!alarm) {
-          this.log(`[SOIL] 💧 Forcing alarm_water to false as moisture ${validatedMoisture}% > ${threshold}%`);
+          this.log(`[SOIL]  Forcing alarm_water to false as moisture ${validatedMoisture}% > ${threshold}%`);
         }
       }
       return;
@@ -433,7 +433,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 
     if (dp === 5) {
       if (parsedValue > 10000 && !Buffer.isBuffer(value)) {
-        this.log(`[SOIL] ⚠️ DP5 value ${parsedValue} > 10000 — compound frame artifact, skipping`);
+        this.log(`[SOIL]  DP5 value ${parsedValue} > 10000  compound frame artifact, skipping`);
         return;
       }
       let temp = parsedValue;
@@ -444,14 +444,14 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       else if (temp > 100) temp = safeParse(temp, 10);
       else temp = safeParse(temp, 10);
 
-      this.log(`[SOIL] 🌡️ TEMPERATURE DP5 = ${parsedValue} → Raw ${temp}°C`);
+      this.log(`[SOIL]  TEMPERATURE DP5 = ${parsedValue}  Raw ${temp}°C`);
       this._safeSetCapability('measure_temperature', parseFloat(temp));
       return;
     }
 
     if (dp === 14) {
       if (parsedValue > 2 && !Buffer.isBuffer(value)) {
-        this.log(`[SOIL] ⚠️ DP14 value ${parsedValue} > 2 — skipping`);
+        this.log(`[SOIL]  DP14 value ${parsedValue} > 2  skipping`);
         return;
       }
       const batteryMap = { 0: 10, 1: 50, 2: 100 };
@@ -466,7 +466,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     }
 
     // For other DPs, call parent handler
-    this.log(`[SOIL] ℹ️ DP${dp} not handled locally, calling parent`);
+    this.log(`[SOIL]  DP${dp} not handled locally, calling parent`);
     super._handleDP(dpId, value);
   }
 
@@ -474,11 +474,11 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
    * v5.5.154: Initialize flow triggers for soil sensor
    */
   _initFlowTriggers() {
-    // v5.8.72: Safe flow card getter — prevents onNodeInit crash if card missing
+    // v5.8.72: Safe flow card getter  prevents onNodeInit crash if card missing
     const safeGetTrigger = (id) => {
       try { return
       this._getFlowCard(id) ; }
-      catch (e) { this.log(`[SOIL] ⚠️ Flow trigger '${id}' not available: ${e.message}`); return null; }
+      catch (e) { this.log(`[SOIL]  Flow trigger '${id}' not available: ${e.message}`); return null; }
     };
 
     // Register flow trigger cards
@@ -554,7 +554,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     if (battery <= 20 && (this._previousBattery === null || this._previousBattery > 20)) {
       if (this._flowTriggerBatteryLow) {
         this._flowTriggerBatteryLow.trigger(this, { battery }).catch(this.error);
-        this.log(`[SOIL] 🔋 Battery low alert triggered: ${battery}%`);
+        this.log(`[SOIL]  Battery low alert triggered: ${battery}%`);
       }
     }
 

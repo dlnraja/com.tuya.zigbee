@@ -6,7 +6,7 @@
 ## Collision Types
 | Type | Example | Action |
 |------|---------|--------|
-| Critical | sensor ↔ switch | Fix immediately |
+| Critical | sensor  switch | Fix immediately |
 | Medium | 3+ drivers | Review |
 | Low | 2 similar | Acceptable |
 

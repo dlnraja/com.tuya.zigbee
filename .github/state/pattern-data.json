@@ -304,7 +304,7 @@
           1
         ]
       ],
-      "fix": "Check TuyaEF00Manager.js:1912 — skip auto-convert when dpMappings has divisor !== 1",
+      "fix": "Check TuyaEF00Manager.js:1912  skip auto-convert when dpMappings has divisor !== 1",
       "files": [
         "lib/tuya/TuyaEF00Manager.js"
       ]

@@ -6,7 +6,7 @@ const { safeParse } = require('../../lib/utils / tuyaUtils.js');
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔧 CORRECTION FINALE - 19 WARNINGS LIB setCapabilityValue\n');
+console.log(' CORRECTION FINALE - 19 WARNINGS LIB setCapabilityValue\n');
 
 const ROOT = path.join(__dirname, '..');
 
@@ -135,7 +135,7 @@ function applyFixes() {
     const filePath = path.join(ROOT, relativeFile);
 
     if (!fs.existsSync(filePath)) {
-      console.log(`   ⚠️  Fichier non trouvé: ${relativeFile}`);
+      console.log(`     Fichier non trouvé: ${relativeFile}`);
       return;
     }
 
@@ -163,31 +163,31 @@ function applyFixes() {
         fs.writeFileSync(filePath, content, 'utf8');
         stats.filesModified++;
 
-        console.log(`   ✅ ${relativeFile} (${fixes.filter(f => f.old !== f.new).length} corrections)`);
+        console.log(`    ${relativeFile} (${fixes.filter(f => f.old !== f.new).length} corrections)`);
       }
 
     } catch (e) {
-      console.error(`   ❌ Erreur ${relativeFile}:`, e.message);
+      console.error(`    Erreur ${relativeFile}:`, e.message);
     }
   });
 }
 
 // EXÉCUTION
-console.log('🎯 Application corrections finales lib/...\n');
+console.log(' Application corrections finales lib/...\n');
 applyFixes();
 
-console.log('\n\n📊 RAPPORT CORRECTIONS:\n');
+console.log('\n\n RAPPORT CORRECTIONS:\n');
 console.log(`   Fichiers modifiés: ${stats.filesModified}`);
 console.log(`   Lignes corrigées: ${stats.linesFixed}`);
 console.log(`   Backups créés: ${stats.backupsCreated}\n`);
 
 if (stats.filesModified > 0) {
-  console.log('✅ CORRECTIONS APPLIQUÉES\n');
-  console.log('💡 NOTE: Valeurs littérales (50, 100, 0, 15) déjà numériques - pas modifiées');
+  console.log(' CORRECTIONS APPLIQUÉES\n');
+  console.log(' NOTE: Valeurs littérales (50, 100, 0, 15) déjà numériques - pas modifiées');
   console.log('   Seules les variables ont été converties avec parseFloat()\n');
 }
 
-console.log('🎯 PROCHAINES ÉTAPES:');
+console.log(' PROCHAINES ÉTAPES:');
 console.log('   1. Relancer audit: node scripts/audit_complete_advanced.js');
 console.log('   2. Valider: homey app validate --level publish');
 console.log('   3. Build: homey app build\n');

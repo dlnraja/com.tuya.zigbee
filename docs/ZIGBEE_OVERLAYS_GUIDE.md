@@ -34,18 +34,18 @@ This app supports **30+ proprietary protocols** on top of Zigbee 3.0, handling *
 
 | Manufacturer Pattern | Protocol | Cluster | DP? |
 |---------------------|----------|---------|-----|
-| `_TZE200_*` | Tuya DP | 0xEF00 | ✅ |
-| `_TZE204_*` | Tuya DP | 0xEF00 | ✅ |
-| `_TZE284_*` | Tuya DP | 0xEF00 | ✅ |
-| `_TZ3000_*` | Tuya Mixed | ZCL + 0xEF00 | ❌ |
-| `_TZ3210_*` | Tuya ZCL | Standard | ❌ |
-| `_TZ3400_*` | Tuya ZCL | Standard | ❌ |
-| `_TYZB01_*` | Tuya Legacy | 0xEF00 | ❌ |
-| `LUMI` | Xiaomi | 0xFCC0 | ❌ |
-| `IKEA of Sweden` | IKEA | 0xFC7C | ❌ |
-| `Philips` | Hue | 0xFC00 | ❌ |
-| `SONOFF` | Sonoff | 0xFC11 | ❌ |
-| `HEIMAN` | Heiman | 0xFC81 | ❌ |
+| `_TZE200_*` | Tuya DP | 0xEF00 |  |
+| `_TZE204_*` | Tuya DP | 0xEF00 |  |
+| `_TZE284_*` | Tuya DP | 0xEF00 |  |
+| `_TZ3000_*` | Tuya Mixed | ZCL + 0xEF00 |  |
+| `_TZ3210_*` | Tuya ZCL | Standard |  |
+| `_TZ3400_*` | Tuya ZCL | Standard |  |
+| `_TYZB01_*` | Tuya Legacy | 0xEF00 |  |
+| `LUMI` | Xiaomi | 0xFCC0 |  |
+| `IKEA of Sweden` | IKEA | 0xFC7C |  |
+| `Philips` | Hue | 0xFC00 |  |
+| `SONOFF` | Sonoff | 0xFC11 |  |
+| `HEIMAN` | Heiman | 0xFC81 |  |
 
 ---
 

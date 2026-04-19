@@ -89,7 +89,7 @@ async function collectForks(repo,depth,visited){
   return all;
 }
 
-// Deep scan a single fork — extract FULL driver data
+// Deep scan a single fork  extract FULL driver data
 async function scanForkDeep(fork,local,results){
   try{
     const tree=await ghGet('/repos/'+fork.full_name+'/git/trees/'+fork.branch+'?recursive=1');
@@ -113,7 +113,7 @@ async function scanForkDeep(fork,local,results){
       const remoteMfrs=new Set(data.zigbee?.manufacturerName||[]);
       const remotePids=new Set(data.zigbee?.productId||[]);
 
-      // Case 1: Driver exists in our repo — check for missing FPs and PIDs
+      // Case 1: Driver exists in our repo  check for missing FPs and PIDs
       if(local.drivers.has(norm)){
         const ourData=local.composes[norm];
         const ourMfrs=new Set(ourData.zigbee?.manufacturerName||[]);
@@ -132,7 +132,7 @@ async function scanForkDeep(fork,local,results){
           results.settingsAdds.push({driver:norm,fork:fork.full_name,newSettings,srcDriver:drvName});
         }
       }
-      // Case 2: Driver does NOT exist — potential new driver
+      // Case 2: Driver does NOT exist  potential new driver
       else if(remoteMfrs.size>0){
         results.newDrivers.push({driver:drvName,normalizedAs:norm,fork:fork.full_name,
           owner:fork.owner,mfrs:[...remoteMfrs],pids:[...remotePids],
@@ -281,7 +281,7 @@ async function scanPRsDeep(repos,local,results){
 }
 
 async function main(){
-  if(!TK){console.log('No GitHub token — set GH_PAT');process.exit(0)}
+  if(!TK){console.log('No GitHub token  set GH_PAT');process.exit(0)}
   const local=buildLocal();
   console.log('Local: '+local.drivers.size+' drivers, '+local.mfrs.size+' mfrs, '+local.pids.size+' pids');
 

@@ -17,6 +17,6 @@
   "fix": {
     "applied": true,
     "version": "5.5.791",
-    "description": "Force-write CIE address + 3-step enrollment (write CIE → enrollResponse → verify)"
+    "description": "Force-write CIE address + 3-step enrollment (write CIE  enrollResponse  verify)"
   }
 }

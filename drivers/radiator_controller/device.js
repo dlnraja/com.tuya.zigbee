@@ -7,7 +7,7 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
- * 🔥 Radiator Controller Device
+ *  Radiator Controller Device
  * Contrôleur spécialisé pour radiateurs électriques avec fil pilote
  *
  * Fonctionnalités:
@@ -79,7 +79,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
     await this.setupCapabilities();
     await this.setupFlowCards();
 
-    this.log('🔥 Radiator Controller initialized successfully');
+    this.log(' Radiator Controller initialized successfully');
   }
 
   async initializeRadiatorController() {
@@ -102,7 +102,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
     };
 
     this.currentMode = this.getSetting('heating_mode') || 'confort';
-    this.log(`🏠 Mode chauffage initial: ${this.currentMode}`);
+    this.log(` Mode chauffage initial: ${this.currentMode}`);
   }
 
   async setupCapabilities() {
@@ -195,7 +195,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
   }
 
   async _setRadiatorPower(value) {
-    this.log(`🔥 Set radiator power: ${value}`);
+    this.log(` Set radiator power: ${value}`);
 
     try {
       const onOffCluster = this.getSafeCluster('onOff');
@@ -217,13 +217,13 @@ class RadiatorControllerDevice extends ZigBeeDevice {
 
       return true;
     } catch (error) {
-      this.error('🚨 Erreur contrôle alimentation radiateur:', error);
+      this.error(' Erreur contrôle alimentation radiateur:', error);
       throw error;
     }
   }
 
   async _setTargetTemperature(temperature) {
-    this.log(`🌡️ Set target temperature: ${temperature}°C`);
+    this.log(` Set target temperature: ${temperature}°C`);
 
     try {
       // Ajuster mode chauffage selon température
@@ -238,13 +238,13 @@ class RadiatorControllerDevice extends ZigBeeDevice {
 
       return true;
     } catch (error) {
-      this.error('🚨 Erreur réglage température:', error);
+      this.error(' Erreur réglage température:', error);
       throw error;
     }
   }
 
   async _setHeatingMode(mode) {
-    this.log(`🏠 Set heating mode: ${mode}`);
+    this.log(` Set heating mode: ${mode}`);
 
     if (!this.heatingModes[mode]) {
       throw new Error(`Mode chauffage invalide: ${mode}`);
@@ -270,7 +270,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
 
       return true;
     } catch (error) {
-      this.error('🚨 Erreur changement mode chauffage:', error);
+      this.error(' Erreur changement mode chauffage:', error);
       throw error;
     }
   }
@@ -281,7 +281,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
       throw new Error(`Type signal fil pilote invalide: ${signalType}`);
     }
 
-    this.log(`📡 Envoi signal fil pilote: ${modeConfig.description}`);
+    this.log(` Envoi signal fil pilote: ${modeConfig.description}`);
 
     try {
       const duration = this.pilotWireConfig.signalDuration;
@@ -289,26 +289,26 @@ class RadiatorControllerDevice extends ZigBeeDevice {
       // Simulation envoi signal selon voltage requis
       switch (modeConfig.voltage) {
       case 0: // Confort - pas de signal
-        this.log('🏠 Mode Confort: Aucun signal (0V)');
+        this.log(' Mode Confort: Aucun signal (0V)');
         break;
 
       case -230: // Éco - demi-alternance négative
-        this.log('🌱 Mode Éco: Signal 230V négatif');
+        this.log(' Mode Éco: Signal 230V négatif');
         await this._sendModulatedSignal('negative', duration);
         break;
 
       case 230: // Hors-gel - demi-alternance positive
-        this.log('🧊 Mode Hors-Gel: Signal 230V positif');
+        this.log(' Mode Hors-Gel: Signal 230V positif');
         await this._sendModulatedSignal('positive', duration);
         break;
 
       case 'alternating': // Arrêt - signal alternatif
-        this.log('⛔ Mode Arrêt: Signal alternatif');
+        this.log(' Mode Arrêt: Signal alternatif');
         await this._sendModulatedSignal('alternating', duration);
         break;
 
       case -115: // Confort-1/-2 - signal modulé
-        this.log(`🌡️ Mode ${signalType}: Signal modulé`);
+        this.log(` Mode ${signalType}: Signal modulé`);
         await this._sendModulatedSignal('modulated', duration);
         break;
       }
@@ -322,11 +322,11 @@ class RadiatorControllerDevice extends ZigBeeDevice {
 
       // Debug logging si activé
       if (this.getSetting('debug_logging')) {
-        this.log(`🔍 DEBUG: Signal ${signalType} envoyé - Durée: ${duration}ms, Type: ${modeConfig.voltage}`);
+        this.log(` DEBUG: Signal ${signalType} envoyé - Durée: ${duration}ms, Type: ${modeConfig.voltage}`);
       }
 
     } catch (error) {
-      this.error('🚨 Erreur envoi signal fil pilote:', error);
+      this.error(' Erreur envoi signal fil pilote:', error);
       throw error;
     }
   }
@@ -387,7 +387,7 @@ safeMultiply(await this._delay(duration, 0).3);
         await onOffCluster.setOff();
       }
     } catch (error) {
-      this.error('🚨 Erreur pulse relais:', error);
+      this.error(' Erreur pulse relais:', error);
     }
   }
 
@@ -396,17 +396,17 @@ safeMultiply(await this._delay(duration, 0).3);
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    this.log('🔧 Radiator settings changed:', changedKeys);
+    this.log(' Radiator settings changed:', changedKeys);
 
     // Mettre à jour configuration fil pilote
     if (changedKeys.includes('pilot_wire_type')) {
       this.pilotWireConfig.type = newSettings.pilot_wire_type;
-      this.log(`📡 Type fil pilote changé: ${newSettings.pilot_wire_type}`);
+      this.log(` Type fil pilote changé: ${newSettings.pilot_wire_type}`);
     }
 
     if (changedKeys.includes('diode_type')) {
       this.pilotWireConfig.diode = newSettings.diode_type;
-      this.log(`🔴 Configuration diode changée: ${newSettings.diode_type}`);
+      this.log(` Configuration diode changée: ${newSettings.diode_type}`);
     }
 
     if (changedKeys.includes('heating_mode')) {
@@ -442,7 +442,7 @@ safeMultiply(await this._delay(duration, 0).3);
   }
 
   async onDeleted() {
-    this.log('🗑️ Radiator Controller device deleted');
+    this.log(' Radiator Controller device deleted');
 
     // Nettoyer timers et listeners
     if (this._schedulingInterval) {

@@ -31,7 +31,7 @@ dpMap: {
 ```
 
 ### Known Bugs
-- ❌ None reported
+-  None reported
 
 ---
 
@@ -51,7 +51,7 @@ dpMap: {
 
 ### DP Mapping (CONFIRMED from ZHA quirk)
 ```javascript
-// Tuya QT-07S soil probe – _TZE284_oitavov2
+// Tuya QT-07S soil probe  _TZE284_oitavov2
 dpMap: {
   2: { cap: 'temperature_unit', type: 'enum' },  // 0=C, 1=F
   3: { cap: 'measure_humidity', type: 'soil_moisture' },  // Soil moisture %
@@ -62,8 +62,8 @@ dpMap: {
 ```
 
 ### Known Bugs
-- ⚠️ Temperature divisor is 100, NOT 10 (ZHA quirk fix)
-- ⚠️ "Moisture reported as humidity" - this is normal for Tuya
+-  Temperature divisor is 100, NOT 10 (ZHA quirk fix)
+-  "Moisture reported as humidity" - this is normal for Tuya
 
 ---
 
@@ -106,9 +106,9 @@ dpMap: {
 ```
 
 ### Known Bugs
-- 🐛 **Z2M #28529:** "Not recognized - shows as HOBEIAN but wrong definition"
-- 🐛 **HA Forum:** "Unstable detection - sometimes detects cats, sometimes misses hand wave"
-- 🐛 **Dual sensor conflict:** PIR + radar may report conflicting states
+-  **Z2M #28529:** "Not recognized - shows as HOBEIAN but wrong definition"
+-  **HA Forum:** "Unstable detection - sometimes detects cats, sometimes misses hand wave"
+-  **Dual sensor conflict:** PIR + radar may report conflicting states
 
 ---
 
@@ -143,9 +143,9 @@ EP3: button3 (single, double, long)
 ```
 
 ### Known Bugs
-- 🐛 **HA Forum:** "Often seems to break" - connection issues
-- 🐛 **ZHA #1762:** Variant `_TZ3000_bczr4e10` needs specific quirk
-- ⚠️ Battery reporting: EP2-4 show 253 (invalid) - use EP1 only
+-  **HA Forum:** "Often seems to break" - connection issues
+-  **ZHA #1762:** Variant `_TZ3000_bczr4e10` needs specific quirk
+-  Battery reporting: EP2-4 show 253 (invalid) - use EP1 only
 
 ---
 
@@ -187,9 +187,9 @@ capabilities: [
 ```
 
 ### Known Bugs
-- 🐛 **Z2M #23625:** This is actually a "Dual USB switch", not a wall switch!
-- 🐛 **ZHA #1580:** "Gang1 and Gang2 switch as group" - ZHA bug, not device bug
-- ⚠️ Energy monitoring only on EP1, not EP2
+-  **Z2M #23625:** This is actually a "Dual USB switch", not a wall switch!
+-  **ZHA #1580:** "Gang1 and Gang2 switch as group" - ZHA bug, not device bug
+-  Energy monitoring only on EP1, not EP2
 
 ---
 
@@ -224,9 +224,9 @@ dpMap: {
 ```
 
 ### Known Bugs
-- 🔴 **Z2M #27212:** "presence: null, target_distance: null" - **CRITICAL BUG**
-- 🐛 DPs not properly mapped in Z2M 2.2.1
-- ⚠️ Need custom converter for full functionality
+-  **Z2M #27212:** "presence: null, target_distance: null" - **CRITICAL BUG**
+-  DPs not properly mapped in Z2M 2.2.1
+-  Need custom converter for full functionality
 
 ---
 
@@ -261,8 +261,8 @@ dpMap: {
 ```
 
 ### Known Bugs
-- ⚠️ **Misidentified:** Often confused with air quality sensor - it's actually occupancy!
-- 🐛 ZHA needs custom quirk
+-  **Misidentified:** Often confused with air quality sensor - it's actually occupancy!
+-  ZHA needs custom quirk
 
 ---
 
@@ -297,8 +297,8 @@ endpoints: [1, 2, 3, 4]  // 4 buttons
 ```
 
 ### Known Bugs
-- ✅ Well supported in Z2M
-- ⚠️ Battery: 200 = 100% (divide by 2)
+-  Well supported in Z2M
+-  Battery: 200 = 100% (divide by 2)
 
 ---
 
@@ -326,10 +326,10 @@ iasACE: { clusterRevision: 2 }  // Output cluster 1281
 | HA Forum #271235 | "Issues seeing TS0215A" |
 
 ### Known Bugs
-- 🐛 **Z2M #13159:** "Button pairing but not receiving action" - IAS enrollment issue
-- 🐛 **Z2M-converters #5014:** Battery info missing
-- ⚠️ **IAS Zone enrollment required:** zoneState: "notEnrolled" in interview!
-- ⚠️ Battery 140 = 70% (divide by 2)
+-  **Z2M #13159:** "Button pairing but not receiving action" - IAS enrollment issue
+-  **Z2M-converters #5014:** Battery info missing
+-  **IAS Zone enrollment required:** zoneState: "notEnrolled" in interview!
+-  Battery 140 = 70% (divide by 2)
 
 ### Fix Required
 ```javascript
@@ -344,7 +344,7 @@ await this._enrollIASZone(zclNode);
 ### Interview Data
 - **Type:** EndDevice (battery)
 - **Clusters:** [0, 3, 1280, 1, 1024]
-- **⚠️ NO CLUSTER 61184 (Tuya DP)!**
+- ** NO CLUSTER 61184 (Tuya DP)!**
 - **Protocol:** ZCL ONLY
 - **swBuildId:** 0122052017
 
@@ -366,7 +366,7 @@ illuminanceMeasurement: { measuredValue: 33280, maxMeasuredValue: 4000 }
 
 ### CRITICAL DISCOVERY
 ```
-⚠️ THIS VARIANT HAS NO TUYA DP CLUSTER 61184!
+ THIS VARIANT HAS NO TUYA DP CLUSTER 61184!
 
 Interview shows: inputClusters = [0, 3, 1280, 1, 1024]
 - 0 = Basic
@@ -388,10 +388,10 @@ capabilities: {
 ```
 
 ### Known Bugs
-- 🐛 **ZHA #1620:** Users expect Tuya DP but this variant is ZCL-only
-- 🐛 **deCONZ:** "motion, brightness, battery entities not created"
-- ⚠️ **IAS Zone enrollment:** zoneState: "notEnrolled" - must enroll!
-- ⚠️ **Confusion:** Same mfr `_TZE200_3towulqd` has BOTH Tuya DP AND ZCL-only variants!
+-  **ZHA #1620:** Users expect Tuya DP but this variant is ZCL-only
+-  **deCONZ:** "motion, brightness, battery entities not created"
+-  **IAS Zone enrollment:** zoneState: "notEnrolled" - must enroll!
+-  **Confusion:** Same mfr `_TZE200_3towulqd` has BOTH Tuya DP AND ZCL-only variants!
 
 ### Fix Applied in v5.6.0
 ```javascript
@@ -415,25 +415,25 @@ capabilities: {
 
 | Device | Bug | Severity | Status |
 |--------|-----|----------|--------|
-| `_TZE284_oitavov2` | Temp divisor 100 not 10 | Medium | ⚠️ Check |
-| `HOBEIAN ZG-204ZM` | Unstable detection | Medium | ⚠️ Known |
-| `_TZ3000_bczr4e10` | Connection breaks | Medium | ⚠️ Known |
-| `_TZ3000_h1ipgkwn` | Is USB switch, not wall switch | Low | ℹ️ Info |
-| `_TZE284_iadro9bf` | presence: null bug | 🔴 HIGH | ⚠️ Z2M bug |
-| `_TZ3000_0dumfk2z` | IAS not enrolled | Medium | ✅ Fix: enroll |
-| `_TZE200_3towulqd` | No Tuya DP cluster | 🔴 HIGH | ✅ Fixed v5.6.0 |
+| `_TZE284_oitavov2` | Temp divisor 100 not 10 | Medium |  Check |
+| `HOBEIAN ZG-204ZM` | Unstable detection | Medium |  Known |
+| `_TZ3000_bczr4e10` | Connection breaks | Medium |  Known |
+| `_TZ3000_h1ipgkwn` | Is USB switch, not wall switch | Low |  Info |
+| `_TZE284_iadro9bf` | presence: null bug |  HIGH |  Z2M bug |
+| `_TZ3000_0dumfk2z` | IAS not enrolled | Medium |  Fix: enroll |
+| `_TZE200_3towulqd` | No Tuya DP cluster |  HIGH |  Fixed v5.6.0 |
 
 ---
 
 ## Actions Taken
 
-1. ✅ Added `_TZ3000_h1ipgkwn` to `switch_2gang` driver
-2. ✅ Added `_TZE200_3towulqd` to `ZCL_ONLY_RADAR` config
-3. ✅ Updated `DEVICE_INTERVIEWS.json` with all 10 devices (INT-167 to INT-176)
-4. ✅ Updated changelog v5.6.0
+1.  Added `_TZ3000_h1ipgkwn` to `switch_2gang` driver
+2.  Added `_TZE200_3towulqd` to `ZCL_ONLY_RADAR` config
+3.  Updated `DEVICE_INTERVIEWS.json` with all 10 devices (INT-167 to INT-176)
+4.  Updated changelog v5.6.0
 
 ## Actions Needed (VERIFIED 2026-02-05 v5.8.30)
 
-1. ✅ `_TZE284_oitavov2` temp divisor verified in soil_sensor/device.js (DP5 ÷10, DP3 moisture)
-2. ✅ `_TZ3000_0dumfk2z` SOS button — IN CODE button_emergency_sos driver
-3. ✅ `_TZE284_iadro9bf` presence — 11 matches in presence_sensor_radar (fixed v5.5.791+)
+1.  `_TZE284_oitavov2` temp divisor verified in soil_sensor/device.js (DP5 ÷10, DP3 moisture)
+2.  `_TZ3000_0dumfk2z` SOS button  IN CODE button_emergency_sos driver
+3.  `_TZE284_iadro9bf` presence  11 matches in presence_sensor_radar (fixed v5.5.791+)

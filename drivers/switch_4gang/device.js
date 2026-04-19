@@ -16,22 +16,22 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      4-GANG SWITCH - v5.9.23 + ZCL-Only Mode (packetninja technique)        ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Features:                                                                   ║
- * ║  - 4 endpoints On/Off (EP1-4)                                               ║
- * ║  - Physical button detection via attribute reports                          ║
- * ║  - BSEED/Zemismart ZCL-only mode: _TZ3002_pzao9ls1, etc.                    ║
- * ║  v5.5.999: Fixed BSEED virtual button toggle for EP2-4 (diag c33007b0)      ║
- * ║  v5.9.23: GROUP ISOLATION FIX (diag 945448b9 / Hartmut_Dunker)            ║
- * ║    TS0726 FW broadcasts ZCL to all EPs (confirmed Z2M #27167, ZHA #2443)  ║
- * ║    Fix: remove group memberships + filter non-commanded gang reports       ║
- * ║  v5.11.29: ATTRIBUTE WRITE FIX (Z2M #27167, ZHA #2443, ZHA #1580)        ║
- * ║    Root cause: FW broadcasts ZCL on/off COMMANDS to all EPs internally    ║
- * ║    But routes ATTRIBUTE WRITES per-EP correctly                            ║
- * ║    Fix: writeAttributes({onOff:val}) instead of setOn()/setOff()          ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       4-GANG SWITCH - v5.9.23 + ZCL-Only Mode (packetninja technique)        
+ * 
+ *   Features:                                                                   
+ *   - 4 endpoints On/Off (EP1-4)                                               
+ *   - Physical button detection via attribute reports                          
+ *   - BSEED/Zemismart ZCL-only mode: _TZ3002_pzao9ls1, etc.                    
+ *   v5.5.999: Fixed BSEED virtual button toggle for EP2-4 (diag c33007b0)      
+ *   v5.9.23: GROUP ISOLATION FIX (diag 945448b9 / Hartmut_Dunker)            
+ *     TS0726 FW broadcasts ZCL to all EPs (confirmed Z2M #27167, ZHA #2443)  
+ *     Fix: remove group memberships + filter non-commanded gang reports       
+ *   v5.11.29: ATTRIBUTE WRITE FIX (Z2M #27167, ZHA #2443, ZHA #1580)        
+ *     Root cause: FW broadcasts ZCL on/off COMMANDS to all EPs internally    
+ *     But routes ATTRIBUTE WRITES per-EP correctly                            
+ *     Fix: writeAttributes({onOff:val}) instead of setOn()/setOff()          
+ * 
  */
 
 // ZCL-Only manufacturers (no Tuya DP)
@@ -71,7 +71,7 @@ class Switch4GangDevice extends BaseClass {
       // Continue with driver-specific setup
       try {
         if (this.isZclOnlyDevice) {
-          this.log('[SWITCH-4G] 🔵 ZCL-ONLY MODE (BSEED/Zemismart)');
+          this.log('[SWITCH-4G]  ZCL-ONLY MODE (BSEED/Zemismart)');
           this.zclNode = zclNode; // v5.13.2: CRITICAL - set for base class use
           await this._initZclOnlyMode(zclNode);
           return;
@@ -91,9 +91,9 @@ class Switch4GangDevice extends BaseClass {
         this.log('[SWITCH-4G] Setup warning:', setupErr.message);
       }
 
-      this.log('[SWITCH-4G] ✅ Initialized with error recovery');
+      this.log('[SWITCH-4G]  Initialized with error recovery');
     } catch (err) {
-      this.error('[SWITCH-4G] ❌ CRITICAL INIT ERROR:', err.message);
+      this.error('[SWITCH-4G]  CRITICAL INIT ERROR:', err.message);
       this.error('[SWITCH-4G] Stack:', err.stack);
       this.setUnavailable('Driver initialization incomplete - try removing and re-pairing').catch(() => {});
     }
@@ -109,9 +109,9 @@ class Switch4GangDevice extends BaseClass {
    */
   async _initZclOnlyMode(zclNode) {
     // v7.2.5: Ensure all gang capabilities are present (HOBEIAN fix)
-    await this._migrateCapabilities().catch(e => this.log(`[BSEED-4G] ⚠️ Migrate: ${e.message}`));
+    await this._migrateCapabilities().catch(e => this.log(`[BSEED-4G]  Migrate: ${e.message}`));
 
-    // v5.9.15: Init lastState from capabilities (not null) — prevents first
+    // v5.9.15: Init lastState from capabilities (not null)  prevents first
     // periodic heartbeat report from triggering false physical flow cards
     const cs = (ep) => { try { return this.getCapabilityValue(ep === 1 ? 'onoff' : `onoff.gang${ep}`); } catch { return null; } };
     this._zclState = {
@@ -126,7 +126,7 @@ class Switch4GangDevice extends BaseClass {
     // v5.8.39: Ensure onOff cluster exists on EP2-4 even if Homey interview missed it
     this._ensureOnOffClusters(zclNode);
 
-    // v5.9.23: GROUP ISOLATION — remove all Zigbee group memberships from each EP
+    // v5.9.23: GROUP ISOLATION  remove all Zigbee group memberships from each EP
     await this._removeGroupMemberships(zclNode);
 
     // v5.9.23: Track which gang was last commanded by the app
@@ -192,7 +192,7 @@ class Switch4GangDevice extends BaseClass {
           try {
             const card = this._getFlowCard(flowId);
             if (card) await card.trigger(this, { gang: gangNum, state: value }, {}).catch(() => {});
-            this.log(`[BSEED-4G] 🔘 Physical G${gangNum} ${value ? 'ON' : 'OFF'}`);
+            this.log(`[BSEED-4G]  Physical G${gangNum} ${value ? 'ON' : 'OFF'}`);
           } catch (e) { }
         }
 
@@ -201,7 +201,7 @@ class Switch4GangDevice extends BaseClass {
           try {
             const card = this._getFlowCard(sceneId);
             if (card) await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
-            this.log(`[BSEED-4G] 🎬 Scene G${gangNum} ${value ? 'on' : 'off'}`);
+            this.log(`[BSEED-4G]  Scene G${gangNum} ${value ? 'on' : 'off'}`);
           } catch (e) { }
         }
       });
@@ -214,7 +214,7 @@ class Switch4GangDevice extends BaseClass {
     }
 
     await this.initVirtualButtons?.();
-    this.log('[SWITCH-4G] ✅ BSEED ZCL-only mode ready (packetninja technique)');
+    this.log('[SWITCH-4G]  BSEED ZCL-only mode ready (packetninja technique)');
   }
 
   /**
@@ -246,7 +246,7 @@ class Switch4GangDevice extends BaseClass {
           ep.clusters[name] = clusterInstance;
           if (!ep.clusters[6]) ep.clusters[6] = clusterInstance;
           if (!ep.clusters['6']) ep.clusters['6'] = clusterInstance;
-          this.log(`[BSEED-4G] ✅ EP${epNum} onOff cluster CREATED manually`);
+          this.log(`[BSEED-4G]  EP${epNum} onOff cluster CREATED manually`);
         }
       }
     } catch (err) { }
@@ -265,7 +265,7 @@ class Switch4GangDevice extends BaseClass {
         const fn = g.removeAll || g.removeAllGroups;
         if (typeof fn === 'function') {
           await fn.call(g).catch(() => {});
-          this.log(`[BSEED-4G] EP${epNum} ✅ Group memberships removed`);
+          this.log(`[BSEED-4G] EP${epNum}  Group memberships removed`);
         }
       } catch (err) { }
     }
@@ -296,7 +296,7 @@ class Switch4GangDevice extends BaseClass {
           await onOff.configureReporting({
             onOff: { minInterval: 0, maxInterval: 300, minChange: 1 }
           }).catch(() => {});
-          this.log(`[BSEED-4G] EP${epNum} ✅ Attr reporting configured directly`);
+          this.log(`[BSEED-4G] EP${epNum}  Attr reporting configured directly`);
         }
       } catch (err) { }
     }

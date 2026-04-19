@@ -9,12 +9,12 @@ const INTEL_REPORT = path.join(ROOT, 'REPORTS', 'INTELLECTUAL-ENRICHMENT.md');
 const CHALLENGE_REPORT = path.join(ROOT, 'docs/reports/NEXUS_AWAKENING_CHALLENGE_REPORT.json');
 
 async function main() {
-  console.log('🌱  AUTONOMOUS EVOLUTION ENGINE - ACTIVATED');
+  console.log('  AUTONOMOUS EVOLUTION ENGINE - ACTIVATED');
   console.log('==========================================');
 
   // 1. Resolve Strict Architectural Violations
   if (fs.existsSync(CHALLENGE_REPORT)) {
-    console.log('  → Processing Architectural Challenge findings...');
+    console.log('   Processing Architectural Challenge findings...');
     const challenge = JSON.parse(fs.readFileSync(CHALLENGE_REPORT, 'utf8'));
     
     for (const v of challenge.violations) {
@@ -24,7 +24,7 @@ async function main() {
       }
       
       if (v.violation === 'NON_HYBRID_RADAR') {
-         console.log(`    ⚠️  Evolving driver ${v.driver} to Hybrid architecture...`);
+         console.log(`      Evolving driver ${v.driver} to Hybrid architecture...`);
          evolveToHybrid(v.driver);
       }
     }
@@ -32,7 +32,7 @@ async function main() {
 
   // 2. Process Intellectual Harvest (Hidden Gems)
   if (fs.existsSync(INTEL_REPORT)) {
-    console.log('  → Ingesting Intellectual Harvest gems...');
+    console.log('   Ingesting Intellectual Harvest gems...');
     // Logic to parse MD gems and apply them (e.g. adding missing manufacturers)
     // For now, we cross-check the 'latest-harvest.json'
     const latestHarvest = path.join(ROOT, 'data', 'intel-harvest', 'latest-harvest.json');
@@ -46,7 +46,7 @@ async function main() {
     }
   }
 
-  console.log('\n✨ Evolution cycle complete.');
+  console.log('\n Evolution cycle complete.');
 }
 
 function evolveToHybrid(driverId) {
@@ -61,7 +61,7 @@ function evolveToHybrid(driverId) {
   content = content.replace(/class (\w+) extends ZigBeeDevice/, "class $1 extends BaseHybridDevice");
   
   fs.writeFileSync(devicePath, content);
-  console.log(`    ✅ ${driverId}: Evolved to BaseHybridDevice inheritance.`);
+  console.log(`     ${driverId}: Evolved to BaseHybridDevice inheritance.`);
 }
 
 function applyCommunityFingerprint(fp, category) {
@@ -84,7 +84,7 @@ function applyCommunityFingerprint(fp, category) {
   if (!compose.zigbee.manufacturerName.includes(fp)) {
     compose.zigbee.manufacturerName.push(fp);
     fs.writeFileSync(composePath, JSON.stringify(compose, null, 2));
-    console.log(`    ✅ Added community gem ${fp} to ${drvId}`);
+    console.log(`     Added community gem ${fp} to ${drvId}`);
   }
 }
 

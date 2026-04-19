@@ -35,9 +35,9 @@ class WaterValveSmartDriver extends Homey.Driver {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
-        this.log('[FLOW] ✅ Registered: water_valve_smart_is_open');
+        this.log('[FLOW]  Registered: water_valve_smart_is_open');
       }
-    } catch (err) { this.log(`[FLOW] ⚠️ water_valve_smart_is_open: ${err.message}`); }
+    } catch (err) { this.log(`[FLOW]  water_valve_smart_is_open: ${err.message}`); }
 
     // CONDITION: Leak is detected
     try {
@@ -47,9 +47,9 @@ class WaterValveSmartDriver extends Homey.Driver {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_water') === true;
         });
-        this.log('[FLOW] ✅ Registered: water_valve_smart_leak_is_detected');
+        this.log('[FLOW]  Registered: water_valve_smart_leak_is_detected');
       }
-    } catch (err) { this.log(`[FLOW] ⚠️ water_valve_smart_leak_is_detected: ${err.message}`); }
+    } catch (err) { this.log(`[FLOW]  water_valve_smart_leak_is_detected: ${err.message}`); }
 
     // CONDITION: Temperature above
     try {
@@ -60,9 +60,9 @@ class WaterValveSmartDriver extends Homey.Driver {
           const temp = args.device.getCapabilityValue('measure_temperature') || 0;
           return temp > (args.temp || 5);
         });
-        this.log('[FLOW] ✅ Registered: water_valve_smart_temperature_above');
+        this.log('[FLOW]  Registered: water_valve_smart_temperature_above');
       }
-    } catch (err) { this.log(`[FLOW] ⚠️ water_valve_smart_temperature_above: ${err.message}`); }
+    } catch (err) { this.log(`[FLOW]  water_valve_smart_temperature_above: ${err.message}`); }
 
     // ACTION: Open valve
     try {
@@ -76,9 +76,9 @@ class WaterValveSmartDriver extends Homey.Driver {
           await args.device.setCapabilityValue('onoff', true).catch(() => {});
           return true;
         });
-        this.log('[FLOW] ✅ Registered: water_valve_smart_open');
+        this.log('[FLOW]  Registered: water_valve_smart_open');
       }
-    } catch (err) { this.log(`[FLOW] ⚠️ water_valve_smart_open: ${err.message}`); }
+    } catch (err) { this.log(`[FLOW]  water_valve_smart_open: ${err.message}`); }
 
     // ACTION: Close valve
     try {
@@ -92,9 +92,9 @@ class WaterValveSmartDriver extends Homey.Driver {
           await args.device.setCapabilityValue('onoff', false).catch(() => {});
           return true;
         });
-        this.log('[FLOW] ✅ Registered: water_valve_smart_close');
+        this.log('[FLOW]  Registered: water_valve_smart_close');
       }
-    } catch (err) { this.log(`[FLOW] ⚠️ water_valve_smart_close: ${err.message}`); }
+    } catch (err) { this.log(`[FLOW]  water_valve_smart_close: ${err.message}`); }
 
     // ACTION: Toggle valve
     try {
@@ -109,9 +109,9 @@ class WaterValveSmartDriver extends Homey.Driver {
           await args.device.setCapabilityValue('onoff', !current).catch(() => {});
           return true;
         });
-        this.log('[FLOW] ✅ Registered: water_valve_toggle');
+        this.log('[FLOW]  Registered: water_valve_toggle');
       }
-    } catch (err) { this.log(`[FLOW] ⚠️ water_valve_toggle: ${err.message}`); }
+    } catch (err) { this.log(`[FLOW]  water_valve_toggle: ${err.message}`); }
 
     // CONDITION: Water is/is not detected
     try {
@@ -121,9 +121,9 @@ class WaterValveSmartDriver extends Homey.Driver {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_water') === true;
         });
-        this.log('[FLOW] ✅ Registered: water_valve_smart_water_detected');
+        this.log('[FLOW]  Registered: water_valve_smart_water_detected');
       }
-    } catch (err) { this.log(`[FLOW] ⚠️ water_valve_smart_water_detected: ${err.message}`); }
+    } catch (err) { this.log(`[FLOW]  water_valve_smart_water_detected: ${err.message}`); }
 
     this.log('[FLOW] \uD83C\uDF89 Water valve flow cards registered');
   }

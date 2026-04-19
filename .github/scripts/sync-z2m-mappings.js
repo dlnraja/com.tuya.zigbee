@@ -73,7 +73,7 @@ async function fetchFile(url) {
 }
 
 function parseTuyaTs(content) {
-    console.log('🔍 Parsing tuya.ts content...');
+    console.log(' Parsing tuya.ts content...');
     const database = {};
     const blocks = content.split(/(\{\s*zigbeeModel:\s*\[)/);
     
@@ -142,11 +142,11 @@ function updateDatabase(newMappings) {
     
     currentDb.lastUpdated = new Date().toISOString();
     fs.writeFileSync(DB_PATH, JSON.stringify(currentDb, null, 2));
-    console.log(`🚀 Database updated: ${stats.added} new models, ${stats.updated} models updated.`);
+    console.log(` Database updated: ${stats.added} new models, ${stats.updated} models updated.`);
 }
 
 async function main() {
-    console.log('🌐 Unified Mapping Sync Starting...');
+    console.log(' Unified Mapping Sync Starting...');
     try {
         const aggregatedMappings = {};
         
@@ -157,7 +157,7 @@ async function main() {
                 const mappings = parseTuyaTs(content);
                 Object.assign(aggregatedMappings, mappings);
             } catch (e) {
-                console.error(`   ⚠️ Failed to sync ${name}: ${e.message}`);
+                console.error(`    Failed to sync ${name}: ${e.message}`);
             }
         }
 
@@ -169,9 +169,9 @@ async function main() {
             credits = credits.replace(/lastChecked:\s*null/g, `lastChecked: '${now}'`);
             fs.writeFileSync(CREDITS_PATH, credits);
         }
-        console.log('✨ Sync complete!');
+        console.log(' Sync complete!');
     } catch (err) {
-        console.error('❌ Sync failed:', err.message);
+        console.error(' Sync failed:', err.message);
         process.exit(1);
     }
 }

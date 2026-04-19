@@ -14,14 +14,14 @@ const ROOT = process.cwd();
 const AUDIT_FILE = path.join(ROOT, 'docs/reports/ZERO_DEFECT_AUDIT.json');
 
 if (!fs.existsSync(AUDIT_FILE)) {
-  console.error('❌ Audit file not found.');
+  console.error(' Audit file not found.');
   process.exit(1);
 }
 
 const audit = JSON.parse(fs.readFileSync(AUDIT_FILE, 'utf8'));
 const warnings = audit.naNSafetyCheck || [];
 
-console.log(`🚀 Addressing ${warnings.length} variable-based NaN risks...`);
+console.log(` Addressing ${warnings.length} variable-based NaN risks...`);
 
 const filesToProcess = new Set();
 warnings.forEach(w => {
@@ -98,9 +98,9 @@ filesToProcess.forEach(relPath => {
     }
 
     fs.writeFileSync(absPath, content);
-    console.log(`✅ Hardened: ${relPath}`);
+    console.log(` Hardened: ${relPath}`);
     totalFixes++;
   }
 });
 
-console.log(`🎉 Hardened ${totalFixes} files against variable-based NaN risks.`);
+console.log(` Hardened ${totalFixes} files against variable-based NaN risks.`);

@@ -23,7 +23,7 @@ if (!content.includes('const ALLOWED_DOMAINS =')) {
   );
   
   fs.writeFileSync(file, content);
-  console.log('✅ Added domain verification filter to fetch-gmail-diagnostics.js');
+  console.log(' Added domain verification filter to fetch-gmail-diagnostics.js');
 } else {
   console.log('Domain verification already present in fetch-gmail-diagnostics.js');
 }

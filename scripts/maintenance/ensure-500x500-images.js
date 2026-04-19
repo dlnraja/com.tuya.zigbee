@@ -23,7 +23,7 @@ async function fixImages() {
       try {
         const metadata = await sharp(largePng).metadata();
         if (metadata.width !== 500 || metadata.height !== 500) {
-          console.log(`📏 Resizing ${driver}/assets/images/large.png from ${metadata.width}x${metadata.height} to 500x500`);
+          console.log(` Resizing ${driver}/assets/images/large.png from ${metadata.width}x${metadata.height} to 500x500`);
           const buffer = await sharp(largePng)
             .resize(500, 500, {
               fit: 'contain',
@@ -36,13 +36,13 @@ async function fixImages() {
           skipped++;
         }
       } catch (err) {
-        console.error(`❌ Error processing ${largePng}:`, err.message);
+        console.error(` Error processing ${largePng}:`, err.message);
         errors++;
       }
     }
   }
 
-  console.log(`\n✅ Summary:`);
+  console.log(`\n Summary:`);
   console.log(`Fixed:   ${fixed}`);
   console.log(`Skipped: ${skipped} (already 500x500)`);
   console.log(`Errors:  ${errors}`);

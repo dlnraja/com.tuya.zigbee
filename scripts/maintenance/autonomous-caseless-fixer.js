@@ -2,7 +2,7 @@
 'use strict';
 
 /**
- * 🛠️ AUTONOMOUS CASELESS FIXER v1.0
+ *  AUTONOMOUS CASELESS FIXER v1.0
  * Parses ZERO_DEFECT_AUDIT.json and automatically refactors manual string comparisons
  * to use the CI (CaseInsensitiveMatcher) helper.
  */
@@ -16,7 +16,7 @@ const CI_MATCHER_PATH = 'lib/utils/CaseInsensitiveMatcher';
 
 async function main() {
   if (!fs.existsSync(AUDIT_FILE)) {
-    console.error('❌ Audit report not found!');
+    console.error(' Audit report not found!');
     process.exit(1);
   }
 
@@ -24,7 +24,7 @@ async function main() {
   const errors = audit.errors || [];
   const violations = errors.filter(e => e.includes('Manual identity comparison found'));
 
-  console.log(`🚀 Found ${violations.length} caseless violations to fix.`);
+  console.log(` Found ${violations.length} caseless violations to fix.`);
 
   const stats = { fixed: 0, failed: 0, skipped: 0 };
 
@@ -153,7 +153,7 @@ async function main() {
     }
   }
 
-  console.log(`\n✅ Refactoring complete!`);
+  console.log(`\n Refactoring complete!`);
   console.log(`- Fixed: ${stats.fixed}`);
   console.log(`- Skipped (already fixed or complex): ${stats.skipped}`);
 }

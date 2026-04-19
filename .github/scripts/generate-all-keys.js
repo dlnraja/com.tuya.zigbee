@@ -55,7 +55,7 @@ async function main(){
   const puppeteer=require('puppeteer');
   const browser=await puppeteer.launch({headless:false,defaultViewport:{width:1280,height:900}});
   const got={};
-  // DISCOURSE_API_KEY removed — using session auth (HOMEY_EMAIL/PASSWORD)
+  // DISCOURSE_API_KEY removed  using session auth (HOMEY_EMAIL/PASSWORD)
   for(const p of PROVS){
     if(ex.includes(p.name)){console.log(`\n--- ${p.name} --- exists`);continue}
     console.log(`\n--- ${p.name} ---`);

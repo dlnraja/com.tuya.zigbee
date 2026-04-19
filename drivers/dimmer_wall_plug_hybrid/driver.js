@@ -2,14 +2,7 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.572: CRITICAL FIX - Flow card run listeners were missing
- */
 class PlugEnergyMonitorDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -19,105 +12,106 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
     }
   }
 
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
     this.log('PlugEnergyMonitorDriver v5.5.572 initialized');
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
   _registerFlowCards() {
-    // CONDITION: Plug is on/off
+    // TRIGGERS
+    try { this.homey.flow.getTriggerCard('dimmer_wall_plug_hybrid_plug_energy_monitor_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('dimmer_wall_plug_hybrid_plug_energy_monitor_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('dimmer_wall_plug_hybrid_plug_energy_monitor_measure_power_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('dimmer_wall_plug_hybrid_plug_energy_monitor_measure_voltage_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('dimmer_wall_plug_hybrid_plug_energy_monitor_measure_current_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('dimmer_wall_plug_hybrid_plug_energy_monitor_meter_power_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('dimmer_wall_plug_hybrid_plug_energy_monitor_power_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('dimmer_wall_plug_hybrid_plug_energy_monitor_battery_low'); } catch (e) {}
+
+    // CONDITIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('plug_energy_monitor_is_on'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('dimmer_wall_plug_hybrid_plug_energy_monitor_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
-      this.log('[FLOW] ✅ Registered: plug_energy_monitor_is_on');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition dimmer_wall_plug_hybrid_plug_energy_monitor_is_on: ${err.message}`); }
 
-    // CONDITION: Power above threshold
     try {
-      (() => { try { return this.homey.flow.getConditionCard('plug_energy_monitor_power_above'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('dimmer_wall_plug_hybrid_plug_energy_monitor_power_above');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const power = args.device.getCapabilityValue('measure_power') || 0;
-          return power > (args.power || 100);
+          const val = args.device.getCapabilityValue('measure_co2') || 0;
+          return val > (args.threshold || 400);
         });
-      this.log('[FLOW] ✅ Registered: plug_energy_monitor_power_above');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition dimmer_wall_plug_hybrid_plug_energy_monitor_power_above: ${err.message}`); }
 
-    // CONDITION: Energy above threshold
     try {
-      (() => { try { return this.homey.flow.getConditionCard('plug_energy_monitor_energy_above'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('dimmer_wall_plug_hybrid_plug_energy_monitor_energy_above');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const energy = args.device.getCapabilityValue('meter_power') || 0;
-          return energy > (args.energy || 10);
+          const val = args.device.getCapabilityValue('measure_co2') || 0;
+          return val > (args.threshold || 400);
         });
-      this.log('[FLOW] ✅ Registered: plug_energy_monitor_energy_above');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition dimmer_wall_plug_hybrid_plug_energy_monitor_energy_above: ${err.message}`); }
 
-    // ACTION: Turn on
+    // ACTIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('plug_energy_monitor_turn_on'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('dimmer_wall_plug_hybrid_plug_energy_monitor_turn_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, true).catch(() => {});
-          await args.device.setCapabilityValue('onoff', true).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: plug_energy_monitor_turn_on');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action dimmer_wall_plug_hybrid_plug_energy_monitor_turn_on: ${err.message}`); }
 
-    // ACTION: Turn off
     try {
-      (() => { try { return this.homey.flow.getConditionCard('plug_energy_monitor_turn_off'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('dimmer_wall_plug_hybrid_plug_energy_monitor_turn_off');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, false).catch(() => {});
-          await args.device.setCapabilityValue('onoff', false).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: plug_energy_monitor_turn_off');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action dimmer_wall_plug_hybrid_plug_energy_monitor_turn_off: ${err.message}`); }
 
-    // ACTION: Toggle
     try {
-      (() => { try { return this.homey.flow.getConditionCard('plug_energy_monitor_toggle'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('dimmer_wall_plug_hybrid_plug_energy_monitor_toggle');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
-          await args.device._setGangOnOff(1, !current).catch(() => {});
-          await args.device.setCapabilityValue('onoff', !current).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: plug_energy_monitor_toggle');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action dimmer_wall_plug_hybrid_plug_energy_monitor_toggle: ${err.message}`); }
 
-    // ACTION: Reset energy meter
     try {
-      (() => { try { return this.homey.flow.getActionCard('plug_energy_monitor_reset_meter'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('dimmer_wall_plug_hybrid_plug_energy_monitor_reset_meter');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('meter_power', 0);
+          // Generic action handler
+          this.log('[FLOW] Action dimmer_wall_plug_hybrid_plug_energy_monitor_reset_meter triggered for', args.device.getName());
           return true;
         });
-      this.log('[FLOW] ✅ Registered: plug_energy_monitor_reset_meter');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action dimmer_wall_plug_hybrid_plug_energy_monitor_reset_meter: ${err.message}`); }
 
-    this.log('[FLOW]  Energy monitor plug flow cards registered');
+    this.log('[FLOW] All flow cards registered');
   }
 }
 

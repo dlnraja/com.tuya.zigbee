@@ -68,4 +68,4 @@ do {
 finalContent = finalContent.replace(/\n{3,}/g, '\n\n');
 
 fs.writeFileSync(file, finalContent);
-console.log('✅ Deep cleaned CHANGELOG.md for pure driver focus');
+console.log(' Deep cleaned CHANGELOG.md for pure driver focus');

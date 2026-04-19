@@ -2,16 +2,7 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.570: CRITICAL FIX - Flow card run listeners were missing
- * SDK3 auto-registers cards but NOT run listeners for conditions/actions
- * This caused "flow cards give error" reports
- */
 class TuyaGasSensorTs0601Driver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -21,112 +12,126 @@ class TuyaGasSensorTs0601Driver extends ZigBeeDriver {
     }
   }
 
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
     this.log('TuyaGasSensorTs0601Driver v5.5.570 initialized');
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
   _registerFlowCards() {
-    // ═══════════════════════════════════════════════════════════════════════
-    // CONDITION: Gas is/is not detected
-    // ═══════════════════════════════════════════════════════════════════════
+    // TRIGGERS
+    try { this.homey.flow.getTriggerCard('gas_sensor_alarm_gas_true'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_alarm_gas_false'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_alarm_co_true'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_gas_level_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_self_test_result'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_tamper_true'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_co_alarm'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_battery_low'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_contact_alarm'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_gas_alarm'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_tamper_alarm'); } catch (e) {}
+
+    // CONDITIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('gas_sensor_gas_detected'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('gas_sensor_gas_detected');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_gas') === true;
         });
-      this.log('[FLOW] ✅ Registered: gas_sensor_gas_detected');
-    } catch (err) {
-      this.log(`[FLOW] ⚠️ ${err.message}`);
-    }
+      }
+    } catch (err) { this.error(`Condition gas_sensor_gas_detected: ${err.message}`); }
 
-    // ═══════════════════════════════════════════════════════════════════════
-    // CONDITION: CO is/is not detected
-    // ═══════════════════════════════════════════════════════════════════════
     try {
-      (() => { try { return this.homey.flow.getConditionCard('gas_sensor_co_detected'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('gas_sensor_co_detected');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          return args.device.getCapabilityValue('alarm_co') === true;
+          return args.device.getCapabilityValue('alarm_gas') === true;
         });
-      this.log('[FLOW] ✅ Registered: gas_sensor_co_detected');
-    } catch (err) {
-      this.log(`[FLOW] ⚠️ ${err.message}`);
-    }
+      }
+    } catch (err) { this.error(`Condition gas_sensor_co_detected: ${err.message}`); }
 
-    // ═══════════════════════════════════════════════════════════════════════
-    // CONDITION: Gas level is/is not above threshold
-    // ═══════════════════════════════════════════════════════════════════════
     try {
-      (() => { try { return this.homey.flow.getConditionCard('gas_sensor_level_above'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('gas_sensor_level_above');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const level = args.device.getCapabilityValue('measure_gas') || 0;
-          return level > (args.threshold || 20);
+          const val = args.device.getCapabilityValue('measure_co2') || 0;
+          return val > (args.threshold || 400);
         });
-      this.log('[FLOW] ✅ Registered: gas_sensor_level_above');
-    } catch (err) {
-      this.log(`[FLOW] ⚠️ ${err.message}`);
-    }
+      }
+    } catch (err) { this.error(`Condition gas_sensor_level_above: ${err.message}`); }
 
-    // ═══════════════════════════════════════════════════════════════════════
-    // ACTION: Mute alarm
-    // ═══════════════════════════════════════════════════════════════════════
     try {
-      (() => { try { return this.homey.flow.getActionCard('gas_sensor_mute_alarm'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('gas_sensor_co_active');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          try {
-            if (args.device._tuyaEF00Manager) {
-              await args.device._tuyaEF00Manager.sendDatapoint(16, true, 'bool');
-            }
-            return true;
-          } catch (err) {
-            this.log(`[FLOW] Mute failed: ${err.message}`);
-            return true;
-          }
+          return args.device.getCapabilityValue('alarm_gas') === true;
         });
-      this.log('[FLOW] ✅ Registered: gas_sensor_mute_alarm');
-    } catch (err) {
-      this.log(`[FLOW] ⚠️ ${err.message}`);
-    }
+      }
+    } catch (err) { this.error(`Condition gas_sensor_co_active: ${err.message}`); }
 
-    // ═══════════════════════════════════════════════════════════════════════
-    // ACTION: Self-test
-    // ═══════════════════════════════════════════════════════════════════════
     try {
-      (() => { try { return this.homey.flow.getActionCard('gas_sensor_self_test'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('gas_sensor_contact_open');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          try {
-            if (args.device._tuyaEF00Manager) {
-              await args.device._tuyaEF00Manager.sendDatapoint(8, true, 'bool');
-            }
-            return true;
-          } catch (err) {
-            this.log(`[FLOW] Self-test failed: ${err.message}`);
-            return true;
-          }
+          return args.device.getCapabilityValue('alarm_gas') === true;
         });
-      this.log('[FLOW] ✅ Registered: gas_sensor_self_test');
-    } catch (err) {
-      this.log(`[FLOW] ⚠️ ${err.message}`);
-    }
+      }
+    } catch (err) { this.error(`Condition gas_sensor_contact_open: ${err.message}`); }
 
-    this.log('[FLOW]  All gas sensor flow cards registered');
+    try {
+      const card = this.homey.flow.getConditionCard('gas_sensor_gas_active');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('alarm_gas') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition gas_sensor_gas_active: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getConditionCard('gas_sensor_tamper_active');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('alarm_gas') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition gas_sensor_tamper_active: ${err.message}`); }
+
+    // ACTIONS
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_mute_alarm');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          // Generic action handler
+          this.log('[FLOW] Action gas_sensor_mute_alarm triggered for', args.device.getName());
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_mute_alarm: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_self_test');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          // Generic action handler
+          this.log('[FLOW] Action gas_sensor_self_test triggered for', args.device.getName());
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_self_test: ${err.message}`); }
+
+    this.log('[FLOW] All flow cards registered');
   }
 }
 

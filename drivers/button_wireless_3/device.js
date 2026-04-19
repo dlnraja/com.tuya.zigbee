@@ -54,7 +54,7 @@ class Button3GangDevice extends ButtonDevice {
     await this._setupE000BoundCluster(zclNode);
     await this._setupRawFrameInterceptor(zclNode);
 
-    this.log('[BUTTON3] ✅ initialized - OnOff + MultiState + E000 + Raw interceptor');
+    this.log('[BUTTON3]  initialized - OnOff + MultiState + E000 + Raw interceptor');
   }
 
   // Deduplication helper for button presses
@@ -63,7 +63,7 @@ class Button3GangDevice extends ButtonDevice {
     const key = `${ep}_${cmd}`;
     if (now - (this._btnDedup[key] || 0) < 500) return;
     this._btnDedup[key] = now;
-    this.log(`[BUTTON3] 🔘 EP${ep} ${cmd} → Button ${ep} ${type.toUpperCase()}`);
+    this.log(`[BUTTON3]  EP${ep} ${cmd}  Button ${ep} ${type.toUpperCase()}`);
     await this.triggerButtonPress(ep, type);
   }
 
@@ -78,7 +78,7 @@ class Button3GangDevice extends ButtonDevice {
         || zclNode?.endpoints?.[ep]?.clusters?.genOnOff
         || zclNode?.endpoints?.[ep]?.clusters?.[6];
       if (!cluster) {
-        this.log(`[BUTTON3] ⚠️ EP${ep} no onOff cluster`);
+        this.log(`[BUTTON3]  EP${ep} no onOff cluster`);
         continue;
       }
 
@@ -86,9 +86,9 @@ class Button3GangDevice extends ButtonDevice {
       if (typeof cluster.bind === 'function') {
         try {
           await cluster.bind();
-          this.log(`[BUTTON3] ✅ OnOff bound EP${ep}`);
+          this.log(`[BUTTON3]  OnOff bound EP${ep}`);
         } catch (err) {
-          this.log(`[BUTTON3] ℹ️ Bind EP${ep}: ${err.message}`);
+          this.log(`[BUTTON3]  Bind EP${ep}: ${err.message}`);
         }
       }
 
@@ -118,7 +118,7 @@ class Button3GangDevice extends ButtonDevice {
         }
       } catch(e) { this.log(`[BUTTON3-0xFD] ${e.message}`); }
 
-      this.log(`[BUTTON3] ✅ EP${ep} onOff listeners ready`);
+      this.log(`[BUTTON3]  EP${ep} onOff listeners ready`);
     }
   }
 
@@ -132,7 +132,7 @@ class Button3GangDevice extends ButtonDevice {
         const m = { 0: 'long', 1: 'single', 2: 'double', 3: 'multi' };
         await this._handleButton(ep, `ms_${v}`, m[v] || 'single');
       });
-      this.log(`[BUTTON3] ✅ EP${ep} multistateInput ready`);
+      this.log(`[BUTTON3]  EP${ep} multistateInput ready`);
     }
   }
 
@@ -145,7 +145,7 @@ class Button3GangDevice extends ButtonDevice {
     try {
       TuyaE000BoundCluster = require('../../lib/clusters/TuyaE000BoundCluster');
     } catch (e) {
-      this.log('[BUTTON3-E000] ℹ️ TuyaE000BoundCluster not available');
+      this.log('[BUTTON3-E000]  TuyaE000BoundCluster not available');
       return;
     }
 
@@ -157,7 +157,7 @@ class Button3GangDevice extends ButtonDevice {
         device: this,
         onButtonPress: async (button, pressType) => {
           const btn = (button >= 1 && button <= 3) ? button : ep;
-          this.log(`[BUTTON3-E000] 🔘 Button ${btn} ${pressType.toUpperCase()} (EP${ep})`);
+          this.log(`[BUTTON3-E000]  Button ${btn} ${pressType.toUpperCase()} (EP${ep})`);
           await this.triggerButtonPress(btn, pressType);
         }
       });
@@ -165,7 +165,7 @@ class Button3GangDevice extends ButtonDevice {
       boundCluster.endpoint = ep;
       if (!endpoint.bindings) endpoint.bindings = {};
       endpoint.bindings['tuyaE000'] = boundCluster;
-      this.log(`[BUTTON3-E000] ✅ BoundCluster EP${ep}`);
+      this.log(`[BUTTON3-E000]  BoundCluster EP${ep}`);
     }
   }
 
@@ -186,7 +186,7 @@ class Button3GangDevice extends ButtonDevice {
           }
           return origNodeHandle(endpointId, clusterId, frame, meta);
         };
-        this.log('[BUTTON3-RAW] ✅ zclNode.handleFrame hooked');
+        this.log('[BUTTON3-RAW]  zclNode.handleFrame hooked');
       }
 
       // Hook per-endpoint handleFrame as additional safety net
@@ -204,9 +204,9 @@ class Button3GangDevice extends ButtonDevice {
         };
       }
 
-      this.log('[BUTTON3-RAW] ✅ Frame interceptors ready');
+      this.log('[BUTTON3-RAW]  Frame interceptors ready');
     } catch (err) {
-      this.log(`[BUTTON3-RAW] ⚠️ Setup error: ${err.message}`);
+      this.log(`[BUTTON3-RAW]  Setup error: ${err.message}`);
     }
   }
 
@@ -224,7 +224,7 @@ class Button3GangDevice extends ButtonDevice {
       if (cmdId >= 0 && cmdId <= 3) {
         const mappedBtn = cmdId === 0 ? 1 : cmdId;
         const pressType = resolvePressType(data?.[0], 'BTN3-RAW-cmd');
-        this.log(`[BUTTON3-RAW] 🔘 Button ${mappedBtn} ${pressType} (cmdId=${cmdId})`);
+        this.log(`[BUTTON3-RAW]  Button ${mappedBtn} ${pressType} (cmdId=${cmdId})`);
         this.triggerButtonPress(mappedBtn, pressType);
         return;
       }
@@ -232,7 +232,7 @@ class Button3GangDevice extends ButtonDevice {
       // Strategy 2: data[0] = button, data[1] = press type
       if (data && data.length >= 2 && data[0] >= 1 && data[0] <= 3) {
         const pressType = resolvePressType(data[1], 'BTN3-RAW-data');
-        this.log(`[BUTTON3-RAW] 🔘 Button ${data[0]} ${pressType} (data strategy)`);
+        this.log(`[BUTTON3-RAW]  Button ${data[0]} ${pressType} (data strategy)`);
         this.triggerButtonPress(data[0], pressType);
         return;
       }
@@ -240,16 +240,16 @@ class Button3GangDevice extends ButtonDevice {
       // Strategy 3: Single byte = press type, use endpoint as button
       if (data && data.length === 1) {
         const pressType = resolvePressType(data[0], 'BTN3-RAW-byte');
-        this.log(`[BUTTON3-RAW] 🔘 Button ${ep} ${pressType} (single-byte strategy)`);
+        this.log(`[BUTTON3-RAW]  Button ${ep} ${pressType} (single-byte strategy)`);
         this.triggerButtonPress(ep, pressType);
         return;
       }
 
       // Fallback: endpoint as button, single press
-      this.log(`[BUTTON3-RAW] 🔘 Button ${ep} single (fallback)`);
+      this.log(`[BUTTON3-RAW]  Button ${ep} single (fallback)`);
       this.triggerButtonPress(ep, 'single');
     } catch (err) {
-      this.log(`[BUTTON3-RAW] ⚠️ Parse error: ${err.message}`);
+      this.log(`[BUTTON3-RAW]  Parse error: ${err.message}`);
     }
   }
 

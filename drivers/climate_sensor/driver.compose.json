@@ -367,7 +367,6 @@
       "_TZE284_KDQRAZMY",
       "_TZE284_LOCANSQN",
       "_TZE284_MPZUABWK",
-      "_TZE284_NE4PIKWM",
       "_TZE284_NNHWCVBK",
       "_TZE284_Q22AVXBV",
       "_TZE284_QOY0EKBD",
@@ -439,8 +438,8 @@
     {
       "type": "group",
       "label": {
-        "en": "ðŸŒ¡ï¸ Calibration (v5.5.28)",
-        "fr": "ðŸŒ¡ï¸ Calibration (v5.5.28)"
+        "en": "ð¡ï¸ Calibration (v5.5.28)",
+        "fr": "ð¡ï¸ Calibration (v5.5.28)"
       },
       "children": [
         {
@@ -506,10 +505,10 @@
     {
       "type": "group",
       "label": {
-        "en": "ðŸ•’ Time Sync (v5.5.384)",
-        "fr": "ðŸ•’ Sync Heure (v5.5.384)",
-        "nl": "ðŸ•’ Tijdsync (v5.5.384)",
-        "de": "ðŸ•’ Zeitsync (v5.5.384)"
+        "en": "ð Time Sync (v5.5.384)",
+        "fr": "ð Sync Heure (v5.5.384)",
+        "nl": "ð Tijdsync (v5.5.384)",
+        "de": "ð Zeitsync (v5.5.384)"
       },
       "children": [
         {
@@ -532,57 +531,57 @@
             {
               "id": "auto",
               "label": {
-                "en": "ðŸ”„ Auto-detect (recommended)",
-                "fr": "ðŸ”„ Auto-dÃ©tection (recommandÃ©)"
+                "en": "ð Auto-detect (recommended)",
+                "fr": "ð Auto-dÃ©tection (recommandÃ©)"
               }
             },
             {
               "id": "tuya_timestamp",
               "label": {
-                "en": "ðŸ“º LCD Sensor (8-byte epoch 2000)",
-                "fr": "ðŸ“º Capteur LCD (8 octets epoch 2000)"
+                "en": "ðº LCD Sensor (8-byte epoch 2000)",
+                "fr": "ðº Capteur LCD (8 octets epoch 2000)"
               }
             },
             {
               "id": "tuya_ts_unix",
               "label": {
-                "en": "ðŸ“º LCD Sensor Unix (8-byte epoch 1970)",
-                "fr": "ðŸ“º Capteur LCD Unix (8 octets epoch 1970)"
+                "en": "ðº LCD Sensor Unix (8-byte epoch 1970)",
+                "fr": "ðº Capteur LCD Unix (8 octets epoch 1970)"
               }
             },
             {
               "id": "tuya_standard",
               "label": {
-                "en": "ðŸ“… Tuya Standard (7-byte local)",
-                "fr": "ðŸ“… Tuya Standard (7 octets local)"
+                "en": "ð Tuya Standard (7-byte local)",
+                "fr": "ð Tuya Standard (7 octets local)"
               }
             },
             {
               "id": "tuya_utc_string",
               "label": {
-                "en": "ðŸ“… Tuya UTC (7-byte UTC)",
-                "fr": "ðŸ“… Tuya UTC (7 octets UTC)"
+                "en": "ð Tuya UTC (7-byte UTC)",
+                "fr": "ð Tuya UTC (7 octets UTC)"
               }
             },
             {
               "id": "tuya_mcu",
               "label": {
-                "en": "ðŸ”§ Tuya MCU (9-byte with header)",
-                "fr": "ðŸ”§ Tuya MCU (9 octets avec header)"
+                "en": "ð§ Tuya MCU (9-byte with header)",
+                "fr": "ð§ Tuya MCU (9 octets avec header)"
               }
             },
             {
               "id": "tuya_extended",
               "label": {
-                "en": "ðŸŒ Tuya Extended (9-byte + timezone)",
-                "fr": "ðŸŒ Tuya Ã‰tendu (9 octets + fuseau)"
+                "en": "ð Tuya Extended (9-byte + timezone)",
+                "fr": "ð Tuya Ãtendu (9 octets + fuseau)"
               }
             },
             {
               "id": "tuya_full_tz",
               "label": {
-                "en": "ðŸŒ Tuya Full TZ (10-byte + DST)",
-                "fr": "ðŸŒ Tuya Full TZ (10 octets + DST)"
+                "en": "ð Tuya Full TZ (10-byte + DST)",
+                "fr": "ð Tuya Full TZ (10 octets + DST)"
               }
             },
             {
@@ -621,57 +620,57 @@
             {
               "id": "auto",
               "label": {
-                "en": "ðŸ”„ Auto (Homey timezone)",
-                "fr": "ðŸ”„ Auto (fuseau Homey)"
+                "en": "ð Auto (Homey timezone)",
+                "fr": "ð Auto (fuseau Homey)"
               }
             },
             {
               "id": "utc",
               "label": {
-                "en": "ðŸŒ UTC (GMT+0)",
-                "fr": "ðŸŒ UTC (GMT+0)"
+                "en": "ð UTC (GMT+0)",
+                "fr": "ð UTC (GMT+0)"
               }
             },
             {
               "id": "gmt+1",
               "label": {
-                "en": "ðŸ‡ªðŸ‡º GMT+1 (CET)",
-                "fr": "ðŸ‡ªðŸ‡º GMT+1 (Paris hiver)"
+                "en": "ðªðº GMT+1 (CET)",
+                "fr": "ðªðº GMT+1 (Paris hiver)"
               }
             },
             {
               "id": "gmt+2",
               "label": {
-                "en": "ðŸ‡ªðŸ‡º GMT+2 (CEST/EET)",
-                "fr": "ðŸ‡ªðŸ‡º GMT+2 (Paris Ã©tÃ©)"
+                "en": "ðªðº GMT+2 (CEST/EET)",
+                "fr": "ðªðº GMT+2 (Paris Ã©tÃ©)"
               }
             },
             {
               "id": "gmt+3",
               "label": {
-                "en": "ðŸ‡·ðŸ‡º GMT+3 (Moscow)",
-                "fr": "ðŸ‡·ðŸ‡º GMT+3 (Moscou)"
+                "en": "ð·ðº GMT+3 (Moscow)",
+                "fr": "ð·ðº GMT+3 (Moscou)"
               }
             },
             {
               "id": "gmt-5",
               "label": {
-                "en": "ðŸ‡ºðŸ‡¸ GMT-5 (EST)",
-                "fr": "ðŸ‡ºðŸ‡¸ GMT-5 (New York)"
+                "en": "ðºð¸ GMT-5 (EST)",
+                "fr": "ðºð¸ GMT-5 (New York)"
               }
             },
             {
               "id": "gmt-8",
               "label": {
-                "en": "ðŸ‡ºðŸ‡¸ GMT-8 (PST)",
-                "fr": "ðŸ‡ºðŸ‡¸ GMT-8 (Los Angeles)"
+                "en": "ðºð¸ GMT-8 (PST)",
+                "fr": "ðºð¸ GMT-8 (Los Angeles)"
               }
             },
             {
               "id": "gmt+8",
               "label": {
-                "en": "ðŸ‡¨ðŸ‡³ GMT+8 (China)",
-                "fr": "ðŸ‡¨ðŸ‡³ GMT+8 (Chine)"
+                "en": "ð¨ð³ GMT+8 (China)",
+                "fr": "ð¨ð³ GMT+8 (Chine)"
               }
             }
           ]
@@ -681,9 +680,9 @@
     {
       "type": "group",
       "label": {
-        "en": "ðŸ”” Alarm Thresholds (E002)",
-        "fr": "ðŸ”” Seuils d'alarme (E002)",
-        "nl": "ðŸ”” Alarm drempels (E002)"
+        "en": "ð Alarm Thresholds (E002)",
+        "fr": "ð Seuils d'alarme (E002)",
+        "nl": "ð Alarm drempels (E002)"
       },
       "children": [
         {
@@ -759,8 +758,8 @@
     {
       "type": "group",
       "label": {
-        "en": "ðŸ§ª Debug (Expert)",
-        "fr": "ðŸ§ª Debug (Expert)"
+        "en": "ð§ª Debug (Expert)",
+        "fr": "ð§ª Debug (Expert)"
       },
       "children": [
         {
@@ -772,8 +771,8 @@
           },
           "value": false,
           "hint": {
-            "en": "âš ï¸ EXPERT ONLY: Test all ZCL Time sync methods on device startup. May drain battery if used frequently.",
-            "fr": "âš ï¸ EXPERT UNIQUEMENT: Teste toutes les mÃ©thodes sync ZCL Time au dÃ©marrage. Peut vider la batterie si utilisÃ© frÃ©quemment."
+            "en": "â ï¸ EXPERT ONLY: Test all ZCL Time sync methods on device startup. May drain battery if used frequently.",
+            "fr": "â ï¸ EXPERT UNIQUEMENT: Teste toutes les mÃ©thodes sync ZCL Time au dÃ©marrage. Peut vider la batterie si utilisÃ© frÃ©quemment."
           }
         }
       ]
@@ -923,7 +922,7 @@
       "type": "number",
       "label": {
         "en": "Emulated Motion Hold (Seconds)",
-        "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
+        "fr": "Maintien Mouvement ÃmulÃ© (Secondes)"
       },
       "value": 0,
       "min": 0,
@@ -945,7 +944,7 @@
       "max": 1000,
       "hint": {
         "en": "Software emulation for single-action buttons",
-        "fr": "Ã‰mulation logicielle pour boutons Ã action unique"
+        "fr": "Ãmulation logicielle pour boutons Ã action unique"
       }
     },
     {
@@ -984,7 +983,7 @@
       "type": "checkbox",
       "label": {
         "en": "Software State Recovery",
-        "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
+        "fr": "RÃ©cupÃ©ration d'Ãtat Logicielle"
       },
       "value": false,
       "hint": {

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-// v5.12.0: Comprehensive GitHub scan — forks, PRs, issues from JohanBendz + dlnraja
+// v5.12.0: Comprehensive GitHub scan  forks, PRs, issues from JohanBendz + dlnraja
 // Uses GitHub API directly (no gh CLI needed). Works unauthenticated (60 req/h).
 const fs = require('fs');
 const path = require('path');
@@ -263,7 +263,7 @@ async function main() {
   if (prNewFPs.length > 0) {
     console.log('\n--- NEW FPs FROM PRs ---');
     for (const fp of prNewFPs.slice(0, 30)) {
-      console.log(`  ${fp.mfr} — ${fp.source}: ${fp.title}`);
+      console.log(`  ${fp.mfr}  ${fp.source}: ${fp.title}`);
     }
     if (prNewFPs.length > 30) console.log(`  ... and ${prNewFPs.length - 30} more`);
   }
@@ -271,7 +271,7 @@ async function main() {
   if (issueNewFPs.length > 0) {
     console.log('\n--- NEW FPs FROM ISSUES ---');
     for (const fp of issueNewFPs.slice(0, 30)) {
-      console.log(`  ${fp.mfr} — ${fp.source}: ${fp.title}`);
+      console.log(`  ${fp.mfr}  ${fp.source}: ${fp.title}`);
     }
     if (issueNewFPs.length > 30) console.log(`  ... and ${issueNewFPs.length - 30} more`);
   }
@@ -294,7 +294,7 @@ async function main() {
   
   fs.mkdirSync(STATE_DIR, { recursive: true });
   fs.writeFileSync(path.join(STATE_DIR, 'comprehensive-scan.json'), JSON.stringify(report, null, 2));
-  console.log('\n✅ Results saved to .github/state/comprehensive-scan.json');
+  console.log('\n Results saved to .github/state/comprehensive-scan.json');
 }
 
 main().catch(e => { console.error('Fatal:', e); process.exit(1); });

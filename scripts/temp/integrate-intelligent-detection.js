@@ -28,7 +28,7 @@ async function processIssue(context) {
   const analysis = analyzeAndRespond(issue.title, issue.body);
   
   if (analysis.shouldRespond && analysis.confidence >= 50) {
-    console.log(\`🎯 Detected pattern: \${analysis.pattern} (confidence: \${analysis.confidence}%)\`);
+    console.log(\` Detected pattern: \${analysis.pattern} (confidence: \${analysis.confidence}%)\`);
     
     // Post intelligent response
     await context.octokit.issues.createComment({
@@ -46,7 +46,7 @@ async function processIssue(context) {
       labels: ['auto-responded', 'awaiting-verification']
     });
     
-    console.log('✅ Intelligent auto-response posted');
+    console.log(' Intelligent auto-response posted');
   } else {
     console.log('No high-confidence pattern match');
   }
@@ -65,14 +65,14 @@ async function processPullRequest(context) {
   const analysis = analyzeAndRespond(pull_request.title, pull_request.body);
   
   if (analysis.shouldRespond && analysis.confidence >= 60) {
-    console.log(\`🎯 PR relates to known bug pattern: \${analysis.pattern}\`);
+    console.log(\` PR relates to known bug pattern: \${analysis.pattern}\`);
     
     // Comment with context about the bug
     await context.octokit.issues.createComment({
       owner: context.repo.owner,
       repo: context.repo.repo,
       issue_number: pull_request.number,
-      body: \`👀 This PR appears to address a known issue pattern: **\${analysis.pattern}**
+      body: \` This PR appears to address a known issue pattern: **\${analysis.pattern}**
 
 \${analysis.response}
 
@@ -85,7 +85,7 @@ module.exports = { processIssue, processPullRequest };
 `;
 
 fs.writeFileSync('.github/scripts/auto-respond-intelligent.js', integrationCode);
-console.log('✅ Created intelligent auto-respond integration');
+console.log(' Created intelligent auto-respond integration');
 
 // Update triage-run.js to include bug pattern detection
 const triageRunFile = '.github/scripts/triage-run.js';
@@ -100,7 +100,7 @@ if (!triageContent.includes('intelligent-bug-detector')) {
   );
   
   fs.writeFileSync(triageRunFile, updatedContent);
-  console.log('✅ Added intelligent detection to triage-run.js');
+  console.log(' Added intelligent detection to triage-run.js');
 }
 
 // Update triage-upstream-enhanced.js
@@ -115,7 +115,7 @@ if (!upstreamContent.includes('intelligent-bug-detector')) {
   );
   
   fs.writeFileSync(upstreamFile, updatedUpstream);
-  console.log('✅ Added intelligent detection to triage-upstream-enhanced.js');
+  console.log(' Added intelligent detection to triage-upstream-enhanced.js');
 }
 
-console.log('\n✅ All GitHub Actions enhanced with intelligent bug detection');
+console.log('\n All GitHub Actions enhanced with intelligent bug detection');

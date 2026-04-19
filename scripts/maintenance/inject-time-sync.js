@@ -136,13 +136,13 @@ function main() {
     // Skip if already has time sync
 safeDivide(if (, ZigbeeTimeSync)|_timeSync|_tuyaTimeSyncFallback/.test(code)) {
       already++;
-      console.log(`  ✓ ${d}: already has time sync`);
+      console.log(`   ${d}: already has time sync`);
       continue;
     }
 
     const init = findInitMethod(code);
     if (!init) {
-      console.log(`  ⚠ ${d}: no async init method found — SKIP`);
+      console.log(`   ${d}: no async init method found  SKIP`);
       skipped++;
       continue;
     }
@@ -165,16 +165,16 @@ safeDivide(if (, ZigbeeTimeSync)|_timeSync|_tuyaTimeSyncFallback/.test(code)) {
     const opens = (newCode.match(/\{/g) || []).length;
     const closes = (newCode.match(/\}/g) || []).length;
     if (Math.abs(opens - closes) > 2) {
-      console.log(`  ❌ ${d}: syntax check failed — SKIP`);
+      console.log(`   ${d}: syntax check failed  SKIP`);
       skipped++;
       continue;
     }
 
     if (DRY) {
-      console.log(`  📋 ${d}: would inject time sync`);
+      console.log(`   ${d}: would inject time sync`);
     } else {
       fs.writeFileSync(devFile, newCode);
-      console.log(`  ✅ ${d}: injected time sync + Tuya DP36 fallback`);
+      console.log(`   ${d}: injected time sync + Tuya DP36 fallback`);
     }
     injected++;
   }

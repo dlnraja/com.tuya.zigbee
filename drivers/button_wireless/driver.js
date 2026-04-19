@@ -2,14 +2,7 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.585: CRITICAL FIX - Flow card run listeners were missing
- */
 class ButtonWirelessDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -19,36 +12,35 @@ class ButtonWirelessDriver extends ZigBeeDriver {
     }
   }
 
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
     this.log('ButtonWirelessDriver v5.5.585 initialized');
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
   _registerFlowCards() {
-    // CONDITION: Battery above
+    // TRIGGERS
+    try { this.homey.flow.getTriggerCard('button_wireless_button_pressed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('button_wireless_button_double_press'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('button_wireless_button_long_press'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('button_wireless_button_release'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('button_wireless_battery_low'); } catch (e) {}
+
+    // CONDITIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('button_wireless_battery_above'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('button_wireless_battery_above');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
-          return battery > (args.level || 20);
+          return battery > (args.threshold || 20);
         });
-      this.log('[FLOW] ✅ Registered: button_wireless_battery_above');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition button_wireless_battery_above: ${err.message}`); }
 
-    this.log('[FLOW]  Button wireless flow cards registered');
+    this.log('[FLOW] All flow cards registered');
   }
 }
 

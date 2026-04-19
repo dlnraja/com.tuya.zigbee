@@ -52,7 +52,7 @@ async function main() {
   const results = [];
   
   for (const fp of missing) {
-    console.log(`\n🔍 Researching: ${fp}`);
+    console.log(`\n Researching: ${fp}`);
     const rx = await searchAliexpress(fp);
     const mfx = await searchTuyaManufacturer(fp);
     
@@ -83,7 +83,7 @@ Output JSON ONLY `{ "class": "...", "guessed_capabilities": ["..."], "dps": [{"i
     
     analysis.fingerprint = fp;
     results.push(analysis);
-    console.log(`✅ AI Analysis for ${fp}:`, analysis.guessed_capabilities || 'None');
+    console.log(` AI Analysis for ${fp}:`, analysis.guessed_capabilities || 'None');
     
     // Auto-implement locally if high confidence
     await autoImplement(analysis);
@@ -115,7 +115,7 @@ async function autoImplement(analysis) {
       try {
         let content = fs.readFileSync(driverFile, 'utf8');
         if (!content.includes(fp)) {
-          console.log(`⚡ Injecting capability: Auto-scaffolding ${fp} into ${targetDriver}`);
+          console.log(` Injecting capability: Auto-scaffolding ${fp} into ${targetDriver}`);
           // Simple JSON injection for arrays
           content = content.replace(/"manufacturerName":\s*\[/, `"manufacturerName": [\n        "${fp}",`);
           fs.writeFileSync(driverFile, content);

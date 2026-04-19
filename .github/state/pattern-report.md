@@ -37,7 +37,7 @@
 **Most affected:** `vision` (5x), `_TZ3000_` (3x), `TS011F` (3x), `router` (2x), `_TZ3000_j1v25l17` (2x), `_TZE204_clrdrnya` (1x), `_TZE` (1x), `_TZE204_` (1x), `TS0601` (1x), `sensor` (1x)
 
 ### Double Division (wrong sensor values) (2 reports)
-**Fix:** Check TuyaEF00Manager.js:1912 — skip auto-convert when dpMappings has divisor !== 1
+**Fix:** Check TuyaEF00Manager.js:1912  skip auto-convert when dpMappings has divisor !== 1
 **Files:** `lib/tuya/TuyaEF00Manager.js`
 **Most affected:** `vision` (2x), `_TZE` (2x), `_TZE204_` (2x), `TS0601` (2x), `router` (2x), `_TZE204_qyr2m29i` (1x), `MOES` (1x), `Moes` (1x), `test` (1x), `_TZE204_clrdrnya` (1x)
 

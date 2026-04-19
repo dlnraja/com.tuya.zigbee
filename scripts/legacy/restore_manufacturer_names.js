@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔄 RESTAURATION MANUFACTURER NAMES SUPPRIMÉS\n');
+console.log(' RESTAURATION MANUFACTURER NAMES SUPPRIMÉS\n');
 
 const ROOT = path.join(__dirname, '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -97,16 +97,16 @@ function scanAllDrivers() {
   });
 }
 
-console.log('📂 Scanning drivers avec backups...\n');
+console.log(' Scanning drivers avec backups...\n');
 scanAllDrivers();
 
 // AFFICHAGE
-console.log('📊 ANALYSE RESTAURATION:\n');
+console.log(' ANALYSE RESTAURATION:\n');
 console.log(`   Drivers analysés: ${stats.driversAnalyzed}`);
 console.log(`   Drivers avec suppressions: ${restorations.length}\n`);
 
 if (restorations.length > 0) {
-  console.log('🔍 TOP 20 DRIVERS À RESTAURER:\n');
+  console.log(' TOP 20 DRIVERS À RESTAURER:\n');
 
   restorations
     .sort((a, b) => b.validDeletedCount - a.validDeletedCount)
@@ -126,19 +126,19 @@ if (restorations.length > 0) {
 // Sauvegarder analyse
 const analysisFile = path.join(ROOT, 'MANUFACTURER_RESTORATION_ANALYSIS.json');
 fs.writeFileSync(analysisFile, JSON.stringify(restorations, null, 2), 'utf8');
-console.log(`✅ Analyse sauvegardée: ${analysisFile}\n`);
+console.log(` Analyse sauvegardée: ${analysisFile}\n`);
 
 // Statistiques totales
 const totalToRestore = restorations.reduce((sum, r) => sum + r.validDeletedCount, 0);
-console.log(`📊 TOTAL À RESTAURER: ${totalToRestore} manufacturer names valides\n`);
+console.log(` TOTAL À RESTAURER: ${totalToRestore} manufacturer names valides\n`);
 
 if (totalToRestore > 0) {
-  console.log('⚠️  RECOMMANDATION:');
+  console.log('  RECOMMANDATION:');
   console.log('   Ces manufacturer names Tuya valides ont été supprimés');
   console.log('   Ils devraient être restaurés car ils peuvent identifier des variants');
   console.log('   Le partage entre drivers est LÉGITIME si productIds différents\n');
 
-  console.log('🎯 PROCHAINE ÉTAPE:');
+  console.log(' PROCHAINE ÉTAPE:');
   console.log('   Exécuter script de restauration pour remettre les IDs valides\n');
 }
 

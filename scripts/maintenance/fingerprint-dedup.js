@@ -25,7 +25,7 @@ const composeFiles = findFiles(DRIVERS_DIR, 'driver.compose.json');
 
 const fingerprintMap = {}; // key -> [{file, mfr, pid}]
 
-console.log('--- 🔍 Building Fingerprint Map ---');
+console.log('---  Building Fingerprint Map ---');
 composeFiles.forEach(file => {
   try {
     const content = fs.readFileSync(file, 'utf8');
@@ -153,7 +153,7 @@ duplicates.forEach(key => {
   });
 });
 
-console.log(`\n--- 💾 Saving ${filesToUpdate.size} Files ---`);
+console.log(`\n---  Saving ${filesToUpdate.size} Files ---`);
 filesToUpdate.forEach((compose, file) => {
     // Also deduplicate the winner's lists before saving if they were winners of an internal dupe check
     // Actually, let's just save.
@@ -172,4 +172,4 @@ filesToUpdate.forEach((compose, file) => {
     console.log(`  Updated ${path.relative(ROOT, file)}`);
 });
 
-console.log(`\n✅ Fingerprint Consolidation Complete. ${fixes} removals performed.`);
+console.log(`\n Fingerprint Consolidation Complete. ${fixes} removals performed.`);

@@ -78,7 +78,7 @@ class WiFiCameraDevice extends Homey.Device {
     this.log('[WIFI-CAM] Ready:', this.getName());
   }
 
-  // ─── Cloud Client (for RTSP URL allocation) ───
+  //  Cloud Client (for RTSP URL allocation) 
   async _initCloudClient() {
     const s = this.getSettings();
     if (s.stream_method === 'lan_rtsp' || s.stream_method === 'snapshot_only') return;
@@ -102,7 +102,7 @@ class WiFiCameraDevice extends Homey.Device {
     }
   }
 
-  // ─── Local TCP Connection (for DP control) ───
+  //  Local TCP Connection (for DP control) 
   async _initLocalConnection() {
     const s = this.getSettings();
     if (!s.device_id || !s.local_key) {
@@ -164,7 +164,7 @@ class WiFiCameraDevice extends Homey.Device {
     }, 15000);
   }
 
-  // ─── DP Data Handler ───
+  //  DP Data Handler 
   _onDPData(data) {
     if (!data || !data.dps) return;
     const dps = data.dps;
@@ -192,7 +192,7 @@ class WiFiCameraDevice extends Homey.Device {
     }
   }
 
-  // ─── Video Stream Setup ───
+  //  Video Stream Setup 
   async _setupVideoStream() {
     const s = this.getSettings();
     try {
@@ -255,7 +255,7 @@ class WiFiCameraDevice extends Homey.Device {
     }, RTSP_REFRESH_INTERVAL);
   }
 
-  // ─── Snapshot Image ───
+  //  Snapshot Image 
   async _setupSnapshotImage() {
     try {
       this._image = await this.homey.images.createImage();
@@ -298,7 +298,7 @@ class WiFiCameraDevice extends Homey.Device {
     stream.end();
   }
 
-  // ─── DP Commands ───
+  //  DP Commands 
   async _setDP(dp, value) {
     if (!this._tuyaDevice || !this._connected) {
       this.log('[WIFI-CAM] Cannot set DP - not connected');
@@ -331,7 +331,7 @@ class WiFiCameraDevice extends Homey.Device {
     return map[dp] || null;
   }
 
-  // ─── Settings Handler ───
+  //  Settings Handler 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     // Stream config changed
     if (changedKeys.some(k => ['stream_method', 'rtsp_url', 'tuya_access_id', 'tuya_access_key', 'tuya_region'].includes(k))) {

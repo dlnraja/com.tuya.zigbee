@@ -102,7 +102,7 @@ class IntelligentFlowOptimizer {
    * Point d'entrée principal - Optimise tous les flows
    */
   async optimizeAllFlows() {
-    console.log('🚀 STARTING INTELLIGENT FLOW OPTIMIZATION...');
+    console.log(' STARTING INTELLIGENT FLOW OPTIMIZATION...');
 
     // Créer backup avant optimisation
     this.createBackup();
@@ -137,7 +137,7 @@ class IntelligentFlowOptimizer {
     const backupDir = path.join(this.backupPath, `backup_${timestamp}`);
     fs.mkdirSync(backupDir);
 
-    console.log(`📦 Creating backup: ${backupDir}`);
+    console.log(` Creating backup: ${backupDir}`);
 
     // Copier tous les flow files
     this.copyFlowFiles(this.driversPath, backupDir);
@@ -172,7 +172,7 @@ class IntelligentFlowOptimizer {
         return JSON.parse(fs.readFileSync(reportPath, 'utf8'));
       }
     } catch (error) {
-      console.log('⚠️ Could not load analysis report, continuing without it');
+      console.log(' Could not load analysis report, continuing without it');
     }
     return null;
   }
@@ -181,13 +181,13 @@ class IntelligentFlowOptimizer {
    * Optimise les flows par catégorie
    */
   async optimizeByCategory(category) {
-    console.log(`\n🔧 OPTIMIZING ${category.toUpperCase()} FLOWS...`);
+    console.log(`\n OPTIMIZING ${category.toUpperCase()} FLOWS...`);
 
     const drivers = this.findDriversByCategory(category);
     const standardPattern = this.standardPatterns[category];
 
     if (!standardPattern) {
-      console.log(`⚠️ No standard pattern for ${category}`);
+      console.log(` No standard pattern for ${category}`);
       return;
     }
 
@@ -196,7 +196,7 @@ class IntelligentFlowOptimizer {
         await this.optimizeDriverFlows(driverName, standardPattern);
         this.optimizationResults.processed++;
       } catch (error) {
-        console.log(`❌ Error optimizing ${driverName}: ${error.message}`);
+        console.log(` Error optimizing ${driverName}: ${error.message}`);
         this.optimizationResults.errors++;
       }
     }
@@ -252,7 +252,7 @@ class IntelligentFlowOptimizer {
     if (JSON.stringify(currentFlows) !== JSON.stringify(optimizedFlows)) {
       fs.writeFileSync(flowPath, JSON.stringify(optimizedFlows, null, 2));
       this.optimizationResults.optimized++;
-      console.log(`✅ Optimized: ${driverName}`);
+      console.log(` Optimized: ${driverName}`);
     }
   }
 
@@ -413,7 +413,7 @@ class IntelligentFlowOptimizer {
   async fixInconsistentIds(analysisReport) {
     if (!analysisReport || !analysisReport.inconsistencies) return;
 
-    console.log('\n🔧 FIXING INCONSISTENT IDs...');
+    console.log('\n FIXING INCONSISTENT IDs...');
 
     const inconsistencies = analysisReport.inconsistencies;
     const grouped = this.groupInconsistenciesByDriver(inconsistencies);
@@ -422,7 +422,7 @@ class IntelligentFlowOptimizer {
       try {
         await this.fixDriverInconsistencies(driverName, issues);
       } catch (error) {
-        console.log(`❌ Error fixing ${driverName}: ${error.message}`);
+        console.log(` Error fixing ${driverName}: ${error.message}`);
         this.optimizationResults.errors++;
       }
     }
@@ -486,7 +486,7 @@ class IntelligentFlowOptimizer {
 
     if (modified) {
       fs.writeFileSync(flowPath, JSON.stringify(flows, null, 2));
-      console.log(`✅ Fixed inconsistencies: ${driverName}`);
+      console.log(` Fixed inconsistencies: ${driverName}`);
     }
   }
 
@@ -513,29 +513,29 @@ class IntelligentFlowOptimizer {
    * Fusionne les doublons avec fallback intelligent
    */
   async mergeWithIntelligentFallback() {
-    console.log('\n🔄 MERGING DUPLICATES WITH INTELLIGENT FALLBACK...');
+    console.log('\n MERGING DUPLICATES WITH INTELLIGENT FALLBACK...');
 
     // Cette étape nécessiterait une logique plus complexe pour identifier
     // exactement quels flows fusionner et comment maintenir la compatibilité
     // Pour l'instant, on marque comme implémenté mais on peut développer davantage
 
     this.optimizationResults.merged = 15; // Estimation basée sur l'analyse
-    console.log('✅ Duplicate merging logic implemented (advanced merging available on request)');
+    console.log(' Duplicate merging logic implemented (advanced merging available on request)');
   }
 
   /**
    * Génère le rapport d'optimisation final
    */
   generateOptimizationReport() {
-    console.log('\n📊 OPTIMIZATION RESULTS:');
-    console.log('═'.repeat(60));
+    console.log('\n OPTIMIZATION RESULTS:');
+    console.log(''.repeat(60));
     console.log(`Drivers processed: ${this.optimizationResults.processed}`);
     console.log(`Drivers optimized: ${this.optimizationResults.optimized}`);
     console.log(`IDs standardized: ${this.optimizationResults.standardizedIds}`);
     console.log(`Flows merged: ${this.optimizationResults.merged}`);
     console.log(`Errors encountered: ${this.optimizationResults.errors}`);
 
-    console.log('\n✅ OPTIMIZATIONS APPLIED:');
+    console.log('\n OPTIMIZATIONS APPLIED:');
     console.log('- Standardized flow IDs (removed _smart_, _hybrid_)');
     console.log('- Applied consistent naming patterns');
     console.log('- Added backward compatibility fallbacks');
@@ -550,7 +550,7 @@ class IntelligentFlowOptimizer {
     };
 
     fs.writeFileSync('flow_optimization_report.json', JSON.stringify(report, null, 2));
-    console.log('\n💾 Optimization report saved: flow_optimization_report.json');
+    console.log('\n Optimization report saved: flow_optimization_report.json');
   }
 }
 

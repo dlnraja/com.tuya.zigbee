@@ -118,7 +118,7 @@ console.log('  Bad settings keys: ' + badKeys);
 console.log('\n=== FINAL SUMMARY ===');
 console.log('Total failures: ' + failures.length);
 if (failures.length > 0) {
-  failures.forEach(f => console.log('  ❌ ' + f));
+  failures.forEach(f => console.log('   ' + f));
 } else {
-  console.log('  ✅ ALL CHECKS PASSED');
+  console.log('   ALL CHECKS PASSED');
 }

@@ -10,7 +10,7 @@ const bugPatterns = {
 **For _TZE284 variants with DP109/DP112 (fertility):**
 1. Ensure app is updated to v5.11.136+
 2. Remove restrictive endpoints (fixed in latest version)
-3. Try pairing in "Add Device" → "Tuya Zigbee" → "Soil Sensor"
+3. Try pairing in "Add Device"  "Tuya Zigbee"  "Soil Sensor"
 
 **If pairing still fails:**
 - Reset sensor: Hold button 5+ seconds until LED blinks rapidly
@@ -19,7 +19,7 @@ const bugPatterns = {
 
 **Diagnostics needed:**
 Please provide:
-- Full diagnostic report (Settings → Advanced → Report issue)
+- Full diagnostic report (Settings  Advanced  Report issue)
 - Screenshot of pairing error
 - Sensor battery level`,
     relatedDrivers: ['soil_sensor'],
@@ -92,4 +92,4 @@ Please provide diagnostic report if issue persists.`,
 };
 
 fs.writeFileSync('data/bug-patterns.json', JSON.stringify(bugPatterns, null, 2));
-console.log('✅ Created bug pattern database with auto-responses');
+console.log(' Created bug pattern database with auto-responses');

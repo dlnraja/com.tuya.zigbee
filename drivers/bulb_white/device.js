@@ -29,7 +29,7 @@ class WhiteBulbDevice extends UnifiedLightBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[BULB] ✅ White bulb ready');
+    this.log('[BULB]  White bulb ready');
   }
 
 

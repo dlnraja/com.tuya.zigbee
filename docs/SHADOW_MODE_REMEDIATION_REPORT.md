@@ -1,11 +1,11 @@
 # Shadow Mode Enforcement & Maintenance Stabilization Report (v7.4.5)
 
-## 🌌 Overview
+##  Overview
 This report documents the architectural transition of the Universal Tuya Engine to **Shadow Mode** and the resolution of critical driver issues identified through user feedback.
 
 ---
 
-## 🛡️ Shadow Mode Enforcement
+##  Shadow Mode Enforcement
 The autonomous engine has been silenced across all public-facing channels to eliminate community frustration while maintaining backend discovery and maintenance.
 
 ### Key Implementation Details:
@@ -15,28 +15,28 @@ The autonomous engine has been silenced across all public-facing channels to eli
 
 | Component | Status | Shadow State |
 |-----------|--------|--------------|
-| GitHub Triage | ✅ ACTIVE | Silent (Discovery Only) |
-| Forum Responder | ✅ ACTIVE | Silent (Ghostwriter Ready) |
-| Upstream Sync | ✅ ACTIVE | Silent (Internal Alignment) |
-| App Store Publish | ✅ ENABLED | Silent (Test Channel Only) |
+| GitHub Triage |  ACTIVE | Silent (Discovery Only) |
+| Forum Responder |  ACTIVE | Silent (Ghostwriter Ready) |
+| Upstream Sync |  ACTIVE | Silent (Internal Alignment) |
+| App Store Publish |  ENABLED | Silent (Test Channel Only) |
 
 ---
 
-## 🚨 Critical Fixes
+##  Critical Fixes
 
-### 🔋 1. "False Battery Alert" Resolution
+###  1. "False Battery Alert" Resolution
 Users complained of sensors reporting 0% battery despite being mains-powered (VISION, TS0601 variants).
 - **Remediation**: Updated `PowerSourceIntelligence.js` to recognize `VISION` and `TS0601` manufacturer patterns as inherently USB/Mains powered.
 - **Architectural Change**: Refactored `UnifiedSensorBase.js` and `TuyaUnifiedDevice.js` with a dynamic `mainsPowered` getter to prevent Homey from assigning battery capabilities to these devices.
 
-### 🏗️ 2. onNodeInit Hardening
+###  2. onNodeInit Hardening
 Addressed the "red exclamation mark" issue (initialization timeout) by optimizing the boot flow.
 - **Optimization**: Modularized initialization with `Promise.all` for parallel diagnostic tasks.
 - **Compliance**: Ensured `SDK3_COMPLIANCE` and `Genesis Orchestrator` gates are correctly respected.
 
 ---
 
-## 📈 Versioning & Alignment
+##  Versioning & Alignment
 The repository has been aligned to **v7.4.5** "The Silent Guardian" to ensure consistency across the fleet.
 
 - **app.json / package.json**: Updated to `7.4.5`.
@@ -45,7 +45,7 @@ The repository has been aligned to **v7.4.5** "The Silent Guardian" to ensure co
 
 ---
 
-## 🏁 Final Verification Steps
+##  Final Verification Steps
 1. **Monitor State**: Review `.github/state/bot-audit-report.md` for internal progress.
 2. **Silent Triage**: Verify that no new comments are appearing on GitHub/Forum despite autonomous activity.
 3. **Verification**: Check Homey Test Store for successful v7.4.5 availability (internal).

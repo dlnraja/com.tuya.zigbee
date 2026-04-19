@@ -102,7 +102,7 @@ Features Z2M has that Homey apps CANNOT implement:
 **Already Implemented**: Monthly fingerprint sync workflow
 
 ```
-Z2M tuya.ts → Extract fingerprints → Generate driver.compose.json → Rebuild app
+Z2M tuya.ts  Extract fingerprints  Generate driver.compose.json  Rebuild app
 ```
 
 **Pros**:
@@ -187,12 +187,12 @@ Homey requires capabilities declared per-driver, not per-device.
 Current architecture (working well):
 ```
 drivers/
-├── switch_1gang/          # All 1-gang switches
-├── switch_2gang/          # All 2-gang switches
-├── thermostat_tuya_dp/    # All TS0601 thermostats
-├── motion_sensor/         # All motion sensors
-├── universal_fallback/    # Catch-all for unknown
-└── ...109 total drivers
+ switch_1gang/          # All 1-gang switches
+ switch_2gang/          # All 2-gang switches
+ thermostat_tuya_dp/    # All TS0601 thermostats
+ motion_sensor/         # All motion sensors
+ universal_fallback/    # Catch-all for unknown
+ ...109 total drivers
 ```
 
 ---
@@ -200,20 +200,20 @@ drivers/
 ## Recommendations
 
 ### Short-term (Already Done)
-1. ✅ Monthly Z2M fingerprint sync
-2. ✅ Universal fallback driver
-3. ✅ Intelligent DP auto-discovery
-4. ✅ Z2M-compatible DP mappings
+1.  Monthly Z2M fingerprint sync
+2.  Universal fallback driver
+3.  Intelligent DP auto-discovery
+4.  Z2M-compatible DP mappings
 
 ### Medium-term (In Progress)
-1. 🔄 Expand DeviceFingerprintDB with Z2M configs
-2. 🔄 Improve universal_fallback UI generation
-3. 🔄 Add more device-type drivers
+1.  Expand DeviceFingerprintDB with Z2M configs
+2.  Improve universal_fallback UI generation
+3.  Add more device-type drivers
 
 ### Long-term (Requires Homey SDK Changes)
-1. ❌ Dynamic driver registration (not possible)
-2. ❌ Runtime manifest modification (not possible)
-3. ⚠️ Request Athom for "generic Zigbee" support
+1.  Dynamic driver registration (not possible)
+2.  Runtime manifest modification (not possible)
+3.  Request Athom for "generic Zigbee" support
 
 ---
 
@@ -222,12 +222,12 @@ drivers/
 | Feature | Z2M | Universal Tuya Zigbee |
 |---------|-----|----------------------|
 | Device support | 4,000+ | 4,000+ (via sync) |
-| Dynamic device add | ✅ External converter | ❌ Needs app update |
-| Grouping/Binding | ✅ Native | ❌ Not possible |
-| OTA Updates | ✅ Native | ❌ Not possible |
-| UI Integration | MQTT/HA | ✅ Native Homey |
-| Flow Cards | Via HA | ✅ Native |
-| Setup complexity | High | ✅ Low |
+| Dynamic device add |  External converter |  Needs app update |
+| Grouping/Binding |  Native |  Not possible |
+| OTA Updates |  Native |  Not possible |
+| UI Integration | MQTT/HA |  Native Homey |
+| Flow Cards | Via HA |  Native |
+| Setup complexity | High |  Low |
 
 ---
 

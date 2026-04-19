@@ -12,7 +12,7 @@ const path = require('path');
 const ROOT = process.cwd();
 
 async function main() {
-    console.log('🩹 Starting Emergency Repair of Hardener Corruption...');
+    console.log(' Starting Emergency Repair of Hardener Corruption...');
 
     const walk = (dir) => {
         const files = fs.readdirSync(dir);
@@ -30,7 +30,7 @@ async function main() {
     walk(path.join(ROOT, 'drivers'));
     walk(path.join(ROOT, 'lib'));
 
-    console.log('\n✅ Emergency Repair Complete.');
+    console.log('\n Emergency Repair Complete.');
 }
 
 function repairFile(filePath) {

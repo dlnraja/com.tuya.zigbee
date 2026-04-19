@@ -105,7 +105,7 @@ function buildFullIndex(driversDir) {
 }
 
 /**
- * Extract ALL fingerprints from text — Tuya _T*, TS####, AND known non-Tuya patterns.
+ * Extract ALL fingerprints from text  Tuya _T*, TS####, AND known non-Tuya patterns.
  * Uses the full index to match any known manufacturerName or productId found in text.
  * @param {string} text - raw text to scan
  * @param {Set} [allMfrs] - optional set of all known manufacturerNames from buildFullIndex

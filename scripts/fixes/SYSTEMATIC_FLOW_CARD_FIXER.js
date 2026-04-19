@@ -80,4 +80,4 @@ walk(DRIVERS_DIR, (filePath) => {
   }
 });
 
-console.log(`\n✅ Systematic fix complete. Fixed ${fixedDrivers} drivers.`);
+console.log(`\n Systematic fix complete. Fixed ${fixedDrivers} drivers.`);

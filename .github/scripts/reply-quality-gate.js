@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-// v5.11.28: Reply Quality Gate — validates bot replies before posting
+// v5.11.28: Reply Quality Gate  validates bot replies before posting
 // Prevents: HOBEIAN bug (not found for supported), wrong driver names, missed FPs, truncated FP misses
 const fs=require('fs'),path=require('path');
 const{buildFullIndex,extractAllFP,fuzzyMatchFPs}=require('./load-fingerprints');
@@ -38,7 +38,7 @@ function validateReply(replyText, originalPostText) {
   const validDrivers = new Set(fs.readdirSync(DDIR).filter(d => fs.existsSync(path.join(DDIR, d, 'driver.compose.json'))));
   for (const match of driverMentions) {
     const name = match.replace(/.*["'`]/, '').replace(/["'`].*/, '').trim().toLowerCase();
-    // Fuzzy check — allow partial matches
+    // Fuzzy check  allow partial matches
     const found = [...validDrivers].some(d => d.includes(name) || name.includes(d));
     if (!found && name.length > 3) {
       warnings.push(`SUSPICIOUS: Mentioned driver "${name}" not found in ${validDrivers.size} drivers`);
@@ -81,7 +81,7 @@ function validateReply(replyText, originalPostText) {
       const extSet = new Set(extData.allDevices.map(d => d.fp));
       for (const m of notFoundFPs) {
         if (extSet.has(m)) {
-          warnings.push(`EXTERNAL: \`${m}\` found in Z2M/ZHA/deCONZ — reply should mention it's on the radar`);
+          warnings.push(`EXTERNAL: \`${m}\` found in Z2M/ZHA/deCONZ  reply should mention it's on the radar`);
         }
       }
     }
@@ -91,7 +91,7 @@ function validateReply(replyText, originalPostText) {
   const bannedTerms = /\b(?:AI|LLM|GPT|bot|auto[- ]?respond|automation|pipeline|workflow|cron|GitHub Actions?|SPA|single[- ]page|data[- ]?query|algorithm|ensemble|machine.learning|neural|NLP|scraping|fork.integrat|language.model|artificial.intelligence|Discourse API|API key|OAuth|IMAP|token.rotation)\b/gi;
   const leaks = replyText.match(bannedTerms) || [];
   for (const leak of [...new Set(leaks.map(l => l.toLowerCase()))]) {
-    warnings.push(`LEAK: Reply contains banned internal term "${leak}" — will be stripped`);
+    warnings.push(`LEAK: Reply contains banned internal term "${leak}"  will be stripped`);
   }
 
   // 6. Auto-correct if warnings found
@@ -113,7 +113,7 @@ function validateReply(replyText, originalPostText) {
       const hasMultiDriver = supported.some(s => s.drivers.length > 1);
       if (supported.length === 1) {
         const s = supported[0];
-        parts.push(s.fp + ' is already in the app — pair it as **' + s.drivers[0] + '**' + (s.drivers.length > 1 ? ' (or ' + s.drivers.slice(1).join(', ') + ' depending on productId)' : '') + '.');
+        parts.push(s.fp + ' is already in the app  pair it as **' + s.drivers[0] + '**' + (s.drivers.length > 1 ? ' (or ' + s.drivers.slice(1).join(', ') + ' depending on productId)' : '') + '.');
       } else if (supported.length > 1) {
         const items = supported.map(s => s.fp + ' (' + s.drivers.join('/') + ')');
         parts.push('Those are already in the app: ' + items.join(', ') + '.');
@@ -121,7 +121,7 @@ function validateReply(replyText, originalPostText) {
       if (hasMultiDriver) parts.push('The correct driver depends on the productId (TS0001, TS0002, etc).');
       if (fuzzySupported.length) {
         const items = fuzzySupported.map(s => s.from + ' looks like ' + s.fp + ' which is under ' + s.drivers[0]);
-        parts.push(items.join('; ') + ' — might be a typo in the fingerprint.');
+        parts.push(items.join('; ') + '  might be a typo in the fingerprint.');
       }
       parts.push('Just remove and re-pair, make sure you pick the right device type.');
       corrected = parts.join(' ');
@@ -153,7 +153,7 @@ if (require.main === module) {
   console.log('Index:', result.stats.mfrs, 'mfrs,', result.stats.pids, 'pids');
   if (result.warnings.length) {
     console.log('\nWarnings:');
-    for (const w of result.warnings) console.log('  ⚠', w);
+    for (const w of result.warnings) console.log('  ', w);
   }
   if (result.corrected) {
     console.log('\nSuggested correction:\n---');

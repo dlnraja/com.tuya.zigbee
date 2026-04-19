@@ -5,7 +5,7 @@ const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔄 RESTAURATION COMPLÈTE + VÉRIFICATION CONFLITS RÉELS\n');
+console.log(' RESTAURATION COMPLÈTE + VÉRIFICATION CONFLITS RÉELS\n');
 
 const ROOT = path.join(__dirname, '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -71,7 +71,7 @@ function restoreDriver(driverName) {
         manufacturerNames: backupManuNames
       });
 
-      console.log(`   ✅ ${driverName}: ${currentManuNames.length} → ${backupManuNames.length} (+${restored})`);
+      console.log(`    ${driverName}: ${currentManuNames.length}  ${backupManuNames.length} (+${restored})`);
 
       return {
         driver: driverName,
@@ -87,7 +87,7 @@ function restoreDriver(driverName) {
     };
 
   } catch (e) {
-    console.error(`   ❌ ${driverName}:`, e.message);
+    console.error(`    ${driverName}:`, e.message);
     return null;
   }
 }
@@ -96,7 +96,7 @@ function restoreDriver(driverName) {
  * Vérifier les VRAIS conflits (manufacturerName + productId identiques)
  */
 function verifyRealConflicts(allDrivers) {
-  console.log('\n\n🔍 VÉRIFICATION CONFLITS RÉELS (manufacturerName + productId identiques)...\n');
+  console.log('\n\n VÉRIFICATION CONFLITS RÉELS (manufacturerName + productId identiques)...\n');
 
   // Map: "manufacturerName|productId" -> [drivers]
   const pairMap = new Map();
@@ -181,7 +181,7 @@ function verifyRealConflicts(allDrivers) {
 }
 
 // EXÉCUTION
-console.log('📂 Scanning tous les drivers...\n');
+console.log(' Scanning tous les drivers...\n');
 
 const drivers = fs.readdirSync(DRIVERS_DIR);
 const allDrivers = [];
@@ -198,7 +198,7 @@ drivers.forEach(driverName => {
   }
 });
 
-console.log('\n\n📊 RAPPORT RESTAURATION:\n');
+console.log('\n\n RAPPORT RESTAURATION:\n');
 console.log(`   Drivers analysés: ${stats.driversAnalyzed}`);
 console.log(`   Fichiers restaurés: ${stats.filesRestored}`);
 console.log(`   Manufacturer names restaurés: ${stats.totalNamesRestored}`);
@@ -208,7 +208,7 @@ console.log(`   Backups créés: ${stats.backupsCreated}\n`);
 const verification = verifyRealConflicts(allDrivers);
 
 // TOP DRIVERS PAR TAUX LÉGITIME
-console.log('📊 TOP DRIVERS PAR TAUX PARTAGE LÉGITIME:\n');
+console.log(' TOP DRIVERS PAR TAUX PARTAGE LÉGITIME:\n');
 
 const sortedStats = Array.from(verification.driverStats.entries())
   .sort((a, b) => b[1].totalPairs - a[1].totalPairs)
@@ -225,10 +225,10 @@ sortedStats.forEach(([driver, stats]) => {
 });
 
 // CONFLITS RÉELS
-console.log('\n\n🔴 CONFLITS RÉELS (manufacturerName + productId identiques):\n');
+console.log('\n\n CONFLITS RÉELS (manufacturerName + productId identiques):\n');
 
 if (verification.realConflicts.length === 0) {
-  console.log('   ✅ AUCUN CONFLIT RÉEL DÉTECTÉ!\n');
+  console.log('    AUCUN CONFLIT RÉEL DÉTECTÉ!\n');
   console.log('   Tous les partages de manufacturerName sont LÉGITIMES');
   console.log('   (productIds différents pour chaque driver)\n');
 } else {
@@ -238,7 +238,7 @@ if (verification.realConflicts.length === 0) {
     .sort((a, b) => b.count - a.count)
     .slice(0, 30)
     .forEach(conflict => {
-      console.log(`   🔴 ${conflict.manufacturerName} + ${conflict.productId}:`);
+      console.log(`    ${conflict.manufacturerName} + ${conflict.productId}:`);
       console.log(`      Partagé par ${conflict.count} drivers: ${conflict.drivers.join(', ')}`);
       console.log();
     });
@@ -255,9 +255,9 @@ fs.writeFileSync(analysisFile, JSON.stringify({
   }))
 }, null, 2), 'utf8');
 
-console.log(`✅ Analyse sauvegardée: ${analysisFile}\n`);
+console.log(` Analyse sauvegardée: ${analysisFile}\n`);
 
-console.log('🎯 CONCLUSION:');
+console.log(' CONCLUSION:');
 console.log(`   Manufacturer names restaurés: ${stats.totalNamesRestored}`);
 console.log(`   Conflits réels: ${verification.realConflicts.length}`);
 console.log(`   Taux partage légitime moyen: ${

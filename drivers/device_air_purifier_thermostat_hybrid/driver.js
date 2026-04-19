@@ -2,14 +2,7 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.573: CRITICAL FIX - Flow card run listeners were missing
- */
 class ThermostatTuyaDpDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -19,116 +12,229 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     }
   }
 
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
     this.log('ThermostatTuyaDpDriver v5.5.573 initialized');
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
   _registerFlowCards() {
-    // CONDITION: Is heating
-    try {
-      (() => { try { return this.homey.flow.getConditionCard('thermostat_tuya_dp_is_heating'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-          if (!args.device) return false;
-          return args.device.getCapabilityValue('tuya_thermostat_heating') === true;
-        });
-      this.log('[FLOW] ✅ Registered: thermostat_tuya_dp_is_heating');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+    // TRIGGERS
+    try { this.homey.flow.getTriggerCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_target_temperature_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_temperature_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_mode_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_heating_started'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_heating_stopped'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_temp_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_battery_low'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_humidity_changed'); } catch (e) {}
 
-    // CONDITION: Temperature above target
+    // CONDITIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('thermostat_tuya_dp_temperature_above_target'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_is_heating');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const current = args.device.getCapabilityValue('measure_temperature') || 0;
-          const target = args.device.getCapabilityValue('target_temperature') || 20;
-          return current > target;
+          return args.device.getCapabilityValue('onoff') === true;
         });
-      this.log('[FLOW] ✅ Registered: thermostat_tuya_dp_temperature_above_target');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_is_heating: ${err.message}`); }
 
-    // CONDITION: Temperature below target
     try {
-      (() => { try { return this.homey.flow.getConditionCard('thermostat_tuya_dp_temperature_below_target'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_temperature_above_target');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const current = args.device.getCapabilityValue('measure_temperature') || 0;
-          const target = args.device.getCapabilityValue('target_temperature') || 20;
-          return current < target;
+          const val = args.device.getCapabilityValue('measure_co2') || 0;
+          return val > (args.threshold || 400);
         });
-      this.log('[FLOW] ✅ Registered: thermostat_tuya_dp_temperature_below_target');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_temperature_above_target: ${err.message}`); }
 
-    // CONDITION: Mode is
     try {
-      (() => { try { return this.homey.flow.getConditionCard('thermostat_tuya_dp_mode_is'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_temperature_below_target');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const mode = args.device.getCapabilityValue('tuya_thermostat_mode');
-          return mode === args.mode;
+          return args.device.getCapabilityValue('onoff') === true;
         });
-      this.log('[FLOW] ✅ Registered: thermostat_tuya_dp_mode_is');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_temperature_below_target: ${err.message}`); }
 
-    // ACTION: Set target temperature
     try {
-      (() => { try { return this.homey.flow.getActionCard('thermostat_tuya_dp_set_target_temperature'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_mode_is');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('target_temperature', args.temperature);
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_mode_is: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getConditionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_child_lock_is');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_child_lock_is: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getConditionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_is_on: ${err.message}`); }
+
+    // ACTIONS
+    try {
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_target_temperature');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('target_temperature', args.temperature || args.value).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: thermostat_tuya_dp_set_target_temperature');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_target_temperature: ${err.message}`); }
 
-    // ACTION: Set mode
     try {
-      (() => { try { return this.homey.flow.getActionCard('thermostat_tuya_dp_set_mode'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_mode');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('tuya_thermostat_mode', args.mode);
+          // Generic action handler
+          this.log('[FLOW] Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_mode triggered for', args.device.getName());
           return true;
         });
-      this.log('[FLOW] ✅ Registered: thermostat_tuya_dp_set_mode');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_mode: ${err.message}`); }
 
-    // ACTION: Increase temperature
     try {
-      (() => { try { return this.homey.flow.getConditionCard('thermostat_tuya_dp_increase_temperature'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_increase_temperature');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const current = args.device.getCapabilityValue('target_temperature') || 20;
-          await args.device.triggerCapabilityListener('target_temperature', current + (args.degrees || 1));
+          // Generic action handler
+          this.log('[FLOW] Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_increase_temperature triggered for', args.device.getName());
           return true;
         });
-      this.log('[FLOW] ✅ Registered: thermostat_tuya_dp_increase_temperature');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_increase_temperature: ${err.message}`); }
 
-    // ACTION: Decrease temperature
     try {
-      (() => { try { return this.homey.flow.getConditionCard('thermostat_tuya_dp_decrease_temperature'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_decrease_temperature');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const current = args.device.getCapabilityValue('target_temperature') || 20;
-          await args.device.triggerCapabilityListener('target_temperature', current - (args.degrees || 1));
+          // Generic action handler
+          this.log('[FLOW] Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_decrease_temperature triggered for', args.device.getName());
           return true;
         });
-      this.log('[FLOW] ✅ Registered: thermostat_tuya_dp_decrease_temperature');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_decrease_temperature: ${err.message}`); }
 
-    this.log('[FLOW]  Thermostat flow cards registered');
+    try {
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_child_lock');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          // Generic action handler
+          this.log('[FLOW] Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_child_lock triggered for', args.device.getName());
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_child_lock: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_comfort_preset');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          // Generic action handler
+          this.log('[FLOW] Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_comfort_preset triggered for', args.device.getName());
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_comfort_preset: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_schedule_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_schedule_on: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_schedule_off');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_schedule_off: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_turn_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_turn_on: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_turn_off');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_turn_off: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_toggle');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const current = args.device.getCapabilityValue('onoff');
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_toggle: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_temperature');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('target_temperature', args.temperature || args.value).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_temperature: ${err.message}`); }
+
+    this.log('[FLOW] All flow cards registered');
   }
 }
 

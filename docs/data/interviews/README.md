@@ -52,4 +52,4 @@ Example: `TS0044__TZ3000_zgyzgdua.json`
 
 ## Last Updated
 
-2026-02-05 (v5.8.30) — full forum scan + code verification
+2026-02-05 (v5.8.30)  full forum scan + code verification

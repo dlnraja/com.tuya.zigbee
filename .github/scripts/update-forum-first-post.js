@@ -74,12 +74,12 @@ function buildPost(stats,changelog,ghSummary){
   const date=new Date().toISOString().split('T')[0];
   const cats=getDriverSummary();
   const hist=getChangelogHistory(5);
-  const ico={socket:'🔌',light:'💡',sensor:'📡',thermostat:'🌡️',windowcoverings:'🪟',lock:'🔐',fan:'🌀',doorbell:'🔔',remote:'🎮',button:'🔘',other:'📦',homealarm:'🚨',heater:'🔥',garagedoor:'🚗'};
+  const ico={socket:'',light:'',sensor:'',thermostat:'',windowcoverings:'',lock:'',fan:'',doorbell:'',remote:'',button:'',other:'',homealarm:'',heater:'',garagedoor:''};
   const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
   let md='';
-  md+='# 🏠 Universal Tuya Unified Engine v'+stats.version+'\n\n';
+  md+='#  Universal Tuya Unified Engine v'+stats.version+'\n\n';
   md+='> **'+stats.drivers+' drivers** · **'+stats.fps+'+ fingerprints** · Updated '+date+'\n\n';
-  md+='Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.\n\n';
+  md+='Local-first Zigbee control for Tuya devices on Homey Pro  the most comprehensive Tuya app available.\n\n';
   md+='## Install\n\n';
   md+='**Stable:** [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/) · **Test:** [Test Channel](https:
   md+='## What\'s New (v'+stats.version+')\n\n';
@@ -89,17 +89,17 @@ function buildPost(stats,changelog,ghSummary){
   const ord=['socket','light','sensor','thermostat','windowcoverings','lock','fan','doorbell','remote','button','homealarm','heater','garagedoor','other'];
   const all=[...new Set([...ord,...Object.keys(cats)])];
   md+='| Category | Drivers | FPs |\n|---|---|---|\n';
-  for(const c of all){if(!cats[c]||cats[c].fp<1)continue;md+='| '+(ico[c]||'📦')+' '+cap(c)+' | '+cats[c].n+' | '+cats[c].fp+' |\n';}
-  md+='\n[Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) — search by fingerprint\n';
+  for(const c of all){if(!cats[c]||cats[c].fp<1)continue;md+='| '+(ico[c]||'')+' '+cap(c)+' | '+cats[c].n+' | '+cats[c].fp+' |\n';}
+  md+='\n[Device Finder](https://dlnraja.github.io/com.tuya.zigbee/)  search by fingerprint\n';
 
   md+='\n## Features\n\n';
   md+='- **Tuya DP protocol** (CLUSTERS.TUYA_EF00/TS0601) + **Standard ZCL** clusters\n';
   md+='- Physical button detection · Virtual buttons · LED backlight control\n';
-  md+='- Energy monitoring (W/V/A) · Air quality sensors (CO₂/VOC/PM2.5/HCHO)\n';
+  md+='- Energy monitoring (W/V/A) · Air quality sensors (CO/VOC/PM2.5/HCHO)\n';
   md+='- Covers & curtains with tilt · TRVs · Dimmers · IR blasters\n';
   md+='- Auto-configured settings · Diagnostic reports\n\n';
 
-  // Changelog history (collapsible) — skip current version explicitly
+  // Changelog history (collapsible)  skip current version explicitly
   const prevHist=hist.filter(h=>h.v!==stats.version);
   if(prevHist.length){
     md+='## Changelog\n\n';
@@ -109,13 +109,13 @@ function buildPost(stats,changelog,ghSummary){
   }
 
   md+='## Report a Bug\n\n';
-  md+='Open a [GitHub Issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new) — please include your `_TZxxxx` fingerprint and `TSxxxx` model ID.\n\n';
+  md+='Open a [GitHub Issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new)  please include your `_TZxxxx` fingerprint and `TSxxxx` model ID.\n\n';
 
-  md+='## ☕ Support the Project\n\n';
+  md+='##  Support the Project\n\n';
   md+='This app is free and open-source. If it\'s useful to you, a small donation helps keep it going:\n\n';
   md+='**PayPal:** [paypal.me/dlnraja](https://paypal.me/dlnraja) · **Revolut:** [revolut.me/dylanoul](https:
 
-  md+='---\n*Last updated '+date+' — [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*\n';
+  md+='---\n*Last updated '+date+'  [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*\n';
   return md;
 }
 
@@ -159,8 +159,8 @@ async function main(){
   const prev=path.join(ROOT,'.github','state','forum-first-post-preview.md');
   try{fs.writeFileSync(prev,content);}catch{}
   console.log('Generated post:',content.length,'chars');
-  // v5.12.0: Safeguard — compact format should be under 4000 chars
-  if(content.length>4000)console.warn('⚠️ First post is '+content.length+' chars — should be under 4000 (compact format)');
+  // v5.12.0: Safeguard  compact format should be under 4000 chars
+  if(content.length>4000)console.warn(' First post is '+content.length+' chars  should be under 4000 (compact format)');
 
   if(DRY){
     console.log('[DRY RUN] Would update first post of topic',TOPIC);
@@ -172,7 +172,7 @@ async function main(){
   }
 
   const auth=await getForumAuth();
-  if(!auth){console.error('No auth — need HOMEY_EMAIL/HOMEY_PASSWORD or HOMEY_EMAIL');process.exit(0);}
+  if(!auth){console.error('No auth  need HOMEY_EMAIL/HOMEY_PASSWORD or HOMEY_EMAIL');process.exit(0);}
 
   const postId=await getFirstPostId(auth);
   console.log('First post ID:',postId);

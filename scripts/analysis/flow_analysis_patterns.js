@@ -35,7 +35,7 @@ class FlowAnalyzer {
    * Analyse tous les fichiers de flow cards
    */
   async analyzeAllFlows() {
-    console.log('🔍 ANALYZING ALL FLOW CARDS...');
+    console.log(' ANALYZING ALL FLOW CARDS...');
 
     const drivers = fs.readdirSync(this.driversPath);
 
@@ -88,7 +88,7 @@ class FlowAnalyzer {
       this.report.totalFlows += analysis.triggers.length + analysis.conditions.length + analysis.actions.length;
 
     } catch (error) {
-      console.log(`⚠️ Error analyzing ${flowPath}: ${error.message}`);
+      console.log(` Error analyzing ${flowPath}: ${error.message}`);
     }
   }
 
@@ -150,7 +150,7 @@ class FlowAnalyzer {
    * Génère les optimisations et fusions possibles
    */
   generateOptimizations() {
-    console.log('🔧 GENERATING OPTIMIZATIONS...');
+    console.log(' GENERATING OPTIMIZATIONS...');
 
     // Optimiser les switches
     this.optimizeSwitchFlows();
@@ -305,20 +305,20 @@ class FlowAnalyzer {
    * Génère le rapport final
    */
   generateReport() {
-    console.log('\n📊 FLOW ANALYSIS REPORT:');
-    console.log('═'.repeat(60));
+    console.log('\n FLOW ANALYSIS REPORT:');
+    console.log(''.repeat(60));
     console.log(`Total flows analyzed: ${this.report.totalFlows}`);
     console.log(`Duplicate flows found: ${this.report.duplicateFlows}`);
     console.log(`Inconsistent IDs: ${this.report.inconsistentIds}`);
     console.log(`Optimization opportunities: ${this.report.optimizationOpportunities}`);
 
-    console.log('\n🔍 PATTERNS DETECTED:');
+    console.log('\n PATTERNS DETECTED:');
     console.log(`- Switches: ${this.patterns.switches.size} drivers`);
     console.log(`- Buttons: ${this.patterns.buttons.size} drivers`);
     console.log(`- Sensors: ${this.patterns.sensors.size} drivers`);
     console.log(`- Lights: ${this.patterns.lights.size} drivers`);
 
-    console.log('\n⚠️ INCONSISTENCIES:');
+    console.log('\n INCONSISTENCIES:');
     this.patterns.inconsistencies.slice(0, 10).forEach((issue, index) => {
       console.log(`${index + 1}. ${issue.driver}: ${issue.issue} - ${issue.flowId}`);
     });
@@ -327,7 +327,7 @@ class FlowAnalyzer {
       console.log(`... and ${this.patterns.inconsistencies.length - 10} more issues`);
     }
 
-    console.log('\n🚀 OPTIMIZATION RECOMMENDATIONS:');
+    console.log('\n OPTIMIZATION RECOMMENDATIONS:');
     this.patterns.optimizations.slice(0, 5).forEach((opt, index) => {
       console.log(`${index + 1}. ${opt.type}: ${opt.count} duplicates in ${opt.category}`);
       console.log(`   Recommendation: ${opt.recommendation}`);
@@ -355,7 +355,7 @@ class FlowAnalyzer {
     };
 
     fs.writeFileSync('flow_analysis_report.json', JSON.stringify(detailedReport, null, 2));
-    console.log('\n💾 Detailed report saved: flow_analysis_report.json');
+    console.log('\n Detailed report saved: flow_analysis_report.json');
   }
 }
 

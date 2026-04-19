@@ -2,7 +2,7 @@
 'use strict';
 const { safeParse } = require('../../lib/utils / tuyaUtils.js');
 
-// v5.11.27: Gather Intelligence — collects ALL state data into a structured context
+// v5.11.27: Gather Intelligence  collects ALL state data into a structured context
 // for the forum responder's ONE reply. Includes: external sources, forks, PRs, issues,
 // interviews, enrichment, pattern detection, GitHub activity, image analysis results.
 const fs=require('fs'),path=require('path');
@@ -173,7 +173,7 @@ function gatherAll(){
 
 /**
  * Format intelligence into a concise context string for the AI prompt.
- * Max ~3000 chars — 16 sources cross-referenced.
+ * Max ~3000 chars  16 sources cross-referenced.
  */
 function formatForAI(ctx){
   let s='## INTELLIGENCE CONTEXT (cross-referenced device data)\n\n';

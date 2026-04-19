@@ -3,22 +3,22 @@ const fs = require('fs');
 // Create comprehensive summary document
 const summary = `# v6.0 Comprehensive Update Summary
 
-## 🎯 Objectives Completed
+##  Objectives Completed
 
-### 1. Bidirectional Button System Analysis ✅
+### 1. Bidirectional Button System Analysis 
 
 **Ninjapacket Pattern Implementation**:
-- ✅ Virtual button state tracking with history (last 10 events)
-- ✅ Physical button detection with deduplication (1.5s window)
-- ✅ Per-gang state management
-- ✅ Prevents double-triggers between app and physical presses
+-  Virtual button state tracking with history (last 10 events)
+-  Physical button detection with deduplication (1.5s window)
+-  Per-gang state management
+-  Prevents double-triggers between app and physical presses
 
 **Files Enhanced**:
 - \`lib/mixins/VirtualButtonMixin.js\` - v5.5.999 packetninja pattern
 - \`lib/mixins/PhysicalButtonMixin.js\` - v5.12.5 scene mode support
 - \`lib/devices/ButtonDevice.js\` - Comprehensive button device base
 
-### 2. Scene Mode Research & Implementation ✅
+### 2. Scene Mode Research & Implementation 
 
 **Research Sources**:
 - Zigbee2MQTT #7158 - TS004F dimmer vs scene mode
@@ -37,18 +37,18 @@ const summary = `# v6.0 Comprehensive Update Summary
 - E000 cluster detection (skip scene mode for those)
 - Scene flow cards: \`{driver}_gang{N}_scene\`
 
-### 3. GitHub Actions Intelligence ✅
+### 3. GitHub Actions Intelligence 
 
 **Enhanced Bot Behavior**:
-- ✅ Owner detection: Skip auto-triage when dlnraja posts
-- ✅ Symptom detection: Improved keyword scanning (title + body)
-- ✅ Smart closure: Only auto-close when ALL fingerprints supported
+-  Owner detection: Skip auto-triage when dlnraja posts
+-  Symptom detection: Improved keyword scanning (title + body)
+-  Smart closure: Only auto-close when ALL fingerprints supported
 
 **Files Modified**:
 - \`.github/scripts/triage-run.js\` - Added \`isOwnerPost()\` function
 - \`.github/scripts/triage-upstream-enhanced.js\` - Same enhancement
 
-### 4. Critical Bug Fixes ✅
+### 4. Critical Bug Fixes 
 
 **Forum Issue #1661: "Driver Not Initialized: switch_2gang"**
 
@@ -82,7 +82,7 @@ async onNodeInit({ zclNode }) {
 - \`drivers/switch_3gang/device.js\`
 - \`drivers/switch_4gang/device.js\`
 
-### 5. DP Mapping Analysis ✅
+### 5. DP Mapping Analysis 
 
 **Database Generated**: \`dp-full-analysis.json\`
 
@@ -100,7 +100,7 @@ async onNodeInit({ zclNode }) {
 
 **Existing Solution**: \`UniversalVariantManager.js\` already handles dynamic capability detection
 
-### 6. Documentation Created ✅
+### 6. Documentation Created 
 
 1. **BIDIRECTIONAL_BUTTONS.md** - Complete guide:
    - Architecture overview
@@ -121,7 +121,7 @@ async onNodeInit({ zclNode }) {
 
 3. **ENDPOINTS.md** (existing) - Verified still accurate
 
-## 📊 Statistics
+##  Statistics
 
 - **Drivers Fixed**: 3 (switch_2gang/3gang/4gang)
 - **GitHub Actions Enhanced**: 2 (triage-run.js, triage-upstream-enhanced.js)
@@ -133,18 +133,18 @@ async onNodeInit({ zclNode }) {
   - 302aab979f: GitHub actions owner detection
   - 86b88eb2cd: Multi-gang error recovery + documentation
 
-## 🔍 Forum Analysis
+##  Forum Analysis
 
 **Latest Thread Messages Reviewed**:
-- #1661: TZ3000_jl7qyupf switch_2gang "Driver Not Initialized" → **FIXED**
-- #1655: Soil sensor pairing issue → Already handled in earlier work
-- #1652: BSEED 1-gang pairing → Related to endpoint work
+- #1661: TZ3000_jl7qyupf switch_2gang "Driver Not Initialized"  **FIXED**
+- #1655: Soil sensor pairing issue  Already handled in earlier work
+- #1652: BSEED 1-gang pairing  Related to endpoint work
 
-## 🚀 Key Improvements
+##  Key Improvements
 
 ### Multi-Protocol Intelligence
 - Hybrid switches now detect protocol automatically
-- Fallback chain: ZCL → Tuya DP → Direct set
+- Fallback chain: ZCL  Tuya DP  Direct set
 - ProtocolAutoOptimizer makes runtime decisions
 
 ### Error Recovery Pattern
@@ -157,16 +157,16 @@ async onNodeInit({ zclNode }) {
 - Registry profiles override default DP mappings
 - Dynamic capability detection for unknown variants
 
-## 🎯 Production Ready
+##  Production Ready
 
 All changes tested against:
-- ✅ Multi-gang switches (2/3/4 gang)
-- ✅ Scene mode buttons (TS004F/TS0044)
-- ✅ Hybrid protocols (ZCL + Tuya DP)
-- ✅ GitHub bot behavior (owner detection)
-- ✅ Error recovery (partial failures)
+-  Multi-gang switches (2/3/4 gang)
+-  Scene mode buttons (TS004F/TS0044)
+-  Hybrid protocols (ZCL + Tuya DP)
+-  GitHub bot behavior (owner detection)
+-  Error recovery (partial failures)
 
-## 📝 Recommendations for Users
+##  Recommendations for Users
 
 ### If switch shows "Driver Not Initialized":
 1. Update to latest test version
@@ -184,7 +184,7 @@ All changes tested against:
 - Requires both title AND body keyword scan
 - More intelligent symptom detection
 
-## 🔗 References
+##  References
 
 - Z2M TS004F: https://github.com/Koenkk/zigbee2mqtt/discussions/7158
 - ZHA Scene Mode: https://github.com/zigpy/zha-device-handlers/issues/1372
@@ -200,4 +200,4 @@ All changes tested against:
 `;
 
 fs.writeFileSync('docs/V6_COMPREHENSIVE_UPDATE.md', summary);
-console.log('✅ Created comprehensive update summary');
+console.log(' Created comprehensive update summary');

@@ -11,7 +11,7 @@ if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 const Z2M_BASE = 'https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices';
 const SOURCES = ['tuya', 'sonoff', 'danfoss', 'schneider_electric', 'legrand', 'bosch', 'ikea', 'lumi', 'niko', 'philips'];
 
-// ── HTTP GET ───────────────────────────────────────────────────────────────
+//  HTTP GET 
 function httpGet(url) {
   return new Promise((resolve, reject) => {
     https.get(url, { timeout: 60000 }, (res) => {
@@ -23,7 +23,7 @@ function httpGet(url) {
   });
 }
 
-// ── Load local fingerprints from all driver.compose.json ───────────────────
+//  Load local fingerprints from all driver.compose.json 
 function getLocalFingerprints() {
   const mfrs = new Set();
   const pids = new Set();
@@ -45,7 +45,7 @@ function getLocalFingerprints() {
   return { mfrs, pids, driverMap };
 }
 
-// ── Extract fingerprints from Z2M TypeScript source ────────────────────────
+//  Extract fingerprints from Z2M TypeScript source 
 function extractFromZ2M(source, sourceName) {
   const results = [];
 
@@ -70,7 +70,7 @@ function extractFromZ2M(source, sourceName) {
   return results;
 }
 
-// ── Infer which driver a fingerprint should go to ──────────────────────────
+//  Infer which driver a fingerprint should go to 
 function inferDriver(mfr, pid) {
   const p = (pid || '').toUpperCase();
   const ml = (mfr || '').toLowerCase();
@@ -127,7 +127,7 @@ function inferDriver(mfr, pid) {
   return 'generic_diy';
 }
 
-// ── MAIN ───────────────────────────────────────────────────────────────────
+//  MAIN 
 async function main() {
   console.log('=== Z2M Fingerprint Sync v5.9.0 ===\n');
 

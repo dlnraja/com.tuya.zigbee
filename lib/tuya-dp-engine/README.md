@@ -1,10 +1,10 @@
-# 🔧 Tuya DP Engine
+#  Tuya DP Engine
 
 **Universal Data Point interpretation engine for Tuya Zigbee devices**
 
 ---
 
-## 🎯 Purpose
+##  Purpose
 
 The Tuya DP Engine is a **centralized, reusable system** for interpreting Tuya device Data Points (DPs) and mapping them to Homey capabilities.
 
@@ -17,38 +17,38 @@ The Tuya DP Engine is a **centralized, reusable system** for interpreting Tuya d
 **Solution:**
 - **One engine** interprets all DPs
 - **Profiles** define device capabilities
-- **Converters** handle DP ↔ Homey value transformation
+- **Converters** handle DP  Homey value transformation
 - **Drivers** are reduced to declarative configuration
 
 ---
 
-## 📁 Architecture
+##  Architecture
 
 ```
 lib/tuya-dp-engine/
-├── README.md                    # This file
-├── index.js                     # Main engine entry point
-├── fingerprints.json            # Device identification
-├── profiles.json                # Capability profiles
-├── capability-map.json          # DP → Capability mapping
-├── converters/                  # Value transformation
-│   ├── onoff.js
-│   ├── dim.js
-│   ├── temperature.js
-│   ├── humidity.js
-│   ├── cover.js
-│   ├── thermostat.js
-│   └── ...
-└── traits/                      # Reusable mixins
-    ├── OnOffTrait.js
-    ├── DimmingTrait.js
-    ├── TemperatureTrait.js
-    └── ...
+ README.md                    # This file
+ index.js                     # Main engine entry point
+ fingerprints.json            # Device identification
+ profiles.json                # Capability profiles
+ capability-map.json          # DP  Capability mapping
+ converters/                  # Value transformation
+    onoff.js
+    dim.js
+    temperature.js
+    humidity.js
+    cover.js
+    thermostat.js
+    ...
+ traits/                      # Reusable mixins
+     OnOffTrait.js
+     DimmingTrait.js
+     TemperatureTrait.js
+     ...
 ```
 
 ---
 
-## 🔍 How It Works
+##  How It Works
 
 ### 1. Device Fingerprinting
 ```json
@@ -133,7 +133,7 @@ class SmartPlugDevice extends Homey.Device {
 
 ---
 
-## 📋 Data Point Types
+##  Data Point Types
 
 ### Standard Tuya DP Types
 ```javascript
@@ -160,7 +160,7 @@ DP_TYPE_BITMAP  = 0x05  // Bitmap (flags)
 
 ---
 
-## 🎨 Traits System
+##  Traits System
 
 Traits are **reusable capability mixins** that add common functionality.
 
@@ -210,7 +210,7 @@ module.exports = class OnOffTrait {
 
 ---
 
-## 🔄 Converter Examples
+##  Converter Examples
 
 ### Temperature Converter
 ```javascript
@@ -268,7 +268,7 @@ module.exports = {
 
 ---
 
-## 📊 Profile Examples
+##  Profile Examples
 
 ### Smart Plug with Energy
 ```json
@@ -353,30 +353,30 @@ module.exports = {
 
 ---
 
-## 🚀 Benefits
+##  Benefits
 
 ### For Developers
-✅ **No duplication** - Write converter once, use everywhere  
-✅ **Declarative drivers** - Just config, no logic  
-✅ **Easy additions** - New device = add profile JSON  
-✅ **Testable** - Converters are pure functions  
-✅ **Maintainable** - Fix bug once, fixes all drivers  
+ **No duplication** - Write converter once, use everywhere  
+ **Declarative drivers** - Just config, no logic  
+ **Easy additions** - New device = add profile JSON  
+ **Testable** - Converters are pure functions  
+ **Maintainable** - Fix bug once, fixes all drivers  
 
 ### For Users
-✅ **More devices** - Faster device support  
-✅ **Consistency** - Same behavior across devices  
-✅ **Reliability** - Centralized, tested code  
-✅ **Updates** - Fixes benefit all devices  
+ **More devices** - Faster device support  
+ **Consistency** - Same behavior across devices  
+ **Reliability** - Centralized, tested code  
+ **Updates** - Fixes benefit all devices  
 
 ### For Project
-✅ **Scalable** - 183 → 500+ drivers without explosion  
-✅ **Professional** - Industry-standard architecture  
-✅ **Portable** - Profiles can export to HA/Z2M  
-✅ **Community** - PRs add profiles, not code  
+ **Scalable** - 183  500+ drivers without explosion  
+ **Professional** - Industry-standard architecture  
+ **Portable** - Profiles can export to HA/Z2M  
+ **Community** - PRs add profiles, not code  
 
 ---
 
-## 📈 Implementation Roadmap
+##  Implementation Roadmap
 
 ### Phase 1: Foundation (Week 1-2)
 - [x] Create tuya-dp-engine structure
@@ -406,7 +406,7 @@ module.exports = {
 
 ---
 
-## 🔗 Related Documentation
+##  Related Documentation
 
 - [Capability Map Reference](./capability-map.json)
 - [Profiles Library](./profiles.json)
@@ -417,7 +417,7 @@ module.exports = {
 ---
 
 **Version:** 1.0.0  
-**Status:** 🚧 Under Development  
+**Status:**  Under Development  
 **Target:** v2.20.0 (Q1 2026)
 
-🎯 **Goal: Make adding Tuya devices as easy as adding a JSON profile!**
+ **Goal: Make adding Tuya devices as easy as adding a JSON profile!**

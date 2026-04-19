@@ -37,7 +37,7 @@ class DoorbellDevice extends UnifiedSensorBase {
 
     await super.onNodeInit({ zclNode });
     this._registerCapabilityListeners(); // rule-12a injected
-    this.log('[DOORBELL] ✅ Ready');
+    this.log('[DOORBELL]  Ready');
   }
 
 

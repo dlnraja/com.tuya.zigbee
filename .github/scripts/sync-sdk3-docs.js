@@ -56,7 +56,7 @@ Format strictly as JSON with keys: "deprecated_methods", "new_methods", "zigbee_
 
   fs.mkdirSync(path.dirname(OUTPUT_FILE), { recursive: true });
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(result, null, 2));
-  console.log('✅ SDK 3 Docs synchronized to', OUTPUT_FILE);
+  console.log(' SDK 3 Docs synchronized to', OUTPUT_FILE);
   
   // Also append core SDK rules back into gather-intelligence.js or .windsurfrules context
   if (analysis && analysis.deprecated_methods) {

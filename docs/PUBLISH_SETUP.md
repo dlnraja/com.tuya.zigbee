@@ -1,6 +1,6 @@
-# 🚀 Automated Publishing via GitHub Actions
+#  Automated Publishing via GitHub Actions
 
-## 📋 **OVERVIEW**
+##  **OVERVIEW**
 
 This repository is configured to **automatically publish** the Homey app to the App Store via GitHub Actions.
 
@@ -8,7 +8,7 @@ This repository is configured to **automatically publish** the Homey app to the 
 
 ---
 
-## 🔑 **SETUP REQUIRED**
+##  **SETUP REQUIRED**
 
 ### **1. Get Homey API Token**
 
@@ -33,7 +33,7 @@ Copy the token that is displayed.
 
 1. Go to https://my.homey.app/
 2. Login with your Athom account
-3. Go to Settings → API Tokens
+3. Go to Settings  API Tokens
 4. Create a new token with "App Publishing" permissions
 
 ---
@@ -42,7 +42,7 @@ Copy the token that is displayed.
 
 1. Go to your repository: https://github.com/dlnraja/com.tuya.zigbee
 2. Click **Settings** (top right)
-3. Click **Secrets and variables** → **Actions** (left sidebar)
+3. Click **Secrets and variables**  **Actions** (left sidebar)
 4. Click **New repository secret**
 5. Add the secret:
    - **Name:** `HOMEY_API_TOKEN`
@@ -51,11 +51,11 @@ Copy the token that is displayed.
 
 ---
 
-## 🚀 **HOW TO PUBLISH**
+##  **HOW TO PUBLISH**
 
 You have **3 ways** to trigger a publish:
 
-### **Method 1: Automatic on Tag Push** ⭐ RECOMMENDED
+### **Method 1: Automatic on Tag Push**  RECOMMENDED
 
 ```bash
 # 1. Update version in app.json
@@ -71,7 +71,7 @@ git push origin master
 git push origin v4.9.327
 ```
 
-✅ **The workflow will automatically:**
+ **The workflow will automatically:**
 - Validate the app
 - Run tests
 - Publish to Homey App Store
@@ -101,79 +101,79 @@ homey app publish
 
 ---
 
-## 📋 **PUBLISH CHECKLIST**
+##  **PUBLISH CHECKLIST**
 
 Before publishing, make sure:
 
-- [ ] ✅ Version bumped in `app.json`
-- [ ] ✅ CHANGELOG.md updated
-- [ ] ✅ All tests passing (`npm test`)
-- [ ] ✅ App validated (`npm run validate:publish`)
-- [ ] ✅ No lint errors (`npm run lint`)
-- [ ] ✅ Git committed and pushed
-- [ ] ✅ Tag created (for automatic publish)
+- [ ]  Version bumped in `app.json`
+- [ ]  CHANGELOG.md updated
+- [ ]  All tests passing (`npm test`)
+- [ ]  App validated (`npm run validate:publish`)
+- [ ]  No lint errors (`npm run lint`)
+- [ ]  Git committed and pushed
+- [ ]  Tag created (for automatic publish)
 
 ---
 
-## 🔄 **WORKFLOW PROCESS**
+##  **WORKFLOW PROCESS**
 
 When you push a tag (e.g., `v4.9.327`), the workflow will:
 
 ### **Step 1: Validate** (~3 min)
 ```yaml
-✓ Checkout code
-✓ Install dependencies
-✓ Run tests (mocha)
-✓ Validate for publish (homey app validate --level publish)
+ Checkout code
+ Install dependencies
+ Run tests (mocha)
+ Validate for publish (homey app validate --level publish)
 ```
 
 ### **Step 2: Publish** (~5 min)
 ```yaml
-✓ Checkout code
-✓ Install dependencies
-✓ Install Homey CLI
-✓ Authenticate with Homey
-✓ Validate app structure
-✓ Build app
-✓ Publish to Homey App Store
-✓ Create GitHub Release
+ Checkout code
+ Install dependencies
+ Install Homey CLI
+ Authenticate with Homey
+ Validate app structure
+ Build app
+ Publish to Homey App Store
+ Create GitHub Release
 ```
 
 ### **Step 3: Notify**
 ```yaml
-✓ Success notification (if published)
-✓ Failure notification (if failed)
+ Success notification (if published)
+ Failure notification (if failed)
 ```
 
 **Total time:** ~8-10 minutes
 
 ---
 
-## 📊 **EXPECTED OUTPUT**
+##  **EXPECTED OUTPUT**
 
-### **On Success ✅**
+### **On Success **
 
 ```
-✅ Publish to Homey App Store
-  ✓ validate / Validate App
-    ✓ Run tests
-    ✓ Validate for publish
-  ✓ publish / Publish to Homey
-    ✓ Authenticate with Homey
-    ✓ Validate app structure
-    ✓ Build app
-    ✓ Publish to Homey App Store
-    ✓ Create GitHub Release
-  ✓ notify / Notify
-    ✓ Success notification
+ Publish to Homey App Store
+   validate / Validate App
+     Run tests
+     Validate for publish
+   publish / Publish to Homey
+     Authenticate with Homey
+     Validate app structure
+     Build app
+     Publish to Homey App Store
+     Create GitHub Release
+   notify / Notify
+     Success notification
 
-✅ App published successfully!
-✅ Version: v4.9.327
-✅ Check: https://apps.homey.app/app/com.dlnraja.tuya.zigbee
-✅ GitHub Release created: https://github.com/dlnraja/com.tuya.zigbee/releases/tag/v4.9.327
+ App published successfully!
+ Version: v4.9.327
+ Check: https://apps.homey.app/app/com.dlnraja.tuya.zigbee
+ GitHub Release created: https://github.com/dlnraja/com.tuya.zigbee/releases/tag/v4.9.327
 ```
 
-### **On Failure ❌**
+### **On Failure **
 
 The workflow will stop at the first error and provide detailed logs.
 
@@ -200,7 +200,7 @@ The workflow will stop at the first error and provide detailed logs.
 
 ---
 
-## 🔧 **TROUBLESHOOTING**
+##  **TROUBLESHOOTING**
 
 ### **"Authentication failed"**
 
@@ -211,7 +211,7 @@ homey login
 homey token
 
 # Update GitHub secret with new token
-# Settings → Secrets → HOMEY_API_TOKEN → Update
+# Settings  Secrets  HOMEY_API_TOKEN  Update
 ```
 
 ### **"Validation failed"**
@@ -250,7 +250,7 @@ git push origin v4.9.328
 
 ---
 
-## 📝 **VERSION NAMING**
+##  **VERSION NAMING**
 
 Follow semantic versioning:
 
@@ -258,10 +258,10 @@ Follow semantic versioning:
 MAJOR.MINOR.PATCH
 
 4.9.327
-│ │  │
-│ │  └── Patch: Bug fixes, small changes
-│ └────── Minor: New features, backwards compatible
-└──────── Major: Breaking changes
+   
+    Patch: Bug fixes, small changes
+  Minor: New features, backwards compatible
+ Major: Breaking changes
 ```
 
 **Examples:**
@@ -271,7 +271,7 @@ MAJOR.MINOR.PATCH
 
 ---
 
-## 🎯 **BEST PRACTICES**
+##  **BEST PRACTICES**
 
 ### **Before Publishing:**
 
@@ -302,7 +302,7 @@ MAJOR.MINOR.PATCH
 
 5. **Monitor workflow:**
    - https://github.com/dlnraja/com.tuya.zigbee/actions
-   - Wait for ✅ success
+   - Wait for  success
    - Check Homey App Store
 
 ### **After Publishing:**
@@ -324,21 +324,21 @@ MAJOR.MINOR.PATCH
 
 ---
 
-## 🔐 **SECURITY**
+##  **SECURITY**
 
 ### **Never commit:**
-- ❌ `HOMEY_API_TOKEN` in code
-- ❌ Personal tokens in files
-- ❌ Credentials in workflow files
+-  `HOMEY_API_TOKEN` in code
+-  Personal tokens in files
+-  Credentials in workflow files
 
 ### **Always use:**
-- ✅ GitHub Secrets for tokens
-- ✅ Environment variables
-- ✅ `secrets.HOMEY_API_TOKEN` in workflows
+-  GitHub Secrets for tokens
+-  Environment variables
+-  `secrets.HOMEY_API_TOKEN` in workflows
 
 ---
 
-## 📚 **RESOURCES**
+##  **RESOURCES**
 
 - **Homey CLI Docs:** https://apps-sdk-v3.developer.homey.app/guide/
 - **GitHub Actions Docs:** https://docs.github.com/en/actions
@@ -347,14 +347,14 @@ MAJOR.MINOR.PATCH
 
 ---
 
-## ✅ **QUICK START**
+##  **QUICK START**
 
 ```bash
 # 1. Get token
 homey token
 
 # 2. Add to GitHub Secrets
-# Settings → Secrets → New secret
+# Settings  Secrets  New secret
 # Name: HOMEY_API_TOKEN
 # Value: (your token)
 
@@ -365,11 +365,11 @@ git push origin v4.9.327
 # 4. Monitor
 # https://github.com/dlnraja/com.tuya.zigbee/actions
 
-# 5. Done! 🎉
+# 5. Done! 
 ```
 
 ---
 
 **Created:** 2025-11-09  
 **Workflow:** `.github/workflows/publish.yml`  
-**Status:** ✅ Ready to use (after token setup)
+**Status:**  Ready to use (after token setup)

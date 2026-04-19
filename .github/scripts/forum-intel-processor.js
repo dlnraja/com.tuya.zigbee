@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-// Forum Intel Processor — reads forum-intel.json, matches missing FPs to Z2M device types,
+// Forum Intel Processor  reads forum-intel.json, matches missing FPs to Z2M device types,
 // auto-adds confirmed FPs to drivers, generates improvement report. NEVER posts to forum.
 const fs=require('fs'),path=require('path');
 let callAI;try{callAI=require('./ai-helper').callAI}catch{callAI=null}

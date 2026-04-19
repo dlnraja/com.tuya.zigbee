@@ -6,4 +6,4 @@ let content = fs.readFileSync(file, 'utf8');
 content = content.replace(/await execSync\(`gh issue close \${issue\.number} -R \${REPO} -r completed`\);/g, "// We never auto-close anymore. We wait for user confirmation.");
 
 fs.writeFileSync(file, content);
-console.log('✅ Disabled auto-close in triage-upstream-enhanced.js');
+console.log(' Disabled auto-close in triage-upstream-enhanced.js');

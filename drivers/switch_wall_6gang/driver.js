@@ -2,14 +2,7 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.587: Added flow card run listeners for all conditions and actions
- */
 class SwitchWall6GangDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -19,158 +12,452 @@ class SwitchWall6GangDriver extends ZigBeeDriver {
     }
   }
 
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     this.log('SwitchWall6GangDriver v5.5.587 initialized');
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
   _registerFlowCards() {
-    const gangs = [1, 2, 3, 4, 5, 6];
-    const capMap = { 1: 'onoff', 2: 'onoff.gang2', 3: 'onoff.gang3', 4: 'onoff.gang4', 5: 'onoff.gang5', 6: 'onoff.gang6' };
+    // TRIGGERS
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_gang1_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_gang1_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_gang2_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_gang2_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_gang3_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_gang3_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_gang4_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_gang4_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_gang5_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_gang5_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_gang6_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_gang6_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang1_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang1_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang1_single'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang1_double'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang1_triple'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang1_long_press'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang2_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang2_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang2_single'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang2_double'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang2_triple'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang2_long_press'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang3_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang3_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang3_single'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang3_double'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang3_triple'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang3_long_press'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang4_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang4_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang4_single'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang4_double'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang4_triple'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang4_long_press'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang5_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang5_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang5_single'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang5_double'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang5_triple'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang5_long_press'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang6_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang6_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang6_single'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang6_double'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang6_triple'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_physical_gang6_long_press'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_gang1_scene'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_gang2_scene'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_gang3_scene'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_gang4_scene'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_gang5_scene'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wall_6gang_gang6_scene'); } catch (e) {}
 
-    gangs.forEach(gang => {
-      try {
-      (() => { try { return this.homey.flow.getActionCard('set_backlight'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-            if (!args.device) return false;
-            return args.device.getCapabilityValue(capMap[gang]) === true;
-          });
-        this.log(`[FLOW] ✅ gang${gang}_is_on`);
-      } catch (err) { this.log(`[FLOW] ⚠️ gang${gang}_is_on: ${err.message}`); }
-
-      try {
-      (() => { try { return this.homey.flow.getConditionCard('turn_on_gang${gang}'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-            if (!args.device) return false;
-            await args.device.triggerCapabilityListener(capMap[gang], true);
-            return true;
-          });
-        this.log(`[FLOW] ✅ Registered: ${id}`);
-      } catch (err) { this.log(`[FLOW] ⚠️ turn_on_gang${gang}: ${err.message}`); }
-
-      try {
-      (() => { try { return this.homey.flow.getConditionCard('turn_off_gang${gang}'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-            if (!args.device) return false;
-            await args.device.triggerCapabilityListener(capMap[gang], false);
-            return true;
-          });
-        this.log(`[FLOW] ✅ Registered: ${id}`);
-      } catch (err) { this.log(`[FLOW] ⚠️ turn_off_gang${gang}: ${err.message}`); }
-
-      // v5.5.930: Toggle action
-      try {
-      (() => { try { return this.homey.flow.getConditionCard('toggle_gang${gang}'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-            if (!args.device) return false;
-            const current = args.device.getCapabilityValue(capMap[gang]);
-            await args.device.triggerCapabilityListener(capMap[gang], !current);
-            return true;
-          });
-        this.log(`[FLOW] ✅ Registered: ${id}`);
-      } catch (err) { this.log(`[FLOW] ⚠️ toggle_gang${gang}: ${err.message}`); }
-    });
-
-    // v5.5.930: LED backlight flow cards
+    // CONDITIONS
     try {
-
-        .registerRunListener(async (args) => {
-          if (!args.device || !args.mode) return false;
-          await args.device.setBacklightMode(args.mode);
-          return true;
-        });
-      this.log('[FLOW] ✅ Registered: set_backlight');
-    } catch (err) { this.log(`[FLOW] ⚠️ set_backlight: ${err.message}`); }
-
-    try {
-      (() => { try { return this.homey.flow.getActionCard('set_backlight_color'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-          if (!args.device || !args.state || !args.color) return false;
-          await args.device.setBacklightColor(args.state, args.color);
-          return true;
-        });
-      this.log('[FLOW] ✅ Registered: set_backlight_color');
-    } catch (err) { this.log(`[FLOW] ⚠️ set_backlight_color: ${err.message}`); }
-
-    try {
-      (() => { try { return this.homey.flow.getActionCard('set_backlight_brightness'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-          if (!args.device || args.brightness === undefined) return false;
-          await args.device.setBacklightBrightness(args.brightness);
-          return true;
-        });
-      this.log('[FLOW] ✅ Registered: set_backlight_brightness');
-    } catch (err) { this.log(`[FLOW] ⚠️ set_backlight_brightness: ${err.message}`); }
-
-    // v5.5.930: All on/off actions
-    try {
-      (() => { try { return this.homey.flow.getConditionCard('turn_on_all'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('switch_wall_6gang_gang1_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          for (const cap of Object.values(capMap)) {
-            if (args.device.hasCapability(cap)) await args.device._setGangOnOff(idx + 1, true).catch(() => {});
-            await args.device.setCapabilityValue(cap, true).catch(() => {});
-          }
-          return true;
+          return args.device.getCapabilityValue('onoff') === true;
         });
-      this.log('[FLOW] ✅ Registered: turn_on_all');
-    } catch (err) { this.log(`[FLOW] ⚠️ turn_on_all: ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition switch_wall_6gang_gang1_is_on: ${err.message}`); }
 
     try {
-      (() => { try { return this.homey.flow.getConditionCard('turn_off_all'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('switch_wall_6gang_gang2_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          for (const cap of Object.values(capMap)) {
-            if (args.device.hasCapability(cap)) await args.device._setGangOnOff(idx + 1, false).catch(() => {});
-            await args.device.setCapabilityValue(cap, false).catch(() => {});
-          }
-          return true;
+          return args.device.getCapabilityValue('onoff') === true;
         });
-      this.log('[FLOW] ✅ Registered: turn_off_all');
-    } catch (err) { this.log(`[FLOW] ⚠️ turn_off_all: ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition switch_wall_6gang_gang2_is_on: ${err.message}`); }
 
-    
-    // v5.12.5: Scene mode action
     try {
-
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('switch_wall_6gang_gang3_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setSceneMode(args.mode);
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition switch_wall_6gang_gang3_is_on: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getConditionCard('switch_wall_6gang_gang4_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition switch_wall_6gang_gang4_is_on: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getConditionCard('switch_wall_6gang_gang5_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition switch_wall_6gang_gang5_is_on: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getConditionCard('switch_wall_6gang_gang6_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition switch_wall_6gang_gang6_is_on: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getConditionCard('switch_wall_6gang_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition switch_wall_6gang_is_on: ${err.message}`); }
+
+    // ACTIONS
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_turn_on_gang1');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
-      this.log('[FLOW] \u2705 switch_wall_6gang_set_scene_mode');
-    } catch (err) { this.log('[FLOW] ' + err.message); }
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_turn_on_gang1: ${err.message}`); }
 
-    this.log('[FLOW]  All 6-gang switch flow cards registered (v5.5.930)');
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_turn_off_gang1');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_turn_off_gang1: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_turn_on_gang2');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_turn_on_gang2: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_turn_off_gang2');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_turn_off_gang2: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_turn_on_gang3');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_turn_on_gang3: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_turn_off_gang3');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_turn_off_gang3: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_turn_on_gang4');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_turn_on_gang4: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_turn_off_gang4');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_turn_off_gang4: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_turn_on_gang5');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_turn_on_gang5: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_turn_off_gang5');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_turn_off_gang5: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_turn_on_gang6');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_turn_on_gang6: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_turn_off_gang6');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_turn_off_gang6: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_toggle_gang1');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const current = args.device.getCapabilityValue('onoff');
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_toggle_gang1: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_toggle_gang2');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const current = args.device.getCapabilityValue('onoff');
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_toggle_gang2: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_toggle_gang3');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const current = args.device.getCapabilityValue('onoff');
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_toggle_gang3: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_toggle_gang4');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const current = args.device.getCapabilityValue('onoff');
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_toggle_gang4: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_toggle_gang5');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const current = args.device.getCapabilityValue('onoff');
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_toggle_gang5: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_toggle_gang6');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const current = args.device.getCapabilityValue('onoff');
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_toggle_gang6: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_turn_on_all');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const caps = Object.keys(args.device.getCapabilities()).filter(c => c.startsWith('onoff'));
+          for (const cap of caps) { await args.device.triggerCapabilityListener(cap, true).catch(() => {}); }
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_turn_on_all: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_turn_off_all');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const caps = Object.keys(args.device.getCapabilities()).filter(c => c.startsWith('onoff'));
+          for (const cap of caps) { await args.device.triggerCapabilityListener(cap, false).catch(() => {}); }
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_turn_off_all: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_set_backlight');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          if (typeof args.device.setBacklightMode === 'function') await args.device.setBacklightMode(args.mode || args.value);
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_set_backlight: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_set_backlight_color');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          if (typeof args.device.setBacklightMode === 'function') await args.device.setBacklightMode(args.mode || args.value);
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_set_backlight_color: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_set_backlight_brightness');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          if (typeof args.device.setBacklightMode === 'function') await args.device.setBacklightMode(args.mode || args.value);
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_set_backlight_brightness: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_turn_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_turn_on: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_turn_off');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_turn_off: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_toggle');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const current = args.device.getCapabilityValue('onoff');
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_toggle: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('switch_wall_6gang_set_scene_mode');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          if (typeof args.device.setSceneMode === 'function') await args.device.setSceneMode(args.mode || args.value);
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action switch_wall_6gang_set_scene_mode: ${err.message}`); }
+
+    this.log('[FLOW] All flow cards registered');
   }
 }
 

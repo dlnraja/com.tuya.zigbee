@@ -55,7 +55,7 @@ const newDevices = {
 function addIdsToDriver(driverName, newIds) {
   const filePath = path.join(driversDir, driverName, 'driver.compose.json');
   if (!fs.existsSync(filePath)) {
-    console.log(`  ❌ Driver not found: ${driverName}`);
+    console.log(`   Driver not found: ${driverName}`);
     return 0;
   }
 
@@ -64,12 +64,12 @@ function addIdsToDriver(driverName, newIds) {
   try {
     data = JSON.parse(content);
   } catch (e) {
-    console.log(`  ❌ Parse error: ${driverName}`);
+    console.log(`   Parse error: ${driverName}`);
     return 0;
   }
 
   if (!data.zigbee || !data.zigbee.manufacturerName) {
-    console.log(`  ❌ No manufacturerName array: ${driverName}`);
+    console.log(`   No manufacturerName array: ${driverName}`);
     return 0;
   }
 
@@ -89,9 +89,9 @@ function addIdsToDriver(driverName, newIds) {
       a.toLowerCase().localeCompare(b.toLowerCase())
     );
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
-    console.log(`  ✅ ${driverName}: +${added} IDs`);
+    console.log(`   ${driverName}: +${added} IDs`);
   } else {
-    console.log(`  ⚪ ${driverName}: Already has all IDs`);
+    console.log(`   ${driverName}: Already has all IDs`);
   }
 
   return added;

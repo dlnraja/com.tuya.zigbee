@@ -4,9 +4,9 @@ const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDev
 const DP = { state: 1, brightness: 2, minBright: 3, lightType: 4, powerOn: 14 };
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      SWITCH DIMMER 1-GANG - v5.6.2 Zero-Defect State                         ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       SWITCH DIMMER 1-GANG - v5.6.2 Zero-Defect State                         
+ * 
  */
 class SwitchDimmer1GangDevice extends TuyaSpecificClusterDevice {
   async onNodeInit({ zclNode }) {

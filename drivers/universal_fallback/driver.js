@@ -27,8 +27,8 @@ class UniversalFallbackDriver extends ZigBeeDriver {
     this._flowCardsRegistered = true;
 
     
-    this.log('[UNIVERSAL-DRIVER] ✅ Universal Fallback Driver initialized');
-    this.log('[UNIVERSAL-DRIVER] 🔧 Catches unknown Tuya/Zigbee devices');
+    this.log('[UNIVERSAL-DRIVER]  Universal Fallback Driver initialized');
+    this.log('[UNIVERSAL-DRIVER]  Catches unknown Tuya/Zigbee devices');
   
   
   
@@ -39,7 +39,7 @@ class UniversalFallbackDriver extends ZigBeeDriver {
   }
 
   async onPairListDevices() {
-    this.log('[UNIVERSAL-DRIVER] 🔍 Listing devices for pairing...');
+    this.log('[UNIVERSAL-DRIVER]  Listing devices for pairing...');
     return [];
   }
 

@@ -15,14 +15,14 @@ const AUDIT_FILE = path.join(ROOT, 'docs/reports/ZERO_DEFECT_AUDIT.json');
 const TUYA_UTILS_PATH = 'lib/utils/tuyaUtils.js';
 
 if (!fs.existsSync(AUDIT_FILE)) {
-  console.error('❌ Audit file not found. Run zero-defect-architect-audit.js first.');
+  console.error(' Audit file not found. Run zero-defect-architect-audit.js first.');
   process.exit(1);
 }
 
 const audit = JSON.parse(fs.readFileSync(AUDIT_FILE, 'utf8'));
 const warnings = audit.naNSafetyCheck || [];
 
-console.log(`🚀 Starting remediation of ${warnings.length} NaN risk warnings...`);
+console.log(` Starting remediation of ${warnings.length} NaN risk warnings...`);
 
 const filesToProcess = new Set();
 warnings.forEach(w => {
@@ -86,8 +86,8 @@ filesToProcess.forEach(relPath => {
     fs.writeFileSync(fullPath, content);
     fixedCount++;
     totalReplacements += replacedInFile;
-    console.log(`✅ Fixed: ${relPath} (${replacedInFile} replacements)`);
+    console.log(` Fixed: ${relPath} (${replacedInFile} replacements)`);
   }
 });
 
-console.log(`\n🎉 Remediation complete! Fixed ${fixedCount} files with ${totalReplacements} total replacements.`);
+console.log(`\n Remediation complete! Fixed ${fixedCount} files with ${totalReplacements} total replacements.`);

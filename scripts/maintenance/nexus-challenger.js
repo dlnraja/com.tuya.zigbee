@@ -13,7 +13,7 @@ const EXT_DATA = path.join(ROOT, '.github', 'state', 'external-sources-data.json
 const INTEL_DATA = path.join(ROOT, '.github', 'state', 'device-functionality.json');
 
 async function main() {
-  console.log('🛡️  NEXUS AWAKENING MASTER CHALLENGER - ACTIVATED');
+  console.log('  NEXUS AWAKENING MASTER CHALLENGER - ACTIVATED');
   console.log('==========================================');
 
   const report = {
@@ -30,7 +30,7 @@ async function main() {
     if (fs.existsSync(EXT_DATA)) extIntel = JSON.parse(fs.readFileSync(EXT_DATA, 'utf8'));
     else if (fs.existsSync(INTEL_DATA)) extIntel = JSON.parse(fs.readFileSync(INTEL_DATA, 'utf8'));
   } catch (e) {
-    console.error('❌ Failed to load external intelligence context.');
+    console.error(' Failed to load external intelligence context.');
   }
 
   const drivers = fs.readdirSync(DRIVERS_DIR).filter(d => fs.statSync(path.join(DRIVERS_DIR, d)).isDirectory());
@@ -126,29 +126,29 @@ async function main() {
   }
 
   // 2. Final Report
-  console.log(`\n📊 Audit complete for ${drivers.length} drivers.`);
-  console.log(`❌ Violations/Defects: ${report.violations.length}`);
-  console.log(`⚠️  Capability Gaps: ${report.gaps.length}`);
-  console.log(`💡 Innovation Opps: ${report.innovationOpportunities.length}`);
+  console.log(`\n Audit complete for ${drivers.length} drivers.`);
+  console.log(` Violations/Defects: ${report.violations.length}`);
+  console.log(`  Capability Gaps: ${report.gaps.length}`);
+  console.log(` Innovation Opps: ${report.innovationOpportunities.length}`);
 
   const reportPath = path.join(ROOT, 'docs/reports/NEXUS_AWAKENING_CHALLENGE_REPORT.json');
   fs.mkdirSync(path.dirname(reportPath), { recursive: true });
   fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
   
   // Create Human-Readable summary
-  let md = `# 🛡️ Autonomous Engine Reimplementation Challenge Report\n\n`;
+  let md = `#  Autonomous Engine Reimplementation Challenge Report\n\n`;
   md += `**Date:** ${report.timestamp}\n\n`;
-  md += `## ❌ Strict Architectural Violations (${report.violations.length})\n`;
+  md += `##  Strict Architectural Violations (${report.violations.length})\n`;
   report.violations.forEach(v => md += `- **${v.driver}**: ${v.violation} (${v.details || v.fix})\n`);
   
-  md += `\n## ⚠️ Capability Gaps vs Industrial Sources (${report.gaps.length})\n`;
+  md += `\n##  Capability Gaps vs Industrial Sources (${report.gaps.length})\n`;
   report.gaps.slice(0, 20).forEach(g => md += `- **${g.driver}**: ${g.details}\n`);
 
-  md += `\n## 💡 Innovation Opportunities (${report.innovationOpportunities.length})\n`;
+  md += `\n##  Innovation Opportunities (${report.innovationOpportunities.length})\n`;
   report.innovationOpportunities.forEach(o => md += `- **${o.driver}**: ${o.details}\n`);
 
   fs.writeFileSync(path.join(ROOT, 'docs/reports/NEXUS_AWAKENING_SUMMARY.md'), md);
-  console.log(`\n✅ Reports saved to docs/reports/`);
+  console.log(`\n Reports saved to docs/reports/`);
 }
 
 main().catch(console.error);

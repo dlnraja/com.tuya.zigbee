@@ -39,14 +39,14 @@ Must use `commandOn`/`commandOff` listeners, not E000 BoundCluster.
 await onOffCluster.writeAttributes({ 0x8004: 1 }); // Scene mode
 ```
 
-**Status:** ✅ Implemented in `ButtonDevice._universalSceneModeSwitch()`
+**Status:**  Implemented in `ButtonDevice._universalSceneModeSwitch()`
 
 ### Issue 2: Scene Mode Resets (Hubitat/Z2M)
 
 **Problem:** Scene mode resets after battery removal or firmware update  
 **Solution:** Re-apply scene mode on each connection/wake-up
 
-**Status:** ✅ Implemented in v5.8.1
+**Status:**  Implemented in v5.8.1
 - Periodic recovery every 4 hours (`_scheduleSceneModeRecovery`)
 - Re-apply on button press wake-up (`_reapplySceneModeOnWake`)
 - 5-minute debounce to avoid excessive writes
@@ -61,7 +61,7 @@ await onOffCluster.writeAttributes({ 0x8004: 1 }); // Scene mode
 endpoint.bind(57344, new TuyaE000BoundCluster({ device }));
 ```
 
-**Status:** ✅ Implemented in `TuyaE000BoundCluster.js`
+**Status:**  Implemented in `TuyaE000BoundCluster.js`
 
 ### Issue 4: Battery Wake-Up Delay (All Platforms)
 
@@ -80,7 +80,7 @@ endpoint.bind(57344, new TuyaE000BoundCluster({ device }));
 - Second press will always work reliably
 - This is a hardware limitation common to ALL Zigbee battery buttons
 
-**Status:** ✅ Documented - hardware limitation with mitigations in place
+**Status:**  Documented - hardware limitation with mitigations in place
 
 ---
 
@@ -99,7 +99,7 @@ endpoint.bind(57344, new TuyaE000BoundCluster({ device }));
 
 ## 4. Fingerprint Verification
 
-### Already in Project ✅
+### Already in Project 
 
 | Fingerprint | Driver | Notes |
 |-------------|--------|-------|
@@ -160,11 +160,11 @@ _TZ3290_ixd9mvv4, _TZ3290_nkpxapoz, _TZ3040_fwxuzcf4
 1. **Scene Mode Not Applied** (All Platforms)
    - TS004F defaults to "Dimmer mode" (only single press)
    - Must write `0x8004 = 1` to OnOff cluster for scene mode
-   - Status: ✅ Implemented in `_intelligentModeSwitch()`
+   - Status:  Implemented in `_intelligentModeSwitch()`
 
 2. **E000 Cluster Not Exposed** (Homey-Specific)
    - SDK doesn't expose unknown cluster 57344 (0xE000)
-   - Status: ✅ Implemented via `TuyaE000BoundCluster` + raw frame interceptor
+   - Status:  Implemented via `TuyaE000BoundCluster` + raw frame interceptor
 
 3. **Missing Fingerprints** (Fixed)
    - Added 22 new MOES fingerprints across button drivers

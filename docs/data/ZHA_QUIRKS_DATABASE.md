@@ -6,7 +6,7 @@
 
 ---
 
-## 📋 Tuya Protocol Constants
+##  Tuya Protocol Constants
 
 ```javascript
 // Cluster IDs
@@ -36,7 +36,7 @@ TUYA_DP_TYPE_FAULT = 0x05;
 
 ---
 
-## 🌡️ TRV / Thermostat DP Mappings
+##  TRV / Thermostat DP Mappings
 
 ### Siterwell TRV
 
@@ -46,8 +46,8 @@ TUYA_DP_TYPE_FAULT = 0x05;
 | 0x0112 | 274 | window_detection | - | [0] inactive [1] active |
 | 0x0114 | 276 | valve_detect | - | [0] do not report [1] report |
 | 0x026D | 621 | valve_state | - | Opening percentage (4 bytes) |
-| 0x0202 | 514 | target_temp | ×10 | Target temp (decidegree → centidegree) |
-| 0x0203 | 515 | temperature | ×10 | Current temp (decidegree → centidegree) |
+| 0x0202 | 514 | target_temp | ×10 | Target temp (decidegree  centidegree) |
+| 0x0203 | 515 | temperature | ×10 | Current temp (decidegree  centidegree) |
 | 0x0215 | 533 | battery | - | Battery percentage |
 | 0x0404 | 1028 | mode | - | [0] off [1] scheduled [2] manual |
 
@@ -103,7 +103,7 @@ TUYA_DP_TYPE_FAULT = 0x05;
 
 ---
 
-## 📡 Radar / mmWave Sensors
+##  Radar / mmWave Sensors
 
 ### MmwRadarManufCluster (_TZE200_ar0slwnd, _TZE200_sfiy5tfs, etc.)
 
@@ -114,7 +114,7 @@ TUYA_DP_TYPE_FAULT = 0x05;
 | 3 | dp_3 | - | Unknown |
 | 4 | sensitivity | - | Sensitivity (1-9) |
 | 6 | dp_6 | - | Unknown |
-| 9 | distance | ÷100 | Target distance (cm → m) |
+| 9 | distance | ÷100 | Target distance (cm  m) |
 | 101 | min_distance | - | Minimum detection distance |
 | 102 | max_distance | - | Maximum detection distance |
 | 103 | dp_103 | - | String value |
@@ -157,7 +157,7 @@ const ZHA_RADAR_FINGERPRINTS = [
 
 ---
 
-## 💡 Switch OnOff Cluster Attributes
+##  Switch OnOff Cluster Attributes
 
 ### TuyaZBOnOffAttributeCluster (0x0006)
 
@@ -182,7 +182,7 @@ const ZHA_RADAR_FINGERPRINTS = [
 
 ---
 
-## 🪟 Cover / Curtain DP Mappings
+##  Cover / Curtain DP Mappings
 
 ### Standard Cover DPs
 
@@ -206,7 +206,7 @@ WINDOW_COVER_COMMAND_CUSTOM = 0x0006;
 
 ---
 
-## ⚡ Energy Metering
+##  Energy Metering
 
 ### TuyaZBMeteringCluster
 
@@ -226,7 +226,7 @@ AC_CURRENT_DIVISOR = 1000;  // mA to A
 
 ---
 
-## 🔌 External Switch Type (Cluster 0xE001)
+##  External Switch Type (Cluster 0xE001)
 
 | Attribute | ID | Values |
 |-----------|-----|--------|
@@ -234,7 +234,7 @@ AC_CURRENT_DIVISOR = 1000;  // mA to A
 
 ---
 
-## 📱 Battery Level Enum (Neo Sensors)
+##  Battery Level Enum (Neo Sensors)
 
 ```javascript
 const NeoBatteryLevel = {
@@ -248,17 +248,17 @@ const NeoBatteryLevel = {
 
 ---
 
-## 🔧 Integration Notes for Universal Tuya Zigbee
+##  Integration Notes for Universal Tuya Zigbee
 
 ### Already Implemented in Project
 
 | Feature | File | Status |
 |---------|------|--------|
-| Tuya DP cluster 0xEF00 | lib/tuya/TuyaCluster.js | ✅ |
-| OnOff attributes 0x8001-0x8004 | lib/devices/HybridSwitchBase.js | ✅ |
-| Cover DPs 1-6 | lib/devices/HybridCoverBase.js | ✅ |
-| TRV DPs | drivers/radiator_valve/device.js | ✅ |
-| Radar sensors | drivers/presence_sensor_radar/device.js | ✅ |
+| Tuya DP cluster 0xEF00 | lib/tuya/TuyaCluster.js |  |
+| OnOff attributes 0x8001-0x8004 | lib/devices/HybridSwitchBase.js |  |
+| Cover DPs 1-6 | lib/devices/HybridCoverBase.js |  |
+| TRV DPs | drivers/radiator_valve/device.js |  |
+| Radar sensors | drivers/presence_sensor_radar/device.js |  |
 
 ### Potential Improvements from ZHA
 
@@ -269,7 +269,7 @@ const NeoBatteryLevel = {
 
 ---
 
-## 🪟 Cover Manufacturers (from ZHA)
+##  Cover Manufacturers (from ZHA)
 
 ```javascript
 const ZHA_COVER_FINGERPRINTS = [
@@ -284,7 +284,7 @@ const ZHA_COVER_FINGERPRINTS = [
 
 ---
 
-## 💡 Dimmer Manufacturers (from ZHA)
+##  Dimmer Manufacturers (from ZHA)
 
 ### Single Channel Dimmers
 
@@ -333,7 +333,7 @@ const ZHA_DOUBLE_DIMMER = [
 
 ---
 
-## 🌱 Soil Sensors (from ZHA Issues)
+##  Soil Sensors (from ZHA Issues)
 
 ```javascript
 const ZHA_SOIL_SENSORS = [
@@ -345,7 +345,7 @@ const ZHA_SOIL_SENSORS = [
 
 ---
 
-## � Irrigation Valves (from ZHA Issues)
+##  Irrigation Valves (from ZHA Issues)
 
 ```javascript
 const ZHA_IRRIGATION_VALVES = [
@@ -356,7 +356,7 @@ const ZHA_IRRIGATION_VALVES = [
 
 ---
 
-## 🔧 TuyaQuirkBuilder Methods (v2 API)
+##  TuyaQuirkBuilder Methods (v2 API)
 
 ### Convenience Methods
 
@@ -389,7 +389,7 @@ const ZHA_IRRIGATION_VALVES = [
 
 ---
 
-## �📚 References
+##  References
 
 - [ZHA Device Handlers - Tuya](https://github.com/zigpy/zha-device-handlers/tree/dev/zhaquirks/tuya)
 - [ZHA Tuya Documentation](https://github.com/zigpy/zha-device-handlers/blob/dev/tuya.md)

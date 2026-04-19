@@ -1,28 +1,28 @@
-# 🚀 **CONFIGURATION GITHUB ACTIONS AUTOMATION**
+#  **CONFIGURATION GITHUB ACTIONS AUTOMATION**
 
 Migration complète vers **GitHub Actions programmées** pour l'automatisation des devices Tuya.
 
 ---
 
-## 🎯 **AVANTAGES GITHUB ACTIONS**
+##  **AVANTAGES GITHUB ACTIONS**
 
-✅ **Exécution cloud** - Pas besoin de machine locale allumée
-✅ **Cron programmé** - Automatisation toutes les heures précises
-✅ **Logs centralisés** - Historique complet dans GitHub
-✅ **Artifacts sauvegardés** - Backups et rapports automatiques
-✅ **Notifications intégrées** - Alertes par email si échec
-✅ **Scaling automatique** - Resources illimitées GitHub
-✅ **Version control** - Changements trackés dans Git
+ **Exécution cloud** - Pas besoin de machine locale allumée
+ **Cron programmé** - Automatisation toutes les heures précises
+ **Logs centralisés** - Historique complet dans GitHub
+ **Artifacts sauvegardés** - Backups et rapports automatiques
+ **Notifications intégrées** - Alertes par email si échec
+ **Scaling automatique** - Resources illimitées GitHub
+ **Version control** - Changements trackés dans Git
 
 ---
 
-## 🔧 **ÉTAPES DE CONFIGURATION**
+##  **ÉTAPES DE CONFIGURATION**
 
 ### **1. Configuration des Secrets GitHub**
 
 Aller dans votre repository `dlnraja/com.tuya.zigbee` :
 
-1. **Settings** → **Secrets and variables** → **Actions**
+1. **Settings**  **Secrets and variables**  **Actions**
 2. Cliquer **"New repository secret"**
 
 #### **Secrets obligatoires :**
@@ -39,7 +39,7 @@ gh auth login
 gh auth token
 
 # Option 2: Interface web GitHub
-# 1. GitHub.com → Settings → Developer settings → Personal access tokens
+# 1. GitHub.com  Settings  Developer settings  Personal access tokens
 # 2. Generate new token (classic)
 # 3. Scopes: public_repo, read:org
 # 4. Copier le token généré
@@ -53,7 +53,7 @@ Le workflow est déjà créé dans `.github/workflows/auto-monitor-devices.yml`
 ```bash
 # Push le workflow vers GitHub pour l'activer
 git add .github/workflows/auto-monitor-devices.yml
-git commit -m "🤖 Add GitHub Actions automation workflow"
+git commit -m " Add GitHub Actions automation workflow"
 git push origin master
 ```
 
@@ -62,10 +62,10 @@ git push origin master
 #### **Onglet Actions GitHub :**
 1. Aller dans votre repository sur GitHub
 2. Cliquer l'onglet **"Actions"**
-3. Voir le workflow **"🤖 Auto-Monitor Device Requests"**
+3. Voir le workflow **" Auto-Monitor Device Requests"**
 
 #### **Première exécution manuelle :**
-1. Dans Actions → Sélectionner le workflow
+1. Dans Actions  Sélectionner le workflow
 2. Cliquer **"Run workflow"**
 3. Configurer les paramètres :
    - **Force execution** : `true` (pour test)
@@ -74,7 +74,7 @@ git push origin master
 
 ---
 
-## ⏰ **PLANIFICATION AUTOMATIQUE**
+##  **PLANIFICATION AUTOMATIQUE**
 
 ### **Schedule actuel :**
 ```yaml
@@ -96,19 +96,19 @@ schedule:
 
 ---
 
-## 📊 **MONITORING ET CONTRÔLE**
+##  **MONITORING ET CONTRÔLE**
 
 ### **Interface GitHub Actions**
 
 **Accès :** `https://github.com/dlnraja/com.tuya.zigbee/actions`
 
 **Fonctionnalités disponibles :**
-- 📈 **Historique complet** des exécutions
-- 📝 **Logs détaillés** en temps réel
-- 💾 **Artifacts téléchargeables** (logs, backups, rapports)
-- ⚡ **Exécution manuelle** avec paramètres custom
-- 🔄 **Re-run** des executions échouées
-- 📧 **Notifications email** automatiques
+-  **Historique complet** des exécutions
+-  **Logs détaillés** en temps réel
+-  **Artifacts téléchargeables** (logs, backups, rapports)
+-  **Exécution manuelle** avec paramètres custom
+-  **Re-run** des executions échouées
+-  **Notifications email** automatiques
 
 ### **Dashboard intégré**
 
@@ -120,7 +120,7 @@ start scripts\automation\monitoring-dashboard.html
 
 ---
 
-## 🎮 **COMMANDES DISPONIBLES**
+##  **COMMANDES DISPONIBLES**
 
 ### **Exécution manuelle GitHub Actions**
 
@@ -131,7 +131,7 @@ gh workflow run "auto-monitor-devices.yml" \
   --field max_devices=5
 
 # Via interface web GitHub
-# Actions → Auto-Monitor Device Requests → Run workflow
+# Actions  Auto-Monitor Device Requests  Run workflow
 ```
 
 ### **Commandes locales (optionnelles)**
@@ -149,26 +149,26 @@ node scripts\automation\github-auto-monitor.js --stats
 
 ---
 
-## 🛡️ **SÉCURITÉ ET PERMISSIONS**
+##  **SÉCURITÉ ET PERMISSIONS**
 
 ### **Permissions requises**
 
 Le token `JOHAN_REPO_TOKEN` a besoin de :
-- ✅ `public_repo` - Lire les issues publiques du repo Johan
-- ✅ `repo:status` - Vérifier le status du repo
-- ⚠️ **PAS** de permissions write sur le repo Johan
+-  `public_repo` - Lire les issues publiques du repo Johan
+-  `repo:status` - Vérifier le status du repo
+-  **PAS** de permissions write sur le repo Johan
 
 ### **Sécurité GitHub Actions**
 
-- 🔐 **Secrets chiffrés** - Jamais exposés dans les logs
-- 🛡️ **Isolation complète** - Environnement fresh à chaque run
-- 📊 **Audit trail** - Toutes les actions loggées
-- ⏱️ **Timeout automatique** - Arrêt après 30 minutes max
-- 🔄 **Rollback automatique** - En cas d'échec de build
+-  **Secrets chiffrés** - Jamais exposés dans les logs
+-  **Isolation complète** - Environnement fresh à chaque run
+-  **Audit trail** - Toutes les actions loggées
+-  **Timeout automatique** - Arrêt après 30 minutes max
+-  **Rollback automatique** - En cas d'échec de build
 
 ---
 
-## 📈 **FLUX D'EXÉCUTION DÉTAILLÉ**
+##  **FLUX D'EXÉCUTION DÉTAILLÉ**
 
 ### **Déclenchement (toutes les heures)**
 ```mermaid
@@ -198,37 +198,37 @@ graph TD
     M[Post GitHub Responses] --> N[Generate Report]
     N --> O[Upload Artifacts]
     O --> P[Send Notifications]
-    P --> Q[Complete ✅]
+    P --> Q[Complete ]
 ```
 
 ---
 
-## 🚨 **TROUBLESHOOTING**
+##  **TROUBLESHOOTING**
 
 ### **Erreurs courantes**
 
-#### **❌ "JOHAN_REPO_TOKEN not found"**
+#### ** "JOHAN_REPO_TOKEN not found"**
 ```bash
 # Solution: Ajouter le secret dans GitHub Settings
-# Settings → Secrets → New repository secret
+# Settings  Secrets  New repository secret
 # Name: JOHAN_REPO_TOKEN
 # Value: [votre token GitHub]
 ```
 
-#### **❌ "Push rejected (non-fast-forward)"**
+#### ** "Push rejected (non-fast-forward)"**
 ```bash
 # Solution automatique intégrée - le workflow gère les conflicts
 # Ou forcer un pull manual si nécessaire:
 git pull origin master
 ```
 
-#### **❌ "Homey CLI not found"**
+#### ** "Homey CLI not found"**
 ```bash
 # Solution: Workflow installe automatiquement
 # Vérifier les logs d'installation dans "Setup Node.js"
 ```
 
-#### **❌ "Build failed after device addition"**
+#### ** "Build failed after device addition"**
 ```bash
 # Solution: Rollback automatique activé
 # Vérifier le "Safety Validation Check" dans les logs
@@ -246,44 +246,44 @@ env:
 
 ---
 
-## 📋 **CHECKLIST DE MIGRATION**
+##  **CHECKLIST DE MIGRATION**
 
 ### **Configuration initiale :**
-- [ ] ✅ Secrets GitHub configurés (`JOHAN_REPO_TOKEN`)
-- [ ] ✅ Workflow committé et pushé
-- [ ] ✅ Premier test manuel réussi
-- [ ] ✅ Schedule cron vérifié
+- [ ]  Secrets GitHub configurés (`JOHAN_REPO_TOKEN`)
+- [ ]  Workflow committé et pushé
+- [ ]  Premier test manuel réussi
+- [ ]  Schedule cron vérifié
 
 ### **Validation système :**
-- [ ] ⏰ Exécution automatique à la prochaine heure
-- [ ] 📧 Notifications configurées
-- [ ] 💾 Artifacts générés correctement
-- [ ] 🛡️ Safety checks fonctionnels
+- [ ]  Exécution automatique à la prochaine heure
+- [ ]  Notifications configurées
+- [ ]  Artifacts générés correctement
+- [ ]  Safety checks fonctionnels
 
 ### **Migration complète :**
-- [ ] 🔄 Ancienne tâche Windows désactivée
-- [ ] 📊 Dashboard local mis à jour
-- [ ] 📚 Documentation équipe mise à jour
-- [ ] 🎯 Monitoring basé sur GitHub Actions uniquement
+- [ ]  Ancienne tâche Windows désactivée
+- [ ]  Dashboard local mis à jour
+- [ ]  Documentation équipe mise à jour
+- [ ]  Monitoring basé sur GitHub Actions uniquement
 
 ---
 
-## 🎊 **AVANTAGES OBTENUS**
+##  **AVANTAGES OBTENUS**
 
 Avec cette migration vers GitHub Actions :
 
 **Pour vous :**
-- 🖥️ **Plus besoin de machine locale** allumée H24
-- 📊 **Monitoring centralisé** dans GitHub
-- 🔄 **Historique complet** et searchable
-- 📧 **Notifications automatiques** en cas de problème
-- 💾 **Backups cloud** intégrés
-- ⚡ **Scaling automatique** selon la charge
+-  **Plus besoin de machine locale** allumée H24
+-  **Monitoring centralisé** dans GitHub
+-  **Historique complet** et searchable
+-  **Notifications automatiques** en cas de problème
+-  **Backups cloud** intégrés
+-  **Scaling automatique** selon la charge
 
 **Pour les utilisateurs :**
-- ⏱️ **Réactivité garantie** - Exécution cloud fiable
-- 📱 **Réponses plus rapides** aux demandes
-- 🛡️ **Sécurité renforcée** - Validation cloud
-- 📈 **Disponibilité 99.9%** - Infrastructure GitHub
+-  **Réactivité garantie** - Exécution cloud fiable
+-  **Réponses plus rapides** aux demandes
+-  **Sécurité renforcée** - Validation cloud
+-  **Disponibilité 99.9%** - Infrastructure GitHub
 
-**Résultat :** Système d'automatisation **100% autonome et cloud-native** ! 🚀
+**Résultat :** Système d'automatisation **100% autonome et cloud-native** ! 

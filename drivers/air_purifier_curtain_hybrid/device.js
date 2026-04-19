@@ -21,7 +21,7 @@ class CurtainMotorTiltDevice extends UnifiedCoverBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[CURTAIN-TILT] ✅ Ready');
+    this.log('[CURTAIN-TILT]  Ready');
   }
 
 

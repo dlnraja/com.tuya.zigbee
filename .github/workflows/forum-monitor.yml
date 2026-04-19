@@ -1,8 +1,7 @@
-name: Forum Monitor (Enhanced)
+name: Forum Monitor (DISABLED - Shadow Mode)
 
 on:
-  # schedule: disabled to avoid annoying users
-  # - cron: '0 * * * *' # Every hour
+  # schedule: disabled for Shadow Mode - manual execution only
   workflow_dispatch:
 
 permissions:

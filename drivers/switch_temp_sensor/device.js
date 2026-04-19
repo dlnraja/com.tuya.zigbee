@@ -35,9 +35,9 @@ const CLUSTER_HUMIDITY = 1029;    // 0x0405 - ZCL Humidity
 class SwitchTempSensorDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('═══════════════════════════════════════════════════════════');
+    this.log('');
     this.log('Switch with Temperature Sensor v5.5.402 (Rolp forum fix)');
-    this.log('═══════════════════════════════════════════════════════════');
+    this.log('');
     this.log('ManufacturerName:', this.getSetting('zb_manufacturer_name'));
     this.log('ModelId:', this.getSetting('zb_model_id'));
 
@@ -52,13 +52,13 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
       this.registerCapability('onoff', CLUSTER.ON_OFF, {
         endpoint: 1,
       });
-      this.log('✅ OnOff capability registered');
+      this.log(' OnOff capability registered');
     }
 
     // Try ALL methods to get temperature/humidity data
     await this._setupTemperatureListeners(zclNode);
 
-    this.log('✅ Initialization complete');
+    this.log(' Initialization complete');
   }
 
   /**
@@ -105,7 +105,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
         ep1?.clusters?.[String(CLUSTER_TUYA_E002)];
 
       if (cluster) {
-        this.log('✅ Found cluster 57346 (0xE002) - Tuya Temp/Humidity');
+        this.log(' Found cluster 57346 (0xE002) - Tuya Temp/Humidity');
 
         // Listen for attribute reports
         cluster.on('attr', (attr, value) => {
@@ -157,7 +157,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
         ep1?.clusters?.['CLUSTERS.TUYA_EF00'];
 
       if (cluster) {
-        this.log('✅ Found Tuya EF00 cluster');
+        this.log(' Found Tuya EF00 cluster');
 
         cluster.on('response', this._handleTuyaResponse.bind(this));
         cluster.on('reporting', this._handleTuyaResponse.bind(this));
@@ -180,7 +180,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
       const tempCluster = ep1?.clusters?.temperatureMeasurement ||
         ep1?.clusters?.[CLUSTER_TEMP];
       if (tempCluster) {
-        this.log('✅ Found ZCL Temperature cluster');
+        this.log(' Found ZCL Temperature cluster');
         tempCluster.on('attr', (attr, value) => {
           if (attr === 'measuredValue') {
             this._setTemperature(safeParse(value, 100));
@@ -194,7 +194,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
       const humCluster = ep1?.clusters?.relativeHumidity ||
         ep1?.clusters?.[CLUSTER_HUMIDITY];
       if (humCluster) {
-        this.log('✅ Found ZCL Humidity cluster');
+        this.log(' Found ZCL Humidity cluster');
         humCluster.on('attr', (attr, value) => {
           if (attr === 'measuredValue') {
             this._setHumidity(safeParse(value, 100));
@@ -219,7 +219,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
             minChange: 10 // 0.1°C
           }
         }).catch(() => { });
-        this.log('✅ Configured reporting on cluster 57346');
+        this.log(' Configured reporting on cluster 57346');
       }
     } catch (e) { /* ignore */ }
   }
@@ -261,12 +261,12 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
 
     // Sanity check: -40°C to +80°C
     if (temp < -40 || temp > 80) {
-      this.log(`⚠️ Temperature out of range: ${temp}°C`);
+      this.log(` Temperature out of range: ${temp}°C`);
       return;
     }
 
     const rounded = Math.round(temp *safeParse(10), 10);
-    this.log(`🌡️ Temperature: ${rounded}°C`);
+    this.log(` Temperature: ${rounded}°C`);
 
     if (this.hasCapability('measure_temperature')) {
       await this.setCapabilityValue('measure_temperature', parseFloat(rounded)).catch(this.error);
@@ -281,12 +281,12 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
 
     // Sanity check: 0-100%
     if (hum < 0 || hum > 100) {
-      this.log(`⚠️ Humidity out of range: ${hum}%`);
+      this.log(` Humidity out of range: ${hum}%`);
       return;
     }
 
     const rounded = Math.round(hum);
-    this.log(`💧 Humidity: ${rounded}%`);
+    this.log(` Humidity: ${rounded}%`);
 
     if (this.hasCapability('measure_humidity')) {
       await this.setCapabilityValue('measure_humidity', parseFloat(rounded)).catch(this.error);

@@ -29,4 +29,4 @@ content = content.replace(
 );
 
 fs.writeFileSync(file, content);
-console.log('✅ Enhanced triage-upstream-enhanced.js with owner detection');
+console.log(' Enhanced triage-upstream-enhanced.js with owner detection');

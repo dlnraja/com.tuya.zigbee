@@ -1,17 +1,17 @@
 'use strict';
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║              STRING INTEGRITY GATE v1.0.0 - SHADOW MODE                      ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║                                                                              ║
- * ║  Purpose: Purge invisible Unicode characters (Zero-Width Space, LTR/RTL      ║
- * ║  Overrides) that corrupt drivers and manifests during copy-paste from       ║
- * ║  forums and PDFs.                                                            ║
- * ║                                                                              ║
- * ║  Standard: Zero-Tolerance for non-printing control characters.               ║
- * ║                                                                              ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *               STRING INTEGRITY GATE v1.0.0 - SHADOW MODE                      
+ * 
+ *                                                                               
+ *   Purpose: Purge invisible Unicode characters (Zero-Width Space, LTR/RTL      
+ *   Overrides) that corrupt drivers and manifests during copy-paste from       
+ *   forums and PDFs.                                                            
+ *                                                                               
+ *   Standard: Zero-Tolerance for non-printing control characters.               
+ *                                                                               
+ * 
  */
 
 const fs = require('fs');
@@ -80,11 +80,11 @@ function processFile(filePath) {
   }
 }
 
-console.log('🚀 Starting String Integrity Gate (Zero-Width Purge)...');
+console.log(' Starting String Integrity Gate (Zero-Width Purge)...');
 scanDir(rootDir);
 
-console.log('\n📊 Sanitization Summary:');
+console.log('\n Sanitization Summary:');
 console.log(`- Files Processed: ${filesProcessed}`);
 console.log(`- Files Cleaned:   ${filesCleaned}`);
 console.log(`- Total Chars Removed: ${totalCharsRemoved}`);
-console.log('✅ Integrity Audit Complete.');
+console.log(' Integrity Audit Complete.');

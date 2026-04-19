@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Blakadder Zigbee Device Database Crawler
- * Fetches zigbee.blakadder.com/all.json — comprehensive Zigbee DB
+ * Fetches zigbee.blakadder.com/all.json  comprehensive Zigbee DB
  * Extracts all Tuya fingerprints with rich metadata
  * Run: node scripts/sync/crawl-blakadder.js
  */

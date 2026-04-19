@@ -36,10 +36,10 @@ for (const driver of drivers) {
   
   if (content !== originalContent) {
     fs.writeFileSync(deviceFile, content);
-    console.log(`✅ ${driver}`);
+    console.log(` ${driver}`);
     fixedCount++;
   }
 }
 
-console.log(`\n✅ Removed hardcoded battery removal from ${fixedCount} drivers`);
+console.log(`\n Removed hardcoded battery removal from ${fixedCount} drivers`);
 console.log('PowerSourceIntelligence will handle this dynamically now');

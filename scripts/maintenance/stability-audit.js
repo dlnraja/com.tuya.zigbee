@@ -21,7 +21,7 @@ const ROOT = process.cwd();
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
 
 function audit() {
-  console.log('=== 🛡️ Tuya Universal Stability Audit ===');
+  console.log('===  Tuya Universal Stability Audit ===');
   
   const drivers = fs.readdirSync(DRIVERS_DIR).filter(d => {
     const p = path.join(DRIVERS_DIR, d, 'device.js');
@@ -58,7 +58,7 @@ function audit() {
     if (usesSafeSetter && !extendsHybrid) {
       // EXCLUSION: BaseHybridDevice itself
       if (!content.includes('class BaseHybridDevice')) {
-        console.error(`❌ [${d}] CRITICAL: Uses _safeSetCapability but does NOT extend a Hybrid base class! This will CRASH at runtime.`);
+        console.error(` [${d}] CRITICAL: Uses _safeSetCapability but does NOT extend a Hybrid base class! This will CRASH at runtime.`);
         errors++;
       }
     }
@@ -75,7 +75,7 @@ function audit() {
                        (content.includes('(() => { try {') && content.includes(`this.homey.flow.${getter}`));
         
         if (!isSafe) {
-          console.warn(`⚠️ [${d}] Unwrapped ${getter} detected. Should use app.${safeGetter} for SDK 3 stability.`);
+          console.warn(` [${d}] Unwrapped ${getter} detected. Should use app.${safeGetter} for SDK 3 stability.`);
           warnings++;
         }
       }
@@ -88,7 +88,7 @@ function audit() {
         // Check if it's used OUTSIDE onNodeInit
         const outsideOnNodeInit = content.replace(/async\s+onNodeInit[\s\S]*?async/, '---').includes('this.setCapabilityValue');
         if (outsideOnNodeInit) {
-          console.warn(`⚠️ [${d}] Hybrid device uses raw setCapabilityValue outside onNodeInit. Use _safeSetCapability.`);
+          console.warn(` [${d}] Hybrid device uses raw setCapabilityValue outside onNodeInit. Use _safeSetCapability.`);
           warnings++;
         }
       }
@@ -105,7 +105,7 @@ function audit() {
         
         if (hasUpperCase && !mfrNames.includes(mfrNames.find(n => n !== n.toLowerCase())?.toLowerCase())) {
           // Warning: Upper case name without lower case twin (Homey SDK3 matching issue)
-          // console.warn(`⚠️ [${d}] MFR ID "${mfrNames.find(n => n !== n.toLowerCase())}" has no lowercase twin. May fail on SDK 3.`);
+          // console.warn(` [${d}] MFR ID "${mfrNames.find(n => n !== n.toLowerCase())}" has no lowercase twin. May fail on SDK 3.`);
           // warnings++;
         }
       } catch (e) {}
@@ -117,10 +117,10 @@ function audit() {
   console.log(`Warnings: ${warnings}`);
 
   if (errors > 0) {
-    console.error('❌ Stability Audit FAILED. Please fix the inheritance or API usage errors before pushing.');
+    console.error(' Stability Audit FAILED. Please fix the inheritance or API usage errors before pushing.');
     process.exit(1);
   } else {
-    console.log('✅ Stability Audit PASSED.');
+    console.log(' Stability Audit PASSED.');
   }
 }
 

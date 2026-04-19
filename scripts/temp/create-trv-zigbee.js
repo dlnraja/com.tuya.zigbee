@@ -32,7 +32,7 @@ class RadiatorValveZigbeeDevice extends HybridThermostatBase {
   get supportsWindowDetection() { return true; }
 
   async onNodeInit({ zclNode }) {
-    this.log('[TRV-ZIGBEE] 🔥 Initializing comprehensive TRV driver...');
+    this.log('[TRV-ZIGBEE]  Initializing comprehensive TRV driver...');
     
     await super.onNodeInit({ zclNode });
 
@@ -79,7 +79,7 @@ class RadiatorValveZigbeeDevice extends HybridThermostatBase {
       this.registerCapabilityListener('child_lock', this.onChildLockChange.bind(this));
     }
 
-    this.log('[TRV-ZIGBEE] ✅ Comprehensive TRV initialized');
+    this.log('[TRV-ZIGBEE]  Comprehensive TRV initialized');
   }
 
   async onTargetTemperatureChange(value) {
@@ -238,7 +238,7 @@ const driverComposeJson = {
 
 fs.writeFileSync(path.join(driverDir, 'driver.compose.json'), JSON.stringify(driverComposeJson, null, 2));
 
-console.log('✅ Created comprehensive Zigbee TRV driver');
+console.log(' Created comprehensive Zigbee TRV driver');
 console.log('   - Full DP mapping (scheduler, boost, eco, frost protection)');
 console.log('   - Multi-manufacturer support (Tuya, Moes, Saswell)');
 console.log('   - Window detection, child lock, calibration');

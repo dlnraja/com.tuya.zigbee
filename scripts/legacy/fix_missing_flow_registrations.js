@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔧 FIX FLOW TRIGGERS REGISTRATION MANQUANTS\n');
+console.log(' FIX FLOW TRIGGERS REGISTRATION MANQUANTS\n');
 
 const ROOT = path.join(__dirname, '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -31,7 +31,7 @@ function fixDriverFlowRegistration(driverConfig) {
   const driverFile = path.join(DRIVERS_DIR, driverConfig.name, 'driver.js');
 
   if (!fs.existsSync(driverFile)) {
-    console.log(`   ⚠️  ${driverConfig.name}: driver.js non trouvé`);
+    console.log(`     ${driverConfig.name}: driver.js non trouvé`);
     return false;
   }
 
@@ -39,7 +39,7 @@ function fixDriverFlowRegistration(driverConfig) {
 
   // Vérifier si déjà enregistré
   if (content.includes('getTriggerCard') || content.includes('getConditionCard')) {
-    console.log(`   ✓ ${driverConfig.name}: déjà enregistré`);
+    console.log(`    ${driverConfig.name}: déjà enregistré`);
     return false;
   }
 
@@ -52,7 +52,7 @@ function fixDriverFlowRegistration(driverConfig) {
   const onInitIndex = lines.findIndex(l => l.includes('async onInit()') || l.includes('onInit()'));
 
   if (onInitIndex === -1) {
-    console.log(`   ❌ ${driverConfig.name}: onInit() non trouvé`);
+    console.log(`    ${driverConfig.name}: onInit() non trouvé`);
     return false;
   }
 
@@ -100,14 +100,14 @@ function fixDriverFlowRegistration(driverConfig) {
   // Sauvegarder
   fs.writeFileSync(driverFile, lines.join('\n'), 'utf8');
 
-  console.log(`   ✅ ${driverConfig.name}: Flow registration ajouté`);
+  console.log(`    ${driverConfig.name}: Flow registration ajouté`);
   console.log(`      Triggers: ${driverConfig.triggers.length}, Conditions: ${driverConfig.conditions.length}`);
 
   return true;
 }
 
 // EXÉCUTION
-console.log('📂 Correction flow registrations...\n');
+console.log(' Correction flow registrations...\n');
 
 let fixed = 0;
 DRIVERS_TO_FIX.forEach(config => {
@@ -116,12 +116,12 @@ DRIVERS_TO_FIX.forEach(config => {
   }
 });
 
-console.log('\n📊 RÉSULTAT:\n');
+console.log('\n RÉSULTAT:\n');
 console.log(`   Drivers corrigés: ${fixed}/${DRIVERS_TO_FIX.length}\n`);
 
 if (fixed > 0) {
-  console.log('✅ FLOW REGISTRATIONS AJOUTÉES\n');
-  console.log('💡 Ces drivers auront maintenant des flows fonctionnels:');
+  console.log(' FLOW REGISTRATIONS AJOUTÉES\n');
+  console.log(' Ces drivers auront maintenant des flows fonctionnels:');
   DRIVERS_TO_FIX.forEach(c => {
     console.log(`   - ${c.name}`);
   });

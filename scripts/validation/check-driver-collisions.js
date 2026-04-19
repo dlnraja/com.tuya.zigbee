@@ -26,7 +26,7 @@ const INVALID_PATTERNS = [
 
 let hasErrors = false;
 
-console.log('🔍 Checking driver collisions...\n');
+console.log(' Checking driver collisions...\n');
 
 // Build combination map
 fs.readdirSync(driversDir).filter(d => 
@@ -45,7 +45,7 @@ fs.readdirSync(driversDir).filter(d =>
     // Check for invalid wildcards
     mfrs.forEach(mfr => {
       if (INVALID_PATTERNS.includes(mfr)) {
-        console.log(`❌ INVALID WILDCARD: ${driverName} has "${mfr}" (must use full ID)`);
+        console.log(` INVALID WILDCARD: ${driverName} has "${mfr}" (must use full ID)`);
         hasErrors = true;
       }
     });
@@ -59,7 +59,7 @@ fs.readdirSync(driversDir).filter(d =>
       });
     });
   } catch (e) {
-    console.log(`⚠️ Error parsing ${driverName}: ${e.message}`);
+    console.log(` Error parsing ${driverName}: ${e.message}`);
   }
 });
 
@@ -76,22 +76,22 @@ combinations.forEach((drivers, key) => {
 });
 
 if (collisions.length > 0) {
-  console.log(`\n❌ COLLISIONS FOUND: ${collisions.length}\n`);
+  console.log(`\n COLLISIONS FOUND: ${collisions.length}\n`);
   collisions.forEach(c => {
     console.log(`  ${c.mfr} + ${c.pid}`);
-    console.log(`    → ${c.drivers.join(', ')}`);
+    console.log(`     ${c.drivers.join(', ')}`);
   });
   hasErrors = true;
 } else {
-  console.log('✅ No collisions found');
+  console.log(' No collisions found');
 }
 
-console.log(`\n📊 Total unique (mfr+pid) combinations: ${combinations.size}`);
+console.log(`\n Total unique (mfr+pid) combinations: ${combinations.size}`);
 
 if (hasErrors) {
-  console.log('\n❌ VALIDATION FAILED - Fix collisions before merging');
+  console.log('\n VALIDATION FAILED - Fix collisions before merging');
   process.exit(1);
 } else {
-  console.log('\n✅ VALIDATION PASSED');
+  console.log('\n VALIDATION PASSED');
   process.exit(0);
 }

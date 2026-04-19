@@ -14,15 +14,15 @@ const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap'
 class Button8GangDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('╔═══════════════════════════════════════════════════════════════════╗');
-    this.log('║           BUTTON 8-GANG v5.8.16 - E000 ENHANCED                   ║');
-    this.log('╚═══════════════════════════════════════════════════════════════════╝');
+    this.log('');
+    this.log('           BUTTON 8-GANG v5.8.16 - E000 ENHANCED                   ');
+    this.log('');
 
     this.buttonCount = 8;
     await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
     await this._setupE000Detection(zclNode);
     await this._setupExtraDetection(zclNode);
-    this.log('[INIT] ✅ Button8GangDevice initialized - 8 buttons ready');
+    this.log('[INIT]  Button8GangDevice initialized - 8 buttons ready');
   }
 
   async _setupExtraDetection(zclNode) {

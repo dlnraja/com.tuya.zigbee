@@ -87,4 +87,4 @@ for (const [dp, usages] of sorted) {
 
 // Save full database
 fs.writeFileSync('dp-database.json', JSON.stringify([...dpDatabase.entries()], null, 2));
-console.log('\n✅ Full DP database saved to dp-database.json');
+console.log('\n Full DP database saved to dp-database.json');

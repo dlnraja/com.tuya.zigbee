@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * cleanup-failed-runs.js — Autonomous GitHub Actions failed run cleaner
+ * cleanup-failed-runs.js  Autonomous GitHub Actions failed run cleaner
  * Usage: node scripts/maintenance/cleanup-failed-runs.js
  * Requires: gh CLI authenticated
  * 
@@ -21,7 +21,7 @@ function run(cmd) {
 }
 
 async function main() {
-  console.log('🧹 GitHub Actions Failed Run Cleaner\n');
+  console.log(' GitHub Actions Failed Run Cleaner\n');
   let totalDeleted = 0;
   let round = 0;
 
@@ -62,7 +62,7 @@ async function main() {
       } catch {}
     }
 
-    console.log(`  ✅ Deleted ${runs.length} (total: ${totalDeleted})\n`);
+    console.log(`   Deleted ${runs.length} (total: ${totalDeleted})\n`);
     
     // Small pause to respect rate limits
     if (runs.length === BATCH) {
@@ -70,8 +70,8 @@ async function main() {
     }
   }
 
-  console.log(`\n🎉 Done! Total deleted: ${totalDeleted}`);
+  console.log(`\n Done! Total deleted: ${totalDeleted}`);
   console.log(`   Remaining failed runs: 0`);
 }
 
-main().catch(e => { console.error('❌', e.message); process.exit(1); });
+main().catch(e => { console.error('', e.message); process.exit(1); });

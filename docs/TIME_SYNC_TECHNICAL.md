@@ -30,7 +30,7 @@ outputClusters: [25, 10]
 // Listen for mcuSyncTime (0x24) requests
 class TimeSyncBoundCluster {
   mcuSyncTime(payload) {
-    // Device requests time → respond with [UTC:4][Local:4]
+    // Device requests time  respond with [UTC:4][Local:4]
     respondToTimeSyncRequest();
   }
 }
@@ -43,7 +43,7 @@ endpoint.bind('tuya', new TimeSyncBoundCluster());
 // Listen for ZCL Time attribute reads
 class ZclTimeBoundCluster {
   time(payload) {
-    // Device reads time attribute → write current time
+    // Device reads time attribute  write current time
     writeZclTimeAttribute();
   }
 }
@@ -69,60 +69,60 @@ const localTimeTuya = utcTimeTuya + (timezoneOffset * 60);
 
 ## Firmware Behavior Cases
 
-### 🟢 Case A: Cooperative Firmware (Best)
+###  Case A: Cooperative Firmware (Best)
 
 ```
-[TIME-SYNC] ⏰ mcuSyncTime REQUEST received!
-[TIME-SYNC] ✅ Sent via mcuSyncTime command
-→ LCD displays correct time ✅
+[TIME-SYNC]  mcuSyncTime REQUEST received!
+[TIME-SYNC]  Sent via mcuSyncTime command
+ LCD displays correct time 
 ```
 
-### 🟠 Case B: Hybrid Firmware (Common)
+###  Case B: Hybrid Firmware (Common)
 
 ```
-[TIME-SYNC] ⏰ mcuSyncTime REQUEST received!
-[TIME-SYNC] ✅ Sent via mcuSyncTime command
-→ Logs OK, LCD still wrong ❌
+[TIME-SYNC]  mcuSyncTime REQUEST received!
+[TIME-SYNC]  Sent via mcuSyncTime command
+ Logs OK, LCD still wrong 
 ```
 
 Device requests time but ignores non-Tuya gateway responses.
 
-### 🔴 Case C: Cloud-Only Firmware
+###  Case C: Cloud-Only Firmware
 
 ```
 (No TIME-SYNC logs)
-→ LCD cannot be synced locally ❌
+ LCD cannot be synced locally 
 ```
 
 Time cluster is cosmetic; MCU only accepts cloud sync.
 
 ## Diagnostic Logs
 
-### ✅ Success Indicators
+###  Success Indicators
 
 ```
-[TIME-SYNC] ⏰ mcuSyncTime REQUEST received from device!
-[TIME-SYNC] ✅ Sent via mcuSyncTime command
+[TIME-SYNC]  mcuSyncTime REQUEST received from device!
+[TIME-SYNC]  Sent via mcuSyncTime command
 ```
 
 or
 
 ```
-[TIME-SYNC] ⏰ ZCL Time cluster read request!
-[TIME-SYNC] ✅ ZCL Time attribute written
+[TIME-SYNC]  ZCL Time cluster read request!
+[TIME-SYNC]  ZCL Time attribute written
 ```
 
-### ⚠️ Warning Indicators
+###  Warning Indicators
 
 ```
-[TIME-SYNC] ⚠️ No Tuya cluster - trying TuyaEF00Manager
+[TIME-SYNC]  No Tuya cluster - trying TuyaEF00Manager
 ```
 
-→ RE-PAIR device to initialize clusters properly
+ RE-PAIR device to initialize clusters properly
 
-### ❌ Failure Indicators
+###  Failure Indicators
 
-No `[TIME-SYNC]` logs at all → firmware doesn't request time
+No `[TIME-SYNC]` logs at all  firmware doesn't request time
 
 ## Troubleshooting
 
@@ -130,7 +130,7 @@ No `[TIME-SYNC]` logs at all → firmware doesn't request time
 
 1. **RE-PAIR the device** (mandatory after app update)
 2. Check logs for `mcuSyncTime REQUEST`
-3. If no request logs → firmware limitation (not fixable)
+3. If no request logs  firmware limitation (not fixable)
 
 ### Logs Show Request But LCD Wrong
 

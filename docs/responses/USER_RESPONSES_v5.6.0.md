@@ -9,7 +9,7 @@
 
 **v5.6.0 Fix Applied** for your TS004F Smart Knob (`_TZ3000_gwkzibhs`):
 
-✅ **Changes made:**
+ **Changes made:**
 1. OnOff cluster heartbeat reports are now **filtered** for TS004F (no more false button triggers every 10min)
 2. Enhanced **Scenes cluster** handling to capture real button events
 3. Raw frame interceptor for scene commands
@@ -21,7 +21,7 @@
 
 To test: Update to v5.6.0, re-pair the device if needed, and create a simple flow with "When button pressed" trigger.
 
-Thanks for your patience! 🙏
+Thanks for your patience! 
 ```
 
 ---
@@ -53,7 +53,7 @@ Thanks!
 
 **v5.5.998 Fix Applied** for Longsam Mini M3 curtain motor (`_TZE204_xu4a5rhj`):
 
-✅ Position is now **INVERTED** correctly (DP2: 100-value)
+ Position is now **INVERTED** correctly (DP2: 100-value)
 
 **Please test:**
 - [ ] Does 0% = fully closed and 100% = fully open?
@@ -74,7 +74,7 @@ If position is still inverted, let me know the exact behavior you observe.
 
 **v5.6.0 Fix for Disco Lights** on your HOBEIAN ZG-204ZV:
 
-✅ **Added motion throttle:**
+ **Added motion throttle:**
 - 5 second minimum between motion state changes
 - 3 second debounce before clearing motion
 - Prevents rapid on/off triggering your lights
@@ -86,7 +86,7 @@ If position is still inverted, let me know the exact behavior you observe.
 
 **Diagnostic ID for reference:** `9b3495bb-16c7-4e90-8ee6-335b0f2fdec6`
 
-Let me know the results! 🙏
+Let me know the results! 
 ```
 
 ---
@@ -98,7 +98,7 @@ Let me know the results! 🙏
 
 **v5.6.0 Fix Applied** for your presence sensor (`_TZE204_ztqnh5cg`):
 
-✅ Added to **ZCL_ONLY_RADAR** config with permissive mode:
+ Added to **ZCL_ONLY_RADAR** config with permissive mode:
 - Uses IAS Zone for motion (not Tuya DP)
 - Uses ZCL illuminance cluster for lux
 - Uses ZCL power config for battery
@@ -125,7 +125,7 @@ Thanks!
 
 **v5.6.0 Fix Applied** for your radar sensor (`_TZE200_kb5noeto`):
 
-✅ This is a **ZCL-only variant** (no Tuya DP cluster 61184) - now supported!
+ This is a **ZCL-only variant** (no Tuya DP cluster 61184) - now supported!
 
 **Added ZCL_ONLY_RADAR config:**
 - Motion via IAS Zone cluster 1280
@@ -169,7 +169,7 @@ J'ai besoin des **fingerprints texte** de vos appareils pour les supporter:
 
 Les drivers existent déjà (`contact_sensor`, `soil_sensor`, `power_meter`) - j'ai juste besoin des fingerprints pour les ajouter!
 
-Merci! 🙏
+Merci! 
 ```
 
 ---

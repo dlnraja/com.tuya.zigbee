@@ -2,15 +2,15 @@
 'use strict';
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      GLOBAL FINGERPRINT DEDUPLICATOR - v1.1.0                               ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Cleans driver manifests by:                                                  ║
- * ║  1. Lowercasing all manufacturerNames (Standard Tuya zigbee-herdsman style)  ║
- * ║  2. Removing duplicate manufacturerNames within a single driver               ║
- * ║  3. Removing duplicate productIds within a single driver                      ║
- * ║  4. Sorting entries alphabetically for easier git diffs                       ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       GLOBAL FINGERPRINT DEDUPLICATOR - v1.1.0                               
+ * 
+ *   Cleans driver manifests by:                                                  
+ *   1. Lowercasing all manufacturerNames (Standard Tuya zigbee-herdsman style)  
+ *   2. Removing duplicate manufacturerNames within a single driver               
+ *   3. Removing duplicate productIds within a single driver                      
+ *   4. Sorting entries alphabetically for easier git diffs                       
+ * 
  */
 
 const fs = require('fs');

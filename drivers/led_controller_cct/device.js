@@ -30,7 +30,7 @@ class LEDControllerCCTDevice extends UnifiedLightBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[LED-CCT] ✅ LED controller CCT ready');
+    this.log('[LED-CCT]  LED controller CCT ready');
   }
 
 

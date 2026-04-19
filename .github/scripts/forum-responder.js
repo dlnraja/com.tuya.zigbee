@@ -41,10 +41,10 @@ const{sanitize}=require('./sanitize-forum');
 function cleanReply(r){
   if(!r)return r;
   r=r.replace(/^---+$/gm,'');
-  r=r.replace(/GitHub\s*#\d+\s*[—–-]\s*[^\n]*/gi,'');
+  r=r.replace(/GitHub\s*#\d+\s*[-]\s*[^\n]*/gi,'');
   r=r.replace(/\[#\d+\]\([^)]*github[^)]*\)\s*[^\n]*/gi,'');
   r=r.replace(/Open (?:PRs?|issues?):?\s*[^\n]*/gi,'');
-  // Strip references to other forum topics/threads — never mention them in output
+  // Strip references to other forum topics/threads  never mention them in output
   r=r.replace(/\bT\d{4,6}\b/g,(m)=>m==='T140352'?m:'');
   r=r.replace(/community\.homey\.app\/t\/[^\s)\]]+/gi,'');
   r=r.replace(/\b(?:topic|thread)\s*(?:#|ID)?\s*\d{4,6}\b/gi,(m)=>/140352/.test(m)?m:'');
@@ -85,7 +85,7 @@ function checkCooldown(state,tid){
   const log=state.replyLog||[];
   const recent=log.filter(e=>e.tid===tid&&Date.now()-new Date(e.ts).getTime()<REPLY_COOLDOWN_MS);
   if(recent.length){
-    console.log('  ⏳ Cooldown: replied to T'+tid+' '+Math.round((Date.now()-new Date(recent[0].ts).getTime())/60000)+'m ago');
+    console.log('   Cooldown: replied to T'+tid+' '+Math.round((Date.now()-new Date(recent[0].ts).getTime())/60000)+'m ago');
     return false;
   }
   return true;
@@ -111,7 +111,7 @@ function hasRecentOwnReply(posts){
 // v5.12.x: Cross-check global cooldown file (shared with post-forum-update.js and forum-updater.js)
 function checkGlobalCooldown(){
   try{const f=path.join(SD,'forum-post-cooldown.json');const j=JSON.parse(fs.readFileSync(f,'utf8'));
-    if(j.t&&Date.now()-j.t<1800000){console.log('  ⏳ Global cooldown: last post '+Math.round((Date.now()-j.t)/60000)+'m ago');return false}}
+    if(j.t&&Date.now()-j.t<1800000){console.log('   Global cooldown: last post '+Math.round((Date.now()-j.t)/60000)+'m ago');return false}}
   catch{}return true;
 }
 function setGlobalCooldown(){
@@ -171,7 +171,7 @@ async function getLastOwnPost(tid){
 
 function hasUserSymptoms(b){if(!b)return false;const l=b.toLowerCase();return/doesn.?t.*work|stuck|wrong.*value|shows?.*(0|zero|wrong)|bug|error|issue|problem|broken|not.*updating|after.*(update|install)|missing.*capability|interview|diagnostic/.test(l);}
 
-// v5.11.28: Batched fallback — merge FP results + intelligence into ONE reply
+// v5.11.28: Batched fallback  merge FP results + intelligence into ONE reply
 function batchedFallback(postInfos,ver){const allText=postInfos.map(p=>p.text).join();if(hasUserSymptoms(allText))return null;
   const found=new Map(),miss=new Map(),fuzzyInfo=new Map();
   for(const pi of postInfos)for(const[fp,v]of Object.entries(pi.fpResults)){
@@ -185,20 +185,20 @@ function batchedFallback(postInfos,ver){const allText=postInfos.map(p=>p.text).j
   if(found.size){
     const fps=[...found.entries()];
     if(fps.length===1){const drv=fps[0][1];m+='yep '+fps[0][0]+' is in there, pair it as **'+drv[0]+'**'+(drv.length>1?' (or '+drv.slice(1).join(', ')+' depending on the model)':'')+'. ';}
-    else{m+='those are all in the app already: ';for(const[fp,d]of fps)m+=fp+' → '+d[0]+', ';m=m.replace(/, $/,'. ')}
+    else{m+='those are all in the app already: ';for(const[fp,d]of fps)m+=fp+'  '+d[0]+', ';m=m.replace(/, $/,'. ')}
     m+='\n\n';
   }
   if(miss.size){
     let extInfo='';
-    try{const ctx=gatherAll();const extFPs=new Set((ctx.externalSources?.topUnsupported||[]).map(u=>u.fp));const inExt=[...miss.keys()].filter(k=>extFPs.has(k));if(inExt.length)extInfo=' — I see '+(inExt.length===1?'it':'them')+' in Z2M/ZHA so shouldn\'t be hard to add'}catch{}
+    try{const ctx=gatherAll();const extFPs=new Set((ctx.externalSources?.topUnsupported||[]).map(u=>u.fp));const inExt=[...miss.keys()].filter(k=>extFPs.has(k));if(inExt.length)extInfo='  I see '+(inExt.length===1?'it':'them')+' in Z2M/ZHA so shouldn\'t be hard to add'}catch{}
     const mks=[...miss.keys()];
     m+=(mks.length===1?mks[0]+' isn\'t':mks.join(', ')+' aren\'t')+' in the app yet'+extInfo+'. Can you run a [device interview](https://tools.developer.homey.app/tools/zigbee) and share the result? I\'ll have a look.\n\n';
   }
-  m+='If it acts weird after updating, remove and re-pair — that usually fixes it.';
+  m+='If it acts weird after updating, remove and re-pair  that usually fixes it.';
   return m;
 }
 
-// v5.11.28: Batched AI — ALL posts + full intelligence → ONE rich reply
+// v5.11.28: Batched AI  ALL posts + full intelligence  ONE rich reply
 async function batchAI(postInfos,ver,threadCtx){
   let sys='';try{sys=fs.readFileSync(path.join(__dirname,'system-prompt.txt'),'utf8').replace(/\{\{VERSION\}\}/g,ver)}catch{}
 
@@ -229,7 +229,7 @@ async function batchAI(postInfos,ver,threadCtx){
     ctx+='## DECISION REFERENCE (consult before replying)\n';
     if(expRef.decisions?.length){
       ctx+='Known correct implementations:\n';
-      for(const d of expRef.decisions)ctx+='- '+d.device+' → **'+d.driver+'** (NOT '+d.wrongDriver+'): '+d.reason+'\n';
+      for(const d of expRef.decisions)ctx+='- '+d.device+'  **'+d.driver+'** (NOT '+d.wrongDriver+'): '+d.reason+'\n';
     }
     if(expRef.pending?.length){
       ctx+='Pending user issues:\n';
@@ -254,7 +254,7 @@ async function batchAI(postInfos,ver,threadCtx){
   ctx+='If a user reports a device already "in the app" but behaving differently (e.g. TH sensor instead of Soil), it is a VARIANT. Ask for the full Zigbee Interview.\n';
   ctx+='We resolve variants using specific deviceId (e.g. 514 vs 81) or cluster lists (Tuya Cluster CLUSTERS.TUYA_EF00 presence).\n';
   ctx+='## VALUE ISSUES\n';
-  ctx+='Soil npj9bug3: DP 111 is Soil Moisture (NOT alarm). Moisture Canyon (0% drops): Fixed in BVB v7 — needs 3 matching readings to validate drop. LCD TH sensors: re-pair to ensure Tuya Cluster binding. Energy massive: divisor fixed in v7. Double-div temp: fixed. Battery 0% on mains: known, fixed.\n\n';
+  ctx+='Soil npj9bug3: DP 111 is Soil Moisture (NOT alarm). Moisture Canyon (0% drops): Fixed in BVB v7  needs 3 matching readings to validate drop. LCD TH sensors: re-pair to ensure Tuya Cluster binding. Energy massive: divisor fixed in v7. Double-div temp: fixed. Battery 0% on mains: known, fixed.\n\n';
 
   // v5.12.2: Thread context
   const tcF=formatThreadContext(threadCtx);
@@ -330,7 +330,7 @@ async function main(){
     // Anti-spam: skip if global cooldown active (shared with post-forum-update.js)
     if(!checkGlobalCooldown()){state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
     // Anti-spam: skip if our own reply already exists in the fetched batch
-    if(hasRecentOwnReply(fr.posts)){console.log('  ⏳ Already replied in this batch, skipping');state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
+    if(hasRecentOwnReply(fr.posts)){console.log('   Already replied in this batch, skipping');state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
     // Phase 2: Fetch thread context then ONE batched reply
     const firstNew=devPosts[0]?.post?.post_number||last+1;
     const threadCtx=await fetchThreadContext(tid,firstNew);
@@ -338,12 +338,12 @@ async function main(){
     let reply=null;
     try{reply=await batchAI(devPosts,ver,threadCtx);if(reply)reply=cleanReply(reply)}catch(e){console.error('AI:',e.message)}
     if(!reply){state.topics[tid]={...ts,lastProcessed:maxP,lastRun:new Date().toISOString()};continue}
-    // Phase 2b: Quality gate — validate reply against driver DB before posting
+    // Phase 2b: Quality gate  validate reply against driver DB before posting
     const allOrigText=devPosts.map(d=>d.text).join(' ');
     const qg=validateReply(reply,allOrigText);
     if(!qg.valid){
       console.log('  QualityGate:',qg.warnings.length,'warnings');
-      for(const w of qg.warnings)console.log('    ⚠',w);
+      for(const w of qg.warnings)console.log('    ',w);
       if(qg.corrected){reply=qg.corrected;console.log('  Using corrected reply')}
     }
     reply=sanitize(reply);
@@ -354,7 +354,7 @@ async function main(){
     else if(dry){console.log('[DRY]\n'+reply.substring(0,300));summary.push({t:tid,u:uList,a:'dry'});}
     else{
       let ok=false;
-      // Check if last post in topic is already from dlnraja — EDIT instead of new post
+      // Check if last post in topic is already from dlnraja  EDIT instead of new post
       const lastOwn=await getLastOwnPost(tid);
       // v5.12.0: smartMergePost handles dedup + size cap + trim
       let mergeResult=null;
@@ -402,17 +402,17 @@ Max 200 words. Return ONLY the text.`;
         }
         
         if(!dry) {
-            console.log('  🤖 Ghostwriter: ' + (isMerging ? 'organic merge' : 'new reply') + '...');
+            console.log('   Ghostwriter: ' + (isMerging ? 'organic merge' : 'new reply') + '...');
             try {
                 const hRes = await callAI(contentToHumanize, humanizePrompt, { maxTokens: 2000, complexity: 'high' });
                 if (hRes && hRes.text) {
                     reply = sanitize(hRes.text);
-                    console.log('  ✅ Ghostwriter successful (' + (isMerging ? 'merged' : 'new') + ', model: ' + hRes.model + ')');
+                    console.log('   Ghostwriter successful (' + (isMerging ? 'merged' : 'new') + ', model: ' + hRes.model + ')');
                 } else {
-                    console.log('  ⚠️ Ghostwriter returned empty, using original.');
+                    console.log('   Ghostwriter returned empty, using original.');
                 }
             } catch(e) {
-                console.log('  ⚠️ Ghostwriter failed:', e.message);
+                console.log('   Ghostwriter failed:', e.message);
             }
         }
       if(lastOwn){

@@ -8,8 +8,8 @@
 
 | Secret | Required For | Get From |
 |--------|-------------|----------|
-| `HOMEY_PAT` | Publish, draft→test | https://tools.developer.homey.app/me |
-| `GH_PAT` | Cross-repo (forks, triage) | GitHub Settings → Tokens (scopes: repo, read:org) |
+| `HOMEY_PAT` | Publish, drafttest | https://tools.developer.homey.app/me |
+| `GH_PAT` | Cross-repo (forks, triage) | GitHub Settings  Tokens (scopes: repo, read:org) |
 | `GOOGLE_API_KEY` | AI analysis (Gemini) | https://aistudio.google.com/apikey |
 | `HOMEY_EMAIL` + `HOMEY_PASSWORD` | Forum SSO login | Athom account credentials |
 
@@ -92,13 +92,13 @@ After `getForumAuth()`, ALWAYS call `refreshCsrf()` or all POST/PUT/DELETE get 4
 ### 9. Large state files
 `comprehensive-scan.json` (~22MB) is in `.gitignore`. Always `git reset HEAD` if staged.
 
-### 10. REPLY_TOPICS — CRITICAL (updated v5.12.14)
+### 10. REPLY_TOPICS  CRITICAL (updated v5.12.14)
 **Bot must ONLY post on T140352** (our own thread). NEVER post on other people's threads.
 ```yaml
 env:
   REPLY_TOPICS: "140352"
 ```
-**ALL scripts that post to forum — verified T140352 only:**
+**ALL scripts that post to forum  verified T140352 only:**
 | Script | Guard |
 |--------|-------|
 | `forum-responder.js` | `REPLY_TOPICS` env (default='140352') |
@@ -112,36 +112,36 @@ env:
 
 **BUG FIXED v5.12.14:** `post-forum-update.js` had default `FORUM_TOPICS='140352,26439,146735'`
 which caused bot to post release updates on OTHER people's threads (T26439, T146735).
-Fix: hardcoded `.filter(t=>t===140352)` safety net — even if env overridden, only T140352 is used.
+Fix: hardcoded `.filter(t=>t===140352)` safety net  even if env overridden, only T140352 is used.
 
 **BUG FIXED v5.11.190:** `forum-auto-responder.yml` AND `forum-monitor.yml` both had
 `REPLY_TOPICS: '140352,26439'` which allowed the bot to post replies on JohanBendz's thread (T26439).
 Fix: changed REPLY_TOPICS to '140352' in both workflows. FORUM_TOPICS may still include 26439 for
 READ-ONLY scanning, but REPLY_TOPICS must ONLY be '140352'.
 
-### 12. Copilot Semantic Linter — SAFETY RULES
+### 12. Copilot Semantic Linter  SAFETY RULES
 The original `gh copilot suggest` approach was **dangerous**: it would echo raw Copilot output
 directly into driver files (`echo "$SUGGESTION" > "$file"`), potentially destroying working code.
 **v5.11.190 FIX:** Replaced with a safe, static bash-based SDK v3 validator that:
-- NEVER modifies files — report-only mode
+- NEVER modifies files  report-only mode
 - Checks 7 SDK v3 rules: async init, Manager globals, v2 API, await setCapability, listener leaks, settings keys, titleFormatted
 - Has 5-minute timeout to prevent blocking the pipeline
 
 
 ### 11. Auto-reopen chain
-When user comments on closed issue/PR → `auto-reopen-on-comment.yml` reopens it →
-`auto-respond.yml` triggers on `reopened` event → daily/nightly re-process in next cycle.
+When user comments on closed issue/PR  `auto-reopen-on-comment.yml` reopens it 
+`auto-respond.yml` triggers on `reopened` event  daily/nightly re-process in next cycle.
 
-### 13. INFORMATION FLOW & ATTRIBUTION — CRITICAL RULE
+### 13. INFORMATION FLOW & ATTRIBUTION  CRITICAL RULE
 
 **SCAN EVERYTHING, IMPLEMENT SILENTLY, CREDIT ONLY OWN SOURCES.**
 
 #### What to SCAN (READ-ONLY, implement silently):
 - All Tuya-related forum threads: T26439 (Johan), T146735 (Tuya Smart Life), T89271 (archive), etc.
-- Johan Bendz's GitHub (JohanBendz/com.tuya.zigbee) — PRs, issues, code changes
+- Johan Bendz's GitHub (JohanBendz/com.tuya.zigbee)  PRs, issues, code changes
 - All Tuya WiFi threads and related projects
 - Other forks and community contributions
-- **→ Implement discoveries into drivers/code, but NEVER mention the source in:**
+- ** Implement discoveries into drivers/code, but NEVER mention the source in:**
   - Forum posts
   - Changelogs
   - Commit messages (use generic "improved" / "added support")
@@ -149,28 +149,28 @@ When user comments on closed issue/PR → `auto-reopen-on-comment.yml` reopens i
 
 #### What to PUBLICIZE (visible in logs/changelogs/forum):
 Only content from these sources MAY be mentioned:
-- **dlnraja's own forum thread** (T140352) — user requests, bug reports
-- **dlnraja's GitHub** — own issues, own PRs
+- **dlnraja's own forum thread** (T140352)  user requests, bug reports
+- **dlnraja's GitHub**  own issues, own PRs
 - **Direct user requests** from T140352
 - **All descendant forks** of dlnraja/com.tuya.zigbee
-- **→ These CAN appear in:** changelogs, forum posts, commit messages, logs
+- ** These CAN appear in:** changelogs, forum posts, commit messages, logs
 
 #### Forum Post Merge Rule:
 - **ALWAYS check the last poster on T140352**
 - If last poster is `dlnraja` (even if it was the bot posting): **EDIT/MERGE** into that post
 - If last poster is someone else: **NEW reply** (only on T140352)
-- NEVER create consecutive posts — always merge with own last post
+- NEVER create consecutive posts  always merge with own last post
 - Use `merge-last-posts.js` for cleanup if multiple bot posts exist
 
 #### Why this matters:
-- Johan Bendz is the original author — we don't advertise that we watch his repo
-- Forum community sees us as independent — no "synced from..." mentions
+- Johan Bendz is the original author  we don't advertise that we watch his repo
+- Forum community sees us as independent  no "synced from..." mentions
 - Prevents attribution conflicts and maintains professional boundaries
 
 
 ---
 
-## D. Draft → Test Promotion
+## D. Draft  Test Promotion
 
 Standard 3-tier Puppeteer pattern (ALL workflows must use):
 1. **Tier 1**: `npm install puppeteer --no-save` + `node .github/scripts/auto-promote-puppeteer.js`
@@ -251,7 +251,7 @@ env:
 | cleanup-wrong-threads | manual | cleanup bot posts | HOMEY_EMAIL/PASSWORD |
 | johan-sdk3-sync | Wed 05:00 | SDK3 FP+DP sync + scaffold + audit | GITHUB_TOKEN |
 | driver-maintenance | Fri 04:00 | Auto-scaffold + conflict audit + PR | GH_PAT |
-| code-quality | Wed 03:00 + on push | quality checks | — |
+| code-quality | Wed 03:00 + on push | quality checks |  |
 | dependabot-auto-merge | on PR | auto-merge deps | GH_PAT |
 
 19 additional workflows listed in `.github/workflows/` directory.
@@ -268,7 +268,7 @@ All action refs pinned to SHA hashes (Mar 2026). Format: `action@SHA # vN`. Upda
 New sensor variants (soil+fertilizer, air+VOC) may have unknown DPs.
 1. Check fingerprint in `driver.compose.json`
 2. Standard DPs work (soil: DP3/5/14/15)
-3. Unknown DPs logged by `_handleDP()` — ask user for logs
+3. Unknown DPs logged by `_handleDP()`  ask user for logs
 4. Create capability in `.homeycompose/capabilities/`
 5. Add DP mapping in `device.js`
 
@@ -295,7 +295,7 @@ Safe auto-add PIDs: `SNZB-*`, `ZBMINI*`, `S31ZB`, `S[46]0ZBT*`, `BASICZBR*`, `TR
 - Comment < 5 chars, issue closed < 2min ago, or "thank you" patterns
 
 **BUG FIXED:** dlnraja commenting on closed issues (to confirm resolution)
-triggered the auto-reopen bot → infinite close/reopen loop.
+triggered the auto-reopen bot  infinite close/reopen loop.
 Fix: added `dlnraja` to both the `if:` condition AND the `SKIP_USERS` array.
 
 ---
@@ -310,10 +310,10 @@ MUST check this constraint BEFORE injecting:
 // SAFE check before adding battery capability
 const caps = compose.capabilities || [];
 if (caps.includes('measure_battery')) {
-  // NEVER add alarm_battery — SDK v3 violation
+  // NEVER add alarm_battery  SDK v3 violation
 }
 if (caps.includes('alarm_battery')) {
-  // NEVER add measure_battery — SDK v3 violation
+  // NEVER add measure_battery  SDK v3 violation
 }
 ```
 
@@ -323,10 +323,10 @@ The same manufacturerName can power differently based on productId.
 
 ```
 Decision tree:
-1. Does compose have energy.batteries? → Battery device
-2. Does device.js have mainsPowered=true? → Mains device
-3. Is class=remote AND productId=TS004x? → Kinetic (self-powered)
-4. Is class=socket/light/fan? → Probably mains (verify compose)
+1. Does compose have energy.batteries?  Battery device
+2. Does device.js have mainsPowered=true?  Mains device
+3. Is class=remote AND productId=TS004x?  Kinetic (self-powered)
+4. Is class=socket/light/fan?  Probably mains (verify compose)
 5. Default: DO NOT add battery capabilities automatically
 ```
 
@@ -336,15 +336,15 @@ All scripts in `scripts/maintenance/` MUST:
 2. **Validate JSON** after compose modification
 3. **Validate JS** syntax after device.js modification (`node -c`)
 4. **Log every change** for audit trail
-5. **Be idempotent** — running twice = same result
+5. **Be idempotent**  running twice = same result
 6. **Never remove** capabilities without explicit justification
 7. **Never modify** WiFi driver authentication/implementation
-8. **Respect protocol type** — don't add ZCL clusters to Tuya DP drivers
+8. **Respect protocol type**  don't add ZCL clusters to Tuya DP drivers
 
 ### Pipeline Step 6c Safety Gate
 The daily pipeline runs `revert-alarm-battery-conflict.js` to catch
 any regressions introduced by AI linting or enrichment steps.
-Order: `fix-flow-cards` → `revert-battery-conflicts` → `fix-empty-caps` → `validate`
+Order: `fix-flow-cards`  `revert-battery-conflicts`  `fix-empty-caps`  `validate`
 
 ---
 

@@ -16,7 +16,7 @@ const ROOT = process.cwd();
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
 
 async function audit() {
-  console.log('=== 🛡️ Flow Migration & Alias Audit ===');
+  console.log('===  Flow Migration & Alias Audit ===');
   
   const existingDrivers = fs.readdirSync(DRIVERS_DIR);
   let errors = 0;
@@ -24,19 +24,19 @@ async function audit() {
 
   for (const [alias, target] of Object.entries(DRIVER_ALIAS_MAP)) {
     if (!existingDrivers.includes(target)) {
-      console.error(`❌ [ALIAS] "${alias}" points to non-existent driver "${target}"`);
+      console.error(` [ALIAS] "${alias}" points to non-existent driver "${target}"`);
       errors++;
     } else {
       // Check if driver.compose.json matches target
       const composePath = path.join(DRIVERS_DIR, target, 'driver.compose.json');
       if (!fs.existsSync(composePath)) {
-        console.warn(`⚠️ [ALIAS] target driver "${target}" missing driver.compose.json`);
+        console.warn(` [ALIAS] target driver "${target}" missing driver.compose.json`);
       }
     }
     
     // Check if alias itself is an existing driver (might be redundant or intentional)
     if (existingDrivers.includes(alias) && alias !== target) {
-      console.log(`ℹ️ [ALIAS] "${alias}" is an actual driver AND an alias to "${target}"`);
+      console.log(` [ALIAS] "${alias}" is an actual driver AND an alias to "${target}"`);
     }
   }
 

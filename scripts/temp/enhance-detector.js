@@ -41,7 +41,7 @@ if (!content.includes('trv_mapping_missing')) {
   // Add new templates
   const templateMarker = "const TEMPLATES = {";
   const newTemplates = `
-  trv_comprehensive_update: \`### 🌡️ Radiator/TRV Driver Updated
+  trv_comprehensive_update: \`###  Radiator/TRV Driver Updated
 
 Good news! In version **v6.0.0**, we have introduced a comprehensive Zigbee TRV driver.
 This driver now supports:
@@ -51,29 +51,29 @@ This driver now supports:
 - Temperature calibration
 
 Please update to the latest test version and re-pair your device to access these features.
-👉 [Install Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)\`,
+ [Install Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)\`,
 
-  wifi_radiator_local_fix: \`### 📶 WiFi Radiator Local Control
+  wifi_radiator_local_fix: \`###  WiFi Radiator Local Control
 
 In version **v6.0.0**, we've added a dedicated **WiFi Tuya Radiator** driver with local API support.
 This driver is compatible with Besterm and other Tuya WiFi radiators, communicating locally without the cloud.
 
 Ensure you have your \`device_id\` and \`device_key\` (Local Key) configured in the device settings.
-👉 [Install Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)\`,
+ [Install Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)\`,
 
-  power_source_intelligence_fix: \`### 🔋 Intelligent Power Source Detection
+  power_source_intelligence_fix: \`###  Intelligent Power Source Detection
 
 We have completely overhauled how battery and mains-powered devices are handled in **v6.0.0**.
 The app now dynamically detects the true power source using ZCL attributes and Tuya DPs. 
 This resolves issues where mains-powered devices incorrectly displayed a battery capability, or vice-versa.
 
 Please update to the latest test version, and the capability should correct itself (you may need to restart the app or re-pair the device).
-👉 [Install Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)\`,
+ [Install Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)\`,
 `;
   
   content = content.replace(templateMarker, templateMarker + newTemplates);
   fs.writeFileSync(bugDetectorFile, content);
-  console.log('✅ Enhanced intelligent-bug-detector.js with v6.0 patterns');
+  console.log(' Enhanced intelligent-bug-detector.js with v6.0 patterns');
 } else {
   console.log('Patterns already exist in intelligent-bug-detector.js');
 }

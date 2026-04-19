@@ -17,6 +17,6 @@ for (const drv of switchDrivers) {
   content = content.replace(/await args\.device\.setCapabilityValue\(([^,]+),\s*!v\);/g, "await args.device.triggerCapabilityListener($1, !v);");
 
   fs.writeFileSync(file, content);
-  console.log(`✅ Fixed flow actions in ${drv}/driver.js`);
+  console.log(` Fixed flow actions in ${drv}/driver.js`);
 }
 

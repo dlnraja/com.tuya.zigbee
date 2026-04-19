@@ -1,9 +1,9 @@
 {
   "name": {
-    "en": "Universal Tuya Engine — Genesis Edition",
-    "fr": "Moteur Tuya Universel — Édition Genesis",
-    "nl": "Universele Tuya Engine — Genesis Editie",
-    "de": "Universelles Tuya Engine — Genesis Edition"
+    "en": "Universal Tuya Engine  Genesis Edition",
+    "fr": "Moteur Tuya Universel  Édition Genesis",
+    "nl": "Universele Tuya Engine  Genesis Editie",
+    "de": "Universelles Tuya Engine  Genesis Edition"
   },
   "class": "other",
   "images": {
@@ -102,8 +102,8 @@
     },
     "learnmode": {
       "instruction": {
-        "en": "🌌 Universal Tuya Engine (Genesis Edition) 1. Put your device in pairing mode (usually hold the physical button for 5-10 seconds until the LED flashes).\n2. For coordinators or routers (Zbeacon, SLZB-06, Tuya Router): Ensure the device is powered and within range.\n3. For Legrand/Netatmo: Use the master wireless switch or remote and press 'home' while tapping the device. Capabilities and flow cards will be dynamically mapped via the Genesis Orchestrator.",
-        "fr": "🌌 Moteur Tuya Universel (Édition Genesis) 1. Mettez votre appareil en mode appairage (maintenez le bouton physique 5-10s jusqu'au clignotement).\n2. Pour coordinateurs ou routeurs (Zbeacon, SLZB-06): Vérifiez que l'appareil est alimenté.\n3. Pour Legrand/Netatmo: Utilisez l'interrupteur maître sans fil et maintenez 'home' tout en tapotant l'appareil. Les capacités et cartes de flux seront mappées dynamiquement par l'Orchestrateur Genesis."
+        "en": " Universal Tuya Engine (Genesis Edition) 1. Put your device in pairing mode (usually hold the physical button for 5-10 seconds until the LED flashes).\n2. For coordinators or routers (Zbeacon, SLZB-06, Tuya Router): Ensure the device is powered and within range.\n3. For Legrand/Netatmo: Use the master wireless switch or remote and press 'home' while tapping the device. Capabilities and flow cards will be dynamically mapped via the Genesis Orchestrator.",
+        "fr": " Moteur Tuya Universel (Édition Genesis) 1. Mettez votre appareil en mode appairage (maintenez le bouton physique 5-10s jusqu'au clignotement).\n2. Pour coordinateurs ou routeurs (Zbeacon, SLZB-06): Vérifiez que l'appareil est alimenté.\n3. Pour Legrand/Netatmo: Utilisez l'interrupteur maître sans fil et maintenez 'home' tout en tapotant l'appareil. Les capacités et cartes de flux seront mappées dynamiquement par l'Orchestrateur Genesis."
       }
     }
   },
@@ -111,8 +111,8 @@
     {
       "type": "group",
       "label": {
-        "en": "🔧 Device Information",
-        "fr": "🔧 Informations Appareil"
+        "en": " Device Information",
+        "fr": " Informations Appareil"
       },
       "children": [
         {
@@ -138,8 +138,8 @@
     {
       "type": "group",
       "label": {
-        "en": "📡 Discovered Clusters",
-        "fr": "📡 Clusters Découverts"
+        "en": " Discovered Clusters",
+        "fr": " Clusters Découverts"
       },
       "children": [
         {
@@ -165,8 +165,8 @@
     {
       "type": "group",
       "label": {
-        "en": "⚙️ Advanced",
-        "fr": "⚙️ Avancé"
+        "en": " Advanced",
+        "fr": " Avancé"
       },
       "children": [
         {

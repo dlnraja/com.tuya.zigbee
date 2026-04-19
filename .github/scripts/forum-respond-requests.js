@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 // DEPRECATED: Use forum-responder.js instead (has edit-instead-of-post, anti-spam, AI batching)
-console.log('⚠️  forum-respond-requests.js is DEPRECATED. Use forum-responder.js instead.');
+console.log('  forum-respond-requests.js is DEPRECATED. Use forum-responder.js instead.');
 console.log('   This script creates new posts without checking for duplicates.');
 console.log('   Exiting without action.');
 process.exit(0);
@@ -62,7 +62,7 @@ async function main(){
           if(!found.length&&!missing.length)continue;
           let msg='';
           if(found.length)msg+='Hey, those devices ('+found.join(', ')+') are mapped in v'+ver+'. You might need to remove and re-pair to pick them up.\n\n';
-          if(missing.length)msg+='I don\'t have support for '+missing.join(', ')+' yet — if you can share a device interview from the Homey developer tools, I can look into adding them.\n';
+          if(missing.length)msg+='I don\'t have support for '+missing.join(', ')+' yet  if you can share a device interview from the Homey developer tools, I can look into adding them.\n';
           if(T!==REPLY_TOPIC){console.log('  [SCAN-ONLY] T'+T+' #'+p.post_number+' found FPs but not our thread, skipping reply');continue;}
           if(DRY){console.log('[DRY] Would reply to #'+p.post_number+' in topic '+T);ct++;}
           else{try{if(auth.type==='session')await refreshCsrf(auth);await reply(T,msg,auth);ct++;console.log('Replied to post',p.post_number,'in topic',T);}catch(e){console.error('Reply fail:',e.message);}}

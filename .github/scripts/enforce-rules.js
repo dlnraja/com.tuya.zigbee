@@ -4,11 +4,11 @@ const path = require('path');
 let errors = 0;
 let warnings = 0;
 function error(msg) {
-  console.error('❌ ERROR:', msg);
+  console.error(' ERROR:', msg);
   errors++;
 }
 function warn(msg) {
-  console.warn('⚠️ WARN:', msg);
+  console.warn(' WARN:', msg);
   warnings++;
 }
 
@@ -73,7 +73,7 @@ for (const d of dirs) {
 }
 
 // 5. Battery cap check for mains devices
-// WARNING only — many Tuya devices support dual power (mains + battery backup)
+// WARNING only  many Tuya devices support dual power (mains + battery backup)
 // This is not a blocking error since removing measure_battery would break
 // devices that DO have battery backup (e.g. IR blasters with battery)
 for (const d of dirs) {
@@ -88,7 +88,7 @@ for (const d of dirs) {
            const cj = JSON.parse(fs.readFileSync(compFile, 'utf8'));
            if (cj.capabilities && cj.capabilities.includes('measure_battery')) {
               if (!txt.includes('removeCapability("measure_battery")') && !txt.includes("removeCapability('measure_battery')")) {
-                 warn(d + ' is mainsPowered but has measure_battery — consider adding removeCapability() or removing from compose');
+                 warn(d + ' is mainsPowered but has measure_battery  consider adding removeCapability() or removing from compose');
               }
            }
          } catch(e) {}

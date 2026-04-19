@@ -11,5 +11,5 @@ if (content.includes('_TZ3000_v4l4b0lp')) {
   content = content.replace(/\/\/ Issue #170 - Flow cards broken for multi-gang\s*/g, '');
   
   fs.writeFileSync(file, content);
-  console.log('✅ Removed _TZ3000_v4l4b0lp from ZCL_ONLY_MANUFACTURERS_3G');
+  console.log(' Removed _TZ3000_v4l4b0lp from ZCL_ONLY_MANUFACTURERS_3G');
 }

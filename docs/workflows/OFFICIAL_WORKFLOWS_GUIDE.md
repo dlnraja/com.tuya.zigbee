@@ -1,11 +1,11 @@
-# 📚 Guide Officiel - Workflows GitHub Actions Homey
+#  Guide Officiel - Workflows GitHub Actions Homey
 
 **Date:** 2025-10-11  
 **Based on:** [Official Homey Documentation](https://apps.developer.homey.app/app-store/publishing)
 
 ---
 
-## 📋 Table des Matières
+##  Table des Matières
 
 1. [Vue d'ensemble](#vue-densemble)
 2. [Actions Officielles GitHub Marketplace](#actions-officielles)
@@ -16,7 +16,7 @@
 
 ---
 
-## 🎯 Vue d'ensemble
+##  Vue d'ensemble
 
 Ce projet utilise les **actions officielles Homey** disponibles sur GitHub Marketplace pour automatiser la validation, le versioning et la publication de l'app.
 
@@ -30,7 +30,7 @@ Ce projet utilise les **actions officielles Homey** disponibles sur GitHub Marke
 
 ---
 
-## 📦 Actions Officielles
+##  Actions Officielles
 
 ### 1. Homey App Validate
 
@@ -57,9 +57,9 @@ Ce projet utilise les **actions officielles Homey** disponibles sur GitHub Marke
 ```
 
 **Types de version:**
-- `patch` - 2.1.51 → 2.1.52 (corrections)
-- `minor` - 2.1.51 → 2.2.0 (nouvelles fonctionnalités)
-- `major` - 2.1.51 → 3.0.0 (changements majeurs)
+- `patch` - 2.1.51  2.1.52 (corrections)
+- `minor` - 2.1.51  2.2.0 (nouvelles fonctionnalités)
+- `major` - 2.1.51  3.0.0 (changements majeurs)
 
 ### 3. Homey App Publish
 
@@ -77,7 +77,7 @@ Ce projet utilise les **actions officielles Homey** disponibles sur GitHub Marke
 
 ---
 
-## 🔄 Workflows Disponibles
+##  Workflows Disponibles
 
 ### Workflow 1: `homey-official-publish.yml`
 
@@ -86,16 +86,16 @@ Ce projet utilise les **actions officielles Homey** disponibles sur GitHub Marke
 - Manuel via `workflow_dispatch`
 
 **Étapes:**
-1. ✅ Validation (niveau publish)
-2. 📦 Mise à jour de version (patch auto)
-3. 🚀 Publication sur Homey App Store
-4. 📝 Commit des changements de version
+1.  Validation (niveau publish)
+2.  Mise à jour de version (patch auto)
+3.  Publication sur Homey App Store
+4.  Commit des changements de version
 
 **Utilisation manuelle:**
 
 ```bash
 # Via GitHub UI
-Repository → Actions → Official Homey App Store Publication → Run workflow
+Repository  Actions  Official Homey App Store Publication  Run workflow
   - Branch: master
   - Version type: patch/minor/major
   - Changelog: "Your custom message"
@@ -109,16 +109,16 @@ Repository → Actions → Official Homey App Store Publication → Run workflow
 - Manuel via `workflow_dispatch`
 
 **Étapes:**
-1. ✅ Validation multi-niveaux (debug + publish)
-2. 🔍 Vérification syntaxe JSON
-3. 📊 Vérification structure drivers
+1.  Validation multi-niveaux (debug + publish)
+2.  Vérification syntaxe JSON
+3.  Vérification structure drivers
 
 **Utilisation:**
 Automatique lors des PRs et développement.
 
 ---
 
-## ⚙️ Configuration Requise
+##  Configuration Requise
 
 ### 1. GitHub Secrets
 
@@ -126,16 +126,16 @@ Créer le secret `HOMEY_PAT` dans votre repository:
 
 ```
 Repository Settings
-  → Secrets and variables
-    → Actions
-      → New repository secret
+   Secrets and variables
+     Actions
+       New repository secret
         Name: HOMEY_PAT
         Value: <votre Personal Access Token Homey>
 ```
 
 **Obtenir un PAT Homey:**
 1. Aller sur https://tools.developer.homey.app
-2. Account → Personal Access Tokens
+2. Account  Personal Access Tokens
 3. Create new token
 4. Copier et sauvegarder dans GitHub Secrets
 
@@ -156,7 +156,7 @@ Le workflow installe automatiquement:
 
 ---
 
-## 🚀 Utilisation
+##  Utilisation
 
 ### Publication Automatique (Recommandée)
 
@@ -181,7 +181,7 @@ Le workflow installe automatiquement:
 
 4. **Gérer la release via Dashboard:**
    - Aller sur https://tools.developer.homey.app
-   - Apps SDK → My Apps
+   - Apps SDK  My Apps
    - Choisir **Test** ou **Live** release
 
 ### Publication Manuelle
@@ -213,15 +213,15 @@ npx homey app publish
 
 ---
 
-## 🎯 Processus de Release
+##  Processus de Release
 
-### Étape 1: Draft → Test
+### Étape 1: Draft  Test
 
 Après publication GitHub Actions:
 
 1. **App créée en Draft** dans votre dashboard
 2. **Promouvoir vers Test:**
-   - Dashboard → My Apps → Universal Tuya Zigbee
+   - Dashboard  My Apps  Universal Tuya Zigbee
    - Choose "Release to Test"
    - App disponible via Test URL uniquement
 
@@ -230,14 +230,14 @@ Après publication GitHub Actions:
 https://homey.app/a/com.dlnraja.tuya.zigbee/test/
 ```
 
-### Étape 2: Test → Live (Certification)
+### Étape 2: Test  Live (Certification)
 
 Après tests concluants:
 
 1. **Soumettre pour certification:**
-   - Dashboard → My Apps → Universal Tuya Zigbee
+   - Dashboard  My Apps  Universal Tuya Zigbee
    - Choose "Submit for certification"
-   - ⚠️ **Décocher** "publish directly after approval" si vous voulez vérifier d'abord
+   -  **Décocher** "publish directly after approval" si vous voulez vérifier d'abord
 
 2. **Athom Review (1-3 jours ouvrables):**
    - Vérification App Store Guidelines
@@ -245,8 +245,8 @@ Après tests concluants:
    - Vérification assets/description
 
 3. **Après approbation:**
-   - Si auto-publish activé → Live immédiatement
-   - Sinon → Vous pouvez release manuellement
+   - Si auto-publish activé  Live immédiatement
+   - Sinon  Vous pouvez release manuellement
 
 **Live URL:**
 ```
@@ -255,7 +255,7 @@ https://homey.app/a/com.dlnraja.tuya.zigbee/
 
 ---
 
-## 🔍 Dépannage
+##  Dépannage
 
 ### Erreur: "Validation failed"
 
@@ -294,17 +294,17 @@ npx homey app validate --level publish
 
 ---
 
-## 📊 Comparaison Méthodes
+##  Comparaison Méthodes
 
 | Méthode | Avantages | Inconvénients |
 |---------|-----------|---------------|
-| **GitHub Actions (Officiel)** | ✅ Automatisé<br>✅ Versioning auto<br>✅ Traçable | ⚠️ Nécessite configuration secrets |
-| **CLI Manuelle** | ✅ Simple<br>✅ Contrôle total | ⚠️ Manuel<br>⚠️ Pas d'historique auto |
-| **Script PowerShell** | ✅ Semi-automatisé<br>✅ Configurable | ⚠️ Windows seulement |
+| **GitHub Actions (Officiel)** |  Automatisé<br> Versioning auto<br> Traçable |  Nécessite configuration secrets |
+| **CLI Manuelle** |  Simple<br> Contrôle total |  Manuel<br> Pas d'historique auto |
+| **Script PowerShell** |  Semi-automatisé<br> Configurable |  Windows seulement |
 
 ---
 
-## 📚 Ressources
+##  Ressources
 
 ### Documentation Officielle
 - [Homey Publishing Guide](https://apps.developer.homey.app/app-store/publishing)
@@ -322,7 +322,7 @@ npx homey app validate --level publish
 
 ---
 
-## ✅ Checklist Pre-Publication
+##  Checklist Pre-Publication
 
 Avant de publier:
 

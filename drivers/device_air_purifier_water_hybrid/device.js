@@ -41,7 +41,7 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
   }
 
   /**
-   * Handle Tuya datapoints — Z2M TLC2206 verified mapping
+   * Handle Tuya datapoints  Z2M TLC2206 verified mapping
    */
   async _handleDP(dp, value) {
     this.log(`[LIQUID] DP${dp}: ${value}`);

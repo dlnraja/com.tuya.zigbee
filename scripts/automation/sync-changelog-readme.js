@@ -18,7 +18,7 @@ const appJsonPath = path.join(projectRoot, 'app.json');
 const readmePath = path.join(projectRoot, 'README.md');
 
 if (!fs.existsSync(changelogPath)) {
-  console.log('⚠️ .homeychangelog.json not found');
+  console.log(' .homeychangelog.json not found');
   process.exit(0);
 }
 
@@ -43,9 +43,9 @@ const date = new Date();
 const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dateStr = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
 
-let changelogTable = `## 🚀 Latest Updates\n\n`;
+let changelogTable = `##  Latest Updates\n\n`;
 changelogTable += `<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->\n`;
-changelogTable += `### ✨ Recent Changes (${dateStr})\n\n`;
+changelogTable += `###  Recent Changes (${dateStr})\n\n`;
 changelogTable += `| Version | Changes |\n`;
 changelogTable += `|---------|---------|\n`;
 
@@ -65,7 +65,7 @@ changelogTable += `<!-- CHANGELOG_END -->\n`;
 let readme = fs.readFileSync(readmePath, 'utf8');
 
 // Replace changelog section
-const startMarker = '## 🚀 Latest Updates';
+const startMarker = '##  Latest Updates';
 const altStartMarker = '## Statistics';
 
 const startIdx = readme.indexOf(startMarker);
@@ -90,6 +90,6 @@ if (startIdx !== -1) {
 }
 
 fs.writeFileSync(readmePath, readme);
-console.log(`✅ README updated with ${versions.length} changelog entries`);
+console.log(` README updated with ${versions.length} changelog entries`);
 console.log(`   Current version: v${currentVersion}`);
 console.log(`   Latest in changelog: v${versions[0]}`);

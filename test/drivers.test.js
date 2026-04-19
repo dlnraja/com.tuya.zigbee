@@ -81,9 +81,9 @@ describe('Universal Tuya Zigbee - Driver Integrity', function() {
         const types = new Set(drivers.map(d => d.replace(/_\d+$/, '')));
         return types.size > 1;
       });
-    // Report (don't fail) — some collisions are expected
+    // Report (don't fail)  some collisions are expected
     if (collisions.length > 0) {
-      console.log(`  ℹ️ ${collisions.length} cross-type FP collision(s) found (informational)`);
+      console.log(`   ${collisions.length} cross-type FP collision(s) found (informational)`);
     }
   });
 });
