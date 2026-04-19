@@ -17,7 +17,8 @@
   ],
   "energy": {
     "approximation": {
-      "usageConstant": 0.7
+      "usageOff": 0.7,
+      "usageOn": 100
     }
   },
   "zigbee": {
@@ -505,5 +506,6 @@
     "triggers": [],
     "conditions": [],
     "actions": []
-  }
+  },
+  "id": "plug_energy_monitor"
 }

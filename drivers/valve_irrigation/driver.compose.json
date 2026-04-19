@@ -26,7 +26,6 @@
       "_TZE200_A7SGHMMS",
       "_TZE200_AKJEFHJ5",
       "_TZE200_D0YPNBVN",
-      "_TZE200_FPHXKXUE",
       "_TZE200_HTNNFASR",
       "_TZE200_JT50EA5D",
       "_TZE200_WT9AGWF3",
@@ -279,5 +278,6 @@
         "fr": "Alerte si le score de santé descend sous cette valeur"
       }
     }
-  ]
+  ],
+  "id": "valve_irrigation"
 }

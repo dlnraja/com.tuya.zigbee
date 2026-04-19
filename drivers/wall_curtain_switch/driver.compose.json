@@ -1,5 +1,5 @@
 {
-  "id": "wallcurtainswitch",
+  "id": "wall_curtain_switch",
   "name": {
     "en": "Wall mounted Curtain Switch"
   },
@@ -40,7 +40,7 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "drivers/wall_curtain_switch/assets/icon.svg",
       "instruction": {
         "en": "Power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping) or press the Pause-button 5sec until Open-button blinks."
       }

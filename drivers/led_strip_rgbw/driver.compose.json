@@ -21,10 +21,7 @@
     "approximation": {
       "usageConstant": 12
     },
-    "mains": true,
-    "batteries": [
-      "CR2450"
-    ]
+    "mains": true
   },
   "zigbee": {
     "manufacturerName": [
@@ -582,5 +579,6 @@
     "triggers": [],
     "conditions": [],
     "actions": []
-  }
+  },
+  "id": "led_strip_rgbw"
 }

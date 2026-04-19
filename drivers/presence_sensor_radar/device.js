@@ -1588,6 +1588,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         this._handlePresenceWithDebounce(presenceValue, dpId);
         return;
       }
+    }
+  }
+
+  /**
    * v5.5.902: FORUM FIX - Enhanced stuck detection for motion spam
    * _TZE284_iadro9bf sends motion=YES every 20s even without presence
    * v5.5.357: Original throttle + v5.5.902: Stuck pattern detection

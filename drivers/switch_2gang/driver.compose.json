@@ -837,9 +837,81 @@
     }
   ],
   "flow": {
-    "triggers": [],
+    "triggers": [
+      {
+        "id": "switch_2gang_physical_gang1_on",
+        "title": {
+          "en": "Gang 1 turned on (physical)",
+          "fr": "Gang 1 allumé (physique)"
+        }
+      },
+      {
+        "id": "switch_2gang_physical_gang1_off",
+        "title": {
+          "en": "Gang 1 turned off (physical)",
+          "fr": "Gang 1 éteint (physique)"
+        }
+      },
+      {
+        "id": "switch_2gang_physical_gang2_on",
+        "title": {
+          "en": "Gang 2 turned on (physical)",
+          "fr": "Gang 2 allumé (physique)"
+        }
+      },
+      {
+        "id": "switch_2gang_physical_gang2_off",
+        "title": {
+          "en": "Gang 2 turned off (physical)",
+          "fr": "Gang 2 éteint (physique)"
+        }
+      }
+    ],
     "conditions": [],
-    "actions": []
+    "actions": [
+      {
+        "id": "switch_2gang_turn_on_gang1",
+        "title": {
+          "en": "Turn on Gang 1",
+          "fr": "Allumer Gang 1"
+        }
+      },
+      {
+        "id": "switch_2gang_turn_off_gang1",
+        "title": {
+          "en": "Turn off Gang 1",
+          "fr": "Éteindre Gang 1"
+        }
+      },
+      {
+        "id": "switch_2gang_toggle_gang1",
+        "title": {
+          "en": "Toggle Gang 1",
+          "fr": "Inverser Gang 1"
+        }
+      },
+      {
+        "id": "switch_2gang_turn_on_gang2",
+        "title": {
+          "en": "Turn on Gang 2",
+          "fr": "Allumer Gang 2"
+        }
+      },
+      {
+        "id": "switch_2gang_turn_off_gang2",
+        "title": {
+          "en": "Turn off Gang 2",
+          "fr": "Éteindre Gang 2"
+        }
+      },
+      {
+        "id": "switch_2gang_toggle_gang2",
+        "title": {
+          "en": "Toggle Gang 2",
+          "fr": "Inverser Gang 2"
+        }
+      }
+    ]
   },
   "maintenanceActions": [
     {
@@ -850,5 +922,6 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "switch_2gang"
 }

@@ -1,5 +1,8 @@
 'use strict';
 const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+const fs = require('fs'), path = require('path');
+const CACHE_DIR = path.join(process.cwd(), '.cache');
+if (!fs.existsSync(CACHE_DIR)) fs.mkdirSync(CACHE_DIR, { recursive: true });
 
 // v5.12.4  Robust rate-limit handling for Discourse + GitHub APIs
 // Features: throttled queue, exponential backoff, CSRF auto-refresh,
@@ -58,6 +61,7 @@ async function fetchWithRetry(url, opts = {}, ro = {}) {
     queue = null,       // named throttle queue
     csrfRefresh = null, // async function to refresh CSRF (returns new auth)
     authRef = null,     // { auth } reference object for CSRF updates
+    useCache = true,    // v5.13.20: Use cache on 5xx errors
   } = ro;
 
   // Auto-detect queue from URL if not specified
@@ -86,7 +90,17 @@ async function fetchWithRetry(url, opts = {}, ro = {}) {
       clearTimeout(t);
 
       // Success or client error (not retryable)
-      if (r.ok || r.status === 404 || r.status === 422) return r;
+      if (r.ok) {
+        if (useCache && opts.method === 'GET' || !opts.method) {
+          const cacheKey = Buffer.from(url).toString('hex').substring(0, 64);
+          try {
+            const body = await r.clone().text();
+            fs.writeFileSync(path.join(CACHE_DIR, cacheKey), body);
+          } catch(e) {}
+        }
+        return r;
+      }
+      if (r.status === 404 || r.status === 422) return r;
 
       // === 403: BAD CSRF or permission denied ===
       if (r.status === 403) {
@@ -155,6 +169,25 @@ async function fetchWithRetry(url, opts = {}, ro = {}) {
         console.log('  [' + (label || 'retry') + '] HTTP ' + r.status + ', wait ' + Math.round(d/1000) + 's (' + (i + 1) + '/' + retries + ')');
         await sleep(d);
         continue;
+      }
+
+      // v5.13.20: Fallback to cache on final 5xx error
+      if (r.status >= 500 && useCache) {
+        const cacheKey = Buffer.from(url).toString('hex').substring(0, 64);
+        const cachePath = path.join(CACHE_DIR, cacheKey);
+        if (fs.existsSync(cachePath)) {
+          console.log('  [' + (label || 'cache') + '] HTTP ' + r.status + ' - Falling back to cached data');
+          const body = fs.readFileSync(cachePath, 'utf8');
+          // Mock a Fetch response object
+          return {
+            ok: true,
+            status: 200,
+            text: async () => body,
+            json: async () => JSON.parse(body),
+            headers: new Map(),
+            clone: function() { return this; }
+          };
+        }
       }
 
       // === GitHub: Parse X-RateLimit headers ===

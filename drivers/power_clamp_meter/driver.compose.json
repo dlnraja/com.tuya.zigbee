@@ -260,5 +260,6 @@
     "cumulative": true,
     "cumulativeImportedCapability": "meter_power",
     "cumulativeExportedCapability": "meter_power"
-  }
+  },
+  "id": "power_clamp_meter"
 }

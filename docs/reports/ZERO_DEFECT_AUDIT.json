@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-19T15:38:07.669Z",
+  "timestamp": "2026-04-19T17:42:03.736Z",
   "driversChecked": 323,
   "collisions": [],
   "buttonLogicFailures": [],
@@ -33,8 +33,6 @@
     ".homeybuild\\lib\\zigbee\\ZigbeeHealthMonitor.js:122: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\lib\\zigbee\\ZigpyIntegration.js:135: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\lib\\zigbee\\ZigpyIntegration.js:136: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
-    "drivers\\climate_sensor_presence_hybrid\\device.js:132: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
-    "drivers\\climate_sensor_presence_hybrid\\device.js:380: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     "drivers\\device_air_purifier_presence_hybrid\\device.js:126: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     "drivers\\remote_button_wireless_handheld_hybrid\\device.js:624: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     "drivers\\remote_button_wireless_handheld_hybrid\\device.js:625: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",

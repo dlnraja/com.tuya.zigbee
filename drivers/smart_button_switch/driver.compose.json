@@ -49,7 +49,7 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "drivers/smart_button_switch/assets/icon.svg",
       "instruction": {
         "en": "Press the button for aprox 10 seconds (the LED should start blinking)."
       }

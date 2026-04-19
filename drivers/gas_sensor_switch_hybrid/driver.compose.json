@@ -806,7 +806,7 @@
   },
   "energy": {
     "approximation": {
-      "usageOff": 0.8,
+      "usageOff": 0.2,
       "usageOn": 100
     },
     "batteries": [
@@ -847,5 +847,6 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "id": "gas_sensor_switch_hybrid"
 }

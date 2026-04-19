@@ -12,8 +12,8 @@
     "light_mode",
     "light_saturation",
     "light_temperature",
-    "measure_battery",
     "onoff",
+    "measure_battery",
     "measure_radio_stability",
     "measure_maintenance_score"
   ],
@@ -21,10 +21,7 @@
     "approximation": {
       "usageConstant": 9
     },
-    "mains": true,
-    "batteries": [
-      "CR2450"
-    ]
+    "mains": true
   },
   "zigbee": {
     "manufacturerName": [
@@ -824,5 +821,6 @@
     "homey": {
       "natural_light": true
     }
-  }
+  },
+  "id": "bulb_dimmable"
 }
