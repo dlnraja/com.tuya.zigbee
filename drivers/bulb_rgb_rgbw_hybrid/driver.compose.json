@@ -22,6 +22,9 @@
     "approximation": {
       "usageConstant": 6
     },
+    "batteries": [
+      "CR2032"
+    ],
     "mains": true
   },
   "zigbee": {

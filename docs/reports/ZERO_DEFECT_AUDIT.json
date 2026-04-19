@@ -1,7 +1,36 @@
 {
-  "timestamp": "2026-04-19T22:05:23.974Z",
+  "timestamp": "2026-04-19T22:20:08.523Z",
   "driversChecked": 323,
-  "collisions": [],
+  "collisions": [
+    {
+      "id": "_TZ3210_D3M9V8P6|TS0001",
+      "drivers": [
+        "button_wireless_fingerbot_hybrid",
+        "fingerbot"
+      ]
+    },
+    {
+      "id": "_TZ3210_D3M9V8P6|TS0001_FINGERBOT",
+      "drivers": [
+        "button_wireless_fingerbot_hybrid",
+        "fingerbot"
+      ]
+    },
+    {
+      "id": "_TZ3210_PWJ6VUJ9|TS0001",
+      "drivers": [
+        "button_wireless_fingerbot_hybrid",
+        "fingerbot"
+      ]
+    },
+    {
+      "id": "_TZ3210_PWJ6VUJ9|TS0001_FINGERBOT",
+      "drivers": [
+        "button_wireless_fingerbot_hybrid",
+        "fingerbot"
+      ]
+    }
+  ],
   "buttonLogicFailures": [],
   "sdkDeprecations": [],
   "radarLogicCheck": [],
