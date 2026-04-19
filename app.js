@@ -13,7 +13,7 @@ require('./lib/suppress-punycode');
 // v5.8.25: Patch color-space module to fix Homey sandbox require('./rgb') error
 // Must be BEFORE any homey-zigbeedriver imports
 try {
-  const colorShim = require('./lib/shims / color-space-shim');
+  const colorShim = require('./lib/shims/color-space-shim');
   require.cache[require.resolve('color-space/hsv')] = { exports: colorShim.hsv };
   require.cache[require.resolve('color-space/rgb')] = { exports: colorShim.rgb };
   require.cache[require.resolve('color-space/xyz')] = { exports: colorShim.xyz };
@@ -45,7 +45,7 @@ const QuirksDatabase = require('./lib/quirks/QuirksDatabase'); //  Device Quirks
 const EmergencyDeviceFix = require('./lib/emergency/EmergencyDeviceFix'); //  Emergency Fix System
 // NOTE: Database updates are handled by GitHub Actions ONLY, NOT at runtime
 // See: .github / workflows/MASTER-intelligent-enrichment.yml
-const SourceCredits = require('./lib/data / SourceCredits'); //  Source attributions
+const SourceCredits = require('./lib/data/SourceCredits'); //  Source attributions
 const TuyaUDPDiscovery = require('./lib/tuya-local/TuyaUDPDiscovery');
 
 class UniversalTuyaZigbeeApp extends Homey.App {
