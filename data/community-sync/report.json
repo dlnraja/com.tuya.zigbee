@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-19T14:06:57.112Z",
+  "ts": "2026-04-19T14:13:52.436Z",
   "currentCount": 2867,
   "src": {
     "johan": {
@@ -19124,6 +19124,17 @@
         },
         {
           "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1374,
+          "title": "Device Request - Tuya Curtain Motor - _TZE204_r0jdjrvi / TS0601",
+          "mfrs": [
+            "_TZE200_r0jdjrvi",
+            "_TZE204_r0jdjrvi",
+            "_TZE204_r0jdjrvi",
+            "_TZE200_r0jdjrvi"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
           "num": 1372,
           "title": "add another motion sensor",
           "mfrs": [
@@ -19244,16 +19255,6 @@
             "_TZ3000_xwh1e22x",
             "_TZ3000_xwh1e22x",
             "_TZ3000_xwh1e22x"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1360,
-          "title": "Device Request - [Nedis SmartLife Radiator Control] - [_TZE284_ne4pikwm] / [TS0601]",
-          "mfrs": [
-            "_TZE284_ne4pikwm",
-            "_TZE284_ne4pikwm",
-            "_TZE284_ne4pikwm"
           ]
         }
       ]
