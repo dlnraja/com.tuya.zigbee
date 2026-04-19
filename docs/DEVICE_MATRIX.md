@@ -2,7 +2,7 @@
 
 | Driver | Manufacturers | Products | Capabilities |
 |--------|---------------|----------|-------------|
-| air_purifier | 8 | RH3052, TS0201, TS0222, TS0601, TS0601_AIR_PURIFIER, TY0201 | dim, measure_pm25, onoff |
+| air_purifier | 8 | RH3052, TS0201, TS0222, TS0601, TS0601_AIR_PURIFIER, TY0201 | dim, measure_pm25, onoff... |
 | air_purifier_climate_hybrid | 1 | RH3052, TS0201, TS0222, TS0601, TY0201 | onoff, dim, measure_pm25... |
 | air_purifier_contact_hybrid | 0 | TS0601 | alarm_contact, alarm_tamper, measure_battery... |
 | air_purifier_curtain_hybrid | 0 | TS0601 | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
@@ -47,7 +47,7 @@
 | button_wireless_valve_hybrid | 1 | - | button.1, button.2, measure_battery... |
 | button_wireless_wall_hybrid | 0 | TS0001, TS0002, TS0003, TS0011, TS0012, TS0013, TS0042, TS0043 | button.1, button.2, measure_battery... |
 | ceiling_fan | 2 | TS0601, TS0601_FAN | dim, onoff, dim.speed... |
-| climate_sensor | 366 | CK-TLSR8656-SS5-01(7014), EXCELLUX, LUMI.SENSOR_HT, LUMI.SENSOR_HT.AGL02, LUMI.WEATHER, RH3052, SM0201, SNZB-02, SNZB-02D, SNZB-02DR2, SNZB-02LD, SNZB-02P, SNZB-02WD, TH01, THS317-ET, TS0201, TS0222, TS0601, TY0201, WSDCGQ01LM, WSDCGQ11LM, WSDCGQ12LM, ZG-227Z, ZG-227ZL, ZG-303Z | measure_battery, measure_humidity, measure_temperature... |
+| climate_sensor | 363 | CK-TLSR8656-SS5-01(7014), EXCELLUX, LUMI.SENSOR_HT, LUMI.SENSOR_HT.AGL02, LUMI.WEATHER, RH3052, SM0201, SNZB-02, SNZB-02D, SNZB-02DR2, SNZB-02LD, SNZB-02P, SNZB-02WD, TH01, THS317-ET, TS0201, TS0222, TS0601, TY0201, WSDCGQ01LM, WSDCGQ11LM, WSDCGQ12LM, ZG-227Z, ZG-227ZL, ZG-303Z | measure_battery, measure_humidity, measure_temperature... |
 | climate_sensor_dimmer_hybrid | 1 | - | dim, onoff, measure_power... |
 | climate_sensor_gas_hybrid | 0 | TS0601 | alarm_generic, alarm_co, alarm_co2... |
 | climate_sensor_plug_hybrid | 0 | TS0601 | onoff, measure_power, meter_power... |
@@ -158,7 +158,7 @@
 | motion_sensor_switch_hybrid | 1 | - | onoff, measure_battery, measure_power... |
 | pet_feeder | 5 | TS0601, TS0601_FEEDER | button.feed, alarm_generic, measure_radio_stability... |
 | pet_feeder_zigbee | 4 | TS0601 | button, measure_weight, alarm_generic... |
-| plug_energy_monitor | 37 | A11Z, A7Z, CK-BL702-SWP-01(7020), E1603/E1702/E1708, HY0104, HY0105, JZ-ZB-005, LSPA9, LUMI.PLUG.MACN01, LUMI.PLUG.MAEU01, LUMI.PLUG.MMEU01, S31ZB, S40ZBTPB, S40ZBTPF, S40ZBTPG, S60ZBTPE, S60ZBTPF-R2, SA-028-1, SA-029-1, SNZB-06P, SP 120, SP 220, SP 222, SP-EUC01, SP-EUC02, SPM01, SPMZBR2, TRADFRI CONTROL OUTLET, TS0121, TSO121, Z111PL0H-1JX, ZBMINIL2 | measure_power, meter_power, measure_voltage... |
+| plug_energy_monitor | 39 | A11Z, A7Z, CK-BL702-SWP-01(7020), E1603/E1702/E1708, HY0104, HY0105, JZ-ZB-005, LSPA9, LUMI.PLUG.MACN01, LUMI.PLUG.MAEU01, LUMI.PLUG.MMEU01, S31ZB, S40ZBTPB, S40ZBTPF, S40ZBTPG, S60ZBTPE, S60ZBTPF-R2, SA-028-1, SA-029-1, SNZB-06P, SP 120, SP 220, SP 222, SP-EUC01, SP-EUC02, SPM01, SPMZBR2, TRADFRI CONTROL OUTLET, TS0121, TSO121, Z111PL0H-1JX, ZBMINIL2, TS011F | measure_power, meter_power, measure_voltage... |
 | plug_energy_monitor_hybrid | 1 | S26R2ZB, S31ZB, TS011F, TS0601, ZBMINIL2 | measure_temperature, measure_humidity, measure_battery... |
 | plug_smart | 34 | S26R2ZB, S31 LITE ZB, S40LITE, S60ZBTPF, S60ZBTPG, TS0049, TS0101, TS0111, TS011F, TS0121, TS0601 | measure_battery, measure_current, measure_power... |
 | plug_smart_switch_hybrid | 1 | - | onoff, measure_battery, measure_power... |
@@ -168,7 +168,7 @@
 | presence_sensor_ceiling | 2 | TS0601, TS0601_CEILING | alarm_motion, onoff, measure_luminance... |
 | presence_sensor_radar | 147 | CK-BL702-MWS-01, CK-BL702-MWS-01(7016), MG1_5RZ, SNZB-06P, SZLMR10, TS0225, TS0601, ZG-204ZE, ZG-204ZH, ZG-204ZK, ZG-204ZL, ZG-204ZM, ZG-204ZQ, ZG-204ZV, ZG-205Z, ZG-205ZL, ZG-302ZL, ZG-302ZM, ZP-301Z | alarm_motion, measure_luminance, measure_temperature... |
 | radiator_controller | 4 | TS0601, TS0601_RAD | onoff, target_temperature, measure_temperature... |
-| radiator_valve | 129 | 014G2461, 014G2463, ETRV0100, LUMI.AIRRTC.AGL001, LUMI.AIRRTC.VRFEGL01, SEA801-ZIGBEE, SPZB0001, SPZB0003, STZB402, STZB403, TRV601, TRV602, TRVZB, TS0601, TV01-ZB, TV02-ZB, ZEN-01 | target_temperature, measure_temperature, thermostat_mode... |
+| radiator_valve | 134 | 014G2461, 014G2463, ETRV0100, LUMI.AIRRTC.AGL001, LUMI.AIRRTC.VRFEGL01, SEA801-ZIGBEE, SPZB0001, SPZB0003, STZB402, STZB403, TRV601, TRV602, TRVZB, TS0601, TV01-ZB, TV02-ZB, ZEN-01 | target_temperature, measure_temperature, thermostat_mode... |
 | radiator_valve_zigbee | 3 | TS0601 | target_temperature, measure_temperature, thermostat_mode... |
 | rain_sensor | 3 | TS0207, TS0207_RAIN, TS0601, ZG-222Z, ZG-223Z | alarm_water, measure_humidity, measure_battery... |
 | remote_button_emergency_sos_hybrid | 1 | - | button.1, button.2, button.3... |
@@ -252,7 +252,7 @@
 | usb_dongle_triple | 0 | TS0003 | onoff, onoff.usb2, onoff.usb3... |
 | usb_outlet_advanced | 15 | TS0115, TS011F, TS0601 | onoff, onoff.socket2, onoff.usb1... |
 | valve_dual_irrigation | 3 | TS0601 | onoff.valve_1, onoff.valve_2, measure_battery... |
-| valve_irrigation | 20 | TS0049, TS0601, TS0601_IRRIGATION | dim.valve_1, dim.valve_2, dim.valve_3... |
+| valve_irrigation | 19 | TS0049, TS0601, TS0601_IRRIGATION | dim.valve_1, dim.valve_2, dim.valve_3... |
 | valve_single | 2 | TS0001, TS0601, TS0601_VALVE | onoff, dim.valve, measure_battery... |
 | vibration_sensor | 35 | TS0209, TS0210, TS0601, ZG-102ZM, ZG-103Z, ZG-103ZL | alarm_vibration, measure_temperature, measure_battery... |
 | wall_curtain_switch | 0 | - | windowcoverings_set, windowcoverings_state, measure_radio_stability... |
@@ -276,6 +276,6 @@
 | zigbee_repeater | 5 | TS0207 | measure_radio_stability, measure_maintenance_score |
 
 ---
-**Total:** 272 drivers, 3015 manufacturer IDs
+**Total:** 272 drivers, 3018 manufacturer IDs
 
-*Generated: 2026-04-19T21:43:51.625Z*
+*Generated: 2026-04-19T22:00:02.699Z*
