@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-19T17:42:03.736Z",
+  "timestamp": "2026-04-19T21:41:11.596Z",
   "driversChecked": 323,
   "collisions": [],
   "buttonLogicFailures": [],
@@ -8,8 +8,6 @@
   "numericConstantViolations": [],
   "naNSafetyCheck": [],
   "errors": [
-    ".homeybuild\\drivers\\climate_sensor_presence_hybrid\\device.js:132: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
-    ".homeybuild\\drivers\\climate_sensor_presence_hybrid\\device.js:380: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\drivers\\device_air_purifier_presence_hybrid\\device.js:126: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\drivers\\remote_button_wireless_handheld_hybrid\\device.js:624: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\drivers\\remote_button_wireless_handheld_hybrid\\device.js:625: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
